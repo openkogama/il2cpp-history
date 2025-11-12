@@ -7,141 +7,209 @@ void Assembly-CSharp.dll::GameTierShopRepository::GameTierShopRepository_AddItem
                MVWorldObjectClient *worldObject,MethodInfo *method)
 
 {
+  pMVar1 = worldObject;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Add_MVWorldObjectDocumentationType__System__Collections__Generic__List<MVWorldObjectClient>_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__Add_MV__Common__GamePassTier__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__ContainsKey_MV__Common__GamePassTier_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__ContainsKey_MVWorldObjectDocumentationType_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Dictionary__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__get_Item_MVWorldObjectDocumentationType_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Add_MVWorldObjectClient_
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__List__);
-    func_?(&TypeInfo__System__Collections__Generic__List<MVWorldObjectClient>);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Add_MVWorldObjectDocumentationType__System__Collections__Generic__List<MVWorldObjectClient>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__Add_MV__Common__GamePassTier__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__ContainsKey_MV__Common__GamePassTier_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__ContainsKey_MVWorldObjectDocumentationType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__get_Item_MVWorldObjectDocumentationType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Add_MVWorldObjectClient_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<MVWorldObjectClient>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pDVar1 = (this->fields).tierShopData;
-  if (pDVar1 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
-                 *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-            Single]::Dictionary_2_System_ByteEnum_System_Single__ContainsKey
-                      ((Dictionary_2_System_ByteEnum_System_Single_ *)pDVar1,tier,
+  this_00 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
+             *)(this->fields).tierShopData;
+  if (this_00 !=
+      (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)
+      0x0) {
+    iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::
+            WorldObject::RuntimeEvents::ExplosionEvent+ExplosionValues]::
+            Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues__FindEntry
+                      (this_00,tier & 0xff,
                        MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__ContainsKey_MV__Common__GamePassTier_
-                      );
-    if (bVar2 == 0) {
-      pDVar1 = (this->fields).tierShopData;
-      this_00 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
-                func_?(
-                               TypeInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>
-                               );
+                       ->klass->rgctx_data[0x21].method);
+    if (iVar2 < 0) {
+      pDVar3 = (this->fields).tierShopData;
+      this_01 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
+                FUN_?(
+                             TypeInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>
+                             );
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
       Int32Enum,GamePassesHighScoreList+HighScoreListData]::
       Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
-                (this_00,
+                (this_01,
                  MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Dictionary__
                 );
-      if (pDVar1 == (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
+      if (pDVar3 == (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
                      *)0x0) goto code_?;
+      pMVar1 = (MVWorldObjectClient *)CONCAT71((int7)((ulonglong)pMVar1 >> 8),2);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
-      Dictionary_2_System_ByteEnum_System_Object__Add
-                ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar1,tier,(Object *)this_00,
+      Dictionary_2_System_ByteEnum_System_Object__TryInsert
+                ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar3,tier & 0xff,(Object *)this_01
+                 ,(InsertionBehavior__Enum)pMVar1,
                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__Add_MV__Common__GamePassTier__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_
-                );
+                 ->klass->rgctx_data[0x22].method);
     }
-    pDVar1 = (this->fields).tierShopData;
-    if (pDVar1 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
-                   *)0x0) {
-      this_01 = (Dictionary_2_System_Int32Enum_System_Single_ *)
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-                Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                          ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar1,tier,
-                           MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
-                          );
-      if (this_01 != (Dictionary_2_System_Int32Enum_System_Single_ *)0x0) {
-        bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-                Single]::Dictionary_2_System_Int32Enum_System_Single__ContainsKey
-                          (this_01,documentationType,
-                           MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__ContainsKey_MVWorldObjectDocumentationType_
-                          );
-        if (bVar2 == 0) {
-          pDVar1 = (this->fields).tierShopData;
-          if (pDVar1 == (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
-                         *)0x0) goto code_?;
-          pDVar3 = (Dictionary_2_System_Int32Enum_System_Object_ *)
-                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
-                   ::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                             ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar1,tier,
-                              MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
-                             );
-          worldObject = (MVWorldObjectClient *)
-                        TypeInfo__System__Collections__Generic__List<MVWorldObjectClient>;
-          this_02 = (LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                    func_?();
-          mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-          __Il2CppFullySharedGenericType]::
-          LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                    (this_02,
-                     MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__List__);
-          if (pDVar3 == (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) goto code_?;
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]
-          ::Dictionary_2_System_Int32Enum_System_Object__Add
-                    (pDVar3,documentationType,(Object *)this_02,
-                     MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Add_MVWorldObjectDocumentationType__System__Collections__Generic__List<MVWorldObjectClient>_
-                    );
+    pDVar3 = (this->fields).tierShopData;
+    if ((pDVar3 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
+                    *)0x0) &&
+       (this_02 = (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+                  Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                            ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar3,tier & 0xff,
+                             MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
+                            ), this_02 != (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)0x0)
+       ) {
+      iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,UnityEngine
+              ::Vector3]::Dictionary_2_System_Int32Enum_UnityEngine_Vector3__FindEntry
+                        (this_02,documentationType,
+                         MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__ContainsKey_MVWorldObjectDocumentationType_
+                         ->klass->rgctx_data[0x21].method);
+      if (iVar2 < 0) {
+        pDVar3 = (this->fields).tierShopData;
+        if (pDVar3 == (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
+                       *)0x0) goto code_?;
+        pDVar4 = (Dictionary_2_System_Int32Enum_System_Object_ *)
+                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+                 Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                           ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar3,tier & 0xff,
+                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
+                           );
+        this_03 = (LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+                  FUN_?(TypeInfo__System__Collections__Generic__List<MVWorldObjectClient>);
+        mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+        __Il2CppFullySharedGenericType]::
+        LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                  (this_03,
+                   MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__List__);
+        if (pDVar4 == (Dictionary_2_System_Int32Enum_System_Object_ *)0x0)
+        goto code_?;
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+        Dictionary_2_System_Int32Enum_System_Object__TryInsert
+                  (pDVar4,documentationType,(Object *)this_03,
+                   (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pMVar1 >> 8),2),
+                   MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Add_MVWorldObjectDocumentationType__System__Collections__Generic__List<MVWorldObjectClient>_
+                   ->klass->rgctx_data[0x22].method);
+      }
+      pDVar3 = (this->fields).tierShopData;
+      if (((pDVar3 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
+                       *)0x0) &&
+          (pDVar4 = (Dictionary_2_System_Int32Enum_System_Object_ *)
+                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
+                    ::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                              ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar3,tier & 0xff,
+                               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
+                              ), pDVar4 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0)) &&
+         (pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                              (pDVar4,documentationType,
+                               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__get_Item_MVWorldObjectDocumentationType_
+                              ),
+         pMVar6 = 
+         MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Add_MVWorldObjectClient_
+         , pOVar5 != (Object *)0x0)) {
+        pOVar7 = pOVar5[1].klass;
+        piVar8 = (int *)((longlong)&pOVar5[1].monitor + 4);
+        *piVar8 = *piVar8 + 1;
+        if (pOVar7 == (Object__Class *)0x0) {
+          FUN_?();
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
         }
-        pDVar1 = (this->fields).tierShopData;
-        if (pDVar1 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
-                       *)0x0) {
-          pDVar3 = (Dictionary_2_System_Int32Enum_System_Object_ *)
-                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
-                   ::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                             ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar1,tier,
-                              MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
-                             );
-          if (pDVar3 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
-            this_03 = (List_1_System_Object_ *)
-                      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Int32Enum,System::Object]::
-                      Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                (pDVar3,documentationType,
-                                 MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__get_Item_MVWorldObjectDocumentationType_
-                                );
-            if (this_03 != (List_1_System_Object_ *)0x0) {
-              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-              List_1_System_Object__Add
-                        (this_03,(Object *)worldObject,
-                         MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__Add_MVWorldObjectClient_
-                        );
-              return;
-            }
+        uVar10 = *(uint *)&pOVar5[1].monitor;
+        if (uVar10 < *(uint *)&(pOVar7->_0).namespaze) {
+          *(uint *)&pOVar5[1].monitor = uVar10 + 1;
+        }
+        else {
+          uVar10 = *(uint *)&pOVar5[1].monitor;
+          FUN_?(pOVar5,uVar10 + 1,
+                        (pMVar6->klass->rgctx_data[0xe].method)->klass->rgctx_data[0xf].
+                        rgctxDataDummy,pOVar7,unaff_RDI);
+          pOVar7 = pOVar5[1].klass;
+          *(uint *)&pOVar5[1].monitor = uVar10 + 1;
+          if (pOVar7 == (Object__Class *)0x0) {
+            FUN_?();
+            pcVar9 = (code *)swi(3);
+            (*pcVar9)();
+            return;
           }
         }
+        if (*(uint *)&(pOVar7->_0).namespaze <= uVar10) {
+          FUN_?();
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
+        }
+        bVar11 = iRam_? != 0;
+        (&(pOVar7->_0).byval_arg.data)[(int)uVar10].typeHandle =
+             (Il2CppMetadataTypeHandle)worldObject;
+        if (bVar11) {
+          uVar10 = (uint)((ulonglong)(&(pOVar7->_0).byval_arg.data + (int)uVar10) >> 0xc);
+          puVar12 = (ulonglong *)((ulonglong)((uVar10 & 0x1fffff) >> 6) * 8 + 0xADDR);
+          do {
+            uVar13 = *puVar12;
+            LOCK();
+            uVar14 = *puVar12;
+            if (uVar13 == uVar14) {
+              *puVar12 = uVar13 | 1L << (uVar10 & 0x3f);
+            }
+            UNLOCK();
+          } while (uVar13 != uVar14);
+        }
+        return;
       }
     }
   }
 code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -155,41 +223,78 @@ Assembly-CSharp.dll::GameTierShopRepository::GameTierShopRepository_GetTierItemD
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__ContainsKey_MV__Common__GamePassTier_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__ContainsKey_MV__Common__GamePassTier_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pDVar1 = (this->fields).tierShopData;
-  if (pDVar1 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
+  pDVar1 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
+            *)(this->fields).tierShopData;
+  if (pDVar1 != (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
                  *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-            Single]::Dictionary_2_System_ByteEnum_System_Single__ContainsKey
-                      ((Dictionary_2_System_ByteEnum_System_Single_ *)pDVar1,tier,
+    iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::
+            WorldObject::RuntimeEvents::ExplosionEvent+ExplosionValues]::
+            Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues__FindEntry
+                      (pDVar1,tier & 0xff,
                        MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__ContainsKey_MV__Common__GamePassTier_
-                      );
-    if (bVar2 == 0) {
+                       ->klass->rgctx_data[0x21].method);
+    pMVar3 = 
+    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
+    ;
+    if (iVar2 < 0) {
       return (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)0x0;
     }
-    pDVar1 = (this->fields).tierShopData;
-    if (pDVar1 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
+    pDVar1 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
+              *)(this->fields).tierShopData;
+    if (pDVar1 != (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
                    *)0x0) {
-      pDVar3 = (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)
-               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-               Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                         ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar1,tier,
-                          MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
-                         );
-      return pDVar3;
+      uVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::
+              WorldObject::RuntimeEvents::ExplosionEvent+ExplosionValues]::
+              Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues__FindEntry
+                        (pDVar1,tier & 0xff,
+                         MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
+                         ->klass->rgctx_data[0x21].method);
+      if ((int)uVar4 < 0) {
+        uVar5 = func_?(pMVar3->klass->rgctx_data,0xe);
+        key = (Object *)func_?(uVar5);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowKeyNotFoundException
+                  (key,(MethodInfo *)0x0);
+        pcVar6 = (code *)swi(3);
+        pDVar7 = (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)
+                 (*pcVar6)();
+        return pDVar7;
+      }
+      pDVar8 = (pDVar1->fields)._entries;
+      if (pDVar8 != (Dictionary_2_TKey_TValue_Entry_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues___Array
+                     *)0x0) {
+        if (uVar4 < (uint)pDVar8->max_length) {
+          return *(Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ **)
+                  &pDVar8->vector[(int)uVar4].value.centerDamage;
+        }
+        FUN_?();
+        pcVar6 = (code *)swi(3);
+        pDVar7 = (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)
+                 (*pcVar6)();
+        return pDVar7;
+      }
+      FUN_?();
+      pcVar6 = (code *)swi(3);
+      pDVar7 = (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)
+               (*pcVar6)();
+      return pDVar7;
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  pDVar3 = (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)(*pcVar4)();
-  return pDVar3;
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  pDVar7 = (Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_ *)(*pcVar6)();
+  return pDVar7;
 }
 
 
@@ -201,262 +306,294 @@ void Assembly-CSharp.dll::GameTierShopRepository::GameTierShopRepository_RemoveI
                MethodInfo *method)
 
 {
-  pGVar1 = this;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__ContainsKey_MV__Common__GamePassTier_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__ContainsKey_MVWorldObjectDocumentationType_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__Remove_MV__Common__GamePassTier_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Remove_MVWorldObjectDocumentationType_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__get_Item_MVWorldObjectDocumentationType_
-                   );
-    func_?(&TypeInfo__MV__Common__GamePassTier);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__RemoveAt_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                   );
-    func_?(&TypeInfo__MVWorldObjectDocumentationType);
-    func_?(&TypeInfo__System__String);
-    func_?(&StringLiteral__data_from_tier_shop_since_);
-    func_?(&StringLiteral__data_from_tier_shop_since_there);
-    func_?(&StringLiteral__does_not_have_its_data);
-    func_?(&StringLiteral_Cant_remove_item_);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__ContainsKey_MV__Common__GamePassTier_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__ContainsKey_MVWorldObjectDocumentationType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__Remove_MV__Common__GamePassTier_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Remove_MVWorldObjectDocumentationType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__get_Item_MVWorldObjectDocumentationType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__Common__GamePassTier);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__RemoveAt_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Count__)
+    ;
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVWorldObjectDocumentationType);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__String);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__data_from_tier_shop_since_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__data_from_tier_shop_since_there);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__does_not_have_its_data);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Cant_remove_item_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pDVar2 = (this->fields).tierShopData;
-  if (pDVar2 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
-                 *)0x0) {
-    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-            Single]::Dictionary_2_System_ByteEnum_System_Single__ContainsKey
-                      ((Dictionary_2_System_ByteEnum_System_Single_ *)pDVar2,tier,
+  this_00 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
+             *)(this->fields).tierShopData;
+  if (this_00 !=
+      (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_ *)
+      0x0) {
+    iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::
+            WorldObject::RuntimeEvents::ExplosionEvent+ExplosionValues]::
+            Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues__FindEntry
+                      (this_00,tier & 0xff,
                        MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__ContainsKey_MV__Common__GamePassTier_
-                      );
-    if (bVar3 == 0) {
-      pSVar4 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xffffffe4,(MethodInfo *)0x0)
-      ;
-      str3 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xfffffff0,(MethodInfo *)0x0);
-      pSVar4 = mscorlib.dll::System::String::String_Concat_5
+                       ->klass->rgctx_data[0x21].method);
+    MStack_2 = documentationType;
+    if (iVar1 < 0) {
+      EStack_3.klass = (Enum__Class *)TypeInfo__MVWorldObjectDocumentationType;
+      EStack_3.monitor = (MonitorData *)0xffffffffffffffff;
+      pSVar4 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_3,(MethodInfo *)0x0);
+      EStack_3.klass = (Enum__Class *)TypeInfo__MV__Common__GamePassTier;
+      EStack_3.monitor = (MonitorData *)0xffffffffffffffff;
+      MStack_2 = CONCAT31(MStack_2._1_3_,(char)tier);
+      str3 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_3,(MethodInfo *)0x0);
+      pSVar4 = mscorlib.dll::System::String::String_Concat_6
                          (StringLiteral_Cant_remove_item_,pSVar4,
                           StringLiteral__data_from_tier_shop_since_there,str3,(MethodInfo *)0x0);
+      iVar5 = *(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c;
 code_?:
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+      if (iVar5 == 0) {
+        FUN_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)pSVar4,(MethodInfo *)0x0);
       return;
     }
-    pDVar2 = (this->fields).tierShopData;
-    if ((pDVar2 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
+    pDVar6 = (this->fields).tierShopData;
+    if ((pDVar6 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
                     *)0x0) &&
-       (this_00 = (Dictionary_2_System_Int32Enum_System_Single_ *)
+       (this_01 = (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)
                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
                   Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                            ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar2,tier,
+                            ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar6,tier & 0xff,
                              MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
-                            ), this_00 != (Dictionary_2_System_Int32Enum_System_Single_ *)0x0)) {
-      bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-              Single]::Dictionary_2_System_Int32Enum_System_Single__ContainsKey
-                        (this_00,documentationType,
+                            ), this_01 != (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)0x0)
+       ) {
+      iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,UnityEngine
+              ::Vector3]::Dictionary_2_System_Int32Enum_UnityEngine_Vector3__FindEntry
+                        (this_01,documentationType,
                          MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__ContainsKey_MVWorldObjectDocumentationType_
-                        );
-      if (bVar3 == 0) {
-        values = (String__Array *)func_?();
-        pSVar4 = StringLiteral_Cant_remove_item_;
+                         ->klass->rgctx_data[0x21].method);
+      if (iVar1 < 0) {
+        values = (String__Array *)FUN_?(TypeInfo__System__String);
         if (values != (String__Array *)0x0) {
-          if (values->max_length != 0) {
-            values->vector[0] = StringLiteral_Cant_remove_item_;
-            func_?(values->vector,pSVar4);
-            pSVar4 = mscorlib.dll::System::Enum::Enum_ToString
-                               ((Enum *)&stack0xfffffff0,(MethodInfo *)0x0);
-            if (1 < values->max_length) {
-              values->vector[1] = pSVar4;
-              func_?(values->vector + 1,pSVar4);
-              pSVar4 = StringLiteral__data_from_tier_shop_since_;
-              if (2 < values->max_length) {
-                values->vector[2] = StringLiteral__data_from_tier_shop_since_;
-                func_?(values->vector + 2,pSVar4);
-                pSVar4 = mscorlib.dll::System::Enum::Enum_ToString
-                                   ((Enum *)&stack0xffffffe4,(MethodInfo *)0x0);
-                if (3 < values->max_length) {
-                  values->vector[3] = pSVar4;
-                  func_?(values->vector + 3,pSVar4);
-                  pSVar4 = StringLiteral__does_not_have_its_data;
-                  if (4 < values->max_length) {
-                    values->vector[4] = StringLiteral__does_not_have_its_data;
-                    func_?(values->vector + 4,pSVar4);
-                    pSVar4 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0)
-                    ;
-                    goto code_?;
-                  }
-                }
-              }
-            }
-          }
+          FUN_?(values,0,StringLiteral_Cant_remove_item_);
+          EStack_3.klass = (Enum__Class *)TypeInfo__MVWorldObjectDocumentationType;
+          EStack_3.monitor = (MonitorData *)0xffffffffffffffff;
+          pSVar4 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_3,(MethodInfo *)0x0);
+          FUN_?(values,1,pSVar4);
+          FUN_?(values,2,StringLiteral__data_from_tier_shop_since_);
+          EStack_3.klass = (Enum__Class *)TypeInfo__MV__Common__GamePassTier;
+          EStack_3.monitor = (MonitorData *)0xffffffffffffffff;
+          MStack_2 = CONCAT31(MStack_2._1_3_,(char)tier);
+          pSVar4 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_3,(MethodInfo *)0x0);
+          FUN_?(values,3,pSVar4);
+          FUN_?(values,4,StringLiteral__does_not_have_its_data);
+          pSVar4 = mscorlib.dll::System::String::String_Concat_7(values,(MethodInfo *)0x0);
+          iVar5 = *(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c;
           goto code_?;
         }
       }
       else {
-        pDVar2 = (this->fields).tierShopData;
-        this = (GameTierShopRepository *)0x0;
-        if (pDVar2 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
+        pDVar6 = (this->fields).tierShopData;
+        index = 0;
+        if (pDVar6 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
                        *)0x0) {
+          lVar7 = 0x20;
           while( true ) {
-            pDVar5 = (Dictionary_2_System_Int32Enum_System_Object_ *)
+            pDVar8 = (Dictionary_2_System_Int32Enum_System_Object_ *)
                      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                      ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                               ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar2,tier,
+                               ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar6,tier & 0xff,
                                 MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
                                );
-            if ((pDVar5 == (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) ||
-               (pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            if ((pDVar8 == (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) ||
+               (pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                          Int32Enum,System::Object]::
                          Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                   (pDVar5,documentationType,
+                                   (pDVar8,documentationType,
                                     MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__get_Item_MVWorldObjectDocumentationType_
-                                   ), pOVar6 == (Object *)0x0)) goto code_?;
-            if ((int)pOVar6[1].monitor <= (int)this) break;
-            pDVar2 = (pGVar1->fields).tierShopData;
-            if ((((pDVar2 == (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
-                              *)0x0) ||
-                 (pDVar5 = (Dictionary_2_System_Int32Enum_System_Object_ *)
-                           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                           ByteEnum,System::Object]::
-                           Dictionary_2_System_ByteEnum_System_Object__get_Item
-                                     ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar2,tier,
-                                      MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
-                                     ),
-                 pDVar5 == (Dictionary_2_System_Int32Enum_System_Object_ *)0x0)) ||
-                (this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                           Int32Enum,System::Object]::
-                           Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                     (pDVar5,documentationType,
-                                      MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__get_Item_MVWorldObjectDocumentationType_
-                                     ),
-                this_01 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-                ) || (RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                              RegularExpressions::RegexCharClass+SingleRange]::
-                              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                        (this_01,(int32_t)this,
-                                         MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                                        ), RVar7 == (RegexCharClass_SingleRange)0x0))
-            goto code_?;
-            pDVar2 = (pGVar1->fields).tierShopData;
-            if (*(int *)((int)RVar7 + 8) == woid) {
-              if (((pDVar2 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
+                                   ), pOVar9 == (Object *)0x0)) goto code_?;
+            if (*(int *)&pOVar9[1].monitor <= (int)index) break;
+            pDVar6 = (this->fields).tierShopData;
+            if (((pDVar6 == (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
+                             *)0x0) ||
+                (pDVar8 = (Dictionary_2_System_Int32Enum_System_Object_ *)
+                          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                          ByteEnum,System::Object]::
+                          Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                    ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar6,
+                                     tier & 0xff,
+                                     MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
+                                    ), pDVar8 == (Dictionary_2_System_Int32Enum_System_Object_ *)0x0
+                )) || (pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                Int32Enum,System::Object]::
+                                Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                          (pDVar8,documentationType,
+                                           MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__get_Item_MVWorldObjectDocumentationType_
+                                          ), pOVar9 == (Object *)0x0)) goto code_?;
+            if (*(uint *)&pOVar9[1].monitor <= index) {
+              mscorlib.dll::System::ThrowHelper::
+              ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+              pcVar10 = (code *)swi(3);
+              (*pcVar10)();
+              return;
+            }
+            pOVar11 = pOVar9[1].klass;
+            if (pOVar11 == (Object__Class *)0x0) goto code_?;
+            if (*(uint *)&(pOVar11->_0).namespaze <= index) {
+              FUN_?();
+              pcVar10 = (code *)swi(3);
+              (*pcVar10)();
+              return;
+            }
+            lVar12 = *(longlong *)((longlong)&(pOVar11->_0).image + lVar7);
+            if (lVar12 == 0) goto code_?;
+            pDVar6 = (this->fields).tierShopData;
+            if (*(int *)(lVar12 + 0x10) == woid) {
+              if (((pDVar6 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
                                *)0x0) &&
-                  (pDVar5 = (Dictionary_2_System_Int32Enum_System_Object_ *)
+                  (pDVar8 = (Dictionary_2_System_Int32Enum_System_Object_ *)
                             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                             ByteEnum,System::Object]::
                             Dictionary_2_System_ByteEnum_System_Object__get_Item
-                                      ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar2,tier,
+                                      ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar6,
+                                       tier & 0xff,
                                        MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
                                       ),
-                  pDVar5 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0)) &&
+                  pDVar8 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0)) &&
                  (this_02 = (List_1_System_Object_ *)
                             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                             Int32Enum,System::Object]::
                             Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                      (pDVar5,documentationType,
+                                      (pDVar8,documentationType,
                                        MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__get_Item_MVWorldObjectDocumentationType_
                                       ), this_02 != (List_1_System_Object_ *)0x0)) {
                 mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
                 List_1_System_Object__RemoveAt
-                          (this_02,(int32_t)this,
+                          (this_02,index,
                            MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__RemoveAt_int_
                           );
                 break;
               }
               goto code_?;
             }
-            this = (GameTierShopRepository *)((int)&this->klass + 1);
-            if (pDVar2 == (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
+            index = index + 1;
+            lVar7 = lVar7 + 8;
+            if (pDVar6 == (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
                            *)0x0) goto code_?;
           }
-          pDVar2 = (pGVar1->fields).tierShopData;
-          if (((pDVar2 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
+          pDVar6 = (this->fields).tierShopData;
+          if (((pDVar6 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
                            *)0x0) &&
-              (pDVar5 = (Dictionary_2_System_Int32Enum_System_Object_ *)
+              (pDVar8 = (Dictionary_2_System_Int32Enum_System_Object_ *)
                         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                         ByteEnum,System::Object]::
                         Dictionary_2_System_ByteEnum_System_Object__get_Item
-                                  ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar2,tier,
+                                  ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar6,tier & 0xff
+                                   ,
                                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
-                                  ), pDVar5 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0))
-             && (pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                  ), pDVar8 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0))
+             && (pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                           Int32Enum,System::Object]::
                           Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                    (pDVar5,documentationType,
+                                    (pDVar8,documentationType,
                                      MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__get_Item_MVWorldObjectDocumentationType_
-                                    ), pOVar6 != (Object *)0x0)) {
-            if (pOVar6[1].monitor == (MonitorData *)0x0) {
-              pDVar2 = (pGVar1->fields).tierShopData;
-              if ((pDVar2 == (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
+                                    ), pOVar9 != (Object *)0x0)) {
+            if (*(int *)&pOVar9[1].monitor == 0) {
+              pDVar6 = (this->fields).tierShopData;
+              if ((pDVar6 == (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
                               *)0x0) ||
-                 (pDVar5 = (Dictionary_2_System_Int32Enum_System_Object_ *)
+                 (pDVar8 = (Dictionary_2_System_Int32Enum_System_Object_ *)
                            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                            ByteEnum,System::Object]::
                            Dictionary_2_System_ByteEnum_System_Object__get_Item
-                                     ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar2,tier,
+                                     ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar6,
+                                      tier & 0xff,
                                       MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
                                      ),
-                 pDVar5 == (Dictionary_2_System_Int32Enum_System_Object_ *)0x0))
+                 pDVar8 == (Dictionary_2_System_Int32Enum_System_Object_ *)0x0))
               goto code_?;
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
               Object]::Dictionary_2_System_Int32Enum_System_Object__Remove
-                        (pDVar5,documentationType,
+                        (pDVar8,documentationType,
                          MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__Remove_MVWorldObjectDocumentationType_
                         );
             }
-            pDVar2 = (pGVar1->fields).tierShopData;
-            if ((pDVar2 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
+            pDVar6 = (this->fields).tierShopData;
+            if ((pDVar6 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
                             *)0x0) &&
-               (this_03 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                           *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                             ByteEnum,System::Object]::
-                             Dictionary_2_System_ByteEnum_System_Object__get_Item
-                                       ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar2,tier,
-                                        MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
-                                       ),
-               this_03 !=
-               (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                *)0x0)) {
-              iVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::
-                      UIElements::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
-                      Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
-                                (this_03,
-                                 MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>__get_Count__
-                                );
-              if (iVar8 != 0) {
+               (pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                         ByteEnum,System::Object]::
+                         Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                   ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar6,
+                                    tier & 0xff,
+                                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__get_Item_MV__Common__GamePassTier_
+                                   ), pOVar9 != (Object *)0x0)) {
+              if (*(int *)&pOVar9[2].klass != *(int *)&pOVar9[2].monitor) {
                 return;
               }
-              pDVar2 = (pGVar1->fields).tierShopData;
-              if (pDVar2 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
+              pDVar6 = (this->fields).tierShopData;
+              if (pDVar6 != (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
                              *)0x0) {
                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
                 Object]::Dictionary_2_System_ByteEnum_System_Object__Remove
-                          ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar2,tier,
+                          ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar6,tier & 0xff,
                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__Remove_MV__Common__GamePassTier_
                           );
                 return;
@@ -468,11 +605,9 @@ code_?:
     }
   }
 code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -484,31 +619,45 @@ void Assembly-CSharp.dll::GameTierShopRepository::GameTierShopRepository__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
-             *)func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>
-                              );
+             *)FUN_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>
+                            );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
   RuntimeEvents::ExplosionEvent+ExplosionValues]::
   Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues___ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_System::Collections::Generic::Dictionary<MVWorldObjectDocumentationType,_System::Collections::Generic::List<MVWorldObjectClient>_>_>__Dictionary__
             );
-  method_00 = (MethodInfo *)&this->fields;
+  bVar1 = iRam_? != 0;
   (this->fields).tierShopData =
        (Dictionary_2_MV_Common_GamePassTier_Dictionary_2_MVWorldObjectDocumentationType_List_1_MVWorldObjectClient_
         *)this_00;
-  func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 

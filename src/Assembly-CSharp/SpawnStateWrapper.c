@@ -6,81 +6,103 @@ void Assembly-CSharp.dll::SpawnStateWrapper::SpawnStateWrapper_Destroy
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UpdateController);
+    FUN_?(&TypeInfo__UpdateController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    in_ECX = extraout_ECX;
   }
-  if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UpdateController);
-    in_ECX = extraout_ECX_00;
+  if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+    FUN_?();
   }
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__RemoveAll_System__Predicate<PriorityDataUpdate>_
-                    ,in_ECX,unaff_EBP);
-    func_?(&TypeInfo__System__Predicate<PriorityDataUpdate>);
-    func_?(&
-                    MethodInfo__UpdateController____c__DisplayClass6_0___RemoveUpdateObject_b__0_PriorityDataUpdate_
-                   );
-    func_?(&TypeInfo__UpdateController____c__DisplayClass6_0);
-    func_?(&TypeInfo__UpdateController);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__RemoveAll_System__Predicate<PriorityDataUpdate>_
+                  ,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Predicate<PriorityDataUpdate>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__UpdateController____c__DisplayClass6_0___RemoveUpdateObject_b__0_PriorityDataUpdate_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UpdateController____c__DisplayClass6_0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UpdateController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__UpdateController____c__DisplayClass6_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value != (Object *)0x0) {
-    value[1].klass = (Object__Class *)this;
-    func_?(value + 1,this);
-    iVar1 = 0x10;
-    uVar2 = 0;
+  lVar1 = FUN_?(TypeInfo__UpdateController____c__DisplayClass6_0);
+  if (lVar1 != 0) {
+    bVar2 = iRam_? != 0;
+    *(SpawnStateWrapper **)(lVar1 + 0x10) = this;
+    if (bVar2) {
+      uVar3 = (uint)(lVar1 + 0x10U >> 0xc);
+      puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar5 = *puVar4;
+        LOCK();
+        uVar6 = *puVar4;
+        if (uVar5 == uVar6) {
+          *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar5 != uVar6);
+    }
+    uVar3 = 0;
+    lVar7 = 0x20;
     while( true ) {
-      if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UpdateController);
+      if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__UpdateController);
       }
-      pLVar3 = TypeInfo__UpdateController->static_fields->updateBuckets;
-      if (pLVar3 == (List_1_PriorityDataUpdate___Array *)0x0) goto code_?;
-      if ((int)pLVar3->max_length <= (int)uVar2) {
+      pLVar8 = TypeInfo__UpdateController->static_fields->updateBuckets;
+      if (pLVar8 == (List_1_PriorityDataUpdate___Array *)0x0) break;
+      if ((int)pLVar8->max_length <= (int)uVar3) {
         return;
       }
-      if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UpdateController);
+      if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__UpdateController);
       }
-      pLVar3 = TypeInfo__UpdateController->static_fields->updateBuckets;
-      if (pLVar3 == (List_1_PriorityDataUpdate___Array *)0x0) goto code_?;
-      if (pLVar3->max_length <= uVar2) break;
-      this_01 = *(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ **)
-                 ((int)pLVar3->vector + iVar1 + -0x10);
-      this_00 = (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)value[1].monitor;
-      if (this_00 == (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
-        this_00 = (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-                  func_?(TypeInfo__System__Predicate<PriorityDataUpdate>);
-        mscorlib.dll::System::Predicate`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::
-        Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry___ctor
-                  (this_00,value,
-                   MethodInfo__UpdateController____c__DisplayClass6_0___RemoveUpdateObject_b__0_PriorityDataUpdate_
-                   ,(MethodInfo *)0x0);
-        value[1].monitor = (MonitorData *)this_00;
-        func_?(&value[1].monitor,this_00);
+      pLVar8 = TypeInfo__UpdateController->static_fields->updateBuckets;
+      if (pLVar8 == (List_1_PriorityDataUpdate___Array *)0x0) break;
+      if ((uint)pLVar8->max_length <= uVar3) {
+        FUN_?();
+        pcVar9 = (code *)swi(3);
+        (*pcVar9)();
+        return;
       }
-      if (this_01 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0)
-      goto code_?;
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-      VisualTreeAsset+UsingEntry]::
-      List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__RemoveAll
-                (this_01,this_00,
+      match = *(Predicate_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ **)
+               (lVar1 + 0x18);
+      this_00 = *(List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ **)
+                 ((longlong)pLVar8->vector + lVar7 + -0x20);
+      if (match == (Predicate_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+      {
+        match = (Predicate_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+                FUN_?(TypeInfo__System__Predicate<PriorityDataUpdate>);
+        FUN_?(match,lVar1);
+        *(Predicate_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ **)(lVar1 + 0x18)
+             = match;
+        func_?(lVar1 + 0x18);
+      }
+      if (this_00 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+      break;
+      mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+      XmlSchemaObjectTable+XmlSchemaObjectEntry]::
+      List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__RemoveAll
+                (this_00,match,
                  MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__RemoveAll_System__Predicate<PriorityDataUpdate>_
                 );
-      uVar2 = uVar2 + 1;
-      iVar1 = iVar1 + 4;
+      uVar3 = uVar3 + 1;
+      lVar7 = lVar7 + 8;
     }
-    func_?();
   }
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -109,8 +131,8 @@ void Assembly-CSharp.dll::SpawnStateWrapper::SpawnStateWrapper_UpdateControllerF
   this_00 = (NotImplementedException *)func_?(uVar1);
   mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor
             (this_00,(MethodInfo *)0x0);
-  func_?(&MethodInfo__SpawnStateWrapper__UpdateControllerFixedUpdate__);
-  func_?(this_00);
+  uVar1 = func_?(&MethodInfo__SpawnStateWrapper__UpdateControllerFixedUpdate__);
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -123,29 +145,47 @@ void Assembly-CSharp.dll::SpawnStateWrapper::SpawnStateWrapper_UpdateControllerU
                (SpawnStateWrapper *this,MethodInfo *method)
 
 {
-  diff = WaitForTicks::WaitForTicks_Diff((this->fields).takenTime,(MethodInfo *)0x0);
-  bVar1 = MVWorldObject.dll::MV::WorldObject::WorldObjects::Spawner::CanSpawnChecker::
-          CanSpawnChecker_Check
-                    (diff,(this->fields).respawnInterval,(this->fields).takenCounter,
-                     (this->fields).respawnCount,(MethodInfo *)0x0);
-  (this->fields)._SpawnState_k__BackingField = (bVar1 ^ 1) + 1;
-  if ((this->fields).prevSpawnState != (this->fields)._SpawnState_k__BackingField) {
-    if ((this->fields)._SpawnState_k__BackingField == 2) {
-      piVar2 = &(this->fields).takenCounter;
-      *piVar2 = *piVar2 + 1;
-    }
-    pAVar3 = (this->fields).stateChangeCallback;
-    if (pAVar3 == (Action_1_SpawnState_ *)0x0) {
-      func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
-      return;
-    }
-    puStack5 = (pAVar3->fields)._._.method;
-    iStack6 = (this->fields)._SpawnState_k__BackingField;
-    (*(pAVar3->fields)._._.invoke_impl)();
+  iVar1 = (this->fields).takenTime;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  (this->fields).prevSpawnState = (this->fields)._SpawnState_k__BackingField;
+  pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar2 != (MVGameControllerBase *)0x0) &&
+     (this_00 = (pMVar2->fields).game, this_00 != (MVNetworkGame *)0x0)) {
+    iVar3 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(this_00,(MethodInfo *)0x0);
+    if ((this->fields).respawnInterval < iVar3 - iVar1) {
+      iVar1 = (this->fields).respawnCount;
+      uVar4 = 0;
+      if (-1 < iVar1) {
+        uVar4 = (uint)(iVar1 <= (this->fields).takenCounter);
+      }
+    }
+    else {
+      uVar4 = 1;
+    }
+    iVar1 = uVar4 + 1;
+    (this->fields)._SpawnState_k__BackingField = iVar1;
+    if ((this->fields).prevSpawnState != iVar1) {
+      if (iVar1 == 2) {
+        piVar5 = &(this->fields).takenCounter;
+        *piVar5 = *piVar5 + 1;
+      }
+      pAVar6 = (this->fields).stateChangeCallback;
+      if (pAVar6 == (Action_1_SpawnState_ *)0x0) goto code_?;
+      (*(pAVar6->fields)._._.invoke_impl)
+                ((pAVar6->fields)._._.method_code,(this->fields)._SpawnState_k__BackingField,
+                 (pAVar6->fields)._._.method);
+    }
+    (this->fields).prevSpawnState = (this->fields)._SpawnState_k__BackingField;
+    return;
+  }
+code_?:
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -158,22 +198,84 @@ void Assembly-CSharp.dll::SpawnStateWrapper::SpawnStateWrapper__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UpdateController);
+    FUN_?(&TypeInfo__UpdateController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  bVar1 = iRam_? != 0;
+  (this->fields).stateChangeCallback = stateChangeCallback;
   (this->fields).respawnInterval = respawnInterval;
   (this->fields).respawnCount = respawnCount;
-  (this->fields).stateChangeCallback = stateChangeCallback;
-  func_?(&(this->fields).stateChangeCallback,stateChangeCallback);
-  (this->fields).takenTime = takenTime;
-  if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UpdateController);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).stateChangeCallback >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
   }
-  UpdateController::UpdateController_AddUpdateObject
-            ((IUpdatecontrollerSubscriberUpdate *)this,UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1,
-             (MethodInfo *)0x0);
+  (this->fields).takenTime = takenTime;
+  if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__Add_PriorityDataUpdate_
+                  ,2,1,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UpdateController);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)&uStack_6 >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
+  uStack_7 = 2;
+  uStack_8 = 1;
+  uStack_6 = this;
+  if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__UpdateController);
+  }
+  pLVar9 = TypeInfo__UpdateController->static_fields->updateBuckets;
+  if (pLVar9 != (List_1_PriorityDataUpdate___Array *)0x0) {
+    if ((uint)pLVar9->max_length < 3) {
+      FUN_?();
+      pcVar10 = (code *)swi(3);
+      (*pcVar10)();
+      return;
+    }
+    if (pLVar9->vector[2] != (List_1_PriorityDataUpdate_ *)0x0) {
+      uStack_11 = (undefined4)uStack_6;
+      uStack_12 = uStack_6._4_4_;
+      uStack_13 = uStack_7;
+      uStack_14 = uStack_8;
+      FUN_?(pLVar9->vector[2],&uStack_11,
+                    MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__Add_PriorityDataUpdate_
+                   );
+      return;
+    }
+  }
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

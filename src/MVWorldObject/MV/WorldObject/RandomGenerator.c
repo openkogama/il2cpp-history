@@ -6,12 +6,18 @@ int32_t MVWorldObject.dll::MV::WorldObject::RandomGenerator::RandomGenerator_Get
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__MV__WorldObject__RandomGenerator__GetNewRandom__);
-    func_?(&TypeInfo__MV__WorldObject__RandomGenerator);
+    FUN_?(&MethodInfo__MV__WorldObject__RandomGenerator__GetNewRandom__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__RandomGenerator);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__RandomGenerator);
+    FUN_?(&TypeInfo__MV__WorldObject__RandomGenerator);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   uVar1 = (this->fields).step;
@@ -19,58 +25,40 @@ int32_t MVWorldObject.dll::MV::WorldObject::RandomGenerator::RandomGenerator_Get
   uVar3 = (this->fields).round;
   uVar4 = uVar1 + 1;
   (this->fields).step = uVar4;
-  if ((TypeInfo__MV__WorldObject__RandomGenerator->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__WorldObject__RandomGenerator);
+  if (*(int *)&(TypeInfo__MV__WorldObject__RandomGenerator->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__MV__WorldObject__RandomGenerator);
   }
   pUVar5 = TypeInfo__MV__WorldObject__RandomGenerator->static_fields->randomNumbers;
-  if (pUVar5 == (UInt16__Array *)0x0) {
-code_?:
-    func_?();
-code_?:
-    pMVar6 = MethodInfo__MV__WorldObject__RandomGenerator__GetNewRandom__;
-    uVar7 = func_?();
-    func_?(uVar7,pMVar6);
-  }
-  else {
-    uVar8 = pUVar5->max_length;
-    iVar9 = (int)uVar8 >> 0x1f;
-    if ((iVar9 < 1) && ((iVar9 < 0 || (uVar8 <= uVar4)))) {
-      puVar10 = &(this->fields).round;
-      *puVar10 = *puVar10 + 1;
+  if (pUVar5 != (UInt16__Array *)0x0) {
+    if ((longlong)(int)pUVar5->max_length <= (longlong)(ulonglong)uVar4) {
+      puVar6 = &(this->fields).round;
+      *puVar6 = *puVar6 + 1;
       (this->fields).step = 0;
     }
     uVar4 = uVar3 * uVar1 * uVar2;
-    if ((TypeInfo__MV__WorldObject__RandomGenerator->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MV__WorldObject__RandomGenerator);
+    if (*(int *)&(TypeInfo__MV__WorldObject__RandomGenerator->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__MV__WorldObject__RandomGenerator);
     }
-    pRVar11 = TypeInfo__MV__WorldObject__RandomGenerator;
     pUVar5 = TypeInfo__MV__WorldObject__RandomGenerator->static_fields->randomNumbers;
-    pUVar12 = TypeInfo__MV__WorldObject__RandomGenerator->static_fields->randomNumbers;
-    if (pUVar12 == (UInt16__Array *)0x0) goto code_?;
-    lVar13 = func_?(uVar4,0,pUVar12->max_length,(int)pUVar12->max_length >> 0x1f);
-    if (0x7fffffff < lVar13) goto code_?;
-    uVar8 = func_?(uVar4,0,pUVar12->max_length,(int)pUVar12->max_length >> 0x1f);
-    if (pUVar5->max_length <= uVar8) goto code_?;
-    uVar14 = pUVar5->vector[uVar8];
-    pUVar5 = pRVar11->static_fields->randomNumbers;
-    if (pUVar5 == (UInt16__Array *)0x0) goto code_?;
-    lVar13 = func_?(~uVar4,0,pUVar5->max_length,(int)pUVar5->max_length >> 0x1f);
-    if (lVar13 < 0x80000000) {
-      uVar4 = func_?(~uVar4,0,pUVar5->max_length,(int)pUVar5->max_length >> 0x1f);
-      if (uVar4 < pUVar5->max_length) {
-        return (uint)pUVar5->vector[uVar4] + (uint)uVar14 * 0x10000;
+    if (pUVar5 != (UInt16__Array *)0x0) {
+      lVar7 = (longlong)(ulonglong)uVar4 % (longlong)(int)pUVar5->max_length;
+      if ((uint)lVar7 < (uint)pUVar5->max_length) {
+        pUVar8 = TypeInfo__MV__WorldObject__RandomGenerator->static_fields->randomNumbers;
+        lVar9 = (longlong)(ulonglong)~uVar4 % (longlong)(int)pUVar8->max_length;
+        if ((uint)lVar9 < (uint)pUVar8->max_length) {
+          return (uint)pUVar8->vector[lVar9] + (uint)pUVar5->vector[lVar7] * 0x10000;
+        }
       }
-      goto code_?;
+      FUN_?();
+      pcVar10 = (code *)swi(3);
+      iVar11 = (*pcVar10)();
+      return iVar11;
     }
   }
-  pMVar6 = MethodInfo__MV__WorldObject__RandomGenerator__GetNewRandom__;
-  uVar7 = func_?();
-  func_?(uVar7,pMVar6);
-code_?:
-  func_?();
-  pcVar15 = (code *)swi(3);
-  iVar16 = (*pcVar15)();
-  return iVar16;
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  iVar11 = (*pcVar10)();
+  return iVar11;
 }
 
 
@@ -81,7 +69,9 @@ uint32_t MVWorldObject.dll::MV::WorldObject::RandomGenerator::RandomGenerator_In
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__RandomGenerator);
+    FUN_?(&TypeInfo__MV__WorldObject__RandomGenerator);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   uVar1 = (this->fields).step;
@@ -89,23 +79,21 @@ uint32_t MVWorldObject.dll::MV::WorldObject::RandomGenerator::RandomGenerator_In
   uVar3 = (this->fields).round;
   uVar4 = uVar1 + 1;
   (this->fields).step = uVar4;
-  if ((TypeInfo__MV__WorldObject__RandomGenerator->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__WorldObject__RandomGenerator);
+  if (*(int *)&(TypeInfo__MV__WorldObject__RandomGenerator->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__MV__WorldObject__RandomGenerator);
   }
   pUVar5 = TypeInfo__MV__WorldObject__RandomGenerator->static_fields->randomNumbers;
   if (pUVar5 != (UInt16__Array *)0x0) {
-    uVar6 = pUVar5->max_length;
-    if (((int)uVar6 >> 0x1f < 1) && (((int)uVar6 < 0 && (int)uVar6 >> 0x1f < 1 || (uVar6 <= uVar4)))
-       ) {
-      puVar7 = &(this->fields).round;
-      *puVar7 = *puVar7 + 1;
+    if ((longlong)(int)pUVar5->max_length <= (longlong)(ulonglong)uVar4) {
+      puVar6 = &(this->fields).round;
+      *puVar6 = *puVar6 + 1;
       (this->fields).step = 0;
     }
     return uVar1 * uVar3 * uVar2;
   }
-  func_?();
-  pcVar8 = (code *)swi(3);
-  uVar1 = (*pcVar8)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  uVar1 = (*pcVar7)();
   return uVar1;
 }
 
@@ -117,27 +105,86 @@ int32_t MVWorldObject.dll::MV::WorldObject::RandomGenerator::RandomGenerator_Ran
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Math);
+    FUN_?(&TypeInfo__System__Math);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (min <= max + -1) {
-    iVar1 = RandomGenerator_GetNewRandom(this,(MethodInfo *)0x0);
-    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Math);
-    }
-    uVar2 = iVar1 / 2 >> 0x1f;
-    return min + (int)((iVar1 / 2 ^ uVar2) - uVar2) % (((max + -1) - min) + 1);
+  if (max + -1 < min) {
+    uVar1 = func_?(&TypeInfo__System__Exception);
+    this_00 = (Exception *)func_?(uVar1);
+    message = (String *)func_?(&StringLiteral_max_must_be_greater_than_min);
+    mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
+    uVar1 = func_?(&MethodInfo__MV__WorldObject__RandomGenerator__Range_int__int_);
+    FUN_?(this_00,uVar1);
+    pcVar2 = (code *)swi(3);
+    iVar3 = (*pcVar2)();
+    return iVar3;
   }
-  uVar3 = func_?(&TypeInfo__System__Exception);
-  this_00 = (Exception *)func_?(uVar3);
-  method_00 = (MethodInfo *)0x0;
-  message = (String *)func_?(&StringLiteral_max_must_be_greater_than_min);
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
-  uVar3 = func_?(&MethodInfo__MV__WorldObject__RandomGenerator__Range_int__int_);
-  func_?(this_00,uVar3);
-  pcVar4 = (code *)swi(3);
-  iVar1 = (*pcVar4)();
-  return iVar1;
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__MV__WorldObject__RandomGenerator__GetNewRandom__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__RandomGenerator);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MV__WorldObject__RandomGenerator);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  uVar4 = (this->fields).step;
+  uVar5 = (this->fields).seed;
+  uVar6 = (this->fields).round;
+  uVar7 = uVar4 + 1;
+  (this->fields).step = uVar7;
+  if (*(int *)&(TypeInfo__MV__WorldObject__RandomGenerator->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__MV__WorldObject__RandomGenerator);
+  }
+  pUVar8 = TypeInfo__MV__WorldObject__RandomGenerator->static_fields->randomNumbers;
+  if (pUVar8 != (UInt16__Array *)0x0) {
+    if ((longlong)(int)pUVar8->max_length <= (longlong)(ulonglong)uVar7) {
+      puVar9 = &(this->fields).round;
+      *puVar9 = *puVar9 + 1;
+      (this->fields).step = 0;
+    }
+    uVar7 = uVar4 * uVar6 * uVar5;
+    if (*(int *)&(TypeInfo__MV__WorldObject__RandomGenerator->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__MV__WorldObject__RandomGenerator);
+    }
+    pUVar8 = TypeInfo__MV__WorldObject__RandomGenerator->static_fields->randomNumbers;
+    if (pUVar8 != (UInt16__Array *)0x0) {
+      lVar10 = (longlong)(ulonglong)uVar7 % (longlong)(int)pUVar8->max_length;
+      if ((uint)lVar10 < (uint)pUVar8->max_length) {
+        uVar11 = pUVar8->vector[lVar10];
+        pUVar8 = TypeInfo__MV__WorldObject__RandomGenerator->static_fields->randomNumbers;
+        lVar10 = (longlong)(ulonglong)~uVar7 % (longlong)(int)pUVar8->max_length;
+        if ((uint)lVar10 < (uint)pUVar8->max_length) {
+          uVar12 = pUVar8->vector[lVar10];
+          if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          iVar13 = (int)((uint)uVar12 + (uint)uVar11 * 0x10000) / 2;
+          iVar14 = -iVar13;
+          if (iVar14 < 0) {
+            iVar14 = iVar13;
+          }
+          return min + iVar14 % (((max + -1) - min) + 1);
+        }
+      }
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      iVar3 = (*pcVar2)();
+      return iVar3;
+    }
+  }
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  iVar3 = (*pcVar2)();
+  return iVar3;
 }
 
 
@@ -148,21 +195,31 @@ String * MVWorldObject.dll::MV::WorldObject::RandomGenerator::RandomGenerator_To
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__UInt32);
-    func_?(&StringLiteral_Seed__0___Round__1___Step__2__);
+    FUN_?(&StringLiteral_Seed__0___Round__1___Step__2__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pRVar1 = this;
-  this = (RandomGenerator *)(this->fields).seed;
-  arg0 = (Object *)func_?(TypeInfo__System__UInt32,&this);
-  uStack_2 = (pRVar1->fields).round;
-  arg1 = (Object *)func_?(TypeInfo__System__UInt32,&uStack_2);
-  uStack_3 = (pRVar1->fields).step;
-  arg2 = (Object *)func_?(TypeInfo__System__UInt32,&uStack_3);
-  pSVar4 = mscorlib.dll::System::String::String_Format_2
-                     (StringLiteral_Seed__0___Round__1___Step__2__,arg0,arg1,arg2,(MethodInfo *)0x0)
-  ;
-  return pSVar4;
+  auStackX_8[0] = (this->fields).seed;
+  arg0 = (Object *)FUN_?(uRam_?,auStackX_8);
+  auStackX_8[0] = (this->fields).round;
+  arg1 = (Object *)FUN_?(uRam_?,auStackX_8);
+  auStackX_8[0] = (this->fields).step;
+  arg2 = (Object *)FUN_?(uRam_?,auStackX_8);
+  pSVar1 = StringLiteral_Seed__0___Round__1___Step__2__;
+  PStack_2._arg0 = (Object *)0x0;
+  PStack_2._arg1 = (Object *)0x0;
+  PStack_2._arg2 = (Object *)0x0;
+  PStack_2._args = (Object__Array *)0x0;
+  mscorlib.dll::System::ParamsArray::ParamsArray__ctor_2
+            (&PStack_2,arg0,arg1,arg2,(MethodInfo *)0x0);
+  PStack_3._arg0 = PStack_2._arg0;
+  PStack_3._arg1 = PStack_2._arg1;
+  PStack_3._arg2 = PStack_2._arg2;
+  PStack_3._args = PStack_2._args;
+  pSVar1 = mscorlib.dll::System::String::String_FormatHelper
+                     ((IFormatProvider *)0x0,pSVar1,&PStack_3,(MethodInfo *)0x0);
+  return pSVar1;
 }
 
 
@@ -172,17 +229,36 @@ void MVWorldObject.dll::MV::WorldObject::RandomGenerator::RandomGenerator__cctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__RandomGenerator);
-    func_?(&_4666F65F06B4D88A8B0A0B9B14E88555CB0664EC0219F1C8B5315FD000218E28_Field);
-    func_?(&TypeInfo__System__UInt16);
+    FUN_?(&TypeInfo__MV__WorldObject__RandomGenerator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&_4666F65F06B4D88A8B0A0B9B14E88555CB0664EC0219F1C8B5315FD000218E28_Field);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__UInt16);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  array = (UInt16__Array *)func_?(TypeInfo__System__UInt16,0x100);
+  array = (UInt16__Array *)FUN_?(TypeInfo__System__UInt16,0x100);
   mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::RuntimeHelpers_InitializeArray_1
             ((Array *)array,__4666F65F06B4D88A8B0A0B9B14E88555CB0664EC0219F1C8B5315FD000218E28_Field
              ,(MethodInfo *)0x0);
+  bVar1 = iRam_? != 0;
   TypeInfo__MV__WorldObject__RandomGenerator->static_fields->randomNumbers = array;
-  func_?(TypeInfo__MV__WorldObject__RandomGenerator->static_fields,array);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)TypeInfo__MV__WorldObject__RandomGenerator->static_fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 
@@ -193,10 +269,6 @@ void MVWorldObject.dll::MV::WorldObject::RandomGenerator::RandomGenerator__ctor
                (RandomGenerator *this,uint32_t seed,uint32_t step,uint32_t round,MethodInfo *method)
 
 {
-  (this->fields).step = 1;
-  (this->fields).round = 1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).seed = seed;
   (this->fields).step = step;
   (this->fields).round = round;

@@ -20,6 +20,7 @@ namespace MV.WorldObject
 		private Dictionary<int, MvAvatarMetaData> avatarWOIDAvatarMetaData;
 	
 		// Constructors
+		public MvAvatarMetaDataWoMap();
 		public MvAvatarMetaDataWoMap(BytePacker bp);
 	
 		// Methods

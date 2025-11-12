@@ -94,7 +94,7 @@ public class Styles : MonoBehaviour
 		public ButtonStyleDef();
 
 		// Methods
-		public void Set(Button button);
+		public void Set(UnityEngine.UI.Button button);
 	}
 
 	[Serializable]
@@ -183,11 +183,11 @@ public class Styles : MonoBehaviour
 	protected void OnDestroy();
 	public void Initialize();
 	private static bool HandleUnInitalized();
-	public static void SetStyle(Button button, ButtonStyle buttonStyle, ColorStyle colorStyle, SoundStyle soundStyle);
+	public static void SetStyle(UnityEngine.UI.Button button, ButtonStyle buttonStyle, ColorStyle colorStyle, SoundStyle soundStyle);
 	public static void SetStyle(UnityEngine.UI.Text text, TextStyle textStyle, ColorStyle colorStyle);
 	public static void SetStyle(Graphic graphic, ColorStyle colorStyle);
 	public static void SetStyle(Graphic image, MVTeam team);
-	public static void SetStyle(Button button, ButtonStyle buttonStyle, MVTeam team, SoundStyle soundStyle = SoundStyle.NoSound);
+	public static void SetStyle(UnityEngine.UI.Button button, ButtonStyle buttonStyle, MVTeam team, SoundStyle soundStyle = SoundStyle.NoSound);
 	public static void SetStyle(EffectStyleObject effectStyleObject, EffectStyle effectStyle);
 	public static Color GetTeamColor(MVTeam team, bool darkTeam = false);
 	public static ColorStyle GetTeamColorStyle(MVTeam team, bool darkTeam = false, bool alwaysColor = false);

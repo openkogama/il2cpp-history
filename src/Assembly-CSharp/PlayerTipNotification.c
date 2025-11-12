@@ -7,56 +7,54 @@ void Assembly-CSharp.dll::PlayerTipNotification::PlayerTipNotification_Initializ
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&TypeInfo__System__String);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pPVar1 = this;
-  this = (PlayerTipNotification *)CONCAT13(1,this._0_3_);
-  pTVar2 = (pPVar1->fields).tipText;
-  (pPVar1->fields)._.timeSinceStart = 0.0;
-  key = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
+  pTVar1 = (this->fields).tipText;
+  (this->fields)._.timeSinceStart = 0.0;
+  auStackX_8[0] = 1;
+  pOVar2 = (Object *)FUN_?(uRam_?,auStackX_8);
   if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,key,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    uVar4 = CONCAT44(TypeInfo__System__String,TVar3.m_Index);
-    if (pTVar2 != (Text *)0x0) {
-      TVar5.m_Index = 0;
-      if (TVar3.m_Index != 0) {
-        if (*(String__Class **)TVar3.m_Index == TypeInfo__System__String) {
-          TVar5 = TVar3;
+    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (data,pOVar2,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if (pTVar1 != (Text *)0x0) {
+      if (pOVar2 != (Object *)0x0) {
+        pOVar3 = (Object *)0x0;
+        if (pOVar2->klass == pORam0000000182db2460) {
+          pOVar3 = pOVar2;
         }
-        if (TVar5.m_Index == 0) goto code_?;
+        if (pOVar3 == (Object *)0x0) {
+          FUN_?(pOVar2,pORam0000000182db2460);
+          pcVar4 = (code *)swi(3);
+          (*pcVar4)();
+          return;
+        }
       }
-      (*(code *)(pTVar2->klass->vtable).set_text.method)
-                (pTVar2,TVar5.m_Index,
-                 (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-      pNVar6 = (pPVar1->fields).fader;
-      if (pNVar6 != (NotificationFade *)0x0) {
-        (pNVar6->fields).pauseAt = (pNVar6->fields).duration;
-        this_00 = (pNVar6->fields).group;
-        (pNVar6->fields).playing = 1;
+      (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1);
+      pNVar5 = (this->fields).fader;
+      if (pNVar5 != (NotificationFade *)0x0) {
+        this_00 = (pNVar5->fields).group;
+        (pNVar5->fields).playing = 1;
+        (pNVar5->fields).pauseAt = (pNVar5->fields).duration;
         if (this_00 != (CanvasGroup *)0x0) {
           UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
                     (this_00,0.0,(MethodInfo *)0x0);
-          (pNVar6->fields).currentTime = 0.0;
+          (pNVar5->fields).currentTime = 0.0;
           return;
         }
       }
     }
   }
-  uVar4 = func_?();
-code_?:
-  func_?(uVar4);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

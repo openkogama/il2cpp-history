@@ -6,22 +6,28 @@ void Assembly-CSharp.dll::ContinueButtonHandler::ContinueButtonHandler_OnPointer
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&StringLiteral_Locking_cursor);
-    func_?(&StringLiteral_cursor_lock_pointer_down);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Locking_cursor);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_cursor_lock_pointer_down);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (eventData != (PointerEventData *)0x0) {
     if (((eventData->fields)._button_k__BackingField == 0) && ((this->fields).isMoveOverButton != 0)
        ) {
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)StringLiteral_cursor_lock_pointer_down,(MethodInfo *)0x0);
       if ((this->fields).OnClick != (Action *)0x0) {
-        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Debug);
+        if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+          FUN_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                   ((Object *)StringLiteral_Locking_cursor,(MethodInfo *)0x0);
@@ -34,7 +40,7 @@ void Assembly-CSharp.dll::ContinueButtonHandler::ContinueButtonHandler_OnPointer
     return;
   }
 code_?:
-  func_?();
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

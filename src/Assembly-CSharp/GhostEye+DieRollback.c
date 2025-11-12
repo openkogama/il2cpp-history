@@ -1,15 +1,4 @@
 
-/* Void Enter(GhostEye) */
-
-void Assembly-CSharp.dll::GhostEye+DieRollback::GhostEye_DieRollback_Enter
-               (GhostEye_DieRollback *this,GhostEye *ghostEye,MethodInfo *method)
-
-{
-  (this->fields).currentRollbackTime = 0.0;
-  return;
-}
-
-
 /* Quaternion Update(GhostEye) */
 
 Quaternion *
@@ -19,31 +8,82 @@ Assembly-CSharp.dll::GhostEye+DieRollback::GhostEye_DieRollback_Update
 
 {
   fVar1 = (this->fields).currentRollbackTime;
-  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  (this->fields).currentRollbackTime = fVar2 + fVar1;
-  if (ghostEye != (GhostEye *)0x0) {
-    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)ghostEye,(MethodInfo *)0x0);
-    if (this_00 != (Transform *)0x0) {
-      pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
-                         ((Quaternion *)&stack0xffffffec,this_00,(MethodInfo *)0x0);
-      pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Slerp
-                         ((Quaternion *)&stack0xffffffec,*pQVar3,(this->fields).rollbackRotation,
-                          (this->fields).currentRollbackTime,(MethodInfo *)0x0);
-      fVar1 = pQVar3->y;
-      fVar2 = pQVar3->z;
-      fVar4 = pQVar3->w;
-      __return_storage_ptr__->x = pQVar3->x;
-      __return_storage_ptr__->y = fVar1;
-      __return_storage_ptr__->z = fVar2;
-      __return_storage_ptr__->w = fVar4;
-      return __return_storage_ptr__;
-    }
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar2 = (code *)swi(3);
+    pQVar4 = (Quaternion *)(*pcVar2)();
+    return pQVar4;
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pQVar3 = (Quaternion *)(*pcVar5)();
-  return pQVar3;
+  pcRam_? = pcVar2;
+  fVar5 = (float)(*pcRam_?)();
+  (this->fields).currentRollbackTime = fVar5 + fVar1;
+  if ((ghostEye == (GhostEye *)0x0) ||
+     (obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                      ((Component *)ghostEye,(MethodInfo *)0x0), obj == (Transform *)0x0)) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    pQVar4 = (Quaternion *)(*pcVar2)();
+    return pQVar4;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  uStack_6 = 0;
+  uStack_7 = 0;
+  pvVar8 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar8 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar2 = (code *)swi(3);
+    pQVar4 = (Quaternion *)(*pcVar2)();
+    return pQVar4;
+  }
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar2 = (code *)swi(3);
+    pQVar4 = (Quaternion *)(*pcVar2)();
+    return pQVar4;
+  }
+  pcRam_? = pcVar2;
+  (*pcRam_?)(pvVar8,&uStack_6);
+  uStack_9._0_4_ = (this->fields).rollbackRotation.x;
+  uStack_9._4_4_ = (this->fields).rollbackRotation.y;
+  uStack_10._0_4_ = (this->fields).rollbackRotation.z;
+  uStack_10._4_4_ = (this->fields).rollbackRotation.w;
+  fVar1 = (this->fields).currentRollbackTime;
+  uStack_11 = 0;
+  uStack_12 = 0;
+  uStack_13 = (undefined4)uStack_6;
+  uStack_14 = uStack_6._4_4_;
+  uStack_15 = (undefined4)uStack_7;
+  uStack_16 = uStack_7._4_4_;
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar2 = (code *)swi(3);
+    pQVar4 = (Quaternion *)(*pcVar2)();
+    return pQVar4;
+  }
+  pcRam_? = pcVar2;
+  (*pcRam_?)(&uStack_13,&uStack_9,fVar1,&uStack_11);
+  __return_storage_ptr__->x = (float)(undefined4)uStack_11;
+  __return_storage_ptr__->y = (float)uStack_11._4_4_;
+  __return_storage_ptr__->z = (float)(undefined4)uStack_12;
+  __return_storage_ptr__->w = (float)uStack_12._4_4_;
+  return __return_storage_ptr__;
 }
 
 
@@ -53,20 +93,25 @@ void Assembly-CSharp.dll::GhostEye+DieRollback::GhostEye_DieRollback__ctor
                (GhostEye_DieRollback *this,MethodInfo *method)
 
 {
-  euler.y = 0.0;
-  euler.z = 0.0;
-  euler.x = (float)_UNK_?;
-  pQVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
-                     ((Quaternion *)&stack0xffffffec,euler,(MethodInfo *)0x0);
-  fVar2 = pQVar1->y;
-  fVar3 = pQVar1->z;
-  fVar4 = pQVar1->w;
-  (this->fields).rollbackRotation.x = pQVar1->x;
-  (this->fields).rollbackRotation.y = fVar2;
-  (this->fields).rollbackRotation.z = fVar3;
-  (this->fields).rollbackRotation.w = fVar4;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,in_stack_5);
+  uStack_1 = (ulonglong)_UNK_?;
+  uStack_2 = 0;
+  uStack_3 = 0;
+  uStack_4 = 0;
+  pcVar5 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+    uVar6 = func_?(&UNK_?);
+    FUN_?(uVar6,0);
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
+    return;
+  }
+  pcRam_? = pcVar5;
+  (*pcRam_?)(&uStack_1,&uStack_3);
+  (this->fields).rollbackRotation.x = (float)(undefined4)uStack_3;
+  (this->fields).rollbackRotation.y = (float)uStack_3._4_4_;
+  (this->fields).rollbackRotation.z = (float)(undefined4)uStack_4;
+  (this->fields).rollbackRotation.w = (float)uStack_4._4_4_;
   return;
 }
 

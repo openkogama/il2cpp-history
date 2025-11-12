@@ -5,117 +5,102 @@ void Assembly-CSharp.dll::MVMaterial::MVMaterial_AddVertices
                (MVMaterial *this,int32_t direction,MethodInfo *method)
 
 {
-  uVar1 = _UNK_?;
+  fVar1 = _UNK_?;
+  fVar2 = _UNK_?;
   switch(direction) {
   case 0:
-    vertex.y = (float)_UNK_?;
-    vertex.x = (float)_UNK_?;
-    vertex.z = -0.5;
-    uVar1 = _UNK_?;
-    MeshDataPool::MeshDataPool_AddVertex(vertex,(MethodInfo *)0x0);
-    vertex_05.y = (float)uVar1;
-    vertex_05.x = (float)uVar1;
-    vertex_05.z = -0.5;
-    MeshDataPool::MeshDataPool_AddVertex(vertex_05,(MethodInfo *)0x0);
-    vertex_11.y = (float)_UNK_?;
-    vertex_11.x = (float)_UNK_?;
-    vertex_11.z = -0.5;
-    uVar1 = _UNK_?;
-    MeshDataPool::MeshDataPool_AddVertex(vertex_11,(MethodInfo *)0x0);
-    uVar2 = CONCAT44(_UNK_?,uVar1);
-    goto code_?;
+    aVStack_3[0].y = _UNK_?;
+    aVStack_3[0].x = _UNK_?;
+    aVStack_3[0].z = _UNK_?;
+    MeshDataPool::MeshDataPool_AddVertex(aVStack_3,(MethodInfo *)0x0);
+    aVStack_3[0].z = fVar1;
+    aVStack_3[0].y = fVar2;
+    aVStack_3[0].x = fVar2;
+    MeshDataPool::MeshDataPool_AddVertex(aVStack_3,(MethodInfo *)0x0);
+    aVStack_3[0].z = fVar1;
+    aVStack_3[0].y = fVar1;
+    aVStack_3[0].x = fVar1;
+    MeshDataPool::MeshDataPool_AddVertex(aVStack_3,(MethodInfo *)0x0);
+    aVStack_3[0].z = fVar1;
+    break;
   case 1:
-    vertex_00.y = (float)_UNK_?;
-    vertex_00.x = (float)_UNK_?;
-    vertex_00.z = 0.5;
-    uVar3 = _UNK_?;
-    MeshDataPool::MeshDataPool_AddVertex(vertex_00,(MethodInfo *)0x0);
-    vertex_06.y = (float)uVar3;
-    vertex_06.x = (float)_UNK_?;
-    vertex_06.z = 0.5;
-    uVar1 = _UNK_?;
-    MeshDataPool::MeshDataPool_AddVertex(vertex_06,(MethodInfo *)0x0);
-    vertex_12.y = (float)uVar1;
-    vertex_12.x = (float)uVar3;
-    vertex_12.z = 0.5;
-    MeshDataPool::MeshDataPool_AddVertex(vertex_12,(MethodInfo *)0x0);
-    method_00 = (MethodInfo *)0x0;
-    uVar2 = CONCAT44(uVar1,uVar1);
+    aVStack_3[0].z = _UNK_?;
+    aVStack_3[0].y = _UNK_?;
+    aVStack_3[0].x = _UNK_?;
+    MeshDataPool::MeshDataPool_AddVertex(aVStack_3,(MethodInfo *)0x0);
+    fVar4 = _UNK_?;
+    fVar5 = fVar2;
     goto code_?;
   case 2:
-    vertex_01.y = (float)_UNK_?;
-    vertex_01.x = (float)_UNK_?;
-    vertex_01.z = 0.5;
-    MeshDataPool::MeshDataPool_AddVertex(vertex_01,(MethodInfo *)0x0);
-    vertex_07.y = (float)_UNK_?;
-    vertex_07.x = (float)uVar1;
-    vertex_07.z = -0.5;
-    MeshDataPool::MeshDataPool_AddVertex(vertex_07,(MethodInfo *)0x0);
-    vertex_13.y = (float)uVar1;
-    vertex_13.x = (float)uVar1;
-    vertex_13.z = 0.5;
-    MeshDataPool::MeshDataPool_AddVertex(vertex_13,(MethodInfo *)0x0);
-    break;
-  case 3:
-    vertex_02.y = (float)_UNK_?;
-    vertex_02.x = (float)_UNK_?;
-    vertex_02.z = -0.5;
-    uVar1 = _UNK_?;
-    MeshDataPool::MeshDataPool_AddVertex(vertex_02,(MethodInfo *)0x0);
-    vertex_08.y = (float)uVar1;
-    vertex_08.x = (float)uVar1;
-    vertex_08.z = 0.5;
-    MeshDataPool::MeshDataPool_AddVertex(vertex_08,(MethodInfo *)0x0);
-    vertex_14.y = (float)_UNK_?;
-    vertex_14.x = (float)uVar1;
-    vertex_14.z = -0.5;
-    MeshDataPool::MeshDataPool_AddVertex(vertex_14,(MethodInfo *)0x0);
-    method_00 = (MethodInfo *)0x0;
-    uVar2 = CONCAT44(_UNK_?,uVar1);
+    aVStack_3[0].z = _UNK_?;
+    aVStack_3[0].y = _UNK_?;
+    aVStack_3[0].x = _UNK_?;
+    MeshDataPool::MeshDataPool_AddVertex(aVStack_3,(MethodInfo *)0x0);
+    aVStack_3[0].z = fVar1;
+    aVStack_3[0].y = fVar2;
+    aVStack_3[0].x = fVar1;
+    MeshDataPool::MeshDataPool_AddVertex(aVStack_3,(MethodInfo *)0x0);
+    aVStack_3[0].z = fVar2;
+    fVar2 = fVar1;
     goto code_?;
+  case 3:
+    aVStack_3[0].y = _UNK_?;
+    aVStack_3[0].x = _UNK_?;
+    aVStack_3[0].z = _UNK_?;
+    MeshDataPool::MeshDataPool_AddVertex(aVStack_3,(MethodInfo *)0x0);
+    aVStack_3[0].z = fVar2;
+    aVStack_3[0].y = fVar2;
+    aVStack_3[0].x = fVar2;
+    MeshDataPool::MeshDataPool_AddVertex(aVStack_3,(MethodInfo *)0x0);
+    aVStack_3[0].z = fVar1;
+    aVStack_3[0].y = fVar1;
+    MeshDataPool::MeshDataPool_AddVertex(aVStack_3,(MethodInfo *)0x0);
+    aVStack_3[0].z = fVar2;
+    break;
   case 4:
-    vertex_03.y = (float)_UNK_?;
-    vertex_03.x = (float)_UNK_?;
-    vertex_03.z = 0.5;
-    uVar1 = _UNK_?;
-    MeshDataPool::MeshDataPool_AddVertex(vertex_03,(MethodInfo *)0x0);
-    vertex_09.y = (float)uVar1;
-    vertex_09.x = (float)uVar1;
-    vertex_09.z = 0.5;
-    uVar3 = uVar1;
-    MeshDataPool::MeshDataPool_AddVertex(vertex_09,(MethodInfo *)0x0);
-    vertex_15.y = (float)uVar3;
-    vertex_15.x = (float)uVar1;
-    vertex_15.z = -0.5;
-    MeshDataPool::MeshDataPool_AddVertex(vertex_15,(MethodInfo *)0x0);
+    aVStack_3[0].z = _UNK_?;
+    aVStack_3[0].y = _UNK_?;
+    aVStack_3[0].x = _UNK_?;
+    MeshDataPool::MeshDataPool_AddVertex(aVStack_3,(MethodInfo *)0x0);
+    fVar4 = fVar2;
+    fVar5 = fVar1;
+code_?:
+    fVar1 = fVar4;
+    aVStack_3[0].z = fVar2;
+    aVStack_3[0].y = fVar2;
+    aVStack_3[0].x = fVar1;
+    MeshDataPool::MeshDataPool_AddVertex(aVStack_3,(MethodInfo *)0x0);
+    aVStack_3[0].y = fVar1;
+    aVStack_3[0].x = fVar5;
+    aVStack_3[0].z = fVar5;
+    MeshDataPool::MeshDataPool_AddVertex(aVStack_3,(MethodInfo *)0x0);
+    fVar2 = fVar1;
+    aVStack_3[0].z = fVar5;
     break;
   case 5:
-    vertex_04.y = (float)_UNK_?;
-    vertex_04.x = (float)_UNK_?;
-    vertex_04.z = 0.5;
-    MeshDataPool::MeshDataPool_AddVertex(vertex_04,(MethodInfo *)0x0);
-    vertex_10.y = (float)uVar1;
-    vertex_10.x = (float)uVar1;
-    vertex_10.z = 0.5;
-    uVar3 = uVar1;
-    MeshDataPool::MeshDataPool_AddVertex(vertex_10,(MethodInfo *)0x0);
-    vertex_16.y = (float)uVar3;
-    vertex_16.x = (float)uVar1;
-    vertex_16.z = -0.5;
-    MeshDataPool::MeshDataPool_AddVertex(vertex_16,(MethodInfo *)0x0);
+    aVStack_3[0].y = _UNK_?;
+    aVStack_3[0].x = _UNK_?;
+    aVStack_3[0].z = _UNK_?;
+    MeshDataPool::MeshDataPool_AddVertex(aVStack_3,(MethodInfo *)0x0);
+    aVStack_3[0].z = fVar2;
+    aVStack_3[0].y = fVar1;
+    aVStack_3[0].x = fVar1;
+    MeshDataPool::MeshDataPool_AddVertex(aVStack_3,(MethodInfo *)0x0);
+    aVStack_3[0].z = fVar1;
+code_?:
+    aVStack_3[0].y = fVar1;
+    aVStack_3[0].x = fVar2;
+    MeshDataPool::MeshDataPool_AddVertex(aVStack_3,(MethodInfo *)0x0);
+    fVar2 = fVar1;
+    aVStack_3[0].z = fVar1;
     break;
   default:
-    goto code_?;
+    goto DAT_?;
   }
-  uVar2 = CONCAT44(uVar1,uVar1);
-code_?:
-  method_00 = (MethodInfo *)0xbf000000;
-code_?:
-  vertex_17.z = (float)method_00;
-  vertex_17.x = (float)(int)uVar2;
-  vertex_17.y = (float)(int)((ulonglong)uVar2 >> 0x20);
-  MeshDataPool::MeshDataPool_AddVertex(vertex_17,method_00);
-code_?:
+  aVStack_3[0].y = fVar1;
+  aVStack_3[0].x = fVar2;
+  MeshDataPool::MeshDataPool_AddVertex(aVStack_3,(MethodInfo *)0x0);
+DAT_?:
   return;
 }
 
@@ -127,82 +112,243 @@ void Assembly-CSharp.dll::MVMaterial::MVMaterial_GenerateCube
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Mesh);
-    func_?(&TypeInfo__TextureAtlasData);
+    FUN_?(&TypeInfo__UnityEngine__Mesh);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__TextureAtlasData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar1 = (Mesh *)func_?(TypeInfo__UnityEngine__Mesh);
+  pMVar1 = (Mesh *)FUN_?(TypeInfo__UnityEngine__Mesh);
   UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh__ctor(pMVar1,(MethodInfo *)0x0);
+  bVar2 = iRam_? != 0;
   (this->fields)._Mesh_k__BackingField = pMVar1;
-  func_?(&(this->fields)._Mesh_k__BackingField,pMVar1);
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields)._Mesh_k__BackingField >> 0xc);
+    uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+    do {
+      uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+      puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
   MeshDataPool::MeshDataPool_Reset((MethodInfo *)0x0);
-  direction = 0;
-  iVar2 = -3;
+  iVar7 = 0;
+  valuesArrayLength = 0;
+  iVar8 = -3;
   do {
-    materialID_00 = materialID;
-    index = iVar2 + 4;
-    MVMaterial_AddVertices(this,direction,(MethodInfo *)0x0);
-    MeshDataPool::MeshDataPool_AddIndex(iVar2 + 3,(MethodInfo *)0x0);
+    index = iVar8 + 4;
+    MVMaterial_AddVertices(this,iVar7,(MethodInfo *)0x0);
+    MeshDataPool::MeshDataPool_AddIndex(iVar8 + 3,(MethodInfo *)0x0);
     MeshDataPool::MeshDataPool_AddIndex(index,(MethodInfo *)0x0);
-    MeshDataPool::MeshDataPool_AddIndex(iVar2 + 5,(MethodInfo *)0x0);
+    MeshDataPool::MeshDataPool_AddIndex(iVar8 + 5,(MethodInfo *)0x0);
     MeshDataPool::MeshDataPool_AddIndex(index,(MethodInfo *)0x0);
-    MeshDataPool::MeshDataPool_AddIndex(iVar2 + 6,(MethodInfo *)0x0);
-    MeshDataPool::MeshDataPool_AddIndex(iVar2 + 5,(MethodInfo *)0x0);
-    if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    MeshDataPool::MeshDataPool_AddIndex(iVar8 + 6,(MethodInfo *)0x0);
+    MeshDataPool::MeshDataPool_AddIndex(iVar8 + 5,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__TextureAtlasData->_1).field_0x1c == 0) {
+      FUN_?();
     }
     MeshDataPool::MeshDataPool_AddUvRange
               (TypeInfo__TextureAtlasData->static_fields->CubeUVs,(MethodInfo *)0x0);
-    materialID = (int32_t)&UNK_?;
-    pCVar3 = TextureAtlasData::TextureAtlasData_GetMaterialColorData
-                       (&CStack_4,materialID_00,(MethodInfo *)0x0);
-    fStack_5 = pCVar3->r;
-    fStack_6 = pCVar3->g;
-    fStack_7 = pCVar3->b;
-    uVar8 = pCVar3->r;
-    uVar9 = pCVar3->g;
-    uVar10 = pCVar3->b;
-    color.b = (float)uVar10;
-    color.g = (float)uVar9;
-    color.r = (float)uVar8;
-    uStack_11 = 0x3f400000;
-    color.a = 0.75;
-    MeshDataPool::MeshDataPool_AddColorRepeated(color,4,(MethodInfo *)0x0);
-    direction = direction + 1;
-    iVar2 = index;
-  } while (direction < 6);
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeInfo__TextureAtlasData);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__TextureAtlasData->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__TextureAtlasData);
+    }
+    this_00 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
+    if ((this_00 == (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) ||
+       (pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                           ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,materialID,
+                            MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
+                           ), pOVar9 == (Object *)0x0)) goto code_?;
+    pOVar10 = pOVar9[1].klass;
+    lVar11 = 4;
+    uStack_12 = (Object__Array *)CONCAT44(0.75,*(float *)&pOVar9[1].monitor);
+    pOVar13 = uStack_12;
+    auStack_14 = (undefined1  [8])pOVar10;
+    do {
+      pOStack_15 = pOVar13;
+      pOStack_16 = pOVar10;
+      MeshDataPool::MeshDataPool_AddColor((Color *)&pOStack_16,(MethodInfo *)0x0);
+      lVar11 = lVar11 + -1;
+    } while (lVar11 != 0);
+    iVar7 = iVar7 + 1;
+    iVar8 = index;
+  } while (iVar7 < 6);
   pMVar1 = (this->fields)._Mesh_k__BackingField;
-  value = MeshDataPool::MeshDataPool_GetVertices((MethodInfo *)0x0);
+  this_01 = MeshDataPool::MeshDataPool_GetVertices((MethodInfo *)0x0);
   if (pMVar1 != (Mesh *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_vertices(pMVar1,value,(MethodInfo *)0x0)
-    ;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void_MethodInfo__UnityEngine__Mesh__SetArrayForChannel<UnityEngine::Vector3>_UnityEngine__Rendering__VertexAttribute__UnityEngine__Vector3_____UnityEngine__Rendering__MeshUpdateFlags_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    iVar7 = valuesArrayLength;
+    if (this_01 != (Vector3__Array *)0x0) {
+      iVar7 = mscorlib.dll::System::Array::Array_get_Length((Array *)this_01,(MethodInfo *)0x0);
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetSizedArrayForChannel
+              (pMVar1,VertexAttribute__Enum_Position,VertexAttributeFormat__Enum_Float32,3,
+               (Array *)this_01,iVar7,0,iVar7,MeshUpdateFlags__Enum_Default,(MethodInfo *)0x0);
     pMVar1 = (this->fields)._Mesh_k__BackingField;
-    value_00 = MeshDataPool::MeshDataPool_GetUvs((MethodInfo *)0x0);
+    this_02 = MeshDataPool::MeshDataPool_GetUvs((MethodInfo *)0x0);
     if (pMVar1 != (Mesh *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_uv(pMVar1,value_00,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void_MethodInfo__UnityEngine__Mesh__SetArrayForChannel<UnityEngine::Vector2>_UnityEngine__Rendering__VertexAttribute__UnityEngine__Vector2_____UnityEngine__Rendering__MeshUpdateFlags_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      iVar7 = valuesArrayLength;
+      if (this_02 != (Vector2__Array *)0x0) {
+        iVar7 = mscorlib.dll::System::Array::Array_get_Length((Array *)this_02,(MethodInfo *)0x0);
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetSizedArrayForChannel
+                (pMVar1,VertexAttribute__Enum_TexCoord0,VertexAttributeFormat__Enum_Float32,2,
+                 (Array *)this_02,iVar7,0,iVar7,MeshUpdateFlags__Enum_Default,(MethodInfo *)0x0);
       pMVar1 = (this->fields)._Mesh_k__BackingField;
-      value_01 = MeshDataPool::MeshDataPool_GetIndices((MethodInfo *)0x0);
+      value = MeshDataPool::MeshDataPool_GetIndices((MethodInfo *)0x0);
       if (pMVar1 != (Mesh *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_triangles
-                  (pMVar1,value_01,(MethodInfo *)0x0);
+                  (pMVar1,value,(MethodInfo *)0x0);
         pMVar1 = (this->fields)._Mesh_k__BackingField;
-        value_02 = MeshDataPool::MeshDataPool_GetColors((MethodInfo *)0x0);
+        this_03 = MeshDataPool::MeshDataPool_GetColors((MethodInfo *)0x0);
         if (pMVar1 != (Mesh *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_colors
-                    (pMVar1,value_02,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void_MethodInfo__UnityEngine__Mesh__SetArrayForChannel<UnityEngine::Color>_UnityEngine__Rendering__VertexAttribute__UnityEngine__Color_____UnityEngine__Rendering__MeshUpdateFlags_
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (this_03 != (Color__Array *)0x0) {
+            valuesArrayLength =
+                 mscorlib.dll::System::Array::Array_get_Length((Array *)this_03,(MethodInfo *)0x0);
+          }
+          UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetSizedArrayForChannel
+                    (pMVar1,VertexAttribute__Enum_Color,VertexAttributeFormat__Enum_Float32,4,
+                     (Array *)this_03,valuesArrayLength,0,valuesArrayLength,
+                     MeshUpdateFlags__Enum_Default,(MethodInfo *)0x0);
           pMVar1 = (this->fields)._Mesh_k__BackingField;
           if (pMVar1 != (Mesh *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_RecalculateNormals
-                      (pMVar1,(MethodInfo *)0x0);
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__UnityEngine__Debug);
+              LOCK();
+              UNLOCK();
+              FUN_?(&StringLiteral_Not_allowed_to_call_RecalculateN);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Mesh>_UnityEngine__Mesh_
+                           );
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            if (pMVar1 == (Mesh *)0x0) {
+              FUN_?();
+              pcVar17 = (code *)swi(3);
+              (*pcVar17)();
+              return;
+            }
+            pvVar18 = (pMVar1->fields)._.m_CachedPtr;
+            if (pvVar18 != (void *)0x0) {
+              pcVar17 = pcRam_?;
+              if ((pcRam_? == (code *)0x0) &&
+                 (pcVar17 = (code *)FUN_?(&UNK_?), pcVar17 == (code *)0x0)) {
+                uVar19 = func_?(&UNK_?);
+                FUN_?(uVar19,0);
+                pcVar17 = (code *)swi(3);
+                (*pcVar17)();
+                return;
+              }
+              pcRam_? = pcVar17;
+              cVar20 = (*pcRam_?)(pvVar18);
+              if (cVar20 == '\0') {
+                arg0 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetName
+                                 ((Object_1 *)pMVar1,(MethodInfo *)0x0);
+                pSVar21 = StringLiteral_Not_allowed_to_call_RecalculateN;
+                auStack_14 = (undefined1  [8])0x0;
+                uStack_12 = (Object__Array *)0x0;
+                pOStack_16 = (Object__Class *)0x0;
+                pOStack_15 = (Object__Array *)0x0;
+                mscorlib.dll::System::ParamsArray::ParamsArray__ctor
+                          ((ParamsArray *)auStack_14,(Object *)arg0,(MethodInfo *)0x0);
+                pOStack_22 = (Object *)auStack_14;
+                pOStack_23 = (Object *)uStack_12;
+                pSVar21 = mscorlib.dll::System::String::String_FormatHelper
+                                    ((IFormatProvider *)0x0,pSVar21,(ParamsArray *)&pOStack_22,
+                                     (MethodInfo *)0x0);
+                if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                          ((Object *)pSVar21,(MethodInfo *)0x0);
+                return;
+              }
+              if (cRam_? == '\0') {
+                FUN_?(&
+                              void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Mesh>_UnityEngine__Mesh_
+                             );
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              pvVar18 = (pMVar1->fields)._.m_CachedPtr;
+              if (pvVar18 != (void *)0x0) {
+                pcVar17 = pcRam_?;
+                if ((pcRam_? == (code *)0x0) &&
+                   (pcVar17 = (code *)FUN_?(&UNK_?), pcVar17 == (code *)0x0)) {
+                  uVar19 = func_?(&UNK_?);
+                  FUN_?(uVar19,0);
+                  pcVar17 = (code *)swi(3);
+                  (*pcVar17)();
+                  return;
+                }
+                pcRam_? = pcVar17;
+                (*pcRam_?)(pvVar18,0);
+                return;
+              }
+            }
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)pMVar1,(MethodInfo *)0x0);
+            pcVar17 = (code *)swi(3);
+            (*pcVar17)();
             return;
           }
         }
       }
     }
   }
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+code_?:
+  FUN_?();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 
@@ -214,17 +360,30 @@ void Assembly-CSharp.dll::MVMaterial::MVMaterial_RegenerateButtonTexture
                MethodInfo *method)
 
 {
-  if (materialButtonTextureGenerator != (MaterialButtonTextureGenerator *)0x0) {
-    pTVar1 = MaterialButtonTextureGenerator::MaterialButtonTextureGenerator_TakePicture
-                       (materialButtonTextureGenerator,(this->fields)._Mesh_k__BackingField,
-                        (MethodInfo *)0x0);
-    (this->fields)._ButtonTexture_k__BackingField = pTVar1;
-    func_?(&(this->fields)._ButtonTexture_k__BackingField,pTVar1);
+  if (materialButtonTextureGenerator == (MaterialButtonTextureGenerator *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  pTVar2 = MaterialButtonTextureGenerator::MaterialButtonTextureGenerator_TakePicture
+                     (materialButtonTextureGenerator,(this->fields)._Mesh_k__BackingField,
+                      (MethodInfo *)0x0);
+  bVar3 = iRam_? != 0;
+  (this->fields)._ButtonTexture_k__BackingField = pTVar2;
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)&(this->fields)._ButtonTexture_k__BackingField >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar6 != uVar7);
+  }
   return;
 }
 
@@ -232,20 +391,22 @@ void Assembly-CSharp.dll::MVMaterial::MVMaterial_RegenerateButtonTexture
 /* MVMaterial(PhysicalProperties, MaterialSound, AvatarModifierPackageType) */
 
 void Assembly-CSharp.dll::MVMaterial::MVMaterial__ctor_1
-               (MVMaterial *this,PhysicalProperties physicalProperties,
+               (MVMaterial *this,PhysicalProperties *physicalProperties,
                MaterialSound__Enum materialSound,AvatarModifierPackageType__Enum modifierPackageType
                ,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  (this->fields)._PhysicalProperties_k__BackingField.friction = physicalProperties.friction;
-  (this->fields)._PhysicalProperties_k__BackingField.bouncyness = physicalProperties.bouncyness;
-  (this->fields)._PhysicalProperties_k__BackingField.softness = physicalProperties.softness;
-  (this->fields)._PhysicalProperties_k__BackingField.staticFriction =
-       physicalProperties.staticFriction;
-  (this->fields)._PhysicalProperties_k__BackingField.toughness = physicalProperties.toughness;
+  fVar1 = physicalProperties->friction;
+  fVar2 = physicalProperties->bouncyness;
+  fVar3 = physicalProperties->softness;
+  fVar4 = physicalProperties->staticFriction;
+  fVar5 = physicalProperties->toughness;
   (this->fields)._ModifierPackageType_k__BackingField = modifierPackageType;
+  (this->fields)._PhysicalProperties_k__BackingField.friction = fVar1;
+  (this->fields)._PhysicalProperties_k__BackingField.bouncyness = fVar2;
+  (this->fields)._PhysicalProperties_k__BackingField.softness = fVar3;
+  (this->fields)._PhysicalProperties_k__BackingField.staticFriction = fVar4;
+  (this->fields)._PhysicalProperties_k__BackingField.toughness = fVar5;
   return;
 }
 
@@ -255,23 +416,52 @@ void Assembly-CSharp.dll::MVMaterial::MVMaterial__ctor_1
 
 void Assembly-CSharp.dll::MVMaterial::MVMaterial__ctor_2
                (MVMaterial *this,String *name,String *description,
-               PhysicalProperties physicalProperties,MaterialSound__Enum materialSound,
+               PhysicalProperties *physicalProperties,MaterialSound__Enum materialSound,
                AvatarModifierPackageType__Enum modifierPackageType,int32_t unlockPriceGold,
                bool isUnlocked,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  iVar1 = iRam_?;
   (this->fields)._Name_k__BackingField = name;
-  func_?(&(this->fields)._Name_k__BackingField,name);
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._Name_k__BackingField >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields)._Description_k__BackingField = description;
-  func_?(&(this->fields)._Description_k__BackingField,description);
-  (this->fields)._PhysicalProperties_k__BackingField.friction = physicalProperties.friction;
-  (this->fields)._PhysicalProperties_k__BackingField.bouncyness = physicalProperties.bouncyness;
-  (this->fields)._PhysicalProperties_k__BackingField.softness = physicalProperties.softness;
-  (this->fields)._PhysicalProperties_k__BackingField.staticFriction =
-       physicalProperties.staticFriction;
-  (this->fields)._PhysicalProperties_k__BackingField.toughness = physicalProperties.toughness;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._Description_k__BackingField >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
+  fVar7 = physicalProperties->toughness;
+  fVar8 = physicalProperties->bouncyness;
+  fVar9 = physicalProperties->softness;
+  fVar10 = physicalProperties->staticFriction;
+  (this->fields)._PhysicalProperties_k__BackingField.friction = physicalProperties->friction;
+  (this->fields)._PhysicalProperties_k__BackingField.bouncyness = fVar8;
+  (this->fields)._PhysicalProperties_k__BackingField.softness = fVar9;
+  (this->fields)._PhysicalProperties_k__BackingField.staticFriction = fVar10;
+  (this->fields)._PhysicalProperties_k__BackingField.toughness = fVar7;
   (this->fields)._ModifierPackageType_k__BackingField = modifierPackageType;
   (this->fields).unlockPriceGold = unlockPriceGold;
   (this->fields).isUnlocked = isUnlocked;
@@ -284,28 +474,59 @@ void Assembly-CSharp.dll::MVMaterial::MVMaterial__ctor_2
 
 void Assembly-CSharp.dll::MVMaterial::MVMaterial__ctor_3
                (MVMaterial *this,int32_t materialId,String *name,String *description,
-               PhysicalProperties physicalProperties,MaterialSound__Enum materialSound,
+               PhysicalProperties *physicalProperties,MaterialSound__Enum materialSound,
                AvatarModifierPackageType__Enum modifierPackageType,int32_t unlockPriceGold,
                bool isUnlocked,MaterialButtonTextureGenerator *materialButtonTextureGenerator,
                MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  iVar1 = iRam_?;
   (this->fields)._Name_k__BackingField = name;
-  func_?(&(this->fields)._Name_k__BackingField,name);
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._Name_k__BackingField >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields)._Description_k__BackingField = description;
-  func_?(&(this->fields)._Description_k__BackingField,description);
-  (this->fields)._PhysicalProperties_k__BackingField.friction = physicalProperties.friction;
-  (this->fields)._PhysicalProperties_k__BackingField.bouncyness = physicalProperties.bouncyness;
-  (this->fields)._PhysicalProperties_k__BackingField.softness = physicalProperties.softness;
-  (this->fields)._PhysicalProperties_k__BackingField.staticFriction =
-       physicalProperties.staticFriction;
-  (this->fields)._PhysicalProperties_k__BackingField.toughness = physicalProperties.toughness;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._Description_k__BackingField >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
+  fVar7 = physicalProperties->bouncyness;
+  fVar8 = physicalProperties->softness;
+  fVar9 = physicalProperties->staticFriction;
+  fVar10 = physicalProperties->toughness;
+  (this->fields)._PhysicalProperties_k__BackingField.friction = physicalProperties->friction;
+  (this->fields)._PhysicalProperties_k__BackingField.bouncyness = fVar7;
+  (this->fields)._PhysicalProperties_k__BackingField.softness = fVar8;
+  (this->fields)._PhysicalProperties_k__BackingField.staticFriction = fVar9;
+  (this->fields)._PhysicalProperties_k__BackingField.toughness = fVar10;
   (this->fields)._ModifierPackageType_k__BackingField = modifierPackageType;
   (this->fields).unlockPriceGold = unlockPriceGold;
   (this->fields).isUnlocked = isUnlocked;
@@ -314,26 +535,52 @@ void Assembly-CSharp.dll::MVMaterial::MVMaterial__ctor_3
     materialID = materialId;
   }
   MVMaterial_GenerateCube(this,materialID,(MethodInfo *)0x0);
-  MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-  if (MVar1 != MVGameMode__Enum_Play) {
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar11 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar11 == (GameSessionData *)0x0) {
+    FUN_?();
+    pcVar12 = (code *)swi(3);
+    (*pcVar12)();
+    return;
+  }
+  if ((pGVar11->fields).gameMode != 1) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)materialButtonTextureGenerator,(Object_1 *)0x0,(MethodInfo *)0x0)
-    ;
-    if (bVar2 != 0) {
-      if (materialButtonTextureGenerator == (MaterialButtonTextureGenerator *)0x0) {
-        func_?();
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
-        return;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (materialButtonTextureGenerator != (MaterialButtonTextureGenerator *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      pTVar4 = MaterialButtonTextureGenerator::MaterialButtonTextureGenerator_TakePicture
-                         (materialButtonTextureGenerator,(this->fields)._Mesh_k__BackingField,
-                          (MethodInfo *)0x0);
-      (this->fields)._ButtonTexture_k__BackingField = pTVar4;
-      func_?();
+      if ((materialButtonTextureGenerator->fields)._._._._.m_CachedPtr != (void *)0x0) {
+        method_00 = (MethodInfo *)0x0;
+        value = (Action_2_UnityEngine_UIElements_VisualElement_UnityEngine_UIElements_Experimental_StyleValues_
+                 *)MaterialButtonTextureGenerator::MaterialButtonTextureGenerator_TakePicture
+                             (materialButtonTextureGenerator,(this->fields)._Mesh_k__BackingField,
+                              (MethodInfo *)0x0);
+        UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::
+        ValueAnimation`1[StyleValues]::ValueAnimation_1_StyleValues__set_valueUpdated
+                  ((ValueAnimation_1_StyleValues_ *)this,value,method_00);
+      }
     }
   }
   return;
@@ -347,22 +594,23 @@ bool Assembly-CSharp.dll::MVMaterial::MVMaterial_get_IsAvailable
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVMaterialRepository);
+    FUN_?(&TypeInfo__MVMaterialRepository);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = TypeInfo__MVMaterialRepository->static_fields->instance;
-  if (pMVar1 != (MVMaterialRepository *)0x0) {
-    if ((pMVar1->fields).allowDestructibleMaterialSelection == 0) {
-      if ((this->fields)._PhysicalProperties_k__BackingField.toughness != _UNK_?) {
-        return 0;
-      }
-    }
-    return 1;
+  if (pMVar1 == (MVMaterialRepository *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    bVar3 = (*pcVar2)();
+    return bVar3;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
+  if (((pMVar1->fields).allowDestructibleMaterialSelection == 0) &&
+     ((this->fields)._PhysicalProperties_k__BackingField.toughness != 0.0)) {
+    return 0;
+  }
+  return 1;
 }
 
 
@@ -372,10 +620,10 @@ bool Assembly-CSharp.dll::MVMaterial::MVMaterial_get_IsDestructible
                (MVMaterial *this,MethodInfo *method)
 
 {
-  if ((this->fields)._PhysicalProperties_k__BackingField.toughness == _UNK_?) {
-    return 0;
+  if ((this->fields)._PhysicalProperties_k__BackingField.toughness != 0.0) {
+    return 1;
   }
-  return 1;
+  return 0;
 }
 
 
@@ -386,15 +634,15 @@ Assembly-CSharp.dll::MVMaterial::MVMaterial_get_PhysicalProperties
           (PhysicalProperties *__return_storage_ptr__,MVMaterial *this,MethodInfo *method)
 
 {
-  fVar1 = (this->fields)._PhysicalProperties_k__BackingField.bouncyness;
-  fVar2 = (this->fields)._PhysicalProperties_k__BackingField.softness;
-  fVar3 = (this->fields)._PhysicalProperties_k__BackingField.staticFriction;
-  fVar4 = (this->fields)._PhysicalProperties_k__BackingField.toughness;
+  fVar1 = (this->fields)._PhysicalProperties_k__BackingField.toughness;
+  fVar2 = (this->fields)._PhysicalProperties_k__BackingField.bouncyness;
+  fVar3 = (this->fields)._PhysicalProperties_k__BackingField.softness;
+  fVar4 = (this->fields)._PhysicalProperties_k__BackingField.staticFriction;
   __return_storage_ptr__->friction = (this->fields)._PhysicalProperties_k__BackingField.friction;
-  __return_storage_ptr__->bouncyness = fVar1;
-  __return_storage_ptr__->softness = fVar2;
-  __return_storage_ptr__->staticFriction = fVar3;
-  __return_storage_ptr__->toughness = fVar4;
+  __return_storage_ptr__->bouncyness = fVar2;
+  __return_storage_ptr__->softness = fVar3;
+  __return_storage_ptr__->staticFriction = fVar4;
+  __return_storage_ptr__->toughness = fVar1;
   return __return_storage_ptr__;
 }
 
@@ -402,14 +650,18 @@ Assembly-CSharp.dll::MVMaterial::MVMaterial_get_PhysicalProperties
 /* Void set_PhysicalProperties(PhysicalProperties) */
 
 void Assembly-CSharp.dll::MVMaterial::MVMaterial_set_PhysicalProperties
-               (MVMaterial *this,PhysicalProperties value,MethodInfo *method)
+               (MVMaterial *this,PhysicalProperties *value,MethodInfo *method)
 
 {
-  (this->fields)._PhysicalProperties_k__BackingField.friction = value.friction;
-  (this->fields)._PhysicalProperties_k__BackingField.bouncyness = value.bouncyness;
-  (this->fields)._PhysicalProperties_k__BackingField.softness = value.softness;
-  (this->fields)._PhysicalProperties_k__BackingField.staticFriction = value.staticFriction;
-  (this->fields)._PhysicalProperties_k__BackingField.toughness = value.toughness;
+  fVar1 = value->bouncyness;
+  fVar2 = value->softness;
+  fVar3 = value->staticFriction;
+  fVar4 = value->toughness;
+  (this->fields)._PhysicalProperties_k__BackingField.friction = value->friction;
+  (this->fields)._PhysicalProperties_k__BackingField.bouncyness = fVar1;
+  (this->fields)._PhysicalProperties_k__BackingField.softness = fVar2;
+  (this->fields)._PhysicalProperties_k__BackingField.staticFriction = fVar3;
+  (this->fields)._PhysicalProperties_k__BackingField.toughness = fVar4;
   return;
 }
 

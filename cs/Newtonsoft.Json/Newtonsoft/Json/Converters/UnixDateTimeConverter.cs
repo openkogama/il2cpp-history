@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using Newtonsoft.Json;
 
-// Image 8: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
+// Image 9: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
 
 namespace Newtonsoft.Json.Converters
 {
@@ -20,7 +20,7 @@ namespace Newtonsoft.Json.Converters
 	public class UnixDateTimeConverter : DateTimeConverterBase
 	{
 		// Fields
-		internal static readonly DateTime UnixEpoch;
+		internal static readonly System.DateTime UnixEpoch;
 		[CompilerGenerated]
 		private bool _AllowPreEpoch_k__BackingField;
 	

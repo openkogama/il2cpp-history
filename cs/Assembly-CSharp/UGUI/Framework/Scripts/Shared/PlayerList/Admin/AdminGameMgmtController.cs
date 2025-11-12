@@ -16,7 +16,7 @@ namespace UGUI.Framework.Scripts.Shared.PlayerList.Admin
 	{
 		// Fields
 		[SerializeField]
-		private Button shutdownSessionButton;
+		private UnityEngine.UI.Button shutdownSessionButton;
 	
 		// Constructors
 		public AdminGameMgmtController();

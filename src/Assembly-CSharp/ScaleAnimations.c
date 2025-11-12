@@ -5,172 +5,154 @@ void Assembly-CSharp.dll::ScaleAnimations::ScaleAnimations_Awake
                (ScaleAnimations *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffa4;
-  puVar5 = &stack0xffffffa4;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<ScaleAnimationBase>__GetEnumerator__
-                   );
-    func_?(&TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate);
-    func_?(&MethodInfo__ScaleAnimations__OnScaleAnimationDone_float_);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<ScaleAnimationBase>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__ScaleAnimations__OnScaleAnimationDone_float_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (this->fields).scaleAnimations;
-  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                         *)auStack_8,this_00,
-                        MethodInfo__System__Collections__Generic__List<ScaleAnimationBase>__GetEnumerator__
-                       );
-    uStack_9 = 0;
-    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
-    LStack_6._index = pLVar7->_index;
-    LStack_6._version = pLVar7->_version;
-    LStack_6._current = *(Object **)&pLVar7->_current;
-    uStack_1 = 1;
-    pLStack_10 = &LStack_6;
-    while( true ) {
-      while( true ) {
-        bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-                List_1_T_Enumerator_System_Object__MoveNext
-                          (&LStack_6,
-                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__MoveNext__
-                          );
-        pOVar12 = LStack_6._current;
-        if (bVar11 == 0) {
-          uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&LStack_6,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__Dispose__
-                     ,(MethodInfo *)unaff_EDI);
-          *unaff_FS_OFFSET = uStack_3;
-          return;
-        }
-        RStack_13 = (RegexCharClass_SingleRange)LStack_6._current;
-        pDStack_14 = (Delegate *)(this->fields)._.target;
-        if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0)
-        goto code_?;
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__UnityEngine__Debug);
-          func_?(&TypeInfo__UnityEngine__Object);
-          func_?(&StringLiteral_Target_already_set);
-          cRam_? = '\x01';
-        }
-        pMStack_15 = *(MethodInfo **)((int)pOVar12 + 0x20);
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Object);
-        }
-        bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                          ((Object_1 *)pMStack_15,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar11 == 0) {
-          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                    ((Object *)StringLiteral_Target_already_set,(MethodInfo *)0x0);
-        }
-        else {
-          *(Delegate **)((int)pOVar12 + 0x20) = pDStack_14;
-          func_?((int)pOVar12 + 0x20);
-          if (pDStack_14 == (Delegate *)0x0) goto code_?;
-          pVVar16 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                             ((Vector3 *)(auStack_8 + 4),(Transform *)pDStack_14,(MethodInfo *)0x0)
-          ;
-          fVar17 = pVVar16->z;
-          *(undefined8 *)((int)pOVar12 + 0x14) = *(undefined8 *)pVVar16;
-          *(float *)((int)pOVar12 + 0x1c) = fVar17;
-        }
-        pDStack_14 = *(Delegate **)((int)pOVar12 + 0x28);
-        b = (Delegate *)func_?();
-        pMStack_15 = MethodInfo__ScaleAnimations__OnScaleAnimationDone_float_;
-        pIVar18 = MethodInfo__ScaleAnimations__OnScaleAnimationDone_float_->virtualMethodPointer;
-        (b->fields).method = MethodInfo__ScaleAnimations__OnScaleAnimationDone_float_;
-        (b->fields).m_target = (Object *)this;
-        (b->fields).method_ptr = pIVar18;
-        func_?();
-        uStack_19 = pMStack_15->parameters_count;
-        (b->fields).method_code = b;
-        cVar20 = func_?();
-        if ((cVar20 == '\0') || (uStack_19 != 1)) {
-          (b->fields).method_code = (b->fields).m_target;
-          puVar21 = (b->fields).method_ptr;
-        }
-        else {
-          puVar21 = &UNK_?;
-        }
-        (b->fields).invoke_impl = puVar21;
-        (b->fields).extra_arg = &UNK_?;
-        unaff_EDI = pDStack_14;
-        LStack_6._index =
-             (int32_t)mscorlib.dll::System::Delegate::Delegate_Combine
-                                (pDStack_14,b,(MethodInfo *)0x0);
-        if ((ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)LStack_6._index !=
-            (ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)0x0) break;
-        LStack_6._version = 0;
-        *(undefined4 *)((int)RStack_13 + 0x28) = 0;
-        LStack_6._index = (int)RStack_13 + 0x28;
-        LStack_6._list = (List_1_System_Object_ *)&UNK_?;
-        func_?();
+  LStack_1._list = (List_1_System_Object_ *)(this->fields).scaleAnimations;
+  if ((List_1_ScaleAnimationBase_ *)LStack_1._list == (List_1_ScaleAnimationBase_ *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  if (iRam_? != 0) {
+    uVar3 = (uint)((ulonglong)&uStack_4 >> 0xc);
+    lVar5 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+      puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+      LOCK();
+      bVar8 = uVar6 == *puVar7;
+      if (bVar8) {
+        *puVar7 = uVar6 | 1L << (uVar3 & 0x3f);
       }
-      pSVar22 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)0x0;
-      if ((ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)
-          (((ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)LStack_6._index)->_0).
-          image == TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate) {
-        pSVar22 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)LStack_6._index;
-      }
-      LStack_6._version = (int32_t)TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate;
-      if (pSVar22 == (ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)0x0) break;
-      *(ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class **)((int)RStack_13 + 0x28) =
-           pSVar22;
-      LStack_6._version = (int32_t)(ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)0x0
-      ;
-      if ((ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)
-          (((ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)LStack_6._index)->_0).
-          image == TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate) {
-        LStack_6._version = LStack_6._index;
-      }
-      if ((ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)LStack_6._version ==
-          (ScaleAnimationBase_OnScaleAnimationStoppedDelegate__Class *)0x0) {
-        LStack_6._version = (int32_t)TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate;
-        LStack_6._list = (List_1_System_Object_ *)&UNK_?;
-        LStack_6._version = func_?();
-        LStack_6._index = (int32_t)extraout_ECX;
-        break;
-      }
-      LStack_6._index = (int)RStack_13 + 0x28;
-      LStack_6._list = (List_1_System_Object_ *)&UNK_?;
-      func_?();
+      UNLOCK();
+    } while (!bVar8);
+  }
+  pLStack_9 = (List_1_T_Enumerator_System_Object_ *)
+               ((ulonglong)(uint)(((List_1_ScaleAnimationBase_ *)LStack_1._list)->fields)._version
+               << 0x20);
+  uStack_10 = 0;
+  LStack_1._8_8_ = pLStack_9;
+  LStack_1._current = (Object *)0x0;
+  uStack_4 = 0;
+  pLStack_9 = &LStack_1;
+  while( true ) {
+    bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+            List_1_T_Enumerator_System_Object__MoveNext
+                      (&LStack_1,
+                       MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__MoveNext__
+                      );
+    pOVar12 = LStack_1._current;
+    if (bVar11 == 0) {
+      return;
     }
-    LStack_6._list = (List_1_System_Object_ *)&UNK_?;
-    func_?();
-  }
+    if ((ScaleAnimationBase *)LStack_1._current == (ScaleAnimationBase *)0x0)
+    goto code_?;
+    ScaleAnimationBase::ScaleAnimationBase_SetTarget
+              ((ScaleAnimationBase *)LStack_1._current,(this->fields)._.target,(MethodInfo *)0x0);
+    pSVar13 = ((ScaleAnimationBase__Fields *)((longlong)pOVar12 + 0x10))->OnScaleAnimationStopped;
+    b = (Delegate *)FUN_?(TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate);
+    pMVar14 = MethodInfo__ScaleAnimations__OnScaleAnimationDone_float_;
+    (b->fields).method_ptr =
+         MethodInfo__ScaleAnimations__OnScaleAnimationDone_float_->virtualMethodPointer;
+    (b->fields).method = pMVar14;
+    (b->fields).m_target = (Object *)this;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&(b->fields).m_target >> 0xc);
+      lVar5 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+        puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+        LOCK();
+        bVar8 = uVar6 == *puVar7;
+        if (bVar8) {
+          *puVar7 = uVar6 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar8);
+    }
+    uVar15 = pMVar14->parameters_count;
+    (b->fields).method_code = b;
+    if (((pMVar14->flags & 0x10) == 0) || (uVar15 != 1)) {
+      (b->fields).method_code = (b->fields).m_target;
+      puVar16 = (b->fields).method_ptr;
+    }
+    else {
+      puVar16 = &UNK_?;
+    }
+    (b->fields).invoke_impl = puVar16;
+    (b->fields).extra_arg = FUN_?;
+    pSVar13 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)
+              mscorlib.dll::System::Delegate::Delegate_Combine
+                        ((Delegate *)pSVar13,b,(MethodInfo *)0x0);
+    if (pSVar13 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) break;
+    ((ScaleAnimationBase__Fields *)((longlong)pOVar12 + 0x10))->OnScaleAnimationStopped =
+         (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0;
 code_?:
-  func_?();
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)
+                      &((ScaleAnimationBase__Fields *)((longlong)pOVar12 + 0x10))->
+                       OnScaleAnimationStopped >> 0xc);
+      lVar5 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+        puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+        LOCK();
+        bVar8 = uVar6 == *puVar7;
+        if (bVar8) {
+          *puVar7 = uVar6 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar8);
+    }
+  }
+  pSVar17 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0;
+  if (pSVar13->klass == TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate) {
+    pSVar17 = pSVar13;
+  }
+  if (pSVar17 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
+    ((ScaleAnimationBase__Fields *)((longlong)pOVar12 + 0x10))->OnScaleAnimationStopped = pSVar17;
+    pSVar17 = (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0;
+    if (pSVar13->klass == TypeInfo__ScaleAnimationBase__OnScaleAnimationStoppedDelegate) {
+      pSVar17 = pSVar13;
+    }
+    if (pSVar17 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0)
+    goto code_?;
+    FUN_?();
+  }
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -182,8 +164,9 @@ void Assembly-CSharp.dll::ScaleAnimations::ScaleAnimations_OnScaleAnimationDone
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<ScaleAnimationBase>__get_Count__
-                   );
+    FUN_?(&MethodInfo__System__Collections__Generic__List<ScaleAnimationBase>__get_Count__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pLVar1 = (this->fields).scaleAnimations;
@@ -191,9 +174,11 @@ void Assembly-CSharp.dll::ScaleAnimations::ScaleAnimations_OnScaleAnimationDone
   (this->fields).index = iVar2;
   if (pLVar1 != (List_1_ScaleAnimationBase_ *)0x0) {
     if (iVar2 < (pLVar1->fields)._size) {
-      (*(code *)(this->klass->vtable).Play.method)(this,0,this->klass[1]._0.image);
+      (*(this->klass->vtable).Play.methodPtr)(this,0,(this->klass->vtable).Play.method);
       pSVar3 = (this->fields).OnIntermediateScaleAnimationStopped;
       if (pSVar3 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
         (*(pSVar3->fields)._._.invoke_impl)
                   ((pSVar3->fields)._._.method_code,extraTime,(pSVar3->fields)._._.method);
         return;
@@ -209,7 +194,7 @@ void Assembly-CSharp.dll::ScaleAnimations::ScaleAnimations_OnScaleAnimationDone
     }
     return;
   }
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -222,93 +207,99 @@ void Assembly-CSharp.dll::ScaleAnimations::ScaleAnimations_Play
                (ScaleAnimations *this,float offsetTime,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffbc;
-  puVar5 = &stack0xffffffbc;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<ScaleAnimationBase>__GetEnumerator__
-                   );
-    in_stack_6 =
-         &MethodInfo__System__Collections__Generic__List<ScaleAnimationBase>__get_Item_int_;
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__Dispose__
+                  ,CONCAT44(in_XMM1_Db,offsetTime));
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<ScaleAnimationBase>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  LStack_7._list = (List_1_System_Object_ *)0x0;
-  LStack_7._index = 0;
-  LStack_7._version = 0;
-  LStack_7._current = (Object *)0x0;
-  pLVar8 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-           (this->fields).scaleAnimations;
-  if (pLVar8 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_10,pLVar8,
-                        MethodInfo__System__Collections__Generic__List<ScaleAnimationBase>__GetEnumerator__
-                       );
-    LStack_7._list = (List_1_System_Object_ *)pLVar9->_list;
-    LStack_7._index = pLVar9->_index;
-    LStack_7._version = pLVar9->_version;
-    LStack_7._current = *(Object **)&pLVar9->_current;
-    LStack_10._version = 0;
-    uStack_1 = 1;
-    LStack_10._current = (RegexCharClass_SingleRange)&LStack_7;
-    while( true ) {
-      bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-              List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_7,
-                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__MoveNext__
-                        );
-      if (bVar11 == 0) break;
-      if ((RegexCharClass_SingleRange)LStack_7._current == (RegexCharClass_SingleRange)0x0)
-      goto code_?;
-      if (*(int *)((int)LStack_7._current + 0x10) == 2) {
-        func_?(4,LStack_7._current);
+  pLVar1 = (this->fields).scaleAnimations;
+  if (pLVar1 != (List_1_ScaleAnimationBase_ *)0x0) {
+    if (iRam_? != 0) {
+      uVar2 = (uint)((ulonglong)&uStack_3 >> 0xc);
+      uVar4 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+      do {
+        uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+        puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar5 == *puVar6;
+        if (bVar7) {
+          *puVar6 = uVar5 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    pLStack_8 = (List_1_T_Enumerator_System_Object_ *)
+                 ((ulonglong)(uint)(pLVar1->fields)._version << 0x20);
+    uStack_9 = 0;
+    LStack_10._8_8_ = pLStack_8;
+    LStack_10._current = (Object *)0x0;
+    uStack_3 = 0;
+    pLStack_8 = &LStack_10;
+    LStack_10._list = (List_1_System_Object_ *)pLVar1;
+    while (bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
+                   ::List_1_T_Enumerator_System_Object__MoveNext
+                             (&LStack_10,
+                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__MoveNext__
+                             ), bVar11 != 0) {
+      if (LStack_10._current == (Object *)0x0) goto code_?;
+      if (*(int *)&LStack_10._current[2].klass == 2) {
+        (*(code *)(LStack_10._current)->klass[1]._0.image)
+                  (LStack_10._current,(LStack_10._current)->klass[1]._0.gc_desc);
       }
     }
-    uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&LStack_7,
-               (ExceptionArgument__Enum)
-               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ScaleAnimationBase>__Dispose__
-               ,(MethodInfo *)in_stack_6);
-    uStack_1 = 0xffffffff;
-    pLVar8 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-             (this->fields).scaleAnimations;
-    if (pLVar8 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      RVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (pLVar8,(this->fields).index,
-                         MethodInfo__System__Collections__Generic__List<ScaleAnimationBase>__get_Item_int_
-                        );
-      if (RVar12 != (RegexCharClass_SingleRange)0x0) {
-        (**(code **)(*(int *)RVar12 + 0xe8))(RVar12,0,*(undefined4 *)(*(int *)RVar12 + 0xec));
-        *unaff_FS_OFFSET = uStack_3;
+    pLVar1 = (this->fields).scaleAnimations;
+    uVar2 = (this->fields).index;
+    if (pLVar1 != (List_1_ScaleAnimationBase_ *)0x0) {
+      if ((uint)(pLVar1->fields)._size <= uVar2) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar12 = (code *)swi(3);
+        (*pcVar12)();
         return;
       }
+      pSVar13 = (pLVar1->fields)._items;
+      if (pSVar13 != (ScaleAnimationBase__Array *)0x0) {
+        if ((uint)pSVar13->max_length <= uVar2) {
+          FUN_?();
+          pcVar12 = (code *)swi(3);
+          (*pcVar12)();
+          return;
+        }
+        pSVar14 = pSVar13->vector[(int)uVar2];
+        if (pSVar14 != (ScaleAnimationBase *)0x0) {
+          (*(pSVar14->klass->vtable).Play.methodPtr)(pSVar14,0,(pSVar14->klass->vtable).Play.method);
+          return;
+        }
+      }
     }
   }
+  FUN_?();
 code_?:
-  uVar13 = func_?();
-  func_?(uVar13);
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  FUN_?();
+  FUN_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -320,7 +311,7 @@ void Assembly-CSharp.dll::ScaleAnimations::ScaleAnimations_Update
 
 {
   if ((this->fields)._.testState == 2) {
-    (*(code *)(this->klass->vtable).Play.method)(this,0,this->klass[1]._0.image);
+    (*(this->klass->vtable).Play.methodPtr)(this,0,(this->klass->vtable).Play.method);
     (this->fields)._.testState = 0;
   }
   return;
@@ -334,22 +325,289 @@ void Assembly-CSharp.dll::ScaleAnimations::ScaleAnimations__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Vector3,0);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-  fVar2 = (pVVar1->oneVector).y;
-  fVar3 = (pVVar1->oneVector).z;
-  (this->fields)._.originalScale.x = (pVVar1->oneVector).x;
-  (this->fields)._.originalScale.y = fVar2;
-  (this->fields)._.originalScale.z = fVar3;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object,unaff_EBP);
+  bVar1 = cRam_? == '\0';
+  pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar3 = (pVVar2->oneVector).y;
+  fVar4 = (pVVar2->oneVector).z;
+  (this->fields)._.originalScale.x = (pVVar2->oneVector).x;
+  (this->fields)._.originalScale.y = fVar3;
+  (this->fields)._.originalScale.z = fVar4;
+  if (bVar1) {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  pOVar5 = TypeInfo__UnityEngine__Object;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c != 0) {
+    return;
   }
+  ppMVar6 = (MethodInfo **)0x0;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c != 0) {
+    return;
+  }
+  lVar7 = _Baselib_Thread_GetCurrentThreadId_il2cpp_baselib__YA_JXZ();
+  ppMVar8 = ppMVar6;
+  if (lVar7 == lRam_?) {
+    iRam_? = iRam_? + 1;
+    lVar7 = lRam_?;
+  }
+  else {
+    do {
+      uVar9 = (uint)ppMVar8;
+      LOCK();
+      bVar1 = uVar9 != uRam_?;
+      uVar10 = uVar9;
+      uVar11 = uVar9 + 1;
+      if (bVar1) {
+        uVar10 = uRam_?;
+        uVar11 = uRam_?;
+      }
+      uRam_? = uVar11;
+      UNLOCK();
+    } while ((bVar1) && (ppMVar8 = (MethodInfo **)(ulonglong)uVar10, uVar9 = uVar10, uVar10 != 2)
+            );
+    while (uVar9 != 0) {
+      _Baselib_SystemFutex_Wait_il2cpp_baselib__YAXPEAHHI_Z(0xADDR,2,0xffffffff);
+      uVar9 = uRam_?;
+      LOCK();
+      uRam_? = 2;
+      UNLOCK();
+    }
+  }
+  lRam_? = lVar7;
+  puVar12 = &(pOVar5->_1).field_0x1c;
+  LOCK();
+  bVar1 = *(int *)puVar12 == 1;
+  if (bVar1) {
+    *(undefined4 *)puVar12 = 1;
+  }
+  uVar9 = uRam_?;
+  UNLOCK();
+  if (bVar1) {
+    if (iRam_? != 0) {
+      iRam_? = iRam_? + -1;
+      return;
+    }
+    lRam_? = 0;
+    LOCK();
+    uRam_? = 0;
+    UNLOCK();
+    if (uVar9 != 2) {
+      uRam_? = 0;
+      lRam_? = 0;
+      return;
+    }
+    _Baselib_SystemFutex_Notify_il2cpp_baselib__YAXPEAHIW4Baselib_WakeupFallbackStrategy_1__Z
+              (0xADDR,1,0);
+    return;
+  }
+  puVar13 = &(pOVar5->_1).cctor_finished_or_no_cctor;
+  LOCK();
+  bVar1 = *puVar13 == 1;
+  if (bVar1) {
+    *puVar13 = 1;
+  }
+  uVar9 = uRam_?;
+  UNLOCK();
+  if (bVar1) {
+    if (iRam_? == 0) {
+      lRam_? = 0;
+      LOCK();
+      uRam_? = 0;
+      UNLOCK();
+      if (uVar9 == 2) {
+        _Baselib_SystemFutex_Notify_il2cpp_baselib__YAXPEAHIW4Baselib_WakeupFallbackStrategy_1__Z
+                  (0xADDR,1,0);
+      }
+    }
+    else {
+      iRam_? = iRam_? + -1;
+    }
+    uVar9 = GetCurrentThreadId();
+    psVar14 = &(pOVar5->_1).cctor_thread;
+    LOCK();
+    bVar1 = (ulonglong)uVar9 == *psVar14;
+    if (bVar1) {
+      *psVar14 = (ulonglong)uVar9;
+    }
+    UNLOCK();
+    if (bVar1) {
+      return;
+    }
+    while( true ) {
+      puVar12 = &(pOVar5->_1).field_0x1c;
+      LOCK();
+      bVar1 = *(int *)puVar12 == 1;
+      if (bVar1) {
+        *(undefined4 *)puVar12 = 1;
+      }
+      UNLOCK();
+      if (bVar1) break;
+      LOCK();
+      lVar7._0_4_ = (pOVar5->_1).initializationExceptionGCHandle;
+      lVar7._4_4_ = (pOVar5->_1).cctor_started;
+      if (lVar7 == 0) {
+        (pOVar5->_1).initializationExceptionGCHandle = 0;
+        (pOVar5->_1).cctor_started = 0;
+      }
+      UNLOCK();
+      if (lVar7 != 0) break;
+      FUN_?(*puRam_?);
+    }
+code_?:
+    lVar15._0_4_ = (pOVar5->_1).initializationExceptionGCHandle;
+    lVar15._4_4_ = (pOVar5->_1).cctor_started;
+    if (lVar15 == 0) {
+      return;
+    }
+  }
+  else {
+    uVar9 = GetCurrentThreadId();
+    LOCK();
+    (pOVar5->_1).cctor_thread = (ulonglong)uVar9;
+    UNLOCK();
+    LOCK();
+    (pOVar5->_1).cctor_finished_or_no_cctor = 1;
+    uVar9 = uRam_?;
+    UNLOCK();
+    if (iRam_? == 0) {
+      lRam_? = 0;
+      LOCK();
+      uRam_? = 0;
+      UNLOCK();
+      if (uVar9 == 2) {
+        _Baselib_SystemFutex_Notify_il2cpp_baselib__YAXPEAHIW4Baselib_WakeupFallbackStrategy_1__Z
+                  (0xADDR,1,0);
+      }
+    }
+    else {
+      iRam_? = iRam_? + -1;
+    }
+    alStackX_10[0] = 0;
+    if (((pOVar5->_1).field_0x6e & 4) != 0) {
+      FUN_?(pOVar5);
+      ppMVar8 = ppMVar6;
+      pIVar16 = (Il2CppClass *)pOVar5;
+code_?:
+      do {
+        if (ppMVar8 == (MethodInfo **)0x0) {
+          FUN_?(pIVar16);
+          if (pIVar16->field_count != 0) {
+            ppMVar8 = pIVar16->methods;
+            pMVar17 = *ppMVar8;
+code_?:
+            if (pMVar17 != (MethodInfo *)0x0) {
+              if ((*pMVar17->name == '.') && ((pMVar17->flags & 0x800) != 0)) {
+                ppMVar18 = ppMVar6;
+                while (ppMVar19 = ppMVar18 + 0x30528cee,
+                      ppMVar18 = (MethodInfo **)((longlong)ppMVar18 + 1),
+                      *(char *)ppMVar19 == (pMVar17->name + -1)[(longlong)ppMVar18]) {
+                  if (ppMVar18 == (MethodInfo **)0x7) {
+                    FUN_?(pMVar17,0,0,alStackX_10);
+                    goto code_?;
+                  }
+                }
+              }
+              goto code_?;
+            }
+          }
+        }
+        else {
+          ppMVar8 = ppMVar8 + 1;
+          if (ppMVar8 < pIVar16->methods + pIVar16->field_count) {
+            pMVar17 = *ppMVar8;
+            goto code_?;
+          }
+        }
+        pIVar16 = pIVar16->parent;
+        ppMVar8 = ppMVar6;
+      } while (pIVar16 != (Il2CppClass *)0x0);
+    }
+code_?:
+    LOCK();
+    (pOVar5->_1).cctor_thread = 0;
+    uVar20 = _UNK_?;
+    uVar21 = _UNK_?;
+    UNLOCK();
+    if (alStackX_10[0] == 0) {
+      LOCK();
+      *(undefined4 *)&(pOVar5->_1).field_0x1c = 1;
+      UNLOCK();
+      goto code_?;
+    }
+    uStack_22 = 0;
+    uStack_23 = _UNK_?;
+    uStack_24 = _UNK_?;
+    pppppppuStack_78 = (undefined8 *******)0x0;
+    FUN_?(&pppppppuStack_78,&(pOVar5->_0).byval_arg,0,0);
+    pppppppuVar19 = &pppppppuStack_78;
+    if (0xf < uStack_24) {
+      pppppppuVar19 = pppppppuStack_78;
+    }
+    FUN_?(apppppppuStack_58,&UNK_?,pppppppuVar19);
+    if (uStack_24 < 0x10) {
+code_?:
+      lVar7 = alStackX_10[0];
+      pppppppuStack_78 = (undefined8 *******)((ulonglong)pppppppuStack_78 & 0xffffffffffffff00);
+      pppppppuVar19 = apppppppuStack_58;
+      if (0xf < uStack_25) {
+        pppppppuVar19 = apppppppuStack_58[0];
+      }
+      uStack_23 = uVar21;
+      uStack_24 = uVar20;
+      lVar15 = FUN_?(uRam_?,&UNK_?,&UNK_?,pppppppuVar19);
+      if (lVar7 != 0) {
+        *(longlong *)(lVar15 + 0x28U) = lVar7;
+        if (iRam_? != 0) {
+          uVar9 = (uint)(lVar15 + 0x28U >> 0xc);
+          puVar26 = (ulonglong *)((ulonglong)((uVar9 & 0x1fffff) >> 6) * 8 + 0xADDR);
+          do {
+            uVar27 = *puVar26;
+            LOCK();
+            uVar20 = *puVar26;
+            if (uVar27 == uVar20) {
+              *puVar26 = uVar27 | 1L << (uVar9 & 0x3f);
+            }
+            UNLOCK();
+          } while (uVar27 != uVar20);
+        }
+      }
+      FUN_?(pOVar5,lVar15);
+      if (0xf < uStack_25) {
+        pppppppuVar19 = apppppppuStack_58[0];
+        if ((0xfff < uStack_25 + 1) &&
+           (pppppppuVar19 = (undefined8 *******)apppppppuStack_58[0][-1],
+           0x1f < (ulonglong)((longlong)apppppppuStack_58[0] + (-8 - (longlong)pppppppuVar19))))
+        goto code_?;
+        func_?(pppppppuVar19);
+      }
+      goto code_?;
+    }
+    pppppppuVar19 = pppppppuStack_78;
+    if ((uStack_24 + 1 < 0x1000) ||
+       (pppppppuVar19 = (undefined8 *******)pppppppuStack_78[-1],
+       (ulonglong)((longlong)pppppppuStack_78 + (-8 - (longlong)pppppppuVar19)) < 0x20)) {
+      func_?(pppppppuVar19);
+      uVar21 = _UNK_?;
+      uVar20 = _UNK_?;
+      goto code_?;
+    }
+    FUN_?(0,0,0,0,0);
+  }
+  uVar21._0_4_ = (pOVar5->_1).initializationExceptionGCHandle;
+  uVar21._4_4_ = (pOVar5->_1).cctor_started;
+  uVar21 = FUN_?(uVar21);
+  FUN_?(uVar21,0);
+code_?:
+  FUN_?(0,0,0,0,0);
+  pcVar28 = (code *)swi(3);
+  (*pcVar28)();
   return;
 }
 

@@ -8,36 +8,40 @@ void Assembly-CSharp.dll::AvatarAccessoryPreviewer+<>c__DisplayClass30_0::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IAccessoryClicked);
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IAccessoryClicked);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pAVar1 = (this->fields).accessoryData;
-  if (x != (IAccessoryClicked *)0x0) {
-    pIVar2 = x->klass;
-    uVar3 = 0;
-    uVar4._0_1_ = (pIVar2->_1).rank;
-    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
-    if (uVar4 != 0) {
-      do {
-        if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
-            (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IAccessoryClicked) {
-          pIVar2 = x->klass;
-          iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
-          (*(code *)(&(pIVar2->vtable).OpenAccessoryManagementScreen)[iVar5].method)
-                    (x,pAVar1,(&(pIVar2->vtable).OpenCategoryScreen)[iVar5].methodPtr);
-          return;
-        }
-        uVar3 = uVar3 + 1;
-      } while (uVar3 < uVar4);
-    }
-    puVar6 = (undefined4 *)
-             func_?(x,TypeInfo__UnityEngine__EventSystems__IAccessoryClicked,0);
-    (*(code *)*puVar6)(x,pAVar1,puVar6[1]);
+  if (x == (IAccessoryClicked *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pAVar2 = (this->fields).accessoryData;
+  pIVar3 = x->klass;
+  uVar4 = 0;
+  uVar5._0_1_ = (pIVar3->_1).rank;
+  uVar5._1_1_ = (pIVar3->_1).minimumAlignment;
+  if (uVar5 != 0) {
+    do {
+      if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
+          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IAccessoryClicked) {
+        pVVar6 = &(pIVar3->vtable).OpenAccessoryManagementScreen +
+                 pIVar3->interfaceOffsets[uVar4].offset;
+        goto code_?;
+      }
+      uVar4 = uVar4 + 1;
+    } while (uVar4 < uVar5);
+  }
+  pVVar6 = (VirtualInvokeData *)
+           FUN_?(x,TypeInfo__UnityEngine__EventSystems__IAccessoryClicked,0,pAVar2,unaff_RDI
+                        );
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pVVar6->methodPtr)(x,pAVar2,pVVar6->method,pVVar6->methodPtr);
   return;
 }
 

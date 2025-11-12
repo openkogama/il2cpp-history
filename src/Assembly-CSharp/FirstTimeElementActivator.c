@@ -6,230 +6,301 @@ void Assembly-CSharp.dll::FirstTimeElementActivator::
                (FirstTimeElementActivator *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff80;
-  puVar5 = &stack0xffffff80;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Remove_MV__WorldObject__MetaData__FirstTimeEvent_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent>__get_Current__
-                   );
-    func_?(&TypeInfo__IActivatableFirstTimeUiElement);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__get_Key__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__get_Value__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>__Add_MV__WorldObject__MetaData__FirstTimeEvent_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>__Clear__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>__GetEnumerator__
-                   );
-    func_?(&StringLiteral_In_rare_cases_when_entering_play);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Remove_MV__WorldObject__MetaData__FirstTimeEvent_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__IActivatableFirstTimeUiElement);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__get_Key__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__get_Value__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>__Add_MV__WorldObject__MetaData__FirstTimeEvent_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>__Clear__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
-  DStack_6._version = 0;
-  DStack_6._index = 0;
-  DStack_6._current.key = 0;
-  pOStack_7 = (Object *)0x0;
-  DStack_6._current.value = (Object *)0x0;
-  DStack_6._getEnumeratorRetType = 0;
-  method_00 = (IActivatableFirstTimeUiElement__Class *)(this->fields).activatableUiElements;
-  auStack_8._0_4_ = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
-  auStack_8._4_4_ = 0;
-  auStack_8._8_4_ = 0;
-  auStack_8._12_2_ = 0;
-  auStack_8._14_2_ = 0;
-  if (method_00 != (IActivatableFirstTimeUiElement__Class *)0x0) {
-    pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
-             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                        (auStack_8 + 0x10),(Dictionary_2_System_UInt32_System_Object_ *)method_00,
-                        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__GetEnumerator__
-                       );
-    pDStack_10 = &DStack_6;
-    DStack_6._dictionary = pDVar9->_dictionary;
-    DStack_6._version = pDVar9->_version;
-    DStack_6._index = pDVar9->_index;
-    DStack_6._current.key = (pDVar9->_current).key;
-    DStack_6._16_8_ = *(undefined8 *)&(pDVar9->_current).value;
-    pOStack_11 = (Object *)0x0;
-    uStack_1 = 1;
+  pLStack_1 = (List_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0;
+  uStack_2 = 0;
+  uStack_3 = 0;
+  pDVar4 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).activatableUiElements;
+  if (pDVar4 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
+    if (iRam_? != 0) {
+      uVar5 = (uint)((ulonglong)&uStack_6 >> 0xc);
+      lVar7 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar10 = uVar8 == *puVar9;
+        if (bVar10) {
+          *puVar9 = uVar8 | 1L << (uVar5 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar10);
+    }
+    puStack_11 = (undefined1 *)(ulonglong)(uint)(pDVar4->fields)._version;
+    uStack_12 = 2;
+    uStack_13 = 0;
+    uStack_14 = 0;
+    uStack_15 = (ulonglong)puStack_11;
+    KStack_16.key = 0;
+    KStack_16._4_4_ = 0;
+    KStack_16.value = (Object *)0x0;
+    uStack_17._0_4_ = 2;
+    uStack_17._4_4_ = 0;
+    uStack_6 = 0;
+    puStack_11 = (undefined1 *)&pDStack_18;
+    pOVar19 = (Object *)0x0;
+    pDStack_18 = pDVar4;
 code_?:
-    bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System
-            ::UInt32,System::Object]::
-            Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                      (&DStack_6,
-                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__MoveNext__
-                      );
-    if (bVar12 != 0) {
-      pOVar13 = DStack_6._current.value;
-      pIStack_14 = (IActivatableFirstTimeUiElement__Class *)DStack_6._current.key;
-      pOStack_15 = DStack_6._current.value;
-      if (DStack_6._current.value == (Object *)0x0) goto code_?;
-      pOStack_16 = (DStack_6._current.value)->klass;
-      uVar17 = 0;
-      uStack_18 = 0;
-      uVar19._0_1_ = (pOStack_16->_1).rank;
-      uVar19._1_1_ = (pOStack_16->_1).minimumAlignment;
-      uStack_20 = (uint)uVar19;
-      if (uVar19 != 0) {
+    bVar20 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System
+             ::UInt32,System::Object]::
+             Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                        &pDStack_18,
+                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__MoveNext__
+                       );
+    pOVar21 = KStack_16.value;
+    uVar22 = KStack_16._0_8_;
+    if (bVar20 != 0) {
+      if (KStack_16.value == (Object *)0x0) goto code_?;
+      pOVar23 = (KStack_16.value)->klass;
+      uVar24 = 0;
+      uVar25._0_1_ = (pOVar23->_1).rank;
+      uVar25._1_1_ = (pOVar23->_1).minimumAlignment;
+      if (uVar25 != 0) {
         do {
-          if (pOStack_16->interfaceOffsets[uVar17].interfaceType ==
+          if (pOVar23->interfaceOffsets[uVar24].interfaceType ==
               (Il2CppClass *)TypeInfo__IActivatableFirstTimeUiElement) {
-            ppcVar21 = &(DStack_6._current.value)->klass[1]._0.namespaze +
-                       (DStack_6._current.value)->klass->interfaceOffsets[uVar17].offset * 2;
+            puVar26 = (undefined8 *)
+                      ((longlong)&(pOVar23->vtable).Equals +
+                      (longlong)(pOVar23->interfaceOffsets[uVar24].offset + 5) * 0x10);
             goto code_?;
           }
-          uVar17 = uVar17 + 1;
-        } while (uVar17 < uVar19);
+          uVar24 = uVar24 + 1;
+        } while (uVar24 < uVar25);
       }
-      ppcVar21 = (char **)func_?(DStack_6._current.value,
-                                          TypeInfo__IActivatableFirstTimeUiElement,5);
+      puVar26 = (undefined8 *)
+                FUN_?(KStack_16.value,TypeInfo__IActivatableFirstTimeUiElement,5);
 code_?:
-      cVar22 = (*(code *)*ppcVar21)(pOVar13,(((Il2CppType *)(ppcVar21 + 1))->data).dummy);
-      if (cVar22 == '\0') {
-        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Debug);
+      cVar27 = (*(code *)*puVar26)();
+      if (cVar27 == '\0') {
+        if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+          FUN_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                   ((Object *)StringLiteral_In_rare_cases_when_entering_play,(MethodInfo *)0x0);
-        pLVar23 = (this->fields).elementsToRemove;
-        if (pLVar23 == (List_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0) goto code_?;
-        method_00 = pIStack_14;
-        func_?(pLVar23,pIStack_14,
-                        MethodInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>__Add_MV__WorldObject__MetaData__FirstTimeEvent_
-                       );
+        this_00 = (List_1_System_UInt32Enum_ *)(this->fields).elementsToRemove;
+        if (this_00 == (List_1_System_UInt32Enum_ *)0x0) goto code_?;
+        mscorlib.dll::System::Collections::Generic::List`1[System::UInt32Enum]::
+        List_1_System_UInt32Enum__Add
+                  (this_00,(UInt32Enum__Enum)uVar22,
+                   MethodInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>__Add_MV__WorldObject__MetaData__FirstTimeEvent_
+                  );
       }
       else {
-        if (pOVar13 == (Object *)0x0) goto code_?;
-        method_00 = TypeInfo__IActivatableFirstTimeUiElement;
-        cVar22 = func_?(2,TypeInfo__IActivatableFirstTimeUiElement,pOVar13);
-        if (cVar22 != '\0') {
-          firstTimeEvent = func_?(6,TypeInfo__IActivatableFirstTimeUiElement,pOVar13);
-          bVar12 = FirstTimeEventManager::FirstTimeEventManager_HasFirstTimeEventOccured
-                            (firstTimeEvent,(MethodInfo *)0x0);
-          if (bVar12 != 0) {
-            if (pOStack_7 != (Object *)0x0) {
-              uStack_20 = func_?(1,TypeInfo__IActivatableFirstTimeUiElement,pOVar13);
-              iVar24 = func_?(1,TypeInfo__IActivatableFirstTimeUiElement,pOStack_7);
-              if ((int)uStack_20 <= iVar24) goto code_?;
+        if (pOVar21 == (Object *)0x0) goto code_?;
+        cVar27 = FUN_?(2,TypeInfo__IActivatableFirstTimeUiElement,pOVar21);
+        if (cVar27 != '\0') {
+          firstTimeEvent = FUN_?(6,TypeInfo__IActivatableFirstTimeUiElement,pOVar21);
+          bVar20 = FirstTimeEventManager::FirstTimeEventManager_HasFirstTimeEventOccured
+                             (firstTimeEvent,(MethodInfo *)0x0);
+          if (bVar20 != 0) {
+            if (pOVar19 != (Object *)0x0) {
+              iVar28 = FUN_?(1,TypeInfo__IActivatableFirstTimeUiElement,pOVar21);
+              iVar29 = FUN_?(1,TypeInfo__IActivatableFirstTimeUiElement,pOVar19);
+              if (iVar28 <= iVar29) goto code_?;
             }
-            pOStack_7 = pOVar13;
+            pOVar19 = pOVar21;
           }
         }
       }
       goto code_?;
     }
-    uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&DStack_6,
-               (ExceptionArgument__Enum)
-               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Dispose__
-               ,(MethodInfo *)method_00);
-    pOVar13 = pOStack_7;
-    uStack_1 = 0xffffffff;
-    if ((pOStack_7 != (Object *)0x0) &&
-       (cVar22 = func_?(3,TypeInfo__IActivatableFirstTimeUiElement,pOStack_7),
-       cVar22 == '\0')) {
-      func_?(4,TypeInfo__IActivatableFirstTimeUiElement,pOVar13);
-      this_01 = (RTFocusCamera *)
-                MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-      transitionType = func_?(0,TypeInfo__IActivatableFirstTimeUiElement,pOVar13);
-      if (this_01 == (RTFocusCamera *)0x0) goto code_?;
-      RTG::RTFocusCamera::RTFocusCamera_OnPrjSwitchTransitionEnd
-                (this_01,transitionType,(MethodInfo *)0x0);
-    }
-    method_01 = (MethodInfo *)(this->fields).elementsToRemove;
-    if (method_01 != (MethodInfo *)0x0) {
-      pLVar25 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                          ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                            *)auStack_26,
-                           (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                           method_01,
-                           MethodInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>__GetEnumerator__
-                          );
-      auStack_8._0_4_ = pLVar25->_list;
-      auStack_8._4_4_ = pLVar25->_index;
-      auStack_8._8_4_ = pLVar25->_version;
-      auStack_8._12_4_ = pLVar25->_current;
-      pOStack_11 = (Object *)0x0;
-      uStack_1 = 4;
-      pDStack_10 = (Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)auStack_8;
-      while (bVar12 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Text::
-                     RegularExpressions::RegexCharClass+SingleRange]::
-                     List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange__MoveNext
-                               ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                 *)auStack_8,
-                                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent>__MoveNext__
-                               ), bVar12 != 0) {
-        this_00 = (this->fields).activatableUiElements;
-        if (this_00 ==
-            (Dictionary_2_MV_WorldObject_MetaData_FirstTimeEvent_IActivatableFirstTimeUiElement_ *)
-            0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-        Dictionary_2_System_Int32Enum_System_Object__Remove
-                  ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,auStack_8._12_4_,
-                   MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Remove_MV__WorldObject__MetaData__FirstTimeEvent_
-                  );
+    if ((pOVar19 == (Object *)0x0) ||
+       (cVar27 = FUN_?(3,TypeInfo__IActivatableFirstTimeUiElement,pOVar19), cVar27 != '\0'))
+    {
+code_?:
+      pLVar30 = (this->fields).elementsToRemove;
+      if (pLVar30 != (List_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0) {
+        if (iRam_? != 0) {
+          uVar5 = (uint)((ulonglong)&uStack_6 >> 0xc);
+          lVar7 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+            puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+            LOCK();
+            bVar10 = uVar8 == *puVar9;
+            if (bVar10) {
+              *puVar9 = uVar8 | 1L << (uVar5 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar10);
+        }
+        puStack_11 = (undefined1 *)((ulonglong)(uint)(pLVar30->fields)._version << 0x20);
+        uStack_13 = 0;
+        uStack_2 = (longlong)puStack_11;
+        uStack_3 = 0;
+        uStack_6 = 0;
+        puStack_11 = (undefined1 *)&pLStack_1;
+        pLStack_1 = pLVar30;
+        while (pLStack_1 != (List_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0) {
+          if (uStack_2._4_4_ != (pLStack_1->fields)._version) {
+code_?:
+            if ((MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent>__MoveNext__
+                 ->klass->field_0x135 & 1) == 0) {
+              FUN_?();
+            }
+            if (pLStack_1 == (List_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0)
+            goto code_?;
+            if (uStack_2._4_4_ != (pLStack_1->fields)._version) goto code_?;
+            uStack_2 = CONCAT44(uStack_2._4_4_,(pLStack_1->fields)._size + 1);
+            uStack_3 = uStack_3 & 0xffffffff00000000;
+            pLVar30 = (this->fields).elementsToRemove;
+            if (pLVar30 != (List_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0) {
+              piVar31 = &(pLVar30->fields)._version;
+              *piVar31 = *piVar31 + 1;
+              (pLVar30->fields)._size = 0;
+              return;
+            }
+            goto code_?;
+          }
+          lVar7 = (longlong)(int)(uint)uStack_2;
+          if ((uint)(pLStack_1->fields)._size <= (uint)uStack_2) goto code_?;
+          pFVar32 = (pLStack_1->fields)._items;
+          if (pFVar32 == (FirstTimeEvent__Enum__Array *)0x0) goto code_?;
+          if ((uint)pFVar32->max_length <= (uint)uStack_2) goto code_?;
+          uStack_3 = CONCAT44(uStack_3._4_4_,pFVar32->vector[lVar7]);
+          uStack_2 = CONCAT44(uStack_2._4_4_,(uint)uStack_2 + 1);
+          this_01 = (this->fields).activatableUiElements;
+          if (this_01 ==
+              (Dictionary_2_MV_WorldObject_MetaData_FirstTimeEvent_IActivatableFirstTimeUiElement_ *
+              )0x0) goto code_?;
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]
+          ::Dictionary_2_System_Int32Enum_System_Object__Remove
+                    ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,pFVar32->vector[lVar7]
+                     ,
+                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Remove_MV__WorldObject__MetaData__FirstTimeEvent_
+                    );
+        }
+        goto code_?;
       }
-      uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)auStack_8,
-                 (ExceptionArgument__Enum)
-                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent>__Dispose__
-                 ,method_01);
-      uStack_1 = 0xffffffff;
-      pLVar23 = (this->fields).elementsToRemove;
-      if (pLVar23 != (List_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0) {
-        piVar27 = &(pLVar23->fields)._version;
-        *piVar27 = *piVar27 + 1;
-        (pLVar23->fields)._size = 0;
-        *unaff_FS_OFFSET = uStack_3;
-        return;
+    }
+    else {
+      FUN_?(4,TypeInfo__IActivatableFirstTimeUiElement,pOVar19);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pMVar33 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if ((pMVar33 != (MVGameControllerBase *)0x0) &&
+         (pMVar34 = (pMVar33->fields).game, pMVar34 != (MVNetworkGame *)0x0)) {
+        pGVar35 = (pMVar34->fields).GameEventManager;
+        uVar36 = FUN_?(0,TypeInfo__IActivatableFirstTimeUiElement,pOVar19);
+        if (pGVar35 != (GameEventManager *)0x0) {
+          if ((pGVar35->fields).OnFirstTimeEvent !=
+              (Action_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0) {
+            pAVar37 = (pGVar35->fields).OnFirstTimeEvent;
+            (*(pAVar37->fields)._._.invoke_impl)
+                      ((pAVar37->fields)._._.method_code,uVar36,(pAVar37->fields)._._.method);
+          }
+          goto code_?;
+        }
       }
     }
   }
 code_?:
-  uVar28 = func_?();
-  uVar28 = func_?(uVar28);
-  func_?(uVar28);
-  pcVar29 = (code *)swi(3);
-  (*pcVar29)();
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  mscorlib.dll::System::ThrowHelper::
+  ThrowHelper_1_ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion((MethodInfo *)0x0)
+  ;
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+  pcVar38 = (code *)swi(3);
+  (*pcVar38)();
   return;
 }
 
@@ -244,230 +315,301 @@ void Assembly-CSharp.dll::FirstTimeElementActivator::FirstTimeElementActivator_L
     return;
   }
   (this->fields).evaluateActivatableElements = 0;
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff80;
-  puVar5 = &stack0xffffff80;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Remove_MV__WorldObject__MetaData__FirstTimeEvent_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent>__get_Current__
-                   );
-    func_?(&TypeInfo__IActivatableFirstTimeUiElement);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__get_Key__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__get_Value__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>__Add_MV__WorldObject__MetaData__FirstTimeEvent_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>__Clear__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>__GetEnumerator__
-                   );
-    func_?(&StringLiteral_In_rare_cases_when_entering_play);
+    FUN_?(&TypeInfo__UnityEngine__Debug,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Remove_MV__WorldObject__MetaData__FirstTimeEvent_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__IActivatableFirstTimeUiElement);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__get_Key__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__get_Value__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>__Add_MV__WorldObject__MetaData__FirstTimeEvent_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>__Clear__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
-  DStack_6._version = 0;
-  DStack_6._index = 0;
-  DStack_6._current.key = 0;
-  pOStack_7 = (Object *)0x0;
-  DStack_6._current.value = (Object *)0x0;
-  DStack_6._getEnumeratorRetType = 0;
-  method_00 = (IActivatableFirstTimeUiElement__Class *)(this->fields).activatableUiElements;
-  auStack_8._0_4_ = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
-  auStack_8._4_4_ = 0;
-  auStack_8._8_4_ = 0;
-  auStack_8._12_2_ = 0;
-  auStack_8._14_2_ = 0;
-  if (method_00 != (IActivatableFirstTimeUiElement__Class *)0x0) {
-    pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
-             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                        (auStack_8 + 0x10),(Dictionary_2_System_UInt32_System_Object_ *)method_00,
-                        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__GetEnumerator__
-                       );
-    pDStack_10 = &DStack_6;
-    DStack_6._dictionary = pDVar9->_dictionary;
-    DStack_6._version = pDVar9->_version;
-    DStack_6._index = pDVar9->_index;
-    DStack_6._current.key = (pDVar9->_current).key;
-    DStack_6._16_8_ = *(undefined8 *)&(pDVar9->_current).value;
-    pOStack_11 = (Object *)0x0;
-    uStack_1 = 1;
+  pLStack_1 = (List_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0;
+  uStack_2 = 0;
+  uStack_3 = 0;
+  pDVar4 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).activatableUiElements;
+  if (pDVar4 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
+    if (iRam_? != 0) {
+      uVar5 = (uint)((ulonglong)&uStack_6 >> 0xc);
+      lVar7 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar10 = uVar8 == *puVar9;
+        if (bVar10) {
+          *puVar9 = uVar8 | 1L << (uVar5 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar10);
+    }
+    puStack_11 = (undefined1 *)(ulonglong)(uint)(pDVar4->fields)._version;
+    uStack_12 = 2;
+    uStack_13 = 0;
+    uStack_14 = 0;
+    uStack_15 = (ulonglong)puStack_11;
+    KStack_16.key = 0;
+    KStack_16._4_4_ = 0;
+    KStack_16.value = (Object *)0x0;
+    uStack_17._0_4_ = 2;
+    uStack_17._4_4_ = 0;
+    uStack_6 = 0;
+    puStack_11 = (undefined1 *)&pDStack_18;
+    pOVar19 = (Object *)0x0;
+    pDStack_18 = pDVar4;
 code_?:
-    bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System
-            ::UInt32,System::Object]::
-            Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                      (&DStack_6,
-                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__MoveNext__
-                      );
-    if (bVar12 != 0) {
-      pOVar13 = DStack_6._current.value;
-      pIStack_14 = (IActivatableFirstTimeUiElement__Class *)DStack_6._current.key;
-      pOStack_15 = DStack_6._current.value;
-      if (DStack_6._current.value == (Object *)0x0) goto code_?;
-      pOStack_16 = (DStack_6._current.value)->klass;
-      uVar17 = 0;
-      uStack_18 = 0;
-      uVar19._0_1_ = (pOStack_16->_1).rank;
-      uVar19._1_1_ = (pOStack_16->_1).minimumAlignment;
-      uStack_20 = (uint)uVar19;
-      if (uVar19 != 0) {
+    bVar20 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System
+             ::UInt32,System::Object]::
+             Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                        &pDStack_18,
+                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__MoveNext__
+                       );
+    pOVar21 = KStack_16.value;
+    uVar22 = KStack_16._0_8_;
+    if (bVar20 != 0) {
+      if (KStack_16.value == (Object *)0x0) goto code_?;
+      pOVar23 = (KStack_16.value)->klass;
+      uVar24 = 0;
+      uVar25._0_1_ = (pOVar23->_1).rank;
+      uVar25._1_1_ = (pOVar23->_1).minimumAlignment;
+      if (uVar25 != 0) {
         do {
-          if (pOStack_16->interfaceOffsets[uVar17].interfaceType ==
+          if (pOVar23->interfaceOffsets[uVar24].interfaceType ==
               (Il2CppClass *)TypeInfo__IActivatableFirstTimeUiElement) {
-            ppcVar21 = &(DStack_6._current.value)->klass[1]._0.namespaze +
-                       (DStack_6._current.value)->klass->interfaceOffsets[uVar17].offset * 2;
+            puVar26 = (undefined8 *)
+                      ((longlong)&(pOVar23->vtable).Equals +
+                      (longlong)(pOVar23->interfaceOffsets[uVar24].offset + 5) * 0x10);
             goto code_?;
           }
-          uVar17 = uVar17 + 1;
-        } while (uVar17 < uVar19);
+          uVar24 = uVar24 + 1;
+        } while (uVar24 < uVar25);
       }
-      ppcVar21 = (char **)func_?(DStack_6._current.value,
-                                          TypeInfo__IActivatableFirstTimeUiElement,5);
+      puVar26 = (undefined8 *)
+                FUN_?(KStack_16.value,TypeInfo__IActivatableFirstTimeUiElement,5);
 code_?:
-      cVar22 = (*(code *)*ppcVar21)(pOVar13,(((Il2CppType *)(ppcVar21 + 1))->data).dummy);
-      if (cVar22 == '\0') {
-        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Debug);
+      cVar27 = (*(code *)*puVar26)();
+      if (cVar27 == '\0') {
+        if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+          FUN_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                   ((Object *)StringLiteral_In_rare_cases_when_entering_play,(MethodInfo *)0x0);
-        pLVar23 = (this->fields).elementsToRemove;
-        if (pLVar23 == (List_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0) goto code_?;
-        method_00 = pIStack_14;
-        func_?(pLVar23,pIStack_14,
-                        MethodInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>__Add_MV__WorldObject__MetaData__FirstTimeEvent_
-                       );
+        this_00 = (List_1_System_UInt32Enum_ *)(this->fields).elementsToRemove;
+        if (this_00 == (List_1_System_UInt32Enum_ *)0x0) goto code_?;
+        mscorlib.dll::System::Collections::Generic::List`1[System::UInt32Enum]::
+        List_1_System_UInt32Enum__Add
+                  (this_00,(UInt32Enum__Enum)uVar22,
+                   MethodInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>__Add_MV__WorldObject__MetaData__FirstTimeEvent_
+                  );
       }
       else {
-        if (pOVar13 == (Object *)0x0) goto code_?;
-        method_00 = TypeInfo__IActivatableFirstTimeUiElement;
-        cVar22 = func_?(2,TypeInfo__IActivatableFirstTimeUiElement,pOVar13);
-        if (cVar22 != '\0') {
-          firstTimeEvent = func_?(6,TypeInfo__IActivatableFirstTimeUiElement,pOVar13);
-          bVar12 = FirstTimeEventManager::FirstTimeEventManager_HasFirstTimeEventOccured
-                            (firstTimeEvent,(MethodInfo *)0x0);
-          if (bVar12 != 0) {
-            if (pOStack_7 != (Object *)0x0) {
-              uStack_20 = func_?(1,TypeInfo__IActivatableFirstTimeUiElement,pOVar13);
-              iVar24 = func_?(1,TypeInfo__IActivatableFirstTimeUiElement,pOStack_7);
-              if ((int)uStack_20 <= iVar24) goto code_?;
+        if (pOVar21 == (Object *)0x0) goto code_?;
+        cVar27 = FUN_?(2,TypeInfo__IActivatableFirstTimeUiElement,pOVar21);
+        if (cVar27 != '\0') {
+          firstTimeEvent = FUN_?(6,TypeInfo__IActivatableFirstTimeUiElement,pOVar21);
+          bVar20 = FirstTimeEventManager::FirstTimeEventManager_HasFirstTimeEventOccured
+                             (firstTimeEvent,(MethodInfo *)0x0);
+          if (bVar20 != 0) {
+            if (pOVar19 != (Object *)0x0) {
+              iVar28 = FUN_?(1,TypeInfo__IActivatableFirstTimeUiElement,pOVar21);
+              iVar29 = FUN_?(1,TypeInfo__IActivatableFirstTimeUiElement,pOVar19);
+              if (iVar28 <= iVar29) goto code_?;
             }
-            pOStack_7 = pOVar13;
+            pOVar19 = pOVar21;
           }
         }
       }
       goto code_?;
     }
-    uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&DStack_6,
-               (ExceptionArgument__Enum)
-               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Dispose__
-               ,(MethodInfo *)method_00);
-    pOVar13 = pOStack_7;
-    uStack_1 = 0xffffffff;
-    if ((pOStack_7 != (Object *)0x0) &&
-       (cVar22 = func_?(3,TypeInfo__IActivatableFirstTimeUiElement,pOStack_7),
-       cVar22 == '\0')) {
-      func_?(4,TypeInfo__IActivatableFirstTimeUiElement,pOVar13);
-      this_01 = (RTFocusCamera *)
-                MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-      transitionType = func_?(0,TypeInfo__IActivatableFirstTimeUiElement,pOVar13);
-      if (this_01 == (RTFocusCamera *)0x0) goto code_?;
-      RTG::RTFocusCamera::RTFocusCamera_OnPrjSwitchTransitionEnd
-                (this_01,transitionType,(MethodInfo *)0x0);
-    }
-    method_01 = (MethodInfo *)(this->fields).elementsToRemove;
-    if (method_01 != (MethodInfo *)0x0) {
-      pLVar25 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                          ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                            *)auStack_26,
-                           (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                           method_01,
-                           MethodInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>__GetEnumerator__
-                          );
-      auStack_8._0_4_ = pLVar25->_list;
-      auStack_8._4_4_ = pLVar25->_index;
-      auStack_8._8_4_ = pLVar25->_version;
-      auStack_8._12_4_ = pLVar25->_current;
-      pOStack_11 = (Object *)0x0;
-      uStack_1 = 4;
-      pDStack_10 = (Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)auStack_8;
-      while (bVar12 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Text::
-                     RegularExpressions::RegexCharClass+SingleRange]::
-                     List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange__MoveNext
-                               ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                 *)auStack_8,
-                                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent>__MoveNext__
-                               ), bVar12 != 0) {
-        this_00 = (this->fields).activatableUiElements;
-        if (this_00 ==
-            (Dictionary_2_MV_WorldObject_MetaData_FirstTimeEvent_IActivatableFirstTimeUiElement_ *)
-            0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-        Dictionary_2_System_Int32Enum_System_Object__Remove
-                  ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,auStack_8._12_4_,
-                   MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Remove_MV__WorldObject__MetaData__FirstTimeEvent_
-                  );
+    if ((pOVar19 == (Object *)0x0) ||
+       (cVar27 = FUN_?(3,TypeInfo__IActivatableFirstTimeUiElement,pOVar19), cVar27 != '\0'))
+    {
+code_?:
+      pLVar30 = (this->fields).elementsToRemove;
+      if (pLVar30 != (List_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0) {
+        if (iRam_? != 0) {
+          uVar5 = (uint)((ulonglong)&uStack_6 >> 0xc);
+          lVar7 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+            puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+            LOCK();
+            bVar10 = uVar8 == *puVar9;
+            if (bVar10) {
+              *puVar9 = uVar8 | 1L << (uVar5 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar10);
+        }
+        puStack_11 = (undefined1 *)((ulonglong)(uint)(pLVar30->fields)._version << 0x20);
+        uStack_13 = 0;
+        uStack_2 = (longlong)puStack_11;
+        uStack_3 = 0;
+        uStack_6 = 0;
+        puStack_11 = (undefined1 *)&pLStack_1;
+        pLStack_1 = pLVar30;
+        while (pLStack_1 != (List_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0) {
+          if (uStack_2._4_4_ != (pLStack_1->fields)._version) {
+code_?:
+            if ((MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent>__MoveNext__
+                 ->klass->field_0x135 & 1) == 0) {
+              FUN_?();
+            }
+            if (pLStack_1 == (List_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0)
+            goto code_?;
+            if (uStack_2._4_4_ != (pLStack_1->fields)._version) goto code_?;
+            uStack_2 = CONCAT44(uStack_2._4_4_,(pLStack_1->fields)._size + 1);
+            uStack_3 = uStack_3 & 0xffffffff00000000;
+            pLVar30 = (this->fields).elementsToRemove;
+            if (pLVar30 != (List_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0) {
+              piVar31 = &(pLVar30->fields)._version;
+              *piVar31 = *piVar31 + 1;
+              (pLVar30->fields)._size = 0;
+              return;
+            }
+            goto code_?;
+          }
+          lVar7 = (longlong)(int)(uint)uStack_2;
+          if ((uint)(pLStack_1->fields)._size <= (uint)uStack_2) goto code_?;
+          pFVar32 = (pLStack_1->fields)._items;
+          if (pFVar32 == (FirstTimeEvent__Enum__Array *)0x0) goto code_?;
+          if ((uint)pFVar32->max_length <= (uint)uStack_2) goto code_?;
+          uStack_3 = CONCAT44(uStack_3._4_4_,pFVar32->vector[lVar7]);
+          uStack_2 = CONCAT44(uStack_2._4_4_,(uint)uStack_2 + 1);
+          this_01 = (this->fields).activatableUiElements;
+          if (this_01 ==
+              (Dictionary_2_MV_WorldObject_MetaData_FirstTimeEvent_IActivatableFirstTimeUiElement_ *
+              )0x0) goto code_?;
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]
+          ::Dictionary_2_System_Int32Enum_System_Object__Remove
+                    ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,pFVar32->vector[lVar7]
+                     ,
+                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Remove_MV__WorldObject__MetaData__FirstTimeEvent_
+                    );
+        }
+        goto code_?;
       }
-      uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)auStack_8,
-                 (ExceptionArgument__Enum)
-                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::MetaData::FirstTimeEvent>__Dispose__
-                 ,method_01);
-      uStack_1 = 0xffffffff;
-      pLVar23 = (this->fields).elementsToRemove;
-      if (pLVar23 != (List_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0) {
-        piVar27 = &(pLVar23->fields)._version;
-        *piVar27 = *piVar27 + 1;
-        (pLVar23->fields)._size = 0;
-        *unaff_FS_OFFSET = uStack_3;
-        return;
+    }
+    else {
+      FUN_?(4,TypeInfo__IActivatableFirstTimeUiElement,pOVar19);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pMVar33 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if ((pMVar33 != (MVGameControllerBase *)0x0) &&
+         (pMVar34 = (pMVar33->fields).game, pMVar34 != (MVNetworkGame *)0x0)) {
+        pGVar35 = (pMVar34->fields).GameEventManager;
+        uVar36 = FUN_?(0,TypeInfo__IActivatableFirstTimeUiElement,pOVar19);
+        if (pGVar35 != (GameEventManager *)0x0) {
+          if ((pGVar35->fields).OnFirstTimeEvent !=
+              (Action_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0) {
+            pAVar37 = (pGVar35->fields).OnFirstTimeEvent;
+            (*(pAVar37->fields)._._.invoke_impl)
+                      ((pAVar37->fields)._._.method_code,uVar36,(pAVar37->fields)._._.method);
+          }
+          goto code_?;
+        }
       }
     }
   }
 code_?:
-  uVar28 = func_?();
-  uVar28 = func_?(uVar28);
-  func_?(uVar28);
-  pcVar29 = (code *)swi(3);
-  (*pcVar29)();
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  mscorlib.dll::System::ThrowHelper::
+  ThrowHelper_1_ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion((MethodInfo *)0x0)
+  ;
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+  pcVar38 = (code *)swi(3);
+  (*pcVar38)();
   return;
 }
 
@@ -479,71 +621,153 @@ void Assembly-CSharp.dll::FirstTimeElementActivator::FirstTimeElementActivator_O
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
-                   );
-    func_?(&TypeInfo__System__Action);
-    func_?(&
-                    MethodInfo__FirstTimeElementActivator__FirstTimeStateReceiver_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
-                   );
-    func_?(&MethodInfo__FirstTimeElementActivator__OnStackChange__);
-    func_?(&MethodInfo__FirstTimeElementActivator__OnXPRewarded__);
-    func_?(&TypeInfo__FirstTimeEventManager);
+    FUN_?(&
+                  TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Action);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__FirstTimeElementActivator__FirstTimeStateReceiver_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__FirstTimeElementActivator__OnStackChange__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__FirstTimeElementActivator__OnXPRewarded__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__FirstTimeEventManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pAVar1 = TypeInfo__FirstTimeEventManager->static_fields->XPRewarded;
-  pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+  pNVar2 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (pNVar2,(Object *)this,MethodInfo__FirstTimeElementActivator__OnXPRewarded__,
              (MethodInfo *)0x0);
-  pAVar1 = (Action *)
+  pAVar3 = (Action *)
            mscorlib.dll::System::Delegate::Delegate_Remove
                      ((Delegate *)pAVar1,(Delegate *)pNVar2,(MethodInfo *)0x0);
-  if (pAVar1 == (Action *)0x0) {
+  pAVar1 = (Action *)0x0;
+  if (pAVar3 == (Action *)0x0) {
     TypeInfo__FirstTimeEventManager->static_fields->XPRewarded = (Action *)0x0;
-code_?:
-    func_?();
-    this_01 = (EventHandler_1_Object_ *)func_?();
-    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-              (this_01,(Object *)this,
-               MethodInfo__FirstTimeElementActivator__FirstTimeStateReceiver_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
-               ,(MethodInfo *)0x0);
-    FirstTimeEventManager::FirstTimeEventManager_UnSubscribeToFirstTimeState
-              ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
-                *)this_01,(MethodInfo *)0x0);
-    this_00 = (this->fields).uiStack;
-    pNVar2 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar2,(Object *)this,MethodInfo__FirstTimeElementActivator__OnStackChange__,
-               (MethodInfo *)0x0);
-    if (this_00 != (UIStack *)0x0) {
-      UIStack::UIStack_UnSubscribeToStackChanges(this_00,(Action *)pNVar2,(MethodInfo *)0x0);
+  }
+  else {
+    pAVar4 = pAVar1;
+    if (pAVar3->klass == TypeInfo__System__Action) {
+      pAVar4 = pAVar3;
+    }
+    if (pAVar4 == (Action *)0x0) {
+      FUN_?(pAVar3,TypeInfo__System__Action);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    TypeInfo__FirstTimeEventManager->static_fields->XPRewarded = pAVar4;
+    pAVar4 = pAVar1;
+    if (pAVar3->klass == TypeInfo__System__Action) {
+      pAVar4 = pAVar3;
+    }
+    if (pAVar4 == (Action *)0x0) {
+      FUN_?(pAVar3);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
       return;
     }
   }
-  else {
-    pAVar3 = (Action *)0x0;
-    if (pAVar1->klass == TypeInfo__System__Action) {
-      pAVar3 = pAVar1;
-    }
-    if (pAVar3 != (Action *)0x0) {
-      TypeInfo__FirstTimeEventManager->static_fields->XPRewarded = pAVar3;
-      pAVar3 = (Action *)0x0;
-      if (pAVar1->klass == TypeInfo__System__Action) {
-        pAVar3 = pAVar1;
+  if (iRam_? != 0) {
+    uVar6 = (uint)((ulonglong)&TypeInfo__FirstTimeEventManager->static_fields->XPRewarded >> 0xc);
+    lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+      puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+      LOCK();
+      bVar10 = uVar8 == *puVar9;
+      if (bVar10) {
+        *puVar9 = uVar8 | 1L << (ulonglong)(uVar6 & 0x3f);
       }
-      if (pAVar3 == (Action *)0x0) goto code_?;
-      goto code_?;
-    }
-    func_?();
+      UNLOCK();
+    } while (!bVar10);
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  this_00 = (UnityAction_2_System_Object_System_Int32_ *)
+            FUN_?(
+                         TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
+                         );
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Int32]::
+  UnityAction_2_System_Object_System_Int32___ctor
+            (this_00,(Object *)this,
+             MethodInfo__FirstTimeElementActivator__FirstTimeStateReceiver_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
+             ,(MethodInfo *)0x0);
+  FirstTimeEventManager::FirstTimeEventManager_UnSubscribeToFirstTimeState
+            ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
+              *)this_00,(MethodInfo *)0x0);
+  pUVar11 = (this->fields).uiStack;
+  pNVar2 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (pNVar2,(Object *)this,MethodInfo__FirstTimeElementActivator__OnStackChange__,
+             (MethodInfo *)0x0);
+  if (pUVar11 == (UIStack *)0x0) {
+    FUN_?();
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
+    return;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__Action);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pAVar3 = (Action *)
+           mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)(pUVar11->fields).uiStackChangedPublisher,(Delegate *)pNVar2,
+                      (MethodInfo *)0x0);
+  if (pAVar3 == (Action *)0x0) {
+    (pUVar11->fields).uiStackChangedPublisher = (Action *)0x0;
+  }
+  else {
+    pAVar4 = pAVar1;
+    if (pAVar3->klass == TypeInfo__System__Action) {
+      pAVar4 = pAVar3;
+    }
+    if (pAVar4 == (Action *)0x0) {
+      FUN_?(pAVar3);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    (pUVar11->fields).uiStackChangedPublisher = pAVar4;
+    if (pAVar3->klass == TypeInfo__System__Action) {
+      pAVar1 = pAVar3;
+    }
+    if (pAVar1 == (Action *)0x0) {
+      FUN_?(pAVar3);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+  }
+  if (iRam_? != 0) {
+    uVar6 = (uint)((ulonglong)&(pUVar11->fields).uiStackChangedPublisher >> 0xc);
+    lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+      puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+      LOCK();
+      bVar10 = uVar8 == *puVar9;
+      if (bVar10) {
+        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar10);
+  }
   return;
 }
 
@@ -555,35 +779,52 @@ void Assembly-CSharp.dll::FirstTimeElementActivator::FirstTimeElementActivator_O
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<MVJoinState>);
-    func_?(&MethodInfo__FirstTimeElementActivator__OnJoinStateChanged_MVJoinState_);
+    FUN_?(&TypeInfo__System__Action<MVJoinState>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__FirstTimeElementActivator__OnJoinStateChanged_MVJoinState_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (mvJoinState == MVJoinState__Enum_Playing) {
+    bVar1 = cRam_? == '\0';
     (this->fields).isReady = 1;
-    pAVar1 = MVGameControllerBase::MVGameControllerBase_get_OnJoinStateChanged((MethodInfo *)0x0);
+    if (bVar1) {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if (pMVar2 == (MVGameControllerBase *)0x0) {
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pAVar4 = (pMVar2->fields).onJoinStateChanged;
     this_00 = (UnityAction_1_System_Int32Enum_ *)
-              func_?(TypeInfo__System__Action<MVJoinState>);
+              FUN_?(TypeInfo__System__Action<MVJoinState>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
     UnityAction_1_System_Int32Enum___ctor
               (this_00,(Object *)this,
                MethodInfo__FirstTimeElementActivator__OnJoinStateChanged_MVJoinState_,
                (MethodInfo *)0x0);
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar2 == (Delegate *)0x0) {
-      MVGameControllerBase::MVGameControllerBase_set_OnJoinStateChanged
-                ((Action_1_MVJoinState_ *)0x0,(MethodInfo *)0x0);
-      return;
+    pDVar5 = mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)pAVar4,(Delegate *)this_00,(MethodInfo *)0x0);
+    pAVar6 = TypeInfo__System__Action<MVJoinState>;
+    pAVar4 = (Action_1_MVJoinState_ *)0x0;
+    if (pDVar5 != (Delegate *)0x0) {
+      pAVar4 = (Action_1_MVJoinState_ *)FUN_?(pDVar5);
+      if (pAVar4 == (Action_1_MVJoinState_ *)0x0) {
+        FUN_?(pDVar5,pAVar6);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
     }
-    pAVar1 = (Action_1_MVJoinState_ *)func_?();
-    if (pAVar1 == (Action_1_MVJoinState_ *)0x0) {
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
-    MVGameControllerBase::MVGameControllerBase_set_OnJoinStateChanged(pAVar1,(MethodInfo *)0x0);
+    MVGameControllerBase::MVGameControllerBase_set_OnJoinStateChanged(pAVar4,(MethodInfo *)0x0);
   }
   return;
 }
@@ -596,19 +837,138 @@ void Assembly-CSharp.dll::FirstTimeElementActivator::FirstTimeElementActivator_O
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__NotificationController);
-    func_?(&StringLiteral_Great_job__XP_rewarded_);
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Great_job__XP_rewarded_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-  if (MVar1 != MVGameMode__Enum_Play) {
-    if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    NotificationController::NotificationController_PushNoticationInstruction
-              (StringLiteral_Great_job__XP_rewarded_,NotificationLifetime__Enum_Low,
-               (MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
+  pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar1 == (GameSessionData *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  if ((pGVar1->fields).gameMode == 1) {
+    return;
+  }
+  if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  value = StringLiteral_Great_job__XP_rewarded_;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                  ,2,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+             *)FUN_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                            );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  UIR::UIRenderDevice+DisableForceGammaMaterial]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
+            (this_01,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+            );
+  auStackX_8[0] = 1;
+  pOVar3 = (Object *)FUN_?(uRam_?,auStackX_8);
+  if (this_01 ==
+      (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+       *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+  Dictionary_2_System_Object_System_Object__TryInsert
+            ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar3,(Object *)value,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+             ->klass->rgctx_data[0x22].method);
+  if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  uVar4 = 0;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                  ,this_01,2,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationLifetime);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pOVar3 = (Object *)FUN_?(uRam_?,&stack0x00000018);
+  value_00 = (Object *)FUN_?(TypeInfo__NotificationLifetime,&stack0x00000018);
+  if (this_01 !=
+      (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+       *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__TryInsert
+              ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar3,value_00,
+               (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar4 >> 8),2),
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+               ->klass->rgctx_data[0x22].method);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__NotificationsManager);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (TypeInfo__NotificationsManager->static_fields->_Initialized_k__BackingField != 0) {
+      if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__NotificationsManager);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      this_00 = TypeInfo__NotificationsManager->static_fields->_activeInstance;
+      if (this_00 == (NotificationsManager *)0x0) goto code_?;
+      NotificationsManager::NotificationsManager_InstantiateNotification
+                (this_00,NotificationType__Enum_FirstTimeXPRewarded,
+                 (Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0);
+    }
+    return;
+  }
+code_?:
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -622,46 +982,52 @@ void Assembly-CSharp.dll::FirstTimeElementActivator::
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Add_MV__WorldObject__MetaData__FirstTimeEvent__IActivatableFirstTimeUiElement_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__ContainsKey_MV__WorldObject__MetaData__FirstTimeEvent_
-                   );
-    func_?(&TypeInfo__IActivatableFirstTimeUiElement);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Add_MV__WorldObject__MetaData__FirstTimeEvent__IActivatableFirstTimeUiElement_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__ContainsKey_MV__WorldObject__MetaData__FirstTimeEvent_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__IActivatableFirstTimeUiElement);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pDVar1 = (this->fields).activatableUiElements;
+  this_00 = (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)
+            (this->fields).activatableUiElements;
   if (firstTimeEventHandlerListener != (IActivatableFirstTimeUiElement *)0x0) {
-    IVar2 = func_?(0,TypeInfo__IActivatableFirstTimeUiElement,firstTimeEventHandlerListener
-                           );
-    if (pDVar1 != (Dictionary_2_MV_WorldObject_MetaData_FirstTimeEvent_IActivatableFirstTimeUiElement_
-                   *)0x0) {
-      bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-              Single]::Dictionary_2_System_Int32Enum_System_Single__ContainsKey
-                        ((Dictionary_2_System_Int32Enum_System_Single_ *)pDVar1,IVar2,
+    IVar1 = FUN_?(0,TypeInfo__IActivatableFirstTimeUiElement,firstTimeEventHandlerListener);
+    if (this_00 != (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)0x0) {
+      iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,UnityEngine
+              ::Vector3]::Dictionary_2_System_Int32Enum_UnityEngine_Vector3__FindEntry
+                        (this_00,IVar1,
                          MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__ContainsKey_MV__WorldObject__MetaData__FirstTimeEvent_
-                        );
-      if (bVar3 == 0) {
-        pDVar1 = (this->fields).activatableUiElements;
-        IVar2 = func_?(0,TypeInfo__IActivatableFirstTimeUiElement,
-                                firstTimeEventHandlerListener);
-        if (pDVar1 == (Dictionary_2_MV_WorldObject_MetaData_FirstTimeEvent_IActivatableFirstTimeUiElement_
-                       *)0x0) goto code_?;
+                         ->klass->rgctx_data[0x21].method);
+      if (iVar2 < 0) {
+        this_01 = (this->fields).activatableUiElements;
+        IVar1 = FUN_?(0,TypeInfo__IActivatableFirstTimeUiElement,
+                              firstTimeEventHandlerListener);
+        if (this_01 ==
+            (Dictionary_2_MV_WorldObject_MetaData_FirstTimeEvent_IActivatableFirstTimeUiElement_ *)
+            0x0) goto code_?;
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-        Dictionary_2_System_Int32Enum_System_Object__Add
-                  ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,IVar2,
-                   (Object *)firstTimeEventHandlerListener,
+        Dictionary_2_System_Int32Enum_System_Object__TryInsert
+                  ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,IVar1,
+                   (Object *)firstTimeEventHandlerListener,CONCAT31((int3)((uint)in_R9D >> 8),2),
                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Add_MV__WorldObject__MetaData__FirstTimeEvent__IActivatableFirstTimeUiElement_
-                  );
+                   ->klass->rgctx_data[0x22].method);
       }
       return;
     }
   }
 code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -674,81 +1040,124 @@ void Assembly-CSharp.dll::FirstTimeElementActivator::FirstTimeElementActivator_S
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    FirstTimeEventSkipPopup_MethodInfo__UnityEngine__Object__Instantiate<FirstTimeEventSkipPopup>_FirstTimeEventSkipPopup_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&
-                    MethodInfo__FirstTimeElementActivator____c___SkipFirstTimeEvent_b__15_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&
-                    MethodInfo__FirstTimeElementActivator____c__DisplayClass15_0___SkipFirstTimeEvent_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__FirstTimeElementActivator____c__DisplayClass15_0);
-    func_?(&TypeInfo__FirstTimeElementActivator____c);
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  FirstTimeEventSkipPopup_MethodInfo__UnityEngine__Object__Instantiate<FirstTimeEventSkipPopup>_FirstTimeEventSkipPopup_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__FirstTimeElementActivator____c___SkipFirstTimeEvent_b__15_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__FirstTimeElementActivator____c__DisplayClass15_0___SkipFirstTimeEvent_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__FirstTimeElementActivator____c__DisplayClass15_0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__FirstTimeElementActivator____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__FirstTimeEventManager);
+    FUN_?(&TypeInfo__FirstTimeEventManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeState;
-  if (this_00 != (FirstTimeState *)0x0) {
-    method_00 = (MethodInfo *)0x0;
-    bVar1 = MVWorldObject.dll::MV::WorldObject::MetaData::FirstTimeState::
-            FirstTimeState_HasFirstTimeEventOccured
-                      (this_00,FirstTimeEvent__Enum_SkipEvent,(MethodInfo *)0x0);
-    if (bVar1 == 0) {
-      value = (Object *)func_?(TypeInfo__FirstTimeElementActivator____c__DisplayClass15_0);
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                (value,ExceptionArgument__Enum_obj,method_00);
+  pFVar1 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeState;
+  if ((pFVar1 != (FirstTimeState *)0x0) &&
+     (this_00 = (pFVar1->fields).bitArray, this_00 != (BitArray *)0x0)) {
+    if (((this_00->fields).m_length < 1) ||
+       (bVar2 = mscorlib.dll::System::Collections::BitArray::BitArray_Get
+                          (this_00,0,(MethodInfo *)0x0), bVar2 == 0)) {
+      object_00 = (Object *)
+                  FUN_?(TypeInfo__FirstTimeElementActivator____c__DisplayClass15_0);
       original = (this->fields).firstTimeSkipPopup;
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      pOVar2 = (Object__Class *)
+      pOVar3 = (Object__Class *)
                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                          ((Object *)original,
                           FirstTimeEventSkipPopup_MethodInfo__UnityEngine__Object__Instantiate<FirstTimeEventSkipPopup>_FirstTimeEventSkipPopup_
                          );
-      if (value != (Object *)0x0) {
-        value[1].klass = pOVar2;
-        func_?(value + 1,pOVar2);
-        pOVar2 = value[1].klass;
-        if (pOVar2 != (Object__Class *)0x0) {
-          (pOVar2->_0).byval_arg.attrs = (undefined2)firstTimeEvent;
-          (pOVar2->_0).byval_arg.type = firstTimeEvent._2_1_;
-          (pOVar2->_0).byval_arg.field_0x7 = firstTimeEvent._3_1_;
-          (pOVar2->_0).byval_arg.data.typeHandle = (Il2CppMetadataTypeHandle)firstTimeActivatable;
-          func_?(&(pOVar2->_0).byval_arg,firstTimeActivatable);
-          pUVar3 = (this->fields).uiStack;
-          if (pUVar3 != (UIStack *)0x0) {
-            pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               ((Component *)pUVar3,(MethodInfo *)0x0);
-            callbackFunction =
-                 (ExecuteEvents_EventFunction_1_System_Object_ *)
-                 func_?(
-                                TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                                );
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+      if (object_00 != (Object *)0x0) {
+        object_00[1].klass = pOVar3;
+        if (iRam_? != 0) {
+          uVar4 = (uint)((ulonglong)(object_00 + 1) >> 0xc);
+          uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+          do {
+            uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+            puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+            LOCK();
+            bVar8 = uVar6 == *puVar7;
+            if (bVar8) {
+              *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar8);
+        }
+        iVar9 = iRam_?;
+        pOVar3 = object_00[1].klass;
+        if (pOVar3 != (Object__Class *)0x0) {
+          (pOVar3->_0).byval_arg.attrs = (short)firstTimeEvent;
+          (pOVar3->_0).byval_arg.type = (char)((uint)firstTimeEvent >> 0x10);
+          (pOVar3->_0).byval_arg.field_0xb = (char)((uint)firstTimeEvent >> 0x18);
+          (pOVar3->_0).byval_arg.data.typeHandle = (Il2CppMetadataTypeHandle)firstTimeActivatable;
+          if (iVar9 != 0) {
+            uVar4 = (uint)((ulonglong)&(pOVar3->_0).byval_arg >> 0xc);
+            uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+            do {
+              uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+              puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+              LOCK();
+              bVar8 = uVar6 == *puVar7;
+              if (bVar8) {
+                *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar8);
+          }
+          pUVar10 = (this->fields).uiStack;
+          if (pUVar10 != (UIStack *)0x0) {
+            pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)pUVar10,(MethodInfo *)0x0);
+            this_02 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+                      FUN_?(
+                                   TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                                   );
+            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::
+            Object]::ExecuteEvents_EventFunction_1_System_Object___ctor
+                      (this_02,object_00,
                        MethodInfo__FirstTimeElementActivator____c__DisplayClass15_0___SkipFirstTimeEvent_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                        ,(MethodInfo *)0x0);
-            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
-                == 0) {
-              func_?();
+            if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+              FUN_?();
             }
             UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
             ExecuteEvents_ExecuteHierarchy
-                      (pGVar4,(BaseEventData *)0x0,callbackFunction,
+                      (pGVar11,(BaseEventData *)0x0,this_02,
                        UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                       );
             return;
@@ -757,53 +1166,77 @@ void Assembly-CSharp.dll::FirstTimeElementActivator::FirstTimeElementActivator_S
       }
     }
     else {
-      pUVar3 = (this->fields).uiStack;
-      if (pUVar3 != (UIStack *)0x0) {
-        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)pUVar3,(MethodInfo *)0x0);
-        if ((TypeInfo__FirstTimeElementActivator____c->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+      pUVar10 = (this->fields).uiStack;
+      if (pUVar10 != (UIStack *)0x0) {
+        pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pUVar10,(MethodInfo *)0x0);
+        if (*(int *)&(TypeInfo__FirstTimeElementActivator____c->_1).field_0x1c == 0) {
+          FUN_?(TypeInfo__FirstTimeElementActivator____c);
         }
-        callbackFunction_00 = TypeInfo__FirstTimeElementActivator____c->static_fields->__9__15_0;
-        if (callbackFunction_00 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-          if ((TypeInfo__FirstTimeElementActivator____c->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
+        this_01 = TypeInfo__FirstTimeElementActivator____c->static_fields->__9__15_0;
+        if (this_01 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+          if (*(int *)&(TypeInfo__FirstTimeElementActivator____c->_1).field_0x1c == 0) {
+            FUN_?(TypeInfo__FirstTimeElementActivator____c);
           }
           object = TypeInfo__FirstTimeElementActivator____c->static_fields->__9;
-          callbackFunction_00 = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,
-                     (Object *)object,
+          this_01 = (ExecuteEvents_EventFunction_1_IUIStack_ *)
+                    FUN_?(
+                                 TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                                 );
+          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::
+          Object]::ExecuteEvents_EventFunction_1_System_Object___ctor
+                    ((ExecuteEvents_EventFunction_1_System_Object_ *)this_01,(Object *)object,
                      MethodInfo__FirstTimeElementActivator____c___SkipFirstTimeEvent_b__15_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                      ,(MethodInfo *)0x0);
-          TypeInfo__FirstTimeElementActivator____c->static_fields->__9__15_0 = callbackFunction_00;
-          func_?(&TypeInfo__FirstTimeElementActivator____c->static_fields->__9__15_0,
-                          callbackFunction_00);
+          TypeInfo__FirstTimeElementActivator____c->static_fields->__9__15_0 = this_01;
+          if (iRam_? != 0) {
+            uVar4 = (uint)((ulonglong)
+                            &TypeInfo__FirstTimeElementActivator____c->static_fields->__9__15_0 >>
+                           0xc);
+            uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+            do {
+              uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+              puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+              LOCK();
+              bVar8 = uVar6 == *puVar7;
+              if (bVar8) {
+                *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar8);
+          }
         }
-        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
-           ) {
-          func_?();
+        if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+          FUN_?();
         }
         UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (pGVar4,(BaseEventData *)0x0,
-                   (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction_00,
+                  (pGVar11,(BaseEventData *)0x0,
+                   (ExecuteEvents_EventFunction_1_System_Object_ *)this_01,
                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                   );
         FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
                   (firstTimeEvent,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                  ((Object_1 *)firstTimeActivatable,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy
+                  ((Object_1 *)firstTimeActivatable,0.0,(MethodInfo *)0x0);
         return;
       }
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -815,90 +1248,189 @@ void Assembly-CSharp.dll::FirstTimeElementActivator::FirstTimeElementActivator_S
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<MVJoinState>);
-    func_?(&
-                    TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
-                   );
-    func_?(&TypeInfo__System__Action);
-    func_?(&
-                    MethodInfo__FirstTimeElementActivator__FirstTimeStateReceiver_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
-                   );
-    func_?(&MethodInfo__FirstTimeElementActivator__OnJoinStateChanged_MVJoinState_);
-    func_?(&MethodInfo__FirstTimeElementActivator__OnStackChange__);
-    func_?(&MethodInfo__FirstTimeElementActivator__OnXPRewarded__);
-    func_?(&TypeInfo__FirstTimeEventManager);
+    FUN_?(&TypeInfo__System__Action<MVJoinState>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Action);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__FirstTimeElementActivator__FirstTimeStateReceiver_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__FirstTimeElementActivator__OnJoinStateChanged_MVJoinState_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__FirstTimeElementActivator__OnStackChange__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__FirstTimeElementActivator__OnXPRewarded__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__FirstTimeEventManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pAVar1 = MVGameControllerBase::MVGameControllerBase_get_OnJoinStateChanged((MethodInfo *)0x0);
-  this_01 = (UnityAction_1_System_Int32Enum_ *)
-            func_?(TypeInfo__System__Action<MVJoinState>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-  UnityAction_1_System_Int32Enum___ctor
-            (this_01,(Object *)this,
-             MethodInfo__FirstTimeElementActivator__OnJoinStateChanged_MVJoinState_,
-             (MethodInfo *)0x0);
-  pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
-                     ((Delegate *)pAVar1,(Delegate *)this_01,(MethodInfo *)0x0);
-  pAVar1 = (Action_1_MVJoinState_ *)0x0;
-  if (pDVar2 == (Delegate *)0x0) {
-code_?:
-    MVGameControllerBase::MVGameControllerBase_set_OnJoinStateChanged(pAVar1,(MethodInfo *)0x0);
-    this_00 = (this->fields).uiStack;
-    pNVar3 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar3,(Object *)this,MethodInfo__FirstTimeElementActivator__OnStackChange__,
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (pMVar1 != (MVGameControllerBase *)0x0) {
+    pAVar2 = (pMVar1->fields).onJoinStateChanged;
+    this_00 = (UnityAction_1_System_Int32Enum_ *)
+              FUN_?(TypeInfo__System__Action<MVJoinState>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+    UnityAction_1_System_Int32Enum___ctor
+              (this_00,(Object *)this,
+               MethodInfo__FirstTimeElementActivator__OnJoinStateChanged_MVJoinState_,
                (MethodInfo *)0x0);
-    if (this_00 == (UIStack *)0x0) goto code_?;
-    UIStack::UIStack_SubscribeToStackChanges(this_00,(Action *)pNVar3,(MethodInfo *)0x0);
-    this_02 = (EventHandler_1_Object_ *)func_?();
-    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-              (this_02,(Object *)this,
-               MethodInfo__FirstTimeElementActivator__FirstTimeStateReceiver_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
-               ,(MethodInfo *)0x0);
-    FirstTimeEventManager::FirstTimeEventManager_SubscribeToFirstTimeState
-              ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
-                *)this_02,(MethodInfo *)0x0);
-    (this->fields).evaluateActivatableElements = 1;
-    pAVar4 = TypeInfo__FirstTimeEventManager->static_fields->XPRewarded;
-    pNVar3 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar3,(Object *)this,MethodInfo__FirstTimeElementActivator__OnXPRewarded__,
-               (MethodInfo *)0x0);
-    pAVar4 = (Action *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar4,(Delegate *)pNVar3,(MethodInfo *)0x0);
-    if (pAVar4 == (Action *)0x0) {
-      TypeInfo__FirstTimeEventManager->static_fields->XPRewarded = (Action *)0x0;
-code_?:
-      func_?();
+    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+    pAVar4 = TypeInfo__System__Action<MVJoinState>;
+    pAVar5 = (Action *)0x0;
+    pAVar2 = (Action_1_MVJoinState_ *)pAVar5;
+    if ((pDVar3 != (Delegate *)0x0) &&
+       (pAVar2 = (Action_1_MVJoinState_ *)FUN_?(pDVar3),
+       pAVar2 == (Action_1_MVJoinState_ *)0x0)) {
+      FUN_?(pDVar3,pAVar4);
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
       return;
     }
-    pAVar5 = (Action *)0x0;
-    if (pAVar4->klass == TypeInfo__System__Action) {
-      pAVar5 = pAVar4;
-    }
-    if (pAVar5 != (Action *)0x0) {
-      TypeInfo__FirstTimeEventManager->static_fields->XPRewarded = pAVar5;
-      pAVar5 = (Action *)0x0;
-      if (pAVar4->klass == TypeInfo__System__Action) {
-        pAVar5 = pAVar4;
+    MVGameControllerBase::MVGameControllerBase_set_OnJoinStateChanged(pAVar2,(MethodInfo *)0x0);
+    pUVar7 = (this->fields).uiStack;
+    pNVar8 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (pNVar8,(Object *)this,MethodInfo__FirstTimeElementActivator__OnStackChange__,
+               (MethodInfo *)0x0);
+    if (pUVar7 != (UIStack *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__System__Action);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
-      if (pAVar5 != (Action *)0x0) goto code_?;
-      goto code_?;
+      pAVar9 = (Action *)
+                mscorlib.dll::System::Delegate::Delegate_Combine
+                          ((Delegate *)(pUVar7->fields).uiStackChangedPublisher,(Delegate *)pNVar8,
+                           (MethodInfo *)0x0);
+      if (pAVar9 == (Action *)0x0) {
+        (pUVar7->fields).uiStackChangedPublisher = (Action *)0x0;
+      }
+      else {
+        pAVar10 = pAVar5;
+        if (pAVar9->klass == TypeInfo__System__Action) {
+          pAVar10 = pAVar9;
+        }
+        if (pAVar10 == (Action *)0x0) {
+          FUN_?();
+          pcVar6 = (code *)swi(3);
+          (*pcVar6)();
+          return;
+        }
+        (pUVar7->fields).uiStackChangedPublisher = pAVar10;
+        pAVar10 = pAVar5;
+        if (pAVar9->klass == TypeInfo__System__Action) {
+          pAVar10 = pAVar9;
+        }
+        if (pAVar10 == (Action *)0x0) {
+          FUN_?();
+          pcVar6 = (code *)swi(3);
+          (*pcVar6)();
+          return;
+        }
+      }
+      if (iRam_? != 0) {
+        uVar11 = (uint)((ulonglong)&(pUVar7->fields).uiStackChangedPublisher >> 0xc);
+        lVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar13 = *(ulonglong *)(lVar12 + 0xADDR);
+          puVar14 = (ulonglong *)(lVar12 + 0xADDR);
+          LOCK();
+          bVar15 = uVar13 == *puVar14;
+          if (bVar15) {
+            *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar15);
+      }
+      this_01 = (UnityAction_2_System_Object_System_Int32_ *)
+                FUN_?(
+                             TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
+                             );
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Int32]::
+      UnityAction_2_System_Object_System_Int32___ctor
+                (this_01,(Object *)this,
+                 MethodInfo__FirstTimeElementActivator__FirstTimeStateReceiver_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
+                 ,(MethodInfo *)0x0);
+      FirstTimeEventManager::FirstTimeEventManager_SubscribeToFirstTimeState
+                ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
+                  *)this_01,(MethodInfo *)0x0);
+      (this->fields).evaluateActivatableElements = 1;
+      pAVar9 = TypeInfo__FirstTimeEventManager->static_fields->XPRewarded;
+      pNVar8 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (pNVar8,(Object *)this,MethodInfo__FirstTimeElementActivator__OnXPRewarded__,
+                 (MethodInfo *)0x0);
+      pAVar9 = (Action *)
+                mscorlib.dll::System::Delegate::Delegate_Combine
+                          ((Delegate *)pAVar9,(Delegate *)pNVar8,(MethodInfo *)0x0);
+      if (pAVar9 == (Action *)0x0) {
+        TypeInfo__FirstTimeEventManager->static_fields->XPRewarded = (Action *)0x0;
+      }
+      else {
+        pAVar10 = pAVar5;
+        if (pAVar9->klass == TypeInfo__System__Action) {
+          pAVar10 = pAVar9;
+        }
+        if (pAVar10 == (Action *)0x0) {
+          FUN_?(pAVar9,TypeInfo__System__Action);
+          pcVar6 = (code *)swi(3);
+          (*pcVar6)();
+          return;
+        }
+        TypeInfo__FirstTimeEventManager->static_fields->XPRewarded = pAVar10;
+        if (pAVar9->klass == TypeInfo__System__Action) {
+          pAVar5 = pAVar9;
+        }
+        if (pAVar5 == (Action *)0x0) {
+          FUN_?(pAVar9);
+          pcVar6 = (code *)swi(3);
+          (*pcVar6)();
+          return;
+        }
+      }
+      if (iRam_? != 0) {
+        uVar11 = (uint)((ulonglong)&TypeInfo__FirstTimeEventManager->static_fields->XPRewarded >>
+                       0xc);
+        lVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar13 = *(ulonglong *)(lVar12 + 0xADDR);
+          puVar14 = (ulonglong *)(lVar12 + 0xADDR);
+          LOCK();
+          bVar15 = uVar13 == *puVar14;
+          if (bVar15) {
+            *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar15);
+      }
+      return;
     }
   }
-  else {
-    pAVar1 = (Action_1_MVJoinState_ *)func_?();
-    if (pAVar1 != (Action_1_MVJoinState_ *)0x0) goto code_?;
-    func_?();
-code_?:
-    func_?();
-  }
-  func_?();
-code_?:
-  func_?();
+  FUN_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
   return;
@@ -914,29 +1446,110 @@ void Assembly-CSharp.dll::FirstTimeElementActivator::
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Remove_MV__WorldObject__MetaData__FirstTimeEvent_
-                   );
-    func_?(&TypeInfo__IActivatableFirstTimeUiElement);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Remove_MV__WorldObject__MetaData__FirstTimeEvent_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__IActivatableFirstTimeUiElement);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).activatableUiElements;
-  if (firstTimeEventHandlerListener != (IActivatableFirstTimeUiElement *)0x0) {
-    key = func_?(0,TypeInfo__IActivatableFirstTimeUiElement,firstTimeEventHandlerListener);
-    if (this_00 !=
-        (Dictionary_2_MV_WorldObject_MetaData_FirstTimeEvent_IActivatableFirstTimeUiElement_ *)0x0)
-    {
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-      Dictionary_2_System_Int32Enum_System_Object__Remove
-                ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,key,
-                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Remove_MV__WorldObject__MetaData__FirstTimeEvent_
-                );
+  pDVar1 = (this->fields).activatableUiElements;
+  if ((firstTimeEventHandlerListener == (IActivatableFirstTimeUiElement *)0x0) ||
+     (uVar2 = FUN_?(0,TypeInfo__IActivatableFirstTimeUiElement,
+                             firstTimeEventHandlerListener),
+     pMVar3 = 
+     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Remove_MV__WorldObject__MetaData__FirstTimeEvent_
+     , pDVar1 == (Dictionary_2_MV_WorldObject_MetaData_FirstTimeEvent_IActivatableFirstTimeUiElement_
+                  *)0x0)) {
+    FUN_?();
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
+    return;
+  }
+  uVar5 = (ulonglong)uVar2;
+  if ((pDVar1->fields)._buckets != (Int32__Array *)0x0) {
+    pIVar6 = (pDVar1->fields)._comparer;
+    if (pIVar6 != (IEqualityComparer_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0) {
+      pvVar7 = MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Remove_MV__WorldObject__MetaData__FirstTimeEvent_
+                ->klass->rgctx_data[1].rgctxDataDummy;
+      if ((*(byte *)((longlong)pvVar7 + 0x135) & 1) == 0) {
+        pvVar7 = (void *)FUN_?(pvVar7);
+      }
+      uVar2 = FUN_?(1,pvVar7,pIVar6,uVar5);
+    }
+    pIVar8 = (pDVar1->fields)._buckets;
+    if (pIVar8 == (Int32__Array *)0x0) {
+code_?:
+      FUN_?();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
       return;
     }
+    uVar9 = (int)(uVar2 & 0x7fffffff) % (int)pIVar8->max_length;
+    if ((uint)pIVar8->max_length <= uVar9) {
+code_?:
+      FUN_?();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    uVar10 = pIVar8->vector[(int)uVar9] - 1;
+    uVar11 = 0xffffffff;
+    while (uVar12 = uVar10, -1 < (int)uVar12) {
+      pDVar13 = (pDVar1->fields)._entries;
+      if (pDVar13 == (Dictionary_2_TKey_TValue_Entry_MV_WorldObject_MetaData_FirstTimeEvent_IActivatableFirstTimeUiElement___Array
+                     *)0x0) goto code_?;
+      if ((uint)pDVar13->max_length <= uVar12) goto code_?;
+      if (pDVar13->vector[(int)uVar12].hashCode == (uVar2 & 0x7fffffff)) {
+        pIVar14 = pMVar3->klass->rgctx_data;
+        if ((pDVar1->fields)._comparer ==
+            (IEqualityComparer_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)0x0) {
+          pEVar15 = mscorlib.dll::System::Collections::Generic::EqualityComparer`1[System::
+                    Int32Enum]::EqualityComparer_1_System_Int32Enum__get_Default(pIVar14[3].method);
+          if (pEVar15 == (EqualityComparer_1_System_Int32Enum_ *)0x0) goto code_?;
+          cVar16 = (*(pEVar15->klass->vtable).__unknown.methodPtr)
+                             (pEVar15,(ulonglong)(uint)pDVar13->vector[(int)uVar12].key,uVar5,
+                              (pEVar15->klass->vtable).__unknown.method);
+        }
+        else {
+          pvVar7 = pIVar14[1].rgctxDataDummy;
+          if ((*(byte *)((longlong)pvVar7 + 0x135) & 1) == 0) {
+            FUN_?(pvVar7);
+          }
+          cVar16 = FUN_?();
+        }
+        if (cVar16 != '\0') {
+          if ((int)uVar11 < 0) {
+            pIVar8 = (pDVar1->fields)._buckets;
+            if (pIVar8 == (Int32__Array *)0x0) goto code_?;
+            if ((uint)pIVar8->max_length <= uVar9) goto code_?;
+            pIVar8->vector[(int)uVar9] = pDVar13->vector[(int)uVar12].next + 1;
+          }
+          else {
+            pDVar17 = (pDVar1->fields)._entries;
+            if (pDVar17 == (Dictionary_2_TKey_TValue_Entry_MV_WorldObject_MetaData_FirstTimeEvent_IActivatableFirstTimeUiElement___Array
+                           *)0x0) goto code_?;
+            if ((uint)pDVar17->max_length <= uVar11) goto code_?;
+            pDVar17->vector[(int)uVar11].next = pDVar13->vector[(int)uVar12].next;
+          }
+          pDVar13->vector[(int)uVar12].hashCode = -1;
+          pDVar13->vector[(int)uVar12].next = (pDVar1->fields)._freeList;
+          pDVar13->vector[(int)uVar12].value = (IActivatableFirstTimeUiElement *)0x0;
+          piVar18 = &(pDVar1->fields)._freeCount;
+          *piVar18 = *piVar18 + 1;
+          piVar18 = &(pDVar1->fields)._version;
+          *piVar18 = *piVar18 + 1;
+          (pDVar1->fields)._freeList = uVar12;
+          return;
+        }
+      }
+      uVar11 = uVar12;
+      uVar10 = pDVar13->vector[(int)uVar12].next;
+    }
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
   return;
 }
 
@@ -948,48 +1561,91 @@ void Assembly-CSharp.dll::FirstTimeElementActivator::FirstTimeElementActivator__
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>__List__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>__List__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>
-                           );
+            FUN_?(
+                         TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>
+                         );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
   Int32Enum,GamePassesHighScoreList+HighScoreListData]::
   Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::FirstTimeEvent,_IActivatableFirstTimeUiElement>__Dictionary__
             );
+  bVar1 = iRam_? != 0;
   (this->fields).activatableUiElements =
        (Dictionary_2_MV_WorldObject_MetaData_FirstTimeEvent_IActivatableFirstTimeUiElement_ *)
        this_00;
-  func_?(&(this->fields).activatableUiElements,this_00);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).activatableUiElements >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   this_01 = (List_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>
-                           );
+            FUN_?(
+                         TypeInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>
+                         );
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
              MethodInfo__System__Collections__Generic__List<MV::WorldObject::MetaData::FirstTimeEvent>__List__
             );
+  bVar1 = iRam_? != 0;
   (this->fields).elementsToRemove = this_01;
-  func_?(&(this->fields).elementsToRemove,this_01);
-  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
-            ((MonoBehaviour *)this,(MethodInfo *)0x0);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).elementsToRemove >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
   return;
 }
 

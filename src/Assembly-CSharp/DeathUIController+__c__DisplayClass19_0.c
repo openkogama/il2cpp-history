@@ -8,41 +8,62 @@ void Assembly-CSharp.dll::DeathUIController+<>c__DisplayClass19_0::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
-    func_?(&MethodInfo__DeathUIController____c___ShowReviveMenu_b__19_1__);
-    func_?(&TypeInfo__DeathUIController____c);
-    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__DeathUIController____c___ShowReviveMenu_b__19_1__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__DeathUIController____c);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (this->fields).revivePopup;
   if (this_00 != (ReviveUIHandler *)0x0) {
-    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this_00,(MethodInfo *)0x0);
-    if ((TypeInfo__DeathUIController____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__DeathUIController____c);
+    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+              ((Component *)this_00,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__DeathUIController____c->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__DeathUIController____c);
     }
-    this_01 = TypeInfo__DeathUIController____c->static_fields->__9__19_1;
-    if (this_01 == (UnityAction *)0x0) {
-      if ((TypeInfo__DeathUIController____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__DeathUIController____c);
+    if (TypeInfo__DeathUIController____c->static_fields->__9__19_1 == (UnityAction *)0x0) {
+      if (*(int *)&(TypeInfo__DeathUIController____c->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__DeathUIController____c);
       }
       object = TypeInfo__DeathUIController____c->static_fields->__9;
-      this_01 = (UnityAction *)func_?(TypeInfo__UnityEngine__Events__UnityAction);
+      this_01 = (NavMesh_OnNavMeshPreUpdate *)
+                FUN_?(TypeInfo__UnityEngine__Events__UnityAction);
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
-                ((NavMesh_OnNavMeshPreUpdate *)this_01,(Object *)object,
+                (this_01,(Object *)object,
                  MethodInfo__DeathUIController____c___ShowReviveMenu_b__19_1__,(MethodInfo *)0x0);
-      TypeInfo__DeathUIController____c->static_fields->__9__19_1 = this_01;
-      func_?(&TypeInfo__DeathUIController____c->static_fields->__9__19_1,this_01);
+      TypeInfo__DeathUIController____c->static_fields->__9__19_1 = (UnityAction *)this_01;
+      if (iRam_? != 0) {
+        uVar1 = (uint)((ulonglong)&TypeInfo__DeathUIController____c->static_fields->__9__19_1 >> 0xc
+                      );
+        puVar2 = (ulonglong *)((ulonglong)((uVar1 & 0x1fffff) >> 6) * 8 + 0xADDR);
+        do {
+          uVar3 = *puVar2;
+          LOCK();
+          uVar4 = *puVar2;
+          if (uVar3 == uVar4) {
+            *puVar2 = uVar3 | 1L << (uVar1 & 0x3f);
+          }
+          UNLOCK();
+        } while (uVar3 != uVar4);
+      }
     }
     if (x != (IUIStack *)0x0) {
-      func_?(1,TypeInfo__UnityEngine__EventSystems__IUIStack,x,pGVar1,2,this_01,2);
+      FUN_?();
       return;
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

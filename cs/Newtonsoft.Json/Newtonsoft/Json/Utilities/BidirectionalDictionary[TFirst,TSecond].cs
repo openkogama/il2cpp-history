@@ -11,7 +11,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-// Image 8: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
+// Image 9: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
 
 namespace Newtonsoft.Json.Utilities
 {
@@ -31,6 +31,6 @@ namespace Newtonsoft.Json.Utilities
 		// Methods
 		public void Set(TFirst first, TSecond second);
 		public bool TryGetByFirst(TFirst first, [Nullable(2)] [NotNullWhen(true)] out ref TSecond second);
-		public bool TryGetBySecond(TSecond second, [NotNullWhen(true)] [Nullable(2)] out ref TFirst first);
+		public bool TryGetBySecond(TSecond second, [Nullable(2)] [NotNullWhen(true)] out ref TFirst first);
 	}
 }

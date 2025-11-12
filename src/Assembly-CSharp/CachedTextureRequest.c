@@ -7,26 +7,46 @@ Assembly-CSharp.dll::CachedTextureRequest::CachedTextureRequest_Create
 
 {
   pSVar1 = (this->fields)._._._.path;
-  pKVar2 = MVGameControllerBase::MVGameControllerBase_get_KoGaMaSettings((MethodInfo *)0x0);
-  if (pKVar2 != (KoGaMaSettingsContainer *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(&StringLiteral__version_);
-      cRam_? = '\x01';
-    }
-    pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
-                       ((Int32 *)&(pKVar2->fields).streamingAssetVersion,(MethodInfo *)0x0);
-    pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                       (StringLiteral__version_,pSVar3,(MethodInfo *)0x0);
-    pSVar1 = mscorlib.dll::System::String::String_Concat_3(pSVar1,pSVar3,(MethodInfo *)0x0);
-    pUVar4 = UnityEngine.UnityWebRequestTextureModule.dll::UnityEngine::Networking::
-             UnityWebRequestTexture::UnityWebRequestTexture_GetTexture_1
-                       (pSVar1,(this->fields)._ReadableTextureData_k__BackingField == 0,
-                        (MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&StringLiteral__version_584637704);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pSVar1 = mscorlib.dll::System::String::String_Concat_4
+                     (pSVar1,StringLiteral__version_584637704,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Networking__DownloadHandlerTexture,
+                  (this->fields)._ReadableTextureData_k__BackingField == 0,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Networking__UnityWebRequest);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_GET);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  downloadHandler =
+       (DownloadHandler *)FUN_?(TypeInfo__UnityEngine__Networking__DownloadHandlerTexture);
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar2 = (code *)swi(3);
+    pUVar4 = (UnityWebRequest *)(*pcVar2)();
     return pUVar4;
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pUVar4 = (UnityWebRequest *)(*pcVar5)();
+  pcRam_? = pcVar2;
+  pvVar5 = (void *)(*pcRam_?)(downloadHandler,&stack0x00000008);
+  (downloadHandler->fields).m_Ptr = pvVar5;
+  pUVar4 = (UnityWebRequest *)FUN_?(TypeInfo__UnityEngine__Networking__UnityWebRequest);
+  UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
+  UnityWebRequest__ctor_3
+            (pUVar4,pSVar1,StringLiteral_GET,downloadHandler,(UploadHandler *)0x0,(MethodInfo *)0x0)
+  ;
   return pUVar4;
 }
 

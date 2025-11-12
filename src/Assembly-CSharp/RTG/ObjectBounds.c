@@ -4,416 +4,527 @@
 
 AABB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcHierarchyCollectionWorldAABB
                  (AABB *__return_storage_ptr__,IEnumerable_1_UnityEngine_GameObject_ *roots,
-                 ObjectBounds_QueryConfig queryConfig,MethodInfo *method)
+                 ObjectBounds_QueryConfig *queryConfig,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff8c;
-  puVar5 = &stack0xffffff8c;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__IDisposable);
-    func_?(&TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::GameObject>);
-    func_?(&TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::GameObject>);
-    func_?(&TypeInfo__System__Collections__IEnumerator);
-    func_?(&TypeInfo__RTG__ObjectBounds);
+    FUN_?(&TypeInfo__System__IDisposable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::GameObject>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::GameObject>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__IEnumerator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__ObjectBounds);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
+  AStack_1._center.y = 0.0;
+  AStack_1._center.z = 0.0;
   (__return_storage_ptr__->_size).x = 0.0;
   (__return_storage_ptr__->_size).y = 0.0;
-  (__return_storage_ptr__->_size).z = 0.0;
-  (__return_storage_ptr__->_center).x = 0.0;
+  *(undefined8 *)&(__return_storage_ptr__->_size).z = 0;
   (__return_storage_ptr__->_center).y = 0.0;
   (__return_storage_ptr__->_center).z = 0.0;
   *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
-  pAVar6 = AABB::AABB_GetInvalid(&AStack_7,(MethodInfo *)0x0);
-  fVar8 = (pAVar6->_size).y;
-  fVar9 = (pAVar6->_size).z;
-  fVar10 = (pAVar6->_center).x;
-  fVar11 = (pAVar6->_center).y;
-  fVar12 = (pAVar6->_center).z;
-  bVar13 = pAVar6->_isValid;
-  uVar14 = *(undefined3 *)&pAVar6->field_0x19;
-  (__return_storage_ptr__->_size).x = (pAVar6->_size).x;
-  (__return_storage_ptr__->_size).y = fVar8;
-  (__return_storage_ptr__->_size).z = fVar9;
-  (__return_storage_ptr__->_center).x = fVar10;
-  (__return_storage_ptr__->_center).y = fVar11;
-  (__return_storage_ptr__->_center).z = fVar12;
-  __return_storage_ptr__->_isValid = bVar13;
-  *(undefined3 *)&__return_storage_ptr__->field_0x19 = uVar14;
-  if (roots != (IEnumerable_1_UnityEngine_GameObject_ *)0x0) {
-    piStack_15 = (int *)func_?(0);
-    ppiStack_16 = &piStack_15;
-    uStack_17 = 0;
-    uStack_1 = 1;
-    while( true ) {
-      if (piStack_15 == (int *)0x0) break;
-      cVar18 = func_?(0);
-      if (cVar18 == '\0') {
-        uStack_1 = 0xffffffff;
-        if (piStack_15 != (int *)0x0) {
-          func_?(0);
-          *unaff_FS_OFFSET = uStack_3;
-          return __return_storage_ptr__;
+  if (roots == (IEnumerable_1_UnityEngine_GameObject_ *)0x0) {
+    FUN_?();
+code_?:
+    FUN_?();
+  }
+  else {
+    plVar2 = (longlong *)
+             FUN_?(0,
+                           TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::GameObject>
+                           ,roots);
+    while (plVar2 != (longlong *)0x0) {
+      cVar3 = FUN_?(0,TypeInfo__System__Collections__IEnumerator);
+      if (cVar3 == '\0') {
+        if (plVar2 != (longlong *)0x0) {
+          FUN_?(0,TypeInfo__System__IDisposable,plVar2);
         }
-        *unaff_FS_OFFSET = uStack_3;
         return __return_storage_ptr__;
       }
-      piStack_19 = piStack_15;
-      if (piStack_15 == (int *)0x0) break;
-      iVar20 = *piStack_15;
-      uVar21 = 0;
-      uStack_22 = 0;
-      uVar23 = *(ushort *)(iVar20 + 0xb6);
-      uStack_24 = (uint)uVar23;
-      if (uVar23 != 0) {
+      if (plVar2 == (longlong *)0x0) goto code_?;
+      lVar4 = *plVar2;
+      uVar5 = 0;
+      if (*(ushort *)(lVar4 + 0x12e) != 0) {
         do {
           if (*(IEnumerator_1_UnityEngine_GameObject___Class **)
-               (*(int *)(iVar20 + 0x58) + (uint)uVar21 * 8) ==
+               (*(longlong *)(lVar4 + 0xb0) + (ulonglong)uVar5 * 0x10) ==
               TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::GameObject>) {
-            puVar25 = (undefined4 *)
-                      (iVar20 + (*(int *)(*(int *)(iVar20 + 0x58) + 4 + (uint)uVar21 * 8) + 0x18) * 8)
-            ;
+            puVar6 = (undefined8 *)
+                     ((longlong)*(int *)(*(longlong *)(lVar4 + 0xb0) + 8 + (ulonglong)uVar5 * 0x10)
+                      * 0x10 + 0x138 + lVar4);
             goto code_?;
           }
-          uVar21 = uVar21 + 1;
-        } while (uVar21 < uVar23);
+          uVar5 = uVar5 + 1;
+        } while (uVar5 < *(ushort *)(lVar4 + 0x12e));
       }
-      puVar25 = (undefined4 *)func_?(piStack_15);
+      puVar6 = (undefined8 *)
+               FUN_?(plVar2,
+                             TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::GameObject>
+                             ,0);
 code_?:
-      root = (GameObject *)(*(code *)*puVar25)();
-      if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__RTG__ObjectBounds);
+      root = (GameObject *)(*(code *)*puVar6)(plVar2,puVar6[1]);
+      if (*(int *)&(TypeInfo__RTG__ObjectBounds->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      pAVar6 = ObjectBounds_CalcHierarchyWorldAABB(&AStack_26,root,queryConfig,(MethodInfo *)0x0);
-      AStack_7._size.x = (pAVar6->_size).x;
-      AStack_7._size.y = (pAVar6->_size).y;
-      AStack_7._size.z = (pAVar6->_size).z;
-      AStack_7._center.x = (pAVar6->_center).x;
-      AStack_7._isValid = pAVar6->_isValid;
-      AStack_7._25_3_ = *(undefined3 *)&pAVar6->field_0x19;
-      AStack_7._center.y = (pAVar6->_center).y;
-      AStack_7._center.z = (pAVar6->_center).z;
-      if (AStack_7._isValid != 0) {
-        fVar8 = (pAVar6->_size).y;
-        fVar9 = (pAVar6->_size).z;
-        fVar10 = (pAVar6->_center).x;
-        uVar27 = (pAVar6->_size).x;
-        uVar28 = (pAVar6->_size).y;
-        uVar29 = (pAVar6->_size).z;
-        aabb._size.z = (float)uVar29;
-        aabb._size.y = (float)uVar28;
-        aabb._size.x = (float)uVar27;
-        uVar30 = (pAVar6->_center).x;
-        aabb._center.x = (float)uVar30;
+      AStack_1._size.x = (float)queryConfig->ObjectTypes;
+      AStack_1._size.y = (queryConfig->NoVolumeSize).x;
+      AStack_1._size.z = (queryConfig->NoVolumeSize).y;
+      AStack_1._center.x = (queryConfig->NoVolumeSize).z;
+      pAVar7 = ObjectBounds_CalcHierarchyWorldAABB
+                          (&AStack_8,root,(ObjectBounds_QueryConfig *)&AStack_1,(MethodInfo *)0x0)
+      ;
+      uVar9._0_4_ = (pAVar7->_size).x;
+      uVar9._4_4_ = (pAVar7->_size).y;
+      uVar10 = *(undefined8 *)&(pAVar7->_size).z;
+      uVar11._0_4_ = (pAVar7->_center).y;
+      uVar11._4_4_ = (pAVar7->_center).z;
+      uVar12._0_1_ = pAVar7->_isValid;
+      uVar12._1_3_ = *(undefined3 *)&pAVar7->field_0x19;
+      if ((bool)uVar12 != 0) {
         if (__return_storage_ptr__->_isValid == 0) {
-          fVar11 = (pAVar6->_center).y;
-          fVar12 = (pAVar6->_center).z;
-          (__return_storage_ptr__->_size).x = (pAVar6->_size).x;
-          (__return_storage_ptr__->_size).y = fVar8;
-          (__return_storage_ptr__->_size).z = fVar9;
-          (__return_storage_ptr__->_center).x = fVar10;
-          (__return_storage_ptr__->_center).y = fVar11;
-          (__return_storage_ptr__->_center).z = fVar12;
-          __return_storage_ptr__->_isValid = AStack_7._isValid;
-          *(undefined3 *)&__return_storage_ptr__->field_0x19 = AStack_7._25_3_;
+          (__return_storage_ptr__->_size).x = (float)uVar9;
+          (__return_storage_ptr__->_size).y = uVar9._4_4_;
+          *(undefined8 *)&(__return_storage_ptr__->_size).z = uVar10;
+          (__return_storage_ptr__->_center).y = (float)uVar11;
+          (__return_storage_ptr__->_center).z = uVar11._4_4_;
+          __return_storage_ptr__->_isValid = (bool)uVar12;
+          *(undefined3 *)&__return_storage_ptr__->field_0x19 = uVar12._1_3_;
         }
         else {
-          uVar31 = (pAVar6->_center).y;
-          uVar32 = (pAVar6->_center).z;
-          aabb._center.z = (float)uVar32;
-          aabb._center.y = (float)uVar31;
-          aabb._isValid = AStack_7._isValid;
-          aabb._25_3_ = AStack_7._25_3_;
-          AABB::AABB_Encapsulate_2(__return_storage_ptr__,aabb,(MethodInfo *)0x0);
+          AStack_1._size._0_8_ = uVar9;
+          AStack_1._8_8_ = uVar10;
+          AStack_1._center._4_8_ = uVar11;
+          AStack_1._24_4_ = uVar12;
+          AABB::AABB_Encapsulate_2(__return_storage_ptr__,&AStack_1,(MethodInfo *)0x0);
         }
       }
     }
   }
-  func_?();
-  func_?();
-  pcVar33 = (code *)swi(3);
-  pAVar6 = (AABB *)(*pcVar33)();
-  return pAVar6;
+  FUN_?();
+  FUN_?();
+  pcVar13 = (code *)swi(3);
+  pAVar7 = (AABB *)(*pcVar13)();
+  return pAVar7;
 }
 
 
 /* AABB CalcHierarchyModelAABB(GameObject, ObjectBounds+QueryConfig) */
 
 AABB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcHierarchyModelAABB
-                 (AABB *__return_storage_ptr__,GameObject *root,ObjectBounds_QueryConfig queryConfig
-                 ,MethodInfo *method)
+                 (AABB *__return_storage_ptr__,GameObject *root,
+                 ObjectBounds_QueryConfig *queryConfig,MethodInfo *method)
 
 {
-  *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__get_Current__
-                   );
-    func_?(&TypeInfo__RTG__GameObjectEx);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-                   );
-    func_?(&TypeInfo__RTG__ObjectBounds);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GameObjectEx);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__ObjectBounds);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   (__return_storage_ptr__->_size).x = 0.0;
   (__return_storage_ptr__->_size).y = 0.0;
-  (__return_storage_ptr__->_size).z = 0.0;
-  (__return_storage_ptr__->_center).x = 0.0;
+  *(undefined8 *)&(__return_storage_ptr__->_size).z = 0;
   (__return_storage_ptr__->_center).y = 0.0;
   (__return_storage_ptr__->_center).z = 0.0;
   *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
-  if (root != (GameObject *)0x0) {
-    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                        (root,(MethodInfo *)0x0);
-    if (pTVar1 != (Transform *)0x0) {
-      pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localToWorldMatrix
-                          ((Matrix4x4 *)(aAStack_3 + 1),pTVar1,(MethodInfo *)0x0);
-      uVar4 = pMVar2->m00;
-      uVar5 = pMVar2->m10;
-      uVar6 = pMVar2->m20;
-      uVar7 = pMVar2->m30;
-      referenceTransform.m30 = (float)uVar7;
-      referenceTransform.m20 = (float)uVar6;
-      referenceTransform.m10 = (float)uVar5;
-      referenceTransform.m00 = (float)uVar4;
-      fVar8 = pMVar2->m01;
-      fVar9 = pMVar2->m11;
-      fVar10 = pMVar2->m21;
-      fVar11 = pMVar2->m31;
-      fVar12 = pMVar2->m02;
-      fVar13 = pMVar2->m12;
-      fVar14 = pMVar2->m22;
-      fVar15 = pMVar2->m32;
-      fVar16 = pMVar2->m03;
-      fVar17 = pMVar2->m13;
-      fVar18 = pMVar2->m23;
-      fVar19 = pMVar2->m33;
-      if ((TypeInfo__RTG__GameObjectEx->_1).cctor_finished_or_no_cctor == 0) {
-        aAStack_3[0]._size.y = (float)TypeInfo__RTG__GameObjectEx;
-        aAStack_3[0]._size.x = (float)&UNK_?;
-        func_?();
+  if ((root != (GameObject *)0x0) &&
+     (pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                          (root,(MethodInfo *)0x0), pTVar1 != (Transform *)0x0)) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    MStack_2.m00 = 0.0;
+    MStack_2.m10 = 0.0;
+    MStack_2.m20 = 0.0;
+    MStack_2.m30 = 0.0;
+    MStack_2.m01 = 0.0;
+    MStack_2.m11 = 0.0;
+    MStack_2.m21 = 0.0;
+    MStack_2.m31 = 0.0;
+    MStack_2.m02 = 0.0;
+    MStack_2.m12 = 0.0;
+    MStack_2.m22 = 0.0;
+    MStack_2.m32 = 0.0;
+    MStack_2.m03 = 0.0;
+    MStack_2.m13 = 0.0;
+    MStack_2.m23 = 0.0;
+    MStack_2.m33 = 0.0;
+    pvVar3 = (pTVar1->fields)._._.m_CachedPtr;
+    if (pvVar3 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar1,(MethodInfo *)0x0);
+      pcVar4 = (code *)swi(3);
+      pAVar5 = (AABB *)(*pcVar4)();
+      return pAVar5;
+    }
+    pcVar4 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+      uVar6 = func_?(&UNK_?);
+      FUN_?(uVar6,0);
+code_?:
+      FUN_?();
+    }
+    else {
+      pcRam_? = pcVar4;
+      (*pcRam_?)(pvVar3);
+      uVar7 = MStack_2._56_8_;
+      uVar8 = MStack_2._48_8_;
+      uVar9 = MStack_2._40_8_;
+      uVar10 = MStack_2._32_8_;
+      uVar11 = MStack_2._24_8_;
+      uVar12 = MStack_2._16_8_;
+      uVar13 = MStack_2._8_8_;
+      uVar6 = MStack_2._0_8_;
+      if (*(int *)&(TypeInfo__RTG__GameObjectEx->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      GVar20 = GameObjectEx::GameObjectEx_GetGameObjectType(root,(MethodInfo *)0x0);
-      if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+      GVar14 = GameObjectEx::GameObjectEx_GetGameObjectType(root,(MethodInfo *)0x0);
+      if (*(int *)&(TypeInfo__RTG__ObjectBounds->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      pAVar21 = ObjectBounds_CalcModelAABB
-                          ((AABB *)&puStack_22,root,queryConfig,GVar20,(MethodInfo *)0x0);
-      fVar23 = (pAVar21->_size).y;
-      fVar24 = (pAVar21->_size).z;
-      fVar25 = (pAVar21->_center).x;
-      fVar26 = (pAVar21->_center).y;
-      fVar27 = (pAVar21->_center).z;
-      bVar28 = pAVar21->_isValid;
-      uVar29 = *(undefined3 *)&pAVar21->field_0x19;
-      (__return_storage_ptr__->_size).x = (pAVar21->_size).x;
-      (__return_storage_ptr__->_size).y = fVar23;
-      (__return_storage_ptr__->_size).z = fVar24;
-      (__return_storage_ptr__->_center).x = fVar25;
-      (__return_storage_ptr__->_center).y = fVar26;
-      (__return_storage_ptr__->_center).z = fVar27;
-      __return_storage_ptr__->_isValid = bVar28;
-      *(undefined3 *)&__return_storage_ptr__->field_0x19 = uVar29;
-      this = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-             GameObjectEx::GameObjectEx_GetAllChildren(root,(MethodInfo *)0x0);
-      if (this != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        pLVar30 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                            ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                              *)&stack0xffffffa8,this,
-                             MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-                            );
-        RVar31 = pLVar30->_current;
-        while( true ) {
-          do {
-            gameObject = RVar31;
-            bVar28 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
-                     Object]::List_1_T_Enumerator_System_Object__MoveNext
-                               ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffbc,
-                                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                               );
-            if (bVar28 == 0) {
-              puVar32 = &UNK_?;
-              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                        ((Object *)&stack0xffffffbc,
-                         (ExceptionArgument__Enum)
-                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-                         ,unaff_EBP);
-              *unaff_FS_OFFSET = puVar32;
-              return __return_storage_ptr__;
-            }
-            RVar31 = gameObject;
-            if ((TypeInfo__RTG__GameObjectEx->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            GVar20 = GameObjectEx::GameObjectEx_GetGameObjectType
-                               ((GameObject *)gameObject,(MethodInfo *)0x0);
-            if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-              unaff_EBP = (MethodInfo *)&UNK_?;
-              func_?();
-            }
-            pAVar21 = ObjectBounds_CalcModelAABB
-                                (aAStack_3,(GameObject *)gameObject,queryConfig,GVar20,
-                                 (MethodInfo *)0x0);
-            fVar23 = (pAVar21->_size).x;
-            fVar24 = (pAVar21->_size).y;
-            fVar25 = (pAVar21->_size).z;
-            fVar26 = (pAVar21->_center).x;
-            uVar33._0_4_ = (pAVar21->_center).y;
-            uVar33._4_4_ = (pAVar21->_center).z;
-            RVar34 = *(RegexCharClass_SingleRange *)&pAVar21->_isValid;
-          } while ((char)RVar34.First == '\0');
-          if (gameObject == (RegexCharClass_SingleRange)0x0) break;
-          pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                              ((GameObject *)gameObject,(MethodInfo *)0x0);
-          if (pTVar1 == (Transform *)0x0) break;
-          pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                    Transform_get_localToWorldMatrix
-                              ((Matrix4x4 *)(aAStack_3 + 1),pTVar1,(MethodInfo *)0x0);
-          referenceTransform.m01 = fVar8;
-          referenceTransform.m11 = fVar9;
-          referenceTransform.m21 = fVar10;
-          referenceTransform.m31 = fVar11;
-          referenceTransform.m02 = fVar12;
-          referenceTransform.m12 = fVar13;
-          referenceTransform.m22 = fVar14;
-          referenceTransform.m32 = fVar15;
-          referenceTransform.m03 = fVar16;
-          referenceTransform.m13 = fVar17;
-          referenceTransform.m23 = fVar18;
-          referenceTransform.m33 = fVar19;
-          pMVar2 = Matrix4x4Ex::Matrix4x4Ex_GetRelativeTransform
-                              ((Matrix4x4 *)(aAStack_3 + 1),*pMVar2,referenceTransform,
-                               (MethodInfo *)0x0);
-          fVar10 = 0.0;
-          fVar16 = pMVar2->m21;
-          fVar17 = pMVar2->m31;
-          fVar18 = pMVar2->m02;
-          fVar19 = pMVar2->m12;
-          fVar12 = pMVar2->m22;
-          fVar13 = pMVar2->m32;
-          fVar14 = pMVar2->m03;
-          fVar15 = pMVar2->m13;
-          fVar8 = pMVar2->m23;
-          fVar9 = pMVar2->m33;
-          AABB::AABB_Transform((AABB *)&stack0xffffffcc,*pMVar2,(MethodInfo *)0x0);
-          if (__return_storage_ptr__->_isValid == 0) {
-            (__return_storage_ptr__->_size).x = fVar23;
-            (__return_storage_ptr__->_size).y = fVar24;
-            (__return_storage_ptr__->_size).z = fVar25;
-            (__return_storage_ptr__->_center).x = fVar26;
-            (__return_storage_ptr__->_center).y = (float)uVar33;
-            (__return_storage_ptr__->_center).z = SUB84(uVar33,4);
-            *(RegexCharClass_SingleRange *)&__return_storage_ptr__->_isValid = RVar34;
+      auStack_15._0_4_ = queryConfig->ObjectTypes;
+      auStack_15._4_4_ = (queryConfig->NoVolumeSize).x;
+      auStack_15._8_8_ = *(undefined8 *)&(queryConfig->NoVolumeSize).y;
+      pAVar5 = ObjectBounds_CalcModelAABB
+                          (&AStack_16,root,(ObjectBounds_QueryConfig *)auStack_15,GVar14,
+                           (MethodInfo *)0x0);
+      fVar17 = (pAVar5->_size).y;
+      uVar18 = *(undefined8 *)&(pAVar5->_size).z;
+      fVar19 = (pAVar5->_center).y;
+      fVar20 = (pAVar5->_center).z;
+      bVar21 = pAVar5->_isValid;
+      uVar22 = *(undefined3 *)&pAVar5->field_0x19;
+      (__return_storage_ptr__->_size).x = (pAVar5->_size).x;
+      (__return_storage_ptr__->_size).y = fVar17;
+      *(undefined8 *)&(__return_storage_ptr__->_size).z = uVar18;
+      (__return_storage_ptr__->_center).y = fVar19;
+      (__return_storage_ptr__->_center).z = fVar20;
+      __return_storage_ptr__->_isValid = bVar21;
+      *(undefined3 *)&__return_storage_ptr__->field_0x19 = uVar22;
+      pLStack_23 = GameObjectEx::GameObjectEx_GetAllChildren(root,(MethodInfo *)0x0);
+      if (pLStack_23 == (List_1_UnityEngine_GameObject_ *)0x0) goto code_?;
+      if (iRam_? != 0) {
+        uVar24 = (uint)((ulonglong)&pLStack_23 >> 0xc);
+        puVar25 = (ulonglong *)((ulonglong)((uVar24 & 0x1fffff) >> 6) * 8 + 0xADDR);
+        do {
+          uVar26 = *puVar25;
+          LOCK();
+          uVar27 = *puVar25;
+          if (uVar26 == uVar27) {
+            *puVar25 = uVar26 | 1L << (uVar24 & 0x3f);
           }
-          else {
-            aabb._size.y = fVar24;
-            aabb._size.x = fVar23;
-            aabb._size.z = fVar25;
-            aabb._center.x = fVar26;
-            aabb._center.y = (float)(MonitorData *)uVar33;
-            aabb._center.z = SUB84(uVar33,4);
-            aabb._24_4_ = RVar34;
-            AABB::AABB_Encapsulate_2(__return_storage_ptr__,aabb,(MethodInfo *)0x0);
-            RVar31 = RVar34;
+          UNLOCK();
+        } while (uVar26 != uVar27);
+      }
+      lStack_28 = (ulonglong)(uint)(pLStack_23->fields)._version << 0x20;
+      uStack_29._0_4_ = 0.0;
+      uStack_29._4_4_ = 0.0;
+      LStack_30._index = (undefined4)lStack_28;
+      LStack_30._version = lStack_28._4_4_;
+      LStack_30._current = (Object *)0x0;
+      auStack_15._0_4_ = 0;
+      auStack_15._4_4_ = 0.0;
+      auStack_15._8_8_ = &LStack_30;
+      LStack_30._list = (List_1_System_Object_ *)pLStack_23;
+      while( true ) {
+        do {
+          bVar21 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
+                   ::List_1_T_Enumerator_System_Object__MoveNext
+                             (&LStack_30,
+                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                             );
+          gameObject = LStack_30._current;
+          if (bVar21 == 0) {
+            return __return_storage_ptr__;
           }
+          if (*(int *)&(TypeInfo__RTG__GameObjectEx->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          GVar14 = GameObjectEx::GameObjectEx_GetGameObjectType
+                             ((GameObject *)gameObject,(MethodInfo *)0x0);
+          if (*(int *)&(TypeInfo__RTG__ObjectBounds->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          pLStack_23 = *(List_1_UnityEngine_GameObject_ **)queryConfig;
+          lStack_28._0_4_ = (queryConfig->NoVolumeSize).y;
+          lStack_28._4_4_ = (queryConfig->NoVolumeSize).z;
+          pAVar5 = ObjectBounds_CalcModelAABB
+                              (&AStack_31,(GameObject *)gameObject,
+                               (ObjectBounds_QueryConfig *)&pLStack_23,GVar14,(MethodInfo *)0x0);
+          AStack_16._size.x = (pAVar5->_size).x;
+          AStack_16._size.y = (pAVar5->_size).y;
+          AStack_16._size.z = (pAVar5->_size).z;
+          AStack_16._center.x = (pAVar5->_center).x;
+          AStack_16._center.y = (pAVar5->_center).y;
+          AStack_16._center.z = (pAVar5->_center).z;
+          AStack_16._isValid = pAVar5->_isValid;
+          AStack_16._25_3_ = *(undefined3 *)&pAVar5->field_0x19;
+        } while (AStack_16._isValid == 0);
+        if ((GameObject *)gameObject == (GameObject *)0x0) break;
+        pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            ((GameObject *)gameObject,(MethodInfo *)0x0);
+        if (pTVar1 == (Transform *)0x0) goto code_?;
+        pMVar32 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                  Transform_get_localToWorldMatrix(&MStack_33,pTVar1,(MethodInfo *)0x0);
+        uVar18._0_4_ = pMVar32->m00;
+        uVar18._4_4_ = pMVar32->m10;
+        uVar34._0_4_ = pMVar32->m20;
+        uVar34._4_4_ = pMVar32->m30;
+        uVar35._0_4_ = pMVar32->m01;
+        uVar35._4_4_ = pMVar32->m11;
+        uVar36._0_4_ = pMVar32->m21;
+        uVar36._4_4_ = pMVar32->m31;
+        uVar37._0_4_ = pMVar32->m02;
+        uVar37._4_4_ = pMVar32->m12;
+        uVar38._0_4_ = pMVar32->m22;
+        uVar38._4_4_ = pMVar32->m32;
+        uVar39._0_4_ = pMVar32->m03;
+        uVar39._4_4_ = pMVar32->m13;
+        uVar40._0_4_ = pMVar32->m23;
+        uVar40._4_4_ = pMVar32->m33;
+        MStack_2._0_8_ = uVar6;
+        MStack_2._8_8_ = uVar13;
+        MStack_2._16_8_ = uVar12;
+        MStack_2._24_8_ = uVar11;
+        MStack_2._32_8_ = uVar10;
+        MStack_2._40_8_ = uVar9;
+        MStack_2._48_8_ = uVar8;
+        MStack_2._56_8_ = uVar7;
+        pMVar32 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_inverse
+                            (aMStack_41,&MStack_2,(MethodInfo *)0x0);
+        MStack_33.m00 = pMVar32->m00;
+        MStack_33.m10 = pMVar32->m10;
+        MStack_33.m20 = pMVar32->m20;
+        MStack_33.m30 = pMVar32->m30;
+        MStack_33.m01 = pMVar32->m01;
+        MStack_33.m11 = pMVar32->m11;
+        MStack_33.m21 = pMVar32->m21;
+        MStack_33.m31 = pMVar32->m31;
+        MStack_33.m02 = pMVar32->m02;
+        MStack_33.m12 = pMVar32->m12;
+        MStack_33.m22 = pMVar32->m22;
+        MStack_33.m32 = pMVar32->m32;
+        MStack_33.m03 = pMVar32->m03;
+        MStack_33.m13 = pMVar32->m13;
+        MStack_33.m23 = pMVar32->m23;
+        MStack_33.m33 = pMVar32->m33;
+        MStack_2._0_8_ = uVar18;
+        MStack_2._8_8_ = uVar34;
+        MStack_2._16_8_ = uVar35;
+        MStack_2._24_8_ = uVar36;
+        MStack_2._32_8_ = uVar37;
+        MStack_2._40_8_ = uVar38;
+        MStack_2._48_8_ = uVar39;
+        MStack_2._56_8_ = uVar40;
+        pMVar32 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_op_Multiply
+                            (aMStack_41,&MStack_33,&MStack_2,(MethodInfo *)0x0);
+        MStack_33.m00 = pMVar32->m00;
+        MStack_33.m10 = pMVar32->m10;
+        MStack_33.m20 = pMVar32->m20;
+        MStack_33.m30 = pMVar32->m30;
+        MStack_33.m01 = pMVar32->m01;
+        MStack_33.m11 = pMVar32->m11;
+        MStack_33.m21 = pMVar32->m21;
+        MStack_33.m31 = pMVar32->m31;
+        MStack_33.m02 = pMVar32->m02;
+        MStack_33.m12 = pMVar32->m12;
+        MStack_33.m22 = pMVar32->m22;
+        MStack_33.m32 = pMVar32->m32;
+        MStack_33.m03 = pMVar32->m03;
+        MStack_33.m13 = pMVar32->m13;
+        MStack_33.m23 = pMVar32->m23;
+        MStack_33.m33 = pMVar32->m33;
+        AABB::AABB_Transform(&AStack_16,&MStack_33,(MethodInfo *)0x0);
+        if (__return_storage_ptr__->_isValid == 0) {
+          *(List_1_UnityEngine_GameObject_ **)&__return_storage_ptr__->_size =
+               (List_1_UnityEngine_GameObject_ *)CONCAT44(AStack_16._size.y,AStack_16._size.x);
+          *(longlong *)&(__return_storage_ptr__->_size).z =
+               CONCAT44(AStack_16._center.x,AStack_16._size.z);
+          (__return_storage_ptr__->_center).y = AStack_16._center.y;
+          (__return_storage_ptr__->_center).z = AStack_16._center.z;
+          __return_storage_ptr__->_isValid = AStack_16._isValid;
+          *(undefined3 *)&__return_storage_ptr__->field_0x19 = AStack_16._25_3_;
+        }
+        else {
+          uStack_29._0_4_ = AStack_16._center.y;
+          uStack_29._4_4_ = AStack_16._center.z;
+          bStack_42 = AStack_16._isValid;
+          uStack_43 = AStack_16._25_3_;
+          pLStack_23 = (List_1_UnityEngine_GameObject_ *)
+                        CONCAT44(AStack_16._size.y,AStack_16._size.x);
+          lStack_28 = CONCAT44(AStack_16._center.x,AStack_16._size.z);
+          AABB::AABB_Encapsulate_2(__return_storage_ptr__,(AABB *)&pLStack_23,(MethodInfo *)0x0);
         }
       }
     }
+    FUN_?();
+    FUN_?();
+    pcVar4 = (code *)swi(3);
+    pAVar5 = (AABB *)(*pcVar4)();
+    return pAVar5;
   }
-  uVar35 = func_?();
-  func_?(uVar35);
-  pcVar36 = (code *)swi(3);
-  pAVar21 = (AABB *)(*pcVar36)();
-  return pAVar21;
+code_?:
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  pAVar5 = (AABB *)(*pcVar4)();
+  return pAVar5;
 }
 
 
 /* AABB CalcHierarchyWorldAABB(GameObject, ObjectBounds+QueryConfig) */
 
 AABB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcHierarchyWorldAABB
-                 (AABB *__return_storage_ptr__,GameObject *root,ObjectBounds_QueryConfig queryConfig
-                 ,MethodInfo *method)
+                 (AABB *__return_storage_ptr__,GameObject *root,
+                 ObjectBounds_QueryConfig *queryConfig,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__ObjectBounds);
+    FUN_?(&TypeInfo__RTG__ObjectBounds);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  AStack_1._size.x = 0.0;
-  AStack_1._size.y = 0.0;
-  AStack_1._size.z = 0.0;
-  AStack_1._center.x = 0.0;
-  AStack_1._isValid = 0;
-  AStack_1._25_3_ = 0;
-  AStack_1._center.y = 0.0;
-  AStack_1._center.z = 0.0;
-  if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__ObjectBounds);
+  if (*(int *)&(TypeInfo__RTG__ObjectBounds->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pAVar2 = ObjectBounds_CalcHierarchyModelAABB(&AStack_3,root,queryConfig,(MethodInfo *)0x0);
+  AStack_1._size.x = (float)queryConfig->ObjectTypes;
+  AStack_1._size.y = (queryConfig->NoVolumeSize).x;
+  AStack_1._size.z = (queryConfig->NoVolumeSize).y;
+  AStack_1._center.x = (queryConfig->NoVolumeSize).z;
+  pAVar2 = ObjectBounds_CalcHierarchyModelAABB
+                     (&AStack_3,root,(ObjectBounds_QueryConfig *)&AStack_1,(MethodInfo *)0x0);
   AStack_1._size.x = (pAVar2->_size).x;
   AStack_1._size.y = (pAVar2->_size).y;
-  AStack_1._size.z = (pAVar2->_size).z;
-  AStack_1._center.x = (pAVar2->_center).x;
+  AStack_1._8_8_ = *(undefined8 *)&(pAVar2->_size).z;
   AStack_1._center.y = (pAVar2->_center).y;
   AStack_1._center.z = (pAVar2->_center).z;
   AStack_1._isValid = pAVar2->_isValid;
   AStack_1._25_3_ = *(undefined3 *)&pAVar2->field_0x19;
-  if (AStack_1._isValid != 0) {
-    if (root != (GameObject *)0x0) {
-      this = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                       (root,(MethodInfo *)0x0);
-      if (this != (Transform *)0x0) {
-        pMVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                 Transform_get_localToWorldMatrix
-                           ((Matrix4x4 *)&stack0xffffff84,this,(MethodInfo *)0x0);
-        AABB::AABB_Transform(&AStack_1,*pMVar4,(MethodInfo *)0x0);
-        (__return_storage_ptr__->_size).x = AStack_1._size.x;
-        (__return_storage_ptr__->_size).y = AStack_1._size.y;
-        (__return_storage_ptr__->_size).z = AStack_1._size.z;
-        (__return_storage_ptr__->_center).x = AStack_1._center.x;
-        (__return_storage_ptr__->_center).y = AStack_1._center.y;
-        (__return_storage_ptr__->_center).z = AStack_1._center.z;
-        __return_storage_ptr__->_isValid = AStack_1._isValid;
-        *(undefined3 *)&__return_storage_ptr__->field_0x19 = AStack_1._25_3_;
-        return __return_storage_ptr__;
-      }
-    }
-    func_?();
-    pcVar5 = (code *)swi(3);
-    pAVar2 = (AABB *)(*pcVar5)();
-    return pAVar2;
+  if (AStack_1._isValid == 0) {
+    AStack_1._isValid = 0;
+    AStack_1._25_3_ = 0;
+    (__return_storage_ptr__->_size).x = 0.0;
+    (__return_storage_ptr__->_size).y = 0.0;
+    *(undefined8 *)&(__return_storage_ptr__->_size).z = 0;
+    (__return_storage_ptr__->_center).y = 0.0;
+    (__return_storage_ptr__->_center).z = 0.0;
   }
-  pAVar2 = AABB::AABB_GetInvalid(&AStack_3,(MethodInfo *)0x0);
-  fVar6 = (pAVar2->_size).y;
-  fVar7 = (pAVar2->_size).z;
-  fVar8 = (pAVar2->_center).x;
-  bVar9 = pAVar2->_isValid;
-  uVar10 = *(undefined3 *)&pAVar2->field_0x19;
-  (__return_storage_ptr__->_size).x = (pAVar2->_size).x;
-  (__return_storage_ptr__->_size).y = fVar6;
-  (__return_storage_ptr__->_size).z = fVar7;
-  (__return_storage_ptr__->_center).x = fVar8;
-  fVar6 = (pAVar2->_center).z;
-  (__return_storage_ptr__->_center).y = (pAVar2->_center).y;
-  (__return_storage_ptr__->_center).z = fVar6;
-  __return_storage_ptr__->_isValid = bVar9;
-  *(undefined3 *)&__return_storage_ptr__->field_0x19 = uVar10;
+  else {
+    if ((root == (GameObject *)0x0) ||
+       (obj = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                        (root,(MethodInfo *)0x0), obj == (Transform *)0x0)) {
+      FUN_?();
+      pcVar4 = (code *)swi(3);
+      pAVar2 = (AABB *)(*pcVar4)();
+      return pAVar2;
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    MStack_5.m00 = 0.0;
+    MStack_5.m10 = 0.0;
+    MStack_5.m20 = 0.0;
+    MStack_5.m30 = 0.0;
+    MStack_5.m01 = 0.0;
+    MStack_5.m11 = 0.0;
+    MStack_5.m21 = 0.0;
+    MStack_5.m31 = 0.0;
+    MStack_5.m02 = 0.0;
+    MStack_5.m12 = 0.0;
+    MStack_5.m22 = 0.0;
+    MStack_5.m32 = 0.0;
+    MStack_5.m03 = 0.0;
+    MStack_5.m13 = 0.0;
+    MStack_5.m23 = 0.0;
+    MStack_5.m33 = 0.0;
+    pvVar6 = (obj->fields)._._.m_CachedPtr;
+    if (pvVar6 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+      pcVar4 = (code *)swi(3);
+      pAVar2 = (AABB *)(*pcVar4)();
+      return pAVar2;
+    }
+    pcVar4 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+      uVar7 = func_?(&UNK_?);
+      FUN_?(uVar7,0);
+      pcVar4 = (code *)swi(3);
+      pAVar2 = (AABB *)(*pcVar4)();
+      return pAVar2;
+    }
+    pcRam_? = pcVar4;
+    (*pcRam_?)(pvVar6,&MStack_5);
+    MStack_8.m00 = MStack_5.m00;
+    MStack_8.m10 = MStack_5.m10;
+    MStack_8.m20 = MStack_5.m20;
+    MStack_8.m30 = MStack_5.m30;
+    MStack_8.m01 = MStack_5.m01;
+    MStack_8.m11 = MStack_5.m11;
+    MStack_8.m21 = MStack_5.m21;
+    MStack_8.m31 = MStack_5.m31;
+    MStack_8.m02 = MStack_5.m02;
+    MStack_8.m12 = MStack_5.m12;
+    MStack_8.m22 = MStack_5.m22;
+    MStack_8.m32 = MStack_5.m32;
+    MStack_8.m03 = MStack_5.m03;
+    MStack_8.m13 = MStack_5.m13;
+    MStack_8.m23 = MStack_5.m23;
+    MStack_8.m33 = MStack_5.m33;
+    AABB::AABB_Transform(&AStack_1,&MStack_8,(MethodInfo *)0x0);
+    (__return_storage_ptr__->_size).x = AStack_1._size.x;
+    (__return_storage_ptr__->_size).y = AStack_1._size.y;
+    *(undefined8 *)&(__return_storage_ptr__->_size).z = AStack_1._8_8_;
+    (__return_storage_ptr__->_center).y = AStack_1._center.y;
+    (__return_storage_ptr__->_center).z = AStack_1._center.z;
+  }
+  __return_storage_ptr__->_isValid = AStack_1._isValid;
+  *(int3 *)&__return_storage_ptr__->field_0x19 = AStack_1._25_3_;
   return __return_storage_ptr__;
 }
 
@@ -421,68 +532,69 @@ AABB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcHierarchyWorldAA
 /* OBB CalcHierarchyWorldOBB(GameObject, ObjectBounds+QueryConfig) */
 
 OBB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcHierarchyWorldOBB
-                (OBB *__return_storage_ptr__,GameObject *root,ObjectBounds_QueryConfig queryConfig,
+                (OBB *__return_storage_ptr__,GameObject *root,ObjectBounds_QueryConfig *queryConfig,
                 MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__ObjectBounds);
+    FUN_?(&TypeInfo__RTG__ObjectBounds);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__ObjectBounds);
+  if (*(int *)&(TypeInfo__RTG__ObjectBounds->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pAVar1 = ObjectBounds_CalcHierarchyModelAABB
-                      ((AABB *)&stack0xffffffc4,root,queryConfig,(MethodInfo *)0x0);
-  uVar2 = *(undefined4 *)&pAVar1->_isValid;
-  if ((char)uVar2 != '\0') {
-    uVar3 = (pAVar1->_center).z;
-    uVar4 = (pAVar1->_size).x;
-    uVar5 = (pAVar1->_size).y;
-    uVar6 = (pAVar1->_size).z;
-    modelSpaceAABB._size.z = (float)uVar6;
-    modelSpaceAABB._size.y = (float)uVar5;
-    modelSpaceAABB._size.x = (float)uVar4;
-    uVar7 = (pAVar1->_center).x;
-    uVar8 = (pAVar1->_center).y;
-    modelSpaceAABB._center.y = (float)uVar8;
-    modelSpaceAABB._center.x = (float)uVar7;
-    if (root != (GameObject *)0x0) {
-      worldTransform =
-           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                     (root,(MethodInfo *)0x0);
-      func_?();
-      modelSpaceAABB._center.z = (float)uVar3;
-      modelSpaceAABB._24_4_ = uVar2;
-      OBB::OBB__ctor_7(__return_storage_ptr__,modelSpaceAABB,worldTransform,(MethodInfo *)0x0);
-      return __return_storage_ptr__;
+  AStack_1._size.x = (float)queryConfig->ObjectTypes;
+  AStack_1._size.y = (queryConfig->NoVolumeSize).x;
+  AStack_1._size.z = (queryConfig->NoVolumeSize).y;
+  AStack_1._center.x = (queryConfig->NoVolumeSize).z;
+  pAVar2 = ObjectBounds_CalcHierarchyModelAABB
+                     (&AStack_3,root,(ObjectBounds_QueryConfig *)&AStack_1,(MethodInfo *)0x0);
+  AStack_1._size.x = (pAVar2->_size).x;
+  AStack_1._size.y = (pAVar2->_size).y;
+  AStack_1._8_8_ = *(undefined8 *)&(pAVar2->_size).z;
+  uVar4._0_4_ = (pAVar2->_center).y;
+  uVar4._4_4_ = (pAVar2->_center).z;
+  if (pAVar2->_isValid == 0) {
+    (__return_storage_ptr__->_size).x = 0.0;
+    (__return_storage_ptr__->_size).y = 0.0;
+    *(undefined8 *)&(__return_storage_ptr__->_size).z = 0;
+    (__return_storage_ptr__->_center).y = 0.0;
+    (__return_storage_ptr__->_center).z = 0.0;
+    (__return_storage_ptr__->_rotation).x = 0.0;
+    (__return_storage_ptr__->_rotation).y = 0.0;
+    (__return_storage_ptr__->_rotation).z = 0.0;
+    (__return_storage_ptr__->_rotation).w = 0.0;
+    *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
+  }
+  else {
+    uVar5._0_1_ = pAVar2->_isValid;
+    uVar5._1_3_ = *(undefined3 *)&pAVar2->field_0x19;
+    AStack_1._center._4_8_ = uVar4;
+    if (root == (GameObject *)0x0) {
+      FUN_?();
+      pcVar6 = (code *)swi(3);
+      pOVar7 = (OBB *)(*pcVar6)();
+      return pOVar7;
     }
-    func_?();
-    pcVar9 = (code *)swi(3);
-    pOVar10 = (OBB *)(*pcVar9)();
-    return pOVar10;
+    worldTransform =
+         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                   (root,(MethodInfo *)0x0);
+    (__return_storage_ptr__->_size).x = 0.0;
+    (__return_storage_ptr__->_size).y = 0.0;
+    *(undefined8 *)&(__return_storage_ptr__->_size).z = 0;
+    (__return_storage_ptr__->_center).y = 0.0;
+    (__return_storage_ptr__->_center).z = 0.0;
+    (__return_storage_ptr__->_rotation).x = 0.0;
+    (__return_storage_ptr__->_rotation).y = 0.0;
+    (__return_storage_ptr__->_rotation).z = 0.0;
+    (__return_storage_ptr__->_rotation).w = 0.0;
+    *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
+    AStack_1._center._4_8_ = uVar4;
+    AStack_1._24_4_ = uVar5;
+    OBB::OBB__ctor_7(__return_storage_ptr__,&AStack_1,worldTransform,(MethodInfo *)0x0);
   }
-  pOVar10 = OBB::OBB_GetInvalid((OBB *)&stack0xffffffb4,(MethodInfo *)0x0);
-  fVar11 = (pOVar10->_size).y;
-  fVar12 = (pOVar10->_size).z;
-  fVar13 = (pOVar10->_center).x;
-  (__return_storage_ptr__->_size).x = (pOVar10->_size).x;
-  (__return_storage_ptr__->_size).y = fVar11;
-  (__return_storage_ptr__->_size).z = fVar12;
-  (__return_storage_ptr__->_center).x = fVar13;
-  fVar11 = (pOVar10->_center).z;
-  fVar12 = (pOVar10->_rotation).x;
-  fVar13 = (pOVar10->_rotation).y;
-  (__return_storage_ptr__->_center).y = (pOVar10->_center).y;
-  (__return_storage_ptr__->_center).z = fVar11;
-  (__return_storage_ptr__->_rotation).x = fVar12;
-  (__return_storage_ptr__->_rotation).y = fVar13;
-  fVar11 = (pOVar10->_rotation).w;
-  (__return_storage_ptr__->_rotation).z = (pOVar10->_rotation).z;
-  (__return_storage_ptr__->_rotation).w = fVar11;
-  uVar14 = *(undefined3 *)&pOVar10->field_0x29;
-  __return_storage_ptr__->_isValid = pOVar10->_isValid;
-  *(undefined3 *)&__return_storage_ptr__->field_0x29 = uVar14;
   return __return_storage_ptr__;
 }
 
@@ -494,53 +606,89 @@ AABB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcMeshModelAABB
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__GameObjectEx);
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&TypeInfo__RTG__GameObjectEx);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__RTG__GameObjectEx->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__GameObjectEx);
+  if (*(int *)&(TypeInfo__RTG__GameObjectEx->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  this = GameObjectEx::GameObjectEx_GetMesh(gameObject,(MethodInfo *)0x0);
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  obj = GameObjectEx::GameObjectEx_GetMesh(gameObject,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)this,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    if (this != (Mesh *)0x0) {
-      pBVar2 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_bounds
-                         ((Bounds *)&stack0xffffffe4,this,(MethodInfo *)0x0);
-      bounds = *pBVar2;
-      (__return_storage_ptr__->_size).x = 0.0;
-      (__return_storage_ptr__->_size).y = 0.0;
-      (__return_storage_ptr__->_size).z = 0.0;
-      (__return_storage_ptr__->_center).x = 0.0;
-      (__return_storage_ptr__->_center).y = 0.0;
-      (__return_storage_ptr__->_center).z = 0.0;
-      *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
-      AABB::AABB__ctor_1(__return_storage_ptr__,bounds,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (obj != (Mesh *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((obj->fields)._.m_CachedPtr != (void *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Mesh>_UnityEngine__Mesh_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_1 = 0;
+      uStack_2 = 0;
+      uStack_3 = 0;
+      pvVar4 = (obj->fields)._.m_CachedPtr;
+      if (pvVar4 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+        pcVar5 = (code *)swi(3);
+        pAVar6 = (AABB *)(*pcVar5)();
+        return pAVar6;
+      }
+      pcVar5 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+        uVar7 = func_?(&UNK_?);
+        FUN_?(uVar7,0);
+        pcVar5 = (code *)swi(3);
+        pAVar6 = (AABB *)(*pcVar5)();
+        return pAVar6;
+      }
+      pcRam_? = pcVar5;
+      (*pcRam_?)(pvVar4,&uStack_1);
+      *(undefined2 *)&__return_storage_ptr__->field_0x19 = 0;
+      __return_storage_ptr__->field_0x1b = 0;
+      (__return_storage_ptr__->_center).x = (float)uStack_1;
+      (__return_storage_ptr__->_center).y = uStack_1._4_4_;
+      (__return_storage_ptr__->_center).z = (float)uStack_2;
+      (__return_storage_ptr__->_size).x = uStack_2._4_4_ * TypeRef__System__Activator__T._0_4_;
+      (__return_storage_ptr__->_size).y = (float)uStack_3 + (float)uStack_3;
+      (__return_storage_ptr__->_size).z = uStack_3._4_4_ + uStack_3._4_4_;
+      __return_storage_ptr__->_isValid = 1;
       return __return_storage_ptr__;
     }
-    func_?();
-    pcVar3 = (code *)swi(3);
-    pAVar4 = (AABB *)(*pcVar3)();
-    return pAVar4;
   }
-  pAVar4 = AABB::AABB_GetInvalid((AABB *)&stack0xffffffe0,(MethodInfo *)0x0);
-  fVar5 = (pAVar4->_size).y;
-  fVar6 = (pAVar4->_size).z;
-  fVar7 = (pAVar4->_center).x;
-  (__return_storage_ptr__->_size).x = (pAVar4->_size).x;
-  (__return_storage_ptr__->_size).y = fVar5;
-  (__return_storage_ptr__->_size).z = fVar6;
-  (__return_storage_ptr__->_center).x = fVar7;
-  fVar5 = (pAVar4->_center).z;
-  (__return_storage_ptr__->_center).y = (pAVar4->_center).y;
-  (__return_storage_ptr__->_center).z = fVar5;
-  uVar8 = *(undefined3 *)&pAVar4->field_0x19;
-  __return_storage_ptr__->_isValid = pAVar4->_isValid;
-  *(undefined3 *)&__return_storage_ptr__->field_0x19 = uVar8;
+  (__return_storage_ptr__->_size).x = 0.0;
+  (__return_storage_ptr__->_size).y = 0.0;
+  *(undefined8 *)&(__return_storage_ptr__->_size).z = 0;
+  (__return_storage_ptr__->_center).y = 0.0;
+  (__return_storage_ptr__->_center).z = 0.0;
+  *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
   return __return_storage_ptr__;
 }
 
@@ -552,48 +700,104 @@ AABB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcMeshWorldAABB
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__ObjectBounds);
+    FUN_?(&TypeInfo__RTG__ObjectBounds);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   (__return_storage_ptr__->_size).x = 0.0;
   (__return_storage_ptr__->_size).y = 0.0;
-  (__return_storage_ptr__->_size).z = 0.0;
-  (__return_storage_ptr__->_center).x = 0.0;
+  *(undefined8 *)&(__return_storage_ptr__->_size).z = 0;
   (__return_storage_ptr__->_center).y = 0.0;
   (__return_storage_ptr__->_center).z = 0.0;
   *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
-  if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__ObjectBounds);
+  if (*(int *)&(TypeInfo__RTG__ObjectBounds->_1).field_0x1c == 0) {
+    FUN_?();
   }
   pAVar1 = ObjectBounds_CalcMeshModelAABB(&AStack_2,gameObject,(MethodInfo *)0x0);
-  fVar3 = (pAVar1->_size).y;
-  fVar4 = (pAVar1->_size).z;
-  fVar5 = (pAVar1->_center).x;
-  fVar6 = (pAVar1->_center).y;
-  fVar7 = (pAVar1->_center).z;
-  uVar8 = *(undefined4 *)&pAVar1->_isValid;
+  uVar3 = *(undefined4 *)&pAVar1->_isValid;
+  fVar4 = (pAVar1->_center).y;
+  fVar5 = (pAVar1->_center).z;
+  fVar6 = (pAVar1->_size).y;
+  uVar7 = *(undefined8 *)&(pAVar1->_size).z;
   (__return_storage_ptr__->_size).x = (pAVar1->_size).x;
-  (__return_storage_ptr__->_size).y = fVar3;
-  (__return_storage_ptr__->_size).z = fVar4;
-  (__return_storage_ptr__->_center).x = fVar5;
-  (__return_storage_ptr__->_center).y = fVar6;
-  (__return_storage_ptr__->_center).z = fVar7;
-  *(undefined4 *)&__return_storage_ptr__->_isValid = uVar8;
-  if ((char)uVar8 == '\0') {
+  (__return_storage_ptr__->_size).y = fVar6;
+  *(undefined8 *)&(__return_storage_ptr__->_size).z = uVar7;
+  (__return_storage_ptr__->_center).y = fVar4;
+  (__return_storage_ptr__->_center).z = fVar5;
+  *(undefined4 *)&__return_storage_ptr__->_isValid = uVar3;
+  if ((char)uVar3 == '\0') {
     return __return_storage_ptr__;
   }
-  if ((gameObject != (GameObject *)0x0) &&
-     (this = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                       (gameObject,(MethodInfo *)0x0), this != (Transform *)0x0)) {
-    pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localToWorldMatrix
-                       ((Matrix4x4 *)&stack0xffffffa0,this,(MethodInfo *)0x0);
-    AABB::AABB_Transform(__return_storage_ptr__,*pMVar9,(MethodInfo *)0x0);
-    return __return_storage_ptr__;
+  if ((gameObject == (GameObject *)0x0) ||
+     (obj = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                      (gameObject,(MethodInfo *)0x0), obj == (Transform *)0x0)) {
+    FUN_?();
+    pcVar8 = (code *)swi(3);
+    pAVar1 = (AABB *)(*pcVar8)();
+    return pAVar1;
   }
-  func_?();
-  pcVar10 = (code *)swi(3);
-  pAVar1 = (AABB *)(*pcVar10)();
-  return pAVar1;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  MStack_9.m00 = 0.0;
+  MStack_9.m10 = 0.0;
+  MStack_9.m20 = 0.0;
+  MStack_9.m30 = 0.0;
+  MStack_9.m01 = 0.0;
+  MStack_9.m11 = 0.0;
+  MStack_9.m21 = 0.0;
+  MStack_9.m31 = 0.0;
+  MStack_9.m02 = 0.0;
+  MStack_9.m12 = 0.0;
+  MStack_9.m22 = 0.0;
+  MStack_9.m32 = 0.0;
+  MStack_9.m03 = 0.0;
+  MStack_9.m13 = 0.0;
+  MStack_9.m23 = 0.0;
+  MStack_9.m33 = 0.0;
+  pvVar10 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar10 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar8 = (code *)swi(3);
+    pAVar1 = (AABB *)(*pcVar8)();
+    return pAVar1;
+  }
+  pcVar8 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+    uVar7 = func_?(&UNK_?);
+    FUN_?(uVar7,0);
+    pcVar8 = (code *)swi(3);
+    pAVar1 = (AABB *)(*pcVar8)();
+    return pAVar1;
+  }
+  pcRam_? = pcVar8;
+  (*pcRam_?)(pvVar10,&MStack_9);
+  MStack_11.m00 = MStack_9.m00;
+  MStack_11.m10 = MStack_9.m10;
+  MStack_11.m20 = MStack_9.m20;
+  MStack_11.m30 = MStack_9.m30;
+  MStack_11.m01 = MStack_9.m01;
+  MStack_11.m11 = MStack_9.m11;
+  MStack_11.m21 = MStack_9.m21;
+  MStack_11.m31 = MStack_9.m31;
+  MStack_11.m02 = MStack_9.m02;
+  MStack_11.m12 = MStack_9.m12;
+  MStack_11.m22 = MStack_9.m22;
+  MStack_11.m32 = MStack_9.m32;
+  MStack_11.m03 = MStack_9.m03;
+  MStack_11.m13 = MStack_9.m13;
+  MStack_11.m23 = MStack_9.m23;
+  MStack_11.m33 = MStack_9.m33;
+  AABB::AABB_Transform(__return_storage_ptr__,&MStack_11,(MethodInfo *)0x0);
+  return __return_storage_ptr__;
 }
 
 
@@ -601,149 +805,146 @@ AABB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcMeshWorldAABB
 
 AABB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcModelAABB
                  (AABB *__return_storage_ptr__,GameObject *gameObject,
-                 ObjectBounds_QueryConfig queryConfig,GameObjectType__Enum objectType,
+                 ObjectBounds_QueryConfig *queryConfig,GameObjectType__Enum objectType,
                  MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__GameObjectEx);
-    func_?(&
-                    UnityEngine__Terrain_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Terrain>__
-                   );
-    func_?(&TypeInfo__RTG__ObjectBounds);
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&TypeInfo__RTG__GameObjectEx);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__ObjectBounds);
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((queryConfig.ObjectTypes & objectType) != 0) {
-    if (objectType == GameObjectType__Enum_Mesh) {
-      if ((TypeInfo__RTG__GameObjectEx->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__RTG__GameObjectEx);
-      }
-      this_01 = GameObjectEx::GameObjectEx_GetMesh(gameObject,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                         ((Object_1 *)this_01,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar1 == 0) {
-        if (this_01 != (Mesh *)0x0) {
-          pBVar2 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_bounds
-                              ((Bounds *)&stack0xffffffd4,this_01,(MethodInfo *)0x0);
-          uVar3 = (pBVar2->m_Extents).z;
-          uVar4 = (pBVar2->m_Center).x;
-          uVar5 = (pBVar2->m_Center).y;
-          uVar6 = (pBVar2->m_Center).z;
-          bounds.m_Center.z = (float)uVar6;
-          bounds.m_Center.y = (float)uVar5;
-          bounds.m_Center.x = (float)uVar4;
-          uVar7 = (pBVar2->m_Extents).x;
-          uVar8 = (pBVar2->m_Extents).y;
-          bounds.m_Extents.y = (float)uVar8;
-          bounds.m_Extents.x = (float)uVar7;
-          (__return_storage_ptr__->_size).x = 0.0;
-          (__return_storage_ptr__->_size).y = 0.0;
-          (__return_storage_ptr__->_size).z = 0.0;
-          (__return_storage_ptr__->_center).x = 0.0;
-          (__return_storage_ptr__->_center).y = 0.0;
-          (__return_storage_ptr__->_center).z = 0.0;
-          *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
-          bounds.m_Extents.z = (float)uVar3;
-          AABB::AABB__ctor_1(__return_storage_ptr__,bounds,(MethodInfo *)0x0);
-          return __return_storage_ptr__;
+  if ((queryConfig->ObjectTypes & objectType) != 0) {
+    if (objectType != GameObjectType__Enum_Mesh) {
+      if (objectType != GameObjectType__Enum_Sprite) {
+        if (cRam_? == '\0') {
+          FUN_?();
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
         }
-        goto code_?;
-      }
-    }
-    else {
-      if (objectType == GameObjectType__Enum_Sprite) {
-        if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__RTG__ObjectBounds);
-        }
-        pAVar9 = ObjectBounds_CalcSpriteModelAABB
-                            ((AABB *)&stack0xffffffd0,gameObject,(MethodInfo *)0x0);
-        goto code_?;
-      }
-      if (objectType != GameObjectType__Enum_Terrain) {
-        pVVar10 = MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_get_WorldPosition
-                            (&VStack_11,(MVWorldObject *)0x0,unaff_ESI);
-        VVar12 = *pVVar10;
-        (__return_storage_ptr__->_size).x = 0.0;
-        (__return_storage_ptr__->_size).y = 0.0;
-        (__return_storage_ptr__->_size).z = 0.0;
-        (__return_storage_ptr__->_center).x = 0.0;
-        (__return_storage_ptr__->_center).y = 0.0;
-        (__return_storage_ptr__->_center).z = 0.0;
-        *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
-        AABB::AABB__ctor(__return_storage_ptr__,VVar12,queryConfig.NoVolumeSize,(MethodInfo *)0x0);
+        pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+        *(undefined2 *)&__return_storage_ptr__->field_0x19 = 0;
+        __return_storage_ptr__->field_0x1b = 0;
+        fVar2 = (pVVar1->zeroVector).y;
+        fVar3 = (pVVar1->zeroVector).z;
+        (__return_storage_ptr__->_center).x = (pVVar1->zeroVector).x;
+        (__return_storage_ptr__->_center).y = fVar2;
+        fVar2 = (queryConfig->NoVolumeSize).x;
+        fVar4 = (queryConfig->NoVolumeSize).y;
+        (__return_storage_ptr__->_center).z = fVar3;
+        fVar3 = (queryConfig->NoVolumeSize).z;
+        (__return_storage_ptr__->_size).x = fVar2;
+        (__return_storage_ptr__->_size).y = fVar4;
+        (__return_storage_ptr__->_size).z = fVar3;
+        __return_storage_ptr__->_isValid = 1;
         return __return_storage_ptr__;
       }
-      if (gameObject == (GameObject *)0x0) {
-code_?:
-        func_?();
-        pcVar13 = (code *)swi(3);
-        pAVar9 = (AABB *)(*pcVar13)();
-        return pAVar9;
+      if (*(int *)&(TypeInfo__RTG__ObjectBounds->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      this = (Terrain *)
-             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                       (gameObject,
-                        UnityEngine__Terrain_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Terrain>__
+      pAVar5 = ObjectBounds_CalcSpriteModelAABB(&AStack_6,gameObject,(MethodInfo *)0x0);
+      fVar3 = (pAVar5->_size).y;
+      uVar7 = *(undefined8 *)&(pAVar5->_size).z;
+      fVar2 = (pAVar5->_center).y;
+      fVar4 = (pAVar5->_center).z;
+      uVar8 = *(undefined4 *)&pAVar5->_isValid;
+      (__return_storage_ptr__->_size).x = (pAVar5->_size).x;
+      (__return_storage_ptr__->_size).y = fVar3;
+      *(undefined8 *)&(__return_storage_ptr__->_size).z = uVar7;
+      (__return_storage_ptr__->_center).y = fVar2;
+      (__return_storage_ptr__->_center).z = fVar4;
+      goto code_?;
+    }
+    if (*(int *)&(TypeInfo__RTG__GameObjectEx->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    obj = GameObjectEx::GameObjectEx_GetMesh(gameObject,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (obj != (Mesh *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if ((obj->fields)._.m_CachedPtr != (void *)0x0) {
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Mesh>_UnityEngine__Mesh_
                        );
-      if (this == (Terrain *)0x0) goto code_?;
-      this_00 = UnityEngine.TerrainModule.dll::UnityEngine::Terrain::Terrain_get_terrainData
-                          (this,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                         ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar1 == 0) {
-        if (this_00 != (TerrainData *)0x0) {
-          pBVar2 = UnityEngine.TerrainModule.dll::UnityEngine::TerrainData::TerrainData_get_bounds
-                              ((Bounds *)&stack0xffffffd4,this_00,(MethodInfo *)0x0);
-          VStack_11.x = (pBVar2->m_Extents).x;
-          uVar14 = (pBVar2->m_Extents).y;
-          uVar15 = (pBVar2->m_Extents).z;
-          fVar16 = VStack_11.x * _UNK_?;
-          fVar17 = (float)uVar14 * _UNK_?;
-          fVar18 = (float)uVar15 * _UNK_?;
-          VStack_11.y = VStack_11.x;
-          VStack_11.z = VStack_11.x;
-          pBVar2 = UnityEngine.TerrainModule.dll::UnityEngine::TerrainData::TerrainData_get_bounds
-                              ((Bounds *)&stack0xffffffd4,this_00,(MethodInfo *)0x0);
-          center = pBVar2->m_Center;
-          (__return_storage_ptr__->_size).x = 0.0;
-          (__return_storage_ptr__->_size).y = 0.0;
-          (__return_storage_ptr__->_size).z = 0.0;
-          (__return_storage_ptr__->_center).x = 0.0;
-          (__return_storage_ptr__->_center).y = 0.0;
-          (__return_storage_ptr__->_center).z = 0.0;
-          *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
-          VVar12.y = fVar17;
-          VVar12.x = fVar16;
-          VVar12.z = fVar18;
-          AABB::AABB__ctor(__return_storage_ptr__,center,VVar12,(MethodInfo *)0x0);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        AStack_6._size.x = 0.0;
+        AStack_6._size.y = 0.0;
+        AStack_6._size.z = 0.0;
+        AStack_6._center.x = 0.0;
+        AStack_6._center.y = 0.0;
+        AStack_6._center.z = 0.0;
+        pvVar9 = (obj->fields)._.m_CachedPtr;
+        if (pvVar9 != (void *)0x0) {
+          pcVar10 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar10 = (code *)FUN_?(&UNK_?), pcVar10 == (code *)0x0)) {
+            uVar7 = func_?(&UNK_?);
+            FUN_?(uVar7,0);
+            pcVar10 = (code *)swi(3);
+            pAVar5 = (AABB *)(*pcVar10)();
+            return pAVar5;
+          }
+          pcRam_? = pcVar10;
+          (*pcRam_?)(pvVar9,&AStack_6);
+          *(undefined2 *)&__return_storage_ptr__->field_0x19 = 0;
+          __return_storage_ptr__->field_0x1b = 0;
+          (__return_storage_ptr__->_center).x = AStack_6._size.x;
+          (__return_storage_ptr__->_center).y = AStack_6._size.y;
+          (__return_storage_ptr__->_center).z = AStack_6._size.z;
+          (__return_storage_ptr__->_size).x =
+               AStack_6._center.x * TypeRef__System__Activator__T._0_4_;
+          (__return_storage_ptr__->_size).y = AStack_6._center.y + AStack_6._center.y;
+          (__return_storage_ptr__->_size).z = AStack_6._center.z + AStack_6._center.z;
+          __return_storage_ptr__->_isValid = 1;
           return __return_storage_ptr__;
         }
-        goto code_?;
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+        pcVar10 = (code *)swi(3);
+        pAVar5 = (AABB *)(*pcVar10)();
+        return pAVar5;
       }
     }
   }
-  pAVar9 = AABB::AABB_GetInvalid((AABB *)&stack0xffffffd0,(MethodInfo *)0x0);
+  uVar8 = 0;
+  (__return_storage_ptr__->_size).x = 0.0;
+  (__return_storage_ptr__->_size).y = 0.0;
+  *(undefined8 *)&(__return_storage_ptr__->_size).z = 0;
+  (__return_storage_ptr__->_center).y = 0.0;
+  (__return_storage_ptr__->_center).z = 0.0;
 code_?:
-  fVar16 = (pAVar9->_size).y;
-  fVar17 = (pAVar9->_size).z;
-  fVar18 = (pAVar9->_center).x;
-  (__return_storage_ptr__->_size).x = (pAVar9->_size).x;
-  (__return_storage_ptr__->_size).y = fVar16;
-  (__return_storage_ptr__->_size).z = fVar17;
-  (__return_storage_ptr__->_center).x = fVar18;
-  fVar16 = (pAVar9->_center).z;
-  (__return_storage_ptr__->_center).y = (pAVar9->_center).y;
-  (__return_storage_ptr__->_center).z = fVar16;
-  uVar19 = *(undefined3 *)&pAVar9->field_0x19;
-  __return_storage_ptr__->_isValid = pAVar9->_isValid;
-  *(undefined3 *)&__return_storage_ptr__->field_0x19 = uVar19;
+  *(undefined4 *)&__return_storage_ptr__->_isValid = uVar8;
   return __return_storage_ptr__;
 }
 
@@ -754,142 +955,117 @@ code_?:
 AABB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcObjectCollectionWorldAABB
                  (AABB *__return_storage_ptr__,
                  IEnumerable_1_UnityEngine_GameObject_ *gameObjectCollection,
-                 ObjectBounds_QueryConfig queryConfig,MethodInfo *method)
+                 ObjectBounds_QueryConfig *queryConfig,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff8c;
-  puVar5 = &stack0xffffff8c;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__IDisposable);
-    func_?(&TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::GameObject>);
-    func_?(&TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::GameObject>);
-    func_?(&TypeInfo__System__Collections__IEnumerator);
-    func_?(&TypeInfo__RTG__ObjectBounds);
+    FUN_?(&TypeInfo__System__IDisposable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::GameObject>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::GameObject>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__IEnumerator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__ObjectBounds);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
+  AStack_1._center.y = 0.0;
+  AStack_1._center.z = 0.0;
   (__return_storage_ptr__->_size).x = 0.0;
   (__return_storage_ptr__->_size).y = 0.0;
-  (__return_storage_ptr__->_size).z = 0.0;
-  (__return_storage_ptr__->_center).x = 0.0;
+  *(undefined8 *)&(__return_storage_ptr__->_size).z = 0;
   (__return_storage_ptr__->_center).y = 0.0;
   (__return_storage_ptr__->_center).z = 0.0;
   *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
-  pAVar6 = AABB::AABB_GetInvalid(&AStack_7,(MethodInfo *)0x0);
-  fVar8 = (pAVar6->_size).y;
-  fVar9 = (pAVar6->_size).z;
-  fVar10 = (pAVar6->_center).x;
-  fVar11 = (pAVar6->_center).y;
-  fVar12 = (pAVar6->_center).z;
-  bVar13 = pAVar6->_isValid;
-  uVar14 = *(undefined3 *)&pAVar6->field_0x19;
-  (__return_storage_ptr__->_size).x = (pAVar6->_size).x;
-  (__return_storage_ptr__->_size).y = fVar8;
-  (__return_storage_ptr__->_size).z = fVar9;
-  (__return_storage_ptr__->_center).x = fVar10;
-  (__return_storage_ptr__->_center).y = fVar11;
-  (__return_storage_ptr__->_center).z = fVar12;
-  __return_storage_ptr__->_isValid = bVar13;
-  *(undefined3 *)&__return_storage_ptr__->field_0x19 = uVar14;
-  if (gameObjectCollection != (IEnumerable_1_UnityEngine_GameObject_ *)0x0) {
-    piStack_15 = (int *)func_?(0);
-    ppiStack_16 = &piStack_15;
-    uStack_17 = 0;
-    uStack_1 = 1;
-    while( true ) {
-      if (piStack_15 == (int *)0x0) break;
-      cVar18 = func_?(0);
-      if (cVar18 == '\0') {
-        uStack_1 = 0xffffffff;
-        if (piStack_15 != (int *)0x0) {
-          func_?(0);
-          *unaff_FS_OFFSET = uStack_3;
-          return __return_storage_ptr__;
+  if (gameObjectCollection == (IEnumerable_1_UnityEngine_GameObject_ *)0x0) {
+    FUN_?();
+code_?:
+    FUN_?();
+  }
+  else {
+    plVar2 = (longlong *)
+             FUN_?(0,
+                           TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::GameObject>
+                           ,gameObjectCollection);
+    while (plVar2 != (longlong *)0x0) {
+      cVar3 = FUN_?(0,TypeInfo__System__Collections__IEnumerator);
+      if (cVar3 == '\0') {
+        if (plVar2 != (longlong *)0x0) {
+          FUN_?(0,TypeInfo__System__IDisposable,plVar2);
         }
-        *unaff_FS_OFFSET = uStack_3;
         return __return_storage_ptr__;
       }
-      piStack_19 = piStack_15;
-      if (piStack_15 == (int *)0x0) break;
-      iVar20 = *piStack_15;
-      uVar21 = 0;
-      uStack_22 = 0;
-      uVar23 = *(ushort *)(iVar20 + 0xb6);
-      uStack_24 = (uint)uVar23;
-      if (uVar23 != 0) {
+      if (plVar2 == (longlong *)0x0) goto code_?;
+      lVar4 = *plVar2;
+      uVar5 = 0;
+      if (*(ushort *)(lVar4 + 0x12e) != 0) {
         do {
           if (*(IEnumerator_1_UnityEngine_GameObject___Class **)
-               (*(int *)(iVar20 + 0x58) + (uint)uVar21 * 8) ==
+               (*(longlong *)(lVar4 + 0xb0) + (ulonglong)uVar5 * 0x10) ==
               TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::GameObject>) {
-            puVar25 = (undefined4 *)
-                      (iVar20 + (*(int *)(*(int *)(iVar20 + 0x58) + 4 + (uint)uVar21 * 8) + 0x18) * 8)
-            ;
+            puVar6 = (undefined8 *)
+                     ((longlong)*(int *)(*(longlong *)(lVar4 + 0xb0) + 8 + (ulonglong)uVar5 * 0x10)
+                      * 0x10 + 0x138 + lVar4);
             goto code_?;
           }
-          uVar21 = uVar21 + 1;
-        } while (uVar21 < uVar23);
+          uVar5 = uVar5 + 1;
+        } while (uVar5 < *(ushort *)(lVar4 + 0x12e));
       }
-      puVar25 = (undefined4 *)func_?(piStack_15);
+      puVar6 = (undefined8 *)
+               FUN_?(plVar2,
+                             TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::GameObject>
+                             ,0);
 code_?:
-      gameObject = (GameObject *)(*(code *)*puVar25)();
-      if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__RTG__ObjectBounds);
+      gameObject = (GameObject *)(*(code *)*puVar6)(plVar2,puVar6[1]);
+      if (*(int *)&(TypeInfo__RTG__ObjectBounds->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      pAVar6 = ObjectBounds_CalcWorldAABB(&AStack_26,gameObject,queryConfig,(MethodInfo *)0x0);
-      AStack_7._size.x = (pAVar6->_size).x;
-      AStack_7._size.y = (pAVar6->_size).y;
-      AStack_7._size.z = (pAVar6->_size).z;
-      AStack_7._center.x = (pAVar6->_center).x;
-      AStack_7._isValid = pAVar6->_isValid;
-      AStack_7._25_3_ = *(undefined3 *)&pAVar6->field_0x19;
-      AStack_7._center.y = (pAVar6->_center).y;
-      AStack_7._center.z = (pAVar6->_center).z;
-      if (AStack_7._isValid != 0) {
-        fVar8 = (pAVar6->_size).y;
-        fVar9 = (pAVar6->_size).z;
-        fVar10 = (pAVar6->_center).x;
-        uVar27 = (pAVar6->_size).x;
-        uVar28 = (pAVar6->_size).y;
-        uVar29 = (pAVar6->_size).z;
-        aabb._size.z = (float)uVar29;
-        aabb._size.y = (float)uVar28;
-        aabb._size.x = (float)uVar27;
-        uVar30 = (pAVar6->_center).x;
-        aabb._center.x = (float)uVar30;
+      AStack_1._size.x = (float)queryConfig->ObjectTypes;
+      AStack_1._size.y = (queryConfig->NoVolumeSize).x;
+      AStack_1._size.z = (queryConfig->NoVolumeSize).y;
+      AStack_1._center.x = (queryConfig->NoVolumeSize).z;
+      pAVar7 = ObjectBounds_CalcWorldAABB
+                          (&AStack_8,gameObject,(ObjectBounds_QueryConfig *)&AStack_1,
+                           (MethodInfo *)0x0);
+      uVar9._0_4_ = (pAVar7->_size).x;
+      uVar9._4_4_ = (pAVar7->_size).y;
+      uVar10 = *(undefined8 *)&(pAVar7->_size).z;
+      uVar11._0_4_ = (pAVar7->_center).y;
+      uVar11._4_4_ = (pAVar7->_center).z;
+      uVar12._0_1_ = pAVar7->_isValid;
+      uVar12._1_3_ = *(undefined3 *)&pAVar7->field_0x19;
+      if ((bool)uVar12 != 0) {
         if (__return_storage_ptr__->_isValid == 0) {
-          fVar11 = (pAVar6->_center).y;
-          fVar12 = (pAVar6->_center).z;
-          (__return_storage_ptr__->_size).x = (pAVar6->_size).x;
-          (__return_storage_ptr__->_size).y = fVar8;
-          (__return_storage_ptr__->_size).z = fVar9;
-          (__return_storage_ptr__->_center).x = fVar10;
-          (__return_storage_ptr__->_center).y = fVar11;
-          (__return_storage_ptr__->_center).z = fVar12;
-          __return_storage_ptr__->_isValid = AStack_7._isValid;
-          *(undefined3 *)&__return_storage_ptr__->field_0x19 = AStack_7._25_3_;
+          (__return_storage_ptr__->_size).x = (float)uVar9;
+          (__return_storage_ptr__->_size).y = uVar9._4_4_;
+          *(undefined8 *)&(__return_storage_ptr__->_size).z = uVar10;
+          (__return_storage_ptr__->_center).y = (float)uVar11;
+          (__return_storage_ptr__->_center).z = uVar11._4_4_;
+          __return_storage_ptr__->_isValid = (bool)uVar12;
+          *(undefined3 *)&__return_storage_ptr__->field_0x19 = uVar12._1_3_;
         }
         else {
-          uVar31 = (pAVar6->_center).y;
-          uVar32 = (pAVar6->_center).z;
-          aabb._center.z = (float)uVar32;
-          aabb._center.y = (float)uVar31;
-          aabb._isValid = AStack_7._isValid;
-          aabb._25_3_ = AStack_7._25_3_;
-          AABB::AABB_Encapsulate_2(__return_storage_ptr__,aabb,(MethodInfo *)0x0);
+          AStack_1._size._0_8_ = uVar9;
+          AStack_1._8_8_ = uVar10;
+          AStack_1._center._4_8_ = uVar11;
+          AStack_1._24_4_ = uVar12;
+          AABB::AABB_Encapsulate_2(__return_storage_ptr__,&AStack_1,(MethodInfo *)0x0);
         }
       }
     }
   }
-  func_?();
-  func_?();
-  pcVar33 = (code *)swi(3);
-  pAVar6 = (AABB *)(*pcVar33)();
-  return pAVar6;
+  FUN_?();
+  FUN_?();
+  pcVar13 = (code *)swi(3);
+  pAVar7 = (AABB *)(*pcVar13)();
+  return pAVar7;
 }
 
 
@@ -897,54 +1073,48 @@ code_?:
 
 Rect * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcScreenRect
                  (Rect *__return_storage_ptr__,GameObject *gameObject,Camera *camera,
-                 ObjectBounds_QueryConfig queryConfig,MethodInfo *method)
+                 ObjectBounds_QueryConfig *queryConfig,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__ObjectBounds);
+    FUN_?(&TypeInfo__RTG__ObjectBounds);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  AStack_1._size.x = 0.0;
-  AStack_1._size.y = 0.0;
-  AStack_1._size.z = 0.0;
-  AStack_1._center.x = 0.0;
-  AStack_1._isValid = 0;
-  AStack_1._25_3_ = 0;
-  AStack_1._center.y = 0.0;
-  AStack_1._center.z = 0.0;
-  if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__ObjectBounds);
+  if (*(int *)&(TypeInfo__RTG__ObjectBounds->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  queryConfig_00.NoVolumeSize.x = queryConfig.NoVolumeSize.x;
-  queryConfig_00.ObjectTypes = queryConfig.ObjectTypes;
-  queryConfig_00.NoVolumeSize.y = queryConfig.NoVolumeSize.y;
-  queryConfig_00.NoVolumeSize.z = queryConfig.NoVolumeSize.z;
+  RStack_1.m_XMin = (float)queryConfig->ObjectTypes;
+  RStack_1.m_YMin = (queryConfig->NoVolumeSize).x;
+  RStack_1.m_Width = (queryConfig->NoVolumeSize).y;
+  RStack_1.m_Height = (queryConfig->NoVolumeSize).z;
   pAVar2 = ObjectBounds_CalcWorldAABB
-                     ((AABB *)&stack0xffffffc4,gameObject,queryConfig_00,(MethodInfo *)0x0);
-  AStack_1._size.x = (pAVar2->_size).x;
-  AStack_1._size.y = (pAVar2->_size).y;
-  AStack_1._size.z = (pAVar2->_size).z;
-  AStack_1._center.x = (pAVar2->_center).x;
-  AStack_1._center.y = (pAVar2->_center).y;
-  AStack_1._center.z = (pAVar2->_center).z;
-  AStack_1._isValid = pAVar2->_isValid;
-  AStack_1._25_3_ = *(undefined3 *)&pAVar2->field_0x19;
-  if (AStack_1._isValid != 0) {
-    pRVar3 = AABB::AABB_GetScreenRectangle((Rect *)&queryConfig,&AStack_1,camera,(MethodInfo *)0x0)
-    ;
-    fVar4 = pRVar3->m_YMin;
-    fVar5 = pRVar3->m_Width;
-    fVar6 = pRVar3->m_Height;
-    __return_storage_ptr__->m_XMin = pRVar3->m_XMin;
-    __return_storage_ptr__->m_YMin = fVar4;
-    __return_storage_ptr__->m_Width = fVar5;
-    __return_storage_ptr__->m_Height = fVar6;
-    return __return_storage_ptr__;
+                     (&AStack_3,gameObject,(ObjectBounds_QueryConfig *)&RStack_1,(MethodInfo *)0x0
+                     );
+  AStack_4._size.x = (pAVar2->_size).x;
+  AStack_4._size.y = (pAVar2->_size).y;
+  AStack_4._8_8_ = *(undefined8 *)&(pAVar2->_size).z;
+  AStack_4._center.y = (pAVar2->_center).y;
+  AStack_4._center.z = (pAVar2->_center).z;
+  AStack_4._isValid = pAVar2->_isValid;
+  AStack_4._25_3_ = *(undefined3 *)&pAVar2->field_0x19;
+  if (AStack_4._isValid == 0) {
+    __return_storage_ptr__->m_XMin = 0.0;
+    __return_storage_ptr__->m_YMin = 0.0;
+    __return_storage_ptr__->m_Width = 0.0;
+    __return_storage_ptr__->m_Height = 0.0;
   }
-  __return_storage_ptr__->m_XMin = 0.0;
-  __return_storage_ptr__->m_YMin = 0.0;
-  __return_storage_ptr__->m_Width = 0.0;
-  __return_storage_ptr__->m_Height = 0.0;
+  else {
+    pRVar5 = AABB::AABB_GetScreenRectangle(&RStack_1,&AStack_4,camera,(MethodInfo *)0x0);
+    fVar6 = pRVar5->m_YMin;
+    fVar7 = pRVar5->m_Width;
+    fVar8 = pRVar5->m_Height;
+    __return_storage_ptr__->m_XMin = pRVar5->m_XMin;
+    __return_storage_ptr__->m_YMin = fVar6;
+    __return_storage_ptr__->m_Width = fVar7;
+    __return_storage_ptr__->m_Height = fVar8;
+  }
   return __return_storage_ptr__;
 }
 
@@ -956,51 +1126,76 @@ AABB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcSpriteModelAABB
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    UnityEngine__SpriteRenderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::SpriteRenderer>__
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&
+                  UnityEngine__SpriteRenderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::SpriteRenderer>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (spriteObject != (GameObject *)0x0) {
-    spriteRenderer =
-         (SpriteRenderer *)
-         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                   (spriteObject,
-                    UnityEngine__SpriteRenderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::SpriteRenderer>__
-                   );
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)spriteRenderer,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar1 == 0) {
-      pAVar2 = SpriteRendererEx::SpriteRendererEx_GetModelSpaceAABB
-                         ((AABB *)&stack0xffffffe0,spriteRenderer,(MethodInfo *)0x0);
-    }
-    else {
-      pAVar2 = AABB::AABB_GetInvalid((AABB *)&stack0xffffffe0,(MethodInfo *)0x0);
-    }
-    fVar3 = (pAVar2->_size).y;
-    fVar4 = (pAVar2->_size).z;
-    fVar5 = (pAVar2->_center).x;
-    bVar1 = pAVar2->_isValid;
-    uVar6 = *(undefined3 *)&pAVar2->field_0x19;
-    (__return_storage_ptr__->_size).x = (pAVar2->_size).x;
-    (__return_storage_ptr__->_size).y = fVar3;
-    (__return_storage_ptr__->_size).z = fVar4;
-    (__return_storage_ptr__->_center).x = fVar5;
-    fVar3 = (pAVar2->_center).z;
-    (__return_storage_ptr__->_center).y = (pAVar2->_center).y;
-    (__return_storage_ptr__->_center).z = fVar3;
-    __return_storage_ptr__->_isValid = bVar1;
-    *(undefined3 *)&__return_storage_ptr__->field_0x19 = uVar6;
-    return __return_storage_ptr__;
+  if (spriteObject == (GameObject *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    pAVar2 = (AABB *)(*pcVar1)();
+    return pAVar2;
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  pAVar2 = (AABB *)(*pcVar7)();
-  return pAVar2;
+  spriteRenderer =
+       (SpriteRenderer *)
+       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                 (spriteObject,
+                  UnityEngine__SpriteRenderer_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::SpriteRenderer>__
+                 );
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (spriteRenderer != (SpriteRenderer *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((spriteRenderer->fields)._._._.m_CachedPtr != (void *)0x0) {
+      pAVar2 = SpriteRendererEx::SpriteRendererEx_GetModelSpaceAABB
+                         (&AStack_3,spriteRenderer,(MethodInfo *)0x0);
+      fVar4 = (pAVar2->_size).y;
+      uVar5 = *(undefined8 *)&(pAVar2->_size).z;
+      fVar6 = (pAVar2->_center).y;
+      fVar7 = (pAVar2->_center).z;
+      bVar8 = pAVar2->_isValid;
+      uVar9 = *(undefined3 *)&pAVar2->field_0x19;
+      (__return_storage_ptr__->_size).x = (pAVar2->_size).x;
+      (__return_storage_ptr__->_size).y = fVar4;
+      *(undefined8 *)&(__return_storage_ptr__->_size).z = uVar5;
+      (__return_storage_ptr__->_center).y = fVar6;
+      (__return_storage_ptr__->_center).z = fVar7;
+      __return_storage_ptr__->_isValid = bVar8;
+      *(undefined3 *)&__return_storage_ptr__->field_0x19 = uVar9;
+      return __return_storage_ptr__;
+    }
+  }
+  (__return_storage_ptr__->_size).x = 0.0;
+  (__return_storage_ptr__->_size).y = 0.0;
+  *(undefined8 *)&(__return_storage_ptr__->_size).z = 0;
+  (__return_storage_ptr__->_center).y = 0.0;
+  (__return_storage_ptr__->_center).z = 0.0;
+  *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
+  return __return_storage_ptr__;
 }
 
 
@@ -1011,48 +1206,104 @@ AABB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcSpriteWorldAABB
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__ObjectBounds);
+    FUN_?(&TypeInfo__RTG__ObjectBounds);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   (__return_storage_ptr__->_size).x = 0.0;
   (__return_storage_ptr__->_size).y = 0.0;
-  (__return_storage_ptr__->_size).z = 0.0;
-  (__return_storage_ptr__->_center).x = 0.0;
+  *(undefined8 *)&(__return_storage_ptr__->_size).z = 0;
   (__return_storage_ptr__->_center).y = 0.0;
   (__return_storage_ptr__->_center).z = 0.0;
   *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
-  if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__ObjectBounds);
+  if (*(int *)&(TypeInfo__RTG__ObjectBounds->_1).field_0x1c == 0) {
+    FUN_?();
   }
   pAVar1 = ObjectBounds_CalcSpriteModelAABB(&AStack_2,gameObject,(MethodInfo *)0x0);
-  fVar3 = (pAVar1->_size).y;
-  fVar4 = (pAVar1->_size).z;
-  fVar5 = (pAVar1->_center).x;
-  fVar6 = (pAVar1->_center).y;
-  fVar7 = (pAVar1->_center).z;
-  uVar8 = *(undefined4 *)&pAVar1->_isValid;
+  uVar3 = *(undefined4 *)&pAVar1->_isValid;
+  fVar4 = (pAVar1->_center).y;
+  fVar5 = (pAVar1->_center).z;
+  fVar6 = (pAVar1->_size).y;
+  uVar7 = *(undefined8 *)&(pAVar1->_size).z;
   (__return_storage_ptr__->_size).x = (pAVar1->_size).x;
-  (__return_storage_ptr__->_size).y = fVar3;
-  (__return_storage_ptr__->_size).z = fVar4;
-  (__return_storage_ptr__->_center).x = fVar5;
-  (__return_storage_ptr__->_center).y = fVar6;
-  (__return_storage_ptr__->_center).z = fVar7;
-  *(undefined4 *)&__return_storage_ptr__->_isValid = uVar8;
-  if ((char)uVar8 == '\0') {
+  (__return_storage_ptr__->_size).y = fVar6;
+  *(undefined8 *)&(__return_storage_ptr__->_size).z = uVar7;
+  (__return_storage_ptr__->_center).y = fVar4;
+  (__return_storage_ptr__->_center).z = fVar5;
+  *(undefined4 *)&__return_storage_ptr__->_isValid = uVar3;
+  if ((char)uVar3 == '\0') {
     return __return_storage_ptr__;
   }
-  if ((gameObject != (GameObject *)0x0) &&
-     (this = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                       (gameObject,(MethodInfo *)0x0), this != (Transform *)0x0)) {
-    pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localToWorldMatrix
-                       ((Matrix4x4 *)&stack0xffffffa0,this,(MethodInfo *)0x0);
-    AABB::AABB_Transform(__return_storage_ptr__,*pMVar9,(MethodInfo *)0x0);
-    return __return_storage_ptr__;
+  if ((gameObject == (GameObject *)0x0) ||
+     (obj = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                      (gameObject,(MethodInfo *)0x0), obj == (Transform *)0x0)) {
+    FUN_?();
+    pcVar8 = (code *)swi(3);
+    pAVar1 = (AABB *)(*pcVar8)();
+    return pAVar1;
   }
-  func_?();
-  pcVar10 = (code *)swi(3);
-  pAVar1 = (AABB *)(*pcVar10)();
-  return pAVar1;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  MStack_9.m00 = 0.0;
+  MStack_9.m10 = 0.0;
+  MStack_9.m20 = 0.0;
+  MStack_9.m30 = 0.0;
+  MStack_9.m01 = 0.0;
+  MStack_9.m11 = 0.0;
+  MStack_9.m21 = 0.0;
+  MStack_9.m31 = 0.0;
+  MStack_9.m02 = 0.0;
+  MStack_9.m12 = 0.0;
+  MStack_9.m22 = 0.0;
+  MStack_9.m32 = 0.0;
+  MStack_9.m03 = 0.0;
+  MStack_9.m13 = 0.0;
+  MStack_9.m23 = 0.0;
+  MStack_9.m33 = 0.0;
+  pvVar10 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar10 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar8 = (code *)swi(3);
+    pAVar1 = (AABB *)(*pcVar8)();
+    return pAVar1;
+  }
+  pcVar8 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+    uVar7 = func_?(&UNK_?);
+    FUN_?(uVar7,0);
+    pcVar8 = (code *)swi(3);
+    pAVar1 = (AABB *)(*pcVar8)();
+    return pAVar1;
+  }
+  pcRam_? = pcVar8;
+  (*pcRam_?)(pvVar10,&MStack_9);
+  MStack_11.m00 = MStack_9.m00;
+  MStack_11.m10 = MStack_9.m10;
+  MStack_11.m20 = MStack_9.m20;
+  MStack_11.m30 = MStack_9.m30;
+  MStack_11.m01 = MStack_9.m01;
+  MStack_11.m11 = MStack_9.m11;
+  MStack_11.m21 = MStack_9.m21;
+  MStack_11.m31 = MStack_9.m31;
+  MStack_11.m02 = MStack_9.m02;
+  MStack_11.m12 = MStack_9.m12;
+  MStack_11.m22 = MStack_9.m22;
+  MStack_11.m32 = MStack_9.m32;
+  MStack_11.m03 = MStack_9.m03;
+  MStack_11.m13 = MStack_9.m13;
+  MStack_11.m23 = MStack_9.m23;
+  MStack_11.m33 = MStack_9.m33;
+  AABB::AABB_Transform(__return_storage_ptr__,&MStack_11,(MethodInfo *)0x0);
+  return __return_storage_ptr__;
 }
 
 
@@ -1063,69 +1314,58 @@ OBB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcSpriteWorldOBB
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__ObjectBounds);
+    FUN_?(&TypeInfo__RTG__ObjectBounds);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__ObjectBounds);
+  if (*(int *)&(TypeInfo__RTG__ObjectBounds->_1).field_0x1c == 0) {
+    FUN_?();
   }
   pAVar1 = ObjectBounds_CalcSpriteModelAABB(&AStack_2,gameObject,(MethodInfo *)0x0);
-  fStack_3 = (pAVar1->_size).x;
-  fStack_4 = (pAVar1->_size).y;
-  fStack_5 = (pAVar1->_size).z;
-  fStack_6 = (pAVar1->_center).x;
-  uVar7 = *(undefined4 *)&pAVar1->_isValid;
-  uStack_8._0_4_ = (pAVar1->_center).y;
-  uStack_8._4_4_ = (pAVar1->_center).z;
-  if ((char)uVar7 != '\0') {
-    fStack_6 = (pAVar1->_size).x;
-    uStack_8._0_4_ = (pAVar1->_size).y;
-    uStack_8._4_4_ = (pAVar1->_size).z;
-    fStack_9 = (pAVar1->_center).x;
-    uStack_10._0_4_ = (pAVar1->_center).y;
-    uStack_10._4_4_ = (pAVar1->_center).z;
+  AStack_3._size.x = (pAVar1->_size).x;
+  AStack_3._size.y = (pAVar1->_size).y;
+  AStack_3._8_8_ = *(undefined8 *)&(pAVar1->_size).z;
+  uVar4._0_4_ = (pAVar1->_center).y;
+  uVar4._4_4_ = (pAVar1->_center).z;
+  if (pAVar1->_isValid != 0) {
+    uVar5._0_1_ = pAVar1->_isValid;
+    uVar5._1_3_ = *(undefined3 *)&pAVar1->field_0x19;
+    AStack_3._center._4_8_ = uVar4;
     if (gameObject != (GameObject *)0x0) {
       worldTransform =
            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                      (gameObject,(MethodInfo *)0x0);
-      func_?(__return_storage_ptr__,0,0x2c);
-      modelSpaceAABB._size.y = (float)uStack_8;
-      modelSpaceAABB._size.x = fStack_6;
-      modelSpaceAABB._size.z = uStack_8._4_4_;
-      modelSpaceAABB._center.x = fStack_9;
-      modelSpaceAABB._center.y = (float)(int)uStack_10;
-      modelSpaceAABB._center.z = (float)(int)((ulonglong)uStack_10 >> 0x20);
-      modelSpaceAABB._24_4_ = uVar7;
-      OBB::OBB__ctor_7(__return_storage_ptr__,modelSpaceAABB,worldTransform,(MethodInfo *)0x0);
+      (__return_storage_ptr__->_size).x = 0.0;
+      (__return_storage_ptr__->_size).y = 0.0;
+      *(undefined8 *)&(__return_storage_ptr__->_size).z = 0;
+      (__return_storage_ptr__->_center).y = 0.0;
+      (__return_storage_ptr__->_center).z = 0.0;
+      (__return_storage_ptr__->_rotation).x = 0.0;
+      (__return_storage_ptr__->_rotation).y = 0.0;
+      (__return_storage_ptr__->_rotation).z = 0.0;
+      (__return_storage_ptr__->_rotation).w = 0.0;
+      *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
+      AStack_3._center._4_8_ = uVar4;
+      AStack_3._24_4_ = uVar5;
+      OBB::OBB__ctor_7(__return_storage_ptr__,&AStack_3,worldTransform,(MethodInfo *)0x0);
       return __return_storage_ptr__;
     }
-    func_?();
-    pcVar11 = (code *)swi(3);
-    pOVar12 = (OBB *)(*pcVar11)();
-    return pOVar12;
+    FUN_?();
+    pcVar6 = (code *)swi(3);
+    pOVar7 = (OBB *)(*pcVar6)();
+    return pOVar7;
   }
-  fStack_9 = (float)uVar7;
-  pOVar12 = OBB::OBB_GetInvalid((OBB *)&stack0xffffffac,(MethodInfo *)0x0);
-  fVar13 = (pOVar12->_size).y;
-  fVar14 = (pOVar12->_size).z;
-  fVar15 = (pOVar12->_center).x;
-  (__return_storage_ptr__->_size).x = (pOVar12->_size).x;
-  (__return_storage_ptr__->_size).y = fVar13;
-  (__return_storage_ptr__->_size).z = fVar14;
-  (__return_storage_ptr__->_center).x = fVar15;
-  fVar13 = (pOVar12->_center).z;
-  fVar14 = (pOVar12->_rotation).x;
-  fVar15 = (pOVar12->_rotation).y;
-  (__return_storage_ptr__->_center).y = (pOVar12->_center).y;
-  (__return_storage_ptr__->_center).z = fVar13;
-  (__return_storage_ptr__->_rotation).x = fVar14;
-  (__return_storage_ptr__->_rotation).y = fVar15;
-  fVar13 = (pOVar12->_rotation).w;
-  (__return_storage_ptr__->_rotation).z = (pOVar12->_rotation).z;
-  (__return_storage_ptr__->_rotation).w = fVar13;
-  uVar16 = *(undefined3 *)&pOVar12->field_0x29;
-  __return_storage_ptr__->_isValid = pOVar12->_isValid;
-  *(undefined3 *)&__return_storage_ptr__->field_0x29 = uVar16;
+  (__return_storage_ptr__->_size).x = 0.0;
+  (__return_storage_ptr__->_size).y = 0.0;
+  *(undefined8 *)&(__return_storage_ptr__->_size).z = 0;
+  (__return_storage_ptr__->_center).y = 0.0;
+  (__return_storage_ptr__->_center).z = 0.0;
+  (__return_storage_ptr__->_rotation).x = 0.0;
+  (__return_storage_ptr__->_rotation).y = 0.0;
+  (__return_storage_ptr__->_rotation).z = 0.0;
+  (__return_storage_ptr__->_rotation).w = 0.0;
+  *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
   return __return_storage_ptr__;
 }
 
@@ -1134,58 +1374,119 @@ OBB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcSpriteWorldOBB
 
 AABB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcWorldAABB
                  (AABB *__return_storage_ptr__,GameObject *gameObject,
-                 ObjectBounds_QueryConfig queryConfig,MethodInfo *method)
+                 ObjectBounds_QueryConfig *queryConfig,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__GameObjectEx);
-    func_?(&TypeInfo__RTG__ObjectBounds);
+    FUN_?(&TypeInfo__RTG__GameObjectEx);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__ObjectBounds);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   (__return_storage_ptr__->_size).x = 0.0;
   (__return_storage_ptr__->_size).y = 0.0;
-  (__return_storage_ptr__->_size).z = 0.0;
-  (__return_storage_ptr__->_center).x = 0.0;
+  *(undefined8 *)&(__return_storage_ptr__->_size).z = 0;
   (__return_storage_ptr__->_center).y = 0.0;
   (__return_storage_ptr__->_center).z = 0.0;
   *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
-  if ((TypeInfo__RTG__GameObjectEx->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__GameObjectEx);
+  if (*(int *)&(TypeInfo__RTG__GameObjectEx->_1).field_0x1c == 0) {
+    FUN_?();
   }
   objectType = GameObjectEx::GameObjectEx_GetGameObjectType(gameObject,(MethodInfo *)0x0);
-  if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__ObjectBounds);
+  if (*(int *)&(TypeInfo__RTG__ObjectBounds->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pAVar1 = ObjectBounds_CalcModelAABB
-                     (&AStack_2,gameObject,queryConfig,objectType,(MethodInfo *)0x0);
-  fVar3 = (pAVar1->_size).y;
-  fVar4 = (pAVar1->_size).z;
-  fVar5 = (pAVar1->_center).x;
-  fVar6 = (pAVar1->_center).y;
-  fVar7 = (pAVar1->_center).z;
-  uVar8 = *(undefined4 *)&pAVar1->_isValid;
-  (__return_storage_ptr__->_size).x = (pAVar1->_size).x;
-  (__return_storage_ptr__->_size).y = fVar3;
-  (__return_storage_ptr__->_size).z = fVar4;
-  (__return_storage_ptr__->_center).x = fVar5;
-  (__return_storage_ptr__->_center).y = fVar6;
-  (__return_storage_ptr__->_center).z = fVar7;
-  *(undefined4 *)&__return_storage_ptr__->_isValid = uVar8;
-  if ((char)uVar8 == '\0') {
-    return __return_storage_ptr__;
+  OStack_1.ObjectTypes = queryConfig->ObjectTypes;
+  OStack_1.NoVolumeSize.x = (queryConfig->NoVolumeSize).x;
+  OStack_1.NoVolumeSize.y = (queryConfig->NoVolumeSize).y;
+  OStack_1.NoVolumeSize.z = (queryConfig->NoVolumeSize).z;
+  pAVar2 = ObjectBounds_CalcModelAABB(&AStack_3,gameObject,&OStack_1,objectType,(MethodInfo *)0x0)
+  ;
+  uVar4 = *(undefined4 *)&pAVar2->_isValid;
+  fVar5 = (pAVar2->_center).y;
+  fVar6 = (pAVar2->_center).z;
+  fVar7 = (pAVar2->_size).y;
+  uVar8 = *(undefined8 *)&(pAVar2->_size).z;
+  (__return_storage_ptr__->_size).x = (pAVar2->_size).x;
+  (__return_storage_ptr__->_size).y = fVar7;
+  *(undefined8 *)&(__return_storage_ptr__->_size).z = uVar8;
+  (__return_storage_ptr__->_center).y = fVar5;
+  (__return_storage_ptr__->_center).z = fVar6;
+  *(undefined4 *)&__return_storage_ptr__->_isValid = uVar4;
+  if ((char)uVar4 != '\0') {
+    if ((gameObject == (GameObject *)0x0) ||
+       (obj = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                        (gameObject,(MethodInfo *)0x0), obj == (Transform *)0x0)) {
+      FUN_?();
+      pcVar9 = (code *)swi(3);
+      pAVar2 = (AABB *)(*pcVar9)();
+      return pAVar2;
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    MStack_10.m00 = 0.0;
+    MStack_10.m10 = 0.0;
+    MStack_10.m20 = 0.0;
+    MStack_10.m30 = 0.0;
+    MStack_10.m01 = 0.0;
+    MStack_10.m11 = 0.0;
+    MStack_10.m21 = 0.0;
+    MStack_10.m31 = 0.0;
+    MStack_10.m02 = 0.0;
+    MStack_10.m12 = 0.0;
+    MStack_10.m22 = 0.0;
+    MStack_10.m32 = 0.0;
+    MStack_10.m03 = 0.0;
+    MStack_10.m13 = 0.0;
+    MStack_10.m23 = 0.0;
+    MStack_10.m33 = 0.0;
+    pvVar11 = (obj->fields)._._.m_CachedPtr;
+    if (pvVar11 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+      pcVar9 = (code *)swi(3);
+      pAVar2 = (AABB *)(*pcVar9)();
+      return pAVar2;
+    }
+    pcVar9 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0)) {
+      uVar8 = func_?(&UNK_?);
+      FUN_?(uVar8,0);
+      pcVar9 = (code *)swi(3);
+      pAVar2 = (AABB *)(*pcVar9)();
+      return pAVar2;
+    }
+    pcRam_? = pcVar9;
+    (*pcRam_?)(pvVar11,&MStack_10);
+    MStack_12.m00 = MStack_10.m00;
+    MStack_12.m10 = MStack_10.m10;
+    MStack_12.m20 = MStack_10.m20;
+    MStack_12.m30 = MStack_10.m30;
+    MStack_12.m01 = MStack_10.m01;
+    MStack_12.m11 = MStack_10.m11;
+    MStack_12.m21 = MStack_10.m21;
+    MStack_12.m31 = MStack_10.m31;
+    MStack_12.m02 = MStack_10.m02;
+    MStack_12.m12 = MStack_10.m12;
+    MStack_12.m22 = MStack_10.m22;
+    MStack_12.m32 = MStack_10.m32;
+    MStack_12.m03 = MStack_10.m03;
+    MStack_12.m13 = MStack_10.m13;
+    MStack_12.m23 = MStack_10.m23;
+    MStack_12.m33 = MStack_10.m33;
+    AABB::AABB_Transform(__return_storage_ptr__,&MStack_12,(MethodInfo *)0x0);
   }
-  if ((gameObject != (GameObject *)0x0) &&
-     (this = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                       (gameObject,(MethodInfo *)0x0), this != (Transform *)0x0)) {
-    pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localToWorldMatrix
-                       ((Matrix4x4 *)&stack0xffffffa0,this,(MethodInfo *)0x0);
-    AABB::AABB_Transform(__return_storage_ptr__,*pMVar9,(MethodInfo *)0x0);
-    return __return_storage_ptr__;
-  }
-  func_?();
-  pcVar10 = (code *)swi(3);
-  pAVar1 = (AABB *)(*pcVar10)();
-  return pAVar1;
+  return __return_storage_ptr__;
 }
 
 
@@ -1193,73 +1494,76 @@ AABB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcWorldAABB
 
 OBB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_CalcWorldOBB
                 (OBB *__return_storage_ptr__,GameObject *gameObject,
-                ObjectBounds_QueryConfig queryConfig,MethodInfo *method)
+                ObjectBounds_QueryConfig *queryConfig,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__GameObjectEx);
-    func_?(&TypeInfo__RTG__ObjectBounds);
+    FUN_?(&TypeInfo__RTG__GameObjectEx);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__ObjectBounds);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__RTG__GameObjectEx->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__GameObjectEx);
+  if (*(int *)&(TypeInfo__RTG__GameObjectEx->_1).field_0x1c == 0) {
+    FUN_?();
   }
   objectType = GameObjectEx::GameObjectEx_GetGameObjectType(gameObject,(MethodInfo *)0x0);
-  if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__ObjectBounds);
+  if (*(int *)&(TypeInfo__RTG__ObjectBounds->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pAVar1 = ObjectBounds_CalcModelAABB
-                      ((AABB *)&stack0xffffffc4,gameObject,queryConfig,objectType,(MethodInfo *)0x0)
-  ;
-  uVar2 = *(undefined4 *)&pAVar1->_isValid;
-  if ((char)uVar2 != '\0') {
-    uVar3 = (pAVar1->_center).z;
-    uVar4 = (pAVar1->_size).x;
-    uVar5 = (pAVar1->_size).y;
-    uVar6 = (pAVar1->_size).z;
-    modelSpaceAABB._size.z = (float)uVar6;
-    modelSpaceAABB._size.y = (float)uVar5;
-    modelSpaceAABB._size.x = (float)uVar4;
-    uVar7 = (pAVar1->_center).x;
-    uVar8 = (pAVar1->_center).y;
-    modelSpaceAABB._center.y = (float)uVar8;
-    modelSpaceAABB._center.x = (float)uVar7;
-    if (gameObject != (GameObject *)0x0) {
-      worldTransform =
-           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                     (gameObject,(MethodInfo *)0x0);
-      func_?();
-      modelSpaceAABB._center.z = (float)uVar3;
-      modelSpaceAABB._24_4_ = uVar2;
-      OBB::OBB__ctor_7(__return_storage_ptr__,modelSpaceAABB,worldTransform,(MethodInfo *)0x0);
-      return __return_storage_ptr__;
+  AStack_1._size.x = (float)queryConfig->ObjectTypes;
+  AStack_1._size.y = (queryConfig->NoVolumeSize).x;
+  AStack_1._size.z = (queryConfig->NoVolumeSize).y;
+  AStack_1._center.x = (queryConfig->NoVolumeSize).z;
+  pAVar2 = ObjectBounds_CalcModelAABB
+                     (&AStack_3,gameObject,(ObjectBounds_QueryConfig *)&AStack_1,objectType,
+                      (MethodInfo *)0x0);
+  AStack_1._size.x = (pAVar2->_size).x;
+  AStack_1._size.y = (pAVar2->_size).y;
+  AStack_1._8_8_ = *(undefined8 *)&(pAVar2->_size).z;
+  uVar4._0_4_ = (pAVar2->_center).y;
+  uVar4._4_4_ = (pAVar2->_center).z;
+  if (pAVar2->_isValid == 0) {
+    (__return_storage_ptr__->_size).x = 0.0;
+    (__return_storage_ptr__->_size).y = 0.0;
+    *(undefined8 *)&(__return_storage_ptr__->_size).z = 0;
+    (__return_storage_ptr__->_center).y = 0.0;
+    (__return_storage_ptr__->_center).z = 0.0;
+    (__return_storage_ptr__->_rotation).x = 0.0;
+    (__return_storage_ptr__->_rotation).y = 0.0;
+    (__return_storage_ptr__->_rotation).z = 0.0;
+    (__return_storage_ptr__->_rotation).w = 0.0;
+    *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
+  }
+  else {
+    uVar5._0_1_ = pAVar2->_isValid;
+    uVar5._1_3_ = *(undefined3 *)&pAVar2->field_0x19;
+    AStack_1._center._4_8_ = uVar4;
+    if (gameObject == (GameObject *)0x0) {
+      FUN_?();
+      pcVar6 = (code *)swi(3);
+      pOVar7 = (OBB *)(*pcVar6)();
+      return pOVar7;
     }
-    func_?();
-    pcVar9 = (code *)swi(3);
-    pOVar10 = (OBB *)(*pcVar9)();
-    return pOVar10;
+    worldTransform =
+         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                   (gameObject,(MethodInfo *)0x0);
+    (__return_storage_ptr__->_size).x = 0.0;
+    (__return_storage_ptr__->_size).y = 0.0;
+    *(undefined8 *)&(__return_storage_ptr__->_size).z = 0;
+    (__return_storage_ptr__->_center).y = 0.0;
+    (__return_storage_ptr__->_center).z = 0.0;
+    (__return_storage_ptr__->_rotation).x = 0.0;
+    (__return_storage_ptr__->_rotation).y = 0.0;
+    (__return_storage_ptr__->_rotation).z = 0.0;
+    (__return_storage_ptr__->_rotation).w = 0.0;
+    *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
+    AStack_1._center._4_8_ = uVar4;
+    AStack_1._24_4_ = uVar5;
+    OBB::OBB__ctor_7(__return_storage_ptr__,&AStack_1,worldTransform,(MethodInfo *)0x0);
   }
-  pOVar10 = OBB::OBB_GetInvalid((OBB *)&stack0xffffffb4,(MethodInfo *)0x0);
-  fVar11 = (pOVar10->_size).y;
-  fVar12 = (pOVar10->_size).z;
-  fVar13 = (pOVar10->_center).x;
-  (__return_storage_ptr__->_size).x = (pOVar10->_size).x;
-  (__return_storage_ptr__->_size).y = fVar11;
-  (__return_storage_ptr__->_size).z = fVar12;
-  (__return_storage_ptr__->_center).x = fVar13;
-  fVar11 = (pOVar10->_center).z;
-  fVar12 = (pOVar10->_rotation).x;
-  fVar13 = (pOVar10->_rotation).y;
-  (__return_storage_ptr__->_center).y = (pOVar10->_center).y;
-  (__return_storage_ptr__->_center).z = fVar11;
-  (__return_storage_ptr__->_rotation).x = fVar12;
-  (__return_storage_ptr__->_rotation).y = fVar13;
-  fVar11 = (pOVar10->_rotation).w;
-  (__return_storage_ptr__->_rotation).z = (pOVar10->_rotation).z;
-  (__return_storage_ptr__->_rotation).w = fVar11;
-  uVar14 = *(undefined3 *)&pOVar10->field_0x29;
-  __return_storage_ptr__->_isValid = pOVar10->_isValid;
-  *(undefined3 *)&__return_storage_ptr__->field_0x29 = uVar14;
   return __return_storage_ptr__;
 }
 
@@ -1271,48 +1575,104 @@ AABB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_GetMeshWorldAABB
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__ObjectBounds);
+    FUN_?(&TypeInfo__RTG__ObjectBounds);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   (__return_storage_ptr__->_size).x = 0.0;
   (__return_storage_ptr__->_size).y = 0.0;
-  (__return_storage_ptr__->_size).z = 0.0;
-  (__return_storage_ptr__->_center).x = 0.0;
+  *(undefined8 *)&(__return_storage_ptr__->_size).z = 0;
   (__return_storage_ptr__->_center).y = 0.0;
   (__return_storage_ptr__->_center).z = 0.0;
   *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
-  if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__ObjectBounds);
+  if (*(int *)&(TypeInfo__RTG__ObjectBounds->_1).field_0x1c == 0) {
+    FUN_?();
   }
   pAVar1 = ObjectBounds_CalcMeshModelAABB(&AStack_2,gameObject,(MethodInfo *)0x0);
-  fVar3 = (pAVar1->_size).y;
-  fVar4 = (pAVar1->_size).z;
-  fVar5 = (pAVar1->_center).x;
-  fVar6 = (pAVar1->_center).y;
-  fVar7 = (pAVar1->_center).z;
-  uVar8 = *(undefined4 *)&pAVar1->_isValid;
+  uVar3 = *(undefined4 *)&pAVar1->_isValid;
+  fVar4 = (pAVar1->_center).y;
+  fVar5 = (pAVar1->_center).z;
+  fVar6 = (pAVar1->_size).y;
+  uVar7 = *(undefined8 *)&(pAVar1->_size).z;
   (__return_storage_ptr__->_size).x = (pAVar1->_size).x;
-  (__return_storage_ptr__->_size).y = fVar3;
-  (__return_storage_ptr__->_size).z = fVar4;
-  (__return_storage_ptr__->_center).x = fVar5;
-  (__return_storage_ptr__->_center).y = fVar6;
-  (__return_storage_ptr__->_center).z = fVar7;
-  *(undefined4 *)&__return_storage_ptr__->_isValid = uVar8;
-  if ((char)uVar8 == '\0') {
+  (__return_storage_ptr__->_size).y = fVar6;
+  *(undefined8 *)&(__return_storage_ptr__->_size).z = uVar7;
+  (__return_storage_ptr__->_center).y = fVar4;
+  (__return_storage_ptr__->_center).z = fVar5;
+  *(undefined4 *)&__return_storage_ptr__->_isValid = uVar3;
+  if ((char)uVar3 == '\0') {
     return __return_storage_ptr__;
   }
-  if ((gameObject != (GameObject *)0x0) &&
-     (this = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                       (gameObject,(MethodInfo *)0x0), this != (Transform *)0x0)) {
-    pMVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localToWorldMatrix
-                       ((Matrix4x4 *)&stack0xffffffa0,this,(MethodInfo *)0x0);
-    AABB::AABB_Transform(__return_storage_ptr__,*pMVar9,(MethodInfo *)0x0);
-    return __return_storage_ptr__;
+  if ((gameObject == (GameObject *)0x0) ||
+     (obj = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                      (gameObject,(MethodInfo *)0x0), obj == (Transform *)0x0)) {
+    FUN_?();
+    pcVar8 = (code *)swi(3);
+    pAVar1 = (AABB *)(*pcVar8)();
+    return pAVar1;
   }
-  func_?();
-  pcVar10 = (code *)swi(3);
-  pAVar1 = (AABB *)(*pcVar10)();
-  return pAVar1;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  MStack_9.m00 = 0.0;
+  MStack_9.m10 = 0.0;
+  MStack_9.m20 = 0.0;
+  MStack_9.m30 = 0.0;
+  MStack_9.m01 = 0.0;
+  MStack_9.m11 = 0.0;
+  MStack_9.m21 = 0.0;
+  MStack_9.m31 = 0.0;
+  MStack_9.m02 = 0.0;
+  MStack_9.m12 = 0.0;
+  MStack_9.m22 = 0.0;
+  MStack_9.m32 = 0.0;
+  MStack_9.m03 = 0.0;
+  MStack_9.m13 = 0.0;
+  MStack_9.m23 = 0.0;
+  MStack_9.m33 = 0.0;
+  pvVar10 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar10 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar8 = (code *)swi(3);
+    pAVar1 = (AABB *)(*pcVar8)();
+    return pAVar1;
+  }
+  pcVar8 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+    uVar7 = func_?(&UNK_?);
+    FUN_?(uVar7,0);
+    pcVar8 = (code *)swi(3);
+    pAVar1 = (AABB *)(*pcVar8)();
+    return pAVar1;
+  }
+  pcRam_? = pcVar8;
+  (*pcRam_?)(pvVar10,&MStack_9);
+  MStack_11.m00 = MStack_9.m00;
+  MStack_11.m10 = MStack_9.m10;
+  MStack_11.m20 = MStack_9.m20;
+  MStack_11.m30 = MStack_9.m30;
+  MStack_11.m01 = MStack_9.m01;
+  MStack_11.m11 = MStack_9.m11;
+  MStack_11.m21 = MStack_9.m21;
+  MStack_11.m31 = MStack_9.m31;
+  MStack_11.m02 = MStack_9.m02;
+  MStack_11.m12 = MStack_9.m12;
+  MStack_11.m22 = MStack_9.m22;
+  MStack_11.m32 = MStack_9.m32;
+  MStack_11.m03 = MStack_9.m03;
+  MStack_11.m13 = MStack_9.m13;
+  MStack_11.m23 = MStack_9.m23;
+  MStack_11.m33 = MStack_9.m33;
+  AABB::AABB_Transform(__return_storage_ptr__,&MStack_11,(MethodInfo *)0x0);
+  return __return_storage_ptr__;
 }
 
 
@@ -1323,69 +1683,58 @@ OBB * Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_GetMeshWorldOBB
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__ObjectBounds);
+    FUN_?(&TypeInfo__RTG__ObjectBounds);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__ObjectBounds);
+  if (*(int *)&(TypeInfo__RTG__ObjectBounds->_1).field_0x1c == 0) {
+    FUN_?();
   }
   pAVar1 = ObjectBounds_CalcMeshModelAABB(&AStack_2,gameObject,(MethodInfo *)0x0);
-  fStack_3 = (pAVar1->_size).x;
-  fStack_4 = (pAVar1->_size).y;
-  fStack_5 = (pAVar1->_size).z;
-  fStack_6 = (pAVar1->_center).x;
-  uVar7 = *(undefined4 *)&pAVar1->_isValid;
-  uStack_8._0_4_ = (pAVar1->_center).y;
-  uStack_8._4_4_ = (pAVar1->_center).z;
-  if ((char)uVar7 != '\0') {
-    fStack_6 = (pAVar1->_size).x;
-    uStack_8._0_4_ = (pAVar1->_size).y;
-    uStack_8._4_4_ = (pAVar1->_size).z;
-    fStack_9 = (pAVar1->_center).x;
-    uStack_10._0_4_ = (pAVar1->_center).y;
-    uStack_10._4_4_ = (pAVar1->_center).z;
+  AStack_3._size.x = (pAVar1->_size).x;
+  AStack_3._size.y = (pAVar1->_size).y;
+  AStack_3._8_8_ = *(undefined8 *)&(pAVar1->_size).z;
+  uVar4._0_4_ = (pAVar1->_center).y;
+  uVar4._4_4_ = (pAVar1->_center).z;
+  if (pAVar1->_isValid != 0) {
+    uVar5._0_1_ = pAVar1->_isValid;
+    uVar5._1_3_ = *(undefined3 *)&pAVar1->field_0x19;
+    AStack_3._center._4_8_ = uVar4;
     if (gameObject != (GameObject *)0x0) {
       worldTransform =
            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                      (gameObject,(MethodInfo *)0x0);
-      func_?(__return_storage_ptr__,0,0x2c);
-      modelSpaceAABB._size.y = (float)uStack_8;
-      modelSpaceAABB._size.x = fStack_6;
-      modelSpaceAABB._size.z = uStack_8._4_4_;
-      modelSpaceAABB._center.x = fStack_9;
-      modelSpaceAABB._center.y = (float)(int)uStack_10;
-      modelSpaceAABB._center.z = (float)(int)((ulonglong)uStack_10 >> 0x20);
-      modelSpaceAABB._24_4_ = uVar7;
-      OBB::OBB__ctor_7(__return_storage_ptr__,modelSpaceAABB,worldTransform,(MethodInfo *)0x0);
+      (__return_storage_ptr__->_size).x = 0.0;
+      (__return_storage_ptr__->_size).y = 0.0;
+      *(undefined8 *)&(__return_storage_ptr__->_size).z = 0;
+      (__return_storage_ptr__->_center).y = 0.0;
+      (__return_storage_ptr__->_center).z = 0.0;
+      (__return_storage_ptr__->_rotation).x = 0.0;
+      (__return_storage_ptr__->_rotation).y = 0.0;
+      (__return_storage_ptr__->_rotation).z = 0.0;
+      (__return_storage_ptr__->_rotation).w = 0.0;
+      *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
+      AStack_3._center._4_8_ = uVar4;
+      AStack_3._24_4_ = uVar5;
+      OBB::OBB__ctor_7(__return_storage_ptr__,&AStack_3,worldTransform,(MethodInfo *)0x0);
       return __return_storage_ptr__;
     }
-    func_?();
-    pcVar11 = (code *)swi(3);
-    pOVar12 = (OBB *)(*pcVar11)();
-    return pOVar12;
+    FUN_?();
+    pcVar6 = (code *)swi(3);
+    pOVar7 = (OBB *)(*pcVar6)();
+    return pOVar7;
   }
-  fStack_9 = (float)uVar7;
-  pOVar12 = OBB::OBB_GetInvalid((OBB *)&stack0xffffffac,(MethodInfo *)0x0);
-  fVar13 = (pOVar12->_size).y;
-  fVar14 = (pOVar12->_size).z;
-  fVar15 = (pOVar12->_center).x;
-  (__return_storage_ptr__->_size).x = (pOVar12->_size).x;
-  (__return_storage_ptr__->_size).y = fVar13;
-  (__return_storage_ptr__->_size).z = fVar14;
-  (__return_storage_ptr__->_center).x = fVar15;
-  fVar13 = (pOVar12->_center).z;
-  fVar14 = (pOVar12->_rotation).x;
-  fVar15 = (pOVar12->_rotation).y;
-  (__return_storage_ptr__->_center).y = (pOVar12->_center).y;
-  (__return_storage_ptr__->_center).z = fVar13;
-  (__return_storage_ptr__->_rotation).x = fVar14;
-  (__return_storage_ptr__->_rotation).y = fVar15;
-  fVar13 = (pOVar12->_rotation).w;
-  (__return_storage_ptr__->_rotation).z = (pOVar12->_rotation).z;
-  (__return_storage_ptr__->_rotation).w = fVar13;
-  uVar16 = *(undefined3 *)&pOVar12->field_0x29;
-  __return_storage_ptr__->_isValid = pOVar12->_isValid;
-  *(undefined3 *)&__return_storage_ptr__->field_0x29 = uVar16;
+  (__return_storage_ptr__->_size).x = 0.0;
+  (__return_storage_ptr__->_size).y = 0.0;
+  *(undefined8 *)&(__return_storage_ptr__->_size).z = 0;
+  (__return_storage_ptr__->_center).y = 0.0;
+  (__return_storage_ptr__->_center).z = 0.0;
+  (__return_storage_ptr__->_rotation).x = 0.0;
+  (__return_storage_ptr__->_rotation).y = 0.0;
+  (__return_storage_ptr__->_rotation).z = 0.0;
+  (__return_storage_ptr__->_rotation).w = 0.0;
+  *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
   return __return_storage_ptr__;
 }
 
@@ -1396,8 +1745,12 @@ void Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds__cctor(MethodInfo *met
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__GameObjectTypeHelper);
-    func_?(&TypeInfo__RTG__ObjectBounds);
+    FUN_?(&TypeInfo__RTG__GameObjectTypeHelper);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__ObjectBounds);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pOVar1 = TypeInfo__RTG__ObjectBounds->static_fields;
@@ -1405,26 +1758,30 @@ void Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds__cctor(MethodInfo *met
   (pOVar1->_defaultQConfig).NoVolumeSize.x = 0.0;
   (pOVar1->_defaultQConfig).NoVolumeSize.y = 0.0;
   (pOVar1->_defaultQConfig).NoVolumeSize.z = 0.0;
-  if ((TypeInfo__RTG__GameObjectTypeHelper->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__GameObjectTypeHelper);
+  if (*(int *)&(TypeInfo__RTG__GameObjectTypeHelper->_1).field_0x1c == 0) {
+    FUN_?();
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__GameObjectTypeHelper);
+    FUN_?(&TypeInfo__RTG__GameObjectTypeHelper);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__RTG__GameObjectTypeHelper->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__GameObjectTypeHelper);
+  if (*(int *)&(TypeInfo__RTG__GameObjectTypeHelper->_1).field_0x1c == 0) {
+    FUN_?();
   }
   (TypeInfo__RTG__ObjectBounds->static_fields->_defaultQConfig).ObjectTypes =
        TypeInfo__RTG__GameObjectTypeHelper->static_fields->_allCombined;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
   fVar3 = (pVVar2->zeroVector).y;
-  fVar4 = (pVVar2->zeroVector).z;
   pOVar1 = TypeInfo__RTG__ObjectBounds->static_fields;
+  fVar4 = (pVVar2->zeroVector).z;
   (pOVar1->_defaultQConfig).NoVolumeSize.x = (pVVar2->zeroVector).x;
   (pOVar1->_defaultQConfig).NoVolumeSize.y = fVar3;
   (pOVar1->_defaultQConfig).NoVolumeSize.z = fVar4;
@@ -1440,11 +1797,13 @@ Assembly-CSharp.dll::RTG::ObjectBounds::ObjectBounds_get_DefaultQConfig
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__ObjectBounds);
+    FUN_?(&TypeInfo__RTG__ObjectBounds);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__ObjectBounds);
+  if (*(int *)&(TypeInfo__RTG__ObjectBounds->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__RTG__ObjectBounds);
   }
   pOVar1 = TypeInfo__RTG__ObjectBounds->static_fields;
   fVar2 = (pOVar1->_defaultQConfig).NoVolumeSize.x;

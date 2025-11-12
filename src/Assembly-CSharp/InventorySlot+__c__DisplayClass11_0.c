@@ -8,44 +8,45 @@ void Assembly-CSharp.dll::InventorySlot+<>c__DisplayClass11_0::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IGameObjectDroppedInSlot);
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IGameObjectDroppedInSlot);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).eventData;
-  if (this_00 != (PointerEventData *)0x0) {
-    pGVar1 = UnityEngine.UI.dll::UnityEngine::EventSystems::BaseEventData::
-             BaseEventData_get_selectedObject((BaseEventData *)this_00,(MethodInfo *)0x0);
-    pIVar2 = (this->fields).__4__this;
-    if (pIVar2 != (InventorySlot *)0x0) {
-      iVar3 = (pIVar2->fields)._AbsoluteSlot_k__BackingField;
-      if (x != (IGameObjectDroppedInSlot *)0x0) {
-        pIVar4 = x->klass;
-        uVar5 = 0;
-        uVar6._0_1_ = (pIVar4->_1).rank;
-        uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
-        if (uVar6 != 0) {
-          do {
-            if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
-                (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IGameObjectDroppedInSlot) {
-              ppMVar7 = &(&x->klass->vtable)[x->klass->interfaceOffsets[uVar5].offset].SlotChanged.
-                         method;
-              goto code_?;
-            }
-            uVar5 = uVar5 + 1;
-          } while (uVar5 < uVar6);
-        }
-        ppMVar7 = (MethodInfo **)
-                  func_?(x,TypeInfo__UnityEngine__EventSystems__IGameObjectDroppedInSlot,0)
-        ;
-code_?:
-        (*(code *)*ppMVar7)(x,pGVar1,iVar3,ppMVar7[1]);
-        return;
+  pPVar1 = (this->fields).eventData;
+  if ((pPVar1 != (PointerEventData *)0x0) &&
+     (pEVar2 = (pPVar1->fields)._.m_EventSystem, pEVar2 != (EventSystem *)0x0)) {
+    pIVar3 = (this->fields).__4__this;
+    pGVar4 = (pEVar2->fields).m_CurrentSelected;
+    if ((pIVar3 != (InventorySlot *)0x0) &&
+       (uVar5 = (pIVar3->fields)._AbsoluteSlot_k__BackingField, x != (IGameObjectDroppedInSlot *)0x0
+       )) {
+      pIVar6 = x->klass;
+      uVar7 = 0;
+      uVar8._0_1_ = (pIVar6->_1).rank;
+      uVar8._1_1_ = (pIVar6->_1).minimumAlignment;
+      if (uVar8 != 0) {
+        do {
+          if (pIVar6->interfaceOffsets[uVar7].interfaceType ==
+              (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IGameObjectDroppedInSlot) {
+            pIVar9 = &pIVar6->vtable + pIVar6->interfaceOffsets[uVar7].offset;
+            goto code_?;
+          }
+          uVar7 = uVar7 + 1;
+        } while (uVar7 < uVar8);
       }
+      pIVar9 = (IGameObjectDroppedInSlot__VTable *)
+               FUN_?(x,TypeInfo__UnityEngine__EventSystems__IGameObjectDroppedInSlot,0);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*(pIVar9->SlotChanged).methodPtr)(x,pGVar4,(ulonglong)uVar5,(pIVar9->SlotChanged).method);
+      return;
     }
   }
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

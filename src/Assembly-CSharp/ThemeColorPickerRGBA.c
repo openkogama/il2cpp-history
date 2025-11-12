@@ -7,54 +7,99 @@ void Assembly-CSharp.dll::ThemeColorPickerRGBA::ThemeColorPickerRGBA_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<UnityEngine::Color>);
-    func_?(&MethodInfo__ThemeAttributes__ThemeAttribute<UnityEngine::Color>__get_Value__);
-    func_?(&MethodInfo__ThemeColorPickerRGBA____c___Initialize_b__2_0_UnityEngine__Color_);
-    func_?(&TypeInfo__ThemeColorPickerRGBA____c);
-    func_?(&StringLiteral_Alpha);
+    FUN_?(&TypeInfo__System__Action<UnityEngine::Color>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__ThemeAttributes__ThemeAttribute<UnityEngine::Color>__get_Value__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__ThemeColorPickerRGBA____c___Initialize_b__2_0_UnityEngine__Color_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__ThemeColorPickerRGBA____c);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Alpha);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   ThemeColorPickerRGB::ThemeColorPickerRGB_Initialize
             ((ThemeColorPickerRGB *)this,attrib,onChange,(MethodInfo *)0x0);
-  if ((TypeInfo__ThemeColorPickerRGBA____c->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__ThemeColorPickerRGBA____c);
+  if (*(int *)&(TypeInfo__ThemeColorPickerRGBA____c->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  this_01 = TypeInfo__ThemeColorPickerRGBA____c->static_fields->__9__2_0;
-  if (this_01 == (Action_1_UnityEngine_Color_ *)0x0) {
-    if ((TypeInfo__ThemeColorPickerRGBA____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__ThemeColorPickerRGBA____c);
+  pAVar1 = TypeInfo__ThemeColorPickerRGBA____c->static_fields->__9__2_0;
+  if (pAVar1 == (Action_1_UnityEngine_Color_ *)0x0) {
+    if (*(int *)&(TypeInfo__ThemeColorPickerRGBA____c->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    object = TypeInfo__ThemeColorPickerRGBA____c->static_fields->__9;
-    this_01 = (Action_1_UnityEngine_Color_ *)
-              func_?(TypeInfo__System__Action<UnityEngine::Color>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Color]::
-    UnityAction_1_UnityEngine_Color___ctor
-              ((UnityAction_1_UnityEngine_Color_ *)this_01,(Object *)object,
-               MethodInfo__ThemeColorPickerRGBA____c___Initialize_b__2_0_UnityEngine__Color_,
-               (MethodInfo *)0x0);
-    TypeInfo__ThemeColorPickerRGBA____c->static_fields->__9__2_0 = this_01;
-    func_?(&TypeInfo__ThemeColorPickerRGBA____c->static_fields->__9__2_0,this_01);
+    pTVar2 = TypeInfo__ThemeColorPickerRGBA____c->static_fields->__9;
+    pAVar1 = (Action_1_UnityEngine_Color_ *)
+             FUN_?(TypeInfo__System__Action<UnityEngine::Color>);
+    FUN_?(pAVar1,pTVar2,
+                  MethodInfo__ThemeColorPickerRGBA____c___Initialize_b__2_0_UnityEngine__Color_);
+    TypeInfo__ThemeColorPickerRGBA____c->static_fields->__9__2_0 = pAVar1;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&TypeInfo__ThemeColorPickerRGBA____c->static_fields->__9__2_0 >> 0xc
+                    );
+      uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+      do {
+        uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+        puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar5 == *puVar6;
+        if (bVar7) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
   }
   if (this != (ThemeColorPickerRGBA *)0x0) {
-    (this->fields)._.onChange = this_01;
-    func_?(&(this->fields)._.onChange,this_01);
+    bVar7 = iRam_? != 0;
+    (this->fields)._.onChange = pAVar1;
+    if (bVar7) {
+      uVar3 = (uint)((ulonglong)&(this->fields)._.onChange >> 0xc);
+      uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+      do {
+        uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+        puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar5 == *puVar6;
+        if (bVar7) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
     this_00 = (this->fields).sliderA;
-    if (attrib != (ColorAttribute *)0x0) {
-      fVar1 = (attrib->fields)._._.value.g;
-      fVar2 = (attrib->fields)._._.value.b;
-      if (this_00 != (SettingsSlider *)0x0) {
-        SettingsSlider::SettingsSlider_Initialize
-                  (this_00,StringLiteral_Alpha,(attrib->fields)._._.value.a,0.0,1.0,
-                   (MethodInfo *)0x0);
-        (this->fields)._.onChange = onChange;
-        func_?(&(this->fields)._.onChange,onChange,fVar1,fVar2);
-        return;
+    if ((attrib != (ColorAttribute *)0x0) && (this_00 != (SettingsSlider *)0x0)) {
+      SettingsSlider::SettingsSlider_Initialize
+                (this_00,StringLiteral_Alpha,(attrib->fields)._._.value.a,0.0,_UNK_?,
+                 (MethodInfo *)0x0);
+      bVar7 = iRam_? != 0;
+      (this->fields)._.onChange = onChange;
+      if (bVar7) {
+        uVar3 = (uint)((ulonglong)&(this->fields)._.onChange >> 0xc);
+        uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+        do {
+          uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+          puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+          LOCK();
+          bVar7 = uVar5 == *puVar6;
+          if (bVar7) {
+            *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar7);
       }
+      return;
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -66,29 +111,41 @@ void Assembly-CSharp.dll::ThemeColorPickerRGBA::ThemeColorPickerRGBA_OnSettingCh
 
 {
   pSVar1 = (this->fields)._.sliderR;
-  if (pSVar1 != (SettingsSlider *)0x0) {
-    fVar2 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
+  if ((pSVar1 != (SettingsSlider *)0x0) &&
+     (pSVar2 = (pSVar1->fields).slider, pSVar2 != (Slider *)0x0)) {
+    uVar3 = (*(pSVar2->klass->vtable).get_value.methodPtr)
+                      (pSVar2,(pSVar2->klass->vtable).get_value.method);
     pSVar1 = (this->fields)._.sliderG;
-    if (pSVar1 != (SettingsSlider *)0x0) {
-      fVar3 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
+    if ((pSVar1 != (SettingsSlider *)0x0) &&
+       (pSVar2 = (pSVar1->fields).slider, pSVar2 != (Slider *)0x0)) {
+      uVar4 = (*(pSVar2->klass->vtable).get_value.methodPtr)
+                        (pSVar2,(pSVar2->klass->vtable).get_value.method);
       pSVar1 = (this->fields)._.sliderB;
-      if (pSVar1 != (SettingsSlider *)0x0) {
-        SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
+      if ((pSVar1 != (SettingsSlider *)0x0) &&
+         (pSVar2 = (pSVar1->fields).slider, pSVar2 != (Slider *)0x0)) {
+        uVar5 = (*(pSVar2->klass->vtable).get_value.methodPtr)
+                          (pSVar2,(pSVar2->klass->vtable).get_value.method);
         pSVar1 = (this->fields).sliderA;
-        if (pSVar1 != (SettingsSlider *)0x0) {
-          puVar4 = &UNK_?;
-          fVar5 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
-          pRVar6 = (this->fields)._.previewImage;
-          if (pRVar6 != (RawImage *)0x0) {
-            puVar7 = &UNK_?;
-            (*(code *)(pRVar6->klass->vtable).set_color.method)
-                      (pRVar6,fVar2,fVar3,puVar4,fVar5,
-                       (pRVar6->klass->vtable).get_raycastTarget.methodPtr);
-            pAVar8 = (this->fields)._.onChange;
-            if (pAVar8 != (Action_1_UnityEngine_Color_ *)0x0) {
-              (*(pAVar8->fields)._._.invoke_impl)
-                        ((pAVar8->fields)._._.method_code,puVar7,pRVar6,fVar2,fVar3,
-                         (pAVar8->fields)._._.method);
+        if ((pSVar1 != (SettingsSlider *)0x0) &&
+           (pSVar2 = (pSVar1->fields).slider, pSVar2 != (Slider *)0x0)) {
+          uVar6 = (*(pSVar2->klass->vtable).get_value.methodPtr)
+                            (pSVar2,(pSVar2->klass->vtable).get_value.method);
+          pRVar7 = (this->fields)._.previewImage;
+          if (pRVar7 != (RawImage *)0x0) {
+            uStack_8 = uVar3;
+            uStack_9 = uVar4;
+            uStack_10 = uVar5;
+            uStack_11 = uVar6;
+            (*(pRVar7->klass->vtable).set_color.methodPtr)
+                      (pRVar7,&uStack_8,(pRVar7->klass->vtable).set_color.method);
+            pAVar12 = (this->fields)._.onChange;
+            uStack_8 = uVar3;
+            uStack_9 = uVar4;
+            uStack_10 = uVar5;
+            uStack_11 = uVar6;
+            if (pAVar12 != (Action_1_UnityEngine_Color_ *)0x0) {
+              (*(pAVar12->fields)._._.invoke_impl)
+                        ((pAVar12->fields)._._.method_code,&uStack_8,(pAVar12->fields)._._.method);
               return;
             }
           }
@@ -96,9 +153,9 @@ void Assembly-CSharp.dll::ThemeColorPickerRGBA::ThemeColorPickerRGBA_OnSettingCh
       }
     }
   }
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  FUN_?();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -110,53 +167,113 @@ void Assembly-CSharp.dll::ThemeColorPickerRGBA::ThemeColorPickerRGBA_Reset
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    SettingsSlider__MethodInfo__UnityEngine__Component__GetComponentsInChildren<SettingsSlider>______
-                   );
+    FUN_?(&
+                  SettingsSlider__MethodInfo__UnityEngine__Component__GetComponentsInChildren<SettingsSlider>______
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&
-                    SettingsSlider__MethodInfo__UnityEngine__Component__GetComponentsInChildren<SettingsSlider>______
-                   );
+    FUN_?(&
+                  SettingsSlider__MethodInfo__UnityEngine__Component__GetComponentsInChildren<SettingsSlider>______
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
                      ((Component *)this,
                       SettingsSlider__MethodInfo__UnityEngine__Component__GetComponentsInChildren<SettingsSlider>______
                      );
-  if (pOVar1 != (Object__Array *)0x0) {
-    if (pOVar1->max_length == 0) goto code_?;
-    pSVar2 = (SettingsSlider *)pOVar1->vector[0];
-    (this->fields)._.sliderR = pSVar2;
-    func_?(&(this->fields)._.sliderR,pSVar2);
-    if (pOVar1->max_length < 2) goto code_?;
-    pSVar2 = (SettingsSlider *)pOVar1->vector[1];
-    (this->fields)._.sliderG = pSVar2;
-    func_?(&(this->fields)._.sliderG,pSVar2);
-    if (pOVar1->max_length < 3) goto code_?;
-    pSVar2 = (SettingsSlider *)pOVar1->vector[2];
-    (this->fields)._.sliderB = pSVar2;
-    func_?(&(this->fields)._.sliderB,pSVar2);
-    pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentsInChildren
-                       ((Component *)this,
-                        SettingsSlider__MethodInfo__UnityEngine__Component__GetComponentsInChildren<SettingsSlider>______
-                       );
-    if (pOVar1 != (Object__Array *)0x0) {
-      if (3 < pOVar1->max_length) {
-        pSVar2 = (SettingsSlider *)pOVar1->vector[3];
-        (this->fields).sliderA = pSVar2;
-        func_?(&(this->fields).sliderA,pSVar2);
-        return;
+  if (pOVar1 == (Object__Array *)0x0) {
+code_?:
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  if ((int)pOVar1->max_length != 0) {
+    (this->fields)._.sliderR = (SettingsSlider *)pOVar1->vector[0];
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&(this->fields)._.sliderR >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar7 = uVar5 == *puVar6;
+        if (bVar7) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    iVar8 = iRam_?;
+    if (1 < (uint)pOVar1->max_length) {
+      (this->fields)._.sliderG = (SettingsSlider *)pOVar1->vector[1];
+      if (iVar8 != 0) {
+        uVar3 = (uint)((ulonglong)&(this->fields)._.sliderG >> 0xc);
+        lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+          puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+          LOCK();
+          bVar7 = uVar5 == *puVar6;
+          if (bVar7) {
+            *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+          }
+          UNLOCK();
+          iVar8 = iRam_?;
+        } while (!bVar7);
       }
-      goto code_?;
+      if (2 < (uint)pOVar1->max_length) {
+        (this->fields)._.sliderB = (SettingsSlider *)pOVar1->vector[2];
+        if (iVar8 != 0) {
+          uVar3 = (uint)((ulonglong)&(this->fields)._.sliderB >> 0xc);
+          lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+            puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+            LOCK();
+            bVar7 = uVar5 == *puVar6;
+            if (bVar7) {
+              *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar7);
+        }
+        pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                 Component_GetComponentsInChildren
+                           ((Component *)this,
+                            SettingsSlider__MethodInfo__UnityEngine__Component__GetComponentsInChildren<SettingsSlider>______
+                           );
+        if (pOVar1 == (Object__Array *)0x0) goto code_?;
+        if (3 < (uint)pOVar1->max_length) {
+          bVar7 = iRam_? != 0;
+          (this->fields).sliderA = (SettingsSlider *)pOVar1->vector[3];
+          if (bVar7) {
+            uVar3 = (uint)((ulonglong)&(this->fields).sliderA >> 0xc);
+            lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+            do {
+              uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+              puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+              LOCK();
+              bVar7 = uVar5 == *puVar6;
+              if (bVar7) {
+                *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar7);
+          }
+          return;
+        }
+      }
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

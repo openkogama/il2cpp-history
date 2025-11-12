@@ -5,109 +5,72 @@ void Assembly-CSharp.dll::OverrideMaterials::OverrideMaterials_Register
                (OverrideMaterials *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<OverrideMaterial>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<OverrideMaterial>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<OverrideMaterial>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<OverrideMaterial>__GetEnumerator__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<OverrideMaterial>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<OverrideMaterial>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<OverrideMaterial>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  LStack_4._list = (List_1_System_Object_ *)0x0;
-  LStack_4._index = 0;
-  LStack_4._version = 0;
-  LStack_4._current = (Object *)0x0;
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (this->fields).overrideMaterials;
-  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                         *)&stack0xffffffbc,this_00,
-                        MethodInfo__System__Collections__Generic__List<OverrideMaterial>__GetEnumerator__
-                       );
-    LStack_4._list = (List_1_System_Object_ *)pLVar5->_list;
-    LStack_4._index = pLVar5->_index;
-    LStack_4._version = pLVar5->_version;
-    LStack_4._current = *(Object **)&pLVar5->_current;
-    uStack_1 = 1;
-    while( true ) {
-      bVar6 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-              List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_4,
-                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<OverrideMaterial>__MoveNext__
-                        );
-      pOVar7 = LStack_4._current;
-      if (bVar6 == 0) {
-        uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&LStack_4,
-                   (ExceptionArgument__Enum)
-                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<OverrideMaterial>__Dispose__
-                   ,in_stack_8);
-        *unaff_FS_OFFSET = uStack_3;
-        return;
-      }
-      if ((RegexCharClass_SingleRange)LStack_4._current == (RegexCharClass_SingleRange)0x0)
-      goto code_?;
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (pMVar9 == (MVNetworkGame *)0x0) goto code_?;
-      this_01 = (pMVar9->fields)._MaterialRepository_k__BackingField;
-      name = *(String **)((int)pOVar7 + 0x24);
-      in_stack_8 = *(MethodInfo **)((int)pOVar7 + 0x28);
-      path = *(String **)((int)pOVar7 + 0x2c);
-      materialSound = *(MaterialSound__Enum *)((int)pOVar7 + 0x30);
-      modifierPackageType = *(AvatarModifierPackageType__Enum *)((int)pOVar7 + 0x34);
-      priceGold = *(int32_t *)((int)pOVar7 + 0x38);
-      bVar6 = *(bool *)((int)pOVar7 + 0x3c);
-      physicalProperties = (Single__Array *)func_?(TypeInfo__System__Single,5);
-      if (physicalProperties == (Single__Array *)0x0) goto code_?;
-      if (physicalProperties->max_length == 0) break;
-      physicalProperties->vector[0] = *(float *)((int)pOVar7 + 0x10);
-      if (physicalProperties->max_length < 2) goto code_?;
-      physicalProperties->vector[1] = *(float *)((int)pOVar7 + 0x14);
-      if (physicalProperties->max_length < 3) goto code_?;
-      physicalProperties->vector[2] = *(float *)((int)pOVar7 + 0x18);
-      if (physicalProperties->max_length < 4) goto code_?;
-      physicalProperties->vector[3] = *(float *)((int)pOVar7 + 0x1c);
-      if (physicalProperties->max_length < 5) goto code_?;
-      physicalProperties->vector[4] = *(float *)((int)pOVar7 + 0x20);
-      if (this_01 == (MVMaterialRepository *)0x0) goto code_?;
-      MVMaterialRepository::MVMaterialRepository_AddMaterial
-                (this_01,name,(String *)in_stack_8,path,materialSound,modifierPackageType,
-                 priceGold,bVar6,physicalProperties,(MaterialButtonTextureGenerator *)0x0,
-                 (MethodInfo *)0x0);
-    }
-    func_?();
-code_?:
-    func_?();
-code_?:
-    func_?();
-code_?:
-    func_?();
-code_?:
-    func_?();
+  LStack_1._list = (List_1_System_Object_ *)(this->fields).overrideMaterials;
+  if ((List_1_OverrideMaterial_ *)LStack_1._list == (List_1_OverrideMaterial_ *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
   }
-code_?:
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  if (iRam_? != 0) {
+    uVar3 = (uint)((ulonglong)&uStack_4 >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar6 != uVar7);
+  }
+  pLStack_8 = (List_1_T_Enumerator_System_Object_ *)
+               ((ulonglong)(uint)(((List_1_OverrideMaterial_ *)LStack_1._list)->fields)._version <<
+               0x20);
+  uStack_9 = 0;
+  LStack_1._8_8_ = pLStack_8;
+  LStack_1._current = (Object *)0x0;
+  uStack_4 = 0;
+  pLStack_8 = &LStack_1;
+  while( true ) {
+    bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+            List_1_T_Enumerator_System_Object__MoveNext
+                      (&LStack_1,
+                       MethodInfo__System__Collections__Generic__List_1_T___Enumerator<OverrideMaterial>__MoveNext__
+                      );
+    if (bVar10 == 0) {
+      return;
+    }
+    if ((OverrideMaterial *)LStack_1._current == (OverrideMaterial *)0x0) break;
+    OverrideMaterial::OverrideMaterial_Register
+              ((OverrideMaterial *)LStack_1._current,(MethodInfo *)0x0);
+  }
+  FUN_?();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -118,95 +81,119 @@ void Assembly-CSharp.dll::OverrideMaterials::OverrideMaterials_Update
                (OverrideMaterials *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<OverrideMaterial>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<OverrideMaterial>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<OverrideMaterial>__get_Current__
-                   );
-    func_?(&TypeInfo__System__IDisposable);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<OverrideMaterial>__GetEnumerator__
-                   );
-    func_?(&TypeInfo__System__IO__StreamWriter);
-    func_?(&::StringLiteral__);
-    func_?(&StringLiteral_Dumping_override_materials_to_sq);
-    func_?(&StringLiteral_Materials_txt);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<OverrideMaterial>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<OverrideMaterial>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<OverrideMaterial>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__IDisposable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<OverrideMaterial>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__IO__StreamWriter);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Dumping_override_materials_to_sq);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Materials_txt);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((this->fields).dumpToSql == 0) {
-code_?:
-    *unaff_FS_OFFSET = uStack_3;
-    return;
-  }
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Debug);
-  }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-            ((Object *)StringLiteral_Dumping_override_materials_to_sq,(MethodInfo *)0x0);
-  str0 = ::StringLiteral__;
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (this->fields).overrideMaterials;
-  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                         *)&stack0xffffffcc,this_00,
-                        MethodInfo__System__Collections__Generic__List<OverrideMaterial>__GetEnumerator__
-                       );
-    RVar5 = pLVar4->_current;
-    uStack_1 = 1;
-    while( true ) {
-      bVar6 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-              List_1_T_Enumerator_System_Object__MoveNext
-                        ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffbc,
-                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<OverrideMaterial>__MoveNext__
-                        );
-      if (bVar6 == 0) break;
-      if (RVar5 == (RegexCharClass_SingleRange)0x0) {
+  pSStackX_18 = (StreamWriter *)0x0;
+  if ((this->fields).dumpToSql != 0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+              ((Object *)StringLiteral_Dumping_override_materials_to_sq,(MethodInfo *)0x0);
+    str0 = ::StringLiteral__;
+    pSStackX_20 = ::StringLiteral__;
+    LStack_1._list = (List_1_System_Object_ *)(this->fields).overrideMaterials;
+    if ((List_1_OverrideMaterial_ *)LStack_1._list == (List_1_OverrideMaterial_ *)0x0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&uStack_4 >> 0xc);
+      puVar5 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar6 = *puVar5;
+        LOCK();
+        uVar7 = *puVar5;
+        if (uVar6 == uVar7) {
+          *puVar5 = uVar6 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar6 != uVar7);
+    }
+    pLStack_8 = (List_1_T_Enumerator_System_Object_ *)
+                 ((ulonglong)(uint)(((List_1_OverrideMaterial_ *)LStack_1._list)->fields)._version
+                 << 0x20);
+    uStack_9 = 0;
+    LStack_1._8_8_ = pLStack_8;
+    LStack_1._current = (Object *)0x0;
+    uStack_4 = 0;
+    pLStack_8 = &LStack_1;
+    while (pSStackX_20 = str0,
+          bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+                  List_1_T_Enumerator_System_Object__MoveNext
+                            (&LStack_1,
+                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<OverrideMaterial>__MoveNext__
+                            ), bVar10 != 0) {
+      if (LStack_1._current == (Object *)0x0) {
         str1 = (String *)0x0;
       }
       else {
-        str1 = (String *)func_?();
+        str1 = (String *)
+               (*((LStack_1._current)->klass->vtable).ToString.methodPtr)
+                         (LStack_1._current,((LStack_1._current)->klass->vtable).ToString.method);
       }
-      RVar5.First = 0;
-      RVar5.Last = 0;
-      str0 = mscorlib.dll::System::String::String_Concat_3(str0,str1,(MethodInfo *)0x0);
+      str0 = mscorlib.dll::System::String::String_Concat_4(str0,str1,(MethodInfo *)0x0);
     }
-    uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&stack0xffffffbc,
-               (ExceptionArgument__Enum)
-               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<OverrideMaterial>__Dispose__
-               ,in_stack_7);
-    uStack_1 = 0xffffffff;
-    this_01 = (StreamWriter *)func_?();
+    this_00 = (StreamWriter *)FUN_?(TypeInfo__System__IO__StreamWriter);
     mscorlib.dll::System::IO::StreamWriter::StreamWriter__ctor_5
-              (this_01,StringLiteral_Materials_txt,0,(MethodInfo *)0x0);
-    uStack_1 = 4;
-    if (this_01 != (StreamWriter *)0x0) {
-      (*(code *)(this_01->klass->vtable).WriteLine_1.method)(this_01);
-      uStack_1 = 0xffffffff;
-      if (this_01 != (StreamWriter *)0x0) {
-        func_?(0);
-      }
-      (this->fields).dumpToSql = 0;
-      goto code_?;
+              (this_00,StringLiteral_Materials_txt,0,(MethodInfo *)0x0);
+    uStack_4 = 0;
+    pLStack_8 = (List_1_T_Enumerator_System_Object_ *)&pSStackX_18;
+    pSStackX_18 = this_00;
+    if (this_00 == (StreamWriter *)0x0) {
+      FUN_?();
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
     }
+    (*(this_00->klass->vtable).WriteLine_1.methodPtr)
+              (this_00,str0,(this_00->klass->vtable).WriteLine_1.method);
+    if (pSStackX_18 != (StreamWriter *)0x0) {
+      FUN_?(0,TypeInfo__System__IDisposable);
+    }
+    (this->fields).dumpToSql = 0;
   }
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
   return;
 }
 
@@ -218,21 +205,45 @@ void Assembly-CSharp.dll::OverrideMaterials::OverrideMaterials__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<OverrideMaterial>__List__);
-    func_?(&TypeInfo__System__Collections__Generic__List<OverrideMaterial>);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<OverrideMaterial>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<OverrideMaterial>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (List_1_OverrideMaterial_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<OverrideMaterial>);
+            FUN_?(TypeInfo__System__Collections__Generic__List<OverrideMaterial>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<OverrideMaterial>__List__);
+  bVar1 = iRam_? != 0;
   (this->fields).overrideMaterials = this_00;
-  func_?(&(this->fields).overrideMaterials,this_00);
-  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
-            ((MonoBehaviour *)this,(MethodInfo *)0x0);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).overrideMaterials >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
   return;
 }
 

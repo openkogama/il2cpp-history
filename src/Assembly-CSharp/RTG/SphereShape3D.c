@@ -2,13 +2,17 @@
 /* Boolean ContainsPoint(Vector3) */
 
 bool Assembly-CSharp.dll::RTG::SphereShape3D::SphereShape3D_ContainsPoint
-               (SphereShape3D *this,Vector3 point,MethodInfo *method)
+               (SphereShape3D *this,Vector3 *point,MethodInfo *method)
 
 {
-  bVar1 = SphereMath::SphereMath_ContainsPoint
-                    (point,(this->fields)._center,(this->fields)._radius,
-                     (SphereEpsilon)(this->fields)._epsilon._radiusEps,(MethodInfo *)0x0);
-  return bVar1;
+  uVar1 = (this->fields)._center.x;
+  uVar2 = (this->fields)._center.y;
+  uVar3 = point->x;
+  fVar4 = (this->fields)._epsilon._radiusEps + (this->fields)._radius;
+  fVar5 = point->z - (this->fields)._center.z;
+  fVar6 = point->y - (float)uVar2;
+  return fVar6 * fVar6 + ((float)uVar3 - (float)uVar1) * ((float)uVar3 - (float)uVar1) +
+         fVar5 * fVar5 <= fVar4 * fVar4;
 }
 
 
@@ -18,19 +22,19 @@ AABB * Assembly-CSharp.dll::RTG::SphereShape3D::SphereShape3D_GetAABB
                  (AABB *__return_storage_ptr__,SphereShape3D *this,MethodInfo *method)
 
 {
-  center = (this->fields)._center;
   fVar1 = (this->fields)._radius;
-  pVVar2 = Vector3Ex::Vector3Ex_FromValue
-                     ((Vector3 *)&stack0xffffffe8,fVar1 + fVar1,(MethodInfo *)0x0);
-  size = *pVVar2;
-  (__return_storage_ptr__->_size).x = 0.0;
-  (__return_storage_ptr__->_size).y = 0.0;
-  (__return_storage_ptr__->_size).z = 0.0;
-  (__return_storage_ptr__->_center).x = 0.0;
-  (__return_storage_ptr__->_center).y = 0.0;
-  (__return_storage_ptr__->_center).z = 0.0;
-  *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
-  AABB::AABB__ctor(__return_storage_ptr__,center,size,(MethodInfo *)0x0);
+  *(undefined2 *)&__return_storage_ptr__->field_0x19 = 0;
+  fVar1 = fVar1 + fVar1;
+  __return_storage_ptr__->field_0x1b = 0;
+  fVar2 = (this->fields)._center.y;
+  fVar3 = (this->fields)._center.z;
+  (__return_storage_ptr__->_center).x = (this->fields)._center.x;
+  (__return_storage_ptr__->_center).y = fVar2;
+  (__return_storage_ptr__->_center).z = fVar3;
+  (__return_storage_ptr__->_size).x = fVar1;
+  (__return_storage_ptr__->_size).y = fVar1;
+  (__return_storage_ptr__->_size).z = fVar1;
+  __return_storage_ptr__->_isValid = 1;
   return __return_storage_ptr__;
 }
 
@@ -38,13 +42,21 @@ AABB * Assembly-CSharp.dll::RTG::SphereShape3D::SphereShape3D_GetAABB
 /* Boolean Raycast(Ray, Single ByRef) */
 
 bool Assembly-CSharp.dll::RTG::SphereShape3D::SphereShape3D_Raycast
-               (SphereShape3D *this,Ray ray,float *t,MethodInfo *method)
+               (SphereShape3D *this,Ray *ray,float *t,MethodInfo *method)
 
 {
-  bVar1 = SphereMath::SphereMath_Raycast_1
-                    (ray,t,(this->fields)._center,(this->fields)._radius,
+  VStack_1.x = (this->fields)._center.x;
+  VStack_1.y = (this->fields)._center.y;
+  VStack_1.z = (this->fields)._center.z;
+  RStack_2.m_Direction.y = (ray->m_Direction).y;
+  RStack_2.m_Direction.z = (ray->m_Direction).z;
+  RStack_2.m_Origin.x = (ray->m_Origin).x;
+  RStack_2.m_Origin.y = (ray->m_Origin).y;
+  RStack_2._8_8_ = *(undefined8 *)&(ray->m_Origin).z;
+  bVar3 = SphereMath::SphereMath_Raycast_1
+                    (&RStack_2,t,&VStack_1,(this->fields)._radius,
                      (SphereEpsilon)(this->fields)._epsilon._radiusEps,(MethodInfo *)0x0);
-  return bVar1;
+  return bVar3;
 }
 
 
@@ -55,75 +67,103 @@ void Assembly-CSharp.dll::RTG::SphereShape3D::SphereShape3D_RenderSolid
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Graphics);
-    func_?(&MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
-    func_?(&TypeInfo__RTG__Singleton<RTG::MeshPool>);
+    FUN_?(&TypeInfo__UnityEngine__Graphics);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__Singleton<RTG::MeshPool>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__RTG__Singleton<RTG::MeshPool>->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__Singleton<RTG::MeshPool>);
+  if (*(int *)&(TypeInfo__RTG__Singleton<RTG::MeshPool>->_1).field_0x1c == 0) {
+    FUN_?();
   }
   this_00 = (MeshPool *)
             Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
                       (MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
-  if (this_00 != (MeshPool *)0x0) {
-    mesh = MeshPool::MeshPool_get_UnitSphere(this_00,(MethodInfo *)0x0);
-    uStack_1._0_4_ = (this->fields)._center.x;
-    uStack_1._4_4_ = (this->fields)._center.y;
-    fVar2 = (this->fields)._center.z;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Quaternion);
-      cRam_? = '\x01';
-    }
-    q = TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion;
-    pVVar3 = Vector3Ex::Vector3Ex_FromValue(&VStack_4,(this->fields)._radius,(MethodInfo *)0x0);
-    pos.z = fVar2;
-    pos.x = (float)uStack_1;
-    pos.y = uStack_1._4_4_;
-    pMVar5 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                        ((Matrix4x4 *)&stack0xffffff7c,pos,q,*pVVar3,(MethodInfo *)0x0);
-    uVar6 = pMVar5->m00;
-    uVar7 = pMVar5->m10;
-    uVar8 = pMVar5->m20;
-    uVar9 = pMVar5->m30;
-    uVar10 = pMVar5->m01;
-    matrix.m01 = (float)uVar10;
-    matrix.m30 = (float)uVar9;
-    matrix.m20 = (float)uVar8;
-    matrix.m10 = (float)uVar7;
-    matrix.m00 = (float)uVar6;
-    VStack_4.x = pMVar5->m11;
-    VStack_4.y = pMVar5->m21;
-    VStack_4.z = pMVar5->m31;
-    fStack_11 = pMVar5->m02;
-    fStack_12 = pMVar5->m12;
-    uStack_1._0_4_ = pMVar5->m22;
-    uStack_1._4_4_ = pMVar5->m32;
-    fVar2 = pMVar5->m03;
-    fVar13 = pMVar5->m13;
-    fVar14 = pMVar5->m23;
-    fVar15 = pMVar5->m33;
-    if ((TypeInfo__UnityEngine__Graphics->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    matrix.m11 = VStack_4.x;
-    matrix.m21 = VStack_4.y;
-    matrix.m31 = VStack_4.z;
-    matrix.m02 = fStack_11;
-    matrix.m12 = fStack_12;
-    matrix.m22 = (float)uStack_1;
-    matrix.m32 = uStack_1._4_4_;
-    matrix.m03 = fVar2;
-    matrix.m13 = fVar13;
-    matrix.m23 = fVar14;
-    matrix.m33 = fVar15;
-    UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_3
-              (mesh,matrix,(MethodInfo *)0x0);
+  if (this_00 == (MeshPool *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  mesh = MeshPool::MeshPool_get_UnitSphere(this_00,(MethodInfo *)0x0);
+  uStack_2._0_4_ = (this->fields)._center.x;
+  uStack_2._4_4_ = (this->fields)._center.y;
+  fStack_3 = (this->fields)._center.z;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  fStack_4 = (this->fields)._radius;
+  uStack_5 = CONCAT44(fStack_4,fStack_4);
+  pQVar6 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  uStack_7._0_4_ = (pQVar6->identityQuaternion).x;
+  uStack_7._4_4_ = (pQVar6->identityQuaternion).y;
+  uStack_8._0_4_ = (pQVar6->identityQuaternion).z;
+  uStack_8._4_4_ = (pQVar6->identityQuaternion).w;
+  MStack_9.m00 = 0.0;
+  MStack_9.m10 = 0.0;
+  MStack_9.m20 = 0.0;
+  MStack_9.m30 = 0.0;
+  MStack_9.m01 = 0.0;
+  MStack_9.m11 = 0.0;
+  MStack_9.m21 = 0.0;
+  MStack_9.m31 = 0.0;
+  MStack_9.m02 = 0.0;
+  MStack_9.m12 = 0.0;
+  MStack_9.m22 = 0.0;
+  MStack_9.m32 = 0.0;
+  MStack_9.m03 = 0.0;
+  MStack_9.m13 = 0.0;
+  MStack_9.m23 = 0.0;
+  MStack_9.m33 = 0.0;
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar10 = func_?(&UNK_?);
+    FUN_?(uVar10,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(&uStack_2,&uStack_7,&uStack_5);
+  if (*(int *)&(TypeInfo__UnityEngine__Graphics->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Graphics);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Graphics->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  MStack_11.m00 = MStack_9.m00;
+  MStack_11.m10 = MStack_9.m10;
+  MStack_11.m20 = MStack_9.m20;
+  MStack_11.m30 = MStack_9.m30;
+  MStack_11.m01 = MStack_9.m01;
+  MStack_11.m11 = MStack_9.m11;
+  MStack_11.m21 = MStack_9.m21;
+  MStack_11.m31 = MStack_9.m31;
+  MStack_11.m02 = MStack_9.m02;
+  MStack_11.m12 = MStack_9.m12;
+  MStack_11.m22 = MStack_9.m22;
+  MStack_11.m32 = MStack_9.m32;
+  MStack_11.m03 = MStack_9.m03;
+  MStack_11.m13 = MStack_9.m13;
+  MStack_11.m23 = MStack_9.m23;
+  MStack_11.m33 = MStack_9.m33;
+  UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_1
+            (mesh,&MStack_11,-1,(MethodInfo *)0x0);
   return;
 }
 
@@ -135,457 +175,561 @@ void Assembly-CSharp.dll::RTG::SphereShape3D::SphereShape3D_RenderWire
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    in_stack_1 = &UNK_?;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__Graphics);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__Singleton<RTG::MeshPool>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  QStack_2.z = 0.0;
-  QStack_2.w = 0.0;
-  fStack_3 = 0.0;
-  fStack_4 = 0.0;
-  pSVar5 = (this->fields)._wireRenderDesc;
-  if (pSVar5 != (SphereShape3D_WireRenderDescriptor *)0x0) {
-    fVar6 = (pSVar5->fields)._radiusAdd + (this->fields)._radius;
-    fStack_7 = fVar6;
-    if ((pSVar5->fields)._wireMode == 0) {
-      fVar8 = 1.0;
-      fVar9 = fVar6;
-      if ((TypeInfo__RTG__Singleton<RTG::MeshPool>->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+  fVar1 = _UNK_?;
+  pSVar2 = (this->fields)._wireRenderDesc;
+  uStack_3 = 0;
+  uStack_4 = 0;
+  if (pSVar2 != (SphereShape3D_WireRenderDescriptor *)0x0) {
+    fVar5 = (pSVar2->fields)._radiusAdd + (this->fields)._radius;
+    if ((pSVar2->fields)._wireMode == 0) {
+      if (*(int *)&(TypeInfo__RTG__Singleton<RTG::MeshPool>->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      pMVar10 = (MeshPool *)
+      pMVar6 = (MeshPool *)
                 Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
                           (MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
-      if (pMVar10 != (MeshPool *)0x0) {
-        mesh = MeshPool::MeshPool_get_UnitWireCircleXY(pMVar10,(MethodInfo *)0x0);
-        fVar11 = (this->fields)._rotation.y;
-        fVar12 = (this->fields)._center.z;
-        pVVar13 = &(this->fields)._center;
-        pMVar14 = (Mesh *)pVVar13->x;
-        fVar15 = pVVar13->y;
-        pMVar16 = &MStack_17;
-        puVar18 = &UNK_?;
-        s_02.z = (float)auStack_19._4_4_;
-        s_02.x = (float)uStack_20;
-        s_02.y = (float)uStack_20._4_4_;
-        pMVar21 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                            (pMVar16,*pVVar13,(this->fields)._rotation,s_02,(MethodInfo *)0x0);
-        fVar22 = pMVar21->m00;
-        fVar23 = pMVar21->m10;
-        fVar24 = pMVar21->m20;
-        fStack_25 = pMVar21->m30;
-        MStack_17.m00 = pMVar21->m01;
-        MStack_17.m10 = pMVar21->m11;
-        MStack_17.m20 = pMVar21->m21;
-        MStack_17.m30 = pMVar21->m31;
-        pMVar26 = (Matrix4x4 *)pMVar21->m02;
-        pMVar27 = (Mesh *)pMVar21->m12;
-        fVar28 = pMVar21->m22;
-        fVar29 = pMVar21->m32;
-        MStack_17.m01 = pMVar21->m03;
-        fVar30 = pMVar21->m13;
-        fVar31 = pMVar21->m23;
-        puVar32 = (undefined *)pMVar21->m33;
-        fVar33 = MStack_17.m00;
-        fVar34 = MStack_17.m10;
-        fVar35 = MStack_17.m20;
-        fVar36 = MStack_17.m30;
-        fVar37 = MStack_17.m01;
-        fVar38 = fStack_25;
-        fStack_39 = fVar22;
-        fStack_40 = fVar23;
-        fStack_41 = fVar24;
-        MStack_17.m11 = fVar30;
-        MStack_17.m21 = fVar31;
-        MStack_17.m31 = (float)puVar32;
-        MStack_17.m02 = (float)pMVar26;
-        MStack_17.m12 = (float)pMVar27;
-        MStack_17.m22 = fVar28;
-        MStack_17.m32 = fVar29;
-        if ((TypeInfo__UnityEngine__Graphics->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-          fVar29 = fVar12;
-          fVar28 = fVar15;
-          pMVar27 = pMVar14;
-          pMVar26 = pMVar16;
-          puVar32 = puVar18;
-          fVar31 = in_stack_42;
-          fVar30 = in_stack_43;
-          fVar24 = in_stack_44;
-          fVar23 = in_stack_45;
-          fVar22 = in_stack_46;
-          fVar33 = fStack_47;
-          fVar34 = fStack_48;
-          fVar35 = fStack_49;
-          fVar36 = fStack_50;
-          fVar37 = fStack_51;
-          fVar38 = fStack_52;
-          in_stack_46 = fVar22;
-          in_stack_45 = fVar23;
-          in_stack_43 = fVar30;
+      if (pMVar6 != (MeshPool *)0x0) {
+        pMVar7 = MeshPool::MeshPool_get_UnitWireCircleXY(pMVar6,(MethodInfo *)0x0);
+        uStack_8._0_4_ = (this->fields)._rotation.x;
+        uStack_8._4_4_ = (this->fields)._rotation.y;
+        uStack_9._0_4_ = (this->fields)._rotation.z;
+        uStack_9._4_4_ = (this->fields)._rotation.w;
+        fStack_10 = (this->fields)._center.z;
+        uStack_11._0_4_ = (this->fields)._center.x;
+        uStack_11._4_4_ = (this->fields)._center.y;
+        uStack_12 = CONCAT44(fVar5,fVar5);
+        fStack_13 = fVar1;
+        auStack_14 = ZEXT816(0);
+        auStack_15 = ZEXT816(0);
+        auStack_16 = ZEXT816(0);
+        auStack_17 = ZEXT816(0);
+        pcVar18 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar18 = (code *)FUN_?(&UNK_?), pcVar18 == (code *)0x0)) {
+          uVar19 = func_?(&UNK_?);
+          FUN_?(uVar19,0);
+          pcVar18 = (code *)swi(3);
+          (*pcVar18)();
+          return;
         }
-        matrix.m10 = fVar23;
-        matrix.m00 = fVar22;
-        matrix.m20 = fVar24;
-        matrix.m30 = fVar38;
-        matrix.m01 = fVar33;
-        matrix.m11 = fVar34;
-        matrix.m21 = fVar35;
-        matrix.m31 = fVar36;
-        matrix.m02 = (float)pMVar26;
-        matrix.m12 = (float)pMVar27;
-        matrix.m22 = fVar28;
-        matrix.m32 = fVar29;
-        matrix.m03 = fVar37;
-        matrix.m13 = fVar30;
-        matrix.m23 = fVar31;
-        matrix.m33 = (float)puVar32;
-        UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_3
-                  (mesh,matrix,(MethodInfo *)0x0);
-        pMVar10 = (MeshPool *)
+        pcRam_? = pcVar18;
+        (*pcRam_?)(&uStack_11,&uStack_8,&uStack_12);
+        if (*(int *)&(TypeInfo__UnityEngine__Graphics->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Graphics);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__Graphics->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        auVar20 = auStack_17;
+        auVar21 = auStack_16;
+        auVar22 = auStack_15;
+        auVar23 = auStack_14;
+        aMStack_24[0].m00 = (float)auStack_14._0_4_;
+        aMStack_24[0].m10 = (float)auStack_14._4_4_;
+        aMStack_24[0].m20 = (float)auStack_14._8_4_;
+        aMStack_24[0].m30 = (float)auStack_14._12_4_;
+        aMStack_24[0].m01 = (float)auStack_15._0_4_;
+        aMStack_24[0].m11 = (float)auStack_15._4_4_;
+        aMStack_24[0].m21 = (float)auStack_15._8_4_;
+        aMStack_24[0].m31 = (float)auStack_15._12_4_;
+        aMStack_24[0].m02 = (float)auStack_16._0_4_;
+        aMStack_24[0].m12 = (float)auStack_16._4_4_;
+        aMStack_24[0].m22 = (float)auStack_16._8_4_;
+        aMStack_24[0].m32 = (float)auStack_16._12_4_;
+        aMStack_24[0].m03 = (float)auStack_17._0_4_;
+        aMStack_24[0].m13 = (float)auStack_17._4_4_;
+        aMStack_24[0].m23 = (float)auStack_17._8_4_;
+        aMStack_24[0].m33 = (float)auStack_17._12_4_;
+        auStack_14 = auVar23;
+        auStack_15 = auVar22;
+        auStack_16 = auVar21;
+        auStack_17 = auVar20;
+        UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_1
+                  (pMVar7,aMStack_24,-1,(MethodInfo *)0x0);
+        pMVar6 = (MeshPool *)
                   Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
                             (MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
-        if (pMVar10 != (MeshPool *)0x0) {
-          pMVar14 = MeshPool::MeshPool_get_UnitWireCircleXY(pMVar10,(MethodInfo *)0x0);
-          fVar15 = (this->fields)._center.z;
-          euler.y = fVar11;
-          euler.x = (float)_UNK_?;
-          euler.z = 0.0;
-          pQVar53 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                   Quaternion_Internal_FromEulerRad
-                             ((Quaternion *)&stack0xfffffef0,euler,(MethodInfo *)0x0);
-          fVar12 = pQVar53->y;
-          fVar28 = pQVar53->z;
-          fVar29 = pQVar53->w;
-          pos_00.y = in_stack_43;
-          pos_00.x = fStack_51;
-          pos_00.z = fVar15;
-          q_00.y = (in_stack_54 * fVar29 + fVar12 * in_stack_45 +
-                   in_stack_46 * pQVar53->x) - fVar28 * in_stack_55;
-          q_00.x = (fVar29 * in_stack_55 + pQVar53->x * in_stack_45 +
-                   fVar28 * in_stack_54) - fVar12 * in_stack_46;
-          q_00.z = (in_stack_46 * fVar29 + fVar28 * in_stack_45 +
-                   fVar12 * in_stack_55) - in_stack_54 * pQVar53->x;
-          q_00.w = ((fVar29 * in_stack_45 - in_stack_55 * pQVar53->x) -
-                   fVar12 * in_stack_54) - in_stack_46 * fVar28;
-          s_00.y = fStack_49;
-          s_00.x = fStack_48;
-          s_00.z = fStack_50;
-          pMVar16 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                             ((Matrix4x4 *)((undefined1 *)((int)register0x00000010 + -0xd4) + 8),
-                              pos_00,q_00,s_00,(MethodInfo *)0x0);
-          UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_3
-                    (pMVar14,*pMVar16,(MethodInfo *)0x0);
-          pMVar10 = (MeshPool *)
+        if (pMVar6 != (MeshPool *)0x0) {
+          pMVar7 = MeshPool::MeshPool_get_UnitWireCircleXY(pMVar6,(MethodInfo *)0x0);
+          uVar19._0_4_ = (this->fields)._center.x;
+          uVar19._4_4_ = (this->fields)._center.y;
+          fVar25 = (this->fields)._center.z;
+          fVar26 = (this->fields)._rotation.x;
+          fVar27 = (this->fields)._rotation.y;
+          fVar28 = (this->fields)._rotation.z;
+          fVar29 = (this->fields)._rotation.w;
+          uStack_12 = (ulonglong)_UNK_?;
+          fStack_13 = 0.0;
+          uStack_30 = 0;
+          uStack_31 = 0;
+          pcVar18 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar18 = (code *)FUN_?(&UNK_?), pcVar18 == (code *)0x0)) {
+            uVar19 = func_?(&UNK_?);
+            FUN_?(uVar19,0);
+            pcVar18 = (code *)swi(3);
+            (*pcVar18)();
+            return;
+          }
+          pcRam_? = pcVar18;
+          (*pcRam_?)(&uStack_12,&uStack_30);
+          fStack_10 = fVar1;
+          uStack_11 = CONCAT44(fVar5,fVar5);
+          auStack_14 = ZEXT416(0);
+          uStack_8 = CONCAT44((uStack_30._4_4_ * fVar29 + uStack_31._4_4_ * fVar27 +
+                                (float)uStack_30 * fVar28) - (float)uStack_31 * fVar26,
+                                ((float)uStack_30 * fVar29 + uStack_31._4_4_ * fVar26 +
+                                (float)uStack_31 * fVar27) - uStack_30._4_4_ * fVar28);
+          uStack_9 = CONCAT44(((uStack_31._4_4_ * fVar29 - (float)uStack_30 * fVar26) -
+                                uStack_30._4_4_ * fVar27) - (float)uStack_31 * fVar28,
+                                ((float)uStack_31 * fVar29 + uStack_31._4_4_ * fVar28 +
+                                uStack_30._4_4_ * fVar26) - (float)uStack_30 * fVar27);
+          pcVar18 = pcRam_?;
+          uStack_32 = uVar19;
+          fStack_33 = fVar25;
+          auStack_15 = auStack_14;
+          auStack_16 = auStack_14;
+          auStack_17 = auStack_14;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar18 = (code *)FUN_?(&UNK_?), pcVar18 == (code *)0x0)) {
+            uVar19 = func_?(&UNK_?);
+            FUN_?(uVar19,0);
+            pcVar18 = (code *)swi(3);
+            (*pcVar18)();
+            return;
+          }
+          pcRam_? = pcVar18;
+          (*pcRam_?)(&uStack_32,&uStack_8,&uStack_11);
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Graphics);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (*(int *)&(TypeInfo__UnityEngine__Graphics->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          auVar20 = auStack_17;
+          auVar21 = auStack_16;
+          auVar22 = auStack_15;
+          auVar23 = auStack_14;
+          aMStack_24[0].m00 = (float)auStack_14._0_4_;
+          aMStack_24[0].m10 = (float)auStack_14._4_4_;
+          aMStack_24[0].m20 = (float)auStack_14._8_4_;
+          aMStack_24[0].m30 = (float)auStack_14._12_4_;
+          aMStack_24[0].m01 = (float)auStack_15._0_4_;
+          aMStack_24[0].m11 = (float)auStack_15._4_4_;
+          aMStack_24[0].m21 = (float)auStack_15._8_4_;
+          aMStack_24[0].m31 = (float)auStack_15._12_4_;
+          aMStack_24[0].m02 = (float)auStack_16._0_4_;
+          aMStack_24[0].m12 = (float)auStack_16._4_4_;
+          aMStack_24[0].m22 = (float)auStack_16._8_4_;
+          aMStack_24[0].m32 = (float)auStack_16._12_4_;
+          aMStack_24[0].m03 = (float)auStack_17._0_4_;
+          aMStack_24[0].m13 = (float)auStack_17._4_4_;
+          aMStack_24[0].m23 = (float)auStack_17._8_4_;
+          aMStack_24[0].m33 = (float)auStack_17._12_4_;
+          auStack_14 = auVar23;
+          auStack_15 = auVar22;
+          auStack_16 = auVar21;
+          auStack_17 = auVar20;
+          UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_1
+                    (pMVar7,aMStack_24,-1,(MethodInfo *)0x0);
+          pMVar6 = (MeshPool *)
                     Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
                               (MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
-          if (pMVar10 != (MeshPool *)0x0) {
-            pMVar14 = MeshPool::MeshPool_get_UnitWireCircleXY(pMVar10,(MethodInfo *)0x0);
-            auStack_19._4_4_ = (this->fields)._center.x;
-            auStack_19._8_4_ = (this->fields)._center.y;
-            fVar15 = (this->fields)._center.z;
-            euler_00.y = (float)_UNK_?;
-            euler_00.x = fStack_3;
-            euler_00.z = 0.0;
-            pQVar53 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                     Quaternion_Internal_FromEulerRad(&QStack_56,euler_00,(MethodInfo *)0x0);
-            fVar12 = pQVar53->y;
-            fVar28 = pQVar53->z;
-            fVar29 = pQVar53->w;
-            fStack_4 = (fVar29 * fVar6 + pQVar53->x * (float)uStack_20 + fVar28 * fVar9) -
-                        fVar12 * fVar8;
-            QStack_2.x = (fVar9 * fVar29 + fVar12 * (float)uStack_20 + fVar8 * pQVar53->x) -
-                          fVar28 * fVar6;
-            QStack_2.y = (fVar8 * fVar29 + fVar28 * (float)uStack_20 + fVar12 * fVar6) -
-                          fVar9 * pQVar53->x;
-            fVar6 = ((fVar29 * (float)uStack_20 - fVar6 * pQVar53->x) - fVar12 * fVar9) -
-                     fVar8 * fVar28;
-            puStack_57 = (undefined *)fStack_4;
-            QStack_2.z = fVar6;
-            pos_02.y = fStack_58;
-            pos_02.x = fStack_59;
-            pos_02.z = fVar15;
-            q_02.y = QStack_2.x;
-            q_02.x = fStack_4;
-            q_02.z = QStack_2.y;
-            q_02.w = fVar6;
-            s_03.y = fStack_60;
-            s_03.x = fStack_61;
-            s_03.z = fStack_62;
-            QStack_56.y = (float)uStack_20;
-            QStack_56.z = (float)uStack_20;
-            QStack_56.w = (float)uStack_20;
-            fStack_63 = (float)uStack_20;
-            pMVar16 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                               ((Matrix4x4 *)&MStack_17.m01,pos_02,q_02,s_03,(MethodInfo *)0x0);
-            uStack_20 = uStack_20 & 0xffffffff00000000;
-            UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_3
-                      (pMVar14,*pMVar16,(MethodInfo *)0x0);
+          if (pMVar6 != (MeshPool *)0x0) {
+            pMVar7 = MeshPool::MeshPool_get_UnitWireCircleXY(pMVar6,(MethodInfo *)0x0);
+            uVar34._0_4_ = (this->fields)._center.x;
+            uVar34._4_4_ = (this->fields)._center.y;
+            fVar25 = (this->fields)._center.z;
+            fVar26 = (this->fields)._rotation.x;
+            fVar27 = (this->fields)._rotation.y;
+            fVar28 = (this->fields)._rotation.z;
+            fVar29 = (this->fields)._rotation.w;
+            uStack_12 = (ulonglong)_UNK_? << 0x20;
+            fStack_13 = 0.0;
+            uStack_30 = 0;
+            uStack_31 = 0;
+            pcVar18 = pcRam_?;
+            if ((pcRam_? == (code *)0x0) &&
+               (pcVar18 = (code *)FUN_?(&UNK_?), pcVar18 == (code *)0x0)) {
+              uVar19 = func_?(&UNK_?);
+              FUN_?(uVar19,0);
+              pcVar18 = (code *)swi(3);
+              (*pcVar18)();
+              return;
+            }
+            pcRam_? = pcVar18;
+            (*pcRam_?)(&uStack_12,&uStack_30);
+            fStack_10 = fVar1;
+            uStack_11 = CONCAT44(fVar5,fVar5);
+            auStack_14 = ZEXT416(0);
+            uStack_8 = CONCAT44((uStack_30._4_4_ * fVar29 + uStack_31._4_4_ * fVar27 +
+                                  (float)uStack_30 * fVar28) - (float)uStack_31 * fVar26,
+                                  ((float)uStack_30 * fVar29 + uStack_31._4_4_ * fVar26 +
+                                  (float)uStack_31 * fVar27) - uStack_30._4_4_ * fVar28);
+            uStack_9 = CONCAT44(((uStack_31._4_4_ * fVar29 - (float)uStack_30 * fVar26) -
+                                  uStack_30._4_4_ * fVar27) - (float)uStack_31 * fVar28,
+                                  ((float)uStack_31 * fVar29 + uStack_31._4_4_ * fVar28 +
+                                  uStack_30._4_4_ * fVar26) - (float)uStack_30 * fVar27);
+            pcVar18 = pcRam_?;
+            uStack_32 = uVar34;
+            fStack_33 = fVar25;
+            auStack_15 = auStack_14;
+            auStack_16 = auStack_14;
+            auStack_17 = auStack_14;
+            if ((pcRam_? == (code *)0x0) &&
+               (pcVar18 = (code *)FUN_?(&UNK_?), pcVar18 == (code *)0x0)) {
+              uVar19 = func_?(&UNK_?);
+              FUN_?(uVar19,0);
+              pcVar18 = (code *)swi(3);
+              (*pcVar18)();
+              return;
+            }
+            pcRam_? = pcVar18;
+            (*pcRam_?)(&uStack_32,&uStack_8,&uStack_11);
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__UnityEngine__Graphics);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            if (*(int *)&(TypeInfo__UnityEngine__Graphics->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            auVar20 = auStack_17;
+            auVar21 = auStack_16;
+            auVar22 = auStack_15;
+            auVar23 = auStack_14;
+            aMStack_24[0].m00 = (float)auStack_14._0_4_;
+            aMStack_24[0].m10 = (float)auStack_14._4_4_;
+            aMStack_24[0].m20 = (float)auStack_14._8_4_;
+            aMStack_24[0].m30 = (float)auStack_14._12_4_;
+            aMStack_24[0].m01 = (float)auStack_15._0_4_;
+            aMStack_24[0].m11 = (float)auStack_15._4_4_;
+            aMStack_24[0].m21 = (float)auStack_15._8_4_;
+            aMStack_24[0].m31 = (float)auStack_15._12_4_;
+            aMStack_24[0].m02 = (float)auStack_16._0_4_;
+            aMStack_24[0].m12 = (float)auStack_16._4_4_;
+            aMStack_24[0].m22 = (float)auStack_16._8_4_;
+            aMStack_24[0].m32 = (float)auStack_16._12_4_;
+            aMStack_24[0].m03 = (float)auStack_17._0_4_;
+            aMStack_24[0].m13 = (float)auStack_17._4_4_;
+            aMStack_24[0].m23 = (float)auStack_17._8_4_;
+            aMStack_24[0].m33 = (float)auStack_17._12_4_;
+            auStack_14 = auVar23;
+            auStack_15 = auVar22;
+            auStack_16 = auVar21;
+            auStack_17 = auVar20;
+            UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_1
+                      (pMVar7,aMStack_24,-1,(MethodInfo *)0x0);
             return;
           }
         }
-      }
-    }
-    else if ((pSVar5->fields)._numDetailSliceRings == 0) {
-code_?:
-      fVar6 = (this->fields)._rotation.x;
-      fVar9 = (this->fields)._rotation.y;
-      fVar8 = (this->fields)._rotation.z;
-      fVar15 = (this->fields)._rotation.w;
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      pQVar53 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                         ((Quaternion *)((undefined1 *)((int)register0x00000010 + -0xd4) + 0x2c),
-                          90.0,TypeInfo__UnityEngine__Vector3->static_fields->rightVector,
-                          (MethodInfo *)0x0);
-      uStack_20._0_4_ = pQVar53->y;
-      fVar12 = pQVar53->z;
-      fVar28 = pQVar53->w;
-      fStack_61 = (fVar28 * fVar6 + pQVar53->x * fVar15 + fVar12 * fVar9) - (float)uStack_20 * fVar8;
-      fStack_60 = (fVar9 * fVar28 + (float)uStack_20 * fVar15 + fVar8 * pQVar53->x) - fVar12 * fVar6;
-      fStack_62 = (fVar8 * fVar28 + fVar12 * fVar15 + (float)uStack_20 * fVar6) - fVar9 * pQVar53->x;
-      fStack_59 = ((fVar28 * fVar15 - fVar6 * pQVar53->x) - (float)uStack_20 * fVar9) -
-                  fVar8 * fVar12;
-      uStack_20._0_4_ = (this->fields)._center.x;
-      uStack_20._4_4_ = (this->fields)._center.y;
-      auStack_19._4_4_ = (this->fields)._center.z;
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      pVVar64 = TypeInfo__UnityEngine__Vector3->static_fields;
-      fStack_65 = (pVVar64->upVector).x;
-      puStack_57 = (undefined *)(pVVar64->upVector).y;
-      QStack_2.x = (pVVar64->upVector).z;
-      pGVar66 = (Graphics__Class *)((float)uStack_20 + fStack_65 * fStack_7);
-      puVar32 = (undefined *)((float)uStack_20._4_4_ + (float)puStack_57 * fStack_7);
-      uStack_20._0_4_ = QStack_2.x * fStack_7 + (float)auStack_19._4_4_;
-      pSVar5 = (this->fields)._wireRenderDesc;
-      if (pSVar5 != (SphereShape3D_WireRenderDescriptor *)0x0) {
-        iVar67 = 0;
-        fVar6 = (fStack_7 + fStack_7) / (float)(pSVar5->fields)._numDetailAxialRings;
-        do {
-          if ((pSVar5->fields)._numDetailAxialRings <= iVar67) {
-            return;
-          }
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          pVVar64 = TypeInfo__UnityEngine__Vector3->static_fields;
-          QStack_2.z = (pVVar64->upVector).x;
-          QStack_2.w = (pVVar64->upVector).y;
-          fStack_3 = (pVVar64->upVector).z;
-          fVar12 = (float)iVar67;
-          fVar9 = (this->fields)._center.x;
-          fVar8 = (this->fields)._center.y;
-          pMVar14 = (Mesh *)(this->fields)._center.z;
-          fVar28 = ((float)pGVar66 - QStack_2.z * fVar6 * fVar12) - fVar9;
-          fVar29 = ((float)puVar32 - QStack_2.w * fVar6 * fVar12) - fVar8;
-          fVar12 = ((float)uStack_20 - fStack_3 * fVar6 * fVar12) - (float)pMVar14;
-          if (fStack_7 * fStack_7 - (fVar29 * fVar29 + fVar28 * fVar28 + fVar12 * fVar12) < 0.0) {
-            func_?();
-          }
-          if ((TypeInfo__RTG__Singleton<RTG::MeshPool>->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          pMVar10 = (MeshPool *)
-                    Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
-                              (MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
-          if (pMVar10 == (MeshPool *)0x0) break;
-          QStack_2.y = (float)MeshPool::MeshPool_get_UnitWireCircleXY(pMVar10,(MethodInfo *)0x0);
-          pos_01.y = fVar9;
-          pos_01.x = fVar15;
-          pos_01.z = fVar8;
-          q_01.y = fStack_58;
-          q_01.x = fStack_59;
-          q_01.z = fStack_7;
-          q_01.w = fStack_65;
-          s_01.z = (float)auStack_19._4_4_;
-          s_01.x = (float)uStack_20;
-          s_01.y = (float)uStack_20._4_4_;
-          pMVar16 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                             (&MStack_17,pos_01,q_01,s_01,(MethodInfo *)0x0);
-          MStack_17.m01 = pMVar16->m00;
-          MStack_17.m11 = pMVar16->m10;
-          MStack_17.m21 = pMVar16->m20;
-          MStack_17.m31 = pMVar16->m30;
-          MStack_17.m02 = pMVar16->m01;
-          MStack_17.m12 = pMVar16->m11;
-          MStack_17.m22 = pMVar16->m21;
-          MStack_17.m32 = pMVar16->m31;
-          MStack_17.m00 = pMVar16->m02;
-          MStack_17.m10 = pMVar16->m12;
-          MStack_17.m20 = pMVar16->m22;
-          MStack_17.m30 = pMVar16->m32;
-          fStack_39 = pMVar16->m03;
-          fStack_40 = pMVar16->m13;
-          fStack_41 = pMVar16->m23;
-          fStack_25 = pMVar16->m33;
-          pMVar16 = (Matrix4x4 *)MStack_17.m02;
-          pMVar27 = (Mesh *)MStack_17.m12;
-          fVar9 = MStack_17.m22;
-          fVar8 = MStack_17.m32;
-          fVar12 = MStack_17.m00;
-          fVar28 = MStack_17.m10;
-          fVar29 = MStack_17.m20;
-          fVar30 = MStack_17.m30;
-          fVar31 = fStack_39;
-          fVar11 = fStack_40;
-          fVar22 = fStack_41;
-          fVar23 = fStack_25;
-          fVar24 = MStack_17.m01;
-          fVar33 = MStack_17.m11;
-          fVar34 = MStack_17.m21;
-          puVar18 = (undefined *)MStack_17.m31;
-          if ((TypeInfo__UnityEngine__Graphics->_1).cctor_finished_or_no_cctor == 0) {
-            puVar32 = &UNK_?;
-            pGVar66 = TypeInfo__UnityEngine__Graphics;
-            func_?();
-            pMVar16 = (Matrix4x4 *)QStack_2.x;
-            pMVar27 = (Mesh *)QStack_2.y;
-            fVar9 = QStack_2.z;
-            fVar8 = QStack_2.w;
-            fVar12 = fStack_61;
-            fVar28 = fStack_60;
-            fVar29 = fStack_62;
-            fVar30 = fStack_59;
-            fVar31 = (float)uStack_20;
-            fVar11 = (float)uStack_20._4_4_;
-            fVar22 = (float)auStack_19._4_4_;
-            fVar23 = (float)auStack_19._8_4_;
-            fVar24 = fStack_58;
-            fVar33 = fStack_7;
-            fVar34 = fStack_65;
-            puVar18 = puStack_57;
-          }
-          matrix_01.m10 = fVar33;
-          matrix_01.m00 = fVar24;
-          matrix_01.m20 = fVar34;
-          matrix_01.m30 = (float)puVar18;
-          matrix_01.m01 = (float)pMVar16;
-          matrix_01.m11 = (float)pMVar27;
-          matrix_01.m21 = fVar9;
-          matrix_01.m31 = fVar8;
-          matrix_01.m02 = fVar12;
-          matrix_01.m12 = fVar28;
-          matrix_01.m22 = fVar29;
-          matrix_01.m32 = fVar30;
-          matrix_01.m03 = fVar31;
-          matrix_01.m13 = fVar11;
-          matrix_01.m23 = fVar22;
-          matrix_01.m33 = fVar23;
-          UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_3
-                    (pMVar14,matrix_01,(MethodInfo *)0x0);
-          pSVar5 = (this->fields)._wireRenderDesc;
-          iVar67 = iVar67 + 1;
-        } while (pSVar5 != (SphereShape3D_WireRenderDescriptor *)0x0);
       }
     }
     else {
-      uStack_20._4_4_ = fVar6;
-      uStack_20._0_4_ = fVar6;
-      auStack_19._4_4_ = 1.0;
-      if (pSVar5 != (SphereShape3D_WireRenderDescriptor *)0x0) {
-        iVar68 = (pSVar5->fields)._numDetailSliceRings + -1;
-        iVar67 = 1;
-        if (0 < iVar68) {
-          iVar67 = iVar68;
+      iVar35 = 0;
+      if ((pSVar2->fields)._numDetailSliceRings == 0) {
+code_?:
+        fVar1 = (this->fields)._rotation.x;
+        fVar25 = (this->fields)._rotation.y;
+        fVar26 = (this->fields)._rotation.z;
+        fVar27 = (this->fields)._rotation.w;
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Vector3);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
         }
-        iVar68 = 0;
-        pSVar5 = (this->fields)._wireRenderDesc;
-        fVar6 = _UNK_? / (float)iVar67;
-        do {
-          if ((pSVar5->fields)._numDetailSliceRings <= iVar68) goto code_?;
-          fStack_65 = (this->fields)._center.x;
-          puStack_57 = (undefined *)(this->fields)._center.y;
-          fVar9 = (this->fields)._center.z;
-          fVar8 = (this->fields)._rotation.y;
-          fVar15 = (this->fields)._rotation.z;
-          fVar12 = (float)iVar68 * fVar6;
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          pQVar53 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                             ((Quaternion *)&stack0xfffffed4,in_stack_69,
-                              TypeInfo__UnityEngine__Vector3->static_fields->upVector,
-                              (MethodInfo *)0x0);
-          fVar28 = pQVar53->y;
-          fVar29 = pQVar53->z;
-          fVar30 = pQVar53->w;
-          pos.y = (float)in_stack_1;
-          pos.x = (float)in_stack_70;
-          pos.z = in_stack_45;
-          q.y = (in_stack_71 * fVar30 + fVar28 * in_stack_72 +
-                in_stack_69 * pQVar53->x) - fVar29 * in_stack_73;
-          q.x = (fVar30 * in_stack_73 + pQVar53->x * in_stack_72 +
-                fVar29 * in_stack_71) - fVar28 * in_stack_69;
-          q.z = (in_stack_69 * fVar30 + fVar29 * in_stack_72 +
-                fVar28 * in_stack_73) - in_stack_71 * pQVar53->x;
-          q.w = ((fVar30 * in_stack_72 - in_stack_73 * pQVar53->x) -
-                fVar28 * in_stack_71) - in_stack_69 * fVar29;
-          s.y = fStack_50;
-          s.x = fStack_49;
-          s.z = fStack_51;
-          pMVar16 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                             ((Matrix4x4 *)((int)register0x00000010 + -0xd4),pos,q,s,
-                              (MethodInfo *)0x0);
-          fVar28 = pMVar16->m30;
-          fStack_49 = pMVar16->m21;
-          fStack_50 = pMVar16->m31;
-          fStack_51 = pMVar16->m02;
-          in_stack_73 = pMVar16->m12;
-          in_stack_71 = pMVar16->m22;
-          in_stack_69 = pMVar16->m32;
-          fVar31 = pMVar16->m03;
-          fVar11 = pMVar16->m33;
-          in_stack_72 = fVar29;
-          in_stack_45 = fVar9;
-          if ((TypeInfo__RTG__Singleton<RTG::MeshPool>->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-            in_stack_72 = fVar29;
-            in_stack_45 = fVar9;
-          }
-          pMVar10 = (MeshPool *)
-                    Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
-                              (MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
-          if (pMVar10 == (MeshPool *)0x0) break;
-          in_stack_70 = MeshPool::MeshPool_get_UnitWireCircleXY(pMVar10,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__Graphics->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          matrix_00.m10 = fVar8;
-          matrix_00.m00 = fVar28;
-          matrix_00.m20 = fVar15;
-          matrix_00.m30 = fVar31;
-          matrix_00.m01 = fStack_50;
-          matrix_00.m11 = fStack_51;
-          matrix_00.m21 = in_stack_73;
-          matrix_00.m31 = in_stack_71;
-          matrix_00.m02 = in_stack_69;
-          matrix_00.m12 = in_stack_72;
-          matrix_00.m22 = fVar30;
-          matrix_00.m32 = (float)in_stack_74;
-          matrix_00.m03 = fVar11;
-          matrix_00.m13 = (float)in_stack_75;
-          matrix_00.m23 = fVar12;
-          matrix_00.m33 = in_stack_45;
-          UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_3
-                    (in_stack_70,matrix_00,(MethodInfo *)0x0);
-          pSVar5 = (this->fields)._wireRenderDesc;
-          iVar68 = iVar68 + 1;
-        } while (pSVar5 != (SphereShape3D_WireRenderDescriptor *)0x0);
+        pVVar36 = TypeInfo__UnityEngine__Vector3->static_fields;
+        uStack_12._0_4_ = (pVVar36->rightVector).x;
+        uStack_12._4_4_ = (pVVar36->rightVector).y;
+        fStack_13 = (pVVar36->rightVector).z;
+        uStack_30 = 0;
+        uStack_31 = 0;
+        pcVar18 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar18 = (code *)FUN_?(&UNK_?), pcVar18 == (code *)0x0)) {
+          uVar19 = func_?(&UNK_?);
+          FUN_?(uVar19,0);
+          pcVar18 = (code *)swi(3);
+          (*pcVar18)();
+          return;
+        }
+        pcRam_? = pcVar18;
+        (*pcRam_?)();
+        fVar29 = (float)uStack_30;
+        fVar28 = (this->fields)._center.z;
+        fVar37 = uStack_30._4_4_ * fVar1;
+        fVar38 = uStack_30._4_4_ * fVar25;
+        uStack_30 = CONCAT44((uStack_30._4_4_ * fVar27 + uStack_31._4_4_ * fVar25 +
+                              (float)uStack_30 * fVar26) - (float)uStack_31 * fVar1,
+                              ((float)uStack_30 * fVar27 + uStack_31._4_4_ * fVar1 +
+                              (float)uStack_31 * fVar25) - uStack_30._4_4_ * fVar26);
+        uStack_12._0_4_ = (this->fields)._center.x;
+        uStack_12._4_4_ = (this->fields)._center.y;
+        uStack_31 = CONCAT44(((uStack_31._4_4_ * fVar27 - fVar29 * fVar1) - fVar38) -
+                              (float)uStack_31 * fVar26,
+                              ((float)uStack_31 * fVar27 + uStack_31._4_4_ * fVar26 + fVar37) -
+                              fVar29 * fVar25);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Vector3);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        uVar34 = uStack_31;
+        uVar19 = uStack_30;
+        pVVar36 = TypeInfo__UnityEngine__Vector3->static_fields;
+        uStack_11._0_4_ = (pVVar36->upVector).x;
+        uStack_11._4_4_ = (pVVar36->upVector).y;
+        fVar1 = (pVVar36->upVector).z;
+        fVar25 = (float)uStack_11._4_4_ * fVar5 + uStack_12._4_4_;
+        fVar26 = (float)(undefined4)uStack_11 * fVar5 + (float)uStack_12;
+        pSVar2 = (this->fields)._wireRenderDesc;
+        if (pSVar2 != (SphereShape3D_WireRenderDescriptor *)0x0) {
+          fVar27 = (fVar5 + fVar5) / (float)(pSVar2->fields)._numDetailAxialRings;
+          do {
+            if ((pSVar2->fields)._numDetailAxialRings <= iVar35) {
+              return;
+            }
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__UnityEngine__Vector3);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pVVar36 = TypeInfo__UnityEngine__Vector3->static_fields;
+            uVar39 = (pVVar36->upVector).x;
+            uVar40 = (pVVar36->upVector).y;
+            fVar29 = (float)iVar35;
+            fVar41 = fVar26 - (float)uVar39 * fVar27 * fVar29;
+            fVar42 = fVar25 - (float)uVar40 * fVar27 * fVar29;
+            fVar43 = (fVar1 * fVar5 + fVar28) - (pVVar36->upVector).z * fVar27 * fVar29;
+            uStack_32._0_4_ = (this->fields)._center.x;
+            uStack_32._4_4_ = (this->fields)._center.y;
+            fVar37 = fVar41 - (float)(undefined4)uStack_32;
+            fVar29 = fVar43 - (this->fields)._center.z;
+            fVar38 = fVar42 - (float)uStack_32._4_4_;
+            fVar29 = fVar5 * fVar5 - (fVar38 * fVar38 + fVar37 * fVar37 + fVar29 * fVar29);
+            if (fVar29 < 0.0) {
+              fVar29 = (float)FUN_?();
+            }
+            else {
+              fVar29 = SQRT(fVar29);
+            }
+            if (*(int *)&(TypeInfo__RTG__Singleton<RTG::MeshPool>->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            pMVar6 = (MeshPool *)
+                      Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
+                                (MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
+            if (pMVar6 == (MeshPool *)0x0) break;
+            pMVar7 = MeshPool::MeshPool_get_UnitWireCircleXY(pMVar6,(MethodInfo *)0x0);
+            uStack_12 = CONCAT44(fVar29,fVar29);
+            fStack_13 = _UNK_?;
+            uStack_11 = CONCAT44(fVar42,fVar41);
+            uStack_8 = uVar19;
+            uStack_9 = uVar34;
+            auStack_14 = ZEXT816(0);
+            auStack_15 = ZEXT816(0);
+            auStack_16 = ZEXT816(0);
+            auStack_17 = ZEXT816(0);
+            pcVar18 = pcRam_?;
+            fStack_10 = fVar43;
+            if ((pcRam_? == (code *)0x0) &&
+               (pcVar18 = (code *)FUN_?(&UNK_?), pcVar18 == (code *)0x0)) {
+              uVar19 = func_?(&UNK_?);
+              FUN_?(uVar19,0);
+              pcVar18 = (code *)swi(3);
+              (*pcVar18)();
+              return;
+            }
+            pcRam_? = pcVar18;
+            (*pcRam_?)(&uStack_11,&uStack_8,&uStack_12);
+            if (*(int *)&(TypeInfo__UnityEngine__Graphics->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__UnityEngine__Graphics);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            if (*(int *)&(TypeInfo__UnityEngine__Graphics->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            auVar20 = auStack_17;
+            auVar21 = auStack_16;
+            auVar22 = auStack_15;
+            auVar23 = auStack_14;
+            aMStack_24[0].m00 = (float)auStack_14._0_4_;
+            aMStack_24[0].m10 = (float)auStack_14._4_4_;
+            aMStack_24[0].m20 = (float)auStack_14._8_4_;
+            aMStack_24[0].m30 = (float)auStack_14._12_4_;
+            aMStack_24[0].m01 = (float)auStack_15._0_4_;
+            aMStack_24[0].m11 = (float)auStack_15._4_4_;
+            aMStack_24[0].m21 = (float)auStack_15._8_4_;
+            aMStack_24[0].m31 = (float)auStack_15._12_4_;
+            aMStack_24[0].m02 = (float)auStack_16._0_4_;
+            aMStack_24[0].m12 = (float)auStack_16._4_4_;
+            aMStack_24[0].m22 = (float)auStack_16._8_4_;
+            aMStack_24[0].m32 = (float)auStack_16._12_4_;
+            aMStack_24[0].m03 = (float)auStack_17._0_4_;
+            aMStack_24[0].m13 = (float)auStack_17._4_4_;
+            aMStack_24[0].m23 = (float)auStack_17._8_4_;
+            aMStack_24[0].m33 = (float)auStack_17._12_4_;
+            auStack_14 = auVar23;
+            auStack_15 = auVar22;
+            auStack_16 = auVar21;
+            auStack_17 = auVar20;
+            UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_1
+                      (pMVar7,aMStack_24,-1,(MethodInfo *)0x0);
+            pSVar2 = (this->fields)._wireRenderDesc;
+            iVar35 = iVar35 + 1;
+          } while (pSVar2 != (SphereShape3D_WireRenderDescriptor *)0x0);
+        }
+      }
+      else {
+        uStack_3 = CONCAT44(fVar5,fVar5);
+        uStack_4 = 0x3f800000;
+        if (pSVar2 != (SphereShape3D_WireRenderDescriptor *)0x0) {
+          iVar44 = 0;
+          pSVar2 = (this->fields)._wireRenderDesc;
+          do {
+            if ((pSVar2->fields)._numDetailSliceRings <= iVar44) goto code_?;
+            uVar45._0_4_ = (this->fields)._center.x;
+            uVar45._4_4_ = (this->fields)._center.y;
+            fVar1 = (this->fields)._center.z;
+            fVar25 = (this->fields)._rotation.x;
+            fVar26 = (this->fields)._rotation.y;
+            fVar27 = (this->fields)._rotation.z;
+            fVar28 = (this->fields)._rotation.w;
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__UnityEngine__Vector3);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pVVar36 = TypeInfo__UnityEngine__Vector3->static_fields;
+            uStack_32._0_4_ = (pVVar36->upVector).x;
+            uStack_32._4_4_ = (pVVar36->upVector).y;
+            fStack_33 = (pVVar36->upVector).z;
+            uStack_30 = 0;
+            uStack_31 = 0;
+            pcVar18 = pcRam_?;
+            if ((pcRam_? == (code *)0x0) &&
+               (pcVar18 = (code *)FUN_?(&UNK_?), pcVar18 == (code *)0x0)) {
+              uVar19 = func_?(&UNK_?);
+              FUN_?(uVar19,0);
+              pcVar18 = (code *)swi(3);
+              (*pcVar18)();
+              return;
+            }
+            pcRam_? = pcVar18;
+            (*pcRam_?)();
+            fStack_10 = 1.0;
+            uStack_11 = uStack_3;
+            auStack_14 = ZEXT816(0);
+            auStack_15 = ZEXT816(0);
+            auStack_16 = ZEXT816(0);
+            uStack_8 = CONCAT44((uStack_30._4_4_ * fVar28 + uStack_31._4_4_ * fVar26 +
+                                  (float)uStack_30 * fVar27) - (float)uStack_31 * fVar25,
+                                  ((float)uStack_30 * fVar28 + uStack_31._4_4_ * fVar25 +
+                                  (float)uStack_31 * fVar26) - uStack_30._4_4_ * fVar27);
+            uStack_9 = CONCAT44(((uStack_31._4_4_ * fVar28 - (float)uStack_30 * fVar25) -
+                                  uStack_30._4_4_ * fVar26) - (float)uStack_31 * fVar27,
+                                  ((float)uStack_31 * fVar28 + uStack_31._4_4_ * fVar27 +
+                                  uStack_30._4_4_ * fVar25) - (float)uStack_30 * fVar26);
+            auStack_17 = ZEXT816(0);
+            pcVar18 = pcRam_?;
+            uStack_12 = uVar45;
+            fStack_13 = fVar1;
+            if ((pcRam_? == (code *)0x0) &&
+               (pcVar18 = (code *)FUN_?(&UNK_?), pcVar18 == (code *)0x0)) {
+              uVar19 = func_?(&UNK_?);
+              FUN_?(uVar19,0);
+              pcVar18 = (code *)swi(3);
+              (*pcVar18)();
+              return;
+            }
+            pcRam_? = pcVar18;
+            (*pcRam_?)(&uStack_12,&uStack_8,&uStack_11);
+            if (*(int *)&(TypeInfo__RTG__Singleton<RTG::MeshPool>->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            pMVar6 = (MeshPool *)
+                      Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
+                                (MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
+            if (pMVar6 == (MeshPool *)0x0) break;
+            pMVar7 = MeshPool::MeshPool_get_UnitWireCircleXY(pMVar6,(MethodInfo *)0x0);
+            if (*(int *)&(TypeInfo__UnityEngine__Graphics->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__UnityEngine__Graphics);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            if (*(int *)&(TypeInfo__UnityEngine__Graphics->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            auVar20 = auStack_17;
+            auVar21 = auStack_16;
+            auVar22 = auStack_15;
+            auVar23 = auStack_14;
+            aMStack_24[0].m00 = (float)auStack_14._0_4_;
+            aMStack_24[0].m10 = (float)auStack_14._4_4_;
+            aMStack_24[0].m20 = (float)auStack_14._8_4_;
+            aMStack_24[0].m30 = (float)auStack_14._12_4_;
+            aMStack_24[0].m01 = (float)auStack_15._0_4_;
+            aMStack_24[0].m11 = (float)auStack_15._4_4_;
+            aMStack_24[0].m21 = (float)auStack_15._8_4_;
+            aMStack_24[0].m31 = (float)auStack_15._12_4_;
+            aMStack_24[0].m02 = (float)auStack_16._0_4_;
+            aMStack_24[0].m12 = (float)auStack_16._4_4_;
+            aMStack_24[0].m22 = (float)auStack_16._8_4_;
+            aMStack_24[0].m32 = (float)auStack_16._12_4_;
+            aMStack_24[0].m03 = (float)auStack_17._0_4_;
+            aMStack_24[0].m13 = (float)auStack_17._4_4_;
+            aMStack_24[0].m23 = (float)auStack_17._8_4_;
+            aMStack_24[0].m33 = (float)auStack_17._12_4_;
+            auStack_14 = auVar23;
+            auStack_15 = auVar22;
+            auStack_16 = auVar21;
+            auStack_17 = auVar20;
+            UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_1
+                      (pMVar7,aMStack_24,-1,(MethodInfo *)0x0);
+            pSVar2 = (this->fields)._wireRenderDesc;
+            iVar44 = iVar44 + 1;
+          } while (pSVar2 != (SphereShape3D_WireRenderDescriptor *)0x0);
+        }
       }
     }
   }
-  func_?();
-  pcVar76 = (code *)swi(3);
-  (*pcVar76)();
+  FUN_?();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -597,44 +741,77 @@ void Assembly-CSharp.dll::RTG::SphereShape3D::SphereShape3D__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__SphereShape3D__WireRenderDescriptor);
+    FUN_?(&TypeInfo__RTG__SphereShape3D__WireRenderDescriptor);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  bVar1 = cRam_? == '\0';
   (this->fields)._radius = 1.0;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+  if (bVar1) {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-  fVar2 = (pVVar1->zeroVector).y;
-  fVar3 = (pVVar1->zeroVector).z;
-  (this->fields)._center.x = (pVVar1->zeroVector).x;
-  (this->fields)._center.y = fVar2;
-  (this->fields)._center.z = fVar3;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Quaternion);
+  bVar1 = cRam_? == '\0';
+  pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar3 = (pVVar2->zeroVector).y;
+  fVar4 = (pVVar2->zeroVector).z;
+  (this->fields)._center.x = (pVVar2->zeroVector).x;
+  (this->fields)._center.y = fVar3;
+  (this->fields)._center.z = fVar4;
+  if (bVar1) {
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pQVar4 = TypeInfo__UnityEngine__Quaternion->static_fields;
-  fVar3 = (pQVar4->identityQuaternion).y;
-  fVar2 = (pQVar4->identityQuaternion).z;
-  fVar5 = (pQVar4->identityQuaternion).w;
-  (this->fields)._rotation.x = (pQVar4->identityQuaternion).x;
-  (this->fields)._rotation.y = fVar3;
-  (this->fields)._rotation.z = fVar2;
-  (this->fields)._rotation.w = fVar5;
-  method_01 = TypeInfo__RTG__SphereShape3D__WireRenderDescriptor;
-  value = (SphereShape3D_WireRenderDescriptor *)func_?();
-  (value->fields)._numDetailAxialRings = 0x14;
-  (value->fields)._numDetailSliceRings = 0x14;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-  method_00 = (MethodInfo *)&(this->fields)._wireRenderDesc;
-  (this->fields)._wireRenderDesc = value;
-  func_?(method_00,value);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  pQVar5 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar4 = (pQVar5->identityQuaternion).y;
+  fVar3 = (pQVar5->identityQuaternion).z;
+  fVar6 = (pQVar5->identityQuaternion).w;
+  (this->fields)._rotation.x = (pQVar5->identityQuaternion).x;
+  (this->fields)._rotation.y = fVar4;
+  (this->fields)._rotation.z = fVar3;
+  (this->fields)._rotation.w = fVar6;
+  pSVar7 = (SphereShape3D_WireRenderDescriptor *)
+           FUN_?(TypeInfo__RTG__SphereShape3D__WireRenderDescriptor);
+  bVar1 = iRam_? != 0;
+  (pSVar7->fields)._numDetailAxialRings = 0x14;
+  (pSVar7->fields)._numDetailSliceRings = 0x14;
+  (this->fields)._wireRenderDesc = pSVar7;
+  if (bVar1) {
+    uVar8 = (uint)((ulonglong)&(this->fields)._wireRenderDesc >> 0xc);
+    uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+    do {
+      uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+      puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+      LOCK();
+      bVar1 = uVar10 == *puVar11;
+      if (bVar1) {
+        *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   return;
+}
+
+
+/* Vector3 get_CentralAxis() */
+
+Vector3 * Assembly-CSharp.dll::RTG::SphereShape3D::SphereShape3D_get_CentralAxis
+                    (Vector3 *__return_storage_ptr__,SphereShape3D *this,MethodInfo *method)
+
+{
+  pVVar1 = SphereShape3D_get_Up(&VStack_2,this,(MethodInfo *)0x0);
+  fVar3 = pVVar1->y;
+  fVar4 = pVVar1->z;
+  __return_storage_ptr__->x = pVVar1->x;
+  __return_storage_ptr__->y = fVar3;
+  __return_storage_ptr__->z = fVar4;
+  return __return_storage_ptr__;
 }
 
 
@@ -645,26 +822,34 @@ Vector3 * Assembly-CSharp.dll::RTG::SphereShape3D::SphereShape3D_get_Look
 
 {
   fVar1 = (this->fields)._rotation.x;
-  VStack_2.x = (this->fields)._rotation.y;
-  VStack_2.y = (this->fields)._rotation.z;
-  VStack_2.z = (this->fields)._rotation.w;
+  fVar2 = (this->fields)._rotation.y;
+  fVar3 = (this->fields)._rotation.z;
+  fVar4 = (this->fields)._rotation.w;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  rotation.y = VStack_2.x;
-  rotation.x = fVar1;
-  rotation.z = VStack_2.y;
-  rotation.w = VStack_2.z;
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                     (&VStack_2,rotation,
-                      TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,(MethodInfo *)0x0
-                     );
-  fVar4 = pVVar3->y;
-  fVar1 = pVVar3->z;
-  __return_storage_ptr__->x = pVVar3->x;
-  __return_storage_ptr__->y = fVar4;
-  __return_storage_ptr__->z = fVar1;
+  pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar6 = fVar3 + fVar3;
+  fVar7 = fVar2 + fVar2;
+  fVar8 = (fVar1 + fVar1) * fVar1;
+  uVar9 = (pVVar5->forwardVector).x;
+  uVar10 = (pVVar5->forwardVector).y;
+  fVar11 = (pVVar5->forwardVector).z;
+  fVar12 = (fVar1 + fVar1) * fVar4;
+  fVar13 = _UNK_? - (fVar6 * fVar3 + fVar8);
+  fVar8 = _UNK_? - (fVar7 * fVar2 + fVar8);
+  __return_storage_ptr__->x =
+       (_UNK_? - (fVar6 * fVar3 + fVar7 * fVar2)) * (float)uVar9 +
+       (fVar7 * fVar1 - fVar6 * fVar4) * (float)uVar10 + (fVar7 * fVar4 + fVar6 * fVar1) * fVar11;
+  __return_storage_ptr__->y =
+       fVar13 * (float)uVar10 + (fVar6 * fVar4 + fVar7 * fVar1) * (float)uVar9 +
+       (fVar6 * fVar2 - fVar12) * fVar11;
+  __return_storage_ptr__->z =
+       (fVar6 * fVar1 - fVar7 * fVar4) * (float)uVar9 + (fVar12 + fVar6 * fVar2) * (float)uVar10 +
+       fVar8 * fVar11;
   return __return_storage_ptr__;
 }
 
@@ -676,43 +861,34 @@ Vector3 * Assembly-CSharp.dll::RTG::SphereShape3D::SphereShape3D_get_Right
 
 {
   fVar1 = (this->fields)._rotation.x;
-  VStack_2.x = (this->fields)._rotation.y;
-  VStack_2.y = (this->fields)._rotation.z;
-  VStack_2.z = (this->fields)._rotation.w;
+  fVar2 = (this->fields)._rotation.y;
+  fVar3 = (this->fields)._rotation.z;
+  fVar4 = (this->fields)._rotation.w;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  rotation.y = VStack_2.x;
-  rotation.x = fVar1;
-  rotation.z = VStack_2.y;
-  rotation.w = VStack_2.z;
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                     (&VStack_2,rotation,TypeInfo__UnityEngine__Vector3->static_fields->rightVector
-                      ,(MethodInfo *)0x0);
-  fVar4 = pVVar3->y;
-  fVar1 = pVVar3->z;
-  __return_storage_ptr__->x = pVVar3->x;
-  __return_storage_ptr__->y = fVar4;
-  __return_storage_ptr__->z = fVar1;
-  return __return_storage_ptr__;
-}
-
-
-/* Quaternion get_Rotation() */
-
-Quaternion *
-Assembly-CSharp.dll::RTG::SphereShape3D::SphereShape3D_get_Rotation
-          (Quaternion *__return_storage_ptr__,SphereShape3D *this,MethodInfo *method)
-
-{
-  fVar1 = (this->fields)._rotation.y;
-  fVar2 = (this->fields)._rotation.z;
-  fVar3 = (this->fields)._rotation.w;
-  __return_storage_ptr__->x = (this->fields)._rotation.x;
-  __return_storage_ptr__->y = fVar1;
-  __return_storage_ptr__->z = fVar2;
-  __return_storage_ptr__->w = fVar3;
+  pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar6 = fVar3 + fVar3;
+  fVar7 = fVar2 + fVar2;
+  fVar8 = (fVar1 + fVar1) * fVar1;
+  uVar9 = (pVVar5->rightVector).x;
+  uVar10 = (pVVar5->rightVector).y;
+  fVar11 = (pVVar5->rightVector).z;
+  fVar12 = (fVar1 + fVar1) * fVar4;
+  fVar13 = _UNK_? - (fVar6 * fVar3 + fVar8);
+  fVar8 = _UNK_? - (fVar7 * fVar2 + fVar8);
+  __return_storage_ptr__->x =
+       (_UNK_? - (fVar6 * fVar3 + fVar7 * fVar2)) * (float)uVar9 +
+       (fVar7 * fVar1 - fVar6 * fVar4) * (float)uVar10 + (fVar7 * fVar4 + fVar6 * fVar1) * fVar11;
+  __return_storage_ptr__->y =
+       fVar13 * (float)uVar10 + (fVar6 * fVar4 + fVar7 * fVar1) * (float)uVar9 +
+       (fVar6 * fVar2 - fVar12) * fVar11;
+  __return_storage_ptr__->z =
+       (fVar6 * fVar1 - fVar7 * fVar4) * (float)uVar9 + (fVar12 + fVar6 * fVar2) * (float)uVar10 +
+       fVar8 * fVar11;
   return __return_storage_ptr__;
 }
 
@@ -724,25 +900,34 @@ Vector3 * Assembly-CSharp.dll::RTG::SphereShape3D::SphereShape3D_get_Up
 
 {
   fVar1 = (this->fields)._rotation.x;
-  VStack_2.x = (this->fields)._rotation.y;
-  VStack_2.y = (this->fields)._rotation.z;
-  VStack_2.z = (this->fields)._rotation.w;
+  fVar2 = (this->fields)._rotation.y;
+  fVar3 = (this->fields)._rotation.z;
+  fVar4 = (this->fields)._rotation.w;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  rotation.y = VStack_2.x;
-  rotation.x = fVar1;
-  rotation.z = VStack_2.y;
-  rotation.w = VStack_2.z;
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                     (&VStack_2,rotation,TypeInfo__UnityEngine__Vector3->static_fields->upVector,
-                      (MethodInfo *)0x0);
-  fVar4 = pVVar3->y;
-  fVar1 = pVVar3->z;
-  __return_storage_ptr__->x = pVVar3->x;
-  __return_storage_ptr__->y = fVar4;
-  __return_storage_ptr__->z = fVar1;
+  pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar6 = fVar3 + fVar3;
+  fVar7 = fVar2 + fVar2;
+  fVar8 = (fVar1 + fVar1) * fVar1;
+  uVar9 = (pVVar5->upVector).x;
+  uVar10 = (pVVar5->upVector).y;
+  fVar11 = (pVVar5->upVector).z;
+  fVar12 = (fVar1 + fVar1) * fVar4;
+  fVar13 = _UNK_? - (fVar6 * fVar3 + fVar8);
+  fVar8 = _UNK_? - (fVar7 * fVar2 + fVar8);
+  __return_storage_ptr__->x =
+       (_UNK_? - (fVar6 * fVar3 + fVar7 * fVar2)) * (float)uVar9 +
+       (fVar7 * fVar1 - fVar6 * fVar4) * (float)uVar10 + (fVar7 * fVar4 + fVar6 * fVar1) * fVar11;
+  __return_storage_ptr__->y =
+       fVar13 * (float)uVar10 + (fVar6 * fVar4 + fVar7 * fVar1) * (float)uVar9 +
+       (fVar6 * fVar2 - fVar12) * fVar11;
+  __return_storage_ptr__->z =
+       (fVar6 * fVar1 - fVar7 * fVar4) * (float)uVar9 + (fVar12 + fVar6 * fVar2) * (float)uVar10 +
+       fVar8 * fVar11;
   return __return_storage_ptr__;
 }
 
@@ -753,16 +938,29 @@ float Assembly-CSharp.dll::RTG::SphereShape3D::SphereShape3D_get_WireRadius
                 (SphereShape3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pSVar2 = (this->fields)._wireRenderDesc;
-  if (pSVar2 != (SphereShape3D_WireRenderDescriptor *)0x0) {
-    return (pSVar2->fields)._radiusAdd + (this->fields)._radius;
+  pSVar1 = (this->fields)._wireRenderDesc;
+  if (pSVar1 != (SphereShape3D_WireRenderDescriptor *)0x0) {
+    return (pSVar1->fields)._radiusAdd + (this->fields)._radius;
   }
-  uVar3 = func_?(auStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  fVar6 = (float10)(*pcVar5)();
-  return (float)fVar6;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
+}
+
+
+/* Void set_Center(Vector3) */
+
+void Assembly-CSharp.dll::RTG::SphereShape3D::SphereShape3D_set_Center
+               (SphereShape3D *this,Vector3 *value,MethodInfo *method)
+
+{
+  fVar1 = value->y;
+  fVar2 = value->z;
+  (this->fields)._center.x = value->x;
+  (this->fields)._center.y = fVar1;
+  (this->fields)._center.z = fVar2;
+  return;
 }
 
 
@@ -772,22 +970,7 @@ void Assembly-CSharp.dll::RTG::SphereShape3D::SphereShape3D_set_RadiusEps
                (SphereShape3D *this,float value,MethodInfo *method)
 
 {
-  Object2ObjectSnap+Config::Object2ObjectSnap_Config_set_AreaMatchEps
-            ((Object2ObjectSnap_Config *)&(this->fields)._epsilon,value,(MethodInfo *)0x0);
-  return;
-}
-
-
-/* Void set_Rotation(Quaternion) */
-
-void Assembly-CSharp.dll::RTG::SphereShape3D::SphereShape3D_set_Rotation
-               (SphereShape3D *this,Quaternion value,MethodInfo *method)
-
-{
-  (this->fields)._rotation.x = value.x;
-  (this->fields)._rotation.y = value.y;
-  (this->fields)._rotation.z = value.z;
-  (this->fields)._rotation.w = value.w;
+  (this->fields)._epsilon._radiusEps = (float)((uint)value & _UNK_?);
   return;
 }
 

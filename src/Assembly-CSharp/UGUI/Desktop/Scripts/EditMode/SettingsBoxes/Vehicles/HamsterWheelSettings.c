@@ -7,90 +7,128 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&StringLiteral_vehicleEnergyConsumption);
-    func_?(&StringLiteral_vehicleEnergyUse);
-    func_?(&StringLiteral_vehicleEnergyStorage);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_vehicleEnergyConsumption);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_vehicleEnergyUse);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_vehicleEnergyStorage);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pHVar1 = this;
-  pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-           (this->fields)._.bluePrintData;
-  if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                      (pDVar2,(Object *)StringLiteral_vehicleEnergyUse,
+  pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+            *)(this->fields)._.bluePrintData;
+  if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                 *)0x0) {
+    iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::StyleComplexSelector+PseudoStateData]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
+                      (pDVar1,(Object *)StringLiteral_vehicleEnergyUse,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                      );
-    if (bVar3 == 0) {
-      pDVar4 = (pHVar1->fields)._.bluePrintData;
-      this = (HamsterWheelSettings *)((uint)this & 0xffffff);
-      pOVar5 = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
-      if (pDVar4 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (pDVar4,(Object *)StringLiteral_vehicleEnergyUse,pOVar5,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                );
-    }
-    pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-             (pHVar1->fields)._.bluePrintData;
-    if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-      bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                        (pDVar2,(Object *)StringLiteral_vehicleEnergyStorage,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                        );
-      if (bVar3 == 0) {
-        pDVar4 = (pHVar1->fields)._.bluePrintData;
-        method = (MethodInfo *)&this;
-        this = (HamsterWheelSettings *)0x23;
-        pOVar5 = (Object *)func_?();
-        if (pDVar4 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
-                  (pDVar4,(Object *)StringLiteral_vehicleEnergyStorage,pOVar5,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                  );
+                       ->klass->rgctx_data[0x21].method);
+    uVar3 = uStackX_8;
+    lVar4 = lRam_?;
+    if (iVar2 < 0) {
+      pDVar5 = (this->fields)._.bluePrintData;
+      uStackX_8 = uStackX_8 & 0xffffff00;
+      if (*(int *)(lRam_? + 0x28) < 0) {
+        if ((*(longlong *)(lRam_? + 0x60) == 0) ||
+           ((*(byte *)(lRam_? + 0x135) & 8) == 0)) {
+          pOVar6 = (Object *)FUN_?(lRam_?);
+          FUN_?(pOVar6 + 1,&uStackX_8,(longlong)*(int *)(lVar4 + 0xf8) + -0x10);
+          if (iRam_? != 0) {
+            uVar3 = (uint)((ulonglong)(pOVar6 + 1) >> 0xc);
+            puVar7 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+            do {
+              uVar8 = *puVar7;
+              LOCK();
+              uVar9 = *puVar7;
+              if (uVar8 == uVar9) {
+                *puVar7 = uVar8 | 1L << (uVar3 & 0x3f);
+              }
+              UNLOCK();
+            } while (uVar8 != uVar9);
+          }
+        }
+        else {
+          pOVar6 = (Object *)0x0;
+        }
       }
-      pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-               (pHVar1->fields)._.bluePrintData;
-      if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-        bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                          (pDVar2,(Object *)StringLiteral_vehicleEnergyConsumption,
+      else {
+        pOVar6 = (Object *)(CONCAT44(uStackX_c,uVar3) & 0xffffffffffffff00);
+      }
+      if (pDVar5 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+      in_R9D = CONCAT31((int3)(in_R9D >> 8),2);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__TryInsert
+                (pDVar5,(Object *)StringLiteral_vehicleEnergyUse,pOVar6,in_R9D,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 ->klass->rgctx_data[0x22].method);
+    }
+    pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+              *)(this->fields)._.bluePrintData;
+    if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                   *)0x0) {
+      iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::StyleComplexSelector+PseudoStateData]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
+                        (pDVar1,(Object *)StringLiteral_vehicleEnergyStorage,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                         ->klass->rgctx_data[0x21].method);
+      if (iVar2 < 0) {
+        pDVar5 = (this->fields)._.bluePrintData;
+        uStackX_8 = 0x23;
+        pOVar6 = (Object *)FUN_?(uRam_?,&uStackX_8);
+        if (pDVar5 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+        in_R9D = CONCAT31((int3)(in_R9D >> 8),2);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__TryInsert
+                  (pDVar5,(Object *)StringLiteral_vehicleEnergyStorage,pOVar6,in_R9D,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                   ->klass->rgctx_data[0x22].method);
+      }
+      pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                *)(this->fields)._.bluePrintData;
+      if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                     *)0x0) {
+        iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::StyleComplexSelector+PseudoStateData]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
+                          (pDVar1,(Object *)StringLiteral_vehicleEnergyConsumption,
                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                          );
-        if (bVar3 == 0) {
-          pDVar4 = (pHVar1->fields)._.bluePrintData;
-          method = (MethodInfo *)&this;
-          this = (HamsterWheelSettings *)0x4;
-          pOVar5 = (Object *)func_?();
-          if (pDVar4 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+                           ->klass->rgctx_data[0x21].method);
+        if (iVar2 < 0) {
+          pDVar5 = (this->fields)._.bluePrintData;
+          uStackX_8 = 4;
+          pOVar6 = (Object *)FUN_?(uRam_?,&uStackX_8);
+          if (pDVar5 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__Add
-                    (pDVar4,(Object *)StringLiteral_vehicleEnergyConsumption,pOVar5,
+          Dictionary_2_System_Object_System_Object__TryInsert
+                    (pDVar5,(Object *)StringLiteral_vehicleEnergyConsumption,pOVar6,
+                     CONCAT31((int3)(in_R9D >> 8),2),
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                    );
+                     ->klass->rgctx_data[0x22].method);
         }
         return;
       }
     }
   }
 code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -103,63 +141,107 @@ Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&StringLiteral_vehicleEnergyConsumption);
-    func_?(&StringLiteral_vehicleEnergyUse);
-    func_?(&StringLiteral_vehicleEnergyStorage);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_vehicleEnergyConsumption);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_vehicleEnergyUse);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_vehicleEnergyStorage);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-             *)func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                              );
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+             *)FUN_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                            );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
-  StyleComplexSelector+PseudoStateData]::
-  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+  UIR::UIRenderDevice+DisableForceGammaMaterial]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  uStack_1 = 0;
-  pOVar2 = (Object *)func_?(TypeInfo__System__Boolean,&uStack_1);
-  if (this_00 !=
-      (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0
-     ) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)this_00,
-               (Object *)StringLiteral_vehicleEnergyUse,pOVar2,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    pOVar2 = (Object *)func_?(TypeInfo__System__Int32);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)this_00,
-               (Object *)StringLiteral_vehicleEnergyStorage,pOVar2,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)this_00,
-               (Object *)StringLiteral_vehicleEnergyConsumption,pOVar2,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    return (Dictionary_2_System_Object_System_Object_ *)this_00;
+  uVar1 = uStackX_18;
+  lVar2 = lRam_?;
+  uStackX_18 = uStackX_18 & 0xffffff00;
+  if (*(int *)(lRam_? + 0x28) < 0) {
+    if ((*(longlong *)(lRam_? + 0x60) == 0) ||
+       ((*(byte *)(lRam_? + 0x135) & 8) == 0)) {
+      pOVar3 = (Object *)FUN_?(lRam_?);
+      FUN_?(pOVar3 + 1,&uStackX_18,(longlong)*(int *)(lVar2 + 0xf8) + -0x10);
+      if (iRam_? != 0) {
+        in_R9 = 0xADDR;
+        uVar1 = (uint)((ulonglong)(pOVar3 + 1) >> 0xc);
+        uVar4 = (ulonglong)((uVar1 & 0x1fffff) >> 6);
+        do {
+          uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+          puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+          LOCK();
+          bVar7 = uVar5 == *puVar6;
+          if (bVar7) {
+            *puVar6 = uVar5 | 1L << (uVar1 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar7);
+      }
+    }
+    else {
+      pOVar3 = (Object *)0x0;
+    }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  pDVar4 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar3)();
-  return pDVar4;
+  else {
+    pOVar3 = (Object *)(CONCAT44(uStackX_1c,uVar1) & 0xffffffffffffff00);
+  }
+  if (this_00 ==
+      (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+       *)0x0) {
+    FUN_?();
+    pcVar8 = (code *)swi(3);
+    pDVar9 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar8)();
+    return pDVar9;
+  }
+  uVar10 = CONCAT71((int7)((ulonglong)in_R9 >> 8),2);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+  Dictionary_2_System_Object_System_Object__TryInsert
+            ((Dictionary_2_System_Object_System_Object_ *)this_00,
+             (Object *)StringLiteral_vehicleEnergyUse,pOVar3,(InsertionBehavior__Enum)uVar10,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+             ->klass->rgctx_data[0x22].method);
+  uStackX_18 = 0x23;
+  pOVar3 = (Object *)FUN_?(uRam_?,&uStackX_18);
+  uVar10 = CONCAT71((int7)((ulonglong)uVar10 >> 8),2);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+  Dictionary_2_System_Object_System_Object__TryInsert
+            ((Dictionary_2_System_Object_System_Object_ *)this_00,
+             (Object *)StringLiteral_vehicleEnergyStorage,pOVar3,(InsertionBehavior__Enum)uVar10,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+             ->klass->rgctx_data[0x22].method);
+  uStackX_18 = 4;
+  pOVar3 = (Object *)FUN_?(uRam_?,&uStackX_18);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+  Dictionary_2_System_Object_System_Object__TryInsert
+            ((Dictionary_2_System_Object_System_Object_ *)this_00,
+             (Object *)StringLiteral_vehicleEnergyConsumption,pOVar3,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar10 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+             ->klass->rgctx_data[0x22].method);
+  return (Dictionary_2_System_Object_System_Object_ *)this_00;
 }
 
 
@@ -173,16 +255,19 @@ Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehicles::
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HamsterWheelSettings
-                   );
+    FUN_?(&
+                  TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HamsterWheelSettings
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HamsterWheelSettings->_1
-      ).cctor_finished_or_no_cctor == 0) {
-    func_?(
-                   TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HamsterWheelSettings
-                   );
+  if (*(int *)&(
+               TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HamsterWheelSettings
+               ->_1).field_0x1c == 0) {
+    FUN_?(
+                 TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HamsterWheelSettings
+                 );
   }
   pHVar1 = TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HamsterWheelSettings
            ->static_fields;
@@ -206,19 +291,18 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__VehicleEnergyForVehicleSettings
-                   );
+    FUN_?(&
+                  TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__VehicleEnergyForVehicleSettings
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(key,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    if ((
-        TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__VehicleEnergyForVehicleSettings
-        ->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(
-                     TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__VehicleEnergyForVehicleSettings
-                     );
+  if ((key != (String *)0x0) && ((key->fields)._stringLength != 0)) {
+    if (*(int *)&(
+                 TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__VehicleEnergyForVehicleSettings
+                 ->_1).field_0x1c == 0) {
+      FUN_?();
     }
     bVar1 = VehicleEnergyForVehicleSettings::VehicleEnergyForVehicleSettings_IsKey
                       (key,(MethodInfo *)0x0);
@@ -236,7 +320,7 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
     this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
     if (this_02 == (MVNetworkGame_OperationRequests *)0x0) {
 code_?:
-      func_?();
+      FUN_?();
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
@@ -255,20 +339,26 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Vehic
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HamsterWheelSettings
-                   );
+    FUN_?(&
+                  TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HamsterWheelSettings
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  iVar1 = _UNK_?;
-  iVar2 = _UNK_?;
-  iVar3 = _UNK_?;
-  pHVar4 = TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HamsterWheelSettings
+  uVar1 = _UNK_?;
+  pHVar2 = TypeInfo__UGUI__Desktop__Scripts__EditMode__SettingsBoxes__Vehicles__HamsterWheelSettings
            ->static_fields;
-  (pHVar4->VehicleEnergyForVehicleSettingsConfig).storageMinValue = _UNK_?;
-  (pHVar4->VehicleEnergyForVehicleSettingsConfig).storageMaxValue = iVar3;
-  (pHVar4->VehicleEnergyForVehicleSettingsConfig).consumptionMinValue = iVar2;
-  (pHVar4->VehicleEnergyForVehicleSettingsConfig).consumptionMaxValue = iVar1;
+  uVar3 = _UNK_?;
+  (pHVar2->VehicleEnergyForVehicleSettingsConfig).storageMinValue = _UNK_?;
+  uVar4 = _UNK_?;
+  (pHVar2->VehicleEnergyForVehicleSettingsConfig).storageMaxValue = uVar3;
+  _UNK_? = (undefined4)uVar1;
+  _UNK_? = SUB84(uVar1,4);
+  uVar3 = _UNK_?;
+  (pHVar2->VehicleEnergyForVehicleSettingsConfig).consumptionMinValue = _UNK_?;
+  _UNK_? = uVar4;
+  (pHVar2->VehicleEnergyForVehicleSettingsConfig).consumptionMaxValue = uVar3;
   return;
 }
 

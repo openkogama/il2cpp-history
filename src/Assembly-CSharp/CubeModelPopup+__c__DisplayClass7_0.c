@@ -8,39 +8,44 @@ void Assembly-CSharp.dll::CubeModelPopup+<>c__DisplayClass7_0::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IMaterialClicked);
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pCVar1 = (this->fields).__4__this;
-  if (pCVar1 != (CubeModelPopup *)0x0) {
-    this = (CubeModelPopup_c_DisplayClass7_0 *)(uint)(pCVar1->fields).materialID;
-    if (x != (IMaterialClicked *)0x0) {
-      pIVar2 = x->klass;
-      uVar3 = 0;
-      uVar4._0_1_ = (pIVar2->_1).rank;
-      uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
-      if (uVar4 != 0) {
-        do {
-          if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
-              (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IMaterialClicked) {
-            pIVar2 = x->klass;
-            iVar5 = pIVar2->interfaceOffsets[uVar3].offset;
-            (*(code *)(&pIVar2->vtable)[iVar5].OnMaterialClicked.method)
-                      (x,this,(&pIVar2[1]._0.image)[iVar5 * 2]);
-            return;
-          }
-          uVar3 = uVar3 + 1;
-        } while (uVar3 < uVar4);
-      }
-      puVar6 = (undefined4 *)
-               func_?(x,TypeInfo__UnityEngine__EventSystems__IMaterialClicked,0);
-      (*(code *)*puVar6)(x,this,puVar6[1]);
-      return;
-    }
+  if ((pCVar1 == (CubeModelPopup *)0x0) || (x == (IMaterialClicked *)0x0)) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  bVar3 = (pCVar1->fields).materialID;
+  pIVar4 = (Il2CppRuntimeInterfaceOffsetPair *)(ulonglong)bVar3;
+  uVar5 = 0;
+  pIVar6 = x->klass;
+  uVar7._0_1_ = (pIVar6->_1).rank;
+  uVar7._1_1_ = (pIVar6->_1).minimumAlignment;
+  if (uVar7 != 0) {
+    pIVar4 = pIVar6->interfaceOffsets;
+    do {
+      if (pIVar4[uVar5].interfaceType ==
+          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IMaterialClicked) {
+        pIVar8 = &pIVar6->vtable + pIVar4[uVar5].offset;
+        goto code_?;
+      }
+      uVar5 = uVar5 + 1;
+    } while (uVar5 < uVar7);
+  }
+  pIVar8 = (IMaterialClicked__VTable *)
+           FUN_?(x,TypeInfo__UnityEngine__EventSystems__IMaterialClicked,0,pIVar4,unaff_RDI)
+  ;
+code_?:
+  UNRECOVERED_JUMPTABLE = (pIVar8->OnMaterialClicked).methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*UNRECOVERED_JUMPTABLE)
+            (x,(ulonglong)bVar3,(pIVar8->OnMaterialClicked).method,UNRECOVERED_JUMPTABLE);
   return;
 }
 
@@ -54,37 +59,42 @@ void Assembly-CSharp.dll::CubeModelPopup+<>c__DisplayClass7_0::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__ICreateNewPrototype);
-    func_?(&::StringLiteral__);
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ICreateNewPrototype);
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pSVar1 = ::StringLiteral__;
   fVar2 = (this->fields).scale;
   if (x == (ICreateNewPrototype *)0x0) {
-    func_?();
+    FUN_?();
     pcVar3 = (code *)swi(3);
     (*pcVar3)();
     return;
   }
-  uVar4 = 0;
-  pIVar5 = x->klass;
-  uVar6._0_1_ = (pIVar5->_1).rank;
-  uVar6._1_1_ = (pIVar5->_1).minimumAlignment;
+  pIVar4 = x->klass;
+  uVar5 = 0;
+  uVar6._0_1_ = (pIVar4->_1).rank;
+  uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
   if (uVar6 != 0) {
     do {
-      if (pIVar5->interfaceOffsets[uVar4].interfaceType ==
+      if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
           (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__ICreateNewPrototype) {
-        ppMVar7 = &(&x->klass->vtable)[x->klass->interfaceOffsets[uVar4].offset].OnAddNewPrototype.
-                   method;
+        pIVar7 = &pIVar4->vtable + pIVar4->interfaceOffsets[uVar5].offset;
         goto code_?;
       }
-      uVar4 = uVar4 + 1;
-    } while (uVar4 < uVar6);
+      uVar5 = uVar5 + 1;
+    } while (uVar5 < uVar6);
   }
-  ppMVar7 = (MethodInfo **)
-            func_?(x,TypeInfo__UnityEngine__EventSystems__ICreateNewPrototype,0);
+  pIVar7 = (ICreateNewPrototype__VTable *)
+           FUN_?(x,TypeInfo__UnityEngine__EventSystems__ICreateNewPrototype,0);
 code_?:
-  (*(code *)*ppMVar7)(x,pSVar1,fVar2,ppMVar7[1]);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(pIVar7->OnAddNewPrototype).methodPtr)(x,pSVar1,fVar2,(pIVar7->OnAddNewPrototype).method);
   return;
 }
 
@@ -98,13 +108,15 @@ void Assembly-CSharp.dll::CubeModelPopup+<>c__DisplayClass7_0::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IChangePrototypeScale);
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pCVar1 = (this->fields).__4__this;
   if (pCVar1 != (CubeModelPopup *)0x0) {
-    fVar2 = (this->fields).scale;
-    iVar3 = (pCVar1->fields).woID;
+    uVar2 = (pCVar1->fields).woID;
+    fVar3 = (this->fields).scale;
     if (x != (IChangePrototypeScale *)0x0) {
       pIVar4 = x->klass;
       uVar5 = 0;
@@ -114,21 +126,23 @@ void Assembly-CSharp.dll::CubeModelPopup+<>c__DisplayClass7_0::
         do {
           if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
               (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IChangePrototypeScale) {
-            ppMVar7 = &(&x->klass->vtable)[x->klass->interfaceOffsets[uVar5].offset].
-                       OnChangePrototypeScale.method;
+            pIVar7 = &pIVar4->vtable + pIVar4->interfaceOffsets[uVar5].offset;
             goto code_?;
           }
           uVar5 = uVar5 + 1;
         } while (uVar5 < uVar6);
       }
-      ppMVar7 = (MethodInfo **)
-                func_?(x,TypeInfo__UnityEngine__EventSystems__IChangePrototypeScale,0);
+      pIVar7 = (IChangePrototypeScale__VTable *)
+               FUN_?(x,TypeInfo__UnityEngine__EventSystems__IChangePrototypeScale,0);
 code_?:
-      (*(code *)*ppMVar7)(x,iVar3,fVar2,ppMVar7[1]);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*(pIVar7->OnChangePrototypeScale).methodPtr)
+                (x,(ulonglong)uVar2,fVar3,(pIVar7->OnChangePrototypeScale).method);
       return;
     }
   }
-  func_?();
+  FUN_?();
   pcVar8 = (code *)swi(3);
   (*pcVar8)();
   return;

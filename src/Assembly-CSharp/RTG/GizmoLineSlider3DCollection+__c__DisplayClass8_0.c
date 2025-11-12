@@ -7,16 +7,14 @@ bool Assembly-CSharp.dll::RTG::GizmoLineSlider3DCollection+<>c__DisplayClass8_0:
                MethodInfo *method)
 
 {
-  if ((item != (GizmoLineSlider3D *)0x0) &&
-     (this_00 = (item->fields)._cap3D, this_00 != (GizmoCap3D *)0x0)) {
-    pvVar1 = UnityEngine.AndroidJNIModule.dll::UnityEngine::AndroidJavaObject::
-             AndroidJavaObject__GetRawClass((AndroidJavaObject *)this_00,(MethodInfo *)0x0);
-    return pvVar1 == (void *)(this->fields).capHandleId;
+  if (((item != (GizmoLineSlider3D *)0x0) &&
+      (pGVar1 = (item->fields)._cap3D, pGVar1 != (GizmoCap3D *)0x0)) &&
+     (pGVar2 = (pGVar1->fields)._._handle, pGVar2 != (GizmoHandle *)0x0)) {
+    return (pGVar2->fields)._id == (this->fields).capHandleId;
   }
-  uVar2 = func_?(&puStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  bVar4 = (*pcVar3)();
+  return bVar4;
 }
 

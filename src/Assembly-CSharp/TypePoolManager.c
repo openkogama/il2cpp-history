@@ -6,63 +6,170 @@ void Assembly-CSharp.dll::TypePoolManager::TypePoolManager_Awake
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    System__Collections__Generic__Dictionary<System::Type,_Pool>_MethodInfo__System__Linq__Enumerable__ToDictionary<Pool,_System::Type>_System__Collections__Generic__IEnumerable<Pool>__System__Func<Pool,_System::Type>_
-                   );
-    func_?(&TypeInfo__System__Func<Pool,_System::Type>);
-    func_?(&MethodInfo__System__Collections__Generic__List<Pool>__get_Count__);
-    func_?(&MethodInfo__System__Collections__Generic__List<Pool>__get_Item_int_);
-    func_?(&MethodInfo__TypePoolManager____c___Awake_b__2_0_Pool_);
-    func_?(&TypeInfo__TypePoolManager____c);
+    FUN_?(&
+                  System__Collections__Generic__Dictionary<System::Type,_Pool>_MethodInfo__System__Linq__Enumerable__ToDictionary<Pool,_System::Type>_System__Collections__Generic__IEnumerable<Pool>__System__Func<Pool,_System::Type>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Func<Pool,_System::Type>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<Pool>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<Pool>__get_Item_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__TypePoolManager____c___Awake_b__2_0_Pool_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__TypePoolManager____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  index = 0;
   pLVar1 = (this->fields).pool;
-  while (pLVar1 != (List_1_Pool_ *)0x0) {
-    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              (this->fields).pool;
-    if ((pLVar1->fields)._size <= index) {
-      if ((TypeInfo__TypePoolManager____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__TypePoolManager____c);
-      }
-      this_02 = TypeInfo__TypePoolManager____c->static_fields->__9__2_0;
-      if (this_02 == (Func_2_Pool_Type_ *)0x0) {
-        if ((TypeInfo__TypePoolManager____c->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__TypePoolManager____c);
+  uVar2 = 0;
+  if (pLVar1 != (List_1_Pool_ *)0x0) {
+    lVar3 = 0x20;
+    do {
+      source = (this->fields).pool;
+      if ((pLVar1->fields)._size <= (int)uVar2) {
+        if (*(int *)&(TypeInfo__TypePoolManager____c->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        object = TypeInfo__TypePoolManager____c->static_fields->__9;
-        this_02 = (Func_2_Pool_Type_ *)func_?(TypeInfo__System__Func<Pool,_System::Type>);
-        mscorlib.dll::System::Func`2[Object,UInt32]::Func_2_Object_UInt32___ctor
-                  ((Func_2_Object_UInt32_ *)this_02,(Object *)object,
-                   MethodInfo__TypePoolManager____c___Awake_b__2_0_Pool_,(MethodInfo *)0x0);
-        TypeInfo__TypePoolManager____c->static_fields->__9__2_0 = this_02;
-        func_?(&TypeInfo__TypePoolManager____c->static_fields->__9__2_0,this_02);
+        this_01 = TypeInfo__TypePoolManager____c->static_fields->__9__2_0;
+        if (this_01 == (Func_2_Pool_Type_ *)0x0) {
+          if (*(int *)&(TypeInfo__TypePoolManager____c->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          object = TypeInfo__TypePoolManager____c->static_fields->__9;
+          this_01 = (Func_2_Pool_Type_ *)FUN_?(TypeInfo__System__Func<Pool,_System::Type>);
+          Newtonsoft.Json.dll::Newtonsoft::Json::Serialization::ObjectConstructor`1[Unity::IL2CPP::
+          Metadata::__Il2CppFullySharedGenericType]::
+          ObjectConstructor_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                    ((ObjectConstructor_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+                     this_01,(Object *)object,MethodInfo__TypePoolManager____c___Awake_b__2_0_Pool_,
+                     (MethodInfo *)0x0);
+          TypeInfo__TypePoolManager____c->static_fields->__9__2_0 = this_01;
+          if (iRam_? != 0) {
+            uVar2 = (uint)((ulonglong)&TypeInfo__TypePoolManager____c->static_fields->__9__2_0 >>
+                           0xc);
+            lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+            do {
+              uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+              puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+              LOCK();
+              bVar6 = uVar4 == *puVar5;
+              if (bVar6) {
+                *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar6);
+          }
+        }
+        pMVar7 = 
+        System__Collections__Generic__Dictionary<System::Type,_Pool>_MethodInfo__System__Linq__Enumerable__ToDictionary<Pool,_System::Type>_System__Collections__Generic__IEnumerable<Pool>__System__Func<Pool,_System::Type>_
+        ;
+        if ((
+            System__Collections__Generic__Dictionary<System::Type,_Pool>_MethodInfo__System__Linq__Enumerable__ToDictionary<Pool,_System::Type>_System__Collections__Generic__IEnumerable<Pool>__System__Func<Pool,_System::Type>_
+            ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+          FUN_?(
+                       System__Collections__Generic__Dictionary<System::Type,_Pool>_MethodInfo__System__Linq__Enumerable__ToDictionary<Pool,_System::Type>_System__Collections__Generic__IEnumerable<Pool>__System__Func<Pool,_System::Type>_
+                       );
+        }
+        elementSelector =
+             System.Core.dll::System::Linq::IdentityFunction`1[System::Object]::
+             IdentityFunction_1_System_Object__get_Instance
+                       ((pMVar7->field7_0x38).rgctx_data[2].method);
+        pDVar8 = (Dictionary_2_System_Type_Pool_ *)
+                 System.Core.dll::System::Linq::Enumerable::Enumerable_ToDictionary_11
+                           ((IEnumerable_1_System_Object_ *)source,(Func_2_Object_Object_ *)this_01,
+                            elementSelector,(IEqualityComparer_1_System_Object_ *)0x0,
+                            (pMVar7->field7_0x38).rgctx_data[5].method);
+        bVar6 = iRam_? != 0;
+        (this->fields).poolAsDictionary = pDVar8;
+        if (bVar6) {
+          uVar2 = (uint)((ulonglong)&(this->fields).poolAsDictionary >> 0xc);
+          lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+            puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+            LOCK();
+            bVar6 = uVar4 == *puVar5;
+            if (bVar6) {
+              *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar6);
+        }
+        return;
       }
-      pDVar2 = (Dictionary_2_System_Type_Pool_ *)
-               System.Core.dll::System::Linq::Enumerable::Enumerable_ToDictionary_1
-                         ((IEnumerable_1_System_Object_ *)this_00,(Func_2_Object_Object_ *)this_02,
-                          System__Collections__Generic__Dictionary<System::Type,_Pool>_MethodInfo__System__Linq__Enumerable__ToDictionary<Pool,_System::Type>_System__Collections__Generic__IEnumerable<Pool>__System__Func<Pool,_System::Type>_
+      if (source == (List_1_Pool_ *)0x0) break;
+      if ((uint)(source->fields)._size <= uVar2) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar9 = (code *)swi(3);
+        (*pcVar9)();
+        return;
+      }
+      pPVar10 = (source->fields)._items;
+      if (pPVar10 == (Pool__Array *)0x0) break;
+      if ((uint)pPVar10->max_length <= uVar2) {
+        FUN_?();
+        pcVar9 = (code *)swi(3);
+        (*pcVar9)();
+        return;
+      }
+      this_00 = *(Pool **)((longlong)pPVar10->vector + lVar3 + -0x20);
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Component>_UnityEngine__Component_
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      UnityEngine__Transform_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::Transform>_void__
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pvVar11 = (this->fields)._._._._.m_CachedPtr;
+      if (pvVar11 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)this,(MethodInfo *)0x0);
+        pcVar9 = (code *)swi(3);
+        (*pcVar9)();
+        return;
+      }
+      pcVar9 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0)) {
+        uVar12 = func_?(&UNK_?);
+        FUN_?(uVar12,0);
+        pcVar9 = (code *)swi(3);
+        (*pcVar9)();
+        return;
+      }
+      pcRam_? = pcVar9;
+      pvVar11 = (void *)(*pcRam_?)(pvVar11);
+      parent = (Transform *)
+               UnityEngine.CoreModule.dll::UnityEngine::Bindings::Unmarshal::
+               Unmarshal_UnmarshalUnityObject
+                         (pvVar11,
+                          UnityEngine__Transform_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::Transform>_void__
                          );
-      (this->fields).poolAsDictionary = pDVar2;
-      func_?(&(this->fields).poolAsDictionary,pDVar2);
-      return;
-    }
-    if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) break;
-    this_01 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (this_00,index,
-                         MethodInfo__System__Collections__Generic__List<Pool>__get_Item_int_);
-    parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)this,(MethodInfo *)0x0);
-    if (this_01 == (RegexCharClass_SingleRange)0x0) break;
-    Pool::Pool_Initialize((Pool *)this_01,parent,(MethodInfo *)0x0);
-    index = index + 1;
-    pLVar1 = (this->fields).pool;
+      if (this_00 == (Pool *)0x0) break;
+      Pool::Pool_Initialize(this_00,parent,(MethodInfo *)0x0);
+      pLVar1 = (this->fields).pool;
+      uVar2 = uVar2 + 1;
+      lVar3 = lVar3 + 8;
+    } while (pLVar1 != (List_1_Pool_ *)0x0);
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -73,36 +180,68 @@ Pool * Assembly-CSharp.dll::TypePoolManager::TypePoolManager_GetPool
                  (TypePoolManager *this,MethodInfo *method)
 
 {
-  if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Type,_Pool>__get_Item_System__Type_
-                   );
-    func_?(&TypeInfo__System__Type);
-    if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
-      func_?(method);
+  if ((method->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Type,_Pool>__get_Item_System__Type_
+                 );
+    LOCK();
+    UNLOCK();
+    if ((method->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(method);
     }
   }
-  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-            (this->fields).poolAsDictionary;
-  handle = *(method->field7_0x1c).rgctx_data;
-  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Type);
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)(this->fields).poolAsDictionary;
+  pvVar1 = ((method->field7_0x38).rgctx_data)->rgctxDataDummy;
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
   }
-  key = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                  ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-  if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (this_00,(Object *)key,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Type,_Pool>__get_Item_System__Type_
-                      );
-    return (Pool *)TVar1.m_Index;
+  if (pvVar1 == (void *)0x0) {
+    key = (Object *)0x0;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  pPVar3 = (Pool *)(*pcVar2)();
-  return pPVar3;
+  else {
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    lVar2 = FUN_?(pvVar1,1);
+    key = (Object *)FUN_?(lVar2 + 0x20);
+  }
+  if (this_00 ==
+      (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0
+     ) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    pPVar4 = (Pool *)(*pcVar3)();
+    return pPVar4;
+  }
+  uVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+          UIElements::StyleComplexSelector+PseudoStateData]::
+          Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
+                    (this_00,key,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Type,_Pool>__get_Item_System__Type_
+                     ->klass->rgctx_data[0x21].method);
+  if ((int)uVar5 < 0) {
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowKeyNotFoundException
+              (key,(MethodInfo *)0x0);
+    pcVar3 = (code *)swi(3);
+    pPVar4 = (Pool *)(*pcVar3)();
+    return pPVar4;
+  }
+  pDVar6 = (this_00->fields)._entries;
+  if (pDVar6 != (Dictionary_2_TKey_TValue_Entry_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___Array
+                 *)0x0) {
+    if (uVar5 < (uint)pDVar6->max_length) {
+      return (Pool *)pDVar6->vector[(int)uVar5].value;
+    }
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    pPVar4 = (Pool *)(*pcVar3)();
+    return pPVar4;
+  }
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  pPVar4 = (Pool *)(*pcVar3)();
+  return pPVar4;
 }
 
 
@@ -112,40 +251,73 @@ Object * Assembly-CSharp.dll::TypePoolManager::TypePoolManager_Instantiate
                    (TypePoolManager *this,MethodInfo *method)
 
 {
-  if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Type,_Pool>__get_Item_System__Type_
-                   );
-    func_?(&TypeInfo__System__Type);
-    if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
-      func_?(method);
+  if ((method->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Type,_Pool>__get_Item_System__Type_
+                 );
+    LOCK();
+    UNLOCK();
+    if ((method->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(method);
     }
   }
-  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-            (this->fields).poolAsDictionary;
-  handle = *(method->field7_0x1c).rgctx_data;
-  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Type);
+  this_00 = (this->fields).poolAsDictionary;
+  pvVar1 = ((method->field7_0x38).rgctx_data)->rgctxDataDummy;
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
   }
-  key = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                  ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-  if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-    this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        (this_00,(Object *)key,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Type,_Pool>__get_Item_System__Type_
-                        );
-    if (this_01.m_Index != 0) {
-      pOVar1 = Pool::Pool_Instantiate
-                         ((Pool *)this_01.m_Index,(method->field7_0x1c).rgctx_data[1].method);
-      return pOVar1;
+  if (pvVar1 == (void *)0x0) {
+    pOVar2 = (Object *)0x0;
+  }
+  else {
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    lVar3 = FUN_?(pvVar1,1);
+    pOVar2 = (Object *)FUN_?(lVar3 + 0x20);
+  }
+  if ((this_00 == (Dictionary_2_System_Type_Pool_ *)0x0) ||
+     (this_01 = (Pool *)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
+                                  ((Dictionary_2_System_Object_System_Object_ *)this_00,pOVar2,
+                                   MethodInfo__System__Collections__Generic__Dictionary<System::Type,_Pool>__get_Item_System__Type_
+                                  ), this_01 == (Pool *)0x0)) {
+    FUN_?();
+    pcVar4 = (code *)swi(3);
+    pOVar2 = (Object *)(*pcVar4)();
+    return pOVar2;
+  }
+  pMVar5 = (method->field7_0x38).rgctx_data[1].method;
+  if ((pMVar5->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(pMVar5);
+  }
+  pMVar6 = Pool::Pool_get_Next(this_01,(MethodInfo *)0x0);
+  lVar3 = *(longlong *)(pMVar5->field7_0x38).methodMetadataHandle;
+  if ((*(byte *)(lVar3 + 0x135) & 1) == 0) {
+    lVar3 = FUN_?(lVar3);
+  }
+  if (pMVar6 != (MonoBehaviour *)0x0) {
+    pMVar7 = pMVar6->klass;
+    cVar8 = FUN_?(lVar3,pMVar7);
+    if (cVar8 != '\0') {
+      return (Object *)pMVar6;
+    }
+    if (((pMVar7->_1).field_0x6e & 0x10) != 0) {
+      if (((((*(byte *)(lVar3 + 0x118) & 0x20) != 0) || (*(char *)(lVar3 + 0x2a) == '\x13')) ||
+          (*(char *)(lVar3 + 0x2a) == '\x1e')) &&
+         (((*(longlong *)(lVar3 + 0x70) != 0 &&
+           (*(longlong *)(*(longlong *)(lVar3 + 0x70) + 0x28) != 0)) &&
+          (lVar9 = FUN_?(pMVar6), lVar9 != 0)))) {
+        return (Object *)pMVar6;
+      }
+      pMVar10 = (MonoBehaviour *)0x0;
+      if (lVar3 == lRam_?) {
+        pMVar10 = pMVar6;
+      }
+      return (Object *)pMVar10;
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  pOVar1 = (Object *)(*pcVar2)();
-  return pOVar1;
+  return (Object *)0x0;
 }
 
 
@@ -155,97 +327,150 @@ void Assembly-CSharp.dll::TypePoolManager::TypePoolManager_Return
                (TypePoolManager *this,Object *obj,MethodInfo *method)
 
 {
-  iVar1 = in_stack_2;
-  if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Type,_Pool>__get_Item_System__Type_
-                   );
-    func_?(&TypeInfo__System__Type);
-    if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
-      func_?(method);
+  if ((method->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Type,_Pool>__get_Item_System__Type_
+                 );
+    LOCK();
+    UNLOCK();
+    if ((method->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(method);
     }
   }
-  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-            (this->fields).poolAsDictionary;
-  handle = *(method->field7_0x1c).rgctx_data;
-  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Type);
+  this_00 = (this->fields).poolAsDictionary;
+  pvVar1 = ((method->field7_0x38).rgctx_data)->rgctxDataDummy;
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
   }
-  key = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                  ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-  if ((this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-     (TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        (this_00,(Object *)key,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Type,_Pool>__get_Item_System__Type_
-                        ), TVar3.m_Index == 0)) {
-    func_?();
+  if (pvVar1 == (void *)0x0) {
+    pOVar2 = (Object *)0x0;
+  }
+  else {
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    lVar3 = FUN_?(pvVar1,1);
+    pOVar2 = (Object *)FUN_?(lVar3 + 0x20);
+  }
+  if ((this_00 == (Dictionary_2_System_Type_Pool_ *)0x0) ||
+     (pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__get_Item
+                         ((Dictionary_2_System_Object_System_Object_ *)this_00,pOVar2,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Type,_Pool>__get_Item_System__Type_
+                         ), pOVar2 == (Object *)0x0)) {
+    FUN_?();
     pcVar4 = (code *)swi(3);
     (*pcVar4)();
     return;
   }
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_,obj,0,in_R9,
+                  unaff_RDI);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  uVar5 = 0;
-  iVar6 = *(int *)(in_stack_2 + 0x1c);
-  if (iVar6 != 0) {
-    in_stack_2 = 0x10;
+  pOVar5 = pOVar2[3].klass;
+  uVar6 = 0;
+  if (pOVar5 != (Object__Class *)0x0) {
+    lVar3 = 0x20;
     do {
-      if (*(int *)(iVar6 + 0xc) <= (int)uVar5) {
-        if (in_stack_7 != (Component *)0x0) {
-          pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             (in_stack_7,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
+      if (*(int *)&(pOVar5->_0).namespaze <= (int)uVar6) {
+        if (obj != (Object *)0x0) {
+          pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             ((Component *)obj,(MethodInfo *)0x0);
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                    ((Object_1 *)pGVar8,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy
+                    ((Object_1 *)pGVar7,0.0,(MethodInfo *)0x0);
           return;
         }
         break;
       }
-      iVar6 = *(int *)(iVar1 + 0x1c);
-      if (iVar6 == 0) break;
-      if (*(uint *)(iVar6 + 0xc) <= uVar5) goto code_?;
-      x = *(Object_1 **)(in_stack_2 + iVar6);
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
+      pOVar5 = pOVar2[3].klass;
+      if (pOVar5 == (Object__Class *)0x0) break;
+      if (*(uint *)&(pOVar5->_0).namespaze <= uVar6) {
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
       }
-      bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                        (x,(Object_1 *)in_stack_7,(MethodInfo *)0x0);
-      if (bVar9 != 0) {
-        if ((in_stack_7 != (Component *)0x0) &&
-           (pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               (in_stack_7,(MethodInfo *)0x0), pGVar8 != (GameObject *)0x0))
-        {
+      pOVar8 = *(Object **)((longlong)&(pOVar5->_0).image + lVar3);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (obj == (Object *)0x0 && pOVar8 == (Object *)0x0) {
+code_?:
+        if ((obj != (Object *)0x0) &&
+           (pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)obj,(MethodInfo *)0x0), pGVar7 != (GameObject *)0x0)) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar8,0,(MethodInfo *)0x0);
+                    (pGVar7,0,(MethodInfo *)0x0);
           this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              (in_stack_7,(MethodInfo *)0x0);
+                              ((Component *)obj,(MethodInfo *)0x0);
           if (this_01 != (Transform *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                      (this_01,*(Transform **)(iVar1 + 0x14),(MethodInfo *)0x0);
-            if (*(int *)(iVar1 + 0x18) != 0) {
-              func_?(*(int *)(iVar1 + 0x18),uVar5,
-                              MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+                      (this_01,(Transform *)pOVar2[2].klass,(MethodInfo *)0x0);
+            if (pOVar2[2].monitor != (MonitorData *)0x0) {
+              FUN_?(pOVar2[2].monitor,uVar6,
+                            MethodInfo__System__Collections__Generic__List<int>__Add_int_);
               return;
             }
           }
         }
         break;
       }
-      uVar5 = uVar5 + 1;
-      iVar6 = *(int *)(iVar1 + 0x1c);
-      in_stack_2 = in_stack_2 + 4;
-    } while (iVar6 != 0);
+      if (obj == (Object *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (pOVar8 == (Object *)0x0) break;
+        bVar9 = pOVar8[1].klass == (Object__Class *)0x0;
+      }
+      else if (pOVar8 == (Object *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        bVar9 = obj[1].klass == (Object__Class *)0x0;
+      }
+      else {
+        bVar9 = pOVar8 == obj;
+      }
+      if (bVar9) goto code_?;
+      pOVar5 = pOVar2[3].klass;
+      uVar6 = uVar6 + 1;
+      lVar3 = lVar3 + 8;
+    } while (pOVar5 != (Object__Class *)0x0);
   }
-  func_?();
-code_?:
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -259,53 +484,138 @@ void Assembly-CSharp.dll::TypePoolManager::TypePoolManager_Update
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&Pool_MethodInfo__TypePoolManager__GetPool<Bullet>__);
-    func_?(&StringLiteral_Noooo_);
-    func_?(&StringLiteral_YEAH_);
-    func_?(&StringLiteral_Intended);
-    func_?(&StringLiteral_What_);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&Pool_MethodInfo__TypePoolManager__GetPool<Bullet>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Noooo_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_YEAH_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Intended);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_What_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  bVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKeyDown
-                    (KeyCode__Enum_A,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    pPVar2 = TypePoolManager_GetPool(this,Pool_MethodInfo__TypePoolManager__GetPool<Bullet>__);
-    if (pPVar2 == (Pool *)0x0) {
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  cVar3 = (*pcRam_?)(0x61);
+  if (cVar3 != '\0') {
+    lVar4 = FUN_?(this);
+    if (lVar4 == 0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      this = (TypePoolManager *)StringLiteral_Noooo_;
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_Noooo_,(MethodInfo *)0x0);
     }
     else {
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      this = (TypePoolManager *)StringLiteral_YEAH_;
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)StringLiteral_YEAH_,(MethodInfo *)0x0);
     }
   }
-  bVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKeyDown
-                    (KeyCode__Enum_B,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    pPVar2 = TypePoolManager_GetPool(this,Pool_MethodInfo__TypePoolManager__GetPool<Bullet>__);
-    if (pPVar2 != (Pool *)0x0) {
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                ((Object *)StringLiteral_What_,(MethodInfo *)0x0);
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  cVar3 = (*pcRam_?)(0x62);
+  if (cVar3 == '\0') {
+    return;
+  }
+  lVar4 = FUN_?(this);
+  if (lVar4 != 0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    pSVar5 = StringLiteral_What_;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Debug,0);
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeInfo__UnityEngine__ILogger);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Debug);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    pIVar6 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+    if (pIVar6 == (ILogger_1 *)0x0) {
+      FUN_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
       return;
     }
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-              ((Object *)StringLiteral_Intended,(MethodInfo *)0x0);
+    FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar6,0,pSVar5);
+    return;
   }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pSVar5 = StringLiteral_Intended;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__ILogger);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pIVar6 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+  if (pIVar6 == (ILogger_1 *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar6,3,pSVar5);
   return;
 }
 

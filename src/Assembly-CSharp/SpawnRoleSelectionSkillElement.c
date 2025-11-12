@@ -14,7 +14,7 @@ float Assembly-CSharp.dll::SpawnRoleSelectionSkillElement::
   if (min < zeroValue) {
     fVar1 = zeroValue;
   }
-  if (max <= _UNK_?) {
+  if (max <= 0.0) {
     return (value - max) / (min - max);
   }
   return (value - fVar1) / (max - fVar1);
@@ -29,514 +29,304 @@ void Assembly-CSharp.dll::SpawnRoleSelectionSkillElement::SpawnRoleSelectionSkil
                KogamaSettingValueWrapperBase *skillSetting,MethodInfo *method)
 
 {
-  this_00 = skillDataManager;
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-                   );
-    func_?(&
-                    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
-                   );
-    func_?(&
-                    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&
-                    MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__get_NumericValue__
-                   );
-    func_?(&
-                    MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__get_NumericValue__
-                   );
-    func_?(&TypeInfo__System__Single);
+    FUN_?(&
+                  TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__get_NumericValue__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__get_NumericValue__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pIStack_1 = (IAttributeSetting__Class *)(this->fields).nameText;
-  if (skillDataManager != (SpawnRolesSkillDataManager *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Debug);
-      func_?(&
-                      MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Count__
-                     );
-      func_?(&
-                      MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
-                     );
-      func_?(&StringLiteral__because_it_is_not_in_the_dataLi);
-      func_?(&StringLiteral_SkillDataManager_can_not_create_);
-      func_?(&::StringLiteral__);
-      cRam_? = '\x01';
+  pTVar1 = (this->fields).nameText;
+  if (((skillDataManager == (SpawnRolesSkillDataManager *)0x0) ||
+      (pSVar2 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetNameText
+                           (skillDataManager,skill,(MethodInfo *)0x0), pTVar1 == (Text *)0x0)) ||
+     ((*(pTVar1->klass->vtable).set_text.methodPtr)
+                (pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method),
+     pIVar3 = 
+     TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+     , skillSetting == (KogamaSettingValueWrapperBase *)0x0)) goto code_?;
+  lVar4 = FUN_?(skillSetting,
+                         TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                        );
+  pIVar5 = 
+  TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+  ;
+  if (lVar4 == 0) {
+    FUN_?(skillSetting,pIVar3);
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
+    return;
+  }
+  lVar4 = FUN_?(skillSetting,
+                         TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                        );
+  if (lVar4 == 0) {
+    FUN_?(skillSetting,pIVar5);
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
+    return;
+  }
+  skillCost = FUN_?(0,
+                            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                            ,lVar4);
+  this_00 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetImageClone
+                      (skillDataManager,skill,(this->fields).iconColor,
+                       (this->fields).iconBackgroundColor,(this->fields).iconWidth,
+                       (this->fields).iconHeight,(MethodInfo *)0x0);
+  if ((this_00 == (SpawnRoleSkillIconController *)0x0) ||
+     (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                          ((Component *)this_00,(MethodInfo *)0x0), this_01 == (Transform *)0x0))
+  goto code_?;
+  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+            (this_01,(this->fields).skillIconContainer,0,(MethodInfo *)0x0);
+  SpawnRoleSkillIconController::SpawnRoleSkillIconController_HandleNegativeState
+            (this_00,skillCost,(MethodInfo *)0x0);
+  uStackX_8 = (Object *)((ulonglong)uStackX_8._4_4_ << 0x20);
+  settingValue = uStackX_8;
+  if (*(int *)(lRam_? + 0x28) < 0) {
+    if ((*(longlong *)(lRam_? + 0x60) == 0) ||
+       ((*(byte *)(lRam_? + 0x135) & 8) == 0)) {
+      settingValue = (Object *)FUN_?(lRam_?);
+      FUN_?(settingValue + 1,&uStackX_8);
+      if (iRam_? != 0) {
+        uVar7 = (uint)((ulonglong)(settingValue + 1) >> 0xc);
+        uVar8 = (ulonglong)((uVar7 & 0x1fffff) >> 6);
+        do {
+          uVar9 = *(ulonglong *)(uVar8 * 8 + 0xADDR);
+          puVar10 = (ulonglong *)(uVar8 * 8 + 0xADDR);
+          LOCK();
+          bVar11 = uVar9 == *puVar10;
+          if (bVar11) {
+            *puVar10 = uVar9 | 1L << (uVar7 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar11);
+      }
     }
-    pLVar2 = (skillDataManager->fields).skillDataList;
-    unaff_EDI = (IAttributeSetting__Class *)0x0;
-    while (pLVar2 != (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
-      if ((pLVar2->fields)._size <= (int)unaff_EDI) {
-        unaff_EDI = (IAttributeSetting__Class *)
-                    mscorlib.dll::System::String::String_Concat_4
-                              (StringLiteral_SkillDataManager_can_not_create_,skill,
-                               StringLiteral__because_it_is_not_in_the_dataLi,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          _Stack_60.typeHandle = (Il2CppMetadataTypeHandle)TypeInfo__UnityEngine__Debug;
-          func_?();
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                  ((Object *)unaff_EDI,(MethodInfo *)0x0);
-        pSVar3 = ::StringLiteral__;
-code_?:
-        if ((pIStack_1 != (IAttributeSetting__Class *)0x0) &&
-           (pIVar4 = (pIStack_1->_0).image,
-           (*(code *)pIVar4[0x12].name)(pIStack_1,pSVar3,pIVar4[0x12].nameNoExt),
-           unaff_EDI = 
-           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-           , skillSetting != (KogamaSettingValueWrapperBase *)0x0)) {
-          iVar5 = func_?(skillSetting,
-                                   TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                                  );
-          pIVar6 = 
-          TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-          ;
-          if ((iVar5 == 0) ||
-             (iVar5 = func_?(skillSetting,
-                                       TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                                      ), unaff_EDI = pIVar6, iVar5 == 0)) {
-            func_?(skillSetting,unaff_EDI);
-          }
-          else {
-            iStack_7 = func_?(0,
-                                       TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                                       ,iVar5);
-            unaff_EDI = (IAttributeSetting__Class *)
-                        SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetImageClone
-                                  (skillDataManager,skill,(this->fields).iconColor,
-                                   (this->fields).iconBackgroundColor,(this->fields).iconWidth,
-                                   (this->fields).iconHeight,(MethodInfo *)0x0);
-            if ((unaff_EDI != (IAttributeSetting__Class *)0x0) &&
-               (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                          Component_get_transform((Component *)unaff_EDI,(MethodInfo *)0x0),
-               this_01 != (Transform *)0x0)) {
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                        (this_01,(this->fields).skillIconContainer,0,(MethodInfo *)0x0);
-              bVar8 = (byte)((uint)iStack_7 >> 0x1f);
-              skillDataManager =
-                   (SpawnRolesSkillDataManager *)CONCAT31(skillDataManager._1_3_,bVar8);
-              pCVar9 = *(Component **)&(unaff_EDI->_0).byval_arg.attrs;
-              if ((pCVar9 != (Component *)0x0) &&
-                 (pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                            Component_get_gameObject(pCVar9,(MethodInfo *)0x0),
-                 pGVar10 != (GameObject *)0x0)) {
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar10,bVar8,(MethodInfo *)0x0);
-                pCVar9 = (Component *)(unaff_EDI->_0).this_arg.data.typeHandle;
-                if ((pCVar9 != (Component *)0x0) &&
-                   (pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                              Component_get_gameObject(pCVar9,(MethodInfo *)0x0),
-                   pGVar10 != (GameObject *)0x0)) {
-                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                            (pGVar10,bVar8,(MethodInfo *)0x0);
-                  p_Stack_14 = (Il2CppMetadataTypeHandle)0x0;
-                  method_00 = (String **)skillDataManager;
-                  pIStack_1 = (IAttributeSetting__Class *)
-                               func_?(TypeInfo__System__Int32,&p_Stack_14);
-                  skillDataManager = _UNK_?;
-                  if (cRam_? == '\0') {
-                    func_?(&TypeInfo__UnityEngine__Debug);
-                    func_?(&
-                                    MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Count__
-                                   );
-                    func_?(&
-                                    MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
-                                   );
-                    func_?(&StringLiteral_s_zero_value_because_it_is_not_i);
-                    func_?(&StringLiteral_SkillDataManager_can_not_get_ski);
-                    cRam_? = '\x01';
-                  }
-                  pLVar2 = (this_00->fields).skillDataList;
-                  unaff_EDI = (IAttributeSetting__Class *)0x0;
-                  if (pLVar2 != (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0)
-                  goto code_?;
-                }
-              }
-            }
-          }
-        }
-        break;
-      }
-      pLVar2 = (skillDataManager->fields).skillDataList;
-      if (pLVar2 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) break;
-      pMVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
-                ::MultiColumnCollectionHeader+ViewState+ColumnState]::
-                List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
-                          ((MultiColumnCollectionHeader_ViewState_ColumnState *)&_Stack_48,
-                           (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                            *)pLVar2,(int32_t)unaff_EDI,
-                           MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
-                          );
-      uStack_12 = *(undefined8 *)&(pMVar11->width).m_Unit;
-      bVar13 = mscorlib.dll::System::String::String_op_Equality
-                        (skill,(String *)pMVar11->index,(MethodInfo *)0x0);
-      pLVar2 = (skillDataManager->fields).skillDataList;
-      if (bVar13 != 0) {
-        if (pLVar2 != (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
-          pMStack_14 = 
-          MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
-          ;
-          _Stack_60.dummy = &_Stack_48;
-          pLStack_15 = pLVar2;
-          pIStack_16 = unaff_EDI;
-          iVar5 = func_?();
-          uStack_12 = *(undefined8 *)(iVar5 + 0x10);
-          pSVar3 = *(String **)(iVar5 + 4);
-          goto code_?;
-        }
-        break;
-      }
-      unaff_EDI = (IAttributeSetting__Class *)((int)&(unaff_EDI->_0).image + 1);
+    else {
+      settingValue = (Object *)0x0;
     }
   }
-  goto code_?;
-  while( true ) {
-    pLVar2 = (this_00->fields).skillDataList;
-    if (pLVar2 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) break;
-    pMVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
-              MultiColumnCollectionHeader+ViewState+ColumnState]::
-              List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
-                        ((MultiColumnCollectionHeader_ViewState_ColumnState *)&_Stack_48,
-                         (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                          *)pLVar2,(int32_t)unaff_EDI,
-                         MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
-                        );
-    uStack_12 = *(undefined8 *)&(pMVar11->width).m_Unit;
-    bVar13 = mscorlib.dll::System::String::String_op_Equality
-                      (skill,(String *)pMVar11->index,(MethodInfo *)0x0);
-    pLVar2 = (this_00->fields).skillDataList;
-    if (bVar13 != 0) {
-      if (pLVar2 != (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
-        pMStack_14 = 
-        MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
-        ;
-        _Stack_60.dummy = &_Stack_48;
-        pLStack_15 = pLVar2;
-        pIStack_16 = unaff_EDI;
-        puVar17 = (undefined4 *)func_?();
-        uStack_18 = *puVar17;
-        uStack_19 = puVar17[1];
-        _Stack_28 = *(_union_86 *)(puVar17 + 2);
-        uStack_20 = puVar17[3];
-        uStack_12._4_4_ = (Text *)((ulonglong)*(undefined8 *)(puVar17 + 4) >> 0x20);
-        pTStack_21 = uStack_12._4_4_;
-        uStack_12 = *(undefined8 *)(puVar17 + 4);
-        goto code_?;
-      }
-      break;
-    }
-    unaff_EDI = (IAttributeSetting__Class *)((int)&(unaff_EDI->_0).image + 1);
-    if (pLVar2 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) break;
-code_?:
-    if ((pLVar2->fields)._size <= (int)unaff_EDI) {
-      pSVar3 = mscorlib.dll::System::String::String_Concat_4
-                          (StringLiteral_SkillDataManager_can_not_get_ski,skill,
-                           StringLiteral_s_zero_value_because_it_is_not_i,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        _Stack_60.typeHandle = (Il2CppMetadataTypeHandle)TypeInfo__UnityEngine__Debug;
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                ((Object *)pSVar3,(MethodInfo *)0x0);
-      pTStack_21 = (Text *)0x0;
-code_?:
-      pKVar22 = skillSetting->klass;
-      if (((pKVar22->_1).naturalAligment <
-           (
-           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
-           ->_1).naturalAligment) ||
-         ((pKVar22->_1).typeHierarchy
-          [(
-           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
-           ->_1).naturalAligment - 1] !=
-          (Il2CppClass *)
+  fVar12 = _UNK_?;
+  fVar13 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetZeroValue
+                     (skillDataManager,skill,(MethodInfo *)0x0);
+  pKVar14 = skillSetting->klass;
+  bVar15 = (
           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
-         )) {
-        unaff_EDI = pIStack_1;
-        if (((
-             TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-             ->_1).naturalAligment <= (pKVar22->_1).naturalAligment) &&
-           ((pKVar22->_1).typeHierarchy
-            [(
-             TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-             ->_1).naturalAligment - 1] ==
-            (Il2CppClass *)
+          ->_1).naturalAligment;
+  if (((pKVar14->_1).naturalAligment < bVar15) ||
+     ((pKVar14->_1).typeHierarchy[(ulonglong)bVar15 - 1] !=
+      (Il2CppClass *)
+      TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
+     )) {
+    bVar15 = (
             TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-           )) {
-          pAVar23 = 
-          TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-          ;
-          if (((pKVar22->_1).naturalAligment <
-               (
-               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-               ->_1).naturalAligment) ||
-             ((pKVar22->_1).typeHierarchy
-              [(
-               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-               ->_1).naturalAligment - 1] !=
-              (Il2CppClass *)
+            ->_1).naturalAligment;
+    if ((bVar15 <= (pKVar14->_1).naturalAligment) &&
+       ((pKVar14->_1).typeHierarchy[(ulonglong)bVar15 - 1] ==
+        (Il2CppClass *)
+        TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
+       )) {
+      bVar15 = (
               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-             )) goto code_?;
-          pIStack_24 = (IAttributeSetting__Class *)
-                       MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-                       KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-                       KogamaSettingNumericBase_1_System_Single__get_NumericValue
-                                 ((KogamaSettingNumericBase_1_System_Single_ *)skillSetting,
-                                  MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__get_NumericValue__
-                                 );
-          unaff_EDI = (IAttributeSetting__Class *)
-                      func_?(TypeInfo__System__Single,&pIStack_24);
-          pAVar23 = 
+              ->_1).naturalAligment;
+      if (((pKVar14->_1).naturalAligment < bVar15) ||
+         ((pKVar14->_1).typeHierarchy[(ulonglong)bVar15 - 1] !=
+          (Il2CppClass *)
           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-          ;
-          if (((skillSetting->klass->_1).naturalAligment <
-               (
-               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-               ->_1).naturalAligment) ||
-             ((skillSetting->klass->_1).typeHierarchy
-              [(
-               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-               ->_1).naturalAligment - 1] !=
-              (Il2CppClass *)
+         )) {
+        FUN_?(skillSetting);
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
+      }
+      uVar16 = FUN_?(skillSetting,
+                             MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__get_NumericValue__
+                            );
+      uStackX_8 = (Object *)CONCAT44(uStackX_8._4_4_,uVar16);
+      settingValue = (Object *)FUN_?(lRam_?,&uStackX_8);
+      bVar15 = (
               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-             )) goto code_?;
-          if ((skillSetting[1].klass == (KogamaSettingValueWrapperBase__Class *)0x0) ||
-             (iVar5 = ((skillSetting[1].klass)->_0).byval_arg.data.__klassIndex, iVar5 == 0))
-          break;
-          pIStack_1 = *(IAttributeSetting__Class **)(iVar5 + 0xc);
-          skillDataManager =
-               *(SpawnRolesSkillDataManager **)
-                (((skillSetting[1].klass)->_0).byval_arg.data.__klassIndex + 8);
-          if (unaff_EDI == (IAttributeSetting__Class *)0x0) break;
-          pSVar25 = TypeInfo__System__Single;
-          if ((Il2CppClass *)((unaff_EDI->_0).image)->codeGenModule !=
-              (TypeInfo__System__Single->_0).element_class) goto code_?;
-          pfVar26 = (float *)func_?(unaff_EDI);
-          fVar27 = *pfVar26;
-          if (fVar27 <= (float)pTStack_21) goto code_?;
-          pTVar28 = (Text *)skillDataManager;
-          if ((float)skillDataManager < (float)pTStack_21) {
-            pTVar28 = pTStack_21;
-          }
-          pIVar6 = pIStack_1;
-          if (0.0 < (float)pIStack_1) goto code_?;
-          skillDataManager =
-               (SpawnRolesSkillDataManager *)
-               ((fVar27 - (float)pIStack_1) / ((float)skillDataManager - (float)pIStack_1));
-        }
+              ->_1).naturalAligment;
+      if (((skillSetting->klass->_1).naturalAligment < bVar15) ||
+         ((skillSetting->klass->_1).typeHierarchy[(ulonglong)bVar15 - 1] !=
+          (Il2CppClass *)
+          TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
+         )) {
+        FUN_?(skillSetting);
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
+      }
+      if ((skillSetting[1].klass == (KogamaSettingValueWrapperBase__Class *)0x0) ||
+         (pIVar17 = ((skillSetting[1].klass)->_0).byval_arg.data.array,
+         pIVar17 == (Il2CppArrayType *)0x0)) goto code_?;
+      fVar18 = *(float *)((longlong)&pIVar17->sizes + 4);
+      fVar19 = *(float *)&pIVar17->sizes;
+      if (settingValue == (Object *)0x0) goto code_?;
+      if ((settingValue->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40))
+      {
+        FUN_?(settingValue);
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
+      }
+      fVar20 = *(float *)&settingValue[1].klass;
+      if (fVar20 <= fVar13) goto code_?;
+code_?:
+      fVar12 = fVar19;
+      if (fVar19 < fVar13) {
+        fVar12 = fVar13;
+      }
+      if (0.0 < fVar18) {
+        fVar12 = (fVar20 - fVar12) / (fVar18 - fVar12);
       }
       else {
-        pAVar23 = (AttributeSettingFloat__Class *)
-                  TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
-        ;
-        if (((pKVar22->_1).naturalAligment <
-             (
-             TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
-             ->_1).naturalAligment) ||
-           ((pKVar22->_1).typeHierarchy
-            [(
-             TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
-             ->_1).naturalAligment - 1] !=
-            (Il2CppClass *)
-            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
-           )) goto code_?;
-        pIStack_1 = (IAttributeSetting__Class *)
-                     MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-                     KogamaSettingTypes::KogamaSettingNumericBase`1[System::Int32]::
-                     KogamaSettingNumericBase_1_System_Int32__get_NumericValue
-                               ((KogamaSettingNumericBase_1_System_Int32_ *)skillSetting,
-                                MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__get_NumericValue__
-                               );
-        unaff_EDI = (IAttributeSetting__Class *)func_?(TypeInfo__System__Int32,&pIStack_1)
-        ;
-        pAVar23 = (AttributeSettingFloat__Class *)
-                  TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
-        ;
-        if (((skillSetting->klass->_1).naturalAligment <
-             (
-             TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
-             ->_1).naturalAligment) ||
-           ((skillSetting->klass->_1).typeHierarchy
-            [(
-             TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
-             ->_1).naturalAligment - 1] !=
-            (Il2CppClass *)
-            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
-           )) goto code_?;
-        if ((skillSetting[1].klass == (KogamaSettingValueWrapperBase__Class *)0x0) ||
-           (pIVar29 = ((skillSetting[1].klass)->_0).byval_arg.data.array,
-           pIVar29 == (Il2CppArrayType *)0x0)) break;
-        pIStack_24 = (IAttributeSetting__Class *)(float)(int)pIVar29->lobounds;
-        skillDataManager =
-             (SpawnRolesSkillDataManager *)
-             (float)(int)(((skillSetting[1].klass)->_0).byval_arg.data.array)->sizes;
-        if (unaff_EDI == (IAttributeSetting__Class *)0x0) break;
-        pSVar25 = (Single__Class *)TypeInfo__System__Int32;
-        if ((Il2CppClass *)((unaff_EDI->_0).image)->codeGenModule !=
-            (TypeInfo__System__Int32->_0).element_class) goto code_?;
-        piVar30 = (int *)func_?(unaff_EDI);
-        fVar27 = (float)*piVar30;
-        if ((float)pTStack_21 < fVar27) {
-          pTVar28 = (Text *)skillDataManager;
-          if ((float)skillDataManager < (float)pTStack_21) {
-            pTVar28 = pTStack_21;
-          }
-          pIVar6 = pIStack_24;
-          if (0.0 < (float)pIStack_24) {
-code_?:
-            skillDataManager =
-                 (SpawnRolesSkillDataManager *)
-                 ((fVar27 - (float)pTVar28) / ((float)pIVar6 - (float)pTVar28));
-          }
-          else {
-            skillDataManager =
-                 (SpawnRolesSkillDataManager *)
-                 ((fVar27 - (float)pIStack_24) / ((float)skillDataManager - (float)pIStack_24));
-          }
-        }
-        else {
-code_?:
-          skillDataManager =
-               (SpawnRolesSkillDataManager *)
-               ((float)_UNK_? -
-               (fVar27 - (float)skillDataManager) / ((float)pTStack_21 - (float)skillDataManager));
-        }
+        fVar12 = (fVar20 - fVar18) / (fVar19 - fVar18);
       }
-      pTStack_21 = (this->fields).descriptionText;
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__UnityEngine__Debug);
-        func_?(&
-                        MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Count__
-                       );
-        func_?(&
-                        MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
-                       );
-        func_?(&TypeInfo__Styles);
-        func_?(&StringLiteral__because_it_is_not_in_the_dataLi);
-        func_?(&StringLiteral_SkillDataManager_can_not_create_);
-        method_00 = &::StringLiteral__;
-        func_?();
-        cRam_? = '\x01';
-      }
-      pLVar2 = (this_00->fields).skillDataList;
-      skillSetting = (KogamaSettingValueWrapperBase *)0x0;
-      if (pLVar2 != (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) goto code_?;
-      break;
     }
   }
-  goto code_?;
-  while( true ) {
-    pLVar2 = (this_00->fields).skillDataList;
-    if (pLVar2 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) break;
-    pMVar11 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
-              MultiColumnCollectionHeader+ViewState+ColumnState]::
-              List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__get_Item
-                        ((MultiColumnCollectionHeader_ViewState_ColumnState *)&_Stack_48,
-                         (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                          *)pLVar2,(int32_t)skillSetting,
-                         MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
-                        );
-    uStack_12 = *(undefined8 *)&(pMVar11->width).m_Unit;
-    bVar13 = mscorlib.dll::System::String::String_op_Equality
-                      (skill,(String *)pMVar11->index,(MethodInfo *)0x0);
-    pLVar2 = (this_00->fields).skillDataList;
-    if (bVar13 != 0) {
-      if (pLVar2 != (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) {
-        pMStack_14 = 
-        MethodInfo__System__Collections__Generic__List<SpawnRolesSkillDataManager::SkillData>__get_Item_int_
-        ;
-        _Stack_60.dummy = &_Stack_60;
-        pLStack_15 = pLVar2;
-        pIStack_16 = (IAttributeSetting__Class *)skillSetting;
-        p_Var16 = (_union_86 *)func_?();
-        _Stack_48 = *p_Var16;
-        _Stack_44 = p_Var16[1];
-        pSStack_31 = (String *)p_Var16[2].typeHandle;
-        _Stack_3c = p_Var16[3];
-        uStack_32 = *(undefined8 *)(p_Var16 + 4);
-        pCVar33 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetValueColor
-                            ((Color *)&_Stack_28,this_00,iStack_7,(MethodInfo *)0x0);
-        CVar34 = UnityEngine.CoreModule.dll::UnityEngine::Color32::Color32_op_Implicit
-                           (*pCVar33,(MethodInfo *)0x0);
-        skillSetting = (KogamaSettingValueWrapperBase *)CVar34.rgba;
-        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__Styles);
-        }
-        pSVar3 = Styles::Styles_ColorToHex
-                            ((Color32)((ulonglong)CVar34 & 0xffffffff),(MethodInfo *)method_00);
-        pSVar3 = mscorlib.dll::System::String::String_Format_1
-                            (pSStack_31,(Object *)pSVar3,(Object *)unaff_EDI,(MethodInfo *)0x0);
-        goto code_?;
-      }
-      break;
+  else {
+    bVar15 = (
+            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
+            ->_1).naturalAligment;
+    if (((pKVar14->_1).naturalAligment < bVar15) ||
+       ((pKVar14->_1).typeHierarchy[(ulonglong)bVar15 - 1] !=
+        (Il2CppClass *)
+        TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
+       )) {
+      FUN_?(skillSetting);
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
+      return;
     }
-    skillSetting = (KogamaSettingValueWrapperBase *)
-                   ((int)&(((IAttributeSetting__Class *)skillSetting)->_0).image + 1);
-    if (pLVar2 == (List_1_SpawnRolesSkillDataManager_SkillData_ *)0x0) break;
+    uVar16 = FUN_?(skillSetting,
+                           MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__get_NumericValue__
+                          );
+    uStackX_8 = (Object *)CONCAT44(uStackX_8._4_4_,uVar16);
+    settingValue = (Object *)FUN_?(lRam_?,&uStackX_8);
+    bVar15 = (
+            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
+            ->_1).naturalAligment;
+    if (((skillSetting->klass->_1).naturalAligment < bVar15) ||
+       ((skillSetting->klass->_1).typeHierarchy[(ulonglong)bVar15 - 1] !=
+        (Il2CppClass *)
+        TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingInt
+       )) {
+      FUN_?(skillSetting);
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
+      return;
+    }
+    if ((skillSetting[1].klass == (KogamaSettingValueWrapperBase__Class *)0x0) ||
+       (pIVar17 = ((skillSetting[1].klass)->_0).byval_arg.data.array,
+       pIVar17 == (Il2CppArrayType *)0x0)) goto code_?;
+    fVar18 = (float)*(int *)((longlong)&pIVar17->sizes + 4);
+    fVar19 = (float)*(int *)&pIVar17->sizes;
+    if (settingValue == (Object *)0x0) goto code_?;
+    if ((settingValue->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+      FUN_?(settingValue);
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
+      return;
+    }
+    fVar20 = (float)*(int *)&settingValue[1].klass;
+    if (fVar13 < fVar20) goto code_?;
 code_?:
-    if ((pLVar2->fields)._size <= (int)skillSetting) {
-      skillSetting = (KogamaSettingValueWrapperBase *)
-                     mscorlib.dll::System::String::String_Concat_4
-                               (StringLiteral_SkillDataManager_can_not_create_,skill,
-                                StringLiteral__because_it_is_not_in_the_dataLi,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        _Stack_60.typeHandle = (Il2CppMetadataTypeHandle)TypeInfo__UnityEngine__Debug;
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                ((Object *)skillSetting,(MethodInfo *)0x0);
-      pSVar3 = ::StringLiteral__;
-code_?:
-      if (pTStack_21 != (Text *)0x0) {
-        (*(code *)(pTStack_21->klass->vtable).set_text.method)
-                  (pTStack_21,pSVar3,
-                   (pTStack_21->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-        iVar35 = iStack_7;
-        pIVar36 = (this->fields).powerFillImage;
-        skillSetting = (KogamaSettingValueWrapperBase *)this;
-        if (pIVar36 != (Image *)0x0) {
-          UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount
-                    (pIVar36,(float)skillDataManager,(MethodInfo *)0x0);
-          pIVar36 = (this->fields).negativePowerFillImage;
-          if (pIVar36 != (Image *)0x0) {
-            UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount
-                      (pIVar36,(float)skillDataManager,(MethodInfo *)0x0);
-            pIVar36 = (this->fields).powerFillImage;
-            if ((pIVar36 != (Image *)0x0) &&
-               (pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                          Component_get_gameObject((Component *)pIVar36,(MethodInfo *)0x0),
-               pGVar10 != (GameObject *)0x0)) {
-              bVar8 = (byte)((uint)iVar35 >> 0x18);
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar10,bVar8 >> 7 ^ 1,(MethodInfo *)0x0);
-              pIVar36 = (this->fields).negativePowerFillImage;
-              if ((pIVar36 != (Image *)0x0) &&
-                 (pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                            Component_get_gameObject((Component *)pIVar36,(MethodInfo *)0x0),
-                 pGVar10 != (GameObject *)0x0)) {
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar10,bVar8 >> 7,(MethodInfo *)0x0);
-                return;
-              }
+    fVar12 = fVar12 - (fVar20 - fVar19) / (fVar13 - fVar19);
+  }
+  pTVar1 = (this->fields).descriptionText;
+  SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetSkillDescription
+            (skillDataManager,skill,settingValue,skillCost,(MethodInfo *)0x0);
+  if (pTVar1 != (Text *)0x0) {
+    (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1);
+    pIVar21 = (this->fields).powerFillImage;
+    if (pIVar21 != (Image *)0x0) {
+      UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount
+                (pIVar21,fVar12,(MethodInfo *)0x0);
+      pIVar21 = (this->fields).negativePowerFillImage;
+      if (pIVar21 != (Image *)0x0) {
+        UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount
+                  (pIVar21,fVar12,(MethodInfo *)0x0);
+        pIVar21 = (this->fields).powerFillImage;
+        if ((pIVar21 != (Image *)0x0) &&
+           (pGVar22 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                ((Component *)pIVar21,(MethodInfo *)0x0),
+           pGVar22 != (GameObject *)0x0)) {
+          bVar15 = (byte)(skillCost >> 0x18);
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                    (pGVar22,bVar15 >> 7 ^ 1,(MethodInfo *)0x0);
+          pIVar21 = (this->fields).negativePowerFillImage;
+          if ((pIVar21 != (Image *)0x0) &&
+             (pGVar22 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                  ((Component *)pIVar21,(MethodInfo *)0x0),
+             pGVar22 != (GameObject *)0x0)) {
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                            ,skillCost >> 0x1f,0);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
             }
+            if (pGVar22 == (GameObject *)0x0) {
+              FUN_?();
+              pcVar6 = (code *)swi(3);
+              (*pcVar6)();
+              return;
+            }
+            pvVar23 = (pGVar22->fields)._.m_CachedPtr;
+            if (pvVar23 == (void *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+              ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar22,(MethodInfo *)0x0);
+              pcVar6 = (code *)swi(3);
+              (*pcVar6)();
+              return;
+            }
+            pcVar6 = pcRam_?;
+            if ((pcRam_? == (code *)0x0) &&
+               (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+              uVar24 = func_?(&UNK_?);
+              FUN_?(uVar24,0);
+              pcVar6 = (code *)swi(3);
+              (*pcVar6)();
+              return;
+            }
+            pcRam_? = pcVar6;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+            (*pcRam_?)(pvVar23,bVar15 >> 7);
+            return;
           }
         }
       }
-      break;
     }
   }
 code_?:
-  func_?();
-  pSVar25 = (Single__Class *)extraout_ECX;
-code_?:
-  func_?(unaff_EDI,pSVar25);
-  pAVar23 = extraout_EDX;
-code_?:
-  func_?(skillSetting,pAVar23);
-  pcVar37 = (code *)swi(3);
-  (*pcVar37)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

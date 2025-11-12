@@ -6,7 +6,11 @@ void Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_Add
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Add_int__MVPlayer_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (player != (MVPlayer *)0x0) {
@@ -18,18 +22,18 @@ void Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_Add
     }
     if (this_00 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-      Dictionary_2_System_Int32_System_Object__Add
+      Dictionary_2_System_Int32_System_Object__TryInsert
                 ((Dictionary_2_System_Int32_System_Object_ *)this_00,
                  (player->fields)._ActorNr_k__BackingField,(Object *)player,
+                 CONCAT31((int3)((uint)in_R9D >> 8),2),
                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Add_int__MVPlayer_
-                );
+                 ->klass->rgctx_data[0x22].method);
       return;
     }
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -40,98 +44,105 @@ void Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_Add_1
                (MVPlayerContainer *this,List_1_MVPlayer_ *playerList,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffb8;
-  puVar5 = &stack0xffffffb8;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Add_int__MVPlayer_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVPlayer>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVPlayer>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVPlayer>__get_Current__
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__List<MVPlayer>__GetEnumerator__);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Add_int__MVPlayer_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVPlayer>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVPlayer>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVPlayer>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  cStack_6 = '\0';
-  LStack_7._list = (List_1_System_Object_ *)0x0;
-  LStack_7._index = 0;
-  LStack_7._version = 0;
-  LStack_7._current = (Object *)0x0;
-  if (playerList != (List_1_MVPlayer_ *)0x0) {
-    pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_9,
-                        (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                        playerList,
-                        MethodInfo__System__Collections__Generic__List<MVPlayer>__GetEnumerator__);
-    LStack_7._list = (List_1_System_Object_ *)pLVar8->_list;
-    LStack_7._index = pLVar8->_index;
-    LStack_7._version = pLVar8->_version;
-    LStack_7._current = *(Object **)&pLVar8->_current;
-    LStack_9._version = 0;
-    uStack_1 = 1;
-    LStack_9._current = (RegexCharClass_SingleRange)&LStack_7;
+  bVar1 = false;
+  if (playerList == (List_1_MVPlayer_ *)0x0) {
+    FUN_?();
+code_?:
+    FUN_?();
+  }
+  else {
+    if (iRam_? != 0) {
+      uVar2 = (uint)((ulonglong)&uStack_3 >> 0xc);
+      puVar4 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar5 = *puVar4;
+        LOCK();
+        uVar6 = *puVar4;
+        if (uVar5 == uVar6) {
+          *puVar4 = uVar5 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar5 != uVar6);
+    }
+    pLStack_7 = (List_1_T_Enumerator_System_Object_ *)
+                 ((ulonglong)(uint)(playerList->fields)._version << 0x20);
+    uStack_8 = 0;
+    LStack_9._8_8_ = pLStack_7;
+    LStack_9._current = (Object *)0x0;
+    uStack_3 = 0;
+    pLStack_7 = &LStack_9;
+    LStack_9._list = (List_1_System_Object_ *)playerList;
     while( true ) {
       bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_7,
+                        (&LStack_9,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVPlayer>__MoveNext__
                         );
       if (bVar10 == 0) {
-        uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&LStack_7,
-                   (ExceptionArgument__Enum)
-                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVPlayer>__Dispose__
-                   ,unaff_EDI);
-        uStack_1 = 0xffffffff;
-        if ((cStack_6 != '\0') && ((this->fields).OnPlayerListChanged != (Action *)0x0)) {
-          (*(((this->fields).OnPlayerListChanged)->fields)._._.invoke_impl)();
+        if ((bVar1) && ((this->fields).OnPlayerListChanged != (Action *)0x0)) {
+          pAVar11 = (this->fields).OnPlayerListChanged;
+          (*(pAVar11->fields)._._.invoke_impl)
+                    ((pAVar11->fields)._._.method_code,(pAVar11->fields)._._.method);
         }
         pAVar11 = (this->fields).OnPlayerListLoaded;
         if (pAVar11 != (Action *)0x0) {
-          (*(pAVar11->fields)._._.invoke_impl)();
+          (*(pAVar11->fields)._._.invoke_impl)
+                    ((pAVar11->fields)._._.method_code,(pAVar11->fields)._._.method);
         }
-        *unaff_FS_OFFSET = uStack_3;
         return;
       }
-      if ((RegexCharClass_SingleRange)LStack_7._current == (RegexCharClass_SingleRange)0x0) break;
-      cVar12 = *(char *)((int)LStack_7._current + 0x44);
-      if ((cVar12 == '\x01') || (cVar12 == '\x02')) {
-        cStack_6 = '\x01';
+      if ((MVPlayer *)LStack_9._current == (MVPlayer *)0x0) break;
+      if ((((MVPlayer__Fields *)((longlong)LStack_9._current + 0x10))->playerState == 1) ||
+         (((MVPlayer__Fields *)((longlong)LStack_9._current + 0x10))->playerState == 2)) {
+        bVar1 = true;
       }
-      if (cVar12 == '\x03') {
+      if (((MVPlayer__Fields *)((longlong)LStack_9._current + 0x10))->playerState == 3) {
         this_00 = (this->fields).players;
-        if (this_00 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) break;
+        if (this_00 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) goto code_?;
+        in_R9D = CONCAT31((int3)(in_R9D >> 8),2);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-        Dictionary_2_System_Int32_System_Object__Add
+        Dictionary_2_System_Int32_System_Object__TryInsert
                   ((Dictionary_2_System_Int32_System_Object_ *)this_00,
-                   *(int32_t *)((int)LStack_7._current + 0x30),LStack_7._current,
+                   ((MVPlayer__Fields *)((longlong)LStack_9._current + 0x10))->
+                   _ActorNr_k__BackingField,LStack_9._current,in_R9D,
                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Add_int__MVPlayer_
-                  );
+                   ->klass->rgctx_data[0x22].method);
       }
       else {
-        MVPlayerContainer_Add(this,(MVPlayer *)LStack_7._current,(MethodInfo *)0x0);
+        MVPlayerContainer_Add(this,(MVPlayer *)LStack_9._current,(MethodInfo *)0x0);
       }
     }
   }
-  uVar13 = func_?();
-  func_?(uVar13);
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  FUN_?();
+  FUN_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -143,23 +154,26 @@ bool Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_ContainsKey
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).players;
-  if (this_00 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
-            Dictionary_2_System_Int32_System_Single__ContainsKey
-                      ((Dictionary_2_System_Int32_System_Single_ *)this_00,actorNr,
+  this_00 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(this->fields).players;
+  if (this_00 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+    iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
+            Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                      (this_00,actorNr,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
-                      );
-    return bVar1;
+                       ->klass->rgctx_data[0x21].method);
+    return (byte)((uint)iVar1 >> 0x1f) ^ 1;
   }
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  bVar1 = (*pcVar3)();
-  return bVar1;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  bVar3 = (*pcVar2)();
+  return bVar3;
 }
 
 
@@ -171,35 +185,51 @@ Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_GetEnumerator
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__GetEnumerator__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).players;
-  if (this_00 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-    pDVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
-             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       (&DStack_2,this_00,
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__GetEnumerator__
-                       );
-    pDStack_3 = pDVar1->_dictionary;
-    iStack_4 = pDVar1->_version;
-    iStack_5 = pDVar1->_index;
-    uStack_6 = (pDVar1->_current).key;
-    uStack_7 = *(undefined8 *)&(pDVar1->_current).value;
-    pIVar8 = (IEnumerator_1_KeyValuePair_2_System_Int32_MVPlayer_ *)
-             func_?(TypeInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>
-                             ,&pDStack_3);
-    return pIVar8;
+  pDStack_1 = (this->fields).players;
+  if (pDStack_1 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    pIVar3 = (IEnumerator_1_KeyValuePair_2_System_Int32_MVPlayer_ *)(*pcVar2)();
+    return pIVar3;
   }
-  func_?();
-  pcVar9 = (code *)swi(3);
-  pIVar8 = (IEnumerator_1_KeyValuePair_2_System_Int32_MVPlayer_ *)(*pcVar9)();
-  return pIVar8;
+  uStack_4 = 0;
+  uStack_5 = 0;
+  if (iRam_? != 0) {
+    uVar6 = (uint)((ulonglong)&pDStack_1 >> 0xc);
+    puVar7 = (ulonglong *)((ulonglong)((uVar6 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar8 = *puVar7;
+      LOCK();
+      uVar9 = *puVar7;
+      if (uVar8 == uVar9) {
+        *puVar7 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar8 != uVar9);
+  }
+  uStack_10 = (ulonglong)(uint)(pDStack_1->fields)._version;
+  uStack_11 = 2;
+  uStack_12 = 0;
+  uStack_13 = 0;
+  uStack_14 = uStack_10;
+  uStack_15 = 2;
+  pDStack_16 = pDStack_1;
+  pIVar3 = (IEnumerator_1_KeyValuePair_2_System_Int32_MVPlayer_ *)
+           FUN_?(TypeInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>
+                         ,&pDStack_16);
+  return pIVar3;
 }
 
 
@@ -211,50 +241,52 @@ Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__TryGetValue_int__MVPlayer__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__TryGetValue_int__MVPlayer__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar1 = (MVPlayer *)0x0;
-  pDVar2 = (this->fields).pendingPlayers;
-  if (pDVar2 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
-    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+  pDVar1 = (this->fields).pendingPlayers;
+  pMStackX_20 = (MVPlayer *)0x0;
+  pMStackX_8 = (MVPlayer *)0x0;
+  if (pDVar1 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
+    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
             Dictionary_2_System_Int32_System_Object__TryGetValue
-                      ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,actorNr,
-                       (Object **)&stack0xfffffff4,
+                      ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,actorNr,
+                       (Object **)&pMStackX_20,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__TryGetValue_int__MVPlayer__
                       );
-    if (bVar3 != 0) {
-      return pMVar1;
+    if (bVar2 != 0) {
+      return pMStackX_20;
     }
-    pDVar2 = (this->fields).players;
-    if (pDVar2 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
-      value = (MVPlayer__Class *)&stack0xfffffff8;
-      bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
+    pDVar1 = (this->fields).players;
+    if (pDVar1 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
+      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
               ::Dictionary_2_System_Int32_System_Object__TryGetValue
-                        ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,actorNr,(Object **)value
-                         ,
+                        ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,actorNr,
+                         (Object **)&pMStackX_8,
                          MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__TryGetValue_int__MVPlayer__
                         );
-      if (bVar3 != 0) {
-        return (MVPlayer *)value;
+      if (bVar2 != 0) {
+        return pMStackX_8;
       }
-      goto code_?;
+      uVar3 = func_?(&TypeInfo__System__Exception);
+      this_00 = (Exception *)func_?(uVar3);
+      message = (String *)func_?(&StringLiteral_Could_not_get_player_unsafe);
+      mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
+      uVar3 = func_?(&MethodInfo__MVPlayerContainer__GetPlayerUnsafe_int_);
+      FUN_?(this_00,uVar3);
+      pcVar4 = (code *)swi(3);
+      pMVar5 = (MVPlayer *)(*pcVar4)();
+      return pMVar5;
     }
   }
-  func_?();
-code_?:
-  func_?();
-  this_00 = (Exception *)func_?();
-  message = (String *)func_?();
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
-  uStack4 = func_?();
-  pEStack5 = this_00;
-  func_?();
-  pcVar6 = (code *)swi(3);
-  pMVar1 = (MVPlayer *)(*pcVar6)();
-  return pMVar1;
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  pMVar5 = (MVPlayer *)(*pcVar4)();
+  return pMVar5;
 }
 
 
@@ -265,23 +297,26 @@ bool Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_IsPendingPlayer
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).pendingPlayers;
-  if (this_00 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
-            Dictionary_2_System_Int32_System_Single__ContainsKey
-                      ((Dictionary_2_System_Int32_System_Single_ *)this_00,actorId,
+  this_00 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(this->fields).pendingPlayers;
+  if (this_00 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+    iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
+            Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                      (this_00,actorId,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
-                      );
-    return bVar1;
+                       ->klass->rgctx_data[0x21].method);
+    return (byte)((uint)iVar1 >> 0x1f) ^ 1;
   }
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  bVar1 = (*pcVar3)();
-  return bVar1;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  bVar3 = (*pcVar2)();
+  return bVar3;
 }
 
 
@@ -292,44 +327,57 @@ bool Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_MoveNext
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  DStack_1._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
-  DStack_1._version = 0;
-  DStack_1._index = 0;
-  DStack_1._current.key = 0;
-  DStack_1._current.value = (Object *)0x0;
-  DStack_1._getEnumeratorRetType = 0;
-  this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).players;
-  if (this_00 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-    pDVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
-             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       (&DStack_3,this_00,
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__GetEnumerator__
-                       );
-    DStack_1._dictionary = pDVar2->_dictionary;
-    DStack_1._version = pDVar2->_version;
-    DStack_1._index = pDVar2->_index;
-    DStack_1._current.key = (pDVar2->_current).key;
-    DStack_1._16_8_ = *(undefined8 *)&(pDVar2->_current).value;
-    bVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System
-            ::UInt32,System::Object]::
-            Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                      (&DStack_1,
-                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
-                      );
-    return bVar4;
+  pDStack_1 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).players;
+  if (pDStack_1 == (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    bVar3 = (*pcVar2)();
+    return bVar3;
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  bVar4 = (*pcVar5)();
-  return bVar4;
+  uStack_4 = 0;
+  uStack_5 = 0;
+  if (iRam_? != 0) {
+    uVar6 = (uint)((ulonglong)&pDStack_1 >> 0xc);
+    puVar7 = (ulonglong *)((ulonglong)((uVar6 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar8 = *puVar7;
+      LOCK();
+      uVar9 = *puVar7;
+      if (uVar8 == uVar9) {
+        *puVar7 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar8 != uVar9);
+  }
+  uStack_10 = (ulonglong)(uint)(pDStack_1->fields)._version;
+  uStack_11 = 2;
+  DStack_12._current.key = 0;
+  DStack_12._current._4_4_ = 0;
+  DStack_12._current.value = (Object *)0x0;
+  DStack_12._version = (undefined4)uStack_10;
+  DStack_12._index = uStack_10._4_4_;
+  DStack_12._getEnumeratorRetType = 2;
+  DStack_12._36_4_ = 0;
+  DStack_12._dictionary = pDStack_1;
+  bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::
+          UInt32,System::Object]::
+          Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                    (&DStack_12,
+                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
+                    );
+  return bVar3;
 }
 
 
@@ -340,112 +388,119 @@ void Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_Remove
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Remove_int_
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Remove_int_)
+    ;
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pDVar1 = (this->fields).players;
-  if (pDVar1 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
-code_?:
-    func_?();
-  }
-  else {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
-            Dictionary_2_System_Int32_System_Single__ContainsKey
-                      ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,actorNr,
+  pDVar1 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(this->fields).players;
+  if (pDVar1 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+    iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
+            Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                      (pDVar1,actorNr,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
-                      );
-    if (bVar2 == 0) {
-code_?:
-      pDVar1 = (this->fields).players;
-      if (pDVar1 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
-        bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                Single]::Dictionary_2_System_Int32_System_Single__ContainsKey
-                          ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,actorNr,
+                       ->klass->rgctx_data[0x21].method);
+    if (-1 < iVar2) {
+      pDVar1 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(this->fields).pendingPlayers;
+      if (pDVar1 == (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0)
+      goto code_?;
+      iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
+              Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                        (pDVar1,actorNr,
+                         MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
+                         ->klass->rgctx_data[0x21].method);
+      if (-1 < iVar2) {
+        uVar3 = func_?(&TypeInfo__System__Exception);
+        pEVar4 = (Exception *)func_?(uVar3);
+        pSVar5 = (String *)func_?(&StringLiteral_Player_contained_in_both_players);
+        mscorlib.dll::System::Exception::Exception__ctor_1(pEVar4,pSVar5,(MethodInfo *)0x0);
+        uVar3 = func_?(&MethodInfo__MVPlayerContainer__Remove_int_);
+        FUN_?(pEVar4,uVar3);
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
+      }
+    }
+    pDVar1 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(this->fields).players;
+    if (pDVar1 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+      iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
+              Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                        (pDVar1,actorNr,
+                         MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
+                         ->klass->rgctx_data[0x21].method);
+      if (iVar2 < 0) {
+        pDVar1 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(this->fields).pendingPlayers;
+        if (pDVar1 == (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0)
+        goto code_?;
+        iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
+                Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                          (pDVar1,actorNr,
                            MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
-                          );
-        if (bVar2 == 0) {
-          pDVar1 = (this->fields).pendingPlayers;
-          if (pDVar1 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) goto code_?;
-          bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                  Single]::Dictionary_2_System_Int32_System_Single__ContainsKey
-                            ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,actorNr,
-                             MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
-                            );
-          if (bVar2 == 0) goto code_?;
-        }
-        pDVar1 = (this->fields).players;
-        if (pDVar1 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
-          bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                  Single]::Dictionary_2_System_Int32_System_Single__ContainsKey
-                            ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,actorNr,
-                             MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
-                            );
-          if (bVar2 != 0) {
-            pDVar1 = (this->fields).players;
-            if (pDVar1 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) goto code_?;
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-            Dictionary_2_System_Int32_System_Object__Remove
-                      ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,actorNr,
-                       MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Remove_int_
-                      );
-            if ((this->fields).OnPlayerListChanged != (Action *)0x0) {
-              (*(((this->fields).OnPlayerListChanged)->fields)._._.invoke_impl)();
-            }
-          }
-          pDVar1 = (this->fields).pendingPlayers;
-          if (pDVar1 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
-            bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                    Single]::Dictionary_2_System_Int32_System_Single__ContainsKey
-                              ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,actorNr,
-                               MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
-                              );
-            if (bVar2 == 0) {
-              return;
-            }
-            pDVar1 = (this->fields).pendingPlayers;
-            if (pDVar1 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
-              ::Dictionary_2_System_Int32_System_Object__Remove
-                        ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,actorNr,
-                         MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Remove_int_
-                        );
-              return;
-            }
-          }
+                           ->klass->rgctx_data[0x21].method);
+        if (iVar2 < 0) {
+          uVar3 = func_?(&TypeInfo__System__Exception);
+          pEVar4 = (Exception *)func_?(uVar3);
+          pSVar5 = (String *)func_?(&StringLiteral_Player_not_contained_in_either_p);
+          mscorlib.dll::System::Exception::Exception__ctor_1(pEVar4,pSVar5,(MethodInfo *)0x0);
+          uVar3 = func_?(&MethodInfo__MVPlayerContainer__Remove_int_);
+          FUN_?(pEVar4,uVar3);
+          pcVar6 = (code *)swi(3);
+          (*pcVar6)();
+          return;
         }
       }
-      goto code_?;
-    }
-    pDVar1 = (this->fields).pendingPlayers;
-    if (pDVar1 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) goto code_?;
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
-            Dictionary_2_System_Int32_System_Single__ContainsKey
-                      ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,actorNr,
-                       MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
+      pDVar1 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(this->fields).players;
+      if (pDVar1 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+        iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
+                Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                          (pDVar1,actorNr,
+                           MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
+                           ->klass->rgctx_data[0x21].method);
+        if (-1 < iVar2) {
+          pDVar7 = (this->fields).players;
+          if (pDVar7 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) goto code_?;
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+          Dictionary_2_System_Int32_System_Object__Remove
+                    ((Dictionary_2_System_Int32_System_Object_ *)pDVar7,actorNr,
+                     MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Remove_int_
+                    );
+          if ((this->fields).OnPlayerListChanged != (Action *)0x0) {
+            pAVar8 = (this->fields).OnPlayerListChanged;
+            (*(pAVar8->fields)._._.invoke_impl)
+                      ((pAVar8->fields)._._.method_code,(pAVar8->fields)._._.method);
+          }
+        }
+        pDVar1 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(this->fields).pendingPlayers;
+        if (pDVar1 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+          iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine
+                  ::Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                            (pDVar1,actorNr,
+                             MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
+                             ->klass->rgctx_data[0x21].method);
+          if (-1 < iVar2) {
+            pDVar7 = (this->fields).pendingPlayers;
+            if (pDVar7 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) goto code_?;
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+            Dictionary_2_System_Int32_System_Object__Remove
+                      ((Dictionary_2_System_Int32_System_Object_ *)pDVar7,actorNr,
+                       MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Remove_int_
                       );
-    if (bVar2 == 0) goto code_?;
+          }
+          return;
+        }
+      }
+    }
   }
-  func_?();
-  pEVar3 = (Exception *)func_?();
-  pSVar4 = (String *)func_?();
-  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar3,pSVar4,(MethodInfo *)0x0);
-  func_?();
-  func_?();
 code_?:
-  func_?();
-  pEVar3 = (Exception *)func_?();
-  pSVar4 = (String *)func_?();
-  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar3,pSVar4,(MethodInfo *)0x0);
-  uStack5 = func_?();
-  pEStack6 = pEVar3;
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -457,83 +512,121 @@ void Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_Reset
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__System_Collections_IEnumerator_Reset__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__System_Collections_IEnumerator_Reset__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  DStack_1._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
-  DStack_1._version = 0;
-  DStack_1._index = 0;
-  DStack_1._current.key = 0;
-  pDVar2 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).players;
-  DStack_1._current.value = (Object *)0x0;
-  DStack_1._getEnumeratorRetType = 0;
-  if (pDVar2 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-    pDVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
-             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       (&DStack_4,pDVar2,
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__GetEnumerator__
-                       );
-    pDStack_5 = pDVar3->_dictionary;
-    iStack_6 = pDVar3->_version;
-    iStack_7 = pDVar3->_index;
-    uStack_8 = (pDVar3->_current).key;
-    uStack_9 = *(undefined8 *)&(pDVar3->_current).value;
-    piVar10 = (int *)func_?(TypeInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>
-                                    ,&pDStack_5);
-    method_00 = 
-    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__System_Collections_IEnumerator_Reset__
-    ;
-    uVar11 = CONCAT44(TypeInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>
-                     ,piVar10);
-    if (piVar10 != (int *)0x0) {
-      if (*(Il2CppClass **)(*piVar10 + 0x20) !=
+  pDVar1 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).players;
+  if (pDVar1 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
+    if (iRam_? != 0) {
+      uVar2 = (uint)((ulonglong)&pDStack_3 >> 0xc);
+      lVar4 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar7 = uVar5 == *puVar6;
+        if (bVar7) {
+          *puVar6 = uVar5 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    uStack_8 = (ulonglong)(uint)(pDVar1->fields)._version;
+    uStack_9 = 2;
+    uStack_10 = 0;
+    uStack_11 = 0;
+    uStack_12 = uStack_8;
+    uStack_13 = 2;
+    uStack_14 = 0;
+    uStack_15 = 0;
+    pDStack_3 = pDVar1;
+    pDStack_16 = pDVar1;
+    plVar17 = (longlong *)
+             FUN_?(TypeInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>
+                           ,&pDStack_16);
+    if (plVar17 != (longlong *)0x0) {
+      if (*(Il2CppClass **)(*plVar17 + 0x40) !=
           (
           TypeInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>
-          ->_0).element_class) goto code_?;
-      pDVar3 = (Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-               func_?(piVar10);
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::
-      UInt32,System::Object]::
-      Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__System_Collections_IEnumerator_Reset
-                (pDVar3,method_00);
-      pDVar2 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).players;
-      if (pDVar2 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-        pDVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
-                 Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                           (&DStack_4,pDVar2,
-                            MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__GetEnumerator__
-                           );
-        DStack_1._dictionary = pDVar3->_dictionary;
-        DStack_1._version = pDVar3->_version;
-        DStack_1._index = pDVar3->_index;
-        DStack_1._current.key = (pDVar3->_current).key;
-        DStack_1._16_8_ = *(undefined8 *)&(pDVar3->_current).value;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::
-        UInt32,System::Object]::
-        Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                  (&DStack_1,
-                   MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
-                  );
+          ->_0).element_class) {
+        FUN_?(plVar17);
+        pcVar18 = (code *)swi(3);
+        (*pcVar18)();
         return;
+      }
+      if (plVar17[2] != 0) {
+        if ((int)plVar17[3] != *(int *)(plVar17[2] + 0x2c)) {
+          mscorlib.dll::System::ThrowHelper::
+          ThrowHelper_1_ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion
+                    ((MethodInfo *)0x0);
+          pcVar18 = (code *)swi(3);
+          (*pcVar18)();
+          return;
+        }
+        *(undefined4 *)((longlong)plVar17 + 0x1c) = 0;
+        plVar17[4] = 0;
+        plVar17[5] = 0;
+        DStack_19._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).players;
+        if (DStack_19._dictionary != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
+          uStack_11 = 0;
+          uStack_10 = 0;
+          if (iRam_? != 0) {
+            uVar2 = (uint)((ulonglong)&pDStack_3 >> 0xc);
+            lVar4 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+            do {
+              uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+              puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+              LOCK();
+              bVar7 = uVar5 == *puVar6;
+              if (bVar7) {
+                *puVar6 = uVar5 | 1L << (uVar2 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar7);
+          }
+          uStack_8 = (ulonglong)(uint)((DStack_19._dictionary)->fields)._version;
+          uStack_9 = 2;
+          DStack_19._current.key = 0;
+          DStack_19._current._4_4_ = 0;
+          DStack_19._current.value = (Object *)0x0;
+          DStack_19._version = (undefined4)uStack_8;
+          DStack_19._index = uStack_8._4_4_;
+          DStack_19._getEnumeratorRetType = 2;
+          DStack_19._36_4_ = 0;
+          pDStack_3 = DStack_19._dictionary;
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::
+          UInt32,System::Object]::
+          Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                    (&DStack_19,
+                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
+                    );
+          return;
+        }
       }
     }
   }
-  uVar11 = func_?();
-code_?:
-  func_?(uVar11);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  FUN_?();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -544,139 +637,153 @@ void Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_SetPlayerReady
                (MVPlayerContainer *this,int32_t actorNr,bool observer,MethodInfo *method)
 
 {
+  uVar1 = SUB84(method,0);
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Add_int__MVPlayer_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Remove_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Item_int_
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Add_int__MVPlayer_
+                  ,CONCAT44(in_register_00000014,actorNr),CONCAT71(in_register_00000081,observer),
+                  uVar1);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Remove_int_)
+    ;
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pDVar1 = (this->fields).pendingPlayers;
-  if (pDVar1 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
+  pDVar2 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(this->fields).pendingPlayers;
+  if (pDVar2 == (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
 code_?:
-    func_?();
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  iVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
+          Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                    (pDVar2,actorNr,
+                     MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
+                     ->klass->rgctx_data[0x21].method);
+  if (iVar4 < 0) {
+    pDVar2 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(this->fields).players;
+    if (pDVar2 == (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) goto code_?;
+    iVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
+            Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                      (pDVar2,actorNr,
+                       MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
+                       ->klass->rgctx_data[0x21].method);
+    if ((-1 < iVar4) && (observer == 0)) {
+      uVar5 = func_?(&TypeInfo__System__Exception);
+      pEVar6 = (Exception *)func_?(uVar5);
+      pSVar7 = (String *)func_?(&StringLiteral_Player_already_added_to_players_);
+      mscorlib.dll::System::Exception::Exception__ctor_1(pEVar6,pSVar7,(MethodInfo *)0x0);
+      uVar5 = func_?(&MethodInfo__MVPlayerContainer__SetPlayerReady_int__bool_);
+      FUN_?(pEVar6,uVar5);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+  }
+  pDVar2 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(this->fields).pendingPlayers;
+  if (pDVar2 == (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) goto code_?;
+  iVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
+          Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                    (pDVar2,actorNr,
+                     MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
+                     ->klass->rgctx_data[0x21].method);
+  if (iVar4 < 0) {
+    if (observer != 0) {
+      return;
+    }
+    uVar5 = func_?(&TypeInfo__System__Exception);
+    pEVar6 = (Exception *)func_?(uVar5);
+    pSVar7 = (String *)func_?(&StringLiteral_Pending_player_not_found);
+    mscorlib.dll::System::Exception::Exception__ctor_1(pEVar6,pSVar7,(MethodInfo *)0x0);
+    uVar5 = func_?(&MethodInfo__MVPlayerContainer__SetPlayerReady_int__bool_);
+    FUN_?(pEVar6,uVar5);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pDVar8 = (this->fields).pendingPlayers;
+  if (pDVar8 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) goto code_?;
+  value = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+          Dictionary_2_System_Int32_System_Object__get_Item
+                    ((Dictionary_2_System_Int32_System_Object_ *)pDVar8,actorNr,
+                     MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Item_int_
+                    );
+  pDVar8 = (this->fields).pendingPlayers;
+  if (((pDVar8 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) ||
+      (mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+       Dictionary_2_System_Int32_System_Object__Remove
+                 ((Dictionary_2_System_Int32_System_Object_ *)pDVar8,actorNr,
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Remove_int_),
+      value == (Object *)0x0)) ||
+     (pDVar8 = (this->fields).players, pDVar8 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0))
+  goto code_?;
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+  Dictionary_2_System_Int32_System_Object__TryInsert
+            ((Dictionary_2_System_Int32_System_Object_ *)pDVar8,
+             *(int32_t *)((longlong)&value[5].monitor + 4),value,
+             CONCAT31((int3)((uint)uVar1 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Add_int__MVPlayer_
+             ->klass->rgctx_data[0x22].method);
+  if (observer == 0) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Debug);
+      LOCK();
+      UNLOCK();
+      FUN_?(&StringLiteral_Player_already_ready);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(char *)&value[8].klass == '\x01') {
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                ((Object *)StringLiteral_Player_already_ready,(MethodInfo *)0x0);
+      if (*(char *)&value[8].klass == '\x01') goto code_?;
+    }
+    *(undefined1 *)&value[8].klass = 1;
+    if (value[4].monitor == (MonitorData *)0x0) goto code_?;
+    pOVar9 = (Object__Class *)value[4].monitor;
   }
   else {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
-            Dictionary_2_System_Int32_System_Single__ContainsKey
-                      ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,actorNr,
-                       MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
-                      );
-    if (bVar2 != 0) {
-code_?:
-      pDVar1 = (this->fields).pendingPlayers;
-      if (pDVar1 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
-        bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                Single]::Dictionary_2_System_Int32_System_Single__ContainsKey
-                          ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,actorNr,
-                           MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
-                          );
-        if (bVar2 == 0) {
-          if (observer != 0) {
-            return;
-          }
-          goto code_?;
-        }
-        pDVar1 = (this->fields).pendingPlayers;
-        if (pDVar1 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
-          value = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                  Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                            ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,actorNr,
-                             MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Item_int_
-                            );
-          pDVar1 = (this->fields).pendingPlayers;
-          if (((pDVar1 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) &&
-              (mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-               Object]::Dictionary_2_System_Int32_System_Object__Remove
-                         ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,actorNr,
-                          MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Remove_int_
-                         ), value != (Object *)0x0)) &&
-             (pDVar1 = (this->fields).players, pDVar1 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0)
-             ) {
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-            Dictionary_2_System_Int32_System_Object__Add
-                      ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,(int32_t)value[6].klass,
-                       value,
-                       MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Add_int__MVPlayer_
-                      );
-            observer = (bool)actorNr;
-            if (observer == 0) {
-              if (cRam_? == '\0') {
-                func_?();
-                func_?();
-                cRam_? = '\x01';
-              }
-              if (*(char *)&value[8].monitor == '\x01') {
-                if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?();
-                }
-                UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                          ((Object *)StringLiteral_Player_already_ready,(MethodInfo *)0x0);
-                if (*(char *)&value[8].monitor == '\x01') goto code_?;
-              }
-              *(undefined1 *)&value[8].monitor = 1;
-              if (value[4].monitor == (MonitorData *)0x0) goto code_?;
-              pOVar3 = (Object__Class *)value[4].monitor;
-            }
-            else {
-              if ((*(char *)&value[8].monitor == '\x03') ||
-                 (*(undefined1 *)&value[8].monitor = 3, value[5].klass == (Object__Class *)0x0))
-              goto code_?;
-              pOVar3 = value[5].klass;
-            }
-            (*(code *)(pOVar3->_0).namespaze)();
-code_?:
-            if ((this->fields).OnPlayerListChanged != (Action *)0x0) {
-              pAVar4 = (this->fields).OnPlayerListChanged;
-              pvStack5 = (pAVar4->fields)._._.method;
-              (*(pAVar4->fields)._._.invoke_impl)();
-            }
-            if ((actorNr == (this->fields).localPlayerActorNumber) &&
-               ((this->fields).OnLocalPlayerReady != (Action *)0x0)) {
-              pAVar4 = (this->fields).OnLocalPlayerReady;
-              pvStack5 = (pAVar4->fields)._._.method;
-              (*(pAVar4->fields)._._.invoke_impl)();
-              (this->fields).OnLocalPlayerReady = (Action *)0x0;
-              func_?();
-            }
-            return;
-          }
-        }
-      }
-      goto code_?;
-    }
-    pDVar1 = (this->fields).players;
-    if (pDVar1 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) goto code_?;
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
-            Dictionary_2_System_Int32_System_Single__ContainsKey
-                      ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,actorNr,
-                       MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__ContainsKey_int_
-                      );
-    if ((bVar2 == 0) || (observer != 0)) goto code_?;
+    if ((*(char *)&value[8].klass == '\x03') ||
+       (*(undefined1 *)&value[8].klass = 3, value[5].klass == (Object__Class *)0x0))
+    goto code_?;
+    pOVar9 = value[5].klass;
   }
-  func_?();
-  pEVar6 = (Exception *)func_?();
-  pSVar7 = (String *)func_?();
-  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar6,pSVar7,(MethodInfo *)0x0);
-  func_?();
-  func_?();
+  uVar5._0_2_ = (pOVar9->_0).byval_arg.attrs;
+  uVar5._2_1_ = (pOVar9->_0).byval_arg.type;
+  uVar5._3_5_ = *(undefined5 *)&(pOVar9->_0).byval_arg.field_0xb;
+  (*(code *)(pOVar9->_0).namespaze)((pOVar9->_0).element_class,uVar5);
 code_?:
-  func_?();
-  pEVar6 = (Exception *)func_?();
-  pSVar7 = (String *)func_?();
-  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar6,pSVar7,(MethodInfo *)0x0);
-  func_?();
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  if ((this->fields).OnPlayerListChanged != (Action *)0x0) {
+    pAVar10 = (this->fields).OnPlayerListChanged;
+    (*(pAVar10->fields)._._.invoke_impl)
+              ((pAVar10->fields)._._.method_code,(pAVar10->fields)._._.method);
+  }
+  if ((actorNr == (this->fields).localPlayerActorNumber) &&
+     ((this->fields).OnLocalPlayerReady != (Action *)0x0)) {
+    pAVar10 = (this->fields).OnLocalPlayerReady;
+    (*(pAVar10->fields)._._.invoke_impl)
+              ((pAVar10->fields)._._.method_code,(pAVar10->fields)._._.method);
+    (this->fields).OnLocalPlayerReady = (Action *)0x0;
+    func_?(&(this->fields).OnLocalPlayerReady);
+  }
   return;
 }
 
@@ -690,35 +797,51 @@ MVPlayerContainer_System_Collections_IEnumerable_GetEnumerator
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__GetEnumerator__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).players;
-  if (this_00 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-    pDVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
-             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       (&DStack_2,this_00,
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__GetEnumerator__
-                       );
-    pDStack_3 = pDVar1->_dictionary;
-    iStack_4 = pDVar1->_version;
-    iStack_5 = pDVar1->_index;
-    uStack_6 = (pDVar1->_current).key;
-    uStack_7 = *(undefined8 *)&(pDVar1->_current).value;
-    pIVar8 = (IEnumerator *)
-             func_?(TypeInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>
-                             ,&pDStack_3);
-    return pIVar8;
+  pDStack_1 = (this->fields).players;
+  if (pDStack_1 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    pIVar3 = (IEnumerator *)(*pcVar2)();
+    return pIVar3;
   }
-  func_?();
-  pcVar9 = (code *)swi(3);
-  pIVar8 = (IEnumerator *)(*pcVar9)();
-  return pIVar8;
+  uStack_4 = 0;
+  uStack_5 = 0;
+  if (iRam_? != 0) {
+    uVar6 = (uint)((ulonglong)&pDStack_1 >> 0xc);
+    puVar7 = (ulonglong *)((ulonglong)((uVar6 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar8 = *puVar7;
+      LOCK();
+      uVar9 = *puVar7;
+      if (uVar8 == uVar9) {
+        *puVar7 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar8 != uVar9);
+  }
+  uStack_10 = (ulonglong)(uint)(pDStack_1->fields)._version;
+  uStack_11 = 2;
+  uStack_12 = 0;
+  uStack_13 = 0;
+  uStack_14 = uStack_10;
+  uStack_15 = 2;
+  pDStack_16 = pDStack_1;
+  pIVar3 = (IEnumerator *)
+           FUN_?(TypeInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>
+                         ,&pDStack_16);
+  return pIVar3;
 }
 
 
@@ -729,12 +852,15 @@ bool Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_TryGetForStateCha
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__TryGetValue_int__MVPlayer__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__TryGetValue_int__MVPlayer__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pDVar1 = (this->fields).players;
+  pMStackX_8 = (MVPlayer *)0x0;
   if (pDVar1 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
     bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
             Dictionary_2_System_Int32_System_Object__TryGetValue
@@ -746,18 +872,17 @@ bool Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_TryGetForStateCha
     }
     pDVar1 = (this->fields).pendingPlayers;
     if (pDVar1 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
-      value = (MVPlayer__Class *)&stack0xfffffff8;
       bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
               ::Dictionary_2_System_Int32_System_Object__TryGetValue
-                        ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,actorNr,(Object **)value
-                         ,
+                        ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,actorNr,
+                         (Object **)&pMStackX_8,
                          MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__TryGetValue_int__MVPlayer__
                         );
       if (bVar2 != 0) {
-        if (value == (MVPlayer__Class *)0x0) goto code_?;
-        if (*(uint8_t *)&(value->_0).events == 3) {
-          *player = (MVPlayer *)value;
-          func_?();
+        if (pMStackX_8 == (MVPlayer *)0x0) goto code_?;
+        if ((pMStackX_8->fields).playerState == 3) {
+          *player = pMStackX_8;
+          func_?(player);
           return 1;
         }
       }
@@ -765,7 +890,7 @@ bool Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_TryGetForStateCha
     }
   }
 code_?:
-  func_?();
+  FUN_?();
   pcVar3 = (code *)swi(3);
   bVar2 = (*pcVar3)();
   return bVar2;
@@ -778,95 +903,141 @@ bool Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_TryGetPlayerByPro
                (MVPlayerContainer *this,int32_t profileId,MVPlayer **player,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (profileId < 1) {
     *player = (MVPlayer *)0x0;
     func_?(player);
-    uVar4 = func_?(&TypeInfo__System__Exception);
-    this_01 = (Exception *)func_?(uVar4);
-    method_00 = (MethodInfo *)0x0;
+    uVar1 = func_?(&TypeInfo__System__Exception);
+    this_00 = (Exception *)func_?(uVar1);
     message = (String *)func_?(&StringLiteral_Trying_to_get_tourist_profile_by);
-    mscorlib.dll::System::Exception::Exception__ctor_1(this_01,message,method_00);
-    func_?(&MethodInfo__MVPlayerContainer__TryGetPlayerByProfileId_int__MVPlayer__);
-    func_?();
+    mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
+    uVar1 = func_?(&
+                                MethodInfo__MVPlayerContainer__TryGetPlayerByProfileId_int__MVPlayer__
+                               );
+    FUN_?(this_00,uVar1);
+code_?:
+    FUN_?();
+code_?:
+    FUN_?();
+    uVar2 = uStack_3;
+code_?:
+    uStack_3 = uVar2;
+    FUN_?();
+code_?:
+    FUN_?();
+code_?:
+    mscorlib.dll::System::ThrowHelper::
+    ThrowHelper_1_ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion
+              ((MethodInfo *)0x0);
   }
   else {
-    this_00 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-               *)MVPlayerContainer_get_ActivePlayers(this,(MethodInfo *)0x0);
-    if (this_00 !=
-        (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-         *)0x0) {
-      pDVar5 = mscorlib.dll::System::Collections::Generic::
-               Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
-               StyleSheetCache+SheetHandleKey,System::Object]::
-               Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                         ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                           *)&stack0xffffffd8,this_00,
-                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
-                         );
-      pMVar6 = (MVPlayer *)pDVar5->_currentValue;
-      uStack_1 = 1;
-      while( true ) {
-        bVar7 = mscorlib.dll::System::Collections::Generic::
-                Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                UInt32,System::Object]::
-                Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                          ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                            *)&stack0xffffffc8,
-                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
-                          );
-        if (bVar7 == 0) {
-          uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&stack0xffffffc8,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
-                     ,in_stack_8);
-          uStack_1 = 0xffffffff;
-          *player = (MVPlayer *)0x0;
-          func_?();
-          *unaff_FS_OFFSET = uStack_3;
+    pDVar4 = MVPlayerContainer_get_ActivePlayers(this,(MethodInfo *)0x0);
+    if (pDVar4 == (Dictionary_2_TKey_TValue_ValueCollection_System_Int32_MVPlayer_ *)0x0) {
+      FUN_?();
+      pcVar5 = (code *)swi(3);
+      bVar6 = (*pcVar5)();
+      return bVar6;
+    }
+    uStack_7 = (pDVar4->fields)._dictionary;
+    puStack_8 = (undefined4 *)0x0;
+    uStack_9 = 0;
+    if (iRam_? != 0) {
+      uVar2 = (uint)((ulonglong)&uStack_7 >> 0xc);
+      lVar10 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar11 = *(ulonglong *)(lVar10 + 0xADDR);
+        puVar12 = (ulonglong *)(lVar10 + 0xADDR);
+        LOCK();
+        bVar13 = uVar11 == *puVar12;
+        if (bVar13) {
+          *puVar12 = uVar11 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar13);
+    }
+    if (uStack_7 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
+      FUN_?();
+      pcVar5 = (code *)swi(3);
+      bVar6 = (*pcVar5)();
+      return bVar6;
+    }
+    iStack_14 = (uStack_7->fields)._version;
+    pMVar15 = (MVPlayer *)0x0;
+    uStack_9 = 0;
+    uStack_7._4_4_ = (undefined4)((ulonglong)uStack_7 >> 0x20);
+    uStack_16 = (undefined4)uStack_7;
+    uStack_17 = uStack_7._4_4_;
+    uStack_3 = 0;
+    pMStack_18 = (MVPlayer *)0x0;
+    uStack_7 = (Dictionary_2_System_Int32_MVPlayer_ *)0x0;
+    puStack_8 = &uStack_16;
+    while (lVar10 = CONCAT44(uStack_17,uStack_16), lVar10 != 0) {
+      if (iStack_14 != *(int *)(lVar10 + 0x2c)) goto code_?;
+      do {
+        if (lVar10 == 0) goto code_?;
+        if (*(uint *)(lVar10 + 0x20) <= uStack_3) {
+          *player = pMVar15;
+          if (iRam_? != 0) {
+            uVar2 = (uint)((ulonglong)player >> 0xc);
+            lVar10 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+            do {
+              uVar11 = *(ulonglong *)(lVar10 + 0xADDR);
+              puVar12 = (ulonglong *)(lVar10 + 0xADDR);
+              LOCK();
+              bVar13 = uVar11 == *puVar12;
+              if (bVar13) {
+                *puVar12 = uVar11 | 1L << (uVar2 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar13);
+          }
           return 0;
         }
-        if (pMVar6 == (MVPlayer *)0x0) break;
-        if ((pMVar6->fields)._ProfileID_k__BackingField == profileId) {
-          *player = pMVar6;
-          func_?();
-          uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&stack0xffffffc8,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
-                     ,in_stack_8);
-          *unaff_FS_OFFSET = uStack_3;
-          return 1;
-        }
+        lVar19 = *(longlong *)(lVar10 + 0x18);
+        lVar20 = (longlong)(int)uStack_3;
+        uVar2 = uStack_3 + 1;
+        if (lVar19 == 0) goto code_?;
+        bVar13 = *(uint *)(lVar19 + 0x18) <= uStack_3;
+        uStack_3 = uVar2;
+        if (bVar13) goto code_?;
+      } while (*(int *)(lVar19 + 0x20 + lVar20 * 0x18) < 0);
+      pMStack_18 = *(MVPlayer **)(lVar19 + (lVar20 + 2) * 0x18);
+      func_?();
+      if (pMStack_18 == (MVPlayer *)0x0) goto code_?;
+      if ((pMStack_18->fields)._ProfileID_k__BackingField == profileId) {
+        *player = pMStack_18;
+        func_?(player);
+        return 1;
       }
     }
   }
-  func_?();
-  func_?();
-  pcVar9 = (code *)swi(3);
-  bVar7 = (*pcVar9)();
-  return bVar7;
+  FUN_?();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  bVar6 = (*pcVar5)();
+  return bVar6;
 }
 
 
@@ -877,24 +1048,58 @@ bool Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_TryGetValue
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__TryGetValue_int__MVPlayer__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).players;
-  if (this_00 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-            Dictionary_2_System_Int32_System_Object__TryGetValue
-                      ((Dictionary_2_System_Int32_System_Object_ *)this_00,actorNr,(Object **)player
-                       ,
-                       MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__TryGetValue_int__MVPlayer__
-                      );
-    return bVar1;
+  this_00 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(this->fields).players;
+  if (this_00 == (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    bVar2 = (*pcVar1)();
+    return bVar2;
   }
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  bVar1 = (*pcVar3)();
-  return bVar1;
+  uVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
+          Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                    (this_00,actorNr,
+                     MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__TryGetValue_int__MVPlayer__
+                     ->klass->rgctx_data[0x21].method);
+  if ((int)uVar3 < 0) {
+    *player = (MVPlayer *)0x0;
+    return 0;
+  }
+  pDVar4 = (this_00->fields)._entries;
+  if (pDVar4 == (Dictionary_2_TKey_TValue_Entry_System_Int32_UnityEngine_Vector3___Array *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    bVar2 = (*pcVar1)();
+    return bVar2;
+  }
+  if ((uint)pDVar4->max_length <= uVar3) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    bVar2 = (*pcVar1)();
+    return bVar2;
+  }
+  bVar5 = iRam_? != 0;
+  *player = *(MVPlayer **)&pDVar4->vector[(int)uVar3].value.y;
+  if (bVar5) {
+    uVar3 = (uint)((ulonglong)player >> 0xc);
+    puVar6 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar7 = *puVar6;
+      LOCK();
+      uVar8 = *puVar6;
+      if (uVar7 == uVar8) {
+        *puVar6 = uVar7 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar7 != uVar8);
+  }
+  return 1;
 }
 
 
@@ -904,35 +1109,28 @@ void Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_UpdateTeam
                (MVPlayerContainer *this,int32_t actorNr,MVTeam__Enum team,MethodInfo *method)
 
 {
-  pMVar1 = MVPlayerContainer_GetPlayerUnsafe(this,actorNr,(MethodInfo *)0x0);
-  if (pMVar1 != (MVPlayer *)0x0) {
-    (pMVar1->fields)._Team_k__BackingField = team;
-    if ((pMVar1->fields).playerState == 1) {
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__MVLocalPlayer);
-        cRam_? = '\x01';
-      }
-      pMVar2 = MVPlayerContainer_GetPlayerUnsafe
-                         (this,(this->fields).localPlayerActorNumber,(MethodInfo *)0x0);
-      if (pMVar2 != (MVPlayer *)0x0) {
-        if (((pMVar2->klass->_1).naturalAligment < (TypeInfo__MVLocalPlayer->_1).naturalAligment) ||
-           ((pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVLocalPlayer->_1).naturalAligment - 1] !=
-            (Il2CppClass *)TypeInfo__MVLocalPlayer)) goto code_?;
-        if ((pMVar1 == pMVar2) && ((this->fields).OnLocalPlayerTeamChanged != (Action *)0x0)) {
-          (*(((this->fields).OnLocalPlayerTeamChanged)->fields)._._.invoke_impl)();
-        }
+  pMVar1 = (MVLocalPlayer *)MVPlayerContainer_GetPlayerUnsafe(this,actorNr,(MethodInfo *)0x0);
+  if (pMVar1 != (MVLocalPlayer *)0x0) {
+    uVar2 = (pMVar1->fields)._.playerState;
+    (pMVar1->fields)._._Team_k__BackingField = team;
+    if (uVar2 == 1) {
+      pMVar3 = MVPlayerContainer_get_LocalPlayer(this,(MethodInfo *)0x0);
+      if ((pMVar1 == pMVar3) && ((this->fields).OnLocalPlayerTeamChanged != (Action *)0x0)) {
+        pAVar4 = (this->fields).OnLocalPlayerTeamChanged;
+        (*(pAVar4->fields)._._.invoke_impl)
+                  ((pAVar4->fields)._._.method_code,(pAVar4->fields)._._.method);
       }
       if ((this->fields).OnPlayerListChanged != (Action *)0x0) {
-        (*(((this->fields).OnPlayerListChanged)->fields)._._.invoke_impl)();
+        pAVar4 = (this->fields).OnPlayerListChanged;
+        (*(pAVar4->fields)._._.invoke_impl)
+                  ((pAVar4->fields)._._.method_code,(pAVar4->fields)._._.method);
       }
     }
     return;
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -944,119 +1142,137 @@ void Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_UpdateTeamForPlay
                MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffa0;
-  puVar5 = &stack0xffffffa0;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<int,_MVPlayer>__get_Value__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<int,_MVPlayer>__get_Value__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
-  DStack_6._version = 0;
-  DStack_6._index = 0;
-  DStack_6._current.key = 0;
-  DStack_6._current.value = (Object *)0x0;
-  DStack_6._getEnumeratorRetType = 0;
-  pDVar7 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).pendingPlayers;
-  if (pDVar7 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
-             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       (&DStack_9,pDVar7,
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__GetEnumerator__
-                       );
+  pDVar1 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).pendingPlayers;
+  if (pDVar1 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
+    if (iRam_? != 0) {
+      uVar2 = (uint)((ulonglong)&pDStack_3 >> 0xc);
+      lVar4 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar7 = uVar5 == *puVar6;
+        if (bVar7) {
+          *puVar6 = uVar5 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    uStack_8 = (ulonglong)(uint)(pDVar1->fields)._version;
+    uStack_9 = 2;
     uStack_10 = 0;
-    DStack_6._dictionary = pDVar8->_dictionary;
-    DStack_6._version = pDVar8->_version;
-    DStack_6._index = pDVar8->_index;
-    DStack_6._current.key = (pDVar8->_current).key;
-    DStack_6._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
-    uStack_1 = 1;
-    pDStack_11 = &DStack_6;
-    while( true ) {
-      bVar12 = mscorlib.dll::System::Collections::Generic::
-              Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
-              Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                        (&DStack_6,
-                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
-                        );
-      if (bVar12 == 0) break;
-      if (DStack_6._current.value == (Object *)0x0) goto code_?;
-      if (DStack_6._current.value[9].klass == (Object__Class *)removedTeam) {
+    uStack_11 = 0;
+    DStack_12._version = (undefined4)uStack_8;
+    DStack_12._index = uStack_8._4_4_;
+    DStack_12._current.key = 0;
+    DStack_12._current._4_4_ = 0;
+    DStack_12._current.value = (Object *)0x0;
+    DStack_12._getEnumeratorRetType = 2;
+    DStack_12._36_4_ = 0;
+    pDStack_3 = pDVar1;
+    DStack_12._dictionary = pDVar1;
+    while (bVar13 = mscorlib.dll::System::Collections::Generic::
+                   Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
+                   Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                             (&DStack_12,
+                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
+                             ), bVar13 != 0) {
+      if (DStack_12._current.value == (Object *)0x0) {
+        FUN_?();
+        FUN_?();
+        goto code_?;
+      }
+      if (*(MVTeam__Enum *)((longlong)&DStack_12._current.value[8].klass + 4) == removedTeam) {
         MVPlayerContainer_UpdateTeam
-                  (this,(int32_t)DStack_6._current.value[6].klass,defaultTeam,(MethodInfo *)0x0);
+                  (this,*(int32_t *)((longlong)&DStack_12._current.value[5].monitor + 4),defaultTeam
+                   ,(MethodInfo *)0x0);
       }
     }
-    uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&DStack_6,
-               (ExceptionArgument__Enum)
-               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
-               ,in_stack_13);
-    uStack_1 = 0xffffffff;
-    pDVar7 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).players;
-    if (pDVar7 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-      pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
-               Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                         (&DStack_9,pDVar7,
-                          MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__GetEnumerator__
-                         );
+    pDVar1 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).players;
+    if (pDVar1 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
       uStack_10 = 0;
-      DStack_6._dictionary = pDVar8->_dictionary;
-      DStack_6._version = pDVar8->_version;
-      DStack_6._index = pDVar8->_index;
-      DStack_6._current.key = (pDVar8->_current).key;
-      DStack_6._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
-      uStack_1 = 4;
-      pDStack_11 = &DStack_6;
+      uStack_11 = 0;
+      if (iRam_? != 0) {
+        uVar2 = (uint)((ulonglong)&pDStack_3 >> 0xc);
+        lVar4 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+          puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+          LOCK();
+          bVar7 = uVar5 == *puVar6;
+          if (bVar7) {
+            *puVar6 = uVar5 | 1L << (uVar2 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar7);
+      }
+      uStack_8 = (ulonglong)(uint)(pDVar1->fields)._version;
+      uStack_9 = 2;
+      DStack_12._version = (undefined4)uStack_8;
+      DStack_12._index = uStack_8._4_4_;
+      DStack_12._current.key = 0;
+      DStack_12._current._4_4_ = 0;
+      DStack_12._current.value = (Object *)0x0;
+      DStack_12._getEnumeratorRetType = 2;
+      DStack_12._36_4_ = 0;
+      pDStack_3 = pDVar1;
+      DStack_12._dictionary = pDVar1;
       while( true ) {
-        bVar12 = mscorlib.dll::System::Collections::Generic::
+        bVar13 = mscorlib.dll::System::Collections::Generic::
                 Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
                 Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                          (&DStack_6,
+                          (&DStack_12,
                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
                           );
-        if (bVar12 == 0) {
-          uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&DStack_6,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
-                     ,unaff_EDI);
-          *unaff_FS_OFFSET = uStack_3;
+        if (bVar13 == 0) {
           return;
         }
-        if (DStack_6._current.value == (Object *)0x0) break;
-        if (DStack_6._current.value[9].klass == (Object__Class *)removedTeam) {
+        if (DStack_12._current.value == (Object *)0x0) break;
+        if (*(MVTeam__Enum *)((longlong)&DStack_12._current.value[8].klass + 4) == removedTeam) {
           MVPlayerContainer_UpdateTeam
-                    (this,(int32_t)DStack_6._current.value[6].klass,defaultTeam,(MethodInfo *)0x0);
+                    (this,*(int32_t *)((longlong)&DStack_12._current.value[5].monitor + 4),
+                     defaultTeam,(MethodInfo *)0x0);
         }
       }
+code_?:
+      FUN_?();
+      FUN_?();
+      pcVar14 = (code *)swi(3);
+      (*pcVar14)();
+      return;
     }
   }
-code_?:
-  uVar14 = func_?();
-  func_?(uVar14);
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  FUN_?();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -1068,34 +1284,62 @@ void Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Dictionary__
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>);
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pDVar1 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)
-           func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>);
+           FUN_?(TypeInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
   ::TextResourceManager+FontAssetRef]::
   Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
             (pDVar1,
              MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Dictionary__);
+  bVar2 = iRam_? != 0;
   (this->fields).players = (Dictionary_2_System_Int32_MVPlayer_ *)pDVar1;
-  func_?(&this->fields,pDVar1);
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&this->fields >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
   pDVar1 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *)
-           func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>);
+           FUN_?(TypeInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
   ::TextResourceManager+FontAssetRef]::
   Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
             (pDVar1,
              MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__Dictionary__);
-  method_00 = (MethodInfo *)&(this->fields).pendingPlayers;
+  bVar2 = iRam_? != 0;
   (this->fields).pendingPlayers = (Dictionary_2_System_Int32_MVPlayer_ *)pDVar1;
-  func_?(method_00,pDVar1);
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).pendingPlayers >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
   (this->fields).localPlayerActorNumber = -1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
   return;
 }
 
@@ -1108,99 +1352,191 @@ Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_get_ActivePlayers
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Values__
-                   );
-    func_?(&
-                    System__Collections__Generic__Dictionary<int,_MVPlayer>_MethodInfo__System__Linq__Enumerable__ToDictionary<MVPlayer,_int>_System__Collections__Generic__IEnumerable<MVPlayer>__System__Func<MVPlayer,_int>_
-                   );
-    func_?(&
-                    System__Collections__Generic__IEnumerable<MVPlayer>_MethodInfo__System__Linq__Enumerable__Where<MVPlayer>_System__Collections__Generic__IEnumerable<MVPlayer>__System__Func<MVPlayer,_bool>_
-                   );
-    func_?(&TypeInfo__System__Func<MVPlayer,_bool>);
-    func_?(&TypeInfo__System__Func<MVPlayer,_int>);
-    func_?(&MethodInfo__MVPlayerContainer____c___get_ActivePlayers_b__28_0_MVPlayer_);
-    func_?(&MethodInfo__MVPlayerContainer____c___get_ActivePlayers_b__28_1_MVPlayer_);
-    func_?(&TypeInfo__MVPlayerContainer____c);
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Values__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  System__Collections__Generic__Dictionary<int,_MVPlayer>_MethodInfo__System__Linq__Enumerable__ToDictionary<MVPlayer,_int>_System__Collections__Generic__IEnumerable<MVPlayer>__System__Func<MVPlayer,_int>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  System__Collections__Generic__IEnumerable<MVPlayer>_MethodInfo__System__Linq__Enumerable__Where<MVPlayer>_System__Collections__Generic__IEnumerable<MVPlayer>__System__Func<MVPlayer,_bool>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Func<MVPlayer,_bool>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Func<MVPlayer,_int>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__MVPlayerContainer____c___get_ActivePlayers_b__28_0_MVPlayer_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__MVPlayerContainer____c___get_ActivePlayers_b__28_1_MVPlayer_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVPlayerContainer____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Values__
-                   );
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Values__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pDVar1 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-            *)(this->fields).players;
-  if (pDVar1 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                 *)0x0) {
-    pDVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
-             StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
-             Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
-                       (pDVar1,
+  this_00 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *
+            )(this->fields).players;
+  if (this_00 !=
+      (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *)0x0)
+  {
+    source = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+             TypeConverterRegistry+ConverterKey,System::Object]::
+             Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object__get_Values
+                       (this_00,
                         MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Values__
                        );
-    if ((TypeInfo__MVPlayerContainer____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MVPlayerContainer____c);
+    if (*(int *)&(TypeInfo__MVPlayerContainer____c->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__MVPlayerContainer____c);
     }
-    this_00 = TypeInfo__MVPlayerContainer____c->static_fields->__9__28_0;
-    if (this_00 == (Func_2_MVPlayer_Boolean_ *)0x0) {
-      if ((TypeInfo__MVPlayerContainer____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MVPlayerContainer____c);
+    this_01 = TypeInfo__MVPlayerContainer____c->static_fields->__9__28_0;
+    if (this_01 == (Func_2_MVPlayer_Boolean_ *)0x0) {
+      if (*(int *)&(TypeInfo__MVPlayerContainer____c->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__MVPlayerContainer____c);
       }
-      pMVar3 = TypeInfo__MVPlayerContainer____c->static_fields->__9;
-      this_00 = (Func_2_MVPlayer_Boolean_ *)func_?(TypeInfo__System__Func<MVPlayer,_bool>);
-      mscorlib.dll::System::Func`2[Object,Boolean]::Func_2_Object_Boolean___ctor
-                ((Func_2_Object_Boolean_ *)this_00,(Object *)pMVar3,
+      pMVar1 = TypeInfo__MVPlayerContainer____c->static_fields->__9;
+      this_01 = (Func_2_MVPlayer_Boolean_ *)FUN_?(TypeInfo__System__Func<MVPlayer,_bool>);
+      mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
+                ((Predicate_1_Object_ *)this_01,(Object *)pMVar1,
                  MethodInfo__MVPlayerContainer____c___get_ActivePlayers_b__28_0_MVPlayer_,
                  (MethodInfo *)0x0);
-      TypeInfo__MVPlayerContainer____c->static_fields->__9__28_0 = this_00;
-      func_?(&TypeInfo__MVPlayerContainer____c->static_fields->__9__28_0,this_00);
-    }
-    source = System.Core.dll::System::Linq::Enumerable::Enumerable_Where_2
-                       ((IEnumerable_1_System_Object_ *)pDVar2,(Func_2_Object_Boolean_ *)this_00,
-                        System__Collections__Generic__IEnumerable<MVPlayer>_MethodInfo__System__Linq__Enumerable__Where<MVPlayer>_System__Collections__Generic__IEnumerable<MVPlayer>__System__Func<MVPlayer,_bool>_
-                       );
-    if ((TypeInfo__MVPlayerContainer____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MVPlayerContainer____c);
-    }
-    this_01 = TypeInfo__MVPlayerContainer____c->static_fields->__9__28_1;
-    if (this_01 == (Func_2_MVPlayer_Int32_ *)0x0) {
-      if ((TypeInfo__MVPlayerContainer____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MVPlayerContainer____c);
+      TypeInfo__MVPlayerContainer____c->static_fields->__9__28_0 = this_01;
+      if (iRam_? != 0) {
+        uVar2 = (uint)((ulonglong)&TypeInfo__MVPlayerContainer____c->static_fields->__9__28_0 >>
+                       0xc);
+        lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+          puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+          LOCK();
+          bVar6 = uVar4 == *puVar5;
+          if (bVar6) {
+            *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar6);
       }
-      pMVar3 = TypeInfo__MVPlayerContainer____c->static_fields->__9;
-      this_01 = (Func_2_MVPlayer_Int32_ *)func_?(TypeInfo__System__Func<MVPlayer,_int>);
-      Newtonsoft.Json.dll::Newtonsoft::Json::Serialization::ObjectConstructor`1[Unity::IL2CPP::
-      Metadata::__Il2CppFullySharedGenericType]::
-      ObjectConstructor_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                ((ObjectConstructor_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
-                 (Object *)pMVar3,
+    }
+    source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Where_1
+                          ((IEnumerable_1_System_Object_ *)source,(Func_2_Object_Boolean_ *)this_01,
+                           System__Collections__Generic__IEnumerable<MVPlayer>_MethodInfo__System__Linq__Enumerable__Where<MVPlayer>_System__Collections__Generic__IEnumerable<MVPlayer>__System__Func<MVPlayer,_bool>_
+                          );
+    if (*(int *)&(TypeInfo__MVPlayerContainer____c->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__MVPlayerContainer____c);
+    }
+    this_02 = TypeInfo__MVPlayerContainer____c->static_fields->__9__28_1;
+    if (this_02 == (Func_2_MVPlayer_Int32_ *)0x0) {
+      if (*(int *)&(TypeInfo__MVPlayerContainer____c->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__MVPlayerContainer____c);
+      }
+      pMVar1 = TypeInfo__MVPlayerContainer____c->static_fields->__9;
+      this_02 = (Func_2_MVPlayer_Int32_ *)FUN_?(TypeInfo__System__Func<MVPlayer,_int>);
+      mscorlib.dll::System::Func`2[Object,Int32Enum]::Func_2_Object_Int32Enum___ctor
+                ((Func_2_Object_Int32Enum_ *)this_02,(Object *)pMVar1,
                  MethodInfo__MVPlayerContainer____c___get_ActivePlayers_b__28_1_MVPlayer_,
                  (MethodInfo *)0x0);
-      TypeInfo__MVPlayerContainer____c->static_fields->__9__28_1 = this_01;
-      func_?(&TypeInfo__MVPlayerContainer____c->static_fields->__9__28_1,this_01);
+      TypeInfo__MVPlayerContainer____c->static_fields->__9__28_1 = this_02;
+      if (iRam_? != 0) {
+        uVar2 = (uint)((ulonglong)&TypeInfo__MVPlayerContainer____c->static_fields->__9__28_1 >>
+                       0xc);
+        lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+          puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+          LOCK();
+          bVar6 = uVar4 == *puVar5;
+          if (bVar6) {
+            *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar6);
+      }
     }
-    pDVar1 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-              *)System.Core.dll::System::Linq::Enumerable::Enumerable_ToDictionary
-                          (source,(Func_2_Object_Int32_ *)this_01,
-                           System__Collections__Generic__Dictionary<int,_MVPlayer>_MethodInfo__System__Linq__Enumerable__ToDictionary<MVPlayer,_int>_System__Collections__Generic__IEnumerable<MVPlayer>__System__Func<MVPlayer,_int>_
-                          );
-    if (pDVar1 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                   *)0x0) {
-      pDVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
-               StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
-               Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
-                         (pDVar1,
-                          MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Values__
-                         );
-      return (Dictionary_2_TKey_TValue_ValueCollection_System_Int32_MVPlayer_ *)pDVar2;
+    pMVar7 = 
+    System__Collections__Generic__Dictionary<int,_MVPlayer>_MethodInfo__System__Linq__Enumerable__ToDictionary<MVPlayer,_int>_System__Collections__Generic__IEnumerable<MVPlayer>__System__Func<MVPlayer,_int>_
+    ;
+    if ((
+        System__Collections__Generic__Dictionary<int,_MVPlayer>_MethodInfo__System__Linq__Enumerable__ToDictionary<MVPlayer,_int>_System__Collections__Generic__IEnumerable<MVPlayer>__System__Func<MVPlayer,_int>_
+        ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(
+                   System__Collections__Generic__Dictionary<int,_MVPlayer>_MethodInfo__System__Linq__Enumerable__ToDictionary<MVPlayer,_int>_System__Collections__Generic__IEnumerable<MVPlayer>__System__Func<MVPlayer,_int>_
+                   );
+    }
+    elementSelector =
+         System.Core.dll::System::Linq::IdentityFunction`1[System::Object]::
+         IdentityFunction_1_System_Object__get_Instance((pMVar7->field7_0x38).rgctx_data[2].method);
+    pDVar8 = (Dictionary_2_System_Int32_MVPlayer_ *)
+             System.Core.dll::System::Linq::Enumerable::Enumerable_ToDictionary_9
+                       (source_00,(Func_2_Object_Int32_ *)this_02,elementSelector,
+                        (IEqualityComparer_1_System_Int32_ *)0x0,
+                        (pMVar7->field7_0x38).rgctx_data[5].method);
+    if (pDVar8 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
+      if ((pDVar8->fields)._values !=
+          (Dictionary_2_TKey_TValue_ValueCollection_System_Int32_MVPlayer_ *)0x0) {
+        return (pDVar8->fields)._values;
+      }
+      pvVar9 = MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Values__->
+               klass->rgctx_data[0x1d].rgctxDataDummy;
+      if ((*(byte *)((longlong)pvVar9 + 0x135) & 1) == 0) {
+        pvVar9 = (void *)FUN_?(pvVar9);
+      }
+      pDVar10 = (Dictionary_2_TKey_TValue_ValueCollection_System_Int32_MVPlayer_ *)
+               FUN_?(pvVar9);
+      iVar11 = iRam_?;
+      (pDVar10->fields)._dictionary = pDVar8;
+      if (iVar11 != 0) {
+        uVar2 = (uint)((ulonglong)&pDVar10->fields >> 0xc);
+        lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+          puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+          LOCK();
+          bVar6 = uVar4 == *puVar5;
+          if (bVar6) {
+            *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+          }
+          UNLOCK();
+          iVar11 = iRam_?;
+        } while (!bVar6);
+      }
+      (pDVar8->fields)._values = pDVar10;
+      if (iVar11 == 0) {
+        return pDVar10;
+      }
+      uVar2 = (uint)((ulonglong)&(pDVar8->fields)._values >> 0xc);
+      lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+        puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar5;
+        if (bVar6) {
+          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+      return (pDVar8->fields)._values;
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  pDVar5 = (Dictionary_2_TKey_TValue_ValueCollection_System_Int32_MVPlayer_ *)(*pcVar4)();
-  return pDVar5;
+  FUN_?();
+  pcVar12 = (code *)swi(3);
+  pDVar10 = (Dictionary_2_TKey_TValue_ValueCollection_System_Int32_MVPlayer_ *)(*pcVar12)();
+  return pDVar10;
 }
 
 
@@ -1211,27 +1547,20 @@ int32_t Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_get_Count
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Count__)
+    ;
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-             *)(this->fields).players;
-  if (this_00 !=
-      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-       *)0x0) {
-    iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
-            StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
-            Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
-                      (this_00,
-                       MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Count__
-                      );
-    return iVar1;
+  pDVar1 = (this->fields).players;
+  if (pDVar1 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
+    return (pDVar1->fields)._count - (pDVar1->fields)._freeCount;
   }
-  uVar2 = func_?(&puStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  iVar1 = (*pcVar4)();
-  return iVar1;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  iVar3 = (*pcVar2)();
+  return iVar3;
 }
 
 
@@ -1242,34 +1571,51 @@ Object * Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_get_Current
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__get_Current__
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__KeyValuePair<int,_MVPlayer>);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_MVPlayer>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__KeyValuePair<int,_MVPlayer>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).players;
-  if (this_00 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-    pDVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
-             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       (&DStack_2,this_00,
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__GetEnumerator__
-                       );
-    uStack_3 = (pDVar1->_current).key;
-    DStack_2._16_8_ = *(undefined8 *)&(pDVar1->_current).value;
-    pOStack_4 = DStack_2._current.value;
-    pOVar5 = (Object *)
-             func_?(TypeInfo__System__Collections__Generic__KeyValuePair<int,_MVPlayer>,
-                             &uStack_3);
-    return pOVar5;
+  pDStack_1 = (this->fields).players;
+  if (pDStack_1 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    pOVar3 = (Object *)(*pcVar2)();
+    return pOVar3;
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  pOVar5 = (Object *)(*pcVar6)();
-  return pOVar5;
+  uStack_4 = 0;
+  uStack_5 = 0;
+  uStack_6 = 0;
+  uStack_7 = 0;
+  if (iRam_? != 0) {
+    uVar8 = (uint)((ulonglong)&pDStack_1 >> 0xc);
+    puVar9 = (ulonglong *)((ulonglong)((uVar8 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar10 = *puVar9;
+      LOCK();
+      uVar11 = *puVar9;
+      if (uVar10 == uVar11) {
+        *puVar9 = uVar10 | 1L << (uVar8 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar10 != uVar11);
+  }
+  uStack_12 = 0;
+  uStack_13 = 0;
+  pOVar3 = (Object *)
+           FUN_?(TypeInfo__System__Collections__Generic__KeyValuePair<int,_MVPlayer>,
+                         &uStack_12);
+  return pOVar3;
 }
 
 
@@ -1281,24 +1627,49 @@ Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_get_Item
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).players;
-  if (this_00 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
-    pMVar1 = (MVPlayer *)
-             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
-             ::Dictionary_2_System_Int32_System_Object__get_Item
-                       ((Dictionary_2_System_Int32_System_Object_ *)this_00,actorNumber,
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Item_int_
-                       );
-    return pMVar1;
+  pMVar1 = MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Item_int_;
+  this_00 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(this->fields).players;
+  if (this_00 == (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    pMVar3 = (MVPlayer *)(*pcVar2)();
+    return pMVar3;
   }
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  pMVar1 = (MVPlayer *)(*pcVar3)();
-  return pMVar1;
+  uVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
+          Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                    (this_00,actorNumber,
+                     MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Item_int_
+                     ->klass->rgctx_data[0x21].method);
+  if ((int)uVar4 < 0) {
+    uVar5 = func_?(pMVar1->klass->rgctx_data,0xe);
+    key = (Object *)func_?(uVar5);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowKeyNotFoundException
+              (key,(MethodInfo *)0x0);
+    pcVar2 = (code *)swi(3);
+    pMVar3 = (MVPlayer *)(*pcVar2)();
+    return pMVar3;
+  }
+  pDVar6 = (this_00->fields)._entries;
+  if (pDVar6 != (Dictionary_2_TKey_TValue_Entry_System_Int32_UnityEngine_Vector3___Array *)0x0) {
+    if (uVar4 < (uint)pDVar6->max_length) {
+      return *(MVPlayer **)&pDVar6->vector[(int)uVar4].value.y;
+    }
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    pMVar3 = (MVPlayer *)(*pcVar2)();
+    return pMVar3;
+  }
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  pMVar3 = (MVPlayer *)(*pcVar2)();
+  return pMVar3;
 }
 
 
@@ -1310,23 +1681,25 @@ Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_get_LocalPlayer
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVLocalPlayer);
+    FUN_?(&TypeInfo__MVLocalPlayer);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = (MVLocalPlayer *)
            MVPlayerContainer_GetPlayerUnsafe
                      (this,(this->fields).localPlayerActorNumber,(MethodInfo *)0x0);
-  if (pMVar1 == (MVLocalPlayer *)0x0) {
-    return (MVLocalPlayer *)0x0;
+  if (pMVar1 != (MVLocalPlayer *)0x0) {
+    bVar2 = (TypeInfo__MVLocalPlayer->_1).naturalAligment;
+    if (((pMVar1->klass->_1).naturalAligment < bVar2) ||
+       ((pMVar1->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] !=
+        (Il2CppClass *)TypeInfo__MVLocalPlayer)) {
+      FUN_?(pMVar1,TypeInfo__MVLocalPlayer);
+      pcVar3 = (code *)swi(3);
+      pMVar1 = (MVLocalPlayer *)(*pcVar3)();
+      return pMVar1;
+    }
   }
-  if (((TypeInfo__MVLocalPlayer->_1).naturalAligment <= (pMVar1->klass->_1).naturalAligment) &&
-     ((pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVLocalPlayer->_1).naturalAligment - 1] ==
-      (Il2CppClass *)TypeInfo__MVLocalPlayer)) {
-    return pMVar1;
-  }
-  func_?(pMVar1,TypeInfo__MVLocalPlayer);
-  pcVar2 = (code *)swi(3);
-  pMVar1 = (MVLocalPlayer *)(*pcVar2)();
   return pMVar1;
 }
 
@@ -1338,27 +1711,20 @@ int32_t Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_get_PendingPla
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Count__)
+    ;
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-             *)(this->fields).pendingPlayers;
-  if (this_00 !=
-      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-       *)0x0) {
-    iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
-            StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
-            Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
-                      (this_00,
-                       MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Count__
-                      );
-    return iVar1;
+  pDVar1 = (this->fields).pendingPlayers;
+  if (pDVar1 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
+    return (pDVar1->fields)._count - (pDVar1->fields)._freeCount;
   }
-  uVar2 = func_?(&puStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  iVar1 = (*pcVar4)();
-  return iVar1;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  iVar3 = (*pcVar2)();
+  return iVar3;
 }
 
 
@@ -1370,26 +1736,62 @@ Assembly-CSharp.dll::MVPlayerContainer::MVPlayerContainer_get_Values
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Values__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-             *)(this->fields).players;
-  if (this_00 !=
-      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-       *)0x0) {
-    pDVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
-             StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
-             Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
-                       (this_00,
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Values__
-                       );
-    return (Dictionary_2_TKey_TValue_ValueCollection_System_Int32_MVPlayer_ *)pDVar1;
+  pDVar1 = (this->fields).players;
+  if (pDVar1 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    pDVar3 = (Dictionary_2_TKey_TValue_ValueCollection_System_Int32_MVPlayer_ *)(*pcVar2)();
+    return pDVar3;
   }
-  uVar2 = func_?(&puStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  pDVar5 = (Dictionary_2_TKey_TValue_ValueCollection_System_Int32_MVPlayer_ *)(*pcVar4)();
-  return pDVar5;
+  if ((pDVar1->fields)._values !=
+      (Dictionary_2_TKey_TValue_ValueCollection_System_Int32_MVPlayer_ *)0x0) {
+    return (pDVar1->fields)._values;
+  }
+  pvVar4 = MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Values__->klass
+           ->rgctx_data[0x1d].rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar4 + 0x135) & 1) == 0) {
+    pvVar4 = (void *)FUN_?(pvVar4);
+  }
+  pDVar3 = (Dictionary_2_TKey_TValue_ValueCollection_System_Int32_MVPlayer_ *)FUN_?(pvVar4);
+  iVar5 = iRam_?;
+  (pDVar3->fields)._dictionary = pDVar1;
+  if (iVar5 != 0) {
+    uVar6 = (uint)((ulonglong)&pDVar3->fields >> 0xc);
+    lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+      puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+      LOCK();
+      bVar10 = uVar8 == *puVar9;
+      if (bVar10) {
+        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+      iVar5 = iRam_?;
+    } while (!bVar10);
+  }
+  (pDVar1->fields)._values = pDVar3;
+  if (iVar5 == 0) {
+    return pDVar3;
+  }
+  uVar6 = (uint)((ulonglong)&(pDVar1->fields)._values >> 0xc);
+  lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+  do {
+    uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+    puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+    LOCK();
+    bVar10 = uVar8 == *puVar9;
+    if (bVar10) {
+      *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+    }
+    UNLOCK();
+  } while (!bVar10);
+  return (pDVar1->fields)._values;
 }
 

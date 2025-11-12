@@ -7,57 +7,84 @@ bool Assembly-CSharp.dll::WinningConditionBriefing+<FixAspectRatioDelay>d__35::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__WaitForEndOfFrame);
+    FUN_?(&TypeInfo__UnityEngine__WaitForEndOfFrame);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   iVar1 = (this->fields).__1__state;
   this_00 = (this->fields).__4__this;
   if (iVar1 == 0) {
     (this->fields).__1__state = -1;
-    this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
-              func_?(TypeInfo__UnityEngine__WaitForEndOfFrame);
-    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-    UxmlObjectListAttributeDescription`1[System::Object]::
-    UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
-    (this->fields).__2__current = (Object *)this_01;
-    func_?(&(this->fields).__2__current,this_01);
+    pOVar2 = (Object *)FUN_?(TypeInfo__UnityEngine__WaitForEndOfFrame);
+    bVar3 = iRam_? != 0;
+    (this->fields).__2__current = pOVar2;
+    if (bVar3) {
+      uVar4 = (uint)((ulonglong)&(this->fields).__2__current >> 0xc);
+      lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+        puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+        LOCK();
+        bVar3 = uVar6 == *puVar7;
+        if (bVar3) {
+          *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar3);
+    }
     (this->fields).__1__state = 1;
     return 1;
   }
   if (iVar1 == 1) {
+    bVar3 = iRam_? != 0;
     (this->fields).__1__state = -1;
     (this->fields).__2__current = (Object *)0x0;
-    func_?(&(this->fields).__2__current,0);
+    if (bVar3) {
+      uVar4 = (uint)((ulonglong)&(this->fields).__2__current >> 0xc);
+      lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+        puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+        LOCK();
+        bVar3 = uVar6 == *puVar7;
+        if (bVar3) {
+          *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar3);
+    }
     (this->fields).__1__state = 2;
     return 1;
   }
-  if (iVar1 != 2) {
-    return 0;
-  }
-  (this->fields).__1__state = -1;
-  if ((this_00 != (WinningConditionBriefing *)0x0) &&
-     (pIVar2 = (this_00->fields).winConImage, pIVar2 != (Image *)0x0)) {
-    pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)pIVar2,(MethodInfo *)0x0);
-    parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)this_00,(MethodInfo *)0x0);
-    if (pTVar3 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                (pTVar3,parent,1,(MethodInfo *)0x0);
-      pIVar2 = (this_00->fields).winConImage;
-      if ((pIVar2 != (Image *)0x0) &&
-         (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             ((Component *)pIVar2,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0)) {
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
-                  (pTVar3,(MethodInfo *)0x0);
-        return 0;
+  if (iVar1 == 2) {
+    (this->fields).__1__state = -1;
+    if ((this_00 != (WinningConditionBriefing *)0x0) &&
+       (pIVar8 = (this_00->fields).winConImage, pIVar8 != (Image *)0x0)) {
+      pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)pIVar8,(MethodInfo *)0x0);
+      parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)this_00,(MethodInfo *)0x0);
+      if (pTVar9 != (Transform *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                  (pTVar9,parent,1,(MethodInfo *)0x0);
+        pIVar8 = (this_00->fields).winConImage;
+        if ((pIVar8 != (Image *)0x0) &&
+           (pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                               ((Component *)pIVar8,(MethodInfo *)0x0), pTVar9 != (Transform *)0x0))
+        {
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
+                    (pTVar9,(MethodInfo *)0x0);
+          return 0;
+        }
       }
     }
+    FUN_?();
+    pcVar10 = (code *)swi(3);
+    bVar11 = (*pcVar10)();
+    return bVar11;
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  return 0;
 }
 
 
@@ -72,10 +99,10 @@ void Assembly-CSharp.dll::WinningConditionBriefing+<FixAspectRatioDelay>d__35::
   this_00 = (NotSupportedException *)func_?(uVar1);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
-  func_?(&
-                  MethodInfo__WinningConditionBriefing___FixAspectRatioDelay_d__35__System_Collections_IEnumerator_Reset__
-                 );
-  func_?(this_00);
+  uVar1 = func_?(&
+                              MethodInfo__WinningConditionBriefing___FixAspectRatioDelay_d__35__System_Collections_IEnumerator_Reset__
+                             );
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

@@ -4,823 +4,948 @@
 Object2ObjectSnap_SnapResult *
 Assembly-CSharp.dll::RTG::Object2ObjectSnap::Object2ObjectSnap_CalculateSnapResult
           (Object2ObjectSnap_SnapResult *__return_storage_ptr__,GameObject *root,
-          Object2ObjectSnap_Config snapConfig,MethodInfo *method)
+          Object2ObjectSnap_Config *snapConfig,MethodInfo *method)
 
 {
-  uStack_1._0_1_ = 0xff;
-  uStack_1._1_3_ = 0xffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xfffffd18;
-  puVar5 = &stack0xfffffd18;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__BoxMath);
-    func_?(&TypeInfo__System__Comparison<RTG::Object2ObjectSnap::SnapSortData>);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::BoxFace>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::BoxFace>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::BoxFace>__get_Current__
-                   );
-    func_?(&TypeInfo__RTG__GameObjectEx);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::Object2ObjectSnap::SnapSortData>__Add_RTG__Object2ObjectSnap__SnapSortData_
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__List<RTG::BoxFace>__GetEnumerator__);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__RemoveAll_System__Predicate<UnityEngine::GameObject>_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::Object2ObjectSnap::SnapSortData>__RemoveAt_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::Object2ObjectSnap::SnapSortData>__Sort_System__Comparison<RTG::Object2ObjectSnap::SnapSortData>_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::Object2ObjectSnap::SnapSortData>__List_int_
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::Object2ObjectSnap::SnapSortData>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::Object2ObjectSnap::SnapSortData>__get_Item_int_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__List<RTG::Object2ObjectSnap::SnapSortData>
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
-    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTScene>__get_Get__);
-    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTScene>);
-    func_?(&TypeInfo__RTG__Object2ObjectSnap);
-    func_?(&TypeInfo__RTG__ObjectBounds);
-    func_?(&TypeInfo__System__Predicate<UnityEngine::GameObject>);
-    func_?(&MethodInfo__RTG__Singleton<RTG::Object2ObjectSnapDataDb>__get_Get__);
-    func_?(&TypeInfo__RTG__Singleton<RTG::Object2ObjectSnapDataDb>);
-    func_?(&
-                    MethodInfo__RTG__Object2ObjectSnap____c___CalculateSnapResult_b__14_0_RTG__Object2ObjectSnap__SnapSortData__RTG__Object2ObjectSnap__SnapSortData_
-                   );
-    func_?(&
-                    MethodInfo__RTG__Object2ObjectSnap____c___CalculateSnapResult_b__14_1_RTG__Object2ObjectSnap__SnapSortData__RTG__Object2ObjectSnap__SnapSortData_
-                   );
-    func_?(&
-                    MethodInfo__RTG__Object2ObjectSnap____c__DisplayClass14_0___CalculateSnapResult_b__2_UnityEngine__GameObject_
-                   );
-    func_?(&TypeInfo__RTG__Object2ObjectSnap____c__DisplayClass14_0);
-    func_?(&TypeInfo__RTG__Object2ObjectSnap____c);
+    FUN_?(&TypeInfo__RTG__BoxMath);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Comparison<RTG::Object2ObjectSnap::SnapSortData>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::BoxFace>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::BoxFace>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::BoxFace>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GameObjectEx);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::Object2ObjectSnap::SnapSortData>__Add_RTG__Object2ObjectSnap__SnapSortData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<RTG::BoxFace>__GetEnumerator__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__RemoveAll_System__Predicate<UnityEngine::GameObject>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::Object2ObjectSnap::SnapSortData>__RemoveAt_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::Object2ObjectSnap::SnapSortData>__Sort_System__Comparison<RTG::Object2ObjectSnap::SnapSortData>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::Object2ObjectSnap::SnapSortData>__List_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::Object2ObjectSnap::SnapSortData>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::Object2ObjectSnap::SnapSortData>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__List<RTG::Object2ObjectSnap::SnapSortData>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__MonoSingleton<RTG::RTScene>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__MonoSingleton<RTG::RTScene>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__Object2ObjectSnap);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__ObjectBounds);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Predicate<UnityEngine::GameObject>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__Singleton<RTG::Object2ObjectSnapDataDb>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__Singleton<RTG::Object2ObjectSnapDataDb>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__RTG__Object2ObjectSnap____c___CalculateSnapResult_b__14_0_RTG__Object2ObjectSnap__SnapSortData__RTG__Object2ObjectSnap__SnapSortData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__RTG__Object2ObjectSnap____c___CalculateSnapResult_b__14_1_RTG__Object2ObjectSnap__SnapSortData__RTG__Object2ObjectSnap__SnapSortData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__RTG__Object2ObjectSnap____c__DisplayClass14_0___CalculateSnapResult_b__2_UnityEngine__GameObject_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__Object2ObjectSnap____c__DisplayClass14_0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__Object2ObjectSnap____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
-  LStack_7._list = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0;
-  LStack_7._index = 0;
-  LStack_7._version = 0;
-  LStack_7._current.First = 0;
-  LStack_7._current.Last = 0;
-  func_?(&OStack_8,0,0x2c);
-  LStack_9._list = (List_1_System_Object_ *)0x0;
-  LStack_9._index = 0;
-  LStack_9._version = 0;
-  LStack_9._current = (Object *)0x0;
-  PStack_10.parent = (Il2CppClass *)0x0;
-  PStack_10.name = (char *)0x0;
-  PStack_10.get = (MethodInfo *)0x0;
-  PStack_10.set = (MethodInfo *)0x0;
-  func_?(&stack0xfffffd54,0,0x2c);
-  auStack_11._0_4_ = (Object__Class *)0x0;
-  auStack_11._4_4_ = (MonitorData *)0x0;
-  auStack_11._8_4_ = 0;
-  auStack_11._12_4_ = 0;
-  auStack_11._16_4_ = 0;
-  auStack_11._20_4_ = 0.0;
-  auStack_12._0_4_ = (Object__Class *)0x0;
-  auStack_12._4_4_ = (MonitorData *)0x0;
-  auStack_12._8_4_ = (char *)0x0;
-  auStack_12._12_4_ = (char *)0x0;
-  auStack_12._16_4_ = (void *)0x0;
-  pIStack_13 = (Il2CppClass *)0x0;
-  method_00 = TypeInfo__RTG__Object2ObjectSnap____c__DisplayClass14_0;
-  pOVar14 = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (pOVar14,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  _Var9 = _Stack_84;
-  pOStack_15 = pOVar14;
-  if (pOVar14 != (Object *)0x0) {
-    pOVar14[1].klass = (Object__Class *)root;
-    func_?();
-    pOVar14[1].monitor = (MonitorData *)snapConfig._areaMatchEps;
-    pOVar14[2].klass = (Object__Class *)snapConfig.IgnoreDestObjects;
-    pOVar14[2].monitor = (MonitorData *)snapConfig.DestinationLayers;
-    pOVar14[3].klass = (Object__Class *)snapConfig.SnapRadius;
-    pOVar14[3].monitor = (MonitorData *)snapConfig.Prefs;
-    func_?(pOVar14 + 2,0);
-    if (pOVar14[2].klass == (Object__Class *)0x0) {
-      pOVar16 = (Object__Class *)
-                func_?(
-                               TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>
-                               );
+  LStack_1._list = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0;
+  LStack_1._index = 0;
+  LStack_1._version = 0;
+  LStack_1._16_8_ = 0;
+  LStack_2._list = (List_1_System_Object_ *)0x0;
+  LStack_2._index = 0;
+  LStack_2._version = 0;
+  LStack_2._current = (Object *)0x0;
+  LStack_3._list = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0;
+  LStack_3._index = 0;
+  LStack_3._version = 0;
+  LStack_3._16_8_ = 0;
+  uStack_4 = 0;
+  lStack_5 = 0;
+  uStack_6 = 0;
+  uStack_7 = 0;
+  uStack_8 = 0;
+  lStack_9 = 0;
+  fStack_10 = 0.0;
+  fStack_11 = 0.0;
+  uStack_12 = 0;
+  object = (Object *)FUN_?(TypeInfo__RTG__Object2ObjectSnap____c__DisplayClass14_0);
+  if (object != (Object *)0x0) {
+    object[1].klass = (Object__Class *)root;
+    if (iRam_? != 0) {
+      uVar13 = (uint)((ulonglong)(object + 1) >> 0xc);
+      uVar14 = (ulonglong)((uVar13 & 0x1fffff) >> 6);
+      do {
+        uVar15 = *(ulonglong *)(uVar14 * 8 + 0xADDR);
+        puVar16 = (ulonglong *)(uVar14 * 8 + 0xADDR);
+        LOCK();
+        bVar17 = uVar15 == *puVar16;
+        if (bVar17) {
+          *puVar16 = uVar15 | 1L << (uVar13 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar17);
+    }
+    iVar18 = iRam_?;
+    pOVar19 = (Object__Class *)snapConfig->IgnoreDestObjects;
+    object[1].monitor = *(MonitorData **)snapConfig;
+    object[2].klass = pOVar19;
+    *(undefined1 (*) [16])&object[2].monitor = *(undefined1 (*) [16])&snapConfig->DestinationLayers;
+    if (iVar18 != 0) {
+      uVar13 = (uint)((ulonglong)(object + 2) >> 0xc);
+      uVar14 = (ulonglong)((uVar13 & 0x1fffff) >> 6);
+      do {
+        uVar15 = *(ulonglong *)(uVar14 * 8 + 0xADDR);
+        puVar16 = (ulonglong *)(uVar14 * 8 + 0xADDR);
+        LOCK();
+        bVar17 = uVar15 == *puVar16;
+        if (bVar17) {
+          *puVar16 = uVar15 | 1L << (uVar13 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar17);
+    }
+    if (object[2].klass == (Object__Class *)0x0) {
+      pOVar19 = (Object__Class *)
+                FUN_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>)
+      ;
       mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
       __Il2CppFullySharedGenericType]::
       LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pOVar16,
+                ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pOVar19,
                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
-      pOVar14[2].klass = pOVar16;
-      func_?(pOVar14 + 2,pOVar16);
+      object[2].klass = pOVar19;
+      if (iRam_? != 0) {
+        uVar13 = (uint)((ulonglong)(object + 2) >> 0xc);
+        uVar14 = (ulonglong)((uVar13 & 0x1fffff) >> 6);
+        do {
+          uVar15 = *(ulonglong *)(uVar14 * 8 + 0xADDR);
+          puVar16 = (ulonglong *)(uVar14 * 8 + 0xADDR);
+          LOCK();
+          bVar17 = uVar15 == *puVar16;
+          if (bVar17) {
+            *puVar16 = uVar15 | 1L << (uVar13 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar17);
+      }
     }
-    pOVar16 = pOVar14[1].klass;
-    if ((TypeInfo__RTG__GameObjectEx->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__RTG__GameObjectEx);
+    pOVar19 = object[1].klass;
+    if (*(int *)&(TypeInfo__RTG__GameObjectEx->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    RStack_17 = (RegexCharClass_SingleRange)
-                GameObjectEx::GameObjectEx_GetAllChildrenAndSelf
-                          ((GameObject *)pOVar16,(MethodInfo *)0x0);
-    _Var9 = _Stack_84;
-    if (RStack_17 != (RegexCharClass_SingleRange)0x0) {
-      iVar18 = *(int32_t *)((int)RStack_17 + 0xc);
-      if ((TypeInfo__RTG__Object2ObjectSnap->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+    pLVar20 = GameObjectEx::GameObjectEx_GetAllChildrenAndSelf
+                        ((GameObject *)pOVar19,(MethodInfo *)0x0);
+    if (pLVar20 != (List_1_UnityEngine_GameObject_ *)0x0) {
+      iVar18 = (pLVar20->fields)._size;
+      if (*(int *)&(TypeInfo__RTG__Object2ObjectSnap->_1).field_0x1c == 0) {
+        FUN_?();
       }
       if (100 < iVar18) {
-        pMVar19 = (MethodInfo *)0x0;
-        failReson = Object2ObjectSnap_SnapFailReson__Enum_MaxObjectsExceeded;
-code_?:
-        iStack_20 = 0;
+        auStack_21._0_4_ = 0.0;
+        auStack_21._4_4_ = 0.0;
         auStack_21._8_4_ = 0.0;
-        auStack_22._0_4_ = 0.0;
-        auStack_22._4_4_ = 0.0;
-        fStack_23 = 0.0;
-        QStack_24.x = 0.0;
-        QStack_24.y = 0.0;
-        QStack_24.z = 0.0;
-        QStack_24.w = 0.0;
-        Object2ObjectSnap+SnapResult::Object2ObjectSnap_SnapResult__ctor
-                  ((Object2ObjectSnap_SnapResult *)(auStack_21 + 8),failReson,pMVar19);
-        *(undefined4 *)__return_storage_ptr__ = auStack_21._8_4_;
-        (__return_storage_ptr__->_snapPivot).x = (float)auStack_22._0_4_;
-        (__return_storage_ptr__->_snapPivot).y = (float)auStack_22._4_4_;
-        (__return_storage_ptr__->_snapPivot).z = fStack_23;
-        (__return_storage_ptr__->_snapDestination).x = QStack_24.x;
-        (__return_storage_ptr__->_snapDestination).y = QStack_24.y;
-        (__return_storage_ptr__->_snapDestination).z = QStack_24.z;
-        __return_storage_ptr__->_snapDistance = QStack_24.w;
-        __return_storage_ptr__->_failReason = iStack_20;
-        *unaff_FS_OFFSET = uStack_3;
-        return __return_storage_ptr__;
-      }
-      pOVar16 = pOVar14[1].klass;
-      if ((TypeInfo__RTG__GameObjectEx->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      pLVar25 = GameObjectEx::GameObjectEx_GetMeshObjectsInHierarchy
-                          ((GameObject *)pOVar16,(MethodInfo *)0x0);
-      pMVar19 = (MethodInfo *)0x0;
-      pLVar26 = GameObjectEx::GameObjectEx_GetSpriteObjectsInHierarchy
-                          ((GameObject *)pOVar14[1].klass,(MethodInfo *)0x0);
-      _Var9 = _Stack_84;
-      if (pLVar25 != (List_1_UnityEngine_GameObject_ *)0x0) {
-        if ((pLVar25->fields)._size == 0) {
-          if (pLVar26 == (List_1_UnityEngine_GameObject_ *)0x0) goto code_?;
-          if ((pLVar26->fields)._size == 0) {
-            failReson = Object2ObjectSnap_SnapFailReson__Enum_InvalidSourceObjects;
-            goto code_?;
-          }
-        }
-        PStack_10.token = 0;
-        fStack_27 = 0.0;
-        fStack_28 = 0.0;
-        PStack_10.attrs = 5;
+        auStack_21._12_4_ = 0.0;
+        auStack_21._16_4_ = 0.0;
+        auStack_21._20_4_ = 0.0;
+        auStack_21._24_4_ = 0.0;
+        auStack_21._28_4_ = 0.0;
+        auStack_21._32_8_ = auStack_21._32_8_ & 0xffffffff00000000;
         if (cRam_? == '\0') {
-          func_?();
+          FUN_?(&TypeInfo__UnityEngine__Vector3);
+          LOCK();
+          UNLOCK();
           cRam_? = '\x01';
         }
-        pVVar29 = TypeInfo__UnityEngine__Vector3->static_fields;
-        uVar30 = (pVVar29->oneVector).x;
-        uVar31 = (pVVar29->oneVector).y;
-        _Stack_84 = (_union_86)(pVVar29->oneVector).z;
-        pOVar16 = pOVar14[3].klass;
-        pFStack_32 = (FieldInfo *)
-                     ((float)_Stack_84 * (float)pOVar16 + (float)_Stack_84 * (float)pOVar16);
-        pIStack_33 = (Il2CppClass *)((float)uVar31 * (float)pOVar16 + (float)uVar31 * (float)pOVar16);
-        pIStack_34 = (Il2CppInteropData *)
-                     ((float)uVar30 * (float)pOVar16 + (float)uVar30 * (float)pOVar16);
-        fStack_35 = (float)uVar30;
-        pcStack_36 = (char *)uVar31;
-        if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+        pVVar22 = TypeInfo__UnityEngine__Vector3->static_fields;
+        uVar23 = (pVVar22->zeroVector).x;
+        uVar24 = (pVVar22->zeroVector).y;
+        auStack_21._12_4_ = (pVVar22->zeroVector).z;
+        auStack_21._4_4_ = uVar23;
+        auStack_21._8_4_ = uVar24;
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Vector3);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
         }
-        pOStack_37 = (Object__Class *)BoxMath::BoxMath_get_AllBoxFaces((MethodInfo *)0x0);
-        pIStack_38 = (Il2CppClass *)((uint)pOVar14[3].monitor & 1);
-        bVar39 = false;
-        pIStack_40 = pIStack_38;
-        this = (Il2CppClass *)func_?();
-        pIStack_41 = this;
-        pIStack_42 = this;
-        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
-        MultiColumnCollectionHeader+ViewState+ColumnState]::
-        List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
-                  ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                    *)this,10,
-                   MethodInfo__System__Collections__Generic__List<RTG::Object2ObjectSnap::SnapSortData>__List_int_
-                  );
-        pOVar16 = (Object__Class *)0x34;
-        pIStack_43 = this;
-        func_?(&RStack_44,0);
-        pLVar45 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                            (&LStack_46,
-                             (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                             RStack_17,
-                             MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-                            );
-        uStack_47._0_2_ = 0;
-        uStack_47._2_2_ = 0;
-        LStack_6._list = (List_1_System_Object_ *)pLVar45->_list;
-        LStack_6._index = pLVar45->_index;
-        LStack_6._version = pLVar45->_version;
-        LStack_6._current = *(Object **)&pLVar45->_current;
-        pLStack_48 = &LStack_6;
-        uStack_1 = 0;
-        while( true ) {
-          uStack_1._0_1_ = 1;
+        pVVar22 = TypeInfo__UnityEngine__Vector3->static_fields;
+        fVar25 = (pVVar22->zeroVector).x;
+        fVar26 = (pVVar22->zeroVector).y;
+        fVar27 = (pVVar22->zeroVector).z;
+        __return_storage_ptr__->_success = (char)auStack_21._0_4_;
+        *(int3 *)&__return_storage_ptr__->field_0x1 = SUB43(auStack_21._0_4_,1);
+        (__return_storage_ptr__->_snapPivot).x = (float)auStack_21._4_4_;
+        (__return_storage_ptr__->_snapPivot).y = (float)auStack_21._8_4_;
+        (__return_storage_ptr__->_snapPivot).z = (float)auStack_21._12_4_;
+        (__return_storage_ptr__->_snapDestination).x = fVar25;
+        (__return_storage_ptr__->_snapDestination).y = fVar26;
+        *(ulonglong *)&(__return_storage_ptr__->_snapDestination).z = (ulonglong)(uint)fVar27;
+        __return_storage_ptr__->_failReason = 1;
+        return __return_storage_ptr__;
+      }
+      pOVar19 = object[1].klass;
+      if (*(int *)&(TypeInfo__RTG__GameObjectEx->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      pLVar28 = GameObjectEx::GameObjectEx_GetMeshObjectsInHierarchy
+                          ((GameObject *)pOVar19,(MethodInfo *)0x0);
+      pLVar29 = GameObjectEx::GameObjectEx_GetSpriteObjectsInHierarchy
+                          ((GameObject *)object[1].klass,(MethodInfo *)0x0);
+      if (pLVar28 != (List_1_UnityEngine_GameObject_ *)0x0) {
+        if ((pLVar28->fields)._size == 0) {
+          if (pLVar29 == (List_1_UnityEngine_GameObject_ *)0x0) goto code_?;
+          if ((pLVar29->fields)._size == 0) {
+            auStack_21._0_4_ = 0.0;
+            auStack_21._4_4_ = 0.0;
+            auStack_21._8_4_ = 0.0;
+            auStack_21._12_4_ = 0.0;
+            auStack_21._16_4_ = 0.0;
+            auStack_21._20_4_ = 0.0;
+            auStack_21._24_4_ = 0.0;
+            auStack_21._28_4_ = 0.0;
+            auStack_21._32_8_ = auStack_21._32_8_ & 0xffffffff00000000;
+            Object2ObjectSnap+SnapResult::Object2ObjectSnap_SnapResult__ctor
+                      ((Object2ObjectSnap_SnapResult *)auStack_21,
+                       Object2ObjectSnap_SnapFailReson__Enum_InvalidSourceObjects,(MethodInfo *)0x0)
+            ;
+            __return_storage_ptr__->_success = (char)auStack_21._0_4_;
+            *(int3 *)&__return_storage_ptr__->field_0x1 = SUB43(auStack_21._0_4_,1);
+            (__return_storage_ptr__->_snapPivot).x = (float)auStack_21._4_4_;
+            (__return_storage_ptr__->_snapPivot).y = (float)auStack_21._8_4_;
+            (__return_storage_ptr__->_snapPivot).z = (float)auStack_21._12_4_;
+            (__return_storage_ptr__->_snapDestination).x = (float)auStack_21._16_4_;
+            (__return_storage_ptr__->_snapDestination).y = (float)auStack_21._20_4_;
+            *(undefined8 *)&(__return_storage_ptr__->_snapDestination).z = auStack_21._24_8_;
+            __return_storage_ptr__->_failReason = auStack_21._32_4_;
+            return __return_storage_ptr__;
+          }
+        }
+        lStack_30 = 0;
+        pLStack_31 = (List_1_UnityEngine_Vector3_ *)0x5;
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Vector3);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        fVar27 = *(float *)((longlong)&object[2].monitor + 4);
+        pVVar22 = TypeInfo__UnityEngine__Vector3->static_fields;
+        uStack_32._0_4_ = (pVVar22->oneVector).x;
+        uStack_32._4_4_ = (pVVar22->oneVector).y;
+        fStack_33 = fVar27 * (pVVar22->oneVector).z;
+        fStack_34 = fVar27 * (float)(undefined4)uStack_32 + fVar27 * (float)(undefined4)uStack_32;
+        fStack_35 = fVar27 * (float)uStack_32._4_4_ + fVar27 * (float)uStack_32._4_4_;
+        fStack_33 = fStack_33 + fStack_33;
+        if (*(int *)&(TypeInfo__RTG__BoxMath->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pLStack_36 = (List_1_UnityEngine_Vector3_ *)
+                      BoxMath::BoxMath_get_AllBoxFaces((MethodInfo *)0x0);
+        uStack_37 = *(uint *)&object[3].klass & 1;
+        bVar17 = false;
+        uStack_38 = uStack_37;
+        lVar39 = FUN_?(
+                              TypeInfo__System__Collections__Generic__List<RTG::Object2ObjectSnap::SnapSortData>
+                              );
+        pvVar40 = MethodInfo__System__Collections__Generic__List<RTG::Object2ObjectSnap::SnapSortData>__List_int_
+                  ->klass->rgctx_data[3].rgctxDataDummy;
+        lStack_41 = lVar39;
+        if ((*(byte *)((longlong)pvVar40 + 0x135) & 1) == 0) {
+          pvVar40 = (void *)FUN_?(pvVar40);
+        }
+        uVar42 = FUN_?(pvVar40,10);
+        *(undefined8 *)(lVar39 + 0x10) = uVar42;
+        if (iRam_? != 0) {
+          uVar13 = (uint)(lVar39 + 0x10U >> 0xc);
+          uVar14 = (ulonglong)((uVar13 & 0x1fffff) >> 6);
           do {
-            do {
-              bVar49 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
-                       Object]::List_1_T_Enumerator_System_Object__MoveNext
-                                 (&LStack_6,
-                                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                                 );
-              pOVar14 = LStack_6._current;
-              if (bVar49 == 0) {
-                uStack_1 = 0xffffffff;
-                mscorlib.dll::System::ThrowHelper::
-                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                          ((Object *)pLStack_48,
-                           (ExceptionArgument__Enum)
-                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-                           ,(MethodInfo *)pOVar16);
-                uStack_1._0_1_ = 0xff;
-                uStack_1._1_3_ = 0xffffff;
-                _Var9 = _Stack_84;
-                if (this == (Il2CppClass *)0x0) goto code_?;
-                if (this->namespaze == (char *)0x0) {
-                  pMVar19 = (MethodInfo *)0x0;
-                  failReson = Object2ObjectSnap_SnapFailReson__Enum_NoDestinationFound;
-                  goto code_?;
-                }
-                if ((pIStack_38 != (Il2CppClass *)0x0) && (bVar39)) goto code_?;
-                if ((TypeInfo__RTG__Object2ObjectSnap____c->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?();
-                }
-                this_01 = TypeInfo__RTG__Object2ObjectSnap____c->static_fields->__9__14_0;
-                if (this_01 != (Comparison_1_RTG_Object2ObjectSnap_SnapSortData_ *)0x0)
-                goto code_?;
-                if ((TypeInfo__RTG__Object2ObjectSnap____c->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?();
-                }
-                pOVar50 = TypeInfo__RTG__Object2ObjectSnap____c->static_fields->__9;
-                this_01 = (Comparison_1_RTG_Object2ObjectSnap_SnapSortData_ *)func_?();
-                mscorlib.dll::System::Comparison`1[UnityEngine::UIElements::UIR::
-                UIRenderDevice+AllocToUpdate]::
-                Comparison_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToUpdate___ctor
-                          ((Comparison_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToUpdate_ *)
-                           this_01,(Object *)pOVar50,
-                           MethodInfo__RTG__Object2ObjectSnap____c___CalculateSnapResult_b__14_0_RTG__Object2ObjectSnap__SnapSortData__RTG__Object2ObjectSnap__SnapSortData_
-                           ,(MethodInfo *)0x0);
-                TypeInfo__RTG__Object2ObjectSnap____c->static_fields->__9__14_0 = this_01;
-                ppCVar51 = &TypeInfo__RTG__Object2ObjectSnap____c->static_fields->__9__14_0;
-                goto code_?;
-              }
-              RStack_52 = (RegexCharClass_SingleRange)LStack_6._current;
-              if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__RTG__ObjectBounds);
-              }
-              if (cRam_? == '\0') {
-                func_?(&TypeInfo__RTG__GameObjectEx);
-                func_?(&TypeInfo__RTG__ObjectBounds);
-                cRam_? = '\x01';
-              }
-              if ((TypeInfo__RTG__GameObjectEx->_1).cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__RTG__GameObjectEx);
-              }
-              RStack_17 = (RegexCharClass_SingleRange)
-                          GameObjectEx::GameObjectEx_GetGameObjectType
-                                    ((GameObject *)pOVar14,(MethodInfo *)0x0);
-              if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              queryConfig.NoVolumeSize.x = (float)PStack_10.token;
-              queryConfig.ObjectTypes = PStack_10.attrs;
-              queryConfig.NoVolumeSize.y = fStack_27;
-              queryConfig.NoVolumeSize.z = fStack_28;
-              pAVar53 = ObjectBounds::ObjectBounds_CalcModelAABB
-                                  ((AABB *)(auStack_22 + 4),(GameObject *)pOVar14,queryConfig,
-                                   (GameObjectType__Enum)RStack_17,(MethodInfo *)0x0);
-              pOStack_54 = (Object__StaticFields *)(pAVar53->_size).x;
-              pIStack_55 = (Il2CppRGCTXData *)(pAVar53->_size).y;
-              ppIStack_56 = (Il2CppClass **)(pAVar53->_size).z;
-              pvStack_57 = (void *)(pAVar53->_center).x;
-              _Stack_84 = *(_union_86 *)&pAVar53->_isValid;
-              uVar58 = (pAVar53->_center).y;
-              uVar59 = (pAVar53->_center).z;
-              if ((char)_Stack_84.__klassIndex == '\0') {
-                fStack_35 = (float)uVar58;
-                pcStack_36 = (char *)uVar59;
-                pOVar60 = OBB::OBB_GetInvalid((OBB *)auStack_21,(MethodInfo *)0x0);
-                auStack_61._0_4_ = (pOVar60->_size).x;
-                auStack_61._4_4_ = (pOVar60->_size).y;
-                auStack_61._8_4_ = (pOVar60->_size).z;
-                auStack_61._12_4_ = (pOVar60->_center).x;
-                auStack_61._16_4_ = (pOVar60->_center).y;
-                auStack_61._20_4_ = (pOVar60->_center).z;
-                auStack_61._24_4_ = (pOVar60->_rotation).x;
-                auStack_61._28_4_ = (pOVar60->_rotation).y;
-                auStack_61._32_4_ = (pOVar60->_rotation).z;
-                auStack_61._36_4_ = (pOVar60->_rotation).w;
-                pMStack_62 = (MethodInfo *)(pOVar60->_rotation).z;
-                pLStack_63 = (List_1_UnityEngine_Vector3_ *)(pOVar60->_rotation).w;
-                RStack_17 = *(RegexCharClass_SingleRange *)&pOVar60->_isValid;
-              }
-              else {
-                pvStack_57 = (void *)(pAVar53->_size).x;
-                fStack_35 = (pAVar53->_size).y;
-                pcStack_36 = (char *)(pAVar53->_size).z;
-                _Var9 = (_union_86)(pAVar53->_center).x;
-                pMStack_62 = (MethodInfo *)(pAVar53->_center).y;
-                pLStack_63 = (List_1_UnityEngine_Vector3_ *)(pAVar53->_center).z;
-                RStack_17 = (RegexCharClass_SingleRange)_Stack_84;
-                if ((RegexCharClass_SingleRange)pOVar14 == (RegexCharClass_SingleRange)0x0)
-                goto code_?;
-                _Stack_84 = _Var9;
-                worldTransform =
-                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                               ((GameObject *)pOVar14,(MethodInfo *)0x0);
-                func_?();
-                modelSpaceAABB._size.y = fStack_35;
-                modelSpaceAABB._size.x = (float)pvStack_57;
-                modelSpaceAABB._size.z = (float)pcStack_36;
-                modelSpaceAABB._center.x = (float)_Stack_84.dummy;
-                modelSpaceAABB._center.y = (float)(MethodInfo *)_pMStack_30;
-                modelSpaceAABB._center.z = (float)SUB84(_pMStack_30,4);
-                modelSpaceAABB._24_4_ = RStack_17;
-                OBB::OBB__ctor_7((OBB *)auStack_61,modelSpaceAABB,worldTransform,(MethodInfo *)0x0)
-                ;
-                pLStack_63 = (List_1_UnityEngine_Vector3_ *)auStack_61._36_4_;
-                pMStack_62 = (MethodInfo *)auStack_61._32_4_;
-                RStack_17.First = auStack_61._40_2_;
-                RStack_17.Last = auStack_61._42_2_;
-              }
-              fStack_64 = (float)auStack_61._8_4_ + (float)pFStack_32;
-              uStack_65 = CONCAT44((float)auStack_61._4_4_ + (float)pIStack_33,
-                                    (float)auStack_61._0_4_ + (float)pIStack_34);
-              fStack_66 = fStack_64;
-              fStack_67 = (float)auStack_61._12_4_;
-              pvStack_57 = (void *)auStack_61._16_4_;
-              fStack_35 = (float)auStack_61._20_4_;
-              pcStack_36 = (char *)auStack_61._24_4_;
-              _Stack_84 = (_union_86)auStack_61._28_4_;
-              if ((TypeInfo__RTG__MonoSingleton<RTG::RTScene>->_1).cctor_finished_or_no_cctor == 0)
-              {
-                func_?();
-              }
-              this_00 = (RTScene *)
-                        MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
-                                  (MethodInfo__RTG__MonoSingleton<RTG::RTScene>__get_Get__);
-              if ((TypeInfo__RTG__Object2ObjectSnap->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              _Var9 = _Stack_84;
-              if (this_00 == (RTScene *)0x0) goto code_?;
-              obb._size.z = fStack_66;
-              obb._size.x = (float)(undefined4)uStack_65;
-              obb._size.y = (float)uStack_65._4_4_;
-              obb._center.x = fStack_67;
-              obb._center.y = (float)pvStack_57;
-              obb._center.z = fStack_35;
-              obb._rotation.x = (float)pcStack_36;
-              obb._rotation.y = (float)_Stack_84.dummy;
-              obb._rotation.z = (float)(MethodInfo *)_pMStack_30;
-              obb._rotation.w = (float)SUB84(_pMStack_30,4);
-              obb._40_4_ = RStack_17;
-              RTScene::RTScene_OverlapBox
-                        (this_00,obb,
-                         TypeInfo__RTG__Object2ObjectSnap->static_fields->_nearbyObjectBuffer,
-                         (MethodInfo *)0x0);
-              RStack_17 = (RegexCharClass_SingleRange)
-                          TypeInfo__RTG__Object2ObjectSnap->static_fields->_nearbyObjectBuffer;
-              pOVar16 = pOStack_15[4].klass;
-              if (pOVar16 == (Object__Class *)0x0) {
-                pOVar16 = (Object__Class *)func_?();
-                mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
-                          ((Predicate_1_Object_ *)pOVar16,pOStack_15,
-                           MethodInfo__RTG__Object2ObjectSnap____c__DisplayClass14_0___CalculateSnapResult_b__2_UnityEngine__GameObject_
-                           ,(MethodInfo *)0x0);
-                pOStack_15[4].klass = pOVar16;
-                func_?();
-              }
-              _Var9 = _Stack_84;
-              if (RStack_17 == (RegexCharClass_SingleRange)0x0) goto code_?;
-              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-              List_1_System_Object__RemoveAll
-                        ((List_1_System_Object_ *)RStack_17,(Predicate_1_Object_ *)pOVar16,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__RemoveAll_System__Predicate<UnityEngine::GameObject>_
-                        );
-              if ((TypeInfo__RTG__Object2ObjectSnap->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              pLVar25 = TypeInfo__RTG__Object2ObjectSnap->static_fields->_nearbyObjectBuffer;
-              _Var9 = _Stack_84;
-              if (pLVar25 == (List_1_UnityEngine_GameObject_ *)0x0) goto code_?;
-            } while ((pLVar25->fields)._size == 0);
-            if ((TypeInfo__RTG__Singleton<RTG::Object2ObjectSnapDataDb>->_1).
-                cctor_finished_or_no_cctor == 0) {
-              pOVar16 = (Object__Class *)&UNK_?;
-              func_?();
+            uVar15 = *(ulonglong *)(uVar14 * 8 + 0xADDR);
+            puVar16 = (ulonglong *)(uVar14 * 8 + 0xADDR);
+            LOCK();
+            bVar43 = uVar15 == *puVar16;
+            if (bVar43) {
+              *puVar16 = uVar15 | 1L << (uVar13 & 0x3f);
             }
-            pOVar68 = (Object2ObjectSnapDataDb *)
+            UNLOCK();
+          } while (!bVar43);
+        }
+        pGStack_44 = (GameObject *)0x0;
+        pGStack_45 = (GameObject *)0x0;
+        uStack_46 = 0;
+        uStack_47 = 0;
+        uStack_48 = 0;
+        uStack_49 = 0;
+        uStack_50 = 0;
+        uStack_51 = 0;
+        if (iRam_? != 0) {
+          uVar13 = (uint)((ulonglong)&uStack_52 >> 0xc);
+          uVar14 = (ulonglong)((uVar13 & 0x1fffff) >> 6);
+          do {
+            uVar15 = *(ulonglong *)(uVar14 * 8 + 0xADDR);
+            puVar16 = (ulonglong *)(uVar14 * 8 + 0xADDR);
+            LOCK();
+            bVar43 = uVar15 == *puVar16;
+            if (bVar43) {
+              *puVar16 = uVar15 | 1L << (uVar13 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar43);
+        }
+        uVar13 = _UNK_?;
+        fVar27 = _UNK_?;
+        pLStack_53 = (List_1_T_Enumerator_System_Object_ *)
+                      ((ulonglong)(uint)(pLVar20->fields)._version << 0x20);
+        uStack_54 = 0;
+        LStack_55._8_8_ = pLStack_53;
+        LStack_55._current = (Object *)0x0;
+        uStack_52 = 0;
+        pLStack_53 = &LStack_55;
+        lStack_56 = lVar39;
+        LStack_55._list = (List_1_System_Object_ *)pLVar20;
+        while (bVar57 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
+                        Object]::List_1_T_Enumerator_System_Object__MoveNext
+                                  (&LStack_55,
+                                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                                  ), pOVar58 = LStack_55._current, lVar59 = lStack_41, bVar57 != 0
+              ) {
+          if (*(int *)&(TypeInfo__RTG__ObjectBounds->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          OStack_60._0_8_ = pLStack_31;
+          OStack_60.NoVolumeSize.y = (float)(undefined4)lStack_30;
+          OStack_60.NoVolumeSize.z = (float)lStack_30._4_4_;
+          pOVar61 = ObjectBounds::ObjectBounds_CalcWorldOBB
+                              ((OBB *)auStack_21,(GameObject *)pOVar58,&OStack_60,
+                               (MethodInfo *)0x0);
+          fStack_62 = (pOVar61->_center).x;
+          uVar15._0_4_ = (pOVar61->_center).y;
+          uVar15._4_4_ = (pOVar61->_center).z;
+          uVar63._0_4_ = (pOVar61->_rotation).x;
+          uVar63._4_4_ = (pOVar61->_rotation).y;
+          uVar14._0_4_ = (pOVar61->_rotation).z;
+          uVar14._4_4_ = (pOVar61->_rotation).w;
+          uVar64 = *(undefined4 *)&pOVar61->_isValid;
+          fStack_65 = (pOVar61->_size).z + fStack_33;
+          uStack_66 = CONCAT44((pOVar61->_size).y + fStack_35,fStack_34 + (pOVar61->_size).x);
+          if (*(int *)&(TypeInfo__RTG__MonoSingleton<RTG::RTScene>->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          this_00 = (RTScene *)
+                    MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+                              (MethodInfo__RTG__MonoSingleton<RTG::RTScene>__get_Get__);
+          if (*(int *)&(TypeInfo__RTG__Object2ObjectSnap->_1).field_0x1c == 0) {
+            FUN_?(TypeInfo__RTG__Object2ObjectSnap);
+          }
+          if (this_00 == (RTScene *)0x0) goto code_?;
+          auStack_21._0_4_ = (undefined4)uStack_66;
+          auStack_21._4_4_ = (undefined4)((ulonglong)uStack_66 >> 0x20);
+          auStack_21._8_4_ = fStack_65;
+          auStack_21._12_4_ = fStack_62;
+          auStack_21._40_4_ = uVar64;
+          auStack_21._16_8_ = uVar15;
+          auStack_21._24_8_ = uVar63;
+          auStack_21._32_8_ = uVar14;
+          RTScene::RTScene_OverlapBox
+                    (this_00,(OBB *)auStack_21,
+                     TypeInfo__RTG__Object2ObjectSnap->static_fields->_nearbyObjectBuffer,
+                     (MethodInfo *)0x0);
+          pLVar20 = TypeInfo__RTG__Object2ObjectSnap->static_fields->_nearbyObjectBuffer;
+          this_01 = (Predicate_1_Object_ *)object[3].monitor;
+          if (this_01 == (Predicate_1_Object_ *)0x0) {
+            this_01 = (Predicate_1_Object_ *)
+                      FUN_?(TypeInfo__System__Predicate<UnityEngine::GameObject>);
+            mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
+                      (this_01,object,
+                       MethodInfo__RTG__Object2ObjectSnap____c__DisplayClass14_0___CalculateSnapResult_b__2_UnityEngine__GameObject_
+                       ,(MethodInfo *)0x0);
+            object[3].monitor = (MonitorData *)this_01;
+            func_?(&object[3].monitor);
+          }
+          if (pLVar20 == (List_1_UnityEngine_GameObject_ *)0x0) goto code_?;
+          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+          List_1_System_Object__RemoveAll
+                    ((List_1_System_Object_ *)pLVar20,this_01,
+                     MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__RemoveAll_System__Predicate<UnityEngine::GameObject>_
+                    );
+          if (*(int *)&(TypeInfo__RTG__Object2ObjectSnap->_1).field_0x1c == 0) {
+            FUN_?(TypeInfo__RTG__Object2ObjectSnap);
+          }
+          pLVar20 = TypeInfo__RTG__Object2ObjectSnap->static_fields->_nearbyObjectBuffer;
+          if (pLVar20 == (List_1_UnityEngine_GameObject_ *)0x0) goto code_?;
+          if ((pLVar20->fields)._size != 0) {
+            if (*(int *)&(TypeInfo__RTG__Singleton<RTG::Object2ObjectSnapDataDb>->_1).field_0x1c ==
+                0) {
+              FUN_?();
+            }
+            pOVar67 = (Object2ObjectSnapDataDb *)
                       Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
                                 (MethodInfo__RTG__Singleton<RTG::Object2ObjectSnapDataDb>__get_Get__
                                 );
-            RVar69 = RStack_52;
-            _Var9 = _Stack_84;
-            if (pOVar68 == (Object2ObjectSnapDataDb *)0x0) goto code_?;
-            RStack_52 = (RegexCharClass_SingleRange)
-                        Object2ObjectSnapDataDb::Object2ObjectSnapDataDb_GetObject2ObjectSnapData
-                                  (pOVar68,(GameObject *)RStack_52,(MethodInfo *)0x0);
-          } while (RStack_52 == (RegexCharClass_SingleRange)0x0);
-          RStack_44 = RVar69;
-          func_?(&RStack_44,RVar69);
-          _Var9 = _Stack_84;
-          if (pOStack_37 == (Object__Class *)0x0) break;
-          pOVar16 = pOStack_37;
-          puVar70 = (undefined4 *)func_?(&stack0xfffffd44);
-          ppMStack_71 = (MethodInfo **)0x0;
-          LStack_7._list =
-               (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)*puVar70;
-          LStack_7._index = puVar70[1];
-          LStack_7._version = puVar70[2];
-          LStack_7._current = *(RegexCharClass_SingleRange *)(puVar70 + 3);
-          pLStack_72 = &LStack_7;
-code_?:
-          uStack_1._0_1_ = 3;
-          bVar49 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Text::
-                   RegularExpressions::RegexCharClass+SingleRange]::
-                   List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange__MoveNext
-                             (&LStack_7,
-                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::BoxFace>__MoveNext__
-                             );
-          RVar69 = LStack_7._current;
-          if (bVar49 != 0) {
-            RStack_17 = RStack_52;
-            __Stack_e0 = (Il2CppType)
-                         Object2ObjectSnapData::Object2ObjectSnapData_GetWorldSnapAreaDesc
-                                   ((Object2ObjectSnapData *)RStack_52,
-                                    (BoxFace__Enum)LStack_7._current,(MethodInfo *)0x0);
-            pOVar60 = Object2ObjectSnapData::Object2ObjectSnapData_GetWorldSnapAreaBounds
-                                ((OBB *)auStack_61,(Object2ObjectSnapData *)RStack_17,
-                                 (BoxFace__Enum)RVar69,(MethodInfo *)0x0);
-            OStack_8._size.x = (pOVar60->_size).x;
-            OStack_8._size.y = (pOVar60->_size).y;
-            OStack_8._size.z = (pOVar60->_size).z;
-            OStack_8._center.x = (pOVar60->_center).x;
-            OStack_8._center.y = (pOVar60->_center).y;
-            OStack_8._center.z = (pOVar60->_center).z;
-            OStack_8._rotation.x = (pOVar60->_rotation).x;
-            OStack_8._rotation.y = (pOVar60->_rotation).y;
-            OStack_8._rotation.z = (pOVar60->_rotation).z;
-            OStack_8._rotation.w = (pOVar60->_rotation).w;
-            OStack_8._isValid = pOVar60->_isValid;
-            OStack_8._41_3_ = *(undefined3 *)&pOVar60->field_0x29;
-            pLStack_73 = OBB::OBB_GetCenterAndCornerPoints(&OStack_8,(MethodInfo *)0x0);
-            RStack_74 = RVar69;
-            if ((TypeInfo__RTG__Object2ObjectSnap->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            pOVar16 = (Object__Class *)
-                      TypeInfo__RTG__Object2ObjectSnap->static_fields->_nearbyObjectBuffer;
-            _Var9 = _Stack_84;
-            if (pOVar16 != (Object__Class *)0x0) {
-              puVar70 = (undefined4 *)func_?(&stack0xfffffd34);
-              uStack_75._0_1_ = 0;
-              uStack_75._1_1_ = 0;
-              uStack_75._2_1_ = 0;
-              uStack_75._3_1_ = 0;
-              LStack_9._list = (List_1_System_Object_ *)*puVar70;
-              LStack_9._index = puVar70[1];
-              LStack_9._version = puVar70[2];
-              LStack_9._current = (Object *)puVar70[3];
-              pLStack_76 = &LStack_9;
-              do {
-                uStack_1._0_1_ = 5;
+            if (pOVar67 == (Object2ObjectSnapDataDb *)0x0) goto code_?;
+            pOStack_68 = Object2ObjectSnapDataDb::Object2ObjectSnapDataDb_GetObject2ObjectSnapData
+                                    (pOVar67,(GameObject *)pOVar58,(MethodInfo *)0x0);
+            if (pOStack_68 != (Object2ObjectSnapData *)0x0) {
+              pGStack_44 = (GameObject *)pOVar58;
+              if (iRam_? != 0) {
+                uVar69 = (uint)((ulonglong)&pGStack_44 >> 0xc);
+                uVar14 = (ulonglong)((uVar69 & 0x1fffff) >> 6);
                 do {
-                  bVar49 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
-                           Object]::List_1_T_Enumerator_System_Object__MoveNext
-                                     (&LStack_9,
-                                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                                     );
-                  pOVar14 = LStack_9._current;
-                  if (bVar49 == 0) {
-                    uStack_1._0_1_ = 3;
-                    func_?();
-                    goto code_?;
+                  uVar15 = *(ulonglong *)(uVar14 * 8 + 0xADDR);
+                  puVar16 = (ulonglong *)(uVar14 * 8 + 0xADDR);
+                  LOCK();
+                  bVar43 = uVar15 == *puVar16;
+                  if (bVar43) {
+                    *puVar16 = uVar15 | 1L << (uVar69 & 0x3f);
                   }
-                  if ((TypeInfo__RTG__Singleton<RTG::Object2ObjectSnapDataDb>->_1).
-                      cctor_finished_or_no_cctor == 0) {
-                    func_?();
+                  UNLOCK();
+                } while (!bVar43);
+              }
+              if (pLStack_36 == (List_1_UnityEngine_Vector3_ *)0x0) goto code_?;
+              OStack_60.NoVolumeSize.y = 0.0;
+              OStack_60.NoVolumeSize.z = 0.0;
+              uStack_70 = 0;
+              OStack_60._0_8_ = pLStack_36;
+              pLVar71 = pLStack_36;
+              func_?(&OStack_60);
+              OStack_60.NoVolumeSize._4_8_ = (ulonglong)(uint)(pLVar71->fields)._version << 0x20;
+              uStack_70 = uStack_70 & 0xffffffff00000000;
+              LStack_1._list =
+                   (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                   OStack_60._0_8_;
+              LStack_1._index = (int32_t)OStack_60.NoVolumeSize.y;
+              LStack_1._version = (int32_t)OStack_60.NoVolumeSize.z;
+              LStack_1._16_8_ = uStack_70;
+              uStack_72 = 0;
+              pLStack_73 = &LStack_1;
+              while (bVar57 = mscorlib.dll::System::Collections::Generic::
+                              List`1[T]+Enumerator[System::Text::RegularExpressions::
+                              RegexCharClass+SingleRange]::
+                              List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange__MoveNext
+                                        (&LStack_1,
+                                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::BoxFace>__MoveNext__
+                                        ), this = pOStack_68, bVar57 != 0) {
+                RVar74 = LStack_1._current;
+                BStack_75 = Object2ObjectSnapData::Object2ObjectSnapData_GetWorldSnapAreaDesc
+                                       (pOStack_68,(BoxFace__Enum)LStack_1._current,
+                                        (MethodInfo *)0x0);
+                pOVar61 = Object2ObjectSnapData::Object2ObjectSnapData_GetWorldSnapAreaBounds
+                                    ((OBB *)auStack_21,this,(BoxFace__Enum)RVar74,(MethodInfo *)0x0
+                                    );
+                aOStack_76[0]._size.x = (pOVar61->_size).x;
+                aOStack_76[0]._size.y = (pOVar61->_size).y;
+                aOStack_76[0]._8_8_ = *(undefined8 *)&(pOVar61->_size).z;
+                aOStack_76[0]._center.y = (pOVar61->_center).y;
+                aOStack_76[0]._center.z = (pOVar61->_center).z;
+                aOStack_76[0]._rotation.x = (pOVar61->_rotation).x;
+                aOStack_76[0]._rotation.y = (pOVar61->_rotation).y;
+                aOStack_76[0]._rotation.z = (pOVar61->_rotation).z;
+                aOStack_76[0]._rotation.w = (pOVar61->_rotation).w;
+                aOStack_76[0]._isValid = pOVar61->_isValid;
+                aOStack_76[0]._41_3_ = *(undefined3 *)&pOVar61->field_0x29;
+                OStack_60._0_8_ = OBB::OBB_GetCenterAndCornerPoints(aOStack_76,(MethodInfo *)0x0);
+                uStack_46 = CONCAT44(uStack_46._4_4_,RVar74);
+                if (*(int *)&(TypeInfo__RTG__Object2ObjectSnap->_1).field_0x1c == 0) {
+                  FUN_?(TypeInfo__RTG__Object2ObjectSnap);
+                }
+                pLVar20 = TypeInfo__RTG__Object2ObjectSnap->static_fields->_nearbyObjectBuffer;
+                if (pLVar20 == (List_1_UnityEngine_GameObject_ *)0x0) goto code_?;
+                auStack_21._8_4_ = 0.0;
+                auStack_21._12_4_ = 0.0;
+                auStack_21._16_4_ = 0.0;
+                auStack_21._20_4_ = 0.0;
+                auStack_21._0_4_ = SUB84(pLVar20,0);
+                auStack_21._4_4_ = (undefined4)((ulonglong)pLVar20 >> 0x20);
+                func_?(auStack_21);
+                auStack_21._8_4_ = 0.0;
+                auStack_21._12_4_ = (pLVar20->fields)._version;
+                auStack_21._16_8_ = 0;
+                LStack_2._list =
+                     (List_1_System_Object_ *)CONCAT44(auStack_21._4_4_,auStack_21._0_4_);
+                LStack_2._8_8_ = (ulonglong)(uint)auStack_21._12_4_ << 0x20;
+                LStack_2._current = (Object *)0x0;
+                uStack_77 = 0;
+                pLStack_78 = &LStack_2;
+                while (bVar57 = mscorlib.dll::System::Collections::Generic::
+                                List`1[T]+Enumerator[System::Object]::
+                                List_1_T_Enumerator_System_Object__MoveNext
+                                          (&LStack_2,
+                                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                                          ), pOVar58 = LStack_2._current, bVar57 != 0) {
+                  if (*(int *)&(TypeInfo__RTG__Singleton<RTG::Object2ObjectSnapDataDb>->_1).
+                               field_0x1c == 0) {
+                    FUN_?();
                   }
-                  pOVar68 = (Object2ObjectSnapDataDb *)
+                  pOVar67 = (Object2ObjectSnapDataDb *)
                             Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
                                       (
                                       MethodInfo__RTG__Singleton<RTG::Object2ObjectSnapDataDb>__get_Get__
                                       );
-                  _Var9 = _Stack_84;
-                  if (pOVar68 == (Object2ObjectSnapDataDb *)0x0) goto code_?;
-                  pOVar16 = (Object__Class *)pOVar14;
-                  RStack_17 = (RegexCharClass_SingleRange)
-                              Object2ObjectSnapDataDb::
-                              Object2ObjectSnapDataDb_GetObject2ObjectSnapData
-                                        (pOVar68,(GameObject *)pOVar14,(MethodInfo *)0x0);
-                } while (RStack_17 == (RegexCharClass_SingleRange)0x0);
-                pOStack_77 = (Object__Class *)pOVar14;
-                func_?();
-                puVar70 = (undefined4 *)func_?();
-                pEStack_78 = (EventInfo *)0x0;
-                PStack_10.parent = (Il2CppClass *)*puVar70;
-                PStack_10.name = (char *)puVar70[1];
-                PStack_10.get = (MethodInfo *)puVar70[2];
-                PStack_10.set = (MethodInfo *)puVar70[3];
-                pPStack_79 = &PStack_10;
-                while( true ) {
-                  uStack_1._0_1_ = 7;
-                  bVar49 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
-                           Text::RegularExpressions::RegexCharClass+SingleRange]::
-                           List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange__MoveNext
-                                     ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                       *)&PStack_10,
-                                      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::BoxFace>__MoveNext__
-                                     );
-                  pMVar19 = PStack_10.set;
-                  if (bVar49 == 0) break;
-                  pMStack_80 = PStack_10.set;
-                  method_01 = (MethodInfo *)&UNK_?;
-                  BVar81 = Object2ObjectSnapData::Object2ObjectSnapData_GetWorldSnapAreaDesc
-                                     ((Object2ObjectSnapData *)RStack_17,
-                                      (BoxFace__Enum)PStack_10.set,(MethodInfo *)0x0);
-                  fStack_82 = BVar81.Area;
-                  uVar83 = uStack_84 >> 8;
-                  uStack_84 = uStack_84 & 0xffffff00;
-                  if ((pIStack_40 != (Il2CppClass *)0x0) &&
-                     ((void *)BVar81.AreaType == _Stack_e0.dummy)) {
-                    fStack_85 = (float)((uint)(fStack_82 - fStack_86) & _UNK_?);
-                    uStack_84 = CONCAT31((int3)uVar83,fStack_85 <= _UNK_?);
-                  }
-                  pOVar60 = Object2ObjectSnapData::Object2ObjectSnapData_GetWorldSnapAreaBounds
-                                      ((OBB *)auStack_61,(Object2ObjectSnapData *)RStack_17,
-                                       (BoxFace__Enum)pMVar19,(MethodInfo *)0x0);
-                  pLVar87 = OBB::OBB_GetCenterAndCornerPoints
-                                      ((OBB *)&stack0xfffffd54,(MethodInfo *)(pOVar60->_center).x);
-                  pLStack_63 = pLVar87;
-                  _Var9 = _Stack_84;
-                  if (pLStack_73 == (List_1_UnityEngine_Vector3_ *)0x0) goto code_?;
-                  puVar70 = (undefined4 *)func_?();
-                  pIStack_88 = (Il2CppMethodPointer)0x0;
-                  auStack_11._0_4_ = *puVar70;
-                  auStack_11._4_4_ = puVar70[1];
-                  auStack_11._8_4_ = puVar70[2];
-                  auStack_11._12_4_ = puVar70[3];
-                  auStack_11._16_4_ = puVar70[4];
-                  auStack_11._20_4_ = puVar70[5];
-                  pMStack_89 = (MethodInfo *)auStack_11;
-                  while( true ) {
-                    uStack_1._0_1_ = 9;
-                    bVar49 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[RTG::
-                             PlaneIdHelper+PlaneQuadrantInfo]::
-                             List_1_T_Enumerator_RTG_PlaneIdHelper_PlaneQuadrantInfo__MoveNext
-                                       ((List_1_T_Enumerator_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
-                                        auStack_11,
-                                        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__
-                                       );
-                    if (bVar49 == 0) break;
-                    uStack_90 = CONCAT44(auStack_11._16_4_,auStack_11._12_4_);
-                    fStack_91 = (float)auStack_11._20_4_;
-                    fStack_92 = (float)auStack_11._20_4_;
-                    uStack_93 = uStack_90;
-                    _Var9 = _Stack_84;
-                    if (pLVar87 == (List_1_UnityEngine_Vector3_ *)0x0) goto code_?;
-                    pMVar19 = (MethodInfo *)&UNK_?;
-                    puVar70 = (undefined4 *)func_?();
-                    ppIStack_94 = (Il2CppClass **)0x0;
-                    auStack_12._0_4_ = *puVar70;
-                    auStack_12._4_4_ = puVar70[1];
-                    auStack_12._8_4_ = puVar70[2];
-                    auStack_12._12_4_ = puVar70[3];
-                    auStack_12._16_4_ = ((_union_86 *)(puVar70 + 4))->dummy;
-                    pIStack_13 = (Il2CppClass *)puVar70[5];
-                    uStack_1._0_1_ = 0xb;
-                    pIStack_95 = (Il2CppRuntimeInterfaceOffsetPair *)auStack_12;
-                    while( true ) {
-                      pOVar16 = (Object__Class *)auStack_12;
-                      bVar49 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[RTG
-                               ::PlaneIdHelper+PlaneQuadrantInfo]::
-                               List_1_T_Enumerator_RTG_PlaneIdHelper_PlaneQuadrantInfo__MoveNext
-                                         ((List_1_T_Enumerator_RTG_PlaneIdHelper_PlaneQuadrantInfo_
-                                           *)pOVar16,
-                                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__
-                                         );
-                      if (bVar49 == 0) break;
-                      pcStack_36 = (char *)auStack_12._12_4_;
-                      _Stack_84 = (_union_86)auStack_12._16_4_;
-                      RStack_96 = (RegexCharClass_SingleRange)((float)pIStack_13 - fStack_91);
-                      pIStack_97 = pIStack_13;
-                      uStack_98 = CONCAT44((float)auStack_12._16_4_ - uStack_93._4_4_,
-                                            (float)auStack_12._12_4_ - (float)uStack_93);
-                      LStack_46._current = RStack_96;
-                      fVar99 = (float10)func_?();
-                      pIStack_100 = (Il2CppClass *)(float)fVar99;
-                      pIStack_101 = pIStack_100;
-                      if ((float)pIStack_100 < (float)pOStack_15[3].klass) {
-                        uStack_102 = CONCAT44(_Stack_84.dummy,pcStack_36);
-                        pIStack_103 = pIStack_97;
-                        _Var9 = _Stack_84;
-                        if (pIStack_42 == (Il2CppClass *)0x0) goto code_?;
-                        func_?(pIStack_42,RStack_44,pOStack_77,RStack_74,pMStack_80,
-                                        uStack_84,fStack_85,(undefined4)uStack_90,
-                                        uStack_90._4_4_,fStack_92,pcStack_36,_Stack_84.dummy,
-                                        pIStack_97);
-                        if ((char)uStack_84 != '\0') {
-                          bVar39 = true;
+                  if (pOVar67 == (Object2ObjectSnapDataDb *)0x0) goto code_?;
+                  pOStack_79 = Object2ObjectSnapDataDb::
+                                Object2ObjectSnapDataDb_GetObject2ObjectSnapData
+                                          (pOVar67,(GameObject *)pOVar58,(MethodInfo *)0x0);
+                  if (pOStack_79 != (Object2ObjectSnapData *)0x0) {
+                    pGStack_45 = (GameObject *)pOVar58;
+                    if (iRam_? != 0) {
+                      uVar69 = (uint)((ulonglong)&pGStack_45 >> 0xc);
+                      uVar14 = (ulonglong)((uVar69 & 0x1fffff) >> 6);
+                      do {
+                        uVar15 = *(ulonglong *)(uVar14 * 8 + 0xADDR);
+                        puVar16 = (ulonglong *)(uVar14 * 8 + 0xADDR);
+                        LOCK();
+                        bVar43 = uVar15 == *puVar16;
+                        if (bVar43) {
+                          *puVar16 = uVar15 | 1L << (uVar69 & 0x3f);
+                        }
+                        UNLOCK();
+                      } while (!bVar43);
+                    }
+                    auStack_21._8_4_ = 0.0;
+                    auStack_21._12_4_ = 0.0;
+                    auStack_21._16_8_ = 0;
+                    auStack_21._0_4_ = SUB84(pLStack_36,0);
+                    auStack_21._4_4_ = (undefined4)((ulonglong)pLStack_36 >> 0x20);
+                    pLVar71 = pLStack_36;
+                    func_?(auStack_21);
+                    LStack_3._16_8_ = auStack_21._16_8_;
+                    auStack_21._8_4_ = 0.0;
+                    auStack_21._12_4_ = (pLVar71->fields)._version;
+                    auStack_21._16_8_ = auStack_21._16_8_ & 0xffffffff00000000;
+                    LStack_3._list =
+                         (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
+                         CONCAT44(auStack_21._4_4_,auStack_21._0_4_);
+                    LStack_3._8_8_ = (ulonglong)(uint)auStack_21._12_4_ << 0x20;
+                    LStack_3._16_8_ = LStack_3._16_8_ & 0xffffffff00000000;
+                    uStack_80 = 0;
+                    pLStack_81 = &LStack_3;
+                    while (bVar57 = mscorlib.dll::System::Collections::Generic::
+                                    List`1[T]+Enumerator[System::Text::RegularExpressions::
+                                    RegexCharClass+SingleRange]::
+                                    List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange__MoveNext
+                                              (&LStack_3,
+                                               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::BoxFace>__MoveNext__
+                                              ), bVar57 != 0) {
+                      RVar74 = LStack_3._current;
+                      uStack_46 = CONCAT44(LStack_3._current,(undefined4)uStack_46);
+                      BStack_82 = Object2ObjectSnapData::Object2ObjectSnapData_GetWorldSnapAreaDesc
+                                             (pOStack_79,(BoxFace__Enum)LStack_3._current,
+                                              (MethodInfo *)0x0);
+                      uStack_47 = uStack_47 & 0xffffffffffffff00;
+                      if ((uStack_37 != 0) && (BStack_82.AreaType == BStack_75.AreaType)) {
+                        fVar25 = (float)((uint)(BStack_82.Area - BStack_75.Area) & uVar13);
+                        uStack_47 = CONCAT44(fVar25,(undefined4)uStack_47);
+                        uStack_47 = CONCAT71(uStack_47._1_7_,fVar25 <= fVar27);
+                      }
+                      pOVar61 = Object2ObjectSnapData::Object2ObjectSnapData_GetWorldSnapAreaBounds
+                                          ((OBB *)auStack_21,pOStack_79,(BoxFace__Enum)RVar74,
+                                           (MethodInfo *)0x0);
+                      OStack_83._size.x = (pOVar61->_size).x;
+                      OStack_83._size.y = (pOVar61->_size).y;
+                      OStack_83._8_8_ = *(undefined8 *)&(pOVar61->_size).z;
+                      OStack_83._center.y = (pOVar61->_center).y;
+                      OStack_83._center.z = (pOVar61->_center).z;
+                      OStack_83._rotation.x = (pOVar61->_rotation).x;
+                      OStack_83._rotation.y = (pOVar61->_rotation).y;
+                      OStack_83._rotation.z = (pOVar61->_rotation).z;
+                      OStack_83._rotation.w = (pOVar61->_rotation).w;
+                      OStack_83._isValid = pOVar61->_isValid;
+                      OStack_83._41_3_ = *(undefined3 *)&pOVar61->field_0x29;
+                      pLVar71 = OBB::OBB_GetCenterAndCornerPoints(&OStack_83,(MethodInfo *)0x0);
+                      BStack_82 = (BoxFaceAreaDesc)pLVar71;
+                      if ((List_1_UnityEngine_Vector3_ *)OStack_60._0_8_ ==
+                          (List_1_UnityEngine_Vector3_ *)0x0) goto code_?;
+                      auStack_21._8_4_ = 0.0;
+                      auStack_21._12_4_ = 0.0;
+                      auStack_21._16_4_ = 0.0;
+                      auStack_21._20_4_ = 0.0;
+                      auStack_21._24_8_ = 0;
+                      auStack_21._0_4_ = OStack_60.ObjectTypes;
+                      auStack_21._4_4_ = OStack_60.NoVolumeSize.x;
+                      pLVar84 = (List_1_UnityEngine_Vector3_ *)OStack_60._0_8_;
+                      func_?(auStack_21);
+                      uVar42 = auStack_21._24_8_;
+                      auStack_21._8_4_ = 0.0;
+                      auStack_21._12_4_ = (pLVar84->fields)._version;
+                      auStack_21._16_8_ = 0;
+                      auStack_21._24_8_ = auStack_21._24_8_ & 0xffffffff00000000;
+                      uStack_4 = CONCAT44(auStack_21._4_4_,auStack_21._0_4_);
+                      lStack_5 = (ulonglong)(uint)auStack_21._12_4_ << 0x20;
+                      uStack_6 = 0;
+                      uStack_7 = uVar42 & 0xffffffff00000000;
+                      uStack_85 = 0;
+                      puStack_86 = &uStack_4;
+                      while (cVar87 = FUN_?(&uStack_4,
+                                                                                                        
+                                                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__
+                                                  ), cVar87 != '\0') {
+                        uStack_88 = uStack_6;
+                        fStack_89 = (float)uStack_7;
+                        uStack_48 = uStack_6;
+                        uStack_49 = CONCAT44(uStack_49._4_4_,fStack_89);
+                        if (pLVar71 == (List_1_UnityEngine_Vector3_ *)0x0)
+                        goto code_?;
+                        auStack_21._8_4_ = 0.0;
+                        auStack_21._12_4_ = 0.0;
+                        auStack_21._16_4_ = 0.0;
+                        auStack_21._20_4_ = 0.0;
+                        auStack_21._24_8_ = 0;
+                        auStack_21._0_4_ = SUB84(pLVar71,0);
+                        auStack_21._4_4_ = (undefined4)((ulonglong)pLVar71 >> 0x20);
+                        func_?(auStack_21);
+                        uVar42 = auStack_21._24_8_;
+                        auStack_21._8_4_ = 0.0;
+                        auStack_21._12_4_ = (pLVar71->fields)._version;
+                        auStack_21._16_8_ = 0;
+                        auStack_21._24_8_ = auStack_21._24_8_ & 0xffffffff00000000;
+                        uStack_8 = CONCAT44(auStack_21._4_4_,auStack_21._0_4_);
+                        lStack_9 = (ulonglong)(uint)auStack_21._12_4_ << 0x20;
+                        fStack_10 = 0.0;
+                        fStack_11 = 0.0;
+                        uStack_12 = uVar42 & 0xffffffff00000000;
+                        uStack_90 = 0;
+                        puStack_91 = &uStack_8;
+                        while (cVar87 = FUN_?(&uStack_8,
+                                                                                                            
+                                                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__
+                                                  ), fVar26 = fStack_11, fVar25 = fStack_10,
+                              cVar87 != '\0') {
+                          fVar92 = (float)uStack_12;
+                          fStack_93 = (float)uStack_12 - fStack_89;
+                          uStack_32 = CONCAT44(fStack_11 - uStack_88._4_4_,
+                                                fStack_10 - (float)uStack_88);
+                          fVar94 = (float)FUN_?(&uStack_32);
+                          uStack_51 = CONCAT44(uStack_51._4_4_,fVar94);
+                          if (fVar94 < *(float *)((longlong)&object[2].monitor + 4)) {
+                            uStack_49 = CONCAT44(fVar25,(undefined4)uStack_49);
+                            uStack_50 = CONCAT44(fVar92,fVar26);
+                            if (lVar39 == 0) goto code_?;
+                            auStack_21._0_4_ = SUB84(pGStack_44,0);
+                            auStack_21._4_4_ = (undefined4)((ulonglong)pGStack_44 >> 0x20);
+                            auStack_21._8_4_ = SUB84(pGStack_45,0);
+                            auStack_21._12_4_ = (undefined4)((ulonglong)pGStack_45 >> 0x20);
+                            auStack_21._16_8_ = uStack_46;
+                            auStack_21._24_8_ = uStack_47;
+                            auStack_21._32_8_ = uStack_48;
+                            auStack_21._40_8_ = uStack_49;
+                            fStack_95 = fVar26;
+                            fStack_96 = fVar92;
+                            uStack_97 = uStack_51._4_4_;
+                            fStack_98 = fVar94;
+                            FUN_?(lVar39,auStack_21);
+                            if ((char)uStack_47 != '\0') {
+                              bVar17 = true;
+                            }
+                          }
                         }
                       }
                     }
-                    uStack_1._0_1_ = 9;
-                    mscorlib.dll::System::ThrowHelper::
-                    ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                              ((Object *)auStack_12,
-                               (ExceptionArgument__Enum)
-                               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
-                               ,pMVar19);
-                    this = pIStack_42;
                   }
-                  uStack_1._0_1_ = 7;
-                  mscorlib.dll::System::ThrowHelper::
-                  ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                            ((Object *)pMStack_89,
-                             (ExceptionArgument__Enum)
-                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
-                             ,method_01);
                 }
-                uStack_1._0_1_ = 5;
-                func_?();
-              } while( true );
+              }
             }
-            break;
           }
-          uStack_1 = CONCAT31(uStack_1._1_3_,1);
-          func_?();
+        }
+        if (lVar39 != 0) {
+          if (*(int *)(lVar39 + 0x18) == 0) {
+            auStack_21._0_4_ = 0.0;
+            auStack_21._4_4_ = 0.0;
+            auStack_21._8_4_ = 0.0;
+            auStack_21._12_4_ = 0.0;
+            auStack_21._16_4_ = 0.0;
+            auStack_21._20_4_ = 0.0;
+            auStack_21._24_4_ = 0.0;
+            auStack_21._28_4_ = 0.0;
+            auStack_21._32_8_ = auStack_21._32_8_ & 0xffffffff00000000;
+            Object2ObjectSnap+SnapResult::Object2ObjectSnap_SnapResult__ctor
+                      ((Object2ObjectSnap_SnapResult *)auStack_21,
+                       Object2ObjectSnap_SnapFailReson__Enum_NoDestinationFound,(MethodInfo *)0x0);
+            __return_storage_ptr__->_success = (char)auStack_21._0_4_;
+            *(int3 *)&__return_storage_ptr__->field_0x1 = SUB43(auStack_21._0_4_,1);
+            (__return_storage_ptr__->_snapPivot).x = (float)auStack_21._4_4_;
+            (__return_storage_ptr__->_snapPivot).y = (float)auStack_21._8_4_;
+            (__return_storage_ptr__->_snapPivot).z = (float)auStack_21._12_4_;
+            (__return_storage_ptr__->_snapDestination).x = (float)auStack_21._16_4_;
+            (__return_storage_ptr__->_snapDestination).y = (float)auStack_21._20_4_;
+            *(undefined8 *)&(__return_storage_ptr__->_snapDestination).z = auStack_21._24_8_;
+            __return_storage_ptr__->_failReason = auStack_21._32_4_;
+            return __return_storage_ptr__;
+          }
+          if ((uStack_38 == 0) || (!bVar17)) {
+            if (*(int *)&(TypeInfo__RTG__Object2ObjectSnap____c->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            pCVar99 = TypeInfo__RTG__Object2ObjectSnap____c->static_fields->__9__14_0;
+            if (pCVar99 == (Comparison_1_RTG_Object2ObjectSnap_SnapSortData_ *)0x0) {
+              if (*(int *)&(TypeInfo__RTG__Object2ObjectSnap____c->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              pOVar100 = TypeInfo__RTG__Object2ObjectSnap____c->static_fields->__9;
+              pCVar99 = (Comparison_1_RTG_Object2ObjectSnap_SnapSortData_ *)
+                        FUN_?(
+                                     TypeInfo__System__Comparison<RTG::Object2ObjectSnap::SnapSortData>
+                                     );
+              FUN_?(pCVar99,pOVar100,
+                            MethodInfo__RTG__Object2ObjectSnap____c___CalculateSnapResult_b__14_0_RTG__Object2ObjectSnap__SnapSortData__RTG__Object2ObjectSnap__SnapSortData_
+                           );
+              TypeInfo__RTG__Object2ObjectSnap____c->static_fields->__9__14_0 = pCVar99;
+              ppCVar101 = &TypeInfo__RTG__Object2ObjectSnap____c->static_fields->__9__14_0;
+code_?:
+              func_?(ppCVar101);
+            }
+code_?:
+            FUN_?(lVar39,pCVar99);
+            if (*(int *)(lVar39 + 0x18) != 0) {
+              lVar59 = *(longlong *)(lVar39 + 0x10);
+              if (lVar59 != 0) {
+                if (*(int *)(lVar59 + 0x18) != 0) {
+                  uVar64 = *(undefined4 *)(lVar59 + 0x40);
+                  uVar42 = *(undefined8 *)(lVar59 + 0x40);
+                  uVar102 = *(undefined8 *)(lVar59 + 0x44);
+                  fVar27 = *(float *)(lVar59 + 0x4c);
+                  uVar103 = *(undefined8 *)(lVar59 + 0x48);
+                  pfVar104 = (float *)(lVar59 + 0x50);
+                  fVar25 = *pfVar104;
+                  fVar26 = *(float *)(lVar59 + 0x54);
+                  uVar105 = *(undefined8 *)pfVar104;
+                  uStack_106 = *(undefined8 *)pfVar104;
+                  pfVar104 = (float *)(lVar59 + 0x58);
+                  fVar92 = *pfVar104;
+                  uVar107 = *(undefined8 *)pfVar104;
+                  uStack_108 = *(undefined8 *)pfVar104;
+                  if (*(int *)(lVar39 + 0x18) == 0) goto code_?;
+                  if (lVar59 == 0) goto code_?;
+                  if (*(int *)(lVar59 + 0x18) != 0) {
+                    uStack_109 = uVar42;
+                    uStack_110 = uVar103;
+                    uStack_106 = uVar105;
+                    uStack_108 = uVar107;
+                    if (*(int *)(lVar39 + 0x18) == 0) goto code_?;
+                    if (lVar59 == 0) goto code_?;
+                    if (*(int *)(lVar59 + 0x18) != 0) {
+                      uStack_8._0_1_ = (undefined1)1;
+                      uStack_8._1_3_ = (undefined3)(1 >> 8);
+                      __return_storage_ptr__->_success = (undefined1)uStack_8;
+                      *(undefined3 *)&__return_storage_ptr__->field_0x1 = uStack_8._1_3_;
+                      (__return_storage_ptr__->_snapPivot).x = (float)uVar64;
+                      (__return_storage_ptr__->_snapPivot).y = (float)(int)uVar102;
+                      (__return_storage_ptr__->_snapPivot).z =
+                           (float)(int)((ulonglong)uVar102 >> 0x20);
+                      (__return_storage_ptr__->_snapDestination).x = fVar27;
+                      (__return_storage_ptr__->_snapDestination).y = fVar25;
+                      (__return_storage_ptr__->_snapDestination).z = fVar26;
+                      __return_storage_ptr__->_snapDistance = fVar92;
+                      __return_storage_ptr__->_failReason = 0;
+                      return __return_storage_ptr__;
+                    }
+                  }
+                }
+code_?:
+                FUN_?();
+                pcVar111 = (code *)swi(3);
+                pOVar112 = (Object2ObjectSnap_SnapResult *)(*pcVar111)();
+                return pOVar112;
+              }
+              goto code_?;
+            }
+          }
+          else {
+            while (*(int *)(lVar59 + 0x18) != 0) {
+              lVar113 = *(longlong *)(lVar59 + 0x10);
+              if (lVar113 == 0) goto code_?;
+              if (*(int *)(lVar113 + 0x18) == 0) goto code_?;
+              uStack_109 = *(undefined8 *)(lVar113 + 0x40);
+              uStack_110 = *(undefined8 *)(lVar113 + 0x48);
+              uStack_106 = *(undefined8 *)(lVar113 + 0x50);
+              uStack_108 = *(undefined8 *)(lVar113 + 0x58);
+              if (*(char *)(lVar113 + 0x38) != '\0') {
+                if (*(int *)&(TypeInfo__RTG__Object2ObjectSnap____c->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                pCVar99 = TypeInfo__RTG__Object2ObjectSnap____c->static_fields->__9__14_1;
+                if (pCVar99 != (Comparison_1_RTG_Object2ObjectSnap_SnapSortData_ *)0x0)
+                goto code_?;
+                if (*(int *)&(TypeInfo__RTG__Object2ObjectSnap____c->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                pOVar100 = TypeInfo__RTG__Object2ObjectSnap____c->static_fields->__9;
+                pCVar99 = (Comparison_1_RTG_Object2ObjectSnap_SnapSortData_ *)
+                          FUN_?(
+                                       TypeInfo__System__Comparison<RTG::Object2ObjectSnap::SnapSortData>
+                                       );
+                FUN_?(pCVar99,pOVar100,
+                              MethodInfo__RTG__Object2ObjectSnap____c___CalculateSnapResult_b__14_1_RTG__Object2ObjectSnap__SnapSortData__RTG__Object2ObjectSnap__SnapSortData_
+                             );
+                TypeInfo__RTG__Object2ObjectSnap____c->static_fields->__9__14_1 = pCVar99;
+                ppCVar101 = &TypeInfo__RTG__Object2ObjectSnap____c->static_fields->__9__14_1;
+                goto code_?;
+              }
+              FUN_?(lVar39,0);
+            }
+          }
+code_?:
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar111 = (code *)swi(3);
+          pOVar112 = (Object2ObjectSnap_SnapResult *)(*pcVar111)();
+          return pOVar112;
         }
       }
     }
   }
 code_?:
-  _Stack_84 = _Var9;
-  func_?();
-  func_?();
-  pcVar104 = (code *)swi(3);
-  pOVar105 = (Object2ObjectSnap_SnapResult *)(*pcVar104)();
-  return pOVar105;
+  FUN_?();
 code_?:
-  while( true ) {
-    pUVar106 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
-              UIRenderDevice+AllocToUpdate]::
-              List_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToUpdate__get_Item
-                        ((UIRenderDevice_AllocToUpdate *)(auStack_11 + 0x18),
-                         (List_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToUpdate_ *)
-                         pIStack_41,0,
-                         MethodInfo__System__Collections__Generic__List<RTG::Object2ObjectSnap::SnapSortData>__get_Item_int_
-                        );
-    uStack_107 = pUVar106->id;
-    uStack_108 = pUVar106->allocTime;
-    uStack_65._0_4_ = pUVar106->meshHandle;
-    uStack_65._4_4_ = (pUVar106->permAllocVerts).start;
-    uStack_109 = (pUVar106->permAllocIndices).size;
-    pOStack_110 = (pUVar106->permAllocIndices).handle;
-    fStack_111 = *(float *)&(pUVar106->permAllocIndices).shortLived;
-    pPStack_112 = pUVar106->permPage;
-    if ((char)(pUVar106->permAllocVerts).size != '\0') break;
-    mscorlib.dll::System::Collections::Generic::List`1[RTG::Object2ObjectSnap+SnapSortData]::
-    List_1_RTG_Object2ObjectSnap_SnapSortData__RemoveAt
-              ((List_1_RTG_Object2ObjectSnap_SnapSortData_ *)this,0,
-               MethodInfo__System__Collections__Generic__List<RTG::Object2ObjectSnap::SnapSortData>__RemoveAt_int_
-              );
-  }
-  if ((TypeInfo__RTG__Object2ObjectSnap____c->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  this_01 = TypeInfo__RTG__Object2ObjectSnap____c->static_fields->__9__14_1;
-  if (this_01 == (Comparison_1_RTG_Object2ObjectSnap_SnapSortData_ *)0x0) {
-    if ((TypeInfo__RTG__Object2ObjectSnap____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    pOVar50 = TypeInfo__RTG__Object2ObjectSnap____c->static_fields->__9;
-    this_01 = (Comparison_1_RTG_Object2ObjectSnap_SnapSortData_ *)func_?();
-    mscorlib.dll::System::Comparison`1[UnityEngine::UIElements::UIR::UIRenderDevice+AllocToUpdate]::
-    Comparison_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToUpdate___ctor
-              ((Comparison_1_UnityEngine_UIElements_UIR_UIRenderDevice_AllocToUpdate_ *)this_01,
-               (Object *)pOVar50,
-               MethodInfo__RTG__Object2ObjectSnap____c___CalculateSnapResult_b__14_1_RTG__Object2ObjectSnap__SnapSortData__RTG__Object2ObjectSnap__SnapSortData_
-               ,(MethodInfo *)0x0);
-    TypeInfo__RTG__Object2ObjectSnap____c->static_fields->__9__14_1 = this_01;
-    ppCVar51 = &TypeInfo__RTG__Object2ObjectSnap____c->static_fields->__9__14_1;
+  FUN_?();
+  FUN_?();
 code_?:
-    func_?(ppCVar51);
-    this = pIStack_42;
-  }
+  FUN_?();
+  FUN_?();
 code_?:
-  mscorlib.dll::System::Collections::Generic::List`1[RTG::Object2ObjectSnap+SnapSortData]::
-  List_1_RTG_Object2ObjectSnap_SnapSortData__Sort_1
-            ((List_1_RTG_Object2ObjectSnap_SnapSortData_ *)this,this_01,
-             MethodInfo__System__Collections__Generic__List<RTG::Object2ObjectSnap::SnapSortData>__Sort_System__Comparison<RTG::Object2ObjectSnap::SnapSortData>_
-            );
-  puVar70 = (undefined4 *)func_?();
-  uStack_107 = *puVar70;
-  uStack_108 = puVar70[1];
-  uStack_65 = *(undefined8 *)(puVar70 + 2);
-  PStack_10.attrs = puVar70[4];
-  PStack_10.token = puVar70[5];
-  fStack_27 = (float)puVar70[6];
-  fStack_28 = (float)puVar70[7];
-  LStack_46._list = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)puVar70[8]
-  ;
-  LStack_46._index = puVar70[9];
-  LStack_46._version = puVar70[10];
-  LStack_46._current = *(RegexCharClass_SingleRange *)(puVar70 + 0xb);
-  puVar70 = (undefined4 *)func_?(auStack_11 + 0x18,this,0);
-  uStack_107 = *puVar70;
-  uStack_108 = puVar70[1];
-  uStack_65 = *(undefined8 *)(puVar70 + 2);
-  fStack_66 = (float)puVar70[4];
-  fStack_67 = (float)puVar70[5];
-  uStack_113 = puVar70[6];
-  uStack_114 = puVar70[7];
-  uStack_115 = puVar70[8];
-  fStack_116 = (float)puVar70[9];
-  fStack_117 = (float)puVar70[10];
-  fStack_64 = (float)puVar70[0xb];
-  uStack_109 = uStack_115;
-  pOStack_110 = (Object *)fStack_116;
-  fStack_111 = fStack_117;
-  pPStack_112 = (Page *)fStack_64;
-  iVar18 = func_?(auStack_118,this,0,
-                           MethodInfo__System__Collections__Generic__List<RTG::Object2ObjectSnap::SnapSortData>__get_Item_int_
-                          );
-  fVar119 = *(float *)(iVar18 + 0x30);
-  *(undefined4 *)__return_storage_ptr__ = 1;
-  (__return_storage_ptr__->_snapPivot).x = fStack_27;
-  (__return_storage_ptr__->_snapPivot).y = fStack_28;
-  (__return_storage_ptr__->_snapPivot).z = (float)LStack_46._list;
-  (__return_storage_ptr__->_snapDestination).x = (float)pOStack_110;
-  (__return_storage_ptr__->_snapDestination).y = fStack_111;
-  (__return_storage_ptr__->_snapDestination).z = fStack_64;
-  __return_storage_ptr__->_snapDistance = fVar119;
-  __return_storage_ptr__->_failReason = 0;
-  *unaff_FS_OFFSET = uStack_3;
-  return __return_storage_ptr__;
+  FUN_?();
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+  pcVar111 = (code *)swi(3);
+  pOVar112 = (Object2ObjectSnap_SnapResult *)(*pcVar111)();
+  return pOVar112;
 }
 
 
@@ -829,193 +954,200 @@ code_?:
 Object2ObjectSnap_SnapResult *
 Assembly-CSharp.dll::RTG::Object2ObjectSnap::Object2ObjectSnap_Snap
           (Object2ObjectSnap_SnapResult *__return_storage_ptr__,
-          List_1_UnityEngine_GameObject_ *roots,Object2ObjectSnap_Config snapConfig,
+          List_1_UnityEngine_GameObject_ *roots,Object2ObjectSnap_Config *snapConfig,
           MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff34;
-  puVar5 = &stack0xffffff34;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-                   );
-    func_?(&TypeInfo__RTG__Object2ObjectSnap);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__Object2ObjectSnap);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  OStack_6._failReason = 0;
-  OStack_6._success = 0;
-  OStack_6._1_3_ = 0;
-  OStack_6._snapPivot.x = 0.0;
-  OStack_6._snapPivot.y = 0.0;
-  OStack_6._snapPivot.z = 0.0;
-  OStack_6._snapDestination.x = 0.0;
-  OStack_6._snapDestination.y = 0.0;
-  OStack_6._snapDestination.z = 0.0;
-  OStack_6._snapDistance = 0.0;
-  LStack_7._list = (List_1_System_Object_ *)0x0;
-  LStack_7._index = 0;
-  LStack_7._version = 0;
-  LStack_7._current = (Object *)0x0;
-  fStack_8 = _UNK_?;
-  Object2ObjectSnap+SnapResult::Object2ObjectSnap_SnapResult__ctor
-            (&OStack_6,Object2ObjectSnap_SnapFailReson__Enum_NoDestinationFound,(MethodInfo *)0x0);
+  fVar1 = _UNK_?;
+  uStack_2 = 0;
+  fStack_3 = 0.0;
+  fStack_4 = 0.0;
+  fStack_5 = 0.0;
+  uStack_6 = 0;
+  uStack_7 = 0;
+  uStack_8 = 0;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uVar10 = (pVVar9->zeroVector).x;
+  uVar11 = (pVVar9->zeroVector).y;
+  fVar12 = (pVVar9->zeroVector).z;
+  fStack_3 = (float)uVar10;
+  fStack_4 = (float)uVar11;
+  fStack_5 = fVar12;
+  if (cRam_? == '\0') {
+    FUN_?();
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uVar13._0_4_ = (pVVar9->zeroVector).x;
+  uVar13._4_4_ = (pVVar9->zeroVector).y;
+  fVar14 = (pVVar9->zeroVector).z;
+  uStack_7 = (ulonglong)(uint)fVar14;
+  uVar15 = uStack_7;
+  iVar16 = 3;
+  uStack_8 = 3;
+  uStack_6 = uVar13;
   if (roots != (List_1_UnityEngine_GameObject_ *)0x0) {
-    pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_10,
-                        (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)roots,
-                        MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-                       );
-    uStack_11 = 0;
-    LStack_7._list = (List_1_System_Object_ *)pLVar9->_list;
-    LStack_7._index = pLVar9->_index;
-    LStack_7._version = pLVar9->_version;
-    LStack_7._current = *(Object **)&pLVar9->_current;
-    uStack_1 = 1;
-    LStack_10._list =
-         (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-         OStack_6._snapDestination.x;
-    LStack_10._index = (int32_t)OStack_6._snapDestination.y;
-    LStack_10._version = (int32_t)OStack_6._snapDestination.z;
-    LStack_10._current = (RegexCharClass_SingleRange)OStack_6._snapDistance;
-    uStack_12._0_1_ = OStack_6._success;
-    uStack_12._1_3_ = OStack_6._1_3_;
-    uStack_13 = OStack_6._snapPivot.x;
-    uStack_14 = OStack_6._snapPivot.y;
-    uStack_15 = OStack_6._snapPivot.z;
-    pLStack_16 = &LStack_7;
-    while( true ) {
-      bVar17 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-              List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_7,
-                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                        );
-      root = LStack_7._current;
-      if (bVar17 == 0) {
-        uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&LStack_7,
-                   (ExceptionArgument__Enum)
-                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-                   ,in_stack_18);
-        uStack_1 = 0xffffffff;
-        bVar17 = 0;
-        if ((bool)uStack_12 != 0) {
-          pivot.y = OStack_6._snapPivot.y;
-          pivot.x = OStack_6._snapPivot.x;
-          pivot.z._0_1_ = (undefined1)uStack_15;
-          pivot.z._1_1_ = uStack_15._1_1_;
-          pivot.z._2_1_ = uStack_15._2_1_;
-          pivot.z._3_1_ = uStack_15._3_1_;
-          dest.y = (float)LStack_10._index;
-          dest.x = (float)LStack_10._list;
-          dest.z = (float)LStack_10._version;
-          ObjectSnap::ObjectSnap_Snap_1(roots,pivot,dest,(MethodInfo *)0x0);
-          bVar17 = (bool)uStack_12;
+    if (iRam_? != 0) {
+      uVar17 = (uint)((ulonglong)auStack_18 >> 0xc);
+      uVar19 = (ulonglong)((uVar17 & 0x1fffff) >> 6);
+      do {
+        uVar20 = *(ulonglong *)(uVar19 * 8 + 0xADDR);
+        puVar21 = (ulonglong *)(uVar19 * 8 + 0xADDR);
+        LOCK();
+        bVar22 = uVar20 == *puVar21;
+        if (bVar22) {
+          *puVar21 = uVar20 | 1L << (uVar17 & 0x3f);
         }
-        __return_storage_ptr__->_success = bVar17;
-        __return_storage_ptr__->field_0x1 = uStack_12._1_1_;
-        __return_storage_ptr__->field_0x2 = uStack_12._2_1_;
-        __return_storage_ptr__->field_0x3 = uStack_12._3_1_;
-        *(undefined1 *)&(__return_storage_ptr__->_snapPivot).x = (undefined1)uStack_13;
-        *(undefined1 *)((int)&(__return_storage_ptr__->_snapPivot).x + 1) = uStack_13._1_1_;
-        *(undefined1 *)((int)&(__return_storage_ptr__->_snapPivot).x + 2) = uStack_13._2_1_;
-        *(undefined1 *)((int)&(__return_storage_ptr__->_snapPivot).x + 3) = uStack_13._3_1_;
-        *(undefined1 *)&(__return_storage_ptr__->_snapPivot).y = (undefined1)uStack_14;
-        *(undefined1 *)((int)&(__return_storage_ptr__->_snapPivot).y + 1) = uStack_14._1_1_;
-        *(undefined1 *)((int)&(__return_storage_ptr__->_snapPivot).y + 2) = uStack_14._2_1_;
-        *(undefined1 *)((int)&(__return_storage_ptr__->_snapPivot).y + 3) = uStack_14._3_1_;
-        *(undefined1 *)&(__return_storage_ptr__->_snapPivot).z = (undefined1)uStack_15;
-        *(undefined1 *)((int)&(__return_storage_ptr__->_snapPivot).z + 1) = uStack_15._1_1_;
-        *(undefined1 *)((int)&(__return_storage_ptr__->_snapPivot).z + 2) = uStack_15._2_1_;
-        *(undefined1 *)((int)&(__return_storage_ptr__->_snapPivot).z + 3) = uStack_15._3_1_;
-        (__return_storage_ptr__->_snapDestination).x = (float)LStack_10._list;
-        (__return_storage_ptr__->_snapDestination).y = (float)LStack_10._index;
-        (__return_storage_ptr__->_snapDestination).z = (float)LStack_10._version;
-        __return_storage_ptr__->_snapDistance = (float)LStack_10._current;
-        __return_storage_ptr__->_failReason = OStack_6._failReason;
-        *unaff_FS_OFFSET = uStack_3;
+        UNLOCK();
+      } while (!bVar22);
+    }
+    auStack_18._8_8_ = (ulonglong)(uint)(roots->fields)._version << 0x20;
+    uStack_23 = 0;
+    LStack_24._index = auStack_18._8_4_;
+    LStack_24._version = auStack_18._12_4_;
+    LStack_24._current = (Object *)0x0;
+    auStack_18._0_4_ = 0.0;
+    auStack_18._4_4_ = 0.0;
+    auStack_18._8_8_ = &LStack_24;
+    uStack_7._4_4_ = 0.0;
+    fVar25 = uStack_7._4_4_;
+    uVar26 = uStack_2;
+    fVar27 = fStack_3;
+    fVar28 = fStack_4;
+    fVar29 = fStack_5;
+    fVar30 = (float)uVar13;
+    fVar31 = uVar13._4_4_;
+    fVar32 = fVar14;
+    uStack_7 = uVar15;
+    LStack_24._list = (List_1_System_Object_ *)roots;
+    while( true ) {
+      bVar33 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+               List_1_T_Enumerator_System_Object__MoveNext
+                         (&LStack_24,
+                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                         );
+      root = LStack_24._current;
+      if (bVar33 == 0) {
+        if ((char)uVar26 != '\0') {
+          VStack_34.y = fVar31;
+          VStack_34.x = fVar30;
+          auStack_18._4_4_ = fStack_4;
+          auStack_18._0_4_ = fStack_3;
+          auStack_18._8_4_ = fVar12;
+          VStack_34.z = fVar32;
+          ObjectSnap::ObjectSnap_Snap_1(roots,(Vector3 *)auStack_18,&VStack_34,(MethodInfo *)0x0);
+        }
+        *(undefined4 *)__return_storage_ptr__ = uVar26;
+        (__return_storage_ptr__->_snapPivot).x = fVar27;
+        (__return_storage_ptr__->_snapPivot).y = fVar28;
+        (__return_storage_ptr__->_snapPivot).z = fVar29;
+        (__return_storage_ptr__->_snapDestination).x = (float)uVar13;
+        (__return_storage_ptr__->_snapDestination).y = uVar13._4_4_;
+        (__return_storage_ptr__->_snapDestination).z = fVar14;
+        __return_storage_ptr__->_snapDistance = fVar25;
+        __return_storage_ptr__->_failReason = iVar16;
         return __return_storage_ptr__;
       }
-      if ((TypeInfo__RTG__Object2ObjectSnap->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+      if (*(int *)&(TypeInfo__RTG__Object2ObjectSnap->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      pOVar19 = Object2ObjectSnap_CalculateSnapResult
-                         ((Object2ObjectSnap_SnapResult *)&stack0xffffff40,(GameObject *)root,
-                          snapConfig,(MethodInfo *)0x0);
-      if (pOVar19->_failReason == 1) break;
-      if ((pOVar19->_failReason == 0) && (pOVar19->_snapDistance < fStack_8)) {
-        OStack_6._success = pOVar19->_success;
-        OStack_6._1_3_ = *(undefined3 *)&pOVar19->field_0x1;
-        OStack_6._snapPivot.x = (pOVar19->_snapPivot).x;
-        OStack_6._snapPivot.y = (pOVar19->_snapPivot).y;
-        OStack_6._snapPivot.z = (pOVar19->_snapPivot).z;
-        OStack_6._snapDestination.x = (pOVar19->_snapDestination).x;
-        OStack_6._snapDestination.y = (pOVar19->_snapDestination).y;
-        OStack_6._snapDestination.z = (pOVar19->_snapDestination).z;
-        OStack_6._snapDistance = pOVar19->_snapDistance;
-        OStack_6._failReason = 0;
-        uStack_12 = (float)OStack_6._0_4_;
-        uStack_13 = OStack_6._snapPivot.x;
-        uStack_14 = OStack_6._snapPivot.y;
-        uStack_15 = OStack_6._snapPivot.z;
-        LStack_10._list =
-             (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-             OStack_6._snapDestination.x;
-        LStack_10._index = (int32_t)OStack_6._snapDestination.y;
-        LStack_10._version = (int32_t)OStack_6._snapDestination.z;
-        LStack_10._current = (RegexCharClass_SingleRange)OStack_6._snapDistance;
-        fStack_8 = pOVar19->_snapDistance;
+      OStack_35._areaMatchEps = snapConfig->_areaMatchEps;
+      OStack_35._4_4_ = *(undefined4 *)&snapConfig->field_0x4;
+      OStack_35.IgnoreDestObjects = snapConfig->IgnoreDestObjects;
+      OStack_35.DestinationLayers = snapConfig->DestinationLayers;
+      OStack_35.SnapRadius = snapConfig->SnapRadius;
+      OStack_35.Prefs = snapConfig->Prefs;
+      OStack_35._28_4_ = *(undefined4 *)&snapConfig->field_0x1c;
+      pOVar36 = Object2ObjectSnap_CalculateSnapResult
+                          (aOStack_37,(GameObject *)root,&OStack_35,(MethodInfo *)0x0);
+      uVar38 = *(undefined4 *)pOVar36;
+      fVar39 = (pOVar36->_snapPivot).x;
+      OStack_35._0_8_ = *(undefined8 *)pOVar36;
+      pfVar40 = &(pOVar36->_snapPivot).y;
+      fVar41 = *pfVar40;
+      fVar42 = (pOVar36->_snapPivot).z;
+      OStack_35.IgnoreDestObjects = *(List_1_UnityEngine_GameObject_ **)pfVar40;
+      fVar43 = (pOVar36->_snapDestination).x;
+      fVar44 = (pOVar36->_snapDestination).y;
+      fVar45 = (pOVar36->_snapDestination).z;
+      fVar46 = pOVar36->_snapDistance;
+      if (pOVar36->_failReason == 1) break;
+      if ((pOVar36->_failReason == 0) && (fVar46 < fVar1)) {
+        pVVar47 = &pOVar36->_snapDestination;
+        uVar13._0_4_ = pVVar47->x;
+        uVar13._4_4_ = (pOVar36->_snapDestination).y;
+        uStack_6._0_4_ = pVVar47->x;
+        uStack_6._4_4_ = pVVar47->y;
+        pfVar40 = &(pOVar36->_snapDestination).z;
+        fVar14 = *pfVar40;
+        fVar25 = pOVar36->_snapDistance;
+        uStack_7 = *(ulonglong *)pfVar40;
+        fVar32 = (pOVar36->_snapDestination).z;
+        iVar16 = 0;
+        uStack_8 = 0;
+        uVar26 = uVar38;
+        fVar27 = fVar39;
+        fVar28 = fVar41;
+        fVar29 = fVar42;
+        fVar1 = fVar46;
+        fVar30 = (float)uVar13;
+        fVar31 = uVar13._4_4_;
+        fVar12 = fVar42;
+        uStack_2 = uVar38;
+        fStack_3 = fVar39;
+        fStack_4 = fVar41;
+        fStack_5 = fVar42;
       }
     }
-    LStack_10._list = *(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)pOVar19;
-    LStack_10._index = (int32_t)(pOVar19->_snapPivot).x;
-    LStack_10._version = (int32_t)(pOVar19->_snapPivot).y;
-    LStack_10._current = (RegexCharClass_SingleRange)(pOVar19->_snapPivot).z;
-    uStack_1 = 0xffffffff;
-    uStack_12 = (pOVar19->_snapDestination).x;
-    uStack_13 = (pOVar19->_snapDestination).y;
-    uStack_14 = (pOVar19->_snapDestination).z;
-    uStack_15 = pOVar19->_snapDistance;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&LStack_7,
-               (ExceptionArgument__Enum)
-               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-               ,(MethodInfo *)(pOVar19->_snapDestination).x);
-    *(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)__return_storage_ptr__ =
-         LStack_10._list;
-    (__return_storage_ptr__->_snapPivot).x = (float)LStack_10._index;
-    (__return_storage_ptr__->_snapPivot).y = (float)LStack_10._version;
-    (__return_storage_ptr__->_snapPivot).z = (float)LStack_10._current;
-    (__return_storage_ptr__->_snapDestination).x = uStack_12;
-    (__return_storage_ptr__->_snapDestination).y = uStack_13;
-    (__return_storage_ptr__->_snapDestination).z = uStack_14;
-    __return_storage_ptr__->_snapDistance = uStack_15;
+    *(undefined4 *)__return_storage_ptr__ = uVar38;
+    (__return_storage_ptr__->_snapPivot).x = fVar39;
+    (__return_storage_ptr__->_snapPivot).y = fVar41;
+    (__return_storage_ptr__->_snapPivot).z = fVar42;
+    (__return_storage_ptr__->_snapDestination).x = fVar43;
+    (__return_storage_ptr__->_snapDestination).y = fVar44;
+    (__return_storage_ptr__->_snapDestination).z = fVar45;
+    __return_storage_ptr__->_snapDistance = fVar46;
     __return_storage_ptr__->_failReason = 1;
-    *unaff_FS_OFFSET = uStack_3;
     return __return_storage_ptr__;
   }
-  func_?();
-  func_?();
-  pcVar20 = (code *)swi(3);
-  pOVar19 = (Object2ObjectSnap_SnapResult *)(*pcVar20)();
-  return pOVar19;
+  FUN_?();
+  pcVar48 = (code *)swi(3);
+  pOVar36 = (Object2ObjectSnap_SnapResult *)(*pcVar48)();
+  return pOVar36;
 }
 
 
@@ -1024,77 +1156,61 @@ Assembly-CSharp.dll::RTG::Object2ObjectSnap::Object2ObjectSnap_Snap
 Object2ObjectSnap_SnapResult *
 Assembly-CSharp.dll::RTG::Object2ObjectSnap::Object2ObjectSnap_Snap_1
           (Object2ObjectSnap_SnapResult *__return_storage_ptr__,GameObject *root,
-          Object2ObjectSnap_Config snapConfig,MethodInfo *method)
+          Object2ObjectSnap_Config *snapConfig,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__Object2ObjectSnap);
+    FUN_?(&TypeInfo__RTG__Object2ObjectSnap);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pOVar1 = TypeInfo__RTG__Object2ObjectSnap;
-  *(undefined4 *)__return_storage_ptr__ = 0;
+  __return_storage_ptr__->_success = 0;
+  *(undefined3 *)&__return_storage_ptr__->field_0x1 = 0;
   (__return_storage_ptr__->_snapPivot).x = 0.0;
   (__return_storage_ptr__->_snapPivot).y = 0.0;
   (__return_storage_ptr__->_snapPivot).z = 0.0;
-  uVar2 = (pOVar1->_1).cctor_finished_or_no_cctor;
   (__return_storage_ptr__->_snapDestination).x = 0.0;
   (__return_storage_ptr__->_snapDestination).y = 0.0;
-  (__return_storage_ptr__->_snapDestination).z = 0.0;
-  __return_storage_ptr__->_snapDistance = 0.0;
+  *(undefined8 *)&(__return_storage_ptr__->_snapDestination).z = 0;
   __return_storage_ptr__->_failReason = 0;
-  if (uVar2 == 0) {
-    func_?(pOVar1);
+  if (*(int *)&(pOVar1->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pOVar3 = Object2ObjectSnap_CalculateSnapResult
-                      ((Object2ObjectSnap_SnapResult *)&stack0xffffffb4,root,snapConfig,
-                       (MethodInfo *)0x0);
-  uVar4 = *(undefined3 *)&pOVar3->field_0x1;
-  fVar5 = (pOVar3->_snapPivot).x;
-  fVar6 = (pOVar3->_snapPivot).y;
-  fVar7 = (pOVar3->_snapPivot).z;
+  OStack_2._areaMatchEps = snapConfig->_areaMatchEps;
+  OStack_2._4_4_ = *(undefined4 *)&snapConfig->field_0x4;
+  OStack_2.IgnoreDestObjects = snapConfig->IgnoreDestObjects;
+  OStack_2.DestinationLayers = snapConfig->DestinationLayers;
+  OStack_2.SnapRadius = snapConfig->SnapRadius;
+  OStack_2.Prefs = snapConfig->Prefs;
+  OStack_2._28_4_ = *(undefined4 *)&snapConfig->field_0x1c;
+  pOVar3 = Object2ObjectSnap_CalculateSnapResult(&OStack_4,root,&OStack_2,(MethodInfo *)0x0);
+  uVar5 = *(undefined3 *)&pOVar3->field_0x1;
+  fVar6 = (pOVar3->_snapPivot).x;
+  fVar7 = (pOVar3->_snapPivot).y;
+  fVar8 = (pOVar3->_snapPivot).z;
+  VStack_9.x = (pOVar3->_snapDestination).x;
+  VStack_9.y = (pOVar3->_snapDestination).y;
+  uVar10 = *(undefined8 *)&(pOVar3->_snapDestination).z;
+  iVar11 = pOVar3->_failReason;
   __return_storage_ptr__->_success = pOVar3->_success;
-  *(undefined3 *)&__return_storage_ptr__->field_0x1 = uVar4;
-  (__return_storage_ptr__->_snapPivot).x = fVar5;
-  (__return_storage_ptr__->_snapPivot).y = fVar6;
-  (__return_storage_ptr__->_snapPivot).z = fVar7;
-  fVar5 = (pOVar3->_snapDestination).y;
-  fVar6 = (pOVar3->_snapDestination).z;
-  fVar7 = pOVar3->_snapDistance;
-  iVar8 = pOVar3->_failReason;
-  (__return_storage_ptr__->_snapDestination).x = (pOVar3->_snapDestination).x;
-  (__return_storage_ptr__->_snapDestination).y = fVar5;
-  (__return_storage_ptr__->_snapDestination).z = fVar6;
-  __return_storage_ptr__->_snapDistance = fVar7;
-  __return_storage_ptr__->_failReason = iVar8;
-  if (__return_storage_ptr__->_success == 0) {
-    return __return_storage_ptr__;
+  *(undefined3 *)&__return_storage_ptr__->field_0x1 = uVar5;
+  (__return_storage_ptr__->_snapPivot).x = fVar6;
+  (__return_storage_ptr__->_snapPivot).y = fVar7;
+  (__return_storage_ptr__->_snapPivot).z = fVar8;
+  (__return_storage_ptr__->_snapDestination).x = VStack_9.x;
+  (__return_storage_ptr__->_snapDestination).y = VStack_9.y;
+  *(undefined8 *)&(__return_storage_ptr__->_snapDestination).z = uVar10;
+  __return_storage_ptr__->_failReason = iVar11;
+  if (__return_storage_ptr__->_success != 0) {
+    VStack_9.z = (__return_storage_ptr__->_snapDestination).z;
+    VStack_12.x = (__return_storage_ptr__->_snapPivot).x;
+    VStack_12.y = (__return_storage_ptr__->_snapPivot).y;
+    VStack_12.z = (__return_storage_ptr__->_snapPivot).z;
+    ObjectSnap::ObjectSnap_Snap(root,&VStack_12,&VStack_9,(MethodInfo *)0x0);
   }
-  uVar9 = (__return_storage_ptr__->_snapPivot).x;
-  uVar10 = (__return_storage_ptr__->_snapPivot).y;
-  fVar5 = (__return_storage_ptr__->_snapPivot).z;
-  uVar11 = (__return_storage_ptr__->_snapDestination).x;
-  uVar12 = (__return_storage_ptr__->_snapDestination).y;
-  fVar6 = (__return_storage_ptr__->_snapDestination).z;
-  if (root != (GameObject *)0x0) {
-    this = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                     (root,(MethodInfo *)0x0);
-    if (this != (Transform *)0x0) {
-      pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                          ((Vector3 *)&stack0xffffffd8,this,(MethodInfo *)0x0);
-      uVar14 = pVVar13->x;
-      uVar15 = pVVar13->y;
-      value.y = (float)uVar12 + ((float)uVar15 - (float)uVar10);
-      value.x = (float)uVar11 + ((float)uVar14 - (float)uVar9);
-      value.z = fVar6 + (pVVar13->z - fVar5);
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                (this,value,(MethodInfo *)0x0);
-      return __return_storage_ptr__;
-    }
-  }
-  func_?();
-  pcVar16 = (code *)swi(3);
-  pOVar3 = (Object2ObjectSnap_SnapResult *)(*pcVar16)();
-  return pOVar3;
+  return __return_storage_ptr__;
 }
 
 
@@ -1104,29 +1220,47 @@ void Assembly-CSharp.dll::RTG::Object2ObjectSnap::Object2ObjectSnap__cctor(Metho
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
-    func_?(&TypeInfo__RTG__Object2ObjectSnap);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__Object2ObjectSnap);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this = (List_1_UnityEngine_GameObject_ *)
-         func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
+         FUN_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this,
              MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
   TypeInfo__RTG__Object2ObjectSnap->static_fields->_nearbyObjectBuffer = this;
-  func_?(TypeInfo__RTG__Object2ObjectSnap->static_fields,this);
-  pOVar1 = TypeInfo__RTG__Object2ObjectSnap->static_fields;
-  (pOVar1->_defaultConfig)._areaMatchEps = 0.0;
-  (pOVar1->_defaultConfig).IgnoreDestObjects = (List_1_UnityEngine_GameObject_ *)0x0;
-  (pOVar1->_defaultConfig).DestinationLayers = 0;
-  (pOVar1->_defaultConfig).SnapRadius = 0.0;
-  (pOVar1->_defaultConfig).Prefs = 0;
-  (TypeInfo__RTG__Object2ObjectSnap->static_fields->_defaultConfig)._areaMatchEps =
-       (float)(_UNK_? & _UNK_?);
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)TypeInfo__RTG__Object2ObjectSnap->static_fields >> 0xc);
+    uVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6);
+    do {
+      uVar3 = *(ulonglong *)(uVar2 * 8 + 0xADDR);
+      puVar4 = (ulonglong *)(uVar2 * 8 + 0xADDR);
+      LOCK();
+      bVar5 = uVar3 == *puVar4;
+      if (bVar5) {
+        *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
+  fVar6 = (float)(_UNK_? & _UNK_?);
+  pOVar7 = TypeInfo__RTG__Object2ObjectSnap->static_fields;
+  *(undefined8 *)&pOVar7->_defaultConfig = 0;
+  (pOVar7->_defaultConfig).IgnoreDestObjects = (List_1_UnityEngine_GameObject_ *)0x0;
+  (pOVar7->_defaultConfig).DestinationLayers = 0;
+  (pOVar7->_defaultConfig).SnapRadius = 0.0;
+  *(undefined8 *)&(pOVar7->_defaultConfig).Prefs = 0;
+  (TypeInfo__RTG__Object2ObjectSnap->static_fields->_defaultConfig)._areaMatchEps = fVar6;
   (TypeInfo__RTG__Object2ObjectSnap->static_fields->_defaultConfig).Prefs = 0;
   return;
 }
@@ -1140,22 +1274,28 @@ Assembly-CSharp.dll::RTG::Object2ObjectSnap::Object2ObjectSnap_get_DefaultConfig
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__Object2ObjectSnap);
+    FUN_?(&TypeInfo__RTG__Object2ObjectSnap);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__RTG__Object2ObjectSnap->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__Object2ObjectSnap);
+  if (*(int *)&(TypeInfo__RTG__Object2ObjectSnap->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__RTG__Object2ObjectSnap);
   }
   pOVar1 = TypeInfo__RTG__Object2ObjectSnap->static_fields;
-  pLVar2 = (pOVar1->_defaultConfig).IgnoreDestObjects;
-  iVar3 = (pOVar1->_defaultConfig).DestinationLayers;
-  fVar4 = (pOVar1->_defaultConfig).SnapRadius;
-  iVar5 = (pOVar1->_defaultConfig).Prefs;
+  uVar2 = *(undefined4 *)&(pOVar1->_defaultConfig).field_0x4;
+  pLVar3 = (pOVar1->_defaultConfig).IgnoreDestObjects;
+  iVar4 = (pOVar1->_defaultConfig).DestinationLayers;
+  fVar5 = (pOVar1->_defaultConfig).SnapRadius;
+  iVar6 = (pOVar1->_defaultConfig).Prefs;
+  uVar7 = *(undefined4 *)&(pOVar1->_defaultConfig).field_0x1c;
   __return_storage_ptr__->_areaMatchEps = (pOVar1->_defaultConfig)._areaMatchEps;
-  __return_storage_ptr__->IgnoreDestObjects = pLVar2;
-  __return_storage_ptr__->DestinationLayers = iVar3;
-  __return_storage_ptr__->SnapRadius = fVar4;
-  __return_storage_ptr__->Prefs = iVar5;
+  *(undefined4 *)&__return_storage_ptr__->field_0x4 = uVar2;
+  __return_storage_ptr__->IgnoreDestObjects = pLVar3;
+  __return_storage_ptr__->DestinationLayers = iVar4;
+  __return_storage_ptr__->SnapRadius = fVar5;
+  __return_storage_ptr__->Prefs = iVar6;
+  *(undefined4 *)&__return_storage_ptr__->field_0x1c = uVar7;
   return __return_storage_ptr__;
 }
 

@@ -4,25 +4,33 @@
 void Assembly-CSharp.dll::PlayerPrefsManager::PlayerPrefsManager_EarlyInitialize(MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PlayerPrefsManager);
-    func_?(&StringLiteral_isFirstTimeSession);
+    FUN_?(&TypeInfo__PlayerPrefsManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_isFirstTimeSession);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  uStack_1 = 0;
-  bVar4 = UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_HasKey
+  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_HasKey
                     (StringLiteral_isFirstTimeSession,(MethodInfo *)0x0);
-  if (bVar4 == 0) {
+  if (bVar1 == 0) {
     TypeInfo__PlayerPrefsManager->static_fields->isFirstTimeSession = 1;
     UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_SetInt
               (StringLiteral_isFirstTimeSession,1,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_Save((MethodInfo *)0x0);
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)();
   }
-  *unaff_FS_OFFSET = uStack_3;
   return;
 }
 
@@ -34,115 +42,176 @@ void Assembly-CSharp.dll::PlayerPrefsManager::PlayerPrefsManager_HandlePlayedGam
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    System__Collections__Generic__List<int>_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<System::Collections::Generic::List<int>_>_System__String_
-                   );
-    func_?(&TypeInfo__Newtonsoft__Json__JsonConvert);
-    func_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
-    func_?(&MethodInfo__System__Collections__Generic__List<int>__RemoveAt_int_);
-    func_?(&MethodInfo__System__Collections__Generic__List<int>__RemoveRange_int__int_);
-    func_?(&MethodInfo__System__Collections__Generic__List<int>__List__);
-    func_?(&MethodInfo__System__Collections__Generic__List<int>__get_Count__);
-    func_?(&MethodInfo__System__Collections__Generic__List<int>__get_Item_int_);
-    func_?(&TypeInfo__System__Collections__Generic__List<int>);
-    func_?(&TypeInfo__PlayerPrefsManager);
-    func_?(&StringLiteral_playedGamesList);
+    FUN_?(&
+                  System__Collections__Generic__List<int>_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<System::Collections::Generic::List<int>_>_System__String_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Newtonsoft__Json__JsonConvert);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<int>__Add_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<int>__RemoveAt_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<int>__RemoveRange_int__int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<int>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<int>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<int>__get_Item_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<int>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__PlayerPrefsManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_playedGamesList);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   bVar1 = UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_HasKey
                     (StringLiteral_playedGamesList,(MethodInfo *)0x0);
   if (bVar1 == 0) {
-    this = (LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-           func_?(TypeInfo__System__Collections__Generic__List<int>);
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType]::
-    LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              (this,MethodInfo__System__Collections__Generic__List<int>__List__);
-    if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
+    value = (Object *)FUN_?(TypeInfo__System__Collections__Generic__List<int>);
+    FUN_?(value);
+    if (*(int *)&(TypeInfo__Newtonsoft__Json__JsonConvert->_1).field_0x1c == 0) {
+      FUN_?();
     }
     pSVar2 = Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_SerializeObject
-                       ((Object *)this,(MethodInfo *)0x0);
+                       (value,(MethodInfo *)0x0);
     UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_SetString
               (StringLiteral_playedGamesList,pSVar2,(MethodInfo *)0x0);
   }
-  pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_GetString_1
-                     (StringLiteral_playedGamesList,(MethodInfo *)0x0);
-  if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  pSVar2 = StringLiteral_playedGamesList;
+  if (cRam_? == '\0') {
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV_ *)
-            Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
-                      (pSVar2,
-                       System__Collections__Generic__List<int>_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<System::Collections::Generic::List<int>_>_System__String_
-                      );
-  index = -1;
-  index_00 = 0;
-  gameId = unaff_EBX;
-  if (this_00 !=
-      (List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV_ *)0x0) {
-    for (; pMVar3 = MethodInfo__System__Collections__Generic__List<int>__get_Item_int_,
-        index_00 < (this_00->fields)._size; index_00 = index_00 + 1) {
-      gameId = (int32_t)MethodInfo__System__Collections__Generic__List<int>__get_Item_int_;
-      RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                         this_00,index_00,
-                         MethodInfo__System__Collections__Generic__List<int>__get_Item_int_);
-      if (RVar4 == (RegexCharClass_SingleRange)pMVar3) {
+  pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_GetString
+                     (pSVar2,::StringLiteral__,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__Newtonsoft__Json__JsonConvert->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  this = (List_1_System_UInt32Enum_ *)
+         Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
+                   (pSVar2,
+                    System__Collections__Generic__List<int>_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<System::Collections::Generic::List<int>_>_System__String_
+                   );
+  uVar3 = 0;
+  uVar4 = 0xffffffff;
+  if (this != (List_1_System_UInt32Enum_ *)0x0) {
+    lVar5 = 0x20;
+    for (; (int)uVar3 < (this->fields)._size; uVar3 = uVar3 + 1) {
+      if ((uint)(this->fields)._size <= uVar3) goto code_?;
+      pUVar6 = (this->fields)._items;
+      if (pUVar6 == (UInt32Enum__Enum__Array *)0x0) goto code_?;
+      if ((uint)pUVar6->max_length <= uVar3) goto code_?;
+      if (*(int *)((longlong)pUVar6->vector + lVar5 + -0x20) == gameId) {
         TypeInfo__PlayerPrefsManager->static_fields->isReturningPlayer = 1;
-        index = index_00;
+        uVar4 = uVar3;
       }
+      lVar5 = lVar5 + 4;
     }
-    if (index != -1) {
-      gameId = (int32_t)MethodInfo__System__Collections__Generic__List<int>__RemoveAt_int_;
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
-      Implementation::UIRStylePainter+RepeatRectUV]::
-      List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV__RemoveAt
-                (this_00,index,MethodInfo__System__Collections__Generic__List<int>__RemoveAt_int_);
-    }
-    pMVar3 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
-    piVar5 = &(this_00->fields)._version;
-    *piVar5 = *piVar5 + 1;
-    pUVar6 = (this_00->fields)._items;
-    if (pUVar6 != (UIRStylePainter_RepeatRectUV__Array *)0x0) {
-      uVar7 = (this_00->fields)._size;
-      if (pUVar6->max_length <= uVar7) {
-        method_00 = pMVar3->klass->rgctx_data[0xe];
-        mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
-        List_1_System_Int32__AddWithResize
-                  ((List_1_System_Int32_ *)this_00,(int32_t)method_00,(MethodInfo *)method_00);
+    if (uVar4 != 0xffffffff) {
+      if ((uint)(this->fields)._size <= uVar4) {
 code_?:
-        if (0x32 < (this_00->fields)._size) {
-          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
-          Implementation::UIRStylePainter+RepeatRectUV]::
-          List_1_UnityEngine_UIElements_UIR_Implementation_UIRStylePainter_RepeatRectUV__RemoveRange
-                    (this_00,0,(this_00->fields)._size + -0x32,
-                     MethodInfo__System__Collections__Generic__List<int>__RemoveRange_int__int_);
-        }
-        if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        pSVar2 = Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_SerializeObject
-                           ((Object *)this_00,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_SetString
-                  (StringLiteral_playedGamesList,pSVar2,(MethodInfo *)0x0);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar7 = (code *)swi(3);
+        (*pcVar7)();
         return;
       }
-      (this_00->fields)._size = uVar7 + 1;
-      if (uVar7 < pUVar6->max_length) {
-        (&pUVar6->vector[0].rect.m_XMin)[uVar7] = (float)gameId;
-        goto code_?;
+      iVar8 = (this->fields)._size + -1;
+      (this->fields)._size = iVar8;
+      if ((int)uVar4 < iVar8) {
+        pUVar6 = (this->fields)._items;
+        mscorlib.dll::System::Array::Array_Copy_3
+                  ((Array *)pUVar6,uVar4 + 1,(Array *)pUVar6,uVar4,iVar8 - uVar4,
+                   (MethodInfo *)0x0);
       }
-      goto code_?;
+      piVar9 = &(this->fields)._version;
+      *piVar9 = *piVar9 + 1;
+    }
+    pMVar10 = MethodInfo__System__Collections__Generic__List<int>__Add_int_;
+    piVar9 = &(this->fields)._version;
+    *piVar9 = *piVar9 + 1;
+    pUVar6 = (this->fields)._items;
+    if (pUVar6 != (UInt32Enum__Enum__Array *)0x0) {
+      uVar4 = (this->fields)._size;
+      if (uVar4 < (uint)pUVar6->max_length) {
+        (this->fields)._size = uVar4 + 1;
+        if ((uint)pUVar6->max_length <= uVar4) {
+code_?:
+          FUN_?();
+          pcVar7 = (code *)swi(3);
+          (*pcVar7)();
+          return;
+        }
+        pUVar6->vector[(int)uVar4] = gameId;
+      }
+      else {
+        mscorlib.dll::System::Collections::Generic::List`1[System::UInt32Enum]::
+        List_1_System_UInt32Enum__AddWithResize(this,gameId,pMVar10->klass->rgctx_data[0xe].method);
+      }
+      if (0x32 < (this->fields)._size) {
+        iVar8 = (this->fields)._size + -0x32;
+        if (iVar8 < 0) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRangeException_2
+                    (ExceptionArgument__Enum_count,
+                     ExceptionResource__Enum_ArgumentOutOfRange_NeedNonNegNum,(MethodInfo *)0x0);
+          pcVar7 = (code *)swi(3);
+          (*pcVar7)();
+          return;
+        }
+        if (0 < iVar8) {
+          pUVar6 = (this->fields)._items;
+          (this->fields)._size = 0x32;
+          mscorlib.dll::System::Array::Array_Copy_3
+                    ((Array *)pUVar6,iVar8,(Array *)pUVar6,0,0x32,(MethodInfo *)0x0);
+          piVar9 = &(this->fields)._version;
+          *piVar9 = *piVar9 + 1;
+        }
+      }
+      if (*(int *)&(TypeInfo__Newtonsoft__Json__JsonConvert->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      pSVar2 = Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_SerializeObject
+                         ((Object *)this,(MethodInfo *)0x0);
+      bVar1 = UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_TrySetSetString
+                        (StringLiteral_playedGamesList,pSVar2,(MethodInfo *)0x0);
+      if (bVar1 != 0) {
+        return;
+      }
+      uVar11 = func_?(&TypeInfo__UnityEngine__PlayerPrefsException);
+      this_00 = (PlayerPrefsException *)func_?(uVar11);
+      pSVar2 = (String *)func_?(&StringLiteral_Could_not_store_preference_value);
+      UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefsException::PlayerPrefsException__ctor
+                (this_00,pSVar2,(MethodInfo *)0x0);
+      uVar11 = func_?(&
+                                  MethodInfo__UnityEngine__PlayerPrefs__SetString_System__String__System__String_
+                                 );
+      FUN_?(this_00,uVar11);
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
+      return;
     }
   }
-  func_?();
 code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -154,15 +223,19 @@ void Assembly-CSharp.dll::PlayerPrefsManager::PlayerPrefsManager_HandleSignInSta
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PlayerPrefsManager);
-    func_?(&StringLiteral_signInState);
+    FUN_?(&TypeInfo__PlayerPrefsManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_signInState);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   bVar1 = UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_HasKey
                     (StringLiteral_signInState,(MethodInfo *)0x0);
   if (bVar1 != 0) {
-    iVar2 = UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_GetInt_1
-                      (StringLiteral_signInState,(MethodInfo *)0x0);
+    iVar2 = UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_GetInt
+                      (StringLiteral_signInState,0,(MethodInfo *)0x0);
     bVar1 = 0;
     if (iVar2 == 0) {
       bVar1 = isRegistered;
@@ -171,13 +244,20 @@ void Assembly-CSharp.dll::PlayerPrefsManager::PlayerPrefsManager_HandleSignInSta
       TypeInfo__PlayerPrefsManager->static_fields->playerHasChangedFromTouristToRegistered = 1;
     }
   }
-  if (isRegistered == 0) {
-    UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_SetInt
-              (StringLiteral_signInState,0,(MethodInfo *)0x0);
+  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_TrySetInt
+                    (StringLiteral_signInState,(uint)(isRegistered != 0),(MethodInfo *)0x0);
+  if (bVar1 != 0) {
     return;
   }
-  UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_SetInt
-            (StringLiteral_signInState,1,(MethodInfo *)0x0);
+  uVar3 = func_?(&TypeInfo__UnityEngine__PlayerPrefsException);
+  this = (PlayerPrefsException *)func_?(uVar3);
+  error = (String *)func_?(&StringLiteral_Could_not_store_preference_value);
+  UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefsException::PlayerPrefsException__ctor
+            (this,error,(MethodInfo *)0x0);
+  uVar3 = func_?(&MethodInfo__UnityEngine__PlayerPrefs__SetInt_System__String__int_);
+  FUN_?(this,uVar3);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -188,33 +268,47 @@ void Assembly-CSharp.dll::PlayerPrefsManager::PlayerPrefsManager_Initialize
                (GameSessionData *gameSessionData,MethodInfo *method)
 
 {
-  puStack_1 = &DAT_?;
-  uStack_2 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_2;
   if (gameSessionData != (GameSessionData *)0x0) {
     PlayerPrefsManager_HandlePlayedGames((gameSessionData->fields).planetID,(MethodInfo *)0x0);
-    iVar3 = (gameSessionData->fields).profileID;
+    iVar1 = (gameSessionData->fields).profileID;
     if (cRam_? == '\0') {
-      func_?();
-      func_?();
+      FUN_?(&TypeInfo__PlayerPrefsManager);
+      LOCK();
+      UNLOCK();
+      FUN_?(&StringLiteral_signInState);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_HasKey
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_HasKey
                       (StringLiteral_signInState,(MethodInfo *)0x0);
-    if ((bVar4 != 0) &&
-       (iVar5 = UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_GetInt_1
-                          (StringLiteral_signInState,(MethodInfo *)0x0), 0 < iVar3 && iVar5 == 0)) {
+    if ((bVar2 != 0) &&
+       (iVar3 = UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_GetInt
+                          (StringLiteral_signInState,0,(MethodInfo *)0x0), 0 < iVar1 && iVar3 == 0))
+    {
       TypeInfo__PlayerPrefsManager->static_fields->playerHasChangedFromTouristToRegistered = 1;
     }
-    UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_SetInt
-              (StringLiteral_signInState,(uint)(0 < iVar3),(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_Save((MethodInfo *)0x0);
-    *unaff_FS_OFFSET = uStack_2;
-    return;
+    if (iVar1 < 1) {
+      UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_SetInt
+                (StringLiteral_signInState,0,(MethodInfo *)0x0);
+    }
+    else {
+      UnityEngine.CoreModule.dll::UnityEngine::PlayerPrefs::PlayerPrefs_SetInt
+                (StringLiteral_signInState,1,(MethodInfo *)0x0);
+    }
+    pcVar4 = pcRam_?;
+    if ((pcRam_? != (code *)0x0) ||
+       (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 != (code *)0x0)) {
+      pcRam_? = pcVar4;
+      (*pcRam_?)();
+      return;
+    }
+    uVar5 = func_?(&UNK_?);
+    FUN_?(uVar5,0);
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -226,7 +320,9 @@ bool Assembly-CSharp.dll::PlayerPrefsManager::PlayerPrefsManager_get_IsFirstTime
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PlayerPrefsManager);
+    FUN_?(&TypeInfo__PlayerPrefsManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return TypeInfo__PlayerPrefsManager->static_fields->isFirstTimeSession;
@@ -240,7 +336,9 @@ bool Assembly-CSharp.dll::PlayerPrefsManager::PlayerPrefsManager_get_IsReturning
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PlayerPrefsManager);
+    FUN_?(&TypeInfo__PlayerPrefsManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (TypeInfo__PlayerPrefsManager->static_fields->playerHasChangedFromTouristToRegistered == 0) {
@@ -257,7 +355,9 @@ bool Assembly-CSharp.dll::PlayerPrefsManager::PlayerPrefsManager_get_IsReturning
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PlayerPrefsManager);
+    FUN_?(&TypeInfo__PlayerPrefsManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return TypeInfo__PlayerPrefsManager->static_fields->isReturningPlayer;

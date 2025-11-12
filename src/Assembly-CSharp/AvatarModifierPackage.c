@@ -6,46 +6,93 @@ void Assembly-CSharp.dll::AvatarModifierPackage::AvatarModifierPackage_InPause
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  fVar2 = this->lastTimeStamp;
-  AStack_3 = (ACTkByte4)(this->timeStamp).currentCryptoKey;
-  AVar4 = (this->timeStamp).hiddenValue;
-  pBVar5 = (this->timeStamp).hiddenValueOld;
-  fVar6 = (this->timeStamp).fakeValue;
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
-      == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
   }
-  value.hiddenValue = AVar4;
-  value.currentCryptoKey._0_1_ = AStack_3.b1;
-  value.currentCryptoKey._1_1_ = AStack_3.b2;
-  value.currentCryptoKey._2_1_ = AStack_3.b3;
-  value.currentCryptoKey._3_1_ = AStack_3.b4;
-  value.hiddenValueOld = pBVar5;
-  value.fakeValue = fVar6;
-  value.inited = (this->timeStamp).inited;
-  value._17_3_ = *(undefined3 *)&(this->timeStamp).field_0x11;
+  pcRam_? = pcVar1;
+  fVar3 = (float)(*pcRam_?)();
+  fVar4 = this->lastTimeStamp;
+  aOStack_5[0].currentCryptoKey = (this->timeStamp).currentCryptoKey;
+  aOStack_5[0].hiddenValue = (this->timeStamp).hiddenValue;
+  aOStack_5[0].hiddenValueOld = (this->timeStamp).hiddenValueOld;
+  aOStack_5[0].fakeValue = (this->timeStamp).fakeValue;
+  aOStack_5[0].inited = (this->timeStamp).inited;
+  aOStack_5[0]._21_3_ = *(undefined3 *)&(this->timeStamp).field_0x15;
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
+  }
   fVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-          ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
-  pOVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-           ObscuredFloat_op_Implicit
-                     ((ObscuredFloat *)&stack0xffffffe4,fVar6 + (fVar1 - fVar2),(MethodInfo *)0x0);
-  AVar4 = pOVar7->hiddenValue;
-  pBVar5 = pOVar7->hiddenValueOld;
-  fVar2 = pOVar7->fakeValue;
-  bVar8 = pOVar7->inited;
-  uVar9 = *(undefined3 *)&pOVar7->field_0x11;
-  (this->timeStamp).currentCryptoKey = pOVar7->currentCryptoKey;
-  (this->timeStamp).hiddenValue = AVar4;
-  (this->timeStamp).hiddenValueOld = pBVar5;
-  (this->timeStamp).fakeValue = fVar2;
-  (this->timeStamp).inited = bVar8;
-  *(undefined3 *)&(this->timeStamp).field_0x11 = uVar9;
-  func_?();
-  this->lastTimeStamp = fVar1;
+           ObscuredFloat_InternalDecrypt(aOStack_5,(MethodInfo *)0x0);
+  fVar6 = fVar6 + (fVar3 - fVar4);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  aOStack_5[0].fakeValue = 0.0;
+  aOStack_5[0].inited = 0;
+  aOStack_5[0]._21_3_ = 0;
+  aOStack_5[0].currentCryptoKey = 0;
+  aOStack_5[0].hiddenValue.b1 = 0;
+  aOStack_5[0].hiddenValue.b2 = 0;
+  aOStack_5[0].hiddenValue.b3 = 0;
+  aOStack_5[0].hiddenValue.b4 = 0;
+  aOStack_5[0].hiddenValueOld = (Byte__Array *)0x0;
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  value = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+          ObscuredFloat_InternalEncrypt(fVar6,(MethodInfo *)0x0);
+  Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+  ObscuredFloat__ctor(aOStack_5,value,(MethodInfo *)0x0);
+  bVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ObscuredCheatingDetector::
+          ObscuredCheatingDetector_get_IsRunning((MethodInfo *)0x0);
+  if (bVar7 != 0) {
+    aOStack_5[0].fakeValue = fVar6;
+  }
+  bVar8 = iRam_? != 0;
+  (this->timeStamp).currentCryptoKey = aOStack_5[0].currentCryptoKey;
+  (this->timeStamp).hiddenValue = aOStack_5[0].hiddenValue;
+  (this->timeStamp).hiddenValueOld = aOStack_5[0].hiddenValueOld;
+  (this->timeStamp).fakeValue = aOStack_5[0].fakeValue;
+  (this->timeStamp).inited = aOStack_5[0].inited;
+  *(undefined3 *)&(this->timeStamp).field_0x15 = aOStack_5[0]._21_3_;
+  if (bVar8) {
+    uVar9 = (uint)((ulonglong)&(this->timeStamp).hiddenValueOld >> 0xc);
+    uVar10 = (ulonglong)((uVar9 & 0x1fffff) >> 6);
+    do {
+      uVar11 = *(ulonglong *)(uVar10 * 8 + 0xADDR);
+      puVar12 = (ulonglong *)(uVar10 * 8 + 0xADDR);
+      LOCK();
+      bVar8 = uVar11 == *puVar12;
+      if (bVar8) {
+        *puVar12 = uVar11 | 1L << (uVar9 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar8);
+  }
+  this->lastTimeStamp = fVar3;
   return;
 }
 
@@ -53,20 +100,22 @@ void Assembly-CSharp.dll::AvatarModifierPackage::AvatarModifierPackage_InPause
 /* Boolean IsEqualTo(AvatarModifierPackage) */
 
 bool Assembly-CSharp.dll::AvatarModifierPackage::AvatarModifierPackage_IsEqualTo
-               (AvatarModifierPackage *this,AvatarModifierPackage other,MethodInfo *method)
+               (AvatarModifierPackage *this,AvatarModifierPackage *other,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AvatarModifierPackage);
+    FUN_?(&TypeInfo__AvatarModifierPackage);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__AvatarModifierPackage->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__AvatarModifierPackage);
+  if (*(int *)&(TypeInfo__AvatarModifierPackage->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  if (other.avatarModifierPackageType != this->avatarModifierPackageType) {
+  if (other->avatarModifierPackageType != this->avatarModifierPackageType) {
     return 0;
   }
-  return other.id == this->id;
+  return other->id == this->id;
 }
 
 
@@ -77,31 +126,91 @@ void Assembly-CSharp.dll::AvatarModifierPackage::AvatarModifierPackage_Renew
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
-      == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
   }
-  pOVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-           ObscuredFloat_op_Implicit((ObscuredFloat *)&stack0xffffffe4,fVar1,(MethodInfo *)0x0);
-  AVar3 = pOVar2->hiddenValue;
-  pBVar4 = pOVar2->hiddenValueOld;
-  fVar1 = pOVar2->fakeValue;
-  bVar5 = pOVar2->inited;
-  uVar6 = *(undefined3 *)&pOVar2->field_0x11;
-  (this->timeStamp).currentCryptoKey = pOVar2->currentCryptoKey;
-  (this->timeStamp).hiddenValue = AVar3;
-  (this->timeStamp).hiddenValueOld = pBVar4;
-  (this->timeStamp).fakeValue = fVar1;
-  (this->timeStamp).inited = bVar5;
-  *(undefined3 *)&(this->timeStamp).field_0x11 = uVar6;
-  func_?(&(this->timeStamp).hiddenValueOld,0);
-  fVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-          ObscuredFloat_op_Implicit_1(this->timeStamp,(MethodInfo *)0x0);
-  this->lastTimeStamp = fVar1;
+  pcRam_? = pcVar1;
+  fVar3 = (float)(*pcRam_?)();
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  aOStack_4[0].fakeValue = 0.0;
+  aOStack_4[0].inited = 0;
+  aOStack_4[0]._21_3_ = 0;
+  aOStack_4[0].currentCryptoKey = 0;
+  aOStack_4[0].hiddenValue.b1 = 0;
+  aOStack_4[0].hiddenValue.b2 = 0;
+  aOStack_4[0].hiddenValue.b3 = 0;
+  aOStack_4[0].hiddenValue.b4 = 0;
+  aOStack_4[0].hiddenValueOld = (Byte__Array *)0x0;
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  value = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+          ObscuredFloat_InternalEncrypt(fVar3,(MethodInfo *)0x0);
+  Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+  ObscuredFloat__ctor(aOStack_4,value,(MethodInfo *)0x0);
+  bVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ObscuredCheatingDetector::
+          ObscuredCheatingDetector_get_IsRunning((MethodInfo *)0x0);
+  if (bVar5 != 0) {
+    aOStack_4[0].fakeValue = fVar3;
+  }
+  bVar6 = iRam_? != 0;
+  (this->timeStamp).currentCryptoKey = aOStack_4[0].currentCryptoKey;
+  (this->timeStamp).hiddenValue = aOStack_4[0].hiddenValue;
+  (this->timeStamp).hiddenValueOld = aOStack_4[0].hiddenValueOld;
+  (this->timeStamp).fakeValue = aOStack_4[0].fakeValue;
+  (this->timeStamp).inited = aOStack_4[0].inited;
+  *(undefined3 *)&(this->timeStamp).field_0x15 = aOStack_4[0]._21_3_;
+  if (bVar6) {
+    uVar7 = (uint)((ulonglong)&(this->timeStamp).hiddenValueOld >> 0xc);
+    uVar8 = (ulonglong)((uVar7 & 0x1fffff) >> 6);
+    do {
+      uVar9 = *(ulonglong *)(uVar8 * 8 + 0xADDR);
+      puVar10 = (ulonglong *)(uVar8 * 8 + 0xADDR);
+      LOCK();
+      bVar6 = uVar9 == *puVar10;
+      if (bVar6) {
+        *puVar10 = uVar9 | 1L << (uVar7 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
+  aOStack_4[0].currentCryptoKey = (this->timeStamp).currentCryptoKey;
+  aOStack_4[0].hiddenValue = (this->timeStamp).hiddenValue;
+  aOStack_4[0].hiddenValueOld = (this->timeStamp).hiddenValueOld;
+  aOStack_4[0].fakeValue = (this->timeStamp).fakeValue;
+  aOStack_4[0].inited = (this->timeStamp).inited;
+  aOStack_4[0]._21_3_ = *(undefined3 *)&(this->timeStamp).field_0x15;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  fVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+          ObscuredFloat_InternalDecrypt(aOStack_4,(MethodInfo *)0x0);
+  this->lastTimeStamp = fVar3;
   return;
 }
 
@@ -112,183 +221,141 @@ void Assembly-CSharp.dll::AvatarModifierPackage::AvatarModifierPackage__cctor(Me
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AvatarModifierPackage);
-    func_?(&TypeInfo__System__String);
-    func_?(&StringLiteral__SlowMat);
-    func_?(&StringLiteral__Poison);
-    func_?(&StringLiteral__Enlarged);
-    func_?(&StringLiteral__Fire);
-    func_?(&StringLiteral__SpeedMat);
-    func_?(&StringLiteral__Lethal);
-    func_?(&StringLiteral__Underwater);
-    func_?(&StringLiteral__NinjaRun);
-    func_?(&StringLiteral__Shrunken);
-    func_?(&StringLiteral__InstantDeath);
-    func_?(&StringLiteral__Frozen);
-    func_?(&StringLiteral__HealingMat);
-    func_?(&StringLiteral__Shielded);
-    func_?(&StringLiteral__Mutant);
-    func_?(&StringLiteral__WindFriction);
-    func_?(&StringLiteral__NoFriction);
-    func_?(&StringLiteral__None);
-    func_?(&StringLiteral__RayHeal);
-    func_?(&StringLiteral__Sticky);
-    func_?(&StringLiteral__CrumbleMat);
-    func_?(&StringLiteral__FlamerBurn);
-    func_?(&StringLiteral__WallJump);
-    func_?(&StringLiteral__DisableVehiclePickup);
-    func_?(&StringLiteral__TimeAttackFlagDebriefSlow);
-    func_?(&StringLiteral__SpawnProtection);
-    func_?(&StringLiteral__RayHealEnemy);
+    FUN_?(&TypeInfo__AvatarModifierPackage);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__String);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__SlowMat);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__Poison);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__Enlarged);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__Fire);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__SpeedMat);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__Lethal);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__Underwater);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__NinjaRun);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__Shrunken);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__InstantDeath);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__Frozen);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__HealingMat);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__Shielded);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__Mutant);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__WindFriction);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__NoFriction);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__None);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__RayHeal);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__Sticky);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__CrumbleMat);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__FlamerBurn);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__WallJump);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__DisableVehiclePickup);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__TimeAttackFlagDebriefSlow);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__SpawnProtection);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__RayHealEnemy);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pSVar1 = (String__Array *)func_?(TypeInfo__System__String,0x1a);
-  pSVar2 = StringLiteral__None;
+  pSVar1 = (String__Array *)FUN_?(TypeInfo__System__String,0x1a);
   if (pSVar1 == (String__Array *)0x0) {
-    func_?();
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
   }
-  else if (pSVar1->max_length != 0) {
-    pSVar1->vector[0] = StringLiteral__None;
-    func_?(pSVar1->vector,pSVar2);
-    pSVar2 = StringLiteral__Fire;
-    if (1 < pSVar1->max_length) {
-      pSVar1->vector[1] = StringLiteral__Fire;
-      func_?(pSVar1->vector + 1,pSVar2);
-      pSVar2 = StringLiteral__Mutant;
-      if (2 < pSVar1->max_length) {
-        pSVar1->vector[2] = StringLiteral__Mutant;
-        func_?(pSVar1->vector + 2,pSVar2);
-        pSVar2 = StringLiteral__Sticky;
-        if (3 < pSVar1->max_length) {
-          pSVar1->vector[3] = StringLiteral__Sticky;
-          func_?(pSVar1->vector + 3,pSVar2);
-          pSVar2 = StringLiteral__Poison;
-          if (4 < pSVar1->max_length) {
-            pSVar1->vector[4] = StringLiteral__Poison;
-            func_?(pSVar1->vector + 4,pSVar2);
-            pSVar2 = StringLiteral__WallJump;
-            if (5 < pSVar1->max_length) {
-              pSVar1->vector[5] = StringLiteral__WallJump;
-              func_?(pSVar1->vector + 5,pSVar2);
-              pSVar2 = StringLiteral__InstantDeath;
-              if (6 < pSVar1->max_length) {
-                pSVar1->vector[6] = StringLiteral__InstantDeath;
-                func_?(pSVar1->vector + 6,pSVar2);
-                pSVar2 = StringLiteral__NoFriction;
-                if (7 < pSVar1->max_length) {
-                  pSVar1->vector[7] = StringLiteral__NoFriction;
-                  func_?(pSVar1->vector + 7,pSVar2);
-                  pSVar2 = StringLiteral__FlamerBurn;
-                  if (8 < pSVar1->max_length) {
-                    pSVar1->vector[8] = StringLiteral__FlamerBurn;
-                    func_?(pSVar1->vector + 8,pSVar2);
-                    pSVar2 = StringLiteral__Underwater;
-                    if (9 < pSVar1->max_length) {
-                      pSVar1->vector[9] = StringLiteral__Underwater;
-                      func_?(pSVar1->vector + 9,pSVar2);
-                      pSVar2 = StringLiteral__Frozen;
-                      if (10 < pSVar1->max_length) {
-                        pSVar1->vector[10] = StringLiteral__Frozen;
-                        func_?(pSVar1->vector + 10,pSVar2);
-                        pSVar2 = StringLiteral__NinjaRun;
-                        if (0xb < pSVar1->max_length) {
-                          pSVar1->vector[0xb] = StringLiteral__NinjaRun;
-                          func_?(pSVar1->vector + 0xb,pSVar2);
-                          pSVar2 = StringLiteral__Shrunken;
-                          if (0xc < pSVar1->max_length) {
-                            pSVar1->vector[0xc] = StringLiteral__Shrunken;
-                            func_?(pSVar1->vector + 0xc,pSVar2);
-                            pSVar2 = StringLiteral__WindFriction;
-                            if (0xd < pSVar1->max_length) {
-                              pSVar1->vector[0xd] = StringLiteral__WindFriction;
-                              func_?(pSVar1->vector + 0xd,pSVar2);
-                              pSVar2 = StringLiteral__DisableVehiclePickup;
-                              if (0xe < pSVar1->max_length) {
-                                pSVar1->vector[0xe] = StringLiteral__DisableVehiclePickup;
-                                func_?(pSVar1->vector + 0xe,pSVar2);
-                                pSVar2 = StringLiteral__Enlarged;
-                                if (0xf < pSVar1->max_length) {
-                                  pSVar1->vector[0xf] = StringLiteral__Enlarged;
-                                  func_?(pSVar1->vector + 0xf,pSVar2);
-                                  pSVar2 = StringLiteral__Shielded;
-                                  if (0x10 < pSVar1->max_length) {
-                                    pSVar1->vector[0x10] = StringLiteral__Shielded;
-                                    func_?(pSVar1->vector + 0x10,pSVar2);
-                                    pSVar2 = StringLiteral__SpawnProtection;
-                                    if (0x11 < pSVar1->max_length) {
-                                      pSVar1->vector[0x11] = StringLiteral__SpawnProtection;
-                                      func_?(pSVar1->vector + 0x11,pSVar2);
-                                      pSVar2 = StringLiteral__RayHeal;
-                                      if (0x12 < pSVar1->max_length) {
-                                        pSVar1->vector[0x12] = StringLiteral__RayHeal;
-                                        func_?(pSVar1->vector + 0x12,pSVar2);
-                                        pSVar2 = StringLiteral__TimeAttackFlagDebriefSlow;
-                                        if (0x13 < pSVar1->max_length) {
-                                          pSVar1->vector[0x13] =
-                                               StringLiteral__TimeAttackFlagDebriefSlow;
-                                          func_?(pSVar1->vector + 0x13,pSVar2);
-                                          pSVar2 = StringLiteral__Lethal;
-                                          if (0x14 < pSVar1->max_length) {
-                                            pSVar1->vector[0x14] = StringLiteral__Lethal;
-                                            func_?(pSVar1->vector + 0x14,pSVar2);
-                                            pSVar2 = StringLiteral__HealingMat;
-                                            if (0x15 < pSVar1->max_length) {
-                                              pSVar1->vector[0x15] = StringLiteral__HealingMat;
-                                              func_?(pSVar1->vector + 0x15,pSVar2);
-                                              pSVar2 = StringLiteral__SlowMat;
-                                              if (0x16 < pSVar1->max_length) {
-                                                pSVar1->vector[0x16] = StringLiteral__SlowMat;
-                                                func_?(pSVar1->vector + 0x16,pSVar2);
-                                                pSVar2 = StringLiteral__SpeedMat;
-                                                if (0x17 < pSVar1->max_length) {
-                                                  pSVar1->vector[0x17] = StringLiteral__SpeedMat;
-                                                  func_?(pSVar1->vector + 0x17,pSVar2);
-                                                  pSVar2 = StringLiteral__CrumbleMat;
-                                                  if (0x18 < pSVar1->max_length) {
-                                                    pSVar1->vector[0x18] = StringLiteral__CrumbleMat
-                                                    ;
-                                                    func_?(pSVar1->vector + 0x18,pSVar2);
-                                                    pSVar2 = StringLiteral__RayHealEnemy;
-                                                    if (0x19 < pSVar1->max_length) {
-                                                      pSVar1->vector[0x19] =
-                                                           StringLiteral__RayHealEnemy;
-                                                      func_?(pSVar1->vector + 0x19,pSVar2);
-                                                      TypeInfo__AvatarModifierPackage->static_fields
-                                                      ->AvatarModifierPackageTypeLookupTable =
-                                                           pSVar1;
-                                                      func_?(
-                                                  TypeInfo__AvatarModifierPackage->static_fields,
-                                                  pSVar1);
-                                                  return;
-                                                  }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
+  FUN_?(pSVar1,0,StringLiteral__None);
+  FUN_?(pSVar1,1,StringLiteral__Fire);
+  FUN_?(pSVar1,2,StringLiteral__Mutant);
+  FUN_?(pSVar1,3,StringLiteral__Sticky);
+  FUN_?(pSVar1,4,StringLiteral__Poison);
+  FUN_?(pSVar1,5,StringLiteral__WallJump);
+  FUN_?(pSVar1,6,StringLiteral__InstantDeath);
+  FUN_?(pSVar1,7,StringLiteral__NoFriction);
+  FUN_?(pSVar1,8,StringLiteral__FlamerBurn);
+  FUN_?(pSVar1,9,StringLiteral__Underwater);
+  FUN_?(pSVar1,10,StringLiteral__Frozen);
+  FUN_?(pSVar1,0xb,StringLiteral__NinjaRun);
+  FUN_?(pSVar1,0xc,StringLiteral__Shrunken);
+  FUN_?(pSVar1,0xd,StringLiteral__WindFriction);
+  FUN_?(pSVar1,0xe,StringLiteral__DisableVehiclePickup);
+  FUN_?(pSVar1,0xf,StringLiteral__Enlarged);
+  FUN_?(pSVar1,0x10,StringLiteral__Shielded);
+  FUN_?(pSVar1,0x11,StringLiteral__SpawnProtection);
+  FUN_?(pSVar1,0x12,StringLiteral__RayHeal);
+  FUN_?(pSVar1,0x13,StringLiteral__TimeAttackFlagDebriefSlow);
+  FUN_?(pSVar1,0x14,StringLiteral__Lethal);
+  FUN_?(pSVar1,0x15,StringLiteral__HealingMat);
+  FUN_?(pSVar1,0x16,StringLiteral__SlowMat);
+  FUN_?(pSVar1,0x17,StringLiteral__SpeedMat);
+  FUN_?(pSVar1,0x18,StringLiteral__CrumbleMat);
+  FUN_?(pSVar1,0x19,StringLiteral__RayHealEnemy);
+  bVar3 = iRam_? != 0;
+  TypeInfo__AvatarModifierPackage->static_fields->AvatarModifierPackageTypeLookupTable = pSVar1;
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)TypeInfo__AvatarModifierPackage->static_fields >> 0xc);
+    uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+    do {
+      uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+      puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+      LOCK();
+      bVar3 = uVar6 == *puVar7;
+      if (bVar3) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
       }
-    }
+      UNLOCK();
+    } while (!bVar3);
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
   return;
 }
 
@@ -307,53 +374,177 @@ void Assembly-CSharp.dll::AvatarModifierPackage::AvatarModifierPackage__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this->persistant = persist;
-  this->avatarModifierPackageType = avatarModifierPackageType;
   this->id = -1;
+  this->avatarModifierPackageType = avatarModifierPackageType;
   this->avatarModifierPackageAdditionPolicy = avatarModifierPackageAdditionPolicy;
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
-      == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pOVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-           ObscuredFloat_op_Implicit((ObscuredFloat *)&stack0xffffffe8,duration,(MethodInfo *)0x0);
-  AVar2 = pOVar1->hiddenValue;
-  pBVar3 = pOVar1->hiddenValueOld;
-  fVar4 = pOVar1->fakeValue;
-  bVar5 = pOVar1->inited;
-  uVar6 = *(undefined3 *)&pOVar1->field_0x11;
-  (this->duration).currentCryptoKey = pOVar1->currentCryptoKey;
-  (this->duration).hiddenValue = AVar2;
-  (this->duration).hiddenValueOld = pBVar3;
-  (this->duration).fakeValue = fVar4;
-  (this->duration).inited = bVar5;
-  *(undefined3 *)&(this->duration).field_0x11 = uVar6;
-  func_?(&(this->duration).hiddenValueOld,0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  aOStack_1[0].fakeValue = 0.0;
+  aOStack_1[0].inited = 0;
+  aOStack_1[0]._21_3_ = 0;
+  aOStack_1[0].currentCryptoKey = 0;
+  aOStack_1[0].hiddenValue.b1 = 0;
+  aOStack_1[0].hiddenValue.b2 = 0;
+  aOStack_1[0].hiddenValue.b3 = 0;
+  aOStack_1[0].hiddenValue.b4 = 0;
+  aOStack_1[0].hiddenValueOld = (Byte__Array *)0x0;
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  AVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+          ObscuredFloat_InternalEncrypt(duration,(MethodInfo *)0x0);
+  Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+  ObscuredFloat__ctor(aOStack_1,AVar2,(MethodInfo *)0x0);
+  bVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ObscuredCheatingDetector::
+          ObscuredCheatingDetector_get_IsRunning((MethodInfo *)0x0);
+  iVar4 = iRam_?;
+  if (bVar3 != 0) {
+    aOStack_1[0].fakeValue = duration;
+  }
+  (this->duration).currentCryptoKey = aOStack_1[0].currentCryptoKey;
+  (this->duration).hiddenValue = aOStack_1[0].hiddenValue;
+  *(undefined4 *)&(this->duration).hiddenValueOld = aOStack_1[0].hiddenValueOld._0_4_;
+  *(undefined4 *)((longlong)&(this->duration).hiddenValueOld + 4) =
+       aOStack_1[0].hiddenValueOld._4_4_;
+  (this->duration).fakeValue = aOStack_1[0].fakeValue;
+  (this->duration).inited = aOStack_1[0].inited;
+  *(undefined3 *)&(this->duration).field_0x15 = aOStack_1[0]._21_3_;
+  if (iVar4 != 0) {
+    uVar5 = (uint)((ulonglong)&(this->duration).hiddenValueOld >> 0xc);
+    uVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+    do {
+      uVar7 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+      puVar8 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+      LOCK();
+      bVar9 = uVar7 == *puVar8;
+      if (bVar9) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+      iVar4 = iRam_?;
+    } while (!bVar9);
+  }
   this->avatarModifiers = avatarModifiers;
-  func_?(&this->avatarModifiers,avatarModifiers);
-  fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  pOVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-           ObscuredFloat_op_Implicit((ObscuredFloat *)&stack0xffffffe8,fVar4,(MethodInfo *)0x0);
-  AVar2 = pOVar1->hiddenValue;
-  pBVar3 = pOVar1->hiddenValueOld;
-  fVar4 = pOVar1->fakeValue;
-  bVar5 = pOVar1->inited;
-  uVar6 = *(undefined3 *)&pOVar1->field_0x11;
-  (this->timeStamp).currentCryptoKey = pOVar1->currentCryptoKey;
-  (this->timeStamp).hiddenValue = AVar2;
-  (this->timeStamp).hiddenValueOld = pBVar3;
-  (this->timeStamp).fakeValue = fVar4;
-  (this->timeStamp).inited = bVar5;
-  *(undefined3 *)&(this->timeStamp).field_0x11 = uVar6;
-  func_?();
-  fVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-          ObscuredFloat_op_Implicit_1(this->timeStamp,(MethodInfo *)0x0);
+  if (iVar4 != 0) {
+    uVar5 = (uint)((ulonglong)&this->avatarModifiers >> 0xc);
+    uVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+    do {
+      uVar7 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+      puVar8 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+      LOCK();
+      bVar9 = uVar7 == *puVar8;
+      if (bVar9) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar9);
+  }
+  pcVar10 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar10 = (code *)FUN_?(&UNK_?), pcVar10 == (code *)0x0)) {
+    uVar11 = func_?(&UNK_?);
+    FUN_?(uVar11,0);
+    pcVar10 = (code *)swi(3);
+    (*pcVar10)();
+    return;
+  }
+  pcRam_? = pcVar10;
+  fVar12 = (float)(*pcRam_?)();
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  aOStack_1[0].fakeValue = 0.0;
+  aOStack_1[0].inited = 0;
+  aOStack_1[0]._21_3_ = 0;
+  aOStack_1[0].currentCryptoKey = 0;
+  aOStack_1[0].hiddenValue.b1 = 0;
+  aOStack_1[0].hiddenValue.b2 = 0;
+  aOStack_1[0].hiddenValue.b3 = 0;
+  aOStack_1[0].hiddenValue.b4 = 0;
+  aOStack_1[0].hiddenValueOld = (Byte__Array *)0x0;
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  AVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+          ObscuredFloat_InternalEncrypt(fVar12,(MethodInfo *)0x0);
+  Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+  ObscuredFloat__ctor(aOStack_1,AVar2,(MethodInfo *)0x0);
+  bVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ObscuredCheatingDetector::
+          ObscuredCheatingDetector_get_IsRunning((MethodInfo *)0x0);
+  if (bVar3 != 0) {
+    aOStack_1[0].fakeValue = fVar12;
+  }
+  bVar9 = iRam_? != 0;
+  (this->timeStamp).currentCryptoKey = aOStack_1[0].currentCryptoKey;
+  (this->timeStamp).hiddenValue = aOStack_1[0].hiddenValue;
+  (this->timeStamp).hiddenValueOld = aOStack_1[0].hiddenValueOld;
+  (this->timeStamp).fakeValue = aOStack_1[0].fakeValue;
+  (this->timeStamp).inited = aOStack_1[0].inited;
+  *(undefined3 *)&(this->timeStamp).field_0x15 = aOStack_1[0]._21_3_;
+  if (bVar9) {
+    uVar5 = (uint)((ulonglong)&(this->timeStamp).hiddenValueOld >> 0xc);
+    uVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+    do {
+      uVar7 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+      puVar8 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+      LOCK();
+      bVar9 = uVar7 == *puVar8;
+      if (bVar9) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar9);
+  }
+  aOStack_1[0].currentCryptoKey = (this->timeStamp).currentCryptoKey;
+  aOStack_1[0].hiddenValue = (this->timeStamp).hiddenValue;
+  aOStack_1[0].hiddenValueOld = (this->timeStamp).hiddenValueOld;
+  aOStack_1[0].fakeValue = (this->timeStamp).fakeValue;
+  aOStack_1[0].inited = (this->timeStamp).inited;
+  aOStack_1[0]._21_3_ = *(undefined3 *)&(this->timeStamp).field_0x15;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  fVar12 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+           ObscuredFloat_InternalDecrypt(aOStack_1,(MethodInfo *)0x0);
+  bVar9 = iRam_? != 0;
   this->actionsToTakeVsTypes = actionsToTakeVsTypes;
-  this->lastTimeStamp = fVar4;
-  func_?();
+  this->lastTimeStamp = fVar12;
+  if (bVar9) {
+    uVar5 = (uint)((ulonglong)&this->actionsToTakeVsTypes >> 0xc);
+    uVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+    do {
+      uVar7 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+      puVar8 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+      LOCK();
+      bVar9 = uVar7 == *puVar8;
+      if (bVar9) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar9);
+  }
   return;
 }
 
@@ -365,30 +556,63 @@ bool Assembly-CSharp.dll::AvatarModifierPackage::AvatarModifierPackage_get_IsExp
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  iVar1 = (this->duration).currentCryptoKey;
-  AVar2 = (this->duration).hiddenValue;
-  pBVar3 = (this->duration).hiddenValueOld;
-  fVar4 = (this->duration).fakeValue;
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
-      == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+  uVar1._0_4_ = (this->duration).currentCryptoKey;
+  uVar1._4_4_ = (this->duration).hiddenValue;
+  pBVar2 = (this->duration).hiddenValueOld;
+  uVar3._0_4_ = (this->duration).fakeValue;
+  uVar3._4_1_ = (this->duration).inited;
+  uVar3._5_3_ = *(undefined3 *)&(this->duration).field_0x15;
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  value.hiddenValue = AVar2;
-  value.currentCryptoKey = iVar1;
-  value.hiddenValueOld = pBVar3;
-  value.fakeValue = fVar4;
-  value.inited = (this->duration).inited;
-  value._17_3_ = *(undefined3 *)&(this->duration).field_0x11;
-  Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-  ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
-  fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  fVar5 = 0.0;
-  fVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-          ObscuredFloat_op_Implicit_1(this->timeStamp,(MethodInfo *)0x0);
-  return fVar5 <= fVar4 - fVar6;
+  aOStack_4[0]._0_8_ = uVar1;
+  aOStack_4[0].hiddenValueOld = pBVar2;
+  aOStack_4[0]._16_8_ = uVar3;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  fVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+          ObscuredFloat_InternalDecrypt(aOStack_4,(MethodInfo *)0x0);
+  pcVar6 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar6 = (code *)swi(3);
+    bVar7 = (*pcVar6)();
+    return bVar7;
+  }
+  pcRam_? = pcVar6;
+  fVar8 = (float)(*pcRam_?)();
+  aOStack_4[0].currentCryptoKey = (this->timeStamp).currentCryptoKey;
+  aOStack_4[0].hiddenValue = (this->timeStamp).hiddenValue;
+  aOStack_4[0].hiddenValueOld = (this->timeStamp).hiddenValueOld;
+  aOStack_4[0].fakeValue = (this->timeStamp).fakeValue;
+  aOStack_4[0].inited = (this->timeStamp).inited;
+  aOStack_4[0]._21_3_ = *(undefined3 *)&(this->timeStamp).field_0x15;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  fVar9 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+          ObscuredFloat_InternalDecrypt(aOStack_4,(MethodInfo *)0x0);
+  return fVar5 <= fVar8 - fVar9;
 }
 
 
@@ -399,53 +623,106 @@ void Assembly-CSharp.dll::AvatarModifierPackage::AvatarModifierPackage_set_IsExp
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (value != 0) {
-    AVar1 = (ACTkByte4)(this->duration).currentCryptoKey;
-    AVar2 = (this->duration).hiddenValue;
-    pBVar3 = (this->duration).hiddenValueOld;
-    fVar4 = (this->duration).fakeValue;
-    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
-        cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    uVar1._0_4_ = (this->duration).currentCryptoKey;
+    uVar1._4_4_ = (this->duration).hiddenValue;
+    pBVar2 = (this->duration).hiddenValueOld;
+    uVar3._0_4_ = (this->duration).fakeValue;
+    uVar3._4_1_ = (this->duration).inited;
+    uVar3._5_3_ = *(undefined3 *)&(this->duration).field_0x15;
+    if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0)
+    {
+      FUN_?();
     }
-    value_00.hiddenValue = AVar2;
-    value_00.currentCryptoKey._0_1_ = AVar1.b1;
-    value_00.currentCryptoKey._1_1_ = AVar1.b2;
-    value_00.currentCryptoKey._2_1_ = AVar1.b3;
-    value_00.currentCryptoKey._3_1_ = AVar1.b4;
-    value_00.hiddenValueOld = pBVar3;
-    value_00.fakeValue = fVar4;
-    value_00.inited = (this->duration).inited;
-    value_00._17_3_ = *(undefined3 *)&(this->duration).field_0x11;
-    fVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-            ObscuredFloat_op_Implicit_1(value_00,(MethodInfo *)0x0);
-    pOVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-             ObscuredFloat_op_Implicit
-                       ((ObscuredFloat *)&puStack_6,
-                        (float)((uint)fVar4 ^
-                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                               ) +
-                        (float)((uint)fVar4 ^
-                               __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                               ),(MethodInfo *)0x0);
-    AVar1 = pOVar5->hiddenValue;
-    pBVar3 = pOVar5->hiddenValueOld;
-    fVar4 = pOVar5->fakeValue;
-    bVar7 = pOVar5->inited;
-    uVar8 = *(undefined3 *)&pOVar5->field_0x11;
-    (this->timeStamp).currentCryptoKey = pOVar5->currentCryptoKey;
-    (this->timeStamp).hiddenValue = AVar1;
-    (this->timeStamp).hiddenValueOld = pBVar3;
-    (this->timeStamp).fakeValue = fVar4;
-    (this->timeStamp).inited = bVar7;
-    *(undefined3 *)&(this->timeStamp).field_0x11 = uVar8;
-    func_?();
-    fVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-            ObscuredFloat_op_Implicit_1(this->timeStamp,(MethodInfo *)0x0);
-    this->lastTimeStamp = fVar4;
+    aOStack_4[0]._0_8_ = uVar1;
+    aOStack_4[0].hiddenValueOld = pBVar2;
+    aOStack_4[0]._16_8_ = uVar3;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0)
+    {
+      FUN_?();
+    }
+    fVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+             ObscuredFloat_InternalDecrypt(aOStack_4,(MethodInfo *)0x0);
+    fVar5 = (float)((uint)fVar5 ^ _UNK_?) + (float)((uint)fVar5 ^ _UNK_?);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    aOStack_4[0].fakeValue = 0.0;
+    aOStack_4[0].inited = 0;
+    aOStack_4[0]._21_3_ = 0;
+    aOStack_4[0].currentCryptoKey = 0;
+    aOStack_4[0].hiddenValue.b1 = 0;
+    aOStack_4[0].hiddenValue.b2 = 0;
+    aOStack_4[0].hiddenValue.b3 = 0;
+    aOStack_4[0].hiddenValue.b4 = 0;
+    aOStack_4[0].hiddenValueOld = (Byte__Array *)0x0;
+    if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0)
+    {
+      FUN_?();
+    }
+    value_00 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+               ObscuredFloat_InternalEncrypt(fVar5,(MethodInfo *)0x0);
+    Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+    ObscuredFloat__ctor(aOStack_4,value_00,(MethodInfo *)0x0);
+    bVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ObscuredCheatingDetector
+            ::ObscuredCheatingDetector_get_IsRunning((MethodInfo *)0x0);
+    if (bVar6 != 0) {
+      aOStack_4[0].fakeValue = fVar5;
+    }
+    bVar7 = iRam_? != 0;
+    (this->timeStamp).currentCryptoKey = aOStack_4[0].currentCryptoKey;
+    (this->timeStamp).hiddenValue = aOStack_4[0].hiddenValue;
+    (this->timeStamp).hiddenValueOld = aOStack_4[0].hiddenValueOld;
+    (this->timeStamp).fakeValue = aOStack_4[0].fakeValue;
+    (this->timeStamp).inited = aOStack_4[0].inited;
+    *(undefined3 *)&(this->timeStamp).field_0x15 = aOStack_4[0]._21_3_;
+    if (bVar7) {
+      uVar8 = (uint)((ulonglong)&(this->timeStamp).hiddenValueOld >> 0xc);
+      uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar10 == *puVar11;
+        if (bVar7) {
+          *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    aOStack_4[0].currentCryptoKey = (this->timeStamp).currentCryptoKey;
+    aOStack_4[0].hiddenValue = (this->timeStamp).hiddenValue;
+    aOStack_4[0].hiddenValueOld = (this->timeStamp).hiddenValueOld;
+    aOStack_4[0].fakeValue = (this->timeStamp).fakeValue;
+    aOStack_4[0].inited = (this->timeStamp).inited;
+    aOStack_4[0]._21_3_ = *(undefined3 *)&(this->timeStamp).field_0x15;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0)
+    {
+      FUN_?();
+    }
+    fVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+             ObscuredFloat_InternalDecrypt(aOStack_4,(MethodInfo *)0x0);
+    this->lastTimeStamp = fVar5;
   }
   return;
 }

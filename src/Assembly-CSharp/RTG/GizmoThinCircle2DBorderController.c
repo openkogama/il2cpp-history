@@ -7,20 +7,19 @@ void Assembly-CSharp.dll::RTG::GizmoThinCircle2DBorderController::
 
 {
   pGVar1 = (this->fields)._._data;
-  if (pGVar1 != (GizmoCircle2DBorderControllerData *)0x0) {
-    this_00 = (pGVar1->fields).BorderCircle;
-    pGVar2 = (pGVar1->fields).PlaneSlider;
-    if (((pGVar2 != (GizmoPlaneSlider2D *)0x0) &&
-        (pGVar3 = (&(pGVar2->fields)._settings)
-                  [(pGVar2->fields)._sharedSettings != (GizmoPlaneSlider2DSettings *)0x0],
-        pGVar3 != (GizmoPlaneSlider2DSettings *)0x0)) && (this_00 != (CircleShape2D *)0x0)) {
-      CircleShape2D::CircleShape2D_set_WireEps
-                (this_00,(pGVar3->fields)._borderLineHoverEps,(MethodInfo *)0x0);
+  if ((pGVar1 != (GizmoCircle2DBorderControllerData *)0x0) &&
+     (pGVar2 = (pGVar1->fields).PlaneSlider, pGVar2 != (GizmoPlaneSlider2D *)0x0)) {
+    lVar3 = 0x100;
+    if ((pGVar2->fields)._sharedSettings == (GizmoPlaneSlider2DSettings *)0x0) {
+      lVar3 = 0xf8;
+    }
+    lVar3 = *(longlong *)((longlong)&pGVar2->klass + lVar3);
+    if ((lVar3 != 0) && (pCVar4 = (pGVar1->fields).BorderCircle, pCVar4 != (CircleShape2D *)0x0)) {
+      (pCVar4->fields)._epsilon._wireEps = (float)(*(uint *)(lVar3 + 0x14) & _UNK_?);
       return;
     }
   }
-  uVar4 = func_?(&stack0xfffffff0);
-  func_?(uVar4);
+  FUN_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;
@@ -36,22 +35,23 @@ void Assembly-CSharp.dll::RTG::GizmoThinCircle2DBorderController::
 {
   pGVar1 = (this->fields)._._data;
   if ((pGVar1 != (GizmoCircle2DBorderControllerData *)0x0) &&
-     (pCVar2 = (pGVar1->fields).TargetCircle, pCVar2 != (CircleShape2D *)0x0)) {
-    this_00 = (pGVar1->fields).BorderCircle;
-    fVar3 = (pCVar2->fields)._center.y;
-    if (this_00 != (CircleShape2D *)0x0) {
-      (this_00->fields)._center.x = (pCVar2->fields)._center.x;
-      (this_00->fields)._center.y = fVar3;
-      (this_00->fields)._rotationDegrees = (pCVar2->fields)._rotationDegrees;
-      RightAngTriangle2D::RightAngTriangle2D_set_XLength
-                ((RightAngTriangle2D *)this_00,(pCVar2->fields)._radius,(MethodInfo *)0x0);
+     (this = (GizmoThinCircle2DBorderController *)(pGVar1->fields).TargetCircle,
+     (CircleShape2D *)this != (CircleShape2D *)0x0)) {
+    pCVar2 = (pGVar1->fields).BorderCircle;
+    fVar3 = (((CircleShape2D *)this)->fields)._center.y;
+    method = (MethodInfo *)0x0;
+    if (pCVar2 != (CircleShape2D *)0x0) {
+      (pCVar2->fields)._center.x = (((CircleShape2D *)this)->fields)._center.x;
+      (pCVar2->fields)._center.y = fVar3;
+      (pCVar2->fields)._rotationDegrees = (((CircleShape2D *)this)->fields)._rotationDegrees;
+      (pCVar2->fields)._radius =
+           (float)((uint)(((CircleShape2D *)this)->fields)._radius & _UNK_?);
       return;
     }
   }
-  uVar4 = func_?(&stack0xfffffff0);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?(this,method);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

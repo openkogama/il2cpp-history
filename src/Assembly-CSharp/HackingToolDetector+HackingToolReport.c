@@ -6,11 +6,22 @@ void Assembly-CSharp.dll::HackingToolDetector+HackingToolReport::
                (HackingToolDetector_HackingToolReport *this,ApplicationDesc *app,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  (this->fields).app = app;
+  bVar1 = iRam_? != 0;
   (this->fields).kind = 0;
-  func_?(&(this->fields).app,app);
+  (this->fields).app = app;
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).app >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 
@@ -23,13 +34,39 @@ void Assembly-CSharp.dll::HackingToolDetector+HackingToolReport::
                MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  (this->fields).app = app;
+  iVar1 = iRam_?;
   (this->fields).kind = 1;
-  func_?(&(this->fields).app,app);
+  (this->fields).app = app;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).app >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).exactFind = exactFind;
-  func_?(&(this->fields).exactFind,exactFind);
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).exactFind >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
   return;
 }
 
@@ -42,13 +79,39 @@ void Assembly-CSharp.dll::HackingToolDetector+HackingToolReport::
                ApplicationDesc_RegistryKey *foundKey,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  (this->fields).app = app;
+  iVar1 = iRam_?;
   (this->fields).kind = 2;
-  func_?(&(this->fields).app,app);
+  (this->fields).app = app;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).app >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).foundKey = foundKey;
-  func_?(&(this->fields).foundKey,foundKey);
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).foundKey >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
   return;
 }
 
@@ -61,15 +124,56 @@ void Assembly-CSharp.dll::HackingToolDetector+HackingToolReport::
                ApplicationDesc_RegistryKey *foundKey,String *exactFind,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  (this->fields).app = app;
+  iVar1 = iRam_?;
   (this->fields).kind = 3;
-  func_?(&(this->fields).app,app);
+  (this->fields).app = app;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).app >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).foundKey = foundKey;
-  func_?(&(this->fields).foundKey,foundKey);
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).foundKey >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).exactFind = exactFind;
-  func_?(&(this->fields).exactFind,exactFind);
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).exactFind >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
   return;
 }
 

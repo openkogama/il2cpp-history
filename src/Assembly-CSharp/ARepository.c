@@ -7,137 +7,29 @@ Assembly-CSharp.dll::ARepository::ARepository_GetKoGaMaPackageFromItem
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__BytePacker);
-    func_?(&TypeInfo__KoGaMaPackageClient);
+    FUN_?(&TypeInfo__MV__WorldObject__BytePacker);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__KoGaMaPackageClient);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (item != (MVItem *)0x0) {
     buffer = (item->fields).data;
-    this_00 = (BytePacker *)func_?(TypeInfo__MV__WorldObject__BytePacker);
+    this = (BytePacker *)FUN_?(TypeInfo__MV__WorldObject__BytePacker);
     MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker__ctor_1
-              (this_00,buffer,(MethodInfo *)0x0);
-    pKVar1 = (KoGaMaPackageClient *)func_?(TypeInfo__KoGaMaPackageClient);
-    if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::ObjectLink>__Dictionary__
-                     );
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_RuntimePrototypeCubeModel>__Dictionary__
-                     );
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__Dictionary__
-                     );
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__Dictionary__
-                     );
-      func_?(&
-                      TypeInfo__System__Collections__Generic__Dictionary<int,_RuntimePrototypeCubeModel>
-                     );
-      func_?(&
-                      TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>
-                     );
-      func_?(&
-                      TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::ObjectLink>
-                     );
-      func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>)
-      ;
-      func_?(&TypeInfo__KoGaMaDataHandler);
-      func_?(&
-                      MethodInfo__KoGaMaPackageClient__HandleDeserializedData_System__Collections__Generic__Dictionary<System::Object,_System::Object>__MV__WorldObject__KogamaDataType_
-                     );
-      func_?(&
-                      TypeInfo__UnityEngine__Events__UnityAction<System::Collections::Generic::Dictionary<System::Object,_System::Object>,_MV::WorldObject::KogamaDataType>
-                     );
-      cRam_? = '\x01';
-    }
-    pDVar2 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
-              *)func_?(
-                               TypeInfo__System__Collections__Generic__Dictionary<int,_RuntimePrototypeCubeModel>
-                               );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::
-    Text::TextResourceManager+FontAssetRef]::
-    Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
-              (pDVar2,
-               MethodInfo__System__Collections__Generic__Dictionary<int,_RuntimePrototypeCubeModel>__Dictionary__
-              );
-    (pKVar1->fields).prototypes = (Dictionary_2_System_Int32_RuntimePrototypeCubeModel_ *)pDVar2;
-    func_?(&pKVar1->fields,pDVar2);
-    pDVar2 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
-              *)func_?(
-                               TypeInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>
-                               );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::
-    Text::TextResourceManager+FontAssetRef]::
-    Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
-              (pDVar2,
-               MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__Dictionary__
-              );
-    (pKVar1->fields).worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)pDVar2;
-    func_?(&(pKVar1->fields).worldObjects,pDVar2);
-    pDVar2 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
-              *)func_?(
-                               TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>
-                               );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::
-    Text::TextResourceManager+FontAssetRef]::
-    Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
-              (pDVar2,
-               MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::Link>__Dictionary__
-              );
-    (pKVar1->fields).links = (Dictionary_2_System_Int32_MV_WorldObject_Link_ *)pDVar2;
-    func_?(&(pKVar1->fields).links,pDVar2);
-    pDVar2 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_
-              *)func_?(
-                               TypeInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::ObjectLink>
-                               );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::
-    Text::TextResourceManager+FontAssetRef]::
-    Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
-              (pDVar2,
-               MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::ObjectLink>__Dictionary__
-              );
-    (pKVar1->fields).objectLinks = (Dictionary_2_System_Int32_MV_WorldObject_ObjectLink_ *)pDVar2;
-    func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)pKVar1,ExceptionArgument__Enum_obj,
-               (MethodInfo *)&(pKVar1->fields).objectLinks);
-    this_01 = (UnityAction_2_System_Object_System_ByteEnum_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::ByteEnum]
-    ::UnityAction_2_System_Object_System_ByteEnum___ctor
-              (this_01,(Object *)pKVar1,
-               MethodInfo__KoGaMaPackageClient__HandleDeserializedData_System__Collections__Generic__Dictionary<System::Object,_System::Object>__MV__WorldObject__KogamaDataType_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__KoGaMaDataHandler->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__KoGaMaDataHandler);
-    }
-    iVar3 = KoGaMaDataHandler::KoGaMaDataHandler_GetKoGaMaData
-                      (this_00,(UnityAction_2_System_Collections_Generic_Dictionary_2_System_Object_System_Object_MV_WorldObject_KogamaDataType_
-                                *)this_01,0,(MethodInfo *)0x0);
-    (pKVar1->fields).worldObjectRoot = iVar3;
-    if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
-                     );
-      cRam_? = '\x01';
-    }
-    this = (pKVar1->fields).worldObjects;
-    if (this != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
-      this_02 = (MVWorldObjectClient *)
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                          ((Dictionary_2_System_Int32_System_Object_ *)this,
-                           (pKVar1->fields).worldObjectRoot,
-                           MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
-                          );
-      if (this_02 != (MVWorldObjectClient *)0x0) {
-        MVWorldObjectClient::MVWorldObjectClient_InventoryInitialize(this_02,(MethodInfo *)0x0);
-        return pKVar1;
-      }
+              (this,buffer,(MethodInfo *)0x0);
+    pKVar1 = (KoGaMaPackageClient *)FUN_?(TypeInfo__KoGaMaPackageClient);
+    KoGaMaPackageClient::KoGaMaPackageClient__ctor(pKVar1,this,0,(MethodInfo *)0x0);
+    if (pKVar1 != (KoGaMaPackageClient *)0x0) {
+      KoGaMaPackageClient::KoGaMaPackageClient_InventoryInitialize(pKVar1,(MethodInfo *)0x0);
+      return pKVar1;
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  pKVar1 = (KoGaMaPackageClient *)(*pcVar4)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  pKVar1 = (KoGaMaPackageClient *)(*pcVar2)();
   return pKVar1;
 }
 
@@ -150,47 +42,220 @@ void Assembly-CSharp.dll::ARepository::ARepository_GetWorldObjectTypeFromMVItemD
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__BytePacker);
-    func_?(&TypeInfo__KoGaMaDataHandler);
-    func_?(&
-                    MethodInfo__ARepository____c__DisplayClass11_0___GetWorldObjectTypeFromMVItemData_b__0_System__Collections__Generic__Dictionary<System::Object,_System::Object>__MV__WorldObject__KogamaDataType_
-                   );
-    func_?(&TypeInfo__ARepository____c__DisplayClass11_0);
-    func_?(&
-                    TypeInfo__UnityEngine__Events__UnityAction<System::Collections::Generic::Dictionary<System::Object,_System::Object>,_MV::WorldObject::KogamaDataType>
-                   );
+    FUN_?(&TypeInfo__MV__WorldObject__BytePacker);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__KoGaMaDataHandler);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__ARepository____c__DisplayClass11_0___GetWorldObjectTypeFromMVItemData_b__0_System__Collections__Generic__Dictionary<System::Object,_System::Object>__MV__WorldObject__KogamaDataType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__ARepository____c__DisplayClass11_0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__UnityEngine__Events__UnityAction<System::Collections::Generic::Dictionary<System::Object,_System::Object>,_MV::WorldObject::KogamaDataType>
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__ARepository____c__DisplayClass11_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value != (Object *)0x0) {
-    value[1].klass = (Object__Class *)onWorldObjectExtracted;
-    func_?(value + 1,onWorldObjectExtracted);
-    this = (UnityAction_2_System_Object_System_ByteEnum_ *)
-           func_?(
-                          TypeInfo__UnityEngine__Events__UnityAction<System::Collections::Generic::Dictionary<System::Object,_System::Object>,_MV::WorldObject::KogamaDataType>
-                          );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::ByteEnum]
-    ::UnityAction_2_System_Object_System_ByteEnum___ctor
-              (this,value,
-               MethodInfo__ARepository____c__DisplayClass11_0___GetWorldObjectTypeFromMVItemData_b__0_System__Collections__Generic__Dictionary<System::Object,_System::Object>__MV__WorldObject__KogamaDataType_
-               ,(MethodInfo *)0x0);
-    this_00 = (BytePacker *)func_?(TypeInfo__MV__WorldObject__BytePacker);
-    MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker__ctor_1
-              (this_00,data,(MethodInfo *)0x0);
-    if ((TypeInfo__KoGaMaDataHandler->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    KoGaMaDataHandler::KoGaMaDataHandler_GetKoGaMaData
-              (this_00,(UnityAction_2_System_Collections_Generic_Dictionary_2_System_Object_System_Object_MV_WorldObject_KogamaDataType_
-                        *)this,0,(MethodInfo *)0x0);
+  object = (Object *)FUN_?(TypeInfo__ARepository____c__DisplayClass11_0);
+  if (object == (Object *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  bVar2 = iRam_? != 0;
+  object[1].klass = (Object__Class *)onWorldObjectExtracted;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)(object + 1) >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
+  this = (UnityAction_2_System_Object_System_ByteEnum_ *)
+         FUN_?(
+                      TypeInfo__UnityEngine__Events__UnityAction<System::Collections::Generic::Dictionary<System::Object,_System::Object>,_MV::WorldObject::KogamaDataType>
+                      );
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::ByteEnum]::
+  UnityAction_2_System_Object_System_ByteEnum___ctor
+            (this,object,
+             MethodInfo__ARepository____c__DisplayClass11_0___GetWorldObjectTypeFromMVItemData_b__0_System__Collections__Generic__Dictionary<System::Object,_System::Object>__MV__WorldObject__KogamaDataType_
+             ,(MethodInfo *)0x0);
+  this_00 = (BytePacker *)FUN_?(TypeInfo__MV__WorldObject__BytePacker);
+  MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker__ctor_1(this_00,data,(MethodInfo *)0x0)
+  ;
+  if (*(int *)&(TypeInfo__KoGaMaDataHandler->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__KoGaMaDataHandler);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  iVar7 = FUN_?();
+  if (*(int *)&(TypeInfo__KoGaMaDataHandler->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  TypeInfo__KoGaMaDataHandler->static_fields->timeSinceService = iVar7;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__KoGaMaDataHandler);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (this_00 == (BytePacker *)0x0) {
+DAT_?:
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  iVar7 = MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_ReadInt32
+                    (this_00,(MethodInfo *)0x0);
+  iVar8 = 0;
+  if (0 < iVar7) {
+    do {
+      if (*(int *)&(TypeInfo__KoGaMaDataHandler->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__KoGaMaDataHandler);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__KoGaMaDataHandler->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (TypeInfo__KoGaMaDataHandler->static_fields->serializeVersion == 0xb) {
+        pDVar9 = MVWorldObject.dll::MV::WorldObject::BytePackerFunctions::
+                 BytePackerFunctionsVersion11::
+                 BytePackerFunctionsVersion11_GetPrototypeDataParameters(this_00,(MethodInfo *)0x0);
+      }
+      else {
+        pDVar9 = (Dictionary_2_System_Object_System_Object_ *)0x0;
+      }
+      if (this == (UnityAction_2_System_Object_System_ByteEnum_ *)0x0) goto DAT_?;
+      (*(this->fields)._._.invoke_impl)((this->fields)._._.method_code,pDVar9,0);
+      KoGaMaDataHandler::KoGaMaDataHandler_HandleService((MethodInfo *)0x0);
+      iVar8 = iVar8 + 1;
+    } while (iVar8 < iVar7);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__KoGaMaDataHandler);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  uVar3 = MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_ReadInt32
+                    (this_00,(MethodInfo *)0x0);
+  iVar8 = -1;
+  if (0 < (int)uVar3) {
+    uVar6 = (ulonglong)uVar3;
+    do {
+      if (*(int *)&(TypeInfo__KoGaMaDataHandler->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      iVar7 = KoGaMaDataHandler::KoGaMaDataHandler_DeserializeWorldObject
+                        (this_00,(UnityAction_2_System_Collections_Generic_Dictionary_2_System_Object_System_Object_MV_WorldObject_KogamaDataType_
+                                  *)this,0,(MethodInfo *)0x0);
+      if (iVar8 == -1) {
+        iVar8 = iVar7;
+      }
+      uVar6 = uVar6 - 1;
+    } while (uVar6 != 0);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__KoGaMaDataHandler);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  iVar7 = MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_ReadInt32
+                    (this_00,(MethodInfo *)0x0);
+  iVar8 = 0;
+  if (0 < iVar7) {
+    do {
+      if (*(int *)&(TypeInfo__KoGaMaDataHandler->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__KoGaMaDataHandler);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__KoGaMaDataHandler->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (TypeInfo__KoGaMaDataHandler->static_fields->serializeVersion == 0xb) {
+        pDVar9 = MVWorldObject.dll::MV::WorldObject::BytePackerFunctions::
+                 BytePackerFunctionsVersion11::BytePackerFunctionsVersion11_GetLinkDataParameters
+                           (this_00,(MethodInfo *)0x0);
+      }
+      else {
+        pDVar9 = (Dictionary_2_System_Object_System_Object_ *)0x0;
+      }
+      if (this == (UnityAction_2_System_Object_System_ByteEnum_ *)0x0) goto DAT_?;
+      (*(this->fields)._._.invoke_impl)
+                ((this->fields)._._.method_code,pDVar9,2,(this->fields)._._.method);
+      KoGaMaDataHandler::KoGaMaDataHandler_HandleService((MethodInfo *)0x0);
+      iVar8 = iVar8 + 1;
+    } while (iVar8 < iVar7);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__KoGaMaDataHandler);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  iVar7 = MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_ReadInt32
+                    (this_00,(MethodInfo *)0x0);
+  iVar8 = 0;
+  if (0 < iVar7) {
+    do {
+      if (*(int *)&(TypeInfo__KoGaMaDataHandler->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__KoGaMaDataHandler);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__KoGaMaDataHandler->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (TypeInfo__KoGaMaDataHandler->static_fields->serializeVersion == 0xb) {
+        pDVar9 = MVWorldObject.dll::MV::WorldObject::BytePackerFunctions::
+                 BytePackerFunctionsVersion11::
+                 BytePackerFunctionsVersion11_GetObjectLinkDataParameters(this_00,(MethodInfo *)0x0)
+        ;
+      }
+      else {
+        pDVar9 = (Dictionary_2_System_Object_System_Object_ *)0x0;
+      }
+      if (this == (UnityAction_2_System_Object_System_ByteEnum_ *)0x0) goto DAT_?;
+      (*(this->fields)._._.invoke_impl)
+                ((this->fields)._._.method_code,pDVar9,3,(this->fields)._._.method);
+      KoGaMaDataHandler::KoGaMaDataHandler_HandleService((MethodInfo *)0x0);
+      iVar8 = iVar8 + 1;
+    } while (iVar8 < iVar7);
+  }
   return;
 }
 
@@ -201,33 +266,35 @@ void Assembly-CSharp.dll::ARepository::ARepository_MoveItem
                (ARepository *this,int32_t itemId,int32_t slotIndex,MethodInfo *method)
 
 {
+  uVar1 = SUB84(method,0);
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                   );
-    func_?(&TypeInfo__System__Int32);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                  ,CONCAT44(in_register_00000014,itemId),CONCAT44(in_register_00000084,slotIndex),
+                  uVar1);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pAVar1 = this;
-  this = (ARepository *)itemId;
-  this_00 = (pAVar1->fields).itemIDToInventorySlotIndex;
-  key = (Object *)func_?(TypeInfo__System__Int32,&this);
-  itemId = slotIndex;
-  value = (Object *)func_?(TypeInfo__System__Int32,&itemId);
+  this_00 = (this->fields).itemIDToInventorySlotIndex;
+  aiStackX_10[0] = itemId;
+  key = (Object *)FUN_?(uRam_?,aiStackX_10);
+  aiStackX_10[0] = slotIndex;
+  value = (Object *)FUN_?(uRam_?,aiStackX_10);
   if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__set_Item
-              (this_00,key,value,
+    Dictionary_2_System_Object_System_Object__TryInsert
+              (this_00,key,value,CONCAT31((int3)((uint)uVar1 >> 8),1),
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-              );
-    if ((pAVar1->fields).OnRepositoryChange != (ARepository_OnRepositoryChangeDelegate *)0x0) {
-      pAVar2 = (pAVar1->fields).OnRepositoryChange;
+               ->klass->rgctx_data[0x22].method);
+    if ((this->fields).OnRepositoryChange != (ARepository_OnRepositoryChangeDelegate *)0x0) {
+      pAVar2 = (this->fields).OnRepositoryChange;
       (*(pAVar2->fields)._._.invoke_impl)
-                ((pAVar2->fields)._._.method_code,pAVar1,(pAVar2->fields)._._.method);
+                ((pAVar2->fields)._._.method_code,this,(pAVar2->fields)._._.method);
     }
     return;
   }
-  func_?();
+  FUN_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -242,8 +309,11 @@ void Assembly-CSharp.dll::ARepository::ARepository_NotifyRepositoryChange
 {
   if ((this->fields).OnRepositoryChange != (ARepository_OnRepositoryChangeDelegate *)0x0) {
     pAVar1 = (this->fields).OnRepositoryChange;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,this,(pAVar1->fields)._._.method);
+    return;
   }
   return;
 }
@@ -256,32 +326,32 @@ void Assembly-CSharp.dll::ARepository::ARepository_RemoveItem
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Remove_System__Object_
-                   );
-    func_?(&TypeInfo__System__Int32);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Remove_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pAVar1 = this;
-  this = (ARepository *)itemId;
-  this_00 = (pAVar1->fields).itemIDToInventorySlotIndex;
-  key = (Object *)func_?(TypeInfo__System__Int32,&this);
+  this_00 = (this->fields).itemIDToInventorySlotIndex;
+  aiStackX_10[0] = itemId;
+  key = (Object *)FUN_?(uRam_?,aiStackX_10);
   if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
     Dictionary_2_System_Object_System_Object__Remove
               (this_00,key,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Remove_System__Object_
               );
-    if ((pAVar1->fields).OnRepositoryChange != (ARepository_OnRepositoryChangeDelegate *)0x0) {
-      pAVar2 = (pAVar1->fields).OnRepositoryChange;
-      (*(pAVar2->fields)._._.invoke_impl)
-                ((pAVar2->fields)._._.method_code,pAVar1,(pAVar2->fields)._._.method);
+    if ((this->fields).OnRepositoryChange != (ARepository_OnRepositoryChangeDelegate *)0x0) {
+      pAVar1 = (this->fields).OnRepositoryChange;
+      (*(pAVar1->fields)._._.invoke_impl)
+                ((pAVar1->fields)._._.method_code,this,(pAVar1->fields)._._.method);
     }
     return;
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -292,81 +362,82 @@ void Assembly-CSharp.dll::ARepository::ARepository_SwapItems
                (ARepository *this,int32_t itemId1,int32_t itemId2,MethodInfo *method)
 
 {
+  uVar1 = SUB84(method,0);
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                   );
-    func_?(&TypeInfo__System__Int32);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                  ,CONCAT44(in_register_00000014,itemId1),CONCAT44(in_register_00000084,itemId2),
+                  uVar1);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  iVar1 = itemId1;
-  pAVar2 = this;
-  pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-           (this->fields).itemIDToInventorySlotIndex;
-  this = (ARepository *)itemId1;
-  pOVar4 = (Object *)func_?(TypeInfo__System__Int32,&this);
-  if (pDVar3 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-    TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (pDVar3,pOVar4,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    uVar6 = CONCAT44(TypeInfo__System__Int32,TVar5.m_Index);
-    if (TVar5.m_Index != 0) {
-      if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) !=
-          (TypeInfo__System__Int32->_0).element_class) goto code_?;
-      puVar7 = (undefined4 *)func_?(TVar5.m_Index);
-      puStack_8 = (undefined *)*puVar7;
-      pDStack_9 = (pAVar2->fields).itemIDToInventorySlotIndex;
-      itemId1 = iVar1;
-      pOStack_10 = (Object *)func_?(TypeInfo__System__Int32,&itemId1);
-      iVar1 = itemId2;
-      pDVar3 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-               (pAVar2->fields).itemIDToInventorySlotIndex;
-      iStack_11 = itemId2;
-      pOVar4 = (Object *)func_?(TypeInfo__System__Int32,&iStack_11);
-      if (pDVar3 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-        TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          (pDVar3,pOVar4,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                          );
-        uVar6 = CONCAT44(TypeInfo__System__Int32,TVar5.m_Index);
-        if (TVar5.m_Index != 0) {
-          if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) !=
-              (TypeInfo__System__Int32->_0).element_class) goto code_?;
-          puVar7 = (undefined4 *)func_?(TVar5.m_Index);
-          uStack_12 = *puVar7;
-          pOVar4 = (Object *)func_?(TypeInfo__System__Int32,&uStack_12);
-          if (pDStack_9 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+  pDVar2 = (this->fields).itemIDToInventorySlotIndex;
+  aiStackX_10[0] = itemId1;
+  pOVar3 = (Object *)FUN_?(lRam_?,aiStackX_10);
+  if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (pDVar2,pOVar3,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if (pOVar3 != (Object *)0x0) {
+      if ((pOVar3->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+        FUN_?(pOVar3,lRam_?);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      iVar5 = *(int32_t *)&pOVar3[1].klass;
+      pDVar2 = (this->fields).itemIDToInventorySlotIndex;
+      aiStackX_10[0] = itemId1;
+      pOVar3 = (Object *)FUN_?(lRam_?,aiStackX_10);
+      this_00 = (this->fields).itemIDToInventorySlotIndex;
+      aiStackX_10[0] = itemId2;
+      pOVar6 = (Object *)FUN_?(lRam_?,aiStackX_10);
+      if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                 Object]::Dictionary_2_System_Object_System_Object__get_Item
+                           (this_00,pOVar6,
+                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                           );
+        if (pOVar6 != (Object *)0x0) {
+          if ((pOVar6->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+            FUN_?(pOVar6,lRam_?);
+            pcVar4 = (code *)swi(3);
+            (*pcVar4)();
+            return;
+          }
+          aiStackX_10[0] = *(int32_t *)&pOVar6[1].klass;
+          pOVar6 = (Object *)FUN_?(lRam_?,aiStackX_10);
+          if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+            behavior = CONCAT31((int3)((uint)uVar1 >> 8),1);
             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-            ::Dictionary_2_System_Object_System_Object__set_Item
-                      (pDStack_9,pOStack_10,pOVar4,
+            ::Dictionary_2_System_Object_System_Object__TryInsert
+                      (pDVar2,pOVar3,pOVar6,behavior,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                      );
-            this_00 = (pAVar2->fields).itemIDToInventorySlotIndex;
-            pAStack_13 = (ARepository *)iVar1;
-            pOVar4 = (Object *)func_?(TypeInfo__System__Int32,&pAStack_13);
-            puStack_14 = puStack_8;
-            value = (Object *)func_?(TypeInfo__System__Int32,&puStack_14);
-            if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                       ->klass->rgctx_data[0x22].method);
+            pDVar2 = (this->fields).itemIDToInventorySlotIndex;
+            aiStackX_10[0] = itemId2;
+            pOVar3 = (Object *)FUN_?(lRam_?,aiStackX_10);
+            aiStackX_10[0] = iVar5;
+            pOVar6 = (Object *)FUN_?(lRam_?,aiStackX_10);
+            if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__set_Item
-                        (this_00,pOVar4,value,
+              Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                        (pDVar2,pOVar3,pOVar6,CONCAT31((int3)(behavior >> 8),1),
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                        );
-              if ((pAVar2->fields).OnRepositoryChange !=
-                  (ARepository_OnRepositoryChangeDelegate *)0x0) {
-                pAVar15 = (pAVar2->fields).OnRepositoryChange;
-                pOStack_10 = (pAVar15->fields)._._.method;
-                pAStack_13 = pAVar2;
-                puStack_8 = (pAVar15->fields)._._.method_code;
-                (*(pAVar15->fields)._._.invoke_impl)();
+                         ->klass->rgctx_data[0x22].method);
+              if ((this->fields).OnRepositoryChange != (ARepository_OnRepositoryChangeDelegate *)0x0
+                 ) {
+                pAVar7 = (this->fields).OnRepositoryChange;
+                (*(pAVar7->fields)._._.invoke_impl)
+                          ((pAVar7->fields)._._.method_code,this,(pAVar7->fields)._._.method);
               }
               return;
             }
@@ -375,11 +446,9 @@ void Assembly-CSharp.dll::ARepository::ARepository_SwapItems
       }
     }
   }
-  uVar6 = func_?();
-code_?:
-  func_?(uVar6);
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -390,43 +459,76 @@ void Assembly-CSharp.dll::ARepository::ARepository__ctor(ARepository *this,Metho
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_System::String>);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_System::String>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
-            )func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_System::String>
-                            );
+            )FUN_?(TypeInfo__System__Collections__Generic__Dictionary<int,_System::String>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
   ::TextResourceManager+FontAssetRef]::
   Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<int,_System::String>__Dictionary__
             );
+  bVar1 = iRam_? != 0;
   (this->fields).PlanetOwnershipTypes = (Dictionary_2_System_Int32_System_String_ *)this_00;
-  func_?(&(this->fields).PlanetOwnershipTypes,this_00);
-  this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-             *)func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                              );
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).PlanetOwnershipTypes >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+             *)FUN_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                            );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
-  StyleComplexSelector+PseudoStateData]::
-  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+  UIR::UIRenderDevice+DisableForceGammaMaterial]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
             (this_01,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
+  bVar1 = iRam_? != 0;
   (this->fields).itemIDToInventorySlotIndex = (Dictionary_2_System_Object_System_Object_ *)this_01;
-  func_?(&(this->fields).itemIDToInventorySlotIndex,this_01);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).itemIDToInventorySlotIndex >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   return;
 }
 

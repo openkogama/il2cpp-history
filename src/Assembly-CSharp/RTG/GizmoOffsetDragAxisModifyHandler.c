@@ -4,20 +4,22 @@
 IAsyncResult *
 Assembly-CSharp.dll::RTG::GizmoOffsetDragAxisModifyHandler::
 GizmoOffsetDragAxisModifyHandler_BeginInvoke
-          (GizmoOffsetDragAxisModifyHandler *this,Gizmo *gizmo,Vector3 relativeDragAxis,
+          (GizmoOffsetDragAxisModifyHandler *this,Gizmo *gizmo,Vector3 *relativeDragAxis,
           int32_t handleId,AsyncCallback *callback,Object *object,MethodInfo *method)
 
 {
+  aiStackX_20[0] = handleId;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pGStack_1 = gizmo;
-  uStack_2 = 0;
-  uStack_3 = func_?(TypeInfo__UnityEngine__Vector3,&relativeDragAxis);
-  uStack_4 = func_?(TypeInfo__System__Int32,&handleId);
-  pIVar5 = (IAsyncResult *)func_?(this,&pGStack_1,callback,object);
+  uStack_1 = 0;
+  pGStack_2 = gizmo;
+  uStack_3 = FUN_?(TypeInfo__UnityEngine__Vector3,relativeDragAxis);
+  uStack_4 = FUN_?(uRam_?,aiStackX_20);
+  pIVar5 = (IAsyncResult *)FUN_?(this,&pGStack_2,callback,object);
   return pIVar5;
 }
 
@@ -30,24 +32,25 @@ Vector3 * Assembly-CSharp.dll::RTG::GizmoOffsetDragAxisModifyHandler::
                     IAsyncResult *result,MethodInfo *method)
 
 {
-  puStack_1 = (undefined1 *)0x0;
-  pIStack_2 = result;
-  puStack_1 = (undefined1 *)func_?();
-  if (puStack_1 != (undefined1 *)0x0) {
-    puVar3 = (undefined8 *)func_?();
-    uVar4 = *puVar3;
-    fVar5 = *(float *)(puVar3 + 1);
-    __return_storage_ptr__->x = (float)(int)uVar4;
-    __return_storage_ptr__->y = (float)(int)((ulonglong)uVar4 >> 0x20);
-    __return_storage_ptr__->z = fVar5;
+  lVar1 = FUN_?(result,auStack_2,apIStackX_8);
+  if (apIStackX_8[0] != (Il2CppChar *)0x0) {
+    il2cpp_set_config_utf16(apIStackX_8[0]);
+    pcVar3 = (code *)swi(3);
+    pVVar4 = (Vector3 *)(*pcVar3)();
+    return pVVar4;
+  }
+  if (lVar1 != 0) {
+    uVar5 = *(undefined8 *)(lVar1 + 0x10);
+    fVar6 = *(float *)(lVar1 + 0x18);
+    __return_storage_ptr__->x = (float)(int)uVar5;
+    __return_storage_ptr__->y = (float)(int)((ulonglong)uVar5 >> 0x20);
+    __return_storage_ptr__->z = fVar6;
     return __return_storage_ptr__;
   }
-  puStack_1 = &stack0xfffffffc;
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar8 = (code *)swi(3);
-  pVVar9 = (Vector3 *)(*pcVar8)();
-  return pVVar9;
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  pVVar4 = (Vector3 *)(*pcVar3)();
+  return pVVar4;
 }
 
 
@@ -56,18 +59,21 @@ Vector3 * Assembly-CSharp.dll::RTG::GizmoOffsetDragAxisModifyHandler::
 Vector3 * Assembly-CSharp.dll::RTG::GizmoOffsetDragAxisModifyHandler::
           GizmoOffsetDragAxisModifyHandler_Invoke
                     (Vector3 *__return_storage_ptr__,GizmoOffsetDragAxisModifyHandler *this,
-                    Gizmo *gizmo,Vector3 relativeDragAxis,int32_t handleId,MethodInfo *method)
+                    Gizmo *gizmo,Vector3 *relativeDragAxis,int32_t handleId,MethodInfo *method)
 
 {
-  puVar1 = (undefined8 *)
+  fStack_1 = relativeDragAxis->z;
+  uStack_2._0_4_ = relativeDragAxis->x;
+  uStack_2._4_4_ = relativeDragAxis->y;
+  puVar3 = (undefined8 *)
            (*(this->fields)._._.invoke_impl)
-                     (auStack_2,(this->fields)._._.method_code,gizmo,relativeDragAxis._0_8_,
-                      relativeDragAxis.z,handleId,(this->fields)._._.method);
-  uVar3 = *puVar1;
-  fVar4 = *(float *)(puVar1 + 1);
-  __return_storage_ptr__->x = (float)(int)uVar3;
-  __return_storage_ptr__->y = (float)(int)((ulonglong)uVar3 >> 0x20);
-  __return_storage_ptr__->z = fVar4;
+                     (auStack_4,(this->fields)._._.method_code,gizmo,&uStack_2,handleId,
+                      (this->fields)._._.method);
+  uVar5 = *puVar3;
+  fVar6 = *(float *)(puVar3 + 1);
+  __return_storage_ptr__->x = (float)(int)uVar5;
+  __return_storage_ptr__->y = (float)(int)((ulonglong)uVar5 >> 0x20);
+  __return_storage_ptr__->z = fVar6;
   return __return_storage_ptr__;
 }
 
@@ -80,57 +86,74 @@ void Assembly-CSharp.dll::RTG::GizmoOffsetDragAxisModifyHandler::
                MethodInfo *method)
 
 {
-  (this->fields)._._.method_ptr = *(void **)((int)method_1 + 4);
+  bVar1 = iRam_? != 0;
+  (this->fields)._._.method_ptr = *(void **)((longlong)method_1 + 8);
   (this->fields)._._.method = method_1;
   (this->fields)._._.m_target = object;
-  func_?(&(this->fields)._._.m_target,object);
-  cVar1 = *(char *)((int)method_1 + 0x2e);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._._.m_target >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
+  cVar6 = *(char *)((longlong)method_1 + 0x52);
   (this->fields)._._.method_code = this;
-  cVar2 = func_?(method_1);
-  if (cVar2 == '\0') {
-    if (cVar1 == '\x02') {
+  if ((*(byte *)((longlong)method_1 + 0x4c) & 0x10) == 0) {
+    if (cVar6 == '\x02') {
       if ((this->fields)._._.method_is_virtual == 0) {
-        (this->fields)._._.invoke_impl = &UNK_?;
-        (this->fields)._._.extra_arg = &UNK_?;
-        return;
+        pcVar7 = FUN_?;
       }
-      cVar1 = func_?(method_1);
-      if (cVar1 != '\0') {
-        cVar1 = func_?(method_1);
-        puVar3 = &UNK_?;
-        if (cVar1 == '\0') {
-          puVar3 = &UNK_?;
+      else if (((*(byte *)((longlong)method_1 + 0x53) & 3) == 2) &&
+              (*(longlong *)(*(longlong *)((longlong)method_1 + 0x40) + 0x10) != 0)) {
+        lVar8 = *(longlong *)((longlong)method_1 + 0x20);
+        if ((((*(byte *)(lVar8 + 0x118) & 0x20) == 0) && (*(char *)(lVar8 + 0x2a) != '\x13')) &&
+           (*(char *)(lVar8 + 0x2a) != '\x1e')) {
+          bVar1 = false;
         }
-        (this->fields)._._.invoke_impl = puVar3;
-        (this->fields)._._.extra_arg = &UNK_?;
-        return;
+        else {
+          bVar1 = true;
+        }
+        pcVar7 = FUN_?;
+        if (!bVar1) {
+          pcVar7 = FUN_?;
+        }
       }
-      cVar1 = func_?(method_1);
-      puVar3 = &UNK_?;
-      if (cVar1 == '\0') {
-        puVar3 = &UNK_?;
+      else {
+        lVar8 = *(longlong *)((longlong)method_1 + 0x20);
+        if (((*(byte *)(lVar8 + 0x118) & 0x20) != 0) ||
+           ((*(char *)(lVar8 + 0x2a) == '\x13' ||
+            (pcVar7 = FUN_?, *(char *)(lVar8 + 0x2a) == '\x1e')))) {
+          pcVar7 = FUN_?;
+        }
       }
-      (this->fields)._._.invoke_impl = puVar3;
-      (this->fields)._._.extra_arg = &UNK_?;
+      (this->fields)._._.invoke_impl = pcVar7;
+      (this->fields)._._.extra_arg = FUN_?;
       return;
     }
     if (object == (Object *)0x0) {
-      uVar4 = func_?(0,&UNK_?,0);
-      func_?(uVar4);
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
+      uVar9 = func_?();
+      FUN_?(uVar9,0);
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
       return;
     }
   }
-  else if (cVar1 == '\x03') {
-    (this->fields)._._.invoke_impl = &UNK_?;
-    (this->fields)._._.extra_arg = &UNK_?;
-    return;
+  else if (cVar6 == '\x03') {
+    pcVar7 = FUN_?;
+    goto code_?;
   }
-  pvVar6 = (this->fields)._._.method_ptr;
   (this->fields)._._.method_code = (this->fields)._._.m_target;
-  (this->fields)._._.invoke_impl = pvVar6;
-  (this->fields)._._.extra_arg = &UNK_?;
+  pcVar7 = (this->fields)._._.method_ptr;
+code_?:
+  (this->fields)._._.invoke_impl = pcVar7;
+  (this->fields)._._.extra_arg = FUN_?;
   return;
 }
 

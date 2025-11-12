@@ -7,20 +7,39 @@ void Assembly-CSharp.dll::ThemeMenuButton+<>c::ThemeMenuButton_c__OnClick_b__6_0
 
 {
   if (cRam_? == '\0') {
-    pTStack_1 = (ThemeMenuButton_IClickHandler *)&TypeInfo__ThemeMenuButton__IClickHandler;
-    func_?();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (handler != (ThemeMenuButton_IClickHandler *)0x0) {
-    pTStack_1 = handler;
-    pTStack_2 = TypeInfo__ThemeMenuButton__IClickHandler;
-    uStack_3 = 0;
-    func_?();
+    uVar1 = 0;
+    pTVar2 = handler->klass;
+    uVar3._0_1_ = (pTVar2->_1).rank;
+    uVar3._1_1_ = (pTVar2->_1).minimumAlignment;
+    if (uVar3 != 0) {
+      do {
+        if (pTVar2->interfaceOffsets[uVar1].interfaceType ==
+            (Il2CppClass *)TypeInfo__ThemeMenuButton__IClickHandler) {
+          UNRECOVERED_JUMPTABLE =
+               (&pTVar2->vtable)[pTVar2->interfaceOffsets[uVar1].offset].OpenThemesMenu.methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*UNRECOVERED_JUMPTABLE)
+                    (handler,(&pTVar2->vtable)[pTVar2->interfaceOffsets[uVar1].offset].
+                             OpenThemesMenu.method,UNRECOVERED_JUMPTABLE);
+          return;
+        }
+        uVar1 = uVar1 + 1;
+      } while (uVar1 < uVar3);
+    }
+    puVar4 = (undefined8 *)FUN_?(handler);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(code *)*puVar4)(handler,puVar4[1],(code *)*puVar4);
     return;
   }
-  pTStack_1 = (ThemeMenuButton_IClickHandler *)&stack0xfffffffc;
-  uVar4 = func_?(&uStack_3);
-  func_?(uVar4);
+  FUN_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;
@@ -33,15 +52,26 @@ void Assembly-CSharp.dll::ThemeMenuButton+<>c::ThemeMenuButton_c__cctor(MethodIn
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__ThemeMenuButton____c);
+    FUN_?(&TypeInfo__ThemeMenuButton____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__ThemeMenuButton____c;
-  value = (ThemeMenuButton_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  TypeInfo__ThemeMenuButton____c->static_fields->__9 = value;
-  func_?(TypeInfo__ThemeMenuButton____c->static_fields,value);
+  pTVar1 = (ThemeMenuButton_c *)FUN_?(TypeInfo__ThemeMenuButton____c);
+  TypeInfo__ThemeMenuButton____c->static_fields->__9 = pTVar1;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)TypeInfo__ThemeMenuButton____c->static_fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 

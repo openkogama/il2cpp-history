@@ -6,75 +6,218 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawCircle2D
                MethodInfo *method)
 
 {
-  this = PrimitiveFactory::PrimitiveFactory_Generate2DCircleBorderPointsCW
-                   (circleCenter,circleRadius,numPoints,(MethodInfo *)0x0);
+  pLVar1 = PrimitiveFactory::PrimitiveFactory_Generate2DCircleBorderPointsCW
+                     (circleCenter,circleRadius,numPoints,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Count__
+                  ,pLVar1,camera,0,circleCenter);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (this != (List_1_UnityEngine_Vector2_ *)0x0) {
-    iVar1 = (this->fields)._size + -1;
-    if (0 < iVar1) {
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PushMatrix((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_LoadOrtho((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(4,(MethodInfo *)0x0);
-      if (camera == (Camera *)0x0) goto code_?;
-      position_00.z = 0.0;
-      position_00._0_8_ = circleCenter;
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                         ((Vector3 *)&stack0xffffffcc,camera,position_00,(MethodInfo *)0x0);
-      uVar3 = pVVar2->x;
-      pVVar2 = (Vector3 *)pVVar2->y;
-      numPoints = 0;
-      pCVar4 = (Camera *)0x0;
-      puStack_5 = (undefined *)uVar3;
-      do {
-        v.y = (float)pVVar2;
-        v.x = (float)puStack_5;
-        v.z = (float)pCVar4;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v,(MethodInfo *)0x0);
-        puVar6 = &UNK_?;
-        pMVar7 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-        ;
-        VVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (this,numPoints,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        circleCenter.y = VVar8.y;
-        pVVar2 = (Vector3 *)&stack0xffffffc0;
-        position_01.y = circleCenter.y;
-        position_01.x = circleCenter.x;
-        position_01.z = (float)pMVar7;
-        pCVar4 = camera;
-        pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                           (pVVar2,camera,position_01,(MethodInfo *)0x0);
-        fVar10 = pVVar9->z;
-        circleCenter.x = (float)&UNK_?;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(*pVVar9,(MethodInfo *)0x0);
-        VVar8 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (this,(int)fVar10 + 1,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        position.y = VVar8.y;
-        position.x = circleCenter.y;
-        position.z = (float)puVar6;
-        pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                           ((Vector3 *)&stack0xffffffb4,camera,position,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(*pVVar9,(MethodInfo *)0x0);
-        numPoints = (int)fVar10 + 2;
-      } while (numPoints < iVar1);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PopMatrix((MethodInfo *)0x0);
-    }
+  if (pLVar1 == (List_1_UnityEngine_Vector2_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
+  iVar3 = (pLVar1->fields)._size + -1;
+  if (0 < iVar3) {
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)();
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)();
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)(4);
+    if (camera == (Camera *)0x0) goto code_?;
+    uStack_5 = 0;
+    VStack_6 = circleCenter;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_7 = 0;
+    uStack_8 = 0;
+    pvVar9 = (camera->fields)._._._.m_CachedPtr;
+    if (pvVar9 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)(pvVar9,&VStack_6,&uStack_7);
+    uVar10 = 0;
+    lVar11 = 0x28;
+    uVar12 = uVar10;
+    do {
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_7,uStack_7._4_4_,0.0,(MethodInfo *)0x0);
+      uVar13 = (uint)uVar10;
+      if ((uint)(pLVar1->fields)._size <= uVar13) {
 code_?:
-  func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pVVar14 = (pLVar1->fields)._items;
+      if (pVVar14 == (Vector2__Array *)0x0) goto code_?;
+      if ((uint)pVVar14->max_length <= uVar13) {
+code_?:
+        FUN_?();
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      uStack_15 = CONCAT44(*(undefined4 *)((longlong)pVVar14->vector + lVar11 + -0x24),
+                           *(undefined4 *)((longlong)(pVVar14->vector + -5) + lVar11));
+      uStack_16 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_17 = 0;
+      fStack_18 = 0.0;
+      pvVar9 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar9 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcVar2 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+        uVar4 = func_?(&UNK_?);
+        FUN_?(uVar4,0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcRam_? = pcVar2;
+      (*pcRam_?)(pvVar9,&uStack_15,&uStack_17);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_17,uStack_17._4_4_,fStack_18,(MethodInfo *)0x0);
+      if ((uint)(pLVar1->fields)._size <= uVar13 + 1) goto code_?;
+      pVVar14 = (pLVar1->fields)._items;
+      if (pVVar14 == (Vector2__Array *)0x0) goto code_?;
+      if ((uint)pVVar14->max_length <= uVar13 + 1) goto code_?;
+      uStack_19 = CONCAT44(*(undefined4 *)((longlong)pVVar14->vector + lVar11 + -0x1c),
+                           *(undefined4 *)
+                            ((longlong)&((Vector2__Array *)(pVVar14->vector + -4))->klass + lVar11));
+      puStack_20 = (undefined *)((ulonglong)puStack_20 & 0xffffffff00000000);
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_21 = 0;
+      fStack_22 = 0.0;
+      pvVar9 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar9 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcVar2 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+        uVar4 = func_?(&UNK_?);
+        FUN_?(uVar4,0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcRam_? = pcVar2;
+      (*pcRam_?)(pvVar9,&uStack_19,&uStack_21);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_21,uStack_21._4_4_,fStack_22,(MethodInfo *)0x0);
+      uVar10 = (ulonglong)(uVar13 + 1);
+      uVar12 = uVar12 + 1;
+      lVar11 = lVar11 + 8;
+    } while ((longlong)uVar12 < (longlong)iVar3);
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)();
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)();
+  }
   return;
 }
 
@@ -82,60 +225,24 @@ code_?:
 /* Void DrawCircle3D(Vector2, Single, Vector3, Vector3, Int32) */
 
 void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawCircle3D
-               (Vector2 circleCenter,float circleRadius,Vector3 circleRight,Vector3 circleUp,
+               (Vector2 circleCenter,float circleRadius,Vector3 *circleRight,Vector3 *circleUp,
                int32_t numPoints,MethodInfo *method)
 
 {
-  circleCenter_00.z = 0.0;
-  circleCenter_00._0_8_ = circleCenter;
-  this = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-         PrimitiveFactory::PrimitiveFactory_Generate3DCircleBorderPoints
-                   (circleCenter_00,circleRadius,circleRight,circleUp,numPoints,(MethodInfo *)0x0);
-  if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (this != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
-    iVar1 = (this->fields)._size + -1;
-    if (0 < iVar1) {
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(4,(MethodInfo *)0x0);
-      index = 0;
-      do {
-        v.z = 0.0;
-        v._0_8_ = circleCenter;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v,(MethodInfo *)0x0);
-        pVVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                 VisualTreeAsset+UsingEntry]::
-                 List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                           ((VisualTreeAsset_UsingEntry *)&circleUp,this,index,
-                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                           );
-        uVar3 = pVVar2->alias;
-        uVar4 = pVVar2->path;
-        circleUp.x = (float)&UNK_?;
-        circleUp.y = (float)uVar3;
-        circleUp.z = (float)uVar4;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex((Vector3)*pVVar2,(MethodInfo *)0x0);
-        circleUp.y = (float)&circleRight;
-        circleUp.x = (float)&UNK_?;
-        circleUp.z = (float)this;
-        pVVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                 VisualTreeAsset+UsingEntry]::
-                 List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                           ((VisualTreeAsset_UsingEntry *)circleUp.y,this,index + 1,
-                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                           );
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex((Vector3)*pVVar2,(MethodInfo *)0x0);
-        index = index + 1;
-      } while (index < iVar1);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
-    }
-    return;
-  }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  VStack_1.x = circleUp->x;
+  VStack_1.y = circleUp->y;
+  VStack_1.z = circleUp->z;
+  VStack_2.x = circleRight->x;
+  VStack_2.y = circleRight->y;
+  VStack_2.z = circleRight->z;
+  fStack_3 = 0.0;
+  VStack_4 = circleCenter;
+  points = PrimitiveFactory::PrimitiveFactory_Generate3DCircleBorderPoints
+                     ((Vector3 *)&VStack_4,circleRadius,&VStack_2,&VStack_1,numPoints,
+                      (MethodInfo *)0x0);
+  fStack_3 = 0.0;
+  VStack_4 = circleCenter;
+  GLRenderer_DrawTriangleFan3D_1((Vector3 *)&VStack_4,points,(MethodInfo *)0x0);
   return;
 }
 
@@ -147,9 +254,180 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawCircleBorder2D
                MethodInfo *method)
 
 {
-  linePoints = PrimitiveFactory::PrimitiveFactory_Generate2DCircleBorderPointsCW
-                         (circleCenter,circleRadius,numPoints,(MethodInfo *)0x0);
-  GLRenderer_DrawLineLoop2D(linePoints,camera,(MethodInfo *)0x0);
+  pLVar1 = PrimitiveFactory::PrimitiveFactory_Generate2DCircleBorderPointsCW
+                     (circleCenter,circleRadius,numPoints,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Count__
+                  ,camera,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pLVar1 == (List_1_UnityEngine_Vector2_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  if (1 < (pLVar1->fields)._size) {
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)();
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)();
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)();
+    lVar4 = 0x20;
+    for (uVar5 = 0; (int)uVar5 < (pLVar1->fields)._size; uVar5 = uVar5 + 1) {
+      if ((uint)(pLVar1->fields)._size <= uVar5) {
+code_?:
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pVVar6 = (pLVar1->fields)._items;
+      if (pVVar6 == (Vector2__Array *)0x0) goto code_?;
+      if ((uint)pVVar6->max_length <= uVar5) {
+code_?:
+        FUN_?();
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      uVar7 = (int)(uVar5 + 1) % (pLVar1->fields)._size;
+      if ((uint)(pLVar1->fields)._size <= uVar7) goto code_?;
+      if (pVVar6 == (Vector2__Array *)0x0) goto code_?;
+      if ((uint)pVVar6->max_length <= uVar7) goto code_?;
+      fVar8 = pVVar6->vector[(int)uVar7].x;
+      fVar9 = pVVar6->vector[(int)uVar7].y;
+      if (camera == (Camera *)0x0) goto code_?;
+      uStack_10 = CONCAT44(*(undefined4 *)((longlong)pVVar6->vector + lVar4 + -0x1c),
+                           *(undefined4 *)
+                            ((longlong)&((Vector2__Array *)(pVVar6->vector + -4))->klass + lVar4));
+      uStack_11 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_12 = 0;
+      uStack_13 = 0;
+      pvVar14 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar14 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcVar2 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+        uVar3 = func_?(&UNK_?);
+        FUN_?(uVar3,0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcRam_? = pcVar2;
+      (*pcRam_?)(pvVar14,&uStack_10,&uStack_12);
+      uStack_15 = CONCAT44(fVar9,fVar8);
+      uStack_16 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_17 = 0;
+      uStack_18 = 0;
+      pvVar14 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar14 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcVar2 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+        uVar3 = func_?(&UNK_?);
+        FUN_?(uVar3,0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcRam_? = pcVar2;
+      (*pcRam_?)(pvVar14,&uStack_15,&uStack_17);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_12,uStack_12._4_4_,0.0,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_17,uStack_17._4_4_,0.0,(MethodInfo *)0x0);
+      lVar4 = lVar4 + 8;
+    }
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)();
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)();
+  }
   return;
 }
 
@@ -157,14 +435,99 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawCircleBorder2D
 /* Void DrawCircleBorder3D(Vector3, Single, Vector3, Vector3, Int32) */
 
 void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawCircleBorder3D
-               (Vector3 circleCenter,float circleRadius,Vector3 circleRight,Vector3 circleUp,
+               (Vector3 *circleCenter,float circleRadius,Vector3 *circleRight,Vector3 *circleUp,
                int32_t numPoints,MethodInfo *method)
 
 {
-  linePoints = PrimitiveFactory::PrimitiveFactory_Generate3DCircleBorderPoints
-                         (circleCenter,circleRadius,circleRight,circleUp,numPoints,(MethodInfo *)0x0
-                         );
-  GLRenderer_DrawLineLoop3D(linePoints,(MethodInfo *)0x0);
+  VStack_1.x = circleUp->x;
+  VStack_1.y = circleUp->y;
+  VStack_1.z = circleUp->z;
+  VStack_2.z = circleRight->z;
+  VStack_2.x = circleRight->x;
+  VStack_2.y = circleRight->y;
+  VStack_3.z = circleCenter->z;
+  VStack_3.x = circleCenter->x;
+  VStack_3.y = circleCenter->y;
+  pLVar4 = PrimitiveFactory::PrimitiveFactory_Generate3DCircleBorderPoints
+                     (&VStack_3,circleRadius,&VStack_2,&VStack_1,numPoints,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__
+                  ,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pLVar4 == (List_1_UnityEngine_Vector3_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
+    return;
+  }
+  if (1 < (pLVar4->fields)._size) {
+    pcVar5 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+      uVar6 = func_?(&UNK_?);
+      FUN_?(uVar6,0);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    pcRam_? = pcVar5;
+    (*pcRam_?)();
+    uVar7 = 0;
+    uVar8 = uVar7;
+    while (uVar9 = (uint)uVar8, (int)uVar9 < (pLVar4->fields)._size) {
+      if ((uint)(pLVar4->fields)._size <= uVar9) {
+code_?:
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      pVVar10 = (pLVar4->fields)._items;
+      if (pVVar10 == (Vector3__Array *)0x0) goto code_?;
+      if ((uint)pVVar10->max_length <= uVar9) {
+code_?:
+        FUN_?();
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      uVar11 = (int)(uVar9 + 1) % (pLVar4->fields)._size;
+      if ((uint)(pLVar4->fields)._size <= uVar11) goto code_?;
+      if ((uint)pVVar10->max_length <= uVar11) goto code_?;
+      x = pVVar10->vector[(int)uVar11].x;
+      y = pVVar10->vector[(int)uVar11].y;
+      z = pVVar10->vector[(int)uVar11].z;
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)*(undefined8 *)((longlong)&pVVar10->vector[0].x + uVar7),
+                 *(float *)((longlong)&pVVar10->vector[0].y + uVar7),
+                 *(float *)((longlong)&pVVar10->vector[0].z + uVar7),(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3((float)x,(float)y,z,(MethodInfo *)0x0)
+      ;
+      uVar7 = uVar7 + 0xc;
+      uVar8 = (ulonglong)(uVar9 + 1);
+    }
+    pcVar5 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+      uVar6 = func_?(&UNK_?);
+      FUN_?(uVar6,0);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    pcRam_? = pcVar5;
+    (*pcRam_?)();
+  }
   return;
 }
 
@@ -175,30 +538,136 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLine2D
                (Vector2 startPoint,Vector2 endPoint,Camera *camera,MethodInfo *method)
 
 {
-  UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PushMatrix((MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::GL::GL_LoadOrtho((MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(1,(MethodInfo *)0x0);
-  if (camera != (Camera *)0x0) {
-    position_00.z = 0.0;
-    position_00._0_8_ = startPoint;
-    pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                       ((Vector3 *)&stack0xfffffff0,camera,position_00,(MethodInfo *)0x0);
-    fVar2 = pVVar1->z;
-    UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(*pVVar1,(MethodInfo *)0x0);
-    uStack3 = 0;
-    position.y = 0.0;
-    position.z = 0.0;
-    position.x = fVar2;
-    pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                       ((Vector3 *)&stack0xfffffff0,camera,position,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(*pVVar1,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PopMatrix((MethodInfo *)0x0);
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?,endPoint,camera,method,startPoint,endPoint),
+     pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pcRam_? = pcVar1;
+  (*pcRam_?)();
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)();
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(1);
+  if (camera == (Camera *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  uStack_3 = 0;
+  VStack_4 = startPoint;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  uStack_5 = 0;
+  fStack_6 = 0.0;
+  pvVar7 = (camera->fields)._._._.m_CachedPtr;
+  if (pvVar7 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(pvVar7,&VStack_4,&uStack_5);
+  UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+            ((float)uStack_5,uStack_5._4_4_,fStack_6,(MethodInfo *)0x0);
+  uStack_3 = 0;
+  VStack_4 = endPoint;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  uStack_5 = 0;
+  fStack_6 = 0.0;
+  pvVar7 = (camera->fields)._._._.m_CachedPtr;
+  if (pvVar7 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(pvVar7,&VStack_4,&uStack_5);
+  UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+            ((float)uStack_5,uStack_5._4_4_,fStack_6,(MethodInfo *)0x0);
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)();
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pcRam_?)();
   return;
 }
 
@@ -206,13 +675,39 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLine2D
 /* Void DrawLine3D(Vector3, Vector3) */
 
 void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLine3D
-               (Vector3 startPoint,Vector3 endPoint,MethodInfo *method)
+               (Vector3 *startPoint,Vector3 *endPoint,MethodInfo *method)
 
 {
-  UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(1,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(startPoint,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(endPoint,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(1);
+  x = startPoint->x;
+  UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+            ((float)x,startPoint->y,startPoint->z,(MethodInfo *)0x0);
+  x_00 = endPoint->x;
+  UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+            ((float)x_00,endPoint->y,endPoint->z,(MethodInfo *)0x0);
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pcRam_?)();
   return;
 }
 
@@ -224,68 +719,177 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLineLoop2D
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                   );
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (linePoints != (List_1_UnityEngine_Vector2_ *)0x0) {
-    if (1 < (linePoints->fields)._size) {
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PushMatrix((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_LoadOrtho((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(1,(MethodInfo *)0x0);
-      for (index = 0; index < (linePoints->fields)._size; index = index + 1) {
-        VVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (linePoints,index,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        VStack_2.y = VVar1.y;
-        VVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (linePoints,(index + 1) % (linePoints->fields)._size,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        VStack_4.y = VVar3.y;
-        if (camera == (Camera *)0x0) goto code_?;
-        position.y = VStack_2.y;
-        position.x = VStack_2.x;
-        position.z = 0.0;
-        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                           ((Vector3 *)&stack0xffffff98,camera,position,(MethodInfo *)0x0);
-        uVar6 = pVVar5->x;
-        uVar7 = pVVar5->y;
-        v.y = (float)uVar7;
-        v.x = (float)uVar6;
-        position_00.y = VStack_4.y;
-        position_00.x = VStack_4.x;
-        position_00.z = 0.0;
-        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                           ((Vector3 *)&stack0xffffff8c,camera,position_00,(MethodInfo *)0x0);
-        uVar8._0_4_ = pVVar5->x;
-        uStack_9 = pVVar5->y;
-        v.z = 0.0;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v,(MethodInfo *)0x0);
-        v_00.z = 0.0;
-        uStack_9 = (undefined4)(uVar8 >> 0x20);
-        v_00.x = (float)(undefined4)uVar8;
-        v_00.y = (float)uStack_9;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v_00,(MethodInfo *)0x0);
-        VStack_4 = VVar3;
-        VStack_2 = VVar1;
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PopMatrix((MethodInfo *)0x0);
-    }
+  if (linePoints == (List_1_UnityEngine_Vector2_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
+  if (1 < (linePoints->fields)._size) {
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    lVar3 = 0x20;
+    for (uVar4 = 0; (int)uVar4 < (linePoints->fields)._size; uVar4 = uVar4 + 1) {
+      if ((uint)(linePoints->fields)._size <= uVar4) {
 code_?:
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pVVar5 = (linePoints->fields)._items;
+      if (pVVar5 == (Vector2__Array *)0x0) goto code_?;
+      if ((uint)pVVar5->max_length <= uVar4) {
+code_?:
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      uVar6 = (int)(uVar4 + 1) % (linePoints->fields)._size;
+      if ((uint)(linePoints->fields)._size <= uVar6) goto code_?;
+      if (pVVar5 == (Vector2__Array *)0x0) goto code_?;
+      if ((uint)pVVar5->max_length <= uVar6) goto code_?;
+      fVar7 = pVVar5->vector[(int)uVar6].x;
+      fVar8 = pVVar5->vector[(int)uVar6].y;
+      if (camera == (Camera *)0x0) goto code_?;
+      uStack_9 = CONCAT44(*(undefined4 *)((longlong)pVVar5->vector + lVar3 + -0x1c),
+                           *(undefined4 *)
+                            ((longlong)&((Vector2__Array *)(pVVar5->vector + -4))->klass + lVar3));
+      uStack_10 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_11 = 0;
+      uStack_12 = 0;
+      pvVar13 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar13 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcVar1 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+        uVar2 = func_?(&UNK_?);
+        FUN_?(uVar2,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcRam_? = pcVar1;
+      (*pcRam_?)(pvVar13,&uStack_9,&uStack_11);
+      uStack_14 = CONCAT44(fVar8,fVar7);
+      uStack_15 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_16 = 0;
+      uStack_17 = 0;
+      pvVar13 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar13 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcVar1 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+        uVar2 = func_?(&UNK_?);
+        FUN_?(uVar2,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcRam_? = pcVar1;
+      (*pcRam_?)(pvVar13,&uStack_14,&uStack_16);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_11,uStack_11._4_4_,0.0,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_16,uStack_16._4_4_,0.0,(MethodInfo *)0x0);
+      lVar3 = lVar3 + 8;
+    }
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+  }
   return;
 }
 
@@ -298,68 +902,180 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLineLoop2D_1
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                   );
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Count__
+                  ,translation,scale,camera,scale,translation);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (linePoints != (List_1_UnityEngine_Vector2_ *)0x0) {
-    if (1 < (linePoints->fields)._size) {
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PushMatrix((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_LoadOrtho((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(1,(MethodInfo *)0x0);
-      for (index = 0; index < (linePoints->fields)._size; index = index + 1) {
-        VVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (linePoints,index,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        VStack_2.y = VVar1.y;
-        VVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (linePoints,(index + 1) % (linePoints->fields)._size,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        VStack_4.y = VVar3.y;
-        if (camera == (Camera *)0x0) goto code_?;
-        position.y = translation.y + scale.y * VStack_2.y;
-        position.x = translation.x + scale.x * VStack_2.x;
-        position.z = 0.0;
-        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                           ((Vector3 *)&stack0xffffff98,camera,position,(MethodInfo *)0x0);
-        uVar6 = pVVar5->x;
-        uVar7 = pVVar5->y;
-        v.y = (float)uVar7;
-        v.x = (float)uVar6;
-        position_00.y = translation.y + scale.y * VStack_4.y;
-        position_00.x = translation.x + scale.x * VStack_4.x;
-        position_00.z = 0.0;
-        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                           ((Vector3 *)&stack0xffffff8c,camera,position_00,(MethodInfo *)0x0);
-        uVar8._0_4_ = pVVar5->x;
-        uStack_9 = pVVar5->y;
-        v.z = 0.0;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v,(MethodInfo *)0x0);
-        v_00.z = 0.0;
-        uStack_9 = (undefined4)(uVar8 >> 0x20);
-        v_00.x = (float)(undefined4)uVar8;
-        v_00.y = (float)uStack_9;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v_00,(MethodInfo *)0x0);
-        VStack_4 = VVar3;
-        VStack_2 = VVar1;
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PopMatrix((MethodInfo *)0x0);
-    }
+  if (linePoints == (List_1_UnityEngine_Vector2_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
+  if (1 < (linePoints->fields)._size) {
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    lVar3 = 0x20;
+    for (uVar4 = 0; (int)uVar4 < (linePoints->fields)._size; uVar4 = uVar4 + 1) {
+      if ((uint)(linePoints->fields)._size <= uVar4) {
 code_?:
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pVVar5 = (linePoints->fields)._items;
+      if (pVVar5 == (Vector2__Array *)0x0) goto code_?;
+      if ((uint)pVVar5->max_length <= uVar4) {
+code_?:
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      uVar6 = (int)(uVar4 + 1) % (linePoints->fields)._size;
+      if ((uint)(linePoints->fields)._size <= uVar6) goto code_?;
+      pVVar7 = (linePoints->fields)._items;
+      if (pVVar7 == (Vector2__Array *)0x0) goto code_?;
+      if ((uint)pVVar7->max_length <= uVar6) goto code_?;
+      fVar8 = pVVar7->vector[(int)uVar6].x;
+      fVar9 = pVVar7->vector[(int)uVar6].y;
+      if (camera == (Camera *)0x0) goto code_?;
+      uStack_10 = CONCAT44(scale.y * *(float *)((longlong)pVVar5->vector + lVar3 + -0x1c) +
+                           translation.y,
+                           scale.x * *(float *)((longlong)
+                                                &((Vector2__Array *)(pVVar5->vector + -4))->klass +
+                                               lVar3) + translation.x);
+      uStack_11 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_12 = 0;
+      uStack_13 = 0;
+      pvVar14 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar14 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcVar1 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+        uVar2 = func_?(&UNK_?);
+        FUN_?(uVar2,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcRam_? = pcVar1;
+      (*pcRam_?)(pvVar14,&uStack_10,&uStack_12);
+      uStack_15 = CONCAT44(scale.y * fVar9 + translation.y,scale.x * fVar8 + translation.x);
+      uStack_16 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_17 = 0;
+      uStack_18 = 0;
+      pvVar14 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar14 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcVar1 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+        uVar2 = func_?(&UNK_?);
+        FUN_?(uVar2,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcRam_? = pcVar1;
+      (*pcRam_?)(pvVar14,&uStack_15,&uStack_17);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_12,uStack_12._4_4_,0.0,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_17,uStack_17._4_4_,0.0,(MethodInfo *)0x0);
+      lVar3 = lVar3 + 8;
+    }
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+  }
   return;
 }
 
@@ -371,57 +1087,83 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLineLoop3D
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                   );
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (linePoints != (List_1_UnityEngine_Vector3_ *)0x0) {
-    if (1 < (linePoints->fields)._size) {
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(1,(MethodInfo *)0x0);
-      for (index = 0; index < (linePoints->fields)._size; index = index + 1) {
-        pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                 VisualTreeAsset+UsingEntry]::
-                 List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                           ((VisualTreeAsset_UsingEntry *)&stack0xffffffe0,
-                            (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)linePoints,
-                            index,
-                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                           );
-        uVar2 = pVVar1->alias;
-        uVar3 = pVVar1->path;
-        pVVar4 = pVVar1->asset;
-        pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                 VisualTreeAsset+UsingEntry]::
-                 List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                           (&VStack_5,
-                            (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)linePoints,
-                            (index + 1) % (linePoints->fields)._size,
-                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                           );
-        method_00 = (MethodInfo *)pVVar1->alias;
-        uVar6 = pVVar1->path;
-        pVVar7 = pVVar1->asset;
-        v.y = (float)uVar3;
-        v.x = (float)uVar2;
-        VStack_5.asset = (VisualTreeAsset *)&UNK_?;
-        v.z = (float)pVVar4;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v,method_00);
-        v_00.y = (float)uVar6;
-        v_00.x = (float)method_00;
-        v_00.z = (float)pVVar7;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v_00,(MethodInfo *)0x0);
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
-    }
+  if (linePoints == (List_1_UnityEngine_Vector3_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  if (1 < (linePoints->fields)._size) {
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    uVar3 = 0;
+    uVar4 = uVar3;
+    while (uVar5 = (uint)uVar4, (int)uVar5 < (linePoints->fields)._size) {
+      if ((uint)(linePoints->fields)._size <= uVar5) {
+code_?:
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pVVar6 = (linePoints->fields)._items;
+      if (pVVar6 == (Vector3__Array *)0x0) goto code_?;
+      if ((uint)pVVar6->max_length <= uVar5) {
+code_?:
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      uVar7 = (int)(uVar5 + 1) % (linePoints->fields)._size;
+      if ((uint)(linePoints->fields)._size <= uVar7) goto code_?;
+      if ((uint)pVVar6->max_length <= uVar7) goto code_?;
+      x = pVVar6->vector[(int)uVar7].x;
+      y = pVVar6->vector[(int)uVar7].y;
+      z = pVVar6->vector[(int)uVar7].z;
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)*(undefined8 *)((longlong)&pVVar6->vector[0].x + uVar3),
+                 *(float *)((longlong)&pVVar6->vector[0].y + uVar3),
+                 *(float *)((longlong)&pVVar6->vector[0].z + uVar3),(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3((float)x,(float)y,z,(MethodInfo *)0x0)
+      ;
+      uVar3 = uVar3 + 0xc;
+      uVar4 = (ulonglong)(uVar5 + 1);
+    }
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+  }
   return;
 }
 
@@ -429,66 +1171,93 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLineLoop3D
 /* Void DrawLineLoop3D(List`1[UnityEngine.Vector3], Vector3) */
 
 void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLineLoop3D_1
-               (List_1_UnityEngine_Vector3_ *linePoints,Vector3 pointOffset,MethodInfo *method)
+               (List_1_UnityEngine_Vector3_ *linePoints,Vector3 *pointOffset,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                   );
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (linePoints != (List_1_UnityEngine_Vector3_ *)0x0) {
-    if (1 < (linePoints->fields)._size) {
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(1,(MethodInfo *)0x0);
-      for (index = 0; index < (linePoints->fields)._size; index = index + 1) {
-        pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                 VisualTreeAsset+UsingEntry]::
-                 List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                           (aVStack_2,
-                            (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)linePoints,
-                            index,
-                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                           );
-        uStack_3._0_4_ = pVVar1->alias;
-        uStack_3._4_4_ = pVVar1->path;
-        pVStack_4 = pVVar1->asset;
-        fVar5 = pointOffset.x + (float)(undefined4)uStack_3;
-        fStack_6 = pointOffset.y + (float)uStack_3._4_4_;
-        fStack_7 = pointOffset.z + (float)pVStack_4;
-        pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                 VisualTreeAsset+UsingEntry]::
-                 List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                           ((VisualTreeAsset_UsingEntry *)&stack0xffffff90,
-                            (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)linePoints,
-                            (index + 1) % (linePoints->fields)._size,
-                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                           );
-        uStack_8._0_4_ = pVVar1->alias;
-        uStack_8._4_4_ = pVVar1->path;
-        pVStack_9 = pVVar1->asset;
-        fVar10 = pointOffset.x + (float)(undefined4)uStack_8;
-        fStack_11 = pointOffset.y + (float)uStack_8._4_4_;
-        fStack_12 = pointOffset.z + (float)pVStack_9;
-        v.y = fStack_6;
-        v.x = fVar5;
-        v.z = fStack_7;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v,(MethodInfo *)0x0);
-        v_00.y = fStack_11;
-        v_00.x = fVar10;
-        v_00.z = fStack_12;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v_00,(MethodInfo *)0x0);
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
-    }
+  if (linePoints == (List_1_UnityEngine_Vector3_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  if (1 < (linePoints->fields)._size) {
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    lVar3 = 0;
+    for (uVar4 = 0; (int)uVar4 < (linePoints->fields)._size; uVar4 = uVar4 + 1) {
+      if ((uint)(linePoints->fields)._size <= uVar4) {
+code_?:
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pVVar5 = (linePoints->fields)._items;
+      if (pVVar5 == (Vector3__Array *)0x0) goto code_?;
+      if ((uint)pVVar5->max_length <= uVar4) {
+code_?:
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      uVar2 = *(undefined8 *)((longlong)&pVVar5->vector[0].x + lVar3);
+      uVar6 = pointOffset->y;
+      uVar7 = pointOffset->x;
+      uVar8 = (int)(uVar4 + 1) % (linePoints->fields)._size;
+      if ((uint)(linePoints->fields)._size <= uVar8) goto code_?;
+      pVVar9 = (linePoints->fields)._items;
+      if (pVVar9 == (Vector3__Array *)0x0) goto code_?;
+      if ((uint)pVVar9->max_length <= uVar8) goto code_?;
+      uVar10 = pointOffset->x;
+      uVar11 = pointOffset->y;
+      uVar12 = pVVar9->vector[(int)uVar8].x;
+      uVar13 = pVVar9->vector[(int)uVar8].y;
+      fVar14 = pVVar9->vector[(int)uVar8].z;
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uVar7 + (float)uVar2,(float)uVar6 + (float)((ulonglong)uVar2 >> 0x20),
+                 pointOffset->z + *(float *)((longlong)&pVVar5->vector[0].z + lVar3),
+                 (MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uVar10 + (float)uVar12,(float)uVar11 + (float)uVar13,pointOffset->z + fVar14,
+                 (MethodInfo *)0x0);
+      lVar3 = lVar3 + 0xc;
+    }
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+  }
   return;
 }
 
@@ -500,57 +1269,81 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLinePairs3D
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                   );
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (pairPoints != (List_1_UnityEngine_Vector3_ *)0x0) {
-    if ((1 < (pairPoints->fields)._size) && (((pairPoints->fields)._size & 1) == 0)) {
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(1,(MethodInfo *)0x0);
-      for (index = 0; index < (pairPoints->fields)._size; index = index + 2) {
-        pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                 VisualTreeAsset+UsingEntry]::
-                 List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                           ((VisualTreeAsset_UsingEntry *)&stack0xffffffe0,
-                            (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)pairPoints,
-                            index,
-                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                           );
-        uVar2 = pVVar1->alias;
-        uVar3 = pVVar1->path;
-        pVVar4 = pVVar1->asset;
-        pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                 VisualTreeAsset+UsingEntry]::
-                 List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                           (&VStack_5,
-                            (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)pairPoints,
-                            index + 1,
-                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                           );
-        method_00 = (MethodInfo *)pVVar1->alias;
-        uVar6 = pVVar1->path;
-        pVVar7 = pVVar1->asset;
-        v.y = (float)uVar3;
-        v.x = (float)uVar2;
-        VStack_5.asset = (VisualTreeAsset *)&UNK_?;
-        v.z = (float)pVVar4;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v,method_00);
-        v_00.y = (float)uVar6;
-        v_00.x = (float)method_00;
-        v_00.z = (float)pVVar7;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v_00,(MethodInfo *)0x0);
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
-    }
+  if (pairPoints == (List_1_UnityEngine_Vector3_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  if ((1 < (pairPoints->fields)._size) && (((pairPoints->fields)._size & 1) == 0)) {
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    uVar3 = 0;
+    uVar4 = uVar3;
+    while (uVar5 = (uint)uVar4, (int)uVar5 < (pairPoints->fields)._size) {
+      if ((uint)(pairPoints->fields)._size <= uVar5) {
+code_?:
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pVVar6 = (pairPoints->fields)._items;
+      if (pVVar6 == (Vector3__Array *)0x0) goto code_?;
+      if ((uint)pVVar6->max_length <= uVar5) {
+code_?:
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      if ((uint)(pairPoints->fields)._size <= uVar5 + 1) goto code_?;
+      if ((uint)pVVar6->max_length <= uVar5 + 1) goto code_?;
+      uVar2 = *(undefined8 *)((longlong)&pVVar6->vector[1].x + uVar3);
+      z = *(float *)((longlong)&pVVar6->vector[1].z + uVar3);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)*(undefined8 *)((longlong)&pVVar6->vector[0].x + uVar3),
+                 *(float *)((longlong)&pVVar6->vector[0].y + uVar3),
+                 *(float *)((longlong)&pVVar6->vector[0].z + uVar3),(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uVar2,(float)((ulonglong)uVar2 >> 0x20),z,(MethodInfo *)0x0);
+      uVar3 = uVar3 + 0x18;
+      uVar4 = (ulonglong)(uVar5 + 2);
+    }
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+  }
   return;
 }
 
@@ -562,44 +1355,83 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLineStrip3D
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                   );
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (linePoints != (List_1_UnityEngine_Vector3_ *)0x0) {
-    if (1 < (linePoints->fields)._size) {
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(1,(MethodInfo *)0x0);
-      for (index = 0; index < (linePoints->fields)._size + -1; index = index + 1) {
-        pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                 VisualTreeAsset+UsingEntry]::
-                 List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                           ((VisualTreeAsset_UsingEntry *)&stack0xfffffff0,
-                            (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)linePoints,
-                            index,
-                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                           );
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex((Vector3)*pVVar1,(MethodInfo *)0x0);
-        pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                 VisualTreeAsset+UsingEntry]::
-                 List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                           ((VisualTreeAsset_UsingEntry *)&stack0xffffffe4,
-                            (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)linePoints,
-                            index + 1,
-                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                           );
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex((Vector3)*pVVar1,(MethodInfo *)0x0);
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
-    }
+  if (linePoints == (List_1_UnityEngine_Vector3_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  if (1 < (linePoints->fields)._size) {
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)(1);
+    uVar3 = 0;
+    uVar4 = uVar3;
+    while (uVar5 = (uint)uVar4, (int)uVar5 < (linePoints->fields)._size + -1) {
+      if ((uint)(linePoints->fields)._size <= uVar5) {
+code_?:
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pVVar6 = (linePoints->fields)._items;
+      if (pVVar6 == (Vector3__Array *)0x0) goto code_?;
+      if ((uint)pVVar6->max_length <= uVar5) {
+code_?:
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)*(undefined8 *)((longlong)&pVVar6->vector[0].x + uVar3),
+                 *(float *)((longlong)&pVVar6->vector[0].y + uVar3),
+                 *(float *)((longlong)&pVVar6->vector[0].z + uVar3),(MethodInfo *)0x0);
+      if ((uint)(linePoints->fields)._size <= uVar5 + 1) goto code_?;
+      pVVar6 = (linePoints->fields)._items;
+      if (pVVar6 == (Vector3__Array *)0x0) goto code_?;
+      if ((uint)pVVar6->max_length <= uVar5 + 1) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)*(undefined8 *)((longlong)&pVVar6->vector[1].x + uVar3),
+                 *(float *)((longlong)&pVVar6->vector[1].y + uVar3),
+                 *(float *)((longlong)&pVVar6->vector[1].z + uVar3),(MethodInfo *)0x0);
+      uVar3 = uVar3 + 0xc;
+      uVar4 = (ulonglong)(uVar5 + 1);
+    }
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+  }
   return;
 }
 
@@ -611,68 +1443,175 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLines2D
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                   );
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (linePoints != (List_1_UnityEngine_Vector2_ *)0x0) {
-    if (1 < (linePoints->fields)._size) {
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PushMatrix((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_LoadOrtho((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(1,(MethodInfo *)0x0);
-      for (index = 0; index < (linePoints->fields)._size + -1; index = index + 1) {
-        VVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (linePoints,index,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        VStack_2.y = VVar1.y;
-        VVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (linePoints,index + 1,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        VStack_4.y = VVar3.y;
-        if (camera == (Camera *)0x0) goto code_?;
-        position.y = VStack_2.y;
-        position.x = VStack_2.x;
-        position.z = 0.0;
-        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                           ((Vector3 *)&stack0xffffff98,camera,position,(MethodInfo *)0x0);
-        uVar6 = pVVar5->x;
-        uVar7 = pVVar5->y;
-        v.y = (float)uVar7;
-        v.x = (float)uVar6;
-        position_00.y = VStack_4.y;
-        position_00.x = VStack_4.x;
-        position_00.z = 0.0;
-        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                           ((Vector3 *)&stack0xffffff8c,camera,position_00,(MethodInfo *)0x0);
-        uVar8._0_4_ = pVVar5->x;
-        uStack_9 = pVVar5->y;
-        v.z = 0.0;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v,(MethodInfo *)0x0);
-        v_00.z = 0.0;
-        uStack_9 = (undefined4)(uVar8 >> 0x20);
-        v_00.x = (float)(undefined4)uVar8;
-        v_00.y = (float)uStack_9;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v_00,(MethodInfo *)0x0);
-        VStack_4 = VVar3;
-        VStack_2 = VVar1;
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PopMatrix((MethodInfo *)0x0);
-    }
+  if (linePoints == (List_1_UnityEngine_Vector2_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
+  if (1 < (linePoints->fields)._size) {
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)(1);
+    lVar3 = 0x28;
+    for (uVar4 = 0; (int)uVar4 < (linePoints->fields)._size + -1; uVar4 = uVar4 + 1) {
+      if ((uint)(linePoints->fields)._size <= uVar4) {
 code_?:
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pVVar5 = (linePoints->fields)._items;
+      if (pVVar5 == (Vector2__Array *)0x0) goto code_?;
+      if ((uint)pVVar5->max_length <= uVar4) {
+code_?:
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      if ((uint)(linePoints->fields)._size <= uVar4 + 1) goto code_?;
+      if (pVVar5 == (Vector2__Array *)0x0) goto code_?;
+      if ((uint)pVVar5->max_length <= uVar4 + 1) goto code_?;
+      uVar6 = *(undefined4 *)((longlong)&((Vector2__Array *)(pVVar5->vector + -4))->klass + lVar3);
+      uVar7 = *(undefined4 *)((longlong)pVVar5->vector + lVar3 + -0x1c);
+      if (camera == (Camera *)0x0) goto code_?;
+      uStack_8 = CONCAT44(*(undefined4 *)((longlong)pVVar5->vector + lVar3 + -0x24),
+                           *(undefined4 *)((longlong)(pVVar5->vector + -5) + lVar3));
+      uStack_9 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_10 = 0;
+      uStack_11 = 0;
+      pvVar12 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar12 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcVar1 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+        uVar2 = func_?(&UNK_?);
+        FUN_?(uVar2,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcRam_? = pcVar1;
+      (*pcRam_?)(pvVar12,&uStack_8,&uStack_10);
+      uStack_13 = CONCAT44(uVar7,uVar6);
+      uStack_14 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_15 = 0;
+      uStack_16 = 0;
+      pvVar12 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar12 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcVar1 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+        uVar2 = func_?(&UNK_?);
+        FUN_?(uVar2,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcRam_? = pcVar1;
+      (*pcRam_?)(pvVar12,&uStack_13,&uStack_15);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_10,uStack_10._4_4_,0.0,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_15,uStack_15._4_4_,0.0,(MethodInfo *)0x0);
+      lVar3 = lVar3 + 8;
+    }
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+  }
   return;
 }
 
@@ -685,68 +1624,178 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLines2D_1
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                   );
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Count__
+                  ,translation,scale,camera,scale,translation);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (linePoints != (List_1_UnityEngine_Vector2_ *)0x0) {
-    if (1 < (linePoints->fields)._size) {
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PushMatrix((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_LoadOrtho((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(1,(MethodInfo *)0x0);
-      for (index = 0; index < (linePoints->fields)._size + -1; index = index + 1) {
-        VVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (linePoints,index,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        VStack_2.y = VVar1.y;
-        VVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (linePoints,index + 1,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        VStack_4.y = VVar3.y;
-        if (camera == (Camera *)0x0) goto code_?;
-        position.y = translation.y + scale.y * VStack_2.y;
-        position.x = translation.x + scale.x * VStack_2.x;
-        position.z = 0.0;
-        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                           ((Vector3 *)&stack0xffffff98,camera,position,(MethodInfo *)0x0);
-        uVar6 = pVVar5->x;
-        uVar7 = pVVar5->y;
-        v.y = (float)uVar7;
-        v.x = (float)uVar6;
-        position_00.y = translation.y + scale.y * VStack_4.y;
-        position_00.x = translation.x + scale.x * VStack_4.x;
-        position_00.z = 0.0;
-        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                           ((Vector3 *)&stack0xffffff8c,camera,position_00,(MethodInfo *)0x0);
-        uVar8._0_4_ = pVVar5->x;
-        uStack_9 = pVVar5->y;
-        v.z = 0.0;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v,(MethodInfo *)0x0);
-        v_00.z = 0.0;
-        uStack_9 = (undefined4)(uVar8 >> 0x20);
-        v_00.x = (float)(undefined4)uVar8;
-        v_00.y = (float)uStack_9;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v_00,(MethodInfo *)0x0);
-        VStack_4 = VVar3;
-        VStack_2 = VVar1;
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PopMatrix((MethodInfo *)0x0);
-    }
+  if (linePoints == (List_1_UnityEngine_Vector2_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
+  if (1 < (linePoints->fields)._size) {
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)(1);
+    lVar3 = 0x28;
+    for (uVar4 = 0; (int)uVar4 < (linePoints->fields)._size + -1; uVar4 = uVar4 + 1) {
+      if ((uint)(linePoints->fields)._size <= uVar4) {
 code_?:
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pVVar5 = (linePoints->fields)._items;
+      if (pVVar5 == (Vector2__Array *)0x0) goto code_?;
+      if ((uint)pVVar5->max_length <= uVar4) {
+code_?:
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      if ((uint)(linePoints->fields)._size <= uVar4 + 1) goto code_?;
+      pVVar6 = (linePoints->fields)._items;
+      if (pVVar6 == (Vector2__Array *)0x0) goto code_?;
+      if ((uint)pVVar6->max_length <= uVar4 + 1) goto code_?;
+      fVar7 = *(float *)((longlong)&((Vector2__Array *)(pVVar6->vector + -4))->klass + lVar3);
+      fVar8 = *(float *)((longlong)pVVar6->vector + lVar3 + -0x1c);
+      if (camera == (Camera *)0x0) goto code_?;
+      uStack_9 = CONCAT44(scale.y * *(float *)((longlong)pVVar5->vector + lVar3 + -0x24) +
+                           translation.y,
+                           scale.x * *(float *)((longlong)(pVVar5->vector + -5) + lVar3) +
+                           translation.x);
+      uStack_10 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_11 = 0;
+      uStack_12 = 0;
+      pvVar13 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar13 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcVar1 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+        uVar2 = func_?(&UNK_?);
+        FUN_?(uVar2,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcRam_? = pcVar1;
+      (*pcRam_?)(pvVar13,&uStack_9,&uStack_11);
+      uStack_14 = CONCAT44(scale.y * fVar8 + translation.y,scale.x * fVar7 + translation.x);
+      uStack_15 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_16 = 0;
+      uStack_17 = 0;
+      pvVar13 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar13 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcVar1 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+        uVar2 = func_?(&UNK_?);
+        FUN_?(uVar2,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcRam_? = pcVar1;
+      (*pcRam_?)(pvVar13,&uStack_14,&uStack_16);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_11,uStack_11._4_4_,0.0,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_16,uStack_16._4_4_,0.0,(MethodInfo *)0x0);
+      lVar3 = lVar3 + 8;
+    }
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+  }
   return;
 }
 
@@ -758,57 +1807,81 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawLines3D
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                   );
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (linePoints != (List_1_UnityEngine_Vector3_ *)0x0) {
-    if (1 < (linePoints->fields)._size) {
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(1,(MethodInfo *)0x0);
-      for (index = 0; index < (linePoints->fields)._size + -1; index = index + 1) {
-        pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                 VisualTreeAsset+UsingEntry]::
-                 List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                           ((VisualTreeAsset_UsingEntry *)&stack0xffffffe0,
-                            (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)linePoints,
-                            index,
-                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                           );
-        uVar2 = pVVar1->alias;
-        uVar3 = pVVar1->path;
-        pVVar4 = pVVar1->asset;
-        pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                 VisualTreeAsset+UsingEntry]::
-                 List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                           (&VStack_5,
-                            (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)linePoints,
-                            index + 1,
-                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                           );
-        method_00 = (MethodInfo *)pVVar1->alias;
-        uVar6 = pVVar1->path;
-        pVVar7 = pVVar1->asset;
-        v.y = (float)uVar3;
-        v.x = (float)uVar2;
-        VStack_5.asset = (VisualTreeAsset *)&UNK_?;
-        v.z = (float)pVVar4;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v,method_00);
-        v_00.y = (float)uVar6;
-        v_00.x = (float)method_00;
-        v_00.z = (float)pVVar7;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v_00,(MethodInfo *)0x0);
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
-    }
+  if (linePoints == (List_1_UnityEngine_Vector3_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  if (1 < (linePoints->fields)._size) {
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)(1);
+    uVar3 = 0;
+    uVar4 = uVar3;
+    while (uVar5 = (uint)uVar4, (int)uVar5 < (linePoints->fields)._size + -1) {
+      if ((uint)(linePoints->fields)._size <= uVar5) {
+code_?:
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pVVar6 = (linePoints->fields)._items;
+      if (pVVar6 == (Vector3__Array *)0x0) goto code_?;
+      if ((uint)pVVar6->max_length <= uVar5) {
+code_?:
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      if ((uint)(linePoints->fields)._size <= uVar5 + 1) goto code_?;
+      if ((uint)pVVar6->max_length <= uVar5 + 1) goto code_?;
+      uVar2 = *(undefined8 *)((longlong)&pVVar6->vector[1].x + uVar3);
+      z = *(float *)((longlong)&pVVar6->vector[1].z + uVar3);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)*(undefined8 *)((longlong)&pVVar6->vector[0].x + uVar3),
+                 *(float *)((longlong)&pVVar6->vector[0].y + uVar3),
+                 *(float *)((longlong)&pVVar6->vector[0].z + uVar3),(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uVar2,(float)((ulonglong)uVar2 >> 0x20),z,(MethodInfo *)0x0);
+      uVar3 = uVar3 + 0xc;
+      uVar4 = (ulonglong)(uVar5 + 1);
+    }
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+  }
   return;
 }
 
@@ -820,86 +1893,258 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawQuads2D
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                   );
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (quadPoints != (List_1_UnityEngine_Vector2_ *)0x0) {
-    iVar1 = (quadPoints->fields)._size;
-    if (0 < (int)(iVar1 + (iVar1 >> 0x1f & 3U)) >> 2) {
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PushMatrix((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_LoadOrtho((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(7,(MethodInfo *)0x0);
-      iVar1 = 2;
-      do {
-        uVar2 = (undefined4)in_stack_3;
-        VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (quadPoints,iVar1 + -2,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        if (camera == (Camera *)0x0) goto code_?;
-        position.y = VVar4.y;
-        position.x = (float)uVar2;
-        position.z = 0.0;
-        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                           ((Vector3 *)&stack0xffffff9c,camera,position,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(*pVVar5,(MethodInfo *)0x0);
-        VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (quadPoints,iVar1 + -1,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        fStack_6 = VVar4.y;
-        position_00.y = fStack_6;
-        position_00.x = (float)in_stack_7;
-        position_00.z = 0.0;
-        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                           ((Vector3 *)&stack0xffffff90,camera,position_00,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(*pVVar5,(MethodInfo *)0x0);
-        VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (quadPoints,iVar1,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        position_01.y = VVar4.y;
-        position_01.x = (float)in_stack_8;
-        position_01.z = 0.0;
-        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                           ((Vector3 *)&puStack_9,camera,position_01,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(*pVVar5,(MethodInfo *)0x0);
-        in_stack_7 =
-             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_;
-        in_stack_8 = quadPoints;
-        VVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (quadPoints,iVar1 + 1,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        uVar10 = CONCAT44(VVar4.y,&UNK_?);
-        in_stack_3 = CONCAT44(camera,(Vector3 *)&stack0xffffff78);
-        position_02.z = 0.0;
-        position_02.x = (float)&UNK_?;
-        position_02.y = VVar4.y;
-        pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                           ((Vector3 *)&stack0xffffff78,camera,position_02,(MethodInfo *)0x0);
-        iVar11 = (int)uVar10;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(*pVVar5,(MethodInfo *)0x0);
-        iVar1 = iVar1 + 4;
-      } while (1 < iVar11);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PopMatrix((MethodInfo *)0x0);
-    }
+  if (quadPoints == (List_1_UnityEngine_Vector2_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
+  iVar2 = (quadPoints->fields)._size;
+  iVar2 = (int)(iVar2 + (iVar2 >> 0x1f & 3U)) >> 2;
+  if (0 < iVar2) {
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    lVar4 = 0;
+    uVar5 = 2;
+    lVar6 = 0x28;
+    do {
+      if ((uint)(quadPoints->fields)._size <= uVar5 - 2) {
 code_?:
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pVVar7 = (quadPoints->fields)._items;
+      if (pVVar7 == (Vector2__Array *)0x0) goto code_?;
+      if ((uint)pVVar7->max_length <= uVar5 - 2) {
+code_?:
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      if (camera == (Camera *)0x0) goto code_?;
+      uStack_8 = CONCAT44(*(undefined4 *)((longlong)pVVar7->vector + lVar6 + -0x24),
+                           *(undefined4 *)((longlong)(pVVar7->vector + -5) + lVar6));
+      uStack_9 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_10 = 0;
+      fStack_11 = 0.0;
+      pvVar12 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar12 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcVar1 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+        uVar3 = func_?(&UNK_?);
+        FUN_?(uVar3,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcRam_? = pcVar1;
+      (*pcRam_?)(pvVar12,&uStack_8,&uStack_10);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_10,uStack_10._4_4_,fStack_11,(MethodInfo *)0x0);
+      if ((uint)(quadPoints->fields)._size <= uVar5 - 1) goto code_?;
+      pVVar7 = (quadPoints->fields)._items;
+      if (pVVar7 == (Vector2__Array *)0x0) goto code_?;
+      if ((uint)pVVar7->max_length <= uVar5 - 1) goto code_?;
+      uStack_13 = CONCAT44(*(undefined4 *)((longlong)pVVar7->vector + lVar6 + -0x1c),
+                           *(undefined4 *)
+                            ((longlong)&((Vector2__Array *)(pVVar7->vector + -4))->klass + lVar6));
+      uStack_14 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_15 = 0;
+      fStack_16 = 0.0;
+      pvVar12 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar12 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcVar1 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+        uVar3 = func_?(&UNK_?);
+        FUN_?(uVar3,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcRam_? = pcVar1;
+      (*pcRam_?)(pvVar12,&uStack_13,&uStack_15);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_15,uStack_15._4_4_,fStack_16,(MethodInfo *)0x0);
+      if ((uint)(quadPoints->fields)._size <= uVar5) goto code_?;
+      pVVar7 = (quadPoints->fields)._items;
+      if (pVVar7 == (Vector2__Array *)0x0) goto code_?;
+      if ((uint)pVVar7->max_length <= uVar5) goto code_?;
+      uStack_17 = CONCAT44(*(undefined4 *)((longlong)pVVar7->vector + lVar6 + -0x14),
+                           *(undefined4 *)((longlong)(pVVar7->vector + -3) + lVar6));
+      uStack_18 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_19 = 0;
+      fStack_20 = 0.0;
+      pvVar12 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar12 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcVar1 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+        uVar3 = func_?(&UNK_?);
+        FUN_?(uVar3,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcRam_? = pcVar1;
+      (*pcRam_?)(pvVar12,&uStack_17,&uStack_19);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_19,uStack_19._4_4_,fStack_20,(MethodInfo *)0x0);
+      if ((uint)(quadPoints->fields)._size <= uVar5 + 1) goto code_?;
+      pVVar7 = (quadPoints->fields)._items;
+      if (pVVar7 == (Vector2__Array *)0x0) goto code_?;
+      if ((uint)pVVar7->max_length <= uVar5 + 1) goto code_?;
+      uStack_21 = CONCAT44(*(undefined4 *)((longlong)pVVar7->vector + lVar6 + -0xc),
+                           *(undefined4 *)((longlong)(pVVar7->vector + -2) + lVar6));
+      uStack_22 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_23 = 0;
+      fStack_24 = 0.0;
+      pvVar12 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar12 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcVar1 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+        uVar3 = func_?(&UNK_?);
+        FUN_?(uVar3,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcRam_? = pcVar1;
+      (*pcRam_?)(pvVar12,&uStack_21,&uStack_23);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_23,uStack_23._4_4_,fStack_24,(MethodInfo *)0x0);
+      uVar5 = uVar5 + 4;
+      lVar4 = lVar4 + 1;
+      lVar6 = lVar6 + 0x20;
+    } while (lVar4 < iVar2);
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+  }
   return;
 }
 
@@ -907,186 +2152,321 @@ code_?:
 /* Void DrawRect2D(Rect, Camera) */
 
 void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawRect2D
-               (Rect rect,Camera *camera,MethodInfo *method)
+               (Rect *rect,Camera *camera,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__set_Item_int__UnityEngine__Vector2_
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__set_Item_int__UnityEngine__Vector2_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PushMatrix((MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::GL::GL_LoadOrtho((MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(7,(MethodInfo *)0x0);
-  rect_00.m_YMin = rect.m_YMin;
-  rect_00.m_XMin = rect.m_XMin;
-  rect_00.m_Width = rect.m_Width;
-  rect_00.m_Height = rect.m_Height;
-  this = RectEx::RectEx_GetCornerPoints(rect_00,(MethodInfo *)0x0);
-  if (this != (List_1_UnityEngine_Vector2_ *)0x0) {
-    rect.m_YMin = (float)
-                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-    ;
-    rect.m_XMin = 0.0;
-    VVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-            List_1_UnityEngine_Vector2__get_Item
-                      (this,0,
-                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                      );
-    fVar2 = rect.m_Width;
-    rect.m_Width = VVar1.x;
-    rect.m_Height = VVar1.y;
-    fVar3 = rect.m_Height;
-    if (camera != (Camera *)0x0) {
-      rect.m_XMin = (float)camera;
-      rect.m_YMin = fVar2;
-      rect.m_Width = rect.m_Height;
-      rect.m_Height = 0.0;
-      position.y = fVar3;
-      position.x = fVar2;
-      position.z = 0.0;
-      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                         ((Vector3 *)&rect.m_YMin,camera,position,(MethodInfo *)0x0);
-      VVar1.x = pVVar4->x;
-      VVar1.y = pVVar4->y;
-      rect.m_YMin = 0.0;
-      rect.m_XMin = (float)this;
-      rect.m_Width = VVar1.x;
-      rect.m_Height = VVar1.y;
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-      List_1_UnityEngine_Vector2__set_Item
-                (this,0,VVar1,
-                 MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__set_Item_int__UnityEngine__Vector2_
-                );
-      rect.m_Height = 1.4013e-45;
-      rect.m_YMin = (float)&UNK_?;
-      rect.m_Width = (float)this;
-      VVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-              List_1_UnityEngine_Vector2__get_Item
-                        (this,1,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                        );
-      fVar2 = rect.m_Height;
-      rect.m_Width = VVar1.x;
-      rect.m_Height = 0.0;
-      position_00.y = fVar2;
-      position_00.x = rect.m_Width;
-      position_00.z = 0.0;
-      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                         ((Vector3 *)&rect.m_YMin,camera,position_00,(MethodInfo *)0x0);
-      value.x = pVVar4->x;
-      value.y = pVVar4->y;
-      rect.m_Width = value.x;
-      rect.m_Height = value.y;
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-      List_1_UnityEngine_Vector2__set_Item
-                (this,1,value,
-                 MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__set_Item_int__UnityEngine__Vector2_
-                );
-      VVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-              List_1_UnityEngine_Vector2__get_Item
-                        (this,2,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                        );
-      fVar2 = rect.m_Height;
-      rect.m_Width = VVar1.x;
-      rect.m_Height = 0.0;
-      position_01.y = fVar2;
-      position_01.x = rect.m_Width;
-      position_01.z = 0.0;
-      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                         ((Vector3 *)&rect.m_YMin,camera,position_01,(MethodInfo *)0x0);
-      value_00.x = pVVar4->x;
-      value_00.y = pVVar4->y;
-      rect.m_Width = value_00.x;
-      rect.m_Height = value_00.y;
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-      List_1_UnityEngine_Vector2__set_Item
-                (this,2,value_00,
-                 MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__set_Item_int__UnityEngine__Vector2_
-                );
-      VVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-              List_1_UnityEngine_Vector2__get_Item
-                        (this,3,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                        );
-      fVar2 = rect.m_Height;
-      rect.m_Width = VVar1.x;
-      rect.m_Height = 0.0;
-      position_02.y = fVar2;
-      position_02.x = rect.m_Width;
-      position_02.z = 0.0;
-      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                         ((Vector3 *)&rect.m_YMin,camera,position_02,(MethodInfo *)0x0);
-      value_01.x = pVVar4->x;
-      value_01.y = pVVar4->y;
-      rect.m_Width = value_01.x;
-      rect.m_Height = value_01.y;
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-      List_1_UnityEngine_Vector2__set_Item
-                (this,3,value_01,
-                 MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__set_Item_int__UnityEngine__Vector2_
-                );
-      VVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-              List_1_UnityEngine_Vector2__get_Item
-                        (this,0,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                        );
-      fVar2 = rect.m_Height;
-      rect.m_Width = VVar1.x;
-      rect.m_Height = 0.0;
-      v.y = fVar2;
-      v.x = rect.m_Width;
-      v.z = 0.0;
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v,(MethodInfo *)0x0);
-      VVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-              List_1_UnityEngine_Vector2__get_Item
-                        (this,1,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                        );
-      fVar2 = rect.m_Height;
-      rect.m_Width = VVar1.x;
-      rect.m_Height = 0.0;
-      v_00.y = fVar2;
-      v_00.x = rect.m_Width;
-      v_00.z = 0.0;
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v_00,(MethodInfo *)0x0);
-      VVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-              List_1_UnityEngine_Vector2__get_Item
-                        (this,2,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                        );
-      fVar2 = rect.m_Height;
-      rect.m_Width = VVar1.x;
-      rect.m_Height = 0.0;
-      v_01.y = fVar2;
-      v_01.x = rect.m_Width;
-      v_01.z = 0.0;
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v_01,(MethodInfo *)0x0);
-      VVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-              List_1_UnityEngine_Vector2__get_Item
-                        (this,3,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                        );
-      fVar2 = rect.m_Height;
-      rect.m_Width = VVar1.x;
-      rect.m_Height = 0.0;
-      v_02.y = fVar2;
-      v_02.x = rect.m_Width;
-      v_02.z = 0.0;
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v_02,(MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PopMatrix((MethodInfo *)0x0);
-      return;
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)();
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)();
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(7);
+  aRStack_3[0].m_XMin = rect->m_XMin;
+  aRStack_3[0].m_YMin = rect->m_YMin;
+  aRStack_3[0].m_Width = rect->m_Width;
+  aRStack_3[0].m_Height = rect->m_Height;
+  pLVar4 = RectEx::RectEx_GetCornerPoints(aRStack_3,(MethodInfo *)0x0);
+  if (pLVar4 != (List_1_UnityEngine_Vector2_ *)0x0) {
+    if ((pLVar4->fields)._size == 0) goto code_?;
+    pVVar5 = (pLVar4->fields)._items;
+    if (pVVar5 != (Vector2__Array *)0x0) {
+      if ((int)pVVar5->max_length == 0) goto code_?;
+      if (camera != (Camera *)0x0) {
+        VStack_6.y = pVVar5->vector[0].y;
+        VStack_6.x = pVVar5->vector[0].x;
+        uStack_7 = 0;
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        uStack_8 = 0;
+        uStack_9 = 0;
+        pvVar10 = (camera->fields)._._._.m_CachedPtr;
+        if (pvVar10 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+          pcVar1 = (code *)swi(3);
+          (*pcVar1)();
+          return;
+        }
+        pcVar1 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+          uVar2 = func_?(&UNK_?);
+          FUN_?(uVar2,0);
+          pcVar1 = (code *)swi(3);
+          (*pcVar1)();
+          return;
+        }
+        pcRam_? = pcVar1;
+        (*pcRam_?)(pvVar10,&VStack_6,&uStack_8);
+        if ((pLVar4->fields)._size == 0) {
+code_?:
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar1 = (code *)swi(3);
+          (*pcVar1)();
+          return;
+        }
+        pVVar5 = (pLVar4->fields)._items;
+        if (pVVar5 != (Vector2__Array *)0x0) {
+          if ((int)pVVar5->max_length != 0) {
+            pVVar5->vector[0].x = (float)uStack_8;
+            pVVar5->vector[0].y = uStack_8._4_4_;
+            piVar11 = &(pLVar4->fields)._version;
+            *piVar11 = *piVar11 + 1;
+            if ((uint)(pLVar4->fields)._size < 2) goto code_?;
+            pVVar5 = (pLVar4->fields)._items;
+            if (pVVar5 == (Vector2__Array *)0x0) goto DAT_?;
+            if (1 < (uint)pVVar5->max_length) {
+              aRStack_3[0]._0_8_ = pVVar5->vector[1];
+              aRStack_3[0]._8_8_ = aRStack_3[0]._8_8_ & 0xffffffff00000000;
+              if (cRam_? == '\0') {
+                FUN_?(&
+                              void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                             );
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              uStack_12 = 0;
+              uStack_13 = 0;
+              pvVar10 = (camera->fields)._._._.m_CachedPtr;
+              if (pvVar10 == (void *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+                pcVar1 = (code *)swi(3);
+                (*pcVar1)();
+                return;
+              }
+              pcVar1 = pcRam_?;
+              if ((pcRam_? == (code *)0x0) &&
+                 (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+                uVar2 = func_?(&UNK_?);
+                FUN_?(uVar2,0);
+                pcVar1 = (code *)swi(3);
+                (*pcVar1)();
+                return;
+              }
+              pcRam_? = pcVar1;
+              (*pcRam_?)(pvVar10,aRStack_3,&uStack_12);
+              if ((uint)(pLVar4->fields)._size < 2) goto code_?;
+              pVVar5 = (pLVar4->fields)._items;
+              if (pVVar5 == (Vector2__Array *)0x0) goto DAT_?;
+              if (1 < (uint)pVVar5->max_length) {
+                pVVar5->vector[1].x = (float)uStack_12;
+                pVVar5->vector[1].y = uStack_12._4_4_;
+                piVar11 = &(pLVar4->fields)._version;
+                *piVar11 = *piVar11 + 1;
+                if ((uint)(pLVar4->fields)._size < 3) goto code_?;
+                pVVar5 = (pLVar4->fields)._items;
+                if (pVVar5 == (Vector2__Array *)0x0) goto DAT_?;
+                if (2 < (uint)pVVar5->max_length) {
+                  VStack_6 = pVVar5->vector[2];
+                  uStack_7 = 0;
+                  if (cRam_? == '\0') {
+                    FUN_?(&
+                                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                                 );
+                    LOCK();
+                    UNLOCK();
+                    cRam_? = '\x01';
+                  }
+                  uStack_8 = 0;
+                  uStack_9 = 0;
+                  pvVar10 = (camera->fields)._._._.m_CachedPtr;
+                  if (pvVar10 == (void *)0x0) {
+                    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                    ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+                    pcVar1 = (code *)swi(3);
+                    (*pcVar1)();
+                    return;
+                  }
+                  pcVar1 = pcRam_?;
+                  if ((pcRam_? == (code *)0x0) &&
+                     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+                    uVar2 = func_?(&UNK_?);
+                    FUN_?(uVar2,0);
+                    pcVar1 = (code *)swi(3);
+                    (*pcVar1)();
+                    return;
+                  }
+                  pcRam_? = pcVar1;
+                  (*pcRam_?)(pvVar10,&VStack_6,&uStack_8);
+                  if ((uint)(pLVar4->fields)._size < 3) goto code_?;
+                  pVVar5 = (pLVar4->fields)._items;
+                  if (pVVar5 == (Vector2__Array *)0x0) goto DAT_?;
+                  if (2 < (uint)pVVar5->max_length) {
+                    pVVar5->vector[2].x = (float)uStack_8;
+                    pVVar5->vector[2].y = uStack_8._4_4_;
+                    piVar11 = &(pLVar4->fields)._version;
+                    *piVar11 = *piVar11 + 1;
+                    if ((uint)(pLVar4->fields)._size < 4) goto code_?;
+                    pVVar5 = (pLVar4->fields)._items;
+                    if (pVVar5 == (Vector2__Array *)0x0) goto DAT_?;
+                    if (3 < (uint)pVVar5->max_length) {
+                      aRStack_3[0]._0_8_ = pVVar5->vector[3];
+                      aRStack_3[0]._8_8_ = aRStack_3[0]._8_8_ & 0xffffffff00000000;
+                      if (cRam_? == '\0') {
+                        FUN_?(&
+                                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                                     );
+                        LOCK();
+                        UNLOCK();
+                        cRam_? = '\x01';
+                      }
+                      uStack_12 = 0;
+                      uStack_13 = 0;
+                      pvVar10 = (camera->fields)._._._.m_CachedPtr;
+                      if (pvVar10 == (void *)0x0) {
+                        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                        ThrowHelper_2_ThrowNullReferenceException
+                                  ((Object *)camera,(MethodInfo *)0x0);
+                        pcVar1 = (code *)swi(3);
+                        (*pcVar1)();
+                        return;
+                      }
+                      pcVar1 = pcRam_?;
+                      if ((pcRam_? == (code *)0x0) &&
+                         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+                        uVar2 = func_?(&UNK_?);
+                        FUN_?(uVar2,0);
+                        pcVar1 = (code *)swi(3);
+                        (*pcVar1)();
+                        return;
+                      }
+                      pcRam_? = pcVar1;
+                      (*pcRam_?)(pvVar10,aRStack_3,&uStack_12);
+                      if ((uint)(pLVar4->fields)._size < 4) goto code_?;
+                      pVVar5 = (pLVar4->fields)._items;
+                      if (pVVar5 == (Vector2__Array *)0x0) goto DAT_?;
+                      if (3 < (uint)pVVar5->max_length) {
+                        pVVar5->vector[3].x = (float)uStack_12;
+                        pVVar5->vector[3].y = uStack_12._4_4_;
+                        piVar11 = &(pLVar4->fields)._version;
+                        *piVar11 = *piVar11 + 1;
+                        if ((pLVar4->fields)._size == 0) goto code_?;
+                        pVVar5 = (pLVar4->fields)._items;
+                        if (pVVar5 == (Vector2__Array *)0x0) goto DAT_?;
+                        if ((int)pVVar5->max_length != 0) {
+                          UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                                    (pVVar5->vector[0].x,pVVar5->vector[0].y,0.0,(MethodInfo *)0x0);
+                          if ((uint)(pLVar4->fields)._size < 2) goto code_?;
+                          pVVar5 = (pLVar4->fields)._items;
+                          if (pVVar5 == (Vector2__Array *)0x0) goto DAT_?;
+                          if (1 < (uint)pVVar5->max_length) {
+                            UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                                      (pVVar5->vector[1].x,pVVar5->vector[1].y,0.0,(MethodInfo *)0x0
+                                      );
+                            if ((uint)(pLVar4->fields)._size < 3) goto code_?;
+                            pVVar5 = (pLVar4->fields)._items;
+                            if (pVVar5 == (Vector2__Array *)0x0) goto DAT_?;
+                            if (2 < (uint)pVVar5->max_length) {
+                              UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                                        (pVVar5->vector[2].x,pVVar5->vector[2].y,0.0,
+                                         (MethodInfo *)0x0);
+                              if ((uint)(pLVar4->fields)._size < 4) goto code_?;
+                              pVVar5 = (pLVar4->fields)._items;
+                              if (pVVar5 == (Vector2__Array *)0x0) goto DAT_?;
+                              if (3 < (uint)pVVar5->max_length) {
+                                UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                                          (pVVar5->vector[3].x,pVVar5->vector[3].y,0.0,
+                                           (MethodInfo *)0x0);
+                                pcVar1 = pcRam_?;
+                                if ((pcRam_? == (code *)0x0) &&
+                                   (pcVar1 = (code *)FUN_?(&UNK_?),
+                                   pcVar1 == (code *)0x0)) {
+                                  uVar2 = func_?(&UNK_?);
+                                  FUN_?(uVar2,0);
+                                  pcVar1 = (code *)swi(3);
+                                  (*pcVar1)();
+                                  return;
+                                }
+                                pcRam_? = pcVar1;
+                                (*pcRam_?)();
+                                pcVar1 = pcRam_?;
+                                if ((pcRam_? == (code *)0x0) &&
+                                   (pcVar1 = (code *)FUN_?(&UNK_?),
+                                   pcVar1 == (code *)0x0)) {
+                                  uVar2 = func_?(&UNK_?);
+                                  FUN_?(uVar2,0);
+                                  pcVar1 = (code *)swi(3);
+                                  (*pcVar1)();
+                                  return;
+                                }
+                                pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+                                (*pcRam_?)();
+                                return;
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+code_?:
+          FUN_?();
+          pcVar1 = (code *)swi(3);
+          (*pcVar1)();
+          return;
+        }
+      }
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+DAT_?:
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -1094,11 +2474,182 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawRect2D
 /* Void DrawRectBorder2D(Rect, Camera) */
 
 void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawRectBorder2D
-               (Rect rect,Camera *camera,MethodInfo *method)
+               (Rect *rect,Camera *camera,MethodInfo *method)
 
 {
-  linePoints = RectEx::RectEx_GetCornerPoints(rect,(MethodInfo *)0x0);
-  GLRenderer_DrawLineLoop2D(linePoints,camera,(MethodInfo *)0x0);
+  pLVar1 = RectEx::RectEx_GetCornerPoints((Rect *)&stack0xffffffffffffffe8,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Count__
+                  ,camera,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pLVar1 == (List_1_UnityEngine_Vector2_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  if (1 < (pLVar1->fields)._size) {
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)();
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)();
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)();
+    lVar4 = 0x20;
+    for (uVar5 = 0; (int)uVar5 < (pLVar1->fields)._size; uVar5 = uVar5 + 1) {
+      if ((uint)(pLVar1->fields)._size <= uVar5) {
+code_?:
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pVVar6 = (pLVar1->fields)._items;
+      if (pVVar6 == (Vector2__Array *)0x0) goto code_?;
+      if ((uint)pVVar6->max_length <= uVar5) {
+code_?:
+        FUN_?();
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      uVar7 = (int)(uVar5 + 1) % (pLVar1->fields)._size;
+      if ((uint)(pLVar1->fields)._size <= uVar7) goto code_?;
+      if (pVVar6 == (Vector2__Array *)0x0) goto code_?;
+      if ((uint)pVVar6->max_length <= uVar7) goto code_?;
+      fVar8 = pVVar6->vector[(int)uVar7].x;
+      fVar9 = pVVar6->vector[(int)uVar7].y;
+      if (camera == (Camera *)0x0) goto code_?;
+      uStack_10 = CONCAT44(*(undefined4 *)((longlong)pVVar6->vector + lVar4 + -0x1c),
+                           *(undefined4 *)
+                            ((longlong)&((Vector2__Array *)(pVVar6->vector + -4))->klass + lVar4));
+      uStack_11 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_12 = 0;
+      uStack_13 = 0;
+      pvVar14 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar14 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcVar2 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+        uVar3 = func_?(&UNK_?);
+        FUN_?(uVar3,0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcRam_? = pcVar2;
+      (*pcRam_?)(pvVar14,&uStack_10,&uStack_12);
+      uStack_15 = CONCAT44(fVar9,fVar8);
+      uStack_16 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_17 = 0;
+      uStack_18 = 0;
+      pvVar14 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar14 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcVar2 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+        uVar3 = func_?(&UNK_?);
+        FUN_?(uVar3,0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcRam_? = pcVar2;
+      (*pcRam_?)(pvVar14,&uStack_15,&uStack_17);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_12,uStack_12._4_4_,0.0,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_17,uStack_17._4_4_,0.0,(MethodInfo *)0x0);
+      lVar4 = lVar4 + 8;
+    }
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)();
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)();
+  }
   return;
 }
 
@@ -1106,13 +2657,93 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawRectBorder2D
 /* Void DrawSphereBorder(Camera, Vector3, Single, Int32) */
 
 void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawSphereBorder
-               (Camera *camera,Vector3 sphereCenter,float sphereRadius,int32_t numPoints,
+               (Camera *camera,Vector3 *sphereCenter,float sphereRadius,int32_t numPoints,
                MethodInfo *method)
 
 {
-  linePoints = PrimitiveFactory::PrimitiveFactory_GenerateSphereBorderPoints
-                         (camera,sphereCenter,sphereRadius,numPoints,(MethodInfo *)0x0);
-  GLRenderer_DrawLineLoop3D(linePoints,(MethodInfo *)0x0);
+  VStack_1.x = sphereCenter->x;
+  VStack_1.y = sphereCenter->y;
+  VStack_1.z = sphereCenter->z;
+  pLVar2 = PrimitiveFactory::PrimitiveFactory_GenerateSphereBorderPoints
+                     (camera,&VStack_1,sphereRadius,numPoints,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__
+                  ,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pLVar2 == (List_1_UnityEngine_Vector3_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  if (1 < (pLVar2->fields)._size) {
+    pcVar3 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pcRam_? = pcVar3;
+    (*pcRam_?)();
+    uVar5 = 0;
+    uVar6 = uVar5;
+    while (uVar7 = (uint)uVar6, (int)uVar7 < (pLVar2->fields)._size) {
+      if ((uint)(pLVar2->fields)._size <= uVar7) {
+code_?:
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pVVar8 = (pLVar2->fields)._items;
+      if (pVVar8 == (Vector3__Array *)0x0) goto code_?;
+      if ((uint)pVVar8->max_length <= uVar7) {
+code_?:
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      uVar9 = (int)(uVar7 + 1) % (pLVar2->fields)._size;
+      if ((uint)(pLVar2->fields)._size <= uVar9) goto code_?;
+      if ((uint)pVVar8->max_length <= uVar9) goto code_?;
+      x = pVVar8->vector[(int)uVar9].x;
+      y = pVVar8->vector[(int)uVar9].y;
+      z = pVVar8->vector[(int)uVar9].z;
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)*(undefined8 *)((longlong)&pVVar8->vector[0].x + uVar5),
+                 *(float *)((longlong)&pVVar8->vector[0].y + uVar5),
+                 *(float *)((longlong)&pVVar8->vector[0].z + uVar5),(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3((float)x,(float)y,z,(MethodInfo *)0x0)
+      ;
+      uVar5 = uVar5 + 0xc;
+      uVar6 = (ulonglong)(uVar7 + 1);
+    }
+    pcVar3 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pcRam_? = pcVar3;
+    (*pcRam_?)();
+  }
   return;
 }
 
@@ -1124,81 +2755,225 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawTriangleFan2D
                ,Camera *camera,MethodInfo *method)
 
 {
-  this = points;
+  VStack_1 = scale;
+  VStack_2 = origin;
+  VStack_3 = translation;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                   );
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (points != (List_1_UnityEngine_Vector2_ *)0x0) {
-    iVar1 = (points->fields)._size + -1;
-    if (0 < iVar1) {
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PushMatrix((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_LoadOrtho((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(4,(MethodInfo *)0x0);
-      if (camera == (Camera *)0x0) goto code_?;
-      position_00.y = translation.y + scale.y * origin.y;
-      position_00.x = translation.x + scale.x * origin.x;
-      position_00.z = 0.0;
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                         ((Vector3 *)&stack0xffffffc4,camera,position_00,(MethodInfo *)0x0);
-      fVar3 = pVVar2->x;
-      uVar4 = pVVar2->y;
-      points = (List_1_UnityEngine_Vector2_ *)0x0;
-      fVar5 = 0.0;
-      do {
-        v.y = (float)uVar4;
-        v.x = fVar3;
-        v.z = 0.0;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v,(MethodInfo *)0x0);
-        VVar6 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (this,(int32_t)points,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        fVar7 = translation.y + scale.y * VVar6.y;
-        uVar4 = 0;
-        pVVar2 = (Vector3 *)&stack0xffffffb8;
-        position_01.y = fVar7;
-        position_01.x = translation.x + scale.x * (float)in_stack_8;
-        position_01.z = fVar5;
-        pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                           (pVVar2,camera,position_01,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(*pVVar9,(MethodInfo *)0x0);
-        in_stack_8 = (undefined1 *)((int)&points->klass + 1);
-        puVar10 = &UNK_?;
-        VVar6 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (this,(int32_t)in_stack_8,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        fVar11 = translation.y + scale.y * VVar6.y;
-        translation.y = 0.0;
-        position.y = fVar11;
-        position.x = translation.x + scale.x * (float)puVar10;
-        position.z = (float)pVVar2;
-        pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                           ((Vector3 *)&stack0xffffffac,camera,position,(MethodInfo *)0x0);
-        scale.y = (float)&UNK_?;
-        fVar3 = fVar5;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(*pVVar9,(MethodInfo *)0x0);
-        points = (List_1_UnityEngine_Vector2_ *)((int)fVar11 + 1);
-        translation.x = (float)pVVar2;
-        fVar5 = fVar7;
-      } while ((int)points < iVar1);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PopMatrix((MethodInfo *)0x0);
-    }
+  if (points == (List_1_UnityEngine_Vector2_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
     return;
   }
+  iVar5 = (points->fields)._size + -1;
+  if (0 < iVar5) {
+    pcVar4 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+      uVar6 = func_?(&UNK_?);
+      FUN_?(uVar6,0);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    pcRam_? = pcVar4;
+    (*pcRam_?)();
+    pcVar4 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+      uVar6 = func_?(&UNK_?);
+      FUN_?(uVar6,0);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    pcRam_? = pcVar4;
+    (*pcRam_?)();
+    pcVar4 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+      uVar6 = func_?(&UNK_?);
+      FUN_?(uVar6,0);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    pcRam_? = pcVar4;
+    (*pcRam_?)(4);
+    fVar7 = VStack_1.x;
+    fVar8 = VStack_1.y;
+    fVar9 = VStack_3.x;
+    fVar10 = VStack_3.y;
+    if (camera == (Camera *)0x0) goto code_?;
+    uStack_11 = CONCAT44(VStack_1.y * VStack_2.y + VStack_3.y,
+                         VStack_1.x * VStack_2.x + VStack_3.x);
+    uStack_12 = 0;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_13 = 0;
+    uStack_14 = 0;
+    pvVar15 = (camera->fields)._._._.m_CachedPtr;
+    if (pvVar15 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    pcVar4 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+      uVar6 = func_?(&UNK_?);
+      FUN_?(uVar6,0);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    pcRam_? = pcVar4;
+    (*pcRam_?)(pvVar15,&uStack_11,&uStack_13);
+    uVar16 = 0;
+    lVar17 = 0x28;
+    uVar18 = uVar16;
+    do {
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_13,uStack_13._4_4_,0.0,(MethodInfo *)0x0);
+      uVar19 = (uint)uVar16;
+      if ((uint)(points->fields)._size <= uVar19) {
 code_?:
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pVVar20 = (points->fields)._items;
+      if (pVVar20 == (Vector2__Array *)0x0) goto code_?;
+      if ((uint)pVVar20->max_length <= uVar19) {
+code_?:
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      uStack_21 = 0;
+      uStack_22 = CONCAT44(fVar8 * *(float *)((longlong)pVVar20->vector + lVar17 + -0x24) + fVar10,
+                           fVar7 * *(float *)((longlong)(pVVar20->vector + -5) + lVar17) + fVar9);
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_23 = 0;
+      fStack_24 = 0.0;
+      pvVar15 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar15 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pcVar4 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+        uVar6 = func_?(&UNK_?);
+        FUN_?(uVar6,0);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pcRam_? = pcVar4;
+      (*pcRam_?)(pvVar15,&uStack_22,&uStack_23);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_23,uStack_23._4_4_,fStack_24,(MethodInfo *)0x0);
+      if ((uint)(points->fields)._size <= uVar19 + 1) goto code_?;
+      pVVar20 = (points->fields)._items;
+      if (pVVar20 == (Vector2__Array *)0x0) goto code_?;
+      if ((uint)pVVar20->max_length <= uVar19 + 1) goto code_?;
+      uStack_25 = 0;
+      uStack_26 = CONCAT44(fVar8 * *(float *)((longlong)pVVar20->vector + lVar17 + -0x1c) + fVar10,
+                           fVar7 * *(float *)((longlong)
+                                              &((Vector2__Array *)(pVVar20->vector + -4))->klass +
+                                             lVar17) + fVar9);
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_27 = 0;
+      fStack_28 = 0.0;
+      pvVar15 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar15 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pcVar4 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+        uVar6 = func_?(&UNK_?);
+        FUN_?(uVar6,0);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pcRam_? = pcVar4;
+      (*pcRam_?)(pvVar15,&uStack_26,&uStack_27);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_27,uStack_27._4_4_,fStack_28,(MethodInfo *)0x0);
+      uVar16 = (ulonglong)(uVar19 + 1);
+      uVar18 = uVar18 + 1;
+      lVar17 = lVar17 + 8;
+    } while ((longlong)uVar18 < (longlong)iVar5);
+    pcVar4 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+      uVar6 = func_?(&UNK_?);
+      FUN_?(uVar6,0);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    pcRam_? = pcVar4;
+    (*pcRam_?)();
+    pcVar4 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+      uVar6 = func_?(&UNK_?);
+      FUN_?(uVar6,0);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    pcRam_? = pcVar4;
+    (*pcRam_?)();
+  }
   return;
 }
 
@@ -1210,76 +2985,216 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawTriangleFan2D_1
                )
 
 {
-  this = points;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                   );
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Count__
+                  ,points,camera,method,origin);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (points != (List_1_UnityEngine_Vector2_ *)0x0) {
-    iVar1 = (points->fields)._size + -1;
-    if (0 < iVar1) {
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PushMatrix((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_LoadOrtho((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(4,(MethodInfo *)0x0);
-      if (camera == (Camera *)0x0) goto code_?;
-      position_00.z = 0.0;
-      position_00._0_8_ = origin;
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                         ((Vector3 *)&stack0xffffffc4,camera,position_00,(MethodInfo *)0x0);
-      fVar3 = pVVar2->x;
-      uVar4 = pVVar2->y;
-      points = (List_1_UnityEngine_Vector2_ *)0x0;
-      fVar5 = 0.0;
-      do {
-        v.y = (float)uVar4;
-        v.x = fVar3;
-        v.z = 0.0;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v,(MethodInfo *)0x0);
-        VVar6 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (this,(int32_t)points,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        fVar7 = VVar6.y;
-        uVar4 = 0;
-        pVVar2 = (Vector3 *)&stack0xffffffb8;
-        position_01.y = fVar7;
-        position_01.x = (float)in_stack_8;
-        position_01.z = fVar5;
-        pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                           (pVVar2,camera,position_01,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(*pVVar9,(MethodInfo *)0x0);
-        in_stack_8 = (undefined1 *)((int)&points->klass + 1);
-        puVar10 = &UNK_?;
-        VVar6 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                List_1_UnityEngine_Vector2__get_Item
-                          (this,(int32_t)in_stack_8,
-                           MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                          );
-        position.y = VVar6.y;
-        position.x = (float)puVar10;
-        position.z = (float)pVVar2;
-        pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenToViewportPoint
-                           ((Vector3 *)&stack0xffffffac,camera,position,(MethodInfo *)0x0);
-        fVar3 = fVar5;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(*pVVar2,(MethodInfo *)0x0);
-        points = (List_1_UnityEngine_Vector2_ *)((int)VVar6.y + 1);
-        fVar5 = fVar7;
-      } while ((int)points < iVar1);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_PopMatrix((MethodInfo *)0x0);
-    }
+  if (points == (List_1_UnityEngine_Vector2_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
+  iVar2 = (points->fields)._size + -1;
+  if (0 < iVar2) {
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)(4);
+    if (camera == (Camera *)0x0) goto code_?;
+    uStack_4 = 0;
+    VStack_5 = origin;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_6 = 0;
+    uStack_7 = 0;
+    pvVar8 = (camera->fields)._._._.m_CachedPtr;
+    if (pvVar8 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)(pvVar8,&VStack_5,&uStack_6);
+    uVar9 = 0;
+    lVar10 = 0x28;
+    uVar11 = uVar9;
+    do {
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_6,uStack_6._4_4_,0.0,(MethodInfo *)0x0);
+      uVar12 = (uint)uVar9;
+      if ((uint)(points->fields)._size <= uVar12) {
 code_?:
-  func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pVVar13 = (points->fields)._items;
+      if (pVVar13 == (Vector2__Array *)0x0) goto code_?;
+      if ((uint)pVVar13->max_length <= uVar12) {
+code_?:
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      uStack_14 = CONCAT44(*(undefined4 *)((longlong)pVVar13->vector + lVar10 + -0x24),
+                           *(undefined4 *)((longlong)(pVVar13->vector + -5) + lVar10));
+      uStack_15 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_16 = 0;
+      fStack_17 = 0.0;
+      pvVar8 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar8 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcVar1 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+        uVar3 = func_?(&UNK_?);
+        FUN_?(uVar3,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcRam_? = pcVar1;
+      (*pcRam_?)(pvVar8,&uStack_14,&uStack_16);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_16,uStack_16._4_4_,fStack_17,(MethodInfo *)0x0);
+      if ((uint)(points->fields)._size <= uVar12 + 1) goto code_?;
+      pVVar13 = (points->fields)._items;
+      if (pVVar13 == (Vector2__Array *)0x0) goto code_?;
+      if ((uint)pVVar13->max_length <= uVar12 + 1) goto code_?;
+      uStack_18 = CONCAT44(*(undefined4 *)((longlong)pVVar13->vector + lVar10 + -0x1c),
+                           *(undefined4 *)
+                            ((longlong)&((Vector2__Array *)(pVVar13->vector + -4))->klass + lVar10));
+      uStack_19 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_20 = 0;
+      fStack_21 = 0.0;
+      pvVar8 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar8 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcVar1 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+        uVar3 = func_?(&UNK_?);
+        FUN_?(uVar3,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcRam_? = pcVar1;
+      (*pcRam_?)(pvVar8,&uStack_18,&uStack_20);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_20,uStack_20._4_4_,fStack_21,(MethodInfo *)0x0);
+      uVar9 = (ulonglong)(uVar12 + 1);
+      uVar11 = uVar11 + 1;
+      lVar10 = lVar10 + 8;
+    } while ((longlong)uVar11 < (longlong)iVar2);
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+  }
   return;
 }
 
@@ -1287,69 +3202,116 @@ code_?:
 /* Void DrawTriangleFan3D(Vector3, List`1[UnityEngine.Vector3], Vector3, Vector3) */
 
 void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawTriangleFan3D
-               (Vector3 origin,List_1_UnityEngine_Vector3_ *points,Vector3 translation,Vector3 scale
-               ,MethodInfo *method)
+               (Vector3 *origin,List_1_UnityEngine_Vector3_ *points,Vector3 *translation,
+               Vector3 *scale,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                   );
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (points != (List_1_UnityEngine_Vector3_ *)0x0) {
-    iVar1 = (points->fields)._size + -1;
-    if (0 < iVar1) {
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(4,(MethodInfo *)0x0);
-      fVar2 = translation.x + scale.x * origin.x;
-      index = 0;
-      do {
-        v.y = translation.y + scale.y * origin.y;
-        v.x = fVar2;
-        v.z = translation.z + scale.z * origin.z;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v,(MethodInfo *)0x0);
-        pVVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                 VisualTreeAsset+UsingEntry]::
-                 List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                           ((VisualTreeAsset_UsingEntry *)&stack0xffffffb4,
-                            (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)points,
-                            index,
-                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                           );
-        uVar4 = pVVar3->alias;
-        uVar5 = pVVar3->path;
-        VStack_6.asset = (VisualTreeAsset *)&UNK_?;
-        v_00.y = translation.y + scale.y * (float)uVar5;
-        v_00.x = translation.x + scale.x * (float)uVar4;
-        v_00.z = translation.z + scale.z * (float)pVVar3->asset;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v_00,(MethodInfo *)0x0);
-        VStack_6.asset = (VisualTreeAsset *)&UNK_?;
-        pVVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                 VisualTreeAsset+UsingEntry]::
-                 List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                           (&VStack_6,
-                            (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)points,
-                            index + 1,
-                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                           );
-        uVar7 = pVVar3->alias;
-        uVar8 = pVVar3->path;
-        v_01.y = translation.y + scale.y * (float)uVar8;
-        v_01.x = translation.x + scale.x * (float)uVar7;
-        v_01.z = translation.z + scale.z * (float)pVVar3->asset;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v_01,(MethodInfo *)0x0);
-        index = index + 1;
-      } while (index < iVar1);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
-    }
+  if (points == (List_1_UnityEngine_Vector3_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  iVar2 = (points->fields)._size + -1;
+  if (0 < iVar2) {
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    uVar4 = origin->x;
+    uVar5 = origin->y;
+    uVar6 = translation->x;
+    uVar7 = translation->y;
+    uVar8 = scale->y;
+    uVar9 = scale->x;
+    fVar10 = scale->z;
+    fVar11 = origin->z;
+    fVar12 = translation->z;
+    uVar13 = 0;
+    lVar14 = 0;
+    lVar15 = 0;
+    do {
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uVar9 * (float)uVar4 + (float)uVar6,
+                 (float)uVar8 * (float)uVar5 + (float)uVar7,fVar10 * fVar11 + fVar12,
+                 (MethodInfo *)0x0);
+      if ((uint)(points->fields)._size <= uVar13) {
+code_?:
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pVVar16 = (points->fields)._items;
+      if (pVVar16 == (Vector3__Array *)0x0) goto code_?;
+      if ((uint)pVVar16->max_length <= uVar13) {
+code_?:
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      uVar17 = scale->x;
+      uVar18 = scale->y;
+      uVar3 = *(undefined8 *)((longlong)&pVVar16->vector[0].x + lVar15);
+      uVar19 = translation->x;
+      uVar20 = translation->y;
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uVar17 * (float)uVar3 + (float)uVar19,
+                 (float)uVar18 * (float)((ulonglong)uVar3 >> 0x20) + (float)uVar20,
+                 scale->z * *(float *)((longlong)&pVVar16->vector[0].z + lVar15) + translation->z,
+                 (MethodInfo *)0x0);
+      if ((uint)(points->fields)._size <= uVar13 + 1) goto code_?;
+      pVVar16 = (points->fields)._items;
+      if (pVVar16 == (Vector3__Array *)0x0) goto code_?;
+      if ((uint)pVVar16->max_length <= uVar13 + 1) goto code_?;
+      uVar21 = scale->x;
+      uVar22 = scale->y;
+      uVar3 = *(undefined8 *)((longlong)&pVVar16->vector[1].x + lVar15);
+      uVar23 = translation->x;
+      uVar24 = translation->y;
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uVar21 * (float)uVar3 + (float)uVar23,
+                 (float)uVar22 * (float)((ulonglong)uVar3 >> 0x20) + (float)uVar24,
+                 scale->z * *(float *)((longlong)&pVVar16->vector[1].z + lVar15) + translation->z,
+                 (MethodInfo *)0x0);
+      uVar13 = uVar13 + 1;
+      lVar14 = lVar14 + 1;
+      lVar15 = lVar15 + 0xc;
+    } while (lVar14 < iVar2);
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+  }
   return;
 }
 
@@ -1357,58 +3319,96 @@ void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawTriangleFan3D
 /* Void DrawTriangleFan3D(Vector3, List`1[UnityEngine.Vector3]) */
 
 void Assembly-CSharp.dll::RTG::GLRenderer::GLRenderer_DrawTriangleFan3D_1
-               (Vector3 origin,List_1_UnityEngine_Vector3_ *points,MethodInfo *method)
+               (Vector3 *origin,List_1_UnityEngine_Vector3_ *points,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                   );
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (points != (List_1_UnityEngine_Vector3_ *)0x0) {
-    iVar1 = (points->fields)._size + -1;
-    if (0 < iVar1) {
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Begin(4,(MethodInfo *)0x0);
-      index = 0;
-      do {
-        v.z = origin.z;
-        v.x = origin.x;
-        v.y = origin.y;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex(v,(MethodInfo *)0x0);
-        pVVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                 VisualTreeAsset+UsingEntry]::
-                 List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                           ((VisualTreeAsset_UsingEntry *)&stack0xfffffff0,
-                            (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)points,
-                            index,
-                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                           );
-        VStack_3.asset = (VisualTreeAsset *)&UNK_?;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex((Vector3)*pVVar2,(MethodInfo *)0x0);
-        VStack_3.asset = (VisualTreeAsset *)&UNK_?;
-        pVVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                 VisualTreeAsset+UsingEntry]::
-                 List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                           (&VStack_3,
-                            (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)points,
-                            index + 1,
-                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                           );
-        origin.z = (float)&UNK_?;
-        UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex((Vector3)*pVVar2,(MethodInfo *)0x0);
-        index = index + 1;
-      } while (index < iVar1);
-      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_End((MethodInfo *)0x0);
-    }
+  if (points == (List_1_UnityEngine_Vector3_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  iVar2 = (points->fields)._size + -1;
+  if (0 < iVar2) {
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+    x = origin->x;
+    y = origin->y;
+    uVar4 = 0;
+    z = origin->z;
+    uVar5 = uVar4;
+    uVar6 = uVar4;
+    do {
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3((float)x,(float)y,z,(MethodInfo *)0x0)
+      ;
+      uVar7 = (uint)uVar4;
+      if ((uint)(points->fields)._size <= uVar7) {
+code_?:
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pVVar8 = (points->fields)._items;
+      if (pVVar8 == (Vector3__Array *)0x0) goto code_?;
+      if ((uint)pVVar8->max_length <= uVar7) {
+code_?:
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)*(undefined8 *)((longlong)&pVVar8->vector[0].x + uVar5),
+                 *(float *)((longlong)&pVVar8->vector[0].y + uVar5),
+                 *(float *)((longlong)&pVVar8->vector[0].z + uVar5),(MethodInfo *)0x0);
+      if ((uint)(points->fields)._size <= uVar7 + 1) goto code_?;
+      pVVar8 = (points->fields)._items;
+      if (pVVar8 == (Vector3__Array *)0x0) goto code_?;
+      if ((uint)pVVar8->max_length <= uVar7 + 1) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)*(undefined8 *)((longlong)&pVVar8->vector[1].x + uVar5),
+                 *(float *)((longlong)&pVVar8->vector[1].y + uVar5),
+                 *(float *)((longlong)&pVVar8->vector[1].z + uVar5),(MethodInfo *)0x0);
+      uVar4 = (ulonglong)(uVar7 + 1);
+      uVar6 = uVar6 + 1;
+      uVar5 = uVar5 + 0xc;
+    } while ((longlong)uVar6 < (longlong)iVar2);
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)();
+  }
   return;
 }
 

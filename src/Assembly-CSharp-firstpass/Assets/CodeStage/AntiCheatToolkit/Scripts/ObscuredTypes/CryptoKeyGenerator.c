@@ -7,34 +7,34 @@ int32_t Assembly-CSharp-firstpass.dll::Assets::CodeStage::AntiCheatToolkit::Scri
 
 {
   if (cRam_? == '\0') {
-    pCStack_1 = (CryptoKeyGenerator__Class *)
-                &
-                TypeInfo__Assets__CodeStage__AntiCheatToolkit__Scripts__ObscuredTypes__CryptoKeyGenerator
-    ;
-    func_?();
+    FUN_?(&
+                  TypeInfo__Assets__CodeStage__AntiCheatToolkit__Scripts__ObscuredTypes__CryptoKeyGenerator
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__Assets__CodeStage__AntiCheatToolkit__Scripts__ObscuredTypes__CryptoKeyGenerator->_1
-      ).cctor_finished_or_no_cctor == 0) {
-    pCStack_1 = 
-    TypeInfo__Assets__CodeStage__AntiCheatToolkit__Scripts__ObscuredTypes__CryptoKeyGenerator;
-    func_?();
+  if (*(int *)&(
+               TypeInfo__Assets__CodeStage__AntiCheatToolkit__Scripts__ObscuredTypes__CryptoKeyGenerator
+               ->_1).field_0x1c == 0) {
+    FUN_?(
+                 TypeInfo__Assets__CodeStage__AntiCheatToolkit__Scripts__ObscuredTypes__CryptoKeyGenerator
+                 );
   }
-  pRVar2 = TypeInfo__Assets__CodeStage__AntiCheatToolkit__Scripts__ObscuredTypes__CryptoKeyGenerator
+  pRVar1 = TypeInfo__Assets__CodeStage__AntiCheatToolkit__Scripts__ObscuredTypes__CryptoKeyGenerator
            ->static_fields->rand;
-  if (pRVar2 != (Random *)0x0) {
-    pCStack_1 = (CryptoKeyGenerator__Class *)(pRVar2->klass->vtable).Next_2.methodPtr;
-    puStack_3 = (undefined *)to;
-    iStack_4 = from;
-    iVar5 = (*(code *)(pRVar2->klass->vtable).Next_1.method)(pRVar2);
-    return iVar5;
+  if (pRVar1 != (Random *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    iVar2 = (*(pRVar1->klass->vtable).Next_1.methodPtr)
+                      (pRVar1,(ulonglong)(uint)from,(ulonglong)(uint)to,
+                       (pRVar1->klass->vtable).Next_1.method);
+    return iVar2;
   }
-  pCStack_1 = (CryptoKeyGenerator__Class *)&stack0xfffffffc;
-  uVar6 = func_?(&iStack_4);
-  func_?(uVar6);
-  pcVar7 = (code *)swi(3);
-  iVar5 = (*pcVar7)();
-  return iVar5;
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  iVar2 = (*pcVar3)();
+  return iVar2;
 }
 
 
@@ -45,18 +45,45 @@ void Assembly-CSharp-firstpass.dll::Assets::CodeStage::AntiCheatToolkit::Scripts
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__Assets__CodeStage__AntiCheatToolkit__Scripts__ObscuredTypes__CryptoKeyGenerator
-                   );
-    func_?(&TypeInfo__System__Random);
+    FUN_?(&
+                  TypeInfo__Assets__CodeStage__AntiCheatToolkit__Scripts__ObscuredTypes__CryptoKeyGenerator
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Random);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this = (Random *)func_?(TypeInfo__System__Random);
-  mscorlib.dll::System::Random::Random__ctor(this,(MethodInfo *)0x0);
+  this = (Random *)FUN_?(TypeInfo__System__Random);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__Random);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__System__Random->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  Seed = mscorlib.dll::System::Random::Random_GenerateSeed((MethodInfo *)0x0);
+  mscorlib.dll::System::Random::Random__ctor_1(this,Seed,(MethodInfo *)0x0);
   TypeInfo__Assets__CodeStage__AntiCheatToolkit__Scripts__ObscuredTypes__CryptoKeyGenerator->
   static_fields->rand = this;
-  func_?(TypeInfo__Assets__CodeStage__AntiCheatToolkit__Scripts__ObscuredTypes__CryptoKeyGenerator
-                  ->static_fields,this);
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)
+                   TypeInfo__Assets__CodeStage__AntiCheatToolkit__Scripts__ObscuredTypes__CryptoKeyGenerator
+                   ->static_fields >> 0xc);
+    puVar2 = (ulonglong *)((ulonglong)((uVar1 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar3 = *puVar2;
+      LOCK();
+      uVar4 = *puVar2;
+      if (uVar3 == uVar4) {
+        *puVar2 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar3 != uVar4);
+  }
   return;
 }
 

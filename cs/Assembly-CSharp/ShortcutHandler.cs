@@ -11,7 +11,7 @@ using UnityEngine.UI;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-[RequireComponent(typeof(Button))]
+[RequireComponent(typeof(UnityEngine.UI.Button))]
 public class ShortcutHandler : MonoBehaviour
 {
 	// Fields
@@ -20,7 +20,7 @@ public class ShortcutHandler : MonoBehaviour
 	[SerializeField]
 	private KeyState keyState;
 	[SerializeField]
-	private Button button;
+	private UnityEngine.UI.Button button;
 
 	// Properties
 	public KogamaControls KogamaControl { get; }

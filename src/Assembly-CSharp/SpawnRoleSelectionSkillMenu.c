@@ -7,136 +7,137 @@ int32_t Assembly-CSharp.dll::SpawnRoleSelectionSkillMenu::
                   MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff98;
-  puVar5 = &stack0xffffff98;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Current__
-                   );
-    func_?(&
-                    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Value__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Value__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  pOVar6 = (Object *)0x0;
-  DStack_7._current.value = (Object *)0x0;
-  DStack_7._getEnumeratorRetType = 0;
-  pOStack_8 = (Object *)0x0;
-  DStack_7._dictionary = (Dictionary_2_System_Object_System_Object_ *)0x0;
-  DStack_7._version = 0;
-  DStack_7._index = 0;
-  DStack_7._current.key = (Object *)0x0;
-  if ((subSettingData != (KogamaSettingsCollectionBase *)0x0) &&
-     (this_00 = (subSettingData->fields).children,
-     this_00 !=
-     (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
-      *)0x0)) {
-    pDVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
-             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       (&DStack_10,(Dictionary_2_System_UInt32_System_Object_ *)this_00,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__
-                       );
-    pDStack_11 = &DStack_7;
-    uStack_12 = 0;
-    DStack_7._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar9->_dictionary;
-    DStack_7._version = pDVar9->_version;
-    DStack_7._index = pDVar9->_index;
-    DStack_7._current.key = (Object *)(pDVar9->_current).key;
-    DStack_7._16_8_ = *(undefined8 *)&(pDVar9->_current).value;
-    uStack_1 = 1;
+  iVar1 = 0;
+  if ((subSettingData == (KogamaSettingsCollectionBase *)0x0) ||
+     (pDVar2 = (subSettingData->fields).children,
+     pDVar2 == (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
+                *)0x0)) {
+    FUN_?();
+  }
+  else {
+    uStack_3 = 0;
+    uStack_4 = 0;
+    if (iRam_? != 0) {
+      uVar5 = (uint)((ulonglong)&pDStack_6 >> 0xc);
+      puVar7 = (ulonglong *)((ulonglong)((uVar5 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar8 = *puVar7;
+        LOCK();
+        uVar9 = *puVar7;
+        if (uVar8 == uVar9) {
+          *puVar7 = uVar8 | 1L << (uVar5 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar8 != uVar9);
+    }
+    uStack_10 = (ulonglong)(uint)(pDVar2->fields)._version;
+    uStack_11 = 2;
+    DStack_12._version = (undefined4)uStack_10;
+    DStack_12._index = uStack_10._4_4_;
+    DStack_12._current.key = (Object *)0x0;
+    DStack_12._current.value = (Object *)0x0;
+    DStack_12._getEnumeratorRetType = 2;
+    DStack_12._36_4_ = 0;
+    pDStack_6 = pDVar2;
+    DStack_12._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar2;
     while( true ) {
       bVar13 = mscorlib.dll::System::Collections::Generic::
               Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
               Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                        (&DStack_7,
+                        (&DStack_12,
                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__MoveNext__
                         );
-      if (bVar13 == 0) {
-        uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&DStack_7,
-                   (ExceptionArgument__Enum)
-                   MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__Dispose__
-                   ,unaff_EDI);
-        *unaff_FS_OFFSET = uStack_3;
-        return (int32_t)pOVar6;
-      }
-      pOVar6 = DStack_7._current.value;
-      subSettingData =
-           (KogamaSettingsCollectionBase *)
-           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+      subSettingData = (KogamaSettingsCollectionBase *)DStack_12._current.value;
+      unaff_RSI = 
+      TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
       ;
-      if (DStack_7._current.value == (Object *)0x0) break;
-      iVar14 = func_?(DStack_7._current.value,
+      if (bVar13 == 0) {
+        return iVar1;
+      }
+      if ((KogamaSettingsCollectionBase *)DStack_12._current.value ==
+          (KogamaSettingsCollectionBase *)0x0) break;
+      lVar14 = FUN_?(DStack_12._current.value,
+                            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                           );
+      unaff_R14 = 
+      TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+      ;
+      uVar15 = extraout_XMM0_Da;
+      if (lVar14 == 0) goto code_?;
+      plVar16 = (longlong *)
+                FUN_?(subSettingData,
                               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
                              );
-      if (iVar14 == 0) goto code_?;
-      pKStack_15 = (KogamaSettingsCollectionBase__Class *)
-                   TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-      ;
-      subSettingData =
-           (KogamaSettingsCollectionBase *)
-           func_?(pOVar6,
-                           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                          );
-      if (subSettingData == (KogamaSettingsCollectionBase *)0x0) goto code_?;
-      pKStack_15 = subSettingData->klass;
-      uVar16 = 0;
-      uStack_17 = 0;
-      sVar18._0_1_ = (pKStack_15->_1).rank;
-      sVar18._1_1_ = (pKStack_15->_1).minimumAlignment;
-      if (sVar18 != 0) {
+      unaff_RSI = (IAttributeSetting__Class *)0x0;
+      if (plVar16 == (longlong *)0x0) goto code_?;
+      lVar14 = *plVar16;
+      uVar17 = 0;
+      if (*(ushort *)(lVar14 + 0x12e) != 0) {
         do {
-          if (pKStack_15->interfaceOffsets[uVar16].interfaceType ==
-              (Il2CppClass *)
+          if (*(IAttributeSetting__Class **)(*(longlong *)(lVar14 + 0xb0) + (ulonglong)uVar17 * 0x10)
+              == 
               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
              ) {
-            ppMVar19 = &(&(subSettingData->klass->vtable).Equals)
-                       [subSettingData->klass->interfaceOffsets[uVar16].offset].method;
+            puVar18 = (undefined8 *)
+                      ((longlong)
+                       *(int *)(*(longlong *)(lVar14 + 0xb0) + 8 + (ulonglong)uVar17 * 0x10) * 0x10 +
+                       0x138 + lVar14);
             goto code_?;
           }
-          uVar16 = uVar16 + 1;
-          uVar20._0_1_ = (subSettingData->klass->_1).rank;
-          uVar20._1_1_ = (subSettingData->klass->_1).minimumAlignment;
-        } while (uVar16 < uVar20);
+          uVar17 = uVar17 + 1;
+        } while (uVar17 < *(ushort *)(lVar14 + 0x12e));
       }
-      ppMVar19 = (MethodInfo **)
-                func_?(subSettingData,
-                                TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                                ,0);
+      puVar18 = (undefined8 *)
+                FUN_?(plVar16,
+                              TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                              ,0);
 code_?:
-      iVar14 = (*(code *)*ppMVar19)(subSettingData,ppMVar19[1]);
-      pOVar6 = (Object *)((int)&pOStack_8->klass + iVar14);
-      pOStack_8 = pOVar6;
+      iVar19 = (*(code *)*puVar18)(plVar16,puVar18[1]);
+      iVar1 = iVar1 + iVar19;
     }
   }
-  func_?();
+  FUN_?();
 code_?:
-  func_?(pOVar6,pKStack_15);
+  uVar15 = FUN_?(subSettingData,unaff_R14);
 code_?:
-  uVar21 = func_?(pOVar6,subSettingData);
-  func_?(uVar21);
-  pcVar22 = (code *)swi(3);
-  iVar23 = (*pcVar22)();
-  return iVar23;
+  FUN_?(uVar15,unaff_RSI);
+  FUN_?();
+  pcVar20 = (code *)swi(3);
+  iVar21 = (*pcVar20)();
+  return iVar21;
 }
 
 
@@ -147,42 +148,117 @@ void Assembly-CSharp.dll::SpawnRoleSelectionSkillMenu::SpawnRoleSelectionSkillMe
 
 {
   pGVar1 = (this->fields).backgroundTier1;
+  cVar2 = (char)tier;
   if (pGVar1 != (GameObject *)0x0) {
-    bVar2 = (undefined1)tier == GamePassTier__Enum_Tier1;
-    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                      (pGVar1,(MethodInfo *)0x0);
-    if ((bool)bVar3 != ((undefined1)tier == GamePassTier__Enum_Tier1)) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar3 = (pGVar1->fields)._.m_CachedPtr;
+    if (pvVar3 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar1,(MethodInfo *)0x0);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    pcVar4 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+      uVar5 = func_?(&UNK_?);
+      FUN_?(uVar5,0);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    pcRam_? = pcVar4;
+    cVar6 = (*pcRam_?)(pvVar3);
+    if ((bool)cVar6 != (cVar2 == '\x01')) {
       pGVar1 = (this->fields).backgroundTier1;
       if (pGVar1 == (GameObject *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar1,bVar2,(MethodInfo *)0x0);
+                (pGVar1,cVar2 == '\x01',(MethodInfo *)0x0);
     }
     pGVar1 = (this->fields).backgroundTier2;
     if (pGVar1 != (GameObject *)0x0) {
-      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                        (pGVar1,(MethodInfo *)0x0);
-      if ((bool)bVar2 != ((undefined1)tier == GamePassTier__Enum_Tier2)) {
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pvVar3 = (pGVar1->fields)._.m_CachedPtr;
+      if (pvVar3 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar1,(MethodInfo *)0x0);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pcVar4 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+        uVar5 = func_?(&UNK_?);
+        FUN_?(uVar5,0);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pcRam_? = pcVar4;
+      cVar6 = (*pcRam_?)(pvVar3);
+      if ((bool)cVar6 != (cVar2 == '\x02')) {
         pGVar1 = (this->fields).backgroundTier2;
         if (pGVar1 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar1,0x22,(MethodInfo *)0x0);
+                  (pGVar1,cVar2 == '\x02',(MethodInfo *)0x0);
       }
       pGVar1 = (this->fields).backgroundTier3;
       if (pGVar1 != (GameObject *)0x0) {
-        bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                          (pGVar1,(MethodInfo *)0x0);
-        if ((bool)bVar2 != ((undefined1)tier == GamePassTier__Enum_Tier3)) {
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pvVar3 = (pGVar1->fields)._.m_CachedPtr;
+        if (pvVar3 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar1,(MethodInfo *)0x0);
+          pcVar4 = (code *)swi(3);
+          (*pcVar4)();
+          return;
+        }
+        pcVar4 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+          uVar5 = func_?(&UNK_?);
+          FUN_?(uVar5,0);
+          pcVar4 = (code *)swi(3);
+          (*pcVar4)();
+          return;
+        }
+        pcRam_? = pcVar4;
+        cVar6 = (*pcRam_?)(pvVar3);
+        if ((bool)cVar6 != (cVar2 == '\x03')) {
           pGVar1 = (this->fields).backgroundTier3;
           if (pGVar1 == (GameObject *)0x0) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar1,(undefined1)tier == GamePassTier__Enum_Tier3,(MethodInfo *)0x0);
+                    (pGVar1,cVar2 == '\x03',(MethodInfo *)0x0);
         }
         return;
       }
     }
   }
 code_?:
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -197,399 +273,514 @@ void Assembly-CSharp.dll::SpawnRoleSelectionSkillMenu::SpawnRoleSelectionSkillMe
                MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  pvStack_3 = (void *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &pvStack_3;
-  ppIStack_4 = (Il2CppClass **)&stack0xffffff7c;
-  ppIVar5 = (Il2CppClass **)&stack0xffffff7c;
+  apSStackX_8[0] = this;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Key__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Value__
-                   );
-    func_?(&
-                    TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-                   );
-    func_?(&
-                    TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-                   );
-    func_?(&TypeInfo__UnityEngine__UI__LayoutRebuilder);
-    func_?(&TypeInfo__MVAvatarSpawnRoleCreator);
-    func_?(&
-                    SpawnRolePreviewer_MethodInfo__UnityEngine__Object__Instantiate<SpawnRolePreviewer>_SpawnRolePreviewer_
-                   );
-    func_?(&
-                    SpawnRoleSelectionSkillElement_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleSelectionSkillElement>_SpawnRoleSelectionSkillElement_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Key__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__get_Value__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__UI__LayoutRebuilder);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVAvatarSpawnRoleCreator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  SpawnRolePreviewer_MethodInfo__UnityEngine__Object__Instantiate<SpawnRolePreviewer>_SpawnRolePreviewer_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  SpawnRoleSelectionSkillElement_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleSelectionSkillElement>_SpawnRoleSelectionSkillElement_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    ppIVar5 = ppIStack_4;
   }
-  ppIStack_4 = ppIVar5;
-  IStack_6.m_value = 0;
-  pMStack_7 = (MVAvatarSpawnRoleCreator__Class *)
-               CONCAT31(pMStack_7._1_3_,(undefined1)tierRequirement == GamePassTier__Enum_Tier2);
-  pGVar8 = (this->fields).backgroundTier1;
-  pMStack_9 = (MVAvatarSpawnRoleCreator__StaticFields *)
-               CONCAT31(pMStack_9._1_3_,(undefined1)tierRequirement == GamePassTier__Enum_Tier3);
-  if (pGVar8 != (GameObject *)0x0) {
-    bVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                      (pGVar8,(MethodInfo *)0x0);
-    if ((bool)bVar10 != ((undefined1)tierRequirement == GamePassTier__Enum_Tier1)) {
-      pGVar8 = (this->fields).backgroundTier1;
-      if (pGVar8 == (GameObject *)0x0) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar8,(undefined1)tierRequirement == GamePassTier__Enum_Tier1,(MethodInfo *)0x0);
-    }
-    pGVar8 = (this->fields).backgroundTier2;
-    if (pGVar8 != (GameObject *)0x0) {
-      bVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                        (pGVar8,(MethodInfo *)0x0);
-      if (bVar10 != (bool)pMStack_7) {
-        pGVar8 = (this->fields).backgroundTier2;
-        if (pGVar8 == (GameObject *)0x0) goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar8,(bool)pMStack_7,(MethodInfo *)0x0);
+  DStack_1._dictionary = (Dictionary_2_System_Object_System_Object_ *)0x0;
+  DStack_1._version = 0;
+  DStack_1._index = 0;
+  DStack_1._current.key = (Object *)0x0;
+  DStack_1._current.value = (Object *)0x0;
+  DStack_1._getEnumeratorRetType = 0;
+  DStack_1._36_4_ = 0;
+  SpawnRoleSelectionSkillMenu_ChangeBackground(this,tierRequirement & 0xff,(MethodInfo *)0x0);
+  pSVar2 = (this->fields).spawnRolePreviewerPrefab;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pSVar2 = (SpawnRolePreviewer *)
+            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                      ((Object *)pSVar2,
+                       SpawnRolePreviewer_MethodInfo__UnityEngine__Object__Instantiate<SpawnRolePreviewer>_SpawnRolePreviewer_
+                      );
+  (this->fields).spawnRolePreviewer = pSVar2;
+  pKVar3 = (KogamaSettingsCollectionBase__Class *)0xADDR;
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)&(this->fields).spawnRolePreviewer >> 0xc);
+    uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+    do {
+      uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+      puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+      LOCK();
+      bVar8 = uVar6 == *puVar7;
+      if (bVar8) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
       }
-      pGVar8 = (this->fields).backgroundTier3;
-      if (pGVar8 != (GameObject *)0x0) {
-        bVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                          (pGVar8,(MethodInfo *)0x0);
-        if (bVar10 != (bool)pMStack_9) {
-          pGVar8 = (this->fields).backgroundTier3;
-          if (pGVar8 == (GameObject *)0x0) goto code_?;
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar8,(bool)pMStack_9,(MethodInfo *)0x0);
+      UNLOCK();
+    } while (!bVar8);
+  }
+  this_01 = (KogamaSettingsCollectionBase__Class *)0x0;
+  SpawnRoleSelectionSkillMenu_SetupPreviewImage(this,spawnRolePreviewObject,(MethodInfo *)0x0);
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+  if ((this_00 != (MVWorldObjectClientManager *)0x0) &&
+     (this_01 = (KogamaSettingsCollectionBase__Class *)
+                MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
+                          (this_00,spawnRoleId,(MethodInfo *)0x0),
+     this_01 != (KogamaSettingsCollectionBase__Class *)0x0)) {
+    pMVar9 = (MVAvatarSpawnRoleCreator__Class *)(this_01->_0).image;
+    bVar10 = (TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment;
+    if (((pMVar9->_1).naturalAligment < bVar10) ||
+       ((MVAvatarSpawnRoleCreator__Class *)(pMVar9->_1).typeHierarchy[(ulonglong)bVar10 - 1] !=
+        TypeInfo__MVAvatarSpawnRoleCreator)) {
+      FUN_?(this_01);
+      pcVar11 = (code *)swi(3);
+      (*pcVar11)();
+      return;
+    }
+    this_02 = MVAvatarSpawnRoleCreator::MVAvatarSpawnRoleCreator_get_AttributeSettingsManagerAvatar
+                        ((MVAvatarSpawnRoleCreator *)this_01,(MethodInfo *)0x0);
+    if (this_02 != (AttributeSettingsManager *)0x0) {
+      subSettingData =
+           (KogamaSettingsCollectionBase *)
+           MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
+           AttributeSettings::AttributeSettingsManager::AttributeSettingsManager_get_Settings
+                     (this_02,(MethodInfo *)0x0);
+      if (subSettingData != (KogamaSettingsCollectionBase *)0x0) {
+        this_01 = subSettingData->klass;
+        bVar10 = (
+                TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+                ->_1).naturalAligment;
+        if (((this_01->_1).naturalAligment < bVar10) ||
+           (*(KogamaSettingsCollectionBase__Class **)
+             ((longlong)(this_01->_1).typeHierarchy + (ulonglong)bVar10 * 8 + -8) !=
+            TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
+           )) {
+          FUN_?(subSettingData);
+          pcVar11 = (code *)swi(3);
+          (*pcVar11)();
+          return;
         }
-        pSVar11 = (this->fields).spawnRolePreviewerPrefab;
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Object);
+        uStackX_18 = 0;
+        pDVar12 = (subSettingData->fields).children;
+        pKStackX_20 = subSettingData;
+        if (pDVar12 == (Dictionary_2_System_String_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingWrapperBase_
+                       *)0x0) goto code_?;
+        if (iRam_? != 0) {
+          uVar4 = (uint)((ulonglong)&pDStack_13 >> 0xc);
+          uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+          do {
+            uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+            puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+            LOCK();
+            bVar8 = uVar6 == *puVar7;
+            if (bVar8) {
+              *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar8);
         }
-        pSVar11 = (SpawnRolePreviewer *)
-                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                            ((Object *)pSVar11,
-                             SpawnRolePreviewer_MethodInfo__UnityEngine__Object__Instantiate<SpawnRolePreviewer>_SpawnRolePreviewer_
-                            );
-        (this->fields).spawnRolePreviewer = pSVar11;
-        func_?(&(this->fields).spawnRolePreviewer,pSVar11);
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__UnityEngine__GameObject);
-          func_?(&
-                          UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
-                         );
-          func_?(&TypeInfo__UnityEngine__Object);
-          func_?(&StringLiteral_Preview_Root___TierShopItem);
-          func_?(&StringLiteral_SpawnRole);
-          cRam_? = '\x01';
-        }
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Object);
-        }
-        unaff_ESI = (MVAvatarSpawnRoleCreator__Class *)
+        uStack_14 = (ulonglong)(uint)(pDVar12->fields)._version;
+        uStack_15 = 2;
+        uStack_16 = 0;
+        uStack_17 = 0;
+        DStack_1._version = (undefined4)uStack_14;
+        DStack_1._index = uStack_14._4_4_;
+        DStack_1._current.key = (Object *)0x0;
+        DStack_1._current.value = (Object *)0x0;
+        DStack_1._getEnumeratorRetType = 2;
+        DStack_1._36_4_ = 0;
+        uStack_18 = 0;
+        pDStack_19 = &DStack_1;
+        pDStack_13 = pDVar12;
+        DStack_1._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar12;
+        while (bVar20 = mscorlib.dll::System::Collections::Generic::
+                        Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
+                        Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+                                  (&DStack_1,
+                                   MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__MoveNext__
+                                  ),
+              this_01 = (KogamaSettingsCollectionBase__Class *)DStack_1._current.value,
+              skill = DStack_1._current.key, bVar20 != 0) {
+          uStackX_18 = 1;
+          pSVar21 = (this->fields).skillElementPrefab;
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          pSVar21 = (SpawnRoleSelectionSkillElement *)
                     UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                              ((Object *)spawnRolePreviewObject,
-                               UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                              ((Object *)pSVar21,
+                               SpawnRoleSelectionSkillElement_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleSelectionSkillElement>_SpawnRoleSelectionSkillElement_
                               );
-        if (unaff_ESI != (MVAvatarSpawnRoleCreator__Class *)0x0) {
-          pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                              ((GameObject *)unaff_ESI,(MethodInfo *)0x0);
+          if (pSVar21 == (SpawnRoleSelectionSkillElement *)0x0) goto code_?;
+          pKVar3 = (KogamaSettingsCollectionBase__Class *)0x0;
+          if (this_01 != (KogamaSettingsCollectionBase__Class *)0x0) {
+            pMVar9 = (MVAvatarSpawnRoleCreator__Class *)
+                     ((Il2CppClass_0 *)&((Object *)this_01)->klass)->image;
+            bVar10 = (
+                    TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+                    ->_1).naturalAligment;
+            if ((((pMVar9->_1).naturalAligment < bVar10) ||
+                ((pMVar9->_1).typeHierarchy[(ulonglong)bVar10 - 1] !=
+                 (Il2CppClass *)
+                 TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
+                )) || (pKVar3 = this_01, this_01 == (KogamaSettingsCollectionBase__Class *)0x0))
+            goto code_?;
+          }
+          this_01 = (KogamaSettingsCollectionBase__Class *)(this->fields).skillDataManagerPrefab;
+          SpawnRoleSelectionSkillElement::SpawnRoleSelectionSkillElement_Initialize
+                    (pSVar21,(String *)skill,(SpawnRolesSkillDataManager *)this_01,
+                     (KogamaSettingValueWrapperBase *)pKVar3,(MethodInfo *)0x0);
+          pKVar3 = (KogamaSettingsCollectionBase__Class *)
+                    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              ((Component *)pSVar21,(MethodInfo *)0x0);
+          pTVar22 = (this->fields).skillElementContainer;
+          if (pKVar3 == (KogamaSettingsCollectionBase__Class *)0x0) goto code_?;
           if (cRam_? == '\0') {
-            func_?(&TypeInfo__UnityEngine__Quaternion);
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                         );
+            LOCK();
+            UNLOCK();
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__Marshal<UnityEngine::Transform>_UnityEngine__Transform_
+                         );
+            LOCK();
+            UNLOCK();
             cRam_? = '\x01';
           }
-          if (pTVar12 != (Transform *)0x0) {
-            method_00.dummy = &UNK_?;
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                      (pTVar12,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
-                       (MethodInfo *)0x0);
-            pGVar8 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
-                      (pGVar8,StringLiteral_Preview_Root___TierShopItem,(MethodInfo *)0x0);
-            if (pGVar8 != (GameObject *)0x0) {
-              pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                        GameObject_get_transform(pGVar8,(MethodInfo *)0x0);
-              pSVar11 = (this->fields).spawnRolePreviewer;
-              RStack_13.m_YMin = 500.0;
-              RStack_13.m_Width = 500.0;
-              RStack_13.m_Height = 0.0;
-              RStack_14.m_YMin = 0.0;
-              RStack_14.m_Width = 1.5;
-              RStack_14.m_Height = -6.0;
-              if (pSVar11 != (SpawnRolePreviewer *)0x0) {
-                cameraOffset.z = -6.0;
-                cameraOffset.x = 0.0;
-                cameraOffset.y = 1.5;
-                SpawnRolePreviewer::SpawnRolePreviewer_Initialize
-                          (pSVar11,(this->fields).previewWidth,(this->fields).previewHeight,
-                           CameraClearFlags__Enum_Color,
-                           LayerFlags__Enum_CamRotateTarget|LayerFlags__Enum_Default,cameraOffset,
-                           pTVar12,(Vector3)ZEXT812(0x43fa000043fa0000),StringLiteral_SpawnRole,0,
-                           (GameObject *)unaff_ESI,(MethodInfo *)0x0);
-                pSVar11 = (this->fields).spawnRolePreviewer;
-                this_00 = (this->fields).spawnRolePreviewImage;
-                if ((pSVar11 != (SpawnRolePreviewer *)0x0) && (this_00 != (RawImage *)0x0)) {
-                  UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-                            (this_00,(Texture *)(pSVar11->fields).previewTexture,(MethodInfo *)0x0);
-                  this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-                  if ((this_02 != (MVWorldObjectClientManager *)0x0) &&
-                     (this_03 = (MVAvatarSpawnRoleCreator *)
-                                MVWorldObjectClientManager::
-                                MVWorldObjectClientManager_GetWorldObject
-                                          (this_02,spawnRoleId,(MethodInfo *)0x0),
-                     unaff_ESI = TypeInfo__MVAvatarSpawnRoleCreator,
-                     this_03 != (MVAvatarSpawnRoleCreator *)0x0)) {
-                    if (((this_03->klass->_1).naturalAligment <
-                         (TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment) ||
-                       ((MVAvatarSpawnRoleCreator__Class *)
-                        (this_03->klass->_1).typeHierarchy
-                        [(TypeInfo__MVAvatarSpawnRoleCreator->_1).naturalAligment - 1] !=
-                        TypeInfo__MVAvatarSpawnRoleCreator)) {
-                      func_?(this_03,TypeInfo__MVAvatarSpawnRoleCreator);
-                    }
-                    else {
-                      this_04 = MVAvatarSpawnRoleCreator::
-                                MVAvatarSpawnRoleCreator_get_AttributeSettingsManagerAvatar
-                                          (this_03,(MethodInfo *)0x0);
-                      if (this_04 != (AttributeSettingsManager *)0x0) {
-                        unaff_ESI = (MVAvatarSpawnRoleCreator__Class *)
-                                    MVWorldObject.dll::MV::WorldObject::KogamaSettings::
-                                    SpecializedSettingsTypes::AttributeSettings::
-                                    AttributeSettingsManager::AttributeSettingsManager_get_Settings
-                                              (this_04,(MethodInfo *)0x0);
-                        pMStack_7 = unaff_ESI;
-                        if (unaff_ESI == (MVAvatarSpawnRoleCreator__Class *)0x0) {
-                          bVar15 = false;
-                          pMStack_9 = (MVAvatarSpawnRoleCreator__StaticFields *)
-                                       ((uint)pMStack_9 & 0xffffff00);
-code_?:
-                          pGVar8 = (this->fields).leftBorder;
-                          if ((pGVar8 != (GameObject *)0x0) &&
-                             (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                        GameObject_get_transform(pGVar8,(MethodInfo *)0x0),
-                             pTVar12 != (Transform *)0x0)) {
-                            UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                            Transform_SetAsFirstSibling(pTVar12,(MethodInfo *)0x0);
-                            pGVar8 = (this->fields).leftBorder;
-                            if (pGVar8 != (GameObject *)0x0) {
-                              UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                              GameObject_SetActive(pGVar8,(bool)pMStack_9,(MethodInfo *)0x0);
-                              pGVar8 = (this->fields).noSkillsText;
-                              if (pGVar8 != (GameObject *)0x0) {
-                                UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                GameObject_SetActive(pGVar8,!bVar15,(MethodInfo *)0x0);
-                                unaff_ESI = (MVAvatarSpawnRoleCreator__Class *)
-                                            (this->fields).contentRectTransform;
-                                if ((TypeInfo__UnityEngine__UI__LayoutRebuilder->_1).
-                                    cctor_finished_or_no_cctor == 0) {
-                                  a_Stack_60[0].typeHandle =
-                                       (Il2CppMetadataTypeHandle)
-                                       TypeInfo__UnityEngine__UI__LayoutRebuilder;
-                                  func_?();
-                                }
-                                UnityEngine.UI.dll::UnityEngine::UI::LayoutRebuilder::
-                                LayoutRebuilder_ForceRebuildLayoutImmediate
-                                          ((RectTransform *)unaff_ESI,(MethodInfo *)0x0);
-                                pRVar16 = (this->fields).contentScrollRect;
-                                if (pRVar16 != (RectTransform *)0x0) {
-                                  pRVar17 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
-                                            RectTransform_get_rect
-                                                      (&RStack_14,pRVar16,(MethodInfo *)0x0);
-                                  RStack_14.m_XMin = pRVar17->m_Width;
-                                  pRVar16 = (this->fields).contentRectTransform;
-                                  RStack_14.m_YMin = RStack_14.m_XMin;
-                                  RStack_14.m_Width = RStack_14.m_XMin;
-                                  RStack_14.m_Height = RStack_14.m_XMin;
-                                  if (pRVar16 != (RectTransform *)0x0) {
-                                    pRVar17 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform
-                                              ::RectTransform_get_rect
-                                                        (&RStack_13,pRVar16,(MethodInfo *)0x0);
-                                    if (pRVar17->m_Width <= RStack_14.m_XMin) {
-code_?:
-                                      *unaff_FS_OFFSET = pvStack_3;
-                                      return;
-                                    }
-                                    pRVar16 = (this->fields).contentRectTransform;
-                                    RStack_13.m_Width = 0.0;
-                                    RStack_13.m_Height = 0.0;
-                                    if (pRVar16 != (RectTransform *)0x0) {
-                                      UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
-                                      RectTransform_set_pivot(pRVar16,(Vector2)0x0,(MethodInfo *)0x0)
-                                      ;
-                                      goto code_?;
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                        else {
-                          pKVar18 = 
-                          TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-                          ;
-                          if ((*(byte *)&(unaff_ESI->_0).image[4].assembly <
-                               (
-                               TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-                               ->_1).naturalAligment) ||
-                             (*(KogamaSettingsCollectionBase__Class **)
-                               (((unaff_ESI->_0).image[2].typeCount - 4) +
-                               (uint)(
-                                     TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-                                     ->_1).naturalAligment * 4) !=
-                              TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingsCollectionBase
-                             )) goto code_?;
-                          this_01 = (Dictionary_2_System_UInt32_System_Object_ *)
-                                    (unaff_ESI->_0).byval_arg.data.typeHandle;
-                          bVar15 = false;
-                          if (this_01 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-                            pDVar19 = mscorlib.dll::System::Collections::Generic::
-                                      Dictionary`2[System::UInt32,System::Object]::
-                                      Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                                                ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                                                  *)a_Stack_60,this_01,
-                                                 MethodInfo__System__Collections__Generic__Dictionary<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__GetEnumerator__
-                                                );
-                            unaff_ESI = (MVAvatarSpawnRoleCreator__Class *)&stack0xffffff88;
-                            RStack_13.m_Width = 0.0;
-                            pPVar20 = (PropertyInfo *)(pDVar19->_current).key;
-                            uVar21 = *(undefined8 *)&(pDVar19->_current).value;
-                            pMStack_22 = pMStack_7;
-                            uStack_1 = 1;
-                            pMStack_9 = (MVAvatarSpawnRoleCreator__StaticFields *)
-                                         ((uint)pMStack_9 & 0xffffff00);
-                            RStack_13.m_Height = (float)unaff_ESI;
-                            while (bVar10 = mscorlib.dll::System::Collections::Generic::
-                                           Dictionary`2[TKey,TValue]+Enumerator[System::
-                                           Object,System::Object]::
-                                           Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                                                     ((
-                                                  Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_
-                                                  *)&stack0xffffff88,
-                                                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__MoveNext__
-                                                  ), bVar10 != 0) {
-                              _Stack_68.__klassIndex = (TypeDefinitionIndex)uVar21;
-                              bVar15 = true;
-                              pMStack_9 = (MVAvatarSpawnRoleCreator__StaticFields *)
-                                           CONCAT31(pMStack_9._1_3_,1);
-                              pSStack_23 = (this->fields).skillElementPrefab;
-                              _Stack_18.dummy = _Stack_68.dummy;
-                              pPStack_24 = pPVar20;
-                              if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor ==
-                                  0) {
-                                func_?(TypeInfo__UnityEngine__Object);
-                              }
-                              pSStack_23 = (SpawnRoleSelectionSkillElement *)
-                                           UnityEngine.CoreModule.dll::UnityEngine::Object::
-                                           Object_1_Instantiate_4
-                                                     ((Object *)pSStack_23,
-                                                                                                            
-                                                  SpawnRoleSelectionSkillElement_MethodInfo__UnityEngine__Object__Instantiate<SpawnRoleSelectionSkillElement>_SpawnRoleSelectionSkillElement_
-                                                  );
-                              if (pSStack_23 == (SpawnRoleSelectionSkillElement *)0x0)
-                              goto code_?;
-                              if ((_Stack_18.dummy != (MethodInfo *)0x0) &&
-                                 (((pIStack_25 = (_Stack_18.array)->etype,
-                                   pKVar26 = 
-                                   TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-                                   , (byte)*(code *)&pIStack_25[0x17].data <
-                                     (
-                                     TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-                                     ->_1).naturalAligment ||
-                                   (*(KogamaSettingValueWrapperBase__Class **)
-                                     (*(int *)&pIStack_25[0xc].attrs +
-                                     (uint)(
-                                           TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-                                           ->_1).naturalAligment * 4 + -4) !=
-                                    TypeInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingValueWrapperBase
-                                   )) || (_Stack_18.dummy == (MethodInfo *)0x0))))
-                              goto code_?;
-                              method_00 = _Stack_18;
-                              SpawnRoleSelectionSkillElement::
-                              SpawnRoleSelectionSkillElement_Initialize
-                                        (pSStack_23,(String *)pPStack_24,
-                                         (this->fields).skillDataManagerPrefab,
-                                         (KogamaSettingValueWrapperBase *)_Stack_18.typeHandle,
-                                         (MethodInfo *)0x0);
-                              pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                        Component_get_transform
-                                                  ((Component *)pSStack_23,(MethodInfo *)0x0);
-                              if (pTVar12 == (Transform *)0x0) goto code_?;
-                              UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                              Transform_SetParent_1
-                                        (pTVar12,(this->fields).skillElementContainer,0,
-                                         (MethodInfo *)0x0);
-                            }
-                            uStack_1 = 0xffffffff;
-                            mscorlib.dll::System::ThrowHelper::
-                            ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                                      ((Object *)unaff_ESI,
-                                       (ExceptionArgument__Enum)
-                                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::String,_MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::KogamaSettingWrapperBase>__Dispose__
-                                       ,(MethodInfo *)method_00.typeHandle);
-                            uStack_1 = 0xffffffff;
-                            IStack_6.m_value =
-                                 SpawnRoleSelectionSkillMenu_CalculateTotalCostOfSkills
-                                           (this,(KogamaSettingsCollectionBase *)pMStack_7,
-                                            (MethodInfo *)0x0);
-                            pTVar27 = (this->fields).spawnRoleCost;
-                            pSVar28 = mscorlib.dll::System::Int32::Int32_ToString
-                                                (&IStack_6,(MethodInfo *)0x0);
-                            unaff_ESI = (MVAvatarSpawnRoleCreator__Class *)0x0;
-                            if (pTVar27 != (Text *)0x0) {
-                              (*(code *)(pTVar27->klass->vtable).set_text.method)
-                                        (pTVar27,pSVar28,
-                                         (pTVar27->klass->vtable).CalculateLayoutInputHorizontal_1.
-                                         methodPtr);
-                              IVar29.m_value = IStack_6.m_value;
-                              unaff_ESI = (MVAvatarSpawnRoleCreator__Class *)
-                                          (this->fields).spawnRoleCost;
-                              if (cRam_? == '\0') {
-                                func_?(&TypeInfo__Styles);
-                                cRam_? = '\x01';
-                              }
-                              if (IVar29.m_value < 0) {
-                                if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-                                  func_?(TypeInfo__Styles);
-                                }
-                                colorStyle = ColorStyle__Enum_NegativeRed;
-                              }
-                              else {
-                                if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-                                  func_?(TypeInfo__Styles);
-                                }
-                                colorStyle = ColorStyle__Enum_OffWhite;
-                              }
-                              pCVar30 = Styles::Styles_GetColor
-                                                  ((Color *)&RStack_14,colorStyle,(MethodInfo *)0x0)
-                              ;
-                              if (unaff_ESI != (MVAvatarSpawnRoleCreator__Class *)0x0) {
-                                pRVar31 = (RectTransform__Class *)(unaff_ESI->_0).image;
-                                (*(code *)pRVar31[1]._1.thread_static_fields_size)
-                                          (unaff_ESI,pCVar30->r,pCVar30->g,pCVar30->b,pCVar30->a,
-                                           pRVar31[1]._1.thread_static_fields_offset);
-                                goto code_?;
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
+          OVar23.m_CachedPtr =
+               *(void **)&(((MVAvatarSpawnRoleCreator__Fields *)&(pKVar3->_0).name)->_)._._._;
+          if (OVar23.m_CachedPtr == (void *)0x0) goto code_?;
+          if ((
+              void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__Marshal<UnityEngine::Transform>_UnityEngine__Transform_
+              ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+            FUN_?();
+          }
+          pKVar3 = (KogamaSettingsCollectionBase__Class *)0x0;
+          if (pTVar22 != (Transform *)0x0) {
+            pKVar3 = (pTVar22->fields)._._.m_CachedPtr;
+          }
+          pcVar11 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0))
+          goto code_?;
+          pcRam_? = pcVar11;
+          (*pcRam_?)(OVar23.m_CachedPtr,pKVar3);
+        }
+        value = SpawnRoleSelectionSkillMenu_CalculateTotalCostOfSkills
+                          (this,subSettingData,(MethodInfo *)0x0);
+        pTVar24 = (this->fields).spawnRoleCost;
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__System__Number);
+          LOCK();
+          UNLOCK();
+          FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if ((MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____->klass->
+             field_0x135 & 1) == 0) {
+          FUN_?();
+        }
+        if (*(int *)&(TypeInfo__System__Number->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        CStack_25.r = 0.0;
+        CStack_25.g = 0.0;
+        CStack_25.b = 0.0;
+        CStack_25.a = 0.0;
+        this_01 = (KogamaSettingsCollectionBase__Class *)0x0;
+        pSVar26 = mscorlib.dll::System::Number::Number_FormatInt32
+                            (value,(ReadOnlySpan_1_Char_ *)&CStack_25,(IFormatProvider *)0x0,
+                             (MethodInfo *)0x0);
+        pKVar3 = (KogamaSettingsCollectionBase__Class *)0x0;
+        if (pTVar24 == (Text *)0x0) goto code_?;
+        (*(pTVar24->klass->vtable).set_text.methodPtr)(pTVar24,pSVar26);
+        pKVar3 = (KogamaSettingsCollectionBase__Class *)(this->fields).spawnRoleCost;
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__Styles);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (value < 0) {
+          if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          colorStyle = ColorStyle__Enum_NegativeRed;
+        }
+        else {
+          if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          colorStyle = ColorStyle__Enum_OffWhite;
+        }
+        this_01 = (KogamaSettingsCollectionBase__Class *)0x0;
+        pCVar27 = Styles::Styles_GetColor(&CStack_25,colorStyle,(MethodInfo *)0x0);
+        uVar28._0_4_ = pCVar27->r;
+        uVar28._4_4_ = pCVar27->g;
+        uVar29._0_4_ = pCVar27->b;
+        uVar29._4_4_ = pCVar27->a;
+        if (pKVar3 == (KogamaSettingsCollectionBase__Class *)0x0) goto code_?;
+        pMVar9 = (MVAvatarSpawnRoleCreator__Class *)(pKVar3->_0).image;
+        this_01 = (KogamaSettingsCollectionBase__Class *)(pMVar9->vtable).PartialUpdateWOData.method
+        ;
+        CStack_25._0_8_ = uVar28;
+        CStack_25._8_8_ = uVar29;
+        (*(pMVar9->vtable).PartialUpdateWOData.methodPtr)(pKVar3,&CStack_25,this_01);
+      }
+      pGVar30 = (this->fields).leftBorder;
+      if (pGVar30 != (GameObject *)0x0) {
+        pTVar22 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (pGVar30,(MethodInfo *)0x0);
+        pKVar3 = (KogamaSettingsCollectionBase__Class *)0x0;
+        if (pTVar22 != (Transform *)0x0) {
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pvVar31 = (pTVar22->fields)._._.m_CachedPtr;
+          if (pvVar31 == (void *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar22,(MethodInfo *)0x0);
+            pcVar11 = (code *)swi(3);
+            (*pcVar11)();
+            return;
+          }
+          pcVar11 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+            uVar28 = func_?(&UNK_?);
+            FUN_?(uVar28,0);
+            pcVar11 = (code *)swi(3);
+            (*pcVar11)();
+            return;
+          }
+          pcRam_? = pcVar11;
+          (*pcRam_?)(pvVar31);
+          pGVar30 = (this->fields).leftBorder;
+          pKVar3 = (KogamaSettingsCollectionBase__Class *)0x0;
+          if (pGVar30 != (GameObject *)0x0) {
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                           );
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pvVar31 = (pGVar30->fields)._.m_CachedPtr;
+            if (pvVar31 == (void *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+              ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar30,(MethodInfo *)0x0);
+              pcVar11 = (code *)swi(3);
+              (*pcVar11)();
+              return;
+            }
+            pcVar11 = pcRam_?;
+            if ((pcRam_? == (code *)0x0) &&
+               (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+              uVar28 = func_?(&UNK_?);
+              FUN_?(uVar28,0);
+              pcVar11 = (code *)swi(3);
+              (*pcVar11)();
+              return;
+            }
+            pcRam_? = pcVar11;
+            (*pcRam_?)(pvVar31);
+            pGVar30 = (this->fields).noSkillsText;
+            pKVar3 = (KogamaSettingsCollectionBase__Class *)0x0;
+            if (pGVar30 != (GameObject *)0x0) {
+              if (cRam_? == '\0') {
+                FUN_?(&
+                              void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                             );
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              pvVar31 = (pGVar30->fields)._.m_CachedPtr;
+              if (pvVar31 == (void *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar30,(MethodInfo *)0x0);
+                pcVar11 = (code *)swi(3);
+                (*pcVar11)();
+                return;
+              }
+              pcVar11 = pcRam_?;
+              if ((pcRam_? == (code *)0x0) &&
+                 (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+                uVar28 = func_?(&UNK_?);
+                FUN_?(uVar28,0);
+                pcVar11 = (code *)swi(3);
+                (*pcVar11)();
+                return;
+              }
+              pcRam_? = pcVar11;
+              (*pcRam_?)(pvVar31);
+              pRVar32 = (this->fields).contentRectTransform;
+              if (*(int *)&(TypeInfo__UnityEngine__UI__LayoutRebuilder->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              UnityEngine.UI.dll::UnityEngine::UI::LayoutRebuilder::
+              LayoutRebuilder_ForceRebuildLayoutImmediate(pRVar32,(MethodInfo *)0x0);
+              pRVar32 = (this->fields).contentScrollRect;
+              pKVar3 = (KogamaSettingsCollectionBase__Class *)0x0;
+              if (pRVar32 != (RectTransform *)0x0) {
+                if (cRam_? == '\0') {
+                  FUN_?(&
+                                void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::RectTransform>_UnityEngine__RectTransform_
+                               );
+                  LOCK();
+                  UNLOCK();
+                  cRam_? = '\x01';
+                }
+                CStack_25.r = 0.0;
+                CStack_25.g = 0.0;
+                CStack_25.b = 0.0;
+                CStack_25.a = 0.0;
+                pvVar31 = (pRVar32->fields)._._._.m_CachedPtr;
+                if (pvVar31 == (void *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                  ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar32,(MethodInfo *)0x0);
+                  pcVar11 = (code *)swi(3);
+                  (*pcVar11)();
+                  return;
+                }
+                pcVar11 = pcRam_?;
+                if ((pcRam_? == (code *)0x0) &&
+                   (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+                  uVar28 = func_?(&UNK_?);
+                  FUN_?(uVar28,0);
+                  pcVar11 = (code *)swi(3);
+                  (*pcVar11)();
+                  return;
+                }
+                pcRam_? = pcVar11;
+                (*pcRam_?)(pvVar31);
+                pRVar32 = (this->fields).contentRectTransform;
+                pKVar3 = (KogamaSettingsCollectionBase__Class *)0x0;
+                if (pRVar32 != (RectTransform *)0x0) {
+                  if (cRam_? == '\0') {
+                    FUN_?(&
+                                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::RectTransform>_UnityEngine__RectTransform_
+                                 );
+                    LOCK();
+                    UNLOCK();
+                    cRam_? = '\x01';
                   }
+                  uStack_18 = 0;
+                  pDStack_19 = (Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+                               0x0;
+                  pvVar31 = (pRVar32->fields)._._._.m_CachedPtr;
+                  if (pvVar31 == (void *)0x0) {
+                    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                    ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar32,(MethodInfo *)0x0);
+                    pcVar11 = (code *)swi(3);
+                    (*pcVar11)();
+                    return;
+                  }
+                  pcVar11 = pcRam_?;
+                  if ((pcRam_? == (code *)0x0) &&
+                     (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+                    uVar28 = func_?(&UNK_?);
+                    FUN_?(uVar28,0);
+                    pcVar11 = (code *)swi(3);
+                    (*pcVar11)();
+                    return;
+                  }
+                  pcRam_? = pcVar11;
+                  (*pcRam_?)(pvVar31);
+                  if (CStack_25.b < pDStack_19._0_4_) {
+                    pRVar32 = (this->fields).contentRectTransform;
+                    pKVar3 = (KogamaSettingsCollectionBase__Class *)0x0;
+                    if (pRVar32 == (RectTransform *)0x0) goto code_?;
+                    apSStackX_8[0] = (SpawnRoleSelectionSkillMenu *)0x0;
+                    if (cRam_? == '\0') {
+                      FUN_?(&
+                                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::RectTransform>_UnityEngine__RectTransform_
+                                   );
+                      LOCK();
+                      UNLOCK();
+                      cRam_? = '\x01';
+                    }
+                    pvVar31 = (pRVar32->fields)._._._.m_CachedPtr;
+                    if (pvVar31 == (void *)0x0) {
+                      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                      ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar32,(MethodInfo *)0x0)
+                      ;
+                      pcVar11 = (code *)swi(3);
+                      (*pcVar11)();
+                      return;
+                    }
+                    pcVar11 = pcRam_?;
+                    if ((pcRam_? == (code *)0x0) &&
+                       (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+                      uVar28 = func_?(&UNK_?);
+                      FUN_?(uVar28,0);
+                      pcVar11 = (code *)swi(3);
+                      (*pcVar11)();
+                      return;
+                    }
+                    pcRam_? = pcVar11;
+                    (*pcRam_?)(pvVar31,apSStackX_8);
+                  }
+                  return;
                 }
               }
             }
@@ -599,16 +790,22 @@ code_?:
     }
   }
 code_?:
-  func_?();
-  pKVar26 = extraout_EDX;
+  FUN_?();
 code_?:
-  uVar32 = func_?(_Stack_18.dummy,pKVar26);
-  func_?(uVar32);
-  pKVar18 = extraout_EDX_00;
+  uVar28 = func_?(&UNK_?);
+  FUN_?(uVar28);
 code_?:
-  func_?(unaff_ESI,pKVar18);
-  pcVar33 = (code *)swi(3);
-  (*pcVar33)();
+  UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+  ThrowHelper_2_ThrowNullReferenceException((Object *)pKVar3,(MethodInfo *)0x0);
+code_?:
+  FUN_?();
+code_?:
+  FUN_?(this_01);
+code_?:
+  FUN_?();
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -621,65 +818,121 @@ void Assembly-CSharp.dll::SpawnRoleSelectionSkillMenu::SpawnRoleSelectionSkillMe
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__GameObject);
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&StringLiteral_Preview_Root___TierShopItem);
-    func_?(&StringLiteral_SpawnRole);
+    FUN_?(&TypeInfo__UnityEngine__GameObject);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Preview_Root___TierShopItem);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_SpawnRole);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
   this_01 = (GameObject *)
             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                       ((Object *)spawnRolePreviewObject,
                        UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                       );
-  if (this_01 != (GameObject *)0x0) {
-    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                       (this_01,(MethodInfo *)0x0);
+  if (this_01 == (GameObject *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                     (this_01,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pQVar3 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  if (pTVar2 != (Transform *)0x0) {
+    fStack_4 = (pQVar3->identityQuaternion).x;
+    fStack_5 = (pQVar3->identityQuaternion).y;
+    fStack_6 = (pQVar3->identityQuaternion).z;
+    fStack_7 = (pQVar3->identityQuaternion).w;
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Quaternion);
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    if (pTVar1 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                (pTVar1,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
-                 (MethodInfo *)0x0);
-      this_02 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
-                (this_02,StringLiteral_Preview_Root___TierShopItem,(MethodInfo *)0x0);
-      if (this_02 != (GameObject *)0x0) {
-        pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                           (this_02,(MethodInfo *)0x0);
-        pSVar2 = (this->fields).spawnRolePreviewer;
-        if (pSVar2 != (SpawnRolePreviewer *)0x0) {
-          cameraOffset.z = -6.0;
-          cameraOffset.x = 0.0;
-          cameraOffset.y = 1.5;
-          SpawnRolePreviewer::SpawnRolePreviewer_Initialize
-                    (pSVar2,(this->fields).previewWidth,(this->fields).previewHeight,
-                     CameraClearFlags__Enum_Color,
-                     LayerFlags__Enum_CamRotateTarget|LayerFlags__Enum_Default,cameraOffset,pTVar1,
-                     (Vector3)ZEXT812(0x43fa000043fa0000),StringLiteral_SpawnRole,0,this_01,
-                     (MethodInfo *)0x0);
-          pSVar2 = (this->fields).spawnRolePreviewer;
-          if ((pSVar2 != (SpawnRolePreviewer *)0x0) &&
-             (this_00 = (this->fields).spawnRolePreviewImage, this_00 != (RawImage *)0x0)) {
-            UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-                      (this_00,(Texture *)(pSVar2->fields).previewTexture,(MethodInfo *)0x0);
-            return;
-          }
+    pvVar8 = (pTVar2->fields)._._.m_CachedPtr;
+    if (pvVar8 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar9 = func_?(&UNK_?);
+      FUN_?(uVar9,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)(pvVar8,&fStack_4);
+    self = (GameObject *)FUN_?(TypeInfo__UnityEngine__GameObject);
+    name = StringLiteral_Preview_Root___TierShopItem;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_Internal_CreateGameObject
+              (self,name,(MethodInfo *)0x0);
+    if (self != (GameObject *)0x0) {
+      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                         (self,(MethodInfo *)0x0);
+      pSVar10 = (this->fields).spawnRolePreviewer;
+      if (pSVar10 != (SpawnRolePreviewer *)0x0) {
+        VStack_11.y = _UNK_?;
+        VStack_11.x = _UNK_?;
+        VStack_11.z = 0.0;
+        VStack_12.z = _UNK_?;
+        VStack_12._0_8_ = (ulonglong)_UNK_? << 0x20;
+        SpawnRolePreviewer::SpawnRolePreviewer_Initialize
+                  (pSVar10,(this->fields).previewWidth,(this->fields).previewHeight,
+                   CameraClearFlags__Enum_Color,
+                   LayerFlags__Enum_CamRotateTarget|LayerFlags__Enum_Default,&VStack_12,pTVar2,
+                   &VStack_11,StringLiteral_SpawnRole,0,this_01,(MethodInfo *)0x0);
+        pSVar10 = (this->fields).spawnRolePreviewer;
+        if ((pSVar10 != (SpawnRolePreviewer *)0x0) &&
+           (this_00 = (this->fields).spawnRolePreviewImage, this_00 != (RawImage *)0x0)) {
+          UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
+                    (this_00,(Texture *)(pSVar10->fields).previewTexture,(MethodInfo *)0x0);
+          return;
         }
       }
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

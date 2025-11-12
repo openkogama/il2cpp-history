@@ -7,45 +7,46 @@ void Assembly-CSharp.dll::GoldRewardNotification::GoldRewardNotification_Initial
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&TypeInfo__NotificationLifetime);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationLifetime);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  n = this;
-  this = (GoldRewardNotification *)CONCAT13(2,this._0_3_);
-  (n->fields)._.timeSinceStart = 0.0;
-  key = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
+  (this->fields)._.timeSinceStart = 0.0;
+  auStackX_8[0] = 2;
+  pOVar1 = (Object *)FUN_?(uRam_?,auStackX_8);
   if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,key,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    uVar2 = CONCAT44(TypeInfo__NotificationLifetime,TVar1.m_Index);
-    if (TVar1.m_Index != 0) {
-      if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) !=
-          (TypeInfo__NotificationLifetime->_0).element_class) goto code_?;
-      piVar3 = (int32_t *)func_?(TVar1.m_Index);
-      this_00 = (n->fields).tertiaryNotificationUI;
-      (n->fields).lifeTime = *piVar3;
-      l = (*(code *)(n->klass->vtable).get_Lifetime.method)
-                    (n,(n->klass->vtable).Initialize.methodPtr);
+    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (data,pOVar1,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if (pOVar1 != (Object *)0x0) {
+      if ((pOVar1->klass->_0).element_class != (TypeInfo__NotificationLifetime->_0).element_class) {
+        FUN_?(pOVar1,TypeInfo__NotificationLifetime);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pGVar3 = this->klass;
+      this_00 = (this->fields).tertiaryNotificationUI;
+      (this->fields).lifeTime = *(int32_t *)&pOVar1[1].klass;
+      l = (*(pGVar3->vtable).get_Lifetime.methodPtr)(this,(pGVar3->vtable).get_Lifetime.method);
       if (this_00 != (TertiaryNotificationUI *)0x0) {
         TertiaryNotificationUI::TertiaryNotificationUI_Initialize
-                  (this_00,(Notification *)n,l,1,(MethodInfo *)0x0);
+                  (this_00,(Notification *)this,l,1,(MethodInfo *)0x0);
         return;
       }
     }
   }
-  uVar2 = func_?();
-code_?:
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -57,7 +58,9 @@ void Assembly-CSharp.dll::GoldRewardNotification::GoldRewardNotification_RewardC
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__TimedPlayReward__RewardTracker);
+    FUN_?(&TypeInfo__TimedPlayReward__RewardTracker);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pTVar1 = TypeInfo__TimedPlayReward__RewardTracker->static_fields;
@@ -67,8 +70,8 @@ void Assembly-CSharp.dll::GoldRewardNotification::GoldRewardNotification_RewardC
       (*(pAVar2->fields)._._.invoke_impl)
                 ((pAVar2->fields)._._.method_code,(pAVar2->fields)._._.method);
     }
-    iVar3 = (*(code *)(this->klass->vtable).get_Lifetime.method)
-                      (this,(this->klass->vtable).Initialize.methodPtr);
+    iVar3 = (*(this->klass->vtable).get_Lifetime.methodPtr)
+                      (this,(this->klass->vtable).get_Lifetime.method);
     (this->fields)._.timeSinceStart = (float)(iVar3 + 1);
   }
   return;

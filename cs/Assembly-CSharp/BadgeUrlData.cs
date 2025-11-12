@@ -5,6 +5,7 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using UnityEngine.Scripting;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
@@ -21,6 +22,7 @@ public class BadgeUrlData
 	public int FriendsLimit { get; set; }
 
 	// Constructors
+	[Preserve]
 	public BadgeUrlData();
 	public BadgeUrlData(int level, string url);
 

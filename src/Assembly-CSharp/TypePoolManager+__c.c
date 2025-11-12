@@ -5,15 +5,25 @@ Type * Assembly-CSharp.dll::TypePoolManager+<>c::TypePoolManager_c__Awake_b__2_0
                  (TypePoolManager_c *this,Pool *p,MethodInfo *method)
 
 {
-  if ((p != (Pool *)0x0) && (this_00 = (p->fields).prefab, this_00 != (MonoBehaviour *)0x0)) {
-    pTVar1 = mscorlib.dll::System::Object::Object_GetType((Object *)this_00,(MethodInfo *)0x0);
-    return pTVar1;
+  if ((p != (Pool *)0x0) &&
+     (pMVar1 = (p->fields).prefab, this = (TypePoolManager_c *)0x0, pMVar1 != (MonoBehaviour *)0x0))
+  {
+    pIVar2 = &(pMVar1->klass->_0).byval_arg;
+    apTStackX_10[0] = (Type *)0x0;
+    pIStackX_8 = pIVar2;
+    cVar3 = FUN_?(pIVar2,&pIStackX_8,apTStackX_10);
+    if (cVar3 != '\0') {
+      return apTStackX_10[0];
+    }
+    lVar4 = FUN_?(uRam_?);
+    *(Il2CppType **)(lVar4 + 0x10) = pIVar2;
+    pTVar5 = (Type *)FUN_?();
+    return pTVar5;
   }
-  uVar2 = func_?(&puStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  pTVar1 = (Type *)(*pcVar4)();
-  return pTVar1;
+  FUN_?(this);
+  pcVar6 = (code *)swi(3);
+  pTVar5 = (Type *)(*pcVar6)();
+  return pTVar5;
 }
 
 
@@ -23,15 +33,26 @@ void Assembly-CSharp.dll::TypePoolManager+<>c::TypePoolManager_c__cctor(MethodIn
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__TypePoolManager____c);
+    FUN_?(&TypeInfo__TypePoolManager____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__TypePoolManager____c;
-  value = (TypePoolManager_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  TypeInfo__TypePoolManager____c->static_fields->__9 = value;
-  func_?(TypeInfo__TypePoolManager____c->static_fields,value);
+  pTVar1 = (TypePoolManager_c *)FUN_?(TypeInfo__TypePoolManager____c);
+  TypeInfo__TypePoolManager____c->static_fields->__9 = pTVar1;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)TypeInfo__TypePoolManager____c->static_fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 

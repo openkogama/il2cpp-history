@@ -8,23 +8,28 @@ void Assembly-CSharp.dll::GameEventManager+GameStateManager::
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&
+                  MethodInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>__set_ValueSet_MV__Common__MVGameStateType_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (GameEventManager_GameEventSubscribableVariable_1_System_Int32Enum_ *)
-            (this->fields).gameStateType;
-  if (this_00 != (GameEventManager_GameEventSubscribableVariable_1_System_Int32Enum_ *)0x0) {
-    GameEventManager+GameEventSubscribableVariable`1[System::Int32Enum]::
-    GameEventManager_GameEventSubscribableVariable_1_System_Int32Enum__set_ValueSet
-              (this_00,gameState,
-               MethodInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>__set_ValueSet_MV__Common__MVGameStateType_
-              );
+  pGVar1 = (this->fields).gameStateType;
+  if (pGVar1 != (GameEventManager_GameEventSubscribableVariable_1_MV_Common_MVGameStateType_ *)0x0)
+  {
+    pAVar2 = (pGVar1->fields)._.OnChange;
+    (pGVar1->fields)._.value = gameState;
+    if (pAVar2 != (Action_1_MV_Common_MVGameStateType_ *)0x0) {
+      pAVar2 = (pGVar1->fields)._.OnChange;
+      (*(pAVar2->fields)._._.invoke_impl)
+                ((pAVar2->fields)._._.method_code,gameState,(pAVar2->fields)._._.method);
+    }
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -36,29 +41,38 @@ void Assembly-CSharp.dll::GameEventManager+GameStateManager::GameEventManager_Ga
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>__GameEventSubscribableVariable_MV__Common__MVGameStateType_
-                   );
-    func_?(&
-                    TypeInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>
-                   );
+    FUN_?(&
+                  MethodInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>__GameEventSubscribableVariable_MV__Common__MVGameStateType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (GameEventManager_GameEventSubscribableVariable_1_System_Int32Enum_ *)
-            func_?(
-                           TypeInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>
-                           );
-  GameEventManager+GameEventSubscribableVariable`1[System::Int32Enum]::
-  GameEventManager_GameEventSubscribableVariable_1_System_Int32Enum___ctor
-            (this_00,0,
-             MethodInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>__GameEventSubscribableVariable_MV__Common__MVGameStateType_
-            );
-  method_00 = (MethodInfo *)&(this->fields).gameStateType;
-  (this->fields).gameStateType =
-       (GameEventManager_GameEventSubscribableVariable_1_MV_Common_MVGameStateType_ *)this_00;
-  func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  pGVar1 = (GameEventManager_GameEventSubscribableVariable_1_MV_Common_MVGameStateType_ *)
+           FUN_?(
+                        TypeInfo__GameEventManager__GameEventSubscribableVariable<MV::Common::MVGameStateType>
+                        );
+  bVar2 = iRam_? != 0;
+  (pGVar1->fields)._.value = 0;
+  (this->fields).gameStateType = pGVar1;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).gameStateType >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
   return;
 }
 

@@ -7,20 +7,32 @@ void Assembly-CSharp.dll::TakeDamageEventArgs::TakeDamageEventArgs__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__EventArgs);
+    FUN_?(&TypeInfo__System__EventArgs);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__EventArgs);
+  if (*(int *)&(TypeInfo__System__EventArgs->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-  UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor
-            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
-  (this->fields).damageSource = damageDealer;
+  bVar1 = iRam_? != 0;
   (this->fields).damage = amount;
-  func_?(&(this->fields).damageSource,damageDealer);
-  (this->fields).damageType = (undefined1)damageType;
+  (this->fields).damageSource = damageDealer;
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).damageSource >> 0xc);
+    uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+    do {
+      uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+      puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  (this->fields).damageType = (uint8_t)damageType;
   return;
 }
 

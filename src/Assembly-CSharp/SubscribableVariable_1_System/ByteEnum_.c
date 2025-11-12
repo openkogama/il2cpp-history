@@ -7,9 +7,7 @@ void Assembly-CSharp.dll::SubscribableVariable`1[System::ByteEnum]::
                MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  (this->fields)._.value = (undefined1)value;
+  (this->fields)._.value = (uint8_t)value;
   return;
 }
 
@@ -26,8 +24,11 @@ void Assembly-CSharp.dll::SubscribableVariable`1[System::ByteEnum]::
   (this->fields)._.value = (uint8_t)value;
   if (pAVar1 != (Action_1_ByteEnum_ *)0x0) {
     pAVar1 = (this->fields)._.OnChange;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,value,(pAVar1->fields)._._.method);
+    return;
   }
   return;
 }

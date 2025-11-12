@@ -7,75 +7,116 @@ void Assembly-CSharp.dll::InputToPlayerMovementAndroid::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
-    func_?(&TypeInfo__IPlayModeUI);
-    func_?(&TypeInfo__MVInputWrapper);
-    func_?(&StringLiteral_Vertical);
-    func_?(&StringLiteral_Horizontal);
+    FUN_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__IPlayModeUI);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVInputWrapper);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Vertical);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Horizontal);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
-  if (pIVar1 == (IPlayModeUI *)0x0) {
-    func_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
+  if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField !=
+      (IPlayModeUI *)0x0) {
+    cVar1 = FUN_?(7);
+    if (cVar1 == '\0') {
+      if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      bVar2 = MVInputWrapper::MVInputWrapper_get_IsInGameInputSuppressed((MethodInfo *)0x0);
+      if (bVar2 == 0) {
+        if (*(int *)&(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
+                     _1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pSVar3 = StringLiteral_Vertical;
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
+                     _1).field_0x1c == 0) {
+          FUN_?();
+        }
+        fVar4 = UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::
+                CrossPlatformInputManager_GetAxis_1(pSVar3,0,(MethodInfo *)0x0);
+        pSVar3 = StringLiteral_Horizontal;
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
+                     _1).field_0x1c == 0) {
+          FUN_?();
+        }
+        fVar5 = UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::
+                CrossPlatformInputManager_GetAxis_1(pSVar3,0,(MethodInfo *)0x0);
+        (this->fields).direction.x = (float)(int)(ulonglong)(uint)fVar5;
+        (this->fields).direction.y = (float)(int)((ulonglong)(uint)fVar5 >> 0x20);
+        (this->fields).direction.z = fVar4;
+        if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVInputWrapper);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
+                          (KogamaControls__Enum_Jump,KeyState__Enum_Pressed,(MethodInfo *)0x0);
+        if (bVar2 == 0) {
+          if (fromFrameUpdate != 0) {
+            return;
+          }
+        }
+        else {
+          if (fromFrameUpdate != 0) {
+            (this->fields).jumpFrameUpdate = 1;
+            return;
+          }
+          (this->fields).jumpFixedUpdate = 1;
+        }
+        bVar2 = 1;
+        if ((this->fields).jumpFrameUpdate == 0) {
+          bVar2 = (this->fields).jumpFixedUpdate;
+        }
+        (this->fields).jump = bVar2 != 0;
+        (this->fields).jumpFrameUpdate = 0;
+        (this->fields).jumpFixedUpdate = 0;
+        return;
+      }
+    }
     return;
   }
-  cVar3 = func_?(7,TypeInfo__IPlayModeUI,pIVar1);
-  if (cVar3 == '\0') {
-    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MVInputWrapper);
-    }
-    bVar4 = MVInputWrapper::MVInputWrapper_get_IsInGameInputSuppressed((MethodInfo *)0x0);
-    if (bVar4 == 0) {
-      if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-          cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager
-                       );
-      }
-      fVar5 = UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::
-              CrossPlatformInputManager_GetAxis(StringLiteral_Vertical,(MethodInfo *)0x0);
-      fVar6 = UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::
-              CrossPlatformInputManager_GetAxis(StringLiteral_Horizontal,(MethodInfo *)0x0);
-      (this->fields).direction.x = (float)(int)(ulonglong)(uint)fVar6;
-      (this->fields).direction.y = (float)(int)((ulonglong)(uint)fVar6 >> 0x20);
-      (this->fields).direction.z = fVar5;
-      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MVInputWrapper);
-      }
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__MVInputWrapper);
-        cRam_? = '\x01';
-      }
-      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MVInputWrapper);
-      }
-      bVar4 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
-                        (KogamaControls__Enum_Jump,KeyState__Enum_Pressed,(MethodInfo *)0x0);
-      if (bVar4 == 0) {
-        if (fromFrameUpdate == 0) goto code_?;
-      }
-      else {
-        if (fromFrameUpdate == 0) {
-          (this->fields).jumpFixedUpdate = 1;
-code_?:
-          bVar4 = 1;
-          if ((this->fields).jumpFrameUpdate == 0) {
-            bVar4 = (this->fields).jumpFixedUpdate;
-          }
-          (this->fields).jump = bVar4 != 0;
-          (this->fields).jumpFrameUpdate = 0;
-          (this->fields).jumpFixedUpdate = 0;
-          return;
-        }
-        (this->fields).jumpFrameUpdate = 1;
-      }
-    }
-  }
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -87,7 +128,9 @@ void Assembly-CSharp.dll::InputToPlayerMovementAndroid::InputToPlayerMovementAnd
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;

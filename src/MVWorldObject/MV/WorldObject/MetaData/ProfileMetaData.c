@@ -10,13 +10,12 @@ bool MVWorldObject.dll::MV::WorldObject::MetaData::ProfileMetaData::
   }
   uVar1 = func_?(&TypeInfo__System__Exception);
   this_00 = (Exception *)func_?(uVar1);
-  method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral_Can_t_serialize_meta_data__Not_i);
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
-  func_?(&
-                  MethodInfo__MV__WorldObject__MetaData__ProfileMetaData__ShouldSerializeFirstTimeState__
-                 );
-  func_?(this_00);
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
+  uVar1 = func_?(&
+                              MethodInfo__MV__WorldObject__MetaData__ProfileMetaData__ShouldSerializeFirstTimeState__
+                             );
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   bVar3 = (*pcVar2)();
   return bVar3;
@@ -34,13 +33,12 @@ bool MVWorldObject.dll::MV::WorldObject::MetaData::ProfileMetaData::
   }
   uVar1 = func_?(&TypeInfo__System__Exception);
   this_00 = (Exception *)func_?(uVar1);
-  method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral_Can_t_serialize_meta_data__Not_i);
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
-  func_?(&
-                  MethodInfo__MV__WorldObject__MetaData__ProfileMetaData__ShouldSerializeProfileHighlightState__
-                 );
-  func_?(this_00);
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
+  uVar1 = func_?(&
+                              MethodInfo__MV__WorldObject__MetaData__ProfileMetaData__ShouldSerializeProfileHighlightState__
+                             );
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   bVar3 = (*pcVar2)();
   return bVar3;
@@ -58,13 +56,12 @@ bool MVWorldObject.dll::MV::WorldObject::MetaData::ProfileMetaData::
   }
   uVar1 = func_?(&TypeInfo__System__Exception);
   this_00 = (Exception *)func_?(uVar1);
-  method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral_Can_t_serialize_meta_data__Not_i);
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
-  func_?(&
-                  MethodInfo__MV__WorldObject__MetaData__ProfileMetaData__ShouldSerializeProfileSettingsState__
-                 );
-  func_?(this_00);
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
+  uVar1 = func_?(&
+                              MethodInfo__MV__WorldObject__MetaData__ProfileMetaData__ShouldSerializeProfileSettingsState__
+                             );
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   bVar3 = (*pcVar2)();
   return bVar3;
@@ -82,12 +79,12 @@ bool MVWorldObject.dll::MV::WorldObject::MetaData::ProfileMetaData::
   }
   uVar1 = func_?(&TypeInfo__System__Exception);
   this_00 = (Exception *)func_?(uVar1);
-  method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral_Can_t_serialize_meta_data__Not_i);
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
-  func_?(&MethodInfo__MV__WorldObject__MetaData__ProfileMetaData__ShouldSerializeTestData__
-                 );
-  func_?(this_00);
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
+  uVar1 = func_?(&
+                              MethodInfo__MV__WorldObject__MetaData__ProfileMetaData__ShouldSerializeTestData__
+                             );
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   bVar3 = (*pcVar2)();
   return bVar3;
@@ -101,45 +98,80 @@ void MVWorldObject.dll::MV::WorldObject::MetaData::ProfileMetaData::ProfileMetaD
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__MetaData__FirstTimeState);
-    func_?(&
-                    TypeInfo__MV__WorldObject__HighlightSystem__HighlightPayloads__ProfileHighlightState
-                   );
-    func_?(&TypeInfo__MV__WorldObject__MetaData__ProfileSettingsState);
+    FUN_?(&TypeInfo__MV__WorldObject__MetaData__FirstTimeState);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__MV__WorldObject__HighlightSystem__HighlightPayloads__ProfileHighlightState
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__MetaData__ProfileSettingsState);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   (this->fields).IsInitialized = 1;
-  value = (FirstTimeState *)func_?(TypeInfo__MV__WorldObject__MetaData__FirstTimeState);
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Collections__BitArray);
-    cRam_? = '\x01';
+  this_00 = (FirstTimeState *)FUN_?(TypeInfo__MV__WorldObject__MetaData__FirstTimeState);
+  FirstTimeState::FirstTimeState__ctor(this_00,(MethodInfo *)0x0);
+  bVar1 = iRam_? != 0;
+  (this->fields).FirstTimeState = this_00;
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).FirstTimeState >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
   }
-  this_00 = (BitArray *)func_?(TypeInfo__System__Collections__BitArray);
-  mscorlib.dll::System::Collections::BitArray::BitArray__ctor(this_00,0,(MethodInfo *)0x0);
-  method_00 = (MethodInfo *)&value->fields;
-  (value->fields).bitArray = this_00;
-  func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,method_00);
-  (this->fields).FirstTimeState = value;
-  func_?(&(this->fields).FirstTimeState,value);
   this_01 = (ProfileHighlightState *)
-            func_?(
-                           TypeInfo__MV__WorldObject__HighlightSystem__HighlightPayloads__ProfileHighlightState
-                           );
+            FUN_?(
+                         TypeInfo__MV__WorldObject__HighlightSystem__HighlightPayloads__ProfileHighlightState
+                         );
   HighlightSystem::HighlightPayloads::ProfileHighlightState::ProfileHighlightState__ctor
             (this_01,(MethodInfo *)0x0);
+  bVar1 = iRam_? != 0;
   (this->fields).ProfileHighlightState = this_01;
-  func_?(&(this->fields).ProfileHighlightState,this_01);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).ProfileHighlightState >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   this_02 = (ProfileSettingsState *)
-            func_?(TypeInfo__MV__WorldObject__MetaData__ProfileSettingsState);
+            FUN_?(TypeInfo__MV__WorldObject__MetaData__ProfileSettingsState);
   ProfileSettingsState::ProfileSettingsState__ctor(this_02,(MethodInfo *)0x0);
+  bVar1 = iRam_? != 0;
   (this->fields).ProfileSettingsState = this_02;
-  func_?();
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).ProfileSettingsState >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   (this->fields).serializeFlags = 0x7f;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,
-             (MethodInfo *)&(this->fields).ProfileSettingsState);
   return;
 }
 
@@ -151,47 +183,81 @@ void MVWorldObject.dll::MV::WorldObject::MetaData::ProfileMetaData::ProfileMetaD
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__MetaData__FirstTimeState);
-    func_?(&
-                    TypeInfo__MV__WorldObject__HighlightSystem__HighlightPayloads__ProfileHighlightState
-                   );
-    func_?(&TypeInfo__MV__WorldObject__MetaData__ProfileSettingsState);
+    FUN_?(&TypeInfo__MV__WorldObject__MetaData__FirstTimeState);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__MV__WorldObject__HighlightSystem__HighlightPayloads__ProfileHighlightState
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__MetaData__ProfileSettingsState);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   (this->fields).IsInitialized = 1;
-  value = (FirstTimeState *)func_?(TypeInfo__MV__WorldObject__MetaData__FirstTimeState);
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Collections__BitArray);
-    cRam_? = '\x01';
+  this_00 = (FirstTimeState *)FUN_?(TypeInfo__MV__WorldObject__MetaData__FirstTimeState);
+  FirstTimeState::FirstTimeState__ctor(this_00,(MethodInfo *)0x0);
+  bVar1 = iRam_? != 0;
+  (this->fields).FirstTimeState = this_00;
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).FirstTimeState >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
   }
-  this_00 = (BitArray *)func_?(TypeInfo__System__Collections__BitArray);
-  mscorlib.dll::System::Collections::BitArray::BitArray__ctor(this_00,0,(MethodInfo *)0x0);
-  method_00 = (MethodInfo *)&value->fields;
-  (value->fields).bitArray = this_00;
-  func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,method_00);
-  (this->fields).FirstTimeState = value;
-  func_?(&(this->fields).FirstTimeState,value);
   this_01 = (ProfileHighlightState *)
-            func_?(
-                           TypeInfo__MV__WorldObject__HighlightSystem__HighlightPayloads__ProfileHighlightState
-                           );
+            FUN_?(
+                         TypeInfo__MV__WorldObject__HighlightSystem__HighlightPayloads__ProfileHighlightState
+                         );
   HighlightSystem::HighlightPayloads::ProfileHighlightState::ProfileHighlightState__ctor
             (this_01,(MethodInfo *)0x0);
+  bVar1 = iRam_? != 0;
   (this->fields).ProfileHighlightState = this_01;
-  func_?(&(this->fields).ProfileHighlightState,this_01);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).ProfileHighlightState >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   this_02 = (ProfileSettingsState *)
-            func_?(TypeInfo__MV__WorldObject__MetaData__ProfileSettingsState);
+            FUN_?(TypeInfo__MV__WorldObject__MetaData__ProfileSettingsState);
   ProfileSettingsState::ProfileSettingsState__ctor(this_02,(MethodInfo *)0x0);
+  bVar1 = iRam_? != 0;
   (this->fields).ProfileSettingsState = this_02;
-  func_?();
-  (this->fields).serializeFlags = 0x7f;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,
-             (MethodInfo *)&(this->fields).ProfileSettingsState);
-  isInitialized = (bool)this_02;
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).ProfileSettingsState >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   (this->fields).IsInitialized = isInitialized;
+  (this->fields).serializeFlags = 0x7f;
   return;
 }
 

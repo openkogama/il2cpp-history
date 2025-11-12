@@ -2,30 +2,32 @@
 /* ConstraintBoxChangedEventArgs(Vector3, IntVector, IntVector) */
 
 void Assembly-CSharp.dll::ConstraintBoxChangedEventArgs::ConstraintBoxChangedEventArgs__ctor
-               (ConstraintBoxChangedEventArgs *this,Vector3 center,IntVector minCorner,
-               IntVector maxCorner,MethodInfo *method)
+               (ConstraintBoxChangedEventArgs *this,Vector3 *center,IntVector *minCorner,
+               IntVector *maxCorner,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__EventArgs);
+    FUN_?(&TypeInfo__System__EventArgs);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__EventArgs);
+  if (*(int *)&(TypeInfo__System__EventArgs->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-  UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor
-            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
-  (this->fields).Center.x = center.x;
-  (this->fields).Center.y = center.y;
-  (this->fields).Center.z = center.z;
-  (this->fields).MinCorner.x = minCorner.x;
-  (this->fields).MinCorner.y = minCorner.y;
-  (this->fields).MinCorner.z = minCorner.z;
-  (this->fields).MaxCorner.x = maxCorner.x;
-  (this->fields).MaxCorner.y = maxCorner.y;
-  (this->fields).MaxCorner.z = maxCorner.z;
+  fVar1 = center->z;
+  fVar2 = center->y;
+  (this->fields).Center.x = center->x;
+  (this->fields).Center.y = fVar2;
+  (this->fields).Center.z = fVar1;
+  iVar3 = minCorner->y;
+  (this->fields).MinCorner.x = minCorner->x;
+  (this->fields).MinCorner.y = iVar3;
+  (this->fields).MinCorner.z = minCorner->z;
+  iVar3 = maxCorner->y;
+  (this->fields).MaxCorner.x = maxCorner->x;
+  (this->fields).MaxCorner.y = iVar3;
+  (this->fields).MaxCorner.z = maxCorner->z;
   return;
 }
 

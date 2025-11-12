@@ -6,167 +6,362 @@ bool Assembly-CSharp.dll::GameMeterVisuals::GameMeterUpdatedEffect+<AnimateScale
                (GameMeterUpdatedEffect_AnimateScale_d_6 *this,MethodInfo *method)
 
 {
-  this_00 = unaff_EBX;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
-    cRam_? = '\x01';
-  }
-  pGVar1 = this;
-  pGVar2 = (this->fields).__4__this;
-  switch((this->fields).__1__state) {
-  case 0:
+  pGVar1 = (this->fields).__4__this;
+  iVar2 = (this->fields).__1__state;
+  pOVar3 = (Object *)0x0;
+  if (iVar2 == 0) {
     (this->fields).__1__state = -1;
     (this->fields)._i_5__2 = 0.0;
-    break;
-  case 1:
-    (this->fields).__1__state = -1;
-    this = (GameMeterUpdatedEffect_AnimateScale_d_6 *)(this->fields)._i_5__2;
-    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    (pGVar1->fields)._i_5__2 = fVar3 + (float)this;
-    break;
-  case 2:
-    (this->fields).__1__state = -1;
-    this = (GameMeterUpdatedEffect_AnimateScale_d_6 *)(this->fields)._i_5__2;
-    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    (pGVar1->fields)._i_5__2 = fVar3 + (float)this;
-    if (pGVar2 == (GameMeterUpdatedEffect *)0x0) goto code_?;
-    goto code_?;
-  case 3:
-    (this->fields).__1__state = -1;
-  default:
-    return 0;
-  }
-  if (pGVar2 != (GameMeterUpdatedEffect *)0x0) {
-    fVar3 = (pGVar2->fields).scaleTime;
-    pfVar4 = &(pGVar1->fields)._i_5__2;
-    pRVar5 = (pGVar2->fields).scaleTarget;
-    if (fVar3 < *pfVar4 || fVar3 == *pfVar4) {
-      if (pRVar5 != (RectTransform *)0x0) {
-        unaff_EBX = (NotSupportedException *)
-                    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              ((Component *)pRVar5,(MethodInfo *)0x0);
-        uStack_6._0_4_ = (pGVar2->fields).startSize.x;
-        uStack_6._4_4_ = (pGVar2->fields).startSize.y;
-        fStack_7 = (pGVar2->fields).startSize.z;
-        puVar8 = (undefined8 *)func_?(&stack0xffffffd8,0);
-        fVar3 = (pGVar2->fields).scaleStrength;
-        uStack_9._0_4_ = (float)*puVar8;
-        uStack_9._4_4_ = (float)((ulonglong)*puVar8 >> 0x20);
-        fVar10 = (float)uStack_6 + (float)uStack_9 * fVar3;
-        fStack_11 = fStack_7 + *(float *)(puVar8 + 1) * fVar3;
-        fVar3 = uStack_6._4_4_ + uStack_9._4_4_ * fVar3;
-        uStack_9 = CONCAT44(fVar3,fVar10);
-        if (unaff_EBX != (NotSupportedException *)0x0) {
-          value_00.y = fVar3;
-          value_00.x = fVar10;
-          value_00.z = fStack_11;
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                    ((Transform *)unaff_EBX,value_00,(MethodInfo *)0x0);
-          (pGVar1->fields)._i_5__2 = 0.0;
 code_?:
-          fVar3 = (pGVar2->fields).scaleTime;
-          pfVar4 = &(pGVar1->fields)._i_5__2;
-          pRVar5 = (pGVar2->fields).scaleTarget;
-          if (fVar3 < *pfVar4 || fVar3 == *pfVar4) {
-            if ((pRVar5 != (RectTransform *)0x0) &&
-               (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                          Component_get_transform((Component *)pRVar5,(MethodInfo *)0x0),
-               pTVar12 != (Transform *)0x0)) {
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                        (pTVar12,(pGVar2->fields).startSize,(MethodInfo *)0x0);
-              this = (GameMeterUpdatedEffect_AnimateScale_d_6 *)0x0;
-              pOVar13 = (Object *)func_?(TypeInfo__System__Int32,&this);
-              (pGVar1->fields).__2__current = pOVar13;
-              func_?(&(pGVar1->fields).__2__current,pOVar13);
-              (pGVar1->fields).__1__state = 3;
-              return 1;
+    if (pGVar1 == (GameMeterUpdatedEffect *)0x0) goto code_?;
+    fVar4 = (pGVar1->fields).scaleTime;
+    pfVar5 = &(this->fields)._i_5__2;
+    pRVar6 = (pGVar1->fields).scaleTarget;
+    if (*pfVar5 <= fVar4 && fVar4 != *pfVar5) {
+      if (pRVar6 != (RectTransform *)0x0) {
+        pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)pRVar6,(MethodInfo *)0x0);
+        uStack_8._0_4_ = (pGVar1->fields).startSize.x;
+        uStack_8._4_4_ = (pGVar1->fields).startSize.y;
+        fStack_9 = (pGVar1->fields).startSize.z;
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Vector3);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pVVar10 = TypeInfo__UnityEngine__Vector3->static_fields;
+        fVar4 = ((this->fields)._i_5__2 / (pGVar1->fields).scaleTime) *
+                 (pGVar1->fields).scaleStrength;
+        uVar11 = (pVVar10->oneVector).x;
+        fStack_9 = (pVVar10->oneVector).z * fVar4 + fStack_9;
+        if (pTVar7 == (Transform *)0x0) {
+          FUN_?();
+          pcVar12 = (code *)swi(3);
+          bVar13 = (*pcVar12)();
+          return bVar13;
+        }
+        uStack_8 = CONCAT44((pVVar10->oneVector).y * fVar4 + uStack_8._4_4_,
+                             (float)uVar11 * fVar4 + (float)uStack_8);
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pvVar14 = (pTVar7->fields)._._.m_CachedPtr;
+        if (pvVar14 != (void *)0x0) {
+          pcVar12 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
+            uVar15 = func_?(&UNK_?);
+            FUN_?(uVar15,0);
+            pcVar12 = (code *)swi(3);
+            bVar13 = (*pcVar12)();
+            return bVar13;
+          }
+          pcRam_? = pcVar12;
+          (*pcRam_?)(pvVar14,&uStack_8);
+          lVar16 = lRam_?;
+          uStackX_8 = 0;
+          if (*(int *)(lRam_? + 0x28) < 0) {
+            if ((*(longlong *)(lRam_? + 0x60) == 0) ||
+               ((*(byte *)(lRam_? + 0x135) & 8) == 0)) {
+              pOVar3 = (Object *)FUN_?(lRam_?);
+              FUN_?(pOVar3 + 1,&uStackX_8,(longlong)*(int *)(lVar16 + 0xf8) + -0x10);
+              if (iRam_? != 0) {
+                uVar17 = (uint)((ulonglong)(pOVar3 + 1) >> 0xc);
+                uVar18 = (ulonglong)((uVar17 & 0x1fffff) >> 6);
+                do {
+                  uVar19 = *(ulonglong *)(uVar18 * 8 + 0xADDR);
+                  puVar20 = (ulonglong *)(uVar18 * 8 + 0xADDR);
+                  LOCK();
+                  bVar21 = uVar19 == *puVar20;
+                  if (bVar21) {
+                    *puVar20 = uVar19 | 1L << (uVar17 & 0x3f);
+                  }
+                  UNLOCK();
+                } while (!bVar21);
+              }
             }
           }
-          else if ((pRVar5 != (RectTransform *)0x0) &&
-                  (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                             Component_get_transform((Component *)pRVar5,(MethodInfo *)0x0),
-                  pTVar12 != (Transform *)0x0)) {
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                      ((Vector3 *)&stack0xffffffd8,pTVar12,(MethodInfo *)0x0);
-            this = (GameMeterUpdatedEffect_AnimateScale_d_6 *)0x0;
-            pOVar13 = (Object *)func_?(TypeInfo__System__Int32,&this);
-            (pGVar1->fields).__2__current = pOVar13;
-            func_?(&(pGVar1->fields).__2__current,pOVar13);
-            (pGVar1->fields).__1__state = 2;
-            return 1;
+          else {
+            pOVar3 = (Object *)((ulonglong)uStackX_c << 0x20);
           }
+          bVar21 = iRam_? != 0;
+          (this->fields).__2__current = pOVar3;
+          if (bVar21) {
+            uVar17 = (uint)((ulonglong)&(this->fields).__2__current >> 0xc);
+            uVar18 = (ulonglong)((uVar17 & 0x1fffff) >> 6);
+            do {
+              uVar19 = *(ulonglong *)(uVar18 * 8 + 0xADDR);
+              puVar20 = (ulonglong *)(uVar18 * 8 + 0xADDR);
+              LOCK();
+              bVar21 = uVar19 == *puVar20;
+              if (bVar21) {
+                *puVar20 = uVar19 | 1L << (uVar17 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar21);
+          }
+          (this->fields).__1__state = 1;
+          return 1;
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+        pcVar12 = (code *)swi(3);
+        bVar13 = (*pcVar12)();
+        return bVar13;
+      }
+      goto code_?;
+    }
+    if (pRVar6 == (RectTransform *)0x0) goto code_?;
+    pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)pRVar6,(MethodInfo *)0x0);
+    uStack_8._0_4_ = (pGVar1->fields).startSize.x;
+    uStack_8._4_4_ = (pGVar1->fields).startSize.y;
+    fStack_9 = (pGVar1->fields).startSize.z;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    fVar4 = (pGVar1->fields).scaleStrength;
+    pVVar10 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar22 = (pVVar10->oneVector).x;
+    fStack_9 = (pVVar10->oneVector).z * fVar4 + fStack_9;
+    if (pTVar7 == (Transform *)0x0) {
+      FUN_?();
+      pcVar12 = (code *)swi(3);
+      bVar13 = (*pcVar12)();
+      return bVar13;
+    }
+    uStack_8 = CONCAT44((pVVar10->oneVector).y * fVar4 + uStack_8._4_4_,
+                         (float)uVar22 * fVar4 + (float)uStack_8);
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar14 = (pTVar7->fields)._._.m_CachedPtr;
+    if (pvVar14 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+      pcVar12 = (code *)swi(3);
+      bVar13 = (*pcVar12)();
+      return bVar13;
+    }
+    pcVar12 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
+      uVar15 = func_?(&UNK_?);
+      FUN_?(uVar15,0);
+      pcVar12 = (code *)swi(3);
+      bVar13 = (*pcVar12)();
+      return bVar13;
+    }
+    pcRam_? = pcVar12;
+    (*pcRam_?)(pvVar14);
+    (this->fields)._i_5__2 = 0.0;
+  }
+  else {
+    if (iVar2 == 1) {
+      fVar4 = (this->fields)._i_5__2;
+      (this->fields).__1__state = -1;
+      fVar23 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
+                         ((MethodInfo *)0x0);
+      (this->fields)._i_5__2 = fVar23 + fVar4;
+      goto code_?;
+    }
+    if (iVar2 != 2) {
+      if (iVar2 == 3) {
+        (this->fields).__1__state = -1;
+        return 0;
+      }
+      return 0;
+    }
+    fVar4 = (this->fields)._i_5__2;
+    (this->fields).__1__state = -1;
+    fVar23 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+    (this->fields)._i_5__2 = fVar23 + fVar4;
+    if (pGVar1 == (GameMeterUpdatedEffect *)0x0) goto code_?;
+  }
+  fVar4 = (pGVar1->fields).scaleTime;
+  pfVar5 = &(this->fields)._i_5__2;
+  pRVar6 = (pGVar1->fields).scaleTarget;
+  if (fVar4 < *pfVar5 || fVar4 == *pfVar5) {
+    if ((pRVar6 == (RectTransform *)0x0) ||
+       (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)pRVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0)) {
+      FUN_?();
+      pcVar12 = (code *)swi(3);
+      bVar13 = (*pcVar12)();
+      return bVar13;
+    }
+    uStack_8._0_4_ = (pGVar1->fields).startSize.x;
+    uStack_8._4_4_ = (pGVar1->fields).startSize.y;
+    fStack_9 = (pGVar1->fields).startSize.z;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar14 = (pTVar7->fields)._._.m_CachedPtr;
+    if (pvVar14 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+      pcVar12 = (code *)swi(3);
+      bVar13 = (*pcVar12)();
+      return bVar13;
+    }
+    pcVar12 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
+      uVar15 = func_?(&UNK_?);
+      FUN_?(uVar15,0);
+      pcVar12 = (code *)swi(3);
+      bVar13 = (*pcVar12)();
+      return bVar13;
+    }
+    pcRam_? = pcVar12;
+    (*pcRam_?)(pvVar14,&uStack_8);
+    lVar16 = lRam_?;
+    uStackX_8 = 0;
+    if (*(int *)(lRam_? + 0x28) < 0) {
+      if ((*(longlong *)(lRam_? + 0x60) == 0) ||
+         ((*(byte *)(lRam_? + 0x135) & 8) == 0)) {
+        pOVar3 = (Object *)FUN_?(lRam_?);
+        FUN_?(pOVar3 + 1,&uStackX_8,(longlong)*(int *)(lVar16 + 0xf8) + -0x10);
+        if (iRam_? != 0) {
+          uVar17 = (uint)((ulonglong)(pOVar3 + 1) >> 0xc);
+          uVar18 = (ulonglong)((uVar17 & 0x1fffff) >> 6);
+          do {
+            uVar19 = *(ulonglong *)(uVar18 * 8 + 0xADDR);
+            puVar20 = (ulonglong *)(uVar18 * 8 + 0xADDR);
+            LOCK();
+            bVar21 = uVar19 == *puVar20;
+            if (bVar21) {
+              *puVar20 = uVar19 | 1L << (uVar17 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar21);
         }
       }
     }
-    else if (pRVar5 != (RectTransform *)0x0) {
-      pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                          ((Component *)pRVar5,(MethodInfo *)0x0);
-      uStack_9._0_4_ = (pGVar2->fields).startSize.x;
-      uStack_9._4_4_ = (pGVar2->fields).startSize.y;
-      fStack_11 = (pGVar2->fields).startSize.z;
-      puVar8 = (undefined8 *)func_?(&stack0xffffffd8,0);
-      uVar14 = *puVar8;
-      fStack_7 = *(float *)(puVar8 + 1);
-      uStack_6._0_4_ = (float)uVar14;
-      fVar3 = ((pGVar1->fields)._i_5__2 / (pGVar2->fields).scaleTime) *
-               (pGVar2->fields).scaleStrength;
-      uStack_6._4_4_ = (float)((ulonglong)uVar14 >> 0x20);
-      fVar10 = (float)uStack_9 + (float)uStack_6 * fVar3;
-      fStack_11 = fStack_11 + fStack_7 * fVar3;
-      uStack_9._4_4_ = uStack_9._4_4_ + uStack_6._4_4_ * fVar3;
-      uStack_9 = CONCAT44(uStack_9._4_4_,fVar10);
-      unaff_EBX = (NotSupportedException *)0x0;
-      uStack_6 = uVar14;
-      if (pTVar12 != (Transform *)0x0) {
-        value.y = uStack_9._4_4_;
-        value.x = fVar10;
-        value.z = fStack_11;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                  (pTVar12,value,(MethodInfo *)0x0);
-        this = (GameMeterUpdatedEffect_AnimateScale_d_6 *)0x0;
-        pOVar13 = (Object *)func_?(TypeInfo__System__Int32,&this);
-        (pGVar1->fields).__2__current = pOVar13;
-        func_?(&(pGVar1->fields).__2__current,pOVar13);
-        (pGVar1->fields).__1__state = 1;
-        return 1;
+    else {
+      pOVar3 = (Object *)((ulonglong)uStackX_c << 0x20);
+    }
+    bVar21 = iRam_? != 0;
+    (this->fields).__2__current = pOVar3;
+    if (bVar21) {
+      uVar17 = (uint)((ulonglong)&(this->fields).__2__current >> 0xc);
+      uVar18 = (ulonglong)((uVar17 & 0x1fffff) >> 6);
+      do {
+        uVar19 = *(ulonglong *)(uVar18 * 8 + 0xADDR);
+        puVar20 = (ulonglong *)(uVar18 * 8 + 0xADDR);
+        LOCK();
+        bVar21 = uVar19 == *puVar20;
+        if (bVar21) {
+          *puVar20 = uVar19 | 1L << (uVar17 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar21);
+    }
+    (this->fields).__1__state = 3;
+  }
+  else {
+    if ((pRVar6 == (RectTransform *)0x0) ||
+       (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)pRVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0)) {
+code_?:
+      FUN_?();
+      pcVar12 = (code *)swi(3);
+      bVar13 = (*pcVar12)();
+      return bVar13;
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_8 = 0;
+    fStack_9 = 0.0;
+    pvVar14 = (pTVar7->fields)._._.m_CachedPtr;
+    if (pvVar14 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+      pcVar12 = (code *)swi(3);
+      bVar13 = (*pcVar12)();
+      return bVar13;
+    }
+    pcVar12 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
+      uVar15 = func_?(&UNK_?);
+      FUN_?(uVar15,0);
+      pcVar12 = (code *)swi(3);
+      bVar13 = (*pcVar12)();
+      return bVar13;
+    }
+    pcRam_? = pcVar12;
+    (*pcRam_?)(pvVar14,&uStack_8);
+    lVar16 = lRam_?;
+    uStackX_8 = 0;
+    if (*(int *)(lRam_? + 0x28) < 0) {
+      if ((*(longlong *)(lRam_? + 0x60) == 0) ||
+         ((*(byte *)(lRam_? + 0x135) & 8) == 0)) {
+        pOVar3 = (Object *)FUN_?(lRam_?);
+        FUN_?(pOVar3 + 1,&uStackX_8,(longlong)*(int *)(lVar16 + 0xf8) + -0x10);
+        if (iRam_? != 0) {
+          uVar17 = (uint)((ulonglong)(pOVar3 + 1) >> 0xc);
+          uVar18 = (ulonglong)((uVar17 & 0x1fffff) >> 6);
+          do {
+            uVar19 = *(ulonglong *)(uVar18 * 8 + 0xADDR);
+            puVar20 = (ulonglong *)(uVar18 * 8 + 0xADDR);
+            LOCK();
+            bVar21 = uVar19 == *puVar20;
+            if (bVar21) {
+              *puVar20 = uVar19 | 1L << (uVar17 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar21);
+        }
       }
     }
+    else {
+      pOVar3 = (Object *)((ulonglong)uStackX_c << 0x20);
+    }
+    bVar21 = iRam_? != 0;
+    (this->fields).__2__current = pOVar3;
+    if (bVar21) {
+      uVar17 = (uint)((ulonglong)&(this->fields).__2__current >> 0xc);
+      uVar18 = (ulonglong)((uVar17 & 0x1fffff) >> 6);
+      do {
+        uVar19 = *(ulonglong *)(uVar18 * 8 + 0xADDR);
+        puVar20 = (ulonglong *)(uVar18 * 8 + 0xADDR);
+        LOCK();
+        bVar21 = uVar19 == *puVar20;
+        if (bVar21) {
+          *puVar20 = uVar19 | 1L << (uVar17 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar21);
+    }
+    (this->fields).__1__state = 2;
   }
-code_?:
-  bVar15 = 0;
-  uVar16 = func_?();
-  out(pGVar1->klass,(short)((uint6)uVar16 >> 0x20));
-  pbVar17 = (byte *)((int)&(pGVar2->fields).startSize.x + 3);
-  bVar18 = (byte)((uint)unaff_EBX >> 8);
-  bVar19 = *pbVar17 + bVar18;
-  bVar20 = CARRY1(*pbVar17,bVar18) || CARRY1(bVar19,bVar15);
-  *pbVar17 = bVar19 + bVar15;
-  pbVar17 = (byte *)((int)uVar16 + 0x21);
-  bVar18 = (byte)((uint6)uVar16 >> 8);
-  bVar19 = *pbVar17 + bVar18;
-  bVar21 = CARRY1(*pbVar17,bVar18) || CARRY1(bVar19,bVar20);
-  *pbVar17 = bVar19 + bVar20;
-  pbVar17 = (byte *)((int)&(unaff_EBX->fields)._._._stackTraceString + 2);
-  bVar19 = *pbVar17 + (byte)unaff_EBX;
-  bVar20 = CARRY1(*pbVar17,(byte)unaff_EBX) || CARRY1(bVar19,bVar21);
-  *pbVar17 = bVar19 + bVar21;
-  ppOVar22 = &pGVar1[4].fields.__2__current;
-  bVar19 = *(byte *)ppOVar22;
-  bVar15 = (byte)((uint6)uVar16 >> 0x20);
-  bVar18 = *(char *)ppOVar22 + bVar15;
-  *(byte *)ppOVar22 = bVar18 + bVar20;
-  (**(code **)((int)&uStack_9 +
-              (uint)(CARRY1(bVar19,bVar15) || CARRY1(bVar18,bVar20)) + extraout_ECX))();
-  piVar23 = &unaff_EBX[0x131c898].fields._._._HResult;
-  *piVar23 = *piVar23 + -1;
-  mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
-            (this_00,in_stack_24);
-  uVar25 = func_?();
-  uStack_9 = CONCAT44(uVar25,&pGVar1->monitor);
-  func_?();
-  pcVar26 = (code *)swi(3);
-  bVar27 = (*pcVar26)();
-  return bVar27;
+  return 1;
 }
 
 
@@ -181,10 +376,10 @@ void Assembly-CSharp.dll::GameMeterVisuals::GameMeterUpdatedEffect+<AnimateScale
   this_00 = (NotSupportedException *)func_?(uVar1);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
-  func_?(&
-                  MethodInfo__GameMeterVisuals__GameMeterUpdatedEffect___AnimateScale_d__6__System_Collections_IEnumerator_Reset__
-                 );
-  func_?(this_00);
+  uVar1 = func_?(&
+                              MethodInfo__GameMeterVisuals__GameMeterUpdatedEffect___AnimateScale_d__6__System_Collections_IEnumerator_Reset__
+                             );
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

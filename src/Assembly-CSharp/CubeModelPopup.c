@@ -6,68 +6,164 @@ void Assembly-CSharp.dll::CubeModelPopup::CubeModelPopup_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MaterialButtonTextureGenerator_MethodInfo__UnityEngine__Object__Instantiate<MaterialButtonTextureGenerator>_MaterialButtonTextureGenerator_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&
+                  MaterialButtonTextureGenerator_MethodInfo__UnityEngine__Object__Instantiate<MaterialButtonTextureGenerator>_MaterialButtonTextureGenerator_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  bVar1 = cRam_? == '\0';
   (this->fields).materialID = currentMaterialId;
   (this->fields).woID = worldId;
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar1 != (MVNetworkGame *)0x0) &&
-     (pMVar2 = (pMVar1->fields)._MaterialRepository_k__BackingField,
-     pMVar2 != (MVMaterialRepository *)0x0)) {
-    this_00 = MVMaterialRepository::MVMaterialRepository_GetMaterial
-                        (pMVar2,currentMaterialId,(MethodInfo *)0x0);
-    if (this_00 != (MVMaterial *)0x0) {
-      bVar3 = MVMaterial::MVMaterial_get_IsDestructible(this_00,(MethodInfo *)0x0);
-      if ((bVar3 != 0) || ((this_00->fields).isUnlocked == 0)) {
-        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if ((pMVar1 == (MVNetworkGame *)0x0) ||
-           (pMVar2 = (pMVar1->fields)._MaterialRepository_k__BackingField,
-           pMVar2 == (MVMaterialRepository *)0x0)) goto code_?;
-        this_00 = MVMaterialRepository::MVMaterialRepository_GetMaterial
-                            (pMVar2,0x15,(MethodInfo *)0x0);
-        (this->fields).materialID = 0x15;
-      }
+  if (bVar1) {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((((pMVar2 != (MVGameControllerBase *)0x0) &&
+       (pMVar3 = (pMVar2->fields).game, pMVar3 != (MVNetworkGame *)0x0)) &&
+      (pMVar4 = (pMVar3->fields)._MaterialRepository_k__BackingField,
+      pMVar4 != (MVMaterialRepository *)0x0)) &&
+     (pMVar5 = MVMaterialRepository::MVMaterialRepository_GetMaterial
+                          (pMVar4,currentMaterialId,(MethodInfo *)0x0), pMVar5 != (MVMaterial *)0x0
+     )) {
+    if (((pMVar5->fields)._PhysicalProperties_k__BackingField.toughness != 0.0) ||
+       ((pMVar5->fields).isUnlocked == 0)) {
       if (cRam_? == '\0') {
-        func_?();
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      pPVar4 = TypeInfo__PrefabPool->static_fields->instance;
-      if (pPVar4 != (PrefabPool *)0x0) {
-        pMVar5 = (pPVar4->fields).materialButtonTextureGenerator;
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+      pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if (((pMVar2 == (MVGameControllerBase *)0x0) ||
+          (pMVar3 = (pMVar2->fields).game, pMVar3 == (MVNetworkGame *)0x0)) ||
+         (pMVar4 = (pMVar3->fields)._MaterialRepository_k__BackingField,
+         pMVar4 == (MVMaterialRepository *)0x0)) goto code_?;
+      pMVar5 = MVMaterialRepository::MVMaterialRepository_GetMaterial
+                          (pMVar4,0x15,(MethodInfo *)0x0);
+      (this->fields).materialID = 0x15;
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__PrefabPool);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pPVar6 = TypeInfo__PrefabPool->static_fields->instance;
+    if (pPVar6 != (PrefabPool *)0x0) {
+      pMVar7 = (pPVar6->fields).materialButtonTextureGenerator;
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      pMVar7 = (MaterialButtonTextureGenerator *)
+                UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                          ((Object *)pMVar7,
+                           MaterialButtonTextureGenerator_MethodInfo__UnityEngine__Object__Instantiate<MaterialButtonTextureGenerator>_MaterialButtonTextureGenerator_
+                          );
+      if ((pMVar7 != (MaterialButtonTextureGenerator *)0x0) &&
+         ((pMVar7->fields).previewResolution = 0xb4, pMVar5 != (MVMaterial *)0x0)) {
+        value = MaterialButtonTextureGenerator::MaterialButtonTextureGenerator_TakePicture
+                          (pMVar7,(pMVar5->fields)._Mesh_k__BackingField,(MethodInfo *)0x0);
+        obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)pMVar7,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
         }
-        pMVar5 = (MaterialButtonTextureGenerator *)
-                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                           ((Object *)pMVar5,
-                            MaterialButtonTextureGenerator_MethodInfo__UnityEngine__Object__Instantiate<MaterialButtonTextureGenerator>_MaterialButtonTextureGenerator_
-                           );
-        if ((pMVar5 != (MaterialButtonTextureGenerator *)0x0) &&
-           ((pMVar5->fields).previewResolution = 0xb4, this_00 != (MVMaterial *)0x0)) {
-          value = MaterialButtonTextureGenerator::MaterialButtonTextureGenerator_TakePicture
-                            (pMVar5,(this_00->fields)._Mesh_k__BackingField,(MethodInfo *)0x0);
-          obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                          ((Component *)pMVar5,(MethodInfo *)0x0);
-          UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                    ((Object_1 *)obj,(MethodInfo *)0x0);
-          pRVar6 = (this->fields).scale25Percent;
-          if (pRVar6 != (RawImage *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy
+                  ((Object_1 *)obj,0.0,(MethodInfo *)0x0);
+        pRVar8 = (this->fields).scale25Percent;
+        if (pRVar8 != (RawImage *)0x0) {
+          UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
+                    (pRVar8,(Texture *)value,(MethodInfo *)0x0);
+          pRVar8 = (this->fields).scale50Percent;
+          if (pRVar8 != (RawImage *)0x0) {
             UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-                      (pRVar6,(Texture *)value,(MethodInfo *)0x0);
-            pRVar6 = (this->fields).scale50Percent;
-            if (pRVar6 != (RawImage *)0x0) {
-              UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-                        (pRVar6,(Texture *)value,(MethodInfo *)0x0);
-              pRVar6 = (this->fields).scale100Percent;
-              if (pRVar6 != (RawImage *)0x0) {
-                UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-                          (pRVar6,(Texture *)value,(MethodInfo *)0x0);
-                return;
+                      (pRVar8,(Texture *)value,(MethodInfo *)0x0);
+            pRVar8 = (this->fields).scale100Percent;
+            if (pRVar8 != (RawImage *)0x0) {
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__UnityEngine__Object,value,0);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
               }
+              pTVar9 = (Texture2D *)(pRVar8->fields).m_Texture;
+              if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__UnityEngine__Object);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__UnityEngine__Object);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              if (value != (Texture2D *)0x0 || pTVar9 != (Texture2D *)0x0) {
+                if (value == (Texture2D *)0x0) {
+                  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                    FUN_?();
+                  }
+                  if (pTVar9 == (Texture2D *)0x0) {
+                    FUN_?();
+                    pcVar10 = (code *)swi(3);
+                    (*pcVar10)();
+                    return;
+                  }
+                  bVar1 = (pTVar9->fields)._._.m_CachedPtr == (void *)0x0;
+                }
+                else if (pTVar9 == (Texture2D *)0x0) {
+                  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                    FUN_?();
+                  }
+                  bVar1 = (value->fields)._._.m_CachedPtr == (void *)0x0;
+                }
+                else {
+                  bVar1 = pTVar9 == value;
+                }
+                if (!bVar1) {
+                  bVar1 = iRam_? != 0;
+                  (pRVar8->fields).m_Texture = (Texture *)value;
+                  if (bVar1) {
+                    uVar11 = (uint)((ulonglong)&(pRVar8->fields).m_Texture >> 0xc);
+                    puVar12 = (ulonglong *)((ulonglong)((uVar11 & 0x1fffff) >> 6) * 8 + 0xADDR);
+                    do {
+                      uVar13 = *puVar12;
+                      LOCK();
+                      uVar14 = *puVar12;
+                      if (uVar13 == uVar14) {
+                        *puVar12 = uVar13 | 1L << (uVar11 & 0x3f);
+                      }
+                      UNLOCK();
+                    } while (uVar13 != uVar14);
+                  }
+                  (*(pRVar8->klass->vtable).SetVerticesDirty.methodPtr)
+                            (pRVar8,(pRVar8->klass->vtable).SetVerticesDirty.method);
+                  (*(pRVar8->klass->vtable).SetMaterialDirty.methodPtr)
+                            (pRVar8,(pRVar8->klass->vtable).SetMaterialDirty.method);
+                }
+              }
+              return;
             }
           }
         }
@@ -75,9 +171,9 @@ void Assembly-CSharp.dll::CubeModelPopup::CubeModelPopup_Initialize
     }
   }
 code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -89,144 +185,193 @@ void Assembly-CSharp.dll::CubeModelPopup::CubeModelPopup_OnModelScalePressed
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                   );
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICreateNewPrototype>
-                   );
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IChangePrototypeScale>
-                   );
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IMaterialClicked>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IChangePrototypeScale>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IChangePrototypeScale>_
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::ICreateNewPrototype>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICreateNewPrototype>_
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IMaterialClicked>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IMaterialClicked>_
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    MethodInfo__CubeModelPopup____c___OnModelScalePressed_b__7_3_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&
-                    MethodInfo__CubeModelPopup____c__DisplayClass7_0___OnModelScalePressed_b__0_UnityEngine__EventSystems__IMaterialClicked__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&
-                    MethodInfo__CubeModelPopup____c__DisplayClass7_0___OnModelScalePressed_b__1_UnityEngine__EventSystems__ICreateNewPrototype__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&
-                    MethodInfo__CubeModelPopup____c__DisplayClass7_0___OnModelScalePressed_b__2_UnityEngine__EventSystems__IChangePrototypeScale__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__CubeModelPopup____c__DisplayClass7_0);
-    func_?(&TypeInfo__CubeModelPopup____c);
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICreateNewPrototype>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IChangePrototypeScale>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IMaterialClicked>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IChangePrototypeScale>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IChangePrototypeScale>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::ICreateNewPrototype>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICreateNewPrototype>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IMaterialClicked>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IMaterialClicked>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__CubeModelPopup____c___OnModelScalePressed_b__7_3_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__CubeModelPopup____c__DisplayClass7_0___OnModelScalePressed_b__0_UnityEngine__EventSystems__IMaterialClicked__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__CubeModelPopup____c__DisplayClass7_0___OnModelScalePressed_b__1_UnityEngine__EventSystems__ICreateNewPrototype__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__CubeModelPopup____c__DisplayClass7_0___OnModelScalePressed_b__2_UnityEngine__EventSystems__IChangePrototypeScale__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CubeModelPopup____c__DisplayClass7_0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CubeModelPopup____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__CubeModelPopup____c__DisplayClass7_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value != (Object *)0x0) {
-    value[1].klass = (Object__Class *)this;
-    func_?(value + 1,this);
-    value[1].monitor = (MonitorData *)scale;
-    if ((this->fields).cubeModelPopupAction != 0) {
-      if ((this->fields).cubeModelPopupAction == 1) {
-        pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)this,(MethodInfo *)0x0);
-        pEVar2 = (ExecuteEvents_EventFunction_1_System_Object_ *)
-                 func_?(
-                                TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IChangePrototypeScale>
-                                );
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)pEVar2,value,
-                   MethodInfo__CubeModelPopup____c__DisplayClass7_0___OnModelScalePressed_b__2_UnityEngine__EventSystems__IChangePrototypeScale__UnityEngine__EventSystems__BaseEventData_
-                   ,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
-           ) {
-          func_?();
+  object_00 = (Object *)FUN_?(TypeInfo__CubeModelPopup____c__DisplayClass7_0);
+  if (object_00 != (Object *)0x0) {
+    bVar1 = iRam_? != 0;
+    object_00[1].klass = (Object__Class *)this;
+    if (bVar1) {
+      uVar2 = (uint)((ulonglong)(object_00 + 1) >> 0xc);
+      uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+      do {
+        uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+        puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+        LOCK();
+        bVar1 = uVar4 == *puVar5;
+        if (bVar1) {
+          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
         }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (pGVar1,(BaseEventData *)0x0,pEVar2,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IChangePrototypeScale>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IChangePrototypeScale>_
-                  );
-        pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)this,(MethodInfo *)0x0);
-        if ((TypeInfo__CubeModelPopup____c->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        callbackFunction = TypeInfo__CubeModelPopup____c->static_fields->__9__7_3;
-        if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-          if ((TypeInfo__CubeModelPopup____c->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          object = TypeInfo__CubeModelPopup____c->static_fields->__9;
-          callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object
-                     ,
-                     MethodInfo__CubeModelPopup____c___OnModelScalePressed_b__7_3_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                     ,(MethodInfo *)0x0);
-          TypeInfo__CubeModelPopup____c->static_fields->__9__7_3 = callbackFunction;
-          func_?();
-        }
-        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
-           ) {
-          func_?();
-        }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (pGVar1,(BaseEventData *)0x0,
-                   (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                  );
-      }
-      return;
+        UNLOCK();
+      } while (!bVar1);
     }
-    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
-    pEVar2 = (ExecuteEvents_EventFunction_1_System_Object_ *)
-             func_?(
+    *(float *)&object_00[1].monitor = scale;
+    if ((this->fields).cubeModelPopupAction == 0) {
+      pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+      pEVar7 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+               FUN_?(
                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IMaterialClicked>
                             );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)pEVar2,value,
-               MethodInfo__CubeModelPopup____c__DisplayClass7_0___OnModelScalePressed_b__0_UnityEngine__EventSystems__IMaterialClicked__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+      ExecuteEvents_EventFunction_1_System_Object___ctor
+                (pEVar7,object_00,
+                 MethodInfo__CubeModelPopup____c__DisplayClass7_0___OnModelScalePressed_b__0_UnityEngine__EventSystems__IMaterialClicked__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (pGVar6,(BaseEventData *)0x0,pEVar7,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IMaterialClicked>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IMaterialClicked>_
+                );
+      pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+      this_00 = (ExecuteEvents_EventFunction_1_IUIStack_ *)
+                FUN_?(
+                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICreateNewPrototype>
+                             );
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+      ExecuteEvents_EventFunction_1_System_Object___ctor
+                ((ExecuteEvents_EventFunction_1_System_Object_ *)this_00,object_00,
+                 MethodInfo__CubeModelPopup____c__DisplayClass7_0___OnModelScalePressed_b__1_UnityEngine__EventSystems__ICreateNewPrototype__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      method_00 = 
+      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::ICreateNewPrototype>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICreateNewPrototype>_
+      ;
+    }
+    else {
+      if ((this->fields).cubeModelPopupAction != 1) {
+        return;
+      }
+      pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+      pEVar7 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+               FUN_?(
+                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IChangePrototypeScale>
+                            );
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+      ExecuteEvents_EventFunction_1_System_Object___ctor
+                (pEVar7,object_00,
+                 MethodInfo__CubeModelPopup____c__DisplayClass7_0___OnModelScalePressed_b__2_UnityEngine__EventSystems__IChangePrototypeScale__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (pGVar6,(BaseEventData *)0x0,pEVar7,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IChangePrototypeScale>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IChangePrototypeScale>_
+                );
+      pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+      if (*(int *)&(TypeInfo__CubeModelPopup____c->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__CubeModelPopup____c);
+      }
+      this_00 = TypeInfo__CubeModelPopup____c->static_fields->__9__7_3;
+      if (this_00 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+        if (*(int *)&(TypeInfo__CubeModelPopup____c->_1).field_0x1c == 0) {
+          FUN_?(TypeInfo__CubeModelPopup____c);
+        }
+        object = TypeInfo__CubeModelPopup____c->static_fields->__9;
+        this_00 = (ExecuteEvents_EventFunction_1_IUIStack_ *)
+                  FUN_?(
+                               TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                               );
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]
+        ::ExecuteEvents_EventFunction_1_System_Object___ctor
+                  ((ExecuteEvents_EventFunction_1_System_Object_ *)this_00,(Object *)object,
+                   MethodInfo__CubeModelPopup____c___OnModelScalePressed_b__7_3_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        TypeInfo__CubeModelPopup____c->static_fields->__9__7_3 = this_00;
+        func_?(&TypeInfo__CubeModelPopup____c->static_fields->__9__7_3);
+      }
+      method_00 = 
+      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+      ;
+      if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+        FUN_?();
+        method_00 = 
+        UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+        ;
+      }
     }
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (pGVar1,(BaseEventData *)0x0,pEVar2,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IMaterialClicked>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IMaterialClicked>_
-              );
-    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
-    pEVar2 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)pEVar2,value,
-               MethodInfo__CubeModelPopup____c__DisplayClass7_0___OnModelScalePressed_b__1_UnityEngine__EventSystems__ICreateNewPrototype__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (pGVar1,(BaseEventData *)0x0,pEVar2,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::ICreateNewPrototype>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::ICreateNewPrototype>_
-              );
+              (pGVar6,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)this_00,
+               method_00);
     return;
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

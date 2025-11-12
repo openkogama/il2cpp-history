@@ -5,36 +5,59 @@ void Assembly-CSharp.dll::RTG::RTMeshCompiler::RTMeshCompiler_CompileEntireScene
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTScene>__get_Get__);
-    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTScene>);
+    FUN_?(&MethodInfo__RTG__MonoSingleton<RTG::RTScene>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__MonoSingleton<RTG::RTScene>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__RTG__MonoSingleton<RTG::RTScene>->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__MonoSingleton<RTG::RTScene>);
+  if (*(int *)&(TypeInfo__RTG__MonoSingleton<RTG::RTScene>->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  this = (RTScene *)
-         MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
-                   (MethodInfo__RTG__MonoSingleton<RTG::RTScene>__get_Get__);
-  if (this != (RTScene *)0x0) {
-    pGVar1 = RTScene::RTScene_GetSceneObjects(this,(MethodInfo *)0x0);
-    uVar2 = 0;
-    if (pGVar1 != (GameObject__Array *)0x0) {
-      ppGVar3 = pGVar1->vector;
+  pOVar1 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+                     (MethodInfo__RTG__MonoSingleton<RTG::RTScene>__get_Get__);
+  if (pOVar1 != (Object *)0x0) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    UnityEngine__GameObject__MethodInfo__UnityEngine__Object__FindObjectsByType<UnityEngine::GameObject>_UnityEngine__FindObjectsSortMode_____
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    pOVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_FindObjectsByType_2
+                       (FindObjectsSortMode__Enum_None,
+                        UnityEngine__GameObject__MethodInfo__UnityEngine__Object__FindObjectsByType<UnityEngine::GameObject>_UnityEngine__FindObjectsSortMode_____
+                       );
+    uVar3 = 0;
+    if (pOVar2 != (Object__Array *)0x0) {
+      ppOVar4 = pOVar2->vector;
       while( true ) {
-        if ((int)pGVar1->max_length <= (int)uVar2) {
+        if ((int)pOVar2->max_length <= (int)uVar3) {
           return;
         }
-        if (pGVar1->max_length <= uVar2) break;
-        RTMeshCompiler_CompileForObject(*ppGVar3,(MethodInfo *)0x0);
-        uVar2 = uVar2 + 1;
-        ppGVar3 = ppGVar3 + 1;
+        if ((uint)pOVar2->max_length <= uVar3) break;
+        RTMeshCompiler_CompileForObject((GameObject *)*ppOVar4,(MethodInfo *)0x0);
+        uVar3 = uVar3 + 1;
+        ppOVar4 = ppOVar4 + 1;
       }
-      func_?();
+      FUN_?();
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -46,119 +69,105 @@ bool Assembly-CSharp.dll::RTG::RTMeshCompiler::RTMeshCompiler_CompileForObject
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__GameObjectEx);
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&MethodInfo__RTG__Singleton<RTG::RTMeshDb>__get_Get__);
-    func_?(&TypeInfo__RTG__Singleton<RTG::RTMeshDb>);
+    FUN_?(&TypeInfo__RTG__GameObjectEx);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__Singleton<RTG::RTMeshDb>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__Singleton<RTG::RTMeshDb>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (gameObject == (GameObject *)0x0) goto code_?;
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_isStatic
-                    (gameObject,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    return 0;
+  if (gameObject == (GameObject *)0x0) {
+code_?:
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    bVar2 = (*pcVar1)();
+    return bVar2;
   }
-  if ((TypeInfo__RTG__GameObjectEx->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__GameObjectEx);
-  }
-  this_00 = GameObjectEx::GameObjectEx_GetMesh(gameObject,(MethodInfo *)0x0);
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    return 0;
-  }
-  if ((TypeInfo__RTG__Singleton<RTG::RTMeshDb>->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  pOVar2 = Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
-                     (MethodInfo__RTG__Singleton<RTG::RTMeshDb>__get_Get__);
-  if (pOVar2 == (Object *)0x0) goto code_?;
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  pvVar3 = (gameObject->fields)._.m_CachedPtr;
+  if (pvVar3 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)gameObject,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    bVar2 = (*pcVar1)();
+    return bVar2;
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    return 0;
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar4 = func_?(&UNK_?);
+    FUN_?(uVar4,0);
+    pcVar1 = (code *)swi(3);
+    bVar2 = (*pcVar1)();
+    return bVar2;
   }
-  if (pOVar2[1].klass == (Object__Class *)0x0) goto code_?;
-  bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-          UIElements::TextureId]::
-          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)pOVar2[1].klass
-                     ,(Object *)this_00,
-                     MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__ContainsKey_UnityEngine__Mesh_
-                    );
-  if (bVar1 == 0) {
+  pcRam_? = pcVar1;
+  cVar5 = (*pcRam_?)(pvVar3);
+  if (cVar5 == '\0') {
+    if (*(int *)&(TypeInfo__RTG__GameObjectEx->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    unityMesh = GameObjectEx::GameObjectEx_GetMesh(gameObject,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
     if (cRam_? == '\0') {
-      func_?();
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Object);
-      func_?(&TypeInfo__RTG__RTMesh);
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar1 == 0) {
-      if (this_00 == (Mesh *)0x0) goto code_?;
-      bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_isReadable
-                        (this_00,(MethodInfo *)0x0);
-      if (bVar1 != 0) {
-        this_01.m_Index = func_?();
-        RTMesh::RTMesh__ctor((RTMesh *)this_01.m_Index,this_00,(MethodInfo *)0x0);
-        if ((RTMesh *)this_01.m_Index != (RTMesh *)0x0) {
-          if (pOVar2[1].klass == (Object__Class *)0x0) goto code_?;
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__Add
-                    ((Dictionary_2_System_Object_System_Object_ *)pOVar2[1].klass,(Object *)this_00,
-                     (Object *)this_01.m_Index,
-                     MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__Add_UnityEngine__Mesh__RTG__RTMesh_
-                    );
-          goto code_?;
+    if (unityMesh != (Mesh *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if ((unityMesh->fields)._.m_CachedPtr != (void *)0x0) {
+        if (*(int *)&(TypeInfo__RTG__Singleton<RTG::RTMeshDb>->_1).field_0x1c == 0) {
+          FUN_?();
         }
+        this_00 = (RTMeshDb *)
+                  Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
+                            (MethodInfo__RTG__Singleton<RTG::RTMeshDb>__get_Get__);
+        if (this_00 != (RTMeshDb *)0x0) {
+          pRVar6 = RTMeshDb::RTMeshDb_GetRTMesh(this_00,unityMesh,(MethodInfo *)0x0);
+          if (pRVar6 == (RTMesh *)0x0) {
+            return 0;
+          }
+          this = (pRVar6->fields)._meshTree;
+          if (this != (MeshTree *)0x0) {
+            if ((this->fields)._isBuilt == 0) {
+              MeshTree::MeshTree_Build(this,(MethodInfo *)0x0);
+            }
+            return 1;
+          }
+        }
+        goto code_?;
       }
     }
-    this_01.m_Index = 0;
   }
-  else {
-    if (pOVar2[1].klass == (Object__Class *)0x0) goto code_?;
-    this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                         pOVar2[1].klass,(Object *)this_00,
-                         MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__get_Item_UnityEngine__Mesh_
-                        );
-  }
-code_?:
-  if ((RTMesh *)this_01.m_Index == (RTMesh *)0x0) {
-    return 0;
-  }
-  this = (((RTMesh *)this_01.m_Index)->fields)._meshTree;
-  if (this != (MeshTree *)0x0) {
-    if ((this->fields)._isBuilt == 0) {
-      MeshTree::MeshTree_Build(this,(MethodInfo *)0x0);
-    }
-    return 1;
-  }
-code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  bVar1 = (*pcVar3)();
-  return bVar1;
+  return 0;
 }
 

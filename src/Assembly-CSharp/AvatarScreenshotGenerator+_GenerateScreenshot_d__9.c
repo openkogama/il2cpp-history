@@ -7,94 +7,160 @@ bool Assembly-CSharp.dll::AvatarScreenshotGenerator+<GenerateScreenshot>d__9::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<UnityEngine::Texture2D>);
-    func_?(&TypeInfo__AvatarEditModeBodyController);
-    func_?(&
-                    MethodInfo__AvatarScreenshotGenerator__ScreenShotDataTexHandler_UnityEngine__Texture2D_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&TypeInfo__ScreenShotGenerator);
-    func_?(&TypeInfo__UnityEngine__WaitForEndOfFrame);
+    FUN_?(&TypeInfo__System__Action<UnityEngine::Texture2D>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__AvatarEditModeBodyController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__AvatarScreenshotGenerator__ScreenShotDataTexHandler_UnityEngine__Texture2D_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__ScreenShotGenerator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__WaitForEndOfFrame);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   iVar1 = (this->fields).__1__state;
   object = (this->fields).__4__this;
   if (iVar1 == 0) {
     (this->fields).__1__state = -1;
-    if (object != (AvatarScreenshotGenerator *)0x0) {
-      if ((object->fields).particleSystems != (ParticleSystem__Array *)0x0) {
-        pPVar2 = (object->fields).particleSystems;
-        ppPVar3 = pPVar2->vector;
-        for (uVar4 = 0; (int)uVar4 < (int)pPVar2->max_length; uVar4 = uVar4 + 1) {
-          if (pPVar2->max_length <= uVar4) goto code_?;
-          this_00 = *ppPVar3;
-          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__UnityEngine__Object);
-          }
-          bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                            ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar5 != 0) {
-            if (this_00 == (ParticleSystem *)0x0) goto code_?;
-            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-            ParticleSystem_Simulate_2(this_00,2.0,1,(MethodInfo *)0x0);
-          }
-          ppPVar3 = ppPVar3 + 1;
+    fVar2 = TypeRef__System__Activator__T._0_4_;
+    if (object == (AvatarScreenshotGenerator *)0x0) goto code_?;
+    if ((object->fields).particleSystems != (ParticleSystem__Array *)0x0) {
+      pPVar3 = (object->fields).particleSystems;
+      ppPVar4 = pPVar3->vector;
+      for (uVar5 = 0; (int)uVar5 < (int)pPVar3->max_length; uVar5 = uVar5 + 1) {
+        if ((uint)pPVar3->max_length <= uVar5) {
+          FUN_?();
+          pcVar6 = (code *)swi(3);
+          bVar7 = (*pcVar6)();
+          return bVar7;
         }
+        this_00 = *ppPVar4;
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (this_00 != (ParticleSystem *)0x0) {
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if ((this_00->fields)._._.m_CachedPtr != (void *)0x0) {
+            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+            ParticleSystem_Simulate_2(this_00,fVar2,1,(MethodInfo *)0x0);
+          }
+        }
+        ppPVar4 = ppPVar4 + 1;
       }
-      this_02 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
-                func_?(TypeInfo__UnityEngine__WaitForEndOfFrame);
-      UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-      UxmlObjectListAttributeDescription`1[System::Object]::
-      UxmlObjectListAttributeDescription_1_System_Object___ctor(this_02,(MethodInfo *)0x0);
-      (this->fields).__2__current = (Object *)this_02;
-      func_?(&(this->fields).__2__current,this_02);
-      (this->fields).__1__state = 1;
-      return 1;
     }
-code_?:
-    func_?();
-code_?:
-    func_?();
-    pcVar6 = (code *)swi(3);
-    bVar5 = (*pcVar6)();
-    return bVar5;
-  }
-  if (iVar1 == 1) {
-    (this->fields).__1__state = -1;
-    this_01 = TypeInfo__AvatarEditModeBodyController->static_fields->Theme;
-    if ((this_01 == (CloudyThemeBase *)0x0) ||
-       (Theme::Theme_Deactivate((Theme *)this_01,(MethodInfo *)0x0),
-       object == (AvatarScreenshotGenerator *)0x0)) goto code_?;
-    fVar7 = (object->fields).cameraOffset.z;
-    obj = (object->fields).bodyCloneGO;
-    uVar8._0_4_ = (object->fields).lookAtOffset.x;
-    uVar8._4_4_ = (object->fields).lookAtOffset.y;
-    fVar9 = (object->fields).lookAtOffset.z;
-    this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)func_?(TypeInfo__System__Action<UnityEngine::Texture2D>);
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              (this_03,(Object *)object,
-               MethodInfo__AvatarScreenshotGenerator__ScreenShotDataTexHandler_UnityEngine__Texture2D_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__ScreenShotGenerator->_1).cctor_finished_or_no_cctor == 0) {
-      uVar8._4_4_ = (undefined4)((ulonglong)uVar8 >> 0x20);
-      uVar8 = CONCAT44(uVar8._4_4_,TypeInfo__ScreenShotGenerator);
-      func_?();
+    pOVar8 = (Object *)FUN_?(TypeInfo__UnityEngine__WaitForEndOfFrame);
+    bVar9 = iRam_? != 0;
+    (this->fields).__2__current = pOVar8;
+    if (bVar9) {
+      uVar5 = (uint)((ulonglong)&(this->fields).__2__current >> 0xc);
+      uVar10 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+      do {
+        uVar11 = *(ulonglong *)(uVar10 * 8 + 0xADDR);
+        puVar12 = (ulonglong *)(uVar10 * 8 + 0xADDR);
+        LOCK();
+        bVar9 = uVar11 == *puVar12;
+        if (bVar9) {
+          *puVar12 = uVar11 | 1L << (uVar5 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar9);
     }
-    cameraOffset.y = 0.0;
-    cameraOffset.x = (float)this_03;
-    cameraOffset.z = fVar7;
-    lookAtOffset.z = fVar9;
-    uVar8._4_4_ = (undefined4)((ulonglong)uVar8 >> 0x20);
-    lookAtOffset.x = (float)(undefined4)uVar8;
-    lookAtOffset.y = (float)uVar8._4_4_;
-    ScreenShotGenerator::ScreenShotGenerator_Generate_1
-              (obj,cameraOffset,lookAtOffset,(Action_1_UnityEngine_Texture2D_ *)this_03,0,
-               (MethodInfo *)0x0);
+    (this->fields).__1__state = 1;
+    bVar7 = 1;
   }
-  return 0;
+  else {
+    if (iVar1 == 1) {
+      (this->fields).__1__state = -1;
+      this_01 = TypeInfo__AvatarEditModeBodyController->static_fields->Theme;
+      if ((this_01 == (CloudyThemeBase *)0x0) ||
+         (Theme::Theme_Deactivate((Theme *)this_01,(MethodInfo *)0x0),
+         object == (AvatarScreenshotGenerator *)0x0)) {
+code_?:
+        FUN_?();
+        pcVar6 = (code *)swi(3);
+        bVar7 = (*pcVar6)();
+        return bVar7;
+      }
+      obj = (object->fields).bodyCloneGO;
+      uVar13._0_4_ = (object->fields).cameraOffset.x;
+      uVar13._4_4_ = (object->fields).cameraOffset.y;
+      fVar2 = (object->fields).cameraOffset.z;
+      uVar14._0_4_ = (object->fields).lookAtOffset.x;
+      uVar14._4_4_ = (object->fields).lookAtOffset.y;
+      fVar15 = (object->fields).lookAtOffset.z;
+      this_02 = (UnityAction_1_System_Object_ *)
+                FUN_?(TypeInfo__System__Action<UnityEngine::Texture2D>);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+      UnityAction_1_System_Object___ctor
+                (this_02,(Object *)object,
+                 MethodInfo__AvatarScreenshotGenerator__ScreenShotDataTexHandler_UnityEngine__Texture2D_
+                 ,(MethodInfo *)0x0);
+      if (*(int *)&(TypeInfo__ScreenShotGenerator->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      UnityEngine__Behaviour__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Behaviour>______
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Vector3__UnityEngine__Quaternion_
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        FUN_?(&TypeInfo__ScreenShotGenerator);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__ScreenShotGenerator->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      this_03 = ScreenShotGenerator::ScreenShotGenerator_CreateInstance((MethodInfo *)0x0);
+      if (this_03 == (ScreenShotGenerator *)0x0) goto code_?;
+      VStack_16._0_8_ = uVar14;
+      VStack_16.z = fVar15;
+      aVStack_17[0]._0_8_ = uVar13;
+      aVStack_17[0].z = fVar2;
+      ScreenShotGenerator::ScreenShotGenerator_StartGenerate_1
+                (this_03,obj,aVStack_17,&VStack_16,(Action_1_UnityEngine_Texture2D_ *)this_02,0,
+                 (MethodInfo *)0x0);
+    }
+    bVar7 = 0;
+  }
+  return bVar7;
 }
 
 
@@ -109,10 +175,10 @@ void Assembly-CSharp.dll::AvatarScreenshotGenerator+<GenerateScreenshot>d__9::
   this_00 = (NotSupportedException *)func_?(uVar1);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
-  func_?(&
-                  MethodInfo__AvatarScreenshotGenerator___GenerateScreenshot_d__9__System_Collections_IEnumerator_Reset__
-                 );
-  func_?(this_00);
+  uVar1 = func_?(&
+                              MethodInfo__AvatarScreenshotGenerator___GenerateScreenshot_d__9__System_Collections_IEnumerator_Reset__
+                             );
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

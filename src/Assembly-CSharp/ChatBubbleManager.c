@@ -6,7 +6,9 @@ void Assembly-CSharp.dll::ChatBubbleManager::ChatBubbleManager_ShowChatBubble
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__ChatBubbleManager);
+    FUN_?(&TypeInfo__ChatBubbleManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (TypeInfo__ChatBubbleManager->static_fields->OnShowChatBubble !=

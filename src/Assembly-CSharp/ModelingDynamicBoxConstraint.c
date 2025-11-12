@@ -8,9 +8,15 @@ Vector3 * Assembly-CSharp.dll::ModelingDynamicBoxConstraint::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__IntVector);
-    func_?(&TypeInfo__SharedCollisionFunctions);
-    func_?(&TypeInfo__SharedCubeFunctions);
+    FUN_?(&TypeInfo__MV__WorldObject__IntVector);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__SharedCollisionFunctions);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__SharedCubeFunctions);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   IStack_1.x = 0;
@@ -19,55 +25,52 @@ Vector3 * Assembly-CSharp.dll::ModelingDynamicBoxConstraint::
   IStack_2.x = 0;
   IStack_2.y = 0;
   IStack_2.z = 0;
-  IStack_3.x = 0;
-  IStack_3.y = 0;
-  IStack_3.z = 0;
   if (model != (MVCubeModelBase *)0x0) {
-    pBVar4 = MVCubeModelBase::MVCubeModelBase_GetBounds(&BStack_5,model,(MethodInfo *)0x0);
-    this_02 = (IntVector *)((uint)in_stack_6 << 0x10);
-    BStack_5.m_Extents.y = (pBVar4->m_Extents).y;
-    BStack_5.m_Extents.z = (pBVar4->m_Extents).z;
-    VStack_7.x = (pBVar4->m_Center).x;
-    VStack_7.y = (pBVar4->m_Center).y;
-    VStack_7.z = (pBVar4->m_Center).z;
-    iStack_8 = 0;
+    method_00 = (MethodInfo *)0x0;
+    pBVar3 = MVCubeModelBase::MVCubeModelBase_GetBounds(aBStack_4,model,(MethodInfo *)0x0);
+    fVar5 = _UNK_?;
+    BStack_6.m_Extents.y = (pBVar3->m_Extents).y;
+    BStack_6.m_Extents.z = (pBVar3->m_Extents).z;
+    VStack_7.x = (pBVar3->m_Center).x;
+    VStack_7.y = (pBVar3->m_Center).y;
+    index = 0;
+    VStack_7.z = (float)*(undefined8 *)&(pBVar3->m_Center).z;
     do {
-      index = iStack_8;
-      if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__SharedCubeFunctions);
+      if (*(int *)&(TypeInfo__SharedCubeFunctions->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__SharedCubeFunctions);
       }
-      pVVar9 = SharedCubeFunctions::SharedCubeFunctions_get_CubeConstraintVector3
-                         (&VStack_10,(MethodInfo *)0x0);
-      VStack_11.x = pVVar9->x;
-      VStack_11.y = pVVar9->y;
-      VStack_11.z = pVVar9->z;
-      if (index == 0) {
-        fVar12 = VStack_11.x;
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__SharedCubeFunctions);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
-      else if (index == 1) {
-        fVar12 = VStack_11.y;
+      if (*(int *)&(TypeInfo__SharedCubeFunctions->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__SharedCubeFunctions);
       }
-      else {
-        fVar12 = VStack_11.z;
-        if (index != 2) goto code_?;
+      if (((index != 0) && (index != 1)) && (index != 2)) {
+        uVar8 = func_?(&TypeInfo__System__IndexOutOfRangeException);
+        pIVar9 = (IndexOutOfRangeException *)func_?(uVar8);
+        message = (String *)func_?(&StringLiteral_Invalid_Vector3_index_);
+        mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1
+                  (pIVar9,message,(MethodInfo *)0x0);
+        uVar8 = func_?(&MethodInfo__UnityEngine__Vector3__get_Item_int_);
+        FUN_?(pIVar9,uVar8);
+        pcVar10 = (code *)swi(3);
+        pVVar11 = (Vector3 *)(*pcVar10)();
+        return pVVar11;
       }
-      dStack_13 = (double)fVar12;
-      fVar14 = (float10)func_?();
-      uVar15 = (undefined2)((uint)in_stack_16 >> 0x10);
-      uVar17 = (undefined2)((uint)in_stack_18 >> 0x10);
-      dStack_13 = (double)fVar14;
-      if ((float)fVar14 == 0.0) {
+      fVar12 = (float)FUN_?();
+      if (fVar12 == 0.0) {
         UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
-                  (&VStack_7,index,(MethodInfo *)0x0);
-        fVar14 = (float10)func_?();
-        dStack_13 = (double)fVar14;
-        if ((float)fVar14 != 0.0) {
-          fVar12 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
-                             (&VStack_7,index,(MethodInfo *)0x0);
-          fVar14 = (float10)func_?((double)fVar12);
-          dStack_13 = (double)fVar14;
+                  (&VStack_7,index,method_00);
+        fVar12 = (float)FUN_?();
+        if (fVar12 != 0.0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
+                    (&VStack_7,index,method_00);
+          fVar12 = (float)func_?();
           UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_set_Item
-                    (&VStack_7,index,(float)fVar14 - _UNK_?,(MethodInfo *)0x0);
+                    (&VStack_7,index,fVar12 - fVar5,method);
         }
       }
       else {
@@ -77,416 +80,455 @@ Vector3 * Assembly-CSharp.dll::ModelingDynamicBoxConstraint::
         IStack_2.x = 0;
         IStack_2.y = 0;
         IStack_2.z = 0;
-        pBVar4 = MVCubeModelBase::MVCubeModelBase_GetBounds(&BStack_19,model,(MethodInfo *)0x0);
-        BStack_5.m_Center.z = (pBVar4->m_Center).x;
-        BStack_5.m_Extents.x = (pBVar4->m_Center).y;
-        pfVar20 = &(pBVar4->m_Center).z;
-        BStack_5.m_Extents._4_8_ = *(undefined8 *)pfVar20;
-        dStack_13._0_4_ = (pBVar4->m_Extents).y;
-        dStack_13._4_4_ = (pBVar4->m_Extents).z;
-        fVar12 = *pfVar20;
-        fVar21 = (pBVar4->m_Extents).x;
-        if ((TypeInfo__SharedCollisionFunctions->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__SharedCollisionFunctions);
-          fVar12 = BStack_5.m_Extents.y;
-          fVar21 = BStack_5.m_Extents.z;
+        pBVar3 = MVCubeModelBase::MVCubeModelBase_GetBounds(&BStack_6,model,(MethodInfo *)0x0);
+        uVar13._0_4_ = (pBVar3->m_Center).x;
+        uVar13._4_4_ = (pBVar3->m_Center).y;
+        uVar14 = *(undefined8 *)&(pBVar3->m_Center).z;
+        uVar8._0_4_ = (pBVar3->m_Extents).y;
+        uVar8._4_4_ = (pBVar3->m_Extents).z;
+        if (*(int *)&(TypeInfo__SharedCollisionFunctions->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        localSpaceBounds.m_Center.y = BStack_5.m_Extents.x;
-        localSpaceBounds.m_Center.x = BStack_5.m_Center.z;
-        localSpaceBounds.m_Center.z = fVar12;
-        localSpaceBounds.m_Extents.x = fVar21;
-        localSpaceBounds.m_Extents.y = (float)SUB84(dStack_13,0);
-        localSpaceBounds.m_Extents.z = (float)((ulonglong)dStack_13 >> 0x20);
+        method = (MethodInfo *)0x0;
+        BStack_6.m_Center._0_8_ = uVar13;
+        BStack_6._8_8_ = uVar14;
+        BStack_6.m_Extents._4_8_ = uVar8;
         SharedCollisionFunctions::SharedCollisionFunctions_GetVoxelBounds
-                  (&IStack_1,&IStack_2,localSpaceBounds,(MethodInfo *)0x0);
-        iVar22 = IStack_2.z;
-        uVar23 = IStack_2._0_4_;
-        uVar24 = (undefined2)((uint)this_02 >> 0x10);
-        dStack_13._4_2_ = IStack_1.x;
-        dStack_13._6_2_ = IStack_1.y;
-        iStack_25 = IStack_1.z;
-        if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-          uVar17 = 0x1046;
-          func_?(TypeInfo__MV__WorldObject__IntVector);
+                  (&IStack_1,&IStack_2,&BStack_6,(MethodInfo *)0x0);
+        if (*(int *)&(TypeInfo__MV__WorldObject__IntVector->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        IVar26.z = (int16_t)uVar23;
-        IVar26._0_4_ = auStack_27;
-        i2.y = in_stack_28;
-        i2.x = iVar22;
-        i2.z = (int16_t)dStack_13._4_4_;
-        IVar26 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Subtraction
-                           (IVar26,i2,(MethodInfo *)CONCAT22(uVar17,iStack_25));
-        uVar23 = *IVar26._0_4_;
-        uVar17 = *(undefined2 *)(IVar26._0_4_ + 1);
-        in_stack_18 = 0;
-        in_stack_28 = 0;
-        IStack_29.x = 0;
-        IStack_29.y = 0;
-        IStack_29.z = 0;
-        MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                  (&IStack_29,1,1,1,(MethodInfo *)0x0);
-        i1.z = (int16_t)uVar23;
-        i1._0_4_ = (int)&uStack_30 + 4;
-        i2_00.y = uVar24;
-        i2_00.x = uVar17;
-        i2_00.z = IStack_29.x;
-        IVar26 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
-                           (i1,i2_00,(MethodInfo *)CONCAT22(uVar15,IStack_29.z));
-        index = iStack_8;
-        in_stack_16 = 0;
-        IStack_3._0_4_ = *IVar26._0_4_;
-        IStack_3.z = *(int16_t *)(IVar26._0_4_ + 1);
-        this_02 = &IStack_3;
-        iVar22 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
-                          (this_02,iStack_8,(MethodInfo *)0x0);
-        if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__SharedCubeFunctions);
+        iVar15 = IStack_1.z;
+        iVar16 = IStack_2.z;
+        iVar17 = IStack_2.x;
+        iVar18 = IStack_1.x;
+        iVar19 = IStack_1.y;
+        method_00 = (MethodInfo *)(ulonglong)(ushort)(IStack_2.y - IStack_1.y);
+        uVar20 = IStack_2.x - IStack_1.x;
+        if (((index != 0) && (uVar20 = IStack_2.y - IStack_1.y, index != 1)) &&
+           (uVar20 = IStack_2.z - IStack_1.z, index != 2)) {
+          uVar8 = func_?(&TypeInfo__System__IndexOutOfRangeException);
+          pIVar9 = (IndexOutOfRangeException *)func_?(uVar8);
+          mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor
+                    (pIVar9,(MethodInfo *)0x0);
+          uVar8 = func_?(&MethodInfo__MV__WorldObject__IntVector__get_Item_int_);
+          FUN_?(pIVar9,uVar8);
+          pcVar10 = (code *)swi(3);
+          pVVar11 = (Vector3 *)(*pcVar10)();
+          return pVVar11;
         }
-        pVVar9 = SharedCubeFunctions::SharedCubeFunctions_get_CubeConstraintVector3
-                           (&VStack_31,(MethodInfo *)0x0);
-        VStack_11.x = pVVar9->x;
-        VStack_11.y = pVVar9->y;
-        VStack_11.z = pVVar9->z;
+        if (*(int *)&(TypeInfo__SharedCubeFunctions->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pVVar11 = SharedCubeFunctions::SharedCubeFunctions_get_CubeConstraintVector3
+                            (&VStack_21,(MethodInfo *)0x0);
+        VStack_22.x = pVVar11->x;
+        VStack_22.y = pVVar11->y;
+        VStack_22.z = pVVar11->z;
         fVar12 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
-                           (&VStack_11,index,(MethodInfo *)0x0);
-        dStack_13 = (double)fVar12;
-        if ((int)iVar22 == (int)fVar12) {
-          if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__MV__WorldObject__IntVector);
+                           (&VStack_22,index,method_00);
+        if ((int)(short)(uVar20 + 1) == (int)fVar12) {
+          if (*(int *)&(TypeInfo__MV__WorldObject__IntVector->_1).field_0x1c == 0) {
+            FUN_?();
           }
-          iVar22 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
-                            (&IStack_1,index,(MethodInfo *)0x0);
-          iVar32 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
-                            (&IStack_2,index,(MethodInfo *)0x0);
-          uVar33 = 0x1046;
-          in_stack_16 = iStack_8;
-          iVar34 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
-                            (&IStack_1,iStack_8,(MethodInfo *)0x0);
-          index = iStack_8;
+          if (index != 0) {
+            if (index == 1) {
+              iVar17 = IStack_2.y;
+              iVar18 = iVar19;
+            }
+            else {
+              iVar17 = iVar16;
+              iVar18 = iVar15;
+              if (index != 2) {
+                uVar8 = func_?(&TypeInfo__System__IndexOutOfRangeException);
+                pIVar9 = (IndexOutOfRangeException *)func_?(uVar8);
+                mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor
+                          (pIVar9,(MethodInfo *)0x0);
+                uVar8 = func_?(&MethodInfo__MV__WorldObject__IntVector__get_Item_int_)
+                ;
+                FUN_?(pIVar9,uVar8);
+                pcVar10 = (code *)swi(3);
+                pVVar11 = (Vector3 *)(*pcVar10)();
+                return pVVar11;
+              }
+            }
+          }
           UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_set_Item
-                    (&VStack_7,iStack_8,(float)(((int)iVar32 - (int)iVar34) / 2 + (int)iVar22),
-                     (MethodInfo *)0x0);
-          this_02 = (IntVector *)((uint)uVar33 << 0x10);
+                    (&VStack_7,index,(float)(((int)iVar17 - (int)iVar18) / 2 + (int)iVar18),method
+                    );
         }
       }
-      iStack_8 = index + 1;
-    } while (iStack_8 < 3);
-    if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__SharedCubeFunctions);
+      index = index + 1;
+    } while (index < 3);
+    if (*(int *)&(TypeInfo__SharedCubeFunctions->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__SharedCubeFunctions);
     }
-    pVVar9 = SharedCubeFunctions::SharedCubeFunctions_get_CubeConstraintVector3
-                       (&VStack_31,(MethodInfo *)0x0);
-    VStack_11.x = pVVar9->x;
-    VStack_11.y = pVVar9->y;
-    VStack_11.z = pVVar9->z;
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
+      FUN_?(&TypeInfo__SharedCubeFunctions);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    pVVar35 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uStack_30._0_4_ = (pVVar35->oneVector).x;
-    uStack_30._4_4_ = (pVVar35->oneVector).y;
-    fVar21 = (VStack_11.x - (float)(undefined4)uStack_30) * _UNK_?;
-    fVar12 = (VStack_11.y - (float)uStack_30._4_4_) * _UNK_?;
-    VStack_11.z = (VStack_11.z - (pVVar35->oneVector).z) * _UNK_?;
-    fStack_36 = (float)((uint)VStack_11.z ^
-                       __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-    min.y = (float)((uint)fVar12 ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-    min.x = (float)((uint)fVar21 ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-    min.z = fStack_36;
-    max.y = fVar12;
-    max.x = fVar21;
-    max.z = VStack_11.z;
-    MathFunctions::MathFunctions_ClampVector_1(&VStack_7,min,max,(MethodInfo *)0x0);
-    this_00 = (model->fields)._.transform;
-    if (this_00 != (Transform *)0x0) {
-      position.y = VStack_7.y;
-      position.x = VStack_7.x;
-      position.z = VStack_7.z;
-      pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_TransformPoint
-                         (&VStack_31,this_00,position,(MethodInfo *)0x0);
-      fVar21 = pVVar9->y;
-      fVar12 = pVVar9->z;
-      __return_storage_ptr__->x = pVVar9->x;
-      __return_storage_ptr__->y = fVar21;
-      __return_storage_ptr__->z = fVar12;
-      return __return_storage_ptr__;
+    if (*(int *)&(TypeInfo__SharedCubeFunctions->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__SharedCubeFunctions);
+    }
+    pSVar23 = TypeInfo__SharedCubeFunctions->static_fields;
+    sVar24 = (pSVar23->constraint).x;
+    sVar25 = (pSVar23->constraint).y;
+    sVar26 = (pSVar23->constraint).z;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pVVar27 = TypeInfo__UnityEngine__Vector3->static_fields;
+    VStack_21.x = (pVVar27->oneVector).x;
+    VStack_21.y = (pVVar27->oneVector).y;
+    fVar28 = ((float)(int)sVar26 - (pVVar27->oneVector).z) * fVar5;
+    fVar29 = ((float)(int)sVar24 - VStack_21.x) * fVar5;
+    fVar5 = ((float)(int)sVar25 - VStack_21.y) * fVar5;
+    fVar30 = (float)((uint)fVar29 ^ _UNK_?);
+    fVar31 = (float)((uint)fVar5 ^ _UNK_?);
+    fVar12 = (float)((uint)fVar28 ^ _UNK_?);
+    if ((fVar30 <= VStack_7.x) && (fVar30 = VStack_7.x, fVar29 < VStack_7.x)) {
+      fVar30 = fVar29;
+    }
+    if ((fVar31 <= VStack_7.y) && (fVar31 = VStack_7.y, fVar5 < VStack_7.y)) {
+      fVar31 = fVar5;
+    }
+    if ((fVar12 <= VStack_7.z) && (fVar12 = VStack_7.z, fVar28 < VStack_7.z)) {
+      fVar12 = fVar28;
+    }
+    obj = (model->fields)._.transform;
+    if (obj != (Transform *)0x0) {
+      VStack_22.y = fVar31;
+      VStack_22.x = fVar30;
+      VStack_22.z = fVar12;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      VStack_7.x = 0.0;
+      VStack_7.y = 0.0;
+      VStack_7.z = 0.0;
+      pvVar32 = (obj->fields)._._.m_CachedPtr;
+      if (pvVar32 != (void *)0x0) {
+        pcVar10 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar10 = (code *)FUN_?(&UNK_?), pcVar10 == (code *)0x0)) {
+          uVar8 = func_?(&UNK_?);
+          FUN_?(uVar8,0);
+          pcVar10 = (code *)swi(3);
+          pVVar11 = (Vector3 *)(*pcVar10)();
+          return pVVar11;
+        }
+        pcRam_? = pcVar10;
+        (*pcRam_?)(pvVar32,&VStack_22,&VStack_7);
+        __return_storage_ptr__->x = VStack_7.x;
+        __return_storage_ptr__->y = VStack_7.y;
+        __return_storage_ptr__->z = VStack_7.z;
+        return __return_storage_ptr__;
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+      pcVar10 = (code *)swi(3);
+      pVVar11 = (Vector3 *)(*pcVar10)();
+      return pVVar11;
     }
   }
-  func_?();
-code_?:
-  uVar23 = func_?(&TypeInfo__System__IndexOutOfRangeException);
-  this_01 = (IndexOutOfRangeException *)func_?(uVar23);
-  method_00 = (MethodInfo *)0x0;
-  message = (String *)func_?(&StringLiteral_Invalid_Vector3_index_);
-  mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1
-            (this_01,message,method_00);
-  uVar23 = func_?(&MethodInfo__UnityEngine__Vector3__get_Item_int_);
-  func_?(this_01,uVar23);
-  pcVar37 = (code *)swi(3);
-  pVVar9 = (Vector3 *)(*pcVar37)();
-  return pVVar9;
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  pVVar11 = (Vector3 *)(*pcVar10)();
+  return pVVar11;
 }
 
 
 /* Boolean CanAddCubeAt(IntVector) */
 
 bool Assembly-CSharp.dll::ModelingDynamicBoxConstraint::ModelingDynamicBoxConstraint_CanAddCubeAt
-               (ModelingDynamicBoxConstraint *this,IntVector pos,MethodInfo *method)
+               (ModelingDynamicBoxConstraint *this,IntVector *pos,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__IntVector);
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort);
-    func_?(&TypeInfo__SharedCollisionFunctions);
+    FUN_?(&TypeInfo__MV__WorldObject__IntVector);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__SharedCollisionFunctions);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  iVar1 = pos.y;
-  iVar2 = pos.x;
-  uVar3._0_2_ = 0;
-  uVar3._2_2_ = 0;
-  uVar4 = 0;
-  uVar5._0_2_ = 0;
-  uVar5._2_2_ = 0;
-  iVar6 = 0;
-  v.y = (float)(int)pos.y;
-  v.x = (float)(int)pos.x;
-  v.z = (float)(int)pos.z;
-  pVVar7 = RTG::Vector3Ex::Vector3Ex_Abs((Vector3 *)&stack0xffffffa4,v,(MethodInfo *)0x0);
-  fVar8 = pVVar7->x;
-  fVar9 = pVVar7->y;
-  fVar10 = *(float *)&(this->fields)._Size_k__BackingField.x;
-  uVar11 = (this->fields)._Size_k__BackingField.x.fakeValue;
-  uVar12 = (this->fields)._Size_k__BackingField.x.inited;
-  uVar13 = (this->fields)._Size_k__BackingField.x.field_0x7;
-  OVar14._7_1_ = uVar13;
-  OVar14.inited = uVar12;
-  OVar14.fakeValue = uVar11;
-  iVar15 = SUB42(pVVar7->z,0);
-  uVar16 = (undefined2)((uint)pVVar7->z >> 0x10);
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).cctor_finished_or_no_cctor
-      == 0) {
-    func_?();
+  VStack_1.x = 0.0;
+  VStack_1.y = 0.0;
+  VStack_1.z = 0.0;
+  VStack_2.x = 0.0;
+  VStack_2.y = 0.0;
+  VStack_2.z = 0.0;
+  fVar3 = (float)((uint)(float)(int)pos->x & _UNK_?);
+  fVar4 = (float)((uint)(float)(int)pos->y & _UNK_?);
+  fVar5 = (float)((uint)(float)(int)pos->z & _UNK_?);
+  OVar6 = (this->fields)._Size_k__BackingField.x;
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  OVar14._0_4_ = fVar10;
-  iVar17 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-           ObscuredShort_op_Implicit_1(OVar14,(MethodInfo *)0x0);
-  if (fVar8 <= (float)(iVar17 + -1)) {
-    OVar14 = (this->fields)._Size_k__BackingField.y;
-    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).
-        cctor_finished_or_no_cctor == 0) {
-      func_?();
+  OStackX_8 = OVar6;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  iVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+          ObscuredShort_InternalDecrypt(&OStackX_8,(MethodInfo *)0x0);
+  if (fVar3 <= (float)(iVar7 + -1)) {
+    OVar6 = (this->fields)._Size_k__BackingField.y;
+    if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).field_0x1c == 0)
+    {
+      FUN_?();
     }
-    iVar17 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-             ObscuredShort_op_Implicit_1(OVar14,(MethodInfo *)0x0);
-    if (fVar9 <= (float)(iVar17 + -1)) {
-      OVar14 = (this->fields)._Size_k__BackingField.z;
-      if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).
-          cctor_finished_or_no_cctor == 0) {
-        func_?();
+    OStackX_8 = OVar6;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).field_0x1c == 0)
+    {
+      FUN_?();
+    }
+    iVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+            ObscuredShort_InternalDecrypt(&OStackX_8,(MethodInfo *)0x0);
+    if (fVar4 <= (float)(iVar7 + -1)) {
+      OVar6 = (this->fields)._Size_k__BackingField.z;
+      if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).field_0x1c ==
+          0) {
+        FUN_?();
       }
-      iVar17 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-               ObscuredShort_op_Implicit_1(OVar14,(MethodInfo *)0x0);
-      if ((float)CONCAT22(uVar16,iVar15) <= (float)(iVar17 + -1)) {
+      OStackX_8 = OVar6;
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).field_0x1c ==
+          0) {
+        FUN_?();
+      }
+      iVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+              ObscuredShort_InternalDecrypt(&OStackX_8,(MethodInfo *)0x0);
+      if (fVar5 <= (float)(iVar7 + -1)) {
         this_00 = (this->fields).cubeModel;
         if (this_00 == (MVCubeModelBase *)0x0) {
-code_?:
-          func_?();
-          pcVar18 = (code *)swi(3);
-          bVar19 = (*pcVar18)();
-          return bVar19;
+          FUN_?();
+          pcVar8 = (code *)swi(3);
+          bVar9 = (*pcVar8)();
+          return bVar9;
         }
-        pBVar20 = MVCubeModelBase::MVCubeModelBase_GetBounds
-                            ((Bounds *)&stack0xffffff38,this_00,(MethodInfo *)0x0);
-        this_02 = (Bounds *)((uint)in_stack_21 << 0x10);
-        fVar8 = (pBVar20->m_Center).x;
-        fVar9 = (pBVar20->m_Center).y;
-        fVar10 = (pBVar20->m_Center).z;
-        fVar22 = (pBVar20->m_Extents).x;
-        uVar23 = (pBVar20->m_Extents).y;
-        uVar24 = (pBVar20->m_Extents).z;
-        fVar25 = (float)(int)iVar2 - _UNK_?;
-        fVar26 = (float)(int)iVar1 - _UNK_?;
+        method_00 = (MethodInfo *)0x0;
+        pBVar10 = MVCubeModelBase::MVCubeModelBase_GetBounds(aBStack_11,this_00,(MethodInfo *)0x0);
+        fVar12 = _UNK_?;
+        VStack_13.x = (pBVar10->m_Center).x;
+        VStack_13.y = (pBVar10->m_Center).y;
+        uVar14 = *(undefined8 *)&(pBVar10->m_Center).z;
+        fVar3 = (pBVar10->m_Extents).y;
+        fVar4 = (pBVar10->m_Extents).z;
+        VStack_13.z = (float)uVar14;
+        fStack_15 = (float)((ulonglong)uVar14 >> 0x20);
+        fVar16 = (float)(int)pos->x - _UNK_?;
+        fVar17 = (float)(int)pos->y - _UNK_?;
         index = 0;
-        fVar27 = (float)(int)pos.z - _UNK_?;
-        fVar28 = (float)(int)iVar2 + _UNK_?;
-        fVar29 = fVar26;
-        do {
-          fVar30 = fVar25;
-          if (((index != 0) && (fVar30 = fVar26, index != 1)) && (fVar30 = fVar27, index != 2)) {
-code_?:
-            func_?();
-            this_01 = (IndexOutOfRangeException *)func_?();
-            method_00 = (MethodInfo *)0x0;
-            message = (String *)func_?();
+        VStack_1.z = (float)(int)pos->z - _UNK_?;
+        VStack_1.y = fVar17;
+        VStack_1.x = fVar16;
+        OStackX_8._0_4_ = VStack_1.z;
+        aBStack_11[0].m_Center.z = (float)(int)pos->z + _UNK_?;
+        aBStack_11[0].m_Center.y = (float)(int)pos->y + _UNK_?;
+        aBStack_11[0].m_Center.x = (float)(int)pos->x + _UNK_?;
+        fVar18 = fStack_15;
+        fVar5 = VStack_1.z;
+        fStack_19 = fVar3;
+        fStack_20 = fVar4;
+        fVar21 = VStack_13.z;
+        fVar22 = VStack_13.y;
+        fVar23 = VStack_13.x;
+        while( true ) {
+          fVar24 = fVar16;
+          if (((index != 0) && (fVar24 = fVar17, index != 1)) && (fVar24 = fVar5, index != 2)) {
+            uVar14 = func_?(&TypeInfo__System__IndexOutOfRangeException);
+            pIVar25 = (IndexOutOfRangeException *)func_?(uVar14);
+            pSVar26 = (String *)func_?(&StringLiteral_Invalid_Vector3_index_);
             mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1
-                      (this_01,message,method_00);
-            func_?();
-            pIStack_31 = this_01;
-            func_?();
-            goto code_?;
+                      (pIVar25,pSVar26,(MethodInfo *)0x0);
+            uVar14 = func_?(&MethodInfo__UnityEngine__Vector3__get_Item_int_);
+            FUN_?(pIVar25,uVar14);
+            pcVar8 = (code *)swi(3);
+            bVar9 = (*pcVar8)();
+            return bVar9;
           }
-          fVar32 = fVar8 - fVar22;
-          if (((index != 0) && (fVar32 = fVar9 - (float)uVar23, index != 1)) &&
-             (fVar32 = fVar10 - (float)uVar24, index != 2)) goto code_?;
-          if (fVar30 < fVar32) {
-            pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_get_min
-                                ((Vector3 *)&pIStack_31,(Bounds *)&stack0xffffffe4,(MethodInfo *)0x0
-                                );
-            fVar28 = pVVar7->y;
-            fVar30 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
-                               ((Vector3 *)&stack0xffffffb0,index,(MethodInfo *)0x0);
+          VStack_2.z = fVar21 - fVar4;
+          VStack_2.y = fVar22 - fVar3;
+          VStack_2.x = fVar23 - fVar18;
+          fVar5 = fVar23 - fVar18;
+          if (((index != 0) && (fVar5 = fVar22 - fVar3, index != 1)) &&
+             (fVar5 = VStack_2.z, index != 2)) {
+            uVar14 = func_?(&TypeInfo__System__IndexOutOfRangeException);
+            pIVar25 = (IndexOutOfRangeException *)func_?(uVar14);
+            pSVar26 = (String *)func_?(&StringLiteral_Invalid_Vector3_index_);
+            mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1
+                      (pIVar25,pSVar26,(MethodInfo *)0x0);
+            uVar14 = func_?(&MethodInfo__UnityEngine__Vector3__get_Item_int_);
+            FUN_?(pIVar25,uVar14);
+            pcVar8 = (code *)swi(3);
+            bVar9 = (*pcVar8)();
+            return bVar9;
+          }
+          if (fVar24 < fVar5) {
+            VStack_27.x = fVar23 - fVar18;
+            VStack_27.z = fVar21 - fVar4;
+            VStack_27.y = fVar22 - fVar3;
+            fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
+                               (&VStack_1,index,method_00);
             UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_set_Item
-                      ((Vector3 *)&stack0xffffff98,index,fVar30,(MethodInfo *)0x0);
-            pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_get_max
-                                ((Vector3 *)&stack0xffffff68,(Bounds *)&stack0xffffffe4,
-                                 (MethodInfo *)0x0);
-            uVar33 = pVVar7->y;
-            uVar34 = (ushort)((uint)fVar28 >> 0x10);
-            this_02 = (Bounds *)&stack0xffffffe4;
-            min.y._0_2_ = SUB42(fVar28,0);
-            min.x = (float)uVar33;
-            min.y._2_2_ = uVar34;
-            min.z = 0.0;
-            UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_SetMinMax
-                      (this_02,min,*pVVar7,(MethodInfo *)0x0);
-            fVar28 = (float)((uint)uVar34 << 0x10);
+                      (&VStack_27,index,fVar5,in_R9);
+            fVar18 = ((fVar23 + fVar18) - VStack_27.x) * fVar12;
+            fVar3 = ((fVar22 + fVar3) - VStack_27.y) * fVar12;
+            fVar4 = ((fVar21 + fVar4) - VStack_27.z) * fVar12;
+            fVar23 = fVar18 + VStack_27.x;
+            fVar22 = fVar3 + VStack_27.y;
+            VStack_13.z = fVar4 + VStack_27.z;
+            VStack_13.y = fVar22;
+            VStack_13.x = fVar23;
+            fStack_15 = fVar18;
+            fStack_19 = fVar3;
+            fStack_20 = fVar4;
+            fVar21 = VStack_13.z;
           }
-          fVar30 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
-                             ((Vector3 *)&stack0xffffff8c,index,(MethodInfo *)0x0);
-          pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_get_max
-                              ((Vector3 *)&stack0xffffff5c,(Bounds *)&stack0xffffffe4,
-                               (MethodInfo *)0x0);
-          uVar16 = (undefined2)((uint)pVVar7->z >> 0x10);
-          fVar32 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
-                             ((Vector3 *)&stack0xffffffa4,index,(MethodInfo *)0x0);
-          pos.z = SUB42(fVar32,0);
-          in_stack_35 = (int16_t)((uint)fVar32 >> 0x10);
-          if (fVar32 < fVar30) {
-            pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_get_max
-                                ((Vector3 *)&stack0xffffff50,(Bounds *)&stack0xffffffe4,
-                                 (MethodInfo *)0x0);
-            uVar36 = (ushort)((uint)index >> 0x10);
-            uVar37 = pVVar7->x;
-            pVVar7 = (Vector3 *)&stack0xffffff8c;
-            uVar38 = (undefined2)uVar37;
-            uVar39 = (undefined2)((uint)uVar37 >> 0x10);
-            uVar16 = 0xa17a;
-            uVar34 = 0x1046;
-            fVar29 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
-                               (pVVar7,index,(MethodInfo *)0x0);
+          fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
+                             (&aBStack_11[0].m_Center,index,method_00);
+          VStack_2.z = fVar21 + fVar4;
+          VStack_2.y = fVar22 + fVar3;
+          VStack_2.x = fVar23 + fVar18;
+          fVar24 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
+                             (&VStack_2,index,method_00);
+          if (fVar24 < fVar5) {
+            aVStack_28[0].x = fVar23 + fVar18;
+            aVStack_28[0].z = fVar21 + fVar4;
+            aVStack_28[0].y = fVar22 + fVar3;
+            fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_get_Item
+                               (&aBStack_11[0].m_Center,index,method_00);
             UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_set_Item
-                      ((Vector3 *)&stack0xffffff80,index,fVar29,(MethodInfo *)0x0);
-            pVVar40 = UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_get_min
-                                ((Vector3 *)&stack0xffffff44,(Bounds *)&stack0xffffffe4,
-                                 (MethodInfo *)0x0);
-            fVar25 = 0.0;
-            fVar26 = (float)(CONCAT26(uVar34,CONCAT24(uVar16,CONCAT22(uVar39,uVar38))) >> 0x20);
-            uVar41 = pVVar40->x;
-            uVar16 = (undefined2)((uint)uVar41 >> 0x10);
-            uVar42 = (ushort)((uint)pVVar40->z >> 0x10);
-            min_00.z._2_2_ = uVar42;
-            min_00._0_10_ = *(unkbyte10 *)pVVar40;
-            max.y = fVar26;
-            max.x = (float)CONCAT22(uVar39,uVar38);
-            max.z = (float)pVVar7;
-            UnityEngine.CoreModule.dll::UnityEngine::Bounds::Bounds_SetMinMax
-                      ((Bounds *)&stack0xffffffe4,min_00,max,(MethodInfo *)0x0);
-            fVar29 = (float)((uint)uVar42 << 0x10);
-            fVar28 = (float)((uint)uVar36 << 0x10);
-            this_02 = (Bounds *)((uint)uVar34 << 0x10);
+                      (aVStack_28,index,fVar5,in_R9);
+            fVar23 = fVar23 - fVar18;
+            fVar22 = fVar22 - fVar3;
+            fVar21 = fVar21 - fVar4;
+            fVar18 = (aVStack_28[0].x - fVar23) * fVar12;
+            fVar3 = (aVStack_28[0].y - fVar22) * fVar12;
+            fVar4 = (aVStack_28[0].z - fVar21) * fVar12;
+            fVar23 = fVar18 + fVar23;
+            fVar22 = fVar3 + fVar22;
+            VStack_13.z = fVar4 + fVar21;
+            VStack_13.y = fVar22;
+            VStack_13.x = fVar23;
+            fStack_15 = fVar18;
+            fStack_19 = fVar3;
+            fStack_20 = fVar4;
+            fVar21 = VStack_13.z;
           }
-          iVar1 = (int16_t)uVar5;
-          iVar2 = (int16_t)uVar4;
           index = index + 1;
-        } while (index < 3);
-        if ((TypeInfo__SharedCollisionFunctions->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+          if (2 < index) break;
+          fVar5 = (float)OStackX_8._0_4_;
         }
-        uVar39 = (undefined2)((uint)fVar28 >> 0x10);
-        localSpaceBounds.m_Center.y = fVar9;
-        localSpaceBounds.m_Center.x = fVar8;
-        localSpaceBounds.m_Center.z = fVar10;
-        localSpaceBounds.m_Extents.x = fVar22;
-        localSpaceBounds.m_Extents.y = (float)uVar23;
-        localSpaceBounds.m_Extents.z = (float)uVar24;
+        IStackX_10.x = 0;
+        IStackX_10.y = 0;
+        IStackX_10.z = 0;
+        OStackX_8 = (ObscuredShort)((ulonglong)OStackX_8 & 0xffff000000000000);
+        if (*(int *)&(TypeInfo__SharedCollisionFunctions->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        aBStack_11[0].m_Extents.x = fStack_15;
+        aBStack_11[0].m_Center.z = VStack_13.z;
+        aBStack_11[0].m_Extents.z = fStack_20;
+        aBStack_11[0].m_Extents.y = fStack_19;
+        aBStack_11[0].m_Center.x = VStack_13.x;
+        aBStack_11[0].m_Center.y = VStack_13.y;
         SharedCollisionFunctions::SharedCollisionFunctions_GetVoxelBounds
-                  ((IntVector *)&stack0xffffffc8,(IntVector *)&stack0xffffffd0,localSpaceBounds,
-                   (MethodInfo *)0x0);
-        uVar38 = (undefined2)((uint)this_02 >> 0x10);
-        pos.z = (int16_t)uVar3;
-        in_stack_35 = SUB42(uVar3,2);
-        if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-          uVar39 = 0x1046;
-          func_?();
+                  (&IStackX_10,(IntVector *)&OStackX_8,aBStack_11,(MethodInfo *)0x0);
+        if (*(int *)&(TypeInfo__MV__WorldObject__IntVector->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        IVar43.z = iVar1;
-        IVar43._0_4_ = &pos;
-        i2.y = uVar38;
-        i2.x = iVar6;
-        i2.z = pos.z;
-        IVar43 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Subtraction
-                           (IVar43,i2,(MethodInfo *)CONCAT22(uVar39,iVar2));
-        uVar39 = (undefined2)((uint)fVar29 >> 0x10);
-        fVar8 = *IVar43._0_4_;
-        uVar38 = *(undefined2 *)(IVar43._0_4_ + 1);
-        iVar2 = 0;
-        iVar1 = 0;
-        MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                  ((IntVector *)&stack0xffffffdc,1,1,1,(MethodInfo *)0x0);
-        uVar44._4_4_ = fVar8;
-        uVar44._0_4_ = (float)&stack0xffffffbc;
-        i2_00.y = uVar16;
-        i2_00.x = uVar38;
-        i2_00.z = iVar2;
-        IVar43 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
-                           (SUB86(uVar44,0),i2_00,(MethodInfo *)CONCAT22(uVar39,iVar1));
-        fVar8 = *(float *)&(this->fields)._Size_k__BackingField.x;
-        uVar45 = (this->fields)._Size_k__BackingField.x.fakeValue;
-        uVar46 = (this->fields)._Size_k__BackingField.x.inited;
-        uVar47 = (this->fields)._Size_k__BackingField.x.field_0x7;
-        value._7_1_ = uVar47;
-        value.inited = uVar46;
-        value.fakeValue = uVar45;
-        uVar3 = *IVar43._0_4_;
-        sVar48 = *(short *)(IVar43._0_4_ + 1);
-        pos.x = (int16_t)uVar3;
-        pos.y = (int16_t)((uint)uVar3 >> 0x10);
-        if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).
-            cctor_finished_or_no_cctor == 0) {
-          func_?();
+        sVar29 = OStackX_8.currentCryptoKey - IStackX_10.x;
+        sVar30 = OStackX_8.hiddenValue - IStackX_10.y;
+        sVar31 = OStackX_8.fakeValue - IStackX_10.z;
+        OVar6 = (this->fields)._Size_k__BackingField.x;
+        if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).field_0x1c
+            == 0) {
+          FUN_?();
         }
-        value._0_4_ = fVar8;
-        iVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-                 ObscuredShort_op_Implicit_1(value,(MethodInfo *)0x0);
-        if (pos.x <= iVar2) {
-          uVar49 = (this->fields)._Size_k__BackingField.y.inited;
-          uVar50 = (this->fields)._Size_k__BackingField.y.field_0x7;
-          value_00._7_1_ = uVar50;
-          value_00.inited = uVar49;
-          uVar51 = (this->fields)._Size_k__BackingField.y.currentCryptoKey;
-          uVar52 = (this->fields)._Size_k__BackingField.y.hiddenValue;
-          uVar53 = (this->fields)._Size_k__BackingField.y.fakeValue;
-          value_00.fakeValue = uVar53;
-          value_00.hiddenValue = uVar52;
-          value_00.currentCryptoKey = uVar51;
-          if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).
-              cctor_finished_or_no_cctor == 0) {
-            func_?();
+        OStackX_8 = OVar6;
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).field_0x1c
+            == 0) {
+          FUN_?();
+        }
+        iVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+                ObscuredShort_InternalDecrypt(&OStackX_8,(MethodInfo *)0x0);
+        if ((short)(sVar29 + 1) <= iVar7) {
+          OVar6 = (this->fields)._Size_k__BackingField.y;
+          if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).field_0x1c
+              == 0) {
+            FUN_?();
           }
-          iVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort
-                   ::ObscuredShort_op_Implicit_1(value_00,(MethodInfo *)0x0);
-          if (pos.y <= iVar2) {
-            OVar14 = (this->fields)._Size_k__BackingField.z;
-            if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).
-                cctor_finished_or_no_cctor == 0) {
-              func_?();
+          OStackX_8 = OVar6;
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).field_0x1c
+              == 0) {
+            FUN_?();
+          }
+          iVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort
+                  ::ObscuredShort_InternalDecrypt(&OStackX_8,(MethodInfo *)0x0);
+          if ((short)(sVar30 + 1) <= iVar7) {
+            OVar6 = (this->fields)._Size_k__BackingField.z;
+            if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).
+                         field_0x1c == 0) {
+              FUN_?();
             }
-            iVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
-                     ObscuredShort::ObscuredShort_op_Implicit_1(OVar14,(MethodInfo *)0x0);
-            if (sVar48 <= iVar2) {
+            OStackX_8 = OVar6;
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).
+                         field_0x1c == 0) {
+              FUN_?();
+            }
+            iVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
+                    ObscuredShort::ObscuredShort_InternalDecrypt(&OStackX_8,(MethodInfo *)0x0);
+            if ((short)(sVar31 + 1) <= iVar7) {
               return 1;
             }
           }
@@ -506,9 +548,12 @@ void Assembly-CSharp.dll::ModelingDynamicBoxConstraint::
 
 {
   pVVar1 = ModelingDynamicBoxConstraint_CalcConstraintBoxCenter
-                     ((Vector3 *)&stack0xfffffff0,this,(this->fields).cubeModel,(MethodInfo *)0x0);
+                     (&VStack_2,this,(this->fields).cubeModel,(MethodInfo *)0x0);
+  VStack_3.x = pVVar1->x;
+  VStack_3.y = pVVar1->y;
+  VStack_3.z = pVVar1->z;
   ModelingBoxConstraint::ModelingBoxConstraint_set_Center
-            ((ModelingBoxConstraint *)this,*pVVar1,(MethodInfo *)0x0);
+            ((ModelingBoxConstraint *)this,&VStack_3,(MethodInfo *)0x0);
   return;
 }
 
@@ -521,44 +566,69 @@ void Assembly-CSharp.dll::ModelingDynamicBoxConstraint::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<CubeModelChangedEventArgs>);
-    func_?(&
-                    MethodInfo__ModelingDynamicBoxConstraint__CubeModel_Changed_CubeModelChangedEventArgs_
-                   );
+    FUN_?(&TypeInfo__System__Action<CubeModelChangedEventArgs>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__ModelingDynamicBoxConstraint__CubeModel_Changed_CubeModelChangedEventArgs_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields).cubeModel;
   if (pMVar1 == (MVCubeModelBase *)0x0) {
-    func_?();
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pAVar3 = (pMVar1->fields).Changed;
+  this_00 = (UnityAction_1_System_Object_ *)
+            FUN_?(TypeInfo__System__Action<CubeModelChangedEventArgs>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+  UnityAction_1_System_Object___ctor
+            (this_00,(Object *)this,
+             MethodInfo__ModelingDynamicBoxConstraint__CubeModel_Changed_CubeModelChangedEventArgs_,
+             (MethodInfo *)0x0);
+  pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+  pAVar5 = TypeInfo__System__Action<CubeModelChangedEventArgs>;
+  if (pDVar4 == (Delegate *)0x0) {
+    (pMVar1->fields).Changed = (Action_1_CubeModelChangedEventArgs_ *)0x0;
   }
   else {
-    pAVar2 = (pMVar1->fields).Changed;
-    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)func_?(TypeInfo__System__Action<CubeModelChangedEventArgs>);
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              (this_00,(Object *)this,
-               MethodInfo__ModelingDynamicBoxConstraint__CubeModel_Changed_CubeModelChangedEventArgs_
-               ,(MethodInfo *)0x0);
-    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar3 == (Delegate *)0x0) {
-      (pMVar1->fields).Changed = (Action_1_CubeModelChangedEventArgs_ *)0x0;
-code_?:
-      func_?();
+    pAVar3 = (Action_1_CubeModelChangedEventArgs_ *)
+             FUN_?(pDVar4,TypeInfo__System__Action<CubeModelChangedEventArgs>);
+    if (pAVar3 == (Action_1_CubeModelChangedEventArgs_ *)0x0) {
+      FUN_?(pDVar4,pAVar5);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
-    pAVar2 = (Action_1_CubeModelChangedEventArgs_ *)func_?();
-    if (pAVar2 != (Action_1_CubeModelChangedEventArgs_ *)0x0) {
-      (pMVar1->fields).Changed = pAVar2;
-      iVar4 = func_?();
-      if (iVar4 != 0) goto code_?;
+    (pMVar1->fields).Changed = pAVar3;
+    pAVar5 = TypeInfo__System__Action<CubeModelChangedEventArgs>;
+    lVar6 = FUN_?(pDVar4,TypeInfo__System__Action<CubeModelChangedEventArgs>);
+    if (lVar6 == 0) {
+      FUN_?(pDVar4,pAVar5);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  if (iRam_? != 0) {
+    uVar7 = (uint)((ulonglong)&(pMVar1->fields).Changed >> 0xc);
+    puVar8 = (ulonglong *)((ulonglong)((uVar7 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar9 = *puVar8;
+      LOCK();
+      uVar10 = *puVar8;
+      if (uVar9 == uVar10) {
+        *puVar8 = uVar9 | 1L << (uVar7 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar9 != uVar10);
+  }
   return;
 }
 
@@ -567,146 +637,182 @@ code_?:
 
 void Assembly-CSharp.dll::ModelingDynamicBoxConstraint::ModelingDynamicBoxConstraint__ctor
                (ModelingDynamicBoxConstraint *this,MVCubeModelBase *cubeModel,
-               IntVector constraintSize,MethodInfo *method)
+               IntVector *constraintSize,MethodInfo *method)
 
 {
-  uVar1 = SUB42(in_stack_2,2);
-  uVar3 = (undefined2)((uint)unaff_EDI >> 0x10);
   if (cRam_? == '\0') {
-    func_?(0x4760);
-    in_stack_4 = 0x11b4;
-    func_?(0x25b4);
+    FUN_?(&TypeInfo__System__Action<CubeModelChangedEventArgs>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__ModelingDynamicBoxConstraint__CubeModel_Changed_CubeModelChangedEventArgs_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(0xb1ac);
-    in_stack_4 = 0x11b4;
-    func_?(0x2054);
-    func_?(0xbdbc);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__IntVector);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Size_parameter_fields_shouldn_t_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-    in_stack_4 = 0x1046;
-    func_?((short)TypeInfo__MV__WorldObject__IntVector);
+  if (*(int *)&(TypeInfo__MV__WorldObject__IntVector->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  IVar5.z = constraintSize.x;
-  IVar5._0_4_ = &stack0xffffffec;
-  IVar5 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_UnaryNegation
-                     (IVar5,(MethodInfo *)CONCAT22(in_stack_4,constraintSize.z));
-  IVar6.z = (int16_t)*IVar5._0_4_;
-  IVar6._0_4_ = &stack0xffffffec;
-  IVar5 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Division
-                     (IVar6,CONCAT22(uVar3,*(undefined2 *)(IVar5._0_4_ + 1)),(MethodInfo *)0x2);
-  IVar5 = *IVar5._0_4_;
-  iV.z = constraintSize.x;
-  iV._0_4_ = &stack0xffffffec;
-  IVar6 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Division
-                     (iV,CONCAT22(uVar1,constraintSize.z),(MethodInfo *)0x2);
+  uVar1 = constraintSize->x;
+  uVar2 = constraintSize->y;
+  IStackX_18.y = (short)-uVar2 / 2;
+  IStackX_18.x = (short)-uVar1 / 2;
+  IStackX_18.z = -constraintSize->z / 2;
+  uVar3 = constraintSize->y;
+  uVar4 = constraintSize->x;
+  IStackX_10.y = (short)uVar3 / 2;
+  IStackX_10.x = (short)uVar4 / 2;
+  IStackX_8.x = (short)uVar4 / 2;
+  IStackX_8.y = (short)uVar3 / 2;
+  IStackX_8.z = constraintSize->z / 2;
   ModelingBoxConstraint::ModelingBoxConstraint__ctor_1
-            ((ModelingBoxConstraint *)this,IVar5,*IVar6._0_4_,(MethodInfo *)0x0);
-  uVar7 = (int)constraintSize.x & 0x80000001;
-  if ((int)uVar7 < 0) {
-    uVar7 = (uVar7 - 1 | 0xfffffffe) + 1;
+            ((ModelingBoxConstraint *)this,&IStackX_18,&IStackX_8,(MethodInfo *)0x0);
+  uVar5 = (int)constraintSize->x & 0x80000001;
+  if ((int)uVar5 < 0) {
+    uVar5 = (uVar5 - 1 | 0xfffffffe) + 1;
   }
-  if (uVar7 == 1) {
+  if (uVar5 != 1) {
+    uVar6 = constraintSize->y;
+    IStackX_8.z = constraintSize->z;
+    uVar5 = (int)(short)uVar6 & 0x80000001;
+    if ((int)uVar5 < 0) {
+      uVar5 = (uVar5 - 1 | 0xfffffffe) + 1;
+    }
+    if (uVar5 != 1) {
+      IStackX_8.x = constraintSize->x;
+      IStackX_8.y = constraintSize->y;
+      uVar5 = (int)constraintSize->z & 0x80000001;
+      if ((int)uVar5 < 0) {
+        uVar5 = (uVar5 - 1 | 0xfffffffe) + 1;
+      }
+      if (uVar5 != 1) goto code_?;
+    }
+  }
+  IStackX_8.x = constraintSize->x;
+  IStackX_8.y = constraintSize->y;
+  IStackX_8.z = constraintSize->z;
+  if (*(int *)&(TypeInfo__MV__WorldObject__IntVector->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pSVar7 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_ToString
+                      (&IStackX_8,(MethodInfo *)0x0);
+  pSVar7 = mscorlib.dll::System::String::String_Concat_4
+                      (StringLiteral_Size_parameter_fields_shouldn_t_,pSVar7,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar7,(MethodInfo *)0x0);
 code_?:
-    if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    pSVar8 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_ToString
-                       ((IntVector *)&stack0xfffffff4,(MethodInfo *)0x0);
-    pSVar8 = mscorlib.dll::System::String::String_Concat_3
-                       (StringLiteral_Size_parameter_fields_shouldn_t_,pSVar8,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar8,(MethodInfo *)0x0);
-  }
-  else {
-    uVar7 = (int)constraintSize.y & 0x80000001;
-    if ((int)uVar7 < 0) {
-      uVar7 = (uVar7 - 1 | 0xfffffffe) + 1;
-    }
-    if (uVar7 == 1) goto code_?;
-    uVar7 = (int)constraintSize.z & 0x80000001;
-    if ((int)uVar7 < 0) {
-      uVar7 = (uVar7 - 1 | 0xfffffffe) + 1;
-    }
-    if (uVar7 == 1) goto code_?;
-  }
+  bVar8 = iRam_? != 0;
   (this->fields).cubeModel = cubeModel;
-  func_?();
-  pAVar9 = TypeInfo__System__Action<CubeModelChangedEventArgs>;
-  pMVar10 = (this->fields).cubeModel;
-  if (pMVar10 == (MVCubeModelBase *)0x0) {
-    func_?();
+  if (bVar8) {
+    uVar5 = (uint)((ulonglong)&(this->fields).cubeModel >> 0xc);
+    lVar9 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar10 = *(ulonglong *)(lVar9 + 0xADDR);
+      puVar11 = (ulonglong *)(lVar9 + 0xADDR);
+      LOCK();
+      bVar8 = uVar10 == *puVar11;
+      if (bVar8) {
+        *puVar11 = uVar10 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar8);
+  }
+  pMVar12 = (this->fields).cubeModel;
+  if (pMVar12 == (MVCubeModelBase *)0x0) {
+    FUN_?();
+    pcVar13 = (code *)swi(3);
+    (*pcVar13)();
+    return;
+  }
+  pAVar14 = (pMVar12->fields).Changed;
+  this_00 = (UnityAction_1_System_Object_ *)
+            FUN_?(TypeInfo__System__Action<CubeModelChangedEventArgs>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+  UnityAction_1_System_Object___ctor
+            (this_00,(Object *)this,
+             MethodInfo__ModelingDynamicBoxConstraint__CubeModel_Changed_CubeModelChangedEventArgs_,
+             (MethodInfo *)0x0);
+  pDVar15 = mscorlib.dll::System::Delegate::Delegate_Combine
+                      ((Delegate *)pAVar14,(Delegate *)this_00,(MethodInfo *)0x0);
+  pAVar16 = TypeInfo__System__Action<CubeModelChangedEventArgs>;
+  if (pDVar15 == (Delegate *)0x0) {
+    (pMVar12->fields).Changed = (Action_1_CubeModelChangedEventArgs_ *)0x0;
   }
   else {
-    a = (pMVar10->fields).Changed;
-    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)func_?();
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              (this_00,(Object *)this,
-               MethodInfo__ModelingDynamicBoxConstraint__CubeModel_Changed_CubeModelChangedEventArgs_
-               ,(MethodInfo *)0x0);
-    pDVar11 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)a,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar11 == (Delegate *)0x0) {
-      (pAVar9->vtable).Clone_1.methodPtr = (Il2CppMethodPointer)0x0;
-code_?:
-      func_?();
-      uVar12 = 0;
-      uVar13._0_2_ = 0;
-      uVar13._2_1_ = 0;
-      uVar13._3_1_ = 0;
-      uVar14._0_2_ = 0;
-      uVar14._2_2_ = 0;
-      uVar15._0_2_ = 0;
-      uVar15._2_1_ = 0;
-      uVar15._3_1_ = 0;
-      uVar16 = 0;
-      uVar17._0_2_ = 0;
-      uVar17._2_1_ = 0;
-      uVar17._3_1_ = 0;
-      uStack18 = 0x1046;
-      ObscuredIntVector::ObscuredIntVector__ctor_2
-                ((ObscuredIntVector *)&stack0xffffffd0,constraintSize,(MethodInfo *)0x0);
-      (this->fields)._Size_k__BackingField.x.currentCryptoKey = (short)(uint)uVar12;
-      (this->fields)._Size_k__BackingField.x.hiddenValue = (short)((uint)uVar12 >> 0x10);
-      (this->fields)._Size_k__BackingField.x.fakeValue = (int16_t)uVar13;
-      (this->fields)._Size_k__BackingField.x.inited = SUB41(uVar13,2);
-      (this->fields)._Size_k__BackingField.x.field_0x7 = SUB41(uVar13,3);
-      (this->fields)._Size_k__BackingField.y.currentCryptoKey = (int16_t)uVar14;
-      (this->fields)._Size_k__BackingField.y.hiddenValue = SUB42(uVar14,2);
-      (this->fields)._Size_k__BackingField.y.fakeValue = (int16_t)uVar15;
-      (this->fields)._Size_k__BackingField.y.inited = SUB41(uVar15,2);
-      (this->fields)._Size_k__BackingField.y.field_0x7 = SUB41(uVar15,3);
-      OVar19.hiddenValue = 0;
-      OVar19.currentCryptoKey = uVar16;
-      OVar19.fakeValue = (int16_t)uVar17;
-      OVar19.inited = SUB41(uVar17,2);
-      OVar19._7_1_ = SUB41(uVar17,3);
-      (this->fields)._Size_k__BackingField.z = OVar19;
-      uStack18 = 0x1046;
-      pVVar20 = ModelingDynamicBoxConstraint_CalcConstraintBoxCenter
-                          ((Vector3 *)&stack0xffffffe8,this,cubeModel,(MethodInfo *)0x0);
-      ModelingBoxConstraint::ModelingBoxConstraint_set_Center
-                ((ModelingBoxConstraint *)this,*pVVar20,(MethodInfo *)0x0);
+    pAVar14 = (Action_1_CubeModelChangedEventArgs_ *)
+              FUN_?(pDVar15,TypeInfo__System__Action<CubeModelChangedEventArgs>);
+    if (pAVar14 == (Action_1_CubeModelChangedEventArgs_ *)0x0) {
+      FUN_?(pDVar15,pAVar16);
+      pcVar13 = (code *)swi(3);
+      (*pcVar13)();
       return;
     }
-    pIVar21 = (Il2CppMethodPointer)func_?();
-    if (pIVar21 == (Il2CppMethodPointer)0x0) goto code_?;
-    (pAVar9->vtable).Clone_1.methodPtr = pIVar21;
-    iVar22 = func_?();
-    if (iVar22 != 0) goto code_?;
+    (pMVar12->fields).Changed = pAVar14;
+    pAVar16 = TypeInfo__System__Action<CubeModelChangedEventArgs>;
+    lVar9 = FUN_?();
+    if (lVar9 == 0) {
+      FUN_?(pDVar15,pAVar16);
+      pcVar13 = (code *)swi(3);
+      (*pcVar13)();
+      return;
+    }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
+  if (iRam_? != 0) {
+    uVar5 = (uint)((ulonglong)&(pMVar12->fields).Changed >> 0xc);
+    uVar10 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+    do {
+      uVar17 = *(ulonglong *)(uVar10 * 8 + 0xADDR);
+      puVar11 = (ulonglong *)(uVar10 * 8 + 0xADDR);
+      LOCK();
+      bVar8 = uVar17 == *puVar11;
+      if (bVar8) {
+        *puVar11 = uVar17 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar8);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  OStack_18 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+              ObscuredShort_op_Implicit(constraintSize->x,(MethodInfo *)0x0);
+  IStackX_8.x = constraintSize->x;
+  IStackX_8.y = constraintSize->y;
+  OStack_19 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+              ObscuredShort_op_Implicit(IStackX_8.y,(MethodInfo *)0x0);
+  OStack_20 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
+              ObscuredShort_op_Implicit(constraintSize->z,(MethodInfo *)0x0);
+  (this->fields)._Size_k__BackingField.x = OStack_18;
+  (this->fields)._Size_k__BackingField.y = OStack_19;
+  (this->fields)._Size_k__BackingField.z = OStack_20;
+  pVVar21 = ModelingDynamicBoxConstraint_CalcConstraintBoxCenter
+                      ((Vector3 *)&OStack_18,this,cubeModel,(MethodInfo *)0x0);
+  VStack_22.x = pVVar21->x;
+  VStack_22.y = pVVar21->y;
+  VStack_22.z = pVVar21->z;
+  ModelingBoxConstraint::ModelingBoxConstraint_set_Center
+            ((ModelingBoxConstraint *)this,&VStack_22,(MethodInfo *)0x0);
   return;
 }
 
@@ -719,27 +825,11 @@ Assembly-CSharp.dll::ModelingDynamicBoxConstraint::ModelingDynamicBoxConstraint_
           MethodInfo *method)
 
 {
-  iVar1 = (this->fields)._Size_k__BackingField.x.hiddenValue;
-  iVar2 = (this->fields)._Size_k__BackingField.x.fakeValue;
-  bVar3 = (this->fields)._Size_k__BackingField.x.inited;
-  uVar4 = (this->fields)._Size_k__BackingField.x.field_0x7;
-  iVar5 = (this->fields)._Size_k__BackingField.y.currentCryptoKey;
-  iVar6 = (this->fields)._Size_k__BackingField.y.hiddenValue;
-  iVar7 = (this->fields)._Size_k__BackingField.y.fakeValue;
-  bVar8 = (this->fields)._Size_k__BackingField.y.inited;
-  uVar9 = (this->fields)._Size_k__BackingField.y.field_0x7;
-  (__return_storage_ptr__->x).currentCryptoKey =
-       (this->fields)._Size_k__BackingField.x.currentCryptoKey;
-  (__return_storage_ptr__->x).hiddenValue = iVar1;
-  (__return_storage_ptr__->x).fakeValue = iVar2;
-  (__return_storage_ptr__->x).inited = bVar3;
-  (__return_storage_ptr__->x).field_0x7 = uVar4;
-  (__return_storage_ptr__->y).currentCryptoKey = iVar5;
-  (__return_storage_ptr__->y).hiddenValue = iVar6;
-  (__return_storage_ptr__->y).fakeValue = iVar7;
-  (__return_storage_ptr__->y).inited = bVar8;
-  (__return_storage_ptr__->y).field_0x7 = uVar9;
-  __return_storage_ptr__->z = (this->fields)._Size_k__BackingField.z;
+  OVar1 = (this->fields)._Size_k__BackingField.y;
+  OVar2 = (this->fields)._Size_k__BackingField.z;
+  __return_storage_ptr__->x = (this->fields)._Size_k__BackingField.x;
+  __return_storage_ptr__->y = OVar1;
+  __return_storage_ptr__->z = OVar2;
   return __return_storage_ptr__;
 }
 
@@ -747,20 +837,14 @@ Assembly-CSharp.dll::ModelingDynamicBoxConstraint::ModelingDynamicBoxConstraint_
 /* Void set_Size(ObscuredIntVector) */
 
 void Assembly-CSharp.dll::ModelingDynamicBoxConstraint::ModelingDynamicBoxConstraint_set_Size
-               (ModelingDynamicBoxConstraint *this,ObscuredIntVector value,MethodInfo *method)
+               (ModelingDynamicBoxConstraint *this,ObscuredIntVector *value,MethodInfo *method)
 
 {
-  (this->fields)._Size_k__BackingField.x.currentCryptoKey = value.x.currentCryptoKey;
-  (this->fields)._Size_k__BackingField.x.hiddenValue = value.x.hiddenValue;
-  (this->fields)._Size_k__BackingField.x.fakeValue = value.x.fakeValue;
-  (this->fields)._Size_k__BackingField.x.inited = value.x.inited;
-  (this->fields)._Size_k__BackingField.x.field_0x7 = value.x._7_1_;
-  (this->fields)._Size_k__BackingField.y.currentCryptoKey = value.y.currentCryptoKey;
-  (this->fields)._Size_k__BackingField.y.hiddenValue = value.y.hiddenValue;
-  (this->fields)._Size_k__BackingField.y.fakeValue = value.y.fakeValue;
-  (this->fields)._Size_k__BackingField.y.inited = value.y.inited;
-  (this->fields)._Size_k__BackingField.y.field_0x7 = value.y._7_1_;
-  (this->fields)._Size_k__BackingField.z = value.z;
+  OVar1 = value->y;
+  OVar2 = value->z;
+  (this->fields)._Size_k__BackingField.x = value->x;
+  (this->fields)._Size_k__BackingField.y = OVar1;
+  (this->fields)._Size_k__BackingField.z = OVar2;
   return;
 }
 

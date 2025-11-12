@@ -9,255 +9,502 @@ PlayerTierStateCalculator_GetTierPricingState
           GamePassTier__Enum playerGamePassTier,MethodInfo *method)
 
 {
-  if ((this->fields).gamePointVelocityIsZero != 0) {
-    pDVar1 = PlayerTierStateCalculator_GetTierPricingStateBasedOnUserTier
-                       (this,playerGamePassTier,(MethodInfo *)0x0);
-    return pDVar1;
-  }
-  if (cRam_? == '\0') {
-    func_?(&
+  if ((this->fields).gamePointVelocityIsZero == 0) {
+    uVar1 = 0;
+    if (cRam_? == '\0') {
+      FUN_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Add_MV__Common__GamePassTier__MV__WorldObject__GamePassSystem__PlayerTierState_
-                   );
-    func_?(&
+                    ,CONCAT44(in_register_00000014,playerGamePoints),
+                    CONCAT44(in_register_00000084,playerGamePassTier),0);
+      LOCK();
+      UNLOCK();
+      FUN_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Dictionary__
                    );
-    func_?(&
+      LOCK();
+      UNLOCK();
+      FUN_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
                    );
-    func_?(&
+      LOCK();
+      UNLOCK();
+      FUN_?(&
                     MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
                    );
-    func_?(&
+      LOCK();
+      UNLOCK();
+      FUN_?(&
                     TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>
                    );
-    func_?(&TypeInfo__System__Enum);
-    func_?(&
+      LOCK();
+      UNLOCK();
+      FUN_?(&
                     System__Collections__Generic__IEnumerable<unsigned_char>_MethodInfo__System__Linq__Enumerable__Cast<unsigned_char>_System__Collections__IEnumerable_
                    );
-    func_?(&
+      LOCK();
+      UNLOCK();
+      FUN_?(&
                     unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_
                    );
-    func_?(&TypeRef__MV__Common__GamePassTier);
-    func_?(&TypeInfo__System__Math);
-    func_?(&TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierState);
-    func_?(&TypeInfo__System__Type);
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeRef__MV__Common__GamePassTier);
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeInfo__System__Math);
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierState);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pIVar2 = TypeRef__MV__Common__GamePassTier;
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    plVar3 = (longlong *)0x0;
+    plVar4 = plVar3;
+    if (pIVar2 != (Il2CppType *)0x0) {
+      if (*(int *)(lRam_? + 0xe4) == 0) {
+        FUN_?();
+      }
+      lVar5 = FUN_?(pIVar2,1);
+      plVar4 = (longlong *)FUN_?(lVar5 + 0x20);
+    }
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    if (plVar4 == (longlong *)0x0) {
+      uVar1 = func_?(&TypeInfo__System__ArgumentNullException);
+      pAVar6 = (ArgumentNullException *)func_?(uVar1);
+      pSVar7 = (String *)func_?(&StringLiteral_enumType);
+      mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+                (pAVar6,pSVar7,(MethodInfo *)0x0);
+      uVar1 = func_?(&MethodInfo__System__Enum__GetValues_System__Type_);
+      FUN_?(pAVar6,uVar1);
+      pcVar8 = (code *)swi(3);
+      pDVar9 = (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_
+                 *)(*pcVar8)();
+      return pDVar9;
+    }
+    uVar10 = (**(code **)(*plVar4 + 0x888))(plVar4,*(undefined8 *)(*plVar4 + 0x890));
+    pIVar11 = (IEnumerable_1_System_Byte_ *)FUN_?(uVar10);
+    uVar12 = System.Core.dll::System::Linq::Enumerable::Enumerable_Max_1
+                      (pIVar11,
+                       unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_
+                      );
+    pDVar13 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
+               *)FUN_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>
+                              );
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
+    RuntimeEvents::ExplosionEvent+ExplosionValues]::
+    Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues___ctor
+              (pDVar13,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Dictionary__
+              );
+    uVar14 = unaff_RDI & 0xffffffffffffff00;
+    while (pDVar15 = (this->fields).progressionThresholds,
+          pDVar15 != (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                     *)0x0) {
+      BVar16 = (ByteEnum__Enum)uVar14;
+      pOVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+                Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                          ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar15,BVar16 & 0xff,
+                           MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                          );
+      if (pOVar17 == (Object *)0x0) break;
+      uVar18 = (int)plVar3 + *(int *)((longlong)&pOVar17[1].klass + 4);
+      plVar3 = (longlong *)(ulonglong)uVar18;
+      if ((playerGamePoints < (int)uVar18) && ((byte)playerGamePassTier < (byte)uVar14)) {
+        if (((pDVar13 ==
+              (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
+               *)0x0) ||
+            (pOVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                       ByteEnum,System::Object]::
+                       Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                 ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar13,BVar16 - 1,
+                                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
+                                 ), pOVar17 == (Object *)0x0)) ||
+           (pDVar15 = (this->fields).progressionThresholds,
+           pDVar15 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                      *)0x0)) break;
+        if (*(int *)&pOVar17[1].klass == 0) {
+          pOVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
+                    ::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                              ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar15,BVar16 & 0xff,
+                               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                              );
+          if (pOVar17 == (Object *)0x0) break;
+          iVar19 = *(int *)((longlong)&pOVar17[1].klass + 4);
+          if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          pDVar15 = (this->fields).progressionThresholds;
+          iVar20 = (playerGamePoints - uVar18) + iVar19;
+          if (iVar20 < 0) {
+            iVar20 = 0;
+          }
+          if ((pDVar15 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                          *)0x0) ||
+             (pOVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        ByteEnum,System::Object]::
+                        Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                  ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar15,
+                                   BVar16 & 0xff,
+                                   MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                                  ), pOVar17 == (Object *)0x0)) break;
+          iVar21 = *(int *)&pOVar17[1].klass;
+          pOVar17 = (Object *)
+                    FUN_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierState);
+          *(undefined4 *)&pOVar17[1].klass = 1;
+          *(int *)&pOVar17[2].klass = iVar19;
+          *(int *)((longlong)&pOVar17[1].klass + 4) = iVar19 - iVar20;
+          *(int *)((longlong)&pOVar17[1].monitor + 4) = iVar21;
+          *(int *)&pOVar17[1].monitor =
+               iVar21 - (int)(((double)iVar20 / (double)iVar19) * (double)iVar21);
+        }
+        else {
+          pOVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
+                    ::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                              ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar15,BVar16 & 0xff,
+                               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                              );
+          if (pOVar17 == (Object *)0x0) break;
+          pDVar15 = (this->fields).progressionThresholds;
+          uVar22 = *(undefined4 *)((longlong)&pOVar17[1].klass + 4);
+          if ((pDVar15 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                          *)0x0) ||
+             (pOVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        ByteEnum,System::Object]::
+                        Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                  ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar15,
+                                   BVar16 & 0xff,
+                                   MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                                  ), pOVar17 == (Object *)0x0)) break;
+          pDVar15 = (this->fields).progressionThresholds;
+          uVar23 = *(undefined4 *)((longlong)&pOVar17[1].klass + 4);
+          if ((pDVar15 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                          *)0x0) ||
+             (pOVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        ByteEnum,System::Object]::
+                        Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                  ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar15,
+                                   BVar16 & 0xff,
+                                   MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                                  ), pOVar17 == (Object *)0x0)) break;
+          pDVar15 = (this->fields).progressionThresholds;
+          uVar24 = *(undefined4 *)&pOVar17[1].klass;
+          if ((pDVar15 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                          *)0x0) ||
+             (pOVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        ByteEnum,System::Object]::
+                        Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                  ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar15,
+                                   BVar16 & 0xff,
+                                   MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                                  ), pOVar17 == (Object *)0x0)) break;
+          uVar25 = *(undefined4 *)&pOVar17[1].klass;
+          pOVar17 = (Object *)
+                    FUN_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierState);
+          *(undefined4 *)((longlong)&pOVar17[1].klass + 4) = uVar22;
+          *(undefined4 *)&pOVar17[2].klass = uVar23;
+          *(undefined4 *)&pOVar17[1].klass = 2;
+          *(undefined4 *)&pOVar17[1].monitor = uVar24;
+          *(undefined4 *)((longlong)&pOVar17[1].monitor + 4) = uVar25;
+        }
+      }
+      else {
+        pDVar15 = (this->fields).progressionThresholds;
+        if ((pDVar15 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                        *)0x0) ||
+           (pOVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar15,BVar16 & 0xff,
+                                 MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                                ), pOVar17 == (Object *)0x0)) break;
+        pDVar15 = (this->fields).progressionThresholds;
+        uVar22 = *(undefined4 *)((longlong)&pOVar17[1].klass + 4);
+        if ((pDVar15 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                        *)0x0) ||
+           (pOVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar15,BVar16 & 0xff,
+                                 MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                                ), pOVar17 == (Object *)0x0)) break;
+        uVar23 = *(undefined4 *)&pOVar17[1].klass;
+        pOVar17 = (Object *)
+                  FUN_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierState);
+        pOVar17[1].klass = (Object__Class *)0x0;
+        *(undefined4 *)&pOVar17[1].monitor = 0;
+        *(undefined4 *)&pOVar17[2].klass = uVar22;
+        *(undefined4 *)((longlong)&pOVar17[1].monitor + 4) = uVar23;
+        if (pDVar13 ==
+            (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
+             *)0x0) break;
+      }
+      uVar1 = CONCAT71((int7)((ulonglong)uVar1 >> 8),2);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
+      Dictionary_2_System_ByteEnum_System_Object__TryInsert
+                ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar13,BVar16 & 0xff,pOVar17,
+                 (InsertionBehavior__Enum)uVar1,
+                 MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Add_MV__Common__GamePassTier__MV__WorldObject__GamePassSystem__PlayerTierState_
+                 ->klass->rgctx_data[0x22].method);
+      bVar26 = (byte)uVar14 + 1;
+      uVar14 = CONCAT71((int7)(uVar14 >> 8),bVar26);
+      if (uVar12 < bVar26) {
+        return (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_ *
+               )pDVar13;
+      }
+    }
+    FUN_?();
+    pcVar8 = (code *)swi(3);
+    pDVar9 = (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_ *)
+              (*pcVar8)();
+    return pDVar9;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Add_MV__Common__GamePassTier__MV__WorldObject__GamePassSystem__PlayerTierState_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  System__Collections__Generic__IEnumerable<unsigned_char>_MethodInfo__System__Linq__Enumerable__Cast<unsigned_char>_System__Collections__IEnumerable_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeRef__MV__Common__GamePassTier);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierState);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  handle = TypeRef__MV__Common__GamePassTier;
-  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Type);
+  pIVar2 = TypeRef__MV__Common__GamePassTier;
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
   }
-  enumType = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                       ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-  if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Enum);
+  plVar4 = (longlong *)0x0;
+  if (pIVar2 != (Il2CppType *)0x0) {
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    lVar5 = FUN_?(pIVar2,1);
+    plVar4 = (longlong *)FUN_?(lVar5 + 0x20);
   }
-  source = mscorlib.dll::System::Enum::Enum_GetValues(enumType,(MethodInfo *)0x0);
-  source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Cast_4
-                        ((IEnumerable *)source,
-                         System__Collections__Generic__IEnumerable<unsigned_char>_MethodInfo__System__Linq__Enumerable__Cast<unsigned_char>_System__Collections__IEnumerable_
-                        );
-  System.Core.dll::System::Linq::Enumerable::Enumerable_Max_1
-            ((IEnumerable_1_System_Byte_ *)source_00,
-             unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_
-            );
-  this_00 = (MethodInfo *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>
-                           );
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
+  }
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
+  }
+  if (plVar4 == (longlong *)0x0) {
+    uVar1 = func_?(&TypeInfo__System__ArgumentNullException);
+    pAVar6 = (ArgumentNullException *)func_?(uVar1);
+    pSVar7 = (String *)func_?(&StringLiteral_enumType);
+    mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+              (pAVar6,pSVar7,(MethodInfo *)0x0);
+    uVar1 = func_?(&MethodInfo__System__Enum__GetValues_System__Type_);
+    FUN_?(pAVar6,uVar1);
+    pcVar8 = (code *)swi(3);
+    pDVar9 = (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_ *)
+              (*pcVar8)();
+    return pDVar9;
+  }
+  uVar1 = (**(code **)(*plVar4 + 0x888))(plVar4,*(undefined8 *)(*plVar4 + 0x890));
+  pIVar11 = (IEnumerable_1_System_Byte_ *)FUN_?(uVar1);
+  uVar12 = System.Core.dll::System::Linq::Enumerable::Enumerable_Max_1
+                    (pIVar11,
+                     unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_
+                    );
+  pDVar13 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
+             *)FUN_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>
+                            );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
   RuntimeEvents::ExplosionEvent+ExplosionValues]::
   Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues___ctor
-            ((Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
-              *)this_00,
+            (pDVar13,
              MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Dictionary__
             );
-  uVar2 = GamePassTier__Enum_Tier0;
-  while( true ) {
-    pPVar3 = this;
-    pDVar4 = (this->fields).progressionThresholds;
-    if (pDVar4 ==
-        (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_ *)
-        0x0) break;
-    key = CONCAT31((int3)
-                   MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                   ,uVar2);
-    pMVar5 = (MethodInfo *)&UNK_?;
-    BVar6 = key;
-    pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-             Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                       ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar4,key,
-                        MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                       );
-    cVar8 = (char)(BVar6 >> 0x18);
-    if (pOVar7 == (Object *)0x0) break;
-    pMVar9 = pOVar7[1].monitor + (int)&pDVar4->klass;
-    if ((playerGamePoints < (int)pMVar9) && ((byte)(undefined1)playerGamePassTier < (byte)uVar2)) {
-      if (this_00 == (MethodInfo *)0x0) break;
-      uVar10 = 0x10;
-      pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-               Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                         ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,
-                          (uint)(byte)(uVar2 - GamePassTier__Enum_Tier1),
-                          MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
-                         );
-      if (pOVar7 == (Object *)0x0) break;
-      playerGamePoints = (int32_t)(this->fields).progressionThresholds;
-      if (pOVar7[1].klass == (Object__Class *)0x0) {
-        if ((Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-             *)playerGamePoints ==
-            (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-             *)0x0) break;
-        this = (PlayerTierStateCalculator *)&UNK_?;
-        pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-                 Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                           ((Dictionary_2_System_ByteEnum_System_Object_ *)playerGamePoints,key,
-                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                           );
-        if (pOVar7 == (Object *)0x0) break;
-        pMVar11 = pOVar7[1].monitor;
-        if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        mscorlib.dll::System::Math::Math_Max_4
-                  (((int)pMVar11 - (int)pMVar9) + playerGamePoints,0,(MethodInfo *)0x0);
-        pDVar4 = (pPVar3->fields).progressionThresholds;
-        if (pDVar4 ==
-            (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-             *)0x0) break;
-        puVar12 = &UNK_?;
-        this_00 = 
-        MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-        ;
-        pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-                 Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                           ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar4,key,
-                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                           );
-        if (pOVar7 == (Object *)0x0) break;
-        goldPriceRequirementBase = pOVar7[1].klass;
-        cVar8 = '\x10';
-        pPVar13 = TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierState;
-        pPVar14 = (PlayerTierState *)func_?();
-        uVar10 = (undefined1)((uint)pPVar13 >> 0x18);
-        pOVar15 = (Object__Class *)
-                  ((int)goldPriceRequirementBase -
-                  (int)(((double)(int)puVar12 / (double)(int)pDVar4) *
-                       (double)(int)goldPriceRequirementBase));
-        pMVar9 = (MonitorData *)((int)pDVar4 - (int)puVar12);
-        tierLockState = TierLockState__Enum_PurchaseUnlock;
+  uVar14 = (ulonglong)plVar4 & 0xffffffffffffff00;
+  do {
+    BVar16 = (ByteEnum__Enum)uVar14;
+    if ((byte)playerGamePassTier < (byte)uVar14) {
+      if (((pDVar13 ==
+            (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
+             *)0x0) ||
+          (pOVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                     ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                               ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar13,BVar16 - 1,
+                                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
+                               ), pOVar17 == (Object *)0x0)) ||
+         (pDVar15 = (this->fields).progressionThresholds,
+         pDVar15 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                    *)0x0)) goto DAT_?;
+      if (*(int *)&pOVar17[1].klass == 0) {
+        pOVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+                  Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                            ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar15,BVar16 & 0xff,
+                             MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                            );
+        if (pOVar17 == (Object *)0x0) goto DAT_?;
+        pDVar15 = (this->fields).progressionThresholds;
+        uVar22 = *(undefined4 *)((longlong)&pOVar17[1].klass + 4);
+        if ((pDVar15 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                        *)0x0) ||
+           (pOVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar15,BVar16 & 0xff,
+                                 MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                                ), pOVar17 == (Object *)0x0)) goto DAT_?;
+        pDVar15 = (this->fields).progressionThresholds;
+        uVar23 = *(undefined4 *)((longlong)&pOVar17[1].klass + 4);
+        if ((pDVar15 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                        *)0x0) ||
+           (pOVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar15,BVar16 & 0xff,
+                                 MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                                ), pOVar17 == (Object *)0x0)) goto DAT_?;
+        pDVar15 = (this->fields).progressionThresholds;
+        uVar24 = *(undefined4 *)&pOVar17[1].klass;
+        if ((pDVar15 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                        *)0x0) ||
+           (pOVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar15,BVar16 & 0xff,
+                                 MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                                ), pOVar17 == (Object *)0x0)) goto DAT_?;
+        uVar25 = *(undefined4 *)&pOVar17[1].klass;
+        pOVar17 = (Object *)
+                  FUN_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierState);
+        *(undefined4 *)&pOVar17[1].klass = 1;
       }
       else {
-        if ((Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-             *)playerGamePoints ==
-            (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-             *)0x0) break;
-        this = (PlayerTierStateCalculator *)&UNK_?;
-        pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-                 Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                           ((Dictionary_2_System_ByteEnum_System_Object_ *)playerGamePoints,key,
-                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                           );
-        if (pOVar7 == (Object *)0x0) break;
-        pMVar9 = pOVar7[1].monitor;
-        pDVar4 = (pPVar3->fields).progressionThresholds;
-        if (pDVar4 ==
-            (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-             *)0x0) break;
-        pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-                 Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                           ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar4,key,
-                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                           );
-        if (pOVar7 == (Object *)0x0) break;
-        pDVar4 = (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-                   *)pOVar7[1].monitor;
-        pDVar16 = (pPVar3->fields).progressionThresholds;
-        if (pDVar16 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-                       *)0x0) break;
-        pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-                 Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                           ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar16,key,
-                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                           );
-        if (pOVar7 == (Object *)0x0) break;
-        pOVar15 = pOVar7[1].klass;
-        pDVar16 = (pPVar3->fields).progressionThresholds;
-        if (pDVar16 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-                       *)0x0) break;
-        pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-                 Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                           ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar16,key,
-                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                           );
-        if (pOVar7 == (Object *)0x0) break;
-        goldPriceRequirementBase = pOVar7[1].klass;
-        pPVar14 = (PlayerTierState *)func_?();
-        tierLockState = TierLockState__Enum_Locked;
-        this_00 = pMVar5;
+        pOVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+                  Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                            ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar15,BVar16 & 0xff,
+                             MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                            );
+        if (pOVar17 == (Object *)0x0) goto DAT_?;
+        pDVar15 = (this->fields).progressionThresholds;
+        uVar22 = *(undefined4 *)((longlong)&pOVar17[1].klass + 4);
+        if ((pDVar15 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                        *)0x0) ||
+           (pOVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar15,BVar16 & 0xff,
+                                 MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                                ), pOVar17 == (Object *)0x0)) goto DAT_?;
+        pDVar15 = (this->fields).progressionThresholds;
+        uVar23 = *(undefined4 *)((longlong)&pOVar17[1].klass + 4);
+        if ((pDVar15 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                        *)0x0) ||
+           (pOVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar15,BVar16 & 0xff,
+                                 MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                                ), pOVar17 == (Object *)0x0)) goto DAT_?;
+        pDVar15 = (this->fields).progressionThresholds;
+        uVar24 = *(undefined4 *)&pOVar17[1].klass;
+        if ((pDVar15 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                        *)0x0) ||
+           (pOVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar15,BVar16 & 0xff,
+                                 MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                                ), pOVar17 == (Object *)0x0)) goto DAT_?;
+        uVar25 = *(undefined4 *)&pOVar17[1].klass;
+        pOVar17 = (Object *)
+                  FUN_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierState);
+        *(undefined4 *)&pOVar17[1].klass = 2;
       }
-      PlayerTierState::PlayerTierState__ctor
-                (pPVar14,tierLockState,(int32_t)pMVar9,(int32_t)pDVar4,(int32_t)pOVar15,
-                 (int32_t)goldPriceRequirementBase,(MethodInfo *)0x0);
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
-      Dictionary_2_System_ByteEnum_System_Object__Add
-                ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,key,(Object *)pPVar14,
-                 MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Add_MV__Common__GamePassTier__MV__WorldObject__GamePassSystem__PlayerTierState_
-                );
+      *(undefined4 *)((longlong)&pOVar17[1].klass + 4) = uVar22;
+      *(undefined4 *)&pOVar17[1].monitor = uVar24;
+      *(undefined4 *)&pOVar17[2].klass = uVar23;
+      *(undefined4 *)((longlong)&pOVar17[1].monitor + 4) = uVar25;
     }
     else {
-      pDVar4 = (this->fields).progressionThresholds;
-      if (pDVar4 ==
-          (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_ *
-          )0x0) break;
-      pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-               Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                         ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar4,key,
-                          MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                         );
-      if (pOVar7 == (Object *)0x0) break;
-      pMVar9 = pOVar7[1].monitor;
-      playerGamePoints = (int32_t)(this->fields).progressionThresholds;
-      if ((Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_ *
-          )playerGamePoints ==
-          (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_ *
-          )0x0) break;
-      this = (PlayerTierStateCalculator *)&UNK_?;
-      pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-               Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                         ((Dictionary_2_System_ByteEnum_System_Object_ *)playerGamePoints,key,
-                          MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                         );
-      if (pOVar7 == (Object *)0x0) break;
-      pOVar15 = pOVar7[1].klass;
-      pPVar14 = (PlayerTierState *)func_?();
-      PlayerTierState::PlayerTierState__ctor
-                (pPVar14,TierLockState__Enum_Unlocked,0,(int32_t)pMVar9,0,(int32_t)pOVar15,
-                 (MethodInfo *)0x0);
-      if (this_00 == (MethodInfo *)0x0) break;
-      pMVar5 = 
-      MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Add_MV__Common__GamePassTier__MV__WorldObject__GamePassSystem__PlayerTierState_
-      ;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
-      Dictionary_2_System_ByteEnum_System_Object__Add
-                ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,key,(Object *)pPVar14,
-                 MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Add_MV__Common__GamePassTier__MV__WorldObject__GamePassSystem__PlayerTierState_
-                );
-      uVar10 = (undefined1)((uint)pMVar5 >> 0x18);
-      cVar8 = (char)((uint)pPVar14 >> 0x18);
+      pDVar15 = (this->fields).progressionThresholds;
+      if ((pDVar15 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                      *)0x0) ||
+         (pOVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
+                    ::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                              ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar15,BVar16 & 0xff,
+                               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                              ), pOVar17 == (Object *)0x0)) {
+DAT_?:
+        FUN_?();
+        pcVar8 = (code *)swi(3);
+        pDVar9 = (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_
+                   *)(*pcVar8)();
+        return pDVar9;
+      }
+      pDVar15 = (this->fields).progressionThresholds;
+      uVar22 = *(undefined4 *)((longlong)&pOVar17[1].klass + 4);
+      if ((pDVar15 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                      *)0x0) ||
+         (pOVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
+                    ::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                              ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar15,BVar16 & 0xff,
+                               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                              ), pOVar17 == (Object *)0x0)) goto DAT_?;
+      uVar23 = *(undefined4 *)&pOVar17[1].klass;
+      pOVar17 = (Object *)FUN_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierState);
+      pOVar17[1].klass = (Object__Class *)0x0;
+      *(undefined4 *)&pOVar17[1].monitor = 0;
+      *(undefined4 *)&pOVar17[2].klass = uVar22;
+      *(undefined4 *)((longlong)&pOVar17[1].monitor + 4) = uVar23;
+      if (pDVar13 ==
+          (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
+           *)0x0) goto DAT_?;
     }
-    uVar2 = cVar8 + GamePassTier__Enum_Tier1;
-    playerGamePassTier = key;
-    if ((byte)uVar10 < (byte)uVar2) {
+    method = (MethodInfo *)CONCAT71((int7)((ulonglong)method >> 8),2);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
+    Dictionary_2_System_ByteEnum_System_Object__TryInsert
+              ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar13,BVar16 & 0xff,pOVar17,
+               (InsertionBehavior__Enum)method,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Add_MV__Common__GamePassTier__MV__WorldObject__GamePassSystem__PlayerTierState_
+               ->klass->rgctx_data[0x22].method);
+    bVar26 = (byte)uVar14 + 1;
+    uVar14 = CONCAT71((int7)(uVar14 >> 8),bVar26);
+    if (uVar12 < bVar26) {
       return (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_ *)
-             this_00;
+             pDVar13;
     }
-  }
-  func_?();
-  pcVar17 = (code *)swi(3);
-  pDVar1 = (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_ *)
-           (*pcVar17)();
-  return pDVar1;
+  } while( true );
 }
 
 
@@ -271,250 +518,252 @@ PlayerTierStateCalculator_GetTierPricingStateBasedOnUserGamePointAmount
           GamePassTier__Enum playerGamePassTier,MethodInfo *method)
 
 {
+  behavior = (InsertionBehavior__Enum)method;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Add_MV__Common__GamePassTier__MV__WorldObject__GamePassSystem__PlayerTierState_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Dictionary__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>
-                   );
-    func_?(&TypeInfo__System__Enum);
-    func_?(&
-                    System__Collections__Generic__IEnumerable<unsigned_char>_MethodInfo__System__Linq__Enumerable__Cast<unsigned_char>_System__Collections__IEnumerable_
-                   );
-    func_?(&
-                    unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_
-                   );
-    func_?(&TypeRef__MV__Common__GamePassTier);
-    func_?(&TypeInfo__System__Math);
-    func_?(&TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierState);
-    func_?(&TypeInfo__System__Type);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Add_MV__Common__GamePassTier__MV__WorldObject__GamePassSystem__PlayerTierState_
+                  ,CONCAT44(in_register_00000014,playerGamePoints),
+                  CONCAT44(in_register_00000084,playerGamePassTier),behavior);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  System__Collections__Generic__IEnumerable<unsigned_char>_MethodInfo__System__Linq__Enumerable__Cast<unsigned_char>_System__Collections__IEnumerable_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeRef__MV__Common__GamePassTier);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Math);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierState);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  handle = TypeRef__MV__Common__GamePassTier;
-  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Type);
+  pIVar1 = TypeRef__MV__Common__GamePassTier;
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
   }
-  enumType = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                       ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-  if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Enum);
+  plVar2 = (longlong *)0x0;
+  plVar3 = plVar2;
+  if (pIVar1 != (Il2CppType *)0x0) {
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    lVar4 = FUN_?(pIVar1,1);
+    plVar3 = (longlong *)FUN_?(lVar4 + 0x20);
   }
-  source = mscorlib.dll::System::Enum::Enum_GetValues(enumType,(MethodInfo *)0x0);
-  source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Cast_4
-                        ((IEnumerable *)source,
-                         System__Collections__Generic__IEnumerable<unsigned_char>_MethodInfo__System__Linq__Enumerable__Cast<unsigned_char>_System__Collections__IEnumerable_
-                        );
-  System.Core.dll::System::Linq::Enumerable::Enumerable_Max_1
-            ((IEnumerable_1_System_Byte_ *)source_00,
-             unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_
-            );
-  this_00 = (MethodInfo *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>
-                           );
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
+  }
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
+  }
+  if (plVar3 == (longlong *)0x0) {
+    uVar5 = func_?(&TypeInfo__System__ArgumentNullException);
+    this_01 = (ArgumentNullException *)func_?(uVar5);
+    paramName = (String *)func_?(&StringLiteral_enumType);
+    mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+              (this_01,paramName,(MethodInfo *)0x0);
+    uVar5 = func_?(&MethodInfo__System__Enum__GetValues_System__Type_);
+    FUN_?(this_01,uVar5);
+    pcVar6 = (code *)swi(3);
+    pDVar7 = (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_ *)
+              (*pcVar6)();
+    return pDVar7;
+  }
+  uVar5 = (**(code **)(*plVar3 + 0x888))(plVar3,*(undefined8 *)(*plVar3 + 0x890));
+  source = (IEnumerable_1_System_Byte_ *)FUN_?(uVar5);
+  uVar8 = System.Core.dll::System::Linq::Enumerable::Enumerable_Max_1
+                     (source,
+                      unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_
+                     );
+  this_00 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
+             *)FUN_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>
+                            );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
   RuntimeEvents::ExplosionEvent+ExplosionValues]::
   Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues___ctor
-            ((Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
-              *)this_00,
+            (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Dictionary__
             );
-  uVar1 = GamePassTier__Enum_Tier0;
+  uVar9 = unaff_RDI & 0xffffffffffffff00;
   while( true ) {
-    pPVar2 = this;
-    pDVar3 = (this->fields).progressionThresholds;
-    if (pDVar3 ==
-        (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_ *)
-        0x0) break;
-    key = CONCAT31((int3)
-                   MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                   ,uVar1);
-    pMVar4 = (MethodInfo *)&UNK_?;
-    BVar5 = key;
-    pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-             Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                       ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar3,key,
-                        MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                       );
-    cVar7 = (char)(BVar5 >> 0x18);
-    if (pOVar6 == (Object *)0x0) break;
-    pMVar8 = pOVar6[1].monitor + (int)&pDVar3->klass;
-    if ((playerGamePoints < (int)pMVar8) && ((byte)(undefined1)playerGamePassTier < (byte)uVar1)) {
-      if (this_00 == (MethodInfo *)0x0) break;
-      uVar9 = 0x10;
-      pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-               Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                         ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,
-                          (uint)(byte)(uVar1 - GamePassTier__Enum_Tier1),
-                          MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
-                         );
-      if (pOVar6 == (Object *)0x0) break;
-      playerGamePoints = (int32_t)(this->fields).progressionThresholds;
-      if (pOVar6[1].klass == (Object__Class *)0x0) {
-        if ((Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-             *)playerGamePoints ==
-            (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-             *)0x0) break;
-        this = (PlayerTierStateCalculator *)&UNK_?;
-        pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-                 Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                           ((Dictionary_2_System_ByteEnum_System_Object_ *)playerGamePoints,key,
-                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                           );
-        if (pOVar6 == (Object *)0x0) break;
-        pMVar10 = pOVar6[1].monitor;
-        if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+    pDVar10 = (this->fields).progressionThresholds;
+    if (pDVar10 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                   *)0x0) break;
+    BVar11 = (ByteEnum__Enum)uVar9;
+    pOVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+              Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                        ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar10,BVar11 & 0xff,
+                         MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                        );
+    if (pOVar12 == (Object *)0x0) break;
+    uVar13 = (int)plVar2 + *(int *)((longlong)&pOVar12[1].klass + 4);
+    plVar2 = (longlong *)(ulonglong)uVar13;
+    if ((playerGamePoints < (int)uVar13) && ((byte)playerGamePassTier < (byte)uVar9)) {
+      if (((this_00 ==
+            (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
+             *)0x0) ||
+          (pOVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                     ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                               ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,BVar11 - 1,
+                                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
+                               ), pOVar12 == (Object *)0x0)) ||
+         (pDVar10 = (this->fields).progressionThresholds,
+         pDVar10 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                    *)0x0)) break;
+      if (*(int *)&pOVar12[1].klass == 0) {
+        pOVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+                  Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                            ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar10,BVar11 & 0xff,
+                             MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                            );
+        if (pOVar12 == (Object *)0x0) break;
+        iVar14 = *(int *)((longlong)&pOVar12[1].klass + 4);
+        if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        mscorlib.dll::System::Math::Math_Max_4
-                  (((int)pMVar10 - (int)pMVar8) + playerGamePoints,0,(MethodInfo *)0x0);
-        pDVar3 = (pPVar2->fields).progressionThresholds;
-        if (pDVar3 ==
-            (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-             *)0x0) break;
-        puVar11 = &UNK_?;
-        this_00 = 
-        MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-        ;
-        pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-                 Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                           ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar3,key,
-                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                           );
-        if (pOVar6 == (Object *)0x0) break;
-        goldPriceRequirementBase = pOVar6[1].klass;
-        cVar7 = '\x10';
-        pPVar12 = TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierState;
-        pPVar13 = (PlayerTierState *)func_?();
-        uVar9 = (undefined1)((uint)pPVar12 >> 0x18);
-        pOVar14 = (Object__Class *)
-                  ((int)goldPriceRequirementBase -
-                  (int)(((double)(int)puVar11 / (double)(int)pDVar3) *
-                       (double)(int)goldPriceRequirementBase));
-        pMVar8 = (MonitorData *)((int)pDVar3 - (int)puVar11);
-        tierLockState = TierLockState__Enum_PurchaseUnlock;
+        pDVar10 = (this->fields).progressionThresholds;
+        iVar15 = (playerGamePoints - uVar13) + iVar14;
+        if (iVar15 < 0) {
+          iVar15 = 0;
+        }
+        if ((pDVar10 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                        *)0x0) ||
+           (pOVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar10,BVar11 & 0xff,
+                                 MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                                ), pOVar12 == (Object *)0x0)) break;
+        iVar16 = *(int *)&pOVar12[1].klass;
+        pOVar12 = (Object *)
+                  FUN_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierState);
+        *(undefined4 *)&pOVar12[1].klass = 1;
+        *(int *)&pOVar12[2].klass = iVar14;
+        *(int *)((longlong)&pOVar12[1].klass + 4) = iVar14 - iVar15;
+        *(int *)((longlong)&pOVar12[1].monitor + 4) = iVar16;
+        *(int *)&pOVar12[1].monitor =
+             iVar16 - (int)(((double)iVar15 / (double)iVar14) * (double)iVar16);
       }
       else {
-        if ((Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-             *)playerGamePoints ==
-            (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-             *)0x0) break;
-        this = (PlayerTierStateCalculator *)&UNK_?;
-        pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-                 Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                           ((Dictionary_2_System_ByteEnum_System_Object_ *)playerGamePoints,key,
-                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                           );
-        if (pOVar6 == (Object *)0x0) break;
-        pMVar8 = pOVar6[1].monitor;
-        pDVar3 = (pPVar2->fields).progressionThresholds;
-        if (pDVar3 ==
-            (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-             *)0x0) break;
-        pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-                 Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                           ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar3,key,
-                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                           );
-        if (pOVar6 == (Object *)0x0) break;
-        pDVar3 = (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-                   *)pOVar6[1].monitor;
-        pDVar15 = (pPVar2->fields).progressionThresholds;
-        if (pDVar15 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-                       *)0x0) break;
-        pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-                 Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                           ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar15,key,
-                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                           );
-        if (pOVar6 == (Object *)0x0) break;
-        pOVar14 = pOVar6[1].klass;
-        pDVar15 = (pPVar2->fields).progressionThresholds;
-        if (pDVar15 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-                       *)0x0) break;
-        pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-                 Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                           ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar15,key,
-                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                           );
-        if (pOVar6 == (Object *)0x0) break;
-        goldPriceRequirementBase = pOVar6[1].klass;
-        pPVar13 = (PlayerTierState *)func_?();
-        tierLockState = TierLockState__Enum_Locked;
-        this_00 = pMVar4;
+        pOVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+                  Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                            ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar10,BVar11 & 0xff,
+                             MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                            );
+        if (pOVar12 == (Object *)0x0) break;
+        pDVar10 = (this->fields).progressionThresholds;
+        uVar17 = *(undefined4 *)((longlong)&pOVar12[1].klass + 4);
+        if ((pDVar10 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                        *)0x0) ||
+           (pOVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar10,BVar11 & 0xff,
+                                 MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                                ), pOVar12 == (Object *)0x0)) break;
+        pDVar10 = (this->fields).progressionThresholds;
+        uVar18 = *(undefined4 *)((longlong)&pOVar12[1].klass + 4);
+        if ((pDVar10 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                        *)0x0) ||
+           (pOVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar10,BVar11 & 0xff,
+                                 MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                                ), pOVar12 == (Object *)0x0)) break;
+        pDVar10 = (this->fields).progressionThresholds;
+        uVar19 = *(undefined4 *)&pOVar12[1].klass;
+        if ((pDVar10 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                        *)0x0) ||
+           (pOVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                                ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar10,BVar11 & 0xff,
+                                 MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                                ), pOVar12 == (Object *)0x0)) break;
+        uVar20 = *(undefined4 *)&pOVar12[1].klass;
+        pOVar12 = (Object *)
+                  FUN_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierState);
+        *(undefined4 *)((longlong)&pOVar12[1].klass + 4) = uVar17;
+        *(undefined4 *)&pOVar12[2].klass = uVar18;
+        *(undefined4 *)&pOVar12[1].klass = 2;
+        *(undefined4 *)&pOVar12[1].monitor = uVar19;
+        *(undefined4 *)((longlong)&pOVar12[1].monitor + 4) = uVar20;
       }
-      PlayerTierState::PlayerTierState__ctor
-                (pPVar13,tierLockState,(int32_t)pMVar8,(int32_t)pDVar3,(int32_t)pOVar14,
-                 (int32_t)goldPriceRequirementBase,(MethodInfo *)0x0);
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
-      Dictionary_2_System_ByteEnum_System_Object__Add
-                ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,key,(Object *)pPVar13,
-                 MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Add_MV__Common__GamePassTier__MV__WorldObject__GamePassSystem__PlayerTierState_
-                );
     }
     else {
-      pDVar3 = (this->fields).progressionThresholds;
-      if (pDVar3 ==
-          (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_ *
-          )0x0) break;
-      pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-               Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                         ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar3,key,
-                          MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                         );
-      if (pOVar6 == (Object *)0x0) break;
-      pMVar8 = pOVar6[1].monitor;
-      playerGamePoints = (int32_t)(this->fields).progressionThresholds;
-      if ((Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_ *
-          )playerGamePoints ==
-          (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_ *
-          )0x0) break;
-      this = (PlayerTierStateCalculator *)&UNK_?;
-      pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-               Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                         ((Dictionary_2_System_ByteEnum_System_Object_ *)playerGamePoints,key,
-                          MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                         );
-      if (pOVar6 == (Object *)0x0) break;
-      pOVar14 = pOVar6[1].klass;
-      pPVar13 = (PlayerTierState *)func_?();
-      PlayerTierState::PlayerTierState__ctor
-                (pPVar13,TierLockState__Enum_Unlocked,0,(int32_t)pMVar8,0,(int32_t)pOVar14,
-                 (MethodInfo *)0x0);
-      if (this_00 == (MethodInfo *)0x0) break;
-      pMVar4 = 
-      MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Add_MV__Common__GamePassTier__MV__WorldObject__GamePassSystem__PlayerTierState_
-      ;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
-      Dictionary_2_System_ByteEnum_System_Object__Add
-                ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,key,(Object *)pPVar13,
-                 MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Add_MV__Common__GamePassTier__MV__WorldObject__GamePassSystem__PlayerTierState_
-                );
-      uVar9 = (undefined1)((uint)pMVar4 >> 0x18);
-      cVar7 = (char)((uint)pPVar13 >> 0x18);
+      pDVar10 = (this->fields).progressionThresholds;
+      if ((pDVar10 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                      *)0x0) ||
+         (pOVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
+                    ::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                              ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar10,BVar11 & 0xff,
+                               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                              ), pOVar12 == (Object *)0x0)) break;
+      pDVar10 = (this->fields).progressionThresholds;
+      uVar17 = *(undefined4 *)((longlong)&pOVar12[1].klass + 4);
+      if ((pDVar10 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                      *)0x0) ||
+         (pOVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
+                    ::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                              ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar10,BVar11 & 0xff,
+                               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                              ), pOVar12 == (Object *)0x0)) break;
+      uVar18 = *(undefined4 *)&pOVar12[1].klass;
+      pOVar12 = (Object *)FUN_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierState);
+      pOVar12[1].klass = (Object__Class *)0x0;
+      *(undefined4 *)&pOVar12[1].monitor = 0;
+      *(undefined4 *)&pOVar12[2].klass = uVar17;
+      *(undefined4 *)((longlong)&pOVar12[1].monitor + 4) = uVar18;
+      if (this_00 ==
+          (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
+           *)0x0) break;
     }
-    uVar1 = cVar7 + GamePassTier__Enum_Tier1;
-    playerGamePassTier = key;
-    if ((byte)uVar9 < (byte)uVar1) {
+    behavior = CONCAT31((int3)(behavior >> 8),2);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
+    Dictionary_2_System_ByteEnum_System_Object__TryInsert
+              ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,BVar11 & 0xff,pOVar12,behavior,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Add_MV__Common__GamePassTier__MV__WorldObject__GamePassSystem__PlayerTierState_
+               ->klass->rgctx_data[0x22].method);
+    bVar21 = (byte)uVar9 + 1;
+    uVar9 = CONCAT71((int7)(uVar9 >> 8),bVar21);
+    if (uVar8 < bVar21) {
       return (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_ *)
              this_00;
     }
   }
-  func_?();
-  pcVar16 = (code *)swi(3);
-  pDVar17 = (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_ *)
-           (*pcVar16)();
-  return pDVar17;
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  pDVar7 = (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_ *)
+            (*pcVar6)();
+  return pDVar7;
 }
 
 
@@ -528,240 +777,238 @@ PlayerTierStateCalculator_GetTierPricingStateBasedOnUserTier
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Add_MV__Common__GamePassTier__MV__WorldObject__GamePassSystem__PlayerTierState_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Dictionary__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>
-                   );
-    func_?(&TypeInfo__System__Enum);
-    func_?(&
-                    System__Collections__Generic__IEnumerable<unsigned_char>_MethodInfo__System__Linq__Enumerable__Cast<unsigned_char>_System__Collections__IEnumerable_
-                   );
-    func_?(&
-                    unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_
-                   );
-    func_?(&TypeRef__MV__Common__GamePassTier);
-    func_?(&TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierState);
-    func_?(&TypeInfo__System__Type);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Add_MV__Common__GamePassTier__MV__WorldObject__GamePassSystem__PlayerTierState_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  System__Collections__Generic__IEnumerable<unsigned_char>_MethodInfo__System__Linq__Enumerable__Cast<unsigned_char>_System__Collections__IEnumerable_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeRef__MV__Common__GamePassTier);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierState);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  handle = TypeRef__MV__Common__GamePassTier;
-  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Type);
+  pIVar1 = TypeRef__MV__Common__GamePassTier;
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
   }
-  enumType = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                       ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-  if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Enum);
+  plVar2 = (longlong *)0x0;
+  if (pIVar1 != (Il2CppType *)0x0) {
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    lVar3 = FUN_?(pIVar1,1);
+    plVar2 = (longlong *)FUN_?(lVar3 + 0x20);
   }
-  source = mscorlib.dll::System::Enum::Enum_GetValues(enumType,(MethodInfo *)0x0);
-  source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Cast_4
-                        ((IEnumerable *)source,
-                         System__Collections__Generic__IEnumerable<unsigned_char>_MethodInfo__System__Linq__Enumerable__Cast<unsigned_char>_System__Collections__IEnumerable_
-                        );
-  System.Core.dll::System::Linq::Enumerable::Enumerable_Max_1
-            ((IEnumerable_1_System_Byte_ *)source_00,
-             unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_
-            );
-  this_01 = (PlayerTierState *)(in_stack_1 & 0xffffff);
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
+  }
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
+  }
+  if (plVar2 == (longlong *)0x0) {
+    uVar4 = func_?(&TypeInfo__System__ArgumentNullException);
+    this_01 = (ArgumentNullException *)func_?(uVar4);
+    paramName = (String *)func_?(&StringLiteral_enumType);
+    mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+              (this_01,paramName,(MethodInfo *)0x0);
+    uVar4 = func_?(&MethodInfo__System__Enum__GetValues_System__Type_);
+    FUN_?(this_01,uVar4);
+    pcVar5 = (code *)swi(3);
+    pDVar6 = (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_ *)
+              (*pcVar5)();
+    return pDVar6;
+  }
+  uVar4 = (**(code **)(*plVar2 + 0x888))(plVar2,*(undefined8 *)(*plVar2 + 0x890));
+  source = (IEnumerable_1_System_Byte_ *)FUN_?(uVar4);
+  uVar7 = System.Core.dll::System::Linq::Enumerable::Enumerable_Max_1
+                    (source,
+                     unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_
+                    );
   this_00 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
-             *)func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>
-                              );
+             *)FUN_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>
+                            );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
   RuntimeEvents::ExplosionEvent+ExplosionValues]::
   Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues___ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Dictionary__
             );
-  uVar2 = GamePassTier__Enum_Tier0;
+  uVar8 = (ulonglong)plVar2 & 0xffffffffffffff00;
   do {
-    if ((byte)(undefined1)playerGamePassTier < (byte)uVar2) {
-      if (this_00 ==
-          (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
-           *)0x0) {
-code_?:
-        func_?();
-        pcVar3 = (code *)swi(3);
-        pDVar4 = (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_
-                  *)(*pcVar3)();
-        return pDVar4;
-      }
-      this_01 = (PlayerTierState *)(uint)(byte)(uVar2 - GamePassTier__Enum_Tier1);
-      pDVar5 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
-                 *)&UNK_?;
-      pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-               Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                         ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,
-                          (ByteEnum__Enum)this_01,
-                          MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
-                         );
-      cVar7 = (char)((uint)this_00 >> 0x18);
-      if (pOVar6 == (Object *)0x0) goto code_?;
-      pDVar8 = (this->fields).progressionThresholds;
-      if (pOVar6[1].klass == (Object__Class *)0x0) {
-        if (pDVar8 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-                       *)0x0) goto code_?;
-        BVar9 = CONCAT31((int3)this_01,cVar7);
-        pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+    BVar9 = (ByteEnum__Enum)uVar8;
+    if ((byte)playerGamePassTier < (byte)uVar8) {
+      if (((this_00 ==
+            (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
+             *)0x0) ||
+          (pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
+                    ::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                              ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,BVar9 - 1,
+                               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__get_Item_MV__Common__GamePassTier_
+                              ), pOVar10 == (Object *)0x0)) ||
+         (pDVar11 = (this->fields).progressionThresholds,
+         pDVar11 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                    *)0x0)) goto DAT_?;
+      if (*(int *)&pOVar10[1].klass == 0) {
+        pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
                  Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                           ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar8,BVar9,
+                           ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar11,BVar9 & 0xff,
                             MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
                            );
-        if (pOVar6 == (Object *)0x0) goto code_?;
-        pMVar10 = pOVar6[1].monitor;
-        pDVar8 = (this->fields).progressionThresholds;
-        if (pDVar8 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-                       *)0x0) goto code_?;
-        playerGamePassTier = (GamePassTier__Enum)&UNK_?;
-        pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-                 Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                           ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar8,BVar9,
-                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                           );
-        if (pOVar6 == (Object *)0x0) goto code_?;
-        pMVar11 = pOVar6[1].monitor;
-        pDVar8 = (this->fields).progressionThresholds;
-        if (pDVar8 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-                       *)0x0) goto code_?;
-        pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-                 Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                           ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar8,BVar9,
-                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                           );
-        if (pOVar6 == (Object *)0x0) goto code_?;
-        pOVar12 = pOVar6[1].klass;
-        pDVar8 = (this->fields).progressionThresholds;
-        if (pDVar8 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-                       *)0x0) goto code_?;
-        pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-                 Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                           ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar8,BVar9,
-                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                           );
-        if (pOVar6 == (Object *)0x0) goto code_?;
-        pOVar13 = pOVar6[1].klass;
-        pPVar14 = (PlayerTierState *)func_?();
-        this_00 = pDVar5;
-        PlayerTierState::PlayerTierState__ctor
-                  (pPVar14,TierLockState__Enum_PurchaseUnlock,(int32_t)pMVar10,(int32_t)pMVar11,
-                   (int32_t)pOVar12,(int32_t)pOVar13,(MethodInfo *)0x0);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
-        Dictionary_2_System_ByteEnum_System_Object__Add
-                  ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,
-                   CONCAT31((int3)this_01,cVar7),(Object *)pPVar14,
-                   MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Add_MV__Common__GamePassTier__MV__WorldObject__GamePassSystem__PlayerTierState_
-                  );
+        if (pOVar10 == (Object *)0x0) goto DAT_?;
+        pDVar11 = (this->fields).progressionThresholds;
+        uVar12 = *(undefined4 *)((longlong)&pOVar10[1].klass + 4);
+        if ((pDVar11 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                        *)0x0) ||
+           (pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                     ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                               ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar11,BVar9 & 0xff,
+                                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                               ), pOVar10 == (Object *)0x0)) goto DAT_?;
+        pDVar11 = (this->fields).progressionThresholds;
+        uVar13 = *(undefined4 *)((longlong)&pOVar10[1].klass + 4);
+        if ((pDVar11 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                        *)0x0) ||
+           (pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                     ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                               ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar11,BVar9 & 0xff,
+                                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                               ), pOVar10 == (Object *)0x0)) goto DAT_?;
+        pDVar11 = (this->fields).progressionThresholds;
+        uVar14 = *(undefined4 *)&pOVar10[1].klass;
+        if ((pDVar11 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                        *)0x0) ||
+           (pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                     ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                               ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar11,BVar9 & 0xff,
+                                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                               ), pOVar10 == (Object *)0x0)) goto DAT_?;
+        uVar15 = *(undefined4 *)&pOVar10[1].klass;
+        pOVar10 = (Object *)FUN_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierState)
+        ;
+        *(undefined4 *)&pOVar10[1].klass = 1;
       }
       else {
-        if (pDVar8 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-                       *)0x0) goto code_?;
-        BVar9 = CONCAT31((int3)this_01,cVar7);
-        pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+        pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
                  Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                           ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar8,BVar9,
+                           ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar11,BVar9 & 0xff,
                             MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
                            );
-        if (pOVar6 == (Object *)0x0) goto code_?;
-        pMVar10 = pOVar6[1].monitor;
-        pDVar8 = (this->fields).progressionThresholds;
-        if (pDVar8 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-                       *)0x0) goto code_?;
-        playerGamePassTier = (GamePassTier__Enum)&UNK_?;
-        pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-                 Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                           ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar8,BVar9,
-                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                           );
-        if (pOVar6 == (Object *)0x0) goto code_?;
-        pMVar11 = pOVar6[1].monitor;
-        pDVar8 = (this->fields).progressionThresholds;
-        if (pDVar8 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-                       *)0x0) goto code_?;
-        pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-                 Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                           ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar8,BVar9,
-                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                           );
-        if (pOVar6 == (Object *)0x0) goto code_?;
-        pOVar12 = pOVar6[1].klass;
-        pDVar8 = (this->fields).progressionThresholds;
-        if (pDVar8 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-                       *)0x0) goto code_?;
-        pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-                 Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                           ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar8,BVar9,
-                            MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                           );
-        if (pOVar6 == (Object *)0x0) goto code_?;
-        pOVar13 = pOVar6[1].klass;
-        pPVar14 = (PlayerTierState *)func_?();
-        this_00 = pDVar5;
-        PlayerTierState::PlayerTierState__ctor
-                  (pPVar14,TierLockState__Enum_Locked,(int32_t)pMVar10,(int32_t)pMVar11,
-                   (int32_t)pOVar12,(int32_t)pOVar13,(MethodInfo *)0x0);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
-        Dictionary_2_System_ByteEnum_System_Object__Add
-                  ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,
-                   CONCAT31((int3)this_01,cVar7),(Object *)pPVar14,
-                   MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Add_MV__Common__GamePassTier__MV__WorldObject__GamePassSystem__PlayerTierState_
-                  );
+        if (pOVar10 == (Object *)0x0) goto DAT_?;
+        pDVar11 = (this->fields).progressionThresholds;
+        uVar12 = *(undefined4 *)((longlong)&pOVar10[1].klass + 4);
+        if ((pDVar11 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                        *)0x0) ||
+           (pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                     ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                               ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar11,BVar9 & 0xff,
+                                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                               ), pOVar10 == (Object *)0x0)) goto DAT_?;
+        pDVar11 = (this->fields).progressionThresholds;
+        uVar13 = *(undefined4 *)((longlong)&pOVar10[1].klass + 4);
+        if ((pDVar11 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                        *)0x0) ||
+           (pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                     ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                               ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar11,BVar9 & 0xff,
+                                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                               ), pOVar10 == (Object *)0x0)) goto DAT_?;
+        pDVar11 = (this->fields).progressionThresholds;
+        uVar14 = *(undefined4 *)&pOVar10[1].klass;
+        if ((pDVar11 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                        *)0x0) ||
+           (pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                     ByteEnum,System::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                               ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar11,BVar9 & 0xff,
+                                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                               ), pOVar10 == (Object *)0x0)) goto DAT_?;
+        uVar15 = *(undefined4 *)&pOVar10[1].klass;
+        pOVar10 = (Object *)FUN_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierState)
+        ;
+        *(undefined4 *)&pOVar10[1].klass = 2;
       }
+      *(undefined4 *)((longlong)&pOVar10[1].klass + 4) = uVar12;
+      *(undefined4 *)&pOVar10[1].monitor = uVar14;
+      *(undefined4 *)&pOVar10[2].klass = uVar13;
+      *(undefined4 *)((longlong)&pOVar10[1].monitor + 4) = uVar15;
     }
     else {
-      pDVar8 = (this->fields).progressionThresholds;
-      if (pDVar8 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-                     *)0x0) goto code_?;
-      BVar9 = CONCAT31((int3)this_01,uVar2);
-      this_00 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
-                 *)&UNK_?;
-      pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-               Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                         ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar8,BVar9,
-                          MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                         );
-      if (pOVar6 == (Object *)0x0) goto code_?;
-      pMVar10 = pOVar6[1].monitor;
-      pDVar8 = (this->fields).progressionThresholds;
-      if (pDVar8 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
-                     *)0x0) goto code_?;
-      playerGamePassTier =
-           (GamePassTier__Enum)
-           MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-      ;
-      pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
-               Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                         ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar8,BVar9,
-                          MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                         );
-      if (pOVar6 == (Object *)0x0) goto code_?;
-      pOVar12 = pOVar6[1].klass;
-      this_01 = (PlayerTierState *)func_?();
-      PlayerTierState::PlayerTierState__ctor
-                (this_01,TierLockState__Enum_Unlocked,0,(int32_t)pMVar10,0,(int32_t)pOVar12,
-                 (MethodInfo *)0x0);
+      pDVar11 = (this->fields).progressionThresholds;
+      if ((pDVar11 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                      *)0x0) ||
+         (pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
+                   ::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                             ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar11,BVar9 & 0xff,
+                              MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                             ), pOVar10 == (Object *)0x0)) {
+DAT_?:
+        FUN_?();
+        pcVar5 = (code *)swi(3);
+        pDVar6 = (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_
+                   *)(*pcVar5)();
+        return pDVar6;
+      }
+      pDVar11 = (this->fields).progressionThresholds;
+      uVar12 = *(undefined4 *)((longlong)&pOVar10[1].klass + 4);
+      if ((pDVar11 == (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                      *)0x0) ||
+         (pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System
+                   ::Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
+                             ((Dictionary_2_System_ByteEnum_System_Object_ *)pDVar11,BVar9 & 0xff,
+                              MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                             ), pOVar10 == (Object *)0x0)) goto DAT_?;
+      uVar13 = *(undefined4 *)&pOVar10[1].klass;
+      pOVar10 = (Object *)FUN_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierState);
+      pOVar10[1].klass = (Object__Class *)0x0;
+      *(undefined4 *)&pOVar10[1].monitor = 0;
+      *(undefined4 *)&pOVar10[2].klass = uVar12;
+      *(undefined4 *)((longlong)&pOVar10[1].monitor + 4) = uVar13;
       if (this_00 ==
           (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
-           *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
-      Dictionary_2_System_ByteEnum_System_Object__Add
-                ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,BVar9,(Object *)this_01,
-                 MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Add_MV__Common__GamePassTier__MV__WorldObject__GamePassSystem__PlayerTierState_
-                );
-      cVar7 = (char)(BVar9 >> 0x18);
+           *)0x0) goto DAT_?;
     }
-    uVar2 = cVar7 + GamePassTier__Enum_Tier1;
-    if ((byte)(char)((uint)this_01 >> 0x18) < (byte)uVar2) {
+    in_R9D = CONCAT31((int3)(in_R9D >> 8),2);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
+    Dictionary_2_System_ByteEnum_System_Object__TryInsert
+              ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,BVar9 & 0xff,pOVar10,in_R9D,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierState>__Add_MV__Common__GamePassTier__MV__WorldObject__GamePassSystem__PlayerTierState_
+               ->klass->rgctx_data[0x22].method);
+    bVar16 = (byte)uVar8 + 1;
+    uVar8 = CONCAT71((int7)(uVar8 >> 8),bVar16);
+    if (uVar7 < bVar16) {
       return (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierState_ *)
              this_00;
     }
@@ -779,78 +1026,93 @@ PlayerTierStateCalculator_GetUnlockedTier
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-                   );
-    func_?(&TypeInfo__System__Enum);
-    func_?(&
-                    System__Collections__Generic__IEnumerable<unsigned_char>_MethodInfo__System__Linq__Enumerable__Cast<unsigned_char>_System__Collections__IEnumerable_
-                   );
-    func_?(&
-                    unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_
-                   );
-    func_?(&TypeRef__MV__Common__GamePassTier);
-    in_EAX = func_?(&TypeInfo__System__Type);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  System__Collections__Generic__IEnumerable<unsigned_char>_MethodInfo__System__Linq__Enumerable__Cast<unsigned_char>_System__Collections__IEnumerable_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeRef__MV__Common__GamePassTier);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  handle = TypeRef__MV__Common__GamePassTier;
-  if ((this->fields).gamePassRewardsActivated == 0) {
-    uVar1 = (undefined3)((uint)in_EAX >> 8);
-  }
-  else {
-    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Type);
+  pIVar1 = TypeRef__MV__Common__GamePassTier;
+  if ((this->fields).gamePassRewardsActivated != 0) {
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
     }
-    enumType = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                         ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-    if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Enum);
+    plVar2 = (longlong *)0x0;
+    plVar3 = plVar2;
+    if (pIVar1 != (Il2CppType *)0x0) {
+      if (*(int *)(lRam_? + 0xe4) == 0) {
+        FUN_?();
+      }
+      lVar4 = FUN_?(pIVar1,1);
+      plVar3 = (longlong *)FUN_?(lVar4 + 0x20);
     }
-    source = mscorlib.dll::System::Enum::Enum_GetValues(enumType,(MethodInfo *)0x0);
-    source_00 = System.Core.dll::System::Linq::Enumerable::Enumerable_Cast_4
-                          ((IEnumerable *)source,
-                           System__Collections__Generic__IEnumerable<unsigned_char>_MethodInfo__System__Linq__Enumerable__Cast<unsigned_char>_System__Collections__IEnumerable_
-                          );
-    System.Core.dll::System::Linq::Enumerable::Enumerable_Max_1
-              ((IEnumerable_1_System_Byte_ *)source_00,
-               unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_
-              );
-    pMVar2 = (MonitorData *)0x0;
-    uVar3 = 0;
-    BStack_4 = 0;
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    if (plVar3 == (longlong *)0x0) {
+      uVar5 = func_?(&TypeInfo__System__ArgumentNullException);
+      this_01 = (ArgumentNullException *)func_?(uVar5);
+      paramName = (String *)func_?(&StringLiteral_enumType);
+      mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+                (this_01,paramName,(MethodInfo *)0x0);
+      uVar5 = func_?(&MethodInfo__System__Enum__GetValues_System__Type_);
+      FUN_?(this_01,uVar5);
+      pcVar6 = (code *)swi(3);
+      GVar7 = (*pcVar6)();
+      return GVar7;
+    }
+    uVar5 = (**(code **)(*plVar3 + 0x888))(plVar3,*(undefined8 *)(*plVar3 + 0x890));
+    source = (IEnumerable_1_System_Byte_ *)FUN_?(uVar5);
+    uVar8 = System.Core.dll::System::Linq::Enumerable::Enumerable_Max_1
+                      (source,
+                       unsigned_char_MethodInfo__System__Linq__Enumerable__Max<unsigned_char>_System__Collections__Generic__IEnumerable<unsigned_char>_
+                      );
+    key = 0;
+    bVar9 = 0;
     do {
-      pMVar5 = 
-      MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
-      ;
       this_00 = (this->fields).progressionThresholds;
       if (this_00 ==
           (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_ *
           )0x0) {
 code_?:
-        func_?();
+        FUN_?();
         pcVar6 = (code *)swi(3);
         GVar7 = (*pcVar6)();
         return GVar7;
       }
-      pOVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
+      bVar10 = (byte)key;
+      pOVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
                Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
-                         ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,BStack_4,
+                         ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,key,
                           MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Item_MV__Common__GamePassTier_
                          );
-      if (pOVar8 == (Object *)0x0) goto code_?;
-      pMVar2 = pMVar2 + (int)pOVar8[1].monitor;
-      if ((int)pMVar5 < (int)pMVar2) break;
-      bVar9 = (char)uVar3 + 1;
-      uVar3 = (uint)CONCAT11((char)uVar3,bVar9);
-      BStack_4 = (ByteEnum__Enum)bVar9;
-    } while (bVar9 == 0);
-    uVar1 = (undefined3)((uint)pOVar8 >> 8);
-    uVar10 = (undefined1)(uVar3 >> 8);
-    if ((byte)(undefined1)curGamePassTier <= (byte)uVar10) {
-      return CONCAT31(uVar1,uVar10);
+      if (pOVar11 == (Object *)0x0) goto code_?;
+      uVar12 = (int)plVar2 + *(int *)((longlong)&pOVar11[1].klass + 4);
+      plVar2 = (longlong *)(ulonglong)uVar12;
+    } while (((int)uVar12 <= gamePoints) &&
+            (key = (ByteEnum__Enum)(byte)(bVar10 + 1), bVar9 = bVar10, (byte)(bVar10 + 1) <= uVar8));
+    if ((byte)curGamePassTier <= bVar9) {
+      return (uint)bVar9;
     }
   }
-  return CONCAT31(uVar1,(undefined1)curGamePassTier);
+  return curGamePassTier & 0xff;
 }
 
 
@@ -860,92 +1122,130 @@ String * MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerTierStateCalc
          PlayerTierStateCalculator_ToString(PlayerTierStateCalculator *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff8c;
-  puVar5 = &stack0xffffff8c;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Current__
-                   );
-    func_?(&TypeInfo__MV__Common__GamePassTier);
-    func_?(&TypeInfo__System__Int32);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Key__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Value__
-                   );
-    func_?(&StringLiteral_u000A_0____1__);
-    func_?(&StringLiteral_gamePassRewardsActivated__0___we);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__Common__GamePassTier);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Key__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__get_Value__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_u000A_0____1__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_gamePassRewardsActivated__0___we);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  pPVar6 = this;
-  this = (PlayerTierStateCalculator *)CONCAT13((this->fields).gamePassRewardsActivated,this._0_3_);
-  pOVar7 = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
-  iStack_8 = (pPVar6->fields).welcomeReward;
-  arg1 = (Object *)func_?(TypeInfo__System__Int32,&iStack_8);
-  pSVar9 = mscorlib.dll::System::String::String_Format_1
-                     (StringLiteral_gamePassRewardsActivated__0___we,pOVar7,arg1,(MethodInfo *)0x0);
-  this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(pPVar6->fields).progressionThresholds;
-  pSStack_10 = pSVar9;
-  if (this_00 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-    pDVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
-             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                        &stack0xffffff98,this_00,
-                        MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__GetEnumerator__
-                       );
-    method_00 = (Object__Class *)pDVar11->_dictionary;
-    uVar12 = (pDVar11->_current).key;
-    uVar13 = *(undefined8 *)&(pDVar11->_current).value;
-    uStack_1 = 1;
-    while( true ) {
-      bVar14 = mscorlib.dll::System::Collections::Generic::
-              Dictionary`2[TKey,TValue]+Enumerator[System::ByteEnum,System::Object]::
-              Dictionary_2_TKey_TValue_Enumerator_System_ByteEnum_System_Object__MoveNext
-                        ((Dictionary_2_TKey_TValue_Enumerator_System_ByteEnum_System_Object_ *)
-                         &stack0xffffffb0,
-                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__MoveNext__
-                        );
-      if (bVar14 == 0) break;
-      uStack_15 = (uint8_t)uVar12;
-      pOStack_16 = (Object *)uVar13;
-      uStack_17 = uStack_15;
-      pOVar7 = (Object *)func_?();
-      str1 = mscorlib.dll::System::String::String_Format_1
-                       (StringLiteral_u000A_0____1__,pOVar7,pOStack_16,(MethodInfo *)0x0);
-      pSVar9 = mscorlib.dll::System::String::String_Concat_3(pSVar9,str1,(MethodInfo *)0x0);
-      pSStack_10 = pSVar9;
-    }
-    uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&stack0xffffffb0,
-               (ExceptionArgument__Enum)
-               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__Dispose__
-               ,(MethodInfo *)method_00);
-    *unaff_FS_OFFSET = uStack_3;
-    return pSVar9;
+  aiStackX_8[0] = CONCAT31(aiStackX_8[0]._1_3_,(this->fields).gamePassRewardsActivated);
+  pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_8);
+  aiStackX_8[0] = (this->fields).welcomeReward;
+  pOVar2 = (Object *)FUN_?(uRam_?,aiStackX_8);
+  pSVar3 = StringLiteral_gamePassRewardsActivated__0___we;
+  PStack_4._arg0 = (Object *)0x0;
+  PStack_4._arg1 = (Object *)0x0;
+  PStack_4._arg2 = (Object *)0x0;
+  PStack_4._args = (Object__Array *)0x0;
+  mscorlib.dll::System::ParamsArray::ParamsArray__ctor_1(&PStack_4,pOVar1,pOVar2,(MethodInfo *)0x0)
+  ;
+  PStack_5._arg0 = PStack_4._arg0;
+  PStack_5._arg1 = PStack_4._arg1;
+  PStack_5._arg2 = PStack_4._arg2;
+  PStack_5._args = PStack_4._args;
+  pSVar3 = mscorlib.dll::System::String::String_FormatHelper
+                     ((IFormatProvider *)0x0,pSVar3,&PStack_5,(MethodInfo *)0x0);
+  PStack_6._arg0 = (Object *)(this->fields).progressionThresholds;
+  if ((Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_ *)
+      PStack_6._arg0 ==
+      (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_ *)0x0
+     ) {
+    FUN_?();
+    pcVar7 = (code *)swi(3);
+    pSVar3 = (String *)(*pcVar7)();
+    return pSVar3;
   }
-  func_?();
-  func_?();
-  pcVar18 = (code *)swi(3);
-  pSVar9 = (String *)(*pcVar18)();
-  return pSVar9;
+  PStack_6._arg2 = (Object *)0x0;
+  PStack_6._args = (Object__Array *)0x0;
+  if (iRam_? != 0) {
+    uVar8 = (uint)((ulonglong)&PStack_6 >> 0xc);
+    puVar9 = (ulonglong *)((ulonglong)((uVar8 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar10 = *puVar9;
+      LOCK();
+      uVar11 = *puVar9;
+      if (uVar10 == uVar11) {
+        *puVar9 = uVar10 | 1L << (uVar8 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar10 != uVar11);
+  }
+  PStack_6._arg1 =
+       (Object *)
+       (ulonglong)
+       (uint)(((Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_
+                *)PStack_6._arg0)->fields)._version;
+  uStack_12 = 2;
+  auStack_13._8_8_ = PStack_6._arg1;
+  KStack_14.key = 0;
+  KStack_14._1_7_ = 0;
+  KStack_14.value = (Object *)0x0;
+  uStack_15._0_4_ = 2;
+  uStack_15._4_4_ = 0;
+  uStack_16 = 0;
+  puStack_17 = auStack_13;
+  auStack_13._0_8_ = PStack_6._arg0;
+  while (bVar18 = mscorlib.dll::System::Collections::Generic::
+                 Dictionary`2[TKey,TValue]+Enumerator[System::ByteEnum,System::Object]::
+                 Dictionary_2_TKey_TValue_Enumerator_System_ByteEnum_System_Object__MoveNext
+                           ((Dictionary_2_TKey_TValue_Enumerator_System_ByteEnum_System_Object_ *)
+                            auStack_13,
+                            MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__MoveNext__
+                           ), pOVar1 = KStack_14.value, bVar18 != 0) {
+    aiStackX_8[0] = CONCAT31(aiStackX_8[0]._1_3_,KStack_14.key);
+    pOVar2 = (Object *)FUN_?(TypeInfo__MV__Common__GamePassTier,aiStackX_8);
+    pSVar19 = StringLiteral_u000A_0____1__;
+    PStack_5._arg0 = (Object *)0x0;
+    PStack_5._arg1 = (Object *)0x0;
+    PStack_5._arg2 = (Object *)0x0;
+    PStack_5._args = (Object__Array *)0x0;
+    mscorlib.dll::System::ParamsArray::ParamsArray__ctor_1
+              (&PStack_5,pOVar2,pOVar1,(MethodInfo *)0x0);
+    PStack_6._arg0 = PStack_5._arg0;
+    PStack_6._arg1 = PStack_5._arg1;
+    PStack_6._arg2 = PStack_5._arg2;
+    PStack_6._args = PStack_5._args;
+    pSVar19 = mscorlib.dll::System::String::String_FormatHelper
+                       ((IFormatProvider *)0x0,pSVar19,&PStack_6,(MethodInfo *)0x0);
+    pSVar3 = mscorlib.dll::System::String::String_Concat_4(pSVar3,pSVar19,(MethodInfo *)0x0);
+  }
+  return pSVar3;
 }
 
 
@@ -956,31 +1256,45 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerTierStateCalculat
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
-             *)func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>
-                              );
+             *)FUN_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>
+                            );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
   RuntimeEvents::ExplosionEvent+ExplosionValues]::
   Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues___ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__Dictionary__
             );
-  method_00 = (MethodInfo *)&(this->fields).progressionThresholds;
+  bVar1 = iRam_? != 0;
   (this->fields).progressionThresholds =
        (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_ *)
        this_00;
-  func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).progressionThresholds >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 
@@ -997,36 +1311,65 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerTierStateCalculat
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
-             *)func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>
-                              );
+             *)FUN_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>
+                            );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
   RuntimeEvents::ExplosionEvent+ExplosionValues]::
   Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues___ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<MV::Common::GamePassTier,_MV::WorldObject::GamePassSystem::PlayerTierThresholds>__Dictionary__
             );
-  method_00 = (MethodInfo *)&(this->fields).progressionThresholds;
+  iVar1 = iRam_?;
   (this->fields).progressionThresholds =
        (Dictionary_2_MV_Common_GamePassTier_MV_WorldObject_GamePassSystem_PlayerTierThresholds_ *)
        this_00;
-  func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  (this->fields).gamePassRewardsActivated = gamePassRewardsActivated;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).progressionThresholds >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).progressionThresholds = progressionThresholds;
-  func_?(&(this->fields).progressionThresholds,progressionThresholds);
-  (this->fields).gamePointVelocityIsZero = gamePointVelocityIsZero;
+  (this->fields).gamePassRewardsActivated = gamePassRewardsActivated;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).progressionThresholds >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
   (this->fields).welcomeReward = welcomeReward;
+  (this->fields).gamePointVelocityIsZero = gamePointVelocityIsZero;
   return;
 }
 

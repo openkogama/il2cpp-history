@@ -26,6 +26,7 @@ namespace Assets.Scripts.AdIntegration
 		GoldReward = 11,
 		Revive = 12,
 		TouristInterstitialWithoutPromotion = 13,
-		UseRequirement = 14
+		UseRequirement = 14,
+		RegisteredInterstitialWithoutPromotion = 15
 	}
 }

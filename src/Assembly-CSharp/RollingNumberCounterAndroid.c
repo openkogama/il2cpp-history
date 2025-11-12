@@ -5,99 +5,115 @@ void Assembly-CSharp.dll::RollingNumberCounterAndroid::RollingNumberCounterAndro
                (RollingNumberCounterAndroid *this,int32_t value,MethodInfo *method)
 
 {
+  aIStackX_10[0].m_value = value;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Convert);
-    func_?(&::StringLiteral__);
-    func_?(&StringLiteral__0);
+    FUN_?(&TypeInfo__System__Convert);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__0);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pRVar1 = (this->fields).digits;
   if (pRVar1 != (RollingNumberDigitAndroid__Array *)0x0) {
-    iVar2 = pRVar1->max_length;
-    str1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&value,(MethodInfo *)0x0);
+    iVar2 = (int)pRVar1->max_length;
+    str1 = mscorlib.dll::System::Int32::Int32_ToString(aIStackX_10,(MethodInfo *)0x0);
     if (str1 != (String *)0x0) {
-      iVar3 = (str1->fields)._stringLength;
-      if ((int)iVar2 < iVar3) {
-        uVar4 = 0;
-        if (0 < (int)iVar2) {
-          iStack_5 = 0x10;
-          uVar6 = _UNK_?;
-          while (pRVar1 = (this->fields).digits, pRVar1 != (RollingNumberDigitAndroid__Array *)0x0)
-          {
-            if (pRVar1->max_length <= uVar4) goto code_?;
-            iVar3 = *(int *)((int)pRVar1->vector + iStack_5 + -0x10);
-            if (iVar3 == 0) break;
-            *(undefined4 *)(iVar3 + 0x30) = 0;
-            *(float *)(iVar3 + 0x28) =
-                 (float)(*(int *)(iVar3 + 0x14) + 1) * *(float *)(iVar3 + 0x1c) -
-                 (float)(*(uint *)(iVar3 + 0x18) & uVar6);
-            if (*(Transform **)(iVar3 + 0x10) == (Transform *)0x0) break;
-            pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                               ((Vector3 *)&stack0xffffffd4,*(Transform **)(iVar3 + 0x10),
-                                (MethodInfo *)0x0);
-            uVar8 = pVVar7->x;
-            if (*(Transform **)(iVar3 + 0x10) == (Transform *)0x0) break;
-            value_00.y = (float)*(undefined4 *)(iVar3 + 0x28);
-            value_00.x = (float)uVar8;
-            value_00.z = pVVar7->z;
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                      (*(Transform **)(iVar3 + 0x10),value_00,(MethodInfo *)0x0);
-            uVar6 = _UNK_?;
-            uVar4 = uVar4 + 1;
-            fVar9 = *(float *)(iVar3 + 0x1c) * _UNK_?;
-            iStack_5 = iStack_5 + 4;
-            fVar10 = (float)(*(uint *)(iVar3 + 0x18) & _UNK_?);
-            *(undefined4 *)(iVar3 + 0x14) = 9;
-            *(float *)(iVar3 + 0x24) = fVar9 - fVar10;
-            if ((int)iVar2 <= (int)uVar4) {
-              return;
-            }
-          }
-          goto code_?;
-        }
-      }
-      else {
-        if (iVar3 < (int)iVar2) {
-          pSVar11 = ::StringLiteral__;
-          for (iStack_5 = 0; iStack_5 < (int)(iVar2 - (str1->fields)._stringLength);
-              iStack_5 = iStack_5 + 1) {
-            pSVar11 = mscorlib.dll::System::String::String_Concat_3
-                               (pSVar11,StringLiteral__0,(MethodInfo *)0x0);
-          }
-          str1 = mscorlib.dll::System::String::String_Concat_3(pSVar11,str1,(MethodInfo *)0x0);
-        }
-        uVar4 = 0;
-        if (0 < (int)iVar2) {
-          iStack_5 = 0x10;
+      uVar3 = 0;
+      iVar4 = (str1->fields)._stringLength;
+      if (iVar2 < iVar4) {
+        if (0 < iVar2) {
+          lVar5 = 0x20;
+          uVar6 = uVar3;
           do {
             pRVar1 = (this->fields).digits;
             if (pRVar1 == (RollingNumberDigitAndroid__Array *)0x0) goto code_?;
-            if (pRVar1->max_length <= uVar4) goto code_?;
-            this_00 = *(RollingNumberDigitAndroid **)((int)pRVar1->vector + iStack_5 + -0x10);
-            if (str1 == (String *)0x0) goto code_?;
-            pSVar11 = mscorlib.dll::System::String::String_Substring_1
-                               (str1,uVar4,1,(MethodInfo *)0x0);
-            if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            value_01 = mscorlib.dll::System::Convert::Convert_ToInt32_14(pSVar11,(MethodInfo *)0x0);
-            if (this_00 == (RollingNumberDigitAndroid *)0x0) goto code_?;
+            if ((uint)pRVar1->max_length <= (uint)uVar6) goto code_?;
+            pRVar7 = *(RollingNumberDigitAndroid **)((longlong)pRVar1->vector + lVar5 + -0x20);
+            if (pRVar7 == (RollingNumberDigitAndroid *)0x0) goto code_?;
             RollingNumberDigitAndroid::RollingNumberDigitAndroid_set_Number
-                      (this_00,value_01,(MethodInfo *)0x0);
-            uVar4 = uVar4 + 1;
-            iStack_5 = iStack_5 + 4;
-          } while ((int)uVar4 < (int)iVar2);
+                      (pRVar7,9,(MethodInfo *)0x0);
+            uVar6 = (ulonglong)((uint)uVar6 + 1);
+            uVar3 = uVar3 + 1;
+            lVar5 = lVar5 + 8;
+          } while ((longlong)uVar3 < (longlong)iVar2);
+        }
+      }
+      else {
+        pSVar8 = ::StringLiteral__;
+        uVar6 = uVar3;
+        if (iVar4 < iVar2) {
+          for (; (int)uVar6 < iVar2 - (str1->fields)._stringLength;
+              uVar6 = (ulonglong)((int)uVar6 + 1)) {
+            pSVar8 = mscorlib.dll::System::String::String_Concat_4
+                               (pSVar8,StringLiteral__0,(MethodInfo *)0x0);
+          }
+          str1 = mscorlib.dll::System::String::String_Concat_4(pSVar8,str1,(MethodInfo *)0x0);
+        }
+        if (0 < iVar2) {
+          lVar5 = 0x20;
+          do {
+            pRVar1 = (this->fields).digits;
+            if (pRVar1 == (RollingNumberDigitAndroid__Array *)0x0) goto code_?;
+            startIndex = (uint)uVar3;
+            if ((uint)pRVar1->max_length <= startIndex) {
+code_?:
+              FUN_?();
+              pcVar9 = (code *)swi(3);
+              (*pcVar9)();
+              return;
+            }
+            pRVar7 = *(RollingNumberDigitAndroid **)((longlong)pRVar1->vector + lVar5 + -0x20);
+            if (str1 == (String *)0x0) goto code_?;
+            pSVar8 = mscorlib.dll::System::String::String_Substring_1
+                               (str1,startIndex,1,(MethodInfo *)0x0);
+            if (*(int *)&(TypeInfo__System__Convert->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__System__Globalization__CultureInfo);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            value_00 = 0;
+            if (pSVar8 != (String *)0x0) {
+              if (*(int *)&(TypeInfo__System__Globalization__CultureInfo->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              this_00 = mscorlib.dll::System::Threading::Thread::Thread_get_CurrentThread
+                                  ((MethodInfo *)0x0);
+              if (this_00 == (Thread *)0x0) goto code_?;
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__System__Globalization__CultureInfo);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              provider = mscorlib.dll::System::Threading::Thread::Thread_GetCurrentCultureNoAppX
+                                   (this_00,(MethodInfo *)0x0);
+              value_00 = mscorlib.dll::System::Int32::Int32_Parse_2
+                                   (pSVar8,(IFormatProvider *)provider,(MethodInfo *)0x0);
+            }
+            if (pRVar7 == (RollingNumberDigitAndroid *)0x0) goto code_?;
+            RollingNumberDigitAndroid::RollingNumberDigitAndroid_set_Number
+                      (pRVar7,value_00,(MethodInfo *)0x0);
+            uVar3 = (ulonglong)(startIndex + 1);
+            lVar5 = lVar5 + 8;
+          } while ((int)(startIndex + 1) < iVar2);
         }
       }
       return;
     }
   }
 code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

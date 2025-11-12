@@ -6,11 +6,9 @@ void Assembly-CSharp.dll::Assets::Scripts::GamePasses::TogglePreviewState::Toggl
                GamePassTier__Enum currentTier,bool freeFirstTry,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).freeTry = freeFirstTry;
-  (this->fields).previewTier = (undefined1)previewTier;
-  (this->fields).currentTier = (undefined1)currentTier;
+  (this->fields).previewTier = (uint8_t)previewTier;
+  (this->fields).currentTier = (uint8_t)currentTier;
   return;
 }
 

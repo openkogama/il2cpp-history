@@ -7,112 +7,96 @@ Assembly-CSharp.dll::RTG::Object2ObjectSnapDataDb::Object2ObjectSnapDataDb_GetOb
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::Object2ObjectSnapData>__Add_UnityEngine__GameObject__RTG__Object2ObjectSnapData_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::Object2ObjectSnapData>__ContainsKey_UnityEngine__GameObject_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::Object2ObjectSnapData>__get_Item_UnityEngine__GameObject_
-                   );
-    func_?(&TypeInfo__RTG__Object2ObjectSnapData);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::Object2ObjectSnapData>__Add_UnityEngine__GameObject__RTG__Object2ObjectSnapData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::Object2ObjectSnapData>__ContainsKey_UnityEngine__GameObject_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::Object2ObjectSnapData>__get_Item_UnityEngine__GameObject_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__Object2ObjectSnapData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-           (this->fields)._objectToSnapData;
-  if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+  pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+            *)(this->fields)._objectToSnapData;
+  if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                 *)0x0) {
+    iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::StyleComplexSelector+PseudoStateData]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
                       (pDVar1,(Object *)gameObject,
                        MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::Object2ObjectSnapData>__ContainsKey_UnityEngine__GameObject_
-                      );
-    if (bVar2 == 0) {
-      pOVar3 = (Object2ObjectSnapData *)func_?(TypeInfo__RTG__Object2ObjectSnapData);
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__RTG__AABB);
-        func_?(&TypeInfo__RTG__BoxFaceAreaDesc);
-        func_?(&TypeRef__RTG__BoxFace);
-        func_?(&TypeInfo__System__Enum);
-        func_?(&
-                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__
-                       );
-        func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
-        func_?(&TypeInfo__System__Type);
-        cRam_? = '\x01';
-      }
-      handle = TypeRef__RTG__BoxFace;
-      if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__System__Type);
-      }
-      pTVar4 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                         ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-      if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__System__Enum);
-      }
-      pAVar5 = mscorlib.dll::System::Enum::Enum_GetValues(pTVar4,(MethodInfo *)0x0);
-      if (pAVar5 != (Array *)0x0) {
-        iVar6 = mscorlib.dll::System::Array::Array_get_Length(pAVar5,(MethodInfo *)0x0);
-        pAVar7 = (AABB__Array *)func_?(TypeInfo__RTG__AABB,iVar6);
-        (pOVar3->fields)._snapAreaBounds = pAVar7;
-        func_?(&(pOVar3->fields)._snapAreaBounds,pAVar7);
-        pTVar4 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                           ((RuntimeTypeHandle)TypeRef__RTG__BoxFace,(MethodInfo *)0x0);
-        pAVar5 = mscorlib.dll::System::Enum::Enum_GetValues(pTVar4,(MethodInfo *)0x0);
-        if (pAVar5 != (Array *)0x0) {
-          iVar6 = mscorlib.dll::System::Array::Array_get_Length(pAVar5,(MethodInfo *)0x0);
-          pBVar8 = (BoxFaceAreaDesc__Array *)func_?(TypeInfo__RTG__BoxFaceAreaDesc,iVar6);
-          (pOVar3->fields)._snapAreaDesc = pBVar8;
-          func_?(&(pOVar3->fields)._snapAreaDesc,pBVar8);
-          this_01 = (List_1_UnityEngine_Vector3_ *)
-                    func_?(
-                                   TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>
-                                   );
-          mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-          __Il2CppFullySharedGenericType]::
-          LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                    ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
-                     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
-          (pOVar3->fields)._vertsBuffer = this_01;
-          func_?(&(pOVar3->fields)._vertsBuffer,this_01);
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)pOVar3,ExceptionArgument__Enum_obj,in_stack_9);
-          bVar2 = Object2ObjectSnapData::Object2ObjectSnapData_Initialize
-                            (pOVar3,gameObject,(MethodInfo *)0x0);
-          if (bVar2 == 0) {
-            return (Object2ObjectSnapData *)0x0;
-          }
-          this_00 = (this->fields)._objectToSnapData;
-          if (this_00 != (Dictionary_2_UnityEngine_GameObject_RTG_Object2ObjectSnapData_ *)0x0) {
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-            ::Dictionary_2_System_Object_System_Object__Add
-                      ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)gameObject,
-                       (Object *)pOVar3,
-                       MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::Object2ObjectSnapData>__Add_UnityEngine__GameObject__RTG__Object2ObjectSnapData_
-                      );
-            return pOVar3;
-          }
+                       ->klass->rgctx_data[0x21].method);
+    if (iVar2 < 0) {
+      pOVar3 = (Object2ObjectSnapData *)FUN_?(TypeInfo__RTG__Object2ObjectSnapData);
+      Object2ObjectSnapData::Object2ObjectSnapData__ctor(pOVar3,(MethodInfo *)0x0);
+      if (pOVar3 != (Object2ObjectSnapData *)0x0) {
+        bVar4 = Object2ObjectSnapData::Object2ObjectSnapData_Initialize
+                          (pOVar3,gameObject,(MethodInfo *)0x0);
+        if (bVar4 == 0) {
+          return (Object2ObjectSnapData *)0x0;
+        }
+        this_00 = (this->fields)._objectToSnapData;
+        if (this_00 != (Dictionary_2_UnityEngine_GameObject_RTG_Object2ObjectSnapData_ *)0x0) {
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__TryInsert
+                    ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)gameObject,
+                     (Object *)pOVar3,CONCAT31((int3)((uint)in_R9D >> 8),2),
+                     MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::Object2ObjectSnapData>__Add_UnityEngine__GameObject__RTG__Object2ObjectSnapData_
+                     ->klass->rgctx_data[0x22].method);
+          return pOVar3;
         }
       }
     }
     else {
-      pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-               (this->fields)._objectToSnapData;
-      if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-        TVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                 ::UIElements::TextureId]::
-                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                           (pDVar1,(Object *)gameObject,
-                            MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::Object2ObjectSnapData>__get_Item_UnityEngine__GameObject_
-                           );
-        return (Object2ObjectSnapData *)TVar10.m_Index;
+      pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                *)(this->fields)._objectToSnapData;
+      if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                     *)0x0) {
+        uVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::StyleComplexSelector+PseudoStateData]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
+                          (pDVar1,(Object *)gameObject,
+                           MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::Object2ObjectSnapData>__get_Item_UnityEngine__GameObject_
+                           ->klass->rgctx_data[0x21].method);
+        if ((int)uVar5 < 0) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowKeyNotFoundException
+                    ((Object *)gameObject,(MethodInfo *)0x0);
+          pcVar6 = (code *)swi(3);
+          pOVar3 = (Object2ObjectSnapData *)(*pcVar6)();
+          return pOVar3;
+        }
+        pDVar7 = (pDVar1->fields)._entries;
+        if (pDVar7 != (Dictionary_2_TKey_TValue_Entry_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___Array
+                       *)0x0) {
+          if (uVar5 < (uint)pDVar7->max_length) {
+            return (Object2ObjectSnapData *)pDVar7->vector[(int)uVar5].value;
+          }
+          FUN_?();
+          pcVar6 = (code *)swi(3);
+          pOVar3 = (Object2ObjectSnapData *)(*pcVar6)();
+          return pOVar3;
+        }
+        FUN_?();
+        pcVar6 = (code *)swi(3);
+        pOVar3 = (Object2ObjectSnapData *)(*pcVar6)();
+        return pOVar3;
       }
     }
   }
-  func_?();
-  pcVar11 = (code *)swi(3);
-  pOVar3 = (Object2ObjectSnapData *)(*pcVar11)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  pOVar3 = (Object2ObjectSnapData *)(*pcVar6)();
   return pOVar3;
 }
 
@@ -124,38 +108,53 @@ void Assembly-CSharp.dll::RTG::Object2ObjectSnapDataDb::Object2ObjectSnapDataDb_
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::Object2ObjectSnapData>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::Object2ObjectSnapData>
-                   );
-    func_?(&MethodInfo__RTG__Singleton<RTG::Object2ObjectSnapDataDb>__Singleton__);
-    func_?(&TypeInfo__RTG__Singleton<RTG::Object2ObjectSnapDataDb>);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::Object2ObjectSnapData>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::Object2ObjectSnapData>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__Singleton<RTG::Object2ObjectSnapDataDb>__Singleton__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__Singleton<RTG::Object2ObjectSnapDataDb>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-             *)func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::Object2ObjectSnapData>
-                              );
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+             *)FUN_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::Object2ObjectSnapData>
+                            );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
-  StyleComplexSelector+PseudoStateData]::
-  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+  UIR::UIRenderDevice+DisableForceGammaMaterial]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::GameObject,_RTG::Object2ObjectSnapData>__Dictionary__
             );
+  bVar1 = iRam_? != 0;
   (this->fields)._objectToSnapData =
        (Dictionary_2_UnityEngine_GameObject_RTG_Object2ObjectSnapData_ *)this_00;
-  func_?(&this->fields,this_00);
-  if ((TypeInfo__RTG__Singleton<RTG::Object2ObjectSnapDataDb>->_1).cctor_finished_or_no_cctor == 0)
-  {
-    func_?(TypeInfo__RTG__Singleton<RTG::Object2ObjectSnapDataDb>);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
   }
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-  UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor
-            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,
-             MethodInfo__RTG__Singleton<RTG::Object2ObjectSnapDataDb>__Singleton__);
+  if (*(int *)&(TypeInfo__RTG__Singleton<RTG::Object2ObjectSnapDataDb>->_1).field_0x1c == 0) {
+    FUN_?();
+  }
   return;
 }
 

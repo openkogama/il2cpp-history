@@ -6,80 +6,142 @@ void Assembly-CSharp.dll::PlayButtonBase::PlayButtonBase_StartPlaying
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    MethodInfo__PlayButtonBase____c___StartPlaying_b__3_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__PlayButtonBase____c);
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__PlayButtonBase____c___StartPlaying_b__3_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__PlayButtonBase____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  MVGameControllerDesktop::MVGameControllerDesktop_CursorLock(1,0,(MethodInfo *)0x0);
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 != (MVNetworkGame *)0x0) {
-    pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
-    if (pMVar1 != (MVLocalPlayer *)0x0) {
-      bVar2 = MVLocalPlayer::MVLocalPlayer_get_IsAdmin(pMVar1,(MethodInfo *)0x0);
-      if (bVar2 == 0) goto code_?;
-      this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (this_01 != (MVNetworkGame *)0x0) {
-        pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
-        if (pMVar1 != (MVLocalPlayer *)0x0) {
-          if ((pMVar1->fields)._.playerState == 3) {
-            this_02 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
-                                ((MethodInfo *)0x0);
-            if (this_02 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
-            MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_Observe
-                      (this_02,0,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__ILockCursorManager);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
+    pMVar1 = MVGameControllerDesktop::MVGameControllerDesktop_get_Instance((MethodInfo *)0x0);
+    if ((pMVar1 == (MVGameControllerDesktop *)0x0) ||
+       ((pMVar1->fields).lockCursorManager == (ILockCursorManager *)0x0)) goto code_?;
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((((pMVar2 != (MVGameControllerBase *)0x0) &&
+       (pMVar3 = (pMVar2->fields).game, pMVar3 != (MVNetworkGame *)0x0)) &&
+      (pMVar4 = (pMVar3->fields).playerContainer, pMVar4 != (MVPlayerContainer *)0x0)) &&
+     (pMVar5 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar4,(MethodInfo *)0x0),
+     pMVar5 != (MVLocalPlayer *)0x0)) {
+    if (0 < (pMVar5->fields)._._ProfileID_k__BackingField) {
+      pUVar6 = (pMVar5->fields)._._UserProfileData_k__BackingField;
+      if (pUVar6 == (UserProfileData *)0x0) goto code_?;
+      if ((pUVar6->fields).IsAdmin != 0) {
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+        if (((pMVar2 == (MVGameControllerBase *)0x0) ||
+            (pMVar3 = (pMVar2->fields).game, pMVar3 == (MVNetworkGame *)0x0)) ||
+           ((pMVar4 = (pMVar3->fields).playerContainer, pMVar4 == (MVPlayerContainer *)0x0 ||
+            (pMVar5 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer
+                                 (pMVar4,(MethodInfo *)0x0), pMVar5 == (MVLocalPlayer *)0x0))))
+        goto code_?;
+        if ((pMVar5->fields)._.playerState == 3) {
+          this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                              ((MethodInfo *)0x0);
+          if (this_00 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
+          if (cRam_? == '\0') {
+            FUN_?(&::StringLiteral__);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
           }
-code_?:
-          if (*(char *)&(this_00->fields).ReceivedAccessoryData != '\0') {
-            root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)this_00,(MethodInfo *)0x0);
-            if ((TypeInfo__PlayButtonBase____c->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            callbackFunction = TypeInfo__PlayButtonBase____c->static_fields->__9__3_0;
-            if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-              if ((TypeInfo__PlayButtonBase____c->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              object = TypeInfo__PlayButtonBase____c->static_fields->__9;
-              callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-              Object]::UnityAction_2_System_Object_System_Object___ctor
-                        ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
-                         (Object *)object,
-                         MethodInfo__PlayButtonBase____c___StartPlaying_b__3_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                         ,(MethodInfo *)0x0);
-              TypeInfo__PlayButtonBase____c->static_fields->__9__3_0 = callbackFunction;
-              func_?();
-            }
-            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
-                == 0) {
-              func_?();
-            }
-            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-            ExecuteEvents_ExecuteHierarchy
-                      (root,(BaseEventData *)0x0,
-                       (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                      );
-          }
-          return;
+          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_AdminOperation
+                    (this_00,3,0,-1,::StringLiteral__,(MethodInfo *)0x0);
         }
       }
     }
+    if ((this->fields).shouldPop != 0) {
+      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+      if (*(int *)&(TypeInfo__PlayButtonBase____c->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__PlayButtonBase____c);
+      }
+      this_01 = TypeInfo__PlayButtonBase____c->static_fields->__9__3_0;
+      if (this_01 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+        if (*(int *)&(TypeInfo__PlayButtonBase____c->_1).field_0x1c == 0) {
+          FUN_?(TypeInfo__PlayButtonBase____c);
+        }
+        object = TypeInfo__PlayButtonBase____c->static_fields->__9;
+        this_01 = (ExecuteEvents_EventFunction_1_IUIStack_ *)
+                  FUN_?(
+                               TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                               );
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]
+        ::ExecuteEvents_EventFunction_1_System_Object___ctor
+                  ((ExecuteEvents_EventFunction_1_System_Object_ *)this_01,(Object *)object,
+                   MethodInfo__PlayButtonBase____c___StartPlaying_b__3_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        TypeInfo__PlayButtonBase____c->static_fields->__9__3_0 = this_01;
+        if (iRam_? != 0) {
+          uVar7 = (uint)((ulonglong)&TypeInfo__PlayButtonBase____c->static_fields->__9__3_0 >> 0xc)
+          ;
+          puVar8 = (ulonglong *)((ulonglong)((uVar7 & 0x1fffff) >> 6) * 8 + 0xADDR);
+          do {
+            uVar9 = *puVar8;
+            LOCK();
+            uVar10 = *puVar8;
+            if (uVar9 == uVar10) {
+              *puVar8 = uVar9 | 1L << (uVar7 & 0x3f);
+            }
+            UNLOCK();
+          } while (uVar9 != uVar10);
+        }
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)this_01,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                );
+    }
+    return;
   }
 code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -90,90 +152,117 @@ void Assembly-CSharp.dll::PlayButtonBase::PlayButtonBase_UpdateButton
                (PlayButtonBase *this,MethodInfo *method)
 
 {
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar1 != (MVNetworkGame *)0x0) &&
-     (pMVar2 = (pMVar1->fields)._NetworkGameStateListener_k__BackingField,
-     pMVar2 != (MVNetworkGameStateListener *)0x0)) {
-    iVar3 = (pMVar2->fields).currentGameState;
-    fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    pMVar5 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-    if (pMVar5 != (MVLocalPlayer *)0x0) {
-      if (iVar3 == 2) {
-        pIVar6 = (this->fields).countdownFill;
-        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (((pMVar1 == (MVNetworkGame *)0x0) ||
-            (pMVar2 = (pMVar1->fields)._NetworkGameStateListener_k__BackingField,
-            pMVar2 == (MVNetworkGameStateListener *)0x0)) ||
-           (fVar4 = MVNetworkGameStateListener::MVNetworkGameStateListener_get_CountdownInPercentage
-                              (pMVar2,(MethodInfo *)0x0), pIVar6 == (Image *)0x0))
-        goto code_?;
-        UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount
-                  (pIVar6,fVar4,(MethodInfo *)0x0);
-      }
-      else {
-        if ((pMVar5->fields).respawnTime <= fVar4) {
-          pIVar6 = (this->fields).countdownFill;
-          if ((pIVar6 != (Image *)0x0) &&
-             (pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                 ((Component *)pIVar6,(MethodInfo *)0x0),
-             pGVar7 != (GameObject *)0x0)) {
-            bVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                              (pGVar7,(MethodInfo *)0x0);
-            if (bVar8 != 0) {
-              pIVar6 = (this->fields).countdownFill;
-              if ((pIVar6 == (Image *)0x0) ||
-                 (pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                           Component_get_gameObject((Component *)pIVar6,(MethodInfo *)0x0),
-                 pGVar7 == (GameObject *)0x0)) goto code_?;
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar7,0,(MethodInfo *)0x0);
-            }
-            pIStack9 = this->klass[1]._0.image;
-            pPStack10 = this;
-            (*(code *)(this->klass->vtable).OnCountDownEnd.method)();
-            return;
-          }
-          goto code_?;
-        }
-        pMVar5 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-        if (pMVar5 == (MVLocalPlayer *)0x0) goto code_?;
-        fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-        puVar11 = &UNK_?;
-        pMVar5 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-        if (pMVar5 == (MVLocalPlayer *)0x0) goto code_?;
-        fVar4 = (float)puVar11 - fVar4;
-        fVar12 = MVLocalPlayer::MVLocalPlayer_get_RespawnDuration(pMVar5,(MethodInfo *)0x0);
-        this = (PlayButtonBase *)0x0;
-        if (pIRam00000010 == (Image *)0x0) goto code_?;
-        UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount
-                  (pIRam00000010,fVar4 / fVar12,(MethodInfo *)0x0);
-      }
-      pIVar6 = (this->fields).countdownFill;
-      if ((pIVar6 != (Image *)0x0) &&
-         (pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)pIVar6,(MethodInfo *)0x0), pGVar7 != (GameObject *)0x0))
-      {
-        bVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                          (pGVar7,(MethodInfo *)0x0);
-        if (bVar8 != 0) {
-          return;
-        }
-        pIVar6 = (this->fields).countdownFill;
-        if ((pIVar6 != (Image *)0x0) &&
-           (pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                               ((Component *)pIVar6,(MethodInfo *)0x0), pGVar7 != (GameObject *)0x0)
-           ) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar7,1,(MethodInfo *)0x0);
-          return;
-        }
-      }
-    }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
+  player = (MVPlayer *)TypeInfo__MVGameControllerBase->static_fields;
+  pMVar1 = (MVGameControllerBase *)(player->fields).OnLevelChanged;
+  if (((pMVar1 == (MVGameControllerBase *)0x0) ||
+      (pMVar2 = (pMVar1->fields).game, pMVar2 == (MVNetworkGame *)0x0)) ||
+     (pMVar3 = (pMVar2->fields)._NetworkGameStateListener_k__BackingField,
+     pMVar3 == (MVNetworkGameStateListener *)0x0)) goto code_?;
+  iVar4 = (pMVar3->fields).currentGameState;
+  pcVar5 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar5 = (code *)FUN_?(), pcVar5 == (code *)0x0)) {
+    uVar6 = func_?(&UNK_?);
+    FUN_?(uVar6,0);
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
+    return;
+  }
+  pcRam_? = pcVar5;
+  fVar7 = (float)(*pcRam_?)();
+  MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,player,in_R8);
+  if (extraout_RAX == 0) goto code_?;
+  bVar8 = fVar7 < *(float *)(extraout_RAX + 0xf4);
+  bVar9 = iVar4 == 2;
+  if (bVar9) {
+    pIVar10 = (this->fields).countdownFill;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if (((pMVar1 == (MVGameControllerBase *)0x0) ||
+        (pMVar2 = (pMVar1->fields).game, pMVar2 == (MVNetworkGame *)0x0)) ||
+       ((pMVar3 = (pMVar2->fields)._NetworkGameStateListener_k__BackingField,
+        pMVar3 == (MVNetworkGameStateListener *)0x0 || (pIVar10 == (Image *)0x0))))
+    goto code_?;
+    fVar7 = (float)(pMVar3->fields).timeLeft / (float)(pMVar3->fields).duration;
 code_?:
-  func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+    UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_fillAmount
+              (pIVar10,fVar7,(MethodInfo *)0x0);
+    pIVar10 = (this->fields).countdownFill;
+    if ((pIVar10 == (Image *)0x0) ||
+       (pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pIVar10,(MethodInfo *)0x0), pGVar11 == (GameObject *)0x0)) {
+code_?:
+      FUN_?();
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    bVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                      (pGVar11,(MethodInfo *)0x0);
+    if (bVar12 != 0) goto code_?;
+    pIVar10 = (this->fields).countdownFill;
+    if ((pIVar10 == (Image *)0x0) ||
+       (pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pIVar10,(MethodInfo *)0x0), pGVar11 == (GameObject *)0x0))
+    goto code_?;
+    bVar12 = 1;
+  }
+  else {
+    if (bVar8) {
+      MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,player,in_R8);
+      if (extraout_RAX_00 == 0) goto code_?;
+      fVar7 = *(float *)(extraout_RAX_00 + 0xf4);
+      pcVar5 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar5 = (code *)FUN_?(), pcVar5 == (code *)0x0)) {
+        uVar6 = func_?(&UNK_?);
+        FUN_?(uVar6,0);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      pcRam_? = pcVar5;
+      fVar13 = (float)(*pcRam_?)();
+      MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,player,in_R8);
+      if ((extraout_RAX_01 == 0) ||
+         (pIVar10 = (this->fields).countdownFill, pIVar10 == (Image *)0x0))
+      goto code_?;
+      fVar7 = (fVar7 - fVar13) * _UNK_?;
+      goto code_?;
+    }
+    pIVar10 = (this->fields).countdownFill;
+    if ((pIVar10 == (Image *)0x0) ||
+       (pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pIVar10,(MethodInfo *)0x0), pGVar11 == (GameObject *)0x0))
+    goto code_?;
+    bVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                      (pGVar11,(MethodInfo *)0x0);
+    if (bVar12 == 0) goto code_?;
+    pIVar10 = (this->fields).countdownFill;
+    if ((pIVar10 == (Image *)0x0) ||
+       (pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)pIVar10,(MethodInfo *)0x0), pGVar11 == (GameObject *)0x0))
+    goto code_?;
+    bVar12 = 0;
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+            (pGVar11,bVar12,(MethodInfo *)0x0);
+code_?:
+  if ((!bVar9) && (!bVar8)) {
+    (*(this->klass->vtable).OnCountDownEnd.methodPtr)
+              (this,(this->klass->vtable).OnCountDownEnd.method);
+  }
   return;
 }
 

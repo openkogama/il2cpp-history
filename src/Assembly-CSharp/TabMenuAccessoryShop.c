@@ -7,105 +7,141 @@ void Assembly-CSharp.dll::TabMenuAccessoryShop::TabMenuAccessoryShop_AddTabMenuB
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__Add_int__TabMenuButtonBase_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<TabMenuAccessoryShop::TabMenuButtonNonLayoutDef>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<TabMenuAccessoryShop::TabMenuButtonNonLayoutDef>__get_Item_int_
-                   );
-    func_?(&
-                    TabMenuButtonBase_MethodInfo__UnityEngine__Object__Instantiate<TabMenuButtonBase>_TabMenuButtonBase_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__Add_int__TabMenuButtonBase_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<TabMenuAccessoryShop::TabMenuButtonNonLayoutDef>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<TabMenuAccessoryShop::TabMenuButtonNonLayoutDef>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TabMenuButtonBase_MethodInfo__UnityEngine__Object__Instantiate<TabMenuButtonBase>_TabMenuButtonBase_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  this_00 = (List_1_UnityEngine_UIElements_UIR_EntryPreProcessor_AllocSize_ *)
+            (this->fields).nonLayoutTabButtons;
   this_02 = (Component *)0x0;
-  index = 0;
-  pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-           (this->fields).nonLayoutTabButtons;
-  if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    while (index < (pLVar1->fields)._size) {
-      pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-               (this->fields).nonLayoutTabButtons;
-      if ((pLVar1 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-         (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (pLVar1,index,
-                             MethodInfo__System__Collections__Generic__List<TabMenuAccessoryShop::TabMenuButtonNonLayoutDef>__get_Item_int_
-                            ), RVar2 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-      pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-               (this->fields).nonLayoutTabButtons;
-      if (*(int *)((int)RVar2 + 8) == categoryIndex) {
-        if ((pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
-           (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                    RegularExpressions::RegexCharClass+SingleRange]::
-                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              (pLVar1,index,
-                               MethodInfo__System__Collections__Generic__List<TabMenuAccessoryShop::TabMenuButtonNonLayoutDef>__get_Item_int_
-                              ), RVar2 != (RegexCharClass_SingleRange)0x0)) {
-          original = *(Object **)((int)RVar2 + 0xc);
-          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          this_02 = (Component *)
-                    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                              (original,
-                               TabMenuButtonBase_MethodInfo__UnityEngine__Object__Instantiate<TabMenuButtonBase>_TabMenuButtonBase_
-                              );
-          break;
-        }
-        goto code_?;
-      }
-      index = index + 1;
-      if (pLVar1 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-      goto code_?;
+  if (this_00 == (List_1_UnityEngine_UIElements_UIR_EntryPreProcessor_AllocSize_ *)0x0)
+  goto code_?;
+  lVar1 = 0x20;
+  pCVar2 = this_02;
+  while (index = (uint)pCVar2, (int)index < (this_00->fields)._size) {
+    if ((uint)(this_00->fields)._size <= index) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                ((MethodInfo *)0x0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
     }
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+    pEVar4 = (this_00->fields)._items;
+    if (pEVar4 == (EntryPreProcessor_AllocSize__Array *)0x0) goto code_?;
+    if ((uint)pEVar4->max_length <= index) {
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
     }
-    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)this_02,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar3 != 0) {
-      original_00 = (this->fields).tabMenuButtonPrefab;
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
+    lVar5 = *(longlong *)
+             ((longlong)&((EntryPreProcessor_AllocSize__Array *)(pEVar4->vector + -4))->klass +
+             lVar1);
+    if (lVar5 == 0) goto code_?;
+    if (*(int *)(lVar5 + 0x10) == categoryIndex) {
+      EVar6 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
+              EntryPreProcessor+AllocSize]::
+              List_1_UnityEngine_UIElements_UIR_EntryPreProcessor_AllocSize__get_Item
+                        (this_00,index,
+                         MethodInfo__System__Collections__Generic__List<TabMenuAccessoryShop::TabMenuButtonNonLayoutDef>__get_Item_int_
+                        );
+      if (EVar6 == (EntryPreProcessor_AllocSize)0x0) goto code_?;
+      original = *(Object **)((longlong)EVar6 + 0x18);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
       this_02 = (Component *)
                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                          ((Object *)original_00,
+                          (original,
                            TabMenuButtonBase_MethodInfo__UnityEngine__Object__Instantiate<TabMenuButtonBase>_TabMenuButtonBase_
                           );
+      break;
     }
-    if (this_02 != (Component *)0x0) {
-      (*this_02->klass[1]._0.gc_desc)(this_02,categoryIndex,categoryName,this_02->klass[1]._0.name);
-      this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                          (this_02,(MethodInfo *)0x0);
-      parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)this,(MethodInfo *)0x0);
-      if (this_01 != (Transform *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                  (this_01,parent,0,(MethodInfo *)0x0);
-        this_00 = (this->fields).buttons;
-        if (this_00 != (Dictionary_2_System_Int32_TabMenuButtonBase_ *)0x0) {
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-          Dictionary_2_System_Int32_System_Object__Add
-                    ((Dictionary_2_System_Int32_System_Object_ *)this_00,categoryIndex,
-                     (Object *)this_02,
-                     MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__Add_int__TabMenuButtonBase_
-                    );
-          return;
-        }
-      }
+    lVar1 = lVar1 + 8;
+    pCVar2 = (Component *)(ulonglong)(index + 1);
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (this_02 == (Component *)0x0) {
+code_?:
+    original_00 = (this->fields).tabMenuButtonPrefab;
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    this_02 = (Component *)
+              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                        ((Object *)original_00,
+                         TabMenuButtonBase_MethodInfo__UnityEngine__Object__Instantiate<TabMenuButtonBase>_TabMenuButtonBase_
+                        );
+    if (this_02 == (Component *)0x0) goto code_?;
+  }
+  else {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((this_02->fields)._.m_CachedPtr == (void *)0x0) goto code_?;
+  }
+  (*(code *)this_02->klass[1]._0.image)(this_02);
+  this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                      (this_02,(MethodInfo *)0x0);
+  parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                     ((Component *)this,(MethodInfo *)0x0);
+  if (this_03 != (Transform *)0x0) {
+    uVar7 = 0;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+              (this_03,parent,0,(MethodInfo *)0x0);
+    this_01 = (this->fields).buttons;
+    if (this_01 != (Dictionary_2_System_Int32_TabMenuButtonBase_ *)0x0) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+      Dictionary_2_System_Int32_System_Object__TryInsert
+                ((Dictionary_2_System_Int32_System_Object_ *)this_01,categoryIndex,(Object *)this_02
+                 ,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar7 >> 8),2),
+                 MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__Add_int__TabMenuButtonBase_
+                 ->klass->rgctx_data[0x22].method);
+      return;
     }
   }
 code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -118,55 +154,72 @@ void Assembly-CSharp.dll::TabMenuAccessoryShop::TabMenuAccessoryShop_DestroyTab
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__ContainsKey_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__Remove_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__get_Item_int_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__ContainsKey_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__Remove_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pDVar1 = (this->fields).buttons;
-  if (pDVar1 != (Dictionary_2_System_Int32_TabMenuButtonBase_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
-            Dictionary_2_System_Int32_System_Single__ContainsKey
-                      ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,category,
+  this_00 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(this->fields).buttons;
+  if (this_00 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+    iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
+            Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                      (this_00,category,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__ContainsKey_int_
-                      );
-    if (bVar2 == 0) {
+                       ->klass->rgctx_data[0x21].method);
+    if (iVar1 < 0) {
       return;
     }
-    pDVar1 = (this->fields).buttons;
-    if ((pDVar1 != (Dictionary_2_System_Int32_TabMenuButtonBase_ *)0x0) &&
-       (this_00 = (Component *)
+    pDVar2 = (this->fields).buttons;
+    if ((pDVar2 != (Dictionary_2_System_Int32_TabMenuButtonBase_ *)0x0) &&
+       (this_01 = (Component *)
                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                   Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                            ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,category,
+                            ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,category,
                              MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__get_Item_int_
-                            ), this_00 != (Component *)0x0)) {
+                            ), this_01 != (Component *)0x0)) {
       obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                      (this_00,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+                      (this_01,(MethodInfo *)0x0);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                ((Object_1 *)obj,(MethodInfo *)0x0);
-      pDVar1 = (this->fields).buttons;
-      if (pDVar1 != (Dictionary_2_System_Int32_TabMenuButtonBase_ *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy
+                ((Object_1 *)obj,0.0,(MethodInfo *)0x0);
+      pDVar2 = (this->fields).buttons;
+      if (pDVar2 != (Dictionary_2_System_Int32_TabMenuButtonBase_ *)0x0) {
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
         Dictionary_2_System_Int32_System_Object__Remove
-                  ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,category,
+                  ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,category,
                    MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__Remove_int_
                   );
         return;
       }
     }
   }
-  func_?();
+  FUN_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -181,39 +234,67 @@ Assembly-CSharp.dll::TabMenuAccessoryShop::TabMenuAccessoryShop_GetTabMenuButton
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__ContainsKey_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__get_Item_int_
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__ContainsKey_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pDVar1 = (this->fields).buttons;
-  if (pDVar1 != (Dictionary_2_System_Int32_TabMenuButtonBase_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
-            Dictionary_2_System_Int32_System_Single__ContainsKey
-                      ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,category,
+  pDVar1 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(this->fields).buttons;
+  if (pDVar1 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+    iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
+            Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                      (pDVar1,category,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__ContainsKey_int_
-                      );
-    if (bVar2 == 0) {
+                       ->klass->rgctx_data[0x21].method);
+    pMVar3 = 
+    MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__get_Item_int_;
+    if (iVar2 < 0) {
       return (TabMenuButtonBase *)0x0;
     }
-    pDVar1 = (this->fields).buttons;
-    if (pDVar1 != (Dictionary_2_System_Int32_TabMenuButtonBase_ *)0x0) {
-      pTVar3 = (TabMenuButtonBase *)
-               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-               Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                         ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,category,
-                          MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__get_Item_int_
-                         );
-      return pTVar3;
+    pDVar1 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(this->fields).buttons;
+    if (pDVar1 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+      uVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
+              Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                        (pDVar1,category,
+                         MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__get_Item_int_
+                         ->klass->rgctx_data[0x21].method);
+      if ((int)uVar4 < 0) {
+        uVar5 = func_?(pMVar3->klass->rgctx_data,0xe);
+        key = (Object *)func_?(uVar5);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowKeyNotFoundException
+                  (key,(MethodInfo *)0x0);
+        pcVar6 = (code *)swi(3);
+        pTVar7 = (TabMenuButtonBase *)(*pcVar6)();
+        return pTVar7;
+      }
+      pDVar8 = (pDVar1->fields)._entries;
+      if (pDVar8 != (Dictionary_2_TKey_TValue_Entry_System_Int32_UnityEngine_Vector3___Array *)0x0)
+      {
+        if (uVar4 < (uint)pDVar8->max_length) {
+          return *(TabMenuButtonBase **)&pDVar8->vector[(int)uVar4].value.y;
+        }
+        FUN_?();
+        pcVar6 = (code *)swi(3);
+        pTVar7 = (TabMenuButtonBase *)(*pcVar6)();
+        return pTVar7;
+      }
+      FUN_?();
+      pcVar6 = (code *)swi(3);
+      pTVar7 = (TabMenuButtonBase *)(*pcVar6)();
+      return pTVar7;
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  pTVar3 = (TabMenuButtonBase *)(*pcVar4)();
-  return pTVar3;
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  pTVar7 = (TabMenuButtonBase *)(*pcVar6)();
+  return pTVar7;
 }
 
 
@@ -224,137 +305,208 @@ void Assembly-CSharp.dll::TabMenuAccessoryShop::TabMenuAccessoryShop_SelectTab
                MethodInfo *method)
 
 {
-  fStack_1 = -NAN;
-  puStack_2 = &DAT_?;
-  fStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = (float)&fStack_3;
-  puStack_4 = &stack0xffffffa0;
-  puVar5 = &stack0xffffffa0;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__get_Item_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TabMenuButtonBase>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TabMenuButtonBase>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TabMenuButtonBase>__get_Current__
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<int,_TabMenuButtonBase>__get_Value__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Item_int_
-                   );
-    func_?(&StringLiteral__0___1_);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TabMenuButtonBase>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TabMenuButtonBase>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TabMenuButtonBase>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<int,_TabMenuButtonBase>__get_Value__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__0___1_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
-  DStack_6._version = 0;
-  DStack_6._index = 0;
-  DStack_6._current.key = 0;
-  DStack_6._current.value = (Object *)0x0;
-  DStack_6._getEnumeratorRetType = 0;
-  pTStack_7 = (this->fields).pages;
-  method_00 = (MethodInfo *)&currentPage;
-  pOVar8 = (Object *)func_?(TypeInfo__System__Int32);
-  iStack_9 = maxPages;
-  arg1 = (Object *)func_?(TypeInfo__System__Int32,&iStack_9);
-  mscorlib.dll::System::String::String_Format_1(StringLiteral__0___1_,pOVar8,arg1,(MethodInfo *)0x0)
-  ;
-  if (pTStack_7 != (Text *)0x0) {
-    (*(code *)(pTStack_7->klass->vtable).set_text.method)();
-    pLVar10 = (this->fields).pageButtons;
-    index = 0;
-    if (pLVar10 != (List_1_UnityEngine_GameObject_ *)0x0) {
-      while (index < (pLVar10->fields)._size) {
-        this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                  (this->fields).pageButtons;
-        if ((this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-           (this_03 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                      RegularExpressions::RegexCharClass+SingleRange]::
-                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                (this_00,index,
-                                 MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Item_int_
-                                ), this_03 == (RegexCharClass_SingleRange)0x0))
-        goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  ((GameObject *)this_03,1 < maxPages,(MethodInfo *)0x0);
-        pLVar10 = (this->fields).pageButtons;
-        index = index + 1;
-        if (pLVar10 == (List_1_UnityEngine_GameObject_ *)0x0) goto code_?;
-      }
-      this_01 = (Dictionary_2_System_UInt32_System_Object_ *)(this->fields).buttons;
-      if (this_01 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-        pDVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
-                 Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                           ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                            &stack0xffffffac,this_01,
-                            MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__GetEnumerator__
-                           );
-        fStack_12 = 0.0;
-        DStack_6._dictionary = pDVar11->_dictionary;
-        DStack_6._version = pDVar11->_version;
-        DStack_6._index = pDVar11->_index;
-        DStack_6._current.key = (pDVar11->_current).key;
-        DStack_6._16_8_ = *(undefined8 *)&(pDVar11->_current).value;
-        fStack_1 = 1.4013e-45;
-        pTStack_7 = (Text *)&DStack_6;
-        goto code_?;
-      }
+  auStack_1 = (undefined1  [8])0x0;
+  pOStack_2 = (Object *)0x0;
+  KStack_3.key = 0;
+  KStack_3._4_4_ = 0;
+  KStack_3.value = (Object *)0x0;
+  uStack_4._0_4_ = 0;
+  uStack_4._4_4_ = 0;
+  pTVar5 = (this->fields).pages;
+  aiStackX_18[0] = currentPage;
+  pOVar6 = (Object *)FUN_?(uRam_?,aiStackX_18);
+  aiStackX_18[0] = maxPages;
+  arg1 = (Object *)FUN_?(uRam_?,aiStackX_18);
+  pSVar7 = StringLiteral__0___1_;
+  PStack_8._arg0 = (Object *)0x0;
+  PStack_8._arg1 = (Object *)0x0;
+  PStack_8._arg2 = (Object *)0x0;
+  PStack_8._args = (Object__Array *)0x0;
+  mscorlib.dll::System::ParamsArray::ParamsArray__ctor_1(&PStack_8,pOVar6,arg1,(MethodInfo *)0x0);
+  PStack_9._arg0 = PStack_8._arg0;
+  PStack_9._arg1 = PStack_8._arg1;
+  PStack_9._arg2 = PStack_8._arg2;
+  PStack_9._args = PStack_8._args;
+  pSVar7 = mscorlib.dll::System::String::String_FormatHelper
+                     ((IFormatProvider *)0x0,pSVar7,&PStack_9,(MethodInfo *)0x0);
+  if (pTVar5 != (Text *)0x0) {
+    (*(pTVar5->klass->vtable).set_text.methodPtr)
+              (pTVar5,pSVar7,(pTVar5->klass->vtable).set_text.method);
+    uVar10 = 0;
+    pLVar11 = (this->fields).pageButtons;
+    if (pLVar11 != (List_1_UnityEngine_GameObject_ *)0x0) {
+      lVar12 = 0x20;
+      do {
+        if ((pLVar11->fields)._size <= (int)uVar10) {
+          pOVar13 = (Object__Class *)(this->fields).buttons;
+          if (pOVar13 != (Object__Class *)0x0) {
+            PStack_9._arg2 = (Object *)0x0;
+            PStack_9._args = (Object__Array *)0x0;
+            if (iRam_? != 0) {
+              uVar10 = (uint)((ulonglong)&PStack_9 >> 0xc);
+              puVar14 = (ulonglong *)((ulonglong)((uVar10 & 0x1fffff) >> 6) * 8 + 0xADDR);
+              do {
+                uVar15 = *puVar14;
+                LOCK();
+                uVar16 = *puVar14;
+                if (uVar15 == uVar16) {
+                  *puVar14 = uVar15 | 1L << (uVar10 & 0x3f);
+                }
+                UNLOCK();
+              } while (uVar15 != uVar16);
+            }
+            PStack_9._arg1 = (Object *)(ulonglong)*(uint *)&(pOVar13->_0).byval_arg.field_0xc;
+            uStack_17 = 2;
+            pOStack_2 = PStack_9._arg1;
+            KStack_3.key = 0;
+            KStack_3._4_4_ = 0;
+            KStack_3.value = (Object *)0x0;
+            uStack_4._0_4_ = 2;
+            uStack_4._4_4_ = 0;
+            PStack_8._arg0 = (Object *)0x0;
+            PStack_8._arg1 = (Object *)auStack_1;
+            PStack_9._arg0 = (Object *)pOVar13;
+            auStack_1 = (undefined1  [8])pOVar13;
+            while( true ) {
+              bVar18 = mscorlib.dll::System::Collections::Generic::
+                      Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
+                      Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                                ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *
+                                 )auStack_1,
+                                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TabMenuButtonBase>__MoveNext__
+                                );
+              if (bVar18 == 0) {
+                this_00 = (this->fields).buttons;
+                if ((this_00 != (Dictionary_2_System_Int32_TabMenuButtonBase_ *)0x0) &&
+                   (pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                             Int32,System::Object]::
+                             Dictionary_2_System_Int32_System_Object__get_Item
+                                       ((Dictionary_2_System_Int32_System_Object_ *)this_00,tab,
+                                        MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__get_Item_int_
+                                       ), pOVar6 != (Object *)0x0)) {
+                  pOVar13 = pOVar6->klass;
+                  uVar19._0_2_ = pOVar13[1]._0.byval_arg.attrs;
+                  uVar19._2_1_ = pOVar13[1]._0.byval_arg.type;
+                  uVar19._3_5_ = *(undefined5 *)&pOVar13[1]._0.byval_arg.field_0xb;
+                  (*(code *)pOVar13[1]._0.byval_arg.data)(pOVar6,uVar19);
+                  return;
+                }
+                goto code_?;
+              }
+              if (KStack_3.value == (Object *)0x0) break;
+              (*(code *)(KStack_3.value)->klass[1]._0.name)
+                        (KStack_3.value,(KStack_3.value)->klass[1]._0.namespaze);
+            }
+code_?:
+            FUN_?();
+            FUN_?();
+            pcVar20 = (code *)swi(3);
+            (*pcVar20)();
+            return;
+          }
+          break;
+        }
+        pLVar11 = (this->fields).pageButtons;
+        if (pLVar11 == (List_1_UnityEngine_GameObject_ *)0x0) break;
+        if ((uint)(pLVar11->fields)._size <= uVar10) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          goto code_?;
+        }
+        pGVar21 = (pLVar11->fields)._items;
+        if (pGVar21 == (GameObject__Array *)0x0) break;
+        if ((uint)pGVar21->max_length <= uVar10) {
+          FUN_?();
+          pcVar20 = (code *)swi(3);
+          (*pcVar20)();
+          return;
+        }
+        pOVar6 = *(Object **)((longlong)pGVar21->vector + lVar12 + -0x20);
+        if (pOVar6 == (Object *)0x0) break;
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pOVar13 = pOVar6[1].klass;
+        if (pOVar13 == (Object__Class *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException(pOVar6,(MethodInfo *)0x0);
+          pcVar20 = (code *)swi(3);
+          (*pcVar20)();
+          return;
+        }
+        pcVar20 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar20 = (code *)FUN_?(&UNK_?), pcVar20 == (code *)0x0)) {
+          uVar19 = func_?(&UNK_?);
+          FUN_?(uVar19,0);
+          pcVar20 = (code *)swi(3);
+          (*pcVar20)();
+          return;
+        }
+        pcRam_? = pcVar20;
+        (*pcRam_?)(pOVar13);
+        uVar10 = uVar10 + 1;
+        lVar12 = lVar12 + 8;
+        pLVar11 = (this->fields).pageButtons;
+      } while (pLVar11 != (List_1_UnityEngine_GameObject_ *)0x0);
     }
   }
 code_?:
-  func_?();
-  func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  FUN_?();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
-code_?:
-  bVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System::
-          UInt32,System::Object]::
-          Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                    (&DStack_6,
-                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TabMenuButtonBase>__MoveNext__
-                    );
-  if (bVar14 == 0) goto code_?;
-  if ((Material *)DStack_6._current.value == (Material *)0x0) goto code_?;
-  (*(code *)((Material__Class *)(DStack_6._current.value)->klass)[1]._0.namespaze)
-            (DStack_6._current.value,
-             ((Material__Class *)(DStack_6._current.value)->klass)[1]._0.byval_arg.data.dummy);
-  goto code_?;
-code_?:
-  fStack_1 = -NAN;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)&DStack_6,
-             (ExceptionArgument__Enum)
-             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_TabMenuButtonBase>__Dispose__
-             ,method_00);
-  fStack_1 = -NAN;
-  this_02 = (this->fields).buttons;
-  if ((this_02 != (Dictionary_2_System_Int32_TabMenuButtonBase_ *)0x0) &&
-     (pOVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-               Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                         ((Dictionary_2_System_Int32_System_Object_ *)this_02,tab,
-                          MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__get_Item_int_
-                         ), pOVar8 != (Object *)0x0)) {
-    (**(code **)&pOVar8->klass[1]._0.byval_arg.attrs)();
-    *unaff_FS_OFFSET = fStack_3;
-    return;
-  }
-  goto code_?;
 }
 
 
@@ -365,26 +517,50 @@ void Assembly-CSharp.dll::TabMenuAccessoryShop::TabMenuAccessoryShop__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__Dictionary__
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
-            )func_?(
-                            TypeInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>
-                            );
+            )FUN_?(
+                          TypeInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>
+                          );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
   ::TextResourceManager+FontAssetRef]::
   Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<int,_TabMenuButtonBase>__Dictionary__
             );
+  bVar1 = iRam_? != 0;
   (this->fields).buttons = (Dictionary_2_System_Int32_TabMenuButtonBase_ *)this_00;
-  func_?(&(this->fields).buttons,this_00);
-  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
-            ((MonoBehaviour *)this,(MethodInfo *)0x0);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).buttons >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
   return;
 }
 

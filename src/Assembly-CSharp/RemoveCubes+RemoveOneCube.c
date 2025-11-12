@@ -9,126 +9,79 @@ Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::RemoveCubes_RemoveOneCube_CanRem
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__CubeBase);
+    FUN_?(&TypeInfo__MV__WorldObject__CubeBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__WorldObject__CubeBase);
+  if (*(int *)&(TypeInfo__MV__WorldObject__CubeBase->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar1 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Inequality
-                    (cubeBase,(CubeBase *)0x0,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MV__WorldObject__CubeBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__MV__WorldObject__CubeBase->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cubeBase == (CubeBase *)0x0) {
     return CubeDamageState__Enum_NoDamage;
   }
-  if ((cubeBase != (CubeBase *)0x0) &&
-     (pBVar2 = (cubeBase->fields).faceMaterials, pBVar2 != (Byte__Array *)0x0)) {
-    if (pBVar2->max_length == 0) {
-      func_?();
+  pBVar1 = (cubeBase->fields).faceMaterials;
+  if (pBVar1 != (Byte__Array *)0x0) {
+    if ((int)pBVar1->max_length == 0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      CVar3 = (*pcVar2)();
+      return CVar3;
     }
-    else {
-      cubeBase = (CubeBase *)CONCAT31(cubeBase._1_3_,pBVar2->vector[0]);
-      if (getPhysicalProperites != (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)0x0) {
-        puStack_3 = (getPhysicalProperites->fields)._._.method;
-        pCStack_4 = cubeBase;
-        iVar5 = (*(getPhysicalProperites->fields)._._.invoke_impl)
-                          (&pCStack_4,(getPhysicalProperites->fields)._._.method_code);
-        fVar6 = *(float *)(iVar5 + 0x10);
-        if (fVar6 == _UNK_?) {
-          return CubeDamageState__Enum_NoDamage;
-        }
-        if (fVar6 <= damage) {
-          return CubeDamageState__Enum_Destroyed;
-        }
-        return (uint)(damage < fVar6);
+    if (getPhysicalProperites != (Func_2_Byte_MV_WorldObject_PhysicalProperties_ *)0x0) {
+      lVar4 = (*(getPhysicalProperites->fields)._._.invoke_impl)
+                        (auStack_5,(getPhysicalProperites->fields)._._.method_code,
+                         pBVar1->vector[0],(getPhysicalProperites->fields)._._.method);
+      fVar6 = *(float *)(lVar4 + 0x10);
+      if (fVar6 == 0.0) {
+        return CubeDamageState__Enum_NoDamage;
       }
+      if (damage < fVar6) {
+        return (CubeDamageState__Enum)(damage < fVar6);
+      }
+      return CubeDamageState__Enum_Destroyed;
     }
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  CVar8 = (*pcVar7)();
-  return CVar8;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  CVar3 = (*pcVar2)();
+  return CVar3;
 }
 
 
 /* Boolean HandleRemoveOneCube(IntVector, ICubeModel, ICubeModel) */
 
 bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::RemoveCubes_RemoveOneCube_HandleRemoveOneCube
-               (IntVector fineGrainedPosition,ICubeModel *terrainWorldObject,
+               (IntVector *fineGrainedPosition,ICubeModel *terrainWorldObject,
                ICubeModel *fineGrainedTerrainWorldObject,MethodInfo *method)
 
 {
-  uVar1 = (undefined2)((uint)unaff_EDI >> 0x10);
-  bVar2 = RemoveCubes_RemoveOneCube_TryRemoveCubeFromFineGrainedTerrain
-                    (fineGrainedPosition,fineGrainedTerrainWorldObject,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    return 1;
-  }
-  if (cRam_? == '\0') {
-    func_?();
-    func_?(&TypeInfo__MV__WorldObject__ICubeModel);
-    uVar1 = 0x1037;
-    func_?(&TypeInfo__MoveCubeFromCoarseToFine);
-    cRam_? = '\x01';
-  }
-  IVar3.z = fineGrainedPosition.x;
-  IVar3._0_4_ = &uStack_4;
-  IVar3 = MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
-          CubeMathFunctions_FromLocalPosToLocalPos
-                    (IVar3,(ICubeModel *)CONCAT22(uVar1,fineGrainedPosition.z),terrainWorldObject,
-                     (MethodInfo *)fineGrainedTerrainWorldObject);
-  uVar5 = *IVar3._0_4_;
-  uVar1 = (undefined2)uVar5;
-  uStack_6 = (undefined2)((uint)uVar5 >> 0x10);
-  iVar7 = *(int16_t *)(IVar3._0_4_ + 1);
-  if (terrainWorldObject != (ICubeModel *)0x0) {
-    a = (CubeBase *)func_?();
-    if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    bVar2 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality
-                      (a,(CubeBase *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
+  IStackX_8.x = fineGrainedPosition->x;
+  IStackX_8.y = fineGrainedPosition->y;
+  IStackX_8.z = fineGrainedPosition->z;
+  bVar1 = RemoveCubes_RemoveOneCube_TryRemoveCubeFromFineGrainedTerrain
+                    (&IStackX_8,fineGrainedTerrainWorldObject,(MethodInfo *)0x0);
+  if (bVar1 == 0) {
+    IStackX_8.x = fineGrainedPosition->x;
+    IStackX_8.y = fineGrainedPosition->y;
+    IStackX_8.z = fineGrainedPosition->z;
+    bVar1 = RemoveCubes_RemoveOneCube_TryRemoveCubeFromTerrain
+                      (&IStackX_8,terrainWorldObject,fineGrainedTerrainWorldObject,(MethodInfo *)0x0
+                      );
+    if (bVar1 == 0) {
       return 0;
     }
-    pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (((pMVar8 != (MVNetworkGame *)0x0) &&
-        (this = (pMVar8->fields)._MaterialRepository_k__BackingField, a != (CubeBase *)0x0)) &&
-       (pBVar9 = (a->fields).faceMaterials, pBVar9 != (Byte__Array *)0x0)) {
-      if (pBVar9->max_length == 0) goto code_?;
-      uStack_10 = pBVar9->vector[0];
-      if (this != (MVMaterialRepository *)0x0) {
-        pPVar11 = MVMaterialRepository::MVMaterialRepository_GetMaterialPhysicalProperties
-                           ((PhysicalProperties *)&stack0xffffffc8,this,uStack_10,(MethodInfo *)0x0);
-        if (pPVar11->toughness == _UNK_?) {
-          return 0;
-        }
-        if ((TypeInfo__MoveCubeFromCoarseToFine->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        fromPos.y = uStack_6;
-        fromPos.x = uVar1;
-        fromPos.z = iVar7;
-        MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_MoveCube
-                  (terrainWorldObject,fineGrainedTerrainWorldObject,fromPos,(MethodInfo *)0x0);
-        uStack_4 = 3;
-        uStack_10 = 0;
-        uStack_12 = 0;
-        func_?();
-        uStack_4 = 0x1d62;
-        uStack_10 = 0x37;
-        uStack_12 = 0x10;
-        RemoveCubes_RemoveOneCube_TryRemoveCubeFromFineGrainedTerrain
-                  (fineGrainedPosition,fineGrainedTerrainWorldObject,(MethodInfo *)0x0);
-        return 1;
-      }
-    }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar13 = (code *)swi(3);
-  bVar2 = (*pcVar13)();
-  return bVar2;
+  return 1;
 }
 
 
@@ -136,35 +89,42 @@ code_?:
 
 bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::
      RemoveCubes_RemoveOneCube_TryRemoveCubeFromFineGrainedTerrain
-               (IntVector fineGrainedPosition,ICubeModel *fineGrainedTerrainWorldObject,
+               (IntVector *fineGrainedPosition,ICubeModel *fineGrainedTerrainWorldObject,
                MethodInfo *method)
 
 {
-  uVar1 = (undefined2)((uint)unaff_EBX >> 0x10);
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__CubeBase);
-    func_?(&TypeInfo__MV__WorldObject__ICubeModel);
+    FUN_?(&TypeInfo__MV__WorldObject__CubeBase);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__ICubeModel);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (fineGrainedTerrainWorldObject == (ICubeModel *)0x0) {
-    func_?();
-    pcVar2 = (code *)swi(3);
-    bVar3 = (*pcVar2)();
-    return bVar3;
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    bVar2 = (*pcVar1)();
+    return bVar2;
   }
-  a = (CubeBase *)
-      func_?(1,TypeInfo__MV__WorldObject__ICubeModel,fineGrainedTerrainWorldObject,
-                      fineGrainedPosition._0_4_,fineGrainedPosition.z);
-  if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__WorldObject__CubeBase);
+  lVar3 = FUN_?();
+  if (*(int *)&(TypeInfo__MV__WorldObject__CubeBase->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar3 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Inequality
-                    (a,(CubeBase *)0x0,(MethodInfo *)0x0);
-  if (bVar3 == 0) {
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MV__WorldObject__CubeBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__MV__WorldObject__CubeBase->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (lVar3 == 0) {
     return 0;
   }
-  func_?(3,TypeInfo__MV__WorldObject__ICubeModel,fineGrainedTerrainWorldObject,
-                  fineGrainedPosition._0_4_,CONCAT22(uVar1,fineGrainedPosition.z));
+  FUN_?();
   return 1;
 }
 
@@ -173,64 +133,157 @@ bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::
 
 bool Assembly-CSharp.dll::RemoveCubes+RemoveOneCube::
      RemoveCubes_RemoveOneCube_TryRemoveCubeFromTerrain
-               (IntVector fineGrainedPosition,ICubeModel *terrainWorldObject,
+               (IntVector *fineGrainedPosition,ICubeModel *terrainWorldObject,
                ICubeModel *fineGrainedTerrainWorldObject,MethodInfo *method)
 
 {
-  uVar1 = (undefined2)((uint)in_stack_2 >> 0x10);
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__CubeBase);
-    func_?(&TypeInfo__MV__WorldObject__ICubeModel);
-    uVar1 = 0x1037;
-    func_?(&TypeInfo__MoveCubeFromCoarseToFine);
+    FUN_?(&TypeInfo__MV__WorldObject__CubeBase);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__ICubeModel);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MoveCubeFromCoarseToFine);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  IVar3.z = fineGrainedPosition.x;
-  IVar3._0_4_ = &stack0xfffffff0;
-  IVar3 = MVWorldObject.dll::MV::WorldObject::CubeMathFunctions::
-          CubeMathFunctions_FromLocalPosToLocalPos
-                    (IVar3,(ICubeModel *)CONCAT22(uVar1,fineGrainedPosition.z),terrainWorldObject,
-                     (MethodInfo *)fineGrainedTerrainWorldObject);
-  IVar3 = *IVar3._0_4_;
-  if (terrainWorldObject != (ICubeModel *)0x0) {
-    a = (CubeBase *)func_?(1,TypeInfo__MV__WorldObject__ICubeModel,terrainWorldObject);
-    if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MV__WorldObject__CubeBase);
-    }
-    bVar4 = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_op_Equality
-                      (a,(CubeBase *)0x0,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      return 0;
-    }
-    pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (((pMVar5 != (MVNetworkGame *)0x0) &&
-        (this = (pMVar5->fields)._MaterialRepository_k__BackingField, a != (CubeBase *)0x0)) &&
-       (pBVar6 = (a->fields).faceMaterials, pBVar6 != (Byte__Array *)0x0)) {
-      if (pBVar6->max_length == 0) goto code_?;
-      if (this != (MVMaterialRepository *)0x0) {
-        pPVar7 = MVMaterialRepository::MVMaterialRepository_GetMaterialPhysicalProperties
-                           ((PhysicalProperties *)&stack0xffffffc8,this,pBVar6->vector[0],
-                            (MethodInfo *)0x0);
-        if (pPVar7->toughness == _UNK_?) {
-          return 0;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MV__WorldObject__ICubeModel);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (fineGrainedTerrainWorldObject != (ICubeModel *)0x0) {
+    puVar1 = (undefined8 *)
+              FUN_?(&uStack_2,0,TypeInfo__MV__WorldObject__ICubeModel,
+                            fineGrainedTerrainWorldObject);
+    uStack_2 = *puVar1;
+    fVar3 = (float)uStack_2;
+    uStack_4 = *(undefined4 *)(puVar1 + 1);
+    if (terrainWorldObject != (ICubeModel *)0x0) {
+      puVar1 = (undefined8 *)
+                FUN_?(&uStack_2,0,TypeInfo__MV__WorldObject__ICubeModel,terrainWorldObject)
+      ;
+      uStack_2 = *puVar1;
+      uStack_4 = *(undefined4 *)(puVar1 + 1);
+      IStackX_8.x = fineGrainedPosition->x;
+      IStackX_8.y = fineGrainedPosition->y;
+      fVar3 = fVar3 / (float)uStack_2;
+      IStackX_8.z = fineGrainedPosition->z;
+      IStackX_10.x = fineGrainedPosition->x;
+      IStackX_10.y = fineGrainedPosition->y;
+      fVar5 = (float)func_?((float)(int)IStackX_10.x * fVar3);
+      fVar6 = (float)func_?((float)(int)IStackX_8.y * fVar3);
+      fVar3 = (float)func_?((float)(int)fineGrainedPosition->z * fVar3);
+      IStackX_8._0_4_ = (BADTYPE)fVar3;
+      iVar7 = (int16_t)(int)fVar5;
+      iVar8 = (int16_t)(int)fVar6;
+      IStackX_10.y = iVar8;
+      IStackX_10.x = iVar7;
+      IStackX_18.z = (int16_t)IStackX_8._0_4_;
+      IStackX_18._0_4_ = IStackX_10._0_4_;
+      lVar9 = FUN_?();
+      if (*(int *)&(TypeInfo__MV__WorldObject__CubeBase->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (lVar9 == 0) {
+        return 0;
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pMVar10 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if ((pMVar10 != (MVGameControllerBase *)0x0) &&
+         (pMVar11 = (pMVar10->fields).game, pMVar11 != (MVNetworkGame *)0x0)) {
+        lVar9 = *(longlong *)(lVar9 + 0x20);
+        pMVar12 = (pMVar11->fields)._MaterialRepository_k__BackingField;
+        if (lVar9 != 0) {
+          if (*(int *)(lVar9 + 0x18) == 0) {
+code_?:
+            FUN_?();
+            pcVar13 = (code *)swi(3);
+            bVar14 = (*pcVar13)();
+            return bVar14;
+          }
+          bVar15 = *(byte *)(lVar9 + 0x20);
+          if (pMVar12 != (MVMaterialRepository *)0x0) {
+            if (cRam_? == '\0') {
+              FUN_?(&MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Count__
+                           );
+              LOCK();
+              UNLOCK();
+              FUN_?(&
+                            MethodInfo__System__Collections__Generic__List<MVMaterial>__get_Item_int_
+                           );
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pLVar16 = (pMVar12->fields).materials;
+            if (pLVar16 != (List_1_MVMaterial_ *)0x0) {
+              uVar17 = (pLVar16->fields)._size;
+              if ((int)(uint)bVar15 < (int)uVar17) {
+                if (uVar17 <= bVar15) {
+                  mscorlib.dll::System::ThrowHelper::
+                  ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+                  pcVar13 = (code *)swi(3);
+                  bVar14 = (*pcVar13)();
+                  return bVar14;
+                }
+                pMVar18 = (pLVar16->fields)._items;
+                if (pMVar18 != (MVMaterial__Array *)0x0) {
+                  if ((uint)pMVar18->max_length <= (uint)bVar15) goto code_?;
+                  if (pMVar18->vector[bVar15] != (MVMaterial *)0x0) {
+                    fVar3 = (pMVar18->vector[bVar15]->fields)._PhysicalProperties_k__BackingField.
+                             toughness;
+                    goto code_?;
+                  }
+                }
+              }
+              else {
+                pMVar19 = (pMVar12->fields).noMaterial;
+                if (pMVar19 != (MVMaterial *)0x0) {
+                  fVar3 = (pMVar19->fields)._PhysicalProperties_k__BackingField.toughness;
+code_?:
+                  if (fVar3 == 0.0) {
+                    return 0;
+                  }
+                  if (*(int *)&(TypeInfo__MoveCubeFromCoarseToFine->_1).field_0x1c == 0) {
+                    FUN_?();
+                  }
+                  IStackX_18.x = IStackX_10.x;
+                  IStackX_18.y = IStackX_10.y;
+                  iVar20 = IStackX_8.x;
+                  IStackX_18.z = iVar20;
+                  MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_MoveCube
+                            (terrainWorldObject,fineGrainedTerrainWorldObject,&IStackX_18,
+                             (MethodInfo *)0x0);
+                  IStackX_8.y = iVar8;
+                  IStackX_8.x = iVar7;
+                  IStackX_8.z = iVar20;
+                  FUN_?();
+                  IStackX_8.x = fineGrainedPosition->x;
+                  IStackX_8.y = fineGrainedPosition->y;
+                  IStackX_8.z = fineGrainedPosition->z;
+                  RemoveCubes_RemoveOneCube_TryRemoveCubeFromFineGrainedTerrain
+                            (&IStackX_8,fineGrainedTerrainWorldObject,(MethodInfo *)0x0);
+                  return 1;
+                }
+              }
+            }
+          }
         }
-        if ((TypeInfo__MoveCubeFromCoarseToFine->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        MoveCubeFromCoarseToFine::MoveCubeFromCoarseToFine_MoveCube
-                  (terrainWorldObject,fineGrainedTerrainWorldObject,IVar3,(MethodInfo *)0x0);
-        func_?();
-        RemoveCubes_RemoveOneCube_TryRemoveCubeFromFineGrainedTerrain
-                  (fineGrainedPosition,fineGrainedTerrainWorldObject,(MethodInfo *)0x0);
-        return 1;
       }
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  bVar4 = (*pcVar8)();
-  return bVar4;
+  FUN_?();
+  pcVar13 = (code *)swi(3);
+  bVar14 = (*pcVar13)();
+  return bVar14;
 }
 

@@ -6,26 +6,31 @@ bool Assembly-CSharp.dll::RTG::RTMeshDb::RTMeshDb_Contains
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__ContainsKey_UnityEngine__Mesh_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (rtMesh != (RTMesh *)0x0) {
-    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._meshes
-    ;
-    if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-      bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)(this->fields)._meshes;
+    if (this_00 !=
+        (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
+        0x0) {
+      iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::StyleComplexSelector+PseudoStateData]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
                         (this_00,(Object *)(rtMesh->fields)._unityMesh,
                          MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__ContainsKey_UnityEngine__Mesh_
-                        );
-      return bVar1;
+                         ->klass->rgctx_data[0x21].method);
+      return (byte)((uint)iVar1 >> 0x1f) ^ 1;
     }
-    uVar2 = func_?(&stack0xfffffff0);
-    func_?(uVar2);
-    pcVar3 = (code *)swi(3);
-    bVar1 = (*pcVar3)();
-    return bVar1;
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    bVar3 = (*pcVar2)();
+    return bVar3;
   }
   return 0;
 }
@@ -38,34 +43,57 @@ bool Assembly-CSharp.dll::RTG::RTMeshDb::RTMeshDb_Contains_1
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__ContainsKey_UnityEngine__Mesh_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__ContainsKey_UnityEngine__Mesh_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)unityMesh,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._meshes
-    ;
-    if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-      bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                        (this_00,(Object *)unityMesh,
-                         MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__ContainsKey_UnityEngine__Mesh_
-                        );
-      return bVar1;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (unityMesh != (Mesh *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    uVar2 = func_?(&stack0xfffffffc);
-    func_?(uVar2);
-    pcVar3 = (code *)swi(3);
-    bVar1 = (*pcVar3)();
-    return bVar1;
+    if ((unityMesh->fields)._.m_CachedPtr != (void *)0x0) {
+      this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                 *)(this->fields)._meshes;
+      if (this_00 !=
+          (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *
+          )0x0) {
+        iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::StyleComplexSelector+PseudoStateData]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
+                          (this_00,(Object *)unityMesh,
+                           MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__ContainsKey_UnityEngine__Mesh_
+                           ->klass->rgctx_data[0x21].method);
+        return (byte)((uint)iVar1 >> 0x1f) ^ 1;
+      }
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      bVar3 = (*pcVar2)();
+      return bVar3;
+    }
   }
   return 0;
 }
@@ -78,46 +106,66 @@ RTMesh * Assembly-CSharp.dll::RTG::RTMeshDb::RTMeshDb_CreateRTMesh
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__Add_UnityEngine__Mesh__RTG__RTMesh_
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__Add_UnityEngine__Mesh__RTG__RTMesh_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&TypeInfo__RTG__RTMesh);
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__RTMesh);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)unityMesh,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    if (unityMesh == (Mesh *)0x0) {
-code_?:
-      func_?();
-      pcVar2 = (code *)swi(3);
-      pRVar3 = (RTMesh *)(*pcVar2)();
-      return pRVar3;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (unityMesh != (Mesh *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_isReadable
-                      (unityMesh,(MethodInfo *)0x0);
-    pRVar4 = TypeInfo__RTG__RTMesh;
-    if (bVar1 != 0) {
-      pRVar3 = (RTMesh *)func_?();
-      RTMesh::RTMesh__ctor(pRVar3,unityMesh,(MethodInfo *)0x0);
-      if (pRVar3 != (RTMesh *)0x0) {
-        this_00 = (Dictionary_2_System_Object_System_Object_ *)(pRVar4->_0).name;
-        if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__Add
-                    (this_00,(Object *)unityMesh,(Object *)pRVar3,
-                     MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__Add_UnityEngine__Mesh__RTG__RTMesh_
-                    );
-          return pRVar3;
+    if ((unityMesh->fields)._.m_CachedPtr != (void *)0x0) {
+      bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_isReadable
+                        (unityMesh,(MethodInfo *)0x0);
+      if (bVar1 != 0) {
+        pRVar2 = (RTMesh *)FUN_?(TypeInfo__RTG__RTMesh);
+        RTMesh::RTMesh__ctor(pRVar2,unityMesh,(MethodInfo *)0x0);
+        if (pRVar2 != (RTMesh *)0x0) {
+          this_00 = (this->fields)._meshes;
+          if (this_00 != (Dictionary_2_UnityEngine_Mesh_RTG_RTMesh_ *)0x0) {
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__TryInsert
+                      ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)unityMesh,
+                       (Object *)pRVar2,CONCAT31((int3)((uint)in_R9D >> 8),2),
+                       MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__Add_UnityEngine__Mesh__RTG__RTMesh_
+                       ->klass->rgctx_data[0x22].method);
+            return pRVar2;
+          }
+          FUN_?();
+          pcVar3 = (code *)swi(3);
+          pRVar2 = (RTMesh *)(*pcVar3)();
+          return pRVar2;
         }
-        goto code_?;
       }
     }
   }
@@ -132,86 +180,159 @@ RTMesh * Assembly-CSharp.dll::RTG::RTMeshDb::RTMeshDb_GetRTMesh
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__ContainsKey_UnityEngine__Mesh_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__get_Item_UnityEngine__Mesh_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__ContainsKey_UnityEngine__Mesh_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__get_Item_UnityEngine__Mesh_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)unityMesh,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    return (RTMesh *)0x0;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._meshes;
-  if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                      (pDVar2,(Object *)unityMesh,
-                       MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__ContainsKey_UnityEngine__Mesh_
-                      );
-    if (bVar1 == 0) {
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      if (cRam_? == '\0') {
-        func_?();
-        func_?();
-        cRam_? = '\x01';
-      }
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                        ((Object_1 *)unityMesh,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar1 == 0) {
-        if (unityMesh == (Mesh *)0x0) goto code_?;
-        bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_isReadable
-                          (unityMesh,(MethodInfo *)0x0);
-        if (bVar1 != 0) {
-          pRVar3 = (RTMesh *)func_?();
-          RTMesh::RTMesh__ctor(pRVar3,unityMesh,(MethodInfo *)0x0);
-          if (pRVar3 != (RTMesh *)0x0) {
-            this_00 = (this->fields)._meshes;
-            if (this_00 != (Dictionary_2_UnityEngine_Mesh_RTG_RTMesh_ *)0x0) {
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)unityMesh,
-                         (Object *)pRVar3,
-                         MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__Add_UnityEngine__Mesh__RTG__RTMesh_
-                        );
-              return pRVar3;
-            }
-            goto code_?;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (unityMesh != (Mesh *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((unityMesh->fields)._.m_CachedPtr != (void *)0x0) {
+      pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                *)(this->fields)._meshes;
+      if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                     *)0x0) {
+        iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::StyleComplexSelector+PseudoStateData]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
+                          (pDVar1,(Object *)unityMesh,
+                           MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__ContainsKey_UnityEngine__Mesh_
+                           ->klass->rgctx_data[0x21].method);
+        if (iVar2 < 0) {
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__Add_UnityEngine__Mesh__RTG__RTMesh_
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
           }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            FUN_?(&TypeInfo__RTG__RTMesh);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if ((unityMesh->fields)._.m_CachedPtr != (void *)0x0) {
+            bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_isReadable
+                              (unityMesh,(MethodInfo *)0x0);
+            if (bVar3 != 0) {
+              pRVar4 = (RTMesh *)FUN_?(TypeInfo__RTG__RTMesh);
+              RTMesh::RTMesh__ctor(pRVar4,unityMesh,(MethodInfo *)0x0);
+              if (pRVar4 != (RTMesh *)0x0) {
+                this_00 = (this->fields)._meshes;
+                if (this_00 != (Dictionary_2_UnityEngine_Mesh_RTG_RTMesh_ *)0x0) {
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                  Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                            ((Dictionary_2_System_Object_System_Object_ *)this_00,
+                             (Object *)unityMesh,(Object *)pRVar4,
+                             CONCAT31((int3)((uint)in_R9D >> 8),2),
+                             MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__Add_UnityEngine__Mesh__RTG__RTMesh_
+                             ->klass->rgctx_data[0x22].method);
+                  return pRVar4;
+                }
+                goto DAT_?;
+              }
+            }
+          }
+          return (RTMesh *)0x0;
+        }
+        pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                  *)(this->fields)._meshes;
+        if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                       *)0x0) {
+          uVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
+                            (pDVar1,(Object *)unityMesh,
+                             MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__get_Item_UnityEngine__Mesh_
+                             ->klass->rgctx_data[0x21].method);
+          if ((int)uVar5 < 0) {
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowKeyNotFoundException
+                      ((Object *)unityMesh,(MethodInfo *)0x0);
+            pcVar6 = (code *)swi(3);
+            pRVar4 = (RTMesh *)(*pcVar6)();
+            return pRVar4;
+          }
+          pDVar7 = (pDVar1->fields)._entries;
+          if (pDVar7 != (Dictionary_2_TKey_TValue_Entry_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___Array
+                         *)0x0) {
+            if (uVar5 < (uint)pDVar7->max_length) {
+              return (RTMesh *)pDVar7->vector[(int)uVar5].value;
+            }
+            FUN_?();
+            pcVar6 = (code *)swi(3);
+            pRVar4 = (RTMesh *)(*pcVar6)();
+            return pRVar4;
+          }
+          FUN_?();
+          pcVar6 = (code *)swi(3);
+          pRVar4 = (RTMesh *)(*pcVar6)();
+          return pRVar4;
         }
       }
-      return (RTMesh *)0x0;
-    }
-    pDVar2 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._meshes;
-    if (pDVar2 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        (pDVar2,(Object *)unityMesh,
-                         MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__get_Item_UnityEngine__Mesh_
-                        );
-      return (RTMesh *)TVar4.m_Index;
+DAT_?:
+      FUN_?();
+      pcVar6 = (code *)swi(3);
+      pRVar4 = (RTMesh *)(*pcVar6)();
+      return pRVar4;
     }
   }
-code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pRVar3 = (RTMesh *)(*pcVar5)();
-  return pRVar3;
+  return (RTMesh *)0x0;
 }
 
 
@@ -222,23 +343,30 @@ void Assembly-CSharp.dll::RTG::RTMeshDb::RTMeshDb_OnMeshWillBeDestroyed
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__ContainsKey_UnityEngine__Mesh_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__Remove_UnityEngine__Mesh_
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__ContainsKey_UnityEngine__Mesh_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__Remove_UnityEngine__Mesh_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(this->fields)._meshes;
-  if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+             *)(this->fields)._meshes;
+  if (this_00 !=
+      (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0
+     ) {
+    iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::StyleComplexSelector+PseudoStateData]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
                       (this_00,(Object *)unityMesh,
                        MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__ContainsKey_UnityEngine__Mesh_
-                      );
-    if (bVar1 != 0) {
+                       ->klass->rgctx_data[0x21].method);
+    if (-1 < iVar1) {
       this_01 = (this->fields)._meshes;
       if (this_01 == (Dictionary_2_UnityEngine_Mesh_RTG_RTMesh_ *)0x0) goto code_?;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
@@ -250,7 +378,7 @@ void Assembly-CSharp.dll::RTG::RTMeshDb::RTMeshDb_OnMeshWillBeDestroyed
     return;
   }
 code_?:
-  func_?();
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -264,78 +392,32 @@ void Assembly-CSharp.dll::RTG::RTMeshDb::RTMeshDb_SetMeshDirty
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__TryGetValue_UnityEngine__Mesh__RTG__RTMesh__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__TryGetValue_UnityEngine__Mesh__RTG__RTMesh__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pOStack_1 = (Object *)0x0;
   this_00 = (this->fields)._meshes;
+  pRStackX_8 = (RTMesh *)0x0;
   if (this_00 != (Dictionary_2_UnityEngine_Mesh_RTG_RTMesh_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
             ::Dictionary_2_System_Object_System_Object__TryGetValue
                       ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)unityMesh,
-                       &pOStack_1,
+                       (Object **)&pRStackX_8,
                        MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__TryGetValue_UnityEngine__Mesh__RTG__RTMesh__
                       );
-    pOVar3 = pOStack_1;
-    if (bVar2 == 0) {
-      return;
+    if (bVar1 != 0) {
+      if (pRStackX_8 == (RTMesh *)0x0) goto code_?;
+      RTMesh::RTMesh_SetDirty(pRStackX_8,(MethodInfo *)0x0);
     }
-    if ((pOStack_1 != (Object *)0x0) && (pOStack_1[1].klass != (Object__Class *)0x0)) {
-      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_vertices
-                         ((Mesh *)pOStack_1[1].klass,(MethodInfo *)0x0);
-      pOVar3[1].monitor = (MonitorData *)pVVar4;
-      func_?();
-      if (pOVar3[1].klass != (Object__Class *)0x0) {
-        pOVar5 = (Object__Class *)
-                 UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_triangles
-                           ((Mesh *)pOVar3[1].klass,(MethodInfo *)0x0);
-        pOVar3[2].klass = pOVar5;
-        func_?(pOVar3 + 2,pOVar5);
-        if (pOVar3[2].klass != (Object__Class *)0x0) {
-          pOVar3[2].monitor = (MonitorData *)((int)((pOVar3[2].klass)->_0).namespaze / 3);
-          if (pOVar3[1].klass != (Object__Class *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_RecalculateBounds
-                      ((Mesh *)pOVar3[1].klass,(MethodInfo *)0x0);
-            if (pOVar3[1].klass != (Object__Class *)0x0) {
-              pBVar6 = UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_get_bounds
-                                 (&BStack_7,(Mesh *)pOVar3[1].klass,(MethodInfo *)0x0);
-              pOVar5 = (Object__Class *)0x0;
-              pMVar8 = (MonitorData *)0x0;
-              AABB::AABB__ctor_1((AABB *)&stack0xffffffc4,*pBVar6,(MethodInfo *)0x0);
-              pMVar9 = pOVar3[6].monitor;
-              pOVar3[3].klass = pOVar5;
-              pOVar3[3].monitor = pMVar8;
-              pOVar3[4].klass = (Object__Class *)0x0;
-              pOVar3[4].monitor = (MonitorData *)0x0;
-              pOVar3[5].klass = (Object__Class *)0x0;
-              pOVar3[5].monitor = (MonitorData *)0x0;
-              pOVar3[6].klass = (Object__Class *)0x0;
-              if (pMVar9 != (MonitorData *)0x0) {
-                if (cRam_? == '\0') {
-                  func_?(&MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__SphereTree__);
-                  func_?(&TypeInfo__RTG__SphereTree<RTG::MeshTriangle>);
-                  cRam_? = '\x01';
-                }
-                pMVar9[0x1c] = (MonitorData)0x0;
-                this_01 = (SphereTree_1_System_Object_ *)
-                          func_?(TypeInfo__RTG__SphereTree<RTG::MeshTriangle>);
-                SphereTree`1[System::Object]::SphereTree_1_System_Object___ctor
-                          (this_01,MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__SphereTree__);
-                *(SphereTree_1_System_Object_ **)(pMVar9 + 0xc) = this_01;
-                func_?(pMVar9 + 0xc,this_01);
-                return;
-              }
-            }
-          }
-        }
-      }
-    }
+    return;
   }
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+code_?:
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -346,36 +428,52 @@ void Assembly-CSharp.dll::RTG::RTMeshDb::RTMeshDb__ctor(RTMeshDb *this,MethodInf
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>
-                   );
-    func_?(&MethodInfo__RTG__Singleton<RTG::RTMeshDb>__Singleton__);
-    func_?(&TypeInfo__RTG__Singleton<RTG::RTMeshDb>);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__Singleton<RTG::RTMeshDb>__Singleton__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__Singleton<RTG::RTMeshDb>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-             *)func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>
-                              );
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+             *)FUN_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>
+                            );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
-  StyleComplexSelector+PseudoStateData]::
-  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+  UIR::UIRenderDevice+DisableForceGammaMaterial]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::Mesh,_RTG::RTMesh>__Dictionary__
             );
+  bVar1 = iRam_? != 0;
   (this->fields)._meshes = (Dictionary_2_UnityEngine_Mesh_RTG_RTMesh_ *)this_00;
-  func_?(&this->fields,this_00);
-  if ((TypeInfo__RTG__Singleton<RTG::RTMeshDb>->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__Singleton<RTG::RTMeshDb>);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
   }
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-  UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor
-            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,
-             MethodInfo__RTG__Singleton<RTG::RTMeshDb>__Singleton__);
+  if (*(int *)&(TypeInfo__RTG__Singleton<RTG::RTMeshDb>->_1).field_0x1c == 0) {
+    FUN_?();
+  }
   return;
 }
 

@@ -7,29 +7,46 @@ Assembly-CSharp.dll::AssetBundleRequest::AssetBundleRequest_Create
 
 {
   pSVar1 = (this->fields)._._.path;
-  pKVar2 = MVGameControllerBase::MVGameControllerBase_get_KoGaMaSettings((MethodInfo *)0x0);
-  if (pKVar2 != (KoGaMaSettingsContainer *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(&StringLiteral__version_);
-      cRam_? = '\x01';
-    }
-    pSVar3 = mscorlib.dll::System::Int32::Int32_ToString
-                       ((Int32 *)&(pKVar2->fields).streamingAssetVersion,(MethodInfo *)0x0);
-    pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                       (StringLiteral__version_,pSVar3,(MethodInfo *)0x0);
-    pSVar1 = mscorlib.dll::System::String::String_Concat_3(pSVar1,pSVar3,(MethodInfo *)0x0);
-    pKVar2 = MVGameControllerBase::MVGameControllerBase_get_KoGaMaSettings((MethodInfo *)0x0);
-    if (pKVar2 != (KoGaMaSettingsContainer *)0x0) {
-      pUVar4 = UnityEngine.UnityWebRequestAssetBundleModule.dll::UnityEngine::Networking::
-               UnityWebRequestAssetBundle::UnityWebRequestAssetBundle_GetAssetBundle
-                         (pSVar1,(pKVar2->fields).streamingAssetVersion,0,(MethodInfo *)0x0);
-      return pUVar4;
-    }
+  if (cRam_? == '\0') {
+    FUN_?(&StringLiteral__version_584637704);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pUVar4 = (UnityWebRequest *)(*pcVar5)();
-  return pUVar4;
+  pSVar1 = mscorlib.dll::System::String::String_Concat_4
+                     (pSVar1,StringLiteral__version_584637704,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Networking__DownloadHandlerAssetBundle,0x22d8dd08,0,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Networking__UnityWebRequest);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_GET);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  obj = (DownloadHandlerAssetBundle *)
+        FUN_?(TypeInfo__UnityEngine__Networking__DownloadHandlerAssetBundle);
+  if (cRam_? == '\0') {
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  HStack_2.u64_0 = 0;
+  HStack_2.u64_1 = 0x22d8dd0800000000;
+  pvVar3 = UnityEngine.UnityWebRequestAssetBundleModule.dll::UnityEngine::Networking::
+           DownloadHandlerAssetBundle::DownloadHandlerAssetBundle_CreateCached
+                     (obj,pSVar1,::StringLiteral__,&HStack_2,0,(MethodInfo *)0x0);
+  (obj->fields)._.m_Ptr = pvVar3;
+  this_00 = (UnityWebRequest *)FUN_?(TypeInfo__UnityEngine__Networking__UnityWebRequest);
+  UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
+  UnityWebRequest__ctor_3
+            (this_00,pSVar1,StringLiteral_GET,(DownloadHandler *)obj,(UploadHandler *)0x0,
+             (MethodInfo *)0x0);
+  return this_00;
 }
 
 
@@ -43,35 +60,66 @@ void Assembly-CSharp.dll::AssetBundleRequest::AssetBundleRequest__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AsyncWWWManager);
-    func_?(&TypeInfo__System__DateTime);
+    FUN_?(&TypeInfo__AsyncWWWManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__DateTime);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__AsyncWWWManager);
+  if (*(int *)&(TypeInfo__AsyncWWWManager->_1).field_0x1c == 0) {
+    FUN_?();
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AsyncWWWManager);
+    FUN_?(&TypeInfo__AsyncWWWManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__AsyncWWWManager);
+  if (*(int *)&(TypeInfo__AsyncWWWManager->_1).field_0x1c == 0) {
+    FUN_?();
   }
   (this->fields)._._.retries = TypeInfo__AsyncWWWManager->static_fields->retries;
-  *(undefined4 *)&(this->fields)._._.currentTimeout._ticks = 0;
-  *(undefined4 *)((int)&(this->fields)._._.currentTimeout._ticks + 4) = 0;
-  if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__DateTime);
+  (this->fields)._._.currentTimeout._ticks = 0;
+  if (*(int *)&(TypeInfo__System__DateTime->_1).field_0x1c == 0) {
+    FUN_?();
   }
   DVar1 = mscorlib.dll::System::DateTime::DateTime_get_Now((MethodInfo *)0x0);
   (this->fields)._._.retryTime._dateData = DVar1._dateData;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  iVar2 = iRam_?;
   (this->fields)._._.requestPriority = requestPriority;
   (this->fields)._._.path = path;
-  func_?(&(this->fields)._._.path,path);
+  if (iVar2 != 0) {
+    uVar3 = (uint)((ulonglong)&(this->fields)._._.path >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar7 = uVar5 == *puVar6;
+      if (bVar7) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+      iVar2 = iRam_?;
+    } while (!bVar7);
+  }
   (this->fields)._._.callback = callback;
-  func_?(&this->fields,callback);
+  if (iVar2 != 0) {
+    uVar3 = (uint)((ulonglong)&this->fields >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar7 = uVar5 == *puVar6;
+      if (bVar7) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar7);
+  }
   return;
 }
 

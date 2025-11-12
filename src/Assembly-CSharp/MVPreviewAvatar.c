@@ -12,42 +12,49 @@ Assembly-CSharp.dll::MVPreviewAvatar::MVPreviewAvatar_Clone
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeRef__MVAvatarLocal);
-    func_?(&TypeInfo__MVAvatarLocal);
-    func_?(&TypeInfo__System__Type);
+    FUN_?(&TypeRef__MVAvatarLocal);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVAvatarLocal);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar1 = MVGroup::MVGroup_Clone
+  lVar1 = 0;
+  pMVar2 = MVGroup::MVGroup_Clone
                      ((MVGroup *)this,ownerActorNumber,cloneGroupId,cloneBookkeeping,worldObjects,
                       prototypes,(MethodInfo *)0x0);
-  if (pMVar1 != (MVWorldObjectClient *)0x0) {
-    lhs = mscorlib.dll::System::Object::Object_GetType((Object *)pMVar1,(MethodInfo *)0x0);
-    handle = TypeRef__MVAvatarLocal;
-    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+  if (pMVar2 != (MVWorldObjectClient *)0x0) {
+    lVar3 = FUN_?(&(pMVar2->klass->_0).byval_arg);
+    pIVar4 = TypeRef__MVAvatarLocal;
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
     }
-    rhs = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                    ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-    bVar2 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
-            UnsafeUtility_EnumEquals((Int32Enum__Enum)lhs,(Int32Enum__Enum)rhs,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      pMStack3 = TypeInfo__MVAvatarLocal;
-      if (((pMVar1->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) ||
-         ((MVAvatarLocal__Class *)
-          (pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
-          TypeInfo__MVAvatarLocal)) goto code_?;
-      pMVar1[1].fields._PlayInteractionType_k__BackingField = (this->fields).spawnRoleCreatorId;
+    if (pIVar4 != (Il2CppType *)0x0) {
+      if (*(int *)(lRam_? + 0xe4) == 0) {
+        FUN_?();
+      }
+      lVar1 = FUN_?(pIVar4,1);
+      lVar1 = FUN_?(lVar1 + 0x20);
     }
-    return pMVar1;
+    if (lVar3 == lVar1) {
+      bVar5 = (TypeInfo__MVAvatarLocal->_1).naturalAligment;
+      if (((pMVar2->klass->_1).naturalAligment < bVar5) ||
+         ((MVAvatarLocal__Class *)(pMVar2->klass->_1).typeHierarchy[(ulonglong)bVar5 - 1] !=
+          TypeInfo__MVAvatarLocal)) {
+        FUN_?(pMVar2);
+        pcVar6 = (code *)swi(3);
+        pMVar2 = (MVWorldObjectClient *)(*pcVar6)();
+        return pMVar2;
+      }
+      pMVar2[2].fields._.groupId = (this->fields).spawnRoleCreatorId;
+    }
+    return pMVar2;
   }
-  func_?();
-  pMStack3 = extraout_EDX;
-code_?:
-  pMStack4 = pMVar1;
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pMVar1 = (MVWorldObjectClient *)(*pcVar5)();
-  return pMVar1;
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  pMVar2 = (MVWorldObjectClient *)(*pcVar6)();
+  return pMVar2;
 }
 
 
@@ -60,7 +67,9 @@ void Assembly-CSharp.dll::MVPreviewAvatar::MVPreviewAvatar__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__PrefabPool);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
@@ -70,10 +79,9 @@ void Assembly-CSharp.dll::MVPreviewAvatar::MVPreviewAvatar__ctor
                (MethodInfo *)0x0);
     return;
   }
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

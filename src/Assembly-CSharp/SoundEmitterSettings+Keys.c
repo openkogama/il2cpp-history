@@ -6,40 +6,45 @@ void Assembly-CSharp.dll::SoundEmitterSettings+Keys::SoundEmitterSettings_Keys__
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__String);
-    func_?(&StringLiteral_range);
-    func_?(&StringLiteral_pitch);
-    func_?(&StringLiteral_volume);
+    FUN_?(&TypeInfo__System__String);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_range);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_pitch);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_volume);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pSVar1 = (String__Array *)func_?(TypeInfo__System__String,3);
-  pSVar2 = StringLiteral_volume;
+  pSVar1 = (String__Array *)FUN_?(TypeInfo__System__String,3);
   if (pSVar1 == (String__Array *)0x0) {
-    func_?();
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
   }
-  else if (pSVar1->max_length != 0) {
-    pSVar1->vector[0] = StringLiteral_volume;
-    func_?(pSVar1->vector,pSVar2);
-    pSVar2 = StringLiteral_pitch;
-    if (1 < pSVar1->max_length) {
-      pSVar1->vector[1] = StringLiteral_pitch;
-      func_?(pSVar1->vector + 1,pSVar2);
-      pSVar2 = StringLiteral_range;
-      if (2 < pSVar1->max_length) {
-        pSVar1->vector[2] = StringLiteral_range;
-        func_?(pSVar1->vector + 2,pSVar2);
-        method_00 = (MethodInfo *)&this->fields;
-        (this->fields).keys = pSVar1;
-        func_?(method_00,pSVar1);
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-        return;
+  FUN_?(pSVar1,0,StringLiteral_volume);
+  FUN_?(pSVar1,1,StringLiteral_pitch);
+  FUN_?(pSVar1,2,StringLiteral_range);
+  bVar3 = iRam_? != 0;
+  (this->fields).keys = pSVar1;
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)&this->fields >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
       }
-    }
+      UNLOCK();
+    } while (uVar6 != uVar7);
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
   return;
 }
 

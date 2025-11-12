@@ -12,10 +12,10 @@ float MVWorldObject.dll::MV::WorldObject::MVMath::MVMath_TryValidateFloat
   this = (InvalidFloatException *)func_?(uVar1);
   InvalidFloatException::InvalidFloatException__ctor(this,(MethodInfo *)0x0);
   uVar1 = func_?(&MethodInfo__MV__WorldObject__MVMath__TryValidateFloat_float_);
-  func_?(this,uVar1);
+  FUN_?(this,uVar1);
   pcVar2 = (code *)swi(3);
-  fVar3 = (float10)(*pcVar2)();
-  return (float)fVar3;
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 

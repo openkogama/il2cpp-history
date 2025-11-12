@@ -6,35 +6,72 @@ void Assembly-CSharp.dll::VehicleSeatBase::VehicleSeatBase_Attach
 
 {
   if (cRam_? == '\0') {
-    func_?(&MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__);
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields).UnequipVehicleUser != 0) {
     if ((avatar == (MVAvatar *)0x0) ||
        (this_00 = (avatar->fields)._._.gameObject, this_00 == (GameObject *)0x0)) {
-code_?:
-      func_?();
+      FUN_?();
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    x = (Object_1 *)
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                  (this_00,
-                   MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__);
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+    pOVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                       (this_00,
+                        MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__
+                       );
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      if (x == (Object_1 *)0x0) goto code_?;
-      (**(code **)&x->klass[1]._0.this_arg.attrs)(x);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (pOVar2 != (Object *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (pOVar2[1].klass != (Object__Class *)0x0) {
+        pOVar3 = pOVar2->klass;
+        uVar4._0_2_ = pOVar3[1]._0.this_arg.attrs;
+        uVar4._2_1_ = pOVar3[1]._0.this_arg.type;
+        uVar4._3_5_ = *(undefined5 *)&pOVar3[1]._0.this_arg.field_0xb;
+        (*(code *)pOVar3[1]._0.this_arg.data)(pOVar2,uVar4);
+      }
     }
   }
+  bVar5 = iRam_? != 0;
   (this->fields).owner = avatar;
-  func_?();
+  if (bVar5) {
+    uVar6 = (uint)((ulonglong)&(this->fields).owner >> 0xc);
+    puVar7 = (ulonglong *)((ulonglong)((uVar6 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar8 = *puVar7;
+      LOCK();
+      uVar9 = *puVar7;
+      if (uVar8 == uVar9) {
+        *puVar7 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar8 != uVar9);
+  }
   (this->fields)._IsOccupied_k__BackingField = 1;
   return;
 }
@@ -47,13 +84,48 @@ void Assembly-CSharp.dll::VehicleSeatBase::VehicleSeatBase_Awake
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  bVar1 = TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField;
-  pMVar2 = (&(this->fields).AndroidCamera)[bVar1 == 0];
-  (this->fields).seatCamera = (&(this->fields).AndroidCamera)[bVar1 == 0];
-  func_?(&(this->fields).seatCamera,pMVar2);
+  if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
+    bVar1 = iRam_? != 0;
+    (this->fields).seatCamera = (this->fields).DesktopCamera;
+    if (bVar1) {
+      uVar2 = (uint)((ulonglong)&(this->fields).seatCamera >> 0xc);
+      lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+        puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+        LOCK();
+        bVar1 = uVar4 == *puVar5;
+        if (bVar1) {
+          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar1);
+      return;
+    }
+  }
+  else {
+    bVar1 = iRam_? != 0;
+    (this->fields).seatCamera = (this->fields).AndroidCamera;
+    if (bVar1) {
+      uVar2 = (uint)((ulonglong)&(this->fields).seatCamera >> 0xc);
+      lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+        puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+        LOCK();
+        bVar1 = uVar4 == *puVar5;
+        if (bVar1) {
+          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar1);
+    }
+  }
   return;
 }
 
@@ -65,31 +137,51 @@ void Assembly-CSharp.dll::VehicleSeatBase::VehicleSeatBase_Detach
 
 {
   if (cRam_? == '\0') {
-    func_?(&MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__);
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields).UnequipVehicleUser != 0) {
     if ((avatar == (MVAvatar *)0x0) ||
        (this_00 = (avatar->fields)._._.gameObject, this_00 == (GameObject *)0x0)) {
-code_?:
-      func_?();
+      FUN_?();
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    x = (Object_1 *)
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                  (this_00,
-                   MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__);
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+    pOVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                       (this_00,
+                        MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__
+                       );
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      if (x == (Object_1 *)0x0) goto code_?;
-      (*(code *)x->klass[1]._0.castClass)();
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (pOVar2 != (Object *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (pOVar2[1].klass != (Object__Class *)0x0) {
+        (*(code *)pOVar2->klass[1]._0.element_class)(pOVar2,pOVar2->klass[1]._0.castClass);
+      }
     }
   }
   (this->fields)._IsOccupied_k__BackingField = 0;
@@ -104,46 +196,129 @@ void Assembly-CSharp.dll::VehicleSeatBase::VehicleSeatBase_RemoveCamera
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AvatarLocal);
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&TypeInfo__IAvatarCameraController);
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&StringLiteral_Camera_is_null);
+    FUN_?(&TypeInfo__AvatarLocal);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__IAvatarCameraController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Camera_is_null);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  x = (this->fields).seatCamera;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  pMVar1 = (this->fields).seatCamera;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    pMVar2 = (this->fields).owner;
-    if (pMVar2 != (MVAvatar *)0x0) {
-      pAVar3 = (pMVar2->fields).avatar;
-      if (pAVar3 != (Avatar *)0x0) {
-        if (((pAVar3->klass->_1).naturalAligment < (TypeInfo__AvatarLocal->_1).naturalAligment) ||
-           ((pAVar3->klass->_1).typeHierarchy[(TypeInfo__AvatarLocal->_1).naturalAligment - 1] !=
-            (Il2CppClass *)TypeInfo__AvatarLocal)) {
-          func_?(pAVar3,TypeInfo__AvatarLocal);
-        }
-        else if (pAVar3[1].klass != (Avatar__Class *)0x0) {
-          func_?(7,TypeInfo__IAvatarCameraController,pAVar3[1].klass,
-                          (this->fields).seatCamera);
-          return;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pMVar1 != (MVCameraBase *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((pMVar1->fields)._._._._.m_CachedPtr != (void *)0x0) {
+      pMVar2 = (this->fields).owner;
+      if (pMVar2 != (MVAvatar *)0x0) {
+        pAVar3 = (pMVar2->fields).avatar;
+        if (pAVar3 != (Avatar *)0x0) {
+          bVar4 = (TypeInfo__AvatarLocal->_1).naturalAligment;
+          if (((pAVar3->klass->_1).naturalAligment < bVar4) ||
+             ((pAVar3->klass->_1).typeHierarchy[(ulonglong)bVar4 - 1] !=
+              (Il2CppClass *)TypeInfo__AvatarLocal)) {
+            FUN_?(pAVar3);
+            pcVar5 = (code *)swi(3);
+            (*pcVar5)();
+            return;
+          }
+          pAVar6 = pAVar3[1].klass;
+          if (pAVar6 != (Avatar__Class *)0x0) {
+            pMVar1 = (this->fields).seatCamera;
+            pIVar7 = (pAVar6->_0).image;
+            uVar8 = 0;
+            uVar9 = *(ushort *)((longlong)&pIVar7[4].nameNoExt + 6);
+            if (uVar9 != 0) {
+              do {
+                if (*(IAvatarCameraController__Class **)
+                     (*(longlong *)&pIVar7[2].customAttributeCount + (ulonglong)uVar8 * 0x10) ==
+                    TypeInfo__IAvatarCameraController) {
+                  puVar10 = &pIVar7[4].typeCount +
+                            (longlong)
+                            (*(int *)(*(longlong *)&pIVar7[2].customAttributeCount + 8 +
+                                     (ulonglong)uVar8 * 0x10) + 7) * 4;
+                  goto code_?;
+                }
+                uVar8 = uVar8 + 1;
+              } while (uVar8 < uVar9);
+            }
+            puVar10 = (uint32_t *)
+                      FUN_?(pAVar6,TypeInfo__IAvatarCameraController,7,pMVar1,unaff_RDI);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+            (**(code **)puVar10)(pAVar6,pMVar1,*(undefined8 *)(puVar10 + 2),*(code **)puVar10);
+            return;
+          }
         }
       }
+      FUN_?();
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
     }
-    func_?();
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pSVar11 = StringLiteral_Camera_is_null;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__ILogger);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pIVar12 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+  if (pIVar12 != (ILogger_1 *)0x0) {
+    FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar12,2,pSVar11);
     return;
   }
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Debug);
-  }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-            ((Object *)StringLiteral_Camera_is_null,(MethodInfo *)0x0);
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -155,95 +330,167 @@ void Assembly-CSharp.dll::VehicleSeatBase::VehicleSeatBase_SetCamera
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AvatarLocal);
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&TypeInfo__IAvatarCameraController);
-    func_?(&TypeInfo__IVehicleCamera);
-    func_?(&TypeInfo__MVAvatarLocal);
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&StringLiteral_Camera_is_null);
+    FUN_?(&TypeInfo__AvatarLocal);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__IAvatarCameraController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__IVehicleCamera);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVAvatarLocal);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Camera_is_null);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  x = (this->fields).seatCamera;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  pMVar1 = (this->fields).seatCamera;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pMVar1 != (MVCameraBase *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-              ((Object *)StringLiteral_Camera_is_null,(MethodInfo *)0x0);
-    return;
-  }
-  pAVar2 = (AvatarLocal__Class *)(this->fields).seatCamera;
-  pMVar3 = (this->fields).owner;
-  if (pAVar2 == (AvatarLocal__Class *)0x0) goto code_?;
-  pMVar4 = (MVAvatar *)TypeInfo__IVehicleCamera;
-  iVar5 = func_?(pAVar2,TypeInfo__IVehicleCamera,TypeInfo__IVehicleCamera);
-  if (iVar5 == 0) {
-code_?:
-    func_?(pAVar2,pMVar4);
-    pMVar6 = extraout_EDX;
-  }
-  else if ((pMVar3 == (MVAvatar *)0x0) ||
-          ((pMVar6 = TypeInfo__MVAvatarLocal,
-           (TypeInfo__MVAvatarLocal->_1).naturalAligment <=
-           *(byte *)&((Il2CppClass_0 *)&pMVar3->klass)->image[4].assembly &&
-           (*(MVAvatarLocal__Class **)
-             ((((Il2CppClass_0 *)&pMVar3->klass)->image[2].typeCount - 4) +
-             (uint)(TypeInfo__MVAvatarLocal->_1).naturalAligment * 4) == TypeInfo__MVAvatarLocal))))
-  {
-    pMVar4 = (MVAvatar *)TypeInfo__IVehicleCamera;
-    piVar7 = (int *)func_?(pAVar2,TypeInfo__IVehicleCamera,TypeInfo__IVehicleCamera);
-    if (piVar7 != (int *)0x0) {
-      pMVar4 = (MVAvatar *)*piVar7;
-      uVar8 = 0;
-      if (*(short *)&(pMVar4->fields)._._.field_0xae != 0) {
-        do {
-          if ((&((pMVar4->fields)._._._.data)->klass)[(uint)uVar8 * 2] ==
-              (Dictionary_2_System_Object_System_Object___Class *)TypeInfo__IVehicleCamera) {
-            puVar9 = (undefined4 *)
-                     (*piVar7 +
-                     (*(int *)(*(int *)(*piVar7 + 0x58) + 4 + (uint)uVar8 * 8) + 0x1a) * 8);
-            goto code_?;
-          }
-          uVar8 = uVar8 + 1;
-        } while (uVar8 < *(ushort *)(*piVar7 + 0xb6));
-      }
-      puVar9 = (undefined4 *)func_?(piVar7,TypeInfo__IVehicleCamera,2,pMVar4,0);
-code_?:
-      (*(code *)*puVar9)(piVar7,pMVar3,puVar9[1]);
-      pAVar2 = TypeInfo__AvatarLocal;
+    pIVar2 = TypeInfo__IVehicleCamera;
+    if ((pMVar1->fields)._._._._.m_CachedPtr != (void *)0x0) {
+      pMVar1 = (this->fields).seatCamera;
       pMVar3 = (this->fields).owner;
-      if ((pMVar3 == (MVAvatar *)0x0) ||
-         (pAVar10 = (pMVar3->fields).avatar, pAVar10 == (Avatar *)0x0)) goto code_?;
-      pMVar11 = (MVAvatar *)pAVar10->klass;
-      pMVar3 = pMVar11;
-      if (((TypeInfo__AvatarLocal->_1).naturalAligment <=
-           (byte)(pMVar11->fields)._._.interactionFlags) &&
-         (pMVar3 = pMVar4,
-         *(AvatarLocal__Class **)
-          ((int)(pMVar11->fields)._._._.OnInputLinkChanged +
-          (uint)(TypeInfo__AvatarLocal->_1).naturalAligment * 4 + -4) == TypeInfo__AvatarLocal)) {
-        if (pAVar10[1].klass != (Avatar__Class *)0x0) {
-          func_?(5,TypeInfo__IAvatarCameraController,pAVar10[1].klass,
-                          (this->fields).seatCamera);
+      if (pMVar1 != (MVCameraBase *)0x0) {
+        lVar4 = FUN_?(pMVar1,TypeInfo__IVehicleCamera);
+        pIVar5 = TypeInfo__IVehicleCamera;
+        if (lVar4 == 0) {
+          FUN_?(pMVar1,pIVar2);
+          pcVar6 = (code *)swi(3);
+          (*pcVar6)();
           return;
         }
-        goto code_?;
-      }
-      func_?(pAVar10,TypeInfo__AvatarLocal);
-    }
-    goto code_?;
-  }
-  func_?(pMVar3,pMVar6);
+        if (pMVar3 != (MVAvatar *)0x0) {
+          bVar7 = (TypeInfo__MVAvatarLocal->_1).naturalAligment;
+          if (((pMVar3->klass->_1).naturalAligment < bVar7) ||
+             ((MVAvatarLocal__Class *)(pMVar3->klass->_1).typeHierarchy[(ulonglong)bVar7 - 1] !=
+              TypeInfo__MVAvatarLocal)) {
+            FUN_?(pMVar3);
+            pcVar6 = (code *)swi(3);
+            (*pcVar6)();
+            return;
+          }
+        }
+        lVar4 = FUN_?(pMVar1,TypeInfo__IVehicleCamera);
+        if (lVar4 == 0) {
+          FUN_?(pMVar1,pIVar5);
+          pcVar6 = (code *)swi(3);
+          (*pcVar6)();
+          return;
+        }
+        FUN_?(2,TypeInfo__IVehicleCamera,lVar4,pMVar3);
+        pMVar3 = (this->fields).owner;
+        if (pMVar3 != (MVAvatar *)0x0) {
+          pAVar8 = (pMVar3->fields).avatar;
+          if (pAVar8 != (Avatar *)0x0) {
+            bVar7 = (TypeInfo__AvatarLocal->_1).naturalAligment;
+            if (((pAVar8->klass->_1).naturalAligment < bVar7) ||
+               ((pAVar8->klass->_1).typeHierarchy[(ulonglong)bVar7 - 1] !=
+                (Il2CppClass *)TypeInfo__AvatarLocal)) {
+              FUN_?(pAVar8);
+              pcVar6 = (code *)swi(3);
+              (*pcVar6)();
+              return;
+            }
+            pAVar9 = pAVar8[1].klass;
+            if (pAVar9 != (Avatar__Class *)0x0) {
+              pMVar1 = (this->fields).seatCamera;
+              pIVar10 = (pAVar9->_0).image;
+              uVar11 = 0;
+              uVar12 = *(ushort *)((longlong)&pIVar10[4].nameNoExt + 6);
+              if (uVar12 != 0) {
+                do {
+                  if (*(IAvatarCameraController__Class **)
+                       (*(longlong *)&pIVar10[2].customAttributeCount + (ulonglong)uVar11 * 0x10) ==
+                      TypeInfo__IAvatarCameraController) {
+                    puVar13 = &pIVar10[4].typeCount +
+                              (longlong)
+                              (*(int *)(*(longlong *)&pIVar10[2].customAttributeCount + 8 +
+                                       (ulonglong)uVar11 * 0x10) + 5) * 4;
+                    goto code_?;
+                  }
+                  uVar11 = uVar11 + 1;
+                } while (uVar11 < uVar12);
+              }
+              puVar13 = (uint32_t *)
+                        FUN_?(pAVar9,TypeInfo__IAvatarCameraController,5,pMVar1,unaff_RDI);
 code_?:
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+              (**(code **)puVar13)(pAVar9,pMVar1,*(undefined8 *)(puVar13 + 2),*(code **)puVar13);
+              return;
+            }
+          }
+        }
+      }
+      FUN_?();
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
+      return;
+    }
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pSVar14 = StringLiteral_Camera_is_null;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__ILogger);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pIVar15 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+  if (pIVar15 != (ILogger_1 *)0x0) {
+    FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar15,2,pSVar14);
+    return;
+  }
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -255,19 +502,51 @@ void Assembly-CSharp.dll::VehicleSeatBase::VehicleSeatBase_set_SeatID
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&StringLiteral_Trying_to_re_set_seatID);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Trying_to_re_set_seatID);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((this->fields).seatID != -1) {
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug);
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-              ((Object *)StringLiteral_Trying_to_re_set_seatID,(MethodInfo *)0x0);
+  if ((this->fields).seatID == -1) {
+    (this->fields).seatID = value;
     return;
   }
-  (this->fields).seatID = value;
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pSVar1 = StringLiteral_Trying_to_re_set_seatID;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__ILogger);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pIVar2 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+  if (pIVar2 != (ILogger_1 *)0x0) {
+    FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar2,0,pSVar1);
+    return;
+  }
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

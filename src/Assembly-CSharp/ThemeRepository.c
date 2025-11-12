@@ -6,14 +6,22 @@ Theme * Assembly-CSharp.dll::ThemeRepository::ThemeRepository_CreateTemporaryThe
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&Theme_MethodInfo__UnityEngine__Object__Instantiate<Theme>_Theme_);
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&StringLiteral_Preview_theme_created);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&Theme_MethodInfo__UnityEngine__Object__Instantiate<Theme>_Theme_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Preview_theme_created);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Debug);
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_Preview_theme_created,(MethodInfo *)0x0);
@@ -24,22 +32,39 @@ Theme * Assembly-CSharp.dll::ThemeRepository::ThemeRepository_CreateTemporaryThe
   else {
     pTVar2 = (pTVar1->fields)._Visualization_k__BackingField;
   }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pTVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
-    identifier = (String *)this;
-    pTVar1 = ThemeRepository_get_CurrentTheme(this,(MethodInfo *)0x0);
-    if ((pTVar1 == (ThemeWorldObject *)0x0) ||
-       (pTVar2 = (pTVar1->fields)._Visualization_k__BackingField, pTVar2 == (Theme *)0x0))
-    goto code_?;
-    Theme::Theme_Deactivate(pTVar2,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pTVar2 != (Theme *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((pTVar2->fields)._._._._.m_CachedPtr != (void *)0x0) {
+      pTVar1 = ThemeRepository_get_CurrentTheme(this,(MethodInfo *)0x0);
+      if ((pTVar1 == (ThemeWorldObject *)0x0) ||
+         (pTVar2 = (pTVar1->fields)._Visualization_k__BackingField, pTVar2 == (Theme *)0x0))
+      goto code_?;
+      Theme::Theme_Deactivate(pTVar2,(MethodInfo *)0x0);
+    }
   }
   pTVar2 = ThemeRepository_GetThemePrefab(this,identifier,(MethodInfo *)0x0);
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
   pTVar2 = (Theme *)UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                               ((Object *)pTVar2,
@@ -50,9 +75,9 @@ Theme * Assembly-CSharp.dll::ThemeRepository::ThemeRepository_CreateTemporaryThe
     return pTVar2;
   }
 code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  pTVar2 = (Theme *)(*pcVar4)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  pTVar2 = (Theme *)(*pcVar3)();
   return pTVar2;
 }
 
@@ -63,11 +88,25 @@ void Assembly-CSharp.dll::ThemeRepository::ThemeRepository_Destroy(MethodInfo *m
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__ThemeRepository);
+    FUN_?(&TypeInfo__ThemeRepository);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TypeInfo__ThemeRepository->static_fields->_Instance_k__BackingField = (ThemeRepository *)0x0;
-  func_?(TypeInfo__ThemeRepository->static_fields,0);
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)TypeInfo__ThemeRepository->static_fields >> 0xc);
+    puVar2 = (ulonglong *)((ulonglong)((uVar1 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar3 = *puVar2;
+      LOCK();
+      uVar4 = *puVar2;
+      if (uVar3 == uVar4) {
+        *puVar2 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar3 != uVar4);
+  }
   return;
 }
 
@@ -79,13 +118,19 @@ void Assembly-CSharp.dll::ThemeRepository::ThemeRepository_DestroyTemporary
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&StringLiteral_Preview_theme_destroyed);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Preview_theme_destroyed);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Debug);
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_Preview_theme_destroyed,(MethodInfo *)0x0);
@@ -93,33 +138,60 @@ void Assembly-CSharp.dll::ThemeRepository::ThemeRepository_DestroyTemporary
     Theme::Theme_Deactivate(theme,(MethodInfo *)0x0);
     obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                     ((Component *)theme,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-              ((Object_1 *)obj,(MethodInfo *)0x0);
-    pTVar1 = ThemeRepository_get_CurrentTheme((ThemeRepository *)&UNK_?,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy
+              ((Object_1 *)obj,0.0,(MethodInfo *)0x0);
+    pTVar1 = ThemeRepository_get_CurrentTheme(this,(MethodInfo *)0x0);
     if (pTVar1 == (ThemeWorldObject *)0x0) {
       pTVar2 = (Theme *)0x0;
     }
     else {
       pTVar2 = (pTVar1->fields)._Visualization_k__BackingField;
     }
-    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)pTVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar3 != 0) {
-      pTVar1 = ThemeRepository_get_CurrentTheme((ThemeRepository *)&UNK_?,(MethodInfo *)0x0);
-      if ((pTVar1 == (ThemeWorldObject *)0x0) ||
-         (pTVar2 = (pTVar1->fields)._Visualization_k__BackingField, pTVar2 == (Theme *)0x0))
-      goto code_?;
-      Theme::Theme_Activate(pTVar2,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (pTVar2 != (Theme *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if ((pTVar2->fields)._._._._.m_CachedPtr != (void *)0x0) {
+        pTVar1 = ThemeRepository_get_CurrentTheme(this,(MethodInfo *)0x0);
+        if ((pTVar1 == (ThemeWorldObject *)0x0) ||
+           (pTVar2 = (pTVar1->fields)._Visualization_k__BackingField, pTVar2 == (Theme *)0x0))
+        goto code_?;
+        Theme::Theme_Activate(pTVar2,(MethodInfo *)0x0);
+      }
     }
     return;
   }
 code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -131,52 +203,72 @@ Theme * Assembly-CSharp.dll::ThemeRepository::ThemeRepository_GetThemePrefab
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_Theme>__TryGetValue_System__String__Theme__
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__List<Theme>__get_Item_int_);
-    func_?(&StringLiteral_Theme_is_missing);
-    func_?(&StringLiteral__is_not_present_in_theme_reposit);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_Theme>__TryGetValue_System__String__Theme__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<Theme>__get_Item_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Theme_is_missing);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__is_not_present_in_theme_reposit);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pTVar1 = (Theme *)0x0;
   this_00 = (this->fields).IdentifierToTheme;
+  pTStackX_8 = (Theme *)0x0;
   if (this_00 != (Dictionary_2_System_String_Theme_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
             ::Dictionary_2_System_Object_System_Object__TryGetValue
                       ((Dictionary_2_System_Object_System_Object_ *)this_00,(Object *)identifier,
-                       (Object **)&stack0xfffffff8,
+                       (Object **)&pTStackX_8,
                        MethodInfo__System__Collections__Generic__Dictionary<System::String,_Theme>__TryGetValue_System__String__Theme__
                       );
-    if (bVar2 != 0) {
-      return pTVar1;
+    if (bVar1 != 0) {
+      return pTStackX_8;
     }
-    message = mscorlib.dll::System::String::String_Concat_3
+    message = mscorlib.dll::System::String::String_Concat_4
                         (identifier,StringLiteral__is_not_present_in_theme_reposit,(MethodInfo *)0x0
                         );
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)message,(MethodInfo *)0x0)
     ;
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_Theme_is_missing,(MethodInfo *)0x0);
-    this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              (this->fields).themePrefabs;
-    if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (this_01,0,
-                         MethodInfo__System__Collections__Generic__List<Theme>__get_Item_int_);
-      return (Theme *)RVar3;
+    pLVar2 = (this->fields).themePrefabs;
+    if (pLVar2 != (List_1_Theme_ *)0x0) {
+      if ((pLVar2->fields)._size == 0) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar3 = (code *)swi(3);
+        pTVar4 = (Theme *)(*pcVar3)();
+        return pTVar4;
+      }
+      pTVar5 = (pLVar2->fields)._items;
+      if (pTVar5 != (Theme__Array *)0x0) {
+        if ((int)pTVar5->max_length != 0) {
+          return pTVar5->vector[0];
+        }
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        pTVar4 = (Theme *)(*pcVar3)();
+        return pTVar4;
+      }
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  pTVar1 = (Theme *)(*pcVar4)();
-  return pTVar1;
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  pTVar4 = (Theme *)(*pcVar3)();
+  return pTVar4;
 }
 
 
@@ -186,79 +278,89 @@ void Assembly-CSharp.dll::ThemeRepository::ThemeRepository_Initialize
                (ThemeRepository *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffb8;
-  puVar5 = &stack0xffffffb8;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_Theme>__set_Item_System__String__Theme_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Theme>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Theme>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Theme>__get_Current__
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__List<Theme>__GetEnumerator__);
-    cRam_? = '\x01';
-    puVar5 = puStack_4;
-  }
-  puStack_4 = puVar5;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__ThemeRepository);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_Theme>__set_Item_System__String__Theme_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Theme>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Theme>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Theme>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<Theme>__GetEnumerator__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  TypeInfo__ThemeRepository->static_fields->_Instance_k__BackingField = this;
-  func_?(TypeInfo__ThemeRepository->static_fields,this);
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (this->fields).themePrefabs;
-  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_7,this_00,
-                        MethodInfo__System__Collections__Generic__List<Theme>__GetEnumerator__);
-    method_00 = (MethodInfo *)pLVar6->_version;
-    value = pLVar6->_current;
-    LStack_7._version = 0;
-    uStack_1 = 1;
-    LStack_7._current = (RegexCharClass_SingleRange)&stack0xffffffc4;
-    while( true ) {
-      bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-              List_1_T_Enumerator_System_Object__MoveNext
-                        ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc4,
-                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Theme>__MoveNext__
-                        );
-      if (bVar8 == 0) {
-        uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&stack0xffffffc4,
-                   (ExceptionArgument__Enum)
-                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Theme>__Dispose__
-                   ,method_00);
-        *unaff_FS_OFFSET = uStack_3;
-        return;
+  FUN_?();
+  LStack_1._list = (List_1_System_Object_ *)(this->fields).themePrefabs;
+  if ((List_1_Theme_ *)LStack_1._list == (List_1_Theme_ *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  if (iRam_? != 0) {
+    uVar3 = (uint)((ulonglong)&uStack_4 >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (uVar3 & 0x3f);
       }
-      pDStack_9 = (this->fields).IdentifierToTheme;
-      if (value == (RegexCharClass_SingleRange)0x0) break;
-      key = (Object *)(**(code **)(*(int *)value + 0xe0))();
-      if (pDStack_9 == (Dictionary_2_System_String_Theme_ *)0x0) break;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__set_Item
-                ((Dictionary_2_System_Object_System_Object_ *)pDStack_9,key,(Object *)value,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::String,_Theme>__set_Item_System__String__Theme_
-                );
-    }
+      UNLOCK();
+    } while (uVar6 != uVar7);
   }
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pLStack_8 = (List_1_T_Enumerator_System_Object_ *)
+               ((ulonglong)(uint)(((List_1_Theme_ *)LStack_1._list)->fields)._version << 0x20);
+  uStack_9 = 0;
+  LStack_1._8_8_ = pLStack_8;
+  LStack_1._current = (Object *)0x0;
+  uStack_4 = 0;
+  pLStack_8 = &LStack_1;
+  while( true ) {
+    bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+            List_1_T_Enumerator_System_Object__MoveNext
+                      (&LStack_1,
+                       MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Theme>__MoveNext__
+                      );
+    value = LStack_1._current;
+    if (bVar10 == 0) {
+      return;
+    }
+    this_00 = (this->fields).IdentifierToTheme;
+    if (LStack_1._current == (Object *)0x0) break;
+    key = (Object *)
+          (*(code *)(LStack_1._current)->klass[1]._0.image)
+                    (LStack_1._current,(LStack_1._current)->klass[1]._0.gc_desc);
+    if (this_00 == (Dictionary_2_System_String_Theme_ *)0x0) {
+      FUN_?();
+      break;
+    }
+    method_00 = MethodInfo__System__Collections__Generic__Dictionary<System::String,_Theme>__set_Item_System__String__Theme_
+                ->klass->rgctx_data[0x22].method;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__TryInsert
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,key,value,
+               (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)method_00 >> 8),1),method_00);
+  }
+  FUN_?();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -270,26 +372,63 @@ void Assembly-CSharp.dll::ThemeRepository::ThemeRepository__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_Theme>__Dictionary__
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__Dictionary<System::String,_Theme>);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_Theme>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__Dictionary<System::String,_Theme>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-             *)func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<System::String,_Theme>
-                              );
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+             *)FUN_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<System::String,_Theme>
+                            );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
-  StyleComplexSelector+PseudoStateData]::
-  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+  UIR::UIRenderDevice+DisableForceGammaMaterial]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::String,_Theme>__Dictionary__
             );
+  bVar1 = iRam_? != 0;
   (this->fields).IdentifierToTheme = (Dictionary_2_System_String_Theme_ *)this_00;
-  func_?(&(this->fields).IdentifierToTheme,this_00);
-  UnityEngine.CoreModule.dll::UnityEngine::ScriptableObject::ScriptableObject__ctor
-            ((ScriptableObject *)this,(MethodInfo *)0x0);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).IdentifierToTheme >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object,0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pcVar6 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+    uVar7 = func_?(&UNK_?);
+    FUN_?(uVar7,0);
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
+    return;
+  }
+  pcRam_? = pcVar6;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pcRam_?)(this);
   return;
 }
 
@@ -302,58 +441,70 @@ Assembly-CSharp.dll::ThemeRepository::ThemeRepository_get_CurrentTheme
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                   );
-    func_?(&TypeInfo__ThemeWorldObject);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Count__)
+    ;
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
-    pLVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectsByType
-                       (pMVar1,WorldObjectType__Enum_Theme,(MethodInfo *)0x0);
-    if (pLVar2 != (List_1_MVWorldObjectClient_ *)0x0) {
-      if ((pLVar2->fields)._size < 1) {
-        return (ThemeWorldObject *)0x0;
+  if ((pMVar1 != (MVWorldObjectClientManager *)0x0) &&
+     (pLVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectsByType
+                         (pMVar1,WorldObjectType__Enum_Theme,(MethodInfo *)0x0),
+     pLVar2 != (List_1_MVWorldObjectClient_ *)0x0)) {
+    if ((pLVar2->fields)._size < 1) {
+      return (ThemeWorldObject *)0x0;
+    }
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if ((pMVar1 != (MVWorldObjectClientManager *)0x0) &&
+       (pLVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectsByType
+                           (pMVar1,WorldObjectType__Enum_Theme,(MethodInfo *)0x0),
+       pLVar2 != (List_1_MVWorldObjectClient_ *)0x0)) {
+      if ((pLVar2->fields)._size == 0) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar3 = (code *)swi(3);
+        pTVar4 = (ThemeWorldObject *)(*pcVar3)();
+        return pTVar4;
       }
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
-        this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                  MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectsByType
-                            (pMVar1,WorldObjectType__Enum_Theme,(MethodInfo *)0x0);
-        if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-          RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (this_00,0,
-                             MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Item_int_
-                            );
-          if (RVar3 == (RegexCharClass_SingleRange)0x0) {
-            return (ThemeWorldObject *)0x0;
-          }
-          pTStack4 = TypeInfo__ThemeWorldObject;
-          if (((TypeInfo__ThemeWorldObject->_1).naturalAligment <= *(byte *)(*(int *)RVar3 + 0xb8))
-             && (*(ThemeWorldObject__Class **)
-                  (*(int *)(*(int *)RVar3 + 100) + -4 +
-                  (uint)(TypeInfo__ThemeWorldObject->_1).naturalAligment * 4) ==
-                 TypeInfo__ThemeWorldObject)) {
-            return (ThemeWorldObject *)RVar3;
-          }
-          goto code_?;
+      pMVar5 = (pLVar2->fields)._items;
+      if (pMVar5 != (MVWorldObjectClient__Array *)0x0) {
+        if ((int)pMVar5->max_length == 0) {
+          FUN_?();
+          pcVar3 = (code *)swi(3);
+          pTVar4 = (ThemeWorldObject *)(*pcVar3)();
+          return pTVar4;
         }
+        pTVar4 = (ThemeWorldObject *)pMVar5->vector[0];
+        if (pTVar4 == (ThemeWorldObject *)0x0) {
+          return (ThemeWorldObject *)0x0;
+        }
+        bVar6 = (TypeInfo__ThemeWorldObject->_1).naturalAligment;
+        if ((bVar6 <= (((MVWorldObjectClient__Class *)pTVar4->klass)->_1).naturalAligment) &&
+           ((ThemeWorldObject__Class *)
+            (((MVWorldObjectClient__Class *)pTVar4->klass)->_1).typeHierarchy[(ulonglong)bVar6 - 1]
+            == TypeInfo__ThemeWorldObject)) {
+          return pTVar4;
+        }
+        FUN_?(pTVar4,TypeInfo__ThemeWorldObject);
+        pcVar3 = (code *)swi(3);
+        pTVar4 = (ThemeWorldObject *)(*pcVar3)();
+        return pTVar4;
       }
     }
   }
-  func_?();
-  pTStack4 = unaff_EDI;
-code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pTVar6 = (ThemeWorldObject *)(*pcVar5)();
-  return pTVar6;
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  pTVar4 = (ThemeWorldObject *)(*pcVar3)();
+  return pTVar4;
 }
 
 
@@ -368,43 +519,50 @@ String * Assembly-CSharp.dll::ThemeRepository::ThemeRepository_get_CurrentThemeI
     return (String *)0x0;
   }
   pTVar1 = ThemeRepository_get_CurrentTheme(this,(MethodInfo *)0x0);
-  if (pTVar1 != (ThemeWorldObject *)0x0) {
-    if (cRam_? == '\0') {
-      func_?();
-      func_?();
-      func_?();
-      cRam_? = '\x01';
-    }
-    if (*(Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ **)(in_stack_2 + 0x58)
-        != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-      TStack3 =
-           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-           UIElements::TextureId]::
-           Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                     (*(Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ **)
-                       (in_stack_2 + 0x58),(Object *)StringLiteral_identifier,
+  if (pTVar1 == (ThemeWorldObject *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    pSVar3 = (String *)(*pcVar2)();
+    return pSVar3;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                  ,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_identifier);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  this_00 = (pTVar1->fields)._._.data;
+  if (this_00 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    pSVar3 = (String *)(*pcVar2)();
+    return pSVar3;
+  }
+  pSVar4 = (String *)
+           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+           Dictionary_2_System_Object_System_Object__get_Item
+                     (this_00,(Object *)StringLiteral_identifier,
                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                      );
-      TVar4.m_Index = 0;
-      if (TStack3.m_Index != 0) {
-        if (*(String__Class **)TStack3.m_Index == TypeInfo__System__String) {
-          TVar4 = TStack3;
-        }
-        if ((String *)TVar4.m_Index == (String *)0x0) {
-          func_?();
-          pcVar5 = (code *)swi(3);
-          pSVar6 = (String *)(*pcVar5)();
-          return pSVar6;
-        }
-      }
-      return (String *)TVar4.m_Index;
+  pSVar3 = pSVar4;
+  if (pSVar4 != (String *)0x0) {
+    pSVar3 = (String *)0x0;
+    if (pSVar4->klass == pSRam0000000182db2460) {
+      pSVar3 = pSVar4;
+    }
+    if (pSVar3 == (String *)0x0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      pSVar3 = (String *)(*pcVar2)();
+      return pSVar3;
     }
   }
-  func_?();
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pSVar6 = (String *)(*pcVar5)();
-  return pSVar6;
+  return pSVar3;
 }
 
 
@@ -436,8 +594,7 @@ int32_t Assembly-CSharp.dll::ThemeRepository::ThemeRepository_get_CurrentThemeWo
   if (pTVar1 != (ThemeWorldObject *)0x0) {
     return (pTVar1->fields)._._.id;
   }
-  func_?();
-  func_?();
+  FUN_?();
   pcVar2 = (code *)swi(3);
   iVar3 = (*pcVar2)();
   return iVar3;
@@ -451,7 +608,9 @@ Assembly-CSharp.dll::ThemeRepository::ThemeRepository_get_Instance(MethodInfo *m
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__ThemeRepository);
+    FUN_?(&TypeInfo__ThemeRepository);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return TypeInfo__ThemeRepository->static_fields->_Instance_k__BackingField;
@@ -465,31 +624,45 @@ bool Assembly-CSharp.dll::ThemeRepository::ThemeRepository_get_SkyboxOverride
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pTVar1 = ThemeRepository_get_CurrentTheme(this,(MethodInfo *)0x0);
   if (pTVar1 == (ThemeWorldObject *)0x0) {
-    x = (Theme *)0x0;
+    pTVar2 = (Theme *)0x0;
   }
   else {
-    x = (pTVar1->fields)._Visualization_k__BackingField;
+    pTVar2 = (pTVar1->fields)._Visualization_k__BackingField;
   }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
-    return 0;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  if (x != (Theme *)0x0) {
-    return (x->fields).overrideSkyboxManager;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  bVar2 = (*pcVar3)();
-  return bVar2;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pTVar2 != (Theme *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((pTVar2->fields)._._._._.m_CachedPtr != (void *)0x0) {
+      return (pTVar2->fields).overrideSkyboxManager;
+    }
+  }
+  return 0;
 }
 
 
@@ -511,11 +684,25 @@ void Assembly-CSharp.dll::ThemeRepository::ThemeRepository_set_Instance
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__ThemeRepository);
+    FUN_?(&TypeInfo__ThemeRepository);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TypeInfo__ThemeRepository->static_fields->_Instance_k__BackingField = value;
-  func_?(TypeInfo__ThemeRepository->static_fields,value);
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)TypeInfo__ThemeRepository->static_fields >> 0xc);
+    puVar2 = (ulonglong *)((ulonglong)((uVar1 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar3 = *puVar2;
+      LOCK();
+      uVar4 = *puVar2;
+      if (uVar3 == uVar4) {
+        *puVar2 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar3 != uVar4);
+  }
   return;
 }
 

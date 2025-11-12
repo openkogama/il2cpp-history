@@ -14,7 +14,7 @@ Assembly-CSharp.dll::MutantHitPackage::MutantHitPackage_Create
   __return_storage_ptr__->playerKilledByType = 0;
   *(undefined2 *)&__return_storage_ptr__->field_0x12 = 0;
   MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor
-            (__return_storage_ptr__,InteractionPackageType__Enum_MutantHit,(MethodInfo *)0x0);
+            (__return_storage_ptr__,CONCAT31((int3)((ulonglong)method >> 8),6),(MethodInfo *)0x0);
   return __return_storage_ptr__;
 }
 
@@ -23,19 +23,21 @@ Assembly-CSharp.dll::MutantHitPackage::MutantHitPackage_Create
 
 void Assembly-CSharp.dll::MutantHitPackage::MutantHitPackage_ParseAndHandlePackage
                (MutantHitPackage *this,MVWorldObjectClient *worldObjectClient,MVPlayer *shooter,
-               InteractionData interactionStruct,MethodInfo *method)
+               InteractionData *interactionStruct,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__InteractionData);
+    FUN_?(&TypeInfo__MV__WorldObject__InteractionData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__WorldObject__InteractionData);
+  if (*(int *)&(TypeInfo__MV__WorldObject__InteractionData->_1).field_0x1c == 0) {
+    FUN_?();
   }
   InteractionPackage::InteractionPackage_HandlePackage_2
-            ((InteractionPackage *)this,worldObjectClient,shooter,interactionStruct.damage,
-             PlayerKilledByType__Enum_Mutant,(MethodInfo *)0x0);
+            ((InteractionPackage *)this,worldObjectClient,shooter,interactionStruct->damage,
+             CONCAT31((int3)((uint)in_stack_1 >> 8),0xb),(MethodInfo *)0x0);
   return;
 }
 

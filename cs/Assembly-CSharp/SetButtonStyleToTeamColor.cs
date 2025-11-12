@@ -14,7 +14,7 @@ public class SetButtonStyleToTeamColor : MonoBehaviour
 {
 	// Fields
 	[SerializeField]
-	private Button button;
+	private UnityEngine.UI.Button button;
 	[SerializeField]
 	private bool shouldRetainAlpha;
 

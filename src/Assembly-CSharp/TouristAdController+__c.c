@@ -1,28 +1,44 @@
 
-/* Void <InterstitialAdResult>b__19_0(IUIStack, BaseEventData) */
+/* Void <OnAdCallback>b__23_0(IUIStack, BaseEventData) */
 
-void Assembly-CSharp.dll::TouristAdController+<>c::
-     TouristAdController_c__InterstitialAdResult_b__19_0
+void Assembly-CSharp.dll::TouristAdController+<>c::TouristAdController_c__OnAdCallback_b__23_0
                (TouristAdController_c *this,IUIStack *x,BaseEventData *_,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    pIStack_1 = (IUIStack *)&TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (x != (IUIStack *)0x0) {
-    pIStack_1 = x;
-    pIStack_2 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    uStack_3 = 2;
-    func_?();
+    uVar1 = 0;
+    pIVar2 = x->klass;
+    uVar3._0_1_ = (pIVar2->_1).rank;
+    uVar3._1_1_ = (pIVar2->_1).minimumAlignment;
+    if (uVar3 != 0) {
+      do {
+        if (pIVar2->interfaceOffsets[uVar1].interfaceType ==
+            (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
+          pVVar4 = &(pIVar2->vtable).get_StackReady + (pIVar2->interfaceOffsets[uVar1].offset + 2);
+          UNRECOVERED_JUMPTABLE = pVVar4->methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*UNRECOVERED_JUMPTABLE)(x,pVVar4->method,UNRECOVERED_JUMPTABLE);
+          return;
+        }
+        uVar1 = uVar1 + 1;
+      } while (uVar1 < uVar3);
+    }
+    puVar5 = (undefined8 *)FUN_?(x);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(code *)*puVar5)(x,puVar5[1],(code *)*puVar5);
     return;
   }
-  pIStack_1 = (IUIStack *)&stack0xfffffffc;
-  uVar4 = func_?(&uStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -33,15 +49,26 @@ void Assembly-CSharp.dll::TouristAdController+<>c::TouristAdController_c__cctor(
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__TouristAdController____c);
+    FUN_?(&TypeInfo__TouristAdController____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__TouristAdController____c;
-  value = (TouristAdController_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  TypeInfo__TouristAdController____c->static_fields->__9 = value;
-  func_?(TypeInfo__TouristAdController____c->static_fields,value);
+  pTVar1 = (TouristAdController_c *)FUN_?(TypeInfo__TouristAdController____c);
+  TypeInfo__TouristAdController____c->static_fields->__9 = pTVar1;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)TypeInfo__TouristAdController____c->static_fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 

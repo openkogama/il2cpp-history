@@ -12,21 +12,33 @@ Assembly-CSharp.dll::RTG::SnapMath::SnapMath_CalculateNumSnapSteps
   __return_storage_ptr__->AbsFracSteps = 0.0;
   bVar1 = cRam_? == '\0';
   __return_storage_ptr__->FltNumSteps = total / snapStep;
-  __return_storage_ptr__->AbsFltNumSteps =
-       (float)((uint)__return_storage_ptr__->FltNumSteps & _UNK_?);
-  __return_storage_ptr__->IntNumSteps = (int)__return_storage_ptr__->FltNumSteps;
-  uVar2 = __return_storage_ptr__->IntNumSteps;
+  __return_storage_ptr__->AbsFltNumSteps = __return_storage_ptr__->AbsFltNumSteps;
+  __return_storage_ptr__->IntNumSteps = __return_storage_ptr__->IntNumSteps;
+  __return_storage_ptr__->AbsIntNumSteps = __return_storage_ptr__->AbsIntNumSteps;
+  fVar2 = __return_storage_ptr__->FltNumSteps;
+  fVar3 = (float)((uint)(total / snapStep) & _UNK_?);
+  __return_storage_ptr__->FltNumSteps = fVar2;
+  __return_storage_ptr__->AbsFltNumSteps = fVar3;
+  __return_storage_ptr__->IntNumSteps = __return_storage_ptr__->IntNumSteps;
+  __return_storage_ptr__->AbsIntNumSteps = __return_storage_ptr__->AbsIntNumSteps;
+  __return_storage_ptr__->IntNumSteps = (int)fVar2;
+  iVar4 = __return_storage_ptr__->IntNumSteps;
   if (bVar1) {
-    func_?(&TypeInfo__System__Math);
+    FUN_?(&TypeInfo__System__Math);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Math);
+  if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  uVar3 = (int)uVar2 >> 0x1f;
-  __return_storage_ptr__->AbsIntNumSteps = (uVar2 ^ uVar3) - uVar3;
-  __return_storage_ptr__->AbsFracSteps =
-       __return_storage_ptr__->AbsFltNumSteps - (float)__return_storage_ptr__->AbsIntNumSteps;
+  iVar5 = -iVar4;
+  if (iVar5 < 0) {
+    iVar5 = iVar4;
+  }
+  __return_storage_ptr__->AbsIntNumSteps = iVar5;
+  uVar6 = __return_storage_ptr__->AbsIntNumSteps;
+  __return_storage_ptr__->AbsFracSteps = __return_storage_ptr__->AbsFltNumSteps - (float)(int)uVar6;
   return __return_storage_ptr__;
 }
 

@@ -12,8 +12,6 @@ using UnityEngine;
 public class GameLoader : MonoBehaviour
 {
 	// Fields
-	[SerializeField]
-	private int gameBaseSceneIndex;
 	private static bool applicationStartUp;
 
 	// Constructors

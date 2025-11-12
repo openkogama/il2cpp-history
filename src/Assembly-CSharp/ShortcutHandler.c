@@ -6,141 +6,229 @@ void Assembly-CSharp.dll::ShortcutHandler::ShortcutHandler_Callback
 
 {
   pBVar1 = (this->fields).button;
-  if ((pBVar1 != (Button *)0x0) &&
-     (unityEventBase = (pBVar1->fields).m_OnClick,
-     unityEventBase != (Button_ButtonClickedEvent *)0x0)) {
-    if (cRam_? == '\0') {
-      func_?();
-      func_?();
-      func_?();
-      func_?(&TypeInfo__System__Object);
-      cRam_? = '\x01';
-    }
-    if ((unityEventBase->fields)._._.m_CallsDirty != 0) {
-      this_00 = (unityEventBase->fields)._._.m_PersistentCalls;
-      if (this_00 == (PersistentCallGroup *)0x0) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::Events::PersistentCallGroup::
-      PersistentCallGroup_Initialize
-                (this_00,(unityEventBase->fields)._._.m_Calls,(UnityEventBase *)unityEventBase,
-                 (MethodInfo *)0x0);
-      (unityEventBase->fields)._._.m_CallsDirty = 0;
-    }
-    pIVar2 = (unityEventBase->fields)._._.m_Calls;
-    if (pIVar2 != (InvokableCallList *)0x0) {
-      if (cRam_? == '\0') {
-        func_?();
-        func_?();
-        cRam_? = '\x01';
-      }
-      if ((pIVar2->fields).m_NeedsUpdate != 0) {
-        pLVar3 = (pIVar2->fields).m_ExecutingCalls;
-        if (pLVar3 == (List_1_UnityEngine_Events_BaseInvokableCall_ *)0x0) goto code_?;
-        iVar4 = (pLVar3->fields)._size;
-        piVar5 = &(pLVar3->fields)._version;
-        *piVar5 = *piVar5 + 1;
-        (pLVar3->fields)._size = 0;
-        if (0 < iVar4) {
-          mscorlib.dll::System::Array::Array_Clear
-                    ((Array *)(pLVar3->fields)._items,0,iVar4,(MethodInfo *)0x0);
-        }
-        pLVar6 = (List_1_System_Object_ *)(pIVar2->fields).m_ExecutingCalls;
-        if (pLVar6 == (List_1_System_Object_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__AddRange
-                  (pLVar6,(IEnumerable_1_System_Object_ *)(pIVar2->fields).m_PersistentCalls,
-                   MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__AddRange_System__Collections__Generic__IEnumerable<UnityEngine::Events::BaseInvokableCall>_
-                  );
-        pLVar6 = (List_1_System_Object_ *)(pIVar2->fields).m_ExecutingCalls;
-        if (pLVar6 == (List_1_System_Object_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__AddRange
-                  (pLVar6,(IEnumerable_1_System_Object_ *)(pIVar2->fields).m_RuntimeCalls,
-                   MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__AddRange_System__Collections__Generic__IEnumerable<UnityEngine::Events::BaseInvokableCall>_
-                  );
-        (pIVar2->fields).m_NeedsUpdate = 0;
-      }
-      RVar7 = (RegexCharClass_SingleRange)(pIVar2->fields).m_ExecutingCalls;
-      iVar4 = 0;
-      this = (ShortcutHandler *)RVar7;
-      if (RVar7 != (RegexCharClass_SingleRange)0x0) {
+  if ((pBVar1 == (Button *)0x0) ||
+     (this_00 = (pBVar1->fields).m_OnClick, this_00 == (Button_ButtonClickedEvent *)0x0)) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Events__InvokableCall);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pLVar3 = UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEventBase::
+           UnityEventBase_PrepareInvoke((UnityEventBase *)this_00,(MethodInfo *)0x0);
+  uVar4 = 0;
+  if (pLVar3 == (List_1_UnityEngine_Events_BaseInvokableCall_ *)0x0) {
 code_?:
-        do {
-          while( true ) {
-            if (*(int *)((int)RVar7 + 0xc) <= iVar4) {
-              return;
-            }
-            RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                    RegularExpressions::RegexCharClass+SingleRange]::
-                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                               RVar7,iVar4,
-                               MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
-                              );
-            if (RVar8 == (RegexCharClass_SingleRange)0x0) break;
-            if ((*(byte *)(*(int *)RVar8 + 0xb8) <
-                 (TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment) ||
-               (*(InvokableCall__Class **)
-                 (*(int *)(*(int *)RVar8 + 100) + -4 +
-                 (uint)(TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment * 4) !=
-                TypeInfo__UnityEngine__Events__InvokableCall)) {
-              bVar9 = false;
-            }
-            else {
-              bVar9 = true;
-            }
-            this_01.First = 0;
-            this_01.Last = 0;
-            if (bVar9) {
-              this_01 = RVar8;
-            }
-            RVar7 = (RegexCharClass_SingleRange)this;
-            if (this_01 == (RegexCharClass_SingleRange)0x0) break;
-            UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
-                      ((InvokableCall *)this_01,(MethodInfo *)0x0);
-            iVar4 = iVar4 + 1;
-            RVar7 = this_01;
-            this = (ShortcutHandler *)this_01;
-          }
-          this = (ShortcutHandler *)
-                 mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                 ::RegexCharClass+SingleRange]::
-                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                           ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                            RVar7,iVar4,
-                            MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
-                           );
-          this_02 = (InvokableCall *)func_?();
-          if (this_02 == (InvokableCall *)0x0) {
-            RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                     RegularExpressions::RegexCharClass+SingleRange]::
-                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                               ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *
-                                )RVar7,iVar4,
-                                MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
-                               );
-            if ((unityEventBase->fields)._.m_InvokeArray == (Object__Array *)0x0) {
-              pOVar10 = (Object__Array *)func_?();
-              (unityEventBase->fields)._.m_InvokeArray = pOVar10;
-              func_?();
-            }
-            if (RVar7 == (RegexCharClass_SingleRange)0x0) break;
-            func_?();
-            iVar4 = iVar4 + 1;
-            RVar7 = (RegexCharClass_SingleRange)this;
-            goto code_?;
-          }
-          UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
-                    (this_02,(MethodInfo *)0x0);
-          iVar4 = iVar4 + 1;
-        } while( true );
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  lVar5 = 0x20;
+code_?:
+  do {
+    if ((pLVar3->fields)._size <= (int)uVar4) {
+      return;
+    }
+    if ((uint)(pLVar3->fields)._size <= uVar4) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                ((MethodInfo *)0x0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pBVar6 = (pLVar3->fields)._items;
+    if (pBVar6 == (BaseInvokableCall__Array *)0x0) goto code_?;
+    if ((uint)pBVar6->max_length <= uVar4) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pIVar7 = *(InvokableCall **)((longlong)pBVar6->vector + lVar5 + -0x20);
+    if (pIVar7 != (InvokableCall *)0x0) {
+      bVar8 = (TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment;
+      if ((bVar8 <= (pIVar7->klass->_1).naturalAligment) &&
+         ((pIVar7->klass->_1).typeHierarchy[(ulonglong)bVar8 - 1] ==
+          (Il2CppClass *)TypeInfo__UnityEngine__Events__InvokableCall)) {
+        UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
+                  (pIVar7,(MethodInfo *)0x0);
+        uVar4 = uVar4 + 1;
+        lVar5 = lVar5 + 8;
+        goto code_?;
       }
+    }
+    pIVar7 = (InvokableCall *)FUN_?(pLVar3,uVar4);
+    if (pIVar7 != (InvokableCall *)0x0) {
+      bVar8 = (TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment;
+      if ((bVar8 <= (pIVar7->klass->_1).naturalAligment) &&
+         ((pIVar7->klass->_1).typeHierarchy[(ulonglong)bVar8 - 1] ==
+          (Il2CppClass *)TypeInfo__UnityEngine__Events__InvokableCall)) {
+        UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
+                  (pIVar7,(MethodInfo *)0x0);
+        uVar4 = uVar4 + 1;
+        lVar5 = lVar5 + 8;
+        goto code_?;
+      }
+    }
+    plVar9 = (longlong *)FUN_?(pLVar3,uVar4);
+    if ((this_00->fields)._.m_InvokeArray == (Object__Array *)0x0) {
+      pOVar10 = (Object__Array *)FUN_?(TypeInfo__System__Object,0);
+      (this_00->fields)._.m_InvokeArray = pOVar10;
+      func_?(&(this_00->fields)._.m_InvokeArray);
+    }
+    if (plVar9 == (longlong *)0x0) goto code_?;
+    (**(code **)(*plVar9 + 0x178))
+              (plVar9,(this_00->fields)._.m_InvokeArray,*(undefined8 *)(*plVar9 + 0x180));
+    uVar4 = uVar4 + 1;
+    lVar5 = lVar5 + 8;
+  } while( true );
+}
+
+
+/* Void OnDestroy() */
+
+void Assembly-CSharp.dll::ShortcutHandler::ShortcutHandler_OnDestroy
+               (ShortcutHandler *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyUnRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__ShortcutHandler___UnRegisterShortcutKey_b__10_0_UnityEngine__EventSystems__IShortcutKeyUnRegister__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+  this_01 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+            FUN_?(
+                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>
+                         );
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+  ExecuteEvents_EventFunction_1_System_Object___ctor
+            (this_01,(Object *)this,
+             MethodInfo__ShortcutHandler___UnRegisterShortcutKey_b__10_0_UnityEngine__EventSystems__IShortcutKeyUnRegister__UnityEngine__EventSystems__BaseEventData_
+             ,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pMVar2 = 
+  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyUnRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>_
+  ;
+  if ((
+      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyUnRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>_
+      ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    if ((pMVar2->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(pMVar2);
     }
   }
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_GetEventChain
+            (pGVar1,(IList_1_UnityEngine_Transform_ *)
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                    s_InternalTransformList,(MethodInfo *)0x0);
+  pLVar3 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+           s_InternalTransformList;
+  if (pLVar3 != (List_1_UnityEngine_Transform_ *)0x0) {
+    lVar4 = (longlong)(pLVar3->fields)._size;
+    uVar5 = 0;
+    if (0 < lVar4) {
+      lVar6 = 0;
+      lVar7 = 0x20;
+      do {
+        if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pLVar3 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                 s_InternalTransformList;
+        if (pLVar3 == (List_1_UnityEngine_Transform_ *)0x0) goto code_?;
+        if ((uint)(pLVar3->fields)._size <= uVar5) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar8 = (code *)swi(3);
+          (*pcVar8)();
+          return;
+        }
+        pTVar9 = (pLVar3->fields)._items;
+        if (pTVar9 == (Transform__Array *)0x0) goto code_?;
+        if ((uint)pTVar9->max_length <= uVar5) {
+          FUN_?();
+          pcVar8 = (code *)swi(3);
+          (*pcVar8)();
+          return;
+        }
+        this_00 = *(Component **)((longlong)pTVar9->vector + lVar7 + -0x20);
+        if (this_00 == (Component *)0x0) goto code_?;
+        pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           (this_00,(MethodInfo *)0x0);
+        bVar10 = UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+                ExecuteEvents_Execute_18
+                          (pGVar1,(BaseEventData *)0x0,this_01,
+                           (pMVar2->field7_0x38).rgctx_data[1].method);
+        if (bVar10 != 0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    (this_00,(MethodInfo *)0x0);
+          return;
+        }
+        uVar5 = uVar5 + 1;
+        lVar6 = lVar6 + 1;
+        lVar7 = lVar7 + 8;
+      } while (lVar6 < lVar4);
+    }
+    return;
+  }
 code_?:
-  uVar11 = func_?(&stack0xfffffff0);
-  func_?(uVar11);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -152,37 +240,124 @@ void Assembly-CSharp.dll::ShortcutHandler::ShortcutHandler_RegisterShortcutKey
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    MethodInfo__ShortcutHandler___RegisterShortcutKey_b__9_0_UnityEngine__EventSystems__IShortcutKeyRegister__UnityEngine__EventSystems__BaseEventData_
-                   );
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__ShortcutHandler___RegisterShortcutKey_b__9_0_UnityEngine__EventSystems__IShortcutKeyRegister__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                   ((Component *)this,(MethodInfo *)0x0);
-  callbackFunction =
-       (ExecuteEvents_EventFunction_1_System_Object_ *)
-       func_?(
-                      TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>
-                      );
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-  UnityAction_2_System_Object_System_Object___ctor
-            ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+  this_01 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+            FUN_?(
+                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>
+                         );
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+  ExecuteEvents_EventFunction_1_System_Object___ctor
+            (this_01,(Object *)this,
              MethodInfo__ShortcutHandler___RegisterShortcutKey_b__9_0_UnityEngine__EventSystems__IShortcutKeyRegister__UnityEngine__EventSystems__BaseEventData_
              ,(MethodInfo *)0x0);
-  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-            (root,(BaseEventData *)0x0,callbackFunction,
-             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>_
-            );
+  pMVar2 = 
+  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>_
+  ;
+  if ((
+      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>_
+      ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    if ((pMVar2->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(pMVar2);
+    }
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_GetEventChain
+            (pGVar1,(IList_1_UnityEngine_Transform_ *)
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                    s_InternalTransformList,(MethodInfo *)0x0);
+  pLVar3 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+           s_InternalTransformList;
+  if (pLVar3 != (List_1_UnityEngine_Transform_ *)0x0) {
+    lVar4 = (longlong)(pLVar3->fields)._size;
+    uVar5 = 0;
+    if (0 < lVar4) {
+      lVar6 = 0;
+      lVar7 = 0x20;
+      do {
+        if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pLVar3 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                 s_InternalTransformList;
+        if (pLVar3 == (List_1_UnityEngine_Transform_ *)0x0) goto code_?;
+        if ((uint)(pLVar3->fields)._size <= uVar5) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar8 = (code *)swi(3);
+          (*pcVar8)();
+          return;
+        }
+        pTVar9 = (pLVar3->fields)._items;
+        if (pTVar9 == (Transform__Array *)0x0) goto code_?;
+        if ((uint)pTVar9->max_length <= uVar5) {
+          FUN_?();
+          pcVar8 = (code *)swi(3);
+          (*pcVar8)();
+          return;
+        }
+        this_00 = *(Component **)((longlong)pTVar9->vector + lVar7 + -0x20);
+        if (this_00 == (Component *)0x0) goto code_?;
+        pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           (this_00,(MethodInfo *)0x0);
+        bVar10 = UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+                ExecuteEvents_Execute_18
+                          (pGVar1,(BaseEventData *)0x0,this_01,
+                           (pMVar2->field7_0x38).rgctx_data[1].method);
+        if (bVar10 != 0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    (this_00,(MethodInfo *)0x0);
+          return;
+        }
+        uVar5 = uVar5 + 1;
+        lVar6 = lVar6 + 1;
+        lVar7 = lVar7 + 8;
+      } while (lVar6 < lVar4);
+    }
+    return;
+  }
+code_?:
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -194,9 +369,11 @@ void Assembly-CSharp.dll::ShortcutHandler::ShortcutHandler_Reset
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    UnityEngine__UI__Button_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Button>__
-                   );
+    FUN_?(&
+                  UnityEngine__UI__Button_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Button>__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pBVar1 = (Button *)
@@ -204,8 +381,150 @@ void Assembly-CSharp.dll::ShortcutHandler::ShortcutHandler_Reset
                      ((Component *)this,
                       UnityEngine__UI__Button_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Button>__
                      );
+  bVar2 = iRam_? != 0;
   (this->fields).button = pBVar1;
-  func_?(&(this->fields).button,pBVar1);
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).button >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
+  return;
+}
+
+
+/* Void Start() */
+
+void Assembly-CSharp.dll::ShortcutHandler::ShortcutHandler_Start
+               (ShortcutHandler *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__ShortcutHandler___RegisterShortcutKey_b__9_0_UnityEngine__EventSystems__IShortcutKeyRegister__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+  this_01 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+            FUN_?(
+                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>
+                         );
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+  ExecuteEvents_EventFunction_1_System_Object___ctor
+            (this_01,(Object *)this,
+             MethodInfo__ShortcutHandler___RegisterShortcutKey_b__9_0_UnityEngine__EventSystems__IShortcutKeyRegister__UnityEngine__EventSystems__BaseEventData_
+             ,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pMVar2 = 
+  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>_
+  ;
+  if ((
+      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyRegister>_
+      ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    if ((pMVar2->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(pMVar2);
+    }
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_GetEventChain
+            (pGVar1,(IList_1_UnityEngine_Transform_ *)
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                    s_InternalTransformList,(MethodInfo *)0x0);
+  pLVar3 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+           s_InternalTransformList;
+  if (pLVar3 != (List_1_UnityEngine_Transform_ *)0x0) {
+    lVar4 = (longlong)(pLVar3->fields)._size;
+    uVar5 = 0;
+    if (0 < lVar4) {
+      lVar6 = 0;
+      lVar7 = 0x20;
+      do {
+        if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pLVar3 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                 s_InternalTransformList;
+        if (pLVar3 == (List_1_UnityEngine_Transform_ *)0x0) goto code_?;
+        if ((uint)(pLVar3->fields)._size <= uVar5) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar8 = (code *)swi(3);
+          (*pcVar8)();
+          return;
+        }
+        pTVar9 = (pLVar3->fields)._items;
+        if (pTVar9 == (Transform__Array *)0x0) goto code_?;
+        if ((uint)pTVar9->max_length <= uVar5) {
+          FUN_?();
+          pcVar8 = (code *)swi(3);
+          (*pcVar8)();
+          return;
+        }
+        this_00 = *(Component **)((longlong)pTVar9->vector + lVar7 + -0x20);
+        if (this_00 == (Component *)0x0) goto code_?;
+        pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           (this_00,(MethodInfo *)0x0);
+        bVar10 = UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+                ExecuteEvents_Execute_18
+                          (pGVar1,(BaseEventData *)0x0,this_01,
+                           (pMVar2->field7_0x38).rgctx_data[1].method);
+        if (bVar10 != 0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    (this_00,(MethodInfo *)0x0);
+          return;
+        }
+        uVar5 = uVar5 + 1;
+        lVar6 = lVar6 + 1;
+        lVar7 = lVar7 + 8;
+      } while (lVar6 < lVar4);
+    }
+    return;
+  }
+code_?:
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -217,37 +536,124 @@ void Assembly-CSharp.dll::ShortcutHandler::ShortcutHandler_UnRegisterShortcutKey
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyUnRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    MethodInfo__ShortcutHandler___UnRegisterShortcutKey_b__10_0_UnityEngine__EventSystems__IShortcutKeyUnRegister__UnityEngine__EventSystems__BaseEventData_
-                   );
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyUnRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__ShortcutHandler___UnRegisterShortcutKey_b__10_0_UnityEngine__EventSystems__IShortcutKeyUnRegister__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                   ((Component *)this,(MethodInfo *)0x0);
-  callbackFunction =
-       (ExecuteEvents_EventFunction_1_System_Object_ *)
-       func_?(
-                      TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>
-                      );
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-  UnityAction_2_System_Object_System_Object___ctor
-            ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+  this_01 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+            FUN_?(
+                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>
+                         );
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+  ExecuteEvents_EventFunction_1_System_Object___ctor
+            (this_01,(Object *)this,
              MethodInfo__ShortcutHandler___UnRegisterShortcutKey_b__10_0_UnityEngine__EventSystems__IShortcutKeyUnRegister__UnityEngine__EventSystems__BaseEventData_
              ,(MethodInfo *)0x0);
-  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-            (root,(BaseEventData *)0x0,callbackFunction,
-             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyUnRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>_
-            );
+  pMVar2 = 
+  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyUnRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>_
+  ;
+  if ((
+      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IShortcutKeyUnRegister>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IShortcutKeyUnRegister>_
+      ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    if ((pMVar2->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(pMVar2);
+    }
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_GetEventChain
+            (pGVar1,(IList_1_UnityEngine_Transform_ *)
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                    s_InternalTransformList,(MethodInfo *)0x0);
+  pLVar3 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+           s_InternalTransformList;
+  if (pLVar3 != (List_1_UnityEngine_Transform_ *)0x0) {
+    lVar4 = (longlong)(pLVar3->fields)._size;
+    uVar5 = 0;
+    if (0 < lVar4) {
+      lVar6 = 0;
+      lVar7 = 0x20;
+      do {
+        if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pLVar3 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                 s_InternalTransformList;
+        if (pLVar3 == (List_1_UnityEngine_Transform_ *)0x0) goto code_?;
+        if ((uint)(pLVar3->fields)._size <= uVar5) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar8 = (code *)swi(3);
+          (*pcVar8)();
+          return;
+        }
+        pTVar9 = (pLVar3->fields)._items;
+        if (pTVar9 == (Transform__Array *)0x0) goto code_?;
+        if ((uint)pTVar9->max_length <= uVar5) {
+          FUN_?();
+          pcVar8 = (code *)swi(3);
+          (*pcVar8)();
+          return;
+        }
+        this_00 = *(Component **)((longlong)pTVar9->vector + lVar7 + -0x20);
+        if (this_00 == (Component *)0x0) goto code_?;
+        pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           (this_00,(MethodInfo *)0x0);
+        bVar10 = UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+                ExecuteEvents_Execute_18
+                          (pGVar1,(BaseEventData *)0x0,this_01,
+                           (pMVar2->field7_0x38).rgctx_data[1].method);
+        if (bVar10 != 0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    (this_00,(MethodInfo *)0x0);
+          return;
+        }
+        uVar5 = uVar5 + 1;
+        lVar6 = lVar6 + 1;
+        lVar7 = lVar7 + 8;
+      } while (lVar6 < lVar4);
+    }
+    return;
+  }
+code_?:
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -259,26 +665,28 @@ void Assembly-CSharp.dll::ShortcutHandler::ShortcutHandler__RegisterShortcutKey_
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IShortcutKeyRegister);
-    func_?(&MethodInfo__ShortcutHandler__Callback__);
-    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IShortcutKeyRegister);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__ShortcutHandler__Callback__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  iVar1 = (this->fields).keyState;
-  iVar2 = (this->fields).kogamaControl;
-  this_00 = (NavMesh_OnNavMeshPreUpdate *)
-            func_?(TypeInfo__UnityEngine__Events__UnityAction);
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__UnityEngine__Events__UnityAction);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (this_00,(Object *)this,MethodInfo__ShortcutHandler__Callback__,(MethodInfo *)0x0);
   if (x != (IShortcutKeyRegister *)0x0) {
-    func_?(0,TypeInfo__UnityEngine__EventSystems__IShortcutKeyRegister,x,iVar2,iVar1,
-                    this_00);
+    FUN_?();
     return;
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -290,22 +698,19 @@ void Assembly-CSharp.dll::ShortcutHandler::ShortcutHandler__UnRegisterShortcutKe
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IShortcutKeyUnRegister;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IShortcutKeyUnRegister);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (x != (IShortcutKeyUnRegister *)0x0) {
-    ppIStack_1 = (IShortcutKeyUnRegister__Class **)(this->fields).keyState;
-    puStack_2 = (undefined *)(this->fields).kogamaControl;
-    pIStack_3 = x;
-    func_?(0,TypeInfo__UnityEngine__EventSystems__IShortcutKeyUnRegister);
+    FUN_?(0,TypeInfo__UnityEngine__EventSystems__IShortcutKeyUnRegister,x,
+                  (this->fields).kogamaControl,(this->fields).keyState);
     return;
   }
-  ppIStack_1 = (IShortcutKeyUnRegister__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

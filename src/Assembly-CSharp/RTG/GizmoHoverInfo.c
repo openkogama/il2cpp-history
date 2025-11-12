@@ -6,12 +6,13 @@ void Assembly-CSharp.dll::RTG::GizmoHoverInfo::GizmoHoverInfo_Reset
 
 {
   this->_isHovered = 0;
-  pOVar1 = System.Core.dll::System::Runtime::CompilerServices::CallSiteBinder::
-           CallSiteBinder_BindDelegate((CallSiteBinder *)0x0,unaff_ESI,unaff_EBP,unaff_retaddr);
-  this->_handleId = (int32_t)pOVar1;
+  bVar1 = cRam_? == '\0';
+  this->_handleId = 0;
   this->_handleDimension = 0;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+  if (bVar1) {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;

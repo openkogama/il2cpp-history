@@ -5,71 +5,140 @@ void Assembly-CSharp.dll::PickupGUI::PickupGUI_AvatarLeftVehicle(PickupGUI *this
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&TypeInfo__IGUICrossHair);
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&StringLiteral_Pickup_GUI_LEAVE_);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__IGUICrossHair);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Pickup_GUI_LEAVE_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                       ((Component *)this,(MethodInfo *)0x0);
   if (this_00 != (GameObject *)0x0) {
-    pSVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
+    pSVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetName
                        ((Object_1 *)this_00,(MethodInfo *)0x0);
-    pSVar1 = mscorlib.dll::System::String::String_Concat_3
+    pSVar1 = mscorlib.dll::System::String::String_Concat_4
                        (StringLiteral_Pickup_GUI_LEAVE_,pSVar1,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
     pMVar2 = (this->fields).pickupOwner;
     if (pMVar2 != (MVPickupOwner *)0x0) {
       pPVar3 = (pMVar2->fields).currentItem;
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        ((Object_1 *)pPVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar4 != 0) {
-        pMVar2 = (this->fields).pickupOwner;
-        if ((pMVar2 == (MVPickupOwner *)0x0) ||
-           (pPVar3 = (pMVar2->fields).currentItem, pPVar3 == (PickupItem *)0x0))
-        goto code_?;
-        iVar5 = (*(code *)(pPVar3->klass->vtable).__unknown.method)
-                          (pPVar3,(pPVar3->klass->vtable).__unknown_1.methodPtr);
-        if (iVar5 != 5) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (pPVar3 != (PickupItem *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if ((pPVar3->fields)._._._._.m_CachedPtr != (void *)0x0) {
           pMVar2 = (this->fields).pickupOwner;
-          if (pMVar2 != (MVPickupOwner *)0x0) {
-            PickupGUI_OnEquipItem(this,(pMVar2->fields).currentItem,(MethodInfo *)0x0);
-            if (cRam_? == '\0') {
-              func_?(&TypeInfo__PickupGUI);
-              cRam_? = '\x01';
-            }
-            uVar6 = TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField;
-            if (cRam_? == '\0') {
-              func_?(&TypeInfo__PickupGUI);
-              cRam_? = '\x01';
-            }
-            TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField =
-                 uVar6 & 0xffffffef;
-            pMVar2 = (this->fields).pickupOwner;
-            if ((pMVar2 != (MVPickupOwner *)0x0) &&
-               (pIVar7 = (this->fields).crossHair, pIVar7 != (IGUICrossHair *)0x0)) {
-              func_?(2,TypeInfo__IGUICrossHair,pIVar7,(pMVar2->fields).currentItem);
-              PickupGUI_UpdateCrossHairVisibility(this,(MethodInfo *)0x0);
-              return;
-            }
-          }
+          if ((pMVar2 == (MVPickupOwner *)0x0) ||
+             (pPVar3 = (pMVar2->fields).currentItem, pPVar3 == (PickupItem *)0x0))
           goto code_?;
+          iVar4 = (*(pPVar3->klass->vtable).__unknown.methodPtr)();
+          if (iVar4 != 5) {
+            pMVar2 = (this->fields).pickupOwner;
+            if (pMVar2 != (MVPickupOwner *)0x0) {
+              PickupGUI_OnEquipItem(this,(pMVar2->fields).currentItem,(MethodInfo *)0x0);
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__PickupGUI);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              uVar5 = TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField;
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__PickupGUI);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField =
+                   uVar5 & 0xffffffef;
+              if (((this->fields).pickupOwner != (MVPickupOwner *)0x0) &&
+                 ((this->fields).crossHair != (IGUICrossHair *)0x0)) {
+                FUN_?();
+                if (cRam_? == '\0') {
+                  FUN_?(&TypeInfo__IGUICrossHair,0);
+                  LOCK();
+                  UNLOCK();
+                  FUN_?(&TypeInfo__IPlayModeUI);
+                  LOCK();
+                  UNLOCK();
+                  cRam_? = '\x01';
+                }
+                if (cRam_? == '\0') {
+                  FUN_?(&TypeInfo__MVGameControllerBase);
+                  LOCK();
+                  UNLOCK();
+                  cRam_? = '\x01';
+                }
+                if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField !=
+                    (IPlayModeUI *)0x0) {
+                  cVar6 = FUN_?(7,TypeInfo__IPlayModeUI);
+                  if ((cVar6 == '\0') && ((this->fields).canBeVisible != 0)) {
+                    pMVar2 = (this->fields).pickupOwner;
+                    if (pMVar2 == (MVPickupOwner *)0x0) goto code_?;
+                    bVar7 = (pMVar2->fields)._IsLocal_k__BackingField;
+                  }
+                  else {
+                    bVar7 = 0;
+                  }
+                  if ((this->fields).crossHair != (IGUICrossHair *)0x0) {
+                    cVar6 = FUN_?(0,TypeInfo__IGUICrossHair);
+                    if ((bool)cVar6 != (bVar7 != 0)) {
+                      pIVar8 = (this->fields).crossHair;
+                      if (pIVar8 == (IGUICrossHair *)0x0) goto code_?;
+                      FUN_?(1,TypeInfo__IGUICrossHair,pIVar8,bVar7 != 0,unaff_RBX);
+                    }
+                    return;
+                  }
+                }
+code_?:
+                FUN_?();
+                pcVar9 = (code *)swi(3);
+                (*pcVar9)();
+                return;
+              }
+            }
+            goto code_?;
+          }
         }
       }
       (this->fields).canBeVisible = 0;
       PickupGUI_UpdateCrossHairVisibility(this,(MethodInfo *)0x0);
-      pIVar7 = (this->fields).crossHair;
-      if (pIVar7 != (IGUICrossHair *)0x0) {
-        func_?(1,TypeInfo__IGUICrossHair,pIVar7,0);
+      pIVar8 = (this->fields).crossHair;
+      if (pIVar8 != (IGUICrossHair *)0x0) {
+        FUN_?(1,TypeInfo__IGUICrossHair,pIVar8,0);
         if (cRam_? == '\0') {
-          func_?(&TypeInfo__PickupGUI);
+          FUN_?(&TypeInfo__PickupGUI);
+          LOCK();
+          UNLOCK();
           cRam_? = '\x01';
         }
         TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField = 0;
@@ -78,9 +147,9 @@ void Assembly-CSharp.dll::PickupGUI::PickupGUI_AvatarLeftVehicle(PickupGUI *this
     }
   }
 code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -91,42 +160,68 @@ void Assembly-CSharp.dll::PickupGUI::PickupGUI_Enter(PickupGUI *this,MethodInfo 
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
             ((Behaviour *)this,1,(MethodInfo *)0x0);
   pMVar1 = (this->fields).pickupOwner;
-  if (pMVar1 != (MVPickupOwner *)0x0) {
-    x = (pMVar1->fields).currentItem;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+  if (pMVar1 == (MVPickupOwner *)0x0) {
+code_?:
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pPVar3 = (pMVar1->fields).currentItem;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pPVar3 != (PickupItem *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField = 0;
-      return;
-    }
-    pMVar1 = (this->fields).pickupOwner;
-    if (pMVar1 != (MVPickupOwner *)0x0) {
-      PickupGUI_OnEquipItem(this,(pMVar1->fields).currentItem,(MethodInfo *)0x0);
+    if ((pPVar3->fields)._._._._.m_CachedPtr != (void *)0x0) {
       pMVar1 = (this->fields).pickupOwner;
-      if ((pMVar1 != (MVPickupOwner *)0x0) &&
-         (pPStack3 = (pMVar1->fields).currentItem, pPStack3 != (PickupItem *)0x0)) {
-        pIStack4 = (pPStack3->klass->vtable).OnHolstered.methodPtr;
-        (*(code *)(pPStack3->klass->vtable).OnEnterVehicleWithWeapon.method)();
-        return;
+      if (pMVar1 != (MVPickupOwner *)0x0) {
+        PickupGUI_OnEquipItem(this,(pMVar1->fields).currentItem,(MethodInfo *)0x0);
+        pMVar1 = (this->fields).pickupOwner;
+        if ((pMVar1 != (MVPickupOwner *)0x0) &&
+           (pPVar3 = (pMVar1->fields).currentItem, pPVar3 != (PickupItem *)0x0)) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*(pPVar3->klass->vtable).OnEnterVehicleWithWeapon.methodPtr)
+                    (pPVar3,(pPVar3->klass->vtable).OnEnterVehicleWithWeapon.method);
+          return;
+        }
       }
+      goto code_?;
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__PickupGUI);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField = 0;
   return;
 }
 
@@ -138,119 +233,223 @@ void Assembly-CSharp.dll::PickupGUI::PickupGUI_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<bool>);
-    func_?(&TypeInfo__IGUICrossHair);
-    func_?(&TypeInfo__IPlayModeUI);
-    func_?(&TypeInfo__MVPickupOwner__OnEquipItemDelegate);
-    func_?(&TypeInfo__MVPickupOwner__OnUnequipItemDelegate);
-    func_?(&MethodInfo__PickupGUI__OnEquipItem_PickupItem_);
-    func_?(&MethodInfo__PickupGUI__OnHolstered_bool_);
-    func_?(&MethodInfo__PickupGUI__OnUnequipItem_PickupItem_);
+    FUN_?(&TypeInfo__System__Action<bool>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__IGUICrossHair);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__IPlayModeUI);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVPickupOwner__OnEquipItemDelegate);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVPickupOwner__OnUnequipItemDelegate);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__PickupGUI__OnEquipItem_PickupItem_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__PickupGUI__OnHolstered_bool_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__PickupGUI__OnUnequipItem_PickupItem_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  bVar1 = iRam_? != 0;
   (this->fields).worldObjectId = worldObjectId;
   (this->fields).pickupOwner = pickupOwner;
-  func_?(&(this->fields).pickupOwner,pickupOwner);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).pickupOwner >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
-  if (pIVar1 == (IPlayModeUI *)0x0) {
-code_?:
-    func_?();
-  }
-  else {
-    pIVar2 = (IGUICrossHair *)func_?(2,TypeInfo__IPlayModeUI,pIVar1);
-    (this->fields).crossHair = pIVar2;
-    func_?(&(this->fields).crossHair,pIVar2);
-    pIVar2 = (this->fields).crossHair;
-    if (pIVar2 == (IGUICrossHair *)0x0) goto code_?;
-    func_?(1,TypeInfo__IGUICrossHair,pIVar2,0);
-    if (pickupOwner == (MVPickupOwner *)0x0) goto code_?;
-    pMVar3 = (pickupOwner->fields).onEquipItem;
-    pVVar4 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
-             func_?(TypeInfo__MVPickupOwner__OnEquipItemDelegate);
-    UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
-    VideoCapture+OnVideoCaptureResourceCreatedCallback::
-    VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-              (pVVar4,(Object *)this,MethodInfo__PickupGUI__OnEquipItem_PickupItem_,
-               (MethodInfo *)0x0);
-    pMVar3 = (MVPickupOwner_OnEquipItemDelegate *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pMVar3,(Delegate *)pVVar4,(MethodInfo *)0x0);
-    if (pMVar3 == (MVPickupOwner_OnEquipItemDelegate *)0x0) {
-      (pickupOwner->fields).onEquipItem = (MVPickupOwner_OnEquipItemDelegate *)0x0;
+  if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField !=
+      (IPlayModeUI *)0x0) {
+    pIVar6 = (IGUICrossHair *)FUN_?(2,TypeInfo__IPlayModeUI);
+    bVar1 = iRam_? != 0;
+    (this->fields).crossHair = pIVar6;
+    if (bVar1) {
+      uVar2 = (uint)((ulonglong)&(this->fields).crossHair >> 0xc);
+      lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+        puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+        LOCK();
+        bVar1 = uVar4 == *puVar5;
+        if (bVar1) {
+          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar1);
     }
-    else {
-      pMVar5 = (MVPickupOwner_OnEquipItemDelegate *)0x0;
-      if (pMVar3->klass == TypeInfo__MVPickupOwner__OnEquipItemDelegate) {
-        pMVar5 = pMVar3;
+    if (((this->fields).crossHair != (IGUICrossHair *)0x0) &&
+       (FUN_?(1,TypeInfo__IGUICrossHair), pickupOwner != (MVPickupOwner *)0x0)) {
+      pMVar7 = (pickupOwner->fields).onEquipItem;
+      pUVar8 = (UnityAction_1_System_Object_ *)
+               FUN_?(TypeInfo__MVPickupOwner__OnEquipItemDelegate);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+      UnityAction_1_System_Object___ctor
+                (pUVar8,(Object *)this,MethodInfo__PickupGUI__OnEquipItem_PickupItem_,
+                 (MethodInfo *)0x0);
+      pMVar7 = (MVPickupOwner_OnEquipItemDelegate *)
+               mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pMVar7,(Delegate *)pUVar8,(MethodInfo *)0x0);
+      if (pMVar7 == (MVPickupOwner_OnEquipItemDelegate *)0x0) {
+        (pickupOwner->fields).onEquipItem = (MVPickupOwner_OnEquipItemDelegate *)0x0;
       }
-      if (pMVar5 == (MVPickupOwner_OnEquipItemDelegate *)0x0) goto code_?;
-      (pickupOwner->fields).onEquipItem = pMVar5;
-      pMVar5 = (MVPickupOwner_OnEquipItemDelegate *)0x0;
-      if (pMVar3->klass == TypeInfo__MVPickupOwner__OnEquipItemDelegate) {
-        pMVar5 = pMVar3;
+      else {
+        pMVar9 = (MVPickupOwner_OnEquipItemDelegate *)0x0;
+        if (pMVar7->klass == TypeInfo__MVPickupOwner__OnEquipItemDelegate) {
+          pMVar9 = pMVar7;
+        }
+        if (pMVar9 == (MVPickupOwner_OnEquipItemDelegate *)0x0) {
+          FUN_?();
+          pcVar10 = (code *)swi(3);
+          (*pcVar10)();
+          return;
+        }
+        (pickupOwner->fields).onEquipItem = pMVar9;
+        pMVar9 = (MVPickupOwner_OnEquipItemDelegate *)0x0;
+        if (pMVar7->klass == TypeInfo__MVPickupOwner__OnEquipItemDelegate) {
+          pMVar9 = pMVar7;
+        }
+        if (pMVar9 == (MVPickupOwner_OnEquipItemDelegate *)0x0) {
+          FUN_?();
+          pcVar10 = (code *)swi(3);
+          (*pcVar10)();
+          return;
+        }
       }
-      if (pMVar5 == (MVPickupOwner_OnEquipItemDelegate *)0x0) goto code_?;
-    }
-    func_?();
-    pMVar6 = (pickupOwner->fields).onUnequipItem;
-    pVVar4 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
-    VideoCapture+OnVideoCaptureResourceCreatedCallback::
-    VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-              (pVVar4,(Object *)&(pickupOwner->fields).onEquipItem,
-               MethodInfo__PickupGUI__OnUnequipItem_PickupItem_,(MethodInfo *)0x0);
-    pMVar6 = (MVPickupOwner_OnUnequipItemDelegate *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pMVar6,(Delegate *)pVVar4,(MethodInfo *)0x0);
-    if (pMVar6 == (MVPickupOwner_OnUnequipItemDelegate *)0x0) {
-      (pickupOwner->fields).onUnequipItem = (MVPickupOwner_OnUnequipItemDelegate *)0x0;
-    }
-    else {
-      pMVar7 = (MVPickupOwner_OnUnequipItemDelegate *)0x0;
-      if (pMVar6->klass == TypeInfo__MVPickupOwner__OnUnequipItemDelegate) {
-        pMVar7 = pMVar6;
+      if (iRam_? != 0) {
+        uVar2 = (uint)((ulonglong)&(pickupOwner->fields).onEquipItem >> 0xc);
+        lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+          puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+          LOCK();
+          bVar1 = uVar4 == *puVar5;
+          if (bVar1) {
+            *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar1);
       }
-      if (pMVar7 == (MVPickupOwner_OnUnequipItemDelegate *)0x0) goto code_?;
-      (pickupOwner->fields).onUnequipItem = pMVar7;
-      pMVar7 = (MVPickupOwner_OnUnequipItemDelegate *)0x0;
-      if (pMVar6->klass == TypeInfo__MVPickupOwner__OnUnequipItemDelegate) {
-        pMVar7 = pMVar6;
+      pMVar11 = (pickupOwner->fields).onUnequipItem;
+      pUVar8 = (UnityAction_1_System_Object_ *)
+               FUN_?(TypeInfo__MVPickupOwner__OnUnequipItemDelegate);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+      UnityAction_1_System_Object___ctor
+                (pUVar8,(Object *)this,MethodInfo__PickupGUI__OnUnequipItem_PickupItem_,
+                 (MethodInfo *)0x0);
+      pMVar11 = (MVPickupOwner_OnUnequipItemDelegate *)
+               mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pMVar11,(Delegate *)pUVar8,(MethodInfo *)0x0);
+      if (pMVar11 == (MVPickupOwner_OnUnequipItemDelegate *)0x0) {
+        (pickupOwner->fields).onUnequipItem = (MVPickupOwner_OnUnequipItemDelegate *)0x0;
       }
-      if (pMVar7 == (MVPickupOwner_OnUnequipItemDelegate *)0x0) goto code_?;
-    }
-    func_?();
-    pAVar8 = (pickupOwner->fields).OnHolsteredChanged;
-    this_00 = (UnityAction_1_System_Int32Enum_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-    UnityAction_1_System_Int32Enum___ctor
-              (this_00,(Object *)&(pickupOwner->fields).onUnequipItem,
-               MethodInfo__PickupGUI__OnHolstered_bool_,(MethodInfo *)0x0);
-    pDVar9 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar8,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar9 == (Delegate *)0x0) {
-      (pickupOwner->fields).OnHolsteredChanged = (Action_1_Boolean_ *)0x0;
-      func_?();
+      else {
+        pMVar12 = (MVPickupOwner_OnUnequipItemDelegate *)0x0;
+        if (pMVar11->klass == TypeInfo__MVPickupOwner__OnUnequipItemDelegate) {
+          pMVar12 = pMVar11;
+        }
+        if (pMVar12 == (MVPickupOwner_OnUnequipItemDelegate *)0x0) {
+          FUN_?();
+          pcVar10 = (code *)swi(3);
+          (*pcVar10)();
+          return;
+        }
+        (pickupOwner->fields).onUnequipItem = pMVar12;
+        pMVar12 = (MVPickupOwner_OnUnequipItemDelegate *)0x0;
+        if (pMVar11->klass == TypeInfo__MVPickupOwner__OnUnequipItemDelegate) {
+          pMVar12 = pMVar11;
+        }
+        if (pMVar12 == (MVPickupOwner_OnUnequipItemDelegate *)0x0) {
+          FUN_?();
+          pcVar10 = (code *)swi(3);
+          (*pcVar10)();
+          return;
+        }
+      }
+      if (iRam_? != 0) {
+        uVar2 = (uint)((ulonglong)&(pickupOwner->fields).onUnequipItem >> 0xc);
+        lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+          puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+          LOCK();
+          bVar1 = uVar4 == *puVar5;
+          if (bVar1) {
+            *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar1);
+      }
+      pAVar13 = (pickupOwner->fields).OnHolsteredChanged;
+      pDVar14 = (Delegate *)FUN_?(TypeInfo__System__Action<bool>);
+      FUN_?(pDVar14,this);
+      pDVar14 = mscorlib.dll::System::Delegate::Delegate_Combine
+                          ((Delegate *)pAVar13,pDVar14,(MethodInfo *)0x0);
+      pAVar15 = TypeInfo__System__Action<bool>;
+      if (pDVar14 == (Delegate *)0x0) {
+        (pickupOwner->fields).OnHolsteredChanged = (Action_1_Boolean_ *)0x0;
+      }
+      else {
+        pAVar13 = (Action_1_Boolean_ *)FUN_?(pDVar14,TypeInfo__System__Action<bool>);
+        if (pAVar13 == (Action_1_Boolean_ *)0x0) {
+          FUN_?(pDVar14,pAVar15);
+          pcVar10 = (code *)swi(3);
+          (*pcVar10)();
+          return;
+        }
+        (pickupOwner->fields).OnHolsteredChanged = pAVar13;
+        pAVar15 = TypeInfo__System__Action<bool>;
+        lVar3 = FUN_?(pDVar14,TypeInfo__System__Action<bool>);
+        if (lVar3 == 0) {
+          FUN_?(pDVar14,pAVar15);
+          pcVar10 = (code *)swi(3);
+          (*pcVar10)();
+          return;
+        }
+      }
+      if (iRam_? != 0) {
+        uVar2 = (uint)((ulonglong)&(pickupOwner->fields).OnHolsteredChanged >> 0xc);
+        lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+          puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+          LOCK();
+          bVar1 = uVar4 == *puVar5;
+          if (bVar1) {
+            *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar1);
+      }
       return;
     }
-    pAVar8 = (Action_1_Boolean_ *)func_?();
-    if (pAVar8 != (Action_1_Boolean_ *)0x0) {
-      (pickupOwner->fields).OnHolsteredChanged = pAVar8;
-      iVar10 = func_?();
-      if (iVar10 != 0) {
-        func_?();
-        return;
-      }
-    }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -261,7 +460,9 @@ bool Assembly-CSharp.dll::PickupGUI::PickupGUI_IsInJetpack(PickupGUI *this,Metho
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVJetPack);
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
@@ -271,24 +472,28 @@ bool Assembly-CSharp.dll::PickupGUI::PickupGUI_IsInJetpack(PickupGUI *this,Metho
                    (pMVar1,(this->fields).worldObjectId,(MethodInfo *)0x0);
     pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
     if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
-      pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+      pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
                          (pMVar1,id,(MethodInfo *)0x0);
-      if (pMVar2 == (MVWorldObject *)0x0) {
-        return 0;
+      pMVar3 = (MVWorldObjectClient *)0x0;
+      if (pMVar2 != (MVWorldObjectClient *)0x0) {
+        bVar4 = (TypeInfo__MVJetPack->_1).naturalAligment;
+        if (((pMVar2->klass->_1).naturalAligment < bVar4) ||
+           (bVar5 = true,
+           (MVJetPack__Class *)(pMVar2->klass->_1).typeHierarchy[(ulonglong)bVar4 - 1] !=
+           TypeInfo__MVJetPack)) {
+          bVar5 = false;
+        }
+        if (bVar5) {
+          pMVar3 = pMVar2;
+        }
       }
-      if (((TypeInfo__MVJetPack->_1).naturalAligment <= (pMVar2->klass->_1).naturalAligment) &&
-         ((MVJetPack__Class *)
-          (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVJetPack->_1).naturalAligment - 1] ==
-          TypeInfo__MVJetPack)) {
-        return pMVar2 != (MVWorldObject *)0x0;
-      }
-      return 0;
+      return pMVar3 != (MVWorldObjectClient *)0x0;
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  bVar4 = (*pcVar3)();
-  return bVar4;
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  bVar7 = (*pcVar6)();
+  return bVar7;
 }
 
 
@@ -298,23 +503,60 @@ void Assembly-CSharp.dll::PickupGUI::PickupGUI_LateUpdate(PickupGUI *this,Method
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__IGUICrossHair);
+    FUN_?(&TypeInfo__IGUICrossHair);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields).pickupOwner;
   if (pMVar1 != (MVPickupOwner *)0x0) {
-    bVar2 = MVPickupOwner::MVPickupOwner_get_HasGunWithAmmo(pMVar1,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      pMVar1 = (this->fields).pickupOwner;
-      if ((pMVar1 == (MVPickupOwner *)0x0) ||
-         (pIVar3 = (this->fields).crossHair, pIVar3 == (IGUICrossHair *)0x0)) goto code_?;
-      func_?(2,TypeInfo__IGUICrossHair,pIVar3,(pMVar1->fields).currentItem);
-      PickupGUI_UpdateCrossHairVisibility(this,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pPVar2 = (pMVar1->fields).currentItem;
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (pPVar2 != (PickupItem *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if ((pPVar2->fields)._._._._.m_CachedPtr != (void *)0x0) {
+        pPVar2 = (pMVar1->fields).currentItem;
+        if (pPVar2 == (PickupItem *)0x0) goto code_?;
+        if ((pPVar2->fields)._IsHolstered_k__BackingField == 0) {
+          cVar3 = (*(pPVar2->klass->vtable).get_GunMode.methodPtr)(pPVar2);
+          if (cVar3 != '\0') {
+            if (((this->fields).pickupOwner == (MVPickupOwner *)0x0) ||
+               ((this->fields).crossHair == (IGUICrossHair *)0x0)) goto code_?;
+            FUN_?();
+            PickupGUI_UpdateCrossHairVisibility(this,(MethodInfo *)0x0);
+          }
+        }
+      }
     }
     return;
   }
 code_?:
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -327,115 +569,180 @@ void Assembly-CSharp.dll::PickupGUI::PickupGUI_OnDestroy(PickupGUI *this,MethodI
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<bool>);
-    func_?(&TypeInfo__MVPickupOwner__OnEquipItemDelegate);
-    func_?(&TypeInfo__MVPickupOwner__OnUnequipItemDelegate);
-    func_?(&MethodInfo__PickupGUI__OnEquipItem_PickupItem_);
-    func_?(&MethodInfo__PickupGUI__OnHolstered_bool_);
-    func_?(&MethodInfo__PickupGUI__OnUnequipItem_PickupItem_);
+    FUN_?(&TypeInfo__System__Action<bool>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVPickupOwner__OnEquipItemDelegate);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVPickupOwner__OnUnequipItemDelegate);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__PickupGUI__OnEquipItem_PickupItem_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__PickupGUI__OnHolstered_bool_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__PickupGUI__OnUnequipItem_PickupItem_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields).pickupOwner;
-  if (pMVar1 == (MVPickupOwner *)0x0) {
-code_?:
-    func_?();
-code_?:
-    func_?();
-code_?:
-    func_?();
-  }
-  else {
+  if (pMVar1 != (MVPickupOwner *)0x0) {
     pMVar2 = (pMVar1->fields).onEquipItem;
-    pVVar3 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
-             func_?(TypeInfo__MVPickupOwner__OnEquipItemDelegate);
-    UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
-    VideoCapture+OnVideoCaptureResourceCreatedCallback::
-    VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-              (pVVar3,(Object *)this,MethodInfo__PickupGUI__OnEquipItem_PickupItem_,
+    pUVar3 = (UnityAction_1_System_Object_ *)
+             FUN_?(TypeInfo__MVPickupOwner__OnEquipItemDelegate);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+    UnityAction_1_System_Object___ctor
+              (pUVar3,(Object *)this,MethodInfo__PickupGUI__OnEquipItem_PickupItem_,
                (MethodInfo *)0x0);
-    pMVar4 = (MVPickupOwner_OnEquipItemDelegate *)
+    pMVar2 = (MVPickupOwner_OnEquipItemDelegate *)
              mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pMVar2,(Delegate *)pVVar3,(MethodInfo *)0x0);
-    pMVar2 = (MVPickupOwner_OnEquipItemDelegate *)0x0;
-    if (pMVar4 == (MVPickupOwner_OnEquipItemDelegate *)0x0) {
+                       ((Delegate *)pMVar2,(Delegate *)pUVar3,(MethodInfo *)0x0);
+    if (pMVar2 == (MVPickupOwner_OnEquipItemDelegate *)0x0) {
       (pMVar1->fields).onEquipItem = (MVPickupOwner_OnEquipItemDelegate *)0x0;
     }
     else {
-      if (pMVar4->klass == TypeInfo__MVPickupOwner__OnEquipItemDelegate) {
-        pMVar2 = pMVar4;
+      pMVar4 = (MVPickupOwner_OnEquipItemDelegate *)0x0;
+      if (pMVar2->klass == TypeInfo__MVPickupOwner__OnEquipItemDelegate) {
+        pMVar4 = pMVar2;
       }
-      if (pMVar2 == (MVPickupOwner_OnEquipItemDelegate *)0x0) goto code_?;
-      (pMVar1->fields).onEquipItem = pMVar2;
-      pMVar2 = (MVPickupOwner_OnEquipItemDelegate *)0x0;
-      if (pMVar4->klass == TypeInfo__MVPickupOwner__OnEquipItemDelegate) {
-        pMVar2 = pMVar4;
-      }
-      if (pMVar2 == (MVPickupOwner_OnEquipItemDelegate *)0x0) goto code_?;
-    }
-    func_?();
-    pvVar5 = (pMVar2->fields)._._.method;
-    if (pvVar5 == (void *)0x0) goto code_?;
-    pDVar6 = *(Delegate **)((int)pvVar5 + 0x40);
-    pVVar3 = (VideoCapture_OnVideoCaptureResourceCreatedCallback *)
-             func_?(TypeInfo__MVPickupOwner__OnUnequipItemDelegate);
-    UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
-    VideoCapture+OnVideoCaptureResourceCreatedCallback::
-    VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-              (pVVar3,(Object *)pMVar2,MethodInfo__PickupGUI__OnUnequipItem_PickupItem_,
-               (MethodInfo *)0x0);
-    pDVar7 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       (pDVar6,(Delegate *)pVVar3,(MethodInfo *)0x0);
-    pDVar6 = (Delegate *)0x0;
-    if (pDVar7 == (Delegate *)0x0) {
-      *(undefined4 *)((int)pvVar5 + 0x40) = 0;
-code_?:
-      func_?();
-      pvVar5 = (pMVar2->fields)._._.method;
-      if (pvVar5 == (void *)0x0) goto code_?;
-      pDVar7 = *(Delegate **)((int)pvVar5 + 0x48);
-      this_00 = (UnityAction_1_System_Int32Enum_ *)func_?(TypeInfo__System__Action<bool>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-      UnityAction_1_System_Int32Enum___ctor
-                (this_00,(Object *)pDVar6,MethodInfo__PickupGUI__OnHolstered_bool_,(MethodInfo *)0x0
-                );
-      pDVar6 = mscorlib.dll::System::Delegate::Delegate_Remove
-                         (pDVar7,(Delegate *)this_00,(MethodInfo *)0x0);
-      if (pDVar6 == (Delegate *)0x0) {
-        *(undefined4 *)((int)pvVar5 + 0x48) = 0;
-        func_?();
+      if (pMVar4 == (MVPickupOwner_OnEquipItemDelegate *)0x0) {
+        FUN_?();
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
-      iVar8 = func_?();
-      if (iVar8 != 0) {
-        *(int *)((int)pvVar5 + 0x48) = iVar8;
-        iVar8 = func_?();
-        if (iVar8 != 0) {
-          func_?();
+      (pMVar1->fields).onEquipItem = pMVar4;
+      pMVar4 = (MVPickupOwner_OnEquipItemDelegate *)0x0;
+      if (pMVar2->klass == TypeInfo__MVPickupOwner__OnEquipItemDelegate) {
+        pMVar4 = pMVar2;
+      }
+      if (pMVar4 == (MVPickupOwner_OnEquipItemDelegate *)0x0) {
+        FUN_?();
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+    }
+    if (iRam_? != 0) {
+      uVar6 = (uint)((ulonglong)&(pMVar1->fields).onEquipItem >> 0xc);
+      lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar10 = uVar8 == *puVar9;
+        if (bVar10) {
+          *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar10);
+    }
+    pMVar1 = (this->fields).pickupOwner;
+    if (pMVar1 != (MVPickupOwner *)0x0) {
+      pMVar11 = (pMVar1->fields).onUnequipItem;
+      pUVar3 = (UnityAction_1_System_Object_ *)
+               FUN_?(TypeInfo__MVPickupOwner__OnUnequipItemDelegate);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+      UnityAction_1_System_Object___ctor
+                (pUVar3,(Object *)this,MethodInfo__PickupGUI__OnUnequipItem_PickupItem_,
+                 (MethodInfo *)0x0);
+      pMVar11 = (MVPickupOwner_OnUnequipItemDelegate *)
+               mscorlib.dll::System::Delegate::Delegate_Remove
+                         ((Delegate *)pMVar11,(Delegate *)pUVar3,(MethodInfo *)0x0);
+      if (pMVar11 == (MVPickupOwner_OnUnequipItemDelegate *)0x0) {
+        (pMVar1->fields).onUnequipItem = (MVPickupOwner_OnUnequipItemDelegate *)0x0;
+      }
+      else {
+        pMVar12 = (MVPickupOwner_OnUnequipItemDelegate *)0x0;
+        if (pMVar11->klass == TypeInfo__MVPickupOwner__OnUnequipItemDelegate) {
+          pMVar12 = pMVar11;
+        }
+        if (pMVar12 == (MVPickupOwner_OnUnequipItemDelegate *)0x0) {
+          FUN_?();
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
+        }
+        (pMVar1->fields).onUnequipItem = pMVar12;
+        pMVar12 = (MVPickupOwner_OnUnequipItemDelegate *)0x0;
+        if (pMVar11->klass == TypeInfo__MVPickupOwner__OnUnequipItemDelegate) {
+          pMVar12 = pMVar11;
+        }
+        if (pMVar12 == (MVPickupOwner_OnUnequipItemDelegate *)0x0) {
+          FUN_?();
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
           return;
         }
       }
-      goto code_?;
-    }
-    if ((MVPickupOwner_OnUnequipItemDelegate__Class *)pDVar7->klass ==
-        TypeInfo__MVPickupOwner__OnUnequipItemDelegate) {
-      pDVar6 = pDVar7;
-    }
-    if (pDVar6 != (Delegate *)0x0) {
-      *(Delegate **)((int)pvVar5 + 0x40) = pDVar6;
-      pDVar6 = (Delegate *)0x0;
-      if ((MVPickupOwner_OnUnequipItemDelegate__Class *)pDVar7->klass ==
-          TypeInfo__MVPickupOwner__OnUnequipItemDelegate) {
-        pDVar6 = pDVar7;
+      if (iRam_? != 0) {
+        uVar6 = (uint)((ulonglong)&(pMVar1->fields).onUnequipItem >> 0xc);
+        lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+          puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+          LOCK();
+          bVar10 = uVar8 == *puVar9;
+          if (bVar10) {
+            *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar10);
       }
-      if (pDVar6 != (Delegate *)0x0) goto code_?;
-      goto code_?;
+      pMVar1 = (this->fields).pickupOwner;
+      if (pMVar1 != (MVPickupOwner *)0x0) {
+        pAVar13 = (pMVar1->fields).OnHolsteredChanged;
+        pDVar14 = (Delegate *)FUN_?(TypeInfo__System__Action<bool>);
+        FUN_?(pDVar14,this);
+        pDVar14 = mscorlib.dll::System::Delegate::Delegate_Remove
+                            ((Delegate *)pAVar13,pDVar14,(MethodInfo *)0x0);
+        pAVar15 = TypeInfo__System__Action<bool>;
+        if (pDVar14 == (Delegate *)0x0) {
+          (pMVar1->fields).OnHolsteredChanged = (Action_1_Boolean_ *)0x0;
+        }
+        else {
+          pAVar13 = (Action_1_Boolean_ *)FUN_?(pDVar14,TypeInfo__System__Action<bool>);
+          if (pAVar13 == (Action_1_Boolean_ *)0x0) {
+            FUN_?(pDVar14,pAVar15);
+            pcVar5 = (code *)swi(3);
+            (*pcVar5)();
+            return;
+          }
+          (pMVar1->fields).OnHolsteredChanged = pAVar13;
+          pAVar15 = TypeInfo__System__Action<bool>;
+          lVar7 = FUN_?(pDVar14,TypeInfo__System__Action<bool>);
+          if (lVar7 == 0) {
+            FUN_?(pDVar14,pAVar15);
+            pcVar5 = (code *)swi(3);
+            (*pcVar5)();
+            return;
+          }
+        }
+        if (iRam_? != 0) {
+          uVar6 = (uint)((ulonglong)&(pMVar1->fields).OnHolsteredChanged >> 0xc);
+          lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+            puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+            LOCK();
+            bVar10 = uVar8 == *puVar9;
+            if (bVar10) {
+              *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar10);
+        }
+        return;
+      }
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -447,113 +754,140 @@ void Assembly-CSharp.dll::PickupGUI::PickupGUI_OnEquipItem
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__IGUICrossHair);
-    func_?(&
-                    MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>_
-                   );
+    FUN_?(&TypeInfo__IGUICrossHair);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PickupGUI);
+    FUN_?(&TypeInfo__PickupGUI);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField = 0;
   if (item == (PickupItem *)0x0) goto code_?;
-  cVar1 = (*(code *)(item->klass->vtable).get_CanHolster.method)
-                    (item,(item->klass->vtable).get_HasUnlimitedAmmo.methodPtr);
+  cVar1 = (*(item->klass->vtable).get_CanHolster.methodPtr)();
   if (cVar1 != '\0') {
     pSVar2 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                        ((MethodInfo *)0x0);
-    if (pSVar2 == (SpawnRoleDataMediator *)0x0) goto code_?;
-    BVar3 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-            SpawnRoleVariable`1[System::ByteEnum]::SpawnRoleVariable_1_System_ByteEnum__op_Implicit
-                      ((SpawnRoleVariable_1_System_ByteEnum_ *)(pSVar2->fields).isSeated,
-                       MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>_
-                      );
-    if ((char)BVar3 == '\0') {
+    if (((pSVar2 == (SpawnRoleDataMediator *)0x0) ||
+        (pSVar3 = (pSVar2->fields).isSeated,
+        pSVar3 == (SpawnRoleDataMediator_SpawnRoleVariableInternal_1_System_Boolean_ *)0x0)) ||
+       (pSVar4 = (pSVar3->fields)._.subscribableVariable,
+       pSVar4 == (SubscribableVariable_1_System_Boolean_ *)0x0)) goto code_?;
+    if ((MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>_
+         ->klass->field_0x135 & 1) == 0) {
+      FUN_?();
+    }
+    if ((pSVar4->fields)._.value == 0) {
 code_?:
       HolsterTip::HolsterTip_Show((MethodInfo *)0x0);
     }
     else {
-      bVar4 = PickupGUI_IsInJetpack(this,(MethodInfo *)0x0);
-      if (bVar4 != 0) goto code_?;
+      bVar5 = PickupGUI_IsInJetpack(this,(MethodInfo *)0x0);
+      if (bVar5 != 0) goto code_?;
     }
     if ((item->fields)._IsHolstered_k__BackingField != 0) {
       if (cRam_? == '\0') {
-        func_?();
+        FUN_?(&TypeInfo__PickupGUI);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      uVar5 = TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField;
+      uVar6 = TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField;
       if (cRam_? == '\0') {
-        func_?();
+        FUN_?(&TypeInfo__PickupGUI);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField = uVar5 | 0x10;
+      TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField = uVar6 | 0x10;
     }
     if (cRam_? == '\0') {
-      func_?();
+      FUN_?(&TypeInfo__PickupGUI);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    uVar5 = TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField;
+    uVar6 = TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField;
     if (cRam_? == '\0') {
-      func_?();
+      FUN_?(&TypeInfo__PickupGUI);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField = uVar5 | 8;
+    TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField = uVar6 | 8;
   }
   (this->fields).canBeVisible = 0;
-  cVar1 = (*(code *)(item->klass->vtable).get_GunMode.method)();
+  cVar1 = (*(item->klass->vtable).get_GunMode.methodPtr)(item);
   if (cVar1 != '\0') {
+    bVar7 = cRam_? == '\0';
     (this->fields).canBeVisible = 1;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__PickupGUI);
+    if (bVar7) {
+      FUN_?(&TypeInfo__PickupGUI);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    uVar5 = TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField;
+    uVar6 = TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField;
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__PickupGUI);
+      FUN_?(&TypeInfo__PickupGUI);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField = uVar5 | 4;
+    TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField = uVar6 | 4;
   }
   PickupGUI_UpdateCrossHairVisibility(this,(MethodInfo *)0x0);
-  pIVar6 = (this->fields).crossHair;
-  if (pIVar6 != (IGUICrossHair *)0x0) {
-    func_?(2,TypeInfo__IGUICrossHair,pIVar6,item);
-    cVar1 = (*(code *)(item->klass->vtable).CanFire.method)
-                      (item,(item->klass->vtable).TriggerBegin.methodPtr);
+  if ((this->fields).crossHair != (IGUICrossHair *)0x0) {
+    FUN_?();
+    cVar1 = (*(item->klass->vtable).CanFire.methodPtr)(item,(item->klass->vtable).CanFire.method);
     if (cVar1 != '\0') {
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__PickupGUI);
+        FUN_?(&TypeInfo__PickupGUI);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      uVar5 = TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField;
+      uVar6 = TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField;
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__PickupGUI);
+        FUN_?(&TypeInfo__PickupGUI);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField = uVar5 | 1;
+      TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField = uVar6 | 1;
     }
-    cVar1 = (*(code *)(item->klass->vtable).get_CanUnequip.method)
-                      (item,(item->klass->vtable).get_IsAmmoDepleted.methodPtr);
+    cVar1 = (*(item->klass->vtable).get_CanUnequip.methodPtr)
+                      (item,(item->klass->vtable).get_CanUnequip.method);
     if (cVar1 != '\0') {
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__PickupGUI);
+        FUN_?(&TypeInfo__PickupGUI);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      uVar5 = TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField;
+      uVar6 = TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField;
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__PickupGUI);
+        FUN_?(&TypeInfo__PickupGUI);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField = uVar5 | 2;
+      TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField = uVar6 | 2;
     }
     return;
   }
 code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -565,67 +899,86 @@ void Assembly-CSharp.dll::PickupGUI::PickupGUI_OnHolstered
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__IGUICrossHair);
-    func_?(&
-                    MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>_
-                   );
+    FUN_?(&TypeInfo__IGUICrossHair);
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pSVar1 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                      ((MethodInfo *)0x0);
-  if (pSVar1 != (SpawnRoleDataMediator *)0x0) {
-    BVar2 = Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-            SpawnRoleVariable`1[System::ByteEnum]::SpawnRoleVariable_1_System_ByteEnum__op_Implicit
-                      ((SpawnRoleVariable_1_System_ByteEnum_ *)(pSVar1->fields).isSeated,
-                       MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>_
-                      );
-    if (((char)BVar2 == '\0') || (bVar3 = PickupGUI_IsInJetpack(this,(MethodInfo *)0x0), bVar3 != 0)
-       ) {
+  if (((pSVar1 != (SpawnRoleDataMediator *)0x0) &&
+      (pSVar2 = (pSVar1->fields).isSeated,
+      pSVar2 != (SpawnRoleDataMediator_SpawnRoleVariableInternal_1_System_Boolean_ *)0x0)) &&
+     (pSVar3 = (pSVar2->fields)._.subscribableVariable,
+     pSVar3 != (SubscribableVariable_1_System_Boolean_ *)0x0)) {
+    if ((MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<bool>_
+         ->klass->field_0x135 & 1) == 0) {
+      FUN_?();
+    }
+    if (((pSVar3->fields)._.value == 0) ||
+       (bVar4 = PickupGUI_IsInJetpack(this,(MethodInfo *)0x0), bVar4 != 0)) {
       HolsterTip::HolsterTip_Show((MethodInfo *)0x0);
     }
     if (isHolstered == 0) {
       if (cRam_? == '\0') {
-        func_?();
+        FUN_?(&TypeInfo__PickupGUI);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      uVar4 = TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField;
+      uVar5 = TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField;
       if (cRam_? == '\0') {
-        func_?();
+        FUN_?(&TypeInfo__PickupGUI);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField = uVar4 & 0xffffffef;
-      pMVar5 = (this->fields).pickupOwner;
-      if ((pMVar5 == (MVPickupOwner *)0x0) ||
-         (pPVar6 = (pMVar5->fields).currentItem, pPVar6 == (PickupItem *)0x0))
-      goto code_?;
-      cVar7 = (*(code *)(pPVar6->klass->vtable).get_GunMode.method)();
-      if (cVar7 == '\0') {
-        return;
+      TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField = uVar5 & 0xffffffef;
+      pMVar6 = (this->fields).pickupOwner;
+      if ((pMVar6 != (MVPickupOwner *)0x0) &&
+         (pPVar7 = (pMVar6->fields).currentItem, pPVar7 != (PickupItem *)0x0)) {
+        cVar8 = (*(pPVar7->klass->vtable).get_GunMode.methodPtr)
+                          (pPVar7,(pPVar7->klass->vtable).get_GunMode.method);
+        if (cVar8 == '\0') {
+          return;
+        }
+        pIVar9 = (this->fields).crossHair;
+        if (pIVar9 != (IGUICrossHair *)0x0) {
+          uVar10 = 1;
+          goto code_?;
+        }
       }
-      pIVar8 = (this->fields).crossHair;
     }
     else {
       if (cRam_? == '\0') {
-        func_?();
+        FUN_?(&TypeInfo__PickupGUI);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      uVar4 = TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField;
+      uVar5 = TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField;
       if (cRam_? == '\0') {
-        func_?();
+        FUN_?(&TypeInfo__PickupGUI);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField = uVar4 | 0x10;
-      pIVar8 = (this->fields).crossHair;
-    }
-    if (pIVar8 != (IGUICrossHair *)0x0) {
-      func_?(1,TypeInfo__IGUICrossHair);
-      return;
+      TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField = uVar5 | 0x10;
+      pIVar9 = (this->fields).crossHair;
+      if (pIVar9 != (IGUICrossHair *)0x0) {
+        uVar10 = 0;
+code_?:
+        FUN_?(1,TypeInfo__IGUICrossHair,pIVar9,uVar10);
+        return;
+      }
     }
   }
-code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -637,30 +990,27 @@ void Assembly-CSharp.dll::PickupGUI::PickupGUI_OnUnequipItem
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__IGUICrossHair;
-    func_?();
+    FUN_?(&TypeInfo__IGUICrossHair);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  pIVar1 = (this->fields).crossHair;
   (this->fields).canBeVisible = 0;
-  pIVar2 = (this->fields).crossHair;
-  if (pIVar2 != (IGUICrossHair *)0x0) {
-    ppIStack_1 = (IGUICrossHair__Class **)0x0;
-    pIStack_3 = TypeInfo__IGUICrossHair;
-    pIStack_4 = pIVar2;
-    func_?(1);
+  if (pIVar1 != (IGUICrossHair *)0x0) {
+    FUN_?(1,TypeInfo__IGUICrossHair,pIVar1,0);
     if (cRam_? == '\0') {
-      ppIStack_1 = (IGUICrossHair__Class **)&TypeInfo__PickupGUI;
-      func_?();
+      FUN_?(&TypeInfo__PickupGUI);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
     TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField = 0;
     return;
   }
-  ppIStack_1 = (IGUICrossHair__Class **)&stack0xfffffffc;
-  uVar5 = func_?(&pIStack_3);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -672,40 +1022,45 @@ void Assembly-CSharp.dll::PickupGUI::PickupGUI_UpdateCrossHairVisibility
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__IGUICrossHair);
-    func_?(&TypeInfo__IPlayModeUI);
+    FUN_?(&TypeInfo__IGUICrossHair);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__IPlayModeUI);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
-  if (pIVar1 != (IPlayModeUI *)0x0) {
-    cVar2 = func_?(7,TypeInfo__IPlayModeUI,pIVar1);
-    if ((cVar2 == '\0') && ((this->fields).canBeVisible != 0)) {
-      pMVar3 = (this->fields).pickupOwner;
-      if (pMVar3 == (MVPickupOwner *)0x0) goto code_?;
-      bVar4 = (pMVar3->fields)._IsLocal_k__BackingField;
+  if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField !=
+      (IPlayModeUI *)0x0) {
+    cVar1 = FUN_?(7,TypeInfo__IPlayModeUI);
+    if ((cVar1 == '\0') && ((this->fields).canBeVisible != 0)) {
+      pMVar2 = (this->fields).pickupOwner;
+      if (pMVar2 == (MVPickupOwner *)0x0) goto code_?;
+      bVar3 = (pMVar2->fields)._IsLocal_k__BackingField;
     }
     else {
-      bVar4 = 0;
+      bVar3 = 0;
     }
-    pIVar5 = (this->fields).crossHair;
-    if (pIVar5 != (IGUICrossHair *)0x0) {
-      cVar2 = func_?(0,TypeInfo__IGUICrossHair,pIVar5);
-      if ((bool)cVar2 != (bVar4 != 0)) {
-        pIVar5 = (this->fields).crossHair;
-        if (pIVar5 == (IGUICrossHair *)0x0) goto code_?;
-        func_?(1,TypeInfo__IGUICrossHair,pIVar5,bVar4 != 0);
+    if ((this->fields).crossHair != (IGUICrossHair *)0x0) {
+      cVar1 = FUN_?(0,TypeInfo__IGUICrossHair);
+      if ((bool)cVar1 != (bVar3 != 0)) {
+        pIVar4 = (this->fields).crossHair;
+        if (pIVar4 == (IGUICrossHair *)0x0) goto code_?;
+        FUN_?(1,TypeInfo__IGUICrossHair,pIVar4,bVar3 != 0);
       }
       return;
     }
   }
 code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -717,7 +1072,9 @@ Assembly-CSharp.dll::PickupGUI::PickupGUI_get_ShowEquipableUI(MethodInfo *method
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PickupGUI);
+    FUN_?(&TypeInfo__PickupGUI);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField;
@@ -731,7 +1088,9 @@ void Assembly-CSharp.dll::PickupGUI::PickupGUI_set_ShowEquipableUI
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PickupGUI);
+    FUN_?(&TypeInfo__PickupGUI);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TypeInfo__PickupGUI->static_fields->_ShowEquipableUI_k__BackingField = value;

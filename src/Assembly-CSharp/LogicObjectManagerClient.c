@@ -6,24 +6,38 @@ void Assembly-CSharp.dll::LogicObjectManagerClient::LogicObjectManagerClient_Cle
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__Clear__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-             *)(this->fields)._.logicWorldObjects;
-  if (this_00 !=
-      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-       *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::StyleSheets::
-    StyleSheetCache+SheetHandleKey,System::Object]::
-    Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__Clear
-              (this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__Clear__
-              );
+  pDVar1 = (this->fields)._.logicWorldObjects;
+  if (pDVar1 != (Dictionary_2_System_Int32_IInputSignalReceiver_ *)0x0) {
+    length = (pDVar1->fields)._count;
+    if (0 < length) {
+      pIVar2 = (pDVar1->fields)._buckets;
+      if (pIVar2 == (Int32__Array *)0x0) {
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      mscorlib.dll::System::Array::Array_Clear
+                ((Array *)(pDVar1->fields)._buckets,0,(int32_t)pIVar2->max_length,(MethodInfo *)0x0)
+      ;
+      (pDVar1->fields)._count = 0;
+      (pDVar1->fields)._freeCount = 0;
+      (pDVar1->fields)._freeList = -1;
+      mscorlib.dll::System::Array::Array_Clear
+                ((Array *)(pDVar1->fields)._entries,0,length,(MethodInfo *)0x0);
+    }
+    piVar4 = &(pDVar1->fields)._version;
+    *piVar4 = *piVar4 + 1;
     return;
   }
-  uVar1 = func_?(&puStack_2);
-  func_?(uVar1);
+  FUN_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -37,16 +51,38 @@ int32_t Assembly-CSharp.dll::LogicObjectManagerClient::LogicObjectManagerClient_
                   ,MethodInfo *method)
 
 {
-  if (link != (Link *)0x0) {
-    iVar1 = MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ResetChunk
-                      ((link->fields).inputWOID,worldObjectManager,(MethodInfo *)0x0);
-    return iVar1;
+  if (link == (Link *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    iVar2 = (*pcVar1)();
+    return iVar2;
   }
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  iVar1 = (*pcVar3)();
-  return iVar1;
+  iVar2 = (link->fields).inputWOID;
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__,
+                  worldObjectManager,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  resetNodes = (HashSet_1_System_Int32_ *)
+               FUN_?(TypeInfo__System__Collections__Generic__HashSet<int>);
+  FUN_?(resetNodes,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+  MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ResetNode
+            (iVar2,resetNodes,worldObjectManager,(MethodInfo *)0x0);
+  if (resetNodes != (HashSet_1_System_Int32_ *)0x0) {
+    return (resetNodes->fields)._count;
+  }
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  iVar2 = (*pcVar1)();
+  return iVar2;
 }
 
 
@@ -64,52 +100,9 @@ int32_t Assembly-CSharp.dll::LogicObjectManagerClient::LogicObjectManagerClient_
                       ((link->fields).outputWOID,worldObjectManager,(MethodInfo *)0x0);
     return iVar2 + iVar1;
   }
-  func_?();
+  FUN_?();
   pcVar3 = (code *)swi(3);
   iVar1 = (*pcVar3)();
   return iVar1;
-}
-
-
-/* LogicObjectManagerClient(Int32, Boolean) */
-
-void Assembly-CSharp.dll::LogicObjectManagerClient::LogicObjectManagerClient__ctor
-               (LogicObjectManagerClient *this,int32_t timeStamp,bool trackLoops,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__Dictionary__
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>);
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-    func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
-    cRam_? = '\x01';
-  }
-  this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
-            )func_?(
-                            TypeInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>
-                            );
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
-  ::TextResourceManager+FontAssetRef]::
-  Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
-            (this_00,
-             MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__Dictionary__
-            );
-  (this->fields)._.logicWorldObjects = (Dictionary_2_System_Int32_IInputSignalReceiver_ *)this_00;
-  func_?(&this->fields,this_00);
-  this_01 = (HashSet_1_System_Int32_ *)
-            func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
-  System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-  HashSet_1_System_Int32___ctor
-            (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-  method_00 = (MethodInfo *)&(this->fields)._.updatedIds;
-  (this->fields)._.updatedIds = this_01;
-  func_?(method_00,this_01);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  (this->fields)._.trackLoops = trackLoops;
-  (this->fields)._._TimeStamp_k__BackingField = timeStamp;
-  return;
 }
 

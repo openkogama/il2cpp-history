@@ -6,27 +6,45 @@ Color * Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Costume::Costume
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
-    func_?(&TypeInfo__Extensions);
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Extensions);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
+  if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).field_0x1c ==
+      0) {
+    FUN_?(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
   }
   hashtable = TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->static_fields->
               defaultItemValues;
-  if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Extensions);
+  if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pCVar1 = Extensions::Extensions_GetColor(&CStack_2,hashtable,colorKey,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  __return_storage_ptr__->r = pCVar1->r;
-  __return_storage_ptr__->g = fVar3;
-  __return_storage_ptr__->b = fVar4;
-  __return_storage_ptr__->a = fVar5;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__Extensions);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  CStack_1.r = 0.0;
+  CStack_1.g = 0.0;
+  CStack_1.b = 0.0;
+  CStack_1.a = 0.0;
+  pCVar2 = Extensions::Extensions_GetColorOrDefault
+                     (aCStack_3,hashtable,colorKey,&CStack_1,(MethodInfo *)0x0);
+  fVar4 = pCVar2->g;
+  fVar5 = pCVar2->b;
+  fVar6 = pCVar2->a;
+  __return_storage_ptr__->r = pCVar2->r;
+  __return_storage_ptr__->g = fVar4;
+  __return_storage_ptr__->b = fVar5;
+  __return_storage_ptr__->a = fVar6;
   return __return_storage_ptr__;
 }
 
@@ -39,54 +57,70 @@ CostumeData_DefaultData(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__Common__AvatarItemType);
-    func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&StringLiteral_itemData);
-    func_?(&StringLiteral_itemType);
+    FUN_?(&TypeInfo__MV__Common__AvatarItemType);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_itemData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_itemType);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
-         func_?(
-                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                        );
+  this = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+          *)FUN_?(
+                         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                         );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
-  StyleComplexSelector+PseudoStateData]::
-  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+  UIR::UIRenderDevice+DisableForceGammaMaterial]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
             (this,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  if ((TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).field_0x1c ==
+      0) {
+    FUN_?();
   }
   pDVar1 = CostumeData_DefaultItemData((MethodInfo *)0x0);
-  if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+  if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
                *)0x0) {
+    behavior = CONCAT31((int3)((uint)in_R9D >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
+    Dictionary_2_System_Object_System_Object__TryInsert
               ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_itemData,
-               (Object *)pDVar1,
+               (Object *)pDVar1,behavior,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    value = (Object *)func_?();
+               ->klass->rgctx_data[0x22].method);
+    auStackX_10[0] = 0x3b;
+    value = (Object *)FUN_?(TypeInfo__MV__Common__AvatarItemType,auStackX_10);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
+    Dictionary_2_System_Object_System_Object__TryInsert
               ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)StringLiteral_itemType,
-               value,
+               value,CONCAT31((int3)(behavior >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
+               ->klass->rgctx_data[0x22].method);
     return (Dictionary_2_System_Object_System_Object_ *)this;
   }
-  func_?();
+  FUN_?();
   pcVar2 = (code *)swi(3);
   pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(*pcVar2)();
   return pDVar1;
@@ -101,30 +135,37 @@ CostumeData_DefaultItemData(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
+  if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).field_0x1c ==
+      0) {
+    FUN_?(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
   }
   dictionary = TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->static_fields->
                defaultItemValues;
   this = (Dictionary_2_System_Object_System_Object_ *)
-         func_?(
-                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                        );
+         FUN_?(
+                      TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                      );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-  Dictionary_2_System_Object_System_Object___ctor_1
+  Dictionary_2_System_Object_System_Object___ctor_4
             (this,(IDictionary_2_System_Object_System_Object_ *)dictionary,
+             (IEqualityComparer_1_System_Object_ *)0x0,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_
-            );
+             ->klass->rgctx_data[8].method);
   return this;
 }
 
@@ -136,24 +177,69 @@ Object * Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Costume::Costum
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::Object,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::Object,_System::Object>__System__Object_
-                   );
-    func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
+    FUN_?(&
+                  System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::Object,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::Object,_System::Object>__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
+  if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).field_0x1c ==
+      0) {
+    FUN_?(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
   }
-  pOVar1 = mscorlib.dll::System::Collections::Generic::CollectionExtensions::
-           CollectionExtensions_GetValueOrDefault_1
-                     ((IReadOnlyDictionary_2_System_Object_System_Object_ *)
-                      TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->
-                      static_fields->defaultItemValues,(Object *)key,
-                      System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::Object,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::Object,_System::Object>__System__Object_
-                     );
-  return pOVar1;
+  pMVar1 = 
+  System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::Object,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::Object,_System::Object>__System__Object_
+  ;
+  pDVar2 = TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->static_fields->
+           defaultItemValues;
+  if ((
+      System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::Object,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::Object,_System::Object>__System__Object_
+      ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(
+                 System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::Object,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::Object,_System::Object>__System__Object_
+                 );
+  }
+  pMVar1 = (pMVar1->field7_0x38).rgctx_data[3].method;
+  if ((pMVar1->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(pMVar1);
+  }
+  uVar3 = 0;
+  if (pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    uVar4 = func_?(&TypeInfo__System__ArgumentNullException);
+    this = (ArgumentNullException *)func_?(uVar4);
+    paramName = (String *)func_?(&StringLiteral_dictionary);
+    mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+              (this,paramName,(MethodInfo *)0x0);
+    FUN_?(this,pMVar1);
+    pcVar5 = (code *)swi(3);
+    pOVar6 = (Object *)(*pcVar5)();
+    return pOVar6;
+  }
+  pIVar7 = ((pMVar1->field7_0x38).rgctx_data)->rgctxDataDummy;
+  if ((pIVar7->field_0x135 & 1) == 0) {
+    pIVar7 = (Il2CppClass *)FUN_?(pIVar7);
+  }
+  pDVar8 = pDVar2->klass;
+  uVar9._0_1_ = (pDVar8->_1).rank;
+  uVar9._1_1_ = (pDVar8->_1).minimumAlignment;
+  if (uVar9 != 0) {
+    do {
+      if (pDVar8->interfaceOffsets[uVar3].interfaceType == pIVar7) {
+        pVVar10 = &(pDVar8->vtable).Equals + (pDVar8->interfaceOffsets[uVar3].offset + 1);
+        goto code_?;
+      }
+      uVar11 = (short)uVar3 + 1;
+      uVar3 = (ulonglong)uVar11;
+    } while (uVar11 < uVar9);
+  }
+  pVVar10 = (VirtualInvokeData *)FUN_?(pDVar2,pIVar7,1);
+code_?:
+  (*pVVar10->methodPtr)(pDVar2,key,&stack0x00000008,pVVar10->method);
+  return (Object *)0x0;
 }
 
 
@@ -167,37 +253,19 @@ CostumeData_GetEditPoints
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__ValueTuple<MV::WorldObject::IntVector,_MV::WorldObject::IntVector>__ValueTuple_MV__WorldObject__IntVector__MV__WorldObject__IntVector_
-                   );
+    FUN_?(&
+                  MethodInfo__System__ValueTuple<MV::WorldObject::IntVector,_MV::WorldObject::IntVector>__ValueTuple_MV__WorldObject__IntVector__MV__WorldObject__IntVector_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  IStack_1.x = 0;
-  IStack_1.y = 0;
-  IStack_1.z = 0;
-  MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-            (&IStack_1,-0xf,-4,-0x10,(MethodInfo *)0x0);
-  puStack_2 = (undefined *)0x0;
-  iVar3 = 0;
-  MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-            ((IntVector *)&puStack_2,10,0x16,9,(MethodInfo *)0x0);
-  puVar4 = puStack_2;
-  (__return_storage_ptr__->Item1).x = 0;
-  (__return_storage_ptr__->Item1).y = 0;
-  (__return_storage_ptr__->Item1).z = 0;
-  (__return_storage_ptr__->Item2).x = 0;
-  (__return_storage_ptr__->Item2).y = 0;
-  (__return_storage_ptr__->Item2).z = 0;
-  item1.z = IStack_1.z;
-  item1.x = IStack_1.x;
-  item1.y = IStack_1.y;
-  item2.z = iVar3;
-  item2._0_4_ = puVar4;
-  mscorlib.dll::System::ValueTuple`2[MV::WorldObject::IntVector,MV::WorldObject::IntVector]::
-  ValueTuple_2_MV_WorldObject_IntVector_MV_WorldObject_IntVector___ctor
-            (__return_storage_ptr__,item1,item2,
-             MethodInfo__System__ValueTuple<MV::WorldObject::IntVector,_MV::WorldObject::IntVector>__ValueTuple_MV__WorldObject__IntVector__MV__WorldObject__IntVector_
-            );
+  (__return_storage_ptr__->Item1).x = -0xf;
+  (__return_storage_ptr__->Item1).y = -4;
+  (__return_storage_ptr__->Item2).x = 10;
+  (__return_storage_ptr__->Item2).y = 0x16;
+  (__return_storage_ptr__->Item2).z = 9;
+  (__return_storage_ptr__->Item1).z = -0x10;
   return __return_storage_ptr__;
 }
 
@@ -209,27 +277,116 @@ float Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Costume::CostumeDa
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
-    func_?(&
-                    float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
-                   );
-    func_?(&TypeInfo__Extensions);
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Extensions);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
+  if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).field_0x1c ==
+      0) {
+    FUN_?(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
   }
-  hashtable = TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->static_fields->
-              maxValues;
-  if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Extensions);
+  this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
+         TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->static_fields->maxValues
+  ;
+  if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  fVar1 = Extensions::Extensions_GetValueOrDefault_4
-                    (hashtable,key,INFINITY,
-                     float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
-                    );
-  return fVar1;
+  pMVar1 = 
+  float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
+  ;
+  fVar2 = _UNK_?;
+  if ((
+      float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
+      ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    if ((pMVar1->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(pMVar1);
+    }
+  }
+  if (this == (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)0x0) goto code_?;
+  iVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+          UIElements::StyleComplexSelector+PseudoStateData]::
+          Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
+                    (this,(Object *)key,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                     ->klass->rgctx_data[0x21].method);
+  if (iVar3 < 0) {
+    return fVar2;
+  }
+  pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+           Dictionary_2_System_Object_System_Object__get_Item
+                     ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)key,
+                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                     );
+  pvVar5 = ((pMVar1->field7_0x38).rgctx_data)->rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar5 + 0x135) & 1) == 0) {
+    pvVar5 = (void *)FUN_?(pvVar5);
+  }
+  lVar6 = FUN_?(pOVar4,pvVar5);
+  if (lVar6 == 0) {
+    pvVar5 = (pMVar1->field7_0x38).rgctx_data[1].rgctxDataDummy;
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    if (pvVar5 == (void *)0x0) goto code_?;
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    lVar6 = FUN_?(pvVar5,1);
+    plVar7 = (longlong *)FUN_?(lVar6 + 0x20);
+    if (plVar7 == (longlong *)0x0) goto code_?;
+    cVar8 = (**(code **)(*plVar7 + 0x588))(plVar7,*(undefined8 *)(*plVar7 + 0x590));
+    if (cVar8 == '\0') {
+      return fVar2;
+    }
+    if (pOVar4 == (Object *)0x0) {
+      return fVar2;
+    }
+    pOVar9 = (Object *)0x0;
+    if (pOVar4->klass == pORam0000000182db2418) {
+      pOVar9 = pOVar4;
+    }
+    if (pOVar9 == (Object *)0x0) {
+      return fVar2;
+    }
+  }
+  lVar6 = *(longlong *)(pMVar1->field7_0x38).methodMetadataHandle;
+  if ((*(byte *)(lVar6 + 0x135) & 1) == 0) {
+    lVar6 = FUN_?(lVar6);
+  }
+  if (pOVar4 != (Object *)0x0) {
+    if ((pOVar4->klass->_0).element_class == *(Il2CppClass **)(lVar6 + 0x40)) {
+      return *(float *)&pOVar4[1].klass;
+    }
+    FUN_?(pOVar4,lVar6);
+    pcVar10 = (code *)swi(3);
+    fVar2 = (float)(*pcVar10)();
+    return fVar2;
+  }
+code_?:
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  fVar2 = (float)(*pcVar10)();
+  return fVar2;
 }
 
 
@@ -241,63 +398,75 @@ CostumeData_MinMaxValue(String *key,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
-    func_?(&MethodInfo__System__ValueTuple<float,_float>__ValueTuple_float__float_);
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__ValueTuple<float,_float>__ValueTuple_float__float_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
+  if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).field_0x1c ==
+      0) {
+    FUN_?();
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
-    func_?(&
-                    float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
-                   );
-    func_?(&TypeInfo__Extensions);
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Extensions);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
+  if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).field_0x1c ==
+      0) {
+    FUN_?();
   }
   pDVar1 = TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->static_fields->
            minValues;
-  if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Extensions);
+  if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  Extensions::Extensions_GetValueOrDefault_4
-            (pDVar1,key,0.0,
-             float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
-            );
+  fVar2 = Extensions::Extensions_GetValueOrDefault_4
+                    (pDVar1,key,0.0,
+                     float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
+                    );
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Extensions);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).field_0x1c ==
+      0) {
+    FUN_?(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
   }
   pDVar1 = TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->static_fields->
            maxValues;
-  if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  item1 = 
-  float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
-  ;
-  item2 = Extensions::Extensions_GetValueOrDefault_4
-                    (pDVar1,key,INFINITY,
+  fVar3 = Extensions::Extensions_GetValueOrDefault_4
+                    (pDVar1,key,_UNK_?,
                      float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
                     );
-  VVar2.Item1 = 0.0;
-  VVar2.Item2 = 0.0;
-  mscorlib.dll::System::ValueTuple`2[Single,Single]::ValueTuple_2_Single_Single___ctor
-            ((ValueTuple_2_Single_Single_ *)&stack0xfffffff0,(float)item1,item2,
-             MethodInfo__System__ValueTuple<float,_float>__ValueTuple_float__float_);
-  return VVar2;
+  VVar4.Item2 = fVar3;
+  VVar4.Item1 = fVar2;
+  return VVar4;
 }
 
 
@@ -308,27 +477,112 @@ float Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Costume::CostumeDa
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
-    func_?(&
-                    float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
-                   );
-    func_?(&TypeInfo__Extensions);
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Extensions);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
+  if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).field_0x1c ==
+      0) {
+    FUN_?(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
   }
-  hashtable = TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->static_fields->
-              minValues;
-  if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Extensions);
+  this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
+         TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->static_fields->minValues
+  ;
+  if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  fVar1 = Extensions::Extensions_GetValueOrDefault_4
-                    (hashtable,key,0.0,
-                     float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
-                    );
-  return fVar1;
+  pMVar1 = 
+  float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
+  ;
+  if ((
+      float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
+      ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    if ((pMVar1->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(pMVar1);
+    }
+  }
+  if (this == (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)0x0) goto code_?;
+  iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+          UIElements::StyleComplexSelector+PseudoStateData]::
+          Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
+                    (this,(Object *)key,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                     ->klass->rgctx_data[0x21].method);
+  if (iVar2 < 0) {
+    return 0.0;
+  }
+  pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+           Dictionary_2_System_Object_System_Object__get_Item
+                     ((Dictionary_2_System_Object_System_Object_ *)this,(Object *)key,
+                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                     );
+  pvVar4 = ((pMVar1->field7_0x38).rgctx_data)->rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar4 + 0x135) & 1) == 0) {
+    pvVar4 = (void *)FUN_?(pvVar4);
+  }
+  lVar5 = FUN_?(pOVar3,pvVar4);
+  if (lVar5 == 0) {
+    pvVar4 = (pMVar1->field7_0x38).rgctx_data[1].rgctxDataDummy;
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    if (pvVar4 == (void *)0x0) goto code_?;
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    lVar5 = FUN_?(pvVar4,1);
+    plVar6 = (longlong *)FUN_?(lVar5 + 0x20);
+    if (plVar6 == (longlong *)0x0) goto code_?;
+    cVar7 = (**(code **)(*plVar6 + 0x588))(plVar6,*(undefined8 *)(*plVar6 + 0x590));
+    if ((cVar7 == '\0') || (pOVar3 == (Object *)0x0)) {
+      return 0.0;
+    }
+    pOVar8 = (Object *)0x0;
+    if (pOVar3->klass == pORam0000000182db2418) {
+      pOVar8 = pOVar3;
+    }
+    if (pOVar8 == (Object *)0x0) {
+      return 0.0;
+    }
+  }
+  lVar5 = *(longlong *)(pMVar1->field7_0x38).methodMetadataHandle;
+  if ((*(byte *)(lVar5 + 0x135) & 1) == 0) {
+    lVar5 = FUN_?(lVar5);
+  }
+  if (pOVar3 != (Object *)0x0) {
+    if ((pOVar3->klass->_0).element_class != *(Il2CppClass **)(lVar5 + 0x40)) {
+      FUN_?(pOVar3,lVar5);
+      pcVar9 = (code *)swi(3);
+      fVar10 = (float)(*pcVar9)();
+      return fVar10;
+    }
+    return *(float *)&pOVar3[1].klass;
+  }
+code_?:
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  fVar10 = (float)(*pcVar9)();
+  return fVar10;
 }
 
 
@@ -339,182 +593,282 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Costume::CostumeDat
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__System__Single);
-    func_?(&TypeInfo__System__Single);
-    func_?(&C36CE5638DD27777014447AD9350E44FA4D4894EC74053BF0961E590F8D30685_Field);
-    func_?(&StringLiteral_TrailEnabled);
-    func_?(&StringLiteral_TrailLength);
-    func_?(&StringLiteral_PlayersCanCollide);
-    func_?(&StringLiteral_TrailColor);
-    func_?(&StringLiteral_PlayerInvisible);
-    func_?(&StringLiteral_Name);
-    func_?(&StringLiteral_Health);
-    func_?(&StringLiteral_MovementSpeed);
-    func_?(&StringLiteral_Box);
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Single);
+    LOCK();
+    UNLOCK();
+    FUN_?(&C36CE5638DD27777014447AD9350E44FA4D4894EC74053BF0961E590F8D30685_Field);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_TrailEnabled);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_TrailLength);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_PlayersCanCollide);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_TrailColor);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_PlayerInvisible);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Name);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Health);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_MovementSpeed);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Box);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-            *)func_?(
-                             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                             );
+  pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+            *)FUN_?(
+                           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                           );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
-  StyleComplexSelector+PseudoStateData]::
-  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+  UIR::UIRenderDevice+DisableForceGammaMaterial]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
             (pDVar1,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+  if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
                  *)0x0) {
+    IVar2 = CONCAT31((int3)((uint)in_R9D >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
+    Dictionary_2_System_Object_System_Object__TryInsert
               ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)StringLiteral_Name,
-               (Object *)StringLiteral_Box,
+               (Object *)StringLiteral_Box,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    pOVar2 = (Object *)func_?(TypeInfo__System__Single,&stack0xfffffff4);
+               ->klass->rgctx_data[0x22].method);
+    auStackX_10[0] = 0x42c80000;
+    pOVar3 = (Object *)FUN_?(uRam_?,auStackX_10);
+    IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
+    Dictionary_2_System_Object_System_Object__TryInsert
               ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)StringLiteral_Health,
-               pOVar2,
+               pOVar3,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    pOVar2 = (Object *)func_?(TypeInfo__System__Single,&stack0xfffffff0);
+               ->klass->rgctx_data[0x22].method);
+    auStackX_10[0] = 0x41000000;
+    pOVar3 = (Object *)FUN_?(uRam_?,auStackX_10);
+    IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
+    Dictionary_2_System_Object_System_Object__TryInsert
               ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-               (Object *)StringLiteral_MovementSpeed,pOVar2,
+               (Object *)StringLiteral_MovementSpeed,pOVar3,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    pOVar2 = (Object *)func_?();
+               ->klass->rgctx_data[0x22].method);
+    auStackX_10[0]._0_1_ = 1;
+    pOVar3 = (Object *)FUN_?(uRam_?,auStackX_10);
+    IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
+    Dictionary_2_System_Object_System_Object__TryInsert
               ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-               (Object *)StringLiteral_PlayerInvisible,pOVar2,
+               (Object *)StringLiteral_PlayerInvisible,pOVar3,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    pOVar2 = (Object *)func_?();
+               ->klass->rgctx_data[0x22].method);
+    auStackX_10[0]._0_1_ = 1;
+    pOVar3 = (Object *)FUN_?(uRam_?,auStackX_10);
+    IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
+    Dictionary_2_System_Object_System_Object__TryInsert
               ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-               (Object *)StringLiteral_PlayersCanCollide,pOVar2,
+               (Object *)StringLiteral_PlayersCanCollide,pOVar3,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    pOVar2 = (Object *)func_?();
+               ->klass->rgctx_data[0x22].method);
+    auStackX_10[0] = CONCAT31(auStackX_10[0]._1_3_,1);
+    pOVar3 = (Object *)FUN_?(uRam_?,auStackX_10);
+    IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
+    Dictionary_2_System_Object_System_Object__TryInsert
               ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-               (Object *)StringLiteral_TrailEnabled,pOVar2,
+               (Object *)StringLiteral_TrailEnabled,pOVar3,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    pOVar2 = (Object *)func_?();
+               ->klass->rgctx_data[0x22].method);
+    auStackX_10[0] = 0x3f800000;
+    pOVar3 = (Object *)FUN_?(uRam_?,auStackX_10);
+    IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
+    Dictionary_2_System_Object_System_Object__TryInsert
               ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-               (Object *)StringLiteral_TrailLength,pOVar2,
+               (Object *)StringLiteral_TrailLength,pOVar3,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    array = (Array *)func_?();
+               ->klass->rgctx_data[0x22].method);
+    array = (Array *)FUN_?(TypeInfo__System__Single,4);
     mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
     RuntimeHelpers_InitializeArray_1
               (array,_C36CE5638DD27777014447AD9350E44FA4D4894EC74053BF0961E590F8D30685_Field,
                (MethodInfo *)0x0);
+    IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
+    Dictionary_2_System_Object_System_Object__TryInsert
               ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-               (Object *)StringLiteral_TrailColor,(Object *)array,
+               (Object *)StringLiteral_TrailColor,(Object *)array,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
+               ->klass->rgctx_data[0x22].method);
     TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->static_fields->
     defaultItemValues = (Dictionary_2_System_Object_System_Object_ *)pDVar1;
-    func_?();
-    pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-              *)func_?();
+    if (iRam_? != 0) {
+      uVar4 = (uint)((ulonglong)
+                     TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->
+                     static_fields >> 0xc);
+      uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+      do {
+        uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+        puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+        LOCK();
+        bVar8 = uVar6 == *puVar7;
+        if (bVar8) {
+          *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar8);
+    }
+    pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+              *)FUN_?(
+                             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                             );
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
-    ::StyleComplexSelector+PseudoStateData]::
-    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+    ::UIR::UIRenderDevice+DisableForceGammaMaterial]::
+    Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
               (pDVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
               );
-    pOVar2 = (Object *)func_?();
-    if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+    auStackX_10[0] = 0x3f800000;
+    pOVar3 = (Object *)FUN_?(uRam_?,auStackX_10);
+    if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
                    *)0x0) {
+      IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
+      Dictionary_2_System_Object_System_Object__TryInsert
                 ((Dictionary_2_System_Object_System_Object_ *)pDVar1,(Object *)StringLiteral_Health,
-                 pOVar2,
+                 pOVar3,IVar2,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                );
-      pOVar2 = (Object *)func_?(TypeInfo__System__Single,&stack0xffffffe4);
+                 ->klass->rgctx_data[0x22].method);
+      auStackX_10[0] = 0x3f800000;
+      pOVar3 = (Object *)FUN_?(uRam_?,auStackX_10);
+      IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
+      Dictionary_2_System_Object_System_Object__TryInsert
                 ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-                 (Object *)StringLiteral_MovementSpeed,pOVar2,
+                 (Object *)StringLiteral_MovementSpeed,pOVar3,IVar2,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                );
-      pOVar2 = (Object *)func_?(TypeInfo__System__Single,&stack0xffffffe0);
+                 ->klass->rgctx_data[0x22].method);
+      auStackX_10[0] = 0x3dcccccd;
+      pOVar3 = (Object *)FUN_?(uRam_?,auStackX_10);
+      IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
+      Dictionary_2_System_Object_System_Object__TryInsert
                 ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-                 (Object *)StringLiteral_TrailLength,pOVar2,
+                 (Object *)StringLiteral_TrailLength,pOVar3,IVar2,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                );
+                 ->klass->rgctx_data[0x22].method);
       TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->static_fields->minValues =
            (Dictionary_2_System_Object_System_Object_ *)pDVar1;
-      func_?();
-      pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                *)func_?();
+      if (iRam_? != 0) {
+        uVar4 = (uint)((ulonglong)
+                       &TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->
+                        static_fields->minValues >> 0xc);
+        uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+        do {
+          uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+          puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+          LOCK();
+          bVar8 = uVar6 == *puVar7;
+          if (bVar8) {
+            *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar8);
+      }
+      pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+                *)FUN_?(
+                               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                               );
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-      UIElements::StyleComplexSelector+PseudoStateData]::
-      Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+      UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::
+      Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
                 (pDVar1,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                 );
-      pOVar2 = (Object *)func_?();
-      if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+      auStackX_10[0] = 0x4479c000;
+      pOVar3 = (Object *)FUN_?(uRam_?,auStackX_10);
+      if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
                      *)0x0) {
+        IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
+        Dictionary_2_System_Object_System_Object__TryInsert
                   ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-                   (Object *)StringLiteral_Health,pOVar2,
+                   (Object *)StringLiteral_Health,pOVar3,IVar2,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                  );
-        puStack_3 = (undefined *)0x41f00000;
-        pOVar2 = (Object *)func_?(TypeInfo__System__Single,&puStack_3);
+                   ->klass->rgctx_data[0x22].method);
+        auStackX_10[0] = 0x41f00000;
+        pOVar3 = (Object *)FUN_?(uRam_?,auStackX_10);
+        IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
+        Dictionary_2_System_Object_System_Object__TryInsert
                   ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-                   (Object *)StringLiteral_MovementSpeed,pOVar2,
+                   (Object *)StringLiteral_MovementSpeed,pOVar3,IVar2,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                  );
-        uStack_4 = 0x40a00000;
-        pOVar2 = (Object *)func_?(TypeInfo__System__Single,&uStack_4);
+                   ->klass->rgctx_data[0x22].method);
+        auStackX_10[0] = 0x40a00000;
+        pOVar3 = (Object *)FUN_?(uRam_?,auStackX_10);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
+        Dictionary_2_System_Object_System_Object__TryInsert
                   ((Dictionary_2_System_Object_System_Object_ *)pDVar1,
-                   (Object *)StringLiteral_TrailLength,pOVar2,
+                   (Object *)StringLiteral_TrailLength,pOVar3,CONCAT31((int3)(IVar2 >> 8),2),
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                  );
+                   ->klass->rgctx_data[0x22].method);
         TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->static_fields->maxValues
              = (Dictionary_2_System_Object_System_Object_ *)pDVar1;
-        func_?();
+        if (iRam_? != 0) {
+          uVar4 = (uint)((ulonglong)
+                         &TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->
+                          static_fields->maxValues >> 0xc);
+          uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+          do {
+            uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+            puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+            LOCK();
+            bVar8 = uVar6 == *puVar7;
+            if (bVar8) {
+              *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar8);
+        }
         return;
       }
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

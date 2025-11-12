@@ -5,29 +5,102 @@ void Assembly-CSharp.dll::LocalizedText::LocalizedText_Awake(LocalizedText *this
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action);
-    func_?(&MethodInfo__LocalizedText__LanguageLoadedCallback__);
+    FUN_?(&TypeInfo__System__Action);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__LocalizedText__LanguageLoadedCallback__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).text;
-  if (pTVar1 != (Text *)0x0) {
-    pSVar2 = (String *)
-             (*(code *)(pTVar1->klass->vtable).get_text.method)
-                       (pTVar1,(pTVar1->klass->vtable).set_text.methodPtr);
-    pSVar2 = TM::TM__(pSVar2,(MethodInfo *)0x0);
-    (*(code *)(pTVar1->klass->vtable).set_text.method)
-              (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,MethodInfo__LocalizedText__LanguageLoadedCallback__,
-               (MethodInfo *)0x0);
-    TM::TM_LanguageChanged((Action *)this_00,(MethodInfo *)0x0);
+  if (pTVar1 == (Text *)0x0) {
+    FUN_?(0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pSVar3 = (String *)(*(pTVar1->klass->vtable).get_text.methodPtr)();
+  pSVar3 = TM::TM__(pSVar3,(MethodInfo *)0x0);
+  (*(pTVar1->klass->vtable).set_text.methodPtr)
+            (pTVar1,pSVar3,(pTVar1->klass->vtable).set_text.method);
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_00,(Object *)this,MethodInfo__LocalizedText__LanguageLoadedCallback__,
+             (MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<System::Action>__Add_System__Action_
+                  ,0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pTVar4 = TM::TM_get_Instance((MethodInfo *)0x0);
+  if (pTVar4 != (TM *)0x0) {
+    if ((pTVar4->fields).languageLoadingDone != 0) {
+      return;
+    }
+    pTVar4 = TM::TM_get_Instance((MethodInfo *)0x0);
+    pMVar5 = MethodInfo__System__Collections__Generic__List<System::Action>__Add_System__Action_;
+    if ((pTVar4 != (TM *)0x0) &&
+       (pLVar6 = (pTVar4->fields).languageChangedCallback, pLVar6 != (List_1_System_Action_ *)0x0))
+    {
+      pAVar7 = (pLVar6->fields)._items;
+      piVar8 = &(pLVar6->fields)._version;
+      *piVar8 = *piVar8 + 1;
+      if (pAVar7 == (Action__Array *)0x0) {
+        FUN_?();
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      uVar9 = (pLVar6->fields)._size;
+      if (uVar9 < (uint)pAVar7->max_length) {
+        (pLVar6->fields)._size = uVar9 + 1;
+      }
+      else {
+        uVar9 = (pLVar6->fields)._size;
+        FUN_?(pLVar6,uVar9 + 1,
+                      (pMVar5->klass->rgctx_data[0xe].method)->klass->rgctx_data[0xf].rgctxDataDummy
+                      ,pAVar7,unaff_RDI);
+        pAVar7 = (pLVar6->fields)._items;
+        (pLVar6->fields)._size = uVar9 + 1;
+        if (pAVar7 == (Action__Array *)0x0) {
+          FUN_?();
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+      }
+      if ((uint)pAVar7->max_length <= uVar9) {
+        FUN_?();
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      bVar10 = iRam_? != 0;
+      pAVar7->vector[(int)uVar9] = (Action *)this_00;
+      if (bVar10) {
+        uVar9 = (uint)((ulonglong)(pAVar7->vector + (int)uVar9) >> 0xc);
+        puVar11 = (ulonglong *)((ulonglong)((uVar9 & 0x1fffff) >> 6) * 8 + 0xADDR);
+        do {
+          uVar12 = *puVar11;
+          LOCK();
+          uVar13 = *puVar11;
+          if (uVar12 == uVar13) {
+            *puVar11 = uVar12 | 1L << (uVar9 & 0x3f);
+          }
+          UNLOCK();
+        } while (uVar12 != uVar13);
+      }
+      return;
+    }
+  }
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -40,15 +113,16 @@ void Assembly-CSharp.dll::LocalizedText::LocalizedText_LanguageLoadedCallback
 {
   pTVar1 = (this->fields).text;
   if (pTVar1 != (Text *)0x0) {
-    pSVar2 = (String *)
-             (*(code *)(pTVar1->klass->vtable).get_text.method)
-                       (pTVar1,(pTVar1->klass->vtable).set_text.methodPtr);
+    pSVar2 = (String *)(*(pTVar1->klass->vtable).get_text.methodPtr)();
     pSVar2 = TM::TM__(pSVar2,(MethodInfo *)0x0);
-    (*(code *)(pTVar1->klass->vtable).set_text.method)
-              (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    UNRECOVERED_JUMPTABLE = (pTVar1->klass->vtable).set_text.methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*UNRECOVERED_JUMPTABLE)
+              (pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method,UNRECOVERED_JUMPTABLE);
     return;
   }
-  func_?();
+  FUN_?(0);
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -61,51 +135,96 @@ void Assembly-CSharp.dll::LocalizedText::LocalizedText_Reset(LocalizedText *this
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    UnityEngine__UI__Text_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Text>__
-                   );
-    func_?(&StringLiteral____Text__);
-    func_?(&StringLiteral_____0___);
-    func_?(&::StringLiteral__);
+    FUN_?(&
+                  UnityEngine__UI__Text_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Text>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral____Text__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_____0___);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pTVar1 = (Text *)UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                              ((Component *)this,
                               UnityEngine__UI__Text_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Text>__
                              );
+  bVar2 = iRam_? != 0;
   (this->fields).text = pTVar1;
-  func_?(&(this->fields).text,pTVar1);
-  pTVar1 = (this->fields).text;
-  if (pTVar1 != (Text *)0x0) {
-    pSVar2 = (String *)
-             (*(code *)(pTVar1->klass->vtable).get_text.method)
-                       (pTVar1,(pTVar1->klass->vtable).set_text.methodPtr);
-    bVar3 = mscorlib.dll::System::String::String_op_Equality
-                      (pSVar2,::StringLiteral__,(MethodInfo *)0x0);
-    pTVar1 = (this->fields).text;
-    if (bVar3 == 0) {
-      if (pTVar1 != (Text *)0x0) {
-        arg0 = (Object *)
-               (*(code *)(pTVar1->klass->vtable).get_text.method)
-                         (pTVar1,(pTVar1->klass->vtable).set_text.methodPtr);
-        pSVar2 = mscorlib.dll::System::String::String_Format
-                           (StringLiteral_____0___,arg0,(MethodInfo *)0x0);
-        (*(code *)(pTVar1->klass->vtable).set_text.method)
-                  (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
-        ;
-        return;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).text >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
       }
-    }
-    else if (pTVar1 != (Text *)0x0) {
-      (*(code *)(pTVar1->klass->vtable).set_text.method)
-                (pTVar1,StringLiteral____Text__,
-                 (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
+  pTVar1 = (this->fields).text;
+  if (pTVar1 == (Text *)0x0) goto code_?;
+  pSVar7 = (String *)
+           (*(pTVar1->klass->vtable).get_text.methodPtr)
+                     (pTVar1,(pTVar1->klass->vtable).get_text.method);
+  if (pSVar7 == ::StringLiteral__) {
+    pTVar1 = (this->fields).text;
+code_?:
+    if (pTVar1 != (Text *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*(pTVar1->klass->vtable).set_text.methodPtr)
+                (pTVar1,StringLiteral____Text__,(pTVar1->klass->vtable).set_text.method);
       return;
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  else {
+    if (((pSVar7 == (String *)0x0) || (::StringLiteral__ == (String *)0x0)) ||
+       ((pSVar7->fields)._stringLength != (::StringLiteral__->fields)._stringLength)) {
+      pTVar1 = (this->fields).text;
+    }
+    else {
+      bVar8 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                        ((uint8_t *)&(pSVar7->fields)._firstChar,
+                         (uint8_t *)&(::StringLiteral__->fields)._firstChar,
+                         (longlong)(pSVar7->fields)._stringLength * 2,(MethodInfo *)0x0);
+      pTVar1 = (this->fields).text;
+      if (bVar8 != 0) goto code_?;
+    }
+    pTVar9 = (this->fields).text;
+    if (pTVar9 != (Text *)0x0) {
+      arg0 = (Object *)
+             (*(pTVar9->klass->vtable).get_text.methodPtr)
+                       (pTVar9,(pTVar9->klass->vtable).get_text.method);
+      pSVar7 = StringLiteral_____0___;
+      PStack_10._arg0 = (Object *)0x0;
+      PStack_10._arg1 = (Object *)0x0;
+      PStack_10._arg2 = (Object *)0x0;
+      PStack_10._args = (Object__Array *)0x0;
+      mscorlib.dll::System::ParamsArray::ParamsArray__ctor(&PStack_10,arg0,(MethodInfo *)0x0);
+      PStack_11._arg0 = PStack_10._arg0;
+      PStack_11._arg1 = PStack_10._arg1;
+      PStack_11._arg2 = PStack_10._arg2;
+      PStack_11._args = PStack_10._args;
+      pSVar7 = mscorlib.dll::System::String::String_FormatHelper
+                         ((IFormatProvider *)0x0,pSVar7,&PStack_11,(MethodInfo *)0x0);
+      (*(pTVar1->klass->vtable).set_text.methodPtr)
+                (pTVar1,pSVar7,(pTVar1->klass->vtable).set_text.method);
+      return;
+    }
+  }
+code_?:
+  FUN_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

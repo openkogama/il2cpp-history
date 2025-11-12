@@ -9,14 +9,16 @@ SpawnRoleVariable_1_T_SubDelegate_System_ByteEnum__BeginInvoke
           AsyncCallback *callback,Object *object,MethodInfo *method)
 
 {
+  auStackX_10[0] = (undefined1)value;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__ByteEnum);
+    FUN_?(&TypeInfo__System__ByteEnum);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   uStack_1 = 0;
-  uVar2 = func_?(TypeInfo__System__ByteEnum,&value);
-  uStack_1 = CONCAT44(uStack_1._4_4_,uVar2);
-  pIVar3 = (IAsyncResult *)func_?(this,&uStack_1,callback,object);
+  uStack_2 = FUN_?(TypeInfo__System__ByteEnum,auStackX_10);
+  pIVar3 = (IAsyncResult *)FUN_?(this,&uStack_2,callback,object);
   return pIVar3;
 }
 

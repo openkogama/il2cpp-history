@@ -6,72 +6,210 @@ void Assembly-CSharp.dll::RTG::GizmoLineSlider2DLookAndFeel::GizmoLineSlider2DLo
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__GizmoCap2DLookAndFeel);
-    func_?(&TypeInfo__RTG__GizmoRotationArc2DLookAndFeel);
+    FUN_?(&TypeInfo__RTG__GizmoCap2DLookAndFeel);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GizmoRotationArc2DLookAndFeel);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  fVar1 = _UNK_?;
-  fVar2 = _UNK_?;
-  fVar3 = _UNK_?;
-  fVar4 = _UNK_?;
+  uVar1 = _UNK_?;
+  uVar2 = _UNK_?;
+  uVar3 = _UNK_?;
+  uVar4 = _UNK_?;
+  uVar5 = _UNK_?;
+  (this->fields)._color.r = (float)_UNK_?;
+  uVar6 = _UNK_?;
+  (this->fields)._color.g = (float)uVar5;
+  _UNK_? = (undefined4)uVar1;
+  _UNK_? = SUB84(uVar1,4);
+  uVar5 = _UNK_?;
+  (this->fields)._color.b = (float)_UNK_?;
+  _UNK_? = uVar6;
+  (this->fields)._color.a = (float)uVar5;
   (this->fields)._length = 50.0;
+  uVar6 = _UNK_?;
+  _UNK_? = (undefined4)uVar4;
+  _UNK_? = SUB84(uVar4,4);
+  uVar5 = _UNK_?;
+  (this->fields)._hoveredColor.r = (float)_UNK_?;
+  _UNK_? = uVar6;
+  uVar6 = _UNK_?;
+  (this->fields)._hoveredColor.g = (float)uVar5;
+  _UNK_? = (undefined4)uVar3;
+  _UNK_? = SUB84(uVar3,4);
+  uVar5 = _UNK_?;
+  (this->fields)._hoveredColor.b = (float)_UNK_?;
+  _UNK_? = uVar6;
+  (this->fields)._hoveredColor.a = (float)uVar5;
   (this->fields)._scale = 1.0;
+  uVar6 = _UNK_?;
+  _UNK_? = (undefined4)uVar2;
+  _UNK_? = SUB84(uVar2,4);
+  uVar5 = _UNK_?;
+  (this->fields)._borderColor.r = (float)_UNK_?;
+  _UNK_? = uVar6;
+  uVar6 = _UNK_?;
+  (this->fields)._borderColor.g = (float)uVar5;
+  _UNK_? = (undefined4)uVar1;
+  _UNK_? = SUB84(uVar1,4);
+  uVar5 = _UNK_?;
+  (this->fields)._borderColor.b = (float)_UNK_?;
+  _UNK_? = uVar6;
+  (this->fields)._borderColor.a = (float)uVar5;
   (this->fields)._boxThickness = 3.0;
+  uVar6 = _UNK_?;
+  _UNK_? = (undefined4)uVar4;
+  _UNK_? = SUB84(uVar4,4);
+  uVar5 = _UNK_?;
+  (this->fields)._hoveredBorderColor.r = (float)_UNK_?;
+  _UNK_? = uVar6;
+  uVar4 = _UNK_?;
+  (this->fields)._hoveredBorderColor.g = (float)uVar5;
+  _UNK_? = (undefined4)uVar3;
+  _UNK_? = SUB84(uVar3,4);
+  uVar5 = _UNK_?;
+  (this->fields)._hoveredBorderColor.b = (float)_UNK_?;
+  _UNK_? = uVar4;
+  (this->fields)._hoveredBorderColor.a = (float)uVar5;
   (this->fields)._isRotationArcVisible = 1;
-  (this->fields)._color.r = fVar4;
-  (this->fields)._color.g = fVar3;
-  (this->fields)._color.b = fVar2;
-  (this->fields)._color.a = fVar1;
-  pCVar5 = RTSystemValues::RTSystemValues_get_HoveredAxisColor(&CStack_6,(MethodInfo *)0x0);
-  fVar4 = pCVar5->g;
-  fVar3 = pCVar5->b;
-  fVar2 = pCVar5->a;
-  (this->fields)._hoveredColor.r = pCVar5->r;
-  (this->fields)._hoveredColor.g = fVar4;
-  (this->fields)._hoveredColor.b = fVar3;
-  (this->fields)._hoveredColor.a = fVar2;
-  fVar2 = _UNK_?;
-  fVar3 = _UNK_?;
-  fVar4 = _UNK_?;
-  (this->fields)._borderColor.r = _UNK_?;
-  (this->fields)._borderColor.g = fVar4;
-  (this->fields)._borderColor.b = fVar3;
-  (this->fields)._borderColor.a = fVar2;
-  pCVar5 = RTSystemValues::RTSystemValues_get_HoveredAxisColor(&CStack_6,(MethodInfo *)0x0);
-  fVar4 = pCVar5->g;
-  fVar3 = pCVar5->b;
-  fVar2 = pCVar5->a;
-  (this->fields)._hoveredBorderColor.r = pCVar5->r;
-  (this->fields)._hoveredBorderColor.g = fVar4;
-  (this->fields)._hoveredBorderColor.b = fVar3;
-  (this->fields)._hoveredBorderColor.a = fVar2;
-  this_00 = (GizmoRotationArc3DLookAndFeel *)
-            func_?(TypeInfo__RTG__GizmoRotationArc2DLookAndFeel);
-  GizmoRotationArc3DLookAndFeel::GizmoRotationArc3DLookAndFeel__ctor(this_00,(MethodInfo *)0x0);
-  (this->fields)._rotationArcLookAndFeel = (GizmoRotationArc2DLookAndFeel *)this_00;
-  func_?(&(this->fields)._rotationArcLookAndFeel,this_00);
-  this_01 = (GizmoCap2DLookAndFeel *)func_?(TypeInfo__RTG__GizmoCap2DLookAndFeel);
-  GizmoCap2DLookAndFeel::GizmoCap2DLookAndFeel__ctor(this_01,(MethodInfo *)0x0);
-  method_00 = (MethodInfo *)&(this->fields)._capLookAndFeel;
-  (this->fields)._capLookAndFeel = this_01;
-  func_?(method_00,this_01);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  return;
-}
-
-
-/* Void set_HoveredBorderColor(Color) */
-
-void Assembly-CSharp.dll::RTG::GizmoLineSlider2DLookAndFeel::
-     GizmoLineSlider2DLookAndFeel_set_HoveredBorderColor
-               (GizmoLineSlider2DLookAndFeel *this,Color value,MethodInfo *method)
-
-{
-  (this->fields)._hoveredBorderColor.r = value.r;
-  (this->fields)._hoveredBorderColor.g = value.g;
-  (this->fields)._hoveredBorderColor.b = value.b;
-  (this->fields)._hoveredBorderColor.a = value.a;
+  pGVar7 = (GizmoRotationArc2DLookAndFeel *)
+           FUN_?(TypeInfo__RTG__GizmoRotationArc2DLookAndFeel);
+  uVar1 = _UNK_?;
+  uVar2 = _UNK_?;
+  uVar3 = _UNK_?;
+  uVar4 = _UNK_?;
+  bVar8 = iRam_? != 0;
+  (pGVar7->fields)._useShortestRotation = 1;
+  (pGVar7->fields)._fillFlags = 3;
+  uVar6 = _UNK_?;
+  _UNK_? = (undefined4)uVar4;
+  _UNK_? = SUB84(uVar4,4);
+  uVar5 = _UNK_?;
+  (pGVar7->fields)._color.r = (float)_UNK_?;
+  _UNK_? = uVar6;
+  uVar4 = _UNK_?;
+  (pGVar7->fields)._color.g = (float)uVar5;
+  _UNK_? = (undefined4)uVar3;
+  _UNK_? = SUB84(uVar3,4);
+  uVar5 = _UNK_?;
+  (pGVar7->fields)._color.b = (float)_UNK_?;
+  _UNK_? = uVar4;
+  uVar4 = _UNK_?;
+  (pGVar7->fields)._color.a = (float)uVar5;
+  _UNK_? = (undefined4)uVar2;
+  _UNK_? = SUB84(uVar2,4);
+  uVar5 = _UNK_?;
+  (pGVar7->fields)._borderColor.r = (float)_UNK_?;
+  _UNK_? = uVar4;
+  uVar4 = _UNK_?;
+  (pGVar7->fields)._borderColor.g = (float)uVar5;
+  _UNK_? = (undefined4)uVar1;
+  _UNK_? = SUB84(uVar1,4);
+  uVar5 = _UNK_?;
+  (pGVar7->fields)._borderColor.b = (float)_UNK_?;
+  _UNK_? = uVar4;
+  (pGVar7->fields)._borderColor.a = (float)uVar5;
+  (this->fields)._rotationArcLookAndFeel = pGVar7;
+  if (bVar8) {
+    uVar9 = (uint)((ulonglong)&(this->fields)._rotationArcLookAndFeel >> 0xc);
+    uVar10 = (ulonglong)((uVar9 & 0x1fffff) >> 6);
+    do {
+      uVar11 = *(ulonglong *)(uVar10 * 8 + 0xADDR);
+      puVar12 = (ulonglong *)(uVar10 * 8 + 0xADDR);
+      LOCK();
+      bVar8 = uVar11 == *puVar12;
+      if (bVar8) {
+        *puVar12 = uVar11 | 1L << (uVar9 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar8);
+  }
+  pGVar13 = (GizmoCap2DLookAndFeel *)FUN_?(TypeInfo__RTG__GizmoCap2DLookAndFeel);
+  uVar1 = _UNK_?;
+  uVar2 = _UNK_?;
+  uVar3 = _UNK_?;
+  uVar4 = _UNK_?;
+  bVar8 = iRam_? != 0;
+  (pGVar13->fields)._fillMode = 2;
+  (pGVar13->fields)._scale = 1.0;
+  (pGVar13->fields)._circleRadius = 12.0;
+  (pGVar13->fields)._quadWidth = 25.0;
+  (pGVar13->fields)._quadHeight = 25.0;
+  (pGVar13->fields)._arrowBaseRadius = 5.0;
+  (pGVar13->fields)._arrowHeight = 20.0;
+  uVar6 = _UNK_?;
+  _UNK_? = (undefined4)uVar2;
+  _UNK_? = SUB84(uVar2,4);
+  uVar5 = _UNK_?;
+  (pGVar13->fields)._color.r = (float)_UNK_?;
+  _UNK_? = uVar6;
+  uVar6 = _UNK_?;
+  (pGVar13->fields)._color.g = (float)uVar5;
+  _UNK_? = (undefined4)uVar1;
+  _UNK_? = SUB84(uVar1,4);
+  uVar5 = _UNK_?;
+  (pGVar13->fields)._color.b = (float)_UNK_?;
+  _UNK_? = uVar6;
+  uVar6 = _UNK_?;
+  (pGVar13->fields)._color.a = (float)uVar5;
+  _UNK_? = (undefined4)uVar4;
+  _UNK_? = SUB84(uVar4,4);
+  uVar5 = _UNK_?;
+  (pGVar13->fields)._hoveredColor.r = (float)_UNK_?;
+  _UNK_? = uVar6;
+  uVar6 = _UNK_?;
+  (pGVar13->fields)._hoveredColor.g = (float)uVar5;
+  _UNK_? = (undefined4)uVar3;
+  _UNK_? = SUB84(uVar3,4);
+  uVar5 = _UNK_?;
+  (pGVar13->fields)._hoveredColor.b = (float)_UNK_?;
+  _UNK_? = uVar6;
+  uVar6 = _UNK_?;
+  (pGVar13->fields)._hoveredColor.a = (float)uVar5;
+  _UNK_? = (undefined4)uVar2;
+  _UNK_? = SUB84(uVar2,4);
+  uVar5 = _UNK_?;
+  (pGVar13->fields)._borderColor.r = (float)_UNK_?;
+  _UNK_? = uVar6;
+  uVar6 = _UNK_?;
+  (pGVar13->fields)._borderColor.g = (float)uVar5;
+  _UNK_? = (undefined4)uVar1;
+  _UNK_? = SUB84(uVar1,4);
+  uVar5 = _UNK_?;
+  (pGVar13->fields)._borderColor.b = (float)_UNK_?;
+  _UNK_? = uVar6;
+  uVar6 = _UNK_?;
+  (pGVar13->fields)._borderColor.a = (float)uVar5;
+  _UNK_? = (undefined4)uVar4;
+  _UNK_? = SUB84(uVar4,4);
+  uVar5 = _UNK_?;
+  (pGVar13->fields)._hoveredBorderColor.r = (float)_UNK_?;
+  _UNK_? = uVar6;
+  uVar4 = _UNK_?;
+  (pGVar13->fields)._hoveredBorderColor.g = (float)uVar5;
+  _UNK_? = (undefined4)uVar3;
+  _UNK_? = SUB84(uVar3,4);
+  uVar5 = _UNK_?;
+  (pGVar13->fields)._hoveredBorderColor.b = (float)_UNK_?;
+  _UNK_? = uVar4;
+  (pGVar13->fields)._hoveredBorderColor.a = (float)uVar5;
+  (this->fields)._capLookAndFeel = pGVar13;
+  if (bVar8) {
+    uVar9 = (uint)((ulonglong)&(this->fields)._capLookAndFeel >> 0xc);
+    uVar10 = (ulonglong)((uVar9 & 0x1fffff) >> 6);
+    do {
+      uVar11 = *(ulonglong *)(uVar10 * 8 + 0xADDR);
+      puVar12 = (ulonglong *)(uVar10 * 8 + 0xADDR);
+      LOCK();
+      bVar8 = uVar11 == *puVar12;
+      if (bVar8) {
+        *puVar12 = uVar11 | 1L << (uVar9 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar8);
+  }
   return;
 }
 

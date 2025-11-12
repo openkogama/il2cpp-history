@@ -2,17 +2,20 @@
 /* Void AlignTransformAxis(Int32, AxisSign, Vector3) */
 
 void Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_AlignTransformAxis
-               (GizmoCap3D *this,int32_t axisIndex,AxisSign__Enum axisSign,Vector3 axis,
+               (GizmoCap3D *this,int32_t axisIndex,AxisSign__Enum axisSign,Vector3 *axis,
                MethodInfo *method)
 
 {
   this_00 = (this->fields)._transform;
   if (this_00 != (GizmoTransform *)0x0) {
-    GizmoTransform::GizmoTransform_AlignAxis3D(this_00,axisIndex,axisSign,axis,(MethodInfo *)0x0);
+    aVStack_1[0].x = axis->x;
+    aVStack_1[0].y = axis->y;
+    aVStack_1[0].z = axis->z;
+    GizmoTransform::GizmoTransform_AlignAxis3D
+              (this_00,axisIndex,axisSign,aVStack_1,(MethodInfo *)0x0);
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -26,44 +29,57 @@ void Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_ApplyZoomFactor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__IGizmoCap3DController);
+    FUN_?(&TypeInfo__RTG__IGizmoCap3DController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pGVar1 = (&(this->fields)._lookAndFeel)
-           [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-  if (pGVar1 != (GizmoCap3DLookAndFeel *)0x0) {
-    if ((pGVar1->fields)._useZoomFactor == 0) {
+  lVar1 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar1 = 0x98;
+  }
+  lVar1 = *(longlong *)((longlong)&this->klass + lVar1);
+  if (lVar1 != 0) {
+    if (*(char *)(lVar1 + 0x20) == '\0') {
       return;
     }
     pIVar2 = (this->fields)._controllers;
+    uVar3 = 0xa0;
+    if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+      uVar3 = 0x98;
+    }
     if (pIVar2 != (IGizmoCap3DController__Array *)0x0) {
-      uVar3 = ((&(this->fields)._lookAndFeel)
-               [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._capType
-      ;
-      if (pIVar2->max_length <= uVar3) goto code_?;
-      pIVar4 = pIVar2->vector[uVar3];
-      pGVar1 = (&(this->fields)._lookAndFeel)
-               [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-      if (pGVar1 != (GizmoCap3DLookAndFeel *)0x0) {
-        fVar5 = _UNK_?;
-        if ((pGVar1->fields)._useZoomFactor != 0) {
+      uVar3 = *(uint *)(*(longlong *)((longlong)&this->klass + (ulonglong)uVar3) + 0x10);
+      if ((uint)pIVar2->max_length <= uVar3) {
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pIVar5 = pIVar2->vector[(int)uVar3];
+      lVar1 = 0xa0;
+      if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+        lVar1 = 0x98;
+      }
+      lVar1 = *(longlong *)((longlong)&this->klass + lVar1);
+      if (lVar1 != 0) {
+        fVar6 = _UNK_?;
+        if (*(char *)(lVar1 + 0x20) != '\0') {
           this_00 = (this->fields)._._handle;
           if (this_00 == (GizmoHandle *)0x0) goto code_?;
-          fVar5 = GizmoHandle::GizmoHandle_GetZoomFactor(this_00,camera,(MethodInfo *)0x0);
+          fVar6 = GizmoHandle::GizmoHandle_GetZoomFactor(this_00,camera,(MethodInfo *)0x0);
         }
-        if (pIVar4 != (IGizmoCap3DController *)0x0) {
-          func_?(1,TypeInfo__RTG__IGizmoCap3DController,pIVar4,fVar5);
+        if (pIVar5 != (IGizmoCap3DController *)0x0) {
+          FUN_?(1,TypeInfo__RTG__IGizmoCap3DController,pIVar5,fVar6);
           return;
         }
       }
     }
   }
 code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -71,46 +87,80 @@ code_?:
 /* Void CapSlider3D(Vector3, Vector3) */
 
 void Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_CapSlider3D
-               (GizmoCap3D *this,Vector3 sliderDirection,Vector3 sliderEndPt,MethodInfo *method)
+               (GizmoCap3D *this,Vector3 *sliderDirection,Vector3 *sliderEndPt,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__IGizmoCap3DController);
+    FUN_?(&TypeInfo__RTG__IGizmoCap3DController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._controllers;
-  pGVar2 = (&(this->fields)._lookAndFeel)
-           [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-  if ((pGVar2 != (GizmoCap3DLookAndFeel *)0x0) && (pIVar1 != (IGizmoCap3DController__Array *)0x0)) {
-    uVar3 = (pGVar2->fields)._capType;
-    if (pIVar1->max_length <= uVar3) goto code_?;
-    pIVar4 = pIVar1->vector[uVar3];
+  lVar1 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar1 = 0x98;
+  }
+  lVar1 = *(longlong *)((longlong)&this->klass + lVar1);
+  if ((lVar1 != 0) &&
+     (pIVar2 = (this->fields)._controllers, pIVar2 != (IGizmoCap3DController__Array *)0x0)) {
+    uVar3 = *(uint *)(lVar1 + 0x10);
+    if ((uint)pIVar2->max_length <= uVar3) {
+      FUN_?();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    pIVar5 = pIVar2->vector[(int)uVar3];
     this_00 = (this->fields)._._gizmo;
     if (this_00 != (Gizmo *)0x0) {
       camera = Gizmo::Gizmo_GetWorkCamera(this_00,(MethodInfo *)0x0);
-      pGVar2 = (&(this->fields)._lookAndFeel)
-               [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-      if (pGVar2 != (GizmoCap3DLookAndFeel *)0x0) {
-        fVar5 = _UNK_?;
-        if ((pGVar2->fields)._useZoomFactor != 0) {
+      uVar3 = 0xa0;
+      if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+        uVar3 = 0x98;
+      }
+      lVar1 = *(longlong *)((longlong)&this->klass + (ulonglong)uVar3);
+      if (lVar1 != 0) {
+        fVar6 = _UNK_?;
+        if (*(char *)(lVar1 + 0x20) != '\0') {
           this_01 = (this->fields)._._handle;
           if (this_01 == (GizmoHandle *)0x0) goto code_?;
-          fVar5 = GizmoHandle::GizmoHandle_GetZoomFactor(this_01,camera,(MethodInfo *)0x0);
+          fVar6 = GizmoHandle::GizmoHandle_GetZoomFactor(this_01,camera,(MethodInfo *)0x0);
         }
-        if (pIVar4 != (IGizmoCap3DController *)0x0) {
-          func_?(2,TypeInfo__RTG__IGizmoCap3DController,pIVar4,sliderDirection._0_8_,
-                          sliderDirection.z,sliderEndPt._0_8_,sliderEndPt.z,fVar5);
+        if (pIVar5 != (IGizmoCap3DController *)0x0) {
+          pIVar7 = pIVar5->klass;
+          uVar8 = 0;
+          uVar9._0_1_ = (pIVar7->_1).rank;
+          uVar9._1_1_ = (pIVar7->_1).minimumAlignment;
+          if (uVar9 != 0) {
+            do {
+              if (pIVar7->interfaceOffsets[uVar8].interfaceType ==
+                  (Il2CppClass *)TypeInfo__RTG__IGizmoCap3DController) {
+                ppIVar10 = &(&(pIVar7->vtable).UpdateHandles)
+                           [pIVar7->interfaceOffsets[uVar8].offset + 2].methodPtr;
+                goto code_?;
+              }
+              uVar8 = uVar8 + 1;
+            } while (uVar8 < uVar9);
+          }
+          ppIVar10 = (Il2CppMethodPointer *)
+                    FUN_?(pIVar5,TypeInfo__RTG__IGizmoCap3DController,2);
+code_?:
+          uStack_11._0_4_ = sliderEndPt->x;
+          uStack_11._4_4_ = sliderEndPt->y;
+          fStack_12 = sliderEndPt->z;
+          fStack_13 = sliderDirection->z;
+          uStack_14._0_4_ = sliderDirection->x;
+          uStack_14._4_4_ = sliderDirection->y;
+          (**ppIVar10)(pIVar5,&uStack_14,&uStack_11,fVar6,(MethodInfo *)ppIVar10[1]);
           return;
         }
       }
     }
   }
 code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -118,46 +168,80 @@ code_?:
 /* Void CapSlider3DInvert(Vector3, Vector3) */
 
 void Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_CapSlider3DInvert
-               (GizmoCap3D *this,Vector3 sliderDirection,Vector3 sliderEndPt,MethodInfo *method)
+               (GizmoCap3D *this,Vector3 *sliderDirection,Vector3 *sliderEndPt,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__IGizmoCap3DController);
+    FUN_?(&TypeInfo__RTG__IGizmoCap3DController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._controllers;
-  pGVar2 = (&(this->fields)._lookAndFeel)
-           [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-  if ((pGVar2 != (GizmoCap3DLookAndFeel *)0x0) && (pIVar1 != (IGizmoCap3DController__Array *)0x0)) {
-    uVar3 = (pGVar2->fields)._capType;
-    if (pIVar1->max_length <= uVar3) goto code_?;
-    pIVar4 = pIVar1->vector[uVar3];
+  lVar1 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar1 = 0x98;
+  }
+  lVar1 = *(longlong *)((longlong)&this->klass + lVar1);
+  if ((lVar1 != 0) &&
+     (pIVar2 = (this->fields)._controllers, pIVar2 != (IGizmoCap3DController__Array *)0x0)) {
+    uVar3 = *(uint *)(lVar1 + 0x10);
+    if ((uint)pIVar2->max_length <= uVar3) {
+      FUN_?();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    pIVar5 = pIVar2->vector[(int)uVar3];
     this_00 = (this->fields)._._gizmo;
     if (this_00 != (Gizmo *)0x0) {
       camera = Gizmo::Gizmo_GetWorkCamera(this_00,(MethodInfo *)0x0);
-      pGVar2 = (&(this->fields)._lookAndFeel)
-               [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-      if (pGVar2 != (GizmoCap3DLookAndFeel *)0x0) {
-        fVar5 = _UNK_?;
-        if ((pGVar2->fields)._useZoomFactor != 0) {
+      uVar3 = 0xa0;
+      if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+        uVar3 = 0x98;
+      }
+      lVar1 = *(longlong *)((longlong)&this->klass + (ulonglong)uVar3);
+      if (lVar1 != 0) {
+        fVar6 = _UNK_?;
+        if (*(char *)(lVar1 + 0x20) != '\0') {
           this_01 = (this->fields)._._handle;
           if (this_01 == (GizmoHandle *)0x0) goto code_?;
-          fVar5 = GizmoHandle::GizmoHandle_GetZoomFactor(this_01,camera,(MethodInfo *)0x0);
+          fVar6 = GizmoHandle::GizmoHandle_GetZoomFactor(this_01,camera,(MethodInfo *)0x0);
         }
-        if (pIVar4 != (IGizmoCap3DController *)0x0) {
-          func_?(3,TypeInfo__RTG__IGizmoCap3DController,pIVar4,sliderDirection._0_8_,
-                          sliderDirection.z,sliderEndPt._0_8_,sliderEndPt.z,fVar5);
+        if (pIVar5 != (IGizmoCap3DController *)0x0) {
+          pIVar7 = pIVar5->klass;
+          uVar8 = 0;
+          uVar9._0_1_ = (pIVar7->_1).rank;
+          uVar9._1_1_ = (pIVar7->_1).minimumAlignment;
+          if (uVar9 != 0) {
+            do {
+              if (pIVar7->interfaceOffsets[uVar8].interfaceType ==
+                  (Il2CppClass *)TypeInfo__RTG__IGizmoCap3DController) {
+                ppIVar10 = &(&(pIVar7->vtable).UpdateHandles)
+                           [pIVar7->interfaceOffsets[uVar8].offset + 3].methodPtr;
+                goto code_?;
+              }
+              uVar8 = uVar8 + 1;
+            } while (uVar8 < uVar9);
+          }
+          ppIVar10 = (Il2CppMethodPointer *)
+                    FUN_?(pIVar5,TypeInfo__RTG__IGizmoCap3DController,3);
+code_?:
+          uStack_11._0_4_ = sliderEndPt->x;
+          uStack_11._4_4_ = sliderEndPt->y;
+          fStack_12 = sliderEndPt->z;
+          fStack_13 = sliderDirection->z;
+          uStack_14._0_4_ = sliderDirection->x;
+          uStack_14._4_4_ = sliderDirection->y;
+          (**ppIVar10)(pIVar5,&uStack_14,&uStack_11,fVar6,(MethodInfo *)ppIVar10[1]);
           return;
         }
       }
     }
   }
 code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -168,24 +252,37 @@ float Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_GetRealBoxDepth
                 (GizmoCap3D *this,float zoomFactor,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (&(this->fields)._lookAndFeel)
-           [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-  if (pGVar2 == (GizmoCap3DLookAndFeel *)0x0) {
-    uVar3 = func_?(auStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    fVar6 = (float10)(*pcVar5)();
-    return (float)fVar6;
+  lVar1 = 0xa0;
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
   }
-  if ((pGVar2->fields)._useZoomFactor == 0) {
-    zoomFactor = 1.0;
+  lVar2 = *(longlong *)((longlong)&this->klass + lVar2);
+  if (lVar2 == 0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    fVar4 = (float)(*pcVar3)();
+    return fVar4;
   }
-  return ((&(this->fields)._lookAndFeel)
-          [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._boxDepth *
-         ((&(this->fields)._lookAndFeel)
-          [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._scale *
-         zoomFactor;
+  pGVar5 = (this->fields)._sharedLookAndFeel;
+  lVar6 = 0xa0;
+  if (*(char *)(lVar2 + 0x20) != '\0') {
+    if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+      lVar6 = 0x98;
+      lVar1 = 0x98;
+    }
+    return *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x1c) *
+           *(float *)(*(longlong *)((longlong)&this->klass + lVar1) + 0x40) * zoomFactor;
+  }
+  if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar6 = 0x98;
+  }
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
+  }
+  return *(float *)(*(longlong *)((longlong)&this->klass + lVar2) + 0x1c) *
+         *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x40) * _UNK_?;
 }
 
 
@@ -195,24 +292,37 @@ float Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_GetRealBoxHeight
                 (GizmoCap3D *this,float zoomFactor,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (&(this->fields)._lookAndFeel)
-           [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-  if (pGVar2 == (GizmoCap3DLookAndFeel *)0x0) {
-    uVar3 = func_?(auStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    fVar6 = (float10)(*pcVar5)();
-    return (float)fVar6;
+  lVar1 = 0xa0;
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
   }
-  if ((pGVar2->fields)._useZoomFactor == 0) {
-    zoomFactor = 1.0;
+  lVar2 = *(longlong *)((longlong)&this->klass + lVar2);
+  if (lVar2 == 0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    fVar4 = (float)(*pcVar3)();
+    return fVar4;
   }
-  return ((&(this->fields)._lookAndFeel)
-          [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._boxHeight *
-         ((&(this->fields)._lookAndFeel)
-          [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._scale *
-         zoomFactor;
+  pGVar5 = (this->fields)._sharedLookAndFeel;
+  lVar6 = 0xa0;
+  if (*(char *)(lVar2 + 0x20) != '\0') {
+    if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+      lVar6 = 0x98;
+      lVar1 = 0x98;
+    }
+    return *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x1c) *
+           *(float *)(*(longlong *)((longlong)&this->klass + lVar1) + 0x3c) * zoomFactor;
+  }
+  if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar6 = 0x98;
+  }
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
+  }
+  return *(float *)(*(longlong *)((longlong)&this->klass + lVar2) + 0x1c) *
+         *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x3c) * _UNK_?;
 }
 
 
@@ -223,31 +333,64 @@ Vector3 * Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_GetRealBoxSize
                     MethodInfo *method)
 
 {
-  pGVar1 = (&(this->fields)._lookAndFeel)
-           [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-  if (pGVar1 != (GizmoCap3DLookAndFeel *)0x0) {
-    if ((pGVar1->fields)._useZoomFactor == 0) {
+  lVar1 = 0xa0;
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
+  }
+  lVar2 = *(longlong *)((longlong)&this->klass + lVar2);
+  if (lVar2 != 0) {
+    pGVar3 = (this->fields)._sharedLookAndFeel;
+    lVar4 = 0xa0;
+    if (*(char *)(lVar2 + 0x20) == '\0') {
+      if (pGVar3 == (GizmoCap3DLookAndFeel *)0x0) {
+        lVar4 = 0x98;
+      }
+      bVar5 = (this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0;
+      lVar4 = *(longlong *)((longlong)&this->klass + lVar4);
+      lVar2 = 0xa0;
+      if (bVar5) {
+        lVar2 = 0x98;
+      }
+      lVar6 = *(longlong *)((longlong)&this->klass + lVar2);
+      uVar7 = 0xa0;
+      if (bVar5) {
+        uVar7 = 0x98;
+      }
+      lVar2 = *(longlong *)((longlong)&this->klass + (ulonglong)uVar7);
       zoomFactor = _UNK_?;
     }
-    fVar2 = ((&(this->fields)._lookAndFeel)
-             [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._boxHeight
-    ;
-    fVar3 = ((&(this->fields)._lookAndFeel)
-             [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._boxDepth;
-    fVar4 = ((&(this->fields)._lookAndFeel)
-             [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._scale;
-    __return_storage_ptr__->x =
-         ((&(this->fields)._lookAndFeel)
-          [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._boxWidth *
-         fVar4 * zoomFactor;
-    __return_storage_ptr__->y = fVar2 * fVar4 * zoomFactor;
-    __return_storage_ptr__->z = fVar3 * fVar4 * zoomFactor;
+    else {
+      if (pGVar3 == (GizmoCap3DLookAndFeel *)0x0) {
+        lVar4 = 0x98;
+      }
+      lVar2 = *(longlong *)((longlong)&this->klass + lVar4);
+      lVar4 = 0xa0;
+      if (pGVar3 == (GizmoCap3DLookAndFeel *)0x0) {
+        lVar4 = 0x98;
+      }
+      lVar4 = *(longlong *)((longlong)&this->klass + lVar4);
+      lVar6 = 0xa0;
+      if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+        lVar6 = 0x98;
+      }
+      lVar6 = *(longlong *)((longlong)&this->klass + lVar6);
+    }
+    if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+      lVar1 = 0x98;
+    }
+    fVar8 = *(float *)(*(longlong *)((longlong)&this->klass + lVar1) + 0x1c);
+    fVar9 = *(float *)(lVar6 + 0x3c);
+    fVar10 = *(float *)(lVar2 + 0x40);
+    __return_storage_ptr__->x = fVar8 * *(float *)(lVar4 + 0x38) * zoomFactor;
+    __return_storage_ptr__->y = fVar8 * fVar9 * zoomFactor;
+    __return_storage_ptr__->z = fVar8 * fVar10 * zoomFactor;
     return __return_storage_ptr__;
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pVVar6 = (Vector3 *)(*pcVar5)();
-  return pVVar6;
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  pVVar12 = (Vector3 *)(*pcVar11)();
+  return pVVar12;
 }
 
 
@@ -257,24 +400,37 @@ float Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_GetRealBoxWidth
                 (GizmoCap3D *this,float zoomFactor,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (&(this->fields)._lookAndFeel)
-           [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-  if (pGVar2 == (GizmoCap3DLookAndFeel *)0x0) {
-    uVar3 = func_?(auStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    fVar6 = (float10)(*pcVar5)();
-    return (float)fVar6;
+  lVar1 = 0xa0;
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
   }
-  if ((pGVar2->fields)._useZoomFactor == 0) {
-    zoomFactor = 1.0;
+  lVar2 = *(longlong *)((longlong)&this->klass + lVar2);
+  if (lVar2 == 0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    fVar4 = (float)(*pcVar3)();
+    return fVar4;
   }
-  return ((&(this->fields)._lookAndFeel)
-          [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._scale *
-         ((&(this->fields)._lookAndFeel)
-          [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._boxWidth *
-         zoomFactor;
+  pGVar5 = (this->fields)._sharedLookAndFeel;
+  lVar6 = 0xa0;
+  if (*(char *)(lVar2 + 0x20) != '\0') {
+    if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+      lVar6 = 0x98;
+      lVar1 = 0x98;
+    }
+    return *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x1c) *
+           *(float *)(*(longlong *)((longlong)&this->klass + lVar1) + 0x38) * zoomFactor;
+  }
+  if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar6 = 0x98;
+  }
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
+  }
+  return *(float *)(*(longlong *)((longlong)&this->klass + lVar2) + 0x1c) *
+         *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x38) * _UNK_?;
 }
 
 
@@ -284,24 +440,37 @@ float Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_GetRealConeHeight
                 (GizmoCap3D *this,float zoomFactor,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (&(this->fields)._lookAndFeel)
-           [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-  if (pGVar2 == (GizmoCap3DLookAndFeel *)0x0) {
-    uVar3 = func_?(auStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    fVar6 = (float10)(*pcVar5)();
-    return (float)fVar6;
+  lVar1 = 0xa0;
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
   }
-  if ((pGVar2->fields)._useZoomFactor == 0) {
-    zoomFactor = 1.0;
+  lVar2 = *(longlong *)((longlong)&this->klass + lVar2);
+  if (lVar2 == 0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    fVar4 = (float)(*pcVar3)();
+    return fVar4;
   }
-  return ((&(this->fields)._lookAndFeel)
-          [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._scale *
-         ((&(this->fields)._lookAndFeel)
-          [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._coneHeight *
-         zoomFactor;
+  pGVar5 = (this->fields)._sharedLookAndFeel;
+  lVar6 = 0xa0;
+  if (*(char *)(lVar2 + 0x20) != '\0') {
+    if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+      lVar6 = 0x98;
+      lVar1 = 0x98;
+    }
+    return *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x1c) *
+           *(float *)(*(longlong *)((longlong)&this->klass + lVar1) + 0x24) * zoomFactor;
+  }
+  if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar6 = 0x98;
+  }
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
+  }
+  return *(float *)(*(longlong *)((longlong)&this->klass + lVar2) + 0x1c) *
+         *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x24) * _UNK_?;
 }
 
 
@@ -311,24 +480,37 @@ float Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_GetRealConeRadius
                 (GizmoCap3D *this,float zoomFactor,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (&(this->fields)._lookAndFeel)
-           [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-  if (pGVar2 == (GizmoCap3DLookAndFeel *)0x0) {
-    uVar3 = func_?(auStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    fVar6 = (float10)(*pcVar5)();
-    return (float)fVar6;
+  lVar1 = 0xa0;
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
   }
-  if ((pGVar2->fields)._useZoomFactor == 0) {
-    zoomFactor = 1.0;
+  lVar2 = *(longlong *)((longlong)&this->klass + lVar2);
+  if (lVar2 == 0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    fVar4 = (float)(*pcVar3)();
+    return fVar4;
   }
-  return ((&(this->fields)._lookAndFeel)
-          [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._scale *
-         ((&(this->fields)._lookAndFeel)
-          [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._coneRadius *
-         zoomFactor;
+  pGVar5 = (this->fields)._sharedLookAndFeel;
+  lVar6 = 0xa0;
+  if (*(char *)(lVar2 + 0x20) != '\0') {
+    if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+      lVar6 = 0x98;
+      lVar1 = 0x98;
+    }
+    return *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x1c) *
+           *(float *)(*(longlong *)((longlong)&this->klass + lVar1) + 0x28) * zoomFactor;
+  }
+  if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar6 = 0x98;
+  }
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
+  }
+  return *(float *)(*(longlong *)((longlong)&this->klass + lVar2) + 0x1c) *
+         *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x28) * _UNK_?;
 }
 
 
@@ -338,24 +520,37 @@ float Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_GetRealPyramidDepth
                 (GizmoCap3D *this,float zoomFactor,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (&(this->fields)._lookAndFeel)
-           [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-  if (pGVar2 == (GizmoCap3DLookAndFeel *)0x0) {
-    uVar3 = func_?(auStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    fVar6 = (float10)(*pcVar5)();
-    return (float)fVar6;
+  lVar1 = 0xa0;
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
   }
-  if ((pGVar2->fields)._useZoomFactor == 0) {
-    zoomFactor = 1.0;
+  lVar2 = *(longlong *)((longlong)&this->klass + lVar2);
+  if (lVar2 == 0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    fVar4 = (float)(*pcVar3)();
+    return fVar4;
   }
-  return ((&(this->fields)._lookAndFeel)
-          [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._scale *
-         ((&(this->fields)._lookAndFeel)
-          [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._pyramidDepth
-         * zoomFactor;
+  pGVar5 = (this->fields)._sharedLookAndFeel;
+  lVar6 = 0xa0;
+  if (*(char *)(lVar2 + 0x20) != '\0') {
+    if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+      lVar6 = 0x98;
+      lVar1 = 0x98;
+    }
+    return *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x1c) *
+           *(float *)(*(longlong *)((longlong)&this->klass + lVar1) + 0x34) * zoomFactor;
+  }
+  if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar6 = 0x98;
+  }
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
+  }
+  return *(float *)(*(longlong *)((longlong)&this->klass + lVar2) + 0x1c) *
+         *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x34) * _UNK_?;
 }
 
 
@@ -365,24 +560,37 @@ float Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_GetRealPyramidHeight
                 (GizmoCap3D *this,float zoomFactor,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (&(this->fields)._lookAndFeel)
-           [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-  if (pGVar2 == (GizmoCap3DLookAndFeel *)0x0) {
-    uVar3 = func_?(auStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    fVar6 = (float10)(*pcVar5)();
-    return (float)fVar6;
+  lVar1 = 0xa0;
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
   }
-  if ((pGVar2->fields)._useZoomFactor == 0) {
-    zoomFactor = 1.0;
+  lVar2 = *(longlong *)((longlong)&this->klass + lVar2);
+  if (lVar2 == 0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    fVar4 = (float)(*pcVar3)();
+    return fVar4;
   }
-  return ((&(this->fields)._lookAndFeel)
-          [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._scale *
-         ((&(this->fields)._lookAndFeel)
-          [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields).
-         _pyramidHeight * zoomFactor;
+  pGVar5 = (this->fields)._sharedLookAndFeel;
+  lVar6 = 0xa0;
+  if (*(char *)(lVar2 + 0x20) != '\0') {
+    if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+      lVar6 = 0x98;
+      lVar1 = 0x98;
+    }
+    return *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x1c) *
+           *(float *)(*(longlong *)((longlong)&this->klass + lVar1) + 0x2c) * zoomFactor;
+  }
+  if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar6 = 0x98;
+  }
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
+  }
+  return *(float *)(*(longlong *)((longlong)&this->klass + lVar2) + 0x1c) *
+         *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x2c) * _UNK_?;
 }
 
 
@@ -392,24 +600,37 @@ float Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_GetRealPyramidWidth
                 (GizmoCap3D *this,float zoomFactor,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (&(this->fields)._lookAndFeel)
-           [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-  if (pGVar2 == (GizmoCap3DLookAndFeel *)0x0) {
-    uVar3 = func_?(auStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    fVar6 = (float10)(*pcVar5)();
-    return (float)fVar6;
+  lVar1 = 0xa0;
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
   }
-  if ((pGVar2->fields)._useZoomFactor == 0) {
-    zoomFactor = 1.0;
+  lVar2 = *(longlong *)((longlong)&this->klass + lVar2);
+  if (lVar2 == 0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    fVar4 = (float)(*pcVar3)();
+    return fVar4;
   }
-  return ((&(this->fields)._lookAndFeel)
-          [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._scale *
-         ((&(this->fields)._lookAndFeel)
-          [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._pyramidWidth
-         * zoomFactor;
+  pGVar5 = (this->fields)._sharedLookAndFeel;
+  lVar6 = 0xa0;
+  if (*(char *)(lVar2 + 0x20) != '\0') {
+    if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+      lVar6 = 0x98;
+      lVar1 = 0x98;
+    }
+    return *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x1c) *
+           *(float *)(*(longlong *)((longlong)&this->klass + lVar1) + 0x30) * zoomFactor;
+  }
+  if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar6 = 0x98;
+  }
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
+  }
+  return *(float *)(*(longlong *)((longlong)&this->klass + lVar2) + 0x1c) *
+         *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x30) * _UNK_?;
 }
 
 
@@ -419,24 +640,37 @@ float Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_GetRealSphereRadius
                 (GizmoCap3D *this,float zoomFactor,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (&(this->fields)._lookAndFeel)
-           [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-  if (pGVar2 == (GizmoCap3DLookAndFeel *)0x0) {
-    uVar3 = func_?(auStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    fVar6 = (float10)(*pcVar5)();
-    return (float)fVar6;
+  lVar1 = 0xa0;
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
   }
-  if ((pGVar2->fields)._useZoomFactor == 0) {
-    zoomFactor = 1.0;
+  lVar2 = *(longlong *)((longlong)&this->klass + lVar2);
+  if (lVar2 == 0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    fVar4 = (float)(*pcVar3)();
+    return fVar4;
   }
-  return ((&(this->fields)._lookAndFeel)
-          [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._sphereRadius
-         * ((&(this->fields)._lookAndFeel)
-            [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._scale *
-         zoomFactor;
+  pGVar5 = (this->fields)._sharedLookAndFeel;
+  lVar6 = 0xa0;
+  if (*(char *)(lVar2 + 0x20) != '\0') {
+    if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+      lVar6 = 0x98;
+      lVar1 = 0x98;
+    }
+    return *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x1c) *
+           *(float *)(*(longlong *)((longlong)&this->klass + lVar1) + 0x44) * zoomFactor;
+  }
+  if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar6 = 0x98;
+  }
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
+  }
+  return *(float *)(*(longlong *)((longlong)&this->klass + lVar2) + 0x1c) *
+         *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x44) * _UNK_?;
 }
 
 
@@ -446,24 +680,37 @@ float Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_GetRealTriPrismDepth
                 (GizmoCap3D *this,float zoomFactor,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (&(this->fields)._lookAndFeel)
-           [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-  if (pGVar2 == (GizmoCap3DLookAndFeel *)0x0) {
-    uVar3 = func_?(auStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    fVar6 = (float10)(*pcVar5)();
-    return (float)fVar6;
+  lVar1 = 0xa0;
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
   }
-  if ((pGVar2->fields)._useZoomFactor == 0) {
-    zoomFactor = 1.0;
+  lVar2 = *(longlong *)((longlong)&this->klass + lVar2);
+  if (lVar2 == 0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    fVar4 = (float)(*pcVar3)();
+    return fVar4;
   }
-  return ((&(this->fields)._lookAndFeel)
-          [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._trPrismDepth
-         * ((&(this->fields)._lookAndFeel)
-            [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._scale *
-         zoomFactor;
+  pGVar5 = (this->fields)._sharedLookAndFeel;
+  lVar6 = 0xa0;
+  if (*(char *)(lVar2 + 0x20) != '\0') {
+    if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+      lVar6 = 0x98;
+      lVar1 = 0x98;
+    }
+    return *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x1c) *
+           *(float *)(*(longlong *)((longlong)&this->klass + lVar1) + 0x50) * zoomFactor;
+  }
+  if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar6 = 0x98;
+  }
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
+  }
+  return *(float *)(*(longlong *)((longlong)&this->klass + lVar2) + 0x1c) *
+         *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x50) * _UNK_?;
 }
 
 
@@ -473,25 +720,37 @@ float Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_GetRealTriPrismHeight
                 (GizmoCap3D *this,float zoomFactor,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (&(this->fields)._lookAndFeel)
-           [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-  if (pGVar2 == (GizmoCap3DLookAndFeel *)0x0) {
-    uVar3 = func_?(auStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    fVar6 = (float10)(*pcVar5)();
-    return (float)fVar6;
+  lVar1 = 0xa0;
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
   }
-  if ((pGVar2->fields)._useZoomFactor == 0) {
-    zoomFactor = 1.0;
+  lVar2 = *(longlong *)((longlong)&this->klass + lVar2);
+  if (lVar2 == 0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    fVar4 = (float)(*pcVar3)();
+    return fVar4;
   }
-  return ((&(this->fields)._lookAndFeel)
-          [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields).
-         _trPrismHeight *
-         ((&(this->fields)._lookAndFeel)
-          [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._scale *
-         zoomFactor;
+  pGVar5 = (this->fields)._sharedLookAndFeel;
+  lVar6 = 0xa0;
+  if (*(char *)(lVar2 + 0x20) != '\0') {
+    if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+      lVar6 = 0x98;
+      lVar1 = 0x98;
+    }
+    return *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x1c) *
+           *(float *)(*(longlong *)((longlong)&this->klass + lVar1) + 0x4c) * zoomFactor;
+  }
+  if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar6 = 0x98;
+  }
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
+  }
+  return *(float *)(*(longlong *)((longlong)&this->klass + lVar2) + 0x1c) *
+         *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x4c) * _UNK_?;
 }
 
 
@@ -501,24 +760,37 @@ float Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_GetRealTriPrismWidth
                 (GizmoCap3D *this,float zoomFactor,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (&(this->fields)._lookAndFeel)
-           [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-  if (pGVar2 == (GizmoCap3DLookAndFeel *)0x0) {
-    uVar3 = func_?(auStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    fVar6 = (float10)(*pcVar5)();
-    return (float)fVar6;
+  lVar1 = 0xa0;
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
   }
-  if ((pGVar2->fields)._useZoomFactor == 0) {
-    zoomFactor = 1.0;
+  lVar2 = *(longlong *)((longlong)&this->klass + lVar2);
+  if (lVar2 == 0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    fVar4 = (float)(*pcVar3)();
+    return fVar4;
   }
-  return ((&(this->fields)._lookAndFeel)
-          [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._trPrismWidth
-         * ((&(this->fields)._lookAndFeel)
-            [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields)._scale *
-         zoomFactor;
+  pGVar5 = (this->fields)._sharedLookAndFeel;
+  lVar6 = 0xa0;
+  if (*(char *)(lVar2 + 0x20) != '\0') {
+    if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+      lVar6 = 0x98;
+      lVar1 = 0x98;
+    }
+    return *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x1c) *
+           *(float *)(*(longlong *)((longlong)&this->klass + lVar1) + 0x48) * zoomFactor;
+  }
+  if (pGVar5 == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar6 = 0x98;
+  }
+  lVar2 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar2 = 0x98;
+  }
+  return *(float *)(*(longlong *)((longlong)&this->klass + lVar2) + 0x1c) *
+         *(float *)(*(longlong *)((longlong)&this->klass + lVar6) + 0x48) * _UNK_?;
 }
 
 
@@ -528,48 +800,110 @@ float Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_GetSliderAlignedRealLengt
                 (GizmoCap3D *this,float zoomFactor,MethodInfo *method)
 
 {
+  uVar1 = CONCAT44(unaff_XMM6_Db,unaff_XMM6_Da);
+  uVar2 = CONCAT44(unaff_XMM6_Dd,unaff_XMM6_Dc);
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__IGizmoCap3DController);
+    FUN_?(&TypeInfo__RTG__IGizmoCap3DController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._controllers;
-  pGVar2 = (&(this->fields)._lookAndFeel)
-           [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-  if ((pGVar2 != (GizmoCap3DLookAndFeel *)0x0) && (pIVar1 != (IGizmoCap3DController__Array *)0x0)) {
-    uVar3 = (pGVar2->fields)._capType;
-    if (pIVar1->max_length <= uVar3) goto code_?;
-    pIVar4 = pIVar1->vector[uVar3];
-    if (pIVar4 != (IGizmoCap3DController *)0x0) {
-      pIVar5 = pIVar4->klass;
-      uVar6 = 0;
-      uVar7._0_1_ = (pIVar5->_1).rank;
-      uVar7._1_1_ = (pIVar5->_1).minimumAlignment;
-      if (uVar7 != 0) {
+  lVar3 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar3 = 0x98;
+  }
+  lVar3 = *(longlong *)((longlong)&this->klass + lVar3);
+  if ((lVar3 != 0) &&
+     (pIVar4 = (this->fields)._controllers, pIVar4 != (IGizmoCap3DController__Array *)0x0)) {
+    uVar5 = *(uint *)(lVar3 + 0x10);
+    if ((uint)pIVar4->max_length <= uVar5) {
+      FUN_?();
+      pcVar6 = (code *)swi(3);
+      fVar7 = (float)(*pcVar6)();
+      return fVar7;
+    }
+    pIVar8 = pIVar4->vector[(int)uVar5];
+    if (pIVar8 != (IGizmoCap3DController *)0x0) {
+      pIVar9 = pIVar8->klass;
+      uVar10 = 0;
+      uVar11._0_1_ = (pIVar9->_1).rank;
+      uVar11._1_1_ = (pIVar9->_1).minimumAlignment;
+      if (uVar11 != 0) {
         do {
-          if (pIVar5->interfaceOffsets[uVar6].interfaceType ==
+          if (pIVar9->interfaceOffsets[uVar10].interfaceType ==
               (Il2CppClass *)TypeInfo__RTG__IGizmoCap3DController) {
-            ppMVar8 = &(&(pIVar4->klass->vtable).GetSliderAlignedRealLength)
-                       [pIVar4->klass->interfaceOffsets[uVar6].offset].method;
+            ppIVar12 = &(&(pIVar9->vtable).UpdateHandles)
+                       [pIVar9->interfaceOffsets[uVar10].offset + 4].methodPtr;
             goto code_?;
           }
-          uVar6 = uVar6 + 1;
-        } while (uVar6 < uVar7);
+          uVar13 = (short)uVar10 + 1;
+          uVar10 = (ulonglong)uVar13;
+        } while (uVar13 < uVar11);
       }
-      ppMVar8 = (MethodInfo **)func_?(pIVar4,TypeInfo__RTG__IGizmoCap3DController,4);
+      ppIVar12 = (Il2CppMethodPointer *)
+                FUN_?(pIVar8,TypeInfo__RTG__IGizmoCap3DController,4,zoomFactor,uVar1,uVar2
+                             );
 code_?:
-      fVar9 = (float10)(*(code *)*ppMVar8)(pIVar4,zoomFactor,ppMVar8[1]);
-      return (float)fVar9;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      fVar7 = (float)(**ppIVar12)(pIVar8,zoomFactor,(MethodInfo *)ppIVar12[1]);
+      return fVar7;
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar10 = (code *)swi(3);
-  fVar9 = (float10)(*pcVar10)();
-  return (float)fVar9;
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  fVar7 = (float)(*pcVar6)();
+  return fVar7;
 }
 
-/* decompilation failed: Exception while decompiling 1053e980: Decompiler process died */
+
+/* Single GetZoomFactor(Camera) */
+
+float Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_GetZoomFactor
+                (GizmoCap3D *this,Camera *camera,MethodInfo *method)
+
+{
+  lVar1 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar1 = 0x98;
+  }
+  lVar1 = *(longlong *)((longlong)&this->klass + lVar1);
+  if (lVar1 != 0) {
+    if (*(char *)(lVar1 + 0x20) == '\0') {
+      return _UNK_?;
+    }
+    pGVar2 = (this->fields)._._handle;
+    if (pGVar2 != (GizmoHandle *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__RTG__CameraEx);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pGVar3 = (pGVar2->fields)._zoomFactorTransform;
+      if (pGVar3 != (GizmoTransform *)0x0) {
+        fVar4 = (pGVar3->fields)._position3D.z;
+        uVar5._0_4_ = (pGVar3->fields)._position3D.x;
+        uVar5._4_4_ = (pGVar3->fields)._position3D.y;
+        if (*(int *)&(TypeInfo__RTG__CameraEx->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        aVStack_6[0]._0_8_ = uVar5;
+        aVStack_6[0].z = fVar4;
+        fVar4 = CameraEx::CameraEx_EstimateZoomFactor(camera,aVStack_6,(MethodInfo *)0x0);
+        return fVar4;
+      }
+      FUN_?();
+      pcVar7 = (code *)swi(3);
+      fVar4 = (float)(*pcVar7)();
+      return fVar4;
+    }
+  }
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  fVar4 = (float)(*pcVar7)();
+  return fVar4;
+}
 
 
 /* Void OnGizmoPostDisabled(Gizmo) */
@@ -578,16 +912,14 @@ void Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_OnGizmoPostDisabled
                (GizmoCap3D *this,Gizmo *gizmo,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._overrideColor;
-  if (pGVar2 != (GizmoOverrideColor *)0x0) {
-    (pGVar2->fields)._isActive = 0;
+  pGVar1 = (this->fields)._overrideColor;
+  if (pGVar1 != (GizmoOverrideColor *)0x0) {
+    (pGVar1->fields)._isActive = 0;
     return;
   }
-  uVar3 = func_?(auStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -599,38 +931,80 @@ void Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_OnGizmoPostEnabled
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__IGizmoCap3DController);
+    FUN_?(&TypeInfo__RTG__IGizmoCap3DController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (this->fields)._._gizmo;
+  uVar1 = CONCAT44(unaff_XMM6_Db,unaff_XMM6_Da);
+  uVar2 = CONCAT44(unaff_XMM6_Dd,unaff_XMM6_Dc);
   if (this_00 != (Gizmo *)0x0) {
     camera = Gizmo::Gizmo_GetWorkCamera(this_00,(MethodInfo *)0x0);
-    pGVar1 = (&(this->fields)._lookAndFeel)
-             [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-    if (pGVar1 != (GizmoCap3DLookAndFeel *)0x0) {
-      if ((pGVar1->fields)._useZoomFactor != 0) {
+    lVar3 = 0xa0;
+    lVar4 = 0xa0;
+    if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+      lVar4 = 0x98;
+    }
+    lVar4 = *(longlong *)((longlong)&this->klass + lVar4);
+    if (lVar4 != 0) {
+      fVar5 = _UNK_?;
+      if (*(char *)(lVar4 + 0x20) != '\0') {
         this_01 = (this->fields)._._handle;
         if (this_01 == (GizmoHandle *)0x0) goto code_?;
-        GizmoHandle::GizmoHandle_GetZoomFactor(this_01,camera,(MethodInfo *)0x0);
+        fVar5 = GizmoHandle::GizmoHandle_GetZoomFactor(this_01,camera,(MethodInfo *)0x0);
       }
-      pIVar2 = (this->fields)._controllers;
-      pGVar1 = (&(this->fields)._lookAndFeel)
-               [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-      if ((pGVar1 != (GizmoCap3DLookAndFeel *)0x0) &&
-         (pIVar2 != (IGizmoCap3DController__Array *)0x0)) {
-        uVar3 = (pGVar1->fields)._capType;
-        if (pIVar2->max_length <= uVar3) goto code_?;
-        if (pIVar2->vector[uVar3] != (IGizmoCap3DController *)0x0) {
-          func_?();
-          pIVar2 = (this->fields)._controllers;
-          pGVar1 = (&(this->fields)._lookAndFeel)
-                   [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-          if ((pGVar1 != (GizmoCap3DLookAndFeel *)0x0) &&
-             (pIVar2 != (IGizmoCap3DController__Array *)0x0)) {
-            uVar3 = (pGVar1->fields)._capType;
-            if (pIVar2->max_length <= uVar3) goto code_?;
-            if (pIVar2->vector[uVar3] != (IGizmoCap3DController *)0x0) {
-              func_?(1);
+      lVar4 = 0xa0;
+      if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+        lVar4 = 0x98;
+      }
+      lVar4 = *(longlong *)((longlong)&this->klass + lVar4);
+      if ((lVar4 != 0) &&
+         (pIVar6 = (this->fields)._controllers, pIVar6 != (IGizmoCap3DController__Array *)0x0)) {
+        uVar7 = *(uint *)(lVar4 + 0x10);
+        if ((uint)pIVar6->max_length <= uVar7) {
+code_?:
+          FUN_?();
+          pcVar8 = (code *)swi(3);
+          (*pcVar8)();
+          return;
+        }
+        if (pIVar6->vector[(int)uVar7] != (IGizmoCap3DController *)0x0) {
+          FUN_?(0,TypeInfo__RTG__IGizmoCap3DController);
+          if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+            lVar3 = 0x98;
+          }
+          lVar4 = *(longlong *)((longlong)&this->klass + lVar3);
+          if ((lVar4 != 0) &&
+             (pIVar6 = (this->fields)._controllers, pIVar6 != (IGizmoCap3DController__Array *)0x0))
+          {
+            uVar7 = *(uint *)(lVar4 + 0x10);
+            if ((uint)pIVar6->max_length <= uVar7) goto code_?;
+            pIVar9 = pIVar6->vector[(int)uVar7];
+            if (pIVar9 != (IGizmoCap3DController *)0x0) {
+              pIVar10 = pIVar9->klass;
+              uVar11 = 0;
+              uVar12._0_1_ = (pIVar10->_1).rank;
+              uVar12._1_1_ = (pIVar10->_1).minimumAlignment;
+              if (uVar12 != 0) {
+                do {
+                  if (pIVar10->interfaceOffsets[uVar11].interfaceType ==
+                      (Il2CppClass *)TypeInfo__RTG__IGizmoCap3DController) {
+                    ppIVar13 = &(&(pIVar10->vtable).UpdateHandles)
+                               [pIVar10->interfaceOffsets[uVar11].offset + 1].methodPtr;
+                    goto code_?;
+                  }
+                  uVar14 = (short)uVar11 + 1;
+                  uVar11 = (ulonglong)uVar14;
+                } while (uVar14 < uVar12);
+              }
+              ppIVar13 = (Il2CppMethodPointer *)
+                        FUN_?(pIVar9,TypeInfo__RTG__IGizmoCap3DController,1,fVar5,uVar1,
+                                      uVar2,unaff_RDI);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+              (**ppIVar13)(pIVar9,fVar5,(MethodInfo *)ppIVar13[1]);
               return;
             }
           }
@@ -639,11 +1013,9 @@ void Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_OnGizmoPostEnabled
     }
   }
 code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -655,37 +1027,71 @@ void Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_OnGizmoPreUpdateBegin
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__IGizmoCap3DController);
+    FUN_?(&TypeInfo__RTG__IGizmoCap3DController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pGVar1 = (&(this->fields)._lookAndFeel)
-           [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-  if (pGVar1 != (GizmoCap3DLookAndFeel *)0x0) {
-    pIVar2 = (this->fields)._controllers;
-    uVar3 = (pGVar1->fields)._capType;
-    if (pIVar2 != (IGizmoCap3DController__Array *)0x0) {
-      if (pIVar2->max_length <= uVar3) goto code_?;
-      if (pIVar2->vector[uVar3] != (IGizmoCap3DController *)0x0) {
-        func_?(0,TypeInfo__RTG__IGizmoCap3DController,pIVar2->vector[uVar3]);
-        pIVar2 = (this->fields)._controllers;
-        if (pIVar2 != (IGizmoCap3DController__Array *)0x0) {
-          if (pIVar2->max_length <= uVar3) goto code_?;
-          pIVar4 = pIVar2->vector[uVar3];
-          this_00 = (this->fields)._._gizmo;
-          if (this_00 != (Gizmo *)0x0) {
-            camera = Gizmo::Gizmo_get_FocusCamera(this_00,(MethodInfo *)0x0);
-            pGVar1 = (&(this->fields)._lookAndFeel)
-                     [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-            if (pGVar1 != (GizmoCap3DLookAndFeel *)0x0) {
-              if ((pGVar1->fields)._useZoomFactor != 0) {
-                this_01 = (this->fields)._._handle;
-                if (this_01 == (GizmoHandle *)0x0) goto code_?;
-                GizmoHandle::GizmoHandle_GetZoomFactor(this_01,camera,(MethodInfo *)0x0);
+  lVar1 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar1 = 0x98;
+  }
+  lVar1 = *(longlong *)((longlong)&this->klass + lVar1);
+  if ((lVar1 != 0) &&
+     (pIVar2 = (this->fields)._controllers, pIVar2 != (IGizmoCap3DController__Array *)0x0)) {
+    uVar3 = *(uint *)(lVar1 + 0x10);
+    if ((uint)pIVar2->max_length <= uVar3) {
+code_?:
+      FUN_?();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    if (pIVar2->vector[(int)uVar3] != (IGizmoCap3DController *)0x0) {
+      FUN_?(0);
+      pIVar2 = (this->fields)._controllers;
+      if (pIVar2 != (IGizmoCap3DController__Array *)0x0) {
+        if ((uint)pIVar2->max_length <= uVar3) goto code_?;
+        pIVar5 = pIVar2->vector[(int)uVar3];
+        this_00 = (this->fields)._._gizmo;
+        if (this_00 != (Gizmo *)0x0) {
+          camera = Gizmo::Gizmo_get_FocusCamera(this_00,(MethodInfo *)0x0);
+          uVar3 = 0xa0;
+          if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+            uVar3 = 0x98;
+          }
+          lVar1 = *(longlong *)((longlong)&this->klass + (ulonglong)uVar3);
+          if (lVar1 != 0) {
+            fVar6 = _UNK_?;
+            if (*(char *)(lVar1 + 0x20) != '\0') {
+              this_01 = (this->fields)._._handle;
+              if (this_01 == (GizmoHandle *)0x0) goto code_?;
+              fVar6 = GizmoHandle::GizmoHandle_GetZoomFactor(this_01,camera,(MethodInfo *)0x0);
+            }
+            if (pIVar5 != (IGizmoCap3DController *)0x0) {
+              pIVar7 = pIVar5->klass;
+              uVar8 = 0;
+              uVar9._0_1_ = (pIVar7->_1).rank;
+              uVar9._1_1_ = (pIVar7->_1).minimumAlignment;
+              if (uVar9 != 0) {
+                do {
+                  if (pIVar7->interfaceOffsets[uVar8].interfaceType ==
+                      (Il2CppClass *)TypeInfo__RTG__IGizmoCap3DController) {
+                    ppIVar10 = &(&(pIVar7->vtable).UpdateHandles)
+                               [pIVar7->interfaceOffsets[uVar8].offset + 1].methodPtr;
+                    goto code_?;
+                  }
+                  uVar11 = (short)uVar8 + 1;
+                  uVar8 = (ulonglong)uVar11;
+                } while (uVar11 < uVar9);
               }
-              if (pIVar4 != (IGizmoCap3DController *)0x0) {
-                func_?(1,TypeInfo__RTG__IGizmoCap3DController);
-                return;
-              }
+              ppIVar10 = (Il2CppMethodPointer *)
+                        FUN_?(pIVar5,TypeInfo__RTG__IGizmoCap3DController,1);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+              (**ppIVar10)(pIVar5,fVar6,(MethodInfo *)ppIVar10[1]);
+              return;
             }
           }
         }
@@ -693,11 +1099,9 @@ void Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_OnGizmoPreUpdateBegin
     }
   }
 code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -708,15 +1112,16 @@ void Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_OnHoverableStateChanged
                (GizmoCap3D *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields)._._handle;
-  if (this_00 != (GizmoHandle *)0x0) {
-    GizmoHandle::GizmoHandle_SetHoverable(this_00,(this->fields)._._isHoverable,(MethodInfo *)0x0);
+  pGVar1 = (this->fields)._._handle;
+  if (pGVar1 != (GizmoHandle *)0x0) {
+    bVar2 = (this->fields)._._isHoverable;
+    (pGVar1->fields)._Is3DHoverable_k__BackingField = bVar2;
+    (pGVar1->fields)._Is2DHoverable_k__BackingField = bVar2;
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -729,44 +1134,55 @@ void Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_OnTransformChanged
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__IGizmoCap3DController);
+    FUN_?(&TypeInfo__RTG__IGizmoCap3DController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((changeData.ChangeReason != 1) && (changeData.TRSDimension != 2)) {
+  if ((changeData.ChangeReason != 1) && (iStackX_1c = changeData.TRSDimension, iStackX_1c != 2)) {
     return;
   }
-  pIVar1 = (this->fields)._controllers;
-  pGVar2 = (&(this->fields)._lookAndFeel)
-           [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-  if ((pGVar2 != (GizmoCap3DLookAndFeel *)0x0) && (pIVar1 != (IGizmoCap3DController__Array *)0x0)) {
-    uVar3 = (pGVar2->fields)._capType;
-    if (pIVar1->max_length <= uVar3) goto code_?;
-    pIVar4 = pIVar1->vector[uVar3];
+  lVar1 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar1 = 0x98;
+  }
+  lVar1 = *(longlong *)((longlong)&this->klass + lVar1);
+  if ((lVar1 != 0) &&
+     (pIVar2 = (this->fields)._controllers, pIVar2 != (IGizmoCap3DController__Array *)0x0)) {
+    uVar3 = *(uint *)(lVar1 + 0x10);
+    if ((uint)pIVar2->max_length <= uVar3) {
+      FUN_?();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    pIVar5 = pIVar2->vector[(int)uVar3];
     this_00 = (this->fields)._._gizmo;
     if (this_00 != (Gizmo *)0x0) {
       camera = Gizmo::Gizmo_GetWorkCamera(this_00,(MethodInfo *)0x0);
-      pGVar2 = (&(this->fields)._lookAndFeel)
-               [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-      if (pGVar2 != (GizmoCap3DLookAndFeel *)0x0) {
-        fVar5 = _UNK_?;
-        if ((pGVar2->fields)._useZoomFactor != 0) {
+      uVar3 = 0xa0;
+      if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+        uVar3 = 0x98;
+      }
+      lVar1 = *(longlong *)((longlong)&this->klass + (ulonglong)uVar3);
+      if (lVar1 != 0) {
+        fVar6 = _UNK_?;
+        if (*(char *)(lVar1 + 0x20) != '\0') {
           this_01 = (this->fields)._._handle;
-          if (this_01 == (GizmoHandle *)0x0) goto code_?;
-          fVar5 = GizmoHandle::GizmoHandle_GetZoomFactor(this_01,camera,(MethodInfo *)0x0);
+          if (this_01 == (GizmoHandle *)0x0) goto DAT_?;
+          fVar6 = GizmoHandle::GizmoHandle_GetZoomFactor(this_01,camera,(MethodInfo *)0x0);
         }
-        if (pIVar4 != (IGizmoCap3DController *)0x0) {
-          func_?(1,TypeInfo__RTG__IGizmoCap3DController,pIVar4,fVar5);
+        if (pIVar5 != (IGizmoCap3DController *)0x0) {
+          FUN_?(1,TypeInfo__RTG__IGizmoCap3DController,pIVar5,fVar6);
           return;
         }
       }
     }
   }
-code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+DAT_?:
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -778,39 +1194,76 @@ void Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_OnVisibilityStateChanged
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__IGizmoCap3DController);
+    FUN_?(&TypeInfo__RTG__IGizmoCap3DController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._controllers;
-  pGVar2 = (&(this->fields)._lookAndFeel)
-           [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-  if ((pGVar2 != (GizmoCap3DLookAndFeel *)0x0) && (pIVar1 != (IGizmoCap3DController__Array *)0x0)) {
-    uVar3 = (pGVar2->fields)._capType;
-    if (pIVar1->max_length <= uVar3) goto code_?;
-    if (pIVar1->vector[uVar3] != (IGizmoCap3DController *)0x0) {
-      func_?(0,TypeInfo__RTG__IGizmoCap3DController,pIVar1->vector[uVar3]);
+  lVar1 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar1 = 0x98;
+  }
+  lVar1 = *(longlong *)((longlong)&this->klass + lVar1);
+  if ((lVar1 != 0) &&
+     (pIVar2 = (this->fields)._controllers, pIVar2 != (IGizmoCap3DController__Array *)0x0)) {
+    uVar3 = *(uint *)(lVar1 + 0x10);
+    if ((uint)pIVar2->max_length <= uVar3) {
+code_?:
+      FUN_?();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    if (pIVar2->vector[(int)uVar3] != (IGizmoCap3DController *)0x0) {
+      FUN_?(0);
       this_00 = (this->fields)._._gizmo;
       if (this_00 != (Gizmo *)0x0) {
         camera = Gizmo::Gizmo_GetWorkCamera(this_00,(MethodInfo *)0x0);
-        pIVar1 = (this->fields)._controllers;
-        pGVar2 = (&(this->fields)._lookAndFeel)
-                 [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-        if ((pGVar2 != (GizmoCap3DLookAndFeel *)0x0) &&
-           (pIVar1 != (IGizmoCap3DController__Array *)0x0)) {
-          uVar3 = (pGVar2->fields)._capType;
-          if (pIVar1->max_length <= uVar3) goto code_?;
-          pIVar4 = pIVar1->vector[uVar3];
-          pGVar2 = (&(this->fields)._lookAndFeel)
-                   [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-          if (pGVar2 != (GizmoCap3DLookAndFeel *)0x0) {
-            fVar5 = _UNK_?;
-            if ((pGVar2->fields)._useZoomFactor != 0) {
+        uVar3 = 0xa0;
+        if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+          uVar3 = 0x98;
+        }
+        lVar1 = *(longlong *)((longlong)&this->klass + (ulonglong)uVar3);
+        if ((lVar1 != 0) &&
+           (pIVar2 = (this->fields)._controllers, pIVar2 != (IGizmoCap3DController__Array *)0x0)) {
+          uVar3 = *(uint *)(lVar1 + 0x10);
+          if ((uint)pIVar2->max_length <= uVar3) goto code_?;
+          pIVar5 = pIVar2->vector[(int)uVar3];
+          lVar1 = 0xa0;
+          if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+            lVar1 = 0x98;
+          }
+          lVar1 = *(longlong *)((longlong)&this->klass + lVar1);
+          if (lVar1 != 0) {
+            fVar6 = _UNK_?;
+            if (*(char *)(lVar1 + 0x20) != '\0') {
               this_01 = (this->fields)._._handle;
               if (this_01 == (GizmoHandle *)0x0) goto code_?;
-              fVar5 = GizmoHandle::GizmoHandle_GetZoomFactor(this_01,camera,(MethodInfo *)0x0);
+              fVar6 = GizmoHandle::GizmoHandle_GetZoomFactor(this_01,camera,(MethodInfo *)0x0);
             }
-            if (pIVar4 != (IGizmoCap3DController *)0x0) {
-              func_?(1,TypeInfo__RTG__IGizmoCap3DController,pIVar4,fVar5);
+            if (pIVar5 != (IGizmoCap3DController *)0x0) {
+              pIVar7 = pIVar5->klass;
+              uVar8 = 0;
+              uVar9._0_1_ = (pIVar7->_1).rank;
+              uVar9._1_1_ = (pIVar7->_1).minimumAlignment;
+              if (uVar9 != 0) {
+                do {
+                  if (pIVar7->interfaceOffsets[uVar8].interfaceType ==
+                      (Il2CppClass *)TypeInfo__RTG__IGizmoCap3DController) {
+                    ppIVar10 = &(&(pIVar7->vtable).UpdateHandles)
+                               [pIVar7->interfaceOffsets[uVar8].offset + 1].methodPtr;
+                    goto code_?;
+                  }
+                  uVar11 = (short)uVar8 + 1;
+                  uVar8 = (ulonglong)uVar11;
+                } while (uVar11 < uVar9);
+              }
+              ppIVar10 = (Il2CppMethodPointer *)
+                        FUN_?(pIVar5,TypeInfo__RTG__IGizmoCap3DController,1);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+              (**ppIVar10)(pIVar5,fVar6,(MethodInfo *)ppIVar10[1]);
               return;
             }
           }
@@ -819,11 +1272,9 @@ void Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_OnVisibilityStateChanged
     }
   }
 code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -835,22 +1286,38 @@ void Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_RegisterTransformAsDragTar
 
 {
   if (cRam_? == '\0') {
-    pGStack_1 = (GizmoTransform *)&TypeInfo__RTG__IGizmoDragSession;
-    func_?();
+    FUN_?(&TypeInfo__RTG__IGizmoDragSession);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (dragSession != (IGizmoDragSession *)0x0) {
-    pGStack_1 = (this->fields)._transform;
-    pIStack_2 = dragSession;
-    pIStack_3 = TypeInfo__RTG__IGizmoDragSession;
-    func_?(9);
+  if (dragSession == (IGizmoDragSession *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  pGStack_1 = (GizmoTransform *)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pGVar2 = (this->fields)._transform;
+  pIVar3 = dragSession->klass;
+  uVar4 = 0;
+  uVar5._0_1_ = (pIVar3->_1).rank;
+  uVar5._1_1_ = (pIVar3->_1).minimumAlignment;
+  if (uVar5 != 0) {
+    do {
+      if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
+          (Il2CppClass *)TypeInfo__RTG__IGizmoDragSession) {
+        pVVar6 = &(pIVar3->vtable).get_IsActive + (pIVar3->interfaceOffsets[uVar4].offset + 9);
+        goto code_?;
+      }
+      uVar4 = uVar4 + 1;
+    } while (uVar4 < uVar5);
+  }
+  pVVar6 = (VirtualInvokeData *)
+           FUN_?(dragSession,TypeInfo__RTG__IGizmoDragSession,9,pGVar2,unaff_RDI);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pVVar6->methodPtr)(dragSession,pGVar2,pVVar6->method,pVVar6->methodPtr);
   return;
 }
 
@@ -862,162 +1329,239 @@ void Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_Render
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
-    func_?(&MethodInfo__RTG__Singleton<RTG::GizmoSolidMaterial>__get_Get__);
-    func_?(&TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>);
-    func_?(&TypeInfo__RTG__Singleton<RTG::GizmoSolidMaterial>);
+    FUN_?(&MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__Singleton<RTG::GizmoSolidMaterial>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__Singleton<RTG::GizmoSolidMaterial>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields)._._isVisible == 0) {
     return;
   }
   pGVar1 = (this->fields)._overrideColor;
-  if (pGVar1 == (GizmoOverrideColor *)0x0) goto code_?;
+  if (pGVar1 == (GizmoOverrideColor *)0x0) goto DAT_?;
   if ((pGVar1->fields)._isActive == 0) {
     pGVar2 = (this->fields)._._gizmo;
-    if (pGVar2 == (Gizmo *)0x0) goto code_?;
-    bVar3 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::ChangeEvent`1[System::
-            Boolean]::ChangeEvent_1_System_Boolean__get_previousValue
-                      ((ChangeEvent_1_System_Boolean_ *)pGVar2,(MethodInfo *)0x0);
-    if (bVar3 == 0) {
+    if (pGVar2 == (Gizmo *)0x0) goto DAT_?;
+    if ((pGVar2->fields)._hoverInfo._isHovered == 0) {
 code_?:
-      pGVar4 = (&(this->fields)._lookAndFeel)
-               [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-      if (pGVar4 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
-      fStack_5 = (pGVar4->fields)._color.r;
-      fStack_6 = (pGVar4->fields)._color.g;
-      fVar7 = (pGVar4->fields)._color.b;
-      fVar8 = (pGVar4->fields)._color.a;
+      lVar3 = 0xa0;
+      if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+        lVar3 = 0x98;
+      }
+      lVar3 = *(longlong *)((longlong)&this->klass + lVar3);
+      if (lVar3 == 0) goto DAT_?;
+      fVar4 = *(float *)(lVar3 + 0x6c);
+      fVar5 = *(float *)(lVar3 + 0x70);
+      fVar6 = *(float *)(lVar3 + 0x74);
+      fVar7 = *(float *)(lVar3 + 0x78);
     }
     else {
-      pGVar2 = (this->fields)._._gizmo;
-      if (pGVar2 == (Gizmo *)0x0) goto code_?;
-      pGVar9 = (this->fields)._._handle;
-      if (pGVar9 == (GizmoHandle *)0x0) goto code_?;
-      if ((pGVar2->fields)._hoverInfo._handleId != (pGVar9->fields)._id) goto code_?;
-      pGVar4 = (&(this->fields)._lookAndFeel)
-               [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-      if (pGVar4 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
-      fStack_5 = (pGVar4->fields)._hoveredColor.r;
-      fStack_6 = (pGVar4->fields)._hoveredColor.g;
-      fVar7 = (pGVar4->fields)._hoveredColor.b;
-      fVar8 = (pGVar4->fields)._hoveredColor.a;
+      pGVar8 = (this->fields)._._handle;
+      uStack_9._0_4_ = (pGVar2->fields)._hoverInfo._hoverPoint.y;
+      uStack_9._4_4_ = (pGVar2->fields)._hoverInfo._hoverPoint.z;
+      if (pGVar8 == (GizmoHandle *)0x0) goto DAT_?;
+      if ((pGVar2->fields)._hoverInfo._handleId != (pGVar8->fields)._id) goto code_?;
+      lVar3 = 0xa0;
+      if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+        lVar3 = 0x98;
+      }
+      lVar3 = *(longlong *)((longlong)&this->klass + lVar3);
+      if (lVar3 == 0) goto DAT_?;
+      fVar4 = *(float *)(lVar3 + 0x7c);
+      fVar5 = *(float *)(lVar3 + 0x80);
+      fVar6 = *(float *)(lVar3 + 0x84);
+      fVar7 = *(float *)(lVar3 + 0x88);
     }
-    uStack_10 = CONCAT44(fVar8,fVar7);
-    pGVar4 = (&(this->fields)._lookAndFeel)
-             [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
+    lVar3 = 0xa0;
+    if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+      lVar3 = 0x98;
+    }
+    lVar3 = *(longlong *)((longlong)&this->klass + lVar3);
   }
   else {
-    fStack_5 = (pGVar1->fields)._color.r;
-    fStack_6 = (pGVar1->fields)._color.g;
-    uStack_10._0_4_ = (pGVar1->fields)._color.b;
-    uStack_10._4_4_ = (pGVar1->fields)._color.a;
-    pGVar4 = (&(this->fields)._lookAndFeel)
-             [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-    if (pGVar4 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
+    fVar4 = (pGVar1->fields)._color.r;
+    fVar5 = (pGVar1->fields)._color.g;
+    fVar6 = (pGVar1->fields)._color.b;
+    fVar7 = (pGVar1->fields)._color.a;
+    lVar3 = 0xa0;
+    if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+      lVar3 = 0x98;
+    }
+    lVar3 = *(longlong *)((longlong)&this->klass + lVar3);
+    if (lVar3 == 0) goto DAT_?;
   }
-  if ((pGVar4->fields)._fillMode == 0) {
-    pGVar4 = (&(this->fields)._lookAndFeel)
-             [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-    if (pGVar4 == (GizmoCap3DLookAndFeel *)0x0) goto code_?;
-    fVar7 = (float)(pGVar4->fields)._shadeMode;
-    VStack_11.z = fVar7;
-    if ((TypeInfo__RTG__Singleton<RTG::GizmoSolidMaterial>->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__RTG__Singleton<RTG::GizmoSolidMaterial>);
+  lVar10 = 0xa0;
+  if (*(int *)(lVar3 + 0x14) == 0) {
+    lVar3 = 0xa0;
+    if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+      lVar3 = 0x98;
+    }
+    lVar3 = *(longlong *)((longlong)&this->klass + lVar3);
+    if (lVar3 == 0) goto DAT_?;
+    iVar11 = *(int *)(lVar3 + 0x18);
+    if (*(int *)&(TypeInfo__RTG__Singleton<RTG::GizmoSolidMaterial>->_1).field_0x1c == 0) {
+      FUN_?();
     }
     this_00 = (GizmoSolidMaterial *)
               Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
                         (MethodInfo__RTG__Singleton<RTG::GizmoSolidMaterial>__get_Get__);
-    if (this_00 == (GizmoSolidMaterial *)0x0) goto code_?;
+    if (this_00 == (GizmoSolidMaterial *)0x0) goto DAT_?;
     GizmoSolidMaterial::GizmoSolidMaterial_ResetValuesToSensibleDefaults(this_00,(MethodInfo *)0x0);
-    GizmoSolidMaterial::GizmoSolidMaterial_SetLit(this_00,fVar7 == 0.0,(MethodInfo *)0x0);
-    if (VStack_11.z == 0.0) {
+    GizmoSolidMaterial::GizmoSolidMaterial_SetLit(this_00,iVar11 == 0,(MethodInfo *)0x0);
+    if (iVar11 == 0) {
       if ((camera == (Camera *)0x0) ||
          (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                               ((Component *)camera,(MethodInfo *)0x0), this_01 == (Transform *)0x0))
-      goto code_?;
+      goto DAT_?;
       pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                         (&VStack_11,this_01,(MethodInfo *)0x0);
-      GizmoSolidMaterial::GizmoSolidMaterial_SetLightDirection(this_00,*pVVar12,(MethodInfo *)0x0);
+                          ((Vector3 *)&CStack_13,this_01,(MethodInfo *)0x0);
+      VStack_14.x = pVVar12->x;
+      VStack_14.y = pVVar12->y;
+      VStack_14.z = pVVar12->z;
+      GizmoSolidMaterial::GizmoSolidMaterial_SetLightDirection(this_00,&VStack_14,(MethodInfo *)0x0)
+      ;
     }
-    color_00.g = fStack_6;
-    color_00.r = fStack_5;
-    color_00.b = (float)(undefined4)uStack_10;
-    color_00.a = uStack_10._4_4_;
-    GizmoSolidMaterial::GizmoSolidMaterial_SetColor(this_00,color_00,(MethodInfo *)0x0);
-    GizmoSolidMaterial::GizmoSolidMaterial_SetPass(this_00,0,(MethodInfo *)0x0);
-    pGVar9 = (this->fields)._._handle;
-    if (pGVar9 == (GizmoHandle *)0x0) goto code_?;
-    GizmoHandle::GizmoHandle_Render3DSolid(pGVar9,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      FUN_?(&StringLiteral__Color);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar15 = GizmoSolidMaterial::GizmoSolidMaterial_get_Material(this_00,(MethodInfo *)0x0);
+    if (pMVar15 == (Material *)0x0) goto DAT_?;
+    CStack_13.g = fVar5;
+    CStack_13.r = fVar4;
+    CStack_13.a = fVar7;
+    CStack_13.b = fVar6;
+    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor
+              (pMVar15,StringLiteral__Color,&CStack_13,(MethodInfo *)0x0);
+    pMVar15 = GizmoSolidMaterial::GizmoSolidMaterial_get_Material(this_00,(MethodInfo *)0x0);
+    if (pMVar15 == (Material *)0x0) goto DAT_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass(pMVar15,0,(MethodInfo *)0x0)
+    ;
+    pGVar8 = (this->fields)._._handle;
+    if (pGVar8 == (GizmoHandle *)0x0) goto DAT_?;
+    GizmoHandle::GizmoHandle_Render3DSolid(pGVar8,(MethodInfo *)0x0);
   }
   else {
-    if ((TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>);
+    if (*(int *)&(TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    pGVar13 = (GizmoLineMaterial *)
+    pGVar16 = (GizmoLineMaterial *)
              Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
                        (MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
-    if (pGVar13 == (GizmoLineMaterial *)0x0) goto code_?;
-    GizmoLineMaterial::GizmoLineMaterial_ResetValuesToSensibleDefaults(pGVar13,(MethodInfo *)0x0);
-    color.g = fStack_6;
-    color.r = fStack_5;
-    color.b = (float)(undefined4)uStack_10;
-    color.a = uStack_10._4_4_;
-    GizmoLineMaterial::GizmoLineMaterial_SetColor(pGVar13,color,(MethodInfo *)0x0);
-    GizmoLineMaterial::GizmoLineMaterial_SetPass(pGVar13,0,(MethodInfo *)0x0);
-    pGVar9 = (this->fields)._._handle;
-    if (pGVar9 == (GizmoHandle *)0x0) goto code_?;
-    GizmoHandle::GizmoHandle_Render3DWire(pGVar9,(MethodInfo *)0x0);
+    if (pGVar16 == (GizmoLineMaterial *)0x0) goto DAT_?;
+    GizmoLineMaterial::GizmoLineMaterial_ResetValuesToSensibleDefaults(pGVar16,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      FUN_?(&StringLiteral__Color);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar15 = GizmoLineMaterial::GizmoLineMaterial_get_Material(pGVar16,(MethodInfo *)0x0);
+    if (pMVar15 == (Material *)0x0) goto DAT_?;
+    CStack_13.g = fVar5;
+    CStack_13.r = fVar4;
+    CStack_13.a = fVar7;
+    CStack_13.b = fVar6;
+    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor
+              (pMVar15,StringLiteral__Color,&CStack_13,(MethodInfo *)0x0);
+    pMVar15 = GizmoLineMaterial::GizmoLineMaterial_get_Material(pGVar16,(MethodInfo *)0x0);
+    if (pMVar15 == (Material *)0x0) goto DAT_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass(pMVar15,0,(MethodInfo *)0x0)
+    ;
+    pGVar8 = (this->fields)._._handle;
+    if (pGVar8 == (GizmoHandle *)0x0) goto DAT_?;
+    GizmoHandle::GizmoHandle_Render3DWire(pGVar8,(MethodInfo *)0x0);
   }
-  pGVar4 = (&(this->fields)._lookAndFeel)
-           [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-  if (pGVar4 != (GizmoCap3DLookAndFeel *)0x0) {
-    if (((pGVar4->fields)._capType != 3) ||
-       (((&(this->fields)._lookAndFeel)
-         [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0]->fields).
-        _isSphereBorderVisible == 0)) {
-      return;
+  lVar3 = 0xa0;
+  if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+    lVar3 = 0x98;
+  }
+  lVar3 = *(longlong *)((longlong)&this->klass + lVar3);
+  if (lVar3 == 0) {
+DAT_?:
+    FUN_?();
+    pcVar17 = (code *)swi(3);
+    (*pcVar17)();
+    return;
+  }
+  if (*(int *)(lVar3 + 0x10) == 3) {
+    lVar3 = 0xa0;
+    if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+      lVar3 = 0x98;
     }
-    if ((TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>);
-    }
-    pGVar13 = (GizmoLineMaterial *)
-             Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
-                       (MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
-    if (pGVar13 != (GizmoLineMaterial *)0x0) {
-      GizmoLineMaterial::GizmoLineMaterial_ResetValuesToSensibleDefaults(pGVar13,(MethodInfo *)0x0);
-      pGVar4 = (&(this->fields)._lookAndFeel)
-               [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-      if (pGVar4 != (GizmoCap3DLookAndFeel *)0x0) {
-        GizmoLineMaterial::GizmoLineMaterial_SetColor
-                  (pGVar13,(pGVar4->fields)._sphereBorderColor,(MethodInfo *)0x0);
-        GizmoLineMaterial::GizmoLineMaterial_SetPass(pGVar13,0,(MethodInfo *)0x0);
-        pGVar14 = (this->fields)._transform;
-        if (pGVar14 != (GizmoTransform *)0x0) {
-          VStack_11.y = (pGVar14->fields)._position3D.x;
-          VStack_11.z = (pGVar14->fields)._position3D.y;
-          fVar7 = (pGVar14->fields)._position3D.z;
-          fVar8 = GizmoCap3D_GetZoomFactor(this,camera,(MethodInfo *)0x0);
-          fVar8 = GizmoCap3D_GetRealSphereRadius(this,fVar8,(MethodInfo *)0x0);
-          pGVar4 = (&(this->fields)._lookAndFeel)
-                   [(this->fields)._sharedLookAndFeel != (GizmoCap3DLookAndFeel *)0x0];
-          if (pGVar4 != (GizmoCap3DLookAndFeel *)0x0) {
-            sphereCenter.z = fVar7;
-            sphereCenter.x = VStack_11.y;
-            sphereCenter.y = VStack_11.z;
-            GLRenderer::GLRenderer_DrawSphereBorder
-                      (camera,sphereCenter,fVar8,(pGVar4->fields)._numSphereBorderPoints,
-                       (MethodInfo *)0x0);
-            return;
+    if (*(char *)(*(longlong *)((longlong)&this->klass + lVar3) + 0x54) != '\0') {
+      if (*(int *)&(TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      pGVar16 = (GizmoLineMaterial *)
+               Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
+                         (MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
+      if (pGVar16 != (GizmoLineMaterial *)0x0) {
+        GizmoLineMaterial::GizmoLineMaterial_ResetValuesToSensibleDefaults(pGVar16,(MethodInfo *)0x0)
+        ;
+        lVar3 = 0xa0;
+        if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+          lVar3 = 0x98;
+        }
+        lVar3 = *(longlong *)((longlong)&this->klass + lVar3);
+        if (lVar3 != 0) {
+          uVar18 = *(undefined8 *)(lVar3 + 0x58);
+          uVar19 = *(undefined8 *)(lVar3 + 0x60);
+          if (cRam_? == '\0') {
+            FUN_?(&StringLiteral__Color);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pMVar15 = GizmoLineMaterial::GizmoLineMaterial_get_Material(pGVar16,(MethodInfo *)0x0);
+          if (pMVar15 != (Material *)0x0) {
+            CStack_13._0_8_ = uVar18;
+            CStack_13._8_8_ = uVar19;
+            UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor
+                      (pMVar15,StringLiteral__Color,&CStack_13,(MethodInfo *)0x0);
+            pMVar15 = GizmoLineMaterial::GizmoLineMaterial_get_Material(pGVar16,(MethodInfo *)0x0);
+            if (pMVar15 != (Material *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass
+                        (pMVar15,0,(MethodInfo *)0x0);
+              pGVar20 = (this->fields)._transform;
+              if (pGVar20 != (GizmoTransform *)0x0) {
+                uVar18._0_4_ = (pGVar20->fields)._position3D.x;
+                uVar18._4_4_ = (pGVar20->fields)._position3D.y;
+                fVar4 = (pGVar20->fields)._position3D.z;
+                fVar5 = GizmoCap3D_GetZoomFactor(this,camera,(MethodInfo *)0x0);
+                fVar5 = GizmoCap3D_GetRealSphereRadius(this,fVar5,(MethodInfo *)0x0);
+                if ((this->fields)._sharedLookAndFeel == (GizmoCap3DLookAndFeel *)0x0) {
+                  lVar10 = 0x98;
+                }
+                lVar3 = *(longlong *)((longlong)&this->klass + lVar10);
+                if (lVar3 != 0) {
+                  VStack_14._0_8_ = uVar18;
+                  VStack_14.z = fVar4;
+                  linePoints = PrimitiveFactory::PrimitiveFactory_GenerateSphereBorderPoints
+                                         (camera,&VStack_14,fVar5,*(int32_t *)(lVar3 + 0x68),
+                                          (MethodInfo *)0x0);
+                  GLRenderer::GLRenderer_DrawLineLoop3D(linePoints,(MethodInfo *)0x0);
+                  return;
+                }
+              }
+            }
           }
         }
       }
+      goto DAT_?;
     }
   }
-code_?:
-  func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
   return;
 }
 
@@ -1029,28 +1573,52 @@ void Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_SetZoomFactorTransform
 
 {
   pGVar1 = (this->fields)._._handle;
-  if (pGVar1 != (GizmoHandle *)0x0) {
-    if (transform != (GizmoTransform *)0x0) {
-      pGStack_2 = transform;
-      (pGVar1->fields)._zoomFactorTransform = transform;
-      ppGStack_3 = &(pGVar1->fields)._zoomFactorTransform;
-      func_?();
-      return;
-    }
-    pGVar4 = (pGVar1->fields)._gizmo;
-    if (pGVar4 != (Gizmo *)0x0) {
-      pGStack_2 = (pGVar4->fields)._transform;
-      (pGVar1->fields)._zoomFactorTransform = pGStack_2;
-      ppGStack_3 = &(pGVar1->fields)._zoomFactorTransform;
-      func_?();
+  if (pGVar1 == (GizmoHandle *)0x0) {
+code_?:
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  if (transform == (GizmoTransform *)0x0) {
+    pGVar3 = (pGVar1->fields)._gizmo;
+    if (pGVar3 == (Gizmo *)0x0) goto code_?;
+    bVar4 = iRam_? != 0;
+    (pGVar1->fields)._zoomFactorTransform = (pGVar3->fields)._transform;
+    if (bVar4) {
+      uVar5 = (uint)((ulonglong)&(pGVar1->fields)._zoomFactorTransform >> 0xc);
+      lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+        puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+        LOCK();
+        bVar4 = uVar7 == *puVar8;
+        if (bVar4) {
+          *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar4);
       return;
     }
   }
-  pGStack_2 = (GizmoTransform *)&stack0xfffffffc;
-  uVar5 = func_?(&puStack_6);
-  func_?(uVar5);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  else {
+    bVar4 = iRam_? != 0;
+    (pGVar1->fields)._zoomFactorTransform = transform;
+    if (bVar4) {
+      uVar5 = (uint)((ulonglong)&(pGVar1->fields)._zoomFactorTransform >> 0xc);
+      lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+        puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+        LOCK();
+        bVar4 = uVar7 == *puVar8;
+        if (bVar4) {
+          *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar4);
+    }
+  }
   return;
 }
 
@@ -1062,22 +1630,38 @@ void Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_UnregisterTransformAsDragT
 
 {
   if (cRam_? == '\0') {
-    pGStack_1 = (GizmoTransform *)&TypeInfo__RTG__IGizmoDragSession;
-    func_?();
+    FUN_?(&TypeInfo__RTG__IGizmoDragSession);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (dragSession != (IGizmoDragSession *)0x0) {
-    pGStack_1 = (this->fields)._transform;
-    pIStack_2 = dragSession;
-    pIStack_3 = TypeInfo__RTG__IGizmoDragSession;
-    func_?(10);
+  if (dragSession == (IGizmoDragSession *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  pGStack_1 = (GizmoTransform *)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pGVar2 = (this->fields)._transform;
+  pIVar3 = dragSession->klass;
+  uVar4 = 0;
+  uVar5._0_1_ = (pIVar3->_1).rank;
+  uVar5._1_1_ = (pIVar3->_1).minimumAlignment;
+  if (uVar5 != 0) {
+    do {
+      if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
+          (Il2CppClass *)TypeInfo__RTG__IGizmoDragSession) {
+        pVVar6 = &(pIVar3->vtable).get_IsActive + (pIVar3->interfaceOffsets[uVar4].offset + 10);
+        goto code_?;
+      }
+      uVar4 = uVar4 + 1;
+    } while (uVar4 < uVar5);
+  }
+  pVVar6 = (VirtualInvokeData *)
+           FUN_?(dragSession,TypeInfo__RTG__IGizmoDragSession,10,pGVar2,unaff_RDI);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pVVar6->methodPtr)(dragSession,pGVar2,pVVar6->method,pVVar6->methodPtr);
   return;
 }
 
@@ -1089,325 +1673,1067 @@ void Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__BoxShape3D);
-    func_?(&TypeInfo__RTG__ConeShape3D);
-    func_?(&TypeInfo__System__Enum);
-    func_?(&TypeInfo__RTG__GizmoBoxCap3DController);
-    func_?(&TypeInfo__RTG__GizmoCap3DControllerData);
-    func_?(&TypeInfo__RTG__GizmoCap3DLookAndFeel);
-    func_?(&TypeRef__RTG__GizmoCap3DType);
-    func_?(&MethodInfo__RTG__GizmoCap3D__OnGizmoPostDisabled_RTG__Gizmo_);
-    func_?(&MethodInfo__RTG__GizmoCap3D__OnGizmoPostEnabled_RTG__Gizmo_);
-    func_?(&MethodInfo__RTG__GizmoCap3D__OnGizmoPreUpdateBegin_RTG__Gizmo_);
-    func_?(&
-                    MethodInfo__RTG__GizmoCap3D__OnTransformChanged_RTG__GizmoTransform__RTG__GizmoTransform__ChangeData_
-                   );
-    func_?(&TypeInfo__RTG__GizmoConeCap3DController);
-    func_?(&TypeInfo__RTG__GizmoEntityTransformChangedHandler);
-    func_?(&TypeInfo__RTG__GizmoOverrideColor);
-    func_?(&TypeInfo__RTG__GizmoPostDisabledHandler);
-    func_?(&TypeInfo__RTG__GizmoPostEnabledHandler);
-    func_?(&TypeInfo__RTG__GizmoPreUpdateBeginHandler);
-    func_?(&TypeInfo__RTG__GizmoPyramidCap3DController);
-    func_?(&TypeInfo__RTG__GizmoSphereCap3DController);
-    func_?(&TypeInfo__RTG__GizmoTransform);
-    func_?(&TypeInfo__RTG__GizmoTriPrismCap3DController);
-    func_?(&TypeInfo__RTG__IGizmoCap3DController);
-    func_?(&TypeInfo__RTG__PyramidShape3D);
-    func_?(&TypeInfo__RTG__SphereShape3D);
-    func_?(&TypeInfo__RTG__TriangPrismShape3D);
-    func_?(&TypeInfo__System__Type);
+    FUN_?(&TypeInfo__RTG__BoxShape3D);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__ConeShape3D);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GizmoBoxCap3DController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GizmoCap3DControllerData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GizmoCap3DLookAndFeel);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeRef__RTG__GizmoCap3DType);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__GizmoCap3D__OnGizmoPostDisabled_RTG__Gizmo_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__GizmoCap3D__OnGizmoPostEnabled_RTG__Gizmo_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__GizmoCap3D__OnGizmoPreUpdateBegin_RTG__Gizmo_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__RTG__GizmoCap3D__OnTransformChanged_RTG__GizmoTransform__RTG__GizmoTransform__ChangeData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GizmoConeCap3DController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GizmoEntityTransformChangedHandler);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GizmoOverrideColor);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GizmoPostDisabledHandler);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GizmoPostEnabledHandler);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GizmoPreUpdateBeginHandler);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GizmoPyramidCap3DController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GizmoSphereCap3DController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GizmoTransform);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GizmoTriPrismCap3DController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__IGizmoCap3DController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__PyramidShape3D);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__SphereShape3D);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__TriangPrismShape3D);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (ConeShape3D *)func_?(TypeInfo__RTG__ConeShape3D);
-  ConeShape3D::ConeShape3D__ctor(this_00,(MethodInfo *)0x0);
-  (this->fields)._cone = this_00;
-  func_?(&(this->fields)._cone,this_00);
-  this_01 = (PyramidShape3D *)func_?(TypeInfo__RTG__PyramidShape3D);
-  TriangPrismShape3D::TriangPrismShape3D__ctor((TriangPrismShape3D *)this_01,(MethodInfo *)0x0);
-  (this->fields)._pyramid = this_01;
-  func_?(&(this->fields)._pyramid,this_01);
-  this_02 = (BoxShape3D *)func_?(TypeInfo__RTG__BoxShape3D);
-  BoxShape3D::BoxShape3D__ctor(this_02,(MethodInfo *)0x0);
-  (this->fields)._box = this_02;
-  func_?(&(this->fields)._box,this_02);
-  this_03 = (SphereShape3D *)func_?(TypeInfo__RTG__SphereShape3D);
-  SphereShape3D::SphereShape3D__ctor(this_03,(MethodInfo *)0x0);
-  (this->fields)._sphere = this_03;
-  func_?();
-  this_04 = (TriangPrismShape3D *)func_?(TypeInfo__RTG__TriangPrismShape3D);
-  TriangPrismShape3D::TriangPrismShape3D__ctor(this_04,(MethodInfo *)0x0);
-  (this->fields)._trPrism = this_04;
-  func_?(&(this->fields)._trPrism,this_04);
-  method_05 = TypeInfo__RTG__GizmoCap3DControllerData;
-  pGVar1 = (GizmoCap3DControllerData *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)pGVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_05);
-  (this->fields)._controllerData = pGVar1;
-  func_?(&(this->fields)._controllerData,pGVar1);
-  handle = TypeRef__RTG__GizmoCap3DType;
-  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  pCVar1 = (ConeShape3D *)FUN_?(TypeInfo__RTG__ConeShape3D);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__RTG__ConeShape3D__WireRenderDescriptor);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  enumType = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                       ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-  if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  pCVar2 = (ConeShape3D_WireRenderDescriptor *)
+            FUN_?(TypeInfo__RTG__ConeShape3D__WireRenderDescriptor);
+  bVar3 = iRam_? != 0;
+  (pCVar2->fields)._numDetailAxialRings = 0x14;
+  (pCVar2->fields)._numDetailAxialSegments = 0x14;
+  (pCVar1->fields)._wireRenderDesc = pCVar2;
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)&pCVar1->fields >> 0xc);
+    uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+    do {
+      uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+      puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+      LOCK();
+      bVar3 = uVar6 == *puVar7;
+      if (bVar3) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar3);
   }
-  this_05 = mscorlib.dll::System::Enum::Enum_GetValues(enumType,(MethodInfo *)0x0);
-  if (this_05 == (Array *)0x0) {
-code_?:
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    func_?();
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  else {
-    mscorlib.dll::System::Array::Array_get_Length(this_05,(MethodInfo *)0x0);
-    pIVar2 = (IGizmoCap3DController__Array *)func_?();
-    (this->fields)._controllers = pIVar2;
-    func_?();
-    pGVar3 = (GizmoTransform *)func_?();
-    GizmoTransform::GizmoTransform__ctor(pGVar3,(MethodInfo *)0x0);
-    (this->fields)._transform = pGVar3;
-    func_?();
-    this_06 = (GizmoOverrideColor *)func_?();
-    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-    UxmlObjectListAttributeDescription`1[System::Object]::
-    UxmlObjectListAttributeDescription_1_System_Object___ctor
-              ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_06,(MethodInfo *)0x0);
-    (this->fields)._overrideColor = this_06;
-    func_?();
-    this_07 = (GizmoCap3DLookAndFeel *)func_?();
-    GizmoCap3DLookAndFeel::GizmoCap3DLookAndFeel__ctor(this_07,(MethodInfo *)0x0);
-    (this->fields)._lookAndFeel = this_07;
-    func_?();
-    (this->fields)._._isVisible = 1;
-    (this->fields)._._isHoverable = 1;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)this,ExceptionArgument__Enum_obj,(MethodInfo *)&(this->fields)._lookAndFeel
-              );
-    (this->fields)._._gizmo = (Gizmo *)&(this->fields)._overrideColor;
-    func_?();
-    pGVar4 = (this->fields)._._gizmo;
-    if (pGVar4 == (Gizmo *)0x0) goto code_?;
-    pGVar5 = Gizmo::Gizmo_CreateHandle(pGVar4,(int32_t)this_06,(MethodInfo *)0x0);
-    (this->fields)._._handle = pGVar5;
-    func_?();
-    pGVar5 = (this->fields)._._handle;
-    if (pGVar5 == (GizmoHandle *)0x0) goto code_?;
-    iVar6 = GizmoHandle::GizmoHandle_Add3DShape
-                      (pGVar5,(Shape3D *)(this->fields)._cone,(MethodInfo *)0x0);
-    (this->fields)._coneIndex = iVar6;
-    pGVar5 = (this->fields)._._handle;
-    if (pGVar5 == (GizmoHandle *)0x0) goto code_?;
-    iVar6 = GizmoHandle::GizmoHandle_Add3DShape
-                      (pGVar5,(Shape3D *)(this->fields)._pyramid,(MethodInfo *)0x0);
-    (this->fields)._pyramidIndex = iVar6;
-    pGVar5 = (this->fields)._._handle;
-    if (pGVar5 == (GizmoHandle *)0x0) goto code_?;
-    iVar6 = GizmoHandle::GizmoHandle_Add3DShape
-                      (pGVar5,(Shape3D *)(this->fields)._box,(MethodInfo *)0x0);
-    (this->fields)._boxIndex = iVar6;
-    pGVar5 = (this->fields)._._handle;
-    if (pGVar5 == (GizmoHandle *)0x0) goto code_?;
-    iVar6 = GizmoHandle::GizmoHandle_Add3DShape
-                      (pGVar5,(Shape3D *)(this->fields)._sphere,(MethodInfo *)0x0);
-    (this->fields)._sphereIndex = iVar6;
-    pGVar5 = (this->fields)._._handle;
-    if (pGVar5 == (GizmoHandle *)0x0) goto code_?;
-    iVar6 = GizmoHandle::GizmoHandle_Add3DShape
-                      (pGVar5,(Shape3D *)(this->fields)._trPrism,(MethodInfo *)0x0);
-    (this->fields)._trPrismIndex = iVar6;
-    pGVar5 = (this->fields)._._handle;
-    if (pGVar5 == (GizmoHandle *)0x0) goto code_?;
-    GizmoHandle::GizmoHandle_SetZoomFactorTransform
-              (pGVar5,(this->fields)._transform,(MethodInfo *)0x0);
-    pGVar1 = (this->fields)._controllerData;
-    if (pGVar1 == (GizmoCap3DControllerData *)0x0) goto code_?;
-    (pGVar1->fields).Gizmo = (this->fields)._._gizmo;
-    func_?();
-    pGVar1 = (this->fields)._controllerData;
-    if (pGVar1 == (GizmoCap3DControllerData *)0x0) goto code_?;
-    (pGVar1->fields).Cap = this;
-    func_?();
-    pGVar1 = (this->fields)._controllerData;
-    if (pGVar1 == (GizmoCap3DControllerData *)0x0) goto code_?;
-    (pGVar1->fields).CapHandle = (this->fields)._._handle;
-    func_?();
-    pGVar1 = (this->fields)._controllerData;
-    if (pGVar1 == (GizmoCap3DControllerData *)0x0) goto code_?;
-    (pGVar1->fields).Cone = (this->fields)._cone;
-    func_?();
-    pGVar1 = (this->fields)._controllerData;
-    if (pGVar1 == (GizmoCap3DControllerData *)0x0) goto code_?;
-    (pGVar1->fields).ConeIndex = (this->fields)._coneIndex;
-    pGVar1 = (this->fields)._controllerData;
-    if (pGVar1 == (GizmoCap3DControllerData *)0x0) goto code_?;
-    (pGVar1->fields).Pyramid = (this->fields)._pyramid;
-    func_?();
-    pGVar1 = (this->fields)._controllerData;
-    if (pGVar1 == (GizmoCap3DControllerData *)0x0) goto code_?;
-    (pGVar1->fields).PyramidIndex = (this->fields)._pyramidIndex;
-    pGVar1 = (this->fields)._controllerData;
-    if (pGVar1 == (GizmoCap3DControllerData *)0x0) goto code_?;
-    (pGVar1->fields).Box = (this->fields)._box;
-    func_?();
-    pGVar1 = (this->fields)._controllerData;
-    if (pGVar1 == (GizmoCap3DControllerData *)0x0) goto code_?;
-    (pGVar1->fields).BoxIndex = (this->fields)._boxIndex;
-    pGVar1 = (this->fields)._controllerData;
-    if (pGVar1 == (GizmoCap3DControllerData *)0x0) goto code_?;
-    (pGVar1->fields).Sphere = (this->fields)._sphere;
-    func_?();
-    pGVar1 = (this->fields)._controllerData;
-    if (pGVar1 == (GizmoCap3DControllerData *)0x0) goto code_?;
-    (pGVar1->fields).SphereIndex = (this->fields)._sphereIndex;
-    pGVar1 = (this->fields)._controllerData;
-    if (pGVar1 == (GizmoCap3DControllerData *)0x0) goto code_?;
-    (pGVar1->fields).TrPrism = (this->fields)._trPrism;
-    func_?();
-    pGVar1 = (this->fields)._controllerData;
-    if (pGVar1 == (GizmoCap3DControllerData *)0x0) goto code_?;
-    (pGVar1->fields).TrPrismIndex = (this->fields)._trPrismIndex;
-    pIVar2 = (this->fields)._controllers;
-    pIVar7 = (IGizmoCap3DController__Class *)(this->fields)._controllerData;
-    method_04 = TypeInfo__RTG__GizmoConeCap3DController;
-    pIVar8 = (IGizmoCap3DController *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)pIVar8,ExceptionArgument__Enum_obj,(MethodInfo *)method_04);
-    pIVar8[1].klass = pIVar7;
-    func_?();
-    if (pIVar2 == (IGizmoCap3DController__Array *)0x0) goto code_?;
-    iVar9 = func_?();
-    if (iVar9 == 0) goto code_?;
-    if (pIVar2->max_length == 0) goto code_?;
-    pIVar2->vector[0] = pIVar8;
-    func_?();
-    pIVar2 = (this->fields)._controllers;
-    pIVar7 = (IGizmoCap3DController__Class *)(this->fields)._controllerData;
-    method_00 = TypeInfo__RTG__GizmoPyramidCap3DController;
-    pIVar8 = (IGizmoCap3DController *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)pIVar8,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    pIVar8[1].klass = pIVar7;
-    func_?();
-    if (pIVar2 == (IGizmoCap3DController__Array *)0x0) goto code_?;
-    iVar9 = func_?();
-    if (iVar9 == 0) goto code_?;
-    if (pIVar2->max_length < 2) goto code_?;
-    pIVar2->vector[1] = pIVar8;
-    func_?();
-    pIVar2 = (this->fields)._controllers;
-    pIVar7 = (IGizmoCap3DController__Class *)(this->fields)._controllerData;
-    method_01 = TypeInfo__RTG__GizmoBoxCap3DController;
-    pIVar8 = (IGizmoCap3DController *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)pIVar8,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-    pIVar8[1].klass = pIVar7;
-    func_?();
-    if (pIVar2 == (IGizmoCap3DController__Array *)0x0) goto code_?;
-    iVar9 = func_?();
-    if (iVar9 == 0) goto code_?;
-    if (pIVar2->max_length < 3) goto code_?;
-    pIVar2->vector[2] = pIVar8;
-    func_?();
-    pIVar2 = (this->fields)._controllers;
-    pIVar7 = (IGizmoCap3DController__Class *)(this->fields)._controllerData;
-    method_02 = TypeInfo__RTG__GizmoSphereCap3DController;
-    pIVar8 = (IGizmoCap3DController *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)pIVar8,ExceptionArgument__Enum_obj,(MethodInfo *)method_02);
-    pIVar8[1].klass = pIVar7;
-    func_?();
-    if (pIVar2 == (IGizmoCap3DController__Array *)0x0) goto code_?;
-    iVar9 = func_?();
-    if (iVar9 == 0) goto code_?;
-    if (pIVar2->max_length < 4) goto code_?;
-    pIVar2->vector[3] = pIVar8;
-    func_?();
-    pIVar2 = (this->fields)._controllers;
-    pIVar7 = (IGizmoCap3DController__Class *)(this->fields)._controllerData;
-    method_03 = TypeInfo__RTG__GizmoTriPrismCap3DController;
-    pIVar8 = (IGizmoCap3DController *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)pIVar8,ExceptionArgument__Enum_obj,(MethodInfo *)method_03);
-    pIVar8[1].klass = pIVar7;
-    func_?();
-    if (pIVar2 == (IGizmoCap3DController__Array *)0x0) goto code_?;
-    iVar9 = func_?();
-    if (iVar9 != 0) {
-      if (pIVar2->max_length < 5) goto code_?;
-      pIVar2->vector[4] = pIVar8;
-      func_?();
-      pGVar3 = (this->fields)._transform;
-      value = (GizmoEntityTransformChangedHandler *)func_?();
-      Newtonsoft.Json.dll::Newtonsoft::Json::Serialization::SerializationCallback::
-      SerializationCallback__ctor
-                ((SerializationCallback *)value,(Object *)this,
-                 MethodInfo__RTG__GizmoCap3D__OnTransformChanged_RTG__GizmoTransform__RTG__GizmoTransform__ChangeData_
-                 ,(MethodInfo *)0x0);
-      if (pGVar3 != (GizmoTransform *)0x0) {
-        GizmoTransform::GizmoTransform_add_Changed(pGVar3,value,(MethodInfo *)0x0);
-        pGVar4 = (this->fields)._._gizmo;
-        if ((pGVar4 != (Gizmo *)0x0) &&
-           (pGVar3 = (this->fields)._transform, pGVar3 != (GizmoTransform *)0x0)) {
-          GizmoTransform::GizmoTransform_SetParent
-                    (pGVar3,(pGVar4->fields)._transform,(MethodInfo *)0x0);
-          pGVar4 = (this->fields)._._gizmo;
-          value_00 = (GizmoPreUpdateBeginHandler *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
-          VideoCapture+OnVideoCaptureResourceCreatedCallback::
-          VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-                    ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)value_00,(Object *)this,
-                     MethodInfo__RTG__GizmoCap3D__OnGizmoPreUpdateBegin_RTG__Gizmo_,
-                     (MethodInfo *)0x0);
-          if (pGVar4 != (Gizmo *)0x0) {
-            Gizmo::Gizmo_add_PreUpdateBegin(pGVar4,value_00,(MethodInfo *)0x0);
-            pGVar4 = (this->fields)._._gizmo;
-            value_01 = (GizmoPostEnabledHandler *)func_?();
-            UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
-            VideoCapture+OnVideoCaptureResourceCreatedCallback::
-            VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-                      ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)value_01,(Object *)this
-                       ,MethodInfo__RTG__GizmoCap3D__OnGizmoPostEnabled_RTG__Gizmo_,
-                       (MethodInfo *)0x0);
-            if (pGVar4 != (Gizmo *)0x0) {
-              Gizmo::Gizmo_add_PostEnabled(pGVar4,value_01,(MethodInfo *)0x0);
-              pGVar4 = (this->fields)._._gizmo;
-              value_02 = (GizmoPostDisabledHandler *)func_?();
-              UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
-              VideoCapture+OnVideoCaptureResourceCreatedCallback::
-              VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-                        ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)value_02,
-                         (Object *)this,MethodInfo__RTG__GizmoCap3D__OnGizmoPostDisabled_RTG__Gizmo_
-                         ,(MethodInfo *)0x0);
-              if (pGVar4 != (Gizmo *)0x0) {
-                Gizmo::Gizmo_add_PostDisabled(pGVar4,value_02,(MethodInfo *)0x0);
-                return;
+  bVar3 = cRam_? == '\0';
+  pVVar8 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar9 = (pVVar8->zeroVector).y;
+  fVar10 = (pVVar8->zeroVector).z;
+  (pCVar1->fields)._baseCenter.x = (pVVar8->zeroVector).x;
+  (pCVar1->fields)._baseCenter.y = fVar9;
+  (pCVar1->fields)._baseCenter.z = fVar10;
+  if (bVar3) {
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  bVar3 = iRam_? != 0;
+  pQVar11 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar10 = (pQVar11->identityQuaternion).x;
+  fVar9 = (pQVar11->identityQuaternion).y;
+  fVar12 = (pQVar11->identityQuaternion).z;
+  fVar13 = (pQVar11->identityQuaternion).w;
+  (pCVar1->fields)._baseRadius = 1.0;
+  (pCVar1->fields)._height = 1.0;
+  (pCVar1->fields)._rotation.x = fVar10;
+  (pCVar1->fields)._rotation.y = fVar9;
+  (pCVar1->fields)._rotation.z = fVar12;
+  (pCVar1->fields)._rotation.w = fVar13;
+  (this->fields)._cone = pCVar1;
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)&(this->fields)._cone >> 0xc);
+    uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+    do {
+      uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+      puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+      LOCK();
+      bVar3 = uVar6 == *puVar7;
+      if (bVar3) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar3);
+  }
+  pPVar14 = (PyramidShape3D *)FUN_?(TypeInfo__RTG__PyramidShape3D);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  bVar3 = cRam_? == '\0';
+  pVVar8 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar9 = (pVVar8->zeroVector).y;
+  fVar10 = (pVVar8->zeroVector).z;
+  (pPVar14->fields)._baseCenter.x = (pVVar8->zeroVector).x;
+  (pPVar14->fields)._baseCenter.y = fVar9;
+  (pPVar14->fields)._baseCenter.z = fVar10;
+  (pPVar14->fields)._baseWidth = 1.0;
+  (pPVar14->fields)._baseDepth = 1.0;
+  (pPVar14->fields)._height = 1.0;
+  if (bVar3) {
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  bVar3 = iRam_? != 0;
+  pQVar11 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar10 = (pQVar11->identityQuaternion).y;
+  fVar9 = (pQVar11->identityQuaternion).z;
+  fVar12 = (pQVar11->identityQuaternion).w;
+  (pPVar14->fields)._rotation.x = (pQVar11->identityQuaternion).x;
+  (pPVar14->fields)._rotation.y = fVar10;
+  (pPVar14->fields)._rotation.z = fVar9;
+  (pPVar14->fields)._rotation.w = fVar12;
+  (this->fields)._pyramid = pPVar14;
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)&(this->fields)._pyramid >> 0xc);
+    uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+    do {
+      uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+      puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+      LOCK();
+      bVar3 = uVar6 == *puVar7;
+      if (bVar3) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar3);
+  }
+  this_00 = (BoxShape3D *)FUN_?(TypeInfo__RTG__BoxShape3D);
+  BoxShape3D::BoxShape3D__ctor(this_00,(MethodInfo *)0x0);
+  bVar3 = iRam_? != 0;
+  (this->fields)._box = this_00;
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)&(this->fields)._box >> 0xc);
+    uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+    do {
+      uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+      puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+      LOCK();
+      bVar3 = uVar6 == *puVar7;
+      if (bVar3) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar3);
+  }
+  pSVar15 = (SphereShape3D *)FUN_?(TypeInfo__RTG__SphereShape3D);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__RTG__SphereShape3D__WireRenderDescriptor);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  bVar3 = cRam_? == '\0';
+  (pSVar15->fields)._radius = 1.0;
+  if (bVar3) {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  bVar3 = cRam_? == '\0';
+  pVVar8 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar9 = (pVVar8->zeroVector).y;
+  fVar10 = (pVVar8->zeroVector).z;
+  (pSVar15->fields)._center.x = (pVVar8->zeroVector).x;
+  (pSVar15->fields)._center.y = fVar9;
+  (pSVar15->fields)._center.z = fVar10;
+  if (bVar3) {
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pQVar11 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar10 = (pQVar11->identityQuaternion).y;
+  fVar9 = (pQVar11->identityQuaternion).z;
+  fVar12 = (pQVar11->identityQuaternion).w;
+  (pSVar15->fields)._rotation.x = (pQVar11->identityQuaternion).x;
+  (pSVar15->fields)._rotation.y = fVar10;
+  (pSVar15->fields)._rotation.z = fVar9;
+  (pSVar15->fields)._rotation.w = fVar12;
+  pSVar16 = (SphereShape3D_WireRenderDescriptor *)
+            FUN_?(TypeInfo__RTG__SphereShape3D__WireRenderDescriptor);
+  (pSVar16->fields)._numDetailAxialRings = 0x14;
+  (pSVar16->fields)._numDetailSliceRings = 0x14;
+  (pSVar15->fields)._wireRenderDesc = pSVar16;
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)&(pSVar15->fields)._wireRenderDesc >> 0xc);
+    uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+    do {
+      uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+      puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+      LOCK();
+      bVar3 = uVar6 == *puVar7;
+      if (bVar3) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar3);
+  }
+  iVar17 = iRam_?;
+  (this->fields)._sphere = pSVar15;
+  if (iVar17 != 0) {
+    uVar4 = (uint)((ulonglong)&(this->fields)._sphere >> 0xc);
+    uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+    do {
+      uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+      puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+      LOCK();
+      bVar3 = uVar6 == *puVar7;
+      if (bVar3) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar3);
+  }
+  pTVar18 = (TriangPrismShape3D *)FUN_?(TypeInfo__RTG__TriangPrismShape3D);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  bVar3 = cRam_? == '\0';
+  pVVar8 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar9 = (pVVar8->zeroVector).y;
+  fVar10 = (pVVar8->zeroVector).z;
+  (pTVar18->fields)._baseCenter.x = (pVVar8->zeroVector).x;
+  (pTVar18->fields)._baseCenter.y = fVar9;
+  (pTVar18->fields)._baseCenter.z = fVar10;
+  (pTVar18->fields)._width = 1.0;
+  (pTVar18->fields)._height = 1.0;
+  (pTVar18->fields)._depth = 1.0;
+  if (bVar3) {
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  bVar3 = iRam_? != 0;
+  pQVar11 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar10 = (pQVar11->identityQuaternion).y;
+  fVar9 = (pQVar11->identityQuaternion).z;
+  fVar12 = (pQVar11->identityQuaternion).w;
+  (pTVar18->fields)._rotation.x = (pQVar11->identityQuaternion).x;
+  (pTVar18->fields)._rotation.y = fVar10;
+  (pTVar18->fields)._rotation.z = fVar9;
+  (pTVar18->fields)._rotation.w = fVar12;
+  (this->fields)._trPrism = pTVar18;
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)&(this->fields)._trPrism >> 0xc);
+    uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+    do {
+      uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+      puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+      LOCK();
+      bVar3 = uVar6 == *puVar7;
+      if (bVar3) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar3);
+  }
+  pGVar19 = (GizmoCap3DControllerData *)FUN_?(TypeInfo__RTG__GizmoCap3DControllerData);
+  bVar3 = iRam_? != 0;
+  (this->fields)._controllerData = pGVar19;
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)&(this->fields)._controllerData >> 0xc);
+    uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+    do {
+      uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+      puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+      LOCK();
+      bVar3 = uVar6 == *puVar7;
+      if (bVar3) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar3);
+  }
+  pIVar20 = TypeRef__RTG__GizmoCap3DType;
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
+  }
+  plVar21 = (longlong *)0x0;
+  if (pIVar20 != (Il2CppType *)0x0) {
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    lVar22 = FUN_?(pIVar20,1);
+    plVar21 = (longlong *)FUN_?(lVar22 + 0x20);
+  }
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
+  }
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
+  }
+  if (plVar21 == (longlong *)0x0) {
+    uVar23 = func_?(&TypeInfo__System__ArgumentNullException);
+    this_03 = (ArgumentNullException *)func_?(uVar23);
+    paramName = (String *)func_?(&StringLiteral_enumType);
+    mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+              (this_03,paramName,(MethodInfo *)0x0);
+    uVar23 = func_?(&MethodInfo__System__Enum__GetValues_System__Type_);
+    FUN_?(this_03,uVar23);
+    pcVar24 = (code *)swi(3);
+    (*pcVar24)();
+    return;
+  }
+  this_01 = (Array *)(**(code **)(*plVar21 + 0x888))(plVar21);
+  if (this_01 != (Array *)0x0) {
+    mscorlib.dll::System::Array::Array_get_Length(this_01,(MethodInfo *)0x0);
+    pIVar25 = (IGizmoCap3DController__Array *)FUN_?(TypeInfo__RTG__IGizmoCap3DController);
+    bVar3 = iRam_? != 0;
+    (this->fields)._controllers = pIVar25;
+    if (bVar3) {
+      uVar4 = (uint)((ulonglong)&(this->fields)._controllers >> 0xc);
+      uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+      do {
+        uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+        puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+        LOCK();
+        bVar3 = uVar6 == *puVar7;
+        if (bVar3) {
+          *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar3);
+    }
+    pGVar26 = (GizmoTransform *)FUN_?(TypeInfo__RTG__GizmoTransform);
+    GizmoTransform::GizmoTransform__ctor(pGVar26,(MethodInfo *)0x0);
+    bVar3 = iRam_? != 0;
+    (this->fields)._transform = pGVar26;
+    if (bVar3) {
+      uVar4 = (uint)((ulonglong)&(this->fields)._transform >> 0xc);
+      uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+      do {
+        uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+        puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+        LOCK();
+        bVar3 = uVar6 == *puVar7;
+        if (bVar3) {
+          *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar3);
+    }
+    pGVar27 = (GizmoOverrideColor *)FUN_?(TypeInfo__RTG__GizmoOverrideColor);
+    bVar3 = iRam_? != 0;
+    (this->fields)._overrideColor = pGVar27;
+    if (bVar3) {
+      uVar4 = (uint)((ulonglong)&(this->fields)._overrideColor >> 0xc);
+      uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+      do {
+        uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+        puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+        LOCK();
+        bVar3 = uVar6 == *puVar7;
+        if (bVar3) {
+          *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar3);
+    }
+    pGVar28 = (GizmoCap3DLookAndFeel *)FUN_?(TypeInfo__RTG__GizmoCap3DLookAndFeel);
+    uVar29 = _UNK_?;
+    uVar30 = _UNK_?;
+    uVar23 = _UNK_?;
+    bVar3 = iRam_? != 0;
+    uVar31 = _UNK_?;
+    (pGVar28->fields)._sphereBorderColor.r = (float)_UNK_?;
+    uVar32 = _UNK_?;
+    (pGVar28->fields)._sphereBorderColor.g = (float)uVar31;
+    _UNK_? = (undefined4)uVar29;
+    _UNK_? = SUB84(uVar29,4);
+    uVar31 = _UNK_?;
+    (pGVar28->fields)._sphereBorderColor.b = (float)_UNK_?;
+    _UNK_? = uVar32;
+    (pGVar28->fields)._sphereBorderColor.a = (float)uVar31;
+    (pGVar28->fields)._scale = 1.0;
+    uVar29 = _UNK_?;
+    uVar31 = _UNK_?;
+    (pGVar28->fields)._hoveredColor.r = (float)_UNK_?;
+    uVar32 = _UNK_?;
+    (pGVar28->fields)._hoveredColor.g = (float)uVar31;
+    _UNK_? = (undefined4)uVar29;
+    _UNK_? = SUB84(uVar29,4);
+    uVar31 = _UNK_?;
+    (pGVar28->fields)._hoveredColor.b = (float)_UNK_?;
+    _UNK_? = uVar32;
+    (pGVar28->fields)._hoveredColor.a = (float)uVar31;
+    (pGVar28->fields)._useZoomFactor = 1;
+    (pGVar28->fields)._coneHeight = 1.65;
+    (pGVar28->fields)._coneRadius = 0.5;
+    (pGVar28->fields)._pyramidHeight = 1.65;
+    (pGVar28->fields)._pyramidWidth = 0.8;
+    (pGVar28->fields)._pyramidDepth = 0.8;
+    (pGVar28->fields)._boxWidth = 0.7;
+    (pGVar28->fields)._boxHeight = 0.7;
+    (pGVar28->fields)._boxDepth = 0.7;
+    (pGVar28->fields)._sphereRadius = 0.45;
+    (pGVar28->fields)._trPrismWidth = 1.0;
+    (pGVar28->fields)._trPrismHeight = 1.0;
+    (pGVar28->fields)._trPrismDepth = 1.0;
+    (pGVar28->fields)._numSphereBorderPoints = 100;
+    uVar29 = _UNK_?;
+    _UNK_? = (undefined4)uVar23;
+    _UNK_? = SUB84(uVar23,4);
+    uVar31 = _UNK_?;
+    (pGVar28->fields)._color.r = (float)_UNK_?;
+    _UNK_? = uVar29;
+    uVar23 = _UNK_?;
+    (pGVar28->fields)._color.g = (float)uVar31;
+    _UNK_? = (undefined4)uVar30;
+    _UNK_? = SUB84(uVar30,4);
+    uVar31 = _UNK_?;
+    (pGVar28->fields)._color.b = (float)_UNK_?;
+    _UNK_? = uVar23;
+    (pGVar28->fields)._color.a = (float)uVar31;
+    (this->fields)._lookAndFeel = pGVar28;
+    if (bVar3) {
+      uVar4 = (uint)((ulonglong)&(this->fields)._lookAndFeel >> 0xc);
+      uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+      do {
+        uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+        puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+        LOCK();
+        bVar3 = uVar6 == *puVar7;
+        if (bVar3) {
+          *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar3);
+    }
+    GizmoCap::GizmoCap__ctor((GizmoCap *)this,gizmo,handleId,(MethodInfo *)0x0);
+    pGVar33 = (this->fields)._._handle;
+    if (pGVar33 != (GizmoHandle *)0x0) {
+      iVar34 = GizmoHandle::GizmoHandle_Add3DShape
+                         (pGVar33,(Shape3D *)(this->fields)._cone,(MethodInfo *)0x0);
+      pGVar33 = (this->fields)._._handle;
+      (this->fields)._coneIndex = iVar34;
+      if (pGVar33 != (GizmoHandle *)0x0) {
+        iVar34 = GizmoHandle::GizmoHandle_Add3DShape
+                           (pGVar33,(Shape3D *)(this->fields)._pyramid,(MethodInfo *)0x0);
+        pGVar33 = (this->fields)._._handle;
+        (this->fields)._pyramidIndex = iVar34;
+        if (pGVar33 != (GizmoHandle *)0x0) {
+          iVar34 = GizmoHandle::GizmoHandle_Add3DShape
+                             (pGVar33,(Shape3D *)(this->fields)._box,(MethodInfo *)0x0);
+          pGVar33 = (this->fields)._._handle;
+          (this->fields)._boxIndex = iVar34;
+          if (pGVar33 != (GizmoHandle *)0x0) {
+            iVar34 = GizmoHandle::GizmoHandle_Add3DShape
+                               (pGVar33,(Shape3D *)(this->fields)._sphere,(MethodInfo *)0x0);
+            pGVar33 = (this->fields)._._handle;
+            (this->fields)._sphereIndex = iVar34;
+            if (pGVar33 != (GizmoHandle *)0x0) {
+              iVar34 = GizmoHandle::GizmoHandle_Add3DShape
+                                 (pGVar33,(Shape3D *)(this->fields)._trPrism,(MethodInfo *)0x0);
+              pGVar33 = (this->fields)._._handle;
+              (this->fields)._trPrismIndex = iVar34;
+              if (pGVar33 != (GizmoHandle *)0x0) {
+                pGVar26 = (this->fields)._transform;
+                if (pGVar26 == (GizmoTransform *)0x0) {
+                  pGVar35 = (pGVar33->fields)._gizmo;
+                  if (pGVar35 == (Gizmo *)0x0) goto code_?;
+                  bVar3 = iRam_? != 0;
+                  (pGVar33->fields)._zoomFactorTransform = (pGVar35->fields)._transform;
+                  if (bVar3) {
+                    uVar4 = (uint)((ulonglong)&(pGVar33->fields)._zoomFactorTransform >> 0xc);
+                    uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                    do {
+                      uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                      puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                      LOCK();
+                      bVar3 = uVar6 == *puVar7;
+                      if (bVar3) {
+                        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                      }
+                      UNLOCK();
+                    } while (!bVar3);
+                  }
+                }
+                else {
+                  bVar3 = iRam_? != 0;
+                  (pGVar33->fields)._zoomFactorTransform = pGVar26;
+                  if (bVar3) {
+                    uVar4 = (uint)((ulonglong)&(pGVar33->fields)._zoomFactorTransform >> 0xc);
+                    uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                    do {
+                      uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                      puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                      LOCK();
+                      bVar3 = uVar6 == *puVar7;
+                      if (bVar3) {
+                        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                      }
+                      UNLOCK();
+                    } while (!bVar3);
+                  }
+                }
+                pGVar19 = (this->fields)._controllerData;
+                if (pGVar19 != (GizmoCap3DControllerData *)0x0) {
+                  bVar3 = iRam_? != 0;
+                  (pGVar19->fields).Gizmo = (this->fields)._._gizmo;
+                  if (bVar3) {
+                    uVar4 = (uint)((ulonglong)&pGVar19->fields >> 0xc);
+                    uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                    do {
+                      uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                      puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                      LOCK();
+                      bVar3 = uVar6 == *puVar7;
+                      if (bVar3) {
+                        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                      }
+                      UNLOCK();
+                    } while (!bVar3);
+                  }
+                  pGVar19 = (this->fields)._controllerData;
+                  if (pGVar19 != (GizmoCap3DControllerData *)0x0) {
+                    bVar3 = iRam_? != 0;
+                    (pGVar19->fields).Cap = this;
+                    if (bVar3) {
+                      uVar4 = (uint)((ulonglong)&(pGVar19->fields).Cap >> 0xc);
+                      uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                      do {
+                        uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                        puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                        LOCK();
+                        bVar3 = uVar6 == *puVar7;
+                        if (bVar3) {
+                          *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                        }
+                        UNLOCK();
+                      } while (!bVar3);
+                    }
+                    pGVar19 = (this->fields)._controllerData;
+                    if (pGVar19 != (GizmoCap3DControllerData *)0x0) {
+                      bVar3 = iRam_? != 0;
+                      (pGVar19->fields).CapHandle = (this->fields)._._handle;
+                      if (bVar3) {
+                        uVar4 = (uint)((ulonglong)&(pGVar19->fields).CapHandle >> 0xc);
+                        uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                        do {
+                          uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                          puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                          LOCK();
+                          bVar3 = uVar6 == *puVar7;
+                          if (bVar3) {
+                            *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                          }
+                          UNLOCK();
+                        } while (!bVar3);
+                      }
+                      pGVar19 = (this->fields)._controllerData;
+                      if (pGVar19 != (GizmoCap3DControllerData *)0x0) {
+                        bVar3 = iRam_? != 0;
+                        (pGVar19->fields).Cone = (this->fields)._cone;
+                        if (bVar3) {
+                          uVar4 = (uint)((ulonglong)&(pGVar19->fields).Cone >> 0xc);
+                          uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                          do {
+                            uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                            puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                            LOCK();
+                            bVar3 = uVar6 == *puVar7;
+                            if (bVar3) {
+                              *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                            }
+                            UNLOCK();
+                          } while (!bVar3);
+                        }
+                        pGVar19 = (this->fields)._controllerData;
+                        if (pGVar19 != (GizmoCap3DControllerData *)0x0) {
+                          (pGVar19->fields).ConeIndex = (this->fields)._coneIndex;
+                          pGVar19 = (this->fields)._controllerData;
+                          if (pGVar19 != (GizmoCap3DControllerData *)0x0) {
+                            bVar3 = iRam_? != 0;
+                            (pGVar19->fields).Pyramid = (this->fields)._pyramid;
+                            if (bVar3) {
+                              uVar4 = (uint)((ulonglong)&(pGVar19->fields).Pyramid >> 0xc);
+                              uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                              do {
+                                uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                                puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                                LOCK();
+                                bVar3 = uVar6 == *puVar7;
+                                if (bVar3) {
+                                  *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                                }
+                                UNLOCK();
+                              } while (!bVar3);
+                            }
+                            pGVar19 = (this->fields)._controllerData;
+                            if (pGVar19 != (GizmoCap3DControllerData *)0x0) {
+                              (pGVar19->fields).PyramidIndex = (this->fields)._pyramidIndex;
+                              pGVar19 = (this->fields)._controllerData;
+                              if (pGVar19 != (GizmoCap3DControllerData *)0x0) {
+                                bVar3 = iRam_? != 0;
+                                (pGVar19->fields).Box = (this->fields)._box;
+                                if (bVar3) {
+                                  uVar4 = (uint)((ulonglong)&(pGVar19->fields).Box >> 0xc);
+                                  uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                                  do {
+                                    uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                                    puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                                    LOCK();
+                                    bVar3 = uVar6 == *puVar7;
+                                    if (bVar3) {
+                                      *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                                    }
+                                    UNLOCK();
+                                  } while (!bVar3);
+                                }
+                                pGVar19 = (this->fields)._controllerData;
+                                if (pGVar19 != (GizmoCap3DControllerData *)0x0) {
+                                  (pGVar19->fields).BoxIndex = (this->fields)._boxIndex;
+                                  pGVar19 = (this->fields)._controllerData;
+                                  if (pGVar19 != (GizmoCap3DControllerData *)0x0) {
+                                    bVar3 = iRam_? != 0;
+                                    (pGVar19->fields).Sphere = (this->fields)._sphere;
+                                    if (bVar3) {
+                                      uVar4 = (uint)((ulonglong)&(pGVar19->fields).Sphere >> 0xc);
+                                      uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                                      do {
+                                        uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                                        puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                                        LOCK();
+                                        bVar3 = uVar6 == *puVar7;
+                                        if (bVar3) {
+                                          *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                                        }
+                                        UNLOCK();
+                                      } while (!bVar3);
+                                    }
+                                    pGVar19 = (this->fields)._controllerData;
+                                    if (pGVar19 != (GizmoCap3DControllerData *)0x0) {
+                                      (pGVar19->fields).SphereIndex = (this->fields)._sphereIndex;
+                                      pGVar19 = (this->fields)._controllerData;
+                                      if (pGVar19 != (GizmoCap3DControllerData *)0x0) {
+                                        bVar3 = iRam_? != 0;
+                                        (pGVar19->fields).TrPrism = (this->fields)._trPrism;
+                                        if (bVar3) {
+                                          uVar4 = (uint)((ulonglong)&(pGVar19->fields).TrPrism >>
+                                                         0xc);
+                                          uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                                          do {
+                                            uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                                            puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                                            LOCK();
+                                            bVar3 = uVar6 == *puVar7;
+                                            if (bVar3) {
+                                              *puVar7 = uVar6 | 1L << (ulonglong)(uVar4 & 0x3f);
+                                            }
+                                            UNLOCK();
+                                          } while (!bVar3);
+                                        }
+                                        pGVar19 = (this->fields)._controllerData;
+                                        if (pGVar19 != (GizmoCap3DControllerData *)0x0) {
+                                          (pGVar19->fields).TrPrismIndex =
+                                               (this->fields)._trPrismIndex;
+                                          pIVar25 = (this->fields)._controllers;
+                                          pGVar19 = (this->fields)._controllerData;
+                                          lVar22 = FUN_?(
+                                                  TypeInfo__RTG__GizmoConeCap3DController);
+                                          bVar3 = iRam_? != 0;
+                                          *(GizmoCap3DControllerData **)(lVar22 + 0x10) = pGVar19;
+                                          if (bVar3) {
+                                            uVar4 = (uint)(lVar22 + 0x10U >> 0xc);
+                                            uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                                            do {
+                                              uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                                              puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                                              LOCK();
+                                              bVar3 = uVar6 == *puVar7;
+                                              if (bVar3) {
+                                                *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                                              }
+                                              UNLOCK();
+                                            } while (!bVar3);
+                                          }
+                                          if (pIVar25 != (IGizmoCap3DController__Array *)0x0) {
+                                            lVar36 = FUN_?(lVar22,(pIVar25->klass->_0).
+                                                                          element_class);
+                                            if (lVar36 == 0) {
+                                              uVar23 = FUN_?();
+                                              FUN_?(uVar23,0);
+                                              pcVar24 = (code *)swi(3);
+                                              (*pcVar24)();
+                                              return;
+                                            }
+                                            FUN_?(pIVar25,0,lVar22);
+                                            pIVar25 = (this->fields)._controllers;
+                                            pGVar19 = (this->fields)._controllerData;
+                                            lVar22 = FUN_?(
+                                                  TypeInfo__RTG__GizmoPyramidCap3DController);
+                                            bVar3 = iRam_? != 0;
+                                            *(GizmoCap3DControllerData **)(lVar22 + 0x10) = pGVar19;
+                                            if (bVar3) {
+                                              uVar4 = (uint)(lVar22 + 0x10U >> 0xc);
+                                              uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                                              do {
+                                                uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                                                puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                                                LOCK();
+                                                bVar3 = uVar6 == *puVar7;
+                                                if (bVar3) {
+                                                  *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                                                }
+                                                UNLOCK();
+                                              } while (!bVar3);
+                                            }
+                                            if (pIVar25 != (IGizmoCap3DController__Array *)0x0) {
+                                              lVar36 = FUN_?(lVar22,(pIVar25->klass->_0).
+                                                                            element_class);
+                                              if (lVar36 == 0) {
+                                                uVar23 = FUN_?();
+                                                FUN_?(uVar23,0);
+                                                pcVar24 = (code *)swi(3);
+                                                (*pcVar24)();
+                                                return;
+                                              }
+                                              FUN_?(pIVar25,1,lVar22);
+                                              pIVar25 = (this->fields)._controllers;
+                                              pGVar19 = (this->fields)._controllerData;
+                                              lVar22 = FUN_?(
+                                                  TypeInfo__RTG__GizmoBoxCap3DController);
+                                              bVar3 = iRam_? != 0;
+                                              *(GizmoCap3DControllerData **)(lVar22 + 0x10) =
+                                                   pGVar19;
+                                              if (bVar3) {
+                                                uVar4 = (uint)(lVar22 + 0x10U >> 0xc);
+                                                uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                                                do {
+                                                  uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                                                  puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                                                  LOCK();
+                                                  bVar3 = uVar6 == *puVar7;
+                                                  if (bVar3) {
+                                                    *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                                                  }
+                                                  UNLOCK();
+                                                } while (!bVar3);
+                                              }
+                                              if (pIVar25 != (IGizmoCap3DController__Array *)0x0) {
+                                                lVar36 = FUN_?(lVar22,(pIVar25->klass->_0).
+                                                                              element_class);
+                                                if (lVar36 == 0) {
+                                                  uVar23 = FUN_?();
+                                                  FUN_?(uVar23,0);
+                                                  pcVar24 = (code *)swi(3);
+                                                  (*pcVar24)();
+                                                  return;
+                                                }
+                                                FUN_?(pIVar25,2,lVar22);
+                                                pIVar25 = (this->fields)._controllers;
+                                                pGVar19 = (this->fields)._controllerData;
+                                                lVar22 = FUN_?(
+                                                  TypeInfo__RTG__GizmoSphereCap3DController);
+                                                bVar3 = iRam_? != 0;
+                                                *(GizmoCap3DControllerData **)(lVar22 + 0x10) =
+                                                     pGVar19;
+                                                if (bVar3) {
+                                                  uVar4 = (uint)(lVar22 + 0x10U >> 0xc);
+                                                  uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                                                  do {
+                                                    uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR)
+                                                    ;
+                                                    puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR)
+                                                    ;
+                                                    LOCK();
+                                                    bVar3 = uVar6 == *puVar7;
+                                                    if (bVar3) {
+                                                      *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                                                    }
+                                                    UNLOCK();
+                                                  } while (!bVar3);
+                                                }
+                                                if (pIVar25 != (IGizmoCap3DController__Array *)0x0)
+                                                {
+                                                  lVar36 = FUN_?(lVar22,(pIVar25->klass->_0)
+                                                                                .element_class);
+                                                  if (lVar36 == 0) {
+                                                    uVar23 = FUN_?();
+                                                    FUN_?(uVar23,0);
+                                                    pcVar24 = (code *)swi(3);
+                                                    (*pcVar24)();
+                                                    return;
+                                                  }
+                                                  FUN_?(pIVar25,3,lVar22);
+                                                  pIVar25 = (this->fields)._controllers;
+                                                  pGVar19 = (this->fields)._controllerData;
+                                                  lVar22 = FUN_?(
+                                                  TypeInfo__RTG__GizmoTriPrismCap3DController);
+                                                  bVar3 = iRam_? != 0;
+                                                  *(GizmoCap3DControllerData **)(lVar22 + 0x10) =
+                                                       pGVar19;
+                                                  if (bVar3) {
+                                                    uVar4 = (uint)(lVar22 + 0x10U >> 0xc);
+                                                    uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                                                    do {
+                                                      uVar6 = *(ulonglong *)
+                                                               (uVar5 * 8 + 0xADDR);
+                                                      puVar7 = (ulonglong *)
+                                                               (uVar5 * 8 + 0xADDR);
+                                                      LOCK();
+                                                      bVar3 = uVar6 == *puVar7;
+                                                      if (bVar3) {
+                                                        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                                                      }
+                                                      UNLOCK();
+                                                    } while (!bVar3);
+                                                  }
+                                                  if (pIVar25 != (IGizmoCap3DController__Array *)0x0
+                                                     ) {
+                                                    lVar36 = FUN_?(lVar22,(pIVar25->klass->
+                                                                                  _0).element_class)
+                                                    ;
+                                                    if (lVar36 == 0) {
+                                                      uVar23 = FUN_?();
+                                                      FUN_?(uVar23,0);
+                                                      pcVar24 = (code *)swi(3);
+                                                      (*pcVar24)();
+                                                      return;
+                                                    }
+                                                    FUN_?(pIVar25,4,lVar22);
+                                                    pGVar26 = (this->fields)._transform;
+                                                    value = (GizmoEntityTransformChangedHandler *)
+                                                            FUN_?(
+                                                  TypeInfo__RTG__GizmoEntityTransformChangedHandler)
+                                                  ;
+                                                  mscorlib.dll::System::Action`2[Object,UnityEngine
+                                                  ::UIElements::Experimental::StyleValues]::
+                                                  Action_2_Object_UnityEngine_UIElements_Experimental_StyleValues___ctor
+                                                            ((
+                                                  Action_2_Object_UnityEngine_UIElements_Experimental_StyleValues_
+                                                  *)value,(Object *)this,
+                                                  MethodInfo__RTG__GizmoCap3D__OnTransformChanged_RTG__GizmoTransform__RTG__GizmoTransform__ChangeData_
+                                                  ,(MethodInfo *)0x0);
+                                                  if (pGVar26 != (GizmoTransform *)0x0) {
+                                                    GizmoTransform::GizmoTransform_add_Changed
+                                                              (pGVar26,value,(MethodInfo *)0x0);
+                                                    pGVar35 = (this->fields)._._gizmo;
+                                                    if ((pGVar35 != (Gizmo *)0x0) &&
+                                                       (pGVar26 = (this->fields)._transform,
+                                                       pGVar26 != (GizmoTransform *)0x0)) {
+                                                      GizmoTransform::GizmoTransform_SetParent
+                                                                (pGVar26,(pGVar35->fields)._transform
+                                                                 ,(MethodInfo *)0x0);
+                                                      pGVar35 = (this->fields)._._gizmo;
+                                                      value_00 = (GizmoPreUpdateBeginHandler *)
+                                                                 FUN_?(
+                                                  TypeInfo__RTG__GizmoPreUpdateBeginHandler);
+                                                  UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                                  UnityAction`1[System::Object]::
+                                                  UnityAction_1_System_Object___ctor
+                                                            ((UnityAction_1_System_Object_ *)
+                                                             value_00,(Object *)this,
+                                                                                                                          
+                                                  MethodInfo__RTG__GizmoCap3D__OnGizmoPreUpdateBegin_RTG__Gizmo_
+                                                  ,(MethodInfo *)0x0);
+                                                  if (pGVar35 != (Gizmo *)0x0) {
+                                                    Gizmo::Gizmo_add_PreUpdateBegin
+                                                              (pGVar35,value_00,(MethodInfo *)0x0);
+                                                    pGVar35 = (this->fields)._._gizmo;
+                                                    value_01 = (GizmoPostEnabledHandler *)
+                                                               FUN_?(
+                                                  TypeInfo__RTG__GizmoPostEnabledHandler);
+                                                  UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                                  UnityAction`1[System::Object]::
+                                                  UnityAction_1_System_Object___ctor
+                                                            ((UnityAction_1_System_Object_ *)
+                                                             value_01,(Object *)this,
+                                                                                                                          
+                                                  MethodInfo__RTG__GizmoCap3D__OnGizmoPostEnabled_RTG__Gizmo_
+                                                  ,(MethodInfo *)0x0);
+                                                  if (pGVar35 != (Gizmo *)0x0) {
+                                                    Gizmo::Gizmo_add_PostEnabled
+                                                              (pGVar35,value_01,(MethodInfo *)0x0);
+                                                    pGVar35 = (this->fields)._._gizmo;
+                                                    this_02 = (UnityAction_1_System_Object_ *)
+                                                              FUN_?(
+                                                  TypeInfo__RTG__GizmoPostDisabledHandler);
+                                                  UnityEngine.CoreModule.dll::UnityEngine::Events::
+                                                  UnityAction`1[System::Object]::
+                                                  UnityAction_1_System_Object___ctor
+                                                            (this_02,(Object *)this,
+                                                                                                                          
+                                                  MethodInfo__RTG__GizmoCap3D__OnGizmoPostDisabled_RTG__Gizmo_
+                                                  ,(MethodInfo *)0x0);
+                                                  if (pGVar35 != (Gizmo *)0x0) {
+                                                    if (cRam_? == '\0') {
+                                                      FUN_?(&
+                                                  TypeInfo__RTG__GizmoPostDisabledHandler);
+                                                  LOCK();
+                                                  UNLOCK();
+                                                  cRam_? = '\x01';
+                                                  }
+                                                  ppGVar37 = &(pGVar35->fields).PostDisabled;
+                                                  a = (pGVar35->fields).PostDisabled;
+                                                  do {
+                                                    pGVar38 = (GizmoPostDisabledHandler *)
+                                                              mscorlib.dll::System::Delegate::
+                                                              Delegate_Combine((Delegate *)a,
+                                                                               (Delegate *)this_02,
+                                                                               (MethodInfo *)0x0);
+                                                    pGVar39 = (GizmoPostDisabledHandler *)0x0;
+                                                    if (pGVar38 != (GizmoPostDisabledHandler *)0x0)
+                                                    {
+                                                      if (pGVar38->klass ==
+                                                          TypeInfo__RTG__GizmoPostDisabledHandler) {
+                                                        pGVar39 = pGVar38;
+                                                      }
+                                                      if (pGVar39 == (GizmoPostDisabledHandler *)0x0
+                                                         ) {
+                                                        FUN_?(pGVar38);
+                                                        pcVar24 = (code *)swi(3);
+                                                        (*pcVar24)();
+                                                        return;
+                                                      }
+                                                    }
+                                                    LOCK();
+                                                    pGVar38 = *ppGVar37;
+                                                    bVar3 = a == pGVar38;
+                                                    if (bVar3) {
+                                                      *ppGVar37 = pGVar39;
+                                                      pGVar38 = a;
+                                                    }
+                                                    UNLOCK();
+                                                    pGVar39 = a;
+                                                    if (!bVar3) {
+                                                      pGVar39 = pGVar38;
+                                                    }
+                                                    if (iRam_? != 0) {
+                                                      uVar4 = (uint)((ulonglong)ppGVar37 >> 0xc);
+                                                      uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6)
+                                                      ;
+                                                      do {
+                                                        uVar6 = *(ulonglong *)
+                                                                 (uVar5 * 8 + 0xADDR);
+                                                        puVar7 = (ulonglong *)
+                                                                 (uVar5 * 8 + 0xADDR);
+                                                        LOCK();
+                                                        bVar3 = uVar6 == *puVar7;
+                                                        if (bVar3) {
+                                                          *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                                                        }
+                                                        UNLOCK();
+                                                      } while (!bVar3);
+                                                    }
+                                                    bVar3 = pGVar39 == a;
+                                                    a = pGVar39;
+                                                    if (bVar3) {
+                                                      return;
+                                                    }
+                                                  } while( true );
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
           }
         }
       }
-      goto code_?;
     }
   }
-  func_?();
-  func_?();
 code_?:
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  FUN_?();
+  pcVar24 = (code *)swi(3);
+  (*pcVar24)();
   return;
 }
 
@@ -1419,16 +2745,14 @@ Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_get_DragSession
           (GizmoCap3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._._handle;
-  if (pGVar2 != (GizmoHandle *)0x0) {
-    return (pGVar2->fields)._DragSession_k__BackingField;
+  pGVar1 = (this->fields)._._handle;
+  if (pGVar1 != (GizmoHandle *)0x0) {
+    return (pGVar1->fields)._DragSession_k__BackingField;
   }
-  uVar3 = func_?(auStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  pIVar6 = (IGizmoDragSession *)(*pcVar5)();
-  return pIVar6;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  pIVar3 = (IGizmoDragSession *)(*pcVar2)();
+  return pIVar3;
 }
 
 
@@ -1452,21 +2776,19 @@ Vector3 * Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_get_Position
                     (Vector3 *__return_storage_ptr__,GizmoCap3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._transform;
-  if (pGVar2 != (GizmoTransform *)0x0) {
-    fVar3 = (pGVar2->fields)._position3D.y;
-    fVar4 = (pGVar2->fields)._position3D.z;
-    __return_storage_ptr__->x = (pGVar2->fields)._position3D.x;
-    __return_storage_ptr__->y = fVar3;
-    __return_storage_ptr__->z = fVar4;
+  pGVar1 = (this->fields)._transform;
+  if (pGVar1 != (GizmoTransform *)0x0) {
+    fVar2 = (pGVar1->fields)._position3D.y;
+    fVar3 = (pGVar1->fields)._position3D.z;
+    __return_storage_ptr__->x = (pGVar1->fields)._position3D.x;
+    __return_storage_ptr__->y = fVar2;
+    __return_storage_ptr__->z = fVar3;
     return __return_storage_ptr__;
   }
-  uVar5 = func_?(auStack_6);
-  func_?(uVar5);
-  pcVar7 = (code *)swi(3);
-  pVVar8 = (Vector3 *)(*pcVar7)();
-  return pVVar8;
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  pVVar5 = (Vector3 *)(*pcVar4)();
+  return pVVar5;
 }
 
 
@@ -1477,23 +2799,21 @@ Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_get_Rotation
           (Quaternion *__return_storage_ptr__,GizmoCap3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._transform;
-  if (pGVar2 != (GizmoTransform *)0x0) {
-    fVar3 = (pGVar2->fields)._rotation3D.y;
-    fVar4 = (pGVar2->fields)._rotation3D.z;
-    fVar5 = (pGVar2->fields)._rotation3D.w;
-    __return_storage_ptr__->x = (pGVar2->fields)._rotation3D.x;
-    __return_storage_ptr__->y = fVar3;
-    __return_storage_ptr__->z = fVar4;
-    __return_storage_ptr__->w = fVar5;
+  pGVar1 = (this->fields)._transform;
+  if (pGVar1 != (GizmoTransform *)0x0) {
+    fVar2 = (pGVar1->fields)._rotation3D.y;
+    fVar3 = (pGVar1->fields)._rotation3D.z;
+    fVar4 = (pGVar1->fields)._rotation3D.w;
+    __return_storage_ptr__->x = (pGVar1->fields)._rotation3D.x;
+    __return_storage_ptr__->y = fVar2;
+    __return_storage_ptr__->z = fVar3;
+    __return_storage_ptr__->w = fVar4;
     return __return_storage_ptr__;
   }
-  uVar6 = func_?(auStack_7);
-  func_?(uVar6);
-  pcVar8 = (code *)swi(3);
-  pQVar9 = (Quaternion *)(*pcVar8)();
-  return pQVar9;
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  pQVar6 = (Quaternion *)(*pcVar5)();
+  return pQVar6;
 }
 
 
@@ -1503,19 +2823,28 @@ void Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_set_DragSession
                (GizmoCap3D *this,IGizmoDragSession *value,MethodInfo *method)
 
 {
-  pIStack_1 = (IGizmoDragSession *)&stack0xfffffffc;
-  pGVar2 = (this->fields)._._handle;
-  if (pGVar2 != (GizmoHandle *)0x0) {
-    pIStack_1 = value;
-    (pGVar2->fields)._DragSession_k__BackingField = value;
-    ppIStack_3 = &(pGVar2->fields)._DragSession_k__BackingField;
-    func_?();
+  pGVar1 = (this->fields)._._handle;
+  if (pGVar1 == (GizmoHandle *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  uVar4 = func_?(&puStack_5);
-  func_?(uVar4);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  bVar3 = iRam_? != 0;
+  (pGVar1->fields)._DragSession_k__BackingField = value;
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)&(pGVar1->fields)._DragSession_k__BackingField >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar6 != uVar7);
+  }
   return;
 }
 
@@ -1523,18 +2852,94 @@ void Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_set_DragSession
 /* Void set_Position(Vector3) */
 
 void Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_set_Position
-               (GizmoCap3D *this,Vector3 value,MethodInfo *method)
+               (GizmoCap3D *this,Vector3 *value,MethodInfo *method)
 
 {
   this_00 = (this->fields)._transform;
-  if (this_00 != (GizmoTransform *)0x0) {
-    GizmoTransform::GizmoTransform_set_Position3D(this_00,value,(MethodInfo *)0x0);
+  if (this_00 == (GizmoTransform *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  if (((this_00->fields)._firingChanged3DEvent == 0) &&
+     (uVar2 = value->x, uVar3 = value->y, uVar4 = (this_00->fields)._position3D.x,
+     fVar5 = (this_00->fields)._position3D.z - value->z,
+     fVar6 = (this_00->fields)._position3D.y - (float)uVar3,
+     _UNK_? <=
+     fVar6 * fVar6 + ((float)uVar4 - (float)uVar2) * ((float)uVar4 - (float)uVar2) +
+     fVar5 * fVar5)) {
+    fVar6 = value->y;
+    fVar5 = value->z;
+    (this_00->fields)._position3D.x = value->x;
+    (this_00->fields)._position3D.y = fVar6;
+    (this_00->fields)._position3D.z = fVar5;
+    if ((this_00->fields)._parent == (GizmoTransform *)0x0) {
+      fVar6 = (this_00->fields)._position3D.y;
+      fVar5 = (this_00->fields)._position3D.z;
+      (this_00->fields)._localPosition3D.x = (this_00->fields)._position3D.x;
+      (this_00->fields)._localPosition3D.y = fVar6;
+      (this_00->fields)._localPosition3D.z = fVar5;
+    }
+    else {
+      pGVar7 = (this_00->fields)._parent;
+      uStack_8 = 0;
+      uStack_9 = 0;
+      fStack_10 = (pGVar7->fields)._rotation3D.x;
+      fStack_11 = (pGVar7->fields)._rotation3D.y;
+      fStack_12 = (pGVar7->fields)._rotation3D.z;
+      fStack_13 = (pGVar7->fields)._rotation3D.w;
+      pcVar1 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+        uVar14 = func_?(&UNK_?);
+        FUN_?(uVar14,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcRam_? = pcVar1;
+      (*pcRam_?)(&fStack_10);
+      pGVar7 = (this_00->fields)._parent;
+      if (pGVar7 == (GizmoTransform *)0x0) {
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      uVar15 = (pGVar7->fields)._position3D.x;
+      uVar16 = (pGVar7->fields)._position3D.y;
+      fVar17 = (this_00->fields)._position3D.z - (pGVar7->fields)._position3D.z;
+      uVar18 = (this_00->fields)._position3D.x;
+      fVar19 = (float)uVar18 - (float)uVar15;
+      fVar20 = (this_00->fields)._position3D.y - (float)uVar16;
+      fVar6 = uStack_8._4_4_ + uStack_8._4_4_;
+      fVar5 = (float)uStack_9 + (float)uStack_9;
+      fVar21 = uStack_9._4_4_ * ((float)uStack_8 + (float)uStack_8);
+      fVar22 = (float)uStack_8 * ((float)uStack_8 + (float)uStack_8);
+      fVar23 = _UNK_? - ((float)uStack_9 * fVar5 + fVar22);
+      fVar22 = _UNK_? - (uStack_8._4_4_ * fVar6 + fVar22);
+      (this_00->fields)._localPosition3D.x =
+           (_UNK_? - ((float)uStack_9 * fVar5 + uStack_8._4_4_ * fVar6)) * fVar19 +
+           ((float)uStack_8 * fVar6 - uStack_9._4_4_ * fVar5) * fVar20 +
+           (uStack_9._4_4_ * fVar6 + (float)uStack_8 * fVar5) * fVar17;
+      (this_00->fields)._localPosition3D.y =
+           fVar23 * fVar20 + (uStack_9._4_4_ * fVar5 + (float)uStack_8 * fVar6) * fVar19 +
+           (uStack_8._4_4_ * fVar5 - fVar21) * fVar17;
+      (this_00->fields)._localPosition3D.z =
+           ((float)uStack_8 * fVar5 - uStack_9._4_4_ * fVar6) * fVar19 +
+           (fVar21 + uStack_8._4_4_ * fVar5) * fVar20 + fVar22 * fVar17;
+    }
+    GizmoTransform::GizmoTransform_UpdateChildTransforms3D(this_00,(MethodInfo *)0x0);
+    pGVar24 = (this_00->fields).Changed;
+    (this_00->fields)._firingChanged3DEvent = 1;
+    if (pGVar24 != (GizmoEntityTransformChangedHandler *)0x0) {
+      (*(pGVar24->fields)._._.invoke_impl)
+                ((pGVar24->fields)._._.method_code,this_00,0x200000000,(pGVar24->fields)._._.method);
+    }
+    (this_00->fields)._firingChanged3DEvent = 0;
+    return;
+  }
   return;
 }
 
@@ -1542,16 +2947,19 @@ void Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_set_Position
 /* Void set_Rotation(Quaternion) */
 
 void Assembly-CSharp.dll::RTG::GizmoCap3D::GizmoCap3D_set_Rotation
-               (GizmoCap3D *this,Quaternion value,MethodInfo *method)
+               (GizmoCap3D *this,Quaternion *value,MethodInfo *method)
 
 {
   this_00 = (this->fields)._transform;
   if (this_00 != (GizmoTransform *)0x0) {
-    GizmoTransform::GizmoTransform_set_Rotation3D(this_00,value,(MethodInfo *)0x0);
+    QStack_1.x = value->x;
+    QStack_1.y = value->y;
+    QStack_1.z = value->z;
+    QStack_1.w = value->w;
+    GizmoTransform::GizmoTransform_set_Rotation3D(this_00,&QStack_1,(MethodInfo *)0x0);
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

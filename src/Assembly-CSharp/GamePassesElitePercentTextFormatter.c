@@ -7,52 +7,67 @@ void Assembly-CSharp.dll::GamePassesElitePercentTextFormatter::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Single);
-    func_?(&TypeInfo__SubscriberRewardDataManager);
+    FUN_?(&TypeInfo__SubscriberRewardDataManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).textElement;
   if (pTVar1 != (Text *)0x0) {
     pSVar2 = (String *)
-             (*(code *)(pTVar1->klass->vtable).get_text.method)
-                       (pTVar1,(pTVar1->klass->vtable).set_text.methodPtr);
-    if ((TypeInfo__SubscriberRewardDataManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__SubscriberRewardDataManager);
+             (*(pTVar1->klass->vtable).get_text.methodPtr)
+                       (pTVar1,(pTVar1->klass->vtable).get_text.method);
+    if (*(int *)&(TypeInfo__SubscriberRewardDataManager->_1).field_0x1c == 0) {
+      FUN_?();
     }
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__SubscriberRewardDataManager);
+      FUN_?(&TypeInfo__SubscriberRewardDataManager);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    if ((TypeInfo__SubscriberRewardDataManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__SubscriberRewardDataManager);
+    if (*(int *)&(TypeInfo__SubscriberRewardDataManager->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    pKVar3 = TypeInfo__SubscriberRewardDataManager->static_fields->_VatValues_k__BackingField;
-    if (pKVar3 != (KogamaVatValues *)0x0) {
-      this = (GamePassesElitePercentTextFormatter *)
-             ((_UNK_? - (pKVar3->fields).regularUserVat) * _UNK_?);
-      arg0 = (Object *)func_?(TypeInfo__System__Single,&this);
+    fVar3 = _UNK_?;
+    pKVar4 = TypeInfo__SubscriberRewardDataManager->static_fields->_VatValues_k__BackingField;
+    if (pKVar4 != (KogamaVatValues *)0x0) {
+      afStackX_8[0] = (_UNK_? - (pKVar4->fields).regularUserVat) * _UNK_?;
+      arg0 = (Object *)FUN_?(uRam_?,afStackX_8);
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__SubscriberRewardDataManager);
+        FUN_?(&TypeInfo__SubscriberRewardDataManager);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      if ((TypeInfo__SubscriberRewardDataManager->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__SubscriberRewardDataManager);
+      if (*(int *)&(TypeInfo__SubscriberRewardDataManager->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__SubscriberRewardDataManager);
       }
-      pKVar3 = TypeInfo__SubscriberRewardDataManager->static_fields->_VatValues_k__BackingField;
-      if (pKVar3 != (KogamaVatValues *)0x0) {
-        fStack_4 = (_UNK_? - (pKVar3->fields).subscribedUserVat) * _UNK_?;
-        arg1 = (Object *)func_?(TypeInfo__System__Single,&fStack_4);
-        pSVar2 = mscorlib.dll::System::String::String_Format_1(pSVar2,arg0,arg1,(MethodInfo *)0x0);
-        (*(code *)(pTVar1->klass->vtable).set_text.method)
-                  (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
-        ;
+      pKVar4 = TypeInfo__SubscriberRewardDataManager->static_fields->_VatValues_k__BackingField;
+      if (pKVar4 != (KogamaVatValues *)0x0) {
+        afStackX_8[0] = (fVar3 - (pKVar4->fields).subscribedUserVat) * _UNK_?;
+        arg1 = (Object *)FUN_?(uRam_?,afStackX_8);
+        PStack_5._arg0 = (Object *)0x0;
+        PStack_5._arg1 = (Object *)0x0;
+        PStack_5._arg2 = (Object *)0x0;
+        PStack_5._args = (Object__Array *)0x0;
+        mscorlib.dll::System::ParamsArray::ParamsArray__ctor_1
+                  (&PStack_5,arg0,arg1,(MethodInfo *)0x0);
+        PStack_6._arg0 = PStack_5._arg0;
+        PStack_6._arg1 = PStack_5._arg1;
+        PStack_6._arg2 = PStack_5._arg2;
+        PStack_6._args = PStack_5._args;
+        pSVar2 = mscorlib.dll::System::String::String_FormatHelper
+                           ((IFormatProvider *)0x0,pSVar2,&PStack_6,(MethodInfo *)0x0);
+        (*(pTVar1->klass->vtable).set_text.methodPtr)
+                  (pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method);
         return;
       }
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 

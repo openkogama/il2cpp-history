@@ -6,52 +6,54 @@ void MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionTypes::Subscr
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
-                   );
-    func_?(&
-                    TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__SubscriptionRuleBoolean
-                   );
-    func_?(&TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__XpBooster);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__SubscriptionRuleBoolean
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__XpBooster);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   SubscriptionBase::SubscriptionBase__ctor((SubscriptionBase *)this,(MethodInfo *)0x0);
   pDVar1 = (Dictionary_2_System_Int32Enum_System_Object_ *)(this->fields)._.benefits;
-  method_01 = TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__XpBooster;
-  value = (MethodInfo *)func_?();
-  method_00 = value;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-  value->invoker_method = (InvokerMethod)0x32;
-  value->name = (char *)0xa;
-  value->klass = (Il2CppClass *)0x2;
-  value->return_type = (Il2CppType *)0x190;
+  pOVar2 = (Object *)
+           FUN_?(TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__XpBooster);
+  *(undefined4 *)&pOVar2[1].klass = 0x32;
+  *(undefined4 *)((longlong)&pOVar2[1].klass + 4) = 10;
+  *(undefined4 *)&pOVar2[1].monitor = 2;
+  *(undefined4 *)((longlong)&pOVar2[1].monitor + 4) = 400;
   if (pDVar1 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
+    behavior = CONCAT31((int3)((uint)in_R9D >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              (pDVar1,1,(Object *)value,
+    Dictionary_2_System_Int32Enum_System_Object__TryInsert
+              (pDVar1,1,pOVar2,behavior,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
-              );
+               ->klass->rgctx_data[0x22].method);
     pDVar1 = (Dictionary_2_System_Int32Enum_System_Object_ *)(this->fields)._.benefits;
-    value_00 = (Object *)
-               func_?(
-                              TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__SubscriptionRuleBoolean
-                              );
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (value_00,ExceptionArgument__Enum_obj,method_00);
-    *(undefined1 *)&value_00[1].klass = 1;
+    pOVar2 = (Object *)
+             FUN_?(
+                          TypeInfo__MV__WorldObject__Subscription__SubscriptionRules__SubscriptionRuleBoolean
+                          );
+    *(undefined1 *)&pOVar2[1].klass = 1;
     if (pDVar1 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-      Dictionary_2_System_Int32Enum_System_Object__Add
-                (pDVar1,3,value_00,
+      Dictionary_2_System_Int32Enum_System_Object__TryInsert
+                (pDVar1,3,pOVar2,CONCAT31((int3)(behavior >> 8),2),
                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::Subscription::SubscriptionBenefit,_MV::WorldObject::Subscription::SubscriptionRule>__Add_MV__WorldObject__Subscription__SubscriptionBenefit__MV__WorldObject__Subscription__SubscriptionRule_
-                );
+                 ->klass->rgctx_data[0x22].method);
       return;
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

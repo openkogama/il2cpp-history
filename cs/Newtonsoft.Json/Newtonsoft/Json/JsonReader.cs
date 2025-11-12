@@ -13,7 +13,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using Newtonsoft.Json.Serialization;
 
-// Image 8: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
+// Image 9: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
 
 namespace Newtonsoft.Json
 {
@@ -100,8 +100,8 @@ namespace Newtonsoft.Json
 		internal bool? ReadBooleanString(string s);
 		public virtual decimal? ReadAsDecimal();
 		internal decimal? ReadDecimalString(string s);
-		public virtual DateTime? ReadAsDateTime();
-		internal DateTime? ReadDateTimeString(string s);
+		public virtual System.DateTime? ReadAsDateTime();
+		internal System.DateTime? ReadDateTimeString(string s);
 		public virtual DateTimeOffset? ReadAsDateTimeOffset();
 		internal DateTimeOffset? ReadDateTimeOffsetString(string s);
 		internal void ReaderReadAndAssert();

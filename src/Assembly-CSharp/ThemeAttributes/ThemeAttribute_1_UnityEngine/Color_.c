@@ -6,9 +6,12 @@ void Assembly-CSharp.dll::ThemeAttributes::ThemeAttribute`1[UnityEngine::Color]:
                (ThemeAttribute_1_UnityEngine_Color_ *this,MethodInfo *method)
 
 {
-  (*(code *)(this->klass->vtable).__unknown_2.method)
-            (this,(this->fields).value.r,(this->fields).value.g,(this->fields).value.b,
-             (this->fields).value.a,this->klass[1]._0.image);
+  fStack_1 = (this->fields).value.r;
+  fStack_2 = (this->fields).value.g;
+  fStack_3 = (this->fields).value.b;
+  fStack_4 = (this->fields).value.a;
+  (*(this->klass->vtable).__unknown_2.methodPtr)
+            (fStack_1,&fStack_1,(this->klass->vtable).__unknown_2.method);
   return;
 }
 
@@ -21,16 +24,29 @@ void Assembly-CSharp.dll::ThemeAttributes::ThemeAttribute`1[UnityEngine::Color]:
                int32_t groups,Action_1_UnityEngine_Color_ *onChange,MethodInfo *method)
 
 {
-  if (this != (ThemeAttribute_1_UnityEngine_Color_ *)0x0) {
-    ThemeAttribute::ThemeAttribute_Initialize
-              ((ThemeAttribute *)this,settings,key,groups,(MethodInfo *)0x0);
-    (this->fields).themeCallback = onChange;
-    func_?(&(this->fields).themeCallback,onChange);
+  if (this == (ThemeAttribute_1_UnityEngine_Color_ *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  ThemeAttribute::ThemeAttribute_Initialize
+            ((ThemeAttribute *)this,settings,key,groups,(MethodInfo *)0x0);
+  bVar2 = iRam_? != 0;
+  (this->fields).themeCallback = onChange;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).themeCallback >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
   return;
 }
 

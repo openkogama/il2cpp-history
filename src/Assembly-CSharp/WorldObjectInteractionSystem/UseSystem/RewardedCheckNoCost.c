@@ -6,18 +6,19 @@ bool Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedCheck
                (RewardedCheckNoCost *this,IAsyncResult *result,MethodInfo *method)
 
 {
-  puStack_1 = (undefined1 *)0x0;
-  pIStack_2 = result;
-  puStack_1 = (undefined1 *)func_?();
-  if (puStack_1 != (undefined1 *)0x0) {
-    pbVar3 = (bool *)func_?();
-    return *pbVar3;
+  lVar1 = FUN_?(result,auStack_2,&pIStackX_20);
+  if (pIStackX_20 != (Il2CppChar *)0x0) {
+    il2cpp_set_config_utf16(pIStackX_20);
+    pcVar3 = (code *)swi(3);
+    bVar4 = (*pcVar3)();
+    return bVar4;
   }
-  puStack_1 = &stack0xfffffffc;
-  uVar4 = func_?(&puStack_5);
-  func_?(uVar4);
-  pcVar6 = (code *)swi(3);
-  bVar7 = (*pcVar6)();
-  return bVar7;
+  if (lVar1 != 0) {
+    return *(bool *)(lVar1 + 0x10);
+  }
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  bVar4 = (*pcVar3)();
+  return bVar4;
 }
 

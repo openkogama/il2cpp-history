@@ -8,25 +8,22 @@ void Assembly-CSharp.dll::AvatarEditModeBodyController+<>c__DisplayClass37_0::
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IModalPopupCreator;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pAVar2 = (this->fields).__4__this;
-  if (((pAVar2 != (AvatarEditModeBodyController *)0x0) &&
-      (pAVar3 = (pAVar2->fields).purchasingItem, pAVar3 != (AvatarRepositoryItem *)0x0)) &&
+  pAVar1 = (this->fields).__4__this;
+  if (((pAVar1 != (AvatarEditModeBodyController *)0x0) &&
+      (pAVar2 = (pAVar1->fields).purchasingItem, pAVar2 != (AvatarRepositoryItem *)0x0)) &&
      (x != (IModalPopupCreator *)0x0)) {
-    ppIStack_1 = (IModalPopupCreator__Class **)(pAVar3->fields).priceGold;
-    puStack_4 = (undefined *)(this->fields).returnCode;
-    pIStack_5 = x;
-    func_?(0,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+    FUN_?(0,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,x,
+                  (this->fields).returnCode,(pAVar2->fields).priceGold);
     return;
   }
-  ppIStack_1 = (IModalPopupCreator__Class **)&stack0xfffffffc;
-  uVar6 = func_?(&pIStack_5);
-  func_?(uVar6);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

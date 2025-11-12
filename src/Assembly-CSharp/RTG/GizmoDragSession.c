@@ -6,41 +6,44 @@ void Assembly-CSharp.dll::RTG::GizmoDragSession::GizmoDragSession_AddTargetTrans
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__Add_RTG__GizmoTransform_
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__Add_RTG__GizmoTransform_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  cVar1 = (*(code *)(this->klass->vtable).__unknown.method)
-                    (this,(this->klass->vtable).__unknown_1.methodPtr);
+  cVar1 = (*(this->klass->vtable).__unknown.methodPtr)(this,(this->klass->vtable).__unknown.method);
   if (cVar1 == '\0') {
     if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__Contains_RTG__GizmoTransform_
-                     );
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__Contains_RTG__GizmoTransform_
+                   );
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
     pLVar2 = (this->fields)._targetTransforms;
-    if (pLVar2 == (List_1_RTG_GizmoTransform_ *)0x0) {
-code_?:
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
-    bVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-            List_1_System_Object__Contains
-                      ((List_1_System_Object_ *)pLVar2,(Object *)transform,
-                       MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__Contains_RTG__GizmoTransform_
-                      );
-    if (bVar4 == 0) {
+    if (pLVar2 != (List_1_RTG_GizmoTransform_ *)0x0) {
+      if (((pLVar2->fields)._size != 0) &&
+         (iVar3 = mscorlib.dll::System::Array::Array_IndexOf_69
+                            ((Object__Array *)(pLVar2->fields)._items,(Object *)transform,0,
+                             (pLVar2->fields)._size,
+                             (MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__Contains_RTG__GizmoTransform_
+                              ->klass->rgctx_data[0x17].method)->klass->rgctx_data[0x27].method),
+         iVar3 != -1)) {
+        return;
+      }
       pLVar2 = (this->fields)._targetTransforms;
-      if (pLVar2 == (List_1_RTG_GizmoTransform_ *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-                ((List_1_System_Object_ *)pLVar2,(Object *)transform,
-                 MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__Add_RTG__GizmoTransform_
-                );
+      if (pLVar2 != (List_1_RTG_GizmoTransform_ *)0x0) {
+        FUN_?(pLVar2,transform);
+        return;
+      }
     }
+    FUN_?();
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
+    return;
   }
   return;
 }
@@ -52,159 +55,150 @@ void Assembly-CSharp.dll::RTG::GizmoDragSession::GizmoDragSession_ApplyDrag
                (GizmoDragSession *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  uStack_2 = 0xffffffff;
-  puStack_3 = &DAT_?;
-  uStack_4 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_4;
-  puStack_5 = &stack0xffffff40;
-  puVar6 = &stack0xfffffffc;
-  puVar7 = &stack0xffffff40;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoTransform>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoTransform>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoTransform>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__GetEnumerator__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoTransform>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoTransform>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoTransform>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar6 = puStack_1;
-    puVar7 = puStack_5;
   }
-  puStack_5 = puVar7;
-  puStack_1 = puVar6;
-  LStack_8._list = (List_1_System_Object_ *)0x0;
-  LStack_8._index = 0;
-  LStack_8._version = 0;
-  LStack_8._current = (Object *)0x0;
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            GizmoTransform::GizmoTransform_FilterParentsOnly
+  auStack_1 = (undefined1  [8])0x0;
+  uStack_2._0_4_ = 0;
+  uStack_2._4_4_ = 0;
+  pGStack_3 = (GizmoTransform *)0x0;
+  pLVar4 = GizmoTransform::GizmoTransform_FilterParentsOnly
                       ((IEnumerable_1_RTG_GizmoTransform_ *)(this->fields)._targetTransforms,
                        (MethodInfo *)0x0);
-  pLStack_9 = this_00;
-  iVar10 = (*(code *)(this->klass->vtable).__unknown_1.method)
-                    (this,(this->klass->vtable).__unknown_2.methodPtr);
-  if (iVar10 == 1) {
-    if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+  iVar5 = (*(this->klass->vtable).__unknown_1.methodPtr)
+                     (this,(this->klass->vtable).__unknown_1.method);
+  if (iVar5 == 1) {
+    if (pLVar4 == (List_1_RTG_GizmoTransform_ *)0x0) {
 code_?:
-      func_?();
-      func_?();
-      pcVar11 = (code *)swi(3);
-      (*pcVar11)();
+      FUN_?();
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
       return;
     }
-    pLVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                         *)&stack0xffffff50,this_00,
-                        MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__GetEnumerator__
-                       );
-    pLStack_13 = &LStack_8;
+    if (iRam_? != 0) {
+      uVar7 = (uint)((ulonglong)auStack_8 >> 0xc);
+      uVar9 = (ulonglong)((uVar7 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar12 = uVar10 == *puVar11;
+        if (bVar12) {
+          *puVar11 = uVar10 | 1L << (uVar7 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar12);
+    }
+    fVar13 = _UNK_?;
+    stack0xffffffffffffff30 = (undefined1 *)((ulonglong)(uint)(pLVar4->fields)._version << 0x20);
     uStack_14 = 0;
-    LStack_8._list = (List_1_System_Object_ *)pLVar12->_list;
-    LStack_8._index = pLVar12->_index;
-    LStack_8._version = pLVar12->_version;
-    LStack_8._current = *(Object **)&pLVar12->_current;
-    uStack_2 = 1;
-    while( true ) {
-      bVar15 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-              List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_8,
-                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoTransform>__MoveNext__
-                        );
-      if (bVar15 == 0) break;
-      if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0)
-      goto code_?;
-      uVar16 = *(undefined8 *)((int)LStack_8._current + 0x10);
-      pLStack_17 = *(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
-                    ((int)LStack_8._current + 0x18);
-      uStack_18._0_4_ = (this->fields)._relativeDragOffset.x;
-      uStack_18._4_4_ = (this->fields)._relativeDragOffset.y;
-      fStack_19 = (this->fields)._relativeDragOffset.z;
-      uStack_20._4_4_ = (float)((ulonglong)uVar16 >> 0x20);
-      uStack_20._0_4_ = (float)uVar16;
-      fStack_21 = fStack_19 + (float)pLStack_17;
-      value_00.y = (float)uStack_18._4_4_ + uStack_20._4_4_;
-      value_00.x = (float)(undefined4)uStack_18 + (float)uStack_20;
-      value_00.z = fStack_21;
-      uStack_20 = uVar16;
-      GizmoTransform::GizmoTransform_set_Position3D
-                ((GizmoTransform *)LStack_8._current,value_00,(MethodInfo *)0x0);
+    uStack_2 = stack0xffffffffffffff30;
+    pGStack_3 = (GizmoTransform *)0x0;
+    auStack_8._0_8_ = (List_1_RTG_GizmoTransform_ *)0x0;
+    unique0x00009c00 = auStack_1;
+    auStack_1 = (undefined1  [8])pLVar4;
+    while (bVar15 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
+                    ::List_1_T_Enumerator_System_Object__MoveNext
+                              ((List_1_T_Enumerator_System_Object_ *)auStack_1,
+                               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoTransform>__MoveNext__
+                              ), bVar15 != 0) {
+      if (pGStack_3 == (GizmoTransform *)0x0) {
+        FUN_?();
+        FUN_?();
+code_?:
+        FUN_?();
+        FUN_?();
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
+      }
+      uVar16 = (this->fields)._relativeDragOffset.x;
+      uVar17 = (this->fields)._relativeDragOffset.y;
+      uVar18 = (pGStack_3->fields)._position3D.x;
+      uVar19 = (pGStack_3->fields)._position3D.y;
+      fVar20 = (this->fields)._relativeDragOffset.z + (pGStack_3->fields)._position3D.z;
+      if (((pGStack_3->fields)._firingChanged3DEvent == 0) &&
+         (fVar21 = (float)uVar18 - ((float)uVar16 + (float)uVar18),
+         fVar22 = (float)uVar19 - ((float)uVar17 + (float)uVar19),
+         fVar23 = (pGStack_3->fields)._position3D.z - fVar20,
+         fVar13 <= fVar21 * fVar21 + fVar22 * fVar22 + fVar23 * fVar23)) {
+        (pGStack_3->fields)._position3D.x = (float)uVar16 + (float)uVar18;
+        (pGStack_3->fields)._position3D.y = (float)uVar17 + (float)uVar19;
+        (pGStack_3->fields)._position3D.z = fVar20;
+        GizmoTransform::GizmoTransform_OnPosition3DChanged(pGStack_3,(MethodInfo *)0x0);
+      }
     }
   }
   else {
-    iVar10 = (*(code *)(this->klass->vtable).__unknown_1.method)();
-    if (iVar10 != 2) goto code_?;
-    if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-    goto code_?;
-    pLVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                         *)&stack0xffffff50,this_00,
-                        MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__GetEnumerator__
-                       );
-    pLStack_13 = &LStack_8;
-    uStack_14 = 0;
-    LStack_8._list = (List_1_System_Object_ *)pLVar12->_list;
-    LStack_8._index = pLVar12->_index;
-    LStack_8._version = pLVar12->_version;
-    LStack_8._current = *(Object **)&pLVar12->_current;
-    uStack_2 = 4;
-    while( true ) {
-      bVar15 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-              List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_8,
-                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoTransform>__MoveNext__
-                        );
-      if (bVar15 == 0) break;
-      fStack_22 = (this->fields)._relativeDragRotation.x;
-      fStack_23 = (this->fields)._relativeDragRotation.y;
-      fStack_21 = (this->fields)._relativeDragRotation.z;
-      fStack_24 = (this->fields)._relativeDragRotation.w;
-      if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0)
-      goto code_?;
-      fStack_25 = *(float *)((int)LStack_8._current + 0x2c);
-      fVar26 = *(float *)((int)LStack_8._current + 0x30);
-      in_stack_27 = *(RegexCharClass_SingleRange *)((int)LStack_8._current + 0x34);
-      uStack_18 = CONCAT44(fStack_25,fStack_25);
-      pLStack_17 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                   ((((float)in_stack_27 * fStack_24 -
-                     fStack_22 * *(float *)((int)LStack_8._current + 0x28)) - fStack_25 * fStack_23
-                    ) - fStack_21 * fVar26);
-      fVar28 = (fStack_21 * (float)in_stack_27 + fVar26 * fStack_24 + fStack_25 * fStack_22) -
-               fStack_23 * *(float *)((int)LStack_8._current + 0x28);
-      fVar29 = (fStack_23 * (float)in_stack_27 + fStack_25 * fStack_24 +
-              fStack_21 * *(float *)((int)LStack_8._current + 0x28)) - fVar26 * fStack_22;
-      uStack_20 = CONCAT44(fVar28,fVar29);
-      fStack_30 = ((float)in_stack_27 * fStack_22 +
-                   *(float *)((int)LStack_8._current + 0x28) * fStack_24 + fVar26 * fStack_23) -
-                  fStack_25 * fStack_21;
-      value.y = fVar29;
-      value.x = fStack_30;
-      value.z = fVar28;
-      value.w = (float)pLStack_17;
-      fStack_19 = fStack_25;
-      pLStack_9 = pLStack_17;
-      GizmoTransform::GizmoTransform_set_Rotation3D
-                ((GizmoTransform *)LStack_8._current,value,(MethodInfo *)0x0);
+    iVar5 = (*(this->klass->vtable).__unknown_1.methodPtr)
+                       (this,(this->klass->vtable).__unknown_1.method);
+    if (iVar5 == 2) {
+      if (pLVar4 == (List_1_RTG_GizmoTransform_ *)0x0) goto code_?;
+      if (iRam_? != 0) {
+        uVar7 = (uint)((ulonglong)auStack_8 >> 0xc);
+        uVar9 = (ulonglong)((uVar7 & 0x1fffff) >> 6);
+        do {
+          uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+          puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+          LOCK();
+          bVar12 = uVar10 == *puVar11;
+          if (bVar12) {
+            *puVar11 = uVar10 | 1L << (uVar7 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar12);
+      }
+      stack0xffffffffffffff30 = (undefined1 *)((ulonglong)(uint)(pLVar4->fields)._version << 0x20);
+      uStack_14 = 0;
+      uStack_2 = stack0xffffffffffffff30;
+      pGStack_3 = (GizmoTransform *)0x0;
+      auStack_8._0_8_ = pLVar4;
+      auStack_1 = (undefined1  [8])pLVar4;
+      while (bVar15 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
+                      Object]::List_1_T_Enumerator_System_Object__MoveNext
+                                ((List_1_T_Enumerator_System_Object_ *)auStack_1,
+                                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoTransform>__MoveNext__
+                                ), bVar15 != 0) {
+        fVar13 = (this->fields)._relativeDragRotation.x;
+        fVar20 = (this->fields)._relativeDragRotation.y;
+        fVar23 = (this->fields)._relativeDragRotation.z;
+        fVar22 = (this->fields)._relativeDragRotation.w;
+        if (pGStack_3 == (GizmoTransform *)0x0) goto code_?;
+        fVar21 = (pGStack_3->fields)._rotation3D.x;
+        fVar24 = (pGStack_3->fields)._rotation3D.y;
+        fVar25 = (pGStack_3->fields)._rotation3D.z;
+        fVar26 = (pGStack_3->fields)._rotation3D.w;
+        auStack_8._4_4_ = (fVar22 * fVar24 + fVar20 * fVar26 + fVar23 * fVar21) - fVar13 * fVar25;
+        auStack_8._0_4_ = (fVar22 * fVar21 + fVar13 * fVar26 + fVar20 * fVar25) - fVar23 * fVar24;
+        stack0xffffffffffffff30 =
+             (undefined1 *)
+             CONCAT44(((fVar22 * fVar26 - fVar13 * fVar21) - fVar20 * fVar24) - fVar23 * fVar25,
+                      (fVar13 * fVar24 + fVar22 * fVar25 + fVar23 * fVar26) - fVar20 * fVar21);
+        GizmoTransform::GizmoTransform_set_Rotation3D
+                  (pGStack_3,(Quaternion *)auStack_8,(MethodInfo *)0x0);
+      }
     }
   }
-  uStack_2 = 0xffffffff;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)&LStack_8,
-             (ExceptionArgument__Enum)
-             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::GizmoTransform>__Dispose__
-             ,(MethodInfo *)in_stack_27);
-code_?:
-  *unaff_FS_OFFSET = uStack_4;
   return;
 }
 
@@ -215,14 +209,13 @@ bool Assembly-CSharp.dll::RTG::GizmoDragSession::GizmoDragSession_Begin
                (GizmoDragSession *this,MethodInfo *method)
 
 {
-  cVar1 = (*(code *)(this->klass->vtable).CanBegin.method)
-                    (this,(this->klass->vtable).OnSessionBegin.methodPtr);
+  cVar1 = (*(this->klass->vtable).CanBegin.methodPtr)(this,(this->klass->vtable).CanBegin.method);
   if (cVar1 != '\0') {
-    cVar1 = (*(code *)(this->klass->vtable).__unknown_2.method)
-                      (this,(this->klass->vtable).__unknown_3.methodPtr);
+    cVar1 = (*(this->klass->vtable).__unknown_2.methodPtr)
+                      (this,(this->klass->vtable).__unknown_2.method);
     if (cVar1 != '\0') {
-      (*(code *)(this->klass->vtable).OnSessionBegin.method)
-                (this,(this->klass->vtable).OnSessionEnd.methodPtr);
+      (*(this->klass->vtable).OnSessionBegin.methodPtr)
+                (this,(this->klass->vtable).OnSessionBegin.method);
       return 1;
     }
   }
@@ -236,8 +229,7 @@ bool Assembly-CSharp.dll::RTG::GizmoDragSession::GizmoDragSession_CanBegin
                (GizmoDragSession *this,MethodInfo *method)
 
 {
-  cVar1 = (*(code *)(this->klass->vtable).__unknown.method)
-                    (this,(this->klass->vtable).__unknown_1.methodPtr);
+  cVar1 = (*(this->klass->vtable).__unknown.methodPtr)(this,(this->klass->vtable).__unknown.method);
   return cVar1 == '\0';
 }
 
@@ -249,23 +241,29 @@ bool Assembly-CSharp.dll::RTG::GizmoDragSession::GizmoDragSession_ContainsTarget
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__Contains_RTG__GizmoTransform_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._targetTransforms;
-  if (this_00 != (List_1_RTG_GizmoTransform_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-            List_1_System_Object__Contains
-                      ((List_1_System_Object_ *)this_00,(Object *)transform,
-                       MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__Contains_RTG__GizmoTransform_
-                      );
-    return bVar1;
+  pLVar1 = (this->fields)._targetTransforms;
+  if (pLVar1 != (List_1_RTG_GizmoTransform_ *)0x0) {
+    if ((pLVar1->fields)._size == 0) {
+      return 0;
+    }
+    iVar2 = mscorlib.dll::System::Array::Array_IndexOf_69
+                      ((Object__Array *)(pLVar1->fields)._items,(Object *)transform,0,
+                       (pLVar1->fields)._size,
+                       (MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__Contains_RTG__GizmoTransform_
+                        ->klass->rgctx_data[0x17].method)->klass->rgctx_data[0x27].method);
+    return iVar2 != -1;
   }
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
+  FUN_?();
   pcVar3 = (code *)swi(3);
-  bVar1 = (*pcVar3)();
-  return bVar1;
+  bVar4 = (*pcVar3)();
+  return bVar4;
 }
 
 
@@ -275,61 +273,68 @@ void Assembly-CSharp.dll::RTG::GizmoDragSession::GizmoDragSession_End
                (GizmoDragSession *this,MethodInfo *method)
 
 {
-  cVar1 = (*(code *)(this->klass->vtable).__unknown.method)
-                     (this,(this->klass->vtable).__unknown_1.methodPtr);
+  cVar1 = (*(this->klass->vtable).__unknown.methodPtr)(this,(this->klass->vtable).__unknown.method)
+  ;
   if (cVar1 != '\0') {
-    (*(code *)(this->klass->vtable).__unknown_4.method)
-              (this,(this->klass->vtable).__unknown_5.methodPtr);
+    (*(this->klass->vtable).__unknown_4.methodPtr)(this,(this->klass->vtable).__unknown_4.method);
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
     pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uVar3 = (pVVar2->zeroVector).x;
-    uVar4 = (pVVar2->zeroVector).y;
-    fVar5 = (pVVar2->zeroVector).z;
-    (this->fields)._relativeDragOffset.x = (float)uVar3;
-    (this->fields)._relativeDragOffset.y = (float)uVar4;
-    (this->fields)._totalDragOffset.x = (float)uVar3;
-    (this->fields)._totalDragOffset.y = (float)uVar4;
-    (this->fields)._relativeDragOffset.z = fVar5;
-    (this->fields)._totalDragOffset.z = fVar5;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Quaternion);
+    bVar3 = cRam_? == '\0';
+    uVar4 = (pVVar2->zeroVector).x;
+    uVar5 = (pVVar2->zeroVector).y;
+    fVar6 = (pVVar2->zeroVector).z;
+    (this->fields)._relativeDragOffset.x = (float)uVar4;
+    (this->fields)._relativeDragOffset.y = (float)uVar5;
+    (this->fields)._totalDragOffset.x = (float)uVar4;
+    (this->fields)._totalDragOffset.y = (float)uVar5;
+    (this->fields)._relativeDragOffset.z = fVar6;
+    (this->fields)._totalDragOffset.z = fVar6;
+    if (bVar3) {
+      FUN_?(&TypeInfo__UnityEngine__Quaternion);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    pQVar6 = TypeInfo__UnityEngine__Quaternion->static_fields;
-    fVar5 = (pQVar6->identityQuaternion).y;
-    fVar7 = (pQVar6->identityQuaternion).z;
-    fVar8 = (pQVar6->identityQuaternion).w;
-    fVar9 = (pQVar6->identityQuaternion).x;
-    fVar10 = (pQVar6->identityQuaternion).y;
-    fVar11 = (pQVar6->identityQuaternion).z;
-    fVar12 = (pQVar6->identityQuaternion).w;
-    (this->fields)._relativeDragRotation.x = (pQVar6->identityQuaternion).x;
-    (this->fields)._relativeDragRotation.y = fVar5;
-    (this->fields)._relativeDragRotation.z = fVar7;
-    (this->fields)._relativeDragRotation.w = fVar8;
-    (this->fields)._totalDragRotation.x = fVar9;
-    (this->fields)._totalDragRotation.y = fVar10;
-    (this->fields)._totalDragRotation.z = fVar11;
-    (this->fields)._totalDragRotation.w = fVar12;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
+    pQVar7 = TypeInfo__UnityEngine__Quaternion->static_fields;
+    bVar3 = cRam_? == '\0';
+    fVar6 = (pQVar7->identityQuaternion).x;
+    fVar8 = (pQVar7->identityQuaternion).y;
+    fVar9 = (pQVar7->identityQuaternion).z;
+    fVar10 = (pQVar7->identityQuaternion).w;
+    (this->fields)._relativeDragRotation.x = fVar6;
+    (this->fields)._relativeDragRotation.y = fVar8;
+    (this->fields)._relativeDragRotation.z = fVar9;
+    (this->fields)._relativeDragRotation.w = fVar10;
+    (this->fields)._totalDragRotation.x = fVar6;
+    (this->fields)._totalDragRotation.y = fVar8;
+    (this->fields)._totalDragRotation.z = fVar9;
+    (this->fields)._totalDragRotation.w = fVar10;
+    if (bVar3) {
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
     pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uVar13 = (pVVar2->oneVector).x;
-    uVar14 = (pVVar2->oneVector).y;
-    fVar5 = (pVVar2->oneVector).z;
-    (this->fields)._totalDragScale.x = (float)uVar13;
-    (this->fields)._totalDragScale.y = (float)uVar14;
-    (this->fields)._totalDragScale.z = fVar5;
-    pGVar15 = this->klass;
-    (this->fields)._relativeDragScale.x = (float)uVar13;
-    (this->fields)._relativeDragScale.y = (float)uVar14;
-    (this->fields)._relativeDragScale.z = fVar5;
-    (*(code *)(pGVar15->vtable).OnSessionEnd.method)(this,pGVar15[1]._0.image);
+    fVar6 = (pVVar2->oneVector).z;
+    uVar11 = (pVVar2->oneVector).x;
+    uVar12 = (pVVar2->oneVector).y;
+    pGVar13 = this->klass;
+    (this->fields)._relativeDragScale.x = (float)uVar11;
+    (this->fields)._relativeDragScale.y = (float)uVar12;
+    (this->fields)._totalDragScale.x = (float)uVar11;
+    (this->fields)._totalDragScale.y = (float)uVar12;
+    (this->fields)._relativeDragScale.z = fVar6;
+    (this->fields)._totalDragScale.z = fVar6;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(pGVar13->vtable).OnSessionEnd.methodPtr)(this,(pGVar13->vtable).OnSessionEnd.method);
+    return;
   }
   return;
 }
@@ -342,17 +347,18 @@ void Assembly-CSharp.dll::RTG::GizmoDragSession::GizmoDragSession_RemoveTargetTr
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__Remove_RTG__GizmoTransform_
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__Remove_RTG__GizmoTransform_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  cVar1 = (*(code *)(this->klass->vtable).__unknown.method)
-                    (this,(this->klass->vtable).__unknown_1.methodPtr);
+  cVar1 = (*(this->klass->vtable).__unknown.methodPtr)(this,(this->klass->vtable).__unknown.method);
   if (cVar1 == '\0') {
     this_00 = (this->fields)._targetTransforms;
     if (this_00 == (List_1_RTG_GizmoTransform_ *)0x0) {
-      func_?();
+      FUN_?();
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
@@ -372,14 +378,12 @@ bool Assembly-CSharp.dll::RTG::GizmoDragSession::GizmoDragSession_Update
                (GizmoDragSession *this,MethodInfo *method)
 
 {
-  cVar1 = (*(code *)(this->klass->vtable).__unknown.method)
-                    (this,(this->klass->vtable).__unknown_1.methodPtr);
+  cVar1 = (*(this->klass->vtable).__unknown.methodPtr)(this,(this->klass->vtable).__unknown.method);
   if (cVar1 != '\0') {
-    cVar1 = (*(code *)(this->klass->vtable).__unknown_3.method)
-                      (this,(this->klass->vtable).__unknown_4.methodPtr);
+    cVar1 = (*(this->klass->vtable).__unknown_3.methodPtr)
+                      (this,(this->klass->vtable).__unknown_3.method);
     if (cVar1 != '\0') {
-      (*(code *)(this->klass->vtable).__unknown_5.method)
-                (this,(this->klass->vtable).CanBegin.methodPtr);
+      (*(this->klass->vtable).__unknown_5.methodPtr)(this);
       GizmoDragSession_ApplyDrag(this,(MethodInfo *)0x0);
       return 1;
     }
@@ -395,65 +399,93 @@ void Assembly-CSharp.dll::RTG::GizmoDragSession::GizmoDragSession__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__List__);
-    func_?(&TypeInfo__System__Collections__Generic__List<RTG::GizmoTransform>);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<RTG::GizmoTransform>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (List_1_RTG_GizmoTransform_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<RTG::GizmoTransform>);
+            FUN_?(TypeInfo__System__Collections__Generic__List<RTG::GizmoTransform>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__List__);
+  bVar1 = iRam_? != 0;
   (this->fields)._targetTransforms = this_00;
-  func_?(&this->fields,this_00);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Quaternion);
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pQVar1 = TypeInfo__UnityEngine__Quaternion->static_fields;
-  fVar2 = (pQVar1->identityQuaternion).y;
-  fVar3 = (pQVar1->identityQuaternion).z;
-  fVar4 = (pQVar1->identityQuaternion).w;
-  (this->fields)._totalDragRotation.x = (pQVar1->identityQuaternion).x;
-  (this->fields)._totalDragRotation.y = fVar2;
-  (this->fields)._totalDragRotation.z = fVar3;
-  (this->fields)._totalDragRotation.w = fVar4;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+  cVar6 = cRam_?;
+  cVar7 = cRam_?;
+  pQVar8 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar9 = (pQVar8->identityQuaternion).y;
+  fVar10 = (pQVar8->identityQuaternion).z;
+  fVar11 = (pQVar8->identityQuaternion).w;
+  (this->fields)._totalDragRotation.x = (pQVar8->identityQuaternion).x;
+  (this->fields)._totalDragRotation.y = fVar9;
+  (this->fields)._totalDragRotation.z = fVar10;
+  (this->fields)._totalDragRotation.w = fVar11;
+  if (cVar6 == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
+    cVar6 = '\x01';
+    cRam_? = '\x01';
+    cVar7 = cRam_?;
+  }
+  pVVar12 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar10 = (pVVar12->oneVector).y;
+  fVar9 = (pVVar12->oneVector).z;
+  (this->fields)._totalDragScale.x = (pVVar12->oneVector).x;
+  (this->fields)._totalDragScale.y = fVar10;
+  (this->fields)._totalDragScale.z = fVar9;
+  if (cVar7 == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+    cVar6 = cRam_?;
+  }
+  pQVar8 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar9 = (pQVar8->identityQuaternion).y;
+  fVar10 = (pQVar8->identityQuaternion).z;
+  fVar11 = (pQVar8->identityQuaternion).w;
+  (this->fields)._relativeDragRotation.x = (pQVar8->identityQuaternion).x;
+  (this->fields)._relativeDragRotation.y = fVar9;
+  (this->fields)._relativeDragRotation.z = fVar10;
+  (this->fields)._relativeDragRotation.w = fVar11;
+  if (cVar6 == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
-  fVar3 = (pVVar5->oneVector).y;
-  fVar2 = (pVVar5->oneVector).z;
-  (this->fields)._totalDragScale.x = (pVVar5->oneVector).x;
-  (this->fields)._totalDragScale.y = fVar3;
-  (this->fields)._totalDragScale.z = fVar2;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Quaternion);
-    cRam_? = '\x01';
-  }
-  pQVar1 = TypeInfo__UnityEngine__Quaternion->static_fields;
-  fVar2 = (pQVar1->identityQuaternion).y;
-  fVar3 = (pQVar1->identityQuaternion).z;
-  fVar4 = (pQVar1->identityQuaternion).w;
-  (this->fields)._relativeDragRotation.x = (pQVar1->identityQuaternion).x;
-  (this->fields)._relativeDragRotation.y = fVar2;
-  (this->fields)._relativeDragRotation.z = fVar3;
-  (this->fields)._relativeDragRotation.w = fVar4;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
-    cRam_? = '\x01';
-  }
-  pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
-  fVar3 = (pVVar5->oneVector).y;
-  fVar2 = (pVVar5->oneVector).z;
-  (this->fields)._relativeDragScale.x = (pVVar5->oneVector).x;
-  (this->fields)._relativeDragScale.y = fVar3;
-  (this->fields)._relativeDragScale.z = fVar2;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EBP);
+  pVVar12 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar10 = (pVVar12->oneVector).y;
+  fVar9 = (pVVar12->oneVector).z;
+  (this->fields)._relativeDragScale.x = (pVVar12->oneVector).x;
+  (this->fields)._relativeDragScale.y = fVar10;
+  (this->fields)._relativeDragScale.z = fVar9;
   return;
 }
 
@@ -465,34 +497,19 @@ int32_t Assembly-CSharp.dll::RTG::GizmoDragSession::GizmoDragSession_get_NumTarg
 
 {
   if (cRam_? == '\0') {
-    ppMStack_1 = &MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__get_Count__;
-    func_?();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__get_Count__)
+    ;
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pLVar2 = (this->fields)._targetTransforms;
-  if (pLVar2 != (List_1_RTG_GizmoTransform_ *)0x0) {
-    return (pLVar2->fields)._size;
+  pLVar1 = (this->fields)._targetTransforms;
+  if (pLVar1 != (List_1_RTG_GizmoTransform_ *)0x0) {
+    return (pLVar1->fields)._size;
   }
-  ppMStack_1 = (MethodInfo **)&stack0xfffffffc;
-  uVar3 = func_?(auStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  iVar6 = (*pcVar5)();
-  return iVar6;
-}
-
-
-/* Vector3 get_RelativeDragScale() */
-
-Vector3 * Assembly-CSharp.dll::RTG::GizmoDragSession::GizmoDragSession_get_RelativeDragScale
-                    (Vector3 *__return_storage_ptr__,GizmoDragSession *this,MethodInfo *method)
-
-{
-  fVar1 = (this->fields)._relativeDragScale.y;
-  fVar2 = (this->fields)._relativeDragScale.z;
-  __return_storage_ptr__->x = (this->fields)._relativeDragScale.x;
-  __return_storage_ptr__->y = fVar1;
-  __return_storage_ptr__->z = fVar2;
-  return __return_storage_ptr__;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  iVar3 = (*pcVar2)();
+  return iVar3;
 }
 

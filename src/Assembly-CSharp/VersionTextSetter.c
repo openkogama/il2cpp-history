@@ -6,32 +6,38 @@ void Assembly-CSharp.dll::VersionTextSetter::VersionTextSetter_SetText
 
 {
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_u000Av__);
+    FUN_?(&StringLiteral_u000Av__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).textObject;
-  pKVar2 = MVGameControllerBase::MVGameControllerBase_get_KoGaMaSettings((MethodInfo *)0x0);
-  if (pKVar2 != (KoGaMaSettingsContainer *)0x0) {
-    str0 = KoGaMaSettingsContainer::KoGaMaSettingsContainer_get_ReleaseName
-                     (pKVar2,(MethodInfo *)0x0);
-    pKVar2 = MVGameControllerBase::MVGameControllerBase_get_KoGaMaSettings((MethodInfo *)0x0);
-    if (pKVar2 != (KoGaMaSettingsContainer *)0x0) {
-      str2 = KoGaMaSettingsContainer::KoGaMaSettingsContainer_get_VersionStringNoBuild
-                       (pKVar2,(MethodInfo *)0x0);
-      pSStack3 =
-           mscorlib.dll::System::String::String_Concat_4
-                     (str0,StringLiteral_u000Av__,str2,(MethodInfo *)0x0);
-      if (pTVar1 != (Text *)0x0) {
-        pIStack4 = (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-        pTStack5 = pTVar1;
-        (*(code *)(pTVar1->klass->vtable).set_text.method)();
-        return;
-      }
-    }
+  if (cRam_? == '\0') {
+    FUN_?(&StringLiteral_Unity6_and_Maintenance);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pSVar2 = StringLiteral_Unity6_and_Maintenance;
+  if (cRam_? == '\0') {
+    FUN_?(&StringLiteral__3_1_60);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pSVar2 = mscorlib.dll::System::String::String_Concat_5
+                     (pSVar2,StringLiteral_u000Av__,StringLiteral__3_1_60,(MethodInfo *)0x0);
+  if (pTVar1 != (Text *)0x0) {
+    UNRECOVERED_JUMPTABLE = (pTVar1->klass->vtable).set_text.methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*UNRECOVERED_JUMPTABLE)
+              (pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method,UNRECOVERED_JUMPTABLE);
+    return;
+  }
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

@@ -8,23 +8,26 @@ void Assembly-CSharp.dll::EditModeRepositoryController+<>c__DisplayClass4_0::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pEVar1 = (this->fields).__4__this;
+  iVar2 = (this->fields).returnCode;
   if ((pEVar1 != (EditModeRepositoryController *)0x0) &&
-     (pSVar2 = (pEVar1->fields).currentlyBuyingItem, pSVar2 != (ShopItem *)0x0)) {
+     (pSVar3 = (pEVar1->fields).currentlyBuyingItem, pSVar3 != (ShopItem *)0x0)) {
     s = mscorlib.dll::System::Int32::Int32_ToString
-                  ((Int32 *)&(pSVar2->fields).priceGold,(MethodInfo *)0x0);
-    mscorlib.dll::System::Int32::Int32_Parse(s,(MethodInfo *)0x0);
+                  ((Int32 *)&(pSVar3->fields).priceGold,(MethodInfo *)0x0);
+    iVar4 = mscorlib.dll::System::Int32::Int32_Parse(s,(MethodInfo *)0x0);
     if (x != (IModalPopupCreator *)0x0) {
-      func_?(0,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,x);
+      FUN_?(0,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,x,iVar2,iVar4);
       return;
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

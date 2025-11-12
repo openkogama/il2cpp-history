@@ -6,87 +6,157 @@ Assembly-CSharp.dll::AdminToolController::AdminToolController_GetPlayer
           (String *userName,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pOStack_4 = (Object__Class *)0x0;
-  pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar5 != (MVNetworkGame *)0x0) &&
-     (this = (pMVar5->fields).playerContainer, this != (MVPlayerContainer *)0x0)) {
-    this_00 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-               *)MVPlayerContainer::MVPlayerContainer_get_Values(this,(MethodInfo *)0x0);
-    if (this_00 !=
-        (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-         *)0x0) {
-      pDVar6 = mscorlib.dll::System::Collections::Generic::
-               Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
-               StyleSheetCache+SheetHandleKey,System::Object]::
-               Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                         ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                           *)&stack0xffffffd8,this_00,
-                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
-                         );
-      uStack_1 = 1;
-      pMVar7 = (MVPlayer *)pDVar6->_currentValue;
-      while( true ) {
-        pMVar8 = pMVar7;
-        bVar9 = mscorlib.dll::System::Collections::Generic::
-                Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                UInt32,System::Object]::
-                Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                          ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                            *)&pOStack_4,
-                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
-                          );
-        if (bVar9 == 0) {
-          uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&pOStack_4,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
-                     ,in_stack_10);
-          *unaff_FS_OFFSET = uStack_3;
-          return (MVPlayer *)0x0;
-        }
-        if ((pMVar8 == (MVPlayer *)0x0) ||
-           (pUVar11 = (pMVar8->fields)._UserProfileData_k__BackingField,
-           pUVar11 == (UserProfileData *)0x0)) break;
-        pMVar7 = (MVPlayer *)userName;
-        bVar9 = mscorlib.dll::System::String::String_op_Equality
-                          ((pUVar11->fields).UserName,userName,(MethodInfo *)0x0);
-        if (bVar9 != 0) {
-          uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&pOStack_4,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
-                     ,in_stack_12);
-          *unaff_FS_OFFSET = uStack_3;
-          return pMVar8;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (((pMVar1 != (MVGameControllerBase *)0x0) &&
+      (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+     (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 != (MVPlayerContainer *)0x0)) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Values__
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    this = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *)
+           (pMVar3->fields).players;
+    if ((this != (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                  *)0x0) &&
+       (pDVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+                  TypeConverterRegistry+ConverterKey,System::Object]::
+                  Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object__get_Values
+                            (this,
+                             MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Values__
+                            ),
+       pDVar4 !=
+       (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+        *)0x0)) {
+      pDStack_5 = (pDVar4->fields)._dictionary;
+      ppDStack_6 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                     **)0x0;
+      uStack_7 = 0;
+      if (iRam_? != 0) {
+        uVar8 = (uint)((ulonglong)&pDStack_9 >> 0xc);
+        puVar10 = (ulonglong *)((ulonglong)((uVar8 & 0x1fffff) >> 6) * 8 + 0xADDR);
+        do {
+          uVar11 = *puVar10;
+          LOCK();
+          uVar12 = *puVar10;
+          if (uVar11 == uVar12) {
+            *puVar10 = uVar11 | 1L << (uVar8 & 0x3f);
+          }
+          UNLOCK();
+        } while (uVar11 != uVar12);
+      }
+      if (pDStack_5 ==
+          (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *)
+          0x0) {
+        pDStack_9 = pDStack_5;
+        FUN_?();
+        pcVar13 = (code *)swi(3);
+        pMVar14 = (MVPlayer *)(*pcVar13)();
+        return pMVar14;
+      }
+      ppDStack_6 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                     **)((ulonglong)(uint)(pDStack_5->fields)._version << 0x20);
+      uStack_7 = 0;
+      uStack_15 = (ulonglong)ppDStack_6;
+      pMStack_16 = (MVPlayer *)0x0;
+      pDStack_9 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                    *)0x0;
+      ppDStack_6 = &pDStack_5;
+      while (pDStack_5 !=
+             (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+              *)0x0) {
+        if (uStack_15._4_4_ != (pDStack_5->fields)._version) goto code_?;
+        uVar12 = uStack_15 & 0xffffffff;
+        do {
+          if (pDStack_5 ==
+              (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+               *)0x0) goto code_?;
+          uVar8 = (uint)uVar12;
+          if ((uint)(pDStack_5->fields)._count <= uVar8) {
+            return (MVPlayer *)0x0;
+          }
+          pDVar17 = (pDStack_5->fields)._entries;
+          uVar12 = (ulonglong)(uVar8 + 1);
+          uStack_15 = CONCAT44(uStack_15._4_4_,uVar8 + 1);
+          if (pDVar17 == (Dictionary_2_TKey_TValue_Entry_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object___Array
+                         *)0x0) goto code_?;
+          if ((uint)pDVar17->max_length <= uVar8) goto code_?;
+        } while ((&pDVar17->vector[0].hashCode)[(longlong)(int)uVar8 * 6] < 0);
+        pMStack_16 = *(MVPlayer **)
+                      ((longlong)&pDVar17->vector[0].key + (longlong)(int)uVar8 * 0x18 + 8);
+        func_?();
+        pMVar14 = pMStack_16;
+        if (pMStack_16 == (MVPlayer *)0x0) goto code_?;
+        pUVar18 = (pMStack_16->fields)._UserProfileData_k__BackingField;
+        if (pUVar18 == (UserProfileData *)0x0) goto code_?;
+        pSVar19 = (pUVar18->fields).UserName;
+        if ((pSVar19 == userName) ||
+           (((pSVar19 != (String *)0x0 && (userName != (String *)0x0)) &&
+            (((pSVar19->fields)._stringLength == (userName->fields)._stringLength &&
+             (bVar20 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                                 ((uint8_t *)&(pSVar19->fields)._firstChar,
+                                  (uint8_t *)&(userName->fields)._firstChar,
+                                  (longlong)(pSVar19->fields)._stringLength * 2,(MethodInfo *)0x0),
+             bVar20 != 0)))))) {
+          return pMVar14;
         }
       }
+      goto code_?;
     }
   }
-  func_?();
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  mscorlib.dll::System::ThrowHelper::
+  ThrowHelper_1_ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion((MethodInfo *)0x0)
+  ;
+code_?:
+  FUN_?();
+  FUN_?();
   pcVar13 = (code *)swi(3);
-  pMVar7 = (MVPlayer *)(*pcVar13)();
-  return pMVar7;
+  pMVar14 = (MVPlayer *)(*pcVar13)();
+  return pMVar14;
 }
 
 
@@ -97,52 +167,250 @@ void Assembly-CSharp.dll::AdminToolController::AdminToolController_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__AdminToolController__OnDefaultBanDropdownChanged_int_);
-    func_?(&TypeInfo__UnityEngine__Events__UnityAction<int>);
-    func_?(&
-                    MethodInfo__UnityEngine__Events__UnityEvent<int>__AddListener_UnityEngine__Events__UnityAction<int>_
-                   );
+    FUN_?(&MethodInfo__AdminToolController__OnDefaultBanDropdownChanged_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction<int>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__UnityEngine__Events__UnityEvent<int>__AddListener_UnityEngine__Events__UnityAction<int>_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).playerName;
   if (pTVar1 != (Text *)0x0) {
-    (*(code *)(pTVar1->klass->vtable).set_text.method)
-              (pTVar1,playerNameString,
-               (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    (*(pTVar1->klass->vtable).set_text.methodPtr)
+              (pTVar1,playerNameString,(pTVar1->klass->vtable).set_text.method);
     pDVar2 = (this->fields).presetBansDropdown;
     if (pDVar2 != (Dropdown *)0x0) {
-      this_00 = (UnityEvent_1_UnityEngine_Vector2_ *)(pDVar2->fields).m_OnValueChanged;
-      this_02 = (UnityAction_1_System_Int32Enum_ *)
-                func_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-      UnityAction_1_System_Int32Enum___ctor
-                (this_02,(Object *)this,
-                 MethodInfo__AdminToolController__OnDefaultBanDropdownChanged_int_,(MethodInfo *)0x0
-                );
-      if (this_00 != (UnityEvent_1_UnityEngine_Vector2_ *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent`1[UnityEngine::Vector2]::
-        UnityEvent_1_UnityEngine_Vector2__AddListener
-                  (this_00,(UnityAction_1_UnityEngine_Vector2_ *)this_02,
-                   MethodInfo__UnityEngine__Events__UnityEvent<int>__AddListener_UnityEngine__Events__UnityAction<int>_
-                  );
-        this_01 = (this->fields).ownerKickButton;
-        if (this_01 != (Button *)0x0) {
-          this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)this_01,(MethodInfo *)0x0);
-          MVar3 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-          if (this_03 != (GameObject *)0x0) {
+      pDVar3 = (pDVar2->fields).m_OnValueChanged;
+      uVar4 = FUN_?(TypeInfo__UnityEngine__Events__UnityAction<int>);
+      FUN_?(uVar4,this);
+      if (pDVar3 != (Dropdown_DropdownEvent *)0x0) {
+        FUN_?(pDVar3);
+        this_00 = (this->fields).ownerKickButton;
+        if (this_00 != (Button *)0x0) {
+          this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)this_00,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__MVGameControllerBase);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pGVar5 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+          if ((pGVar5 != (GameSessionData *)0x0) && (this_01 != (GameObject *)0x0)) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (this_03,MVar3 == MVGameMode__Enum_Edit,(MethodInfo *)0x0);
-            AdminToolController_OnDefaultBanDropdownChanged(this,0,(MethodInfo *)0x0);
+                      (this_01,(pGVar5->fields).gameMode == 0,(MethodInfo *)0x0);
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__AdminToolController,0,0);
+              LOCK();
+              UNLOCK();
+              FUN_?(&
+                            MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__get_Item_System__String_
+                           );
+              LOCK();
+              UNLOCK();
+              FUN_?(&
+                            MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Dropdown::OptionData>__get_Count__
+                           );
+              LOCK();
+              UNLOCK();
+              FUN_?();
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pDVar2 = (this->fields).presetBansDropdown;
+            if (((pDVar2 != (Dropdown *)0x0) &&
+                (pDVar6 = (pDVar2->fields).m_Options, pDVar6 != (Dropdown_OptionDataList *)0x0)) &&
+               (pLVar7 = (pDVar6->fields).m_Options,
+               pLVar7 != (List_1_UnityEngine_UI_Dropdown_OptionData_ *)0x0)) {
+              if ((pLVar7->fields)._size == 0) {
+code_?:
+                mscorlib.dll::System::ThrowHelper::
+                ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+                pcVar8 = (code *)swi(3);
+                (*pcVar8)();
+                return;
+              }
+              pDVar9 = (pLVar7->fields)._items;
+              if (pDVar9 != (Dropdown_OptionData__Array *)0x0) {
+                if ((int)pDVar9->max_length == 0) {
+code_?:
+                  FUN_?();
+                  pcVar8 = (code *)swi(3);
+                  (*pcVar8)();
+                  return;
+                }
+                if (pDVar9->vector[0] != (Dropdown_OptionData *)0x0) {
+                  pSVar10 = (pDVar9->vector[0]->fields).m_Text;
+                  pIVar11 = (this->fields).reason;
+                  if (*(int *)&(TypeInfo__AdminToolController->_1).field_0x1c == 0) {
+                    FUN_?(TypeInfo__AdminToolController);
+                  }
+                  pDVar12 = TypeInfo__AdminToolController->static_fields->defaultBanLookup;
+                  if (pDVar12 != (Dictionary_2_System_String_AdminToolController_DefaultBan_ *)0x0)
+                  {
+                    uVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                             Object,AdminToolController+DefaultBan]::
+                             Dictionary_2_System_Object_AdminToolController_DefaultBan__FindEntry
+                                       ((Dictionary_2_System_Object_AdminToolController_DefaultBan_
+                                         *)pDVar12,(Object *)pSVar10,
+                                        MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__get_Item_System__String_
+                                        ->klass->rgctx_data[0x21].method);
+                    if ((int)uVar13 < 0) {
+                      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowKeyNotFoundException
+                                ((Object *)pSVar10,(MethodInfo *)0x0);
+                      pcVar8 = (code *)swi(3);
+                      (*pcVar8)();
+                      return;
+                    }
+                    pDVar14 = (pDVar12->fields)._entries;
+                    if (pDVar14 !=
+                        (Dictionary_2_TKey_TValue_Entry_System_String_AdminToolController_DefaultBan___Array
+                         *)0x0) {
+                      if ((uint)pDVar14->max_length <= uVar13) goto code_?;
+                      if (pIVar11 != (InputField *)0x0) {
+                        UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_SetText
+                                  (pIVar11,pDVar14->vector[(int)uVar13].value.BanReason,1,
+                                   (MethodInfo *)0x0);
+                        pIVar11 = (this->fields).duration;
+                        pDVar12 = TypeInfo__AdminToolController->static_fields->defaultBanLookup;
+                        if (pDVar12 !=
+                            (Dictionary_2_System_String_AdminToolController_DefaultBan_ *)0x0) {
+                          uVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                   Object,AdminToolController+DefaultBan]::
+                                   Dictionary_2_System_Object_AdminToolController_DefaultBan__FindEntry
+                                             ((Dictionary_2_System_Object_AdminToolController_DefaultBan_
+                                               *)pDVar12,(Object *)pSVar10,
+                                              MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__get_Item_System__String_
+                                              ->klass->rgctx_data[0x21].method);
+                          if ((int)uVar13 < 0) {
+                            mscorlib.dll::System::ThrowHelper::
+                            ThrowHelper_1_ThrowKeyNotFoundException
+                                      ((Object *)pSVar10,(MethodInfo *)0x0);
+                            pcVar8 = (code *)swi(3);
+                            (*pcVar8)();
+                            return;
+                          }
+                          pDVar14 = (pDVar12->fields)._entries;
+                          if (pDVar14 !=
+                              (Dictionary_2_TKey_TValue_Entry_System_String_AdminToolController_DefaultBan___Array
+                               *)0x0) {
+                            if ((uint)pDVar14->max_length <= uVar13) goto code_?;
+                            if (pIVar11 != (InputField *)0x0) {
+                              UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_SetText
+                                        (pIVar11,pDVar14->vector[(int)uVar13].value.BanDuration,1,
+                                         (MethodInfo *)0x0);
+                              pDVar12 = TypeInfo__AdminToolController->static_fields->
+                                        defaultBanLookup;
+                              if (pDVar12 !=
+                                  (Dictionary_2_System_String_AdminToolController_DefaultBan_ *)0x0)
+                              {
+                                uVar13 = mscorlib.dll::System::Collections::Generic::
+                                         Dictionary`2[System::Object,AdminToolController+DefaultBan]
+                                         ::
+                                         Dictionary_2_System_Object_AdminToolController_DefaultBan__FindEntry
+                                                   ((
+                                                  Dictionary_2_System_Object_AdminToolController_DefaultBan_
+                                                  *)pDVar12,(Object *)pSVar10,
+                                                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__get_Item_System__String_
+                                                  ->klass->rgctx_data[0x21].method);
+                                if ((int)uVar13 < 0) {
+                                  mscorlib.dll::System::ThrowHelper::
+                                  ThrowHelper_1_ThrowKeyNotFoundException
+                                            ((Object *)pSVar10,(MethodInfo *)0x0);
+                                  pcVar8 = (code *)swi(3);
+                                  (*pcVar8)();
+                                  return;
+                                }
+                                pDVar14 = (pDVar12->fields)._entries;
+                                if (pDVar14 !=
+                                    (Dictionary_2_TKey_TValue_Entry_System_String_AdminToolController_DefaultBan___Array
+                                     *)0x0) {
+                                  if ((uint)pDVar14->max_length <= uVar13)
+                                  goto code_?;
+                                  value = 0;
+                                  pDVar2 = (this->fields).banDurationMultiplier;
+                                  pSVar10 = pDVar14->vector[(int)uVar13].value.BanDurationFormat;
+                                  if (pDVar2 != (Dropdown *)0x0) {
+                                    lVar15 = 0x20;
+                                    while ((pDVar6 = (pDVar2->fields).m_Options,
+                                           pDVar6 != (Dropdown_OptionDataList *)0x0 &&
+                                           (pLVar7 = (pDVar6->fields).m_Options,
+                                           pLVar7 != (List_1_UnityEngine_UI_Dropdown_OptionData_ *)
+                                                     0x0))) {
+                                      if ((pLVar7->fields)._size <= (int)value) {
+                                        return;
+                                      }
+                                      pDVar6 = (pDVar2->fields).m_Options;
+                                      if ((pDVar6 == (Dropdown_OptionDataList *)0x0) ||
+                                         (pLVar7 = (pDVar6->fields).m_Options,
+                                         pLVar7 == (List_1_UnityEngine_UI_Dropdown_OptionData_ *)0x0
+                                         )) break;
+                                      if ((uint)(pLVar7->fields)._size <= value)
+                                      goto code_?;
+                                      pDVar9 = (pLVar7->fields)._items;
+                                      if (pDVar9 == (Dropdown_OptionData__Array *)0x0) break;
+                                      if ((uint)pDVar9->max_length <= value)
+                                      goto code_?;
+                                      lVar16 = *(longlong *)
+                                                ((longlong)pDVar9->vector + lVar15 + -0x20);
+                                      if (lVar16 == 0) break;
+                                      pSVar17 = *(String **)(lVar16 + 0x10);
+                                      if (pSVar17 == pSVar10) {
+code_?:
+                                        UnityEngine.UI.dll::UnityEngine::UI::Dropdown::Dropdown_Set
+                                                  (pDVar2,value,1,(MethodInfo *)0x0);
+                                        return;
+                                      }
+                                      if (((pSVar17 == (String *)0x0) || (pSVar10 == (String *)0x0))
+                                         || ((pSVar17->fields)._stringLength !=
+                                             (pSVar10->fields)._stringLength)) {
+                                        value = value + 1;
+                                        lVar15 = lVar15 + 8;
+                                      }
+                                      else {
+                                        bVar18 = mscorlib.dll::System::SpanHelpers::
+                                                 SpanHelpers_SequenceEqual
+                                                           ((uint8_t *)&(pSVar17->fields)._firstChar
+                                                            ,(uint8_t *)&(pSVar10->fields)._firstChar
+                                                            ,(longlong)
+                                                             (pSVar17->fields)._stringLength * 2,
+                                                            (MethodInfo *)0x0);
+                                        if (bVar18 != 0) goto code_?;
+                                        value = value + 1;
+                                        lVar15 = lVar15 + 8;
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            FUN_?();
+            pcVar8 = (code *)swi(3);
+            (*pcVar8)();
             return;
           }
         }
       }
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -154,29 +422,63 @@ bool Assembly-CSharp.dll::AdminToolController::AdminToolController_IsBanFieldsVa
 
 {
   if (cRam_? == '\0') {
-    func_?(&::StringLiteral__);
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pIVar1 = (this->fields).reason;
-  if (pIVar1 != (InputField *)0x0) {
-    bVar2 = mscorlib.dll::System::String::String_op_Equality
-                      ((pIVar1->fields).m_Text,::StringLiteral__,(MethodInfo *)0x0);
-    if (bVar2 == 0) {
-      pIVar1 = (this->fields).duration;
-      if (pIVar1 == (InputField *)0x0) goto code_?;
-      bVar2 = mscorlib.dll::System::Int32::Int32_TryParse
-                        ((pIVar1->fields).m_Text,(int32_t *)&stack0xfffffff8,(MethodInfo *)0x0);
-      if (bVar2 != 0) {
+  aiStackX_8[0] = 0;
+  if (pIVar1 == (InputField *)0x0) {
+code_?:
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    bVar3 = (*pcVar2)();
+    return bVar3;
+  }
+  pSVar4 = (pIVar1->fields).m_Text;
+  if (pSVar4 != ::StringLiteral__) {
+    if ((((pSVar4 != (String *)0x0) && (::StringLiteral__ != (String *)0x0)) &&
+        ((pSVar4->fields)._stringLength == (::StringLiteral__->fields)._stringLength)) &&
+       (bVar3 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                          ((uint8_t *)&(pSVar4->fields)._firstChar,
+                           (uint8_t *)&(::StringLiteral__->fields)._firstChar,
+                           (longlong)(pSVar4->fields)._stringLength * 2,(MethodInfo *)0x0),
+       bVar3 != 0)) {
+      return 0;
+    }
+    pIVar1 = (this->fields).duration;
+    if (pIVar1 == (InputField *)0x0) goto code_?;
+    pSVar4 = (pIVar1->fields).m_Text;
+    if (cRam_? == '\0') {
+      FUN_?();
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (pSVar4 != (String *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?();
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      RStack_5._pointer._value = &(pSVar4->fields)._firstChar;
+      RStack_5._12_4_ = 0;
+      RStack_5._length = (pSVar4->fields)._stringLength;
+      info = mscorlib.dll::System::Globalization::NumberFormatInfo::NumberFormatInfo_get_CurrentInfo
+                       ((MethodInfo *)0x0);
+      if (*(int *)&(TypeInfo__System__Number->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      bVar3 = mscorlib.dll::System::Number::Number_TryParseInt32
+                        (&RStack_5,NumberStyles__Enum_Integer,info,aiStackX_8,(MethodInfo *)0x0);
+      if (bVar3 != 0) {
         return 1;
       }
     }
-    return 0;
   }
-code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  bVar2 = (*pcVar3)();
-  return bVar2;
+  return 0;
 }
 
 
@@ -186,296 +488,341 @@ void Assembly-CSharp.dll::AdminToolController::AdminToolController_OnBanClicked
                (AdminToolController *this,MethodInfo *method)
 
 {
-  this_01 = this;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AdminToolController);
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__get_Item_System__String_
-                   );
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Dropdown::OptionData>__get_Item_int_
-                   );
-    func_?(&TypeInfo__System__String);
-    func_?(&
-                    MethodInfo__AdminToolController____c___OnBanClicked_b__9_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&
-                    MethodInfo__AdminToolController____c___OnBanClicked_b__9_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__AdminToolController____c);
-    func_?(&StringLiteral_Expel);
-    func_?(&::StringLiteral___);
-    func_?(&StringLiteral_Banning_);
-    func_?(&::StringLiteral__);
-    func_?(&StringLiteral__for__);
-    func_?(&StringLiteral_Invalid_admin_fields__Specify_re);
-    func_?(&StringLiteral_Player_non_existant_in_game);
+    FUN_?(&TypeInfo__AdminToolController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__get_Item_System__String_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Dropdown::OptionData>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__String);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__AdminToolController____c___OnBanClicked_b__9_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__AdminToolController____c___OnBanClicked_b__9_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__AdminToolController____c);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Expel);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral___);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Banning_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__for__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Invalid_admin_fields__Specify_re);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Player_non_existant_in_game);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pTVar1 = (this_01->fields).playerName;
+  pTVar1 = (this->fields).playerName;
   if (pTVar1 == (Text *)0x0) goto code_?;
-  pSVar2 = (String *)
-           (*(code *)(pTVar1->klass->vtable).get_text.method)
-                     (pTVar1,(pTVar1->klass->vtable).set_text.methodPtr);
-  if ((TypeInfo__AdminToolController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__AdminToolController);
+  pSVar2 = (String *)(*(pTVar1->klass->vtable).get_text.methodPtr)();
+  if (*(int *)&(TypeInfo__AdminToolController->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  target = AdminToolController_GetPlayer(pSVar2,(MethodInfo *)0x0);
-  if (target == (MVPlayer *)0x0) {
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug);
+  pMVar3 = AdminToolController_GetPlayer(pSVar2,(MethodInfo *)0x0);
+  if (pMVar3 == (MVPlayer *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
               ((Object *)StringLiteral_Player_non_existant_in_game,(MethodInfo *)0x0);
     return;
   }
-  pDVar3 = (this_01->fields).banDurationMultiplier;
-  if (pDVar3 == (Dropdown *)0x0) goto code_?;
-  pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            UnityEngine.UI.dll::UnityEngine::UI::Dropdown::Dropdown_get_options
-                      (pDVar3,(MethodInfo *)0x0);
-  pDVar3 = (this_01->fields).banDurationMultiplier;
-  if ((pDVar3 == (Dropdown *)0x0) ||
-     (pLVar4 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0))
+  pDVar4 = (this->fields).banDurationMultiplier;
+  if ((pDVar4 == (Dropdown *)0x0) ||
+     (pDVar5 = (pDVar4->fields).m_Options, pDVar5 == (Dropdown_OptionDataList *)0x0))
   goto code_?;
-  RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-           RegexCharClass+SingleRange]::
-           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                     (pLVar4,(pDVar3->fields).m_Value,
-                      MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Dropdown::OptionData>__get_Item_int_
-                     );
-  if (RVar5 == (RegexCharClass_SingleRange)0x0) goto code_?;
-  bVar6 = mscorlib.dll::System::String::String_op_Equality
-                    (*(String **)((int)RVar5 + 8),StringLiteral_Expel,(MethodInfo *)0x0);
-  if (bVar6 != 0) {
-    pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (((pMVar7 == (MVNetworkGame *)0x0) ||
-        (pIVar8 = (this_01->fields).reason, pIVar8 == (InputField *)0x0)) ||
-       (pMVar9 = (pMVar7->fields).operationRequests,
-       pMVar9 == (MVNetworkGame_OperationRequests *)0x0)) goto code_?;
-    MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_Expel
-              (pMVar9,target,(pIVar8->fields).m_Text,(MethodInfo *)0x0);
+  pLVar6 = (pDVar5->fields).m_Options;
+  if (pLVar6 == (List_1_UnityEngine_UI_Dropdown_OptionData_ *)0x0) goto code_?;
+  uVar7 = (((this->fields).banDurationMultiplier)->fields).m_Value;
+  if ((uint)(pLVar6->fields)._size <= uVar7) goto code_?;
+  pDVar8 = (pLVar6->fields)._items;
+  if (pDVar8 == (Dropdown_OptionData__Array *)0x0) goto code_?;
+  if ((uint)pDVar8->max_length <= uVar7) goto code_?;
+  if (pDVar8->vector[(int)uVar7] == (Dropdown_OptionData *)0x0) goto code_?;
+  pSVar2 = (pDVar8->vector[(int)uVar7]->fields).m_Text;
+  if ((pSVar2 == StringLiteral_Expel) ||
+     ((((pSVar2 != (String *)0x0 && (StringLiteral_Expel != (String *)0x0)) &&
+       ((pSVar2->fields)._stringLength == (StringLiteral_Expel->fields)._stringLength)) &&
+      (bVar9 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                          ((uint8_t *)&(pSVar2->fields)._firstChar,
+                           (uint8_t *)&(StringLiteral_Expel->fields)._firstChar,
+                           (longlong)(pSVar2->fields)._stringLength * 2,(MethodInfo *)0x0),
+      bVar9 != 0)))) {
+    pMVar10 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if (((pMVar10 == (MVNetworkGame *)0x0) ||
+        (pIVar11 = (this->fields).reason, pIVar11 == (InputField *)0x0)) ||
+       (pMVar12 = (pMVar10->fields).operationRequests,
+       pMVar12 == (MVNetworkGame_OperationRequests *)0x0)) goto code_?;
+    MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_AdminOperation
+              (pMVar12,2,0,(pMVar3->fields)._ProfileID_k__BackingField,(pIVar11->fields).m_Text,
+               (MethodInfo *)0x0);
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)this_01,(MethodInfo *)0x0);
-    if ((TypeInfo__AdminToolController____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+                     ((Component *)this,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__AdminToolController____c->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__AdminToolController____c);
     }
-    callbackFunction = TypeInfo__AdminToolController____c->static_fields->__9__9_0;
-    if (callbackFunction != (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) goto code_?;
-    if ((TypeInfo__AdminToolController____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    this_01 = TypeInfo__AdminToolController____c->static_fields->__9__9_0;
+    if (this_01 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+      if (*(int *)&(TypeInfo__AdminToolController____c->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__AdminToolController____c);
+      }
+      pAVar13 = TypeInfo__AdminToolController____c->static_fields->__9;
+      this_01 = (ExecuteEvents_EventFunction_1_IUIStack_ *)
+                FUN_?(
+                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                             );
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+      ExecuteEvents_EventFunction_1_System_Object___ctor
+                ((ExecuteEvents_EventFunction_1_System_Object_ *)this_01,(Object *)pAVar13,
+                 MethodInfo__AdminToolController____c___OnBanClicked_b__9_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      TypeInfo__AdminToolController____c->static_fields->__9__9_0 = this_01;
+      ppEVar14 = &TypeInfo__AdminToolController____c->static_fields->__9__9_0;
+code_?:
+      func_?(ppEVar14);
     }
-    pAVar10 = TypeInfo__AdminToolController____c->static_fields->__9;
-    callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)pAVar10,
-               MethodInfo__AdminToolController____c___OnBanClicked_b__9_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    TypeInfo__AdminToolController____c->static_fields->__9__9_0 = callbackFunction;
-    ppEVar11 = &TypeInfo__AdminToolController____c->static_fields->__9__9_0;
 code_?:
-    func_?(ppEVar11);
-code_?:
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+      FUN_?();
     }
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (root,(BaseEventData *)0x0,
-               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+              (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)this_01,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
               );
-    return;
   }
-  if (cRam_? == '\0') {
-    func_?(&::StringLiteral__);
-    cRam_? = '\x01';
-  }
-  pIVar8 = (this_01->fields).reason;
-  this = (AdminToolController *)0x0;
-  if (pIVar8 == (InputField *)0x0) goto code_?;
-  bVar6 = mscorlib.dll::System::String::String_op_Equality
-                    ((pIVar8->fields).m_Text,::StringLiteral__,(MethodInfo *)0x0);
-  if (bVar6 == 0) {
-    pIVar8 = (this_01->fields).duration;
-    if (pIVar8 == (InputField *)0x0) goto code_?;
-    bVar6 = mscorlib.dll::System::Int32::Int32_TryParse
-                      ((pIVar8->fields).m_Text,(int32_t *)&this,(MethodInfo *)0x0);
-    if (bVar6 != 0) {
-      pIVar8 = (this_01->fields).duration;
-      if (pIVar8 == (InputField *)0x0) goto code_?;
-      iVar12 = mscorlib.dll::System::Int32::Int32_Parse((pIVar8->fields).m_Text,(MethodInfo *)0x0);
-      if ((TypeInfo__AdminToolController->_1).cctor_finished_or_no_cctor == 0) {
-        this = (AdminToolController *)TypeInfo__AdminToolController;
-        func_?();
+  else {
+    if (cRam_? == '\0') {
+      FUN_?(&::StringLiteral__);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pIVar11 = (this->fields).reason;
+    aIStackX_8[0].m_value = 0;
+    if (pIVar11 == (InputField *)0x0) {
+code_?:
+      FUN_?();
+      pcVar15 = (code *)swi(3);
+      (*pcVar15)();
+      return;
+    }
+    pSVar2 = (pIVar11->fields).m_Text;
+    if ((pSVar2 != ::StringLiteral__) &&
+       (((pSVar2 == (String *)0x0 || (::StringLiteral__ == (String *)0x0)) ||
+        (((pSVar2->fields)._stringLength != (::StringLiteral__->fields)._stringLength ||
+         (bVar9 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                             ((uint8_t *)&(pSVar2->fields)._firstChar,
+                              (uint8_t *)&(::StringLiteral__->fields)._firstChar,
+                              (longlong)(pSVar2->fields)._stringLength * 2,(MethodInfo *)0x0),
+         bVar9 == 0)))))) {
+      pIVar11 = (this->fields).duration;
+      if (pIVar11 == (InputField *)0x0) goto code_?;
+      pSVar2 = (pIVar11->fields).m_Text;
+      if (cRam_? == '\0') {
+        FUN_?();
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
-      this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                TypeInfo__AdminToolController->static_fields->durationMultiplier;
-      pDVar3 = (this_01->fields).banDurationMultiplier;
-      if (pDVar3 == (Dropdown *)0x0) goto code_?;
-      pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                UnityEngine.UI.dll::UnityEngine::UI::Dropdown::Dropdown_get_options
-                          (pDVar3,(MethodInfo *)0x0);
-      pDVar3 = (this_01->fields).banDurationMultiplier;
-      if ((pDVar3 == (Dropdown *)0x0) ||
-         (pLVar4 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0))
-      goto code_?;
-      RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-               RegexCharClass+SingleRange]::
-               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                         (pLVar4,(pDVar3->fields).m_Value,
-                          MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Dropdown::OptionData>__get_Item_int_
-                         );
-      if ((RVar5 == (RegexCharClass_SingleRange)0x0) ||
-         (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0))
-      goto code_?;
-      TVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-               UIElements::TextureId]::
-               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                         (this_00,*(Object **)((int)RVar5 + 8),
-                          MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__get_Item_System__String_
-                         );
-      this = (AdminToolController *)(TVar13.m_Index * iVar12);
-      target_00 = TypeInfo__System__String;
-      values = (String__Array *)func_?();
-      pSVar2 = StringLiteral_Banning_;
-      if (values == (String__Array *)0x0) goto code_?;
-      if (values->max_length != 0) {
-        values->vector[0] = StringLiteral_Banning_;
-        func_?(values->vector,pSVar2);
-        pTVar1 = (this_01->fields).playerName;
-        if (pTVar1 == (Text *)0x0) goto code_?;
-        pSVar2 = (String *)
-                 (*(code *)(pTVar1->klass->vtable).get_text.method)
-                           (pTVar1,(pTVar1->klass->vtable).set_text.methodPtr);
-        if (1 < values->max_length) {
-          values->vector[1] = pSVar2;
-          func_?(values->vector + 1,pSVar2);
-          pSVar2 = ::StringLiteral___;
-          if (2 < values->max_length) {
-            values->vector[2] = ::StringLiteral___;
-            func_?(values->vector + 2,pSVar2);
-            pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
-                               ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
-            if (3 < values->max_length) {
-              values->vector[3] = pSVar2;
-              func_?(values->vector + 3,pSVar2);
-              pSVar2 = ::StringLiteral__;
-              if (4 < values->max_length) {
-                values->vector[4] = ::StringLiteral__;
-                func_?(values->vector + 4,pSVar2);
-                pDVar3 = (this_01->fields).banDurationMultiplier;
-                if (pDVar3 == (Dropdown *)0x0) goto code_?;
-                pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                          UnityEngine.UI.dll::UnityEngine::UI::Dropdown::Dropdown_get_options
-                                    (pDVar3,(MethodInfo *)0x0);
-                pDVar3 = (this_01->fields).banDurationMultiplier;
-                if ((pDVar3 == (Dropdown *)0x0) ||
-                   (pLVar4 ==
-                    (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0))
-                goto code_?;
-                RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                         RegularExpressions::RegexCharClass+SingleRange]::
-                         List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                   (pLVar4,(pDVar3->fields).m_Value,
-                                    MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Dropdown::OptionData>__get_Item_int_
-                                   );
-                if (RVar5 == (RegexCharClass_SingleRange)0x0) goto code_?;
-                pSVar2 = *(String **)((int)RVar5 + 8);
-                if (5 < values->max_length) {
-                  values->vector[5] = pSVar2;
-                  func_?(values->vector + 5,pSVar2);
-                  pSVar2 = StringLiteral__for__;
-                  if (6 < values->max_length) {
-                    values->vector[6] = StringLiteral__for__;
-                    func_?(values->vector + 6,pSVar2);
-                    pIVar8 = (this_01->fields).reason;
-                    if (pIVar8 == (InputField *)0x0) goto code_?;
-                    pSVar2 = (pIVar8->fields).m_Text;
-                    if (7 < values->max_length) {
-                      values->vector[7] = pSVar2;
-                      func_?(values->vector + 7,pSVar2);
-                      pSVar2 = mscorlib.dll::System::String::String_Concat_6
-                                         (values,(MethodInfo *)0x0);
-                      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                        func_?(TypeInfo__UnityEngine__Debug);
-                      }
-                      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                                ((Object *)pSVar2,(MethodInfo *)0x0);
-                      pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game
-                                          ((MethodInfo *)0x0);
-                      if (((pMVar7 == (MVNetworkGame *)0x0) ||
-                          (pIVar8 = (this_01->fields).reason, pIVar8 == (InputField *)0x0)) ||
-                         (pMVar9 = (pMVar7->fields).operationRequests,
-                         pMVar9 == (MVNetworkGame_OperationRequests *)0x0)) goto code_?;
-                      MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_Ban_1
-                                (pMVar9,(int32_t)this,(MVPlayer *)target_00,(pIVar8->fields).m_Text,
-                                 (MethodInfo *)0x0);
-                      root = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                             Component_get_gameObject((Component *)this_01,(MethodInfo *)0x0);
-                      if ((TypeInfo__AdminToolController____c->_1).cctor_finished_or_no_cctor == 0)
-                      {
-                        func_?();
-                      }
-                      callbackFunction = TypeInfo__AdminToolController____c->static_fields->__9__9_1
-                      ;
-                      if (callbackFunction != (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0)
-                      goto code_?;
-                      if ((TypeInfo__AdminToolController____c->_1).cctor_finished_or_no_cctor == 0)
-                      {
-                        func_?();
-                      }
-                      pAVar10 = TypeInfo__AdminToolController____c->static_fields->__9;
-                      callbackFunction =
-                           (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-                      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
-                      Object,System::Object]::UnityAction_2_System_Object_System_Object___ctor
-                                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
-                                 (Object *)pAVar10,
-                                 MethodInfo__AdminToolController____c___OnBanClicked_b__9_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                                 ,(MethodInfo *)0x0);
-                      TypeInfo__AdminToolController____c->static_fields->__9__9_1 = callbackFunction
-                      ;
-                      ppEVar11 = &TypeInfo__AdminToolController____c->static_fields->__9__9_1;
-                      goto code_?;
-                    }
-                  }
-                }
-              }
-            }
+      if (pSVar2 != (String *)0x0) {
+        if (cRam_? == '\0') {
+          FUN_?();
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        RStack_16._pointer._value = &(pSVar2->fields)._firstChar;
+        RStack_16._12_4_ = 0;
+        RStack_16._length = (pSVar2->fields)._stringLength;
+        info = mscorlib.dll::System::Globalization::NumberFormatInfo::
+               NumberFormatInfo_get_CurrentInfo((MethodInfo *)0x0);
+        if (*(int *)&(TypeInfo__System__Number->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        bVar9 = mscorlib.dll::System::Number::Number_TryParseInt32
+                           (&RStack_16,NumberStyles__Enum_Integer,info,&aIStackX_8[0].m_value,
+                            (MethodInfo *)0x0);
+        if (bVar9 != 0) {
+          pIVar11 = (this->fields).duration;
+          if (pIVar11 == (InputField *)0x0) goto code_?;
+          iVar17 = mscorlib.dll::System::Int32::Int32_Parse
+                             ((pIVar11->fields).m_Text,(MethodInfo *)0x0);
+          aIStackX_8[0].m_value = iVar17;
+          if (*(int *)&(TypeInfo__AdminToolController->_1).field_0x1c == 0) {
+            FUN_?();
           }
+          pDVar4 = (this->fields).banDurationMultiplier;
+          this_00 = TypeInfo__AdminToolController->static_fields->durationMultiplier;
+          if ((pDVar4 == (Dropdown *)0x0) ||
+             (pDVar5 = (pDVar4->fields).m_Options, pDVar5 == (Dropdown_OptionDataList *)0x0))
+          goto code_?;
+          pLVar6 = (pDVar5->fields).m_Options;
+          if (pLVar6 == (List_1_UnityEngine_UI_Dropdown_OptionData_ *)0x0)
+          goto code_?;
+          uVar7 = (((this->fields).banDurationMultiplier)->fields).m_Value;
+          if ((uint)(pLVar6->fields)._size <= uVar7) {
+code_?:
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                      ((MethodInfo *)0x0);
+            pcVar15 = (code *)swi(3);
+            (*pcVar15)();
+            return;
+          }
+          pDVar8 = (pLVar6->fields)._items;
+          if (pDVar8 == (Dropdown_OptionData__Array *)0x0) goto code_?;
+          if ((uint)pDVar8->max_length <= uVar7) {
+code_?:
+            FUN_?();
+            pcVar15 = (code *)swi(3);
+            (*pcVar15)();
+            return;
+          }
+          if ((pDVar8->vector[(int)uVar7] == (Dropdown_OptionData *)0x0) ||
+             (this_00 == (Dictionary_2_System_String_System_Int32_ *)0x0))
+          goto code_?;
+          IVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                   Int32Enum]::Dictionary_2_System_Object_System_Int32Enum__get_Item
+                             ((Dictionary_2_System_Object_System_Int32Enum_ *)this_00,
+                              (Object *)(pDVar8->vector[(int)uVar7]->fields).m_Text,
+                              MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__get_Item_System__String_
+                             );
+          values = (String__Array *)FUN_?(TypeInfo__System__String,8);
+          if (values == (String__Array *)0x0) goto code_?;
+          FUN_?(values,0,StringLiteral_Banning_);
+          pTVar1 = (this->fields).playerName;
+          if (pTVar1 == (Text *)0x0) goto code_?;
+          uVar19 = (*(pTVar1->klass->vtable).get_text.methodPtr)
+                             (pTVar1,(pTVar1->klass->vtable).get_text.method);
+          FUN_?(values,1,uVar19);
+          FUN_?(values,2,::StringLiteral___);
+          pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(aIStackX_8,(MethodInfo *)0x0);
+          FUN_?(values,3,pSVar2);
+          FUN_?(values,4,::StringLiteral__);
+          pDVar4 = (this->fields).banDurationMultiplier;
+          if ((pDVar4 == (Dropdown *)0x0) ||
+             (pDVar5 = (pDVar4->fields).m_Options, pDVar5 == (Dropdown_OptionDataList *)0x0))
+          goto code_?;
+          pLVar6 = (pDVar5->fields).m_Options;
+          if (pLVar6 == (List_1_UnityEngine_UI_Dropdown_OptionData_ *)0x0)
+          goto code_?;
+          uVar7 = (((this->fields).banDurationMultiplier)->fields).m_Value;
+          if ((uint)(pLVar6->fields)._size <= uVar7) goto code_?;
+          pDVar8 = (pLVar6->fields)._items;
+          if (pDVar8 == (Dropdown_OptionData__Array *)0x0) goto code_?;
+          if ((uint)pDVar8->max_length <= uVar7) goto code_?;
+          if (pDVar8->vector[(int)uVar7] == (Dropdown_OptionData *)0x0) goto code_?;
+          FUN_?(values,5,(pDVar8->vector[(int)uVar7]->fields).m_Text);
+          FUN_?(values,6,StringLiteral__for__);
+          pIVar11 = (this->fields).reason;
+          if (pIVar11 == (InputField *)0x0) goto code_?;
+          FUN_?(values,7,(pIVar11->fields).m_Text);
+          pSVar2 = mscorlib.dll::System::String::String_Concat_7(values,(MethodInfo *)0x0);
+          if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                    ((Object *)pSVar2,(MethodInfo *)0x0);
+          pMVar10 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if (((pMVar10 == (MVNetworkGame *)0x0) ||
+              (pIVar11 = (this->fields).reason, pIVar11 == (InputField *)0x0)) ||
+             (pMVar12 = (pMVar10->fields).operationRequests,
+             pMVar12 == (MVNetworkGame_OperationRequests *)0x0)) goto code_?;
+          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_AdminOperation
+                    (pMVar12,1,IVar18 * iVar17,(pMVar3->fields)._ProfileID_k__BackingField,
+                     (pIVar11->fields).m_Text,(MethodInfo *)0x0);
+          root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)this,(MethodInfo *)0x0);
+          if (*(int *)&(TypeInfo__AdminToolController____c->_1).field_0x1c == 0) {
+            FUN_?(TypeInfo__AdminToolController____c);
+          }
+          this_01 = TypeInfo__AdminToolController____c->static_fields->__9__9_1;
+          if (this_01 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+            if (*(int *)&(TypeInfo__AdminToolController____c->_1).field_0x1c == 0) {
+              FUN_?(TypeInfo__AdminToolController____c);
+            }
+            pAVar13 = TypeInfo__AdminToolController____c->static_fields->__9;
+            this_01 = (ExecuteEvents_EventFunction_1_IUIStack_ *)
+                      FUN_?(
+                                   TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                                   );
+            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::
+            Object]::ExecuteEvents_EventFunction_1_System_Object___ctor
+                      ((ExecuteEvents_EventFunction_1_System_Object_ *)this_01,(Object *)pAVar13,
+                       MethodInfo__AdminToolController____c___OnBanClicked_b__9_1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                       ,(MethodInfo *)0x0);
+            TypeInfo__AdminToolController____c->static_fields->__9__9_1 = this_01;
+            ppEVar14 = &TypeInfo__AdminToolController____c->static_fields->__9__9_1;
+            goto code_?;
+          }
+          goto code_?;
         }
       }
-      func_?();
-      goto code_?;
     }
-  }
-  pIVar8 = (this_01->fields).duration;
-  if ((pIVar8 != (InputField *)0x0) &&
-     (pIVar14 = (this_01->fields).reason, pIVar14 != (InputField *)0x0)) {
-    pSVar2 = mscorlib.dll::System::String::String_Concat_4
-                       ((pIVar8->fields).m_Text,::StringLiteral__,(pIVar14->fields).m_Text,
-                        (MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug);
+    pIVar11 = (this->fields).duration;
+    if ((pIVar11 == (InputField *)0x0) ||
+       (pIVar20 = (this->fields).reason, pIVar20 == (InputField *)0x0)) {
+code_?:
+      FUN_?();
+      pcVar15 = (code *)swi(3);
+      (*pcVar15)();
+      return;
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
+    pSVar2 = mscorlib.dll::System::String::String_Concat_5
+                        ((pIVar11->fields).m_Text,::StringLiteral__,(pIVar20->fields).m_Text,
+                         (MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0)
+    ;
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_Invalid_admin_fields__Specify_re,(MethodInfo *)0x0);
-    return;
   }
-code_?:
-  func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
   return;
 }
 
@@ -487,109 +834,172 @@ void Assembly-CSharp.dll::AdminToolController::AdminToolController_OnDefaultBanD
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AdminToolController);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__get_Item_System__String_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Dropdown::OptionData>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Dropdown::OptionData>__get_Item_int_
-                   );
+    FUN_?(&TypeInfo__AdminToolController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__get_Item_System__String_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Dropdown::OptionData>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pDVar1 = (this->fields).presetBansDropdown;
   if (((pDVar1 != (Dropdown *)0x0) &&
-      (pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                UnityEngine.UI.dll::UnityEngine::UI::Dropdown::Dropdown_get_options
-                          (pDVar1,(MethodInfo *)0x0),
-      pLVar2 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) &&
-     (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (pLVar2,option,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Dropdown::OptionData>__get_Item_int_
-                        ), RVar3 != (RegexCharClass_SingleRange)0x0)) {
-    key = *(Object **)((int)RVar3 + 8);
-    pIVar4 = (this->fields).reason;
-    if ((TypeInfo__AdminToolController->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+      (pDVar2 = (pDVar1->fields).m_Options, pDVar2 != (Dropdown_OptionDataList *)0x0)) &&
+     (pLVar3 = (pDVar2->fields).m_Options,
+     pLVar3 != (List_1_UnityEngine_UI_Dropdown_OptionData_ *)0x0)) {
+    if ((uint)(pLVar3->fields)._size <= (uint)option) {
+code_?:
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                ((MethodInfo *)0x0);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
     }
-    pDVar5 = TypeInfo__AdminToolController->static_fields->defaultBanLookup;
-    if (pDVar5 != (Dictionary_2_System_String_AdminToolController_DefaultBan_ *)0x0) {
-      pAVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-               Object,AdminToolController+DefaultBan]::
-               Dictionary_2_System_Object_AdminToolController_DefaultBan__get_Item
-                         ((AdminToolController_DefaultBan *)&stack0xffffffe4,
-                          (Dictionary_2_System_Object_AdminToolController_DefaultBan_ *)pDVar5,key,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__get_Item_System__String_
-                         );
-      value = pAVar6->BanReason;
-      if (pIVar4 != (InputField *)0x0) {
-        UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_set_text
-                  (pIVar4,(String *)value,(MethodInfo *)0x0);
-        pIVar4 = (this->fields).duration;
-        pDVar5 = TypeInfo__AdminToolController->static_fields->defaultBanLookup;
-        if (pDVar5 != (Dictionary_2_System_String_AdminToolController_DefaultBan_ *)0x0) {
-          pAVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+    pDVar5 = (pLVar3->fields)._items;
+    if (pDVar5 != (Dropdown_OptionData__Array *)0x0) {
+      if ((uint)pDVar5->max_length <= (uint)option) {
+code_?:
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      if (pDVar5->vector[option] != (Dropdown_OptionData *)0x0) {
+        pSVar6 = (pDVar5->vector[option]->fields).m_Text;
+        pIVar7 = (this->fields).reason;
+        if (*(int *)&(TypeInfo__AdminToolController->_1).field_0x1c == 0) {
+          FUN_?(TypeInfo__AdminToolController);
+        }
+        pDVar8 = TypeInfo__AdminToolController->static_fields->defaultBanLookup;
+        if (pDVar8 != (Dictionary_2_System_String_AdminToolController_DefaultBan_ *)0x0) {
+          uVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                    Object,AdminToolController+DefaultBan]::
-                   Dictionary_2_System_Object_AdminToolController_DefaultBan__get_Item
-                             ((AdminToolController_DefaultBan *)&stack0xffffffe4,
-                              (Dictionary_2_System_Object_AdminToolController_DefaultBan_ *)pDVar5,
-                              key,
+                   Dictionary_2_System_Object_AdminToolController_DefaultBan__FindEntry
+                             ((Dictionary_2_System_Object_AdminToolController_DefaultBan_ *)pDVar8,
+                              (Object *)pSVar6,
                               MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__get_Item_System__String_
-                             );
-          value_00 = pAVar6->BanDuration;
-          if (pIVar4 != (InputField *)0x0) {
-            UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_set_text
-                      (pIVar4,(String *)value_00,(MethodInfo *)0x0);
-            pDVar5 = TypeInfo__AdminToolController->static_fields->defaultBanLookup;
-            if (pDVar5 != (Dictionary_2_System_String_AdminToolController_DefaultBan_ *)0x0) {
-              pAVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       Object,AdminToolController+DefaultBan]::
-                       Dictionary_2_System_Object_AdminToolController_DefaultBan__get_Item
-                                 ((AdminToolController_DefaultBan *)&stack0xffffffe4,
-                                  (Dictionary_2_System_Object_AdminToolController_DefaultBan_ *)
-                                  pDVar5,key,
-                                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__get_Item_System__String_
-                                 );
-              pDVar1 = (this->fields).banDurationMultiplier;
-              index = 0;
-              b = pAVar6->BanDurationFormat;
-              while( true ) {
-                if ((pDVar1 == (Dropdown *)0x0) ||
-                   (pLVar7 = UnityEngine.UI.dll::UnityEngine::UI::Dropdown::Dropdown_get_options
-                                       (pDVar1,(MethodInfo *)0x0),
-                   pLVar7 == (List_1_UnityEngine_UI_Dropdown_OptionData_ *)0x0))
-                goto code_?;
-                if ((pLVar7->fields)._size <= index) {
+                              ->klass->rgctx_data[0x21].method);
+          if ((int)uVar9 < 0) {
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowKeyNotFoundException
+                      ((Object *)pSVar6,(MethodInfo *)0x0);
+            pcVar4 = (code *)swi(3);
+            (*pcVar4)();
+            return;
+          }
+          pDVar10 = (pDVar8->fields)._entries;
+          if (pDVar10 != (Dictionary_2_TKey_TValue_Entry_System_String_AdminToolController_DefaultBan___Array
+                         *)0x0) {
+            if ((uint)pDVar10->max_length <= uVar9) goto code_?;
+            if (pIVar7 != (InputField *)0x0) {
+              UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_SetText
+                        (pIVar7,pDVar10->vector[(int)uVar9].value.BanReason,1,(MethodInfo *)0x0);
+              pIVar7 = (this->fields).duration;
+              pDVar8 = TypeInfo__AdminToolController->static_fields->defaultBanLookup;
+              if (pDVar8 != (Dictionary_2_System_String_AdminToolController_DefaultBan_ *)0x0) {
+                uVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                         Object,AdminToolController+DefaultBan]::
+                         Dictionary_2_System_Object_AdminToolController_DefaultBan__FindEntry
+                                   ((Dictionary_2_System_Object_AdminToolController_DefaultBan_ *)
+                                    pDVar8,(Object *)pSVar6,
+                                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__get_Item_System__String_
+                                    ->klass->rgctx_data[0x21].method);
+                if ((int)uVar9 < 0) {
+                  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowKeyNotFoundException
+                            ((Object *)pSVar6,(MethodInfo *)0x0);
+                  pcVar4 = (code *)swi(3);
+                  (*pcVar4)();
                   return;
                 }
-                pDVar1 = (this->fields).banDurationMultiplier;
-                if (((pDVar1 == (Dropdown *)0x0) ||
-                    (pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                              UnityEngine.UI.dll::UnityEngine::UI::Dropdown::Dropdown_get_options
-                                        (pDVar1,(MethodInfo *)0x0),
-                    pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                              0x0)) ||
-                   (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                            RegularExpressions::RegexCharClass+SingleRange]::
-                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                      (pLVar2,index,
-                                       MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Dropdown::OptionData>__get_Item_int_
-                                      ), RVar3 == (RegexCharClass_SingleRange)0x0))
-                goto code_?;
-                bVar8 = mscorlib.dll::System::String::String_op_Equality
-                                  (*(String **)((int)RVar3 + 8),b,(MethodInfo *)0x0);
-                pDVar1 = (this->fields).banDurationMultiplier;
-                if (bVar8 != 0) break;
-                index = index + 1;
-              }
-              if (pDVar1 != (Dropdown *)0x0) {
-                UnityEngine.UI.dll::UnityEngine::UI::Dropdown::Dropdown_set_value
-                          (pDVar1,index,(MethodInfo *)0x0);
-                return;
+                pDVar10 = (pDVar8->fields)._entries;
+                if (pDVar10 != (Dictionary_2_TKey_TValue_Entry_System_String_AdminToolController_DefaultBan___Array
+                               *)0x0) {
+                  if ((uint)pDVar10->max_length <= uVar9) goto code_?;
+                  if (pIVar7 != (InputField *)0x0) {
+                    UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_SetText
+                              (pIVar7,pDVar10->vector[(int)uVar9].value.BanDuration,1,
+                               (MethodInfo *)0x0);
+                    pDVar8 = TypeInfo__AdminToolController->static_fields->defaultBanLookup;
+                    if (pDVar8 != (Dictionary_2_System_String_AdminToolController_DefaultBan_ *)0x0)
+                    {
+                      uVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                               Object,AdminToolController+DefaultBan]::
+                               Dictionary_2_System_Object_AdminToolController_DefaultBan__FindEntry
+                                         ((Dictionary_2_System_Object_AdminToolController_DefaultBan_
+                                           *)pDVar8,(Object *)pSVar6,
+                                          MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__get_Item_System__String_
+                                          ->klass->rgctx_data[0x21].method);
+                      if ((int)uVar9 < 0) {
+                        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowKeyNotFoundException
+                                  ((Object *)pSVar6,(MethodInfo *)0x0);
+                        pcVar4 = (code *)swi(3);
+                        (*pcVar4)();
+                        return;
+                      }
+                      pDVar10 = (pDVar8->fields)._entries;
+                      if (pDVar10 != (Dictionary_2_TKey_TValue_Entry_System_String_AdminToolController_DefaultBan___Array
+                                     *)0x0) {
+                        if ((uint)pDVar10->max_length <= uVar9) goto code_?;
+                        value = 0;
+                        pDVar1 = (this->fields).banDurationMultiplier;
+                        pSVar6 = pDVar10->vector[(int)uVar9].value.BanDurationFormat;
+                        if (pDVar1 != (Dropdown *)0x0) {
+                          lVar11 = 0x20;
+                          while ((pDVar2 = (pDVar1->fields).m_Options,
+                                 pDVar2 != (Dropdown_OptionDataList *)0x0 &&
+                                 (pLVar3 = (pDVar2->fields).m_Options,
+                                 pLVar3 != (List_1_UnityEngine_UI_Dropdown_OptionData_ *)0x0))) {
+                            if ((pLVar3->fields)._size <= (int)value) {
+                              return;
+                            }
+                            pDVar2 = (pDVar1->fields).m_Options;
+                            if ((pDVar2 == (Dropdown_OptionDataList *)0x0) ||
+                               (pLVar3 = (pDVar2->fields).m_Options,
+                               pLVar3 == (List_1_UnityEngine_UI_Dropdown_OptionData_ *)0x0)) break;
+                            if ((uint)(pLVar3->fields)._size <= value) goto code_?;
+                            pDVar5 = (pLVar3->fields)._items;
+                            if (pDVar5 == (Dropdown_OptionData__Array *)0x0) break;
+                            if ((uint)pDVar5->max_length <= value) goto code_?;
+                            lVar12 = *(longlong *)((longlong)pDVar5->vector + lVar11 + -0x20);
+                            if (lVar12 == 0) break;
+                            pSVar13 = *(String **)(lVar12 + 0x10);
+                            if (pSVar13 == pSVar6) {
+code_?:
+                              UnityEngine.UI.dll::UnityEngine::UI::Dropdown::Dropdown_Set
+                                        (pDVar1,value,1,(MethodInfo *)0x0);
+                              return;
+                            }
+                            if (((pSVar13 == (String *)0x0) || (pSVar6 == (String *)0x0)) ||
+                               ((pSVar13->fields)._stringLength != (pSVar6->fields)._stringLength))
+                            {
+                              value = value + 1;
+                              lVar11 = lVar11 + 8;
+                            }
+                            else {
+                              bVar14 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                                                 ((uint8_t *)&(pSVar13->fields)._firstChar,
+                                                  (uint8_t *)&(pSVar6->fields)._firstChar,
+                                                  (longlong)(pSVar13->fields)._stringLength * 2,
+                                                  (MethodInfo *)0x0);
+                              if (bVar14 != 0) goto code_?;
+                              value = value + 1;
+                              lVar11 = lVar11 + 8;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -597,10 +1007,9 @@ void Assembly-CSharp.dll::AdminToolController::AdminToolController_OnDefaultBanD
       }
     }
   }
-code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -612,94 +1021,241 @@ void Assembly-CSharp.dll::AdminToolController::AdminToolController_OnKickClicked
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AdminToolController);
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    MethodInfo__AdminToolController____c___OnKickClicked_b__10_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__AdminToolController____c);
-    func_?(&StringLiteral__kicked_by_admin_);
-    func_?(&StringLiteral_Player_non_existant_in_game);
+    FUN_?(&TypeInfo__AdminToolController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__AdminToolController____c___OnKickClicked_b__10_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__AdminToolController____c);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__kicked_by_admin_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Player_non_existant_in_game);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).playerName;
   if (pTVar1 != (Text *)0x0) {
-    pSVar2 = (String *)
-             (*(code *)(pTVar1->klass->vtable).get_text.method)
-                       (pTVar1,(pTVar1->klass->vtable).set_text.methodPtr);
-    if ((TypeInfo__AdminToolController->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__AdminToolController);
+    pSVar2 = (String *)(*(pTVar1->klass->vtable).get_text.methodPtr)();
+    if (*(int *)&(TypeInfo__AdminToolController->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    target = AdminToolController_GetPlayer(pSVar2,(MethodInfo *)0x0);
-    if (target == (MVPlayer *)0x0) {
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
+    pMVar3 = AdminToolController_GetPlayer(pSVar2,(MethodInfo *)0x0);
+    if (pMVar3 == (MVPlayer *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-                ((Object *)StringLiteral_Player_non_existant_in_game,(MethodInfo *)0x0);
+      pSVar2 = StringLiteral_Player_non_existant_in_game;
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Debug,0);
+        LOCK();
+        UNLOCK();
+        FUN_?(&TypeInfo__UnityEngine__ILogger);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Debug);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      pIVar4 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+      if (pIVar4 != (ILogger_1 *)0x0) {
+        FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar4,2,pSVar2);
+        return;
+      }
+      FUN_?();
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
       return;
     }
     pTVar1 = (this->fields).playerName;
     if (pTVar1 != (Text *)0x0) {
       pSVar2 = (String *)
-               (*(code *)(pTVar1->klass->vtable).get_text.method)
-                         (pTVar1,(pTVar1->klass->vtable).set_text.methodPtr);
-      pSVar2 = mscorlib.dll::System::String::String_Concat_3
-                         (pSVar2,StringLiteral__kicked_by_admin_,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
+                (*(pTVar1->klass->vtable).get_text.methodPtr)
+                          (pTVar1,(pTVar1->klass->vtable).get_text.method);
+      pSVar2 = mscorlib.dll::System::String::String_Concat_4
+                          (pSVar2,StringLiteral__kicked_by_admin_,(MethodInfo *)0x0);
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                 ((Object *)pSVar2,(MethodInfo *)0x0);
-      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (((pMVar3 != (MVNetworkGame *)0x0) &&
-          (pIVar4 = (this->fields).reason, pIVar4 != (InputField *)0x0)) &&
-         (this_00 = (pMVar3->fields).operationRequests,
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pMVar6 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if ((((pMVar6 != (MVGameControllerBase *)0x0) &&
+           (pMVar7 = (pMVar6->fields).game, pMVar7 != (MVNetworkGame *)0x0)) &&
+          (pIVar8 = (this->fields).reason, pIVar8 != (InputField *)0x0)) &&
+         (this_00 = (pMVar7->fields).operationRequests,
          this_00 != (MVNetworkGame_OperationRequests *)0x0)) {
-        MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_Kick
-                  (this_00,target,(pIVar4->fields).m_Text,(MethodInfo *)0x0);
-        root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
-        if ((TypeInfo__AdminToolController____c->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+        MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_AdminOperation
+                  (this_00,0,0,(pMVar3->fields)._ProfileID_k__BackingField,(pIVar8->fields).m_Text,
+                   (MethodInfo *)0x0);
+        pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)this,(MethodInfo *)0x0);
+        if (*(int *)&(TypeInfo__AdminToolController____c->_1).field_0x1c == 0) {
+          FUN_?(TypeInfo__AdminToolController____c);
         }
-        callbackFunction = TypeInfo__AdminToolController____c->static_fields->__9__10_0;
-        if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-          if ((TypeInfo__AdminToolController____c->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
+        this_02 = TypeInfo__AdminToolController____c->static_fields->__9__10_0;
+        if (this_02 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+          if (*(int *)&(TypeInfo__AdminToolController____c->_1).field_0x1c == 0) {
+            FUN_?(TypeInfo__AdminToolController____c);
           }
           object = TypeInfo__AdminToolController____c->static_fields->__9;
-          callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object
-                     ,
+          this_02 = (ExecuteEvents_EventFunction_1_IUIStack_ *)
+                    FUN_?(
+                                 TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                                 );
+          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::
+          Object]::ExecuteEvents_EventFunction_1_System_Object___ctor
+                    ((ExecuteEvents_EventFunction_1_System_Object_ *)this_02,(Object *)object,
                      MethodInfo__AdminToolController____c___OnKickClicked_b__10_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                      ,(MethodInfo *)0x0);
-          TypeInfo__AdminToolController____c->static_fields->__9__10_0 = callbackFunction;
-          func_?();
+          TypeInfo__AdminToolController____c->static_fields->__9__10_0 = this_02;
+          if (iRam_? != 0) {
+            uVar10 = (uint)((ulonglong)&TypeInfo__AdminToolController____c->static_fields->__9__10_0
+                           >> 0xc);
+            puVar11 = (ulonglong *)((ulonglong)((uVar10 & 0x1fffff) >> 6) * 8 + 0xADDR);
+            do {
+              uVar12 = *puVar11;
+              LOCK();
+              uVar13 = *puVar11;
+              if (uVar12 == uVar13) {
+                *puVar11 = uVar12 | 1L << (uVar10 & 0x3f);
+              }
+              UNLOCK();
+            } while (uVar12 != uVar13);
+          }
         }
-        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
-           ) {
-          func_?();
+        if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (root,(BaseEventData *)0x0,
-                   (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                  );
+        pMVar14 = 
+        UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+        ;
+        if ((
+            UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+            ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+          FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+          LOCK();
+          UNLOCK();
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Count__
+                       );
+          LOCK();
+          UNLOCK();
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Item_int_
+                       );
+          LOCK();
+          UNLOCK();
+          if ((pMVar14->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+            FUN_?(pMVar14);
+          }
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+          FUN_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+        }
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_GetEventChain
+                  (pGVar9,(IList_1_UnityEngine_Transform_ *)
+                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                           s_InternalTransformList,(MethodInfo *)0x0);
+        pLVar15 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                 s_InternalTransformList;
+        if (pLVar15 != (List_1_UnityEngine_Transform_ *)0x0) {
+          lVar16 = (longlong)(pLVar15->fields)._size;
+          uVar10 = 0;
+          if (0 < lVar16) {
+            lVar17 = 0;
+            lVar18 = 0x20;
+            do {
+              if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0)
+              {
+                FUN_?();
+              }
+              pLVar15 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                       s_InternalTransformList;
+              if (pLVar15 == (List_1_UnityEngine_Transform_ *)0x0) goto code_?;
+              if ((uint)(pLVar15->fields)._size <= uVar10) {
+                mscorlib.dll::System::ThrowHelper::
+                ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+                pcVar5 = (code *)swi(3);
+                (*pcVar5)();
+                return;
+              }
+              pTVar19 = (pLVar15->fields)._items;
+              if (pTVar19 == (Transform__Array *)0x0) goto code_?;
+              if ((uint)pTVar19->max_length <= uVar10) {
+                FUN_?();
+                pcVar5 = (code *)swi(3);
+                (*pcVar5)();
+                return;
+              }
+              this_01 = *(Component **)((longlong)pTVar19->vector + lVar18 + -0x20);
+              if (this_01 == (Component *)0x0) goto code_?;
+              pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                  (this_01,(MethodInfo *)0x0);
+              bVar20 = UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+                       ExecuteEvents_Execute_18
+                                 (pGVar9,(BaseEventData *)0x0,
+                                  (ExecuteEvents_EventFunction_1_System_Object_ *)this_02,
+                                  (pMVar14->field7_0x38).rgctx_data[1].method);
+              if (bVar20 != 0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          (this_01,(MethodInfo *)0x0);
+                return;
+              }
+              uVar10 = uVar10 + 1;
+              lVar17 = lVar17 + 1;
+              lVar18 = lVar18 + 8;
+            } while (lVar17 < lVar16);
+          }
+          return;
+        }
+code_?:
+        FUN_?();
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
   }
-  func_?();
+  FUN_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;
@@ -713,34 +1269,230 @@ void Assembly-CSharp.dll::AdminToolController::AdminToolController_OnRevokeEditR
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AdminToolController);
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&StringLiteral_Player_is_not_present_in_session);
+    FUN_?(&TypeInfo__AdminToolController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Player_is_not_present_in_session);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).playerName;
   if (pTVar1 == (Text *)0x0) {
-    func_?();
+    FUN_?();
     pcVar2 = (code *)swi(3);
     (*pcVar2)();
     return;
   }
-  userName = (String *)
-             (*(code *)(pTVar1->klass->vtable).get_text.method)
-                       (pTVar1,(pTVar1->klass->vtable).set_text.methodPtr);
-  if ((TypeInfo__AdminToolController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__AdminToolController);
+  pSVar3 = (String *)(*(pTVar1->klass->vtable).get_text.methodPtr)();
+  if (*(int *)&(TypeInfo__AdminToolController->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  player = AdminToolController_GetPlayer(userName,(MethodInfo *)0x0);
-  if (player == (MVPlayer *)0x0) {
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug);
+  target = AdminToolController_GetPlayer(pSVar3,(MethodInfo *)0x0);
+  if (target == (MVPlayer *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-              ((Object *)StringLiteral_Player_is_not_present_in_session,(MethodInfo *)0x0);
+    pSVar3 = StringLiteral_Player_is_not_present_in_session;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Debug,0);
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeInfo__UnityEngine__ILogger);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Debug);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    pIVar4 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+    if (pIVar4 != (ILogger_1 *)0x0) {
+      FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar4,2,pSVar3);
+      return;
+    }
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  OwnerOps::OwnerOps_RevokeEditRightsAndKick((MonoBehaviour *)this,player,(MethodInfo *)0x0);
+  pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)this,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__OwnerOps____c___RevokeEditRightsAndKick_b__1_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__OwnerOps____c);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar6 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (((pMVar6 == (MVGameControllerBase *)0x0) ||
+      (pMVar7 = (pMVar6->fields).game, pMVar7 == (MVNetworkGame *)0x0)) ||
+     (this_00 = (pMVar7->fields).operationRequests,
+     this_00 == (MVNetworkGame_OperationRequests *)0x0)) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_RevokeEditRights
+            (this_00,target,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__OwnerOps____c->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  this_02 = TypeInfo__OwnerOps____c->static_fields->__9__1_0;
+  if (this_02 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+    if (*(int *)&(TypeInfo__OwnerOps____c->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    object = TypeInfo__OwnerOps____c->static_fields->__9;
+    this_02 = (ExecuteEvents_EventFunction_1_IUIStack_ *)
+              FUN_?(
+                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                           );
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+    ExecuteEvents_EventFunction_1_System_Object___ctor
+              ((ExecuteEvents_EventFunction_1_System_Object_ *)this_02,(Object *)object,
+               MethodInfo__OwnerOps____c___RevokeEditRightsAndKick_b__1_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    TypeInfo__OwnerOps____c->static_fields->__9__1_0 = this_02;
+    if (iRam_? != 0) {
+      uVar8 = (uint)((ulonglong)&TypeInfo__OwnerOps____c->static_fields->__9__1_0 >> 0xc);
+      puVar9 = (ulonglong *)((ulonglong)((uVar8 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar10 = *puVar9;
+        LOCK();
+        uVar11 = *puVar9;
+        if (uVar10 == uVar11) {
+          *puVar9 = uVar10 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar10 != uVar11);
+    }
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pMVar12 = 
+  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+  ;
+  if ((
+      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+      ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    if ((pMVar12->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(pMVar12);
+    }
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_GetEventChain
+            (pGVar5,(IList_1_UnityEngine_Transform_ *)
+                     TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                     s_InternalTransformList,(MethodInfo *)0x0);
+  pLVar13 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+           s_InternalTransformList;
+  if (pLVar13 != (List_1_UnityEngine_Transform_ *)0x0) {
+    lVar14 = (longlong)(pLVar13->fields)._size;
+    uVar8 = 0;
+    if (0 < lVar14) {
+      lVar15 = 0;
+      lVar16 = 0x20;
+      do {
+        if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pLVar13 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                 s_InternalTransformList;
+        if (pLVar13 == (List_1_UnityEngine_Transform_ *)0x0) goto code_?;
+        if ((uint)(pLVar13->fields)._size <= uVar8) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        pTVar17 = (pLVar13->fields)._items;
+        if (pTVar17 == (Transform__Array *)0x0) goto code_?;
+        if ((uint)pTVar17->max_length <= uVar8) {
+          FUN_?();
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        this_01 = *(Component **)((longlong)pTVar17->vector + lVar16 + -0x20);
+        if (this_01 == (Component *)0x0) goto code_?;
+        pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            (this_01,(MethodInfo *)0x0);
+        bVar18 = UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+                 ExecuteEvents_Execute_18
+                           (pGVar5,(BaseEventData *)0x0,
+                            (ExecuteEvents_EventFunction_1_System_Object_ *)this_02,
+                            (pMVar12->field7_0x38).rgctx_data[1].method);
+        if (bVar18 != 0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    (this_01,(MethodInfo *)0x0);
+          return;
+        }
+        uVar8 = uVar8 + 1;
+        lVar15 = lVar15 + 1;
+        lVar16 = lVar16 + 8;
+      } while (lVar15 < lVar14);
+    }
+    return;
+  }
+code_?:
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -751,153 +1503,250 @@ void Assembly-CSharp.dll::AdminToolController::AdminToolController__cctor(Method
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AdminToolController);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__Add_System__String__int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__Add_System__String__AdminToolController__DefaultBan_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__Dictionary__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__Dictionary<System::String,_int>);
-    func_?(&StringLiteral_Hours);
-    func_?(&StringLiteral__2);
-    func_?(&StringLiteral_You_are_banned_for_inappropriate);
-    func_?(&StringLiteral_Weeks);
-    func_?(&StringLiteral_Admin_impersonation);
-    func_?(&StringLiteral_You_are_banned_for_pretending_to);
-    func_?(&StringLiteral_You_are_banned_for_sexual_behavi);
-    func_?(&StringLiteral__7);
-    func_?(&StringLiteral_Abusive_chat);
-    func_?(&StringLiteral_Sexual_behavior);
-    func_?(&StringLiteral_Days);
-    func_?(&StringLiteral_Cheating);
-    func_?(&StringLiteral_You_are_banned_for_cheating_);
-    func_?(&StringLiteral__24);
+    FUN_?(&TypeInfo__AdminToolController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__Add_System__String__int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__Add_System__String__AdminToolController__DefaultBan_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__Dictionary<System::String,_int>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Hours);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__2);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_You_are_banned_for_inappropriate);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Weeks);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Admin_impersonation);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_You_are_banned_for_pretending_to);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_You_are_banned_for_sexual_behavi);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__7);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Abusive_chat);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Sexual_behavior);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Days);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Cheating);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_You_are_banned_for_cheating_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__24);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
-         func_?(TypeInfo__System__Collections__Generic__Dictionary<System::String,_int>);
+  this = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+          *)FUN_?(TypeInfo__System__Collections__Generic__Dictionary<System::String,_int>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
-  StyleComplexSelector+PseudoStateData]::
-  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+  UIR::UIRenderDevice+DisableForceGammaMaterial]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
             (this,
              MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__Dictionary__
             );
-  if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+  if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
                *)0x0) {
+    uVar1 = CONCAT71((int7)((ulonglong)in_R9 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Int32]::
-    Dictionary_2_System_Object_System_Int32__Add
+    Dictionary_2_System_Object_System_Int32__TryInsert
               ((Dictionary_2_System_Object_System_Int32_ *)this,(Object *)StringLiteral_Hours,1,
+               (InsertionBehavior__Enum)uVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__Add_System__String__int_
-              );
+               ->klass->rgctx_data[0x22].method);
+    uVar1 = CONCAT71((int7)((ulonglong)uVar1 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Int32]::
-    Dictionary_2_System_Object_System_Int32__Add
+    Dictionary_2_System_Object_System_Int32__TryInsert
               ((Dictionary_2_System_Object_System_Int32_ *)this,(Object *)StringLiteral_Days,0x18,
+               (InsertionBehavior__Enum)uVar1,
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__Add_System__String__int_
-              );
+               ->klass->rgctx_data[0x22].method);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Int32]::
-    Dictionary_2_System_Object_System_Int32__Add
+    Dictionary_2_System_Object_System_Int32__TryInsert
               ((Dictionary_2_System_Object_System_Int32_ *)this,(Object *)StringLiteral_Weeks,0xa8,
+               (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar1 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__Add_System__String__int_
-              );
+               ->klass->rgctx_data[0x22].method);
     TypeInfo__AdminToolController->static_fields->durationMultiplier =
          (Dictionary_2_System_String_System_Int32_ *)this;
-    func_?(TypeInfo__AdminToolController->static_fields,this);
+    if (iRam_? != 0) {
+      uVar2 = (uint)((ulonglong)TypeInfo__AdminToolController->static_fields >> 0xc);
+      lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+        puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar5;
+        if (bVar6) {
+          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
     this_00 = (Dictionary_2_System_String_AdminToolController_DefaultBan_ *)
-              func_?(
-                             TypeInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>
-                             );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
-    ::StyleComplexSelector+PseudoStateData]::
-    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-              ((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__Dictionary__
-              );
-    pSVar1 = StringLiteral__7;
-    pSVar2 = StringLiteral_Days;
-    func_?();
-    puVar3 = &stack0xfffffff4;
-    func_?();
-    func_?();
+              FUN_?(
+                           TypeInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>
+                           );
+    pEVar7 = mscorlib.dll::System::Collections::Generic::EqualityComparer`1[System::Object]::
+             EqualityComparer_1_System_Object__get_Default
+                       (MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__Dictionary__
+                        ->klass->rgctx_data->method->klass->rgctx_data[3].method);
+    if ((pEVar7 != (EqualityComparer_1_System_Object_ *)0x0) &&
+       (bVar6 = iRam_? != 0,
+       (this_00->fields)._comparer = (IEqualityComparer_1_System_String_ *)0x0, bVar6)) {
+      uVar2 = (uint)((ulonglong)&(this_00->fields)._comparer >> 0xc);
+      lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+        puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar5;
+        if (bVar6) {
+          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    VStack_8.Item1 = (Object *)0x0;
+    VStack_8.Item2 = (Object *)0x0;
+    VStack_8.Item3 = (Object *)0x0;
+    pSVar9 = StringLiteral_Days;
+    mscorlib.dll::System::ValueTuple`3[Object,Object,Object]::
+    ValueTuple_3_Object_Object_Object___ctor
+              (&VStack_8,(Object *)StringLiteral_You_are_banned_for_cheating_,
+               (Object *)StringLiteral__7,(Object *)StringLiteral_Days,(MethodInfo *)0x0);
     if (this_00 != (Dictionary_2_System_String_AdminToolController_DefaultBan_ *)0x0) {
-      value_00.BanDuration = pSVar1;
-      value_00.BanReason = (String *)puVar3;
-      value_00.BanDurationFormat = pSVar2;
+      AStack_10.BanReason = (String *)VStack_8.Item1;
+      AStack_10.BanDuration = (String *)VStack_8.Item2;
+      AStack_10.BanDurationFormat = (String *)VStack_8.Item3;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
       Object,AdminToolController+DefaultBan]::
-      Dictionary_2_System_Object_AdminToolController_DefaultBan__Add
+      Dictionary_2_System_Object_AdminToolController_DefaultBan__TryInsert
                 ((Dictionary_2_System_Object_AdminToolController_DefaultBan_ *)this_00,
-                 (Object *)StringLiteral_Cheating,value_00,
+                 (Object *)StringLiteral_Cheating,&AStack_10,
+                 (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar9 >> 8),2),
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__Add_System__String__AdminToolController__DefaultBan_
-                );
-      pSVar1 = StringLiteral__24;
-      pSVar2 = StringLiteral_Hours;
-      pSVar4 = StringLiteral_You_are_banned_for_inappropriate;
-      func_?(&stack0xffffffe4,StringLiteral_You_are_banned_for_inappropriate);
-      func_?(&stack0xffffffe8,pSVar1);
-      func_?(&stack0xffffffec,pSVar2);
-      value_01.BanDuration = pSVar1;
-      value_01.BanReason = pSVar4;
-      value_01.BanDurationFormat = pSVar2;
+                 ->klass->rgctx_data[0x22].method);
+      VStack_11.Item1 = (Object *)0x0;
+      VStack_11.Item2 = (Object *)0x0;
+      VStack_11.Item3 = (Object *)0x0;
+      pSVar9 = StringLiteral_Hours;
+      mscorlib.dll::System::ValueTuple`3[Object,Object,Object]::
+      ValueTuple_3_Object_Object_Object___ctor
+                (&VStack_11,(Object *)StringLiteral_You_are_banned_for_inappropriate,
+                 (Object *)StringLiteral__24,(Object *)StringLiteral_Hours,(MethodInfo *)0x0);
+      AStack_10.BanReason = (String *)VStack_11.Item1;
+      AStack_10.BanDuration = (String *)VStack_11.Item2;
+      AStack_10.BanDurationFormat = (String *)VStack_11.Item3;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
       Object,AdminToolController+DefaultBan]::
-      Dictionary_2_System_Object_AdminToolController_DefaultBan__Add
+      Dictionary_2_System_Object_AdminToolController_DefaultBan__TryInsert
                 ((Dictionary_2_System_Object_AdminToolController_DefaultBan_ *)this_00,
-                 (Object *)StringLiteral_Abusive_chat,value_01,
+                 (Object *)StringLiteral_Abusive_chat,&AStack_10,
+                 (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar9 >> 8),2),
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__Add_System__String__AdminToolController__DefaultBan_
-                );
-      pSVar1 = StringLiteral__2;
-      pSVar2 = StringLiteral_Weeks;
-      puVar3 = &stack0xffffffd8;
-      func_?();
-      func_?();
-      func_?(&stack0xffffffe0);
-      value_02.BanDuration = pSVar1;
-      value_02.BanReason = (String *)puVar3;
-      value_02.BanDurationFormat = pSVar2;
+                 ->klass->rgctx_data[0x22].method);
+      VStack_12.Item1 = (Object *)0x0;
+      VStack_12.Item2 = (Object *)0x0;
+      VStack_12.Item3 = (Object *)0x0;
+      pSVar9 = StringLiteral_Weeks;
+      mscorlib.dll::System::ValueTuple`3[Object,Object,Object]::
+      ValueTuple_3_Object_Object_Object___ctor
+                (&VStack_12,(Object *)StringLiteral_You_are_banned_for_sexual_behavi,
+                 (Object *)StringLiteral__2,(Object *)StringLiteral_Weeks,(MethodInfo *)0x0);
+      AStack_10.BanReason = (String *)VStack_12.Item1;
+      AStack_10.BanDuration = (String *)VStack_12.Item2;
+      AStack_10.BanDurationFormat = (String *)VStack_12.Item3;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
       Object,AdminToolController+DefaultBan]::
-      Dictionary_2_System_Object_AdminToolController_DefaultBan__Add
+      Dictionary_2_System_Object_AdminToolController_DefaultBan__TryInsert
                 ((Dictionary_2_System_Object_AdminToolController_DefaultBan_ *)this_00,
-                 (Object *)StringLiteral_Sexual_behavior,value_02,
+                 (Object *)StringLiteral_Sexual_behavior,&AStack_10,
+                 (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar9 >> 8),2),
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__Add_System__String__AdminToolController__DefaultBan_
-                );
-      pSVar1 = StringLiteral__2;
-      pSVar2 = StringLiteral_Weeks;
-      pSVar4 = StringLiteral_You_are_banned_for_pretending_to;
-      func_?();
-      func_?();
-      pSStack5 = pSVar2;
-      func_?();
-      value.BanDuration = pSVar1;
-      value.BanReason = pSVar4;
-      value.BanDurationFormat = pSStack5;
+                 ->klass->rgctx_data[0x22].method);
+      VStack_13.Item1 = (Object *)0x0;
+      VStack_13.Item2 = (Object *)0x0;
+      VStack_13.Item3 = (Object *)0x0;
+      pSVar9 = StringLiteral_Weeks;
+      mscorlib.dll::System::ValueTuple`3[Object,Object,Object]::
+      ValueTuple_3_Object_Object_Object___ctor
+                (&VStack_13,(Object *)StringLiteral_You_are_banned_for_pretending_to,
+                 (Object *)StringLiteral__2,(Object *)StringLiteral_Weeks,(MethodInfo *)0x0);
+      AStack_10.BanReason = (String *)VStack_13.Item1;
+      AStack_10.BanDuration = (String *)VStack_13.Item2;
+      AStack_10.BanDurationFormat = (String *)VStack_13.Item3;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
       Object,AdminToolController+DefaultBan]::
-      Dictionary_2_System_Object_AdminToolController_DefaultBan__Add
+      Dictionary_2_System_Object_AdminToolController_DefaultBan__TryInsert
                 ((Dictionary_2_System_Object_AdminToolController_DefaultBan_ *)this_00,
-                 (Object *)StringLiteral_Admin_impersonation,value,
+                 (Object *)StringLiteral_Admin_impersonation,&AStack_10,
+                 (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar9 >> 8),2),
                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_AdminToolController::DefaultBan>__Add_System__String__AdminToolController__DefaultBan_
-                );
+                 ->klass->rgctx_data[0x22].method);
       TypeInfo__AdminToolController->static_fields->defaultBanLookup = this_00;
-      pSStack5 = (String *)&TypeInfo__AdminToolController->static_fields->defaultBanLookup;
-      func_?();
+      if (iRam_? != 0) {
+        uVar2 = (uint)((ulonglong)&TypeInfo__AdminToolController->static_fields->defaultBanLookup >>
+                      0xc);
+        uVar4 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+        do {
+          uVar14 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+          puVar5 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+          LOCK();
+          bVar6 = uVar14 == *puVar5;
+          if (bVar6) {
+            *puVar5 = uVar14 | 1L << (uVar2 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar6);
+      }
       return;
     }
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 

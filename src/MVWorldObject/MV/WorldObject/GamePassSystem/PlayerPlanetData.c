@@ -7,16 +7,20 @@ PlayerPlanetData_GetGamePassTierWithPreview(PlayerPlanetData *this,MethodInfo *m
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Math);
+    FUN_?(&TypeInfo__System__Math);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  uVar1 = (this->fields).gamePassTier;
-  val2 = (this->fields).previewGamePassTier;
-  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Math);
+  bVar1 = (this->fields).gamePassTier;
+  bVar2 = (this->fields).previewGamePassTier;
+  if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  uVar1 = mscorlib.dll::System::Math::Math_Max(uVar1,val2,(MethodInfo *)0x0);
-  return CONCAT31(extraout_var,uVar1);
+  if (bVar1 < bVar2) {
+    bVar1 = bVar2;
+  }
+  return (uint)bVar1;
 }
 
 
@@ -27,112 +31,130 @@ String * MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerPlanetData::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__Common__GamePassTier);
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__System__Object);
-    func_?(&TypeInfo__System__TimeSpan);
-    func_?(&StringLiteral_rank__0___highScoreGamePoints__1);
+    FUN_?(&TypeInfo__MV__Common__GamePassTier);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__TimeSpan);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_rank__0___highScoreGamePoints__1);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  args = (Object__Array *)func_?(TypeInfo__System__Object,7);
-  iStack_1 = (this->fields).rank;
-  pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_1);
-  if (args == (Object__Array *)0x0) {
-    func_?();
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
+  args = (Object__Array *)FUN_?(TypeInfo__System__Object,7);
+  iStackX_8 = CONCAT44(iStackX_8._4_4_,(this->fields).rank);
+  lVar1 = FUN_?(uRam_?,&iStackX_8);
+  if (args != (Object__Array *)0x0) {
+    if (lVar1 != 0) {
+      lVar2 = FUN_?(lVar1,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar5 = (String *)(*pcVar4)();
+        return pSVar5;
+      }
+    }
+    FUN_?(args,0,lVar1);
+    iStackX_8 = CONCAT44(iStackX_8._4_4_,(this->fields).highScoreGamePoints);
+    lVar1 = FUN_?(uRam_?,&iStackX_8);
+    if (lVar1 != 0) {
+      lVar2 = FUN_?(lVar1,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar5 = (String *)(*pcVar4)();
+        return pSVar5;
+      }
+    }
+    FUN_?(args,1,lVar1);
+    iStackX_8 = CONCAT44(iStackX_8._4_4_,(this->fields).progressionGamePoints);
+    lVar1 = FUN_?(uRam_?,&iStackX_8);
+    if (lVar1 != 0) {
+      lVar2 = FUN_?(lVar1,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar5 = (String *)(*pcVar4)();
+        return pSVar5;
+      }
+    }
+    FUN_?(args,2,lVar1);
+    iStackX_8 = CONCAT71(iStackX_8._1_7_,(this->fields).gamePassTier);
+    lVar1 = FUN_?(TypeInfo__MV__Common__GamePassTier,&iStackX_8);
+    if (lVar1 != 0) {
+      lVar2 = FUN_?(lVar1,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar5 = (String *)(*pcVar4)();
+        return pSVar5;
+      }
+    }
+    FUN_?(args,3,lVar1);
+    iStackX_8 = CONCAT71(iStackX_8._1_7_,(this->fields).previewGamePassTier);
+    lVar1 = FUN_?(TypeInfo__MV__Common__GamePassTier,&iStackX_8);
+    if (lVar1 != 0) {
+      lVar2 = FUN_?(lVar1,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar5 = (String *)(*pcVar4)();
+        return pSVar5;
+      }
+    }
+    FUN_?(args,4,lVar1);
+    iStackX_8 = (this->fields).playtime._ticks;
+    lVar1 = FUN_?(TypeInfo__System__TimeSpan,&iStackX_8);
+    if (lVar1 != 0) {
+      lVar2 = FUN_?(lVar1,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar5 = (String *)(*pcVar4)();
+        return pSVar5;
+      }
+    }
+    FUN_?(args,5,lVar1);
+    pPVar6 = (this->fields).playerPlanetMetaData;
+    if (pPVar6 != (PlayerPlanetMetaDataClient *)0x0) {
+      lVar1 = FUN_?(pPVar6,(args->klass->_0).element_class);
+      if (lVar1 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar5 = (String *)(*pcVar4)();
+        return pSVar5;
+      }
+    }
+    FUN_?(args,6);
+    pSVar5 = StringLiteral_rank__0___highScoreGamePoints__1;
+    PStack_7._arg0 = (Object *)0x0;
+    PStack_7._arg1 = (Object *)0x0;
+    PStack_7._arg2 = (Object *)0x0;
+    PStack_7._args = (Object__Array *)0x0;
+    mscorlib.dll::System::ParamsArray::ParamsArray__ctor_3(&PStack_7,args,(MethodInfo *)0x0);
+    PStack_8._arg0 = PStack_7._arg0;
+    PStack_8._arg1 = PStack_7._arg1;
+    PStack_8._arg2 = PStack_7._arg2;
+    PStack_8._args = PStack_7._args;
+    pSVar5 = mscorlib.dll::System::String::String_FormatHelper
+                       ((IFormatProvider *)0x0,pSVar5,&PStack_8,(MethodInfo *)0x0);
+    return pSVar5;
   }
-  else {
-    if (pOVar2 != (Object *)0x0) {
-      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar4 == 0) goto code_?;
-    }
-    if (args->max_length == 0) goto code_?;
-    args->vector[0] = pOVar2;
-    func_?(args->vector,pOVar2);
-    iStack_5 = (this->fields).highScoreGamePoints;
-    pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_5);
-    if (pOVar2 != (Object *)0x0) {
-      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar4 == 0) goto code_?;
-    }
-    if (args->max_length < 2) goto code_?;
-    args->vector[1] = pOVar2;
-    func_?(args->vector + 1,pOVar2);
-    iStack_6 = (this->fields).progressionGamePoints;
-    pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_6);
-    if (pOVar2 != (Object *)0x0) {
-      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar4 == 0) goto code_?;
-    }
-    if (args->max_length < 3) goto code_?;
-    args->vector[2] = pOVar2;
-    func_?(args->vector + 2,pOVar2);
-    uStack_7 = (this->fields).gamePassTier;
-    pOVar2 = (Object *)func_?(TypeInfo__MV__Common__GamePassTier,&uStack_7);
-    if (pOVar2 != (Object *)0x0) {
-      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar4 == 0) goto code_?;
-    }
-    if (args->max_length < 4) goto code_?;
-    args->vector[3] = pOVar2;
-    func_?(args->vector + 3,pOVar2);
-    uStack_8 = (this->fields).previewGamePassTier;
-    pOVar2 = (Object *)func_?(TypeInfo__MV__Common__GamePassTier,&uStack_8);
-    if (pOVar2 != (Object *)0x0) {
-      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar4 == 0) goto code_?;
-    }
-    if (args->max_length < 5) goto code_?;
-    args->vector[4] = pOVar2;
-    func_?(args->vector + 4,pOVar2);
-    uStack_9 = (undefined4)(this->fields).playtime._ticks;
-    uStack_10 = *(undefined4 *)((int)&(this->fields).playtime._ticks + 4);
-    pOVar2 = (Object *)func_?(TypeInfo__System__TimeSpan,&uStack_9);
-    if (pOVar2 != (Object *)0x0) {
-      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar4 == 0) goto code_?;
-    }
-    if (args->max_length < 6) goto code_?;
-    args->vector[5] = pOVar2;
-    func_?(args->vector + 5,pOVar2);
-    pPVar11 = (this->fields).playerPlanetMetaData;
-    if (pPVar11 != (PlayerPlanetMetaDataClient *)0x0) {
-      iVar4 = func_?(pPVar11,(args->klass->_0).element_class);
-      if (iVar4 == 0) goto code_?;
-    }
-    if (6 < args->max_length) {
-      args->vector[6] = (Object *)pPVar11;
-      func_?(args->vector + 6,pPVar11);
-      pSVar12 = mscorlib.dll::System::String::String_Format_3
-                         (StringLiteral_rank__0___highScoreGamePoints__1,args,(MethodInfo *)0x0);
-      return pSVar12;
-    }
-  }
-code_?:
-  func_?();
-  pcVar13 = (code *)swi(3);
-  pSVar12 = (String *)(*pcVar13)();
-  return pSVar12;
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  pSVar5 = (String *)(*pcVar4)();
+  return pSVar5;
 }
 
 
@@ -144,8 +166,9 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerPlanetData::
                MethodInfo *method)
 
 {
-  (this->fields).progressionGamePoints = (this->fields).progressionGamePoints + deltaGamePoints;
-  (this->fields).gamePassTier = (undefined1)gamePassTier;
+  piVar1 = &(this->fields).progressionGamePoints;
+  *piVar1 = *piVar1 + deltaGamePoints;
+  (this->fields).gamePassTier = (uint8_t)gamePassTier;
   return;
 }
 
@@ -157,25 +180,46 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerPlanetData::Playe
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__GamePassSystem__PlayerPlanetMetaDataClient);
-    func_?(&TypeInfo__System__TimeSpan);
+    FUN_?(&TypeInfo__MV__WorldObject__GamePassSystem__PlayerPlanetMetaDataClient);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__TimeSpan);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__TimeSpan);
+  if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__System__TimeSpan);
   }
-  uVar1 = *(undefined4 *)((int)&(TypeInfo__System__TimeSpan->static_fields->Zero)._ticks + 4);
-  *(int *)&(this->fields).playtime._ticks =
-       (int)(TypeInfo__System__TimeSpan->static_fields->Zero)._ticks;
-  *(undefined4 *)((int)&(this->fields).playtime._ticks + 4) = uVar1;
-  this_00 = (PlayerPlanetMetaDataClient *)
-            func_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerPlanetMetaDataClient);
-  PlayerPlanetMetaDataClient::PlayerPlanetMetaDataClient__ctor(this_00,(MethodInfo *)0x0);
-  method_00 = (MethodInfo *)&(this->fields).playerPlanetMetaData;
-  (this->fields).playerPlanetMetaData = this_00;
-  func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  (this->fields).playtime._ticks = (TypeInfo__System__TimeSpan->static_fields->Zero)._ticks;
+  pPVar1 = (PlayerPlanetMetaDataClient *)
+           FUN_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerPlanetMetaDataClient);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__DateTime);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__System__DateTime->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__System__DateTime);
+  }
+  bVar2 = iRam_? != 0;
+  (pPVar1->fields).lastDailyWelcomeRewardClaim._dateData =
+       (TypeInfo__System__DateTime->static_fields->MinValue)._dateData;
+  (this->fields).playerPlanetMetaData = pPVar1;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).playerPlanetMetaData >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
   return;
 }
 
@@ -191,64 +235,92 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerPlanetData::Playe
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__GamePassSystem__PlayerPlanetMetaDataClient);
-    func_?(&TypeInfo__System__TimeSpan);
+    FUN_?(&TypeInfo__MV__WorldObject__GamePassSystem__PlayerPlanetMetaDataClient);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__TimeSpan);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__TimeSpan);
+  if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__System__TimeSpan);
   }
-  uVar1 = *(undefined4 *)((int)&(TypeInfo__System__TimeSpan->static_fields->Zero)._ticks + 4);
-  *(int *)&(this->fields).playtime._ticks =
-       (int)(TypeInfo__System__TimeSpan->static_fields->Zero)._ticks;
-  *(undefined4 *)((int)&(this->fields).playtime._ticks + 4) = uVar1;
-  pPVar2 = (PlayerPlanetMetaDataClient *)
-           func_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerPlanetMetaDataClient);
-  PlayerPlanetMetaDataClient::PlayerPlanetMetaDataClient__ctor(pPVar2,(MethodInfo *)0x0);
-  method_00 = (MethodInfo *)&(this->fields).playerPlanetMetaData;
-  (this->fields).playerPlanetMetaData = pPVar2;
-  func_?(method_00,pPVar2);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  (this->fields).playtime._ticks = (TypeInfo__System__TimeSpan->static_fields->Zero)._ticks;
+  pPVar1 = (PlayerPlanetMetaDataClient *)
+           FUN_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerPlanetMetaDataClient);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__DateTime);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__System__DateTime->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__System__DateTime);
+  }
+  bVar2 = iRam_? != 0;
+  (pPVar1->fields).lastDailyWelcomeRewardClaim._dateData =
+       (TypeInfo__System__DateTime->static_fields->MinValue)._dateData;
+  (this->fields).playerPlanetMetaData = pPVar1;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).playerPlanetMetaData >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
+  (this->fields).rank = rank;
+  (this->fields).playtime._ticks = playtime._ticks;
+  (this->fields).gamePassTier = (undefined1)gamePassTier;
+  (this->fields).previewGamePassTier = (undefined1)previewGamePassTier;
   (this->fields).highScoreGamePoints = highScoreGamePoints;
-  (this->fields).rank = previewGamePassTier;
   (this->fields).progressionGamePoints = progressionGamePoints;
-  (this->fields).gamePassTier = playtime._ticks._4_1_;
-  (this->fields).previewGamePassTier = (undefined1)gamePassTier;
-  *(undefined4 *)&(this->fields).playtime._ticks = in_stack_3;
-  *(undefined4 *)((int)&(this->fields).playtime._ticks + 4) = (undefined4)playtime._ticks;
-  if (rank != 0) {
-    uVar1 = *(undefined4 *)(rank + 0x10);
-    uVar4 = *(uint8_t *)(rank + 8);
-    bVar5 = *(bool *)(rank + 9);
-    uVar6 = *(undefined4 *)(rank + 0x14);
-    pPVar2 = (PlayerPlanetMetaDataClient *)
-             func_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerPlanetMetaDataClient);
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__System__DateTime);
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__DateTime);
-    }
-    uVar7 = *(undefined4 *)
-             ((int)&(TypeInfo__System__DateTime->static_fields->MinValue)._dateData + 4);
-    *(int *)&(pPVar2->fields).lastDailyWelcomeRewardClaim._dateData =
-         (int)(TypeInfo__System__DateTime->static_fields->MinValue)._dateData;
-    *(undefined4 *)((int)&(pPVar2->fields).lastDailyWelcomeRewardClaim._dateData + 4) = uVar7;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)pPVar2,ExceptionArgument__Enum_obj,unaff_retaddr);
-    *(undefined4 *)&(pPVar2->fields).lastDailyWelcomeRewardClaim._dateData = uVar1;
-    *(undefined4 *)((int)&(pPVar2->fields).lastDailyWelcomeRewardClaim._dateData + 4) = uVar6;
-    (pPVar2->fields).gamePassTierSeen = uVar4;
-    (pPVar2->fields).welcomeRewardClaimed = bVar5;
-    (this->fields).playerPlanetMetaData = pPVar2;
-    func_?(&(this->fields).playerPlanetMetaData,pPVar2);
+  if (playerPlanetMetaData == (PlayerPlanetMetaDataClient *)0x0) {
+    FUN_?();
+    pcVar7 = (code *)swi(3);
+    (*pcVar7)();
     return;
   }
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  uVar8 = (playerPlanetMetaData->fields).gamePassTierSeen;
+  bVar9 = (playerPlanetMetaData->fields).welcomeRewardClaimed;
+  uVar10 = (playerPlanetMetaData->fields).lastDailyWelcomeRewardClaim._dateData;
+  pPVar1 = (PlayerPlanetMetaDataClient *)
+           FUN_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerPlanetMetaDataClient);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__DateTime);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__System__DateTime->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  bVar2 = iRam_? != 0;
+  (pPVar1->fields).gamePassTierSeen = uVar8;
+  (pPVar1->fields).welcomeRewardClaimed = bVar9;
+  (pPVar1->fields).lastDailyWelcomeRewardClaim._dateData = uVar10;
+  (this->fields).playerPlanetMetaData = pPVar1;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).playerPlanetMetaData >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
   return;
 }
 

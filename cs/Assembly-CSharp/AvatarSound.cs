@@ -12,8 +12,10 @@ using UnityEngine;
 public class AvatarSound : MonoBehaviour
 {
 	// Fields
-	public AudioClip soundTouchParkeur;
-	public AudioClip soundTouchBouncy;
+	[SerializeField]
+	private StreamedAudioClipManual parkourAudioManual;
+	[SerializeField]
+	private StreamedAudioClipManual bouncyAudioManual;
 
 	// Constructors
 	public AvatarSound();

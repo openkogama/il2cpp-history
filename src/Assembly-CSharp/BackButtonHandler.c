@@ -10,141 +10,101 @@ void Assembly-CSharp.dll::BackButtonHandler::BackButtonHandler_InvokeButton
     if ((pBVar1->fields)._.m_Interactable == 0) {
       return;
     }
-    unityEventBase = (pBVar1->fields).m_OnClick;
-    if (unityEventBase != (Button_ButtonClickedEvent *)0x0) {
+    this_00 = (pBVar1->fields).m_OnClick;
+    if (this_00 != (Button_ButtonClickedEvent *)0x0) {
       if (cRam_? == '\0') {
-        func_?();
-        func_?();
-        func_?();
-        func_?(&TypeInfo__System__Object);
+        FUN_?(&TypeInfo__UnityEngine__Events__InvokableCall);
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Count__
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?(&TypeInfo__System__Object);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      if ((unityEventBase->fields)._._.m_CallsDirty != 0) {
-        this_00 = (unityEventBase->fields)._._.m_PersistentCalls;
-        if (this_00 == (PersistentCallGroup *)0x0) goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::Events::PersistentCallGroup::
-        PersistentCallGroup_Initialize
-                  (this_00,(unityEventBase->fields)._._.m_Calls,(UnityEventBase *)unityEventBase,
-                   (MethodInfo *)0x0);
-        (unityEventBase->fields)._._.m_CallsDirty = 0;
-      }
-      pIVar2 = (unityEventBase->fields)._._.m_Calls;
-      if (pIVar2 != (InvokableCallList *)0x0) {
-        if (cRam_? == '\0') {
-          func_?();
-          func_?();
-          cRam_? = '\x01';
-        }
-        if ((pIVar2->fields).m_NeedsUpdate != 0) {
-          pLVar3 = (pIVar2->fields).m_ExecutingCalls;
-          if (pLVar3 == (List_1_UnityEngine_Events_BaseInvokableCall_ *)0x0) goto code_?;
-          iVar4 = (pLVar3->fields)._size;
-          piVar5 = &(pLVar3->fields)._version;
-          *piVar5 = *piVar5 + 1;
-          (pLVar3->fields)._size = 0;
-          if (0 < iVar4) {
-            mscorlib.dll::System::Array::Array_Clear
-                      ((Array *)(pLVar3->fields)._items,0,iVar4,(MethodInfo *)0x0);
-          }
-          pLVar6 = (List_1_System_Object_ *)(pIVar2->fields).m_ExecutingCalls;
-          if (pLVar6 == (List_1_System_Object_ *)0x0) goto code_?;
-          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-          List_1_System_Object__AddRange
-                    (pLVar6,(IEnumerable_1_System_Object_ *)(pIVar2->fields).m_PersistentCalls,
-                     MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__AddRange_System__Collections__Generic__IEnumerable<UnityEngine::Events::BaseInvokableCall>_
-                    );
-          pLVar6 = (List_1_System_Object_ *)(pIVar2->fields).m_ExecutingCalls;
-          if (pLVar6 == (List_1_System_Object_ *)0x0) goto code_?;
-          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-          List_1_System_Object__AddRange
-                    (pLVar6,(IEnumerable_1_System_Object_ *)(pIVar2->fields).m_RuntimeCalls,
-                     MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__AddRange_System__Collections__Generic__IEnumerable<UnityEngine::Events::BaseInvokableCall>_
-                    );
-          (pIVar2->fields).m_NeedsUpdate = 0;
-        }
-        RVar7 = (RegexCharClass_SingleRange)(pIVar2->fields).m_ExecutingCalls;
-        iVar4 = 0;
-        this = (BackButtonHandler *)RVar7;
-        if (RVar7 != (RegexCharClass_SingleRange)0x0) {
+      pLVar2 = UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEventBase::
+               UnityEventBase_PrepareInvoke((UnityEventBase *)this_00,(MethodInfo *)0x0);
+      uVar3 = 0;
+      if (pLVar2 == (List_1_UnityEngine_Events_BaseInvokableCall_ *)0x0) {
 code_?:
-          do {
-            while( true ) {
-              if (*(int *)((int)RVar7 + 0xc) <= iVar4) {
-                return;
-              }
-              RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                      RegularExpressions::RegexCharClass+SingleRange]::
-                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                  *)RVar7,iVar4,
-                                 MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
-                                );
-              if (RVar8 == (RegexCharClass_SingleRange)0x0) break;
-              if ((*(byte *)(*(int *)RVar8 + 0xb8) <
-                   (TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment) ||
-                 (*(InvokableCall__Class **)
-                   (*(int *)(*(int *)RVar8 + 100) + -4 +
-                   (uint)(TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment * 4) !=
-                  TypeInfo__UnityEngine__Events__InvokableCall)) {
-                bVar9 = false;
-              }
-              else {
-                bVar9 = true;
-              }
-              this_01.First = 0;
-              this_01.Last = 0;
-              if (bVar9) {
-                this_01 = RVar8;
-              }
-              RVar7 = (RegexCharClass_SingleRange)this;
-              if (this_01 == (RegexCharClass_SingleRange)0x0) break;
-              UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
-                        ((InvokableCall *)this_01,(MethodInfo *)0x0);
-              iVar4 = iVar4 + 1;
-              RVar7 = this_01;
-              this = (BackButtonHandler *)this_01;
-            }
-            this = (BackButtonHandler *)
-                   mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                   RegularExpressions::RegexCharClass+SingleRange]::
-                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                             ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                              RVar7,iVar4,
-                              MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
-                             );
-            this_02 = (InvokableCall *)func_?();
-            if (this_02 == (InvokableCall *)0x0) {
-              RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                       RegularExpressions::RegexCharClass+SingleRange]::
-                       List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                 ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                   *)RVar7,iVar4,
-                                  MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
-                                 );
-              if ((unityEventBase->fields)._.m_InvokeArray == (Object__Array *)0x0) {
-                pOVar10 = (Object__Array *)func_?();
-                (unityEventBase->fields)._.m_InvokeArray = pOVar10;
-                func_?();
-              }
-              if (RVar7 == (RegexCharClass_SingleRange)0x0) break;
-              func_?();
-              iVar4 = iVar4 + 1;
-              RVar7 = (RegexCharClass_SingleRange)this;
-              goto code_?;
-            }
-            UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
-                      (this_02,(MethodInfo *)0x0);
-            iVar4 = iVar4 + 1;
-          } while( true );
-        }
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
       }
+      lVar5 = 0x20;
+code_?:
+      do {
+        if ((pLVar2->fields)._size <= (int)uVar3) {
+          return;
+        }
+        if ((uint)(pLVar2->fields)._size <= uVar3) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar4 = (code *)swi(3);
+          (*pcVar4)();
+          return;
+        }
+        pBVar6 = (pLVar2->fields)._items;
+        if (pBVar6 == (BaseInvokableCall__Array *)0x0) goto code_?;
+        if ((uint)pBVar6->max_length <= uVar3) {
+          FUN_?();
+          pcVar4 = (code *)swi(3);
+          (*pcVar4)();
+          return;
+        }
+        pIVar7 = *(InvokableCall **)((longlong)pBVar6->vector + lVar5 + -0x20);
+        if (pIVar7 != (InvokableCall *)0x0) {
+          bVar8 = (TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment;
+          if ((bVar8 <= (pIVar7->klass->_1).naturalAligment) &&
+             ((pIVar7->klass->_1).typeHierarchy[(ulonglong)bVar8 - 1] ==
+              (Il2CppClass *)TypeInfo__UnityEngine__Events__InvokableCall)) {
+            UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
+                      (pIVar7,(MethodInfo *)0x0);
+            uVar3 = uVar3 + 1;
+            lVar5 = lVar5 + 8;
+            goto code_?;
+          }
+        }
+        pIVar7 = (InvokableCall *)FUN_?(pLVar2,uVar3);
+        if (pIVar7 != (InvokableCall *)0x0) {
+          bVar8 = (TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment;
+          if ((bVar8 <= (pIVar7->klass->_1).naturalAligment) &&
+             ((pIVar7->klass->_1).typeHierarchy[(ulonglong)bVar8 - 1] ==
+              (Il2CppClass *)TypeInfo__UnityEngine__Events__InvokableCall)) {
+            UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
+                      (pIVar7,(MethodInfo *)0x0);
+            uVar3 = uVar3 + 1;
+            lVar5 = lVar5 + 8;
+            goto code_?;
+          }
+        }
+        plVar9 = (longlong *)FUN_?(pLVar2,uVar3);
+        if ((this_00->fields)._.m_InvokeArray == (Object__Array *)0x0) {
+          pOVar10 = (Object__Array *)FUN_?(TypeInfo__System__Object,0);
+          (this_00->fields)._.m_InvokeArray = pOVar10;
+          func_?(&(this_00->fields)._.m_InvokeArray);
+        }
+        if (plVar9 == (longlong *)0x0) goto code_?;
+        (**(code **)(*plVar9 + 0x178))
+                  (plVar9,(this_00->fields)._.m_InvokeArray,*(undefined8 *)(*plVar9 + 0x180));
+        uVar3 = uVar3 + 1;
+        lVar5 = lVar5 + 8;
+      } while( true );
     }
   }
-code_?:
-  uVar11 = func_?(&stack0xfffffff0);
-  func_?(uVar11);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -156,73 +116,134 @@ void Assembly-CSharp.dll::BackButtonHandler::BackButtonHandler_OnDisable
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__BackButtonManager);
+    FUN_?(&TypeInfo__BackButtonManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__BackButtonManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__BackButtonManager);
+  if (*(int *)&(TypeInfo__BackButtonManager->_1).field_0x1c == 0) {
+    FUN_?();
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__BackButtonManager);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<BackButtonManager::BackButtonSubscriber>__RemoveAt_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<BackButtonManager::BackButtonSubscriber>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<BackButtonManager::BackButtonSubscriber>__get_Item_int_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&TypeInfo__BackButtonManager,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<BackButtonManager::BackButtonSubscriber>__RemoveAt_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<BackButtonManager::BackButtonSubscriber>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<BackButtonManager::BackButtonSubscriber>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__BackButtonManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__BackButtonManager);
+  if (*(int *)&(TypeInfo__BackButtonManager->_1).field_0x1c == 0) {
+    FUN_?();
   }
   pLVar1 = TypeInfo__BackButtonManager->static_fields->subscribers;
-  if (pLVar1 != (List_1_BackButtonManager_BackButtonSubscriber_ *)0x0) {
-    index = (pLVar1->fields)._size;
+  if (pLVar1 == (List_1_BackButtonManager_BackButtonSubscriber_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  index = (pLVar1->fields)._size - 1;
+  if (0 < (int)index) {
+    lVar3 = (longlong)(int)index;
+    lVar4 = lVar3 * 8 + 0x20;
     do {
-      index = index + -1;
-      if (index < 1) {
+      if (*(int *)&(TypeInfo__BackButtonManager->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      pLVar1 = TypeInfo__BackButtonManager->static_fields->subscribers;
+      if (pLVar1 == (List_1_BackButtonManager_BackButtonSubscriber_ *)0x0)
+      goto code_?;
+      if ((uint)(pLVar1->fields)._size <= index) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
         return;
       }
-      if ((TypeInfo__BackButtonManager->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__BackButtonManager);
+      pBVar5 = (pLVar1->fields)._items;
+      if (pBVar5 == (BackButtonManager_BackButtonSubscriber__Array *)0x0) goto code_?;
+      if ((uint)pBVar5->max_length <= index) {
+        FUN_?();
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
       }
-      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                TypeInfo__BackButtonManager->static_fields->subscribers;
-      if ((this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-         (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (this_00,index,
-                             MethodInfo__System__Collections__Generic__List<BackButtonManager::BackButtonSubscriber>__get_Item_int_
-                            ), RVar2 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-      x = *(Object_1 **)((int)RVar2 + 8);
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
+      lVar6 = *(longlong *)((longlong)pBVar5->vector + lVar4 + -0x20);
+      if (lVar6 == 0) goto code_?;
+      pBVar7 = *(BackButtonHandler **)(lVar6 + 0x10);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                        (x,(Object_1 *)this,(MethodInfo *)0x0);
-    } while (bVar3 == 0);
-    if ((TypeInfo__BackButtonManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__BackButtonManager);
-    }
-    pLVar1 = TypeInfo__BackButtonManager->static_fields->subscribers;
-    if (pLVar1 != (List_1_BackButtonManager_BackButtonSubscriber_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-      List_1_System_Object__RemoveAt
-                ((List_1_System_Object_ *)pLVar1,index,
-                 MethodInfo__System__Collections__Generic__List<BackButtonManager::BackButtonSubscriber>__RemoveAt_int_
-                );
-      return;
-    }
-  }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (this == (BackButtonHandler *)0x0 && pBVar7 == (BackButtonHandler *)0x0) {
 code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+        if (*(int *)&(TypeInfo__BackButtonManager->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pLVar1 = TypeInfo__BackButtonManager->static_fields->subscribers;
+        if (pLVar1 != (List_1_BackButtonManager_BackButtonSubscriber_ *)0x0) {
+          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+          List_1_System_Object__RemoveAt
+                    ((List_1_System_Object_ *)pLVar1,index,
+                     MethodInfo__System__Collections__Generic__List<BackButtonManager::BackButtonSubscriber>__RemoveAt_int_
+                    );
+          return;
+        }
+        goto code_?;
+      }
+      if (this == (BackButtonHandler *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (pBVar7 == (BackButtonHandler *)0x0) goto code_?;
+        bVar8 = (pBVar7->fields)._._._._.m_CachedPtr == (void *)0x0;
+      }
+      else if (pBVar7 == (BackButtonHandler *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        bVar8 = (this->fields)._._._._.m_CachedPtr == (void *)0x0;
+      }
+      else {
+        bVar8 = pBVar7 == this;
+      }
+      if (bVar8) goto code_?;
+      index = index - 1;
+      lVar3 = lVar3 + -1;
+      lVar4 = lVar4 + -8;
+    } while (0 < lVar3);
+  }
   return;
 }
 
@@ -234,21 +255,26 @@ void Assembly-CSharp.dll::BackButtonHandler::BackButtonHandler_OnEnable
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__BackButtonHandler__InvokeButton__);
-    func_?(&TypeInfo__BackButtonManager);
-    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    FUN_?(&MethodInfo__BackButtonHandler__InvokeButton__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__BackButtonManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  state = (this->fields).onKeyState;
   button = (this->fields).kogamaControl;
-  this_00 = (NavMesh_OnNavMeshPreUpdate *)
-            func_?(TypeInfo__UnityEngine__Events__UnityAction);
+  state = (this->fields).onKeyState;
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__UnityEngine__Events__UnityAction);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (this_00,(Object *)this,MethodInfo__BackButtonHandler__InvokeButton__,(MethodInfo *)0x0)
   ;
-  if ((TypeInfo__BackButtonManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__BackButtonManager);
+  if (*(int *)&(TypeInfo__BackButtonManager->_1).field_0x1c == 0) {
+    FUN_?();
   }
   BackButtonManager::BackButtonManager_Subscribe
             (this,button,state,(UnityAction *)this_00,(MethodInfo *)0x0);
@@ -262,15 +288,280 @@ void Assembly-CSharp.dll::BackButtonHandler::BackButtonHandler__ctor
                (BackButtonHandler *this,MethodInfo *method)
 
 {
+  bVar1 = cRam_? == '\0';
   (this->fields).kogamaControl = 0x2a;
   (this->fields).onKeyState = 1;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
+  if (bVar1) {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  pOVar2 = TypeInfo__UnityEngine__Object;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c != 0) {
+    return;
   }
+  ppMVar3 = (MethodInfo **)0x0;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c != 0) {
+    return;
+  }
+  lVar4 = _Baselib_Thread_GetCurrentThreadId_il2cpp_baselib__YA_JXZ();
+  ppMVar5 = ppMVar3;
+  if (lVar4 == lRam_?) {
+    iRam_? = iRam_? + 1;
+    lVar4 = lRam_?;
+  }
+  else {
+    do {
+      uVar6 = (uint)ppMVar5;
+      LOCK();
+      bVar1 = uVar6 != uRam_?;
+      uVar7 = uVar6;
+      uVar8 = uVar6 + 1;
+      if (bVar1) {
+        uVar7 = uRam_?;
+        uVar8 = uRam_?;
+      }
+      uRam_? = uVar8;
+      UNLOCK();
+    } while ((bVar1) && (ppMVar5 = (MethodInfo **)(ulonglong)uVar7, uVar6 = uVar7, uVar7 != 2)
+            );
+    while (uVar6 != 0) {
+      _Baselib_SystemFutex_Wait_il2cpp_baselib__YAXPEAHHI_Z(0xADDR,2,0xffffffff);
+      uVar6 = uRam_?;
+      LOCK();
+      uRam_? = 2;
+      UNLOCK();
+    }
+  }
+  lRam_? = lVar4;
+  puVar9 = &(pOVar2->_1).field_0x1c;
+  LOCK();
+  bVar1 = *(int *)puVar9 == 1;
+  if (bVar1) {
+    *(undefined4 *)puVar9 = 1;
+  }
+  uVar6 = uRam_?;
+  UNLOCK();
+  if (bVar1) {
+    if (iRam_? != 0) {
+      iRam_? = iRam_? + -1;
+      return;
+    }
+    lRam_? = 0;
+    LOCK();
+    uRam_? = 0;
+    UNLOCK();
+    if (uVar6 != 2) {
+      uRam_? = 0;
+      lRam_? = 0;
+      return;
+    }
+    _Baselib_SystemFutex_Notify_il2cpp_baselib__YAXPEAHIW4Baselib_WakeupFallbackStrategy_1__Z
+              (0xADDR,1,0);
+    return;
+  }
+  puVar10 = &(pOVar2->_1).cctor_finished_or_no_cctor;
+  LOCK();
+  bVar1 = *puVar10 == 1;
+  if (bVar1) {
+    *puVar10 = 1;
+  }
+  uVar6 = uRam_?;
+  UNLOCK();
+  if (bVar1) {
+    if (iRam_? == 0) {
+      lRam_? = 0;
+      LOCK();
+      uRam_? = 0;
+      UNLOCK();
+      if (uVar6 == 2) {
+        _Baselib_SystemFutex_Notify_il2cpp_baselib__YAXPEAHIW4Baselib_WakeupFallbackStrategy_1__Z
+                  (0xADDR,1,0);
+      }
+    }
+    else {
+      iRam_? = iRam_? + -1;
+    }
+    uVar6 = GetCurrentThreadId();
+    psVar11 = &(pOVar2->_1).cctor_thread;
+    LOCK();
+    bVar1 = (ulonglong)uVar6 == *psVar11;
+    if (bVar1) {
+      *psVar11 = (ulonglong)uVar6;
+    }
+    UNLOCK();
+    if (bVar1) {
+      return;
+    }
+    while( true ) {
+      puVar9 = &(pOVar2->_1).field_0x1c;
+      LOCK();
+      bVar1 = *(int *)puVar9 == 1;
+      if (bVar1) {
+        *(undefined4 *)puVar9 = 1;
+      }
+      UNLOCK();
+      if (bVar1) break;
+      LOCK();
+      lVar4._0_4_ = (pOVar2->_1).initializationExceptionGCHandle;
+      lVar4._4_4_ = (pOVar2->_1).cctor_started;
+      if (lVar4 == 0) {
+        (pOVar2->_1).initializationExceptionGCHandle = 0;
+        (pOVar2->_1).cctor_started = 0;
+      }
+      UNLOCK();
+      if (lVar4 != 0) break;
+      FUN_?(*puRam_?);
+    }
+code_?:
+    lVar12._0_4_ = (pOVar2->_1).initializationExceptionGCHandle;
+    lVar12._4_4_ = (pOVar2->_1).cctor_started;
+    if (lVar12 == 0) {
+      return;
+    }
+  }
+  else {
+    uVar6 = GetCurrentThreadId();
+    LOCK();
+    (pOVar2->_1).cctor_thread = (ulonglong)uVar6;
+    UNLOCK();
+    LOCK();
+    (pOVar2->_1).cctor_finished_or_no_cctor = 1;
+    uVar6 = uRam_?;
+    UNLOCK();
+    if (iRam_? == 0) {
+      lRam_? = 0;
+      LOCK();
+      uRam_? = 0;
+      UNLOCK();
+      if (uVar6 == 2) {
+        _Baselib_SystemFutex_Notify_il2cpp_baselib__YAXPEAHIW4Baselib_WakeupFallbackStrategy_1__Z
+                  (0xADDR,1,0);
+      }
+    }
+    else {
+      iRam_? = iRam_? + -1;
+    }
+    lStackX_10 = 0;
+    if (((pOVar2->_1).field_0x6e & 4) != 0) {
+      FUN_?(pOVar2);
+      ppMVar5 = ppMVar3;
+      pIVar13 = (Il2CppClass *)pOVar2;
+code_?:
+      do {
+        if (ppMVar5 == (MethodInfo **)0x0) {
+          FUN_?(pIVar13);
+          if (pIVar13->field_count != 0) {
+            ppMVar5 = pIVar13->methods;
+            pMVar14 = *ppMVar5;
+code_?:
+            if (pMVar14 != (MethodInfo *)0x0) {
+              if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
+                ppMVar15 = ppMVar3;
+                while (ppMVar16 = ppMVar15 + 0x30528cee,
+                      ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1),
+                      *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
+                  if (ppMVar15 == (MethodInfo **)0x7) {
+                    FUN_?(pMVar14,0,0,&lStackX_10);
+                    goto code_?;
+                  }
+                }
+              }
+              goto code_?;
+            }
+          }
+        }
+        else {
+          ppMVar5 = ppMVar5 + 1;
+          if (ppMVar5 < pIVar13->methods + pIVar13->field_count) {
+            pMVar14 = *ppMVar5;
+            goto code_?;
+          }
+        }
+        pIVar13 = pIVar13->parent;
+        ppMVar5 = ppMVar3;
+      } while (pIVar13 != (Il2CppClass *)0x0);
+    }
+code_?:
+    LOCK();
+    (pOVar2->_1).cctor_thread = 0;
+    uVar17 = _UNK_?;
+    uVar18 = _UNK_?;
+    UNLOCK();
+    if (lStackX_10 == 0) {
+      LOCK();
+      *(undefined4 *)&(pOVar2->_1).field_0x1c = 1;
+      UNLOCK();
+      goto code_?;
+    }
+    uStack_19 = 0;
+    uStack_20 = _UNK_?;
+    uStack_21 = _UNK_?;
+    pppppppuStack_78 = (undefined8 *******)0x0;
+    FUN_?(&pppppppuStack_78,&(pOVar2->_0).byval_arg,0,0);
+    pppppppuVar16 = &pppppppuStack_78;
+    if (0xf < uStack_21) {
+      pppppppuVar16 = pppppppuStack_78;
+    }
+    FUN_?(apppppppuStack_58,&UNK_?,pppppppuVar16);
+    if (uStack_21 < 0x10) {
+code_?:
+      lVar4 = lStackX_10;
+      pppppppuStack_78 = (undefined8 *******)((ulonglong)pppppppuStack_78 & 0xffffffffffffff00);
+      pppppppuVar16 = apppppppuStack_58;
+      if (0xf < uStack_22) {
+        pppppppuVar16 = apppppppuStack_58[0];
+      }
+      uStack_20 = uVar18;
+      uStack_21 = uVar17;
+      lVar12 = FUN_?(uRam_?,&UNK_?,&UNK_?,pppppppuVar16);
+      if (lVar4 != 0) {
+        *(longlong *)(lVar12 + 0x28U) = lVar4;
+        if (iRam_? != 0) {
+          uVar6 = (uint)(lVar12 + 0x28U >> 0xc);
+          puVar23 = (ulonglong *)((ulonglong)((uVar6 & 0x1fffff) >> 6) * 8 + 0xADDR);
+          do {
+            uVar24 = *puVar23;
+            LOCK();
+            uVar17 = *puVar23;
+            if (uVar24 == uVar17) {
+              *puVar23 = uVar24 | 1L << (uVar6 & 0x3f);
+            }
+            UNLOCK();
+          } while (uVar24 != uVar17);
+        }
+      }
+      FUN_?(pOVar2,lVar12);
+      if (0xf < uStack_22) {
+        pppppppuVar16 = apppppppuStack_58[0];
+        if ((0xfff < uStack_22 + 1) &&
+           (pppppppuVar16 = (undefined8 *******)apppppppuStack_58[0][-1],
+           0x1f < (ulonglong)((longlong)apppppppuStack_58[0] + (-8 - (longlong)pppppppuVar16))))
+        goto code_?;
+        func_?(pppppppuVar16);
+      }
+      goto code_?;
+    }
+    pppppppuVar16 = pppppppuStack_78;
+    if ((uStack_21 + 1 < 0x1000) ||
+       (pppppppuVar16 = (undefined8 *******)pppppppuStack_78[-1],
+       (ulonglong)((longlong)pppppppuStack_78 + (-8 - (longlong)pppppppuVar16)) < 0x20)) {
+      func_?(pppppppuVar16);
+      uVar18 = _UNK_?;
+      uVar17 = _UNK_?;
+      goto code_?;
+    }
+    FUN_?(0,0,0,0,0);
+  }
+  uVar18._0_4_ = (pOVar2->_1).initializationExceptionGCHandle;
+  uVar18._4_4_ = (pOVar2->_1).cctor_started;
+  uVar18 = FUN_?(uVar18);
+  FUN_?(uVar18,0);
+code_?:
+  FUN_?(0,0,0,0,0);
+  pcVar25 = (code *)swi(3);
+  (*pcVar25)();
   return;
 }
 

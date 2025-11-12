@@ -7,18 +7,29 @@ void Assembly-CSharp.dll::InitializedGameQueryDataEventArgs::InitializedGameQuer
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__EventArgs);
+    FUN_?(&TypeInfo__System__EventArgs);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__EventArgs);
+  if (*(int *)&(TypeInfo__System__EventArgs->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-  UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor
-            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
+  bVar1 = iRam_? != 0;
   (this->fields).RootWO = rootWO;
-  func_?(&this->fields,rootWO);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   (this->fields).InstigatorActorNumber = instigatorActorNumber;
   return;
 }

@@ -6,33 +6,49 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   iVar1 = this->currentCryptoKey;
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c ==
+      0) {
+    FUN_?();
   }
   if (iVar1 != TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields->
                cryptoKey) {
-    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-        cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c
+        == 0) {
+      FUN_?();
     }
-    pQVar2 = ObscuredQuaternion_InternalDecrypt
-                       ((Quaternion *)&stack0xffffffec,this,(MethodInfo *)0x0);
-    pOVar3 = ObscuredQuaternion_Encrypt_1
-                       ((ObscuredQuaternion_RawEncryptedQuaternion *)&stack0xffffffec,*pQVar2,
-                        TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->
-                        static_fields->cryptoKey,(MethodInfo *)0x0);
-    iVar4 = pOVar3->y;
-    iVar5 = pOVar3->z;
-    iVar6 = pOVar3->w;
-    (this->hiddenValue).x = pOVar3->x;
+    pQVar2 = ObscuredQuaternion_InternalDecrypt(aQStack_3,this,(MethodInfo *)0x0);
+    x = pQVar2->x;
+    y = pQVar2->y;
+    z = pQVar2->z;
+    w = pQVar2->w;
+    iVar4 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields->
+            cryptoKey;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c
+        == 0) {
+      FUN_?();
+    }
+    pOVar5 = ObscuredQuaternion_Encrypt_2
+                       ((ObscuredQuaternion_RawEncryptedQuaternion *)aQStack_3,x,y,z,w,iVar4,
+                        (MethodInfo *)0x0);
+    iVar4 = pOVar5->y;
+    iVar6 = pOVar5->z;
+    iVar7 = pOVar5->w;
+    (this->hiddenValue).x = pOVar5->x;
     (this->hiddenValue).y = iVar4;
-    (this->hiddenValue).z = iVar5;
-    (this->hiddenValue).w = iVar6;
+    (this->hiddenValue).z = iVar6;
+    (this->hiddenValue).w = iVar7;
     this->currentCryptoKey =
          TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields->cryptoKey
     ;
@@ -45,46 +61,54 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
 
 bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredQuaternion::
      ObscuredQuaternion_CompareQuaternionsWithTolerance
-               (ObscuredQuaternion *this,Quaternion q1,Quaternion q2,MethodInfo *method)
+               (ObscuredQuaternion *this,Quaternion *q1,Quaternion *q2,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Math);
+    FUN_?(&TypeInfo__System__Math);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__Detectors__ObscuredCheatingDetector);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__Detectors__ObscuredCheatingDetector);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pOVar1 = TypeInfo__CodeStage__AntiCheat__Detectors__ObscuredCheatingDetector->static_fields->
            _Instance_k__BackingField;
   if (pOVar1 != (ObscuredCheatingDetector *)0x0) {
-    fVar2 = (pOVar1->fields).quaternionEpsilon;
-    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Math);
+    fVar2 = q1->x;
+    fVar3 = (pOVar1->fields).quaternionEpsilon;
+    if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    if ((float)((uint)(q1.x - q2.x) & _UNK_?) < fVar2) {
-      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__System__Math);
+    if ((float)((uint)(fVar2 - q2->x) & (uint)_UNK_?) < fVar3) {
+      fVar2 = q1->y;
+      if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      if ((float)((uint)(q1.y - q2.y) & _UNK_?) < fVar2) {
-        if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__System__Math);
+      if ((float)((uint)(fVar2 - q2->y) & (uint)_UNK_?) < fVar3) {
+        fVar2 = q1->z;
+        if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        if ((float)((uint)(q1.z - q2.z) & _UNK_?) < fVar2) {
-          if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__System__Math);
+        if ((float)((uint)(fVar2 - q2->z) & (uint)_UNK_?) < fVar3) {
+          fVar2 = q1->w;
+          if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
+            FUN_?();
           }
-          return (float)((uint)(q1.w - q2.w) & _UNK_?) < fVar2;
+          return (float)((uint)(fVar2 - q2->w) & (uint)_UNK_?) < fVar3;
         }
       }
     }
     return 0;
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  bVar4 = (*pcVar3)();
-  return bVar4;
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  bVar5 = (*pcVar4)();
+  return bVar5;
 }
 
 
@@ -93,37 +117,46 @@ bool Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
 Quaternion *
 Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredQuaternion::
 ObscuredQuaternion_Decrypt
-          (Quaternion *__return_storage_ptr__,ObscuredQuaternion_RawEncryptedQuaternion value,
+          (Quaternion *__return_storage_ptr__,ObscuredQuaternion_RawEncryptedQuaternion *value,
           MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c ==
+      0) {
+    FUN_?();
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c ==
+      0) {
+    FUN_?();
   }
   uVar1 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields->
           cryptoKey;
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
-      == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+  uVar2 = value->x;
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  __return_storage_ptr__->x = (float)(value.x ^ uVar1);
-  __return_storage_ptr__->y = (float)(value.y ^ uVar1);
-  __return_storage_ptr__->z = (float)(value.z ^ uVar1);
-  __return_storage_ptr__->w = (float)(value.w ^ uVar1);
+  uVar3 = value->y;
+  uVar4 = value->z;
+  uVar5 = value->w;
+  __return_storage_ptr__->x = (float)(uVar2 ^ uVar1);
+  __return_storage_ptr__->y = (float)(uVar3 ^ uVar1);
+  __return_storage_ptr__->z = (float)(uVar4 ^ uVar1);
+  __return_storage_ptr__->w = (float)(uVar5 ^ uVar1);
   return __return_storage_ptr__;
 }
 
@@ -133,13 +166,17 @@ ObscuredQuaternion_Decrypt
 Quaternion *
 Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredQuaternion::
 ObscuredQuaternion_Decrypt_1
-          (Quaternion *__return_storage_ptr__,ObscuredQuaternion_RawEncryptedQuaternion value,
+          (Quaternion *__return_storage_ptr__,ObscuredQuaternion_RawEncryptedQuaternion *value,
           int32_t key,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   __return_storage_ptr__->x = 0.0;
@@ -147,21 +184,22 @@ ObscuredQuaternion_Decrypt_1
   __return_storage_ptr__->z = 0.0;
   __return_storage_ptr__->w = 0.0;
   if (key == 0) {
-    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-        cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c
+        == 0) {
+      FUN_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
     }
     key = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields->
           cryptoKey;
   }
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
-      == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+  uVar1 = value->x;
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  __return_storage_ptr__->x = (float)(value.x ^ key);
-  __return_storage_ptr__->y = (float)(value.y ^ key);
-  __return_storage_ptr__->z = (float)(value.z ^ key);
-  __return_storage_ptr__->w = (float)(value.w ^ key);
+  __return_storage_ptr__->y = (float)(key ^ value->y);
+  uVar2 = value->z;
+  __return_storage_ptr__->w = (float)(key ^ value->w);
+  __return_storage_ptr__->x = (float)(uVar1 ^ key);
+  __return_storage_ptr__->z = (float)(key ^ uVar2);
   return __return_storage_ptr__;
 }
 
@@ -171,36 +209,56 @@ ObscuredQuaternion_Decrypt_1
 ObscuredQuaternion_RawEncryptedQuaternion *
 Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredQuaternion::
 ObscuredQuaternion_Encrypt
-          (ObscuredQuaternion_RawEncryptedQuaternion *__return_storage_ptr__,Quaternion value,
+          (ObscuredQuaternion_RawEncryptedQuaternion *__return_storage_ptr__,Quaternion *value,
           MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+  fVar1 = value->x;
+  fVar2 = value->y;
+  fVar3 = value->z;
+  fVar4 = value->w;
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c ==
+      0) {
+    FUN_?();
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c ==
+      0) {
+    FUN_?();
   }
-  pOVar1 = ObscuredQuaternion_Encrypt_2
-                     ((ObscuredQuaternion_RawEncryptedQuaternion *)&value,value.x,value.y,value.z,
-                      value.w,0,(MethodInfo *)0x0);
-  iVar2 = pOVar1->y;
-  iVar3 = pOVar1->z;
-  iVar4 = pOVar1->w;
-  __return_storage_ptr__->x = pOVar1->x;
-  __return_storage_ptr__->y = iVar2;
-  __return_storage_ptr__->z = iVar3;
-  __return_storage_ptr__->w = iVar4;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c ==
+      0) {
+    FUN_?();
+  }
+  uVar5 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields->
+          cryptoKey;
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  __return_storage_ptr__->x = (uint)fVar1 ^ uVar5;
+  __return_storage_ptr__->y = (uint)fVar2 ^ uVar5;
+  __return_storage_ptr__->z = (uint)fVar3 ^ uVar5;
+  __return_storage_ptr__->w = (uint)fVar4 ^ uVar5;
   return __return_storage_ptr__;
 }
 
@@ -210,28 +268,30 @@ ObscuredQuaternion_Encrypt
 ObscuredQuaternion_RawEncryptedQuaternion *
 Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredQuaternion::
 ObscuredQuaternion_Encrypt_1
-          (ObscuredQuaternion_RawEncryptedQuaternion *__return_storage_ptr__,Quaternion value,
+          (ObscuredQuaternion_RawEncryptedQuaternion *__return_storage_ptr__,Quaternion *value,
           int32_t key,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+  w = value->w;
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c ==
+      0) {
+    FUN_?();
   }
   pOVar1 = ObscuredQuaternion_Encrypt_2
-                     ((ObscuredQuaternion_RawEncryptedQuaternion *)&value,value.x,value.y,value.z,
-                      value.w,key,(MethodInfo *)0x0);
-  iVar2 = pOVar1->y;
-  iVar3 = pOVar1->z;
-  iVar4 = pOVar1->w;
+                     (aOStack_2,value->x,value->y,value->z,w,key,(MethodInfo *)0x0);
+  iVar3 = pOVar1->y;
+  iVar4 = pOVar1->z;
+  iVar5 = pOVar1->w;
   __return_storage_ptr__->x = pOVar1->x;
-  __return_storage_ptr__->y = iVar2;
-  __return_storage_ptr__->z = iVar3;
-  __return_storage_ptr__->w = iVar4;
+  __return_storage_ptr__->y = iVar3;
+  __return_storage_ptr__->z = iVar4;
+  __return_storage_ptr__->w = iVar5;
   return __return_storage_ptr__;
 }
 
@@ -246,8 +306,12 @@ ObscuredQuaternion_Encrypt_2
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   __return_storage_ptr__->x = 0;
@@ -255,20 +319,19 @@ ObscuredQuaternion_Encrypt_2
   __return_storage_ptr__->z = 0;
   __return_storage_ptr__->w = 0;
   if (key == 0) {
-    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-        cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c
+        == 0) {
+      FUN_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
     }
     key = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields->
           cryptoKey;
   }
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
-      == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
   }
   __return_storage_ptr__->x = (uint)x ^ key;
-  __return_storage_ptr__->z = (uint)z ^ key;
   __return_storage_ptr__->y = (uint)y ^ key;
+  __return_storage_ptr__->z = (uint)z ^ key;
   __return_storage_ptr__->w = (uint)w ^ key;
   return __return_storage_ptr__;
 }
@@ -283,12 +346,14 @@ ObscuredQuaternion_GetDecrypted
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c ==
+      0) {
+    FUN_?();
   }
   pQVar1 = ObscuredQuaternion_InternalDecrypt(&QStack_2,this,(MethodInfo *)0x0);
   fVar3 = pQVar1->y;
@@ -312,12 +377,14 @@ ObscuredQuaternion_GetEncrypted
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c ==
+      0) {
+    FUN_?();
   }
   ObscuredQuaternion_ApplyNewCryptoKey(this,(MethodInfo *)0x0);
   iVar1 = (this->hiddenValue).y;
@@ -338,27 +405,33 @@ int32_t Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obsc
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  SStack_1.m_value = 0.0;
-  SStack_2.m_value = 0.0;
-  SStack_3.m_value = 0.0;
-  SStack_4.m_value = 0.0;
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c ==
+      0) {
+    FUN_?();
   }
-  pQVar5 = ObscuredQuaternion_InternalDecrypt(&QStack_6,this,(MethodInfo *)0x0);
-  SStack_1.m_value = pQVar5->x;
-  SStack_2.m_value = pQVar5->y;
-  SStack_3.m_value = pQVar5->z;
-  SStack_4.m_value = pQVar5->w;
-  uVar7 = mscorlib.dll::System::Single::Single_GetHashCode(&SStack_1,(MethodInfo *)0x0);
-  iVar8 = mscorlib.dll::System::Single::Single_GetHashCode(&SStack_2,(MethodInfo *)0x0);
-  iVar9 = mscorlib.dll::System::Single::Single_GetHashCode(&SStack_3,(MethodInfo *)0x0);
-  uVar10 = mscorlib.dll::System::Single::Single_GetHashCode(&SStack_4,(MethodInfo *)0x0);
-  return (int)(uVar10 ^ iVar9 >> 1) >> 1 ^ iVar8 * 4 ^ uVar7;
+  pQVar1 = ObscuredQuaternion_InternalDecrypt(&QStack_2,this,(MethodInfo *)0x0);
+  fVar3 = pQVar1->x;
+  fVar4 = pQVar1->y;
+  fVar5 = pQVar1->z;
+  fVar6 = pQVar1->w;
+  if (0x7f7fffff < ((int)fVar3 - 1U & 0x7fffffff)) {
+    fVar3 = (float)((uint)fVar3 & 0x7f800000);
+  }
+  if (0x7f7fffff < ((int)fVar4 - 1U & 0x7fffffff)) {
+    fVar4 = (float)((uint)fVar4 & 0x7f800000);
+  }
+  if (0x7f7fffff < ((int)fVar5 - 1U & 0x7fffffff)) {
+    fVar5 = (float)((uint)fVar5 & 0x7f800000);
+  }
+  if (0x7f7fffff < ((int)fVar6 - 1U & 0x7fffffff)) {
+    fVar6 = (float)((uint)fVar6 & 0x7f800000);
+  }
+  return (int)fVar4 * 4 ^ (int)((int)fVar5 >> 1 ^ (uint)fVar6) >> 1 ^ (uint)fVar3;
 }
 
 
@@ -371,8 +444,12 @@ ObscuredQuaternion_InternalDecrypt
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   bVar1 = this->inited;
@@ -381,113 +458,93 @@ ObscuredQuaternion_InternalDecrypt
   __return_storage_ptr__->z = 0.0;
   __return_storage_ptr__->w = 0.0;
   if (bVar1 == 0) {
-    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-        cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c
+        == 0) {
+      FUN_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
     }
     this->currentCryptoKey =
          TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields->cryptoKey
     ;
-    pOVar2 = ObscuredQuaternion_Encrypt
-                        ((ObscuredQuaternion_RawEncryptedQuaternion *)&stack0xffffffdc,
-                         TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->
-                         static_fields->initialFakeValue,(MethodInfo *)0x0);
-    iVar3 = pOVar2->y;
-    iVar4 = pOVar2->z;
-    iVar5 = pOVar2->w;
-    (this->hiddenValue).x = pOVar2->x;
-    (this->hiddenValue).y = iVar3;
-    (this->hiddenValue).z = iVar4;
-    (this->hiddenValue).w = iVar5;
-    pOVar6 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields;
-    fVar7 = (pOVar6->initialFakeValue).x;
-    fVar8 = (pOVar6->initialFakeValue).y;
-    fVar9 = (pOVar6->initialFakeValue).z;
-    fVar10 = (pOVar6->initialFakeValue).w;
+    pOVar2 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields;
+    QStack_3.x = (pOVar2->initialFakeValue).x;
+    QStack_3.y = (pOVar2->initialFakeValue).y;
+    QStack_3.z = (pOVar2->initialFakeValue).z;
+    QStack_3.w = (pOVar2->initialFakeValue).w;
+    pOVar4 = ObscuredQuaternion_Encrypt
+                        ((ObscuredQuaternion_RawEncryptedQuaternion *)aQStack_5,&QStack_3,
+                         (MethodInfo *)0x0);
+    iVar6 = pOVar4->y;
+    iVar7 = pOVar4->z;
+    iVar8 = pOVar4->w;
+    (this->hiddenValue).x = pOVar4->x;
+    (this->hiddenValue).y = iVar6;
+    (this->hiddenValue).z = iVar7;
+    (this->hiddenValue).w = iVar8;
+    pOVar2 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields;
+    fVar9 = (pOVar2->initialFakeValue).x;
+    fVar10 = (pOVar2->initialFakeValue).y;
+    fVar11 = (pOVar2->initialFakeValue).z;
+    fVar12 = (pOVar2->initialFakeValue).w;
     this->inited = 1;
-    (this->fakeValue).x = fVar7;
-    (this->fakeValue).y = fVar8;
-    (this->fakeValue).z = fVar9;
-    (this->fakeValue).w = fVar10;
+    (this->fakeValue).x = fVar9;
+    (this->fakeValue).y = fVar10;
+    (this->fakeValue).z = fVar11;
+    (this->fakeValue).w = fVar12;
   }
-  uVar11 = (this->hiddenValue).x;
-  uVar12 = this->currentCryptoKey;
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
-      == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
-  }
-  uVar13 = (this->hiddenValue).z;
+  uVar13 = (this->hiddenValue).x;
   uVar14 = this->currentCryptoKey;
-  uVar15 = (this->hiddenValue).w;
-  uVar16 = this->currentCryptoKey;
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
+  }
   __return_storage_ptr__->y = (float)((this->hiddenValue).y ^ this->currentCryptoKey);
-  __return_storage_ptr__->z = (float)(uVar13 ^ uVar14);
-  __return_storage_ptr__->x = (float)(uVar12 ^ uVar11);
-  __return_storage_ptr__->w = (float)(uVar15 ^ uVar16);
+  __return_storage_ptr__->z = (float)((this->hiddenValue).z ^ this->currentCryptoKey);
+  __return_storage_ptr__->w = (float)((this->hiddenValue).w ^ this->currentCryptoKey);
+  __return_storage_ptr__->x = (float)(uVar14 ^ uVar13);
   bVar1 = Detectors::ObscuredCheatingDetector::ObscuredCheatingDetector_get_IsRunning
                      ((MethodInfo *)0x0);
   if (bVar1 != 0) {
-    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-        cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c
+        == 0) {
+      FUN_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
     }
-    pOVar6 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields;
-    fVar7 = (pOVar6->initialFakeValue).y;
-    fVar8 = (pOVar6->initialFakeValue).z;
-    fVar9 = (pOVar6->initialFakeValue).w;
-    bVar1 = mscorlib.dll::System::Single::Single_Equals_1
-                       ((Single *)&this->fakeValue,(pOVar6->initialFakeValue).x,(MethodInfo *)0x0);
-    if ((((bVar1 != 0) &&
-         (bVar1 = mscorlib.dll::System::Single::Single_Equals_1
-                             ((Single *)&(this->fakeValue).y,fVar7,(MethodInfo *)0x0), bVar1 != 0)
-         ) && (bVar1 = mscorlib.dll::System::Single::Single_Equals_1
-                                  ((Single *)&(this->fakeValue).z,fVar8,(MethodInfo *)0x0),
-              bVar1 != 0)) &&
-       (bVar1 = mscorlib.dll::System::Single::Single_Equals_1
-                           ((Single *)&(this->fakeValue).w,fVar9,(MethodInfo *)0x0), bVar1 != 0))
-    {
-      return __return_storage_ptr__;
-    }
-    fVar7 = __return_storage_ptr__->x;
-    fVar8 = __return_storage_ptr__->y;
-    fVar9 = __return_storage_ptr__->z;
-    fVar10 = __return_storage_ptr__->w;
-    fVar17 = (this->fakeValue).x;
-    fVar18 = (this->fakeValue).y;
-    fVar19 = (this->fakeValue).z;
-    fVar20 = (this->fakeValue).w;
-    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-        cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    q1.y = fVar8;
-    q1.x = fVar7;
-    q1.z = fVar9;
-    q1.w = fVar10;
-    q2.y = fVar18;
-    q2.x = fVar17;
-    q2.z = fVar19;
-    q2.w = fVar20;
-    bVar1 = ObscuredQuaternion_CompareQuaternionsWithTolerance(this,q1,q2,(MethodInfo *)0x0);
+    pOVar2 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields;
+    QStack_3.x = (pOVar2->initialFakeValue).x;
+    QStack_3.y = (pOVar2->initialFakeValue).y;
+    QStack_3.z = (pOVar2->initialFakeValue).z;
+    QStack_3.w = (pOVar2->initialFakeValue).w;
+    pOVar15 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion;
+    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Equals_1
+                       (&this->fakeValue,&QStack_3,
+                        (MethodInfo *)
+                        TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
     if (bVar1 == 0) {
-      if (cRam_? == '\0') {
-        ppOStack21 = &TypeInfo__CodeStage__AntiCheat__Detectors__ObscuredCheatingDetector;
-        func_?();
-        cRam_? = '\x01';
+      uVar16._0_4_ = __return_storage_ptr__->x;
+      uVar16._4_4_ = __return_storage_ptr__->y;
+      uVar17._0_4_ = __return_storage_ptr__->z;
+      uVar17._4_4_ = __return_storage_ptr__->w;
+      uVar18._0_4_ = (this->fakeValue).x;
+      uVar18._4_4_ = (this->fakeValue).y;
+      uVar19._0_4_ = (this->fakeValue).z;
+      uVar19._4_4_ = (this->fakeValue).w;
+      if (*(int *)&(pOVar15->_1).field_0x1c == 0) {
+        FUN_?(pOVar15);
       }
-      pOVar22 = TypeInfo__CodeStage__AntiCheat__Detectors__ObscuredCheatingDetector->static_fields->
-               _Instance_k__BackingField;
-      if (pOVar22 == (ObscuredCheatingDetector *)0x0) {
-        func_?();
-        pcVar23 = (code *)swi(3);
-        pQVar24 = (Quaternion *)(*pcVar23)();
-        return pQVar24;
+      QStack_3._0_8_ = uVar18;
+      QStack_3._8_8_ = uVar19;
+      aQStack_5[0]._0_8_ = uVar16;
+      aQStack_5[0]._8_8_ = uVar17;
+      bVar1 = ObscuredQuaternion_CompareQuaternionsWithTolerance
+                         (this,aQStack_5,&QStack_3,(MethodInfo *)0x0);
+      if (bVar1 == 0) {
+        plVar20 = (longlong *)FUN_?();
+        if (plVar20 == (longlong *)0x0) {
+          FUN_?();
+          pcVar21 = (code *)swi(3);
+          pQVar22 = (Quaternion *)(*pcVar21)();
+          return pQVar22;
+        }
+        (**(code **)(*plVar20 + 0x1b8))(plVar20,*(undefined8 *)(*plVar20 + 0x1c0));
       }
-      pOVar25 = pOVar22->klass;
-      ppOStack21 =
-           (ObscuredCheatingDetector__Class **)
-           (pOVar25->vtable).StartDetectionAutomatically.methodPtr;
-      (*(code *)(pOVar25->vtable).OnCheatingDetected.method)();
     }
   }
   return __return_storage_ptr__;
@@ -501,50 +558,57 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c ==
+      0) {
+    FUN_?();
   }
-  pQVar1 = ObscuredQuaternion_InternalDecrypt((Quaternion *)&stack0xffffffec,this,(MethodInfo *)0x0)
-  ;
+  pQVar1 = ObscuredQuaternion_InternalDecrypt(aQStack_2,this,(MethodInfo *)0x0);
+  x = pQVar1->x;
   y = pQVar1->y;
-  puStack_2 = (undefined *)pQVar1->z;
-  pOStack_3 = (ObscuredQuaternion__Class *)pQVar1->w;
-  do {
-    x = (ObscuredQuaternion__Class **)0x0;
-    iVar4 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_RandomRangeInt
-                      (-0x80000000,0x7fffffff,(MethodInfo *)0x0);
-    this->currentCryptoKey = iVar4;
-  } while (iVar4 == 0);
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-      cctor_finished_or_no_cctor == 0) {
-    pOStack_3 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion;
-    func_?();
+  z = pQVar1->z;
+  w = pQVar1->w;
+  while ((pcVar3 = pcRam_?, pcRam_? != (code *)0x0 ||
+         (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 != (code *)0x0))) {
+    pcRam_? = pcVar3;
+    key = (*pcRam_?)(0x80000000);
+    this->currentCryptoKey = key;
+    if (key != 0) {
+      if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
+                   field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
+                   field_0x1c == 0) {
+        FUN_?();
+      }
+      pOVar4 = ObscuredQuaternion_Encrypt_2
+                         ((ObscuredQuaternion_RawEncryptedQuaternion *)aQStack_2,x,y,z,w,key,
+                          (MethodInfo *)0x0);
+      iVar5 = pOVar4->y;
+      iVar6 = pOVar4->z;
+      iVar7 = pOVar4->w;
+      (this->hiddenValue).x = pOVar4->x;
+      (this->hiddenValue).y = iVar5;
+      (this->hiddenValue).z = iVar6;
+      (this->hiddenValue).w = iVar7;
+      return;
+    }
   }
-  if (cRam_? == '\0') {
-    x = &TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion;
-    func_?();
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-      cctor_finished_or_no_cctor == 0) {
-    x = (ObscuredQuaternion__Class **)
-        TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion;
-    func_?();
-  }
-  pOVar5 = ObscuredQuaternion_Encrypt_2
-                     ((ObscuredQuaternion_RawEncryptedQuaternion *)&stack0xffffffec,(float)x,y,
-                      (float)puStack_2,(float)pOStack_3,iVar4,(MethodInfo *)0x0);
-  iVar4 = pOVar5->y;
-  iVar6 = pOVar5->z;
-  iVar7 = pOVar5->w;
-  (this->hiddenValue).x = pOVar5->x;
-  (this->hiddenValue).y = iVar4;
-  (this->hiddenValue).z = iVar6;
-  (this->hiddenValue).w = iVar7;
+  uVar8 = func_?(&UNK_?);
+  FUN_?(uVar8,0);
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -553,34 +617,40 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
 
 void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredQuaternion::
      ObscuredQuaternion_SetEncrypted
-               (ObscuredQuaternion *this,ObscuredQuaternion_RawEncryptedQuaternion encrypted,
+               (ObscuredQuaternion *this,ObscuredQuaternion_RawEncryptedQuaternion *encrypted,
                MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  iVar1 = encrypted->x;
+  iVar2 = encrypted->y;
+  iVar3 = encrypted->z;
+  iVar4 = encrypted->w;
   this->inited = 1;
-  (this->hiddenValue).x = encrypted.x;
-  (this->hiddenValue).y = encrypted.y;
-  (this->hiddenValue).z = encrypted.z;
-  (this->hiddenValue).w = encrypted.w;
-  bVar1 = Detectors::ObscuredCheatingDetector::ObscuredCheatingDetector_get_IsRunning
+  (this->hiddenValue).x = iVar1;
+  (this->hiddenValue).y = iVar2;
+  (this->hiddenValue).z = iVar3;
+  (this->hiddenValue).w = iVar4;
+  bVar5 = Detectors::ObscuredCheatingDetector::ObscuredCheatingDetector_get_IsRunning
                     ((MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-        cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+  if (bVar5 != 0) {
+    if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c
+        == 0) {
+      FUN_?();
     }
-    pQVar2 = ObscuredQuaternion_InternalDecrypt((Quaternion *)&encrypted,this,(MethodInfo *)0x0);
-    fVar3 = pQVar2->y;
-    fVar4 = pQVar2->z;
-    fVar5 = pQVar2->w;
-    (this->fakeValue).x = pQVar2->x;
-    (this->fakeValue).y = fVar3;
-    (this->fakeValue).z = fVar4;
-    (this->fakeValue).w = fVar5;
+    pQVar6 = ObscuredQuaternion_InternalDecrypt(&QStack_7,this,(MethodInfo *)0x0);
+    fVar8 = pQVar6->y;
+    fVar9 = pQVar6->z;
+    fVar10 = pQVar6->w;
+    (this->fakeValue).x = pQVar6->x;
+    (this->fakeValue).y = fVar8;
+    (this->fakeValue).z = fVar9;
+    (this->fakeValue).w = fVar10;
   }
   return;
 }
@@ -593,15 +663,14 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
-    TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields->cryptoKey =
-         newKey;
-    return;
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c ==
+      0) {
+    FUN_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
   }
   TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields->cryptoKey =
        newKey;
@@ -616,24 +685,22 @@ String * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obs
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  fStack_1 = 0.0;
-  fStack_2 = 0.0;
-  fStack_3 = 0.0;
-  fStack_4 = 0.0;
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c ==
+      0) {
+    FUN_?();
   }
-  pQVar5 = ObscuredQuaternion_InternalDecrypt(&QStack_6,this,(MethodInfo *)0x0);
-  fStack_1 = pQVar5->x;
-  fStack_2 = pQVar5->y;
-  fStack_3 = pQVar5->z;
-  fStack_4 = pQVar5->w;
-  pSVar7 = (String *)func_?(&fStack_1,0,0,0);
-  return pSVar7;
+  pQVar1 = ObscuredQuaternion_InternalDecrypt(&QStack_2,this,(MethodInfo *)0x0);
+  QStack_2.x = pQVar1->x;
+  QStack_2.y = pQVar1->y;
+  QStack_2.z = pQVar1->z;
+  QStack_2.w = pQVar1->w;
+  pSVar3 = (String *)FUN_?(&QStack_2,0,0);
+  return pSVar3;
 }
 
 
@@ -644,24 +711,22 @@ String * Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obs
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  fStack_1 = 0.0;
-  fStack_2 = 0.0;
-  fStack_3 = 0.0;
-  fStack_4 = 0.0;
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c ==
+      0) {
+    FUN_?();
   }
-  pQVar5 = ObscuredQuaternion_InternalDecrypt(&QStack_6,this,(MethodInfo *)0x0);
-  fStack_1 = pQVar5->x;
-  fStack_2 = pQVar5->y;
-  fStack_3 = pQVar5->z;
-  fStack_4 = pQVar5->w;
-  pSVar7 = (String *)func_?(&fStack_1,format,0,0);
-  return pSVar7;
+  pQVar1 = ObscuredQuaternion_InternalDecrypt(&QStack_2,this,(MethodInfo *)0x0);
+  QStack_2.x = pQVar1->x;
+  QStack_2.y = pQVar1->y;
+  QStack_2.z = pQVar1->z;
+  QStack_2.w = pQVar1->w;
+  pSVar3 = (String *)FUN_?(&QStack_2,format,0);
+  return pSVar3;
 }
 
 
@@ -672,36 +737,40 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__Assets__CodeStage__AntiCheatToolkit__Scripts__ObscuredTypes__CryptoKeyGenerator
-                   );
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    FUN_?(&
+                  TypeInfo__Assets__CodeStage__AntiCheatToolkit__Scripts__ObscuredTypes__CryptoKeyGenerator
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__Assets__CodeStage__AntiCheatToolkit__Scripts__ObscuredTypes__CryptoKeyGenerator->_1
-      ).cctor_finished_or_no_cctor == 0) {
-    func_?(
-                   TypeInfo__Assets__CodeStage__AntiCheatToolkit__Scripts__ObscuredTypes__CryptoKeyGenerator
-                   );
+  if (*(int *)&(
+               TypeInfo__Assets__CodeStage__AntiCheatToolkit__Scripts__ObscuredTypes__CryptoKeyGenerator
+               ->_1).field_0x1c == 0) {
+    FUN_?();
   }
   iVar1 = Assets::CodeStage::AntiCheatToolkit::Scripts::ObscuredTypes::CryptoKeyGenerator::
           CryptoKeyGenerator_GenerateKey(-0x80000000,0x7fffffff,(MethodInfo *)0x0);
   TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields->cryptoKey =
        iVar1;
   if (cRam_? == '\0') {
-    ppQStack2 = &TypeInfo__UnityEngine__Quaternion;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pQVar3 = TypeInfo__UnityEngine__Quaternion->static_fields;
-  fVar4 = (pQVar3->identityQuaternion).y;
-  fVar5 = (pQVar3->identityQuaternion).z;
-  fVar6 = (pQVar3->identityQuaternion).w;
-  pOVar7 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields;
-  (pOVar7->initialFakeValue).x = (pQVar3->identityQuaternion).x;
-  (pOVar7->initialFakeValue).y = fVar4;
-  (pOVar7->initialFakeValue).z = fVar5;
-  (pOVar7->initialFakeValue).w = fVar6;
+  pQVar2 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar3 = (pQVar2->identityQuaternion).y;
+  fVar4 = (pQVar2->identityQuaternion).z;
+  fVar5 = (pQVar2->identityQuaternion).w;
+  pOVar6 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields;
+  (pOVar6->initialFakeValue).x = (pQVar2->identityQuaternion).x;
+  (pOVar6->initialFakeValue).y = fVar3;
+  (pOVar6->initialFakeValue).z = fVar4;
+  (pOVar6->initialFakeValue).w = fVar5;
   return;
 }
 
@@ -710,34 +779,40 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
 
 void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredQuaternion::
      ObscuredQuaternion__ctor
-               (ObscuredQuaternion *this,ObscuredQuaternion_RawEncryptedQuaternion value,
+               (ObscuredQuaternion *this,ObscuredQuaternion_RawEncryptedQuaternion *value,
                MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c ==
+      0) {
+    FUN_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
   }
+  iVar1 = value->x;
+  iVar2 = value->y;
+  iVar3 = value->z;
+  iVar4 = value->w;
   this->currentCryptoKey =
        TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields->cryptoKey;
-  (this->hiddenValue).x = value.x;
-  (this->hiddenValue).y = value.y;
-  (this->hiddenValue).z = value.z;
-  (this->hiddenValue).w = value.w;
-  pOVar1 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields;
-  fVar2 = (pOVar1->initialFakeValue).x;
-  fVar3 = (pOVar1->initialFakeValue).y;
-  fVar4 = (pOVar1->initialFakeValue).z;
-  fVar5 = (pOVar1->initialFakeValue).w;
+  (this->hiddenValue).x = iVar1;
+  (this->hiddenValue).y = iVar2;
+  (this->hiddenValue).z = iVar3;
+  (this->hiddenValue).w = iVar4;
+  pOVar5 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields;
+  fVar6 = (pOVar5->initialFakeValue).x;
+  fVar7 = (pOVar5->initialFakeValue).y;
+  fVar8 = (pOVar5->initialFakeValue).z;
+  fVar9 = (pOVar5->initialFakeValue).w;
   this->inited = 1;
-  (this->fakeValue).x = fVar2;
-  (this->fakeValue).y = fVar3;
-  (this->fakeValue).z = fVar4;
-  (this->fakeValue).w = fVar5;
+  (this->fakeValue).x = fVar6;
+  (this->fakeValue).y = fVar7;
+  (this->fakeValue).z = fVar8;
+  (this->fakeValue).w = fVar9;
   return;
 }
 
@@ -750,26 +825,44 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c ==
+      0) {
+    FUN_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
   }
-  iVar1 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields->
+  bVar1 = cRam_? == '\0';
+  uVar2 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields->
           cryptoKey;
-  this->currentCryptoKey = iVar1;
-  pOVar2 = ObscuredQuaternion_Encrypt_2(&OStack_3,x,y,z,w,iVar1,(MethodInfo *)0x0);
-  iVar1 = pOVar2->x;
-  iVar4 = pOVar2->y;
-  iVar5 = pOVar2->z;
-  iVar6 = pOVar2->w;
+  this->currentCryptoKey = uVar2;
+  if (bVar1) {
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (uVar2 == 0) {
+    if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c
+        == 0) {
+      FUN_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    }
+    uVar2 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields->
+            cryptoKey;
+  }
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
+  }
   this->inited = 1;
-  (this->hiddenValue).x = iVar1;
-  (this->hiddenValue).y = iVar4;
-  (this->hiddenValue).z = iVar5;
-  (this->hiddenValue).w = iVar6;
+  (this->hiddenValue).x = (uint)x ^ uVar2;
+  (this->hiddenValue).y = (uint)y ^ uVar2;
+  (this->hiddenValue).z = (uint)z ^ uVar2;
+  (this->hiddenValue).w = (uint)w ^ uVar2;
   (this->fakeValue).x = x;
   (this->fakeValue).y = y;
   (this->fakeValue).z = z;
@@ -783,37 +876,71 @@ void Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::Obscure
 ObscuredQuaternion *
 Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredQuaternion::
 ObscuredQuaternion_op_Implicit
-          (ObscuredQuaternion *__return_storage_ptr__,Quaternion value,MethodInfo *method)
+          (ObscuredQuaternion *__return_storage_ptr__,Quaternion *value,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  pOVar1 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion;
   __return_storage_ptr__->currentCryptoKey = 0;
   (__return_storage_ptr__->hiddenValue).x = 0;
   (__return_storage_ptr__->hiddenValue).y = 0;
   (__return_storage_ptr__->hiddenValue).z = 0;
-  (__return_storage_ptr__->hiddenValue).w = 0;
-  (__return_storage_ptr__->fakeValue).x = 0.0;
+  *(undefined8 *)&(__return_storage_ptr__->hiddenValue).w = 0;
   (__return_storage_ptr__->fakeValue).y = 0.0;
   (__return_storage_ptr__->fakeValue).z = 0.0;
   *(undefined8 *)&(__return_storage_ptr__->fakeValue).w = 0;
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+  if (*(int *)&(pOVar1->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pOVar1 = ObscuredQuaternion_Encrypt
-                     ((ObscuredQuaternion_RawEncryptedQuaternion *)&stack0xffffffec,value,
-                      (MethodInfo *)0x0);
-  ObscuredQuaternion__ctor(__return_storage_ptr__,*pOVar1,(MethodInfo *)0x0);
-  bVar2 = Detectors::ObscuredCheatingDetector::ObscuredCheatingDetector_get_IsRunning
+  QStack_2.x = value->x;
+  QStack_2.y = value->y;
+  QStack_2.z = value->z;
+  QStack_2.w = value->w;
+  pOVar3 = ObscuredQuaternion_Encrypt(&OStack_4,&QStack_2,(MethodInfo *)0x0);
+  QStack_2.x = (float)pOVar3->x;
+  QStack_2.y = (float)pOVar3->y;
+  QStack_2.z = (float)pOVar3->z;
+  QStack_2.w = (float)pOVar3->w;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c ==
+      0) {
+    FUN_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+  }
+  pOVar5 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->static_fields;
+  (__return_storage_ptr__->hiddenValue).x = (int32_t)QStack_2.x;
+  (__return_storage_ptr__->hiddenValue).y = (int32_t)QStack_2.y;
+  (__return_storage_ptr__->hiddenValue).z = (int32_t)QStack_2.z;
+  (__return_storage_ptr__->hiddenValue).w = (int32_t)QStack_2.w;
+  __return_storage_ptr__->inited = 1;
+  fVar6 = (pOVar5->initialFakeValue).x;
+  fVar7 = (pOVar5->initialFakeValue).y;
+  fVar8 = (pOVar5->initialFakeValue).z;
+  fVar9 = (pOVar5->initialFakeValue).w;
+  __return_storage_ptr__->currentCryptoKey = pOVar5->cryptoKey;
+  (__return_storage_ptr__->fakeValue).x = fVar6;
+  (__return_storage_ptr__->fakeValue).y = fVar7;
+  (__return_storage_ptr__->fakeValue).z = fVar8;
+  (__return_storage_ptr__->fakeValue).w = fVar9;
+  bVar10 = Detectors::ObscuredCheatingDetector::ObscuredCheatingDetector_get_IsRunning
                     ((MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    (__return_storage_ptr__->fakeValue).x = value.x;
-    (__return_storage_ptr__->fakeValue).y = value.y;
-    (__return_storage_ptr__->fakeValue).z = value.z;
-    (__return_storage_ptr__->fakeValue).w = value.w;
+  if (bVar10 != 0) {
+    fVar6 = value->y;
+    fVar7 = value->z;
+    fVar8 = value->w;
+    (__return_storage_ptr__->fakeValue).x = value->x;
+    (__return_storage_ptr__->fakeValue).y = fVar6;
+    (__return_storage_ptr__->fakeValue).z = fVar7;
+    (__return_storage_ptr__->fakeValue).w = fVar8;
   }
   return __return_storage_ptr__;
 }
@@ -824,18 +951,20 @@ ObscuredQuaternion_op_Implicit
 Quaternion *
 Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredQuaternion::
 ObscuredQuaternion_op_Implicit_1
-          (Quaternion *__return_storage_ptr__,ObscuredQuaternion value,MethodInfo *method)
+          (Quaternion *__return_storage_ptr__,ObscuredQuaternion *value,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion);
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredQuaternion->_1).field_0x1c ==
+      0) {
+    FUN_?();
   }
-  pQVar1 = ObscuredQuaternion_InternalDecrypt(&QStack_2,&value,(MethodInfo *)0x0);
+  pQVar1 = ObscuredQuaternion_InternalDecrypt(&QStack_2,value,(MethodInfo *)0x0);
   fVar3 = pQVar1->y;
   fVar4 = pQVar1->z;
   fVar5 = pQVar1->w;

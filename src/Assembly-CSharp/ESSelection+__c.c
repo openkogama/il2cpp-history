@@ -6,34 +6,36 @@ void Assembly-CSharp.dll::ESSelection+<>c::ESSelection_c__HandleDeleteSelection_
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (x != (IUIStack *)0x0) {
-    pIVar1 = x->klass;
-    uVar2 = 0;
-    uVar3._0_1_ = (pIVar1->_1).rank;
-    uVar3._1_1_ = (pIVar1->_1).minimumAlignment;
-    if (uVar3 != 0) {
-      do {
-        if (pIVar1->interfaceOffsets[uVar2].interfaceType ==
-            (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
-          pIVar1 = x->klass;
-          iVar4 = pIVar1->interfaceOffsets[uVar2].offset;
-          (*(code *)(&(pIVar1->vtable).PopGroups)[iVar4].method)
-                    (x,0x12,(&(pIVar1->vtable).PopToGroup)[iVar4].methodPtr);
-          return;
-        }
-        uVar2 = uVar2 + 1;
-      } while (uVar2 < uVar3);
-    }
-    puVar5 = (undefined4 *)func_?(x,TypeInfo__UnityEngine__EventSystems__IUIStack,3);
-    (*(code *)*puVar5)(x,0x12,puVar5[1]);
+  if (x == (IUIStack *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  uVar2 = 0;
+  pIVar3 = x->klass;
+  uVar4._0_1_ = (pIVar3->_1).rank;
+  uVar4._1_1_ = (pIVar3->_1).minimumAlignment;
+  if (uVar4 != 0) {
+    do {
+      if (pIVar3->interfaceOffsets[uVar2].interfaceType ==
+          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
+        pVVar5 = &(pIVar3->vtable).get_StackReady + (pIVar3->interfaceOffsets[uVar2].offset + 3);
+        goto code_?;
+      }
+      uVar2 = uVar2 + 1;
+    } while (uVar2 < uVar4);
+  }
+  pVVar5 = (VirtualInvokeData *)FUN_?(x);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pVVar5->methodPtr)(x,0x12,pVVar5->method,pVVar5->methodPtr);
   return;
 }
 
@@ -44,15 +46,26 @@ void Assembly-CSharp.dll::ESSelection+<>c::ESSelection_c__cctor(MethodInfo *meth
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__ESSelection____c);
+    FUN_?(&TypeInfo__ESSelection____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__ESSelection____c;
-  value = (ESSelection_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  TypeInfo__ESSelection____c->static_fields->__9 = value;
-  func_?(TypeInfo__ESSelection____c->static_fields,value);
+  pEVar1 = (ESSelection_c *)FUN_?(TypeInfo__ESSelection____c);
+  TypeInfo__ESSelection____c->static_fields->__9 = pEVar1;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)TypeInfo__ESSelection____c->static_fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 

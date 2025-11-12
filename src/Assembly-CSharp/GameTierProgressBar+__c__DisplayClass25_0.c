@@ -8,23 +8,18 @@ void Assembly-CSharp.dll::GameTierProgressBar+<>c__DisplayClass25_0::
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  ptr = (this->fields).informationPopup;
-  if (ptr != (GameObject *)0x0) {
-    UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
-    UnsafeUtility_AsRef_1((Void *)ptr,(MethodInfo *)0x0);
-    if (x != (IUIStack *)0x0) {
-      pIStack_1 = x;
-      func_?(1,TypeInfo__UnityEngine__EventSystems__IUIStack);
-      return;
-    }
+  if (((this->fields).informationPopup != (GameObject *)0x0) && (x != (IUIStack *)0x0)) {
+    FUN_?();
+    return;
   }
-  uVar2 = func_?(&pIStack_1);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

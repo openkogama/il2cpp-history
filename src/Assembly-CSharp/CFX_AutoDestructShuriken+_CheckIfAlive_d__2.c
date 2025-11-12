@@ -7,61 +7,80 @@ bool Assembly-CSharp.dll::CFX_AutoDestructShuriken+<CheckIfAlive>d__2::
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::ParticleSystem>__
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&TypeInfo__UnityEngine__WaitForSeconds);
+    FUN_?(&
+                  UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::ParticleSystem>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__WaitForSeconds);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   iVar1 = (this->fields).__1__state;
   this_00 = (this->fields).__4__this;
-  if (iVar1 != 0) {
-    if (iVar1 != 1) {
-      return 0;
-    }
+  if (iVar1 == 0) {
     (this->fields).__1__state = -1;
-    if ((this_00 != (CFX_AutoDestructShuriken *)0x0) &&
-       (this_01 = (ParticleSystem *)
-                  UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
-                            ((Component *)this_00,
-                             UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::ParticleSystem>__
-                            ), this_01 != (ParticleSystem *)0x0)) {
-      bVar2 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-              ParticleSystem_IsAlive(this_01,1,(MethodInfo *)0x0);
-      if (bVar2 != 0) goto code_?;
-      if ((this_00->fields).OnlyDeactivate == 0) {
-        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)this_00,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+code_?:
+    pOVar2 = (Object *)FUN_?(TypeInfo__UnityEngine__WaitForSeconds);
+    bVar3 = iRam_? != 0;
+    *(undefined4 *)&pOVar2[1].klass = 0x3f000000;
+    (this->fields).__2__current = pOVar2;
+    if (bVar3) {
+      uVar4 = (uint)((ulonglong)&(this->fields).__2__current >> 0xc);
+      uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+      do {
+        uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+        puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+        LOCK();
+        bVar3 = uVar6 == *puVar7;
+        if (bVar3) {
+          *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                  ((Object_1 *)pGVar3,(MethodInfo *)0x0);
-        return 0;
-      }
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this_00,(MethodInfo *)0x0);
-      if (pGVar3 != (GameObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar3,0,(MethodInfo *)0x0);
-        return 0;
-      }
+        UNLOCK();
+      } while (!bVar3);
     }
-    func_?();
-    pcVar4 = (code *)swi(3);
-    bVar2 = (*pcVar4)();
-    return bVar2;
+    (this->fields).__1__state = 1;
+    return 1;
+  }
+  if (iVar1 != 1) {
+    return 0;
   }
   (this->fields).__1__state = -1;
-code_?:
-  this_02 = (SubscribableVariable_1_System_Single_ *)func_?();
-  SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor
-            (this_02,0.5,(MethodInfo *)0x0);
-  (this->fields).__2__current = (Object *)this_02;
-  func_?();
-  (this->fields).__1__state = 1;
-  return 1;
+  if ((this_00 != (CFX_AutoDestructShuriken *)0x0) &&
+     (this_01 = (ParticleSystem *)
+                UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                          ((Component *)this_00,
+                           UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::ParticleSystem>__
+                          ), this_01 != (ParticleSystem *)0x0)) {
+    bVar8 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+            ParticleSystem_IsAlive(this_01,1,(MethodInfo *)0x0);
+    if (bVar8 != 0) goto code_?;
+    if ((this_00->fields).OnlyDeactivate == 0) {
+      pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this_00,(MethodInfo *)0x0);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
+                ((Object_1 *)pGVar9,(MethodInfo *)0x0);
+      return 0;
+    }
+    pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this_00,(MethodInfo *)0x0);
+    if (pGVar9 != (GameObject *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (pGVar9,0,(MethodInfo *)0x0);
+      return 0;
+    }
+  }
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  bVar8 = (*pcVar10)();
+  return bVar8;
 }
 
 
@@ -76,10 +95,10 @@ void Assembly-CSharp.dll::CFX_AutoDestructShuriken+<CheckIfAlive>d__2::
   this_00 = (NotSupportedException *)func_?(uVar1);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
-  func_?(&
-                  MethodInfo__CFX_AutoDestructShuriken___CheckIfAlive_d__2__System_Collections_IEnumerator_Reset__
-                 );
-  func_?(this_00);
+  uVar1 = func_?(&
+                              MethodInfo__CFX_AutoDestructShuriken___CheckIfAlive_d__2__System_Collections_IEnumerator_Reset__
+                             );
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

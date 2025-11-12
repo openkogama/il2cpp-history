@@ -6,72 +6,84 @@ String * MVWorldObject.dll::MV::WorldObject::ThemesData::ThemeData::ThemeData_To
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__System__Object);
-    func_?(&StringLiteral_id__0___themeIdentifier__1___pri);
+    FUN_?(&TypeInfo__System__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_id__0___themeIdentifier__1___pri);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  args = (Object__Array *)func_?(TypeInfo__System__Object,4);
-  iStack_1 = (this->fields).id;
-  pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_1);
-  if (args == (Object__Array *)0x0) {
-    func_?();
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-  }
-  else {
-    if (pOVar2 != (Object *)0x0) {
-      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar4 == 0) goto code_?;
+  args = (Object__Array *)FUN_?(TypeInfo__System__Object,4);
+  aiStackX_8[0] = (this->fields).id;
+  lVar1 = FUN_?(uRam_?,aiStackX_8);
+  if (args != (Object__Array *)0x0) {
+    if (lVar1 != 0) {
+      lVar2 = FUN_?(lVar1,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar5 = (String *)(*pcVar4)();
+        return pSVar5;
+      }
     }
-    if (args->max_length == 0) goto code_?;
-    args->vector[0] = pOVar2;
-    func_?(args->vector,pOVar2);
+    FUN_?(args,0,lVar1);
     pSVar5 = (this->fields).themeIdentifier;
     if (pSVar5 != (String *)0x0) {
-      iVar4 = func_?(pSVar5,(args->klass->_0).element_class);
-      if (iVar4 == 0) goto code_?;
+      lVar1 = FUN_?(pSVar5,(args->klass->_0).element_class);
+      if (lVar1 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar5 = (String *)(*pcVar4)();
+        return pSVar5;
+      }
     }
-    if (args->max_length < 2) goto code_?;
-    args->vector[1] = (Object *)pSVar5;
-    func_?(args->vector + 1,pSVar5);
-    iStack_6 = (this->fields).priceGold;
-    pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_6);
-    if (pOVar2 != (Object *)0x0) {
-      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar4 == 0) goto code_?;
+    FUN_?(args,1,pSVar5);
+    aiStackX_8[0] = (this->fields).priceGold;
+    lVar1 = FUN_?(uRam_?,aiStackX_8);
+    if (lVar1 != 0) {
+      lVar2 = FUN_?(lVar1,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar5 = (String *)(*pcVar4)();
+        return pSVar5;
+      }
     }
-    if (args->max_length < 3) goto code_?;
-    args->vector[2] = pOVar2;
-    func_?(args->vector + 2,pOVar2);
-    iStack_7 = (this->fields).levelRequirement;
-    pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_7);
-    if (pOVar2 != (Object *)0x0) {
-      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar4 == 0) goto code_?;
+    FUN_?(args,2,lVar1);
+    aiStackX_8[0] = (this->fields).levelRequirement;
+    lVar1 = FUN_?(uRam_?,aiStackX_8);
+    if (lVar1 != 0) {
+      lVar1 = FUN_?(lVar1,(args->klass->_0).element_class);
+      if (lVar1 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar5 = (String *)(*pcVar4)();
+        return pSVar5;
+      }
     }
-    if (3 < args->max_length) {
-      args->vector[3] = pOVar2;
-      func_?(args->vector + 3,pOVar2);
-      pSVar5 = mscorlib.dll::System::String::String_Format_3
-                         (StringLiteral_id__0___themeIdentifier__1___pri,args,(MethodInfo *)0x0);
-      return pSVar5;
-    }
+    FUN_?(args,3);
+    pSVar5 = StringLiteral_id__0___themeIdentifier__1___pri;
+    PStack_6._arg0 = (Object *)0x0;
+    PStack_6._arg1 = (Object *)0x0;
+    PStack_6._arg2 = (Object *)0x0;
+    PStack_6._args = (Object__Array *)0x0;
+    mscorlib.dll::System::ParamsArray::ParamsArray__ctor_3(&PStack_6,args,(MethodInfo *)0x0);
+    PStack_7._arg0 = PStack_6._arg0;
+    PStack_7._arg1 = PStack_6._arg1;
+    PStack_7._arg2 = PStack_6._arg2;
+    PStack_7._args = PStack_6._args;
+    pSVar5 = mscorlib.dll::System::String::String_FormatHelper
+                       ((IFormatProvider *)0x0,pSVar5,&PStack_7,(MethodInfo *)0x0);
+    return pSVar5;
   }
-code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  pSVar5 = (String *)(*pcVar8)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  pSVar5 = (String *)(*pcVar4)();
   return pSVar5;
 }
 
@@ -83,13 +95,27 @@ void MVWorldObject.dll::MV::WorldObject::ThemesData::ThemeData::ThemeData__ctor_
                int32_t levelRequirement,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  bVar1 = iRam_? == 0;
   (this->fields).id = id;
   (this->fields).themeIdentifier = themeIdentifier;
-  func_?(&(this->fields).themeIdentifier,themeIdentifier);
-  (this->fields).priceGold = priceGold;
+  if (bVar1) {
+    (this->fields).levelRequirement = levelRequirement;
+    (this->fields).priceGold = priceGold;
+    return;
+  }
+  uVar2 = (uint)((ulonglong)&(this->fields).themeIdentifier >> 0xc);
+  puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+  do {
+    uVar4 = *puVar3;
+    LOCK();
+    uVar5 = *puVar3;
+    if (uVar4 == uVar5) {
+      *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+    }
+    UNLOCK();
+  } while (uVar4 != uVar5);
   (this->fields).levelRequirement = levelRequirement;
+  (this->fields).priceGold = priceGold;
   return;
 }
 

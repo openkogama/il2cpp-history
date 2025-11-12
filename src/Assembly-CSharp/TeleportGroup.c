@@ -6,171 +6,305 @@ void Assembly-CSharp.dll::TeleportGroup::TeleportGroup_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__TeleportGroup__PositionChanged_System__Object__PositionChangedEventArgs_
-                   );
-    func_?(&
-                    TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-                   );
+    FUN_?(&
+                  MethodInfo__TeleportGroup__PositionChanged_System__Object__PositionChangedEventArgs_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  bVar1 = iRam_? != 0;
   (this->fields).worldObject = owner;
-  func_?(&(this->fields).worldObject,owner);
-  pMVar1 = (this->fields).worldObject;
-  if (pMVar1 == (MVTeleportGroup *)0x0) {
-code_?:
-    pUVar2 = unaff_EDI;
-    func_?();
-code_?:
-    pUStack_3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)unaff_ESI;
-    func_?();
-    unaff_EDI = pUVar2;
-code_?:
-    pUStack_3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)unaff_ESI;
-    func_?();
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).worldObject >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
   }
-  else {
-    pMVar4 = (pMVar1->fields).teleporter1;
-    if (pMVar4 == (MVTeleporter *)0x0) goto code_?;
-    pUVar5 = (pMVar4->fields)._._.PositionChanged;
-    pUVar6 = (UnityAction_2_System_Object_System_Object_ *)
-             func_?(
-                            TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-                            );
+  pMVar6 = (this->fields).worldObject;
+  if ((pMVar6 != (MVTeleportGroup *)0x0) &&
+     (pMVar7 = (pMVar6->fields).teleporter1, pMVar7 != (MVTeleporter *)0x0)) {
+    pUVar8 = (pMVar7->fields)._._.PositionChanged;
+    pUVar9 = (UnityAction_2_System_Object_System_Object_ *)
+             FUN_?(
+                          TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                          );
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
-              (pUVar6,(Object *)this,
+              (pUVar9,(Object *)this,
                MethodInfo__TeleportGroup__PositionChanged_System__Object__PositionChangedEventArgs_,
                (MethodInfo *)0x0);
-    unaff_EDI = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
-                mscorlib.dll::System::Delegate::Delegate_Combine
-                          ((Delegate *)pUVar5,(Delegate *)pUVar6,(MethodInfo *)0x0);
-    if (unaff_EDI == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0) {
-      (pMVar4->fields)._._.PositionChanged =
+    pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pUVar8,(Delegate *)pUVar9,(MethodInfo *)0x0);
+    pUVar11 = 
+    TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+    if (pDVar10 == (Delegate *)0x0) {
+      (pMVar7->fields)._._.PositionChanged =
            (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
-code_?:
-      pUStack_3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
-                  &(pMVar4->fields)._._.PositionChanged;
-      func_?();
-      pMVar1 = (this->fields).worldObject;
-      unaff_ESI = pMVar4;
-      if (pMVar1 == (MVTeleportGroup *)0x0) goto code_?;
-      pMVar4 = (pMVar1->fields).teleporter2;
-      if (pMVar4 == (MVTeleporter *)0x0) goto code_?;
-      pUVar5 = (pMVar4->fields)._._.PositionChanged;
-      pUVar6 = (UnityAction_2_System_Object_System_Object_ *)
-               func_?(
+    }
+    else {
+      pUVar8 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)
+                FUN_?(pDVar10,
                               TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-                              );
+                             );
+      if (pUVar8 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
+        FUN_?(pDVar10,pUVar11);
+        pcVar12 = (code *)swi(3);
+        (*pcVar12)();
+        return;
+      }
+      (pMVar7->fields)._._.PositionChanged = pUVar8;
+      pUVar11 = 
+      TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+      lVar3 = FUN_?(pDVar10,
+                             TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                            );
+      if (lVar3 == 0) {
+        FUN_?(pDVar10,pUVar11);
+        pcVar12 = (code *)swi(3);
+        (*pcVar12)();
+        return;
+      }
+    }
+    if (iRam_? != 0) {
+      uVar2 = (uint)((ulonglong)&(pMVar7->fields)._._.PositionChanged >> 0xc);
+      lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+        puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+        LOCK();
+        bVar1 = uVar4 == *puVar5;
+        if (bVar1) {
+          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar1);
+    }
+    pMVar6 = (this->fields).worldObject;
+    if ((pMVar6 != (MVTeleportGroup *)0x0) &&
+       (pMVar7 = (pMVar6->fields).teleporter2, pMVar7 != (MVTeleporter *)0x0)) {
+      pUVar8 = (pMVar7->fields)._._.PositionChanged;
+      pUVar9 = (UnityAction_2_System_Object_System_Object_ *)
+               FUN_?(
+                            TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                            );
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                (pUVar6,(Object *)this,
+                (pUVar9,(Object *)this,
                  MethodInfo__TeleportGroup__PositionChanged_System__Object__PositionChangedEventArgs_
                  ,(MethodInfo *)0x0);
-      unaff_EDI = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
-                  mscorlib.dll::System::Delegate::Delegate_Combine
-                            ((Delegate *)pUVar5,(Delegate *)pUVar6,(MethodInfo *)0x0);
-      if (unaff_EDI == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0) {
-        (pMVar4->fields)._._.PositionChanged =
+      pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pUVar8,(Delegate *)pUVar9,(MethodInfo *)0x0);
+      pUVar11 = 
+      TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+      if (pDVar10 == (Delegate *)0x0) {
+        (pMVar7->fields)._._.PositionChanged =
              (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
       }
       else {
-        pUStack_3 = unaff_EDI;
-        pUVar5 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
-        if (pUVar5 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0)
-        goto code_?;
-        (pMVar4->fields)._._.PositionChanged = pUVar5;
-        pUStack_3 = unaff_EDI;
-        iVar7 = func_?();
-        if (iVar7 == 0) goto code_?;
+        pUVar8 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)
+                  FUN_?(pDVar10,
+                                TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                               );
+        if (pUVar8 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
+          FUN_?(pDVar10,pUVar11);
+          pcVar12 = (code *)swi(3);
+          (*pcVar12)();
+          return;
+        }
+        (pMVar7->fields)._._.PositionChanged = pUVar8;
+        pUVar11 = 
+        TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+        lVar3 = FUN_?(pDVar10,
+                               TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                              );
+        if (lVar3 == 0) {
+          FUN_?(pDVar10,pUVar11);
+          pcVar12 = (code *)swi(3);
+          (*pcVar12)();
+          return;
+        }
       }
-      pUStack_3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
-                  &(pMVar4->fields)._._.PositionChanged;
-      func_?();
-      pUVar2 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
-               (this->fields).worldObject;
-      unaff_ESI = pMVar4;
-      if (pUVar2 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)0x0)
-      goto code_?;
-      a = (Delegate *)(pUVar2->_1).initializationExceptionGCHandle;
-      pUVar6 = (UnityAction_2_System_Object_System_Object_ *)
-               func_?(
+      if (iRam_? != 0) {
+        uVar2 = (uint)((ulonglong)&(pMVar7->fields)._._.PositionChanged >> 0xc);
+        lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+          puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+          LOCK();
+          bVar1 = uVar4 == *puVar5;
+          if (bVar1) {
+            *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar1);
+      }
+      pMVar6 = (this->fields).worldObject;
+      if (pMVar6 != (MVTeleportGroup *)0x0) {
+        pUVar8 = (pMVar6->fields)._._._.PositionChanged;
+        pUVar9 = (UnityAction_2_System_Object_System_Object_ *)
+                 FUN_?(
                               TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
                               );
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (pUVar6,(Object *)this,
-                 MethodInfo__TeleportGroup__PositionChanged_System__Object__PositionChangedEventArgs_
-                 ,(MethodInfo *)0x0);
-      unaff_ESI = (MVTeleporter *)
-                  mscorlib.dll::System::Delegate::Delegate_Combine
-                            (a,(Delegate *)pUVar6,(MethodInfo *)0x0);
-      unaff_EDI = 
-      TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
-      if (unaff_ESI == (MVTeleporter *)0x0) {
-        (pUVar2->_1).initializationExceptionGCHandle = 0;
-code_?:
-        pUStack_3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)
-                    &(pUVar2->_1).initializationExceptionGCHandle;
-        func_?();
-        pMVar1 = (this->fields).worldObject;
-        unaff_ESI = (MVTeleporter *)(this->fields).lineRenderer;
-        unaff_EDI = pUVar2;
-        if ((pMVar1 != (MVTeleportGroup *)0x0) &&
-           (pMVar4 = (pMVar1->fields).teleporter1, pMVar4 != (MVTeleporter *)0x0)) {
-          pVVar8 = (Vector3 *)
-                   (*(code *)(pMVar4->klass->vtable).get_WorldPosition_1.method)
-                             (auStack_9,pMVar4,(pMVar4->klass->vtable).set_WorldPosition.methodPtr)
-          ;
-          if (unaff_ESI != (MVTeleporter *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition
-                      ((LineRenderer *)unaff_ESI,0,*pVVar8,(MethodInfo *)0x0);
-            pMVar1 = (this->fields).worldObject;
-            unaff_ESI = (MVTeleporter *)(this->fields).lineRenderer;
-            if ((pMVar1 != (MVTeleportGroup *)0x0) &&
-               (pMVar4 = (pMVar1->fields).teleporter2, pMVar4 != (MVTeleporter *)0x0)) {
-              pVVar8 = (Vector3 *)
-                       (*(code *)(pMVar4->klass->vtable).get_WorldPosition_1.method)
-                                 (auStack_9,pMVar4,
-                                  (pMVar4->klass->vtable).set_WorldPosition.methodPtr);
-              if (unaff_ESI != (MVTeleporter *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition
-                          ((LineRenderer *)unaff_ESI,1,*pVVar8,(MethodInfo *)0x0);
-                return;
-              }
-            }
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+        Object]::UnityAction_2_System_Object_System_Object___ctor
+                  (pUVar9,(Object *)this,
+                   MethodInfo__TeleportGroup__PositionChanged_System__Object__PositionChangedEventArgs_
+                   ,(MethodInfo *)0x0);
+        pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine
+                           ((Delegate *)pUVar8,(Delegate *)pUVar9,(MethodInfo *)0x0);
+        pUVar11 = 
+        TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+        if (pDVar10 == (Delegate *)0x0) {
+          (pMVar6->fields)._._._.PositionChanged =
+               (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
+        }
+        else {
+          pUVar8 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)
+                    FUN_?(pDVar10,
+                                  TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                                 );
+          if (pUVar8 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
+            FUN_?(pDVar10,pUVar11);
+            pcVar12 = (code *)swi(3);
+            (*pcVar12)();
+            return;
+          }
+          (pMVar6->fields)._._._.PositionChanged = pUVar8;
+          pUVar11 = 
+          TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+          lVar3 = FUN_?(pDVar10,
+                                 TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                                );
+          if (lVar3 == 0) {
+            FUN_?(pDVar10,pUVar11);
+            pcVar12 = (code *)swi(3);
+            (*pcVar12)();
+            return;
           }
         }
-        goto code_?;
+        if (iRam_? != 0) {
+          uVar2 = (uint)((ulonglong)&(pMVar6->fields)._._._.PositionChanged >> 0xc);
+          lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+            puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+            LOCK();
+            bVar1 = uVar4 == *puVar5;
+            if (bVar1) {
+              *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar1);
+        }
+        pMVar6 = (this->fields).worldObject;
+        pLVar13 = (this->fields).lineRenderer;
+        if ((pMVar6 != (MVTeleportGroup *)0x0) &&
+           (pMVar7 = (pMVar6->fields).teleporter1, pMVar7 != (MVTeleporter *)0x0)) {
+          puVar14 = (undefined8 *)
+                    (*(pMVar7->klass->vtable).get_WorldPosition_1.methodPtr)
+                              (&uStack_15,pMVar7,(pMVar7->klass->vtable).get_WorldPosition_1.method)
+          ;
+          if (pLVar13 != (LineRenderer *)0x0) {
+            uStack_16 = *puVar14;
+            uStack_17 = *(undefined4 *)(puVar14 + 1);
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::LineRenderer>_UnityEngine__LineRenderer_
+                           );
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pvVar18 = (pLVar13->fields)._._._.m_CachedPtr;
+            if (pvVar18 == (void *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+              ThrowHelper_2_ThrowNullReferenceException((Object *)pLVar13,(MethodInfo *)0x0);
+              pcVar12 = (code *)swi(3);
+              (*pcVar12)();
+              return;
+            }
+            pcVar12 = pcRam_?;
+            if ((pcRam_? == (code *)0x0) &&
+               (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
+              uVar19 = func_?(&UNK_?);
+              FUN_?(uVar19,0);
+              pcVar12 = (code *)swi(3);
+              (*pcVar12)();
+              return;
+            }
+            pcRam_? = pcVar12;
+            (*pcRam_?)(pvVar18,0,&uStack_16);
+            pMVar6 = (this->fields).worldObject;
+            pLVar13 = (this->fields).lineRenderer;
+            if ((pMVar6 != (MVTeleportGroup *)0x0) &&
+               (pMVar7 = (pMVar6->fields).teleporter2, pMVar7 != (MVTeleporter *)0x0)) {
+              puVar14 = (undefined8 *)
+                        (*(pMVar7->klass->vtable).get_WorldPosition_1.methodPtr)
+                                  (auStack_20,pMVar7,
+                                   (pMVar7->klass->vtable).get_WorldPosition_1.method);
+              if (pLVar13 == (LineRenderer *)0x0) {
+                FUN_?();
+                pcVar12 = (code *)swi(3);
+                (*pcVar12)();
+                return;
+              }
+              uStack_15 = *puVar14;
+              uStack_21 = *(undefined4 *)(puVar14 + 1);
+              if (cRam_? == '\0') {
+                FUN_?(&
+                              void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::LineRenderer>_UnityEngine__LineRenderer_
+                             );
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              pvVar18 = (pLVar13->fields)._._._.m_CachedPtr;
+              if (pvVar18 == (void *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                ThrowHelper_2_ThrowNullReferenceException((Object *)pLVar13,(MethodInfo *)0x0);
+                pcVar12 = (code *)swi(3);
+                (*pcVar12)();
+                return;
+              }
+              pcVar12 = pcRam_?;
+              if ((pcRam_? == (code *)0x0) &&
+                 (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
+                uVar19 = func_?(&UNK_?);
+                FUN_?(uVar19,0);
+                pcVar12 = (code *)swi(3);
+                (*pcVar12)();
+                return;
+              }
+              pcRam_? = pcVar12;
+              (*pcRam_?)(pvVar18,1,&uStack_15);
+              return;
+            }
+          }
+          FUN_?();
+          pcVar12 = (code *)swi(3);
+          (*pcVar12)();
+          return;
+        }
       }
-      pUStack_3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)unaff_ESI;
-      uVar10 = func_?();
-      if (uVar10 != 0) {
-        (pUVar2->_1).initializationExceptionGCHandle = uVar10;
-        pUStack_3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs___Class *)unaff_ESI;
-        iVar7 = func_?();
-        if (iVar7 != 0) goto code_?;
-        goto code_?;
-      }
-      goto code_?;
     }
-    pUStack_3 = unaff_EDI;
-    pUVar5 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
-    if (pUVar5 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0)
-    goto code_?;
-    (pMVar4->fields)._._.PositionChanged = pUVar5;
-    pUStack_3 = unaff_EDI;
-    iVar7 = func_?();
-    if (iVar7 != 0) goto code_?;
   }
-code_?:
-  pUStack_3 = unaff_EDI;
-  func_?();
-code_?:
-  pUStack_3 = unaff_EDI;
-  func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  FUN_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -182,30 +316,28 @@ void Assembly-CSharp.dll::TeleportGroup::TeleportGroup_OnDestroy
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__TeleportGroup__PositionChanged_System__Object__PositionChangedEventArgs_
-                   );
-    func_?(&
-                    TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-                   );
+    FUN_?(&
+                  MethodInfo__TeleportGroup__PositionChanged_System__Object__PositionChangedEventArgs_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields).worldObject == (MVTeleportGroup *)0x0) {
     return;
   }
   pMVar1 = (((this->fields).worldObject)->fields).teleporter1;
-  if (pMVar1 == (MVTeleporter *)0x0) {
-code_?:
-    func_?();
-code_?:
-    func_?();
-  }
-  else {
+  if (pMVar1 != (MVTeleporter *)0x0) {
     pUVar2 = (pMVar1->fields)._._.PositionChanged;
     pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
-             func_?(
-                            TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-                            );
+             FUN_?(
+                          TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                          );
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
     UnityAction_2_System_Object_System_Object___ctor
               (pUVar3,(Object *)this,
@@ -213,57 +345,116 @@ code_?:
                (MethodInfo *)0x0);
     pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)pUVar2,(Delegate *)pUVar3,(MethodInfo *)0x0);
+    pUVar5 = 
+    TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
     if (pDVar4 == (Delegate *)0x0) {
       (pMVar1->fields)._._.PositionChanged =
            (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
-      object = (Object *)0x0;
-code_?:
-      func_?();
-      pMVar5 = (this->fields).worldObject;
-      if ((pMVar5 == (MVTeleportGroup *)0x0) ||
-         (pMVar1 = (pMVar5->fields).teleporter2, pMVar1 == (MVTeleporter *)0x0))
-      goto code_?;
+    }
+    else {
+      pUVar2 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)
+               FUN_?(pDVar4,
+                             TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                            );
+      if (pUVar2 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
+        FUN_?(pDVar4,pUVar5);
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
+      }
+      (pMVar1->fields)._._.PositionChanged = pUVar2;
+      pUVar5 = 
+      TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+      lVar7 = FUN_?(pDVar4,
+                             TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                            );
+      if (lVar7 == 0) {
+        FUN_?(pDVar4,pUVar5);
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
+      }
+    }
+    if (iRam_? != 0) {
+      uVar8 = (uint)((ulonglong)&(pMVar1->fields)._._.PositionChanged >> 0xc);
+      lVar7 = (ulonglong)((uVar8 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar9 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar10 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar11 = uVar9 == *puVar10;
+        if (bVar11) {
+          *puVar10 = uVar9 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar11);
+    }
+    pMVar12 = (this->fields).worldObject;
+    if ((pMVar12 != (MVTeleportGroup *)0x0) &&
+       (pMVar1 = (pMVar12->fields).teleporter2, pMVar1 != (MVTeleporter *)0x0)) {
       pUVar2 = (pMVar1->fields)._._.PositionChanged;
       pUVar3 = (UnityAction_2_System_Object_System_Object_ *)
-               func_?(
-                              TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-                              );
+               FUN_?(
+                            TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                            );
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
       ::UnityAction_2_System_Object_System_Object___ctor
-                (pUVar3,object,
+                (pUVar3,(Object *)this,
                  MethodInfo__TeleportGroup__PositionChanged_System__Object__PositionChangedEventArgs_
                  ,(MethodInfo *)0x0);
       pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove
                          ((Delegate *)pUVar2,(Delegate *)pUVar3,(MethodInfo *)0x0);
+      pUVar5 = 
+      TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
       if (pDVar4 == (Delegate *)0x0) {
         (pMVar1->fields)._._.PositionChanged =
              (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
-        func_?();
-        return;
       }
-      pUVar2 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
-      if (pUVar2 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
+      else {
+        pUVar2 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)
+                 FUN_?(pDVar4,
+                               TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                              );
+        if (pUVar2 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
+          FUN_?(pDVar4,pUVar5);
+          pcVar6 = (code *)swi(3);
+          (*pcVar6)();
+          return;
+        }
         (pMVar1->fields)._._.PositionChanged = pUVar2;
-        iVar6 = func_?();
-        if (iVar6 != 0) {
-          func_?();
+        pUVar5 = 
+        TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+        lVar7 = FUN_?(pDVar4,
+                               TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                              );
+        if (lVar7 == 0) {
+          FUN_?(pDVar4,pUVar5);
+          pcVar6 = (code *)swi(3);
+          (*pcVar6)();
           return;
         }
       }
-      goto code_?;
+      if (iRam_? == 0) {
+        return;
+      }
+      uVar8 = (uint)((ulonglong)&(pMVar1->fields)._._.PositionChanged >> 0xc);
+      lVar7 = (ulonglong)((uVar8 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar9 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar10 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar11 = uVar9 == *puVar10;
+        if (bVar11) {
+          *puVar10 = uVar9 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar11);
+      return;
     }
-    pUVar2 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
-    if (pUVar2 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0)
-    goto code_?;
-    (pMVar1->fields)._._.PositionChanged = pUVar2;
-    object = (Object *)func_?();
-    if (object != (Object *)0x0) goto code_?;
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -278,48 +469,144 @@ void Assembly-CSharp.dll::TeleportGroup::TeleportGroup_PositionChanged
   pMVar1 = (this->fields).worldObject;
   if ((MVTeleportGroup *)sender == pMVar1) {
     pLVar2 = (this->fields).lineRenderer;
-    if (((pMVar1 != (MVTeleportGroup *)0x0) &&
-        (pMVar3 = (pMVar1->fields).teleporter1, pMVar3 != (MVTeleporter *)0x0)) &&
-       (pVVar4 = (Vector3 *)
-                 (*(code *)(pMVar3->klass->vtable).get_WorldPosition_1.method)
-                           (auStack_5,pMVar3,(pMVar3->klass->vtable).set_WorldPosition.methodPtr),
-       pLVar2 != (LineRenderer *)0x0)) {
-      UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition
-                (pLVar2,0,*pVVar4,(MethodInfo *)0x0);
-      pMVar1 = (this->fields).worldObject;
-      pLVar2 = (this->fields).lineRenderer;
-      if (((pMVar1 != (MVTeleportGroup *)0x0) &&
-          (pMVar3 = (pMVar1->fields).teleporter2, pMVar3 != (MVTeleporter *)0x0)) &&
-         (pVVar4 = (Vector3 *)
-                   (*(code *)(pMVar3->klass->vtable).get_WorldPosition_1.method)
-                             (auStack_5,pMVar3,(pMVar3->klass->vtable).set_WorldPosition.methodPtr)
-         , pLVar2 != (LineRenderer *)0x0)) {
-        UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition
-                  (pLVar2,1,*pVVar4,(MethodInfo *)0x0);
-        return;
+    if ((pMVar1 != (MVTeleportGroup *)0x0) &&
+       (pMVar3 = (pMVar1->fields).teleporter1, pMVar3 != (MVTeleporter *)0x0)) {
+      puVar4 = (undefined8 *)
+               (*(pMVar3->klass->vtable).get_WorldPosition_1.methodPtr)
+                         (&uStack_5,pMVar3,(pMVar3->klass->vtable).get_WorldPosition_1.method);
+      if (pLVar2 != (LineRenderer *)0x0) {
+        uStack_6 = *puVar4;
+        fStack_7 = *(float *)(puVar4 + 1);
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::LineRenderer>_UnityEngine__LineRenderer_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pvVar8 = (pLVar2->fields)._._._.m_CachedPtr;
+        if (pvVar8 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)pLVar2,(MethodInfo *)0x0);
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
+        }
+        pcVar9 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0)) {
+          uVar10 = func_?(&UNK_?);
+          FUN_?(uVar10,0);
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
+        }
+        pcRam_? = pcVar9;
+        (*pcRam_?)(pvVar8,0,&uStack_6);
+        pMVar1 = (this->fields).worldObject;
+        pLVar2 = (this->fields).lineRenderer;
+        if ((pMVar1 != (MVTeleportGroup *)0x0) &&
+           (pMVar3 = (pMVar1->fields).teleporter2, pMVar3 != (MVTeleporter *)0x0)) {
+          puVar4 = (undefined8 *)
+                   (*(pMVar3->klass->vtable).get_WorldPosition_1.methodPtr)
+                             (auStack_11,pMVar3,(pMVar3->klass->vtable).get_WorldPosition_1.method);
+          if (pLVar2 == (LineRenderer *)0x0) {
+            FUN_?();
+            pcVar9 = (code *)swi(3);
+            (*pcVar9)();
+            return;
+          }
+          uStack_5 = *puVar4;
+          uStack_12 = *(undefined4 *)(puVar4 + 1);
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::LineRenderer>_UnityEngine__LineRenderer_
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pvVar8 = (pLVar2->fields)._._._.m_CachedPtr;
+          if (pvVar8 != (void *)0x0) {
+            pcVar9 = pcRam_?;
+            if ((pcRam_? == (code *)0x0) &&
+               (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0)) {
+              uVar10 = func_?(&UNK_?);
+              FUN_?(uVar10,0);
+              pcVar9 = (code *)swi(3);
+              (*pcVar9)();
+              return;
+            }
+            pcRam_? = pcVar9;
+            (*pcRam_?)(pvVar8,1,&uStack_5);
+            return;
+          }
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)pLVar2,(MethodInfo *)0x0);
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
+        }
       }
+      FUN_?();
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
+      return;
     }
   }
   else if (pMVar1 != (MVTeleportGroup *)0x0) {
     if ((MVTeleporter *)sender == (pMVar1->fields).teleporter1) {
-      index = 0;
+      uVar10 = 0;
     }
     else {
       if ((MVTeleporter *)sender != (pMVar1->fields).teleporter2) {
         return;
       }
-      index = 1;
+      uVar10 = 1;
     }
     if ((args != (PositionChangedEventArgs *)0x0) &&
        (pLVar2 = (this->fields).lineRenderer, pLVar2 != (LineRenderer *)0x0)) {
-      UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition
-                (pLVar2,index,(args->fields).NewPos,(MethodInfo *)0x0);
+      uStack_6._0_4_ = (args->fields).NewPos.x;
+      uStack_6._4_4_ = (args->fields).NewPos.y;
+      fStack_7 = (args->fields).NewPos.z;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::LineRenderer>_UnityEngine__LineRenderer_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pvVar8 = (pLVar2->fields)._._._.m_CachedPtr;
+      if (pvVar8 != (void *)0x0) {
+        pcVar9 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0)) {
+          uVar10 = func_?(&UNK_?);
+          FUN_?(uVar10,0);
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
+        }
+        pcRam_? = pcVar9;
+        (*pcRam_?)(pvVar8,uVar10,&uStack_6);
+        return;
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pLVar2,(MethodInfo *)0x0);
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
       return;
     }
+    FUN_?();
+    pcVar9 = (code *)swi(3);
+    (*pcVar9)();
+    return;
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

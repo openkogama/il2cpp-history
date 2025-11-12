@@ -10,21 +10,28 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
                 *this,_Il2CppFullySharedGenericType *value,MethodInfo *method)
 
 {
-  pMVar1 = method;
-  uVar2 = (method->klass->rgctx_data[2].klass)->actualSize;
-  func_?();
-  p_Var4 = (_Il2CppFullySharedGenericType *)&value;
-  if ((int)(pMVar1->klass->rgctx_data[2].method)->return_type < 0) {
-    p_Var4 = value;
+  apuStack_1[0] = &UNK_?;
+  p_StackX_10 = (_Il2CppFullySharedGenericType__Class *)value;
+  lVar2 = FUN_?();
+  lVar2 = -lVar2;
+  p_Var7 = (_Il2CppFullySharedGenericType__Class *)(&stack0xffffffffffffffe8 + lVar2);
+  p_Var6 = (_Il2CppFullySharedGenericType *)&p_StackX_10;
+  if (*(int *)&(method->klass->rgctx_data[2].method)->return_type < 0) {
+    p_Var6 = value;
   }
-  func_?(&stack0xfffffff0,p_Var4,uVar2);
-  value = (_Il2CppFullySharedGenericType *)&stack0xfffffff0;
-  if (-1 < (int)(pMVar1->klass->rgctx_data[2].method)->return_type) {
-    value = unaff_EDI;
+  *(undefined **)((longlong)apuStack_1 + lVar2) = &UNK_?;
+  FUN_?(p_Var7,p_Var6);
+  if (-1 < *(int *)&(method->klass->rgctx_data[2].method)->return_type) {
+    p_Var7 = (_Il2CppFullySharedGenericType__Class *)(p_Var7->_0).image;
   }
-  pMVar3 = pMVar1->klass->rgctx_data[3].method;
-  (*pMVar3->invoker_method)
-            ((pMVar1->klass->rgctx_data[3].method)->methodPointer,pMVar3,this,&value,value);
+  pIVar3 = method->klass;
+  *(_Il2CppFullySharedGenericType__Class **)((longlong)alStack_4 + lVar2) = p_Var7;
+  pMVar5 = pIVar3->rgctx_data[3].method;
+  pIVar6 = pMVar5->invoker_method;
+  pIVar7 = pMVar5->methodPointer;
+  *(undefined **)((longlong)apuStack_1 + lVar2) = &UNK_?;
+  p_StackX_10 = p_Var7;
+  (*pIVar6)(pIVar7,pMVar5,this,&p_StackX_10,*(void **)((longlong)alStack_4 + lVar2));
   return;
 }
 

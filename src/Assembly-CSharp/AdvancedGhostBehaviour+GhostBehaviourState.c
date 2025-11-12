@@ -8,8 +8,9 @@ Type * Assembly-CSharp.dll::AdvancedGhostBehaviour+GhostBehaviourState::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeRef__AdvancedGhostBehaviour__Die);
-    func_?(&TypeInfo__System__Type);
+    FUN_?(&TypeRef__AdvancedGhostBehaviour__Die);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (ghostBehaviour != (AdvancedGhostBehaviour *)0x0) {
@@ -19,24 +20,38 @@ Type * Assembly-CSharp.dll::AdvancedGhostBehaviour+GhostBehaviourState::
       cVar2 = (*(pFVar1->fields)._._.invoke_impl)
                         ((pFVar1->fields)._._.method_code,(pFVar1->fields)._._.method);
       if (cVar2 == '\0') {
-        pTVar3 = (Type *)(*(code *)(this->klass->vtable).__unknown_1.method)
-                                   (this,ghostBehaviour,(this->klass->vtable).__unknown_2.methodPtr)
-        ;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        pTVar3 = (Type *)(*(this->klass->vtable).__unknown_1.methodPtr)
+                                   (this,ghostBehaviour,(this->klass->vtable).__unknown_1.method);
         return pTVar3;
       }
     }
-    handle = TypeRef__AdvancedGhostBehaviour__Die;
-    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Type);
+    pIVar4 = TypeRef__AdvancedGhostBehaviour__Die;
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
     }
-    pTVar3 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                       ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
+    if (pIVar4 == (Il2CppType *)0x0) {
+      return (Type *)0x0;
+    }
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    lVar5 = FUN_?(pIVar4,1);
+    apTStackX_10[0] = (Type *)0x0;
+    cVar2 = FUN_?(lVar5 + 0x20,&stack0x00000008,apTStackX_10,in_R9,unaff_RBX);
+    if (cVar2 != '\0') {
+      return apTStackX_10[0];
+    }
+    lVar6 = FUN_?(uRam_?);
+    *(longlong *)(lVar6 + 0x10) = lVar5 + 0x20;
+    pTVar3 = (Type *)FUN_?();
     return pTVar3;
   }
 code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  pTVar3 = (Type *)(*pcVar4)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  pTVar3 = (Type *)(*pcVar7)();
   return pTVar3;
 }
 

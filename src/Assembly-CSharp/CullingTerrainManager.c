@@ -7,10 +7,16 @@ void Assembly-CSharp.dll::CullingTerrainManager::CullingTerrainManager_ChunkInst
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__Remove_MV__WorldObject__IntVector_
-                   );
-    func_?(0x6058);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__Remove_MV__WorldObject__IntVector_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__get_Item_MV__WorldObject__IntVector_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (chunkInstancesChanged == (ChunkInstancesChanged *)0x0) goto code_?;
@@ -18,82 +24,79 @@ void Assembly-CSharp.dll::CullingTerrainManager::CullingTerrainManager_ChunkInst
     pDVar1 = (this->fields).terrainCullingSubscriberBases;
     if (pDVar1 == (Dictionary_2_MV_WorldObject_IntVector_CullingSubscriberTerrainChunk_ *)0x0)
     goto code_?;
+    IStackX_18.x = (chunkInstancesChanged->fields).chunkPos.x;
+    IStackX_18.y = (chunkInstancesChanged->fields).chunkPos.y;
+    IStackX_18.z = (chunkInstancesChanged->fields).chunkPos.z;
     unSubscriber = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
                    IntVector,System::Object]::
                    Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
                              ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar1,
-                              (chunkInstancesChanged->fields).chunkPos,
+                              &IStackX_18,
                               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__get_Item_MV__WorldObject__IntVector_
                              );
     if (unSubscriber == (Object *)0x0) goto code_?;
     if (cRam_? == '\0') {
-      func_?();
+      FUN_?(&TypeInfo__CullingApiWrapper);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__CullingApiWrapper);
+    if (*(int *)&(TypeInfo__CullingApiWrapper->_1).field_0x1c == 0) {
+      FUN_?();
     }
     CullingApiWrapper::CullingApiWrapper_UnSubscribe
               ((ICullingSubscriber *)unSubscriber,(MethodInfo *)0x0);
     pDVar1 = (this->fields).terrainCullingSubscriberBases;
     if (pDVar1 == (Dictionary_2_MV_WorldObject_IntVector_CullingSubscriberTerrainChunk_ *)0x0)
     goto code_?;
+    IStackX_18.x = (chunkInstancesChanged->fields).chunkPos.x;
+    IStackX_18.y = (chunkInstancesChanged->fields).chunkPos.y;
+    IStackX_18.z = (chunkInstancesChanged->fields).chunkPos.z;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::
     Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__Remove
-              ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar1,
-               (chunkInstancesChanged->fields).chunkPos,
+              ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar1,&IStackX_18,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__Remove_MV__WorldObject__IntVector_
               );
   }
-  if ((chunkInstancesChanged->fields).changeType == 0) {
-    this_00 = (this->fields).chunkInstances;
-    pIVar2 = &(chunkInstancesChanged->fields).chunkPos;
-    uVar3 = pIVar2->x;
-    uVar4 = pIVar2->y;
-    intVector.y = uVar4;
-    intVector.x = uVar3;
-    chunkPos = *pIVar2;
-    if (this_00 == (ChunkInstances *)0x0) {
-code_?:
-      func_?();
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
+  if ((chunkInstancesChanged->fields).changeType != 0) {
+    return;
+  }
+  pCVar2 = (this->fields).chunkInstances;
+  uVar3._0_2_ = (chunkInstancesChanged->fields).chunkPos.x;
+  uVar3._2_2_ = (chunkInstancesChanged->fields).chunkPos.y;
+  iVar4 = (chunkInstancesChanged->fields).chunkPos.z;
+  if (pCVar2 != (ChunkInstances *)0x0) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>__get_Item_MV__WorldObject__IntVector_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pDVar5 = (pCVar2->fields).chunkInstances;
+    if (pDVar5 != (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)
+                  0x0) {
+      IStackX_18._0_4_ = uVar3;
+      IStackX_18.z = iVar4;
+      puVar6 = (undefined8 *)FUN_?(auStack_7,pDVar5,&IStackX_18);
+      CStack_8.guid._0_8_ = *puVar6;
+      CStack_8.guid._8_8_ = puVar6[1];
+      CStack_8.gameObject = (GameObject *)puVar6[2];
+      CStack_8.collider = (BoxCollider *)puVar6[3];
+      CStack_8.renderer = (MeshRenderer *)puVar6[4];
+      CStack_8.filter = (MeshFilter *)puVar6[5];
+      CStack_8._48_8_ = puVar6[6];
+      IStackX_18._0_4_ = uVar3;
+      IStackX_18.z = iVar4;
+      CullingTerrainManager_CreateCullingSubscriber(this,&IStackX_18,&CStack_8,(MethodInfo *)0x0);
       return;
     }
-    intVector.z = (chunkInstancesChanged->fields).chunkPos.z;
-    pCVar6 = ChunkInstances::ChunkInstances_GetChunk
-                        ((ChunkInstances_ChunkInstanceVariables *)&stack0xffffffd8,this_00,intVector
-                         ,(MethodInfo *)0x0);
-    uVar7 = (pCVar6->guid)._j;
-    uVar8 = (pCVar6->guid)._k;
-    chunk.guid._k = uVar8;
-    chunk.guid._j = uVar7;
-    uVar9 = (pCVar6->guid)._a;
-    uVar10 = (pCVar6->guid)._b;
-    uVar11 = (pCVar6->guid)._c;
-    uVar12 = (pCVar6->guid)._d;
-    uVar13 = (pCVar6->guid)._e;
-    uVar14 = (pCVar6->guid)._f;
-    uVar15 = (pCVar6->guid)._g;
-    uVar16 = (pCVar6->guid)._h;
-    uVar17 = (pCVar6->guid)._i;
-    chunk.guid._i = uVar17;
-    chunk.guid._h = uVar16;
-    chunk.guid._g = uVar15;
-    chunk.guid._f = uVar14;
-    chunk.guid._e = uVar13;
-    chunk.guid._d = uVar12;
-    chunk.guid._c = uVar11;
-    chunk.guid._b = uVar10;
-    chunk.guid._a = uVar9;
-    chunk.gameObject = pCVar6->gameObject;
-    chunk.collider = pCVar6->collider;
-    chunk.renderer = pCVar6->renderer;
-    chunk.filter = pCVar6->filter;
-    chunk.transparent = pCVar6->transparent;
-    chunk._33_3_ = *(undefined3 *)&pCVar6->field_0x21;
-    CullingTerrainManager_CreateCullingSubscriber(this,chunkPos,chunk,(MethodInfo *)0x0);
   }
+code_?:
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -105,28 +108,41 @@ void Assembly-CSharp.dll::CullingTerrainManager::CullingTerrainManager_Clear
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__Clear__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__Clear__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   CullingTerrainManager_DestroyCullingSubscribers(this,(MethodInfo *)0x0);
-  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-             *)(this->fields).terrainCullingSubscriberBases;
-  if (this_00 !=
-      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-       *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::StyleSheets::
-    StyleSheetCache+SheetHandleKey,System::Object]::
-    Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__Clear
-              (this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__Clear__
-              );
+  pDVar1 = (this->fields).terrainCullingSubscriberBases;
+  if (pDVar1 != (Dictionary_2_MV_WorldObject_IntVector_CullingSubscriberTerrainChunk_ *)0x0) {
+    length = (pDVar1->fields)._count;
+    if (0 < length) {
+      pIVar2 = (pDVar1->fields)._buckets;
+      if (pIVar2 == (Int32__Array *)0x0) {
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      mscorlib.dll::System::Array::Array_Clear
+                ((Array *)(pDVar1->fields)._buckets,0,(int32_t)pIVar2->max_length,(MethodInfo *)0x0)
+      ;
+      (pDVar1->fields)._count = 0;
+      (pDVar1->fields)._freeCount = 0;
+      (pDVar1->fields)._freeList = -1;
+      mscorlib.dll::System::Array::Array_Clear
+                ((Array *)(pDVar1->fields)._entries,0,length,(MethodInfo *)0x0);
+    }
+    piVar4 = &(pDVar1->fields)._version;
+    *piVar4 = *piVar4 + 1;
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -134,67 +150,109 @@ void Assembly-CSharp.dll::CullingTerrainManager::CullingTerrainManager_Clear
 /* Void CreateCullingSubscriber(IntVector, ChunkInstances+ChunkInstanceVariables) */
 
 void Assembly-CSharp.dll::CullingTerrainManager::CullingTerrainManager_CreateCullingSubscriber
-               (CullingTerrainManager *this,IntVector chunkPos,
-               ChunkInstances_ChunkInstanceVariables chunk,MethodInfo *method)
+               (CullingTerrainManager *this,IntVector *chunkPos,
+               ChunkInstances_ChunkInstanceVariables *chunk,MethodInfo *method)
 
 {
-  key = chunkPos;
+  uVar1 = SUB84(method,0);
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CullingSubscriberTerrainChunk);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__Add_MV__WorldObject__IntVector__CullingSubscriberTerrainChunk_
-                   );
+    FUN_?(&TypeInfo__CullingSubscriberTerrainChunk,chunkPos,chunk,uVar1);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__Add_MV__WorldObject__IntVector__CullingSubscriberTerrainChunk_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (chunk.collider != (BoxCollider *)0x0) {
-    pBVar1 = UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_get_bounds
-                       ((Bounds *)&stack0xffffffcc,(Collider *)chunk.collider,(MethodInfo *)0x0);
-    pMVar2 = (this->fields).cubeModelBase;
-    uVar3 = (pBVar1->m_Extents).z;
-    uVar4 = (pBVar1->m_Center).x;
-    uVar5 = (pBVar1->m_Center).y;
-    uVar6 = (pBVar1->m_Center).z;
-    bounds.m_Center.z = (float)uVar6;
-    bounds.m_Center.y = (float)uVar5;
-    bounds.m_Center.x = (float)uVar4;
-    uVar7 = (pBVar1->m_Extents).x;
-    uVar8 = (pBVar1->m_Extents).y;
-    bounds.m_Extents.y = (float)uVar8;
-    bounds.m_Extents.x = (float)uVar7;
-    this_01 = (CullingSubscriberTerrainChunk *)
-              func_?(TypeInfo__CullingSubscriberTerrainChunk);
+  obj = chunk->collider;
+  if (obj != (BoxCollider *)0x0) {
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__CullingApiWrapper);
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Collider>_UnityEngine__Collider_
+                   );
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)this_01,ExceptionArgument__Enum_obj,in_stack_9);
-    (this_01->fields).cubeModelBase = pMVar2;
-    (this_01->fields).chunkPosition.x = chunkPos.x;
-    (this_01->fields).chunkPosition.y = chunkPos.y;
-    (this_01->fields).chunkPosition.z = chunkPos.z;
-    func_?(&(this_01->fields).cubeModelBase,pMVar2);
-    if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__CullingApiWrapper);
+    pvVar2 = (obj->fields)._._._.m_CachedPtr;
+    if (pvVar2 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pcVar3 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pcRam_? = pcVar3;
+    (*pcRam_?)(pvVar2);
+    pMVar5 = (this->fields).cubeModelBase;
+    this_01 = (CullingSubscriberTerrainChunk *)
+              FUN_?(TypeInfo__CullingSubscriberTerrainChunk);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__CullingApiWrapper);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    bVar6 = iRam_? != 0;
+    iVar7 = chunkPos->y;
+    iVar8 = chunkPos->z;
+    (this_01->fields).chunkPosition.x = chunkPos->x;
+    (this_01->fields).chunkPosition.y = iVar7;
+    (this_01->fields).chunkPosition.z = iVar8;
+    (this_01->fields).cubeModelBase = pMVar5;
+    if (bVar6) {
+      uVar9 = (uint)((ulonglong)&(this_01->fields).cubeModelBase >> 0xc);
+      puVar10 = (ulonglong *)((ulonglong)((uVar9 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar11 = *puVar10;
+        LOCK();
+        uVar12 = *puVar10;
+        if (uVar11 == uVar12) {
+          *puVar10 = uVar11 | 1L << (uVar9 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar11 != uVar12);
+    }
+    if (*(int *)&(TypeInfo__CullingApiWrapper->_1).field_0x1c == 0) {
+      FUN_?();
     }
     CullingApiWrapper::CullingApiWrapper_Subscribe((ICullingSubscriber *)this_01,(MethodInfo *)0x0);
-    bounds.m_Extents.z = (float)uVar3;
+    aBStack_13[0].m_Center.x = 0.0;
+    aBStack_13[0].m_Center.y = 0.0;
+    aBStack_13[0].m_Center.z = 0.0;
+    aBStack_13[0].m_Extents.x = 0.0;
+    aBStack_13[0].m_Extents.y = 0.0;
+    aBStack_13[0].m_Extents.z = 0.0;
     CullingSubscriberTerrainChunk::CullingSubscriberTerrainChunk_Setup
-              (this_01,bounds,(MethodInfo *)0x0);
+              (this_01,aBStack_13,(MethodInfo *)0x0);
     this_00 = (this->fields).terrainCullingSubscriberBases;
     if (this_00 != (Dictionary_2_MV_WorldObject_IntVector_CullingSubscriberTerrainChunk_ *)0x0) {
+      IStackX_18.x = chunkPos->x;
+      IStackX_18.y = chunkPos->y;
+      IStackX_18.z = chunkPos->z;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::IntVector,System::
-      Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__Add
-                ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)this_00,key,
-                 (Object *)this_01,
+      Object]::Dictionary_2_MV_WorldObject_IntVector_System_Object__TryInsert
+                ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)this_00,&IStackX_18,
+                 (Object *)this_01,CONCAT31((int3)((uint)uVar1 >> 8),2),
                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__Add_MV__WorldObject__IntVector__CullingSubscriberTerrainChunk_
-                );
+                 ->klass->rgctx_data[0x22].method);
       return;
     }
   }
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -205,95 +263,96 @@ void Assembly-CSharp.dll::CullingTerrainManager::CullingTerrainManager_DestroyCu
                (CullingTerrainManager *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff9c;
-  puVar5 = &stack0xffffff9c;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__get_Value__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__get_Value__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  DStack_6._dictionary = (Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)0x0;
-  DStack_6._version = 0;
-  DStack_6._index = 0;
-  DStack_6._current.key.x = 0;
-  DStack_6._current.key.y = 0;
-  DStack_6._getEnumeratorRetType = 0;
-  DStack_6._current.key.z = 0;
-  DStack_6._current._6_2_ = 0;
-  DStack_6._current.value = (Object *)0x0;
-  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-             *)(this->fields).terrainCullingSubscriberBases;
-  if (this_00 !=
-      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-       *)0x0) {
-    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
-             StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
-             Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                       (&DStack_8,this_00,
-                        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__GetEnumerator__
-                       );
-    uStack_9 = 0;
-    DStack_6._dictionary =
-         (Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar7->_dictionary;
-    DStack_6._version = pDVar7->_version;
-    DStack_6._index = pDVar7->_index;
-    DStack_6._current.key._0_4_ = (pDVar7->_current).key.sheetInstanceID;
-    DStack_6._current._4_8_ = *(undefined8 *)&(pDVar7->_current).key.index;
-    DStack_6._getEnumeratorRetType = pDVar7->_getEnumeratorRetType;
-    uStack_1 = 1;
-    pDStack_10 = &DStack_6;
-    while( true ) {
-      bVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[MV::
-              WorldObject::IntVector,System::Object]::
-              Dictionary_2_TKey_TValue_Enumerator_MV_WorldObject_IntVector_System_Object__MoveNext
-                        (&DStack_6,
-                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__MoveNext__
-                        );
-      if (bVar11 == 0) {
-        uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&DStack_6,
-                   (ExceptionArgument__Enum)
-                   MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__Dispose__
-                   ,unaff_EDI);
-        *unaff_FS_OFFSET = uStack_3;
-        return;
+  pDStack_1 = (this->fields).terrainCullingSubscriberBases;
+  if (pDStack_1 == (Dictionary_2_MV_WorldObject_IntVector_CullingSubscriberTerrainChunk_ *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  if (iRam_? != 0) {
+    uVar3 = (uint)((ulonglong)&pDStack_1 >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
       }
-      unSubscriber = DStack_6._current.value;
-      if (DStack_6._current.value == (Object *)0x0) break;
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__CullingApiWrapper);
-        cRam_? = '\x01';
-      }
-      if ((TypeInfo__CullingApiWrapper->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__CullingApiWrapper);
-      }
-      CullingApiWrapper::CullingApiWrapper_UnSubscribe
-                ((ICullingSubscriber *)unSubscriber,(MethodInfo *)0x0);
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
+  uStack_7 = (ulonglong)(uint)(pDStack_1->fields)._version;
+  uStack_8 = 2;
+  uStack_9 = 0;
+  uStack_10 = 0;
+  DStack_11._version = (undefined4)uStack_7;
+  DStack_11._index = uStack_7._4_4_;
+  DStack_11._current.key.x = 0;
+  DStack_11._current.key.y = 0;
+  DStack_11._current.key.z = 0;
+  DStack_11._current._6_2_ = 0;
+  DStack_11._current.value = (Object *)0x0;
+  DStack_11._getEnumeratorRetType = 2;
+  DStack_11._36_4_ = 0;
+  DStack_11._dictionary = (Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDStack_1;
+  while( true ) {
+    bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[MV::
+            WorldObject::IntVector,System::Object]::
+            Dictionary_2_TKey_TValue_Enumerator_MV_WorldObject_IntVector_System_Object__MoveNext
+                      (&DStack_11,
+                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__MoveNext__
+                      );
+    unSubscriber = DStack_11._current.value;
+    if (bVar12 == 0) {
+      return;
     }
+    if (DStack_11._current.value == (Object *)0x0) break;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__CullingApiWrapper);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__CullingApiWrapper->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    CullingApiWrapper::CullingApiWrapper_UnSubscribe
+              ((ICullingSubscriber *)unSubscriber,(MethodInfo *)0x0);
   }
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  FUN_?();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -305,167 +364,200 @@ void Assembly-CSharp.dll::CullingTerrainManager::CullingTerrainManager_OnChanged
                MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff70;
-  puVar5 = &stack0xffffff70;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__ContainsKey_MV__WorldObject__IntVector_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__get_Item_MV__WorldObject__IntVector_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MV::WorldObject::IntVector>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MV::WorldObject::IntVector>__MoveNext__
-                   );
-    func_?(0x38c0);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>__GetEnumerator__
-                   );
-    func_?(&StringLiteral_Changed_chunk_does_not_yet_exist);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__ContainsKey_MV__WorldObject__IntVector_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__get_Item_MV__WorldObject__IntVector_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MV::WorldObject::IntVector>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MV::WorldObject::IntVector>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MV::WorldObject::IntVector>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  HStack_6._current.z = 0;
-  HStack_6._18_2_ = 0;
-  HStack_6._set = (HashSet_1_MV_WorldObject_IntVector_ *)0x0;
-  HStack_6._index = 0;
-  HStack_6._version = 0;
-  HStack_6._current.x = 0;
-  HStack_6._current.y = 0;
-  if (chunksChanged != (HashSet_1_MV_WorldObject_IntVector_ *)0x0) {
-    pHVar7 = System.Core.dll::System::Collections::Generic::HashSet`1[MV::WorldObject::IntVector]::
-             HashSet_1_MV_WorldObject_IntVector__GetEnumerator
-                       ((HashSet_1_T_Enumerator_MV_WorldObject_IntVector_ *)(auStack_8 + 4),
-                        chunksChanged,
-                        MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::IntVector>__GetEnumerator__
-                       );
-    uStack_9 = 0;
-    HStack_6._set = pHVar7->_set;
-    HStack_6._index = pHVar7->_index;
-    HStack_6._version = pHVar7->_version;
-    HStack_6._current.x = (pHVar7->_current).x;
-    HStack_6._current.y = (pHVar7->_current).y;
-    HStack_6._16_4_ = *(undefined4 *)&(pHVar7->_current).z;
-    uStack_1 = 1;
-    pHStack_10 = &HStack_6;
-    while( true ) {
-      while( true ) {
-        bVar11 = System.Core.dll::System::Collections::Generic::HashSet`1[T]+Enumerator[MV::
-                WorldObject::IntVector]::HashSet_1_T_Enumerator_MV_WorldObject_IntVector__MoveNext
-                          (&HStack_6,
-                           MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MV::WorldObject::IntVector>__MoveNext__
-                          );
-        uVar12 = HStack_6._current._0_4_;
-        if (bVar11 == 0) {
-          uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&HStack_6,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MV::WorldObject::IntVector>__Dispose__
-                     ,in_stack_13);
-          *unaff_FS_OFFSET = uStack_3;
-          return;
-        }
-        iStack_14 = HStack_6._current.z;
-        uStack_15 = HStack_6._18_2_;
-        if ((this->fields).terrainCullingSubscriberBases ==
-            (Dictionary_2_MV_WorldObject_IntVector_CullingSubscriberTerrainChunk_ *)0x0)
-        goto code_?;
-        key.z = HStack_6._current.z;
-        key.x = HStack_6._current.x;
-        key.y = HStack_6._current.y;
-        bVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
-                IntVector,System::Object]::
-                Dictionary_2_MV_WorldObject_IntVector_System_Object__ContainsKey
-                          ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)
-                           (this->fields).terrainCullingSubscriberBases,key,
-                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__ContainsKey_MV__WorldObject__IntVector_
-                          );
-        uVar16 = HStack_6._current._0_4_;
-        if (bVar11 != 0) break;
-        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Debug);
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-                  ((Object *)StringLiteral_Changed_chunk_does_not_yet_exist,(MethodInfo *)0x0);
+  if (chunksChanged == (HashSet_1_MV_WorldObject_IntVector_ *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)&uStack_3 >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar2 & 0x3f);
       }
-      in_stack_13 = (MethodInfo *)(this->fields).terrainCullingSubscriberBases;
-      if (in_stack_13 == (MethodInfo *)0x0) break;
-      key_00.z = (int16_t)_iStack_18;
-      HStack_6._current.x = (int16_t)uVar12;
-      HStack_6._current.y = SUB42(uVar12,2);
-      key_00.x = HStack_6._current.x;
-      key_00.y = HStack_6._current.y;
-      HStack_6._current._0_4_ = uVar16;
-      pCStack_17 = (CullingSubscriberTerrainChunk *)
-                   mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
-                   IntVector,System::Object]::
-                   Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
-                             ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)
-                              in_stack_13,key_00,
-                              MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__get_Item_MV__WorldObject__IntVector_
-                             );
-      uVar16 = HStack_6._current._0_4_;
-      this_00 = (this->fields).chunkInstances;
-      if (this_00 == (ChunkInstances *)0x0) break;
-      intVector.z = (int16_t)_iStack_18;
-      HStack_6._current.x = (int16_t)uVar12;
-      HStack_6._current.y = SUB42(uVar12,2);
-      intVector.x = HStack_6._current.x;
-      intVector.y = HStack_6._current.y;
-      HStack_6._current._0_4_ = uVar16;
-      pCVar18 = ChunkInstances::ChunkInstances_GetChunk
-                         (&CStack_19,this_00,intVector,(MethodInfo *)0x0);
-      iStack_20 = (pCVar18->guid)._a;
-      uStack_21._0_2_ = (pCVar18->guid)._b;
-      uStack_21._2_2_ = (pCVar18->guid)._c;
-      uStack_22._0_1_ = (pCVar18->guid)._d;
-      uStack_22._1_1_ = (pCVar18->guid)._e;
-      uStack_22._2_1_ = (pCVar18->guid)._f;
-      uStack_22._3_1_ = (pCVar18->guid)._g;
-      auStack_8._0_4_ = *(undefined4 *)&(pCVar18->guid)._h;
-      fStack_23 = *(float *)&pCVar18->transparent;
-      if (pCVar18->renderer == (MeshRenderer *)0x0) break;
-      pBVar24 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_bounds
-                         ((Bounds *)auStack_8,(Renderer *)pCVar18->renderer,(MethodInfo *)0x0);
-      if (pCStack_17 == (CullingSubscriberTerrainChunk *)0x0) break;
-      CullingSubscriberTerrainChunk::CullingSubscriberTerrainChunk_Setup
-                (pCStack_17,*pBVar24,(MethodInfo *)0x0);
-      uVar16 = HStack_6._current._0_4_;
-      this_01 = (this->fields).terrainCullingSubscriberBases;
-      if (this_01 == (Dictionary_2_MV_WorldObject_IntVector_CullingSubscriberTerrainChunk_ *)0x0)
-      break;
-      key_01.z = (int16_t)_iStack_18;
-      HStack_6._current.x = (int16_t)uVar12;
-      HStack_6._current.y = SUB42(uVar12,2);
-      key_01.x = HStack_6._current.x;
-      key_01.y = HStack_6._current.y;
-      HStack_6._current._0_4_ = uVar16;
-      this_02 = (CullingSubscriberTerrainChunk *)
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
-                IntVector,System::Object]::
-                Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
-                          ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)this_01,key_01,
-                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__get_Item_MV__WorldObject__IntVector_
-                          );
-      if (this_02 == (CullingSubscriberTerrainChunk *)0x0) break;
-      CullingSubscriberTerrainChunk::CullingSubscriberTerrainChunk_HandleChange
-                (this_02,(MethodInfo *)0x0);
-    }
+      UNLOCK();
+    } while (uVar5 != uVar6);
   }
+  ppHStack_7 = (HashSet_1_MV_WorldObject_IntVector_ **)
+                 ((ulonglong)(uint)(chunksChanged->fields)._version << 0x20);
+  uStack_8 = 0;
+  lStack_9 = (longlong)ppHStack_7;
+  uStack_10 = 0;
+  uStack_3 = 0;
+  ppHStack_7 = &pHStack_11;
+  pHStack_11 = chunksChanged;
+  while( true ) {
+    while( true ) {
+      cVar12 = FUN_?(&pHStack_11,
+                             MethodInfo__System__Collections__Generic__HashSet_1_T___Enumerator<MV::WorldObject::IntVector>__MoveNext__
+                            );
+      uVar13 = uStack_10;
+      if (cVar12 == '\0') {
+        return;
+      }
+      uVar14 = (undefined4)uStack_10;
+      iVar15 = uStack_10._4_2_;
+      pDVar16 = (this->fields).terrainCullingSubscriberBases;
+      if (pDVar16 == (Dictionary_2_MV_WorldObject_IntVector_CullingSubscriberTerrainChunk_ *)0x0)
+      goto code_?;
+      aIStack_17[0].x = (int16_t)uStack_10;
+      aIStack_17[0].y = uStack_10._2_2_;
+      aIStack_17[0].z = uStack_10._4_2_;
+      uStack_10 = uVar13;
+      iVar18 = mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+               IntVector,System::Object]::
+               Dictionary_2_MV_WorldObject_IntVector_System_Object__FindEntry
+                         ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar16,aIStack_17
+                          ,MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__ContainsKey_MV__WorldObject__IntVector_
+                           ->klass->rgctx_data[0x21].method);
+      uVar13 = uStack_10;
+      if (-1 < iVar18) break;
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
+                ((Object *)StringLiteral_Changed_chunk_does_not_yet_exist,(MethodInfo *)0x0);
+    }
+    pDVar16 = (this->fields).terrainCullingSubscriberBases;
+    if (pDVar16 == (Dictionary_2_MV_WorldObject_IntVector_CullingSubscriberTerrainChunk_ *)0x0)
+    break;
+    uStack_10._0_2_ = (int16_t)uVar14;
+    uStack_10._2_2_ = SUB42(uVar14,2);
+    aIStack_19[0].x = (int16_t)uStack_10;
+    aIStack_19[0].y = uStack_10._2_2_;
+    aIStack_19[0].z = iVar15;
+    uStack_10 = uVar13;
+    pCVar20 = (CullingSubscriberTerrainChunk *)
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+              IntVector,System::Object]::
+              Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                        ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar16,aIStack_19,
+                         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__get_Item_MV__WorldObject__IntVector_
+                        );
+    pCVar21 = (this->fields).chunkInstances;
+    if (pCVar21 == (ChunkInstances *)0x0) {
 code_?:
-  func_?();
-  pcVar25 = (code *)swi(3);
-  (*pcVar25)();
+      FUN_?();
+      break;
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>__get_Item_MV__WorldObject__IntVector_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uVar13 = uStack_10;
+    if ((pCVar21->fields).chunkInstances ==
+        (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)0x0) {
+code_?:
+      FUN_?();
+      goto code_?;
+    }
+    uStack_10._0_2_ = (int16_t)uVar14;
+    uStack_10._2_2_ = SUB42(uVar14,2);
+    aIStack_22[0].x = (int16_t)uStack_10;
+    aIStack_22[0].y = uStack_10._2_2_;
+    aIStack_22[0].z = iVar15;
+    uStack_10 = uVar13;
+    lVar23 = FUN_?(auStack_24);
+    if (*(Renderer **)(lVar23 + 0x20) == (Renderer *)0x0) {
+code_?:
+      FUN_?();
+      goto code_?;
+    }
+    pBVar25 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_bounds
+                        (&BStack_26,*(Renderer **)(lVar23 + 0x20),(MethodInfo *)0x0);
+    if (pCVar20 == (CullingSubscriberTerrainChunk *)0x0) {
+code_?:
+      FUN_?();
+      goto code_?;
+    }
+    aBStack_27[0].m_Center.x = (pBVar25->m_Center).x;
+    aBStack_27[0].m_Center.y = (pBVar25->m_Center).y;
+    aBStack_27[0]._8_8_ = *(undefined8 *)&(pBVar25->m_Center).z;
+    aBStack_27[0].m_Extents.y = (pBVar25->m_Extents).y;
+    aBStack_27[0].m_Extents.z = (pBVar25->m_Extents).z;
+    CullingSubscriberTerrainChunk::CullingSubscriberTerrainChunk_Setup
+              (pCVar20,aBStack_27,(MethodInfo *)0x0);
+    uVar13 = uStack_10;
+    pDVar16 = (this->fields).terrainCullingSubscriberBases;
+    if (pDVar16 == (Dictionary_2_MV_WorldObject_IntVector_CullingSubscriberTerrainChunk_ *)0x0) {
+code_?:
+      FUN_?();
+      goto code_?;
+    }
+    uStack_10._0_2_ = (int16_t)uVar14;
+    uStack_10._2_2_ = SUB42(uVar14,2);
+    aIStack_28[0].x = (int16_t)uStack_10;
+    aIStack_28[0].y = uStack_10._2_2_;
+    aIStack_28[0].z = iVar15;
+    uStack_10 = uVar13;
+    pCVar20 = (CullingSubscriberTerrainChunk *)
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
+              IntVector,System::Object]::
+              Dictionary_2_MV_WorldObject_IntVector_System_Object__get_Item
+                        ((Dictionary_2_MV_WorldObject_IntVector_System_Object_ *)pDVar16,aIStack_28,
+                         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__get_Item_MV__WorldObject__IntVector_
+                        );
+    if (pCVar20 == (CullingSubscriberTerrainChunk *)0x0) {
+      FUN_?();
+      goto code_?;
+    }
+    CullingSubscriberTerrainChunk::CullingSubscriberTerrainChunk_HandleChange
+              (pCVar20,(MethodInfo *)0x0);
+  }
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -477,63 +569,109 @@ void Assembly-CSharp.dll::CullingTerrainManager::CullingTerrainManager__ctor
                MVCubeModelBase *cubeModelBase,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>
-                   );
-    func_?(&
-                    MethodInfo__CullingTerrainManager__ChunkInstancesOnChanged_System__Object__ChunkInstancesChanged_
-                   );
-    func_?(&
-                    MethodInfo__CullingTerrainManager__OnChanged_System__Collections__Generic__HashSet<MV::WorldObject::IntVector>_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>
-                   );
-    func_?(&TypeInfo__System__EventHandler<ChunkInstancesChanged>);
-    func_?(&TypeInfo__System__IDisposable);
-    func_?(&TypeInfo__System__Collections__IEnumerable);
-    func_?(&TypeInfo__System__Collections__IEnumerator);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>__get_Key__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>__get_Value__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
-                   );
+    FUN_?(&
+                  TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__CullingTerrainManager__ChunkInstancesOnChanged_System__Object__ChunkInstancesChanged_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__CullingTerrainManager__OnChanged_System__Collections__Generic__HashSet<MV::WorldObject::IntVector>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__EventHandler<ChunkInstancesChanged>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__IDisposable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__IEnumerable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__IEnumerator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>__get_Key__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>__get_Value__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  alStack_1[0] = 0;
   this_01 = (Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>
-                           );
+            FUN_?(
+                         TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>
+                         );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[MV::WorldObject::
   IntVector,ChunkInstances+ChunkInstanceVariables]::
   Dictionary_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables___ctor
             (this_01,
              MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::IntVector,_CullingSubscriberTerrainChunk>__Dictionary__
             );
-  method_00 = (MethodInfo *)&(this->fields).terrainCullingSubscriberBases;
   (this->fields).terrainCullingSubscriberBases =
        (Dictionary_2_MV_WorldObject_IntVector_CullingSubscriberTerrainChunk_ *)this_01;
-  func_?(method_00,this_01);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).terrainCullingSubscriberBases >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
+  iVar7 = iRam_?;
   (this->fields).chunkInstances = chunkInstances;
-  func_?(&this->fields,chunkInstances);
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
   this_00 = (this->fields).chunkInstances;
-  this_02 = (EventHandler_1_Object_ *)
-            func_?(TypeInfo__System__EventHandler<ChunkInstancesChanged>);
-  mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
+  this_02 = (UnityAction_2_System_Object_System_Object_ *)
+            FUN_?(TypeInfo__System__EventHandler<ChunkInstancesChanged>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+  UnityAction_2_System_Object_System_Object___ctor
             (this_02,(Object *)this,
              MethodInfo__CullingTerrainManager__ChunkInstancesOnChanged_System__Object__ChunkInstancesChanged_
              ,(MethodInfo *)0x0);
@@ -541,91 +679,166 @@ void Assembly-CSharp.dll::CullingTerrainManager::CullingTerrainManager__ctor
     ChunkInstances::ChunkInstances_add_Changed
               (this_00,(EventHandler_1_ChunkInstancesChanged_ *)this_02,(MethodInfo *)0x0);
     (this->fields).cubeModelBase = cubeModelBase;
-    func_?();
-    if (cubeModelBase != (MVCubeModelBase *)0x0) {
-      pAVar4 = (cubeModelBase->fields).ChunksChanged;
-      this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                 *)func_?();
-      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                (this_03,(Object *)this,
-                 MethodInfo__CullingTerrainManager__OnChanged_System__Collections__Generic__HashSet<MV::WorldObject::IntVector>_
-                 ,(MethodInfo *)0x0);
-      pDVar5 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pAVar4,(Delegate *)this_03,(MethodInfo *)0x0);
-      if (pDVar5 == (Delegate *)0x0) {
-        (cubeModelBase->fields).ChunksChanged =
-             (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)0x0;
-      }
-      else {
-        pAVar4 = (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)
-                 func_?();
-        if (pAVar4 == (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)0x0
-           ) {
-          func_?();
-code_?:
-          func_?();
-          goto code_?;
+    if (iRam_? != 0) {
+      uVar2 = (uint)((ulonglong)&(this->fields).cubeModelBase >> 0xc);
+      lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+        puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar5;
+        if (bVar6) {
+          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
         }
-        (cubeModelBase->fields).ChunksChanged = pAVar4;
-        iVar6 = func_?();
-        if (iVar6 == 0) goto code_?;
+        UNLOCK();
+      } while (!bVar6);
+    }
+    if (cubeModelBase == (MVCubeModelBase *)0x0) goto code_?;
+    pAVar8 = (cubeModelBase->fields).ChunksChanged;
+    this_03 = (UnityAction_1_System_Object_ *)
+              FUN_?(
+                           TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>
+                           );
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+    UnityAction_1_System_Object___ctor
+              (this_03,(Object *)this,
+               MethodInfo__CullingTerrainManager__OnChanged_System__Collections__Generic__HashSet<MV::WorldObject::IntVector>_
+               ,(MethodInfo *)0x0);
+    pKVar9 = (KeyValuePair_2_MV_WorldObject_IntVector_ChunkInstances_ChunkInstanceVariables___Class
+               *)0x0;
+    pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pAVar8,(Delegate *)this_03,(MethodInfo *)0x0);
+    pAVar11 = 
+    TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>;
+    if (pDVar10 == (Delegate *)0x0) {
+      (cubeModelBase->fields).ChunksChanged =
+           (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)0x0;
+    }
+    else {
+      pAVar8 = (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)
+                FUN_?(pDVar10,
+                              TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>
+                             );
+      if (pAVar8 == (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)0x0)
+      {
+        FUN_?(pDVar10,pAVar11);
+        pcVar12 = (code *)swi(3);
+        (*pcVar12)();
+        return;
       }
-      func_?();
-      if (chunkInstances != (ChunkInstances *)0x0) {
-        piVar7 = (int *)func_?();
-        uStack_1 = 1;
-        while (piVar7 != (int *)0x0) {
-          cVar8 = func_?();
-          if (cVar8 == '\0') {
-            uStack_1 = 0xffffffff;
-            iVar6 = func_?();
-            if (iVar6 != 0) {
-              func_?();
+      (cubeModelBase->fields).ChunksChanged = pAVar8;
+      pAVar11 = 
+      TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>;
+      lVar3 = FUN_?(pDVar10,
+                             TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>
+                            );
+      if (lVar3 == 0) {
+        plVar13 = (longlong *)FUN_?(pDVar10,pAVar11);
+code_?:
+        FUN_?(plVar13,pKVar9);
+code_?:
+        FUN_?();
+code_?:
+        FUN_?();
+        goto code_?;
+      }
+    }
+    if (iRam_? != 0) {
+      uVar2 = (uint)((ulonglong)&(cubeModelBase->fields).ChunksChanged >> 0xc);
+      lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+        puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar5;
+        if (bVar6) {
+          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    if (chunkInstances != (ChunkInstances *)0x0) {
+      plStackX_10 = (longlong *)
+                    FUN_?(0,TypeInfo__System__Collections__IEnumerable,chunkInstances);
+      alStack_1[1] = 0;
+      pplStack_14 = &plStackX_10;
+      plStack_15 = alStack_1;
+      while (plStackX_10 != (longlong *)0x0) {
+        cVar16 = FUN_?(0,TypeInfo__System__Collections__IEnumerator);
+        plVar13 = plStackX_10;
+        if (cVar16 == '\0') {
+          alStack_1[0] = FUN_?(plStackX_10,TypeInfo__System__IDisposable);
+          if (alStack_1[0] != 0) {
+            FUN_?(0,TypeInfo__System__IDisposable,alStack_1[0]);
+          }
+          return;
+        }
+        if (plStackX_10 == (longlong *)0x0) goto code_?;
+        lVar3 = *plStackX_10;
+        uVar17 = 0;
+        if (*(ushort *)(lVar3 + 0x12e) != 0) {
+          do {
+            if (*(IEnumerator__Class **)(*(longlong *)(lVar3 + 0xb0) + (ulonglong)uVar17 * 0x10) ==
+                TypeInfo__System__Collections__IEnumerator) {
+              puVar18 = (undefined8 *)
+                       ((longlong)
+                        (*(int *)(*(longlong *)(lVar3 + 0xb0) + 8 + (ulonglong)uVar17 * 0x10) + 1) *
+                        0x10 + 0x138 + lVar3);
+              goto code_?;
             }
-            *unaff_FS_OFFSET = uStack_3;
-            return;
-          }
-          if (piVar7 == (int *)0x0) break;
-          uVar9 = 0;
-          uVar10 = *(ushort *)(*piVar7 + 0xb6);
-          if (uVar10 != 0) {
-            do {
-              if (*(IEnumerator__Class **)(*(int *)(*piVar7 + 0x58) + (uint)uVar9 * 8) ==
-                  TypeInfo__System__Collections__IEnumerator) {
-                puVar11 = (undefined4 *)
-                         (*piVar7 +
-                         (*(int *)(*(int *)(*piVar7 + 0x58) + 4 + (uint)uVar9 * 8) + 0x19) * 8);
-                goto code_?;
-              }
-              uVar9 = uVar9 + 1;
-            } while (uVar9 < uVar10);
-          }
-          puVar11 = (undefined4 *)func_?();
-code_?:
-          piVar12 = (int *)(*(code *)*puVar11)();
-          if (piVar12 == (int *)0x0) break;
-          if (*(Il2CppClass **)(*piVar12 + 0x20) !=
-              (
-              TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
-              ->_0).element_class) goto code_?;
-          pIVar13 = (IntVector *)func_?();
-          uStack_14 = (undefined4)((ulonglong)*(undefined8 *)&pIVar13[5].y >> 0x20);
-          chunk.filter = (MeshFilter *)uStack_14;
-          chunk._0_28_ = *(undefined1 (*) [28])&pIVar13[1].y;
-          chunk._32_4_ = *(undefined4 *)&pIVar13[6].z;
-          CullingTerrainManager_CreateCullingSubscriber(this,*pIVar13,chunk,(MethodInfo *)0x0);
+            uVar17 = uVar17 + 1;
+          } while (uVar17 < *(ushort *)(lVar3 + 0x12e));
         }
+        puVar18 = (undefined8 *)
+                 FUN_?(plStackX_10,TypeInfo__System__Collections__IEnumerator,1);
+code_?:
+        plVar13 = (longlong *)(*(code *)*puVar18)(plVar13,puVar18[1]);
+        if (plVar13 == (longlong *)0x0) goto code_?;
+        pKVar9 = 
+        TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
+        ;
+        if (*(Il2CppClass **)(*plVar13 + 0x40) !=
+            (
+            TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
+            ->_0).element_class) goto code_?;
+        IStackX_8.x = (int16_t)plVar13[2];
+        IStackX_8.y = *(int16_t *)((longlong)plVar13 + 0x12);
+        IStackX_8.z = *(int16_t *)((longlong)plVar13 + 0x14);
+        uStack_19 = *(undefined2 *)((longlong)plVar13 + 0x16);
+        uStack_20 = (undefined2)plVar13[3];
+        uStack_21 = *(undefined2 *)((longlong)plVar13 + 0x1a);
+        uStack_22 = *(undefined2 *)((longlong)plVar13 + 0x1c);
+        uStack_23 = *(undefined2 *)((longlong)plVar13 + 0x1e);
+        CStack_24.guid._0_8_ = plVar13[3];
+        lStack_25 = plVar13[4];
+        pGStack_26 = (GameObject *)plVar13[5];
+        pBStack_27 = (BoxCollider *)plVar13[6];
+        pMStack_28 = (MeshRenderer *)plVar13[7];
+        pMStack_29 = (MeshFilter *)plVar13[8];
+        lStack_30 = plVar13[9];
+        iStack_31 = IStackX_8.x;
+        iStack_32 = IStackX_8.y;
+        iStack_33 = IStackX_8.z;
+        CStack_24.guid._8_8_ = lStack_25;
+        CStack_24.gameObject = pGStack_26;
+        CStack_24.collider = pBStack_27;
+        CStack_24.renderer = pMStack_28;
+        CStack_24.filter = pMStack_29;
+        CStack_24._48_8_ = lStack_30;
+        CullingTerrainManager_CreateCullingSubscriber(this,&IStackX_8,&CStack_24,(MethodInfo *)0x0);
       }
+code_?:
+      FUN_?();
+      FUN_?();
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
+      return;
     }
   }
 code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  FUN_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

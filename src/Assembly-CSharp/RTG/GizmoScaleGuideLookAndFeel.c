@@ -5,35 +5,63 @@ void Assembly-CSharp.dll::RTG::GizmoScaleGuideLookAndFeel::GizmoScaleGuideLookAn
                (GizmoScaleGuideLookAndFeel *this,MethodInfo *method)
 
 {
+  uVar1 = _UNK_?;
+  uVar2 = _UNK_?;
+  uVar3 = _UNK_?;
+  uVar4 = _UNK_?;
+  (this->fields)._xAxisColor.r = (float)_UNK_?;
+  uVar5 = _UNK_?;
+  (this->fields)._xAxisColor.g = (float)uVar4;
+  _UNK_? = (undefined4)uVar3;
+  _UNK_? = SUB84(uVar3,4);
+  uVar4 = _UNK_?;
+  (this->fields)._xAxisColor.b = (float)_UNK_?;
+  _UNK_? = uVar5;
+  (this->fields)._xAxisColor.a = (float)uVar4;
   (this->fields)._useZoomFactor = 1;
-  pCVar1 = RTSystemValues::RTSystemValues_get_XAxisColor(&CStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  (this->fields)._xAxisColor.r = pCVar1->r;
-  (this->fields)._xAxisColor.g = fVar3;
-  (this->fields)._xAxisColor.b = fVar4;
-  (this->fields)._xAxisColor.a = fVar5;
-  pCVar1 = RTSystemValues::RTSystemValues_get_YAxisColor(&CStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  (this->fields)._yAxisColor.r = pCVar1->r;
-  (this->fields)._yAxisColor.g = fVar3;
-  (this->fields)._yAxisColor.b = fVar4;
-  (this->fields)._yAxisColor.a = fVar5;
-  pCVar1 = RTSystemValues::RTSystemValues_get_ZAxisColor(&CStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->r;
-  fVar4 = pCVar1->g;
-  fVar5 = pCVar1->b;
-  fVar6 = pCVar1->a;
+  uVar3 = _UNK_?;
+  uVar4 = _UNK_?;
+  (this->fields)._zAxisColor.r = (float)_UNK_?;
+  uVar5 = _UNK_?;
+  (this->fields)._zAxisColor.g = (float)uVar4;
+  _UNK_? = (undefined4)uVar3;
+  _UNK_? = SUB84(uVar3,4);
+  uVar4 = _UNK_?;
+  (this->fields)._zAxisColor.b = (float)_UNK_?;
+  _UNK_? = uVar5;
+  (this->fields)._zAxisColor.a = (float)uVar4;
   (this->fields)._axisLength = 2.0;
-  (this->fields)._zAxisColor.r = fVar3;
-  (this->fields)._zAxisColor.g = fVar4;
-  (this->fields)._zAxisColor.b = fVar5;
-  (this->fields)._zAxisColor.a = fVar6;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  uVar3 = _UNK_?;
+  _UNK_? = (undefined4)uVar2;
+  _UNK_? = SUB84(uVar2,4);
+  uVar4 = _UNK_?;
+  (this->fields)._yAxisColor.r = (float)_UNK_?;
+  _UNK_? = uVar3;
+  uVar3 = _UNK_?;
+  (this->fields)._yAxisColor.g = (float)uVar4;
+  _UNK_? = (undefined4)uVar1;
+  _UNK_? = SUB84(uVar1,4);
+  uVar4 = _UNK_?;
+  (this->fields)._yAxisColor.b = (float)_UNK_?;
+  _UNK_? = uVar3;
+  (this->fields)._yAxisColor.a = (float)uVar4;
+  return;
+}
+
+
+/* Void set_ZAxisColor(Color) */
+
+void Assembly-CSharp.dll::RTG::GizmoScaleGuideLookAndFeel::GizmoScaleGuideLookAndFeel_set_ZAxisColor
+               (GizmoScaleGuideLookAndFeel *this,Color *value,MethodInfo *method)
+
+{
+  fVar1 = value->g;
+  fVar2 = value->b;
+  fVar3 = value->a;
+  (this->fields)._zAxisColor.r = value->r;
+  (this->fields)._zAxisColor.g = fVar1;
+  (this->fields)._zAxisColor.b = fVar2;
+  (this->fields)._zAxisColor.a = fVar3;
   return;
 }
 

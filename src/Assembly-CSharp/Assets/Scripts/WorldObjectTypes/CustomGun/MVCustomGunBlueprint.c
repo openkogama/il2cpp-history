@@ -6,246 +6,518 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::MVCustom
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetPosition
-                   );
-    func_?(&
-                    TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetRotation
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&
-                    MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint__ResetMuzzlePosition__
-                   );
-    func_?(&
-                    MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint__ResetMuzzleRotation__
-                   );
-    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__);
-    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTGApp>);
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
-    func_?(&StringLiteral_MuzzleDirection);
-    func_?(&StringLiteral_MuzzlePosition);
-    func_?(&StringLiteral_itemData);
+    FUN_?(&
+                  TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetPosition
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetRotation
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint__ResetMuzzlePosition__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint__ResetMuzzleRotation__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__MonoSingleton<RTG::RTGApp>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_MuzzleDirection);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_MuzzlePosition);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_itemData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_02.m_Index = (int32_t)(this->fields).muzzlePoint;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  pGVar1 = (this->fields).muzzlePoint;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)this_02.m_Index,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    return;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  pMVar2 = (this->fields)._.itemBase;
-  if ((pMVar2 == (MVEditablePickupItemBase *)0x0) ||
-     (this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                (pMVar2->fields)._._._._.data,
-     this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0))
-  goto code_?;
-  this_02 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (this_00,(Object *)StringLiteral_itemData,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-  this_03 = (Dictionary_2_System_Object_System_Object_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pGVar1 != (GameObject *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((pGVar1->fields)._.m_CachedPtr != (void *)0x0) {
+      pMVar2 = (this->fields)._.itemBase;
+      if ((pMVar2 != (MVEditablePickupItemBase *)0x0) &&
+         (pDVar3 = (pMVar2->fields)._._._._.data,
+         pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
+        pUVar4 = (UnityAction *)
+                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                 Object]::Dictionary_2_System_Object_System_Object__get_Item
+                           (pDVar3,(Object *)StringLiteral_itemData,
+                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                            );
-  if ((this_02.m_Index != 0) &&
-     ((pDVar3 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>,
-      *(byte *)(*(int *)this_02.m_Index + 0xb8) <
-      (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-      naturalAligment ||
-      (*(Dictionary_2_System_Object_System_Object___Class **)
-        (*(int *)(*(int *)this_02.m_Index + 100) + -4 +
-        (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-              _1).naturalAligment * 4) !=
-       TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))))
-  goto code_?;
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-  Dictionary_2_System_Object_System_Object___ctor_1
-            (this_03,(IDictionary_2_System_Object_System_Object_ *)this_02.m_Index,
-             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_
-            );
-  pGVar4 = (this->fields).muzzlePoint;
-  if ((pGVar4 == (GameObject *)0x0) ||
-     (pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                         (pGVar4,(MethodInfo *)0x0), pTVar5 == (Transform *)0x0)) {
+        pDVar3 = (Dictionary_2_System_Object_System_Object_ *)
+                  FUN_?(
+                               TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                               );
+        pUVar5 = (UnityAction *)0x0;
+        pUVar6 = pUVar5;
+        if (pUVar4 != (UnityAction *)0x0) {
+          bVar7 = (
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                  ->_1).naturalAligment;
+          if (((pUVar4->klass->_1).naturalAligment < bVar7) ||
+             (pUVar6 = pUVar4,
+             (Dictionary_2_System_Object_System_Object___Class *)
+             (pUVar4->klass->_1).typeHierarchy[(ulonglong)bVar7 - 1] !=
+             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+            FUN_?(pUVar4);
+            pcVar8 = (code *)swi(3);
+            (*pcVar8)();
+            return;
+          }
+        }
+        method_01 = MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_
+                    ->klass->rgctx_data[8].method;
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object___ctor_4
+                  (pDVar3,(IDictionary_2_System_Object_System_Object_ *)pUVar6,
+                   (IEqualityComparer_1_System_Object_ *)0x0,method_01);
+        pGVar1 = (this->fields).muzzlePoint;
+        if ((pGVar1 != (GameObject *)0x0) &&
+           (pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                                (pGVar1,(MethodInfo *)0x0), pTVar9 != (Transform *)0x0)) {
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          QStack_10.x = 0.0;
+          QStack_10.y = 0.0;
+          QStack_10._8_8_ = QStack_10._8_8_ & 0xffffffff00000000;
+          pvVar11 = (pTVar9->fields)._._.m_CachedPtr;
+          if (pvVar11 == (void *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar9,(MethodInfo *)0x0);
+            pcVar8 = (code *)swi(3);
+            (*pcVar8)();
+            return;
+          }
+          pcVar8 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+            uVar12 = func_?(&UNK_?);
+            FUN_?(uVar12,0);
+            pcVar8 = (code *)swi(3);
+            (*pcVar8)();
+            return;
+          }
+          pcRam_? = pcVar8;
+          (*pcRam_?)(pvVar11,&QStack_10);
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__System__Single);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          method_00 = (MethodInfo *)FUN_?(TypeInfo__System__Single,3);
+          if (method_00 != (MethodInfo *)0x0) {
+            if (*(int *)&method_00->name != 0) {
+              *(float *)&method_00->klass = QStack_10.x;
+              if (1 < *(uint *)&method_00->name) {
+                *(float *)((longlong)&method_00->klass + 4) = QStack_10.y;
+                if (2 < *(uint *)&method_00->name) {
+                  *(float *)&method_00->return_type = QStack_10.z;
+                  if (pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                    uVar12 = CONCAT71((int7)((ulonglong)method_01 >> 8),1);
+                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                    Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                              (pDVar3,(Object *)StringLiteral_MuzzlePosition,(Object *)method_00,
+                               (InsertionBehavior__Enum)uVar12,
+                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                               ->klass->rgctx_data[0x22].method);
+                    pGVar1 = (this->fields).muzzlePoint;
+                    if ((pGVar1 != (GameObject *)0x0) &&
+                       (pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                  GameObject_get_transform(pGVar1,(MethodInfo *)0x0),
+                       pTVar9 != (Transform *)0x0)) {
+                      if (cRam_? == '\0') {
+                        FUN_?(&
+                                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                                     );
+                        LOCK();
+                        UNLOCK();
+                        cRam_? = '\x01';
+                      }
+                      QStack_13.x = 0.0;
+                      QStack_13.y = 0.0;
+                      QStack_13.z = 0.0;
+                      QStack_13.w = 0.0;
+                      pvVar11 = (pTVar9->fields)._._.m_CachedPtr;
+                      if (pvVar11 == (void *)0x0) {
+                        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                        ThrowHelper_2_ThrowNullReferenceException
+                                  ((Object *)pTVar9,(MethodInfo *)0x0);
+                        pcVar8 = (code *)swi(3);
+                        (*pcVar8)();
+                        return;
+                      }
+                      pcVar8 = pcRam_?;
+                      if ((pcRam_? == (code *)0x0) &&
+                         (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0))
+                      {
+                        uVar12 = func_?(&UNK_?);
+                        FUN_?(uVar12,0);
+                        pcVar8 = (code *)swi(3);
+                        (*pcVar8)();
+                        return;
+                      }
+                      pcRam_? = pcVar8;
+                      (*pcRam_?)(pvVar11,&QStack_13);
+                      QStack_10.x = QStack_13.x;
+                      QStack_10.y = QStack_13.y;
+                      QStack_10.z = QStack_13.z;
+                      QStack_10.w = QStack_13.w;
+                      pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
+                                Quaternion_get_eulerAngles
+                                          ((Vector3 *)&QStack_13,&QStack_10,method_00);
+                      QStack_10.x = pVVar14->x;
+                      QStack_10.y = pVVar14->y;
+                      fVar15 = pVVar14->z;
+                      if (cRam_? == '\0') {
+                        FUN_?(&TypeInfo__System__Single);
+                        LOCK();
+                        UNLOCK();
+                        cRam_? = '\x01';
+                      }
+                      value = (Object *)FUN_?(TypeInfo__System__Single,3);
+                      if (value != (Object *)0x0) {
+                        if (*(int *)&value[1].monitor != 0) {
+                          *(float *)&value[2].klass = QStack_10.x;
+                          if (1 < *(uint *)&value[1].monitor) {
+                            *(float *)((longlong)&value[2].klass + 4) = QStack_10.y;
+                            if (2 < *(uint *)&value[1].monitor) {
+                              *(float *)&value[2].monitor = fVar15;
+                              uVar12 = CONCAT71((int7)((ulonglong)uVar12 >> 8),1);
+                              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                              Object,System::Object]::
+                              Dictionary_2_System_Object_System_Object__TryInsert
+                                        (pDVar3,(Object *)StringLiteral_MuzzleDirection,value,
+                                         (InsertionBehavior__Enum)uVar12,
+                                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                                         ->klass->rgctx_data[0x22].method);
+                              this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+                                         *)FUN_?(
+                                                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                                  );
+                              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                              Object,UnityEngine::UIElements::UIR::
+                              UIRenderDevice+DisableForceGammaMaterial]::
+                              Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
+                                        (this_01,
+                                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                                        );
+                              if (this_01 !=
+                                  (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+                                   *)0x0) {
+                                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                Object,System::Object]::
+                                Dictionary_2_System_Object_System_Object__TryInsert
+                                          ((Dictionary_2_System_Object_System_Object_ *)this_01,
+                                           (Object *)StringLiteral_itemData,(Object *)pDVar3,
+                                           (InsertionBehavior__Enum)
+                                           CONCAT71((int7)((ulonglong)uVar12 >> 8),2),
+                                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                                           ->klass->rgctx_data[0x22].method);
+                                pMVar2 = (this->fields)._.itemBase;
+                                if (pMVar2 != (MVEditablePickupItemBase *)0x0) {
+                                  (*(pMVar2->klass->vtable).PartialUpdateWOData.methodPtr)
+                                            (pMVar2,this_01,
+                                             (pMVar2->klass->vtable).PartialUpdateWOData.method);
+                                  this_02 = MVGameControllerBase::
+                                            MVGameControllerBase_get_OperationRequests
+                                                      ((MethodInfo *)0x0);
+                                  pMVar2 = (this->fields)._.itemBase;
+                                  if ((pMVar2 != (MVEditablePickupItemBase *)0x0) &&
+                                     (this_02 != (MVNetworkGame_OperationRequests *)0x0)) {
+                                    MVNetworkGame+OperationRequests::
+                                    MVNetworkGame_OperationRequests_UpdateWorldObjectDataPartial_1
+                                              (this_02,(pMVar2->fields)._._._._.id,
+                                               (Dictionary_2_System_Object_System_Object_ *)this_01,
+                                               (MethodInfo *)0x0);
+                                    pOVar16 = (this->fields).transformGizmo;
+                                    if ((pOVar16 != (ObjectTransformGizmo *)0x0) &&
+                                       (this_00 = (pOVar16->fields)._._gizmo, this_00 != (Gizmo *)0x0
+                                       )) {
+                                      RTG::Gizmo::Gizmo_SetEnabled(this_00,0,(MethodInfo *)0x0);
+                                      pGVar1 = (this->fields).muzzlePoint;
+                                      if (pGVar1 != (GameObject *)0x0) {
+                                        UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                                        GameObject_SetActive(pGVar1,0,(MethodInfo *)0x0);
+                                        if (*(int *)&(TypeInfo__RTG__MonoSingleton<RTG::RTGApp>->_1)
+                                                     .field_0x1c == 0) {
+                                          FUN_?();
+                                        }
+                                        this_03 = (Behaviour *)
+                                                  RTG::MonoSingleton`1[System::Object]::
+                                                  MonoSingleton_1_System_Object__get_Get
+                                                            (
+                                                  MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__
+                                                  );
+                                        if (this_03 != (Behaviour *)0x0) {
+                                          UnityEngine.CoreModule.dll::UnityEngine::Behaviour::
+                                          Behaviour_set_enabled(this_03,0,(MethodInfo *)0x0);
+                                          if ((this->fields).muzzleBoundCheckRoutine !=
+                                              (IEnumerator *)0x0) {
+                                            Coroutines::Coroutines_Stop
+                                                      ((this->fields).muzzleBoundCheckRoutine,
+                                                       (MethodInfo *)0x0);
+                                          }
+                                          bVar17 = iRam_? != 0;
+                                          (this->fields).muzzleBoundCheckRoutine =
+                                               (IEnumerator *)0x0;
+                                          if (bVar17) {
+                                            uVar18 = (uint)((ulonglong)
+                                                            &(this->fields).muzzleBoundCheckRoutine
+                                                           >> 0xc);
+                                            uVar19 = (ulonglong)((uVar18 & 0x1fffff) >> 6);
+                                            do {
+                                              uVar20 = *(ulonglong *)(uVar19 * 8 + 0xADDR);
+                                              puVar21 = (ulonglong *)(uVar19 * 8 + 0xADDR);
+                                              LOCK();
+                                              bVar17 = uVar20 == *puVar21;
+                                              if (bVar17) {
+                                                *puVar21 = uVar20 | 1L << (uVar18 & 0x3f);
+                                              }
+                                              UNLOCK();
+                                            } while (!bVar17);
+                                          }
+                                          pUVar6 = 
+                                                  TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetPosition
+                                                  ->static_fields->OnResetPosition;
+                                          pNVar22 = (NavMesh_OnNavMeshPreUpdate *)
+                                                    FUN_?(
+                                                  TypeInfo__UnityEngine__Events__UnityAction);
+                                          UnityEngine.AIModule.dll::UnityEngine::AI::
+                                          NavMesh+OnNavMeshPreUpdate::
+                                          NavMesh_OnNavMeshPreUpdate__ctor
+                                                    (pNVar22,(Object *)this,
+                                                                                                          
+                                                  MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint__ResetMuzzlePosition__
+                                                  ,(MethodInfo *)0x0);
+                                          pUVar6 = (UnityAction *)
+                                                    mscorlib.dll::System::Delegate::Delegate_Remove
+                                                              ((Delegate *)pUVar6,
+                                                               (Delegate *)pNVar22,(MethodInfo *)0x0
+                                                              );
+                                          if (pUVar6 == (UnityAction *)0x0) {
+                                            TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetPosition
+                                            ->static_fields->OnResetPosition = (UnityAction *)0x0;
+                                          }
+                                          else {
+                                            pUVar4 = pUVar5;
+                                            if (pUVar6->klass ==
+                                                TypeInfo__UnityEngine__Events__UnityAction) {
+                                              pUVar4 = pUVar6;
+                                            }
+                                            if (pUVar4 == (UnityAction *)0x0) {
+                                              FUN_?(pUVar6,
+                                                  TypeInfo__UnityEngine__Events__UnityAction);
+                                              pcVar8 = (code *)swi(3);
+                                              (*pcVar8)();
+                                              return;
+                                            }
+                                            TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetPosition
+                                            ->static_fields->OnResetPosition = pUVar4;
+                                            pUVar4 = pUVar5;
+                                            if (pUVar6->klass ==
+                                                TypeInfo__UnityEngine__Events__UnityAction) {
+                                              pUVar4 = pUVar6;
+                                            }
+                                            if (pUVar4 == (UnityAction *)0x0) {
+                                              FUN_?(pUVar6);
+                                              pcVar8 = (code *)swi(3);
+                                              (*pcVar8)();
+                                              return;
+                                            }
+                                          }
+                                          if (iRam_? != 0) {
+                                            uVar18 = (uint)((ulonglong)
+                                                                                                                        
+                                                  TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetPosition
+                                                  ->static_fields >> 0xc);
+                                            uVar19 = (ulonglong)((uVar18 & 0x1fffff) >> 6);
+                                            do {
+                                              uVar20 = *(ulonglong *)(uVar19 * 8 + 0xADDR);
+                                              puVar21 = (ulonglong *)(uVar19 * 8 + 0xADDR);
+                                              LOCK();
+                                              bVar17 = uVar20 == *puVar21;
+                                              if (bVar17) {
+                                                *puVar21 = uVar20 | 1L << (ulonglong)(uVar18 & 0x3f);
+                                              }
+                                              UNLOCK();
+                                            } while (!bVar17);
+                                          }
+                                          pUVar6 = 
+                                                  TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetRotation
+                                                  ->static_fields->OnResetRotation;
+                                          pNVar22 = (NavMesh_OnNavMeshPreUpdate *)
+                                                    FUN_?(
+                                                  TypeInfo__UnityEngine__Events__UnityAction);
+                                          UnityEngine.AIModule.dll::UnityEngine::AI::
+                                          NavMesh+OnNavMeshPreUpdate::
+                                          NavMesh_OnNavMeshPreUpdate__ctor
+                                                    (pNVar22,(Object *)this,
+                                                                                                          
+                                                  MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint__ResetMuzzleRotation__
+                                                  ,(MethodInfo *)0x0);
+                                          pUVar6 = (UnityAction *)
+                                                    mscorlib.dll::System::Delegate::Delegate_Remove
+                                                              ((Delegate *)pUVar6,
+                                                               (Delegate *)pNVar22,(MethodInfo *)0x0
+                                                              );
+                                          if (pUVar6 == (UnityAction *)0x0) {
+                                            TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetRotation
+                                            ->static_fields->OnResetRotation = (UnityAction *)0x0;
+                                          }
+                                          else {
+                                            pUVar4 = pUVar5;
+                                            if (pUVar6->klass ==
+                                                TypeInfo__UnityEngine__Events__UnityAction) {
+                                              pUVar4 = pUVar6;
+                                            }
+                                            if (pUVar4 == (UnityAction *)0x0) {
+                                              FUN_?(pUVar6,
+                                                  TypeInfo__UnityEngine__Events__UnityAction);
+                                              pcVar8 = (code *)swi(3);
+                                              (*pcVar8)();
+                                              return;
+                                            }
+                                            TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetRotation
+                                            ->static_fields->OnResetRotation = pUVar4;
+                                            if (pUVar6->klass ==
+                                                TypeInfo__UnityEngine__Events__UnityAction) {
+                                              pUVar5 = pUVar6;
+                                            }
+                                            if (pUVar5 == (UnityAction *)0x0) {
+                                              FUN_?(pUVar6);
+                                              pcVar8 = (code *)swi(3);
+                                              (*pcVar8)();
+                                              return;
+                                            }
+                                          }
+                                          if (iRam_? == 0) {
+                                            return;
+                                          }
+                                          uVar18 = (uint)((ulonglong)
+                                                                                                                    
+                                                  TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetRotation
+                                                  ->static_fields >> 0xc);
+                                          uVar19 = (ulonglong)((uVar18 & 0x1fffff) >> 6);
+                                          do {
+                                            uVar20 = *(ulonglong *)(uVar19 * 8 + 0xADDR);
+                                            puVar21 = (ulonglong *)(uVar19 * 8 + 0xADDR);
+                                            LOCK();
+                                            bVar17 = uVar20 == *puVar21;
+                                            if (bVar17) {
+                                              *puVar21 = uVar20 | 1L << (uVar18 & 0x3f);
+                                            }
+                                            UNLOCK();
+                                          } while (!bVar17);
+                                          return;
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                              goto DAT_?;
+                            }
+                          }
+                        }
+                        goto code_?;
+                      }
+                    }
+                  }
+                  goto DAT_?;
+                }
+              }
+            }
 code_?:
-    func_?();
-code_?:
-    func_?();
-  }
-  else {
-    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                       ((Vector3 *)&stack0xfffffff0,pTVar5,(MethodInfo *)0x0);
-    pSVar7 = MathFunctions::MathFunctions_ToFloatArray(*pVVar6,(MethodInfo *)0x0);
-    if (this_03 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__set_Item
-              (this_03,(Object *)StringLiteral_MuzzlePosition,(Object *)pSVar7,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-              );
-    pGVar4 = (this->fields).muzzlePoint;
-    if ((pGVar4 == (GameObject *)0x0) ||
-       (pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                           (pGVar4,(MethodInfo *)0x0), pTVar5 == (Transform *)0x0))
-    goto code_?;
-    pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
-                        ((Quaternion *)&stack0xffffffe0,pTVar5,(MethodInfo *)0x0);
-    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_ToEulerRad
-                       ((Vector3 *)&stack0xffffffe4,*pQVar8,(MethodInfo *)0x0);
-    uVar9 = pVVar6->x;
-    uVar10 = pVVar6->y;
-    euler.y = (float)uVar10 * _UNK_?;
-    euler.x = (float)uVar9 * _UNK_?;
-    euler.z = pVVar6->z * _UNK_?;
-    pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_MakePositive
-                       ((Vector3 *)&stack0xffffffe4,euler,(MethodInfo *)0x0);
-    pSVar7 = MathFunctions::MathFunctions_ToFloatArray(*pVVar6,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__set_Item
-              (this_03,(Object *)StringLiteral_MuzzleDirection,(Object *)pSVar7,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-              );
-    this_02.m_Index = func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
-    ::StyleComplexSelector+PseudoStateData]::
-    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-              ((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                *)this_02.m_Index,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-              );
-    if ((NavMesh_OnNavMeshPreUpdate *)this_02.m_Index == (NavMesh_OnNavMeshPreUpdate *)0x0)
-    goto code_?;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)this_02.m_Index,
-               (Object *)StringLiteral_itemData,(Object *)this_03,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    pMVar2 = (this->fields)._.itemBase;
-    if (pMVar2 == (MVEditablePickupItemBase *)0x0) goto code_?;
-    (*(code *)(pMVar2->klass->vtable).PartialUpdateWOData.method)
-              (pMVar2,this_02.m_Index,(pMVar2->klass->vtable).PartialRemoveFromWOData.methodPtr);
-    this_04 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-    pMVar2 = (this->fields)._.itemBase;
-    if ((pMVar2 == (MVEditablePickupItemBase *)0x0) ||
-       (this_04 == (MVNetworkGame_OperationRequests *)0x0)) goto code_?;
-    MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_UpdateWorldObjectDataPartial_1
-              (this_04,(pMVar2->fields)._._._._.id,
-               (Dictionary_2_System_Object_System_Object_ *)this_02.m_Index,(MethodInfo *)0x0);
-    pOVar11 = (this->fields).transformGizmo;
-    if ((pOVar11 == (ObjectTransformGizmo *)0x0) ||
-       (this_01 = (pOVar11->fields)._._gizmo, this_01 == (Gizmo *)0x0)) goto code_?;
-    RTG::Gizmo::Gizmo_SetEnabled(this_01,0,(MethodInfo *)0x0);
-    pGVar4 = (this->fields).muzzlePoint;
-    if (pGVar4 == (GameObject *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar4,0,(MethodInfo *)0x0);
-    if ((TypeInfo__RTG__MonoSingleton<RTG::RTGApp>->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__RTG__MonoSingleton<RTG::RTGApp>);
-    }
-    this_05 = (Behaviour *)
-              RTG::MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
-                        (MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__);
-    if (this_05 == (Behaviour *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-              (this_05,0,(MethodInfo *)0x0);
-    if ((this->fields).muzzleBoundCheckRoutine != (IEnumerator *)0x0) {
-      Coroutines::Coroutines_Stop((this->fields).muzzleBoundCheckRoutine,(MethodInfo *)0x0);
-    }
-    (this->fields).muzzleBoundCheckRoutine = (IEnumerator *)0x0;
-    func_?();
-    pUVar12 = TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetPosition
-              ->static_fields->OnResetPosition;
-    this_02.m_Index = func_?();
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              ((NavMesh_OnNavMeshPreUpdate *)this_02.m_Index,(Object *)this,
-               MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint__ResetMuzzlePosition__
-               ,(MethodInfo *)0x0);
-    pUVar12 = (UnityAction *)
-              mscorlib.dll::System::Delegate::Delegate_Remove
-                        ((Delegate *)pUVar12,(Delegate *)this_02.m_Index,(MethodInfo *)0x0);
-    if (pUVar12 != (UnityAction *)0x0) {
-      pUVar13 = (UnityAction *)0x0;
-      if (pUVar12->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUVar13 = pUVar12;
+            FUN_?();
+            pcVar8 = (code *)swi(3);
+            (*pcVar8)();
+            return;
+          }
+        }
       }
-      if (pUVar13 == (UnityAction *)0x0) goto code_?;
-      TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetPosition->
-      static_fields->OnResetPosition = pUVar13;
-      pUVar13 = (UnityAction *)0x0;
-      if (pUVar12->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUVar13 = pUVar12;
-      }
-      if (pUVar13 != (UnityAction *)0x0) goto code_?;
-      goto code_?;
-    }
-    TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetPosition->
-    static_fields->OnResetPosition = (UnityAction *)0x0;
-code_?:
-    func_?();
-    pUVar12 = TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetRotation
-              ->static_fields->OnResetRotation;
-    this_02.m_Index = func_?();
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              ((NavMesh_OnNavMeshPreUpdate *)this_02.m_Index,(Object *)this,
-               MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint__ResetMuzzleRotation__
-               ,(MethodInfo *)0x0);
-    pUVar12 = (UnityAction *)
-              mscorlib.dll::System::Delegate::Delegate_Remove
-                        ((Delegate *)pUVar12,(Delegate *)this_02.m_Index,(MethodInfo *)0x0);
-    if (pUVar12 == (UnityAction *)0x0) {
-      TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetRotation->
-      static_fields->OnResetRotation = (UnityAction *)0x0;
-code_?:
-      func_?();
+DAT_?:
+      FUN_?();
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
       return;
     }
-    pUVar13 = (UnityAction *)0x0;
-    if (pUVar12->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar13 = pUVar12;
-    }
-    if (pUVar13 != (UnityAction *)0x0) {
-      TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetRotation->
-      static_fields->OnResetRotation = pUVar13;
-      pUVar13 = (UnityAction *)0x0;
-      if (pUVar12->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUVar13 = pUVar12;
-      }
-      if (pUVar13 != (UnityAction *)0x0) goto code_?;
-      goto code_?;
-    }
   }
-code_?:
-  func_?();
-  pDVar3 = extraout_EDX;
-code_?:
-  func_?(this_02.m_Index,pDVar3);
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
   return;
 }
 
@@ -257,161 +529,248 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::MVCustom
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetPosition
-                   );
-    func_?(&
-                    TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetRotation
-                   );
-    func_?(&
-                    MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint__ResetMuzzlePosition__
-                   );
-    func_?(&
-                    MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint__ResetMuzzleRotation__
-                   );
-    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__);
-    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTGApp>);
-    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    FUN_?(&
+                  TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetPosition
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetRotation
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint__ResetMuzzlePosition__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint__ResetMuzzleRotation__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__MonoSingleton<RTG::RTGApp>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__RTG__MonoSingleton<RTG::RTGApp>->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__MonoSingleton<RTG::RTGApp>);
+  if (*(int *)&(TypeInfo__RTG__MonoSingleton<RTG::RTGApp>->_1).field_0x1c == 0) {
+    FUN_?();
   }
   this_02 = (Behaviour *)
             RTG::MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                       (MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__);
-  if (this_02 == (Behaviour *)0x0) {
-code_?:
-    func_?();
-    pUStack1 = extraout_ECX;
-    pUVar2 = extraout_EDX;
-  }
-  else {
+  if (this_02 != (Behaviour *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
               (this_02,1,(MethodInfo *)0x0);
     this_00 = (this->fields).muzzlePoint;
-    if (this_00 == (GameObject *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (this_00,1,(MethodInfo *)0x0);
-    pOVar3 = (this->fields).transformGizmo;
-    if ((pOVar3 == (ObjectTransformGizmo *)0x0) ||
-       (this_01 = (pOVar3->fields)._._gizmo, this_01 == (Gizmo *)0x0)) goto code_?;
-    RTG::Gizmo::Gizmo_SetEnabled(this_01,1,(MethodInfo *)0x0);
-    pOVar3 = (this->fields).transformGizmo;
-    if (pOVar3 == (ObjectTransformGizmo *)0x0) goto code_?;
-    RTG::ObjectTransformGizmo::ObjectTransformGizmo_RefreshPositionAndRotation
-              (pOVar3,(MethodInfo *)0x0);
-    if ((this->fields).muzzleBoundCheckRoutine != (IEnumerator *)0x0) {
-      Coroutines::Coroutines_Stop((this->fields).muzzleBoundCheckRoutine,(MethodInfo *)0x0);
-    }
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    method_00 = 
-    TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint___MuzzleBoundCheckRoutine_d__17
-    ;
-    value = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    value[1].klass = (Object__Class *)0x0;
-    value[2].klass = (Object__Class *)this;
-    func_?();
-    (this->fields).muzzleBoundCheckRoutine = (IEnumerator *)value;
-    func_?();
-    Coroutines::Coroutines_Start((this->fields).muzzleBoundCheckRoutine,(MethodInfo *)0x0);
-    pUVar4 = TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetPosition
-             ->static_fields->OnResetPosition;
-    pNVar5 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar5,(Object *)this,
-               MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint__ResetMuzzlePosition__
-               ,(MethodInfo *)0x0);
-    pUStack1 =
-         (UnityAction *)
-         mscorlib.dll::System::Delegate::Delegate_Combine
-                   ((Delegate *)pUVar4,(Delegate *)pNVar5,(MethodInfo *)0x0);
-    if (pUStack1 == (UnityAction *)0x0) {
-      TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetPosition->
-      static_fields->OnResetPosition = (UnityAction *)0x0;
-      pUStack6 = (UnityAction__Class *)0x0;
-code_?:
-      pUStack1 =
-           (UnityAction *)
-           TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetPosition
-           ->static_fields;
-      func_?();
-      pUStack7 = TypeInfo__UnityEngine__Events__UnityAction;
-      pUVar4 = TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetRotation
-               ->static_fields->OnResetRotation;
-      pNVar5 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (pNVar5,(Object *)this,
-                 MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint__ResetMuzzleRotation__
-                 ,(MethodInfo *)0x0);
-      pUStack1 =
-           (UnityAction *)
-           mscorlib.dll::System::Delegate::Delegate_Combine
-                     ((Delegate *)pUVar4,(Delegate *)pNVar5,(MethodInfo *)0x0);
-      if (pUStack1 == (UnityAction *)0x0) {
-        TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetRotation->
-        static_fields->OnResetRotation = (UnityAction *)0x0;
-        pUStack6 = (UnityAction__Class *)0x0;
-        pUStack1 =
-             (UnityAction *)
-             TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetRotation
-             ->static_fields;
-        func_?();
-        return;
+    if (this_00 != (GameObject *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (this_00,1,(MethodInfo *)0x0);
+      pOVar1 = (this->fields).transformGizmo;
+      if ((pOVar1 != (ObjectTransformGizmo *)0x0) &&
+         (this_01 = (pOVar1->fields)._._gizmo, this_01 != (Gizmo *)0x0)) {
+        RTG::Gizmo::Gizmo_SetEnabled(this_01,1,(MethodInfo *)0x0);
+        pOVar1 = (this->fields).transformGizmo;
+        if (pOVar1 != (ObjectTransformGizmo *)0x0) {
+          RTG::ObjectTransformGizmo::ObjectTransformGizmo_RefreshPosition(pOVar1,(MethodInfo *)0x0);
+          RTG::ObjectTransformGizmo::ObjectTransformGizmo_RefreshRotation(pOVar1,(MethodInfo *)0x0);
+          if ((this->fields).muzzleBoundCheckRoutine != (IEnumerator *)0x0) {
+            pIVar2 = (this->fields).muzzleBoundCheckRoutine;
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__Coroutines);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pMVar3 = (MonoBehaviour *)TypeInfo__Coroutines->static_fields->instance;
+            if (pMVar3 == (MonoBehaviour *)0x0) goto DAT_?;
+            UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopCoroutine
+                      (pMVar3,pIVar2,(MethodInfo *)0x0);
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint___MuzzleBoundCheckRoutine_d__17
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pIVar2 = (IEnumerator *)
+                   FUN_?(
+                                TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint___MuzzleBoundCheckRoutine_d__17
+                                );
+          pUVar4 = (UnityAction *)0x0;
+          *(undefined4 *)&pIVar2[1].klass = 0;
+          pIVar2[2].klass = (IEnumerator__Class *)this;
+          if (iRam_? != 0) {
+            uVar5 = (uint)((ulonglong)(pIVar2 + 2) >> 0xc);
+            lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+            do {
+              uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+              puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+              LOCK();
+              bVar9 = uVar7 == *puVar8;
+              if (bVar9) {
+                *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar9);
+          }
+          iVar10 = iRam_?;
+          (this->fields).muzzleBoundCheckRoutine = pIVar2;
+          if (iVar10 != 0) {
+            uVar5 = (uint)((ulonglong)&(this->fields).muzzleBoundCheckRoutine >> 0xc);
+            lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+            do {
+              uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+              puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+              LOCK();
+              bVar9 = uVar7 == *puVar8;
+              if (bVar9) {
+                *puVar8 = uVar7 | 1L << (ulonglong)(uVar5 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar9);
+          }
+          pIVar2 = (this->fields).muzzleBoundCheckRoutine;
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__Coroutines);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pMVar3 = (MonoBehaviour *)TypeInfo__Coroutines->static_fields->instance;
+          if (pMVar3 != (MonoBehaviour *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_2
+                      (pMVar3,pIVar2,(MethodInfo *)0x0);
+            pUVar11 = TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetPosition
+                      ->static_fields->OnResetPosition;
+            pNVar12 = (NavMesh_OnNavMeshPreUpdate *)
+                     FUN_?(TypeInfo__UnityEngine__Events__UnityAction);
+            UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+            NavMesh_OnNavMeshPreUpdate__ctor
+                      (pNVar12,(Object *)this,
+                       MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint__ResetMuzzlePosition__
+                       ,(MethodInfo *)0x0);
+            pUVar11 = (UnityAction *)
+                      mscorlib.dll::System::Delegate::Delegate_Combine
+                                ((Delegate *)pUVar11,(Delegate *)pNVar12,(MethodInfo *)0x0);
+            if (pUVar11 == (UnityAction *)0x0) {
+              TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetPosition
+              ->static_fields->OnResetPosition = (UnityAction *)0x0;
+            }
+            else {
+              pUVar13 = pUVar4;
+              if (pUVar11->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+                pUVar13 = pUVar11;
+              }
+              if (pUVar13 == (UnityAction *)0x0) {
+                FUN_?(pUVar11,TypeInfo__UnityEngine__Events__UnityAction);
+                pcVar14 = (code *)swi(3);
+                (*pcVar14)();
+                return;
+              }
+              TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetPosition
+              ->static_fields->OnResetPosition = pUVar13;
+              pUVar13 = pUVar4;
+              if (pUVar11->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+                pUVar13 = pUVar11;
+              }
+              if (pUVar13 == (UnityAction *)0x0) {
+                FUN_?(pUVar11);
+                pcVar14 = (code *)swi(3);
+                (*pcVar14)();
+                return;
+              }
+            }
+            if (iRam_? != 0) {
+              uVar5 = (uint)((ulonglong)
+                              TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetPosition
+                              ->static_fields >> 0xc);
+              lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+              do {
+                uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+                puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+                LOCK();
+                bVar9 = uVar7 == *puVar8;
+                if (bVar9) {
+                  *puVar8 = uVar7 | 1L << (ulonglong)(uVar5 & 0x3f);
+                }
+                UNLOCK();
+              } while (!bVar9);
+            }
+            pUVar11 = TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetRotation
+                      ->static_fields->OnResetRotation;
+            pNVar12 = (NavMesh_OnNavMeshPreUpdate *)
+                     FUN_?(TypeInfo__UnityEngine__Events__UnityAction);
+            UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+            NavMesh_OnNavMeshPreUpdate__ctor
+                      (pNVar12,(Object *)this,
+                       MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint__ResetMuzzleRotation__
+                       ,(MethodInfo *)0x0);
+            pUVar11 = (UnityAction *)
+                      mscorlib.dll::System::Delegate::Delegate_Combine
+                                ((Delegate *)pUVar11,(Delegate *)pNVar12,(MethodInfo *)0x0);
+            if (pUVar11 == (UnityAction *)0x0) {
+              TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetRotation
+              ->static_fields->OnResetRotation = (UnityAction *)0x0;
+            }
+            else {
+              pUVar13 = pUVar4;
+              if (pUVar11->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+                pUVar13 = pUVar11;
+              }
+              if (pUVar13 == (UnityAction *)0x0) {
+                FUN_?(pUVar11,TypeInfo__UnityEngine__Events__UnityAction);
+                pcVar14 = (code *)swi(3);
+                (*pcVar14)();
+                return;
+              }
+              TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetRotation
+              ->static_fields->OnResetRotation = pUVar13;
+              if (pUVar11->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+                pUVar4 = pUVar11;
+              }
+              if (pUVar4 == (UnityAction *)0x0) {
+                FUN_?(pUVar11);
+                pcVar14 = (code *)swi(3);
+                (*pcVar14)();
+                return;
+              }
+            }
+            if (iRam_? != 0) {
+              uVar5 = (uint)((ulonglong)
+                              TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetRotation
+                              ->static_fields >> 0xc);
+              lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+              do {
+                uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+                puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+                LOCK();
+                bVar9 = uVar7 == *puVar8;
+                if (bVar9) {
+                  *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+                }
+                UNLOCK();
+              } while (!bVar9);
+            }
+            return;
+          }
+        }
       }
-      pUVar4 = (UnityAction *)0x0;
-      if (pUStack1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUVar4 = pUStack1;
-      }
-      pUStack6 = TypeInfo__UnityEngine__Events__UnityAction;
-      if (pUVar4 == (UnityAction *)0x0) goto code_?;
-      TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetRotation->
-      static_fields->OnResetRotation = pUVar4;
-      pUStack6 = (UnityAction__Class *)(UnityAction *)0x0;
-      if (pUStack1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUStack6 = (UnityAction__Class *)pUStack1;
-      }
-      pUVar2 = TypeInfo__UnityEngine__Events__UnityAction;
-      if (pUStack6 != (UnityAction__Class *)0x0) {
-        pUStack1 =
-             (UnityAction *)
-             TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetRotation
-             ->static_fields;
-        func_?();
-        return;
-      }
-    }
-    else {
-      pUVar4 = (UnityAction *)0x0;
-      if (pUStack1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUVar4 = pUStack1;
-      }
-      pUStack6 = TypeInfo__UnityEngine__Events__UnityAction;
-      if (pUVar4 == (UnityAction *)0x0) goto code_?;
-      TypeInfo__Assets__UGUI__Desktop__Scripts__Shared__CubeModeling__CubeModelEditResetPosition->
-      static_fields->OnResetPosition = pUVar4;
-      pUStack6 = (UnityAction__Class *)(UnityAction *)0x0;
-      if (pUStack1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-        pUStack6 = (UnityAction__Class *)pUStack1;
-      }
-      pUVar2 = TypeInfo__UnityEngine__Events__UnityAction;
-      if (pUStack6 != (UnityAction__Class *)0x0) goto code_?;
     }
   }
-  pUStack6 = pUVar2;
-  pUStack6 = (UnityAction__Class *)func_?();
-  pUStack1 = extraout_ECX_00;
-code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+DAT_?:
+  FUN_?();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -423,225 +782,592 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::MVCustom
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__Extensions);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
-    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__);
-    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
-    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTGApp>);
-    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>);
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&StringLiteral_MuzzleDirection);
-    func_?(&StringLiteral_MuzzlePosition);
-    func_?(&StringLiteral_itemData);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Extensions);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__MonoSingleton<RTG::RTGApp>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_MuzzleDirection);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_MuzzlePosition);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_itemData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   EditablePickupItem::MVEditablePickupItemBaseBlueprint::
   MVEditablePickupItemBaseBlueprint_Initialize
             ((MVEditablePickupItemBaseBlueprint *)this,(MethodInfo *)0x0);
   pMVar1 = (this->fields)._.itemBase;
-  if ((pMVar1 != (MVEditablePickupItemBase *)0x0) &&
-     (this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                (pMVar1->fields)._._._._.data,
-     this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) {
-    hashtable = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          (this_00,(Object *)StringLiteral_itemData,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                          );
-    if ((hashtable.m_Index != 0) &&
-       ((*(byte *)(*(int *)hashtable.m_Index + 0xb8) <
-         (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         naturalAligment ||
-        (*(Dictionary_2_System_Object_System_Object___Class **)
-          (*(int *)(*(int *)hashtable.m_Index + 100) + -4 +
-          (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                ->_1).naturalAligment * 4) !=
-         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))))
+  if ((pMVar1 == (MVEditablePickupItemBase *)0x0) ||
+     (pDVar2 = (pMVar1->fields)._._._._.data,
+     pDVar2 == (Dictionary_2_System_Object_System_Object_ *)0x0)) {
+DAT_?:
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pDVar2 = (Dictionary_2_System_Object_System_Object_ *)
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__get_Item
+                      (pDVar2,(Object *)StringLiteral_itemData,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+  if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    bVar4 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
+            .naturalAligment;
+    if (((pDVar2->klass->_1).naturalAligment < bVar4) ||
+       ((Dictionary_2_System_Object_System_Object___Class *)
+        (pDVar2->klass->_1).typeHierarchy[(ulonglong)bVar4 - 1] !=
+        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+      FUN_?(pDVar2);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__PrefabPool);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pPVar5 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar5 == (PrefabPool *)0x0) goto DAT_?;
+  pGVar6 = (pPVar5->fields).muzzleEditNodePrefab;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pGVar6 = (GameObject *)
+            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                      ((Object *)pGVar6,
+                       UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                      );
+  bVar7 = iRam_? != 0;
+  (this->fields).muzzlePoint = pGVar6;
+  if (bVar7) {
+    uVar8 = (uint)((ulonglong)&(this->fields).muzzlePoint >> 0xc);
+    uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+    do {
+      uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+      puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+      LOCK();
+      bVar7 = uVar10 == *puVar11;
+      if (bVar7) {
+        *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar7);
+  }
+  pGVar6 = (this->fields).muzzlePoint;
+  if (pGVar6 == (GameObject *)0x0) goto DAT_?;
+  pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                      (pGVar6,(MethodInfo *)0x0);
+  pMVar13 = (this->fields)._.editableCubeModel;
+  if ((pMVar13 == (MVCubeModelInstance *)0x0) || (pTVar12 == (Transform *)0x0)) goto DAT_?;
+  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+            (pTVar12,(pMVar13->fields)._._.transform,1,(MethodInfo *)0x0);
+  pGVar6 = (this->fields).muzzlePoint;
+  if (pGVar6 == (GameObject *)0x0) goto DAT_?;
+  pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                      (pGVar6,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pSVar14 = StringLiteral_MuzzlePosition;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__Extensions);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  VStack_15.x = 0.0;
+  VStack_15.y = 0.0;
+  if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  VStack_16.x = VStack_15.x;
+  VStack_16.y = VStack_15.y;
+  VStack_16.z = 0.0;
+  pVVar17 = Extensions::Extensions_GetVector3OrDefault
+                      (&VStack_15,pDVar2,pSVar14,&VStack_16,(MethodInfo *)0x0);
+  if (pTVar12 == (Transform *)0x0) {
+code_?:
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  VStack_16.x = pVVar17->x;
+  VStack_16.y = pVVar17->y;
+  VStack_16.z = pVVar17->z;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar18 = (pTVar12->fields)._._.m_CachedPtr;
+  if (pvVar18 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar12,(MethodInfo *)0x0);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pcVar3 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+    uVar19 = func_?(&UNK_?);
+    FUN_?(uVar19,0);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pcRam_? = pcVar3;
+  (*pcRam_?)(pvVar18);
+  pGVar6 = (this->fields).muzzlePoint;
+  if (pGVar6 == (GameObject *)0x0) goto code_?;
+  pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                      (pGVar6,(MethodInfo *)0x0);
+  pSVar14 = StringLiteral_MuzzleDirection;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__Extensions);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  VStack_15.x = 0.0;
+  VStack_15.y = 0.0;
+  if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  VStack_15.z = 0.0;
+  pVVar17 = Extensions::Extensions_GetVector3OrDefault
+                      (&VStack_20,pDVar2,pSVar14,&VStack_15,(MethodInfo *)0x0);
+  uVar21 = pVVar17->x;
+  uVar22 = pVVar17->y;
+  VStack_15.z = pVVar17->z * _UNK_?;
+  VStack_15.y = (float)uVar22 * _UNK_?;
+  VStack_15.x = (float)uVar21 * _UNK_?;
+  QStack_23.x = 0.0;
+  QStack_23.y = 0.0;
+  QStack_23.z = 0.0;
+  QStack_23.w = 0.0;
+  pcVar3 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+    uVar19 = func_?(&UNK_?);
+    FUN_?(uVar19,0);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pcRam_? = pcVar3;
+  (*pcRam_?)(&VStack_15);
+  if (pTVar12 == (Transform *)0x0) goto code_?;
+  VStack_20.x = QStack_23.x;
+  VStack_20.y = QStack_23.y;
+  VStack_20.z = QStack_23.z;
+  fStack_24 = QStack_23.w;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar18 = (pTVar12->fields)._._.m_CachedPtr;
+  if (pvVar18 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar12,(MethodInfo *)0x0);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pcVar3 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+    uVar19 = func_?(&UNK_?);
+    FUN_?(uVar19,0);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pcRam_? = pcVar3;
+  (*pcRam_?)(pvVar18);
+  pGVar6 = (this->fields).muzzlePoint;
+  if (pGVar6 == (GameObject *)0x0) goto code_?;
+  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+            (pGVar6,0,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__RTG__MonoSingleton<RTG::RTGApp>->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pBVar25 = (Behaviour *)
+            RTG::MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+                      (MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__);
+  if (pBVar25 == (Behaviour *)0x0) goto code_?;
+  UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+            (pBVar25,1,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  this_01 = (RTGizmosEngine *)
+            RTG::MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+                      (MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__);
+  if (this_01 == (RTGizmosEngine *)0x0) goto code_?;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  RTG__ObjectTransformGizmo_MethodInfo__RTG__Gizmo__AddBehaviour<RTG::ObjectTransformGizmo>__
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pUVar26 = RTG::RTGizmosEngine::RTGizmosEngine_CreateUniversalGizmo(this_01,(MethodInfo *)0x0);
+  pMVar27 = 
+  RTG__ObjectTransformGizmo_MethodInfo__RTG__Gizmo__AddBehaviour<RTG::ObjectTransformGizmo>__;
+  if ((pUVar26 == (UniversalGizmo *)0x0) ||
+     (pGVar28 = (pUVar26->fields)._._gizmo, pGVar28 == (Gizmo *)0x0)) goto code_?;
+  if ((RTG__ObjectTransformGizmo_MethodInfo__RTG__Gizmo__AddBehaviour<RTG::ObjectTransformGizmo>__->
+      field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(
+                 RTG__ObjectTransformGizmo_MethodInfo__RTG__Gizmo__AddBehaviour<RTG::ObjectTransformGizmo>__
+                 );
+  }
+  pOVar29 = (ObjectTransformGizmo *)
+            mscorlib.dll::System::Activator::Activator_CreateInstance_24
+                      (((pMVar27->field7_0x38).rgctx_data)->method);
+  RTG::Gizmo::Gizmo_AddBehaviour(pGVar28,(IGizmoBehaviour *)pOVar29,(MethodInfo *)0x0);
+  if ((pOVar29 == (ObjectTransformGizmo *)0x0) ||
+     (pGVar28 = (pOVar29->fields)._._gizmo, pGVar28 == (Gizmo *)0x0)) goto code_?;
+  if ((pGVar28->fields)._dragInfo._isDragged == 0) {
+    (pOVar29->fields)._transformChannelFlags = 7;
+  }
+  (pOVar29->fields)._sharedSettings = (this_01->fields)._objectUniversalGizmoSettings;
+  if (iRam_? != 0) {
+    uVar8 = (uint)((ulonglong)&(pOVar29->fields)._sharedSettings >> 0xc);
+    uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+    do {
+      uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+      puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+      LOCK();
+      bVar7 = uVar10 == *puVar11;
+      if (bVar7) {
+        *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar7);
+  }
+  iVar30 = iRam_?;
+  (this->fields).transformGizmo = pOVar29;
+  if (iVar30 != 0) {
+    uVar8 = (uint)((ulonglong)&(this->fields).transformGizmo >> 0xc);
+    uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+    do {
+      uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+      puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+      LOCK();
+      bVar7 = uVar10 == *puVar11;
+      if (bVar7) {
+        *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar7);
+  }
+  pOVar29 = (this->fields).transformGizmo;
+  pGVar6 = (this->fields).muzzlePoint;
+  if (pOVar29 == (ObjectTransformGizmo *)0x0) goto code_?;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar28 = (pOVar29->fields)._._gizmo;
+  if (pGVar28 == (Gizmo *)0x0) goto code_?;
+  if ((pGVar28->fields)._dragInfo._isDragged == 0) {
+    (pOVar29->fields)._targetObjectMode = 1;
+    pLVar31 = (LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+              FUN_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
+    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+    __Il2CppFullySharedGenericType]::
+    LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+              (pLVar31,
+               MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
+    if (pLVar31 == (LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0)
     goto code_?;
+    FUN_?(pLVar31);
+    iVar30 = iRam_?;
+    (pOVar29->fields)._targetObjects = (IEnumerable_1_UnityEngine_GameObject_ *)pLVar31;
+    if (iVar30 != 0) {
+      uVar8 = (uint)((ulonglong)&(pOVar29->fields)._targetObjects >> 0xc);
+      uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar10 == *puVar11;
+        if (bVar7) {
+          *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+        iVar30 = iRam_?;
+      } while (!bVar7);
+    }
+    (pOVar29->fields)._targetPivotObject = pGVar6;
+    if (iVar30 != 0) {
+      uVar8 = (uint)((ulonglong)&(pOVar29->fields)._targetPivotObject >> 0xc);
+      uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar10 == *puVar11;
+        if (bVar7) {
+          *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    RTG::ObjectTransformGizmo::ObjectTransformGizmo_RefreshPosition(pOVar29,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
-      func_?();
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
-    if (pPVar2 != (PrefabPool *)0x0) {
-      pGVar3 = (pPVar2->fields).muzzleEditNodePrefab;
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+    if ((pOVar29->fields)._targetObjects == (IEnumerable_1_UnityEngine_GameObject_ *)0x0)
+    goto code_?;
+    pGVar28 = (pOVar29->fields)._._gizmo;
+    if (pGVar28 == (Gizmo *)0x0) goto code_?;
+    if ((pGVar28->fields)._dragInfo._isDragged != 0) goto code_?;
+    pGVar32 = (pGVar28->fields)._transform;
+    if ((pOVar29->fields)._transformSpace == 0) {
+code_?:
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Quaternion);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
-      pGVar3 = (GameObject *)
-               UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                         ((Object *)pGVar3,
-                          UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
-                         );
-      (this->fields).muzzlePoint = pGVar3;
-      func_?();
-      pGVar3 = (this->fields).muzzlePoint;
-      if (pGVar3 != (GameObject *)0x0) {
-        pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                           (pGVar3,(MethodInfo *)0x0);
-        pMVar5 = (this->fields)._.editableCubeModel;
-        if ((pMVar5 != (MVCubeModelInstance *)0x0) && (pTVar4 != (Transform *)0x0)) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent
-                    (pTVar4,(pMVar5->fields)._._.transform,(MethodInfo *)0x0);
-          pGVar3 = (this->fields).muzzlePoint;
-          if (pGVar3 != (GameObject *)0x0) {
-            pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                               (pGVar3,(MethodInfo *)0x0);
-            if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-              func_?(TypeInfo__Extensions);
-            }
-            pVVar6 = Extensions::Extensions_GetVector3
-                               (&VStack_7,
-                                (Dictionary_2_System_Object_System_Object_ *)hashtable.m_Index,
-                                StringLiteral_MuzzlePosition,(MethodInfo *)0x0);
-            if (pTVar4 != (Transform *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                        (pTVar4,*pVVar6,(MethodInfo *)0x0);
-              pGVar3 = (this->fields).muzzlePoint;
-              if (pGVar3 != (GameObject *)0x0) {
-                pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                         GameObject_get_transform(pGVar3,(MethodInfo *)0x0);
-                pVVar6 = Extensions::Extensions_GetVector3
-                                   ((Vector3 *)&stack0xffffffe4,
-                                    (Dictionary_2_System_Object_System_Object_ *)hashtable.m_Index,
-                                    StringLiteral_MuzzleDirection,(MethodInfo *)0x0);
-                VStack_7.x = pVVar6->x;
-                VStack_7.y = pVVar6->y;
-                VStack_7.z = pVVar6->z * _UNK_?;
-                euler.y = VStack_7.y * _UNK_?;
-                euler.x = VStack_7.x * _UNK_?;
-                euler.z = VStack_7.z;
-                pQVar8 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                         Quaternion_Internal_FromEulerRad
-                                   ((Quaternion *)&stack0xffffffe0,euler,(MethodInfo *)0x0);
-                if (pTVar4 != (Transform *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                            (pTVar4,*pQVar8,(MethodInfo *)0x0);
-                  pGVar3 = (this->fields).muzzlePoint;
-                  if (pGVar3 != (GameObject *)0x0) {
-                    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                              (pGVar3,0,(MethodInfo *)0x0);
-                    if ((TypeInfo__RTG__MonoSingleton<RTG::RTGApp>->_1).cctor_finished_or_no_cctor
-                        == 0) {
-                      func_?(TypeInfo__RTG__MonoSingleton<RTG::RTGApp>);
-                    }
-                    pBVar9 = (Behaviour *)
-                              RTG::MonoSingleton`1[System::Object]::
-                              MonoSingleton_1_System_Object__get_Get
-                                        (MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__);
-                    if (pBVar9 != (Behaviour *)0x0) {
-                      UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                                (pBVar9,1,(MethodInfo *)0x0);
-                      if ((TypeInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>->_1).
-                          cctor_finished_or_no_cctor == 0) {
-                        func_?();
-                      }
-                      this_02 = (RTGizmosEngine *)
-                                RTG::MonoSingleton`1[System::Object]::
-                                MonoSingleton_1_System_Object__get_Get
-                                          (
-                                          MethodInfo__RTG__MonoSingleton<RTG::RTGizmosEngine>__get_Get__
-                                          );
-                      if (this_02 != (RTGizmosEngine *)0x0) {
-                        pOVar10 = RTG::RTGizmosEngine::RTGizmosEngine_CreateObjectUniversalGizmo
-                                            (this_02,(MethodInfo *)0x0);
-                        (this->fields).transformGizmo = pOVar10;
-                        func_?();
-                        pOVar10 = (this->fields).transformGizmo;
-                        if (pOVar10 != (ObjectTransformGizmo *)0x0) {
-                          RTG::ObjectTransformGizmo::ObjectTransformGizmo_SetTargetObject
-                                    (pOVar10,(this->fields).muzzlePoint,(MethodInfo *)0x0);
-                          pOVar10 = (this->fields).transformGizmo;
-                          if ((pOVar10 != (ObjectTransformGizmo *)0x0) &&
-                             (pGVar11 = (pOVar10->fields)._._gizmo, pGVar11 != (Gizmo *)0x0)) {
-                            this_01 = (pGVar11->fields)._universalGizmo;
-                            this_03 = (List_1_System_Object_ *)func_?();
-                            mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP
-                            ::Metadata::__Il2CppFullySharedGenericType]::
-                            LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                                      ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                                        *)this_03,
-                                       MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__
-                                      );
-                            if (this_03 != (List_1_System_Object_ *)0x0) {
-                              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-                              List_1_System_Object__Add
-                                        (this_03,(Object *)(this->fields).muzzlePoint,
-                                         MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
-                                        );
-                              if (this_01 != (UniversalGizmo *)0x0) {
-                                RTG::UniversalGizmo::UniversalGizmo_SetMvVertexSnapTargetObjects
-                                          (this_01,(IEnumerable_1_UnityEngine_GameObject_ *)this_03,
-                                           (MethodInfo *)0x0);
-                                pOVar10 = (this->fields).transformGizmo;
-                                if (pOVar10 != (ObjectTransformGizmo *)0x0) {
-                                  RTG::ObjectTransformGizmo::ObjectTransformGizmo_SetTransformSpace
-                                            (pOVar10,GizmoSpace__Enum_Global,(MethodInfo *)0x0);
-                                  pOVar10 = (this->fields).transformGizmo;
-                                  if (pOVar10 != (ObjectTransformGizmo *)0x0) {
-                                    RTG::ObjectTransformGizmo::
-                                    ObjectTransformGizmo_SetCanAffectScale
-                                              (pOVar10,0,(MethodInfo *)0x0);
-                                    pOVar10 = (this->fields).transformGizmo;
-                                    if ((pOVar10 != (ObjectTransformGizmo *)0x0) &&
-                                       (pGVar11 = (pOVar10->fields)._._gizmo, pGVar11 != (Gizmo *)0x0)
-                                       ) {
-                                      (pGVar11->fields)._forceRefresh = 1;
-                                      pOVar10 = (this->fields).transformGizmo;
-                                      if ((pOVar10 != (ObjectTransformGizmo *)0x0) &&
-                                         (pGVar11 = (pOVar10->fields)._._gizmo,
-                                         pGVar11 != (Gizmo *)0x0)) {
-                                        RTG::Gizmo::Gizmo_SetEnabled(pGVar11,0,(MethodInfo *)0x0);
-                                        pBVar9 = (Behaviour *)
-                                                  RTG::MonoSingleton`1[System::Object]::
-                                                  MonoSingleton_1_System_Object__get_Get
-                                                            (
-                                                  MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__
-                                                  );
-                                        if (pBVar9 != (Behaviour *)0x0) {
-                                          UnityEngine.CoreModule.dll::UnityEngine::Behaviour::
-                                          Behaviour_set_enabled(pBVar9,0,(MethodInfo *)0x0);
-                                          return;
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
+      pQVar33 = TypeInfo__UnityEngine__Quaternion->static_fields;
+      if (pGVar32 == (GizmoTransform *)0x0) goto code_?;
+      QStack_23.x = (pQVar33->identityQuaternion).x;
+      QStack_23.y = (pQVar33->identityQuaternion).y;
+      QStack_23.z = (pQVar33->identityQuaternion).z;
+      QStack_23.w = (pQVar33->identityQuaternion).w;
+    }
+    else {
+      pGVar6 = (pOVar29->fields)._targetPivotObject;
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (pGVar6 == (GameObject *)0x0) goto code_?;
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if ((pGVar6->fields)._.m_CachedPtr == (void *)0x0) goto code_?;
+      pGVar6 = (pOVar29->fields)._targetPivotObject;
+      if (((pGVar6 == (GameObject *)0x0) ||
+          (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                               (pGVar6,(MethodInfo *)0x0), pTVar12 == (Transform *)0x0)) ||
+         (pQVar34 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                              (&QStack_23,pTVar12,(MethodInfo *)0x0),
+         pGVar32 == (GizmoTransform *)0x0)) goto code_?;
+      QStack_23.x = pQVar34->x;
+      QStack_23.y = pQVar34->y;
+      QStack_23.z = pQVar34->z;
+      QStack_23.w = pQVar34->w;
+    }
+    RTG::GizmoTransform::GizmoTransform_set_Rotation3D(pGVar32,&QStack_23,(MethodInfo *)0x0);
+  }
+code_?:
+  pOVar29 = (this->fields).transformGizmo;
+  if ((pOVar29 == (ObjectTransformGizmo *)0x0) ||
+     (pGVar28 = (pOVar29->fields)._._gizmo, pGVar28 == (Gizmo *)0x0)) goto code_?;
+  pUVar26 = (pGVar28->fields)._universalGizmo;
+  pLVar31 = (LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+            FUN_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            (pLVar31,MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__
+            );
+  if ((pLVar31 == (LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) ||
+     ((FUN_?(pLVar31,(this->fields).muzzlePoint), pUVar26 == (UniversalGizmo *)0x0 ||
+      (this_00 = (pUVar26->fields)._mvVertexSnapDrag, this_00 == (GizmoObjectVertexSnapDrag3D *)0x0)
+      ))) goto code_?;
+  RTG::GizmoObjectVertexSnapDrag3D::GizmoObjectVertexSnapDrag3D_SetTargetObjects
+            (this_00,(IEnumerable_1_UnityEngine_GameObject_ *)pLVar31,(MethodInfo *)0x0);
+  pOVar29 = (this->fields).transformGizmo;
+  if ((pOVar29 == (ObjectTransformGizmo *)0x0) ||
+     (pGVar28 = (pOVar29->fields)._._gizmo, pGVar28 == (Gizmo *)0x0)) goto code_?;
+  if (((pGVar28->fields)._dragInfo._isDragged == 0) &&
+     ((pOVar29->fields)._isTransformSpacePermanent == 0)) {
+    bVar7 = cRam_? == '\0';
+    (pOVar29->fields)._transformSpace = 0;
+    if (bVar7) {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if ((pOVar29->fields)._targetObjects != (IEnumerable_1_UnityEngine_GameObject_ *)0x0) {
+      pGVar28 = (pOVar29->fields)._._gizmo;
+      if (pGVar28 == (Gizmo *)0x0) goto code_?;
+      if ((pGVar28->fields)._dragInfo._isDragged != 0) goto code_?;
+      pGVar32 = (pGVar28->fields)._transform;
+      if ((pOVar29->fields)._transformSpace == 0) {
+code_?:
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Quaternion);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
         }
+        pQVar33 = TypeInfo__UnityEngine__Quaternion->static_fields;
+        if (pGVar32 == (GizmoTransform *)0x0) goto code_?;
+        QStack_23.x = (pQVar33->identityQuaternion).x;
+        QStack_23.y = (pQVar33->identityQuaternion).y;
+        QStack_23.z = (pQVar33->identityQuaternion).z;
+        QStack_23.w = (pQVar33->identityQuaternion).w;
+      }
+      else {
+        pGVar6 = (pOVar29->fields)._targetPivotObject;
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (pGVar6 == (GameObject *)0x0) goto code_?;
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if ((pGVar6->fields)._.m_CachedPtr == (void *)0x0) goto code_?;
+        pGVar6 = (pOVar29->fields)._targetPivotObject;
+        if (((pGVar6 == (GameObject *)0x0) ||
+            (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                                 (pGVar6,(MethodInfo *)0x0), pTVar12 == (Transform *)0x0)) ||
+           (pQVar34 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
+                                (&QStack_23,pTVar12,(MethodInfo *)0x0),
+           pGVar32 == (GizmoTransform *)0x0)) goto code_?;
+        QStack_23.x = pQVar34->x;
+        QStack_23.y = pQVar34->y;
+        QStack_23.z = pQVar34->z;
+        QStack_23.w = pQVar34->w;
+      }
+      RTG::GizmoTransform::GizmoTransform_set_Rotation3D(pGVar32,&QStack_23,(MethodInfo *)0x0);
+    }
+  }
+code_?:
+  pOVar29 = (this->fields).transformGizmo;
+  if ((pOVar29 != (ObjectTransformGizmo *)0x0) &&
+     (pGVar28 = (pOVar29->fields)._._gizmo, pGVar28 != (Gizmo *)0x0)) {
+    if ((pGVar28->fields)._dragInfo._isDragged == 0) {
+      piVar35 = &(pOVar29->fields)._transformChannelFlags;
+      *piVar35 = *piVar35 & 0xfffffffb;
+    }
+    pOVar29 = (this->fields).transformGizmo;
+    if ((pOVar29 != (ObjectTransformGizmo *)0x0) &&
+       (pGVar28 = (pOVar29->fields)._._gizmo, pGVar28 != (Gizmo *)0x0)) {
+      RTG::Gizmo::Gizmo_SetEnabled(pGVar28,0,(MethodInfo *)0x0);
+      pBVar25 = (Behaviour *)
+                RTG::MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+                          (MethodInfo__RTG__MonoSingleton<RTG::RTGApp>__get_Get__);
+      if (pBVar25 != (Behaviour *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                  (pBVar25,0,(MethodInfo *)0x0);
+        return;
       }
     }
   }
-  func_?();
 code_?:
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -654,21 +1380,34 @@ MVCustomGunBlueprint_MuzzleBoundCheckRoutine(MVCustomGunBlueprint *this,MethodIn
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint___MuzzleBoundCheckRoutine_d__17
-                   );
+    FUN_?(&
+                  TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint___MuzzleBoundCheckRoutine_d__17
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = 
-  TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint___MuzzleBoundCheckRoutine_d__17
-  ;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)this;
-  value[1].klass = (Object__Class *)0x0;
-  func_?(value + 2,this);
-  return (IEnumerator *)value;
+  pIVar1 = (IEnumerator *)
+           FUN_?(
+                        TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint___MuzzleBoundCheckRoutine_d__17
+                        );
+  bVar2 = iRam_? != 0;
+  *(undefined4 *)&pIVar1[1].klass = 0;
+  pIVar1[2].klass = (IEnumerator__Class *)this;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)(pIVar1 + 2) >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
+  return pIVar1;
 }
 
 
@@ -681,61 +1420,168 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::MVCustom
   pMVar1 = (this->fields)._.editableCubeModel;
   if ((pMVar1 != (MVCubeModelInstance *)0x0) &&
      (this_00 = (pMVar1->fields)._._.transform, this_00 != (Transform *)0x0)) {
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent
-              (this_00,(this->fields)._.cubeModelBaseParent,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+              (this_00,(this->fields)._.cubeModelBaseParent,1,(MethodInfo *)0x0);
     pMVar1 = (this->fields)._.editableCubeModel;
     if (pMVar1 != (MVCubeModelInstance *)0x0) {
-      MVCubeModelBase::MVCubeModelBase_GetBounds
-                ((Bounds *)&stack0xffffffd8,(MVCubeModelBase *)pMVar1,(MethodInfo *)0x0);
+      pBVar2 = MVCubeModelBase::MVCubeModelBase_GetBounds
+                         (aBStack_3,(MVCubeModelBase *)pMVar1,(MethodInfo *)0x0);
+      uStack_4._0_4_ = (pBVar2->m_Extents).y;
+      uStack_4._4_4_ = (pBVar2->m_Extents).z;
+      fVar5 = (pBVar2->m_Center).x;
+      fVar6 = (pBVar2->m_Center).y;
+      fVar7 = (pBVar2->m_Center).z;
       pMVar1 = (this->fields)._.editableCubeModel;
       if ((pMVar1 != (MVCubeModelInstance *)0x0) &&
-         (this_01 = (pMVar1->fields)._._.transform, this_01 != (Transform *)0x0)) {
-        __return_storage_ptr__ = (Vector3 *)&stack0xffffffe4;
-        puVar2 = &UNK_?;
-        pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                           (__return_storage_ptr__,this_01,(MethodInfo *)0x0);
-        uVar4 = pVVar3->x;
-        uVar5 = pVVar3->y;
-        value.y = (float)((uint)((float)__return_storage_ptr__ * (float)uVar5) ^
-                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
-                  _UNK_?;
-        value.x = (float)((uint)((float)puVar2 * (float)uVar4) ^
-                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-        value.z = (float)((uint)((float)this_01 * pVVar3->z) ^
-                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
-                  _UNK_?;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                  (this_00,value,(MethodInfo *)0x0);
+         (obj = (pMVar1->fields)._._.transform, obj != (Transform *)0x0)) {
         if (cRam_? == '\0') {
-          func_?();
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                       );
+          LOCK();
+          UNLOCK();
           cRam_? = '\x01';
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                  (this_00,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
-                   (MethodInfo *)0x0);
+        uStack_8 = 0;
+        fStack_9 = 0.0;
+        pvVar10 = (obj->fields)._._.m_CachedPtr;
+        if (pvVar10 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+          pcVar11 = (code *)swi(3);
+          (*pcVar11)();
+          return;
+        }
+        pcVar11 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+          uVar12 = func_?(&UNK_?);
+          FUN_?(uVar12,0);
+          pcVar11 = (code *)swi(3);
+          (*pcVar11)();
+          return;
+        }
+        pcRam_? = pcVar11;
+        (*pcRam_?)(pvVar10);
+        aBStack_3[0].m_Center.z =
+             (float)((uint)(fVar7 * fStack_9) ^ _UNK_?) * _UNK_?;
+        aBStack_3[0].m_Center.y =
+             (float)((uint)(fVar6 * uStack_8._4_4_) ^ _UNK_?) * _UNK_?;
+        aBStack_3[0].m_Center.x = (float)((uint)(fVar5 * (float)uStack_8) ^ _UNK_?);
         if (cRam_? == '\0') {
-          func_?();
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                       );
+          LOCK();
+          UNLOCK();
           cRam_? = '\x01';
         }
-        pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
-        uVar7 = (pVVar6->oneVector).x;
-        uVar8 = (pVVar6->oneVector).y;
-        fVar9 = (pVVar6->oneVector).z;
-        fVar10 = (float10)(*(code *)(this->klass->vtable).get_CubeModelScale.method)();
-        fVar11 = (float)fVar10;
-        value_00.y = (float)uVar8 * fVar11;
-        value_00.x = (float)uVar7 * fVar11;
-        value_00.z = fVar9 * fVar11;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                  (this_00,value_00,(MethodInfo *)0x0);
+        pvVar10 = (this_00->fields)._._.m_CachedPtr;
+        if (pvVar10 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)this_00,(MethodInfo *)0x0);
+          pcVar11 = (code *)swi(3);
+          (*pcVar11)();
+          return;
+        }
+        pcVar11 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+          uVar12 = func_?(&UNK_?);
+          FUN_?(uVar12,0);
+          pcVar11 = (code *)swi(3);
+          (*pcVar11)();
+          return;
+        }
+        pcRam_? = pcVar11;
+        (*pcRam_?)(pvVar10);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Quaternion);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pQVar13 = TypeInfo__UnityEngine__Quaternion->static_fields;
+        uStack_8._0_4_ = (pQVar13->identityQuaternion).x;
+        uStack_8._4_4_ = (pQVar13->identityQuaternion).y;
+        fStack_9 = (pQVar13->identityQuaternion).z;
+        fStack_14 = (pQVar13->identityQuaternion).w;
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pvVar10 = (this_00->fields)._._.m_CachedPtr;
+        if (pvVar10 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)this_00,(MethodInfo *)0x0);
+          pcVar11 = (code *)swi(3);
+          (*pcVar11)();
+          return;
+        }
+        pcVar11 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+          uVar12 = func_?(&UNK_?);
+          FUN_?(uVar12,0);
+          pcVar11 = (code *)swi(3);
+          (*pcVar11)();
+          return;
+        }
+        pcRam_? = pcVar11;
+        (*pcRam_?)(pvVar10,&uStack_8);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Vector3);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pVVar15 = TypeInfo__UnityEngine__Vector3->static_fields;
+        uVar16 = (pVVar15->oneVector).x;
+        uVar17 = (pVVar15->oneVector).y;
+        fVar5 = (pVVar15->oneVector).z;
+        fVar6 = (float)(*(this->klass->vtable).get_CubeModelScale.methodPtr)(this);
+        aBStack_3[0].m_Center.z = fVar5 * fVar6;
+        aBStack_3[0].m_Center.y = (float)uVar17 * fVar6;
+        aBStack_3[0].m_Center.x = (float)uVar16 * fVar6;
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pvVar10 = (this_00->fields)._._.m_CachedPtr;
+        if (pvVar10 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)this_00,(MethodInfo *)0x0);
+          pcVar11 = (code *)swi(3);
+          (*pcVar11)();
+          return;
+        }
+        pcVar11 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+          uVar12 = func_?(&UNK_?);
+          FUN_?(uVar12,0);
+          pcVar11 = (code *)swi(3);
+          (*pcVar11)();
+          return;
+        }
+        pcRam_? = pcVar11;
+        (*pcRam_?)(pvVar10);
         MVCustomGunBlueprint_EndMuzzleEdit(this,(MethodInfo *)0x0);
         return;
       }
     }
   }
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -748,8 +1594,8 @@ bool Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::MVCustom
 
 {
   if (e != (EditorStateMachine *)0x0) {
-    bVar1 = (e->fields)._MuzzleEditMode_k__BackingField;
     this_00 = (this->fields)._.itemBase;
+    bVar1 = (e->fields)._MuzzleEditMode_k__BackingField;
     if (this_00 != (MVEditablePickupItemBase *)0x0) {
       pMVar2 = EditablePickupItem::MVEditablePickupItemBase::MVEditablePickupItemBase_get_BaseObject
                          (this_00,(MethodInfo *)0x0);
@@ -763,22 +1609,23 @@ bool Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::MVCustom
           EditablePickupItem::MVEditablePickupItemBaseBlueprint::
           MVEditablePickupItemBaseBlueprint_ToggleCubeModelColliders
                     ((MVEditablePickupItemBaseBlueprint *)this,bVar1 == 0,(MethodInfo *)0x0);
-          (*(code *)(this->klass->vtable).OnStartEditing.method)
-                    (this,(this->klass->vtable).OnEndEditing.methodPtr);
+          (*(this->klass->vtable).OnStartEditing.methodPtr)(this);
           if (bVar1 != 0) {
             MVCustomGunBlueprint_EnterMuzzleEdit(this,(MethodInfo *)0x0);
           }
           pEVar3 = (this->fields)._.editableCubeModelWrapper;
           if (pEVar3 != (EditableCubeModelWrapper *)0x0) {
-            bVar1 = (*(code *)(pEVar3->klass->vtable).OnEnterObject.method)
-                              (pEVar3,e,(pEVar3->klass->vtable).OnExitObject.methodPtr);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+            bVar1 = (*(pEVar3->klass->vtable).OnEnterObject.methodPtr)
+                              (pEVar3,e,(pEVar3->klass->vtable).OnEnterObject.method);
             return bVar1;
           }
         }
       }
     }
   }
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   bVar1 = (*pcVar4)();
   return bVar1;
@@ -792,99 +1639,188 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::MVCustom
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&StringLiteral_MuzzlePosition);
-    func_?(&StringLiteral_itemData);
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_MuzzlePosition);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_itemData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  x.m_Index = (int32_t)(this->fields).muzzlePoint;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  pGVar1 = (this->fields).muzzlePoint;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)x.m_Index,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    return;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  if ((TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pVVar2 = CustomGunData::CustomGunData_DefaultVector3
-                     ((Vector3 *)&stack0xffffffe4,StringLiteral_MuzzlePosition,(MethodInfo *)0x0);
-  pGVar3 = (GameObject *)pVVar2->z;
-  value = *pVVar2;
-  v = *pVVar2;
-  pMVar4 = (this->fields)._.itemBase;
-  if ((pMVar4 != (MVEditablePickupItemBase *)0x0) &&
-     (this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                (pMVar4->fields)._._._._.data,
-     this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) {
-    x = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-        UIElements::TextureId]::
-        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                  (this_00,(Object *)StringLiteral_itemData,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                  );
-    this_02 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-    if ((x.m_Index != 0) &&
-       ((pDVar5 = TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-        , *(byte *)(*(int *)x.m_Index + 0xb8) <
-          (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-          naturalAligment ||
-        (*(Dictionary_2_System_Object_System_Object___Class **)
-          (*(int *)(*(int *)x.m_Index + 100) + -4 +
-          (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                ->_1).naturalAligment * 4) !=
-         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))))
-    goto code_?;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object___ctor_1
-              (this_02,(IDictionary_2_System_Object_System_Object_ *)x.m_Index,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_
-              );
-    value_00 = MathFunctions::MathFunctions_ToFloatArray(v,(MethodInfo *)0x0);
-    x.m_Index = (int32_t)pGVar3;
-    if (this_02 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__set_Item
-                (this_02,(Object *)StringLiteral_MuzzlePosition,(Object *)value_00,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                );
-      pGVar3 = (this->fields).muzzlePoint;
-      if ((pGVar3 != (GameObject *)0x0) &&
-         (this_03 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                              (pGVar3,(MethodInfo *)0x0), this_03 != (Transform *)0x0)) {
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                  (this_03,value,(MethodInfo *)0x0);
-        this_01 = (this->fields).transformGizmo;
-        if (this_01 != (ObjectTransformGizmo *)0x0) {
-          RTG::ObjectTransformGizmo::ObjectTransformGizmo_RefreshPositionAndRotation
-                    (this_01,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pGVar1 != (GameObject *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((pGVar1->fields)._.m_CachedPtr != (void *)0x0) {
+      if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->_1).
+                   field_0x1c == 0) {
+        FUN_?();
+      }
+      pVVar2 = CustomGunData::CustomGunData_DefaultVector3
+                         (aVStack_3,StringLiteral_MuzzlePosition,(MethodInfo *)0x0);
+      pMVar4 = (this->fields)._.itemBase;
+      uVar5._0_4_ = pVVar2->x;
+      uVar5._4_4_ = pVVar2->y;
+      fVar6 = pVVar2->z;
+      if ((pMVar4 != (MVEditablePickupItemBase *)0x0) &&
+         (pDVar7 = (pMVar4->fields)._._._._.data,
+         pDVar7 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
+        dictionary = (IDictionary_2_System_Object_System_Object_ *)
+                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
+                     ::Object]::Dictionary_2_System_Object_System_Object__get_Item
+                               (pDVar7,(Object *)StringLiteral_itemData,
+                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                               );
+        pDVar7 = (Dictionary_2_System_Object_System_Object_ *)
+                 FUN_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                              );
+        if (dictionary != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+          bVar8 = (
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                  ->_1).naturalAligment;
+          if (((dictionary->klass->_1).naturalAligment < bVar8) ||
+             ((Dictionary_2_System_Object_System_Object___Class *)
+              (dictionary->klass->_1).typeHierarchy[(ulonglong)bVar8 - 1] !=
+              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+            FUN_?(dictionary);
+            pcVar9 = (code *)swi(3);
+            (*pcVar9)();
+            return;
+          }
+        }
+        method_00 = MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_
+                    ->klass->rgctx_data[8].method;
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object___ctor_4
+                  (pDVar7,dictionary,(IEqualityComparer_1_System_Object_ *)0x0,method_00);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__System__Single);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        value = (Object *)FUN_?(TypeInfo__System__Single,3);
+        if (value != (Object *)0x0) {
+          if (*(int *)&value[1].monitor != 0) {
+            *(float *)&value[2].klass = (float)uVar5;
+            if (1 < *(uint *)&value[1].monitor) {
+              *(float *)((longlong)&value[2].klass + 4) = uVar5._4_4_;
+              if (2 < *(uint *)&value[1].monitor) {
+                *(float *)&value[2].monitor = fVar6;
+                if (pDVar7 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                  Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                            (pDVar7,(Object *)StringLiteral_MuzzlePosition,value,
+                             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)method_00 >> 8),1),
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                             ->klass->rgctx_data[0x22].method);
+                  pGVar1 = (this->fields).muzzlePoint;
+                  if ((pGVar1 != (GameObject *)0x0) &&
+                     (obj = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                            GameObject_get_transform(pGVar1,(MethodInfo *)0x0),
+                     obj != (Transform *)0x0)) {
+                    aVStack_3[0]._0_8_ = uVar5;
+                    aVStack_3[0].z = fVar6;
+                    if (cRam_? == '\0') {
+                      FUN_?(&
+                                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                                   );
+                      LOCK();
+                      UNLOCK();
+                      cRam_? = '\x01';
+                    }
+                    pvVar10 = (obj->fields)._._.m_CachedPtr;
+                    if (pvVar10 == (void *)0x0) {
+                      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                      ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+                      pcVar9 = (code *)swi(3);
+                      (*pcVar9)();
+                      return;
+                    }
+                    pcVar9 = pcRam_?;
+                    if ((pcRam_? == (code *)0x0) &&
+                       (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0)) {
+                      uVar5 = func_?(&UNK_?);
+                      FUN_?(uVar5,0);
+                      pcVar9 = (code *)swi(3);
+                      (*pcVar9)();
+                      return;
+                    }
+                    pcRam_? = pcVar9;
+                    (*pcRam_?)(pvVar10);
+                    this_00 = (this->fields).transformGizmo;
+                    if (this_00 != (ObjectTransformGizmo *)0x0) {
+                      RTG::ObjectTransformGizmo::ObjectTransformGizmo_RefreshPosition
+                                (this_00,(MethodInfo *)0x0);
+                      RTG::ObjectTransformGizmo::ObjectTransformGizmo_RefreshRotation
+                                (this_00,(MethodInfo *)0x0);
+                      return;
+                    }
+                  }
+                }
+                goto DAT_?;
+              }
+            }
+          }
+          FUN_?();
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
           return;
         }
       }
+DAT_?:
+      FUN_?();
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
+      return;
     }
   }
-  func_?();
-  pDVar5 = extraout_EDX;
-code_?:
-  func_?(x.m_Index,pDVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
   return;
 }
 
@@ -896,109 +1832,214 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::MVCustom
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&StringLiteral_MuzzleDirection);
-    func_?(&StringLiteral_itemData);
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_MuzzleDirection);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_itemData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_03.m_Index = (int32_t)(this->fields).muzzlePoint;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  pGVar1 = (this->fields).muzzlePoint;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)this_03.m_Index,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    return;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  if ((TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pVVar2 = CustomGunData::CustomGunData_DefaultVector3
-                     ((Vector3 *)&stack0xffffffdc,StringLiteral_MuzzleDirection,(MethodInfo *)0x0);
-  uVar3 = pVVar2->x;
-  uVar4 = pVVar2->y;
-  fVar5 = pVVar2->z;
-  VVar6 = *pVVar2;
-  pMVar7 = (this->fields)._.itemBase;
-  if ((pMVar7 != (MVEditablePickupItemBase *)0x0) &&
-     (this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                (pMVar7->fields)._._._._.data,
-     this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)) {
-    this_03 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        (this_00,(Object *)StringLiteral_itemData,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        );
-    this_04 = (Dictionary_2_System_Object_System_Object_ *)func_?();
-    if ((this_03.m_Index != 0) &&
-       ((pDVar8 = 
-         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>,
-        *(byte *)(*(int *)this_03.m_Index + 0xb8) <
-        (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-        naturalAligment ||
-        (*(Dictionary_2_System_Object_System_Object___Class **)
-          (*(int *)(*(int *)this_03.m_Index + 100) + -4 +
-          (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                ->_1).naturalAligment * 4) !=
-         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))))
-    goto code_?;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object___ctor_1
-              (this_04,(IDictionary_2_System_Object_System_Object_ *)this_03.m_Index,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_
-              );
-    value = MathFunctions::MathFunctions_ToFloatArray(VVar6,(MethodInfo *)0x0);
-    if (this_04 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__set_Item
-                (this_04,(Object *)StringLiteral_MuzzleDirection,(Object *)value,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                );
-      this_01 = (this->fields).muzzlePoint;
-      if (this_01 != (GameObject *)0x0) {
-        this_03.m_Index =
-             (int32_t)UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (this_01,(MethodInfo *)0x0);
-        VVar6.y = (float)uVar4 * _UNK_?;
-        VVar6.x = (float)uVar3 * _UNK_?;
-        VVar6.z = fVar5 * _UNK_?;
-        pQVar9 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::
-                 Quaternion_Internal_FromEulerRad
-                           ((Quaternion *)&stack0xffffffd8,VVar6,(MethodInfo *)0x0);
-        if ((Transform *)this_03.m_Index != (Transform *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                    ((Transform *)this_03.m_Index,*pQVar9,(MethodInfo *)0x0);
-          this_02 = (this->fields).transformGizmo;
-          if (this_02 != (ObjectTransformGizmo *)0x0) {
-            RTG::ObjectTransformGizmo::ObjectTransformGizmo_RefreshPositionAndRotation
-                      (this_02,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pGVar1 != (GameObject *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((pGVar1->fields)._.m_CachedPtr != (void *)0x0) {
+      if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->_1).
+                   field_0x1c == 0) {
+        FUN_?();
+      }
+      pVVar2 = CustomGunData::CustomGunData_DefaultVector3
+                         ((Vector3 *)auStack_3,StringLiteral_MuzzleDirection,(MethodInfo *)0x0);
+      pMVar4 = (this->fields)._.itemBase;
+      uStack_5._0_4_ = pVVar2->x;
+      uStack_5._4_4_ = pVVar2->y;
+      fVar6 = pVVar2->z;
+      if ((pMVar4 != (MVEditablePickupItemBase *)0x0) &&
+         (pDVar7 = (pMVar4->fields)._._._._.data,
+         pDVar7 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
+        dictionary = (IDictionary_2_System_Object_System_Object_ *)
+                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
+                     ::Object]::Dictionary_2_System_Object_System_Object__get_Item
+                               (pDVar7,(Object *)StringLiteral_itemData,
+                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                               );
+        pDVar7 = (Dictionary_2_System_Object_System_Object_ *)
+                 FUN_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                              );
+        if (dictionary != (IDictionary_2_System_Object_System_Object_ *)0x0) {
+          bVar8 = (
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                  ->_1).naturalAligment;
+          if (((dictionary->klass->_1).naturalAligment < bVar8) ||
+             ((Dictionary_2_System_Object_System_Object___Class *)
+              (dictionary->klass->_1).typeHierarchy[(ulonglong)bVar8 - 1] !=
+              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+            FUN_?(dictionary);
+            pcVar9 = (code *)swi(3);
+            (*pcVar9)();
             return;
           }
         }
+        method_00 = MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary_System__Collections__Generic__IDictionary<System::Object,_System::Object>_
+                    ->klass->rgctx_data[8].method;
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object___ctor_4
+                  (pDVar7,dictionary,(IEqualityComparer_1_System_Object_ *)0x0,method_00);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__System__Single);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        value = (Object *)FUN_?(TypeInfo__System__Single,3);
+        if (value != (Object *)0x0) {
+          if (*(int *)&value[1].monitor != 0) {
+            fVar10 = (float)uStack_5;
+            *(float *)&value[2].klass = (float)uStack_5;
+            if (1 < *(uint *)&value[1].monitor) {
+              fVar11 = uStack_5._4_4_;
+              *(float *)((longlong)&value[2].klass + 4) = uStack_5._4_4_;
+              if (2 < *(uint *)&value[1].monitor) {
+                *(float *)&value[2].monitor = fVar6;
+                if (pDVar7 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                  Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                            (pDVar7,(Object *)StringLiteral_MuzzleDirection,value,
+                             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)method_00 >> 8),1),
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                             ->klass->rgctx_data[0x22].method);
+                  pGVar1 = (this->fields).muzzlePoint;
+                  if (pGVar1 != (GameObject *)0x0) {
+                    obj = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                          GameObject_get_transform(pGVar1,(MethodInfo *)0x0);
+                    fStack_12 = fVar6 * _UNK_?;
+                    uStack_5 = CONCAT44(fVar11 * _UNK_?,fVar10 * _UNK_?);
+                    auStack_3._0_4_ = 0.0;
+                    auStack_3._4_4_ = 0.0;
+                    stack0xffffffffffffffb0 = 0;
+                    pcVar9 = pcRam_?;
+                    if ((pcRam_? == (code *)0x0) &&
+                       (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0)) {
+                      uVar13 = func_?(&UNK_?);
+                      FUN_?(uVar13,0);
+                      pcVar9 = (code *)swi(3);
+                      (*pcVar9)();
+                      return;
+                    }
+                    pcRam_? = pcVar9;
+                    (*pcRam_?)(&uStack_5);
+                    if (obj != (Transform *)0x0) {
+                      fStack_14 = (float)auStack_3._0_4_;
+                      fStack_15 = (float)auStack_3._4_4_;
+                      fStack_16 = (float)auStack_3._8_4_;
+                      uStack_17 = uStack_18;
+                      if (cRam_? == '\0') {
+                        FUN_?(&
+                                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                                     );
+                        LOCK();
+                        UNLOCK();
+                        cRam_? = '\x01';
+                      }
+                      pvVar19 = (obj->fields)._._.m_CachedPtr;
+                      if (pvVar19 == (void *)0x0) {
+                        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                        ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+                        pcVar9 = (code *)swi(3);
+                        (*pcVar9)();
+                        return;
+                      }
+                      pcVar9 = pcRam_?;
+                      if ((pcRam_? == (code *)0x0) &&
+                         (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0))
+                      {
+                        uVar13 = func_?(&UNK_?);
+                        FUN_?(uVar13,0);
+                        pcVar9 = (code *)swi(3);
+                        (*pcVar9)();
+                        return;
+                      }
+                      pcRam_? = pcVar9;
+                      (*pcRam_?)(pvVar19);
+                      this_00 = (this->fields).transformGizmo;
+                      if (this_00 != (ObjectTransformGizmo *)0x0) {
+                        RTG::ObjectTransformGizmo::ObjectTransformGizmo_RefreshPosition
+                                  (this_00,(MethodInfo *)0x0);
+                        RTG::ObjectTransformGizmo::ObjectTransformGizmo_RefreshRotation
+                                  (this_00,(MethodInfo *)0x0);
+                        return;
+                      }
+                    }
+                    FUN_?();
+                    pcVar9 = (code *)swi(3);
+                    (*pcVar9)();
+                    return;
+                  }
+                }
+                goto DAT_?;
+              }
+            }
+          }
+          FUN_?();
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
+        }
       }
+DAT_?:
+      FUN_?();
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
+      return;
     }
   }
-  func_?();
-  pDVar8 = extraout_EDX;
-code_?:
-  func_?(this_03.m_Index,pDVar8);
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
   return;
 }
 
@@ -1011,60 +2052,90 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::MVCustom
 {
   pMVar1 = (this->fields)._.editableCubeModel;
   if (pMVar1 != (MVCubeModelInstance *)0x0) {
-    pBVar2 = MVCubeModelBase::MVCubeModelBase_GetBounds
-                       ((Bounds *)&stack0xffffffc8,(MVCubeModelBase *)pMVar1,(MethodInfo *)0x0);
-    uVar3 = (pBVar2->m_Extents).y;
-    uVar4 = (pBVar2->m_Extents).z;
-    puVar5 = (undefined *)(pBVar2->m_Extents).x;
-    if ((float)puVar5 <= (float)uVar4) {
-      puVar5 = (undefined *)uVar4;
-    }
-    fVar6 = (float)puVar5 + _UNK_?;
-    fVar7 = (float)uVar3 + _UNK_?;
-    if (fVar6 <= (float)uVar3 + _UNK_?) {
-      fVar7 = fVar6;
-    }
+    MVCubeModelBase::MVCubeModelBase_GetBounds
+              (aBStack_2,(MVCubeModelBase *)pMVar1,(MethodInfo *)0x0);
     pMVar1 = (this->fields)._.editableCubeModel;
-    VStack_8.y = (float)uVar3;
-    VStack_8.z = (float)uVar4;
     if ((pMVar1 != (MVCubeModelInstance *)0x0) &&
-       (pTVar9 = (pMVar1->fields)._._.transform, pTVar9 != (Transform *)0x0)) {
-      pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                         (&VStack_8,pTVar9,(MethodInfo *)0x0);
-      fVar6 = fVar6 * pVVar10->x;
-      fVar7 = fVar7 * pVVar10->x;
-      pMVar11 = (this->fields)._.itemBase;
-      if (pMVar11 != (MVEditablePickupItemBase *)0x0) {
-        pMVar12 = EditablePickupItem::MVEditablePickupItemBase::
-                 MVEditablePickupItemBase_get_BaseObject(pMVar11,(MethodInfo *)0x0);
-        if ((pMVar12 != (MVEditablePickupItemBaseObject *)0x0) &&
-           (this_00 = (pMVar12->fields)._._.mainCollider, this_00 != (Collider *)0x0)) {
-          pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             ((Component *)this_00,(MethodInfo *)0x0);
-          VStack_8.x = fVar6 + fVar6;
-          VStack_8.y = fVar7 + fVar7;
-          VStack_8.z = (float)&UNK_?;
-          if (pTVar9 != (Transform *)0x0) {
-            value.y = VStack_8.y;
-            value.x = VStack_8.x;
-            value.z = (float)&UNK_?;
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                      (pTVar9,value,(MethodInfo *)0x0);
-            pMVar11 = (this->fields)._.itemBase;
-            if (pMVar11 != (MVEditablePickupItemBase *)0x0) {
-              VStack_8.z = (float)&UNK_?;
-              MVLogicObject::MVLogicObject_SetLocalBounds((MVLogicObject *)pMVar11,(MethodInfo *)0x0)
-              ;
-              return;
-            }
+       (pTVar3 = (pMVar1->fields)._._.transform, pTVar3 != (Transform *)0x0)) {
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pvVar4 = (pTVar3->fields)._._.m_CachedPtr;
+      if (pvVar4 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar3,(MethodInfo *)0x0);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      pcVar5 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+        uVar6 = func_?(&UNK_?);
+        FUN_?(uVar6,0);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      pcRam_? = pcVar5;
+      (*pcRam_?)(pvVar4);
+      pMVar7 = (this->fields)._.itemBase;
+      if (((pMVar7 != (MVEditablePickupItemBase *)0x0) &&
+          (pMVar8 = EditablePickupItem::MVEditablePickupItemBase::
+                    MVEditablePickupItemBase_get_BaseObject(pMVar7,(MethodInfo *)0x0),
+          pMVar8 != (MVEditablePickupItemBaseObject *)0x0)) &&
+         (this_00 = (pMVar8->fields)._._.mainCollider, this_00 != (Collider *)0x0)) {
+        pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)this_00,(MethodInfo *)0x0);
+        if (pTVar3 != (Transform *)0x0) {
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pvVar4 = (pTVar3->fields)._._.m_CachedPtr;
+          if (pvVar4 == (void *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar3,(MethodInfo *)0x0);
+            pcVar5 = (code *)swi(3);
+            (*pcVar5)();
+            return;
+          }
+          pcVar5 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+            uVar6 = func_?(&UNK_?);
+            FUN_?(uVar6,0);
+            pcVar5 = (code *)swi(3);
+            (*pcVar5)();
+            return;
+          }
+          pcRam_? = pcVar5;
+          (*pcRam_?)(pvVar4);
+          pMVar7 = (this->fields)._.itemBase;
+          if (pMVar7 != (MVEditablePickupItemBase *)0x0) {
+            MVLogicObject::MVLogicObject_SetLocalBounds((MVLogicObject *)pMVar7,(MethodInfo *)0x0);
+            return;
           }
         }
+        FUN_?();
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
       }
     }
   }
-  func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -1073,26 +2144,49 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::MVCustom
 
 void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::MVCustomGunBlueprint::
      MVCustomGunBlueprint_SetMuzzlePointPosition
-               (MVCustomGunBlueprint *this,Vector3 pos,MethodInfo *method)
+               (MVCustomGunBlueprint *this,Vector3 *pos,MethodInfo *method)
 
 {
   this_00 = (this->fields).muzzlePoint;
-  if (this_00 != (GameObject *)0x0) {
-    this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                        (this_00,(MethodInfo *)0x0);
-    if (this_02 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                (this_02,pos,(MethodInfo *)0x0);
-      this_01 = (this->fields).transformGizmo;
-      if (this_01 != (ObjectTransformGizmo *)0x0) {
-        RTG::ObjectTransformGizmo::ObjectTransformGizmo_RefreshPosition(this_01,(MethodInfo *)0x0);
-        return;
-      }
+  if ((this_00 != (GameObject *)0x0) &&
+     (obj = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                      (this_00,(MethodInfo *)0x0), obj != (Transform *)0x0)) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar1 = (obj->fields)._._.m_CachedPtr;
+    if (pvVar1 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)(pvVar1);
+    this_01 = (this->fields).transformGizmo;
+    if (this_01 != (ObjectTransformGizmo *)0x0) {
+      RTG::ObjectTransformGizmo::ObjectTransformGizmo_RefreshPosition(this_01,(MethodInfo *)0x0);
+      return;
     }
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -1106,12 +2200,22 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::MVCustom
                Dictionary_2_System_Int32_MVWorldObjectClient_ *worldObjects,MethodInfo *method)
 
 {
-  EditablePickupItem::MVEditablePickupItemBaseBlueprint::MVEditablePickupItemBaseBlueprint__ctor
-            ((MVEditablePickupItemBaseBlueprint *)this,data,worldObjects,(MethodInfo *)0x0);
-  iVar1 = (this->fields)._._._._.interactionFlags;
-  puVar2 = (uint *)((int)&(this->fields)._._._._.interactionFlags + 4);
-  *puVar2 = *puVar2 | 0x100;
-  *(int *)&(this->fields)._._._._.interactionFlags = (int)iVar1;
+  (this->fields)._.cubeModelId = -1;
+  (this->fields)._.cubeModelPid = -1;
+  MVBlueprintBase::MVBlueprintBase__ctor
+            ((MVBlueprintBase *)this,data,worldObjects,(MethodInfo *)0x0);
+  piVar1 = &(this->fields)._._._._.interactionFlags;
+  *piVar1 = *piVar1 | 0x1021030b100;
   return;
+}
+
+
+/* Single get_CubeModelScale() */
+
+float Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::MVCustomGunBlueprint::
+      MVCustomGunBlueprint_get_CubeModelScale(MVCustomGunBlueprint *this,MethodInfo *method)
+
+{
+  return _UNK_?;
 }
 

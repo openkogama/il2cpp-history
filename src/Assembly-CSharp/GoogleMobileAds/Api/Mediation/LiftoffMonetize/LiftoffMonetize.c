@@ -6,47 +6,59 @@ void Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::LiftoffMonetize::Lift
 
 {
   if (cRam_? == '\0') {
-    pLStack_1 = (LiftoffMonetize_1__Class *)
-                &TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize;
-    func_?();
+    FUN_?(&TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize->_1).
-      cctor_finished_or_no_cctor == 0) {
-    pLStack_1 = TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize;
-    func_?();
+  if (*(int *)&(TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize->_1).
+               field_0x1c == 0) {
+    FUN_?();
   }
   if (cRam_? == '\0') {
-    pLStack_1 = (LiftoffMonetize_1__Class *)
-                &
-                TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Common__ILiftoffMonetizeClient
-    ;
-    func_?();
-    pIStack_2 = (ILiftoffMonetizeClient *)
-                &TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize;
-    func_?();
+    FUN_?(&
+                  TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Common__ILiftoffMonetizeClient
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize->_1).
-      cctor_finished_or_no_cctor == 0) {
-    pLStack_1 = TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize;
-    func_?();
+  if (*(int *)&(TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize->_1).
+               field_0x1c == 0) {
+    FUN_?();
   }
-  pIVar3 = TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize->
+  pIVar1 = TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize->
            static_fields->client;
-  if (pIVar3 != (ILiftoffMonetizeClient *)0x0) {
-    pLStack_1 = (LiftoffMonetize_1__Class *)consentStatus;
-    pIStack_4 = 
-    TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Common__ILiftoffMonetizeClient;
-    pIStack_2 = pIVar3;
-    func_?(1);
+  if (pIVar1 == (ILiftoffMonetizeClient *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  pLStack_1 = (LiftoffMonetize_1__Class *)&stack0xfffffffc;
-  uVar5 = func_?(&pIStack_4);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  uVar3 = 0;
+  pIVar4 = pIVar1->klass;
+  uVar5._0_1_ = (pIVar4->_1).rank;
+  uVar5._1_1_ = (pIVar4->_1).minimumAlignment;
+  if (uVar5 != 0) {
+    do {
+      if (pIVar4->interfaceOffsets[uVar3].interfaceType ==
+          (Il2CppClass *)
+          TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Common__ILiftoffMonetizeClient) {
+        pVVar6 = &(pIVar4->vtable).UpdateConsentStatus +
+                 (pIVar4->interfaceOffsets[uVar3].offset + 1);
+        goto code_?;
+      }
+      uVar3 = uVar3 + 1;
+    } while (uVar3 < uVar5);
+  }
+  pVVar6 = (VirtualInvokeData *)FUN_?(pIVar1);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pVVar6->methodPtr)(pIVar1,(ulonglong)consentStatus,pVVar6->method,pVVar6->methodPtr);
   return;
 }
 
@@ -60,47 +72,41 @@ void Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::LiftoffMonetize::Lift
 
 {
   if (cRam_? == '\0') {
-    pLStack_1 = (LiftoffMonetize_1__Class *)
-                &TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize;
-    func_?();
+    FUN_?(&TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize->_1).
-      cctor_finished_or_no_cctor == 0) {
-    pLStack_1 = TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize;
-    func_?();
+  if (*(int *)&(TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize->_1).
+               field_0x1c == 0) {
+    FUN_?();
   }
   if (cRam_? == '\0') {
-    pLStack_1 = (LiftoffMonetize_1__Class *)
-                &
-                TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Common__ILiftoffMonetizeClient
-    ;
-    func_?();
-    ppLStack_2 = &TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize;
-    func_?();
+    FUN_?(&
+                  TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Common__ILiftoffMonetizeClient
+                  ,consentMessageVersion,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize->_1).
-      cctor_finished_or_no_cctor == 0) {
-    pLStack_1 = TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize;
-    func_?();
+  if (*(int *)&(TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize->_1).
+               field_0x1c == 0) {
+    FUN_?(TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize);
   }
-  pIVar3 = TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize->
+  pIVar1 = TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Api__LiftoffMonetize->
            static_fields->client;
-  if (pIVar3 != (ILiftoffMonetizeClient *)0x0) {
-    pLStack_1 = (LiftoffMonetize_1__Class *)consentMessageVersion;
-    ppLStack_2 = (LiftoffMonetize_1__Class **)consentStatus;
-    pIStack_4 = pIVar3;
-    func_?(0,
-                    TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Common__ILiftoffMonetizeClient
-                   );
+  if (pIVar1 != (ILiftoffMonetizeClient *)0x0) {
+    FUN_?(0,
+                  TypeInfo__GoogleMobileAds__Mediation__LiftoffMonetize__Common__ILiftoffMonetizeClient
+                  ,pIVar1,consentStatus,consentMessageVersion);
     return;
   }
-  pLStack_1 = (LiftoffMonetize_1__Class *)&stack0xfffffffc;
-  uVar5 = func_?(&pIStack_4);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

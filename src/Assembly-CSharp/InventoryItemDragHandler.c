@@ -6,18 +6,30 @@ void Assembly-CSharp.dll::InventoryItemDragHandler::InventoryItemDragHandler_OnB
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__EventSystem);
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPlayerInventory>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    MethodInfo__InventoryItemDragHandler___OnBeginDrag_b__5_0_UnityEngine__EventSystems__IPlayerInventory__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__InventoryItemDragHandler);
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__EventSystem);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPlayerInventory>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__InventoryItemDragHandler___OnBeginDrag_b__5_0_UnityEngine__EventSystems__IPlayerInventory__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__InventoryItemDragHandler);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TypeInfo__InventoryItemDragHandler->static_fields->dragRejected = 0;
@@ -29,15 +41,14 @@ void Assembly-CSharp.dll::InventoryItemDragHandler::InventoryItemDragHandler_OnB
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetRoot
                        (pTVar1,(MethodInfo *)0x0);
     if (this_01 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent
-                (this_01,pTVar1,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                (this_01,pTVar1,1,(MethodInfo *)0x0);
       this_00 = (this->fields).canvasGroup;
       if (this_00 != (CanvasGroup *)0x0) {
         UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_blocksRaycasts
                   (this_00,0,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__EventSystems__EventSystem->_1).cctor_finished_or_no_cctor == 0)
-        {
-          func_?();
+        if (*(int *)&(TypeInfo__UnityEngine__EventSystems__EventSystem->_1).field_0x1c == 0) {
+          FUN_?();
         }
         this_02 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
                   EventSystem_get_current((MethodInfo *)0x0);
@@ -48,19 +59,21 @@ void Assembly-CSharp.dll::InventoryItemDragHandler::InventoryItemDragHandler_OnB
           EventSystem_SetSelectedGameObject_1(this_02,pGVar2,(MethodInfo *)0x0);
           pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                              ((Component *)this,(MethodInfo *)0x0);
-          callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+          this_03 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+                    FUN_?(
+                                 TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>
+                                 );
+          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::
+          Object]::ExecuteEvents_EventFunction_1_System_Object___ctor
+                    (this_03,(Object *)this,
                      MethodInfo__InventoryItemDragHandler___OnBeginDrag_b__5_0_UnityEngine__EventSystems__IPlayerInventory__UnityEngine__EventSystems__BaseEventData_
                      ,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
-              0) {
-            func_?();
+          if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+            FUN_?();
           }
           UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
           ExecuteEvents_ExecuteHierarchy
-                    (pGVar2,(BaseEventData *)0x0,callbackFunction,
+                    (pGVar2,(BaseEventData *)0x0,this_03,
                      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPlayerInventory>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>_
                     );
           TypeInfo__InventoryItemDragHandler->static_fields->dragging = 1;
@@ -69,7 +82,7 @@ void Assembly-CSharp.dll::InventoryItemDragHandler::InventoryItemDragHandler_OnB
       }
     }
   }
-  func_?();
+  FUN_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -83,21 +96,36 @@ void Assembly-CSharp.dll::InventoryItemDragHandler::InventoryItemDragHandler_OnE
 
 {
   if (cRam_? == '\0') {
-    func_?(&InventorySlot_MethodInfo__UnityEngine__Component__GetComponent<InventorySlot>__
-                   );
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPlayerInventory>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&TypeInfo__InventoryItemDragHandler);
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&
-                    MethodInfo__InventoryItemDragHandler____c___OnEndDrag_b__6_0_UnityEngine__EventSystems__IPlayerInventory__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__InventoryItemDragHandler____c);
+    FUN_?(&InventorySlot_MethodInfo__UnityEngine__Component__GetComponent<InventorySlot>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPlayerInventory>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__InventoryItemDragHandler);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__InventoryItemDragHandler____c___OnEndDrag_b__6_0_UnityEngine__EventSystems__IPlayerInventory__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__InventoryItemDragHandler____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (this->fields).canvasGroup;
@@ -107,70 +135,118 @@ void Assembly-CSharp.dll::InventoryItemDragHandler::InventoryItemDragHandler_OnE
     TypeInfo__InventoryItemDragHandler->static_fields->dragging = 0;
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)this,(MethodInfo *)0x0);
-    if (pTVar1 != (Transform *)0x0) {
-      pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
-                         (pTVar1,(MethodInfo *)0x0);
-      if (pTVar1 != (Transform *)0x0) {
-        x = (Object_1 *)
-            UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
-                      ((Component *)pTVar1,
-                       InventorySlot_MethodInfo__UnityEngine__Component__GetComponent<InventorySlot>__
-                      );
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                          (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if ((bVar2 != 0) || (TypeInfo__InventoryItemDragHandler->static_fields->dragRejected != 0))
-        {
-          pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)this,(MethodInfo *)0x0);
-          if ((TypeInfo__InventoryItemDragHandler____c->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          callbackFunction = TypeInfo__InventoryItemDragHandler____c->static_fields->__9__6_0;
-          if (callbackFunction == (ExecuteEvents_EventFunction_1_IPlayerInventory_ *)0x0) {
-            if ((TypeInfo__InventoryItemDragHandler____c->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            object = TypeInfo__InventoryItemDragHandler____c->static_fields->__9;
-            callbackFunction = (ExecuteEvents_EventFunction_1_IPlayerInventory_ *)func_?();
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
-                       (Object *)object,
-                       MethodInfo__InventoryItemDragHandler____c___OnEndDrag_b__6_0_UnityEngine__EventSystems__IPlayerInventory__UnityEngine__EventSystems__BaseEventData_
-                       ,(MethodInfo *)0x0);
-            TypeInfo__InventoryItemDragHandler____c->static_fields->__9__6_0 = callbackFunction;
-            func_?();
-          }
-          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
-              0) {
-            func_?();
-          }
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-          ExecuteEvents_ExecuteHierarchy
-                    (pGVar3,(BaseEventData *)0x0,
-                     (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPlayerInventory>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>_
-                    );
-          pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                             ((Component *)this,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                    ((Object_1 *)pGVar3,(MethodInfo *)0x0);
-          UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                    ((Object_1 *)this,(MethodInfo *)0x0);
-        }
-        return;
+    if ((pTVar1 != (Transform *)0x0) &&
+       (pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
+                           (pTVar1,(MethodInfo *)0x0), pTVar1 != (Transform *)0x0)) {
+      pOVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                         ((Component *)pTVar1,
+                          InventorySlot_MethodInfo__UnityEngine__Component__GetComponent<InventorySlot>__
+                         );
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (pOVar2 != (Object *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if ((pOVar2[1].klass != (Object__Class *)0x0) &&
+           (TypeInfo__InventoryItemDragHandler->static_fields->dragRejected == 0)) {
+          return;
+        }
+      }
+      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+      if (*(int *)&(TypeInfo__InventoryItemDragHandler____c->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__InventoryItemDragHandler____c);
+      }
+      this_01 = TypeInfo__InventoryItemDragHandler____c->static_fields->__9__6_0;
+      if (this_01 == (ExecuteEvents_EventFunction_1_IPlayerInventory_ *)0x0) {
+        if (*(int *)&(TypeInfo__InventoryItemDragHandler____c->_1).field_0x1c == 0) {
+          FUN_?(TypeInfo__InventoryItemDragHandler____c);
+        }
+        object = TypeInfo__InventoryItemDragHandler____c->static_fields->__9;
+        this_01 = (ExecuteEvents_EventFunction_1_IPlayerInventory_ *)
+                  FUN_?(
+                               TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>
+                               );
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]
+        ::ExecuteEvents_EventFunction_1_System_Object___ctor
+                  ((ExecuteEvents_EventFunction_1_System_Object_ *)this_01,(Object *)object,
+                   MethodInfo__InventoryItemDragHandler____c___OnEndDrag_b__6_0_UnityEngine__EventSystems__IPlayerInventory__UnityEngine__EventSystems__BaseEventData_
+                   ,(MethodInfo *)0x0);
+        TypeInfo__InventoryItemDragHandler____c->static_fields->__9__6_0 = this_01;
+        if (iRam_? != 0) {
+          uVar4 = (uint)((ulonglong)
+                         &TypeInfo__InventoryItemDragHandler____c->static_fields->__9__6_0 >> 0xc);
+          uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+          do {
+            uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+            puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+            LOCK();
+            bVar8 = uVar6 == *puVar7;
+            if (bVar8) {
+              *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar8);
+        }
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+                (pGVar3,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)this_01
+                 ,
+                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IPlayerInventory>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IPlayerInventory>_
+                );
+      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy
+                ((Object_1 *)pGVar3,0.0,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy
+                ((Object_1 *)this,0.0,(MethodInfo *)0x0);
+      return;
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -182,15 +258,54 @@ void Assembly-CSharp.dll::InventoryItemDragHandler::InventoryItemDragHandler_Upd
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__InventoryItemDragHandler);
-    func_?(&TypeInfo__MVInputWrapper);
+    FUN_?(&TypeInfo__InventoryItemDragHandler);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVInputWrapper);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (TypeInfo__InventoryItemDragHandler->static_fields->dragging != 0) {
-    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MVInputWrapper);
-    }
-    MVInputWrapper::MVInputWrapper_SuppressAllInput((MethodInfo *)0x0);
+  if (TypeInfo__InventoryItemDragHandler->static_fields->dragging == 0) {
+    return;
+  }
+  if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVInputWrapper);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVInputWrapper__InputSuppression);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = (MVInputWrapper_InputSuppression *)
+           FUN_?(TypeInfo__MVInputWrapper__InputSuppression);
+  (*(pMVar1->klass->vtable).set_IsSuppressed.methodPtr)
+            (pMVar1,CONCAT71((int7)((ulonglong)method >> 8),1),
+             (pMVar1->klass->vtable).set_IsSuppressed.method);
+  if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__MVInputWrapper);
+  }
+  TypeInfo__MVInputWrapper->static_fields->isInputAllSuppressed = pMVar1;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)&TypeInfo__MVInputWrapper->static_fields->isInputAllSuppressed >> 0xc)
+    ;
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
   }
   return;
 }
@@ -204,13 +319,15 @@ void Assembly-CSharp.dll::InventoryItemDragHandler::InventoryItemDragHandler__On
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IPlayerInventory);
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IPlayerInventory);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                      ((Component *)this,(MethodInfo *)0x0);
   if (x == (IPlayerInventory *)0x0) {
-    func_?();
+    FUN_?();
     pcVar2 = (code *)swi(3);
     (*pcVar2)();
     return;
@@ -223,17 +340,18 @@ void Assembly-CSharp.dll::InventoryItemDragHandler::InventoryItemDragHandler__On
     do {
       if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
           (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IPlayerInventory) {
-        ppMVar6 = &(&(x->klass->vtable).SetCurrentDragTarget)
-                   [x->klass->interfaceOffsets[uVar4].offset].method;
+        pVVar6 = &(pIVar3->vtable).Activate + (pIVar3->interfaceOffsets[uVar4].offset + 5);
         goto code_?;
       }
       uVar4 = uVar4 + 1;
     } while (uVar4 < uVar5);
   }
-  ppMVar6 = (MethodInfo **)
-            func_?(x,TypeInfo__UnityEngine__EventSystems__IPlayerInventory,5);
+  pVVar6 = (VirtualInvokeData *)
+           FUN_?(x,TypeInfo__UnityEngine__EventSystems__IPlayerInventory,5);
 code_?:
-  (*(code *)*ppMVar6)(x,pGVar1,ppMVar6[1]);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pVVar6->methodPtr)(x,pGVar1,pVVar6->method,pVVar6->methodPtr);
   return;
 }
 
@@ -245,7 +363,9 @@ bool Assembly-CSharp.dll::InventoryItemDragHandler::InventoryItemDragHandler_get
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__InventoryItemDragHandler);
+    FUN_?(&TypeInfo__InventoryItemDragHandler);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return TypeInfo__InventoryItemDragHandler->static_fields->dragging;

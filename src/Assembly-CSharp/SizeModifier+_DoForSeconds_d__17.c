@@ -5,69 +5,88 @@ bool Assembly-CSharp.dll::SizeModifier+<DoForSeconds>d__17::SizeModifier_DoForSe
                (SizeModifier_DoForSeconds_d_17 *this,MethodInfo *method)
 
 {
-  pMStack_1 = in_ECX;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Single);
-    cRam_? = '\x01';
-  }
-  iVar2 = (this->fields).__1__state;
+  iVar1 = (this->fields).__1__state;
   this_00 = (this->fields).__4__this;
-  if (iVar2 == 0) {
+  if (iVar1 == 0) {
     (this->fields).__1__state = -1;
     if ((this_00 == (SizeModifier *)0x0) ||
        (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                             ((Component *)this_00,(MethodInfo *)0x0), this_01 == (GameObject *)0x0))
     goto code_?;
-    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
                       (this_01,(MethodInfo *)0x0);
-    if (bVar3 == 0) {
-      pSVar4 = (this->fields).body;
-      if (pSVar4 == (SizeModifier_ActionDelegate *)0x0) goto code_?;
-      pMStack_1 = (MonitorData *)(this_00->fields).timeToSize;
-      (*(pSVar4->fields)._._.invoke_impl)((pSVar4->fields)._._.method_code);
+    if (bVar2 == 0) {
+      pSVar3 = (this->fields).body;
+      if (pSVar3 == (SizeModifier_ActionDelegate *)0x0) goto code_?;
+      (*(pSVar3->fields)._._.invoke_impl)
+                ((pSVar3->fields)._._.method_code,(this_00->fields).timeToSize,
+                 (pSVar3->fields)._._.method);
     }
     (this->fields)._t_5__2 = 0.0;
   }
   else {
-    if (iVar2 != 1) {
+    if (iVar1 != 1) {
       return 0;
     }
     (this->fields).__1__state = -1;
   }
-  fVar5 = (this->fields).duration;
-  pfVar6 = &(this->fields)._t_5__2;
-  if (fVar5 < *pfVar6 || fVar5 == *pfVar6) {
+  fVar4 = (this->fields).duration;
+  pfVar5 = &(this->fields)._t_5__2;
+  if (fVar4 < *pfVar5 || fVar4 == *pfVar5) {
     if ((this_00 != (SizeModifier *)0x0) &&
-       (pSVar4 = (this->fields).body, pSVar4 != (SizeModifier_ActionDelegate *)0x0)) {
-      (*(pSVar4->fields)._._.invoke_impl)
-                ((pSVar4->fields)._._.method_code,(this_00->fields).timeToSize,
-                 (pSVar4->fields)._._.method);
+       (pSVar3 = (this->fields).body, pSVar3 != (SizeModifier_ActionDelegate *)0x0)) {
+      (*(pSVar3->fields)._._.invoke_impl)
+                ((pSVar3->fields)._._.method_code,(this_00->fields).timeToSize,
+                 (pSVar3->fields)._._.method);
       return 0;
     }
   }
   else {
-    pSVar4 = (this->fields).body;
-    if (pSVar4 != (SizeModifier_ActionDelegate *)0x0) {
-      (*(pSVar4->fields)._._.invoke_impl)
-                ((pSVar4->fields)._._.method_code,(this->fields)._t_5__2 / (this->fields).duration,
-                 (pSVar4->fields)._._.method);
-      fVar5 = (this->fields)._t_5__2;
-      fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0)
-      ;
-      pMStack_1 = (MonitorData *)0x0;
-      (this->fields)._t_5__2 = fVar7 + fVar5;
-      pOVar8 = (Object *)func_?(TypeInfo__System__Single,&pMStack_1);
-      (this->fields).__2__current = pOVar8;
-      func_?(&(this->fields).__2__current,pOVar8);
+    pSVar3 = (this->fields).body;
+    if (pSVar3 != (SizeModifier_ActionDelegate *)0x0) {
+      (*(pSVar3->fields)._._.invoke_impl)
+                ((pSVar3->fields)._._.method_code,(this->fields)._t_5__2 / fVar4,
+                 (pSVar3->fields)._._.method);
+      fVar4 = (this->fields)._t_5__2;
+      pcVar6 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+        uVar7 = func_?(&UNK_?);
+        FUN_?(uVar7,0);
+        pcVar6 = (code *)swi(3);
+        bVar2 = (*pcVar6)();
+        return bVar2;
+      }
+      pcRam_? = pcVar6;
+      fVar8 = (float)(*pcRam_?)();
+      auStackX_8[0] = 0;
+      (this->fields)._t_5__2 = fVar8 + fVar4;
+      pOVar9 = (Object *)FUN_?(uRam_?,auStackX_8);
+      bVar10 = iRam_? != 0;
+      (this->fields).__2__current = pOVar9;
+      if (bVar10) {
+        uVar11 = (uint)((ulonglong)&(this->fields).__2__current >> 0xc);
+        uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
+        do {
+          uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
+          puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
+          LOCK();
+          bVar10 = uVar13 == *puVar14;
+          if (bVar10) {
+            *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar10);
+      }
       (this->fields).__1__state = 1;
       return 1;
     }
   }
 code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  bVar3 = (*pcVar9)();
-  return bVar3;
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  bVar2 = (*pcVar6)();
+  return bVar2;
 }
 
 
@@ -82,10 +101,10 @@ void Assembly-CSharp.dll::SizeModifier+<DoForSeconds>d__17::
   this_00 = (NotSupportedException *)func_?(uVar1);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
-  func_?(&
-                  MethodInfo__SizeModifier___DoForSeconds_d__17__System_Collections_IEnumerator_Reset__
-                 );
-  func_?(this_00);
+  uVar1 = func_?(&
+                              MethodInfo__SizeModifier___DoForSeconds_d__17__System_Collections_IEnumerator_Reset__
+                             );
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

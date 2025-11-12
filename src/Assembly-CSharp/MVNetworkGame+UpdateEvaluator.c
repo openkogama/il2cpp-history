@@ -6,38 +6,25 @@ bool Assembly-CSharp.dll::MVNetworkGame+UpdateEvaluator::MVNetworkGame_UpdateEva
                MethodInfo *method)
 
 {
-  iVar1 = WaitForTicksLocal::WaitForTicksLocal_Diff((this->fields).lastUpdateTick,(MethodInfo *)0x0)
-  ;
-  iVar2 = WaitForTicksLocal::WaitForTicksLocal_GetEnvironmentTick(0,(MethodInfo *)0x0);
-  iVar3 = (this->fields).accumulatedTime + iVar1;
-  (this->fields).lastUpdateTick = iVar2;
-  (this->fields).accumulatedTime = iVar3;
-  if ((this->fields).updateInterval <= iVar3) {
+  iVar1 = (this->fields).lastUpdateTick;
+  iVar2 = FUN_?();
+  iVar3 = FUN_?();
+  iVar1 = (this->fields).accumulatedTime + (iVar2 - iVar1);
+  (this->fields).lastUpdateTick = iVar3;
+  (this->fields).accumulatedTime = iVar1;
+  if ((this->fields).updateInterval <= iVar1) {
     if (logicObjectManager == (LogicObjectManager *)0x0) {
-      func_?();
+      FUN_?();
       pcVar4 = (code *)swi(3);
       bVar5 = (*pcVar4)();
       return bVar5;
     }
     if ((logicObjectManager->fields)._TimeStamp_k__BackingField < (this->fields).stepTimestamp) {
-      (this->fields).accumulatedTime = iVar3 - (this->fields).updateInterval;
+      (this->fields).accumulatedTime = iVar1 - (this->fields).updateInterval;
       return 1;
     }
   }
   return 0;
-}
-
-
-/* MVNetworkGame+UpdateEvaluator(Int32) */
-
-void Assembly-CSharp.dll::MVNetworkGame+UpdateEvaluator::MVNetworkGame_UpdateEvaluator__ctor
-               (MVNetworkGame_UpdateEvaluator *this,int32_t updateInterval,MethodInfo *method)
-
-{
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  (this->fields).updateInterval = updateInterval;
-  return;
 }
 
 
@@ -49,7 +36,7 @@ void Assembly-CSharp.dll::MVNetworkGame+UpdateEvaluator::
 
 {
   (this->fields).stepTimestamp = value;
-  iVar1 = WaitForTicksLocal::WaitForTicksLocal_GetEnvironmentTick(0,(MethodInfo *)0x0);
+  iVar1 = FUN_?();
   (this->fields).lastUpdateTick = iVar1;
   (this->fields).accumulatedTime = 0;
   return;

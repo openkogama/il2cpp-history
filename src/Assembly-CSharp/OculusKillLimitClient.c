@@ -7,10 +7,12 @@ void Assembly-CSharp.dll::OculusKillLimitClient::OculusKillLimitClient_GetBriefi
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__IBriefing);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__get_Count__
-                   );
+    FUN_?(&TypeInfo__IBriefing);
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
@@ -20,14 +22,14 @@ void Assembly-CSharp.dll::OculusKillLimitClient::OculusKillLimitClient_GetBriefi
     if (pLVar1 != (List_1_MVWorldObjectClient_ *)0x0) {
       if (0 < (pLVar1->fields)._size) {
         if (winningConditionBriefingView == (IBriefing *)0x0) goto code_?;
-        func_?(0);
+        FUN_?(0,TypeInfo__IBriefing,winningConditionBriefingView,3,(this->fields)._._.limit)
+        ;
       }
       return;
     }
   }
 code_?:
-  func_?();
-  func_?();
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -42,36 +44,22 @@ void Assembly-CSharp.dll::OculusKillLimitClient::OculusKillLimitClient_GetDebrie
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__IDebriefing);
+    FUN_?(&TypeInfo__IDebriefing);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  uVar1 = (*(code *)(this->klass->vtable).get_HighScores.method)
-                    (this,(this->klass->vtable).Traverse_1.methodPtr);
-  bVar2 = (*(code *)(this->klass->vtable).get_IsTeamMode.method)
-                    (this,(this->klass->vtable).get_HighScores.methodPtr);
-  this = (OculusKillLimitClient *)(uint)bVar2;
+  (*(this->klass->vtable).get_HighScores.methodPtr)
+            (this,(this->klass->vtable).get_HighScores.method);
+  (*(this->klass->vtable).get_IsTeamMode.methodPtr)
+            (this,(this->klass->vtable).get_IsTeamMode.method);
   if (winningConditionDebriefingView != (IDebriefing *)0x0) {
-    func_?(0,TypeInfo__IDebriefing,winningConditionDebriefingView,3,uVar1,this);
+    FUN_?();
     return;
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
-  return;
-}
-
-
-/* OculusKillLimitClient(WinningCondition, Int32, GameStatCounterManager, Int32) */
-
-void Assembly-CSharp.dll::OculusKillLimitClient::OculusKillLimitClient__ctor
-               (OculusKillLimitClient *this,WinningCondition *parent,int32_t id,
-               GameStatCounterManager *gameCounterManager,int32_t killLimit,MethodInfo *method)
-
-{
-  MVWorldObject.dll::WinningCondition::WinningCondition__ctor
-            ((WinningCondition *)this,parent,id,gameCounterManager,killLimit,1,
-             GameStatCounterType__Enum_OculusKill,WinningConditionPresentStyle__Enum_MultipleWinners
-             ,(MethodInfo *)0x0);
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

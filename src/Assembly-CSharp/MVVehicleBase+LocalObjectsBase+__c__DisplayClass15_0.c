@@ -8,26 +8,29 @@ void Assembly-CSharp.dll::MVVehicleBase+LocalObjectsBase+<>c__DisplayClass15_0::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVAvatarLocal);
+    FUN_?(&TypeInfo__MVAvatarLocal);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (wo != (MVWorldObjectClient *)0x0) {
-    if (((wo->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) ||
-       ((MVAvatarLocal__Class *)
-        (wo->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
-        TypeInfo__MVAvatarLocal)) {
-      bVar1 = false;
-    }
-    else {
-      bVar1 = true;
-    }
-    pMVar2 = (MVAvatarLocal *)0x0;
-    if (bVar1) {
-      pMVar2 = (MVAvatarLocal *)wo;
-    }
-    if (pMVar2 != (MVAvatarLocal *)0x0) {
-      (this->fields).localAvatar = pMVar2;
-      func_?(&this->fields,pMVar2);
+    bVar1 = (TypeInfo__MVAvatarLocal->_1).naturalAligment;
+    if (((bVar1 <= (wo->klass->_1).naturalAligment) &&
+        ((MVAvatarLocal__Class *)(wo->klass->_1).typeHierarchy[(ulonglong)bVar1 - 1] ==
+         TypeInfo__MVAvatarLocal)) &&
+       (bVar2 = iRam_? != 0, (this->fields).localAvatar = (MVAvatarLocal *)wo, bVar2))
+    {
+      uVar3 = (uint)((ulonglong)&this->fields >> 0xc);
+      puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar5 = *puVar4;
+        LOCK();
+        uVar6 = *puVar4;
+        if (uVar5 == uVar6) {
+          *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar5 != uVar6);
     }
   }
   return;

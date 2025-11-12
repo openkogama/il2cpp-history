@@ -72,12 +72,12 @@ public class AdvancedGhostVisualizaton : MonoBehaviour
 
 	// Methods
 	private void Awake();
+	private void Start();
+	private void Update();
 	public void SetRotationSpeed(float rotationSpeed);
 	public void ReceivedDamage();
 	public void ReceivedHealing();
 	public void PlayEffect(Effect effect, float duration);
-	private void Update();
-	private void Start();
 	private void OnEnable();
 	private void OnDisable();
 }

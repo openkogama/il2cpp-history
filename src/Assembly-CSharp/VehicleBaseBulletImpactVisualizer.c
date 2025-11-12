@@ -3,97 +3,104 @@
 
 void Assembly-CSharp.dll::VehicleBaseBulletImpactVisualizer::
      VehicleBaseBulletImpactVisualizer_VisualizeBulletImpact
-               (VehicleBaseBulletImpactVisualizer *this,VoxelHit voxelHit,Ray lineOfFire,
+               (VehicleBaseBulletImpactVisualizer *this,VoxelHit *voxelHit,Ray *lineOfFire,
                int32_t shooterActorNumber,float damage,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__ParticleSystem__Burst);
+    FUN_?(&TypeInfo__UnityEngine__ParticleSystem__Burst,voxelHit,lineOfFire,
+                  CONCAT44(in_register_0000008c,shooterActorNumber));
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  lineOfFire.m_Direction.y =
-       (float)((uint)lineOfFire.m_Direction.y ^
-              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-  forward.y = (float)((uint)lineOfFire.m_Direction.x ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-  forward.x = (float)((uint)lineOfFire.m_Origin.z ^
-                     __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-  forward.z = lineOfFire.m_Direction.y;
-  pQVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_LookRotation_1
-                     ((Quaternion *)&lineOfFire.m_Origin.y,forward,(MethodInfo *)0x0);
-  lineOfFire.m_Direction.x = 0.0;
-  lineOfFire.m_Direction.y = 0.0;
-  position.y = voxelHit.point.x;
-  position.x = (float)in_stack_2;
-  position.z = voxelHit.point.y;
-  lineOfFire.m_Direction.y =
-       (float)OneShotPooledParticleSystem::OneShotPooledParticleSystem_Instantiate_1
-                        (PoolEnums__Enum_VehicleBulletImpact,position,*pQVar1,
-                         (Nullable_1_Single_)0x0,(Nullable_1_UnityEngine_Color_)ZEXT820(0),
-                         (MethodInfo *)0x0);
-  if ((ParticleSystem *)lineOfFire.m_Direction.y != (ParticleSystem *)0x0) {
-    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_collision
-              ((ParticleSystem *)lineOfFire.m_Direction.y,(MethodInfo *)0x0);
-    bursts = (ParticleSystem_Burst__Array *)func_?();
-    if (bursts != (ParticleSystem_Burst__Array *)0x0) {
-      if (bursts->max_length != 0) {
-        UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Burst::
-        ParticleSystem_Burst_set_time(bursts->vector,0.0,(MethodInfo *)0x0);
-        if (bursts->max_length != 0) {
-          voxelHit._60_2_ =
-               SUB42((int)((float)shooterActorNumber * (this->fields).particlesPerPointOfDamage),0);
-          UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Burst::
-          ParticleSystem_Burst_set_minCount(bursts->vector,voxelHit._60_2_,(MethodInfo *)0x0);
-          if (bursts->max_length != 0) {
-            lineOfFire.m_Origin.y = 0.0;
-            lineOfFire.m_Origin.x._0_2_ =
-                 (int16_t)(int)((float)shooterActorNumber * (this->fields).particlesPerPointOfDamage
-                               );
-            lineOfFire.m_Origin.x._2_2_ = 0;
-            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+Burst::
-            ParticleSystem_Burst_set_maxCount
-                      (bursts->vector,lineOfFire.m_Origin.x._0_2_,(MethodInfo *)0x0);
-            lineOfFire.m_Origin.y = 0.0;
-            lineOfFire.m_Origin.x._0_2_ = (int16_t)bursts;
-            lineOfFire.m_Origin.x._2_2_ = (undefined2)((uint)bursts >> 0x10);
-            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::
-            ParticleSystem_EmissionModule_SetBursts
-                      ((ParticleSystem_EmissionModule *)&stack0xfffffff8,bursts,(MethodInfo *)0x0);
-            lineOfFire.m_Origin.y = 0.0;
-            lineOfFire.m_Origin.x._0_2_ = SUB42(lineOfFire.m_Direction.y,0);
-            lineOfFire.m_Origin.x._2_2_ = (undefined2)((uint)lineOfFire.m_Direction.y >> 0x10);
-            UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1
-                      ((ParticleSystem *)lineOfFire.m_Direction.y,(MethodInfo *)0x0);
-            return;
-          }
+  uVar1._0_4_ = (voxelHit->point).x;
+  uVar1._4_4_ = (voxelHit->point).y;
+  fVar2 = (voxelHit->point).z;
+  VStack_3.x = (lineOfFire->m_Direction).x;
+  VStack_3.y = (lineOfFire->m_Direction).y;
+  fVar4 = (float)((uint)VStack_3.x ^ _UNK_?);
+  fVar5 = (float)((uint)(lineOfFire->m_Direction).z ^ _UNK_?);
+  fVar6 = (float)((uint)VStack_3.y ^ _UNK_?);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  aNStack_7[0]._0_8_ = *(undefined8 *)&TypeInfo__UnityEngine__Vector3->static_fields->upVector;
+  VStack_3.y = fVar6;
+  VStack_3.x = fVar4;
+  aNStack_7[0].value.g = (TypeInfo__UnityEngine__Vector3->static_fields->upVector).z;
+  QStack_8.x = 0.0;
+  QStack_8.y = 0.0;
+  QStack_8.z = 0.0;
+  QStack_8.w = 0.0;
+  pcVar9 = pcRam_?;
+  VStack_3.z = fVar5;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0)) {
+    uVar1 = func_?(&UNK_?);
+    FUN_?(uVar1,0);
+    pcVar9 = (code *)swi(3);
+    (*pcVar9)();
+    return;
+  }
+  pcRam_? = pcVar9;
+  (*pcRam_?)(&VStack_3,aNStack_7,&QStack_8);
+  aNStack_7[0].hasValue = 0;
+  aNStack_7[0]._1_3_ = 0;
+  aNStack_7[0].value.r = 0.0;
+  aNStack_7[0].value.g = 0.0;
+  aNStack_7[0].value.b = 0.0;
+  aNStack_7[0].value.a = 0.0;
+  VStack_3._0_8_ = uVar1;
+  VStack_3.z = fVar2;
+  this_00 = OneShotPooledParticleSystem::OneShotPooledParticleSystem_Instantiate_1
+                      (PoolEnums__Enum_VehicleBulletImpact,&VStack_3,&QStack_8,
+                       (Nullable_1_Single_)0x0,aNStack_7,(MethodInfo *)0x0);
+  if (this_00 != (ParticleSystem *)0x0) {
+    if (iRam_? != 0) {
+      uVar10 = (uint)((ulonglong)&pPStackX_10 >> 0xc);
+      uVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6);
+      do {
+        uVar12 = *(ulonglong *)(uVar11 * 8 + 0xADDR);
+        puVar13 = (ulonglong *)(uVar11 * 8 + 0xADDR);
+        LOCK();
+        bVar14 = uVar12 == *puVar13;
+        if (bVar14) {
+          *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
         }
+        UNLOCK();
+      } while (!bVar14);
+    }
+    pPStackX_10 = this_00;
+    aPStackX_18[0].m_ParticleSystem = this_00;
+    bursts = (ParticleSystem_Burst__Array *)
+             FUN_?(TypeInfo__UnityEngine__ParticleSystem__Burst,1);
+    if (bursts != (ParticleSystem_Burst__Array *)0x0) {
+      if ((int)bursts->max_length == 0) {
+        FUN_?();
+        pcVar9 = (code *)swi(3);
+        (*pcVar9)();
+        return;
       }
-      goto code_?;
+      bursts->vector[0].m_Time = 0.0;
+      bursts->vector[0].m_Count.m_ConstantMin =
+           (float)(int)(short)(int)(damage * (this->fields).particlesPerPointOfDamage);
+      bursts->vector[0].m_Count.m_ConstantMax =
+           (float)(int)(short)(int)(damage * (this->fields).particlesPerPointOfDamage);
+      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::
+      ParticleSystem_EmissionModule_SetBursts_1
+                (aPStackX_18,bursts,(int32_t)bursts->max_length,(MethodInfo *)0x0);
+      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play
+                (this_00,1,(MethodInfo *)0x0);
+      return;
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
-  return;
-}
-
-
-/* VehicleBaseBulletImpactVisualizer() */
-
-void Assembly-CSharp.dll::VehicleBaseBulletImpactVisualizer::VehicleBaseBulletImpactVisualizer__ctor
-               (VehicleBaseBulletImpactVisualizer *this,MethodInfo *method)
-
-{
-  (this->fields).particlesPerPointOfDamage = 1.0;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

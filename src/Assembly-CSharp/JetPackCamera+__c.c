@@ -7,19 +7,25 @@ bool Assembly-CSharp.dll::JetPackCamera+<>c::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVSpawnPointBlue);
+    FUN_?(&TypeInfo__MVSpawnPointBlue);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  pMVar1 = (MVWorldObjectClient *)0x0;
   if (wo != (MVWorldObjectClient *)0x0) {
-    if (((TypeInfo__MVSpawnPointBlue->_1).naturalAligment <= (wo->klass->_1).naturalAligment) &&
-       ((MVSpawnPointBlue__Class *)
-        (wo->klass->_1).typeHierarchy[(TypeInfo__MVSpawnPointBlue->_1).naturalAligment - 1] ==
-        TypeInfo__MVSpawnPointBlue)) {
-      return wo != (MVWorldObjectClient *)0x0;
+    bVar2 = (TypeInfo__MVSpawnPointBlue->_1).naturalAligment;
+    if (((wo->klass->_1).naturalAligment < bVar2) ||
+       (bVar3 = true,
+       (MVSpawnPointBlue__Class *)(wo->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] !=
+       TypeInfo__MVSpawnPointBlue)) {
+      bVar3 = false;
     }
-    return 0;
+    if (bVar3) {
+      pMVar1 = wo;
+    }
   }
-  return 0;
+  return pMVar1 != (MVWorldObjectClient *)0x0;
 }
 
 
@@ -29,15 +35,26 @@ void Assembly-CSharp.dll::JetPackCamera+<>c::JetPackCamera_c__cctor(MethodInfo *
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__JetPackCamera____c);
+    FUN_?(&TypeInfo__JetPackCamera____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__JetPackCamera____c;
-  value = (JetPackCamera_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  TypeInfo__JetPackCamera____c->static_fields->__9 = value;
-  func_?(TypeInfo__JetPackCamera____c->static_fields,value);
+  pJVar1 = (JetPackCamera_c *)FUN_?(TypeInfo__JetPackCamera____c);
+  TypeInfo__JetPackCamera____c->static_fields->__9 = pJVar1;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)TypeInfo__JetPackCamera____c->static_fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 

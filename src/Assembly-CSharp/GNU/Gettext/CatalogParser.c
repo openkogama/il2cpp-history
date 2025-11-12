@@ -5,99 +5,116 @@ String * Assembly-CSharp.dll::GNU::Gettext::CatalogParser::CatalogParser_GetNewL
                    (String *text,Encoding *encoding,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffcc;
-  puVar5 = &stack0xffffffcc;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Char);
-    func_?(&TypeInfo__System__Char);
-    func_?(&TypeInfo__System__IDisposable);
-    func_?(&TypeInfo__System__IO__StringReader);
-    func_?(&StringLiteral_u000A);
-    func_?(&StringLiteral_u000Du000A);
-    func_?(&StringLiteral_u000D);
+    FUN_?(&TypeInfo__System__Char);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__IDisposable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__IO__StringReader);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_u000A);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_u000Du000A);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_u000D);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  uStack_6 = 0x78;
-  iVar7 = func_?(TypeInfo__System__Char,1);
-  if (iVar7 != 0) {
-    if (*(int *)(iVar7 + 0xc) != 0) {
-      *(undefined2 *)(iVar7 + 0x10) = 0x78;
-      this = (StringReader *)func_?(TypeInfo__System__IO__StringReader);
-      mscorlib.dll::System::IO::StringReader::StringReader__ctor(this,text,(MethodInfo *)0x0);
-      uStack_1 = 1;
-      do {
-        while( true ) {
-          if (this == (StringReader *)0x0) goto code_?;
-          iVar8 = (*(code *)(this->klass->vtable).Read_1.method)
-                            (this,iVar7,0,1,(this->klass->vtable).ReadToEnd.methodPtr);
-          if (iVar8 == 0) {
-            uStack_1 = 0xffffffff;
-            if (this != (StringReader *)0x0) {
-              func_?(0,TypeInfo__System__IDisposable,this);
-            }
-            uStack_1 = 0xffffffff;
-            if (uStack_6._0_2_ != 0x78) {
-              if ((TypeInfo__System__Char->_1).cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__System__Char);
-              }
-              pSVar9 = mscorlib.dll::System::Char::Char_ToString
-                                 ((Char *)&uStack_6,(MethodInfo *)0x0);
-              *unaff_FS_OFFSET = uStack_3;
-              return pSVar9;
-            }
-            pSVar9 = mscorlib.dll::System::Environment::Environment_get_NewLine((MethodInfo *)0x0);
-            *unaff_FS_OFFSET = uStack_3;
-            return pSVar9;
-          }
-          if (*(int *)(iVar7 + 0xc) == 0) goto code_?;
-          if (*(short *)(iVar7 + 0x10) == 10) {
-            pSVar9 = StringLiteral_u000A;
-            if (uStack_6._0_2_ == 0xd) {
-              pSVar9 = StringLiteral_u000Du000A;
-            }
-            goto code_?;
-          }
-          if (*(int *)(iVar7 + 0xc) == 0) goto code_?;
-          if (*(short *)(iVar7 + 0x10) != 0xd) break;
-          if (uStack_6._0_2_ == 0x78) {
-            uStack_6 = 0xd;
-          }
-          else {
-            pSVar9 = StringLiteral_u000D;
-            if (uStack_6._0_2_ == 0xd) {
+  c = 0x78;
+  lVar1 = FUN_?(TypeInfo__System__Char,1);
+  if (lVar1 == 0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    pSVar3 = (String *)(*pcVar2)();
+    return pSVar3;
+  }
+  if (*(int *)(lVar1 + 0x18) == 0) {
+    FUN_?();
 code_?:
-              uStack_1 = 0xffffffff;
-              func_?();
-              *unaff_FS_OFFSET = uStack_3;
-              return pSVar9;
-            }
-          }
+    FUN_?();
+code_?:
+    FUN_?();
+  }
+  else {
+    *(undefined2 *)(lVar1 + 0x20) = 0x78;
+    this = (StringReader *)FUN_?(TypeInfo__System__IO__StringReader);
+    mscorlib.dll::System::IO::StringReader::StringReader__ctor(this,text,(MethodInfo *)0x0);
+    uStack_4 = 0;
+    ppSStack_5 = apSStack_6;
+    apSStack_6[0] = this;
+    while (apSStack_6[0] != (StringReader *)0x0) {
+      iVar7 = (*(apSStack_6[0]->klass->vtable).Read_1.methodPtr)
+                        (apSStack_6[0],lVar1,0,1,(apSStack_6[0]->klass->vtable).Read_1.method);
+      pSVar8 = StringLiteral_u000A;
+      pSVar9 = StringLiteral_u000Du000A;
+      pSVar3 = StringLiteral_u000D;
+      if (iVar7 == 0) {
+        if (apSStack_6[0] != (StringReader *)0x0) {
+          FUN_?(0,TypeInfo__System__IDisposable,apSStack_6[0]);
         }
-      } while (uStack_6._0_2_ == 0x78);
-      if ((TypeInfo__System__Char->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__System__Char);
+        if (c == 0x78) {
+          pSVar3 = mscorlib.dll::System::Environment::Environment_get_NewLine((MethodInfo *)0x0);
+          return pSVar3;
+        }
+        if ((*(int *)(lRam_? + 0xe4) == 0) &&
+           (FUN_?(), *(int *)(lRam_? + 0xe4) == 0)) {
+          FUN_?();
+        }
+        pSVar3 = mscorlib.dll::System::Char::Char_ToString_2(c,(MethodInfo *)0x0);
+        return pSVar3;
       }
-      pSVar9 = mscorlib.dll::System::Char::Char_ToString((Char *)&uStack_6,(MethodInfo *)0x0);
-      goto code_?;
+      if (*(int *)(lVar1 + 0x18) == 0) goto code_?;
+      if (*(short *)(lVar1 + 0x20) == 10) {
+        if (c == 0xd) {
+          if (apSStack_6[0] == (StringReader *)0x0) {
+            return StringLiteral_u000Du000A;
+          }
+          FUN_?(0,TypeInfo__System__IDisposable,apSStack_6[0]);
+          return pSVar9;
+        }
+        if (apSStack_6[0] == (StringReader *)0x0) {
+          return StringLiteral_u000A;
+        }
+        FUN_?(0,TypeInfo__System__IDisposable,apSStack_6[0]);
+        return pSVar8;
+      }
+      if (*(int *)(lVar1 + 0x18) == 0) goto code_?;
+      if (*(short *)(lVar1 + 0x20) == 0xd) {
+        if (c == 0x78) {
+          c = 0xd;
+        }
+        else if (c == 0xd) {
+          if (apSStack_6[0] != (StringReader *)0x0) {
+            FUN_?(0,TypeInfo__System__IDisposable,apSStack_6[0]);
+          }
+          return pSVar3;
+        }
+      }
+      else if (c != 0x78) {
+        if ((*(int *)(lRam_? + 0xe4) == 0) &&
+           (FUN_?(), *(int *)(lRam_? + 0xe4) == 0)) {
+          FUN_?();
+        }
+        pSVar3 = mscorlib.dll::System::Char::Char_ToString_2(c,(MethodInfo *)0x0);
+        if (apSStack_6[0] == (StringReader *)0x0) {
+          return pSVar3;
+        }
+        FUN_?(0,TypeInfo__System__IDisposable,apSStack_6[0]);
+        return pSVar3;
+      }
     }
-    func_?();
-code_?:
-    func_?();
-code_?:
-    func_?();
   }
-code_?:
-  uVar10 = func_?();
-  func_?(uVar10);
-  pcVar11 = (code *)swi(3);
-  pSVar9 = (String *)(*pcVar11)();
-  return pSVar9;
+  FUN_?();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  pSVar3 = (String *)(*pcVar2)();
+  return pSVar3;
 }
 
 
@@ -107,745 +124,908 @@ bool Assembly-CSharp.dll::GNU::Gettext::CatalogParser::CatalogParser_Parse
                (CatalogParser *this,String *text,MethodInfo *method)
 
 {
-  pMVar1 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GNU__Gettext__CatalogParser);
-    func_?(&TypeInfo__System__Char);
-    func_?(&TypeInfo__System__Console);
-    func_?(&TypeInfo__System__IDisposable);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__Clear__);
-    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__ToArray__);
-    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__List__);
-    func_?(&TypeInfo__System__Collections__Generic__List<System::String>);
-    func_?(&TypeInfo__System__IO__Path);
-    func_?(&TypeInfo__System__Text__StringBuilder);
-    func_?(&TypeInfo__System__IO__StringReader);
-    func_?(&TypeInfo__System__String);
-    func_?(&StringLiteral_u000A);
-    func_?(&::StringLiteral___);
-    func_?(&StringLiteral_Broken_catalog_file__plural_form);
-    func_?(&StringLiteral_msgid__);
-    func_?(&StringLiteral_msgstr__);
-    func_?(&StringLiteral_msgid_plural__);
-    func_?(&::StringLiteral____);
-    func_?(&::StringLiteral____);
-    func_?(&StringLiteral_msgctxtu0009_);
-    func_?(&::StringLiteral___);
-    func_?(&StringLiteral_msgstru0009_);
-    func_?(&::StringLiteral___);
-    func_?(&::StringLiteral____);
-    func_?(&StringLiteral_msgid_pluralu0009_);
-    func_?(&::StringLiteral____);
-    func_?(&StringLiteral_msgidu0009_);
-    func_?(&StringLiteral_u0009_);
-    func_?(&StringLiteral_msgctxt__);
-    func_?(&StringLiteral_Broken_catalog_file__singular_fo);
-    func_?(&::StringLiteral__);
-    func_?(&::StringLiteral__);
-    func_?(&StringLiteral_msgstr_);
-    func_?(&::StringLiteral___);
+    FUN_?(&TypeInfo__GNU__Gettext__CatalogParser);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Console);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__IDisposable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<System::String>__Clear__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<System::String>__ToArray__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<System::String>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<System::String>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__IO__Path);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Text__StringBuilder);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__IO__StringReader);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_u000A);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral___);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Broken_catalog_file__plural_form);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_msgid__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_msgstr__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_msgid_plural__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral____);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral____);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_msgctxtu0009_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral___);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_msgstru0009_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral___);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral____);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_msgid_pluralu0009_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral____);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_msgidu0009_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_u0009_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_msgctxt__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Broken_catalog_file__singular_fo);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_msgstr_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral___);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar2 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0;
-  pSVar3 = TypeInfo__System__String->static_fields->Empty;
-  this_00 = (LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+  apSStackX_10[0] = (String *)0x0;
+  pSStackX_20 = (String *)0x0;
+  pSStack_1 = (String *)**(undefined8 **)(lRam_? + 0xb8);
+  pSStack_2 = (String *)**(undefined8 **)(lRam_? + 0xb8);
+  pSStack_3 = (String *)**(undefined8 **)(lRam_? + 0xb8);
+  pSStack_4 = (String *)**(undefined8 **)(lRam_? + 0xb8);
+  pSVar5 = (String *)**(undefined8 **)(lRam_? + 0xb8);
+  pSStack_6 = pSVar5;
+  this_00 = (List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo_
+             *)FUN_?(TypeInfo__System__Collections__Generic__List<System::String>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            (this_00,MethodInfo__System__Collections__Generic__List<System::String>__List__);
-  this_01 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
-            func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<System::String>__List__);
+  this_01 = (List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo_
+             *)FUN_?(TypeInfo__System__Collections__Generic__List<System::String>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
              MethodInfo__System__Collections__Generic__List<System::String>__List__);
-  pMVar4 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
-           func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+  this_02 = (List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo_
+             *)FUN_?(TypeInfo__System__Collections__Generic__List<System::String>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pMVar4,
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_02,
              MethodInfo__System__Collections__Generic__List<System::String>__List__);
-  cVar5 = '\0';
-  pMVar6 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0;
-  pMVar7 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
-           func_?(TypeInfo__System__IO__StringReader);
-  mscorlib.dll::System::IO::StringReader::StringReader__ctor
-            ((StringReader *)pMVar7,text,(MethodInfo *)0x0);
-  do {
-    if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-    goto code_?;
-    pMVar8 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
-             (*(code *)(((String__Class *)((Il2CppClass_0 *)&pMVar7->klass)->image)->vtable).
-                       System_IConvertible_ToByte.method)();
-    bVar9 = mscorlib.dll::System::String::String_op_Equality
-                      ((String *)pMVar8,::StringLiteral__,(MethodInfo *)0x0);
-  } while (bVar9 != 0);
-  if (pMVar8 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) {
-    if (pMVar7 != (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) {
-      func_?();
-    }
-    *unaff_FS_OFFSET = pMVar1;
-    return 0;
-  }
-code_?:
-  pMVar10 = pMVar2;
-  if (pMVar8 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) {
-    if (pMVar7 != (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) {
-      func_?();
-    }
-    *unaff_FS_OFFSET = pMVar1;
-    return 1;
-  }
-  while ((bVar9 = mscorlib.dll::System::String::String_op_Equality
-                            ((String *)pMVar8,::StringLiteral___,(MethodInfo *)0x0), bVar9 != 0 ||
-         (bVar9 = mscorlib.dll::System::String::String_op_Equality
-                            ((String *)pMVar8,::StringLiteral___,(MethodInfo *)0x0), bVar9 != 0))) {
-    if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-    goto code_?;
-    pMVar8 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)func_?();
-  }
-  pMVar2 = pMVar8;
-  if ((TypeInfo__GNU__Gettext__CatalogParser->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  bVar9 = CatalogParser_ReadParam
-                    ((String *)pMVar8,::StringLiteral____,(String **)&stack0xffffffe0,
-                     (MethodInfo *)0x0);
-  if (bVar9 != 0) {
-    if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-    goto code_?;
-    this_01 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0xd;
-    pMVar4 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)&UNK_?;
-    pMVar2 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)func_?();
-  }
-  pMVar8 = pMVar2;
-  if ((TypeInfo__GNU__Gettext__CatalogParser->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  bVar9 = CatalogParser_ReadParam
-                    ((String *)pMVar2,::StringLiteral____,(String **)&stack0xffffffe0,
-                     (MethodInfo *)0x0);
-  pMVar2 = pMVar10;
-  if (bVar9 != 0) {
-code_?:
-    if ((this_01 != (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) &&
-       (mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__Add
-                  ((List_1_System_Object_ *)this_01,(Object *)pMVar2,
-                   MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
-                  ), pMVar7 != (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0))
-    goto code_?;
-code_?:
-    func_?();
-code_?:
-    func_?();
-code_?:
-    func_?();
-    pcVar11 = (code *)swi(3);
-    bVar9 = (*pcVar11)();
-    return bVar9;
-  }
-  pMVar12 = pMVar8;
-  if ((TypeInfo__GNU__Gettext__CatalogParser->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  bVar9 = CatalogParser_ReadParam
-                    ((String *)pMVar8,::StringLiteral___,(String **)&stack0xffffffe0,
-                     (MethodInfo *)0x0);
-  pMVar2 = pMVar10;
-  if (bVar9 != 0) goto code_?;
-  pMVar2 = pMVar12;
-  if ((TypeInfo__GNU__Gettext__CatalogParser->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  bVar9 = CatalogParser_ReadParam
-                    ((String *)pMVar12,::StringLiteral____,(String **)&stack0xffffffe0,
-                     (MethodInfo *)0x0);
-  if (bVar9 != 0) {
-    if (pMVar10 != (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) {
-      while( true ) {
-        pMVar2 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
-                  mscorlib.dll::System::String::String_Trim((String *)pMVar10,(MethodInfo *)0x0);
-        bVar9 = mscorlib.dll::System::String::String_op_Inequality
-                          ((String *)pMVar2,TypeInfo__System__String->static_fields->Empty,
-                           (MethodInfo *)0x0);
-        if (bVar9 == 0) break;
-        pMVar4 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0;
-        while( true ) {
-          if (pMVar2 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-          goto code_?;
-          if (((int)pMVar2->bounds <= (int)pMVar4) ||
-             (uVar13 = mscorlib.dll::System::String::String_get_Chars
-                                ((String *)pMVar2,(int32_t)pMVar4,(MethodInfo *)0x0), uVar13 == 0x3a
-             )) break;
-          pMVar4 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
-                   ((int)&((Il2CppClass_0 *)&pMVar4->klass)->image + 1);
+  bVar7 = false;
+  this_03 = (StringReader *)FUN_?(TypeInfo__System__IO__StringReader);
+  mscorlib.dll::System::IO::StringReader::StringReader__ctor(this_03,text,(MethodInfo *)0x0);
+  uStack_8 = 0;
+  ppSStack_9 = &pSStack_10;
+  pSStack_10 = this_03;
+  if (this_03 != (StringReader *)0x0) {
+    pSVar11 = (String *)
+             (*(this_03->klass->vtable).ReadLine.methodPtr)
+                       (this_03,(this_03->klass->vtable).ReadLine.method);
+    do {
+      apSStackX_10[0] = pSVar11;
+      if (pSVar11 != ::StringLiteral__) {
+        if (pSVar11 != (String *)0x0) {
+          if (((::StringLiteral__ != (String *)0x0) &&
+              ((pSVar11->fields)._stringLength == (::StringLiteral__->fields)._stringLength)) &&
+             (bVar12 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                                ((uint8_t *)&(pSVar11->fields)._firstChar,
+                                 (uint8_t *)&(::StringLiteral__->fields)._firstChar,
+                                 (longlong)(pSVar11->fields)._stringLength * 2,(MethodInfo *)0x0),
+             bVar12 != 0)) goto code_?;
+          if (pSVar11 != (String *)0x0) goto code_?;
         }
-        while( true ) {
-          if (pMVar2 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-          goto code_?;
-          if ((int)pMVar2->bounds <= (int)pMVar4) break;
-          uVar13 = mscorlib.dll::System::String::String_get_Chars
-                            ((String *)pMVar2,(int32_t)pMVar4,(MethodInfo *)0x0);
-          if ((TypeInfo__System__Char->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          bVar9 = mscorlib.dll::System::Char::Char_IsWhiteSpace(uVar13,(MethodInfo *)0x0);
-          if (bVar9 != 0) break;
-          pMVar4 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
-                   ((int)&((Il2CppClass_0 *)&pMVar4->klass)->image + 1);
+        if (pSStack_10 != (StringReader *)0x0) {
+          FUN_?(0,TypeInfo__System__IDisposable,pSStack_10);
         }
-        if (pMVar2 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-        goto code_?;
-        this_02 = (List_1_System_Object_ *)0x0;
-        pSVar14 = mscorlib.dll::System::String::String_Substring_1
-                           ((String *)pMVar2,0,(int32_t)pMVar4,(MethodInfo *)0x0);
-        if ((TypeInfo__System__IO__Path->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        if (TypeInfo__System__IO__Path->static_fields->DirectorySeparatorChar == 0x5c) {
-          if ((TypeInfo__System__IO__Path->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          if (pSVar14 == (String *)0x0) goto code_?;
-          this_02 = (List_1_System_Object_ *)0x0;
-          pSVar14 = mscorlib.dll::System::String::String_Replace
-                             (pSVar14,0x2f,
-                              TypeInfo__System__IO__Path->static_fields->DirectorySeparatorChar,
-                              (MethodInfo *)0x0);
-        }
-        if ((this_02 == (List_1_System_Object_ *)0x0) ||
-           (mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-            List_1_System_Object__Add
-                      (this_02,(Object *)pSVar14,
-                       MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
-                      ), pMVar2 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-           ) goto code_?;
-        this_01 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0;
-        pMVar10 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
-                  mscorlib.dll::System::String::String_Substring
-                            ((String *)pMVar2,(int32_t)pMVar4,(MethodInfo *)0x0);
-        if (pMVar10 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
         goto code_?;
       }
-      if (pMVar7 != (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) {
-        pMVar8 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)func_?();
-        cVar5 = (char)((uint)pMVar6 >> 0x18);
+code_?:
+      if (pSStack_10 == (StringReader *)0x0) goto code_?;
+      pSVar11 = (String *)
+               (*(pSStack_10->klass->vtable).ReadLine.methodPtr)
+                         (pSStack_10,(pSStack_10->klass->vtable).ReadLine.method);
+    } while( true );
+  }
+  goto code_?;
+code_?:
+  pSVar11 = (String *)**(longlong **)(lRam_? + 0xb8);
+  pSStackX_20 = pSVar5;
+  if ((pSVar5 != pSVar11) &&
+     ((((pSVar5 == (String *)0x0 || (pSVar11 == (String *)0x0)) ||
+       ((pSVar5->fields)._stringLength != (pSVar11->fields)._stringLength)) ||
+      (bVar12 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                         ((uint8_t *)&(pSVar5->fields)._firstChar,
+                          (uint8_t *)&(pSVar11->fields)._firstChar,
+                          (longlong)(pSVar5->fields)._stringLength * 2,(MethodInfo *)0x0),
+      bVar12 == 0)))) {
+    uVar13 = 0;
+    puVar14 = &(pSVar5->fields)._firstChar;
+    while( true ) {
+      if (pSVar5 == (String *)0x0) goto code_?;
+      if ((pSVar5->fields)._stringLength <= (int)uVar13) break;
+      if ((longlong)(pSVar5->fields)._stringLength <= (longlong)uVar13) goto code_?;
+      if (*puVar14 == 0x3a) break;
+      uVar13 = (ulonglong)((int)uVar13 + 1);
+      puVar14 = puVar14 + 1;
+    }
+    do {
+      if (pSVar5 == (String *)0x0) goto code_?;
+      iVar15 = (int)uVar13;
+      if ((pSVar5->fields)._stringLength <= iVar15) goto code_?;
+      if ((longlong)(pSVar5->fields)._stringLength <= (longlong)uVar13) goto code_?;
+      c = (&(pSVar5->fields)._firstChar)[iVar15];
+      if (*(int *)(lRam_? + 0xe4) == 0) {
+        FUN_?();
+      }
+      bVar12 = mscorlib.dll::System::Char::Char_IsWhiteSpace(c,(MethodInfo *)0x0);
+      pSVar5 = pSStackX_20;
+      if (bVar12 != 0) goto code_?;
+      uVar13 = (ulonglong)(iVar15 + 1);
+    } while( true );
+  }
+  if (pSStack_10 != (StringReader *)0x0) goto code_?;
+  goto code_?;
+code_?:
+  if (pSVar5 == (String *)0x0) goto code_?;
+  pSVar5 = mscorlib.dll::System::String::String_Substring_1(pSVar5,0,iVar15,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__System__IO__Path->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (TypeInfo__System__IO__Path->static_fields->DirectorySeparatorChar == 0x5c) {
+    if (*(int *)&(TypeInfo__System__IO__Path->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (pSVar5 == (String *)0x0) goto code_?;
+    pSVar5 = mscorlib.dll::System::String::String_Replace
+                        (pSVar5,0x2f,
+                         TypeInfo__System__IO__Path->static_fields->DirectorySeparatorChar,
+                         (MethodInfo *)0x0);
+  }
+  if (this_00 ==
+      (List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo_
+       *)0x0) goto code_?;
+  FUN_?(this_00,pSVar5,
+                MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_)
+  ;
+  if (pSStackX_20 == (String *)0x0) goto code_?;
+  pSVar5 = mscorlib.dll::System::String::String_Substring_1
+                      (pSStackX_20,iVar15,(pSStackX_20->fields)._stringLength - iVar15,
+                       (MethodInfo *)0x0);
+  if (pSVar5 == (String *)0x0) goto code_?;
+  pSVar5 = mscorlib.dll::System::String::String_TrimWhiteSpaceHelper
+                      (pSVar5,String_TrimType__Enum_Both,(MethodInfo *)0x0);
+  goto code_?;
+code_?:
+  if (pSVar11 == (String *)0x0) {
+code_?:
+    if (pSStack_10 != (StringReader *)0x0) {
+      FUN_?(0,TypeInfo__System__IDisposable,pSStack_10);
+    }
+    bVar12 = 1;
+  }
+  else {
+    while (((pSVar11 == ::StringLiteral___ ||
+            ((((pSVar11 != (String *)0x0 && (::StringLiteral___ != (String *)0x0)) &&
+              (((pSVar11->fields)._stringLength == (::StringLiteral___->fields)._stringLength &&
+               (bVar12 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                                  ((uint8_t *)&(pSVar11->fields)._firstChar,
+                                   (uint8_t *)&(::StringLiteral___->fields)._firstChar,
+                                   (longlong)(pSVar11->fields)._stringLength * 2,(MethodInfo *)0x0),
+               bVar12 != 0)))) || (pSVar11 == ::StringLiteral___)))) ||
+           (((pSVar11 != (String *)0x0 && (::StringLiteral___ != (String *)0x0)) &&
+            (((pSVar11->fields)._stringLength == (::StringLiteral___->fields)._stringLength &&
+             (bVar12 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                                ((uint8_t *)&(pSVar11->fields)._firstChar,
+                                 (uint8_t *)&(::StringLiteral___->fields)._firstChar,
+                                 (longlong)(pSVar11->fields)._stringLength * 2,(MethodInfo *)0x0),
+             bVar12 != 0))))))) {
+      if (pSStack_10 == (StringReader *)0x0) goto code_?;
+      pSVar11 = (String *)
+               (*(pSStack_10->klass->vtable).ReadLine.methodPtr)
+                         (pSStack_10,(pSStack_10->klass->vtable).ReadLine.method);
+      apSStackX_10[0] = pSVar11;
+    }
+    if (*(int *)&(TypeInfo__GNU__Gettext__CatalogParser->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    bVar12 = CatalogParser_ReadParam(pSVar11,::StringLiteral____,&pSStackX_20,(MethodInfo *)0x0);
+    if (bVar12 != 0) {
+      pSStack_1 = pSStackX_20;
+      if (pSStack_10 != (StringReader *)0x0) {
+        apSStackX_10[0] =
+             (String *)
+             (*(pSStack_10->klass->vtable).ReadLine.methodPtr)
+                       (pSStack_10,(pSStack_10->klass->vtable).ReadLine.method);
+        pSVar5 = pSStack_6;
         goto code_?;
       }
+      FUN_?();
+code_?:
+      FUN_?();
+code_?:
+      FUN_?();
+code_?:
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowIndexOutOfRangeException
+                ((MethodInfo *)0x0);
+code_?:
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowIndexOutOfRangeException
+                ((MethodInfo *)0x0);
+code_?:
+      FUN_?();
+code_?:
+      FUN_?();
+code_?:
+      FUN_?();
+code_?:
+      FUN_?();
+code_?:
+      FUN_?();
+code_?:
+      FUN_?();
+      goto code_?;
     }
-    goto code_?;
-  }
-  pSVar14 = pSVar3;
-  pMVar12 = pMVar2;
-  if ((TypeInfo__GNU__Gettext__CatalogParser->_1).cctor_finished_or_no_cctor == 0) {
-    this_01 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)&UNK_?;
-    func_?();
-    pSVar14 = pSVar3;
-  }
-  bVar9 = CatalogParser_ReadParam
-                    ((String *)pMVar2,StringLiteral_msgctxt__,(String **)&stack0xffffffe0,
-                     (MethodInfo *)0x0);
-  pSVar3 = pSVar14;
-  pMVar2 = pMVar10;
-  pMVar8 = pMVar12;
-  if (bVar9 != 0) {
 code_?:
-    CatalogParser_ParseMessage
-              (this,(String **)&stack0xffffffe4,(String **)&stack0xffffffe0,(StringReader *)pMVar7,
-               (MethodInfo *)0x0);
-    goto code_?;
-  }
-  if ((TypeInfo__GNU__Gettext__CatalogParser->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__GNU__Gettext__CatalogParser);
-  }
-  bVar9 = CatalogParser_ReadParam
-                    ((String *)pMVar12,StringLiteral_msgctxtu0009_,(String **)&stack0xffffffe0,
-                     (MethodInfo *)0x0);
-  pSVar3 = pSVar14;
-  pMVar2 = pMVar10;
-  if (bVar9 != 0) goto code_?;
-  pMVar12 = pMVar8;
-  if ((TypeInfo__GNU__Gettext__CatalogParser->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__GNU__Gettext__CatalogParser);
-  }
-  bVar9 = CatalogParser_ReadParam
-                    ((String *)pMVar8,StringLiteral_msgid__,(String **)&stack0xffffffe0,
-                     (MethodInfo *)0x0);
-  pSVar3 = pSVar14;
-  pMVar2 = pMVar10;
-  pMVar8 = pMVar12;
-  if (bVar9 != 0) {
+    pSVar11 = apSStackX_10[0];
+    if (*(int *)&(TypeInfo__GNU__Gettext__CatalogParser->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    bVar12 = CatalogParser_ReadParam(pSVar11,::StringLiteral____,&pSStackX_20,(MethodInfo *)0x0);
+    pSVar11 = apSStackX_10[0];
+    if (bVar12 != 0) {
 code_?:
-    CatalogParser_ParseMessage
-              (this,(String **)&stack0xffffffe4,(String **)&stack0xffffffe0,(StringReader *)pMVar7,
-               (MethodInfo *)0x0);
-    goto code_?;
-  }
-  if ((TypeInfo__GNU__Gettext__CatalogParser->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__GNU__Gettext__CatalogParser);
-  }
-  bVar9 = CatalogParser_ReadParam
-                    ((String *)pMVar12,StringLiteral_msgidu0009_,(String **)&stack0xffffffe0,
-                     (MethodInfo *)0x0);
-  pSVar3 = pSVar14;
-  pMVar2 = pMVar10;
-  if (bVar9 != 0) goto code_?;
-  pMVar12 = pMVar8;
-  if ((TypeInfo__GNU__Gettext__CatalogParser->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  bVar9 = CatalogParser_ReadParam
-                    ((String *)pMVar8,StringLiteral_msgid_plural__,(String **)&stack0xffffffe0,
-                     (MethodInfo *)0x0);
-  pSVar3 = pSVar14;
-  pMVar2 = pMVar10;
-  pMVar8 = pMVar12;
-  if (bVar9 != 0) {
-code_?:
-    CatalogParser_ParseMessage
-              (this,(String **)&stack0xffffffe4,(String **)&stack0xffffffe0,(StringReader *)pMVar7,
-               (MethodInfo *)0x0);
-    cVar5 = '\x01';
-    pMVar6 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x1000000;
-    goto code_?;
-  }
-  if ((TypeInfo__GNU__Gettext__CatalogParser->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  bVar9 = CatalogParser_ReadParam
-                    ((String *)pMVar12,StringLiteral_msgid_pluralu0009_,(String **)&stack0xffffffe0,
-                     (MethodInfo *)0x0);
-  pSVar3 = pSVar14;
-  pMVar2 = pMVar10;
-  if (bVar9 != 0) goto code_?;
-  pMVar2 = pMVar8;
-  if ((TypeInfo__GNU__Gettext__CatalogParser->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  bVar9 = CatalogParser_ReadParam
-                    ((String *)pMVar8,StringLiteral_msgstr__,(String **)&stack0xffffffe0,
-                     (MethodInfo *)0x0);
-  if (bVar9 != 0) {
-code_?:
-    if (cVar5 != '\0') {
-      pSVar3 = StringLiteral_Broken_catalog_file__singular_fo;
-      if ((TypeInfo__System__Console->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-        pSVar3 = StringLiteral_Broken_catalog_file__singular_fo;
+      if (this_01 !=
+          (List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo_
+           *)0x0) {
+        FUN_?(this_01,pSStackX_20,
+                      MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
+                     );
+        if (pSStack_10 != (StringReader *)0x0) {
+          apSStackX_10[0] =
+               (String *)
+               (*(pSStack_10->klass->vtable).ReadLine.methodPtr)
+                         (pSStack_10,(pSStack_10->klass->vtable).ReadLine.method);
+          goto code_?;
+        }
+        goto code_?;
       }
       goto code_?;
     }
-    pSVar3 = CatalogParser_ParseMessage
-                        (this,(String **)&stack0xffffffe4,(String **)&stack0xffffffe0,
-                         (StringReader *)pMVar7,(MethodInfo *)0x0);
-    if (pMVar4 != (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) {
-      pLVar15 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                *)&UNK_?;
-      this_03 = MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_;
-      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-                ((List_1_System_Object_ *)pMVar4,(Object *)pSVar3,
-                 MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
-                );
-      pMVar8 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)&UNK_?;
-      pMVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal
-                ::MultiColumnCollectionHeader+ViewState+ColumnState]::
-                List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
-                          ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                            *)pMVar4,
-                           MethodInfo__System__Collections__Generic__List<System::String>__ToArray__
-                          );
-      if ((pLVar15 != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                      *)0x0) &&
-         (mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
-          MultiColumnCollectionHeader+ViewState+ColumnState]::
-          List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
-                    (pLVar15,
-                     MethodInfo__System__Collections__Generic__List<System::String>__ToArray__),
-         this_03 != (MethodInfo *)0x0)) {
-        pMVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                  Internal::MultiColumnCollectionHeader+ViewState+ColumnState]::
-                  List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
-                            ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                              *)this_03,
+    if (*(int *)&(TypeInfo__GNU__Gettext__CatalogParser->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    bVar12 = CatalogParser_ReadParam(pSVar11,::StringLiteral___,&pSStackX_20,(MethodInfo *)0x0);
+    pSVar11 = apSStackX_10[0];
+    if (bVar12 != 0) goto code_?;
+    if (*(int *)&(TypeInfo__GNU__Gettext__CatalogParser->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    bVar12 = CatalogParser_ReadParam(pSVar11,::StringLiteral____,&pSStackX_20,(MethodInfo *)0x0);
+    pSVar11 = apSStackX_10[0];
+    if (bVar12 != 0) {
+      if (pSStackX_20 == (String *)0x0) goto code_?;
+      pSVar5 = mscorlib.dll::System::String::String_TrimWhiteSpaceHelper
+                          (pSStackX_20,String_TrimType__Enum_Both,(MethodInfo *)0x0);
+      goto code_?;
+    }
+    if (*(int *)&(TypeInfo__GNU__Gettext__CatalogParser->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    bVar12 = CatalogParser_ReadParam(pSVar11,StringLiteral_msgctxt__,&pSStackX_20,(MethodInfo *)0x0);
+    pSVar11 = apSStackX_10[0];
+    if (bVar12 != 0) {
+code_?:
+      pSStack_3 = CatalogParser_ParseMessage
+                             (this,apSStackX_10,&pSStackX_20,pSStack_10,(MethodInfo *)0x0);
+      goto code_?;
+    }
+    if (*(int *)&(TypeInfo__GNU__Gettext__CatalogParser->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    bVar12 = CatalogParser_ReadParam
+                      (pSVar11,StringLiteral_msgctxtu0009_,&pSStackX_20,(MethodInfo *)0x0);
+    pSVar11 = apSStackX_10[0];
+    if (bVar12 != 0) goto code_?;
+    if (*(int *)&(TypeInfo__GNU__Gettext__CatalogParser->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    bVar12 = CatalogParser_ReadParam(pSVar11,StringLiteral_msgid__,&pSStackX_20,(MethodInfo *)0x0);
+    pSVar11 = apSStackX_10[0];
+    if (bVar12 != 0) {
+code_?:
+      pSStack_2 = CatalogParser_ParseMessage
+                             (this,apSStackX_10,&pSStackX_20,pSStack_10,(MethodInfo *)0x0);
+      goto code_?;
+    }
+    if (*(int *)&(TypeInfo__GNU__Gettext__CatalogParser->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    bVar12 = CatalogParser_ReadParam(pSVar11,StringLiteral_msgidu0009_,&pSStackX_20,(MethodInfo *)0x0)
+    ;
+    pSVar11 = apSStackX_10[0];
+    if (bVar12 != 0) goto code_?;
+    if (*(int *)&(TypeInfo__GNU__Gettext__CatalogParser->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    bVar12 = CatalogParser_ReadParam
+                      (pSVar11,StringLiteral_msgid_plural__,&pSStackX_20,(MethodInfo *)0x0);
+    pSVar11 = apSStackX_10[0];
+    if (bVar12 != 0) {
+code_?:
+      pSStack_4 = CatalogParser_ParseMessage
+                             (this,apSStackX_10,&pSStackX_20,pSStack_10,(MethodInfo *)0x0);
+      bVar7 = true;
+      goto code_?;
+    }
+    if (*(int *)&(TypeInfo__GNU__Gettext__CatalogParser->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    bVar12 = CatalogParser_ReadParam
+                      (pSVar11,StringLiteral_msgid_pluralu0009_,&pSStackX_20,(MethodInfo *)0x0);
+    pSVar11 = apSStackX_10[0];
+    if (bVar12 != 0) goto code_?;
+    if (*(int *)&(TypeInfo__GNU__Gettext__CatalogParser->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    bVar12 = CatalogParser_ReadParam(pSVar11,StringLiteral_msgstr__,&pSStackX_20,(MethodInfo *)0x0);
+    pSVar11 = apSStackX_10[0];
+    if (bVar12 == 0) {
+      if (*(int *)&(TypeInfo__GNU__Gettext__CatalogParser->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      bVar12 = CatalogParser_ReadParam
+                        (pSVar11,StringLiteral_msgstru0009_,&pSStackX_20,(MethodInfo *)0x0);
+      pSVar11 = apSStackX_10[0];
+      if (bVar12 != 0) goto code_?;
+      if (*(int *)&(TypeInfo__GNU__Gettext__CatalogParser->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      bVar12 = CatalogParser_ReadParam(pSVar11,StringLiteral_msgstr_,&pSStackX_20,(MethodInfo *)0x0);
+      pSVar11 = apSStackX_10[0];
+      if (bVar12 == 0) {
+        if (*(int *)&(TypeInfo__GNU__Gettext__CatalogParser->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        bVar12 = CatalogParser_ReadParam(pSVar11,::StringLiteral____,&pSStackX_20,(MethodInfo *)0x0);
+        if (bVar12 == 0) {
+          if (apSStackX_10[0] != (String *)0x0) {
+            if ((apSStackX_10[0]->fields)._stringLength < 1) goto code_?;
+            if ((apSStackX_10[0]->fields)._firstChar == 0x23) {
+              while ((apSStackX_10[0] != (String *)0x0 &&
+                     (iVar15 = (apSStackX_10[0]->fields)._stringLength, iVar15 != 0))) {
+                if (iVar15 < 1) goto code_?;
+                if (((apSStackX_10[0]->fields)._firstChar != 0x23) ||
+                   ((1 < (uint)(apSStackX_10[0]->fields)._stringLength &&
+                    ((((*(short *)&(apSStackX_10[0]->fields).field_0x6 == 0x2c ||
+                       (*(short *)&(apSStackX_10[0]->fields).field_0x6 == 0x3a)) ||
+                      (*(short *)&(apSStackX_10[0]->fields).field_0x6 == 0x2e)) ||
+                     (*(short *)&(apSStackX_10[0]->fields).field_0x6 == 0x7e)))))) break;
+                if (pSVar5 == (String *)0x0) goto code_?;
+                pSVar11 = apSStackX_10[0];
+                if (0 < (pSVar5->fields)._stringLength) {
+                  pSVar11 = mscorlib.dll::System::String::String_Concat_4
+                                     (StringLiteral_u000A,apSStackX_10[0],(MethodInfo *)0x0);
+                }
+                pSVar5 = mscorlib.dll::System::String::String_Concat_4
+                                    (pSVar5,pSVar11,(MethodInfo *)0x0);
+                pSStack_6 = pSVar5;
+                if (pSStack_10 == (StringReader *)0x0) goto code_?;
+                apSStackX_10[0] =
+                     (String *)
+                     (*(pSStack_10->klass->vtable).ReadLine.methodPtr)
+                               (pSStack_10,(pSStack_10->klass->vtable).ReadLine.method);
+              }
+              goto code_?;
+            }
+          }
+          if (pSStack_10 != (StringReader *)0x0) goto code_?;
+          goto code_?;
+        }
+        this_04 = (List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo_
+                   *)FUN_?(TypeInfo__System__Collections__Generic__List<System::String>);
+        mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+        __Il2CppFullySharedGenericType]::
+        LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                  ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_04,
+                   MethodInfo__System__Collections__Generic__List<System::String>__List__);
+        if (this_04 ==
+            (List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo_
+             *)0x0) goto code_?;
+        FUN_?(this_04,apSStackX_10[0],
+                      MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
+                     );
+        while( true ) {
+          if (pSStack_10 == (StringReader *)0x0) goto code_?;
+          pSVar5 = (String *)
+                    (*(pSStack_10->klass->vtable).ReadLine.methodPtr)
+                              (pSStack_10,(pSStack_10->klass->vtable).ReadLine.method);
+          apSStackX_10[0] = pSVar5;
+          if ((pSVar5 == (String *)0x0) || ((pSVar5->fields)._stringLength == 0)) break;
+          if (*(int *)&(TypeInfo__GNU__Gettext__CatalogParser->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          bVar12 = CatalogParser_ReadParam
+                            (pSVar5,::StringLiteral____,&pSStackX_20,(MethodInfo *)0x0);
+          if (bVar12 == 0) break;
+          FUN_?(this_04,apSStackX_10[0],
+                        MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
+                       );
+        }
+        pRVar16 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
+                  RenderTreeManager+VisualChangesProcessor+EntryProcessingInfo]::
+                  List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo__ToArray
+                            (this_04,
                              MethodInfo__System__Collections__Generic__List<System::String>__ToArray__
                             );
-        pMVar7 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0;
-        pMVar4 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x4;
-        this_01 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)this;
-        cVar5 = func_?();
-        if (cVar5 == '\0') goto code_?;
-        pMVar6 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0;
-        pSVar3 = TypeInfo__System__String->static_fields->Empty;
-        func_?();
-        goto code_?;
-      }
-    }
-    goto code_?;
-  }
-  pMVar8 = pMVar2;
-  if ((TypeInfo__GNU__Gettext__CatalogParser->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  bVar9 = CatalogParser_ReadParam
-                    ((String *)pMVar2,StringLiteral_msgstru0009_,(String **)&stack0xffffffe0,
-                     (MethodInfo *)0x0);
-  if (bVar9 != 0) goto code_?;
-  pMVar12 = pMVar8;
-  if ((TypeInfo__GNU__Gettext__CatalogParser->_1).cctor_finished_or_no_cctor == 0) {
-    pMVar4 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
-             TypeInfo__GNU__Gettext__CatalogParser;
-    func_?();
-  }
-  bVar9 = CatalogParser_ReadParam
-                    ((String *)pMVar8,StringLiteral_msgstr_,(String **)&stack0xffffffe0,
-                     (MethodInfo *)0x0);
-  if (bVar9 != 0) {
-    if (cVar5 == '\0') {
-      pSVar3 = StringLiteral_Broken_catalog_file__plural_form;
-      if ((TypeInfo__System__Console->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-        pSVar3 = StringLiteral_Broken_catalog_file__plural_form;
-      }
-code_?:
-      mscorlib.dll::System::Console::Console_WriteLine(pSVar3,(MethodInfo *)0x0);
-      goto code_?;
-    }
-    if ((pMVar10 != (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) &&
-       (pMVar4 = pMVar10,
-       iVar16 = mscorlib.dll::System::String::String_IndexOf
-                          ((String *)pMVar10,0x5d,(MethodInfo *)0x0),
-       pMVar4 != (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)) {
-      this_01 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)(iVar16 + -1);
-      pMVar2 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
-                mscorlib.dll::System::String::String_Substring_1
-                          ((String *)pMVar4,(int32_t)this_01,1,(MethodInfo *)0x0);
-      pMVar7 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)StringLiteral_msgstr_;
-      pMVar6 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)::StringLiteral__;
-      text = mscorlib.dll::System::String::String_Concat_4
-                       (StringLiteral_msgstr_,(String *)pMVar2,::StringLiteral__,(MethodInfo *)0x0)
-      ;
-      do {
-        pSVar3 = text;
-        pMVar12 = pMVar6;
-        pMVar1 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)text;
-        pSVar14 = mscorlib.dll::System::String::String_Concat_3
-                           (text,::StringLiteral___,(MethodInfo *)0x0);
-        if ((TypeInfo__GNU__Gettext__CatalogParser->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        this = (CatalogParser *)0x0;
-        bVar9 = CatalogParser_ReadParam
-                          ((String *)pMVar6,pSVar14,(String **)&stack0xffffffe0,(MethodInfo *)0x0);
-        if (bVar9 == 0) {
-          text = (String *)&UNK_?;
-          pMVar8 = pMVar12;
-          pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                              (pSVar3,StringLiteral_u0009_,(MethodInfo *)0x0);
-          if ((TypeInfo__GNU__Gettext__CatalogParser->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          bVar9 = CatalogParser_ReadParam
-                            ((String *)pMVar12,pSVar3,(String **)&stack0xffffffe0,(MethodInfo *)0x0
+        if (this_01 ==
+            (List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo_
+             *)0x0) goto code_?;
+        pRVar17 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
+                  RenderTreeManager+VisualChangesProcessor+EntryProcessingInfo]::
+                  List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo__ToArray
+                            (this_01,
+                             MethodInfo__System__Collections__Generic__List<System::String>__ToArray__
                             );
-          if (bVar9 == 0) goto code_?;
-        }
-        if (pMVar2 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) break;
-        pSVar3 = mscorlib.dll::System::String::String_Substring_1
-                            ((String *)pMVar2,0,
-                             (int32_t)((int)&pMVar2->bounds[-1].lower_bound + 3),(MethodInfo *)0x0)
-        ;
-        this_01 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)&UNK_?;
-        pMVar10 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)func_?();
-        pSVar14 = (String *)&UNK_?;
-        mscorlib.dll::System::Text::StringBuilder::StringBuilder__ctor_2
-                  ((StringBuilder *)pMVar10,pSVar3,(MethodInfo *)0x0);
-        while( true ) {
-          if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-          goto code_?;
-          pMVar1 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)func_?();
-          bVar9 = mscorlib.dll::System::String::String_IsNullOrEmpty
-                            ((String *)pMVar1,(MethodInfo *)0x0);
-          if (bVar9 != 0) goto code_?;
-          if (pMVar1 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-          goto code_?;
-          uVar13 = mscorlib.dll::System::String::String_get_Chars
-                            ((String *)pMVar1,0,(MethodInfo *)0x0);
-          if (uVar13 == 9) {
-            if (pMVar1 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-            goto code_?;
-            pMVar1 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
-                      mscorlib.dll::System::String::String_Substring
-                                ((String *)pMVar1,1,(MethodInfo *)0x0);
+        cVar18 = (*(this->klass->vtable).OnDeletedEntry.methodPtr)
+                          (this,pRVar16,pSStack_1,0,pSStack_6,pRVar17,
+                           (this->klass->vtable).OnDeletedEntry.method);
+        if (cVar18 != '\0') {
+          pSStack_6 = (String *)**(undefined8 **)(lRam_? + 0xb8);
+          pSStack_1 = pSStack_6;
+          pSStack_2 = pSStack_6;
+          pSStack_4 = pSStack_6;
+          pSStack_3 = pSStack_6;
+          if (this_00 ==
+              (List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo_
+               *)0x0) goto code_?;
+          piVar19 = &(this_00->fields)._version;
+          *piVar19 = *piVar19 + 1;
+          iVar20 = (this_00->fields)._size;
+          (this_00->fields)._size = 0;
+          if (0 < iVar20) {
+            mscorlib.dll::System::Array::Array_Clear
+                      ((Array *)(this_00->fields)._items,0,iVar20,(MethodInfo *)0x0);
           }
-          if (pMVar1 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
+          piVar19 = &(this_01->fields)._version;
+          *piVar19 = *piVar19 + 1;
+          iVar20 = (this_01->fields)._size;
+          (this_01->fields)._size = 0;
+          if (0 < iVar20) {
+            mscorlib.dll::System::Array::Array_Clear
+                      ((Array *)(this_01->fields)._items,0,iVar20,(MethodInfo *)0x0);
+          }
+          if (this_02 ==
+              (List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo_
+               *)0x0) goto code_?;
           goto code_?;
-          uVar13 = mscorlib.dll::System::String::String_get_Chars
-                            ((String *)pMVar1,0,(MethodInfo *)0x0);
-          pMVar7 = this_01;
-          if (uVar13 != 0x22) break;
-          if (pMVar1 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-          goto code_?;
-          pMVar7 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0;
-          pMVar4 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
-                   ((int)&pMVar1->bounds[-1].lower_bound + 3);
-          this_01 = pMVar1;
-          uVar13 = mscorlib.dll::System::String::String_get_Chars
-                            ((String *)pMVar1,(int32_t)pMVar4,(MethodInfo *)0x0);
-          pMVar1 = this_01;
-          if (uVar13 != 0x22) break;
-          if (this_01 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-          goto code_?;
-          pMVar7 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0;
-          pMVar4 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)&UNK_?;
-          pSVar3 = mscorlib.dll::System::String::String_Substring_1
-                              ((String *)this_01,1,
-                               (int32_t)((int)&this_01->bounds[-1].lower_bound + 2),
-                               (MethodInfo *)0x0);
-          if (pMVar10 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-          goto code_?;
-          pSVar14 = (String *)&UNK_?;
-          mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
-                    ((StringBuilder *)pMVar10,pSVar3,(MethodInfo *)0x0);
         }
-        this_01 = pMVar7;
-        if ((TypeInfo__GNU__Gettext__CatalogParser->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__GNU__Gettext__CatalogParser);
+        if (pSStack_10 != (StringReader *)0x0) {
+          FUN_?(0,TypeInfo__System__IDisposable,pSStack_10);
         }
-        bVar9 = CatalogParser_ReadParam
-                          ((String *)pMVar1,StringLiteral_msgstr_,(String **)&stack0xffffffe0,
-                           (MethodInfo *)0x0);
-        if (bVar9 != 0) {
-          if ((pSVar14 == (String *)0x0) ||
-             (iVar16 = mscorlib.dll::System::String::String_IndexOf(pSVar14,0x5d,(MethodInfo *)0x0),
-             pSVar14 == (String *)0x0)) break;
-          pSVar3 = mscorlib.dll::System::String::String_Substring_1
-                              (pSVar14,iVar16 + -1,1,(MethodInfo *)0x0);
-          text = mscorlib.dll::System::String::String_Concat_4
-                           (StringLiteral_msgstr_,pSVar3,::StringLiteral__,(MethodInfo *)0x0);
-        }
-code_?:
-        if (pMVar10 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) break;
-        pSVar3 = (String *)func_?();
-        pMVar7 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)&UNK_?;
-        pSVar3 = StringEscaping::StringEscaping_FromGettextFormat(pSVar3,(MethodInfo *)0x0);
-        if (pMVar4 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) break;
-        pMVar2 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)&UNK_?;
-        pMVar6 = pMVar4;
-        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__Add
-                  ((List_1_System_Object_ *)pMVar4,(Object *)pSVar3,
-                   MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
-                  );
-      } while( true );
-    }
-    goto code_?;
-  }
-  pMVar2 = pMVar10;
-  pMVar8 = pMVar12;
-  if ((TypeInfo__GNU__Gettext__CatalogParser->_1).cctor_finished_or_no_cctor == 0) {
-    pMVar4 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
-             TypeInfo__GNU__Gettext__CatalogParser;
-    func_?();
-    pMVar2 = pMVar10;
-  }
-  bVar9 = CatalogParser_ReadParam
-                    ((String *)pMVar12,::StringLiteral____,(String **)&stack0xffffffe0,
-                     (MethodInfo *)0x0);
-  if (bVar9 == 0) {
-    pSVar3 = pSVar14;
-    if (pMVar8 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-    goto code_?;
-    uVar13 = mscorlib.dll::System::String::String_get_Chars((String *)pMVar8,0,(MethodInfo *)0x0);
-    pSVar3 = pSVar14;
-    if (uVar13 != 0x23) goto code_?;
-    while (bVar9 = mscorlib.dll::System::String::String_IsNullOrEmpty
-                             ((String *)pMVar8,(MethodInfo *)0x0), bVar9 == 0) {
-      if (pMVar8 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-      goto code_?;
-      uVar13 = mscorlib.dll::System::String::String_get_Chars((String *)pMVar8,0,(MethodInfo *)0x0);
-      if (uVar13 == 0x23) {
-        if (pMVar8 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-        goto code_?;
-        pMVar10 = this_01;
-        pMVar12 = pMVar7;
-        this_04 = pMVar6;
-        if (1 < (int)pMVar8->bounds) goto code_?;
       }
       else {
+        if (bVar7) {
+          if (pSStackX_20 != (String *)0x0) {
+            iVar20 = mscorlib.dll::System::SpanHelpers::SpanHelpers_IndexOf_2
+                              (&(pSStackX_20->fields)._firstChar,0x5d,
+                               (pSStackX_20->fields)._stringLength,(MethodInfo *)0x0);
+            if (pSStackX_20 != (String *)0x0) {
+              pSVar5 = mscorlib.dll::System::String::String_Substring_1
+                                  (pSStackX_20,iVar20 + -1,1,(MethodInfo *)0x0);
+              pSVar5 = mscorlib.dll::System::String::String_Concat_5
+                                  (StringLiteral_msgstr_,pSVar5,::StringLiteral__,(MethodInfo *)0x0
+                                  );
+              do {
+                pSVar11 = apSStackX_10[0];
+                pSVar21 = mscorlib.dll::System::String::String_Concat_4
+                                    (pSVar5,::StringLiteral___,(MethodInfo *)0x0);
+                if (*(int *)&(TypeInfo__GNU__Gettext__CatalogParser->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                bVar12 = CatalogParser_ReadParam(pSVar11,pSVar21,&pSStackX_20,(MethodInfo *)0x0);
+                pSVar11 = apSStackX_10[0];
+                if (bVar12 == 0) {
+                  pSVar21 = mscorlib.dll::System::String::String_Concat_4
+                                      (pSVar5,StringLiteral_u0009_,(MethodInfo *)0x0);
+                  if (*(int *)&(TypeInfo__GNU__Gettext__CatalogParser->_1).field_0x1c == 0) {
+                    FUN_?();
+                  }
+                  bVar12 = CatalogParser_ReadParam(pSVar11,pSVar21,&pSStackX_20,(MethodInfo *)0x0);
+                  if (bVar12 == 0) goto code_?;
+                }
+                if (pSStackX_20 == (String *)0x0) goto code_?;
+                pSVar11 = mscorlib.dll::System::String::String_Substring_1
+                                   (pSStackX_20,0,(pSStackX_20->fields)._stringLength + -1,
+                                    (MethodInfo *)0x0);
+                this_05 = (StringBuilder *)FUN_?(TypeInfo__System__Text__StringBuilder);
+                if (pSVar11 == (String *)0x0) {
+                  iVar20 = 0;
+                  pSVar11 = (String *)0x0;
+                }
+                else {
+                  iVar20 = (pSVar11->fields)._stringLength;
+                }
+                mscorlib.dll::System::Text::StringBuilder::StringBuilder__ctor_4
+                          (this_05,pSVar11,0,iVar20,0x10,(MethodInfo *)0x0);
+                while( true ) {
+                  if (pSStack_10 == (StringReader *)0x0) goto code_?;
+                  pSVar11 = (String *)
+                           (*(pSStack_10->klass->vtable).ReadLine.methodPtr)
+                                     (pSStack_10,(pSStack_10->klass->vtable).ReadLine.method);
+                  apSStackX_10[0] = pSVar11;
+                  if ((pSVar11 == (String *)0x0) || ((pSVar11->fields)._stringLength == 0))
+                  goto code_?;
+                  if (pSVar11 == (String *)0x0) goto code_?;
+                  if ((pSVar11->fields)._stringLength < 1) goto code_?;
+                  if ((pSVar11->fields)._firstChar == 9) {
+                    pSVar11 = mscorlib.dll::System::String::String_Substring_1
+                                       (pSVar11,1,(pSVar11->fields)._stringLength + -1,
+                                        (MethodInfo *)0x0);
+                  }
+                  apSStackX_10[0] = pSVar11;
+                  if (pSVar11 == (String *)0x0) goto code_?;
+                  if ((pSVar11->fields)._stringLength < 1) goto code_?;
+                  if ((pSVar11->fields)._firstChar != 0x22) break;
+                  uVar22 = (pSVar11->fields)._stringLength;
+                  if ((uint)(pSVar11->fields)._stringLength <= uVar22 - 1) goto code_?;
+                  if (*(short *)((longlong)&(pSVar11->fields)._stringLength +
+                                (ulonglong)uVar22 * 2 + 2) != 0x22) break;
+                  pSVar11 = mscorlib.dll::System::String::String_Substring_1
+                                     (pSVar11,1,uVar22 - 2,(MethodInfo *)0x0);
+                  if (this_05 == (StringBuilder *)0x0) goto code_?;
+                  mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
+                            (this_05,pSVar11,(MethodInfo *)0x0);
+                }
+                if (*(int *)&(TypeInfo__GNU__Gettext__CatalogParser->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                bVar12 = CatalogParser_ReadParam
+                                  (pSVar11,StringLiteral_msgstr_,&pSStackX_20,(MethodInfo *)0x0);
+                if (bVar12 != 0) {
+                  if (pSStackX_20 == (String *)0x0) goto code_?;
+                  iVar20 = mscorlib.dll::System::SpanHelpers::SpanHelpers_IndexOf_2
+                                    (&(pSStackX_20->fields)._firstChar,0x5d,
+                                     (pSStackX_20->fields)._stringLength,(MethodInfo *)0x0);
+                  if (pSStackX_20 == (String *)0x0) goto code_?;
+                  pSVar5 = mscorlib.dll::System::String::String_Substring_1
+                                      (pSStackX_20,iVar20 + -1,1,(MethodInfo *)0x0);
+                  pSVar5 = mscorlib.dll::System::String::String_Concat_5
+                                      (StringLiteral_msgstr_,pSVar5,::StringLiteral__,
+                                       (MethodInfo *)0x0);
+                }
 code_?:
-        if (pMVar8 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-        goto code_?;
-        uVar13 = mscorlib.dll::System::String::String_get_Chars((String *)pMVar8,0,(MethodInfo *)0x0)
-        ;
-        if (uVar13 != 0x23) break;
-        if (pMVar8 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-        goto code_?;
-        pMVar4 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0;
-        pMVar10 = pMVar8;
-        uVar13 = mscorlib.dll::System::String::String_get_Chars((String *)pMVar8,1,(MethodInfo *)0x0)
-        ;
-        pMVar8 = pMVar10;
-        if (uVar13 == 0x2c) break;
-        if (pMVar10 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-        goto code_?;
-        pSVar3 = (String *)0x0;
-        pMVar4 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)&UNK_?;
-        pMVar12 = pMVar10;
-        uVar13 = mscorlib.dll::System::String::String_get_Chars
-                          ((String *)pMVar10,1,(MethodInfo *)0x0);
-        this_01 = pMVar10;
-        pMVar8 = pMVar12;
-        if (uVar13 == 0x3a) break;
-        if (pMVar12 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-        goto code_?;
-        this_04 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0;
-        pMVar2 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x1;
-        pSVar3 = (String *)&UNK_?;
-        uVar13 = mscorlib.dll::System::String::String_get_Chars
-                          ((String *)pMVar12,1,(MethodInfo *)0x0);
-        this_01 = pMVar10;
-        pMVar7 = pMVar12;
-        pMVar8 = this_04;
-        if (uVar13 == 0x2e) break;
-        if (this_04 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-        goto code_?;
-        pMVar1 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0;
-        pMVar8 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)&UNK_?;
-        uVar13 = mscorlib.dll::System::String::String_get_Chars
-                          ((String *)this_04,1,(MethodInfo *)0x0);
-        this_01 = pMVar10;
-        pMVar7 = pMVar12;
-        pMVar6 = this_04;
-        if (uVar13 == 0x7e) break;
+                if (this_05 == (StringBuilder *)0x0) goto code_?;
+                pSVar11 = (String *)(*(this_05->klass->vtable).ToString.methodPtr)(this_05);
+                pSVar11 = StringEscaping::StringEscaping_FromGettextFormat(pSVar11,(MethodInfo *)0x0);
+                if (this_02 ==
+                    (List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo_
+                     *)0x0) goto code_?;
+                FUN_?(this_02,pSVar11);
+              } while( true );
+            }
+            goto code_?;
+          }
+          goto code_?;
+        }
+        if (*(int *)&(TypeInfo__System__Console->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        mscorlib.dll::System::Console::Console_WriteLine
+                  (StringLiteral_Broken_catalog_file__plural_form,(MethodInfo *)0x0);
+        if (pSStack_10 != (StringReader *)0x0) {
+          FUN_?(0,TypeInfo__System__IDisposable,pSStack_10);
+        }
       }
-      if (pSVar14 == (String *)0x0) goto code_?;
-      this_01 = pMVar10;
-      pMVar7 = pMVar12;
-      pMVar6 = this_04;
-      if (0 < (pSVar14->fields)._stringLength) {
-        pMVar8 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)
-                 mscorlib.dll::System::String::String_Concat_3
-                           (StringLiteral_u000A,(String *)pMVar8,(MethodInfo *)0x0);
-        this_01 = pMVar10;
-        pMVar7 = pMVar12;
-        pMVar6 = this_04;
+    }
+    else {
+code_?:
+      if (bVar7) {
+        if (*(int *)&(TypeInfo__System__Console->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        mscorlib.dll::System::Console::Console_WriteLine
+                  (StringLiteral_Broken_catalog_file__singular_fo,(MethodInfo *)0x0);
+        if (pSStack_10 != (StringReader *)0x0) {
+          FUN_?(0,TypeInfo__System__IDisposable,pSStack_10);
+        }
       }
-      pSVar14 = mscorlib.dll::System::String::String_Concat_3
-                         (pSVar14,(String *)pMVar8,(MethodInfo *)0x0);
-      if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-      goto code_?;
-      pSVar3 = pSVar14;
-      pMVar8 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)func_?();
+      else {
+        uVar13 = 0;
+        pSVar5 = CatalogParser_ParseMessage
+                            (this,apSStackX_10,&pSStackX_20,pSStack_10,(MethodInfo *)0x0);
+        if (this_02 ==
+            (List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo_
+             *)0x0) goto code_?;
+        FUN_?(this_02,pSVar5,
+                      MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
+                     );
+        uVar23 = **(undefined8 **)(lRam_? + 0xb8);
+        pRVar16 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
+                  RenderTreeManager+VisualChangesProcessor+EntryProcessingInfo]::
+                  List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo__ToArray
+                            (this_02,
+                             MethodInfo__System__Collections__Generic__List<System::String>__ToArray__
+                            );
+        if (this_00 ==
+            (List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo_
+             *)0x0) goto code_?;
+        pRVar17 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
+                  RenderTreeManager+VisualChangesProcessor+EntryProcessingInfo]::
+                  List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo__ToArray
+                            (this_00,
+                             MethodInfo__System__Collections__Generic__List<System::String>__ToArray__
+                            );
+        if (this_01 ==
+            (List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo_
+             *)0x0) goto code_?;
+        pRVar24 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
+                  RenderTreeManager+VisualChangesProcessor+EntryProcessingInfo]::
+                  List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo__ToArray
+                            (this_01,
+                             MethodInfo__System__Collections__Generic__List<System::String>__ToArray__
+                            );
+        cVar18 = FUN_?(pSStack_3,this,pSStack_2,uVar23,uVar13 & 0xffffffffffffff00,pRVar16,
+                              pSStack_1,pRVar17,pSStack_6,pRVar24,pSStack_3);
+        if (cVar18 != '\0') {
+          pSStack_6 = (String *)**(undefined8 **)(lRam_? + 0xb8);
+          piVar19 = &(this_00->fields)._version;
+          *piVar19 = *piVar19 + 1;
+          iVar20 = (this_00->fields)._size;
+          (this_00->fields)._size = 0;
+          pSStack_1 = pSStack_6;
+          pSStack_2 = pSStack_6;
+          pSStack_4 = pSStack_6;
+          pSStack_3 = pSStack_6;
+          if (0 < iVar20) {
+            mscorlib.dll::System::Array::Array_Clear
+                      ((Array *)(this_00->fields)._items,0,iVar20,(MethodInfo *)0x0);
+          }
+          goto code_?;
+        }
+        if (pSStack_10 != (StringReader *)0x0) {
+          FUN_?(0,TypeInfo__System__IDisposable,pSStack_10);
+        }
+      }
     }
-    cVar5 = (char)((uint)pMVar6 >> 0x18);
-    goto code_?;
+code_?:
+    bVar12 = 0;
   }
-  pLVar15 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-            *)func_?(TypeInfo__System__Collections__Generic__List<System::String>);
-  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType]::
-  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar15,
-             MethodInfo__System__Collections__Generic__List<System::String>__List__);
-  if (pLVar15 == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                 *)0x0) goto code_?;
-  do {
-    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-              ((List_1_System_Object_ *)pLVar15,(Object *)pMVar8,
-               MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_);
-    if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-    goto code_?;
-    pMVar4 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)func_?();
-    bVar9 = mscorlib.dll::System::String::String_IsNullOrEmpty((String *)pMVar4,(MethodInfo *)0x0);
-    pMVar8 = pMVar4;
-    if (bVar9 != 0) break;
-    if ((TypeInfo__GNU__Gettext__CatalogParser->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+  return bVar12;
+code_?:
+  if (this_02 !=
+      (List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo_
+       *)0x0) {
+    pRVar16 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
+              RenderTreeManager+VisualChangesProcessor+EntryProcessingInfo]::
+              List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo__ToArray
+                        (this_02,
+                         MethodInfo__System__Collections__Generic__List<System::String>__ToArray__);
+    if (this_00 !=
+        (List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo_
+         *)0x0) {
+      pRVar17 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
+                RenderTreeManager+VisualChangesProcessor+EntryProcessingInfo]::
+                List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo__ToArray
+                          (this_00,
+                           MethodInfo__System__Collections__Generic__List<System::String>__ToArray__
+                          );
+      if (this_01 !=
+          (List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo_
+           *)0x0) {
+        pRVar24 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::UIR::
+                  RenderTreeManager+VisualChangesProcessor+EntryProcessingInfo]::
+                  List_1_UnityEngine_UIElements_UIR_RenderTreeManager_VisualChangesProcessor_EntryProcessingInfo__ToArray
+                            (this_01,
+                             MethodInfo__System__Collections__Generic__List<System::String>__ToArray__
+                            );
+        cVar18 = FUN_?(pSStack_3,this,pSStack_2,pSStack_4,1,pRVar16,pSStack_1,pRVar17,
+                              pSStack_6,pRVar24,pSStack_3);
+        if (cVar18 != '\0') {
+          pSStack_6 = (String *)**(undefined8 **)(lRam_? + 0xb8);
+          piVar19 = &(this_00->fields)._version;
+          *piVar19 = *piVar19 + 1;
+          iVar20 = (this_00->fields)._size;
+          (this_00->fields)._size = 0;
+          pSStack_1 = pSStack_6;
+          pSStack_2 = pSStack_6;
+          pSStack_4 = pSStack_6;
+          if (0 < iVar20) {
+            mscorlib.dll::System::Array::Array_Clear
+                      ((Array *)(this_00->fields)._items,0,iVar20,(MethodInfo *)0x0);
+          }
+code_?:
+          piVar19 = &(this_01->fields)._version;
+          *piVar19 = *piVar19 + 1;
+          iVar20 = (this_01->fields)._size;
+          (this_01->fields)._size = 0;
+          if (0 < iVar20) {
+            mscorlib.dll::System::Array::Array_Clear
+                      ((Array *)(this_01->fields)._items,0,iVar20,(MethodInfo *)0x0);
+          }
+code_?:
+          bVar7 = false;
+          piVar19 = &(this_02->fields)._version;
+          *piVar19 = *piVar19 + 1;
+          iVar20 = (this_02->fields)._size;
+          (this_02->fields)._size = 0;
+          if (0 < iVar20) {
+            mscorlib.dll::System::Array::Array_Clear
+                      ((Array *)(this_02->fields)._items,0,iVar20,(MethodInfo *)0x0);
+          }
+code_?:
+          do {
+            pSVar5 = pSStack_6;
+            pSVar11 = apSStackX_10[0];
+            pSVar21 = (String *)**(longlong **)(lRam_? + 0xb8);
+            if (apSStackX_10[0] != pSVar21) {
+              if (apSStackX_10[0] == (String *)0x0) goto code_?;
+              if (((pSVar21 == (String *)0x0) ||
+                  ((apSStackX_10[0]->fields)._stringLength != (pSVar21->fields)._stringLength)) ||
+                 (bVar12 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                                    ((uint8_t *)&(apSStackX_10[0]->fields)._firstChar,
+                                     (uint8_t *)&(pSVar21->fields)._firstChar,
+                                     (longlong)(apSStackX_10[0]->fields)._stringLength * 2,
+                                     (MethodInfo *)0x0), bVar12 == 0)) goto code_?;
+            }
+            if (pSStack_10 == (StringReader *)0x0) goto code_?;
+code_?:
+            apSStackX_10[0] =
+                 (String *)
+                 (*(pSStack_10->klass->vtable).ReadLine.methodPtr)
+                           (pSStack_10,(pSStack_10->klass->vtable).ReadLine.method);
+          } while( true );
+        }
+        if (pSStack_10 != (StringReader *)0x0) {
+          FUN_?(0,TypeInfo__System__IDisposable,pSStack_10);
+        }
+        goto code_?;
+      }
+code_?:
+      FUN_?();
     }
-    bVar9 = CatalogParser_ReadParam
-                      ((String *)pMVar4,::StringLiteral____,(String **)&stack0xffffffe0,
-                       (MethodInfo *)0x0);
-  } while (bVar9 != 0);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
-  MultiColumnCollectionHeader+ViewState+ColumnState]::
-  List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
-            (pLVar15,MethodInfo__System__Collections__Generic__List<System::String>__ToArray__);
-  if (this_01 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-  goto code_?;
-  pMVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
-           MultiColumnCollectionHeader+ViewState+ColumnState]::
-           List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
-                     ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                       *)this_01,
-                      MethodInfo__System__Collections__Generic__List<System::String>__ToArray__);
-  iVar17 = 0;
-  cVar5 = func_?();
-  if (cVar5 == '\0') goto code_?;
-  cVar5 = '\0';
-  pMVar6 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0;
-  pSVar3 = TypeInfo__System__String->static_fields->Empty;
-  if (iVar17 == 0) goto code_?;
-  func_?();
-  func_?();
-  if (pMVar4 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-  goto code_?;
-  func_?();
-code_?:
-  while (bVar9 = mscorlib.dll::System::String::String_op_Equality
-                           ((String *)pMVar8,TypeInfo__System__String->static_fields->Empty,
-                            (MethodInfo *)0x0), bVar9 != 0) {
-code_?:
-    if (pMVar7 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)
-    goto code_?;
-code_?:
-    pMVar8 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)func_?();
+    FUN_?();
   }
-  goto code_?;
+  FUN_?();
 code_?:
-  if (((pMVar4 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0) ||
-      (mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
-       MultiColumnCollectionHeader+ViewState+ColumnState]::
-       List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
-                 ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                   *)pMVar4,
-                  MethodInfo__System__Collections__Generic__List<System::String>__ToArray__),
-      pMVar10 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0)) ||
-     (mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
-      MultiColumnCollectionHeader+ViewState+ColumnState]::
-      List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
-                ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                  *)pMVar10,
-                 MethodInfo__System__Collections__Generic__List<System::String>__ToArray__),
-     this_01 == (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0))
-  goto code_?;
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
-  MultiColumnCollectionHeader+ViewState+ColumnState]::
-  List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState__ToArray
-            ((List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-              *)this_01,MethodInfo__System__Collections__Generic__List<System::String>__ToArray__);
-  cVar5 = func_?();
-  if (cVar5 == '\0') {
+  FUN_?();
 code_?:
-    func_?();
-    *unaff_FS_OFFSET = pMVar1;
-    return 0;
-  }
-  pMVar6 = (MultiColumnCollectionHeader_ViewState_ColumnState__Array *)0x0;
-  pSVar3 = TypeInfo__System__String->static_fields->Empty;
-  func_?();
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowIndexOutOfRangeException((MethodInfo *)0x0);
 code_?:
-  cVar5 = '\0';
-  func_?();
-  func_?();
-  goto code_?;
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowIndexOutOfRangeException((MethodInfo *)0x0);
+code_?:
+  FUN_?();
+code_?:
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowIndexOutOfRangeException((MethodInfo *)0x0);
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowIndexOutOfRangeException((MethodInfo *)0x0);
+code_?:
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowIndexOutOfRangeException((MethodInfo *)0x0);
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+  pcVar25 = (code *)swi(3);
+  bVar12 = (*pcVar25)();
+  return bVar12;
 }
 
 
@@ -857,61 +1037,92 @@ String * Assembly-CSharp.dll::GNU::Gettext::CatalogParser::CatalogParser_ParseMe
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Text__StringBuilder);
+    FUN_?(&TypeInfo__System__Text__StringBuilder);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (*dummy != (String *)0x0) {
     pSVar1 = mscorlib.dll::System::String::String_Substring_1
                        (*dummy,0,((*dummy)->fields)._stringLength + -1,(MethodInfo *)0x0);
-    this_00 = (StringBuilder *)func_?(TypeInfo__System__Text__StringBuilder);
-    mscorlib.dll::System::Text::StringBuilder::StringBuilder__ctor_2
-              (this_00,pSVar1,(MethodInfo *)0x0);
-    pSVar2 = this_00;
-    if (this_00 != (StringBuilder *)0x0) {
-      while( true ) {
-        pSVar1 = (String *)(*(code *)pSVar2->klass[1]._0.events)();
+    this_00 = (StringBuilder *)FUN_?(TypeInfo__System__Text__StringBuilder);
+    if (pSVar1 == (String *)0x0) {
+      length = 0;
+      pSVar1 = (String *)0x0;
+    }
+    else {
+      length = (pSVar1->fields)._stringLength;
+    }
+    mscorlib.dll::System::Text::StringBuilder::StringBuilder__ctor_4
+              (this_00,pSVar1,0,length,0x10,(MethodInfo *)0x0);
+    if (sr != (StringReader *)0x0) {
+      do {
+        pSVar1 = (String *)
+                 (*(sr->klass->vtable).ReadLine.methodPtr)(sr,(sr->klass->vtable).ReadLine.method);
+        bVar2 = iRam_? != 0;
         *line = pSVar1;
-        func_?();
-        bVar3 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar1,(MethodInfo *)0x0);
-        if (bVar3 != 0) break;
-        if (*line == (String *)0x0) goto code_?;
-        uVar4 = mscorlib.dll::System::String::String_get_Chars(*line,0,(MethodInfo *)0x0);
-        if (uVar4 == 9) {
-          if (*line == (String *)0x0) goto code_?;
-          pSVar1 = mscorlib.dll::System::String::String_Substring(*line,1,(MethodInfo *)0x0);
-          *line = pSVar1;
-          func_?(line,pSVar1);
+        if (bVar2) {
+          uVar3 = (uint)((ulonglong)line >> 0xc);
+          puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+          do {
+            uVar5 = *puVar4;
+            LOCK();
+            uVar6 = *puVar4;
+            if (uVar5 == uVar6) {
+              *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+            }
+            UNLOCK();
+          } while (uVar5 != uVar6);
         }
-        if (*line == (String *)0x0) goto code_?;
-        uVar4 = mscorlib.dll::System::String::String_get_Chars(*line,0,(MethodInfo *)0x0);
-        if (uVar4 != 0x22) break;
-        if (*line == (String *)0x0) goto code_?;
-        uVar4 = mscorlib.dll::System::String::String_get_Chars
-                          (*line,((*line)->fields)._stringLength + -1,(MethodInfo *)0x0);
-        if (uVar4 != 0x22) break;
-        if (*line == (String *)0x0) goto code_?;
+        if ((pSVar1 == (String *)0x0) || ((pSVar1->fields)._stringLength == 0))
+        goto code_?;
+        pSVar1 = *line;
+        if (pSVar1 == (String *)0x0) break;
+        if ((pSVar1->fields)._stringLength < 1) {
+code_?:
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowIndexOutOfRangeException
+                    ((MethodInfo *)0x0);
+          pcVar7 = (code *)swi(3);
+          pSVar1 = (String *)(*pcVar7)();
+          return pSVar1;
+        }
+        if ((pSVar1->fields)._firstChar == 9) {
+          pSVar1 = mscorlib.dll::System::String::String_Substring_1
+                             (pSVar1,1,(pSVar1->fields)._stringLength + -1,(MethodInfo *)0x0);
+          *line = pSVar1;
+          func_?();
+        }
+        pSVar1 = *line;
+        if (pSVar1 == (String *)0x0) break;
+        if ((pSVar1->fields)._stringLength < 1) goto code_?;
+        if ((pSVar1->fields)._firstChar != 0x22) {
+code_?:
+          if (this_00 != (StringBuilder *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+            pSVar1 = (String *)
+                     (*(this_00->klass->vtable).ToString.methodPtr)
+                               (this_00,(this_00->klass->vtable).ToString.method);
+            return pSVar1;
+          }
+          break;
+        }
+        uVar3 = (pSVar1->fields)._stringLength;
+        if ((uint)(pSVar1->fields)._stringLength <= uVar3 - 1) goto code_?;
+        if (*(short *)((longlong)&(pSVar1->fields)._stringLength + (ulonglong)uVar3 * 2 + 2) != 0x22
+           ) goto code_?;
         pSVar1 = mscorlib.dll::System::String::String_Substring_1
-                           (*line,1,((*line)->fields)._stringLength + -2,(MethodInfo *)0x0);
+                           (pSVar1,1,(pSVar1->fields)._stringLength + -2,(MethodInfo *)0x0);
         pSVar1 = StringEscaping::StringEscaping_FromGettextFormat(pSVar1,(MethodInfo *)0x0);
-        if (this_00 == (StringBuilder *)0x0) goto code_?;
+        if (this_00 == (StringBuilder *)0x0) break;
         mscorlib.dll::System::Text::StringBuilder::StringBuilder_Append_2
                   (this_00,pSVar1,(MethodInfo *)0x0);
-        pSVar2 = (StringBuilder *)0x0;
-      }
-      if (this_00 != (StringBuilder *)0x0) {
-        pSVar1 = (String *)
-                 (*(code *)(this_00->klass->vtable).ToString.method)
-                           (this_00,(this_00->klass->vtable).
-                                    System_Runtime_Serialization_ISerializable_GetObjectData.
-                                    methodPtr);
-        return pSVar1;
-      }
+      } while( true );
     }
   }
-code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar5)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar7)();
   return pSVar1;
 }
 
@@ -923,58 +1134,108 @@ bool Assembly-CSharp.dll::GNU::Gettext::CatalogParser::CatalogParser_ReadParam
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Char);
-    func_?(&TypeInfo__System__String);
-    func_?(&::StringLiteral___);
+    FUN_?(&TypeInfo__System__Char);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral___);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pSVar1 = TypeInfo__System__String->static_fields->Empty;
-  *output = pSVar1;
-  func_?(output,pSVar1);
+  bVar1 = iRam_? != 0;
+  *output = (String *)**(undefined8 **)(lRam_? + 0xb8);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)output >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   if (input == (String *)0x0) {
     return 0;
   }
-  pCVar2 = (Char__Array *)func_?(TypeInfo__System__Char,2);
-  if (pCVar2 == (Char__Array *)0x0) goto code_?;
-  if ((pCVar2->max_length != 0) && (pCVar2->vector[0] = 0x20, 1 < pCVar2->max_length)) {
-    pCVar2->vector[1] = 9;
-    pSVar1 = mscorlib.dll::System::String::String_TrimStart_1(input,pCVar2,(MethodInfo *)0x0);
-    if ((pSVar1 == (String *)0x0) || (pattern == (String *)0x0)) goto code_?;
-    if ((pSVar1->fields)._stringLength < (pattern->fields)._stringLength) {
-      return 0;
+  lVar6 = FUN_?(TypeInfo__System__Char);
+  if (lVar6 != 0) {
+    if ((*(int *)(lVar6 + 0x18) == 0) ||
+       (*(undefined2 *)(lVar6 + 0x20) = 0x20, *(uint *)(lVar6 + 0x18) < 2))
+    goto code_?;
+    *(undefined2 *)(lVar6 + 0x22) = 9;
+    if (*(longlong *)(lVar6 + 0x18) == 0) {
+      pSVar7 = mscorlib.dll::System::String::String_TrimWhiteSpaceHelper
+                         (input,String_TrimType__Enum_Head,(MethodInfo *)0x0);
     }
-    bVar3 = mscorlib.dll::System::String::String_StartsWith(pSVar1,pattern,(MethodInfo *)0x0);
-    if (bVar3 == 0) {
-      return 0;
+    else {
+      if (*(int *)(lVar6 + 0x18) == 0) goto code_?;
+      pSVar7 = mscorlib.dll::System::String::String_TrimHelper
+                         (input,(uint16_t *)(lVar6 + 0x20),*(int32_t *)(lVar6 + 0x18),
+                          String_TrimType__Enum_Head,(MethodInfo *)0x0);
     }
-    this = mscorlib.dll::System::String::String_Trim(pattern,(MethodInfo *)0x0);
-    if ((this == (String *)0x0) ||
-       ((bVar3 = mscorlib.dll::System::String::String_Equals_1
-                           (this,::StringLiteral___,(MethodInfo *)0x0), bVar3 != 0 &&
-        (pSVar1 = mscorlib.dll::System::String::String_Replace(pSVar1,0x5c,0x2f,(MethodInfo *)0x0),
-        pSVar1 == (String *)0x0)))) goto code_?;
-    pSVar1 = mscorlib.dll::System::String::String_Substring
-                       (pSVar1,(pattern->fields)._stringLength,(MethodInfo *)0x0);
-    pCVar2 = (Char__Array *)func_?();
-    if (pCVar2 == (Char__Array *)0x0) goto code_?;
-    if ((pCVar2->max_length != 0) && (pCVar2->vector[0] = 0x20, 1 < pCVar2->max_length)) {
-      pCVar2->vector[1] = 9;
-      if (pSVar1 != (String *)0x0) {
-        pSVar1 = mscorlib.dll::System::String::String_TrimEnd_2(pSVar1,pCVar2,(MethodInfo *)0x0);
-        pSVar1 = StringEscaping::StringEscaping_FromGettextFormat(pSVar1,(MethodInfo *)0x0);
-        *output = pSVar1;
-        func_?();
-        return 1;
+    if ((pSVar7 != (String *)0x0) && (pattern != (String *)0x0)) {
+      if ((pSVar7->fields)._stringLength < (pattern->fields)._stringLength) {
+        return 0;
       }
-      goto code_?;
+      bVar8 = mscorlib.dll::System::String::String_StartsWith(pSVar7,pattern,(MethodInfo *)0x0);
+      if (bVar8 == 0) {
+        return 0;
+      }
+      pSVar9 = mscorlib.dll::System::String::String_TrimWhiteSpaceHelper
+                         (pattern,String_TrimType__Enum_Both,(MethodInfo *)0x0);
+      if ((pSVar9 != (String *)0x0) &&
+         (((pSVar9 != ::StringLiteral___ &&
+           (((::StringLiteral___ == (String *)0x0 ||
+             ((pSVar9->fields)._stringLength != (::StringLiteral___->fields)._stringLength)) ||
+            (bVar8 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                               ((uint8_t *)&(pSVar9->fields)._firstChar,
+                                (uint8_t *)&(::StringLiteral___->fields)._firstChar,
+                                (longlong)(pSVar9->fields)._stringLength * 2,(MethodInfo *)0x0),
+            bVar8 == 0)))) ||
+          (pSVar7 = mscorlib.dll::System::String::String_Replace(pSVar7,0x5c,0x2f,(MethodInfo *)0x0)
+          , pSVar7 != (String *)0x0)))) {
+        startIndex = (pattern->fields)._stringLength;
+        pSVar7 = mscorlib.dll::System::String::String_Substring_1
+                           (pSVar7,startIndex,(pSVar7->fields)._stringLength - startIndex,
+                            (MethodInfo *)0x0);
+        lVar6 = FUN_?(TypeInfo__System__Char,2);
+        if (lVar6 != 0) {
+          if ((*(int *)(lVar6 + 0x18) == 0) ||
+             (*(undefined2 *)(lVar6 + 0x20) = 0x20, *(uint *)(lVar6 + 0x18) < 2)) {
+code_?:
+            FUN_?();
+            pcVar10 = (code *)swi(3);
+            bVar8 = (*pcVar10)();
+            return bVar8;
+          }
+          *(undefined2 *)(lVar6 + 0x22) = 9;
+          if (pSVar7 != (String *)0x0) {
+            if (*(longlong *)(lVar6 + 0x18) == 0) {
+              pSVar7 = mscorlib.dll::System::String::String_TrimWhiteSpaceHelper
+                                 (pSVar7,String_TrimType__Enum_Tail,(MethodInfo *)0x0);
+            }
+            else {
+              if (*(int *)(lVar6 + 0x18) == 0) goto code_?;
+              pSVar7 = mscorlib.dll::System::String::String_TrimHelper
+                                 (pSVar7,(uint16_t *)(lVar6 + 0x20),*(int32_t *)(lVar6 + 0x18),
+                                  String_TrimType__Enum_Tail,(MethodInfo *)0x0);
+            }
+            pSVar7 = StringEscaping::StringEscaping_FromGettextFormat(pSVar7,(MethodInfo *)0x0);
+            *output = pSVar7;
+            func_?(output);
+            return 1;
+          }
+        }
+      }
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  bVar3 = (*pcVar4)();
-  return bVar3;
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  bVar8 = (*pcVar10)();
+  return bVar8;
 }
 
 
@@ -984,38 +1245,48 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogParser::CatalogParser__cctor(Meth
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GNU__Gettext__CatalogParser);
-    func_?(&TypeInfo__System__String);
-    func_?(&StringLiteral_u000A);
-    func_?(&StringLiteral_u000Du000A);
-    func_?(&StringLiteral_u000D);
+    FUN_?(&TypeInfo__GNU__Gettext__CatalogParser);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__String);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_u000A);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_u000Du000A);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_u000D);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pSVar1 = (String__Array *)func_?(TypeInfo__System__String,3);
-  pSVar2 = StringLiteral_u000Du000A;
+  pSVar1 = (String__Array *)FUN_?(TypeInfo__System__String,3);
   if (pSVar1 == (String__Array *)0x0) {
-    func_?();
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
   }
-  else if (pSVar1->max_length != 0) {
-    pSVar1->vector[0] = StringLiteral_u000Du000A;
-    func_?(pSVar1->vector,pSVar2);
-    pSVar2 = StringLiteral_u000D;
-    if (1 < pSVar1->max_length) {
-      pSVar1->vector[1] = StringLiteral_u000D;
-      func_?(pSVar1->vector + 1,pSVar2);
-      pSVar2 = StringLiteral_u000A;
-      if (2 < pSVar1->max_length) {
-        pSVar1->vector[2] = StringLiteral_u000A;
-        func_?(pSVar1->vector + 2,pSVar2);
-        TypeInfo__GNU__Gettext__CatalogParser->static_fields->LineSplitStrings = pSVar1;
-        func_?(TypeInfo__GNU__Gettext__CatalogParser->static_fields,pSVar1);
-        return;
+  FUN_?(pSVar1,0,StringLiteral_u000Du000A);
+  FUN_?(pSVar1,1,StringLiteral_u000D);
+  FUN_?(pSVar1,2,StringLiteral_u000A);
+  bVar3 = iRam_? != 0;
+  TypeInfo__GNU__Gettext__CatalogParser->static_fields->LineSplitStrings = pSVar1;
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)TypeInfo__GNU__Gettext__CatalogParser->static_fields >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
       }
-    }
+      UNLOCK();
+    } while (uVar6 != uVar7);
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
   return;
 }
 
@@ -1027,17 +1298,30 @@ void Assembly-CSharp.dll::GNU::Gettext::CatalogParser::CatalogParser__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GNU__Gettext__CatalogParser);
+    FUN_?(&TypeInfo__GNU__Gettext__CatalogParser);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  if ((TypeInfo__GNU__Gettext__CatalogParser->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__GNU__Gettext__CatalogParser);
+  if (*(int *)&(TypeInfo__GNU__Gettext__CatalogParser->_1).field_0x1c == 0) {
+    FUN_?();
   }
   pSVar1 = CatalogParser_GetNewLine(text,encoding,(MethodInfo *)0x0);
+  bVar2 = iRam_? != 0;
   (this->fields)._NewLine_k__BackingField = pSVar1;
-  func_?(&this->fields,pSVar1);
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&this->fields >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
   return;
 }
 

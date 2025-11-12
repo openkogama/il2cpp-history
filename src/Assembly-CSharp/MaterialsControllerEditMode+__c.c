@@ -8,35 +8,18 @@ void Assembly-CSharp.dll::MaterialsControllerEditMode+<>c::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IShortcutKeyUnRegister);
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (x != (IShortcutKeyUnRegister *)0x0) {
-    pIVar1 = x->klass;
-    uVar2 = 0;
-    uVar3._0_1_ = (pIVar1->_1).rank;
-    uVar3._1_1_ = (pIVar1->_1).minimumAlignment;
-    if (uVar3 != 0) {
-      do {
-        if (pIVar1->interfaceOffsets[uVar2].interfaceType ==
-            (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IShortcutKeyUnRegister) {
-          pIVar1 = x->klass;
-          iVar4 = pIVar1->interfaceOffsets[uVar2].offset;
-          (*(code *)(&pIVar1->vtable)[iVar4].UnRegisterShortcutKey.method)
-                    (x,0x16,0,(&pIVar1[1]._0.image)[iVar4 * 2]);
-          return;
-        }
-        uVar2 = uVar2 + 1;
-      } while (uVar2 < uVar3);
-    }
-    puVar5 = (undefined4 *)
-             func_?(x,TypeInfo__UnityEngine__EventSystems__IShortcutKeyUnRegister,0);
-    (*(code *)*puVar5)(x,0x16,0,puVar5[1]);
+    FUN_?(0,TypeInfo__UnityEngine__EventSystems__IShortcutKeyUnRegister,x,0x16,0);
     return;
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -50,34 +33,36 @@ void Assembly-CSharp.dll::MaterialsControllerEditMode+<>c::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (handler != (IUIStack *)0x0) {
-    pIVar1 = handler->klass;
-    uVar2 = 0;
-    uVar3._0_1_ = (pIVar1->_1).rank;
-    uVar3._1_1_ = (pIVar1->_1).minimumAlignment;
-    if (uVar3 != 0) {
-      do {
-        if (pIVar1->interfaceOffsets[uVar2].interfaceType ==
-            (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
-          pIVar1 = handler->klass;
-          iVar4 = pIVar1->interfaceOffsets[uVar2].offset;
-          (*(code *)(&(pIVar1->vtable).PopGroups)[iVar4].method)
-                    (handler,0x12,(&(pIVar1->vtable).PopToGroup)[iVar4].methodPtr);
-          return;
-        }
-        uVar2 = uVar2 + 1;
-      } while (uVar2 < uVar3);
-    }
-    puVar5 = (undefined4 *)func_?(handler,TypeInfo__UnityEngine__EventSystems__IUIStack,3);
-    (*(code *)*puVar5)(handler,0x12,puVar5[1]);
+  if (handler == (IUIStack *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  uVar2 = 0;
+  pIVar3 = handler->klass;
+  uVar4._0_1_ = (pIVar3->_1).rank;
+  uVar4._1_1_ = (pIVar3->_1).minimumAlignment;
+  if (uVar4 != 0) {
+    do {
+      if (pIVar3->interfaceOffsets[uVar2].interfaceType ==
+          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
+        pVVar5 = &(pIVar3->vtable).get_StackReady + (pIVar3->interfaceOffsets[uVar2].offset + 3);
+        goto code_?;
+      }
+      uVar2 = uVar2 + 1;
+    } while (uVar2 < uVar4);
+  }
+  pVVar5 = (VirtualInvokeData *)FUN_?(handler);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pVVar5->methodPtr)(handler,0x12,pVVar5->method,pVVar5->methodPtr);
   return;
 }
 
@@ -89,15 +74,27 @@ void Assembly-CSharp.dll::MaterialsControllerEditMode+<>c::MaterialsControllerEd
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MaterialsControllerEditMode____c);
+    FUN_?(&TypeInfo__MaterialsControllerEditMode____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__MaterialsControllerEditMode____c;
-  value = (MaterialsControllerEditMode_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  TypeInfo__MaterialsControllerEditMode____c->static_fields->__9 = value;
-  func_?(TypeInfo__MaterialsControllerEditMode____c->static_fields,value);
+  pMVar1 = (MaterialsControllerEditMode_c *)
+           FUN_?(TypeInfo__MaterialsControllerEditMode____c);
+  TypeInfo__MaterialsControllerEditMode____c->static_fields->__9 = pMVar1;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)TypeInfo__MaterialsControllerEditMode____c->static_fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 

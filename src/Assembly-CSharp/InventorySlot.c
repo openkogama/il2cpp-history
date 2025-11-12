@@ -5,22 +5,51 @@ void Assembly-CSharp.dll::InventorySlot::InventorySlot_Clear(InventorySlot *this
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pGVar1 = InventorySlot_get_Item(this,(MethodInfo *)0x0);
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pGVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pGVar1 = InventorySlot_get_Item(this,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pGVar1 != (GameObject *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-              ((Object_1 *)pGVar1,(MethodInfo *)0x0);
+    if ((pGVar1->fields)._.m_CachedPtr != (void *)0x0) {
+      pGVar1 = InventorySlot_get_Item(this,(MethodInfo *)0x0);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy
+                ((Object_1 *)pGVar1,0.0,(MethodInfo *)0x0);
+    }
   }
   return;
 }
@@ -34,9 +63,9 @@ void Assembly-CSharp.dll::InventorySlot::InventorySlot_HighlightSlot
 {
   pNVar1 = (this->fields).fade;
   if (pNVar1 != (NotificationFade *)0x0) {
-    (pNVar1->fields).pauseAt = (pNVar1->fields).duration;
     this_00 = (pNVar1->fields).group;
     (pNVar1->fields).playing = 1;
+    (pNVar1->fields).pauseAt = (pNVar1->fields).duration;
     if (this_00 != (CanvasGroup *)0x0) {
       UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
                 (this_00,0.0,(MethodInfo *)0x0);
@@ -44,10 +73,9 @@ void Assembly-CSharp.dll::InventorySlot::InventorySlot_HighlightSlot
       return;
     }
   }
-  uVar2 = func_?(&puStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -59,84 +87,158 @@ void Assembly-CSharp.dll::InventorySlot::InventorySlot_OnDrop
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGameObjectDroppedInSlot>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IGameObjectDroppedInSlot>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGameObjectDroppedInSlot>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    InventoryItemMetaData_MethodInfo__UnityEngine__GameObject__GetComponent<InventoryItemMetaData>__
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&
-                    MethodInfo__InventorySlot____c__DisplayClass11_0___OnDrop_b__0_UnityEngine__EventSystems__IGameObjectDroppedInSlot__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__InventorySlot____c__DisplayClass11_0);
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGameObjectDroppedInSlot>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IGameObjectDroppedInSlot>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGameObjectDroppedInSlot>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  InventoryItemMetaData_MethodInfo__UnityEngine__GameObject__GetComponent<InventoryItemMetaData>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__InventorySlot____c__DisplayClass11_0___OnDrop_b__0_UnityEngine__EventSystems__IGameObjectDroppedInSlot__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__InventorySlot____c__DisplayClass11_0);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__InventorySlot____c__DisplayClass11_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value != (Object *)0x0) {
-    value[1].klass = (Object__Class *)eventData;
-    func_?(value + 1,eventData);
-    value[1].monitor = (MonitorData *)this;
-    func_?(&value[1].monitor,this);
-    if (value[1].klass != (Object__Class *)0x0) {
-      pGVar1 = UnityEngine.UI.dll::UnityEngine::EventSystems::BaseEventData::
-               BaseEventData_get_selectedObject((BaseEventData *)value[1].klass,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
-      }
-      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        ((Object_1 *)pGVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar2 == 0) {
-        return;
-      }
-      if ((value[1].klass != (Object__Class *)0x0) &&
-         (pGVar1 = UnityEngine.UI.dll::UnityEngine::EventSystems::BaseEventData::
-                   BaseEventData_get_selectedObject
-                             ((BaseEventData *)value[1].klass,(MethodInfo *)0x0),
-         pGVar1 != (GameObject *)0x0)) {
-        x = (Object_1 *)
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                      (pGVar1,
-                       InventoryItemMetaData_MethodInfo__UnityEngine__GameObject__GetComponent<InventoryItemMetaData>__
-                      );
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Object);
+  object = (Object *)FUN_?(TypeInfo__InventorySlot____c__DisplayClass11_0);
+  if (object != (Object *)0x0) {
+    object[1].klass = (Object__Class *)eventData;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)(object + 1) >> 0xc);
+      lVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar3 = *(ulonglong *)(lVar2 + 0xADDR);
+        puVar4 = (ulonglong *)(lVar2 + 0xADDR);
+        LOCK();
+        bVar5 = uVar3 == *puVar4;
+        if (bVar5) {
+          *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
         }
-        bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                          (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar2 == 0) {
-          return;
+        UNLOCK();
+      } while (!bVar5);
+    }
+    iVar6 = iRam_?;
+    object[1].monitor = (MonitorData *)this;
+    if (iVar6 != 0) {
+      uVar1 = (uint)((ulonglong)&object[1].monitor >> 0xc);
+      lVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar3 = *(ulonglong *)(lVar2 + 0xADDR);
+        puVar4 = (ulonglong *)(lVar2 + 0xADDR);
+        LOCK();
+        bVar5 = uVar3 == *puVar4;
+        if (bVar5) {
+          *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
         }
-        pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)this,(MethodInfo *)0x0);
-        callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-                   MethodInfo__InventorySlot____c__DisplayClass11_0___OnDrop_b__0_UnityEngine__EventSystems__IGameObjectDroppedInSlot__UnityEngine__EventSystems__BaseEventData_
-                   ,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0
-           ) {
-          func_?();
-        }
-        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                  (pGVar1,(BaseEventData *)0x0,callbackFunction,
-                   UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IGameObjectDroppedInSlot>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGameObjectDroppedInSlot>_
-                  );
-        return;
+        UNLOCK();
+      } while (!bVar5);
+    }
+    if ((object[1].klass != (Object__Class *)0x0) &&
+       (pcVar7 = ((object[1].klass)->_0).namespaze, pcVar7 != (char *)0x0)) {
+      lVar2 = *(longlong *)(pcVar7 + 0x40);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (lVar2 != 0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (*(longlong *)(lVar2 + 0x10) != 0) {
+          if (((object[1].klass == (Object__Class *)0x0) ||
+              (pcVar7 = ((object[1].klass)->_0).namespaze, pcVar7 == (char *)0x0)) ||
+             (pGVar8 = *(GameObject **)(pcVar7 + 0x40), pGVar8 == (GameObject *)0x0))
+          goto code_?;
+          pOVar9 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                             (pGVar8,
+                              InventoryItemMetaData_MethodInfo__UnityEngine__GameObject__GetComponent<InventoryItemMetaData>__
+                             );
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (pOVar9 != (Object *)0x0) {
+            if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            if (pOVar9[1].klass != (Object__Class *)0x0) {
+              pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                 ((Component *)this,(MethodInfo *)0x0);
+              this_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+                        FUN_?(
+                                     TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGameObjectDroppedInSlot>
+                                     );
+              UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::
+              Object]::ExecuteEvents_EventFunction_1_System_Object___ctor
+                        (this_00,object,
+                         MethodInfo__InventorySlot____c__DisplayClass11_0___OnDrop_b__0_UnityEngine__EventSystems__IGameObjectDroppedInSlot__UnityEngine__EventSystems__BaseEventData_
+                         ,(MethodInfo *)0x0);
+              if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0)
+              {
+                FUN_?();
+              }
+              UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+              ExecuteEvents_ExecuteHierarchy
+                        (pGVar8,(BaseEventData *)0x0,this_00,
+                         UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IGameObjectDroppedInSlot>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IGameObjectDroppedInSlot>_
+                        );
+            }
+          }
+        }
+      }
+      return;
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+code_?:
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -148,48 +250,100 @@ void Assembly-CSharp.dll::InventorySlot::InventorySlot_Set
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    UnityEngine__RectTransform_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::RectTransform>__
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&
+                  UnityEngine__RectTransform_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::RectTransform>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)item,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    return;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
   if (item != (GameObject *)0x0) {
-    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                       (item,(MethodInfo *)0x0);
-    parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)this,(MethodInfo *)0x0);
-    if (pTVar2 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                (pTVar2,parent,0,(MethodInfo *)0x0);
-      pTVar2 = (Transform *)
-               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                         (item,
-                          UnityEngine__RectTransform_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::RectTransform>__
-                         );
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      if (pTVar2 != (Transform *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                  (pTVar2,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
-                   (MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((item->fields)._.m_CachedPtr != (void *)0x0) {
+      this_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                          (item,(MethodInfo *)0x0);
+      parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)this,(MethodInfo *)0x0);
+      if (this_00 == (Transform *)0x0) {
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
         return;
       }
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                (this_00,parent,0,(MethodInfo *)0x0);
+      obj = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                      (item,
+                       UnityEngine__RectTransform_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::RectTransform>__
+                      );
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Vector3);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
+      if (obj == (Object *)0x0) {
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      uStack_3._0_4_ = (pVVar2->zeroVector).x;
+      uStack_3._4_4_ = (pVVar2->zeroVector).y;
+      fStack_4 = (pVVar2->zeroVector).z;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pOVar5 = obj[1].klass;
+      if (pOVar5 == (Object__Class *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException(obj,(MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcVar1 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+        uVar6 = func_?(&UNK_?);
+        FUN_?(uVar6,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcRam_? = pcVar1;
+      (*pcRam_?)(pOVar5,&uStack_3);
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
   return;
 }
 
@@ -201,40 +355,81 @@ Assembly-CSharp.dll::InventorySlot::InventorySlot_get_Item(InventorySlot *this,M
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  index = &UNK_?;
-  method_00 = (MethodInfo *)this;
   pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                      ((Component *)this,(MethodInfo *)0x0);
   if (pTVar1 == (Transform *)0x0) goto code_?;
-  iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_childCount
-                    (pTVar1,(MethodInfo *)0x0);
-  if (iVar2 < 2) {
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar2 = (pTVar1->fields)._._.m_CachedPtr;
+  if (pvVar2 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar1,(MethodInfo *)0x0);
+    pcVar3 = (code *)swi(3);
+    pGVar4 = (GameObject *)(*pcVar3)();
+    return pGVar4;
+  }
+  pcVar3 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+    uVar5 = func_?(&UNK_?);
+    FUN_?(uVar5,0);
+    pcVar3 = (code *)swi(3);
+    pGVar4 = (GameObject *)(*pcVar3)();
+    return pGVar4;
+  }
+  pcRam_? = pcVar3;
+  iVar6 = (*pcRam_?)(pvVar2);
+  if (iVar6 < 2) {
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)this,(MethodInfo *)0x0);
     if (pTVar1 == (Transform *)0x0) goto code_?;
-    iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_childCount
+    iVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_childCount
                       (pTVar1,(MethodInfo *)0x0);
-    if (iVar2 < 1) {
+    if (iVar7 < 1) {
       return (GameObject *)0x0;
     }
-    x = (this->fields).fade;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    pNVar8 = (this->fields).fade;
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar3 == 0) {
-      return (GameObject *)0x0;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
-    in_stack_4 =
-         UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                   ((Component *)this,(MethodInfo *)0x0);
-    if (in_stack_4 == (Transform *)0x0) goto code_?;
-    method_00 = (MethodInfo *)0x0;
-    index = (undefined *)0x0;
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (pNVar8 != (NotificationFade *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if ((pNVar8->fields)._._._._.m_CachedPtr != (void *)0x0) {
+        return (GameObject *)0x0;
+      }
+    }
+    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)this,(MethodInfo *)0x0);
+    if (pTVar1 == (Transform *)0x0) goto code_?;
+    iVar6 = 0;
   }
   else {
     pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
@@ -242,22 +437,98 @@ Assembly-CSharp.dll::InventorySlot::InventorySlot_get_Item(InventorySlot *this,M
     this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                         ((Component *)this,(MethodInfo *)0x0);
     if ((this_00 == (Transform *)0x0) ||
-       (UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_childCount
-                  (this_00,(MethodInfo *)0x0), pTVar1 == (Transform *)0x0)) goto code_?;
+       (iVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_childCount
+                          (this_00,(MethodInfo *)0x0), pTVar1 == (Transform *)0x0))
+    goto code_?;
+    iVar6 = iVar7 + -1;
   }
   pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetChild
-                     (in_stack_4,(int32_t)index,method_00);
+                     (pTVar1,iVar6,(MethodInfo *)0x0);
   if (pTVar1 != (Transform *)0x0) {
-    if (pcRam_? == (code *)0x0) {
-      pcRam_? = (code *)func_?();
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Component>_UnityEngine__Component_
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&
+                    UnityEngine__GameObject_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::GameObject>_void__
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
-    pGVar5 = (GameObject *)(*pcRam_?)();
-    return pGVar5;
+    if (pTVar1 == (Transform *)0x0) {
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      pGVar4 = (GameObject *)(*pcVar3)();
+      return pGVar4;
+    }
+    pvVar2 = (pTVar1->fields)._._.m_CachedPtr;
+    if (pvVar2 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar1,(MethodInfo *)0x0);
+      pcVar3 = (code *)swi(3);
+      pGVar4 = (GameObject *)(*pcVar3)();
+      return pGVar4;
+    }
+    pcVar3 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+      uVar5 = func_?(&UNK_?);
+      FUN_?(uVar5,0);
+      pcVar3 = (code *)swi(3);
+      pGVar4 = (GameObject *)(*pcVar3)();
+      return pGVar4;
+    }
+    pcRam_? = pcVar3;
+    plVar9 = (longlong *)(*pcRam_?)(pvVar2);
+    pMVar10 = 
+    UnityEngine__GameObject_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::GameObject>_void__
+    ;
+    if ((
+        UnityEngine__GameObject_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::GameObject>_void__
+        ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(
+                   UnityEngine__GameObject_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::GameObject>_void__
+                   );
+    }
+    if (plVar9 != (longlong *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      System__Runtime__InteropServices__GCHandle__MethodInfo__Unity__Collections__LowLevel__Unsafe__UnsafeUtility__As<void*,_System::Runtime::InteropServices::GCHandle>_System__IntPtr__
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (((ulonglong)plVar9 & 1) == 0) {
+        lVar11 = *plVar9;
+      }
+      else {
+        lVar11 = FUN_?(plVar9);
+      }
+      pvVar2 = ((pMVar10->field7_0x38).rgctx_data)->rgctxDataDummy;
+      if ((*(byte *)((longlong)pvVar2 + 0x135) & 1) == 0) {
+        pvVar2 = (void *)FUN_?(pvVar2);
+      }
+      if (lVar11 != 0) {
+        pGVar4 = (GameObject *)FUN_?(lVar11,pvVar2);
+        if (pGVar4 != (GameObject *)0x0) {
+          return pGVar4;
+        }
+        FUN_?(lVar11,pvVar2);
+        pcVar3 = (code *)swi(3);
+        pGVar4 = (GameObject *)(*pcVar3)();
+        return pGVar4;
+      }
+    }
+    return (GameObject *)0x0;
   }
 code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  pGVar5 = (GameObject *)(*pcVar6)();
-  return pGVar5;
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  pGVar4 = (GameObject *)(*pcVar3)();
+  return pGVar4;
 }
 

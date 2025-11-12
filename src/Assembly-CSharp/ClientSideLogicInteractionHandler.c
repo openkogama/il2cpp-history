@@ -17,71 +17,100 @@ bool Assembly-CSharp.dll::ClientSideLogicInteractionHandler::
 bool Assembly-CSharp.dll::ClientSideLogicInteractionHandler::
      ClientSideLogicInteractionHandler_HandleInteraction
                (ClientSideLogicInteractionHandler *this,MVPickupOwner *interactor,
-               InteractionData interaction,bool interactionIsLocal,MethodInfo *method)
+               InteractionData *interaction,bool interactionIsLocal,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__MV__WorldObject__InteractionData);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__InteractionData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__WorldObject__InteractionData);
+  if (*(int *)&(TypeInfo__MV__WorldObject__InteractionData->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pCVar1 = this;
-  cVar2 = (*(code *)(this->klass->vtable).CanHandle.method)
-                    (this,interaction._16_4_ & 0xff,_interactionIsLocal,
-                     (this->klass->vtable).HandleInteraction.methodPtr);
-  if (cVar2 == '\0') {
+  cVar1 = (*(this->klass->vtable).CanHandle.methodPtr)
+                    (this,(ulonglong)interaction->interactionType,interactionIsLocal,
+                     (this->klass->vtable).CanHandle.method);
+  if (cVar1 == '\0') {
     return 0;
   }
-  this_00 = (pCVar1->fields)._._.worldObjectParent;
-  this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-             *)func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                              );
+  this_00 = (this->fields)._._.worldObjectParent;
+  this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+             *)FUN_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                            );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
-  StyleComplexSelector+PseudoStateData]::
-  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+  UIR::UIRenderDevice+DisableForceGammaMaterial]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
             (this_01,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  this = (ClientSideLogicInteractionHandler *)((uint)this & 0xffffff);
-  key = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
-  if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__WorldObject__InteractionData);
-  }
-  value = MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData_ToByteArray
-                    (&interaction,(MethodInfo *)0x0);
-  if (this_01 !=
-      (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0
-     ) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)this_01,key,(Object *)value,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    if (this_00 != (MVWorldObjectClient *)0x0) {
-      interactor = (MVPickupOwner *)0x0;
-      this = (ClientSideLogicInteractionHandler *)this_01;
-      MVWorldObjectClient::MVWorldObjectClient_SendPackage
-                (this_00,(Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0);
-      return 1;
+  lVar2 = lRam_?;
+  uStackX_20 = 0;
+  if (*(int *)(lRam_? + 0x28) < 0) {
+    if ((*(longlong *)(lRam_? + 0x60) == 0) ||
+       ((*(byte *)(lRam_? + 0x135) & 8) == 0)) {
+      key = (Object *)FUN_?(lRam_?);
+      FUN_?(key + 1,&uStackX_20,(longlong)*(int *)(lVar2 + 0xf8) + -0x10);
+      if (iRam_? != 0) {
+        uVar3 = (uint)((ulonglong)(key + 1) >> 0xc);
+        puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+        do {
+          uVar5 = *puVar4;
+          LOCK();
+          uVar6 = *puVar4;
+          if (uVar5 == uVar6) {
+            *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+          }
+          UNLOCK();
+        } while (uVar5 != uVar6);
+      }
+    }
+    else {
+      key = (Object *)0x0;
     }
   }
-  interactor = (MVPickupOwner *)&UNK_?;
-  func_?();
-  pcVar3 = (code *)swi(3);
-  bVar4 = (*pcVar3)();
-  return bVar4;
+  else {
+    key = (Object *)((ulonglong)uStackX_21 << 8);
+  }
+  if (*(int *)&(TypeInfo__MV__WorldObject__InteractionData->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  value = MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData_ToByteArray
+                    (interaction,(MethodInfo *)0x0);
+  if ((this_01 !=
+       (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+        *)0x0) &&
+     (method_00 = MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                  ->klass->rgctx_data[0x22].method,
+     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+     Dictionary_2_System_Object_System_Object__TryInsert
+               ((Dictionary_2_System_Object_System_Object_ *)this_01,key,(Object *)value,
+                (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)method_00 >> 8),2),method_00),
+     this_00 != (MVWorldObjectClient *)0x0)) {
+    MVWorldObjectClient::MVWorldObjectClient_SendPackage
+              (this_00,(Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0);
+    return 1;
+  }
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  bVar8 = (*pcVar7)();
+  return bVar8;
 }
 

@@ -18,6 +18,38 @@ void Assembly-CSharp.dll::RTG::GizmoLineSlider3DSettings::GizmoLineSlider3DSetti
 }
 
 
+/* Void set_OffsetSnapStep(Single) */
+
+void Assembly-CSharp.dll::RTG::GizmoLineSlider3DSettings::
+     GizmoLineSlider3DSettings_set_OffsetSnapStep
+               (GizmoLineSlider3DSettings *this,float value,MethodInfo *method)
+
+{
+  fVar1 = _UNK_?;
+  if (_UNK_? <= value) {
+    fVar1 = value;
+  }
+  (this->fields)._offsetSnapStep = fVar1;
+  return;
+}
+
+
+/* Void set_RotationSnapStep(Single) */
+
+void Assembly-CSharp.dll::RTG::GizmoLineSlider3DSettings::
+     GizmoLineSlider3DSettings_set_RotationSnapStep
+               (GizmoLineSlider3DSettings *this,float value,MethodInfo *method)
+
+{
+  fVar1 = _UNK_?;
+  if (_UNK_? <= value) {
+    fVar1 = value;
+  }
+  (this->fields)._rotationSnapStep = fVar1;
+  return;
+}
+
+
 /* Void set_ScaleSensitivity(Single) */
 
 void Assembly-CSharp.dll::RTG::GizmoLineSlider3DSettings::

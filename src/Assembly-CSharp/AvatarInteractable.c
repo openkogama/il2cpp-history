@@ -7,41 +7,64 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_AddModifier
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AvatarInteractable);
-    func_?(&TypeInfo__System__Collections__BitArray);
+    FUN_?(&TypeInfo__AvatarInteractable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__BitArray);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 == (MVNetworkGame *)0x0) {
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar1 != (MVGameControllerBase *)0x0) && ((pMVar1->fields).game != (MVNetworkGame *)0x0)) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if (pMVar1 != (MVGameControllerBase *)0x0) {
+      cVar2 = (*(pMVar1->klass->vtable).__unknown_1.methodPtr)
+                        (pMVar1,(pMVar1->klass->vtable).__unknown_1.method);
+      if (cVar2 != '\0') {
+        if (*(int *)&(TypeInfo__AvatarInteractable->_1).field_0x1c == 0) {
+          FUN_?(TypeInfo__AvatarInteractable);
+        }
+        length = TypeInfo__AvatarInteractable->static_fields->AvatarModifierPackagesCount;
+        this_00 = (BitArray *)FUN_?(TypeInfo__System__Collections__BitArray);
+        mscorlib.dll::System::Collections::BitArray::BitArray__ctor_1
+                  (this_00,length,0,(MethodInfo *)0x0);
+        if (this_00 == (BitArray *)0x0) goto code_?;
+        mscorlib.dll::System::Collections::BitArray::BitArray_Set(this_00,0,1,(MethodInfo *)0x0);
+        bVar3 = (*(this->klass->vtable).HasModifierEffect.methodPtr)
+                          (this,0xb,(this->klass->vtable).HasModifierEffect.method);
+        mscorlib.dll::System::Collections::BitArray::BitArray_Set(this_00,4,bVar3,(MethodInfo *)0x0)
+        ;
+        bVar3 = (*(this->klass->vtable).HasModifierEffect.methodPtr)
+                          (this,0xb,(this->klass->vtable).HasModifierEffect.method);
+        mscorlib.dll::System::Collections::BitArray::BitArray_Set(this_00,6,bVar3,(MethodInfo *)0x0)
+        ;
+        bVar3 = mscorlib.dll::System::Collections::BitArray::BitArray_Get
+                          (this_00,type,(MethodInfo *)0x0);
+        if (bVar3 == 0) {
+          MVInteractable::MVInteractable_AddModifier
+                    ((MVInteractable *)this,type,id,additionalModifers,(MethodInfo *)0x0);
+        }
+      }
+      return;
+    }
+  }
 code_?:
-    func_?();
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
-    return;
-  }
-  bVar2 = MVNetworkGame::MVNetworkGame_get_IsPlaying(this_00,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    if ((TypeInfo__AvatarInteractable->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    length = TypeInfo__AvatarInteractable->static_fields->AvatarModifierPackagesCount;
-    this_01 = (BitArray *)func_?(TypeInfo__System__Collections__BitArray);
-    mscorlib.dll::System::Collections::BitArray::BitArray__ctor(this_01,length,(MethodInfo *)0x0);
-    if (this_01 == (BitArray *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::BitArray::BitArray_Set(this_01,0,1,(MethodInfo *)0x0);
-    bVar2 = (*(code *)(this->klass->vtable).HasModifierEffect.method)
-                      (this,0xb,(this->klass->vtable).HandleModifierEffect.methodPtr);
-    mscorlib.dll::System::Collections::BitArray::BitArray_Set(this_01,4,bVar2,(MethodInfo *)0x0);
-    bVar2 = (*(code *)(this->klass->vtable).HasModifierEffect.method)
-                      (this,0xb,(this->klass->vtable).HandleModifierEffect.methodPtr);
-    mscorlib.dll::System::Collections::BitArray::BitArray_Set(this_01,6,bVar2,(MethodInfo *)0x0);
-    bVar2 = mscorlib.dll::System::Collections::BitArray::BitArray_get_Item
-                      (this_01,type,(MethodInfo *)0x0);
-    if (bVar2 == 0) {
-      MVInteractable::MVInteractable_AddModifier
-                ((MVInteractable *)this,type,id,additionalModifers,(MethodInfo *)0x0);
-    }
-  }
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -57,32 +80,33 @@ float Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_DamageShield
   }
   pMVar1 = (this->fields)._.shield;
   if (pMVar1 != (MVRuntimeDataVariableClampedFloat *)0x0) {
-    fVar2 = (float10)(*(code *)(pMVar1->klass->vtable).get_Value.method)
-                               (pMVar1,(pMVar1->klass->vtable).set_Value.methodPtr);
+    fVar2 = (float)(*(pMVar1->klass->vtable).get_Value.methodPtr)
+                             (pMVar1,(pMVar1->klass->vtable).get_Value.method);
     pMVar1 = (this->fields)._.shield;
-    if ((float)fVar2 < amount) {
+    if (fVar2 < amount) {
       if (pMVar1 != (MVRuntimeDataVariableClampedFloat *)0x0) {
-        fVar2 = (float10)(*(code *)(pMVar1->klass->vtable).get_Value.method)
-                                   (pMVar1,(pMVar1->klass->vtable).set_Value.methodPtr);
+        fVar2 = (float)(*(pMVar1->klass->vtable).get_Value.methodPtr)
+                                 (pMVar1,(pMVar1->klass->vtable).get_Value.method);
         pMVar1 = (this->fields)._.shield;
         if (pMVar1 != (MVRuntimeDataVariableClampedFloat *)0x0) {
-          (*(code *)(pMVar1->klass->vtable).set_Value.method)(pMVar1,0,pMVar1->klass[1]._0.image);
-          return amount - (float)fVar2;
+          (*(pMVar1->klass->vtable).set_Value.methodPtr)
+                    (pMVar1,0,(pMVar1->klass->vtable).set_Value.method);
+          return amount - fVar2;
         }
       }
     }
     else if (pMVar1 != (MVRuntimeDataVariableClampedFloat *)0x0) {
-      fVar2 = (float10)(*(code *)(pMVar1->klass->vtable).get_Value.method)
-                                 (pMVar1,(pMVar1->klass->vtable).set_Value.methodPtr);
-      (*(code *)(pMVar1->klass->vtable).set_Value.method)
-                (pMVar1,(float)fVar2 - amount,pMVar1->klass[1]._0.image);
+      fVar2 = (float)(*(pMVar1->klass->vtable).get_Value.methodPtr)
+                               (pMVar1,(pMVar1->klass->vtable).get_Value.method);
+      (*(pMVar1->klass->vtable).set_Value.methodPtr)
+                (pMVar1,fVar2 - amount,(pMVar1->klass->vtable).set_Value.method);
       return 0.0;
     }
   }
-  func_?();
+  FUN_?();
   pcVar3 = (code *)swi(3);
-  fVar2 = (float10)(*pcVar3)();
-  return (float)fVar2;
+  fVar2 = (float)(*pcVar3)();
+  return fVar2;
 }
 
 
@@ -93,99 +117,174 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_DieFromBeingStu
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Contains_MV__Common__PlayerKilledByType_
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__NotificationController);
-    func_?(&TypeInfo__MV__Common__PlayerKilledByType);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Contains_MV__Common__PlayerKilledByType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__Common__PlayerKilledByType);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar1 != (MVNetworkGame *)0x0) {
-    pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
-    if (pMVar2 != (MVLocalPlayer *)0x0) {
-      avatarId = (pMVar2->fields)._._ActorNr_k__BackingField;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (((pMVar1 != (MVGameControllerBase *)0x0) &&
+      (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+     (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 != (MVPlayerContainer *)0x0)) {
+    pMVar4 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar3,(MethodInfo *)0x0);
+    if (pMVar4 != (MVLocalPlayer *)0x0) {
+      avatarId = (pMVar4->fields)._._ActorNr_k__BackingField;
       gameMsgData = GameMessages::GameMessages_MakePlayerKilledMessage
-                              (avatarId,avatarId,PlayerKilledByType__Enum_Crushed,(MethodInfo *)0x0)
-      ;
-      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-      if (pMVar3 != (MVNetworkGame_OperationRequests *)0x0) {
+                              (avatarId,avatarId,
+                               (PlayerKilledByType__Enum)CONCAT71((int7)((ulonglong)in_R8 >> 8),0xe)
+                               ,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if (((pMVar1 != (MVGameControllerBase *)0x0) &&
+          (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+         (pMVar5 = (pMVar2->fields).operationRequests,
+         pMVar5 != (MVNetworkGame_OperationRequests *)0x0)) {
+        uVar6 = 0;
         MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_PostGameMsg
-                  (pMVar3,MVGameMsgType__Enum_AvatarKilled,gameMsgData,(MethodInfo *)0x0);
-        this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                   *)func_?();
+                  (pMVar5,MVGameMsgType__Enum_AvatarKilled,gameMsgData,(MethodInfo *)0x0);
+        this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+                   *)FUN_?(
+                                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                  );
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-        UIElements::StyleComplexSelector+PseudoStateData]::
-        Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+        UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
                   (this_01,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                   );
-        pOVar4 = (Object *)func_?();
-        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (pMVar1 != (MVNetworkGame *)0x0) {
-          pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
-          if (pMVar2 != (MVLocalPlayer *)0x0) {
-            pOVar5 = (Object *)func_?();
+        aiStackX_18[0] = CONCAT31(aiStackX_18[0]._1_3_,7);
+        pOVar7 = (Object *)FUN_?(uRam_?,aiStackX_18);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+        if (((pMVar1 != (MVGameControllerBase *)0x0) &&
+            (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+           (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 != (MVPlayerContainer *)0x0)) {
+          pMVar4 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar3,(MethodInfo *)0x0);
+          if (pMVar4 != (MVLocalPlayer *)0x0) {
+            aiStackX_18[0] = (pMVar4->fields)._._ActorNr_k__BackingField;
+            pOVar8 = (Object *)FUN_?(uRam_?,aiStackX_18);
             if (this_01 !=
-                (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
                  *)0x0) {
+              uVar6 = CONCAT71((int7)((ulonglong)uVar6 >> 8),2);
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar4,pOVar5,
+              Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar7,pOVar8,
+                         (InsertionBehavior__Enum)uVar6,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                        );
-              pOVar4 = (Object *)func_?();
-              pOVar5 = (Object *)func_?();
+                         ->klass->rgctx_data[0x22].method);
+              aiStackX_18[0] = CONCAT31(aiStackX_18[0]._1_3_,6);
+              pOVar7 = (Object *)FUN_?(uRam_?,aiStackX_18);
+              aiStackX_18[0] = avatarId;
+              pOVar8 = (Object *)FUN_?(uRam_?,aiStackX_18);
+              uVar6 = CONCAT71((int7)((ulonglong)uVar6 >> 8),2);
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar4,pOVar5,
+              Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar7,pOVar8,
+                         (InsertionBehavior__Enum)uVar6,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                        );
-              pOVar4 = (Object *)func_?(TypeInfo__System__Byte);
-              pOVar5 = (Object *)
-                       func_?(TypeInfo__MV__Common__PlayerKilledByType,&stack0xfffffff8);
+                         ->klass->rgctx_data[0x22].method);
+              aiStackX_18[0]._0_1_ = 8;
+              pOVar7 = (Object *)FUN_?(uRam_?,aiStackX_18);
+              aiStackX_18[0] = CONCAT31(aiStackX_18[0]._1_3_,0xe);
+              pOVar8 = (Object *)FUN_?(TypeInfo__MV__Common__PlayerKilledByType,aiStackX_18)
+              ;
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar4,pOVar5,
+              Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar7,pOVar8,
+                         (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar6 >> 8),2),
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                        );
-              if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__NotificationController);
+                         ->klass->rgctx_data[0x22].method);
+              if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+                FUN_?();
               }
-              NotificationController::NotificationController_OnNotificationReceived
-                        (NotificationType__Enum_Kill,
-                         (Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0);
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__NotificationController);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__NotificationsManager);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              if (TypeInfo__NotificationsManager->static_fields->_Initialized_k__BackingField != 0)
+              {
+                if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                this_02 = NotificationController::NotificationController_get_NotificationsManager
+                                    ((MethodInfo *)0x0);
+                if (this_02 == (NotificationsManager *)0x0) goto code_?;
+                pOVar7 = (Object *)0x0;
+                NotificationsManager::NotificationsManager_InstantiateNotification
+                          (this_02,NotificationType__Enum_Kill,
+                           (Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0);
+              }
               this_00 = (HashSet_1_System_ByteEnum_ *)(this->fields).KillNotificationBlacklist;
               if (this_00 != (HashSet_1_System_ByteEnum_ *)0x0) {
-                bVar6 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
+                bVar9 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
                         HashSet_1_System_ByteEnum__Contains
-                                  (this_00,0xe,
+                                  (this_00,(ByteEnum__Enum)
+                                           CONCAT71((int7)((ulonglong)pOVar7 >> 8),0xe),
                                    MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Contains_MV__Common__PlayerKilledByType_
                                   );
-                if (bVar6 == 0) {
-                  pMVar3 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
-                                     ((MethodInfo *)0x0);
-                  if (pMVar3 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
+                if (bVar9 == 0) {
+                  pMVar5 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                                      ((MethodInfo *)0x0);
+                  if (pMVar5 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
                   MVNetworkGame+OperationRequests::
                   MVNetworkGame_OperationRequests_PostNotificationOperation
-                            (pMVar3,NotificationType__Enum_Kill,
+                            (pMVar5,NotificationType__Enum_Kill,
                              (Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0)
                   ;
                 }
-                pAVar7 = (this->fields).OnDamageTaken;
-                if (pAVar7 != (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
-                  (*(pAVar7->fields)._._.invoke_impl)();
+                pAVar10 = (this->fields).OnDamageTaken;
+                if (pAVar10 != (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
+                  (*(pAVar10->fields)._._.invoke_impl)
+                            ((pAVar10->fields)._._.method_code,_UNK_?,0,0xe,
+                             (pAVar10->fields)._._.method);
                   return;
                 }
               }
@@ -196,9 +295,9 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_DieFromBeingStu
     }
   }
 code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -210,99 +309,174 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_DieFromFalling
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Contains_MV__Common__PlayerKilledByType_
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__NotificationController);
-    func_?(&TypeInfo__MV__Common__PlayerKilledByType);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Contains_MV__Common__PlayerKilledByType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__Common__PlayerKilledByType);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar1 != (MVNetworkGame *)0x0) {
-    pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
-    if (pMVar2 != (MVLocalPlayer *)0x0) {
-      avatarId = (pMVar2->fields)._._ActorNr_k__BackingField;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (((pMVar1 != (MVGameControllerBase *)0x0) &&
+      (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+     (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 != (MVPlayerContainer *)0x0)) {
+    pMVar4 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar3,(MethodInfo *)0x0);
+    if (pMVar4 != (MVLocalPlayer *)0x0) {
+      avatarId = (pMVar4->fields)._._ActorNr_k__BackingField;
       gameMsgData = GameMessages::GameMessages_MakePlayerKilledMessage
-                              (avatarId,avatarId,PlayerKilledByType__Enum_FallOffWorld,
+                              (avatarId,avatarId,
+                               (PlayerKilledByType__Enum)CONCAT71((int7)((ulonglong)in_R8 >> 8),10),
                                (MethodInfo *)0x0);
-      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-      if (pMVar3 != (MVNetworkGame_OperationRequests *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if (((pMVar1 != (MVGameControllerBase *)0x0) &&
+          (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+         (pMVar5 = (pMVar2->fields).operationRequests,
+         pMVar5 != (MVNetworkGame_OperationRequests *)0x0)) {
+        uVar6 = 0;
         MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_PostGameMsg
-                  (pMVar3,MVGameMsgType__Enum_AvatarKilled,gameMsgData,(MethodInfo *)0x0);
-        this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                   *)func_?();
+                  (pMVar5,MVGameMsgType__Enum_AvatarKilled,gameMsgData,(MethodInfo *)0x0);
+        this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+                   *)FUN_?(
+                                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                  );
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-        UIElements::StyleComplexSelector+PseudoStateData]::
-        Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+        UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
                   (this_01,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                   );
-        pOVar4 = (Object *)func_?();
-        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (pMVar1 != (MVNetworkGame *)0x0) {
-          pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
-          if (pMVar2 != (MVLocalPlayer *)0x0) {
-            pOVar5 = (Object *)func_?();
+        aiStackX_18[0] = CONCAT31(aiStackX_18[0]._1_3_,7);
+        pOVar7 = (Object *)FUN_?(uRam_?,aiStackX_18);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+        if (((pMVar1 != (MVGameControllerBase *)0x0) &&
+            (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+           (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 != (MVPlayerContainer *)0x0)) {
+          pMVar4 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar3,(MethodInfo *)0x0);
+          if (pMVar4 != (MVLocalPlayer *)0x0) {
+            aiStackX_18[0] = (pMVar4->fields)._._ActorNr_k__BackingField;
+            pOVar8 = (Object *)FUN_?(uRam_?,aiStackX_18);
             if (this_01 !=
-                (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
                  *)0x0) {
+              uVar6 = CONCAT71((int7)((ulonglong)uVar6 >> 8),2);
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar4,pOVar5,
+              Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar7,pOVar8,
+                         (InsertionBehavior__Enum)uVar6,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                        );
-              pOVar4 = (Object *)func_?();
-              pOVar5 = (Object *)func_?();
+                         ->klass->rgctx_data[0x22].method);
+              aiStackX_18[0] = CONCAT31(aiStackX_18[0]._1_3_,6);
+              pOVar7 = (Object *)FUN_?(uRam_?,aiStackX_18);
+              aiStackX_18[0] = avatarId;
+              pOVar8 = (Object *)FUN_?(uRam_?,aiStackX_18);
+              uVar6 = CONCAT71((int7)((ulonglong)uVar6 >> 8),2);
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar4,pOVar5,
+              Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar7,pOVar8,
+                         (InsertionBehavior__Enum)uVar6,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                        );
-              pOVar4 = (Object *)func_?(TypeInfo__System__Byte);
-              pOVar5 = (Object *)
-                       func_?(TypeInfo__MV__Common__PlayerKilledByType,&stack0xfffffff8);
+                         ->klass->rgctx_data[0x22].method);
+              aiStackX_18[0]._0_1_ = 8;
+              pOVar7 = (Object *)FUN_?(uRam_?,aiStackX_18);
+              aiStackX_18[0] = CONCAT31(aiStackX_18[0]._1_3_,10);
+              pOVar8 = (Object *)FUN_?(TypeInfo__MV__Common__PlayerKilledByType,aiStackX_18)
+              ;
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar4,pOVar5,
+              Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar7,pOVar8,
+                         (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar6 >> 8),2),
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                        );
-              if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__NotificationController);
+                         ->klass->rgctx_data[0x22].method);
+              if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+                FUN_?();
               }
-              NotificationController::NotificationController_OnNotificationReceived
-                        (NotificationType__Enum_Kill,
-                         (Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0);
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__NotificationController);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__NotificationsManager);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              if (TypeInfo__NotificationsManager->static_fields->_Initialized_k__BackingField != 0)
+              {
+                if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                this_02 = NotificationController::NotificationController_get_NotificationsManager
+                                    ((MethodInfo *)0x0);
+                if (this_02 == (NotificationsManager *)0x0) goto code_?;
+                pOVar7 = (Object *)0x0;
+                NotificationsManager::NotificationsManager_InstantiateNotification
+                          (this_02,NotificationType__Enum_Kill,
+                           (Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0);
+              }
               this_00 = (HashSet_1_System_ByteEnum_ *)(this->fields).KillNotificationBlacklist;
               if (this_00 != (HashSet_1_System_ByteEnum_ *)0x0) {
-                bVar6 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
+                bVar9 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
                         HashSet_1_System_ByteEnum__Contains
-                                  (this_00,10,
+                                  (this_00,(ByteEnum__Enum)
+                                           CONCAT71((int7)((ulonglong)pOVar7 >> 8),10),
                                    MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Contains_MV__Common__PlayerKilledByType_
                                   );
-                if (bVar6 == 0) {
-                  pMVar3 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
-                                     ((MethodInfo *)0x0);
-                  if (pMVar3 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
+                if (bVar9 == 0) {
+                  pMVar5 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                                      ((MethodInfo *)0x0);
+                  if (pMVar5 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
                   MVNetworkGame+OperationRequests::
                   MVNetworkGame_OperationRequests_PostNotificationOperation
-                            (pMVar3,NotificationType__Enum_Kill,
+                            (pMVar5,NotificationType__Enum_Kill,
                              (Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0)
                   ;
                 }
-                pAVar7 = (this->fields).OnDamageTaken;
-                if (pAVar7 != (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
-                  (*(pAVar7->fields)._._.invoke_impl)();
+                pAVar10 = (this->fields).OnDamageTaken;
+                if (pAVar10 != (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
+                  (*(pAVar10->fields)._._.invoke_impl)
+                            ((pAVar10->fields)._._.method_code,_UNK_?,0,10,
+                             (pAVar10->fields)._._.method);
                   return;
                 }
               }
@@ -313,9 +487,9 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_DieFromFalling
     }
   }
 code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -328,25 +502,240 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_DieFromRespawn
 
 {
   pMVar1 = (this->fields)._.health;
-  if (pMVar1 != (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
-    fVar2 = (float10)(*(code *)(pMVar1->klass->vtable).get_Value.method)
-                               (pMVar1,(pMVar1->klass->vtable).set_Value.methodPtr);
-    pMVar1 = (this->fields)._.health;
-    if (pMVar1 != (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
-      (*(code *)(pMVar1->klass->vtable).set_Value.method)(pMVar1,0,pMVar1->klass[1]._0.image);
-      pAVar3 = (this->fields).OnDamageTaken;
-      if (pAVar3 != (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
-        (*(pAVar3->fields)._._.invoke_impl)
-                  ((pAVar3->fields)._._.method_code,(float)fVar2,damageDealer,damageType,
-                   (pAVar3->fields)._._.method);
-      }
-      AvatarInteractable_DoKilledNotification(this,damageDealer,damageType,(MethodInfo *)0x0);
-      return;
+  uVar2 = (uint8_t)damageType;
+  if (pMVar1 == (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  uVar4 = (*(pMVar1->klass->vtable).get_Value.methodPtr)
+                     (pMVar1,(pMVar1->klass->vtable).get_Value.method);
+  pMVar1 = (this->fields)._.health;
+  if (pMVar1 == (MVRuntimeDataVariable_1_System_Single_ *)0x0) goto code_?;
+  (*(pMVar1->klass->vtable).set_Value.methodPtr)(pMVar1,0,(pMVar1->klass->vtable).set_Value.method);
+  pAVar5 = (this->fields).OnDamageTaken;
+  if (pAVar5 != (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
+    (*(pAVar5->fields)._._.invoke_impl)
+              ((pAVar5->fields)._._.method_code,uVar4,damageDealer,uVar2,
+               (pAVar5->fields)._._.method);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Contains_MV__Common__PlayerKilledByType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__Common__PlayerKilledByType);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (damageDealer == (MVPlayer *)0x0) {
+    pAVar6 = AvatarInteractable_get_LastDamageSource(this,(MethodInfo *)0x0);
+    if (pAVar6 == (AvatarInteractable_DamageSource *)0x0) {
+      pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar7 == (MVNetworkGame *)0x0) ||
+         (pMVar8 = (pMVar7->fields).playerContainer, pMVar8 == (MVPlayerContainer *)0x0))
+      goto code_?;
+      pMVar9 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar8,(MethodInfo *)0x0);
+      if (pMVar9 == (MVLocalPlayer *)0x0) goto code_?;
+      killerId = (pMVar9->fields)._._ActorNr_k__BackingField;
+      value = ::StringLiteral__;
+    }
+    else {
+      pAVar6 = AvatarInteractable_get_LastDamageSource(this,(MethodInfo *)0x0);
+      if ((pAVar6 == (AvatarInteractable_DamageSource *)0x0) ||
+         (pMVar10 = (pAVar6->fields).shooter, pMVar10 == (MVPlayer *)0x0)) goto code_?;
+      killerId = (pMVar10->fields)._ActorNr_k__BackingField;
+      pAVar6 = AvatarInteractable_get_LastDamageSource(this,(MethodInfo *)0x0);
+      if (pAVar6 == (AvatarInteractable_DamageSource *)0x0) goto code_?;
+      uVar2 = (pAVar6->fields).damageType;
+      pAVar6 = AvatarInteractable_get_LastDamageSource(this,(MethodInfo *)0x0);
+      if (pAVar6 == (AvatarInteractable_DamageSource *)0x0) goto code_?;
+      value = (pAVar6->fields).weaponName;
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  else {
+    killerId = (damageDealer->fields)._ActorNr_k__BackingField;
+    value = AvatarInteractable_ExtractWeaponName
+                      (this,damageDealer,damageType & 0xff,(MethodInfo *)0x0);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar11 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (((pMVar11 != (MVGameControllerBase *)0x0) &&
+      (pMVar7 = (pMVar11->fields).game, pMVar7 != (MVNetworkGame *)0x0)) &&
+     (pMVar8 = (pMVar7->fields).playerContainer, pMVar8 != (MVPlayerContainer *)0x0)) {
+    pMVar9 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar8,(MethodInfo *)0x0);
+    if (pMVar9 != (MVLocalPlayer *)0x0) {
+      gameMsgData = GameMessages::GameMessages_MakePlayerKilledMessage
+                              ((pMVar9->fields)._._ActorNr_k__BackingField,killerId,(uint)uVar2,
+                               (MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pMVar11 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if (((pMVar11 != (MVGameControllerBase *)0x0) &&
+          (pMVar7 = (pMVar11->fields).game, pMVar7 != (MVNetworkGame *)0x0)) &&
+         (pMVar12 = (pMVar7->fields).operationRequests,
+         pMVar12 != (MVNetworkGame_OperationRequests *)0x0)) {
+        uVar13 = 0;
+        MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_PostGameMsg
+                  (pMVar12,MVGameMsgType__Enum_AvatarKilled,gameMsgData,(MethodInfo *)0x0);
+        this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+                   *)FUN_?(
+                                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                  );
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+        UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
+                  (this_01,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                  );
+        aiStackX_18[0] = CONCAT31(aiStackX_18[0]._1_3_,7);
+        pOVar14 = (Object *)FUN_?(uRam_?,aiStackX_18);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pMVar11 = TypeInfo__MVGameControllerBase->static_fields->instance;
+        if (((pMVar11 != (MVGameControllerBase *)0x0) &&
+            (pMVar7 = (pMVar11->fields).game, pMVar7 != (MVNetworkGame *)0x0)) &&
+           (pMVar8 = (pMVar7->fields).playerContainer, pMVar8 != (MVPlayerContainer *)0x0)) {
+          pMVar9 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar8,(MethodInfo *)0x0);
+          if (pMVar9 != (MVLocalPlayer *)0x0) {
+            aiStackX_18[0] = (pMVar9->fields)._._ActorNr_k__BackingField;
+            pOVar15 = (Object *)FUN_?(uRam_?,aiStackX_18);
+            if (this_01 !=
+                (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+                 *)0x0) {
+              uVar13 = CONCAT71((int7)((ulonglong)uVar13 >> 8),2);
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar14,pOVar15,
+                         (InsertionBehavior__Enum)uVar13,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                         ->klass->rgctx_data[0x22].method);
+              aiStackX_18[0] = CONCAT31(aiStackX_18[0]._1_3_,6);
+              pOVar14 = (Object *)FUN_?(uRam_?,aiStackX_18);
+              aiStackX_18[0] = killerId;
+              pOVar15 = (Object *)FUN_?(uRam_?,aiStackX_18);
+              uVar13 = CONCAT71((int7)((ulonglong)uVar13 >> 8),2);
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar14,pOVar15,
+                         (InsertionBehavior__Enum)uVar13,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                         ->klass->rgctx_data[0x22].method);
+              aiStackX_18[0]._0_1_ = 8;
+              pOVar14 = (Object *)FUN_?(uRam_?,aiStackX_18);
+              aiStackX_18[0]._0_1_ = uVar2;
+              pOVar15 = (Object *)
+                        FUN_?(TypeInfo__MV__Common__PlayerKilledByType,aiStackX_18);
+              uVar13 = CONCAT71((int7)((ulonglong)uVar13 >> 8),2);
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar14,pOVar15,
+                         (InsertionBehavior__Enum)uVar13,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                         ->klass->rgctx_data[0x22].method);
+              aiStackX_18[0] = CONCAT31(aiStackX_18[0]._1_3_,0x13);
+              pOVar14 = (Object *)FUN_?(uRam_?,aiStackX_18);
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar14,
+                         (Object *)value,
+                         (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar13 >> 8),2),
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                         ->klass->rgctx_data[0x22].method);
+              if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__NotificationController);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__NotificationsManager);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              if (TypeInfo__NotificationsManager->static_fields->_Initialized_k__BackingField != 0)
+              {
+                if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                this_02 = NotificationController::NotificationController_get_NotificationsManager
+                                    ((MethodInfo *)0x0);
+                if (this_02 == (NotificationsManager *)0x0) goto code_?;
+                NotificationsManager::NotificationsManager_InstantiateNotification
+                          (this_02,NotificationType__Enum_Kill,
+                           (Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0);
+              }
+              this_00 = (HashSet_1_System_ByteEnum_ *)(this->fields).KillNotificationBlacklist;
+              if (this_00 != (HashSet_1_System_ByteEnum_ *)0x0) {
+                bVar16 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
+                        HashSet_1_System_ByteEnum__Contains
+                                  (this_00,(uint)uVar2,
+                                   MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Contains_MV__Common__PlayerKilledByType_
+                                  );
+                if (bVar16 == 0) {
+                  pMVar12 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                                      ((MethodInfo *)0x0);
+                  if (pMVar12 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
+                  MVNetworkGame+OperationRequests::
+                  MVNetworkGame_OperationRequests_PostNotificationOperation
+                            (pMVar12,NotificationType__Enum_Kill,
+                             (Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0)
+                  ;
+                }
+                return;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+code_?:
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -358,99 +747,174 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_DieFromStuck
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Contains_MV__Common__PlayerKilledByType_
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__NotificationController);
-    func_?(&TypeInfo__MV__Common__PlayerKilledByType);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Contains_MV__Common__PlayerKilledByType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__Common__PlayerKilledByType);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar1 != (MVNetworkGame *)0x0) {
-    pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
-    if (pMVar2 != (MVLocalPlayer *)0x0) {
-      avatarId = (pMVar2->fields)._._ActorNr_k__BackingField;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (((pMVar1 != (MVGameControllerBase *)0x0) &&
+      (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+     (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 != (MVPlayerContainer *)0x0)) {
+    pMVar4 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar3,(MethodInfo *)0x0);
+    if (pMVar4 != (MVLocalPlayer *)0x0) {
+      avatarId = (pMVar4->fields)._._ActorNr_k__BackingField;
       gameMsgData = GameMessages::GameMessages_MakePlayerKilledMessage
-                              (avatarId,avatarId,PlayerKilledByType__Enum_Crushed,(MethodInfo *)0x0)
-      ;
-      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-      if (pMVar3 != (MVNetworkGame_OperationRequests *)0x0) {
+                              (avatarId,avatarId,
+                               (PlayerKilledByType__Enum)CONCAT71((int7)((ulonglong)in_R8 >> 8),0xe)
+                               ,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if (((pMVar1 != (MVGameControllerBase *)0x0) &&
+          (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+         (pMVar5 = (pMVar2->fields).operationRequests,
+         pMVar5 != (MVNetworkGame_OperationRequests *)0x0)) {
+        uVar6 = 0;
         MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_PostGameMsg
-                  (pMVar3,MVGameMsgType__Enum_AvatarKilled,gameMsgData,(MethodInfo *)0x0);
-        this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                   *)func_?();
+                  (pMVar5,MVGameMsgType__Enum_AvatarKilled,gameMsgData,(MethodInfo *)0x0);
+        this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+                   *)FUN_?(
+                                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                  );
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-        UIElements::StyleComplexSelector+PseudoStateData]::
-        Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+        UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
                   (this_01,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                   );
-        pOVar4 = (Object *)func_?();
-        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (pMVar1 != (MVNetworkGame *)0x0) {
-          pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
-          if (pMVar2 != (MVLocalPlayer *)0x0) {
-            pOVar5 = (Object *)func_?();
+        aiStackX_18[0] = CONCAT31(aiStackX_18[0]._1_3_,7);
+        pOVar7 = (Object *)FUN_?(uRam_?,aiStackX_18);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+        if (((pMVar1 != (MVGameControllerBase *)0x0) &&
+            (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+           (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 != (MVPlayerContainer *)0x0)) {
+          pMVar4 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar3,(MethodInfo *)0x0);
+          if (pMVar4 != (MVLocalPlayer *)0x0) {
+            aiStackX_18[0] = (pMVar4->fields)._._ActorNr_k__BackingField;
+            pOVar8 = (Object *)FUN_?(uRam_?,aiStackX_18);
             if (this_01 !=
-                (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
                  *)0x0) {
+              uVar6 = CONCAT71((int7)((ulonglong)uVar6 >> 8),2);
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar4,pOVar5,
+              Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar7,pOVar8,
+                         (InsertionBehavior__Enum)uVar6,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                        );
-              pOVar4 = (Object *)func_?();
-              pOVar5 = (Object *)func_?();
+                         ->klass->rgctx_data[0x22].method);
+              aiStackX_18[0] = CONCAT31(aiStackX_18[0]._1_3_,6);
+              pOVar7 = (Object *)FUN_?(uRam_?,aiStackX_18);
+              aiStackX_18[0] = avatarId;
+              pOVar8 = (Object *)FUN_?(uRam_?,aiStackX_18);
+              uVar6 = CONCAT71((int7)((ulonglong)uVar6 >> 8),2);
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar4,pOVar5,
+              Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar7,pOVar8,
+                         (InsertionBehavior__Enum)uVar6,
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                        );
-              pOVar4 = (Object *)func_?(TypeInfo__System__Byte);
-              pOVar5 = (Object *)
-                       func_?(TypeInfo__MV__Common__PlayerKilledByType,&stack0xfffffff8);
+                         ->klass->rgctx_data[0x22].method);
+              aiStackX_18[0]._0_1_ = 8;
+              pOVar7 = (Object *)FUN_?(uRam_?,aiStackX_18);
+              aiStackX_18[0] = CONCAT31(aiStackX_18[0]._1_3_,0xe);
+              pOVar8 = (Object *)FUN_?(TypeInfo__MV__Common__PlayerKilledByType,aiStackX_18)
+              ;
               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar4,pOVar5,
+              Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar7,pOVar8,
+                         (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar6 >> 8),2),
                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                        );
-              if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__NotificationController);
+                         ->klass->rgctx_data[0x22].method);
+              if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+                FUN_?();
               }
-              NotificationController::NotificationController_OnNotificationReceived
-                        (NotificationType__Enum_Kill,
-                         (Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0);
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__NotificationController);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__NotificationsManager);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              if (TypeInfo__NotificationsManager->static_fields->_Initialized_k__BackingField != 0)
+              {
+                if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                this_02 = NotificationController::NotificationController_get_NotificationsManager
+                                    ((MethodInfo *)0x0);
+                if (this_02 == (NotificationsManager *)0x0) goto code_?;
+                pOVar7 = (Object *)0x0;
+                NotificationsManager::NotificationsManager_InstantiateNotification
+                          (this_02,NotificationType__Enum_Kill,
+                           (Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0);
+              }
               this_00 = (HashSet_1_System_ByteEnum_ *)(this->fields).KillNotificationBlacklist;
               if (this_00 != (HashSet_1_System_ByteEnum_ *)0x0) {
-                bVar6 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
+                bVar9 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
                         HashSet_1_System_ByteEnum__Contains
-                                  (this_00,0xe,
+                                  (this_00,(ByteEnum__Enum)
+                                           CONCAT71((int7)((ulonglong)pOVar7 >> 8),0xe),
                                    MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Contains_MV__Common__PlayerKilledByType_
                                   );
-                if (bVar6 == 0) {
-                  pMVar3 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
-                                     ((MethodInfo *)0x0);
-                  if (pMVar3 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
+                if (bVar9 == 0) {
+                  pMVar5 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                                      ((MethodInfo *)0x0);
+                  if (pMVar5 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
                   MVNetworkGame+OperationRequests::
                   MVNetworkGame_OperationRequests_PostNotificationOperation
-                            (pMVar3,NotificationType__Enum_Kill,
+                            (pMVar5,NotificationType__Enum_Kill,
                              (Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0)
                   ;
                 }
-                pAVar7 = (this->fields).OnDamageTaken;
-                if (pAVar7 != (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
-                  (*(pAVar7->fields)._._.invoke_impl)();
+                pAVar10 = (this->fields).OnDamageTaken;
+                if (pAVar10 != (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
+                  (*(pAVar10->fields)._._.invoke_impl)
+                            ((pAVar10->fields)._._.method_code,_UNK_?,0,0xe,
+                             (pAVar10->fields)._._.method);
                   return;
                 }
               }
@@ -461,9 +925,9 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_DieFromStuck
     }
   }
 code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -475,152 +939,221 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_DoKilledNotific
                PlayerKilledByType__Enum defaultDamageType,MethodInfo *method)
 
 {
+  uVar1 = (uint8_t)defaultDamageType;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Contains_MV__Common__PlayerKilledByType_
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__NotificationController);
-    func_?(&TypeInfo__MV__Common__PlayerKilledByType);
-    func_?(&::StringLiteral__);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Contains_MV__Common__PlayerKilledByType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__Common__PlayerKilledByType);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  weaponType = CONCAT31((int3)((uint)in_stack_1 >> 8),(char)defaultDamageType);
   if (damageDealer == (MVPlayer *)0x0) {
-    pAVar2 = (this->fields).lastDamageSource;
-    if (pAVar2 == (AvatarInteractable_DamageSource *)0x0) goto code_?;
-    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    if ((_UNK_? < fVar3 - (pAVar2->fields).time) ||
-       ((this->fields).lastDamageSource == (AvatarInteractable_DamageSource *)0x0)) {
-      pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar4 == (MVNetworkGame *)0x0) ||
-         (pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar4,(MethodInfo *)0x0),
-         pMVar5 == (MVLocalPlayer *)0x0)) goto code_?;
+    pAVar2 = AvatarInteractable_get_LastDamageSource(this,(MethodInfo *)0x0);
+    if (pAVar2 == (AvatarInteractable_DamageSource *)0x0) {
+      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if ((pMVar3 == (MVNetworkGame *)0x0) ||
+         (pMVar4 = (pMVar3->fields).playerContainer, pMVar4 == (MVPlayerContainer *)0x0))
+      goto code_?;
+      pMVar5 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar4,(MethodInfo *)0x0);
+      if (pMVar5 == (MVLocalPlayer *)0x0) goto code_?;
       killerId = (pMVar5->fields)._._ActorNr_k__BackingField;
+      value = ::StringLiteral__;
     }
     else {
-      pAVar2 = (this->fields).lastDamageSource;
-      if ((((pAVar2 == (AvatarInteractable_DamageSource *)0x0) ||
-           (fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                               ((MethodInfo *)0x0), _UNK_? < fVar3 - (pAVar2->fields).time))
-          || (pAVar2 = (this->fields).lastDamageSource,
-             pAVar2 == (AvatarInteractable_DamageSource *)0x0)) ||
+      pAVar2 = AvatarInteractable_get_LastDamageSource(this,(MethodInfo *)0x0);
+      if ((pAVar2 == (AvatarInteractable_DamageSource *)0x0) ||
          (pMVar6 = (pAVar2->fields).shooter, pMVar6 == (MVPlayer *)0x0)) goto code_?;
       killerId = (pMVar6->fields)._ActorNr_k__BackingField;
-      pAVar2 = (this->fields).lastDamageSource;
-      fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      if ((_UNK_? < fVar3 - (pAVar2->fields).time) ||
-         (pAVar2 = (this->fields).lastDamageSource, pAVar2 == (AvatarInteractable_DamageSource *)0x0
-         )) goto code_?;
-      pAVar7 = (this->fields).lastDamageSource;
-      weaponType = CONCAT31((int3)(weaponType >> 8),(pAVar2->fields).damageType);
-      fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      if ((_UNK_? < fVar3 - (pAVar7->fields).time) ||
-         ((this->fields).lastDamageSource == (AvatarInteractable_DamageSource *)0x0))
-      goto code_?;
+      pAVar2 = AvatarInteractable_get_LastDamageSource(this,(MethodInfo *)0x0);
+      if (pAVar2 == (AvatarInteractable_DamageSource *)0x0) goto code_?;
+      uVar1 = (pAVar2->fields).damageType;
+      pAVar2 = AvatarInteractable_get_LastDamageSource(this,(MethodInfo *)0x0);
+      if (pAVar2 == (AvatarInteractable_DamageSource *)0x0) goto code_?;
+      value = (pAVar2->fields).weaponName;
     }
   }
   else {
     killerId = (damageDealer->fields)._ActorNr_k__BackingField;
-    AvatarInteractable_ExtractWeaponName(this,damageDealer,defaultDamageType,(MethodInfo *)0x0);
+    value = AvatarInteractable_ExtractWeaponName
+                      (this,damageDealer,defaultDamageType & 0xff,(MethodInfo *)0x0);
   }
-  pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar4 != (MVNetworkGame *)0x0) &&
-     (pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar4,(MethodInfo *)0x0),
-     pMVar5 != (MVLocalPlayer *)0x0)) {
-    gameMsgData = GameMessages::GameMessages_MakePlayerKilledMessage
-                            ((pMVar5->fields)._._ActorNr_k__BackingField,killerId,weaponType,
-                             (MethodInfo *)0x0);
-    item = &UNK_?;
-    pMVar8 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-    if (pMVar8 != (MVNetworkGame_OperationRequests *)0x0) {
-      MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_PostGameMsg
-                (pMVar8,MVGameMsgType__Enum_AvatarKilled,gameMsgData,(MethodInfo *)0x0);
-      this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                 *)func_?();
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-      UIElements::StyleComplexSelector+PseudoStateData]::
-      Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-                (this_01,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                );
-      pOVar9 = (Object *)func_?();
-      pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (((pMVar4 != (MVNetworkGame *)0x0) &&
-          (pMVar5 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar4,(MethodInfo *)0x0),
-          pMVar5 != (MVLocalPlayer *)0x0)) &&
-         (pOVar10 = (Object *)func_?(TypeInfo__System__Int32,&stack0xffffffe8),
-         this_01 !=
-         (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
-         0x0)) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
-                  ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar9,pOVar10,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar7 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (((pMVar7 != (MVGameControllerBase *)0x0) &&
+      (pMVar3 = (pMVar7->fields).game, pMVar3 != (MVNetworkGame *)0x0)) &&
+     (pMVar4 = (pMVar3->fields).playerContainer, pMVar4 != (MVPlayerContainer *)0x0)) {
+    pMVar5 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar4,(MethodInfo *)0x0);
+    if (pMVar5 != (MVLocalPlayer *)0x0) {
+      gameMsgData = GameMessages::GameMessages_MakePlayerKilledMessage
+                              ((pMVar5->fields)._._ActorNr_k__BackingField,killerId,(uint)uVar1,
+                               (MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pMVar7 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if (((pMVar7 != (MVGameControllerBase *)0x0) &&
+          (pMVar3 = (pMVar7->fields).game, pMVar3 != (MVNetworkGame *)0x0)) &&
+         (pMVar8 = (pMVar3->fields).operationRequests,
+         pMVar8 != (MVNetworkGame_OperationRequests *)0x0)) {
+        uVar9 = 0;
+        MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_PostGameMsg
+                  (pMVar8,MVGameMsgType__Enum_AvatarKilled,gameMsgData,(MethodInfo *)0x0);
+        this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+                   *)FUN_?(
+                                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                  );
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+        UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
+                  (this_01,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                   );
-        pOVar9 = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffb);
-        pOVar10 = (Object *)func_?(TypeInfo__System__Int32,&stack0xffffffe4);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
-                  ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar9,pOVar10,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                  );
-        pOVar9 = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffa);
-        pOVar10 = (Object *)
-                  func_?(TypeInfo__MV__Common__PlayerKilledByType,&stack0xfffffff9);
-        value = (Object *)&UNK_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
-                  ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar9,pOVar10,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                  );
-        pOVar9 = (Object *)func_?();
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__Add
-                  ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar9,value,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                  );
-        if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__NotificationController);
+        aiStackX_18[0] = CONCAT31(aiStackX_18[0]._1_3_,7);
+        pOVar10 = (Object *)FUN_?(uRam_?,aiStackX_18);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
         }
-        NotificationController::NotificationController_OnNotificationReceived
-                  (NotificationType__Enum_Kill,(Dictionary_2_System_Object_System_Object_ *)this_01,
-                   (MethodInfo *)0x0);
-        this_00 = (HashSet_1_System_ByteEnum_ *)(this->fields).KillNotificationBlacklist;
-        if (this_00 != (HashSet_1_System_ByteEnum_ *)0x0) {
-          bVar11 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
-                  HashSet_1_System_ByteEnum__Contains
-                            (this_00,(ByteEnum__Enum)item,
-                             MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Contains_MV__Common__PlayerKilledByType_
-                            );
-          if (bVar11 == 0) {
-            pMVar8 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
-                               ((MethodInfo *)0x0);
-            if (pMVar8 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
-            MVNetworkGame+OperationRequests::
-            MVNetworkGame_OperationRequests_PostNotificationOperation
-                      (pMVar8,NotificationType__Enum_Kill,
-                       (Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0);
+        pMVar7 = TypeInfo__MVGameControllerBase->static_fields->instance;
+        if (((pMVar7 != (MVGameControllerBase *)0x0) &&
+            (pMVar3 = (pMVar7->fields).game, pMVar3 != (MVNetworkGame *)0x0)) &&
+           (pMVar4 = (pMVar3->fields).playerContainer, pMVar4 != (MVPlayerContainer *)0x0)) {
+          pMVar5 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar4,(MethodInfo *)0x0);
+          if (pMVar5 != (MVLocalPlayer *)0x0) {
+            aiStackX_18[0] = (pMVar5->fields)._._ActorNr_k__BackingField;
+            pOVar11 = (Object *)FUN_?(uRam_?,aiStackX_18);
+            if (this_01 !=
+                (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+                 *)0x0) {
+              uVar9 = CONCAT71((int7)((ulonglong)uVar9 >> 8),2);
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar10,pOVar11,
+                         (InsertionBehavior__Enum)uVar9,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                         ->klass->rgctx_data[0x22].method);
+              aiStackX_18[0] = CONCAT31(aiStackX_18[0]._1_3_,6);
+              pOVar10 = (Object *)FUN_?(uRam_?,aiStackX_18);
+              aiStackX_18[0] = killerId;
+              pOVar11 = (Object *)FUN_?(uRam_?,aiStackX_18);
+              uVar9 = CONCAT71((int7)((ulonglong)uVar9 >> 8),2);
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar10,pOVar11,
+                         (InsertionBehavior__Enum)uVar9,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                         ->klass->rgctx_data[0x22].method);
+              aiStackX_18[0]._0_1_ = 8;
+              pOVar10 = (Object *)FUN_?(uRam_?,aiStackX_18);
+              aiStackX_18[0]._0_1_ = uVar1;
+              pOVar11 = (Object *)
+                        FUN_?(TypeInfo__MV__Common__PlayerKilledByType,aiStackX_18);
+              uVar9 = CONCAT71((int7)((ulonglong)uVar9 >> 8),2);
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar10,pOVar11,
+                         (InsertionBehavior__Enum)uVar9,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                         ->klass->rgctx_data[0x22].method);
+              aiStackX_18[0] = CONCAT31(aiStackX_18[0]._1_3_,0x13);
+              pOVar10 = (Object *)FUN_?(uRam_?,aiStackX_18);
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                        ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar10,(Object *)value
+                         ,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar9 >> 8),2),
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                         ->klass->rgctx_data[0x22].method);
+              if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__NotificationController);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__NotificationsManager);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              if (TypeInfo__NotificationsManager->static_fields->_Initialized_k__BackingField != 0)
+              {
+                if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                this_02 = NotificationController::NotificationController_get_NotificationsManager
+                                    ((MethodInfo *)0x0);
+                if (this_02 == (NotificationsManager *)0x0) goto code_?;
+                NotificationsManager::NotificationsManager_InstantiateNotification
+                          (this_02,NotificationType__Enum_Kill,
+                           (Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0);
+              }
+              this_00 = (HashSet_1_System_ByteEnum_ *)(this->fields).KillNotificationBlacklist;
+              if (this_00 != (HashSet_1_System_ByteEnum_ *)0x0) {
+                bVar12 = System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
+                        HashSet_1_System_ByteEnum__Contains
+                                  (this_00,(uint)uVar1,
+                                   MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Contains_MV__Common__PlayerKilledByType_
+                                  );
+                if (bVar12 == 0) {
+                  pMVar8 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                                      ((MethodInfo *)0x0);
+                  if (pMVar8 == (MVNetworkGame_OperationRequests *)0x0) goto code_?;
+                  MVNetworkGame+OperationRequests::
+                  MVNetworkGame_OperationRequests_PostNotificationOperation
+                            (pMVar8,NotificationType__Enum_Kill,
+                             (Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0)
+                  ;
+                }
+                return;
+              }
+            }
           }
-          return;
         }
       }
     }
   }
 code_?:
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  FUN_?();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -633,67 +1166,89 @@ String * Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_ExtractWeap
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVAvatar);
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&TypeInfo__PickupItemEditable);
-    func_?(&::StringLiteral__);
+    FUN_?(&TypeInfo__MVAvatar);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__PickupItemEditable);
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (((undefined1)damageType != PlayerKilledByType__Enum_MeleeWeapon) &&
-     ((undefined1)damageType != PlayerKilledByType__Enum_CustomGun)) {
+  if (((char)damageType - 7U & 0xef) != 0) {
     return ::StringLiteral__;
   }
-  this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if ((((damageDealer == (MVPlayer *)0x0) ||
-       (this_00 = (damageDealer->fields).spawnRolesManager, this_00 == (SpawnRolesManager *)0x0)) ||
-      (id = System.dll::System::Net::WebCompletionSource`1[System::Object]::
-            WebCompletionSource_1_System_Object__get_Task
-                      ((WebCompletionSource_1_System_Object_ *)this_00,(MethodInfo *)0x0),
-      this_01 == (MVWorldObjectClientManager *)0x0)) ||
-     (this_02 = (MVAvatar *)
-                MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                          (this_01,(int32_t)id,(MethodInfo *)0x0), this_02 == (MVAvatar *)0x0)) {
-    func_?();
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+  if ((((damageDealer != (MVPlayer *)0x0) &&
+       (pSVar1 = (damageDealer->fields).spawnRolesManager, pSVar1 != (SpawnRolesManager *)0x0)) &&
+      (pSVar2 = (pSVar1->fields).spawnRolesRuntimeData, pSVar2 != (SpawnRolesRuntimeData *)0x0)) &&
+     ((this_00 != (MVWorldObjectClientManager *)0x0 &&
+      (pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
+                          (this_00,(pSVar2->fields).activeSpawnRole,(MethodInfo *)0x0),
+      pMVar3 != (MVWorldObjectClient *)0x0)))) {
+    bVar4 = (TypeInfo__MVAvatar->_1).naturalAligment;
+    if (((pMVar3->klass->_1).naturalAligment < bVar4) ||
+       ((MVAvatar__Class *)(pMVar3->klass->_1).typeHierarchy[(ulonglong)bVar4 - 1] !=
+        TypeInfo__MVAvatar)) {
+      FUN_?(pMVar3,TypeInfo__MVAvatar);
+      pcVar5 = (code *)swi(3);
+      pSVar6 = (String *)(*pcVar5)();
+      return pSVar6;
+    }
+    lVar7 = *(longlong *)&pMVar3[1].fields._.type;
+    if (lVar7 != 0) {
+      plVar8 = *(longlong **)(lVar7 + 0x50);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (plVar8 == (longlong *)0x0) {
+        return ::StringLiteral__;
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (plVar8[2] == 0) {
+        return ::StringLiteral__;
+      }
+      lVar7 = *plVar8;
+      bVar4 = (TypeInfo__PickupItemEditable->_1).naturalAligment;
+      if (*(byte *)(lVar7 + 0x130) < bVar4) {
+        return ::StringLiteral__;
+      }
+      if (*(PickupItemEditable__Class **)(*(longlong *)(lVar7 + 200) + -8 + (ulonglong)bVar4 * 8) !=
+          TypeInfo__PickupItemEditable) {
+        return ::StringLiteral__;
+      }
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      pSVar6 = (String *)(**(code **)(lVar7 + 0x368))(plVar8,*(undefined8 *)(lVar7 + 0x370));
+      return pSVar6;
+    }
   }
-  else if (((TypeInfo__MVAvatar->_1).naturalAligment <= (this_02->klass->_1).naturalAligment) &&
-          ((MVAvatar__Class *)
-           (this_02->klass->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1] ==
-           TypeInfo__MVAvatar)) {
-    x = MVAvatar::MVAvatar_get_CurrentPickup(this_02,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      return ::StringLiteral__;
-    }
-    if (x == (PickupItem *)0x0) {
-      return ::StringLiteral__;
-    }
-    if (((x->klass->_1).naturalAligment < (TypeInfo__PickupItemEditable->_1).naturalAligment) ||
-       ((PickupItemEditable__Class *)
-        (x->klass->_1).typeHierarchy[(TypeInfo__PickupItemEditable->_1).naturalAligment - 1] !=
-        TypeInfo__PickupItemEditable)) {
-      bVar2 = false;
-    }
-    else {
-      bVar2 = true;
-    }
-    pPStack3 = (PickupItem *)0x0;
-    if (bVar2) {
-      pPStack3 = x;
-    }
-    if (pPStack3 == (PickupItem *)0x0) {
-      return ::StringLiteral__;
-    }
-    pSVar4 = (String *)(*(code *)pPStack3->klass[1]._0.castClass)();
-    return pSVar4;
-  }
-  func_?();
+  FUN_?();
   pcVar5 = (code *)swi(3);
-  pSVar4 = (String *)(*pcVar5)();
-  return pSVar4;
+  pSVar6 = (String *)(*pcVar5)();
+  return pSVar6;
 }
 
 
@@ -703,203 +1258,393 @@ float Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_GetBoostedHeal
                 (AvatarInteractable *this,float defaultHealth,MethodInfo *method)
 
 {
-  return (this->fields).boostedHealthMultiplier * defaultHealth;
+  return defaultHealth * (this->fields).boostedHealthMultiplier;
 }
 
 
 /* Void HandleMoveHit(MVControllerColliderHit) */
 
 void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_HandleMoveHit
-               (AvatarInteractable *this,MVControllerColliderHit moveHit,MethodInfo *method)
+               (AvatarInteractable *this,MVControllerColliderHit *moveHit,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&
+                  MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__get_Value__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  iVar1 = moveHit.hit.interactionFlags._4_4_;
-  if (moveHit.hit.interactionFlags._4_4_ == 0) goto code_?;
-  iVar2 = *(int *)(moveHit.hit.interactionFlags._4_4_ + 0x30);
-  if ((iVar2 != 0) && (iVar2 == 0x18)) {
-    cVar3 = (*(code *)(this->klass->vtable).HasModifierEffect.method)();
-    if (cVar3 == '\0') {
-      pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (((pMVar4 == (MVNetworkGame *)0x0) ||
-          (pWVar5 = (pMVar4->fields).worldNetwork, pWVar5 == (WorldNetwork *)0x0)) ||
-         (in_stack_6 = (RuntimeEventManager *)(pWVar5->fields)._.runtimeEventManagerNetwork,
-         in_stack_6 == (RuntimeEventManager *)0x0)) goto code_?;
-      in_stack_7 = &UNK_?;
-      voxelHit.point.y = moveHit.hit.point.y;
-      voxelHit.point.x = moveHit.hit.point.x;
-      voxelHit.point.z = moveHit.hit.point.z;
-      voxelHit.normal.x = moveHit.hit.normal.x;
-      voxelHit.normal.y = moveHit.hit.normal.y;
-      voxelHit.normal.z = moveHit.hit.normal.z;
-      voxelHit.cubePos.x = moveHit.hit.cubePos.x;
-      voxelHit.cubePos.y = moveHit.hit.cubePos.y;
-      voxelHit.cubePos.z = moveHit.hit.cubePos.z;
-      voxelHit._30_2_ = moveHit.hit._30_2_;
-      voxelHit.face = moveHit.hit.face;
-      voxelHit.isCubeHit = moveHit.hit.isCubeHit;
-      voxelHit._37_3_ = moveHit.hit._37_3_;
-      voxelHit.woId = moveHit.hit.woId;
-      voxelHit.cube = moveHit.hit.cube;
-      voxelHit.distance = moveHit.hit.distance;
-      voxelHit.collider = moveHit.hit.collider;
-      voxelHit.transform = moveHit.hit.transform;
-      voxelHit._60_4_ = moveHit.hit._60_4_;
-      voxelHit.interactionFlags._0_4_ = (int)moveHit.hit.interactionFlags;
-      voxelHit.interactionFlags._4_4_ = 0x42200000;
-      in_stack_8 = moveHit._60_4_;
-      in_stack_9 = moveHit.hit.point.x;
-      in_stack_10 = moveHit.hit.point.y;
-      in_stack_11 = moveHit.hit.point.z;
-      in_stack_12 = moveHit.hit.normal.x;
-      in_stack_13 = moveHit.hit.normal.y;
-      in_stack_14 = moveHit.hit.normal.z;
-      in_stack_15 = moveHit.hit.cubePos._0_4_;
-      in_stack_16 = moveHit.hit._28_4_;
-      in_stack_17 = moveHit.hit.face;
-      in_stack_18 = moveHit.hit._36_4_;
-      in_stack_19 = moveHit.hit.woId;
-      in_stack_20 = moveHit.hit.cube;
-      in_stack_21 = moveHit.hit.distance;
-      RuntimeEventManager::RuntimeEventManager_SendRemoveOneFineGrainedCube
-                (in_stack_6,voxelHit,0.0,unaff_EDI);
-    }
+  MStack_1.positionTouchingHit.x = (moveHit->positionTouchingHit).x;
+  MStack_1.positionTouchingHit.y = (moveHit->positionTouchingHit).y;
+  MStack_1._8_8_ = *(undefined8 *)&(moveHit->positionTouchingHit).z;
+  MStack_1.testWithOutMoving = moveHit->testWithOutMoving;
+  MStack_1._161_7_ = *(undefined7 *)&moveHit->field_0xa1;
+  MStack_1.moveDirection.y = (moveHit->moveDirection).y;
+  MStack_1.moveDirection.z = (moveHit->moveDirection).z;
+  MStack_1.elipsoidNormal.x = (moveHit->elipsoidNormal).x;
+  MStack_1.elipsoidNormal.y = (moveHit->elipsoidNormal).y;
+  MStack_1._32_8_ = *(undefined8 *)&(moveHit->elipsoidNormal).z;
+  MStack_1.slopeNormal.y = (moveHit->slopeNormal).y;
+  MStack_1.slopeNormal.z = (moveHit->slopeNormal).z;
+  MStack_1.impactVelocity.x = (moveHit->impactVelocity).x;
+  MStack_1.impactVelocity.y = (moveHit->impactVelocity).y;
+  MStack_1._56_8_ = *(undefined8 *)&(moveHit->impactVelocity).z;
+  MStack_1.hit.point.x = (moveHit->hit).point.x;
+  MStack_1.hit.point.y = (moveHit->hit).point.y;
+  MStack_1.hit._8_8_ = *(undefined8 *)&(moveHit->hit).point.z;
+  MStack_1.hit.normal.y = (moveHit->hit).normal.y;
+  MStack_1.hit.normal.z = (moveHit->hit).normal.z;
+  MStack_1.hit.cubePos = (moveHit->hit).cubePos;
+  MStack_1.hit._30_2_ = *(undefined2 *)&(moveHit->hit).field_0x1e;
+  MStack_1.hit.face = (moveHit->hit).face;
+  MStack_1.hit.isCubeHit = (moveHit->hit).isCubeHit;
+  MStack_1.hit._37_3_ = *(undefined3 *)&(moveHit->hit).field_0x25;
+  MStack_1.hit.woId = (moveHit->hit).woId;
+  MStack_1.hit._44_4_ = *(undefined4 *)&(moveHit->hit).field_0x2c;
+  MStack_1.hit.collider = (moveHit->hit).collider;
+  MStack_1.hit.transform = (moveHit->hit).transform;
+  MStack_1.hit.cube = (moveHit->hit).cube;
+  MStack_1.hit.distance = (moveHit->hit).distance;
+  MStack_1.hit._60_4_ = *(undefined4 *)&(moveHit->hit).field_0x3c;
+  MStack_1.hit.interactionFlags = (moveHit->hit).interactionFlags;
+  MStack_1.material = moveHit->material;
+  if (MStack_1.material == (MVMaterial *)0x0) goto code_?;
+  iVar2 = ((MStack_1.material)->fields)._ModifierPackageType_k__BackingField;
+  if (((iVar2 != 0) && (iVar2 == 0x18)) &&
+     (cVar3 = (*(this->klass->vtable).HasModifierEffect.methodPtr)
+                         (this,0x1b,(this->klass->vtable).HasModifierEffect.method), cVar3 == '\0')
+     ) {
+    pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar4 == (MVNetworkGame *)0x0) ||
+       (pWVar5 = (pMVar4->fields).worldNetwork, pWVar5 == (WorldNetwork *)0x0))
+    goto code_?;
+    MStack_1.positionTouchingHit.x = (moveHit->positionTouchingHit).x;
+    MStack_1.positionTouchingHit.y = (moveHit->positionTouchingHit).y;
+    MStack_1._8_8_ = *(undefined8 *)&(moveHit->positionTouchingHit).z;
+    this_00 = (RuntimeEventManager *)(pWVar5->fields)._.runtimeEventManagerNetwork;
+    MStack_1.testWithOutMoving = moveHit->testWithOutMoving;
+    MStack_1._161_7_ = *(undefined7 *)&moveHit->field_0xa1;
+    MStack_1.moveDirection.y = (moveHit->moveDirection).y;
+    MStack_1.moveDirection.z = (moveHit->moveDirection).z;
+    MStack_1.elipsoidNormal.x = (moveHit->elipsoidNormal).x;
+    MStack_1.elipsoidNormal.y = (moveHit->elipsoidNormal).y;
+    MStack_1._32_8_ = *(undefined8 *)&(moveHit->elipsoidNormal).z;
+    MStack_1.slopeNormal.y = (moveHit->slopeNormal).y;
+    MStack_1.slopeNormal.z = (moveHit->slopeNormal).z;
+    MStack_1.impactVelocity.x = (moveHit->impactVelocity).x;
+    MStack_1.impactVelocity.y = (moveHit->impactVelocity).y;
+    MStack_1._56_8_ = *(undefined8 *)&(moveHit->impactVelocity).z;
+    MStack_1.hit.point.x = (moveHit->hit).point.x;
+    MStack_1.hit.point.y = (moveHit->hit).point.y;
+    MStack_1.hit._8_8_ = *(undefined8 *)&(moveHit->hit).point.z;
+    MStack_1.hit.normal.y = (moveHit->hit).normal.y;
+    MStack_1.hit.normal.z = (moveHit->hit).normal.z;
+    MStack_1.hit.cubePos = (moveHit->hit).cubePos;
+    MStack_1.hit._30_2_ = *(undefined2 *)&(moveHit->hit).field_0x1e;
+    MStack_1.hit.face = (moveHit->hit).face;
+    MStack_1.hit.isCubeHit = (moveHit->hit).isCubeHit;
+    MStack_1.hit._37_3_ = *(undefined3 *)&(moveHit->hit).field_0x25;
+    MStack_1.hit.woId = (moveHit->hit).woId;
+    MStack_1.hit._44_4_ = *(undefined4 *)&(moveHit->hit).field_0x2c;
+    MStack_1.hit.cube = (moveHit->hit).cube;
+    MStack_1.hit.distance = (moveHit->hit).distance;
+    MStack_1.hit._60_4_ = *(undefined4 *)&(moveHit->hit).field_0x3c;
+    MStack_1.hit.collider = (moveHit->hit).collider;
+    MStack_1.hit.transform = (moveHit->hit).transform;
+    MStack_1.hit.interactionFlags = (moveHit->hit).interactionFlags;
+    MStack_1.material = moveHit->material;
+    if (this_00 == (RuntimeEventManager *)0x0) goto code_?;
+    VStack_6.point._0_8_ = MStack_1.hit.point._0_8_;
+    VStack_6._8_8_ = MStack_1.hit._8_8_;
+    VStack_6.normal._4_8_ = MStack_1.hit.normal._4_8_;
+    VStack_6._24_8_ = MStack_1.hit._24_8_;
+    VStack_6._32_8_ = MStack_1.hit._32_8_;
+    VStack_6._40_8_ = MStack_1.hit._40_8_;
+    VStack_6.cube = MStack_1.hit.cube;
+    VStack_6._56_8_ = MStack_1.hit._56_8_;
+    VStack_6.collider = MStack_1.hit.collider;
+    VStack_6.transform = MStack_1.hit.transform;
+    VStack_6.interactionFlags = MStack_1.hit.interactionFlags;
+    RuntimeEventManager::RuntimeEventManager_SendRemoveOneFineGrainedCube
+              (this_00,&VStack_6,_UNK_?,(MethodInfo *)0x0);
   }
-  puVar22 = (undefined *)0x0;
-  puVar23 = (undefined *)0xffffffff;
-  uVar24 = *(undefined4 *)(iVar1 + 0x30);
-  puVar25 = &UNK_?;
-  pAVar26 = this;
-  (*(code *)(this->klass->vtable).AddModifier.method)();
-  if (iVar2 == 0) {
-    if (cRam_? == '\0') {
-      puVar22 = &UNK_?;
-      func_?();
-      cRam_? = '\x01';
-    }
-    fVar27 = *(float *)(iVar1 + 0x1c);
-    bVar28 = moveHit.slopeNormal.z * moveHit.slopeNormal.z +
-            moveHit.impactVelocity.x * moveHit.impactVelocity.x +
-            moveHit.impactVelocity.y * moveHit.impactVelocity.y < _UNK_?;
-    if (!bVar28) {
-      pSVar29 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
-                          ((MethodInfo *)0x0);
-      if ((pSVar29 == (SpawnRoleDataMediator *)0x0) ||
-         (pWVar30 = (WebCompletionSource_1_System_Object_ *)(pSVar29->fields).reviveState,
-         pWVar30 == (WebCompletionSource_1_System_Object_ *)0x0)) goto code_?;
-      puVar22 = &UNK_?;
-      unaff_EDI = (MethodInfo *)
-                  System.dll::System::Net::WebCompletionSource`1[System::Object]::
-                  WebCompletionSource_1_System_Object__get_Task
-                            (pWVar30,
-                             MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<ReviveState>__get_Value__
-                            );
-      if (unaff_EDI == (MethodInfo *)0x0) goto code_?;
-      ReviveState::ReviveState_SuppressSafeSpotSaving
-                ((ReviveState *)unaff_EDI,1.0,(MethodInfo *)0x0);
-    }
-    if ((moveHit.slopeNormal.x * fVar27 < _UNK_?) || (moveHit.slopeNormal.x < _UNK_?))
-    {
-      bVar31 = false;
-    }
-    else {
-      bVar31 = _UNK_? < fVar27;
-    }
-    if ((bool)(bVar28 & bVar31)) {
-      pSVar29 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
-                          ((MethodInfo *)0x0);
-      if ((pSVar29 == (SpawnRoleDataMediator *)0x0) ||
-         (pWVar30 = (WebCompletionSource_1_System_Object_ *)(pSVar29->fields).spawnRoleMode,
-         pWVar30 == (WebCompletionSource_1_System_Object_ *)0x0)) goto code_?;
-      puVar22 = &UNK_?;
-      unaff_EDI = 
-      MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__get_Value__
-      ;
-      pTVar32 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
-                WebCompletionSource_1_System_Object__get_Task
-                          (pWVar30,
-                           MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__get_Value__
-                          );
-      if ((pTVar32 == (Task *)0x1) &&
-         ((this->fields).OnNewSafePosition != (Action_1_UnityEngine_Vector3_ *)0x0)) {
-        pAVar33 = (this->fields).OnNewSafePosition;
-        puVar22 = (pAVar33->fields)._._.method_code;
-        puVar23 = &UNK_?;
-        unaff_EDI = (MethodInfo *)moveHit.positionTouchingHit.x;
-        (*(pAVar33->fields)._._.invoke_impl)();
+  MStack_1.positionTouchingHit.x = (moveHit->positionTouchingHit).x;
+  MStack_1.positionTouchingHit.y = (moveHit->positionTouchingHit).y;
+  MStack_1._8_8_ = *(undefined8 *)&(moveHit->positionTouchingHit).z;
+  MStack_1.testWithOutMoving = moveHit->testWithOutMoving;
+  MStack_1._161_7_ = *(undefined7 *)&moveHit->field_0xa1;
+  MStack_1.moveDirection.y = (moveHit->moveDirection).y;
+  MStack_1.moveDirection.z = (moveHit->moveDirection).z;
+  MStack_1.elipsoidNormal.x = (moveHit->elipsoidNormal).x;
+  MStack_1.elipsoidNormal.y = (moveHit->elipsoidNormal).y;
+  MStack_1._32_8_ = *(undefined8 *)&(moveHit->elipsoidNormal).z;
+  MStack_1.slopeNormal.y = (moveHit->slopeNormal).y;
+  MStack_1.slopeNormal.z = (moveHit->slopeNormal).z;
+  MStack_1.impactVelocity.x = (moveHit->impactVelocity).x;
+  MStack_1.impactVelocity.y = (moveHit->impactVelocity).y;
+  MStack_1._56_8_ = *(undefined8 *)&(moveHit->impactVelocity).z;
+  MStack_1.hit.point.x = (moveHit->hit).point.x;
+  MStack_1.hit.point.y = (moveHit->hit).point.y;
+  MStack_1.hit._8_8_ = *(undefined8 *)&(moveHit->hit).point.z;
+  MStack_1.hit.normal.y = (moveHit->hit).normal.y;
+  MStack_1.hit.normal.z = (moveHit->hit).normal.z;
+  MStack_1.hit.cubePos = (moveHit->hit).cubePos;
+  MStack_1.hit._30_2_ = *(undefined2 *)&(moveHit->hit).field_0x1e;
+  MStack_1.hit.face = (moveHit->hit).face;
+  MStack_1.hit.isCubeHit = (moveHit->hit).isCubeHit;
+  MStack_1.hit._37_3_ = *(undefined3 *)&(moveHit->hit).field_0x25;
+  MStack_1.hit.woId = (moveHit->hit).woId;
+  MStack_1.hit._44_4_ = *(undefined4 *)&(moveHit->hit).field_0x2c;
+  MStack_1.hit.cube = (moveHit->hit).cube;
+  MStack_1.hit.distance = (moveHit->hit).distance;
+  MStack_1.hit._60_4_ = *(undefined4 *)&(moveHit->hit).field_0x3c;
+  MStack_1.hit.collider = (moveHit->hit).collider;
+  MStack_1.hit.transform = (moveHit->hit).transform;
+  MStack_1.hit.interactionFlags = (moveHit->hit).interactionFlags;
+  MStack_1.material = moveHit->material;
+  if (MStack_1.material != (MVMaterial *)0x0) {
+    (*(this->klass->vtable).AddModifier.methodPtr)
+              (this,(ulonglong)
+                    (uint)((MStack_1.material)->fields)._ModifierPackageType_k__BackingField,
+               0xffffffff,0,(this->klass->vtable).AddModifier.method);
+    if (iVar2 == 0) {
+      MStack_1.positionTouchingHit.x = (moveHit->positionTouchingHit).x;
+      MStack_1.positionTouchingHit.y = (moveHit->positionTouchingHit).y;
+      MStack_1._8_8_ = *(undefined8 *)&(moveHit->positionTouchingHit).z;
+      MStack_1.testWithOutMoving = moveHit->testWithOutMoving;
+      MStack_1._161_7_ = *(undefined7 *)&moveHit->field_0xa1;
+      MStack_1.moveDirection.y = (moveHit->moveDirection).y;
+      MStack_1.moveDirection.z = (moveHit->moveDirection).z;
+      MStack_1.elipsoidNormal.x = (moveHit->elipsoidNormal).x;
+      MStack_1.elipsoidNormal.y = (moveHit->elipsoidNormal).y;
+      MStack_1._32_8_ = *(undefined8 *)&(moveHit->elipsoidNormal).z;
+      MStack_1.slopeNormal.y = (moveHit->slopeNormal).y;
+      MStack_1.slopeNormal.z = (moveHit->slopeNormal).z;
+      MStack_1.impactVelocity.x = (moveHit->impactVelocity).x;
+      MStack_1.impactVelocity.y = (moveHit->impactVelocity).y;
+      MStack_1._56_8_ = *(undefined8 *)&(moveHit->impactVelocity).z;
+      MStack_1.hit.point.x = (moveHit->hit).point.x;
+      MStack_1.hit.point.y = (moveHit->hit).point.y;
+      MStack_1.hit._8_8_ = *(undefined8 *)&(moveHit->hit).point.z;
+      MStack_1.hit.normal.y = (moveHit->hit).normal.y;
+      MStack_1.hit.normal.z = (moveHit->hit).normal.z;
+      MStack_1.hit.cubePos = (moveHit->hit).cubePos;
+      MStack_1.hit._30_2_ = *(undefined2 *)&(moveHit->hit).field_0x1e;
+      MStack_1.hit.face = (moveHit->hit).face;
+      MStack_1.hit.isCubeHit = (moveHit->hit).isCubeHit;
+      MStack_1.hit._37_3_ = *(undefined3 *)&(moveHit->hit).field_0x25;
+      MStack_1.hit.woId = (moveHit->hit).woId;
+      MStack_1.hit._44_4_ = *(undefined4 *)&(moveHit->hit).field_0x2c;
+      MStack_1.hit.cube = (moveHit->hit).cube;
+      MStack_1.hit.distance = (moveHit->hit).distance;
+      MStack_1.hit._60_4_ = *(undefined4 *)&(moveHit->hit).field_0x3c;
+      MStack_1.hit.collider = (moveHit->hit).collider;
+      MStack_1.hit.transform = (moveHit->hit).transform;
+      MStack_1.hit.interactionFlags = (moveHit->hit).interactionFlags;
+      MStack_1.material = moveHit->material;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<ReviveState>__get_Value__
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      VStack_6.point.x = (moveHit->positionTouchingHit).x;
+      VStack_6.point.y = (moveHit->positionTouchingHit).y;
+      VStack_6._8_8_ = *(undefined8 *)&(moveHit->positionTouchingHit).z;
+      uStack_7 = *(undefined8 *)&moveHit->testWithOutMoving;
+      VStack_6.normal.y = (moveHit->moveDirection).y;
+      VStack_6.normal.z = (moveHit->moveDirection).z;
+      VStack_6._24_8_ = *(undefined8 *)&moveHit->elipsoidNormal;
+      VStack_6._32_8_ = *(undefined8 *)&(moveHit->elipsoidNormal).z;
+      VStack_6.woId = (int32_t)(moveHit->slopeNormal).y;
+      VStack_6._44_4_ = (moveHit->slopeNormal).z;
+      VStack_6.cube = *(Cube **)&moveHit->impactVelocity;
+      VStack_6._56_8_ = *(undefined8 *)&(moveHit->impactVelocity).z;
+      VStack_6.collider = *(Collider **)&(moveHit->hit).point;
+      VStack_6.transform = *(Transform **)&(moveHit->hit).point.z;
+      VStack_6.interactionFlags._0_4_ = (moveHit->hit).normal.y;
+      VStack_6.interactionFlags._4_4_ = (moveHit->hit).normal.z;
+      uStack_8 = *(undefined8 *)&(moveHit->hit).cubePos;
+      uStack_9._0_4_ = (moveHit->hit).face;
+      uStack_9._4_1_ = (moveHit->hit).isCubeHit;
+      uStack_9._5_3_ = *(undefined3 *)&(moveHit->hit).field_0x25;
+      uStack_10 = *(undefined8 *)&(moveHit->hit).woId;
+      pCStack_11 = (moveHit->hit).cube;
+      uStack_12 = *(undefined8 *)&(moveHit->hit).distance;
+      pCStack_13 = (moveHit->hit).collider;
+      pTStack_14 = (moveHit->hit).transform;
+      iStack_15 = (moveHit->hit).interactionFlags;
+      pMStack_16 = moveHit->material;
+      if (pMStack_16 == (MVMaterial *)0x0) goto code_?;
+      VStack_6.point.x = (moveHit->positionTouchingHit).x;
+      VStack_6.point.y = (moveHit->positionTouchingHit).y;
+      VStack_6._8_8_ = *(undefined8 *)&(moveHit->positionTouchingHit).z;
+      VStack_6.normal.y = (moveHit->moveDirection).y;
+      VStack_6.normal.z = (moveHit->moveDirection).z;
+      VStack_6._24_8_ = *(undefined8 *)&moveHit->elipsoidNormal;
+      fVar17 = (pMStack_16->fields)._PhysicalProperties_k__BackingField.friction;
+      fStack_18 = (pMStack_16->fields)._PhysicalProperties_k__BackingField.toughness;
+      VStack_6._32_8_ = *(undefined8 *)&(moveHit->elipsoidNormal).z;
+      VStack_6.woId = (int32_t)(moveHit->slopeNormal).y;
+      VStack_6._44_4_ = (moveHit->slopeNormal).z;
+      uStack_7 = *(undefined8 *)&moveHit->testWithOutMoving;
+      VStack_6.cube = *(Cube **)&moveHit->impactVelocity;
+      VStack_6._56_8_ = *(undefined8 *)&(moveHit->impactVelocity).z;
+      VStack_6.collider = *(Collider **)&(moveHit->hit).point;
+      VStack_6.transform = *(Transform **)&(moveHit->hit).point.z;
+      VStack_6.interactionFlags._0_4_ = (moveHit->hit).normal.y;
+      VStack_6.interactionFlags._4_4_ = (moveHit->hit).normal.z;
+      uStack_8 = *(undefined8 *)&(moveHit->hit).cubePos;
+      uStack_9._0_4_ = (moveHit->hit).face;
+      uStack_9._4_1_ = (moveHit->hit).isCubeHit;
+      uStack_9._5_3_ = *(undefined3 *)&(moveHit->hit).field_0x25;
+      uStack_10 = *(undefined8 *)&(moveHit->hit).woId;
+      pCStack_11 = (moveHit->hit).cube;
+      uStack_12 = *(undefined8 *)&(moveHit->hit).distance;
+      pCStack_13 = (moveHit->hit).collider;
+      pTStack_14 = (moveHit->hit).transform;
+      iStack_15 = (moveHit->hit).interactionFlags;
+      pMStack_16 = moveHit->material;
+      bVar19 = MStack_1.impactVelocity.y * MStack_1.impactVelocity.y +
+              MStack_1.impactVelocity.x * MStack_1.impactVelocity.x +
+              MStack_1.impactVelocity.z * MStack_1.impactVelocity.z < _UNK_?;
+      if (!bVar19) {
+        pSVar20 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                            ((MethodInfo *)0x0);
+        if (((pSVar20 == (SpawnRoleDataMediator *)0x0) ||
+            (pSVar21 = (pSVar20->fields).reviveState,
+            pSVar21 == (SpawnRoleDataMediator_SpawnRoleVariableInternal_1_ReviveState_ *)0x0)) ||
+           ((pSVar22 = (pSVar21->fields)._.subscribableVariable,
+            pSVar22 == (SubscribableVariable_1_ReviveState_ *)0x0 ||
+            (pRVar23 = (pSVar22->fields)._.value, pRVar23 == (ReviveState *)0x0))))
+        goto code_?;
+        pcVar24 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar24 = (code *)FUN_?(), pcVar24 == (code *)0x0)) {
+          uVar25 = func_?(&UNK_?);
+          FUN_?(uVar25,0);
+          pcVar24 = (code *)swi(3);
+          (*pcVar24)();
+          return;
+        }
+        pcRam_? = pcVar24;
+        fVar26 = (float)(*pcRam_?)();
+        (pRVar23->fields).safeSpotSuppressedTime = fVar26;
+        (pRVar23->fields).safeSpotSuppressedDuration = 1.0;
+      }
+      if (((float)VStack_6.woId * fVar17 < _UNK_?) ||
+         ((float)VStack_6.woId < _UNK_?)) {
+        bVar27 = false;
+      }
+      else {
+        bVar27 = _UNK_? < fVar17;
+      }
+      if ((bool)(bVar19 & bVar27)) {
+        pSVar20 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                            ((MethodInfo *)0x0);
+        if (((pSVar20 == (SpawnRoleDataMediator *)0x0) ||
+            (pSVar28 = (pSVar20->fields).spawnRoleMode,
+            pSVar28 == (SpawnRoleDataMediator_SpawnRoleVariableInternal_1_MV_Common_SpawnRoleModeType_
+                       *)0x0)) ||
+           (pSVar29 = (pSVar28->fields)._.subscribableVariable,
+           pSVar29 == (SubscribableVariable_1_MV_Common_SpawnRoleModeType_ *)0x0))
+        goto code_?;
+        if (((pSVar29->fields)._.value == 1) &&
+           ((this->fields).OnNewSafePosition != (Action_1_UnityEngine_Vector3_ *)0x0)) {
+          pAVar30 = (this->fields).OnNewSafePosition;
+          VStack_31.x = (moveHit->positionTouchingHit).x;
+          VStack_31.y = (moveHit->positionTouchingHit).y;
+          MStack_1._8_8_ = *(undefined8 *)&(moveHit->positionTouchingHit).z;
+          MStack_1.testWithOutMoving = moveHit->testWithOutMoving;
+          MStack_1._161_7_ = *(undefined7 *)&moveHit->field_0xa1;
+          MStack_1.moveDirection.y = (moveHit->moveDirection).y;
+          MStack_1.moveDirection.z = (moveHit->moveDirection).z;
+          MStack_1.elipsoidNormal.x = (moveHit->elipsoidNormal).x;
+          MStack_1.elipsoidNormal.y = (moveHit->elipsoidNormal).y;
+          MStack_1._32_8_ = *(undefined8 *)&(moveHit->elipsoidNormal).z;
+          MStack_1.slopeNormal.y = (moveHit->slopeNormal).y;
+          MStack_1.slopeNormal.z = (moveHit->slopeNormal).z;
+          MStack_1.impactVelocity.x = (moveHit->impactVelocity).x;
+          MStack_1.impactVelocity.y = (moveHit->impactVelocity).y;
+          MStack_1._56_8_ = *(undefined8 *)&(moveHit->impactVelocity).z;
+          MStack_1.hit.point.x = (moveHit->hit).point.x;
+          MStack_1.hit.point.y = (moveHit->hit).point.y;
+          MStack_1.hit._8_8_ = *(undefined8 *)&(moveHit->hit).point.z;
+          MStack_1.hit.normal.y = (moveHit->hit).normal.y;
+          MStack_1.hit.normal.z = (moveHit->hit).normal.z;
+          MStack_1.hit.cubePos = (moveHit->hit).cubePos;
+          MStack_1.hit._30_2_ = *(undefined2 *)&(moveHit->hit).field_0x1e;
+          MStack_1.hit.face = (moveHit->hit).face;
+          MStack_1.hit.isCubeHit = (moveHit->hit).isCubeHit;
+          MStack_1.hit._37_3_ = *(undefined3 *)&(moveHit->hit).field_0x25;
+          MStack_1.hit.woId = (moveHit->hit).woId;
+          MStack_1.hit._44_4_ = *(undefined4 *)&(moveHit->hit).field_0x2c;
+          MStack_1.hit.cube = (moveHit->hit).cube;
+          MStack_1.hit.distance = (moveHit->hit).distance;
+          MStack_1.hit._60_4_ = *(undefined4 *)&(moveHit->hit).field_0x3c;
+          MStack_1.hit.collider = (moveHit->hit).collider;
+          MStack_1.hit.transform = (moveHit->hit).transform;
+          MStack_1.hit.interactionFlags = (moveHit->hit).interactionFlags;
+          MStack_1.material = moveHit->material;
+          VStack_31.z = MStack_1.positionTouchingHit.z;
+          MStack_1.positionTouchingHit._0_8_ = VStack_31._0_8_;
+          (*(pAVar30->fields)._._.invoke_impl)((pAVar30->fields)._._.method_code,&VStack_31);
+        }
       }
     }
-  }
-  if ((this->fields).canWallJumpAnySurfaces != 0) {
-    puVar22 = (undefined *)0x0;
-    puVar23 = (undefined *)0xffffffff;
-    uVar24 = 5;
-    puVar25 = &UNK_?;
-    pAVar26 = this;
-    (*(code *)(this->klass->vtable).AddModifier.method)();
-  }
-  this_00 = (this->fields).materialHitHandler;
-  if (this_00 != (InteractableMaterialHitHandler *)0x0) {
-    uVar34 = 0;
-    puVar35 = (undefined4 *)&stack0x00000008;
-    puVar36 = &uStack_37;
-    for (iVar1 = 0x24; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar36 = *puVar35;
-      puVar35 = puVar35 + 1;
-      puVar36 = puVar36 + 1;
+    if ((this->fields).canWallJumpAnySurfaces != 0) {
+      (*(this->klass->vtable).AddModifier.methodPtr)
+                (this,5,0xffffffff,0,(this->klass->vtable).AddModifier.method);
     }
-    moveHit_00.impactVelocity.z = (float)in_stack_7;
-    auVar38 = in_stack_39._0_12_;
-    auVar40 = in_stack_39._12_12_;
-    auVar41 = in_stack_39._24_12_;
-    auVar42 = in_stack_39._36_12_;
-    moveHit_00.positionTouchingHit.x = (float)auVar38._0_4_;
-    moveHit_00.positionTouchingHit.y = (float)auVar38._4_4_;
-    moveHit_00.positionTouchingHit.z = (float)auVar38._8_4_;
-    moveHit_00.moveDirection.x = (float)auVar40._0_4_;
-    moveHit_00.moveDirection.y = (float)auVar40._4_4_;
-    moveHit_00.moveDirection.z = (float)auVar40._8_4_;
-    moveHit_00.elipsoidNormal.x = (float)auVar41._0_4_;
-    moveHit_00.elipsoidNormal.y = (float)auVar41._4_4_;
-    moveHit_00.elipsoidNormal.z = (float)auVar41._8_4_;
-    moveHit_00.slopeNormal.x = (float)auVar42._0_4_;
-    moveHit_00.slopeNormal.y = (float)auVar42._4_4_;
-    moveHit_00.slopeNormal.z = (float)auVar42._8_4_;
-    moveHit_00.impactVelocity.x = (float)in_stack_39._48_4_;
-    moveHit_00.impactVelocity.y = (float)in_stack_39._52_4_;
-    moveHit_00._60_4_ = in_stack_6;
-    moveHit_00.hit.point.x = (float)in_stack_8;
-    moveHit_00.hit.point.y = in_stack_9;
-    moveHit_00.hit.point.z = in_stack_10;
-    moveHit_00.hit.normal.x = in_stack_11;
-    moveHit_00.hit.normal.y = in_stack_12;
-    moveHit_00.hit.normal.z = in_stack_13;
-    moveHit_00.hit.cubePos._0_4_ = in_stack_14;
-    moveHit_00.hit.cubePos.z = (int16_t)in_stack_15;
-    moveHit_00.hit._30_2_ = SUB42(in_stack_15,2);
-    moveHit_00.hit.face = in_stack_16;
-    moveHit_00.hit._36_4_ = in_stack_17;
-    moveHit_00.hit.woId = in_stack_18;
-    moveHit_00.hit.cube = (Cube *)in_stack_19;
-    moveHit_00.hit.distance = (float)in_stack_20;
-    moveHit_00.hit.collider = (Collider *)in_stack_21;
-    moveHit_00.hit.transform = (Transform *)puVar25;
-    moveHit_00.hit._60_4_ = pAVar26;
-    moveHit_00.hit.interactionFlags._0_4_ = uVar24;
-    moveHit_00.hit.interactionFlags._4_4_ = puVar23;
-    moveHit_00.material = (MVMaterial *)puVar22;
-    moveHit_00._140_4_ = uVar34;
-    InteractableMaterialHitHandler::InteractableMaterialHitHandler_HandleHit
-              (this_00,moveHit_00,unaff_EDI);
-    return;
+    this_01 = (this->fields).materialHitHandler;
+    if (this_01 != (InteractableMaterialHitHandler *)0x0) {
+      MStack_1.positionTouchingHit.x = (moveHit->positionTouchingHit).x;
+      MStack_1.positionTouchingHit.y = (moveHit->positionTouchingHit).y;
+      MStack_1._8_8_ = *(undefined8 *)&(moveHit->positionTouchingHit).z;
+      MStack_1.testWithOutMoving = moveHit->testWithOutMoving;
+      MStack_1._161_7_ = *(undefined7 *)&moveHit->field_0xa1;
+      MStack_1.moveDirection.y = (moveHit->moveDirection).y;
+      MStack_1.moveDirection.z = (moveHit->moveDirection).z;
+      MStack_1.elipsoidNormal.x = (moveHit->elipsoidNormal).x;
+      MStack_1.elipsoidNormal.y = (moveHit->elipsoidNormal).y;
+      MStack_1._32_8_ = *(undefined8 *)&(moveHit->elipsoidNormal).z;
+      MStack_1.slopeNormal.y = (moveHit->slopeNormal).y;
+      MStack_1.slopeNormal.z = (moveHit->slopeNormal).z;
+      MStack_1.impactVelocity.x = (moveHit->impactVelocity).x;
+      MStack_1.impactVelocity.y = (moveHit->impactVelocity).y;
+      MStack_1._56_8_ = *(undefined8 *)&(moveHit->impactVelocity).z;
+      MStack_1.hit.point.x = (moveHit->hit).point.x;
+      MStack_1.hit.point.y = (moveHit->hit).point.y;
+      MStack_1.hit._8_8_ = *(undefined8 *)&(moveHit->hit).point.z;
+      MStack_1.hit.normal.y = (moveHit->hit).normal.y;
+      MStack_1.hit.normal.z = (moveHit->hit).normal.z;
+      MStack_1.hit.cubePos = (moveHit->hit).cubePos;
+      MStack_1.hit._30_2_ = *(undefined2 *)&(moveHit->hit).field_0x1e;
+      MStack_1.hit.face = (moveHit->hit).face;
+      MStack_1.hit.isCubeHit = (moveHit->hit).isCubeHit;
+      MStack_1.hit._37_3_ = *(undefined3 *)&(moveHit->hit).field_0x25;
+      MStack_1.hit.woId = (moveHit->hit).woId;
+      MStack_1.hit._44_4_ = *(undefined4 *)&(moveHit->hit).field_0x2c;
+      MStack_1.hit.cube = (moveHit->hit).cube;
+      MStack_1.hit.distance = (moveHit->hit).distance;
+      MStack_1.hit._60_4_ = *(undefined4 *)&(moveHit->hit).field_0x3c;
+      MStack_1.hit.collider = (moveHit->hit).collider;
+      MStack_1.hit.transform = (moveHit->hit).transform;
+      MStack_1.hit.interactionFlags = (moveHit->hit).interactionFlags;
+      MStack_1.material = moveHit->material;
+      InteractableMaterialHitHandler::InteractableMaterialHitHandler_HandleHit
+                (this_01,&MStack_1,(MethodInfo *)0x0);
+      return;
+    }
   }
 code_?:
-  func_?();
-  pcVar43 = (code *)swi(3);
-  (*pcVar43)();
+  FUN_?();
+  pcVar24 = (code *)swi(3);
+  (*pcVar24)();
   return;
 }
 
@@ -910,43 +1655,44 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_HandlePoisonRes
                (AvatarInteractable *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
+  bVar1 = cRam_? == '\0';
+  apBStackX_8[0] = (Boost *)0x0;
+  (this->fields)._.poisonResist = 0.0;
+  if (bVar1) {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  (this->fields)._.poisonResist = 0.0;
-  this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (((this_01 != (MVNetworkGame *)0x0) &&
-      (pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0),
-      pMVar1 != (MVLocalPlayer *)0x0)) &&
-     (this_00 = (pMVar1->fields).boostController, this_00 != (BoostController *)0x0)) {
-    this_02 = (Boost__Class *)&stack0xfffffff8;
-    bVar2 = BoostController::BoostController_TryGetActiveBoost
-                      (this_00,BoostType__Enum_PoisonResistPercentage,(Boost **)this_02,
-                       (MethodInfo *)0x0);
-    if (bVar2 == 0) {
+  pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((((pMVar2 != (MVGameControllerBase *)0x0) &&
+       (pMVar3 = (pMVar2->fields).game, pMVar3 != (MVNetworkGame *)0x0)) &&
+      (this_00 = (pMVar3->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) &&
+     ((pMVar4 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0),
+      pMVar4 != (MVLocalPlayer *)0x0 &&
+      (this_01 = (pMVar4->fields).boostController, this_01 != (BoostController *)0x0)))) {
+    bVar5 = BoostController::BoostController_TryGetActiveBoost
+                      (this_01,BoostType__Enum_PoisonResistPercentage,apBStackX_8,(MethodInfo *)0x0)
+    ;
+    if (bVar5 == 0) {
       return;
     }
-    if (this_02 != (Boost__Class *)0x0) {
-      pOStack3 = Boost::Boost_get_Value((Boost *)this_02,(MethodInfo *)0x0);
-      uVar4 = CONCAT44(TypeInfo__System__Int32,pOStack3);
-      if (pOStack3 != (Object *)0x0) {
-        if ((pOStack3->klass->_0).element_class ==
-            (TypeInfo__System__Int32->_0).element_class) {
-          piVar5 = (int *)func_?();
-          (this->fields)._.poisonResist = (float)*piVar5 / _UNK_?;
-          return;
-        }
-        goto code_?;
+    if ((apBStackX_8[0] != (Boost *)0x0) &&
+       (pOVar6 = Boost::Boost_get_Value(apBStackX_8[0],(MethodInfo *)0x0), pOVar6 != (Object *)0x0))
+    {
+      if ((pOVar6->klass->_0).element_class == *(Il2CppClass **)(lRam_? + 0x40)) {
+        (this->fields)._.poisonResist = (float)*(int *)&pOVar6[1].klass / _UNK_?;
+        return;
       }
+      FUN_?(pOVar6,lRam_?);
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
+      return;
     }
   }
-  uVar4 = func_?();
-code_?:
-  _puStack00000010 = uVar4;
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -964,65 +1710,68 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_Heal
     if ((this->fields)._.maxHealth != (MVRuntimeDataVariable_1_System_Int32_ *)0x0) {
       pMVar2 = (this->fields)._.health;
       if (pMVar2 == (MVRuntimeDataVariable_1_System_Single_ *)0x0) goto code_?;
-      (*(code *)pMVar2)(pMVar2,(pMVar2->klass->vtable).set_Value.methodPtr);
-      pMVar3 = (this->fields)._.maxHealth;
-      if (pMVar3 == (MVRuntimeDataVariable_1_System_Int32_ *)0x0) goto code_?;
-      iVar4 = (*(code *)(pMVar3->klass->vtable).get_Value.method)
-                        (pMVar3,(pMVar3->klass->vtable).set_Value.methodPtr);
-      if ((float)iVar4 <= (float)pMVar3) {
-        pMVar5 = (this->klass->vtable).HandleModifierEffect.method;
-        fVar6 = (float10)(*(code *)pMVar5)(this,0x15,pMVar5,
-                                           (this->klass->vtable).ClearModifiers.methodPtr);
-        fVar7 = (float)fVar6;
-        fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
-                           ((MethodInfo *)0x0);
-        (*(code *)(this->klass->vtable).RestoreShield.method)(this,fVar8 * fVar7);
+      fVar3 = (float)(*(pMVar2->klass->vtable).get_Value.methodPtr)
+                                (pMVar2,(pMVar2->klass->vtable).get_Value.method);
+      pMVar4 = (this->fields)._.maxHealth;
+      if (pMVar4 == (MVRuntimeDataVariable_1_System_Int32_ *)0x0) goto code_?;
+      iVar5 = (*(pMVar4->klass->vtable).get_Value.methodPtr)();
+      if ((float)iVar5 <= fVar3) {
+        (*(this->klass->vtable).HandleModifierEffect.methodPtr)
+                  (this,0x15,0,(this->klass->vtable).HandleModifierEffect.method);
+        UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
+        (*(this->klass->vtable).RestoreShield.methodPtr)(this);
       }
     }
-    this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (this_00 == (MVNetworkGame *)0x0) goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar6 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if ((pMVar6 == (MVGameControllerBase *)0x0) ||
+       (this_00 = (pMVar6->fields).game, this_00 == (MVNetworkGame *)0x0))
+    goto code_?;
     bVar1 = MVNetworkGame::MVNetworkGame_get_IsPlaying(this_00,(MethodInfo *)0x0);
     if (bVar1 == 0) {
       return;
     }
-    cVar9 = (*(code *)(this->klass->vtable).HasModifierEffect.method)();
-    if (cVar9 != '\0') {
+    cVar7 = (*(this->klass->vtable).HasModifierEffect.methodPtr)
+                      (this,10,(this->klass->vtable).HasModifierEffect.method);
+    if (cVar7 != '\0') {
       return;
     }
-    cVar9 = func_?();
-    if ((cVar9 != '\0') &&
-       (MVar10 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0),
-       MVar10 == MVGameMode__Enum_Edit)) {
+    cVar7 = FUN_?();
+    if ((cVar7 != '\0') &&
+       (MVar8 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0),
+       MVar8 == MVGameMode__Enum_Edit)) {
       return;
     }
     pMVar2 = (this->fields)._.health;
     if ((this->fields)._.maxHealth == (MVRuntimeDataVariable_1_System_Int32_ *)0x0) {
       if (pMVar2 == (MVRuntimeDataVariable_1_System_Single_ *)0x0) goto code_?;
-      fVar6 = (float10)func_?(4,pMVar2);
-      fVar7 = (float)fVar6 + 0.0;
+      (*(pMVar2->klass->vtable).get_Value.methodPtr)
+                (pMVar2,(pMVar2->klass->vtable).get_Value.method);
+      pIVar9 = (pMVar2->klass->vtable).set_Value.methodPtr;
     }
     else {
       if (pMVar2 == (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
 code_?:
-        func_?();
-        pcVar11 = (code *)swi(3);
-        (*pcVar11)();
+        FUN_?();
+        pcVar10 = (code *)swi(3);
+        (*pcVar10)();
         return;
       }
-      fVar6 = (float10)func_?(4,pMVar2);
-      pMVar3 = (this->fields)._.maxHealth;
-      if (pMVar3 == (MVRuntimeDataVariable_1_System_Int32_ *)0x0) goto code_?;
-      fVar7 = (float)fVar6 + 0.0;
-      iVar4 = func_?(4,pMVar3);
-      if (fVar7 < 0.0) {
-        fVar7 = 0.0;
-      }
-      else if ((float)iVar4 < fVar7) {
-        fVar7 = (float)iVar4;
-      }
-      if (pMVar2 == (MVRuntimeDataVariable_1_System_Single_ *)0x0) goto code_?;
+      (*(pMVar2->klass->vtable).get_Value.methodPtr)
+                (pMVar2,(pMVar2->klass->vtable).get_Value.method);
+      pMVar4 = (this->fields)._.maxHealth;
+      if ((pMVar4 == (MVRuntimeDataVariable_1_System_Int32_ *)0x0) ||
+         ((*(pMVar4->klass->vtable).get_Value.methodPtr)
+                    (pMVar4,(pMVar4->klass->vtable).get_Value.method),
+         pMVar2 == (MVRuntimeDataVariable_1_System_Single_ *)0x0)) goto code_?;
+      pIVar9 = (pMVar2->klass->vtable).set_Value.methodPtr;
     }
-    func_?(5,pMVar2,fVar7);
+    (*pIVar9)(pMVar2);
   }
   return;
 }
@@ -1035,29 +1784,57 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_HealOverTime
                MethodInfo *method)
 
 {
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 != (MVNetworkGame *)0x0) {
-    bVar1 = MVNetworkGame::MVNetworkGame_get_IsPlaying(this_00,(MethodInfo *)0x0);
-    if ((bVar1 != 0) && (cVar2 = (**(code **)(*unaff_EDI + 0x120))(), cVar2 == '\0')) {
-      this_01 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-      if (this_01 == (MVLocalPlayer *)0x0) goto code_?;
-      bVar1 = MVLocalPlayer::MVLocalPlayer_IsPlaying(this_01,(MethodInfo *)0x0);
-      if (bVar1 != 0) {
-        if (healer == (MVPlayer *)0x0) goto code_?;
-        (**(code **)(*unaff_EDI + 0x108))();
-        iVar3 = unaff_EDI[0xf];
-        if (iVar3 != 0) {
-          (**(code **)(iVar3 + 0xc))
-                    (*(undefined4 *)(iVar3 + 0x20),0,healer,*(undefined4 *)(iVar3 + 0x14));
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar1 != (MVGameControllerBase *)0x0) && ((pMVar1->fields).game != (MVNetworkGame *)0x0)) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if (pMVar1 != (MVGameControllerBase *)0x0) {
+      cVar2 = (*(pMVar1->klass->vtable).__unknown_1.methodPtr)
+                        (pMVar1,(pMVar1->klass->vtable).__unknown_1.method);
+      if (cVar2 != '\0') {
+        player = (MVPlayer *)0xa;
+        method_00 = (this->klass->vtable).HasModifierEffect.method;
+        cVar2 = (*(this->klass->vtable).HasModifierEffect.methodPtr)();
+        if (cVar2 == '\0') {
+          MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,player,method_00);
+          if (this_00 == (MVLocalPlayer *)0x0) goto code_?;
+          pMVar3 = MVLocalPlayer::MVLocalPlayer_get_AvatarLocal(this_00,(MethodInfo *)0x0);
+          if (pMVar3 != (MVAvatarLocal *)0x0) {
+            pMVar4 = (pMVar3->fields).avatarLocalModes;
+            if (pMVar4 == (MVAvatarLocal_AvatarLocalModes *)0x0) goto code_?;
+            if ((pMVar4->fields).currentState == 1) {
+              if (healer == (MVPlayer *)0x0) goto code_?;
+              (*(this->klass->vtable).AddModifier.methodPtr)
+                        (this,(ulonglong)type,
+                         (ulonglong)(uint)(healer->fields)._ActorNr_k__BackingField,0,
+                         (this->klass->vtable).AddModifier.method);
+              pAVar5 = (this->fields).OnHealing;
+              if (pAVar5 != (Action_2_Single_MVPlayer_ *)0x0) {
+                (*(pAVar5->fields)._._.invoke_impl)
+                          ((pAVar5->fields)._._.method_code,0,healer,(pAVar5->fields)._._.method);
+              }
+            }
+          }
         }
       }
+      return;
     }
-    return;
   }
 code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -1075,9 +1852,15 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_Init
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action);
-    func_?(&MethodInfo__AvatarInteractable__HandlePoisonResistBoost__);
-    func_?(&MethodInfo__AvatarInteractable__SetupBoostedHealthMultiplier__);
+    FUN_?(&TypeInfo__System__Action);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__AvatarInteractable__HandlePoisonResistBoost__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__AvatarInteractable__SetupBoostedHealthMultiplier__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_01 = skillDataManager;
@@ -1085,8 +1868,12 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_Init
             ((MVInteractable *)this,runtimeDataModifiers,health,maxHealth,shield,skillDataManager,
              (MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    FUN_?(&StringLiteral_DamageReduction);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_CanWallJumpAnySurface);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (this_01 != (WorldObjectSkillDataManager *)0x0) {
@@ -1094,7 +1881,6 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_Init
                       (this_01,StringLiteral_DamageReduction,(MethodInfo *)0x0);
     fVar2 = _UNK_?;
     if (bVar1 != 0) {
-      skillDataManager = (WorldObjectSkillDataManager *)0x0;
       iVar3 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_GetSkillIntValue
                         (this_01,StringLiteral_DamageReduction,(MethodInfo *)0x0);
       fVar2 = (float)(100 - iVar3) / _UNK_?;
@@ -1109,101 +1895,137 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_Init
       parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                          ((Component *)this,(MethodInfo *)0x0);
       if (this_00 != (InteractableMaterialHitHandler *)0x0) {
-        method = (MethodInfo *)0x0;
-        skillDataManager = (WorldObjectSkillDataManager *)parent;
         InteractableMaterialHitHandler::InteractableMaterialHitHandler_Initialize
                   (this_00,packages,parent,(MethodInfo *)0x0);
-        method = (MethodInfo *)0x0;
-        skillDataManager = (WorldObjectSkillDataManager *)&UNK_?;
-        pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (pMVar4 != (MVNetworkGame *)0x0) {
-          in_stack_5 = &UNK_?;
-          pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar4,(MethodInfo *)0x0);
-          if (pMVar6 != (MVLocalPlayer *)0x0) {
-            pBVar7 = (pMVar6->fields).boostController;
-            pNVar8 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-            UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-            NavMesh_OnNavMeshPreUpdate__ctor
-                      (pNVar8,(Object *)this,
-                       MethodInfo__AvatarInteractable__SetupBoostedHealthMultiplier__,
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pMVar4 = TypeInfo__MVGameControllerBase->static_fields->instance;
+        if ((((pMVar4 != (MVGameControllerBase *)0x0) &&
+             (pMVar5 = (pMVar4->fields).game, pMVar5 != (MVNetworkGame *)0x0)) &&
+            (pMVar6 = (pMVar5->fields).playerContainer, pMVar6 != (MVPlayerContainer *)0x0)) &&
+           (pMVar7 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar6,(MethodInfo *)0x0),
+           pMVar7 != (MVLocalPlayer *)0x0)) {
+          pBVar8 = (pMVar7->fields).boostController;
+          pNVar9 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+          UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+          NavMesh_OnNavMeshPreUpdate__ctor
+                    (pNVar9,(Object *)this,
+                     MethodInfo__AvatarInteractable__SetupBoostedHealthMultiplier__,
+                     (MethodInfo *)0x0);
+          if (pBVar8 != (BoostController *)0x0) {
+            BoostController::BoostController_SubscribeToBoostChanged
+                      (pBVar8,BoostType__Enum_ExtraHealthFloatMultiplier,(Action *)pNVar9,
                        (MethodInfo *)0x0);
-            if (pBVar7 != (BoostController *)0x0) {
-              BoostController::BoostController_SubscribeToBoostChanged
-                        (pBVar7,BoostType__Enum_ExtraHealthFloatMultiplier,(Action *)pNVar8,
-                         (MethodInfo *)0x0);
-              if (cRam_? == '\0') {
-                func_?(&TypeInfo__System__Int32);
-                cRam_? = '\x01';
+            bVar10 = cRam_? == '\0';
+            skillDataManager = (WorldObjectSkillDataManager *)0x0;
+            (this->fields).boostedHealthMultiplier = 1.0;
+            if (bVar10) {
+              FUN_?(&TypeInfo__MVGameControllerBase);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pMVar4 = TypeInfo__MVGameControllerBase->static_fields->instance;
+            if (((pMVar4 == (MVGameControllerBase *)0x0) ||
+                (pMVar5 = (pMVar4->fields).game, pMVar5 == (MVNetworkGame *)0x0)) ||
+               ((pMVar6 = (pMVar5->fields).playerContainer, pMVar6 == (MVPlayerContainer *)0x0 ||
+                ((pMVar7 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer
+                                     (pMVar6,(MethodInfo *)0x0), pMVar7 == (MVLocalPlayer *)0x0 ||
+                 (pBVar8 = (pMVar7->fields).boostController, pBVar8 == (BoostController *)0x0))))))
+            {
+code_?:
+              FUN_?();
+              pcVar11 = (code *)swi(3);
+              (*pcVar11)();
+              return;
+            }
+            bVar1 = BoostController::BoostController_TryGetActiveBoost
+                              (pBVar8,BoostType__Enum_ExtraHealthFloatMultiplier,
+                               (Boost **)&skillDataManager,(MethodInfo *)0x0);
+            if (bVar1 != 0) {
+              if ((skillDataManager == (WorldObjectSkillDataManager *)0x0) ||
+                 (pOVar12 = Boost::Boost_get_Value((Boost *)skillDataManager,(MethodInfo *)0x0),
+                 pOVar12 == (Object *)0x0)) goto code_?;
+              if ((pOVar12->klass->_0).element_class !=
+                  *(Il2CppClass **)(lRam_? + 0x40)) {
+                FUN_?(pOVar12,lRam_?);
+                pcVar11 = (code *)swi(3);
+                (*pcVar11)();
+                return;
               }
-              skillDataManager = (WorldObjectSkillDataManager *)0x0;
-              (this->fields).boostedHealthMultiplier = 1.0;
-              pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if (((pMVar4 != (MVNetworkGame *)0x0) &&
-                  (pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar4,(MethodInfo *)0x0),
-                  pMVar6 != (MVLocalPlayer *)0x0)) &&
-                 (pBVar7 = (pMVar6->fields).boostController, pBVar7 != (BoostController *)0x0)) {
-                bVar1 = BoostController::BoostController_TryGetActiveBoost
-                                  (pBVar7,BoostType__Enum_ExtraHealthFloatMultiplier,
-                                   (Boost **)&skillDataManager,(MethodInfo *)0x0);
-                if (bVar1 != 0) {
-                  if ((skillDataManager == (WorldObjectSkillDataManager *)0x0) ||
-                     (pOVar9 = Boost::Boost_get_Value((Boost *)skillDataManager,(MethodInfo *)0x0),
-                     pOVar9 == (Object *)0x0)) goto code_?;
-                  if ((pOVar9->klass->_0).element_class !=
-                      (TypeInfo__System__Int32->_0).element_class) goto code_?;
-                  piVar10 = (int *)func_?();
-                  (this->fields).boostedHealthMultiplier =
-                       (float)*piVar10 / _UNK_? + _UNK_?;
+              (this->fields).boostedHealthMultiplier =
+                   (float)*(int *)&pOVar12[1].klass / _UNK_? + _UNK_?;
+            }
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__MVGameControllerBase);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pMVar4 = TypeInfo__MVGameControllerBase->static_fields->instance;
+            if ((((pMVar4 != (MVGameControllerBase *)0x0) &&
+                 (pMVar5 = (pMVar4->fields).game, pMVar5 != (MVNetworkGame *)0x0)) &&
+                (pMVar6 = (pMVar5->fields).playerContainer, pMVar6 != (MVPlayerContainer *)0x0)) &&
+               (pMVar7 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer
+                                   (pMVar6,(MethodInfo *)0x0), pMVar7 != (MVLocalPlayer *)0x0)) {
+              pBVar8 = (pMVar7->fields).boostController;
+              pNVar9 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+              UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+              NavMesh_OnNavMeshPreUpdate__ctor
+                        (pNVar9,(Object *)this,
+                         MethodInfo__AvatarInteractable__HandlePoisonResistBoost__,(MethodInfo *)0x0
+                        );
+              if (pBVar8 != (BoostController *)0x0) {
+                BoostController::BoostController_SubscribeToBoostChanged
+                          (pBVar8,BoostType__Enum_PoisonResistPercentage,(Action *)pNVar9,
+                           (MethodInfo *)0x0);
+                bVar10 = cRam_? == '\0';
+                skillDataManager = (WorldObjectSkillDataManager *)0x0;
+                (this->fields)._.poisonResist = 0.0;
+                if (bVar10) {
+                  FUN_?(&TypeInfo__MVGameControllerBase);
+                  LOCK();
+                  UNLOCK();
+                  cRam_? = '\x01';
                 }
-                pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                if ((pMVar4 != (MVNetworkGame *)0x0) &&
-                   (pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar4,(MethodInfo *)0x0),
-                   pMVar6 != (MVLocalPlayer *)0x0)) {
-                  pBVar7 = (pMVar6->fields).boostController;
-                  pNVar8 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-                  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-                  NavMesh_OnNavMeshPreUpdate__ctor
-                            (pNVar8,(Object *)this,
-                             MethodInfo__AvatarInteractable__HandlePoisonResistBoost__,
-                             (MethodInfo *)0x0);
-                  if (pBVar7 != (BoostController *)0x0) {
-                    BoostController::BoostController_SubscribeToBoostChanged
-                              (pBVar7,BoostType__Enum_PoisonResistPercentage,(Action *)pNVar8,
-                               (MethodInfo *)0x0);
-                    if (cRam_? == '\0') {
-                      func_?(&TypeInfo__System__Int32);
-                      cRam_? = '\x01';
+                pMVar4 = TypeInfo__MVGameControllerBase->static_fields->instance;
+                if (((pMVar4 != (MVGameControllerBase *)0x0) &&
+                    (pMVar5 = (pMVar4->fields).game, pMVar5 != (MVNetworkGame *)0x0)) &&
+                   ((pMVar6 = (pMVar5->fields).playerContainer, pMVar6 != (MVPlayerContainer *)0x0
+                    && ((pMVar7 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer
+                                            (pMVar6,(MethodInfo *)0x0),
+                        pMVar7 != (MVLocalPlayer *)0x0 &&
+                        (pBVar8 = (pMVar7->fields).boostController, pBVar8 != (BoostController *)0x0
+                        )))))) {
+                  bVar1 = BoostController::BoostController_TryGetActiveBoost
+                                    (pBVar8,BoostType__Enum_PoisonResistPercentage,
+                                     (Boost **)&skillDataManager,(MethodInfo *)0x0);
+                  if (bVar1 != 0) {
+                    if ((skillDataManager == (WorldObjectSkillDataManager *)0x0) ||
+                       (pOVar12 = Boost::Boost_get_Value
+                                            ((Boost *)skillDataManager,(MethodInfo *)0x0),
+                       pOVar12 == (Object *)0x0)) goto code_?;
+                    if ((pOVar12->klass->_0).element_class !=
+                        *(Il2CppClass **)(lRam_? + 0x40)) {
+                      FUN_?(pOVar12,lRam_?);
+                      pcVar11 = (code *)swi(3);
+                      (*pcVar11)();
+                      return;
                     }
-                    skillDataManager = (WorldObjectSkillDataManager *)0x0;
-                    (this->fields)._.poisonResist = 0.0;
-                    pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-                    if (((pMVar4 != (MVNetworkGame *)0x0) &&
-                        (pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer
-                                            (pMVar4,(MethodInfo *)0x0),
-                        pMVar6 != (MVLocalPlayer *)0x0)) &&
-                       (pBVar7 = (pMVar6->fields).boostController, pBVar7 != (BoostController *)0x0)
-                       ) {
-                      bVar1 = BoostController::BoostController_TryGetActiveBoost
-                                        (pBVar7,BoostType__Enum_PoisonResistPercentage,
-                                         (Boost **)&skillDataManager,(MethodInfo *)0x0);
-                      if (bVar1 == 0) {
-                        return;
-                      }
-                      if ((skillDataManager != (WorldObjectSkillDataManager *)0x0) &&
-                         (pOVar9 = Boost::Boost_get_Value
-                                             ((Boost *)skillDataManager,(MethodInfo *)0x0),
-                         pOVar9 != (Object *)0x0)) {
-                        if ((pOVar9->klass->_0).element_class ==
-                            (TypeInfo__System__Int32->_0).element_class) {
-                          piVar10 = (int *)func_?();
-                          (this->fields)._.poisonResist = (float)*piVar10 / _UNK_?;
-                          return;
-                        }
-                        goto code_?;
-                      }
-                    }
+                    (this->fields)._.poisonResist =
+                         (float)*(int *)&pOVar12[1].klass / _UNK_?;
                   }
+                  return;
                 }
+code_?:
+                FUN_?();
+                pcVar11 = (code *)swi(3);
+                (*pcVar11)();
+                return;
               }
             }
           }
@@ -1211,10 +2033,7 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_Init
       }
     }
   }
-code_?:
-  func_?();
-code_?:
-  func_?();
+  FUN_?();
   pcVar11 = (code *)swi(3);
   (*pcVar11)();
   return;
@@ -1229,8 +2048,12 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_InitializeSkill
 
 {
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_DamageReduction);
-    func_?(&StringLiteral_CanWallJumpAnySurface);
+    FUN_?(&StringLiteral_DamageReduction);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_CanWallJumpAnySurface);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (skillDataManager != (WorldObjectSkillDataManager *)0x0) {
@@ -1250,7 +2073,7 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_InitializeSkill
       return;
     }
   }
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -1260,50 +2083,60 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_InitializeSkill
 /* Boolean IsGroundedSafely(MVControllerColliderHit) */
 
 bool Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_IsGroundedSafely
-               (AvatarInteractable *this,MVControllerColliderHit moveHit,MethodInfo *method)
+               (AvatarInteractable *this,MVControllerColliderHit *moveHit,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<ReviveState>__get_Value__
-                   );
+    FUN_?(&
+                  MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<ReviveState>__get_Value__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (moveHit.hit.interactionFlags._4_4_ != 0) {
-    fVar1 = *(float *)(moveHit.hit.interactionFlags._4_4_ + 0x1c);
-    bVar2 = moveHit.slopeNormal.z * moveHit.slopeNormal.z +
-            moveHit.impactVelocity.x * moveHit.impactVelocity.x +
-            moveHit.impactVelocity.y * moveHit.impactVelocity.y < _UNK_?;
-    if (bVar2) {
+  if (moveHit->material == (MVMaterial *)0x0) {
 code_?:
-      if ((_UNK_? <= moveHit.slopeNormal.x * fVar1) &&
-         (_UNK_? <= moveHit.slopeNormal.x)) {
-        return _UNK_? < fVar1 && bVar2;
-      }
-      return 0;
-    }
-    pSVar3 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
-                       ((MethodInfo *)0x0);
-    if ((pSVar3 != (SpawnRoleDataMediator *)0x0) &&
-       (this_00 = (WebCompletionSource_1_System_Object_ *)(pSVar3->fields).reviveState,
-       this_00 != (WebCompletionSource_1_System_Object_ *)0x0)) {
-      this_01 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
-                WebCompletionSource_1_System_Object__get_Task
-                          (this_00,
-                           MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<ReviveState>__get_Value__
-                          );
-      if (this_01 != (Task *)0x0) {
-        fVar1 = 1.0;
-        ReviveState::ReviveState_SuppressSafeSpotSaving
-                  ((ReviveState *)this_01,1.0,(MethodInfo *)0x0);
-        goto code_?;
-      }
-    }
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    bVar2 = (*pcVar1)();
+    return bVar2;
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  fVar3 = (moveHit->material->fields)._PhysicalProperties_k__BackingField.friction;
+  uVar4 = (moveHit->slopeNormal).y;
+  fVar5 = (moveHit->impactVelocity).y;
+  fVar6 = (moveHit->impactVelocity).x;
+  fVar7 = (moveHit->impactVelocity).z;
+  bVar8 = fVar6 * fVar6 + fVar5 * fVar5 + fVar7 * fVar7 < _UNK_?;
+  if (!bVar8) {
+    pSVar9 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                        ((MethodInfo *)0x0);
+    if ((((pSVar9 == (SpawnRoleDataMediator *)0x0) ||
+         (pSVar10 = (pSVar9->fields).reviveState,
+         pSVar10 == (SpawnRoleDataMediator_SpawnRoleVariableInternal_1_ReviveState_ *)0x0)) ||
+        (pSVar11 = (pSVar10->fields)._.subscribableVariable,
+        pSVar11 == (SubscribableVariable_1_ReviveState_ *)0x0)) ||
+       (pRVar12 = (pSVar11->fields)._.value, pRVar12 == (ReviveState *)0x0)) goto code_?;
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar13 = func_?(&UNK_?);
+      FUN_?(uVar13,0);
+      pcVar1 = (code *)swi(3);
+      bVar2 = (*pcVar1)();
+      return bVar2;
+    }
+    pcRam_? = pcVar1;
+    fVar5 = (float)(*pcRam_?)();
+    (pRVar12->fields).safeSpotSuppressedTime = fVar5;
+    (pRVar12->fields).safeSpotSuppressedDuration = 1.0;
+  }
+  if (((float)uVar4 * fVar3 < _UNK_?) || ((float)uVar4 < _UNK_?)) {
+    bVar14 = false;
+  }
+  else {
+    bVar14 = _UNK_? < fVar3;
+  }
+  return bVar14 & bVar8;
 }
 
 
@@ -1314,51 +2147,73 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_OnDestroy
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action);
-    func_?(&MethodInfo__AvatarInteractable__HandlePoisonResistBoost__);
-    func_?(&MethodInfo__AvatarInteractable__SetupBoostedHealthMultiplier__);
+    FUN_?(&TypeInfo__System__Action);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__AvatarInteractable__HandlePoisonResistBoost__);
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
   if (bVar1 == 0) {
     return;
   }
-  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar2 != (MVNetworkGame *)0x0) &&
-     (pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0),
-     pMVar3 != (MVLocalPlayer *)0x0)) {
-    pBVar4 = (pMVar3->fields).boostController;
-    pNVar5 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((((pMVar2 != (MVGameControllerBase *)0x0) &&
+       (pMVar3 = (pMVar2->fields).game, pMVar3 != (MVNetworkGame *)0x0)) &&
+      (pMVar4 = (pMVar3->fields).playerContainer, pMVar4 != (MVPlayerContainer *)0x0)) &&
+     (pMVar5 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar4,(MethodInfo *)0x0),
+     pMVar5 != (MVLocalPlayer *)0x0)) {
+    pBVar6 = (pMVar5->fields).boostController;
+    pNVar7 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (pNVar5,unaff_EDI,MethodInfo__AvatarInteractable__SetupBoostedHealthMultiplier__,
+              (pNVar7,(Object *)this,MethodInfo__AvatarInteractable__SetupBoostedHealthMultiplier__,
                (MethodInfo *)0x0);
-    if (pBVar4 != (BoostController *)0x0) {
+    if (pBVar6 != (BoostController *)0x0) {
       BoostController::BoostController_UnSubscribeToBoostChanged
-                (pBVar4,BoostType__Enum_ExtraHealthFloatMultiplier,(Action *)pNVar5,
+                (pBVar6,BoostType__Enum_ExtraHealthFloatMultiplier,(Action *)pNVar7,
                  (MethodInfo *)0x0);
-      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar2 != (MVNetworkGame *)0x0) &&
-         (pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0),
-         pMVar3 != (MVLocalPlayer *)0x0)) {
-        pBVar4 = (pMVar3->fields).boostController;
-        pNVar5 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if (((pMVar2 != (MVGameControllerBase *)0x0) &&
+          (pMVar3 = (pMVar2->fields).game, pMVar3 != (MVNetworkGame *)0x0)) &&
+         ((pMVar4 = (pMVar3->fields).playerContainer, pMVar4 != (MVPlayerContainer *)0x0 &&
+          (pMVar5 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar4,(MethodInfo *)0x0),
+          pMVar5 != (MVLocalPlayer *)0x0)))) {
+        pBVar6 = (pMVar5->fields).boostController;
+        pNVar7 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
-                  (pNVar5,(Object *)&UNK_?,
-                   MethodInfo__AvatarInteractable__HandlePoisonResistBoost__,(MethodInfo *)0x0);
-        if (pBVar4 != (BoostController *)0x0) {
+                  (pNVar7,(Object *)this,MethodInfo__AvatarInteractable__HandlePoisonResistBoost__,
+                   (MethodInfo *)0x0);
+        if (pBVar6 != (BoostController *)0x0) {
           BoostController::BoostController_UnSubscribeToBoostChanged
-                    (pBVar4,BoostType__Enum_PoisonResistPercentage,(Action *)pNVar5,
+                    (pBVar6,BoostType__Enum_PoisonResistPercentage,(Action *)pNVar7,
                      (MethodInfo *)0x0);
           return;
         }
       }
     }
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -1369,12 +2224,22 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_RestoreShield
                (AvatarInteractable *this,float restoredShieldAmount,MethodInfo *method)
 
 {
-  MVInteractable::MVInteractable_RestoreShield
-            ((MVInteractable *)this,restoredShieldAmount,(MethodInfo *)0x0);
-  pAVar1 = (this->fields).OnShieldReplenished;
-  if (pAVar1 != (Action *)0x0) {
-    (*(pAVar1->fields)._._.invoke_impl)();
+  pMVar1 = (this->fields)._.shield;
+  if (pMVar1 != (MVRuntimeDataVariableClampedFloat *)0x0) {
+    fVar2 = (float)(*(pMVar1->klass->vtable).get_Value.methodPtr)
+                             (pMVar1,(pMVar1->klass->vtable).get_Value.method);
+    (*(pMVar1->klass->vtable).set_Value.methodPtr)
+              (pMVar1,fVar2 + restoredShieldAmount,(pMVar1->klass->vtable).set_Value.method);
+    pAVar3 = (this->fields).OnShieldReplenished;
+    if (pAVar3 != (Action *)0x0) {
+      (*(pAVar3->fields)._._.invoke_impl)
+                ((pAVar3->fields)._._.method_code,(pAVar3->fields)._._.method);
+    }
+    return;
   }
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -1385,43 +2250,45 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_SetupBoostedHea
                (AvatarInteractable *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
+  bVar1 = cRam_? == '\0';
+  apBStackX_8[0] = (Boost *)0x0;
+  (this->fields).boostedHealthMultiplier = 1.0;
+  if (bVar1) {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  (this->fields).boostedHealthMultiplier = 1.0;
-  this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (((this_01 != (MVNetworkGame *)0x0) &&
-      (pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0),
-      pMVar1 != (MVLocalPlayer *)0x0)) &&
-     (this_00 = (pMVar1->fields).boostController, this_00 != (BoostController *)0x0)) {
-    this_02 = (Boost__Class *)&stack0xfffffff8;
-    bVar2 = BoostController::BoostController_TryGetActiveBoost
-                      (this_00,BoostType__Enum_ExtraHealthFloatMultiplier,(Boost **)this_02,
+  pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((((pMVar2 != (MVGameControllerBase *)0x0) &&
+       (pMVar3 = (pMVar2->fields).game, pMVar3 != (MVNetworkGame *)0x0)) &&
+      (this_00 = (pMVar3->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) &&
+     ((pMVar4 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0),
+      pMVar4 != (MVLocalPlayer *)0x0 &&
+      (this_01 = (pMVar4->fields).boostController, this_01 != (BoostController *)0x0)))) {
+    bVar5 = BoostController::BoostController_TryGetActiveBoost
+                      (this_01,BoostType__Enum_ExtraHealthFloatMultiplier,apBStackX_8,
                        (MethodInfo *)0x0);
-    if (bVar2 == 0) {
+    if (bVar5 == 0) {
       return;
     }
-    if (this_02 != (Boost__Class *)0x0) {
-      pOStack3 = Boost::Boost_get_Value((Boost *)this_02,(MethodInfo *)0x0);
-      uVar4 = CONCAT44(TypeInfo__System__Int32,pOStack3);
-      if (pOStack3 != (Object *)0x0) {
-        if ((pOStack3->klass->_0).element_class ==
-            (TypeInfo__System__Int32->_0).element_class) {
-          piVar5 = (int *)func_?();
-          (this->fields).boostedHealthMultiplier = (float)*piVar5 / _UNK_? + _UNK_?;
-          return;
-        }
-        goto code_?;
+    if ((apBStackX_8[0] != (Boost *)0x0) &&
+       (pOVar6 = Boost::Boost_get_Value(apBStackX_8[0],(MethodInfo *)0x0), pOVar6 != (Object *)0x0))
+    {
+      if ((pOVar6->klass->_0).element_class == *(Il2CppClass **)(lRam_? + 0x40)) {
+        (this->fields).boostedHealthMultiplier =
+             (float)*(int *)&pOVar6[1].klass / _UNK_? + _UNK_?;
+        return;
       }
+      FUN_?(pOVar6,lRam_?);
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
+      return;
     }
   }
-  uVar4 = func_?();
-code_?:
-  _puStack00000010 = uVar4;
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -1434,7 +2301,9 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_TakeDamage
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AvatarInteractable__DamageSource);
+    FUN_?(&TypeInfo__AvatarInteractable__DamageSource);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (((0.0 < amount) &&
@@ -1443,100 +2312,107 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_TakeDamage
      (amount <= 0.0)) {
     return;
   }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 == (MVNetworkGame *)0x0) goto code_?;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar2 == (MVGameControllerBase *)0x0) ||
+     (this_00 = (pMVar2->fields).game, this_00 == (MVNetworkGame *)0x0)) goto DAT_?;
   bVar1 = MVNetworkGame::MVNetworkGame_get_IsPlaying(this_00,(MethodInfo *)0x0);
   if (bVar1 == 0) {
     return;
   }
-  cVar2 = (*(code *)(this->klass->vtable).HasModifierEffect.method)
-                    (this,10,(this->klass->vtable).HandleModifierEffect.methodPtr);
-  if (cVar2 != '\0') {
+  cVar3 = (*(this->klass->vtable).HasModifierEffect.methodPtr)
+                    (this,10,(this->klass->vtable).HasModifierEffect.method);
+  if (cVar3 != '\0') {
     return;
   }
-  cVar2 = func_?(0);
-  if ((cVar2 != '\0') &&
-     (MVar3 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0),
-     MVar3 == MVGameMode__Enum_Edit)) {
+  cVar3 = FUN_?();
+  if ((cVar3 != '\0') &&
+     (MVar4 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0),
+     MVar4 == MVGameMode__Enum_Edit)) {
     return;
   }
-  pMVar4 = (this->klass->vtable).HandleModifierEffect.method;
-  fVar5 = (float10)(*(code *)pMVar4)(this,pMVar4,0x3f800000);
-  fVar6 = (float)(fVar5 * (float10)amount) * (this->fields).damageMultiplier;
-  if (0.0 <= fVar6) {
-    pMVar7 = (this->fields)._.shield;
-    if (pMVar7 == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
-    fVar5 = (float10)(*(code *)(pMVar7->klass->vtable).get_Value.method)
-                               (pMVar7,(pMVar7->klass->vtable).set_Value.methodPtr);
-    pMVar7 = (this->fields)._.shield;
-    if ((float)fVar5 < fVar6) {
-      if (pMVar7 == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
-      fVar5 = (float10)(*(code *)(pMVar7->klass->vtable).get_Value.method)
-                                 (pMVar7,(pMVar7->klass->vtable).set_Value.methodPtr);
-      pMVar7 = (this->fields)._.shield;
-      fVar8 = (float)fVar5;
-      if (pMVar7 == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
-      (*(code *)(pMVar7->klass->vtable).set_Value.method)(pMVar7,0,pMVar7->klass[1]._0.image);
-      fVar6 = fVar6 - fVar8;
+  fVar5 = (float)(*(this->klass->vtable).HandleModifierEffect.methodPtr)(this,6,_UNK_?);
+  fVar5 = fVar5 * amount * (this->fields).damageMultiplier;
+  if (0.0 <= fVar5) {
+    pMVar6 = (this->fields)._.shield;
+    if (pMVar6 == (MVRuntimeDataVariableClampedFloat *)0x0) goto DAT_?;
+    fVar7 = (float)(*(pMVar6->klass->vtable).get_Value.methodPtr)
+                              (pMVar6,(pMVar6->klass->vtable).get_Value.method);
+    pMVar6 = (this->fields)._.shield;
+    if (fVar7 < fVar5) {
+      if (pMVar6 == (MVRuntimeDataVariableClampedFloat *)0x0) goto DAT_?;
+      fVar7 = (float)(*(pMVar6->klass->vtable).get_Value.methodPtr)
+                                (pMVar6,(pMVar6->klass->vtable).get_Value.method);
+      pMVar6 = (this->fields)._.shield;
+      if (pMVar6 == (MVRuntimeDataVariableClampedFloat *)0x0) goto DAT_?;
+      (*(pMVar6->klass->vtable).set_Value.methodPtr)
+                (pMVar6,0,(pMVar6->klass->vtable).set_Value.method);
+      fVar5 = fVar5 - fVar7;
     }
     else {
-      if (pMVar7 == (MVRuntimeDataVariableClampedFloat *)0x0) goto code_?;
-      fVar5 = (float10)(*(code *)(pMVar7->klass->vtable).get_Value.method)
-                                 (pMVar7,(pMVar7->klass->vtable).set_Value.methodPtr);
-      (*(code *)(pMVar7->klass->vtable).set_Value.method)
-                (pMVar7,(float)fVar5 - fVar6,pMVar7->klass[1]._0.image);
-      fVar6 = 0.0;
+      if (pMVar6 == (MVRuntimeDataVariableClampedFloat *)0x0) goto DAT_?;
+      fVar7 = (float)(*(pMVar6->klass->vtable).get_Value.methodPtr)
+                                (pMVar6,(pMVar6->klass->vtable).get_Value.method);
+      (*(pMVar6->klass->vtable).set_Value.methodPtr)
+                (pMVar6,fVar7 - fVar5,(pMVar6->klass->vtable).set_Value.method);
+      fVar5 = 0.0;
     }
   }
-  pMVar9 = (this->fields)._.health;
-  if (pMVar9 != (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
-    fVar8 = fVar6;
-    (*(code *)(pMVar9->klass->vtable).get_Value.method)
-              (pMVar9,(pMVar9->klass->vtable).set_Value.methodPtr);
-    pMVar9 = (this->fields)._.health;
-    if (pMVar9 != (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
-      fVar5 = (float10)(*(code *)(pMVar9->klass->vtable).get_Value.method)(pMVar9);
-      fVar10 = (float)(fVar5 - (float10)fVar8);
-      if ((float)(fVar5 - (float10)fVar8) <= _UNK_?) {
-        fVar10 = _UNK_?;
+  pMVar8 = (this->fields)._.health;
+  if (pMVar8 != (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
+    fVar7 = (float)(*(pMVar8->klass->vtable).get_Value.methodPtr)
+                              (pMVar8,(pMVar8->klass->vtable).get_Value.method);
+    pMVar8 = (this->fields)._.health;
+    if (pMVar8 != (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
+      fVar9 = (float)(*(pMVar8->klass->vtable).get_Value.methodPtr)
+                                (pMVar8,(pMVar8->klass->vtable).get_Value.method);
+      fVar9 = fVar9 - fVar5;
+      if (fVar9 <= 0.0) {
+        fVar9 = 0.0;
       }
-      (*(code *)(pMVar9->klass->vtable).set_Value.method)
-                (pMVar9,fVar10,pMVar9->klass[1]._0.image);
+      (*(pMVar8->klass->vtable).set_Value.methodPtr)
+                (pMVar8,fVar9,(pMVar8->klass->vtable).set_Value.method);
       if (damageDealer != (MVPlayer *)0x0) {
         weaponName = AvatarInteractable_ExtractWeaponName
-                               (this,damageDealer,damageType,(MethodInfo *)0x0);
+                               (this,damageDealer,damageType & 0xff,(MethodInfo *)0x0);
         this_01 = (AvatarInteractable_DamageSource *)
-                  func_?(TypeInfo__AvatarInteractable__DamageSource);
+                  FUN_?(TypeInfo__AvatarInteractable__DamageSource);
         AvatarInteractable+DamageSource::AvatarInteractable_DamageSource__ctor
-                  (this_01,damageDealer,damageType,weaponName,(MethodInfo *)0x0);
+                  (this_01,damageDealer,damageType & 0xff,weaponName,(MethodInfo *)0x0);
         (this->fields).lastDamageSource = this_01;
-        func_?(&(this->fields).lastDamageSource,this_01);
+        func_?(&(this->fields).lastDamageSource);
       }
-      pAVar11 = (this->fields).OnDamageTaken;
-      if (pAVar11 != (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
-        (*(pAVar11->fields)._._.invoke_impl)
-                  ((pAVar11->fields)._._.method_code,fVar6,damageDealer,damageType,
-                   (pAVar11->fields)._._.method);
+      pAVar10 = (this->fields).OnDamageTaken;
+      if (pAVar10 != (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
+        (*(pAVar10->fields)._._.invoke_impl)
+                  ((pAVar10->fields)._._.method_code,fVar5,damageDealer,(char)damageType,
+                   (pAVar10->fields)._._.method);
       }
-      pMVar9 = (this->fields)._.health;
-      if (pMVar9 != (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
-        fVar5 = (float10)(*(code *)(pMVar9->klass->vtable).get_Value.method)
-                                   (pMVar9,(pMVar9->klass->vtable).set_Value.methodPtr);
-        if (0.0 < (float)fVar5) {
+      pMVar8 = (this->fields)._.health;
+      if (pMVar8 != (MVRuntimeDataVariable_1_System_Single_ *)0x0) {
+        fVar5 = (float)(*(pMVar8->klass->vtable).get_Value.methodPtr)
+                                 (pMVar8,(pMVar8->klass->vtable).get_Value.method);
+        if (0.0 < fVar5) {
           return;
         }
-        if ((float)pMVar9 <= 0.0) {
+        if (fVar7 <= 0.0) {
           return;
         }
-        AvatarInteractable_DoKilledNotification(this,damageDealer,damageType,(MethodInfo *)0x0);
+        AvatarInteractable_DoKilledNotification
+                  (this,damageDealer,damageType & 0xff,(MethodInfo *)0x0);
         return;
       }
     }
   }
-code_?:
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+DAT_?:
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -1549,43 +2425,71 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_TakeDamageOverT
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AvatarInteractable__DamageSource);
+    FUN_?(&TypeInfo__AvatarInteractable__DamageSource);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 != (MVNetworkGame *)0x0) {
-    bVar1 = MVNetworkGame::MVNetworkGame_get_IsPlaying(this_00,(MethodInfo *)0x0);
-    if ((bVar1 != 0) &&
-       (cVar2 = (*(code *)(unaff_EBX->klass->vtable).HasModifierEffect.method)(), cVar2 == '\0')) {
-      this_01 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-      if (this_01 == (MVLocalPlayer *)0x0) goto code_?;
-      bVar1 = MVLocalPlayer::MVLocalPlayer_IsPlaying(this_01,(MethodInfo *)0x0);
-      if (bVar1 != 0) {
-        if (damageDealer == (MVPlayer *)0x0) goto code_?;
-        (*(code *)(unaff_EBX->klass->vtable).AddModifier.method)();
-        weaponName = AvatarInteractable_ExtractWeaponName
-                               (unaff_EBX,damageDealer,damageType,(MethodInfo *)0x0);
-        this_02 = (AvatarInteractable_DamageSource *)
-                  func_?(TypeInfo__AvatarInteractable__DamageSource);
-        AvatarInteractable+DamageSource::AvatarInteractable_DamageSource__ctor
-                  (this_02,damageDealer,damageType,weaponName,(MethodInfo *)0x0);
-        (unaff_EBX->fields).lastDamageSource = this_02;
-        func_?(&(unaff_EBX->fields).lastDamageSource,this_02);
-        pAVar3 = (unaff_EBX->fields).OnDamageTaken;
-        if (pAVar3 != (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
-          pvStack4 = (pAVar3->fields)._._.method;
-          PStack5 = damageType;
-          pMStack6 = damageDealer;
-          (*(pAVar3->fields)._._.invoke_impl)();
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar1 != (MVGameControllerBase *)0x0) && ((pMVar1->fields).game != (MVNetworkGame *)0x0)) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if (pMVar1 != (MVGameControllerBase *)0x0) {
+      cVar2 = (*(pMVar1->klass->vtable).__unknown_1.methodPtr)
+                        (pMVar1,(pMVar1->klass->vtable).__unknown_1.method);
+      if (cVar2 != '\0') {
+        player = (MVPlayer *)0xa;
+        method_00 = (this->klass->vtable).HasModifierEffect.method;
+        cVar2 = (*(this->klass->vtable).HasModifierEffect.methodPtr)();
+        if (cVar2 == '\0') {
+          MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,player,method_00);
+          if (this_00 == (MVLocalPlayer *)0x0) goto code_?;
+          pMVar3 = MVLocalPlayer::MVLocalPlayer_get_AvatarLocal(this_00,(MethodInfo *)0x0);
+          if (pMVar3 != (MVAvatarLocal *)0x0) {
+            pMVar4 = (pMVar3->fields).avatarLocalModes;
+            if (pMVar4 == (MVAvatarLocal_AvatarLocalModes *)0x0) goto code_?;
+            if ((pMVar4->fields).currentState == 1) {
+              if (damageDealer == (MVPlayer *)0x0) goto code_?;
+              (*(this->klass->vtable).AddModifier.methodPtr)
+                        (this,(ulonglong)type,
+                         (ulonglong)(uint)(damageDealer->fields)._ActorNr_k__BackingField,0,
+                         (this->klass->vtable).AddModifier.method);
+              weaponName = AvatarInteractable_ExtractWeaponName
+                                     (this,damageDealer,damageType & 0xff,(MethodInfo *)0x0);
+              this_01 = (AvatarInteractable_DamageSource *)
+                        FUN_?(TypeInfo__AvatarInteractable__DamageSource);
+              AvatarInteractable+DamageSource::AvatarInteractable_DamageSource__ctor
+                        (this_01,damageDealer,damageType & 0xff,weaponName,(MethodInfo *)0x0);
+              (this->fields).lastDamageSource = this_01;
+              func_?(&(this->fields).lastDamageSource);
+              pAVar5 = (this->fields).OnDamageTaken;
+              if (pAVar5 != (Action_3_Single_MVPlayer_MV_Common_PlayerKilledByType_ *)0x0) {
+                (*(pAVar5->fields)._._.invoke_impl)
+                          ((pAVar5->fields)._._.method_code,0,damageDealer,(char)damageType,
+                           (pAVar5->fields)._._.method);
+              }
+            }
+          }
         }
       }
+      return;
     }
-    return;
   }
 code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -1596,29 +2500,53 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable__cctor(MethodIn
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AvatarInteractable);
-    func_?(&TypeRef__AvatarModifierPackageType);
-    func_?(&TypeInfo__System__Enum);
-    func_?(&TypeInfo__System__Type);
+    FUN_?(&TypeInfo__AvatarInteractable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeRef__AvatarModifierPackageType);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  handle = TypeRef__AvatarModifierPackageType;
-  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Type);
+  pIVar1 = TypeRef__AvatarModifierPackageType;
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
   }
-  enumType = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                       ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-  if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  plVar2 = (longlong *)0x0;
+  if (pIVar1 != (Il2CppType *)0x0) {
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    lVar3 = FUN_?(pIVar1,1);
+    plVar2 = (longlong *)FUN_?(lVar3 + 0x20);
   }
-  pSVar1 = mscorlib.dll::System::Enum::Enum_GetNames(enumType,(MethodInfo *)0x0);
-  if (pSVar1 != (String__Array *)0x0) {
-    TypeInfo__AvatarInteractable->static_fields->AvatarModifierPackagesCount = pSVar1->max_length;
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
+  }
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
+  }
+  if (plVar2 != (longlong *)0x0) {
+    lVar3 = (**(code **)(*plVar2 + 600))(plVar2,*(undefined8 *)(*plVar2 + 0x260));
+    if (lVar3 != 0) {
+      TypeInfo__AvatarInteractable->static_fields->AvatarModifierPackagesCount =
+           *(int32_t *)(lVar3 + 0x18);
+      return;
+    }
+    FUN_?();
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
     return;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uVar5 = func_?(&TypeInfo__System__ArgumentNullException);
+  this = (ArgumentNullException *)func_?(uVar5);
+  paramName = (String *)func_?(&StringLiteral_enumType);
+  mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+            (this,paramName,(MethodInfo *)0x0);
+  uVar5 = func_?(&MethodInfo__System__Enum__GetNames_System__Type_);
+  FUN_?(this,uVar5);
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -1630,122 +2558,285 @@ void Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AvatarInteractable__DamageSource);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Add_MV__Common__PlayerKilledByType_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__HashSet__
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>
-                   );
-    func_?(&TypeInfo__InteractableMaterialHitHandler);
-    func_?(&TypeInfo__MaterialHitPackage);
+    FUN_?(&TypeInfo__AvatarInteractable__DamageSource);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Add_MV__Common__PlayerKilledByType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__HashSet__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__InteractableMaterialHitHandler);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MaterialHitPackage);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__AvatarInteractable__DamageSource->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__AvatarInteractable__DamageSource);
+  if (*(int *)&(TypeInfo__AvatarInteractable__DamageSource->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__AvatarInteractable__DamageSource);
   }
-  pAVar1 = TypeInfo__AvatarInteractable__DamageSource->static_fields->none;
-  (this->fields).lastDamageSource = pAVar1;
-  func_?(&(this->fields).lastDamageSource,pAVar1);
+  bVar1 = iRam_? != 0;
+  (this->fields).lastDamageSource = TypeInfo__AvatarInteractable__DamageSource->static_fields->none;
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).lastDamageSource >> 0xc);
+    uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+    do {
+      uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+      puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   (this->fields).boostedHealthMultiplier = 1.0;
   (this->fields).damageMultiplier = 1.0;
   this_00 = (HashSet_1_System_ByteEnum_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>
-                           );
+            FUN_?(
+                         TypeInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>
+                         );
   System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
   HashSet_1_System_ByteEnum___ctor
             (this_00,
              MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__HashSet__
             );
   if (this_00 != (HashSet_1_System_ByteEnum_ *)0x0) {
+    uVar6 = CONCAT71((int7)((ulonglong)
+                            MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Add_MV__Common__PlayerKilledByType_
+                            ->klass >> 8),6);
     System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
-    HashSet_1_System_ByteEnum__System_Collections_Generic_ICollection_T__Add
-              (this_00,6,
+    HashSet_1_System_ByteEnum__AddIfNotPresent
+              (this_00,(ByteEnum__Enum)uVar6,
                MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Add_MV__Common__PlayerKilledByType_
-              );
+               ->klass->rgctx_data[0x15].method);
+    uVar6 = CONCAT71((int7)((ulonglong)uVar6 >> 8),0xe);
     System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
-    HashSet_1_System_ByteEnum__System_Collections_Generic_ICollection_T__Add
-              (this_00,0xe,
+    HashSet_1_System_ByteEnum__AddIfNotPresent
+              (this_00,(ByteEnum__Enum)uVar6,
                MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Add_MV__Common__PlayerKilledByType_
-              );
+               ->klass->rgctx_data[0x15].method);
+    uVar6 = CONCAT71((int7)((ulonglong)uVar6 >> 8),10);
     System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
-    HashSet_1_System_ByteEnum__System_Collections_Generic_ICollection_T__Add
-              (this_00,10,
+    HashSet_1_System_ByteEnum__AddIfNotPresent
+              (this_00,(ByteEnum__Enum)uVar6,
                MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Add_MV__Common__PlayerKilledByType_
-              );
+               ->klass->rgctx_data[0x15].method);
     System.Core.dll::System::Collections::Generic::HashSet`1[System::ByteEnum]::
-    HashSet_1_System_ByteEnum__System_Collections_Generic_ICollection_T__Add
-              (this_00,5,
+    HashSet_1_System_ByteEnum__AddIfNotPresent
+              (this_00,(ByteEnum__Enum)CONCAT71((int7)((ulonglong)uVar6 >> 8),5),
                MethodInfo__System__Collections__Generic__HashSet<MV::Common::PlayerKilledByType>__Add_MV__Common__PlayerKilledByType_
-              );
+               ->klass->rgctx_data[0x15].method);
+    bVar1 = iRam_? != 0;
     (this->fields).KillNotificationBlacklist = (HashSet_1_MV_Common_PlayerKilledByType_ *)this_00;
-    func_?(&(this->fields).KillNotificationBlacklist,this_00);
-    pMVar2 = (MaterialHitPackage__Array *)func_?(TypeInfo__MaterialHitPackage,2);
+    if (bVar1) {
+      uVar2 = (uint)((ulonglong)&(this->fields).KillNotificationBlacklist >> 0xc);
+      uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+      do {
+        uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+        puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+        LOCK();
+        bVar1 = uVar4 == *puVar5;
+        if (bVar1) {
+          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar1);
+    }
+    pMVar7 = (MaterialHitPackage__Array *)FUN_?(TypeInfo__MaterialHitPackage,2);
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__PrefabPool);
+      FUN_?(&TypeInfo__PrefabPool);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    pPVar3 = TypeInfo__PrefabPool->static_fields->instance;
-    if (pPVar3 != (PrefabPool *)0x0) {
-      VStack_4.Item1 = (void *)0x0;
-      VStack_4.Item2 = (Object *)0x0;
-      mscorlib.dll::System::ValueTuple`2[IntPtr,Object]::ValueTuple_2_IntPtr_Object___ctor
-                (&VStack_4,(void *)0x4,(Object *)(pPVar3->fields).poisonParticles,(MethodInfo *)0x0)
-      ;
-      if (pMVar2 != (MaterialHitPackage__Array *)0x0) {
-        if (pMVar2->max_length == 0) goto code_?;
-        pOVar5 = VStack_4.Item2;
-        pMVar2->vector[0].PackageType = (int32_t)VStack_4.Item1;
-        VStack_4.Item2 = (Object *)0x0;
-        VStack_4.Item1 = &pMVar2->vector[0].ParticlePrefab;
-        pMVar2->vector[0].ParticlePrefab = (ParticleSystem *)pOVar5;
-        VStack_6.Item2 = (Object *)&UNK_?;
-        func_?();
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__PrefabPool);
-          cRam_? = '\x01';
-        }
-        pPVar3 = TypeInfo__PrefabPool->static_fields->instance;
-        if (pPVar3 != (PrefabPool *)0x0) {
-          VStack_6.Item1 = (void *)0x0;
-          VStack_6.Item2 = (Object *)0x0;
-          mscorlib.dll::System::ValueTuple`2[IntPtr,Object]::ValueTuple_2_IntPtr_Object___ctor
-                    (&VStack_6,(void *)0x14,(Object *)(pPVar3->fields).poisonParticles,
-                     (MethodInfo *)0x0);
-          if (1 < pMVar2->max_length) {
-            pMVar2->vector[1].PackageType = (int32_t)VStack_6.Item1;
-            VStack_4.Item2 = (Object *)0x0;
-            VStack_4.Item1 = &pMVar2->vector[1].ParticlePrefab;
-            pMVar2->vector[1].ParticlePrefab = (ParticleSystem *)VStack_6.Item2;
-            VStack_6.Item2 = (Object *)&UNK_?;
-            func_?();
-            (this->fields).hitPackages = pMVar2;
-            VStack_6.Item2 = (Object *)pMVar2;
-            VStack_6.Item1 = &(this->fields).hitPackages;
-            func_?();
-            this_01 = (InteractableMaterialHitHandler *)
-                      func_?(TypeInfo__InteractableMaterialHitHandler);
-            InteractableMaterialHitHandler::InteractableMaterialHitHandler__ctor
-                      (this_01,(MethodInfo *)0x0);
-            (this->fields).materialHitHandler = this_01;
-            func_?(&(this->fields).materialHitHandler,this_01);
+    pPVar8 = TypeInfo__PrefabPool->static_fields->instance;
+    if (pPVar8 != (PrefabPool *)0x0) {
+      uStack_9 = (pPVar8->fields).poisonParticles;
+      if (iRam_? != 0) {
+        uVar2 = (uint)((ulonglong)&uStack_9 >> 0xc);
+        uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+        do {
+          uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+          puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+          LOCK();
+          bVar1 = uVar4 == *puVar5;
+          if (bVar1) {
+            *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar1);
+      }
+      if (pMVar7 != (MaterialHitPackage__Array *)0x0) {
+        if ((int)pMVar7->max_length != 0) {
+          bVar1 = iRam_? != 0;
+          uStack_9._4_4_ = (undefined4)((ulonglong)uStack_9 >> 0x20);
+          pMVar7->vector[0].PackageType = 4;
+          *(undefined4 *)&pMVar7->vector[0].field_0x4 = 0;
+          *(undefined4 *)&pMVar7->vector[0].ParticlePrefab = (undefined4)uStack_9;
+          *(undefined4 *)((longlong)&pMVar7->vector[0].ParticlePrefab + 4) = uStack_9._4_4_;
+          if (bVar1) {
+            uVar2 = (uint)((ulonglong)&pMVar7->vector[0].ParticlePrefab >> 0xc);
+            uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+            do {
+              uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+              puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+              LOCK();
+              bVar1 = uVar4 == *puVar5;
+              if (bVar1) {
+                *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar1);
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__PrefabPool);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pPVar8 = TypeInfo__PrefabPool->static_fields->instance;
+          if (pPVar8 == (PrefabPool *)0x0) goto code_?;
+          uStack_10 = (pPVar8->fields).poisonParticles;
+          uStack_11 = 0x14;
+          if (iRam_? != 0) {
+            uVar2 = (uint)((ulonglong)&uStack_10 >> 0xc);
+            uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+            do {
+              uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+              puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+              LOCK();
+              bVar1 = uVar4 == *puVar5;
+              if (bVar1) {
+                *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar1);
+          }
+          if (1 < (uint)pMVar7->max_length) {
+            bVar1 = iRam_? != 0;
+            uStack_10._4_4_ = (undefined4)((ulonglong)uStack_10 >> 0x20);
+            pMVar7->vector[1].PackageType = 0x14;
+            *(undefined4 *)&pMVar7->vector[1].field_0x4 = 0;
+            *(undefined4 *)&pMVar7->vector[1].ParticlePrefab = (undefined4)uStack_10;
+            *(undefined4 *)((longlong)&pMVar7->vector[1].ParticlePrefab + 4) = uStack_10._4_4_;
+            if (bVar1) {
+              uVar2 = (uint)((ulonglong)&pMVar7->vector[1].ParticlePrefab >> 0xc);
+              uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+              do {
+                uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+                puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+                LOCK();
+                bVar1 = uVar4 == *puVar5;
+                if (bVar1) {
+                  *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+                }
+                UNLOCK();
+              } while (!bVar1);
+            }
+            bVar1 = iRam_? != 0;
+            (this->fields).hitPackages = pMVar7;
+            if (bVar1) {
+              uVar2 = (uint)((ulonglong)&(this->fields).hitPackages >> 0xc);
+              uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+              do {
+                uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+                puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+                LOCK();
+                bVar1 = uVar4 == *puVar5;
+                if (bVar1) {
+                  *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+                }
+                UNLOCK();
+              } while (!bVar1);
+            }
+            pIVar12 = (InteractableMaterialHitHandler *)
+                     FUN_?(TypeInfo__InteractableMaterialHitHandler);
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_UnityEngine::ParticleSystem>__Dictionary__
+                           );
+              LOCK();
+              UNLOCK();
+              FUN_?(&
+                            TypeInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_UnityEngine::ParticleSystem>
+                           );
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            this_01 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
+                      FUN_?(
+                                   TypeInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_UnityEngine::ParticleSystem>
+                                   );
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+            Int32Enum,GamePassesHighScoreList+HighScoreListData]::
+            Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
+                      (this_01,
+                       MethodInfo__System__Collections__Generic__Dictionary<AvatarModifierPackageType,_UnityEngine::ParticleSystem>__Dictionary__
+                      );
+            iVar13 = iRam_?;
+            (pIVar12->fields).particles =
+                 (Dictionary_2_AvatarModifierPackageType_UnityEngine_ParticleSystem_ *)this_01;
+            if (iVar13 != 0) {
+              uVar2 = (uint)((ulonglong)&pIVar12->fields >> 0xc);
+              uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+              do {
+                uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+                puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+                LOCK();
+                bVar1 = uVar4 == *puVar5;
+                if (bVar1) {
+                  *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+                }
+                UNLOCK();
+                iVar13 = iRam_?;
+              } while (!bVar1);
+            }
+            (pIVar12->fields).prevPos.x = 0.0;
+            (pIVar12->fields).prevPos.y = 0.0;
+            (pIVar12->fields).prevPos.z = 0.0;
+            (this->fields).materialHitHandler = pIVar12;
+            if (iVar13 != 0) {
+              uVar2 = (uint)((ulonglong)&(this->fields).materialHitHandler >> 0xc);
+              uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+              do {
+                uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+                puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+                LOCK();
+                bVar1 = uVar4 == *puVar5;
+                if (bVar1) {
+                  *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+                }
+                UNLOCK();
+              } while (!bVar1);
+            }
             MVInteractable::MVInteractable__ctor((MVInteractable *)this,(MethodInfo *)0x0);
             return;
           }
-          goto code_?;
         }
+        FUN_?();
+        pcVar14 = (code *)swi(3);
+        (*pcVar14)();
+        return;
       }
     }
   }
-  func_?();
 code_?:
-  VStack_4.Item2 = (Object *)&UNK_?;
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  FUN_?();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -1759,15 +2850,25 @@ Assembly-CSharp.dll::AvatarInteractable::AvatarInteractable_get_LastDamageSource
 {
   pAVar1 = (this->fields).lastDamageSource;
   if (pAVar1 == (AvatarInteractable_DamageSource *)0x0) {
-    func_?();
+    FUN_?();
     pcVar2 = (code *)swi(3);
     pAVar1 = (AvatarInteractable_DamageSource *)(*pcVar2)();
     return pAVar1;
   }
-  fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  if (_UNK_? < fVar3 - (pAVar1->fields).time) {
-    return (AvatarInteractable_DamageSource *)0x0;
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar2 = (code *)swi(3);
+    pAVar1 = (AvatarInteractable_DamageSource *)(*pcVar2)();
+    return pAVar1;
   }
-  return (this->fields).lastDamageSource;
+  pcRam_? = pcVar2;
+  fVar4 = (float)(*pcRam_?)();
+  if (fVar4 - (pAVar1->fields).time <= _UNK_?) {
+    return (this->fields).lastDamageSource;
+  }
+  return (AvatarInteractable_DamageSource *)0x0;
 }
 

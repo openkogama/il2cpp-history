@@ -8,36 +8,71 @@ void Assembly-CSharp.dll::AccessoryShopController+<>c__DisplayClass32_0::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<MVBody>);
-    func_?(&TypeInfo__UnityEngine__EventSystems__IGetCurrentBody);
-    func_?(&
-                    MethodInfo__AccessoryShopController____c__DisplayClass32_0___SetAccessoriesToSelectable_b__1_MVBody_
-                   );
+    FUN_?(&TypeInfo__System__Action<MVBody>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IGetCurrentBody);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__AccessoryShopController____c__DisplayClass32_0___SetAccessoriesToSelectable_b__1_MVBody_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-             *)(this->fields).__9__1;
-  if (this_00 ==
-      (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-       *)0x0) {
-    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)func_?(TypeInfo__System__Action<MVBody>);
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+  this_00 = (UnityAction_1_System_Object_ *)(this->fields).__9__1;
+  if (this_00 == (UnityAction_1_System_Object_ *)0x0) {
+    this_00 = (UnityAction_1_System_Object_ *)FUN_?(TypeInfo__System__Action<MVBody>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+    UnityAction_1_System_Object___ctor
               (this_00,(Object *)this,
                MethodInfo__AccessoryShopController____c__DisplayClass32_0___SetAccessoriesToSelectable_b__1_MVBody_
                ,(MethodInfo *)0x0);
+    bVar1 = iRam_? != 0;
     (this->fields).__9__1 = (Action_1_MVBody_ *)this_00;
-    func_?(&(this->fields).__9__1,this_00);
+    if (bVar1) {
+      uVar2 = (uint)((ulonglong)&(this->fields).__9__1 >> 0xc);
+      puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar4 = *puVar3;
+        LOCK();
+        uVar5 = *puVar3;
+        if (uVar4 == uVar5) {
+          *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar4 != uVar5);
+    }
   }
-  if (x != (IGetCurrentBody *)0x0) {
-    func_?(0,TypeInfo__UnityEngine__EventSystems__IGetCurrentBody,x,this_00);
+  if (x == (IGetCurrentBody *)0x0) {
+    FUN_?();
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  pIVar7 = x->klass;
+  uVar8 = 0;
+  uVar9._0_1_ = (pIVar7->_1).rank;
+  uVar9._1_1_ = (pIVar7->_1).minimumAlignment;
+  if (uVar9 != 0) {
+    do {
+      if (pIVar7->interfaceOffsets[uVar8].interfaceType ==
+          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IGetCurrentBody) {
+        pIVar10 = &pIVar7->vtable + pIVar7->interfaceOffsets[uVar8].offset;
+        goto code_?;
+      }
+      uVar8 = uVar8 + 1;
+    } while (uVar8 < uVar9);
+  }
+  pIVar10 = (IGetCurrentBody__VTable *)
+           FUN_?(x,TypeInfo__UnityEngine__EventSystems__IGetCurrentBody,0,this_00,unaff_RDI)
+  ;
+code_?:
+  UNRECOVERED_JUMPTABLE = (pIVar10->GetCurrentBody).methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*UNRECOVERED_JUMPTABLE)(x,this_00,(pIVar10->GetCurrentBody).method,UNRECOVERED_JUMPTABLE);
   return;
 }
 

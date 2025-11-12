@@ -8,39 +8,66 @@ void Assembly-CSharp.dll::MVAvatarLocal+<>c__DisplayClass125_0::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Single);
-    func_?(&
-                    MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleReceiverVariable<float>__set_Value_float_
-                   );
+    FUN_?(&
+                  MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleReceiverVariable<float>__set_Value_float_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = 
+  pMVar1 = 
   MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleReceiverVariable<float>__set_Value_float_
   ;
   if (receiver != (SpawnRoleDataReceiver *)0x0) {
-    this_00 = (receiver->fields).shield;
-    pOVar1 = (this->fields).shield;
-    if (this_00 != (SpawnRoleReceiverVariable_1_System_Single_ *)0x0) {
-      if (pOVar1 != (Object *)0x0) {
-        pSVar2 = TypeInfo__System__Single;
-        if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Single->_0).element_class) {
-          pfVar3 = (float *)func_?(pOVar1);
-          Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-          SpawnRoleReceiverVariable`1[System::Single]::
-          SpawnRoleReceiverVariable_1_System_Single__set_Value(this_00,*pfVar3,method_00);
+    pSVar2 = (receiver->fields).shield;
+    pOVar3 = (this->fields).shield;
+    if ((pSVar2 != (SpawnRoleReceiverVariable_1_System_Single_ *)0x0) && (pOVar3 != (Object *)0x0))
+    {
+      pOVar4 = pOVar3->klass;
+      if ((pOVar4->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+        FUN_?(pOVar3,lRam_?);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      pSVar6 = (pSVar2->fields).spawnRoleDataReceiver;
+      if (pSVar6 != (SpawnRoleDataReceiver *)0x0) {
+        if ((pSVar6->fields).isActive == 0) {
+          uVar7 = func_?(&TypeInfo__System__Exception,pOVar4,
+                                      MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleReceiverVariable<float>__set_Value_float_
+                                      ,pSVar2,unaff_RDI);
+          this_00 = (Exception *)func_?(uVar7);
+          message = (String *)func_?(&StringLiteral_SpawnRole_receiver_not_active__P);
+          mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
+          FUN_?(this_00,pMVar1);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
           return;
         }
-        goto code_?;
+        pSVar8 = (pSVar2->fields).subscribableVariable;
+        if (pSVar8 != (SubscribableVariable_1_System_Single_ *)0x0) {
+          pAVar9 = (pSVar8->fields)._.OnChange;
+          (pSVar8->fields)._.value = *(float *)&pOVar3[1].klass;
+          if (pAVar9 != (Action_1_Single_ *)0x0) {
+            pAVar9 = (pSVar8->fields)._.OnChange;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+            (*(pAVar9->fields)._._.invoke_impl)
+                      ((pAVar9->fields)._._.method_code,pOVar4,(pAVar9->fields)._._.method);
+            return;
+          }
+          return;
+        }
       }
+      FUN_?();
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
     }
   }
-  func_?();
-  pOVar1 = extraout_ECX;
-  pSVar2 = extraout_EDX;
-code_?:
-  func_?(pOVar1,pSVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

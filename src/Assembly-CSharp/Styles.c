@@ -4,726 +4,860 @@
 void Assembly-CSharp.dll::Styles::Styles_Awake(Styles *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff44;
-  puVar5 = &stack0xffffff44;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>__Add_TextStyle__Styles__TextStyleDef_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__Add_AccessoryRarity__RarityStylesDef_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>__Add_ButtonStyle__Styles__ButtonStyleDef_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>__Add_EffectStyle__Styles__EffectStyleDef_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>__Add_MV__WorldObject__MVTeam__Styles__TeamIconStyleDef_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__Add_ColorStyle__Styles__ColorStyleDef_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__Add_SoundStyle__UnityEngine__AudioSource_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>__Dictionary_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>__Dictionary_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__Dictionary_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>__Dictionary_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__Dictionary_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__Dictionary_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>__Dictionary_int_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::EffectStyleDef>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ColorStyleDef>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TextStyleDef>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RarityStylesDef>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TeamIconStyleDef>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ButtonStyleDef>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::SoundStyleDef>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TeamIconStyleDef>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::EffectStyleDef>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TextStyleDef>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ColorStyleDef>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ButtonStyleDef>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RarityStylesDef>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::SoundStyleDef>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::SoundStyleDef>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::EffectStyleDef>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TextStyleDef>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TeamIconStyleDef>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RarityStylesDef>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ColorStyleDef>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ButtonStyleDef>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::SoundStyleDef>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::ButtonStyleDef>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::ColorStyleDef>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::TextStyleDef>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RarityStylesDef>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::EffectStyleDef>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::TeamIconStyleDef>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::SoundStyleDef>__get_Count__
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__List<RarityStylesDef>__get_Count__);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::EffectStyleDef>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::ButtonStyleDef>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::TextStyleDef>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::ColorStyleDef>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::TeamIconStyleDef>__get_Count__
-                   );
-    func_?(&TypeInfo__Styles);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>__Add_TextStyle__Styles__TextStyleDef_
+                  ,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__Add_AccessoryRarity__RarityStylesDef_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>__Add_ButtonStyle__Styles__ButtonStyleDef_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>__Add_EffectStyle__Styles__EffectStyleDef_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>__Add_MV__WorldObject__MVTeam__Styles__TeamIconStyleDef_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__Add_ColorStyle__Styles__ColorStyleDef_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__Add_SoundStyle__UnityEngine__AudioSource_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>__Dictionary_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>__Dictionary_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__Dictionary_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>__Dictionary_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__Dictionary_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__Dictionary_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>__Dictionary_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::EffectStyleDef>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ColorStyleDef>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TextStyleDef>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RarityStylesDef>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TeamIconStyleDef>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ButtonStyleDef>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::SoundStyleDef>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TeamIconStyleDef>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::EffectStyleDef>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TextStyleDef>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ColorStyleDef>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ButtonStyleDef>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RarityStylesDef>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::SoundStyleDef>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::SoundStyleDef>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::EffectStyleDef>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TextStyleDef>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TeamIconStyleDef>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RarityStylesDef>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ColorStyleDef>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ButtonStyleDef>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Styles::SoundStyleDef>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Styles::ButtonStyleDef>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Styles::ColorStyleDef>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Styles::TextStyleDef>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<RarityStylesDef>__GetEnumerator__)
+    ;
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Styles::EffectStyleDef>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Styles::TeamIconStyleDef>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Styles::SoundStyleDef>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<RarityStylesDef>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Styles::EffectStyleDef>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Styles::ButtonStyleDef>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<Styles::TextStyleDef>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Styles::ColorStyleDef>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Styles::TeamIconStyleDef>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Styles);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
+  LStack_1._list = (List_1_System_Object_ *)0x0;
+  LStack_1._index = 0;
+  LStack_1._version = 0;
+  LStack_1._current = (Object *)0x0;
+  LStack_2._list = (List_1_System_Object_ *)0x0;
+  LStack_2._index = 0;
+  LStack_2._version = 0;
+  LStack_2._current = (Object *)0x0;
+  LStack_3._list = (List_1_System_Object_ *)0x0;
+  LStack_3._index = 0;
+  LStack_3._version = 0;
+  LStack_3._current = (Object *)0x0;
+  LStack_4._list = (List_1_System_Object_ *)0x0;
+  LStack_4._index = 0;
+  LStack_4._version = 0;
+  LStack_4._current = (Object *)0x0;
+  LStack_5._list = (List_1_System_Object_ *)0x0;
+  LStack_5._index = 0;
+  LStack_5._version = 0;
+  LStack_5._current = (Object *)0x0;
   LStack_6._list = (List_1_System_Object_ *)0x0;
   LStack_6._index = 0;
   LStack_6._version = 0;
   LStack_6._current = (Object *)0x0;
-  LStack_7._list = (List_1_System_Object_ *)0x0;
-  LStack_7._index = 0;
-  LStack_7._version = 0;
-  LStack_7._current = (Object *)0x0;
-  LStack_8._list = (List_1_System_Object_ *)0x0;
-  LStack_8._index = 0;
-  LStack_8._version = 0;
-  LStack_8._current = (Object *)0x0;
-  LStack_9._list = (List_1_System_Object_ *)0x0;
-  LStack_9._index = 0;
-  LStack_9._version = 0;
-  LStack_9._current = (Object *)0x0;
-  LStack_10._list = (List_1_System_Object_ *)0x0;
-  LStack_10._index = 0;
-  LStack_10._version = 0;
-  LStack_10._current = (Object *)0x0;
-  LStack_11._list = (List_1_System_Object_ *)0x0;
-  LStack_11._index = 0;
-  LStack_11._version = 0;
-  LStack_11._current = (Object *)0x0;
-  LStack_12._list = (List_1_System_Object_ *)0x0;
-  LStack_12._index = 0;
-  LStack_12._version = 0;
-  LStack_12._current = (Object *)0x0;
-  if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Styles);
+  if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__Styles);
   }
   if (TypeInfo__Styles->static_fields->isInitialized != 0) {
-code_?:
-    *unaff_FS_OFFSET = uStack_3;
     return;
   }
-  pLVar13 = (this->fields).buttonStyles;
-  if (pLVar13 != (List_1_Styles_ButtonStyleDef_ *)0x0) {
-    iVar14 = (pLVar13->fields)._size;
-    LStack_15._current =
-         (RegexCharClass_SingleRange)
-         func_?(
-                        TypeInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>
-                        );
-    RVar16 = (RegexCharClass_SingleRange)
-             MethodInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>__Dictionary_int_
-    ;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object___ctor_3
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)LStack_15._current,iVar14,
-               MethodInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>__Dictionary_int_
-              );
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    TypeInfo__Styles->static_fields->buttonStylesDictionary =
-         (Dictionary_2_ButtonStyle_Styles_ButtonStyleDef_ *)LStack_15._current;
-    func_?();
-    pLVar17 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-             (this->fields).buttonStyles;
-    if (pLVar17 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      pLVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                          (&LStack_15,pLVar17,
-                           MethodInfo__System__Collections__Generic__List<Styles::ButtonStyleDef>__GetEnumerator__
-                          );
-      LStack_6._list = (List_1_System_Object_ *)pLVar18->_list;
-      LStack_6._index = pLVar18->_index;
-      LStack_6._version = pLVar18->_version;
-      LStack_6._current = *(Object **)&pLVar18->_current;
-      LStack_15._version = 0;
-      uStack_1 = 1;
-      LStack_15._current = (RegexCharClass_SingleRange)&LStack_6;
-      while( true ) {
-        bVar19 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-                 List_1_T_Enumerator_System_Object__MoveNext
-                           (&LStack_6,
-                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ButtonStyleDef>__MoveNext__
+  pLVar7 = (this->fields).buttonStyles;
+  if (pLVar7 != (List_1_Styles_ButtonStyleDef_ *)0x0) {
+    iVar8 = (pLVar7->fields)._size;
+    pDVar9 = (Dictionary_2_ButtonStyle_Styles_ButtonStyleDef_ *)
+              FUN_?(
+                           TypeInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>
                            );
-        RVar20 = (RegexCharClass_SingleRange)LStack_6._current;
-        if (bVar19 == 0) break;
-        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__Styles);
+    FUN_?(pDVar9,iVar8,0,
+                  MethodInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>__Dictionary_int_
+                  ->klass->rgctx_data->rgctxDataDummy);
+    if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__Styles);
+    }
+    TypeInfo__Styles->static_fields->buttonStylesDictionary = pDVar9;
+    if (iRam_? != 0) {
+      uVar10 = (uint)((ulonglong)&TypeInfo__Styles->static_fields->buttonStylesDictionary >> 0xc);
+      lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+        puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+        LOCK();
+        bVar14 = uVar12 == *puVar13;
+        if (bVar14) {
+          *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
         }
-        this_00 = TypeInfo__Styles->static_fields->buttonStylesDictionary;
-        if ((RVar20 == (RegexCharClass_SingleRange)0x0) ||
-           (this_00 == (Dictionary_2_ButtonStyle_Styles_ButtonStyleDef_ *)0x0))
-        goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-        Dictionary_2_System_Int32Enum_System_Object__Add
-                  ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,
-                   (Int32Enum__Enum)((MethodInfo *)((int)RVar20 + 0x60))->methodPointer,
-                   (Object *)RVar20,
-                   MethodInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>__Add_ButtonStyle__Styles__ButtonStyleDef_
-                  );
-        RVar16 = RVar20;
-      }
-      uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)&LStack_6,
-                 (ExceptionArgument__Enum)
-                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ButtonStyleDef>__Dispose__
-                 ,(MethodInfo *)RVar16);
-      uStack_1 = 0xffffffff;
-      pLVar21 = (this->fields).textStyles;
-      if (pLVar21 != (List_1_Styles_TextStyleDef_ *)0x0) {
-        iVar14 = (pLVar21->fields)._size;
-        LStack_15._current =
-             (RegexCharClass_SingleRange)
-             func_?(
-                            TypeInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>
-                            );
-        RVar16 = (RegexCharClass_SingleRange)
-                 MethodInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>__Dictionary_int_
-        ;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-        Dictionary_2_System_Int32Enum_System_Object___ctor_3
-                  ((Dictionary_2_System_Int32Enum_System_Object_ *)LStack_15._current,iVar14,
-                   MethodInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>__Dictionary_int_
-                  );
-        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        TypeInfo__Styles->static_fields->textStylesDictionary =
-             (Dictionary_2_TextStyle_Styles_TextStyleDef_ *)LStack_15._current;
-        func_?();
-        pLVar17 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                 (this->fields).textStyles;
-        if (pLVar17 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-          pLVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                    RegularExpressions::RegexCharClass+SingleRange]::
-                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                              (&LStack_15,pLVar17,
-                               MethodInfo__System__Collections__Generic__List<Styles::TextStyleDef>__GetEnumerator__
-                              );
-          LStack_7._list = (List_1_System_Object_ *)pLVar18->_list;
-          LStack_7._index = pLVar18->_index;
-          LStack_7._version = pLVar18->_version;
-          LStack_7._current = *(Object **)&pLVar18->_current;
-          LStack_15._version = 0;
-          uStack_1 = 4;
-          LStack_15._current = (RegexCharClass_SingleRange)&LStack_7;
-          while( true ) {
-            bVar19 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
-                     Object]::List_1_T_Enumerator_System_Object__MoveNext
-                               (&LStack_7,
-                                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TextStyleDef>__MoveNext__
-                               );
-            RVar20 = (RegexCharClass_SingleRange)LStack_7._current;
-            if (bVar19 == 0) break;
-            if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-              func_?(TypeInfo__Styles);
-            }
-            this_01 = TypeInfo__Styles->static_fields->textStylesDictionary;
-            if ((RVar20 == (RegexCharClass_SingleRange)0x0) ||
-               (this_01 == (Dictionary_2_TextStyle_Styles_TextStyleDef_ *)0x0))
-            goto code_?;
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-            Object]::Dictionary_2_System_Int32Enum_System_Object__Add
-                      ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,
-                       (Int32Enum__Enum)*(InvokerMethod *)((int)RVar20 + 8),(Object *)RVar20,
-                       MethodInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>__Add_TextStyle__Styles__TextStyleDef_
-                      );
-            RVar16 = RVar20;
+        UNLOCK();
+      } while (!bVar14);
+    }
+    pLVar7 = (this->fields).buttonStyles;
+    if (pLVar7 != (List_1_Styles_ButtonStyleDef_ *)0x0) {
+      if (iRam_? != 0) {
+        uVar10 = (uint)((ulonglong)&uStack_15 >> 0xc);
+        lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+          puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+          LOCK();
+          bVar14 = uVar12 == *puVar13;
+          if (bVar14) {
+            *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
           }
-          uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&LStack_7,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TextStyleDef>__Dispose__
-                     ,(MethodInfo *)RVar16);
-          uStack_1 = 0xffffffff;
-          pLVar22 = (this->fields).colorStyles;
-          if (pLVar22 != (List_1_Styles_ColorStyleDef_ *)0x0) {
-            iVar14 = (pLVar22->fields)._size;
-            LStack_15._current =
-                 (RegexCharClass_SingleRange)
-                 func_?(
-                                TypeInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>
-                                );
-            RVar16 = (RegexCharClass_SingleRange)
-                     MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__Dictionary_int_
-            ;
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-            Object]::Dictionary_2_System_Int32Enum_System_Object___ctor_3
-                      ((Dictionary_2_System_Int32Enum_System_Object_ *)LStack_15._current,iVar14,
-                       MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__Dictionary_int_
-                      );
-            if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
+          UNLOCK();
+        } while (!bVar14);
+      }
+      pLStack_16 = (List_1_T_Enumerator_System_Object_ *)
+                    ((ulonglong)(uint)(pLVar7->fields)._version << 0x20);
+      uStack_17 = 0;
+      aLStack_18[0]._8_8_ = pLStack_16;
+      aLStack_18[0]._current = (Object *)0x0;
+      uStack_15 = 0;
+      pLStack_16 = aLStack_18;
+      aLStack_18[0]._list = (List_1_System_Object_ *)pLVar7;
+      while (bVar19 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
+                      Object]::List_1_T_Enumerator_System_Object__MoveNext
+                                (aLStack_18,
+                                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ButtonStyleDef>__MoveNext__
+                                ), pOVar20 = aLStack_18[0]._current, bVar19 != 0) {
+        if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+          FUN_?(TypeInfo__Styles);
+        }
+        pDVar9 = TypeInfo__Styles->static_fields->buttonStylesDictionary;
+        if (pOVar20 == (Object *)0x0) goto code_?;
+        if (pDVar9 == (Dictionary_2_ButtonStyle_Styles_ButtonStyleDef_ *)0x0)
+        goto code_?;
+        pMVar21 = MethodInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>__Add_ButtonStyle__Styles__ButtonStyleDef_
+                 ->klass->rgctx_data[0x22].method;
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+        Dictionary_2_System_Int32Enum_System_Object__TryInsert
+                  ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar9,
+                   *(Int32Enum__Enum *)&pOVar20[6].monitor,pOVar20,
+                   (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pMVar21 >> 8),2),pMVar21);
+      }
+      pLVar22 = (this->fields).textStyles;
+      if (pLVar22 != (List_1_Styles_TextStyleDef_ *)0x0) {
+        iVar8 = (pLVar22->fields)._size;
+        pDVar23 = (Dictionary_2_TextStyle_Styles_TextStyleDef_ *)
+                  FUN_?(
+                               TypeInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>
+                               );
+        FUN_?(pDVar23,iVar8,0,
+                      MethodInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>__Dictionary_int_
+                      ->klass->rgctx_data->rgctxDataDummy);
+        if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+          FUN_?(TypeInfo__Styles);
+        }
+        TypeInfo__Styles->static_fields->textStylesDictionary = pDVar23;
+        if (iRam_? != 0) {
+          uVar10 = (uint)((ulonglong)&TypeInfo__Styles->static_fields->textStylesDictionary >> 0xc);
+          lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+            puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+            LOCK();
+            bVar14 = uVar12 == *puVar13;
+            if (bVar14) {
+              *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
             }
-            TypeInfo__Styles->static_fields->colorStylesDictionary =
-                 (Dictionary_2_ColorStyle_Styles_ColorStyleDef_ *)LStack_15._current;
-            func_?();
-            pLVar17 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                     (this->fields).colorStyles;
-            if (pLVar17 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-            {
-              pLVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                        RegularExpressions::RegexCharClass+SingleRange]::
-                        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                                  (&LStack_15,pLVar17,
-                                   MethodInfo__System__Collections__Generic__List<Styles::ColorStyleDef>__GetEnumerator__
-                                  );
-              LStack_8._list = (List_1_System_Object_ *)pLVar18->_list;
-              LStack_8._index = pLVar18->_index;
-              LStack_8._version = pLVar18->_version;
-              LStack_8._current = *(Object **)&pLVar18->_current;
-              LStack_15._version = 0;
-              uStack_1 = 7;
-              LStack_15._current = (RegexCharClass_SingleRange)&LStack_8;
-              while( true ) {
-                bVar19 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
-                         Object]::List_1_T_Enumerator_System_Object__MoveNext
-                                   (&LStack_8,
-                                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ColorStyleDef>__MoveNext__
-                                   );
-                RVar20 = (RegexCharClass_SingleRange)LStack_8._current;
-                if (bVar19 == 0) break;
-                if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?(TypeInfo__Styles);
-                }
-                this_02 = TypeInfo__Styles->static_fields->colorStylesDictionary;
-                if ((RVar20 == (RegexCharClass_SingleRange)0x0) ||
-                   (this_02 == (Dictionary_2_ColorStyle_Styles_ColorStyleDef_ *)0x0))
-                goto code_?;
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-                Object]::Dictionary_2_System_Int32Enum_System_Object__Add
-                          ((Dictionary_2_System_Int32Enum_System_Object_ *)this_02,
-                           (Int32Enum__Enum)*(InvokerMethod *)((int)RVar20 + 8),(Object *)RVar20,
-                           MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__Add_ColorStyle__Styles__ColorStyleDef_
-                          );
-                RVar16 = RVar20;
+            UNLOCK();
+          } while (!bVar14);
+        }
+        pLVar22 = (this->fields).textStyles;
+        if (pLVar22 != (List_1_Styles_TextStyleDef_ *)0x0) {
+          if (iRam_? != 0) {
+            uVar10 = (uint)((ulonglong)&uStack_15 >> 0xc);
+            lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+            do {
+              uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+              puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+              LOCK();
+              bVar14 = uVar12 == *puVar13;
+              if (bVar14) {
+                *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
               }
-              uStack_1 = 0xffffffff;
-              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                        ((Object *)&LStack_8,
-                         (ExceptionArgument__Enum)
-                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ColorStyleDef>__Dispose__
-                         ,(MethodInfo *)RVar16);
-              uStack_1 = 0xffffffff;
-              pLVar23 = (this->fields).teamIconStyles;
-              if (pLVar23 != (List_1_Styles_TeamIconStyleDef_ *)0x0) {
-                iVar14 = (pLVar23->fields)._size;
-                LStack_15._current =
-                     (RegexCharClass_SingleRange)
-                     func_?(
-                                    TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>
-                                    );
-                RVar16 = (RegexCharClass_SingleRange)
-                         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>__Dictionary_int_
-                ;
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-                Object]::Dictionary_2_System_Int32Enum_System_Object___ctor_3
-                          ((Dictionary_2_System_Int32Enum_System_Object_ *)LStack_15._current,iVar14,
-                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>__Dictionary_int_
-                          );
-                if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?();
+              UNLOCK();
+            } while (!bVar14);
+          }
+          pLStack_16 = (List_1_T_Enumerator_System_Object_ *)
+                        ((ulonglong)(uint)(pLVar22->fields)._version << 0x20);
+          uStack_17 = 0;
+          LStack_1._8_8_ = pLStack_16;
+          LStack_1._current = (Object *)0x0;
+          uStack_15 = 0;
+          pLStack_16 = &LStack_1;
+          LStack_1._list = (List_1_System_Object_ *)pLVar22;
+          while (bVar19 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
+                          Object]::List_1_T_Enumerator_System_Object__MoveNext
+                                    (&LStack_1,
+                                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TextStyleDef>__MoveNext__
+                                    ), pOVar20 = LStack_1._current, bVar19 != 0) {
+            if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+              FUN_?(TypeInfo__Styles);
+            }
+            pDVar23 = TypeInfo__Styles->static_fields->textStylesDictionary;
+            if (pOVar20 == (Object *)0x0) goto code_?;
+            if (pDVar23 == (Dictionary_2_TextStyle_Styles_TextStyleDef_ *)0x0)
+            goto code_?;
+            pMVar21 = MethodInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>__Add_TextStyle__Styles__TextStyleDef_
+                     ->klass->rgctx_data[0x22].method;
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+            Object]::Dictionary_2_System_Int32Enum_System_Object__TryInsert
+                      ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar23,
+                       *(Int32Enum__Enum *)&pOVar20[1].klass,pOVar20,
+                       (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pMVar21 >> 8),2),pMVar21);
+          }
+          pLVar24 = (this->fields).colorStyles;
+          if (pLVar24 != (List_1_Styles_ColorStyleDef_ *)0x0) {
+            iVar8 = (pLVar24->fields)._size;
+            pDVar25 = (Dictionary_2_ColorStyle_Styles_ColorStyleDef_ *)
+                      FUN_?(
+                                   TypeInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>
+                                   );
+            FUN_?(pDVar25,iVar8,0,
+                          MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__Dictionary_int_
+                          ->klass->rgctx_data->rgctxDataDummy);
+            if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+              FUN_?(TypeInfo__Styles);
+            }
+            TypeInfo__Styles->static_fields->colorStylesDictionary = pDVar25;
+            if (iRam_? != 0) {
+              uVar10 = (uint)((ulonglong)&TypeInfo__Styles->static_fields->colorStylesDictionary >>
+                             0xc);
+              lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+              do {
+                uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+                puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+                LOCK();
+                bVar14 = uVar12 == *puVar13;
+                if (bVar14) {
+                  *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
                 }
-                TypeInfo__Styles->static_fields->teamIconStylesDictionary =
-                     (Dictionary_2_MV_WorldObject_MVTeam_Styles_TeamIconStyleDef_ *)
-                     LStack_15._current;
-                func_?();
-                pLVar17 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                         (this->fields).teamIconStyles;
-                if (pLVar17 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                              0x0) {
-                  pLVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                            RegularExpressions::RegexCharClass+SingleRange]::
-                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                                      (&LStack_15,pLVar17,
-                                       MethodInfo__System__Collections__Generic__List<Styles::TeamIconStyleDef>__GetEnumerator__
-                                      );
-                  LStack_9._list = (List_1_System_Object_ *)pLVar18->_list;
-                  LStack_9._index = pLVar18->_index;
-                  LStack_9._version = pLVar18->_version;
-                  LStack_9._current = *(Object **)&pLVar18->_current;
-                  LStack_15._version = 0;
-                  uStack_1 = 10;
-                  LStack_15._current = (RegexCharClass_SingleRange)&LStack_9;
-                  while( true ) {
-                    bVar19 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System
-                             ::Object]::List_1_T_Enumerator_System_Object__MoveNext
-                                       (&LStack_9,
-                                        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TeamIconStyleDef>__MoveNext__
-                                       );
-                    RVar20 = (RegexCharClass_SingleRange)LStack_9._current;
-                    if (bVar19 == 0) break;
-                    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-                      func_?(TypeInfo__Styles);
-                    }
-                    this_03 = TypeInfo__Styles->static_fields->teamIconStylesDictionary;
-                    if ((RVar20 == (RegexCharClass_SingleRange)0x0) ||
-                       (this_03 ==
-                        (Dictionary_2_MV_WorldObject_MVTeam_Styles_TeamIconStyleDef_ *)0x0))
-                    goto code_?;
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add
-                              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_03,
-                               (Int32Enum__Enum)*(InvokerMethod *)((int)RVar20 + 8),(Object *)RVar20
-                               ,
-                               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>__Add_MV__WorldObject__MVTeam__Styles__TeamIconStyleDef_
-                              );
-                    RVar16 = RVar20;
+                UNLOCK();
+              } while (!bVar14);
+            }
+            pLVar24 = (this->fields).colorStyles;
+            if (pLVar24 != (List_1_Styles_ColorStyleDef_ *)0x0) {
+              if (iRam_? != 0) {
+                uVar10 = (uint)((ulonglong)&uStack_15 >> 0xc);
+                lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+                do {
+                  uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+                  puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+                  LOCK();
+                  bVar14 = uVar12 == *puVar13;
+                  if (bVar14) {
+                    *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
                   }
-                  uStack_1 = 0xffffffff;
-                  mscorlib.dll::System::ThrowHelper::
-                  ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                            ((Object *)&LStack_9,
-                             (ExceptionArgument__Enum)
-                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TeamIconStyleDef>__Dispose__
-                             ,(MethodInfo *)RVar16);
-                  uStack_1 = 0xffffffff;
-                  pLVar24 = (this->fields).effectStyles;
-                  if (pLVar24 != (List_1_Styles_EffectStyleDef_ *)0x0) {
-                    iVar14 = (pLVar24->fields)._size;
-                    LStack_15._current =
-                         (RegexCharClass_SingleRange)
-                         func_?(
-                                        TypeInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>
-                                        );
-                    RVar16 = (RegexCharClass_SingleRange)
-                             MethodInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>__Dictionary_int_
-                    ;
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object___ctor_3
-                              ((Dictionary_2_System_Int32Enum_System_Object_ *)LStack_15._current,
-                               iVar14,
-                               MethodInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>__Dictionary_int_
-                              );
-                    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-                      func_?();
+                  UNLOCK();
+                } while (!bVar14);
+              }
+              pLStack_16 = (List_1_T_Enumerator_System_Object_ *)
+                            ((ulonglong)(uint)(pLVar24->fields)._version << 0x20);
+              uStack_17 = 0;
+              LStack_2._8_8_ = pLStack_16;
+              LStack_2._current = (Object *)0x0;
+              uStack_15 = 0;
+              pLStack_16 = &LStack_2;
+              LStack_2._list = (List_1_System_Object_ *)pLVar24;
+              while (bVar19 = mscorlib.dll::System::Collections::Generic::
+                              List`1[T]+Enumerator[System::Object]::
+                              List_1_T_Enumerator_System_Object__MoveNext
+                                        (&LStack_2,
+                                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ColorStyleDef>__MoveNext__
+                                        ), pOVar20 = LStack_2._current, bVar19 != 0) {
+                if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+                  FUN_?(TypeInfo__Styles);
+                }
+                pDVar25 = TypeInfo__Styles->static_fields->colorStylesDictionary;
+                if (pOVar20 == (Object *)0x0) goto code_?;
+                if (pDVar25 == (Dictionary_2_ColorStyle_Styles_ColorStyleDef_ *)0x0)
+                goto code_?;
+                pMVar21 = MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__Add_ColorStyle__Styles__ColorStyleDef_
+                         ->klass->rgctx_data[0x22].method;
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                Object]::Dictionary_2_System_Int32Enum_System_Object__TryInsert
+                          ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar25,
+                           *(Int32Enum__Enum *)&pOVar20[1].klass,pOVar20,
+                           (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pMVar21 >> 8),2),
+                           pMVar21);
+              }
+              pLVar26 = (this->fields).teamIconStyles;
+              if (pLVar26 != (List_1_Styles_TeamIconStyleDef_ *)0x0) {
+                iVar8 = (pLVar26->fields)._size;
+                pDVar27 = (Dictionary_2_MV_WorldObject_MVTeam_Styles_TeamIconStyleDef_ *)
+                          FUN_?(
+                                       TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>
+                                       );
+                FUN_?(pDVar27,iVar8,0,
+                              MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>__Dictionary_int_
+                              ->klass->rgctx_data->rgctxDataDummy);
+                if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+                  FUN_?(TypeInfo__Styles);
+                }
+                TypeInfo__Styles->static_fields->teamIconStylesDictionary = pDVar27;
+                if (iRam_? != 0) {
+                  uVar10 = (uint)((ulonglong)
+                                  &TypeInfo__Styles->static_fields->teamIconStylesDictionary >> 0xc)
+                  ;
+                  lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+                  do {
+                    uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+                    puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+                    LOCK();
+                    bVar14 = uVar12 == *puVar13;
+                    if (bVar14) {
+                      *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
                     }
-                    TypeInfo__Styles->static_fields->effectStylesDictionary =
-                         (Dictionary_2_EffectStyle_Styles_EffectStyleDef_ *)LStack_15._current;
-                    func_?();
-                    pLVar17 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                             (this->fields).effectStyles;
-                    if (pLVar17 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                   *)0x0) {
-                      pLVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                                RegularExpressions::RegexCharClass+SingleRange]::
-                                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                                          (&LStack_15,pLVar17,
-                                           MethodInfo__System__Collections__Generic__List<Styles::EffectStyleDef>__GetEnumerator__
-                                          );
-                      LStack_10._list = (List_1_System_Object_ *)pLVar18->_list;
-                      LStack_10._index = pLVar18->_index;
-                      LStack_10._version = pLVar18->_version;
-                      LStack_10._current = *(Object **)&pLVar18->_current;
-                      LStack_15._version = 0;
-                      uStack_1 = 0xd;
-                      LStack_15._current = (RegexCharClass_SingleRange)&LStack_10;
-                      while( true ) {
-                        bVar19 = mscorlib.dll::System::Collections::Generic::
-                                 List`1[T]+Enumerator[System::Object]::
-                                 List_1_T_Enumerator_System_Object__MoveNext
-                                           (&LStack_10,
-                                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::EffectStyleDef>__MoveNext__
-                                           );
-                        RVar20 = (RegexCharClass_SingleRange)LStack_10._current;
-                        if (bVar19 == 0) break;
-                        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-                          func_?(TypeInfo__Styles);
-                        }
-                        this_04 = TypeInfo__Styles->static_fields->effectStylesDictionary;
-                        if ((RVar20 == (RegexCharClass_SingleRange)0x0) ||
-                           (this_04 == (Dictionary_2_EffectStyle_Styles_EffectStyleDef_ *)0x0))
-                        goto code_?;
-                        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                        Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add
-                                  ((Dictionary_2_System_Int32Enum_System_Object_ *)this_04,
-                                   (Int32Enum__Enum)*(InvokerMethod *)((int)RVar20 + 8),
-                                   (Object *)RVar20,
-                                   MethodInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>__Add_EffectStyle__Styles__EffectStyleDef_
-                                  );
-                        RVar16 = RVar20;
+                    UNLOCK();
+                  } while (!bVar14);
+                }
+                pLVar26 = (this->fields).teamIconStyles;
+                if (pLVar26 != (List_1_Styles_TeamIconStyleDef_ *)0x0) {
+                  if (iRam_? != 0) {
+                    uVar10 = (uint)((ulonglong)&uStack_15 >> 0xc);
+                    lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+                    do {
+                      uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+                      puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+                      LOCK();
+                      bVar14 = uVar12 == *puVar13;
+                      if (bVar14) {
+                        *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
                       }
-                      uStack_1 = 0xffffffff;
-                      mscorlib.dll::System::ThrowHelper::
-                      ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                                ((Object *)&LStack_10,
-                                 (ExceptionArgument__Enum)
-                                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::EffectStyleDef>__Dispose__
-                                 ,(MethodInfo *)RVar16);
-                      uStack_1 = 0xffffffff;
-                      pLVar25 = (this->fields).soundStyles;
-                      if (pLVar25 != (List_1_Styles_SoundStyleDef_ *)0x0) {
-                        iVar14 = (pLVar25->fields)._size;
-                        LStack_15._current =
-                             (RegexCharClass_SingleRange)
-                             func_?(
-                                            TypeInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>
-                                            );
-                        method_00 = 
-                        MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__Dictionary_int_
-                        ;
+                      UNLOCK();
+                    } while (!bVar14);
+                  }
+                  pLStack_16 = (List_1_T_Enumerator_System_Object_ *)
+                                ((ulonglong)(uint)(pLVar26->fields)._version << 0x20);
+                  uStack_17 = 0;
+                  LStack_3._8_8_ = pLStack_16;
+                  LStack_3._current = (Object *)0x0;
+                  uStack_15 = 0;
+                  pLStack_16 = &LStack_3;
+                  LStack_3._list = (List_1_System_Object_ *)pLVar26;
+                  while (bVar19 = mscorlib.dll::System::Collections::Generic::
+                                  List`1[T]+Enumerator[System::Object]::
+                                  List_1_T_Enumerator_System_Object__MoveNext
+                                            (&LStack_3,
+                                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TeamIconStyleDef>__MoveNext__
+                                            ), pOVar20 = LStack_3._current, bVar19 != 0) {
+                    if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+                      FUN_?(TypeInfo__Styles);
+                    }
+                    pDVar27 = TypeInfo__Styles->static_fields->teamIconStylesDictionary;
+                    if (pOVar20 == (Object *)0x0) goto code_?;
+                    if (pDVar27 ==
+                        (Dictionary_2_MV_WorldObject_MVTeam_Styles_TeamIconStyleDef_ *)0x0)
+                    goto code_?;
+                    pMVar21 = MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>__Add_MV__WorldObject__MVTeam__Styles__TeamIconStyleDef_
+                             ->klass->rgctx_data[0x22].method;
+                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Int32Enum,System::Object]::
+                    Dictionary_2_System_Int32Enum_System_Object__TryInsert
+                              ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar27,
+                               *(Int32Enum__Enum *)&pOVar20[1].klass,pOVar20,
+                               (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pMVar21 >> 8),2),
+                               pMVar21);
+                  }
+                  pLVar28 = (this->fields).effectStyles;
+                  if (pLVar28 != (List_1_Styles_EffectStyleDef_ *)0x0) {
+                    iVar8 = (pLVar28->fields)._size;
+                    pDVar29 = (Dictionary_2_EffectStyle_Styles_EffectStyleDef_ *)
+                              FUN_?(
+                                           TypeInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>
+                                           );
+                    FUN_?(pDVar29,iVar8,0,
+                                  MethodInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>__Dictionary_int_
+                                  ->klass->rgctx_data->rgctxDataDummy);
+                    if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+                      FUN_?(TypeInfo__Styles);
+                    }
+                    TypeInfo__Styles->static_fields->effectStylesDictionary = pDVar29;
+                    if (iRam_? != 0) {
+                      uVar10 = (uint)((ulonglong)
+                                      &TypeInfo__Styles->static_fields->effectStylesDictionary >>
+                                     0xc);
+                      lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+                      do {
+                        uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+                        puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+                        LOCK();
+                        bVar14 = uVar12 == *puVar13;
+                        if (bVar14) {
+                          *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
+                        }
+                        UNLOCK();
+                      } while (!bVar14);
+                    }
+                    pLVar28 = (this->fields).effectStyles;
+                    if (pLVar28 != (List_1_Styles_EffectStyleDef_ *)0x0) {
+                      if (iRam_? != 0) {
+                        uVar10 = (uint)((ulonglong)&uStack_15 >> 0xc);
+                        lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+                        do {
+                          uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+                          puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+                          LOCK();
+                          bVar14 = uVar12 == *puVar13;
+                          if (bVar14) {
+                            *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
+                          }
+                          UNLOCK();
+                        } while (!bVar14);
+                      }
+                      pLStack_16 = (List_1_T_Enumerator_System_Object_ *)
+                                    ((ulonglong)(uint)(pLVar28->fields)._version << 0x20);
+                      uStack_17 = 0;
+                      LStack_4._8_8_ = pLStack_16;
+                      LStack_4._current = (Object *)0x0;
+                      uStack_15 = 0;
+                      pLStack_16 = &LStack_4;
+                      LStack_4._list = (List_1_System_Object_ *)pLVar28;
+                      while (bVar19 = mscorlib.dll::System::Collections::Generic::
+                                      List`1[T]+Enumerator[System::Object]::
+                                      List_1_T_Enumerator_System_Object__MoveNext
+                                                (&LStack_4,
+                                                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::EffectStyleDef>__MoveNext__
+                                                ), pOVar20 = LStack_4._current, bVar19 != 0) {
+                        if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+                          FUN_?(TypeInfo__Styles);
+                        }
+                        pDVar29 = TypeInfo__Styles->static_fields->effectStylesDictionary;
+                        if (pOVar20 == (Object *)0x0) goto code_?;
+                        if (pDVar29 == (Dictionary_2_EffectStyle_Styles_EffectStyleDef_ *)0x0)
+                        goto code_?;
+                        pMVar21 = MethodInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>__Add_EffectStyle__Styles__EffectStyleDef_
+                                 ->klass->rgctx_data[0x22].method;
                         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                         Int32Enum,System::Object]::
-                        Dictionary_2_System_Int32Enum_System_Object___ctor_3
-                                  ((Dictionary_2_System_Int32Enum_System_Object_ *)
-                                   LStack_15._current,iVar14,
-                                   MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__Dictionary_int_
-                                  );
-                        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-                          func_?();
-                        }
-                        TypeInfo__Styles->static_fields->soundStylesDictionary =
-                             (Dictionary_2_SoundStyle_UnityEngine_AudioSource_ *)LStack_15._current;
-                        func_?();
-                        pLVar17 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                  *)(this->fields).soundStyles;
-                        if (pLVar17 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                       *)0x0) {
-                          pLVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text
-                                    ::RegularExpressions::RegexCharClass+SingleRange]::
-                                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                                              (&LStack_15,pLVar17,
-                                               MethodInfo__System__Collections__Generic__List<Styles::SoundStyleDef>__GetEnumerator__
-                                              );
-                          LStack_11._list = (List_1_System_Object_ *)pLVar18->_list;
-                          LStack_11._index = pLVar18->_index;
-                          LStack_11._version = pLVar18->_version;
-                          LStack_11._current = *(Object **)&pLVar18->_current;
-                          LStack_15._version = 0;
-                          uStack_1 = 0x10;
-                          LStack_15._current = (RegexCharClass_SingleRange)&LStack_11;
-                          while( true ) {
-                            bVar19 = mscorlib.dll::System::Collections::Generic::
-                                     List`1[T]+Enumerator[System::Object]::
-                                     List_1_T_Enumerator_System_Object__MoveNext
-                                               (&LStack_11,
-                                                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::SoundStyleDef>__MoveNext__
+                        Dictionary_2_System_Int32Enum_System_Object__TryInsert
+                                  ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar29,
+                                   *(Int32Enum__Enum *)&pOVar20[1].klass,pOVar20,
+                                   (InsertionBehavior__Enum)
+                                   CONCAT71((int7)((ulonglong)pMVar21 >> 8),2),pMVar21);
+                      }
+                      pLVar30 = (this->fields).soundStyles;
+                      if (pLVar30 != (List_1_Styles_SoundStyleDef_ *)0x0) {
+                        iVar8 = (pLVar30->fields)._size;
+                        pDVar31 = (Dictionary_2_SoundStyle_UnityEngine_AudioSource_ *)
+                                  FUN_?(
+                                               TypeInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>
                                                );
-                            pOVar26 = LStack_11._current;
-                            if (bVar19 == 0) break;
-                            if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-                              func_?(TypeInfo__Styles);
+                        FUN_?(pDVar31,iVar8,0,
+                                      MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__Dictionary_int_
+                                      ->klass->rgctx_data->rgctxDataDummy);
+                        if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+                          FUN_?(TypeInfo__Styles);
+                        }
+                        TypeInfo__Styles->static_fields->soundStylesDictionary = pDVar31;
+                        if (iRam_? != 0) {
+                          uVar10 = (uint)((ulonglong)
+                                          &TypeInfo__Styles->static_fields->soundStylesDictionary >>
+                                         0xc);
+                          lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+                          do {
+                            uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+                            puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+                            LOCK();
+                            bVar14 = uVar12 == *puVar13;
+                            if (bVar14) {
+                              *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
                             }
-                            this_05 = TypeInfo__Styles->static_fields->soundStylesDictionary;
-                            if (((RegexCharClass_SingleRange)pOVar26 ==
-                                 (RegexCharClass_SingleRange)0x0) ||
-                               (this_05 == (Dictionary_2_SoundStyle_UnityEngine_AudioSource_ *)0x0))
-                            goto code_?;
-                            method_00 = *(MethodInfo **)((int)pOVar26 + 0xc);
-                            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                            Int32Enum,System::Object]::
-                            Dictionary_2_System_Int32Enum_System_Object__Add
-                                      ((Dictionary_2_System_Int32Enum_System_Object_ *)this_05,
-                                       *(Int32Enum__Enum *)((int)pOVar26 + 8),(Object *)method_00,
-                                       MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__Add_SoundStyle__UnityEngine__AudioSource_
-                                      );
+                            UNLOCK();
+                          } while (!bVar14);
+                        }
+                        pLVar30 = (this->fields).soundStyles;
+                        if (pLVar30 != (List_1_Styles_SoundStyleDef_ *)0x0) {
+                          if (iRam_? != 0) {
+                            uVar10 = (uint)((ulonglong)&uStack_15 >> 0xc);
+                            lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+                            do {
+                              uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+                              puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+                              LOCK();
+                              bVar14 = uVar12 == *puVar13;
+                              if (bVar14) {
+                                *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
+                              }
+                              UNLOCK();
+                            } while (!bVar14);
                           }
-                          uStack_1 = 0xffffffff;
-                          mscorlib.dll::System::ThrowHelper::
-                          ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                                    ((Object *)&LStack_11,
-                                     (ExceptionArgument__Enum)
-                                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::SoundStyleDef>__Dispose__
-                                     ,method_00);
-                          uStack_1 = 0xffffffff;
-                          pLVar27 = (this->fields).rarityStyles;
-                          if (pLVar27 != (List_1_RarityStylesDef_ *)0x0) {
-                            iVar14 = (pLVar27->fields)._size;
-                            LStack_15._current =
-                                 (RegexCharClass_SingleRange)
-                                 func_?(
-                                                TypeInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>
-                                                );
+                          pLStack_16 = (List_1_T_Enumerator_System_Object_ *)
+                                        ((ulonglong)(uint)(pLVar30->fields)._version << 0x20);
+                          uStack_17 = 0;
+                          LStack_5._8_8_ = pLStack_16;
+                          LStack_5._current = (Object *)0x0;
+                          uStack_15 = 0;
+                          pLStack_16 = &LStack_5;
+                          LStack_5._list = (List_1_System_Object_ *)pLVar30;
+                          while (bVar19 = mscorlib.dll::System::Collections::Generic::
+                                          List`1[T]+Enumerator[System::Object]::
+                                          List_1_T_Enumerator_System_Object__MoveNext
+                                                    (&LStack_5,
+                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::SoundStyleDef>__MoveNext__
+                                                  ), pOVar20 = LStack_5._current, bVar19 != 0) {
+                            if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+                              FUN_?(TypeInfo__Styles);
+                            }
+                            pDVar31 = TypeInfo__Styles->static_fields->soundStylesDictionary;
+                            if (pOVar20 == (Object *)0x0) goto code_?;
+                            if (pDVar31 == (Dictionary_2_SoundStyle_UnityEngine_AudioSource_ *)0x0)
+                            goto code_?;
+                            pMVar21 = MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__Add_SoundStyle__UnityEngine__AudioSource_
+                                     ->klass->rgctx_data[0x22].method;
                             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                             Int32Enum,System::Object]::
-                            Dictionary_2_System_Int32Enum_System_Object___ctor_3
-                                      ((Dictionary_2_System_Int32Enum_System_Object_ *)
-                                       LStack_15._current,iVar14,
-                                       MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__Dictionary_int_
-                                      );
-                            if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-                              func_?();
+                            Dictionary_2_System_Int32Enum_System_Object__TryInsert
+                                      ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar31,
+                                       *(Int32Enum__Enum *)&pOVar20[1].klass,
+                                       (Object *)pOVar20[1].monitor,
+                                       (InsertionBehavior__Enum)
+                                       CONCAT71((int7)((ulonglong)pMVar21 >> 8),2),pMVar21);
+                          }
+                          pLVar32 = (this->fields).rarityStyles;
+                          if (pLVar32 != (List_1_RarityStylesDef_ *)0x0) {
+                            iVar8 = (pLVar32->fields)._size;
+                            pDVar33 = (Dictionary_2_AccessoryRarity_RarityStylesDef_ *)
+                                      FUN_?(
+                                                  TypeInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>
+                                                  );
+                            FUN_?(pDVar33,iVar8,0,
+                                          MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__Dictionary_int_
+                                          ->klass->rgctx_data->rgctxDataDummy);
+                            if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+                              FUN_?(TypeInfo__Styles);
                             }
                             TypeInfo__Styles->static_fields->accessoryRarityColorsDictionary =
-                                 (Dictionary_2_AccessoryRarity_RarityStylesDef_ *)LStack_15._current
-                            ;
-                            func_?();
-                            pLVar17 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                      *)(this->fields).rarityStyles;
-                            if (pLVar17 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                           *)0x0) {
-                              pLVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::
-                                        Text::RegularExpressions::RegexCharClass+SingleRange]::
-                                        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                                                  (&LStack_15,pLVar17,
-                                                                                                      
-                                                  MethodInfo__System__Collections__Generic__List<RarityStylesDef>__GetEnumerator__
-                                                  );
-                              LStack_12._list = (List_1_System_Object_ *)pLVar18->_list;
-                              LStack_12._index = pLVar18->_index;
-                              LStack_12._version = pLVar18->_version;
-                              LStack_12._current = *(Object **)&pLVar18->_current;
-                              LStack_15._version = 0;
-                              uStack_1 = 0x13;
-                              LStack_15._current = (RegexCharClass_SingleRange)&LStack_12;
+                                 pDVar33;
+                            if (iRam_? != 0) {
+                              uVar10 = (uint)((ulonglong)
+                                              &TypeInfo__Styles->static_fields->
+                                               accessoryRarityColorsDictionary >> 0xc);
+                              lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+                              do {
+                                uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+                                puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+                                LOCK();
+                                bVar14 = uVar12 == *puVar13;
+                                if (bVar14) {
+                                  *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
+                                }
+                                UNLOCK();
+                              } while (!bVar14);
+                            }
+                            pLVar32 = (this->fields).rarityStyles;
+                            if (pLVar32 != (List_1_RarityStylesDef_ *)0x0) {
+                              if (iRam_? != 0) {
+                                uVar10 = (uint)((ulonglong)&uStack_15 >> 0xc);
+                                lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+                                do {
+                                  uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+                                  puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+                                  LOCK();
+                                  bVar14 = uVar12 == *puVar13;
+                                  if (bVar14) {
+                                    *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
+                                  }
+                                  UNLOCK();
+                                } while (!bVar14);
+                              }
+                              pLStack_16 = (List_1_T_Enumerator_System_Object_ *)
+                                            ((ulonglong)(uint)(pLVar32->fields)._version << 0x20);
+                              uStack_17 = 0;
+                              LStack_6._8_8_ = pLStack_16;
+                              LStack_6._current = (Object *)0x0;
+                              uStack_15 = 0;
+                              pLStack_16 = &LStack_6;
+                              LStack_6._list = (List_1_System_Object_ *)pLVar32;
                               while( true ) {
                                 bVar19 = mscorlib.dll::System::Collections::Generic::
                                          List`1[T]+Enumerator[System::Object]::
                                          List_1_T_Enumerator_System_Object__MoveNext
-                                                   (&LStack_12,
+                                                   (&LStack_6,
                                                                                                         
                                                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RarityStylesDef>__MoveNext__
                                                   );
-                                pOVar26 = LStack_12._current;
-                                if (bVar19 == 0) break;
-                                if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-                                  func_?();
+                                pOVar20 = LStack_6._current;
+                                if (bVar19 == 0) {
+                                  if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+                                    FUN_?(TypeInfo__Styles);
+                                  }
+                                  TypeInfo__Styles->static_fields->isInitialized = 1;
+                                  return;
                                 }
-                                this_06 = TypeInfo__Styles->static_fields->
+                                if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+                                  FUN_?(TypeInfo__Styles);
+                                }
+                                pDVar33 = TypeInfo__Styles->static_fields->
                                           accessoryRarityColorsDictionary;
-                                if (((RegexCharClass_SingleRange)pOVar26 ==
-                                     (RegexCharClass_SingleRange)0x0) ||
-                                   (this_06 == (Dictionary_2_AccessoryRarity_RarityStylesDef_ *)0x0)
-                                   ) goto code_?;
+                                if (pOVar20 == (Object *)0x0) break;
+                                if (pDVar33 == (Dictionary_2_AccessoryRarity_RarityStylesDef_ *)0x0)
+                                goto code_?;
+                                pMVar21 = MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__Add_AccessoryRarity__RarityStylesDef_
+                                         ->klass->rgctx_data[0x22].method;
                                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                                 Int32Enum,System::Object]::
-                                Dictionary_2_System_Int32Enum_System_Object__Add
-                                          ((Dictionary_2_System_Int32Enum_System_Object_ *)this_06,
-                                           *(Int32Enum__Enum *)((int)pOVar26 + 8),pOVar26,
-                                           MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__Add_AccessoryRarity__RarityStylesDef_
-                                          );
+                                Dictionary_2_System_Int32Enum_System_Object__TryInsert
+                                          ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar33,
+                                           *(Int32Enum__Enum *)&pOVar20[1].klass,pOVar20,
+                                           (InsertionBehavior__Enum)
+                                           CONCAT71((int7)((ulonglong)pMVar21 >> 8),2),pMVar21);
                               }
-                              uStack_1 = 0xffffffff;
-                              mscorlib.dll::System::ThrowHelper::
-                              ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                                        ((Object *)&LStack_12,
-                                         (ExceptionArgument__Enum)
-                                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RarityStylesDef>__Dispose__
-                                         ,in_stack_28);
-                              uStack_1 = 0xffffffff;
-                              if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-                                func_?();
-                              }
-                              TypeInfo__Styles->static_fields->isInitialized = 1;
                               goto code_?;
                             }
                           }
@@ -739,16 +873,44 @@ code_?:
       }
     }
   }
+  FUN_?();
 code_?:
-  uVar29 = func_?();
-  uVar29 = func_?(uVar29);
-  uVar29 = func_?(uVar29);
-  uVar29 = func_?(uVar29);
-  uVar29 = func_?(uVar29);
-  uVar29 = func_?(uVar29);
-  func_?(uVar29);
-  pcVar30 = (code *)swi(3);
-  (*pcVar30)();
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+  pcVar34 = (code *)swi(3);
+  (*pcVar34)();
   return;
 }
 
@@ -759,16 +921,173 @@ String * Assembly-CSharp.dll::Styles::Styles_ColorToHex(Color32 color,MethodInfo
 
 {
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_X2);
+    FUN_?(&StringLiteral_X2);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pSVar1 = mscorlib.dll::System::Byte::Byte_ToString_1
-                     ((Byte *)&color,StringLiteral_X2,(MethodInfo *)0x0);
-  str1 = mscorlib.dll::System::Byte::Byte_ToString_1
-                   ((Byte *)((int)&color.rgba + 1),StringLiteral_X2,(MethodInfo *)0x0);
-  str2 = mscorlib.dll::System::Byte::Byte_ToString_1
-                   ((Byte *)((int)&color.rgba + 2),StringLiteral_X2,(MethodInfo *)0x0);
-  pSVar1 = mscorlib.dll::System::String::String_Concat_4(pSVar1,str1,str2,(MethodInfo *)0x0);
+                     ((Byte *)&stack0x00000008,StringLiteral_X2,(MethodInfo *)0x0);
+  pSVar2 = mscorlib.dll::System::Byte::Byte_ToString_1
+                     ((Byte *)&stack0x00000009,StringLiteral_X2,(MethodInfo *)0x0);
+  pSVar3 = mscorlib.dll::System::Byte::Byte_ToString_1
+                     ((Byte *)&stack0x0000000a,StringLiteral_X2,(MethodInfo *)0x0);
+  pSVar4 = pSVar2;
+  pSVar5 = pSVar3;
+  if (((((pSVar1 != (String *)0x0) && ((pSVar1->fields)._stringLength != 0)) &&
+       (pSVar4 = pSVar1, pSVar2 != (String *)0x0)) &&
+      (((pSVar2->fields)._stringLength != 0 && (pSVar5 = pSVar2, pSVar3 != (String *)0x0)))) &&
+     ((pSVar3->fields)._stringLength != 0)) {
+    pSVar4 = (String *)
+             FUN_?((pSVar1->fields)._stringLength + (pSVar2->fields)._stringLength +
+                           (pSVar3->fields)._stringLength,pSVar2,pSVar3,0,unaff_RDI);
+    if (pSVar4 == (String *)0x0) {
+      FUN_?();
+      pcVar6 = (code *)swi(3);
+      pSVar4 = (String *)(*pcVar6)();
+      return pSVar4;
+    }
+    if ((pSVar1->fields)._stringLength <= (pSVar4->fields)._stringLength) {
+      puVar7 = &(pSVar4->fields)._firstChar;
+      puVar8 = &(pSVar1->fields)._firstChar;
+      uVar9 = (pSVar1->fields)._stringLength * 2;
+      if (((ulonglong)((longlong)puVar7 - (longlong)puVar8) < (ulonglong)uVar9) ||
+         ((ulonglong)((longlong)puVar8 - (longlong)puVar7) < (ulonglong)uVar9)) {
+        FUN_?();
+      }
+      else {
+        mscorlib.dll::System::Buffer::Buffer_Memcpy_1
+                  ((uint8_t *)puVar7,(uint8_t *)puVar8,uVar9,(MethodInfo *)0x0);
+      }
+      iVar10 = (pSVar1->fields)._stringLength;
+      if ((pSVar2->fields)._stringLength <= (pSVar4->fields)._stringLength - iVar10) {
+        puVar8 = &(pSVar4->fields)._firstChar + iVar10;
+        puVar7 = &(pSVar2->fields)._firstChar;
+        uVar9 = (pSVar2->fields)._stringLength * 2;
+        if (((ulonglong)((longlong)puVar8 - (longlong)puVar7) < (ulonglong)uVar9) ||
+           ((ulonglong)((longlong)puVar7 - (longlong)puVar8) < (ulonglong)uVar9)) {
+          FUN_?();
+        }
+        else {
+          mscorlib.dll::System::Buffer::Buffer_Memcpy_1
+                    ((uint8_t *)puVar8,(uint8_t *)puVar7,uVar9,(MethodInfo *)0x0);
+        }
+        iVar10 = (pSVar1->fields)._stringLength + (pSVar2->fields)._stringLength;
+        if ((pSVar4->fields)._stringLength - iVar10 < (pSVar3->fields)._stringLength) {
+          uVar11 = func_?(&TypeInfo__System__IndexOutOfRangeException);
+          pIVar12 = (IndexOutOfRangeException *)func_?(uVar11);
+          mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor
+                    (pIVar12,(MethodInfo *)0x0);
+          uVar11 = func_?(&
+                                      MethodInfo__System__String__FillStringChecked_MethodInfo__System__String__int__MethodInfo__System__String_
+                                     );
+          FUN_?(pIVar12,uVar11);
+          pcVar6 = (code *)swi(3);
+          pSVar4 = (String *)(*pcVar6)();
+          return pSVar4;
+        }
+        puVar7 = &(pSVar3->fields)._firstChar;
+        puVar8 = &(pSVar4->fields)._firstChar + iVar10;
+        uVar9 = (pSVar3->fields)._stringLength * 2;
+        if (((ulonglong)((longlong)puVar8 - (longlong)puVar7) < (ulonglong)uVar9) ||
+           ((ulonglong)((longlong)puVar7 - (longlong)puVar8) < (ulonglong)uVar9)) {
+          FUN_?();
+        }
+        else {
+          mscorlib.dll::System::Buffer::Buffer_Memcpy_1
+                    ((uint8_t *)puVar8,(uint8_t *)puVar7,uVar9,(MethodInfo *)0x0);
+        }
+        return pSVar4;
+      }
+      uVar11 = func_?(&TypeInfo__System__IndexOutOfRangeException);
+      pIVar12 = (IndexOutOfRangeException *)func_?(uVar11);
+      mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor
+                (pIVar12,(MethodInfo *)0x0);
+      uVar11 = func_?(&
+                                  MethodInfo__System__String__FillStringChecked_MethodInfo__System__String__int__MethodInfo__System__String_
+                                 );
+      FUN_?(pIVar12,uVar11);
+      pcVar6 = (code *)swi(3);
+      pSVar4 = (String *)(*pcVar6)();
+      return pSVar4;
+    }
+    uVar11 = func_?(&TypeInfo__System__IndexOutOfRangeException);
+    pIVar12 = (IndexOutOfRangeException *)func_?(uVar11);
+    mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor
+              (pIVar12,(MethodInfo *)0x0);
+    uVar11 = func_?(&
+                                MethodInfo__System__String__FillStringChecked_MethodInfo__System__String__int__MethodInfo__System__String_
+                               );
+    FUN_?(pIVar12,uVar11);
+    pcVar6 = (code *)swi(3);
+    pSVar4 = (String *)(*pcVar6)();
+    return pSVar4;
+  }
+  if ((pSVar4 == (String *)0x0) || ((pSVar4->fields)._stringLength == 0)) {
+    if ((pSVar5 != (String *)0x0) && ((pSVar5->fields)._stringLength != 0)) {
+      return pSVar5;
+    }
+    return (String *)**(undefined8 **)(lRam_? + 0xb8);
+  }
+  if ((pSVar5 == (String *)0x0) || ((pSVar5->fields)._stringLength == 0)) {
+    return pSVar4;
+  }
+  iVar10 = (pSVar4->fields)._stringLength;
+  pSVar1 = (String *)FUN_?((pSVar5->fields)._stringLength + iVar10,pSVar5,0,0,unaff_RDI);
+  if (pSVar1 == (String *)0x0) {
+    FUN_?();
+    pcVar6 = (code *)swi(3);
+    pSVar4 = (String *)(*pcVar6)();
+    return pSVar4;
+  }
+  if ((pSVar1->fields)._stringLength < (pSVar4->fields)._stringLength) {
+    uVar11 = func_?(&TypeInfo__System__IndexOutOfRangeException);
+    pIVar12 = (IndexOutOfRangeException *)func_?(uVar11);
+    mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor
+              (pIVar12,(MethodInfo *)0x0);
+    uVar11 = func_?(&
+                                MethodInfo__System__String__FillStringChecked_MethodInfo__System__String__int__MethodInfo__System__String_
+                               );
+    FUN_?(pIVar12,uVar11);
+    pcVar6 = (code *)swi(3);
+    pSVar4 = (String *)(*pcVar6)();
+    return pSVar4;
+  }
+  puVar7 = &(pSVar1->fields)._firstChar;
+  puVar8 = &(pSVar4->fields)._firstChar;
+  uVar9 = (pSVar4->fields)._stringLength * 2;
+  if (((ulonglong)((longlong)puVar7 - (longlong)puVar8) < (ulonglong)uVar9) ||
+     ((ulonglong)((longlong)puVar8 - (longlong)puVar7) < (ulonglong)uVar9)) {
+    FUN_?();
+  }
+  else {
+    mscorlib.dll::System::Buffer::Buffer_Memcpy_1
+              ((uint8_t *)puVar7,(uint8_t *)puVar8,uVar9,(MethodInfo *)0x0);
+  }
+  if ((pSVar1->fields)._stringLength - iVar10 < (pSVar5->fields)._stringLength) {
+    uVar11 = func_?(&TypeInfo__System__IndexOutOfRangeException);
+    pIVar12 = (IndexOutOfRangeException *)func_?(uVar11);
+    mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor
+              (pIVar12,(MethodInfo *)0x0);
+    uVar11 = func_?(&
+                                MethodInfo__System__String__FillStringChecked_MethodInfo__System__String__int__MethodInfo__System__String_
+                               );
+    FUN_?(pIVar12,uVar11);
+    pcVar6 = (code *)swi(3);
+    pSVar4 = (String *)(*pcVar6)();
+    return pSVar4;
+  }
+  puVar8 = &(pSVar1->fields)._firstChar + iVar10;
+  puVar7 = &(pSVar5->fields)._firstChar;
+  uVar9 = (pSVar5->fields)._stringLength * 2;
+  if (((ulonglong)((longlong)puVar8 - (longlong)puVar7) < (ulonglong)uVar9) ||
+     ((ulonglong)((longlong)puVar7 - (longlong)puVar8) < (ulonglong)uVar9)) {
+    FUN_?();
+  }
+  else {
+    mscorlib.dll::System::Buffer::Buffer_Memcpy_1
+              ((uint8_t *)puVar8,(uint8_t *)puVar7,uVar9,(MethodInfo *)0x0);
+  }
   return pSVar1;
 }
 
@@ -780,77 +1099,125 @@ Assembly-CSharp.dll::Styles::Styles_GetAccessoryColorsFromLevel(int32_t level,Me
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeRef__AccessoryRarity);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__get_Item_AccessoryRarity_
-                   );
-    func_?(&TypeInfo__System__Enum);
-    func_?(&TypeInfo__Styles);
-    func_?(&TypeInfo__System__Type);
+    FUN_?(&TypeRef__AccessoryRarity);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__get_Item_AccessoryRarity_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Styles);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  handle = TypeRef__AccessoryRarity;
-  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Type);
+  pIVar1 = TypeRef__AccessoryRarity;
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
   }
-  enumType = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                       ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-  if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Enum);
+  plVar2 = (longlong *)0x0;
+  plVar3 = plVar2;
+  if (pIVar1 != (Il2CppType *)0x0) {
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    lVar4 = FUN_?(pIVar1,1);
+    plVar3 = (longlong *)FUN_?(lVar4 + 0x20);
   }
-  this = (MethodInfo *)mscorlib.dll::System::Enum::Enum_GetValues(enumType,(MethodInfo *)0x0);
-  key = 0;
-  if (this != (MethodInfo *)0x0) {
-    for (; iVar1 = mscorlib.dll::System::Array::Array_get_Length((Array *)this,(MethodInfo *)0x0),
-        (int)key < iVar1; key = key + 1) {
-      if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
+  }
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
+  }
+  if (plVar3 == (longlong *)0x0) {
+    uVar5 = func_?(&TypeInfo__System__ArgumentNullException);
+    this_01 = (ArgumentNullException *)func_?(uVar5);
+    paramName = (String *)func_?(&StringLiteral_enumType);
+    mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+              (this_01,paramName,(MethodInfo *)0x0);
+    uVar5 = func_?(&MethodInfo__System__Enum__GetValues_System__Type_);
+    FUN_?(this_01,uVar5);
+    pcVar6 = (code *)swi(3);
+    pRVar7 = (RarityStylesDef *)(*pcVar6)();
+    return pRVar7;
+  }
+  this_00 = (Array *)(**(code **)(*plVar3 + 0x888))(plVar3);
+  if (this_00 != (Array *)0x0) {
+    while( true ) {
+      iVar8 = mscorlib.dll::System::Array::Array_get_Length(this_00,(MethodInfo *)0x0);
+      key = (Int32Enum__Enum)plVar2;
+      if (iVar8 <= (int)key) break;
+      if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__Styles);
       }
-      pDVar2 = TypeInfo__Styles->static_fields->accessoryRarityColorsDictionary;
-      if ((pDVar2 == (Dictionary_2_AccessoryRarity_RarityStylesDef_ *)0x0) ||
-         (this = 
-          MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__get_Item_AccessoryRarity_
-         , pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                              ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar2,key,
-                               MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__get_Item_AccessoryRarity_
-                              ), pOVar3 == (Object *)0x0)) goto code_?;
-      if (level < (int)pOVar3[2].klass) {
-        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        pDVar2 = TypeInfo__Styles->static_fields->accessoryRarityColorsDictionary;
-        if (pDVar2 != (Dictionary_2_AccessoryRarity_RarityStylesDef_ *)0x0) {
-          pRVar4 = (RarityStylesDef *)
-                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
+      this = TypeInfo__Styles->static_fields->accessoryRarityColorsDictionary;
+      if ((this == (Dictionary_2_AccessoryRarity_RarityStylesDef_ *)0x0) ||
+         (pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
                    ::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                             ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar2,key,
+                             ((Dictionary_2_System_Int32Enum_System_Object_ *)this,key,
                               MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__get_Item_AccessoryRarity_
-                             );
-          return pRVar4;
+                             ), pOVar9 == (Object *)0x0)) goto DAT_?;
+      if (level < *(int *)&pOVar9[1].monitor) {
+        if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+          FUN_?(TypeInfo__Styles);
         }
+        this_02 = (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)
+                  TypeInfo__Styles->static_fields->accessoryRarityColorsDictionary;
+        if (this_02 != (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)0x0)
         goto code_?;
+        goto DAT_?;
       }
+      plVar2 = (longlong *)(ulonglong)(key + 1);
     }
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__Styles);
     }
-    pDVar2 = TypeInfo__Styles->static_fields->accessoryRarityColorsDictionary;
-    if (pDVar2 != (Dictionary_2_AccessoryRarity_RarityStylesDef_ *)0x0) {
-      pRVar4 = (RarityStylesDef *)
-               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                         ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar2,4,
-                          MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__get_Item_AccessoryRarity_
-                         );
-      return pRVar4;
+    this_02 = (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)
+              TypeInfo__Styles->static_fields->accessoryRarityColorsDictionary;
+    if (this_02 != (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)0x0) {
+      key = 4;
+code_?:
+      pMVar10 = 
+      MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__get_Item_AccessoryRarity_
+      ;
+      uVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,UnityEngine
+              ::Vector3]::Dictionary_2_System_Int32Enum_UnityEngine_Vector3__FindEntry
+                        (this_02,key,
+                         MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__get_Item_AccessoryRarity_
+                         ->klass->rgctx_data[0x21].method);
+      if ((int)uVar11 < 0) {
+        uVar5 = func_?(pMVar10->klass->rgctx_data,0xe);
+        pOVar9 = (Object *)func_?(uVar5);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowKeyNotFoundException
+                  (pOVar9,(MethodInfo *)0x0);
+        pcVar6 = (code *)swi(3);
+        pRVar7 = (RarityStylesDef *)(*pcVar6)();
+        return pRVar7;
+      }
+      pDVar12 = (this_02->fields)._entries;
+      if (pDVar12 == (Dictionary_2_TKey_TValue_Entry_System_Int32Enum_UnityEngine_Vector3___Array *)
+                    0x0) {
+        FUN_?();
+        pcVar6 = (code *)swi(3);
+        pRVar7 = (RarityStylesDef *)(*pcVar6)();
+        return pRVar7;
+      }
+      if ((uint)pDVar12->max_length <= uVar11) {
+        FUN_?();
+        pcVar6 = (code *)swi(3);
+        pRVar7 = (RarityStylesDef *)(*pcVar6)();
+        return pRVar7;
+      }
+      return *(RarityStylesDef **)&pDVar12->vector[(int)uVar11].value.y;
     }
   }
-code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pRVar4 = (RarityStylesDef *)(*pcVar5)();
-  return pRVar4;
+DAT_?:
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  pRVar7 = (RarityStylesDef *)(*pcVar6)();
+  return pRVar7;
 }
 
 
@@ -861,77 +1228,125 @@ Assembly-CSharp.dll::Styles::Styles_GetAccessoryColorsFromPrice(int32_t price,Me
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeRef__AccessoryRarity);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__get_Item_AccessoryRarity_
-                   );
-    func_?(&TypeInfo__System__Enum);
-    func_?(&TypeInfo__Styles);
-    func_?(&TypeInfo__System__Type);
+    FUN_?(&TypeRef__AccessoryRarity);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__get_Item_AccessoryRarity_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Styles);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  handle = TypeRef__AccessoryRarity;
-  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Type);
+  pIVar1 = TypeRef__AccessoryRarity;
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
   }
-  enumType = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                       ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-  if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Enum);
+  plVar2 = (longlong *)0x0;
+  plVar3 = plVar2;
+  if (pIVar1 != (Il2CppType *)0x0) {
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    lVar4 = FUN_?(pIVar1,1);
+    plVar3 = (longlong *)FUN_?(lVar4 + 0x20);
   }
-  this = (MethodInfo *)mscorlib.dll::System::Enum::Enum_GetValues(enumType,(MethodInfo *)0x0);
-  key = 0;
-  if (this != (MethodInfo *)0x0) {
-    for (; iVar1 = mscorlib.dll::System::Array::Array_get_Length((Array *)this,(MethodInfo *)0x0),
-        (int)key < iVar1; key = key + 1) {
-      if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
+  }
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
+  }
+  if (plVar3 == (longlong *)0x0) {
+    uVar5 = func_?(&TypeInfo__System__ArgumentNullException);
+    this_01 = (ArgumentNullException *)func_?(uVar5);
+    paramName = (String *)func_?(&StringLiteral_enumType);
+    mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+              (this_01,paramName,(MethodInfo *)0x0);
+    uVar5 = func_?(&MethodInfo__System__Enum__GetValues_System__Type_);
+    FUN_?(this_01,uVar5);
+    pcVar6 = (code *)swi(3);
+    pRVar7 = (RarityStylesDef *)(*pcVar6)();
+    return pRVar7;
+  }
+  this_00 = (Array *)(**(code **)(*plVar3 + 0x888))(plVar3);
+  if (this_00 != (Array *)0x0) {
+    while( true ) {
+      iVar8 = mscorlib.dll::System::Array::Array_get_Length(this_00,(MethodInfo *)0x0);
+      key = (Int32Enum__Enum)plVar2;
+      if (iVar8 <= (int)key) break;
+      if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__Styles);
       }
-      pDVar2 = TypeInfo__Styles->static_fields->accessoryRarityColorsDictionary;
-      if ((pDVar2 == (Dictionary_2_AccessoryRarity_RarityStylesDef_ *)0x0) ||
-         (this = 
-          MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__get_Item_AccessoryRarity_
-         , pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                              ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar2,key,
-                               MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__get_Item_AccessoryRarity_
-                              ), pOVar3 == (Object *)0x0)) goto code_?;
-      if (price < (int)pOVar3[1].monitor) {
-        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        pDVar2 = TypeInfo__Styles->static_fields->accessoryRarityColorsDictionary;
-        if (pDVar2 != (Dictionary_2_AccessoryRarity_RarityStylesDef_ *)0x0) {
-          pRVar4 = (RarityStylesDef *)
-                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
+      this = TypeInfo__Styles->static_fields->accessoryRarityColorsDictionary;
+      if ((this == (Dictionary_2_AccessoryRarity_RarityStylesDef_ *)0x0) ||
+         (pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
                    ::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                             ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar2,key,
+                             ((Dictionary_2_System_Int32Enum_System_Object_ *)this,key,
                               MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__get_Item_AccessoryRarity_
-                             );
-          return pRVar4;
+                             ), pOVar9 == (Object *)0x0)) goto DAT_?;
+      if (price < *(int *)((longlong)&pOVar9[1].klass + 4)) {
+        if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+          FUN_?(TypeInfo__Styles);
         }
+        this_02 = (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)
+                  TypeInfo__Styles->static_fields->accessoryRarityColorsDictionary;
+        if (this_02 != (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)0x0)
         goto code_?;
+        goto DAT_?;
       }
+      plVar2 = (longlong *)(ulonglong)(key + 1);
     }
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__Styles);
     }
-    pDVar2 = TypeInfo__Styles->static_fields->accessoryRarityColorsDictionary;
-    if (pDVar2 != (Dictionary_2_AccessoryRarity_RarityStylesDef_ *)0x0) {
-      pRVar4 = (RarityStylesDef *)
-               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                         ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar2,4,
-                          MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__get_Item_AccessoryRarity_
-                         );
-      return pRVar4;
+    this_02 = (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)
+              TypeInfo__Styles->static_fields->accessoryRarityColorsDictionary;
+    if (this_02 != (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)0x0) {
+      key = 4;
+code_?:
+      pMVar10 = 
+      MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__get_Item_AccessoryRarity_
+      ;
+      uVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,UnityEngine
+              ::Vector3]::Dictionary_2_System_Int32Enum_UnityEngine_Vector3__FindEntry
+                        (this_02,key,
+                         MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__get_Item_AccessoryRarity_
+                         ->klass->rgctx_data[0x21].method);
+      if ((int)uVar11 < 0) {
+        uVar5 = func_?(pMVar10->klass->rgctx_data,0xe);
+        pOVar9 = (Object *)func_?(uVar5);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowKeyNotFoundException
+                  (pOVar9,(MethodInfo *)0x0);
+        pcVar6 = (code *)swi(3);
+        pRVar7 = (RarityStylesDef *)(*pcVar6)();
+        return pRVar7;
+      }
+      pDVar12 = (this_02->fields)._entries;
+      if (pDVar12 == (Dictionary_2_TKey_TValue_Entry_System_Int32Enum_UnityEngine_Vector3___Array *)
+                    0x0) {
+        FUN_?();
+        pcVar6 = (code *)swi(3);
+        pRVar7 = (RarityStylesDef *)(*pcVar6)();
+        return pRVar7;
+      }
+      if ((uint)pDVar12->max_length <= uVar11) {
+        FUN_?();
+        pcVar6 = (code *)swi(3);
+        pRVar7 = (RarityStylesDef *)(*pcVar6)();
+        return pRVar7;
+      }
+      return *(RarityStylesDef **)&pDVar12->vector[(int)uVar11].value.y;
     }
   }
-code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pRVar4 = (RarityStylesDef *)(*pcVar5)();
-  return pRVar4;
+DAT_?:
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  pRVar7 = (RarityStylesDef *)(*pcVar6)();
+  return pRVar7;
 }
 
 
@@ -942,49 +1357,57 @@ Color * Assembly-CSharp.dll::Styles::Styles_GetColor
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__get_Item_ColorStyle_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Styles);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+    FUN_?();
   }
   bVar1 = Styles_HandleUnInitalized((MethodInfo *)0x0);
-  fVar2 = _UNK_?;
-  fVar3 = _UNK_?;
-  fVar4 = _UNK_?;
+  uVar2 = _UNK_?;
   if (bVar1 != 0) {
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__Styles);
     }
     this = TypeInfo__Styles->static_fields->colorStylesDictionary;
     if (this != (Dictionary_2_ColorStyle_Styles_ColorStyleDef_ *)0x0) {
-      pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-                Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                          ((Dictionary_2_System_Int32Enum_System_Object_ *)this,colorStyle,
-                           MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__get_Item_ColorStyle_
-                          );
-      if (pOVar5 != (Object *)0x0) {
-        pOVar6 = pOVar5[2].klass;
-        pMVar7 = pOVar5[2].monitor;
-        pOVar8 = pOVar5[3].klass;
-        __return_storage_ptr__->r = (float)pOVar5[1].monitor;
-        __return_storage_ptr__->g = (float)pOVar6;
-        __return_storage_ptr__->b = (float)pMVar7;
-        __return_storage_ptr__->a = (float)pOVar8;
+      pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                         ((Dictionary_2_System_Int32Enum_System_Object_ *)this,colorStyle,
+                          MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__get_Item_ColorStyle_
+                         );
+      if (pOVar3 != (Object *)0x0) {
+        uVar2 = *(undefined8 *)((longlong)&pOVar3[1].klass + 4);
+        uVar4 = *(undefined8 *)((longlong)&pOVar3[1].monitor + 4);
+        __return_storage_ptr__->r = (float)(int)uVar2;
+        __return_storage_ptr__->g = (float)(int)((ulonglong)uVar2 >> 0x20);
+        __return_storage_ptr__->b = (float)(int)uVar4;
+        __return_storage_ptr__->a = (float)(int)((ulonglong)uVar4 >> 0x20);
         return __return_storage_ptr__;
       }
     }
-    uVar9 = func_?(&stack0xfffffff4);
-    func_?(uVar9);
-    pcVar10 = (code *)swi(3);
-    pCVar11 = (Color *)(*pcVar10)();
-    return pCVar11;
+    FUN_?();
+    pcVar5 = (code *)swi(3);
+    pCVar6 = (Color *)(*pcVar5)();
+    return pCVar6;
   }
-  __return_storage_ptr__->r = _UNK_?;
-  __return_storage_ptr__->g = fVar4;
-  __return_storage_ptr__->b = fVar3;
-  __return_storage_ptr__->a = fVar2;
+  uVar7 = _UNK_?;
+  __return_storage_ptr__->r = (float)_UNK_?;
+  uVar4 = _UNK_?;
+  __return_storage_ptr__->g = (float)uVar7;
+  _UNK_? = (undefined4)uVar2;
+  _UNK_? = SUB84(uVar2,4);
+  uVar7 = _UNK_?;
+  __return_storage_ptr__->b = (float)_UNK_?;
+  _UNK_? = uVar4;
+  __return_storage_ptr__->a = (float)uVar7;
   return __return_storage_ptr__;
 }
 
@@ -996,54 +1419,46 @@ Color * Assembly-CSharp.dll::Styles::Styles_GetTeamColor
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__get_Item_ColorStyle_
-                   );
-    func_?(&TypeInfo__Styles);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__get_Item_ColorStyle_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Styles);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Styles);
+  if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+    FUN_?();
   }
   bVar1 = Styles_HandleUnInitalized((MethodInfo *)0x0);
-  fVar2 = _UNK_?;
-  fVar3 = _UNK_?;
-  fVar4 = _UNK_?;
+  uVar2 = _UNK_?;
+  uVar3 = _UNK_?;
   if (bVar1 != 0) {
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+      FUN_?();
     }
     key = Styles_GetTeamColorStyle(team,darkTeam,0,(MethodInfo *)0x0);
     this = TypeInfo__Styles->static_fields->colorStylesDictionary;
-    if (this != (Dictionary_2_ColorStyle_Styles_ColorStyleDef_ *)0x0) {
-      pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-                Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                          ((Dictionary_2_System_Int32Enum_System_Object_ *)this,key,
-                           MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__get_Item_ColorStyle_
-                          );
-      if (pOVar5 != (Object *)0x0) {
-        pOVar6 = pOVar5[2].klass;
-        pIVar7 = (Int32__Array *)pOVar5[2].monitor;
-        pDVar8 = (Dictionary_2_TKey_TValue_Entry_ColorStyle_Styles_ColorStyleDef___Array *)
-                 pOVar5[3].klass;
-        this->klass = (Dictionary_2_ColorStyle_Styles_ColorStyleDef___Class *)pOVar5[1].monitor;
-        this->monitor = (MonitorData *)pOVar6;
-        (this->fields)._buckets = pIVar7;
-        (this->fields)._entries = pDVar8;
-        return (Color *)this;
-      }
+    if ((this == (Dictionary_2_ColorStyle_Styles_ColorStyleDef_ *)0x0) ||
+       (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                           ((Dictionary_2_System_Int32Enum_System_Object_ *)this,key,
+                            MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__get_Item_ColorStyle_
+                           ), pOVar4 == (Object *)0x0)) {
+      FUN_?();
+      pcVar5 = (code *)swi(3);
+      pCVar6 = (Color *)(*pcVar5)();
+      return pCVar6;
     }
-    puStack9 = &stack0xfffffffc;
-    func_?();
-    func_?();
-    pcVar10 = (code *)swi(3);
-    pCVar11 = (Color *)(*pcVar10)();
-    return pCVar11;
+    uVar2 = *(undefined8 *)((longlong)&pOVar4[1].klass + 4);
+    uVar3 = *(undefined8 *)((longlong)&pOVar4[1].monitor + 4);
   }
-  __return_storage_ptr__->r = _UNK_?;
-  __return_storage_ptr__->g = fVar4;
-  __return_storage_ptr__->b = fVar3;
-  __return_storage_ptr__->a = fVar2;
+  __return_storage_ptr__->r = (float)(int)uVar2;
+  __return_storage_ptr__->g = (float)(int)((ulonglong)uVar2 >> 0x20);
+  __return_storage_ptr__->b = (float)(int)uVar3;
+  __return_storage_ptr__->a = (float)(int)((ulonglong)uVar3 >> 0x20);
   return __return_storage_ptr__;
 }
 
@@ -1056,80 +1471,107 @@ Assembly-CSharp.dll::Styles::Styles_GetTeamColorStyle
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__get_Item_MV__WorldObject__MVTeam_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::WorldObject::MVTeam>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (darkTeam == 0) {
     if (alwaysColor == 0) {
       pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar1 == (MVNetworkGame *)0x0) ||
-         (pMVar2 = (pMVar1->fields).teamManager, pMVar2 == (MVTeamManager *)0x0))
-      goto code_?;
-      pLVar3 = MVTeamManager::MVTeamManager_GetTeamList(pMVar2,(MethodInfo *)0x0);
-      if (pLVar3 == (List_1_MV_WorldObject_MVTeam_ *)0x0) goto code_?;
+      if (((pMVar1 == (MVNetworkGame *)0x0) ||
+          (pMVar2 = (pMVar1->fields).teamManager, pMVar2 == (MVTeamManager *)0x0)) ||
+         (pLVar3 = MVTeamManager::MVTeamManager_GetTeamList(pMVar2,(MethodInfo *)0x0),
+         pLVar3 == (List_1_MV_WorldObject_MVTeam_ *)0x0)) goto code_?;
       if ((pLVar3->fields)._size < 2) {
-        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+        if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+          FUN_?(TypeInfo__Styles);
         }
-        pDVar4 = (Dictionary_2_System_Int32Enum_System_Object_ *)
-                 TypeInfo__Styles->static_fields->teamToColorStyle;
+        this = (Dictionary_2_System_Int32Enum_System_Single_ *)
+               TypeInfo__Styles->static_fields->teamToColorStyle;
 code_?:
-        if (pDVar4 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
-          pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
-                   ::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                             (pDVar4,5,
-                              MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__get_Item_MV__WorldObject__MVTeam_
-                             );
-          return (ColorStyle__Enum)pOVar5;
-        }
+        if (this == (Dictionary_2_System_Int32Enum_System_Single_ *)0x0) goto code_?;
+        team = 5;
         goto code_?;
       }
     }
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__Styles);
     }
-    pDVar4 = (Dictionary_2_System_Int32Enum_System_Object_ *)
-             TypeInfo__Styles->static_fields->teamToColorStyle;
+    this = (Dictionary_2_System_Int32Enum_System_Single_ *)
+           TypeInfo__Styles->static_fields->teamToColorStyle;
   }
   else {
     if (alwaysColor == 0) {
       pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar1 == (MVNetworkGame *)0x0) ||
-         (pMVar2 = (pMVar1->fields).teamManager, pMVar2 == (MVTeamManager *)0x0))
-      goto code_?;
-      pLVar3 = MVTeamManager::MVTeamManager_GetTeamList(pMVar2,(MethodInfo *)0x0);
-      if (pLVar3 == (List_1_MV_WorldObject_MVTeam_ *)0x0) goto code_?;
+      if (((pMVar1 == (MVNetworkGame *)0x0) ||
+          (pMVar2 = (pMVar1->fields).teamManager, pMVar2 == (MVTeamManager *)0x0)) ||
+         (pLVar3 = MVTeamManager::MVTeamManager_GetTeamList(pMVar2,(MethodInfo *)0x0),
+         pLVar3 == (List_1_MV_WorldObject_MVTeam_ *)0x0)) goto code_?;
       if ((pLVar3->fields)._size < 2) {
-        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+        if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+          FUN_?(TypeInfo__Styles);
         }
-        pDVar4 = (Dictionary_2_System_Int32Enum_System_Object_ *)
-                 TypeInfo__Styles->static_fields->teamToDarkColorStyle;
+        this = (Dictionary_2_System_Int32Enum_System_Single_ *)
+               TypeInfo__Styles->static_fields->teamToDarkColorStyle;
         goto code_?;
       }
     }
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__Styles);
     }
-    pDVar4 = (Dictionary_2_System_Int32Enum_System_Object_ *)
-             TypeInfo__Styles->static_fields->teamToDarkColorStyle;
+    this = (Dictionary_2_System_Int32Enum_System_Single_ *)
+           TypeInfo__Styles->static_fields->teamToDarkColorStyle;
   }
-  if (pDVar4 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
-    pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-             Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                       (pDVar4,team,
-                        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__get_Item_MV__WorldObject__MVTeam_
-                       );
-    return (ColorStyle__Enum)pOVar5;
+  if (this == (Dictionary_2_System_Int32Enum_System_Single_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar4 = (code *)swi(3);
+    CVar5 = (*pcVar4)();
+    return CVar5;
   }
 code_?:
-  uVar6 = func_?(&stack0xfffffff0);
-  func_?(uVar6);
-  pcVar7 = (code *)swi(3);
-  CVar8 = (*pcVar7)();
-  return CVar8;
+  pMVar6 = 
+  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__get_Item_MV__WorldObject__MVTeam_
+  ;
+  uVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Single]
+          ::Dictionary_2_System_Int32Enum_System_Single__FindEntry
+                    (this,team,
+                     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__get_Item_MV__WorldObject__MVTeam_
+                     ->klass->rgctx_data[0x21].method);
+  if ((int)uVar7 < 0) {
+    uVar8 = func_?(pMVar6->klass->rgctx_data,0xe);
+    key = (Object *)func_?(uVar8);
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowKeyNotFoundException
+              (key,(MethodInfo *)0x0);
+    pcVar4 = (code *)swi(3);
+    CVar5 = (*pcVar4)();
+    return CVar5;
+  }
+  pDVar9 = (this->fields)._entries;
+  if (pDVar9 == (Dictionary_2_TKey_TValue_Entry_System_Int32Enum_System_Single___Array *)0x0) {
+    FUN_?();
+    pcVar4 = (code *)swi(3);
+    CVar5 = (*pcVar4)();
+    return CVar5;
+  }
+  if ((uint)pDVar9->max_length <= uVar7) {
+    FUN_?();
+    pcVar4 = (code *)swi(3);
+    CVar5 = (*pcVar4)();
+    return CVar5;
+  }
+  return (ColorStyle__Enum)pDVar9->vector[(int)uVar7].value;
 }
 
 
@@ -1139,49 +1581,55 @@ bool Assembly-CSharp.dll::Styles::Styles_HandleUnInitalized(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&TypeRef__Styles);
-    func_?(&TypeInfo__Styles);
-    func_?(&TypeInfo__System__Type);
+    FUN_?(&Styles_MethodInfo__UnityEngine__Object__FindFirstObjectByType<Styles>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Styles);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Styles);
+  if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  handle = TypeRef__Styles;
   if (TypeInfo__Styles->static_fields->isInitialized == 0) {
-    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Type);
-    }
-    type = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                     ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
     this = (Styles *)
-           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_FindObjectOfType
-                     (type,(MethodInfo *)0x0);
-    if ((this != (Styles *)0x0) &&
-       (((this->klass->_1).naturalAligment < (TypeInfo__Styles->_1).naturalAligment ||
-        ((this->klass->_1).typeHierarchy[(TypeInfo__Styles->_1).naturalAligment - 1] !=
-         (Il2CppClass *)TypeInfo__Styles)))) {
-      func_?(this,TypeInfo__Styles);
-code_?:
-      func_?();
-      pcVar1 = (code *)swi(3);
-      bVar2 = (*pcVar1)();
-      return bVar2;
+           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_FindFirstObjectByType_1
+                     (Styles_MethodInfo__UnityEngine__Object__FindFirstObjectByType<Styles>__);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)this,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      if (this == (Styles *)0x0) goto code_?;
-      Styles_Initialize(this,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (this != (Styles *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if ((this->fields)._._._._.m_CachedPtr != (void *)0x0) {
+        Styles_Initialize(this,(MethodInfo *)0x0);
+      }
     }
   }
-  if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Styles);
+  if (*(int *)&(TypeInfo__Styles->_1).field_0x1c != 0) {
+    return TypeInfo__Styles->static_fields->isInitialized;
   }
+  FUN_?();
   return TypeInfo__Styles->static_fields->isInitialized;
 }
 
@@ -1192,31 +1640,156 @@ Color * Assembly-CSharp.dll::Styles::Styles_HexToColor
                   (Color *__return_storage_ptr__,String *hex,MethodInfo *method)
 
 {
-  if (hex != (String *)0x0) {
-    pSVar1 = mscorlib.dll::System::String::String_Substring_1(hex,0,2,(MethodInfo *)0x0);
-    uVar2 = mscorlib.dll::System::Byte::Byte_Parse
-                      (pSVar1,NumberStyles__Enum_HexNumber,(MethodInfo *)0x0);
-    pSVar1 = mscorlib.dll::System::String::String_Substring_1(hex,2,2,(MethodInfo *)0x0);
-    uVar3 = mscorlib.dll::System::Byte::Byte_Parse
-                      (pSVar1,NumberStyles__Enum_HexNumber,(MethodInfo *)0x0);
-    pSVar1 = mscorlib.dll::System::String::String_Substring_1(hex,4,2,(MethodInfo *)0x0);
-    uVar4 = mscorlib.dll::System::Byte::Byte_Parse
-                      (pSVar1,NumberStyles__Enum_HexNumber,(MethodInfo *)0x0);
-    hex._0_3_ = CONCAT12(uVar4,CONCAT11(uVar3,uVar2));
-    hex = (String *)CONCAT13(0xff,(uint3)hex);
-    fVar5 = (float)(((uint3)hex & 0xff00) >> 8) / _UNK_?;
-    fVar6 = (float)uVar4 / _UNK_?;
-    fVar7 = (float)((uint)hex >> 0x18) / _UNK_?;
-    __return_storage_ptr__->r = (float)uVar2 / _UNK_?;
-    __return_storage_ptr__->g = fVar5;
-    __return_storage_ptr__->b = fVar6;
-    __return_storage_ptr__->a = fVar7;
-    return __return_storage_ptr__;
+  if (hex == (String *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    pCVar2 = (Color *)(*pcVar1)();
+    return pCVar2;
   }
-  func_?();
-  pcVar8 = (code *)swi(3);
-  pCVar9 = (Color *)(*pcVar8)();
-  return pCVar9;
+  if ((hex->fields)._stringLength < 0) {
+    uVar3 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+    pAVar4 = (ArgumentOutOfRangeException *)func_?(uVar3);
+    pSVar5 = (String *)func_?(&StringLiteral_startIndex_cannot_be_larger_than);
+    pSVar6 = (String *)func_?(&StringLiteral_startIndex);
+    mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_2
+              (pAVar4,pSVar6,pSVar5,(MethodInfo *)0x0);
+    uVar3 = func_?(&MethodInfo__System__String__Substring_int__int_);
+    FUN_?(pAVar4,uVar3);
+    pcVar1 = (code *)swi(3);
+    pCVar2 = (Color *)(*pcVar1)();
+    return pCVar2;
+  }
+  iVar7 = (hex->fields)._stringLength;
+  if (iVar7 + -2 < 0) {
+    uVar3 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+    pAVar4 = (ArgumentOutOfRangeException *)func_?(uVar3);
+    pSVar5 = (String *)func_?(&StringLiteral_Index_and_length_must_refer_to_a);
+    pSVar6 = (String *)func_?(&StringLiteral_length);
+    mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_2
+              (pAVar4,pSVar6,pSVar5,(MethodInfo *)0x0);
+    uVar3 = func_?(&MethodInfo__System__String__Substring_int__int_);
+    FUN_?(pAVar4,uVar3);
+    pcVar1 = (code *)swi(3);
+    pCVar2 = (Color *)(*pcVar1)();
+    return pCVar2;
+  }
+  pSVar5 = hex;
+  if ((iVar7 == 2) ||
+     (pSVar5 = mscorlib.dll::System::String::String_InternalSubString(hex,0,2,(MethodInfo *)0x0),
+     pSVar5 != (String *)0x0)) {
+    if (cRam_? == '\0') {
+      FUN_?();
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    RStack_8._pointer._value = &(pSVar5->fields)._firstChar;
+    RStack_8._12_4_ = 0;
+    RStack_8._length = (pSVar5->fields)._stringLength;
+    pNVar9 = mscorlib.dll::System::Globalization::NumberFormatInfo::NumberFormatInfo_get_CurrentInfo
+                       ((MethodInfo *)0x0);
+    uVar10 = mscorlib.dll::System::Byte::Byte_Parse_3
+                      (&RStack_8,NumberStyles__Enum_HexNumber,pNVar9,(MethodInfo *)0x0);
+    if ((hex->fields)._stringLength < 2) {
+      uVar3 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+      pAVar4 = (ArgumentOutOfRangeException *)func_?(uVar3);
+      pSVar5 = (String *)func_?(&StringLiteral_startIndex_cannot_be_larger_than);
+      pSVar6 = (String *)func_?(&StringLiteral_startIndex);
+      mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_2
+                (pAVar4,pSVar6,pSVar5,(MethodInfo *)0x0);
+      uVar3 = func_?(&MethodInfo__System__String__Substring_int__int_);
+      FUN_?(pAVar4,uVar3);
+      pcVar1 = (code *)swi(3);
+      pCVar2 = (Color *)(*pcVar1)();
+      return pCVar2;
+    }
+    if ((hex->fields)._stringLength + -2 < 2) {
+      uVar3 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+      pAVar4 = (ArgumentOutOfRangeException *)func_?(uVar3);
+      pSVar5 = (String *)func_?(&StringLiteral_Index_and_length_must_refer_to_a);
+      pSVar6 = (String *)func_?(&StringLiteral_length);
+      mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_2
+                (pAVar4,pSVar6,pSVar5,(MethodInfo *)0x0);
+      uVar3 = func_?(&MethodInfo__System__String__Substring_int__int_);
+      FUN_?(pAVar4,uVar3);
+      pcVar1 = (code *)swi(3);
+      pCVar2 = (Color *)(*pcVar1)();
+      return pCVar2;
+    }
+    pSVar5 = mscorlib.dll::System::String::String_InternalSubString(hex,2,2,(MethodInfo *)0x0);
+    if (pSVar5 != (String *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?();
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      RStack_8._pointer._value = &(pSVar5->fields)._firstChar;
+      RStack_8._12_4_ = 0;
+      RStack_8._length = (pSVar5->fields)._stringLength;
+      pNVar9 = mscorlib.dll::System::Globalization::NumberFormatInfo::
+               NumberFormatInfo_get_CurrentInfo((MethodInfo *)0x0);
+      uVar11 = mscorlib.dll::System::Byte::Byte_Parse_3
+                        (&RStack_8,NumberStyles__Enum_HexNumber,pNVar9,(MethodInfo *)0x0);
+      if ((hex->fields)._stringLength < 4) {
+        uVar3 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+        pAVar4 = (ArgumentOutOfRangeException *)func_?(uVar3);
+        pSVar5 = (String *)func_?(&StringLiteral_startIndex_cannot_be_larger_than);
+        pSVar6 = (String *)func_?(&StringLiteral_startIndex);
+        mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_2
+                  (pAVar4,pSVar6,pSVar5,(MethodInfo *)0x0);
+        uVar3 = func_?(&MethodInfo__System__String__Substring_int__int_);
+        FUN_?(pAVar4,uVar3);
+        pcVar1 = (code *)swi(3);
+        pCVar2 = (Color *)(*pcVar1)();
+        return pCVar2;
+      }
+      if ((hex->fields)._stringLength + -2 < 4) {
+        uVar3 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+        pAVar4 = (ArgumentOutOfRangeException *)func_?(uVar3);
+        pSVar5 = (String *)func_?(&StringLiteral_Index_and_length_must_refer_to_a);
+        pSVar6 = (String *)func_?(&StringLiteral_length);
+        mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_2
+                  (pAVar4,pSVar6,pSVar5,(MethodInfo *)0x0);
+        uVar3 = func_?(&MethodInfo__System__String__Substring_int__int_);
+        FUN_?(pAVar4,uVar3);
+        pcVar1 = (code *)swi(3);
+        pCVar2 = (Color *)(*pcVar1)();
+        return pCVar2;
+      }
+      pSVar5 = mscorlib.dll::System::String::String_InternalSubString(hex,4,2,(MethodInfo *)0x0);
+      if (pSVar5 != (String *)0x0) {
+        if (cRam_? == '\0') {
+          FUN_?();
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        RStack_8._pointer._value = &(pSVar5->fields)._firstChar;
+        RStack_8._12_4_ = 0;
+        RStack_8._length = (pSVar5->fields)._stringLength;
+        pNVar9 = mscorlib.dll::System::Globalization::NumberFormatInfo::
+                 NumberFormatInfo_get_CurrentInfo((MethodInfo *)0x0);
+        uVar12 = mscorlib.dll::System::Byte::Byte_Parse_3
+                          (&RStack_8,NumberStyles__Enum_HexNumber,pNVar9,(MethodInfo *)0x0);
+        uStackX_8._0_3_ = CONCAT12(uVar12,CONCAT11(uVar11,uVar10));
+        uStackX_8 = CONCAT13(0xff,(uint3)uStackX_8);
+        fVar13 = (float)uVar12 / _UNK_?;
+        fVar14 = (float)(uStackX_8 >> 0x18) / _UNK_?;
+        fVar15 = (float)(((uint3)uStackX_8 & 0xff00) >> 8) / _UNK_?;
+        __return_storage_ptr__->r = (float)uVar10 / _UNK_?;
+        __return_storage_ptr__->g = fVar15;
+        __return_storage_ptr__->b = fVar13;
+        __return_storage_ptr__->a = fVar14;
+        return __return_storage_ptr__;
+      }
+    }
+  }
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentNullException
+            (ExceptionArgument__Enum_s,(MethodInfo *)0x0);
+  pcVar1 = (code *)swi(3);
+  pCVar2 = (Color *)(*pcVar1)();
+  return pCVar2;
 }
 
 
@@ -1225,726 +1798,860 @@ Color * Assembly-CSharp.dll::Styles::Styles_HexToColor
 void Assembly-CSharp.dll::Styles::Styles_Initialize(Styles *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff44;
-  puVar5 = &stack0xffffff44;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>__Add_TextStyle__Styles__TextStyleDef_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__Add_AccessoryRarity__RarityStylesDef_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>__Add_ButtonStyle__Styles__ButtonStyleDef_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>__Add_EffectStyle__Styles__EffectStyleDef_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>__Add_MV__WorldObject__MVTeam__Styles__TeamIconStyleDef_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__Add_ColorStyle__Styles__ColorStyleDef_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__Add_SoundStyle__UnityEngine__AudioSource_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>__Dictionary_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>__Dictionary_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__Dictionary_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>__Dictionary_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__Dictionary_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__Dictionary_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>__Dictionary_int_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::EffectStyleDef>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ColorStyleDef>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TextStyleDef>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RarityStylesDef>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TeamIconStyleDef>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ButtonStyleDef>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::SoundStyleDef>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TeamIconStyleDef>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::EffectStyleDef>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TextStyleDef>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ColorStyleDef>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ButtonStyleDef>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RarityStylesDef>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::SoundStyleDef>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::SoundStyleDef>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::EffectStyleDef>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TextStyleDef>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TeamIconStyleDef>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RarityStylesDef>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ColorStyleDef>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ButtonStyleDef>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::SoundStyleDef>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::ButtonStyleDef>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::ColorStyleDef>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::TextStyleDef>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RarityStylesDef>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::EffectStyleDef>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::TeamIconStyleDef>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::SoundStyleDef>__get_Count__
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__List<RarityStylesDef>__get_Count__);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::EffectStyleDef>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::ButtonStyleDef>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::TextStyleDef>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::ColorStyleDef>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::TeamIconStyleDef>__get_Count__
-                   );
-    func_?(&TypeInfo__Styles);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>__Add_TextStyle__Styles__TextStyleDef_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__Add_AccessoryRarity__RarityStylesDef_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>__Add_ButtonStyle__Styles__ButtonStyleDef_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>__Add_EffectStyle__Styles__EffectStyleDef_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>__Add_MV__WorldObject__MVTeam__Styles__TeamIconStyleDef_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__Add_ColorStyle__Styles__ColorStyleDef_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__Add_SoundStyle__UnityEngine__AudioSource_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>__Dictionary_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>__Dictionary_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__Dictionary_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>__Dictionary_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__Dictionary_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__Dictionary_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>__Dictionary_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::EffectStyleDef>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ColorStyleDef>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TextStyleDef>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RarityStylesDef>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TeamIconStyleDef>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ButtonStyleDef>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::SoundStyleDef>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TeamIconStyleDef>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::EffectStyleDef>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TextStyleDef>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ColorStyleDef>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ButtonStyleDef>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RarityStylesDef>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::SoundStyleDef>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::SoundStyleDef>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::EffectStyleDef>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TextStyleDef>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TeamIconStyleDef>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RarityStylesDef>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ColorStyleDef>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ButtonStyleDef>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Styles::SoundStyleDef>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Styles::ButtonStyleDef>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Styles::ColorStyleDef>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Styles::TextStyleDef>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<RarityStylesDef>__GetEnumerator__)
+    ;
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Styles::EffectStyleDef>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Styles::TeamIconStyleDef>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Styles::SoundStyleDef>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<RarityStylesDef>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Styles::EffectStyleDef>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Styles::ButtonStyleDef>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<Styles::TextStyleDef>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Styles::ColorStyleDef>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Styles::TeamIconStyleDef>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Styles);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
+  LStack_1._list = (List_1_System_Object_ *)0x0;
+  LStack_1._index = 0;
+  LStack_1._version = 0;
+  LStack_1._current = (Object *)0x0;
+  LStack_2._list = (List_1_System_Object_ *)0x0;
+  LStack_2._index = 0;
+  LStack_2._version = 0;
+  LStack_2._current = (Object *)0x0;
+  LStack_3._list = (List_1_System_Object_ *)0x0;
+  LStack_3._index = 0;
+  LStack_3._version = 0;
+  LStack_3._current = (Object *)0x0;
+  LStack_4._list = (List_1_System_Object_ *)0x0;
+  LStack_4._index = 0;
+  LStack_4._version = 0;
+  LStack_4._current = (Object *)0x0;
+  LStack_5._list = (List_1_System_Object_ *)0x0;
+  LStack_5._index = 0;
+  LStack_5._version = 0;
+  LStack_5._current = (Object *)0x0;
   LStack_6._list = (List_1_System_Object_ *)0x0;
   LStack_6._index = 0;
   LStack_6._version = 0;
   LStack_6._current = (Object *)0x0;
-  LStack_7._list = (List_1_System_Object_ *)0x0;
-  LStack_7._index = 0;
-  LStack_7._version = 0;
-  LStack_7._current = (Object *)0x0;
-  LStack_8._list = (List_1_System_Object_ *)0x0;
-  LStack_8._index = 0;
-  LStack_8._version = 0;
-  LStack_8._current = (Object *)0x0;
-  LStack_9._list = (List_1_System_Object_ *)0x0;
-  LStack_9._index = 0;
-  LStack_9._version = 0;
-  LStack_9._current = (Object *)0x0;
-  LStack_10._list = (List_1_System_Object_ *)0x0;
-  LStack_10._index = 0;
-  LStack_10._version = 0;
-  LStack_10._current = (Object *)0x0;
-  LStack_11._list = (List_1_System_Object_ *)0x0;
-  LStack_11._index = 0;
-  LStack_11._version = 0;
-  LStack_11._current = (Object *)0x0;
-  LStack_12._list = (List_1_System_Object_ *)0x0;
-  LStack_12._index = 0;
-  LStack_12._version = 0;
-  LStack_12._current = (Object *)0x0;
-  if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Styles);
+  if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__Styles);
   }
   if (TypeInfo__Styles->static_fields->isInitialized != 0) {
-code_?:
-    *unaff_FS_OFFSET = uStack_3;
     return;
   }
-  pLVar13 = (this->fields).buttonStyles;
-  if (pLVar13 != (List_1_Styles_ButtonStyleDef_ *)0x0) {
-    iVar14 = (pLVar13->fields)._size;
-    LStack_15._current =
-         (RegexCharClass_SingleRange)
-         func_?(
-                        TypeInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>
-                        );
-    RVar16 = (RegexCharClass_SingleRange)
-             MethodInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>__Dictionary_int_
-    ;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object___ctor_3
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)LStack_15._current,iVar14,
-               MethodInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>__Dictionary_int_
-              );
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    TypeInfo__Styles->static_fields->buttonStylesDictionary =
-         (Dictionary_2_ButtonStyle_Styles_ButtonStyleDef_ *)LStack_15._current;
-    func_?();
-    pLVar17 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-             (this->fields).buttonStyles;
-    if (pLVar17 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      pLVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                          (&LStack_15,pLVar17,
-                           MethodInfo__System__Collections__Generic__List<Styles::ButtonStyleDef>__GetEnumerator__
-                          );
-      LStack_6._list = (List_1_System_Object_ *)pLVar18->_list;
-      LStack_6._index = pLVar18->_index;
-      LStack_6._version = pLVar18->_version;
-      LStack_6._current = *(Object **)&pLVar18->_current;
-      LStack_15._version = 0;
-      uStack_1 = 1;
-      LStack_15._current = (RegexCharClass_SingleRange)&LStack_6;
-      while( true ) {
-        bVar19 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-                 List_1_T_Enumerator_System_Object__MoveNext
-                           (&LStack_6,
-                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ButtonStyleDef>__MoveNext__
+  pLVar7 = (this->fields).buttonStyles;
+  if (pLVar7 != (List_1_Styles_ButtonStyleDef_ *)0x0) {
+    iVar8 = (pLVar7->fields)._size;
+    pDVar9 = (Dictionary_2_ButtonStyle_Styles_ButtonStyleDef_ *)
+              FUN_?(
+                           TypeInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>
                            );
-        RVar20 = (RegexCharClass_SingleRange)LStack_6._current;
-        if (bVar19 == 0) break;
-        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__Styles);
+    FUN_?(pDVar9,iVar8,0,
+                  MethodInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>__Dictionary_int_
+                  ->klass->rgctx_data->rgctxDataDummy);
+    if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__Styles);
+    }
+    TypeInfo__Styles->static_fields->buttonStylesDictionary = pDVar9;
+    if (iRam_? != 0) {
+      uVar10 = (uint)((ulonglong)&TypeInfo__Styles->static_fields->buttonStylesDictionary >> 0xc);
+      lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+        puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+        LOCK();
+        bVar14 = uVar12 == *puVar13;
+        if (bVar14) {
+          *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
         }
-        this_00 = TypeInfo__Styles->static_fields->buttonStylesDictionary;
-        if ((RVar20 == (RegexCharClass_SingleRange)0x0) ||
-           (this_00 == (Dictionary_2_ButtonStyle_Styles_ButtonStyleDef_ *)0x0))
-        goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-        Dictionary_2_System_Int32Enum_System_Object__Add
-                  ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,
-                   (Int32Enum__Enum)((MethodInfo *)((int)RVar20 + 0x60))->methodPointer,
-                   (Object *)RVar20,
-                   MethodInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>__Add_ButtonStyle__Styles__ButtonStyleDef_
-                  );
-        RVar16 = RVar20;
-      }
-      uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)&LStack_6,
-                 (ExceptionArgument__Enum)
-                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ButtonStyleDef>__Dispose__
-                 ,(MethodInfo *)RVar16);
-      uStack_1 = 0xffffffff;
-      pLVar21 = (this->fields).textStyles;
-      if (pLVar21 != (List_1_Styles_TextStyleDef_ *)0x0) {
-        iVar14 = (pLVar21->fields)._size;
-        LStack_15._current =
-             (RegexCharClass_SingleRange)
-             func_?(
-                            TypeInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>
-                            );
-        RVar16 = (RegexCharClass_SingleRange)
-                 MethodInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>__Dictionary_int_
-        ;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-        Dictionary_2_System_Int32Enum_System_Object___ctor_3
-                  ((Dictionary_2_System_Int32Enum_System_Object_ *)LStack_15._current,iVar14,
-                   MethodInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>__Dictionary_int_
-                  );
-        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        TypeInfo__Styles->static_fields->textStylesDictionary =
-             (Dictionary_2_TextStyle_Styles_TextStyleDef_ *)LStack_15._current;
-        func_?();
-        pLVar17 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                 (this->fields).textStyles;
-        if (pLVar17 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-          pLVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                    RegularExpressions::RegexCharClass+SingleRange]::
-                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                              (&LStack_15,pLVar17,
-                               MethodInfo__System__Collections__Generic__List<Styles::TextStyleDef>__GetEnumerator__
-                              );
-          LStack_7._list = (List_1_System_Object_ *)pLVar18->_list;
-          LStack_7._index = pLVar18->_index;
-          LStack_7._version = pLVar18->_version;
-          LStack_7._current = *(Object **)&pLVar18->_current;
-          LStack_15._version = 0;
-          uStack_1 = 4;
-          LStack_15._current = (RegexCharClass_SingleRange)&LStack_7;
-          while( true ) {
-            bVar19 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
-                     Object]::List_1_T_Enumerator_System_Object__MoveNext
-                               (&LStack_7,
-                                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TextStyleDef>__MoveNext__
-                               );
-            RVar20 = (RegexCharClass_SingleRange)LStack_7._current;
-            if (bVar19 == 0) break;
-            if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-              func_?(TypeInfo__Styles);
-            }
-            this_01 = TypeInfo__Styles->static_fields->textStylesDictionary;
-            if ((RVar20 == (RegexCharClass_SingleRange)0x0) ||
-               (this_01 == (Dictionary_2_TextStyle_Styles_TextStyleDef_ *)0x0))
-            goto code_?;
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-            Object]::Dictionary_2_System_Int32Enum_System_Object__Add
-                      ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,
-                       (Int32Enum__Enum)*(InvokerMethod *)((int)RVar20 + 8),(Object *)RVar20,
-                       MethodInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>__Add_TextStyle__Styles__TextStyleDef_
-                      );
-            RVar16 = RVar20;
+        UNLOCK();
+      } while (!bVar14);
+    }
+    pLVar7 = (this->fields).buttonStyles;
+    if (pLVar7 != (List_1_Styles_ButtonStyleDef_ *)0x0) {
+      if (iRam_? != 0) {
+        uVar10 = (uint)((ulonglong)&uStack_15 >> 0xc);
+        lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+          puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+          LOCK();
+          bVar14 = uVar12 == *puVar13;
+          if (bVar14) {
+            *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
           }
-          uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&LStack_7,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TextStyleDef>__Dispose__
-                     ,(MethodInfo *)RVar16);
-          uStack_1 = 0xffffffff;
-          pLVar22 = (this->fields).colorStyles;
-          if (pLVar22 != (List_1_Styles_ColorStyleDef_ *)0x0) {
-            iVar14 = (pLVar22->fields)._size;
-            LStack_15._current =
-                 (RegexCharClass_SingleRange)
-                 func_?(
-                                TypeInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>
-                                );
-            RVar16 = (RegexCharClass_SingleRange)
-                     MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__Dictionary_int_
-            ;
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-            Object]::Dictionary_2_System_Int32Enum_System_Object___ctor_3
-                      ((Dictionary_2_System_Int32Enum_System_Object_ *)LStack_15._current,iVar14,
-                       MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__Dictionary_int_
-                      );
-            if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
+          UNLOCK();
+        } while (!bVar14);
+      }
+      pLStack_16 = (List_1_T_Enumerator_System_Object_ *)
+                    ((ulonglong)(uint)(pLVar7->fields)._version << 0x20);
+      uStack_17 = 0;
+      aLStack_18[0]._8_8_ = pLStack_16;
+      aLStack_18[0]._current = (Object *)0x0;
+      uStack_15 = 0;
+      pLStack_16 = aLStack_18;
+      aLStack_18[0]._list = (List_1_System_Object_ *)pLVar7;
+      while (bVar19 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
+                      Object]::List_1_T_Enumerator_System_Object__MoveNext
+                                (aLStack_18,
+                                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ButtonStyleDef>__MoveNext__
+                                ), pOVar20 = aLStack_18[0]._current, bVar19 != 0) {
+        if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+          FUN_?(TypeInfo__Styles);
+        }
+        pDVar9 = TypeInfo__Styles->static_fields->buttonStylesDictionary;
+        if (pOVar20 == (Object *)0x0) goto code_?;
+        if (pDVar9 == (Dictionary_2_ButtonStyle_Styles_ButtonStyleDef_ *)0x0)
+        goto code_?;
+        pMVar21 = MethodInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>__Add_ButtonStyle__Styles__ButtonStyleDef_
+                 ->klass->rgctx_data[0x22].method;
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+        Dictionary_2_System_Int32Enum_System_Object__TryInsert
+                  ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar9,
+                   *(Int32Enum__Enum *)&pOVar20[6].monitor,pOVar20,
+                   (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pMVar21 >> 8),2),pMVar21);
+      }
+      pLVar22 = (this->fields).textStyles;
+      if (pLVar22 != (List_1_Styles_TextStyleDef_ *)0x0) {
+        iVar8 = (pLVar22->fields)._size;
+        pDVar23 = (Dictionary_2_TextStyle_Styles_TextStyleDef_ *)
+                  FUN_?(
+                               TypeInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>
+                               );
+        FUN_?(pDVar23,iVar8,0,
+                      MethodInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>__Dictionary_int_
+                      ->klass->rgctx_data->rgctxDataDummy);
+        if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+          FUN_?(TypeInfo__Styles);
+        }
+        TypeInfo__Styles->static_fields->textStylesDictionary = pDVar23;
+        if (iRam_? != 0) {
+          uVar10 = (uint)((ulonglong)&TypeInfo__Styles->static_fields->textStylesDictionary >> 0xc);
+          lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+            puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+            LOCK();
+            bVar14 = uVar12 == *puVar13;
+            if (bVar14) {
+              *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
             }
-            TypeInfo__Styles->static_fields->colorStylesDictionary =
-                 (Dictionary_2_ColorStyle_Styles_ColorStyleDef_ *)LStack_15._current;
-            func_?();
-            pLVar17 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                     (this->fields).colorStyles;
-            if (pLVar17 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-            {
-              pLVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                        RegularExpressions::RegexCharClass+SingleRange]::
-                        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                                  (&LStack_15,pLVar17,
-                                   MethodInfo__System__Collections__Generic__List<Styles::ColorStyleDef>__GetEnumerator__
-                                  );
-              LStack_8._list = (List_1_System_Object_ *)pLVar18->_list;
-              LStack_8._index = pLVar18->_index;
-              LStack_8._version = pLVar18->_version;
-              LStack_8._current = *(Object **)&pLVar18->_current;
-              LStack_15._version = 0;
-              uStack_1 = 7;
-              LStack_15._current = (RegexCharClass_SingleRange)&LStack_8;
-              while( true ) {
-                bVar19 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
-                         Object]::List_1_T_Enumerator_System_Object__MoveNext
-                                   (&LStack_8,
-                                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ColorStyleDef>__MoveNext__
-                                   );
-                RVar20 = (RegexCharClass_SingleRange)LStack_8._current;
-                if (bVar19 == 0) break;
-                if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?(TypeInfo__Styles);
-                }
-                this_02 = TypeInfo__Styles->static_fields->colorStylesDictionary;
-                if ((RVar20 == (RegexCharClass_SingleRange)0x0) ||
-                   (this_02 == (Dictionary_2_ColorStyle_Styles_ColorStyleDef_ *)0x0))
-                goto code_?;
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-                Object]::Dictionary_2_System_Int32Enum_System_Object__Add
-                          ((Dictionary_2_System_Int32Enum_System_Object_ *)this_02,
-                           (Int32Enum__Enum)*(InvokerMethod *)((int)RVar20 + 8),(Object *)RVar20,
-                           MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__Add_ColorStyle__Styles__ColorStyleDef_
-                          );
-                RVar16 = RVar20;
+            UNLOCK();
+          } while (!bVar14);
+        }
+        pLVar22 = (this->fields).textStyles;
+        if (pLVar22 != (List_1_Styles_TextStyleDef_ *)0x0) {
+          if (iRam_? != 0) {
+            uVar10 = (uint)((ulonglong)&uStack_15 >> 0xc);
+            lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+            do {
+              uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+              puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+              LOCK();
+              bVar14 = uVar12 == *puVar13;
+              if (bVar14) {
+                *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
               }
-              uStack_1 = 0xffffffff;
-              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                        ((Object *)&LStack_8,
-                         (ExceptionArgument__Enum)
-                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ColorStyleDef>__Dispose__
-                         ,(MethodInfo *)RVar16);
-              uStack_1 = 0xffffffff;
-              pLVar23 = (this->fields).teamIconStyles;
-              if (pLVar23 != (List_1_Styles_TeamIconStyleDef_ *)0x0) {
-                iVar14 = (pLVar23->fields)._size;
-                LStack_15._current =
-                     (RegexCharClass_SingleRange)
-                     func_?(
-                                    TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>
-                                    );
-                RVar16 = (RegexCharClass_SingleRange)
-                         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>__Dictionary_int_
-                ;
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-                Object]::Dictionary_2_System_Int32Enum_System_Object___ctor_3
-                          ((Dictionary_2_System_Int32Enum_System_Object_ *)LStack_15._current,iVar14,
-                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>__Dictionary_int_
-                          );
-                if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?();
+              UNLOCK();
+            } while (!bVar14);
+          }
+          pLStack_16 = (List_1_T_Enumerator_System_Object_ *)
+                        ((ulonglong)(uint)(pLVar22->fields)._version << 0x20);
+          uStack_17 = 0;
+          LStack_1._8_8_ = pLStack_16;
+          LStack_1._current = (Object *)0x0;
+          uStack_15 = 0;
+          pLStack_16 = &LStack_1;
+          LStack_1._list = (List_1_System_Object_ *)pLVar22;
+          while (bVar19 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
+                          Object]::List_1_T_Enumerator_System_Object__MoveNext
+                                    (&LStack_1,
+                                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TextStyleDef>__MoveNext__
+                                    ), pOVar20 = LStack_1._current, bVar19 != 0) {
+            if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+              FUN_?(TypeInfo__Styles);
+            }
+            pDVar23 = TypeInfo__Styles->static_fields->textStylesDictionary;
+            if (pOVar20 == (Object *)0x0) goto code_?;
+            if (pDVar23 == (Dictionary_2_TextStyle_Styles_TextStyleDef_ *)0x0)
+            goto code_?;
+            pMVar21 = MethodInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>__Add_TextStyle__Styles__TextStyleDef_
+                     ->klass->rgctx_data[0x22].method;
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+            Object]::Dictionary_2_System_Int32Enum_System_Object__TryInsert
+                      ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar23,
+                       *(Int32Enum__Enum *)&pOVar20[1].klass,pOVar20,
+                       (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pMVar21 >> 8),2),pMVar21);
+          }
+          pLVar24 = (this->fields).colorStyles;
+          if (pLVar24 != (List_1_Styles_ColorStyleDef_ *)0x0) {
+            iVar8 = (pLVar24->fields)._size;
+            pDVar25 = (Dictionary_2_ColorStyle_Styles_ColorStyleDef_ *)
+                      FUN_?(
+                                   TypeInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>
+                                   );
+            FUN_?(pDVar25,iVar8,0,
+                          MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__Dictionary_int_
+                          ->klass->rgctx_data->rgctxDataDummy);
+            if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+              FUN_?(TypeInfo__Styles);
+            }
+            TypeInfo__Styles->static_fields->colorStylesDictionary = pDVar25;
+            if (iRam_? != 0) {
+              uVar10 = (uint)((ulonglong)&TypeInfo__Styles->static_fields->colorStylesDictionary >>
+                             0xc);
+              lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+              do {
+                uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+                puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+                LOCK();
+                bVar14 = uVar12 == *puVar13;
+                if (bVar14) {
+                  *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
                 }
-                TypeInfo__Styles->static_fields->teamIconStylesDictionary =
-                     (Dictionary_2_MV_WorldObject_MVTeam_Styles_TeamIconStyleDef_ *)
-                     LStack_15._current;
-                func_?();
-                pLVar17 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                         (this->fields).teamIconStyles;
-                if (pLVar17 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                              0x0) {
-                  pLVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                            RegularExpressions::RegexCharClass+SingleRange]::
-                            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                                      (&LStack_15,pLVar17,
-                                       MethodInfo__System__Collections__Generic__List<Styles::TeamIconStyleDef>__GetEnumerator__
-                                      );
-                  LStack_9._list = (List_1_System_Object_ *)pLVar18->_list;
-                  LStack_9._index = pLVar18->_index;
-                  LStack_9._version = pLVar18->_version;
-                  LStack_9._current = *(Object **)&pLVar18->_current;
-                  LStack_15._version = 0;
-                  uStack_1 = 10;
-                  LStack_15._current = (RegexCharClass_SingleRange)&LStack_9;
-                  while( true ) {
-                    bVar19 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System
-                             ::Object]::List_1_T_Enumerator_System_Object__MoveNext
-                                       (&LStack_9,
-                                        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TeamIconStyleDef>__MoveNext__
-                                       );
-                    RVar20 = (RegexCharClass_SingleRange)LStack_9._current;
-                    if (bVar19 == 0) break;
-                    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-                      func_?(TypeInfo__Styles);
-                    }
-                    this_03 = TypeInfo__Styles->static_fields->teamIconStylesDictionary;
-                    if ((RVar20 == (RegexCharClass_SingleRange)0x0) ||
-                       (this_03 ==
-                        (Dictionary_2_MV_WorldObject_MVTeam_Styles_TeamIconStyleDef_ *)0x0))
-                    goto code_?;
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add
-                              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_03,
-                               (Int32Enum__Enum)*(InvokerMethod *)((int)RVar20 + 8),(Object *)RVar20
-                               ,
-                               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>__Add_MV__WorldObject__MVTeam__Styles__TeamIconStyleDef_
-                              );
-                    RVar16 = RVar20;
+                UNLOCK();
+              } while (!bVar14);
+            }
+            pLVar24 = (this->fields).colorStyles;
+            if (pLVar24 != (List_1_Styles_ColorStyleDef_ *)0x0) {
+              if (iRam_? != 0) {
+                uVar10 = (uint)((ulonglong)&uStack_15 >> 0xc);
+                lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+                do {
+                  uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+                  puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+                  LOCK();
+                  bVar14 = uVar12 == *puVar13;
+                  if (bVar14) {
+                    *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
                   }
-                  uStack_1 = 0xffffffff;
-                  mscorlib.dll::System::ThrowHelper::
-                  ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                            ((Object *)&LStack_9,
-                             (ExceptionArgument__Enum)
-                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TeamIconStyleDef>__Dispose__
-                             ,(MethodInfo *)RVar16);
-                  uStack_1 = 0xffffffff;
-                  pLVar24 = (this->fields).effectStyles;
-                  if (pLVar24 != (List_1_Styles_EffectStyleDef_ *)0x0) {
-                    iVar14 = (pLVar24->fields)._size;
-                    LStack_15._current =
-                         (RegexCharClass_SingleRange)
-                         func_?(
-                                        TypeInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>
-                                        );
-                    RVar16 = (RegexCharClass_SingleRange)
-                             MethodInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>__Dictionary_int_
-                    ;
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object___ctor_3
-                              ((Dictionary_2_System_Int32Enum_System_Object_ *)LStack_15._current,
-                               iVar14,
-                               MethodInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>__Dictionary_int_
-                              );
-                    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-                      func_?();
+                  UNLOCK();
+                } while (!bVar14);
+              }
+              pLStack_16 = (List_1_T_Enumerator_System_Object_ *)
+                            ((ulonglong)(uint)(pLVar24->fields)._version << 0x20);
+              uStack_17 = 0;
+              LStack_2._8_8_ = pLStack_16;
+              LStack_2._current = (Object *)0x0;
+              uStack_15 = 0;
+              pLStack_16 = &LStack_2;
+              LStack_2._list = (List_1_System_Object_ *)pLVar24;
+              while (bVar19 = mscorlib.dll::System::Collections::Generic::
+                              List`1[T]+Enumerator[System::Object]::
+                              List_1_T_Enumerator_System_Object__MoveNext
+                                        (&LStack_2,
+                                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::ColorStyleDef>__MoveNext__
+                                        ), pOVar20 = LStack_2._current, bVar19 != 0) {
+                if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+                  FUN_?(TypeInfo__Styles);
+                }
+                pDVar25 = TypeInfo__Styles->static_fields->colorStylesDictionary;
+                if (pOVar20 == (Object *)0x0) goto code_?;
+                if (pDVar25 == (Dictionary_2_ColorStyle_Styles_ColorStyleDef_ *)0x0)
+                goto code_?;
+                pMVar21 = MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__Add_ColorStyle__Styles__ColorStyleDef_
+                         ->klass->rgctx_data[0x22].method;
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                Object]::Dictionary_2_System_Int32Enum_System_Object__TryInsert
+                          ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar25,
+                           *(Int32Enum__Enum *)&pOVar20[1].klass,pOVar20,
+                           (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pMVar21 >> 8),2),
+                           pMVar21);
+              }
+              pLVar26 = (this->fields).teamIconStyles;
+              if (pLVar26 != (List_1_Styles_TeamIconStyleDef_ *)0x0) {
+                iVar8 = (pLVar26->fields)._size;
+                pDVar27 = (Dictionary_2_MV_WorldObject_MVTeam_Styles_TeamIconStyleDef_ *)
+                          FUN_?(
+                                       TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>
+                                       );
+                FUN_?(pDVar27,iVar8,0,
+                              MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>__Dictionary_int_
+                              ->klass->rgctx_data->rgctxDataDummy);
+                if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+                  FUN_?(TypeInfo__Styles);
+                }
+                TypeInfo__Styles->static_fields->teamIconStylesDictionary = pDVar27;
+                if (iRam_? != 0) {
+                  uVar10 = (uint)((ulonglong)
+                                  &TypeInfo__Styles->static_fields->teamIconStylesDictionary >> 0xc)
+                  ;
+                  lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+                  do {
+                    uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+                    puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+                    LOCK();
+                    bVar14 = uVar12 == *puVar13;
+                    if (bVar14) {
+                      *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
                     }
-                    TypeInfo__Styles->static_fields->effectStylesDictionary =
-                         (Dictionary_2_EffectStyle_Styles_EffectStyleDef_ *)LStack_15._current;
-                    func_?();
-                    pLVar17 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                             (this->fields).effectStyles;
-                    if (pLVar17 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                   *)0x0) {
-                      pLVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                                RegularExpressions::RegexCharClass+SingleRange]::
-                                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                                          (&LStack_15,pLVar17,
-                                           MethodInfo__System__Collections__Generic__List<Styles::EffectStyleDef>__GetEnumerator__
-                                          );
-                      LStack_10._list = (List_1_System_Object_ *)pLVar18->_list;
-                      LStack_10._index = pLVar18->_index;
-                      LStack_10._version = pLVar18->_version;
-                      LStack_10._current = *(Object **)&pLVar18->_current;
-                      LStack_15._version = 0;
-                      uStack_1 = 0xd;
-                      LStack_15._current = (RegexCharClass_SingleRange)&LStack_10;
-                      while( true ) {
-                        bVar19 = mscorlib.dll::System::Collections::Generic::
-                                 List`1[T]+Enumerator[System::Object]::
-                                 List_1_T_Enumerator_System_Object__MoveNext
-                                           (&LStack_10,
-                                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::EffectStyleDef>__MoveNext__
-                                           );
-                        RVar20 = (RegexCharClass_SingleRange)LStack_10._current;
-                        if (bVar19 == 0) break;
-                        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-                          func_?(TypeInfo__Styles);
-                        }
-                        this_04 = TypeInfo__Styles->static_fields->effectStylesDictionary;
-                        if ((RVar20 == (RegexCharClass_SingleRange)0x0) ||
-                           (this_04 == (Dictionary_2_EffectStyle_Styles_EffectStyleDef_ *)0x0))
-                        goto code_?;
-                        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                        Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__Add
-                                  ((Dictionary_2_System_Int32Enum_System_Object_ *)this_04,
-                                   (Int32Enum__Enum)*(InvokerMethod *)((int)RVar20 + 8),
-                                   (Object *)RVar20,
-                                   MethodInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>__Add_EffectStyle__Styles__EffectStyleDef_
-                                  );
-                        RVar16 = RVar20;
+                    UNLOCK();
+                  } while (!bVar14);
+                }
+                pLVar26 = (this->fields).teamIconStyles;
+                if (pLVar26 != (List_1_Styles_TeamIconStyleDef_ *)0x0) {
+                  if (iRam_? != 0) {
+                    uVar10 = (uint)((ulonglong)&uStack_15 >> 0xc);
+                    lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+                    do {
+                      uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+                      puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+                      LOCK();
+                      bVar14 = uVar12 == *puVar13;
+                      if (bVar14) {
+                        *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
                       }
-                      uStack_1 = 0xffffffff;
-                      mscorlib.dll::System::ThrowHelper::
-                      ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                                ((Object *)&LStack_10,
-                                 (ExceptionArgument__Enum)
-                                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::EffectStyleDef>__Dispose__
-                                 ,(MethodInfo *)RVar16);
-                      uStack_1 = 0xffffffff;
-                      pLVar25 = (this->fields).soundStyles;
-                      if (pLVar25 != (List_1_Styles_SoundStyleDef_ *)0x0) {
-                        iVar14 = (pLVar25->fields)._size;
-                        LStack_15._current =
-                             (RegexCharClass_SingleRange)
-                             func_?(
-                                            TypeInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>
-                                            );
-                        method_00 = 
-                        MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__Dictionary_int_
-                        ;
+                      UNLOCK();
+                    } while (!bVar14);
+                  }
+                  pLStack_16 = (List_1_T_Enumerator_System_Object_ *)
+                                ((ulonglong)(uint)(pLVar26->fields)._version << 0x20);
+                  uStack_17 = 0;
+                  LStack_3._8_8_ = pLStack_16;
+                  LStack_3._current = (Object *)0x0;
+                  uStack_15 = 0;
+                  pLStack_16 = &LStack_3;
+                  LStack_3._list = (List_1_System_Object_ *)pLVar26;
+                  while (bVar19 = mscorlib.dll::System::Collections::Generic::
+                                  List`1[T]+Enumerator[System::Object]::
+                                  List_1_T_Enumerator_System_Object__MoveNext
+                                            (&LStack_3,
+                                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::TeamIconStyleDef>__MoveNext__
+                                            ), pOVar20 = LStack_3._current, bVar19 != 0) {
+                    if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+                      FUN_?(TypeInfo__Styles);
+                    }
+                    pDVar27 = TypeInfo__Styles->static_fields->teamIconStylesDictionary;
+                    if (pOVar20 == (Object *)0x0) goto code_?;
+                    if (pDVar27 ==
+                        (Dictionary_2_MV_WorldObject_MVTeam_Styles_TeamIconStyleDef_ *)0x0)
+                    goto code_?;
+                    pMVar21 = MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>__Add_MV__WorldObject__MVTeam__Styles__TeamIconStyleDef_
+                             ->klass->rgctx_data[0x22].method;
+                    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Int32Enum,System::Object]::
+                    Dictionary_2_System_Int32Enum_System_Object__TryInsert
+                              ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar27,
+                               *(Int32Enum__Enum *)&pOVar20[1].klass,pOVar20,
+                               (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pMVar21 >> 8),2),
+                               pMVar21);
+                  }
+                  pLVar28 = (this->fields).effectStyles;
+                  if (pLVar28 != (List_1_Styles_EffectStyleDef_ *)0x0) {
+                    iVar8 = (pLVar28->fields)._size;
+                    pDVar29 = (Dictionary_2_EffectStyle_Styles_EffectStyleDef_ *)
+                              FUN_?(
+                                           TypeInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>
+                                           );
+                    FUN_?(pDVar29,iVar8,0,
+                                  MethodInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>__Dictionary_int_
+                                  ->klass->rgctx_data->rgctxDataDummy);
+                    if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+                      FUN_?(TypeInfo__Styles);
+                    }
+                    TypeInfo__Styles->static_fields->effectStylesDictionary = pDVar29;
+                    if (iRam_? != 0) {
+                      uVar10 = (uint)((ulonglong)
+                                      &TypeInfo__Styles->static_fields->effectStylesDictionary >>
+                                     0xc);
+                      lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+                      do {
+                        uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+                        puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+                        LOCK();
+                        bVar14 = uVar12 == *puVar13;
+                        if (bVar14) {
+                          *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
+                        }
+                        UNLOCK();
+                      } while (!bVar14);
+                    }
+                    pLVar28 = (this->fields).effectStyles;
+                    if (pLVar28 != (List_1_Styles_EffectStyleDef_ *)0x0) {
+                      if (iRam_? != 0) {
+                        uVar10 = (uint)((ulonglong)&uStack_15 >> 0xc);
+                        lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+                        do {
+                          uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+                          puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+                          LOCK();
+                          bVar14 = uVar12 == *puVar13;
+                          if (bVar14) {
+                            *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
+                          }
+                          UNLOCK();
+                        } while (!bVar14);
+                      }
+                      pLStack_16 = (List_1_T_Enumerator_System_Object_ *)
+                                    ((ulonglong)(uint)(pLVar28->fields)._version << 0x20);
+                      uStack_17 = 0;
+                      LStack_4._8_8_ = pLStack_16;
+                      LStack_4._current = (Object *)0x0;
+                      uStack_15 = 0;
+                      pLStack_16 = &LStack_4;
+                      LStack_4._list = (List_1_System_Object_ *)pLVar28;
+                      while (bVar19 = mscorlib.dll::System::Collections::Generic::
+                                      List`1[T]+Enumerator[System::Object]::
+                                      List_1_T_Enumerator_System_Object__MoveNext
+                                                (&LStack_4,
+                                                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::EffectStyleDef>__MoveNext__
+                                                ), pOVar20 = LStack_4._current, bVar19 != 0) {
+                        if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+                          FUN_?(TypeInfo__Styles);
+                        }
+                        pDVar29 = TypeInfo__Styles->static_fields->effectStylesDictionary;
+                        if (pOVar20 == (Object *)0x0) goto code_?;
+                        if (pDVar29 == (Dictionary_2_EffectStyle_Styles_EffectStyleDef_ *)0x0)
+                        goto code_?;
+                        pMVar21 = MethodInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>__Add_EffectStyle__Styles__EffectStyleDef_
+                                 ->klass->rgctx_data[0x22].method;
                         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                         Int32Enum,System::Object]::
-                        Dictionary_2_System_Int32Enum_System_Object___ctor_3
-                                  ((Dictionary_2_System_Int32Enum_System_Object_ *)
-                                   LStack_15._current,iVar14,
-                                   MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__Dictionary_int_
-                                  );
-                        if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-                          func_?();
-                        }
-                        TypeInfo__Styles->static_fields->soundStylesDictionary =
-                             (Dictionary_2_SoundStyle_UnityEngine_AudioSource_ *)LStack_15._current;
-                        func_?();
-                        pLVar17 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                  *)(this->fields).soundStyles;
-                        if (pLVar17 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                       *)0x0) {
-                          pLVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text
-                                    ::RegularExpressions::RegexCharClass+SingleRange]::
-                                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                                              (&LStack_15,pLVar17,
-                                               MethodInfo__System__Collections__Generic__List<Styles::SoundStyleDef>__GetEnumerator__
-                                              );
-                          LStack_11._list = (List_1_System_Object_ *)pLVar18->_list;
-                          LStack_11._index = pLVar18->_index;
-                          LStack_11._version = pLVar18->_version;
-                          LStack_11._current = *(Object **)&pLVar18->_current;
-                          LStack_15._version = 0;
-                          uStack_1 = 0x10;
-                          LStack_15._current = (RegexCharClass_SingleRange)&LStack_11;
-                          while( true ) {
-                            bVar19 = mscorlib.dll::System::Collections::Generic::
-                                     List`1[T]+Enumerator[System::Object]::
-                                     List_1_T_Enumerator_System_Object__MoveNext
-                                               (&LStack_11,
-                                                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::SoundStyleDef>__MoveNext__
+                        Dictionary_2_System_Int32Enum_System_Object__TryInsert
+                                  ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar29,
+                                   *(Int32Enum__Enum *)&pOVar20[1].klass,pOVar20,
+                                   (InsertionBehavior__Enum)
+                                   CONCAT71((int7)((ulonglong)pMVar21 >> 8),2),pMVar21);
+                      }
+                      pLVar30 = (this->fields).soundStyles;
+                      if (pLVar30 != (List_1_Styles_SoundStyleDef_ *)0x0) {
+                        iVar8 = (pLVar30->fields)._size;
+                        pDVar31 = (Dictionary_2_SoundStyle_UnityEngine_AudioSource_ *)
+                                  FUN_?(
+                                               TypeInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>
                                                );
-                            pOVar26 = LStack_11._current;
-                            if (bVar19 == 0) break;
-                            if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-                              func_?(TypeInfo__Styles);
+                        FUN_?(pDVar31,iVar8,0,
+                                      MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__Dictionary_int_
+                                      ->klass->rgctx_data->rgctxDataDummy);
+                        if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+                          FUN_?(TypeInfo__Styles);
+                        }
+                        TypeInfo__Styles->static_fields->soundStylesDictionary = pDVar31;
+                        if (iRam_? != 0) {
+                          uVar10 = (uint)((ulonglong)
+                                          &TypeInfo__Styles->static_fields->soundStylesDictionary >>
+                                         0xc);
+                          lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+                          do {
+                            uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+                            puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+                            LOCK();
+                            bVar14 = uVar12 == *puVar13;
+                            if (bVar14) {
+                              *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
                             }
-                            this_05 = TypeInfo__Styles->static_fields->soundStylesDictionary;
-                            if (((RegexCharClass_SingleRange)pOVar26 ==
-                                 (RegexCharClass_SingleRange)0x0) ||
-                               (this_05 == (Dictionary_2_SoundStyle_UnityEngine_AudioSource_ *)0x0))
-                            goto code_?;
-                            method_00 = *(MethodInfo **)((int)pOVar26 + 0xc);
-                            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                            Int32Enum,System::Object]::
-                            Dictionary_2_System_Int32Enum_System_Object__Add
-                                      ((Dictionary_2_System_Int32Enum_System_Object_ *)this_05,
-                                       *(Int32Enum__Enum *)((int)pOVar26 + 8),(Object *)method_00,
-                                       MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__Add_SoundStyle__UnityEngine__AudioSource_
-                                      );
+                            UNLOCK();
+                          } while (!bVar14);
+                        }
+                        pLVar30 = (this->fields).soundStyles;
+                        if (pLVar30 != (List_1_Styles_SoundStyleDef_ *)0x0) {
+                          if (iRam_? != 0) {
+                            uVar10 = (uint)((ulonglong)&uStack_15 >> 0xc);
+                            lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+                            do {
+                              uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+                              puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+                              LOCK();
+                              bVar14 = uVar12 == *puVar13;
+                              if (bVar14) {
+                                *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
+                              }
+                              UNLOCK();
+                            } while (!bVar14);
                           }
-                          uStack_1 = 0xffffffff;
-                          mscorlib.dll::System::ThrowHelper::
-                          ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                                    ((Object *)&LStack_11,
-                                     (ExceptionArgument__Enum)
-                                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::SoundStyleDef>__Dispose__
-                                     ,method_00);
-                          uStack_1 = 0xffffffff;
-                          pLVar27 = (this->fields).rarityStyles;
-                          if (pLVar27 != (List_1_RarityStylesDef_ *)0x0) {
-                            iVar14 = (pLVar27->fields)._size;
-                            LStack_15._current =
-                                 (RegexCharClass_SingleRange)
-                                 func_?(
-                                                TypeInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>
-                                                );
+                          pLStack_16 = (List_1_T_Enumerator_System_Object_ *)
+                                        ((ulonglong)(uint)(pLVar30->fields)._version << 0x20);
+                          uStack_17 = 0;
+                          LStack_5._8_8_ = pLStack_16;
+                          LStack_5._current = (Object *)0x0;
+                          uStack_15 = 0;
+                          pLStack_16 = &LStack_5;
+                          LStack_5._list = (List_1_System_Object_ *)pLVar30;
+                          while (bVar19 = mscorlib.dll::System::Collections::Generic::
+                                          List`1[T]+Enumerator[System::Object]::
+                                          List_1_T_Enumerator_System_Object__MoveNext
+                                                    (&LStack_5,
+                                                                                                          
+                                                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<Styles::SoundStyleDef>__MoveNext__
+                                                  ), pOVar20 = LStack_5._current, bVar19 != 0) {
+                            if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+                              FUN_?(TypeInfo__Styles);
+                            }
+                            pDVar31 = TypeInfo__Styles->static_fields->soundStylesDictionary;
+                            if (pOVar20 == (Object *)0x0) goto code_?;
+                            if (pDVar31 == (Dictionary_2_SoundStyle_UnityEngine_AudioSource_ *)0x0)
+                            goto code_?;
+                            pMVar21 = MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__Add_SoundStyle__UnityEngine__AudioSource_
+                                     ->klass->rgctx_data[0x22].method;
                             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                             Int32Enum,System::Object]::
-                            Dictionary_2_System_Int32Enum_System_Object___ctor_3
-                                      ((Dictionary_2_System_Int32Enum_System_Object_ *)
-                                       LStack_15._current,iVar14,
-                                       MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__Dictionary_int_
-                                      );
-                            if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-                              func_?();
+                            Dictionary_2_System_Int32Enum_System_Object__TryInsert
+                                      ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar31,
+                                       *(Int32Enum__Enum *)&pOVar20[1].klass,
+                                       (Object *)pOVar20[1].monitor,
+                                       (InsertionBehavior__Enum)
+                                       CONCAT71((int7)((ulonglong)pMVar21 >> 8),2),pMVar21);
+                          }
+                          pLVar32 = (this->fields).rarityStyles;
+                          if (pLVar32 != (List_1_RarityStylesDef_ *)0x0) {
+                            iVar8 = (pLVar32->fields)._size;
+                            pDVar33 = (Dictionary_2_AccessoryRarity_RarityStylesDef_ *)
+                                      FUN_?(
+                                                  TypeInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>
+                                                  );
+                            FUN_?(pDVar33,iVar8,0,
+                                          MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__Dictionary_int_
+                                          ->klass->rgctx_data->rgctxDataDummy);
+                            if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+                              FUN_?(TypeInfo__Styles);
                             }
                             TypeInfo__Styles->static_fields->accessoryRarityColorsDictionary =
-                                 (Dictionary_2_AccessoryRarity_RarityStylesDef_ *)LStack_15._current
-                            ;
-                            func_?();
-                            pLVar17 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                      *)(this->fields).rarityStyles;
-                            if (pLVar17 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                           *)0x0) {
-                              pLVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::
-                                        Text::RegularExpressions::RegexCharClass+SingleRange]::
-                                        List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                                                  (&LStack_15,pLVar17,
-                                                                                                      
-                                                  MethodInfo__System__Collections__Generic__List<RarityStylesDef>__GetEnumerator__
-                                                  );
-                              LStack_12._list = (List_1_System_Object_ *)pLVar18->_list;
-                              LStack_12._index = pLVar18->_index;
-                              LStack_12._version = pLVar18->_version;
-                              LStack_12._current = *(Object **)&pLVar18->_current;
-                              LStack_15._version = 0;
-                              uStack_1 = 0x13;
-                              LStack_15._current = (RegexCharClass_SingleRange)&LStack_12;
+                                 pDVar33;
+                            if (iRam_? != 0) {
+                              uVar10 = (uint)((ulonglong)
+                                              &TypeInfo__Styles->static_fields->
+                                               accessoryRarityColorsDictionary >> 0xc);
+                              lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+                              do {
+                                uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+                                puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+                                LOCK();
+                                bVar14 = uVar12 == *puVar13;
+                                if (bVar14) {
+                                  *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
+                                }
+                                UNLOCK();
+                              } while (!bVar14);
+                            }
+                            pLVar32 = (this->fields).rarityStyles;
+                            if (pLVar32 != (List_1_RarityStylesDef_ *)0x0) {
+                              if (iRam_? != 0) {
+                                uVar10 = (uint)((ulonglong)&uStack_15 >> 0xc);
+                                lVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+                                do {
+                                  uVar12 = *(ulonglong *)(lVar11 + 0xADDR);
+                                  puVar13 = (ulonglong *)(lVar11 + 0xADDR);
+                                  LOCK();
+                                  bVar14 = uVar12 == *puVar13;
+                                  if (bVar14) {
+                                    *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
+                                  }
+                                  UNLOCK();
+                                } while (!bVar14);
+                              }
+                              pLStack_16 = (List_1_T_Enumerator_System_Object_ *)
+                                            ((ulonglong)(uint)(pLVar32->fields)._version << 0x20);
+                              uStack_17 = 0;
+                              LStack_6._8_8_ = pLStack_16;
+                              LStack_6._current = (Object *)0x0;
+                              uStack_15 = 0;
+                              pLStack_16 = &LStack_6;
+                              LStack_6._list = (List_1_System_Object_ *)pLVar32;
                               while( true ) {
                                 bVar19 = mscorlib.dll::System::Collections::Generic::
                                          List`1[T]+Enumerator[System::Object]::
                                          List_1_T_Enumerator_System_Object__MoveNext
-                                                   (&LStack_12,
+                                                   (&LStack_6,
                                                                                                         
                                                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RarityStylesDef>__MoveNext__
                                                   );
-                                pOVar26 = LStack_12._current;
-                                if (bVar19 == 0) break;
-                                if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-                                  func_?();
+                                pOVar20 = LStack_6._current;
+                                if (bVar19 == 0) {
+                                  if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+                                    FUN_?(TypeInfo__Styles);
+                                  }
+                                  TypeInfo__Styles->static_fields->isInitialized = 1;
+                                  return;
                                 }
-                                this_06 = TypeInfo__Styles->static_fields->
+                                if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+                                  FUN_?(TypeInfo__Styles);
+                                }
+                                pDVar33 = TypeInfo__Styles->static_fields->
                                           accessoryRarityColorsDictionary;
-                                if (((RegexCharClass_SingleRange)pOVar26 ==
-                                     (RegexCharClass_SingleRange)0x0) ||
-                                   (this_06 == (Dictionary_2_AccessoryRarity_RarityStylesDef_ *)0x0)
-                                   ) goto code_?;
+                                if (pOVar20 == (Object *)0x0) break;
+                                if (pDVar33 == (Dictionary_2_AccessoryRarity_RarityStylesDef_ *)0x0)
+                                goto code_?;
+                                pMVar21 = MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__Add_AccessoryRarity__RarityStylesDef_
+                                         ->klass->rgctx_data[0x22].method;
                                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
                                 Int32Enum,System::Object]::
-                                Dictionary_2_System_Int32Enum_System_Object__Add
-                                          ((Dictionary_2_System_Int32Enum_System_Object_ *)this_06,
-                                           *(Int32Enum__Enum *)((int)pOVar26 + 8),pOVar26,
-                                           MethodInfo__System__Collections__Generic__Dictionary<AccessoryRarity,_RarityStylesDef>__Add_AccessoryRarity__RarityStylesDef_
-                                          );
+                                Dictionary_2_System_Int32Enum_System_Object__TryInsert
+                                          ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar33,
+                                           *(Int32Enum__Enum *)&pOVar20[1].klass,pOVar20,
+                                           (InsertionBehavior__Enum)
+                                           CONCAT71((int7)((ulonglong)pMVar21 >> 8),2),pMVar21);
                               }
-                              uStack_1 = 0xffffffff;
-                              mscorlib.dll::System::ThrowHelper::
-                              ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                                        ((Object *)&LStack_12,
-                                         (ExceptionArgument__Enum)
-                                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RarityStylesDef>__Dispose__
-                                         ,in_stack_28);
-                              uStack_1 = 0xffffffff;
-                              if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-                                func_?();
-                              }
-                              TypeInfo__Styles->static_fields->isInitialized = 1;
                               goto code_?;
                             }
                           }
@@ -1960,16 +2667,44 @@ code_?:
       }
     }
   }
+  FUN_?();
 code_?:
-  uVar29 = func_?();
-  uVar29 = func_?(uVar29);
-  uVar29 = func_?(uVar29);
-  uVar29 = func_?(uVar29);
-  uVar29 = func_?(uVar29);
-  uVar29 = func_?(uVar29);
-  func_?(uVar29);
-  pcVar30 = (code *)swi(3);
-  (*pcVar30)();
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+  pcVar34 = (code *)swi(3);
+  (*pcVar34)();
   return;
 }
 
@@ -1980,30 +2715,110 @@ void Assembly-CSharp.dll::Styles::Styles_OnDestroy(Styles *this,MethodInfo *meth
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Styles);
+    FUN_?(&TypeInfo__Styles);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Styles);
+  if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__Styles);
   }
   TypeInfo__Styles->static_fields->buttonStylesDictionary =
        (Dictionary_2_ButtonStyle_Styles_ButtonStyleDef_ *)0x0;
-  func_?(&TypeInfo__Styles->static_fields->buttonStylesDictionary,0);
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)&TypeInfo__Styles->static_fields->buttonStylesDictionary >> 0xc);
+    lVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar3 = *(ulonglong *)(lVar2 + 0xADDR);
+      puVar4 = (ulonglong *)(lVar2 + 0xADDR);
+      LOCK();
+      bVar5 = uVar3 == *puVar4;
+      if (bVar5) {
+        *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
   TypeInfo__Styles->static_fields->textStylesDictionary =
        (Dictionary_2_TextStyle_Styles_TextStyleDef_ *)0x0;
-  func_?(&TypeInfo__Styles->static_fields->textStylesDictionary,0);
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)&TypeInfo__Styles->static_fields->textStylesDictionary >> 0xc);
+    lVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar3 = *(ulonglong *)(lVar2 + 0xADDR);
+      puVar4 = (ulonglong *)(lVar2 + 0xADDR);
+      LOCK();
+      bVar5 = uVar3 == *puVar4;
+      if (bVar5) {
+        *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
   TypeInfo__Styles->static_fields->colorStylesDictionary =
        (Dictionary_2_ColorStyle_Styles_ColorStyleDef_ *)0x0;
-  func_?(&TypeInfo__Styles->static_fields->colorStylesDictionary,0);
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)&TypeInfo__Styles->static_fields->colorStylesDictionary >> 0xc);
+    lVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar3 = *(ulonglong *)(lVar2 + 0xADDR);
+      puVar4 = (ulonglong *)(lVar2 + 0xADDR);
+      LOCK();
+      bVar5 = uVar3 == *puVar4;
+      if (bVar5) {
+        *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
   TypeInfo__Styles->static_fields->teamIconStylesDictionary =
        (Dictionary_2_MV_WorldObject_MVTeam_Styles_TeamIconStyleDef_ *)0x0;
-  func_?(&TypeInfo__Styles->static_fields->teamIconStylesDictionary,0);
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)&TypeInfo__Styles->static_fields->teamIconStylesDictionary >> 0xc);
+    lVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar3 = *(ulonglong *)(lVar2 + 0xADDR);
+      puVar4 = (ulonglong *)(lVar2 + 0xADDR);
+      LOCK();
+      bVar5 = uVar3 == *puVar4;
+      if (bVar5) {
+        *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
   TypeInfo__Styles->static_fields->effectStylesDictionary =
        (Dictionary_2_EffectStyle_Styles_EffectStyleDef_ *)0x0;
-  func_?(&TypeInfo__Styles->static_fields->effectStylesDictionary,0);
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)&TypeInfo__Styles->static_fields->effectStylesDictionary >> 0xc);
+    lVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar3 = *(ulonglong *)(lVar2 + 0xADDR);
+      puVar4 = (ulonglong *)(lVar2 + 0xADDR);
+      LOCK();
+      bVar5 = uVar3 == *puVar4;
+      if (bVar5) {
+        *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
   TypeInfo__Styles->static_fields->soundStylesDictionary =
        (Dictionary_2_SoundStyle_UnityEngine_AudioSource_ *)0x0;
-  func_?(&TypeInfo__Styles->static_fields->soundStylesDictionary,0);
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)&TypeInfo__Styles->static_fields->soundStylesDictionary >> 0xc);
+    lVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar3 = *(ulonglong *)(lVar2 + 0xADDR);
+      puVar4 = (ulonglong *)(lVar2 + 0xADDR);
+      LOCK();
+      bVar5 = uVar3 == *puVar4;
+      if (bVar5) {
+        *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
   TypeInfo__Styles->static_fields->isInitialized = 0;
   return;
 }
@@ -2015,35 +2830,73 @@ void Assembly-CSharp.dll::Styles::Styles_PlayUISound(SoundStyle__Enum soundStyle
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__get_Item_SoundStyle_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Styles);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (soundStyle != SoundStyle__Enum_NoSound) {
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    this = TypeInfo__Styles->static_fields->soundStylesDictionary;
-    if (this != (Dictionary_2_SoundStyle_UnityEngine_AudioSource_ *)0x0) {
-      pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                         ((Dictionary_2_System_Int32Enum_System_Object_ *)this,soundStyle,
-                          MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__get_Item_SoundStyle_
-                         );
-      if (pOVar1 != (Object *)0x0) {
-        if (pcRam_? == (code *)0x0) {
-          pcRam_? = (code *)func_?();
-        }
-        (*pcRam_?)();
-        return;
-      }
-    }
-    uVar2 = func_?(&stack0xfffffff0);
-    func_?(uVar2);
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+  if (soundStyle == SoundStyle__Enum_NoSound) {
     return;
   }
+  if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__Styles);
+  }
+  this = TypeInfo__Styles->static_fields->soundStylesDictionary;
+  if ((this == (Dictionary_2_SoundStyle_UnityEngine_AudioSource_ *)0x0) ||
+     (obj = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+            Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                      ((Dictionary_2_System_Int32Enum_System_Object_ *)this,soundStyle,
+                       MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__get_Item_SoundStyle_
+                      ), obj == (Object *)0x0)) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::AudioSource>_UnityEngine__AudioSource_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (obj == (Object *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowArgumentNullException((Object *)0x0,StringLiteral_source,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pOVar2 = obj[1].klass;
+  if (pOVar2 == (Object__Class *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowArgumentNullException(obj,StringLiteral_source,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pcRam_?)(pOVar2,0);
   return;
 }
 
@@ -2055,139 +2908,133 @@ void Assembly-CSharp.dll::Styles::Styles_SetStyle
                SoundStyle__Enum soundStyle,MethodInfo *method)
 
 {
-  auVar1._0_76_ = in_stack_2._0_76_;
-  auVar1._76_4_ = unaff_EBX;
-  auVar1._80_4_ = unaff_EBP;
-  auVar3._76_8_ = auVar1._76_8_;
-  auVar3._0_72_ = in_stack_2._0_72_;
-  auVar3._72_4_ = unaff_ESI;
-  auVar4._72_12_ = auVar3._72_12_;
-  auVar4._0_68_ = in_stack_2._0_68_;
-  auVar4._68_4_ = unaff_EDI;
   if (cRam_? == '\0') {
-    auVar5._68_16_ = auVar4._68_16_;
-    auVar5._0_64_ = in_stack_2._0_64_;
-    auVar5._64_4_ =
-         &
-         MethodInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>__get_Item_ButtonStyle_
-    ;
-    auVar6._64_20_ = auVar5._64_20_;
-    auVar6._0_60_ = in_stack_2._0_60_;
-    auVar6._60_4_ = &UNK_?;
-    func_?();
-    auVar7._64_20_ = auVar6._64_20_;
-    auVar7._0_60_ = auVar6._0_60_;
-    auVar7._60_4_ =
-         &
-         MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__get_Item_SoundStyle_
-    ;
-    auVar8._60_24_ = auVar7._60_24_;
-    auVar8._0_56_ = auVar6._0_56_;
-    auVar8._56_4_ = &UNK_?;
-    func_?();
-    auVar9._60_24_ = auVar8._60_24_;
-    auVar9._0_56_ = auVar8._0_56_;
-    auVar9._56_4_ = &TypeInfo__UnityEngine__Object;
-    auVar10._56_28_ = auVar9._56_28_;
-    auVar10._0_52_ = auVar8._0_52_;
-    auVar10._52_4_ = &UNK_?;
-    func_?();
-    auVar11._56_28_ = auVar10._56_28_;
-    auVar11._0_52_ = auVar10._0_52_;
-    auVar11._52_4_ = &TypeInfo__Styles;
-    auVar12._52_32_ = auVar11._52_32_;
-    auVar12._0_48_ = auVar10._0_48_;
-    auVar12._48_4_ = &UNK_?;
-    func_?();
-    auVar13._52_32_ = auVar12._52_32_;
-    auVar13._0_48_ = auVar12._0_48_;
-    auVar13._48_4_ = &MethodInfo__Styles____c__DisplayClass21_0___SetStyle_b__0__;
-    auVar14._48_36_ = auVar13._48_36_;
-    auVar14._0_44_ = auVar12._0_44_;
-    auVar14._44_4_ = &UNK_?;
-    func_?();
-    auVar15._48_36_ = auVar14._48_36_;
-    auVar15._0_44_ = auVar14._0_44_;
-    auVar15._44_4_ = &TypeInfo__Styles____c__DisplayClass21_0;
-    auVar16._44_40_ = auVar15._44_40_;
-    auVar16._0_40_ = auVar14._0_40_;
-    auVar16._40_4_ = &UNK_?;
-    func_?();
-    auVar17._44_40_ = auVar16._44_40_;
-    auVar17._0_40_ = auVar16._0_40_;
-    auVar17._40_4_ = &TypeInfo__UnityEngine__Events__UnityAction;
-    auVar4._40_44_ = auVar17._40_44_;
-    auVar4._0_36_ = auVar16._0_36_;
-    auVar4._36_4_ = &UNK_?;
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>__get_Item_ButtonStyle_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__get_Item_SoundStyle_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Styles);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__Styles____c__DisplayClass21_0___SetStyle_b__0__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Styles____c__DisplayClass21_0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  auVar18._68_16_ = auVar4._68_16_;
-  auVar18._0_64_ = auVar4._0_64_;
-  auVar18._64_4_ = TypeInfo__Styles____c__DisplayClass21_0;
-  auVar19._64_20_ = auVar18._64_20_;
-  auVar19._0_60_ = auVar4._0_60_;
-  auVar19._60_4_ = &UNK_?;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,auVar19._64_4_);
-  if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  object = (Object *)FUN_?(TypeInfo__Styles____c__DisplayClass21_0);
+  if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar20 = Styles_HandleUnInitalized((MethodInfo *)0x0);
-  if (bVar20 == 0) {
+  bVar1 = Styles_HandleUnInitalized((MethodInfo *)0x0);
+  if (bVar1 == 0) {
     return;
   }
-  if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__Styles);
   }
   this = TypeInfo__Styles->static_fields->buttonStylesDictionary;
   if (((this != (Dictionary_2_ButtonStyle_Styles_ButtonStyleDef_ *)0x0) &&
-      (pOVar21 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+      (pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
                           ((Dictionary_2_System_Int32Enum_System_Object_ *)this,buttonStyle,
                            MethodInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>__get_Item_ButtonStyle_
-                          ), pOVar21 != (Object *)0x0)) && (button != (Button *)0x0)) {
-    value_00.m_FadeDuration = pOVar21[0xb].monitor;
-    value_00._0_84_ = *(undefined1 (*) [84])(pOVar21 + 1);
+                          ), pOVar2 != (Object *)0x0)) && (button != (Button *)0x0)) {
+    pOStack_3 = pOVar2[1].klass;
+    pMStack_4 = pOVar2[1].monitor;
+    pOStack_5 = pOVar2[2].klass;
+    pMStack_6 = pOVar2[2].monitor;
+    pOStack_7 = pOVar2[3].klass;
+    pMStack_8 = pOVar2[3].monitor;
+    pOStack_9 = pOVar2[4].klass;
+    pMStack_10 = pOVar2[4].monitor;
+    pOStack_11 = pOVar2[5].klass;
+    pMStack_12 = pOVar2[5].monitor;
+    pOStack_13 = pOVar2[6].klass;
     UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_set_colors
-              ((Selectable *)button,value_00,(MethodInfo *)0x0);
-    pIVar22 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
+              ((Selectable *)button,(ColorBlock *)&pOStack_3,(MethodInfo *)0x0);
+    pIVar14 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
                        ((Selectable *)button,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    bVar20 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)pIVar22,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar20 != 0) {
-      pIVar22 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
-                         ((Selectable *)button,(MethodInfo *)0x0);
-      if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (pIVar14 != (Image *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      Styles_SetStyle_2((Graphic *)pIVar22,colorStyle,(MethodInfo *)0x0);
+      if ((void *)(pIVar14->fields)._._._._._._._ != (void *)0x0) {
+        pIVar14 = UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_get_image
+                           ((Selectable *)button,(MethodInfo *)0x0);
+        if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        Styles_SetStyle_2((Graphic *)pIVar14,colorStyle,(MethodInfo *)0x0);
+      }
     }
     if (soundStyle == SoundStyle__Enum_NoSound) {
       return;
     }
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__Styles);
     }
     this_00 = TypeInfo__Styles->static_fields->soundStylesDictionary;
     if ((this_00 != (Dictionary_2_SoundStyle_UnityEngine_AudioSource_ *)0x0) &&
-       (pOVar23 = (Object__Class *)
+       (pOVar15 = (Object__Class *)
                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
                  Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
                            ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,soundStyle,
                             MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__get_Item_SoundStyle_
-                           ), value != (Object *)0x0)) {
-      value[1].klass = pOVar23;
-      func_?();
+                           ), object != (Object *)0x0)) {
+      bVar16 = iRam_? != 0;
+      object[1].klass = pOVar15;
+      if (bVar16) {
+        uVar17 = (uint)((ulonglong)(object + 1) >> 0xc);
+        puVar18 = (ulonglong *)((ulonglong)((uVar17 & 0x1fffff) >> 6) * 8 + 0xADDR);
+        do {
+          uVar19 = *puVar18;
+          LOCK();
+          uVar20 = *puVar18;
+          if (uVar19 == uVar20) {
+            *puVar18 = uVar19 | 1L << (uVar17 & 0x3f);
+          }
+          UNLOCK();
+        } while (uVar19 != uVar20);
+      }
       this_01 = (UnityEvent *)(button->fields).m_OnClick;
-      this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+      this_02 = (NavMesh_OnNavMeshPreUpdate *)
+                FUN_?(TypeInfo__UnityEngine__Events__UnityAction);
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
-                (this_02,value,MethodInfo__Styles____c__DisplayClass21_0___SetStyle_b__0__,
+                (this_02,object,MethodInfo__Styles____c__DisplayClass21_0___SetStyle_b__0__,
                  (MethodInfo *)0x0);
       if (this_01 != (UnityEvent *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
@@ -2196,9 +3043,9 @@ void Assembly-CSharp.dll::Styles::Styles_SetStyle
       }
     }
   }
-  func_?();
-  pcVar24 = (code *)swi(3);
-  (*pcVar24)();
+  FUN_?();
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
   return;
 }
 
@@ -2210,21 +3057,25 @@ void Assembly-CSharp.dll::Styles::Styles_SetStyle_1
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>__get_Item_TextStyle_
-                   );
-    func_?(&TypeInfo__Styles);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<TextStyle,_Styles::TextStyleDef>__get_Item_TextStyle_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Styles);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Styles);
+  if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+    FUN_?();
   }
   bVar1 = Styles_HandleUnInitalized((MethodInfo *)0x0);
   if (bVar1 == 0) {
     return;
   }
-  if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Styles);
+  if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__Styles);
   }
   this = TypeInfo__Styles->static_fields->textStylesDictionary;
   if (((this != (Dictionary_2_TextStyle_Styles_TextStyleDef_ *)0x0) &&
@@ -2235,16 +3086,33 @@ void Assembly-CSharp.dll::Styles::Styles_SetStyle_1
                           ), pOVar2 != (Object *)0x0)) && (text != (Text *)0x0)) {
     UnityEngine.UI.dll::UnityEngine::UI::Text::Text_set_font
               (text,(Font *)pOVar2[1].monitor,(MethodInfo *)0x0);
-    UnityEngine.UI.dll::UnityEngine::UI::Text::Text_set_fontSize
-              (text,(int32_t)pOVar2[2].klass,(MethodInfo *)0x0);
-    UnityEngine.UI.dll::UnityEngine::UI::Text::Text_set_fontStyle
-              (text,(FontStyle__Enum)pOVar2[2].monitor,(MethodInfo *)0x0);
-    Styles_SetStyle_2((Graphic *)text,colorStyle,(MethodInfo *)0x0);
-    return;
+    pFVar3 = (text->fields).m_FontData;
+    if (pFVar3 != (FontData *)0x0) {
+      if ((pFVar3->fields).m_FontSize != *(int *)&pOVar2[2].klass) {
+        (pFVar3->fields).m_FontSize = *(int *)&pOVar2[2].klass;
+        (*(text->klass->vtable).SetVerticesDirty.methodPtr)
+                  (text,(text->klass->vtable).SetVerticesDirty.method);
+        (*(text->klass->vtable).SetLayoutDirty.methodPtr)
+                  (text,(text->klass->vtable).SetLayoutDirty.method);
+      }
+      pFVar3 = (text->fields).m_FontData;
+      if (pFVar3 != (FontData *)0x0) {
+        iVar4 = *(int *)((longlong)&pOVar2[2].klass + 4);
+        if ((pFVar3->fields).m_FontStyle != iVar4) {
+          (pFVar3->fields).m_FontStyle = iVar4;
+          (*(text->klass->vtable).SetVerticesDirty.methodPtr)
+                    (text,(text->klass->vtable).SetVerticesDirty.method);
+          (*(text->klass->vtable).SetLayoutDirty.methodPtr)
+                    (text,(text->klass->vtable).SetLayoutDirty.method);
+        }
+        Styles_SetStyle_2((Graphic *)text,colorStyle,(MethodInfo *)0x0);
+        return;
+      }
+    }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -2256,21 +3124,25 @@ void Assembly-CSharp.dll::Styles::Styles_SetStyle_2
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__get_Item_ColorStyle_
-                   );
-    func_?(&TypeInfo__Styles);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__get_Item_ColorStyle_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Styles);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Styles);
+  if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+    FUN_?();
   }
   bVar1 = Styles_HandleUnInitalized((MethodInfo *)0x0);
   if (bVar1 == 0) {
     return;
   }
-  if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Styles);
+  if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__Styles);
   }
   this = TypeInfo__Styles->static_fields->colorStylesDictionary;
   if (((this != (Dictionary_2_ColorStyle_Styles_ColorStyleDef_ *)0x0) &&
@@ -2279,13 +3151,17 @@ void Assembly-CSharp.dll::Styles::Styles_SetStyle_2
                           ((Dictionary_2_System_Int32Enum_System_Object_ *)this,colorStyle,
                            MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__get_Item_ColorStyle_
                           ), pOVar2 != (Object *)0x0)) && (graphic != (Graphic *)0x0)) {
-    (*(code *)(graphic->klass->vtable).set_color.method)
-              (graphic,pOVar2[1].monitor,pOVar2[2].klass,pOVar2[2].monitor);
+    uStack_3 = *(undefined4 *)((longlong)&pOVar2[1].klass + 4);
+    uStack_4 = *(undefined4 *)&pOVar2[1].monitor;
+    uStack_5 = *(undefined4 *)((longlong)&pOVar2[1].monitor + 4);
+    uStack_6 = *(undefined4 *)&pOVar2[2].klass;
+    (*(graphic->klass->vtable).set_color.methodPtr)
+              (graphic,&uStack_3,(graphic->klass->vtable).set_color.method);
     return;
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -2297,60 +3173,38 @@ void Assembly-CSharp.dll::Styles::Styles_SetStyle_3
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__get_Item_MV__WorldObject__MVTeam_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Styles);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+    FUN_?();
   }
   bVar1 = Styles_HandleUnInitalized((MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    return;
-  }
-  if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  this_00 = (Dictionary_2_System_Int32Enum_System_Object_ *)
-            TypeInfo__Styles->static_fields->teamToColorStyle;
-  if (this_00 != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__get_Item
-              (this_00,team,
-               MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__get_Item_MV__WorldObject__MVTeam_
-              );
-    if (cRam_? == '\0') {
-      func_?();
-      func_?();
-      cRam_? = '\x01';
+  if (bVar1 != 0) {
+    if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__Styles);
     }
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    this = TypeInfo__Styles->static_fields->teamToColorStyle;
+    if (this == (Dictionary_2_MV_WorldObject_MVTeam_ColorStyle_ *)0x0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
     }
-    bVar1 = Styles_HandleUnInitalized((MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      this = TypeInfo__Styles->static_fields->colorStylesDictionary;
-      if (((this == (Dictionary_2_ColorStyle_Styles_ColorStyleDef_ *)0x0) ||
-          (pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                              ((Dictionary_2_System_Int32Enum_System_Object_ *)this,
-                               in_stack_3,
-                               MethodInfo__System__Collections__Generic__Dictionary<ColorStyle,_Styles::ColorStyleDef>__get_Item_ColorStyle_
-                              ), pOVar2 == (Object *)0x0)) || (in_stack_4 == (int *)0x0))
-      goto code_?;
-      pOStack5 = pOVar2[3].klass;
-      (**(code **)(*in_stack_4 + 0x178))();
-    }
-    return;
+    colorStyle = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                 Int32Enum]::Dictionary_2_System_Int32Enum_System_Int32Enum__get_Item
+                           ((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)this,team,
+                            MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__get_Item_MV__WorldObject__MVTeam_
+                           );
+    Styles_SetStyle_2(image,colorStyle,(MethodInfo *)0x0);
   }
-code_?:
-  uVar6 = func_?(&stack0xfffffff4);
-  func_?(uVar6);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
   return;
 }
 
@@ -2362,157 +3216,38 @@ void Assembly-CSharp.dll::Styles::Styles_SetStyle_4
                SoundStyle__Enum soundStyle,MethodInfo *method)
 
 {
-  auVar1._0_72_ = in_stack_2._0_72_;
-  auVar1._72_4_ = unaff_EBP;
   if (cRam_? == '\0') {
-    auVar3._0_68_ = in_stack_2._0_68_;
-    auVar3._68_4_ =
-         &
-         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__get_Item_MV__WorldObject__MVTeam_
-    ;
-    auVar3._72_4_ = unaff_EBP;
-    auVar4._68_8_ = auVar3._68_8_;
-    auVar4._0_64_ = in_stack_2._0_64_;
-    auVar4._64_4_ = &UNK_?;
-    func_?();
-    auVar5._68_8_ = auVar4._68_8_;
-    auVar5._0_64_ = auVar4._0_64_;
-    auVar5._64_4_ = &TypeInfo__Styles;
-    auVar1._64_12_ = auVar5._64_12_;
-    auVar1._0_60_ = auVar4._0_60_;
-    auVar1._60_4_ = &UNK_?;
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__get_Item_MV__WorldObject__MVTeam_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Styles);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  auVar6 = auVar1;
-  if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-    auVar7._72_4_ = auVar1._72_4_;
-    auVar7._0_68_ = auVar1._0_68_;
-    auVar7._68_4_ = TypeInfo__Styles;
-    auVar6._68_8_ = auVar7._68_8_;
-    auVar6._0_64_ = auVar1._0_64_;
-    auVar6._64_4_ = &UNK_?;
-    func_?();
+  if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  auVar8._72_4_ = auVar6._72_4_;
-  auVar8._0_68_ = auVar6._0_68_;
-  auVar8._68_4_ = 0;
-  auVar9._68_8_ = auVar8._68_8_;
-  auVar9._0_64_ = auVar6._0_64_;
-  auVar9._64_4_ = &UNK_?;
-  bVar10 = Styles_HandleUnInitalized((MethodInfo *)0x0);
-  auVar11._0_68_ = auVar9._0_68_;
-  if (bVar10 != 0) {
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      auVar11._68_4_ = &UNK_?;
-      auVar11._72_4_ = TypeInfo__Styles;
-      func_?();
+  bVar1 = Styles_HandleUnInitalized((MethodInfo *)0x0);
+  if (bVar1 != 0) {
+    if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__Styles);
     }
-    this = (Dictionary_2_System_Int32Enum_System_Object_ *)
-           TypeInfo__Styles->static_fields->teamToColorStyle;
-    if (this != (Dictionary_2_System_Int32Enum_System_Object_ *)0x0) {
-      auVar12._68_4_ = team;
-      auVar12._0_68_ = auVar11._0_68_;
-      auVar12._72_4_ =
-           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__get_Item_MV__WorldObject__MVTeam_
-      ;
-      auVar13._68_8_ = auVar12._68_8_;
-      auVar13._0_64_ = auVar11._0_64_;
-      auVar13._64_4_ = this;
-      auVar14._64_12_ = auVar13._64_12_;
-      auVar14._0_60_ = auVar11._0_60_;
-      auVar14._60_4_ = &UNK_?;
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-      Dictionary_2_System_Int32Enum_System_Object__get_Item
-                (this,team,
-                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__get_Item_MV__WorldObject__MVTeam_
-                );
-      auVar15._0_68_ = auVar14._0_68_;
-      if (cRam_? == '\0') {
-        auVar15._68_4_ = &UNK_?;
-        auVar15._72_4_ =
-             &
-             MethodInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>__get_Item_ButtonStyle_
-        ;
-        func_?();
-        auVar16._72_4_ = auVar15._72_4_;
-        auVar16._0_68_ = auVar15._0_68_;
-        auVar16._68_4_ =
-             &
-             MethodInfo__System__Collections__Generic__Dictionary<SoundStyle,_UnityEngine::AudioSource>__get_Item_SoundStyle_
-        ;
-        auVar17._68_8_ = auVar16._68_8_;
-        auVar17._0_64_ = auVar15._0_64_;
-        auVar17._64_4_ = &UNK_?;
-        func_?();
-        auVar18._68_8_ = auVar17._68_8_;
-        auVar18._0_64_ = auVar17._0_64_;
-        auVar18._64_4_ = &TypeInfo__UnityEngine__Object;
-        auVar19._64_12_ = auVar18._64_12_;
-        auVar19._0_60_ = auVar17._0_60_;
-        auVar19._60_4_ = &UNK_?;
-        func_?();
-        auVar20._64_12_ = auVar19._64_12_;
-        auVar20._0_60_ = auVar19._0_60_;
-        auVar20._60_4_ = &TypeInfo__Styles;
-        auVar21._60_16_ = auVar20._60_16_;
-        auVar21._0_56_ = auVar19._0_56_;
-        auVar21._56_4_ = &UNK_?;
-        func_?();
-        auVar22._60_16_ = auVar21._60_16_;
-        auVar22._0_56_ = auVar21._0_56_;
-        auVar22._56_4_ = &MethodInfo__Styles____c__DisplayClass21_0___SetStyle_b__0__;
-        auVar23._56_20_ = auVar22._56_20_;
-        auVar23._0_52_ = auVar21._0_52_;
-        auVar23._52_4_ = &UNK_?;
-        func_?();
-        auVar24._56_20_ = auVar23._56_20_;
-        auVar24._0_52_ = auVar23._0_52_;
-        auVar24._52_4_ = &TypeInfo__Styles____c__DisplayClass21_0;
-        auVar25._52_24_ = auVar24._52_24_;
-        auVar25._0_48_ = auVar23._0_48_;
-        auVar25._48_4_ = &UNK_?;
-        func_?();
-        auVar26._52_24_ = auVar25._52_24_;
-        auVar26._0_48_ = auVar25._0_48_;
-        auVar26._48_4_ = &TypeInfo__UnityEngine__Events__UnityAction;
-        auVar27._48_28_ = auVar26._48_28_;
-        auVar27._0_44_ = auVar25._0_44_;
-        auVar27._44_4_ = &UNK_?;
-        func_?();
-        auVar15._0_68_ = auVar27._0_68_;
-        cRam_? = '\x01';
-      }
-      auVar28._68_4_ = &UNK_?;
-      auVar28._0_68_ = auVar15._0_68_;
-      auVar28._72_4_ = TypeInfo__Styles____c__DisplayClass21_0;
-      value = (Object *)func_?();
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                (value,ExceptionArgument__Enum_obj,auVar28._64_4_);
-      if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      bVar10 = Styles_HandleUnInitalized((MethodInfo *)0x0);
-      if (bVar10 == 0) {
-        return;
-      }
-      if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      this_00 = TypeInfo__Styles->static_fields->buttonStylesDictionary;
-      if (this_00 != (Dictionary_2_ButtonStyle_Styles_ButtonStyleDef_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-        Dictionary_2_System_Int32Enum_System_Object__get_Item
-                  ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,in_stack_29,
-                   MethodInfo__System__Collections__Generic__Dictionary<ButtonStyle,_Styles::ButtonStyleDef>__get_Item_ButtonStyle_
-                  );
-      }
+    this = TypeInfo__Styles->static_fields->teamToColorStyle;
+    if (this == (Dictionary_2_MV_WorldObject_MVTeam_ColorStyle_ *)0x0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
     }
-    func_?();
-    func_?();
-    pcVar30 = (code *)swi(3);
-    (*pcVar30)();
-    return;
+    colorStyle = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                 Int32Enum]::Dictionary_2_System_Int32Enum_System_Int32Enum__get_Item
+                           ((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)this,team,
+                            MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__get_Item_MV__WorldObject__MVTeam_
+                           );
+    Styles_SetStyle(button,buttonStyle,colorStyle,soundStyle,(MethodInfo *)0x0);
   }
   return;
 }
@@ -2526,21 +3261,25 @@ void Assembly-CSharp.dll::Styles::Styles_SetStyle_5
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>__get_Item_EffectStyle_
-                   );
-    func_?(&TypeInfo__Styles);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<EffectStyle,_Styles::EffectStyleDef>__get_Item_EffectStyle_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Styles);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Styles);
+  if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+    FUN_?();
   }
   bVar1 = Styles_HandleUnInitalized((MethodInfo *)0x0);
   if (bVar1 == 0) {
     return;
   }
-  if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Styles);
+  if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__Styles);
   }
   this = TypeInfo__Styles->static_fields->effectStylesDictionary;
   if ((((this != (Dictionary_2_EffectStyle_Styles_EffectStyleDef_ *)0x0) &&
@@ -2552,46 +3291,43 @@ void Assembly-CSharp.dll::Styles::Styles_SetStyle_5
       (effectStyleObject != (EffectStyleObject *)0x0)) &&
      (pSVar3 = (Shadow *)(effectStyleObject->fields).shadow, pSVar3 != (Shadow *)0x0)) {
     UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-              ((Behaviour *)pSVar3,*(bool *)&pOVar2[1].monitor,(MethodInfo *)0x0);
+              ((Behaviour *)pSVar3,*(bool *)((longlong)&pOVar2[1].klass + 4),(MethodInfo *)0x0);
+    pMStack_4 = pOVar2[1].monitor;
+    pOStack_5 = pOVar2[2].klass;
     UnityEngine.UI.dll::UnityEngine::UI::Shadow::Shadow_set_effectColor
-              (pSVar3,*(Color *)(pOVar2 + 2),(MethodInfo *)0x0);
+              (pSVar3,(Color *)&pMStack_4,(MethodInfo *)0x0);
     UnityEngine.UI.dll::UnityEngine::UI::Shadow::Shadow_set_effectDistance
-              (pSVar3,(Vector2)pOVar2[4],(MethodInfo *)0x0);
+              (pSVar3,(Vector2)pOVar2[2].monitor,(MethodInfo *)0x0);
     UnityEngine.UI.dll::UnityEngine::UI::Shadow::Shadow_set_useGraphicAlpha
-              (pSVar3,*(bool *)&pOVar2[5].klass,(MethodInfo *)0x0);
+              (pSVar3,*(bool *)&pOVar2[3].klass,(MethodInfo *)0x0);
     pSVar3 = (Shadow *)(effectStyleObject->fields).outline;
     if (pSVar3 != (Shadow *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                ((Behaviour *)pSVar3,*(bool *)((int)&pOVar2[5].klass + 1),(MethodInfo *)0x0);
+                ((Behaviour *)pSVar3,*(bool *)((longlong)&pOVar2[3].klass + 1),(MethodInfo *)0x0);
+      pMStack_4 = *(MonitorData **)((longlong)&pOVar2[3].klass + 4);
+      pOStack_5 = *(Object__Class **)((longlong)&pOVar2[3].monitor + 4);
       UnityEngine.UI.dll::UnityEngine::UI::Shadow::Shadow_set_effectColor
-                (pSVar3,*(Color *)&pOVar2[5].monitor,(MethodInfo *)0x0);
+                (pSVar3,(Color *)&pMStack_4,(MethodInfo *)0x0);
       UnityEngine.UI.dll::UnityEngine::UI::Shadow::Shadow_set_effectDistance
-                (pSVar3,*(Vector2 *)&pOVar2[7].monitor,(MethodInfo *)0x0);
+                (pSVar3,*(Vector2 *)((longlong)&pOVar2[4].klass + 4),(MethodInfo *)0x0);
       UnityEngine.UI.dll::UnityEngine::UI::Shadow::Shadow_set_useGraphicAlpha
-                (pSVar3,*(bool *)&pOVar2[8].monitor,(MethodInfo *)0x0);
+                (pSVar3,*(bool *)((longlong)&pOVar2[4].monitor + 4),(MethodInfo *)0x0);
       this_00 = (effectStyleObject->fields).gradient;
       if (this_00 != (GradientEffect *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                  ((Behaviour *)this_00,*(bool *)((int)&pOVar2[8].monitor + 1),(MethodInfo *)0x0);
-        pMVar4 = pOVar2[9].monitor;
-        pOVar5 = pOVar2[10].klass;
-        pMVar6 = pOVar2[10].monitor;
-        (this_00->fields).top.r = (float)pOVar2[9].klass;
-        (this_00->fields).top.g = (float)pMVar4;
-        (this_00->fields).top.b = (float)pOVar5;
-        (this_00->fields).top.a = (float)pMVar6;
-        pMVar4 = pOVar2[0xb].monitor;
-        pOVar5 = pOVar2[0xc].klass;
-        pMVar6 = pOVar2[0xc].monitor;
-        (this_00->fields).bottom.r = (float)pOVar2[0xb].klass;
-        (this_00->fields).bottom.g = (float)pMVar4;
-        (this_00->fields).bottom.b = (float)pOVar5;
-        (this_00->fields).bottom.a = (float)pMVar6;
+                  ((Behaviour *)this_00,*(bool *)((longlong)&pOVar2[4].monitor + 5),
+                   (MethodInfo *)0x0);
+        pMVar6 = pOVar2[5].monitor;
+        *(Object__Class **)&(this_00->fields).top = pOVar2[5].klass;
+        *(MonitorData **)&(this_00->fields).top.b = pMVar6;
+        pMVar6 = pOVar2[6].monitor;
+        *(Object__Class **)&(this_00->fields).bottom = pOVar2[6].klass;
+        *(MonitorData **)&(this_00->fields).bottom.b = pMVar6;
         return;
       }
     }
   }
-  func_?();
+  FUN_?();
   pcVar7 = (code *)swi(3);
   (*pcVar7)();
   return;
@@ -2605,30 +3341,536 @@ void Assembly-CSharp.dll::Styles::Styles_TeamToSprite
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>__get_Item_MV__WorldObject__MVTeam_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Styles);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__Styles);
   }
   this = TypeInfo__Styles->static_fields->teamIconStylesDictionary;
-  if (this != (Dictionary_2_MV_WorldObject_MVTeam_Styles_TeamIconStyleDef_ *)0x0) {
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-             Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                       ((Dictionary_2_System_Int32Enum_System_Object_ *)this,team,
-                        MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>__get_Item_MV__WorldObject__MVTeam_
+  if (((this == (Dictionary_2_MV_WorldObject_MVTeam_Styles_TeamIconStyleDef_ *)0x0) ||
+      (pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                          ((Dictionary_2_System_Int32Enum_System_Object_ *)this,team,
+                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_Styles::TeamIconStyleDef>__get_Item_MV__WorldObject__MVTeam_
+                          ), pOVar1 == (Object *)0x0)) || (image == (Image *)0x0)) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pMVar3 = (MethodInfo *)pOVar1[1].monitor;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object,pMVar3,0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pSVar4 = (image->fields).m_Sprite;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pSVar4 != (Sprite *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((pSVar4->fields)._.m_CachedPtr != (void *)0x0) {
+      pMVar5 = (MethodInfo *)(image->fields).m_Sprite;
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (pMVar3 == (MethodInfo *)0x0 && pMVar5 == (MethodInfo *)0x0) {
+        return;
+      }
+      if (pMVar3 == (MethodInfo *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (pMVar5 == (MethodInfo *)0x0) goto code_?;
+        bVar6 = (((Sprite__Fields *)&pMVar5->invoker_method)->_).m_CachedPtr == (void *)0x0;
+      }
+      else if (pMVar5 == (MethodInfo *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        bVar6 = (((Sprite__Fields *)&pMVar3->invoker_method)->_).m_CachedPtr == (void *)0x0;
+      }
+      else {
+        bVar6 = pMVar5 == pMVar3;
+      }
+      pTVar7 = (Texture2D *)0x0;
+      if (bVar6) {
+        return;
+      }
+      pSVar4 = (image->fields).m_Sprite;
+      if (pSVar4 == (Sprite *)0x0) {
+code_?:
+        FUN_?();
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Sprite>_UnityEngine__Sprite_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pvVar8 = (pSVar4->fields)._.m_CachedPtr;
+      if (pvVar8 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pSVar4,(MethodInfo *)0x0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcVar2 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+        uVar9 = func_?(&UNK_?);
+        FUN_?(uVar9,0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcRam_? = pcVar2;
+      (*pcRam_?)(pvVar8);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      pMVar5 = pMVar3;
+      bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
+                        ((Object_1 *)pMVar3,(MethodInfo *)0x0);
+      if (bVar10 == 0) {
+        VVar11 = RTG::RightAngTriangle2D::RightAngTriangle2D_get_ModelRightAngleCorner(pMVar5);
+        fStack_12 = VVar11.x;
+        fStack_13 = VVar11.y;
+      }
+      else {
+        if (pMVar3 == (MethodInfo *)0x0) goto code_?;
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Sprite>_UnityEngine__Sprite_
                        );
-    if ((pOVar1 != (Object *)0x0) && (image != (Image *)0x0)) {
-      UnityEngine.UI.dll::UnityEngine::UI::Image::Image_set_sprite
-                (image,(Sprite *)pOVar1[1].monitor,(MethodInfo *)0x0);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pvVar8 = (((Sprite__Fields *)&pMVar3->invoker_method)->_).m_CachedPtr;
+        if (pvVar8 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)pMVar3,(MethodInfo *)0x0);
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        pcVar2 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+          uVar9 = func_?(&UNK_?);
+          FUN_?(uVar9,0);
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        pcRam_? = pcVar2;
+        (*pcRam_?)(pvVar8);
+        fStack_12 = 0.0;
+        fStack_13 = 0.0;
+      }
+      if ((fStack_12 == 0.0) && (fStack_13 == 0.0)) {
+        bVar10 = 1;
+      }
+      else {
+        bVar10 = 0;
+      }
+      (image->fields)._._.m_SkipLayoutUpdate = bVar10;
+      pSVar4 = (image->fields).m_Sprite;
+      if (pSVar4 == (Sprite *)0x0) goto code_?;
+      pTVar14 = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_texture
+                          (pSVar4,(MethodInfo *)0x0);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Implicit
+                        ((Object_1 *)pMVar3,(MethodInfo *)0x0);
+      if (bVar10 != 0) {
+        if (pMVar3 == (MethodInfo *)0x0) goto code_?;
+        pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_texture
+                            ((Sprite *)pMVar3,(MethodInfo *)0x0);
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (pTVar7 != (Texture2D *)0x0 || pTVar14 != (Texture2D *)0x0) {
+        if (pTVar7 == (Texture2D *)0x0) {
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (pTVar14 == (Texture2D *)0x0) goto code_?;
+          bVar6 = (pTVar14->fields)._._.m_CachedPtr == (void *)0x0;
+        }
+        else if (pTVar14 == (Texture2D *)0x0) {
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          bVar6 = (pTVar7->fields)._._.m_CachedPtr == (void *)0x0;
+        }
+        else {
+          bVar6 = pTVar14 == pTVar7;
+        }
+        if (!bVar6) {
+          bVar10 = 0;
+          goto code_?;
+        }
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__UI__Image);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__UI__Image->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__UnityEngine__UI__Image);
+      }
+      bVar10 = UnityEngine.UI.dll::UnityEngine::UI::Image::Image_CheckSecondaryTexturesChanged_1
+                        (image,(Sprite *)pMVar3,
+                         &TypeInfo__UnityEngine__UI__Image->static_fields->
+                          s_TempNewSecondaryTextures,(MethodInfo *)0x0);
+      UnityEngine.UI.dll::UnityEngine::UI::Image::Image_ClearArray
+                (&TypeInfo__UnityEngine__UI__Image->static_fields->s_TempNewSecondaryTextures,
+                 (MethodInfo *)0x0);
+      bVar10 = bVar10 ^ 1;
+code_?:
+      bVar6 = iRam_? != 0;
+      (image->fields)._._.m_SkipMaterialUpdate = bVar10;
+      (image->fields).m_Sprite = (Sprite *)pMVar3;
+      if (bVar6) {
+        uVar15 = (uint)((ulonglong)&(image->fields).m_Sprite >> 0xc);
+        uVar16 = (ulonglong)((uVar15 & 0x1fffff) >> 6);
+        do {
+          uVar17 = *(ulonglong *)(uVar16 * 8 + 0xADDR);
+          puVar18 = (ulonglong *)(uVar16 * 8 + 0xADDR);
+          LOCK();
+          bVar6 = uVar17 == *puVar18;
+          if (bVar6) {
+            *puVar18 = uVar17 | 1L << (uVar15 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar6);
+      }
+      UnityEngine.UI.dll::UnityEngine::UI::Image::
+      Image__set_sprite_g__ResetAlphaHitThresholdIfNeeded_11_0(image,(MethodInfo *)0x0);
+      (*(image->klass->vtable).SetAllDirty.methodPtr)(image);
+      UnityEngine.UI.dll::UnityEngine::UI::Image::Image_TrackSprite(image,(MethodInfo *)0x0);
       return;
     }
   }
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pMVar3 == (MethodInfo *)0x0) {
+    return;
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if ((((Sprite__Fields *)&pMVar3->invoker_method)->_).m_CachedPtr == (void *)0x0) {
+    return;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Sprite>_UnityEngine__Sprite_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar5 = (((Sprite__Fields *)&pMVar3->invoker_method)->_).m_CachedPtr;
+  if (pMVar5 == (MethodInfo *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)pMVar3,(MethodInfo *)0x0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar9 = func_?(&UNK_?);
+    FUN_?(uVar9,0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcRam_? = pcVar2;
+  (*pcRam_?)();
+  VVar11 = RTG::RightAngTriangle2D::RightAngTriangle2D_get_ModelRightAngleCorner(pMVar5);
+  fVar19 = 0.0 - VVar11.x;
+  fVar20 = 0.0 - VVar11.y;
+  (image->fields)._._.m_SkipLayoutUpdate = fVar20 * fVar20 + fVar19 * fVar19 < _UNK_?;
+  pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_texture
+                      ((Sprite *)pMVar3,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pTVar7 != (Texture2D *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((pTVar7->fields)._._.m_CachedPtr != (void *)0x0) {
+      bVar6 = false;
+      goto code_?;
+    }
+  }
+  iVar21 = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_GetSecondaryTextureCount
+                    ((Sprite *)pMVar3,(MethodInfo *)0x0);
+  bVar6 = iVar21 == 0;
+code_?:
+  bVar22 = iRam_? != 0;
+  (image->fields)._._.m_SkipMaterialUpdate = bVar6;
+  (image->fields).m_Sprite = (Sprite *)pMVar3;
+  if (bVar22) {
+    uVar15 = (uint)((ulonglong)&(image->fields).m_Sprite >> 0xc);
+    uVar16 = (ulonglong)((uVar15 & 0x1fffff) >> 6);
+    do {
+      uVar17 = *(ulonglong *)(uVar16 * 8 + 0xADDR);
+      puVar18 = (ulonglong *)(uVar16 * 8 + 0xADDR);
+      LOCK();
+      bVar6 = uVar17 == *puVar18;
+      if (bVar6) {
+        *puVar18 = uVar17 | 1L << (uVar15 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
+  UnityEngine.UI.dll::UnityEngine::UI::Image::
+  Image__set_sprite_g__ResetAlphaHitThresholdIfNeeded_11_0(image,(MethodInfo *)0x0);
+  (*(image->klass->vtable).SetAllDirty.methodPtr)(image);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__UI__Image);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pSVar4 = UnityEngine.UI.dll::UnityEngine::UI::Image::Image_get_activeSprite
+                      (image,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pSVar4 != (Sprite *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((pSVar4->fields)._.m_CachedPtr != (void *)0x0) {
+      pSVar4 = UnityEngine.UI.dll::UnityEngine::UI::Image::Image_get_activeSprite
+                          (image,(MethodInfo *)0x0);
+      if (pSVar4 != (Sprite *)0x0) {
+        pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Sprite::Sprite_get_texture
+                            (pSVar4,(MethodInfo *)0x0);
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (pTVar7 != (Texture2D *)0x0) {
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if ((pTVar7->fields)._._.m_CachedPtr != (void *)0x0) {
+            return;
+          }
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__UI__Image->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__System__Action<UnityEngine::U2D::SpriteAtlas>);
+          LOCK();
+          UNLOCK();
+          FUN_?(&
+                        MethodInfo__UnityEngine__UI__Image__RebuildImage_UnityEngine__U2D__SpriteAtlas_
+                       );
+          LOCK();
+          UNLOCK();
+          FUN_?(&TypeInfo__UnityEngine__UI__Image);
+          LOCK();
+          UNLOCK();
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Image>__Add_UnityEngine__UI__Image_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__UI__Image->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (TypeInfo__UnityEngine__UI__Image->static_fields->s_Initialized == 0) {
+          this_01 = (UnityAction_1_System_Object_ *)
+                    FUN_?(TypeInfo__System__Action<UnityEngine::U2D::SpriteAtlas>);
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+          UnityAction_1_System_Object___ctor
+                    (this_01,(Object *)0x0,
+                     MethodInfo__UnityEngine__UI__Image__RebuildImage_UnityEngine__U2D__SpriteAtlas_
+                     ,(MethodInfo *)0x0);
+          UnityEngine.CoreModule.dll::UnityEngine::U2D::SpriteAtlasManager::
+          SpriteAtlasManager_add_atlasRegistered
+                    ((Action_1_UnityEngine_U2D_SpriteAtlas_ *)this_01,(MethodInfo *)0x0);
+          if (*(int *)&(TypeInfo__UnityEngine__UI__Image->_1).field_0x1c == 0) {
+            FUN_?(TypeInfo__UnityEngine__UI__Image);
+          }
+          TypeInfo__UnityEngine__UI__Image->static_fields->s_Initialized = 1;
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__UI__Image->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pMVar3 = 
+        MethodInfo__System__Collections__Generic__List<UnityEngine::UI::Image>__Add_UnityEngine__UI__Image_
+        ;
+        this_00 = TypeInfo__UnityEngine__UI__Image->static_fields->m_TrackedTexturelessImages;
+        if (this_00 != (List_1_UnityEngine_UI_Image_ *)0x0) {
+          piVar23 = &(this_00->fields)._version;
+          *piVar23 = *piVar23 + 1;
+          pIVar24 = (this_00->fields)._items;
+          if (pIVar24 != (Image__Array *)0x0) {
+            uVar15 = (this_00->fields)._size;
+            if (uVar15 < (uint)pIVar24->max_length) {
+              (this_00->fields)._size = uVar15 + 1;
+              FUN_?(pIVar24,(longlong)(int)uVar15,image);
+              (image->fields).m_Tracked = 1;
+              return;
+            }
+            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+            List_1_System_Object__AddWithResize
+                      ((List_1_System_Object_ *)this_00,(Object *)image,
+                       pMVar3->klass->rgctx_data[0xe].method);
+            (image->fields).m_Tracked = 1;
+            return;
+          }
+        }
+      }
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+  }
   return;
 }
 
@@ -2639,22 +3881,30 @@ void Assembly-CSharp.dll::Styles::Styles__cctor(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__Add_MV__WorldObject__MVTeam__ColorStyle_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>
-                   );
-    func_?(&TypeInfo__Styles);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__Add_MV__WorldObject__MVTeam__ColorStyle_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Styles);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pDVar1 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
-           func_?(
-                          TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>
-                          );
+           FUN_?(
+                        TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>
+                        );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
   Int32Enum,GamePassesHighScoreList+HighScoreListData]::
   Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
@@ -2662,36 +3912,56 @@ void Assembly-CSharp.dll::Styles::Styles__cctor(MethodInfo *method)
              MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__Dictionary__
             );
   if (pDVar1 != (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
+    IVar2 = CONCAT31((int3)((uint)in_R9D >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Int32Enum]::
-    Dictionary_2_System_Int32Enum_System_Int32Enum__Add
-              ((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar1,5,7,
+    Dictionary_2_System_Int32Enum_System_Int32Enum__TryInsert
+              ((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar1,5,7,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__Add_MV__WorldObject__MVTeam__ColorStyle_
-              );
+               ->klass->rgctx_data[0x22].method);
+    IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Int32Enum]::
-    Dictionary_2_System_Int32Enum_System_Int32Enum__Add
-              ((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar1,0,8,
+    Dictionary_2_System_Int32Enum_System_Int32Enum__TryInsert
+              ((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar1,0,8,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__Add_MV__WorldObject__MVTeam__ColorStyle_
-              );
+               ->klass->rgctx_data[0x22].method);
+    IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Int32Enum]::
-    Dictionary_2_System_Int32Enum_System_Int32Enum__Add
-              ((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar1,1,9,
+    Dictionary_2_System_Int32Enum_System_Int32Enum__TryInsert
+              ((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar1,1,9,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__Add_MV__WorldObject__MVTeam__ColorStyle_
-              );
+               ->klass->rgctx_data[0x22].method);
+    IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Int32Enum]::
-    Dictionary_2_System_Int32Enum_System_Int32Enum__Add
-              ((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar1,2,0xb,
+    Dictionary_2_System_Int32Enum_System_Int32Enum__TryInsert
+              ((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar1,2,0xb,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__Add_MV__WorldObject__MVTeam__ColorStyle_
-              );
+               ->klass->rgctx_data[0x22].method);
+    IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Int32Enum]::
-    Dictionary_2_System_Int32Enum_System_Int32Enum__Add
-              ((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar1,3,10,
+    Dictionary_2_System_Int32Enum_System_Int32Enum__TryInsert
+              ((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar1,3,10,IVar2,
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__Add_MV__WorldObject__MVTeam__ColorStyle_
-              );
+               ->klass->rgctx_data[0x22].method);
     TypeInfo__Styles->static_fields->teamToColorStyle =
          (Dictionary_2_MV_WorldObject_MVTeam_ColorStyle_ *)pDVar1;
-    func_?();
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)TypeInfo__Styles->static_fields >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar7 = uVar5 == *puVar6;
+        if (bVar7) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
     pDVar1 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
-             func_?();
+             FUN_?(
+                          TypeInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>
+                          );
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
     Int32Enum,GamePassesHighScoreList+HighScoreListData]::
     Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
@@ -2699,40 +3969,58 @@ void Assembly-CSharp.dll::Styles::Styles__cctor(MethodInfo *method)
                MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__Dictionary__
               );
     if (pDVar1 != (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
+      IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Int32Enum]
-      ::Dictionary_2_System_Int32Enum_System_Int32Enum__Add
-                ((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar1,5,0x2e,
+      ::Dictionary_2_System_Int32Enum_System_Int32Enum__TryInsert
+                ((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar1,5,0x2e,IVar2,
                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__Add_MV__WorldObject__MVTeam__ColorStyle_
-                );
+                 ->klass->rgctx_data[0x22].method);
+      IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Int32Enum]
-      ::Dictionary_2_System_Int32Enum_System_Int32Enum__Add
-                ((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar1,0,0x29,
+      ::Dictionary_2_System_Int32Enum_System_Int32Enum__TryInsert
+                ((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar1,0,0x29,IVar2,
                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__Add_MV__WorldObject__MVTeam__ColorStyle_
-                );
+                 ->klass->rgctx_data[0x22].method);
+      IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Int32Enum]
-      ::Dictionary_2_System_Int32Enum_System_Int32Enum__Add
-                ((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar1,1,0x28,
+      ::Dictionary_2_System_Int32Enum_System_Int32Enum__TryInsert
+                ((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar1,1,0x28,IVar2,
                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__Add_MV__WorldObject__MVTeam__ColorStyle_
-                );
+                 ->klass->rgctx_data[0x22].method);
+      IVar2 = CONCAT31((int3)(IVar2 >> 8),2);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Int32Enum]
-      ::Dictionary_2_System_Int32Enum_System_Int32Enum__Add
-                ((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar1,2,0x2b,
+      ::Dictionary_2_System_Int32Enum_System_Int32Enum__TryInsert
+                ((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar1,2,0x2b,IVar2,
                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__Add_MV__WorldObject__MVTeam__ColorStyle_
-                );
+                 ->klass->rgctx_data[0x22].method);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Int32Enum]
-      ::Dictionary_2_System_Int32Enum_System_Int32Enum__Add
+      ::Dictionary_2_System_Int32Enum_System_Int32Enum__TryInsert
                 ((Dictionary_2_System_Int32Enum_System_Int32Enum_ *)pDVar1,3,0x2a,
+                 CONCAT31((int3)(IVar2 >> 8),2),
                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_ColorStyle>__Add_MV__WorldObject__MVTeam__ColorStyle_
-                );
+                 ->klass->rgctx_data[0x22].method);
       TypeInfo__Styles->static_fields->teamToDarkColorStyle =
            (Dictionary_2_MV_WorldObject_MVTeam_ColorStyle_ *)pDVar1;
-      func_?();
+      if (iRam_? != 0) {
+        uVar3 = (uint)((ulonglong)&TypeInfo__Styles->static_fields->teamToDarkColorStyle >> 0xc);
+        uVar5 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+        do {
+          uVar8 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+          puVar6 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+          LOCK();
+          bVar7 = uVar8 == *puVar6;
+          if (bVar7) {
+            *puVar6 = uVar8 | 1L << (uVar3 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar7);
+      }
       return;
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -2743,92 +4031,221 @@ void Assembly-CSharp.dll::Styles::Styles__ctor(Styles *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<RarityStylesDef>__List__);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Styles::TeamIconStyleDef>__List__
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__List<Styles::ColorStyleDef>__List__);
-    func_?(&MethodInfo__System__Collections__Generic__List<Styles::TextStyleDef>__List__);
-    func_?(&MethodInfo__System__Collections__Generic__List<Styles::EffectStyleDef>__List__)
+    FUN_?(&MethodInfo__System__Collections__Generic__List<RarityStylesDef>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<Styles::TeamIconStyleDef>__List__)
     ;
-    func_?(&MethodInfo__System__Collections__Generic__List<Styles::ButtonStyleDef>__List__)
-    ;
-    func_?(&MethodInfo__System__Collections__Generic__List<Styles::SoundStyleDef>__List__);
-    func_?(&TypeInfo__System__Collections__Generic__List<RarityStylesDef>);
-    func_?(&TypeInfo__System__Collections__Generic__List<Styles::EffectStyleDef>);
-    func_?(&TypeInfo__System__Collections__Generic__List<Styles::TextStyleDef>);
-    func_?(&TypeInfo__System__Collections__Generic__List<Styles::SoundStyleDef>);
-    func_?(&TypeInfo__System__Collections__Generic__List<Styles::ButtonStyleDef>);
-    func_?(&TypeInfo__System__Collections__Generic__List<Styles::ColorStyleDef>);
-    func_?(&TypeInfo__System__Collections__Generic__List<Styles::TeamIconStyleDef>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<Styles::ColorStyleDef>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<Styles::TextStyleDef>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<Styles::EffectStyleDef>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<Styles::ButtonStyleDef>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<Styles::SoundStyleDef>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<RarityStylesDef>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<Styles::EffectStyleDef>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<Styles::TextStyleDef>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<Styles::SoundStyleDef>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<Styles::ButtonStyleDef>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<Styles::ColorStyleDef>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<Styles::TeamIconStyleDef>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (List_1_Styles_ButtonStyleDef_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<Styles::ButtonStyleDef>);
+            FUN_?(TypeInfo__System__Collections__Generic__List<Styles::ButtonStyleDef>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<Styles::ButtonStyleDef>__List__);
+  bVar1 = iRam_? != 0;
   (this->fields).buttonStyles = this_00;
-  func_?(&(this->fields).buttonStyles,this_00);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).buttonStyles >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   this_01 = (List_1_Styles_TextStyleDef_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<Styles::TextStyleDef>);
+            FUN_?(TypeInfo__System__Collections__Generic__List<Styles::TextStyleDef>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
              MethodInfo__System__Collections__Generic__List<Styles::TextStyleDef>__List__);
+  bVar1 = iRam_? != 0;
   (this->fields).textStyles = this_01;
-  func_?(&(this->fields).textStyles,this_01);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).textStyles >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   this_02 = (List_1_Styles_ColorStyleDef_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<Styles::ColorStyleDef>);
+            FUN_?(TypeInfo__System__Collections__Generic__List<Styles::ColorStyleDef>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_02,
              MethodInfo__System__Collections__Generic__List<Styles::ColorStyleDef>__List__);
+  bVar1 = iRam_? != 0;
   (this->fields).colorStyles = this_02;
-  func_?(&(this->fields).colorStyles,this_02);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).colorStyles >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   this_03 = (List_1_Styles_TeamIconStyleDef_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<Styles::TeamIconStyleDef>);
+            FUN_?(TypeInfo__System__Collections__Generic__List<Styles::TeamIconStyleDef>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_03,
              MethodInfo__System__Collections__Generic__List<Styles::TeamIconStyleDef>__List__);
+  bVar1 = iRam_? != 0;
   (this->fields).teamIconStyles = this_03;
-  func_?();
-  this_04 = (List_1_Styles_EffectStyleDef_ *)func_?();
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).teamIconStyles >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  this_04 = (List_1_Styles_EffectStyleDef_ *)
+            FUN_?(TypeInfo__System__Collections__Generic__List<Styles::EffectStyleDef>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_04,
              MethodInfo__System__Collections__Generic__List<Styles::EffectStyleDef>__List__);
+  bVar1 = iRam_? != 0;
   (this->fields).effectStyles = this_04;
-  func_?(&(this->fields).effectStyles,this_04);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).effectStyles >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   this_05 = (List_1_Styles_SoundStyleDef_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<Styles::SoundStyleDef>);
+            FUN_?(TypeInfo__System__Collections__Generic__List<Styles::SoundStyleDef>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_05,
              MethodInfo__System__Collections__Generic__List<Styles::SoundStyleDef>__List__);
+  bVar1 = iRam_? != 0;
   (this->fields).soundStyles = this_05;
-  func_?(&(this->fields).soundStyles,this_05);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).soundStyles >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   this_06 = (List_1_RarityStylesDef_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<RarityStylesDef>);
+            FUN_?(TypeInfo__System__Collections__Generic__List<RarityStylesDef>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_06,
              MethodInfo__System__Collections__Generic__List<RarityStylesDef>__List__);
+  bVar1 = iRam_? != 0;
   (this->fields).rarityStyles = this_06;
-  ppLStack1 = &(this->fields).rarityStyles;
-  pLStack2 = this_06;
-  func_?();
-  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
-            ((MonoBehaviour *)this,(MethodInfo *)0x0);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).rarityStyles >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
   return;
 }
 

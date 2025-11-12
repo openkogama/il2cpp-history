@@ -8,14 +8,16 @@ int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsT
 {
   fVar1 = this->exchangeRate;
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__System__Math);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  fVar2 = (float10)func_?((double)((float)i * fVar1));
-  return (int)fVar2;
+  dVar2 = (double)func_?((double)((float)i * fVar1));
+  return (int)dVar2;
 }
 
 
@@ -27,14 +29,25 @@ String * MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettings
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Single);
-    func_?(&StringLiteral_APIntCalcLinear__exchangeRate__0);
+    FUN_?(&StringLiteral_APIntCalcLinear__exchangeRate__0);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this = (APIntCalcLinear *)this->exchangeRate;
-  arg0 = (Object *)func_?(TypeInfo__System__Single,&this);
-  pSVar1 = mscorlib.dll::System::String::String_Format
-                     (StringLiteral_APIntCalcLinear__exchangeRate__0,arg0,(MethodInfo *)0x0);
+  afStackX_8[0] = this->exchangeRate;
+  arg0 = (Object *)FUN_?(uRam_?,afStackX_8);
+  pSVar1 = StringLiteral_APIntCalcLinear__exchangeRate__0;
+  PStack_2._arg0 = (Object *)0x0;
+  PStack_2._arg1 = (Object *)0x0;
+  PStack_2._arg2 = (Object *)0x0;
+  PStack_2._args = (Object__Array *)0x0;
+  mscorlib.dll::System::ParamsArray::ParamsArray__ctor(&PStack_2,arg0,(MethodInfo *)0x0);
+  PStack_3._arg0 = PStack_2._arg0;
+  PStack_3._arg1 = PStack_2._arg1;
+  PStack_3._arg2 = PStack_2._arg2;
+  PStack_3._args = PStack_2._args;
+  pSVar1 = mscorlib.dll::System::String::String_FormatHelper
+                     ((IFormatProvider *)0x0,pSVar1,&PStack_3,(MethodInfo *)0x0);
   return pSVar1;
 }
 

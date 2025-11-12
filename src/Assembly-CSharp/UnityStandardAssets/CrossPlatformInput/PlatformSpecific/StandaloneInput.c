@@ -7,13 +7,104 @@ float Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::PlatformSpec
 
 {
   if (raw != 0) {
-    fVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Internal::InputUnsafeUtility::
-            InputUnsafeUtility_GetAxisRaw(name,(MethodInfo *)0x0);
-    return fVar1;
+    if (cRam_? == '\0') {
+      FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__GetPinnableReference__,0);
+      LOCK();
+      UNLOCK();
+      FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__get_Length__);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    apuStackX_18[0] = (uint16_t *)0x0;
+    puStack_1 = (uint16_t *)0x0;
+    uStack_2 = 0;
+    uStack_3 = 0;
+    ppuStack_4 = apuStackX_18;
+    if (name != (String *)0x0) {
+      if ((name->fields)._stringLength == 0) {
+        puStack_1 = (uint16_t *)0x1;
+        uStack_2 = 0;
+      }
+      else {
+        if (cRam_? == '\0') {
+          FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__ReadOnlySpan_System__Char___int_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        iVar5 = (name->fields)._stringLength;
+        apuStackX_18[0] = &(name->fields)._firstChar;
+        if (iVar5 == 0) {
+          apuStackX_18[0] = (uint16_t *)0x0;
+        }
+        uStack_2 = CONCAT44(uStack_2._4_4_,iVar5);
+        puStack_1 = apuStackX_18[0];
+      }
+    }
+    pcVar6 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+      uVar7 = func_?(&UNK_?);
+      FUN_?(uVar7,0);
+      FUN_?();
+      pcVar6 = (code *)swi(3);
+      fVar8 = (float)(*pcVar6)();
+      return fVar8;
+    }
+    pcRam_? = pcVar6;
+    fVar8 = (float)(*pcRam_?)(&puStack_1);
+    return fVar8;
   }
-  fVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Internal::InputUnsafeUtility::
-          InputUnsafeUtility_GetAxis(name,(MethodInfo *)0x0);
-  return fVar1;
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__GetPinnableReference__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__get_Length__);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  apuStackX_18[0] = (uint16_t *)0x0;
+  puStack_1 = (uint16_t *)0x0;
+  uStack_2 = 0;
+  uStack_3 = 0;
+  ppuStack_4 = apuStackX_18;
+  if (name != (String *)0x0) {
+    if ((name->fields)._stringLength == 0) {
+      puStack_1 = (uint16_t *)0x1;
+      uStack_2 = 0;
+    }
+    else {
+      if (cRam_? == '\0') {
+        FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__ReadOnlySpan_System__Char___int_);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      iVar5 = (name->fields)._stringLength;
+      apuStackX_18[0] = &(name->fields)._firstChar;
+      if (iVar5 == 0) {
+        apuStackX_18[0] = (uint16_t *)0x0;
+      }
+      uStack_2 = CONCAT44(uStack_2._4_4_,iVar5);
+      puStack_1 = apuStackX_18[0];
+    }
+  }
+  pcVar6 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+    uVar7 = func_?(&UNK_?);
+    FUN_?(uVar7,0);
+    FUN_?();
+    pcVar6 = (code *)swi(3);
+    fVar8 = (float)(*pcVar6)();
+    return fVar8;
+  }
+  pcRam_? = pcVar6;
+  fVar8 = (float)(*pcRam_?)(&puStack_1);
+  return fVar8;
 }
 
 
@@ -23,9 +114,54 @@ bool Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::PlatformSpeci
      ::StandaloneInput_GetButton(StandaloneInput *this,String *name,MethodInfo *method)
 
 {
-  bVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Internal::InputUnsafeUtility::
-          InputUnsafeUtility_GetButton(name,(MethodInfo *)0x0);
-  return bVar1;
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__GetPinnableReference__,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__get_Length__);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  apuStackX_18[0] = (uint16_t *)0x0;
+  puStack_1 = (uint16_t *)0x0;
+  uStack_2 = 0;
+  uStack_3 = 0;
+  ppuStack_4 = apuStackX_18;
+  if (name != (String *)0x0) {
+    if ((name->fields)._stringLength == 0) {
+      puStack_1 = (uint16_t *)0x1;
+      uStack_2 = 0;
+    }
+    else {
+      if (cRam_? == '\0') {
+        FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__ReadOnlySpan_System__Char___int_);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      iVar5 = (name->fields)._stringLength;
+      apuStackX_18[0] = &(name->fields)._firstChar;
+      if (iVar5 == 0) {
+        apuStackX_18[0] = (uint16_t *)0x0;
+      }
+      uStack_2 = CONCAT44(uStack_2._4_4_,iVar5);
+      puStack_1 = apuStackX_18[0];
+    }
+  }
+  pcVar6 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+    uVar7 = func_?(&UNK_?);
+    FUN_?(uVar7,0);
+    FUN_?();
+    pcVar6 = (code *)swi(3);
+    bVar8 = (*pcVar6)();
+    return bVar8;
+  }
+  pcRam_? = pcVar6;
+  bVar8 = (*pcRam_?)(&puStack_1);
+  return bVar8;
 }
 
 
@@ -35,9 +171,54 @@ bool Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::PlatformSpeci
      ::StandaloneInput_GetButtonUp(StandaloneInput *this,String *name,MethodInfo *method)
 
 {
-  bVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Internal::InputUnsafeUtility::
-          InputUnsafeUtility_GetButtonUp(name,(MethodInfo *)0x0);
-  return bVar1;
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__GetPinnableReference__,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__get_Length__);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  apuStackX_18[0] = (uint16_t *)0x0;
+  puStack_1 = (uint16_t *)0x0;
+  uStack_2 = 0;
+  uStack_3 = 0;
+  ppuStack_4 = apuStackX_18;
+  if (name != (String *)0x0) {
+    if ((name->fields)._stringLength == 0) {
+      puStack_1 = (uint16_t *)0x1;
+      uStack_2 = 0;
+    }
+    else {
+      if (cRam_? == '\0') {
+        FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__ReadOnlySpan_System__Char___int_);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      iVar5 = (name->fields)._stringLength;
+      apuStackX_18[0] = &(name->fields)._firstChar;
+      if (iVar5 == 0) {
+        apuStackX_18[0] = (uint16_t *)0x0;
+      }
+      uStack_2 = CONCAT44(uStack_2._4_4_,iVar5);
+      puStack_1 = apuStackX_18[0];
+    }
+  }
+  pcVar6 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+    uVar7 = func_?(&UNK_?);
+    FUN_?(uVar7,0);
+    FUN_?();
+    pcVar6 = (code *)swi(3);
+    bVar8 = (*pcVar6)();
+    return bVar8;
+  }
+  pcRam_? = pcVar6;
+  bVar8 = (*pcRam_?)(&puStack_1);
+  return bVar8;
 }
 
 
@@ -49,13 +230,12 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::PlatformSpeci
 {
   uVar1 = func_?(&TypeInfo__System__Exception);
   this_00 = (Exception *)func_?(uVar1);
-  method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral__This_is_not_possible_to_be_call);
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
-  func_?(&
-                  MethodInfo__UnityStandardAssets__CrossPlatformInput__PlatformSpecific__StandaloneInput__SetAxis_System__String__float_
-                 );
-  func_?();
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
+  uVar1 = func_?(&
+                              MethodInfo__UnityStandardAssets__CrossPlatformInput__PlatformSpecific__StandaloneInput__SetAxis_System__String__float_
+                             );
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -70,13 +250,12 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::PlatformSpeci
 {
   uVar1 = func_?(&TypeInfo__System__Exception);
   this_00 = (Exception *)func_?(uVar1);
-  method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral__This_is_not_possible_to_be_call);
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
-  func_?(&
-                  MethodInfo__UnityStandardAssets__CrossPlatformInput__PlatformSpecific__StandaloneInput__SetAxisNegative_System__String_
-                 );
-  func_?();
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
+  uVar1 = func_?(&
+                              MethodInfo__UnityStandardAssets__CrossPlatformInput__PlatformSpecific__StandaloneInput__SetAxisNegative_System__String_
+                             );
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -91,13 +270,12 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::PlatformSpeci
 {
   uVar1 = func_?(&TypeInfo__System__Exception);
   this_00 = (Exception *)func_?(uVar1);
-  method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral__This_is_not_possible_to_be_call);
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
-  func_?(&
-                  MethodInfo__UnityStandardAssets__CrossPlatformInput__PlatformSpecific__StandaloneInput__SetAxisPositive_System__String_
-                 );
-  func_?();
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
+  uVar1 = func_?(&
+                              MethodInfo__UnityStandardAssets__CrossPlatformInput__PlatformSpecific__StandaloneInput__SetAxisPositive_System__String_
+                             );
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -112,13 +290,12 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::PlatformSpeci
 {
   uVar1 = func_?(&TypeInfo__System__Exception);
   this_00 = (Exception *)func_?(uVar1);
-  method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral__This_is_not_possible_to_be_call);
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
-  func_?(&
-                  MethodInfo__UnityStandardAssets__CrossPlatformInput__PlatformSpecific__StandaloneInput__SetAxisZero_System__String_
-                 );
-  func_?();
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
+  uVar1 = func_?(&
+                              MethodInfo__UnityStandardAssets__CrossPlatformInput__PlatformSpecific__StandaloneInput__SetAxisZero_System__String_
+                             );
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -133,13 +310,12 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::PlatformSpeci
 {
   uVar1 = func_?(&TypeInfo__System__Exception);
   this_00 = (Exception *)func_?(uVar1);
-  method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral__This_is_not_possible_to_be_call);
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
-  func_?(&
-                  MethodInfo__UnityStandardAssets__CrossPlatformInput__PlatformSpecific__StandaloneInput__SetButtonDown_System__String_
-                 );
-  func_?();
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
+  uVar1 = func_?(&
+                              MethodInfo__UnityStandardAssets__CrossPlatformInput__PlatformSpecific__StandaloneInput__SetButtonDown_System__String_
+                             );
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -154,13 +330,12 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::PlatformSpeci
 {
   uVar1 = func_?(&TypeInfo__System__Exception);
   this_00 = (Exception *)func_?(uVar1);
-  method_00 = (MethodInfo *)0x0;
   message = (String *)func_?(&StringLiteral__This_is_not_possible_to_be_call);
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,method_00);
-  func_?(&
-                  MethodInfo__UnityStandardAssets__CrossPlatformInput__PlatformSpecific__StandaloneInput__SetButtonUp_System__String_
-                 );
-  func_?();
+  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
+  uVar1 = func_?(&
+                              MethodInfo__UnityStandardAssets__CrossPlatformInput__PlatformSpecific__StandaloneInput__SetButtonUp_System__String_
+                             );
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

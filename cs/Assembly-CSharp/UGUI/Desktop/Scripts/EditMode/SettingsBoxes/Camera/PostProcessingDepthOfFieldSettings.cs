@@ -6,7 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using UnityEngine.Rendering.PostProcessing;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
@@ -24,8 +23,5 @@ namespace UGUI.Desktop.Scripts.EditMode.SettingsBoxes.Camera
 	
 		// Constructors
 		public PostProcessingDepthOfFieldSettings(Dictionary<object, object> data);
-	
-		// Methods
-		public KernelSize KernelSize();
 	}
 }

@@ -8,45 +8,62 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
                float max,KogamaSettingsCollectionBase *parent,MethodInfo *method)
 
 {
-  KogamaSettingValueWrapperBase::KogamaSettingValueWrapperBase__ctor
-            ((KogamaSettingValueWrapperBase *)this,key,parent,(MethodInfo *)0x0);
-  pIVar1 = method->klass->rgctx_data[1].klass;
-  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar1 = (Il2CppClass *)func_?(pIVar1);
+  KogamaSettingWrapperBase::KogamaSettingWrapperBase__ctor
+            ((KogamaSettingWrapperBase *)this,key,parent,(MethodInfo *)0x0);
+  pvVar1 = method->klass->rgctx_data[1].rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar1 + 0x135) & 1) == 0) {
+    pvVar1 = (void *)FUN_?(pvVar1);
   }
-  this_00 = (KogamaSettingBase *)func_?(pIVar1);
-  pMVar2 = method->klass->rgctx_data[5].method;
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-  UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor
-            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_00,(MethodInfo *)0x0);
-  if (((uint)(pMVar2->klass->rgctx_data[3].klass)->vtable[0].methodPtr & 0x100) == 0) {
-    func_?();
+  pKVar2 = (KogamaSettingNumeric_1_System_Single_ *)FUN_?(pvVar1);
+  pMVar3 = method->klass->rgctx_data[5].method;
+  pvVar1 = pMVar3->klass->rgctx_data[3].rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar1 + 0x135) & 1) == 0) {
+    pvVar1 = (void *)FUN_?(pvVar1);
   }
-  this_01 = (KogamaSettingBase__Class *)func_?();
-  AntiCheat::RangeValidator`1[System::Single]::RangeValidator_1_System_Single___ctor_1
-            ((RangeValidator_1_System_Single_ *)this_01,min,max,pMVar2->klass->rgctx_data[5].method)
-  ;
-  this_00[1].klass = this_01;
-  func_?();
-  if (this_00[1].klass != (KogamaSettingBase__Class *)0x0) {
-    AntiCheat::RangeValidator`1[System::Single]::RangeValidator_1_System_Single__Validate
-              ((RangeValidator_1_System_Single_ *)this_00[1].klass,value,0,
-               pMVar2->klass->rgctx_data[4].method);
-    if (this_00[1].klass != (KogamaSettingBase__Class *)0x0) {
-      AntiCheat::RangeValidator`1[System::Single]::RangeValidator_1_System_Single__Validate
-                ((RangeValidator_1_System_Single_ *)this_00[1].klass,value,1,
-                 (pMVar2->klass->rgctx_data[6].method)->klass->rgctx_data[4].method);
-      value_00 = (Object *)func_?();
-      KogamaSettingBase::KogamaSettingBase_set_Value(this_00,value_00,(MethodInfo *)0x0);
-      _UNK_? = this_00;
-      func_?();
-      return;
-    }
+  pRVar4 = (RangeValidator_1_System_Single_ *)FUN_?(pvVar1);
+  bVar5 = iRam_? != 0;
+  (pKVar2->fields).RangeValidator = pRVar4;
+  (pRVar4->fields).min = min;
+  (pRVar4->fields).max = max;
+  if (bVar5) {
+    uVar6 = (uint)((ulonglong)&(pKVar2->fields).RangeValidator >> 0xc);
+    uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
+    do {
+      uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
+      puVar9 = (ulonglong *)(uVar7 * 8 + 0xADDR);
+      LOCK();
+      bVar5 = uVar8 == *puVar9;
+      if (bVar5) {
+        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  pRVar4 = (pKVar2->fields).RangeValidator;
+  if (pRVar4 == (RangeValidator_1_System_Single_ *)0x0) {
+    FUN_?();
+    pcVar10 = (code *)swi(3);
+    (*pcVar10)();
+    return;
+  }
+  FUN_?(pRVar4,value,0,pMVar3->klass->rgctx_data[4].rgctxDataDummy);
+  FUN_?(pKVar2,value,pMVar3->klass->rgctx_data[6].rgctxDataDummy);
+  bVar5 = iRam_? != 0;
+  (this->fields).KogamaSettingNumeric = pKVar2;
+  if (bVar5) {
+    uVar6 = (uint)((ulonglong)&(this->fields).KogamaSettingNumeric >> 0xc);
+    uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
+    do {
+      uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
+      puVar9 = (ulonglong *)(uVar7 * 8 + 0xADDR);
+      LOCK();
+      bVar5 = uVar8 == *puVar9;
+      if (bVar5) {
+        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
   return;
 }
 
@@ -60,27 +77,26 @@ float MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Ko
 
 {
   pKVar1 = (this->fields).KogamaSettingNumeric;
-  pOVar2 = (Object *)0x0;
   if (pKVar1 != (KogamaSettingNumeric_1_System_Single_ *)0x0) {
     pOVar2 = (pKVar1->fields)._.value;
     pIVar3 = (method->klass->rgctx_data[2].method)->klass->rgctx_data[1].klass;
-    if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
-      pIVar3 = (Il2CppClass *)func_?(pIVar3);
+    if ((pIVar3->field_0x135 & 1) == 0) {
+      pIVar3 = (Il2CppClass *)FUN_?(pIVar3);
     }
     if (pOVar2 != (Object *)0x0) {
       if ((pOVar2->klass->_0).element_class == pIVar3->element_class) {
-        pfVar4 = (float *)func_?(pOVar2);
-        return *pfVar4;
+        return *(float *)&pOVar2[1].klass;
       }
-      goto code_?;
+      FUN_?(pOVar2,pIVar3);
+      pcVar4 = (code *)swi(3);
+      fVar5 = (float)(*pcVar4)();
+      return fVar5;
     }
   }
-  pIVar3 = (Il2CppClass *)func_?();
-code_?:
-  func_?(pOVar2,pIVar3);
-  pcVar5 = (code *)swi(3);
-  fVar6 = (float10)(*pcVar5)();
-  return (float)fVar6;
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  fVar5 = (float)(*pcVar4)();
+  return fVar5;
 }
 
 
@@ -92,20 +108,53 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
                (KogamaSettingNumericBase_1_System_Single_ *this,float value,MethodInfo *method)
 
 {
-  this_00 = (this->fields).KogamaSettingNumeric;
-  if ((this_00 != (KogamaSettingNumeric_1_System_Single_ *)0x0) &&
-     (this_01 = (this_00->fields).RangeValidator, this_01 != (RangeValidator_1_System_Single_ *)0x0)
-     ) {
-    pMVar1 = method->klass->rgctx_data[4].method;
-    this = (KogamaSettingNumericBase_1_System_Single_ *)
-           AntiCheat::RangeValidator`1[System::Single]::RangeValidator_1_System_Single__Validate
-                     (this_01,value,1,pMVar1->klass->rgctx_data[4].method);
-    value_00 = (Object *)func_?(pMVar1->klass->rgctx_data[1].rgctxDataDummy,&this);
-    KogamaSettingBase::KogamaSettingBase_set_Value
-              ((KogamaSettingBase *)this_00,value_00,(MethodInfo *)0x0);
+  pKVar1 = (this->fields).KogamaSettingNumeric;
+  if (pKVar1 == (KogamaSettingNumeric_1_System_Single_ *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  func_?();
+  pRVar3 = (pKVar1->fields).RangeValidator;
+  if (pRVar3 != (RangeValidator_1_System_Single_ *)0x0) {
+    fVar4 = (pRVar3->fields).min;
+    if (((value < fVar4) ||
+        ((((value <= fVar4 && (value != fVar4)) && (0x7f800000 < (uint)ABS(value))) &&
+         ((uint)ABS(fVar4) < 0x7f800001)))) ||
+       ((fVar4 = (pRVar3->fields).max, afStackX_10[0] = value, fVar4 <= value &&
+        ((fVar4 < value || ((value != fVar4 && ((uint)ABS(value) < 0x7f800001)))))))) {
+      afStackX_10[0] = fVar4;
+    }
+    pOVar5 = (Object *)
+             FUN_?((method->klass->rgctx_data[4].method)->klass->rgctx_data[1].
+                           rgctxDataDummy,afStackX_10);
+    bVar6 = iRam_? != 0;
+    (pKVar1->fields)._.value = pOVar5;
+    if (bVar6) {
+      uVar7 = (uint)((ulonglong)&pKVar1->fields >> 0xc);
+      puVar8 = (ulonglong *)((ulonglong)((uVar7 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar9 = *puVar8;
+        LOCK();
+        uVar10 = *puVar8;
+        if (uVar9 == uVar10) {
+          *puVar8 = uVar9 | 1L << (uVar7 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar9 != uVar10);
+    }
+    if ((pKVar1->fields)._.OnValueChange !=
+        (Action_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_IKogamaSetting_ *)0x0) {
+      pAVar11 = (pKVar1->fields)._.OnValueChange;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*(pAVar11->fields)._._.invoke_impl)
+                ((pAVar11->fields)._._.method_code,pKVar1,(pAVar11->fields)._._.method);
+      return;
+    }
+    return;
+  }
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

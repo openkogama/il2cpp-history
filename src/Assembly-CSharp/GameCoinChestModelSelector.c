@@ -11,12 +11,45 @@ void Assembly-CSharp.dll::GameCoinChestModelSelector::GameCoinChestModelSelector
               (pRVar1,0,(MethodInfo *)0x0);
     pRVar1 = (this->fields).closedMesh;
     if (pRVar1 != (Renderer *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                (pRVar1,1,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Renderer>_UnityEngine__Renderer_
+                      ,1,0);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (pRVar1 == (Renderer *)0x0) {
+        FUN_?();
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pvVar3 = (pRVar1->fields)._._.m_CachedPtr;
+      if (pvVar3 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar1,(MethodInfo *)0x0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcVar2 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+        uVar4 = func_?(&UNK_?);
+        FUN_?(uVar4,0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcRam_? = pcVar2;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*pcRam_?)(pvVar3,1);
       return;
     }
   }
-  func_?();
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -29,25 +62,82 @@ bool Assembly-CSharp.dll::GameCoinChestModelSelector::GameCoinChestModelSelector
                (GameCoinChestModelSelector *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).openMesh;
-  if (this_00 != (Renderer *)0x0) {
-    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_enabled
-                      (this_00,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
+  pRVar1 = (this->fields).openMesh;
+  if (pRVar1 != (Renderer *)0x0) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Renderer>_UnityEngine__Renderer_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar2 = (pRVar1->fields)._._.m_CachedPtr;
+    if (pvVar2 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar1,(MethodInfo *)0x0);
+      pcVar3 = (code *)swi(3);
+      bVar4 = (*pcVar3)();
+      return bVar4;
+    }
+    pcVar3 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+      uVar5 = func_?(&UNK_?);
+      FUN_?(uVar5,0);
+      pcVar3 = (code *)swi(3);
+      bVar4 = (*pcVar3)();
+      return bVar4;
+    }
+    pcRam_? = pcVar3;
+    cVar6 = (*pcRam_?)(pvVar2);
+    if (cVar6 != '\0') {
       return 1;
     }
-    if ((this->fields).closedMesh != (Renderer *)0x0) {
-      if (pcRam_? == (code *)0x0) {
-        pcRam_? = (code *)func_?();
+    pRVar1 = (this->fields).closedMesh;
+    if (pRVar1 != (Renderer *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Renderer>_UnityEngine__Renderer_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
-      bVar1 = (*pcRam_?)();
-      return bVar1;
+      if (pRVar1 == (Renderer *)0x0) {
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        bVar4 = (*pcVar3)();
+        return bVar4;
+      }
+      pvVar2 = (pRVar1->fields)._._.m_CachedPtr;
+      if (pvVar2 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar1,(MethodInfo *)0x0);
+        pcVar3 = (code *)swi(3);
+        bVar4 = (*pcVar3)();
+        return bVar4;
+      }
+      pcVar3 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+        uVar5 = func_?(&UNK_?);
+        FUN_?(uVar5,0,in_R8,in_R9,unaff_RBX);
+        pcVar3 = (code *)swi(3);
+        bVar4 = (*pcVar3)();
+        return bVar4;
+      }
+      pcRam_? = pcVar3;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      bVar4 = (*pcRam_?)(pvVar2);
+      return bVar4;
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  bVar1 = (*pcVar2)();
-  return bVar1;
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  bVar4 = (*pcVar3)();
+  return bVar4;
 }
 
 
@@ -63,12 +153,45 @@ void Assembly-CSharp.dll::GameCoinChestModelSelector::GameCoinChestModelSelector
               (pRVar1,1,(MethodInfo *)0x0);
     pRVar1 = (this->fields).closedMesh;
     if (pRVar1 != (Renderer *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                (pRVar1,0,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Renderer>_UnityEngine__Renderer_
+                      ,0,0);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (pRVar1 == (Renderer *)0x0) {
+        FUN_?();
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pvVar3 = (pRVar1->fields)._._.m_CachedPtr;
+      if (pvVar3 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar1,(MethodInfo *)0x0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcVar2 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+        uVar4 = func_?(&UNK_?);
+        FUN_?(uVar4,0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcRam_? = pcVar2;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*pcRam_?)(pvVar3,0);
       return;
     }
   }
-  func_?();
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

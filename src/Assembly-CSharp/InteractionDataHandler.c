@@ -2,131 +2,180 @@
 /* Boolean HandleInteraction(MVPickupOwner, InteractionData, Boolean) */
 
 bool Assembly-CSharp.dll::InteractionDataHandler::InteractionDataHandler_HandleInteraction
-               (InteractionDataHandler *this,MVPickupOwner *interactor,InteractionData interaction,
+               (InteractionDataHandler *this,MVPickupOwner *interactor,InteractionData *interaction,
                bool interactionIsLocal,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__MV__WorldObject__InteractionData);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__InteractionData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (interactionIsLocal == 0) {
     bVar1 = InteractionDataHandlerBase::InteractionDataHandlerBase_IsFriendlyFire
                       ((InteractionDataHandlerBase *)this,interactor,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      return 1;
-    }
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__MVAvatarRemote);
-      cRam_? = '\x01';
-    }
-    pMVar2 = (MVAvatar *)(this->fields)._._.worldObjectParent;
-    if (pMVar2 != (MVAvatar *)0x0) {
-      if (((pMVar2->klass->_1).naturalAligment < (TypeInfo__MVAvatarRemote->_1).naturalAligment) ||
-         ((MVAvatarRemote__Class *)
-          (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatarRemote->_1).naturalAligment - 1] !=
-          TypeInfo__MVAvatarRemote)) {
-        bVar3 = false;
+    if (bVar1 == 0) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVAvatarRemote);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
-      else {
-        bVar3 = true;
+      pMVar2 = (this->fields)._._.worldObjectParent;
+      if (pMVar2 != (MVWorldObjectClient *)0x0) {
+        bVar3 = (TypeInfo__MVAvatarRemote->_1).naturalAligment;
+        if ((bVar3 <= (pMVar2->klass->_1).naturalAligment) &&
+           ((MVAvatarRemote__Class *)(pMVar2->klass->_1).typeHierarchy[(ulonglong)bVar3 - 1] ==
+            TypeInfo__MVAvatarRemote)) {
+          lVar4 = *(longlong *)&pMVar2[1].fields._.position.z;
+          if ((lVar4 == 0) ||
+             (pOVar5 = ObscuredTypesConverter::ObscuredTypesConverter_CreateUnObscuredValue
+                                 (*(Object **)(lVar4 + 0x18),(MethodInfo *)0x0),
+             pOVar5 == (Object *)0x0)) goto code_?;
+          if ((pOVar5->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+            FUN_?(pOVar5);
+            pcVar6 = (code *)swi(3);
+            bVar1 = (*pcVar6)();
+            return bVar1;
+          }
+          if (((ulonglong)pOVar5[1].klass & 2) != 0) {
+            return 1;
+          }
+        }
       }
-      this_00 = (MVAvatar *)0x0;
-      if (bVar3) {
-        this_00 = pMVar2;
-      }
-      if ((this_00 != (MVAvatar *)0x0) &&
-         (bVar1 = MVAvatar::MVAvatar_IsInMode
-                            (this_00,SpawnRoleModeType__Enum_Dead,(MethodInfo *)0x0), bVar1 != 0)) {
-        return 1;
-      }
-    }
-    pMVar4 = (this->fields)._._.worldObjectParent;
-    this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-               *)func_?(
+      pMVar2 = (this->fields)._._.worldObjectParent;
+      this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+                 *)FUN_?(
                                 TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
                                 );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
-    ::StyleComplexSelector+PseudoStateData]::
-    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-              (this_01,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-              );
-    in_stack_5 = 0;
-    key = (Object *)func_?(TypeInfo__System__Byte,&stack0x00000023);
-    if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MV__WorldObject__InteractionData);
-    }
-    value = MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData_ToByteArray
-                      (&interaction,(MethodInfo *)0x0);
-    if ((this_01 !=
-         (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
-         0x0) && (mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                  Object]::Dictionary_2_System_Object_System_Object__Add
-                            ((Dictionary_2_System_Object_System_Object_ *)this_01,key,
-                             (Object *)value,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                            ), pMVar4 != (MVWorldObjectClient *)0x0)) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+      UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::
+      Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
+                (this_00,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                );
+      lVar4 = lRam_?;
+      uStackX_20 = 0;
+      if (*(int *)(lRam_? + 0x28) < 0) {
+        if ((*(longlong *)(lRam_? + 0x60) == 0) ||
+           ((*(byte *)(lRam_? + 0x135) & 8) == 0)) {
+          pOVar5 = (Object *)FUN_?(lRam_?);
+          FUN_?(pOVar5 + 1,&uStackX_20,(longlong)*(int *)(lVar4 + 0xf8) + -0x10);
+          if (iRam_? != 0) {
+            uVar7 = (uint)((ulonglong)(pOVar5 + 1) >> 0xc);
+            puVar8 = (ulonglong *)((ulonglong)((uVar7 & 0x1fffff) >> 6) * 8 + 0xADDR);
+            do {
+              uVar9 = *puVar8;
+              LOCK();
+              uVar10 = *puVar8;
+              if (uVar9 == uVar10) {
+                *puVar8 = uVar9 | 1L << (uVar7 & 0x3f);
+              }
+              UNLOCK();
+            } while (uVar9 != uVar10);
+          }
+        }
+        else {
+          pOVar5 = (Object *)0x0;
+        }
+      }
+      else {
+        pOVar5 = (Object *)((ulonglong)uStackX_21 << 8);
+      }
+      if (*(int *)&(TypeInfo__MV__WorldObject__InteractionData->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      value = MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData_ToByteArray
+                        (interaction,(MethodInfo *)0x0);
+      if ((this_00 ==
+           (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+            *)0x0) ||
+         (method_00 = MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                      ->klass->rgctx_data[0x22].method,
+         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+         Dictionary_2_System_Object_System_Object__TryInsert
+                   ((Dictionary_2_System_Object_System_Object_ *)this_00,pOVar5,(Object *)value,
+                    (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)method_00 >> 8),2),method_00
+                   ), pMVar2 == (MVWorldObjectClient *)0x0)) goto code_?;
       MVWorldObjectClient::MVWorldObjectClient_SendPackage
-                (pMVar4,(Dictionary_2_System_Object_System_Object_ *)this_01,(MethodInfo *)0x0);
-      return 1;
+                (pMVar2,(Dictionary_2_System_Object_System_Object_ *)this_00,(MethodInfo *)0x0);
     }
   }
   else {
-    pMVar4 = (this->fields)._._.worldObjectParent;
-    if (pMVar4 != (MVWorldObjectClient *)0x0) {
-      (*(code *)(pMVar4->klass->vtable).ReceiveInteractionPackage.method)
-                (pMVar4,interaction.damage,interaction.impulse.x,interaction.impulse.y,
-                 interaction.impulse.z,interaction._16_4_,0,
-                 (pMVar4->klass->vtable).HandleInput.methodPtr);
-      return 1;
+    pMVar2 = (this->fields)._._.worldObjectParent;
+    if (pMVar2 == (MVWorldObjectClient *)0x0) {
+code_?:
+      FUN_?();
+      pcVar6 = (code *)swi(3);
+      bVar1 = (*pcVar6)();
+      return bVar1;
     }
+    fStack_11 = interaction->damage;
+    fStack_12 = (interaction->impulse).x;
+    fStack_13 = (interaction->impulse).y;
+    fStack_14 = (interaction->impulse).z;
+    uStack_15._0_1_ = interaction->interactionType;
+    uStack_15._1_1_ = interaction->playerKilledByType;
+    uStack_15._2_2_ = *(undefined2 *)&interaction->field_0x12;
+    (*(pMVar2->klass->vtable).ReceiveInteractionPackage.methodPtr)
+              (pMVar2,&fStack_11,0,(pMVar2->klass->vtable).ReceiveInteractionPackage.method);
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  bVar1 = (*pcVar6)();
-  return bVar1;
+  return 1;
 }
 
 
 /* Boolean IsDead(InteractionData) */
 
 bool Assembly-CSharp.dll::InteractionDataHandler::InteractionDataHandler_IsDead
-               (InteractionDataHandler *this,InteractionData interaction,MethodInfo *method)
+               (InteractionDataHandler *this,InteractionData *interaction,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVAvatarRemote);
+    FUN_?(&TypeInfo__MVAvatarRemote);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar1 = (MVAvatar *)(this->fields)._._.worldObjectParent;
-  if (pMVar1 != (MVAvatar *)0x0) {
-    if (((pMVar1->klass->_1).naturalAligment < (TypeInfo__MVAvatarRemote->_1).naturalAligment) ||
-       ((MVAvatarRemote__Class *)
-        (pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVAvatarRemote->_1).naturalAligment - 1] !=
+  pMVar1 = (this->fields)._._.worldObjectParent;
+  if (pMVar1 != (MVWorldObjectClient *)0x0) {
+    bVar2 = (TypeInfo__MVAvatarRemote->_1).naturalAligment;
+    if ((bVar2 <= (pMVar1->klass->_1).naturalAligment) &&
+       ((MVAvatarRemote__Class *)(pMVar1->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] ==
         TypeInfo__MVAvatarRemote)) {
-      bVar2 = false;
-    }
-    else {
-      bVar2 = true;
-    }
-    this_00 = (MVAvatar *)0x0;
-    if (bVar2) {
-      this_00 = pMVar1;
-    }
-    if (this_00 != (MVAvatar *)0x0) {
-      bVar3 = MVAvatar::MVAvatar_IsInMode(this_00,SpawnRoleModeType__Enum_Dead,(MethodInfo *)0x0);
-      return bVar3;
+      lVar3 = *(longlong *)&pMVar1[1].fields._.position.z;
+      if (lVar3 != 0) {
+        pOVar4 = ObscuredTypesConverter::ObscuredTypesConverter_CreateUnObscuredValue
+                           (*(Object **)(lVar3 + 0x18),(MethodInfo *)0x0);
+        if (pOVar4 != (Object *)0x0) {
+          if ((pOVar4->klass->_0).element_class == *(Il2CppClass **)(lRam_? + 0x40)) {
+            return ((ulonglong)pOVar4[1].klass & 2) != 0;
+          }
+          FUN_?(pOVar4,lRam_?);
+          pcVar5 = (code *)swi(3);
+          bVar6 = (*pcVar5)();
+          return bVar6;
+        }
+      }
+      FUN_?();
+      pcVar5 = (code *)swi(3);
+      bVar6 = (*pcVar5)();
+      return bVar6;
     }
   }
   return 0;
@@ -140,18 +189,45 @@ Assembly-CSharp.dll::InteractionDataHandler::InteractionDataHandler_get_Team
           (InteractionDataHandler *this,MethodInfo *method)
 
 {
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (((pMVar1 != (MVNetworkGame *)0x0) &&
-      (pMVar2 = (this->fields)._._.worldObjectParent, pMVar2 != (MVWorldObjectClient *)0x0)) &&
-     (this_00 = (pMVar1->fields).teamManager, this_00 != (MVTeamManager *)0x0)) {
-    MVar3 = MVTeamManager::MVTeamManager_GetTeamFromActorNr
-                      (this_00,(pMVar2->fields)._.ownerActorNr,(MethodInfo *)0x0);
-    return MVar3;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  uVar4 = func_?(&stack0xfffffff4);
-  func_?(uVar4);
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((((pMVar1 != (MVGameControllerBase *)0x0) &&
+       (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+      (pMVar3 = (this->fields)._._.worldObjectParent, pMVar3 != (MVWorldObjectClient *)0x0)) &&
+     ((pMVar2->fields).teamManager != (MVTeamManager *)0x0)) {
+    actorNr = (pMVar3->fields)._.ownerActorNr;
+    if (actorNr == 0) {
+      return MVTeam__Enum_Server;
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if (((pMVar1 != (MVGameControllerBase *)0x0) &&
+        (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+       (this_00 = (pMVar2->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
+      pMVar4 = MVPlayerContainer::MVPlayerContainer_GetPlayerUnsafe
+                         (this_00,actorNr,(MethodInfo *)0x0);
+      if (pMVar4 != (MVPlayer *)0x0) {
+        return (pMVar4->fields)._Team_k__BackingField;
+      }
+    }
+    FUN_?();
+    pcVar5 = (code *)swi(3);
+    MVar6 = (*pcVar5)();
+    return MVar6;
+  }
+  FUN_?();
   pcVar5 = (code *)swi(3);
-  MVar3 = (*pcVar5)();
-  return MVar3;
+  MVar6 = (*pcVar5)();
+  return MVar6;
 }
 

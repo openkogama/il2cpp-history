@@ -8,26 +8,120 @@ void Assembly-CSharp.dll::InventoryController::InventoryController_AddObject
   pIVar1 = (this->fields).inventorySlots;
   if (pIVar1 != (InventorySlots *)0x0) {
     if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Item_int_
-                     );
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Item_int_
+                   );
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
     this_00 = (pIVar1->fields).inventorySlots;
-    if (this_00 != (Dictionary_2_System_Int32_InventorySlot_ *)0x0) {
-      this_01 = (InventorySlot *)
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                          ((Dictionary_2_System_Int32_System_Object_ *)this_00,slotIndex,
-                           MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Item_int_
-                          );
-      if (this_01 != (InventorySlot *)0x0) {
-        InventorySlot::InventorySlot_Set(this_01,item,(MethodInfo *)0x0);
-        return;
+    if ((this_00 != (Dictionary_2_System_Int32_InventorySlot_ *)0x0) &&
+       (this_01 = (Component *)
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                  Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                            ((Dictionary_2_System_Int32_System_Object_ *)this_00,slotIndex,
+                             MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Item_int_
+                            ), this_01 != (Component *)0x0)) {
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      UnityEngine__RectTransform_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::RectTransform>__
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (item != (GameObject *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if ((item->fields)._.m_CachedPtr != (void *)0x0) {
+          this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                              (item,(MethodInfo *)0x0);
+          parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             (this_01,(MethodInfo *)0x0);
+          if (this_02 == (Transform *)0x0) {
+            FUN_?();
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                    (this_02,parent,0,(MethodInfo *)0x0);
+          obj = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                          (item,
+                           UnityEngine__RectTransform_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::RectTransform>__
+                          );
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Vector3);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
+          if (obj == (Object *)0x0) {
+            FUN_?();
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          uStack_4._0_4_ = (pVVar3->zeroVector).x;
+          uStack_4._4_4_ = (pVVar3->zeroVector).y;
+          fStack_5 = (pVVar3->zeroVector).z;
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pOVar6 = obj[1].klass;
+          if (pOVar6 == (Object__Class *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException(obj,(MethodInfo *)0x0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar7 = func_?(&UNK_?);
+            FUN_?(uVar7,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+          (*pcRam_?)(pOVar6,&uStack_4);
+        }
+      }
+      return;
     }
   }
-  func_?();
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -40,19 +134,16 @@ void Assembly-CSharp.dll::InventoryController::InventoryController_AddTab
                (InventoryController *this,int32_t categoryId,String *tabName,MethodInfo *method)
 
 {
-  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
-  pTVar2 = (this->fields).tabMenu;
-  if (pTVar2 != (TabMenuBase *)0x0) {
-    pIStack_1 = (pTVar2->klass->vtable).__unknown_1.methodPtr;
-    pSStack_3 = tabName;
-    iStack_4 = categoryId;
-    (*(code *)(pTVar2->klass->vtable).__unknown.method)(pTVar2);
+  pTVar1 = (this->fields).tabMenu;
+  if (pTVar1 != (TabMenuBase *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(pTVar1->klass->vtable).__unknown.methodPtr)();
     return;
   }
-  uVar5 = func_?(&iStack_4);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -64,100 +155,194 @@ void Assembly-CSharp.dll::InventoryController::InventoryController_Clear
 
 {
   pIVar1 = (this->fields).inventorySlots;
-  if (pIVar1 != (InventorySlots *)0x0) {
-    uStack_2 = 0xffffffff;
-    puStack_3 = &DAT_?;
-    uStack_4 = *unaff_FS_OFFSET;
-    *unaff_FS_OFFSET = &uStack_4;
-    puStack_5 = &stack0xffffffbc;
-    puVar6 = &stack0xffffffbc;
-    if (cRam_? == '\0') {
-      func_?();
-      func_?();
-      func_?();
-      func_?();
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_InventorySlot>__GetEnumerator__
-                     );
-      cRam_? = '\x01';
-      puVar6 = puStack_5;
-    }
-    puStack_5 = puVar6;
-    this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-               *)(pIVar1->fields).inventorySlots;
-    if ((this_00 !=
-         (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-          *)0x0) &&
-       (method_00 = (MethodInfo *)
-                    mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements
-                    ::StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
-                    Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
-                              (this_00,
-                               MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Values__
-                              ), method_00 != (MethodInfo *)0x0)) {
-      pDVar7 = mscorlib.dll::System::Collections::Generic::
-               Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
-               StyleSheetCache+SheetHandleKey,System::Object]::
-               Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                         (&DStack_8,
-                          (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                           *)method_00,
-                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_InventorySlot>__GetEnumerator__
-                         );
-      DStack_8._version = 0;
-      uStack_2 = 1;
-      pIVar9 = (InventorySlot *)pDVar7->_currentValue;
-      DStack_8._currentValue = (Object *)&stack0xffffffc8;
-      while( true ) {
-        this_01 = pIVar9;
-        bVar10 = mscorlib.dll::System::Collections::Generic::
-                Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                UInt32,System::Object]::
-                Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                          ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                            *)&stack0xffffffc8,
-                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_InventorySlot>__MoveNext__
-                          );
-        if (bVar10 == 0) {
-          uStack_2 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&stack0xffffffc8,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_InventorySlot>__Dispose__
-                     ,method_00);
-          *unaff_FS_OFFSET = uStack_4;
-          return;
-        }
-        if (this_01 == (InventorySlot *)0x0) break;
-        pIVar9 = this_01;
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        pGVar11 = InventorySlot::InventorySlot_get_Item(this_01,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        method_00 = (MethodInfo *)0x0;
-        bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                          ((Object_1 *)pGVar11,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar10 != 0) {
-          pGVar11 = InventorySlot::InventorySlot_get_Item(this_01,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          pIVar9 = (InventorySlot *)0x0;
-          UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                    ((Object_1 *)pGVar11,(MethodInfo *)0x0);
-        }
-      }
-    }
+  if (pIVar1 == (InventorySlots *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
   }
-  uVar12 = func_?(&stack0xffffffac);
-  func_?(uVar12);
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
-  return;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Values__
+                  ,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_InventorySlot>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_InventorySlot>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_InventorySlot>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_InventorySlot>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  this_00 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *
+            )(pIVar1->fields).inventorySlots;
+  if ((this_00 ==
+       (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *)0x0)
+     || (pDVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+                  TypeConverterRegistry+ConverterKey,System::Object]::
+                  Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object__get_Values
+                            (this_00,
+                             MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Values__
+                            ),
+        pDVar3 == (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                   *)0x0)) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pDStack_4 = (pDVar3->fields)._dictionary;
+  ppDStack_5 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                 **)0x0;
+  puStack_6 = (undefined *)0x0;
+  if (iRam_? != 0) {
+    uVar7 = (uint)((ulonglong)&pDStack_8 >> 0xc);
+    uVar9 = (ulonglong)((uVar7 & 0x1fffff) >> 6);
+    do {
+      uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+      puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+      LOCK();
+      bVar12 = uVar10 == *puVar11;
+      if (bVar12) {
+        *puVar11 = uVar10 | 1L << (uVar7 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar12);
+  }
+  if (pDStack_4 ==
+      (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *)0x0)
+  {
+    pDStack_8 = pDStack_4;
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  iStack_13 = (pDStack_4->fields)._version;
+  puStack_6 = (undefined *)0x0;
+  uStack_14 = 0;
+  pIStack_15 = (InventorySlot *)0x0;
+  pDStack_8 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                *)0x0;
+  ppDStack_5 = &pDStack_4;
+  do {
+    if (pDStack_4 ==
+        (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *)0x0
+       ) {
+code_?:
+      FUN_?();
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    if (iStack_13 != (pDStack_4->fields)._version) {
+code_?:
+      mscorlib.dll::System::ThrowHelper::
+      ThrowHelper_1_ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion
+                ((MethodInfo *)0x0);
+      goto code_?;
+    }
+    do {
+      if (pDStack_4 ==
+          (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *)
+          0x0) goto code_?;
+      if ((uint)(pDStack_4->fields)._count <= uStack_14) {
+        return;
+      }
+      pDVar16 = (pDStack_4->fields)._entries;
+      lVar17 = (longlong)(int)uStack_14;
+      uVar7 = uStack_14 + 1;
+      if (pDVar16 == (Dictionary_2_TKey_TValue_Entry_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object___Array
+                     *)0x0) goto code_?;
+      if ((uint)pDVar16->max_length <= uStack_14) {
+        uStack_14 = uVar7;
+        FUN_?();
+        goto code_?;
+      }
+      uStack_14 = uVar7;
+    } while ((&pDVar16->vector[0].hashCode)[lVar17 * 6] < 0);
+    pIStack_15 = *(InventorySlot **)((longlong)&pDVar16->vector[0].key + lVar17 * 0x18 + 8);
+    func_?();
+    this_01 = pIStack_15;
+    if (pIStack_15 == (InventorySlot *)0x0) {
+code_?:
+      FUN_?();
+      uVar7 = uStack_14;
+code_?:
+      uStack_14 = uVar7;
+      FUN_?();
+code_?:
+      FUN_?();
+      goto code_?;
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar18 = InventorySlot::InventorySlot_get_Item(this_01,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?();
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (pGVar18 == (GameObject *)0x0) {
+      bVar12 = false;
+    }
+    else {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      bVar12 = (pGVar18->fields)._.m_CachedPtr != (void *)0x0;
+    }
+    if (bVar12) {
+      pGVar18 = InventorySlot::InventorySlot_get_Item(this_01,(MethodInfo *)0x0);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy
+                ((Object_1 *)pGVar18,0.0,(MethodInfo *)0x0);
+    }
+  } while( true );
 }
 
 
@@ -168,109 +353,171 @@ Assembly-CSharp.dll::InventoryController::InventoryController_GetComponentsOfSlo
           (InventoryController *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_InventorySlot>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_InventorySlot>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_InventorySlot>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<int,_InventorySlot>__get_Value__
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    if ((method->field7_0x1c).rgctx_data == (Il2CppRGCTXData *)0x0) {
-      func_?(method);
+  if ((method->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_InventorySlot>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_InventorySlot>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_InventorySlot>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<int,_InventorySlot>__get_Value__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    if ((method->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(method);
     }
   }
-  pOStack_4 = (Object__Class *)0x0;
-  pIVar5 = ((method->field7_0x1c).rgctx_data)->klass;
-  if (((uint)pIVar5->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar5 = (Il2CppClass *)func_?(pIVar5);
+  pvVar1 = ((method->field7_0x38).rgctx_data)->rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar1 + 0x135) & 1) == 0) {
+    pvVar1 = (void *)FUN_?(pvVar1);
   }
-  pLVar6 = (List_1_System_Object_ *)func_?(pIVar5);
+  pLVar2 = (List_1_System_Object_ *)FUN_?(pvVar1);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar6,
-             (method->field7_0x1c).rgctx_data[1].method);
-  pIVar7 = (this->fields).inventorySlots;
-  if ((pIVar7 != (InventorySlots *)0x0) &&
-     (this_00 = (Dictionary_2_System_UInt32_System_Object_ *)(pIVar7->fields).inventorySlots,
-     this_00 != (Dictionary_2_System_UInt32_System_Object_ *)0x0)) {
-    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
-             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                        &stack0xffffffa0,this_00,
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__GetEnumerator__
-                       );
-    pOStack_4 = (Object__Class *)pDVar8->_dictionary;
-    uVar9 = *(ulonglong *)&(pDVar8->_current).value;
-    uStack_1 = 1;
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar2,
+             (method->field7_0x38).rgctx_data[1].method);
+  pIVar3 = (this->fields).inventorySlots;
+  if ((pIVar3 == (InventorySlots *)0x0) ||
+     (pDVar4 = (Dictionary_2_System_UInt32_System_Object_ *)(pIVar3->fields).inventorySlots,
+     pDVar4 == (Dictionary_2_System_UInt32_System_Object_ *)0x0)) {
+    FUN_?();
+code_?:
+    FUN_?();
+code_?:
+    FUN_?();
+  }
+  else {
+    if (iRam_? != 0) {
+      uVar5 = (uint)((ulonglong)&pDStack_6 >> 0xc);
+      puVar7 = (ulonglong *)((ulonglong)((uVar5 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar8 = *puVar7;
+        LOCK();
+        uVar9 = *puVar7;
+        if (uVar8 == uVar9) {
+          *puVar7 = uVar8 | 1L << (uVar5 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar8 != uVar9);
+    }
+    uStack_10 = (ulonglong)(uint)(pDVar4->fields)._version;
+    uStack_11 = 2;
+    uStack_12 = 0;
+    uStack_13 = 0;
+    DStack_14._version = (undefined4)uStack_10;
+    DStack_14._index = uStack_10._4_4_;
+    DStack_14._current.key = 0;
+    DStack_14._current._4_4_ = 0;
+    DStack_14._current.value = (Object *)0x0;
+    DStack_14._getEnumeratorRetType = 2;
+    DStack_14._36_4_ = 0;
+    pDStack_6 = pDVar4;
+    DStack_14._dictionary = pDVar4;
     while( true ) {
       do {
-        bVar10 = mscorlib.dll::System::Collections::Generic::
-                Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
-                Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                          ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                           &pOStack_4,
-                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_InventorySlot>__MoveNext__
-                          );
-        if (bVar10 == 0) {
-          uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&pOStack_4,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_InventorySlot>__Dispose__
-                     ,in_stack_11);
-          *unaff_FS_OFFSET = uStack_3;
-          return pLVar6;
+        do {
+          bVar15 = mscorlib.dll::System::Collections::Generic::
+                  Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
+                  Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                            (&DStack_14,
+                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_InventorySlot>__MoveNext__
+                            );
+          pOVar16 = DStack_14._current.value;
+          if (bVar15 == 0) {
+            return pLVar2;
+          }
+          if ((InventorySlot *)DStack_14._current.value == (InventorySlot *)0x0)
+          goto code_?;
+          pGVar17 = InventorySlot::InventorySlot_get_Item
+                              ((InventorySlot *)DStack_14._current.value,(MethodInfo *)0x0);
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+        } while (pGVar17 == (GameObject *)0x0);
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        this_01 = (InventorySlot *)uVar9;
-        if (this_01 == (InventorySlot *)0x0) goto code_?;
-        pGVar12 = InventorySlot::InventorySlot_get_Item(this_01,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        in_stack_11 = (MethodInfo *)0x0;
-        bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                          ((Object_1 *)pGVar12,(Object_1 *)0x0,(MethodInfo *)0x0);
-      } while (bVar10 != 0);
-      if (this_01 == (InventorySlot *)0x0) break;
-      pGVar12 = InventorySlot::InventorySlot_get_Item(this_01,(MethodInfo *)0x0);
-      if (pGVar12 == (GameObject *)0x0) break;
-      x = (Object_1 *)
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                    (pGVar12,(method->field7_0x1c).rgctx_data[2].method);
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+      } while ((pGVar17->fields)._.m_CachedPtr == (void *)0x0);
+      if ((InventorySlot *)pOVar16 == (InventorySlot *)0x0) break;
+      pGVar17 = InventorySlot::InventorySlot_get_Item((InventorySlot *)pOVar16,(MethodInfo *)0x0);
+      if (pGVar17 == (GameObject *)0x0) goto code_?;
+      pOVar16 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                          (pGVar17,(method->field7_0x38).rgctx_data[2].method);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      uVar9 = ZEXT48(x);
-      bVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar10 != 0) {
-        if (pLVar6 == (List_1_System_Object_ *)0x0) break;
-        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__Add(pLVar6,(Object *)x,(method->field7_0x1c).rgctx_data[4].method);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (pOVar16 == (Object *)0x0) {
+        bVar18 = false;
+      }
+      else {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        bVar18 = pOVar16[1].klass != (Object__Class *)0x0;
+      }
+      if (bVar18) {
+        if (pLVar2 == (List_1_System_Object_ *)0x0) goto code_?;
+        FUN_?(pLVar2,pOVar16,(method->field7_0x38).rgctx_data[4].rgctxDataDummy);
       }
     }
   }
+  FUN_?();
 code_?:
-  func_?();
-  func_?();
-  pcVar13 = (code *)swi(3);
-  pLVar6 = (List_1_System_Object_ *)(*pcVar13)();
-  return pLVar6;
+  FUN_?();
+  FUN_?();
+  pcVar19 = (code *)swi(3);
+  pLVar2 = (List_1_System_Object_ *)(*pcVar19)();
+  return pLVar2;
 }
 
 
@@ -283,9 +530,11 @@ void Assembly-CSharp.dll::InventoryController::InventoryController_HighlightSlot
   pIVar1 = (this->fields).inventorySlots;
   if (pIVar1 != (InventorySlots *)0x0) {
     if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Item_int_
-                     );
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Item_int_
+                   );
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
     this_00 = (pIVar1->fields).inventorySlots;
@@ -295,17 +544,21 @@ void Assembly-CSharp.dll::InventoryController::InventoryController_HighlightSlot
                          ((Dictionary_2_System_Int32_System_Object_ *)this_00,slotPosition,
                           MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__get_Item_int_
                          );
-      if ((pOVar2 != (Object *)0x0) &&
-         ((NotificationFade *)pOVar2[2].monitor != (NotificationFade *)0x0)) {
-        NotificationFade::NotificationFade_Activate
-                  ((NotificationFade *)pOVar2[2].monitor,(MethodInfo *)0x0);
-        return;
+      if ((pOVar2 != (Object *)0x0) && (pMVar3 = pOVar2[2].monitor, pMVar3 != (MonitorData *)0x0)) {
+        pMVar3[0x34] = (MonitorData)0x1;
+        *(undefined4 *)(pMVar3 + 0x3c) = *(undefined4 *)(pMVar3 + 0x30);
+        if (*(CanvasGroup **)(pMVar3 + 0x20) != (CanvasGroup *)0x0) {
+          UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                    (*(CanvasGroup **)(pMVar3 + 0x20),0.0,(MethodInfo *)0x0);
+          *(undefined4 *)(pMVar3 + 0x38) = 0;
+          return;
+        }
       }
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -316,50 +569,95 @@ void Assembly-CSharp.dll::InventoryController::InventoryController_Initialize
                (InventoryController *this,int32_t slots,MethodInfo *method)
 
 {
-  this_00 = (this->fields).inventorySlots;
+  obj = (this->fields).inventorySlots;
   (this->fields).numberOfSlots = slots;
-  if (this_00 != (InventorySlots *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__Add_int__InventorySlot_
-                     );
-      func_?(&
-                      InventorySlot_MethodInfo__UnityEngine__Object__Instantiate<InventorySlot>_InventorySlot__UnityEngine__Transform__bool_
-                     );
-      func_?(&TypeInfo__UnityEngine__Object);
-      cRam_? = '\x01';
-    }
-    key = 0;
-    (this_00->fields)._SlotCountPerPage_k__BackingField = slots;
-    if (0 < slots) {
-      do {
-        this = (InventoryController *)(this_00->fields).inventorySlotPrefab;
-        parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)this_00,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          this = (InventoryController *)TypeInfo__UnityEngine__Object;
-          func_?();
-        }
-        value = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                          ((Object *)this,parent,0,
-                           InventorySlot_MethodInfo__UnityEngine__Object__Instantiate<InventorySlot>_InventorySlot__UnityEngine__Transform__bool_
-                          );
-        this_01 = (this_00->fields).inventorySlots;
-        if (this_01 == (Dictionary_2_System_Int32_InventorySlot_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-        Dictionary_2_System_Int32_System_Object__Add
-                  ((Dictionary_2_System_Int32_System_Object_ *)this_01,key,value,
-                   MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__Add_int__InventorySlot_
-                  );
-        key = key + 1;
-      } while (key < slots);
-    }
+  if (obj == (InventorySlots *)0x0) {
+code_?:
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-code_?:
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__Add_int__InventorySlot_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  InventorySlot_MethodInfo__UnityEngine__Object__Instantiate<InventorySlot>_InventorySlot__UnityEngine__Transform__bool_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  key = 0;
+  (obj->fields)._SlotCountPerPage_k__BackingField = slots;
+  if (0 < slots) {
+    do {
+      original = (obj->fields).inventorySlotPrefab;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Component>_UnityEngine__Component_
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      UnityEngine__Transform_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::Transform>_void__
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pvVar2 = (obj->fields)._._._._.m_CachedPtr;
+      if (pvVar2 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcVar1 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+        uVar3 = func_?(&UNK_?);
+        FUN_?(uVar3,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcRam_? = pcVar1;
+      pvVar2 = (void *)(*pcRam_?)(pvVar2);
+      parent = (Transform *)
+               UnityEngine.CoreModule.dll::UnityEngine::Bindings::Unmarshal::
+               Unmarshal_UnmarshalUnityObject
+                         (pvVar2,
+                          UnityEngine__Transform_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::Transform>_void__
+                         );
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      pMVar4 = 
+      InventorySlot_MethodInfo__UnityEngine__Object__Instantiate<InventorySlot>_InventorySlot__UnityEngine__Transform__bool_
+      ;
+      value = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
+                        ((Object *)original,parent,0,
+                         InventorySlot_MethodInfo__UnityEngine__Object__Instantiate<InventorySlot>_InventorySlot__UnityEngine__Transform__bool_
+                        );
+      this_00 = (obj->fields).inventorySlots;
+      if (this_00 == (Dictionary_2_System_Int32_InventorySlot_ *)0x0) goto code_?;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+      Dictionary_2_System_Int32_System_Object__TryInsert
+                ((Dictionary_2_System_Int32_System_Object_ *)this_00,key,value,
+                 (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pMVar4 >> 8),2),
+                 MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__Add_int__InventorySlot_
+                 ->klass->rgctx_data[0x22].method);
+      key = key + 1;
+    } while (key < slots);
+  }
   return;
 }
 
@@ -373,18 +671,101 @@ void Assembly-CSharp.dll::InventoryController::InventoryController_SelectTab
 {
   pTVar1 = (this->fields).tabMenu;
   if (pTVar1 != (TabMenuBase *)0x0) {
-    (*(code *)(pTVar1->klass->vtable).__unknown_1.method)
-              (pTVar1,tabId,currentPage,maxPages,pTVar1->klass[1]._0.image);
-    this_00 = (this->fields).inventorySlots;
-    if (this_00 != (InventorySlots *)0x0) {
-      InventorySlots::InventorySlots_UpdateAbsoluteSlotValues
-                (this_00,currentPage,(this->fields).numberOfSlots,(MethodInfo *)0x0);
+    uStack_2 = (pTVar1->klass->vtable).__unknown_1.method;
+    (*(pTVar1->klass->vtable).__unknown_1.methodPtr)
+              (pTVar1,CONCAT44(in_register_00000014,tabId),
+               CONCAT44(in_register_00000084,currentPage),CONCAT44(in_register_0000008c,maxPages));
+    pIVar3 = (this->fields).inventorySlots;
+    if (pIVar3 != (InventorySlots *)0x0) {
+      iVar4 = (this->fields).numberOfSlots;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<int,_InventorySlot>__GetEnumerator__
+                      ,currentPage,iVar4,0);
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_InventorySlot>__Dispose__
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_InventorySlot>__MoveNext__
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_InventorySlot>__get_Current__
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__KeyValuePair<int,_InventorySlot>__get_Key__
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__KeyValuePair<int,_InventorySlot>__get_Value__
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pDStack_5 = (Dictionary_2_System_UInt32_System_Object_ *)(pIVar3->fields).inventorySlots;
+      if (pDStack_5 == (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
+        FUN_?();
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
+      }
+      uStack_7 = 0;
+      uStack_8 = 0;
+      if (iRam_? != 0) {
+        uVar9 = (uint)((ulonglong)&pDStack_5 >> 0xc);
+        puVar10 = (ulonglong *)((ulonglong)((uVar9 & 0x1fffff) >> 6) * 8 + 0xADDR);
+        do {
+          uVar11 = *puVar10;
+          LOCK();
+          uVar12 = *puVar10;
+          if (uVar11 == uVar12) {
+            *puVar10 = uVar11 | 1L << (uVar9 & 0x3f);
+          }
+          UNLOCK();
+        } while (uVar11 != uVar12);
+      }
+      uStack_13 = (ulonglong)(uint)(pDStack_5->fields)._version;
+      puStack_14 = (undefined *)0x2;
+      auStack_15._8_8_ = uStack_13;
+      auStack_15._16_8_ = 0;
+      auStack_15._24_8_ = (Object *)0x0;
+      uStack_2._0_4_ = 2;
+      uStack_2._4_4_ = 0;
+      auStack_15._0_8_ = pDStack_5;
+      while( true ) {
+        bVar16 = mscorlib.dll::System::Collections::Generic::
+                Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
+                Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                          ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                           auStack_15,
+                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_InventorySlot>__MoveNext__
+                          );
+        if (bVar16 == 0) {
+          return;
+        }
+        if ((Object *)auStack_15._24_8_ == (Object *)0x0) break;
+        *(int32_t *)&((Object *)(auStack_15._24_8_ + 0x20))->klass =
+             (currentPage + -1) * iVar4 + auStack_15._16_4_;
+      }
+      FUN_?();
+      FUN_?();
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
       return;
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -395,18 +776,17 @@ void Assembly-CSharp.dll::InventoryController::InventoryController_SetHeaderText
                (InventoryController *this,String *category,MethodInfo *method)
 
 {
-  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
-  pTStack_2 = (this->fields).categoryHeaderText;
-  if (pTStack_2 != (Text *)0x0) {
-    pIStack_1 = (pTStack_2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-    pSStack_3 = category;
-    (*(code *)(pTStack_2->klass->vtable).set_text.method)();
+  pTVar1 = (this->fields).categoryHeaderText;
+  if (pTVar1 != (Text *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(pTVar1->klass->vtable).set_text.methodPtr)
+              (pTVar1,category,(pTVar1->klass->vtable).set_text.method);
     return;
   }
-  uVar4 = func_?(&pTStack_2);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -420,9 +800,12 @@ void Assembly-CSharp.dll::InventoryController::InventoryController_SlotChanged
 {
   pUVar1 = (this->fields).OnSlotChanged;
   if (pUVar1 != (UnityAction_2_System_Int32_System_Int32_ *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
     (*(pUVar1->fields)._._.invoke_impl)
               ((pUVar1->fields)._._.method_code,fromSlotIndex,toSlotIndex,
                (pUVar1->fields)._._.method);
+    return;
   }
   return;
 }

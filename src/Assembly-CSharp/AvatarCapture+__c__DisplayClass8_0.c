@@ -6,15 +6,32 @@ int32_t Assembly-CSharp.dll::AvatarCapture+<>c__DisplayClass8_0::
                   (AvatarCapture_c_DisplayClass8_0 *this,MVPlayer *o,MethodInfo *method)
 
 {
-  this = (AvatarCapture_c_DisplayClass8_0 *)CONCAT31(this._1_3_,(this->fields).counterType);
-  if (o != (MVPlayer *)0x0) {
-    iVar1 = MVPlayer::MVPlayer_GetGameStat(o,(GameStatCounterType__Enum)this,(MethodInfo *)0x0);
-    return iVar1;
+  if (o == (MVPlayer *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    iVar2 = (*pcVar1)();
+    return iVar2;
   }
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  iVar1 = (*pcVar3)();
-  return iVar1;
+  bVar3 = (this->fields).counterType;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase,bVar3,0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar4 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (((pMVar4 != (MVGameControllerBase *)0x0) &&
+      (pMVar5 = (pMVar4->fields).game, pMVar5 != (MVNetworkGame *)0x0)) &&
+     (this_00 = (pMVar5->fields).gameStatCounterManager, this_00 != (GameStatCounterManager *)0x0))
+  {
+    iVar2 = MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_GetActorCount
+                      (this_00,(uint)bVar3,(o->fields)._Team_k__BackingField,
+                       (o->fields)._ActorNr_k__BackingField,(MethodInfo *)0x0);
+    return iVar2;
+  }
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  iVar2 = (*pcVar1)();
+  return iVar2;
 }
 

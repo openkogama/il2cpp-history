@@ -3,6 +3,7 @@
  */
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
@@ -25,8 +26,6 @@ public abstract class MVGameControllerBase : MonoBehaviour, IUpdatecontrollerSub
 	protected RegionConfigManager regionConfigManager;
 	[SerializeField]
 	protected DebugLogHandler debugLogHandler;
-	[SerializeField]
-	protected KoGaMaSettingsContainer koGaMaSettings;
 	[SerializeField]
 	private MainCameraManager mainCameraManager;
 	[SerializeField]
@@ -134,7 +133,6 @@ public abstract class MVGameControllerBase : MonoBehaviour, IUpdatecontrollerSub
 	public static MVGameMode GameMode { get; }
 	public static MVWorldObjectClientManager WOCM { get; }
 	public static TimeReward TimeReward { get; }
-	public static KoGaMaSettingsContainer KoGaMaSettings { get; }
 	public static bool IsTouristSession { get; }
 	public static IAdManager AdManager { get; }
 	protected abstract IAdManager GetAdManager { get; }
@@ -178,17 +176,57 @@ public abstract class MVGameControllerBase : MonoBehaviour, IUpdatecontrollerSub
 		public override string ToString();
 	}
 
+	[Serializable]
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass183_0
+	private sealed class __c
+	{
+		// Fields
+		public static readonly __c __9;
+		public static Func<bool> __9__162_0;
+
+		// Constructors
+		static __c();
+		public __c();
+
+		// Methods
+		internal bool _InitRegionDependent_b__162_0();
+	}
+
+	[CompilerGenerated]
+	private sealed class __c__DisplayClass181_0
 	{
 		// Fields
 		public QuitBaseCallback applicationQuitObject;
 
 		// Constructors
-		public __c__DisplayClass183_0();
+		public __c__DisplayClass181_0();
 
 		// Methods
 		internal void _ApplicationQuit_b__0();
+	}
+
+	[CompilerGenerated]
+	private sealed class _InitRegionDependent_d__162 : IEnumerator<object>
+	{
+		// Fields
+		private int __1__state;
+		private object __2__current;
+		public MVGameControllerBase __4__this;
+
+		// Properties
+		object IEnumerator<System.Object>.Current { [DebuggerHidden] get; }
+		object IEnumerator.Current { [DebuggerHidden] get; }
+
+		// Constructors
+		[DebuggerHidden]
+		public _InitRegionDependent_d__162(int __1__state);
+
+		// Methods
+		[DebuggerHidden]
+		void IDisposable.Dispose();
+		private bool MoveNext();
+		[DebuggerHidden]
+		void IEnumerator.Reset();
 	}
 
 	// Constructors
@@ -197,6 +235,8 @@ public abstract class MVGameControllerBase : MonoBehaviour, IUpdatecontrollerSub
 	// Methods
 	public static bool IsInCorrectInventory(bool insidePlayerInventory);
 	protected virtual void Awake();
+	[IteratorStateMachine(typeof(_InitRegionDependent_d__162))]
+	private IEnumerator InitRegionDependent();
 	protected virtual void Start();
 	protected virtual void OnDestroy();
 	public static void UnregisterPlayModeController();

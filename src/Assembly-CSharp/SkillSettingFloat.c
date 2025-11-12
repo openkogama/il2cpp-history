@@ -17,168 +17,107 @@ void Assembly-CSharp.dll::SkillSettingFloat::SkillSettingFloat_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-                   );
-    func_?(&
-                    MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__get_NumericValue__
-                   );
+    FUN_?(&
+                  TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__get_NumericValue__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (skillSetting == (KogamaSettingValueWrapperBase *)0x0) {
     (this->fields).skillPercentageSetting = (AttributeSettingFloat *)0x0;
-    pKVar1 = (KogamaSettingValueWrapperBase *)0x0;
-code_?:
-    func_?(&(this->fields).skillPercentageSetting,pKVar1);
-    pAVar2 = (this->fields).skillPercentageSetting;
-    if (pAVar2 != (AttributeSettingFloat *)0x0) {
-      fVar3 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-              KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-              KogamaSettingNumericBase_1_System_Single__get_NumericValue
-                        ((KogamaSettingNumericBase_1_System_Single_ *)pAVar2,
-                         MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__get_NumericValue__
-                        );
-      (this->fields).settingValue = fVar3;
-      SkillSettingBase::SkillSettingBase_Initialize
-                ((SkillSettingBase *)this,skill,skillDataManager,skillCost,spawnRoleCost,
-                 spawnRoleTier,skillSetting,removeSkillCallback,updateSkillCallback,
-                 cantUpdateSkillCallback,cantRemoveSkillCallback,(MethodInfo *)0x0);
-      pAVar2 = (this->fields).skillPercentageSetting;
-      if ((((pAVar2 != (AttributeSettingFloat *)0x0) &&
-           (pKVar4 = (pAVar2->fields)._.KogamaSettingNumeric,
-           pKVar4 != (KogamaSettingNumeric_1_System_Single_ *)0x0)) &&
-          (pRVar5 = (pKVar4->fields).RangeValidator,
-          pRVar5 != (RangeValidator_1_System_Single_ *)0x0)) &&
-         (pSVar6 = (this->fields).slider, pSVar6 != (Slider *)0x0)) {
-        UnityEngine.UI.dll::UnityEngine::UI::Slider::Slider_set_minValue
-                  (pSVar6,(pRVar5->fields).min,(MethodInfo *)0x0);
-        pAVar2 = (this->fields).skillPercentageSetting;
-        if (((pAVar2 != (AttributeSettingFloat *)0x0) &&
-            (pKVar4 = (pAVar2->fields)._.KogamaSettingNumeric,
-            pKVar4 != (KogamaSettingNumeric_1_System_Single_ *)0x0)) &&
-           ((pRVar5 = (pKVar4->fields).RangeValidator,
-            pRVar5 != (RangeValidator_1_System_Single_ *)0x0 &&
-            (pSVar6 = (this->fields).slider, pSVar6 != (Slider *)0x0)))) {
-          UnityEngine.UI.dll::UnityEngine::UI::Slider::Slider_set_maxValue
-                    (pSVar6,(pRVar5->fields).max,(MethodInfo *)0x0);
-          pSStack7 = (this->fields).slider;
-          if (pSStack7 != (Slider *)0x0) {
-            fStack8 = (this->fields).settingValue;
-            pIStack9 = (pSStack7->klass->vtable).SetValueWithoutNotify.methodPtr;
-            (*(code *)(pSStack7->klass->vtable).set_value.method)();
-            SkillSettingInt::SkillSettingInt_UpdateTextInputFieldWithSliderValue
-                      ((SkillSettingInt *)this,(MethodInfo *)0x0);
-            (this->fields).isInitialized = 1;
-            return;
-          }
+  }
+  else {
+    bVar1 = (
+            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
+            ->_1).naturalAligment;
+    if (((skillSetting->klass->_1).naturalAligment < bVar1) ||
+       ((skillSetting->klass->_1).typeHierarchy[(ulonglong)bVar1 - 1] !=
+        (Il2CppClass *)
+        TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
+       )) {
+      FUN_?(skillSetting);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    (this->fields).skillPercentageSetting = (AttributeSettingFloat *)skillSetting;
+    bVar1 = (
+            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
+            ->_1).naturalAligment;
+    if (((skillSetting->klass->_1).naturalAligment < bVar1) ||
+       ((skillSetting->klass->_1).typeHierarchy[(ulonglong)bVar1 - 1] !=
+        (Il2CppClass *)
+        TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
+       )) {
+      FUN_?(skillSetting);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+  }
+  if (iRam_? != 0) {
+    uVar3 = (uint)((ulonglong)&(this->fields).skillPercentageSetting >> 0xc);
+    uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+    do {
+      uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+      puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+      LOCK();
+      bVar7 = uVar5 == *puVar6;
+      if (bVar7) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar7);
+  }
+  pAVar8 = (this->fields).skillPercentageSetting;
+  if (pAVar8 != (AttributeSettingFloat *)0x0) {
+    fVar9 = (float)FUN_?(pAVar8,
+                                  MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__get_NumericValue__
+                                 );
+    (this->fields).settingValue = fVar9;
+    SkillSettingBase::SkillSettingBase_Initialize
+              ((SkillSettingBase *)this,skill,skillDataManager,skillCost,spawnRoleCost,
+               CONCAT31((int3)((uint)in_stack_10 >> 8),(undefined1)spawnRoleTier),
+               skillSetting,removeSkillCallback,updateSkillCallback,cantUpdateSkillCallback,
+               cantRemoveSkillCallback,(MethodInfo *)0x0);
+    pAVar8 = (this->fields).skillPercentageSetting;
+    if ((((pAVar8 != (AttributeSettingFloat *)0x0) &&
+         (pKVar11 = (pAVar8->fields)._.KogamaSettingNumeric,
+         pKVar11 != (KogamaSettingNumeric_1_System_Single_ *)0x0)) &&
+        (pRVar12 = (pKVar11->fields).RangeValidator, pRVar12 != (RangeValidator_1_System_Single_ *)0x0)
+        ) && (pSVar13 = (this->fields).slider, pSVar13 != (Slider *)0x0)) {
+      UnityEngine.UI.dll::UnityEngine::UI::Slider::Slider_set_minValue
+                (pSVar13,(pRVar12->fields).min,(MethodInfo *)0x0);
+      pAVar8 = (this->fields).skillPercentageSetting;
+      if (((pAVar8 != (AttributeSettingFloat *)0x0) &&
+          (pKVar11 = (pAVar8->fields)._.KogamaSettingNumeric,
+          pKVar11 != (KogamaSettingNumeric_1_System_Single_ *)0x0)) &&
+         ((pRVar12 = (pKVar11->fields).RangeValidator,
+          pRVar12 != (RangeValidator_1_System_Single_ *)0x0 &&
+          (pSVar13 = (this->fields).slider, pSVar13 != (Slider *)0x0)))) {
+        UnityEngine.UI.dll::UnityEngine::UI::Slider::Slider_set_maxValue
+                  (pSVar13,(pRVar12->fields).max,(MethodInfo *)0x0);
+        pSVar13 = (this->fields).slider;
+        if (pSVar13 != (Slider *)0x0) {
+          (*(pSVar13->klass->vtable).set_value.methodPtr)
+                    (pSVar13,(this->fields).settingValue,(pSVar13->klass->vtable).set_value.method);
+          SkillSettingInt::SkillSettingInt_UpdateTextInputFieldWithSliderValue
+                    ((SkillSettingInt *)this,(MethodInfo *)0x0);
+          (this->fields).isInitialized = 1;
+          return;
         }
       }
     }
   }
-  else {
-    if (((
-         TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-         ->_1).naturalAligment <= (skillSetting->klass->_1).naturalAligment) &&
-       ((skillSetting->klass->_1).typeHierarchy
-        [(
-         TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-         ->_1).naturalAligment - 1] ==
-        (Il2CppClass *)
-        TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-       )) {
-      (this->fields).skillPercentageSetting = (AttributeSettingFloat *)skillSetting;
-      if (((
-           TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-           ->_1).naturalAligment <= (skillSetting->klass->_1).naturalAligment) &&
-         (pKVar1 = skillSetting,
-         (skillSetting->klass->_1).typeHierarchy
-         [(
-          TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-          ->_1).naturalAligment - 1] ==
-         (Il2CppClass *)
-         TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-         )) goto code_?;
-    }
-    func_?(skillSetting,
-                    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__AttributeSettingFloat
-                   );
-  }
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
-  return;
-}
-
-
-/* Void InitializeInfoButton(String, Int32, SpawnRolesSkillDataManager) */
-
-void Assembly-CSharp.dll::SkillSettingFloat::SkillSettingFloat_InitializeInfoButton
-               (SkillSettingFloat *this,String *skill,int32_t skillCost,
-               SpawnRolesSkillDataManager *skillDataManager,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Single);
-    cRam_? = '\x01';
-  }
-  pSVar1 = (this->fields)._.infoButton;
-  this = (SkillSettingFloat *)(this->fields).settingValue;
-  pOVar2 = (Object *)func_?(TypeInfo__System__Single,&this);
-  if (pSVar1 != (SpawnRoleSkillInfoButton *)0x0) {
-    (pSVar1->fields).skillType = skill;
-    func_?(&(pSVar1->fields).skillType,skill);
-    (pSVar1->fields).skillValue = pOVar2;
-    func_?(&(pSVar1->fields).skillValue,pOVar2);
-    (pSVar1->fields).skillDataManager = skillDataManager;
-    func_?(&(pSVar1->fields).skillDataManager,skillDataManager);
-    (pSVar1->fields).skillCost = skillCost;
-    return;
-  }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
-  return;
-}
-
-
-/* Void InputFieldChange() */
-
-void Assembly-CSharp.dll::SkillSettingFloat::SkillSettingFloat_InputFieldChange
-               (SkillSettingFloat *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Single);
-    cRam_? = '\x01';
-  }
-  pSStack_1 = (Slider *)0x0;
-  pIVar2 = (this->fields).inputField;
-  if (pIVar2 != (InputField *)0x0) {
-    mscorlib.dll::System::Single::Single_TryParse
-              ((pIVar2->fields).m_Text,(float *)&pSStack_1,(MethodInfo *)0x0);
-    pSVar3 = (this->fields).slider;
-    if (pSVar3 != (Slider *)0x0) {
-      pSStack_4 = pSStack_1;
-      pSStack_1 = (Slider *)(pSVar3->klass->vtable).SetValueWithoutNotify.methodPtr;
-      (*(code *)(pSVar3->klass->vtable).set_value.method)(pSVar3);
-      SkillSettingInt::SkillSettingInt_UpdateTextInputFieldWithSliderValue
-                ((SkillSettingInt *)this,(MethodInfo *)0x0);
-      pSVar3 = (this->fields).slider;
-      if (pSVar3 != (Slider *)0x0) {
-        pSStack_1 = (Slider *)(pSVar3->klass->vtable).set_value.methodPtr;
-        pSStack_4 = pSVar3;
-        fVar5 = (float10)(*(code *)(pSVar3->klass->vtable).get_value.method)();
-        pSStack_4 = (Slider *)(float)fVar5;
-        uVar6 = func_?(TypeInfo__System__Single,&pSStack_4);
-        (*(code *)(this->klass->vtable).UpdateSkillData.method)
-                  (this,uVar6,(this->klass->vtable).InitializeInfoButton.methodPtr);
-        return;
-      }
-    }
-  }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -189,33 +128,31 @@ void Assembly-CSharp.dll::SkillSettingFloat::SkillSettingFloat_SliderValueChange
                (SkillSettingFloat *this,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Single);
-    cRam_? = '\x01';
-  }
   pSVar1 = (this->fields).slider;
   if (pSVar1 != (Slider *)0x0) {
-    fVar2 = (float10)(*(code *)(pSVar1->klass->vtable).get_value.method)
-                               (pSVar1,(pSVar1->klass->vtable).set_value.methodPtr);
-    fVar2 = (float10)func_?((double)fVar2);
-    (*(code *)(pSVar1->klass->vtable).set_value.method)
-              (pSVar1,(float)fVar2,(pSVar1->klass->vtable).SetValueWithoutNotify.methodPtr);
+    (*(pSVar1->klass->vtable).get_value.methodPtr)(pSVar1);
+    uVar2 = func_?();
+    (*(pSVar1->klass->vtable).set_value.methodPtr)
+              (pSVar1,uVar2,(pSVar1->klass->vtable).set_value.method);
     SkillSettingInt::SkillSettingInt_UpdateTextInputFieldWithSliderValue
               ((SkillSettingInt *)this,(MethodInfo *)0x0);
     pSVar1 = (this->fields).slider;
     if (pSVar1 != (Slider *)0x0) {
-      fVar2 = (float10)(*(code *)(pSVar1->klass->vtable).get_value.method)
-                                 (pSVar1,(pSVar1->klass->vtable).set_value.methodPtr);
-      fStack_3 = (float)fVar2;
-      uVar4 = func_?(TypeInfo__System__Single,&fStack_3);
-      (*(code *)(this->klass->vtable).UpdateSkillData.method)
-                (this,uVar4,(this->klass->vtable).InitializeInfoButton.methodPtr);
+      auStackX_8[0] =
+           (*(pSVar1->klass->vtable).get_value.methodPtr)
+                     (pSVar1,(pSVar1->klass->vtable).get_value.method);
+      uVar3 = FUN_?(uRam_?,auStackX_8);
+      UNRECOVERED_JUMPTABLE = (this->klass->vtable).UpdateSkillData.methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*UNRECOVERED_JUMPTABLE)
+                (this,uVar3,(this->klass->vtable).UpdateSkillData.method,UNRECOVERED_JUMPTABLE);
       return;
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -227,127 +164,119 @@ void Assembly-CSharp.dll::SkillSettingFloat::SkillSettingFloat_UpdateSkillData
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                   );
-    func_?(&
-                    MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__get_NumericValue__
-                   );
-    func_?(&
-                    MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__set_NumericValue_float_
-                   );
-    func_?(&TypeInfo__System__Single);
+    FUN_?(&
+                  TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__get_NumericValue__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__set_NumericValue_float_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields).isInitialized == 0) {
     return;
   }
-  pSVar1 = (this->fields)._.infoButton;
-  if (pSVar1 == (SpawnRoleSkillInfoButton *)0x0) {
-code_?:
-    func_?();
-    pIVar2 = unaff_EBX;
-    newValue = (Object *)unaff_EDI;
-  }
-  else {
-    (pSVar1->fields).skillValue = newValue;
-    func_?(&(pSVar1->fields).skillValue,newValue);
-    pAVar3 = (this->fields).skillPercentageSetting;
-    unaff_EDI = (KogamaSettingValueWrapperBase *)newValue;
-    if (pAVar3 == (AttributeSettingFloat *)0x0) goto code_?;
-    value = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-            KogamaSettingTypes::KogamaSettingNumericBase`1[System::Single]::
-            KogamaSettingNumericBase_1_System_Single__get_NumericValue
-                      ((KogamaSettingNumericBase_1_System_Single_ *)pAVar3,
-                       MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__get_NumericValue__
-                      );
-    unaff_EBX = (IAttributeSetting__Class *)(this->fields).skillPercentageSetting;
-    unaff_EDI = (KogamaSettingValueWrapperBase *)newValue;
-    if ((unaff_EBX == (IAttributeSetting__Class *)0x0) ||
-       (unaff_EDI = (KogamaSettingValueWrapperBase *)newValue, newValue == (Object *)0x0))
-    goto code_?;
-    pSVar4 = TypeInfo__System__Single;
-    if ((newValue->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-    goto code_?;
-    method_00 = (IAttributeSetting__Class *)
-                MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__set_NumericValue_float_
-    ;
-    pfVar5 = (float *)func_?(newValue);
-    MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes::
-    KogamaSettingNumericBase`1[System::Single]::
-    KogamaSettingNumericBase_1_System_Single__set_NumericValue
-              ((KogamaSettingNumericBase_1_System_Single_ *)unaff_EBX,*pfVar5,
-               (MethodInfo *)method_00);
-    pIVar2 = 
-    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-    ;
-    newValue = (Object *)(this->fields)._.skillSetting;
-    unaff_EBX = 
-    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-    ;
-    unaff_EDI = (KogamaSettingValueWrapperBase *)newValue;
-    if ((KogamaSettingValueWrapperBase *)newValue == (KogamaSettingValueWrapperBase *)0x0)
-    goto code_?;
-    iVar6 = func_?(newValue,
-                            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                           );
-    pIVar7 = 
-    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-    ;
-    if ((iVar6 != 0) &&
-       (unaff_EDI = unaff_ESI, unaff_EBX = method_00,
-       iVar6 = func_?(newValue,
-                               TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                              ), pIVar2 = pIVar7, iVar6 != 0)) {
-      iVar6 = func_?(0,
-                              TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                              ,iVar6);
-      if (((this->fields)._.spawnRoleTier == 0) &&
-         (100 < ((this->fields)._.spawnRoleCost - (this->fields)._.currentSkillCost) + iVar6)) {
-        pAVar3 = (this->fields).skillPercentageSetting;
-        if (pAVar3 != (AttributeSettingFloat *)0x0) {
-          MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::KogamaSettingTypes
-          ::KogamaSettingNumericBase`1[System::Single]::
-          KogamaSettingNumericBase_1_System_Single__set_NumericValue
-                    ((KogamaSettingNumericBase_1_System_Single_ *)pAVar3,value,
-                     MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__set_NumericValue_float_
-                    );
-          pSVar8 = (this->fields).slider;
-          if (pSVar8 != (Slider *)0x0) {
-            (*(code *)(pSVar8->klass->vtable).set_value.method)
-                      (pSVar8,value,(pSVar8->klass->vtable).SetValueWithoutNotify.methodPtr);
-            SkillSettingInt::SkillSettingInt_UpdateTextInputFieldWithSliderValue
-                      ((SkillSettingInt *)this,(MethodInfo *)0x0);
-            pUVar9 = (this->fields)._.cantUpdateSkillCallback;
-            if (pUVar9 != (UnityAction *)0x0) {
-              (*(pUVar9->fields)._._.invoke_impl)
-                        ((pUVar9->fields)._._.method_code,(pUVar9->fields)._._.method);
+  SkillSettingBase::SkillSettingBase_UpdateSkillData
+            ((SkillSettingBase *)this,newValue,(MethodInfo *)0x0);
+  pAVar1 = (this->fields).skillPercentageSetting;
+  if (pAVar1 != (AttributeSettingFloat *)0x0) {
+    uVar2 = FUN_?(pAVar1,
+                           MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__get_NumericValue__
+                          );
+    pAVar1 = (this->fields).skillPercentageSetting;
+    if ((pAVar1 != (AttributeSettingFloat *)0x0) && (newValue != (Object *)0x0)) {
+      if ((newValue->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+        FUN_?(newValue);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pKVar4 = (pAVar1->fields)._.KogamaSettingNumeric;
+      if (pKVar4 != (KogamaSettingNumeric_1_System_Single_ *)0x0) {
+        FUN_?(pKVar4,*(undefined4 *)&newValue[1].klass,
+                      MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__set_NumericValue_float_
+                      ->klass->rgctx_data[4].rgctxDataDummy);
+        pIVar5 = 
+        TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+        ;
+        pKVar6 = (this->fields)._.skillSetting;
+        if (pKVar6 != (KogamaSettingValueWrapperBase *)0x0) {
+          lVar7 = FUN_?(pKVar6,
+                                 TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                                );
+          pIVar8 = 
+          TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+          ;
+          if (lVar7 == 0) {
+            FUN_?(pKVar6,pIVar5);
+            pcVar3 = (code *)swi(3);
+            (*pcVar3)();
+            return;
+          }
+          lVar7 = FUN_?(pKVar6,
+                                 TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                                );
+          if (lVar7 == 0) {
+            FUN_?(pKVar6,pIVar8);
+            pcVar3 = (code *)swi(3);
+            (*pcVar3)();
+            return;
+          }
+          iVar9 = FUN_?(0,
+                                 TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                                 ,lVar7);
+          if (((this->fields)._.spawnRoleTier == 0) &&
+             (100 < ((this->fields)._.spawnRoleCost - (this->fields)._.currentSkillCost) + iVar9))
+          {
+            pAVar1 = (this->fields).skillPercentageSetting;
+            if ((pAVar1 != (AttributeSettingFloat *)0x0) &&
+               (pKVar4 = (pAVar1->fields)._.KogamaSettingNumeric,
+               pKVar4 != (KogamaSettingNumeric_1_System_Single_ *)0x0)) {
+              FUN_?(pKVar4,uVar2,
+                            MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<float>__set_NumericValue_float_
+                            ->klass->rgctx_data[4].rgctxDataDummy);
+              pSVar10 = (this->fields).slider;
+              if (pSVar10 != (Slider *)0x0) {
+                (*(pSVar10->klass->vtable).set_value.methodPtr)
+                          (pSVar10,uVar2,(pSVar10->klass->vtable).set_value.method);
+                SkillSettingInt::SkillSettingInt_UpdateTextInputFieldWithSliderValue
+                          ((SkillSettingInt *)this,(MethodInfo *)0x0);
+                pUVar11 = (this->fields)._.cantUpdateSkillCallback;
+                if (pUVar11 != (UnityAction *)0x0) {
+                  (*(pUVar11->fields)._._.invoke_impl)
+                            ((pUVar11->fields)._._.method_code,(pUVar11->fields)._._.method);
+                  return;
+                }
+              }
+            }
+          }
+          else {
+            pUVar12 = (this->fields)._.updateSkillCallback;
+            if (pUVar12 != (UnityAction_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingValueWrapperBase_
+                           *)0x0) {
+              (*(pUVar12->fields)._._.invoke_impl)
+                        ((pUVar12->fields)._._.method_code,(this->fields).skillPercentageSetting,
+                         (pUVar12->fields)._._.method);
+              SkillSettingBase::SkillSettingBase_UpdateSkillCost
+                        ((SkillSettingBase *)this,(MethodInfo *)0x0);
               return;
             }
           }
         }
       }
-      else {
-        pUVar10 = (this->fields)._.updateSkillCallback;
-        if (pUVar10 != (UnityAction_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingValueWrapperBase_
-                       *)0x0) {
-          (*(pUVar10->fields)._._.invoke_impl)
-                    ((pUVar10->fields)._._.method_code,(this->fields).skillPercentageSetting,
-                     (pUVar10->fields)._._.method);
-          SkillSettingBase::SkillSettingBase_UpdateSkillCost
-                    ((SkillSettingBase *)this,(MethodInfo *)0x0);
-          return;
-        }
-      }
-      goto code_?;
     }
   }
-  func_?(newValue,pIVar2);
-  pSVar4 = extraout_ECX;
-code_?:
-  func_?(newValue,pSVar4);
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

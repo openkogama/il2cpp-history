@@ -1,17 +1,4 @@
 
-/* MVInputWrapper+InputSuppression(Boolean) */
-
-void Assembly-CSharp.dll::MVInputWrapper+InputSuppression::MVInputWrapper_InputSuppression__ctor
-               (MVInputWrapper_InputSuppression *this,bool a,MethodInfo *method)
-
-{
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  (*(code *)(this->klass->vtable).set_IsSuppressed.method)(this,_a,this->klass[1]._0.image);
-  return;
-}
-
-
 /* Boolean get_IsSuppressed() */
 
 bool Assembly-CSharp.dll::MVInputWrapper+InputSuppression::
@@ -19,17 +6,32 @@ bool Assembly-CSharp.dll::MVInputWrapper+InputSuppression::
                (MVInputWrapper_InputSuppression *this,MethodInfo *method)
 
 {
-  iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_frameCount((MethodInfo *)0x0);
-  uVar2 = iVar1 - (this->fields).suppressionFrame;
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    bVar3 = (*pcVar1)();
+    return bVar3;
+  }
+  pcRam_? = pcVar1;
+  iVar4 = (*pcRam_?)();
+  iVar4 = iVar4 - (this->fields).suppressionFrame;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Math);
+    FUN_?(&TypeInfo__System__Math);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Math);
+  if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  uVar3 = (int)uVar2 >> 0x1f;
-  return (int)((uVar2 ^ uVar3) - uVar3) < 2;
+  iVar5 = -iVar4;
+  if (iVar5 < 0) {
+    iVar5 = iVar4;
+  }
+  return iVar5 < 2;
 }
 
 
@@ -41,16 +43,16 @@ Assembly-CSharp.dll::MVInputWrapper+InputSuppression::MVInputWrapper_InputSuppre
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVInputWrapper__InputSuppression);
+    FUN_?(&TypeInfo__MVInputWrapper__InputSuppression);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__MVInputWrapper__InputSuppression;
-  value = (MVInputWrapper_InputSuppression *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  (*(code *)(value->klass->vtable).set_IsSuppressed.method)
-            (value,_a,((_union_86 *)&value->klass[1]._0)->dummy);
-  return value;
+  pMVar1 = (MVInputWrapper_InputSuppression *)
+           FUN_?(TypeInfo__MVInputWrapper__InputSuppression);
+  (*(pMVar1->klass->vtable).set_IsSuppressed.methodPtr)
+            (pMVar1,(ulonglong)a,(pMVar1->klass->vtable).set_IsSuppressed.method);
+  return pMVar1;
 }
 
 
@@ -61,18 +63,17 @@ bool Assembly-CSharp.dll::MVInputWrapper+InputSuppression::
                (MVInputWrapper_InputSuppression *a,MethodInfo *method)
 
 {
-  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
   if (a != (MVInputWrapper_InputSuppression *)0x0) {
-    pIStack_1 = (a->klass->vtable).set_IsSuppressed.methodPtr;
-    pMStack_2 = a;
-    bVar3 = (*(code *)(a->klass->vtable).get_IsSuppressed.method)();
-    return bVar3;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    bVar1 = (*(a->klass->vtable).get_IsSuppressed.methodPtr)
+                      (a,(a->klass->vtable).get_IsSuppressed.method);
+    return bVar1;
   }
-  uVar4 = func_?(&puStack_5);
-  func_?(uVar4);
-  pcVar6 = (code *)swi(3);
-  bVar3 = (*pcVar6)();
-  return bVar3;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  bVar1 = (*pcVar2)();
+  return bVar1;
 }
 
 
@@ -87,16 +88,25 @@ void Assembly-CSharp.dll::MVInputWrapper+InputSuppression::
     iVar1 = 0;
   }
   else {
-    iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_frameCount((MethodInfo *)0x0);
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    iVar1 = (*pcRam_?)();
   }
-  if (this != (MVInputWrapper_InputSuppression *)0x0) {
-    (this->fields).suppressionFrame = iVar1;
+  if (this == (MVInputWrapper_InputSuppression *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  uVar2 = func_?(&puStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  (this->fields).suppressionFrame = iVar1;
   return;
 }
 

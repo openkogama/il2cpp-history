@@ -1,40 +1,55 @@
 
 /* Boolean Raycast(Ray) */
 
-bool Assembly-CSharp.dll::RTG::Shape3D::Shape3D_Raycast(Shape3D *this,Ray ray,MethodInfo *method)
+bool Assembly-CSharp.dll::RTG::Shape3D::Shape3D_Raycast(Shape3D *this,Ray *ray,MethodInfo *method)
 
 {
-  uStack_1 = 0;
-  bVar2 = (*(code *)(this->klass->vtable).__unknown_2.method)
-                    (this,ray.m_Origin.x,ray.m_Origin.y,ray.m_Origin.z,ray.m_Direction.x,
-                     ray.m_Direction._4_8_,&uStack_1,(this->klass->vtable).__unknown_3.methodPtr);
-  return bVar2;
+  fStack_1 = (ray->m_Origin).x;
+  fStack_2 = (ray->m_Origin).y;
+  fStack_3 = (ray->m_Origin).z;
+  fStack_4 = (ray->m_Direction).x;
+  auStackX_8[0] = 0;
+  uStack_5._0_4_ = (ray->m_Direction).y;
+  uStack_5._4_4_ = (ray->m_Direction).z;
+  bVar6 = (*(this->klass->vtable).__unknown_2.methodPtr)
+                    (fStack_1,&fStack_1,auStackX_8,(this->klass->vtable).__unknown_2.method);
+  return bVar6;
 }
 
 
 /* Boolean RaycastWire(Ray) */
 
 bool Assembly-CSharp.dll::RTG::Shape3D::Shape3D_RaycastWire
-               (Shape3D *this,Ray ray,MethodInfo *method)
+               (Shape3D *this,Ray *ray,MethodInfo *method)
 
 {
-  uStack_1 = 0;
-  bVar2 = (*(code *)(this->klass->vtable).RaycastWire.method)
-                    (this,ray.m_Origin.x,ray.m_Origin.y,ray.m_Origin.z,ray.m_Direction.x,
-                     ray.m_Direction._4_8_,&uStack_1,(this->klass->vtable).__unknown.methodPtr);
-  return bVar2;
+  fStack_1 = (ray->m_Origin).x;
+  fStack_2 = (ray->m_Origin).y;
+  fStack_3 = (ray->m_Origin).z;
+  fStack_4 = (ray->m_Direction).x;
+  auStackX_8[0] = 0;
+  uStack_5._0_4_ = (ray->m_Direction).y;
+  uStack_5._4_4_ = (ray->m_Direction).z;
+  bVar6 = (*(this->klass->vtable).RaycastWire.methodPtr)
+                    (fStack_1,&fStack_1,auStackX_8,(this->klass->vtable).RaycastWire.method);
+  return bVar6;
 }
 
 
 /* Boolean RaycastWire(Ray, Single ByRef) */
 
 bool Assembly-CSharp.dll::RTG::Shape3D::Shape3D_RaycastWire_1
-               (Shape3D *this,Ray ray,float *t,MethodInfo *method)
+               (Shape3D *this,Ray *ray,float *t,MethodInfo *method)
 
 {
-  bVar1 = (*(code *)(this->klass->vtable).__unknown_2.method)
-                    (this,ray.m_Origin.x,ray.m_Origin.y,ray.m_Origin.z,ray.m_Direction.x,
-                     ray.m_Direction._4_8_,t,(this->klass->vtable).__unknown_3.methodPtr);
-  return bVar1;
+  fStack_1 = (ray->m_Origin).x;
+  fStack_2 = (ray->m_Origin).y;
+  fStack_3 = (ray->m_Origin).z;
+  fStack_4 = (ray->m_Direction).x;
+  uStack_5._0_4_ = (ray->m_Direction).y;
+  uStack_5._4_4_ = (ray->m_Direction).z;
+  bVar6 = (*(this->klass->vtable).__unknown_2.methodPtr)
+                    (fStack_1,&fStack_1,t,(this->klass->vtable).__unknown_2.method);
+  return bVar6;
 }
 

@@ -5,19 +5,48 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_HandleDone(Method
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__DataUploadManager);
+    FUN_?(&TypeInfo__DataUploadManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TypeInfo__DataUploadManager->static_fields->id =
        TypeInfo__DataUploadManager->static_fields->id + 1;
   TypeInfo__DataUploadManager->static_fields->bytePacker = (BytePacker *)0x0;
-  func_?(&TypeInfo__DataUploadManager->static_fields->bytePacker,0);
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)&TypeInfo__DataUploadManager->static_fields->bytePacker >> 0xc);
+    lVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar3 = *(ulonglong *)(lVar2 + 0xADDR);
+      puVar4 = (ulonglong *)(lVar2 + 0xADDR);
+      LOCK();
+      bVar5 = uVar3 == *puVar4;
+      if (bVar5) {
+        *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
   if (TypeInfo__DataUploadManager->static_fields->doneNotification != (UnityAction *)0x0) {
-    pUVar1 = TypeInfo__DataUploadManager->static_fields->doneNotification;
-    (*(pUVar1->fields)._._.invoke_impl)
-              ((pUVar1->fields)._._.method_code,(pUVar1->fields)._._.method);
+    pUVar6 = TypeInfo__DataUploadManager->static_fields->doneNotification;
+    (*(pUVar6->fields)._._.invoke_impl)
+              ((pUVar6->fields)._._.method_code,(pUVar6->fields)._._.method);
     TypeInfo__DataUploadManager->static_fields->doneNotification = (UnityAction *)0x0;
-    func_?(&TypeInfo__DataUploadManager->static_fields->doneNotification,0);
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&TypeInfo__DataUploadManager->static_fields->doneNotification >> 0xc
+                    );
+      lVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar3 = *(ulonglong *)(lVar2 + 0xADDR);
+        puVar4 = (ulonglong *)(lVar2 + 0xADDR);
+        LOCK();
+        bVar5 = uVar3 == *puVar4;
+        if (bVar5) {
+          *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar5);
+    }
   }
   return;
 }
@@ -29,42 +58,197 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_OnUploadBytes(Met
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__DataUploadManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pBVar1 = TypeInfo__DataUploadManager->static_fields->bytePacker;
   if (pBVar1 != (BytePacker *)0x0) {
-    iVar2 = MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_get_Length
-                      (pBVar1,(MethodInfo *)0x0);
-    pBVar1 = TypeInfo__DataUploadManager->static_fields->bytePacker;
-    if (pBVar1 != (BytePacker *)0x0) {
-      if (iVar2 == (pBVar1->fields)._position) {
+    if (cRam_? == '\0') {
+      FUN_?(&MethodInfo__System__Collections__Generic__List<unsigned_char>__get_Count__);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pLVar2 = (pBVar1->fields)._buffer;
+    if ((pLVar2 != (List_1_System_Byte_ *)0x0) &&
+       (pBVar1 = TypeInfo__DataUploadManager->static_fields->bytePacker,
+       pBVar1 != (BytePacker *)0x0)) {
+      if ((pLVar2->fields)._size == (pBVar1->fields)._position) {
         if (cRam_? == '\0') {
-          func_?();
+          FUN_?(&TypeInfo__DataUploadManager);
+          LOCK();
+          UNLOCK();
           cRam_? = '\x01';
         }
         TypeInfo__DataUploadManager->static_fields->id =
              TypeInfo__DataUploadManager->static_fields->id + 1;
         TypeInfo__DataUploadManager->static_fields->bytePacker = (BytePacker *)0x0;
-        func_?();
+        if (iRam_? != 0) {
+          uVar3 = (uint)((ulonglong)&TypeInfo__DataUploadManager->static_fields->bytePacker >> 0xc)
+          ;
+          lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+            puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+            LOCK();
+            bVar7 = uVar5 == *puVar6;
+            if (bVar7) {
+              *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar7);
+        }
         if (TypeInfo__DataUploadManager->static_fields->doneNotification != (UnityAction *)0x0) {
-          (*(TypeInfo__DataUploadManager->static_fields->doneNotification->fields)._._.invoke_impl)
-                    ();
+          pUVar8 = TypeInfo__DataUploadManager->static_fields->doneNotification;
+          (*(pUVar8->fields)._._.invoke_impl)
+                    ((pUVar8->fields)._._.method_code,(pUVar8->fields)._._.method);
           TypeInfo__DataUploadManager->static_fields->doneNotification = (UnityAction *)0x0;
-          func_?();
-          return;
+          if (iRam_? != 0) {
+            uVar3 = (uint)((ulonglong)&TypeInfo__DataUploadManager->static_fields->doneNotification
+                           >> 0xc);
+            lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+            do {
+              uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+              puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+              LOCK();
+              bVar7 = uVar5 == *puVar6;
+              if (bVar7) {
+                *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar7);
+          }
+        }
+        return;
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__DataUploadManager);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      count = 5000;
+      pBVar1 = TypeInfo__DataUploadManager->static_fields->bytePacker;
+      if (pBVar1 != (BytePacker *)0x0) {
+        if (cRam_? == '\0') {
+          FUN_?(&MethodInfo__System__Collections__Generic__List<unsigned_char>__get_Count__)
+          ;
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pLVar2 = (pBVar1->fields)._buffer;
+        if ((pLVar2 != (List_1_System_Byte_ *)0x0) &&
+           (pBVar1 = TypeInfo__DataUploadManager->static_fields->bytePacker,
+           pBVar1 != (BytePacker *)0x0)) {
+          if ((pLVar2->fields)._size - (pBVar1->fields)._position < 5000) {
+            pBVar9 = TypeInfo__DataUploadManager->static_fields->bytePacker;
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            MethodInfo__System__Collections__Generic__List<unsigned_char>__get_Count__
+                           );
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pLVar2 = (pBVar9->fields)._buffer;
+            if ((pLVar2 == (List_1_System_Byte_ *)0x0) ||
+               (pBVar9 = TypeInfo__DataUploadManager->static_fields->bytePacker,
+               pBVar9 == (BytePacker *)0x0)) goto code_?;
+            count = (pLVar2->fields)._size - (pBVar9->fields)._position;
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__MVGameControllerBase);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pMVar10 = TypeInfo__MVGameControllerBase->static_fields->instance;
+          if ((pMVar10 != (MVGameControllerBase *)0x0) &&
+             (pMVar11 = (pMVar10->fields).game, pMVar11 != (MVNetworkGame *)0x0)) {
+            pMVar12 = (pMVar11->fields).operationRequests;
+            pBVar9 = TypeInfo__DataUploadManager->static_fields->bytePacker;
+            iVar13 = TypeInfo__DataUploadManager->static_fields->id;
+            if ((pBVar9 != (BytePacker *)0x0) &&
+               (value = MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_ReadBytes
+                                  (pBVar9,count,(MethodInfo *)0x0),
+               pMVar12 != (MVNetworkGame_OperationRequests *)0x0)) {
+              if (cRam_? == '\0') {
+                FUN_?(&
+                              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
+                             );
+                LOCK();
+                UNLOCK();
+                FUN_?(&
+                              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
+                             );
+                LOCK();
+                UNLOCK();
+                FUN_?(&
+                              TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
+                             );
+                LOCK();
+                UNLOCK();
+                FUN_?(&TypeInfo__ExitGames__Client__Photon__SendOptions);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              this = (Dictionary_2_System_Byte_System_Object_ *)
+                     FUN_?(
+                                  TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
+                                  );
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]
+              ::Dictionary_2_System_Byte_System_Object___ctor
+                        (this,
+                         MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
+                        );
+              aiStackX_10[0] = iVar13;
+              value_00 = (Object *)FUN_?(uRam_?,aiStackX_10);
+              if (this != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
+                uVar14 = CONCAT71((int7)((ulonglong)pBVar1 >> 8),2);
+                method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
+                            ->klass->rgctx_data[0x22].method;
+                uVar15 = (undefined7)((ulonglong)method_00 >> 8);
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
+                Object]::Dictionary_2_System_Byte_System_Object__TryInsert
+                          (this,0xbf,value_00,(InsertionBehavior__Enum)uVar14,method_00);
+                uVar16 = CONCAT71(uVar15,0xf5);
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
+                Object]::Dictionary_2_System_Byte_System_Object__TryInsert
+                          (this,0xf5,(Object *)value,
+                           (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar14 >> 8),2),
+                           MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
+                           ->klass->rgctx_data[0x22].method);
+                pPVar17 = (pMVar12->fields).peer;
+                if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0)
+                {
+                  FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
+                }
+                if (pPVar17 != (PhotonPeer *)0x0) {
+                  (*(pPVar17->klass->vtable).SendOperation.methodPtr)
+                            (pPVar17,CONCAT71((int7)((ulonglong)uVar16 >> 8),0x3e),this,
+                             TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->
+                             SendReliable,(pPVar17->klass->vtable).SendOperation.method);
+                  return;
+                }
+              }
+            }
+          }
         }
       }
-      else {
-        DataUploadManager_SendChunk((MethodInfo *)0x0);
-      }
+code_?:
+      FUN_?();
+      pcVar18 = (code *)swi(3);
+      (*pcVar18)();
       return;
     }
   }
-  uVar3 = func_?(&puStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -75,14 +259,42 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_Reset(MethodInfo 
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__DataUploadManager);
+    FUN_?(&TypeInfo__DataUploadManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TypeInfo__DataUploadManager->static_fields->id = 0;
   TypeInfo__DataUploadManager->static_fields->bytePacker = (BytePacker *)0x0;
-  func_?(&TypeInfo__DataUploadManager->static_fields->bytePacker,0);
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)&TypeInfo__DataUploadManager->static_fields->bytePacker >> 0xc);
+    lVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar3 = *(ulonglong *)(lVar2 + 0xADDR);
+      puVar4 = (ulonglong *)(lVar2 + 0xADDR);
+      LOCK();
+      bVar5 = uVar3 == *puVar4;
+      if (bVar5) {
+        *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
   TypeInfo__DataUploadManager->static_fields->doneNotification = (UnityAction *)0x0;
-  func_?(&TypeInfo__DataUploadManager->static_fields->doneNotification,0);
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)&TypeInfo__DataUploadManager->static_fields->doneNotification >> 0xc);
+    lVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar3 = *(ulonglong *)(lVar2 + 0xADDR);
+      puVar4 = (ulonglong *)(lVar2 + 0xADDR);
+      LOCK();
+      bVar5 = uVar3 == *puVar4;
+      if (bVar5) {
+        *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
   return;
 }
 
@@ -93,42 +305,123 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_SendChunk(MethodI
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__DataUploadManager);
+    FUN_?(&TypeInfo__DataUploadManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  iVar1 = 5000;
-  pBVar2 = TypeInfo__DataUploadManager->static_fields->bytePacker;
-  if (pBVar2 != (BytePacker *)0x0) {
-    iVar3 = MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_get_Length
-                      (pBVar2,(MethodInfo *)0x0);
-    pBVar2 = TypeInfo__DataUploadManager->static_fields->bytePacker;
-    if (pBVar2 != (BytePacker *)0x0) {
-      if (iVar3 - (pBVar2->fields)._position < 5000) {
-        iVar1 = MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_get_Length
-                          (TypeInfo__DataUploadManager->static_fields->bytePacker,(MethodInfo *)0x0)
-        ;
-        pBVar2 = TypeInfo__DataUploadManager->static_fields->bytePacker;
-        if (pBVar2 == (BytePacker *)0x0) goto code_?;
-        iVar1 = iVar1 - (pBVar2->fields)._position;
+  count = 5000;
+  pBVar1 = TypeInfo__DataUploadManager->static_fields->bytePacker;
+  if (pBVar1 != (BytePacker *)0x0) {
+    if (cRam_? == '\0') {
+      FUN_?(&MethodInfo__System__Collections__Generic__List<unsigned_char>__get_Count__);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pLVar2 = (pBVar1->fields)._buffer;
+    if ((pLVar2 != (List_1_System_Byte_ *)0x0) &&
+       (pBVar1 = TypeInfo__DataUploadManager->static_fields->bytePacker,
+       pBVar1 != (BytePacker *)0x0)) {
+      if ((pLVar2->fields)._size - (pBVar1->fields)._position < 5000) {
+        pBVar3 = TypeInfo__DataUploadManager->static_fields->bytePacker;
+        if (cRam_? == '\0') {
+          FUN_?(&MethodInfo__System__Collections__Generic__List<unsigned_char>__get_Count__)
+          ;
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pLVar2 = (pBVar3->fields)._buffer;
+        if ((pLVar2 == (List_1_System_Byte_ *)0x0) ||
+           (pBVar3 = TypeInfo__DataUploadManager->static_fields->bytePacker,
+           pBVar3 == (BytePacker *)0x0)) goto code_?;
+        count = (pLVar2->fields)._size - (pBVar3->fields)._position;
       }
-      this = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-      pBVar2 = TypeInfo__DataUploadManager->static_fields->bytePacker;
-      iVar3 = TypeInfo__DataUploadManager->static_fields->id;
-      if (pBVar2 != (BytePacker *)0x0) {
-        uploadData = MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_ReadBytes
-                               (pBVar2,iVar1,(MethodInfo *)0x0);
-        if (this != (MVNetworkGame_OperationRequests *)0x0) {
-          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_UploadData
-                    (this,iVar3,uploadData,(MethodInfo *)0x0);
-          return;
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pMVar4 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if ((pMVar4 != (MVGameControllerBase *)0x0) &&
+         (pMVar5 = (pMVar4->fields).game, pMVar5 != (MVNetworkGame *)0x0)) {
+        pMVar6 = (pMVar5->fields).operationRequests;
+        pBVar3 = TypeInfo__DataUploadManager->static_fields->bytePacker;
+        iVar7 = TypeInfo__DataUploadManager->static_fields->id;
+        if (pBVar3 != (BytePacker *)0x0) {
+          value = MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker_ReadBytes
+                            (pBVar3,count,(MethodInfo *)0x0);
+          if (pMVar6 != (MVNetworkGame_OperationRequests *)0x0) {
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
+                           );
+              LOCK();
+              UNLOCK();
+              FUN_?(&
+                            MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
+                           );
+              LOCK();
+              UNLOCK();
+              FUN_?(&
+                            TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
+                           );
+              LOCK();
+              UNLOCK();
+              FUN_?(&TypeInfo__ExitGames__Client__Photon__SendOptions);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            this = (Dictionary_2_System_Byte_System_Object_ *)
+                   FUN_?(
+                                TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
+                                );
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
+            Dictionary_2_System_Byte_System_Object___ctor
+                      (this,
+                       MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
+                      );
+            aiStackX_10[0] = iVar7;
+            value_00 = (Object *)FUN_?(uRam_?,aiStackX_10);
+            if (this != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
+              uVar8 = CONCAT71((int7)((ulonglong)pBVar1 >> 8),2);
+              method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
+                          ->klass->rgctx_data[0x22].method;
+              uVar9 = (undefined7)((ulonglong)method_00 >> 8);
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]
+              ::Dictionary_2_System_Byte_System_Object__TryInsert
+                        (this,0xbf,value_00,(InsertionBehavior__Enum)uVar8,method_00);
+              uVar10 = CONCAT71(uVar9,0xf5);
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]
+              ::Dictionary_2_System_Byte_System_Object__TryInsert
+                        (this,0xf5,(Object *)value,
+                         (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar8 >> 8),2),
+                         MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
+                         ->klass->rgctx_data[0x22].method);
+              pPVar11 = (pMVar6->fields).peer;
+              if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
+                FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
+              }
+              if (pPVar11 != (PhotonPeer *)0x0) {
+                (*(pPVar11->klass->vtable).SendOperation.methodPtr)
+                          (pPVar11,CONCAT71((int7)((ulonglong)uVar10 >> 8),0x3e),this,
+                           TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->
+                           SendReliable,(pPVar11->klass->vtable).SendOperation.method);
+                return;
+              }
+            }
+          }
         }
       }
     }
   }
 code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -140,56 +433,28 @@ void Assembly-CSharp.dll::DataUploadManager::DataUploadManager_UploadData
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__BytePacker);
-    func_?(&TypeInfo__DataUploadManager);
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&StringLiteral_DataUpload_already_in_progress);
-    func_?(&StringLiteral_UploadData_called_even_though_us);
+    FUN_?(&TypeInfo__MV__WorldObject__BytePacker);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__DataUploadManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_DataUpload_already_in_progress);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_UploadData_called_even_though_us);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  bVar1 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-          VerticalVirtualizationController`1[System::Object]::
-          VerticalVirtualizationController_1_System_Object__get_alwaysRebindOnRefresh
-                    ((VerticalVirtualizationController_1_System_Object_ *)0x0,unaff_EBP);
-  if (bVar1 == 1) {
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-              ((Object *)StringLiteral_UploadData_called_even_though_us,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  else {
-    if (TypeInfo__DataUploadManager->static_fields->bytePacker != (BytePacker *)0x0) {
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                ((Object *)StringLiteral_DataUpload_already_in_progress,(MethodInfo *)0x0);
-      return;
-    }
-    this = MVGameControllerBase::MVGameControllerBase_get_TextureIntegrityChecker((MethodInfo *)0x0)
-    ;
-    if (this == (TextureIntegrityChecker *)0x0) {
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
-    bVar1 = AntiHack::TextureIntegrityChecker::TextureIntegrityChecker_VerifyTextureIntegrity
-                      (this,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      TypeInfo__DataUploadManager->static_fields->doneNotification = doneNotification;
-      pDVar3 = TypeInfo__DataUploadManager->static_fields;
-      func_?();
-      this_00 = (BytePacker *)func_?();
-      MVWorldObject.dll::MV::WorldObject::BytePacker::BytePacker__ctor_1
-                (this_00,(Byte__Array *)&pDVar3->doneNotification,(MethodInfo *)0x0);
-      TypeInfo__DataUploadManager->static_fields->bytePacker = this_00;
-      func_?(&TypeInfo__DataUploadManager->static_fields->bytePacker,this_00);
-      DataUploadManager_SendChunk((MethodInfo *)0x0);
-      return;
-    }
-  }
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
+            ((Object *)StringLiteral_UploadData_called_even_though_us,(MethodInfo *)0x0);
   return;
 }
 

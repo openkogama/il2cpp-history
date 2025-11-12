@@ -4,32 +4,63 @@
 bool Assembly-CSharp.dll::ShopRepository+<>c__DisplayClass8_0::
      ShopRepository_c_DisplayClass8_0__GetItemsByItemCategories_b__0
                (ShopRepository_c_DisplayClass8_0 *this,
-               KeyValuePair_2_System_Int32_MV_WorldObject_MVItem_ p,MethodInfo *method)
+               KeyValuePair_2_System_Int32_MV_WorldObject_MVItem_ *p,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    FUN_?(&
+                  bool_MethodInfo__System__Linq__Enumerable__Contains<int>_System__Collections__Generic__IEnumerable<int>__int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<int,_MV::WorldObject::MVItem>__get_Value__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields).itemCategories;
-  if (pIVar1 != (Int32__Array *)0x0) {
-    if (pIVar1->max_length == 0) {
+  pMVar1 = 
+  bool_MethodInfo__System__Linq__Enumerable__Contains<int>_System__Collections__Generic__IEnumerable<int>__int_
+  ;
+  source = (this->fields).itemCategories;
+  if (source != (Int32__Array *)0x0) {
+    if (source->max_length == 0) {
       return 1;
     }
-    if (p.value != (MVItem *)0x0) {
-      bVar2 = System.Core.dll::System::Linq::Enumerable::Enumerable_Contains
-                        ((IEnumerable_1_System_Int32_ *)(this->fields).itemCategories,
-                         ((p.value)->fields).itemCategoryID,
-                         bool_MethodInfo__System__Linq__Enumerable__Contains<int>_System__Collections__Generic__IEnumerable<int>__int_
-                        );
-      return bVar2;
+    if (p->value != (MVItem *)0x0) {
+      value = (p->value->fields).itemCategoryID;
+      if ((
+          bool_MethodInfo__System__Linq__Enumerable__Contains<int>_System__Collections__Generic__IEnumerable<int>__int_
+          ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+        FUN_?(
+                     bool_MethodInfo__System__Linq__Enumerable__Contains<int>_System__Collections__Generic__IEnumerable<int>__int_
+                     );
+      }
+      pvVar2 = (pMVar1->field7_0x38).rgctx_data[1].rgctxDataDummy;
+      if ((*(byte *)((longlong)pvVar2 + 0x135) & 1) == 0) {
+        pvVar2 = (void *)FUN_?(pvVar2);
+      }
+      lVar3 = FUN_?(source,pvVar2);
+      if (lVar3 == 0) {
+        bVar4 = System.Core.dll::System::Linq::Enumerable::Enumerable_Contains_4
+                          ((IEnumerable_1_System_Int32_ *)source,value,
+                           (IEqualityComparer_1_System_Int32_ *)0x0,
+                           (pMVar1->field7_0x38).rgctx_data[4].method);
+      }
+      else {
+        pvVar2 = (pMVar1->field7_0x38).rgctx_data[1].rgctxDataDummy;
+        if ((*(byte *)((longlong)pvVar2 + 0x135) & 1) == 0) {
+          pvVar2 = (void *)FUN_?(pvVar2);
+        }
+        bVar4 = FUN_?(4,pvVar2,lVar3,value,unaff_RDI);
+      }
+      return bVar4;
     }
   }
-  uVar3 = func_?(&stack0xfffffff0);
-  func_?(uVar3);
-  pcVar4 = (code *)swi(3);
-  bVar2 = (*pcVar4)();
-  return bVar2;
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  bVar4 = (*pcVar5)();
+  return bVar4;
 }
 

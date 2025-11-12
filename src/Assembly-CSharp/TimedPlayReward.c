@@ -6,14 +6,19 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_ClaimReward
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__TimedPlayReward__RewardTracker);
+    FUN_?(&TypeInfo__TimedPlayReward__RewardTracker);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pTVar1 = TypeInfo__TimedPlayReward__RewardTracker->static_fields;
   if ((pTVar1->IsCollected == 0) && (pTVar1->CollectedChanged != (Action *)0x0)) {
     pAVar2 = pTVar1->CollectedChanged;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
     (*(pAVar2->fields)._._.invoke_impl)
               ((pAVar2->fields)._._.method_code,(pAVar2->fields)._._.method);
+    return;
   }
   return;
 }
@@ -26,14 +31,22 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action);
-    func_?(&TypeInfo__TimedPlayReward__RewardTracker);
-    func_?(&MethodInfo__TimedPlayReward__OnCollectedChanged__);
-    func_?(&TypeInfo__UpdateController);
+    FUN_?(&TypeInfo__System__Action);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__TimedPlayReward__RewardTracker);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__TimedPlayReward__OnCollectedChanged__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UpdateController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pAVar1 = TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged;
-  this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (this_00,(Object *)this,MethodInfo__TimedPlayReward__OnCollectedChanged__,
@@ -43,50 +56,73 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_Initialize
                      ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
   if (pAVar1 == (Action *)0x0) {
     TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged = (Action *)0x0;
-code_?:
-    func_?();
-    bVar2 = MVGameControllerBase::MVGameControllerBase_get_UsingDevSessionData((MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      return;
-    }
-    if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UpdateController::UpdateController_AddUpdateObject
-              ((IUpdatecontrollerSubscriberUpdate *)this,UpdatePriority__Enum_UPDATEBUCKET_STANDARD,
-               1,(MethodInfo *)0x0);
-    (this->fields)._RewardAvailable_k__BackingField = 0;
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                        ((Component *)this,(MethodInfo *)0x0);
-    if (this_01 != (GameObject *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (this_01,0,(MethodInfo *)0x0);
-      (this->fields)._IsClaimable_k__BackingField = 0;
-      TimedPlayReward_RequestRewardPermission(this,(MethodInfo *)0x0);
-      return;
-    }
   }
   else {
-    pAVar3 = (Action *)0x0;
+    pAVar2 = (Action *)0x0;
     if (pAVar1->klass == TypeInfo__System__Action) {
-      pAVar3 = pAVar1;
+      pAVar2 = pAVar1;
     }
-    if (pAVar3 != (Action *)0x0) {
-      TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged = pAVar3;
-      pAVar3 = (Action *)0x0;
-      if (pAVar1->klass == TypeInfo__System__Action) {
-        pAVar3 = pAVar1;
-      }
-      if (pAVar3 == (Action *)0x0) goto code_?;
-      goto code_?;
+    if (pAVar2 == (Action *)0x0) {
+      FUN_?(pAVar1,TypeInfo__System__Action);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
     }
-    func_?();
+    TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged = pAVar2;
+    pAVar2 = (Action *)0x0;
+    if (pAVar1->klass == TypeInfo__System__Action) {
+      pAVar2 = pAVar1;
+    }
+    if (pAVar2 == (Action *)0x0) {
+      FUN_?(pAVar1,TypeInfo__System__Action);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)
+                   &TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged >> 0xc
+                  );
+    puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (ulonglong)(uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar6 != uVar7);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Application);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Application->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  UpdateController::UpdateController_AddUpdateObject
+            ((IUpdatecontrollerSubscriberUpdate *)this,UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1,
+             (MethodInfo *)0x0);
+  (this->fields)._RewardAvailable_k__BackingField = 0;
+  this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)this,(MethodInfo *)0x0);
+  if (this_01 == (GameObject *)0x0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+            (this_01,0,(MethodInfo *)0x0);
+  (this->fields)._IsClaimable_k__BackingField = 0;
+  TimedPlayReward_RequestRewardPermission(this,(MethodInfo *)0x0);
   return;
 }
 
@@ -98,91 +134,257 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_OnCollectedChanged
 
 {
   if (cRam_? == '\0') {
-    IStack_1.m_value = (int32_t)&TypeInfo__TimedPlayReward__RewardTracker;
-    func_?();
+    FUN_?(&TypeInfo__TimedPlayReward__RewardTracker);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TypeInfo__TimedPlayReward__RewardTracker->static_fields->IsCollected = 1;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-    func_?(&TypeInfo__AsyncWWWManager);
-    func_?(&TypeInfo__NotificationController);
-    func_?(&TypeInfo__PostRequest);
-    func_?(&
-                    MethodInfo__TimedPlayReward__OnFinishedRewardCollecting_UnityEngine__Networking__UnityWebRequest_
-                   );
-    func_?(&TypeInfo__UnityEngine__WWWForm);
-    func_?(&StringLiteral_Thank_you_for_playing_this_NEW_g);
-    func_?(&StringLiteral_token);
-    func_?(&StringLiteral__XP_);
-    func_?(&StringLiteral_profile_id);
-    func_?(&StringLiteral_planet_id);
+    FUN_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__AsyncWWWManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__PostRequest);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__TimedPlayReward__OnFinishedRewardCollecting_UnityEngine__Networking__UnityWebRequest_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__WWWForm);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Thank_you_for_playing_this_NEW_g);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_token);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__XP_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_profile_id);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_planet_id);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+  this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                       ((Component *)this,(MethodInfo *)0x0);
-  if (this_00 != (GameObject *)0x0) {
+  if (this_01 != (GameObject *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (this_00,0,(MethodInfo *)0x0);
-    IStack_1.m_value = (this->fields)._RewardXP_k__BackingField;
-    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_1,(MethodInfo *)0x0);
-    pSVar2 = mscorlib.dll::System::String::String_Concat_4
-                       (StringLiteral_Thank_you_for_playing_this_NEW_g,pSVar2,StringLiteral__XP_,
-                        (MethodInfo *)0x0);
-    pSVar2 = TM::TM__(pSVar2,(MethodInfo *)0x0);
-    if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+              (this_01,0,(MethodInfo *)0x0);
+    value = (this->fields)._RewardXP_k__BackingField;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__System__Number);
+      LOCK();
+      UNLOCK();
+      FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if ((MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____->klass->field_0x135
+        & 1) == 0) {
+      FUN_?();
+    }
+    if (*(int *)&(TypeInfo__System__Number->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    auStack_1 = (undefined1  [8])0x0;
+    puStack_2 = (undefined *)0x0;
+    pSVar3 = mscorlib.dll::System::Number::Number_FormatInt32
+                        (value,(ReadOnlySpan_1_Char_ *)auStack_1,(IFormatProvider *)0x0,
+                         (MethodInfo *)0x0);
+    pSVar3 = mscorlib.dll::System::String::String_Concat_5
+                        (StringLiteral_Thank_you_for_playing_this_NEW_g,pSVar3,StringLiteral__XP_,
+                         (MethodInfo *)0x0);
+    pSVar3 = TM::TM__(pSVar3,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+      FUN_?();
     }
     NotificationController::NotificationController_PushNotification
-              (pSVar2,(Sprite *)0x0,5,(MethodInfo *)0x0);
-    this_01 = (GameEventManager_AvatarCommandsPlayModeManager *)
-              MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-    if (this_01 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0) {
-      GameEventManager+AvatarCommandsPlayModeManager::
-      GameEventManager_AvatarCommandsPlayModeManager_SetIntermediateDebriefing
-                (this_01,(this->fields)._RewardXP_k__BackingField,(MethodInfo *)0x0);
+              (pSVar3,(Sprite *)0x0,5,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar4 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if (((pMVar4 != (MVGameControllerBase *)0x0) &&
+        (pMVar5 = (pMVar4->fields).game, pMVar5 != (MVNetworkGame *)0x0)) &&
+       (pGVar6 = (pMVar5->fields).GameEventManager, pGVar6 != (GameEventManager *)0x0)) {
+      if ((pGVar6->fields).OnXPRewarded != (Action_1_Int32_ *)0x0) {
+        pAVar7 = (pGVar6->fields).OnXPRewarded;
+        (*(pAVar7->fields)._._.invoke_impl)
+                  ((pAVar7->fields)._._.method_code,(this->fields)._RewardXP_k__BackingField,
+                   (pAVar7->fields)._._.method);
+      }
+      bVar8 = cRam_? == '\0';
       (this->fields)._IsClaimable_k__BackingField = 0;
-      if (cRam_? == '\0') {
-        func_?();
+      if (bVar8) {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      pGVar3 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-      this_02 = (WWWForm *)func_?();
+      pGVar9 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      this_02 = (WWWForm *)FUN_?(TypeInfo__UnityEngine__WWWForm);
       UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm__ctor
                 (this_02,(MethodInfo *)0x0);
-      if ((pGVar3 != (GameSessionData *)0x0) && (this_02 != (WWWForm *)0x0)) {
-        UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField
-                  (this_02,StringLiteral_token,(pGVar3->fields).token,(MethodInfo *)0x0);
-        UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField_2
-                  (this_02,StringLiteral_profile_id,(pGVar3->fields).profileID,(MethodInfo *)0x0);
-        UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField_2
-                  (this_02,StringLiteral_planet_id,(pGVar3->fields).planetID,(MethodInfo *)0x0);
-        pSVar2 = (pGVar3->fields).gameRewardURL;
-        this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                   *)func_?();
-        DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata
-        ::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-        DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+      pSVar3 = StringLiteral_token;
+      if ((pGVar9 != (GameSessionData *)0x0) && (this_02 != (WWWForm *)0x0)) {
+        pSVar10 = (pGVar9->fields).token;
+        pEVar11 = mscorlib.dll::System::Text::Encoding::Encoding_get_UTF8((MethodInfo *)0x0);
+        UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField_1
+                  (this_02,pSVar3,pSVar10,pEVar11,(MethodInfo *)0x0);
+        pSVar3 = StringLiteral_profile_id;
+        aIStackX_18[0].m_value = (pGVar9->fields).profileID;
+        pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(aIStackX_18,(MethodInfo *)0x0);
+        pEVar11 = mscorlib.dll::System::Text::Encoding::Encoding_get_UTF8((MethodInfo *)0x0);
+        UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField_1
+                  (this_02,pSVar3,pSVar10,pEVar11,(MethodInfo *)0x0);
+        pSVar3 = StringLiteral_planet_id;
+        aIStackX_18[0].m_value = (pGVar9->fields).planetID;
+        pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(aIStackX_18,(MethodInfo *)0x0);
+        pEVar11 = mscorlib.dll::System::Text::Encoding::Encoding_get_UTF8((MethodInfo *)0x0);
+        UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField_1
+                  (this_02,pSVar3,pSVar10,pEVar11,(MethodInfo *)0x0);
+        pSVar3 = (pGVar9->fields).gameRewardURL;
+        this_03 = (UnityAction_1_System_Object_ *)
+                  FUN_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+        UnityAction_1_System_Object___ctor
                   (this_03,(Object *)this,
                    MethodInfo__TimedPlayReward__OnFinishedRewardCollecting_UnityEngine__Networking__UnityWebRequest_
                    ,(MethodInfo *)0x0);
-        pPStack4 = TypeInfo__PostRequest;
-        this_04 = (PostRequest *)func_?();
+        this_04 = (PostRequest *)FUN_?(TypeInfo__PostRequest);
         PostRequest::PostRequest__ctor
-                  (this_04,pSVar2,this_02,
+                  (this_04,pSVar3,this_02,
                    (Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_03,
                    WWWRequestPriority__Enum_ExecuteWhileSyncronizing,(MethodInfo *)0x0);
-        if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+        if (*(int *)&(TypeInfo__AsyncWWWManager->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_04,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__AsyncWWWManager,0);
+          LOCK();
+          UNLOCK();
+          FUN_?(&TypeInfo__CachedGetRequest);
+          LOCK();
+          UNLOCK();
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
+                       );
+          LOCK();
+          UNLOCK();
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Enqueue_AsyncWebRequest_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__AsyncWWWManager->_1).field_0x1c == 0) {
+          FUN_?(TypeInfo__AsyncWWWManager);
+        }
+        if (TypeInfo__AsyncWWWManager->static_fields->isQuiting == 0) {
+          if (this_04 != (PostRequest *)0x0) {
+            bVar12 = (TypeInfo__CachedGetRequest->_1).naturalAligment;
+            if ((bVar12 <= (this_04->klass->_1).naturalAligment) &&
+               ((this_04->klass->_1).typeHierarchy[(ulonglong)bVar12 - 1] ==
+                (Il2CppClass *)TypeInfo__CachedGetRequest)) {
+              if (*(int *)&(TypeInfo__AsyncWWWManager->_1).field_0x1c == 0) {
+                FUN_?(TypeInfo__AsyncWWWManager);
+              }
+              pPVar13 = this_04->klass;
+              bVar12 = (TypeInfo__CachedGetRequest->_1).naturalAligment;
+              if (((pPVar13->_1).naturalAligment < bVar12) ||
+                 ((pPVar13->_1).typeHierarchy[(ulonglong)bVar12 - 1] !=
+                  (Il2CppClass *)TypeInfo__CachedGetRequest)) {
+                FUN_?(this_04,TypeInfo__CachedGetRequest);
+                pcVar14 = (code *)swi(3);
+                (*pcVar14)();
+                return;
+              }
+              cVar15 = (*(code *)pPVar13[1]._0.image)
+                                 (this_04,TypeInfo__AsyncWWWManager->static_fields->cache,
+                                  pPVar13[1]._0.gc_desc);
+              if (cVar15 != '\0') {
+                return;
+              }
+            }
+          }
+          if (*(int *)&(TypeInfo__AsyncWWWManager->_1).field_0x1c == 0) {
+            FUN_?(TypeInfo__AsyncWWWManager);
+          }
+          this_00 = TypeInfo__AsyncWWWManager->static_fields->requests;
+          if ((this_04 != (PostRequest *)0x0) &&
+             (this_00 != (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)0x0)) {
+            pOVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Int32Enum,System::Object]::
+                      Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,
+                                 (this_04->fields)._.requestPriority,
+                                 MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
+                                );
+            if (pOVar16 != (Object *)0x0) {
+              if (pOVar16[1].klass != (Object__Class *)0x0) {
+                if (*(int *)&pOVar16[2].klass == *(int *)&((pOVar16[1].klass)->_0).namespaze) {
+                  pOVar17 = pOVar16[1].klass;
+                  iVar18 = *(int *)&(pOVar17->_0).namespaze * 2;
+                  if (iVar18 < *(int *)&(pOVar17->_0).namespaze + 4) {
+                    iVar18 = *(int *)&(pOVar17->_0).namespaze + 4;
+                  }
+                  FUN_?(pOVar16,iVar18,
+                                MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Enqueue_AsyncWebRequest_
+                                ->klass->rgctx_data[5].rgctxDataDummy);
+                }
+                if (pOVar16[1].klass != (Object__Class *)0x0) {
+                  FUN_?(pOVar16[1].klass,
+                                (longlong)*(int *)((longlong)&pOVar16[1].monitor + 4),this_04);
+                  if (pOVar16[1].klass != (Object__Class *)0x0) {
+                    iVar19 = *(int *)((longlong)&pOVar16[1].monitor + 4) + 1;
+                    iVar18 = 0;
+                    if (iVar19 != *(int *)&((pOVar16[1].klass)->_0).namespaze) {
+                      iVar18 = iVar19;
+                    }
+                    *(int *)((longlong)&pOVar16[1].monitor + 4) = iVar18;
+                    *(int *)&pOVar16[2].klass = *(int *)&pOVar16[2].klass + 1;
+                    piVar20 = (int *)((longlong)&pOVar16[2].klass + 4);
+                    *piVar20 = *piVar20 + 1;
+                    return;
+                  }
+                }
+              }
+              FUN_?();
+              pcVar14 = (code *)swi(3);
+              (*pcVar14)();
+              return;
+            }
+          }
+          FUN_?();
+          pcVar14 = (code *)swi(3);
+          (*pcVar14)();
+          return;
+        }
         return;
       }
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -194,86 +396,112 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_OnDestroy
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-    func_?(&TypeInfo__System__Action);
-    func_?(&TypeInfo__AsyncWWWManager);
-    func_?(&TypeInfo__TimedPlayReward__RewardTracker);
-    func_?(&MethodInfo__TimedPlayReward__OnCollectedChanged__);
-    func_?(&
-                    MethodInfo__TimedPlayReward__OnFinishedRewardCollecting_UnityEngine__Networking__UnityWebRequest_
-                   );
-    func_?(&
-                    MethodInfo__TimedPlayReward__OnRewardData_UnityEngine__Networking__UnityWebRequest_
-                   );
-    func_?(&TypeInfo__UpdateController);
+    FUN_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Action);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__AsyncWWWManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__TimedPlayReward__RewardTracker);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__TimedPlayReward__OnCollectedChanged__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__TimedPlayReward__OnFinishedRewardCollecting_UnityEngine__Networking__UnityWebRequest_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__TimedPlayReward__OnRewardData_UnityEngine__Networking__UnityWebRequest_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UpdateController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pDVar1 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-            *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            (pDVar1,(Object *)this,
+  pUVar1 = (UnityAction_1_System_Object_ *)
+           FUN_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+  UnityAction_1_System_Object___ctor
+            (pUVar1,(Object *)this,
              MethodInfo__TimedPlayReward__OnRewardData_UnityEngine__Networking__UnityWebRequest_,
              (MethodInfo *)0x0);
-  if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__AsyncWWWManager);
+  if (*(int *)&(TypeInfo__AsyncWWWManager->_1).field_0x1c == 0) {
+    FUN_?();
   }
   AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
-            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pDVar1,(MethodInfo *)0x0);
-  pDVar1 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-            *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            (pDVar1,(Object *)this,
+            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pUVar1,(MethodInfo *)0x0);
+  pUVar1 = (UnityAction_1_System_Object_ *)
+           FUN_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+  UnityAction_1_System_Object___ctor
+            (pUVar1,(Object *)this,
              MethodInfo__TimedPlayReward__OnFinishedRewardCollecting_UnityEngine__Networking__UnityWebRequest_
              ,(MethodInfo *)0x0);
   AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
-            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pDVar1,(MethodInfo *)0x0);
-  if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+            ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)pUVar1,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+    FUN_?();
   }
   UpdateController::UpdateController_RemoveUpdateObject
             ((IUpdatecontrollerSubscriberUpdate *)this,(MethodInfo *)0x0);
   pAVar2 = TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged;
-  this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (this_00,(Object *)this,MethodInfo__TimedPlayReward__OnCollectedChanged__,
              (MethodInfo *)0x0);
-  pAStack3 =
-       (Action *)
-       mscorlib.dll::System::Delegate::Delegate_Remove
-                 ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-  if (pAStack3 == (Action *)0x0) {
-    TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged = (Action *)0x0;
-code_?:
-    func_?();
-    return;
-  }
-  pAVar2 = (Action *)0x0;
-  if (pAStack3->klass == TypeInfo__System__Action) {
-    pAVar2 = pAStack3;
-  }
+  pAVar2 = (Action *)
+           mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
   if (pAVar2 == (Action *)0x0) {
-    pAStack4 = TypeInfo__System__Action;
-    func_?();
-    pAStack3 = extraout_ECX;
-    pAStack4 = extraout_EDX;
+    TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged = (Action *)0x0;
   }
   else {
-    TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged = pAVar2;
-    pAVar2 = (Action *)0x0;
-    if (pAStack3->klass == TypeInfo__System__Action) {
-      pAVar2 = pAStack3;
+    pAVar3 = (Action *)0x0;
+    if (pAVar2->klass == TypeInfo__System__Action) {
+      pAVar3 = pAVar2;
     }
-    pAStack4 = TypeInfo__System__Action;
-    if (pAVar2 != (Action *)0x0) goto code_?;
+    if (pAVar3 == (Action *)0x0) {
+      FUN_?(pAVar2,TypeInfo__System__Action);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged = pAVar3;
+    pAVar3 = (Action *)0x0;
+    if (pAVar2->klass == TypeInfo__System__Action) {
+      pAVar3 = pAVar2;
+    }
+    if (pAVar3 == (Action *)0x0) {
+      FUN_?(pAVar2,TypeInfo__System__Action);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  if (iRam_? != 0) {
+    uVar5 = (uint)((ulonglong)
+                   &TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged >> 0xc
+                  );
+    puVar6 = (ulonglong *)((ulonglong)((uVar5 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar7 = *puVar6;
+      LOCK();
+      uVar8 = *puVar6;
+      if (uVar7 == uVar8) {
+        *puVar6 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar7 != uVar8);
+  }
   return;
 }
 
@@ -284,7 +512,187 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_OnFinishedRewardColle
                (TimedPlayReward *this,UnityWebRequest *www,MethodInfo *method)
 
 {
-  TimedPlayReward_RequestRewardPermission(this,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__AsyncWWWManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__GetRequest);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__TimedPlayReward__OnRewardData_UnityEngine__Networking__UnityWebRequest_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__profile_id__0__planet_id__1__to);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar1 != (GameSessionData *)0x0) {
+    aiStackX_18[0] = (pGVar1->fields).profileID;
+    pOVar2 = (Object *)FUN_?(uRam_?,aiStackX_18);
+    aiStackX_18[0] = (pGVar1->fields).planetID;
+    arg1 = (Object *)FUN_?(uRam_?,aiStackX_18);
+    pSVar3 = StringLiteral__profile_id__0__planet_id__1__to;
+    PStack_4._arg0 = (Object *)0x0;
+    PStack_4._arg1 = (Object *)0x0;
+    PStack_4._arg2 = (Object *)0x0;
+    PStack_4._args = (Object__Array *)0x0;
+    mscorlib.dll::System::ParamsArray::ParamsArray__ctor_2
+              (&PStack_4,pOVar2,arg1,(Object *)(pGVar1->fields).token,(MethodInfo *)0x0);
+    PStack_5._arg0 = PStack_4._arg0;
+    PStack_5._arg1 = PStack_4._arg1;
+    PStack_5._arg2 = PStack_4._arg2;
+    PStack_5._args = PStack_4._args;
+    pSVar3 = mscorlib.dll::System::String::String_FormatHelper
+                       ((IFormatProvider *)0x0,pSVar3,&PStack_5,(MethodInfo *)0x0);
+    pSVar3 = mscorlib.dll::System::String::String_Concat_4
+                       ((pGVar1->fields).gameRewardDataURL,pSVar3,(MethodInfo *)0x0);
+    this_01 = (UnityAction_1_System_Object_ *)
+              FUN_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+    UnityAction_1_System_Object___ctor
+              (this_01,(Object *)this,
+               MethodInfo__TimedPlayReward__OnRewardData_UnityEngine__Networking__UnityWebRequest_,
+               (MethodInfo *)0x0);
+    this_02 = (AsyncWebRequest *)FUN_?(TypeInfo__GetRequest);
+    AsyncWebRequest::AsyncWebRequest__ctor
+              (this_02,pSVar3,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,
+               WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__AsyncWWWManager->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      PStack_4._args = (Object__Array *)&UNK_?;
+      FUN_?(&TypeInfo__AsyncWWWManager,0);
+      LOCK();
+      UNLOCK();
+      PStack_4._args = (Object__Array *)&UNK_?;
+      FUN_?(&TypeInfo__CachedGetRequest);
+      LOCK();
+      UNLOCK();
+      PStack_4._args = (Object__Array *)&UNK_?;
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
+                   );
+      LOCK();
+      UNLOCK();
+      PStack_4._args = (Object__Array *)&UNK_?;
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Enqueue_AsyncWebRequest_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__AsyncWWWManager->_1).field_0x1c == 0) {
+      PStack_4._args = (Object__Array *)&UNK_?;
+      FUN_?(TypeInfo__AsyncWWWManager);
+    }
+    if (TypeInfo__AsyncWWWManager->static_fields->isQuiting == 0) {
+      if (this_02 != (AsyncWebRequest *)0x0) {
+        bVar6 = (TypeInfo__CachedGetRequest->_1).naturalAligment;
+        if ((bVar6 <= (this_02->klass->_1).naturalAligment) &&
+           ((this_02->klass->_1).typeHierarchy[(ulonglong)bVar6 - 1] ==
+            (Il2CppClass *)TypeInfo__CachedGetRequest)) {
+          if (*(int *)&(TypeInfo__AsyncWWWManager->_1).field_0x1c == 0) {
+            PStack_4._args = (Object__Array *)&UNK_?;
+            FUN_?(TypeInfo__AsyncWWWManager);
+          }
+          pAVar7 = this_02->klass;
+          bVar6 = (TypeInfo__CachedGetRequest->_1).naturalAligment;
+          if (((pAVar7->_1).naturalAligment < bVar6) ||
+             ((pAVar7->_1).typeHierarchy[(ulonglong)bVar6 - 1] !=
+              (Il2CppClass *)TypeInfo__CachedGetRequest)) {
+            PStack_4._args = (Object__Array *)&UNK_?;
+            FUN_?(this_02,TypeInfo__CachedGetRequest);
+            pcVar8 = (code *)swi(3);
+            (*pcVar8)();
+            return;
+          }
+          PStack_4._args = (Object__Array *)&UNK_?;
+          cVar9 = (*(code *)pAVar7[1]._0.image)
+                            (this_02,TypeInfo__AsyncWWWManager->static_fields->cache,
+                             pAVar7[1]._0.gc_desc);
+          if (cVar9 != '\0') {
+            return;
+          }
+        }
+      }
+      if (*(int *)&(TypeInfo__AsyncWWWManager->_1).field_0x1c == 0) {
+        PStack_4._args = (Object__Array *)&UNK_?;
+        FUN_?(TypeInfo__AsyncWWWManager);
+      }
+      this_00 = TypeInfo__AsyncWWWManager->static_fields->requests;
+      if ((this_02 != (AsyncWebRequest *)0x0) &&
+         (this_00 != (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)0x0)) {
+        PStack_4._args = (Object__Array *)&UNK_?;
+        pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                           ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,
+                            (this_02->fields).requestPriority,
+                            MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
+                           );
+        if (pOVar2 != (Object *)0x0) {
+          if (pOVar2[1].klass != (Object__Class *)0x0) {
+            if (*(int *)&pOVar2[2].klass == *(int *)&((pOVar2[1].klass)->_0).namespaze) {
+              pOVar10 = pOVar2[1].klass;
+              iVar11 = *(int *)&(pOVar10->_0).namespaze * 2;
+              if (iVar11 < *(int *)&(pOVar10->_0).namespaze + 4) {
+                iVar11 = *(int *)&(pOVar10->_0).namespaze + 4;
+              }
+              PStack_4._args = (Object__Array *)&UNK_?;
+              FUN_?(pOVar2,iVar11,
+                            MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Enqueue_AsyncWebRequest_
+                            ->klass->rgctx_data[5].rgctxDataDummy);
+            }
+            if (pOVar2[1].klass != (Object__Class *)0x0) {
+              PStack_4._args = (Object__Array *)&UNK_?;
+              FUN_?(pOVar2[1].klass,(longlong)*(int *)((longlong)&pOVar2[1].monitor + 4),
+                            this_02);
+              if (pOVar2[1].klass != (Object__Class *)0x0) {
+                iVar12 = *(int *)((longlong)&pOVar2[1].monitor + 4) + 1;
+                iVar11 = 0;
+                if (iVar12 != *(int *)&((pOVar2[1].klass)->_0).namespaze) {
+                  iVar11 = iVar12;
+                }
+                *(int *)((longlong)&pOVar2[1].monitor + 4) = iVar11;
+                *(int *)&pOVar2[2].klass = *(int *)&pOVar2[2].klass + 1;
+                piVar13 = (int *)((longlong)&pOVar2[2].klass + 4);
+                *piVar13 = *piVar13 + 1;
+                return;
+              }
+            }
+          }
+          PStack_4._args = (Object__Array *)&UNK_?;
+          FUN_?();
+          pcVar8 = (code *)swi(3);
+          (*pcVar8)();
+          return;
+        }
+      }
+      PStack_4._args = (Object__Array *)&UNK_?;
+      FUN_?();
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
+      return;
+    }
+    return;
+  }
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -296,85 +704,251 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_OnFinishedViewingAd
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-    func_?(&TypeInfo__AsyncWWWManager);
-    func_?(&TypeInfo__NotificationController);
-    func_?(&TypeInfo__PostRequest);
-    func_?(&
-                    MethodInfo__TimedPlayReward__OnFinishedRewardCollecting_UnityEngine__Networking__UnityWebRequest_
-                   );
-    func_?(&TypeInfo__UnityEngine__WWWForm);
-    func_?(&StringLiteral_Thank_you_for_playing_this_NEW_g);
-    func_?(&StringLiteral_token);
-    func_?(&StringLiteral__XP_);
-    func_?(&StringLiteral_profile_id);
-    func_?(&StringLiteral_planet_id);
+    FUN_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__AsyncWWWManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__PostRequest);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__TimedPlayReward__OnFinishedRewardCollecting_UnityEngine__Networking__UnityWebRequest_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__WWWForm);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Thank_you_for_playing_this_NEW_g);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_token);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__XP_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_profile_id);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_planet_id);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+  this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                       ((Component *)this,(MethodInfo *)0x0);
-  if (this_00 != (GameObject *)0x0) {
+  if (this_01 != (GameObject *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (this_00,0,(MethodInfo *)0x0);
-    IStack_1.m_value = (this->fields)._RewardXP_k__BackingField;
-    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_1,(MethodInfo *)0x0);
-    pSVar2 = mscorlib.dll::System::String::String_Concat_4
-                       (StringLiteral_Thank_you_for_playing_this_NEW_g,pSVar2,StringLiteral__XP_,
-                        (MethodInfo *)0x0);
-    pSVar2 = TM::TM__(pSVar2,(MethodInfo *)0x0);
-    if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+              (this_01,0,(MethodInfo *)0x0);
+    value = (this->fields)._RewardXP_k__BackingField;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__System__Number);
+      LOCK();
+      UNLOCK();
+      FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if ((MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____->klass->field_0x135
+        & 1) == 0) {
+      FUN_?();
+    }
+    if (*(int *)&(TypeInfo__System__Number->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    auStack_1 = (undefined1  [8])0x0;
+    uStack_2._0_4_ = 0;
+    uStack_2._4_4_ = 0;
+    pSVar3 = mscorlib.dll::System::Number::Number_FormatInt32
+                        (value,(ReadOnlySpan_1_Char_ *)auStack_1,(IFormatProvider *)0x0,
+                         (MethodInfo *)0x0);
+    pSVar3 = mscorlib.dll::System::String::String_Concat_5
+                        (StringLiteral_Thank_you_for_playing_this_NEW_g,pSVar3,StringLiteral__XP_,
+                         (MethodInfo *)0x0);
+    pSVar3 = TM::TM__(pSVar3,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+      FUN_?();
     }
     NotificationController::NotificationController_PushNotification
-              (pSVar2,(Sprite *)0x0,5,(MethodInfo *)0x0);
-    this_01 = (GameEventManager_AvatarCommandsPlayModeManager *)
-              MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-    if (this_01 != (GameEventManager_AvatarCommandsPlayModeManager *)0x0) {
-      GameEventManager+AvatarCommandsPlayModeManager::
-      GameEventManager_AvatarCommandsPlayModeManager_SetIntermediateDebriefing
-                (this_01,(this->fields)._RewardXP_k__BackingField,(MethodInfo *)0x0);
+              (pSVar3,(Sprite *)0x0,5,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar4 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if (((pMVar4 != (MVGameControllerBase *)0x0) &&
+        (pMVar5 = (pMVar4->fields).game, pMVar5 != (MVNetworkGame *)0x0)) &&
+       (pGVar6 = (pMVar5->fields).GameEventManager, pGVar6 != (GameEventManager *)0x0)) {
+      if ((pGVar6->fields).OnXPRewarded != (Action_1_Int32_ *)0x0) {
+        pAVar7 = (pGVar6->fields).OnXPRewarded;
+        (*(pAVar7->fields)._._.invoke_impl)
+                  ((pAVar7->fields)._._.method_code,(this->fields)._RewardXP_k__BackingField,
+                   (pAVar7->fields)._._.method);
+      }
+      bVar8 = cRam_? == '\0';
       (this->fields)._IsClaimable_k__BackingField = 0;
-      if (cRam_? == '\0') {
-        func_?();
+      if (bVar8) {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      pGVar3 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-      this_02 = (WWWForm *)func_?();
+      pGVar9 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      this_02 = (WWWForm *)FUN_?(TypeInfo__UnityEngine__WWWForm);
       UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm__ctor
                 (this_02,(MethodInfo *)0x0);
-      if ((pGVar3 != (GameSessionData *)0x0) && (this_02 != (WWWForm *)0x0)) {
-        UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField
-                  (this_02,StringLiteral_token,(pGVar3->fields).token,(MethodInfo *)0x0);
-        UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField_2
-                  (this_02,StringLiteral_profile_id,(pGVar3->fields).profileID,(MethodInfo *)0x0);
-        UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField_2
-                  (this_02,StringLiteral_planet_id,(pGVar3->fields).planetID,(MethodInfo *)0x0);
-        pSVar2 = (pGVar3->fields).gameRewardURL;
-        this_03 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                   *)func_?();
-        DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata
-        ::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-        DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+      pSVar3 = StringLiteral_token;
+      if ((pGVar9 != (GameSessionData *)0x0) && (this_02 != (WWWForm *)0x0)) {
+        pSVar10 = (pGVar9->fields).token;
+        pEVar11 = mscorlib.dll::System::Text::Encoding::Encoding_get_UTF8((MethodInfo *)0x0);
+        UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField_1
+                  (this_02,pSVar3,pSVar10,pEVar11,(MethodInfo *)0x0);
+        pSVar3 = StringLiteral_profile_id;
+        aIStackX_18[0].m_value = (pGVar9->fields).profileID;
+        pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(aIStackX_18,(MethodInfo *)0x0);
+        pEVar11 = mscorlib.dll::System::Text::Encoding::Encoding_get_UTF8((MethodInfo *)0x0);
+        UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField_1
+                  (this_02,pSVar3,pSVar10,pEVar11,(MethodInfo *)0x0);
+        pSVar3 = StringLiteral_planet_id;
+        aIStackX_18[0].m_value = (pGVar9->fields).planetID;
+        pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(aIStackX_18,(MethodInfo *)0x0);
+        pEVar11 = mscorlib.dll::System::Text::Encoding::Encoding_get_UTF8((MethodInfo *)0x0);
+        UnityEngine.UnityWebRequestModule.dll::UnityEngine::WWWForm::WWWForm_AddField_1
+                  (this_02,pSVar3,pSVar10,pEVar11,(MethodInfo *)0x0);
+        pSVar3 = (pGVar9->fields).gameRewardURL;
+        this_03 = (UnityAction_1_System_Object_ *)
+                  FUN_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+        UnityAction_1_System_Object___ctor
                   (this_03,(Object *)this,
                    MethodInfo__TimedPlayReward__OnFinishedRewardCollecting_UnityEngine__Networking__UnityWebRequest_
                    ,(MethodInfo *)0x0);
-        pPStack4 = TypeInfo__PostRequest;
-        this_04 = (PostRequest *)func_?();
+        this_04 = (PostRequest *)FUN_?(TypeInfo__PostRequest);
         PostRequest::PostRequest__ctor
-                  (this_04,pSVar2,this_02,
+                  (this_04,pSVar3,this_02,
                    (Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_03,
                    WWWRequestPriority__Enum_ExecuteWhileSyncronizing,(MethodInfo *)0x0);
-        if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+        if (*(int *)&(TypeInfo__AsyncWWWManager->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_04,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__AsyncWWWManager,0);
+          LOCK();
+          UNLOCK();
+          FUN_?(&TypeInfo__CachedGetRequest);
+          LOCK();
+          UNLOCK();
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
+                       );
+          LOCK();
+          UNLOCK();
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Enqueue_AsyncWebRequest_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__AsyncWWWManager->_1).field_0x1c == 0) {
+          FUN_?(TypeInfo__AsyncWWWManager);
+        }
+        if (TypeInfo__AsyncWWWManager->static_fields->isQuiting == 0) {
+          if (this_04 != (PostRequest *)0x0) {
+            bVar12 = (TypeInfo__CachedGetRequest->_1).naturalAligment;
+            if ((bVar12 <= (this_04->klass->_1).naturalAligment) &&
+               ((this_04->klass->_1).typeHierarchy[(ulonglong)bVar12 - 1] ==
+                (Il2CppClass *)TypeInfo__CachedGetRequest)) {
+              if (*(int *)&(TypeInfo__AsyncWWWManager->_1).field_0x1c == 0) {
+                FUN_?(TypeInfo__AsyncWWWManager);
+              }
+              pPVar13 = this_04->klass;
+              bVar12 = (TypeInfo__CachedGetRequest->_1).naturalAligment;
+              if (((pPVar13->_1).naturalAligment < bVar12) ||
+                 ((pPVar13->_1).typeHierarchy[(ulonglong)bVar12 - 1] !=
+                  (Il2CppClass *)TypeInfo__CachedGetRequest)) {
+                FUN_?(this_04,TypeInfo__CachedGetRequest);
+                pcVar14 = (code *)swi(3);
+                (*pcVar14)();
+                return;
+              }
+              cVar15 = (*(code *)pPVar13[1]._0.image)
+                                 (this_04,TypeInfo__AsyncWWWManager->static_fields->cache,
+                                  pPVar13[1]._0.gc_desc);
+              if (cVar15 != '\0') {
+                return;
+              }
+            }
+          }
+          if (*(int *)&(TypeInfo__AsyncWWWManager->_1).field_0x1c == 0) {
+            FUN_?(TypeInfo__AsyncWWWManager);
+          }
+          this_00 = TypeInfo__AsyncWWWManager->static_fields->requests;
+          if ((this_04 != (PostRequest *)0x0) &&
+             (this_00 != (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)0x0)) {
+            pOVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Int32Enum,System::Object]::
+                      Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,
+                                 (this_04->fields)._.requestPriority,
+                                 MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
+                                );
+            if (pOVar16 != (Object *)0x0) {
+              if (pOVar16[1].klass != (Object__Class *)0x0) {
+                if (*(int *)&pOVar16[2].klass == *(int *)&((pOVar16[1].klass)->_0).namespaze) {
+                  pOVar17 = pOVar16[1].klass;
+                  iVar18 = *(int *)&(pOVar17->_0).namespaze * 2;
+                  if (iVar18 < *(int *)&(pOVar17->_0).namespaze + 4) {
+                    iVar18 = *(int *)&(pOVar17->_0).namespaze + 4;
+                  }
+                  FUN_?(pOVar16,iVar18,
+                                MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Enqueue_AsyncWebRequest_
+                                ->klass->rgctx_data[5].rgctxDataDummy);
+                }
+                if (pOVar16[1].klass != (Object__Class *)0x0) {
+                  FUN_?(pOVar16[1].klass,
+                                (longlong)*(int *)((longlong)&pOVar16[1].monitor + 4),this_04);
+                  if (pOVar16[1].klass != (Object__Class *)0x0) {
+                    iVar19 = *(int *)((longlong)&pOVar16[1].monitor + 4) + 1;
+                    iVar18 = 0;
+                    if (iVar19 != *(int *)&((pOVar16[1].klass)->_0).namespaze) {
+                      iVar18 = iVar19;
+                    }
+                    *(int *)((longlong)&pOVar16[1].monitor + 4) = iVar18;
+                    *(int *)&pOVar16[2].klass = *(int *)&pOVar16[2].klass + 1;
+                    piVar20 = (int *)((longlong)&pOVar16[2].klass + 4);
+                    *piVar20 = *piVar20 + 1;
+                    return;
+                  }
+                }
+              }
+              FUN_?();
+              pcVar14 = (code *)swi(3);
+              (*pcVar14)();
+              return;
+            }
+          }
+          FUN_?();
+          pcVar14 = (code *)swi(3);
+          (*pcVar14)();
+          return;
+        }
         return;
       }
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -386,76 +960,126 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_OnRewardData
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    TimedPlayReward__RewardData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<TimedPlayReward::RewardData>_System__String_
-                   );
-    func_?(&TypeInfo__Newtonsoft__Json__JsonConvert);
-    func_?(&TypeInfo__TimedPlayReward__RewardTracker);
-    func_?(&TypeInfo__WaitForTicks);
-    func_?(&StringLiteral_no_gold_reward_available);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TimedPlayReward__RewardData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<TimedPlayReward::RewardData>_System__String_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Newtonsoft__Json__JsonConvert);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__TimedPlayReward__RewardTracker);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__WaitForTicks);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_no_gold_reward_available);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (www != (UnityWebRequest *)0x0) {
     pSVar1 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
              UnityWebRequest_get_error(www,(MethodInfo *)0x0);
-    bVar2 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar1,(MethodInfo *)0x0);
-    if (bVar2 == 0) {
+    if ((pSVar1 != (String *)0x0) && ((pSVar1->fields)._stringLength != 0)) {
       pSVar1 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
                UnityWebRequest_get_error(www,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)pSVar1,(MethodInfo *)0x0);
       return;
     }
-    this_00 = System.dll::System::Net::WebCompletionSource`1[Unity::IL2CPP::Metadata::
-              __Il2CppFullySharedGenericType]::
-              WebCompletionSource_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__get_CurrentResult
-                        ((WebCompletionSource_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                          *)www,(MethodInfo *)0x0);
-    if (this_00 !=
-        (WebCompletionSource_1_T_Result_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
-      pSVar1 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::DownloadHandler::
-               DownloadHandler_get_text((DownloadHandler *)this_00,(MethodInfo *)0x0);
-      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+    pDVar2 = (www->fields).m_DownloadHandler;
+    if (pDVar2 != (DownloadHandler *)0x0) {
+      pSVar1 = (String *)
+               (*(pDVar2->klass->vtable).GetText.methodPtr)
+                         (pDVar2,(pDVar2->klass->vtable).GetText.method);
+      if (*(int *)&(TypeInfo__Newtonsoft__Json__JsonConvert->_1).field_0x1c == 0) {
+        FUN_?();
       }
       pOVar3 = Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_DeserializeObject_2
                          (pSVar1,
                           TimedPlayReward__RewardData_MethodInfo__Newtonsoft__Json__JsonConvert__DeserializeObject<TimedPlayReward::RewardData>_System__String_
                          );
       if (pOVar3 != (Object *)0x0) {
-        _UNK_? = pOVar3[2].klass;
-        UNK_? = *(bool *)&pOVar3[1].klass;
-        this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)&UNK_?,(MethodInfo *)0x0);
-        if (this_01 != (GameObject *)0x0) {
+        (this->fields)._RewardXP_k__BackingField = *(int32_t *)&pOVar3[1].monitor;
+        (this->fields)._RewardAvailable_k__BackingField = *(bool *)&pOVar3[1].klass;
+        this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)this,(MethodInfo *)0x0);
+        if (this_00 != (GameObject *)0x0) {
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (this_01,UNK_?,(MethodInfo *)0x0);
-          TypeInfo__TimedPlayReward__RewardTracker->static_fields->IsCollected = UNK_? == 0;
-          iVar4 = _UNK_?;
-          if (UNK_? != 0) {
-            this_02 = (WaitForTicks *)func_?();
-            WaitForTicks::WaitForTicks__ctor(this_02,iVar4 * 1000,(MethodInfo *)0x0);
-            _UNK_? = this_02;
-            func_?();
+                    (this_00,(this->fields)._RewardAvailable_k__BackingField,(MethodInfo *)0x0);
+          TypeInfo__TimedPlayReward__RewardTracker->static_fields->IsCollected =
+               (this->fields)._RewardAvailable_k__BackingField == 0;
+          if ((this->fields)._RewardAvailable_k__BackingField != 0) {
+            iVar4 = (this->fields).timeInSeconds;
+            this_01 = (WaitForTicks *)FUN_?(TypeInfo__WaitForTicks);
+            WaitForTicks::WaitForTicks__ctor(this_01,iVar4 * 1000,(MethodInfo *)0x0);
+            bVar5 = iRam_? == 0;
+            (this->fields).waitForTicks = this_01;
+            if (bVar5) {
+              return;
+            }
+            uVar6 = (uint)((ulonglong)&(this->fields).waitForTicks >> 0xc);
+            puVar7 = (ulonglong *)((ulonglong)((uVar6 & 0x1fffff) >> 6) * 8 + 0xADDR);
+            do {
+              uVar8 = *puVar7;
+              LOCK();
+              uVar9 = *puVar7;
+              if (uVar8 == uVar9) {
+                *puVar7 = uVar8 | 1L << (uVar6 & 0x3f);
+              }
+              UNLOCK();
+            } while (uVar8 != uVar9);
             return;
           }
-          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
+          if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+            FUN_?();
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                    ((Object *)StringLiteral_no_gold_reward_available,(MethodInfo *)0x0);
+          pSVar1 = StringLiteral_no_gold_reward_available;
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Debug,0);
+            LOCK();
+            UNLOCK();
+            FUN_?(&TypeInfo__UnityEngine__ILogger);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Debug);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          pIVar10 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+          if (pIVar10 != (ILogger_1 *)0x0) {
+            FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar10,3,pSVar1);
+            return;
+          }
+          FUN_?();
+          pcVar11 = (code *)swi(3);
+          (*pcVar11)();
           return;
         }
       }
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -467,54 +1091,186 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_RequestRewardPermissi
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-    func_?(&TypeInfo__AsyncWWWManager);
-    func_?(&TypeInfo__GetRequest);
-    func_?(&TypeInfo__System__Int32);
-    func_?(&
-                    MethodInfo__TimedPlayReward__OnRewardData_UnityEngine__Networking__UnityWebRequest_
-                   );
-    func_?(&StringLiteral__profile_id__0__planet_id__1__to);
+    FUN_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__AsyncWWWManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__GetRequest);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__TimedPlayReward__OnRewardData_UnityEngine__Networking__UnityWebRequest_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__profile_id__0__planet_id__1__to);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
   if (pGVar1 != (GameSessionData *)0x0) {
-    iStack_2 = (pGVar1->fields).profileID;
-    arg0 = (Object *)func_?(TypeInfo__System__Int32,&iStack_2);
-    iStack_3 = (pGVar1->fields).planetID;
-    arg1 = (Object *)func_?(TypeInfo__System__Int32,&iStack_3);
-    pSVar4 = mscorlib.dll::System::String::String_Format_2
-                       (StringLiteral__profile_id__0__planet_id__1__to,arg0,arg1,
-                        (Object *)(pGVar1->fields).token,(MethodInfo *)0x0);
-    pSVar4 = mscorlib.dll::System::String::String_Concat_3
-                       ((pGVar1->fields).gameRewardDataURL,pSVar4,(MethodInfo *)0x0);
-    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>)
-    ;
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              (this_00,(Object *)this,
+    aiStackX_18[0] = (pGVar1->fields).profileID;
+    pOVar2 = (Object *)FUN_?(uRam_?,aiStackX_18);
+    aiStackX_18[0] = (pGVar1->fields).planetID;
+    arg1 = (Object *)FUN_?(uRam_?,aiStackX_18);
+    pSVar3 = StringLiteral__profile_id__0__planet_id__1__to;
+    PStack_4._arg0 = (Object *)0x0;
+    PStack_4._arg1 = (Object *)0x0;
+    PStack_4._arg2 = (Object *)0x0;
+    PStack_4._args = (Object__Array *)0x0;
+    mscorlib.dll::System::ParamsArray::ParamsArray__ctor_2
+              (&PStack_4,pOVar2,arg1,(Object *)(pGVar1->fields).token,(MethodInfo *)0x0);
+    PStack_5._arg0 = PStack_4._arg0;
+    PStack_5._arg1 = PStack_4._arg1;
+    PStack_5._arg2 = PStack_4._arg2;
+    PStack_5._args = PStack_4._args;
+    pSVar3 = mscorlib.dll::System::String::String_FormatHelper
+                       ((IFormatProvider *)0x0,pSVar3,&PStack_5,(MethodInfo *)0x0);
+    pSVar3 = mscorlib.dll::System::String::String_Concat_4
+                       ((pGVar1->fields).gameRewardDataURL,pSVar3,(MethodInfo *)0x0);
+    this_01 = (UnityAction_1_System_Object_ *)
+              FUN_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+    UnityAction_1_System_Object___ctor
+              (this_01,(Object *)this,
                MethodInfo__TimedPlayReward__OnRewardData_UnityEngine__Networking__UnityWebRequest_,
                (MethodInfo *)0x0);
-    pGStack5 = TypeInfo__GetRequest;
-    this_01 = (AssetBundleRequest *)func_?();
-    AssetBundleRequest::AssetBundleRequest__ctor
-              (this_01,pSVar4,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,
+    this_02 = (AsyncWebRequest *)FUN_?(TypeInfo__GetRequest);
+    AsyncWebRequest::AsyncWebRequest__ctor
+              (this_02,pSVar3,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,
                WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
-    if ((TypeInfo__AsyncWWWManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__AsyncWWWManager->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    AsyncWWWManager::AsyncWWWManager_WWWRequest((AsyncWebRequest *)this_01,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      PStack_4._args = (Object__Array *)&UNK_?;
+      FUN_?(&TypeInfo__AsyncWWWManager,0);
+      LOCK();
+      UNLOCK();
+      PStack_4._args = (Object__Array *)&UNK_?;
+      FUN_?(&TypeInfo__CachedGetRequest);
+      LOCK();
+      UNLOCK();
+      PStack_4._args = (Object__Array *)&UNK_?;
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
+                   );
+      LOCK();
+      UNLOCK();
+      PStack_4._args = (Object__Array *)&UNK_?;
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Enqueue_AsyncWebRequest_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__AsyncWWWManager->_1).field_0x1c == 0) {
+      PStack_4._args = (Object__Array *)&UNK_?;
+      FUN_?(TypeInfo__AsyncWWWManager);
+    }
+    if (TypeInfo__AsyncWWWManager->static_fields->isQuiting == 0) {
+      if (this_02 != (AsyncWebRequest *)0x0) {
+        bVar6 = (TypeInfo__CachedGetRequest->_1).naturalAligment;
+        if ((bVar6 <= (this_02->klass->_1).naturalAligment) &&
+           ((this_02->klass->_1).typeHierarchy[(ulonglong)bVar6 - 1] ==
+            (Il2CppClass *)TypeInfo__CachedGetRequest)) {
+          if (*(int *)&(TypeInfo__AsyncWWWManager->_1).field_0x1c == 0) {
+            PStack_4._args = (Object__Array *)&UNK_?;
+            FUN_?(TypeInfo__AsyncWWWManager);
+          }
+          pAVar7 = this_02->klass;
+          bVar6 = (TypeInfo__CachedGetRequest->_1).naturalAligment;
+          if (((pAVar7->_1).naturalAligment < bVar6) ||
+             ((pAVar7->_1).typeHierarchy[(ulonglong)bVar6 - 1] !=
+              (Il2CppClass *)TypeInfo__CachedGetRequest)) {
+            PStack_4._args = (Object__Array *)&UNK_?;
+            FUN_?(this_02,TypeInfo__CachedGetRequest);
+            pcVar8 = (code *)swi(3);
+            (*pcVar8)();
+            return;
+          }
+          PStack_4._args = (Object__Array *)&UNK_?;
+          cVar9 = (*(code *)pAVar7[1]._0.image)
+                            (this_02,TypeInfo__AsyncWWWManager->static_fields->cache,
+                             pAVar7[1]._0.gc_desc);
+          if (cVar9 != '\0') {
+            return;
+          }
+        }
+      }
+      if (*(int *)&(TypeInfo__AsyncWWWManager->_1).field_0x1c == 0) {
+        PStack_4._args = (Object__Array *)&UNK_?;
+        FUN_?(TypeInfo__AsyncWWWManager);
+      }
+      this_00 = TypeInfo__AsyncWWWManager->static_fields->requests;
+      if ((this_02 != (AsyncWebRequest *)0x0) &&
+         (this_00 != (Dictionary_2_WWWRequestPriority_Queue_1_AsyncWebRequest_ *)0x0)) {
+        PStack_4._args = (Object__Array *)&UNK_?;
+        pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                           ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,
+                            (this_02->fields).requestPriority,
+                            MethodInfo__System__Collections__Generic__Dictionary<WWWRequestPriority,_System::Collections::Generic::Queue<AsyncWebRequest>_>__get_Item_WWWRequestPriority_
+                           );
+        if (pOVar2 != (Object *)0x0) {
+          if (pOVar2[1].klass != (Object__Class *)0x0) {
+            if (*(int *)&pOVar2[2].klass == *(int *)&((pOVar2[1].klass)->_0).namespaze) {
+              pOVar10 = pOVar2[1].klass;
+              iVar11 = *(int *)&(pOVar10->_0).namespaze * 2;
+              if (iVar11 < *(int *)&(pOVar10->_0).namespaze + 4) {
+                iVar11 = *(int *)&(pOVar10->_0).namespaze + 4;
+              }
+              PStack_4._args = (Object__Array *)&UNK_?;
+              FUN_?(pOVar2,iVar11,
+                            MethodInfo__System__Collections__Generic__Queue<AsyncWebRequest>__Enqueue_AsyncWebRequest_
+                            ->klass->rgctx_data[5].rgctxDataDummy);
+            }
+            if (pOVar2[1].klass != (Object__Class *)0x0) {
+              PStack_4._args = (Object__Array *)&UNK_?;
+              FUN_?(pOVar2[1].klass,(longlong)*(int *)((longlong)&pOVar2[1].monitor + 4),
+                            this_02);
+              if (pOVar2[1].klass != (Object__Class *)0x0) {
+                iVar12 = *(int *)((longlong)&pOVar2[1].monitor + 4) + 1;
+                iVar11 = 0;
+                if (iVar12 != *(int *)&((pOVar2[1].klass)->_0).namespaze) {
+                  iVar11 = iVar12;
+                }
+                *(int *)((longlong)&pOVar2[1].monitor + 4) = iVar11;
+                *(int *)&pOVar2[2].klass = *(int *)&pOVar2[2].klass + 1;
+                piVar13 = (int *)((longlong)&pOVar2[2].klass + 4);
+                *piVar13 = *piVar13 + 1;
+                return;
+              }
+            }
+          }
+          PStack_4._args = (Object__Array *)&UNK_?;
+          FUN_?();
+          pcVar8 = (code *)swi(3);
+          (*pcVar8)();
+          return;
+        }
+      }
+      PStack_4._args = (Object__Array *)&UNK_?;
+      FUN_?();
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
+      return;
+    }
     return;
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -526,78 +1282,123 @@ void Assembly-CSharp.dll::TimedPlayReward::TimedPlayReward_UpdateControllerUpdat
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__NotificationController);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields)._RewardAvailable_k__BackingField == 0) {
     return;
   }
-  this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+  this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                       ((Component *)this,(MethodInfo *)0x0);
-  if (this_01 != (GameObject *)0x0) {
+  if (this_00 != (GameObject *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (this_01,1,(MethodInfo *)0x0);
-    this_00 = (this->fields).waitForTicks;
-    if (this_00 != (WaitForTicks *)0x0) {
-      bVar1 = WaitForTicks::WaitForTicks_get_TimeIsUp(this_00,(MethodInfo *)0x0);
-      if (bVar1 == 0) {
-        this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if ((this_02 != (MVNetworkGame *)0x0) &&
-           (MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds(this_02,(MethodInfo *)0x0),
-           (this->fields).waitForTicks != (WaitForTicks *)0x0)) {
-          (this->fields)._IsClaimable_k__BackingField = 0;
-          (*(code *)(this->klass->vtable).DisableEffects.method)();
-          (*(code *)(this->klass->vtable).UpdateOutline.method)();
-          return;
+              (this_00,1,(MethodInfo *)0x0);
+    pWVar1 = (this->fields).waitForTicks;
+    if (pWVar1 != (WaitForTicks *)0x0) {
+      bVar2 = WaitForTicks::WaitForTicks_get_TimeIsUp(pWVar1,(MethodInfo *)0x0);
+      if (bVar2 == 0) {
+        iVar3 = (this->fields).timeInSeconds;
+        this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if (this_01 != (MVNetworkGame *)0x0) {
+          iVar4 = MVNetworkGame::MVNetworkGame_get_ServerTimeInMilliSeconds
+                            (this_01,(MethodInfo *)0x0);
+          pWVar1 = (this->fields).waitForTicks;
+          if (pWVar1 != (WaitForTicks *)0x0) {
+            iVar5 = (pWVar1->fields).startTicks;
+            pTVar6 = this->klass;
+            (this->fields)._IsClaimable_k__BackingField = 0;
+            (*(pTVar6->vtable).DisableEffects.methodPtr)
+                      (this,(pTVar6->vtable).DisableEffects.method);
+            fVar7 = (float)((this->fields).timeInSeconds * 1000);
+            (*(this->klass->vtable).UpdateOutline.methodPtr)
+                      (this,(fVar7 - (float)((iVar3 * 1000 + iVar5) - iVar4)) / fVar7,
+                       (this->klass->vtable).UpdateOutline.method);
+            return;
+          }
         }
       }
       else {
         (this->fields)._IsClaimable_k__BackingField = 1;
         (this->fields)._RewardAvailable_k__BackingField = 0;
-        this_03 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                   *)func_?();
+        this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+                   *)FUN_?(
+                                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                  );
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-        UIElements::StyleComplexSelector+PseudoStateData]::
-        Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-                  (this_03,
+        UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
+                  (this_02,
                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
                   );
-        key = (Object *)func_?();
-        value = (Object *)func_?(TypeInfo__System__Int32);
-        if (this_03 !=
-            (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+        auStackX_8[0] = CONCAT31(auStackX_8[0]._1_3_,2);
+        key = (Object *)FUN_?(uRam_?,auStackX_8);
+        auStackX_8[0] = 8;
+        value = (Object *)FUN_?(uRam_?,auStackX_8);
+        if (this_02 !=
+            (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
              *)0x0) {
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__Add
-                    ((Dictionary_2_System_Object_System_Object_ *)this_03,key,value,
+          Dictionary_2_System_Object_System_Object__TryInsert
+                    ((Dictionary_2_System_Object_System_Object_ *)this_02,key,value,
+                     (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                    );
-          if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
+                     ->klass->rgctx_data[0x22].method);
+          if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+            FUN_?();
           }
-          NotificationController::NotificationController_OnNotificationReceived
-                    (NotificationType__Enum_GoldRewardReady,
-                     (Dictionary_2_System_Object_System_Object_ *)this_03,(MethodInfo *)0x0);
-          (*(code *)(this->klass->vtable).EnableEffects.method)();
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__NotificationController);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__NotificationsManager);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (TypeInfo__NotificationsManager->static_fields->_Initialized_k__BackingField != 0) {
+            if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            this_03 = NotificationController::NotificationController_get_NotificationsManager
+                                ((MethodInfo *)0x0);
+            if (this_03 == (NotificationsManager *)0x0) goto DAT_?;
+            NotificationsManager::NotificationsManager_InstantiateNotification
+                      (this_03,NotificationType__Enum_GoldRewardReady,
+                       (Dictionary_2_System_Object_System_Object_ *)this_02,(MethodInfo *)0x0);
+          }
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*(this->klass->vtable).EnableEffects.methodPtr)
+                    (this,(this->klass->vtable).EnableEffects.method);
           return;
         }
       }
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+DAT_?:
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

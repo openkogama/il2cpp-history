@@ -8,28 +8,61 @@ void Assembly-CSharp.dll::MVNetworkGame+EventHandling+DynamicEventCallbackManage
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_No_subscribers_to_event_data);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((this->fields).OnEventData == (Action_1_ExitGames_Client_Photon_EventData_ *)0x0) {
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+  if ((this->fields).OnEventData != (Action_1_ExitGames_Client_Photon_EventData_ *)0x0) {
+    pAVar1 = (this->fields).OnEventData;
+    if (pAVar1 != (Action_1_ExitGames_Client_Photon_EventData_ *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*(pAVar1->fields)._._.invoke_impl)
+                ((pAVar1->fields)._._.method_code,eventData,(pAVar1->fields)._._.method);
+      return;
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-              ((Object *)StringLiteral_No_subscribers_to_event_data,(MethodInfo *)0x0);
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  pAVar1 = (this->fields).OnEventData;
-  if (pAVar1 != (Action_1_ExitGames_Client_Photon_EventData_ *)0x0) {
-    puStack_2 = (pAVar1->fields)._._.method_code;
-    (*(pAVar1->fields)._._.invoke_impl)();
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pSVar3 = StringLiteral_No_subscribers_to_event_data;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__ILogger);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pIVar4 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+  if (pIVar4 != (ILogger_1 *)0x0) {
+    FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar4,0,pSVar3);
     return;
   }
-  uVar3 = func_?(&puStack_2);
-  func_?(uVar3);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -43,29 +76,59 @@ void Assembly-CSharp.dll::MVNetworkGame+EventHandling+DynamicEventCallbackManage
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<ExitGames::Client::Photon::EventData>);
+    FUN_?(&TypeInfo__System__Action<ExitGames::Client::Photon::EventData>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  pMVar1 = &this->fields;
   a = (this->fields).OnEventData;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)callback,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<ExitGames::Client::Photon::EventData>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__Action<ExitGames::Client::Photon::EventData>)
-      ;
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pAVar3 = TypeInfo__System__Action<ExitGames::Client::Photon::EventData>;
+    if (pDVar2 == (Delegate *)0x0) {
+      pAVar4 = (Action_1_ExitGames_Client_Photon_EventData_ *)0x0;
+    }
+    else {
+      pAVar4 = (Action_1_ExitGames_Client_Photon_EventData_ *)
+               FUN_?(pDVar2,TypeInfo__System__Action<ExitGames::Client::Photon::EventData>);
+      if (pAVar4 == (Action_1_ExitGames_Client_Photon_EventData_ *)0x0) {
+        FUN_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_ExitGames_Client_Photon_EventData_ *)func_?(&this->fields,iVar3,a);
-    bVar6 = pAVar5 != a;
-    a = pAVar5;
-  } while (bVar6);
+    LOCK();
+    pAVar6 = pMVar1->OnEventData;
+    bVar7 = a == pAVar6;
+    if (bVar7) {
+      pMVar1->OnEventData = pAVar4;
+      pAVar6 = a;
+    }
+    UNLOCK();
+    pAVar4 = a;
+    if (!bVar7) {
+      pAVar4 = pAVar6;
+    }
+    if (iRam_? != 0) {
+      uVar8 = (uint)((ulonglong)pMVar1 >> 0xc);
+      uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar10 == *puVar11;
+        if (bVar7) {
+          *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    bVar7 = pAVar4 != a;
+    a = pAVar4;
+  } while (bVar7);
   return;
 }
 
@@ -79,7 +142,9 @@ bool Assembly-CSharp.dll::MVNetworkGame+EventHandling+DynamicEventCallbackManage
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<ExitGames::Client::Photon::EventData>);
+    FUN_?(&TypeInfo__System__Action<ExitGames::Client::Photon::EventData>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   source = (this->fields).OnEventData;
@@ -87,21 +152,47 @@ bool Assembly-CSharp.dll::MVNetworkGame+EventHandling+DynamicEventCallbackManage
     pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)callback,(MethodInfo *)0x0);
     pAVar2 = TypeInfo__System__Action<ExitGames::Client::Photon::EventData>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__Action<ExitGames::Client::Photon::EventData>)
-      ;
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
+    if (pDVar1 == (Delegate *)0x0) {
+      pAVar3 = (Action_1_ExitGames_Client_Photon_EventData_ *)0x0;
+    }
+    else {
+      pAVar3 = (Action_1_ExitGames_Client_Photon_EventData_ *)
+               FUN_?(pDVar1,TypeInfo__System__Action<ExitGames::Client::Photon::EventData>);
+      if (pAVar3 == (Action_1_ExitGames_Client_Photon_EventData_ *)0x0) {
+        FUN_?(pDVar1,pAVar2);
         pcVar4 = (code *)swi(3);
         bVar5 = (*pcVar4)();
         return bVar5;
       }
     }
-    pAVar6 = (Action_1_ExitGames_Client_Photon_EventData_ *)
-             func_?(&this->fields,iVar3,source);
-    bVar7 = pAVar6 != source;
-    source = pAVar6;
+    LOCK();
+    pAVar6 = (this->fields).OnEventData;
+    bVar7 = source == pAVar6;
+    if (bVar7) {
+      (this->fields).OnEventData = pAVar3;
+      pAVar6 = source;
+    }
+    UNLOCK();
+    pAVar3 = source;
+    if (!bVar7) {
+      pAVar3 = pAVar6;
+    }
+    if (iRam_? != 0) {
+      uVar8 = (uint)((ulonglong)&this->fields >> 0xc);
+      uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar10 == *puVar11;
+        if (bVar7) {
+          *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    bVar7 = pAVar3 != source;
+    source = pAVar3;
   } while (bVar7);
   return (this->fields).OnEventData != (Action_1_ExitGames_Client_Photon_EventData_ *)0x0;
 }
@@ -116,30 +207,59 @@ void Assembly-CSharp.dll::MVNetworkGame+EventHandling+DynamicEventCallbackManage
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<ExitGames::Client::Photon::EventData>);
+    FUN_?(&TypeInfo__System__Action<ExitGames::Client::Photon::EventData>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  pMVar1 = &this->fields;
   source = (this->fields).OnEventData;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<ExitGames::Client::Photon::EventData>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__Action<ExitGames::Client::Photon::EventData>)
-      ;
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pAVar3 = TypeInfo__System__Action<ExitGames::Client::Photon::EventData>;
+    if (pDVar2 == (Delegate *)0x0) {
+      pAVar4 = (Action_1_ExitGames_Client_Photon_EventData_ *)0x0;
+    }
+    else {
+      pAVar4 = (Action_1_ExitGames_Client_Photon_EventData_ *)
+               FUN_?(pDVar2,TypeInfo__System__Action<ExitGames::Client::Photon::EventData>);
+      if (pAVar4 == (Action_1_ExitGames_Client_Photon_EventData_ *)0x0) {
+        FUN_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_ExitGames_Client_Photon_EventData_ *)
-             func_?(&this->fields,iVar3,source);
-    bVar6 = pAVar5 != source;
-    source = pAVar5;
-  } while (bVar6);
+    LOCK();
+    pAVar6 = pMVar1->OnEventData;
+    bVar7 = source == pAVar6;
+    if (bVar7) {
+      pMVar1->OnEventData = pAVar4;
+      pAVar6 = source;
+    }
+    UNLOCK();
+    pAVar4 = source;
+    if (!bVar7) {
+      pAVar4 = pAVar6;
+    }
+    if (iRam_? != 0) {
+      uVar8 = (uint)((ulonglong)pMVar1 >> 0xc);
+      uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar10 == *puVar11;
+        if (bVar7) {
+          *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    bVar7 = pAVar4 != source;
+    source = pAVar4;
+  } while (bVar7);
   return;
 }
 

@@ -7,21 +7,26 @@ void Assembly-CSharp.dll::MuteToggleExecute::MuteToggleExecute_ExecuteToggleStat
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__MainCameraManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__MainCameraManager->_1).field_0x1c == 0) {
+    FUN_?();
   }
   MainCameraManager::MainCameraManager_set_Mute(toggleState,(MethodInfo *)0x0);
   if (toggleCallback != (UnityAction_1_System_Boolean_ *)0x0) {
-    (*(toggleCallback->fields)._._.invoke_impl)();
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(toggleCallback->fields)._._.invoke_impl)
+              ((toggleCallback->fields)._._.method_code,toggleState,
+               (toggleCallback->fields)._._.method);
     return;
   }
-  uVar1 = func_?(&stack0xfffffff8);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

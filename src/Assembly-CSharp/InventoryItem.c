@@ -6,56 +6,92 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem_ApplyLocalDescriptionOver
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__ContainsKey_MVWorldObjectDocumentationType_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__get_Item_MVWorldObjectDocumentationType_
-                   );
-    func_?(&TypeInfo__InventoryItem);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__ContainsKey_MVWorldObjectDocumentationType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__get_Item_MVWorldObjectDocumentationType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__InventoryItem);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__InventoryItem->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__InventoryItem);
+  if (*(int *)&(TypeInfo__InventoryItem->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__InventoryItem);
   }
-  pDVar1 = TypeInfo__InventoryItem->static_fields->localItemDescriptionOverride;
-  if (pDVar1 != (Dictionary_2_MVWorldObjectDocumentationType_InventoryItem_ItemDescription_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-            Single]::Dictionary_2_System_Int32Enum_System_Single__ContainsKey
-                      ((Dictionary_2_System_Int32Enum_System_Single_ *)pDVar1,t,
-                       MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__ContainsKey_MVWorldObjectDocumentationType_
-                      );
-    if (bVar2 == 0) {
-      return;
+  this_00 = (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)
+            TypeInfo__InventoryItem->static_fields->localItemDescriptionOverride;
+  if (this_00 == (Dictionary_2_System_Int32Enum_UnityEngine_Vector3_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,UnityEngine::
+          Vector3]::Dictionary_2_System_Int32Enum_UnityEngine_Vector3__FindEntry
+                    (this_00,t,
+                     MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__ContainsKey_MVWorldObjectDocumentationType_
+                     ->klass->rgctx_data[0x21].method);
+  if (-1 < iVar2) {
+    if (*(int *)&(TypeInfo__InventoryItem->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__InventoryItem);
     }
-    if ((TypeInfo__InventoryItem->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    this_01 = TypeInfo__InventoryItem->static_fields->localItemDescriptionOverride;
+    if ((this_01 ==
+         (Dictionary_2_MVWorldObjectDocumentationType_InventoryItem_ItemDescription_ *)0x0) ||
+       (pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                 Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                           ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,t,
+                            MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__get_Item_MVWorldObjectDocumentationType_
+                           ), pOVar3 == (Object *)0x0)) goto code_?;
+    bVar4 = iRam_? != 0;
+    (this->fields).name = (String *)pOVar3[1].klass;
+    if (bVar4) {
+      uVar5 = (uint)((ulonglong)&(this->fields).name >> 0xc);
+      lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+        puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+        LOCK();
+        bVar4 = uVar7 == *puVar8;
+        if (bVar4) {
+          *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar4);
     }
-    pDVar1 = TypeInfo__InventoryItem->static_fields->localItemDescriptionOverride;
-    if ((pDVar1 != (Dictionary_2_MVWorldObjectDocumentationType_InventoryItem_ItemDescription_ *)0x0
-        ) && (pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       Int32Enum,System::Object]::
-                       Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                 ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,t,
-                                  MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__get_Item_MVWorldObjectDocumentationType_
-                                 ), pOVar3 != (Object *)0x0)) {
-      (this->fields).name = (String *)pOVar3[1].klass;
-      func_?(&(this->fields).name);
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      pSVar4 = mscorlib.dll::System::String::String_Concat_4
-                         ((String *)pOVar3[1].monitor,StringLiteral_u000Au000A,
-                          (String *)pOVar3[2].klass,(MethodInfo *)0x0);
-      (this->fields).description = pSVar4;
-      func_?(&(this->fields).description);
-      return;
+    if (cRam_? == '\0') {
+      FUN_?(&StringLiteral_u000Au000A);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pSVar9 = mscorlib.dll::System::String::String_Concat_5
+                       ((String *)pOVar3[1].monitor,StringLiteral_u000Au000A,
+                        (String *)pOVar3[2].klass,(MethodInfo *)0x0);
+    bVar4 = iRam_? != 0;
+    (this->fields).description = pSVar9;
+    if (bVar4) {
+      uVar5 = (uint)((ulonglong)&(this->fields).description >> 0xc);
+      lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+        puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+        LOCK();
+        bVar4 = uVar7 == *puVar8;
+        if (bVar4) {
+          *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar4);
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
   return;
 }
 
@@ -66,257 +102,735 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>
-                   );
-    func_?(&TypeInfo__InventoryItem);
-    func_?(&TypeInfo__InventoryItem__ItemDescription);
-    func_?(&StringLiteral_A_handful_of_ninja_shurikens_);
-    func_?(&StringLiteral_Cube_Model_Transparency);
-    func_?(&StringLiteral_Revolver);
-    func_?(&StringLiteral_Vertical_Rotator);
-    func_?(&StringLiteral_Use_this_in_close_quarters_to_de);
-    func_?(&StringLiteral_Can_be_used_as_a_challenging_way);
-    func_?(&StringLiteral_Trigger_Cube);
-    func_?(&StringLiteral_A_pair_of_connected_teleporters_);
-    func_?(&StringLiteral_A_sentry_tower__shooting_a_beam_);
-    func_?(&StringLiteral_Fire_sentries_serve_as_stationar);
-    func_?(&StringLiteral_A_customizable_hovercraft_);
-    func_?(&StringLiteral_Switches_between_ON_and_OFF_each);
-    func_?(&StringLiteral_Make_a_game_where_you_have_to_pi);
-    func_?(&StringLiteral_This_scary_monster_can_move_thro);
-    func_?(&StringLiteral_Frost_Sentry_Tower);
-    func_?(&StringLiteral_Team_Editor);
-    func_?(&StringLiteral_Negate_Cube);
-    func_?(&StringLiteral_Game_Objective__Eliminate_the_Oc);
-    func_?(&StringLiteral_The_player_team_who_first_collec);
-    func_?(&StringLiteral_Adjust_the_level_and_color_of_yo);
-    func_?(&StringLiteral_Contains_lots_of_coins__which_ca);
-    func_?(&StringLiteral_Wind_Turbine);
-    func_?(&StringLiteral_Use_this_by_connecting_it_to_a_p);
-    func_?(&StringLiteral_This_can_be_used_to_make_a_bette);
-    func_?(&StringLiteral_Class);
-    func_?(&StringLiteral_Shuriken);
-    func_?(&StringLiteral_Text);
-    func_?(&StringLiteral_The_bazooka_is_incredibly_powerf);
-    func_?(&StringLiteral_This_is_really_neat_when_you_wan);
-    func_?(&StringLiteral_Become_one_with_the_shadows_usin);
-    func_?(&StringLiteral_Light_Cube);
-    func_?(&StringLiteral_Green_Team_Spawn_Point);
-    func_?(&StringLiteral_A_sliding_door_that_can_be_opene);
-    func_?(&StringLiteral_Crystal_Vein);
-    func_?(&StringLiteral_Allows_for_scripted_events_in_a_);
-    func_?(&StringLiteral_Records_the_time_it_took_for_a_p);
-    func_?(&StringLiteral_Adds_a_global_sound_to_the_game_);
-    func_?(&StringLiteral_A_modifiable_projectile_weapon_);
-    func_?(&StringLiteral_This_logic_cube_sends_signals_in);
-    func_?(&StringLiteral_Great_cube_if_you_want_to_obstru);
-    func_?(&StringLiteral_Pressure_Plate);
-    func_?(&StringLiteral_Platform);
-    func_?(&StringLiteral_Counting_Cube);
-    func_?(&StringLiteral_Allows_players_to_spawn_as_a_cla);
-    func_?(&StringLiteral_Speaker);
-    func_?(&StringLiteral_And_Cube);
-    func_?(&StringLiteral_Shotgun);
-    func_?(&StringLiteral_Global_Speaker);
-    func_?(&StringLiteral_Fire_Sentry_Tower);
-    func_?(&StringLiteral_Shoots_cubes_that_stick_to_surfa);
-    func_?(&StringLiteral_This_rifle_is_at_its_best_in_clo);
-    func_?(&StringLiteral_Can_be_used_for_everything_from_);
-    func_?(&StringLiteral_Modify_the_roles_of_your_teams__);
-    func_?(&StringLiteral_Light_up_the_dark_areas_of_your_);
-    func_?(&StringLiteral_Random_Cube);
-    func_?(&StringLiteral_A_high_powered_revolver_);
-    func_?(&StringLiteral_Change_the_transparency_for_a_cu);
-    func_?(&StringLiteral_Bazooka);
-    func_?(&StringLiteral_Infuses_the_player_with_lightnin);
-    func_?(&StringLiteral_The_team_or_player_that_reaches_);
-    func_?(&StringLiteral_Collect_all_these_sparkly_trinke);
-    func_?(&StringLiteral_WARNING__KoGaMians_cannot_breath);
-    func_?(&StringLiteral_A_fully_automatic_rifle_capable_);
-    func_?(&StringLiteral_Horizontal_Rotator);
-    func_?(&StringLiteral_Toggle_Cube);
-    func_?(&StringLiteral_Whenever_a_player_steps_on_the_p);
-    func_?(&StringLiteral_Spawn_point_for_the_green_team__);
-    func_?(&StringLiteral_Devastating_when_used_at_long_ra);
-    func_?(&StringLiteral_Hides_connected_cube_model_when_);
-    func_?(&StringLiteral_This_enables_players_to_cross_lo);
-    func_?(&StringLiteral_Players_pick_these_up_to_pay_for);
-    func_?(&StringLiteral_Flamethrower);
-    func_?(&StringLiteral_Costume);
-    func_?(&StringLiteral_Display_a_game_title__help_text_);
-    func_?(&StringLiteral_A_pair_of_high_powered_revolvers);
-    func_?(&StringLiteral_Trap_Door);
-    func_?(&StringLiteral_Powers_one_connected_object_at_r);
-    func_?(&StringLiteral_Growth_Pill);
-    func_?(&StringLiteral_Skybox_Cube);
-    func_?(&StringLiteral_Equip_this_to_blend_into_the_env);
-    func_?(&StringLiteral_An_equippable_costume_);
-    func_?(&StringLiteral_Enables_players_to_traverse_grea);
-    func_?(&StringLiteral_This_burns_anyone_who_gets_too_c);
-    func_?(&StringLiteral_A_weapon_designed_for_close_quar);
-    func_?(&StringLiteral_Flags_are_a_great_way_to_give_pl);
-    func_?(&StringLiteral_Impulse_Gun);
-    func_?(&StringLiteral_A_big_customizable_jetpack_);
-    func_?(&StringLiteral_A_gun_generating_a_powerful_forc);
-    func_?(&StringLiteral_Spawn_point_for_the_yellow_team_);
-    func_?(&StringLiteral_Set_a_player_kill_limit_for_your);
-    func_?(&StringLiteral_Melee_Weapon);
-    func_?(&StringLiteral_The_health_pack_fully_heals_a_pl);
-    func_?(&StringLiteral_You_can_put_these_in_sequence_to);
-    func_?(&StringLiteral_An_unkillable_ghost_which_damage);
-    func_?(&StringLiteral_Cube_Model_Hider);
-    func_?(&StringLiteral_A_pair_consisting_of_a_pickup_an);
-    func_?(&StringLiteral_Throw_a_line_of_shurikens__and_s);
-    func_?(&StringLiteral_Red_Team_Spawn_Point);
-    func_?(&StringLiteral_This_jetpack_offers_unprecedente);
-    func_?(&StringLiteral_Frost_sentries_serve_as_stationa);
-    func_?(&StringLiteral_Make_your_enemies_bigger_targets);
-    func_?(&StringLiteral_Coin_Chest);
-    func_?(&StringLiteral_Don_t_let_your_friends_die__shoo);
-    func_?(&StringLiteral_Water_Cube);
-    func_?(&StringLiteral_Infuses_the_player_with_mutageni);
-    func_?(&StringLiteral_A_pistol_that_shrinks_the_target);
-    func_?(&StringLiteral_Round_cubes_are_a_great_if_your_);
-    func_?(&StringLiteral_Use_this_to_make_an_animated_doo);
-    func_?(&StringLiteral_Custom_Gun);
-    func_?(&StringLiteral_Useful_when_bridging_the_gap_bet);
-    func_?(&StringLiteral_This_is_useful_if_you_want_to_cr);
-    func_?(&StringLiteral_A_custom_cube_model__that_rotate);
-    func_?(&StringLiteral_The_player_who_reaches_the_flag_);
-    func_?(&StringLiteral_Spawn_point_for_the_blue_team__P);
-    func_?(&StringLiteral_Transforms_the_target_into_a_gia);
-    func_?(&StringLiteral_Create_elevators_or_platforms_wi);
-    func_?(&StringLiteral_A_trap_door_that_can_be_opened_b);
-    func_?(&StringLiteral_Mutanto);
-    func_?(&StringLiteral_Sends_a_signal_when_shot_);
-    func_?(&StringLiteral_Become_a_miniature_version_of_yo);
-    func_?(&StringLiteral_These_hideous_creatures_only_hav);
-    func_?(&StringLiteral_Sends_a_signal_when_pulled_);
-    func_?(&StringLiteral_Heal_Ray);
-    func_?(&StringLiteral_Open_doors__trigger_explosives__);
-    func_?(&StringLiteral_Connect_this_to_an_toggle_box_fo);
-    func_?(&StringLiteral_Mouse_Pill);
-    func_?(&StringLiteral_A_bundle_of_dynamite_that_will_e);
-    func_?(&StringLiteral_Useful_for_separating_different_);
-    func_?(&StringLiteral_A_classic_ninja_shuriken_);
-    func_?(&StringLiteral_A_giant_hamster_ball_);
-    func_?(&StringLiteral_Camera_Cube);
-    func_?(&StringLiteral_The_And_Cube_takes_several_input);
-    func_?(&StringLiteral_Door);
-    func_?(&StringLiteral_Turn_enemy_players_into_helpless);
-    func_?(&StringLiteral_A_rocket_launcher_with_devastati);
-    func_?(&StringLiteral_Collect_And_Drop);
-    func_?(&StringLiteral_Set_a_time_limit_for_a_round__Af);
-    func_?(&StringLiteral_Sneak_up_on_your_enemies_to_catc);
-    func_?(&StringLiteral_A_fully_customizable_projectile_);
-    func_?(&StringLiteral_Yellow_Team_Spawn_Point);
-    func_?(&StringLiteral_If_you_want_players_to_stand_on_);
-    func_?(&StringLiteral_A_logic_object_which_sends_the_o);
-    func_?(&StringLiteral_Round_Time);
-    func_?(&StringLiteral_A_colored_light__that_can_be_con);
-    func_?(&StringLiteral_Game_Objective__Time_Attack_Flag);
-    func_?(&StringLiteral_The_sniper_rifle_uses_a_charged_);
-    func_?(&StringLiteral_Ghost);
-    func_?(&StringLiteral_A_player_who_reaches_this_will_r);
-    func_?(&StringLiteral_Hovercraft);
-    func_?(&StringLiteral_This_looks_super_cool_and_can_be);
-    func_?(&StringLiteral_Shrinks_a_player_to_the_size_of_);
-    func_?(&StringLiteral_A_custom_cube_model__that_rotate);
-    func_?(&StringLiteral_Oculus);
-    func_?(&StringLiteral_A_classic__Burn_everything_withi);
-    func_?(&StringLiteral_Do_you_want_to_open_and_close_th);
-    func_?(&StringLiteral_Light_your_enemies_on_fire_with_);
-    func_?(&StringLiteral_Coin);
-    func_?(&StringLiteral_Blue_Team_Spawn_Point);
-    func_?(&StringLiteral_Mouse_Gun);
-    func_?(&StringLiteral_Transforms_a_player_into_a_giant);
-    func_?(&StringLiteral_Change_transparency_to_cube_mode);
-    func_?(&StringLiteral_Set_a_Oculus_kill_limit_for_your);
-    func_?(&StringLiteral_Lets_players_take_their_time_rea);
-    func_?(&StringLiteral_A_big_fan__which_blows_players_a);
-    func_?(&StringLiteral_An_object_enabling_you_to_displa);
-    func_?(&StringLiteral_Dragonfly_Jetpack);
-    func_?(&StringLiteral_A_gun_modeled_after_the_classic_);
-    func_?(&StringLiteral_Place_this_after_difficult_parts);
-    func_?(&StringLiteral_Use_this_to_reward_players_for_r);
-    func_?(&StringLiteral_Become_a_super_hero__or_super_vi);
-    func_?(&StringLiteral_Game_Objective__Flag);
-    func_?(&StringLiteral_Sliding_Door);
-    func_?(&StringLiteral_Spawn_point_for_the_red_team__Pl);
-    func_?(&StringLiteral_Pulse_Cube);
-    func_?(&StringLiteral_Dual_Revolvers);
-    func_?(&StringLiteral_Can_be_used_to_open_doors_or_sec);
-    func_?(&StringLiteral_Vehicle_Energy);
-    func_?(&StringLiteral_Lever);
-    func_?(&StringLiteral_An_object_specifying_the_distanc);
-    func_?(&StringLiteral_This_bouncy_ball_offers_a_hilari);
-    func_?(&StringLiteral_A_small_customizable_jetpack_);
-    func_?(&StringLiteral_Reward_players_with_coins_used_t);
-    func_?(&StringLiteral_A_door_that_can_be_opened_by_a_s);
-    func_?(&StringLiteral_Multi_Shuriken);
-    func_?(&StringLiteral_Emits_a_cloud_of_smoke__The_smok);
-    func_?(&StringLiteral_Lightning_Speed);
-    func_?(&StringLiteral_Target_Cube);
-    func_?(&StringLiteral_Become_a_giant_KoGaMian__capable);
-    func_?(&StringLiteral_Growth_Gun);
-    func_?(&StringLiteral_This_is_a_great_way_to_control_t);
-    func_?(&StringLiteral_Set_a_count__Each_time_the_cube_);
-    func_?(&StringLiteral_This_is_most_commonly_used_to_en);
-    func_?(&StringLiteral_Machine_Gun);
-    func_?(&StringLiteral_Delay_Cube);
-    func_?(&StringLiteral_Cube_Gun);
-    func_?(&StringLiteral_Crystal);
-    func_?(&StringLiteral_Checkpoint);
-    func_?(&StringLiteral_Useful_for_pushing_players_off_p);
-    func_?(&StringLiteral_Fire);
-    func_?(&StringLiteral_Hamster_Ball);
-    func_?(&StringLiteral_Contains_lots_of_crystals__which);
-    func_?(&StringLiteral_While_a_player_is_inside_the_are);
-    func_?(&StringLiteral_You_can_stack_several_wind_turbi);
-    func_?(&StringLiteral_Explosive);
-    func_?(&::StringLiteral__);
-    func_?(&StringLiteral_Use_this_to_make_an_animated_tra);
-    func_?(&StringLiteral_Add_this_to_create_a_death_match);
-    func_?(&StringLiteral_Firefly_Jetpack);
-    func_?(&StringLiteral_This_is_great_for_creating_the_a);
-    func_?(&StringLiteral_Game_Objective__Star);
-    func_?(&StringLiteral_Teleporter);
-    func_?(&StringLiteral_When_receiving_a_signal_from_ano);
-    func_?(&StringLiteral_Use_this_to_make_an_animated_sli);
-    func_?(&StringLiteral_This_gun_has_a_very_high_recoil_);
-    func_?(&StringLiteral_This_object_allows_you_to_change);
-    func_?(&StringLiteral_Most_effective_in_mid_to_long_ra);
-    func_?(&StringLiteral_Build_awesome_towers__thick_cast);
-    func_?(&StringLiteral_Rail_Gun);
-    func_?(&StringLiteral_Adding_this_to_your_project_will);
-    func_?(&StringLiteral_Inverting_a_signal_open_up_many_);
-    func_?(&StringLiteral_Can_be_used_to_refill_vehicles_e);
-    func_?(&StringLiteral_Customize_different_Classes_with);
-    func_?(&StringLiteral_Add_sounds_to_your_game__There_s);
-    func_?(&StringLiteral_Game_Objective__Death_match);
-    func_?(&StringLiteral_A_sentry_tower__shooting_fire_at);
-    func_?(&StringLiteral_This_is_a_must_have_for_any_leve);
-    func_?(&StringLiteral_You_can_pair_this_with_the_Smoke);
-    func_?(&StringLiteral_Players_pick_these_up_to_get_pro);
-    func_?(&StringLiteral_Smoke);
-    func_?(&StringLiteral_Soar_to_the_skies_with_this_ligh);
-    func_?(&StringLiteral_Shoots_a_ray_that_heals_people__);
-    func_?(&StringLiteral_Manage_the_look_of_your_game_by_);
-    func_?(&StringLiteral_Health_Pack);
-    func_?(&StringLiteral_A_customizable_monster_from_anot);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__InventoryItem);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__InventoryItem__ItemDescription);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_handful_of_ninja_shurikens_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Cube_Model_Transparency);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Revolver);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Vertical_Rotator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Use_this_in_close_quarters_to_de);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Can_be_used_as_a_challenging_way);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Trigger_Cube);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_pair_of_connected_teleporters_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_sentry_tower__shooting_a_beam_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Fire_sentries_serve_as_stationar);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_customizable_hovercraft_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Switches_between_ON_and_OFF_each);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Make_a_game_where_you_have_to_pi);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_This_scary_monster_can_move_thro);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Frost_Sentry_Tower);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Team_Editor);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Negate_Cube);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Game_Objective__Eliminate_the_Oc);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_The_player_team_who_first_collec);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Adjust_the_level_and_color_of_yo);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Contains_lots_of_coins__which_ca);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Wind_Turbine);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Use_this_by_connecting_it_to_a_p);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_This_can_be_used_to_make_a_bette);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Class);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Shuriken);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Text);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_The_bazooka_is_incredibly_powerf);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_This_is_really_neat_when_you_wan);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Become_one_with_the_shadows_usin);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Light_Cube);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Green_Team_Spawn_Point);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_sliding_door_that_can_be_opene);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Crystal_Vein);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Allows_for_scripted_events_in_a_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Records_the_time_it_took_for_a_p);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Adds_a_global_sound_to_the_game_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_modifiable_projectile_weapon_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_This_logic_cube_sends_signals_in);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Great_cube_if_you_want_to_obstru);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Pressure_Plate);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Platform);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Counting_Cube);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Allows_players_to_spawn_as_a_cla);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Speaker);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_And_Cube);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Shotgun);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Global_Speaker);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Fire_Sentry_Tower);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Shoots_cubes_that_stick_to_surfa);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_This_rifle_is_at_its_best_in_clo);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Can_be_used_for_everything_from_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Modify_the_roles_of_your_teams__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Light_up_the_dark_areas_of_your_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Random_Cube);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_high_powered_revolver_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Change_the_transparency_for_a_cu);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Bazooka);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Infuses_the_player_with_lightnin);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_The_team_or_player_that_reaches_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Collect_all_these_sparkly_trinke);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_WARNING__KoGaMians_cannot_breath);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_fully_automatic_rifle_capable_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Horizontal_Rotator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Toggle_Cube);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Whenever_a_player_steps_on_the_p);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Spawn_point_for_the_green_team__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Devastating_when_used_at_long_ra);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Hides_connected_cube_model_when_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_This_enables_players_to_cross_lo);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Players_pick_these_up_to_pay_for);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Flamethrower);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Costume);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Display_a_game_title__help_text_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_pair_of_high_powered_revolvers);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Trap_Door);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Powers_one_connected_object_at_r);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Growth_Pill);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Skybox_Cube);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Equip_this_to_blend_into_the_env);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_An_equippable_costume_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Enables_players_to_traverse_grea);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_This_burns_anyone_who_gets_too_c);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_weapon_designed_for_close_quar);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Flags_are_a_great_way_to_give_pl);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Impulse_Gun);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_big_customizable_jetpack_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_gun_generating_a_powerful_forc);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Spawn_point_for_the_yellow_team_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Set_a_player_kill_limit_for_your);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Melee_Weapon);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_The_health_pack_fully_heals_a_pl);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_You_can_put_these_in_sequence_to);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_An_unkillable_ghost_which_damage);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Cube_Model_Hider);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_pair_consisting_of_a_pickup_an);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Throw_a_line_of_shurikens__and_s);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Red_Team_Spawn_Point);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_This_jetpack_offers_unprecedente);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Frost_sentries_serve_as_stationa);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Make_your_enemies_bigger_targets);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Coin_Chest);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Don_t_let_your_friends_die__shoo);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Water_Cube);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Infuses_the_player_with_mutageni);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_pistol_that_shrinks_the_target);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Round_cubes_are_a_great_if_your_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Use_this_to_make_an_animated_doo);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Custom_Gun);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Useful_when_bridging_the_gap_bet);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_This_is_useful_if_you_want_to_cr);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_custom_cube_model__that_rotate);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_The_player_who_reaches_the_flag_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Spawn_point_for_the_blue_team__P);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Transforms_the_target_into_a_gia);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Create_elevators_or_platforms_wi);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_trap_door_that_can_be_opened_b);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Mutanto);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Sends_a_signal_when_shot_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Become_a_miniature_version_of_yo);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_These_hideous_creatures_only_hav);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Sends_a_signal_when_pulled_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Heal_Ray);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Open_doors__trigger_explosives__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Connect_this_to_an_toggle_box_fo);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Mouse_Pill);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_bundle_of_dynamite_that_will_e);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Useful_for_separating_different_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_classic_ninja_shuriken_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_giant_hamster_ball_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Camera_Cube);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_The_And_Cube_takes_several_input);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Door);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Turn_enemy_players_into_helpless);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_rocket_launcher_with_devastati);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Collect_And_Drop);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Set_a_time_limit_for_a_round__Af);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Sneak_up_on_your_enemies_to_catc);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_fully_customizable_projectile_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Yellow_Team_Spawn_Point);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_If_you_want_players_to_stand_on_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_logic_object_which_sends_the_o);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Round_Time);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_colored_light__that_can_be_con);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Game_Objective__Time_Attack_Flag);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_The_sniper_rifle_uses_a_charged_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Ghost);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_player_who_reaches_this_will_r);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Hovercraft);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_This_looks_super_cool_and_can_be);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Shrinks_a_player_to_the_size_of_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_custom_cube_model__that_rotate);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Oculus);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_classic__Burn_everything_withi);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Do_you_want_to_open_and_close_th);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Light_your_enemies_on_fire_with_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Coin);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Blue_Team_Spawn_Point);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Mouse_Gun);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Transforms_a_player_into_a_giant);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Change_transparency_to_cube_mode);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Set_a_Oculus_kill_limit_for_your);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Lets_players_take_their_time_rea);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_big_fan__which_blows_players_a);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_An_object_enabling_you_to_displa);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Dragonfly_Jetpack);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_gun_modeled_after_the_classic_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Place_this_after_difficult_parts);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Use_this_to_reward_players_for_r);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Become_a_super_hero__or_super_vi);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Game_Objective__Flag);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Sliding_Door);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Spawn_point_for_the_red_team__Pl);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Pulse_Cube);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Dual_Revolvers);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Can_be_used_to_open_doors_or_sec);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Vehicle_Energy);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Lever);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_An_object_specifying_the_distanc);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_This_bouncy_ball_offers_a_hilari);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_small_customizable_jetpack_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Reward_players_with_coins_used_t);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_door_that_can_be_opened_by_a_s);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Multi_Shuriken);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Emits_a_cloud_of_smoke__The_smok);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Lightning_Speed);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Target_Cube);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Become_a_giant_KoGaMian__capable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Growth_Gun);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_This_is_a_great_way_to_control_t);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Set_a_count__Each_time_the_cube_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_This_is_most_commonly_used_to_en);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Machine_Gun);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Delay_Cube);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Cube_Gun);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Crystal);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Checkpoint);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Useful_for_pushing_players_off_p);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Fire);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Hamster_Ball);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Contains_lots_of_crystals__which);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_While_a_player_is_inside_the_are);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_You_can_stack_several_wind_turbi);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Explosive);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Use_this_to_make_an_animated_tra);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Add_this_to_create_a_death_match);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Firefly_Jetpack);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_This_is_great_for_creating_the_a);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Game_Objective__Star);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Teleporter);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_When_receiving_a_signal_from_ano);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Use_this_to_make_an_animated_sli);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_This_gun_has_a_very_high_recoil_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_This_object_allows_you_to_change);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Most_effective_in_mid_to_long_ra);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Build_awesome_towers__thick_cast);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Rail_Gun);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Adding_this_to_your_project_will);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Inverting_a_signal_open_up_many_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Can_be_used_to_refill_vehicles_e);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Customize_different_Classes_with);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Add_sounds_to_your_game__There_s);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Game_Objective__Death_match);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_sentry_tower__shooting_fire_at);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_This_is_a_must_have_for_any_leve);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_You_can_pair_this_with_the_Smoke);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Players_pick_these_up_to_get_pro);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Smoke);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Soar_to_the_skies_with_this_ligh);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Shoots_a_ray_that_heals_people__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Manage_the_look_of_your_game_by_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Health_Pack);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_A_customizable_monster_from_anot);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
-         func_?(
-                        TypeInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>
-                        );
+         FUN_?(
+                      TypeInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>
+                      );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
   Int32Enum,GamePassesHighScoreList+HighScoreListData]::
   Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
@@ -326,1672 +840,1099 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__cctor(MethodInfo *method
   pSVar1 = TM::TM__(StringLiteral_Health_Pack,(MethodInfo *)0x0);
   pSVar2 = TM::TM__(StringLiteral_The_health_pack_fully_heals_a_pl,(MethodInfo *)0x0);
   pSVar3 = TM::TM__(StringLiteral_Place_this_after_difficult_parts,(MethodInfo *)0x0);
-  uVar4 = 0;
-  pIVar5 = (InventoryItem_ItemDescription *)
-           func_?(TypeInfo__InventoryItem__ItemDescription);
-  cameraPreviewerOffset_08.y = (float)uVar4;
-  cameraPreviewerOffset_08.x = (float)uVar4;
-  cameraPreviewerOffset_08.z = 0.0;
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  aVStack_5[0].z = 0.0;
+  aVStack_5[0].x = 0.0;
+  aVStack_5[0].y = 0.0;
   InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
-            (pIVar5,pSVar1,pSVar2,pSVar3,cameraPreviewerOffset_08,(MethodInfo *)0x0);
-  if (this != (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this,1,(Object *)pIVar5,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Machine_Gun,(MethodInfo *)0x0);
-    pSVar2 = TM::TM__(StringLiteral_A_fully_automatic_rifle_capable_,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_This_rifle_is_at_its_best_in_clo,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(this,this);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?(pOVar9 + 1,pOVar6);
-    pOVar9[1].monitor = (MonitorData *)pSVar2;
-    func_?(&pOVar9[1].monitor);
-    pOVar9[2].klass = pOVar7;
-    func_?(pOVar9 + 2,pOVar7);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)0x2,2,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Impulse_Gun,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_A_gun_generating_a_powerful_forc,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_This_gun_has_a_very_high_recoil_,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    value = (Object *)&UNK_?;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    value[1].klass = pOVar6;
-    this_00 = (Dictionary_2_MVWorldObjectDocumentationType_InventoryItem_ItemDescription_ *)
-              (value + 1);
-    func_?(this_00,pOVar6);
-    value[1].monitor = (MonitorData *)pSVar1;
-    ppMStack10 = &value[1].monitor;
-    pSStack11 = pSVar1;
-    func_?();
-    value[2].klass = pOVar7;
-    pOStack12 = value + 2;
-    pOStack13 = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,3,value,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Bazooka,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_A_rocket_launcher_with_devastati,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_The_bazooka_is_incredibly_powerf,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    pOStack14 = pOVar9 + 1;
-    func_?();
-    ppMStack15 = &pOVar9[1].monitor;
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    pSStack16 = pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    pOStack17 = pOVar9 + 2;
-    pOStack18 = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,4,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Rail_Gun,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_The_sniper_rifle_uses_a_charged_,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Devastating_when_used_at_long_ra,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    ppMStack19 = &pOVar9[1].monitor;
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    pSStack20 = pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    pOStack21 = pOVar9 + 2;
-    pOStack22 = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,5,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Melee_Weapon,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_A_weapon_designed_for_close_quar,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Sneak_up_on_your_enemies_to_catc,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    ppMStack23 = &pOVar9[1].monitor;
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    pSStack24 = pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    pOStack25 = pOVar9 + 2;
-    pOStack26 = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,6,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Mutanto,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Infuses_the_player_with_mutageni,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Become_a_super_hero__or_super_vi,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    ppMStack27 = &pOVar9[1].monitor;
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    pSStack28 = pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    pOStack29 = pOVar9 + 2;
-    pOStack30 = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,7,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Flamethrower,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_A_classic__Burn_everything_withi,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Light_your_enemies_on_fire_with_,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    ppMStack31 = &pOVar9[1].monitor;
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    pSStack32 = pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    pOStack33 = pOVar9 + 2;
-    pOStack34 = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,8,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Shotgun,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_A_gun_modeled_after_the_classic_,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Use_this_in_close_quarters_to_de,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    ppMStack35 = &pOVar9[1].monitor;
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    pSStack36 = pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    pOStack37 = pOVar9 + 2;
-    pOStack38 = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,9,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Game_Objective__Star,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_The_player_team_who_first_collec,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Collect_all_these_sparkly_trinke,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    ppMStack39 = &pOVar9[1].monitor;
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    pSStack40 = pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    pOStack41 = pOVar9 + 2;
-    pOStack42 = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,10,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Growth_Pill,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Transforms_a_player_into_a_giant,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Become_a_giant_KoGaMian__capable,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    ppMStack43 = &pOVar9[1].monitor;
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    pSStack44 = pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    pOStack45 = pOVar9 + 2;
-    pOStack46 = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0xb,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Mouse_Pill,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Shrinks_a_player_to_the_size_of_,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Become_a_miniature_version_of_yo,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    ppMStack47 = &pOVar9[1].monitor;
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    pSStack48 = pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    pOStack49 = pOVar9 + 2;
-    pOStack50 = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0xc,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Mouse_Gun,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_A_pistol_that_shrinks_the_target,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Turn_enemy_players_into_helpless,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    ppMStack51 = &pOVar9[1].monitor;
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    pSStack52 = pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    pOStack53 = pOVar9 + 2;
-    pOStack54 = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0xd,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Shuriken,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_A_classic_ninja_shuriken_,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Become_one_with_the_shadows_usin,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0xe,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Multi_Shuriken,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_A_handful_of_ninja_shurikens_,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Throw_a_line_of_shurikens__and_s,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0xf,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Cube_Gun,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Shoots_cubes_that_stick_to_surfa,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Build_awesome_towers__thick_cast,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x10,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Coin,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Players_pick_these_up_to_pay_for,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Reward_players_with_coins_used_t,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x11,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Coin_Chest,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Contains_lots_of_coins__which_ca,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Use_this_to_reward_players_for_r,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x12,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Dual_Revolvers,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_A_pair_of_high_powered_revolvers,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Most_effective_in_mid_to_long_ra,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x13,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Growth_Gun,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Transforms_the_target_into_a_gia,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Make_your_enemies_bigger_targets,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x14,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Revolver,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_A_high_powered_revolver_,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Most_effective_in_mid_to_long_ra,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x15,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Lightning_Speed,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Infuses_the_player_with_lightnin,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_This_enables_players_to_cross_lo,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x16,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pSVar1 = TM::TM__(StringLiteral_Oculus,(MethodInfo *)0x0);
-    pSVar3 = TM::TM__(StringLiteral_A_customizable_monster_from_anot,(MethodInfo *)0x0);
-    pSVar55 = TM::TM__(StringLiteral_These_hideous_creatures_only_hav,(MethodInfo *)0x0);
-    pIVar5 = (InventoryItem_ItemDescription *)func_?();
-    cameraPreviewerOffset.y = (float)pSVar2;
-    cameraPreviewerOffset.x = (float)pSVar2;
-    cameraPreviewerOffset.z = 0.7;
-    InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
-              (pIVar5,pSVar1,pSVar3,pSVar55,cameraPreviewerOffset,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x17,(Object *)pIVar5,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pSVar1 = TM::TM__(StringLiteral_Teleporter,(MethodInfo *)0x0);
-    pSVar3 = TM::TM__(StringLiteral_A_pair_of_connected_teleporters_,(MethodInfo *)0x0);
-    pSVar55 = TM::TM__(StringLiteral_Useful_for_separating_different_,(MethodInfo *)0x0);
-    uVar4 = _UNK_?;
-    uVar56 = _UNK_?;
-    pIVar5 = (InventoryItem_ItemDescription *)func_?();
-    cameraPreviewerOffset_00.y = (float)uVar4;
-    cameraPreviewerOffset_00.x = (float)uVar56;
-    cameraPreviewerOffset_00.z = -1.0;
-    InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
-              (pIVar5,pSVar1,pSVar3,pSVar55,cameraPreviewerOffset_00,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x18,(Object *)pIVar5,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pSVar1 = TM::TM__(StringLiteral_Hovercraft,(MethodInfo *)0x0);
-    pSVar3 = TM::TM__(StringLiteral_A_customizable_hovercraft_,(MethodInfo *)0x0);
-    pSVar55 = TM::TM__(StringLiteral_Enables_players_to_traverse_grea,(MethodInfo *)0x0);
-    pIVar5 = (InventoryItem_ItemDescription *)func_?();
-    cameraPreviewerOffset_01.y = (float)pSVar2;
-    cameraPreviewerOffset_01.x = (float)pSVar2;
-    cameraPreviewerOffset_01.z = -0.3;
-    InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
-              (pIVar5,pSVar1,pSVar3,pSVar55,cameraPreviewerOffset_01,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x19,(Object *)pIVar5,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pSVar1 = TM::TM__(StringLiteral_Hamster_Ball,(MethodInfo *)0x0);
-    pSVar3 = TM::TM__(StringLiteral_A_giant_hamster_ball_,(MethodInfo *)0x0);
-    pSVar55 = TM::TM__(StringLiteral_This_bouncy_ball_offers_a_hilari,(MethodInfo *)0x0);
-    pIVar5 = (InventoryItem_ItemDescription *)func_?();
-    cameraPreviewerOffset_02.y = (float)_UNK_?;
-    cameraPreviewerOffset_02.x = (float)uVar4;
-    cameraPreviewerOffset_02.z = 0.0;
-    InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
-              (pIVar5,pSVar1,pSVar3,pSVar55,cameraPreviewerOffset_02,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x1a,(Object *)pIVar5,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pSVar1 = TM::TM__(StringLiteral_Fire_Sentry_Tower,(MethodInfo *)0x0);
-    pSVar3 = TM::TM__(StringLiteral_A_sentry_tower__shooting_fire_at,(MethodInfo *)0x0);
-    pSVar55 = TM::TM__(StringLiteral_Fire_sentries_serve_as_stationar,(MethodInfo *)0x0);
-    uVar4 = _UNK_?;
-    pIVar5 = (InventoryItem_ItemDescription *)func_?();
-    cameraPreviewerOffset_03.y = (float)_UNK_?;
-    cameraPreviewerOffset_03.x = (float)uVar4;
-    cameraPreviewerOffset_03.z = -1.0;
-    InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
-              (pIVar5,pSVar1,pSVar3,pSVar55,cameraPreviewerOffset_03,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x1b,(Object *)pIVar5,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Platform,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Create_elevators_or_platforms_wi,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Useful_when_bridging_the_gap_bet,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x1c,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Horizontal_Rotator,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_A_custom_cube_model__that_rotate,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Can_be_used_as_a_challenging_way,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x1d,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Vertical_Rotator,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_A_custom_cube_model__that_rotate,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Useful_for_pushing_players_off_p,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x1e,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pSVar1 = TM::TM__(StringLiteral_Dragonfly_Jetpack,(MethodInfo *)0x0);
-    pSVar3 = TM::TM__(StringLiteral_A_big_customizable_jetpack_,(MethodInfo *)0x0);
-    pSVar55 = TM::TM__(StringLiteral_This_jetpack_offers_unprecedente,(MethodInfo *)0x0);
-    pIVar5 = (InventoryItem_ItemDescription *)func_?();
-    cameraPreviewerOffset_04.y = (float)_UNK_?;
-    cameraPreviewerOffset_04.x = (float)pSVar2;
-    cameraPreviewerOffset_04.z = 0.2;
-    InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
-              (pIVar5,pSVar1,pSVar3,pSVar55,cameraPreviewerOffset_04,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x1f,(Object *)pIVar5,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Ghost,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_An_unkillable_ghost_which_damage,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_This_scary_monster_can_move_thro,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x20,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pSVar1 = TM::TM__(StringLiteral_Frost_Sentry_Tower,(MethodInfo *)0x0);
-    pSVar3 = TM::TM__(StringLiteral_A_sentry_tower__shooting_a_beam_,(MethodInfo *)0x0);
-    pSVar55 = TM::TM__(StringLiteral_Frost_sentries_serve_as_stationa,(MethodInfo *)0x0);
-    pIVar5 = (InventoryItem_ItemDescription *)func_?();
-    cameraPreviewerOffset_05.y = (float)_UNK_?;
-    cameraPreviewerOffset_05.x = (float)uVar4;
-    cameraPreviewerOffset_05.z = -1.0;
-    InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
-              (pIVar5,pSVar1,pSVar3,pSVar55,cameraPreviewerOffset_05,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x21,(Object *)pIVar5,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pSVar1 = TM::TM__(StringLiteral_Firefly_Jetpack,(MethodInfo *)0x0);
-    pSVar3 = TM::TM__(StringLiteral_A_small_customizable_jetpack_,(MethodInfo *)0x0);
-    pSVar55 = TM::TM__(StringLiteral_Soar_to_the_skies_with_this_ligh,(MethodInfo *)0x0);
-    pIVar5 = (InventoryItem_ItemDescription *)func_?();
-    cameraPreviewerOffset_06.y = (float)_UNK_?;
-    cameraPreviewerOffset_06.x = (float)pSVar2;
-    cameraPreviewerOffset_06.z = -0.5;
-    InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
-              (pIVar5,pSVar1,pSVar3,pSVar55,cameraPreviewerOffset_06,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x22,(Object *)pIVar5,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Light_Cube,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_A_colored_light__that_can_be_con,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Light_up_the_dark_areas_of_your_,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x23,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Blue_Team_Spawn_Point,(MethodInfo *)0x0);
-    pSVar3 = TM::TM__(StringLiteral_Spawn_point_for_the_blue_team__P,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    pSVar1 = ::StringLiteral__;
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar3;
-    func_?();
-    pOVar9[2].klass = (Object__Class *)pSVar1;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x24,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Red_Team_Spawn_Point,(MethodInfo *)0x0);
-    pSVar3 = TM::TM__(StringLiteral_Spawn_point_for_the_red_team__Pl,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    pSVar1 = ::StringLiteral__;
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar3;
-    func_?();
-    pOVar9[2].klass = (Object__Class *)pSVar1;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x25,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Green_Team_Spawn_Point,(MethodInfo *)0x0);
-    pSVar3 = TM::TM__(StringLiteral_Spawn_point_for_the_green_team__,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    pSVar1 = ::StringLiteral__;
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar3;
-    func_?();
-    pOVar9[2].klass = (Object__Class *)pSVar1;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x26,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Yellow_Team_Spawn_Point,(MethodInfo *)0x0);
-    pSVar3 = TM::TM__(StringLiteral_Spawn_point_for_the_yellow_team_,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    pSVar1 = ::StringLiteral__;
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar3;
-    func_?();
-    pOVar9[2].klass = (Object__Class *)pSVar1;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x27,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Game_Objective__Flag,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_The_player_who_reaches_the_flag_,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Flags_are_a_great_way_to_give_pl,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x28,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Explosive,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_A_bundle_of_dynamite_that_will_e,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Use_this_by_connecting_it_to_a_p,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x29,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Fire,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_This_burns_anyone_who_gets_too_c,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_You_can_pair_this_with_the_Smoke,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x2a,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Smoke,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Emits_a_cloud_of_smoke__The_smok,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Great_cube_if_you_want_to_obstru,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x2b,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Text,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_An_object_enabling_you_to_displa,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Display_a_game_title__help_text_,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x2c,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Skybox_Cube,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Manage_the_look_of_your_game_by_,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Adding_this_to_your_project_will,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x2d,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Water_Cube,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Adjust_the_level_and_color_of_yo,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_WARNING__KoGaMians_cannot_breath,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x2e,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Speaker,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Add_sounds_to_your_game__There_s,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_This_is_great_for_creating_the_a,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x2f,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Checkpoint,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_A_player_who_reaches_this_will_r,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_This_is_a_must_have_for_any_leve,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x31,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)
-             TM::TM__(StringLiteral_Game_Objective__Eliminate_the_Oc,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Set_a_Oculus_kill_limit_for_your,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_The_team_or_player_that_reaches_,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x32,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Wind_Turbine,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_A_big_fan__which_blows_players_a,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_You_can_stack_several_wind_turbi,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x33,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Round_Time,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Set_a_time_limit_for_a_round__Af,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Round_cubes_are_a_great_if_your_,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x34,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Game_Objective__Death_match,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Set_a_player_kill_limit_for_your,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Add_this_to_create_a_death_match,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x35,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Camera_Cube,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_An_object_specifying_the_distanc,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_This_is_a_great_way_to_control_t,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x36,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Delay_Cube,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_When_receiving_a_signal_from_ano,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_You_can_put_these_in_sequence_to,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x37,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Toggle_Cube,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Switches_between_ON_and_OFF_each,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Do_you_want_to_open_and_close_th,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x38,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Negate_Cube,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_A_logic_object_which_sends_the_o,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Inverting_a_signal_open_up_many_,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x39,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_And_Cube,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_The_And_Cube_takes_several_input,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_If_you_want_players_to_stand_on_,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x3a,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Pressure_Plate,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Whenever_a_player_steps_on_the_p,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Connect_this_to_an_toggle_box_fo,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x3b,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Cube_Model_Hider,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Hides_connected_cube_model_when_,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_This_is_most_commonly_used_to_en,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x3c,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Pulse_Cube,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_This_logic_cube_sends_signals_in,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_This_is_really_neat_when_you_wan,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x3d,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Random_Cube,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Powers_one_connected_object_at_r,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_This_is_useful_if_you_want_to_cr,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x3e,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Counting_Cube,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Set_a_count__Each_time_the_cube_,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_This_looks_super_cool_and_can_be,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x3f,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Target_Cube,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Sends_a_signal_when_shot_,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Can_be_used_to_open_doors_or_sec,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x40,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Lever,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Sends_a_signal_when_pulled_,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Open_doors__trigger_explosives__,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x41,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Collect_And_Drop,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_A_pair_consisting_of_a_pickup_an,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Can_be_used_for_everything_from_,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x42,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Heal_Ray,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Shoots_a_ray_that_heals_people__,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Don_t_let_your_friends_die__shoo,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x43,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Global_Speaker,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Adds_a_global_sound_to_the_game_,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_This_can_be_used_to_make_a_bette,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x30,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)
-             TM::TM__(StringLiteral_Game_Objective__Time_Attack_Flag,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Records_the_time_it_took_for_a_p,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Lets_players_take_their_time_rea,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x44,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Trigger_Cube,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_While_a_player_is_inside_the_are,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Allows_for_scripted_events_in_a_,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x45,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Team_Editor,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_This_object_allows_you_to_change,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Modify_the_roles_of_your_teams__,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x46,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Crystal,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Players_pick_these_up_to_get_pro,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Use_this_to_reward_players_for_r,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x47,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Crystal_Vein,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Contains_lots_of_crystals__which,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Use_this_to_reward_players_for_r,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x48,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Class,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Allows_players_to_spawn_as_a_cla,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Customize_different_Classes_with,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x49,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Vehicle_Energy,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Can_be_used_to_refill_vehicles_e,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Make_a_game_where_you_have_to_pi,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x4a,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Door,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_A_door_that_can_be_opened_by_a_s,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Use_this_to_make_an_animated_doo,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x4b,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Sliding_Door,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_A_sliding_door_that_can_be_opene,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Use_this_to_make_an_animated_sli,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x4c,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pSVar1 = TM::TM__(StringLiteral_Trap_Door,(MethodInfo *)0x0);
-    pSVar3 = TM::TM__(StringLiteral_A_trap_door_that_can_be_opened_b,(MethodInfo *)0x0);
-    pSVar55 = TM::TM__(StringLiteral_Use_this_to_make_an_animated_tra,(MethodInfo *)0x0);
-    pIVar5 = (InventoryItem_ItemDescription *)func_?();
-    cameraPreviewerOffset_07.y = (float)_UNK_?;
-    cameraPreviewerOffset_07.x = (float)uVar4;
-    cameraPreviewerOffset_07.z = -1.0;
-    InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
-              (pIVar5,pSVar1,pSVar3,pSVar55,cameraPreviewerOffset_07,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x4d,(Object *)pIVar5,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Costume,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_An_equippable_costume_,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Equip_this_to_blend_into_the_env,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x4e,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Cube_Model_Transparency,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_Change_transparency_to_cube_mode,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_Change_the_transparency_for_a_cu,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x4f,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    pOVar6 = (Object__Class *)TM::TM__(StringLiteral_Custom_Gun,(MethodInfo *)0x0);
-    pSVar1 = TM::TM__(StringLiteral_A_modifiable_projectile_weapon_,(MethodInfo *)0x0);
-    pOVar7 = (Object__Class *)
-             TM::TM__(StringLiteral_A_fully_customizable_projectile_,(MethodInfo *)0x0);
-    pIVar8 = TypeInfo__InventoryItem__ItemDescription;
-    pOVar9 = (Object *)func_?();
-    *(ulonglong *)&pOVar9[2].monitor = CONCAT44(pSVar2,pSVar2);
-    pOVar9[3].monitor = (MonitorData *)0x0;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar9,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar8);
-    pOVar9[1].klass = pOVar6;
-    func_?();
-    pOVar9[1].monitor = (MonitorData *)pSVar1;
-    func_?();
-    pOVar9[2].klass = pOVar7;
-    func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,0x50,pOVar9,
-               MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
-              );
-    TypeInfo__InventoryItem->static_fields->localItemDescriptionOverride = this_00;
-    func_?();
+            (pIVar4,pSVar1,pSVar2,pSVar3,aVStack_5,(MethodInfo *)0x0);
+  if (this == (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
+    FUN_?();
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
     return;
   }
-  func_?();
-  pcVar57 = (code *)swi(3);
-  (*pcVar57)();
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,1,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Machine_Gun,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_fully_automatic_rifle_capable_,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_This_rifle_is_at_its_best_in_clo,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,2,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Impulse_Gun,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_gun_generating_a_powerful_forc,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_This_gun_has_a_very_high_recoil_,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,3,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Bazooka,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_rocket_launcher_with_devastati,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_The_bazooka_is_incredibly_powerf,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,4,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Rail_Gun,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_The_sniper_rifle_uses_a_charged_,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Devastating_when_used_at_long_ra,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,5,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Melee_Weapon,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_weapon_designed_for_close_quar,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Sneak_up_on_your_enemies_to_catc,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,6,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Mutanto,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Infuses_the_player_with_mutageni,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Become_a_super_hero__or_super_vi,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,7,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Flamethrower,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_classic__Burn_everything_withi,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Light_your_enemies_on_fire_with_,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,8,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Shotgun,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_gun_modeled_after_the_classic_,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Use_this_in_close_quarters_to_de,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,9,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Game_Objective__Star,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_The_player_team_who_first_collec,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Collect_all_these_sparkly_trinke,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,10,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Growth_Pill,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Transforms_a_player_into_a_giant,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Become_a_giant_KoGaMian__capable,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0xb,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Mouse_Pill,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Shrinks_a_player_to_the_size_of_,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Become_a_miniature_version_of_yo,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0xc,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Mouse_Gun,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_pistol_that_shrinks_the_target,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Turn_enemy_players_into_helpless,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0xd,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Shuriken,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_classic_ninja_shuriken_,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Become_one_with_the_shadows_usin,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0xe,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Multi_Shuriken,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_handful_of_ninja_shurikens_,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Throw_a_line_of_shurikens__and_s,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0xf,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Cube_Gun,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Shoots_cubes_that_stick_to_surfa,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Build_awesome_towers__thick_cast,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x10,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Coin,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Players_pick_these_up_to_pay_for,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Reward_players_with_coins_used_t,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x11,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Coin_Chest,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Contains_lots_of_coins__which_ca,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Use_this_to_reward_players_for_r,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x12,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Dual_Revolvers,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_pair_of_high_powered_revolvers,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Most_effective_in_mid_to_long_ra,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x13,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Growth_Gun,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Transforms_the_target_into_a_gia,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Make_your_enemies_bigger_targets,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x14,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Revolver,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_high_powered_revolver_,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Most_effective_in_mid_to_long_ra,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x15,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Lightning_Speed,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Infuses_the_player_with_lightnin,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_This_enables_players_to_cross_lo,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x16,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Oculus,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_customizable_monster_from_anot,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_These_hideous_creatures_only_hav,(MethodInfo *)0x0);
+  fVar7 = _UNK_?;
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  aVStack_5[0].z = fVar7;
+  aVStack_5[0].x = 0.0;
+  aVStack_5[0].y = 0.0;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
+            (pIVar4,pSVar1,pSVar2,pSVar3,aVStack_5,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x17,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Teleporter,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_pair_of_connected_teleporters_,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Useful_for_separating_different_,(MethodInfo *)0x0);
+  fVar8 = _UNK_?;
+  fVar9 = _UNK_?;
+  fVar7 = _UNK_?;
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  aVStack_5[0].y = fVar9;
+  aVStack_5[0].x = fVar7;
+  aVStack_5[0].z = fVar8;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
+            (pIVar4,pSVar1,pSVar2,pSVar3,aVStack_5,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x18,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Hovercraft,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_customizable_hovercraft_,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Enables_players_to_traverse_grea,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  aVStack_5[0].z = fVar9;
+  aVStack_5[0].x = 0.0;
+  aVStack_5[0].y = 0.0;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
+            (pIVar4,pSVar1,pSVar2,pSVar3,aVStack_5,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x19,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Hamster_Ball,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_giant_hamster_ball_,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_This_bouncy_ball_offers_a_hilari,(MethodInfo *)0x0);
+  fVar10 = _UNK_?;
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  aVStack_5[0].z = 0.0;
+  aVStack_5[0].y = fVar10;
+  aVStack_5[0].x = fVar9;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
+            (pIVar4,pSVar1,pSVar2,pSVar3,aVStack_5,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x1a,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Fire_Sentry_Tower,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_sentry_tower__shooting_fire_at,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Fire_sentries_serve_as_stationar,(MethodInfo *)0x0);
+  fVar10 = _UNK_?;
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  aVStack_5[0].y = fVar10;
+  aVStack_5[0].x = _UNK_?;
+  aVStack_5[0].z = fVar8;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
+            (pIVar4,pSVar1,pSVar2,pSVar3,aVStack_5,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x1b,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Platform,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Create_elevators_or_platforms_wi,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Useful_when_bridging_the_gap_bet,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x1c,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Horizontal_Rotator,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_custom_cube_model__that_rotate,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Can_be_used_as_a_challenging_way,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x1d,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Vertical_Rotator,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_custom_cube_model__that_rotate,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Useful_for_pushing_players_off_p,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x1e,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Dragonfly_Jetpack,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_big_customizable_jetpack_,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_This_jetpack_offers_unprecedente,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  aVStack_5[0]._0_8_ = (ulonglong)(uint)fVar8 << 0x20;
+  aVStack_5[0].z = fVar7;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
+            (pIVar4,pSVar1,pSVar2,pSVar3,aVStack_5,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x1f,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Ghost,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_An_unkillable_ghost_which_damage,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_This_scary_monster_can_move_thro,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x20,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Frost_Sentry_Tower,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_sentry_tower__shooting_a_beam_,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Frost_sentries_serve_as_stationa,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  aVStack_5[0].x = _UNK_?;
+  aVStack_5[0].z = fVar8;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
+            (pIVar4,pSVar1,pSVar2,pSVar3,aVStack_5,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x21,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Firefly_Jetpack,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_small_customizable_jetpack_,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Soar_to_the_skies_with_this_ligh,(MethodInfo *)0x0);
+  uVar11 = _UNK_?;
+  fVar7 = _UNK_?;
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  aVStack_5[0].z = fVar7;
+  aVStack_5[0]._0_8_ = (ulonglong)uVar11 << 0x20;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
+            (pIVar4,pSVar1,pSVar2,pSVar3,aVStack_5,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x22,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Light_Cube,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_colored_light__that_can_be_con,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Light_up_the_dark_areas_of_your_,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x23,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar2 = TM::TM__(StringLiteral_Blue_Team_Spawn_Point,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Spawn_point_for_the_blue_team__P,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  pSVar1 = ::StringLiteral__;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar2,pSVar3,::StringLiteral__,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x24,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar1 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar2 = TM::TM__(StringLiteral_Red_Team_Spawn_Point,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Spawn_point_for_the_red_team__Pl,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  pSVar1 = ::StringLiteral__;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar2,pSVar3,::StringLiteral__,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x25,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar1 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar2 = TM::TM__(StringLiteral_Green_Team_Spawn_Point,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Spawn_point_for_the_green_team__,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  pSVar1 = ::StringLiteral__;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar2,pSVar3,::StringLiteral__,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x26,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar1 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar2 = TM::TM__(StringLiteral_Yellow_Team_Spawn_Point,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Spawn_point_for_the_yellow_team_,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  pSVar1 = ::StringLiteral__;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar2,pSVar3,::StringLiteral__,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x27,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar1 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Game_Objective__Flag,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_The_player_who_reaches_the_flag_,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Flags_are_a_great_way_to_give_pl,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x28,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Explosive,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_bundle_of_dynamite_that_will_e,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Use_this_by_connecting_it_to_a_p,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x29,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Fire,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_This_burns_anyone_who_gets_too_c,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_You_can_pair_this_with_the_Smoke,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x2a,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Smoke,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Emits_a_cloud_of_smoke__The_smok,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Great_cube_if_you_want_to_obstru,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x2b,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Text,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_An_object_enabling_you_to_displa,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Display_a_game_title__help_text_,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x2c,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Skybox_Cube,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Manage_the_look_of_your_game_by_,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Adding_this_to_your_project_will,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x2d,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Water_Cube,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Adjust_the_level_and_color_of_yo,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_WARNING__KoGaMians_cannot_breath,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x2e,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Speaker,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Add_sounds_to_your_game__There_s,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_This_is_great_for_creating_the_a,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x2f,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Checkpoint,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_player_who_reaches_this_will_r,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_This_is_a_must_have_for_any_leve,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x31,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Game_Objective__Eliminate_the_Oc,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Set_a_Oculus_kill_limit_for_your,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_The_team_or_player_that_reaches_,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x32,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Wind_Turbine,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_big_fan__which_blows_players_a,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_You_can_stack_several_wind_turbi,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x33,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Round_Time,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Set_a_time_limit_for_a_round__Af,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Round_cubes_are_a_great_if_your_,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x34,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Game_Objective__Death_match,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Set_a_player_kill_limit_for_your,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Add_this_to_create_a_death_match,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x35,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Camera_Cube,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_An_object_specifying_the_distanc,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_This_is_a_great_way_to_control_t,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x36,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Delay_Cube,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_When_receiving_a_signal_from_ano,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_You_can_put_these_in_sequence_to,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x37,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Toggle_Cube,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Switches_between_ON_and_OFF_each,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Do_you_want_to_open_and_close_th,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x38,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Negate_Cube,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_logic_object_which_sends_the_o,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Inverting_a_signal_open_up_many_,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x39,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_And_Cube,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_The_And_Cube_takes_several_input,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_If_you_want_players_to_stand_on_,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x3a,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Pressure_Plate,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Whenever_a_player_steps_on_the_p,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Connect_this_to_an_toggle_box_fo,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x3b,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Cube_Model_Hider,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Hides_connected_cube_model_when_,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_This_is_most_commonly_used_to_en,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x3c,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Pulse_Cube,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_This_logic_cube_sends_signals_in,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_This_is_really_neat_when_you_wan,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x3d,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Random_Cube,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Powers_one_connected_object_at_r,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_This_is_useful_if_you_want_to_cr,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x3e,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Counting_Cube,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Set_a_count__Each_time_the_cube_,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_This_looks_super_cool_and_can_be,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x3f,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Target_Cube,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Sends_a_signal_when_shot_,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Can_be_used_to_open_doors_or_sec,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x40,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Lever,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Sends_a_signal_when_pulled_,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Open_doors__trigger_explosives__,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x41,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Collect_And_Drop,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_pair_consisting_of_a_pickup_an,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Can_be_used_for_everything_from_,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x42,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Heal_Ray,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Shoots_a_ray_that_heals_people__,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Don_t_let_your_friends_die__shoo,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x43,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Global_Speaker,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Adds_a_global_sound_to_the_game_,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_This_can_be_used_to_make_a_bette,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x30,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Game_Objective__Time_Attack_Flag,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Records_the_time_it_took_for_a_p,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Lets_players_take_their_time_rea,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x44,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Trigger_Cube,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_While_a_player_is_inside_the_are,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Allows_for_scripted_events_in_a_,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x45,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Team_Editor,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_This_object_allows_you_to_change,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Modify_the_roles_of_your_teams__,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x46,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Crystal,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Players_pick_these_up_to_get_pro,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Use_this_to_reward_players_for_r,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x47,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Crystal_Vein,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Contains_lots_of_crystals__which,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Use_this_to_reward_players_for_r,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x48,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Class,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Allows_players_to_spawn_as_a_cla,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Customize_different_Classes_with,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x49,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Vehicle_Energy,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Can_be_used_to_refill_vehicles_e,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Make_a_game_where_you_have_to_pi,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x4a,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Door,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_door_that_can_be_opened_by_a_s,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Use_this_to_make_an_animated_doo,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x4b,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Sliding_Door,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_sliding_door_that_can_be_opene,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Use_this_to_make_an_animated_sli,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x4c,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Trap_Door,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_trap_door_that_can_be_opened_b,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Use_this_to_make_an_animated_tra,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  aVStack_5[0].x = _UNK_?;
+  aVStack_5[0].z = fVar8;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor_1
+            (pIVar4,pSVar1,pSVar2,pSVar3,aVStack_5,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x4d,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Costume,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_An_equippable_costume_,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Equip_this_to_blend_into_the_env,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x4e,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Cube_Model_Transparency,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_Change_transparency_to_cube_mode,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_Change_the_transparency_for_a_cu,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x4f,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  pSVar1 = TM::TM__(StringLiteral_Custom_Gun,(MethodInfo *)0x0);
+  pSVar2 = TM::TM__(StringLiteral_A_modifiable_projectile_weapon_,(MethodInfo *)0x0);
+  pSVar3 = TM::TM__(StringLiteral_A_fully_customizable_projectile_,(MethodInfo *)0x0);
+  pIVar4 = (InventoryItem_ItemDescription *)FUN_?(TypeInfo__InventoryItem__ItemDescription)
+  ;
+  InventoryItem+ItemDescription::InventoryItem_ItemDescription__ctor
+            (pIVar4,pSVar1,pSVar2,pSVar3,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x50,(Object *)pIVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pSVar3 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<MVWorldObjectDocumentationType,_InventoryItem::ItemDescription>__Add_MVWorldObjectDocumentationType__InventoryItem__ItemDescription_
+             ->klass->rgctx_data[0x22].method);
+  TypeInfo__InventoryItem->static_fields->localItemDescriptionOverride =
+       (Dictionary_2_MVWorldObjectDocumentationType_InventoryItem_ItemDescription_ *)this;
+  if (iRam_? != 0) {
+    uVar11 = (uint)((ulonglong)TypeInfo__InventoryItem->static_fields >> 0xc);
+    uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
+    do {
+      uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
+      puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
+      LOCK();
+      bVar15 = uVar13 == *puVar14;
+      if (bVar15) {
+        *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar15);
+  }
   return;
 }
 
@@ -2015,159 +1956,188 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_1
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__System__String);
+    FUN_?(&TypeInfo__System__Byte);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   (this->fields).hasData = 1;
   (this->fields).purchased = 1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  if (data == (Dictionary_2_System_Byte_System_Object_ *)0x0) {
-code_?:
-    func_?();
-  }
-  else {
-    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
-             Dictionary_2_System_Byte_System_Object__get_Item
-                       (data,0x28,
-                        MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
-                       );
-    if (pOVar1 == (Object *)0x0) goto code_?;
-    if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-      piVar2 = (int32_t *)func_?();
-      (this->fields).itemID = *piVar2;
-      pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]
-               ::Dictionary_2_System_Byte_System_Object__get_Item
-                         (data,0x96,
-                          MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
-                         );
-      if (pOVar1 == (Object *)0x0) goto code_?;
-      if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-        piVar2 = (int32_t *)func_?();
-        (this->fields).itemCategoryID = *piVar2;
-        pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
-                 Object]::Dictionary_2_System_Byte_System_Object__get_Item
-                           (data,0x29,
-                            MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
-                           );
-        if (pOVar1 == (Object *)0x0) goto code_?;
-        if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-          piVar2 = (int32_t *)func_?();
-          (this->fields).itemTypeID = *piVar2;
-          pSVar3 = (String *)
-                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
-                   Object]::Dictionary_2_System_Byte_System_Object__get_Item
-                             (data,0x2a,
-                              MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
-                             );
-          if (pSVar3 == (String *)0x0) {
-            (this->fields).name = (String *)0x0;
-code_?:
-            func_?(&(this->fields).name);
-            (this->fields).isDeleted = 0;
-            pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
-                     Object]::Dictionary_2_System_Byte_System_Object__get_Item
-                               (data,0x2b,
-                                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
-                               );
-            if (pOVar1 == (Object *)0x0) {
-              (this->fields).data = (Byte__Array *)0x0;
+  if ((data != (Dictionary_2_System_Byte_System_Object_ *)0x0) &&
+     (plVar1 = (longlong *)FUN_?(data,0x28), plVar1 != (longlong *)0x0)) {
+    if (*(longlong *)(*plVar1 + 0x40) != *(longlong *)(lRam_? + 0x40)) {
+      FUN_?(plVar1);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    (this->fields).itemID = (int32_t)plVar1[2];
+    plVar1 = (longlong *)FUN_?(data,0x96);
+    if (plVar1 != (longlong *)0x0) {
+      if (*(longlong *)(*plVar1 + 0x40) != *(longlong *)(lRam_? + 0x40)) {
+        FUN_?(plVar1);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      (this->fields).itemCategoryID = (int32_t)plVar1[2];
+      plVar1 = (longlong *)FUN_?(data,0x29);
+      if (plVar1 != (longlong *)0x0) {
+        if (*(longlong *)(*plVar1 + 0x40) != *(longlong *)(lRam_? + 0x40)) {
+          FUN_?(plVar1);
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        (this->fields).itemTypeID = (int32_t)plVar1[2];
+        pSVar3 = (String *)FUN_?(data,0x2a);
+        if (pSVar3 == (String *)0x0) {
+          (this->fields).name = (String *)0x0;
+        }
+        else {
+          pSVar4 = (String *)0x0;
+          if (pSVar3->klass == pSRam0000000182db2460) {
+            pSVar4 = pSVar3;
+          }
+          if (pSVar4 == (String *)0x0) {
+            FUN_?();
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          (this->fields).name = pSVar4;
+          pSVar4 = (String *)0x0;
+          if (pSVar3->klass == pSRam0000000182db2460) {
+            pSVar4 = pSVar3;
+          }
+          if (pSVar4 == (String *)0x0) {
+            FUN_?();
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+        }
+        if (iRam_? != 0) {
+          uVar5 = (uint)((ulonglong)&(this->fields).name >> 0xc);
+          lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+            puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+            LOCK();
+            bVar9 = uVar7 == *puVar8;
+            if (bVar9) {
+              *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
             }
-            else {
-              pBVar4 = (Byte__Array *)func_?();
-              if (pBVar4 == (Byte__Array *)0x0) goto code_?;
-              (this->fields).data = pBVar4;
-              iVar5 = func_?();
-              if (iVar5 == 0) goto code_?;
+            UNLOCK();
+          } while (!bVar9);
+        }
+        (this->fields).isDeleted = 0;
+        lVar6 = FUN_?(data,0x2b);
+        pBVar10 = TypeInfo__System__Byte;
+        if (lVar6 == 0) {
+          (this->fields).data = (Byte__Array *)0x0;
+        }
+        else {
+          pBVar11 = (Byte__Array *)FUN_?(lVar6,TypeInfo__System__Byte);
+          if (pBVar11 == (Byte__Array *)0x0) {
+            FUN_?(lVar6,pBVar10);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          (this->fields).data = pBVar11;
+          pBVar10 = TypeInfo__System__Byte;
+          lVar12 = FUN_?(lVar6,TypeInfo__System__Byte);
+          if (lVar12 == 0) {
+            FUN_?(lVar6,pBVar10);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+        }
+        if (iRam_? != 0) {
+          uVar5 = (uint)((ulonglong)&(this->fields).data >> 0xc);
+          lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+            puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+            LOCK();
+            bVar9 = uVar7 == *puVar8;
+            if (bVar9) {
+              *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
             }
-            func_?();
-            pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::
-                     Object]::Dictionary_2_System_Byte_System_Object__get_Item
-                               (data,0x2d,
-                                MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
-                               );
-            if (pOVar1 == (Object *)0x0) goto code_?;
-            if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class) {
-              piVar2 = (int32_t *)func_?();
-              (this->fields).slotPosition = *piVar2;
-              pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System
-                       ::Object]::Dictionary_2_System_Byte_System_Object__get_Item
-                                 (data,0x8a,
-                                  MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
-                                 );
-              if (pOVar1 == (Object *)0x0) goto code_?;
-              if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class
-                 ) {
-                pbVar6 = (bool *)func_?();
-                (this->fields).resellable = *pbVar6;
-                pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                         Byte,System::Object]::Dictionary_2_System_Byte_System_Object__get_Item
-                                   (data,0x45,
-                                    MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
-                                   );
-                if (pOVar1 == (Object *)0x0) goto code_?;
-                if ((pOVar1->klass->_0).element_class == (TypeInfo__System__Int32->_0).element_class
-                   ) {
-                  piVar2 = (int32_t *)func_?();
-                  (this->fields).priceGold = *piVar2;
-                  pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                           Byte,System::Object]::Dictionary_2_System_Byte_System_Object__get_Item
-                                     (data,0x89,
-                                      MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
-                                     );
-                  if (pOVar1 == (Object *)0x0) goto code_?;
-                  if ((pOVar1->klass->_0).element_class ==
-                      (TypeInfo__System__Int32->_0).element_class) {
-                    piVar2 = (int32_t *)func_?();
-                    (this->fields).authorProfileID = *piVar2;
-                    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                             Byte,System::Object]::Dictionary_2_System_Byte_System_Object__get_Item
-                                       (data,0x8b,
-                                        MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__get_Item_unsigned_char_
-                                       );
-                    if (pOVar1 == (Object *)0x0) goto code_?;
-                    if ((pOVar1->klass->_0).element_class ==
-                        (TypeInfo__System__Int32->_0).element_class) {
-                      piVar2 = (int32_t *)func_?();
-                      (this->fields).originalItemID = *piVar2;
-                      (this->fields).purchased = 1;
-                      (this->fields).isDefaultInvItem = 0;
-                      return;
-                    }
+            UNLOCK();
+          } while (!bVar9);
+        }
+        plVar1 = (longlong *)FUN_?(data,0x2d);
+        if (plVar1 != (longlong *)0x0) {
+          lVar6 = *plVar1;
+          if (*(longlong *)(lVar6 + 0x40) != *(longlong *)(lRam_? + 0x40)) {
+            FUN_?(plVar1,lRam_?);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          (this->fields).slotPosition = (int32_t)plVar1[2];
+          plVar1 = (longlong *)FUN_?(data,CONCAT71((int7)((ulonglong)lVar6 >> 8),0x8a));
+          if (plVar1 != (longlong *)0x0) {
+            lVar6 = *plVar1;
+            if (*(longlong *)(lVar6 + 0x40) != *(longlong *)(lRam_? + 0x40)) {
+              FUN_?(plVar1,lRam_?);
+              pcVar2 = (code *)swi(3);
+              (*pcVar2)();
+              return;
+            }
+            (this->fields).resellable = *(bool *)(plVar1 + 2);
+            plVar1 = (longlong *)FUN_?(data,CONCAT71((int7)((ulonglong)lVar6 >> 8),0x45));
+            if (plVar1 != (longlong *)0x0) {
+              lVar6 = *plVar1;
+              if (*(longlong *)(lVar6 + 0x40) != *(longlong *)(lRam_? + 0x40)) {
+                FUN_?(plVar1,lRam_?);
+                pcVar2 = (code *)swi(3);
+                (*pcVar2)();
+                return;
+              }
+              (this->fields).priceGold = (int32_t)plVar1[2];
+              plVar1 = (longlong *)FUN_?(data,CONCAT71((int7)((ulonglong)lVar6 >> 8),0x89));
+              if (plVar1 != (longlong *)0x0) {
+                lVar6 = *plVar1;
+                if (*(longlong *)(lVar6 + 0x40) != *(longlong *)(lRam_? + 0x40)) {
+                  FUN_?(plVar1,lRam_?);
+                  pcVar2 = (code *)swi(3);
+                  (*pcVar2)();
+                  return;
+                }
+                (this->fields).authorProfileID = (int32_t)plVar1[2];
+                plVar1 = (longlong *)
+                         FUN_?(data,CONCAT71((int7)((ulonglong)lVar6 >> 8),0x8b));
+                if (plVar1 != (longlong *)0x0) {
+                  if (*(longlong *)(*plVar1 + 0x40) != *(longlong *)(lRam_? + 0x40)) {
+                    FUN_?(plVar1,lRam_?);
+                    pcVar2 = (code *)swi(3);
+                    (*pcVar2)();
+                    return;
                   }
+                  (this->fields).originalItemID = (int32_t)plVar1[2];
+                  (this->fields).purchased = 1;
+                  (this->fields).isDefaultInvItem = 0;
+                  return;
                 }
               }
-            }
-          }
-          else {
-            pSVar7 = (String *)0x0;
-            if (pSVar3->klass == TypeInfo__System__String) {
-              pSVar7 = pSVar3;
-            }
-            if (pSVar7 != (String *)0x0) {
-              (this->fields).name = pSVar7;
-              pSVar7 = (String *)0x0;
-              if (pSVar3->klass == TypeInfo__System__String) {
-                pSVar7 = pSVar3;
-              }
-              if (pSVar7 != (String *)0x0) goto code_?;
             }
           }
         }
       }
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -2179,359 +2149,425 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_2
                Dictionary_2_System_Object_System_Object_ *itemData,MethodInfo *method)
 
 {
-  value = this;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&TypeInfo__System__Byte);
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__System__String);
+    FUN_?(&TypeInfo__System__Byte);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  (value->fields).hasData = 1;
-  (value->fields).purchased = 1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,unaff_EDI);
-  (value->fields).itemID = itemID;
-  this = (InventoryItem *)CONCAT13(0x70,this._0_3_);
-  pOVar1 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
-  this_00 = itemData;
+  (this->fields).hasData = 1;
+  (this->fields).purchased = 1;
+  (this->fields).itemID = itemID;
+  auStackX_10[0] = 0x70;
+  pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
   if ((itemData != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
-     (TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)itemData,
-                         pOVar1,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        ), TVar2.m_Index != 0)) {
-    if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
-        (TypeInfo__System__Int32->_0).element_class) {
-      piVar3 = (int32_t *)func_?();
-      (value->fields).itemCategoryID = *piVar3;
-      uStack_4._0_3_ = SUB43(TypeInfo__System__Byte,0);
-      uStack_4 = (Byte__Class *)CONCAT13(0xf,(undefined3)uStack_4);
-      pOVar1 = (Object *)func_?();
-      TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,
-                         pOVar1,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        );
-      if (TVar2.m_Index == 0) goto code_?;
-      if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
-          (TypeInfo__System__Int32->_0).element_class) {
-        piVar3 = (int32_t *)func_?();
-        (value->fields).itemTypeID = *piVar3;
-        uStack_4._3_1_ = (undefined1)((uint)TypeInfo__System__Byte >> 0x18);
-        uStack_4._0_2_ = SUB42(TypeInfo__System__Byte,0);
-        uStack_4._0_3_ = CONCAT12(10,(undefined2)uStack_4);
-        pOVar1 = (Object *)func_?();
-        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,
-                           pOVar1,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                          );
-        if (TVar2.m_Index == 0) {
-          (value->fields).name = (String *)0x0;
-code_?:
-          func_?();
-          uStack_4 = (Byte__Class *)((int)&uStack_4 + 1);
-          pOVar1 = (Object *)func_?(TypeInfo__System__Byte);
-          TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00
-                             ,pOVar1,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            );
-          if (TVar2.m_Index == 0) {
-            (value->fields).description = (String *)0x0;
-code_?:
-            func_?();
-            uStack_4 = (Byte__Class *)&uStack_4;
-            pOVar1 = (Object *)func_?(TypeInfo__System__Byte);
-            TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Object,UnityEngine::UIElements::TextureId]::
-                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                              ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                               this_00,pOVar1,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                              );
-            if (TVar2.m_Index == 0) goto code_?;
-            if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
-                (TypeInfo__System__Boolean->_0).element_class) {
-              pbVar5 = (bool *)func_?();
-              bVar6 = *pbVar5;
-              (value->fields).isDeleted = bVar6;
-              if (bVar6 == 0) {
-                this = (InventoryItem *)CONCAT13(0xb,this._0_3_);
-                uStack_4 = TypeInfo__System__Byte;
-                pOVar1 = (Object *)func_?();
-                unaff_EBX = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                            Object,UnityEngine::UIElements::TextureId]::
-                            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
-                                        *)this_00,pOVar1,
-                                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                      );
-                itemData = (Dictionary_2_System_Object_System_Object_ *)TypeInfo__System__Byte;
-                if (unaff_EBX.m_Index == 0) {
-                  (value->fields).data = (Byte__Array *)0x0;
-                  itemID = 0;
-                }
-                else {
-                  itemID = (int32_t)TypeInfo__System__Byte;
-                  this = (InventoryItem *)unaff_EBX;
-                  pBVar7 = (Byte__Array *)func_?();
-                  if (pBVar7 == (Byte__Array *)0x0) goto code_?;
-                  (value->fields).data = pBVar7;
-                  itemID = (int32_t)TypeInfo__System__Byte;
-                  itemData = (Dictionary_2_System_Object_System_Object_ *)TypeInfo__System__Byte;
-                  this = (InventoryItem *)unaff_EBX;
-                  itemID = func_?();
-                  if (itemID == 0) goto code_?;
-                }
-                this = (InventoryItem *)&(value->fields).data;
-                func_?();
-                unaff_EBX.m_Index = (int)&itemID + 3;
-                itemID = CONCAT13(0x26,(undefined3)itemID);
-                pOVar1 = (Object *)func_?();
-                TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                        Object,UnityEngine::UIElements::TextureId]::
-                        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                  ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                   this_00,pOVar1,
-                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                  );
-                if (TVar2.m_Index == 0) goto code_?;
-                if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
-                    (TypeInfo__System__Boolean->_0).element_class) goto code_?;
-                pbVar5 = (bool *)func_?();
-                (value->fields).hasData = *pbVar5;
+     (pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__get_Item
+                         (itemData,pOVar1,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         ), pOVar1 != (Object *)0x0)) {
+    if ((pOVar1->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+      FUN_?(pOVar1);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    (this->fields).itemCategoryID = *(int32_t *)&pOVar1[1].klass;
+    auStackX_10[0] = 0xf;
+    pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
+    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (itemData,pOVar1,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if (pOVar1 != (Object *)0x0) {
+      if ((pOVar1->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+        FUN_?(pOVar1);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      (this->fields).itemTypeID = *(int32_t *)&pOVar1[1].klass;
+      auStackX_10[0] = 10;
+      pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
+      pSVar3 = (String *)
+               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__get_Item
+                         (itemData,pOVar1,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         );
+      pSVar4 = (String *)0x0;
+      if (pSVar3 == (String *)0x0) {
+        (this->fields).name = (String *)0x0;
+      }
+      else {
+        pSVar5 = pSVar4;
+        if (pSVar3->klass == pSRam0000000182db2460) {
+          pSVar5 = pSVar3;
+        }
+        if (pSVar5 == (String *)0x0) {
+          FUN_?();
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        (this->fields).name = pSVar5;
+        pSVar5 = pSVar4;
+        if (pSVar3->klass == pSRam0000000182db2460) {
+          pSVar5 = pSVar3;
+        }
+        if (pSVar5 == (String *)0x0) {
+          FUN_?();
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+      }
+      if (iRam_? != 0) {
+        uVar6 = (uint)((ulonglong)&(this->fields).name >> 0xc);
+        lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+          puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+          LOCK();
+          bVar10 = uVar8 == *puVar9;
+          if (bVar10) {
+            *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar10);
+      }
+      auStackX_10[0] = 0x67;
+      pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
+      pSVar3 = (String *)
+               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__get_Item
+                         (itemData,pOVar1,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         );
+      if (pSVar3 == (String *)0x0) {
+        (this->fields).description = (String *)0x0;
+      }
+      else {
+        pSVar5 = pSVar4;
+        if (pSVar3->klass == pSRam0000000182db2460) {
+          pSVar5 = pSVar3;
+        }
+        if (pSVar5 == (String *)0x0) {
+          FUN_?();
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        (this->fields).description = pSVar5;
+        pSVar5 = pSVar4;
+        if (pSVar3->klass == pSRam0000000182db2460) {
+          pSVar5 = pSVar3;
+        }
+        if (pSVar5 == (String *)0x0) {
+          FUN_?();
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+      }
+      if (iRam_? != 0) {
+        uVar6 = (uint)((ulonglong)&(this->fields).description >> 0xc);
+        lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+          puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+          LOCK();
+          bVar10 = uVar8 == *puVar9;
+          if (bVar10) {
+            *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar10);
+      }
+      auStackX_10[0] = 0x69;
+      pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
+      pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__get_Item
+                         (itemData,pOVar1,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         );
+      if (pOVar1 != (Object *)0x0) {
+        if ((pOVar1->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+          FUN_?(pOVar1);
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        bVar11 = *(bool *)&pOVar1[1].klass;
+        (this->fields).isDeleted = bVar11;
+        if (bVar11 == 0) {
+          auStackX_10[0] = 0xb;
+          pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
+          pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                   Object]::Dictionary_2_System_Object_System_Object__get_Item
+                             (itemData,pOVar1,
+                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                             );
+          pBVar12 = TypeInfo__System__Byte;
+          if (pOVar1 == (Object *)0x0) {
+            (this->fields).data = (Byte__Array *)0x0;
+          }
+          else {
+            pBVar13 = (Byte__Array *)FUN_?(pOVar1,TypeInfo__System__Byte);
+            if (pBVar13 == (Byte__Array *)0x0) {
+              FUN_?(pOVar1,pBVar12);
+              pcVar2 = (code *)swi(3);
+              (*pcVar2)();
+              return;
+            }
+            (this->fields).data = pBVar13;
+            pBVar12 = TypeInfo__System__Byte;
+            lVar7 = FUN_?(pOVar1,TypeInfo__System__Byte);
+            if (lVar7 == 0) {
+              FUN_?(pOVar1,pBVar12);
+              pcVar2 = (code *)swi(3);
+              (*pcVar2)();
+              return;
+            }
+          }
+          if (iRam_? != 0) {
+            uVar6 = (uint)((ulonglong)&(this->fields).data >> 0xc);
+            lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+            do {
+              uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+              puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+              LOCK();
+              bVar10 = uVar8 == *puVar9;
+              if (bVar10) {
+                *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
               }
-              this = (InventoryItem *)CONCAT13(100,this._0_3_);
-              pOVar1 = (Object *)func_?();
-              TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Object,UnityEngine::UIElements::TextureId]::
-                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                 this_00,pOVar1,
-                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                );
-              if (TVar2.m_Index == 0) goto code_?;
-              if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
-                  (TypeInfo__System__Boolean->_0).element_class) {
-                pbVar5 = (bool *)func_?();
-                (value->fields).resellable = *pbVar5;
-                uStack_4 = TypeInfo__System__Byte;
-                itemID = CONCAT13(0x4b,(undefined3)itemID);
-                pOVar1 = (Object *)func_?();
-                TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                        Object,UnityEngine::UIElements::TextureId]::
-                        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                  ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                   this_00,pOVar1,
-                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                  );
-                if (TVar2.m_Index == 0) goto code_?;
-                if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
-                    (TypeInfo__System__Int32->_0).element_class) {
-                  piVar3 = (int32_t *)func_?();
-                  (value->fields).priceGold = *piVar3;
-                  uStack_4 = TypeInfo__System__Byte;
-                  itemData = (Dictionary_2_System_Object_System_Object_ *)
-                             CONCAT13(0x68,itemData._0_3_);
-                  pOVar1 = (Object *)func_?();
-                  TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                          Object,UnityEngine::UIElements::TextureId]::
-                          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *
-                                     )this_00,pOVar1,
-                                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                    );
-                  if (TVar2.m_Index == 0) goto code_?;
-                  if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
-                      (TypeInfo__System__Int32->_0).element_class) {
-                    piVar3 = (int32_t *)func_?();
-                    (value->fields).shopInventoryID = *piVar3;
-                    uStack_4 = (Byte__Class *)
-                               CONCAT31((int3)((uint)TypeInfo__System__Byte >> 8),0x66);
-                    pOVar1 = (Object *)func_?();
-                    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                            Object,UnityEngine::UIElements::TextureId]::
-                            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
-                                        *)this_00,pOVar1,
-                                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                      );
-                    if (TVar2.m_Index == 0) goto code_?;
-                    if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
-                        (TypeInfo__System__Int32->_0).element_class) {
-                      piVar3 = (int32_t *)func_?();
-                      (value->fields).authorProfileID = *piVar3;
-                      uStack_4._2_2_ = (undefined2)((uint)TypeInfo__System__Byte >> 0x10);
-                      uStack_4._0_2_ = CONCAT11(0x6a,(char)TypeInfo__System__Byte);
-                      pOVar1 = (Object *)func_?();
-                      TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                              Object,UnityEngine::UIElements::TextureId]::
-                              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
-                                          *)this_00,pOVar1,
-                                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                        );
-                      if (TVar2.m_Index == 0) goto code_?;
-                      if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
-                          (TypeInfo__System__Int32->_0).element_class) {
-                        piVar3 = (int32_t *)func_?();
-                        (value->fields).originalItemID = *piVar3;
-                        uStack_4._3_1_ = (undefined1)((uint)TypeInfo__System__Byte >> 0x18);
-                        uStack_4._0_2_ = SUB42(TypeInfo__System__Byte,0);
-                        uStack_4._0_3_ = CONCAT12(0x22,(undefined2)uStack_4);
-                        pOVar1 = (Object *)func_?();
-                        bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                                Object,UnityEngine::UIElements::TextureId]::
-                                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
-                                            *)this_00,pOVar1,
-                                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                                          );
-                        if (bVar6 != 0) {
-                          itemData = (Dictionary_2_System_Object_System_Object_ *)((int)&this + 3);
-                          itemID = (int32_t)TypeInfo__System__Byte;
-                          this = (InventoryItem *)&UNK_?;
-                          pOVar1 = (Object *)func_?();
-                          TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                                  Object,UnityEngine::UIElements::TextureId]::
-                                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
-                                              *)this_00,pOVar1,
-                                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                            );
-                          if (TVar2.m_Index == 0) goto code_?;
-                          if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
-                              (TypeInfo__System__Boolean->_0).element_class) goto code_?;
-                          pbVar5 = (bool *)func_?();
-                          (value->fields).purchased = *pbVar5;
+              UNLOCK();
+            } while (!bVar10);
+          }
+          auStackX_10[0] = 0x26;
+          pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
+          pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                   Object]::Dictionary_2_System_Object_System_Object__get_Item
+                             (itemData,pOVar1,
+                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                             );
+          if (pOVar1 == (Object *)0x0) goto code_?;
+          if ((pOVar1->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+            FUN_?(pOVar1,lRam_?);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          (this->fields).hasData = *(bool *)&pOVar1[1].klass;
+        }
+        auStackX_10[0] = 100;
+        pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
+        pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                 Object]::Dictionary_2_System_Object_System_Object__get_Item
+                           (itemData,pOVar1,
+                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                           );
+        if (pOVar1 != (Object *)0x0) {
+          if ((pOVar1->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+            FUN_?(pOVar1);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          (this->fields).resellable = *(bool *)&pOVar1[1].klass;
+          auStackX_10[0] = 0x4b;
+          pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
+          pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                   Object]::Dictionary_2_System_Object_System_Object__get_Item
+                             (itemData,pOVar1,
+                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                             );
+          if (pOVar1 != (Object *)0x0) {
+            if ((pOVar1->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40))
+            {
+              FUN_?(pOVar1);
+              pcVar2 = (code *)swi(3);
+              (*pcVar2)();
+              return;
+            }
+            (this->fields).priceGold = *(int32_t *)&pOVar1[1].klass;
+            auStackX_10[0] = 0x68;
+            pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
+            pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
+                     ::Object]::Dictionary_2_System_Object_System_Object__get_Item
+                               (itemData,pOVar1,
+                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                               );
+            if (pOVar1 != (Object *)0x0) {
+              if ((pOVar1->klass->_0).element_class !=
+                  *(Il2CppClass **)(lRam_? + 0x40)) {
+                FUN_?(pOVar1);
+                pcVar2 = (code *)swi(3);
+                (*pcVar2)();
+                return;
+              }
+              (this->fields).shopInventoryID = *(int32_t *)&pOVar1[1].klass;
+              auStackX_10[0] = 0x66;
+              pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
+              pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                       Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
+                                 (itemData,pOVar1,
+                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                 );
+              if (pOVar1 != (Object *)0x0) {
+                if ((pOVar1->klass->_0).element_class !=
+                    *(Il2CppClass **)(lRam_? + 0x40)) {
+                  FUN_?(pOVar1);
+                  pcVar2 = (code *)swi(3);
+                  (*pcVar2)();
+                  return;
+                }
+                (this->fields).authorProfileID = *(int32_t *)&pOVar1[1].klass;
+                auStackX_10[0] = 0x6a;
+                pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
+                pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                         Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
+                                   (itemData,pOVar1,
+                                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                   );
+                if (pOVar1 != (Object *)0x0) {
+                  if ((pOVar1->klass->_0).element_class !=
+                      *(Il2CppClass **)(lRam_? + 0x40)) {
+                    FUN_?(pOVar1);
+                    pcVar2 = (code *)swi(3);
+                    (*pcVar2)();
+                    return;
+                  }
+                  (this->fields).originalItemID = *(int32_t *)&pOVar1[1].klass;
+                  auStackX_10[0] = 0x22;
+                  pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
+                  iVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                          Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::
+                          Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
+                                    ((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                                      *)itemData,pOVar1,
+                                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                                     ->klass->rgctx_data[0x21].method);
+                  if (-1 < iVar14) {
+                    auStackX_10[0] = 0x22;
+                    pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
+                    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                             Object,System::Object]::
+                             Dictionary_2_System_Object_System_Object__get_Item
+                                       (itemData,pOVar1,
+                                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                       );
+                    if (pOVar1 == (Object *)0x0) goto code_?;
+                    if ((pOVar1->klass->_0).element_class !=
+                        *(Il2CppClass **)(lRam_? + 0x40)) {
+                      FUN_?(pOVar1,lRam_?);
+                      pcVar2 = (code *)swi(3);
+                      (*pcVar2)();
+                      return;
+                    }
+                    (this->fields).purchased = *(bool *)&pOVar1[1].klass;
+                  }
+                  auStackX_10[0] = 0x89;
+                  pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
+                  pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                           Object,System::Object]::
+                           Dictionary_2_System_Object_System_Object__get_Item
+                                     (itemData,pOVar1,
+                                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                     );
+                  if (pOVar1 != (Object *)0x0) {
+                    if ((pOVar1->klass->_0).element_class !=
+                        *(Il2CppClass **)(lRam_? + 0x40)) {
+                      FUN_?(pOVar1);
+                      pcVar2 = (code *)swi(3);
+                      (*pcVar2)();
+                      return;
+                    }
+                    (this->fields).isDefaultInvItem = *(bool *)&pOVar1[1].klass;
+                    auStackX_10[0] = 0xc;
+                    pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
+                    iVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                            Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::
+                            Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
+                                      ((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                                        *)itemData,pOVar1,
+                                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                                       ->klass->rgctx_data[0x21].method);
+                    if (-1 < iVar14) {
+                      auStackX_10[0] = 0xc;
+                      pOVar1 = (Object *)FUN_?(uRam_?,auStackX_10);
+                      pSVar3 = (String *)
+                               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                               Object,System::Object]::
+                               Dictionary_2_System_Object_System_Object__get_Item
+                                         (itemData,pOVar1,
+                                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                         );
+                      if (pSVar3 == (String *)0x0) {
+                        (this->fields).imagePath = (String *)0x0;
+                      }
+                      else {
+                        pSVar5 = pSVar4;
+                        if (pSVar3->klass == pSRam0000000182db2460) {
+                          pSVar5 = pSVar3;
                         }
-                        itemData = (Dictionary_2_System_Object_System_Object_ *)((int)&this + 3);
-                        itemID = (int32_t)TypeInfo__System__Byte;
-                        this = (InventoryItem *)&UNK_?;
-                        pOVar1 = (Object *)func_?();
-                        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                                Object,UnityEngine::UIElements::TextureId]::
-                                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
-                                            *)this_00,pOVar1,
-                                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                          );
-                        if (TVar2.m_Index == 0) goto code_?;
-                        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
-                            (TypeInfo__System__Boolean->_0).element_class) {
-                          pbVar5 = (bool *)func_?();
-                          (value->fields).isDefaultInvItem = *pbVar5;
-                          uStack_4 = TypeInfo__System__Byte;
-                          itemID = CONCAT13(0xc,(undefined3)itemID);
-                          pOVar1 = (Object *)func_?();
-                          bVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                                  Object,UnityEngine::UIElements::TextureId]::
-                                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
-                                              *)this_00,pOVar1,
-                                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                                            );
-                          if (bVar6 == 0) {
-                            return;
-                          }
-                          itemData = (Dictionary_2_System_Object_System_Object_ *)((int)&this + 3);
-                          itemID = (int32_t)TypeInfo__System__Byte;
-                          this = (InventoryItem *)&UNK_?;
-                          pOVar1 = (Object *)func_?();
-                          TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                                  Object,UnityEngine::UIElements::TextureId]::
-                                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_
-                                              *)this_00,pOVar1,
-                                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                            );
-                          if (TVar2.m_Index == 0) {
-                            (value->fields).imagePath = (String *)0x0;
-                            func_?();
-                            return;
-                          }
-                          TVar8.m_Index = (int32_t)(String *)0x0;
-                          if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
-                            TVar8 = TVar2;
-                          }
-                          if ((String *)TVar8.m_Index != (String *)0x0) {
-                            (value->fields).imagePath = (String *)TVar8.m_Index;
-                            TVar8.m_Index = 0;
-                            if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
-                              TVar8 = TVar2;
-                            }
-                            if (TVar8.m_Index != 0) {
-                              func_?();
-                              return;
-                            }
-                          }
+                        if (pSVar5 == (String *)0x0) {
+                          FUN_?(pSVar3);
+                          pcVar2 = (code *)swi(3);
+                          (*pcVar2)();
+                          return;
+                        }
+                        (this->fields).imagePath = pSVar5;
+                        if (pSVar3->klass == pSRam0000000182db2460) {
+                          pSVar4 = pSVar3;
+                        }
+                        if (pSVar4 == (String *)0x0) {
+                          FUN_?(pSVar3);
+                          pcVar2 = (code *)swi(3);
+                          (*pcVar2)();
+                          return;
                         }
                       }
+                      if (iRam_? != 0) {
+                        uVar6 = (uint)((ulonglong)&(this->fields).imagePath >> 0xc);
+                        lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+                        do {
+                          uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+                          puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+                          LOCK();
+                          bVar10 = uVar8 == *puVar9;
+                          if (bVar10) {
+                            *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+                          }
+                          UNLOCK();
+                        } while (!bVar10);
+                      }
                     }
+                    return;
                   }
                 }
               }
             }
           }
-          else {
-            TVar8.m_Index = (int32_t)(String *)0x0;
-            if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
-              TVar8 = TVar2;
-            }
-            if ((String *)TVar8.m_Index != (String *)0x0) {
-              (value->fields).description = (String *)TVar8.m_Index;
-              TVar8.m_Index = 0;
-              if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
-                TVar8 = TVar2;
-              }
-              if (TVar8.m_Index != 0) goto code_?;
-            }
-          }
-        }
-        else {
-          TVar8.m_Index = (int32_t)(String *)0x0;
-          if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
-            TVar8 = TVar2;
-          }
-          if ((String *)TVar8.m_Index != (String *)0x0) {
-            (value->fields).name = (String *)TVar8.m_Index;
-            TVar8.m_Index = 0;
-            if (*(String__Class **)TVar2.m_Index == TypeInfo__System__String) {
-              TVar8 = TVar2;
-            }
-            if (TVar8.m_Index != 0) goto code_?;
-          }
         }
       }
     }
-code_?:
-    func_?();
   }
 code_?:
-  func_?();
-code_?:
-  itemID = (int32_t)itemData;
-  this = (InventoryItem *)unaff_EBX.m_Index;
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -2544,31 +2580,67 @@ void Assembly-CSharp.dll::InventoryItem::InventoryItem__ctor_3
 {
   (this->fields).hasData = 1;
   (this->fields).purchased = 1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  if (itemToCopy != (ShopItem *)0x0) {
-    (this->fields).itemID = (itemToCopy->fields).itemID;
-    (this->fields).itemCategoryID = (itemToCopy->fields).itemCategoryID;
-    (this->fields).itemTypeID = (itemToCopy->fields).itemTypeID;
-    pSVar1 = (itemToCopy->fields).name;
-    (this->fields).name = pSVar1;
-    func_?(&(this->fields).name,pSVar1);
-    pSVar1 = (itemToCopy->fields).description;
-    (this->fields).description = pSVar1;
-    func_?(&(this->fields).description,pSVar1);
-    (this->fields).isDeleted = 0;
-    pBVar2 = (itemToCopy->fields).data;
-    (this->fields).data = pBVar2;
-    func_?(&(this->fields).data,pBVar2);
-    (this->fields).resellable = (itemToCopy->fields).resellable;
-    (this->fields).priceGold = (itemToCopy->fields).priceGold;
-    (this->fields).purchased = 1;
-    (this->fields).isDefaultInvItem = 0;
+  if (itemToCopy == (ShopItem *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  (this->fields).itemID = (itemToCopy->fields).itemID;
+  (this->fields).itemCategoryID = (itemToCopy->fields).itemCategoryID;
+  (this->fields).itemTypeID = (itemToCopy->fields).itemTypeID;
+  (this->fields).name = (itemToCopy->fields).name;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).name >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
+  iVar7 = iRam_?;
+  (this->fields).description = (itemToCopy->fields).description;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).description >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).isDeleted = 0;
+  (this->fields).data = (itemToCopy->fields).data;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).data >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
+  (this->fields).resellable = (itemToCopy->fields).resellable;
+  (this->fields).priceGold = (itemToCopy->fields).priceGold;
+  (this->fields).purchased = 1;
+  (this->fields).isDefaultInvItem = 0;
   return;
 }
 

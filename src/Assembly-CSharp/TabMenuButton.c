@@ -6,44 +6,87 @@ void Assembly-CSharp.dll::TabMenuButton::TabMenuButton_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__TabMenuButton____c__DisplayClass2_0___Initialize_b__0__);
-    func_?(&TypeInfo__TabMenuButton____c__DisplayClass2_0);
-    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    FUN_?(&MethodInfo__TabMenuButton____c__DisplayClass2_0___Initialize_b__0__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__TabMenuButton____c__DisplayClass2_0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__TabMenuButton____c__DisplayClass2_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value != (Object *)0x0) {
-    value[1].klass = (Object__Class *)this;
-    func_?(value + 1,this);
-    value[1].monitor = (MonitorData *)tabId;
-    pTVar1 = (this->fields).buttonText;
-    if (pTVar1 != (Text *)0x0) {
-      (*(code *)(pTVar1->klass->vtable).set_text.method)
-                (pTVar1,categoryName,
-                 (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-      pBVar2 = (this->fields).button;
-      if (pBVar2 != (Button *)0x0) {
-        this_00 = (UnityEvent *)(pBVar2->fields).m_OnClick;
-        this_01 = (NavMesh_OnNavMeshPreUpdate *)
-                  func_?(TypeInfo__UnityEngine__Events__UnityAction);
+  object = (Object *)FUN_?(TypeInfo__TabMenuButton____c__DisplayClass2_0);
+  if (object != (Object *)0x0) {
+    bVar1 = iRam_? != 0;
+    object[1].klass = (Object__Class *)this;
+    if (bVar1) {
+      uVar2 = (uint)((ulonglong)(object + 1) >> 0xc);
+      puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar4 = *puVar3;
+        LOCK();
+        uVar5 = *puVar3;
+        if (uVar4 == uVar5) {
+          *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar4 != uVar5);
+    }
+    *(int32_t *)&object[1].monitor = tabId;
+    pTVar6 = (this->fields).buttonText;
+    if (pTVar6 != (Text *)0x0) {
+      (*(pTVar6->klass->vtable).set_text.methodPtr)
+                (pTVar6,categoryName,(pTVar6->klass->vtable).set_text.method);
+      pBVar7 = (this->fields).button;
+      if (pBVar7 != (Button *)0x0) {
+        pBVar8 = (pBVar7->fields).m_OnClick;
+        this_00 = (NavMesh_OnNavMeshPreUpdate *)
+                  FUN_?(TypeInfo__UnityEngine__Events__UnityAction);
         UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
         NavMesh_OnNavMeshPreUpdate__ctor
-                  (this_01,value,MethodInfo__TabMenuButton____c__DisplayClass2_0___Initialize_b__0__
-                   ,(MethodInfo *)0x0);
-        if (this_00 != (UnityEvent *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
-                    (this_00,(UnityAction *)this_01,(MethodInfo *)0x0);
+                  (this_00,object,
+                   MethodInfo__TabMenuButton____c__DisplayClass2_0___Initialize_b__0__,
+                   (MethodInfo *)0x0);
+        if (pBVar8 != (Button_ButtonClickedEvent *)0x0) {
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Events__InvokableCall);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          this_01 = (InvokableCall *)FUN_?(TypeInfo__UnityEngine__Events__InvokableCall);
+          UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_add_Delegate
+                    (this_01,(UnityAction *)this_00,(MethodInfo *)0x0);
+          pIVar9 = (pBVar8->fields)._._.m_Calls;
+          if (pIVar9 != (InvokableCallList *)0x0) {
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__Add_UnityEngine__Events__BaseInvokableCall_
+                           );
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pLVar10 = (pIVar9->fields).m_RuntimeCalls;
+            if (pLVar10 != (List_1_UnityEngine_Events_BaseInvokableCall_ *)0x0) {
+              FUN_?(pLVar10,this_01);
+              (pIVar9->fields).m_NeedsUpdate = 1;
+              return;
+            }
+          }
+          FUN_?();
+          pcVar11 = (code *)swi(3);
+          (*pcVar11)();
           return;
         }
       }
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -55,63 +98,59 @@ void Assembly-CSharp.dll::TabMenuButton::TabMenuButton_SetAsDeselected
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__UI__ColorBlock);
+    FUN_?(&TypeInfo__UnityEngine__UI__ColorBlock);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pBVar1 = (this->fields).button;
   if (pBVar1 != (Button *)0x0) {
-    fVar2 = (pBVar1->fields)._.m_Colors.m_HighlightedColor.r;
-    fVar3 = (pBVar1->fields)._.m_Colors.m_HighlightedColor.g;
-    fVar4 = (pBVar1->fields)._.m_Colors.m_HighlightedColor.b;
-    fVar5 = (pBVar1->fields)._.m_Colors.m_HighlightedColor.a;
-    fVar6 = (pBVar1->fields)._.m_Colors.m_PressedColor.r;
-    fVar7 = (pBVar1->fields)._.m_Colors.m_PressedColor.g;
-    fVar8 = (pBVar1->fields)._.m_Colors.m_PressedColor.b;
-    fVar9 = (pBVar1->fields)._.m_Colors.m_PressedColor.a;
-    fVar10 = (pBVar1->fields)._.m_Colors.m_SelectedColor.r;
-    fVar11 = (pBVar1->fields)._.m_Colors.m_SelectedColor.g;
-    fVar12 = (pBVar1->fields)._.m_Colors.m_SelectedColor.b;
-    fVar13 = (pBVar1->fields)._.m_Colors.m_SelectedColor.a;
-    uVar14 = (pBVar1->fields)._.m_Colors.m_ColorMultiplier;
-    uVar15 = (pBVar1->fields)._.m_Colors.m_FadeDuration;
-    pCVar16 = &(pBVar1->fields)._.m_Colors.m_DisabledColor;
-    fVar17 = pCVar16->r;
-    fVar18 = (pBVar1->fields)._.m_Colors.m_DisabledColor.g;
-    fVar19 = (pBVar1->fields)._.m_Colors.m_DisabledColor.b;
-    fVar20 = (pBVar1->fields)._.m_Colors.m_DisabledColor.a;
-    CVar21 = *pCVar16;
-    if ((TypeInfo__UnityEngine__UI__ColorBlock->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__UI__ColorBlock);
+    aCStack_2[0].m_NormalColor.r = (pBVar1->fields)._.m_Colors.m_NormalColor.r;
+    aCStack_2[0].m_NormalColor.g = (pBVar1->fields)._.m_Colors.m_NormalColor.g;
+    aCStack_2[0].m_NormalColor.b = (pBVar1->fields)._.m_Colors.m_NormalColor.b;
+    aCStack_2[0].m_NormalColor.a = (pBVar1->fields)._.m_Colors.m_NormalColor.a;
+    uVar3._0_4_ = (pBVar1->fields)._.m_Colors.m_HighlightedColor.r;
+    uVar3._4_4_ = (pBVar1->fields)._.m_Colors.m_HighlightedColor.g;
+    uVar4._0_4_ = (pBVar1->fields)._.m_Colors.m_HighlightedColor.b;
+    uVar4._4_4_ = (pBVar1->fields)._.m_Colors.m_HighlightedColor.a;
+    uVar5._0_4_ = (pBVar1->fields)._.m_Colors.m_PressedColor.r;
+    uVar5._4_4_ = (pBVar1->fields)._.m_Colors.m_PressedColor.g;
+    uVar6._0_4_ = (pBVar1->fields)._.m_Colors.m_PressedColor.b;
+    uVar6._4_4_ = (pBVar1->fields)._.m_Colors.m_PressedColor.a;
+    uVar7._0_4_ = (pBVar1->fields)._.m_Colors.m_SelectedColor.r;
+    uVar7._4_4_ = (pBVar1->fields)._.m_Colors.m_SelectedColor.g;
+    uVar8._0_4_ = (pBVar1->fields)._.m_Colors.m_SelectedColor.b;
+    uVar8._4_4_ = (pBVar1->fields)._.m_Colors.m_SelectedColor.a;
+    uVar9._0_4_ = (pBVar1->fields)._.m_Colors.m_DisabledColor.r;
+    uVar9._4_4_ = (pBVar1->fields)._.m_Colors.m_DisabledColor.g;
+    uVar10._0_4_ = (pBVar1->fields)._.m_Colors.m_DisabledColor.b;
+    uVar10._4_4_ = (pBVar1->fields)._.m_Colors.m_DisabledColor.a;
+    uVar11._0_4_ = (pBVar1->fields)._.m_Colors.m_ColorMultiplier;
+    uVar11._4_4_ = (pBVar1->fields)._.m_Colors.m_FadeDuration;
+    if (*(int *)&(TypeInfo__UnityEngine__UI__ColorBlock->_1).field_0x1c == 0) {
+      FUN_?();
     }
     pBVar1 = (this->fields).button;
     if (pBVar1 != (Button *)0x0) {
-      value.m_HighlightedColor.r = fVar2;
-      value.m_NormalColor = CVar21;
-      value.m_HighlightedColor.g = fVar3;
-      value.m_HighlightedColor.b = fVar4;
-      value.m_HighlightedColor.a = fVar5;
-      value.m_PressedColor.r = fVar6;
-      value.m_PressedColor.g = fVar7;
-      value.m_PressedColor.b = fVar8;
-      value.m_PressedColor.a = fVar9;
-      value.m_SelectedColor.r = fVar10;
-      value.m_SelectedColor.g = fVar11;
-      value.m_SelectedColor.b = fVar12;
-      value.m_SelectedColor.a = fVar13;
-      value.m_DisabledColor.r = fVar17;
-      value.m_DisabledColor.g = fVar18;
-      value.m_DisabledColor.b = fVar19;
-      value.m_DisabledColor.a = fVar20;
-      value.m_ColorMultiplier = (float)uVar14;
-      value.m_FadeDuration = (float)uVar15;
+      aCStack_2[0].m_NormalColor._0_8_ = uVar9;
+      aCStack_2[0].m_NormalColor._8_8_ = uVar10;
+      aCStack_2[0].m_HighlightedColor._0_8_ = uVar3;
+      aCStack_2[0].m_HighlightedColor._8_8_ = uVar4;
+      aCStack_2[0].m_PressedColor._0_8_ = uVar5;
+      aCStack_2[0].m_PressedColor._8_8_ = uVar6;
+      aCStack_2[0].m_SelectedColor._0_8_ = uVar7;
+      aCStack_2[0].m_SelectedColor._8_8_ = uVar8;
+      aCStack_2[0].m_DisabledColor._0_8_ = uVar9;
+      aCStack_2[0].m_DisabledColor._8_8_ = uVar10;
+      aCStack_2[0]._80_8_ = uVar11;
       UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_set_colors
-                ((Selectable *)pBVar1,value,(MethodInfo *)0x0);
+                ((Selectable *)pBVar1,aCStack_2,(MethodInfo *)0x0);
       return;
     }
   }
-  func_?();
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  FUN_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -123,63 +162,59 @@ void Assembly-CSharp.dll::TabMenuButton::TabMenuButton_SetAsSelected
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__UI__ColorBlock);
+    FUN_?(&TypeInfo__UnityEngine__UI__ColorBlock);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pBVar1 = (this->fields).button;
   if (pBVar1 != (Button *)0x0) {
-    fVar2 = (pBVar1->fields)._.m_Colors.m_HighlightedColor.r;
-    fVar3 = (pBVar1->fields)._.m_Colors.m_HighlightedColor.g;
-    fVar4 = (pBVar1->fields)._.m_Colors.m_HighlightedColor.b;
-    fVar5 = (pBVar1->fields)._.m_Colors.m_HighlightedColor.a;
-    fVar6 = (pBVar1->fields)._.m_Colors.m_SelectedColor.r;
-    fVar7 = (pBVar1->fields)._.m_Colors.m_SelectedColor.g;
-    fVar8 = (pBVar1->fields)._.m_Colors.m_SelectedColor.b;
-    fVar9 = (pBVar1->fields)._.m_Colors.m_SelectedColor.a;
-    fVar10 = (pBVar1->fields)._.m_Colors.m_DisabledColor.r;
-    fVar11 = (pBVar1->fields)._.m_Colors.m_DisabledColor.g;
-    fVar12 = (pBVar1->fields)._.m_Colors.m_DisabledColor.b;
-    fVar13 = (pBVar1->fields)._.m_Colors.m_DisabledColor.a;
-    uVar14 = (pBVar1->fields)._.m_Colors.m_ColorMultiplier;
-    uVar15 = (pBVar1->fields)._.m_Colors.m_FadeDuration;
-    pCVar16 = &(pBVar1->fields)._.m_Colors.m_PressedColor;
-    fVar17 = pCVar16->r;
-    fVar18 = (pBVar1->fields)._.m_Colors.m_PressedColor.g;
-    fVar19 = (pBVar1->fields)._.m_Colors.m_PressedColor.b;
-    fVar20 = (pBVar1->fields)._.m_Colors.m_PressedColor.a;
-    CVar21 = *pCVar16;
-    if ((TypeInfo__UnityEngine__UI__ColorBlock->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__UI__ColorBlock);
+    aCStack_2[0].m_NormalColor.r = (pBVar1->fields)._.m_Colors.m_NormalColor.r;
+    aCStack_2[0].m_NormalColor.g = (pBVar1->fields)._.m_Colors.m_NormalColor.g;
+    aCStack_2[0].m_NormalColor.b = (pBVar1->fields)._.m_Colors.m_NormalColor.b;
+    aCStack_2[0].m_NormalColor.a = (pBVar1->fields)._.m_Colors.m_NormalColor.a;
+    uVar3._0_4_ = (pBVar1->fields)._.m_Colors.m_HighlightedColor.r;
+    uVar3._4_4_ = (pBVar1->fields)._.m_Colors.m_HighlightedColor.g;
+    uVar4._0_4_ = (pBVar1->fields)._.m_Colors.m_HighlightedColor.b;
+    uVar4._4_4_ = (pBVar1->fields)._.m_Colors.m_HighlightedColor.a;
+    uVar5._0_4_ = (pBVar1->fields)._.m_Colors.m_PressedColor.r;
+    uVar5._4_4_ = (pBVar1->fields)._.m_Colors.m_PressedColor.g;
+    uVar6._0_4_ = (pBVar1->fields)._.m_Colors.m_PressedColor.b;
+    uVar6._4_4_ = (pBVar1->fields)._.m_Colors.m_PressedColor.a;
+    uVar7._0_4_ = (pBVar1->fields)._.m_Colors.m_SelectedColor.r;
+    uVar7._4_4_ = (pBVar1->fields)._.m_Colors.m_SelectedColor.g;
+    uVar8._0_4_ = (pBVar1->fields)._.m_Colors.m_SelectedColor.b;
+    uVar8._4_4_ = (pBVar1->fields)._.m_Colors.m_SelectedColor.a;
+    uVar9._0_4_ = (pBVar1->fields)._.m_Colors.m_DisabledColor.r;
+    uVar9._4_4_ = (pBVar1->fields)._.m_Colors.m_DisabledColor.g;
+    uVar10._0_4_ = (pBVar1->fields)._.m_Colors.m_DisabledColor.b;
+    uVar10._4_4_ = (pBVar1->fields)._.m_Colors.m_DisabledColor.a;
+    uVar11._0_4_ = (pBVar1->fields)._.m_Colors.m_ColorMultiplier;
+    uVar11._4_4_ = (pBVar1->fields)._.m_Colors.m_FadeDuration;
+    if (*(int *)&(TypeInfo__UnityEngine__UI__ColorBlock->_1).field_0x1c == 0) {
+      FUN_?();
     }
     pBVar1 = (this->fields).button;
     if (pBVar1 != (Button *)0x0) {
-      value.m_HighlightedColor.r = fVar2;
-      value.m_NormalColor = CVar21;
-      value.m_HighlightedColor.g = fVar3;
-      value.m_HighlightedColor.b = fVar4;
-      value.m_HighlightedColor.a = fVar5;
-      value.m_PressedColor.r = fVar17;
-      value.m_PressedColor.g = fVar18;
-      value.m_PressedColor.b = fVar19;
-      value.m_PressedColor.a = fVar20;
-      value.m_SelectedColor.r = fVar6;
-      value.m_SelectedColor.g = fVar7;
-      value.m_SelectedColor.b = fVar8;
-      value.m_SelectedColor.a = fVar9;
-      value.m_DisabledColor.r = fVar10;
-      value.m_DisabledColor.g = fVar11;
-      value.m_DisabledColor.b = fVar12;
-      value.m_DisabledColor.a = fVar13;
-      value.m_ColorMultiplier = (float)uVar14;
-      value.m_FadeDuration = (float)uVar15;
+      aCStack_2[0].m_NormalColor._0_8_ = uVar5;
+      aCStack_2[0].m_NormalColor._8_8_ = uVar6;
+      aCStack_2[0].m_HighlightedColor._0_8_ = uVar3;
+      aCStack_2[0].m_HighlightedColor._8_8_ = uVar4;
+      aCStack_2[0].m_PressedColor._0_8_ = uVar5;
+      aCStack_2[0].m_PressedColor._8_8_ = uVar6;
+      aCStack_2[0].m_SelectedColor._0_8_ = uVar7;
+      aCStack_2[0].m_SelectedColor._8_8_ = uVar8;
+      aCStack_2[0].m_DisabledColor._0_8_ = uVar9;
+      aCStack_2[0].m_DisabledColor._8_8_ = uVar10;
+      aCStack_2[0]._80_8_ = uVar11;
       UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_set_colors
-                ((Selectable *)pBVar1,value,(MethodInfo *)0x0);
+                ((Selectable *)pBVar1,aCStack_2,(MethodInfo *)0x0);
       return;
     }
   }
-  func_?();
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  FUN_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

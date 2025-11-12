@@ -6,57 +6,110 @@ void Assembly-CSharp.dll::ScaleAnimation::ScaleAnimation_Awake
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields)._.target;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
-code_?:
-    pAVar3 = (this->fields).animationCurve;
-    if (pAVar3 != (AnimationCurve *)0x0) {
-      pKVar4 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_GetKeys
-                         (pAVar3,(MethodInfo *)0x0);
-      pAVar3 = (this->fields).animationCurve;
-      if (pAVar3 != (AnimationCurve *)0x0) {
-        iVar5 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_get_length
-                          (pAVar3,(MethodInfo *)0x0);
-        if (pKVar4 != (Keyframe__Array *)0x0) {
-          if (iVar5 - 1U < pKVar4->max_length) {
-            fVar6 = mscorlib.dll::System::Collections::Generic::KeyValuePair`2[System::Single,System
-                    ::Single]::KeyValuePair_2_System_Single_System_Single__get_Key
-                              ((KeyValuePair_2_System_Single_System_Single_ *)
-                               (pKVar4->vector + iVar5 + -1),(MethodInfo *)0x0);
-            (this->fields).doneTime = fVar6;
-            return;
-          }
-          goto code_?;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pTVar1 != (Transform *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((pTVar1->fields)._._.m_CachedPtr != (void *)0x0) {
+      pTVar1 = (this->fields)._.target;
+      if (pTVar1 == (Transform *)0x0) goto code_?;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pvVar2 = (pTVar1->fields)._._.m_CachedPtr;
+      if (pvVar2 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar1,(MethodInfo *)0x0);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pcVar3 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+        uVar4 = func_?(&UNK_?);
+        FUN_?(uVar4,0);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pcRam_? = pcVar3;
+      (*pcRam_?)(pvVar2);
+      (this->fields)._.originalScale.x = 0.0;
+      (this->fields)._.originalScale.y = 0.0;
+      (this->fields)._.originalScale.z = 0.0;
+    }
+  }
+  pAVar5 = (this->fields).animationCurve;
+  if (pAVar5 != (AnimationCurve *)0x0) {
+    pKVar6 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_get_keys
+                       (pAVar5,(MethodInfo *)0x0);
+    pAVar5 = (this->fields).animationCurve;
+    if (pAVar5 != (AnimationCurve *)0x0) {
+      pvVar2 = (pAVar5->fields).m_Ptr;
+      if (pvVar2 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pAVar5,(MethodInfo *)0x0);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pcVar3 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+        uVar4 = func_?(&UNK_?);
+        FUN_?(uVar4,0);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pcRam_? = pcVar3;
+      iVar7 = (*pcRam_?)(pvVar2);
+      if (pKVar6 != (Keyframe__Array *)0x0) {
+        if ((uint)pKVar6->max_length <= iVar7 - 1U) {
+          FUN_?();
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
         }
+        (this->fields).doneTime = pKVar6->vector[(longlong)iVar7 + -1].m_Time;
+        return;
       }
     }
   }
-  else {
-    pTVar1 = (this->fields)._.target;
-    if (pTVar1 != (Transform *)0x0) {
-      pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                         ((Vector3 *)&stack0xfffffff0,pTVar1,(MethodInfo *)0x0);
-      fVar8 = pVVar7->y;
-      fVar6 = pVVar7->z;
-      (this->fields)._.originalScale.x = pVVar7->x;
-      (this->fields)._.originalScale.y = fVar8;
-      (this->fields)._.originalScale.z = fVar6;
-      goto code_?;
-    }
-  }
-  func_?();
 code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -67,9 +120,19 @@ void Assembly-CSharp.dll::ScaleAnimation::ScaleAnimation_Play
                (ScaleAnimation *this,float offsetTime,MethodInfo *method)
 
 {
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  (this->fields).beginTime = fVar1 - offsetTime;
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  fVar3 = (float)(*pcRam_?)();
   (this->fields)._.state = 2;
+  (this->fields).beginTime = fVar3 - offsetTime;
   return;
 }
 
@@ -80,34 +143,91 @@ void Assembly-CSharp.dll::ScaleAnimation::ScaleAnimation_Stop
                (ScaleAnimation *this,MethodInfo *method)
 
 {
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  fVar1 = fVar1 - (this->fields).beginTime;
-  fVar2 = (this->fields)._.originalScale.z;
-  this_00 = (this->fields)._.target;
-  this_01 = (this->fields).animationCurve;
-  fVar3 = (this->fields)._.originalScale.x;
-  fVar4 = (this->fields)._.originalScale.y;
-  if (this_01 != (AnimationCurve *)0x0) {
-    fVar5 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                      (this_01,(this->fields).doneTime,(MethodInfo *)0x0);
-    fVar2 = fVar2 * fVar5;
-    if (this_00 != (Transform *)0x0) {
-      value.y = fVar4 * fVar5;
-      value.x = fVar3 * fVar5;
-      value.z = fVar2;
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                (this_00,value,(MethodInfo *)0x0);
-      pSVar6 = (this->fields)._.OnScaleAnimationStopped;
-      (this->fields)._.state = 1;
-      if (pSVar6 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
-        (*(pSVar6->fields)._._.invoke_impl)((pSVar6->fields)._._.method_code);
-      }
-      return;
-    }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
   }
-  func_?(fVar2,fVar1);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  pcRam_? = pcVar1;
+  fVar3 = (float)(*pcRam_?)();
+  obj = (this->fields).animationCurve;
+  uStack_4._0_4_ = (this->fields)._.originalScale.x;
+  uStack_4._4_4_ = (this->fields)._.originalScale.y;
+  obj_00 = (this->fields)._.target;
+  fVar5 = (this->fields)._.originalScale.z;
+  fVar6 = (this->fields).beginTime;
+  if (obj == (AnimationCurve *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pvVar7 = (obj->fields).m_Ptr;
+  if (pvVar7 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  fVar8 = (this->fields).doneTime;
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  fVar8 = (float)(*pcRam_?)(pvVar7,fVar8);
+  fStack_9 = fVar5 * fVar8;
+  if (obj_00 == (Transform *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  uStack_4 = CONCAT44(uStack_4._4_4_ * fVar8,(float)uStack_4 * fVar8);
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar7 = (obj_00->fields)._._.m_CachedPtr;
+  if (pvVar7 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj_00,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(pvVar7,&uStack_4);
+  pSVar10 = (this->fields)._.OnScaleAnimationStopped;
+  (this->fields)._.state = 1;
+  if (pSVar10 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
+    (*(pSVar10->fields)._._.invoke_impl)
+              ((pSVar10->fields)._._.method_code,(fVar3 - fVar6) - (this->fields).doneTime,
+               (pSVar10->fields)._._.method);
+  }
   return;
 }
 
@@ -121,8 +241,11 @@ void Assembly-CSharp.dll::ScaleAnimation::ScaleAnimation_Stopped
   (this->fields)._.state = 1;
   pSVar1 = (this->fields)._.OnScaleAnimationStopped;
   if (pSVar1 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
     (*(pSVar1->fields)._._.invoke_impl)
               ((pSVar1->fields)._._.method_code,extraTime,(pSVar1->fields)._._.method);
+    return;
   }
   return;
 }
@@ -135,57 +258,158 @@ void Assembly-CSharp.dll::ScaleAnimation::ScaleAnimation_Update
 
 {
   if ((this->fields)._.testState == 2) {
-    (*(code *)(this->klass->vtable).Play.method)(this,0,this->klass[1]._0.image);
+    (*(this->klass->vtable).Play.methodPtr)(this,0,(this->klass->vtable).Play.method);
     (this->fields)._.testState = 0;
   }
-  if ((this->fields)._.state != 2) {
-    return;
-  }
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  this_00 = (this->fields)._.target;
-  this_01 = (this->fields).animationCurve;
-  fVar1 = fVar1 - (this->fields).beginTime;
-  pfVar2 = &(this->fields).doneTime;
-  fVar3 = (this->fields)._.originalScale.z;
-  fVar4 = (this->fields)._.originalScale.x;
-  fVar5 = (this->fields)._.originalScale.y;
-  if (*pfVar2 <= fVar1 && fVar1 != *pfVar2) {
-    if (this_01 != (AnimationCurve *)0x0) {
-      fVar6 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                        (this_01,(this->fields).doneTime,(MethodInfo *)0x0);
-      fVar3 = fVar3 * fVar6;
-      if (this_00 != (Transform *)0x0) {
-        value_00.y = fVar5 * fVar6;
-        value_00.x = fVar4 * fVar6;
-        value_00.z = fVar3;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                  (this_00,value_00,(MethodInfo *)0x0);
-        pSVar7 = (this->fields)._.OnScaleAnimationStopped;
-        (this->fields)._.state = 1;
-        if (pSVar7 == (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
-          return;
-        }
-        (*(pSVar7->fields)._._.invoke_impl)((pSVar7->fields)._._.method_code);
-        return;
-      }
-    }
-  }
-  else if (this_01 != (AnimationCurve *)0x0) {
-    fVar6 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                      (this_01,fVar1,(MethodInfo *)0x0);
-    fVar3 = fVar3 * fVar6;
-    if (this_00 != (Transform *)0x0) {
-      value.y = fVar5 * fVar6;
-      value.x = fVar4 * fVar6;
-      value.z = fVar3;
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                (this_00,value,(MethodInfo *)0x0);
+  if ((this->fields)._.state == 2) {
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
       return;
     }
+    pcRam_? = pcVar1;
+    fVar3 = (float)(*pcRam_?)();
+    obj = (this->fields)._.target;
+    fVar3 = fVar3 - (this->fields).beginTime;
+    obj_00 = (this->fields).animationCurve;
+    pfVar4 = &(this->fields).doneTime;
+    uStack_5._0_4_ = (this->fields)._.originalScale.x;
+    uStack_5._4_4_ = (this->fields)._.originalScale.y;
+    if (*pfVar4 <= fVar3 && fVar3 != *pfVar4) {
+      fVar6 = (this->fields)._.originalScale.z;
+      if (obj_00 == (AnimationCurve *)0x0) goto DAT_?;
+      pvVar7 = (obj_00->fields).m_Ptr;
+      if (pvVar7 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)obj_00,(MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      fVar8 = (this->fields).doneTime;
+      pcVar1 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+        uVar2 = func_?(&UNK_?);
+        FUN_?(uVar2,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcRam_? = pcVar1;
+      fVar8 = (float)(*pcRam_?)(pvVar7,fVar8);
+      fStack_9 = fVar6 * fVar8;
+      if (obj == (Transform *)0x0) {
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      uStack_5 = CONCAT44(uStack_5._4_4_ * fVar8,(float)uStack_5 * fVar8);
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pvVar7 = (obj->fields)._._.m_CachedPtr;
+      if (pvVar7 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcVar1 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+        uVar2 = func_?(&UNK_?);
+        FUN_?(uVar2,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcRam_? = pcVar1;
+      (*pcRam_?)(pvVar7,&uStack_5);
+      pSVar10 = (this->fields)._.OnScaleAnimationStopped;
+      (this->fields)._.state = 1;
+      if (pSVar10 != (ScaleAnimationBase_OnScaleAnimationStoppedDelegate *)0x0) {
+        (*(pSVar10->fields)._._.invoke_impl)
+                  ((pSVar10->fields)._._.method_code,fVar3 - (this->fields).doneTime,
+                   (pSVar10->fields)._._.method);
+      }
+    }
+    else {
+      fVar6 = (this->fields)._.originalScale.z;
+      if (obj_00 == (AnimationCurve *)0x0) {
+DAT_?:
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pvVar7 = (obj_00->fields).m_Ptr;
+      if (pvVar7 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)obj_00,(MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcVar1 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+        uVar2 = func_?(&UNK_?);
+        FUN_?(uVar2,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcRam_? = pcVar1;
+      fVar3 = (float)(*pcRam_?)(pvVar7,fVar3);
+      fStack_9 = fVar6 * fVar3;
+      if (obj == (Transform *)0x0) {
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      uStack_5 = CONCAT44(uStack_5._4_4_ * fVar3,(float)uStack_5 * fVar3);
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pvVar7 = (obj->fields)._._.m_CachedPtr;
+      if (pvVar7 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcVar1 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+        uVar2 = func_?(&UNK_?);
+        FUN_?(uVar2,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcRam_? = pcVar1;
+      (*pcRam_?)(pvVar7,&uStack_5);
+    }
   }
-  func_?(fVar3,fVar1);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
   return;
 }
 

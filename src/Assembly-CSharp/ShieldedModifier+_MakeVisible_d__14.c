@@ -7,150 +7,215 @@ bool Assembly-CSharp.dll::ShieldedModifier+<MakeVisible>d__14::
 
 {
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_m_Color);
-    func_?(&StringLiteral__Rim);
+    FUN_?(&StringLiteral_m_Color);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__Rim);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  iVar1 = (this->fields).__1__state;
-  pSVar2 = (this->fields).__4__this;
-  if (iVar1 == 0) {
+  pcVar1 = pcRam_?;
+  iVar2 = (this->fields).__1__state;
+  pSVar3 = (this->fields).__4__this;
+  if (iVar2 == 0) {
     (this->fields).__1__state = -1;
-    if ((pSVar2 == (ShieldedModifier *)0x0) ||
-       (pMVar3 = (pSVar2->fields).shieldMat, pMVar3 == (Material *)0x0)) goto code_?;
-    fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetFloat
-                       (pMVar3,StringLiteral__Rim,(MethodInfo *)0x0);
-    (this->fields)._currRim_5__2 = fVar4;
-    pMVar3 = (pSVar2->fields).shieldMat;
-    if (pMVar3 == (Material *)0x0) goto code_?;
-    pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetVector
-                       ((Vector4 *)&stack0xffffffe8,pMVar3,StringLiteral_m_Color,(MethodInfo *)0x0);
-    fVar4 = pVVar5->x;
-    fVar6 = pVVar5->y;
-    fVar7 = pVVar5->z;
-    fVar8 = pVVar5->w;
-    (this->fields)._i_5__4 = 0.0;
-    (this->fields)._currColor_5__3.r = fVar4;
-    (this->fields)._currColor_5__3.g = fVar6;
-    (this->fields)._currColor_5__3.b = fVar7;
-    (this->fields)._currColor_5__3.a = fVar8;
+    if ((pSVar3 == (ShieldedModifier *)0x0) ||
+       (pMVar4 = (pSVar3->fields).shieldMat, pMVar4 == (Material *)0x0)) goto code_?;
+    iVar5 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID
+                       (StringLiteral__Rim,(MethodInfo *)0x0);
+    fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetFloatImpl
+                       (pMVar4,iVar5,(MethodInfo *)0x0);
+    (this->fields)._currRim_5__2 = fVar6;
+    pMVar4 = (pSVar3->fields).shieldMat;
+    if (pMVar4 == (Material *)0x0) goto code_?;
+    pCVar7 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetColor
+                        (aCStack_8,pMVar4,StringLiteral_m_Color,(MethodInfo *)0x0);
+    fVar6 = 0.0;
+    fVar9 = pCVar7->g;
+    fVar10 = pCVar7->b;
+    fVar11 = pCVar7->a;
+    (this->fields)._currColor_5__3.r = pCVar7->r;
+    (this->fields)._currColor_5__3.g = fVar9;
+    (this->fields)._currColor_5__3.b = fVar10;
+    (this->fields)._currColor_5__3.a = fVar11;
 code_?:
-    fVar4 = (this->fields).fadeInTime;
-    pfVar9 = &(this->fields)._i_5__4;
-    if (*pfVar9 <= fVar4 && fVar4 != *pfVar9) {
-      if (pSVar2 != (ShieldedModifier *)0x0) {
-        fVar4 = (this->fields)._i_5__4;
-        pMVar3 = (pSVar2->fields).shieldMat;
-        fVar6 = (this->fields)._currRim_5__2;
-        if (fVar4 < 0.0) {
-          fVar4 = 0.0;
-        }
-        else if (_UNK_? < fVar4) {
-          fVar4 = _UNK_?;
-        }
-        if (pMVar3 != (Material *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloat
-                    (pMVar3,StringLiteral__Rim,
-                     ((pSVar2->fields).targetRimVisibility - fVar6) * fVar4 + fVar6,
-                     (MethodInfo *)0x0);
-          fVar4 = (this->fields)._i_5__4;
-          if (fVar4 < 0.0) {
-            fVar4 = 0.0;
-          }
-          else if (_UNK_? < fVar4) {
-            fVar4 = _UNK_?;
-          }
-          (this->fields)._currColor_5__3.a = ((pSVar2->fields).targetAlpha - 0.0) * fVar4 + 0.0;
-          pMVar3 = (pSVar2->fields).shieldMat;
-          if (pMVar3 != (Material *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
-                      (pMVar3,StringLiteral_m_Color,(Vector4)(this->fields)._currColor_5__3,
-                       (MethodInfo *)0x0);
-            (this->fields).__2__current = (Object *)0x0;
-            func_?();
-            (this->fields).__1__state = 1;
-            return 1;
-          }
-        }
+    (this->fields)._i_5__4 = fVar6;
+    fVar9 = _UNK_?;
+    if ((this->fields).fadeInTime <= fVar6) {
+      fVar6 = 0.0;
+code_?:
+      (this->fields)._i_5__4 = fVar6;
+      fVar9 = _UNK_?;
+      if ((this->fields).fadeOutTime <= fVar6) {
+        (this->fields)._currColor_5__3.a = 0.0;
+        if ((pSVar3 == (ShieldedModifier *)0x0) ||
+           (pMVar4 = (pSVar3->fields).shieldMat, pMVar4 == (Material *)0x0))
+        goto code_?;
+        aCStack_8[0].r = (this->fields)._currColor_5__3.r;
+        aCStack_8[0].g = (this->fields)._currColor_5__3.g;
+        aCStack_8[0].b = (this->fields)._currColor_5__3.b;
+        aCStack_8[0].a = (this->fields)._currColor_5__3.a;
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor
+                  (pMVar4,StringLiteral_m_Color,aCStack_8,(MethodInfo *)0x0);
+        pMVar4 = (pSVar3->fields).shieldMat;
+        if (pMVar4 == (Material *)0x0) goto code_?;
+        iVar5 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID
+                           (StringLiteral__Rim,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloatImpl
+                  (pMVar4,iVar5,_UNK_?,(MethodInfo *)0x0);
+        (pSVar3->fields).readyToPlayEffect = 1;
+        goto code_?;
       }
-      goto code_?;
+      if (pSVar3 == (ShieldedModifier *)0x0) {
+code_?:
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        bVar12 = (*pcVar1)();
+        return bVar12;
+      }
+      pMVar4 = (pSVar3->fields).shieldMat;
+      fVar10 = (pSVar3->fields).targetRimVisibility;
+      fVar11 = (this->fields)._currRim_5__2;
+      if (fVar6 < 0.0) {
+        fVar6 = 0.0;
+      }
+      else if (_UNK_? < fVar6) {
+        fVar6 = _UNK_?;
+      }
+      if (pMVar4 == (Material *)0x0) goto code_?;
+      iVar5 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID
+                         (StringLiteral__Rim,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloatImpl
+                (pMVar4,iVar5,(fVar11 - fVar10) * fVar6 + fVar10,(MethodInfo *)0x0);
+      fVar6 = (this->fields)._i_5__4;
+      fVar10 = (pSVar3->fields).targetAlpha;
+      if (fVar6 < 0.0) {
+        fVar6 = 0.0;
+      }
+      else if (fVar9 < fVar6) {
+        fVar6 = fVar9;
+      }
+      (this->fields)._currColor_5__3.a = (0.0 - fVar10) * fVar6 + fVar10;
+      pMVar4 = (pSVar3->fields).shieldMat;
+      if (pMVar4 == (Material *)0x0) goto code_?;
+      aCStack_8[0].r = (this->fields)._currColor_5__3.r;
+      aCStack_8[0].g = (this->fields)._currColor_5__3.g;
+      aCStack_8[0].b = (this->fields)._currColor_5__3.b;
+      aCStack_8[0].a = (this->fields)._currColor_5__3.a;
+      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor
+                (pMVar4,StringLiteral_m_Color,aCStack_8,(MethodInfo *)0x0);
+      bVar13 = iRam_? != 0;
+      (this->fields).__2__current = (Object *)0x0;
+      if (bVar13) {
+        uVar14 = (uint)((ulonglong)&(this->fields).__2__current >> 0xc);
+        uVar15 = (ulonglong)((uVar14 & 0x1fffff) >> 6);
+        do {
+          uVar16 = *(ulonglong *)(uVar15 * 8 + 0xADDR);
+          puVar17 = (ulonglong *)(uVar15 * 8 + 0xADDR);
+          LOCK();
+          bVar13 = uVar16 == *puVar17;
+          if (bVar13) {
+            *puVar17 = uVar16 | 1L << (uVar14 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar13);
+      }
+      (this->fields).__1__state = 2;
     }
-    (this->fields)._i_5__4 = 0.0;
+    else {
+      if (pSVar3 == (ShieldedModifier *)0x0) goto code_?;
+      pMVar4 = (pSVar3->fields).shieldMat;
+      fVar10 = (this->fields)._currRim_5__2;
+      fVar11 = (pSVar3->fields).targetRimVisibility;
+      if (fVar6 < 0.0) {
+        fVar6 = 0.0;
+      }
+      else if (_UNK_? < fVar6) {
+        fVar6 = _UNK_?;
+      }
+      if (pMVar4 == (Material *)0x0) goto code_?;
+      iVar5 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID
+                         (StringLiteral__Rim,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloatImpl
+                (pMVar4,iVar5,(fVar11 - fVar10) * fVar6 + fVar10,(MethodInfo *)0x0);
+      fVar6 = (this->fields)._i_5__4;
+      if (fVar6 < 0.0) {
+        fVar6 = 0.0;
+      }
+      else if (fVar9 < fVar6) {
+        fVar6 = fVar9;
+      }
+      (this->fields)._currColor_5__3.a = ((pSVar3->fields).targetAlpha - 0.0) * fVar6 + 0.0;
+      pMVar4 = (pSVar3->fields).shieldMat;
+      if (pMVar4 == (Material *)0x0) goto code_?;
+      aCStack_8[0].r = (this->fields)._currColor_5__3.r;
+      aCStack_8[0].g = (this->fields)._currColor_5__3.g;
+      aCStack_8[0].b = (this->fields)._currColor_5__3.b;
+      aCStack_8[0].a = (this->fields)._currColor_5__3.a;
+      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor
+                (pMVar4,StringLiteral_m_Color,aCStack_8,(MethodInfo *)0x0);
+      bVar13 = iRam_? != 0;
+      (this->fields).__2__current = (Object *)0x0;
+      if (bVar13) {
+        uVar14 = (uint)((ulonglong)&(this->fields).__2__current >> 0xc);
+        uVar15 = (ulonglong)((uVar14 & 0x1fffff) >> 6);
+        do {
+          uVar16 = *(ulonglong *)(uVar15 * 8 + 0xADDR);
+          puVar17 = (ulonglong *)(uVar15 * 8 + 0xADDR);
+          LOCK();
+          bVar13 = uVar16 == *puVar17;
+          if (bVar13) {
+            *puVar17 = uVar16 | 1L << (uVar14 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar13);
+      }
+      (this->fields).__1__state = 1;
+    }
+    bVar12 = 1;
   }
   else {
-    if (iVar1 == 1) {
-      fVar4 = (this->fields)._i_5__4;
+    if (iVar2 == 1) {
+      fVar6 = (this->fields)._i_5__4;
       (this->fields).__1__state = -1;
-      fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
-                         ((MethodInfo *)0x0);
-      (this->fields)._i_5__4 = fVar6 / (this->fields).fadeInTime + fVar4;
+      pcVar18 = pcRam_?;
+      if ((pcVar1 == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar18 = pcVar1, pcVar1 == (code *)0x0)
+         ) {
+        uVar19 = func_?(&UNK_?);
+        FUN_?(uVar19,0);
+        pcVar1 = (code *)swi(3);
+        bVar12 = (*pcVar1)();
+        return bVar12;
+      }
+      pcRam_? = pcVar18;
+      fVar9 = (float)(*pcVar1)();
+      fVar6 = fVar9 / (this->fields).fadeInTime + fVar6;
       goto code_?;
     }
-    if (iVar1 != 2) {
-      return 0;
-    }
-    fVar4 = (this->fields)._i_5__4;
-    (this->fields).__1__state = -1;
-    fVar6 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    (this->fields)._i_5__4 = fVar6 / (this->fields).fadeOutTime + fVar4;
-  }
-  fVar4 = (this->fields).fadeOutTime;
-  pfVar9 = &(this->fields)._i_5__4;
-  if (fVar4 < *pfVar9 || fVar4 == *pfVar9) {
-    (this->fields)._currColor_5__3.a = 0.0;
-    if ((pSVar2 != (ShieldedModifier *)0x0) &&
-       (pMVar3 = (pSVar2->fields).shieldMat, pMVar3 != (Material *)0x0)) {
-      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
-                (pMVar3,StringLiteral_m_Color,(Vector4)(this->fields)._currColor_5__3,
-                 (MethodInfo *)0x0);
-      pMVar3 = (pSVar2->fields).shieldMat;
-      if (pMVar3 != (Material *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloat
-                  (pMVar3,StringLiteral__Rim,5.0,(MethodInfo *)0x0);
-        (pSVar2->fields).readyToPlayEffect = 1;
-        return 0;
+    if (iVar2 == 2) {
+      fVar6 = (this->fields)._i_5__4;
+      (this->fields).__1__state = -1;
+      pcVar18 = pcRam_?;
+      if ((pcVar1 == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar18 = pcVar1, pcVar1 == (code *)0x0)
+         ) {
+        uVar19 = func_?(&UNK_?);
+        FUN_?(uVar19,0);
+        pcVar1 = (code *)swi(3);
+        bVar12 = (*pcVar1)();
+        return bVar12;
       }
+      pcRam_? = pcVar18;
+      fVar9 = (float)(*pcVar1)();
+      fVar6 = fVar9 / (this->fields).fadeOutTime + fVar6;
+      goto code_?;
     }
-  }
-  else if (pSVar2 != (ShieldedModifier *)0x0) {
-    fVar4 = (this->fields)._i_5__4;
-    pMVar3 = (pSVar2->fields).shieldMat;
-    fVar6 = (pSVar2->fields).targetRimVisibility;
-    if (fVar4 < 0.0) {
-      fVar4 = 0.0;
-    }
-    else if (_UNK_? < fVar4) {
-      fVar4 = _UNK_?;
-    }
-    if (pMVar3 != (Material *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloat
-                (pMVar3,StringLiteral__Rim,((this->fields)._currRim_5__2 - fVar6) * fVar4 + fVar6
-                 ,(MethodInfo *)0x0);
-      fVar4 = (this->fields)._i_5__4;
-      fVar6 = (pSVar2->fields).targetAlpha;
-      if (fVar4 < 0.0) {
-        fVar4 = 0.0;
-      }
-      else if (_UNK_? < fVar4) {
-        fVar4 = _UNK_?;
-      }
-      (this->fields)._currColor_5__3.a = (0.0 - fVar6) * fVar4 + fVar6;
-      pMVar3 = (pSVar2->fields).shieldMat;
-      if (pMVar3 != (Material *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
-                  (pMVar3,StringLiteral_m_Color,(Vector4)(this->fields)._currColor_5__3,
-                   (MethodInfo *)0x0);
-        (this->fields).__2__current = (Object *)0x0;
-        func_?();
-        (this->fields).__1__state = 2;
-        return 1;
-      }
-    }
-  }
 code_?:
-  func_?();
-  pcVar10 = (code *)swi(3);
-  bVar11 = (*pcVar10)();
-  return bVar11;
+    bVar12 = 0;
+  }
+  return bVar12;
 }
 
 
@@ -165,10 +230,10 @@ void Assembly-CSharp.dll::ShieldedModifier+<MakeVisible>d__14::
   this_00 = (NotSupportedException *)func_?(uVar1);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
-  func_?(&
-                  MethodInfo__ShieldedModifier___MakeVisible_d__14__System_Collections_IEnumerator_Reset__
-                 );
-  func_?(this_00);
+  uVar1 = func_?(&
+                              MethodInfo__ShieldedModifier___MakeVisible_d__14__System_Collections_IEnumerator_Reset__
+                             );
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

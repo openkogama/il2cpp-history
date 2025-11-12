@@ -6,7 +6,9 @@ bool MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_Equals
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__IntVector);
+    FUN_?(&TypeInfo__MV__WorldObject__IntVector);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (obj != (Object *)0x0) {
@@ -15,19 +17,20 @@ bool MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_Equals
       pOVar1 = obj;
     }
     if (pOVar1 != (Object *)0x0) {
-      if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MV__WorldObject__IntVector);
+      if (*(int *)&(TypeInfo__MV__WorldObject__IntVector->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__MV__WorldObject__IntVector);
       }
       if ((obj->klass->_0).element_class != (TypeInfo__MV__WorldObject__IntVector->_0).element_class
          ) {
-        func_?(obj,TypeInfo__MV__WorldObject__IntVector);
+        FUN_?(obj);
         pcVar2 = (code *)swi(3);
         bVar3 = (*pcVar2)();
         return bVar3;
       }
-      puVar4 = (undefined4 *)func_?(obj);
-      if ((this->x == (short)*puVar4) && (this->y == (short)((uint)*puVar4 >> 0x10))) {
-        return this->z == *(short *)(puVar4 + 1);
+      if ((this->x == (short)*(undefined4 *)&obj[1].klass) &&
+         (sStackX_12 = (short)((uint)*(undefined4 *)&obj[1].klass >> 0x10), this->y == sStackX_12))
+      {
+        return this->z == *(short *)((longlong)&obj[1].klass + 4);
       }
     }
   }
@@ -38,11 +41,11 @@ bool MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_Equals
 /* Boolean Equals(IntVector) */
 
 bool MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_Equals_1
-               (IntVector *this,IntVector iV,MethodInfo *method)
+               (IntVector *this,IntVector *iV,MethodInfo *method)
 
 {
-  if ((this->x == iV.x) && (this->y == iV.y)) {
-    return this->z == iV.z;
+  if ((this->x == iV->x) && (this->y == iV->y)) {
+    return this->z == iV->z;
   }
   return 0;
 }
@@ -65,53 +68,169 @@ String * MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_ToString
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__String);
-    func_?(&StringLiteral_x__);
-    func_?(&StringLiteral__y__);
-    func_?(&StringLiteral__z__);
+    FUN_?(&TypeInfo__System__String);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_x__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__y__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__z__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  values = (String__Array *)func_?(TypeInfo__System__String,6);
-  pSVar1 = StringLiteral_x__;
-  if (values == (String__Array *)0x0) {
-    func_?();
+  lVar1 = FUN_?(TypeInfo__System__String);
+  if (lVar1 == 0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    pSVar3 = (String *)(*pcVar2)();
+    return pSVar3;
   }
-  else if (values->max_length != 0) {
-    values->vector[0] = StringLiteral_x__;
-    func_?(values->vector,pSVar1);
-    pSVar1 = mscorlib.dll::System::Int16::Int16_ToString((Int16 *)this,(MethodInfo *)0x0);
-    if (1 < values->max_length) {
-      values->vector[1] = pSVar1;
-      func_?(values->vector + 1,pSVar1);
-      pSVar1 = StringLiteral__y__;
-      if (2 < values->max_length) {
-        values->vector[2] = StringLiteral__y__;
-        func_?(values->vector + 2,pSVar1);
-        pSVar1 = mscorlib.dll::System::Int16::Int16_ToString((Int16 *)&this->y,(MethodInfo *)0x0);
-        if (3 < values->max_length) {
-          values->vector[3] = pSVar1;
-          func_?(values->vector + 3,pSVar1);
-          pSVar1 = StringLiteral__z__;
-          if (4 < values->max_length) {
-            values->vector[4] = StringLiteral__z__;
-            func_?(values->vector + 4,pSVar1);
-            pSVar1 = mscorlib.dll::System::Int16::Int16_ToString
-                               ((Int16 *)&this->z,(MethodInfo *)0x0);
-            if (5 < values->max_length) {
-              values->vector[5] = pSVar1;
-              func_?(values->vector + 5,pSVar1);
-              pSVar1 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
-              return pSVar1;
-            }
-          }
-        }
-      }
+  FUN_?(lVar1,0,StringLiteral_x__);
+  pSVar3 = mscorlib.dll::System::Int16::Int16_ToString((Int16 *)this,(MethodInfo *)0x0);
+  FUN_?(lVar1,1,pSVar3);
+  FUN_?(lVar1,2,StringLiteral__y__);
+  pSVar3 = mscorlib.dll::System::Int16::Int16_ToString((Int16 *)&this->y,(MethodInfo *)0x0);
+  FUN_?(lVar1,3,pSVar3);
+  FUN_?(lVar1,4,StringLiteral__z__);
+  mscorlib.dll::System::Int16::Int16_ToString((Int16 *)&this->z,(MethodInfo *)0x0);
+  FUN_?(lVar1,5);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__String,0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (lVar1 == 0) {
+    uVar4 = func_?(&TypeInfo__System__ArgumentNullException);
+    this_00 = (ArgumentNullException *)func_?(uVar4);
+    pSVar3 = (String *)func_?(&StringLiteral_values);
+    mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+              (this_00,pSVar3,(MethodInfo *)0x0);
+    uVar4 = func_?(&MethodInfo__System__String__Concat_System__String____);
+    FUN_?(this_00,uVar4);
+    pcVar2 = (code *)swi(3);
+    pSVar3 = (String *)(*pcVar2)();
+    return pSVar3;
+  }
+  if (*(int *)(lVar1 + 0x18) < 2) {
+    if (*(longlong *)(lVar1 + 0x18) == 0) {
+      return (String *)**(undefined8 **)(lRam_? + 0xb8);
+    }
+    if (*(int *)(lVar1 + 0x18) == 0) {
+code_?:
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      pSVar3 = (String *)(*pcVar2)();
+      return pSVar3;
+    }
+    if (*(String **)(lVar1 + 0x20) != (String *)0x0) {
+      return *(String **)(lVar1 + 0x20);
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar2)();
-  return pSVar1;
+  else {
+    plVar5 = (longlong *)(lVar1 + 0x20);
+    values = (String__Array *)0x0;
+    pSVar6 = values;
+    pSVar7 = values;
+    while (uVar8 = (uint)pSVar6, (int)uVar8 < (int)*(uint *)(lVar1 + 0x18)) {
+      if (*(uint *)(lVar1 + 0x18) <= uVar8) goto code_?;
+      if (*plVar5 != 0) {
+        pSVar7 = (String__Array *)
+                  ((longlong)pSVar7->vector + (longlong)*(int *)(*plVar5 + 0x10) + -0x20);
+      }
+      plVar5 = plVar5 + 1;
+      pSVar6 = (String__Array *)(ulonglong)(uVar8 + 1);
+    }
+    if (0x7fffffff < (longlong)pSVar7) {
+      uVar4 = func_?(&TypeInfo__System__OutOfMemoryException);
+      this_02 = (OutOfMemoryException *)func_?(uVar4);
+      mscorlib.dll::System::OutOfMemoryException::OutOfMemoryException__ctor
+                (this_02,(MethodInfo *)0x0);
+      uVar4 = func_?(&MethodInfo__System__String__Concat_System__String____);
+      FUN_?(this_02,uVar4);
+      pcVar2 = (code *)swi(3);
+      pSVar3 = (String *)(*pcVar2)();
+      return pSVar3;
+    }
+    iVar9 = (int)pSVar7;
+    if (iVar9 != 0) {
+      pSVar3 = (String *)FUN_?((ulonglong)pSVar7 & 0xffffffff);
+      plVar5 = (longlong *)(lVar1 + 0x20);
+      pSVar6 = values;
+      pSVar7 = values;
+code_?:
+      do {
+        iVar10 = (int)pSVar6;
+        uVar8 = (uint)pSVar7;
+        if (*(int *)(lVar1 + 0x18) <= (int)uVar8) {
+code_?:
+          if (iVar10 == iVar9) {
+            return pSVar3;
+          }
+          lVar1 = FUN_?(lVar1);
+          pSVar11 = TypeInfo__System__String;
+          if ((lVar1 != 0) &&
+             (values = (String__Array *)FUN_?(lVar1), values == (String__Array *)0x0)) {
+            FUN_?(lVar1,pSVar11);
+            pcVar2 = (code *)swi(3);
+            pSVar3 = (String *)(*pcVar2)();
+            return pSVar3;
+          }
+          pSVar3 = mscorlib.dll::System::String::String_Concat_7(values,(MethodInfo *)0x0);
+          return pSVar3;
+        }
+        if (*(uint *)(lVar1 + 0x18) <= uVar8) goto code_?;
+        lVar12 = *plVar5;
+        if ((lVar12 != 0) && (*(int *)(lVar12 + 0x10) != 0)) {
+          iVar13 = *(int *)(lVar12 + 0x10);
+          if (iVar9 - iVar10 < iVar13) {
+            iVar10 = -1;
+            goto code_?;
+          }
+          if (pSVar3 == (String *)0x0) {
+            FUN_?();
+            pcVar2 = (code *)swi(3);
+            pSVar3 = (String *)(*pcVar2)();
+            return pSVar3;
+          }
+          if ((pSVar3->fields)._stringLength - iVar10 < iVar13) {
+            uVar4 = func_?(&TypeInfo__System__IndexOutOfRangeException);
+            this_01 = (IndexOutOfRangeException *)func_?(uVar4);
+            mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor
+                      (this_01,(MethodInfo *)0x0);
+            uVar4 = func_?(&
+                                        MethodInfo__System__String__FillStringChecked_MethodInfo__System__String__int__MethodInfo__System__String_
+                                       );
+            FUN_?(this_01,uVar4);
+            pcVar2 = (code *)swi(3);
+            pSVar3 = (String *)(*pcVar2)();
+            return pSVar3;
+          }
+          src = (uint8_t *)(lVar12 + 0x14);
+          dest = &(pSVar3->fields)._firstChar + iVar10;
+          uVar14 = (ulonglong)(uint)(iVar13 * 2);
+          if ((uVar14 <= (ulonglong)((longlong)dest - (longlong)src)) &&
+             (uVar14 <= (ulonglong)((longlong)src - (longlong)dest))) {
+            mscorlib.dll::System::Buffer::Buffer_Memcpy_1
+                      ((uint8_t *)dest,src,iVar13 * 2,(MethodInfo *)0x0);
+            pSVar6 = (String__Array *)(ulonglong)(uint)(iVar10 + iVar13);
+            pSVar7 = (String__Array *)(ulonglong)(uVar8 + 1);
+            plVar5 = plVar5 + 1;
+            goto code_?;
+          }
+          FUN_?(dest,src,uVar14);
+          pSVar6 = (String__Array *)(ulonglong)(uint)(iVar10 + iVar13);
+        }
+        pSVar7 = (String__Array *)(ulonglong)(uVar8 + 1);
+        plVar5 = plVar5 + 1;
+      } while( true );
+    }
+  }
+  return (String *)**(undefined8 **)(lRam_? + 0xb8);
 }
 
 
@@ -122,8 +241,8 @@ Vector3 * MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_ToVector3
 
 {
   sVar1 = this->y;
-  __return_storage_ptr__->x = (float)(int)this->x;
   sVar2 = this->z;
+  __return_storage_ptr__->x = (float)(int)this->x;
   __return_storage_ptr__->y = (float)(int)sVar1;
   __return_storage_ptr__->z = (float)(int)sVar2;
   return __return_storage_ptr__;
@@ -136,7 +255,9 @@ void MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__cctor(MethodInfo 
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__IntVector);
+    FUN_?(&TypeInfo__MV__WorldObject__IntVector);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pIVar1 = TypeInfo__MV__WorldObject__IntVector->static_fields;
@@ -195,7 +316,7 @@ int16_t MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
     mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor
               (this_00,(MethodInfo *)0x0);
     uVar1 = func_?(&MethodInfo__MV__WorldObject__IntVector__get_Item_int_);
-    func_?(this_00,uVar1);
+    FUN_?(this_00,uVar1);
     pcVar2 = (code *)swi(3);
     iVar3 = (*pcVar2)();
     return iVar3;
@@ -206,51 +327,51 @@ int16_t MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_get_Item
 
 /* IntVector op_Addition(IntVector, IntVector) */
 
-IntVector MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
-                    (IntVector i1,IntVector i2,MethodInfo *method)
+IntVector *
+MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Addition
+          (IntVector *__return_storage_ptr__,IntVector *i1,IntVector *i2,MethodInfo *method)
 
 {
-  IVar1.z = in_stack_2 + in_stack_3;
-  *(int16_t *)i1._0_4_ = i2.z + i1.z;
-  *(short *)(i1._0_4_ + 2) = IVar1.z;
-  *(short *)(i1._0_4_ + 4) = (short)method + i2.x;
-  IVar1.x = i1.x;
-  IVar1.y = i1.y;
-  return IVar1;
+  __return_storage_ptr__->x = i1->x + i2->x;
+  __return_storage_ptr__->y = i1->y + i2->y;
+  __return_storage_ptr__->z = i1->z + i2->z;
+  return __return_storage_ptr__;
 }
 
 
 /* IntVector op_Division(IntVector, Int32) */
 
-IntVector MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Division
-                    (IntVector iV,int32_t i,MethodInfo *method)
+IntVector *
+MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Division
+          (IntVector *__return_storage_ptr__,IntVector *iV,int32_t i,MethodInfo *method)
 
 {
-  *(short *)iV._0_4_ = (short)((int)iV.z / (int)method);
-  *(short *)(iV._0_4_ + 2) = (short)((int)in_stack_1 / (int)method);
-  *(short *)(iV._0_4_ + 4) = (short)((int)(short)i / (int)method);
-  IVar2.z = (int16_t)((int)(short)i % (int)method);
-  IVar2.x = iV.x;
-  IVar2.y = iV.y;
-  return IVar2;
+  __return_storage_ptr__->x = (int16_t)((int)iV->x / i);
+  __return_storage_ptr__->y = (int16_t)((int)iV->y / i);
+  __return_storage_ptr__->z = (int16_t)((int)iV->z / i);
+  return __return_storage_ptr__;
 }
 
 
 /* Boolean op_Equality(IntVector, IntVector) */
 
 bool MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Equality
-               (IntVector a,IntVector b,MethodInfo *method)
+               (IntVector *a,IntVector *b,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__IntVector);
+    FUN_?(&TypeInfo__MV__WorldObject__IntVector);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__WorldObject__IntVector);
+  if (*(int *)&(TypeInfo__MV__WorldObject__IntVector->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  if ((a.x == b.x) && (a.y == b.y)) {
-    return a.z == b.z;
+  uVar1 = b->x;
+  uVar2 = b->y;
+  if ((a->x == uVar1) && (a->y == uVar2)) {
+    return a->z == b->z;
   }
   return 0;
 }
@@ -259,25 +380,32 @@ bool MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Equality
 /* Boolean op_Inequality(IntVector, IntVector) */
 
 bool MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Inequality
-               (IntVector a,IntVector b,MethodInfo *method)
+               (IntVector *a,IntVector *b,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__IntVector);
+    FUN_?(&TypeInfo__MV__WorldObject__IntVector);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__WorldObject__IntVector);
+  if (*(int *)&(TypeInfo__MV__WorldObject__IntVector->_1).field_0x1c == 0) {
+    FUN_?();
   }
+  uVar1 = a->x;
+  uVar2 = a->y;
+  sVar3 = a->z;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__IntVector);
+    FUN_?(&TypeInfo__MV__WorldObject__IntVector);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__WorldObject__IntVector);
+  if (*(int *)&(TypeInfo__MV__WorldObject__IntVector->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  if ((a.x == b.x) && (a.y == b.y)) {
-    return a.z != b.z;
+  if ((uVar1 == b->x) && (uVar4 = b->y, uVar2 == uVar4)) {
+    return sVar3 != b->z;
   }
   return 1;
 }
@@ -285,78 +413,77 @@ bool MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Inequality
 
 /* IntVector op_Multiply(Int32, IntVector) */
 
-IntVector MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Multiply
-                    (int32_t i,IntVector iV,MethodInfo *method)
+IntVector *
+MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Multiply
+          (IntVector *__return_storage_ptr__,int32_t i,IntVector *iV,MethodInfo *method)
 
 {
-  *(int16_t *)i = iV.x * iV.z;
-  *(short *)(i + 2) = in_stack_1 * iV.x;
-  IVar2.z = iV.x * (short)method;
-  *(short *)(i + 4) = IVar2.z;
-  IVar2._0_4_ = i;
-  return IVar2;
+  sVar1 = (short)i;
+  __return_storage_ptr__->x = iV->x * sVar1;
+  sVar2 = iV->z;
+  __return_storage_ptr__->y = iV->y * sVar1;
+  __return_storage_ptr__->z = sVar2 * sVar1;
+  return __return_storage_ptr__;
 }
 
 
 /* IntVector op_Multiply(IntVector, Int32) */
 
-IntVector MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Multiply_1
-                    (IntVector iV,int32_t i,MethodInfo *method)
+IntVector *
+MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Multiply_1
+          (IntVector *__return_storage_ptr__,IntVector *iV,int32_t i,MethodInfo *method)
 
 {
-  *(short *)iV._0_4_ = (short)method * iV.z;
-  *(short *)(iV._0_4_ + 2) = in_stack_1 * (short)method;
-  IVar2.z = (short)method * (short)i;
-  *(short *)(iV._0_4_ + 4) = IVar2.z;
-  IVar2.x = iV.x;
-  IVar2.y = iV.y;
-  return IVar2;
+  sVar1 = (short)i;
+  __return_storage_ptr__->x = iV->x * sVar1;
+  sVar2 = iV->z;
+  __return_storage_ptr__->y = iV->y * sVar1;
+  __return_storage_ptr__->z = sVar2 * sVar1;
+  return __return_storage_ptr__;
 }
 
 
 /* Vector3 op_Multiply(IntVector, Vector3) */
 
 Vector3 * MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Multiply_2
-                    (Vector3 *__return_storage_ptr__,IntVector iV,Vector3 vector3,MethodInfo *method
-                    )
+                    (Vector3 *__return_storage_ptr__,IntVector *iV,Vector3 *vector3,
+                    MethodInfo *method)
 
 {
-  __return_storage_ptr__->x = (float)(int)iV.x * vector3.x;
-  __return_storage_ptr__->y = (float)(int)iV.y * vector3.y;
-  __return_storage_ptr__->z = (float)(int)iV.z * vector3.z;
+  sVar1 = iV->y;
+  sVar2 = iV->z;
+  __return_storage_ptr__->x = (float)(int)iV->x * vector3->x;
+  __return_storage_ptr__->y = (float)(int)sVar1 * vector3->y;
+  __return_storage_ptr__->z = (float)(int)sVar2 * vector3->z;
   return __return_storage_ptr__;
 }
 
 
 /* IntVector op_Subtraction(IntVector, IntVector) */
 
-IntVector MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Subtraction
-                    (IntVector i1,IntVector i2,MethodInfo *method)
+IntVector *
+MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_Subtraction
+          (IntVector *__return_storage_ptr__,IntVector *i1,IntVector *i2,MethodInfo *method)
 
 {
-  IVar1.z = in_stack_2 - in_stack_3;
-  *(int16_t *)i1._0_4_ = i1.z - i2.z;
-  *(short *)(i1._0_4_ + 2) = IVar1.z;
-  *(int16_t *)(i1._0_4_ + 4) = i2.x - (short)method;
-  IVar1.x = i1.x;
-  IVar1.y = i1.y;
-  return IVar1;
+  __return_storage_ptr__->x = i1->x - i2->x;
+  __return_storage_ptr__->y = i1->y - i2->y;
+  __return_storage_ptr__->z = i1->z - i2->z;
+  return __return_storage_ptr__;
 }
 
 
 /* IntVector op_UnaryNegation(IntVector) */
 
-IntVector MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_UnaryNegation
-                    (IntVector i1,MethodInfo *method)
+IntVector *
+MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_op_UnaryNegation
+          (IntVector *__return_storage_ptr__,IntVector *i1,MethodInfo *method)
 
 {
-  IVar1.z = -in_stack_2;
-  *(int16_t *)i1._0_4_ = -i1.z;
-  *(short *)(i1._0_4_ + 2) = IVar1.z;
-  *(short *)(i1._0_4_ + 4) = -(short)method;
-  IVar1.x = i1.x;
-  IVar1.y = i1.y;
-  return IVar1;
+  __return_storage_ptr__->x = -i1->x;
+  __return_storage_ptr__->y = -i1->y;
+  __return_storage_ptr__->z = -i1->z;
+  return __return_storage_ptr__;
 }
 
 
@@ -380,7 +507,7 @@ void MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_set_Item
     mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor
               (this_00,(MethodInfo *)0x0);
     uVar1 = func_?(&MethodInfo__MV__WorldObject__IntVector__set_Item_int__short_);
-    func_?(this_00,uVar1);
+    FUN_?(this_00,uVar1);
     pcVar2 = (code *)swi(3);
     (*pcVar2)();
     return;

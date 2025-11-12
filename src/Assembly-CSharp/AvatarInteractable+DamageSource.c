@@ -6,16 +6,29 @@ void Assembly-CSharp.dll::AvatarInteractable+DamageSource::AvatarInteractable_Da
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AvatarInteractable__DamageSource);
+    FUN_?(&TypeInfo__AvatarInteractable__DamageSource);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__AvatarInteractable__DamageSource;
-  value = (AvatarInteractable_DamageSource *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  (value->fields).time = 0.0;
-  TypeInfo__AvatarInteractable__DamageSource->static_fields->none = value;
-  func_?(TypeInfo__AvatarInteractable__DamageSource->static_fields,value);
+  pAVar1 = (AvatarInteractable_DamageSource *)
+           FUN_?(TypeInfo__AvatarInteractable__DamageSource);
+  (pAVar1->fields).time = 0.0;
+  TypeInfo__AvatarInteractable__DamageSource->static_fields->none = pAVar1;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)TypeInfo__AvatarInteractable__DamageSource->static_fields >> 0xc);
+    uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+    do {
+      uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+      puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
   return;
 }
 
@@ -27,28 +40,51 @@ void Assembly-CSharp.dll::AvatarInteractable+DamageSource::AvatarInteractable_Da
                PlayerKilledByType__Enum damageType,String *weaponName,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  iVar1 = iRam_?;
   (this->fields).shooter = shooter;
-  func_?(&this->fields,shooter);
-  (this->fields).damageType = (undefined1)damageType;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+    uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+    do {
+      uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+      puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).damageType = (uint8_t)damageType;
   (this->fields).weaponName = weaponName;
-  func_?(&(this->fields).weaponName,weaponName);
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  (this->fields).time = fVar1;
-  return;
-}
-
-
-/* AvatarInteractable+DamageSource() */
-
-void Assembly-CSharp.dll::AvatarInteractable+DamageSource::AvatarInteractable_DamageSource__ctor_1
-               (AvatarInteractable_DamageSource *this,MethodInfo *method)
-
-{
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  (this->fields).time = 0.0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).weaponName >> 0xc);
+    uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+    do {
+      uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+      puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (ulonglong)(uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
+  pcVar7 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+    uVar8 = func_?(&UNK_?);
+    FUN_?(uVar8,0);
+    pcVar7 = (code *)swi(3);
+    (*pcVar7)();
+    return;
+  }
+  pcRam_? = pcVar7;
+  fVar9 = (float)(*pcRam_?)();
+  (this->fields).time = fVar9;
   return;
 }
 
@@ -60,7 +96,17 @@ bool Assembly-CSharp.dll::AvatarInteractable+DamageSource::
                (AvatarInteractable_DamageSource *this,MethodInfo *method)
 
 {
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  return _UNK_? < fVar1 - (this->fields).time;
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    bVar3 = (*pcVar1)();
+    return bVar3;
+  }
+  pcRam_? = pcVar1;
+  fVar4 = (float)(*pcRam_?)();
+  return _UNK_? < fVar4 - (this->fields).time;
 }
 

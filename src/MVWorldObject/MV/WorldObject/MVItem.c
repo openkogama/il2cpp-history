@@ -6,85 +6,97 @@ String * MVWorldObject.dll::MV::WorldObject::MVItem::MVItem_ToString
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__System__Object);
-    func_?(&StringLiteral_Name___0__ItemID___1__ItemTypeID);
+    FUN_?(&TypeInfo__System__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Name___0__ItemID___1__ItemTypeID);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  args = (Object__Array *)func_?(TypeInfo__System__Object,5);
+  args = (Object__Array *)FUN_?(TypeInfo__System__Object,5);
   pSVar1 = (this->fields).name;
-  if (args == (Object__Array *)0x0) {
-    func_?();
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-  }
-  else {
+  if (args != (Object__Array *)0x0) {
     if (pSVar1 != (String *)0x0) {
-      iVar3 = func_?(pSVar1,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+      lVar2 = FUN_?(pSVar1,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (args->max_length == 0) goto code_?;
-    args->vector[0] = (Object *)pSVar1;
-    func_?(args->vector,pSVar1);
-    iStack_4 = (this->fields).itemID;
-    pOVar5 = (Object *)func_?(TypeInfo__System__Int32,&iStack_4);
-    if (pOVar5 != (Object *)0x0) {
-      iVar3 = func_?(pOVar5,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+    FUN_?(args,0,pSVar1);
+    aiStackX_8[0] = (this->fields).itemID;
+    lVar2 = FUN_?(uRam_?,aiStackX_8);
+    if (lVar2 != 0) {
+      lVar5 = FUN_?(lVar2,(args->klass->_0).element_class);
+      if (lVar5 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (args->max_length < 2) goto code_?;
-    args->vector[1] = pOVar5;
-    func_?(args->vector + 1,pOVar5);
-    iStack_6 = (this->fields).itemTypeID;
-    pOVar5 = (Object *)func_?(TypeInfo__System__Int32,&iStack_6);
-    if (pOVar5 != (Object *)0x0) {
-      iVar3 = func_?(pOVar5,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+    FUN_?(args,1,lVar2);
+    aiStackX_8[0] = (this->fields).itemTypeID;
+    lVar2 = FUN_?(uRam_?,aiStackX_8);
+    if (lVar2 != 0) {
+      lVar5 = FUN_?(lVar2,(args->klass->_0).element_class);
+      if (lVar5 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (args->max_length < 3) goto code_?;
-    args->vector[2] = pOVar5;
-    func_?(args->vector + 2,pOVar5);
-    iStack_7 = (this->fields).priceGold;
-    pOVar5 = (Object *)func_?(TypeInfo__System__Int32,&iStack_7);
-    if (pOVar5 != (Object *)0x0) {
-      iVar3 = func_?(pOVar5,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+    FUN_?(args,2,lVar2);
+    aiStackX_8[0] = (this->fields).priceGold;
+    lVar2 = FUN_?(uRam_?,aiStackX_8);
+    if (lVar2 != 0) {
+      lVar5 = FUN_?(lVar2,(args->klass->_0).element_class);
+      if (lVar5 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (args->max_length < 4) goto code_?;
-    args->vector[3] = pOVar5;
-    func_?(args->vector + 3,pOVar5);
-    bStack_8 = (this->fields).resellable;
-    pOVar5 = (Object *)func_?(TypeInfo__System__Boolean,&bStack_8);
-    if (pOVar5 != (Object *)0x0) {
-      iVar3 = func_?(pOVar5,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+    FUN_?(args,3,lVar2);
+    aiStackX_8[0] = CONCAT31(aiStackX_8[0]._1_3_,(this->fields).resellable);
+    lVar2 = FUN_?(uRam_?,aiStackX_8);
+    if (lVar2 != 0) {
+      lVar2 = FUN_?(lVar2,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (4 < args->max_length) {
-      args->vector[4] = pOVar5;
-      func_?(args->vector + 4,pOVar5);
-      pSVar1 = mscorlib.dll::System::String::String_Format_3
-                         (StringLiteral_Name___0__ItemID___1__ItemTypeID,args,(MethodInfo *)0x0);
-      return pSVar1;
-    }
+    FUN_?(args,4);
+    pSVar1 = StringLiteral_Name___0__ItemID___1__ItemTypeID;
+    PStack_6._arg0 = (Object *)0x0;
+    PStack_6._arg1 = (Object *)0x0;
+    PStack_6._arg2 = (Object *)0x0;
+    PStack_6._args = (Object__Array *)0x0;
+    mscorlib.dll::System::ParamsArray::ParamsArray__ctor_3(&PStack_6,args,(MethodInfo *)0x0);
+    PStack_7._arg0 = PStack_6._arg0;
+    PStack_7._arg1 = PStack_6._arg1;
+    PStack_7._arg2 = PStack_6._arg2;
+    PStack_7._args = PStack_6._args;
+    pSVar1 = mscorlib.dll::System::String::String_FormatHelper
+                       ((IFormatProvider *)0x0,pSVar1,&PStack_7,(MethodInfo *)0x0);
+    return pSVar1;
   }
-code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar9)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar4)();
   return pSVar1;
 }
 

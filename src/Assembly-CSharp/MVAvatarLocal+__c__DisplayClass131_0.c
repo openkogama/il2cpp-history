@@ -8,14 +8,16 @@ void Assembly-CSharp.dll::MVAvatarLocal+<>c__DisplayClass131_0::
 
 {
   if (receiver != (SpawnRoleDataReceiver *)0x0) {
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::Mediator::SpawnRoleDataReceiver::
-    SpawnRoleDataReceiver_NotifyKilled
-              (receiver,(this->fields).localPlayerActorNr,(this->fields).dmgDealerActorNr,
-               (uint)(this->fields).damageType,(MethodInfo *)0x0);
+    if ((receiver->fields).OnKilled != (Action_3_Int32_Int32_MV_Common_PlayerKilledByType_ *)0x0) {
+      pAVar1 = (receiver->fields).OnKilled;
+      (*(pAVar1->fields)._._.invoke_impl)
+                ((pAVar1->fields)._._.method_code,(this->fields).localPlayerActorNr,
+                 (this->fields).dmgDealerActorNr,(this->fields).damageType,
+                 (pAVar1->fields)._._.method);
+    }
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

@@ -6,112 +6,117 @@ void Assembly-CSharp.dll::PlayModeOnlyStateTransitionTable::
                (PlayModeOnlyStateTransitionTable *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffa4;
-  method_00 = unaff_EDI;
-  puVar5 = &stack0xffffffa4;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_IState>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_IState>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_IState>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<System::Object,_IState>__get_Key__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<System::Object,_IState>__get_Value__
-                   );
-    func_?(&TypeInfo__PMOStateBase);
-    func_?(&TypeInfo__PlayModeOnlyEvent);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_IState>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_IState>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_IState>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<System::Object,_IState>__get_Key__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<System::Object,_IState>__get_Value__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__PMOStateBase);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__PlayModeOnlyEvent);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)0x0;
-  DStack_6._version = 0;
-  DStack_6._index = 0;
-  DStack_6._current.key = (Object *)0x0;
-  DStack_6._current.value = (Object *)0x0;
-  DStack_6._getEnumeratorRetType = 0;
-  this_00 = (this->fields)._.table;
-  if (this_00 != (Dictionary_2_System_Object_IState_ *)0x0) {
-    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
-             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       (&DStack_8,(Dictionary_2_System_UInt32_System_Object_ *)this_00,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__GetEnumerator__
-                       );
-    pDStack_9 = &DStack_6;
-    uStack_10 = 0;
-    DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar7->_dictionary;
-    DStack_6._version = pDVar7->_version;
-    DStack_6._index = pDVar7->_index;
-    DStack_6._current.key = (Object *)(pDVar7->_current).key;
-    DStack_6._16_8_ = *(undefined8 *)&(pDVar7->_current).value;
-    uStack_1 = 1;
-    while( true ) {
-      bVar11 = mscorlib.dll::System::Collections::Generic::
-              Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
-              Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                        (&DStack_6,
-                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_IState>__MoveNext__
-                        );
-      if (bVar11 == 0) {
-        uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&DStack_6,
-                   (ExceptionArgument__Enum)
-                   MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_IState>__Dispose__
-                   ,method_00);
-        *unaff_FS_OFFSET = uStack_3;
-        return;
+  SStack_1.table = (this->fields)._.table;
+  if ((Dictionary_2_System_Object_System_Object_ *)SStack_1.table ==
+      (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  uStack_3 = 0;
+  uStack_4 = 0;
+  if (iRam_? != 0) {
+    uVar5 = (uint)((ulonglong)&SStack_1 >> 0xc);
+    puVar6 = (ulonglong *)((ulonglong)((uVar5 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar7 = *puVar6;
+      LOCK();
+      uVar8 = *puVar6;
+      if (uVar7 == uVar8) {
+        *puVar6 = uVar7 | 1L << (uVar5 & 0x3f);
       }
-      unaff_EDI = (MethodInfo *)DStack_6._current.value;
-      if ((MethodInfo *)DStack_6._current.value == (MethodInfo *)0x0) break;
-      if ((((byte)*(code *)((int)(DStack_6._current.value)->klass + 0xb8) <
-            (TypeInfo__PMOStateBase->_1).naturalAligment) ||
-          (*(PMOStateBase__Class **)
-            (*(int *)((int)(DStack_6._current.value)->klass + 100) + -4 +
-            (uint)(TypeInfo__PMOStateBase->_1).naturalAligment * 4) != TypeInfo__PMOStateBase)) ||
-         ((MethodInfo *)DStack_6._current.value == (MethodInfo *)0x0)) goto code_?;
-      if (DStack_6._current.key == (Object *)0x0) break;
-      pPVar12 = TypeInfo__PlayModeOnlyEvent;
-      pOVar13 = DStack_6._current.key;
-      if (((DStack_6._current.key)->klass->_0).element_class !=
-          (TypeInfo__PlayModeOnlyEvent->_0).element_class) goto code_?;
-      puVar14 = (undefined4 *)func_?(DStack_6._current.key);
-      pPVar15 = TypeInfo__PMOStateBase;
-      if ((((byte)*(code *)((int)((Object *)unaff_EDI)->klass + 0xb8) <
-            (TypeInfo__PMOStateBase->_1).naturalAligment) ||
-          (*(PMOStateBase__Class **)
-            (*(int *)((int)((Object *)unaff_EDI)->klass + 100) + -4 +
-            (uint)(TypeInfo__PMOStateBase->_1).naturalAligment * 4) != TypeInfo__PMOStateBase)) ||
-         (unaff_EDI == (MethodInfo *)0x0)) goto code_?;
-      *(InvokerMethod *)((int)unaff_EDI + 8) = (InvokerMethod)*puVar14;
-    }
+      UNLOCK();
+    } while (uVar7 != uVar8);
   }
-  func_?();
-  pPVar15 = extraout_EDX;
+  uStack_9 = (ulonglong)
+              (uint)(((Dictionary_2_System_Object_System_Object_ *)SStack_1.table)->fields).
+                    _version;
+  uStack_10 = 2;
+  DStack_11._version = (undefined4)uStack_9;
+  DStack_11._index = uStack_9._4_4_;
+  DStack_11._current.key = (Object *)0x0;
+  DStack_11._current.value = (Object *)0x0;
+  DStack_11._getEnumeratorRetType = 2;
+  DStack_11._36_4_ = 0;
+  pDVar12 = (Dictionary_2_System_Object_System_Object_ *)SStack_1.table;
+  DStack_11._dictionary = (Dictionary_2_System_Object_System_Object_ *)SStack_1.table;
+  while( true ) {
+    bVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System
+            ::Object,System::Object]::
+            Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+                      (&DStack_11,
+                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_IState>__MoveNext__
+                      );
+    if (bVar13 == 0) {
+      return;
+    }
+    pOVar14 = DStack_11._current.value;
+    if (DStack_11._current.value == (Object *)0x0) break;
+    bVar15 = (TypeInfo__PMOStateBase->_1).naturalAligment;
+    if (((((DStack_11._current.value)->klass->_1).naturalAligment < bVar15) ||
+        (((DStack_11._current.value)->klass->_1).typeHierarchy[(ulonglong)bVar15 - 1] !=
+         (Il2CppClass *)TypeInfo__PMOStateBase)) || (DStack_11._current.value == (Object *)0x0))
+    goto code_?;
+    if ((Dictionary_2_System_Object_System_Object_ *)DStack_11._current.key ==
+        (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+    pDVar12 = (Dictionary_2_System_Object_System_Object_ *)DStack_11._current.key;
+    if ((((Dictionary_2_System_Object_IState___Class *)(DStack_11._current.key)->klass)->_0).
+        element_class != (TypeInfo__PlayModeOnlyEvent->_0).element_class) goto code_?;
+    *(undefined4 *)&DStack_11._current.value[1].klass =
+         *(undefined4 *)
+          &((Dictionary_2_System_Object_System_Object___Fields *)
+           ((longlong)DStack_11._current.key + 0x10))->_buckets;
+  }
+  FUN_?();
 code_?:
-  func_?(unaff_EDI,pPVar15);
-  pPVar12 = extraout_ECX;
-  pOVar13 = extraout_EDX_00;
+  FUN_?(pDVar12);
 code_?:
-  func_?(pOVar13,pPVar12);
+  FUN_?();
 code_?:
-  func_?(unaff_EDI,TypeInfo__PMOStateBase);
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  FUN_?(pOVar14);
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -123,105 +128,213 @@ void Assembly-CSharp.dll::PlayModeOnlyStateTransitionTable::PlayModeOnlyStateTra
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Add_System__Object__IState_
-                   );
-    func_?(&TypeInfo__PMOObserve);
-    func_?(&TypeInfo__PMOWaitForBuildModeAvatar);
-    func_?(&TypeInfo__PMOWaitForPlayModeAvatar);
-    func_?(&TypeInfo__PMOWalkMode);
-    func_?(&TypeInfo__PlayModeOnlyEvent);
+    puStackY_40 = &UNK_?;
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Add_System__Object__IState_
+                 );
+    LOCK();
+    UNLOCK();
+    puStackY_40 = &UNK_?;
+    FUN_?(&TypeInfo__PMOObserve);
+    LOCK();
+    UNLOCK();
+    puStackY_40 = &UNK_?;
+    FUN_?(&TypeInfo__PMOWaitForBuildModeAvatar);
+    LOCK();
+    UNLOCK();
+    puStackY_40 = &UNK_?;
+    FUN_?(&TypeInfo__PMOWaitForPlayModeAvatar);
+    LOCK();
+    UNLOCK();
+    puStackY_40 = &UNK_?;
+    FUN_?(&TypeInfo__PMOWalkMode);
+    LOCK();
+    UNLOCK();
+    puStackY_40 = &UNK_?;
+    FUN_?(&TypeInfo__PlayModeOnlyEvent);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = this;
+  puStackY_40 = &UNK_?;
   StateTransitionTable::StateTransitionTable__ctor((StateTransitionTable *)this,(MethodInfo *)0x0);
-  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this_00->fields)._.table;
-  this = (PlayModeOnlyStateTransitionTable *)0x2f;
-  func_?(TypeInfo__PlayModeOnlyEvent,&this);
-  method_01 = TypeInfo__PMOObserve;
-  value = (MethodInfo *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-  pLVar2 = LoggerManager::LoggerManager_get_Instance((MethodInfo *)0x0);
-  method_00 = value;
-  pTVar3 = mscorlib.dll::System::Object::Object_GetType((Object *)value,(MethodInfo *)0x0);
-  if (pLVar2 != (LoggerManager *)0x0) {
-    pIVar4 = LoggerManager::LoggerManager_GetLogger(pLVar2,pTVar3,(MethodInfo *)0x0);
-    value->name = (char *)pIVar4;
-    func_?();
+  pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this->fields)._.table;
+  puStackY_40 = &UNK_?;
+  pOVar2 = (Object *)FUN_?(TypeInfo__PlayModeOnlyEvent);
+  puStackY_40 = &UNK_?;
+  pPVar3 = (PMOStateBase *)FUN_?(TypeInfo__PMOObserve);
+  puStackY_40 = &UNK_?;
+  PMOStateBase::PMOStateBase__ctor(pPVar3,(MethodInfo *)0x0);
+  if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    uVar4 = CONCAT71((int7)((ulonglong)in_R9 >> 8),2);
+    puStackY_40 = &UNK_?;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__TryInsert
+              (pDVar1,pOVar2,(Object *)pPVar3,(InsertionBehavior__Enum)uVar4,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Add_System__Object__IState_
+               ->klass->rgctx_data[0x22].method);
+    pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this->fields)._.table;
+    puStackY_40 = &UNK_?;
+    pOVar2 = (Object *)FUN_?(TypeInfo__PlayModeOnlyEvent);
+    puStackY_40 = &UNK_?;
+    pPVar3 = (PMOStateBase *)FUN_?(TypeInfo__PMOWaitForPlayModeAvatar);
+    *(undefined4 *)((longlong)&pPVar3[1].klass + 4) = 5;
+    puStackY_40 = &UNK_?;
+    PMOStateBase::PMOStateBase__ctor(pPVar3,(MethodInfo *)0x0);
     if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      uVar4 = CONCAT71((int7)((ulonglong)uVar4 >> 8),2);
+      puStackY_40 = &UNK_?;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                (pDVar1,(Object *)
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Add_System__Object__IState_
-                 ,(Object *)value,
+      Dictionary_2_System_Object_System_Object__TryInsert
+                (pDVar1,pOVar2,(Object *)pPVar3,(InsertionBehavior__Enum)uVar4,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Add_System__Object__IState_
-                );
-      pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this_00->fields)._.table;
-      pOVar5 = (Object *)func_?();
-      pOVar6 = (Object *)func_?();
-      pOVar6[2].monitor = (MonitorData *)0x5;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                (pOVar6,ExceptionArgument__Enum_obj,method_00);
-      pLVar2 = LoggerManager::LoggerManager_get_Instance((MethodInfo *)0x0);
-      pTVar3 = mscorlib.dll::System::Object::Object_GetType(pOVar6,(MethodInfo *)0x0);
-      if (pLVar2 != (LoggerManager *)0x0) {
-        pIVar4 = LoggerManager::LoggerManager_GetLogger(pLVar2,pTVar3,(MethodInfo *)0x0);
-        pOVar6[1].monitor = (MonitorData *)pIVar4;
-        func_?();
+                 ->klass->rgctx_data[0x22].method);
+      pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this->fields)._.table;
+      puStackY_40 = &UNK_?;
+      pOVar2 = (Object *)FUN_?(TypeInfo__PlayModeOnlyEvent);
+      puStackY_40 = &UNK_?;
+      pPVar3 = (PMOStateBase *)FUN_?(TypeInfo__PMOWaitForBuildModeAvatar);
+      puStackY_40 = &UNK_?;
+      PMOStateBase::PMOStateBase__ctor(pPVar3,(MethodInfo *)0x0);
+      if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        uVar4 = CONCAT71((int7)((ulonglong)uVar4 >> 8),2);
+        puStackY_40 = &UNK_?;
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__TryInsert
+                  (pDVar1,pOVar2,(Object *)pPVar3,(InsertionBehavior__Enum)uVar4,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Add_System__Object__IState_
+                   ->klass->rgctx_data[0x22].method);
+        pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this->fields)._.table;
+        puStackY_40 = &UNK_?;
+        pOVar2 = (Object *)FUN_?(TypeInfo__PlayModeOnlyEvent);
+        puStackY_40 = &UNK_?;
+        pPVar3 = (PMOStateBase *)FUN_?(TypeInfo__PMOWalkMode);
+        puStackY_40 = &UNK_?;
+        PMOStateBase::PMOStateBase__ctor(pPVar3,(MethodInfo *)0x0);
         if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+          puStackY_40 = &UNK_?;
           mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__Add
-                    (pDVar1,pOVar5,pOVar6,
+          Dictionary_2_System_Object_System_Object__TryInsert
+                    (pDVar1,pOVar2,(Object *)pPVar3,
+                     (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar4 >> 8),2),
                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Add_System__Object__IState_
-                    );
-          pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this_00->fields)._.table;
-          pOVar5 = (Object *)func_?();
-          pOVar6 = (Object *)func_?();
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    (pOVar6,ExceptionArgument__Enum_obj,method_00);
-          pLVar2 = LoggerManager::LoggerManager_get_Instance((MethodInfo *)0x0);
-          pTVar3 = mscorlib.dll::System::Object::Object_GetType(pOVar6,(MethodInfo *)0x0);
-          if (pLVar2 != (LoggerManager *)0x0) {
-            pIVar4 = LoggerManager::LoggerManager_GetLogger(pLVar2,pTVar3,(MethodInfo *)0x0);
-            pOVar6[1].monitor = (MonitorData *)pIVar4;
-            func_?();
-            if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__Add
-                        (pDVar1,pOVar5,pOVar6,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Add_System__Object__IState_
-                        );
-              pDVar1 = (Dictionary_2_System_Object_System_Object_ *)(this_00->fields)._.table;
-              pOVar5 = (Object *)func_?();
-              pOVar6 = (Object *)func_?();
-              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                        (pOVar6,ExceptionArgument__Enum_obj,method_00);
-              pLVar2 = LoggerManager::LoggerManager_get_Instance((MethodInfo *)0x0);
-              pTVar3 = mscorlib.dll::System::Object::Object_GetType(pOVar6,(MethodInfo *)0x0);
-              if (pLVar2 != (LoggerManager *)0x0) {
-                pIVar4 = LoggerManager::LoggerManager_GetLogger(pLVar2,pTVar3,(MethodInfo *)0x0);
-                pOVar6[1].monitor = (MonitorData *)pIVar4;
-                func_?();
-                if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                  Object]::Dictionary_2_System_Object_System_Object__Add
-                            (pDVar1,pOVar5,pOVar6,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__Add_System__Object__IState_
-                            );
-                  PlayModeOnlyStateTransitionTable_SetStateTypes(this_00,(MethodInfo *)0x0);
-                  return;
-                }
-              }
-            }
+                     ->klass->rgctx_data[0x22].method);
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_IState>__GetEnumerator__
+                          ,0);
+            LOCK();
+            UNLOCK();
+            FUN_?(&
+                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_IState>__Dispose__
+                         );
+            LOCK();
+            UNLOCK();
+            FUN_?(&
+                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_IState>__MoveNext__
+                         );
+            LOCK();
+            UNLOCK();
+            FUN_?(&
+                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_IState>__get_Current__
+                         );
+            LOCK();
+            UNLOCK();
+            FUN_?(&
+                          MethodInfo__System__Collections__Generic__KeyValuePair<System::Object,_IState>__get_Key__
+                         );
+            LOCK();
+            UNLOCK();
+            FUN_?(&
+                          MethodInfo__System__Collections__Generic__KeyValuePair<System::Object,_IState>__get_Value__
+                         );
+            LOCK();
+            UNLOCK();
+            FUN_?(&TypeInfo__PMOStateBase);
+            LOCK();
+            UNLOCK();
+            FUN_?(&TypeInfo__PlayModeOnlyEvent);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
           }
+          SStackY_60.table = (this->fields)._.table;
+          if ((Dictionary_2_System_Object_System_Object_ *)SStackY_60.table ==
+              (Dictionary_2_System_Object_System_Object_ *)0x0) {
+            FUN_?();
+            pcVar5 = (code *)swi(3);
+            (*pcVar5)();
+            return;
+          }
+          uStackY_50 = 0;
+          uStackY_48 = 0;
+          if (iRam_? != 0) {
+            uVar6 = (uint)((ulonglong)&SStackY_60 >> 0xc);
+            puVar7 = (ulonglong *)((ulonglong)((uVar6 & 0x1fffff) >> 6) * 8 + 0xADDR);
+            do {
+              uVar8 = *puVar7;
+              LOCK();
+              uVar9 = *puVar7;
+              if (uVar8 == uVar9) {
+                *puVar7 = uVar8 | 1L << (uVar6 & 0x3f);
+              }
+              UNLOCK();
+            } while (uVar8 != uVar9);
+          }
+          uStackY_58 = (ulonglong)
+                       (uint)(((Dictionary_2_System_Object_System_Object_ *)SStackY_60.table)->
+                             fields)._version;
+          puStackY_40 = (undefined *)0x2;
+          uStackY_30 = uStackY_58;
+          pDStackY_28 = (Dictionary_2_System_Object_System_Object_ *)0x0;
+          pOStackY_20 = (Object *)0x0;
+          pDVar1 = (Dictionary_2_System_Object_System_Object_ *)SStackY_60.table;
+          pDStackY_38 = (Dictionary_2_System_Object_System_Object_ *)SStackY_60.table;
+          while( true ) {
+            bVar10 = mscorlib.dll::System::Collections::Generic::
+                    Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
+                    Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+                              ((Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object_ *)
+                               &pDStackY_38,
+                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_IState>__MoveNext__
+                              );
+            if (bVar10 == 0) {
+              return;
+            }
+            pOVar2 = pOStackY_20;
+            if (pOStackY_20 == (Object *)0x0) break;
+            bVar11 = (TypeInfo__PMOStateBase->_1).naturalAligment;
+            if ((((pOStackY_20->klass->_1).naturalAligment < bVar11) ||
+                ((pOStackY_20->klass->_1).typeHierarchy[(ulonglong)bVar11 - 1] !=
+                 (Il2CppClass *)TypeInfo__PMOStateBase)) || (pOStackY_20 == (Object *)0x0))
+            goto code_?;
+            if (pDStackY_28 == (Dictionary_2_System_Object_System_Object_ *)0x0)
+            goto code_?;
+            pDVar1 = pDStackY_28;
+            if ((((Dictionary_2_System_Object_IState___Class *)pDStackY_28->klass)->_0).
+                element_class != (TypeInfo__PlayModeOnlyEvent->_0).element_class)
+            goto code_?;
+            *(undefined4 *)&pOStackY_20[1].klass = *(undefined4 *)&(pDStackY_28->fields)._buckets;
+          }
+          FUN_?();
+code_?:
+          FUN_?(pDVar1);
+code_?:
+          FUN_?();
+code_?:
+          FUN_?(pOVar2);
+          FUN_?();
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
         }
       }
     }
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  puStackY_40 = &UNK_?;
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

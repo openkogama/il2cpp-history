@@ -5,82 +5,119 @@ void Assembly-CSharp.dll::LocalPlayerScore::LocalPlayerScore_Activate
                (LocalPlayerScore *this,MethodInfo *method)
 
 {
-  uVar1 = GameStatCounterType__Enum_None;
+  aIStackX_8[0].m_value = aIStackX_8[0].m_value & 0xffffff00;
   WinningConditionControl::WinningConditionControl_TryGetPrioritizedStat
-            ((GameStatCounterType__Enum *)&stack0xfffffff8,(MethodInfo *)0x0);
-  this_02 = this;
-  if ((this->fields).statTypeToShow != 0) {
+            ((GameStatCounterType__Enum *)aIStackX_8,(MethodInfo *)0x0);
+  if ((this->fields).statTypeToShow == 0) {
+    uVar1 = (byte)aIStackX_8[0].m_value;
+  }
+  else {
     uVar1 = (this->fields).statTypeToShow;
   }
-  if (uVar1 != GameStatCounterType__Enum_None) {
-    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar2 == (MVNetworkGame *)0x0) ||
-       (pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0),
-       pMVar3 == (MVLocalPlayer *)0x0)) goto code_?;
-    actorNumber = (pMVar3->fields)._._ActorNr_k__BackingField;
-    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-    pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
-    if (pMVar3 == (MVLocalPlayer *)0x0) goto code_?;
-    team = (pMVar3->fields)._._Team_k__BackingField;
-    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar2 == (MVNetworkGame *)0x0) ||
-       (this_00 = (pMVar2->fields).gameStatCounterManager, this_00 == (GameStatCounterManager *)0x0)
+  if (uVar1 != 0) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if ((((pMVar2 == (MVGameControllerBase *)0x0) ||
+         (pMVar3 = (pMVar2->fields).game, pMVar3 == (MVNetworkGame *)0x0)) ||
+        (pMVar4 = (pMVar3->fields).playerContainer, pMVar4 == (MVPlayerContainer *)0x0)) ||
+       (pMVar5 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar4,(MethodInfo *)0x0),
+       pMVar5 == (MVLocalPlayer *)0x0)) goto code_?;
+    actorNumber = (pMVar5->fields)._._ActorNr_k__BackingField;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if (((pMVar2 == (MVGameControllerBase *)0x0) ||
+        (pMVar3 = (pMVar2->fields).game, pMVar3 == (MVNetworkGame *)0x0)) ||
+       ((pMVar4 = (pMVar3->fields).playerContainer, pMVar4 == (MVPlayerContainer *)0x0 ||
+        (pMVar5 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar4,(MethodInfo *)0x0),
+        pMVar5 == (MVLocalPlayer *)0x0)))) goto code_?;
+    team = (pMVar5->fields)._._Team_k__BackingField;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if (((pMVar2 == (MVGameControllerBase *)0x0) ||
+        (pMVar3 = (pMVar2->fields).game, pMVar3 == (MVNetworkGame *)0x0)) ||
+       (this_00 = (pMVar3->fields).gameStatCounterManager, this_00 == (GameStatCounterManager *)0x0)
        ) goto code_?;
-    MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_GetActorCount
-              (this_00,GameStatCounterType__Enum_None,team,actorNumber,(MethodInfo *)0x0);
-    statType = GameStatCounterType__Enum_None;
-    localScore = &UNK_?;
-    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-    method = (MethodInfo *)&UNK_?;
-    pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
-    if ((pMVar3 == (MVLocalPlayer *)0x0) ||
-       (this_01 = (pMVar3->fields)._._SubscriptionRules_k__BackingField,
-       this_01 == (SubscriptionRulesWrapper *)0x0)) goto code_?;
-    bVar4 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
+    localScore = MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_GetActorCount
+                           (this_00,(uint)uVar1,team,actorNumber,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if ((((pMVar2 == (MVGameControllerBase *)0x0) ||
+         (pMVar3 = (pMVar2->fields).game, pMVar3 == (MVNetworkGame *)0x0)) ||
+        (pMVar4 = (pMVar3->fields).playerContainer, pMVar4 == (MVPlayerContainer *)0x0)) ||
+       ((pMVar5 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar4,(MethodInfo *)0x0),
+        pMVar5 == (MVLocalPlayer *)0x0 ||
+        (this_01 = (pMVar5->fields)._._SubscriptionRules_k__BackingField,
+        this_01 == (SubscriptionRulesWrapper *)0x0)))) goto code_?;
+    bVar6 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
             SubscriptionRulesWrapper_HasBenefit
                       (this_01,SubscriptionBenefit__Enum_XPBoost,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      pGVar5 = (this_02->fields).memberUI;
-      if (pGVar5 == (GameObject *)0x0) goto code_?;
+    if (bVar6 != 0) {
+      pGVar7 = (this->fields).memberUI;
+      if (pGVar7 == (GameObject *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar5,1,(MethodInfo *)0x0);
+                (pGVar7,1,(MethodInfo *)0x0);
     }
-    pLVar6 = (LocalPlayerScore *)
-             LocalPlayerScore_GetLocalPlayerRanking
-                       (this_02,statType,team,actorNumber,(int32_t)localScore,(MethodInfo *)0x0);
-    if ((this_02->fields).scoreBoardCount < (int)pLVar6) {
-      this = pLVar6;
+    uVar8 = LocalPlayerScore_GetLocalPlayerRanking
+                      (this,(uint)uVar1,team,actorNumber,localScore,(MethodInfo *)0x0);
+    if ((this->fields).scoreBoardCount < (int)uVar8) {
+      aIStackX_8[0].m_value = uVar8;
       if (cRam_? == '\0') {
-        func_?();
+        FUN_?(&TypeInfo__Styles);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this_02,(MethodInfo *)0x0);
-      if (pGVar5 != (GameObject *)0x0) {
+      pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)this,(MethodInfo *)0x0);
+      if (pGVar7 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar5,1,(MethodInfo *)0x0);
-        pTVar7 = (this_02->fields).rankingText;
-        mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&this,(MethodInfo *)0x0);
-        if (pTVar7 != (Text *)0x0) {
-          (*(code *)(pTVar7->klass->vtable).set_text.method)();
-          pTVar7 = (this_02->fields).memberRankingText;
-          mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&this,(MethodInfo *)0x0);
-          if (pTVar7 != (Text *)0x0) {
-            (*(code *)(pTVar7->klass->vtable).set_text.method)();
-            pTVar7 = (this_02->fields).scoreText;
-            WinningConditionControl::WinningConditionControl_MakeIntoScoreText
-                      ((int32_t)localScore,statType,(MethodInfo *)0x0);
-            if (pTVar7 != (Text *)0x0) {
-              (*(code *)(pTVar7->klass->vtable).set_text.method)();
-              pIVar8 = (this_02->fields).background;
-              if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
+                  (pGVar7,1,(MethodInfo *)0x0);
+        pTVar9 = (this->fields).rankingText;
+        pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(aIStackX_8,(MethodInfo *)0x0);
+        if (pTVar9 != (Text *)0x0) {
+          (*(pTVar9->klass->vtable).set_text.methodPtr)
+                    (pTVar9,pSVar10,(pTVar9->klass->vtable).set_text.method);
+          pTVar9 = (this->fields).memberRankingText;
+          pSVar10 = mscorlib.dll::System::Int32::Int32_ToString(aIStackX_8,(MethodInfo *)0x0);
+          if (pTVar9 != (Text *)0x0) {
+            (*(pTVar9->klass->vtable).set_text.methodPtr)(pTVar9,pSVar10);
+            pTVar9 = (this->fields).scoreText;
+            pSVar10 = WinningConditionControl::WinningConditionControl_MakeIntoScoreText
+                                (localScore,(uint)uVar1,(MethodInfo *)0x0);
+            if (pTVar9 != (Text *)0x0) {
+              (*(pTVar9->klass->vtable).set_text.methodPtr)(pTVar9,pSVar10);
+              pIVar11 = (this->fields).background;
+              if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+                FUN_?();
               }
-              Styles::Styles_GetTeamColor((Color *)&puStack_9,team,0,(MethodInfo *)0x0);
-              if (pIVar8 != (Image *)0x0) {
-                (*(code *)(pIVar8->klass->vtable).set_color.method)();
+              pCVar12 = Styles::Styles_GetTeamColor(&CStack_13,team,0,(MethodInfo *)0x0);
+              if (pIVar11 != (Image *)0x0) {
+                CStack_13.r = pCVar12->r;
+                CStack_13.g = pCVar12->g;
+                CStack_13.b = pCVar12->b;
+                CStack_13.a = pCVar12->a;
+                (*(pIVar11->klass->vtable).set_color.methodPtr)
+                          (pIVar11,&CStack_13,(pIVar11->klass->vtable).set_color.method);
                 return;
               }
             }
@@ -89,19 +126,18 @@ void Assembly-CSharp.dll::LocalPlayerScore::LocalPlayerScore_Activate
       }
       goto code_?;
     }
-    in_stack_10 = (MethodInfo *)0x0;
   }
-  pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)this_02,in_stack_10);
-  if (pGVar5 != (GameObject *)0x0) {
+  pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)this,(MethodInfo *)0x0);
+  if (pGVar7 != (GameObject *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar5,0,(MethodInfo *)0x0);
+              (pGVar7,0,(MethodInfo *)0x0);
     return;
   }
 code_?:
-  func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  FUN_?();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -113,88 +149,132 @@ int32_t Assembly-CSharp.dll::LocalPlayerScore::LocalPlayerScore_GetLocalPlayerRa
                   int32_t localActorNumber,int32_t localScore,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
+                  ,CONCAT44(in_register_00000014,statType),CONCAT44(in_register_00000084,localTeam))
+    ;
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  iVar4 = 1;
-  pOStack_5 = (Object__Class *)0x0;
-  pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar6 != (MVNetworkGame *)0x0) &&
-     (this_00 = (pMVar6->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
-    this_02 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-               *)MVPlayerContainer::MVPlayerContainer_get_ActivePlayers(this_00,(MethodInfo *)0x0);
-    if (this_02 !=
-        (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-         *)0x0) {
-      pDVar7 = mscorlib.dll::System::Collections::Generic::
-               Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
-               StyleSheetCache+SheetHandleKey,System::Object]::
-               Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                         ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                           *)&stack0xffffffcc,this_02,
-                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
-                         );
-      team = pDVar7->_currentValue;
-      uStack_1 = 1;
-      while( true ) {
-        do {
-          bVar8 = mscorlib.dll::System::Collections::Generic::
-                  Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                  UInt32,System::Object]::
-                  Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                            ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                              *)&pOStack_5,
-                             MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
-                            );
-          if (bVar8 == 0) {
-            uStack_1 = 0xffffffff;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                      ((Object *)&pOStack_5,
-                       (ExceptionArgument__Enum)
-                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
-                       ,in_stack_9);
-            *unaff_FS_OFFSET = uStack_3;
-            return iVar4;
-          }
-        } while ((team == (Object *)0x0) ||
-                (actorNumber = (int)team[6].klass, actorNumber == localActorNumber));
-        pMVar6 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (pMVar6 == (MVNetworkGame *)0x0) break;
-        this_01 = (pMVar6->fields).gameStatCounterManager;
-        if (this_01 == (GameStatCounterManager *)0x0) break;
-        in_stack_9 = (MethodInfo *)0x0;
-        team = (Object *)team[9].klass;
-        iVar10 = MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_GetActorCount
-                          (this_01,statType,(MVTeam__Enum)team,actorNumber,(MethodInfo *)0x0);
-        bVar8 = MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_IsNewScoreBetter
-                          (iVar10,localScore,statType,(MethodInfo *)0x0);
-        if (bVar8 != 0) {
-          iVar4 = iVar4 + 1;
+  iVar1 = 1;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((((pMVar2 == (MVGameControllerBase *)0x0) ||
+       (pMVar3 = (pMVar2->fields).game, pMVar3 == (MVNetworkGame *)0x0)) ||
+      (this_00 = (pMVar3->fields).playerContainer, this_00 == (MVPlayerContainer *)0x0)) ||
+     (pDVar4 = MVPlayerContainer::MVPlayerContainer_get_ActivePlayers(this_00,(MethodInfo *)0x0),
+     pDVar4 == (Dictionary_2_TKey_TValue_ValueCollection_System_Int32_MVPlayer_ *)0x0)) {
+    FUN_?();
+code_?:
+    FUN_?();
+code_?:
+    FUN_?();
+code_?:
+    FUN_?();
+code_?:
+    FUN_?();
+code_?:
+    FUN_?();
+code_?:
+    mscorlib.dll::System::ThrowHelper::
+    ThrowHelper_1_ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion
+              ((MethodInfo *)0x0);
+  }
+  else {
+    pDStack_5 = (pDVar4->fields)._dictionary;
+    ppDStack_6 = (Dictionary_2_System_Int32_MVPlayer_ **)0x0;
+    uStack_7 = 0;
+    if (iRam_? != 0) {
+      uVar8 = (uint)((ulonglong)&pDStack_9 >> 0xc);
+      puVar10 = (ulonglong *)((ulonglong)((uVar8 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar11 = *puVar10;
+        LOCK();
+        uVar12 = *puVar10;
+        if (uVar11 == uVar12) {
+          *puVar10 = uVar11 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar11 != uVar12);
+    }
+    if (pDStack_5 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
+      pDStack_9 = pDStack_5;
+      FUN_?();
+      pcVar13 = (code *)swi(3);
+      iVar14 = (*pcVar13)();
+      return iVar14;
+    }
+    ppDStack_6 = (Dictionary_2_System_Int32_MVPlayer_ **)
+                  ((ulonglong)(uint)(pDStack_5->fields)._version << 0x20);
+    uStack_7 = 0;
+    uStack_15 = (ulonglong)ppDStack_6;
+    pMStack_16 = (MVPlayer *)0x0;
+    pDStack_9 = (Dictionary_2_System_Int32_MVPlayer_ *)0x0;
+    ppDStack_6 = &pDStack_5;
+    while (pDStack_5 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
+      if (uStack_15._4_4_ != (pDStack_5->fields)._version) goto code_?;
+      uVar12 = uStack_15 & 0xffffffff;
+      do {
+        if (pDStack_5 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) goto code_?;
+        uVar8 = (uint)uVar12;
+        if ((uint)(pDStack_5->fields)._count <= uVar8) {
+          return iVar1;
+        }
+        pDVar17 = (pDStack_5->fields)._entries;
+        uVar12 = (ulonglong)(uVar8 + 1);
+        uStack_15 = CONCAT44(uStack_15._4_4_,uVar8 + 1);
+        if (pDVar17 == (Dictionary_2_TKey_TValue_Entry_System_Int32_MVPlayer___Array *)0x0)
+        goto code_?;
+        if ((uint)pDVar17->max_length <= uVar8) goto code_?;
+      } while (pDVar17->vector[(int)uVar8].hashCode < 0);
+      pMStack_16 = pDVar17->vector[(int)uVar8].value;
+      func_?();
+      pMVar18 = pMStack_16;
+      if ((pMStack_16 != (MVPlayer *)0x0) &&
+         (actorNumber = (pMStack_16->fields)._ActorNr_k__BackingField,
+         actorNumber != localActorNumber)) {
+        pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if (pMVar3 == (MVNetworkGame *)0x0) goto code_?;
+        this_01 = (pMVar3->fields).gameStatCounterManager;
+        if (this_01 == (GameStatCounterManager *)0x0) goto code_?;
+        iVar14 = MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_GetActorCount
+                          (this_01,statType & 0xff,(pMVar18->fields)._Team_k__BackingField,
+                           actorNumber,(MethodInfo *)0x0);
+        bVar19 = MVWorldObject.dll::GameStatCounterManager::GameStatCounterManager_IsNewScoreBetter
+                          (iVar14,localScore,statType & 0xff,(MethodInfo *)0x0);
+        if (bVar19 != 0) {
+          iVar1 = iVar1 + 1;
         }
       }
     }
   }
-  func_?();
-  func_?();
-  pcVar11 = (code *)swi(3);
-  iVar10 = (*pcVar11)();
-  return iVar10;
+  FUN_?();
+  FUN_?();
+  pcVar13 = (code *)swi(3);
+  iVar14 = (*pcVar13)();
+  return iVar14;
 }
 
 
@@ -205,19 +285,30 @@ void Assembly-CSharp.dll::LocalPlayerScore::LocalPlayerScore_Initialize
 
 {
   pTVar1 = (this->fields).playerNameText;
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 != (MVNetworkGame *)0x0) {
-    pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
-    if (((pMVar2 != (MVLocalPlayer *)0x0) &&
-        (pUVar3 = (pMVar2->fields)._._UserProfileData_k__BackingField,
-        pUVar3 != (UserProfileData *)0x0)) && (pTVar1 != (Text *)0x0)) {
-      (*(code *)(pTVar1->klass->vtable).set_text.method)(pTVar1,(pUVar3->fields).UserName);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (((pMVar2 != (MVGameControllerBase *)0x0) &&
+      (pMVar3 = (pMVar2->fields).game, pMVar3 != (MVNetworkGame *)0x0)) &&
+     (this_00 = (pMVar3->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
+    pMVar4 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0);
+    if (((pMVar4 != (MVLocalPlayer *)0x0) &&
+        (pUVar5 = (pMVar4->fields)._._UserProfileData_k__BackingField,
+        pUVar5 != (UserProfileData *)0x0)) && (pTVar1 != (Text *)0x0)) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*(pTVar1->klass->vtable).set_text.methodPtr)
+                (pTVar1,(pUVar5->fields).UserName,(pTVar1->klass->vtable).set_text.method);
       return;
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -229,8 +320,11 @@ void Assembly-CSharp.dll::LocalPlayerScore::LocalPlayerScore_Show
                int32_t currentRanking,int32_t localScore,MethodInfo *method)
 
 {
+  aIStackX_20[0].m_value = currentRanking;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Styles);
+    FUN_?(&TypeInfo__Styles);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
@@ -239,34 +333,40 @@ void Assembly-CSharp.dll::LocalPlayerScore::LocalPlayerScore_Show
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (this_00,1,(MethodInfo *)0x0);
     pTVar1 = (this->fields).rankingText;
-    mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&currentRanking,(MethodInfo *)0x0);
+    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(aIStackX_20,(MethodInfo *)0x0);
     if (pTVar1 != (Text *)0x0) {
-      (*(code *)(pTVar1->klass->vtable).set_text.method)();
+      (*(pTVar1->klass->vtable).set_text.methodPtr)
+                (pTVar1,pSVar2,(pTVar1->klass->vtable).set_text.method);
       pTVar1 = (this->fields).memberRankingText;
-      mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&currentRanking,(MethodInfo *)0x0);
+      pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(aIStackX_20,(MethodInfo *)0x0);
       if (pTVar1 != (Text *)0x0) {
-        (*(code *)(pTVar1->klass->vtable).set_text.method)();
+        (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1,pSVar2);
         pTVar1 = (this->fields).scoreText;
-        WinningConditionControl::WinningConditionControl_MakeIntoScoreText
-                  (localScore,statType,(MethodInfo *)0x0);
+        pSVar2 = WinningConditionControl::WinningConditionControl_MakeIntoScoreText
+                           (localScore,statType & 0xff,(MethodInfo *)0x0);
         if (pTVar1 != (Text *)0x0) {
-          (*(code *)(pTVar1->klass->vtable).set_text.method)();
-          pIVar2 = (this->fields).background;
-          if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
+          (*(pTVar1->klass->vtable).set_text.methodPtr)(pTVar1,pSVar2);
+          pIVar3 = (this->fields).background;
+          if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+            FUN_?();
           }
-          Styles::Styles_GetTeamColor((Color *)&stack0xffffffec,localTeam,0,(MethodInfo *)0x0);
-          if (pIVar2 != (Image *)0x0) {
-            (*(code *)(pIVar2->klass->vtable).set_color.method)(pIVar2);
+          pCVar4 = Styles::Styles_GetTeamColor(&CStack_5,localTeam,0,(MethodInfo *)0x0);
+          if (pIVar3 != (Image *)0x0) {
+            CStack_5.r = pCVar4->r;
+            CStack_5.g = pCVar4->g;
+            CStack_5.b = pCVar4->b;
+            CStack_5.a = pCVar4->a;
+            (*(pIVar3->klass->vtable).set_color.methodPtr)
+                      (pIVar3,&CStack_5,(pIVar3->klass->vtable).set_color.method);
             return;
           }
         }
       }
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

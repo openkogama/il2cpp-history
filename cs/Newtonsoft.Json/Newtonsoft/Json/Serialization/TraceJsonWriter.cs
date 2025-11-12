@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using Newtonsoft.Json;
 
-// Image 8: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
+// Image 9: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
 
 namespace Newtonsoft.Json.Serialization
 {
@@ -40,8 +40,8 @@ namespace Newtonsoft.Json.Serialization
 		public override void WriteValue(char? value);
 		[NullableContext(2)]
 		public override void WriteValue(byte[] value);
-		public override void WriteValue(DateTime value);
-		public override void WriteValue(DateTime? value);
+		public override void WriteValue(System.DateTime value);
+		public override void WriteValue(System.DateTime? value);
 		public override void WriteValue(DateTimeOffset value);
 		public override void WriteValue(DateTimeOffset? value);
 		public override void WriteValue(double value);
@@ -71,7 +71,7 @@ namespace Newtonsoft.Json.Serialization
 		public override void WriteValue(ulong value);
 		public override void WriteValue(ulong? value);
 		[NullableContext(2)]
-		public override void WriteValue(Uri value);
+		public override void WriteValue(System.Uri value);
 		public override void WriteValue(ushort value);
 		public override void WriteValue(ushort? value);
 		[NullableContext(2)]

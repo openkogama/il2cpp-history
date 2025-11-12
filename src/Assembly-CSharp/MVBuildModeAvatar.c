@@ -6,55 +6,83 @@ void Assembly-CSharp.dll::MVBuildModeAvatar::MVBuildModeAvatar_AddChild
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVBody);
+    FUN_?(&TypeInfo__MVBody);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   MVGroup::MVGroup_AddChild((MVGroup *)this,child,(MethodInfo *)0x0);
-  if (child == (MVWorldObjectClient *)0x0) {
-    (this->fields).body = (MVBody *)0x0;
-    pMVar1 = (MVWorldObjectClient *)0x0;
-  }
-  else {
-    if (((child->klass->_1).naturalAligment < (TypeInfo__MVBody->_1).naturalAligment) ||
-       ((MVBody__Class *)
-        (child->klass->_1).typeHierarchy[(TypeInfo__MVBody->_1).naturalAligment - 1] !=
-        TypeInfo__MVBody)) {
-      bVar2 = false;
+  pMVar1 = (MVBody *)0x0;
+  if (child != (MVWorldObjectClient *)0x0) {
+    bVar2 = (TypeInfo__MVBody->_1).naturalAligment;
+    if (((child->klass->_1).naturalAligment < bVar2) ||
+       (bVar3 = true,
+       (MVBody__Class *)(child->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] != TypeInfo__MVBody))
+    {
+      bVar3 = false;
     }
-    else {
-      bVar2 = true;
-    }
-    pMVar3 = (MVBody *)0x0;
-    if (bVar2) {
-      pMVar3 = (MVBody *)child;
-    }
-    (this->fields).body = pMVar3;
-    if (((child->klass->_1).naturalAligment < (TypeInfo__MVBody->_1).naturalAligment) ||
-       ((MVBody__Class *)
-        (child->klass->_1).typeHierarchy[(TypeInfo__MVBody->_1).naturalAligment - 1] !=
-        TypeInfo__MVBody)) {
-      bVar2 = false;
-    }
-    else {
-      bVar2 = true;
-    }
-    pMVar1 = (MVWorldObjectClient *)0x0;
-    if (bVar2) {
-      pMVar1 = child;
+    if (bVar3) {
+      pMVar1 = (MVBody *)child;
     }
   }
-  func_?(&(this->fields).body,pMVar1);
-  pMVar3 = (this->fields).body;
-  if ((pMVar3 != (MVBody *)0x0) && ((pMVar3->fields)._._._.gameObject != (GameObject *)0x0)) {
-    if (pcRam_? == (code *)0x0) {
-      pcRam_? = (code *)func_?();
-    }
-    (*pcRam_?)();
+  bVar3 = iRam_? != 0;
+  (this->fields).body = pMVar1;
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)&(this->fields).body >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar6 != uVar7);
+  }
+  pMVar1 = (this->fields).body;
+  if ((pMVar1 == (MVBody *)0x0) ||
+     (obj = (pMVar1->fields)._._._.gameObject, obj == (GameObject *)0x0)) {
+    FUN_?();
+    pcVar8 = (code *)swi(3);
+    (*pcVar8)();
     return;
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                  ,0,0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (obj == (GameObject *)0x0) {
+    FUN_?();
+    pcVar8 = (code *)swi(3);
+    (*pcVar8)();
+    return;
+  }
+  pvVar9 = (obj->fields)._.m_CachedPtr;
+  if (pvVar9 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar8 = (code *)swi(3);
+    (*pcVar8)();
+    return;
+  }
+  pcVar8 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+    uVar10 = func_?(&UNK_?);
+    FUN_?(uVar10,0);
+    pcVar8 = (code *)swi(3);
+    (*pcVar8)();
+    return;
+  }
+  pcRam_? = pcVar8;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pcRam_?)(pvVar9,0);
   return;
 }
 
@@ -66,53 +94,106 @@ void Assembly-CSharp.dll::MVBuildModeAvatar::MVBuildModeAvatar_Destroy
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UpdateController);
+    FUN_?(&TypeInfo__UpdateController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UpdateController);
+  if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+    FUN_?();
   }
   UpdateController::UpdateController_RemoveLateUpdateObject
             ((IUpdatecontrollerSubscriberLateUpdate *)this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__Object,0);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pOVar1 = *(Object_1 **)(in_stack_2 + 0x88);
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  pGVar1 = (this->fields)._._.gameObject;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    (pOVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar3 != 0) {
-    pOVar1 = *(Object_1 **)(in_stack_2 + 0x88);
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1(pOVar1,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  if (*(char *)(in_stack_2 + 0xd4) == '\0') {
-    pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar4 == (MVNetworkGame *)0x0) ||
-       (pRVar5 = (pMVar4->fields).runtimeVariableNetworkManager,
-       pRVar5 == (RuntimeVariableNetworkManager *)0x0)) {
-code_?:
-      func_?();
-      pcVar6 = (code *)swi(3);
-      (*pcVar6)();
-      return;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pGVar1 != (GameObject *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    bVar3 = RuntimeVariableNetworkManager::RuntimeVariableNetworkManager_ContainsRuntimeVariables
-                      (pRVar5,*(int32_t *)(in_stack_2 + 8),(MethodInfo *)0x0);
-    if (bVar3 != 0) {
-      pMVar4 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar4 == (MVNetworkGame *)0x0) ||
-         (pRVar5 = (pMVar4->fields).runtimeVariableNetworkManager,
-         pRVar5 == (RuntimeVariableNetworkManager *)0x0)) goto code_?;
-      RuntimeVariableNetworkManager::RuntimeVariableNetworkManager_RemoveRuntimeDataVariables
-                (pRVar5,*(int32_t *)(in_stack_2 + 8),(MethodInfo *)0x0);
+    if ((pGVar1->fields)._.m_CachedPtr != (void *)0x0) {
+      pGVar1 = (this->fields)._._.gameObject;
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy
+                ((Object_1 *)pGVar1,0.0,(MethodInfo *)0x0);
     }
   }
+  if ((this->fields)._._.initializedFromInventory != 0) {
+    return;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar2 != (MVGameControllerBase *)0x0) &&
+     (pMVar3 = (pMVar2->fields).game, pMVar3 != (MVNetworkGame *)0x0)) {
+    pRVar4 = (pMVar3->fields).runtimeVariableNetworkManager;
+    item = (this->fields)._._._.id;
+    if (pRVar4 != (RuntimeVariableNetworkManager *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      this_00 = (HashSet_1_System_Int32Enum_ *)(pRVar4->fields).runtimeDataVariables;
+      if (this_00 != (HashSet_1_System_Int32Enum_ *)0x0) {
+        bVar5 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+                HashSet_1_System_Int32Enum__Contains
+                          (this_00,item,
+                           MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
+        if (bVar5 != 0) {
+          pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar3 == (MVNetworkGame *)0x0) ||
+             (pRVar4 = (pMVar3->fields).runtimeVariableNetworkManager,
+             pRVar4 == (RuntimeVariableNetworkManager *)0x0)) goto DAT_?;
+          RuntimeVariableNetworkManager::RuntimeVariableNetworkManager_RemoveRuntimeDataVariables
+                    (pRVar4,(this->fields)._._._.id,(MethodInfo *)0x0);
+        }
+        return;
+      }
+    }
+  }
+DAT_?:
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -125,30 +206,114 @@ Assembly-CSharp.dll::MVBuildModeAvatar::MVBuildModeAvatar_InitLaser
 
 {
   if (cRam_? == '\0') {
-    func_?(&LaserPointer_MethodInfo__UnityEngine__GameObject__GetComponent<LaserPointer>__)
-    ;
+    FUN_?(&LaserPointer_MethodInfo__UnityEngine__GameObject__GetComponent<LaserPointer>__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = PickupItem::PickupItem_InstantiatePickupItem
-                      (AvatarItemType__Enum_LaserPointer,-1,(MethodInfo *)0x0);
-  if (this_00 != (GameObject *)0x0) {
-    pLVar1 = (LaserPointer *)
-             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                       (this_00,
-                        LaserPointer_MethodInfo__UnityEngine__GameObject__GetComponent<LaserPointer>__
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  lVar1 = FUN_?();
+  if (lVar1 != 0) {
+    original = *(Object **)(lVar1 + 0x390);
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    pGVar2 = (GameObject *)
+             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                       (original,
+                        UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                        );
-    if (pLVar1 != (LaserPointer *)0x0) {
+    if ((pGVar2 != (GameObject *)0x0) &&
+       (pLVar3 = (LaserPointer *)
+                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                           (pGVar2,
+                            LaserPointer_MethodInfo__UnityEngine__GameObject__GetComponent<LaserPointer>__
+                           ), pLVar3 != (LaserPointer *)0x0)) {
       LaserPointer::LaserPointer_Initialize
-                (pLVar1,0,*(MVRuntimeDataVariable **)(unaff_ESI + 0xe8),
-                 *(Transform **)(unaff_ESI + 0x90),(MethodInfo *)0x0);
-      LaserPointer::LaserPointer_OnEquip(pLVar1,(MethodInfo *)0x0);
-      return pLVar1;
+                (pLVar3,isLocal,(this->fields).CurrentItem,(this->fields)._._.transform,
+                 (MethodInfo *)0x0);
+      if ((pLVar3->fields).isLocal != 0) {
+        pTVar4 = (pLVar3->fields).cube;
+        this_00 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main
+                            ((MethodInfo *)0x0);
+        if ((this_00 == (Camera *)0x0) ||
+           (value = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                              ((Component *)this_00,(MethodInfo *)0x0), pTVar4 == (Transform *)0x0))
+        {
+code_?:
+          FUN_?();
+          pcVar5 = (code *)swi(3);
+          pLVar3 = (LaserPointer *)(*pcVar5)();
+          return pLVar3;
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
+                  (pTVar4,value,(MethodInfo *)0x0);
+        pTVar4 = (pLVar3->fields).cube;
+        if (pTVar4 == (Transform *)0x0) goto code_?;
+        uStack_6._0_4_ = (pLVar3->fields).offset.x;
+        uStack_6._4_4_ = (pLVar3->fields).offset.y;
+        fStack_7 = (pLVar3->fields).offset.z;
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pvVar8 = (pTVar4->fields)._._.m_CachedPtr;
+        if (pvVar8 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar4,(MethodInfo *)0x0);
+          pcVar5 = (code *)swi(3);
+          pLVar3 = (LaserPointer *)(*pcVar5)();
+          return pLVar3;
+        }
+        pcVar5 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+          uVar9 = func_?(&UNK_?);
+          FUN_?(uVar9,0);
+          pcVar5 = (code *)swi(3);
+          pLVar3 = (LaserPointer *)(*pcVar5)();
+          return pLVar3;
+        }
+        pcRam_? = pcVar5;
+        (*pcRam_?)(pvVar8,&uStack_6);
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                ((Behaviour *)pLVar3,1,(MethodInfo *)0x0);
+      pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)pLVar3,(MethodInfo *)0x0);
+      if (pGVar2 != (GameObject *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (pGVar2,1,(MethodInfo *)0x0);
+        pTVar4 = (pLVar3->fields).cube;
+        if ((pTVar4 != (Transform *)0x0) &&
+           (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                               ((Component *)pTVar4,(MethodInfo *)0x0), pGVar2 != (GameObject *)0x0)
+           ) {
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                    (pGVar2,1,(MethodInfo *)0x0);
+          return pLVar3;
+        }
+      }
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  pLVar1 = (LaserPointer *)(*pcVar2)();
-  return pLVar1;
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  pLVar3 = (LaserPointer *)(*pcVar5)();
+  return pLVar3;
 }
 
 
@@ -159,16 +324,67 @@ void Assembly-CSharp.dll::MVBuildModeAvatar::MVBuildModeAvatar_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UpdateController);
+    FUN_?(&TypeInfo__UpdateController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   MVGroup::MVGroup_Initialize((MVGroup *)this,(MethodInfo *)0x0);
-  if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  UpdateController::UpdateController_AddLateUpdateObject
-            ((IUpdatecontrollerSubscriberLateUpdate *)this,
-             UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<PriorityDataLateUpdate>__Add_PriorityDataLateUpdate_
+                  ,2,1,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UpdateController);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)&uStack_2 >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar1 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
+  uStack_6 = 2;
+  uStack_7 = 1;
+  uStack_2 = this;
+  if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__UpdateController);
+  }
+  pLVar8 = TypeInfo__UpdateController->static_fields->lateUpdateBuckets;
+  if (pLVar8 != (List_1_PriorityDataLateUpdate___Array *)0x0) {
+    if ((uint)pLVar8->max_length < 3) {
+      FUN_?();
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
+      return;
+    }
+    if (pLVar8->vector[2] != (List_1_PriorityDataLateUpdate_ *)0x0) {
+      uStack_10 = (undefined4)uStack_2;
+      uStack_11 = uStack_2._4_4_;
+      uStack_12 = uStack_6;
+      uStack_13 = uStack_7;
+      FUN_?(pLVar8->vector[2],&uStack_10,
+                    MethodInfo__System__Collections__Generic__List<PriorityDataLateUpdate>__Add_PriorityDataLateUpdate_
+                   );
+      return;
+    }
+  }
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -180,16 +396,19 @@ void Assembly-CSharp.dll::MVBuildModeAvatar::MVBuildModeAvatar_UpdateControllerL
 
 {
   pAVar1 = (this->fields).limbManager;
-  puVar2 = (undefined8 *)(*(code *)(this->klass->vtable).__unknown.method)();
+  puVar2 = (undefined8 *)
+           (*(this->klass->vtable).__unknown.methodPtr)
+                     (auStack_3,this,(this->klass->vtable).__unknown.method);
   if (pAVar1 != (AvatarLimbManager *)0x0) {
-    (*(code *)(pAVar1->klass->vtable).UpdateLimbRotations.method)
-              (pAVar1,*puVar2,*(undefined4 *)(puVar2 + 1),
-               (pAVar1->klass->vtable).__unknown.methodPtr);
+    uStack_4 = *puVar2;
+    uStack_5 = *(undefined4 *)(puVar2 + 1);
+    (*(pAVar1->klass->vtable).UpdateLimbRotations.methodPtr)
+              (pAVar1,&uStack_4,(pAVar1->klass->vtable).UpdateLimbRotations.method);
     return;
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -204,87 +423,204 @@ void Assembly-CSharp.dll::MVBuildModeAvatar::MVBuildModeAvatar__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__LimbRotationRuntimeData);
-    func_?(&StringLiteral_pointRotationPitch);
-    func_?(&StringLiteral_headRotationYaw);
-    func_?(&StringLiteral_headRotationPitch);
-    func_?(&StringLiteral_currentItem);
-    func_?(&StringLiteral_emote);
-    func_?(&StringLiteral_pointRotationYaw);
-    func_?(&StringLiteral_hasHandEquippableItem);
+    FUN_?(&TypeInfo__LimbRotationRuntimeData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_pointRotationPitch);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_headRotationYaw);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_headRotationPitch);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_currentItem);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_emote);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_pointRotationYaw);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_hasHandEquippableItem);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pLVar1 = (LimbRotationRuntimeData *)func_?(TypeInfo__LimbRotationRuntimeData);
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-  UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor
-            ((UxmlObjectListAttributeDescription_1_System_Object_ *)pLVar1,(MethodInfo *)0x0);
+  pLVar1 = (LimbRotationRuntimeData *)FUN_?(TypeInfo__LimbRotationRuntimeData);
+  bVar2 = iRam_? != 0;
   (this->fields).limbRotationRuntimeData = pLVar1;
-  func_?(&(this->fields).limbRotationRuntimeData,pLVar1);
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).limbRotationRuntimeData >> 0xc);
+    uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+    do {
+      uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+      puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
   MVGroup::MVGroup__ctor((MVGroup *)this,data,prefabObject,worldObjects,(MethodInfo *)0x0);
-  pMVar2 = (this->fields)._._.runtimeDataVariables;
-  if (pMVar2 != (MVRuntimeDataVariables *)0x0) {
-    pMVar3 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                       (pMVar2,StringLiteral_currentItem,0.0,1,(MethodInfo *)0x0);
-    (this->fields).CurrentItem = pMVar3;
-    func_?();
-    pMVar2 = (this->fields)._._.runtimeDataVariables;
+  pMVar7 = (this->fields)._._.runtimeDataVariables;
+  if (pMVar7 != (MVRuntimeDataVariables *)0x0) {
+    pMVar8 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                       (pMVar7,StringLiteral_currentItem,0.0,1,(MethodInfo *)0x0);
+    bVar2 = iRam_? != 0;
+    (this->fields).CurrentItem = pMVar8;
+    if (bVar2) {
+      uVar3 = (uint)((ulonglong)&(this->fields).CurrentItem >> 0xc);
+      uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+      do {
+        uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+        puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    sendInterval = _UNK_?;
+    pMVar7 = (this->fields)._._.runtimeDataVariables;
     pLVar1 = (this->fields).limbRotationRuntimeData;
-    if (pMVar2 != (MVRuntimeDataVariables *)0x0) {
-      pMVar3 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                         (pMVar2,StringLiteral_headRotationYaw,0.8,0,(MethodInfo *)0x0);
-      if (pLVar1 != (LimbRotationRuntimeData *)0x0) {
-        (pLVar1->fields).HeadRotationYaw = pMVar3;
-        func_?();
-        pMVar2 = (this->fields)._._.runtimeDataVariables;
+    if ((pMVar7 != (MVRuntimeDataVariables *)0x0) &&
+       (pMVar8 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                           (pMVar7,StringLiteral_headRotationYaw,_UNK_?,0,(MethodInfo *)0x0)
+       , pLVar1 != (LimbRotationRuntimeData *)0x0)) {
+      bVar2 = iRam_? != 0;
+      (pLVar1->fields).HeadRotationYaw = pMVar8;
+      if (bVar2) {
+        uVar3 = (uint)((ulonglong)&pLVar1->fields >> 0xc);
+        uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+        do {
+          uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+          puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+          LOCK();
+          bVar2 = uVar5 == *puVar6;
+          if (bVar2) {
+            *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar2);
+      }
+      pMVar7 = (this->fields)._._.runtimeDataVariables;
+      pLVar1 = (this->fields).limbRotationRuntimeData;
+      if ((pMVar7 != (MVRuntimeDataVariables *)0x0) &&
+         (pMVar8 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                             (pMVar7,StringLiteral_headRotationPitch,sendInterval,0,
+                              (MethodInfo *)0x0), pLVar1 != (LimbRotationRuntimeData *)0x0)) {
+        bVar2 = iRam_? != 0;
+        (pLVar1->fields).HeadRotationPitch = pMVar8;
+        if (bVar2) {
+          uVar3 = (uint)((ulonglong)&(pLVar1->fields).HeadRotationPitch >> 0xc);
+          uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+          do {
+            uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+            puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+            LOCK();
+            bVar2 = uVar5 == *puVar6;
+            if (bVar2) {
+              *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar2);
+        }
+        pMVar7 = (this->fields)._._.runtimeDataVariables;
         pLVar1 = (this->fields).limbRotationRuntimeData;
-        if (pMVar2 != (MVRuntimeDataVariables *)0x0) {
-          pMVar3 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                             (pMVar2,StringLiteral_headRotationPitch,0.8,0,(MethodInfo *)0x0);
-          if (pLVar1 != (LimbRotationRuntimeData *)0x0) {
-            (pLVar1->fields).HeadRotationPitch = pMVar3;
-            func_?();
-            pMVar2 = (this->fields)._._.runtimeDataVariables;
-            pLVar1 = (this->fields).limbRotationRuntimeData;
-            if (pMVar2 != (MVRuntimeDataVariables *)0x0) {
-              pMVar3 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                                 (pMVar2,StringLiteral_pointRotationYaw,0.8,0,(MethodInfo *)0x0);
-              if (pLVar1 != (LimbRotationRuntimeData *)0x0) {
-                (pLVar1->fields).PointRotationYaw = pMVar3;
-                func_?();
-                pMVar2 = (this->fields)._._.runtimeDataVariables;
-                pLVar1 = (this->fields).limbRotationRuntimeData;
-                if (pMVar2 != (MVRuntimeDataVariables *)0x0) {
-                  pMVar3 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                                     (pMVar2,StringLiteral_pointRotationPitch,0.8,0,
-                                      (MethodInfo *)0x0);
-                  if (pLVar1 != (LimbRotationRuntimeData *)0x0) {
-                    (pLVar1->fields).PointRotationPitch = pMVar3;
-                    func_?();
-                    pMVar2 = (this->fields)._._.runtimeDataVariables;
-                    pLVar1 = (this->fields).limbRotationRuntimeData;
-                    if (pMVar2 != (MVRuntimeDataVariables *)0x0) {
-                      pMVar3 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                                         (pMVar2,StringLiteral_hasHandEquippableItem,0.0,0,
-                                          (MethodInfo *)0x0);
-                      if (pLVar1 != (LimbRotationRuntimeData *)0x0) {
-                        (pLVar1->fields).HasHandEquippableItem = pMVar3;
-                        func_?();
-                        pMVar2 = (this->fields)._._.runtimeDataVariables;
-                        pLVar1 = (this->fields).limbRotationRuntimeData;
-                        if (pMVar2 != (MVRuntimeDataVariables *)0x0) {
-                          pMVar3 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
-                                             (pMVar2,StringLiteral_emote,0.5,0,(MethodInfo *)0x0);
-                          if (pLVar1 != (LimbRotationRuntimeData *)0x0) {
-                            (pLVar1->fields).Emote = pMVar3;
-                            func_?();
-                            return;
-                          }
-                        }
-                      }
-                    }
-                  }
+        if ((pMVar7 != (MVRuntimeDataVariables *)0x0) &&
+           (pMVar8 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                               (pMVar7,StringLiteral_pointRotationYaw,sendInterval,0,
+                                (MethodInfo *)0x0), pLVar1 != (LimbRotationRuntimeData *)0x0)) {
+          bVar2 = iRam_? != 0;
+          (pLVar1->fields).PointRotationYaw = pMVar8;
+          if (bVar2) {
+            uVar3 = (uint)((ulonglong)&(pLVar1->fields).PointRotationYaw >> 0xc);
+            uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+            do {
+              uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+              puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+              LOCK();
+              bVar2 = uVar5 == *puVar6;
+              if (bVar2) {
+                *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar2);
+          }
+          pMVar7 = (this->fields)._._.runtimeDataVariables;
+          pLVar1 = (this->fields).limbRotationRuntimeData;
+          if ((pMVar7 != (MVRuntimeDataVariables *)0x0) &&
+             (pMVar8 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                                 (pMVar7,StringLiteral_pointRotationPitch,sendInterval,0,
+                                  (MethodInfo *)0x0), pLVar1 != (LimbRotationRuntimeData *)0x0)) {
+            bVar2 = iRam_? != 0;
+            (pLVar1->fields).PointRotationPitch = pMVar8;
+            if (bVar2) {
+              uVar3 = (uint)((ulonglong)&(pLVar1->fields).PointRotationPitch >> 0xc);
+              uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+              do {
+                uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+                puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+                LOCK();
+                bVar2 = uVar5 == *puVar6;
+                if (bVar2) {
+                  *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
                 }
+                UNLOCK();
+              } while (!bVar2);
+            }
+            pMVar7 = (this->fields)._._.runtimeDataVariables;
+            pLVar1 = (this->fields).limbRotationRuntimeData;
+            if ((pMVar7 != (MVRuntimeDataVariables *)0x0) &&
+               (pMVar8 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                                   (pMVar7,StringLiteral_hasHandEquippableItem,0.0,0,
+                                    (MethodInfo *)0x0), pLVar1 != (LimbRotationRuntimeData *)0x0)) {
+              bVar2 = iRam_? != 0;
+              (pLVar1->fields).HasHandEquippableItem = pMVar8;
+              if (bVar2) {
+                uVar3 = (uint)((ulonglong)&(pLVar1->fields).HasHandEquippableItem >> 0xc);
+                uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+                do {
+                  uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+                  puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+                  LOCK();
+                  bVar2 = uVar5 == *puVar6;
+                  if (bVar2) {
+                    *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+                  }
+                  UNLOCK();
+                } while (!bVar2);
+              }
+              pMVar7 = (this->fields)._._.runtimeDataVariables;
+              pLVar1 = (this->fields).limbRotationRuntimeData;
+              if ((pMVar7 != (MVRuntimeDataVariables *)0x0) &&
+                 (pMVar8 = MVRuntimeDataVariables::MVRuntimeDataVariables_New
+                                     (pMVar7,StringLiteral_emote,_UNK_?,0,(MethodInfo *)0x0)
+                 , pLVar1 != (LimbRotationRuntimeData *)0x0)) {
+                bVar2 = iRam_? != 0;
+                (pLVar1->fields).Emote = pMVar8;
+                if (bVar2) {
+                  uVar3 = (uint)((ulonglong)&(pLVar1->fields).Emote >> 0xc);
+                  uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+                  do {
+                    uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+                    puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+                    LOCK();
+                    bVar2 = uVar5 == *puVar6;
+                    if (bVar2) {
+                      *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+                    }
+                    UNLOCK();
+                  } while (!bVar2);
+                }
+                return;
               }
             }
           }
@@ -292,9 +628,9 @@ void Assembly-CSharp.dll::MVBuildModeAvatar::MVBuildModeAvatar__ctor
       }
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

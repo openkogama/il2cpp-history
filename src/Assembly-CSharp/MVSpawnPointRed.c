@@ -8,7 +8,9 @@ void Assembly-CSharp.dll::MVSpawnPointRed::MVSpawnPointRed__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PrefabPool);
+    FUN_?(&TypeInfo__PrefabPool);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
@@ -16,11 +18,10 @@ void Assembly-CSharp.dll::MVSpawnPointRed::MVSpawnPointRed__ctor
     MVLogicObject::MVLogicObject__ctor
               ((MVLogicObject *)this,data,(pPVar1->fields).mvSpawnPointRedPrefab,worldObjects,
                (MethodInfo *)0x0);
-    *(undefined4 *)&(this->fields)._._._.interactionFlags = 0xa101;
-    *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) = 0;
+    (this->fields)._._._.interactionFlags = 0xa101;
     return;
   }
-  func_?();
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

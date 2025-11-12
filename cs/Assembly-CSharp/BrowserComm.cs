@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Scripting;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
@@ -32,6 +33,7 @@ public class BrowserComm : MonoBehaviour
 		public int currentGold;
 
 		// Constructors
+		[Preserve]
 		public JsonGoldUpdateData();
 	}
 
@@ -41,6 +43,7 @@ public class BrowserComm : MonoBehaviour
 		public bool muteState;
 
 		// Constructors
+		[Preserve]
 		public JsonMuteData();
 	}
 
@@ -52,6 +55,7 @@ public class BrowserComm : MonoBehaviour
 		public string error;
 
 		// Constructors
+		[Preserve]
 		public JsonReturnData();
 
 		// Methods

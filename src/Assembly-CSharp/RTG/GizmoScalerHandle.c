@@ -6,22 +6,25 @@ bool Assembly-CSharp.dll::RTG::GizmoScalerHandle::GizmoScalerHandle_ContainsScal
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._scaleDragAxisIndices;
-  if (this_00 != (List_1_System_Int32_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::
-            List_1_System_Int32__Contains
-                      (this_00,scaleDragAxisIndex,
-                       MethodInfo__System__Collections__Generic__List<int>__Contains_int_);
-    return bVar1;
+  pLVar1 = (this->fields)._scaleDragAxisIndices;
+  if (pLVar1 != (List_1_System_Int32_ *)0x0) {
+    if ((pLVar1->fields)._size == 0) {
+      return 0;
+    }
+    iVar2 = FUN_?(pLVar1,scaleDragAxisIndex,
+                          MethodInfo__System__Collections__Generic__List<int>__Contains_int_->klass
+                          ->rgctx_data[0x17].rgctxDataDummy);
+    return iVar2 != -1;
   }
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
+  FUN_?();
   pcVar3 = (code *)swi(3);
-  bVar1 = (*pcVar3)();
-  return bVar1;
+  bVar4 = (*pcVar3)();
+  return bVar4;
 }
 
 
@@ -33,34 +36,59 @@ void Assembly-CSharp.dll::RTG::GizmoScalerHandle::GizmoScalerHandle__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<int>__List__);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<int>__List_System__Collections__Generic__IEnumerable<int>_
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__List<int>);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<int>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<int>__List_System__Collections__Generic__IEnumerable<int>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<int>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pLVar1 = (List_1_System_Int32_ *)
-           func_?(TypeInfo__System__Collections__Generic__List<int>);
-  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType]::
-  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
-             MethodInfo__System__Collections__Generic__List<int>__List__);
-  method_00 = (MethodInfo *)&(this->fields)._scaleDragAxisIndices;
+  pLVar1 = (List_1_System_Int32_ *)FUN_?(TypeInfo__System__Collections__Generic__List<int>);
+  FUN_?(pLVar1,MethodInfo__System__Collections__Generic__List<int>__List__);
+  bVar2 = iRam_? != 0;
   (this->fields)._scaleDragAxisIndices = pLVar1;
-  func_?(method_00,pLVar1);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields)._scaleDragAxisIndices >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
   (this->fields)._handleId = handleId;
-  pLVar1 = (List_1_System_Int32_ *)
-           func_?(TypeInfo__System__Collections__Generic__List<int>);
+  pLVar1 = (List_1_System_Int32_ *)FUN_?(TypeInfo__System__Collections__Generic__List<int>);
   mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32___ctor_1
             (pLVar1,scaleDragAxisIndices,
              MethodInfo__System__Collections__Generic__List<int>__List_System__Collections__Generic__IEnumerable<int>_
             );
+  bVar2 = iRam_? != 0;
   (this->fields)._scaleDragAxisIndices = pLVar1;
-  func_?(&(this->fields)._scaleDragAxisIndices,pLVar1);
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields)._scaleDragAxisIndices >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
   return;
 }
 
@@ -73,15 +101,19 @@ Assembly-CSharp.dll::RTG::GizmoScalerHandle::GizmoScalerHandle_get_ScaleDragAxis
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<int>__List_System__Collections__Generic__IEnumerable<int>_
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__List<int>);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<int>__List_System__Collections__Generic__IEnumerable<int>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<int>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   collection = (this->fields)._scaleDragAxisIndices;
-  this_00 = (List_1_System_Int32_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<int>);
+  this_00 = (List_1_System_Int32_ *)FUN_?(TypeInfo__System__Collections__Generic__List<int>)
+  ;
   mscorlib.dll::System::Collections::Generic::List`1[System::Int32]::List_1_System_Int32___ctor_1
             (this_00,(IEnumerable_1_System_Int32_ *)collection,
              MethodInfo__System__Collections__Generic__List<int>__List_System__Collections__Generic__IEnumerable<int>_

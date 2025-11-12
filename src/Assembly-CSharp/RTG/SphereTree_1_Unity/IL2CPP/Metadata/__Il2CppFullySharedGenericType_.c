@@ -6,39 +6,48 @@ SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *
 Assembly-CSharp.dll::RTG::SphereTree`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
 SphereTree_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__AddNode
           (SphereTree_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *this,
-          _Il2CppFullySharedGenericType *nodeData,Sphere sphere,MethodInfo *method)
+          _Il2CppFullySharedGenericType *nodeData,Sphere *sphere,MethodInfo *method)
 
 {
-  uVar1 = method->klass->rgctx_data->klass->actualSize;
-  func_?();
-  p_Var5 = (_Il2CppFullySharedGenericType *)&nodeData;
-  if ((int)method->klass->rgctx_data->method->return_type < 0) {
-    p_Var5 = nodeData;
+  apuStack_1[0] = &UNK_?;
+  p_StackX_10 = (_Il2CppFullySharedGenericType__Class *)nodeData;
+  lVar2 = FUN_?(this,nodeData,method->klass->rgctx_data->klass->actualSize,nodeData);
+  lVar2 = -lVar2;
+  plVar3 = (longlong *)((longlong)alStack_4 + lVar2 + 0x10);
+  p_Var9 = (_Il2CppFullySharedGenericType *)&p_StackX_10;
+  if (*(int *)&method->klass->rgctx_data->method->return_type < 0) {
+    p_Var9 = nodeData;
   }
-  func_?(&stack0xffffffe4,p_Var5,uVar1);
-  pIVar2 = method->klass->rgctx_data[1].klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  *(undefined **)((longlong)apuStack_1 + lVar2) = &UNK_?;
+  FUN_?(plVar3,p_Var9);
+  pvVar5 = method->klass->rgctx_data[1].rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar5 + 0x135) & 1) == 0) {
+    *(undefined **)((longlong)apuStack_1 + lVar2) = &UNK_?;
+    pvVar5 = (void *)FUN_?(pvVar5);
   }
-  pSVar3 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-           func_?(pIVar2);
-  puVar4 = &stack0xffffffe4;
-  if (-1 < (int)method->klass->rgctx_data->method->return_type) {
-    puVar4 = unaff_EDI;
+  *(undefined **)((longlong)apuStack_1 + lVar2) = &UNK_?;
+  pSVar6 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+           FUN_?(pvVar5);
+  if (-1 < *(int *)&method->klass->rgctx_data->method->return_type) {
+    plVar3 = (longlong *)*plVar3;
   }
-  fStack_5 = sphere._center.x;
-  fStack_6 = sphere._center.y;
-  fStack_7 = sphere._center.z;
-  fStack_8 = sphere._radius;
-  pMVar9 = method->klass->rgctx_data[2].method;
-  sphere._radius = (float)&fStack_5;
-  sphere._center.z = (float)puVar4;
-  (*pMVar9->invoker_method)
-            ((method->klass->rgctx_data[2].method)->methodPointer,pMVar9,pSVar3,
-             (void **)&sphere._center.z,(void *)sphere._radius);
-  pMVar9 = method->klass->rgctx_data[5].method;
-  (*pMVar9->methodPointer)(this,pSVar3,pMVar9);
-  return pSVar3;
+  pIVar7 = method->klass;
+  uVar8 = *(undefined8 *)&(sphere->_center).z;
+  *(longlong **)((longlong)alStack_4 + lVar2) = alStack_4 + 2;
+  pvStack_9 = plVar3;
+  plStack_10 = alStack_4 + 2;
+  pMVar11 = pIVar7->rgctx_data[2].method;
+  pIVar12 = pMVar11->methodPointer;
+  alStack_4[2]._0_4_ = (sphere->_center).x;
+  alStack_4[2]._4_4_ = (sphere->_center).y;
+  alStack_4[3] = uVar8;
+  pIVar13 = pMVar11->invoker_method;
+  *(undefined **)((longlong)apuStack_1 + lVar2) = &UNK_?;
+  (*pIVar13)(pIVar12,pMVar11,pSVar6,&pvStack_9,*(void **)((longlong)alStack_4 + lVar2));
+  pIVar12 = (method->klass->rgctx_data[5].method)->methodPointer;
+  *(undefined **)((longlong)apuStack_1 + lVar2) = &UNK_?;
+  (*pIVar12)(this,pSVar6);
+  return pSVar6;
 }
 
 
@@ -51,13 +60,19 @@ void Assembly-CSharp.dll::RTG::SphereTree`1[Unity::IL2CPP::Metadata::__Il2CppFul
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__RTG__Singleton<RTG::MaterialPool>__get_Get__);
-    func_?(&TypeInfo__RTG__Singleton<RTG::MaterialPool>);
-    func_?(&StringLiteral__IsLit);
+    FUN_?(&MethodInfo__RTG__Singleton<RTG::MaterialPool>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__Singleton<RTG::MaterialPool>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__IsLit);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__RTG__Singleton<RTG::MaterialPool>->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__Singleton<RTG::MaterialPool>);
+  if (*(int *)&(TypeInfo__RTG__Singleton<RTG::MaterialPool>->_1).field_0x1c == 0) {
+    FUN_?();
   }
   this_00 = (MaterialPool *)
             Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
@@ -65,28 +80,36 @@ void Assembly-CSharp.dll::RTG::SphereTree`1[Unity::IL2CPP::Metadata::__Il2CppFul
   if (this_00 != (MaterialPool *)0x0) {
     this_01 = MaterialPool::MaterialPool_get_GizmoSolidHandle(this_00,(MethodInfo *)0x0);
     if (this_01 != (Material *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetInt
-                (this_01,StringLiteral__IsLit,0,(MethodInfo *)0x0);
-      color.g = (float)_UNK_?;
-      color.r = (float)_UNK_?;
-      color.b = (float)_UNK_?;
-      color.a = _UNK_?;
-      pCVar1 = ColorEx::ColorEx_KeepAllButAlpha
-                         ((Color *)&stack0xffffffec,color,0.3,(MethodInfo *)0x0);
-      MaterialEx::MaterialEx_SetColor(this_01,*pCVar1,(MethodInfo *)0x0);
+      name = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID
+                       (StringLiteral__IsLit,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloatImpl
+                (this_01,name,0.0,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&StringLiteral__Color);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      CStack_1.r = _UNK_?;
+      CStack_1.g = _UNK_?;
+      CStack_1.b = _UNK_?;
+      CStack_1.a = _UNK_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor
+                (this_01,StringLiteral__Color,&CStack_1,(MethodInfo *)0x0);
       UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass
                 (this_01,0,(MethodInfo *)0x0);
-      iStack2 = _UNK_?;
-      if (_UNK_? != 0) {
-        puStack3 = *(undefined4 **)(*(int *)(this_01[1].monitor + 0x60) + 0x10);
-        (*(code *)*puStack3)();
+      if ((this->fields)._root !=
+          (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        (*(method->klass->rgctx_data[4].method)->methodPointer)();
         return;
       }
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -100,94 +123,136 @@ void Assembly-CSharp.dll::RTG::SphereTree`1[Unity::IL2CPP::Metadata::__Il2CppFul
                MethodInfo *method)
 
 {
-  pMVar1 = method;
-  uVar2 = method->klass->rgctx_data->klass->actualSize;
-  uStack_3 = uVar2;
-  func_?();
-  method = (MethodInfo *)&stack0xffffffd4;
-  func_?();
-  _Stack_c.genericMethod = (Il2CppGenericMethod *)&stack0xffffffd4;
-  func_?(&stack0xffffffd4,0,uVar2);
-  pSVar4 = (this->fields)._root;
+  uVar1 = method->klass->rgctx_data->klass->actualSize;
+  apuStack_2[0] = &UNK_?;
+  lVar3 = FUN_?(0xffffffffffffff0);
+  lVar3 = -lVar3;
+  plVar4 = (longlong *)((longlong)&uStack_5 + lVar3);
+  *(undefined **)((longlong)apuStack_2 + lVar3) = &UNK_?;
+  lVar6 = FUN_?();
+  lVar6 = -lVar6;
+  pvStackX_8 = (void *)((longlong)&uStack_5 + lVar6 + lVar3);
+  *(undefined **)((longlong)apuStack_2 + lVar6 + lVar3) = &UNK_?;
+  FUN_?(pvStackX_8,0,uVar1);
+  pSVar7 = (this->fields)._root;
   do {
-    if (pSVar4 == (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
+    if (pSVar7 == (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
 code_?:
-      func_?();
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
+      *(undefined **)((longlong)apuStack_2 + lVar6 + lVar3) = &UNK_?;
+      FUN_?();
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
       return;
     }
-    cVar6 = (*(pMVar1->klass->rgctx_data[10].method)->methodPointer)
-                      (pSVar4,pMVar1->klass->rgctx_data[10].rgctxDataDummy);
-    if (cVar6 != '\0') {
-      pIVar7 = pMVar1->klass->rgctx_data[1].klass;
-      if (((uint)pIVar7->vtable[0].methodPtr & 0x100) == 0) {
-        pIVar7 = (Il2CppClass *)func_?(pIVar7);
+    pMVar9 = method->klass->rgctx_data[10].method;
+    pIVar10 = pMVar9->methodPointer;
+    *(undefined **)((longlong)apuStack_2 + lVar6 + lVar3) = &UNK_?;
+    cVar11 = (*pIVar10)(pSVar7,pMVar9);
+    if (cVar11 != '\0') {
+      pvVar12 = method->klass->rgctx_data[1].rgctxDataDummy;
+      if ((*(byte *)((longlong)pvVar12 + 0x135) & 1) == 0) {
+        *(undefined **)((longlong)apuStack_2 + lVar6 + lVar3) = &UNK_?;
+        pvVar12 = (void *)FUN_?(pvVar12);
       }
-      _Var9.rgctx_data = (Il2CppRGCTXData *)func_?(pIVar7);
-      pMVar8 = pMVar1->klass->rgctx_data[0x1f].method;
-      _Stack_10.rgctx_data = _Var9.rgctx_data;
-      (*pMVar8->methodPointer)(_Var9.rgctx_data,pMVar8);
-      func_?(_Stack_c.genericMethod,0,uStack_3);
-      func_?(method,_Stack_c.genericMethod,uStack_3);
-      if (_Var9.rgctx_data != (Il2CppRGCTXData *)0x0) {
-        if (-1 < (int)pMVar1->klass->rgctx_data->method->return_type) {
-          method = (MethodInfo *)method->methodPointer;
+      *(undefined **)((longlong)apuStack_2 + lVar6 + lVar3) = &UNK_?;
+      pSVar13 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+                FUN_?(pvVar12);
+      pIVar10 = (method->klass->rgctx_data[0x1f].method)->methodPointer;
+      *(undefined **)((longlong)apuStack_2 + lVar6 + lVar3) = &UNK_?;
+      (*pIVar10)(pSVar13);
+      *(undefined **)((longlong)apuStack_2 + lVar6 + lVar3) = &UNK_?;
+      FUN_?(pvStackX_8,0,uVar1);
+      *(undefined **)((longlong)apuStack_2 + lVar6 + lVar3) = &UNK_?;
+      FUN_?(plVar4,pvStackX_8,uVar1);
+      if (pSVar13 != (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
+        if (-1 < *(int *)&method->klass->rgctx_data->method->return_type) {
+          plVar4 = (longlong *)*plVar4;
         }
-        pMVar8 = pMVar1->klass->rgctx_data[0x20].method;
-        (*pMVar8->invoker_method)
-                  ((pMVar1->klass->rgctx_data[0x20].method)->methodPointer,pMVar8,_Var9.rgctx_data,
-                   &method,method);
-        if (pSVar4 != (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
-          puVar9 = (undefined4 *)
-                    (*(pMVar1->klass->rgctx_data[0x21].method)->methodPointer)
-                              (auStack_10,pSVar4,pMVar1->klass->rgctx_data[0x21].rgctxDataDummy);
-          pMVar8 = pMVar1->klass->rgctx_data[0x22].method;
-          (*pMVar8->methodPointer)
-                    (_Var9.rgctx_data,*puVar9,puVar9[1],puVar9[2],puVar9[3],pMVar8);
-          uVar11 = (*(pMVar1->klass->rgctx_data[6].method)->methodPointer)
-                             (pSVar4,pMVar1->klass->rgctx_data[6].rgctxDataDummy);
-          pMVar8 = pMVar1->klass->rgctx_data[7].method;
-          (*pMVar8->methodPointer)(pSVar4,0,pMVar8);
-          _Var9 = _Stack_10;
-          pMVar8 = pMVar1->klass->rgctx_data[7].method;
-          (*pMVar8->methodPointer)(_Stack_10.rgctx_data,uVar11,pMVar8);
-          pMVar8 = pMVar1->klass->rgctx_data[7].method;
-          (*pMVar8->methodPointer)(pSVar4,_Var9.rgctx_data,pMVar8);
+        pIVar14 = method->klass;
+        *(longlong **)((longlong)alStack_15 + lVar6 + lVar3) = plVar4;
+        pMVar9 = pIVar14->rgctx_data[0x20].method;
+        pIVar16 = pMVar9->invoker_method;
+        pIVar10 = pMVar9->methodPointer;
+        *(undefined **)((longlong)apuStack_2 + lVar6 + lVar3) = &UNK_?;
+        pvStackX_8 = plVar4;
+        (*pIVar16)(pIVar10,pMVar9,pSVar13,&pvStackX_8,
+                  *(void **)((longlong)alStack_15 + lVar6 + lVar3));
+        if (pSVar7 != (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0)
+        {
+          pMVar9 = method->klass->rgctx_data[0x21].method;
+          pIVar10 = pMVar9->methodPointer;
+          *(undefined **)((longlong)apuStack_2 + lVar6 + lVar3) = &UNK_?;
+          puVar17 = (undefined4 *)(*pIVar10)(&uStack_5,pSVar7,pMVar9);
+          uStack_5._0_4_ = *puVar17;
+          uStack_5._4_4_ = puVar17[1];
+          uStack_18 = puVar17[2];
+          uStack_19 = puVar17[3];
+          pIVar10 = (method->klass->rgctx_data[0x22].method)->methodPointer;
+          *(undefined **)((longlong)apuStack_2 + lVar6 + lVar3) = &UNK_?;
+          (*pIVar10)(pSVar13,&uStack_5);
+          pMVar9 = method->klass->rgctx_data[6].method;
+          pIVar10 = pMVar9->methodPointer;
+          *(undefined **)((longlong)apuStack_2 + lVar6 + lVar3) = &UNK_?;
+          uVar20 = (*pIVar10)(pSVar7,pMVar9);
+          pIVar10 = (method->klass->rgctx_data[7].method)->methodPointer;
+          *(undefined **)((longlong)apuStack_2 + lVar6 + lVar3) = &UNK_?;
+          (*pIVar10)(pSVar7,0);
+          pIVar10 = (method->klass->rgctx_data[7].method)->methodPointer;
+          *(undefined **)((longlong)apuStack_2 + lVar6 + lVar3) = &UNK_?;
+          (*pIVar10)(pSVar13,uVar20);
+          pIVar10 = (method->klass->rgctx_data[7].method)->methodPointer;
+          *(undefined **)((longlong)apuStack_2 + lVar6 + lVar3) = &UNK_?;
+          (*pIVar10)(pSVar7,pSVar13);
           if (node != (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
-            pMVar8 = pMVar1->klass->rgctx_data[7].method;
-            (*pMVar8->methodPointer)(node,_Var9.rgctx_data,pMVar8);
-            pMVar1 = pMVar1->klass->rgctx_data[9].method;
-            (*pMVar1->methodPointer)(_Var9.rgctx_data,pMVar1);
-            if (pSVar4 != (this->fields)._root) {
-              return;
+            pIVar10 = (method->klass->rgctx_data[7].method)->methodPointer;
+            *(undefined **)((longlong)apuStack_2 + lVar6 + lVar3) = &UNK_?;
+            (*pIVar10)(node,pSVar13);
+            pIVar10 = (method->klass->rgctx_data[9].method)->methodPointer;
+            *(undefined **)((longlong)apuStack_2 + lVar6 + lVar3) = &UNK_?;
+            (*pIVar10)(pSVar13);
+            if ((pSVar7 == (this->fields)._root) &&
+               (bVar21 = iRam_? != 0, (this->fields)._root = pSVar13, bVar21)) {
+              uVar22 = (uint)((ulonglong)&this->fields >> 0xc);
+              puVar23 = (ulonglong *)((ulonglong)((uVar22 & 0x1fffff) >> 6) * 8 + 0xADDR);
+              do {
+                uVar24 = *puVar23;
+                LOCK();
+                uVar25 = *puVar23;
+                if (uVar24 == uVar25) {
+                  *puVar23 = uVar24 | 1L << (uVar22 & 0x3f);
+                }
+                UNLOCK();
+              } while (uVar24 != uVar25);
             }
-            (this->fields)._root =
-                 (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)_Var9;
-            func_?(&this->fields,_Var9.rgctx_data);
             return;
           }
         }
       }
       goto code_?;
     }
-    if (pSVar4 == (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0)
+    if (pSVar7 == (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0)
     goto code_?;
-    iVar12 = (*(pMVar1->klass->rgctx_data[8].method)->methodPointer)
-                      (pSVar4,pMVar1->klass->rgctx_data[8].rgctxDataDummy);
-    if (iVar12 < 2) {
+    pMVar9 = method->klass->rgctx_data[8].method;
+    pIVar10 = pMVar9->methodPointer;
+    *(undefined **)((longlong)apuStack_2 + lVar6 + lVar3) = &UNK_?;
+    iVar26 = (*pIVar10)(pSVar7,pMVar9);
+    if (iVar26 < 2) {
       if (node != (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
-        pMVar8 = pMVar1->klass->rgctx_data[7].method;
-        (*pMVar8->methodPointer)(node,pSVar4,pMVar8);
-        pMVar1 = pMVar1->klass->rgctx_data[9].method;
-        (*pMVar1->methodPointer)(pSVar4,pMVar1);
+        pIVar10 = (method->klass->rgctx_data[7].method)->methodPointer;
+        *(undefined **)((longlong)apuStack_2 + lVar6 + lVar3) = &UNK_?;
+        (*pIVar10)(node,pSVar7);
+        pIVar10 = (method->klass->rgctx_data[9].method)->methodPointer;
+        *(undefined **)((longlong)apuStack_2 + lVar6 + lVar3) = &UNK_?;
+        (*pIVar10)(pSVar7);
         return;
       }
       goto code_?;
     }
-    pSVar4 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-             (*(pMVar1->klass->rgctx_data[0x1e].method)->methodPointer)
-                       (pSVar4,node,pMVar1->klass->rgctx_data[0x1e].rgctxDataDummy);
+    pMVar9 = method->klass->rgctx_data[0x1e].method;
+    pIVar10 = pMVar9->methodPointer;
+    *(undefined **)((longlong)apuStack_2 + lVar6 + lVar3) = &UNK_?;
+    pSVar7 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+              (*pIVar10)(pSVar7,node,pMVar9);
   } while( true );
 }
 
@@ -203,36 +268,32 @@ void Assembly-CSharp.dll::RTG::SphereTree`1[Unity::IL2CPP::Metadata::__Il2CppFul
 
 {
   if (node != (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
-    cVar1 = (*(method->klass->rgctx_data[10].method)->methodPointer)
-                      (node,method->klass->rgctx_data[10].rgctxDataDummy);
-    if (cVar1 != '\0') {
-      cVar1 = (*(method->klass->rgctx_data[0xb].method)->methodPointer)
-                        (node,method->klass->rgctx_data[0xb].rgctxDataDummy);
-      if (cVar1 != '\0') {
-        iVar2 = (*(method->klass->rgctx_data[6].method)->methodPointer)
-                          (node,method->klass->rgctx_data[6].rgctxDataDummy);
-        pMVar3 = method->klass->rgctx_data[7].method;
-        (*pMVar3->methodPointer)(node,0,pMVar3);
-        if (iVar2 == 0) goto code_?;
-        iVar4 = (*(method->klass->rgctx_data[8].method)->methodPointer)
-                          (iVar2,method->klass->rgctx_data[8].rgctxDataDummy);
+    pMVar1 = method->klass->rgctx_data[10].method;
+    cVar2 = (*pMVar1->methodPointer)(node,pMVar1);
+    if (cVar2 != '\0') {
+      pMVar1 = method->klass->rgctx_data[0xb].method;
+      cVar2 = (*pMVar1->methodPointer)(node,pMVar1);
+      if (cVar2 != '\0') {
+        pMVar1 = method->klass->rgctx_data[6].method;
+        lVar3 = (*pMVar1->methodPointer)(node,pMVar1);
+        (*(method->klass->rgctx_data[7].method)->methodPointer)(node,0);
+        if (lVar3 == 0) goto code_?;
+        pMVar1 = method->klass->rgctx_data[8].method;
+        iVar4 = (*pMVar1->methodPointer)(lVar3,pMVar1);
         pIVar5 = method->klass->rgctx_data;
         if (iVar4 == 0) {
-          pMVar3 = pIVar5[0xc].method;
-          (*pMVar3->methodPointer)(this,iVar2,pMVar3);
+          (*(pIVar5[0xc].method)->methodPointer)(this,lVar3);
         }
         else {
-          pMVar3 = pIVar5[9].method;
-          (*pMVar3->methodPointer)(iVar2,pMVar3);
+          (*(pIVar5[9].method)->methodPointer)(lVar3);
         }
-        pMVar3 = method->klass->rgctx_data[5].method;
-        (*pMVar3->methodPointer)(this,node,pMVar3);
+        (*(method->klass->rgctx_data[5].method)->methodPointer)(this,node);
       }
     }
     return;
   }
 code_?:
-  func_?();
+  FUN_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
   return;
@@ -244,231 +305,195 @@ code_?:
 
 bool Assembly-CSharp.dll::RTG::SphereTree`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]
      ::SphereTree_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__OverlapBox
-               (SphereTree_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *this,OBB box,
+               (SphereTree_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *this,OBB *box,
                List_1_RTG_SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                *nodes,MethodInfo *method)
 
 {
   if (nodes != (List_1_RTG_SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
                0x0) {
-    pMVar1 = method->klass->rgctx_data[0x1b].method;
-    (*pMVar1->methodPointer)(nodes,pMVar1);
+    (*(method->klass->rgctx_data[0x1b].method)->methodPointer)(nodes);
     if ((this->fields)._root ==
         (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
       return 0;
     }
-    pMVar1 = method->klass->rgctx_data[0xf].method;
-    (*pMVar1->methodPointer)((this->fields)._root,(this->fields)._root,pMVar1);
-    pSVar2 = (this->fields)._root;
-    while (pSVar2 != (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
-      iVar3 = (*(method->klass->rgctx_data[0x18].method)->methodPointer)
-                        (pSVar2,method->klass->rgctx_data[0x18].rgctxDataDummy);
-      if (iVar3 == 0) {
-        iVar3 = (*(method->klass->rgctx_data[0x1d].method)->methodPointer)
-                          (nodes,method->klass->rgctx_data[0x1d].rgctxDataDummy);
-        return iVar3 != 0;
+    (*(method->klass->rgctx_data[0xf].method)->methodPointer)((this->fields)._root);
+    pSVar1 = (this->fields)._root;
+    while (pSVar1 != (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
+      pMVar2 = method->klass->rgctx_data[0x18].method;
+      lVar3 = (*pMVar2->methodPointer)(pSVar1,pMVar2);
+      if (lVar3 == 0) {
+        pMVar2 = method->klass->rgctx_data[0x1d].method;
+        iVar4 = (*pMVar2->methodPointer)(nodes,pMVar2);
+        return iVar4 != 0;
       }
-      pSVar2 = (this->fields)._root;
-      if ((pSVar2 == (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) ||
-         (fVar4 = (float)(*(method->klass->rgctx_data[0x10].method)->methodPointer)
-                                    (pSVar2,method->klass->rgctx_data[0x10].rgctxDataDummy),
-         fStack_5 = fVar4, fVar4 == 0.0)) break;
-      cVar6 = (*(method->klass->rgctx_data[10].method)->methodPointer)
-                        (fVar4,method->klass->rgctx_data[10].rgctxDataDummy);
-      pIVar7 = (method->klass->rgctx_data[0x11].method)->methodPointer;
-      pvVar8 = method->klass->rgctx_data[0x11].rgctxDataDummy;
+      pSVar1 = (this->fields)._root;
+      if ((pSVar1 == (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) ||
+         (pMVar2 = method->klass->rgctx_data[0x10].method,
+         pvVar5 = (void *)(*pMVar2->methodPointer)(pSVar1,pMVar2), pvVar5 == (void *)0x0)) break;
+      pMVar2 = method->klass->rgctx_data[10].method;
+      cVar6 = (*pMVar2->methodPointer)(pvVar5,pMVar2);
+      pMVar2 = method->klass->rgctx_data[0x11].method;
+      pIVar7 = pMVar2->methodPointer;
       if (cVar6 == '\0') {
-        pVVar9 = (Vector3 *)(*pIVar7)(auStack_10,fVar4,pvVar8);
-        pVVar9 = OBB::OBB_GetClosestPoint(&VStack_11,&box,*pVVar9,(MethodInfo *)0x0);
-        uStack_12._0_4_ = pVVar9->x;
-        uStack_12._4_4_ = pVVar9->y;
-        fVar13 = pVVar9->z;
-        puVar14 = (undefined8 *)
-                  (*(method->klass->rgctx_data[0x11].method)->methodPointer)
-                            (auStack_15,fVar4,method->klass->rgctx_data[0x11].rgctxDataDummy);
-        uStack_16 = *puVar14;
-        fVar4 = *(float *)(puVar14 + 1);
-        pSStack_17 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                    (method->klass->rgctx_data[0x12].method)->methodPointer;
-        fVar18 = (float10)(*(code *)pSStack_17)
-                                    (fStack_5,method->klass->rgctx_data[0x12].rgctxDataDummy);
-        pSStack_17 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                    (float)fVar18;
-        point_00.z = fVar13;
-        point_00.x = (float)(undefined4)uStack_12;
-        point_00.y = uStack_12._4_4_;
-        sphereCenter_00.z = fVar4;
-        sphereCenter_00.x = (float)(undefined4)uStack_16;
-        sphereCenter_00.y = (float)uStack_16._4_4_;
-        bVar19 = SphereMath::SphereMath_ContainsPoint
-                          (point_00,sphereCenter_00,(float)pSStack_17,(SphereEpsilon)0x0,
-                           (MethodInfo *)0x0);
-        fVar4 = fStack_5;
-        if (bVar19 != 0) {
-          iVar3 = (*(method->klass->rgctx_data[0x13].method)->methodPointer)
-                            (fStack_5,method->klass->rgctx_data[0x13].rgctxDataDummy);
-          if (iVar3 == 0) break;
-          if (*(int *)(iVar3 + 0xc) == 0) goto code_?;
-          if (*(int *)(iVar3 + 0x10) == 0) break;
-          pVVar9 = (Vector3 *)
-                    (*(method->klass->rgctx_data[0x11].method)->methodPointer)
-                              (auStack_20,*(int *)(iVar3 + 0x10),
-                               method->klass->rgctx_data[0x11].rgctxDataDummy);
-          pVVar9 = OBB::OBB_GetClosestPoint(&VStack_21,&box,*pVVar9,(MethodInfo *)0x0);
-          uStack_12._0_4_ = pVVar9->x;
-          uStack_12._4_4_ = pVVar9->y;
-          fStack_5 = pVVar9->z;
-          iVar3 = (*(method->klass->rgctx_data[0x13].method)->methodPointer)
-                            (fVar4,method->klass->rgctx_data[0x13].rgctxDataDummy);
-          if (iVar3 == 0) break;
-          if (*(int *)(iVar3 + 0xc) == 0) goto code_?;
-          if (*(int *)(iVar3 + 0x10) == 0) break;
-          puVar14 = (undefined8 *)
-                    (*(method->klass->rgctx_data[0x11].method)->methodPointer)
-                              (auStack_22,*(int *)(iVar3 + 0x10),
-                               method->klass->rgctx_data[0x11].rgctxDataDummy);
-          uStack_16 = *puVar14;
-          fVar13 = *(float *)(puVar14 + 1);
-          iVar3 = (*(method->klass->rgctx_data[0x13].method)->methodPointer)
-                            (fVar4,method->klass->rgctx_data[0x13].rgctxDataDummy);
-          if (iVar3 == 0) break;
-          if (*(int *)(iVar3 + 0xc) == 0) goto code_?;
-          if (*(int *)(iVar3 + 0x10) == 0) break;
-          pSStack_17 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                      (method->klass->rgctx_data[0x12].method)->methodPointer;
-          fVar18 = (float10)(*(code *)pSStack_17)
-                                      (*(int *)(iVar3 + 0x10),
-                                       method->klass->rgctx_data[0x12].rgctxDataDummy);
-          pSStack_17 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                      (float)fVar18;
-          point_02.z = fStack_5;
-          point_02.x = (float)(undefined4)uStack_12;
-          point_02.y = uStack_12._4_4_;
-          sphereCenter_02.z = fVar13;
-          sphereCenter_02.x = (float)(undefined4)uStack_16;
-          sphereCenter_02.y = (float)uStack_16._4_4_;
-          bVar19 = SphereMath::SphereMath_ContainsPoint
-                            (point_02,sphereCenter_02,(float)pSStack_17,(SphereEpsilon)0x0,
-                             (MethodInfo *)0x0);
-          if (bVar19 != 0) {
-            pSStack_17 = (this->fields)._root;
-            VStack_23.z = *(float *)(method->klass->rgctx_data + 0x13);
-            VStack_23.y = fVar4;
-            VStack_23.x = (float)&UNK_?;
-            iVar3 = (*(method->klass->rgctx_data[0x13].method)->methodPointer)();
-            if (iVar3 == 0) break;
-            if (*(int *)(iVar3 + 0xc) == 0) goto code_?;
-            if (pSStack_17 ==
-                (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) break;
-            pMVar1 = method->klass->rgctx_data[0xf].method;
-            (*pMVar1->methodPointer)(pSStack_17,*(undefined4 *)(iVar3 + 0x10),pMVar1);
+        puVar8 = (undefined8 *)(*pIVar7)(auStack_9,pvVar5,pMVar2);
+        VStack_10._0_8_ = *puVar8;
+        VStack_10.z = *(float *)(puVar8 + 1);
+        pVVar11 = OBB::OBB_GetClosestPoint(&VStack_12,box,&VStack_10,(MethodInfo *)0x0);
+        uVar13 = pVVar11->x;
+        uVar14 = pVVar11->y;
+        fVar15 = pVVar11->z;
+        pMVar2 = method->klass->rgctx_data[0x11].method;
+        puVar8 = (undefined8 *)(*pMVar2->methodPointer)(auStack_16,pvVar5,pMVar2);
+        pvStackX_18 = (void *)0x0;
+        uVar17 = *puVar8;
+        fVar18 = *(float *)(puVar8 + 1);
+        pMVar2 = method->klass->rgctx_data[0x12].method;
+        fVar19 = (float)(*pMVar2->methodPointer)(pvVar5,pMVar2);
+        fVar20 = pvStackX_18._0_4_;
+        fVar21 = (float)uVar14 - (float)((ulonglong)uVar17 >> 0x20);
+        fVar22 = (float)uVar13 - (float)uVar17;
+        fVar15 = fVar15 - fVar18;
+        if (fVar21 * fVar21 + fVar22 * fVar22 + fVar15 * fVar15 <=
+            (fVar19 + pvStackX_18._0_4_) * (fVar19 + pvStackX_18._0_4_)) {
+          pMVar2 = method->klass->rgctx_data[0x13].method;
+          lVar3 = (*pMVar2->methodPointer)(pvVar5,pMVar2);
+          if (lVar3 == 0) break;
+          if (*(int *)(lVar3 + 0x18) == 0) {
+code_?:
+            FUN_?();
+            pcVar23 = (code *)swi(3);
+            bVar24 = (*pcVar23)();
+            return bVar24;
           }
-          VStack_23.z = *(float *)(method->klass->rgctx_data + 0x13);
-          VStack_23.y = fVar4;
-          VStack_23.x = (float)&UNK_?;
-          iVar3 = (*(method->klass->rgctx_data[0x13].method)->methodPointer)();
-          if (iVar3 == 0) break;
-          if (*(uint *)(iVar3 + 0xc) < 2) goto code_?;
-          if (*(int *)(iVar3 + 0x14) != 0) {
-            iVar3 = (*(method->klass->rgctx_data[0x13].method)->methodPointer)
-                              (fVar4,method->klass->rgctx_data[0x13].rgctxDataDummy);
-            if (iVar3 == 0) break;
-            if (*(uint *)(iVar3 + 0xc) < 2) goto code_?;
-            if (*(int *)(iVar3 + 0x14) == 0) break;
-            pVVar9 = (Vector3 *)
-                      (*(method->klass->rgctx_data[0x11].method)->methodPointer)
-                                (auStack_24,*(int *)(iVar3 + 0x14),
-                                 method->klass->rgctx_data[0x11].rgctxDataDummy);
-            pVVar9 = OBB::OBB_GetClosestPoint(&VStack_23,&box,*pVVar9,(MethodInfo *)0x0);
-            uStack_25._0_4_ = pVVar9->x;
-            uStack_25._4_4_ = pVVar9->y;
-            uStack_12 = CONCAT44(pVVar9->z,(undefined4)uStack_12);
-            iVar3 = (*(method->klass->rgctx_data[0x13].method)->methodPointer)
-                              (fVar4,method->klass->rgctx_data[0x13].rgctxDataDummy);
-            if (iVar3 == 0) break;
-            if (*(uint *)(iVar3 + 0xc) < 2) goto code_?;
-            if (*(int *)(iVar3 + 0x14) == 0) break;
-            puVar14 = (undefined8 *)
-                      (*(method->klass->rgctx_data[0x11].method)->methodPointer)
-                                (auStack_26,*(int *)(iVar3 + 0x14),
-                                 method->klass->rgctx_data[0x11].rgctxDataDummy);
-            uStack_16 = *puVar14;
-            fStack_5 = *(float *)(puVar14 + 1);
-            iVar3 = (*(method->klass->rgctx_data[0x13].method)->methodPointer)
-                              (fVar4,method->klass->rgctx_data[0x13].rgctxDataDummy);
-            if (iVar3 == 0) break;
-            if (*(uint *)(iVar3 + 0xc) < 2) goto code_?;
-            if (*(int *)(iVar3 + 0x14) == 0) break;
-            pSStack_17 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                        (method->klass->rgctx_data[0x12].method)->methodPointer;
-            fVar18 = (float10)(*(code *)pSStack_17)
-                                        (*(int *)(iVar3 + 0x14),
-                                         method->klass->rgctx_data[0x12].rgctxDataDummy);
-            pSStack_17 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                        (float)fVar18;
-            point_01.z = uStack_12._4_4_;
-            point_01.x = (float)(undefined4)uStack_25;
-            point_01.y = (float)uStack_25._4_4_;
-            sphereCenter_01.z = fStack_5;
-            sphereCenter_01.x = (float)(undefined4)uStack_16;
-            sphereCenter_01.y = (float)uStack_16._4_4_;
-            bVar19 = SphereMath::SphereMath_ContainsPoint
-                              (point_01,sphereCenter_01,(float)pSStack_17,(SphereEpsilon)0x0,
-                               (MethodInfo *)0x0);
-            if (bVar19 != 0) {
-              pSVar2 = (this->fields)._root;
-              iVar3 = (*(method->klass->rgctx_data[0x13].method)->methodPointer)
-                                (fVar4,method->klass->rgctx_data[0x13].rgctxDataDummy);
-              if (iVar3 == 0) break;
-              if (*(uint *)(iVar3 + 0xc) < 2) goto code_?;
-              if (pSVar2 == (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+          if (*(longlong *)(lVar3 + 0x20) == 0) break;
+          pMVar2 = method->klass->rgctx_data[0x11].method;
+          puVar8 = (undefined8 *)
+                    (*pMVar2->methodPointer)(auStack_25,*(longlong *)(lVar3 + 0x20),pMVar2);
+          VStack_26._0_8_ = *puVar8;
+          VStack_26.z = *(float *)(puVar8 + 1);
+          pVVar11 = OBB::OBB_GetClosestPoint(&VStack_27,box,&VStack_26,(MethodInfo *)0x0);
+          uStack_28._0_4_ = pVVar11->x;
+          uStack_28._4_4_ = pVVar11->y;
+          fVar15 = pVVar11->z;
+          pMVar2 = method->klass->rgctx_data[0x13].method;
+          lVar3 = (*pMVar2->methodPointer)(pvVar5,pMVar2);
+          if (lVar3 == 0) break;
+          if (*(int *)(lVar3 + 0x18) == 0) goto code_?;
+          if (*(longlong *)(lVar3 + 0x20) == 0) break;
+          pMVar2 = method->klass->rgctx_data[0x11].method;
+          puVar8 = (undefined8 *)
+                    (*pMVar2->methodPointer)(auStack_29,*(longlong *)(lVar3 + 0x20),pMVar2);
+          uStack_30 = *puVar8;
+          fVar18 = *(float *)(puVar8 + 1);
+          pMVar2 = method->klass->rgctx_data[0x13].method;
+          lVar3 = (*pMVar2->methodPointer)(pvVar5,pMVar2);
+          if (lVar3 == 0) break;
+          if (*(int *)(lVar3 + 0x18) == 0) goto code_?;
+          if (*(longlong *)(lVar3 + 0x20) == 0) break;
+          pMVar2 = method->klass->rgctx_data[0x12].method;
+          fVar19 = (float)(*pMVar2->methodPointer)(*(longlong *)(lVar3 + 0x20),pMVar2);
+          fVar19 = fVar19 + fVar20;
+          fVar15 = fVar15 - fVar18;
+          if ((uStack_28._4_4_ - uStack_30._4_4_) * (uStack_28._4_4_ - uStack_30._4_4_) +
+              ((float)uStack_28 - (float)uStack_30) * ((float)uStack_28 - (float)uStack_30) +
+              fVar15 * fVar15 <= fVar19 * fVar19) {
+            pSVar1 = (this->fields)._root;
+            pMVar2 = method->klass->rgctx_data[0x13].method;
+            lVar3 = (*pMVar2->methodPointer)(pvVar5,pMVar2);
+            if (lVar3 == 0) break;
+            if (*(int *)(lVar3 + 0x18) == 0) goto code_?;
+            if (pSVar1 == (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+                          0x0) break;
+            (*(method->klass->rgctx_data[0xf].method)->methodPointer)
+                      (pSVar1,*(undefined8 *)(lVar3 + 0x20));
+          }
+          pMVar2 = method->klass->rgctx_data[0x13].method;
+          lVar3 = (*pMVar2->methodPointer)(pvVar5,pMVar2);
+          if (lVar3 == 0) break;
+          if (*(uint *)(lVar3 + 0x18) < 2) goto code_?;
+          if (*(longlong *)(lVar3 + 0x28) != 0) {
+            pMVar2 = method->klass->rgctx_data[0x13].method;
+            lVar3 = (*pMVar2->methodPointer)(pvVar5,pMVar2);
+            if (lVar3 == 0) break;
+            if (*(uint *)(lVar3 + 0x18) < 2) goto code_?;
+            if (*(longlong *)(lVar3 + 0x28) == 0) break;
+            pMVar2 = method->klass->rgctx_data[0x11].method;
+            puVar8 = (undefined8 *)
+                      (*pMVar2->methodPointer)(auStack_31,*(longlong *)(lVar3 + 0x28),pMVar2);
+            VStack_32._0_8_ = *puVar8;
+            VStack_32.z = *(float *)(puVar8 + 1);
+            pVVar11 = OBB::OBB_GetClosestPoint(&VStack_33,box,&VStack_32,(MethodInfo *)0x0);
+            uStack_34._0_4_ = pVVar11->x;
+            uStack_34._4_4_ = pVVar11->y;
+            fVar15 = pVVar11->z;
+            pMVar2 = method->klass->rgctx_data[0x13].method;
+            lVar3 = (*pMVar2->methodPointer)(pvVar5,pMVar2);
+            if (lVar3 == 0) break;
+            if (*(uint *)(lVar3 + 0x18) < 2) goto code_?;
+            if (*(longlong *)(lVar3 + 0x28) == 0) break;
+            pMVar2 = method->klass->rgctx_data[0x11].method;
+            puVar8 = (undefined8 *)
+                      (*pMVar2->methodPointer)(auStack_35,*(longlong *)(lVar3 + 0x28),pMVar2);
+            uStack_36 = *puVar8;
+            fVar18 = *(float *)(puVar8 + 1);
+            pMVar2 = method->klass->rgctx_data[0x13].method;
+            lVar3 = (*pMVar2->methodPointer)(pvVar5,pMVar2);
+            if (lVar3 == 0) break;
+            if (*(uint *)(lVar3 + 0x18) < 2) goto code_?;
+            if (*(longlong *)(lVar3 + 0x28) == 0) break;
+            pMVar2 = method->klass->rgctx_data[0x12].method;
+            fVar19 = (float)(*pMVar2->methodPointer)(*(longlong *)(lVar3 + 0x28),pMVar2);
+            fVar19 = fVar19 + fVar20;
+            fVar15 = fVar15 - fVar18;
+            if ((uStack_34._4_4_ - uStack_36._4_4_) * (uStack_34._4_4_ - uStack_36._4_4_) +
+                ((float)uStack_34 - (float)uStack_36) * ((float)uStack_34 - (float)uStack_36) +
+                fVar15 * fVar15 <= fVar19 * fVar19) {
+              pSVar1 = (this->fields)._root;
+              pMVar2 = method->klass->rgctx_data[0x13].method;
+              lVar3 = (*pMVar2->methodPointer)(pvVar5,pMVar2);
+              if (lVar3 == 0) break;
+              if (*(uint *)(lVar3 + 0x18) < 2) goto code_?;
+              if (pSVar1 == (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
                             0x0) break;
-              pMVar1 = method->klass->rgctx_data[0xf].method;
-              (*pMVar1->methodPointer)(pSVar2,*(undefined4 *)(iVar3 + 0x14),pMVar1);
+              (*(method->klass->rgctx_data[0xf].method)->methodPointer)
+                        (pSVar1,*(undefined8 *)(lVar3 + 0x28));
             }
           }
         }
       }
       else {
-        pVVar9 = (Vector3 *)(*pIVar7)(auStack_27,fVar4,pvVar8);
-        pVVar9 = OBB::OBB_GetClosestPoint(&VStack_28,&box,*pVVar9,(MethodInfo *)0x0);
-        uStack_16._0_4_ = pVVar9->x;
-        uStack_16._4_4_ = pVVar9->y;
-        fVar13 = pVVar9->z;
-        puVar14 = (undefined8 *)
-                  (*(method->klass->rgctx_data[0x11].method)->methodPointer)
-                            (auStack_29,fVar4,method->klass->rgctx_data[0x11].rgctxDataDummy);
-        uStack_12 = *puVar14;
-        fVar4 = *(float *)(puVar14 + 1);
-        pSStack_17 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                    (method->klass->rgctx_data[0x12].method)->methodPointer;
-        fVar18 = (float10)(*(code *)pSStack_17)
-                                    (fStack_5,method->klass->rgctx_data[0x12].rgctxDataDummy);
-        pSStack_17 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                    (float)fVar18;
-        point.z = fVar13;
-        point.x = (float)(undefined4)uStack_16;
-        point.y = (float)uStack_16._4_4_;
-        sphereCenter.z = fVar4;
-        sphereCenter.x = (float)(undefined4)uStack_12;
-        sphereCenter.y = uStack_12._4_4_;
-        bVar19 = SphereMath::SphereMath_ContainsPoint
-                          (point,sphereCenter,(float)pSStack_17,(SphereEpsilon)0x0,(MethodInfo *)0x0)
-        ;
-        if (bVar19 != 0) {
-          func_?((method->klass->rgctx_data[0x1c].method)->methodPointer,
-                          method->klass->rgctx_data[0x1c].rgctxDataDummy,nodes,fStack_5);
+        puVar8 = (undefined8 *)(*pIVar7)(auStack_37);
+        VStack_38._0_8_ = *puVar8;
+        VStack_38.z = *(float *)(puVar8 + 1);
+        pVVar11 = OBB::OBB_GetClosestPoint(&VStack_39,box,&VStack_38,(MethodInfo *)0x0);
+        uVar40 = pVVar11->x;
+        uVar41 = pVVar11->y;
+        fVar15 = pVVar11->z;
+        pMVar2 = method->klass->rgctx_data[0x11].method;
+        puVar8 = (undefined8 *)(*pMVar2->methodPointer)(auStack_42,pvVar5,pMVar2);
+        pvStackX_18 = (void *)0x0;
+        uVar17 = *puVar8;
+        fVar18 = *(float *)(puVar8 + 1);
+        pMVar2 = method->klass->rgctx_data[0x12].method;
+        fVar20 = (float)(*pMVar2->methodPointer)(pvVar5,pMVar2);
+        fVar15 = fVar15 - fVar18;
+        fVar19 = (float)uVar41 - (float)((ulonglong)uVar17 >> 0x20);
+        fVar18 = (float)uVar40 - (float)uVar17;
+        if (fVar19 * fVar19 + fVar18 * fVar18 + fVar15 * fVar15 <=
+            (fVar20 + pvStackX_18._0_4_) * (fVar20 + pvStackX_18._0_4_)) {
+          pMVar2 = method->klass->rgctx_data[0x1c].method;
+          pvStackX_18 = pvVar5;
+          (*pMVar2->invoker_method)(pMVar2->methodPointer,pMVar2,nodes,&pvStackX_18,pvVar5);
         }
       }
-      pSVar2 = (this->fields)._root;
+      pSVar1 = (this->fields)._root;
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar30 = (code *)swi(3);
-  bVar19 = (*pcVar30)();
-  return bVar19;
+  FUN_?();
+  pcVar23 = (code *)swi(3);
+  bVar24 = (*pcVar23)();
+  return bVar24;
 }
 
 
@@ -477,184 +502,191 @@ code_?:
 
 bool Assembly-CSharp.dll::RTG::SphereTree`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]
      ::SphereTree_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__RaycastAll
-               (SphereTree_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *this,Ray ray,
+               (SphereTree_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *this,Ray *ray,
                List_1_RTG_SphereTreeNodeRayHit_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                *hits,MethodInfo *method)
 
 {
-  pSStack_1 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0;
+  afStack_1[0] = 0.0;
   if (hits != (List_1_RTG_SphereTreeNodeRayHit_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                *)0x0) {
-    pMVar2 = method->klass->rgctx_data[0xe].method;
-    (*pMVar2->methodPointer)(hits,pMVar2);
+    (*(method->klass->rgctx_data[0xe].method)->methodPointer)(hits);
     if ((this->fields)._root ==
         (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
       return 0;
     }
-    pMVar2 = method->klass->rgctx_data[0xf].method;
-    (*pMVar2->methodPointer)((this->fields)._root,(this->fields)._root,pMVar2);
-    pSVar3 = (this->fields)._root;
-    while (pSVar3 != (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
-      iVar4 = (*(method->klass->rgctx_data[0x18].method)->methodPointer)
-                        (pSVar3,method->klass->rgctx_data[0x18].rgctxDataDummy);
-      if (iVar4 == 0) {
-        iVar4 = (*(method->klass->rgctx_data[0x19].method)->methodPointer)
-                          (hits,method->klass->rgctx_data[0x19].rgctxDataDummy);
-        return iVar4 != 0;
+    (*(method->klass->rgctx_data[0xf].method)->methodPointer)((this->fields)._root);
+    pSVar2 = (this->fields)._root;
+    while (pSVar2 != (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
+      pMVar3 = method->klass->rgctx_data[0x18].method;
+      lVar4 = (*pMVar3->methodPointer)(pSVar2,pMVar3);
+      if (lVar4 == 0) {
+        pMVar3 = method->klass->rgctx_data[0x19].method;
+        iVar5 = (*pMVar3->methodPointer)(hits,pMVar3);
+        return iVar5 != 0;
       }
-      pSVar3 = (this->fields)._root;
-      if ((pSVar3 == (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) ||
-         (iVar4 = (*(method->klass->rgctx_data[0x10].method)->methodPointer)
-                            (pSVar3,method->klass->rgctx_data[0x10].rgctxDataDummy), iVar4 == 0))
-      break;
-      cVar5 = (*(method->klass->rgctx_data[10].method)->methodPointer)
-                        (iVar4,method->klass->rgctx_data[10].rgctxDataDummy);
-      pIVar6 = (method->klass->rgctx_data[0x11].method)->methodPointer;
-      pvVar7 = method->klass->rgctx_data[0x11].rgctxDataDummy;
-      if (cVar5 == '\0') {
-        puVar8 = (undefined8 *)(*pIVar6)(&puStack_9,iVar4,pvVar7);
-        uStack_10 = *puVar8;
-        fVar11 = *(float *)(puVar8 + 1);
-        pSStack_12 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                    (method->klass->rgctx_data[0x12].method)->methodPointer;
-        fVar13 = (float10)(*(code *)pSStack_12)(iVar4,method->klass->rgctx_data[0x12].rgctxDataDummy)
-        ;
-        pSStack_12 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                    (float)fVar13;
-        sphereCenter_00.z = fVar11;
-        sphereCenter_00.x = (float)(undefined4)uStack_10;
-        sphereCenter_00.y = uStack_10._4_4_;
-        bVar14 = SphereMath::SphereMath_Raycast
-                          (ray,sphereCenter_00,(float)pSStack_12,(SphereEpsilon)0x0,(MethodInfo *)0x0
-                          );
-        if (bVar14 != 0) {
-          iVar15 = (*(method->klass->rgctx_data[0x13].method)->methodPointer)
-                             (iVar4,method->klass->rgctx_data[0x13].rgctxDataDummy);
-          if (iVar15 == 0) break;
-          if (*(int *)(iVar15 + 0xc) == 0) goto code_?;
-          if (*(int *)(iVar15 + 0x10) == 0) break;
-          puVar8 = (undefined8 *)
-                    (*(method->klass->rgctx_data[0x11].method)->methodPointer)
-                              (auStack_16,*(int *)(iVar15 + 0x10),
-                               method->klass->rgctx_data[0x11].rgctxDataDummy);
-          uStack_10 = *puVar8;
-          fVar11 = *(float *)(puVar8 + 1);
-          iVar15 = (*(method->klass->rgctx_data[0x13].method)->methodPointer)
-                             (iVar4,method->klass->rgctx_data[0x13].rgctxDataDummy);
-          if (iVar15 == 0) break;
-          if (*(int *)(iVar15 + 0xc) == 0) goto code_?;
-          if (*(int *)(iVar15 + 0x10) == 0) break;
-          pSStack_12 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                      (method->klass->rgctx_data[0x12].method)->methodPointer;
-          fVar13 = (float10)(*(code *)pSStack_12)
-                                      (*(int *)(iVar15 + 0x10),
-                                       method->klass->rgctx_data[0x12].rgctxDataDummy);
-          pSStack_12 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                      (float)fVar13;
-          sphereCenter_02.z = fVar11;
-          sphereCenter_02.x = (float)(undefined4)uStack_10;
-          sphereCenter_02.y = uStack_10._4_4_;
-          bVar14 = SphereMath::SphereMath_Raycast
-                            (ray,sphereCenter_02,(float)pSStack_12,(SphereEpsilon)0x0,
-                             (MethodInfo *)0x0);
-          if (bVar14 != 0) {
-            pSStack_12 = (this->fields)._root;
-            IStack_17 = method->klass->rgctx_data[0x13];
-            iStack_18 = iVar4;
-            iVar15 = (*(method->klass->rgctx_data[0x13].method)->methodPointer)();
-            if (iVar15 == 0) break;
-            if (*(int *)(iVar15 + 0xc) == 0) goto code_?;
-            if (pSStack_12 ==
-                (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) break;
-            pMVar2 = method->klass->rgctx_data[0xf].method;
-            (*pMVar2->methodPointer)(pSStack_12,*(undefined4 *)(iVar15 + 0x10),pMVar2);
+      pSVar2 = (this->fields)._root;
+      if ((pSVar2 == (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) ||
+         (pMVar3 = method->klass->rgctx_data[0x10].method,
+         lVar4 = (*pMVar3->methodPointer)(pSVar2,pMVar3), lVar4 == 0)) break;
+      pMVar3 = method->klass->rgctx_data[10].method;
+      cVar6 = (*pMVar3->methodPointer)(lVar4,pMVar3);
+      pIVar7 = (method->klass->rgctx_data[0x11].method)->methodPointer;
+      if (cVar6 == '\0') {
+        puVar8 = (undefined8 *)
+                  (*pIVar7)(auStack_9,lVar4,method->klass->rgctx_data[0x11].rgctxDataDummy);
+        pvStackX_18 = (void *)((ulonglong)pvStackX_18 & 0xffffffff00000000);
+        afStack_10[0] = 0.0;
+        uVar11 = *puVar8;
+        fVar12 = *(float *)(puVar8 + 1);
+        pMVar3 = method->klass->rgctx_data[0x12].method;
+        fVar13 = (float)(*pMVar3->methodPointer)(lVar4,pMVar3);
+        RStack_14.m_Origin.x = (ray->m_Origin).x;
+        RStack_14.m_Origin.y = (ray->m_Origin).y;
+        RStack_14._8_8_ = *(undefined8 *)&(ray->m_Origin).z;
+        RStack_14.m_Direction.y = (ray->m_Direction).y;
+        RStack_14.m_Direction.z = (ray->m_Direction).z;
+        epsilon._radiusEps = pvStackX_18._0_4_;
+        VStack_15._0_8_ = uVar11;
+        VStack_15.z = fVar12;
+        bVar16 = SphereMath::SphereMath_Raycast_1
+                          (&RStack_14,afStack_10,&VStack_15,fVar13,pvStackX_18._0_4_,
+                           (MethodInfo *)0x0);
+        if (bVar16 != 0) {
+          pMVar3 = method->klass->rgctx_data[0x13].method;
+          lVar17 = (*pMVar3->methodPointer)(lVar4,pMVar3);
+          if (lVar17 == 0) break;
+          if (*(int *)(lVar17 + 0x18) == 0) {
+code_?:
+            FUN_?();
+            pcVar18 = (code *)swi(3);
+            bVar16 = (*pcVar18)();
+            return bVar16;
           }
-          IStack_17 = method->klass->rgctx_data[0x13];
-          iStack_18 = iVar4;
-          iVar15 = (*(method->klass->rgctx_data[0x13].method)->methodPointer)();
-          if (iVar15 == 0) break;
-          if (*(uint *)(iVar15 + 0xc) < 2) goto code_?;
-          if (*(int *)(iVar15 + 0x14) != 0) {
-            iVar15 = (*(method->klass->rgctx_data[0x13].method)->methodPointer)
-                               (iVar4,method->klass->rgctx_data[0x13].rgctxDataDummy);
-            if (iVar15 == 0) break;
-            if (*(uint *)(iVar15 + 0xc) < 2) goto code_?;
-            if (*(int *)(iVar15 + 0x14) == 0) break;
+          if (*(longlong *)(lVar17 + 0x20) == 0) break;
+          pMVar3 = method->klass->rgctx_data[0x11].method;
+          puVar8 = (undefined8 *)
+                    (*pMVar3->methodPointer)(auStack_19,*(longlong *)(lVar17 + 0x20),pMVar3);
+          uVar11 = *puVar8;
+          fVar12 = *(float *)(puVar8 + 1);
+          pMVar3 = method->klass->rgctx_data[0x13].method;
+          lVar17 = (*pMVar3->methodPointer)(lVar4,pMVar3);
+          if (lVar17 == 0) break;
+          if (*(int *)(lVar17 + 0x18) == 0) goto code_?;
+          if (*(longlong *)(lVar17 + 0x20) == 0) break;
+          pvStackX_18 = (void *)((ulonglong)pvStackX_18 & 0xffffffff00000000);
+          pMVar3 = method->klass->rgctx_data[0x12].method;
+          fVar13 = (float)(*pMVar3->methodPointer)(*(longlong *)(lVar17 + 0x20),pMVar3);
+          RStack_14.m_Origin.x = (ray->m_Origin).x;
+          RStack_14.m_Origin.y = (ray->m_Origin).y;
+          RStack_14._8_8_ = *(undefined8 *)&(ray->m_Origin).z;
+          RStack_14.m_Direction.y = (ray->m_Direction).y;
+          RStack_14.m_Direction.z = (ray->m_Direction).z;
+          VStack_20._0_8_ = uVar11;
+          VStack_20.z = fVar12;
+          bVar16 = SphereMath::SphereMath_Raycast_1
+                            (&RStack_14,(float *)&pvStackX_18,&VStack_20,fVar13,epsilon,
+                             (MethodInfo *)0x0);
+          if (bVar16 != 0) {
+            pSVar2 = (this->fields)._root;
+            pMVar3 = method->klass->rgctx_data[0x13].method;
+            lVar17 = (*pMVar3->methodPointer)(lVar4,pMVar3);
+            if (lVar17 == 0) break;
+            if (*(int *)(lVar17 + 0x18) == 0) goto code_?;
+            if (pSVar2 == (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+                          0x0) break;
+            (*(method->klass->rgctx_data[0xf].method)->methodPointer)
+                      (pSVar2,*(undefined8 *)(lVar17 + 0x20));
+          }
+          pMVar3 = method->klass->rgctx_data[0x13].method;
+          lVar17 = (*pMVar3->methodPointer)(lVar4,pMVar3);
+          if (lVar17 == 0) break;
+          if (*(uint *)(lVar17 + 0x18) < 2) goto code_?;
+          if (*(longlong *)(lVar17 + 0x28) != 0) {
+            pMVar3 = method->klass->rgctx_data[0x13].method;
+            lVar17 = (*pMVar3->methodPointer)(lVar4,pMVar3);
+            if (lVar17 == 0) break;
+            if (*(uint *)(lVar17 + 0x18) < 2) goto code_?;
+            if (*(longlong *)(lVar17 + 0x28) == 0) break;
+            pMVar3 = method->klass->rgctx_data[0x11].method;
             puVar8 = (undefined8 *)
-                      (*(method->klass->rgctx_data[0x11].method)->methodPointer)
-                                (auStack_19,*(int *)(iVar15 + 0x14),
-                                 method->klass->rgctx_data[0x11].rgctxDataDummy);
-            uStack_20 = *puVar8;
-            uStack_10 = CONCAT44(*(undefined4 *)(puVar8 + 1),(undefined4)uStack_10);
-            iVar15 = (*(method->klass->rgctx_data[0x13].method)->methodPointer)
-                               (iVar4,method->klass->rgctx_data[0x13].rgctxDataDummy);
-            if (iVar15 == 0) break;
-            if (*(uint *)(iVar15 + 0xc) < 2) goto code_?;
-            if (*(int *)(iVar15 + 0x14) == 0) break;
-            pSStack_12 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                        (method->klass->rgctx_data[0x12].method)->methodPointer;
-            fVar13 = (float10)(*(code *)pSStack_12)
-                                        (*(int *)(iVar15 + 0x14),
-                                         method->klass->rgctx_data[0x12].rgctxDataDummy);
-            pSStack_12 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                        (float)fVar13;
-            sphereCenter_01.z = uStack_10._4_4_;
-            sphereCenter_01.x = (float)(undefined4)uStack_20;
-            sphereCenter_01.y = (float)uStack_20._4_4_;
-            bVar14 = SphereMath::SphereMath_Raycast
-                              (ray,sphereCenter_01,(float)pSStack_12,(SphereEpsilon)0x0,
+                      (*pMVar3->methodPointer)(auStack_21,*(longlong *)(lVar17 + 0x28),pMVar3);
+            uVar11 = *puVar8;
+            fVar12 = *(float *)(puVar8 + 1);
+            pMVar3 = method->klass->rgctx_data[0x13].method;
+            lVar17 = (*pMVar3->methodPointer)(lVar4,pMVar3);
+            if (lVar17 == 0) break;
+            if (*(uint *)(lVar17 + 0x18) < 2) goto code_?;
+            if (*(longlong *)(lVar17 + 0x28) == 0) break;
+            pvStackX_18 = (void *)((ulonglong)pvStackX_18 & 0xffffffff00000000);
+            pMVar3 = method->klass->rgctx_data[0x12].method;
+            fVar13 = (float)(*pMVar3->methodPointer)(*(longlong *)(lVar17 + 0x28),pMVar3);
+            RStack_14.m_Origin.x = (ray->m_Origin).x;
+            RStack_14.m_Origin.y = (ray->m_Origin).y;
+            RStack_14._8_8_ = *(undefined8 *)&(ray->m_Origin).z;
+            RStack_14.m_Direction.y = (ray->m_Direction).y;
+            RStack_14.m_Direction.z = (ray->m_Direction).z;
+            VStack_22._0_8_ = uVar11;
+            VStack_22.z = fVar12;
+            bVar16 = SphereMath::SphereMath_Raycast_1
+                              (&RStack_14,(float *)&pvStackX_18,&VStack_22,fVar13,epsilon,
                                (MethodInfo *)0x0);
-            if (bVar14 != 0) {
-              pSVar3 = (this->fields)._root;
-              iVar4 = (*(method->klass->rgctx_data[0x13].method)->methodPointer)
-                                (iVar4,method->klass->rgctx_data[0x13].rgctxDataDummy);
-              if (iVar4 == 0) break;
-              if (*(uint *)(iVar4 + 0xc) < 2) goto code_?;
-              if (pSVar3 == (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+            if (bVar16 != 0) {
+              pSVar2 = (this->fields)._root;
+              pMVar3 = method->klass->rgctx_data[0x13].method;
+              lVar4 = (*pMVar3->methodPointer)(lVar4,pMVar3);
+              if (lVar4 == 0) break;
+              if (*(uint *)(lVar4 + 0x18) < 2) goto code_?;
+              if (pSVar2 == (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
                             0x0) break;
-              pMVar2 = method->klass->rgctx_data[0xf].method;
-              (*pMVar2->methodPointer)(pSVar3,*(undefined4 *)(iVar4 + 0x14),pMVar2);
+              (*(method->klass->rgctx_data[0xf].method)->methodPointer)
+                        (pSVar2,*(undefined8 *)(lVar4 + 0x28));
             }
           }
         }
       }
       else {
-        puVar8 = (undefined8 *)(*pIVar6)(auStack_21,iVar4,pvVar7);
-        uStack_10 = *puVar8;
-        fVar11 = *(float *)(puVar8 + 1);
-        pSStack_12 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                    (method->klass->rgctx_data[0x12].method)->methodPointer;
-        fVar13 = (float10)(*(code *)pSStack_12)(iVar4,method->klass->rgctx_data[0x12].rgctxDataDummy)
-        ;
-        pSStack_12 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                    (float)fVar13;
-        sphereCenter.z = fVar11;
-        sphereCenter.x = (float)(undefined4)uStack_10;
-        sphereCenter.y = uStack_10._4_4_;
-        bVar14 = SphereMath::SphereMath_Raycast_1
-                          (ray,(float *)&pSStack_1,sphereCenter,(float)pSStack_12,(SphereEpsilon)0x0,
+        puVar8 = (undefined8 *)(*pIVar7)(auStack_23);
+        uVar11 = *puVar8;
+        fVar12 = *(float *)(puVar8 + 1);
+        pMVar3 = method->klass->rgctx_data[0x12].method;
+        fVar13 = (float)(*pMVar3->methodPointer)(lVar4,pMVar3);
+        RStack_14.m_Origin.x = (ray->m_Origin).x;
+        RStack_14.m_Origin.y = (ray->m_Origin).y;
+        RStack_14._8_8_ = *(undefined8 *)&(ray->m_Origin).z;
+        RStack_14.m_Direction.y = (ray->m_Direction).y;
+        RStack_14.m_Direction.z = (ray->m_Direction).z;
+        pvStackX_18 = (void *)((ulonglong)pvStackX_18 & 0xffffffff00000000);
+        VStack_24._0_8_ = uVar11;
+        VStack_24.z = fVar12;
+        bVar16 = SphereMath::SphereMath_Raycast_1
+                          (&RStack_14,afStack_1,&VStack_24,fVar13,(SphereEpsilon)0x0,
                            (MethodInfo *)0x0);
-        if (bVar14 != 0) {
-          pSStack_12 = pSStack_1;
-          uVar22 = func_?(method->klass->rgctx_data,0x15);
-          uVar22 = func_?(uVar22);
-          pMVar2 = method->klass->rgctx_data[0x16].method;
-          (*pMVar2->methodPointer)
-                    (uVar22,ray.m_Origin.x,ray.m_Origin.y,ray.m_Origin.z,ray.m_Direction.x,
-                     ray.m_Direction.y,ray.m_Direction.z,iVar4,pSStack_12,pMVar2);
-          func_?((method->klass->rgctx_data[0x17].method)->methodPointer,
-                          method->klass->rgctx_data[0x17].rgctxDataDummy,hits,uVar22);
+        if (bVar16 != 0) {
+          pvVar25 = method->klass->rgctx_data[0x15].rgctxDataDummy;
+          if ((*(byte *)((longlong)pvVar25 + 0x135) & 1) == 0) {
+            pvVar25 = (void *)FUN_?(pvVar25);
+          }
+          pvVar25 = (void *)FUN_?(pvVar25);
+          RStack_14.m_Origin.x = (ray->m_Origin).x;
+          RStack_14.m_Origin.y = (ray->m_Origin).y;
+          RStack_14._8_8_ = *(undefined8 *)&(ray->m_Origin).z;
+          RStack_14.m_Direction.y = (ray->m_Direction).y;
+          RStack_14.m_Direction.z = (ray->m_Direction).z;
+          pMVar3 = method->klass->rgctx_data[0x16].method;
+          (*pMVar3->methodPointer)(pvVar25,&RStack_14,lVar4,afStack_1[0],pMVar3);
+          pMVar3 = method->klass->rgctx_data[0x17].method;
+          pvStackX_18 = pvVar25;
+          (*pMVar3->invoker_method)(pMVar3->methodPointer,pMVar3,hits,&pvStackX_18,pvVar25);
         }
       }
-      pSVar3 = (this->fields)._root;
+      pSVar2 = (this->fields)._root;
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar23 = (code *)swi(3);
-  bVar14 = (*pcVar23)();
-  return bVar14;
+  FUN_?();
+  pcVar18 = (code *)swi(3);
+  bVar16 = (*pcVar18)();
+  return bVar16;
 }
 
 
@@ -671,28 +703,25 @@ void Assembly-CSharp.dll::RTG::SphereTree`1[Unity::IL2CPP::Metadata::__Il2CppFul
     return;
   }
   if (node != (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
-    pSVar1 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-             (*(method->klass->rgctx_data[6].method)->methodPointer)
-                       (node,method->klass->rgctx_data[6].rgctxDataDummy);
-    pMVar2 = method->klass->rgctx_data[7].method;
-    (*pMVar2->methodPointer)(node,0,pMVar2);
-    while (pSVar1 != (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
-      iVar3 = (*(method->klass->rgctx_data[8].method)->methodPointer)
-                        (pSVar1,method->klass->rgctx_data[8].rgctxDataDummy);
-      if ((iVar3 != 0) || (pSVar1 == (this->fields)._root)) {
-        pMVar2 = method->klass->rgctx_data[9].method;
-        (*pMVar2->methodPointer)(pSVar1,pMVar2);
+    pMVar1 = method->klass->rgctx_data[6].method;
+    pSVar2 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+             (*pMVar1->methodPointer)(node,pMVar1);
+    (*(method->klass->rgctx_data[7].method)->methodPointer)(node,0);
+    while (pSVar2 != (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
+      pMVar1 = method->klass->rgctx_data[8].method;
+      iVar3 = (*pMVar1->methodPointer)(pSVar2,pMVar1);
+      if ((iVar3 != 0) || (pSVar2 == (this->fields)._root)) {
+        (*(method->klass->rgctx_data[9].method)->methodPointer)(pSVar2);
         return;
       }
+      pMVar1 = method->klass->rgctx_data[6].method;
       pSVar4 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-               (*(method->klass->rgctx_data[6].method)->methodPointer)
-                         (pSVar1,method->klass->rgctx_data[6].rgctxDataDummy);
-      pMVar2 = method->klass->rgctx_data[7].method;
-      (*pMVar2->methodPointer)(pSVar1,0,pMVar2);
-      pSVar1 = pSVar4;
+               (*pMVar1->methodPointer)(pSVar2,pMVar1);
+      (*(method->klass->rgctx_data[7].method)->methodPointer)(pSVar2,0);
+      pSVar2 = pSVar4;
     }
   }
-  func_?();
+  FUN_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;
@@ -708,39 +737,69 @@ void Assembly-CSharp.dll::RTG::SphereTree`1[Unity::IL2CPP::Metadata::__Il2CppFul
 
 {
   uVar1 = method->klass->rgctx_data->klass->actualSize;
-  func_?();
-  pMVar2 = (MethodInfo *)&stack0xffffffcc;
-  ppIStack_3 = (InvokerMethod *)&stack0xffffffcc;
-  func_?();
-  func_?(&stack0xffffffcc,0,uVar1);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,pMVar2);
-  func_?(&stack0xffffffcc,0,uVar1);
-  ppIVar4 = ppIStack_3;
-  func_?(ppIStack_3,&stack0xffffffcc,uVar1);
+  lVar2 = FUN_?(0xffffffffffffff0);
+  lVar2 = -lVar2;
+  plVar3 = (longlong *)((longlong)&pvStack_4 + lVar2);
+  *(undefined **)((longlong)auStack_5 + lVar2 + -8) = &UNK_?;
+  lVar6 = FUN_?();
+  lVar6 = -lVar6;
+  lVar7 = (longlong)&pvStack_4 + lVar6 + lVar2;
+  *(undefined **)((longlong)auStack_5 + lVar6 + lVar2 + -8) = &UNK_?;
+  FUN_?(lVar7,0,uVar1);
+  *(undefined **)((longlong)auStack_5 + lVar6 + lVar2 + -8) = &UNK_?;
+  FUN_?(lVar7,0,uVar1);
+  *(undefined **)((longlong)auStack_5 + lVar6 + lVar2 + -8) = &UNK_?;
+  FUN_?(plVar3,lVar7,uVar1);
   if (cRam_? == '\0') {
-    func_?();
+    *(undefined **)((longlong)auStack_5 + lVar6 + lVar2 + -8) = &UNK_?;
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    *(undefined4 *)((longlong)auStack_5 + lVar6 + lVar2) =
+         *(undefined4 *)((longlong)auStack_5 + lVar6 + lVar2);
+    UNLOCK();
     cRam_? = '\x01';
   }
-  Sphere::Sphere__ctor
-            ((Sphere *)&stack0xffffffe4,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
-             1.0,(MethodInfo *)0x0);
-  if (((uint)(method->klass->rgctx_data[1].klass)->vtable[0].methodPtr & 0x100) == 0) {
-    func_?();
+  pvStack_8 = *(void **)&TypeInfo__UnityEngine__Vector3->static_fields->zeroVector;
+  fVar9 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).z;
+  pvVar10 = method->klass->rgctx_data[1].rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar10 + 0x135) & 1) == 0) {
+    *(undefined **)((longlong)auStack_5 + lVar6 + lVar2 + -8) = &UNK_?;
+    pvVar10 = (void *)FUN_?(pvVar10);
   }
-  pSVar5 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)func_?()
-  ;
-  if (-1 < (int)method->klass->rgctx_data->method->return_type) {
-    ppIVar4 = (InvokerMethod *)*ppIVar4;
+  *(undefined **)((longlong)auStack_5 + lVar6 + lVar2 + -8) = &UNK_?;
+  pSVar11 = (SphereTreeNode_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+            FUN_?(pvVar10);
+  pvStack_4 = pvStack_8;
+  uStack_12 = (void **)CONCAT44(0x3f800000,fVar9);
+  uStack_13 = uStack_12;
+  if (-1 < *(int *)&method->klass->rgctx_data->method->return_type) {
+    plVar3 = (longlong *)*plVar3;
   }
-  pMVar2 = method->klass->rgctx_data[2].method;
-  ppIStack_3 = &pIStack_6;
-  puStack_7 = ppIVar4;
-  (*pMVar2->invoker_method)
-            ((method->klass->rgctx_data[2].method)->methodPointer,pMVar2,pSVar5,&puStack_7,
-             ppIStack_3);
-  (this->fields)._root = pSVar5;
-  func_?();
+  pIVar14 = method->klass;
+  *(void ***)((longlong)alStack_15 + lVar6 + lVar2) = &pvStack_8;
+  pvStack_4 = plVar3;
+  uStack_12 = &pvStack_8;
+  pMVar16 = pIVar14->rgctx_data[2].method;
+  pIVar17 = pMVar16->methodPointer;
+  pIVar18 = pMVar16->invoker_method;
+  *(undefined **)((longlong)auStack_5 + lVar6 + lVar2 + -8) = &UNK_?;
+  (*pIVar18)(pIVar17,pMVar16,pSVar11,&pvStack_4,*(void **)((longlong)alStack_15 + lVar6 + lVar2));
+  bVar19 = iRam_? != 0;
+  (this->fields)._root = pSVar11;
+  if (bVar19) {
+    uVar20 = (uint)((ulonglong)&this->fields >> 0xc);
+    uVar21 = (ulonglong)((uVar20 & 0x1fffff) >> 6);
+    do {
+      uVar22 = *(ulonglong *)(uVar21 * 8 + 0xADDR);
+      puVar23 = (ulonglong *)(uVar21 * 8 + 0xADDR);
+      LOCK();
+      bVar19 = uVar22 == *puVar23;
+      if (bVar19) {
+        *puVar23 = uVar22 | 1L << (uVar20 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar19);
+  }
   return;
 }
 

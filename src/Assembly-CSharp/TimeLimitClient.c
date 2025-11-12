@@ -6,115 +6,30 @@ void Assembly-CSharp.dll::TimeLimitClient::TimeLimitClient_GetDebriefing
                )
 
 {
-  uStack_1 = (undefined *)in_ECX;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__IDebriefing);
+    FUN_?(&TypeInfo__IDebriefing);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  uStack_1 = (undefined *)((uint)uStack_1 & 0xffffff);
+  aWStackX_10[0] = WinningConditionType__Enum_Collectible;
+  auStackX_8[0] = GameStatCounterType__Enum_None;
   WinningConditionControl::WinningConditionControl_TryGetPrioritizedStat
-            ((GameStatCounterType__Enum *)((int)&uStack_1 + 3),(MethodInfo *)0x0);
-  bVar2 = cRam_? == '\0';
-  (this->fields)._.counterType = uStack_1._3_1_;
-  if (bVar2) {
-    func_?(&
-                    AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
-                   );
-    func_?(&
-                    FlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<FlagReachedClient>__
-                   );
-    func_?(&
-                    KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
-                   );
-    func_?(&
-                    OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
-                   );
-    func_?(&
-                    TimeAttackFlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<TimeAttackFlagReachedClient>__
-                   );
-    cRam_? = '\x01';
+            ((GameStatCounterType__Enum *)auStackX_8,(MethodInfo *)0x0);
+  (this->fields)._.counterType = auStackX_8[0];
+  WinningConditionControl::WinningConditionControl_TryGetPrioritizedWinCondition
+            (aWStackX_10,(MethodInfo *)0x0);
+  (*(this->klass->vtable).get_HighScores.methodPtr)
+            (this,(this->klass->vtable).get_HighScores.method);
+  (*(this->klass->vtable).get_IsTeamMode.methodPtr)
+            (this,(this->klass->vtable).get_IsTeamMode.method);
+  if (winningConditionDebriefingView != (IDebriefing *)0x0) {
+    FUN_?();
+    return;
   }
-  pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar3 != (MVNetworkGame *)0x0) &&
-     (pWVar4 = (pMVar3->fields)._WinningConditionManager_k__BackingField,
-     pWVar4 != (WinningConditionManager *)0x0)) {
-    pOVar5 = MVWorldObject.dll::WinningConditionManager::
-             WinningConditionManager_GetSingletonWinnerConditionByType
-                       (pWVar4,
-                        FlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<FlagReachedClient>__
-                       );
-    if (pOVar5 == (Object *)0x0) {
-      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar3 == (MVNetworkGame *)0x0) ||
-         (pWVar4 = (pMVar3->fields)._WinningConditionManager_k__BackingField,
-         pWVar4 == (WinningConditionManager *)0x0)) goto code_?;
-      pOVar5 = MVWorldObject.dll::WinningConditionManager::
-               WinningConditionManager_GetSingletonWinnerConditionByType
-                         (pWVar4,
-                          TimeAttackFlagReachedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<TimeAttackFlagReachedClient>__
-                         );
-      if (pOVar5 == (Object *)0x0) {
-        pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if ((pMVar3 == (MVNetworkGame *)0x0) ||
-           (winningConditionDebriefingView =
-                 (IDebriefing *)(pMVar3->fields)._WinningConditionManager_k__BackingField,
-           (WinningConditionManager *)winningConditionDebriefingView ==
-           (WinningConditionManager *)0x0)) goto code_?;
-        pOVar5 = MVWorldObject.dll::WinningConditionManager::
-                 WinningConditionManager_GetSingletonWinnerConditionByType
-                           ((WinningConditionManager *)winningConditionDebriefingView,
-                            AllCollectiblesCollectedClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<AllCollectiblesCollectedClient>__
-                           );
-        if (pOVar5 == (Object *)0x0) {
-          pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if ((pMVar3 == (MVNetworkGame *)0x0) ||
-             (pWVar4 = (pMVar3->fields)._WinningConditionManager_k__BackingField,
-             pWVar4 == (WinningConditionManager *)0x0)) goto code_?;
-          pOVar5 = MVWorldObject.dll::WinningConditionManager::
-                   WinningConditionManager_GetSingletonWinnerConditionByType
-                             (pWVar4,
-                              KillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<KillLimitClient>__
-                             );
-          if (pOVar5 == (Object *)0x0) {
-            pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            if ((pMVar3 == (MVNetworkGame *)0x0) ||
-               (pWVar4 = (pMVar3->fields)._WinningConditionManager_k__BackingField,
-               pWVar4 == (WinningConditionManager *)0x0)) goto code_?;
-            MVWorldObject.dll::WinningConditionManager::
-            WinningConditionManager_GetSingletonWinnerConditionByType
-                      (pWVar4,
-                       OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
-                      );
-          }
-        }
-      }
-    }
-    (*(code *)(this->klass->vtable).get_HighScores.method)();
-    (*(code *)(this->klass->vtable).get_IsTeamMode.method)();
-    if (winningConditionDebriefingView != (IDebriefing *)0x0) {
-      func_?();
-      return;
-    }
-  }
-code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
-  return;
-}
-
-
-/* TimeLimitClient(WinningCondition, Int32, GameStatCounterManager) */
-
-void Assembly-CSharp.dll::TimeLimitClient::TimeLimitClient__ctor
-               (TimeLimitClient *this,WinningCondition *parent,int32_t id,
-               GameStatCounterManager *gameCounterManager,MethodInfo *method)
-
-{
-  MVWorldObject.dll::WinningCondition::WinningCondition__ctor
-            ((WinningCondition *)this,parent,id,gameCounterManager,0,1,
-             GameStatCounterType__Enum_Time_1,WinningConditionPresentStyle__Enum_MultipleWinners,
-             (MethodInfo *)0x0);
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

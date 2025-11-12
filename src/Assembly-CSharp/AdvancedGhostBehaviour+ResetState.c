@@ -8,16 +8,32 @@ Type * Assembly-CSharp.dll::AdvancedGhostBehaviour+ResetState::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeRef__AdvancedGhostBehaviour__Idle);
-    func_?(&TypeInfo__System__Type);
+    FUN_?(&TypeRef__AdvancedGhostBehaviour__Idle);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  handle = TypeRef__AdvancedGhostBehaviour__Idle;
-  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Type);
+  pIVar1 = TypeRef__AdvancedGhostBehaviour__Idle;
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
   }
-  pTVar1 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                     ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-  return pTVar1;
+  if (pIVar1 != (Il2CppType *)0x0) {
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    lVar2 = FUN_?(pIVar1,1);
+    lVar2 = lVar2 + 0x20;
+    apTStackX_10[0] = (Type *)0x0;
+    lStackX_8 = lVar2;
+    cVar3 = FUN_?(lVar2,&lStackX_8,apTStackX_10,in_R9,unaff_RBX);
+    if (cVar3 != '\0') {
+      return apTStackX_10[0];
+    }
+    lVar4 = FUN_?(uRam_?);
+    *(longlong *)(lVar4 + 0x10) = lVar2;
+    pTVar5 = (Type *)FUN_?();
+    return pTVar5;
+  }
+  return (Type *)0x0;
 }
 

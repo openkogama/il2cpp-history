@@ -6,55 +6,72 @@ bool Assembly-CSharp.dll::NicklasHotkeys+<>c::NicklasHotkeys_c___cctor_b__3_0
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__NicklasHotkeys);
-    func_?(&TypeInfo__NotificationLifetime);
-    func_?(&StringLiteral_Test_Modal);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                  ,CONCAT44(in_register_00000014,_));
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NicklasHotkeys);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationLifetime);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Test_Modal);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-             *)func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                              );
+  this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+             *)FUN_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                            );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
-  StyleComplexSelector+PseudoStateData]::
-  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+  UIR::UIRenderDevice+DisableForceGammaMaterial]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
             (this_01,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  uStack_1 = 1;
-  pOVar2 = (Object *)func_?(TypeInfo__System__Byte,&uStack_1);
+  uStackX_20 = 1;
+  pOVar1 = (Object *)FUN_?(uRam_?,&uStackX_20);
   if (this_01 !=
-      (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0
-     ) {
+      (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+       *)0x0) {
+    uVar2 = CONCAT71((int7)((ulonglong)in_R9 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar2,
-               (Object *)StringLiteral_Test_Modal,
+    Dictionary_2_System_Object_System_Object__TryInsert
+              ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar1,
+               (Object *)StringLiteral_Test_Modal,(InsertionBehavior__Enum)uVar2,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    uStack_3 = 2;
-    pOVar2 = (Object *)func_?(TypeInfo__System__Byte,&uStack_3);
-    value = (Object *)func_?(TypeInfo__NotificationLifetime,&stack0xfffffff4);
+               ->klass->rgctx_data[0x22].method);
+    _uStackX_20 = CONCAT31(uStackX_21,2);
+    pOVar1 = (Object *)FUN_?(uRam_?,&uStackX_20);
+    uStackX_20 = 0xe;
+    uStackX_21 = 0;
+    value = (Object *)FUN_?(TypeInfo__NotificationLifetime,&uStackX_20);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar2,value,
+    Dictionary_2_System_Object_System_Object__TryInsert
+              ((Dictionary_2_System_Object_System_Object_ *)this_01,pOVar1,value,
+               (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar2 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    if ((TypeInfo__NicklasHotkeys->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+               ->klass->rgctx_data[0x22].method);
+    if (*(int *)&(TypeInfo__NicklasHotkeys->_1).field_0x1c == 0) {
+      FUN_?();
     }
     if (cRam_? == '\0') {
-      func_?();
+      FUN_?(&TypeInfo__NotificationsManager);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
     this_00 = TypeInfo__NotificationsManager->static_fields->_activeInstance;
@@ -65,10 +82,10 @@ bool Assembly-CSharp.dll::NicklasHotkeys+<>c::NicklasHotkeys_c___cctor_b__3_0
       return 1;
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  bVar4 = (*pcVar3)();
+  return bVar4;
 }
 
 
@@ -78,15 +95,26 @@ void Assembly-CSharp.dll::NicklasHotkeys+<>c::NicklasHotkeys_c__cctor(MethodInfo
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__NicklasHotkeys____c);
+    FUN_?(&TypeInfo__NicklasHotkeys____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__NicklasHotkeys____c;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  TypeInfo__NicklasHotkeys____c->static_fields->__9 = (NicklasHotkeys_c *)value;
-  func_?(TypeInfo__NicklasHotkeys____c->static_fields,value);
+  pNVar1 = (NicklasHotkeys_c *)FUN_?(TypeInfo__NicklasHotkeys____c);
+  TypeInfo__NicklasHotkeys____c->static_fields->__9 = pNVar1;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)TypeInfo__NicklasHotkeys____c->static_fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 

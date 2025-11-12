@@ -5,17 +5,16 @@ void Assembly-CSharp.dll::AvatarRemoteBuildMode::AvatarRemoteBuildMode_Activate
                (AvatarRemoteBuildMode *this,MethodInfo *method)
 
 {
-  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
-  pAStack_2 = (this->fields).avatarUIHandlerRemote;
-  if (pAStack_2 != (AvatarUIHandlerRemote *)0x0) {
-    pIStack_1 = (pAStack_2->klass->vtable).Deactivate.methodPtr;
-    (*(code *)(pAStack_2->klass->vtable).Activate.method)();
+  pAVar1 = (this->fields).avatarUIHandlerRemote;
+  if (pAVar1 != (AvatarUIHandlerRemote *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(pAVar1->klass->vtable).Activate.methodPtr)(pAVar1,(pAVar1->klass->vtable).Activate.method);
     return;
   }
-  uVar3 = func_?(&puStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -26,17 +25,17 @@ void Assembly-CSharp.dll::AvatarRemoteBuildMode::AvatarRemoteBuildMode_Deactivat
                (AvatarRemoteBuildMode *this,MethodInfo *method)
 
 {
-  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
-  pAStack_2 = (this->fields).avatarUIHandlerRemote;
-  if (pAStack_2 != (AvatarUIHandlerRemote *)0x0) {
-    pIStack_1 = (pAStack_2->klass->vtable).OnPositionChanged.methodPtr;
-    (*(code *)(pAStack_2->klass->vtable).Deactivate.method)();
+  pAVar1 = (this->fields).avatarUIHandlerRemote;
+  if (pAVar1 != (AvatarUIHandlerRemote *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(pAVar1->klass->vtable).Deactivate.methodPtr)
+              (pAVar1,(pAVar1->klass->vtable).Deactivate.method);
     return;
   }
-  uVar3 = func_?(&puStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -49,55 +48,83 @@ void Assembly-CSharp.dll::AvatarRemoteBuildMode::AvatarRemoteBuildMode_Initializ
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__AvatarRemoteBuildMode__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
-                   );
-    func_?(&
-                    TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-                   );
+    FUN_?(&
+                  MethodInfo__AvatarRemoteBuildMode__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pAVar1 = (this->fields).avatarUIHandlerRemote;
-  if (pAVar1 != (AvatarUIHandlerRemote *)0x0) {
-    (*(code *)(pAVar1->klass->vtable).Initialize.method)
-              (pAVar1,0,avatar,ownerActorNr,(this->fields).chatBubbleAnchor,
-               (pAVar1->klass->vtable).Activate.methodPtr);
-    if (avatar != (MVBuildModeAvatar *)0x0) {
-      pUVar2 = (avatar->fields)._._.PositionChanged;
-      this_00 = (UnityAction_2_System_Object_System_Object_ *)
-                func_?(
-                               TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
-                               );
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                (this_00,(Object *)this,
-                 MethodInfo__AvatarRemoteBuildMode__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
-                 ,(MethodInfo *)0x0);
-      pDVar3 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pUVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-      if (pDVar3 == (Delegate *)0x0) {
-        (avatar->fields)._._.PositionChanged =
-             (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
-        func_?();
-        return;
-      }
-      pUVar2 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)func_?();
-      if (pUVar2 != (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
-        (avatar->fields)._._.PositionChanged = pUVar2;
-        iVar4 = func_?();
-        if (iVar4 != 0) {
-          func_?();
-          return;
-        }
-      }
-      goto code_?;
+  if ((pAVar1 == (AvatarUIHandlerRemote *)0x0) ||
+     ((*(pAVar1->klass->vtable).Initialize.methodPtr)
+                (pAVar1,0,avatar,(ulonglong)(uint)ownerActorNr,(this->fields).chatBubbleAnchor,
+                 (pAVar1->klass->vtable).Initialize.method), avatar == (MVBuildModeAvatar *)0x0)) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pUVar3 = (avatar->fields)._._.PositionChanged;
+  this_00 = (UnityAction_2_System_Object_System_Object_ *)
+            FUN_?(
+                         TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                         );
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+  UnityAction_2_System_Object_System_Object___ctor
+            (this_00,(Object *)this,
+             MethodInfo__AvatarRemoteBuildMode__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
+             ,(MethodInfo *)0x0);
+  pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pUVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+  pUVar5 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+  ;
+  if (pDVar4 == (Delegate *)0x0) {
+    (avatar->fields)._._.PositionChanged =
+         (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
+  }
+  else {
+    pUVar3 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)
+             FUN_?(pDVar4,
+                           TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                          );
+    if (pUVar3 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
+      FUN_?(pDVar4,pUVar5);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    (avatar->fields)._._.PositionChanged = pUVar3;
+    pUVar5 = 
+    TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+    lVar6 = FUN_?(pDVar4,
+                          TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                         );
+    if (lVar6 == 0) {
+      FUN_?(pDVar4,pUVar5);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  if (iRam_? != 0) {
+    uVar7 = (uint)((ulonglong)&(avatar->fields)._._.PositionChanged >> 0xc);
+    puVar8 = (ulonglong *)((ulonglong)((uVar7 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar9 = *puVar8;
+      LOCK();
+      uVar10 = *puVar8;
+      if (uVar9 == uVar10) {
+        *puVar8 = uVar9 | 1L << (uVar7 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar9 != uVar10);
+  }
   return;
 }
 
@@ -109,19 +136,16 @@ void Assembly-CSharp.dll::AvatarRemoteBuildMode::AvatarRemoteBuildMode_OnPositio
                PositionChangedEventArgs *positionChangedEventArgs,MethodInfo *method)
 
 {
-  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
-  pAVar2 = (this->fields).avatarUIHandlerRemote;
-  if (pAVar2 != (AvatarUIHandlerRemote *)0x0) {
-    pIStack_1 = (pAVar2->klass->vtable).HandleTeamChange.methodPtr;
-    pPStack_3 = positionChangedEventArgs;
-    pMStack_4 = arg0;
-    (*(code *)(pAVar2->klass->vtable).OnPositionChanged.method)(pAVar2);
+  pAVar1 = (this->fields).avatarUIHandlerRemote;
+  if (pAVar1 != (AvatarUIHandlerRemote *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(pAVar1->klass->vtable).OnPositionChanged.methodPtr)();
     return;
   }
-  uVar5 = func_?(&pMStack_4);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

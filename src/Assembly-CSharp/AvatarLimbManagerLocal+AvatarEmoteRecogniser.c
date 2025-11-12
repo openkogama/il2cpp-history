@@ -1,16 +1,4 @@
 
-/* Void Activate() */
-
-void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarEmoteRecogniser::
-     AvatarLimbManagerLocal_AvatarEmoteRecogniser_Activate
-               (AvatarLimbManagerLocal_AvatarEmoteRecogniser *this,MethodInfo *method)
-
-{
-  (this->fields).isActive = 1;
-  return;
-}
-
-
 /* Void Deactivate() */
 
 void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarEmoteRecogniser::
@@ -31,8 +19,8 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarEmoteRecogniser::
 
 {
   if ((this->fields).isActive == 0) {
-    (this->fields).eventRecognitioner = 0;
     (this->fields).resetCooldown = (this->fields).resetInterval;
+    (this->fields).eventRecognitioner = 0;
   }
   fVar1 = (this->fields).previousAngle;
   uVar2 = (int)(this->fields).eventRecognitioner & 0x80000001;
@@ -58,12 +46,15 @@ code_?:
   }
 code_?:
   if ((this->fields).recognitionsBeforeEvent <= (this->fields).eventRecognitioner) {
-    (this->fields).eventRecognitioner = 0;
     (this->fields).resetCooldown = (this->fields).resetInterval;
+    (this->fields).eventRecognitioner = 0;
     if ((this->fields).OnStartEvent != (Action *)0x0) {
       pAVar5 = (this->fields).OnStartEvent;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
       (*(pAVar5->fields)._._.invoke_impl)
                 ((pAVar5->fields)._._.method_code,(pAVar5->fields)._._.method);
+      return;
     }
   }
   return;
@@ -113,52 +104,76 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarEmoteRecogniser::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action);
-    func_?(&MethodInfo__AvatarLimbManagerLocal__AvatarEmoteRecogniser__ResetRecognition__);
+    FUN_?(&TypeInfo__System__Action);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__AvatarLimbManagerLocal__AvatarEmoteRecogniser__ResetRecognition__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (limbManager == (AvatarLimbManager *)0x0) {
-    func_?();
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pAVar2 = (limbManager->fields).OnAvatarRotate;
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_00,(Object *)this,
+             MethodInfo__AvatarLimbManagerLocal__AvatarEmoteRecogniser__ResetRecognition__,
+             (MethodInfo *)0x0);
+  pAVar2 = (Action *)
+           mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pAVar2 == (Action *)0x0) {
+    (limbManager->fields).OnAvatarRotate = (Action *)0x0;
   }
   else {
-    pAVar1 = (limbManager->fields).OnAvatarRotate;
-    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,
-               MethodInfo__AvatarLimbManagerLocal__AvatarEmoteRecogniser__ResetRecognition__,
-               (MethodInfo *)0x0);
-    pAVar2 = (Action *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    pAVar1 = (Action *)0x0;
-    if (pAVar2 == (Action *)0x0) {
-      (limbManager->fields).OnAvatarRotate = (Action *)0x0;
-code_?:
-      func_?();
-      (this->fields).angleSensitivity = (float)&limbManager->fields;
-      (this->fields).resetInterval = (float)pAVar1;
-      (this->fields).resetCooldown = (float)pAVar1;
-      (this->fields).recognitionsBeforeEvent = recognitionsBeforeEvent;
-      (this->fields).startModulusOffset = (ushort)(shouldRecognisePositiveAngleFirst ^ 1);
-      (this->fields).isActive = isActive;
+    pAVar3 = (Action *)0x0;
+    if (pAVar2->klass == TypeInfo__System__Action) {
+      pAVar3 = pAVar2;
+    }
+    if (pAVar3 == (Action *)0x0) {
+      FUN_?(pAVar2,TypeInfo__System__Action);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
       return;
     }
+    (limbManager->fields).OnAvatarRotate = pAVar3;
+    pAVar3 = (Action *)0x0;
     if (pAVar2->klass == TypeInfo__System__Action) {
-      pAVar1 = pAVar2;
+      pAVar3 = pAVar2;
     }
-    if (pAVar1 != (Action *)0x0) {
-      (limbManager->fields).OnAvatarRotate = pAVar1;
-      pAVar1 = (Action *)0x0;
-      if (pAVar2->klass == TypeInfo__System__Action) {
-        pAVar1 = pAVar2;
-      }
-      if (pAVar1 != (Action *)0x0) goto code_?;
+    if (pAVar3 == (Action *)0x0) {
+      FUN_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)&limbManager->fields >> 0xc);
+    uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+    do {
+      uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+      puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+      LOCK();
+      bVar8 = uVar6 == *puVar7;
+      if (bVar8) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar8);
+  }
+  (this->fields).recognitionsBeforeEvent = recognitionsBeforeEvent;
+  (this->fields).angleSensitivity = angleSensitivity;
+  (this->fields).resetInterval = resetInterval;
+  (this->fields).resetCooldown = resetInterval;
+  (this->fields).startModulusOffset = (ushort)(shouldRecognisePositiveAngleFirst ^ 1);
+  (this->fields).isActive = isActive;
   return;
 }
 
@@ -188,8 +203,8 @@ bool Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarEmoteRecogniser::
 
 {
   if (((previousAngle <= _UNK_?) || (_UNK_? <= newAngle)) &&
-     (((previousAngle < _UNK_? && (_UNK_? < newAngle)) || (newAngle <= previousAngle))
-     )) {
+     (((previousAngle < _UNK_? && (_UNK_? < newAngle)) ||
+      (newAngle <= previousAngle)))) {
     return 0;
   }
   return 1;
@@ -209,6 +224,19 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarEmoteRecogniser::
 }
 
 
+/* Void SetIsActive(Boolean) */
+
+void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarEmoteRecogniser::
+     AvatarLimbManagerLocal_AvatarEmoteRecogniser_SetIsActive
+               (AvatarLimbManagerLocal_AvatarEmoteRecogniser *this,bool shouldBeActive,
+               MethodInfo *method)
+
+{
+  (this->fields).isActive = shouldBeActive;
+  return;
+}
+
+
 /* Void Update() */
 
 void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarEmoteRecogniser::
@@ -217,16 +245,26 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarEmoteRecogniser::
 
 {
   if ((this->fields).eventRecognitioner == 0) {
-    (this->fields).eventRecognitioner = 0;
     (this->fields).resetCooldown = (this->fields).resetInterval;
+    (this->fields).eventRecognitioner = 0;
   }
   fVar1 = (this->fields).resetCooldown;
-  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar1 = fVar1 - fVar2;
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcRam_? = pcVar2;
+  fVar4 = (float)(*pcRam_?)();
+  fVar1 = fVar1 - fVar4;
   (this->fields).resetCooldown = fVar1;
   if (fVar1 <= 0.0) {
-    (this->fields).eventRecognitioner = 0;
     (this->fields).resetCooldown = (this->fields).resetInterval;
+    (this->fields).eventRecognitioner = 0;
   }
   return;
 }

@@ -5,24 +5,27 @@ void Assembly-CSharp.dll::DayNightCycleColorPresets::DayNightCycleColorPresets_O
                (DayNightCycleColorPresets *this,MethodInfo *method)
 
 {
-  uVar1 = 0;
-  pDVar2 = (this->fields).presets;
-  if (pDVar2 != (DayNightCycleColorPresets_Preset__Array *)0x0) {
-    ppDVar3 = pDVar2->vector;
+  pDVar1 = (this->fields).presets;
+  uVar2 = 0;
+  if (pDVar1 != (DayNightCycleColorPresets_Preset__Array *)0x0) {
+    ppDVar3 = pDVar1->vector;
     while( true ) {
-      if ((int)pDVar2->max_length <= (int)uVar1) {
+      if ((int)pDVar1->max_length <= (int)uVar2) {
         return;
       }
-      if (pDVar2->max_length <= uVar1) break;
-      if (*ppDVar3 == (DayNightCycleColorPresets_Preset *)0x0) goto code_?;
-      uVar1 = uVar1 + 1;
+      if ((uint)pDVar1->max_length <= uVar2) {
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      if (*ppDVar3 == (DayNightCycleColorPresets_Preset *)0x0) break;
+      uVar2 = uVar2 + 1;
       ((*ppDVar3)->fields).initialized = 0;
       ppDVar3 = ppDVar3 + 1;
     }
-    func_?();
   }
-code_?:
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -36,38 +39,59 @@ void Assembly-CSharp.dll::DayNightCycleColorPresets::DayNightCycleColorPresets_T
 
 {
   pDVar1 = (this->fields).presets;
-  this = (DayNightCycleColorPresets *)0x0;
+  uVar2 = 0;
   if (pDVar1 != (DayNightCycleColorPresets_Preset__Array *)0x0) {
-    ppDVar2 = pDVar1->vector;
+    ppDVar3 = pDVar1->vector;
     while( true ) {
-      if ((int)pDVar1->max_length <= (int)this) {
+      if ((int)pDVar1->max_length <= (int)uVar2) {
         return;
       }
-      if ((DayNightCycleColorPresets *)pDVar1->max_length <= this) break;
-      object = *ppDVar2;
-      if (object == (DayNightCycleColorPresets_Preset *)0x0) goto code_?;
+      if ((uint)pDVar1->max_length <= uVar2) {
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      object = *ppDVar3;
+      if (object == (DayNightCycleColorPresets_Preset *)0x0) break;
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__System__Action);
-        func_?(&MethodInfo__DayNightCycleColorPresets__Preset__LanguageLoadedCallback__);
+        FUN_?(&TypeInfo__System__Action);
+        LOCK();
+        UNLOCK();
+        FUN_?(&MethodInfo__DayNightCycleColorPresets__Preset__LanguageLoadedCallback__);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      pSVar3 = TM::TM__((object->fields).name,(MethodInfo *)0x0);
-      (object->fields).name = pSVar3;
-      func_?(&object->fields,pSVar3);
-      this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+      pSVar5 = TM::TM__((object->fields).name,(MethodInfo *)0x0);
+      bVar6 = iRam_? != 0;
+      (object->fields).name = pSVar5;
+      if (bVar6) {
+        uVar7 = (uint)((ulonglong)&object->fields >> 0xc);
+        uVar8 = (ulonglong)((uVar7 & 0x1fffff) >> 6);
+        do {
+          uVar9 = *(ulonglong *)(uVar8 * 8 + 0xADDR);
+          puVar10 = (ulonglong *)(uVar8 * 8 + 0xADDR);
+          LOCK();
+          bVar6 = uVar9 == *puVar10;
+          if (bVar6) {
+            *puVar10 = uVar9 | 1L << (uVar7 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar6);
+      }
+      this_00 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
       UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
       NavMesh_OnNavMeshPreUpdate__ctor
                 (this_00,(Object *)object,
                  MethodInfo__DayNightCycleColorPresets__Preset__LanguageLoadedCallback__,
                  (MethodInfo *)0x0);
       TM::TM_LanguageChanged((Action *)this_00,(MethodInfo *)0x0);
-      this = (DayNightCycleColorPresets *)((int)&this->klass + 1);
-      ppDVar2 = ppDVar2 + 1;
+      uVar2 = uVar2 + 1;
+      ppDVar3 = ppDVar3 + 1;
     }
-    func_?();
   }
-code_?:
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -83,65 +107,74 @@ Assembly-CSharp.dll::DayNightCycleColorPresets::DayNightCycleColorPresets_get_It
 {
   pDVar1 = (this->fields).presets;
   if (pDVar1 != (DayNightCycleColorPresets_Preset__Array *)0x0) {
-    if (pDVar1->max_length <= (uint)i) goto code_?;
-    pDVar2 = pDVar1->vector[i];
-    if (pDVar2 != (DayNightCycleColorPresets_Preset *)0x0) {
-      if ((pDVar2->fields).initialized != 0) {
-        return pDVar2;
+    if ((uint)pDVar1->max_length <= (uint)i) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      pDVar3 = (DayNightCycleColorPresets_Preset *)(*pcVar2)();
+      return pDVar3;
+    }
+    pDVar3 = pDVar1->vector[i];
+    if (pDVar3 != (DayNightCycleColorPresets_Preset *)0x0) {
+      if ((pDVar3->fields).initialized != 0) {
+        return pDVar3;
       }
       if (cRam_? == '\0') {
-        func_?(&
-                        MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SortedParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__Init__
-                       );
-        func_?(&
-                        MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SortedParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::CelestialParam>__Init__
-                       );
-        func_?(&
-                        MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SortedParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__Init__
-                       );
+        FUN_?(&
+                      MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SortedParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__Init__
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SortedParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::CelestialParam>__Init__
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SortedParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__Init__
+                     );
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      pSVar3 = (SortedParamsList_1_System_Object_ *)(pDVar2->fields).skyParamList;
-      if (pSVar3 != (SortedParamsList_1_System_Object_ *)0x0) {
+      pSVar4 = (SortedParamsList_1_System_Object_ *)(pDVar3->fields).skyParamList;
+      if (pSVar4 != (SortedParamsList_1_System_Object_ *)0x0) {
         Borodar::FarlandSkies::CloudyCrownPro::DotParams::SortedParamsList`1[System::Object]::
         SortedParamsList_1_System_Object__Init
-                  (pSVar3,
+                  (pSVar4,
                    MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SortedParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyParam>__Init__
                   );
-        pSVar3 = (SortedParamsList_1_System_Object_ *)(pDVar2->fields).sunParamsList;
-        if (pSVar3 != (SortedParamsList_1_System_Object_ *)0x0) {
+        pSVar4 = (SortedParamsList_1_System_Object_ *)(pDVar3->fields).sunParamsList;
+        if (pSVar4 != (SortedParamsList_1_System_Object_ *)0x0) {
           Borodar::FarlandSkies::CloudyCrownPro::DotParams::SortedParamsList`1[System::Object]::
           SortedParamsList_1_System_Object__Init
-                    (pSVar3,
+                    (pSVar4,
                      MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SortedParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::CelestialParam>__Init__
                     );
-          pSVar3 = (SortedParamsList_1_System_Object_ *)(pDVar2->fields).moonParamsList;
-          if (pSVar3 != (SortedParamsList_1_System_Object_ *)0x0) {
+          pSVar4 = (SortedParamsList_1_System_Object_ *)(pDVar3->fields).moonParamsList;
+          if (pSVar4 != (SortedParamsList_1_System_Object_ *)0x0) {
             Borodar::FarlandSkies::CloudyCrownPro::DotParams::SortedParamsList`1[System::Object]::
             SortedParamsList_1_System_Object__Init
-                      (pSVar3,
+                      (pSVar4,
                        MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SortedParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::CelestialParam>__Init__
                       );
-            pSVar3 = (SortedParamsList_1_System_Object_ *)(pDVar2->fields).starsParamList;
-            if (pSVar3 != (SortedParamsList_1_System_Object_ *)0x0) {
+            pSVar4 = (SortedParamsList_1_System_Object_ *)(pDVar3->fields).starsParamList;
+            if (pSVar4 != (SortedParamsList_1_System_Object_ *)0x0) {
               Borodar::FarlandSkies::CloudyCrownPro::DotParams::SortedParamsList`1[System::Object]::
               SortedParamsList_1_System_Object__Init
-                        (pSVar3,
+                        (pSVar4,
                          MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SortedParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__Init__
                         );
-              (pDVar2->fields).initialized = 1;
-              return pDVar2;
+              (pDVar3->fields).initialized = 1;
+              return pDVar3;
             }
           }
         }
       }
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  pDVar2 = (DayNightCycleColorPresets_Preset *)(*pcVar4)();
-  return pDVar2;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  pDVar3 = (DayNightCycleColorPresets_Preset *)(*pcVar2)();
+  return pDVar3;
 }
 

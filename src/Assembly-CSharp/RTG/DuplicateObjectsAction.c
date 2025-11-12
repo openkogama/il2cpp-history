@@ -5,148 +5,206 @@ void Assembly-CSharp.dll::RTG::DuplicateObjectsAction::DuplicateObjectsAction_Ex
                (DuplicateObjectsAction *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffa4;
-  puVar5 = &stack0xffffffa4;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Count__
-                   );
-    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTUndoRedo>__get_Get__);
-    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTUndoRedo>);
-    func_?(&TypeInfo__RTG__ObjectCloning);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__MonoSingleton<RTG::RTUndoRedo>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__MonoSingleton<RTG::RTUndoRedo>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__ObjectCloning);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  uStack_6 = 0;
-  pTStack_7 = (Transform *)0x0;
-  LStack_8._list = (List_1_System_Object_ *)0x0;
-  LStack_8._index = 0;
-  LStack_8._version = 0;
-  LStack_8._current = (Object *)0x0;
-  pLVar9 = (this->fields)._rootsToDuplicate;
-  if (pLVar9 != (List_1_UnityEngine_GameObject_ *)0x0) {
-    if ((pLVar9->fields)._size == 0) {
-code_?:
-      *unaff_FS_OFFSET = uStack_3;
+  pLStack_1 = (List_1_UnityEngine_GameObject_ *)0x0;
+  uStack_2 = 0;
+  pLVar3 = (this->fields)._rootsToDuplicate;
+  if (pLVar3 != (List_1_UnityEngine_GameObject_ *)0x0) {
+    if ((pLVar3->fields)._size == 0) {
       return;
     }
-    if ((TypeInfo__RTG__ObjectCloning->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__RTG__ObjectCloning);
+    if (*(int *)&(TypeInfo__RTG__ObjectCloning->_1).field_0x1c == 0) {
+      FUN_?();
     }
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__RTG__ObjectCloning);
+      FUN_?(&TypeInfo__RTG__ObjectCloning);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    if ((TypeInfo__RTG__ObjectCloning->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__RTG__ObjectCloning);
+    if (*(int *)&(TypeInfo__RTG__ObjectCloning->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    pOVar10 = TypeInfo__RTG__ObjectCloning->static_fields;
-    uStack_6._0_4_ = (pOVar10->_defaultConfig).Parent;
-    uStack_6._4_4_ = (pOVar10->_defaultConfig).TransformFlags;
-    pTStack_7 = (Transform *)(pOVar10->_defaultConfig).Layer;
-    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              (this->fields)._rootsToDuplicate;
-    if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      method_00 = (RegexCharClass_SingleRange)auStack_11;
-      pLVar12 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-               RegexCharClass+SingleRange]::
-               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                         ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                           *)method_00,this_00,
-                          MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-                         );
+    pOVar4 = TypeInfo__RTG__ObjectCloning->static_fields;
+    pLStack_1 = (List_1_UnityEngine_GameObject_ *)(pOVar4->_defaultConfig).Parent;
+    uStack_2._0_4_ = (pOVar4->_defaultConfig).TransformFlags;
+    uStack_2._4_4_ = (pOVar4->_defaultConfig).Layer;
+    pLVar3 = (this->fields)._rootsToDuplicate;
+    if (pLVar3 != (List_1_UnityEngine_GameObject_ *)0x0) {
+      if (iRam_? != 0) {
+        uVar5 = (uint)((ulonglong)&OStack_6 >> 0xc);
+        lVar7 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+          puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+          LOCK();
+          bVar10 = uVar8 == *puVar9;
+          if (bVar10) {
+            *puVar9 = uVar8 | 1L << (uVar5 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar10);
+      }
+      OStack_6._8_8_ = (ulonglong)(uint)(pLVar3->fields)._version << 0x20;
+      uStack_11 = 0;
+      aLStack_12[0]._index = OStack_6.TransformFlags;
+      aLStack_12[0]._version = OStack_6.Layer;
+      aLStack_12[0]._current = (Object *)0x0;
       uStack_13 = 0;
-      LStack_8._list = (List_1_System_Object_ *)pLVar12->_list;
-      LStack_8._index = pLVar12->_index;
-      LStack_8._version = pLVar12->_version;
-      LStack_8._current = *(Object **)&pLVar12->_current;
-      uStack_1 = 1;
-      pLStack_14 = &LStack_8;
-      while( true ) {
-        bVar15 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-                List_1_T_Enumerator_System_Object__MoveNext
-                          (&LStack_8,
-                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                          );
-        this_01 = LStack_8._current;
-        if (bVar15 == 0) break;
-        if ((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0)
-        goto code_?;
-        pTStack_16 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                               ((GameObject *)LStack_8._current,(MethodInfo *)0x0);
-        if ((RegexCharClass_SingleRange)this_01 == (RegexCharClass_SingleRange)0x0)
-        goto code_?;
-        method_00 = (RegexCharClass_SingleRange)this_01;
-        pTStack_7 = (Transform *)
-                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
-                               ((GameObject *)this_01,(MethodInfo *)0x0);
-        if (pTStack_16 == (Transform *)0x0) goto code_?;
-        pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
-                           (pTStack_16,(MethodInfo *)0x0);
-        uStack_6 = CONCAT44(uStack_6._4_4_,pTVar17);
-        func_?();
-        pTStack_16 = pTStack_7;
-        uStack_18 = uStack_6;
-        if ((TypeInfo__RTG__ObjectCloning->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__RTG__ObjectCloning);
+      pLStack_14 = aLStack_12;
+      pGVar15 = unaff_RBX;
+      OStack_6.Parent = (Transform *)pLVar3;
+      aLStack_12[0]._list = (List_1_System_Object_ *)pLVar3;
+      while (bVar16 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
+                      Object]::List_1_T_Enumerator_System_Object__MoveNext
+                                (aLStack_12,
+                                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                                ), unaff_RBX = (GameObject *)aLStack_12[0]._current, bVar16 != 0) {
+        if ((GameObject *)aLStack_12[0]._current == (GameObject *)0x0) goto code_?;
+        this_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            ((GameObject *)aLStack_12[0]._current,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
         }
-        cloneConfig.Layer = (int32_t)pTStack_16;
-        cloneConfig.Parent = (Transform *)(undefined4)uStack_18;
-        cloneConfig.TransformFlags = uStack_18._4_4_;
-        item = ObjectCloning::ObjectCloning_CloneHierarchy
-                         ((GameObject *)this_01,cloneConfig,(MethodInfo *)0x0);
-        pLVar9 = (this->fields)._duplicateResult;
-        if (pLVar9 == (List_1_UnityEngine_GameObject_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__Add
-                  ((List_1_System_Object_ *)pLVar9,(Object *)item,
-                   MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
-                  );
+        pvVar17 = (((GameObject__Fields *)((longlong)unaff_RBX + 0x10))->_).m_CachedPtr;
+        if (pvVar17 == (void *)0x0) goto code_?;
+        pcVar18 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar18 = (code *)FUN_?(&UNK_?), pcVar18 == (code *)0x0))
+        goto code_?;
+        pcRam_? = pcVar18;
+        uVar19 = (*pcRam_?)(pvVar17);
+        uStack_2 = CONCAT44(uVar19,(undefined4)uStack_2);
+        if (this_00 == (Transform *)0x0) goto code_?;
+        pLVar3 = (List_1_UnityEngine_GameObject_ *)
+                  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
+                            (this_00,(MethodInfo *)0x0);
+        lVar7 = uStack_2;
+        if (iRam_? != 0) {
+          uVar5 = (uint)((ulonglong)&pLStack_1 >> 0xc);
+          lVar20 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar8 = *(ulonglong *)(lVar20 + 0xADDR);
+            puVar9 = (ulonglong *)(lVar20 + 0xADDR);
+            LOCK();
+            bVar10 = uVar8 == *puVar9;
+            if (bVar10) {
+              *puVar9 = uVar8 | 1L << (uVar5 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar10);
+        }
+        pLStack_1 = pLVar3;
+        if (*(int *)&(TypeInfo__RTG__ObjectCloning->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        lVar20 = uStack_2;
+        uStack_2._0_4_ = (undefined4)lVar7;
+        uStack_2._4_4_ = SUB84(lVar7,4);
+        OStack_6.TransformFlags = (undefined4)uStack_2;
+        OStack_6.Layer = uStack_2._4_4_;
+        uStack_2 = lVar20;
+        OStack_6.Parent = (Transform *)pLVar3;
+        item = ObjectCloning::ObjectCloning_CloneHierarchy(unaff_RBX,&OStack_6,(MethodInfo *)0x0);
+        pMVar21 = 
+        MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
+        ;
+        pLVar3 = (this->fields)._duplicateResult;
+        if (pLVar3 == (List_1_UnityEngine_GameObject_ *)0x0) goto code_?;
+        piVar22 = &(pLVar3->fields)._version;
+        *piVar22 = *piVar22 + 1;
+        pGVar23 = (pLVar3->fields)._items;
+        uVar5 = (pLVar3->fields)._size;
+        if (pGVar23 == (GameObject__Array *)0x0) goto code_?;
+        pGVar15 = unaff_RBX;
+        if (uVar5 < (uint)pGVar23->max_length) {
+          (pLVar3->fields)._size = uVar5 + 1;
+          FUN_?();
+        }
+        else {
+          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+          List_1_System_Object__AddWithResize
+                    ((List_1_System_Object_ *)pLVar3,(Object *)item,
+                     pMVar21->klass->rgctx_data[0xe].method);
+        }
       }
-      uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)&LStack_8,
-                 (ExceptionArgument__Enum)
-                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-                 ,(MethodInfo *)method_00);
-      uStack_1 = 0xffffffff;
-      if ((TypeInfo__RTG__MonoSingleton<RTG::RTUndoRedo>->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__RTG__MonoSingleton<RTG::RTUndoRedo>);
+      if (*(int *)&(TypeInfo__RTG__MonoSingleton<RTG::RTUndoRedo>->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      this_02 = (RTUndoRedo *)
+      this_01 = (RTUndoRedo *)
                 MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                           (MethodInfo__RTG__MonoSingleton<RTG::RTUndoRedo>__get_Get__);
-      if (this_02 != (RTUndoRedo *)0x0) {
-        RTUndoRedo::RTUndoRedo_RecordAction(this_02,(IUndoRedoAction *)this,(MethodInfo *)0x0);
-        goto code_?;
+      unaff_RBX = pGVar15;
+      if (this_01 != (RTUndoRedo *)0x0) {
+        RTUndoRedo::RTUndoRedo_RecordAction(this_01,(IUndoRedoAction *)this,(MethodInfo *)0x0);
+        return;
       }
     }
   }
+  FUN_?();
 code_?:
-  uVar19 = func_?();
-  func_?(uVar19);
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  uVar24 = func_?(&UNK_?);
+  FUN_?(uVar24);
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+  ThrowHelper_2_ThrowNullReferenceException((Object *)unaff_RBX,(MethodInfo *)0x0);
+code_?:
+  FUN_?();
+  FUN_?();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -158,100 +216,105 @@ void Assembly-CSharp.dll::RTG::DuplicateObjectsAction::
                (DuplicateObjectsAction *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffbc;
-  puVar5 = &stack0xffffffbc;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Clear__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Count__
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Clear__)
+    ;
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
   if ((this->fields)._cleanupOnRemovedFromStack != 0) {
-    method_00 = (MethodInfo *)(this->fields)._duplicateResult;
-    if (method_00 == (MethodInfo *)0x0) {
+    pLVar1 = (this->fields)._duplicateResult;
+    if (pLVar1 == (List_1_UnityEngine_GameObject_ *)0x0) {
 code_?:
-      uVar7 = func_?();
-      func_?(uVar7);
-      pcVar8 = (code *)swi(3);
-      (*pcVar8)();
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
-    if (method_00->name != (char *)0x0) {
-      pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-               RegexCharClass+SingleRange]::
-               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                         (&LStack_10,
-                          (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                          method_00,
-                          MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-                         );
-      LStack_6._list = (List_1_System_Object_ *)pLVar9->_list;
-      LStack_6._index = pLVar9->_index;
-      LStack_6._version = pLVar9->_version;
-      LStack_6._current = *(Object **)&pLVar9->_current;
-      LStack_10._version = 0;
-      uStack_1 = 1;
-      LStack_10._current = (RegexCharClass_SingleRange)&LStack_6;
-      while( true ) {
-        bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-                List_1_T_Enumerator_System_Object__MoveNext
-                          (&LStack_6,
-                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                          );
-        obj = LStack_6._current;
-        if (bVar11 == 0) break;
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Object);
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                  ((Object_1 *)obj,(MethodInfo *)0x0);
+    if ((pLVar1->fields)._size != 0) {
+      if (iRam_? != 0) {
+        uVar3 = (uint)((ulonglong)&uStack_4 >> 0xc);
+        uVar5 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+        do {
+          uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+          puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+          LOCK();
+          bVar8 = uVar6 == *puVar7;
+          if (bVar8) {
+            *puVar7 = uVar6 | 1L << (uVar3 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar8);
       }
-      uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)&LStack_6,
-                 (ExceptionArgument__Enum)
-                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-                 ,method_00);
-      uStack_1 = 0xffffffff;
-      pLVar12 = (this->fields)._duplicateResult;
-      if (pLVar12 == (List_1_UnityEngine_GameObject_ *)0x0) goto code_?;
-      length = (pLVar12->fields)._size;
-      piVar13 = &(pLVar12->fields)._version;
+      pLStack_9 = (List_1_T_Enumerator_System_Object_ *)
+                   ((ulonglong)(uint)(pLVar1->fields)._version << 0x20);
+      uStack_10 = 0;
+      LStack_11._8_8_ = pLStack_9;
+      LStack_11._current = (Object *)0x0;
+      uStack_4 = 0;
+      pLStack_9 = &LStack_11;
+      LStack_11._list = (List_1_System_Object_ *)pLVar1;
+      while (bVar12 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
+                     Object]::List_1_T_Enumerator_System_Object__MoveNext
+                               (&LStack_11,
+                                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                               ), obj = LStack_11._current, bVar12 != 0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy
+                  ((Object_1 *)obj,0.0,(MethodInfo *)0x0);
+      }
+      pLVar1 = (this->fields)._duplicateResult;
+      if (pLVar1 == (List_1_UnityEngine_GameObject_ *)0x0) goto code_?;
+      piVar13 = &(pLVar1->fields)._version;
       *piVar13 = *piVar13 + 1;
-      (pLVar12->fields)._size = 0;
+      length = (pLVar1->fields)._size;
+      (pLVar1->fields)._size = 0;
       if (0 < length) {
         mscorlib.dll::System::Array::Array_Clear
-                  ((Array *)(pLVar12->fields)._items,0,length,(MethodInfo *)0x0);
+                  ((Array *)(pLVar1->fields)._items,0,length,(MethodInfo *)0x0);
       }
     }
   }
-  *unaff_FS_OFFSET = uStack_3;
   return;
 }
 
@@ -262,69 +325,89 @@ void Assembly-CSharp.dll::RTG::DuplicateObjectsAction::DuplicateObjectsAction_Re
                (DuplicateObjectsAction *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffbc;
-  puVar5 = &stack0xffffffbc;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
   if ((this->fields)._duplicateResult != (List_1_UnityEngine_GameObject_ *)0x0) {
-    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_7,
-                        (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                        (this->fields)._duplicateResult,
-                        MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-                       );
-    method_00 = (MethodInfo *)pLVar6->_version;
-    this_00 = pLVar6->_current;
-    LStack_7._version = 0;
-    uStack_1 = 1;
-    LStack_7._current = (RegexCharClass_SingleRange)&stack0xffffffc8;
-    while( true ) {
-      bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-              List_1_T_Enumerator_System_Object__MoveNext
-                        ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc8,
-                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                        );
-      if (bVar8 == 0) break;
-      if (this_00 == (RegexCharClass_SingleRange)0x0) {
-        func_?();
-        func_?();
-        pcVar9 = (code *)swi(3);
-        (*pcVar9)();
+    LStack_1._list = (List_1_System_Object_ *)(this->fields)._duplicateResult;
+    if (iRam_? != 0) {
+      uVar2 = (uint)((ulonglong)&uStack_3 >> 0xc);
+      puVar4 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar5 = *puVar4;
+        LOCK();
+        uVar6 = *puVar4;
+        if (uVar5 == uVar6) {
+          *puVar4 = uVar5 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar5 != uVar6);
+    }
+    pLStack_7 = (List_1_T_Enumerator_System_Object_ *)
+                 ((ulonglong)
+                  (uint)(((List_1_UnityEngine_GameObject_ *)LStack_1._list)->fields)._version <<
+                 0x20);
+    uStack_8 = 0;
+    LStack_1._8_8_ = pLStack_7;
+    LStack_1._current = (Object *)0x0;
+    uStack_3 = 0;
+    pLStack_7 = &LStack_1;
+    while (bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
+                   ::List_1_T_Enumerator_System_Object__MoveNext
+                             (&LStack_1,
+                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                             ), obj = LStack_1._current, bVar9 != 0) {
+      if (LStack_1._current == (Object *)0x0) goto code_?;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pOVar10 = obj[1].klass;
+      if (pOVar10 == (Object__Class *)0x0) {
+code_?:
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException(obj,(MethodInfo *)0x0);
+code_?:
+        FUN_?();
+        FUN_?();
+        pcVar11 = (code *)swi(3);
+        (*pcVar11)();
         return;
       }
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                ((GameObject *)this_00,1,(MethodInfo *)0x0);
+      pcVar11 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+        uVar12 = func_?(&UNK_?);
+        FUN_?(uVar12);
+        goto code_?;
+      }
+      pcRam_? = pcVar11;
+      (*pcRam_?)(pOVar10,1);
     }
-    uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&stack0xffffffc8,
-               (ExceptionArgument__Enum)
-               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-               ,method_00);
     (this->fields)._cleanupOnRemovedFromStack = 0;
   }
-  *unaff_FS_OFFSET = uStack_3;
   return;
 }
 
@@ -335,69 +418,89 @@ void Assembly-CSharp.dll::RTG::DuplicateObjectsAction::DuplicateObjectsAction_Un
                (DuplicateObjectsAction *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffbc;
-  puVar5 = &stack0xffffffbc;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
   if ((this->fields)._duplicateResult != (List_1_UnityEngine_GameObject_ *)0x0) {
-    pLVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_7,
-                        (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                        (this->fields)._duplicateResult,
-                        MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-                       );
-    method_00 = (MethodInfo *)pLVar6->_version;
-    this_00 = pLVar6->_current;
-    LStack_7._version = 0;
-    uStack_1 = 1;
-    LStack_7._current = (RegexCharClass_SingleRange)&stack0xffffffc8;
-    while( true ) {
-      bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-              List_1_T_Enumerator_System_Object__MoveNext
-                        ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc8,
-                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                        );
-      if (bVar8 == 0) break;
-      if (this_00 == (RegexCharClass_SingleRange)0x0) {
-        func_?();
-        func_?();
-        pcVar9 = (code *)swi(3);
-        (*pcVar9)();
+    LStack_1._list = (List_1_System_Object_ *)(this->fields)._duplicateResult;
+    if (iRam_? != 0) {
+      uVar2 = (uint)((ulonglong)&uStack_3 >> 0xc);
+      puVar4 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar5 = *puVar4;
+        LOCK();
+        uVar6 = *puVar4;
+        if (uVar5 == uVar6) {
+          *puVar4 = uVar5 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar5 != uVar6);
+    }
+    pLStack_7 = (List_1_T_Enumerator_System_Object_ *)
+                 ((ulonglong)
+                  (uint)(((List_1_UnityEngine_GameObject_ *)LStack_1._list)->fields)._version <<
+                 0x20);
+    uStack_8 = 0;
+    LStack_1._8_8_ = pLStack_7;
+    LStack_1._current = (Object *)0x0;
+    uStack_3 = 0;
+    pLStack_7 = &LStack_1;
+    while (bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
+                   ::List_1_T_Enumerator_System_Object__MoveNext
+                             (&LStack_1,
+                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                             ), obj = LStack_1._current, bVar9 != 0) {
+      if (LStack_1._current == (Object *)0x0) goto code_?;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pOVar10 = obj[1].klass;
+      if (pOVar10 == (Object__Class *)0x0) {
+code_?:
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException(obj,(MethodInfo *)0x0);
+code_?:
+        FUN_?();
+        FUN_?();
+        pcVar11 = (code *)swi(3);
+        (*pcVar11)();
         return;
       }
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                ((GameObject *)this_00,0,(MethodInfo *)0x0);
+      pcVar11 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+        uVar12 = func_?(&UNK_?);
+        FUN_?(uVar12);
+        goto code_?;
+      }
+      pcRam_? = pcVar11;
+      (*pcRam_?)(pOVar10,0);
     }
-    uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&stack0xffffffc8,
-               (ExceptionArgument__Enum)
-               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-               ,method_00);
     (this->fields)._cleanupOnRemovedFromStack = 1;
   }
-  *unaff_FS_OFFSET = uStack_3;
   return;
 }
 
@@ -410,31 +513,61 @@ void Assembly-CSharp.dll::RTG::DuplicateObjectsAction::DuplicateObjectsAction__c
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__GameObjectEx);
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
+    FUN_?(&TypeInfo__RTG__GameObjectEx);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pLVar1 = (List_1_UnityEngine_GameObject_ *)
-           func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
+           FUN_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
              MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
-  method_00 = (MethodInfo *)&(this->fields)._duplicateResult;
+  bVar2 = iRam_? != 0;
   (this->fields)._duplicateResult = pLVar1;
-  func_?(method_00,pLVar1);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  if ((TypeInfo__RTG__GameObjectEx->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields)._duplicateResult >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
+  if (*(int *)&(TypeInfo__RTG__GameObjectEx->_1).field_0x1c == 0) {
+    FUN_?();
   }
   pLVar1 = GameObjectEx::GameObjectEx_FilterParentsOnly_1
                      ((IEnumerable_1_UnityEngine_GameObject_ *)rootsToDuplicate,(MethodInfo *)0x0);
+  bVar2 = iRam_? != 0;
   (this->fields)._rootsToDuplicate = pLVar1;
-  func_?(&this->fields);
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&this->fields >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
   return;
 }
 
@@ -447,15 +580,19 @@ Assembly-CSharp.dll::RTG::DuplicateObjectsAction::DuplicateObjectsAction_get_Dup
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List_System__Collections__Generic__IEnumerable<UnityEngine::GameObject>_
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List_System__Collections__Generic__IEnumerable<UnityEngine::GameObject>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   collection = (this->fields)._duplicateResult;
   this_00 = (List_1_UnityEngine_GameObject_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
+            FUN_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
   mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object___ctor_1
             ((List_1_System_Object_ *)this_00,(IEnumerable_1_System_Object_ *)collection,
              MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List_System__Collections__Generic__IEnumerable<UnityEngine::GameObject>_

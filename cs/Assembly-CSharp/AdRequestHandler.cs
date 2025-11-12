@@ -5,6 +5,7 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using UnityEngine.Scripting;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
@@ -27,6 +28,7 @@ public static class AdRequestHandler
 		public bool available { [CompilerGenerated] get; [CompilerGenerated] set; }
 
 		// Constructors
+		[Preserve]
 		public Available();
 	}
 
@@ -40,6 +42,7 @@ public static class AdRequestHandler
 		public bool shouldReward { [CompilerGenerated] get; [CompilerGenerated] set; }
 
 		// Constructors
+		[Preserve]
 		public ShouldReward();
 	}
 

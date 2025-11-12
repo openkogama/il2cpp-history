@@ -3,7 +3,7 @@
 
 InteractionData *
 Assembly-CSharp.dll::ProximityDamageAndImpulse::ProximityDamageAndImpulse_Create
-          (InteractionData *__return_storage_ptr__,float damage,Vector3 impulse,
+          (InteractionData *__return_storage_ptr__,float damage,Vector3 *impulse,
           PlayerKilledByType__Enum playerKilledByType,MethodInfo *method)
 
 {
@@ -14,9 +14,13 @@ Assembly-CSharp.dll::ProximityDamageAndImpulse::ProximityDamageAndImpulse_Create
   __return_storage_ptr__->interactionType = 0;
   __return_storage_ptr__->playerKilledByType = 0;
   *(undefined2 *)&__return_storage_ptr__->field_0x12 = 0;
+  VStack_1.x = impulse->x;
+  VStack_1.y = impulse->y;
+  VStack_1.z = impulse->z;
   MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_5
-            (__return_storage_ptr__,InteractionPackageType__Enum_ProximityDamageAndImpulse,damage,
-             impulse,playerKilledByType,(MethodInfo *)0x0);
+            (__return_storage_ptr__,CONCAT31((int3)((uint)in_EDX >> 8),0xd),damage,&VStack_1,
+             CONCAT31((int3)((uint)in_stack_2 >> 8),(char)playerKilledByType),
+             (MethodInfo *)0x0);
   return __return_storage_ptr__;
 }
 
@@ -25,20 +29,25 @@ Assembly-CSharp.dll::ProximityDamageAndImpulse::ProximityDamageAndImpulse_Create
 
 void Assembly-CSharp.dll::ProximityDamageAndImpulse::ProximityDamageAndImpulse_ParseAndHandlePackage
                (ProximityDamageAndImpulse *this,MVWorldObjectClient *worldObjectClient,
-               MVPlayer *shooter,InteractionData interactionStruct,MethodInfo *method)
+               MVPlayer *shooter,InteractionData *interactionStruct,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__MV__WorldObject__InteractionData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__MV__WorldObject__InteractionData->_1).field_0x1c == 0) {
+    FUN_?();
   }
+  VStack_1.z = (interactionStruct->impulse).z;
+  VStack_1.x = (interactionStruct->impulse).x;
+  VStack_1.y = (interactionStruct->impulse).y;
   InteractionPackage::InteractionPackage_HandlePackage_1
-            ((InteractionPackage *)this,worldObjectClient,shooter,interactionStruct.damage,
-             CONCAT13(method._0_1_,interactionStruct._17_3_),interactionStruct.impulse,
-             (MethodInfo *)0x0);
+            ((InteractionPackage *)this,worldObjectClient,shooter,interactionStruct->damage,
+             CONCAT31((int3)((uint)in_stack_2 >> 8),
+                      interactionStruct->playerKilledByType),&VStack_1,(MethodInfo *)0x0);
   return;
 }
 

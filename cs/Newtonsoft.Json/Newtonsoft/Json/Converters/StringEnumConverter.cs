@@ -12,7 +12,7 @@ using System.Runtime.Versioning;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-// Image 8: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
+// Image 9: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
 
 namespace Newtonsoft.Json.Converters
 {
@@ -31,7 +31,7 @@ namespace Newtonsoft.Json.Converters
 		[Obsolete("StringEnumConverter.CamelCaseText is obsolete. Set StringEnumConverter.NamingStrategy with CamelCaseNamingStrategy instead.")]
 		public bool CamelCaseText { get; set; }
 		[Nullable(2)]
-		public NamingStrategy NamingStrategy { [CompilerGenerated] [NullableContext(2)] get; [CompilerGenerated] [NullableContext(2)] set; }
+		public NamingStrategy NamingStrategy { [NullableContext(2)] [CompilerGenerated] get; [NullableContext(2)] [CompilerGenerated] set; }
 		public bool AllowIntegerValues { [CompilerGenerated] get; [CompilerGenerated] set; }
 	
 		// Constructors

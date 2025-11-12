@@ -2,593 +2,872 @@
 /* Mesh CreateTriangularPrism(Vector3, Single, Single, Single, Single, Single, Color) */
 
 Mesh * Assembly-CSharp.dll::RTG::PrismMesh::PrismMesh_CreateTriangularPrism
-                 (Vector3 baseCenter,float baseWidth,float baseDepth,float topWidth,float topDepth,
-                 float height,Color color,MethodInfo *method)
+                 (Vector3 *baseCenter,float baseWidth,float baseDepth,float topWidth,float topDepth,
+                 float height,Color *color,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                   );
-    func_?(&TypeInfo__UnityEngine__Mesh);
-    func_?(&_905D214FE6019886C36969B7BE09762E54A832D5F0E88FB06B774CE42A8DC642_Field);
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__System__Int32);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Mesh);
+    LOCK();
+    UNLOCK();
+    FUN_?(&_905D214FE6019886C36969B7BE09762E54A832D5F0E88FB06B774CE42A8DC642_Field);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  fVar1 = (float)((uint)baseWidth & _UNK_?);
-  if ((float)((uint)baseWidth & _UNK_?) <= _UNK_?) {
-    fVar1 = _UNK_?;
-  }
-  fVar2 = (float)((uint)baseDepth & _UNK_?);
-  if ((float)((uint)baseDepth & _UNK_?) <= _UNK_?) {
+  uVar1 = (uint)_UNK_?;
+  fVar2 = (float)((uint)baseWidth & uVar1);
+  if ((float)((uint)baseWidth & uVar1) <= _UNK_?) {
     fVar2 = _UNK_?;
   }
-  fVar3 = (float)((uint)topWidth & _UNK_?);
-  if ((float)((uint)topWidth & _UNK_?) <= _UNK_?) {
+  fVar3 = (float)((uint)baseDepth & uVar1);
+  if ((float)((uint)baseDepth & uVar1) <= _UNK_?) {
     fVar3 = _UNK_?;
   }
-  fVar4 = (float)((uint)topDepth & _UNK_?);
-  if ((float)((uint)topDepth & _UNK_?) <= _UNK_?) {
+  fVar4 = (float)((uint)topWidth & uVar1);
+  if ((float)((uint)topWidth & uVar1) <= _UNK_?) {
     fVar4 = _UNK_?;
   }
-  height_00 = (float)((uint)height & _UNK_?);
-  if ((float)((uint)height & _UNK_?) <= _UNK_?) {
-    height_00 = _UNK_?;
+  fVar5 = (float)((uint)topDepth & uVar1);
+  if ((float)((uint)topDepth & uVar1) <= _UNK_?) {
+    fVar5 = _UNK_?;
+  }
+  fVar6 = (float)((uint)height & uVar1);
+  if ((float)((uint)height & uVar1) <= _UNK_?) {
+    fVar6 = _UNK_?;
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Quaternion);
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  baseCenter_00.y = baseCenter.y;
-  baseCenter_00.x = baseCenter.x;
-  baseCenter_00.z = baseCenter.z;
-  this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-            PrismMath::PrismMath_CalcTriangPrismCornerPoints
-                      (baseCenter_00,fVar1,fVar2,fVar3,fVar4,height_00,
-                       TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
+  pAStack_7 = *(Array__Class **)baseCenter;
+  pQVar8 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fStack_9 = baseCenter->z;
+  aQStack_10[0].x = (pQVar8->identityQuaternion).x;
+  aQStack_10[0].y = (pQVar8->identityQuaternion).y;
+  aQStack_10[0].z = (pQVar8->identityQuaternion).z;
+  aQStack_10[0].w = (pQVar8->identityQuaternion).w;
+  pLVar11 = PrismMath::PrismMath_CalcTriangPrismCornerPoints
+                      ((Vector3 *)&pAStack_7,fVar2,fVar3,fVar4,fVar5,fVar6,aQStack_10,
                        (MethodInfo *)0x0);
-  if (this_00 != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
-    pVVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-              VisualTreeAsset+UsingEntry]::
-              List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                        ((VisualTreeAsset_UsingEntry *)&baseCenter,this_00,0,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                        );
-    method_00 = pVVar5->alias;
-    uVar6 = pVVar5->path;
-    pVVar7 = pVVar5->asset;
-    pVVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-              VisualTreeAsset+UsingEntry]::
-              List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                        ((VisualTreeAsset_UsingEntry *)&baseCenter,this_00,1,(MethodInfo *)method_00
-                        );
-    __return_storage_ptr__ = pVVar5->alias;
-    this = pVVar5->path;
-    pVVar8 = pVVar5->asset;
-    pVVar5 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-              VisualTreeAsset+UsingEntry]::
-              List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                        ((VisualTreeAsset_UsingEntry *)__return_storage_ptr__,
-                         (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this,2,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                        );
-    uVar9 = pVVar5->alias;
-    uVar10 = pVVar5->path;
-    pVVar5 = (VisualTreeAsset_UsingEntry *)&stack0xffffffe4;
-    pLVar11 = this_00;
-    pMVar12 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_;
-    pVVar13 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-              VisualTreeAsset+UsingEntry]::
-              List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                        (pVVar5,this_00,3,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                        );
-    uVar14 = pVVar13->alias;
-    baseCenter.z = (float)&UNK_?;
-    baseCenter.y = (float)uVar14;
-    pVVar13 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-              VisualTreeAsset+UsingEntry]::
-              List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                        (&VStack_15,this_00,5,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                        );
-    uVar16._0_4_ = pVVar13->alias;
-    pVStack_17 = (VisualTreeAsset *)pVVar13->path;
-    baseCenter.z = (float)&UNK_?;
-    pVVar13 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-              VisualTreeAsset+UsingEntry]::
-              List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                        ((VisualTreeAsset_UsingEntry *)&stack0xffffffb4,this_00,
-                         (int32_t)pVVar13->asset,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                        );
-    pVVar18 = TypeInfo__UnityEngine__Vector3;
-    VStack_15.path = pVVar13->alias;
-    VStack_15.asset = (VisualTreeAsset *)pVVar13->path;
-    pVVar19 = pVVar13->asset;
-    value_01 = (Vector3__Array *)func_?();
-    if (value_01 != (Vector3__Array *)0x0) {
-      if (value_01->max_length == 0) goto code_?;
-      value_01->vector[0].x = baseCenter.y;
-      value_01->vector[0].y = baseCenter.z;
-      value_01->vector[0].z = (float)&stack0xffffffb4;
-      if (value_01->max_length < 2) goto code_?;
-      value_01->vector[1].x = (float)VStack_15.path;
-      value_01->vector[1].y = (float)VStack_15.asset;
-      value_01->vector[1].z = (float)pVVar19;
-      if (value_01->max_length < 3) goto code_?;
-      value_01->vector[2].x = (float)(String *)uVar16;
-      value_01->vector[2].y = (float)pVStack_17;
-      value_01->vector[2].z = (float)pVVar18;
-      if (value_01->max_length < 4) goto code_?;
-      value_01->vector[3].x = (float)pMVar12;
-      value_01->vector[3].y = (float)uVar6;
-      value_01->vector[3].z = (float)pVVar7;
-      if (value_01->max_length < 5) goto code_?;
-      value_01->vector[4].x = (float)pVVar5;
-      value_01->vector[4].y = (float)pLVar11;
-      value_01->vector[4].z = (float)pVVar8;
-      if (value_01->max_length < 6) goto code_?;
-      value_01->vector[5].x = (float)uVar9;
-      value_01->vector[5].y = (float)uVar10;
-      value_01->vector[5].z = (float)&UNK_?;
-      if (value_01->max_length < 7) goto code_?;
-      value_01->vector[6].x = (float)pMVar12;
-      value_01->vector[6].y = (float)uVar6;
-      value_01->vector[6].z = (float)pVVar7;
-      if (value_01->max_length < 8) goto code_?;
-      value_01->vector[7].x = baseCenter.y;
-      value_01->vector[7].y = baseCenter.z;
-      value_01->vector[7].z = (float)&stack0xffffffb4;
-      if (value_01->max_length < 9) goto code_?;
-      value_01->vector[8].x = (float)(String *)uVar16;
-      value_01->vector[8].y = (float)pVStack_17;
-      value_01->vector[8].z = (float)pVVar18;
-      if (value_01->max_length < 10) goto code_?;
-      value_01->vector[9].x = (float)pVVar5;
-      value_01->vector[9].y = (float)pLVar11;
-      value_01->vector[9].z = (float)pVVar8;
-      if (value_01->max_length < 0xb) goto code_?;
-      value_01->vector[10].x = (float)pMVar12;
-      value_01->vector[10].y = (float)uVar6;
-      value_01->vector[10].z = (float)pVVar7;
-      if (value_01->max_length < 0xc) goto code_?;
-      value_01->vector[0xb].x = (float)uVar9;
-      value_01->vector[0xb].y = (float)uVar10;
-      value_01->vector[0xb].z = (float)&UNK_?;
-      if (value_01->max_length < 0xd) goto code_?;
-      value_01->vector[0xc].x = (float)VStack_15.path;
-      value_01->vector[0xc].y = (float)VStack_15.asset;
-      value_01->vector[0xc].z = (float)pVVar19;
-      if (value_01->max_length < 0xe) goto code_?;
-      value_01->vector[0xd].x = baseCenter.y;
-      value_01->vector[0xd].y = baseCenter.z;
-      value_01->vector[0xd].z = (float)&stack0xffffffb4;
-      if (value_01->max_length < 0xf) goto code_?;
-      value_01->vector[0xe].x = (float)pVVar5;
-      value_01->vector[0xe].y = (float)pLVar11;
-      value_01->vector[0xe].z = (float)pVVar8;
-      if (value_01->max_length < 0x10) goto code_?;
-      value_01->vector[0xf].x = (float)(String *)uVar16;
-      value_01->vector[0xf].y = (float)pVStack_17;
-      value_01->vector[0xf].z = (float)pVVar18;
-      if (value_01->max_length < 0x11) goto code_?;
-      value_01->vector[0x10].x = (float)VStack_15.path;
-      value_01->vector[0x10].y = (float)VStack_15.asset;
-      value_01->vector[0x10].z = (float)pVVar19;
-      if (value_01->max_length < 0x12) goto code_?;
-      value_01->vector[0x11].x = (float)uVar9;
-      value_01->vector[0x11].y = (float)uVar10;
-      value_01->vector[0x11].z = (float)&UNK_?;
-      indices = (Int32__Array *)func_?();
-      mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
-      RuntimeHelpers_InitializeArray_1
-                ((Array *)indices,
-                 __905D214FE6019886C36969B7BE09762E54A832D5F0E88FB06B774CE42A8DC642_Field,
-                 (MethodInfo *)0x0);
-      if (value_01->max_length < 0xc) goto code_?;
-      uVar20 = value_01->vector[10].x;
-      uVar21 = value_01->vector[10].y;
-      uVar22 = value_01->vector[0xb].x;
-      uVar23 = value_01->vector[0xb].y;
-      baseCenter.z = value_01->vector[0xb].z;
-      fVar1 = baseCenter.z - value_01->vector[10].z;
-      baseCenter.x = (float)uVar22;
-      baseCenter.y = (float)uVar23;
-      if (value_01->max_length < 0xe) goto code_?;
-      uVar24 = value_01->vector[10].x;
-      uVar25 = value_01->vector[10].y;
-      uVar26 = value_01->vector[0xd].x;
-      uVar27 = value_01->vector[0xd].y;
-      baseCenter.z = value_01->vector[0xd].z;
-      fVar2 = baseCenter.z - value_01->vector[10].z;
-      value.y = fVar1 * ((float)uVar26 - (float)uVar24) - ((float)uVar22 - (float)uVar20) * fVar2;
-      value.x = ((float)uVar23 - (float)uVar21) * fVar2 - fVar1 * ((float)uVar27 - (float)uVar25);
-      value.z = ((float)uVar22 - (float)uVar20) * ((float)uVar27 - (float)uVar25) -
-                ((float)uVar23 - (float)uVar21) * ((float)uVar26 - (float)uVar24);
-      baseCenter.x = (float)uVar26;
-      baseCenter.y = (float)uVar27;
-      pVVar28 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                          ((Vector3 *)&stack0xffffffb4,value,(MethodInfo *)0x0);
-      uVar29 = pVVar28->x;
-      uVar30 = pVVar28->y;
-      fVar1 = pVVar28->z;
-      baseCenter.y = (float)uVar29;
-      baseCenter.z = (float)uVar30;
-      if (value_01->max_length < 0x10) goto code_?;
-      uVar31 = value_01->vector[0xe].x;
-      uVar32 = value_01->vector[0xe].y;
-      uVar33 = value_01->vector[0xf].x;
-      uVar34 = value_01->vector[0xf].y;
-      fVar2 = value_01->vector[0xf].z - value_01->vector[0xe].z;
-      if (value_01->max_length < 0x12) goto code_?;
-      uVar35 = value_01->vector[0xe].x;
-      uVar36 = value_01->vector[0xe].y;
-      uVar37 = value_01->vector[0x11].x;
-      uVar38 = value_01->vector[0x11].y;
-      fVar3 = value_01->vector[0x11].z - value_01->vector[0xe].z;
-      value_00.y = fVar2 * ((float)uVar37 - (float)uVar35) - ((float)uVar33 - (float)uVar31) * fVar3
-      ;
-      value_00.x = ((float)uVar34 - (float)uVar32) * fVar3 -
-                   fVar2 * ((float)uVar38 - (float)uVar36);
-      value_00.z = ((float)uVar33 - (float)uVar31) * ((float)uVar38 - (float)uVar36) -
-                   ((float)uVar34 - (float)uVar32) * ((float)uVar37 - (float)uVar35);
-      pVVar28 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                          ((Vector3 *)&stack0xffffffb4,value_00,(MethodInfo *)0x0);
-      uVar39 = pVVar28->x;
-      uVar40 = pVVar28->y;
-      fVar2 = pVVar28->z;
-      value_02 = (Vector3__Array *)func_?();
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
+  if (pLVar11 != (List_1_UnityEngine_Vector3_ *)0x0) {
+    if ((pLVar11->fields)._size == 0) goto code_?;
+    pVVar12 = (pLVar11->fields)._items;
+    if (pVVar12 != (Vector3__Array *)0x0) {
+      if ((int)pVVar12->max_length != 0) {
+        pMVar13 = *(MonitorData **)pVVar12->vector;
+        fVar2 = pVVar12->vector[0].z;
+        if ((uint)(pLVar11->fields)._size < 2) {
+code_?:
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar14 = (code *)swi(3);
+          pMVar15 = (Mesh *)(*pcVar14)();
+          return pMVar15;
+        }
+        if (1 < (uint)pVVar12->max_length) {
+          pAVar16 = *(Array__Class **)(pVVar12->vector + 1);
+          fVar3 = pVVar12->vector[1].z;
+          if ((uint)(pLVar11->fields)._size < 3) goto code_?;
+          if (2 < (uint)pVVar12->max_length) {
+            uVar17._0_4_ = pVVar12->vector[2].x;
+            uVar17._4_4_ = pVVar12->vector[2].y;
+            fVar4 = pVVar12->vector[2].z;
+            if ((uint)(pLVar11->fields)._size < 4) goto code_?;
+            if (3 < (uint)pVVar12->max_length) {
+              pAVar18 = *(Array__Class **)(pVVar12->vector + 3);
+              fVar5 = pVVar12->vector[3].z;
+              if ((uint)(pLVar11->fields)._size < 6) goto code_?;
+              if (5 < (uint)pVVar12->max_length) {
+                pAVar19 = *(Array__Class **)(pVVar12->vector + 5);
+                fVar6 = pVVar12->vector[5].z;
+                pAVar20 = *(Array__Class **)(pVVar12->vector + 4);
+                fVar21 = pVVar12->vector[4].z;
+                pAVar22 = (Array *)FUN_?(TypeInfo__UnityEngine__Vector3,0x12);
+                if (pAVar22 == (Array *)0x0) goto code_?;
+                if (*(int *)&pAVar22[1].monitor != 0) {
+                  pAVar22[2].klass = pAVar18;
+                  *(float *)&pAVar22[2].monitor = fVar5;
+                  if (1 < *(uint *)&pAVar22[1].monitor) {
+                    *(Array__Class **)((longlong)&pAVar22[2].monitor + 4) = pAVar20;
+                    *(float *)((longlong)&pAVar22[3].klass + 4) = fVar21;
+                    if (2 < *(uint *)&pAVar22[1].monitor) {
+                      pAVar22[3].monitor = (MonitorData *)pAVar19;
+                      *(float *)&pAVar22[4].klass = fVar6;
+                      if (3 < *(uint *)&pAVar22[1].monitor) {
+                        *(MonitorData **)((longlong)&pAVar22[4].klass + 4) = pMVar13;
+                        *(float *)((longlong)&pAVar22[4].monitor + 4) = fVar2;
+                        if (4 < *(uint *)&pAVar22[1].monitor) {
+                          pAVar22[5].klass = pAVar16;
+                          *(float *)&pAVar22[5].monitor = fVar3;
+                          if (5 < *(uint *)&pAVar22[1].monitor) {
+                            *(undefined8 *)((longlong)&pAVar22[5].monitor + 4) = uVar17;
+                            *(float *)((longlong)&pAVar22[6].klass + 4) = fVar4;
+                            if (6 < *(uint *)&pAVar22[1].monitor) {
+                              pAVar22[6].monitor = pMVar13;
+                              *(float *)&pAVar22[7].klass = fVar2;
+                              if (7 < *(uint *)&pAVar22[1].monitor) {
+                                *(Array__Class **)((longlong)&pAVar22[7].klass + 4) = pAVar18;
+                                *(float *)((longlong)&pAVar22[7].monitor + 4) = fVar5;
+                                if (8 < *(uint *)&pAVar22[1].monitor) {
+                                  pAVar22[8].klass = pAVar19;
+                                  *(float *)&pAVar22[8].monitor = fVar6;
+                                  if (9 < *(uint *)&pAVar22[1].monitor) {
+                                    *(Array__Class **)((longlong)&pAVar22[8].monitor + 4) = pAVar16;
+                                    *(float *)((longlong)&pAVar22[9].klass + 4) = fVar3;
+                                    if (10 < *(uint *)&pAVar22[1].monitor) {
+                                      pAVar22[9].monitor = pMVar13;
+                                      *(float *)&pAVar22[10].klass = fVar2;
+                                      if (0xb < *(uint *)&pAVar22[1].monitor) {
+                                        *(undefined8 *)((longlong)&pAVar22[10].klass + 4) = uVar17;
+                                        *(float *)((longlong)&pAVar22[10].monitor + 4) = fVar4;
+                                        if (0xc < *(uint *)&pAVar22[1].monitor) {
+                                          pAVar22[0xb].klass = pAVar20;
+                                          *(float *)&pAVar22[0xb].monitor = fVar21;
+                                          if (0xd < *(uint *)&pAVar22[1].monitor) {
+                                            *(Array__Class **)((longlong)&pAVar22[0xb].monitor + 4)
+                                                 = pAVar18;
+                                            *(float *)((longlong)&pAVar22[0xc].klass + 4) = fVar5;
+                                            if (0xe < *(uint *)&pAVar22[1].monitor) {
+                                              pAVar22[0xc].monitor = (MonitorData *)pAVar16;
+                                              *(float *)&pAVar22[0xd].klass = fVar3;
+                                              if (0xf < *(uint *)&pAVar22[1].monitor) {
+                                                *(Array__Class **)
+                                                 ((longlong)&pAVar22[0xd].klass + 4) = pAVar19;
+                                                *(float *)((longlong)&pAVar22[0xd].monitor + 4) =
+                                                     fVar6;
+                                                if (0x10 < *(uint *)&pAVar22[1].monitor) {
+                                                  pAVar22[0xe].klass = pAVar20;
+                                                  *(float *)&pAVar22[0xe].monitor = fVar21;
+                                                  if (0x11 < *(uint *)&pAVar22[1].monitor) {
+                                                    *(undefined8 *)
+                                                     ((longlong)&pAVar22[0xe].monitor + 4) = uVar17;
+                                                    *(float *)((longlong)&pAVar22[0xf].klass + 4) =
+                                                         fVar4;
+                                                    indices = (Int32__Array *)
+                                                              FUN_?(TypeInfo__System__Int32,
+                                                                            0x18);
+                                                    mscorlib.dll::System::Runtime::CompilerServices
+                                                    ::RuntimeHelpers::
+                                                    RuntimeHelpers_InitializeArray_1
+                                                              ((Array *)indices,
+                                                                                                                              
+                                                  __905D214FE6019886C36969B7BE09762E54A832D5F0E88FB06B774CE42A8DC642_Field
+                                                  ,(MethodInfo *)0x0);
+                                                  if (0xb < *(uint *)&pAVar22[1].monitor) {
+                                                    uVar17 = *(undefined8 *)
+                                                              ((longlong)&pAVar22[10].klass + 4);
+                                                    pAStack_7 = (Array__Class *)pAVar22[9].monitor;
+                                                    fVar4 = (float)uVar17 - SUB84(pAStack_7,0);
+                                                    fVar5 = *(float *)((longlong)
+                                                                        &pAVar22[10].monitor + 4) -
+                                                             *(float *)&pAVar22[10].klass;
+                                                    fVar2 = (float)((ulonglong)pAStack_7 >> 0x20);
+                                                    fVar3 = (float)((ulonglong)uVar17 >> 0x20) -
+                                                             fVar2;
+                                                    if (0xd < *(uint *)&pAVar22[1].monitor) {
+                                                      uVar17 = *(undefined8 *)
+                                                                ((longlong)&pAVar22[0xb].monitor + 4
+                                                                );
+                                                      fVar21 = (float)uVar17 - SUB84(pAStack_7,0);
+                                                      fVar2 = (float)((ulonglong)uVar17 >> 0x20) -
+                                                               fVar2;
+                                                      fVar6 = *(float *)((longlong)
+                                                                          &pAVar22[0xc].klass + 4) -
+                                                               *(float *)&pAVar22[10].klass;
+                                                      fVar23 = fVar6 * fVar3 - fVar2 * fVar5;
+                                                      fVar5 = fVar21 * fVar5 - fVar6 * fVar4;
+                                                      fVar2 = fVar2 * fVar4 - fVar21 * fVar3;
+                                                      pAStack_7 = (Array__Class *)
+                                                                   CONCAT44(fVar5,fVar23);
+                                                      fStack_9 = fVar2;
+                                                      fVar4 = (float)FUN_?(&pAStack_7);
+                                                      fVar3 = _UNK_?;
+                                                      if (_UNK_? < fVar4) {
+                                                        fVar2 = fVar2 / fVar4;
+                                                        pAStack_24 = (Array__Class *)
+                                                                     CONCAT44(fVar5 / fVar4,
+                                                                              fVar23 / fVar4);
+                                                      }
+                                                      else {
+                                                        if (cRam_? == '\0') {
+                                                          FUN_?(&
+                                                  TypeInfo__UnityEngine__Vector3);
+                                                  LOCK();
+                                                  UNLOCK();
+                                                  cRam_? = '\x01';
+                                                  }
+                                                  pAStack_24 = *(Array__Class **)
+                                                                &TypeInfo__UnityEngine__Vector3->
+                                                                 static_fields->zeroVector;
+                                                  fVar2 = (TypeInfo__UnityEngine__Vector3->
+                                                            static_fields->zeroVector).z;
+                                                  }
+                                                  if (0xf < *(uint *)&pAVar22[1].monitor) {
+                                                    uVar17 = *(undefined8 *)
+                                                              ((longlong)&pAVar22[0xd].klass + 4);
+                                                    pAStack_7 = (Array__Class *)
+                                                                 pAVar22[0xc].monitor;
+                                                    fVar6 = (float)uVar17 - SUB84(pAStack_7,0);
+                                                    fVar21 = *(float *)((longlong)
+                                                                        &pAVar22[0xd].monitor + 4) -
+                                                             *(float *)&pAVar22[0xd].klass;
+                                                    fVar4 = (float)((ulonglong)pAStack_7 >> 0x20);
+                                                    fVar5 = (float)((ulonglong)uVar17 >> 0x20) -
+                                                             fVar4;
+                                                    if (0x11 < *(uint *)&pAVar22[1].monitor) {
+                                                      uVar17 = *(undefined8 *)
+                                                                ((longlong)&pAVar22[0xe].monitor + 4
+                                                                );
+                                                      fVar25 = (float)uVar17 - SUB84(pAStack_7,0);
+                                                      fVar4 = (float)((ulonglong)uVar17 >> 0x20) -
+                                                               fVar4;
+                                                      fVar23 = *(float *)((longlong)
+                                                                          &pAVar22[0xf].klass + 4) -
+                                                               *(float *)&pAVar22[0xd].klass;
+                                                      fVar26 = fVar23 * fVar5 - fVar4 * fVar21;
+                                                      fVar21 = fVar25 * fVar21 - fVar23 * fVar6;
+                                                      fVar4 = fVar4 * fVar6 - fVar25 * fVar5;
+                                                      pAStack_7 = (Array__Class *)
+                                                                   CONCAT44(fVar21,fVar26);
+                                                      fStack_9 = fVar4;
+                                                      fVar5 = (float)FUN_?(&pAStack_7);
+                                                      if (fVar3 < fVar5) {
+                                                        fVar4 = fVar4 / fVar5;
+                                                        pAStack_7 = (Array__Class *)
+                                                                     CONCAT44(fVar21 / fVar5,
+                                                                              fVar26 / fVar5);
+                                                      }
+                                                      else {
+                                                        if (cRam_? == '\0') {
+                                                          FUN_?(&
+                                                  TypeInfo__UnityEngine__Vector3);
+                                                  LOCK();
+                                                  UNLOCK();
+                                                  cRam_? = '\x01';
+                                                  }
+                                                  pAStack_7 = *(Array__Class **)
+                                                                &TypeInfo__UnityEngine__Vector3->
+                                                                 static_fields->zeroVector;
+                                                  fVar4 = (TypeInfo__UnityEngine__Vector3->
+                                                            static_fields->zeroVector).z;
+                                                  }
+                                                  this = (Array *)FUN_?(
+                                                  TypeInfo__UnityEngine__Vector3,0x12);
+                                                  if (cRam_? == '\0') {
+                                                    FUN_?(&TypeInfo__UnityEngine__Vector3);
+                                                    LOCK();
+                                                    UNLOCK();
+                                                    cRam_? = '\x01';
+                                                  }
+                                                  cVar27 = cRam_?;
+                                                  pVVar28 = TypeInfo__UnityEngine__Vector3->
+                                                            static_fields;
+                                                  if (this == (Array *)0x0)
+                                                  goto code_?;
+                                                  if (*(int *)&this[1].monitor != 0) {
+                                                    this[2].klass =
+                                                         *(Array__Class **)&pVVar28->upVector;
+                                                    *(float *)&this[2].monitor =
+                                                         (pVVar28->upVector).z;
+                                                    if (cVar27 == '\0') {
+                                                      FUN_?(&TypeInfo__UnityEngine__Vector3)
+                                                      ;
+                                                      LOCK();
+                                                      UNLOCK();
+                                                      cVar27 = '\x01';
+                                                      cRam_? = '\x01';
+                                                    }
+                                                    pVVar28 = TypeInfo__UnityEngine__Vector3->
+                                                              static_fields;
+                                                    if (1 < *(uint *)&this[1].monitor) {
+                                                      *(undefined8 *)
+                                                       ((longlong)&this[2].monitor + 4) =
+                                                           *(undefined8 *)&pVVar28->upVector;
+                                                      *(float *)((longlong)&this[3].klass + 4) =
+                                                           (pVVar28->upVector).z;
+                                                      if (cVar27 == '\0') {
+                                                        FUN_?(&
+                                                  TypeInfo__UnityEngine__Vector3);
+                                                  LOCK();
+                                                  UNLOCK();
+                                                  cVar27 = '\x01';
+                                                  cRam_? = '\x01';
+                                                  }
+                                                  pVVar28 = TypeInfo__UnityEngine__Vector3->
+                                                            static_fields;
+                                                  if (2 < *(uint *)&this[1].monitor) {
+                                                    this[3].monitor =
+                                                         *(MonitorData **)&pVVar28->upVector;
+                                                    *(float *)&this[4].klass = (pVVar28->upVector).z
+                                                    ;
+                                                    if (cVar27 == '\0') {
+                                                      FUN_?(&TypeInfo__UnityEngine__Vector3)
+                                                      ;
+                                                      LOCK();
+                                                      UNLOCK();
+                                                      cVar27 = '\x01';
+                                                      cRam_? = '\x01';
+                                                    }
+                                                    uVar1 = _UNK_?;
+                                                    pVVar28 = TypeInfo__UnityEngine__Vector3->
+                                                              static_fields;
+                                                    uVar29 = (pVVar28->upVector).x;
+                                                    uVar30 = (uint)(pVVar28->upVector).z ^
+                                                             _UNK_?;
+                                                    if (3 < *(uint *)&this[1].monitor) {
+                                                      *(ulonglong *)((longlong)&this[4].klass + 4) =
+                                                           CONCAT44((uint)(pVVar28->upVector).y ^
+                                                                    _UNK_?,
+                                                                    uVar29 ^ _UNK_?);
+                                                      *(uint *)((longlong)&this[4].monitor + 4) =
+                                                           uVar30;
+                                                      if (cVar27 == '\0') {
+                                                        FUN_?(&
+                                                  TypeInfo__UnityEngine__Vector3);
+                                                  LOCK();
+                                                  UNLOCK();
+                                                  cVar27 = '\x01';
+                                                  cRam_? = '\x01';
+                                                  }
+                                                  pVVar28 = TypeInfo__UnityEngine__Vector3->
+                                                            static_fields;
+                                                  uVar31 = (pVVar28->upVector).x;
+                                                  fVar3 = (pVVar28->upVector).z;
+                                                  if (4 < *(uint *)&this[1].monitor) {
+                                                    this[5].klass =
+                                                         (Array__Class *)
+                                                         CONCAT44((uint)(pVVar28->upVector).y ^
+                                                                  uVar1,uVar31 ^ uVar1);
+                                                    *(uint *)&this[5].monitor =
+                                                         (uint)fVar3 ^ uVar1;
+                                                    if (cVar27 == '\0') {
+                                                      FUN_?(&TypeInfo__UnityEngine__Vector3)
+                                                      ;
+                                                      LOCK();
+                                                      UNLOCK();
+                                                      cRam_? = '\x01';
+                                                    }
+                                                    cVar27 = cRam_?;
+                                                    pVVar28 = TypeInfo__UnityEngine__Vector3->
+                                                              static_fields;
+                                                    uVar32 = (pVVar28->upVector).x;
+                                                    fVar3 = (pVVar28->upVector).z;
+                                                    if (5 < *(uint *)&this[1].monitor) {
+                                                      *(ulonglong *)((longlong)&this[5].monitor + 4)
+                                                           = CONCAT44((uint)(pVVar28->upVector).y ^
+                                                                      uVar1,uVar32 ^ uVar1);
+                                                      *(uint *)((longlong)&this[6].klass + 4) =
+                                                           (uint)fVar3 ^ uVar1;
+                                                      if (cVar27 == '\0') {
+                                                        FUN_?(&
+                                                  TypeInfo__UnityEngine__Vector3);
+                                                  LOCK();
+                                                  UNLOCK();
+                                                  cVar27 = '\x01';
+                                                  cRam_? = '\x01';
+                                                  }
+                                                  pVVar28 = TypeInfo__UnityEngine__Vector3->
+                                                            static_fields;
+                                                  uVar33 = (pVVar28->forwardVector).x;
+                                                  fVar3 = (pVVar28->forwardVector).z;
+                                                  if (6 < *(uint *)&this[1].monitor) {
+                                                    this[6].monitor =
+                                                         (MonitorData *)
+                                                         CONCAT44((uint)(pVVar28->forwardVector).y ^
+                                                                  uVar1,uVar33 ^ uVar1);
+                                                    *(uint *)&this[7].klass = (uint)fVar3 ^ uVar1;
+                                                    if (cVar27 == '\0') {
+                                                      FUN_?(&TypeInfo__UnityEngine__Vector3)
+                                                      ;
+                                                      LOCK();
+                                                      UNLOCK();
+                                                      cVar27 = '\x01';
+                                                      cRam_? = '\x01';
+                                                    }
+                                                    pVVar28 = TypeInfo__UnityEngine__Vector3->
+                                                              static_fields;
+                                                    uVar34 = (pVVar28->forwardVector).x;
+                                                    fVar3 = (pVVar28->forwardVector).z;
+                                                    if (7 < *(uint *)&this[1].monitor) {
+                                                      *(ulonglong *)((longlong)&this[7].klass + 4) =
+                                                           CONCAT44((uint)(pVVar28->forwardVector).y
+                                                                    ^ uVar1,uVar34 ^ uVar1);
+                                                      *(uint *)((longlong)&this[7].monitor + 4) =
+                                                           (uint)fVar3 ^ uVar1;
+                                                      if (cVar27 == '\0') {
+                                                        FUN_?(&
+                                                  TypeInfo__UnityEngine__Vector3);
+                                                  LOCK();
+                                                  UNLOCK();
+                                                  cVar27 = '\x01';
+                                                  cRam_? = '\x01';
+                                                  }
+                                                  pVVar28 = TypeInfo__UnityEngine__Vector3->
+                                                            static_fields;
+                                                  uVar35 = (pVVar28->forwardVector).x;
+                                                  fVar3 = (pVVar28->forwardVector).z;
+                                                  if (8 < *(uint *)&this[1].monitor) {
+                                                    this[8].klass =
+                                                         (Array__Class *)
+                                                         CONCAT44((uint)(pVVar28->forwardVector).y ^
+                                                                  uVar1,uVar35 ^ uVar1);
+                                                    *(uint *)&this[8].monitor =
+                                                         (uint)fVar3 ^ uVar1;
+                                                    if (cVar27 == '\0') {
+                                                      FUN_?(&TypeInfo__UnityEngine__Vector3)
+                                                      ;
+                                                      LOCK();
+                                                      UNLOCK();
+                                                      cRam_? = '\x01';
+                                                    }
+                                                    pVVar28 = TypeInfo__UnityEngine__Vector3->
+                                                              static_fields;
+                                                    uVar36 = (pVVar28->forwardVector).x;
+                                                    fVar3 = (pVVar28->forwardVector).z;
+                                                    if (9 < *(uint *)&this[1].monitor) {
+                                                      *(ulonglong *)((longlong)&this[8].monitor + 4)
+                                                           = CONCAT44((uint)(pVVar28->forwardVector)
+                                                                            .y ^ uVar1,
+                                                                      uVar36 ^ uVar1);
+                                                      *(uint *)((longlong)&this[9].klass + 4) =
+                                                           (uint)fVar3 ^ uVar1;
+                                                      if (10 < *(uint *)&this[1].monitor) {
+                                                        this[9].monitor = (MonitorData *)pAStack_24;
+                                                        *(float *)&this[10].klass = fVar2;
+                                                        if (0xb < *(uint *)&this[1].monitor) {
+                                                          *(Array__Class **)
+                                                           ((longlong)&this[10].klass + 4) =
+                                                               pAStack_24;
+                                                          *(float *)((longlong)&this[10].monitor + 4
+                                                                    ) = fVar2;
+                                                          if (0xc < *(uint *)&this[1].monitor) {
+                                                            this[0xb].klass = pAStack_24;
+                                                            *(float *)&this[0xb].monitor = fVar2;
+                                                            if (0xd < *(uint *)&this[1].monitor) {
+                                                              *(Array__Class **)
+                                                               ((longlong)&this[0xb].monitor + 4) =
+                                                                   pAStack_24;
+                                                              *(float *)((longlong)&this[0xc].klass
+                                                                        + 4) = fVar2;
+                                                              if (0xe < *(uint *)&this[1].monitor) {
+                                                                this[0xc].monitor =
+                                                                     (MonitorData *)pAStack_7;
+                                                                *(float *)&this[0xd].klass = fVar4;
+                                                                if (0xf < *(uint *)&this[1].monitor)
+                                                                {
+                                                                  *(Array__Class **)
+                                                                   ((longlong)&this[0xd].klass + 4)
+                                                                       = pAStack_7;
+                                                                  *(float *)((longlong)
+                                                                             &this[0xd].monitor + 4)
+                                                                       = fVar4;
+                                                                  if (0x10 < *(uint *)&this[1].
+                                                  monitor) {
+                                                    this[0xe].klass = pAStack_7;
+                                                    *(float *)&this[0xe].monitor = fVar4;
+                                                    if (0x11 < *(uint *)&this[1].monitor) {
+                                                      *(Array__Class **)
+                                                       ((longlong)&this[0xe].monitor + 4) =
+                                                           pAStack_7;
+                                                      *(float *)((longlong)&this[0xf].klass + 4) =
+                                                           fVar4;
+                                                      pMVar15 = (Mesh *)FUN_?(
+                                                  TypeInfo__UnityEngine__Mesh);
+                                                  UnityEngine.CoreModule.dll::UnityEngine::Mesh::
+                                                  Mesh__ctor(pMVar15,(MethodInfo *)0x0);
+                                                  if (pMVar15 != (Mesh *)0x0) {
+                                                    if (cRam_? == '\0') {
+                                                      FUN_?(&
+                                                  void_MethodInfo__UnityEngine__Mesh__SetArrayForChannel<UnityEngine::Vector3>_UnityEngine__Rendering__VertexAttribute__UnityEngine__Vector3_____UnityEngine__Rendering__MeshUpdateFlags_
+                                                  );
+                                                  LOCK();
+                                                  UNLOCK();
+                                                  cRam_? = '\x01';
+                                                  }
+                                                  iVar37 = mscorlib.dll::System::Array::
+                                                           Array_get_Length(pAVar22,(MethodInfo *)
+                                                                                    0x0);
+                                                  uVar1 = 0;
+                                                  lVar38 = 0;
+                                                  UnityEngine.CoreModule.dll::UnityEngine::Mesh::
+                                                  Mesh_SetSizedArrayForChannel
+                                                            (pMVar15,VertexAttribute__Enum_Position,
+                                                             VertexAttributeFormat__Enum_Float32,3,
+                                                             pAVar22,iVar37,0,iVar37,
+                                                             MeshUpdateFlags__Enum_Default,
+                                                             (MethodInfo *)0x0);
+                                                  iVar39 = *(int *)&pAVar22[1].monitor;
+                                                  if (cRam_? == '\0') {
+                                                    FUN_?(&TypeInfo__UnityEngine__Color);
+                                                    LOCK();
+                                                    UNLOCK();
+                                                    cRam_? = '\x01';
+                                                  }
+                                                  pAVar22 = (Array *)FUN_?(
+                                                  TypeInfo__UnityEngine__Color);
+                                                  if (0 < iVar39) {
+                                                    pAVar40 = pAVar22 + 2;
+                                                    uVar30 = uVar1;
+                                                    if (pAVar22 == (Array *)0x0)
+                                                    goto code_?;
+                                                    do {
+                                                      if (*(uint *)&pAVar22[1].monitor <= uVar30)
+                                                      goto code_?;
+                                                      fVar2 = color->g;
+                                                      fVar3 = color->b;
+                                                      fVar4 = color->a;
+                                                      lVar38 = lVar38 + 1;
+                                                      *(float *)&pAVar40->klass = color->r;
+                                                      *(float *)((longlong)&pAVar40->klass + 4) =
+                                                           fVar2;
+                                                      *(float *)&pAVar40->monitor = fVar3;
+                                                      *(float *)((longlong)&pAVar40->monitor + 4) =
+                                                           fVar4;
+                                                      pAVar40 = pAVar40 + 1;
+                                                      uVar30 = uVar30 + 1;
+                                                    } while (lVar38 < iVar39);
+                                                  }
+                                                  if (cRam_? == '\0') {
+                                                    FUN_?(&
+                                                  void_MethodInfo__UnityEngine__Mesh__SetArrayForChannel<UnityEngine::Color>_UnityEngine__Rendering__VertexAttribute__UnityEngine__Color_____UnityEngine__Rendering__MeshUpdateFlags_
+                                                  );
+                                                  LOCK();
+                                                  UNLOCK();
+                                                  cRam_? = '\x01';
+                                                  }
+                                                  if (pAVar22 != (Array *)0x0) {
+                                                    uVar1 = mscorlib.dll::System::Array::
+                                                             Array_get_Length(pAVar22,(MethodInfo *)
+                                                                                      0x0);
+                                                  }
+                                                  UnityEngine.CoreModule.dll::UnityEngine::Mesh::
+                                                  Mesh_SetSizedArrayForChannel
+                                                            (pMVar15,VertexAttribute__Enum_Color,
+                                                             VertexAttributeFormat__Enum_Float32,4,
+                                                             pAVar22,uVar1,0,uVar1,
+                                                             MeshUpdateFlags__Enum_Default,
+                                                             (MethodInfo *)0x0);
+                                                  if (cRam_? == '\0') {
+                                                    FUN_?(&
+                                                  void_MethodInfo__UnityEngine__Mesh__SetArrayForChannel<UnityEngine::Vector3>_UnityEngine__Rendering__VertexAttribute__UnityEngine__Vector3_____UnityEngine__Rendering__MeshUpdateFlags_
+                                                  );
+                                                  LOCK();
+                                                  UNLOCK();
+                                                  cRam_? = '\x01';
+                                                  }
+                                                  iVar37 = mscorlib.dll::System::Array::
+                                                           Array_get_Length(this,(MethodInfo *)0x0);
+                                                  UnityEngine.CoreModule.dll::UnityEngine::Mesh::
+                                                  Mesh_SetSizedArrayForChannel
+                                                            (pMVar15,VertexAttribute__Enum_Normal,
+                                                             VertexAttributeFormat__Enum_Float32,3,
+                                                             this,iVar37,0,iVar37,
+                                                             MeshUpdateFlags__Enum_Default,
+                                                             (MethodInfo *)0x0);
+                                                  UnityEngine.CoreModule.dll::UnityEngine::Mesh::
+                                                  Mesh_SetIndices(pMVar15,indices,
+                                                                  MeshTopology__Enum_Triangles,0,
+                                                                  (MethodInfo *)0x0);
+                                                  UnityEngine.CoreModule.dll::UnityEngine::Mesh::
+                                                  Mesh_UploadMeshData(pMVar15,0,(MethodInfo *)0x0);
+                                                  return pMVar15;
+                                                  }
+                                                  goto code_?;
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
-      pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
-      if (value_02 != (Vector3__Array *)0x0) {
-        fVar4 = (pVVar41->upVector).y;
-        fVar3 = (pVVar41->upVector).z;
-        if (value_02->max_length == 0) goto code_?;
-        value_02->vector[0].x = (pVVar41->upVector).x;
-        value_02->vector[0].y = fVar4;
-        value_02->vector[0].z = fVar3;
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
-        fVar4 = (pVVar41->upVector).y;
-        fVar3 = (pVVar41->upVector).z;
-        if (value_02->max_length < 2) goto code_?;
-        value_02->vector[1].x = (pVVar41->upVector).x;
-        value_02->vector[1].y = fVar4;
-        value_02->vector[1].z = fVar3;
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
-        fVar4 = (pVVar41->upVector).y;
-        fVar3 = (pVVar41->upVector).z;
-        if (value_02->max_length < 3) goto code_?;
-        value_02->vector[2].x = (pVVar41->upVector).x;
-        value_02->vector[2].y = fVar4;
-        value_02->vector[2].z = fVar3;
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        uVar42 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
-        pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
-        uVar43 = (pVVar41->upVector).x;
-        uVar44 = (pVVar41->upVector).y;
-        uVar45 = uVar44 ^ __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
-        fVar3 = (float)((uint)(pVVar41->upVector).z ^
-                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-        if (value_02->max_length < 4) goto code_?;
-        value_02->vector[3].x =
-             (float)(uVar43 ^ 
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-        value_02->vector[3].y = (float)uVar45;
-        value_02->vector[3].z = fVar3;
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-          uVar42 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
-        }
-        pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
-        uVar46 = (pVVar41->upVector).x;
-        uVar47 = (pVVar41->upVector).y;
-        fVar3 = (pVVar41->upVector).z;
-        if (value_02->max_length < 5) goto code_?;
-        value_02->vector[4].x = (float)(uVar46 ^ uVar42);
-        value_02->vector[4].y = (float)(uVar47 ^ uVar42);
-        value_02->vector[4].z = (float)((uint)fVar3 ^ uVar42);
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-          uVar42 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
-        }
-        pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
-        uVar48 = (pVVar41->upVector).x;
-        uVar49 = (pVVar41->upVector).y;
-        fVar3 = (pVVar41->upVector).z;
-        if (value_02->max_length < 6) goto code_?;
-        value_02->vector[5].x = (float)(uVar48 ^ uVar42);
-        value_02->vector[5].y = (float)(uVar49 ^ uVar42);
-        value_02->vector[5].z = (float)((uint)fVar3 ^ uVar42);
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-          uVar42 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
-        }
-        pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
-        uVar50 = (pVVar41->forwardVector).x;
-        uVar51 = (pVVar41->forwardVector).y;
-        fVar3 = (pVVar41->forwardVector).z;
-        if (value_02->max_length < 7) goto code_?;
-        value_02->vector[6].x = (float)(uVar50 ^ uVar42);
-        value_02->vector[6].y = (float)(uVar51 ^ uVar42);
-        value_02->vector[6].z = (float)((uint)fVar3 ^ uVar42);
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-          uVar42 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
-        }
-        pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
-        uVar52 = (pVVar41->forwardVector).x;
-        uVar53 = (pVVar41->forwardVector).y;
-        fVar3 = (pVVar41->forwardVector).z;
-        if (value_02->max_length < 8) goto code_?;
-        value_02->vector[7].x = (float)(uVar52 ^ uVar42);
-        value_02->vector[7].y = (float)(uVar53 ^ uVar42);
-        value_02->vector[7].z = (float)((uint)fVar3 ^ uVar42);
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-          uVar42 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
-        }
-        pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
-        uVar54 = (pVVar41->forwardVector).x;
-        uVar55 = (pVVar41->forwardVector).y;
-        fVar3 = (pVVar41->forwardVector).z;
-        if (value_02->max_length < 9) goto code_?;
-        value_02->vector[8].x = (float)(uVar54 ^ uVar42);
-        value_02->vector[8].y = (float)(uVar55 ^ uVar42);
-        value_02->vector[8].z = (float)((uint)fVar3 ^ uVar42);
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-          uVar42 = __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field;
-        }
-        pVVar41 = TypeInfo__UnityEngine__Vector3->static_fields;
-        uVar56 = (pVVar41->forwardVector).x;
-        uVar57 = (pVVar41->forwardVector).y;
-        fVar3 = (pVVar41->forwardVector).z;
-        if (value_02->max_length < 10) goto code_?;
-        value_02->vector[9].x = (float)(uVar56 ^ uVar42);
-        value_02->vector[9].y = (float)(uVar57 ^ uVar42);
-        value_02->vector[9].z = (float)((uint)fVar3 ^ uVar42);
-        if (value_02->max_length < 0xb) goto code_?;
-        value_02->vector[10].x = baseCenter.y;
-        value_02->vector[10].y = baseCenter.z;
-        value_02->vector[10].z = fVar1;
-        if (value_02->max_length < 0xc) goto code_?;
-        value_02->vector[0xb].x = baseCenter.y;
-        value_02->vector[0xb].y = baseCenter.z;
-        value_02->vector[0xb].z = fVar1;
-        if (value_02->max_length < 0xd) goto code_?;
-        value_02->vector[0xc].x = baseCenter.y;
-        value_02->vector[0xc].y = baseCenter.z;
-        value_02->vector[0xc].z = fVar1;
-        if (value_02->max_length < 0xe) goto code_?;
-        value_02->vector[0xd].x = baseCenter.y;
-        value_02->vector[0xd].y = baseCenter.z;
-        value_02->vector[0xd].z = fVar1;
-        if (value_02->max_length < 0xf) goto code_?;
-        value_02->vector[0xe].x = (float)uVar39;
-        value_02->vector[0xe].y = (float)uVar40;
-        value_02->vector[0xe].z = fVar2;
-        if (value_02->max_length < 0x10) goto code_?;
-        value_02->vector[0xf].x = (float)uVar39;
-        value_02->vector[0xf].y = (float)uVar40;
-        value_02->vector[0xf].z = fVar2;
-        if (value_02->max_length < 0x11) goto code_?;
-        value_02->vector[0x10].x = (float)uVar39;
-        value_02->vector[0x10].y = (float)uVar40;
-        value_02->vector[0x10].z = fVar2;
-        if (value_02->max_length < 0x12) goto code_?;
-        value_02->vector[0x11].x = (float)uVar39;
-        value_02->vector[0x11].y = (float)uVar40;
-        value_02->vector[0x11].z = fVar2;
-        pMVar58 = (Mesh *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh__ctor(pMVar58,(MethodInfo *)0x0);
-        if (pMVar58 != (Mesh *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_vertices
-                    (pMVar58,value_01,(MethodInfo *)0x0);
-          value_03 = ColorEx::ColorEx_GetFilledColorArray
-                               (value_01->max_length,color,(MethodInfo *)0x0);
-          UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_colors
-                    (pMVar58,value_03,(MethodInfo *)0x0);
-          UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_normals
-                    (pMVar58,value_02,(MethodInfo *)0x0);
-          UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetIndices
-                    (pMVar58,indices,MeshTopology__Enum_Triangles,0,(MethodInfo *)0x0);
-          UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_UploadMeshData
-                    (pMVar58,0,(MethodInfo *)0x0);
-          return pMVar58;
-        }
-      }
+code_?:
+      FUN_?();
+      pcVar14 = (code *)swi(3);
+      pMVar15 = (Mesh *)(*pcVar14)();
+      return pMVar15;
     }
   }
-  func_?();
 code_?:
-  func_?();
-  pcVar59 = (code *)swi(3);
-  pMVar58 = (Mesh *)(*pcVar59)();
-  return pMVar58;
+  FUN_?();
+  pcVar14 = (code *)swi(3);
+  pMVar15 = (Mesh *)(*pcVar14)();
+  return pMVar15;
 }
 
 
 /* Mesh CreateWireTriangularPrism(Vector3, Single, Single, Single, Single, Single, Color) */
 
 Mesh * Assembly-CSharp.dll::RTG::PrismMesh::PrismMesh_CreateWireTriangularPrism
-                 (Vector3 baseCenter,float baseWidth,float baseDepth,float topWidth,float topDepth,
-                 float height,Color color,MethodInfo *method)
+                 (Vector3 *baseCenter,float baseWidth,float baseDepth,float topWidth,float topDepth,
+                 float height,Color *color,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                   );
-    func_?(&TypeInfo__UnityEngine__Mesh);
-    func_?(&_6F9C6EAE4AB4A7A9E05892CCFB9A9F1510EE5178EF8924458107895A1468FE0B_Field);
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__System__Int32);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Mesh);
+    LOCK();
+    UNLOCK();
+    FUN_?(&_6F9C6EAE4AB4A7A9E05892CCFB9A9F1510EE5178EF8924458107895A1468FE0B_Field);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  baseWidth_00 = (float)((uint)baseWidth & _UNK_?);
-  if ((float)((uint)baseWidth & _UNK_?) <= _UNK_?) {
-    baseWidth_00 = _UNK_?;
+  uVar1 = (uint)_UNK_?;
+  fVar2 = (float)((uint)baseWidth & uVar1);
+  if ((float)((uint)baseWidth & uVar1) <= _UNK_?) {
+    fVar2 = _UNK_?;
   }
-  baseDepth_00 = (float)((uint)baseDepth & _UNK_?);
-  if ((float)((uint)baseDepth & _UNK_?) <= _UNK_?) {
-    baseDepth_00 = _UNK_?;
+  fVar3 = (float)((uint)baseDepth & uVar1);
+  if ((float)((uint)baseDepth & uVar1) <= _UNK_?) {
+    fVar3 = _UNK_?;
   }
-  topWidth_00 = (float)((uint)topWidth & _UNK_?);
-  if ((float)((uint)topWidth & _UNK_?) <= _UNK_?) {
-    topWidth_00 = _UNK_?;
+  fVar4 = (float)((uint)topWidth & uVar1);
+  if ((float)((uint)topWidth & uVar1) <= _UNK_?) {
+    fVar4 = _UNK_?;
   }
-  topDepth_00 = (float)((uint)topDepth & _UNK_?);
-  if ((float)((uint)topDepth & _UNK_?) <= _UNK_?) {
-    topDepth_00 = _UNK_?;
+  fVar5 = (float)((uint)topDepth & uVar1);
+  if ((float)((uint)topDepth & uVar1) <= _UNK_?) {
+    fVar5 = _UNK_?;
   }
-  height_00 = (float)((uint)height & _UNK_?);
-  if ((float)((uint)height & _UNK_?) <= _UNK_?) {
-    height_00 = _UNK_?;
+  fVar6 = (float)((uint)height & uVar1);
+  if ((float)((uint)height & uVar1) <= _UNK_?) {
+    fVar6 = _UNK_?;
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Quaternion);
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-         PrismMath::PrismMath_CalcTriangPrismCornerPoints
-                   (baseCenter,baseWidth_00,baseDepth_00,topWidth_00,topDepth_00,height_00,
-                    TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
-                    (MethodInfo *)0x0);
-  if (this != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
-    pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-              VisualTreeAsset+UsingEntry]::
-              List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                        (&VStack_2,this,0,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                        );
-    pSVar3 = pVVar1->alias;
-    pSVar4 = pVVar1->path;
-    pVVar5 = pVVar1->asset;
-    pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-              VisualTreeAsset+UsingEntry]::
-              List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                        (&VStack_2,this,1,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                        );
-    uVar6 = pVVar1->alias;
-    uVar7 = pVVar1->path;
-    pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-              VisualTreeAsset+UsingEntry]::
-              List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                        (&VStack_2,this,2,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                        );
-    uVar8._0_4_ = pVVar1->alias;
-    uStack_9 = pVVar1->path;
-    pVVar10 = pVVar1->asset;
-    pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-              VisualTreeAsset+UsingEntry]::
-              List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                        (&VStack_2,this,3,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                        );
-    uVar11 = pVVar1->alias;
-    uVar12 = pVVar1->path;
-    pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-              VisualTreeAsset+UsingEntry]::
-              List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                        ((VisualTreeAsset_UsingEntry *)&stack0xffffffd8,this,5,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                        );
-    VStack_2.path = pVVar1->alias;
-    VStack_2.asset = (VisualTreeAsset *)pVVar1->path;
-    pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-              VisualTreeAsset+UsingEntry]::
-              List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                        ((VisualTreeAsset_UsingEntry *)&pSStack_13,this,4,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                        );
-    pVVar14 = TypeInfo__UnityEngine__Vector3;
-    uVar15._0_4_ = pVVar1->alias;
-    uVar15._4_4_ = (VisualTreeAsset *)pVVar1->path;
-    pVVar16 = pVVar1->asset;
-    value = (Vector3__Array *)func_?();
-    if (value != (Vector3__Array *)0x0) {
-      if (value->max_length == 0) goto code_?;
-      value->vector[0].x = (float)pSVar3;
-      value->vector[0].y = (float)pSVar4;
-      value->vector[0].z = (float)pVVar5;
-      if (value->max_length < 2) goto code_?;
-      uStack_9 = (undefined4)((ulonglong)uVar8 >> 0x20);
-      value->vector[1].x = (float)(undefined4)uVar8;
-      value->vector[1].y = (float)uStack_9;
-      value->vector[1].z = (float)pVVar10;
-      if (value->max_length < 3) goto code_?;
-      value->vector[2].x = (float)uVar6;
-      value->vector[2].y = (float)uVar7;
-      value->vector[2].z = (float)&UNK_?;
-      if (value->max_length < 4) goto code_?;
-      value->vector[3].x = (float)uVar11;
-      value->vector[3].y = (float)uVar12;
-      value->vector[3].z = (float)&pSStack_13;
-      if (value->max_length < 5) goto code_?;
-      value->vector[4].x = (float)(String *)uVar15;
-      value->vector[4].y = (float)SUB84(uVar15,4);
-      value->vector[4].z = (float)pVVar16;
-      if (value->max_length < 6) goto code_?;
-      value->vector[5].x = (float)VStack_2.path;
-      value->vector[5].y = (float)VStack_2.asset;
-      value->vector[5].z = (float)&UNK_?;
-      indices = (Int32__Array *)func_?();
-      VStack_2.asset = (VisualTreeAsset *)&UNK_?;
-      mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
-      RuntimeHelpers_InitializeArray_1
-                ((Array *)indices,
-                 __6F9C6EAE4AB4A7A9E05892CCFB9A9F1510EE5178EF8924458107895A1468FE0B_Field,
-                 (MethodInfo *)0x0);
-      pMVar17 = (Mesh *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh__ctor(pMVar17,(MethodInfo *)0x0);
-      if (pMVar17 != (Mesh *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_vertices
-                  (pMVar17,value,(MethodInfo *)0x0);
-        fillValue.g = 8.40779e-45;
-        fillValue.r = (float)pVVar14;
-        fillValue.b = color.b;
-        fillValue.a = color.a;
-        value_00 = ColorEx::ColorEx_GetFilledColorArray
-                             (value->max_length,fillValue,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_set_colors
-                  (pMVar17,value_00,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetIndices
-                  (pMVar17,indices,MeshTopology__Enum_Lines,0,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_UploadMeshData
-                  (pMVar17,0,(MethodInfo *)0x0);
-        return pMVar17;
+  uVar7 = 0;
+  VStack_8.x = baseCenter->x;
+  VStack_8.y = baseCenter->y;
+  pQVar9 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  VStack_8.z = baseCenter->z;
+  aQStack_10[0].x = (pQVar9->identityQuaternion).x;
+  aQStack_10[0].y = (pQVar9->identityQuaternion).y;
+  aQStack_10[0].z = (pQVar9->identityQuaternion).z;
+  aQStack_10[0].w = (pQVar9->identityQuaternion).w;
+  pLVar11 = PrismMath::PrismMath_CalcTriangPrismCornerPoints
+                      (&VStack_8,fVar2,fVar3,fVar4,fVar5,fVar6,aQStack_10,(MethodInfo *)0x0);
+  if (pLVar11 != (List_1_UnityEngine_Vector3_ *)0x0) {
+    valuesArrayLength_00 = 0;
+    if ((pLVar11->fields)._size == 0) goto code_?;
+    pVVar12 = (pLVar11->fields)._items;
+    if (pVVar12 != (Vector3__Array *)0x0) {
+      if ((int)pVVar12->max_length != 0) {
+        pAVar13 = *(Array__Class **)pVVar12->vector;
+        fVar2 = pVVar12->vector[0].z;
+        if ((uint)(pLVar11->fields)._size < 2) {
+code_?:
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar14 = (code *)swi(3);
+          pMVar15 = (Mesh *)(*pcVar14)();
+          return pMVar15;
+        }
+        if (1 < (uint)pVVar12->max_length) {
+          pMVar16 = *(MonitorData **)(pVVar12->vector + 1);
+          fVar3 = pVVar12->vector[1].z;
+          if ((uint)(pLVar11->fields)._size < 3) goto code_?;
+          if (2 < (uint)pVVar12->max_length) {
+            uVar17 = *(undefined8 *)(pVVar12->vector + 2);
+            fVar4 = pVVar12->vector[2].z;
+            if ((uint)(pLVar11->fields)._size < 4) goto code_?;
+            if (3 < (uint)pVVar12->max_length) {
+              uVar18 = *(undefined8 *)(pVVar12->vector + 3);
+              fVar5 = pVVar12->vector[3].z;
+              if ((uint)(pLVar11->fields)._size < 6) goto code_?;
+              if (5 < (uint)pVVar12->max_length) {
+                uVar19 = *(undefined8 *)(pVVar12->vector + 5);
+                fVar6 = pVVar12->vector[5].z;
+                pAVar20 = *(Array__Class **)(pVVar12->vector + 4);
+                fVar21 = pVVar12->vector[4].z;
+                pAVar22 = (Array *)FUN_?(TypeInfo__UnityEngine__Vector3,6);
+                if (pAVar22 == (Array *)0x0) goto code_?;
+                if (*(int *)&pAVar22[1].monitor != 0) {
+                  pAVar22[2].klass = pAVar13;
+                  *(float *)&pAVar22[2].monitor = fVar2;
+                  if (1 < *(uint *)&pAVar22[1].monitor) {
+                    *(undefined8 *)((longlong)&pAVar22[2].monitor + 4) = uVar17;
+                    *(float *)((longlong)&pAVar22[3].klass + 4) = fVar4;
+                    if (2 < *(uint *)&pAVar22[1].monitor) {
+                      pAVar22[3].monitor = pMVar16;
+                      *(float *)&pAVar22[4].klass = fVar3;
+                      if (3 < *(uint *)&pAVar22[1].monitor) {
+                        *(undefined8 *)((longlong)&pAVar22[4].klass + 4) = uVar18;
+                        *(float *)((longlong)&pAVar22[4].monitor + 4) = fVar5;
+                        if (4 < *(uint *)&pAVar22[1].monitor) {
+                          pAVar22[5].klass = pAVar20;
+                          *(float *)&pAVar22[5].monitor = fVar21;
+                          if (5 < *(uint *)&pAVar22[1].monitor) {
+                            *(undefined8 *)((longlong)&pAVar22[5].monitor + 4) = uVar19;
+                            *(float *)((longlong)&pAVar22[6].klass + 4) = fVar6;
+                            indices = (Int32__Array *)FUN_?(TypeInfo__System__Int32,0x12);
+                            mscorlib.dll::System::Runtime::CompilerServices::RuntimeHelpers::
+                            RuntimeHelpers_InitializeArray_1
+                                      ((Array *)indices,
+                                       __6F9C6EAE4AB4A7A9E05892CCFB9A9F1510EE5178EF8924458107895A1468FE0B_Field
+                                       ,(MethodInfo *)0x0);
+                            pMVar15 = (Mesh *)FUN_?(TypeInfo__UnityEngine__Mesh);
+                            UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh__ctor
+                                      (pMVar15,(MethodInfo *)0x0);
+                            if (pMVar15 != (Mesh *)0x0) {
+                              if (cRam_? == '\0') {
+                                FUN_?(&
+                                              void_MethodInfo__UnityEngine__Mesh__SetArrayForChannel<UnityEngine::Vector3>_UnityEngine__Rendering__VertexAttribute__UnityEngine__Vector3_____UnityEngine__Rendering__MeshUpdateFlags_
+                                             );
+                                LOCK();
+                                UNLOCK();
+                                cRam_? = '\x01';
+                              }
+                              valuesArrayLength =
+                                   mscorlib.dll::System::Array::Array_get_Length
+                                             (pAVar22,(MethodInfo *)0x0);
+                              UnityEngine.CoreModule.dll::UnityEngine::Mesh::
+                              Mesh_SetSizedArrayForChannel
+                                        (pMVar15,VertexAttribute__Enum_Position,
+                                         VertexAttributeFormat__Enum_Float32,3,pAVar22,
+                                         valuesArrayLength,0,valuesArrayLength,
+                                         MeshUpdateFlags__Enum_Default,(MethodInfo *)0x0);
+                              iVar23 = *(int *)&pAVar22[1].monitor;
+                              if (cRam_? == '\0') {
+                                FUN_?(&TypeInfo__UnityEngine__Color);
+                                LOCK();
+                                UNLOCK();
+                                cRam_? = '\x01';
+                              }
+                              pAVar22 = (Array *)FUN_?(TypeInfo__UnityEngine__Color);
+                              if (0 < iVar23) {
+                                pAVar24 = pAVar22 + 2;
+                                uVar25 = uVar7;
+                                if (pAVar22 == (Array *)0x0) goto code_?;
+                                do {
+                                  if (*(uint *)&pAVar22[1].monitor <= (uint)uVar7)
+                                  goto code_?;
+                                  fVar2 = color->g;
+                                  fVar3 = color->b;
+                                  fVar4 = color->a;
+                                  uVar7 = (ulonglong)((uint)uVar7 + 1);
+                                  uVar25 = uVar25 + 1;
+                                  *(float *)&pAVar24->klass = color->r;
+                                  *(float *)((longlong)&pAVar24->klass + 4) = fVar2;
+                                  *(float *)&pAVar24->monitor = fVar3;
+                                  *(float *)((longlong)&pAVar24->monitor + 4) = fVar4;
+                                  pAVar24 = pAVar24 + 1;
+                                } while ((longlong)uVar25 < (longlong)iVar23);
+                              }
+                              if (cRam_? == '\0') {
+                                FUN_?(&
+                                              void_MethodInfo__UnityEngine__Mesh__SetArrayForChannel<UnityEngine::Color>_UnityEngine__Rendering__VertexAttribute__UnityEngine__Color_____UnityEngine__Rendering__MeshUpdateFlags_
+                                             );
+                                LOCK();
+                                UNLOCK();
+                                cRam_? = '\x01';
+                              }
+                              if (pAVar22 != (Array *)0x0) {
+                                valuesArrayLength_00 =
+                                     mscorlib.dll::System::Array::Array_get_Length
+                                               (pAVar22,(MethodInfo *)0x0);
+                              }
+                              UnityEngine.CoreModule.dll::UnityEngine::Mesh::
+                              Mesh_SetSizedArrayForChannel
+                                        (pMVar15,VertexAttribute__Enum_Color,
+                                         VertexAttributeFormat__Enum_Float32,4,pAVar22,
+                                         valuesArrayLength_00,0,valuesArrayLength_00,
+                                         MeshUpdateFlags__Enum_Default,(MethodInfo *)0x0);
+                              UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_SetIndices
+                                        (pMVar15,indices,MeshTopology__Enum_Lines,0,
+                                         (MethodInfo *)0x0);
+                              UnityEngine.CoreModule.dll::UnityEngine::Mesh::Mesh_UploadMeshData
+                                        (pMVar15,0,(MethodInfo *)0x0);
+                              return pMVar15;
+                            }
+                            goto code_?;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
+code_?:
+      FUN_?();
+      pcVar14 = (code *)swi(3);
+      pMVar15 = (Mesh *)(*pcVar14)();
+      return pMVar15;
     }
   }
-  func_?();
 code_?:
-  func_?();
-  pcVar18 = (code *)swi(3);
-  pMVar17 = (Mesh *)(*pcVar18)();
-  return pMVar17;
+  FUN_?();
+  pcVar14 = (code *)swi(3);
+  pMVar15 = (Mesh *)(*pcVar14)();
+  return pMVar15;
 }
 

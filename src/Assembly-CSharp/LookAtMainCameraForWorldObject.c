@@ -13,23 +13,19 @@ void Assembly-CSharp.dll::LookAtMainCameraForWorldObject::LookAtMainCameraForWor
                         ((Component *)this_00,(MethodInfo *)0x0);
     if (this_02 != (Transform *)0x0) {
       pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                         ((Vector3 *)&stack0xffffffe4,this_02,(MethodInfo *)0x0);
-      uVar2 = pVVar1->x;
-      uVar3 = pVVar1->y;
+                         (aVStack_2,this_02,(MethodInfo *)0x0);
+      uVar3 = pVVar1->x;
+      aVStack_2[0].x = (float)(uVar3 ^ _UNK_?);
+      aVStack_2[0].z = (float)((uint)pVVar1->z ^ _UNK_?);
       if (this_01 != (Transform *)0x0) {
-        value.y = (float)(uVar3 ^ 
-                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-        value.x = (float)(uVar2 ^ 
-                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-        value.z = (float)((uint)pVVar1->z ^
-                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+        aVStack_2[0].y = (float)((uint)pVVar1->y ^ _UNK_?);
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_up
-                  (this_01,value,(MethodInfo *)0x0);
+                  (this_01,aVStack_2,(MethodInfo *)0x0);
         return;
       }
     }
   }
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -43,8 +39,21 @@ void Assembly-CSharp.dll::LookAtMainCameraForWorldObject::LookAtMainCameraForWor
 
 {
   pCVar1 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_main((MethodInfo *)0x0);
+  bVar2 = iRam_? != 0;
   (this->fields).mainCamera = pCVar1;
-  func_?(pCVar1);
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).mainCamera >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
   return;
 }
 

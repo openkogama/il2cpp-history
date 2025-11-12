@@ -14,16 +14,16 @@ public class DesktopCubeModelingToolsController : MonoBehaviour
 {
 	// Fields
 	[SerializeField]
-	private Button defaultTool;
+	private UnityEngine.UI.Button defaultTool;
 	[Header("Buttons")]
 	[SerializeField]
-	protected Button editCube;
+	protected UnityEngine.UI.Button editCube;
 	[SerializeField]
-	protected Button deletecube;
+	protected UnityEngine.UI.Button deletecube;
 	[SerializeField]
-	protected Button paintCube;
+	protected UnityEngine.UI.Button paintCube;
 	[SerializeField]
-	protected Button pickCubeColor;
+	protected UnityEngine.UI.Button pickCubeColor;
 	[Header("Settings")]
 	[SerializeField]
 	private float disabledAlpha;

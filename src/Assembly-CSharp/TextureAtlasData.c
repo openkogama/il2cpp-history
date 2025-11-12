@@ -6,23 +6,22 @@ int32_t Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_AtlasColumns
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__TextureAtlasData);
+    FUN_?(&TypeInfo__TextureAtlasData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__TextureAtlasData);
+  if (*(int *)&(TypeInfo__TextureAtlasData->_1).field_0x1c == 0) {
+    FUN_?();
   }
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__ValueTuple<int,_int>__ValueTuple_int__int_);
+    FUN_?(&MethodInfo__System__ValueTuple<int,_int>__ValueTuple_int__int_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  VStack_1.Item1 = 0;
-  VStack_1.Item2 = (void *)0x0;
-  item1 = (int)(atlasWidth + (atlasWidth >> 0x1f & 0xfU)) >> 4;
-  mscorlib.dll::System::ValueTuple`2[Int32,IntPtr]::ValueTuple_2_Int32_IntPtr___ctor
-            (&VStack_1,item1,(void *)(int)((float)item1 * _UNK_?),
-             MethodInfo__System__ValueTuple<int,_int>__ValueTuple_int__int_);
-  return atlasWidth / (VStack_1.Item1 + (int)VStack_1.Item2 * 2);
+  iVar1 = (int)(atlasWidth + (atlasWidth >> 0x1f & 0xfU)) >> 4;
+  return atlasWidth / (iVar1 + (int)((float)iVar1 * _UNK_?) * 2);
 }
 
 
@@ -33,12 +32,18 @@ Color * Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_GetMaterialColor
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__TextureAtlasData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__TextureAtlasData->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__TextureAtlasData);
   }
   this = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
   if (this != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) {
@@ -49,20 +54,15 @@ Color * Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_GetMaterialColor
                        );
     if (pOVar1 != (Object *)0x0) {
       pMVar2 = pOVar1[1].monitor;
-      pOVar3 = pOVar1[2].klass;
-      pMVar4 = pOVar1[2].monitor;
-      __return_storage_ptr__->r = (float)pOVar1[1].klass;
-      __return_storage_ptr__->g = (float)pMVar2;
-      __return_storage_ptr__->b = (float)pOVar3;
-      __return_storage_ptr__->a = (float)pMVar4;
+      *(Object__Class **)__return_storage_ptr__ = pOVar1[1].klass;
+      *(MonitorData **)&__return_storage_ptr__->b = pMVar2;
       return __return_storage_ptr__;
     }
   }
-  uVar5 = func_?(&stack0xfffffff0);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  pCVar7 = (Color *)(*pcVar6)();
-  return pCVar7;
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  pCVar4 = (Color *)(*pcVar3)();
+  return pCVar4;
 }
 
 
@@ -73,19 +73,25 @@ Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_GetTileAnimationArray(Me
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
-                   );
-    func_?(&TypeInfo__TextureAtlasData);
-    func_?(&TypeInfo__UnityEngine__Vector4);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__TextureAtlasData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Vector4);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVVar1 = (Vector4__Array *)func_?(TypeInfo__UnityEngine__Vector4,0x45);
+  pVVar1 = (Vector4__Array *)FUN_?(TypeInfo__UnityEngine__Vector4,0x45);
   key = 0;
-  pVVar2 = pVVar1;
+  pVVar2 = pVVar1->vector;
   while( true ) {
-    if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__TextureAtlasData);
+    if (*(int *)&(TypeInfo__TextureAtlasData->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__TextureAtlasData);
     }
     this = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
     if (this == (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) break;
@@ -95,26 +101,29 @@ Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_GetTileAnimationArray(Me
                         MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                        );
     if ((pOVar3 == (Object *)0x0) || (pVVar1 == (Vector4__Array *)0x0)) break;
-    pMVar4 = pOVar3[5].monitor;
-    pOVar5 = pOVar3[6].klass;
-    pMVar6 = pOVar3[6].monitor;
-    if (pVVar1->max_length <= key) goto code_?;
-    pVVar2->vector[0].x = (float)pOVar3[5].klass;
-    pVVar2->vector[0].y = (float)pMVar4;
-    pVVar2->vector[0].z = (float)pOVar5;
-    pVVar2->vector[0].w = (float)pMVar6;
+    if ((Int32Enum__Enum)pVVar1->max_length <= key) {
+      FUN_?();
+      pcVar4 = (code *)swi(3);
+      pVVar1 = (Vector4__Array *)(*pcVar4)();
+      return pVVar1;
+    }
+    fVar5 = *(float *)((longlong)&pOVar3[3].klass + 4);
+    fVar6 = *(float *)&pOVar3[3].monitor;
+    fVar7 = *(float *)((longlong)&pOVar3[3].monitor + 4);
     key = key + 1;
-    pVVar2 = (Vector4__Array *)pVVar2->vector;
+    pVVar2->x = *(float *)&pOVar3[3].klass;
+    pVVar2->y = fVar5;
+    pVVar2->z = fVar6;
+    pVVar2->w = fVar7;
+    pVVar2 = pVVar2 + 1;
     if (0x44 < (int)key) {
       return pVVar1;
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  pVVar2 = (Vector4__Array *)(*pcVar7)();
-  return pVVar2;
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  pVVar1 = (Vector4__Array *)(*pcVar4)();
+  return pVVar1;
 }
 
 
@@ -125,19 +134,25 @@ Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_GetTileEmissionArray(Met
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
-                   );
-    func_?(&TypeInfo__TextureAtlasData);
-    func_?(&TypeInfo__UnityEngine__Vector4);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__TextureAtlasData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Vector4);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVVar1 = (Vector4__Array *)func_?(TypeInfo__UnityEngine__Vector4,0x45);
+  pVVar1 = (Vector4__Array *)FUN_?(TypeInfo__UnityEngine__Vector4,0x45);
   key = 0;
-  pVVar2 = pVVar1;
+  pVVar2 = pVVar1->vector;
   while( true ) {
-    if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__TextureAtlasData);
+    if (*(int *)&(TypeInfo__TextureAtlasData->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__TextureAtlasData);
     }
     this = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
     if (this == (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) break;
@@ -147,26 +162,29 @@ Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_GetTileEmissionArray(Met
                         MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                        );
     if ((pOVar3 == (Object *)0x0) || (pVVar1 == (Vector4__Array *)0x0)) break;
-    pMVar4 = pOVar3[3].monitor;
-    pOVar5 = pOVar3[4].klass;
-    pMVar6 = pOVar3[4].monitor;
-    if (pVVar1->max_length <= key) goto code_?;
-    pVVar2->vector[0].x = (float)pOVar3[3].klass;
-    pVVar2->vector[0].y = (float)pMVar4;
-    pVVar2->vector[0].z = (float)pOVar5;
-    pVVar2->vector[0].w = (float)pMVar6;
+    if ((Int32Enum__Enum)pVVar1->max_length <= key) {
+      FUN_?();
+      pcVar4 = (code *)swi(3);
+      pVVar1 = (Vector4__Array *)(*pcVar4)();
+      return pVVar1;
+    }
+    fVar5 = *(float *)((longlong)&pOVar3[2].klass + 4);
+    fVar6 = *(float *)&pOVar3[2].monitor;
+    fVar7 = *(float *)((longlong)&pOVar3[2].monitor + 4);
     key = key + 1;
-    pVVar2 = (Vector4__Array *)pVVar2->vector;
+    pVVar2->x = *(float *)&pOVar3[2].klass;
+    pVVar2->y = fVar5;
+    pVVar2->z = fVar6;
+    pVVar2->w = fVar7;
+    pVVar2 = pVVar2 + 1;
     if (0x44 < (int)key) {
       return pVVar1;
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  pVVar2 = (Vector4__Array *)(*pcVar7)();
-  return pVVar2;
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  pVVar1 = (Vector4__Array *)(*pcVar4)();
+  return pVVar1;
 }
 
 
@@ -176,94 +194,223 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_Initialize(MethodIn
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__Add_Tile__TextureAtlasData__MaterialData_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__Dictionary_int_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>
-                   );
-    func_?(&TypeInfo__TextureAtlasData__MaterialData);
-    func_?(&TypeInfo__TextureAtlasData);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__Add_Tile__TextureAtlasData__MaterialData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__Dictionary_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__TextureAtlasData__MaterialData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__TextureAtlasData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar1 = (MethodInfo *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>
-                           );
-  method_00 = pMVar1;
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-  Dictionary_2_System_Int32Enum_System_Object___ctor_3
-            ((Dictionary_2_System_Int32Enum_System_Object_ *)pMVar1,0x45,
-             MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__Dictionary_int_
-            );
-  if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__TextureAtlasData);
+  pDVar1 = (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)
+           FUN_?(
+                        TypeInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>
+                        );
+  pMVar2 = MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__Dictionary_int_
+           ->klass->rgctx_data->method;
+  FUN_?(pDVar1,0x45,pMVar2->klass->rgctx_data[2].rgctxDataDummy);
+  pEVar3 = mscorlib.dll::System::Collections::Generic::EqualityComparer`1[System::Int32Enum]::
+            EqualityComparer_1_System_Int32Enum__get_Default(pMVar2->klass->rgctx_data[3].method);
+  key = 0;
+  if ((pEVar3 != (EqualityComparer_1_System_Int32Enum_ *)0x0) &&
+     (bVar4 = iRam_? != 0,
+     (pDVar1->fields)._comparer = (IEqualityComparer_1_Tile_ *)0x0, bVar4)) {
+    uVar5 = (uint)((ulonglong)&(pDVar1->fields)._comparer >> 0xc);
+    uVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+    do {
+      uVar7 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+      puVar8 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+      LOCK();
+      bVar4 = uVar7 == *puVar8;
+      if (bVar4) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar4);
   }
-  TypeInfo__TextureAtlasData->static_fields->materialDataDictionary =
-       (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)pMVar1;
-  func_?(&TypeInfo__TextureAtlasData->static_fields->materialDataDictionary,pMVar1);
-  pMVar1 = (MethodInfo *)0x0;
+  if (*(int *)&(TypeInfo__TextureAtlasData->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__TextureAtlasData);
+  }
+  TypeInfo__TextureAtlasData->static_fields->materialDataDictionary = pDVar1;
+  if (iRam_? != 0) {
+    uVar5 = (uint)((ulonglong)&TypeInfo__TextureAtlasData->static_fields->materialDataDictionary >>
+                   0xc);
+    uVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+    do {
+      uVar7 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+      puVar8 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+      LOCK();
+      bVar4 = uVar7 == *puVar8;
+      if (bVar4) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar4);
+  }
   while( true ) {
-    if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__TextureAtlasData);
+    if (*(int *)&(TypeInfo__TextureAtlasData->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__TextureAtlasData);
     }
-    this = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
+    pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector4);
+      FUN_?(&TypeInfo__UnityEngine__Vector4);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    pVVar2 = TypeInfo__UnityEngine__Vector4->static_fields;
-    pOVar3 = (Object__Class *)(pVVar2->zeroVector).x;
-    pMVar4 = (MonitorData *)(pVVar2->zeroVector).y;
-    pOVar5 = (Object__Class *)(pVVar2->zeroVector).z;
-    pMVar6 = (MonitorData *)(pVVar2->zeroVector).w;
+    pOVar9 = *(Object__Class **)&TypeInfo__UnityEngine__Vector4->static_fields->zeroVector;
+    pMVar10 = *(MonitorData **)&(TypeInfo__UnityEngine__Vector4->static_fields->zeroVector).z;
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector4);
+      FUN_?(&TypeInfo__UnityEngine__Vector4);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    pVVar2 = TypeInfo__UnityEngine__Vector4->static_fields;
-    pOVar7 = (Object__Class *)(pVVar2->zeroVector).x;
-    pMVar8 = (MonitorData *)(pVVar2->zeroVector).y;
-    pOVar9 = (Object__Class *)(pVVar2->zeroVector).z;
-    pMVar10 = (MonitorData *)(pVVar2->zeroVector).w;
-    value = (Object *)func_?(TypeInfo__TextureAtlasData__MaterialData);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (value,ExceptionArgument__Enum_obj,method_00);
-    value[1].klass = (Object__Class *)(float)(int)pMVar1;
-    value[1].monitor = (MonitorData *)0x0;
-    value[2].klass = (Object__Class *)0x0;
-    value[2].monitor = (MonitorData *)0x0;
-    value[3].klass = pOVar3;
-    value[3].monitor = pMVar4;
-    value[4].klass = pOVar5;
-    value[4].monitor = pMVar6;
-    value[5].klass = pOVar7;
-    value[5].monitor = pMVar8;
-    value[6].klass = pOVar9;
-    value[6].monitor = pMVar10;
-    if (this == (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) break;
-    method_00 = pMVar1;
+    pOVar11 = *(Object__Class **)&TypeInfo__UnityEngine__Vector4->static_fields->zeroVector;
+    pMVar12 = *(MonitorData **)&(TypeInfo__UnityEngine__Vector4->static_fields->zeroVector).z;
+    pOVar13 = (Object *)FUN_?(TypeInfo__TextureAtlasData__MaterialData);
+    pOVar13[2].klass = pOVar9;
+    pOVar13[2].monitor = pMVar10;
+    *(float *)&pOVar13[1].klass = (float)(int)key;
+    *(undefined4 *)((longlong)&pOVar13[1].klass + 4) = 0;
+    *(undefined4 *)&pOVar13[1].monitor = 0;
+    *(undefined4 *)((longlong)&pOVar13[1].monitor + 4) = 0;
+    pOVar13[3].klass = pOVar11;
+    pOVar13[3].monitor = pMVar12;
+    if (pDVar1 == (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) break;
+    in_R9D = CONCAT31((int3)(in_R9D >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this,(Int32Enum__Enum)pMVar1,value,
+    Dictionary_2_System_Int32Enum_System_Object__TryInsert
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,key,pOVar13,in_R9D,
                MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__Add_Tile__TextureAtlasData__MaterialData_
-              );
-    pMVar1 = (MethodInfo *)((int)&pMVar1->methodPointer + 1);
-    if (0x44 < (int)pMVar1) {
-      if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__TextureAtlasData);
+               ->klass->rgctx_data[0x22].method);
+    key = key + 1;
+    if (0x44 < (int)key) {
+      if (*(int *)&(TypeInfo__TextureAtlasData->_1).field_0x1c == 0) {
+        FUN_?();
       }
       TextureAtlasData_InitializeEmissiveData((MethodInfo *)0x0);
-      TextureAtlasData_InitializeAnimationData((MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?(&TypeInfo__TextureAtlasData);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__TextureAtlasData->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__TextureAtlasData);
+      }
+      pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
+      if ((pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) &&
+         (pOVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                              ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x3f,
+                               MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
+                              ), pOVar13 != (Object *)0x0)) {
+        *(undefined4 *)&pOVar13[3].klass = 0x3f800000;
+        pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
+        if ((pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) &&
+           (pOVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                      Int32Enum,System::Object]::
+                      Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x43,
+                                 MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
+                                ), pOVar13 != (Object *)0x0)) {
+          *(undefined4 *)&pOVar13[3].klass = 0x3f800000;
+          pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
+          if ((pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) &&
+             (pOVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        Int32Enum,System::Object]::
+                        Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                  ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x1b,
+                                   MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
+                                  ), pOVar13 != (Object *)0x0)) {
+            *(undefined4 *)&pOVar13[3].monitor = 0x3f800000;
+            pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
+            if ((pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) &&
+               (pOVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                          Int32Enum,System::Object]::
+                          Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                    ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x36,
+                                     MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
+                                    ), pOVar13 != (Object *)0x0)) {
+              *(undefined4 *)&pOVar13[3].monitor = 0x3f800000;
+              pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
+              if ((pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) &&
+                 (pOVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                            Int32Enum,System::Object]::
+                            Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                      ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x1a,
+                                       MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
+                                      ), pOVar13 != (Object *)0x0)) {
+                *(undefined4 *)((longlong)&pOVar13[3].monitor + 4) = 0x3d4ccccd;
+                pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
+                if ((pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) &&
+                   (pOVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                              Int32Enum,System::Object]::
+                              Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                        ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,0x33
+                                         ,
+                                         MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
+                                        ), pOVar13 != (Object *)0x0)) {
+                  *(undefined4 *)((longlong)&pOVar13[3].monitor + 4) = 0x3dcccccd;
+                  pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
+                  if ((pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) &&
+                     (pOVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                Int32Enum,System::Object]::
+                                Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                          ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,
+                                           0x1c,
+                                           MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
+                                          ), pOVar13 != (Object *)0x0)) {
+                    *(undefined4 *)((longlong)&pOVar13[3].monitor + 4) = 0x3f800000;
+                    pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
+                    if ((pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) &&
+                       (pOVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                                  Int32Enum,System::Object]::
+                                  Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                            ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar1,
+                                             0x40,
+                                             MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
+                                            ), pOVar13 != (Object *)0x0)) {
+                      *(undefined4 *)((longlong)&pOVar13[3].monitor + 4) = 0x3f800000;
+                      return;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      FUN_?();
+      pcVar14 = (code *)swi(3);
+      (*pcVar14)();
       return;
     }
   }
-  func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  FUN_?();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -275,12 +422,18 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeAnimation
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__TextureAtlasData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__TextureAtlasData->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__TextureAtlasData);
   }
   pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
   if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) {
@@ -290,7 +443,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeAnimation
                         MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                        );
     if (pOVar2 != (Object *)0x0) {
-      pOVar2[5].klass = (Object__Class *)0x3f800000;
+      *(undefined4 *)&pOVar2[3].klass = 0x3f800000;
       pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
       if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) {
         pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
@@ -299,7 +452,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeAnimation
                             MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                            );
         if (pOVar2 != (Object *)0x0) {
-          pOVar2[5].klass = (Object__Class *)0x3f800000;
+          *(undefined4 *)&pOVar2[3].klass = 0x3f800000;
           pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
           if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) {
             pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
@@ -309,7 +462,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeAnimation
                                 MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                );
             if (pOVar2 != (Object *)0x0) {
-              pOVar2[6].klass = (Object__Class *)0x3f800000;
+              *(undefined4 *)&pOVar2[3].monitor = 0x3f800000;
               pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
               if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) {
                 pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
@@ -319,7 +472,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeAnimation
                                     MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                    );
                 if (pOVar2 != (Object *)0x0) {
-                  pOVar2[6].klass = (Object__Class *)0x3f800000;
+                  *(undefined4 *)&pOVar2[3].monitor = 0x3f800000;
                   pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
                   if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) {
                     pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
@@ -329,7 +482,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeAnimation
                                         MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                        );
                     if (pOVar2 != (Object *)0x0) {
-                      pOVar2[6].monitor = (MonitorData *)0x3d4ccccd;
+                      *(undefined4 *)((longlong)&pOVar2[3].monitor + 4) = 0x3d4ccccd;
                       pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
                       if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) {
                         pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
@@ -340,7 +493,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeAnimation
                                             MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                            );
                         if (pOVar2 != (Object *)0x0) {
-                          pOVar2[6].monitor = (MonitorData *)0x3dcccccd;
+                          *(undefined4 *)((longlong)&pOVar2[3].monitor + 4) = 0x3dcccccd;
                           pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary
                           ;
                           if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) {
@@ -352,7 +505,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeAnimation
                                                 MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                                );
                             if (pOVar2 != (Object *)0x0) {
-                              pOVar2[6].monitor = (MonitorData *)0x3f800000;
+                              *(undefined4 *)((longlong)&pOVar2[3].monitor + 4) = 0x3f800000;
                               pDVar1 = TypeInfo__TextureAtlasData->static_fields->
                                        materialDataDictionary;
                               if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0)
@@ -366,7 +519,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeAnimation
                                                   MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                                   );
                                 if (pOVar2 != (Object *)0x0) {
-                                  pOVar2[6].monitor = (MonitorData *)0x3f800000;
+                                  *(undefined4 *)((longlong)&pOVar2[3].monitor + 4) = 0x3f800000;
                                   return;
                                 }
                               }
@@ -384,10 +537,9 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeAnimation
       }
     }
   }
-  uVar3 = func_?(&stack0xfffffff4);
-  func_?(uVar3);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -399,12 +551,18 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__TextureAtlasData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__TextureAtlasData->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__TextureAtlasData);
   }
   pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
   if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) {
@@ -414,7 +572,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                         MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                        );
     if (pOVar2 != (Object *)0x0) {
-      pOVar2[3].klass = (Object__Class *)0x3f400000;
+      *(undefined4 *)&pOVar2[2].klass = 0x3f400000;
       pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
       if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) {
         pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
@@ -423,7 +581,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                             MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                            );
         if (pOVar2 != (Object *)0x0) {
-          pOVar2[3].klass = (Object__Class *)0x3f333333;
+          *(undefined4 *)&pOVar2[2].klass = 0x3f333333;
           pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
           if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) {
             pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
@@ -433,7 +591,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                 MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                );
             if (pOVar2 != (Object *)0x0) {
-              pOVar2[3].klass = (Object__Class *)0x3ecccccd;
+              *(undefined4 *)&pOVar2[2].klass = 0x3ecccccd;
               pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
               if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) {
                 pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
@@ -443,7 +601,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                     MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                    );
                 if (pOVar2 != (Object *)0x0) {
-                  pOVar2[3].klass = (Object__Class *)0x3f800000;
+                  *(undefined4 *)&pOVar2[2].klass = 0x3f800000;
                   pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
                   if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) {
                     pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
@@ -453,7 +611,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                         MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                        );
                     if (pOVar2 != (Object *)0x0) {
-                      pOVar2[3].klass = (Object__Class *)0x3f800000;
+                      *(undefined4 *)&pOVar2[2].klass = 0x3f800000;
                       pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
                       if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) {
                         pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
@@ -464,7 +622,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                             MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                            );
                         if (pOVar2 != (Object *)0x0) {
-                          pOVar2[3].klass = (Object__Class *)0x3f666666;
+                          *(undefined4 *)&pOVar2[2].klass = 0x3f666666;
                           pDVar1 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary
                           ;
                           if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) {
@@ -476,7 +634,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                                 MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                                );
                             if (pOVar2 != (Object *)0x0) {
-                              pOVar2[3].klass = (Object__Class *)0x3f000000;
+                              *(undefined4 *)&pOVar2[2].klass = 0x3f000000;
                               pDVar1 = TypeInfo__TextureAtlasData->static_fields->
                                        materialDataDictionary;
                               if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0)
@@ -490,7 +648,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                                   MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                                   );
                                 if (pOVar2 != (Object *)0x0) {
-                                  pOVar2[3].monitor = (MonitorData *)0x3f800000;
+                                  *(undefined4 *)((longlong)&pOVar2[2].klass + 4) = 0x3f800000;
                                   pDVar1 = TypeInfo__TextureAtlasData->static_fields->
                                            materialDataDictionary;
                                   if (pDVar1 != (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)
@@ -504,7 +662,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                                   MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                                   );
                                     if (pOVar2 != (Object *)0x0) {
-                                      pOVar2[3].monitor = (MonitorData *)0x3f400000;
+                                      *(undefined4 *)((longlong)&pOVar2[2].klass + 4) = 0x3f400000;
                                       pDVar1 = TypeInfo__TextureAtlasData->static_fields->
                                                materialDataDictionary;
                                       if (pDVar1 != (
@@ -519,7 +677,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                                   MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                                   );
                                         if (pOVar2 != (Object *)0x0) {
-                                          pOVar2[4].klass = (Object__Class *)0x3ecccccd;
+                                          *(undefined4 *)&pOVar2[2].monitor = 0x3ecccccd;
                                           pDVar1 = TypeInfo__TextureAtlasData->static_fields->
                                                    materialDataDictionary;
                                           if (pDVar1 != (
@@ -535,7 +693,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                                   MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                                   );
                                             if (pOVar2 != (Object *)0x0) {
-                                              pOVar2[4].klass = (Object__Class *)0x3e4ccccd;
+                                              *(undefined4 *)&pOVar2[2].monitor = 0x3e4ccccd;
                                               pDVar1 = TypeInfo__TextureAtlasData->static_fields->
                                                        materialDataDictionary;
                                               if (pDVar1 != (
@@ -551,7 +709,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                                   MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                                   );
                                                 if (pOVar2 != (Object *)0x0) {
-                                                  pOVar2[4].klass = (Object__Class *)0x3e4ccccd;
+                                                  *(undefined4 *)&pOVar2[2].monitor = 0x3e4ccccd;
                                                   pDVar1 = TypeInfo__TextureAtlasData->static_fields
                                                            ->materialDataDictionary;
                                                   if (pDVar1 != (
@@ -568,7 +726,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                                   MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                                   );
                                                   if (pOVar2 != (Object *)0x0) {
-                                                    pOVar2[4].klass = (Object__Class *)0x3f000000;
+                                                    *(undefined4 *)&pOVar2[2].monitor = 0x3f000000;
                                                     pDVar1 = TypeInfo__TextureAtlasData->
                                                              static_fields->materialDataDictionary;
                                                     if (pDVar1 != (
@@ -585,7 +743,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                                   MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                                   );
                                                   if (pOVar2 != (Object *)0x0) {
-                                                    pOVar2[4].klass = (Object__Class *)0x3f000000;
+                                                    *(undefined4 *)&pOVar2[2].monitor = 0x3f000000;
                                                     pDVar1 = TypeInfo__TextureAtlasData->
                                                              static_fields->materialDataDictionary;
                                                     if (pDVar1 != (
@@ -602,7 +760,7 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                                   MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                                   );
                                                   if (pOVar2 != (Object *)0x0) {
-                                                    pOVar2[4].klass = (Object__Class *)0x3e99999a;
+                                                    *(undefined4 *)&pOVar2[2].monitor = 0x3e99999a;
                                                     pDVar1 = TypeInfo__TextureAtlasData->
                                                              static_fields->materialDataDictionary;
                                                     if (pDVar1 != (
@@ -619,7 +777,9 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                                   MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                                   );
                                                   if (pOVar2 != (Object *)0x0) {
-                                                    pOVar2[4].monitor = (MonitorData *)0x3f000000;
+                                                    *(undefined4 *)
+                                                     ((longlong)&pOVar2[2].monitor + 4) = 0x3f000000
+                                                    ;
                                                     pDVar1 = TypeInfo__TextureAtlasData->
                                                              static_fields->materialDataDictionary;
                                                     if (pDVar1 != (
@@ -636,7 +796,9 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                                   MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                                   );
                                                   if (pOVar2 != (Object *)0x0) {
-                                                    pOVar2[4].monitor = (MonitorData *)0x3e4ccccd;
+                                                    *(undefined4 *)
+                                                     ((longlong)&pOVar2[2].monitor + 4) = 0x3e4ccccd
+                                                    ;
                                                     pDVar1 = TypeInfo__TextureAtlasData->
                                                              static_fields->materialDataDictionary;
                                                     if (pDVar1 != (
@@ -653,7 +815,9 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                                   MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                                   );
                                                   if (pOVar2 != (Object *)0x0) {
-                                                    pOVar2[4].monitor = (MonitorData *)0x3e4ccccd;
+                                                    *(undefined4 *)
+                                                     ((longlong)&pOVar2[2].monitor + 4) = 0x3e4ccccd
+                                                    ;
                                                     pDVar1 = TypeInfo__TextureAtlasData->
                                                              static_fields->materialDataDictionary;
                                                     if (pDVar1 != (
@@ -670,7 +834,9 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
                                                   MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
                                                   );
                                                   if (pOVar2 != (Object *)0x0) {
-                                                    pOVar2[4].monitor = (MonitorData *)0x3e99999a;
+                                                    *(undefined4 *)
+                                                     ((longlong)&pOVar2[2].monitor + 4) = 0x3e99999a
+                                                    ;
                                                     return;
                                                   }
                                                   }
@@ -710,10 +876,9 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_InitializeEmissiveD
       }
     }
   }
-  uVar3 = func_?(&stack0xfffffff4);
-  func_?(uVar3);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -725,102 +890,133 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_StreamAtlasDataToMa
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__TextureAtlasData);
-    func_?(&StringLiteral__AnimationData);
-    func_?(&StringLiteral__EmissionData);
+    FUN_?(&TypeInfo__TextureAtlasData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__AnimationData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__EmissionData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (usingSM3 == 0) {
-    if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__TextureAtlasData);
+    if (*(int *)&(TypeInfo__TextureAtlasData->_1).field_0x1c == 0) {
+      FUN_?();
     }
     TextureAtlasData_StreamAtlasUVsToMaterial(material,(MethodInfo *)0x0);
   }
-  this = *material;
-  if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__TextureAtlasData);
+  pMVar1 = *material;
+  if (*(int *)&(TypeInfo__TextureAtlasData->_1).field_0x1c == 0) {
+    FUN_?();
   }
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
-                   );
-    func_?(&TypeInfo__TextureAtlasData);
-    func_?(&TypeInfo__UnityEngine__Vector4);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__TextureAtlasData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Vector4);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVVar1 = (Vector4__Array *)func_?(TypeInfo__UnityEngine__Vector4,0x45);
-  IVar2 = 0;
-  pVVar3 = pVVar1;
+  pVVar2 = (Vector4__Array *)FUN_?(TypeInfo__UnityEngine__Vector4,0x45);
+  IVar3 = 0;
+  pVVar4 = pVVar2->vector;
   do {
-    if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__TextureAtlasData);
+    if (*(int *)&(TypeInfo__TextureAtlasData->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__TextureAtlasData);
     }
-    pDVar4 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
-    if (((pDVar4 == (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) ||
-        (pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System
-                  ::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                            ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar4,IVar2,
-                             MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
-                            ), pOVar5 == (Object *)0x0)) || (pVVar1 == (Vector4__Array *)0x0))
+    pDVar5 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
+    if (pDVar5 == (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0)
     goto code_?;
-    pMVar6 = pOVar5[3].monitor;
-    pOVar7 = pOVar5[4].klass;
-    pMVar8 = pOVar5[4].monitor;
-    if (pVVar1->max_length <= IVar2) goto code_?;
-    pVVar3->vector[0].x = (float)pOVar5[3].klass;
-    pVVar3->vector[0].y = (float)pMVar6;
-    pVVar3->vector[0].z = (float)pOVar7;
-    pVVar3->vector[0].w = (float)pMVar8;
-    IVar2 = IVar2 + 1;
-    pVVar3 = (Vector4__Array *)pVVar3->vector;
-  } while ((int)IVar2 < 0x45);
-  if (this != (Material *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVectorArray_1
-              (this,StringLiteral__EmissionData,pVVar1,(MethodInfo *)0x0);
+    pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+             Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                       ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar5,IVar3,
+                        MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
+                       );
+    if ((pOVar6 == (Object *)0x0) || (pVVar2 == (Vector4__Array *)0x0)) goto code_?;
+    if ((Int32Enum__Enum)pVVar2->max_length <= IVar3) goto code_?;
+    fVar7 = *(float *)((longlong)&pOVar6[2].klass + 4);
+    fVar8 = *(float *)&pOVar6[2].monitor;
+    fVar9 = *(float *)((longlong)&pOVar6[2].monitor + 4);
+    IVar3 = IVar3 + 1;
+    pVVar4->x = *(float *)&pOVar6[2].klass;
+    pVVar4->y = fVar7;
+    pVVar4->z = fVar8;
+    pVVar4->w = fVar9;
+    pVVar4 = pVVar4 + 1;
+  } while ((int)IVar3 < 0x45);
+  if (pMVar1 != (Material *)0x0) {
+    iVar10 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID
+                      (StringLiteral__EmissionData,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVectorArray
+              (pMVar1,iVar10,pVVar2,(int32_t)pVVar2->max_length,(MethodInfo *)0x0);
+    pMVar1 = *material;
     if (cRam_? == '\0') {
-      func_?();
-      func_?();
-      func_?();
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeInfo__TextureAtlasData);
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeInfo__UnityEngine__Vector4);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    pVVar1 = (Vector4__Array *)func_?();
-    IVar2 = 0;
-    pVVar3 = pVVar1;
-    while( true ) {
-      if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__TextureAtlasData);
+    pVVar2 = (Vector4__Array *)FUN_?(TypeInfo__UnityEngine__Vector4,0x45);
+    IVar3 = 0;
+    pVVar4 = pVVar2->vector;
+    do {
+      if (*(int *)&(TypeInfo__TextureAtlasData->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__TextureAtlasData);
       }
-      pDVar4 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
-      if (((pDVar4 == (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0) ||
-          (pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Int32Enum,System::Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                              ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar4,IVar2,
-                               MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
-                              ), pOVar5 == (Object *)0x0)) || (pVVar1 == (Vector4__Array *)0x0))
-      break;
-      pMVar6 = pOVar5[5].monitor;
-      pOVar7 = pOVar5[6].klass;
-      pMVar8 = pOVar5[6].monitor;
-      if (pVVar1->max_length <= IVar2) goto code_?;
-      pVVar3->vector[0].x = (float)pOVar5[5].klass;
-      pVVar3->vector[0].y = (float)pMVar6;
-      pVVar3->vector[0].z = (float)pOVar7;
-      pVVar3->vector[0].w = (float)pMVar8;
-      IVar2 = IVar2 + 1;
-      pVVar3 = (Vector4__Array *)pVVar3->vector;
-      if (0x44 < (int)IVar2) {
-        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVectorArray_1
-                  ((Material *)0x45,StringLiteral__AnimationData,pVVar1,(MethodInfo *)0x0);
+      pDVar5 = TypeInfo__TextureAtlasData->static_fields->materialDataDictionary;
+      if (pDVar5 == (Dictionary_2_Tile_TextureAtlasData_MaterialData_ *)0x0)
+      goto code_?;
+      pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                         ((Dictionary_2_System_Int32Enum_System_Object_ *)pDVar5,IVar3,
+                          MethodInfo__System__Collections__Generic__Dictionary<Tile,_TextureAtlasData::MaterialData>__get_Item_Tile_
+                         );
+      if ((pOVar6 == (Object *)0x0) || (pVVar2 == (Vector4__Array *)0x0)) goto code_?;
+      if ((Int32Enum__Enum)pVVar2->max_length <= IVar3) {
+code_?:
+        FUN_?();
+        pcVar11 = (code *)swi(3);
+        (*pcVar11)();
         return;
       }
+      fVar7 = *(float *)((longlong)&pOVar6[3].klass + 4);
+      fVar8 = *(float *)&pOVar6[3].monitor;
+      fVar9 = *(float *)((longlong)&pOVar6[3].monitor + 4);
+      IVar3 = IVar3 + 1;
+      pVVar4->x = *(float *)&pOVar6[3].klass;
+      pVVar4->y = fVar7;
+      pVVar4->z = fVar8;
+      pVVar4->w = fVar9;
+      pVVar4 = pVVar4 + 1;
+    } while ((int)IVar3 < 0x45);
+    if (pMVar1 != (Material *)0x0) {
+      iVar10 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID
+                        (StringLiteral__AnimationData,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVectorArray
+                (pMVar1,iVar10,pVVar2,(int32_t)pVVar2->max_length,(MethodInfo *)0x0);
+      return;
     }
   }
 code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -832,89 +1028,128 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_StreamAtlasUVsToMat
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__TextureAtlasData);
-    func_?(&StringLiteral__TileUVData);
-    func_?(&StringLiteral__AtlasColumns);
+    FUN_?(&TypeInfo__TextureAtlasData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__TileUVData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__AtlasColumns);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (*material != (Material *)0x0) {
-    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
-                       (*material,(MethodInfo *)0x0);
-    if (pTVar1 != (Texture *)0x0) {
-      iVar2 = (*(code *)(pTVar1->klass->vtable).get_width.method)
-                        (pTVar1,(pTVar1->klass->vtable).set_width.methodPtr);
+  if ((*material != (Material *)0x0) &&
+     (pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
+                         (*material,(MethodInfo *)0x0), pTVar1 != (Texture *)0x0)) {
+    iVar2 = (*(pTVar1->klass->vtable).get_width.methodPtr)(pTVar1);
+    if ((*material != (Material *)0x0) &&
+       (pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
+                           (*material,(MethodInfo *)0x0), pTVar1 != (Texture *)0x0)) {
+      iVar3 = (*(pTVar1->klass->vtable).get_height.methodPtr)
+                        (pTVar1,(pTVar1->klass->vtable).get_height.method);
+      if (*(int *)&(TypeInfo__TextureAtlasData->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__TextureAtlasData);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__TextureAtlasData->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&MethodInfo__System__ValueTuple<int,_int>__ValueTuple_int__int_);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      iVar4 = (int)(iVar2 + (iVar2 >> 0x1f & 0xfU)) >> 4;
+      VStack_5.y = (float)iVar4 / (float)iVar3;
+      VStack_5.x = (float)iVar4 / (float)iVar2;
+      VStack_5.w = (float)(int)((float)iVar4 * _UNK_?) / (float)iVar3;
+      VStack_5.z = (float)(int)((float)iVar4 * _UNK_?) / (float)iVar2;
       if (*material != (Material *)0x0) {
-        pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
-                           (*material,(MethodInfo *)0x0);
-        if (pTVar1 != (Texture *)0x0) {
-          iVar3 = (*(code *)(pTVar1->klass->vtable).get_height.method)
-                            (pTVar1,(pTVar1->klass->vtable).set_height.methodPtr);
-          if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__TextureAtlasData);
-          }
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
+                  (*material,StringLiteral__TileUVData,&VStack_5,(MethodInfo *)0x0);
+        if ((*material != (Material *)0x0) &&
+           (pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
+                               (*material,(MethodInfo *)0x0), pTVar1 != (Texture *)0x0)) {
+          iVar2 = (*(pTVar1->klass->vtable).get_width.methodPtr)
+                            (pTVar1,(pTVar1->klass->vtable).get_width.method);
           if (cRam_? == '\0') {
-            func_?(&TypeInfo__TextureAtlasData);
+            FUN_?(&TypeInfo__TextureAtlasData);
+            LOCK();
+            UNLOCK();
             cRam_? = '\x01';
           }
-          if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__TextureAtlasData);
+          if (*(int *)&(TypeInfo__TextureAtlasData->_1).field_0x1c == 0) {
+            FUN_?();
           }
           if (cRam_? == '\0') {
-            func_?(&MethodInfo__System__ValueTuple<int,_int>__ValueTuple_int__int_);
+            FUN_?(&MethodInfo__System__ValueTuple<int,_int>__ValueTuple_int__int_);
+            LOCK();
+            UNLOCK();
             cRam_? = '\x01';
           }
-          VStack_4.Item1 = 0;
-          VStack_4.Item2 = (void *)0x0;
-          item1 = (int)((iVar2 >> 0x1f & 0xfU) + iVar2) >> 4;
-          mscorlib.dll::System::ValueTuple`2[Int32,IntPtr]::ValueTuple_2_Int32_IntPtr___ctor
-                    (&VStack_4,item1,(void *)(int)((float)item1 * _UNK_?),
-                     MethodInfo__System__ValueTuple<int,_int>__ValueTuple_int__int_);
-          if (*material != (Material *)0x0) {
-            value.y = (float)VStack_4.Item1 / (float)iVar3;
-            value.x = (float)VStack_4.Item1 / (float)iVar2;
-            value.z = (float)(int)VStack_4.Item2 / (float)iVar2;
-            value.w = (float)(int)VStack_4.Item2 / (float)iVar3;
-            UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetVector
-                      (*material,StringLiteral__TileUVData,value,(MethodInfo *)0x0);
-            if (*material != (Material *)0x0) {
-              pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
-                                 (*material,(MethodInfo *)0x0);
-              if (pTVar1 != (Texture *)0x0) {
-                iVar2 = (*(code *)(pTVar1->klass->vtable).get_width.method)
-                                  (pTVar1,(pTVar1->klass->vtable).set_width.methodPtr);
-                if (cRam_? == '\0') {
-                  func_?(&TypeInfo__TextureAtlasData);
-                  cRam_? = '\x01';
-                }
-                if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?(TypeInfo__TextureAtlasData);
-                }
-                if (cRam_? == '\0') {
-                  func_?(&MethodInfo__System__ValueTuple<int,_int>__ValueTuple_int__int_);
-                  cRam_? = '\x01';
-                }
-                VStack_4.Item1 = 0;
-                VStack_4.Item2 = (void *)0x0;
-                iVar3 = (int)((iVar2 >> 0x1f & 0xfU) + iVar2) >> 4;
-                mscorlib.dll::System::ValueTuple`2[Int32,IntPtr]::ValueTuple_2_Int32_IntPtr___ctor
-                          (&VStack_4,iVar3,(void *)(int)((float)iVar3 * _UNK_?),
-                           MethodInfo__System__ValueTuple<int,_int>__ValueTuple_int__int_);
-                if (*material != (Material *)0x0) {
-                  UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetInt
-                            (*material,StringLiteral__AtlasColumns,
-                             iVar2 / (VStack_4.Item1 + (int)VStack_4.Item2 * 2),(MethodInfo *)0x0);
-                  return;
-                }
-              }
+          obj = *material;
+          iVar2 = (int)((iVar2 >> 0x1f & 0xfU) + iVar2) >> 4;
+          fVar6 = (float)iVar2 * _UNK_?;
+          if (obj != (Material *)0x0) {
+            iVar7 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID
+                              (StringLiteral__AtlasColumns,(MethodInfo *)0x0);
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Material>_UnityEngine__Material_
+                            ,iVar7,iVar2 + (int)fVar6 * 2,0);
+              LOCK();
+              UNLOCK();
+              FUN_?(&TypeInfo__UnityEngine__Material);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
             }
+            if (obj == (Material *)0x0) {
+              FUN_?();
+              pcVar8 = (code *)swi(3);
+              (*pcVar8)();
+              return;
+            }
+            pvVar9 = (obj->fields)._.m_CachedPtr;
+            if (pvVar9 == (void *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+              ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+              pcVar8 = (code *)swi(3);
+              (*pcVar8)();
+              return;
+            }
+            if (*(int *)&(TypeInfo__UnityEngine__Material->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            pcVar8 = pcRam_?;
+            if ((pcRam_? == (code *)0x0) &&
+               (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+              uVar10 = func_?(&UNK_?);
+              FUN_?(uVar10,0);
+              pcVar8 = (code *)swi(3);
+              (*pcVar8)();
+              return;
+            }
+            pcRam_? = pcVar8;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+            (*pcRam_?)(pvVar9,iVar7);
+            return;
           }
         }
       }
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -927,17 +1162,14 @@ Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_TileSizeAndMargin
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__ValueTuple<int,_int>__ValueTuple_int__int_);
+    FUN_?(&MethodInfo__System__ValueTuple<int,_int>__ValueTuple_int__int_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  VStack_1.Item1 = 0;
-  VStack_1.Item2 = (void *)0x0;
-  item1 = (int)((atlasWidth >> 0x1f & 0xfU) + atlasWidth) >> 4;
-  mscorlib.dll::System::ValueTuple`2[Int32,IntPtr]::ValueTuple_2_Int32_IntPtr___ctor
-            (&VStack_1,item1,(void *)(int)((float)item1 * _UNK_?),
-             MethodInfo__System__ValueTuple<int,_int>__ValueTuple_int__int_);
-  VVar2.Item1 = VStack_1.Item1;
-  VVar2.Item2 = (int32_t)VStack_1.Item2;
+  iVar1 = (int)(atlasWidth + (atlasWidth >> 0x1f & 0xfU)) >> 4;
+  VVar2.Item2 = (int)((float)iVar1 * _UNK_?);
+  VVar2.Item1 = iVar1;
   return VVar2;
 }
 
@@ -950,26 +1182,26 @@ Vector4 * Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData_TileUVData
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__TextureAtlasData);
+    FUN_?(&TypeInfo__TextureAtlasData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__TextureAtlasData->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__TextureAtlasData);
+  if (*(int *)&(TypeInfo__TextureAtlasData->_1).field_0x1c == 0) {
+    FUN_?();
   }
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__ValueTuple<int,_int>__ValueTuple_int__int_);
+    FUN_?(&MethodInfo__System__ValueTuple<int,_int>__ValueTuple_int__int_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  VStack_1.Item1 = 0;
-  VStack_1.Item2 = (void *)0x0;
-  item1 = (int)((atlasWidth >> 0x1f & 0xfU) + atlasWidth) >> 4;
-  mscorlib.dll::System::ValueTuple`2[Int32,IntPtr]::ValueTuple_2_Int32_IntPtr___ctor
-            (&VStack_1,item1,(void *)(int)((float)item1 * _UNK_?),
-             MethodInfo__System__ValueTuple<int,_int>__ValueTuple_int__int_);
-  __return_storage_ptr__->x = (float)VStack_1.Item1 / (float)atlasWidth;
-  __return_storage_ptr__->y = (float)VStack_1.Item1 / (float)atlasHeight;
-  __return_storage_ptr__->z = (float)(int)VStack_1.Item2 / (float)atlasWidth;
-  __return_storage_ptr__->w = (float)(int)VStack_1.Item2 / (float)atlasHeight;
+  iVar1 = (int)(atlasWidth + (atlasWidth >> 0x1f & 0xfU)) >> 4;
+  fVar2 = (float)iVar1 * _UNK_?;
+  __return_storage_ptr__->x = (float)iVar1 / (float)atlasWidth;
+  __return_storage_ptr__->y = (float)iVar1 / (float)atlasHeight;
+  __return_storage_ptr__->z = (float)(int)fVar2 / (float)atlasWidth;
+  __return_storage_ptr__->w = (float)(int)fVar2 / (float)atlasHeight;
   return __return_storage_ptr__;
 }
 
@@ -980,68 +1212,78 @@ void Assembly-CSharp.dll::TextureAtlasData::TextureAtlasData__cctor(MethodInfo *
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    pVStack_1 = (Vector2__Array__Class *)&TypeInfo__UnityEngine__Vector2;
-    func_?();
+    FUN_?(&TypeInfo__TextureAtlasData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Vector2);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVStack_1 = TypeInfo__UnityEngine__Vector2;
-  pVVar2 = (Vector2__Array *)func_?();
-  if (pVVar2 != (Vector2__Array *)0x0) {
-    if (pVVar2->max_length != 0) {
-      pVVar2->vector[0].x = 0.0;
-      pVVar2->vector[0].y = 0.0;
-      if (1 < pVVar2->max_length) {
-        pVVar2->vector[1].x = 1.0;
-        pVVar2->vector[1].y = 0.0;
-        if (2 < pVVar2->max_length) {
-          pVVar2->vector[2].x = 1.0;
-          pVVar2->vector[2].y = 1.0;
-          if (3 < pVVar2->max_length) {
-            pVVar2->vector[3].x = 0.0;
-            pVVar2->vector[3].y = 1.0;
-            TypeInfo__TextureAtlasData->static_fields->MeshUVs = pVVar2;
-            pVStack_1 = (Vector2__Array__Class *)TypeInfo__TextureAtlasData->static_fields;
-            func_?();
-            puStack_3 = (undefined *)0x4;
-            pVVar2 = (Vector2__Array *)func_?(TypeInfo__UnityEngine__Vector2);
-            if (pVVar2 == (Vector2__Array *)0x0) goto code_?;
-            if (pVVar2->max_length != 0) {
-              pVVar2->vector[0].x = 0.0;
-              pVVar2->vector[0].y = 0.0;
-              if (1 < pVVar2->max_length) {
-                pVVar2->vector[1].x = 1.0;
-                pVVar2->vector[1].y = 0.0;
-                if (2 < pVVar2->max_length) {
-                  pVVar2->vector[2].x = 0.0;
-                  pVVar2->vector[2].y = 1.0;
-                  if (3 < pVVar2->max_length) {
-                    pVVar2->vector[3].x = 1.0;
-                    pVVar2->vector[3].y = 1.0;
-                    TypeInfo__TextureAtlasData->static_fields->CubeUVs = pVVar2;
-                    pVStack_1 = (Vector2__Array__Class *)
-                                &TypeInfo__TextureAtlasData->static_fields->CubeUVs;
-                    func_?();
-                    return;
-                  }
-                }
-              }
-            }
+  pVVar1 = (Vector2__Array *)FUN_?(TypeInfo__UnityEngine__Vector2,4);
+  if (pVVar1 == (Vector2__Array *)0x0) {
+code_?:
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  if ((((int)pVVar1->max_length != 0) &&
+      (pVVar1->vector[0].x = 0.0, pVVar1->vector[0].y = 0.0, 1 < (uint)pVVar1->max_length)) &&
+     (pVVar1->vector[1].x = 1.0, pVVar1->vector[1].y = 0.0, 2 < (uint)pVVar1->max_length)) {
+    pVVar1->vector[2].x = 1.0;
+    pVVar1->vector[2].y = 1.0;
+    if (3 < (uint)pVVar1->max_length) {
+      pVVar1->vector[3].x = 0.0;
+      pVVar1->vector[3].y = 1.0;
+      TypeInfo__TextureAtlasData->static_fields->MeshUVs = pVVar1;
+      if (iRam_? != 0) {
+        uVar3 = (uint)((ulonglong)TypeInfo__TextureAtlasData->static_fields >> 0xc);
+        uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+        do {
+          uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+          puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+          LOCK();
+          bVar7 = uVar5 == *puVar6;
+          if (bVar7) {
+            *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
           }
+          UNLOCK();
+        } while (!bVar7);
+      }
+      pVVar1 = (Vector2__Array *)FUN_?(TypeInfo__UnityEngine__Vector2,4);
+      if (pVVar1 == (Vector2__Array *)0x0) goto code_?;
+      if ((((int)pVVar1->max_length != 0) &&
+          (pVVar1->vector[0].x = 0.0, pVVar1->vector[0].y = 0.0, 1 < (uint)pVVar1->max_length)) &&
+         (pVVar1->vector[1].x = 1.0, pVVar1->vector[1].y = 0.0, 2 < (uint)pVVar1->max_length)) {
+        pVVar1->vector[2].x = 0.0;
+        pVVar1->vector[2].y = 1.0;
+        if (3 < (uint)pVVar1->max_length) {
+          pVVar1->vector[3].x = 1.0;
+          pVVar1->vector[3].y = 1.0;
+          TypeInfo__TextureAtlasData->static_fields->CubeUVs = pVVar1;
+          if (iRam_? != 0) {
+            uVar3 = (uint)((ulonglong)&TypeInfo__TextureAtlasData->static_fields->CubeUVs >> 0xc);
+            uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+            do {
+              uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+              puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+              LOCK();
+              bVar7 = uVar5 == *puVar6;
+              if (bVar7) {
+                *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar7);
+          }
+          return;
         }
       }
     }
-    pVStack_1 = (Vector2__Array__Class *)func_?();
-    func_?();
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
-    return;
   }
-code_?:
-  uVar5 = func_?(&puStack_3);
-  func_?(uVar5);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

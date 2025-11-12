@@ -13,8 +13,8 @@ namespace Sentry
 	public class Dsn
 	{
 		// Fields
-		private Uri _uri;
-		public Uri callUri;
+		private System.Uri _uri;
+		public System.Uri callUri;
 		public string secretKey;
 		public string publicKey;
 	

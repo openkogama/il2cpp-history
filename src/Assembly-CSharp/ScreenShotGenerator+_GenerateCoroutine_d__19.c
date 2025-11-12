@@ -7,12 +7,24 @@ bool Assembly-CSharp.dll::ScreenShotGenerator+<GenerateCoroutine>d__19::
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Nullable<UnityEngine::Bounds>__get_HasValue__);
-    func_?(&MethodInfo__System__Nullable<UnityEngine::Bounds>__get_Value__);
-    func_?(&TypeInfo__ScreenShotGenerator);
-    func_?(&TypeInfo__SharedCubeFunctions);
-    func_?(&TypeInfo__UnityEngine__WaitForEndOfFrame);
-    func_?(&StringLiteral_Preview);
+    FUN_?(&MethodInfo__System__Nullable<UnityEngine::Bounds>__get_HasValue__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Nullable<UnityEngine::Bounds>__get_Value__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__ScreenShotGenerator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__SharedCubeFunctions);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__WaitForEndOfFrame);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Preview);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   iVar1 = (this->fields).__1__state;
@@ -31,89 +43,86 @@ bool Assembly-CSharp.dll::ScreenShotGenerator+<GenerateCoroutine>d__19::
   if (pGVar2 != (GameObject *)0x0) {
     pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                         (pGVar2,(MethodInfo *)0x0);
-    if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__SharedCubeFunctions);
+    if (*(int *)&(TypeInfo__SharedCubeFunctions->_1).field_0x1c == 0) {
+      FUN_?();
     }
     pNVar4 = SharedCubeFunctions::SharedCubeFunctions_GetAxisAlignedBoundsRecursively
-                        ((Nullable_1_UnityEngine_Bounds_ *)&stack0xffffffd4,pTVar3,
-                         (MethodInfo *)0x0);
-    if (pNVar4->hasValue == 0) {
+                        (&NStack_5,pTVar3,(MethodInfo *)0x0);
+    fVar6 = (pNVar4->value).m_Center.x;
+    fVar7 = (pNVar4->value).m_Center.y;
+    fVar8 = (pNVar4->value).m_Center.z;
+    fVar9 = (pNVar4->value).m_Extents.x;
+    fVar10 = (pNVar4->value).m_Extents.y;
+    fVar11 = (pNVar4->value).m_Extents.z;
+    if ((char)*(undefined4 *)pNVar4 == '\0') {
       if (cRam_? == '\0') {
-        func_?();
+        FUN_?(&TypeInfo__UnityEngine__Vector3);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
-      uVar6 = (pVVar5->zeroVector).x;
-      uVar7 = (pVVar5->zeroVector).y;
-      fVar8 = (pVVar5->zeroVector).z;
+      pVVar12 = TypeInfo__UnityEngine__Vector3->static_fields;
+      fVar6 = (pVVar12->zeroVector).x;
+      fVar7 = (pVVar12->zeroVector).y;
+      fVar8 = (pVVar12->zeroVector).z;
       if (cRam_? == '\0') {
-        func_?();
+        FUN_?(&TypeInfo__UnityEngine__Vector3);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
-      uVar9 = (pVVar5->oneVector).x;
-      uVar10 = (pVVar5->oneVector).y;
-      fVar11 = (float)uVar9 * _UNK_?;
-      fVar12 = (float)uVar10 * _UNK_?;
-      fVar13 = (pVVar5->oneVector).z * _UNK_?;
+      pVVar12 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uVar13 = (pVVar12->oneVector).x;
+      fVar9 = (float)uVar13 * _UNK_?;
+      fVar10 = (pVVar12->oneVector).y * _UNK_?;
+      fVar11 = (pVVar12->oneVector).z * _UNK_?;
       if (this_00 == (ScreenShotGenerator *)0x0) goto code_?;
-      (this_00->fields).targetBounds.m_Center.x = (float)uVar6;
-      (this_00->fields).targetBounds.m_Center.y = (float)uVar7;
-      (this_00->fields).targetBounds.m_Center.z = fVar8;
-      (this_00->fields).targetBounds.m_Extents.x = fVar11;
-      (this_00->fields).targetBounds.m_Extents.y = fVar12;
-      (this_00->fields).targetBounds.m_Extents.z = fVar13;
     }
-    else {
-      pBVar14 = mscorlib.dll::System::Nullable`1[UnityEngine::Bounds]::
-                Nullable_1_UnityEngine_Bounds__get_Value
-                          ((Bounds *)&stack0xffffffd8,
-                           (Nullable_1_UnityEngine_Bounds_ *)&stack0xffffffb8,
-                           MethodInfo__System__Nullable<UnityEngine::Bounds>__get_Value__);
-      fVar11 = (pBVar14->m_Extents).y;
-      fVar15 = (pBVar14->m_Extents).z;
-      fVar8 = (pBVar14->m_Center).y;
-      fVar13 = (pBVar14->m_Center).z;
-      fVar12 = (pBVar14->m_Extents).x;
-      if (this_00 == (ScreenShotGenerator *)0x0) goto code_?;
-      (this_00->fields).targetBounds.m_Center.x = (pBVar14->m_Center).x;
-      (this_00->fields).targetBounds.m_Center.y = fVar8;
-      (this_00->fields).targetBounds.m_Center.z = fVar13;
-      (this_00->fields).targetBounds.m_Extents.x = fVar12;
-      (this_00->fields).targetBounds.m_Extents.y = fVar11;
-      (this_00->fields).targetBounds.m_Extents.z = fVar15;
-    }
+    else if (this_00 == (ScreenShotGenerator *)0x0) goto code_?;
+    (this_00->fields).targetBounds.m_Center.x = fVar6;
+    (this_00->fields).targetBounds.m_Center.y = fVar7;
+    (this_00->fields).targetBounds.m_Center.z = fVar8;
+    (this_00->fields).targetBounds.m_Extents.x = fVar9;
+    (this_00->fields).targetBounds.m_Extents.y = fVar10;
+    (this_00->fields).targetBounds.m_Extents.z = fVar11;
     ScreenShotGenerator::ScreenShotGenerator_InitCamera(this_00,0x200,0x200,(MethodInfo *)0x0);
     pGVar2 = (this_00->fields).targetObject;
     if (pGVar2 != (GameObject *)0x0) {
       pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                           (pGVar2,(MethodInfo *)0x0);
-      if ((TypeInfo__ScreenShotGenerator->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+      if (*(int *)&(TypeInfo__ScreenShotGenerator->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__ScreenShotGenerator);
       }
-      layersToChange.m_Mask =
-           (int32_t)UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility
-                    ::UnsafeUtility_AsRef_1
-                              ((Void *)TypeInfo__ScreenShotGenerator->static_fields->renderLayers,
-                               (MethodInfo *)0x0);
+      layersToChange.m_Mask = TypeInfo__ScreenShotGenerator->static_fields->renderLayers;
       layer = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                         (StringLiteral_Preview,(MethodInfo *)0x0);
       LayerUtil::LayerUtil_SetLayerRecursively_2(pTVar3,layersToChange,layer,(MethodInfo *)0x0);
-      this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
-      UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-      UxmlObjectListAttributeDescription`1[System::Object]::
-      UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
-      (this->fields).__2__current = (Object *)this_01;
-      func_?();
+      pOVar14 = (Object *)FUN_?(TypeInfo__UnityEngine__WaitForEndOfFrame);
+      bVar15 = iRam_? != 0;
+      (this->fields).__2__current = pOVar14;
+      if (bVar15) {
+        uVar16 = (uint)((ulonglong)&(this->fields).__2__current >> 0xc);
+        uVar17 = (ulonglong)((uVar16 & 0x1fffff) >> 6);
+        do {
+          uVar18 = *(ulonglong *)(uVar17 * 8 + 0xADDR);
+          puVar19 = (ulonglong *)(uVar17 * 8 + 0xADDR);
+          LOCK();
+          bVar15 = uVar18 == *puVar19;
+          if (bVar15) {
+            *puVar19 = uVar18 | 1L << (uVar16 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar15);
+      }
       (this->fields).__1__state = 1;
       return 1;
     }
   }
 code_?:
-  func_?();
-  pcVar16 = (code *)swi(3);
-  bVar17 = (*pcVar16)();
-  return bVar17;
+  FUN_?();
+  pcVar20 = (code *)swi(3);
+  bVar21 = (*pcVar20)();
+  return bVar21;
 }
 
 
@@ -128,10 +137,10 @@ void Assembly-CSharp.dll::ScreenShotGenerator+<GenerateCoroutine>d__19::
   this_00 = (NotSupportedException *)func_?(uVar1);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
-  func_?(&
-                  MethodInfo__ScreenShotGenerator___GenerateCoroutine_d__19__System_Collections_IEnumerator_Reset__
-                 );
-  func_?(this_00);
+  uVar1 = func_?(&
+                              MethodInfo__ScreenShotGenerator___GenerateCoroutine_d__19__System_Collections_IEnumerator_Reset__
+                             );
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

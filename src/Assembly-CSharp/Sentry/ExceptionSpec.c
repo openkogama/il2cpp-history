@@ -7,23 +7,76 @@ void Assembly-CSharp.dll::Sentry::ExceptionSpec::ExceptionSpec__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Sentry__StackTraceContainer);
+    FUN_?(&TypeInfo__Sentry__StackTraceContainer);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  iVar1 = iRam_?;
   (this->fields).type = type;
-  func_?(&this->fields,type);
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).value = value;
-  func_?(&(this->fields).value,value);
-  method_00 = TypeInfo__Sentry__StackTraceContainer;
-  value_00 = (StackTraceContainer *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value_00,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  (value_00->fields).frames = stacktrace;
-  func_?(&value_00->fields,stacktrace);
-  (this->fields).stacktrace = value_00;
-  func_?(&(this->fields).stacktrace,value_00);
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).value >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
+  pSVar7 = (StackTraceContainer *)FUN_?(TypeInfo__Sentry__StackTraceContainer);
+  iVar1 = iRam_?;
+  (pSVar7->fields).frames = stacktrace;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&pSVar7->fields >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).stacktrace = pSVar7;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).stacktrace >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
   return;
 }
 

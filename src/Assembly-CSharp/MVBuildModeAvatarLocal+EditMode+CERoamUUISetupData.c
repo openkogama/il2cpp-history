@@ -3,18 +3,21 @@
 
 void Assembly-CSharp.dll::MVBuildModeAvatarLocal+EditMode+CERoamUUISetupData::
      MVBuildModeAvatarLocal_EditMode_CERoamUUISetupData__ctor
-               (MVBuildModeAvatarLocal_EditMode_CERoamUUISetupData *this,Vector3 centerPos,
-               Vector3 lookAtPosition,MethodInfo *method)
+               (MVBuildModeAvatarLocal_EditMode_CERoamUUISetupData *this,Vector3 *centerPos,
+               Vector3 *lookAtPosition,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  (this->fields).centerPos.x = centerPos.x;
-  (this->fields).centerPos.y = centerPos.y;
-  (this->fields).centerPos.z = centerPos.z;
-  (this->fields).lookAtPosition.x = lookAtPosition.x;
-  (this->fields).lookAtPosition.y = lookAtPosition.y;
-  (this->fields).lookAtPosition.z = lookAtPosition.z;
+  fVar1 = centerPos->y;
+  fVar2 = centerPos->z;
+  (this->fields).centerPos.x = centerPos->x;
+  (this->fields).centerPos.y = fVar1;
+  fVar1 = lookAtPosition->x;
+  fVar3 = lookAtPosition->y;
+  (this->fields).centerPos.z = fVar2;
+  fVar2 = lookAtPosition->z;
+  (this->fields).lookAtPosition.x = fVar1;
+  (this->fields).lookAtPosition.y = fVar3;
+  (this->fields).lookAtPosition.z = fVar2;
   return;
 }
 

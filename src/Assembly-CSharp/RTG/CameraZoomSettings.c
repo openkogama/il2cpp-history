@@ -28,10 +28,10 @@ float Assembly-CSharp.dll::RTG::CameraZoomSettings::CameraZoomSettings_GetZoomSe
       return (this->fields)._perspSmoothZoomSensitivity;
     }
   }
-  func_?();
+  FUN_?();
   pcVar2 = (code *)swi(3);
-  fVar3 = (float10)(*pcVar2)();
-  return (float)fVar3;
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -42,18 +42,42 @@ float Assembly-CSharp.dll::RTG::CameraZoomSettings::CameraZoomSettings_GetZoomSm
 
 {
   if (camera == (Camera *)0x0) {
-    uVar1 = func_?(&puStack_2);
-    func_?(uVar1);
-    pcVar3 = (code *)swi(3);
-    fVar4 = (float10)(*pcVar3)();
-    return (float)fVar4;
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    fVar2 = (float)(*pcVar1)();
+    return fVar2;
   }
-  bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_orthographic
-                    (camera,(MethodInfo *)0x0);
-  if (bVar5 != 0) {
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar3 = (camera->fields)._._._.m_CachedPtr;
+  if (pvVar3 != (void *)0x0) {
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar1 = (code *)swi(3);
+      fVar2 = (float)(*pcVar1)();
+      return fVar2;
+    }
+    pcRam_? = pcVar1;
+    cVar5 = (*pcRam_?)(pvVar3);
+    if (cVar5 == '\0') {
+      return (this->fields)._perspZoomSmoothValue;
+    }
     return (this->fields)._orthoZoomSmoothValue;
   }
-  return (this->fields)._perspZoomSmoothValue;
+  UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+  ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+  pcVar1 = (code *)swi(3);
+  fVar2 = (float)(*pcVar1)();
+  return fVar2;
 }
 
 
@@ -63,7 +87,6 @@ void Assembly-CSharp.dll::RTG::CameraZoomSettings::CameraZoomSettings__ctor
                (CameraZoomSettings *this,MethodInfo *method)
 
 {
-  bVar1 = cRam_? == '\0';
   (this->fields)._orthoStandardZoomSensitivity = 10.0;
   (this->fields)._perspStandardZoomSensitivity = 10.0;
   (this->fields)._orthoSmoothZoomSensitivity = 5.0;
@@ -71,28 +94,50 @@ void Assembly-CSharp.dll::RTG::CameraZoomSettings::CameraZoomSettings__ctor
   (this->fields)._orthoZoomSmoothValue = 5.0;
   (this->fields)._perspZoomSmoothValue = 5.0;
   (this->fields)._isZoomEnabled = 1;
-  if (bVar1) {
-    func_?(&StringLiteral_Settings);
+  if (cRam_? == '\0') {
+    FUN_?(&StringLiteral_Settings,0);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  bVar1 = iRam_? != 0;
   (this->fields)._._canBeDisplayed = 1;
   (this->fields)._._isExpanded = 1;
   (this->fields)._._foldoutLabel = StringLiteral_Settings;
-  method_00 = (MethodInfo *)&(this->fields)._._foldoutLabel;
-  func_?(method_00,StringLiteral_Settings);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._._foldoutLabel >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 
 
-/* Void set_InvertZoomAxis(Boolean) */
+/* Boolean get_IsZoomEnabled() */
 
-void Assembly-CSharp.dll::RTG::CameraZoomSettings::CameraZoomSettings_set_InvertZoomAxis
+bool Assembly-CSharp.dll::RTG::CameraZoomSettings::CameraZoomSettings_get_IsZoomEnabled
+               (CameraZoomSettings *this,MethodInfo *method)
+
+{
+  return (this->fields)._isZoomEnabled;
+}
+
+
+/* Void set_IsZoomEnabled(Boolean) */
+
+void Assembly-CSharp.dll::RTG::CameraZoomSettings::CameraZoomSettings_set_IsZoomEnabled
                (CameraZoomSettings *this,bool value,MethodInfo *method)
 
 {
-  (this->fields)._invertZoomAxis = value;
+  (this->fields)._isZoomEnabled = value;
   return;
 }
 

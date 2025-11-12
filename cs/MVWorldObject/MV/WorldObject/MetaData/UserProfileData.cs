@@ -27,8 +27,8 @@ namespace MV.WorldObject.MetaData
 		public UserProfileData();
 	
 		// Methods
-		public static UserProfileData CreateRegisteredProfileData(bool admin, string username, int gold, DateTime? age);
-		private static bool CheckUnderAge(bool admin, DateTime? age);
+		public static UserProfileData CreateRegisteredProfileData(bool admin, string username, int gold, System.DateTime? age);
+		private static bool CheckUnderAge(bool admin, System.DateTime? age);
 		public static UserProfileData GetTouristProfileData(string userName);
 	}
 }

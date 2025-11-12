@@ -6,110 +6,242 @@ void Assembly-CSharp.dll::MVCameraSettings::MVCameraSettings_Destroy
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action);
-    func_?(&TypeInfo__ICameraSettings);
-    func_?(&MethodInfo__MVCameraSettings__OnCameraSettingAdded__);
-    func_?(&TypeInfo__MainCameraManager);
+    FUN_?(&TypeInfo__System__Action);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__ICameraSettings);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__MVCameraSettings__OnCameraSettingAdded__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MainCameraManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__PostProcessingManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields).isPreview == 0) {
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar1 != (MVNetworkGame *)0x0) {
-      MVar2 = (pMVar1->fields)._GameType_k__BackingField;
-      if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MainCameraManager);
-      }
-      bVar3 = MainCameraManager::MainCameraManager_HasSetting(MVar2,(MethodInfo *)0x0);
-      if (bVar3 == 0) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if ((pMVar1 == (MVGameControllerBase *)0x0) ||
+       (pMVar2 = (pMVar1->fields).game, pMVar2 == (MVNetworkGame *)0x0))
+    goto code_?;
+    MVar3 = (pMVar2->fields)._GameType_k__BackingField;
+    if (*(int *)&(TypeInfo__MainCameraManager->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    bVar4 = MainCameraManager::MainCameraManager_HasSetting(MVar3,(MethodInfo *)0x0);
+    if (bVar4 != 0) {
+      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+      if (pMVar2 == (MVNetworkGame *)0x0) {
 code_?:
-        if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__MainCameraManager);
-        }
-        pAVar4 = TypeInfo__MainCameraManager->static_fields->OnCameraCubeAddedRemoved;
-        if (pAVar4 != (Action_1_Boolean_ *)0x0) {
-          (*(pAVar4->fields)._._.invoke_impl)
-                    ((pAVar4->fields)._._.method_code,0,(pAVar4->fields)._._.method);
-        }
-        if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__MainCameraManager);
-        }
-        MainCameraManager::MainCameraManager_set_GameHasCameraEffects(0,(MethodInfo *)0x0);
-        goto code_?;
+        FUN_?();
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
       }
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (pMVar1 != (MVNetworkGame *)0x0) {
-        MVar2 = (pMVar1->fields)._GameType_k__BackingField;
-        if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__MainCameraManager);
-        }
-        pIVar5 = MainCameraManager::MainCameraManager_GetSettings(MVar2,(MethodInfo *)0x0);
-        if (pIVar5 != (ICameraSettings *)0x0) {
-          pIVar6 = pIVar5->klass;
-          uVar7 = 0;
-          uVar8._0_1_ = (pIVar6->_1).rank;
-          uVar8._1_1_ = (pIVar6->_1).minimumAlignment;
-          if (uVar8 != 0) {
-            do {
-              if (pIVar6->interfaceOffsets[uVar7].interfaceType ==
-                  (Il2CppClass *)TypeInfo__ICameraSettings) {
-                ppMVar9 = &(&(pIVar5->klass->vtable).SetDefaultSettings)
-                           [pIVar5->klass->interfaceOffsets[uVar7].offset].method;
-                goto code_?;
-              }
-              uVar7 = uVar7 + 1;
-            } while (uVar7 < uVar8);
-          }
-          ppMVar9 = (MethodInfo **)func_?(pIVar5,TypeInfo__ICameraSettings,1);
-code_?:
-          (*(code *)*ppMVar9)(pIVar5,ppMVar9[1]);
-          goto code_?;
-        }
+      MVar3 = (pMVar2->fields)._GameType_k__BackingField;
+      if (*(int *)&(TypeInfo__MainCameraManager->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      pIVar6 = MainCameraManager::MainCameraManager_GetSettings(MVar3,(MethodInfo *)0x0);
+      if (pIVar6 == (ICameraSettings *)0x0) goto code_?;
+      FUN_?(1);
+    }
+    if (*(int *)&(TypeInfo__PostProcessingManager->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    pAVar7 = TypeInfo__PostProcessingManager->static_fields->OnPostProcessCameraCubeAddedRemoved;
+    if (pAVar7 != (Action_1_Boolean_ *)0x0) {
+      (*(pAVar7->fields)._._.invoke_impl)((pAVar7->fields)._._.method_code);
+    }
+    if (*(int *)&(TypeInfo__PostProcessingManager->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    PostProcessingManager::PostProcessingManager_set_HasGamePostProcessEffects(0,(MethodInfo *)0x0);
+  }
+  if ((this->fields).needToUnsubscribeToSettingsCallback != 0) {
+    if (*(int *)&(TypeInfo__MainCameraManager->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__MainCameraManager);
+    }
+    pAVar8 = TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded;
+    this_01 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_01,(Object *)this,MethodInfo__MVCameraSettings__OnCameraSettingAdded__,
+               (MethodInfo *)0x0);
+    pAVar8 = (Action *)
+              mscorlib.dll::System::Delegate::Delegate_Remove
+                        ((Delegate *)pAVar8,(Delegate *)this_01,(MethodInfo *)0x0);
+    if (pAVar8 == (Action *)0x0) {
+      TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded = (Action *)0x0;
+    }
+    else {
+      pAVar9 = (Action *)0x0;
+      if (pAVar8->klass == TypeInfo__System__Action) {
+        pAVar9 = pAVar8;
+      }
+      if (pAVar9 == (Action *)0x0) {
+        FUN_?(pAVar8,TypeInfo__System__Action);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded = pAVar9;
+      pAVar9 = (Action *)0x0;
+      if (pAVar8->klass == TypeInfo__System__Action) {
+        pAVar9 = pAVar8;
+      }
+      if (pAVar9 == (Action *)0x0) {
+        FUN_?(pAVar8,TypeInfo__System__Action);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
       }
     }
-code_?:
-    func_?();
-code_?:
-    func_?();
-    pcVar10 = (code *)swi(3);
-    (*pcVar10)();
+    if (iRam_? != 0) {
+      uVar10 = (uint)((ulonglong)&TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded
+                     >> 0xc);
+      puVar11 = (ulonglong *)((ulonglong)((uVar10 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar12 = *puVar11;
+        LOCK();
+        uVar13 = *puVar11;
+        if (uVar12 == uVar13) {
+          *puVar11 = uVar12 | 1L << (uVar10 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar12 != uVar13);
+    }
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UpdateController);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  UpdateController::UpdateController_RemoveUpdateObject
+            ((IUpdatecontrollerSubscriberUpdate *)this,(MethodInfo *)0x0);
+  if ((this->fields)._.cullingSubscriberBase != (CullingSubscriberBase *)0x0) {
+    CullingSubscriberBase::CullingSubscriberBase_Destroy
+              ((this->fields)._.cullingSubscriberBase,(MethodInfo *)0x0);
+    bVar14 = iRam_? != 0;
+    (this->fields)._.cullingSubscriberBase = (CullingSubscriberBase *)0x0;
+    if (bVar14) {
+      uVar10 = (uint)((ulonglong)&(this->fields)._.cullingSubscriberBase >> 0xc);
+      puVar11 = (ulonglong *)((ulonglong)((uVar10 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar12 = *puVar11;
+        LOCK();
+        uVar13 = *puVar11;
+        if (uVar12 == uVar13) {
+          *puVar11 = uVar12 | 1L << (uVar10 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar12 != uVar13);
+    }
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object,0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar15 = (this->fields)._._.gameObject;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pGVar15 != (GameObject *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((pGVar15->fields)._.m_CachedPtr != (void *)0x0) {
+      pGVar15 = (this->fields)._._.gameObject;
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy
+                ((Object_1 *)pGVar15,0.0,(MethodInfo *)0x0);
+    }
+  }
+  if ((this->fields)._._.initializedFromInventory != 0) {
     return;
   }
-code_?:
-  if ((this->fields).needToUnsubscribeToSettingsCallback == 0) goto code_?;
-  if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MainCameraManager);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  pAVar11 = TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded;
-  this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-  NavMesh_OnNavMeshPreUpdate__ctor
-            (this_00,(Object *)this,MethodInfo__MVCameraSettings__OnCameraSettingAdded__,
-             (MethodInfo *)0x0);
-  pAVar11 = (Action *)
-            mscorlib.dll::System::Delegate::Delegate_Remove
-                      ((Delegate *)pAVar11,(Delegate *)this_00,(MethodInfo *)0x0);
-  if (pAVar11 == (Action *)0x0) {
-    TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded = (Action *)0x0;
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar1 != (MVGameControllerBase *)0x0) &&
+     (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) {
+    pRVar16 = (pMVar2->fields).runtimeVariableNetworkManager;
+    item = (this->fields)._._._.id;
+    if (pRVar16 != (RuntimeVariableNetworkManager *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      this_00 = (HashSet_1_System_Int32Enum_ *)(pRVar16->fields).runtimeDataVariables;
+      if (this_00 != (HashSet_1_System_Int32Enum_ *)0x0) {
+        bVar4 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+                 HashSet_1_System_Int32Enum__Contains
+                           (this_00,item,
+                            MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
+        if (bVar4 != 0) {
+          pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar2 == (MVNetworkGame *)0x0) ||
+             (pRVar16 = (pMVar2->fields).runtimeVariableNetworkManager,
+             pRVar16 == (RuntimeVariableNetworkManager *)0x0)) goto DAT_?;
+          RuntimeVariableNetworkManager::RuntimeVariableNetworkManager_RemoveRuntimeDataVariables
+                    (pRVar16,(this->fields)._._._.id,(MethodInfo *)0x0);
+        }
+        return;
+      }
+    }
   }
-  else {
-    pAVar12 = (Action *)0x0;
-    if (pAVar11->klass == TypeInfo__System__Action) {
-      pAVar12 = pAVar11;
-    }
-    if (pAVar12 == (Action *)0x0) {
-      func_?();
-      goto code_?;
-    }
-    TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded = pAVar12;
-    pAVar12 = (Action *)0x0;
-    if (pAVar11->klass == TypeInfo__System__Action) {
-      pAVar12 = pAVar11;
-    }
-    if (pAVar12 == (Action *)0x0) goto code_?;
-  }
-  func_?();
-code_?:
-  MVLogicObject::MVLogicObject_Destroy((MVLogicObject *)this,(MethodInfo *)0x0);
+DAT_?:
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -121,19 +253,24 @@ void Assembly-CSharp.dll::MVCameraSettings::MVCameraSettings_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MainCameraManager);
+    FUN_?(&TypeInfo__PostProcessingManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
-  (*(code *)(this->klass->vtable).OnDataUpdate.method)
-            (this,(this->klass->vtable).OnRunTimeDataUpdate.methodPtr);
+  (*(this->klass->vtable).OnDataUpdate.methodPtr)(this,(this->klass->vtable).OnDataUpdate.method);
   if ((this->fields).isPreview == 0) {
-    if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__PostProcessingManager->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__PostProcessingManager);
     }
-    pAVar1 = TypeInfo__MainCameraManager->static_fields->OnCameraCubeAddedRemoved;
+    pAVar1 = TypeInfo__PostProcessingManager->static_fields->OnPostProcessCameraCubeAddedRemoved;
     if (pAVar1 != (Action_1_Boolean_ *)0x0) {
-      (*(pAVar1->fields)._._.invoke_impl)((pAVar1->fields)._._.method_code,1);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*(pAVar1->fields)._._.invoke_impl)
+                ((pAVar1->fields)._._.method_code,1,(pAVar1->fields)._._.method);
+      return;
     }
   }
   return;
@@ -147,36 +284,53 @@ void Assembly-CSharp.dll::MVCameraSettings::MVCameraSettings_OnCameraSettingAdde
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__ICameraSettings);
-    func_?(&TypeInfo__MainCameraManager);
+    FUN_?(&TypeInfo__ICameraSettings);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MainCameraManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar1 != (MVNetworkGame *)0x0) {
-    MVar2 = (pMVar1->fields)._GameType_k__BackingField;
-    if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MainCameraManager);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar1 != (MVGameControllerBase *)0x0) &&
+     (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) {
+    MVar3 = (pMVar2->fields)._GameType_k__BackingField;
+    if (*(int *)&(TypeInfo__MainCameraManager->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    bVar3 = MainCameraManager::MainCameraManager_HasSetting(MVar2,(MethodInfo *)0x0);
-    if (bVar3 == 0) {
+    bVar4 = MainCameraManager::MainCameraManager_HasSetting(MVar3,(MethodInfo *)0x0);
+    if (bVar4 == 0) {
       return;
     }
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar1 != (MVNetworkGame *)0x0) {
-      MVar2 = (pMVar1->fields)._GameType_k__BackingField;
-      if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if ((pMVar1 != (MVGameControllerBase *)0x0) &&
+       (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) {
+      MVar3 = (pMVar2->fields)._GameType_k__BackingField;
+      if (*(int *)&(TypeInfo__MainCameraManager->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      pIVar4 = MainCameraManager::MainCameraManager_GetSettings(MVar2,(MethodInfo *)0x0);
-      if (pIVar4 != (ICameraSettings *)0x0) {
-        uStack5 = uRam_?;
-        func_?();
-        uRam_? = 0;
+      pIVar5 = MainCameraManager::MainCameraManager_GetSettings(MVar3,(MethodInfo *)0x0);
+      if (pIVar5 != (ICameraSettings *)0x0) {
+        FUN_?(0,TypeInfo__ICameraSettings,pIVar5,(this->fields)._._._.data);
+        (this->fields).needToUnsubscribeToSettingsCallback = 0;
         return;
       }
     }
   }
-  func_?();
+  FUN_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
   return;
@@ -190,84 +344,134 @@ void Assembly-CSharp.dll::MVCameraSettings::MVCameraSettings_OnDataUpdate
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action);
-    func_?(&TypeInfo__ICameraSettings);
-    func_?(&MethodInfo__MVCameraSettings__OnCameraSettingAdded__);
-    func_?(&TypeInfo__MainCameraManager);
+    FUN_?(&TypeInfo__System__Action);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__ICameraSettings);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__MVCameraSettings__OnCameraSettingAdded__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MainCameraManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   MVCameraSettings_UpdateStaticValues(this,(MethodInfo *)0x0);
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar1 == (MVNetworkGame *)0x0) {
-code_?:
-    func_?();
-    pAStack2 = extraout_ECX;
-    pAStack3 = extraout_EDX;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  else {
-    MVar4 = (pMVar1->fields)._GameType_k__BackingField;
-    if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MainCameraManager);
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar1 != (MVGameControllerBase *)0x0) &&
+     (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) {
+    MVar3 = (pMVar2->fields)._GameType_k__BackingField;
+    if (*(int *)&(TypeInfo__MainCameraManager->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    bVar5 = MainCameraManager::MainCameraManager_HasSetting(MVar4,(MethodInfo *)0x0);
-    if (bVar5 != 0) {
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (pMVar1 != (MVNetworkGame *)0x0) {
-        MVar4 = (pMVar1->fields)._GameType_k__BackingField;
-        if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+    bVar4 = MainCameraManager::MainCameraManager_HasSetting(MVar3,(MethodInfo *)0x0);
+    if (bVar4 == 0) {
+      if (*(int *)&(TypeInfo__MainCameraManager->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__MainCameraManager);
+      }
+      pAVar5 = TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded;
+      this_00 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+      NavMesh_OnNavMeshPreUpdate__ctor
+                (this_00,(Object *)this,MethodInfo__MVCameraSettings__OnCameraSettingAdded__,
+                 (MethodInfo *)0x0);
+      pAVar5 = (Action *)
+                mscorlib.dll::System::Delegate::Delegate_Combine
+                          ((Delegate *)pAVar5,(Delegate *)this_00,(MethodInfo *)0x0);
+      if (pAVar5 == (Action *)0x0) {
+        TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded = (Action *)0x0;
+      }
+      else {
+        pAVar6 = (Action *)0x0;
+        if (pAVar5->klass == TypeInfo__System__Action) {
+          pAVar6 = pAVar5;
         }
-        pIVar6 = MainCameraManager::MainCameraManager_GetSettings(MVar4,(MethodInfo *)0x0);
-        if (pIVar6 != (ICameraSettings *)0x0) {
-          func_?(0,TypeInfo__ICameraSettings,pIVar6,(this->fields)._._._.data);
+        if (pAVar6 == (Action *)0x0) {
+          FUN_?(pAVar5,TypeInfo__System__Action);
+          pcVar7 = (code *)swi(3);
+          (*pcVar7)();
+          return;
+        }
+        TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded = pAVar6;
+        pAVar6 = (Action *)0x0;
+        if (pAVar5->klass == TypeInfo__System__Action) {
+          pAVar6 = pAVar5;
+        }
+        if (pAVar6 == (Action *)0x0) {
+          FUN_?(pAVar5,TypeInfo__System__Action);
+          pcVar7 = (code *)swi(3);
+          (*pcVar7)();
           return;
         }
       }
-      goto code_?;
-    }
-    if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    pAVar7 = TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded;
-    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,MethodInfo__MVCameraSettings__OnCameraSettingAdded__,
-               (MethodInfo *)0x0);
-    pAStack2 =
-         (Action *)
-         mscorlib.dll::System::Delegate::Delegate_Combine
-                   ((Delegate *)pAVar7,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pAStack2 == (Action *)0x0) {
-      TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded = (Action *)0x0;
-      pAVar7 = (Action *)0x0;
-code_?:
-      pAStack2 = (Action *)&TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded;
-      pAStack3 = (Action__Class *)pAVar7;
-      func_?();
+      if (iRam_? != 0) {
+        uVar8 = (uint)((ulonglong)&TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded
+                       >> 0xc);
+        puVar9 = (ulonglong *)((ulonglong)((uVar8 & 0x1fffff) >> 6) * 8 + 0xADDR);
+        do {
+          uVar10 = *puVar9;
+          LOCK();
+          uVar11 = *puVar9;
+          if (uVar10 == uVar11) {
+            *puVar9 = uVar10 | 1L << (uVar8 & 0x3f);
+          }
+          UNLOCK();
+        } while (uVar10 != uVar11);
+      }
       (this->fields).needToUnsubscribeToSettingsCallback = 1;
       return;
     }
-    pAVar7 = (Action *)0x0;
-    if (pAStack2->klass == TypeInfo__System__Action) {
-      pAVar7 = pAStack2;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
-    pAStack3 = TypeInfo__System__Action;
-    if (pAVar7 == (Action *)0x0) goto code_?;
-    TypeInfo__MainCameraManager->static_fields->OnCameraSettingAdded = pAVar7;
-    pAVar7 = (Action *)0x0;
-    if (pAStack2->klass == TypeInfo__System__Action) {
-      pAVar7 = pAStack2;
-    }
-    pAStack3 = TypeInfo__System__Action;
-    if (pAVar7 != (Action *)0x0) goto code_?;
-  }
-  pAStack3 = (Action__Class *)func_?();
-  pAStack2 = extraout_ECX_00;
+    pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if ((pMVar1 != (MVGameControllerBase *)0x0) &&
+       (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) {
+      MVar3 = (pMVar2->fields)._GameType_k__BackingField;
+      if (*(int *)&(TypeInfo__MainCameraManager->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      pIVar12 = MainCameraManager::MainCameraManager_GetSettings(MVar3,(MethodInfo *)0x0);
+      if (pIVar12 != (ICameraSettings *)0x0) {
+        pDVar13 = (this->fields)._._._.data;
+        uVar14 = 0;
+        pIVar15 = pIVar12->klass;
+        uVar16._0_1_ = (pIVar15->_1).rank;
+        uVar16._1_1_ = (pIVar15->_1).minimumAlignment;
+        if (uVar16 != 0) {
+          do {
+            if (pIVar15->interfaceOffsets[uVar14].interfaceType ==
+                (Il2CppClass *)TypeInfo__ICameraSettings) {
+              pVVar17 = &(pIVar15->vtable).UpdateFromCameraSettings +
+                        pIVar15->interfaceOffsets[uVar14].offset;
+              goto code_?;
+            }
+            uVar14 = uVar14 + 1;
+          } while (uVar14 < uVar16);
+        }
+        pVVar17 = (VirtualInvokeData *)FUN_?(pIVar12);
 code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        (*pVVar17->methodPtr)(pIVar12,pDVar13,pVVar17->method,pVVar17->methodPtr);
+        return;
+      }
+    }
+  }
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -279,165 +483,213 @@ void Assembly-CSharp.dll::MVCameraSettings::MVCameraSettings_UpdateStaticValues
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    in_stack_1 = &TypeInfo__System__Single;
-    func_?();
-    func_?();
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MainCameraManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__PostProcessingManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_distanceToAvatar);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_forceFirstPersonCamera);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pOStack_2 = (Object *)0x0;
-  pDVar3 = (this->fields)._._._.data;
-  if (pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-  puVar4 = &UNK_?;
-  bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__TryGetValue
-                    (pDVar3,(Object *)StringLiteral_forceFirstPersonCamera,&pOStack_2,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
-                    );
-  if (bVar5 == 0) {
-code_?:
-    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-              (this->fields)._._._.data;
-    if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
-    goto code_?;
-    puVar6 = &UNK_?;
-    TVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (this_00,(Object *)StringLiteral_distanceToAvatar,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+  pDVar1 = (this->fields)._._._.data;
+  cVar2 = '\0';
+  pOStackX_8 = (Object *)0x0;
+  if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__TryGetValue
+                      (pDVar1,(Object *)StringLiteral_forceFirstPersonCamera,&pOStackX_8,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
                       );
-    if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    if (TVar7.m_Index == 0) goto code_?;
-    if (*(Il2CppClass **)(*(int *)TVar7.m_Index + 0x20) ==
-        (TypeInfo__System__Single->_0).element_class) {
-      pfVar8 = (float *)func_?();
-      TypeInfo__MainCameraManager->static_fields->DistanceToAvatarBase = *pfVar8;
-      this_01 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+    if (bVar3 != 0) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
-      puVar9 = &UNK_?;
-      pMVar10 = this_01;
-      bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        ((Object_1 *)this_01,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if ((bVar5 != 0) && ((this->fields).isPreview == 0)) {
-        func_?();
-        uVar11 = 0;
-        pDVar3 = (this->fields)._._._.data;
-        this_02 = (PostProcessingSettings *)&stack0xffffff50;
-        puVar12 = &UNK_?;
-        UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camera::PostProcessingSettings::
-        PostProcessingSettings__ctor(this_02,pDVar3,(MethodInfo *)0x0);
-        if (this_01 == (MainCameraManager *)0x0) goto code_?;
-        method_00 = (MethodInfo *)0x0;
-        puVar13 = (undefined4 *)&stack0xffffff50;
-        puVar14 = (undefined4 *)&stack0xfffffe98;
-        for (iVar15 = 0x2a; iVar15 != 0; iVar15 = iVar15 + -1) {
-          *puVar14 = *puVar13;
-          puVar13 = puVar13 + 1;
-          puVar14 = puVar14 + 1;
+      pMVar4 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if ((pMVar4 == (MVGameControllerBase *)0x0) ||
+         (pMVar5 = (pMVar4->fields).game, pMVar5 == (MVNetworkGame *)0x0))
+      goto code_?;
+      if ((pMVar5->fields)._GameType_k__BackingField != 2) {
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
         }
-        data.vignetteSettings._32_4_ = puVar12;
-        auVar16 = in_stack_17._0_20_;
-        auVar18 = in_stack_17._20_32_;
-        auVar19 = in_stack_17._52_28_;
-        auVar20 = in_stack_17._80_20_;
-        auVar21 = in_stack_17._116_16_;
-        data.colorSettings.colors = auVar16[0];
-        data.colorSettings._1_3_ = auVar16._1_3_;
-        data.colorSettings.postExposure = auVar16._4_4_;
-        data.colorSettings.temperature = auVar16._8_4_;
-        data.colorSettings.saturation = auVar16._12_4_;
-        data.colorSettings.contrast = auVar16._16_4_;
-        auVar22 = auVar18._16_16_;
-        data.bloomSettings.bloom = auVar18[0];
-        data.bloomSettings._1_3_ = auVar18._1_3_;
-        data.bloomSettings.intensity = auVar18._4_4_;
-        data.bloomSettings.softKnee = auVar18._8_4_;
-        data.bloomSettings.diffusion = auVar18._12_4_;
-        data.bloomSettings.color.r = (float)auVar22._0_4_;
-        data.bloomSettings.color.g = (float)auVar22._4_4_;
-        data.bloomSettings.color.b = (float)auVar22._8_4_;
-        data.bloomSettings.color.a = (float)auVar22._12_4_;
-        auVar22 = auVar19._12_16_;
-        data.ambientOcclusionSettings.ambientOcclusion = auVar19[0];
-        data.ambientOcclusionSettings._1_3_ = auVar19._1_3_;
-        data.ambientOcclusionSettings.intensity = auVar19._4_4_;
-        data.ambientOcclusionSettings.thickness = auVar19._8_4_;
-        data.ambientOcclusionSettings.color.r = (float)auVar22._0_4_;
-        data.ambientOcclusionSettings.color.g = (float)auVar22._4_4_;
-        data.ambientOcclusionSettings.color.b = (float)auVar22._8_4_;
-        data.ambientOcclusionSettings.color.a = (float)auVar22._12_4_;
-        data.depthOfFieldSettings.depthOfField = auVar20[0];
-        data.depthOfFieldSettings._1_3_ = auVar20._1_3_;
-        data.depthOfFieldSettings.focusDistance = auVar20._4_4_;
-        data.depthOfFieldSettings.aperture = auVar20._8_4_;
-        data.depthOfFieldSettings.focalLength = auVar20._12_4_;
-        data.depthOfFieldSettings.maxBlurSize = auVar20._16_4_;
-        data.vignetteSettings.vignette = in_stack_17[100];
-        data.vignetteSettings._1_3_ = in_stack_17._101_3_;
-        data.vignetteSettings.intensity = in_stack_17._104_4_;
-        data.vignetteSettings.smoothness = in_stack_17._108_4_;
-        data.vignetteSettings.roundness = in_stack_17._112_4_;
-        data.vignetteSettings.color.r = (float)auVar21._0_4_;
-        data.vignetteSettings.color.g = (float)auVar21._4_4_;
-        data.vignetteSettings.color.b = (float)auVar21._8_4_;
-        data.vignetteSettings.color.a = (float)auVar21._12_4_;
-        data.grainSettings._0_4_ = this_02;
-        data.grainSettings.intensity = (int32_t)pDVar3;
-        data.grainSettings.size = uVar11;
-        data.grainSettings.luminanceContribution = (int32_t)in_stack_1;
-        data.lensDistortionSettings._0_4_ = puVar4;
-        data.lensDistortionSettings.intensity = (int32_t)puVar6;
-        data.lensDistortionSettings.xMultiplier = (int32_t)puVar9;
-        data.lensDistortionSettings.yMultiplier = (int32_t)pMVar10;
-        bVar5 = MainCameraManager::MainCameraManager_ApplyPostProcessingThis(this_01,data,method_00)
+        pGVar6 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+        if (pGVar6 == (GameSessionData *)0x0) goto code_?;
+        if ((pGVar6->fields).gameMode == 1) {
+          if (pOStackX_8 == (Object *)0x0) goto code_?;
+          if ((pOStackX_8->klass->_0).element_class !=
+              *(Il2CppClass **)(lRam_? + 0x40)) {
+            FUN_?(pOStackX_8);
+            pcVar7 = (code *)swi(3);
+            (*pcVar7)();
+            return;
+          }
+          cVar2 = *(char *)&pOStackX_8[1].klass;
+        }
+      }
+      if (*(int *)&(TypeInfo__MainCameraManager->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__MainCameraManager);
+      }
+      TypeInfo__MainCameraManager->static_fields->DefaultCameraType = -(uint)(cVar2 != '\0') & 0x10;
+      TypeInfo__MainCameraManager->static_fields->IsCameraForcedFirstPerson = cVar2 != '\0';
+    }
+    pDVar1 = (this->fields)._._._.data;
+    if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      pOVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__get_Item
+                         (pDVar1,(Object *)StringLiteral_distanceToAvatar,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         );
+      if (*(int *)&(TypeInfo__MainCameraManager->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__MainCameraManager);
+      }
+      if (pOVar8 != (Object *)0x0) {
+        if ((pOVar8->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+          FUN_?(pOVar8,lRam_?);
+          pcVar7 = (code *)swi(3);
+          (*pcVar7)();
+          return;
+        }
+        TypeInfo__MainCameraManager->static_fields->DistanceToAvatarBase =
+             *(float *)&pOVar8[1].klass;
+        pMVar9 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0)
         ;
-        if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        MainCameraManager::MainCameraManager_set_GameHasCameraEffects(bVar5,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (pMVar9 != (MainCameraManager *)0x0) {
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (((pMVar9->fields)._._._._.m_CachedPtr != (void *)0x0) &&
+             ((this->fields).isPreview == 0)) {
+            this_00 = (pMVar9->fields).postProcessingManager;
+            FUN_?(&PStack_10,0);
+            UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camera::PostProcessingSettings::
+            PostProcessingSettings__ctor(&PStack_10,(this->fields)._._._.data,(MethodInfo *)0x0);
+            if (this_00 == (PostProcessingManager *)0x0) goto code_?;
+            PStack_11.colorSettings.colors = PStack_10.colorSettings.colors;
+            PStack_11.colorSettings._1_3_ = PStack_10.colorSettings._1_3_;
+            PStack_11.colorSettings.postExposure = PStack_10.colorSettings.postExposure;
+            PStack_11.colorSettings.temperature = PStack_10.colorSettings.temperature;
+            PStack_11.colorSettings.saturation = PStack_10.colorSettings.saturation;
+            PStack_11.colorSettings.contrast = PStack_10.colorSettings.contrast;
+            PStack_11.bloomSettings.bloom = PStack_10.bloomSettings.bloom;
+            PStack_11.bloomSettings._1_3_ = PStack_10.bloomSettings._1_3_;
+            PStack_11.bloomSettings.intensity = PStack_10.bloomSettings.intensity;
+            PStack_11.bloomSettings.softKnee = PStack_10.bloomSettings.softKnee;
+            PStack_11.bloomSettings.diffusion = PStack_10.bloomSettings.diffusion;
+            PStack_11.bloomSettings.color.r = PStack_10.bloomSettings.color.r;
+            PStack_11.bloomSettings.color.g = PStack_10.bloomSettings.color.g;
+            PStack_11.bloomSettings.color.b = PStack_10.bloomSettings.color.b;
+            PStack_11.bloomSettings.color.a = PStack_10.bloomSettings.color.a;
+            PStack_11.ambientOcclusionSettings.ambientOcclusion =
+                 PStack_10.ambientOcclusionSettings.ambientOcclusion;
+            PStack_11.ambientOcclusionSettings._1_3_ = PStack_10.ambientOcclusionSettings._1_3_;
+            PStack_11.ambientOcclusionSettings.intensity =
+                 PStack_10.ambientOcclusionSettings.intensity;
+            PStack_11.ambientOcclusionSettings.thickness =
+                 PStack_10.ambientOcclusionSettings.thickness;
+            PStack_11.ambientOcclusionSettings.color.r = PStack_10.ambientOcclusionSettings.color.r
+            ;
+            PStack_11.ambientOcclusionSettings.color.g = PStack_10.ambientOcclusionSettings.color.g
+            ;
+            PStack_11.ambientOcclusionSettings.color.b = PStack_10.ambientOcclusionSettings.color.b
+            ;
+            PStack_11.ambientOcclusionSettings.color.a = PStack_10.ambientOcclusionSettings.color.a
+            ;
+            PStack_11.depthOfFieldSettings.depthOfField =
+                 PStack_10.depthOfFieldSettings.depthOfField;
+            PStack_11.depthOfFieldSettings._1_3_ = PStack_10.depthOfFieldSettings._1_3_;
+            PStack_11.depthOfFieldSettings.focusDistance =
+                 PStack_10.depthOfFieldSettings.focusDistance;
+            PStack_11.depthOfFieldSettings.aperture = PStack_10.depthOfFieldSettings.aperture;
+            PStack_11.depthOfFieldSettings.focalLength = PStack_10.depthOfFieldSettings.focalLength
+            ;
+            PStack_11.depthOfFieldSettings.maxBlurSize = PStack_10.depthOfFieldSettings.maxBlurSize
+            ;
+            PStack_11.vignetteSettings.vignette = PStack_10.vignetteSettings.vignette;
+            PStack_11.vignetteSettings._1_3_ = PStack_10.vignetteSettings._1_3_;
+            PStack_11.vignetteSettings.intensity = PStack_10.vignetteSettings.intensity;
+            PStack_11.vignetteSettings.smoothness = PStack_10.vignetteSettings.smoothness;
+            PStack_11.vignetteSettings.roundness = PStack_10.vignetteSettings.roundness;
+            PStack_11.vignetteSettings.color.r = PStack_10.vignetteSettings.color.r;
+            PStack_11.vignetteSettings.color.g = PStack_10.vignetteSettings.color.g;
+            PStack_11.vignetteSettings.color.b = PStack_10.vignetteSettings.color.b;
+            PStack_11.vignetteSettings.color.a = PStack_10.vignetteSettings.color.a;
+            PStack_11.vignetteSettings.rounded = PStack_10.vignetteSettings.rounded;
+            PStack_11.vignetteSettings._33_3_ = PStack_10.vignetteSettings._33_3_;
+            PStack_11.grainSettings.grain = PStack_10.grainSettings.grain;
+            PStack_11.grainSettings._1_3_ = PStack_10.grainSettings._1_3_;
+            PStack_11.grainSettings.intensity = PStack_10.grainSettings.intensity;
+            PStack_11.grainSettings.size = PStack_10.grainSettings.size;
+            PStack_11.grainSettings.luminanceContribution =
+                 PStack_10.grainSettings.luminanceContribution;
+            PStack_11.lensDistortionSettings.lensDistortion =
+                 PStack_10.lensDistortionSettings.lensDistortion;
+            PStack_11.lensDistortionSettings._1_3_ = PStack_10.lensDistortionSettings._1_3_;
+            PStack_11.lensDistortionSettings.intensity = PStack_10.lensDistortionSettings.intensity
+            ;
+            PStack_11.lensDistortionSettings.xMultiplier =
+                 PStack_10.lensDistortionSettings.xMultiplier;
+            PStack_11.lensDistortionSettings.yMultiplier =
+                 PStack_10.lensDistortionSettings.yMultiplier;
+            bVar3 = PostProcessingManager::PostProcessingManager_Initialize
+                              (this_00,&PStack_11,(MethodInfo *)0x0);
+            if (*(int *)&(TypeInfo__PostProcessingManager->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            PostProcessingManager::PostProcessingManager_set_HasGamePostProcessEffects
+                      (bVar3,(MethodInfo *)0x0);
+          }
+        }
+        return;
       }
-      return;
-    }
-    func_?();
-  }
-  else {
-    pMVar23 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar23 == (MVNetworkGame *)0x0) goto code_?;
-    if ((pMVar23->fields)._GameType_k__BackingField == 2) {
-code_?:
-      cVar24 = '\0';
-code_?:
-      if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      TypeInfo__MainCameraManager->static_fields->DefaultCameraType = -(uint)(cVar24 != '\0') & 0x10;
-      TypeInfo__MainCameraManager->static_fields->IsCameraForcedFirstPerson = cVar24 != '\0';
-      goto code_?;
-    }
-    MVar25 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-    if (MVar25 != MVGameMode__Enum_Play) goto code_?;
-    if (pOStack_2 == (Object *)0x0) goto code_?;
-    if ((pOStack_2->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class) {
-      pcVar26 = (char *)func_?();
-      cVar24 = *pcVar26;
-      goto code_?;
     }
   }
-  func_?();
 code_?:
-  func_?();
-  pcVar27 = (code *)swi(3);
-  (*pcVar27)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -451,7 +703,9 @@ void Assembly-CSharp.dll::MVCameraSettings::MVCameraSettings__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PrefabPool);
+    FUN_?(&TypeInfo__PrefabPool);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
@@ -459,17 +713,13 @@ void Assembly-CSharp.dll::MVCameraSettings::MVCameraSettings__ctor
     MVLogicObject::MVLogicObject__ctor
               ((MVLogicObject *)this,data,(pPVar1->fields).mvCameraSettingsPrefab,worldObjects,
                (MethodInfo *)0x0);
-    piVar2 = &(this->fields)._._.interactionFlags;
-    *(uint *)piVar2 = (uint)*piVar2 | 0x8000;
-    uVar3 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-    piVar2 = &(this->fields)._._.interactionFlags;
-    *(uint *)piVar2 = (uint)*piVar2 & 0xffffdfff;
-    *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar3;
+    (this->fields)._._.interactionFlags =
+         (this->fields)._._.interactionFlags & 0xffffffffffffdfffU | 0x8000;
     return;
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

@@ -92,7 +92,7 @@ public class AvatarAccessoryPreviewer : MonoBehaviour, IDragHandler, IPointerDow
 	// Methods
 	public void SetupPreviewer(MVBody avatarBody);
 	public void ResetPreviewTransform();
-	private bool PickAccessory(Ray ray, out GameObject gameObject, out RaycastHit raycastHit);
+	private bool PickAccessory(Ray ray, out GameObject gameObject, out UnityEngine.RaycastHit raycastHit);
 	private void Start();
 	private void Update();
 	private void OnDestroy();

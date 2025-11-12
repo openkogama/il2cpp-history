@@ -17,7 +17,7 @@ public class PlayButton : PlayButtonBase, IPointerEnterHandler, IPointerExitHand
 	[SerializeField]
 	private TimedPlayReward timedPlayReward;
 	[SerializeField]
-	private Button button;
+	private UnityEngine.UI.Button button;
 	[SerializeField]
 	private bool shouldConfirmPlay;
 	[SerializeField]
@@ -57,19 +57,6 @@ public class PlayButton : PlayButtonBase, IPointerEnterHandler, IPointerExitHand
 
 		// Methods
 		internal void _OnPromotionShown_b__0(IUIStack x, BaseEventData y);
-	}
-
-	[CompilerGenerated]
-	private sealed class __c__DisplayClass17_0
-	{
-		// Fields
-		public bool readyForAd;
-
-		// Constructors
-		public __c__DisplayClass17_0();
-
-		// Methods
-		internal void _OnEnable_b__0(IDeathPromotionSelector x, BaseEventData y);
 	}
 
 	// Constructors

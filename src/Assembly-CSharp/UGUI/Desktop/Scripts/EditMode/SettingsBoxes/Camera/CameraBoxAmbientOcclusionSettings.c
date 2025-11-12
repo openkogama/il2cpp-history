@@ -7,63 +7,129 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryAdd_System__Object__System__Object_
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__System__Single);
-    func_?(&StringLiteral_ppAOOn);
-    func_?(&StringLiteral_ppAOThick);
-    func_?(&StringLiteral_ppAOInty);
-    func_?(&StringLiteral_ppAOColR);
-    func_?(&StringLiteral_ppAOColB);
-    func_?(&StringLiteral_ppAOColG);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryAdd_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ppAOOn);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ppAOThick);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ppAOInty);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ppAOColR);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ppAOColB);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ppAOColG);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pOVar1 = (Object *)func_?(TypeInfo__System__Boolean,&stack0xfffffffb);
-  if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__TryAdd
-              (data,(Object *)StringLiteral_ppAOOn,pOVar1,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryAdd_System__Object__System__Object_
-              );
-    pOVar1 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff4);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__TryAdd
-              (data,(Object *)StringLiteral_ppAOInty,pOVar1,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryAdd_System__Object__System__Object_
-              );
-    pOVar1 = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__TryAdd
-              (data,(Object *)StringLiteral_ppAOThick,pOVar1,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryAdd_System__Object__System__Object_
-              );
-    puStack2 = &stack0xffffffec;
-    pOVar1 = (Object *)func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__TryAdd
-              (data,(Object *)StringLiteral_ppAOColR,pOVar1,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryAdd_System__Object__System__Object_
-              );
-    pOVar1 = (Object *)func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__TryAdd
-              (data,(Object *)StringLiteral_ppAOColG,pOVar1,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryAdd_System__Object__System__Object_
-              );
-    pOVar1 = (Object *)func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__TryAdd
-              (data,(Object *)StringLiteral_ppAOColB,pOVar1,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryAdd_System__Object__System__Object_
-              );
+  uVar1 = uStackX_8;
+  lVar2 = lRam_?;
+  pOVar3 = (Object *)0x0;
+  uStackX_8 = uStackX_8 & 0xffffff00;
+  if (*(int *)(lRam_? + 0x28) < 0) {
+    if ((*(longlong *)(lRam_? + 0x60) == 0) ||
+       (value = pOVar3, (*(byte *)(lRam_? + 0x135) & 8) == 0)) {
+      value = (Object *)FUN_?(lRam_?);
+      FUN_?(value + 1,&uStackX_8,(longlong)*(int *)(lVar2 + 0xf8) + -0x10);
+      if (iRam_? != 0) {
+        uVar1 = (uint)((ulonglong)(value + 1) >> 0xc);
+        uVar4 = (ulonglong)((uVar1 & 0x1fffff) >> 6);
+        do {
+          uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+          puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+          LOCK();
+          bVar7 = uVar5 == *puVar6;
+          if (bVar7) {
+            *puVar6 = uVar5 | 1L << (uVar1 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar7);
+      }
+    }
+  }
+  else {
+    value = (Object *)(CONCAT44(uStackX_c,uVar1) & 0xffffffffffffff00);
+  }
+  if (data == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    FUN_?();
+    pcVar8 = (code *)swi(3);
+    (*pcVar8)();
     return;
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+  Dictionary_2_System_Object_System_Object__TryInsert
+            (data,(Object *)StringLiteral_ppAOOn,value,InsertionBehavior__Enum_None,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryAdd_System__Object__System__Object_
+             ->klass->rgctx_data[0x22].method);
+  lVar2 = lRam_?;
+  uStackX_8 = 0;
+  if (*(int *)(lRam_? + 0x28) < 0) {
+    if ((*(longlong *)(lRam_? + 0x60) == 0) ||
+       ((*(byte *)(lRam_? + 0x135) & 8) == 0)) {
+      pOVar3 = (Object *)FUN_?(lRam_?);
+      FUN_?(pOVar3 + 1,&uStackX_8,(longlong)*(int *)(lVar2 + 0xf8) + -0x10);
+      if (iRam_? != 0) {
+        uVar1 = (uint)((ulonglong)(pOVar3 + 1) >> 0xc);
+        uVar4 = (ulonglong)((uVar1 & 0x1fffff) >> 6);
+        do {
+          uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+          puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+          LOCK();
+          bVar7 = uVar5 == *puVar6;
+          if (bVar7) {
+            *puVar6 = uVar5 | 1L << (uVar1 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar7);
+      }
+    }
+  }
+  else {
+    pOVar3 = (Object *)((ulonglong)uStackX_c << 0x20);
+  }
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+  Dictionary_2_System_Object_System_Object__TryInsert
+            (data,(Object *)StringLiteral_ppAOInty,pOVar3,InsertionBehavior__Enum_None,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryAdd_System__Object__System__Object_
+             ->klass->rgctx_data[0x22].method);
+  uStackX_8 = 1;
+  pOVar3 = (Object *)FUN_?(lRam_?,&uStackX_8);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+  Dictionary_2_System_Object_System_Object__TryInsert
+            (data,(Object *)StringLiteral_ppAOThick,pOVar3,InsertionBehavior__Enum_None,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryAdd_System__Object__System__Object_
+             ->klass->rgctx_data[0x22].method);
+  uStackX_8 = 0;
+  pOVar3 = (Object *)FUN_?(uRam_?,&uStackX_8);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+  Dictionary_2_System_Object_System_Object__TryInsert
+            (data,(Object *)StringLiteral_ppAOColR,pOVar3,InsertionBehavior__Enum_None,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryAdd_System__Object__System__Object_
+             ->klass->rgctx_data[0x22].method);
+  uStackX_8 = 0;
+  pOVar3 = (Object *)FUN_?(uRam_?,&uStackX_8);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+  Dictionary_2_System_Object_System_Object__TryInsert
+            (data,(Object *)StringLiteral_ppAOColG,pOVar3,InsertionBehavior__Enum_None,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryAdd_System__Object__System__Object_
+             ->klass->rgctx_data[0x22].method);
+  uStackX_8 = 0;
+  pOVar3 = (Object *)FUN_?(uRam_?,&uStackX_8);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+  Dictionary_2_System_Object_System_Object__TryInsert
+            (data,(Object *)StringLiteral_ppAOColB,pOVar3,InsertionBehavior__Enum_None,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryAdd_System__Object__System__Object_
+             ->klass->rgctx_data[0x22].method);
   return;
 }
 
@@ -76,32 +142,112 @@ bool Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
 
 {
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_ppAOOn);
-    func_?(&StringLiteral_ppAOThick);
-    func_?(&StringLiteral_ppAOInty);
-    func_?(&StringLiteral_ppAOColR);
-    func_?(&StringLiteral_ppAOColB);
-    func_?(&StringLiteral_ppAOColG);
+    FUN_?(&StringLiteral_ppAOOn);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ppAOThick);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ppAOInty);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ppAOColR);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ppAOColB);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ppAOColG);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  bVar1 = mscorlib.dll::System::String::String_op_Equality
-                    (key,StringLiteral_ppAOOn,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    bVar1 = mscorlib.dll::System::String::String_op_Equality
-                      (key,StringLiteral_ppAOInty,(MethodInfo *)0x0);
-    if (bVar1 == 0) {
-      bVar1 = mscorlib.dll::System::String::String_op_Equality
-                        (key,StringLiteral_ppAOThick,(MethodInfo *)0x0);
-      if (bVar1 == 0) {
-        bVar1 = mscorlib.dll::System::String::String_op_Equality
-                          (key,StringLiteral_ppAOColR,(MethodInfo *)0x0);
-        if (bVar1 == 0) {
-          bVar1 = mscorlib.dll::System::String::String_op_Equality
-                            (key,StringLiteral_ppAOColG,(MethodInfo *)0x0);
-          if (bVar1 == 0) {
-            bVar1 = mscorlib.dll::System::String::String_op_Equality
-                              (key,StringLiteral_ppAOColB,(MethodInfo *)0x0);
-            return bVar1;
+  if (key != StringLiteral_ppAOOn) {
+    if ((((key != (String *)0x0) && (StringLiteral_ppAOOn != (String *)0x0)) &&
+        ((key->fields)._stringLength == (StringLiteral_ppAOOn->fields)._stringLength)) &&
+       (bVar1 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                          ((uint8_t *)&(key->fields)._firstChar,
+                           (uint8_t *)&(StringLiteral_ppAOOn->fields)._firstChar,
+                           (longlong)(key->fields)._stringLength * 2,(MethodInfo *)0x0), bVar1 != 0)
+       ) {
+      return 1;
+    }
+    if (key != StringLiteral_ppAOInty) {
+      if (((key != (String *)0x0) && (StringLiteral_ppAOInty != (String *)0x0)) &&
+         (((key->fields)._stringLength == (StringLiteral_ppAOInty->fields)._stringLength &&
+          (bVar1 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                             ((uint8_t *)&(key->fields)._firstChar,
+                              (uint8_t *)&(StringLiteral_ppAOInty->fields)._firstChar,
+                              (longlong)(key->fields)._stringLength * 2,(MethodInfo *)0x0),
+          bVar1 != 0)))) {
+        return 1;
+      }
+      if (key != StringLiteral_ppAOThick) {
+        if (((key != (String *)0x0) && (StringLiteral_ppAOThick != (String *)0x0)) &&
+           (((key->fields)._stringLength == (StringLiteral_ppAOThick->fields)._stringLength &&
+            (bVar1 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                               ((uint8_t *)&(key->fields)._firstChar,
+                                (uint8_t *)&(StringLiteral_ppAOThick->fields)._firstChar,
+                                (longlong)(key->fields)._stringLength * 2,(MethodInfo *)0x0),
+            bVar1 != 0)))) {
+          return 1;
+        }
+        if (key != StringLiteral_ppAOColR) {
+          if ((((key != (String *)0x0) && (StringLiteral_ppAOColR != (String *)0x0)) &&
+              ((key->fields)._stringLength == (StringLiteral_ppAOColR->fields)._stringLength)) &&
+             (bVar1 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                                ((uint8_t *)&(key->fields)._firstChar,
+                                 (uint8_t *)&(StringLiteral_ppAOColR->fields)._firstChar,
+                                 (longlong)(key->fields)._stringLength * 2,(MethodInfo *)0x0),
+             bVar1 != 0)) {
+            return 1;
+          }
+          if (key != StringLiteral_ppAOColG) {
+            if (((key != (String *)0x0) && (StringLiteral_ppAOColG != (String *)0x0)) &&
+               (((key->fields)._stringLength == (StringLiteral_ppAOColG->fields)._stringLength &&
+                (bVar1 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                                   ((uint8_t *)&(key->fields)._firstChar,
+                                    (uint8_t *)&(StringLiteral_ppAOColG->fields)._firstChar,
+                                    (longlong)(key->fields)._stringLength * 2,(MethodInfo *)0x0),
+                bVar1 != 0)))) {
+              return 1;
+            }
+            if (key != StringLiteral_ppAOColB) {
+              if (((key != (String *)0x0) && (StringLiteral_ppAOColB != (String *)0x0)) &&
+                 ((key->fields)._stringLength == (StringLiteral_ppAOColB->fields)._stringLength)) {
+                lVar2 = (longlong)(key->fields)._stringLength;
+                puVar3 = &(key->fields)._firstChar;
+                uVar4 = lVar2 * 2;
+                puVar5 = &(StringLiteral_ppAOColB->fields)._firstChar;
+                if (puVar3 != puVar5) {
+                  if (7 < uVar4) {
+                    if (uVar4 != 8) {
+                      puVar6 = puVar5;
+                      do {
+                        if (*(longlong *)((longlong)puVar6 + ((longlong)puVar3 - (longlong)puVar5))
+                            != *(longlong *)puVar6) {
+                          return 0;
+                        }
+                        puVar6 = puVar6 + 4;
+                      } while ((ulonglong)((longlong)puVar6 - (longlong)puVar5) < uVar4 - 8);
+                    }
+                    return *(longlong *)(puVar3 + lVar2 + -4) == *(longlong *)(puVar5 + lVar2 + -4);
+                  }
+                  if (uVar4 != 0) {
+                    puVar6 = puVar5;
+                    do {
+                      if (*(char *)((longlong)puVar6 + ((longlong)puVar3 - (longlong)puVar5)) !=
+                          (char)*puVar6) {
+                        return 0;
+                      }
+                      puVar6 = (uint16_t *)((longlong)puVar6 + 1);
+                    } while ((ulonglong)((longlong)puVar6 - (longlong)puVar5) < uVar4);
+                  }
+                }
+                return 1;
+              }
+              return 0;
+            }
           }
         }
       }
@@ -119,32 +265,75 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
 
 {
   pSVar1 = (this->fields).colorR;
-  if (pSVar1 != (SettingsSlider *)0x0) {
-    SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
+  if ((pSVar1 != (SettingsSlider *)0x0) &&
+     (pSVar2 = (pSVar1->fields).slider, pSVar2 != (Slider *)0x0)) {
+    uVar3 = (*(pSVar2->klass->vtable).get_value.methodPtr)
+                      (pSVar2,(pSVar2->klass->vtable).get_value.method);
     pSVar1 = (this->fields).colorG;
-    if (pSVar1 != (SettingsSlider *)0x0) {
-      pSVar1 = (SettingsSlider *)SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
-      if ((this->fields).colorB != (SettingsSlider *)0x0) {
-        puVar2 = &UNK_?;
-        fVar3 = SettingsSlider::SettingsSlider_get_Value(pSVar1,(MethodInfo *)0x0);
-        pIVar4 = (this->fields).colorImage;
-        if (pIVar4 != (Image *)0x0) {
-          (*(code *)(pIVar4->klass->vtable).set_color.method)
-                    (pIVar4,puVar2,pSVar1,fVar3,0x3f800000,
-                     (pIVar4->klass->vtable).get_raycastTarget.methodPtr);
-          this_00 = (this->fields).colorPicker;
-          if (this_00 != (GameObject *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (this_00,0,(MethodInfo *)0x0);
+    if ((pSVar1 != (SettingsSlider *)0x0) &&
+       (pSVar2 = (pSVar1->fields).slider, pSVar2 != (Slider *)0x0)) {
+      uVar4 = (*(pSVar2->klass->vtable).get_value.methodPtr)
+                        (pSVar2,(pSVar2->klass->vtable).get_value.method);
+      pSVar1 = (this->fields).colorB;
+      if ((pSVar1 != (SettingsSlider *)0x0) &&
+         (pSVar2 = (pSVar1->fields).slider, pSVar2 != (Slider *)0x0)) {
+        uVar5 = (*(pSVar2->klass->vtable).get_value.methodPtr)
+                          (pSVar2,(pSVar2->klass->vtable).get_value.method);
+        pIVar6 = (this->fields).colorImage;
+        if (pIVar6 != (Image *)0x0) {
+          uStack_7 = (undefined *)CONCAT44(0x3f800000,uVar5);
+          uStack_8 = uVar3;
+          uStack_9 = uVar4;
+          (*(pIVar6->klass->vtable).set_color.methodPtr)
+                    (pIVar6,&uStack_8,(pIVar6->klass->vtable).set_color.method);
+          obj = (this->fields).colorPicker;
+          if (obj != (GameObject *)0x0) {
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                            ,0,0);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            if (obj == (GameObject *)0x0) {
+              FUN_?();
+              pcVar10 = (code *)swi(3);
+              (*pcVar10)();
+              return;
+            }
+            pvVar11 = (obj->fields)._.m_CachedPtr;
+            if (pvVar11 == (void *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+              ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+              pcVar10 = (code *)swi(3);
+              (*pcVar10)();
+              return;
+            }
+            pcVar10 = pcRam_?;
+            if (pcRam_? == (code *)0x0) {
+              pcVar10 = (code *)FUN_?(&UNK_?);
+              if (pcVar10 == (code *)0x0) {
+                uVar12 = func_?(&UNK_?);
+                FUN_?(uVar12,0);
+                pcVar10 = (code *)swi(3);
+                (*pcVar10)();
+                return;
+              }
+            }
+            pcRam_? = pcVar10;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+            (*pcRam_?)(pvVar11,0);
             return;
           }
         }
       }
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -157,44 +346,85 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
 
 {
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_ppAOColR);
-    func_?(&StringLiteral_ppAOColB);
-    func_?(&StringLiteral_ppAOColG);
+    FUN_?(&StringLiteral_ppAOColR);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ppAOColB);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ppAOColG);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pIVar1 = (this->fields).colorImage;
+  uStack_2 = (undefined *)CONCAT44(unaff_XMM8_Dd,unaff_XMM8_Dc);
   if (pIVar1 != (Image *)0x0) {
-    pfVar2 = (float *)(*(code *)(pIVar1->klass->vtable).get_color.method)
-                                (&fStack_3,pIVar1,(pIVar1->klass->vtable).set_color.methodPtr);
-    fStack_4 = *pfVar2;
-    fStack_5 = pfVar2[1];
-    fStack_6 = pfVar2[2];
-    fStack_7 = pfVar2[3];
-    pSVar8 = (this->fields).colorR;
-    if (pSVar8 != (SettingsSlider *)0x0) {
+    pfVar3 = (float *)(*(pIVar1->klass->vtable).get_color.methodPtr)
+                                (&fStack_4,pIVar1,(pIVar1->klass->vtable).get_color.method);
+    maxValue = _UNK_?;
+    pSVar5 = (this->fields).colorR;
+    value = *pfVar3;
+    value_00 = pfVar3[1];
+    value_01 = pfVar3[2];
+    if (pSVar5 != (SettingsSlider *)0x0) {
       SettingsSlider::SettingsSlider_Initialize
-                (pSVar8,StringLiteral_ppAOColR,fStack_4,0.0,1.0,(MethodInfo *)0x0);
-      pSVar8 = (this->fields).colorG;
-      if (pSVar8 != (SettingsSlider *)0x0) {
+                (pSVar5,StringLiteral_ppAOColR,value,0.0,_UNK_?,(MethodInfo *)0x0);
+      pSVar5 = (this->fields).colorG;
+      if (pSVar5 != (SettingsSlider *)0x0) {
         SettingsSlider::SettingsSlider_Initialize
-                  (pSVar8,StringLiteral_ppAOColG,fStack_5,0.0,1.0,(MethodInfo *)0x0);
-        pSVar8 = (this->fields).colorB;
-        if (pSVar8 != (SettingsSlider *)0x0) {
+                  (pSVar5,StringLiteral_ppAOColG,value_00,0.0,maxValue,(MethodInfo *)0x0);
+        pSVar5 = (this->fields).colorB;
+        if (pSVar5 != (SettingsSlider *)0x0) {
           SettingsSlider::SettingsSlider_Initialize
-                    (pSVar8,StringLiteral_ppAOColB,fStack_6,0.0,1.0,(MethodInfo *)0x0);
+                    (pSVar5,StringLiteral_ppAOColB,value_01,0.0,maxValue,(MethodInfo *)0x0);
           pIVar1 = (this->fields).colorPickerPreview;
-          fStack_3 = fStack_4;
-          fStack_9 = fStack_5;
-          fStack_10 = fStack_6;
-          uStack_11 = 0x3f800000;
           if (pIVar1 != (Image *)0x0) {
-            (*(code *)(pIVar1->klass->vtable).set_color.method)
-                      (pIVar1,fStack_4,fStack_5,fStack_6,0x3f800000,
-                       (pIVar1->klass->vtable).get_raycastTarget.methodPtr);
-            this_00 = (this->fields).colorPicker;
-            if (this_00 != (GameObject *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (this_00,1,(MethodInfo *)0x0);
+            uStack_6 = 0x3f800000;
+            fStack_4 = value;
+            fStack_7 = value_00;
+            fStack_8 = value_01;
+            (*(pIVar1->klass->vtable).set_color.methodPtr)
+                      (pIVar1,&fStack_4,(pIVar1->klass->vtable).set_color.method);
+            obj = (this->fields).colorPicker;
+            if (obj != (GameObject *)0x0) {
+              if (cRam_? == '\0') {
+                FUN_?(&
+                              void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                              ,1,0);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              if (obj == (GameObject *)0x0) {
+                FUN_?();
+                pcVar9 = (code *)swi(3);
+                (*pcVar9)();
+                return;
+              }
+              pvVar10 = (obj->fields)._.m_CachedPtr;
+              if (pvVar10 == (void *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+                pcVar9 = (code *)swi(3);
+                (*pcVar9)();
+                return;
+              }
+              pcVar9 = pcRam_?;
+              if (pcRam_? == (code *)0x0) {
+                pcVar9 = (code *)FUN_?(&UNK_?);
+                if (pcVar9 == (code *)0x0) {
+                  uVar11 = func_?(&UNK_?);
+                  FUN_?(uVar11,0);
+                  pcVar9 = (code *)swi(3);
+                  (*pcVar9)();
+                  return;
+                }
+              }
+              pcRam_? = pcVar9;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+              (*pcRam_?)(pvVar10,1);
               return;
             }
           }
@@ -202,9 +432,9 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
       }
     }
   }
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -217,242 +447,195 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__System__Single);
-    func_?(&StringLiteral_ppAOOn);
-    func_?(&StringLiteral_ppAOThick);
-    func_?(&StringLiteral_ppAOInty);
-    func_?(&StringLiteral_ppAOColR);
-    func_?(&StringLiteral_ppAOColB);
-    func_?(&StringLiteral_ppAOColG);
+    FUN_?(&StringLiteral_ppAOOn);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ppAOThick);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ppAOInty);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ppAOColR);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ppAOColB);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ppAOColG);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pCVar1 = this;
-  this = (CameraBoxAmbientOcclusionSettings *)((uint)this & 0xffffff);
-  pSStack_2 = (pCVar1->fields).featureOnToggle;
-  pCVar3 = (pCVar1->fields).cameraBoxSettings;
-  value = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
-  if (pCVar3 != (CameraBoxSettings *)0x0) {
-    pSStack_4 = StringLiteral_ppAOOn;
-    if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
-                     );
-      cRam_? = '\x01';
-    }
-    pDVar5 = (pCVar3->fields).woData;
-    pOStack_6 = (Object *)0x0;
-    if (pDVar5 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-              Object]::Dictionary_2_System_Object_System_Object__TryGetValue
-                        (pDVar5,(Object *)pSStack_4,&pOStack_6,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
-                        );
-      this_00 = pSStack_2;
-      if (bVar7 != 0) {
-        value = pOStack_6;
-      }
-      if ((pSStack_2 != (SettingsToggle *)0x0) && (value != (Object *)0x0)) {
-        pIVar8 = (Int32__Class *)TypeInfo__System__Boolean;
-        if ((value->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
-        goto code_?;
-        pbVar9 = (bool *)func_?(value);
-        SettingsToggle::SettingsToggle_Initialize
-                  (this_00,StringLiteral_ppAOOn,*pbVar9,(MethodInfo *)0x0);
-        pCVar3 = (pCVar1->fields).cameraBoxSettings;
-        uStack_10 = 0;
-        value = (Object *)func_?(TypeInfo__System__Int32,&uStack_10);
-        if (pCVar3 != (CameraBoxSettings *)0x0) {
-          pSStack_2 = (SettingsToggle *)StringLiteral_ppAOInty;
-          if (cRam_? == '\0') {
-            func_?(&
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
-                           );
-            cRam_? = '\x01';
+  uVar1 = uStackX_8;
+  lVar2 = lRam_?;
+  this_00 = (this->fields).featureOnToggle;
+  pCVar3 = (this->fields).cameraBoxSettings;
+  uStackX_8 = uStackX_8 & 0xffffff00;
+  if (*(int *)(lRam_? + 0x28) < 0) {
+    if ((*(longlong *)(lRam_? + 0x60) == 0) ||
+       ((*(byte *)(lRam_? + 0x135) & 8) == 0)) {
+      pOVar4 = (Object *)FUN_?(lRam_?);
+      FUN_?(pOVar4 + 1,&uStackX_8,(longlong)*(int *)(lVar2 + 0xf8) + -0x10);
+      if (iRam_? != 0) {
+        uVar1 = (uint)((ulonglong)(pOVar4 + 1) >> 0xc);
+        uVar5 = (ulonglong)((uVar1 & 0x1fffff) >> 6);
+        do {
+          uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+          puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+          LOCK();
+          bVar8 = uVar6 == *puVar7;
+          if (bVar8) {
+            *puVar7 = uVar6 | 1L << (uVar1 & 0x3f);
           }
-          pDVar5 = (pCVar3->fields).woData;
-          pOStack_6 = (Object *)0x0;
-          if (pDVar5 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-            bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
-                    Object]::Dictionary_2_System_Object_System_Object__TryGetValue
-                              (pDVar5,(Object *)pSStack_2,&pOStack_6,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
-                              );
-            if (bVar7 != 0) {
-              value = pOStack_6;
+          UNLOCK();
+        } while (!bVar8);
+      }
+    }
+    else {
+      pOVar4 = (Object *)0x0;
+    }
+  }
+  else {
+    pOVar4 = (Object *)(CONCAT44(uStackX_c,uVar1) & 0xffffffffffffff00);
+  }
+  if (((pCVar3 != (CameraBoxSettings *)0x0) &&
+      (pOVar4 = CameraBoxSettings::CameraBoxSettings_GetSetting
+                           (pCVar3,StringLiteral_ppAOOn,pOVar4,(MethodInfo *)0x0),
+      this_00 != (SettingsToggle *)0x0)) && (pOVar4 != (Object *)0x0)) {
+    if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+      FUN_?(pOVar4,lRam_?);
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
+      return;
+    }
+    SettingsToggle::SettingsToggle_Initialize
+              (this_00,StringLiteral_ppAOOn,*(bool *)&pOVar4[1].klass,(MethodInfo *)0x0);
+    lVar2 = lRam_?;
+    pCVar3 = (this->fields).cameraBoxSettings;
+    uStackX_8 = 0;
+    if (*(int *)(lRam_? + 0x28) < 0) {
+      if ((*(longlong *)(lRam_? + 0x60) == 0) ||
+         ((*(byte *)(lRam_? + 0x135) & 8) == 0)) {
+        pOVar4 = (Object *)FUN_?(lRam_?);
+        FUN_?(pOVar4 + 1,&uStackX_8,(longlong)*(int *)(lVar2 + 0xf8) + -0x10);
+        if (iRam_? != 0) {
+          uVar1 = (uint)((ulonglong)(pOVar4 + 1) >> 0xc);
+          uVar5 = (ulonglong)((uVar1 & 0x1fffff) >> 6);
+          do {
+            uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+            puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+            LOCK();
+            bVar8 = uVar6 == *puVar7;
+            if (bVar8) {
+              *puVar7 = uVar6 | 1L << (uVar1 & 0x3f);
             }
-            if (value != (Object *)0x0) {
-              pIVar8 = TypeInfo__System__Int32;
-              if ((value->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class)
-              goto code_?;
-              piVar11 = (int32_t *)func_?(value);
-              pSVar12 = (pCVar1->fields).intensitySlider;
-              if (pSVar12 != (SettingsSlider *)0x0) {
-                value = (Object *)*piVar11;
-                SettingsSlider::SettingsSlider_Initialize_1
-                          (pSVar12,StringLiteral_ppAOInty,(int32_t)value,0,0xf,(MethodInfo *)0x0);
-                pSVar13 = (pCVar1->fields).intensityInputField;
-                if (pSVar13 != (SettingsInputFieldSlider *)0x0) {
-                  SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
-                            (pSVar13,StringLiteral_ppAOInty,(int32_t)value,(MethodInfo *)0x0);
-                  pCVar3 = (pCVar1->fields).cameraBoxSettings;
-                  uStack_14 = 1;
-                  value = (Object *)func_?(TypeInfo__System__Int32,&uStack_14);
-                  if (pCVar3 != (CameraBoxSettings *)0x0) {
-                    pSStack_2 = (SettingsToggle *)StringLiteral_ppAOThick;
-                    if (cRam_? == '\0') {
-                      func_?(&
-                                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
-                                     );
-                      cRam_? = '\x01';
+            UNLOCK();
+          } while (!bVar8);
+        }
+      }
+      else {
+        pOVar4 = (Object *)0x0;
+      }
+    }
+    else {
+      pOVar4 = (Object *)((ulonglong)uStackX_c << 0x20);
+    }
+    if ((pCVar3 != (CameraBoxSettings *)0x0) &&
+       (pOVar4 = CameraBoxSettings::CameraBoxSettings_GetSetting
+                            (pCVar3,StringLiteral_ppAOInty,pOVar4,(MethodInfo *)0x0),
+       pOVar4 != (Object *)0x0)) {
+      if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+        FUN_?(pOVar4);
+        pcVar9 = (code *)swi(3);
+        (*pcVar9)();
+        return;
+      }
+      pSVar10 = (this->fields).intensitySlider;
+      if (pSVar10 != (SettingsSlider *)0x0) {
+        iVar11 = *(int32_t *)&pOVar4[1].klass;
+        SettingsSlider::SettingsSlider_Initialize_1
+                  (pSVar10,StringLiteral_ppAOInty,iVar11,0,0xf,(MethodInfo *)0x0);
+        pSVar12 = (this->fields).intensityInputField;
+        if (pSVar12 != (SettingsInputFieldSlider *)0x0) {
+          SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+                    (pSVar12,StringLiteral_ppAOInty,(float)iVar11,(MethodInfo *)0x0);
+          pCVar3 = (this->fields).cameraBoxSettings;
+          uStackX_8 = 1;
+          pOVar4 = (Object *)FUN_?(lRam_?,&uStackX_8);
+          if ((pCVar3 != (CameraBoxSettings *)0x0) &&
+             (pOVar4 = CameraBoxSettings::CameraBoxSettings_GetSetting
+                                  (pCVar3,StringLiteral_ppAOThick,pOVar4,(MethodInfo *)0x0),
+             pOVar4 != (Object *)0x0)) {
+            if ((pOVar4->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)
+               ) {
+              FUN_?(pOVar4);
+              pcVar9 = (code *)swi(3);
+              (*pcVar9)();
+              return;
+            }
+            pSVar10 = (this->fields).thicknessSlider;
+            if (pSVar10 != (SettingsSlider *)0x0) {
+              iVar11 = *(int32_t *)&pOVar4[1].klass;
+              SettingsSlider::SettingsSlider_Initialize_1
+                        (pSVar10,StringLiteral_ppAOThick,iVar11,1,10,(MethodInfo *)0x0);
+              pSVar12 = (this->fields).thicknessInputField;
+              if (pSVar12 != (SettingsInputFieldSlider *)0x0) {
+                SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_1
+                          (pSVar12,StringLiteral_ppAOThick,(float)iVar11,(MethodInfo *)0x0);
+                pCVar3 = (this->fields).cameraBoxSettings;
+                uStackX_8 = 0;
+                pOVar4 = (Object *)FUN_?(lRam_?,&uStackX_8);
+                if ((pCVar3 != (CameraBoxSettings *)0x0) &&
+                   (pOVar4 = CameraBoxSettings::CameraBoxSettings_GetSetting
+                                        (pCVar3,StringLiteral_ppAOColR,pOVar4,(MethodInfo *)0x0),
+                   pOVar4 != (Object *)0x0)) {
+                  if ((pOVar4->klass->_0).element_class !=
+                      *(Il2CppClass **)(lRam_? + 0x40)) {
+                    FUN_?(pOVar4,lRam_?);
+                    pcVar9 = (code *)swi(3);
+                    (*pcVar9)();
+                    return;
+                  }
+                  uVar13 = *(undefined4 *)&pOVar4[1].klass;
+                  pCVar3 = (this->fields).cameraBoxSettings;
+                  uStackX_8 = 0;
+                  pOVar4 = (Object *)FUN_?(lRam_?,&uStackX_8);
+                  if ((pCVar3 != (CameraBoxSettings *)0x0) &&
+                     (pOVar4 = CameraBoxSettings::CameraBoxSettings_GetSetting
+                                          (pCVar3,StringLiteral_ppAOColG,pOVar4,(MethodInfo *)0x0),
+                     pOVar4 != (Object *)0x0)) {
+                    if ((pOVar4->klass->_0).element_class !=
+                        *(Il2CppClass **)(lRam_? + 0x40)) {
+                      FUN_?(pOVar4,lRam_?);
+                      pcVar9 = (code *)swi(3);
+                      (*pcVar9)();
+                      return;
                     }
-                    pDVar5 = (pCVar3->fields).woData;
-                    pOStack_6 = (Object *)0x0;
-                    if (pDVar5 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                      bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                              Object,System::Object]::
-                              Dictionary_2_System_Object_System_Object__TryGetValue
-                                        (pDVar5,(Object *)pSStack_2,&pOStack_6,
-                                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
-                                        );
-                      if (bVar7 != 0) {
-                        value = pOStack_6;
+                    uVar14 = *(undefined4 *)&pOVar4[1].klass;
+                    pCVar3 = (this->fields).cameraBoxSettings;
+                    uStackX_8 = 0;
+                    pOVar4 = (Object *)FUN_?(lRam_?,&uStackX_8);
+                    if ((pCVar3 != (CameraBoxSettings *)0x0) &&
+                       (pOVar4 = CameraBoxSettings::CameraBoxSettings_GetSetting
+                                            (pCVar3,StringLiteral_ppAOColB,pOVar4,(MethodInfo *)0x0
+                                            ), pOVar4 != (Object *)0x0)) {
+                      if ((pOVar4->klass->_0).element_class !=
+                          *(Il2CppClass **)(lRam_? + 0x40)) {
+                        FUN_?(pOVar4);
+                        pcVar9 = (code *)swi(3);
+                        (*pcVar9)();
+                        return;
                       }
-                      if (value != (Object *)0x0) {
-                        pIVar8 = TypeInfo__System__Int32;
-                        if ((value->klass->_0).element_class !=
-                            (TypeInfo__System__Int32->_0).element_class) goto code_?;
-                        piVar11 = (int32_t *)func_?(value);
-                        pSVar12 = (pCVar1->fields).thicknessSlider;
-                        if (pSVar12 != (SettingsSlider *)0x0) {
-                          value = (Object *)*piVar11;
-                          SettingsSlider::SettingsSlider_Initialize_1
-                                    (pSVar12,StringLiteral_ppAOThick,(int32_t)value,1,10,
-                                     (MethodInfo *)0x0);
-                          pSVar13 = (pCVar1->fields).thicknessInputField;
-                          if (pSVar13 != (SettingsInputFieldSlider *)0x0) {
-                            SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
-                                      (pSVar13,StringLiteral_ppAOThick,(int32_t)value,
-                                       (MethodInfo *)0x0);
-                            pCVar3 = (pCVar1->fields).cameraBoxSettings;
-                            uStack_15 = 0;
-                            value = (Object *)func_?(TypeInfo__System__Single,&uStack_15);
-                            if (pCVar3 != (CameraBoxSettings *)0x0) {
-                              pSStack_2 = (SettingsToggle *)StringLiteral_ppAOColR;
-                              if (cRam_? == '\0') {
-                                func_?(&
-                                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
-                                               );
-                                cRam_? = '\x01';
-                              }
-                              pDVar5 = (pCVar3->fields).woData;
-                              pOStack_6 = (Object *)0x0;
-                              if (pDVar5 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-                                bVar7 = mscorlib.dll::System::Collections::Generic::
-                                        Dictionary`2[System::Object,System::Object]::
-                                        Dictionary_2_System_Object_System_Object__TryGetValue
-                                                  (pDVar5,(Object *)pSStack_2,&pOStack_6,
-                                                                                                      
-                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
-                                                  );
-                                if (bVar7 != 0) {
-                                  value = pOStack_6;
-                                }
-                                if (value != (Object *)0x0) {
-                                  pIVar8 = (Int32__Class *)TypeInfo__System__Single;
-                                  if ((value->klass->_0).element_class !=
-                                      (TypeInfo__System__Single->_0).element_class)
-                                  goto code_?;
-                                  puVar16 = (undefined4 *)func_?(value);
-                                  pCVar3 = (pCVar1->fields).cameraBoxSettings;
-                                  pSStack_4 = (String *)*puVar16;
-                                  uStack_17 = 0;
-                                  value = (Object *)
-                                          func_?(TypeInfo__System__Single,&uStack_17);
-                                  if (pCVar3 != (CameraBoxSettings *)0x0) {
-                                    pSStack_2 = (SettingsToggle *)StringLiteral_ppAOColG;
-                                    if (cRam_? == '\0') {
-                                      func_?(&
-                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
-                                                  );
-                                      cRam_? = '\x01';
-                                    }
-                                    pDVar5 = (pCVar3->fields).woData;
-                                    pOStack_6 = (Object *)0x0;
-                                    if (pDVar5 != (Dictionary_2_System_Object_System_Object_ *)0x0)
-                                    {
-                                      bVar7 = mscorlib.dll::System::Collections::Generic::
-                                              Dictionary`2[System::Object,System::Object]::
-                                              Dictionary_2_System_Object_System_Object__TryGetValue
-                                                        (pDVar5,(Object *)pSStack_2,&pOStack_6,
-                                                                                                                  
-                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
-                                                  );
-                                      if (bVar7 != 0) {
-                                        value = pOStack_6;
-                                      }
-                                      if (value != (Object *)0x0) {
-                                        pIVar8 = (Int32__Class *)TypeInfo__System__Single;
-                                        if ((value->klass->_0).element_class !=
-                                            (TypeInfo__System__Single->_0).element_class)
-                                        goto code_?;
-                                        puVar16 = (undefined4 *)func_?(value);
-                                        pCVar3 = (pCVar1->fields).cameraBoxSettings;
-                                        uVar18 = *puVar16;
-                                        uStack_19 = 0;
-                                        value = (Object *)
-                                                func_?(TypeInfo__System__Single,&uStack_19)
-                                        ;
-                                        if (pCVar3 != (CameraBoxSettings *)0x0) {
-                                          pSStack_2 = (SettingsToggle *)StringLiteral_ppAOColB;
-                                          if (cRam_? == '\0') {
-                                            func_?(&
-                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
-                                                  );
-                                            cRam_? = '\x01';
-                                          }
-                                          pDVar5 = (pCVar3->fields).woData;
-                                          pOStack_6 = (Object *)0x0;
-                                          if (pDVar5 != (Dictionary_2_System_Object_System_Object_ *
-                                                        )0x0) {
-                                            bVar7 = mscorlib.dll::System::Collections::Generic::
-                                                    Dictionary`2[System::Object,System::Object]::
-                                                                                                        
-                                                  Dictionary_2_System_Object_System_Object__TryGetValue
-                                                            (pDVar5,(Object *)pSStack_2,&pOStack_6,
-                                                                                                                          
-                                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__TryGetValue_System__Object__System__Object__
-                                                  );
-                                            if (bVar7 != 0) {
-                                              value = pOStack_6;
-                                            }
-                                            if (value != (Object *)0x0) {
-                                              pIVar8 = (Int32__Class *)TypeInfo__System__Single;
-                                              if ((value->klass->_0).element_class !=
-                                                  (TypeInfo__System__Single->_0).element_class)
-                                              goto code_?;
-                                              puVar16 = (undefined4 *)func_?(value);
-                                              pIVar20 = (pCVar1->fields).colorImage;
-                                              if (pIVar20 != (Image *)0x0) {
-                                                (*(code *)(pIVar20->klass->vtable).set_color.method)
-                                                          (pIVar20,pSStack_4,uVar18,*puVar16,
-                                                           0x3f800000,
-                                                           (pIVar20->klass->vtable).get_raycastTarget
-                                                           .methodPtr);
-                                                return;
-                                              }
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
+                      pIVar15 = (this->fields).colorImage;
+                      uStack_16 = *(undefined4 *)&pOVar4[1].klass;
+                      if (pIVar15 != (Image *)0x0) {
+                        uStack_17 = 0x3f800000;
+                        uStack_18 = uVar13;
+                        uStack_19 = uVar14;
+                        (*(pIVar15->klass->vtable).set_color.methodPtr)
+                                  (pIVar15,&uStack_18,(pIVar15->klass->vtable).set_color.method);
+                        return;
                       }
                     }
                   }
@@ -464,12 +647,9 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::Camer
       }
     }
   }
-  func_?();
-  pIVar8 = extraout_ECX;
-code_?:
-  func_?(value,pIVar8);
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -483,69 +663,110 @@ Object * Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::SettingsBoxes::C
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Convert);
-    func_?(&TypeInfo__System__Int32);
-    func_?(&StringLiteral_ppAOThick);
-    func_?(&StringLiteral_ppAOInty);
-    func_?(&StringLiteral_ppAOColR);
-    func_?(&StringLiteral_ppAOColB);
-    func_?(&StringLiteral_ppAOColG);
+    FUN_?(&TypeInfo__System__Convert);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ppAOThick);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ppAOInty);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ppAOColR);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ppAOColB);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ppAOColG);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pOVar1 = value;
-  bVar2 = mscorlib.dll::System::String::String_op_Equality
-                    (key,StringLiteral_ppAOInty,(MethodInfo *)0x0);
-  if ((bVar2 == 0) &&
-     (bVar2 = mscorlib.dll::System::String::String_op_Equality
-                        (key,StringLiteral_ppAOThick,(MethodInfo *)0x0), bVar2 == 0)) {
-    bVar2 = mscorlib.dll::System::String::String_op_Equality
-                      (key,StringLiteral_ppAOColR,(MethodInfo *)0x0);
-    if (bVar2 == 0) {
-      this = (CameraBoxAmbientOcclusionSettings *)0x0;
-      bVar2 = mscorlib.dll::System::String::String_op_Equality
-                        (key,StringLiteral_ppAOColG,(MethodInfo *)0x0);
-      if (bVar2 == 0) {
-        method = (MethodInfo *)0x0;
-        value = (Object *)StringLiteral_ppAOColB;
-        this = (CameraBoxAmbientOcclusionSettings *)&UNK_?;
-        bVar2 = mscorlib.dll::System::String::String_op_Equality
-                          (key,StringLiteral_ppAOColB,(MethodInfo *)0x0);
-        if (bVar2 == 0) {
-          return pOVar1;
+  if (((key == StringLiteral_ppAOInty) ||
+      ((((key != (String *)0x0 && (StringLiteral_ppAOInty != (String *)0x0)) &&
+        ((key->fields)._stringLength == (StringLiteral_ppAOInty->fields)._stringLength)) &&
+       (bVar1 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                          ((uint8_t *)&(key->fields)._firstChar,
+                           (uint8_t *)&(StringLiteral_ppAOInty->fields)._firstChar,
+                           (longlong)(key->fields)._stringLength * 2,(MethodInfo *)0x0), bVar1 != 0)
+       ))) || ((key == StringLiteral_ppAOThick ||
+               (((key != (String *)0x0 && (StringLiteral_ppAOThick != (String *)0x0)) &&
+                (((key->fields)._stringLength == (StringLiteral_ppAOThick->fields)._stringLength &&
+                 (bVar1 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                                    ((uint8_t *)&(key->fields)._firstChar,
+                                     (uint8_t *)&(StringLiteral_ppAOThick->fields)._firstChar,
+                                     (longlong)(key->fields)._stringLength * 2,(MethodInfo *)0x0),
+                 bVar1 != 0)))))))) {
+    if (*(int *)&(TypeInfo__System__Convert->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    aiStackX_10[0] = mscorlib.dll::System::Convert::Convert_ToInt32(value,(MethodInfo *)0x0);
+    pOVar2 = (Object *)FUN_?(uRam_?,aiStackX_10);
+    return pOVar2;
+  }
+  if ((key != StringLiteral_ppAOColR) &&
+     ((((key == (String *)0x0 || (StringLiteral_ppAOColR == (String *)0x0)) ||
+       (((key->fields)._stringLength != (StringLiteral_ppAOColR->fields)._stringLength ||
+        (bVar1 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                           ((uint8_t *)&(key->fields)._firstChar,
+                            (uint8_t *)&(StringLiteral_ppAOColR->fields)._firstChar,
+                            (longlong)(key->fields)._stringLength * 2,(MethodInfo *)0x0), bVar1 == 0
+        )))) && ((key != StringLiteral_ppAOColG &&
+                 (((((key == (String *)0x0 || (StringLiteral_ppAOColG == (String *)0x0)) ||
+                    ((key->fields)._stringLength != (StringLiteral_ppAOColG->fields)._stringLength))
+                   || (bVar1 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                                         ((uint8_t *)&(key->fields)._firstChar,
+                                          (uint8_t *)&(StringLiteral_ppAOColG->fields)._firstChar,
+                                          (longlong)(key->fields)._stringLength * 2,
+                                          (MethodInfo *)0x0), bVar1 == 0)) &&
+                  (key != StringLiteral_ppAOColB)))))))) {
+    if (key == (String *)0x0) {
+      return value;
+    }
+    if (StringLiteral_ppAOColB == (String *)0x0) {
+      return value;
+    }
+    if ((key->fields)._stringLength != (StringLiteral_ppAOColB->fields)._stringLength) {
+      return value;
+    }
+    bVar1 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                      ((uint8_t *)&(key->fields)._firstChar,
+                       (uint8_t *)&(StringLiteral_ppAOColB->fields)._firstChar,
+                       (longlong)(key->fields)._stringLength * 2,(MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      return value;
+    }
+  }
+  pSVar3 = (this->fields).colorR;
+  if ((pSVar3 != (SettingsSlider *)0x0) &&
+     (pSVar4 = (pSVar3->fields).slider, pSVar4 != (Slider *)0x0)) {
+    uVar5 = (*(pSVar4->klass->vtable).get_value.methodPtr)
+                      (pSVar4,(pSVar4->klass->vtable).get_value.method);
+    pSVar3 = (this->fields).colorG;
+    if ((pSVar3 != (SettingsSlider *)0x0) &&
+       (pSVar4 = (pSVar3->fields).slider, pSVar4 != (Slider *)0x0)) {
+      uStack_6 = (*(pSVar4->klass->vtable).get_value.methodPtr)
+                            (pSVar4,(pSVar4->klass->vtable).get_value.method);
+      pSVar3 = (this->fields).colorB;
+      if ((pSVar3 != (SettingsSlider *)0x0) &&
+         (pSVar4 = (pSVar3->fields).slider, pSVar4 != (Slider *)0x0)) {
+        uStack_7 = (*(pSVar4->klass->vtable).get_value.methodPtr)
+                              (pSVar4,(pSVar4->klass->vtable).get_value.method);
+        pIVar8 = (this->fields).colorPickerPreview;
+        if (pIVar8 != (Image *)0x0) {
+          uStack_9 = 0x3f800000;
+          uStack_10 = uVar5;
+          (*(pIVar8->klass->vtable).set_color.methodPtr)
+                    (pIVar8,&uStack_10,(pIVar8->klass->vtable).set_color.method);
+          return value;
         }
       }
     }
-    pSVar3 = (this->fields).colorR;
-    if (pSVar3 != (SettingsSlider *)0x0) {
-      in_stack_4 = &UNK_?;
-      value = (Object *)SettingsSlider::SettingsSlider_get_Value(pSVar3,(MethodInfo *)0x0);
-      pSVar3 = (this->fields).colorG;
-      if (pSVar3 != (SettingsSlider *)0x0) {
-        SettingsSlider::SettingsSlider_get_Value(pSVar3,(MethodInfo *)0x0);
-        pSVar3 = (this->fields).colorB;
-        if (pSVar3 != (SettingsSlider *)0x0) {
-          SettingsSlider::SettingsSlider_get_Value(pSVar3,(MethodInfo *)0x0);
-          pIVar5 = (this->fields).colorPickerPreview;
-          if (pIVar5 != (Image *)0x0) {
-            pIVar6 = pIVar5->klass;
-            pIStack7 = (pIVar6->vtable).get_raycastTarget.methodPtr;
-            uStack8 = 0x3f800000;
-            (*(code *)(pIVar6->vtable).set_color.method)();
-            return pOVar1;
-          }
-        }
-      }
-    }
-    func_?();
-    pcVar9 = (code *)swi(3);
-    pOVar1 = (Object *)(*pcVar9)();
-    return pOVar1;
   }
-  if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Convert);
-  }
-  value = (Object *)mscorlib.dll::System::Convert::Convert_ToInt32(pOVar1,(MethodInfo *)0x0);
-  pOVar1 = (Object *)func_?(TypeInfo__System__Int32,&value);
-  return pOVar1;
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  pOVar2 = (Object *)(*pcVar11)();
+  return pOVar2;
 }
 

@@ -7,9 +7,15 @@ bool Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Nullable<UnityEngine::Color>__get_HasValue__);
-    func_?(&MethodInfo__System__Nullable<UnityEngine::Color>__get_Value__);
-    func_?(&TypeInfo__UnityEngine__WaitForSeconds);
+    FUN_?(&MethodInfo__System__Nullable<UnityEngine::Color>__get_HasValue__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Nullable<UnityEngine::Color>__get_Value__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__WaitForSeconds);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   iVar1 = (this->fields).__1__state;
@@ -19,16 +25,30 @@ bool Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::
       (this->fields).__1__state = -1;
       if ((pVVar2 != (VehicleEnergyMeter *)0x0) &&
          (pIVar3 = (pVVar2->fields).progressBarImage, pIVar3 != (Image *)0x0)) {
-        (*(code *)(pIVar3->klass->vtable).set_color.method)
-                  (pIVar3,(pVVar2->fields).originalColor.r,(pVVar2->fields).originalColor.g,
-                   (pVVar2->fields).originalColor.b,(pVVar2->fields).originalColor.a,
-                   (pIVar3->klass->vtable).get_raycastTarget.methodPtr);
-        pSVar4 = (SubscribableVariable_1_System_Single_ *)
-                 func_?(TypeInfo__UnityEngine__WaitForSeconds);
-        SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor
-                  (pSVar4,0.3,(MethodInfo *)0x0);
-        (this->fields).__2__current = (Object *)pSVar4;
-        func_?(&(this->fields).__2__current,pSVar4);
+        fStack_4 = (pVVar2->fields).originalColor.r;
+        fStack_5 = (pVVar2->fields).originalColor.g;
+        fStack_6 = (pVVar2->fields).originalColor.b;
+        fStack_7 = (pVVar2->fields).originalColor.a;
+        (*(pIVar3->klass->vtable).set_color.methodPtr)
+                  (pIVar3,&fStack_4,(pIVar3->klass->vtable).set_color.method);
+        pOVar8 = (Object *)FUN_?(TypeInfo__UnityEngine__WaitForSeconds);
+        bVar9 = iRam_? != 0;
+        *(undefined4 *)&pOVar8[1].klass = 0x3e99999a;
+        (this->fields).__2__current = pOVar8;
+        if (bVar9) {
+          uVar10 = (uint)((ulonglong)&(this->fields).__2__current >> 0xc);
+          uVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6);
+          do {
+            uVar12 = *(ulonglong *)(uVar11 * 8 + 0xADDR);
+            puVar13 = (ulonglong *)(uVar11 * 8 + 0xADDR);
+            LOCK();
+            bVar9 = uVar12 == *puVar13;
+            if (bVar9) {
+              *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar9);
+        }
         (this->fields).__1__state = 2;
         return 1;
       }
@@ -44,29 +64,26 @@ bool Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::
       return 0;
     }
     pIVar3 = (pVVar2->fields).progressBarImage;
-    pRVar5 = mscorlib.dll::System::Nullable`1[UnityEngine::Rect]::
-             Nullable_1_UnityEngine_Rect__get_Value
-                       ((Rect *)&stack0xffffffec,
-                        (Nullable_1_UnityEngine_Rect_ *)&(pVVar2->fields).currentColor,
-                        MethodInfo__System__Nullable<UnityEngine::Color>__get_Value__);
     if (pIVar3 != (Image *)0x0) {
-      (*(code *)(pIVar3->klass->vtable).set_color.method)
-                (pIVar3,pRVar5->m_XMin,pRVar5->m_YMin,pRVar5->m_Width,pRVar5->m_Height);
-      pSVar4 = (SubscribableVariable_1_System_Single_ *)
-               func_?(TypeInfo__UnityEngine__WaitForSeconds);
-      SubscribableVariable`1[System::Single]::SubscribableVariable_1_System_Single___ctor
-                (pSVar4,0.3,(MethodInfo *)0x0);
-      (this->fields).__2__current = (Object *)pSVar4;
+      fStack_4 = (pVVar2->fields).currentColor.value.r;
+      fStack_5 = (pVVar2->fields).currentColor.value.g;
+      fStack_6 = (pVVar2->fields).currentColor.value.b;
+      fStack_7 = (pVVar2->fields).currentColor.value.a;
+      (*(pIVar3->klass->vtable).set_color.methodPtr)
+                (pIVar3,&fStack_4,(pIVar3->klass->vtable).set_color.method);
+      pOVar8 = (Object *)FUN_?(TypeInfo__UnityEngine__WaitForSeconds);
+      *(undefined4 *)&pOVar8[1].klass = 0x3e99999a;
+      (this->fields).__2__current = pOVar8;
       func_?(&(this->fields).__2__current);
       (this->fields).__1__state = 1;
       return 1;
     }
   }
 code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  bVar7 = (*pcVar6)();
-  return bVar7;
+  FUN_?();
+  pcVar14 = (code *)swi(3);
+  bVar15 = (*pcVar14)();
+  return bVar15;
 }
 
 
@@ -82,10 +99,10 @@ void Assembly-CSharp.dll::UGUI::Framework::Scripts::Shared::VehicleUI::
   this_00 = (NotSupportedException *)func_?(uVar1);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
-  func_?(&
-                  MethodInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeter___BlinkingBar_d__17__System_Collections_IEnumerator_Reset__
-                 );
-  func_?(this_00);
+  uVar1 = func_?(&
+                              MethodInfo__UGUI__Framework__Scripts__Shared__VehicleUI__VehicleEnergyMeter___BlinkingBar_d__17__System_Collections_IEnumerator_Reset__
+                             );
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

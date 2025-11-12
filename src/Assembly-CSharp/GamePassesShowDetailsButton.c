@@ -6,61 +6,164 @@ void Assembly-CSharp.dll::GamePassesShowDetailsButton::GamePassesShowDetailsButt
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    GamePassesShopDetails_MethodInfo__UnityEngine__Object__Instantiate<GamePassesShopDetails>_GamePassesShopDetails_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&
-                    MethodInfo__GamePassesShowDetailsButton____c__DisplayClass8_0___OnButtonPressed_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__GamePassesShowDetailsButton____c__DisplayClass8_0);
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  GamePassesShopDetails_MethodInfo__UnityEngine__Object__Instantiate<GamePassesShopDetails>_GamePassesShopDetails_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__GamePassesShowDetailsButton____c__DisplayClass8_0___OnButtonPressed_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__GamePassesShowDetailsButton____c__DisplayClass8_0);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__GamePassesShowDetailsButton____c__DisplayClass8_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  object = (Object *)FUN_?(TypeInfo__GamePassesShowDetailsButton____c__DisplayClass8_0);
   original = (this->fields).shopDetails;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
   pOVar1 = (Object__Class *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                      ((Object *)original,
                       GamePassesShopDetails_MethodInfo__UnityEngine__Object__Instantiate<GamePassesShopDetails>_GamePassesShopDetails_
                      );
-  if (value != (Object *)0x0) {
-    value[1].klass = pOVar1;
-    func_?(value + 1,pOVar1);
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)this,(MethodInfo *)0x0);
-    callbackFunction =
-         (ExecuteEvents_EventFunction_1_System_Object_ *)
-         func_?(
-                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                        );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-               MethodInfo__GamePassesShowDetailsButton____c__DisplayClass8_0___OnButtonPressed_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (root,(BaseEventData *)0x0,callbackFunction,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-              );
+  if (object == (Object *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  func_?();
+  bVar3 = iRam_? != 0;
+  object[1].klass = pOVar1;
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)(object + 1) >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar6 != uVar7);
+  }
+  pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)this,(MethodInfo *)0x0);
+  this_01 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+            FUN_?(
+                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                         );
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+  ExecuteEvents_EventFunction_1_System_Object___ctor
+            (this_01,object,
+             MethodInfo__GamePassesShowDetailsButton____c__DisplayClass8_0___OnButtonPressed_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+             ,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pMVar9 = 
+  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+  ;
+  if ((
+      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+      ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    if ((pMVar9->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(pMVar9);
+    }
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_GetEventChain
+            (pGVar8,(IList_1_UnityEngine_Transform_ *)
+                     TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                     s_InternalTransformList,(MethodInfo *)0x0);
+  pLVar10 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+           s_InternalTransformList;
+  if (pLVar10 != (List_1_UnityEngine_Transform_ *)0x0) {
+    lVar11 = (longlong)(pLVar10->fields)._size;
+    uVar4 = 0;
+    if (0 < lVar11) {
+      lVar12 = 0;
+      lVar13 = 0x20;
+      do {
+        if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pLVar10 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                 s_InternalTransformList;
+        if (pLVar10 == (List_1_UnityEngine_Transform_ *)0x0) goto code_?;
+        if ((uint)(pLVar10->fields)._size <= uVar4) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        pTVar14 = (pLVar10->fields)._items;
+        if (pTVar14 == (Transform__Array *)0x0) goto code_?;
+        if ((uint)pTVar14->max_length <= uVar4) {
+          FUN_?();
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        this_00 = *(Component **)((longlong)pTVar14->vector + lVar13 + -0x20);
+        if (this_00 == (Component *)0x0) goto code_?;
+        pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            (this_00,(MethodInfo *)0x0);
+        bVar15 = UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+                ExecuteEvents_Execute_18
+                          (pGVar8,(BaseEventData *)0x0,this_01,
+                           (pMVar9->field7_0x38).rgctx_data[1].method);
+        if (bVar15 != 0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    (this_00,(MethodInfo *)0x0);
+          return;
+        }
+        uVar4 = uVar4 + 1;
+        lVar12 = lVar12 + 1;
+        lVar13 = lVar13 + 8;
+      } while (lVar12 < lVar11);
+    }
+    return;
+  }
+code_?:
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -74,50 +177,68 @@ void Assembly-CSharp.dll::GamePassesShowDetailsButton::GamePassesShowDetailsButt
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action);
-    func_?(&TypeInfo__GamePassProgressionController);
-    func_?(&MethodInfo__GamePassesShowDetailsButton__OnProgressionUpdate__);
+    FUN_?(&TypeInfo__System__Action);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__GamePassProgressionController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__GamePassesShowDetailsButton__OnProgressionUpdate__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pAVar1 = TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate;
-  this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (this_00,(Object *)this,MethodInfo__GamePassesShowDetailsButton__OnProgressionUpdate__,
              (MethodInfo *)0x0);
-  pAStack2 =
-       (Action *)
-       mscorlib.dll::System::Delegate::Delegate_Remove
-                 ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-  if (pAStack2 == (Action *)0x0) {
+  pAVar1 = (Action *)
+           mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pAVar1 == (Action *)0x0) {
     TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate =
          (Action *)0x0;
-code_?:
-    func_?();
-    return;
-  }
-  pAVar1 = (Action *)0x0;
-  if (pAStack2->klass == TypeInfo__System__Action) {
-    pAVar1 = pAStack2;
-  }
-  if (pAVar1 == (Action *)0x0) {
-    pAStack3 = TypeInfo__System__Action;
-    func_?();
-    pAStack2 = extraout_ECX;
-    pAStack3 = extraout_EDX;
   }
   else {
-    TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate = pAVar1;
-    pAVar1 = (Action *)0x0;
-    if (pAStack2->klass == TypeInfo__System__Action) {
-      pAVar1 = pAStack2;
+    pAVar2 = (Action *)0x0;
+    if (pAVar1->klass == TypeInfo__System__Action) {
+      pAVar2 = pAVar1;
     }
-    pAStack3 = TypeInfo__System__Action;
-    if (pAVar1 != (Action *)0x0) goto code_?;
+    if (pAVar2 == (Action *)0x0) {
+      FUN_?(pAVar1,TypeInfo__System__Action);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate = pAVar2;
+    pAVar2 = (Action *)0x0;
+    if (pAVar1->klass == TypeInfo__System__Action) {
+      pAVar2 = pAVar1;
+    }
+    if (pAVar2 == (Action *)0x0) {
+      FUN_?(pAVar1,TypeInfo__System__Action);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)
+                   &TypeInfo__GamePassProgressionController->static_fields->
+                    OnGamePassesProgressionUpdate >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar6 != uVar7);
+  }
   return;
 }
 
@@ -130,61 +251,164 @@ void Assembly-CSharp.dll::GamePassesShowDetailsButton::
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&
-                    MethodInfo__GamePassesShowDetailsButton____c__DisplayClass9_0___OnDisabledButtonPressed_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__GamePassesShowDetailsButton____c__DisplayClass9_0);
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__GamePassesShowDetailsButton____c__DisplayClass9_0___OnDisabledButtonPressed_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__GamePassesShowDetailsButton____c__DisplayClass9_0);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__GamePassesShowDetailsButton____c__DisplayClass9_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  object = (Object *)FUN_?(TypeInfo__GamePassesShowDetailsButton____c__DisplayClass9_0);
   pGVar1 = (this->fields).crystalPopup;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
   pOVar2 = (Object__Class *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                      ((Object *)pGVar1,
                       UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                      );
-  if (value != (Object *)0x0) {
-    value[1].klass = pOVar2;
-    func_?(value + 1,pOVar2);
-    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
-    callbackFunction =
-         (ExecuteEvents_EventFunction_1_System_Object_ *)
-         func_?(
-                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                        );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-               MethodInfo__GamePassesShowDetailsButton____c__DisplayClass9_0___OnDisabledButtonPressed_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (pGVar1,(BaseEventData *)0x0,callbackFunction,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-              );
+  if (object == (Object *)0x0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
-  func_?();
+  bVar4 = iRam_? != 0;
+  object[1].klass = pOVar2;
+  if (bVar4) {
+    uVar5 = (uint)((ulonglong)(object + 1) >> 0xc);
+    puVar6 = (ulonglong *)((ulonglong)((uVar5 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar7 = *puVar6;
+      LOCK();
+      uVar8 = *puVar6;
+      if (uVar7 == uVar8) {
+        *puVar6 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar7 != uVar8);
+  }
+  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)this,(MethodInfo *)0x0);
+  this_01 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+            FUN_?(
+                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                         );
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+  ExecuteEvents_EventFunction_1_System_Object___ctor
+            (this_01,object,
+             MethodInfo__GamePassesShowDetailsButton____c__DisplayClass9_0___OnDisabledButtonPressed_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+             ,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pMVar9 = 
+  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+  ;
+  if ((
+      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+      ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    if ((pMVar9->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(pMVar9);
+    }
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_GetEventChain
+            (pGVar1,(IList_1_UnityEngine_Transform_ *)
+                     TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                     s_InternalTransformList,(MethodInfo *)0x0);
+  pLVar10 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+           s_InternalTransformList;
+  if (pLVar10 != (List_1_UnityEngine_Transform_ *)0x0) {
+    lVar11 = (longlong)(pLVar10->fields)._size;
+    uVar5 = 0;
+    if (0 < lVar11) {
+      lVar12 = 0;
+      lVar13 = 0x20;
+      do {
+        if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pLVar10 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                 s_InternalTransformList;
+        if (pLVar10 == (List_1_UnityEngine_Transform_ *)0x0) goto code_?;
+        if ((uint)(pLVar10->fields)._size <= uVar5) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        pTVar14 = (pLVar10->fields)._items;
+        if (pTVar14 == (Transform__Array *)0x0) goto code_?;
+        if ((uint)pTVar14->max_length <= uVar5) {
+          FUN_?();
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        this_00 = *(Component **)((longlong)pTVar14->vector + lVar13 + -0x20);
+        if (this_00 == (Component *)0x0) goto code_?;
+        pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            (this_00,(MethodInfo *)0x0);
+        bVar15 = UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+                ExecuteEvents_Execute_18
+                          (pGVar1,(BaseEventData *)0x0,this_01,
+                           (pMVar9->field7_0x38).rgctx_data[1].method);
+        if (bVar15 != 0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    (this_00,(MethodInfo *)0x0);
+          return;
+        }
+        uVar5 = uVar5 + 1;
+        lVar12 = lVar12 + 1;
+        lVar13 = lVar13 + 8;
+      } while (lVar12 < lVar11);
+    }
+    return;
+  }
+code_?:
+  FUN_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -199,18 +423,23 @@ void Assembly-CSharp.dll::GamePassesShowDetailsButton::
 
 {
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_Game_Tiers_Activated);
+    FUN_?(&StringLiteral_Game_Tiers_Activated);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  bVar1 = MVClientSettings::MVClientSettings_IsFlagSet
-                    (ClientSettingFlags__Enum_GamePassSilentReleaseEnabled,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__MVClientSettings->static_fields->flags & 0x100U) == 0) {
     bVar1 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled
                       ((MethodInfo *)0x0);
     pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
     if (pGVar2 != (GameObject *)0x0) {
-      value = 0x24;
       bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                         (pGVar2,(MethodInfo *)0x0);
       if (bVar3 != bVar1) {
@@ -218,7 +447,7 @@ void Assembly-CSharp.dll::GamePassesShowDetailsButton::
                            ((Component *)this,(MethodInfo *)0x0);
         if (pGVar2 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar2,value,(MethodInfo *)0x0);
+                  (pGVar2,bVar1,(MethodInfo *)0x0);
         if (bVar1 != 0) {
           this_00 = (this->fields).OnActivatedToolTip;
           if (this_00 == (GamePassesTextBubble *)0x0) goto code_?;
@@ -262,15 +491,48 @@ void Assembly-CSharp.dll::GamePassesShowDetailsButton::
         }
         pGVar2 = (this->fields).disabledButton;
         if (pGVar2 != (GameObject *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar2,0,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                          ,0,0);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (pGVar2 == (GameObject *)0x0) {
+            FUN_?();
+            pcVar4 = (code *)swi(3);
+            (*pcVar4)();
+            return;
+          }
+          pvVar5 = (pGVar2->fields)._.m_CachedPtr;
+          if (pvVar5 == (void *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar2,(MethodInfo *)0x0);
+            pcVar4 = (code *)swi(3);
+            (*pcVar4)();
+            return;
+          }
+          pcVar4 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+            uVar6 = func_?(&UNK_?);
+            FUN_?(uVar6,0);
+            pcVar4 = (code *)swi(3);
+            (*pcVar4)();
+            return;
+          }
+          pcRam_? = pcVar4;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*pcRam_?)(pvVar5,0);
           return;
         }
       }
     }
   }
 code_?:
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -284,13 +546,19 @@ void Assembly-CSharp.dll::GamePassesShowDetailsButton::GamePassesShowDetailsButt
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action);
-    func_?(&TypeInfo__GamePassProgressionController);
-    func_?(&MethodInfo__GamePassesShowDetailsButton__OnProgressionUpdate__);
+    FUN_?(&TypeInfo__System__Action);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__GamePassProgressionController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__GamePassesShowDetailsButton__OnProgressionUpdate__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pAVar1 = TypeInfo__GamePassProgressionController->static_fields->OnGamePassesProgressionUpdate;
-  this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+  this_01 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (this_01,(Object *)this,MethodInfo__GamePassesShowDetailsButton__OnProgressionUpdate__,
@@ -308,9 +576,7 @@ void Assembly-CSharp.dll::GamePassesShowDetailsButton::GamePassesShowDetailsButt
       pAVar2 = pAVar1;
     }
     if (pAVar2 == (Action *)0x0) {
-      func_?();
-code_?:
-      func_?();
+      FUN_?(pAVar1,TypeInfo__System__Action);
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
@@ -320,78 +586,139 @@ code_?:
     if (pAVar1->klass == TypeInfo__System__Action) {
       pAVar2 = pAVar1;
     }
-    if (pAVar2 == (Action *)0x0) goto code_?;
+    if (pAVar2 == (Action *)0x0) {
+      FUN_?(pAVar1,TypeInfo__System__Action);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
   }
-  func_?();
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)
+                    &TypeInfo__GamePassProgressionController->static_fields->
+                     OnGamePassesProgressionUpdate >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (ulonglong)(uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar6 != uVar7);
+  }
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&StringLiteral_Game_Tiers_Activated);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  bVar4 = MVClientSettings::MVClientSettings_IsFlagSet
-                    (ClientSettingFlags__Enum_GamePassSilentReleaseEnabled,(MethodInfo *)0x0);
-  if (bVar4 == 0) {
-    bVar4 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__MVClientSettings->static_fields->flags & 0x100U) == 0) {
+    bVar8 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled
                       ((MethodInfo *)0x0);
-    pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       (in_stack_6,(MethodInfo *)0x0);
-    if (pGVar5 != (GameObject *)0x0) {
-      bVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                        (pGVar5,(MethodInfo *)0x0);
-      if (bVar7 != bVar4) {
-        pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           (in_stack_6,(MethodInfo *)0x0);
-        if (pGVar5 == (GameObject *)0x0) goto code_?;
+    pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+    if (pGVar9 != (GameObject *)0x0) {
+      bVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                        (pGVar9,(MethodInfo *)0x0);
+      if (bVar10 != bVar8) {
+        pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)this,(MethodInfo *)0x0);
+        if (pGVar9 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar5,0x24,(MethodInfo *)0x0);
-        if (bVar4 != 0) {
-          this_00 = in_stack_6[1].fields._.m_CachedPtr;
+                  (pGVar9,bVar8,(MethodInfo *)0x0);
+        if (bVar8 != 0) {
+          this_00 = (this->fields).OnActivatedToolTip;
           if (this_00 == (GamePassesTextBubble *)0x0) goto code_?;
           GamePassesTextBubble::GamePassesTextBubble_Activate
                     (this_00,StringLiteral_Game_Tiers_Activated,(MethodInfo *)0x0);
         }
       }
-      if ((GameObject *)in_stack_6[1].monitor != (GameObject *)0x0) {
-        bVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                          ((GameObject *)in_stack_6[1].monitor,(MethodInfo *)0x0);
-        if (bVar7 == bVar4) {
-          if ((GameObject *)in_stack_6[1].monitor == (GameObject *)0x0)
-          goto code_?;
+      pGVar9 = (this->fields).disabledButton;
+      if (pGVar9 != (GameObject *)0x0) {
+        bVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                          (pGVar9,(MethodInfo *)0x0);
+        if (bVar10 == bVar8) {
+          pGVar9 = (this->fields).disabledButton;
+          if (pGVar9 == (GameObject *)0x0) goto code_?;
           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    ((GameObject *)in_stack_6[1].monitor,bVar4 ^ 1,(MethodInfo *)0x0);
+                    (pGVar9,bVar8 ^ 1,(MethodInfo *)0x0);
         }
         return;
       }
     }
   }
   else {
-    pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       (in_stack_6,(MethodInfo *)0x0);
-    if (pGVar5 != (GameObject *)0x0) {
-      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                        (pGVar5,(MethodInfo *)0x0);
-      if (bVar4 != 0) {
-        pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           (in_stack_6,(MethodInfo *)0x0);
-        if (pGVar5 == (GameObject *)0x0) goto code_?;
+    pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+    if (pGVar9 != (GameObject *)0x0) {
+      bVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                        (pGVar9,(MethodInfo *)0x0);
+      if (bVar8 != 0) {
+        pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)this,(MethodInfo *)0x0);
+        if (pGVar9 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar5,0,(MethodInfo *)0x0);
+                  (pGVar9,0,(MethodInfo *)0x0);
       }
-      if ((GameObject *)in_stack_6[1].monitor != (GameObject *)0x0) {
-        bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                          ((GameObject *)in_stack_6[1].monitor,(MethodInfo *)0x0);
-        if (bVar4 == 0) {
+      pGVar9 = (this->fields).disabledButton;
+      if (pGVar9 != (GameObject *)0x0) {
+        bVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                          (pGVar9,(MethodInfo *)0x0);
+        if (bVar8 == 0) {
           return;
         }
-        if ((GameObject *)in_stack_6[1].monitor != (GameObject *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    ((GameObject *)in_stack_6[1].monitor,0,(MethodInfo *)0x0);
+        pGVar9 = (this->fields).disabledButton;
+        if (pGVar9 != (GameObject *)0x0) {
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                          ,0,0);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (pGVar9 == (GameObject *)0x0) {
+            FUN_?();
+            pcVar3 = (code *)swi(3);
+            (*pcVar3)();
+            return;
+          }
+          pvVar11 = (pGVar9->fields)._.m_CachedPtr;
+          if (pvVar11 == (void *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar9,(MethodInfo *)0x0);
+            pcVar3 = (code *)swi(3);
+            (*pcVar3)();
+            return;
+          }
+          pcVar3 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+            uVar12 = func_?(&UNK_?);
+            FUN_?(uVar12,0);
+            pcVar3 = (code *)swi(3);
+            (*pcVar3)();
+            return;
+          }
+          pcRam_? = pcVar3;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*pcRam_?)(pvVar11,0);
           return;
         }
       }
     }
   }
 code_?:
-  func_?();
+  FUN_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -406,18 +733,23 @@ void Assembly-CSharp.dll::GamePassesShowDetailsButton::
 
 {
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_Game_Tiers_Activated);
+    FUN_?(&StringLiteral_Game_Tiers_Activated);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  bVar1 = MVClientSettings::MVClientSettings_IsFlagSet
-                    (ClientSettingFlags__Enum_GamePassSilentReleaseEnabled,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVClientSettings);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if ((TypeInfo__MVClientSettings->static_fields->flags & 0x100U) == 0) {
     bVar1 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled
                       ((MethodInfo *)0x0);
     pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                        ((Component *)this,(MethodInfo *)0x0);
     if (pGVar2 != (GameObject *)0x0) {
-      value = 0x24;
       bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
                         (pGVar2,(MethodInfo *)0x0);
       if (bVar3 != bVar1) {
@@ -425,7 +757,7 @@ void Assembly-CSharp.dll::GamePassesShowDetailsButton::
                            ((Component *)this,(MethodInfo *)0x0);
         if (pGVar2 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar2,value,(MethodInfo *)0x0);
+                  (pGVar2,bVar1,(MethodInfo *)0x0);
         if (bVar1 != 0) {
           this_00 = (this->fields).OnActivatedToolTip;
           if (this_00 == (GamePassesTextBubble *)0x0) goto code_?;
@@ -469,15 +801,48 @@ void Assembly-CSharp.dll::GamePassesShowDetailsButton::
         }
         pGVar2 = (this->fields).disabledButton;
         if (pGVar2 != (GameObject *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar2,0,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                          ,0,0);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (pGVar2 == (GameObject *)0x0) {
+            FUN_?();
+            pcVar4 = (code *)swi(3);
+            (*pcVar4)();
+            return;
+          }
+          pvVar5 = (pGVar2->fields)._.m_CachedPtr;
+          if (pvVar5 == (void *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar2,(MethodInfo *)0x0);
+            pcVar4 = (code *)swi(3);
+            (*pcVar4)();
+            return;
+          }
+          pcVar4 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+            uVar6 = func_?(&UNK_?);
+            FUN_?(uVar6,0);
+            pcVar4 = (code *)swi(3);
+            (*pcVar4)();
+            return;
+          }
+          pcRam_? = pcVar4;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*pcRam_?)(pvVar5,0);
           return;
         }
       }
     }
   }
 code_?:
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;

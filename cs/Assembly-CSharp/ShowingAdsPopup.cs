@@ -14,7 +14,7 @@ public class ShowingAdsPopup : MonoBehaviour
 {
 	// Fields
 	[SerializeField]
-	private Button button;
+	private UnityEngine.UI.Button button;
 	private float startTime;
 	private float timeoutTime;
 	private Action skipAction;

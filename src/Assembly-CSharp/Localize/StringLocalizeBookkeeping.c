@@ -7,49 +7,80 @@ String * Assembly-CSharp.dll::Localize::StringLocalizeBookkeeping::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__ContainsKey_System__String_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__get_Item_System__String_
-                   );
-    func_?(&StringLiteral_No_localized_string_found_for__);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__ContainsKey_System__String_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__get_Item_System__String_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_No_localized_string_found_for__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-           (this->fields).stringToStringKeyMap;
-  if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+  pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+            *)(this->fields).stringToStringKeyMap;
+  if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                 *)0x0) {
+    iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::StyleComplexSelector+PseudoStateData]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
                       (pDVar1,(Object *)stringVal,
                        MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__ContainsKey_System__String_
-                      );
-    if (bVar2 == 0) {
-      pSVar3 = mscorlib.dll::System::String::String_Concat_3
+                       ->klass->rgctx_data[0x21].method);
+    if (iVar2 < 0) {
+      pSVar3 = mscorlib.dll::System::String::String_Concat_4
                          (StringLiteral_No_localized_string_found_for__,stringVal,(MethodInfo *)0x0)
       ;
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                 ((Object *)pSVar3,(MethodInfo *)0x0);
       return stringVal;
     }
-    pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-             (this->fields).stringToStringKeyMap;
-    if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
+    pDVar1 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+              *)(this->fields).stringToStringKeyMap;
+    if (pDVar1 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                   *)0x0) {
+      uVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::StyleComplexSelector+PseudoStateData]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
                         (pDVar1,(Object *)stringVal,
                          MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__get_Item_System__String_
-                        );
-      return (String *)TVar4.m_Index;
+                         ->klass->rgctx_data[0x21].method);
+      if ((int)uVar4 < 0) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowKeyNotFoundException
+                  ((Object *)stringVal,(MethodInfo *)0x0);
+        pcVar5 = (code *)swi(3);
+        pSVar3 = (String *)(*pcVar5)();
+        return pSVar3;
+      }
+      pDVar6 = (pDVar1->fields)._entries;
+      if (pDVar6 != (Dictionary_2_TKey_TValue_Entry_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___Array
+                     *)0x0) {
+        if (uVar4 < (uint)pDVar6->max_length) {
+          return (String *)pDVar6->vector[(int)uVar4].value;
+        }
+        FUN_?();
+        pcVar5 = (code *)swi(3);
+        pSVar3 = (String *)(*pcVar5)();
+        return pSVar3;
+      }
+      FUN_?();
+      pcVar5 = (code *)swi(3);
+      pSVar3 = (String *)(*pcVar5)();
+      return pSVar3;
     }
   }
-  func_?();
+  FUN_?();
   pcVar5 = (code *)swi(3);
   pSVar3 = (String *)(*pcVar5)();
   return pSVar3;
@@ -63,37 +94,56 @@ void Assembly-CSharp.dll::Localize::StringLocalizeBookkeeping::StringLocalizeBoo
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-             *)func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
-                              );
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+             *)FUN_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                            );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
-  StyleComplexSelector+PseudoStateData]::
-  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+  UIR::UIRenderDevice+DisableForceGammaMaterial]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
             );
+  bVar1 = iRam_? != 0;
   (this->fields).stringToStringKeyMap = (Dictionary_2_System_String_System_String_ *)this_00;
-  func_?(&this->fields,this_00);
-  pAVar1 = (this->fields).initCallback;
-  if (pAVar1 != (Action_1_System_Collections_Generic_Dictionary_2_System_String_System_String_ *)0x0
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
+  pAVar6 = (this->fields).initCallback;
+  if (pAVar6 == (Action_1_System_Collections_Generic_Dictionary_2_System_String_System_String_ *)0x0
      ) {
-    (*(pAVar1->fields)._._.invoke_impl)
-              ((pAVar1->fields)._._.method_code,(this->fields).stringToStringKeyMap,
-               (pAVar1->fields)._._.method);
+    FUN_?();
+    pcVar7 = (code *)swi(3);
+    (*pcVar7)();
     return;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(pAVar6->fields)._._.invoke_impl)
+            ((pAVar6->fields)._._.method_code,(this->fields).stringToStringKeyMap,
+             (pAVar6->fields)._._.method);
   return;
 }
 
@@ -108,54 +158,88 @@ void Assembly-CSharp.dll::Localize::StringLocalizeBookkeeping::StringLocalizeBoo
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action);
-    func_?(&MethodInfo__Localize__StringLocalizeBookkeeping__Init__);
+    FUN_?(&TypeInfo__System__Action);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__Localize__StringLocalizeBookkeeping__Init__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  bVar1 = iRam_? != 0;
   (this->fields).initCallback = initCallback;
-  func_?(&(this->fields).initCallback,initCallback);
-  this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).initCallback >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (this_00,(Object *)this,MethodInfo__Localize__StringLocalizeBookkeeping__Init__,
              (MethodInfo *)0x0);
   TM::TM_LanguageChanged((Action *)this_00,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    ppMStack1 =
-         &
-         MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
-    ;
-    func_?();
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  ppMStack1 =
-       (MethodInfo **)
-       TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>;
-  this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-             *)func_?();
+  this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+             *)FUN_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
+                            );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
-  StyleComplexSelector+PseudoStateData]::
-  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+  UIR::UIRenderDevice+DisableForceGammaMaterial]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
             (this_01,
              MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
             );
+  bVar1 = iRam_? != 0;
   (this->fields).stringToStringKeyMap = (Dictionary_2_System_String_System_String_ *)this_01;
-  func_?();
-  pAVar2 = (this->fields).initCallback;
-  if (pAVar2 != (Action_1_System_Collections_Generic_Dictionary_2_System_String_System_String_ *)0x0
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  pAVar6 = (this->fields).initCallback;
+  if (pAVar6 == (Action_1_System_Collections_Generic_Dictionary_2_System_String_System_String_ *)0x0
      ) {
-    puStack3 = (pAVar2->fields)._._.method;
-    pDStack4 = (this->fields).stringToStringKeyMap;
-    ppMStack1 = (pAVar2->fields)._._.method_code;
-    (*(pAVar2->fields)._._.invoke_impl)();
+    FUN_?();
+    pcVar7 = (code *)swi(3);
+    (*pcVar7)();
     return;
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(pAVar6->fields)._._.invoke_impl)
+            ((pAVar6->fields)._._.method_code,(this->fields).stringToStringKeyMap,
+             (pAVar6->fields)._._.method);
   return;
 }
 

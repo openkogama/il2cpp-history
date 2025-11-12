@@ -2,24 +2,25 @@
 /* RotationChangedEventArgs(Quaternion) */
 
 void Assembly-CSharp.dll::RotationChangedEventArgs::RotationChangedEventArgs__ctor
-               (RotationChangedEventArgs *this,Quaternion newRotation,MethodInfo *method)
+               (RotationChangedEventArgs *this,Quaternion *newRotation,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__EventArgs);
+    FUN_?(&TypeInfo__System__EventArgs);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__EventArgs);
+  if (*(int *)&(TypeInfo__System__EventArgs->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-  UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor
-            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
-  (this->fields).NewRotation.x = newRotation.x;
-  (this->fields).NewRotation.y = newRotation.y;
-  (this->fields).NewRotation.z = newRotation.z;
-  (this->fields).NewRotation.w = newRotation.w;
+  fVar1 = newRotation->y;
+  fVar2 = newRotation->z;
+  fVar3 = newRotation->w;
+  (this->fields).NewRotation.x = newRotation->x;
+  (this->fields).NewRotation.y = fVar1;
+  (this->fields).NewRotation.z = fVar2;
+  (this->fields).NewRotation.w = fVar3;
   return;
 }
 

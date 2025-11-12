@@ -12,6 +12,6 @@ using UnityEngine.EventSystems;
 public interface IRegisterPromotionAdController : IEventSystemHandler
 {
 	// Methods
-	void ShowRegisteredPromotionAd();
+	void ShowRegisteredPromotion();
 }
 

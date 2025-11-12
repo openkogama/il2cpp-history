@@ -29,7 +29,7 @@ public class TimeAttackFlagDebriefing : MonoBehaviour
 	[SerializeField]
 	private Image countdownFill;
 	[SerializeField]
-	private Button playButton;
+	private UnityEngine.UI.Button playButton;
 	private bool isDebriefingOn;
 	private bool isWaitingForStart;
 	private bool isExitingDebriefing;

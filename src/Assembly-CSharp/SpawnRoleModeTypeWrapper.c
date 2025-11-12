@@ -6,23 +6,23 @@ bool Assembly-CSharp.dll::SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_IsI
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&
+                  MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__get_Value__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (WebCompletionSource_1_System_Object_ *)(this->fields).spawnRoleType;
-  if (this_00 != (WebCompletionSource_1_System_Object_ *)0x0) {
-    pTVar1 = System.dll::System::Net::WebCompletionSource`1[System::Object]::
-             WebCompletionSource_1_System_Object__get_Task
-                       (this_00,
-                        MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__get_Value__
-                       );
-    return 0 < (int)(t & (uint)pTVar1);
+  pSVar1 = (this->fields).spawnRoleType;
+  if ((pSVar1 != (SpawnRoleVariable_1_MV_Common_SpawnRoleModeType_ *)0x0) &&
+     (pSVar2 = (pSVar1->fields).subscribableVariable,
+     pSVar2 != (SubscribableVariable_1_MV_Common_SpawnRoleModeType_ *)0x0)) {
+    return 0 < (int)((pSVar2->fields)._.value & t);
   }
-  uVar2 = func_?(&puStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  bVar4 = (*pcVar3)();
+  return bVar4;
 }
 
 
@@ -34,43 +34,102 @@ void Assembly-CSharp.dll::SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper__ct
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__SpawnRoleModeTypeWrapper__OnChangeInternal_MV__Common__SpawnRoleModeType_
-                   );
-    func_?(&
-                    MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
-                   );
-    func_?(&
-                    TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
-                   );
+    FUN_?(&
+                  MethodInfo__SpawnRoleModeTypeWrapper__OnChangeInternal_MV__Common__SpawnRoleModeType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
+  bVar1 = iRam_? != 0;
   (this->fields).spawnRoleType = spawnRoleType;
-  func_?(&this->fields,spawnRoleType);
-  value = (SpawnRoleVariable_1_T_SubDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-          func_?(
-                         TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
-                         );
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-  UnityAction_1_System_Int32Enum___ctor
-            ((UnityAction_1_System_Int32Enum_ *)value,(Object *)this,
-             MethodInfo__SpawnRoleModeTypeWrapper__OnChangeInternal_MV__Common__SpawnRoleModeType_,
-             (MethodInfo *)0x0);
-  if (spawnRoleType != (SpawnRoleVariable_1_MV_Common_SpawnRoleModeType_ *)0x0) {
-    Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-    SpawnRoleVariable`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__add_OnChange
-              ((SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-               spawnRoleType,value,
-               MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
-              );
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
+  b = (Delegate *)
+      FUN_?(
+                   TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
+                   );
+  FUN_?(b,this);
+  pMVar6 = 
+  MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
+  ;
+  if (spawnRoleType == (SpawnRoleVariable_1_MV_Common_SpawnRoleModeType_ *)0x0) {
+    FUN_?();
+    pcVar7 = (code *)swi(3);
+    (*pcVar7)();
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  ppSVar8 = &(spawnRoleType->fields).OnChange;
+  a = (spawnRoleType->fields).OnChange;
+  do {
+    pDVar9 = mscorlib.dll::System::Delegate::Delegate_Combine((Delegate *)a,b,(MethodInfo *)0x0);
+    pvVar10 = pMVar6->klass->rgctx_data[6].rgctxDataDummy;
+    if ((*(byte *)((longlong)pvVar10 + 0x135) & 1) == 0) {
+      pvVar10 = (void *)FUN_?();
+    }
+    if (pDVar9 == (Delegate *)0x0) {
+      pSVar11 = (SpawnRoleVariable_1_T_SubDelegate_MV_Common_SpawnRoleModeType_ *)0x0;
+    }
+    else {
+      pSVar11 = (SpawnRoleVariable_1_T_SubDelegate_MV_Common_SpawnRoleModeType_ *)
+               FUN_?(pDVar9,pvVar10);
+      if (pSVar11 == (SpawnRoleVariable_1_T_SubDelegate_MV_Common_SpawnRoleModeType_ *)0x0) {
+        FUN_?(pDVar9,pvVar10);
+        pcVar7 = (code *)swi(3);
+        (*pcVar7)();
+        return;
+      }
+    }
+    LOCK();
+    pSVar12 = *ppSVar8;
+    bVar1 = a == pSVar12;
+    if (bVar1) {
+      *ppSVar8 = pSVar11;
+      pSVar12 = a;
+    }
+    UNLOCK();
+    pSVar11 = a;
+    if (!bVar1) {
+      pSVar11 = pSVar12;
+    }
+    if (iRam_? != 0) {
+      uVar2 = (uint)((ulonglong)ppSVar8 >> 0xc);
+      uVar5 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+      do {
+        uVar4 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+        puVar3 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+        LOCK();
+        bVar1 = uVar4 == *puVar3;
+        if (bVar1) {
+          *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar1);
+    }
+    bVar1 = pSVar11 != a;
+    a = pSVar11;
+  } while (bVar1);
   return;
 }
 
@@ -83,29 +142,59 @@ void Assembly-CSharp.dll::SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_add
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<MV::Common::SpawnRoleModeType>);
+    FUN_?(&TypeInfo__System__Action<MV::Common::SpawnRoleModeType>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  ppAVar1 = &(this->fields).OnChange;
   a = (this->fields).OnChange;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<MV::Common::SpawnRoleModeType>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__Action<MV::Common::SpawnRoleModeType>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pAVar3 = TypeInfo__System__Action<MV::Common::SpawnRoleModeType>;
+    if (pDVar2 == (Delegate *)0x0) {
+      pAVar4 = (Action_1_MV_Common_SpawnRoleModeType_ *)0x0;
+    }
+    else {
+      pAVar4 = (Action_1_MV_Common_SpawnRoleModeType_ *)
+               FUN_?(pDVar2,TypeInfo__System__Action<MV::Common::SpawnRoleModeType>);
+      if (pAVar4 == (Action_1_MV_Common_SpawnRoleModeType_ *)0x0) {
+        FUN_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_MV_Common_SpawnRoleModeType_ *)
-             func_?(&(this->fields).OnChange,iVar3,a);
-    bVar6 = pAVar5 != a;
-    a = pAVar5;
-  } while (bVar6);
+    LOCK();
+    pAVar6 = *ppAVar1;
+    bVar7 = a == pAVar6;
+    if (bVar7) {
+      *ppAVar1 = pAVar4;
+      pAVar6 = a;
+    }
+    UNLOCK();
+    pAVar4 = a;
+    if (!bVar7) {
+      pAVar4 = pAVar6;
+    }
+    if (iRam_? != 0) {
+      uVar8 = (uint)((ulonglong)ppAVar1 >> 0xc);
+      uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar10 == *puVar11;
+        if (bVar7) {
+          *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    bVar7 = pAVar4 != a;
+    a = pAVar4;
+  } while (bVar7);
   return;
 }
 
@@ -118,29 +207,59 @@ void Assembly-CSharp.dll::SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_rem
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<MV::Common::SpawnRoleModeType>);
+    FUN_?(&TypeInfo__System__Action<MV::Common::SpawnRoleModeType>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  ppAVar1 = &(this->fields).OnChange;
   source = (this->fields).OnChange;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<MV::Common::SpawnRoleModeType>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__Action<MV::Common::SpawnRoleModeType>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pAVar3 = TypeInfo__System__Action<MV::Common::SpawnRoleModeType>;
+    if (pDVar2 == (Delegate *)0x0) {
+      pAVar4 = (Action_1_MV_Common_SpawnRoleModeType_ *)0x0;
+    }
+    else {
+      pAVar4 = (Action_1_MV_Common_SpawnRoleModeType_ *)
+               FUN_?(pDVar2,TypeInfo__System__Action<MV::Common::SpawnRoleModeType>);
+      if (pAVar4 == (Action_1_MV_Common_SpawnRoleModeType_ *)0x0) {
+        FUN_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_MV_Common_SpawnRoleModeType_ *)
-             func_?(&(this->fields).OnChange,iVar3,source);
-    bVar6 = pAVar5 != source;
-    source = pAVar5;
-  } while (bVar6);
+    LOCK();
+    pAVar6 = *ppAVar1;
+    bVar7 = source == pAVar6;
+    if (bVar7) {
+      *ppAVar1 = pAVar4;
+      pAVar6 = source;
+    }
+    UNLOCK();
+    pAVar4 = source;
+    if (!bVar7) {
+      pAVar4 = pAVar6;
+    }
+    if (iRam_? != 0) {
+      uVar8 = (uint)((ulonglong)ppAVar1 >> 0xc);
+      uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar10 == *puVar11;
+        if (bVar7) {
+          *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    bVar7 = pAVar4 != source;
+    source = pAVar4;
+  } while (bVar7);
   return;
 }
 

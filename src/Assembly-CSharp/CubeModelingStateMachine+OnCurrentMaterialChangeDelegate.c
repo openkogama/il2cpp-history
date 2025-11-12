@@ -8,14 +8,11 @@ CubeModelingStateMachine_OnCurrentMaterialChangeDelegate_BeginInvoke
           Material *currentMaterial,AsyncCallback *callback,Object *object,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    cRam_? = '\x01';
-  }
   uStack_1 = 0;
-  uStack_2 = func_?(TypeInfo__System__Byte,&currentMaterialId);
+  auStackX_10[0] = currentMaterialId;
+  uStack_2 = FUN_?(uRam_?,auStackX_10);
   pMStack_3 = currentMaterial;
-  pIVar4 = (IAsyncResult *)func_?(this,&uStack_2,callback,object);
+  pIVar4 = (IAsyncResult *)FUN_?(this,&uStack_2,callback,object);
   return pIVar4;
 }
 

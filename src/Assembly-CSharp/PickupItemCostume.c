@@ -6,42 +6,130 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_CalculateRemoteAv
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AvatarUIHandlerRemote);
+    FUN_?(&TypeInfo__AvatarUIHandlerRemote);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 != (MVNetworkGame *)0x0) {
-    this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
-    if (this_01 != (MVLocalPlayer *)0x0) {
-      isFriendly = MVPlayer::MVPlayer_IsOnSameTeam_1
-                             ((MVPlayer *)this_01,(MVWorldObjectClient *)avatar,(MethodInfo *)0x0);
-      unaff_ESI = (AvatarUIHandlerRemote *)0x0;
-      if ((avatar != (MVAvatarRemote *)0x0) &&
-         (pAVar1 = (avatar->fields)._.avatar, unaff_ESI = (AvatarUIHandlerRemote *)0x0,
-         pAVar1 != (Avatar *)0x0)) {
-        unaff_ESI = (AvatarUIHandlerRemote *)(pAVar1->fields).avatarUIHandler;
-        if (unaff_ESI != (AvatarUIHandlerRemote *)0x0) {
-          if (((TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment <=
-               (unaff_ESI->klass->_1).naturalAligment) &&
-             ((unaff_ESI->klass->_1).typeHierarchy
-              [(TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment - 1] ==
-              (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) {
-            AvatarUIHandlerRemote::AvatarUIHandlerRemote_set_ForceHideUI
-                      (unaff_ESI,(isFriendly ^ 1) & unaff_DI,(MethodInfo *)0x0);
-            AvatarUIHandlerRemote::AvatarUIHandlerRemote_SetHealthBarColor
-                      (unaff_ESI,isFriendly,(MethodInfo *)0x0);
-            return;
-          }
-          goto code_?;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (((((pMVar1 == (MVGameControllerBase *)0x0) ||
+        (pMVar2 = (pMVar1->fields).game, pMVar2 == (MVNetworkGame *)0x0)) ||
+       (this_00 = (pMVar2->fields).playerContainer, this_00 == (MVPlayerContainer *)0x0)) ||
+      ((this_02 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0),
+       this_02 == (MVLocalPlayer *)0x0 ||
+       (bVar3 = MVPlayer::MVPlayer_IsOnSameTeam_1
+                          ((MVPlayer *)this_02,(MVWorldObjectClient *)avatar,(MethodInfo *)0x0),
+       avatar == (MVAvatarRemote *)0x0)))) ||
+     ((pAVar4 = (avatar->fields)._.avatar, pAVar4 == (Avatar *)0x0 ||
+      (this_01 = (AvatarUIHandlerRemote *)(pAVar4->fields).avatarUIHandler,
+      this_01 == (AvatarUIHandlerRemote *)0x0)))) {
+    FUN_?();
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
+    return;
+  }
+  pAVar6 = this_01->klass;
+  bVar7 = (TypeInfo__AvatarUIHandlerRemote->_1).naturalAligment;
+  if (((pAVar6->_1).naturalAligment < bVar7) ||
+     ((pAVar6->_1).typeHierarchy[(ulonglong)bVar7 - 1] !=
+      (Il2CppClass *)TypeInfo__AvatarUIHandlerRemote)) {
+    FUN_?(this_01);
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
+    return;
+  }
+  bVar7 = (bVar3 ^ 1) & isInvisible;
+  (this_01->fields).forceHideUI = bVar7;
+  (*(pAVar6->vtable).SetShouldShowUI.methodPtr)(this_01,(ulonglong)(bVar7 ^ 1));
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar8 = (this_01->fields).avatarShieldMaterial;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pMVar8 != (Material *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((pMVar8->fields)._.m_CachedPtr != (void *)0x0) {
+      pMVar8 = (this_01->fields).avatarShieldMaterial;
+      if (pMVar8 == (Material *)0x0) goto code_?;
+      CStack_9.r = _UNK_?;
+      CStack_9.g = _UNK_?;
+      CStack_9.b = _UNK_?;
+      CStack_9.a = _UNK_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
+                (pMVar8,&CStack_9,(MethodInfo *)0x0);
+      pMVar8 = (this_01->fields).avatarHealthMaterial;
+      if (bVar3 == 0) {
+        if (pMVar8 == (Material *)0x0) {
+code_?:
+          FUN_?();
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
         }
+        CStack_9.r = _UNK_?;
+        CStack_9.g = _UNK_?;
+        CStack_9.b = _UNK_?;
+        CStack_9.a = _UNK_?;
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
+                  (pMVar8,&CStack_9,(MethodInfo *)0x0);
+        pMVar8 = AvatarUIHandlerRemote::AvatarUIHandlerRemote_get_EnemyIconMaterial
+                           (this_01,(MethodInfo *)0x0);
+        if (pMVar8 == (Material *)0x0) goto code_?;
+        CStack_9.r = _UNK_?;
+        CStack_9.g = _UNK_?;
+        CStack_9.b = _UNK_?;
+        CStack_9.a = _UNK_?;
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
+                  (pMVar8,&CStack_9,(MethodInfo *)0x0);
+        this_03 = (this_01->fields).teamIconRenderer;
+        pMVar8 = AvatarUIHandlerRemote::AvatarUIHandlerRemote_get_EnemyIconMaterial
+                           (this_01,(MethodInfo *)0x0);
+        if (this_03 == (Renderer *)0x0) goto code_?;
       }
+      else {
+        if (pMVar8 == (Material *)0x0) goto code_?;
+        CStack_9.r = _UNK_?;
+        CStack_9.g = _UNK_?;
+        CStack_9.b = _UNK_?;
+        CStack_9.a = _UNK_?;
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
+                  (pMVar8,&CStack_9,(MethodInfo *)0x0);
+        this_03 = (this_01->fields).teamIconRenderer;
+        if (this_03 == (Renderer *)0x0) goto code_?;
+        pMVar8 = (this_01->fields).teamIconMaterial;
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_SetMaterial
+                (this_03,pMVar8,(MethodInfo *)0x0);
     }
   }
-  func_?();
-code_?:
-  func_?(unaff_ESI);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
   return;
 }
 
@@ -54,115 +142,157 @@ Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_GetDefaultConfiguratio
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&TypeInfo__PickupItemCostume__CostumeConfiguration);
-    func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
-    func_?(&TypeInfo__System__Single);
-    func_?(&TypeInfo__System__String);
-    func_?(&StringLiteral_TrailEnabled);
-    func_?(&StringLiteral_TrailLength);
-    func_?(&StringLiteral_TrailColor);
-    func_?(&StringLiteral_PlayerInvisible);
-    func_?(&StringLiteral_Name);
-    func_?(&StringLiteral_Health);
-    func_?(&StringLiteral_MovementSpeed);
+    FUN_?(&TypeInfo__PickupItemCostume__CostumeConfiguration);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_TrailEnabled);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_TrailLength);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_TrailColor);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_PlayerInvisible);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Name);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Health);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_MovementSpeed);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pPVar1 = (PickupItemEditable_EditableItemConfiguration *)
-           func_?(TypeInfo__PickupItemCostume__CostumeConfiguration);
-  if (cRam_? == '\0') {
-    func_?(&::StringLiteral__);
-    cRam_? = '\x01';
-  }
-  (pPVar1->fields).name = ::StringLiteral__;
-  method_00 = (MethodInfo *)&pPVar1->fields;
-  func_?(method_00,::StringLiteral__);
-  (pPVar1->fields).cubeModelId = -1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)pPVar1,ExceptionArgument__Enum_obj,method_00);
-  if ((TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?();
+           FUN_?(TypeInfo__PickupItemCostume__CostumeConfiguration);
+  PickupItemEditable+EditableItemConfiguration::PickupItemEditable_EditableItemConfiguration__ctor
+            (pPVar1,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__Costume__CostumeData->_1).field_0x1c ==
+      0) {
+    FUN_?();
   }
   pSVar2 = (String *)
            Assets::Scripts::WorldObjectTypes::Costume::CostumeData::CostumeData_DefaultValue
                      (StringLiteral_Name,(MethodInfo *)0x0);
-  if (pSVar2 == (String *)0x0) {
-    (pPVar1->fields).name = (String *)0x0;
-  }
-  else {
-    pSVar3 = (String *)0x0;
-    if (pSVar2->klass == TypeInfo__System__String) {
-      pSVar3 = pSVar2;
+  if (pPVar1 != (PickupItemEditable_EditableItemConfiguration *)0x0) {
+    if (pSVar2 == (String *)0x0) {
+      (pPVar1->fields).name = (String *)0x0;
     }
-    if (pSVar3 == (String *)0x0) goto code_?;
-    (pPVar1->fields).name = pSVar3;
-    pSVar3 = (String *)0x0;
-    if (pSVar2->klass == TypeInfo__System__String) {
-      pSVar3 = pSVar2;
+    else {
+      pSVar3 = (String *)0x0;
+      if (pSVar2->klass == pSRam0000000182db2460) {
+        pSVar3 = pSVar2;
+      }
+      if (pSVar3 == (String *)0x0) {
+        FUN_?(pSVar2,pSRam0000000182db2460);
+        pcVar4 = (code *)swi(3);
+        pPVar1 = (PickupItemEditable_EditableItemConfiguration *)(*pcVar4)();
+        return pPVar1;
+      }
+      (pPVar1->fields).name = pSVar3;
+      pSVar3 = (String *)0x0;
+      if (pSVar2->klass == pSRam0000000182db2460) {
+        pSVar3 = pSVar2;
+      }
+      if (pSVar3 == (String *)0x0) {
+        FUN_?(pSVar2);
+        pcVar4 = (code *)swi(3);
+        pPVar1 = (PickupItemEditable_EditableItemConfiguration *)(*pcVar4)();
+        return pPVar1;
+      }
     }
-    if (pSVar3 == (String *)0x0) goto code_?;
-  }
-  func_?();
-  pOVar4 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::CostumeData_DefaultValue
-                     (StringLiteral_Health,(MethodInfo *)0x0);
-  if (pOVar4 != (Object *)0x0) {
-    if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-    goto code_?;
-    puVar5 = (undefined4 *)func_?();
-    pPVar1[1].klass = (PickupItemEditable_EditableItemConfiguration__Class *)*puVar5;
-    pOVar4 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::CostumeData_DefaultValue
-                       (StringLiteral_MovementSpeed,(MethodInfo *)0x0);
-    if (pOVar4 != (Object *)0x0) {
-      if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-      goto code_?;
-      puVar5 = (undefined4 *)func_?();
-      pPVar1[1].monitor = (MonitorData *)*puVar5;
-      pOVar4 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::CostumeData_DefaultValue
-                         (StringLiteral_TrailLength,(MethodInfo *)0x0);
-      if (pOVar4 != (Object *)0x0) {
-        if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Single->_0).element_class)
-        goto code_?;
-        puVar5 = (undefined4 *)func_?();
-        pPVar1[1].fields.name = (String *)*puVar5;
-        pOVar4 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::CostumeData_DefaultValue
-                           (StringLiteral_PlayerInvisible,(MethodInfo *)0x0);
-        if (pOVar4 != (Object *)0x0) {
-          if ((pOVar4->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class)
-          goto code_?;
-          puVar6 = (undefined1 *)func_?();
-          *(undefined1 *)&pPVar1[1].fields.cubeModelId = *puVar6;
-          pOVar4 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::CostumeData_DefaultValue
-                             (StringLiteral_TrailEnabled,(MethodInfo *)0x0);
-          if (pOVar4 != (Object *)0x0) {
-            if ((pOVar4->klass->_0).element_class == (TypeInfo__System__Boolean->_0).element_class)
+    if (iRam_? != 0) {
+      uVar5 = (uint)((ulonglong)&pPVar1->fields >> 0xc);
+      uVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+      do {
+        uVar7 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+        puVar8 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+        LOCK();
+        bVar9 = uVar7 == *puVar8;
+        if (bVar9) {
+          *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar9);
+    }
+    pOVar10 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::CostumeData_DefaultValue
+                       (StringLiteral_Health,(MethodInfo *)0x0);
+    if (pOVar10 != (Object *)0x0) {
+      if ((pOVar10->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+        FUN_?(pOVar10,lRam_?);
+        pcVar4 = (code *)swi(3);
+        pPVar1 = (PickupItemEditable_EditableItemConfiguration *)(*pcVar4)();
+        return pPVar1;
+      }
+      *(undefined4 *)&pPVar1[1].klass = *(undefined4 *)&pOVar10[1].klass;
+      pOVar10 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::CostumeData_DefaultValue
+                         (StringLiteral_MovementSpeed,(MethodInfo *)0x0);
+      if (pOVar10 != (Object *)0x0) {
+        if ((pOVar10->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+          FUN_?(pOVar10,lRam_?);
+          pcVar4 = (code *)swi(3);
+          pPVar1 = (PickupItemEditable_EditableItemConfiguration *)(*pcVar4)();
+          return pPVar1;
+        }
+        *(undefined4 *)((longlong)&pPVar1[1].klass + 4) = *(undefined4 *)&pOVar10[1].klass;
+        pOVar10 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::CostumeData_DefaultValue
+                           (StringLiteral_TrailLength,(MethodInfo *)0x0);
+        if (pOVar10 != (Object *)0x0) {
+          if ((pOVar10->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+            FUN_?(pOVar10,lRam_?);
+            pcVar4 = (code *)swi(3);
+            pPVar1 = (PickupItemEditable_EditableItemConfiguration *)(*pcVar4)();
+            return pPVar1;
+          }
+          *(undefined4 *)&pPVar1[1].monitor = *(undefined4 *)&pOVar10[1].klass;
+          pOVar10 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::CostumeData_DefaultValue
+                             (StringLiteral_PlayerInvisible,(MethodInfo *)0x0);
+          if (pOVar10 != (Object *)0x0) {
+            if ((pOVar10->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40))
             {
-              puVar6 = (undefined1 *)func_?();
-              *(undefined1 *)((int)&pPVar1[1].fields.cubeModelId + 2) = *puVar6;
-              pCVar7 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::
-                        CostumeData_DefaultColor
-                                  ((Color *)&stack0xffffffec,StringLiteral_TrailColor,
-                                   (MethodInfo *)0x0);
-              fVar8 = pCVar7->g;
-              fVar9 = pCVar7->b;
-              fVar10 = pCVar7->a;
-              pPVar1[1].fields.maxAmmo = pCVar7->r;
-              pPVar1[1].fields.damage = fVar8;
-              pPVar1[1].fields.impulseStrength = fVar9;
-              pPVar1[1].fields.recoilStrength = fVar10;
+              FUN_?(pOVar10,lRam_?);
+              pcVar4 = (code *)swi(3);
+              pPVar1 = (PickupItemEditable_EditableItemConfiguration *)(*pcVar4)();
               return pPVar1;
             }
-            goto code_?;
+            *(undefined1 *)((longlong)&pPVar1[1].monitor + 4) = *(undefined1 *)&pOVar10[1].klass;
+            pOVar10 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::
+                     CostumeData_DefaultValue(StringLiteral_TrailEnabled,(MethodInfo *)0x0);
+            if (pOVar10 != (Object *)0x0) {
+              if ((pOVar10->klass->_0).element_class !=
+                  *(Il2CppClass **)(lRam_? + 0x40)) {
+                FUN_?(pOVar10,lRam_?);
+                pcVar4 = (code *)swi(3);
+                pPVar1 = (PickupItemEditable_EditableItemConfiguration *)(*pcVar4)();
+                return pPVar1;
+              }
+              *(undefined1 *)((longlong)&pPVar1[1].monitor + 6) = *(undefined1 *)&pOVar10[1].klass;
+              pCVar11 = Assets::Scripts::WorldObjectTypes::Costume::CostumeData::
+                       CostumeData_DefaultColor
+                                 (&CStack_12,StringLiteral_TrailColor,(MethodInfo *)0x0);
+              fVar13 = pCVar11->b;
+              fVar14 = pCVar11->a;
+              pPVar1[1].fields.name = *(String **)pCVar11;
+              pPVar1[1].fields.cubeModelId = (int32_t)fVar13;
+              pPVar1[1].fields.maxAmmo = fVar14;
+              return pPVar1;
+            }
           }
         }
       }
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar11 = (code *)swi(3);
-  pPVar1 = (PickupItemEditable_EditableItemConfiguration *)(*pcVar11)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  pPVar1 = (PickupItemEditable_EditableItemConfiguration *)(*pcVar4)();
   return pPVar1;
 }
 
@@ -174,116 +304,236 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action);
-    func_?(&MethodInfo__PickupItemCostume__OnLocalPlayerTeamChanged__);
+    FUN_?(&TypeInfo__System__Action);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__PickupItemCostume__OnLocalPlayerTeamChanged__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar1 != (MVNetworkGame *)0x0) {
-    pMVar2 = (pMVar1->fields).playerContainer;
-    if (pMVar2 != (MVPlayerContainer *)0x0) {
-      pAVar3 = (pMVar2->fields).OnLocalPlayerTeamChanged;
-      this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (this_00,(Object *)this,MethodInfo__PickupItemCostume__OnLocalPlayerTeamChanged__,
-                 (MethodInfo *)0x0);
-      pAVar3 = (Action *)
-               mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
-      if (pAVar3 == (Action *)0x0) {
-        (pMVar2->fields).OnLocalPlayerTeamChanged = (Action *)0x0;
-      }
-      else {
-        pAVar4 = (Action *)0x0;
-        if (pAVar3->klass == TypeInfo__System__Action) {
-          pAVar4 = pAVar3;
-        }
-        if (pAVar4 == (Action *)0x0) goto code_?;
-        (pMVar2->fields).OnLocalPlayerTeamChanged = pAVar4;
-        pAVar4 = (Action *)0x0;
-        if (pAVar3->klass == TypeInfo__System__Action) {
-          pAVar4 = pAVar3;
-        }
-        if (pAVar4 == (Action *)0x0) goto code_?;
-      }
-      func_?();
-      if (cRam_? == '\0') {
-        func_?();
-        func_?();
-        func_?();
-        func_?();
-        func_?(&StringLiteral_Default);
-        func_?(&StringLiteral_Player);
-        cRam_? = '\x01';
-      }
-      iVar5 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                        (StringLiteral_Default,(MethodInfo *)0x0);
-      uVar6 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                        (StringLiteral_Player,(MethodInfo *)0x0);
-      in_stack_7[0x12].klass =
-           (Component__Class *)(1 << ((byte)iVar5 & 0x1f) | 1 << (uVar6 & 0x1f));
-      if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      if (TypeInfo__MainCameraManager->static_fields->IsCameraForcedFirstPerson != 0) {
-        pCVar8 = in_stack_7[2].klass;
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                          ((Object_1 *)pCVar8,(Object_1 *)0x0,(MethodInfo *)0x0);
-        if (bVar9 != 0) {
-          this_01 = (GameObject *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
-                    (this_01,StringLiteral_FirstPersonTransform,(MethodInfo *)0x0);
-          if (this_01 != (GameObject *)0x0) {
-            pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                               (this_01,(MethodInfo *)0x0);
-            p = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                          (in_stack_7,(MethodInfo *)0x0);
-            if (pTVar10 != (Transform *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent
-                        (pTVar10,p,(MethodInfo *)0x0);
-              pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                 (this_01,(MethodInfo *)0x0);
-              if (cRam_? == '\0') {
-                func_?();
-                cRam_? = '\x01';
-              }
-              if (pTVar10 != (Transform *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                          (pTVar10,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
-                           (MethodInfo *)0x0);
-                pCVar8 = (Component__Class *)
-                         UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                         GameObject_get_transform(this_01,(MethodInfo *)0x0);
-                in_stack_7[2].klass = pCVar8;
-                func_?();
-                goto code_?;
-              }
-            }
-          }
-          func_?();
-          pcVar11 = (code *)swi(3);
-          (*pcVar11)();
-          return;
-        }
-      }
-code_?:
-      (*(code *)in_stack_7->klass[2].interfaceOffsets)();
-      pvVar12 = (void *)(*(code *)in_stack_7->klass[2]._0.nestedTypes)();
-      in_stack_7[0x11].fields._.m_CachedPtr = pvVar12;
-      func_?();
-      (*in_stack_7->klass[2]._1.unity_user_data)();
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (((pMVar1 == (MVGameControllerBase *)0x0) ||
+      (pMVar2 = (pMVar1->fields).game, pMVar2 == (MVNetworkGame *)0x0)) ||
+     (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 == (MVPlayerContainer *)0x0)) {
+    FUN_?();
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
+    return;
+  }
+  pAVar5 = (pMVar3->fields).OnLocalPlayerTeamChanged;
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_00,(Object *)this,MethodInfo__PickupItemCostume__OnLocalPlayerTeamChanged__,
+             (MethodInfo *)0x0);
+  pAVar5 = (Action *)
+            mscorlib.dll::System::Delegate::Delegate_Combine
+                      ((Delegate *)pAVar5,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pAVar5 == (Action *)0x0) {
+    (pMVar3->fields).OnLocalPlayerTeamChanged = (Action *)0x0;
+  }
+  else {
+    pAVar6 = (Action *)0x0;
+    if (pAVar5->klass == TypeInfo__System__Action) {
+      pAVar6 = pAVar5;
+    }
+    if (pAVar6 == (Action *)0x0) {
+      FUN_?(pAVar5,TypeInfo__System__Action);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    (pMVar3->fields).OnLocalPlayerTeamChanged = pAVar6;
+    pAVar6 = (Action *)0x0;
+    if (pAVar5->klass == TypeInfo__System__Action) {
+      pAVar6 = pAVar5;
+    }
+    if (pAVar6 == (Action *)0x0) {
+      FUN_?();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
       return;
     }
   }
-  func_?();
+  if (iRam_? != 0) {
+    uVar7 = (uint)((ulonglong)&(pMVar3->fields).OnLocalPlayerTeamChanged >> 0xc);
+    puVar8 = (ulonglong *)((ulonglong)((uVar7 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar9 = *puVar8;
+      LOCK();
+      uVar10 = *puVar8;
+      if (uVar9 == uVar10) {
+        *puVar8 = uVar9 | 1L << (ulonglong)(uVar7 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar9 != uVar10);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__GameObject);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MainCameraManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_FirstPersonTransform);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Default);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Player);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  iVar11 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                    (StringLiteral_Default,(MethodInfo *)0x0);
+  uVar7 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                     (StringLiteral_Player,(MethodInfo *)0x0);
+  (this->fields)._.hitLayerMask = 1 << ((byte)iVar11 & 0x1f) | 1 << (uVar7 & 0x1f);
+  if (*(int *)&(TypeInfo__MainCameraManager->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__MainCameraManager);
+  }
+  if (TypeInfo__MainCameraManager->static_fields->IsCameraForcedFirstPerson == 0) {
 code_?:
-  func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+    (*(this->klass->vtable).InitializeAudioPlayers.methodPtr)
+              (this,(this->klass->vtable).InitializeAudioPlayers.method);
+    pPVar12 = (PickupItemEditable_EditableItemConfiguration *)
+              (*(this->klass->vtable).GetDefaultConfiguration.methodPtr)
+                        (this,(this->klass->vtable).GetDefaultConfiguration.method);
+    bVar13 = iRam_? != 0;
+    (this->fields)._._Configuration_k__BackingField = pPVar12;
+    if (bVar13) {
+      uVar7 = (uint)((ulonglong)&(this->fields)._._Configuration_k__BackingField >> 0xc);
+      lVar14 = (ulonglong)((uVar7 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar10 = *(ulonglong *)(lVar14 + 0xADDR);
+        puVar8 = (ulonglong *)(lVar14 + 0xADDR);
+        LOCK();
+        bVar13 = uVar10 == *puVar8;
+        if (bVar13) {
+          *puVar8 = uVar10 | 1L << (uVar7 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar13);
+    }
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(this->klass->vtable).SetValuesBasedOnConfiguration.methodPtr)
+              (this,(this->klass->vtable).SetValuesBasedOnConfiguration.method);
+    return;
+  }
+  pTVar15 = (this->fields)._._._.firstPersonTransform;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pTVar15 != (Transform *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((pTVar15->fields)._._.m_CachedPtr != (void *)0x0) goto code_?;
+  }
+  this_01 = (GameObject *)FUN_?(TypeInfo__UnityEngine__GameObject);
+  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
+            (this_01,StringLiteral_FirstPersonTransform,(MethodInfo *)0x0);
+  if (this_01 != (GameObject *)0x0) {
+    pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                        (this_01,(MethodInfo *)0x0);
+    parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)this,(MethodInfo *)0x0);
+    if (pTVar15 != (Transform *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                (pTVar15,parent,1,(MethodInfo *)0x0);
+      pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                          (this_01,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Vector3);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (pTVar15 == (Transform *)0x0) {
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pvVar16 = (pTVar15->fields)._._.m_CachedPtr;
+      if (pvVar16 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar15,(MethodInfo *)0x0);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pcVar4 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+        uVar17 = func_?(&UNK_?);
+        FUN_?(uVar17,0);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pcRam_? = pcVar4;
+      (*pcRam_?)(pvVar16);
+      pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                          (this_01,(MethodInfo *)0x0);
+      bVar13 = iRam_? != 0;
+      (this->fields)._._._.firstPersonTransform = pTVar15;
+      if (bVar13) {
+        uVar7 = (uint)((ulonglong)&(this->fields)._._._.firstPersonTransform >> 0xc);
+        lVar14 = (ulonglong)((uVar7 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar10 = *(ulonglong *)(lVar14 + 0xADDR);
+          puVar8 = (ulonglong *)(lVar14 + 0xADDR);
+          LOCK();
+          bVar13 = uVar10 == *puVar8;
+          if (bVar13) {
+            *puVar8 = uVar10 | 1L << (uVar7 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar13);
+      }
+      goto code_?;
+    }
+  }
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -295,113 +545,186 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_InterruptFire
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    UnityEngine__MeshCollider__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshCollider>______
-                   );
-    func_?(&TypeInfo__MVAvatarLocal);
-    func_?(&TypeInfo__MVAvatar);
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&
+                  UnityEngine__MeshCollider__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshCollider>______
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVAvatarLocal);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVAvatar);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields)._._._.owner;
-  if (pMVar1 != (MVPickupOwner *)0x0) {
-    pMVar2 = (MVAvatarLocal *)(pMVar1->fields)._.worldObjectParent;
-    if (pMVar2 == (MVAvatarLocal *)0x0) {
-      return;
-    }
-    if (((pMVar2->klass->_1).naturalAligment < (TypeInfo__MVAvatar->_1).naturalAligment) ||
-       ((MVAvatar__Class *)
-        (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1] !=
+  if (pMVar1 == (MVPickupOwner *)0x0) goto code_?;
+  this_00 = (MVAvatarLocal *)(pMVar1->fields)._.worldObjectParent;
+  if (this_00 != (MVAvatarLocal *)0x0) {
+    bVar2 = (TypeInfo__MVAvatar->_1).naturalAligment;
+    if ((bVar2 <= (this_00->klass->_1).naturalAligment) &&
+       ((MVAvatar__Class *)(this_00->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] ==
         TypeInfo__MVAvatar)) {
-      bVar3 = false;
-    }
-    else {
-      bVar3 = true;
-    }
-    this_03 = (MVAvatarLocal *)0x0;
-    if (bVar3) {
-      this_03 = pMVar2;
-    }
-    if (this_03 == (MVAvatarLocal *)0x0) {
-      return;
-    }
-    pPVar4 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-    if (pPVar4 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-      if ((pPVar4->fields).isPlayerInvisible != 0) {
-        PickupItemCostume_SetAvatarInvisibility(this,0,(MVAvatar *)this_03,(MethodInfo *)0x0);
-      }
-      if ((this_03->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) {
-        return;
-      }
-      if ((MVAvatarLocal__Class *)
-          (this_03->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
-          TypeInfo__MVAvatarLocal) {
-        return;
-      }
-      pPVar4 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-      if (pPVar4 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-        if ((int)(pPVar4->fields).health != 100) {
-          MVAvatarLocal::MVAvatarLocal_set_BaseMaxHealth(this_03,100,(MethodInfo *)0x0);
+      pPVar3 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+      if (pPVar3 != (PickupItemCostume_CostumeConfiguration *)0x0) {
+        if ((pPVar3->fields).isPlayerInvisible != 0) {
+          PickupItemCostume_SetAvatarInvisibility(this,0,(MVAvatar *)this_00,(MethodInfo *)0x0);
         }
-        pPVar4 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-        if (pPVar4 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-          if ((float)(int)(pPVar4->fields).movementSpeed != _UNK_?) {
-            this_00 = (this_03->fields).avatarMotor;
-            if (this_00 == (AvatarMotor *)0x0) goto code_?;
-            AvatarMotor::AvatarMotor_set_WalkSpeedBase(this_00,8.0,(MethodInfo *)0x0);
+        bVar2 = (TypeInfo__MVAvatarLocal->_1).naturalAligment;
+        if ((this_00->klass->_1).naturalAligment < bVar2) {
+          return;
+        }
+        if ((MVAvatarLocal__Class *)(this_00->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] !=
+            TypeInfo__MVAvatarLocal) {
+          return;
+        }
+        pPVar3 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+        if (pPVar3 != (PickupItemCostume_CostumeConfiguration *)0x0) {
+          if ((int)(pPVar3->fields).health != 100) {
+            MVAvatarLocal::MVAvatarLocal_set_BaseMaxHealth(this_00,100,(MethodInfo *)0x0);
           }
-          pPVar4 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-          if (pPVar4 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-            if ((pPVar4->fields).playersCanCollide == 0) {
-              return;
+          pPVar3 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+          if (pPVar3 != (PickupItemCostume_CostumeConfiguration *)0x0) {
+            if ((float)(int)(pPVar3->fields).movementSpeed != _UNK_?) {
+              this_01 = (this_00->fields).avatarMotor;
+              if (this_01 == (AvatarMotor *)0x0) goto code_?;
+              (this_01->fields).walkSpeedBase = 8.0;
+              AvatarMotor::AvatarMotor_HandleMovementBoost(this_01,(MethodInfo *)0x0);
             }
-            this_01 = (this->fields)._.cubeModelObject;
-            if (this_01 != (GameObject *)0x0) {
-              pOVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                       GameObject_GetComponentsInChildren
-                                 (this_01,
-                                  UnityEngine__MeshCollider__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshCollider>______
-                                 );
-              uVar6 = 0;
-              if (pOVar5 != (Object__Array *)0x0) {
-                ppOVar7 = pOVar5->vector;
-                for (; (int)uVar6 < (int)pOVar5->max_length; uVar6 = uVar6 + 1) {
-                  if (pOVar5->max_length <= uVar6) goto code_?;
-                  if ((Collider *)*ppOVar7 == (Collider *)0x0) goto code_?;
-                  UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled
-                            ((Collider *)*ppOVar7,0,(MethodInfo *)0x0);
-                  ppOVar7 = ppOVar7 + 1;
-                }
-                pBVar8 = (this->fields).costumeTriggerCollider;
-                if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?();
-                }
-                bVar9 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                                  ((Object_1 *)pBVar8,(Object_1 *)0x0,(MethodInfo *)0x0);
-                if (bVar9 == 0) {
-                  return;
-                }
-                pMVar1 = (this->fields)._._._.owner;
-                if ((pMVar1 != (MVPickupOwner *)0x0) &&
-                   (pMVar2 = (MVAvatarLocal *)(pMVar1->fields)._.worldObjectParent,
-                   pMVar2 != (MVAvatarLocal *)0x0)) {
-                  if (((pMVar2->klass->_1).naturalAligment <
-                       (TypeInfo__MVAvatarLocal->_1).naturalAligment) ||
-                     ((MVAvatarLocal__Class *)
-                      (pMVar2->klass->_1).typeHierarchy
-                      [(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] != TypeInfo__MVAvatarLocal
-                     )) goto code_?;
-                  this_02 = MVAvatarLocal::MVAvatarLocal_get_TriggingColliders
-                                      (pMVar2,(MethodInfo *)0x0);
-                  if (this_02 != (ColliderCollection *)0x0) {
-                    Assets::Scripts::Tools::ColliderCollection::ColliderCollection_RemoveCollider
-                              (this_02,(Collider *)(this->fields).costumeTriggerCollider,
-                               (MethodInfo *)0x0);
-                    pBVar8 = (this->fields).costumeTriggerCollider;
-                    if (pBVar8 != (BoxCollider *)0x0) {
-                      UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled
-                                ((Collider *)pBVar8,0,(MethodInfo *)0x0);
+            pPVar3 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+            if (pPVar3 != (PickupItemCostume_CostumeConfiguration *)0x0) {
+              if ((pPVar3->fields).playersCanCollide == 0) {
+                return;
+              }
+              if ((this->fields)._.cubeModelObject != (GameObject *)0x0) {
+                lVar4 = FUN_?();
+                uVar5 = 0;
+                if (lVar4 != 0) {
+                  puVar6 = (undefined8 *)(lVar4 + 0x20);
+                  for (; (int)uVar5 < *(int *)(lVar4 + 0x18); uVar5 = uVar5 + 1) {
+                    if (*(uint *)(lVar4 + 0x18) <= uVar5) {
+                      FUN_?();
+                      pcVar7 = (code *)swi(3);
+                      (*pcVar7)();
                       return;
+                    }
+                    obj = (Object *)*puVar6;
+                    if (obj == (Object *)0x0) goto code_?;
+                    if (cRam_? == '\0') {
+                      FUN_?(&
+                                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Collider>_UnityEngine__Collider_
+                                   );
+                      LOCK();
+                      UNLOCK();
+                      cRam_? = '\x01';
+                    }
+                    pOVar8 = obj[1].klass;
+                    if (pOVar8 == (Object__Class *)0x0) {
+                      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                      ThrowHelper_2_ThrowNullReferenceException(obj,(MethodInfo *)0x0);
+                      pcVar7 = (code *)swi(3);
+                      (*pcVar7)();
+                      return;
+                    }
+                    pcVar7 = pcRam_?;
+                    if ((pcRam_? == (code *)0x0) &&
+                       (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+                      uVar9 = func_?(&UNK_?);
+                      FUN_?(uVar9,0);
+                      pcVar7 = (code *)swi(3);
+                      (*pcVar7)();
+                      return;
+                    }
+                    pcRam_? = pcVar7;
+                    (*pcRam_?)(pOVar8);
+                    puVar6 = puVar6 + 1;
+                  }
+                  pBVar10 = (this->fields).costumeTriggerCollider;
+                  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                    FUN_?();
+                  }
+                  if (cRam_? == '\0') {
+                    FUN_?(&TypeInfo__UnityEngine__Object);
+                    LOCK();
+                    UNLOCK();
+                    cRam_? = '\x01';
+                  }
+                  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                    FUN_?();
+                  }
+                  if (cRam_? == '\0') {
+                    FUN_?(&TypeInfo__UnityEngine__Object);
+                    LOCK();
+                    UNLOCK();
+                    cRam_? = '\x01';
+                  }
+                  if (pBVar10 == (BoxCollider *)0x0) {
+                    return;
+                  }
+                  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                    FUN_?();
+                  }
+                  if ((pBVar10->fields)._._._.m_CachedPtr == (void *)0x0) {
+                    return;
+                  }
+                  pMVar1 = (this->fields)._._._.owner;
+                  if ((pMVar1 != (MVPickupOwner *)0x0) &&
+                     (pMVar11 = (pMVar1->fields)._.worldObjectParent,
+                     pMVar11 != (MVWorldObjectClient *)0x0)) {
+                    bVar2 = (TypeInfo__MVAvatarLocal->_1).naturalAligment;
+                    if (((pMVar11->klass->_1).naturalAligment < bVar2) ||
+                       ((MVAvatarLocal__Class *)
+                        (pMVar11->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] !=
+                        TypeInfo__MVAvatarLocal)) {
+                      FUN_?(pMVar11);
+                      pcVar7 = (code *)swi(3);
+                      (*pcVar7)();
+                      return;
+                    }
+                    pMVar12 = pMVar11[1].fields.group;
+                    if ((pMVar12 != (MVGroup *)0x0) &&
+                       (this_02 = *(ColliderCollection **)&(pMVar12->fields)._._.position,
+                       this_02 != (ColliderCollection *)0x0)) {
+                      Assets::Scripts::Tools::ColliderCollection::ColliderCollection_RemoveCollider
+                                (this_02,(Collider *)(this->fields).costumeTriggerCollider,
+                                 (MethodInfo *)0x0);
+                      pBVar10 = (this->fields).costumeTriggerCollider;
+                      if (pBVar10 != (BoxCollider *)0x0) {
+                        if (cRam_? == '\0') {
+                          FUN_?(&
+                                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Collider>_UnityEngine__Collider_
+                                       );
+                          LOCK();
+                          UNLOCK();
+                          cRam_? = '\x01';
+                        }
+                        pvVar13 = (pBVar10->fields)._._._.m_CachedPtr;
+                        if (pvVar13 != (void *)0x0) {
+                          pcVar7 = pcRam_?;
+                          if ((pcRam_? == (code *)0x0) &&
+                             (pcVar7 = (code *)FUN_?(&UNK_?),
+                             pcVar7 == (code *)0x0)) {
+                            uVar9 = func_?(&UNK_?);
+                            FUN_?(uVar9,0);
+                            pcVar7 = (code *)swi(3);
+                            (*pcVar7)();
+                            return;
+                          }
+                          pcRam_? = pcVar7;
+                          (*pcRam_?)(pvVar13,0);
+                          return;
+                        }
+                        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                        ThrowHelper_2_ThrowNullReferenceException
+                                  ((Object *)pBVar10,(MethodInfo *)0x0);
+                        pcVar7 = (code *)swi(3);
+                        (*pcVar7)();
+                        return;
+                      }
                     }
                   }
                 }
@@ -410,16 +733,13 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_InterruptFire
           }
         }
       }
+code_?:
+      FUN_?();
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
+      return;
     }
   }
-code_?:
-  func_?();
-code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
   return;
 }
 
@@ -432,151 +752,183 @@ bool Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_IsSameItemData
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    bool_MethodInfo__Extensions__GetValueOrDefault<bool>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__bool_
-                   );
-    func_?(&
-                    float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
-                   );
-    func_?(&
-                    System__String_MethodInfo__Extensions__GetValueOrDefault<System::String>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__String_
-                   );
-    func_?(&TypeInfo__Extensions);
-    func_?(&StringLiteral_TrailEnabled);
-    func_?(&StringLiteral_TrailLength);
-    func_?(&StringLiteral_PlayersCanCollide);
-    func_?(&StringLiteral_TrailColor);
-    func_?(&StringLiteral_PlayerInvisible);
-    func_?(&StringLiteral_Name);
-    func_?(&StringLiteral_Health);
-    func_?(&StringLiteral_MovementSpeed);
-    func_?(&StringLiteral_error);
+    FUN_?(&
+                  bool_MethodInfo__Extensions__GetValueOrDefault<bool>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__bool_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  System__String_MethodInfo__Extensions__GetValueOrDefault<System::String>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__String_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Extensions);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_TrailEnabled);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_TrailLength);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_PlayersCanCollide);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_TrailColor);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_PlayerInvisible);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Name);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Health);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_MovementSpeed);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_error);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
   if (pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-    a = (pPVar1->fields)._.name;
-    if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__Extensions);
+    pSVar2 = (pPVar1->fields)._.name;
+    if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    b = (String *)
-        Extensions::Extensions_GetValueOrDefault_3
-                  (itemData,StringLiteral_Name,(Object *)StringLiteral_error,
-                   System__String_MethodInfo__Extensions__GetValueOrDefault<System::String>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__String_
-                  );
-    bVar2 = mscorlib.dll::System::String::String_op_Equality(a,b,(MethodInfo *)0x0);
-    if (bVar2 == 0) {
+    pSVar3 = (String *)
+             Extensions::Extensions_GetValueOrDefault_3
+                       (itemData,StringLiteral_Name,(Object *)StringLiteral_error,
+                        System__String_MethodInfo__Extensions__GetValueOrDefault<System::String>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__String_
+                       );
+    if ((pSVar2 != pSVar3) &&
+       ((((pSVar2 == (String *)0x0 || (pSVar3 == (String *)0x0)) ||
+         ((pSVar2->fields)._stringLength != (pSVar3->fields)._stringLength)) ||
+        (bVar4 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                           ((uint8_t *)&(pSVar2->fields)._firstChar,
+                            (uint8_t *)&(pSVar3->fields)._firstChar,
+                            (longlong)(pSVar2->fields)._stringLength * 2,(MethodInfo *)0x0),
+        bVar4 == 0)))) {
       return 0;
     }
-    CStack_3.a = (float)&UNK_?;
     pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
     if (pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-      fVar4 = (pPVar1->fields).health;
-      if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+      fVar5 = (pPVar1->fields).health;
+      if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      fVar5 = Extensions::Extensions_GetValueOrDefault_4
-                        (itemData,StringLiteral_Health,-1.0,
+      fVar6 = _UNK_?;
+      fVar7 = Extensions::Extensions_GetValueOrDefault_4
+                        (itemData,StringLiteral_Health,_UNK_?,
                          float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
                         );
-      if (fVar4 != fVar5) {
+      if (fVar5 != fVar7) {
         return 0;
       }
       pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
       if (pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-        fVar4 = (pPVar1->fields).movementSpeed;
-        if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__Extensions);
+        fVar5 = (pPVar1->fields).movementSpeed;
+        if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        fVar5 = Extensions::Extensions_GetValueOrDefault_4
-                          (itemData,StringLiteral_MovementSpeed,-1.0,
+        fVar7 = Extensions::Extensions_GetValueOrDefault_4
+                          (itemData,StringLiteral_MovementSpeed,fVar6,
                            float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
                           );
-        if (fVar4 != fVar5) {
+        if (fVar5 != fVar7) {
           return 0;
         }
         pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
         if (pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-          fVar4 = (pPVar1->fields).trailLength;
-          if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__Extensions);
+          fVar5 = (pPVar1->fields).trailLength;
+          if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+            FUN_?();
           }
-          fVar5 = Extensions::Extensions_GetValueOrDefault_4
-                            (itemData,StringLiteral_TrailLength,-1.0,
+          fVar6 = Extensions::Extensions_GetValueOrDefault_4
+                            (itemData,StringLiteral_TrailLength,fVar6,
                              float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
                             );
-          if (fVar4 != fVar5) {
+          if (fVar5 != fVar6) {
             return 0;
           }
           pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
           if (pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-            bVar2 = (pPVar1->fields).isPlayerInvisible;
+            bVar4 = (pPVar1->fields).isPlayerInvisible;
             pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
             if (pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-              bVar6 = (pPVar1->fields).isPlayerInvisible;
-              if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__Extensions);
+              bVar8 = (pPVar1->fields).isPlayerInvisible;
+              if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+                FUN_?();
               }
-              bVar6 = Extensions::Extensions_GetValueOrDefault
-                                (itemData,StringLiteral_PlayerInvisible,bVar6 == 0,
+              bVar8 = Extensions::Extensions_GetValueOrDefault
+                                (itemData,StringLiteral_PlayerInvisible,bVar8 == 0,
                                  bool_MethodInfo__Extensions__GetValueOrDefault<bool>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__bool_
                                 );
-              if (bVar2 != bVar6) {
+              if (bVar4 != bVar8) {
                 return 0;
               }
               pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
               if (pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-                bVar2 = (pPVar1->fields).playersCanCollide;
+                bVar4 = (pPVar1->fields).playersCanCollide;
                 pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
                 if (pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-                  bVar6 = (pPVar1->fields).playersCanCollide;
-                  if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-                    func_?(TypeInfo__Extensions);
+                  bVar8 = (pPVar1->fields).playersCanCollide;
+                  if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+                    FUN_?();
                   }
-                  bVar6 = Extensions::Extensions_GetValueOrDefault
-                                    (itemData,StringLiteral_PlayersCanCollide,bVar6 == 0,
+                  bVar8 = Extensions::Extensions_GetValueOrDefault
+                                    (itemData,StringLiteral_PlayersCanCollide,bVar8 == 0,
                                      bool_MethodInfo__Extensions__GetValueOrDefault<bool>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__bool_
                                     );
-                  if (bVar2 != bVar6) {
+                  if (bVar4 != bVar8) {
                     return 0;
                   }
                   pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
                   if (pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-                    bVar2 = (pPVar1->fields).isTrailEnabled;
+                    bVar4 = (pPVar1->fields).isTrailEnabled;
                     pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
                     if (pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-                      bVar6 = (pPVar1->fields).isTrailEnabled;
-                      if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-                        func_?(TypeInfo__Extensions);
+                      bVar8 = (pPVar1->fields).isTrailEnabled;
+                      if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+                        FUN_?();
                       }
-                      bVar6 = Extensions::Extensions_GetValueOrDefault
-                                        (itemData,StringLiteral_TrailEnabled,bVar6 == 0,
+                      bVar8 = Extensions::Extensions_GetValueOrDefault
+                                        (itemData,StringLiteral_TrailEnabled,bVar8 == 0,
                                          bool_MethodInfo__Extensions__GetValueOrDefault<bool>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__bool_
                                         );
-                      if (bVar2 != bVar6) {
+                      if (bVar4 != bVar8) {
                         return 0;
                       }
                       pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
                       if (pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-                        fVar4 = (pPVar1->fields).trailColor.r;
-                        fVar5 = (pPVar1->fields).trailColor.g;
+                        fVar5 = (pPVar1->fields).trailColor.r;
+                        fVar6 = (pPVar1->fields).trailColor.g;
                         fVar7 = (pPVar1->fields).trailColor.b;
-                        fVar8 = (pPVar1->fields).trailColor.a;
-                        if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-                          func_?(TypeInfo__Extensions);
+                        fVar9 = (pPVar1->fields).trailColor.a;
+                        if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+                          FUN_?();
                         }
-                        defaultColor.g = (float)_UNK_?;
-                        defaultColor.r = (float)_UNK_?;
-                        defaultColor.b = (float)_UNK_?;
-                        defaultColor.a = _UNK_?;
-                        pCVar9 = Extensions::Extensions_GetColorOrDefault
-                                           (&CStack_3,itemData,StringLiteral_TrailColor,
-                                            defaultColor,(MethodInfo *)0x0);
-                        fVar4 = fVar4 - pCVar9->r;
-                        fVar5 = fVar5 - pCVar9->g;
-                        fVar7 = fVar7 - pCVar9->b;
-                        fVar8 = fVar8 - pCVar9->a;
-                        return fVar4 * fVar4 + fVar5 * fVar5 + fVar7 * fVar7 + fVar8 * fVar8 <
+                        CStack_10.r = _UNK_?;
+                        CStack_10.g = _UNK_?;
+                        CStack_10.b = _UNK_?;
+                        CStack_10.a = _UNK_?;
+                        pCVar11 = Extensions::Extensions_GetColorOrDefault
+                                           (aCStack_12,itemData,StringLiteral_TrailColor,&CStack_10,
+                                            (MethodInfo *)0x0);
+                        fVar5 = fVar5 - pCVar11->r;
+                        fVar6 = fVar6 - pCVar11->g;
+                        fVar7 = fVar7 - pCVar11->b;
+                        fVar9 = fVar9 - pCVar11->a;
+                        return fVar6 * fVar6 + fVar5 * fVar5 + fVar7 * fVar7 + fVar9 * fVar9 <
                                _UNK_?;
                       }
                     }
@@ -589,10 +941,10 @@ bool Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_IsSameItemData
       }
     }
   }
-  func_?();
-  pcVar10 = (code *)swi(3);
-  bVar2 = (*pcVar10)();
-  return bVar2;
+  FUN_?();
+  pcVar13 = (code *)swi(3);
+  bVar4 = (*pcVar13)();
+  return bVar4;
 }
 
 
@@ -603,9 +955,15 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnArcTrailStateCh
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__GradientAlphaKey);
-    func_?(&TypeInfo__UnityEngine__GradientColorKey);
-    func_?(&TypeInfo__UnityEngine__Gradient);
+    FUN_?(&TypeInfo__UnityEngine__GradientAlphaKey);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__GradientColorKey);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Gradient);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).trailRenderer;
@@ -620,105 +978,104 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnArcTrailStateCh
         return;
       }
       pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+      fVar3 = _UNK_?;
       if (pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-        fVar3 = (pPVar2->fields).trailLength;
-        if (fVar3 <= _UNK_?) {
-          fVar3 = _UNK_?;
+        fVar4 = (pPVar2->fields).trailLength;
+        if (fVar4 <= _UNK_?) {
+          fVar4 = _UNK_?;
         }
-        fVar3 = _UNK_? / fVar3;
-        this_00 = (Gradient *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient__ctor(this_00,(MethodInfo *)0x0)
-        ;
-        value = (GradientAlphaKey__Array *)func_?();
-        VStack_4.Item1 = 0.0;
-        VStack_4.Item2 = 0.0;
-        mscorlib.dll::System::ValueTuple`2[Single,Single]::ValueTuple_2_Single_Single___ctor
-                  (&VStack_4,0.0,fVar3 * _UNK_?,(MethodInfo *)0x0);
+        fVar4 = _UNK_? / fVar4;
+        this_00 = (Gradient *)FUN_?(TypeInfo__UnityEngine__Gradient);
+        pcVar5 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+          uVar6 = func_?(&UNK_?);
+          FUN_?(uVar6,0);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
+        }
+        pcRam_? = pcVar5;
+        pvVar7 = (void *)(*pcRam_?)();
+        (this_00->fields).m_Ptr = pvVar7;
+        (this_00->fields).m_RequiresNativeCleanup = 1;
+        value = (GradientAlphaKey__Array *)FUN_?(TypeInfo__UnityEngine__GradientAlphaKey);
         if (value != (GradientAlphaKey__Array *)0x0) {
-          if (value->max_length == 0) goto code_?;
-          value->vector[0].alpha = VStack_4.Item1;
-          value->vector[0].time = VStack_4.Item2;
-          pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-          if (pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-            VStack_5.Item1 = 0.0;
-            VStack_5.Item2 = 0.0;
-            mscorlib.dll::System::ValueTuple`2[Single,Single]::ValueTuple_2_Single_Single___ctor
-                      (&VStack_5,(pPVar2->fields).trailColor.a,fVar3 * _UNK_?,
-                       (MethodInfo *)0x0);
-            if (value->max_length < 2) goto code_?;
-            value->vector[1].alpha = VStack_5.Item1;
-            value->vector[1].time = VStack_5.Item2;
-            VStack_6.Item1 = 0.0;
-            VStack_6.Item2 = 0.0;
-            mscorlib.dll::System::ValueTuple`2[Single,Single]::ValueTuple_2_Single_Single___ctor
-                      (&VStack_6,0.0,1.0,(MethodInfo *)0x0);
-            if (value->max_length < 3) goto code_?;
-            value->vector[2].alpha = VStack_6.Item1;
-            value->vector[2].time = VStack_6.Item2;
-            if (this_00 != (Gradient *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient_set_alphaKeys
-                        (this_00,value,(MethodInfo *)0x0);
-              value_00 = (GradientColorKey__Array *)func_?();
-              pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-              if (pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-                fVar3 = 0.0;
-                UnityEngine.CoreModule.dll::UnityEngine::GradientColorKey::GradientColorKey__ctor
-                          ((GradientColorKey *)&stack0xffffffc8,(pPVar2->fields).trailColor,0.0,
-                           (MethodInfo *)0x0);
-                if (value_00 != (GradientColorKey__Array *)0x0) {
-                  if (value_00->max_length == 0) goto code_?;
-                  value_00->vector[0].color.r = fVar3;
-                  value_00->vector[0].color.g = 0.0;
-                  value_00->vector[0].color.b = 0.0;
-                  value_00->vector[0].color.a = 0.0;
-                  value_00->vector[0].time = 0.0;
-                  pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-                  if (pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-                    fVar7 = 0.0;
-                    fVar3 = 0.0;
-                    fVar8 = 0.0;
-                    fVar9 = 0.0;
-                    fVar10 = 0.0;
-                    UnityEngine.CoreModule.dll::UnityEngine::GradientColorKey::
-                    GradientColorKey__ctor
-                              ((GradientColorKey *)&stack0xffffffb4,(pPVar2->fields).trailColor,1.0,
-                               (MethodInfo *)0x0);
-                    if (value_00->max_length < 2) goto code_?;
-                    value_00->vector[1].color.r = fVar3;
-                    value_00->vector[1].color.g = fVar8;
-                    value_00->vector[1].color.b = fVar9;
-                    value_00->vector[1].color.a = fVar10;
-                    value_00->vector[1].time = fVar7;
-                    UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient_set_colorKeys
-                              (this_00,value_00,(MethodInfo *)0x0);
-                    pTVar1 = (this->fields).trailRenderer;
-                    if (pTVar1 != (TrailRenderer *)0x0) {
-                      UnityEngine.CoreModule.dll::UnityEngine::TrailRenderer::
-                      TrailRenderer_SetColorGradient(pTVar1,this_00,(MethodInfo *)0x0);
+          if ((int)value->max_length != 0) {
+            value->vector[0].time = fVar4 * _UNK_?;
+            value->vector[0].alpha = 0.0;
+            pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+            if (pPVar2 == (PickupItemCostume_CostumeConfiguration *)0x0) goto code_?;
+            fVar4 = fVar4 * _UNK_?;
+            if (1 < (uint)value->max_length) {
+              value->vector[1].alpha = (pPVar2->fields).trailColor.a;
+              value->vector[1].time = fVar4;
+              if (2 < (uint)value->max_length) {
+                value->vector[2].alpha = 0.0;
+                value->vector[2].time = 1.0;
+                UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient_set_alphaKeys
+                          (this_00,value,(MethodInfo *)0x0);
+                value_00 = (GradientColorKey__Array *)
+                           FUN_?(TypeInfo__UnityEngine__GradientColorKey);
+                pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+                if (pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) {
+                  fVar4 = (pPVar2->fields).trailColor.g;
+                  fVar8 = (pPVar2->fields).trailColor.b;
+                  fVar9 = (pPVar2->fields).trailColor.a;
+                  if (value_00 != (GradientColorKey__Array *)0x0) {
+                    if ((int)value_00->max_length == 0) goto code_?;
+                    value_00->vector[0].color.r = (pPVar2->fields).trailColor.r;
+                    value_00->vector[0].color.g = fVar4;
+                    value_00->vector[0].color.b = fVar8;
+                    value_00->vector[0].color.a = fVar9;
+                    value_00->vector[0].time = 0.0;
+                    pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+                    if (pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) {
+                      fVar4 = (pPVar2->fields).trailColor.g;
+                      fVar8 = (pPVar2->fields).trailColor.b;
+                      fVar9 = (pPVar2->fields).trailColor.a;
+                      if ((uint)value_00->max_length < 2) goto code_?;
+                      value_00->vector[1].color.r = (pPVar2->fields).trailColor.r;
+                      value_00->vector[1].color.g = fVar4;
+                      value_00->vector[1].color.b = fVar8;
+                      value_00->vector[1].color.a = fVar9;
+                      value_00->vector[1].time = fVar3;
+                      UnityEngine.CoreModule.dll::UnityEngine::Gradient::Gradient_set_colorKeys
+                                (this_00,value_00,(MethodInfo *)0x0);
                       pTVar1 = (this->fields).trailRenderer;
-                      pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-                      if ((pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) &&
-                         (pTVar1 != (TrailRenderer *)0x0)) {
+                      if (pTVar1 != (TrailRenderer *)0x0) {
                         UnityEngine.CoreModule.dll::UnityEngine::TrailRenderer::
-                        TrailRenderer_set_time
-                                  (pTVar1,(pPVar2->fields).trailLength,(MethodInfo *)0x0);
-                        return;
+                        TrailRenderer_SetColorGradient(pTVar1,this_00,(MethodInfo *)0x0);
+                        pTVar1 = (this->fields).trailRenderer;
+                        pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+                        if ((pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) &&
+                           (pTVar1 != (TrailRenderer *)0x0)) {
+                          UnityEngine.CoreModule.dll::UnityEngine::TrailRenderer::
+                          TrailRenderer_set_time
+                                    (pTVar1,(pPVar2->fields).trailLength,(MethodInfo *)0x0);
+                          return;
+                        }
                       }
                     }
                   }
                 }
+                goto code_?;
               }
             }
           }
+code_?:
+          FUN_?();
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
         }
       }
     }
   }
-  func_?();
 code_?:
-  func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -730,39 +1087,31 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnAvatarInvisible
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVAvatar);
+    FUN_?(&TypeInfo__MVAvatar);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields)._._._.owner;
-  if (pMVar1 == (MVPickupOwner *)0x0) {
-code_?:
-    func_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
+  if (pMVar1 != (MVPickupOwner *)0x0) {
+    avatar = (MVAvatar *)(pMVar1->fields)._.worldObjectParent;
+    if (avatar != (MVAvatar *)0x0) {
+      bVar2 = (TypeInfo__MVAvatar->_1).naturalAligment;
+      if ((bVar2 <= (avatar->klass->_1).naturalAligment) &&
+         ((MVAvatar__Class *)(avatar->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] ==
+          TypeInfo__MVAvatar)) {
+        pPVar3 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+        if (pPVar3 == (PickupItemCostume_CostumeConfiguration *)0x0) goto code_?;
+        PickupItemCostume_SetAvatarInvisibility
+                  (this,(pPVar3->fields).isPlayerInvisible,avatar,(MethodInfo *)0x0);
+      }
+    }
     return;
   }
-  pMVar3 = (MVAvatar *)(pMVar1->fields)._.worldObjectParent;
-  if (pMVar3 != (MVAvatar *)0x0) {
-    if (((pMVar3->klass->_1).naturalAligment < (TypeInfo__MVAvatar->_1).naturalAligment) ||
-       ((MVAvatar__Class *)
-        (pMVar3->klass->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1] !=
-        TypeInfo__MVAvatar)) {
-      bVar4 = false;
-    }
-    else {
-      bVar4 = true;
-    }
-    avatar = (MVAvatar *)0x0;
-    if (bVar4) {
-      avatar = pMVar3;
-    }
-    if (avatar != (MVAvatar *)0x0) {
-      pPVar5 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-      if (pPVar5 == (PickupItemCostume_CostumeConfiguration *)0x0) goto code_?;
-      PickupItemCostume_SetAvatarInvisibility
-                (this,(pPVar5->fields).isPlayerInvisible,avatar,(MethodInfo *)0x0);
-    }
-  }
+code_?:
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -774,296 +1123,786 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnCollisionStateC
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    UnityEngine__BoxCollider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::BoxCollider>__
-                   );
-    func_?(&
-                    bool_MethodInfo__UnityEngine__Component__TryGetComponent<UnityEngine::MeshCollider>_UnityEngine__MeshCollider__
-                   );
-    func_?(&
-                    UnityEngine__BoxCollider_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::BoxCollider>__
-                   );
-    func_?(&
-                    UnityEngine__MeshCollider_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshCollider>__
-                   );
-    func_?(&
-                    UnityEngine__MeshCollider__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshCollider>______
-                   );
-    func_?(&
-                    UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______
-                   );
-    func_?(&TypeInfo__MVAvatarLocal);
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&StringLiteral_Default);
-    func_?(&StringLiteral_Player);
+    FUN_?(&
+                  UnityEngine__BoxCollider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::BoxCollider>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  bool_MethodInfo__UnityEngine__Component__TryGetComponent<UnityEngine::MeshCollider>_UnityEngine__MeshCollider__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__BoxCollider_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::BoxCollider>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__MeshCollider_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshCollider>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__MeshCollider__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshCollider>______
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVAvatarLocal);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Default);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Player);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMStack_1 = (MeshCollider *)0x0;
+  uVar1 = 0;
+  apMStackX_18[0] = (MeshCollider *)0x0;
   pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+  pMVar3 = 
+  UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______
+  ;
+  pMVar4 = 
+  UnityEngine__MeshCollider__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshCollider>______
+  ;
+  fVar5 = _UNK_?;
+  fVar6 = _UNK_?;
   if (pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-    pGVar3 = (this->fields)._.cubeModelObject;
-    fStack_4 = _UNK_?;
-    fStack_5 = _UNK_?;
-    fStack_6 = _UNK_?;
-    fStack_7 = _UNK_?;
-    fStack_8 = _UNK_?;
-    fStack_9 = _UNK_?;
+    pGVar7 = (this->fields)._.cubeModelObject;
     if ((pPVar2->fields).playersCanCollide == 0) {
-      if (pGVar3 != (GameObject *)0x0) {
-        pOVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                  GameObject_GetComponentsInChildren
-                            (pGVar3,
-                             UnityEngine__MeshCollider__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshCollider>______
-                            );
-        uVar11 = 0;
-        if (pOVar10 != (Object__Array *)0x0) {
-          ppOVar12 = pOVar10->vector;
-          for (; (int)uVar11 < (int)pOVar10->max_length; uVar11 = uVar11 + 1) {
-            if (pOVar10->max_length <= uVar11) goto code_?;
-            if ((Collider *)*ppOVar12 == (Collider *)0x0) goto code_?;
-            UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled
-                      ((Collider *)*ppOVar12,0,(MethodInfo *)0x0);
-            ppOVar12 = ppOVar12 + 1;
+      if (pGVar7 != (GameObject *)0x0) {
+        if ((
+            UnityEngine__MeshCollider__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshCollider>______
+            ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+          FUN_?(
+                       UnityEngine__MeshCollider__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshCollider>______
+                       );
+        }
+        p_Var21 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                  GameObject_GetComponentsInChildren_4
+                            (pGVar7,0,((pMVar4->field7_0x38).rgctx_data)->method);
+        if (p_Var21 != (_Il2CppFullySharedGenericType__Array *)0x0) {
+          pp_Var31 = p_Var21->vector;
+          for (; (int)uVar1 < (int)p_Var21->max_length; uVar1 = uVar1 + 1) {
+            if ((uint)p_Var21->max_length <= uVar1) {
+code_?:
+              FUN_?();
+              pcVar8 = (code *)swi(3);
+              (*pcVar8)();
+              return;
+            }
+            pOVar9 = (Object *)*pp_Var31;
+            if (pOVar9 == (Object *)0x0) goto code_?;
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Collider>_UnityEngine__Collider_
+                           );
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pOVar10 = pOVar9[1].klass;
+            if (pOVar10 == (Object__Class *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+              ThrowHelper_2_ThrowNullReferenceException(pOVar9,(MethodInfo *)0x0);
+              pcVar8 = (code *)swi(3);
+              (*pcVar8)();
+              return;
+            }
+            pcVar8 = pcRam_?;
+            if ((pcRam_? == (code *)0x0) &&
+               (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+              uVar11 = func_?(&UNK_?);
+              FUN_?(uVar11,0);
+              pcVar8 = (code *)swi(3);
+              (*pcVar8)();
+              return;
+            }
+            pcRam_? = pcVar8;
+            (*pcRam_?)(pOVar10);
+            pp_Var31 = pp_Var31 + 1;
           }
-          pBVar13 = (this->fields).costumeTriggerCollider;
-          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
+          pBVar12 = (this->fields).costumeTriggerCollider;
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
           }
-          bVar14 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                             ((Object_1 *)pBVar13,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar14 == 0) {
-            return;
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
           }
-          pMVar15 = (this->fields)._._._.owner;
-          if ((pMVar15 != (MVPickupOwner *)0x0) &&
-             (pMVar16 = (MVAvatarLocal *)(pMVar15->fields)._.worldObjectParent,
-             pMVar16 != (MVAvatarLocal *)0x0)) {
-            if (((pMVar16->klass->_1).naturalAligment <
-                 (TypeInfo__MVAvatarLocal->_1).naturalAligment) ||
-               ((MVAvatarLocal__Class *)
-                (pMVar16->klass->_1).typeHierarchy
-                [(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] != TypeInfo__MVAvatarLocal))
-            goto code_?;
-            pCVar17 = MVAvatarLocal::MVAvatarLocal_get_TriggingColliders(pMVar16,(MethodInfo *)0x0);
-            if (pCVar17 != (ColliderCollection *)0x0) {
-              Assets::Scripts::Tools::ColliderCollection::ColliderCollection_RemoveCollider
-                        (pCVar17,(Collider *)(this->fields).costumeTriggerCollider,(MethodInfo *)0x0
-                        );
-              pBVar13 = (this->fields).costumeTriggerCollider;
-              if (pBVar13 != (BoxCollider *)0x0) {
-                UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled
-                          ((Collider *)pBVar13,0,(MethodInfo *)0x0);
-                return;
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (pBVar12 != (BoxCollider *)0x0) {
+            if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            if ((pBVar12->fields)._._._.m_CachedPtr != (void *)0x0) {
+              pMVar13 = (this->fields)._._._.owner;
+              if ((pMVar13 != (MVPickupOwner *)0x0) &&
+                 (pMVar14 = (pMVar13->fields)._.worldObjectParent,
+                 pMVar14 != (MVWorldObjectClient *)0x0)) {
+                bVar15 = (TypeInfo__MVAvatarLocal->_1).naturalAligment;
+                if (((pMVar14->klass->_1).naturalAligment < bVar15) ||
+                   ((MVAvatarLocal__Class *)(pMVar14->klass->_1).typeHierarchy[(ulonglong)bVar15 - 1]
+                    != TypeInfo__MVAvatarLocal)) {
+                  FUN_?(pMVar14);
+                  pcVar8 = (code *)swi(3);
+                  (*pcVar8)();
+                  return;
+                }
+                pMVar16 = pMVar14[1].fields.group;
+                if ((pMVar16 != (MVGroup *)0x0) &&
+                   (pCVar17 = *(ColliderCollection **)&(pMVar16->fields)._._.position,
+                   pCVar17 != (ColliderCollection *)0x0)) {
+                  Assets::Scripts::Tools::ColliderCollection::ColliderCollection_RemoveCollider
+                            (pCVar17,(Collider *)(this->fields).costumeTriggerCollider,
+                             (MethodInfo *)0x0);
+                  pBVar12 = (this->fields).costumeTriggerCollider;
+                  if (pBVar12 != (BoxCollider *)0x0) {
+                    if (cRam_? == '\0') {
+                      FUN_?(&
+                                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Collider>_UnityEngine__Collider_
+                                   );
+                      LOCK();
+                      UNLOCK();
+                      cRam_? = '\x01';
+                    }
+                    pvVar18 = (pBVar12->fields)._._._.m_CachedPtr;
+                    if (pvVar18 != (void *)0x0) {
+                      pcVar8 = pcRam_?;
+                      if ((pcRam_? == (code *)0x0) &&
+                         (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0))
+                      {
+                        uVar11 = func_?(&UNK_?);
+                        FUN_?(uVar11,0);
+                        pcVar8 = (code *)swi(3);
+                        (*pcVar8)();
+                        return;
+                      }
+                      pcRam_? = pcVar8;
+                      (*pcRam_?)(pvVar18,0);
+                      return;
+                    }
+                    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                    ThrowHelper_2_ThrowNullReferenceException((Object *)pBVar12,(MethodInfo *)0x0);
+                    pcVar8 = (code *)swi(3);
+                    (*pcVar8)();
+                    return;
+                  }
+                }
               }
+              goto code_?;
             }
           }
+          return;
         }
       }
     }
-    else if (pGVar3 != (GameObject *)0x0) {
-      pOVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                GameObject_GetComponentsInChildren
-                          (pGVar3,
-                           UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______
-                          );
-      uVar11 = 0;
-      if (pOVar10 != (Object__Array *)0x0) {
-        ppOVar12 = pOVar10->vector;
-        while ((int)uVar11 < (int)pOVar10->max_length) {
-          if (pOVar10->max_length <= uVar11) goto code_?;
-          this_00 = (Component *)*ppOVar12;
+    else if (pGVar7 != (GameObject *)0x0) {
+      if ((
+          UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______
+          ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+        FUN_?(
+                     UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______
+                     );
+      }
+      p_Var21 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                GameObject_GetComponentsInChildren_4
+                          (pGVar7,0,((pMVar3->field7_0x38).rgctx_data)->method);
+      fVar19 = _UNK_?;
+      if (p_Var21 != (_Il2CppFullySharedGenericType__Array *)0x0) {
+        pp_Var31 = p_Var21->vector;
+        fVar20 = fVar5;
+        fVar21 = fVar5;
+        fVar22 = fVar6;
+        fVar23 = fVar6;
+        for (; pMVar4 = 
+               bool_MethodInfo__UnityEngine__Component__TryGetComponent<UnityEngine::MeshCollider>_UnityEngine__MeshCollider__
+            , (int)uVar1 < (int)p_Var21->max_length; uVar1 = uVar1 + 1) {
+          if ((uint)p_Var21->max_length <= uVar1) goto code_?;
+          this_00 = (Component *)*pp_Var31;
           if (this_00 == (Component *)0x0) goto code_?;
-          bVar14 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_TryGetComponent_1
-                             (this_00,(Object **)&pMStack_1,
-                              bool_MethodInfo__UnityEngine__Component__TryGetComponent<UnityEngine::MeshCollider>_UnityEngine__MeshCollider__
-                             );
-          if (bVar14 == 0) {
-            pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                (this_00,(MethodInfo *)0x0);
-            if ((pGVar3 == (GameObject *)0x0) ||
-               (pMStack_1 = (MeshCollider *)
-                             UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                             GameObject_AddComponent_1
-                                       (pGVar3,
-                                        UnityEngine__MeshCollider_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshCollider>__
-                                       ), pMStack_1 == (MeshCollider *)0x0)) goto code_?;
-            UnityEngine.PhysicsModule.dll::UnityEngine::MeshCollider::MeshCollider_set_convex
-                      (pMStack_1,0,(MethodInfo *)0x0);
+          if ((
+              bool_MethodInfo__UnityEngine__Component__TryGetComponent<UnityEngine::MeshCollider>_UnityEngine__MeshCollider__
+              ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+            FUN_?(
+                         bool_MethodInfo__UnityEngine__Component__TryGetComponent<UnityEngine::MeshCollider>_UnityEngine__MeshCollider__
+                         );
           }
-          if (pMStack_1 == (MeshCollider *)0x0) goto code_?;
+          pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              (this_00,(MethodInfo *)0x0);
+          if (pGVar7 == (GameObject *)0x0) goto code_?;
+          bVar24 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_TryGetComponent_1
+                             (pGVar7,(Object **)apMStackX_18,
+                              (pMVar4->field7_0x38).rgctx_data[1].method);
+          if (bVar24 == 0) {
+            pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                (this_00,(MethodInfo *)0x0);
+            if ((pGVar7 == (GameObject *)0x0) ||
+               (apMStackX_18[0] =
+                     (MeshCollider *)
+                     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                               (pGVar7,
+                                UnityEngine__MeshCollider_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshCollider>__
+                               ), apMStackX_18[0] == (MeshCollider *)0x0))
+            goto code_?;
+            UnityEngine.PhysicsModule.dll::UnityEngine::MeshCollider::MeshCollider_set_convex
+                      (apMStackX_18[0],0,(MethodInfo *)0x0);
+          }
+          if (apMStackX_18[0] == (MeshCollider *)0x0) goto code_?;
           UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled
-                    ((Collider *)pMStack_1,1,(MethodInfo *)0x0);
-          pBVar13 = (BoxCollider *)
+                    ((Collider *)apMStackX_18[0],1,(MethodInfo *)0x0);
+          pBVar12 = (BoxCollider *)
                     UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                               (this_00,
                                UnityEngine__BoxCollider_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::BoxCollider>__
                               );
-          if (pBVar13 == (BoxCollider *)0x0) goto code_?;
-          pVVar18 = UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_get_size
-                              ((Vector3 *)&stack0xffffff94,pBVar13,(MethodInfo *)0x0);
-          uVar19 = pVVar18->x;
-          uVar20 = pVVar18->y;
-          fVar21 = (float)uVar19 * _UNK_?;
-          fVar22 = (float)uVar20 * _UNK_?;
-          fVar23 = pVVar18->z * _UNK_?;
-          value_00.y = fVar22;
-          value_00.x = fVar21;
-          value_00.z = fVar23;
-          UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_set_size
-                    (pBVar13,value_00,(MethodInfo *)0x0);
-          pVVar18 = UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_get_center
-                              ((Vector3 *)&stack0xffffff88,pBVar13,(MethodInfo *)0x0);
-          uVar24 = pVVar18->x;
-          uVar25 = pVVar18->y;
-          fVar26 = pVVar18->z - fVar23;
-          fVar27 = (float)uVar24 - fVar21;
-          if (fStack_4 < (float)uVar24 - fVar21) {
-            fVar27 = fStack_4;
+          if (pBVar12 == (BoxCollider *)0x0) goto code_?;
+          pVVar25 = UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_get_size
+                              (&VStack_26,pBVar12,(MethodInfo *)0x0);
+          uVar27 = pVVar25->x;
+          fVar28 = (float)uVar27 * fVar19;
+          fVar29 = pVVar25->y * fVar19;
+          fVar30 = pVVar25->z * fVar19;
+          uStack_31 = CONCAT44(fVar29,fVar28);
+          fStack_32 = fVar30;
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::BoxCollider>_UnityEngine__BoxCollider_
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
           }
-          fStack_4 = fVar27;
-          fVar27 = (float)uVar25 - fVar22;
-          if (fStack_5 < (float)uVar25 - fVar22) {
-            fVar27 = fStack_5;
+          pvVar18 = (pBVar12->fields)._._._.m_CachedPtr;
+          if (pvVar18 == (void *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)pBVar12,(MethodInfo *)0x0);
+            pcVar8 = (code *)swi(3);
+            (*pcVar8)();
+            return;
           }
-          fStack_5 = fVar27;
-          if (fStack_6 < fVar26) {
-            fVar26 = fStack_6;
+          pcVar8 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+            uVar11 = func_?(&UNK_?);
+            FUN_?(uVar11,0);
+            pcVar8 = (code *)swi(3);
+            (*pcVar8)();
+            return;
           }
-          fStack_6 = fVar26;
-          pVVar18 = UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_get_center
-                              ((Vector3 *)&stack0xffffff7c,pBVar13,(MethodInfo *)0x0);
-          uVar28 = pVVar18->x;
-          uVar29 = pVVar18->y;
-          fVar23 = pVVar18->z + fVar23;
-          fVar26 = (float)uVar28 + fVar21;
-          if ((float)uVar28 + fVar21 < fStack_7) {
-            fVar26 = fStack_7;
+          pcRam_? = pcVar8;
+          (*pcRam_?)(pvVar18,&uStack_31);
+          pVVar25 = UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_get_center
+                              (&VStack_33,pBVar12,(MethodInfo *)0x0);
+          uVar34 = pVVar25->y;
+          uVar35 = pVVar25->x;
+          fVar36 = pVVar25->z - fVar30;
+          if ((float)uVar35 - fVar28 <= fVar23) {
+            fVar23 = (float)uVar35 - fVar28;
           }
-          fStack_7 = fVar26;
-          fVar26 = (float)uVar29 + fVar22;
-          if ((float)uVar29 + fVar22 < fStack_8) {
-            fVar26 = fStack_8;
+          if ((float)uVar34 - fVar29 <= fVar22) {
+            fVar22 = (float)uVar34 - fVar29;
           }
-          fStack_8 = fVar26;
-          if (fStack_9 <= fVar23) {
-            uVar11 = uVar11 + 1;
-            ppOVar12 = ppOVar12 + 1;
-            fStack_9 = fVar23;
+          if (fVar36 <= fVar6) {
+            fVar6 = fVar36;
           }
-          else {
-            uVar11 = uVar11 + 1;
-            ppOVar12 = ppOVar12 + 1;
+          pVVar25 = UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_get_center
+                              (aVStack_37,pBVar12,(MethodInfo *)0x0);
+          uVar38 = pVVar25->y;
+          uVar39 = pVVar25->x;
+          fVar30 = pVVar25->z + fVar30;
+          if (fVar21 <= (float)uVar39 + fVar28) {
+            fVar21 = (float)uVar39 + fVar28;
           }
+          if (fVar20 <= (float)uVar38 + fVar29) {
+            fVar20 = (float)uVar38 + fVar29;
+          }
+          if (fVar5 <= fVar30) {
+            fVar5 = fVar30;
+          }
+          pp_Var31 = pp_Var31 + 1;
         }
-        pMVar15 = (this->fields)._._._.owner;
-        if (pMVar15 != (MVPickupOwner *)0x0) {
-          pMVar16 = (MVAvatarLocal *)(pMVar15->fields)._.worldObjectParent;
-          if (pMVar16 == (MVAvatarLocal *)0x0) {
+        pMVar13 = (this->fields)._._._.owner;
+        if (pMVar13 != (MVPickupOwner *)0x0) {
+          pMVar14 = (pMVar13->fields)._.worldObjectParent;
+          if (pMVar14 == (MVWorldObjectClient *)0x0) {
             return;
           }
-          if (((pMVar16->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment)
-             || ((MVAvatarLocal__Class *)
-                 (pMVar16->klass->_1).typeHierarchy
-                 [(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] != TypeInfo__MVAvatarLocal)) {
-            bVar30 = false;
-          }
-          else {
-            bVar30 = true;
-          }
-          this_01 = (MVAvatarLocal *)0x0;
-          if (bVar30) {
-            this_01 = pMVar16;
-          }
-          if (this_01 == (MVAvatarLocal *)0x0) {
+          bVar15 = (TypeInfo__MVAvatarLocal->_1).naturalAligment;
+          if ((pMVar14->klass->_1).naturalAligment < bVar15) {
             return;
           }
-          pBVar13 = (this->fields).costumeTriggerCollider;
-          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
+          if ((MVAvatarLocal__Class *)(pMVar14->klass->_1).typeHierarchy[(ulonglong)bVar15 - 1] !=
+              TypeInfo__MVAvatarLocal) {
+            return;
           }
-          bVar14 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                             ((Object_1 *)pBVar13,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar14 != 0) {
-            pCVar17 = MVAvatarLocal::MVAvatarLocal_get_TriggingColliders(this_01,(MethodInfo *)0x0);
-            if (pCVar17 == (ColliderCollection *)0x0) goto code_?;
-            Assets::Scripts::Tools::ColliderCollection::ColliderCollection_RemoveCollider
-                      (pCVar17,(Collider *)(this->fields).costumeTriggerCollider,(MethodInfo *)0x0);
-            pBVar13 = (this->fields).costumeTriggerCollider;
-            if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-              func_?(TypeInfo__UnityEngine__Object);
+          pBVar12 = (this->fields).costumeTriggerCollider;
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (pBVar12 != (BoxCollider *)0x0) {
+            if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+              FUN_?();
             }
-            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                      ((Object_1 *)pBVar13,(MethodInfo *)0x0);
+            if ((pBVar12->fields)._._._.m_CachedPtr != (void *)0x0) {
+              pMVar16 = pMVar14[1].fields.group;
+              if ((pMVar16 == (MVGroup *)0x0) ||
+                 (pCVar17 = *(ColliderCollection **)&(pMVar16->fields)._._.position,
+                 pCVar17 == (ColliderCollection *)0x0)) goto code_?;
+              Assets::Scripts::Tools::ColliderCollection::ColliderCollection_RemoveCollider
+                        (pCVar17,(Collider *)(this->fields).costumeTriggerCollider,(MethodInfo *)0x0
+                        );
+              pBVar12 = (this->fields).costumeTriggerCollider;
+              if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__UnityEngine__Object);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy
+                        ((Object_1 *)pBVar12,0.0,(MethodInfo *)0x0);
+            }
           }
-          pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)this,(MethodInfo *)0x0);
-          if (pGVar3 != (GameObject *)0x0) {
-            pBVar13 = (BoxCollider *)
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Component>_UnityEngine__Component_
+                         );
+            LOCK();
+            UNLOCK();
+            FUN_?(&
+                          UnityEngine__GameObject_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::GameObject>_void__
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          CVar40._.m_CachedPtr = (this->fields)._._._._._._._;
+          if (CVar40._.m_CachedPtr == (void *)0x0) {
+code_?:
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)this,(MethodInfo *)0x0);
+            pcVar8 = (code *)swi(3);
+            (*pcVar8)();
+            return;
+          }
+          pcVar8 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+            uVar11 = func_?(&UNK_?);
+            FUN_?(uVar11,0);
+            pcVar8 = (code *)swi(3);
+            (*pcVar8)();
+            return;
+          }
+          pcRam_? = pcVar8;
+          pvVar18 = (void *)(*pcRam_?)(CVar40._.m_CachedPtr);
+          pGVar7 = (GameObject *)
+                    UnityEngine.CoreModule.dll::UnityEngine::Bindings::Unmarshal::
+                    Unmarshal_UnmarshalUnityObject
+                              (pvVar18,
+                               UnityEngine__GameObject_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::GameObject>_void__
+                              );
+          if (pGVar7 != (GameObject *)0x0) {
+            pBVar12 = (BoxCollider *)
                       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                                (pGVar3,
+                                (pGVar7,
                                  UnityEngine__BoxCollider_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::BoxCollider>__
                                 );
-            (this->fields).costumeTriggerCollider = pBVar13;
-            func_?(&(this->fields).costumeTriggerCollider);
-            pGVar3 = (this->fields)._.cubeModelObject;
-            if ((pGVar3 != (GameObject *)0x0) &&
-               (pTVar31 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                          GameObject_get_transform(pGVar3,(MethodInfo *)0x0),
-               pTVar31 != (Transform *)0x0)) {
-              pVVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                                  ((Vector3 *)&stack0xffffff7c,pTVar31,(MethodInfo *)0x0);
-              fVar26 = pVVar18->x;
-              pTVar31 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                  ((Component *)this,(MethodInfo *)0x0);
-              if (pTVar31 != (Transform *)0x0) {
-                fStack_7 = fStack_7 - fStack_4;
-                fStack_8 = fStack_8 - fStack_5;
-                fStack_9 = fStack_9 - fStack_6;
-                pVVar18 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                          Transform_get_lossyScale
-                                    ((Vector3 *)&stack0xffffff7c,pTVar31,(MethodInfo *)0x0);
-                fVar26 = fVar26 / pVVar18->x;
-                pBVar13 = (this->fields).costumeTriggerCollider;
-                if (pBVar13 != (BoxCollider *)0x0) {
-                  value.y = fVar26 * fStack_8;
-                  value.x = fVar26 * fStack_7;
-                  value.z = fVar26 * fStack_9;
-                  UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_set_size
-                            (pBVar13,value,(MethodInfo *)0x0);
-                  pBVar13 = (this->fields).costumeTriggerCollider;
+            bVar41 = iRam_? != 0;
+            (this->fields).costumeTriggerCollider = pBVar12;
+            if (bVar41) {
+              uVar1 = (uint)((ulonglong)&(this->fields).costumeTriggerCollider >> 0xc);
+              uVar42 = (ulonglong)((uVar1 & 0x1fffff) >> 6);
+              do {
+                uVar43 = *(ulonglong *)(uVar42 * 8 + 0xADDR);
+                puVar44 = (ulonglong *)(uVar42 * 8 + 0xADDR);
+                LOCK();
+                bVar41 = uVar43 == *puVar44;
+                if (bVar41) {
+                  *puVar44 = uVar43 | 1L << (uVar1 & 0x3f);
+                }
+                UNLOCK();
+              } while (!bVar41);
+            }
+            pGVar7 = (this->fields)._.cubeModelObject;
+            if (pGVar7 != (GameObject *)0x0) {
+              if (cRam_? == '\0') {
+                FUN_?(&
+                              void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                             );
+                LOCK();
+                UNLOCK();
+                FUN_?(&
+                              UnityEngine__Transform_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::Transform>_void__
+                             );
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              pvVar18 = (pGVar7->fields)._.m_CachedPtr;
+              if (pvVar18 == (void *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar7,(MethodInfo *)0x0);
+                pcVar8 = (code *)swi(3);
+                (*pcVar8)();
+                return;
+              }
+              pcVar8 = pcRam_?;
+              if ((pcRam_? == (code *)0x0) &&
+                 (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+                uVar11 = func_?(&UNK_?);
+                FUN_?(uVar11,0);
+                pcVar8 = (code *)swi(3);
+                (*pcVar8)();
+                return;
+              }
+              pcRam_? = pcVar8;
+              pvVar18 = (void *)(*pcRam_?)(pvVar18);
+              pOVar9 = UnityEngine.CoreModule.dll::UnityEngine::Bindings::Unmarshal::
+                        Unmarshal_UnmarshalUnityObject
+                                  (pvVar18,
+                                   UnityEngine__Transform_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::Transform>_void__
+                                  );
+              if (pOVar9 != (Object *)0x0) {
+                if (cRam_? == '\0') {
+                  FUN_?(&
+                                void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                               );
+                  LOCK();
+                  UNLOCK();
+                  cRam_? = '\x01';
+                }
+                VStack_26.x = 0.0;
+                VStack_26.y = 0.0;
+                VStack_26.z = 0.0;
+                pOVar10 = pOVar9[1].klass;
+                if (pOVar10 == (Object__Class *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                  ThrowHelper_2_ThrowNullReferenceException(pOVar9,(MethodInfo *)0x0);
+                  pcVar8 = (code *)swi(3);
+                  (*pcVar8)();
+                  return;
+                }
+                pcVar8 = pcRam_?;
+                if ((pcRam_? == (code *)0x0) &&
+                   (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+                  uVar11 = func_?(&UNK_?);
+                  FUN_?(uVar11,0);
+                  pcVar8 = (code *)swi(3);
+                  (*pcVar8)();
+                  return;
+                }
+                pcRam_? = pcVar8;
+                (*pcRam_?)(pOVar10);
+                if (cRam_? == '\0') {
+                  FUN_?(&
+                                void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Component>_UnityEngine__Component_
+                               );
+                  LOCK();
+                  UNLOCK();
+                  FUN_?(&
+                                UnityEngine__Transform_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::Transform>_void__
+                               );
+                  LOCK();
+                  UNLOCK();
+                  cRam_? = '\x01';
+                }
+                CVar40._.m_CachedPtr = (this->fields)._._._._._._._;
+                if (CVar40._.m_CachedPtr == (void *)0x0) goto code_?;
+                pcVar8 = pcRam_?;
+                if ((pcRam_? == (code *)0x0) &&
+                   (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+                  uVar11 = func_?(&UNK_?);
+                  FUN_?(uVar11,0);
+                  pcVar8 = (code *)swi(3);
+                  (*pcVar8)();
+                  return;
+                }
+                pcRam_? = pcVar8;
+                pvVar18 = (void *)(*pcRam_?)(CVar40._.m_CachedPtr);
+                pOVar9 = UnityEngine.CoreModule.dll::UnityEngine::Bindings::Unmarshal::
+                          Unmarshal_UnmarshalUnityObject
+                                    (pvVar18,
+                                     UnityEngine__Transform_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::Transform>_void__
+                                    );
+                if (pOVar9 != (Object *)0x0) {
                   if (cRam_? == '\0') {
-                    func_?();
+                    FUN_?(&
+                                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                                 );
+                    LOCK();
+                    UNLOCK();
                     cRam_? = '\x01';
                   }
-                  if (pBVar13 != (BoxCollider *)0x0) {
-                    UnityEngine.PhysicsModule.dll::UnityEngine::BoxCollider::BoxCollider_set_center
-                              (pBVar13,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
-                               (MethodInfo *)0x0);
-                    pBVar13 = (this->fields).costumeTriggerCollider;
-                    if (pBVar13 != (BoxCollider *)0x0) {
-                      UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_isTrigger
-                                ((Collider *)pBVar13,1,(MethodInfo *)0x0);
-                      pBVar13 = (this->fields).costumeTriggerCollider;
-                      if (pBVar13 != (BoxCollider *)0x0) {
-                        UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled
-                                  ((Collider *)pBVar13,1,(MethodInfo *)0x0);
-                        pCVar17 = MVAvatarLocal::MVAvatarLocal_get_TriggingColliders
-                                            (this_01,(MethodInfo *)0x0);
-                        if (pCVar17 != (ColliderCollection *)0x0) {
+                  uStack_31 = 0;
+                  fStack_32 = 0.0;
+                  pOVar10 = pOVar9[1].klass;
+                  if (pOVar10 == (Object__Class *)0x0) {
+                    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                    ThrowHelper_2_ThrowNullReferenceException(pOVar9,(MethodInfo *)0x0);
+                    pcVar8 = (code *)swi(3);
+                    (*pcVar8)();
+                    return;
+                  }
+                  pcVar8 = pcRam_?;
+                  if ((pcRam_? == (code *)0x0) &&
+                     (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+                    uVar11 = func_?(&UNK_?);
+                    FUN_?(uVar11,0);
+                    pcVar8 = (code *)swi(3);
+                    (*pcVar8)();
+                    return;
+                  }
+                  pcRam_? = pcVar8;
+                  (*pcRam_?)(pOVar10);
+                  fVar19 = VStack_26.x / (float)uStack_31;
+                  pBVar12 = (this->fields).costumeTriggerCollider;
+                  fVar6 = (fVar5 - fVar6) * fVar19;
+                  if (pBVar12 == (BoxCollider *)0x0) {
+                    FUN_?();
+                    pcVar8 = (code *)swi(3);
+                    (*pcVar8)();
+                    return;
+                  }
+                  VStack_26.y = (fVar20 - fVar22) * fVar19;
+                  VStack_26.x = (fVar21 - fVar23) * fVar19;
+                  VStack_26.z = fVar6;
+                  if (cRam_? == '\0') {
+                    FUN_?(&
+                                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::BoxCollider>_UnityEngine__BoxCollider_
+                                 );
+                    LOCK();
+                    UNLOCK();
+                    cRam_? = '\x01';
+                  }
+                  pvVar18 = (pBVar12->fields)._._._.m_CachedPtr;
+                  if (pvVar18 == (void *)0x0) {
+                    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                    ThrowHelper_2_ThrowNullReferenceException((Object *)pBVar12,(MethodInfo *)0x0);
+                    pcVar8 = (code *)swi(3);
+                    (*pcVar8)();
+                    return;
+                  }
+                  pcVar8 = pcRam_?;
+                  if ((pcRam_? == (code *)0x0) &&
+                     (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+                    uVar11 = func_?(&UNK_?);
+                    FUN_?(uVar11,0);
+                    pcVar8 = (code *)swi(3);
+                    (*pcVar8)();
+                    return;
+                  }
+                  pcRam_? = pcVar8;
+                  (*pcRam_?)(pvVar18);
+                  pBVar12 = (this->fields).costumeTriggerCollider;
+                  if (cRam_? == '\0') {
+                    FUN_?(&TypeInfo__UnityEngine__Vector3);
+                    LOCK();
+                    UNLOCK();
+                    cRam_? = '\x01';
+                  }
+                  pVVar45 = TypeInfo__UnityEngine__Vector3->static_fields;
+                  if (pBVar12 != (BoxCollider *)0x0) {
+                    uStack_31._0_4_ = (pVVar45->zeroVector).x;
+                    uStack_31._4_4_ = (pVVar45->zeroVector).y;
+                    fStack_32 = (pVVar45->zeroVector).z;
+                    if (cRam_? == '\0') {
+                      FUN_?(&
+                                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::BoxCollider>_UnityEngine__BoxCollider_
+                                   );
+                      LOCK();
+                      UNLOCK();
+                      cRam_? = '\x01';
+                    }
+                    pvVar18 = (pBVar12->fields)._._._.m_CachedPtr;
+                    if (pvVar18 == (void *)0x0) {
+                      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                      ThrowHelper_2_ThrowNullReferenceException((Object *)pBVar12,(MethodInfo *)0x0)
+                      ;
+                      pcVar8 = (code *)swi(3);
+                      (*pcVar8)();
+                      return;
+                    }
+                    pcVar8 = pcRam_?;
+                    if ((pcRam_? == (code *)0x0) &&
+                       (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+                      uVar11 = func_?(&UNK_?);
+                      FUN_?(uVar11,0);
+                      pcVar8 = (code *)swi(3);
+                      (*pcVar8)();
+                      return;
+                    }
+                    pcRam_? = pcVar8;
+                    (*pcRam_?)(pvVar18);
+                    pBVar12 = (this->fields).costumeTriggerCollider;
+                    if (pBVar12 != (BoxCollider *)0x0) {
+                      if (cRam_? == '\0') {
+                        FUN_?(&
+                                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Collider>_UnityEngine__Collider_
+                                     );
+                        LOCK();
+                        UNLOCK();
+                        cRam_? = '\x01';
+                      }
+                      pvVar18 = (pBVar12->fields)._._._.m_CachedPtr;
+                      if (pvVar18 == (void *)0x0) {
+                        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                        ThrowHelper_2_ThrowNullReferenceException
+                                  ((Object *)pBVar12,(MethodInfo *)0x0);
+                        pcVar8 = (code *)swi(3);
+                        (*pcVar8)();
+                        return;
+                      }
+                      pcVar8 = pcRam_?;
+                      if ((pcRam_? == (code *)0x0) &&
+                         (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0))
+                      {
+                        uVar11 = func_?(&UNK_?);
+                        FUN_?(uVar11,0);
+                        pcVar8 = (code *)swi(3);
+                        (*pcVar8)();
+                        return;
+                      }
+                      pcRam_? = pcVar8;
+                      (*pcRam_?)(pvVar18);
+                      pBVar12 = (this->fields).costumeTriggerCollider;
+                      if (pBVar12 != (BoxCollider *)0x0) {
+                        if (cRam_? == '\0') {
+                          FUN_?(&
+                                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Collider>_UnityEngine__Collider_
+                                       );
+                          LOCK();
+                          UNLOCK();
+                          cRam_? = '\x01';
+                        }
+                        pvVar18 = (pBVar12->fields)._._._.m_CachedPtr;
+                        if (pvVar18 == (void *)0x0) {
+                          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                          ThrowHelper_2_ThrowNullReferenceException
+                                    ((Object *)pBVar12,(MethodInfo *)0x0);
+                          pcVar8 = (code *)swi(3);
+                          (*pcVar8)();
+                          return;
+                        }
+                        pcVar8 = pcRam_?;
+                        if ((pcRam_? == (code *)0x0) &&
+                           (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)
+                           ) {
+                          uVar11 = func_?(&UNK_?);
+                          FUN_?(uVar11,0);
+                          pcVar8 = (code *)swi(3);
+                          (*pcVar8)();
+                          return;
+                        }
+                        pcRam_? = pcVar8;
+                        (*pcRam_?)(pvVar18,1);
+                        pMVar16 = pMVar14[1].fields.group;
+                        if ((pMVar16 != (MVGroup *)0x0) &&
+                           (pCVar17 = *(ColliderCollection **)&(pMVar16->fields)._._.position,
+                           pCVar17 != (ColliderCollection *)0x0)) {
                           Assets::Scripts::Tools::ColliderCollection::
                           ColliderCollection_SetActiveCollider
                                     (pCVar17,(Collider *)(this->fields).costumeTriggerCollider,
                                      (MethodInfo *)0x0);
-                          pTVar31 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                                    Component_get_transform((Component *)this,(MethodInfo *)0x0);
-                          LayerUtil::LayerUtil_SetLayerRecursively_3
-                                    (pTVar31,StringLiteral_Default,StringLiteral_Player,
-                                     (MethodInfo *)0x0);
+                          if (cRam_? == '\0') {
+                            FUN_?(&
+                                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Component>_UnityEngine__Component_
+                                         );
+                            LOCK();
+                            UNLOCK();
+                            FUN_?(&
+                                          UnityEngine__Transform_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::Transform>_void__
+                                         );
+                            LOCK();
+                            UNLOCK();
+                            cRam_? = '\x01';
+                          }
+                          CVar40._.m_CachedPtr = (this->fields)._._._._._._._;
+                          if (CVar40._.m_CachedPtr != (void *)0x0) {
+                            pcVar8 = pcRam_?;
+                            if ((pcRam_? == (code *)0x0) &&
+                               (pcVar8 = (code *)FUN_?(&UNK_?),
+                               pcVar8 == (code *)0x0)) {
+                              uVar11 = func_?(&UNK_?);
+                              FUN_?(uVar11,0);
+                              pcVar8 = (code *)swi(3);
+                              (*pcVar8)();
+                              return;
+                            }
+                            pcRam_? = pcVar8;
+                            pvVar18 = (void *)(*pcRam_?)(CVar40._.m_CachedPtr);
+                            transfrom = (Transform *)
+                                        UnityEngine.CoreModule.dll::UnityEngine::Bindings::Unmarshal
+                                        ::Unmarshal_UnmarshalUnityObject
+                                                  (pvVar18,
+                                                  UnityEngine__Transform_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::Transform>_void__
+                                                  );
+                            layerName = StringLiteral_Player;
+                            iVar46 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::
+                                     LayerMask_NameToLayer(StringLiteral_Default,(MethodInfo *)0x0);
+                            layer = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::
+                                    LayerMask_NameToLayer(layerName,(MethodInfo *)0x0);
+                            LayerUtil::LayerUtil_SetLayerRecursively_2
+                                      (transfrom,(LayerMask)(1 << ((byte)iVar46 & 0x1f)),layer,
+                                       (MethodInfo *)0x0);
+                            return;
+                          }
+                          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                          ThrowHelper_2_ThrowNullReferenceException
+                                    ((Object *)this,(MethodInfo *)0x0);
+                          pcVar8 = (code *)swi(3);
+                          (*pcVar8)();
                           return;
                         }
                       }
                     }
                   }
+                  FUN_?();
+                  pcVar8 = (code *)swi(3);
+                  (*pcVar8)();
+                  return;
                 }
               }
             }
@@ -1073,14 +1912,9 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnCollisionStateC
     }
   }
 code_?:
-  func_?();
-  pMVar16 = extraout_EDX;
-code_?:
-  func_?(pMVar16);
-code_?:
-  func_?();
-  pcVar32 = (code *)swi(3);
-  (*pcVar32)();
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -1092,121 +1926,175 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnDestroy
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action);
-    func_?(&MethodInfo__PickupItemCostume__OnLocalPlayerTeamChanged__);
+    FUN_?(&TypeInfo__System__Action);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__PickupItemCostume__OnLocalPlayerTeamChanged__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar1 != (MVNetworkGame *)0x0) {
-    pMVar2 = (pMVar1->fields).playerContainer;
-    if (pMVar2 != (MVPlayerContainer *)0x0) {
-      pAVar3 = (pMVar2->fields).OnLocalPlayerTeamChanged;
-      this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-      UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-      NavMesh_OnNavMeshPreUpdate__ctor
-                (this_02,(Object *)this,MethodInfo__PickupItemCostume__OnLocalPlayerTeamChanged__,
-                 (MethodInfo *)0x0);
-      pAVar3 = (Action *)
-               mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)pAVar3,(Delegate *)this_02,(MethodInfo *)0x0);
-      if (pAVar3 == (Action *)0x0) {
-        (pMVar2->fields).OnLocalPlayerTeamChanged = (Action *)0x0;
-code_?:
-        func_?();
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        uStack4 = 0;
-        if (cRam_? == '\0') {
-          func_?();
-          func_?();
-          func_?();
-          func_?();
-          func_?();
-          cRam_? = '\x01';
-        }
-        method_00 = TypeInfo__UpdateController____c__DisplayClass6_0;
-        value = (Object *)func_?();
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-        if (value != (Object *)0x0) {
-          value[1].klass = in_stack_5;
-          func_?();
-          iVar6 = 0x10;
-          uVar7 = 0;
-          while( true ) {
-            if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            pLVar8 = TypeInfo__UpdateController->static_fields->updateBuckets;
-            if (pLVar8 == (List_1_PriorityDataUpdate___Array *)0x0) goto code_?;
-            if ((int)pLVar8->max_length <= (int)uVar7) {
-              return;
-            }
-            if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            pLVar8 = TypeInfo__UpdateController->static_fields->updateBuckets;
-            if (pLVar8 == (List_1_PriorityDataUpdate___Array *)0x0) goto code_?;
-            if (pLVar8->max_length <= uVar7) break;
-            this_00 = *(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ **)
-                       ((int)pLVar8->vector + iVar6 + -0x10);
-            this_01 = (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-                      value[1].monitor;
-            if (this_01 == (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
-              this_01 = (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-                        func_?();
-              mscorlib.dll::System::Predicate`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]
-              ::Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry___ctor
-                        (this_01,value,
-                         MethodInfo__UpdateController____c__DisplayClass6_0___RemoveUpdateObject_b__0_PriorityDataUpdate_
-                         ,(MethodInfo *)0x0);
-              value[1].monitor = (MonitorData *)this_01;
-              func_?();
-            }
-            if (this_00 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0)
-            goto code_?;
-            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-            VisualTreeAsset+UsingEntry]::
-            List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__RemoveAll
-                      (this_00,this_01,
-                       MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__RemoveAll_System__Predicate<PriorityDataUpdate>_
-                      );
-            uVar7 = uVar7 + 1;
-            iVar6 = iVar6 + 4;
-          }
-          func_?();
-        }
-code_?:
-        func_?();
-        pcVar9 = (code *)swi(3);
-        (*pcVar9)();
-        return;
-      }
-      pAVar10 = (Action *)0x0;
-      if (pAVar3->klass == TypeInfo__System__Action) {
-        pAVar10 = pAVar3;
-      }
-      if (pAVar10 != (Action *)0x0) {
-        (pMVar2->fields).OnLocalPlayerTeamChanged = pAVar10;
-        pAVar10 = (Action *)0x0;
-        if (pAVar3->klass == TypeInfo__System__Action) {
-          pAVar10 = pAVar3;
-        }
-        if (pAVar10 != (Action *)0x0) goto code_?;
-      }
-      goto code_?;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (((pMVar1 == (MVGameControllerBase *)0x0) ||
+      (pMVar2 = (pMVar1->fields).game, pMVar2 == (MVNetworkGame *)0x0)) ||
+     (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 == (MVPlayerContainer *)0x0)) {
+    FUN_?();
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
+    return;
+  }
+  pAVar5 = (pMVar3->fields).OnLocalPlayerTeamChanged;
+  this_01 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_01,(Object *)this,MethodInfo__PickupItemCostume__OnLocalPlayerTeamChanged__,
+             (MethodInfo *)0x0);
+  pAVar5 = (Action *)
+            mscorlib.dll::System::Delegate::Delegate_Remove
+                      ((Delegate *)pAVar5,(Delegate *)this_01,(MethodInfo *)0x0);
+  if (pAVar5 == (Action *)0x0) {
+    (pMVar3->fields).OnLocalPlayerTeamChanged = (Action *)0x0;
+  }
+  else {
+    pAVar6 = (Action *)0x0;
+    if (pAVar5->klass == TypeInfo__System__Action) {
+      pAVar6 = pAVar5;
+    }
+    if (pAVar6 == (Action *)0x0) {
+      FUN_?(pAVar5,TypeInfo__System__Action);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    (pMVar3->fields).OnLocalPlayerTeamChanged = pAVar6;
+    pAVar6 = (Action *)0x0;
+    if (pAVar5->klass == TypeInfo__System__Action) {
+      pAVar6 = pAVar5;
+    }
+    if (pAVar6 == (Action *)0x0) {
+      FUN_?();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  if (iRam_? != 0) {
+    uVar7 = (uint)((ulonglong)&(pMVar3->fields).OnLocalPlayerTeamChanged >> 0xc);
+    puVar8 = (ulonglong *)((ulonglong)((uVar7 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar9 = *puVar8;
+      LOCK();
+      uVar10 = *puVar8;
+      if (uVar9 == uVar10) {
+        *puVar8 = uVar9 | 1L << (ulonglong)(uVar7 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar9 != uVar10);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UpdateController);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__RemoveAll_System__Predicate<PriorityDataUpdate>_
+                  ,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Predicate<PriorityDataUpdate>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__UpdateController____c__DisplayClass6_0___RemoveUpdateObject_b__0_PriorityDataUpdate_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UpdateController____c__DisplayClass6_0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UpdateController);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  lVar11 = FUN_?(TypeInfo__UpdateController____c__DisplayClass6_0);
+  if (lVar11 != 0) {
+    bVar12 = iRam_? != 0;
+    *(PickupItemCostume **)(lVar11 + 0x10) = this;
+    if (bVar12) {
+      uVar7 = (uint)(lVar11 + 0x10U >> 0xc);
+      puVar8 = (ulonglong *)((ulonglong)((uVar7 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar9 = *puVar8;
+        LOCK();
+        uVar10 = *puVar8;
+        if (uVar9 == uVar10) {
+          *puVar8 = uVar9 | 1L << (uVar7 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar9 != uVar10);
+    }
+    uVar7 = 0;
+    lVar13 = 0x20;
+    while( true ) {
+      if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__UpdateController);
+      }
+      pLVar14 = TypeInfo__UpdateController->static_fields->updateBuckets;
+      if (pLVar14 == (List_1_PriorityDataUpdate___Array *)0x0) break;
+      if ((int)pLVar14->max_length <= (int)uVar7) {
+        return;
+      }
+      if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__UpdateController);
+      }
+      pLVar14 = TypeInfo__UpdateController->static_fields->updateBuckets;
+      if (pLVar14 == (List_1_PriorityDataUpdate___Array *)0x0) break;
+      if ((uint)pLVar14->max_length <= uVar7) {
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      match = *(Predicate_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ **)
+               (lVar11 + 0x18);
+      this_00 = *(List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ **)
+                 ((longlong)pLVar14->vector + lVar13 + -0x20);
+      if (match == (Predicate_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+      {
+        match = (Predicate_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+                FUN_?(TypeInfo__System__Predicate<PriorityDataUpdate>);
+        FUN_?(match,lVar11);
+        *(Predicate_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ **)(lVar11 + 0x18)
+             = match;
+        func_?(lVar11 + 0x18);
+      }
+      if (this_00 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+      break;
+      mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+      XmlSchemaObjectTable+XmlSchemaObjectEntry]::
+      List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__RemoveAll
+                (this_00,match,
+                 MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__RemoveAll_System__Predicate<PriorityDataUpdate>_
+                );
+      uVar7 = uVar7 + 1;
+      lVar13 = lVar13 + 8;
+    }
+  }
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -1229,41 +2117,33 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnHealthStateChan
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVAvatarLocal);
+    FUN_?(&TypeInfo__MVAvatarLocal);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields)._._._.owner;
   if (pMVar1 == (MVPickupOwner *)0x0) goto code_?;
-  pMVar2 = (MVAvatarLocal *)(pMVar1->fields)._.worldObjectParent;
-  if (pMVar2 != (MVAvatarLocal *)0x0) {
-    if (((pMVar2->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) ||
-       ((MVAvatarLocal__Class *)
-        (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
+  this_00 = (MVAvatarLocal *)(pMVar1->fields)._.worldObjectParent;
+  if (this_00 != (MVAvatarLocal *)0x0) {
+    bVar2 = (TypeInfo__MVAvatarLocal->_1).naturalAligment;
+    if ((bVar2 <= (this_00->klass->_1).naturalAligment) &&
+       ((MVAvatarLocal__Class *)(this_00->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] ==
         TypeInfo__MVAvatarLocal)) {
-      bVar3 = false;
-    }
-    else {
-      bVar3 = true;
-    }
-    this_00 = (MVAvatarLocal *)0x0;
-    if (bVar3) {
-      this_00 = pMVar2;
-    }
-    if (this_00 != (MVAvatarLocal *)0x0) {
-      iVar4 = (this_00->fields).defaultBaseMaxHealth;
-      pPVar5 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-      if (pPVar5 == (PickupItemCostume_CostumeConfiguration *)0x0) {
+      iVar3 = (this_00->fields).defaultBaseMaxHealth;
+      pPVar4 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+      if (pPVar4 == (PickupItemCostume_CostumeConfiguration *)0x0) {
 code_?:
-        func_?();
-        pcVar6 = (code *)swi(3);
-        (*pcVar6)();
+        FUN_?();
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
-      if (iVar4 != (int)(pPVar5->fields).health) {
-        pPVar5 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-        if (pPVar5 == (PickupItemCostume_CostumeConfiguration *)0x0) goto code_?;
+      if (iVar3 != (int)(pPVar4->fields).health) {
+        pPVar4 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+        if (pPVar4 == (PickupItemCostume_CostumeConfiguration *)0x0) goto code_?;
         MVAvatarLocal::MVAvatarLocal_set_BaseMaxHealth
-                  (this_00,(int)(pPVar5->fields).health,(MethodInfo *)0x0);
+                  (this_00,(int)(pPVar4->fields).health,(MethodInfo *)0x0);
       }
     }
   }
@@ -1278,39 +2158,31 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnLocalPlayerTeam
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVAvatarRemote);
+    FUN_?(&TypeInfo__MVAvatarRemote);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields)._._._.owner;
-  if (pMVar1 == (MVPickupOwner *)0x0) {
-code_?:
-    func_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
+  if (pMVar1 != (MVPickupOwner *)0x0) {
+    avatar = (MVAvatarRemote *)(pMVar1->fields)._.worldObjectParent;
+    if (avatar != (MVAvatarRemote *)0x0) {
+      bVar2 = (TypeInfo__MVAvatarRemote->_1).naturalAligment;
+      if ((bVar2 <= (avatar->klass->_1).naturalAligment) &&
+         ((MVAvatarRemote__Class *)(avatar->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] ==
+          TypeInfo__MVAvatarRemote)) {
+        pPVar3 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+        if (pPVar3 == (PickupItemCostume_CostumeConfiguration *)0x0) goto code_?;
+        PickupItemCostume_CalculateRemoteAvatarUIVisibility
+                  (this,(pPVar3->fields).isPlayerInvisible,avatar,(MethodInfo *)0x0);
+      }
+    }
     return;
   }
-  pMVar3 = (MVAvatarRemote *)(pMVar1->fields)._.worldObjectParent;
-  if (pMVar3 != (MVAvatarRemote *)0x0) {
-    if (((pMVar3->klass->_1).naturalAligment < (TypeInfo__MVAvatarRemote->_1).naturalAligment) ||
-       ((MVAvatarRemote__Class *)
-        (pMVar3->klass->_1).typeHierarchy[(TypeInfo__MVAvatarRemote->_1).naturalAligment - 1] !=
-        TypeInfo__MVAvatarRemote)) {
-      bVar4 = false;
-    }
-    else {
-      bVar4 = true;
-    }
-    avatar = (MVAvatarRemote *)0x0;
-    if (bVar4) {
-      avatar = pMVar3;
-    }
-    if (avatar != (MVAvatarRemote *)0x0) {
-      pPVar5 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-      if (pPVar5 == (PickupItemCostume_CostumeConfiguration *)0x0) goto code_?;
-      PickupItemCostume_CalculateRemoteAvatarUIVisibility
-                (this,(pPVar5->fields).isPlayerInvisible,avatar,(MethodInfo *)0x0);
-    }
-  }
+code_?:
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -1326,39 +2198,31 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnPickupNewEditab
   PickupItemCostume_OnArcTrailStateChanged(this,(MethodInfo *)0x0);
   PickupItemCostume_OnCollisionStateChanged(this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__MVAvatar);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields)._._._.owner;
-  if (pMVar1 == (MVPickupOwner *)0x0) {
-code_?:
-    func_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
+  if (pMVar1 != (MVPickupOwner *)0x0) {
+    avatar = (MVAvatar *)(pMVar1->fields)._.worldObjectParent;
+    if (avatar != (MVAvatar *)0x0) {
+      bVar2 = (TypeInfo__MVAvatar->_1).naturalAligment;
+      if ((bVar2 <= (avatar->klass->_1).naturalAligment) &&
+         ((MVAvatar__Class *)(avatar->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] ==
+          TypeInfo__MVAvatar)) {
+        pPVar3 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+        if (pPVar3 == (PickupItemCostume_CostumeConfiguration *)0x0) goto code_?;
+        PickupItemCostume_SetAvatarInvisibility
+                  (this,(pPVar3->fields).isPlayerInvisible,avatar,(MethodInfo *)0x0);
+      }
+    }
     return;
   }
-  pMVar3 = (MVAvatar *)(pMVar1->fields)._.worldObjectParent;
-  if (pMVar3 != (MVAvatar *)0x0) {
-    if (((pMVar3->klass->_1).naturalAligment < (TypeInfo__MVAvatar->_1).naturalAligment) ||
-       ((MVAvatar__Class *)
-        (pMVar3->klass->_1).typeHierarchy[(TypeInfo__MVAvatar->_1).naturalAligment - 1] !=
-        TypeInfo__MVAvatar)) {
-      bVar4 = false;
-    }
-    else {
-      bVar4 = true;
-    }
-    avatar = (MVAvatar *)0x0;
-    if (bVar4) {
-      avatar = pMVar3;
-    }
-    if (avatar != (MVAvatar *)0x0) {
-      pPVar5 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-      if (pPVar5 == (PickupItemCostume_CostumeConfiguration *)0x0) goto code_?;
-      PickupItemCostume_SetAvatarInvisibility
-                (this,(pPVar5->fields).isPlayerInvisible,avatar,(MethodInfo *)0x0);
-    }
-  }
+code_?:
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -1370,41 +2234,33 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnSpeedStateChang
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVAvatarLocal);
+    FUN_?(&TypeInfo__MVAvatarLocal);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields)._._._.owner;
   if (pMVar1 != (MVPickupOwner *)0x0) {
     pMVar2 = (pMVar1->fields)._.worldObjectParent;
     if (pMVar2 != (MVWorldObjectClient *)0x0) {
-      if (((pMVar2->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) ||
-         ((MVAvatarLocal__Class *)
-          (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
+      bVar3 = (TypeInfo__MVAvatarLocal->_1).naturalAligment;
+      if ((bVar3 <= (pMVar2->klass->_1).naturalAligment) &&
+         ((MVAvatarLocal__Class *)(pMVar2->klass->_1).typeHierarchy[(ulonglong)bVar3 - 1] ==
           TypeInfo__MVAvatarLocal)) {
-        bVar3 = false;
-      }
-      else {
-        bVar3 = true;
-      }
-      pMVar4 = (MVWorldObjectClient *)0x0;
-      if (bVar3) {
-        pMVar4 = pMVar2;
-      }
-      if (pMVar4 != (MVWorldObjectClient *)0x0) {
-        pGVar5 = pMVar4[1].fields.gameObject;
-        if (pGVar5 != (GameObject *)0x0) {
-          pGVar6 = pGVar5[4].klass;
-          pPVar7 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-          if (pPVar7 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-            if ((float)pGVar6 == (float)(int)(pPVar7->fields).movementSpeed) {
+        pIVar4 = pMVar2[1].fields.interactionDataHandlerBase;
+        if (pIVar4 != (InteractionDataHandlerBase *)0x0) {
+          fVar5 = *(float *)((longlong)&pIVar4[1].fields._._.m_CancellationTokenSource + 4);
+          pPVar6 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+          if (pPVar6 != (PickupItemCostume_CostumeConfiguration *)0x0) {
+            if (fVar5 == (float)(int)(pPVar6->fields).movementSpeed) {
               return;
             }
-            this_00 = (AvatarMotor *)pMVar4[1].fields.gameObject;
-            pPVar7 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-            if ((pPVar7 != (PickupItemCostume_CostumeConfiguration *)0x0) &&
+            this_00 = (AvatarMotor *)pMVar2[1].fields.interactionDataHandlerBase;
+            pPVar6 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+            if ((pPVar6 != (PickupItemCostume_CostumeConfiguration *)0x0) &&
                (this_00 != (AvatarMotor *)0x0)) {
-              AvatarMotor::AvatarMotor_set_WalkSpeedBase
-                        (this_00,(float)(int)(pPVar7->fields).movementSpeed,(MethodInfo *)0x0);
+              (this_00->fields).walkSpeedBase = (float)(int)(pPVar6->fields).movementSpeed;
+              AvatarMotor::AvatarMotor_HandleMovementBoost(this_00,(MethodInfo *)0x0);
               return;
             }
           }
@@ -1415,9 +2271,9 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnSpeedStateChang
     return;
   }
 code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -1429,123 +2285,61 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnStateChanged
                MethodInfo *method)
 
 {
+  PickupItemEditable::PickupItemEditable_OnStateChanged
+            ((PickupItemEditable *)this,newState,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?(&
-                    System__Collections__Generic__Dictionary<System::Object,_System::Object>_MethodInfo__Extensions__GetValueOrDefault<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
-                   );
-    func_?(&TypeInfo__Extensions);
-    func_?(&StringLiteral_itemData);
+    FUN_?(&TypeInfo__MVAvatarLocal);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Extensions);
-  }
-  hashtable = (Dictionary_2_System_Object_System_Object_ *)
-              Extensions::Extensions_GetValueOrDefault_3
-                        (newState,StringLiteral_itemData,(Object *)0x0,
-                         System__Collections__Generic__Dictionary<System::Object,_System::Object>_MethodInfo__Extensions__GetValueOrDefault<System::Collections::Generic::Dictionary<System::Object,_System::Object>_>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
-                        );
-  if (hashtable != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(&
-                      int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
-                     );
-      func_?(&TypeInfo__Extensions);
-      func_?(&StringLiteral_CubeModelId);
-      cRam_? = '\x01';
-    }
-    pPVar1 = (this->fields)._._Configuration_k__BackingField;
-    if (pPVar1 == (PickupItemEditable_EditableItemConfiguration *)0x0) goto code_?;
-    IVar2 = (pPVar1->fields).cubeModelId;
-    if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__Extensions);
-    }
-    IVar3 = Extensions::Extensions_GetValueOrDefault_2
-                       (hashtable,StringLiteral_CubeModelId,0xffffffff,
-                        int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
-                       );
-    if ((IVar2 != IVar3) ||
-       (cVar4 = (*(code *)(this->klass->vtable).IsSameItemData.method)
-                           (this,hashtable,(this->klass->vtable).SetConfiguration.methodPtr),
-       cVar4 == '\0')) {
-      (*(code *)(this->klass->vtable).InterruptFire.method)(this,this->klass[1]._0.image);
-      (*(code *)(this->klass->vtable).SetConfiguration.method)
-                (this,hashtable,(this->klass->vtable).GetDefaultConfiguration.methodPtr);
-      (*(code *)(this->klass->vtable).SetValuesBasedOnConfiguration.method)
-                (this,(this->klass->vtable).OnPickupNewEditableItem.methodPtr);
-      (*(code *)(this->klass->vtable).OnPickupNewEditableItem.method)
-                (this,(this->klass->vtable).SetAnimation.methodPtr);
-    }
-  }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVAvatarLocal);
-    cRam_? = '\x01';
-  }
-  pMVar5 = (this->fields)._._._.owner;
-  if (pMVar5 == (MVPickupOwner *)0x0) goto code_?;
-  pMVar6 = (MVAvatarLocal *)(pMVar5->fields)._.worldObjectParent;
-  if (pMVar6 != (MVAvatarLocal *)0x0) {
-    if (((pMVar6->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) ||
-       ((MVAvatarLocal__Class *)
-        (pMVar6->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
+  pMVar1 = (this->fields)._._._.owner;
+  if (pMVar1 == (MVPickupOwner *)0x0) goto code_?;
+  this_00 = (MVAvatarLocal *)(pMVar1->fields)._.worldObjectParent;
+  if (this_00 != (MVAvatarLocal *)0x0) {
+    bVar2 = (TypeInfo__MVAvatarLocal->_1).naturalAligment;
+    if ((bVar2 <= (this_00->klass->_1).naturalAligment) &&
+       ((MVAvatarLocal__Class *)(this_00->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] ==
         TypeInfo__MVAvatarLocal)) {
-      bVar7 = false;
-    }
-    else {
-      bVar7 = true;
-    }
-    this_01 = (MVAvatarLocal *)0x0;
-    if (bVar7) {
-      this_01 = pMVar6;
-    }
-    if (this_01 != (MVAvatarLocal *)0x0) {
-      iVar8 = (this_01->fields).defaultBaseMaxHealth;
-      pPVar9 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-      if (pPVar9 == (PickupItemCostume_CostumeConfiguration *)0x0) goto code_?;
-      if (iVar8 != (int)(pPVar9->fields).health) {
-        pPVar9 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-        if (pPVar9 == (PickupItemCostume_CostumeConfiguration *)0x0) goto code_?;
+      iVar3 = (this_00->fields).defaultBaseMaxHealth;
+      pPVar4 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+      if (pPVar4 == (PickupItemCostume_CostumeConfiguration *)0x0) goto code_?;
+      if (iVar3 != (int)(pPVar4->fields).health) {
+        pPVar4 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+        if (pPVar4 == (PickupItemCostume_CostumeConfiguration *)0x0) goto code_?;
         MVAvatarLocal::MVAvatarLocal_set_BaseMaxHealth
-                  (this_01,(int)(pPVar9->fields).health,(MethodInfo *)0x0);
+                  (this_00,(int)(pPVar4->fields).health,(MethodInfo *)0x0);
       }
     }
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVAvatarLocal);
+    FUN_?(&TypeInfo__MVAvatarLocal);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar5 = (this->fields)._._._.owner;
-  if (pMVar5 != (MVPickupOwner *)0x0) {
-    pMVar10 = (pMVar5->fields)._.worldObjectParent;
-    if (pMVar10 != (MVWorldObjectClient *)0x0) {
-      if (((pMVar10->klass->_1).naturalAligment < (TypeInfo__MVAvatarLocal->_1).naturalAligment) ||
-         ((MVAvatarLocal__Class *)
-          (pMVar10->klass->_1).typeHierarchy[(TypeInfo__MVAvatarLocal->_1).naturalAligment - 1] !=
+  pMVar1 = (this->fields)._._._.owner;
+  if (pMVar1 != (MVPickupOwner *)0x0) {
+    pMVar5 = (pMVar1->fields)._.worldObjectParent;
+    if (pMVar5 != (MVWorldObjectClient *)0x0) {
+      bVar2 = (TypeInfo__MVAvatarLocal->_1).naturalAligment;
+      if ((bVar2 <= (pMVar5->klass->_1).naturalAligment) &&
+         ((MVAvatarLocal__Class *)(pMVar5->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] ==
           TypeInfo__MVAvatarLocal)) {
-        bVar7 = false;
-      }
-      else {
-        bVar7 = true;
-      }
-      pMVar11 = (MVWorldObjectClient *)0x0;
-      if (bVar7) {
-        pMVar11 = pMVar10;
-      }
-      if (pMVar11 != (MVWorldObjectClient *)0x0) {
-        pGVar12 = pMVar11[1].fields.gameObject;
-        if (pGVar12 != (GameObject *)0x0) {
-          pGVar13 = pGVar12[4].klass;
-          pPVar9 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-          if (pPVar9 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-            if ((float)pGVar13 == (float)(int)(pPVar9->fields).movementSpeed) {
+        pIVar6 = pMVar5[1].fields.interactionDataHandlerBase;
+        if (pIVar6 != (InteractionDataHandlerBase *)0x0) {
+          fVar7 = *(float *)((longlong)&pIVar6[1].fields._._.m_CancellationTokenSource + 4);
+          pPVar4 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+          if (pPVar4 != (PickupItemCostume_CostumeConfiguration *)0x0) {
+            if (fVar7 == (float)(int)(pPVar4->fields).movementSpeed) {
               return;
             }
-            this_00 = (AvatarMotor *)pMVar11[1].fields.gameObject;
-            pPVar9 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-            if ((pPVar9 != (PickupItemCostume_CostumeConfiguration *)0x0) &&
-               (this_00 != (AvatarMotor *)0x0)) {
-              AvatarMotor::AvatarMotor_set_WalkSpeedBase
-                        (this_00,(float)(int)(pPVar9->fields).movementSpeed,(MethodInfo *)0x0);
+            this_01 = (AvatarMotor *)pMVar5[1].fields.interactionDataHandlerBase;
+            pPVar4 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+            if ((pPVar4 != (PickupItemCostume_CostumeConfiguration *)0x0) &&
+               (this_01 != (AvatarMotor *)0x0)) {
+              (this_01->fields).walkSpeedBase = (float)(int)(pPVar4->fields).movementSpeed;
+              AvatarMotor::AvatarMotor_HandleMovementBoost(this_01,(MethodInfo *)0x0);
               return;
             }
           }
@@ -1556,9 +2350,9 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_OnStateChanged
     return;
   }
 code_?:
-  func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -1569,113 +2363,230 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_SetAvatarInvisibi
                (PickupItemCostume *this,bool isInvisible,MVAvatar *avatar,MethodInfo *method)
 
 {
-  isInvisible_00 = isInvisible;
-  pPVar1 = this;
-  pPVar2 = _isInvisible;
   if (cRam_? == '\0') {
-    func_?(&
-                    UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
-                   );
-    func_?(&TypeInfo__MVAvatarRemote);
-    func_?(&StringLiteral_Default);
-    func_?(&StringLiteral_Player);
+    FUN_?(&
+                  UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVAvatarRemote);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Default);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Player);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((avatar != (MVAvatar *)0x0) && (pMVar3 = (avatar->fields).body, pMVar3 != (MVBody *)0x0)) {
-    MVBody::MVBody_set_ForceHidden(pMVar3,isInvisible,(MethodInfo *)0x0);
-    pMVar3 = (avatar->fields).body;
-    if ((pMVar3 != (MVBody *)0x0) &&
-       (this_03 = MVBody::MVBody_get_BlobShadow(pMVar3,(MethodInfo *)0x0),
-       this_03 != (AvatarBlobShadowController *)0x0)) {
-      AvatarBlobShadowController::AvatarBlobShadowController_set_ForceHidden
-                (this_03,isInvisible,(MethodInfo *)0x0);
-      if (((avatar->klass->_1).naturalAligment < (TypeInfo__MVAvatarRemote->_1).naturalAligment) ||
-         (ppIVar4 = (avatar->klass->_1).typeHierarchy,
-         (MVAvatarRemote__Class *)ppIVar4[(TypeInfo__MVAvatarRemote->_1).naturalAligment - 1] !=
-         TypeInfo__MVAvatarRemote)) {
+  if ((avatar != (MVAvatar *)0x0) && (pMVar1 = (avatar->fields).body, pMVar1 != (MVBody *)0x0)) {
+    if ((pMVar1->fields).forceHidden != isInvisible) {
+      (pMVar1->fields).forceHidden = isInvisible;
+      (pMVar1->fields).visible = isInvisible ^ 1;
+      (pMVar1->fields).shadowVisible = isInvisible ^ 1;
+      MVBody::MVBody_UpdateVisibility(pMVar1,(MethodInfo *)0x0);
+    }
+    pMVar1 = (avatar->fields).body;
+    if (((pMVar1 != (MVBody *)0x0) &&
+        (pMVar2 = (pMVar1->fields).bodyObject, pMVar2 != (MVBodyObject *)0x0)) &&
+       (this_00 = (pMVar2->fields).avatarBlobShadowController,
+       this_00 != (AvatarBlobShadowController *)0x0)) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel);
+        LOCK();
+        UNLOCK();
+        FUN_?(&TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      (this_00->fields).forceHidden = isInvisible;
+      if (*(int *)&(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+                   field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+                   field_0x1c == 0) {
+        FUN_?();
+      }
+      aiStackX_18[0] =
+           TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
+           _LightQualityLevel_k__BackingField;
+      pOVar3 = (Object *)
+               FUN_?(TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel,aiStackX_18);
+      AvatarBlobShadowController::AvatarBlobShadowController_OnQualityLevelChanged
+                (this_00,pOVar3,(MethodInfo *)0x0);
+      bVar4 = (TypeInfo__MVAvatarRemote->_1).naturalAligment;
+      if (((avatar->klass->_1).naturalAligment < bVar4) ||
+         ((MVAvatarRemote__Class *)(avatar->klass->_1).typeHierarchy[(ulonglong)bVar4 - 1] !=
+          TypeInfo__MVAvatarRemote)) {
         avatar = (MVAvatar *)0x0;
       }
       else {
-        _isInvisible = (PickupItemCostume_CostumeConfiguration__Class *)0x0;
         avatar_00 = (MVAvatarRemote *)0x0;
-        if ((MVAvatarRemote__Class *)ppIVar4[(TypeInfo__MVAvatarRemote->_1).naturalAligment - 1] ==
+        if ((MVAvatarRemote__Class *)
+            (avatar->klass->_1).typeHierarchy
+            [(ulonglong)(TypeInfo__MVAvatarRemote->_1).naturalAligment - 1] ==
             TypeInfo__MVAvatarRemote) {
           avatar_00 = (MVAvatarRemote *)avatar;
         }
         PickupItemCostume_CalculateRemoteAvatarUIVisibility
-                  (this,isInvisible_00,avatar_00,(MethodInfo *)0x0);
-        this = (PickupItemCostume *)avatar_00;
+                  (this,isInvisible,avatar_00,(MethodInfo *)0x0);
       }
+      uVar5 = 0;
       if (isInvisible == 0) {
         return;
       }
-      this_00 = (pPVar1->fields)._.cubeModelParent;
-      unaff_ESI = pPVar2;
-      if (this_00 != (Transform *)0x0) {
-        pOVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                 Component_GetComponentsInChildren
-                           ((Component *)this_00,
-                            UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
-                           );
-        unaff_ESI = (PickupItemCostume_CostumeConfiguration__Class *)0x0;
-        if (pOVar5 != (Object__Array *)0x0) {
-          ppOVar6 = pOVar5->vector;
-          for (; (int)unaff_ESI < (int)pOVar5->max_length;
-              unaff_ESI = (PickupItemCostume_CostumeConfiguration__Class *)
-                          ((int)&(unaff_ESI->_0).image + 1)) {
-            if ((PickupItemCostume_CostumeConfiguration__Class *)pOVar5->max_length <= unaff_ESI)
-            goto code_?;
-            this_01 = (Renderer *)*ppOVar6;
-            if (this_01 == (Renderer *)0x0) goto code_?;
-            UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                      (this_01,1,(MethodInfo *)0x0);
-            this_04 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                ((Component *)this_01,(MethodInfo *)0x0);
-            layerName = StringLiteral_Player;
-            if (avatar != (MVAvatar *)0x0) {
-              layerName = StringLiteral_Default;
-            }
-            avatar = (MVAvatar *)
-                     UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                               (layerName,(MethodInfo *)0x0);
-            if (this_04 == (GameObject *)0x0) goto code_?;
-            this = (PickupItemCostume *)&UNK_?;
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
-                      (this_04,(int32_t)avatar,(MethodInfo *)0x0);
-            ppOVar6 = ppOVar6 + 1;
+      this_01 = (this->fields)._.cubeModelParent;
+      if ((this_01 != (Transform *)0x0) &&
+         (pOVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                   Component_GetComponentsInChildren
+                             ((Component *)this_01,
+                              UnityEngine__Renderer__MethodInfo__UnityEngine__Component__GetComponentsInChildren<UnityEngine::Renderer>______
+                             ), pOVar6 != (Object__Array *)0x0)) {
+        ppOVar7 = pOVar6->vector;
+        for (; (int)uVar5 < (int)pOVar6->max_length; uVar5 = uVar5 + 1) {
+          if ((uint)pOVar6->max_length <= uVar5) {
+            FUN_?();
+            pcVar8 = (code *)swi(3);
+            (*pcVar8)();
+            return;
           }
-          this_02 = (this->fields).trailRenderer;
+          pOVar3 = *ppOVar7;
+          if (pOVar3 == (Object *)0x0) goto code_?;
           if (cRam_? == '\0') {
-            func_?(&TypeInfo__PickupItemCostume__CostumeConfiguration);
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Renderer>_UnityEngine__Renderer_
+                         );
+            LOCK();
+            UNLOCK();
             cRam_? = '\x01';
           }
-          pPVar7 = (this->fields)._._Configuration_k__BackingField;
-          unaff_ESI = TypeInfo__PickupItemCostume__CostumeConfiguration;
-          if (pPVar7 != (PickupItemEditable_EditableItemConfiguration *)0x0) {
-            if (((pPVar7->klass->_1).naturalAligment <
-                 (TypeInfo__PickupItemCostume__CostumeConfiguration->_1).naturalAligment) ||
-               ((pPVar7->klass->_1).typeHierarchy
-                [(TypeInfo__PickupItemCostume__CostumeConfiguration->_1).naturalAligment - 1] !=
-                (Il2CppClass *)TypeInfo__PickupItemCostume__CostumeConfiguration))
-            goto code_?;
-            if (this_02 != (TrailRenderer *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                        ((Renderer *)this_02,*(bool *)((int)&pPVar7[1].fields.cubeModelId + 2),
-                         (MethodInfo *)0x0);
+          pOVar9 = pOVar3[1].klass;
+          if (pOVar9 == (Object__Class *)0x0) {
+code_?:
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException(pOVar3,(MethodInfo *)0x0);
+            pcVar8 = (code *)swi(3);
+            (*pcVar8)();
+            return;
+          }
+          pcVar8 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+            uVar10 = func_?(&UNK_?);
+            FUN_?(uVar10,0);
+            pcVar8 = (code *)swi(3);
+            (*pcVar8)();
+            return;
+          }
+          pcRam_? = pcVar8;
+          (*pcRam_?)(pOVar9);
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Component>_UnityEngine__Component_
+                         );
+            LOCK();
+            UNLOCK();
+            FUN_?(&
+                          UnityEngine__GameObject_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::GameObject>_void__
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pOVar9 = pOVar3[1].klass;
+          if (pOVar9 == (Object__Class *)0x0) goto code_?;
+          pcVar8 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+            uVar10 = func_?(&UNK_?);
+            FUN_?(uVar10,0);
+            pcVar8 = (code *)swi(3);
+            (*pcVar8)();
+            return;
+          }
+          pcRam_? = pcVar8;
+          pvVar11 = (void *)(*pcRam_?)(pOVar9);
+          this_02 = (GameObject *)
+                    UnityEngine.CoreModule.dll::UnityEngine::Bindings::Unmarshal::
+                    Unmarshal_UnmarshalUnityObject
+                              (pvVar11,
+                               UnityEngine__GameObject_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::GameObject>_void__
+                              );
+          layerName = StringLiteral_Player;
+          if (avatar != (MVAvatar *)0x0) {
+            layerName = StringLiteral_Default;
+          }
+          value = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                            (layerName,(MethodInfo *)0x0);
+          if (this_02 == (GameObject *)0x0) goto code_?;
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
+                    (this_02,value,(MethodInfo *)0x0);
+          ppOVar7 = ppOVar7 + 1;
+        }
+        obj = (this->fields).trailRenderer;
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__PickupItemCostume__CostumeConfiguration);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pPVar12 = (this->fields)._._Configuration_k__BackingField;
+        if (pPVar12 != (PickupItemEditable_EditableItemConfiguration *)0x0) {
+          bVar4 = (TypeInfo__PickupItemCostume__CostumeConfiguration->_1).naturalAligment;
+          if (((pPVar12->klass->_1).naturalAligment < bVar4) ||
+             ((pPVar12->klass->_1).typeHierarchy[(ulonglong)bVar4 - 1] !=
+              (Il2CppClass *)TypeInfo__PickupItemCostume__CostumeConfiguration)) {
+            FUN_?(pPVar12,TypeInfo__PickupItemCostume__CostumeConfiguration);
+            pcVar8 = (code *)swi(3);
+            (*pcVar8)();
+            return;
+          }
+          uVar13 = *(undefined1 *)((longlong)&pPVar12[1].monitor + 6);
+          if (obj != (TrailRenderer *)0x0) {
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Renderer>_UnityEngine__Renderer_
+                           );
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pvVar11 = (obj->fields)._._._.m_CachedPtr;
+            if (pvVar11 != (void *)0x0) {
+              pcVar8 = pcRam_?;
+              if ((pcRam_? == (code *)0x0) &&
+                 (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+                uVar10 = func_?(&UNK_?);
+                FUN_?(uVar10,0);
+                pcVar8 = (code *)swi(3);
+                (*pcVar8)();
+                return;
+              }
+              pcRam_? = pcVar8;
+              (*pcRam_?)(pvVar11,uVar13);
               return;
             }
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+            pcVar8 = (code *)swi(3);
+            (*pcVar8)();
+            return;
           }
         }
       }
     }
   }
 code_?:
-  func_?();
-code_?:
-  func_?();
-  pPVar7 = extraout_EDX;
-code_?:
-  func_?(pPVar7,unaff_ESI);
+  FUN_?();
   pcVar8 = (code *)swi(3);
   (*pcVar8)();
   return;
@@ -1690,36 +2601,64 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_SetConfiguration
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    bool_MethodInfo__Extensions__GetValueOrDefault<bool>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__bool_
-                   );
-    func_?(&
-                    int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
-                   );
-    func_?(&
-                    float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
-                   );
-    func_?(&
-                    System__String_MethodInfo__Extensions__GetValueOrDefault<System::String>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__String_
-                   );
-    func_?(&TypeInfo__Extensions);
-    func_?(&StringLiteral_TrailEnabled);
-    func_?(&StringLiteral_CubeModelId);
-    func_?(&StringLiteral_TrailLength);
-    func_?(&StringLiteral_PlayersCanCollide);
-    func_?(&StringLiteral_TrailColor);
-    func_?(&StringLiteral_PlayerInvisible);
-    func_?(&StringLiteral_Name);
-    func_?(&StringLiteral_Health);
-    func_?(&StringLiteral_MovementSpeed);
+    FUN_?(&
+                  bool_MethodInfo__Extensions__GetValueOrDefault<bool>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__bool_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  int_MethodInfo__Extensions__GetValueOrDefault<int>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  System__String_MethodInfo__Extensions__GetValueOrDefault<System::String>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__String_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Extensions);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_TrailEnabled);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_CubeModelId);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_TrailLength);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_PlayersCanCollide);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_TrailColor);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_PlayerInvisible);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Name);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Health);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_MovementSpeed);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
   pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
   if (pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) {
     IVar3 = (pPVar2->fields)._.cubeModelId;
-    if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+      FUN_?();
     }
     IVar3 = Extensions::Extensions_GetValueOrDefault_2
                       (itemData,StringLiteral_CubeModelId,IVar3,
@@ -1729,101 +2668,100 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_SetConfiguration
       (pPVar1->fields)._.cubeModelId = IVar3;
       pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
       pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-      if (pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-        pSVar4 = (String *)
-                 Extensions::Extensions_GetValueOrDefault_3
-                           (itemData,StringLiteral_Name,(Object *)(pPVar2->fields)._.name,
-                            System__String_MethodInfo__Extensions__GetValueOrDefault<System::String>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__String_
-                           );
-        if (pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-          (pPVar1->fields)._.name = pSVar4;
-          func_?();
-          pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-          pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-          if (pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-            fVar5 = Extensions::Extensions_GetValueOrDefault_4
+      if ((pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) &&
+         (pSVar4 = (String *)
+                    Extensions::Extensions_GetValueOrDefault_3
+                              (itemData,StringLiteral_Name,(Object *)(pPVar2->fields)._.name,
+                               System__String_MethodInfo__Extensions__GetValueOrDefault<System::String>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__System__String_
+                              ), pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0)) {
+        bVar5 = iRam_? != 0;
+        (pPVar1->fields)._.name = pSVar4;
+        if (bVar5) {
+          uVar6 = (uint)((ulonglong)&pPVar1->fields >> 0xc);
+          uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
+          do {
+            uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
+            puVar9 = (ulonglong *)(uVar7 * 8 + 0xADDR);
+            LOCK();
+            bVar5 = uVar8 == *puVar9;
+            if (bVar5) {
+              *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar5);
+        }
+        pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+        pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+        if ((pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) &&
+           (fVar10 = Extensions::Extensions_GetValueOrDefault_4
                                (itemData,StringLiteral_Health,(pPVar2->fields).health,
                                 float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
-                               );
-            if (pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-              (pPVar1->fields).health = fVar5;
+                               ), pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0)) {
+          (pPVar1->fields).health = fVar10;
+          pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+          pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+          if ((pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) &&
+             (fVar10 = Extensions::Extensions_GetValueOrDefault_4
+                                 (itemData,StringLiteral_MovementSpeed,
+                                  (pPVar2->fields).movementSpeed,
+                                  float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
+                                 ), pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0)) {
+            (pPVar1->fields).movementSpeed = fVar10;
+            pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+            pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+            if ((pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) &&
+               (fVar10 = Extensions::Extensions_GetValueOrDefault_4
+                                   (itemData,StringLiteral_TrailLength,(pPVar2->fields).trailLength,
+                                    float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
+                                   ), pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0)) {
+              (pPVar1->fields).trailLength = fVar10;
               pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
               pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-              if (pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-                fVar5 = Extensions::Extensions_GetValueOrDefault_4
-                                   (itemData,StringLiteral_MovementSpeed,
-                                    (pPVar2->fields).movementSpeed,
-                                    float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
-                                   );
-                if (pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-                  (pPVar1->fields).movementSpeed = fVar5;
+              if ((pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) &&
+                 (bVar11 = Extensions::Extensions_GetValueOrDefault
+                                    (itemData,StringLiteral_PlayerInvisible,
+                                     (pPVar2->fields).isPlayerInvisible,
+                                     bool_MethodInfo__Extensions__GetValueOrDefault<bool>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__bool_
+                                    ), pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0)) {
+                (pPVar1->fields).isPlayerInvisible = bVar11;
+                pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+                pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+                if ((pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) &&
+                   (bVar11 = Extensions::Extensions_GetValueOrDefault
+                                      (itemData,StringLiteral_PlayersCanCollide,
+                                       (pPVar2->fields).playersCanCollide,
+                                       bool_MethodInfo__Extensions__GetValueOrDefault<bool>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__bool_
+                                      ), pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0)) {
+                  (pPVar1->fields).playersCanCollide = bVar11;
                   pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
                   pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-                  if (pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-                    fVar5 = Extensions::Extensions_GetValueOrDefault_4
-                                       (itemData,StringLiteral_TrailLength,
-                                        (pPVar2->fields).trailLength,
-                                        float_MethodInfo__Extensions__GetValueOrDefault<float>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__float_
-                                       );
-                    if (pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-                      (pPVar1->fields).trailLength = fVar5;
-                      pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-                      pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-                      if (pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-                        bVar6 = Extensions::Extensions_GetValueOrDefault
-                                          (itemData,StringLiteral_PlayerInvisible,
-                                           (pPVar2->fields).isPlayerInvisible,
-                                           bool_MethodInfo__Extensions__GetValueOrDefault<bool>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__bool_
-                                          );
-                        if (pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-                          (pPVar1->fields).isPlayerInvisible = bVar6;
-                          pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-                          pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-                          if (pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-                            bVar6 = Extensions::Extensions_GetValueOrDefault
-                                              (itemData,StringLiteral_PlayersCanCollide,
-                                               (pPVar2->fields).playersCanCollide,
-                                               bool_MethodInfo__Extensions__GetValueOrDefault<bool>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__bool_
-                                              );
-                            if (pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-                              (pPVar1->fields).playersCanCollide = bVar6;
-                              pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-                              pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
-                              if (pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-                                bVar6 = Extensions::Extensions_GetValueOrDefault
-                                                  (itemData,StringLiteral_TrailEnabled,
-                                                   (pPVar2->fields).isTrailEnabled,
-                                                                                                      
-                                                  bool_MethodInfo__Extensions__GetValueOrDefault<bool>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__bool_
-                                                  );
-                                if (pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-                                  (pPVar1->fields).isTrailEnabled = bVar6;
-                                  pPVar1 = PickupItemCostume_get_Configuration
-                                                     (this,(MethodInfo *)0x0);
-                                  pPVar2 = PickupItemCostume_get_Configuration
-                                                     (this,(MethodInfo *)0x0);
-                                  if (pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-                                    pCVar7 = Extensions::Extensions_GetColorOrDefault
-                                                       ((Color *)&stack0xffffffec,itemData,
-                                                        StringLiteral_TrailColor,
-                                                        (pPVar2->fields).trailColor,
-                                                        (MethodInfo *)0x0);
-                                    fVar5 = pCVar7->g;
-                                    fVar8 = pCVar7->b;
-                                    fVar9 = pCVar7->a;
-                                    if (pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0) {
-                                      (pPVar1->fields).trailColor.r = pCVar7->r;
-                                      (pPVar1->fields).trailColor.g = fVar5;
-                                      (pPVar1->fields).trailColor.b = fVar8;
-                                      (pPVar1->fields).trailColor.a = fVar9;
-                                      return;
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
+                  if ((pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) &&
+                     (bVar11 = Extensions::Extensions_GetValueOrDefault
+                                        (itemData,StringLiteral_TrailEnabled,
+                                         (pPVar2->fields).isTrailEnabled,
+                                         bool_MethodInfo__Extensions__GetValueOrDefault<bool>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__bool_
+                                        ), pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0))
+                  {
+                    (pPVar1->fields).isTrailEnabled = bVar11;
+                    pPVar1 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+                    pPVar2 = PickupItemCostume_get_Configuration(this,(MethodInfo *)0x0);
+                    if (pPVar2 != (PickupItemCostume_CostumeConfiguration *)0x0) {
+                      CStack_12.r = (pPVar2->fields).trailColor.r;
+                      CStack_12.g = (pPVar2->fields).trailColor.g;
+                      CStack_12.b = (pPVar2->fields).trailColor.b;
+                      CStack_12.a = (pPVar2->fields).trailColor.a;
+                      pCVar13 = Extensions::Extensions_GetColorOrDefault
+                                          (&CStack_14,itemData,StringLiteral_TrailColor,&CStack_12,
+                                           (MethodInfo *)0x0);
+                      fVar10 = pCVar13->g;
+                      fVar15 = pCVar13->b;
+                      fVar16 = pCVar13->a;
+                      if (pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0) {
+                        (pPVar1->fields).trailColor.r = pCVar13->r;
+                        (pPVar1->fields).trailColor.g = fVar10;
+                        (pPVar1->fields).trailColor.b = fVar15;
+                        (pPVar1->fields).trailColor.a = fVar16;
+                        return;
                       }
                     }
                   }
@@ -1835,9 +2773,9 @@ void Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_SetConfiguration
       }
     }
   }
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  FUN_?();
+  pcVar17 = (code *)swi(3);
+  (*pcVar17)();
   return;
 }
 
@@ -1850,24 +2788,24 @@ Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_get_Configuration
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PickupItemCostume__CostumeConfiguration);
+    FUN_?(&TypeInfo__PickupItemCostume__CostumeConfiguration);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pPVar1 = (PickupItemCostume_CostumeConfiguration *)(this->fields)._._Configuration_k__BackingField
   ;
-  if (pPVar1 == (PickupItemCostume_CostumeConfiguration *)0x0) {
-    return (PickupItemCostume_CostumeConfiguration *)0x0;
+  if (pPVar1 != (PickupItemCostume_CostumeConfiguration *)0x0) {
+    bVar2 = (TypeInfo__PickupItemCostume__CostumeConfiguration->_1).naturalAligment;
+    if (((pPVar1->klass->_1).naturalAligment < bVar2) ||
+       ((pPVar1->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] !=
+        (Il2CppClass *)TypeInfo__PickupItemCostume__CostumeConfiguration)) {
+      FUN_?(pPVar1,TypeInfo__PickupItemCostume__CostumeConfiguration);
+      pcVar3 = (code *)swi(3);
+      pPVar1 = (PickupItemCostume_CostumeConfiguration *)(*pcVar3)();
+      return pPVar1;
+    }
   }
-  if (((TypeInfo__PickupItemCostume__CostumeConfiguration->_1).naturalAligment <=
-       (pPVar1->klass->_1).naturalAligment) &&
-     ((pPVar1->klass->_1).typeHierarchy
-      [(TypeInfo__PickupItemCostume__CostumeConfiguration->_1).naturalAligment - 1] ==
-      (Il2CppClass *)TypeInfo__PickupItemCostume__CostumeConfiguration)) {
-    return pPVar1;
-  }
-  func_?(pPVar1,TypeInfo__PickupItemCostume__CostumeConfiguration);
-  pcVar2 = (code *)swi(3);
-  pPVar1 = (PickupItemCostume_CostumeConfiguration *)(*pcVar2)();
   return pPVar1;
 }
 
@@ -1889,10 +2827,9 @@ Color * Assembly-CSharp.dll::PickupItemCostume::PickupItemCostume_get_TrailColor
     __return_storage_ptr__->a = fVar4;
     return __return_storage_ptr__;
   }
-  uVar5 = func_?(&stack0xfffffff8);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  pCVar7 = (Color *)(*pcVar6)();
-  return pCVar7;
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  pCVar6 = (Color *)(*pcVar5)();
+  return pCVar6;
 }
 

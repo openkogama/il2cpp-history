@@ -5,43 +5,78 @@ Quaternion *
 Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
 AvatarLimbManagerLocal_AvatarPointingHandlerLocal_ApplyYawOffset
           (Quaternion *__return_storage_ptr__,
-          AvatarLimbManagerLocal_AvatarPointingHandlerLocal *this,Quaternion newYawRotation,
+          AvatarLimbManagerLocal_AvatarPointingHandlerLocal *this,Quaternion *newYawRotation,
           MethodInfo *method)
 
 {
+  method_00 = (MethodInfo *)newYawRotation;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Quaternion);
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  uVar1 = _UNK_?;
-  if (((((this->fields)._.pointState != 2) && ((this->fields)._.pointState != 3)) &&
-      (iVar2 = func_?(&QStack_3.y,&(this->fields).yawRotation,0), uVar1 = _UNK_?,
-      _UNK_? < *(float *)(iVar2 + 4) || _UNK_? == *(float *)(iVar2 + 4))) &&
-     (iVar2 = func_?(&QStack_3.y,&(this->fields).yawRotation,0), uVar1 = _UNK_?,
-     *(float *)(iVar2 + 4) <= _UNK_?)) {
-    uVar1 = _UNK_?;
+  if (((((this->fields)._.pointState == 2) || ((this->fields)._.pointState == 3)) ||
+      (pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_eulerAngles
+                          ((Vector3 *)auStack_2,&(this->fields).yawRotation,method_00),
+      pVVar1->y <= _UNK_? && _UNK_? != pVVar1->y)) ||
+     (pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_get_eulerAngles
+                         (&VStack_3,&(this->fields).yawRotation,method_00),
+     _UNK_? < pVVar1->y)) {
+    lStack_4 = (ulonglong)_UNK_? << 0x20;
+    uStack_5 = 0;
+    uStack_6 = 0;
+    uStack_7 = 0;
+    pcVar8 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+      uVar9 = func_?(&UNK_?);
+      FUN_?(uVar9,0);
+      pcVar8 = (code *)swi(3);
+      pQVar10 = (Quaternion *)(*pcVar8)();
+      return pQVar10;
+    }
+    pcRam_? = pcVar8;
+    (*pcRam_?)(&lStack_4,&uStack_6);
+    auStack_2._0_4_ = (float)uStack_6;
+    auStack_2._4_4_ = uStack_6._4_4_;
+    auStack_2._8_4_ = (float)uStack_7;
+    fStack_11 = uStack_7._4_4_;
   }
-  QStack_3.w = 0.0;
-  auVar4._4_8_ = 0;
-  auVar4._0_4_ = uVar1;
-  pQVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Internal_FromEulerRad
-                     (&QStack_3,(Vector3)(auVar4 << 0x20),(MethodInfo *)0x0);
-  fVar6 = pQVar5->x;
-  fVar7 = pQVar5->y;
-  fVar8 = pQVar5->z;
-  fVar9 = pQVar5->w;
+  else {
+    lStack_4 = (ulonglong)_UNK_? << 0x20;
+    uStack_5 = 0;
+    auStack_2._0_4_ = 0.0;
+    auStack_2._4_4_ = 0.0;
+    stack0xffffffffffffff60 = 0;
+    pcVar8 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+      uVar9 = func_?(&UNK_?);
+      FUN_?(uVar9,0);
+      pcVar8 = (code *)swi(3);
+      pQVar10 = (Quaternion *)(*pcVar8)();
+      return pQVar10;
+    }
+    pcRam_? = pcVar8;
+    (*pcRam_?)(&lStack_4,auStack_2);
+  }
+  fVar12 = newYawRotation->x;
+  fVar13 = newYawRotation->y;
+  fVar14 = newYawRotation->z;
+  fVar15 = newYawRotation->w;
   __return_storage_ptr__->x =
-       (newYawRotation.w * fVar6 + newYawRotation.x * fVar9 + newYawRotation.y * fVar8) -
-       newYawRotation.z * fVar7;
+       ((float)auStack_2._0_4_ * fVar15 + fStack_11 * fVar12 + (float)auStack_2._8_4_ * fVar13) -
+       (float)auStack_2._4_4_ * fVar14;
   __return_storage_ptr__->y =
-       (fVar7 * newYawRotation.w + newYawRotation.y * fVar9 + newYawRotation.z * fVar6) -
-       fVar8 * newYawRotation.x;
+       (fStack_11 * fVar13 + (float)auStack_2._4_4_ * fVar15 + (float)auStack_2._0_4_ * fVar14) -
+       (float)auStack_2._8_4_ * fVar12;
   __return_storage_ptr__->z =
-       (fVar8 * newYawRotation.w + newYawRotation.z * fVar9 + fVar7 * newYawRotation.x) -
-       newYawRotation.y * fVar6;
+       (fStack_11 * fVar14 + (float)auStack_2._8_4_ * fVar15 + (float)auStack_2._4_4_ * fVar12) -
+       (float)auStack_2._0_4_ * fVar13;
   __return_storage_ptr__->w =
-       ((newYawRotation.w * fVar9 - fVar6 * newYawRotation.x) - fVar7 * newYawRotation.y) -
-       newYawRotation.z * fVar8;
+       ((fStack_11 * fVar15 - (float)auStack_2._0_4_ * fVar12) - (float)auStack_2._4_4_ * fVar13) -
+       (float)auStack_2._8_4_ * fVar14;
   return __return_storage_ptr__;
 }
 
@@ -51,23 +86,32 @@ AvatarLimbManagerLocal_AvatarPointingHandlerLocal_ApplyYawOffset
 void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
      AvatarLimbManagerLocal_AvatarPointingHandlerLocal_HandleResult
                (AvatarLimbManagerLocal_AvatarPointingHandlerLocal *this,
-               AvatarLimbManagerLocal_PointingRotationCalculationResult result,MethodInfo *method)
+               AvatarLimbManagerLocal_PointingRotationCalculationResult *result,MethodInfo *method)
 
 {
-  pQVar1 = AvatarLimbManagerLocal_AvatarPointingHandlerLocal_ApplyYawOffset
-                     (&QStack_2,this,result.YawRotation,(MethodInfo *)0x0);
-  fVar3 = pQVar1->y;
-  fVar4 = pQVar1->z;
-  fVar5 = pQVar1->w;
-  (this->fields).yawRotation.x = pQVar1->x;
-  (this->fields).yawRotation.y = fVar3;
-  (this->fields).yawRotation.z = fVar4;
-  (this->fields).yawRotation.w = fVar5;
-  (this->fields).pitchRotation.x = result.PitchRotation.x;
-  (this->fields).pitchRotation.y = result.PitchRotation.y;
-  (this->fields).pitchRotation.z = result.PitchRotation.z;
-  (this->fields).pitchRotation.w = result.PitchRotation.w;
-  if (result.ShouldPoint != 0) {
+  QStack_1.x = (result->YawRotation).x;
+  QStack_1.y = (result->YawRotation).y;
+  QStack_1.z = (result->YawRotation).z;
+  QStack_1.w = (result->YawRotation).w;
+  pQVar2 = AvatarLimbManagerLocal_AvatarPointingHandlerLocal_ApplyYawOffset
+                     (aQStack_3,this,&QStack_1,(MethodInfo *)0x0);
+  bVar4 = result->ShouldPoint;
+  fVar5 = (result->PitchRotation).y;
+  fVar6 = (result->PitchRotation).z;
+  fVar7 = (result->PitchRotation).w;
+  fVar8 = pQVar2->x;
+  fVar9 = pQVar2->y;
+  fVar10 = pQVar2->z;
+  fVar11 = pQVar2->w;
+  (this->fields).pitchRotation.x = (result->PitchRotation).x;
+  (this->fields).pitchRotation.y = fVar5;
+  (this->fields).pitchRotation.z = fVar6;
+  (this->fields).pitchRotation.w = fVar7;
+  (this->fields).yawRotation.x = fVar8;
+  (this->fields).yawRotation.y = fVar9;
+  (this->fields).yawRotation.z = fVar10;
+  (this->fields).yawRotation.w = fVar11;
+  if (bVar4 != 0) {
     (this->fields)._.pointState = (this->fields).storedState;
     return;
   }
@@ -86,8 +130,11 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
 {
   pAVar1 = (this->fields).OnHasHandEquippableItemChange;
   if (pAVar1 != (Action_1_Boolean_ *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
     (*(pAVar1->fields)._._.invoke_impl)
-              ((pAVar1->fields)._._.method_code,_hasHandEquipableItem,(pAVar1->fields)._._.method);
+              ((pAVar1->fields)._._.method_code,hasHandEquipableItem,(pAVar1->fields)._._.method);
+    return;
   }
   return;
 }
@@ -108,11 +155,14 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
     (this->fields)._.pointingDirection.x = fVar1;
     (this->fields)._.pointingDirection.y = fVar2;
     (this->fields)._.pointingDirection.z = fVar3;
-    pAVar4 = (this->fields).OnIsPointingChange;
     (this->fields).storedState = 1;
+    pAVar4 = (this->fields).OnIsPointingChange;
     if (pAVar4 != (Action_1_Boolean_ *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
       (*(pAVar4->fields)._._.invoke_impl)
                 ((pAVar4->fields)._._.method_code,1,(pAVar4->fields)._._.method);
+      return;
     }
   }
   return;
@@ -133,8 +183,8 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
     fVar3 = (this->fields)._.prevLookDirection.z;
     (this->fields)._.pointingDirection.x = fVar1;
     (this->fields)._.pointingDirection.y = fVar2;
-    (this->fields).storedState = 2;
     (this->fields)._.pointingDirection.z = fVar3;
+    (this->fields).storedState = 2;
   }
   return;
 }
@@ -154,8 +204,8 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
     fVar3 = (this->fields)._.prevLookDirection.z;
     (this->fields)._.pointingDirection.x = fVar1;
     (this->fields)._.pointingDirection.y = fVar2;
-    (this->fields).storedState = 3;
     (this->fields)._.pointingDirection.z = fVar3;
+    (this->fields).storedState = 3;
   }
   return;
 }
@@ -165,36 +215,48 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
 
 void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
      AvatarLimbManagerLocal_AvatarPointingHandlerLocal_UpdateNetworkMessage
-               (AvatarLimbManagerLocal_AvatarPointingHandlerLocal *this,Quaternion rotation,
+               (AvatarLimbManagerLocal_AvatarPointingHandlerLocal *this,Quaternion *rotation,
                MethodInfo *method)
 
 {
   fVar1 = (this->fields).networkMessageCooldown;
-  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar3 = _UNK_?;
-  fVar1 = fVar1 - fVar2;
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcRam_? = pcVar2;
+  fVar4 = (float)(*pcRam_?)();
+  fVar1 = fVar1 - fVar4;
   (this->fields).networkMessageCooldown = fVar1;
-  if (fVar1 <= fVar3) {
+  if (fVar1 <= 0.0) {
     if ((this->fields).OnUpdatePointingValue != (Action_1_UnityEngine_Quaternion_ *)0x0) {
-      pAVar4 = (this->fields).OnUpdatePointingValue;
+      pAVar5 = (this->fields).OnUpdatePointingValue;
       if ((this->fields)._.pointState == 0) {
         if (cRam_? == '\0') {
-          func_?(&TypeInfo__UnityEngine__Quaternion);
+          FUN_?(&TypeInfo__UnityEngine__Quaternion);
+          LOCK();
+          UNLOCK();
           cRam_? = '\x01';
         }
-        pvVar5 = (pAVar4->fields)._._.method;
         pQVar6 = TypeInfo__UnityEngine__Quaternion->static_fields;
-        rotation.x = (pQVar6->identityQuaternion).x;
-        rotation.y = (pQVar6->identityQuaternion).y;
-        rotation.z = (pQVar6->identityQuaternion).z;
-        rotation.w = (pQVar6->identityQuaternion).w;
+        fStack_7 = (pQVar6->identityQuaternion).x;
+        fStack_8 = (pQVar6->identityQuaternion).y;
+        fStack_9 = (pQVar6->identityQuaternion).z;
+        fStack_10 = (pQVar6->identityQuaternion).w;
       }
       else {
-        pvVar5 = (pAVar4->fields)._._.method;
+        fStack_7 = rotation->x;
+        fStack_8 = rotation->y;
+        fStack_9 = rotation->z;
+        fStack_10 = rotation->w;
       }
-      (*(pAVar4->fields)._._.invoke_impl)
-                ((pAVar4->fields)._._.method_code,rotation.x,rotation.y,rotation.z,rotation.w,pvVar5
-                );
+      (*(pAVar5->fields)._._.invoke_impl)
+                ((pAVar5->fields)._._.method_code,&fStack_7,(pAVar5->fields)._._.method);
     }
     (this->fields).networkMessageCooldown = (this->fields)._.pointingDuration;
   }
@@ -206,64 +268,87 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
 
 void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
      AvatarLimbManagerLocal_AvatarPointingHandlerLocal_UpdatePointing
-               (AvatarLimbManagerLocal_AvatarPointingHandlerLocal *this,Vector3 localLookDirection,
+               (AvatarLimbManagerLocal_AvatarPointingHandlerLocal *this,Vector3 *localLookDirection,
                MethodInfo *method)
 
 {
   if (0.0 < (this->fields)._.elapsedPointingTime) {
-    fVar1 = (this->fields).pitchRotation.x;
-    fVar2 = (this->fields).pitchRotation.y;
-    fVar3 = (this->fields).pitchRotation.z;
-    fVar4 = (this->fields).pitchRotation.w;
-    fVar5 = (this->fields).yawRotation.y;
-    fVar6 = (this->fields).yawRotation.z;
-    fVar7 = (this->fields).yawRotation.w;
-    fVar8 = (fVar4 * (this->fields).yawRotation.x + fVar1 * fVar7 + fVar3 * fVar5) -
-             fVar2 * fVar6;
-    fVar9 = (fVar5 * fVar4 + fVar2 * fVar7 + fVar6 * fVar1) -
-             fVar3 * (this->fields).yawRotation.x;
-    fVar10 = (fVar6 * fVar4 + fVar3 * fVar7 + fVar2 * (this->fields).yawRotation.x) -
-            fVar5 * (this->fields).pitchRotation.x;
-    fVar2 = ((fVar4 * fVar7 - (this->fields).yawRotation.x * (this->fields).pitchRotation.x) -
-             fVar2 * fVar5) - fVar6 * fVar3;
-    fVar1 = (this->fields).networkMessageCooldown;
-    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    fVar1 = fVar1 - fVar3;
-    (this->fields).networkMessageCooldown = fVar1;
-    if (fVar1 <= 0.0) {
+    fVar1 = (this->fields).yawRotation.x;
+    fVar2 = (this->fields).yawRotation.y;
+    fVar3 = (this->fields).yawRotation.z;
+    fVar4 = (this->fields).yawRotation.w;
+    fVar5 = (this->fields).pitchRotation.x;
+    fVar6 = (this->fields).pitchRotation.y;
+    fVar7 = (this->fields).pitchRotation.z;
+    fVar8 = (this->fields).pitchRotation.w;
+    fVar9 = (this->fields).networkMessageCooldown;
+    pcVar10 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar10 = (code *)FUN_?(&UNK_?), pcVar10 == (code *)0x0)) {
+      uVar11 = func_?(&UNK_?);
+      FUN_?(uVar11,0);
+      pcVar10 = (code *)swi(3);
+      (*pcVar10)();
+      return;
+    }
+    pcRam_? = pcVar10;
+    fVar12 = (float)(*pcRam_?)();
+    fVar9 = fVar9 - fVar12;
+    (this->fields).networkMessageCooldown = fVar9;
+    if (fVar9 <= 0.0) {
       if ((this->fields).OnUpdatePointingValue != (Action_1_UnityEngine_Quaternion_ *)0x0) {
-        pAVar11 = (this->fields).OnUpdatePointingValue;
+        pAVar13 = (this->fields).OnUpdatePointingValue;
         if ((this->fields)._.pointState == 0) {
           if (cRam_? == '\0') {
-            func_?(&TypeInfo__UnityEngine__Quaternion);
+            FUN_?(&TypeInfo__UnityEngine__Quaternion);
+            LOCK();
+            UNLOCK();
             cRam_? = '\x01';
           }
-          pvVar12 = (pAVar11->fields)._._.method;
-          pQVar13 = TypeInfo__UnityEngine__Quaternion->static_fields;
-          fVar8 = (pQVar13->identityQuaternion).x;
-          fVar9 = (pQVar13->identityQuaternion).y;
-          fVar10 = (pQVar13->identityQuaternion).z;
-          fVar2 = (pQVar13->identityQuaternion).w;
+          pQVar14 = TypeInfo__UnityEngine__Quaternion->static_fields;
+          QStack_15.x = (pQVar14->identityQuaternion).x;
+          QStack_15.y = (pQVar14->identityQuaternion).y;
+          QStack_15.z = (pQVar14->identityQuaternion).z;
+          QStack_15.w = (pQVar14->identityQuaternion).w;
         }
         else {
-          pvVar12 = (pAVar11->fields)._._.method;
+          QStack_15.y = (fVar8 * fVar2 + fVar6 * fVar4 + fVar5 * fVar3) - fVar7 * fVar1;
+          QStack_15.x = (fVar5 * fVar4 + fVar8 * fVar1 + fVar7 * fVar2) - fVar6 * fVar3;
+          QStack_15.w = ((fVar8 * fVar4 - fVar5 * fVar1) - fVar6 * fVar2) - fVar7 * fVar3;
+          QStack_15.z = (fVar8 * fVar3 + fVar7 * fVar4 + fVar6 * fVar1) - fVar5 * fVar2;
         }
-        (*(pAVar11->fields)._._.invoke_impl)
-                  ((pAVar11->fields)._._.method_code,fVar8,fVar9,fVar10,fVar2,pvVar12);
+        (*(pAVar13->fields)._._.invoke_impl)
+                  ((pAVar13->fields)._._.method_code,&QStack_15,(pAVar13->fields)._._.method);
       }
       (this->fields).networkMessageCooldown = (this->fields)._.pointingDuration;
     }
     if ((this->fields)._.pointState == 2) {
+      aQStack_16[0].x = (this->fields).pitchRotation.x;
+      aQStack_16[0].y = (this->fields).pitchRotation.y;
+      aQStack_16[0].z = (this->fields).pitchRotation.z;
+      aQStack_16[0].w = (this->fields).pitchRotation.w;
+      QStack_15.x = (this->fields).yawRotation.x;
+      QStack_15.y = (this->fields).yawRotation.y;
+      QStack_15.z = (this->fields).yawRotation.z;
+      QStack_15.w = (this->fields).yawRotation.w;
       AvatarLimbManager+AvatarPointingHandler::
       AvatarLimbManager_AvatarPointingHandler_HandleWeaponPointing
-                ((AvatarLimbManager_AvatarPointingHandler *)this,(this->fields).yawRotation,
-                 (this->fields).pitchRotation,(MethodInfo *)0x0);
+                ((AvatarLimbManager_AvatarPointingHandler *)this,&QStack_15,aQStack_16,
+                 (MethodInfo *)0x0);
     }
     else if ((this->fields)._.pointState == 1) {
+      QStack_15.x = (this->fields).pitchRotation.x;
+      QStack_15.y = (this->fields).pitchRotation.y;
+      QStack_15.z = (this->fields).pitchRotation.z;
+      QStack_15.w = (this->fields).pitchRotation.w;
+      aQStack_16[0].x = (this->fields).yawRotation.x;
+      aQStack_16[0].y = (this->fields).yawRotation.y;
+      aQStack_16[0].z = (this->fields).yawRotation.z;
+      aQStack_16[0].w = (this->fields).yawRotation.w;
       AvatarLimbManager+AvatarPointingHandler::
       AvatarLimbManager_AvatarPointingHandler_HandlePointing
-                ((AvatarLimbManager_AvatarPointingHandler *)this,(this->fields).yawRotation,
-                 (this->fields).pitchRotation,(MethodInfo *)0x0);
+                ((AvatarLimbManager_AvatarPointingHandler *)this,aQStack_16,&QStack_15,
+                 (MethodInfo *)0x0);
     }
     else {
       AvatarLimbManager+AvatarPointingHandler::AvatarLimbManager_AvatarPointingHandler_StopPointing
@@ -271,26 +356,46 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
     }
   }
   else {
-    pAVar11 = (this->fields).OnUpdatePointingValue;
-    if (pAVar11 != (Action_1_UnityEngine_Quaternion_ *)0x0) {
+    pAVar13 = (this->fields).OnUpdatePointingValue;
+    if (pAVar13 != (Action_1_UnityEngine_Quaternion_ *)0x0) {
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__UnityEngine__Quaternion);
+        FUN_?(&TypeInfo__UnityEngine__Quaternion);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      pQVar13 = TypeInfo__UnityEngine__Quaternion->static_fields;
-      (*(pAVar11->fields)._._.invoke_impl)
-                ((pAVar11->fields)._._.method_code,(pQVar13->identityQuaternion).x,
-                 (pQVar13->identityQuaternion).y,(pQVar13->identityQuaternion).z,
-                 (pQVar13->identityQuaternion).w,(pAVar11->fields)._._.method);
+      pQVar14 = TypeInfo__UnityEngine__Quaternion->static_fields;
+      QStack_15.x = (pQVar14->identityQuaternion).x;
+      QStack_15.y = (pQVar14->identityQuaternion).y;
+      QStack_15.z = (pQVar14->identityQuaternion).z;
+      QStack_15.w = (pQVar14->identityQuaternion).w;
+      (*(pAVar13->fields)._._.invoke_impl)
+                ((pAVar13->fields)._._.method_code,&QStack_15,(pAVar13->fields)._._.method);
     }
-    pAVar14 = (this->fields).OnIsPointingChange;
-    if (pAVar14 != (Action_1_Boolean_ *)0x0) {
-      (*(pAVar14->fields)._._.invoke_impl)
-                ((pAVar14->fields)._._.method_code,0,(pAVar14->fields)._._.method);
+    pAVar17 = (this->fields).OnIsPointingChange;
+    if (pAVar17 != (Action_1_Boolean_ *)0x0) {
+      (*(pAVar17->fields)._._.invoke_impl)
+                ((pAVar17->fields)._._.method_code,0,(pAVar17->fields)._._.method);
     }
   }
-  AvatarLimbManager+AvatarPointingHandler::AvatarLimbManager_AvatarPointingHandler_UpdatePointing
-            ((AvatarLimbManager_AvatarPointingHandler *)this,localLookDirection,(MethodInfo *)0x0);
+  fVar9 = (this->fields)._.elapsedPointingTime;
+  pcVar10 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar10 = (code *)FUN_?(&UNK_?), pcVar10 == (code *)0x0)) {
+    uVar11 = func_?(&UNK_?);
+    FUN_?(uVar11,0);
+    pcVar10 = (code *)swi(3);
+    (*pcVar10)();
+    return;
+  }
+  pcRam_? = pcVar10;
+  fVar3 = (float)(*pcRam_?)();
+  fVar1 = localLookDirection->z;
+  fVar2 = localLookDirection->y;
+  (this->fields)._.prevLookDirection.x = localLookDirection->x;
+  (this->fields)._.prevLookDirection.y = fVar2;
+  (this->fields)._.elapsedPointingTime = fVar9 - fVar3;
+  (this->fields)._.prevLookDirection.z = fVar1;
   return;
 }
 
@@ -303,31 +408,38 @@ void Assembly-CSharp.dll::AvatarLimbManagerLocal+AvatarPointingHandlerLocal::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Quaternion);
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pQVar1 = TypeInfo__UnityEngine__Quaternion->static_fields;
-  fVar2 = (pQVar1->identityQuaternion).y;
-  fVar3 = (pQVar1->identityQuaternion).z;
-  fVar4 = (pQVar1->identityQuaternion).w;
-  (this->fields).yawRotation.x = (pQVar1->identityQuaternion).x;
-  (this->fields).yawRotation.y = fVar2;
-  (this->fields).yawRotation.z = fVar3;
-  (this->fields).yawRotation.w = fVar4;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Quaternion);
+  cVar1 = cRam_?;
+  pQVar2 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar3 = (pQVar2->identityQuaternion).y;
+  fVar4 = (pQVar2->identityQuaternion).z;
+  fVar5 = (pQVar2->identityQuaternion).w;
+  (this->fields).yawRotation.x = (pQVar2->identityQuaternion).x;
+  (this->fields).yawRotation.y = fVar3;
+  (this->fields).yawRotation.z = fVar4;
+  (this->fields).yawRotation.w = fVar5;
+  if (cVar1 == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pQVar1 = TypeInfo__UnityEngine__Quaternion->static_fields;
-  fVar2 = (pQVar1->identityQuaternion).y;
-  fVar3 = (pQVar1->identityQuaternion).z;
-  fVar4 = (pQVar1->identityQuaternion).w;
-  (this->fields).pitchRotation.x = (pQVar1->identityQuaternion).x;
-  (this->fields).pitchRotation.y = fVar2;
-  (this->fields).pitchRotation.z = fVar3;
-  (this->fields).pitchRotation.w = fVar4;
-  AvatarLimbManager+AvatarPointingHandler::AvatarLimbManager_AvatarPointingHandler__ctor
-            ((AvatarLimbManager_AvatarPointingHandler *)this,(MethodInfo *)0x0);
+  pQVar2 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar3 = (pQVar2->identityQuaternion).x;
+  fVar4 = (pQVar2->identityQuaternion).y;
+  fVar5 = (pQVar2->identityQuaternion).z;
+  fVar6 = (pQVar2->identityQuaternion).w;
+  (this->fields)._.pointingDuration = 0.8;
+  (this->fields)._.pointState = 1;
+  (this->fields).pitchRotation.x = fVar3;
+  (this->fields).pitchRotation.y = fVar4;
+  (this->fields).pitchRotation.z = fVar5;
+  (this->fields).pitchRotation.w = fVar6;
+  (this->fields)._.isActive = 1;
   return;
 }
 

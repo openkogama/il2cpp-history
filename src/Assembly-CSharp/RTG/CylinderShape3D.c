@@ -2,50 +2,36 @@
 /* Void AlignCentralAxis(Vector3) */
 
 void Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_AlignCentralAxis
-               (CylinderShape3D *this,Vector3 axis,MethodInfo *method)
+               (CylinderShape3D *this,Vector3 *axis,MethodInfo *method)
 
 {
   pVVar1 = TorusShape3D::TorusShape3D_get_Up(&VStack_2,(TorusShape3D *)this,(MethodInfo *)0x0);
-  uStack_3._0_4_ = pVVar1->x;
-  uStack_3._4_4_ = pVVar1->y;
+  uVar3._0_4_ = pVVar1->x;
+  uVar3._4_4_ = pVVar1->y;
   fVar4 = pVVar1->z;
-  VStack_2.x = (this->fields)._rotation.x;
-  VStack_2.y = (this->fields)._rotation.y;
-  VStack_2.z = (this->fields)._rotation.z;
-  fStack_5 = (this->fields)._rotation.w;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
-    cRam_? = '\x01';
-  }
-  rotation.y = VStack_2.y;
-  rotation.x = VStack_2.x;
-  rotation.z = VStack_2.z;
-  rotation.w = fStack_5;
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                      (&VStack_2,rotation,
-                       TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
-                       (MethodInfo *)0x0);
-  from.z = fVar4;
-  from.x = (float)(undefined4)uStack_3;
-  from.y = (float)uStack_3._4_4_;
-  pQVar6 = QuaternionEx::QuaternionEx_FromToRotation3D
-                      ((Quaternion *)&stack0xffffffb0,from,axis,*pVVar1,(MethodInfo *)0x0);
-  fVar7 = (this->fields)._rotation.x;
-  fVar8 = (this->fields)._rotation.y;
-  fVar9 = (this->fields)._rotation.z;
-  fVar10 = (this->fields)._rotation.w;
-  fVar11 = pQVar6->x;
-  fVar12 = pQVar6->y;
-  fVar13 = pQVar6->z;
-  fVar14 = pQVar6->w;
-  fVar15 = pQVar6->x;
-  fVar4 = pQVar6->x;
-  fVar16 = (this->fields)._rotation.x;
-  fVar17 = (this->fields)._rotation.x;
-  (this->fields)._rotation.x = (fVar14 * fVar7 + fVar11 * fVar10 + fVar9 * fVar12) - fVar8 * fVar13;
-  (this->fields)._rotation.y = (fVar8 * fVar14 + fVar10 * fVar12 + fVar13 * fVar7) - fVar9 * fVar15;
-  (this->fields)._rotation.z = (fVar9 * fVar14 + fVar13 * fVar10 + fVar8 * fVar4) - fVar16 * fVar12;
-  (this->fields)._rotation.w = ((fVar14 * fVar10 - fVar17 * fVar11) - fVar8 * fVar12) - fVar13 * fVar9;
+  pVVar1 = TorusShape3D::TorusShape3D_get_Look(&VStack_2,(TorusShape3D *)this,(MethodInfo *)0x0);
+  VStack_5.x = pVVar1->x;
+  VStack_5.y = pVVar1->y;
+  VStack_5.z = pVVar1->z;
+  VStack_6.x = axis->x;
+  VStack_6.y = axis->y;
+  VStack_6.z = axis->z;
+  VStack_2._0_8_ = uVar3;
+  VStack_2.z = fVar4;
+  pQVar7 = QuaternionEx::QuaternionEx_FromToRotation3D
+                      (aQStack_8,&VStack_2,&VStack_6,&VStack_5,(MethodInfo *)0x0);
+  fVar4 = (this->fields)._rotation.x;
+  fVar9 = (this->fields)._rotation.y;
+  fVar10 = (this->fields)._rotation.z;
+  fVar11 = (this->fields)._rotation.w;
+  fVar12 = pQVar7->x;
+  fVar13 = pQVar7->y;
+  fVar14 = pQVar7->z;
+  fVar15 = pQVar7->w;
+  (this->fields)._rotation.x = (fVar15 * fVar4 + fVar12 * fVar11 + fVar13 * fVar10) - fVar14 * fVar9;
+  (this->fields)._rotation.y = (fVar15 * fVar9 + fVar13 * fVar11 + fVar14 * fVar4) - fVar12 * fVar10;
+  (this->fields)._rotation.z = (fVar15 * fVar10 + fVar14 * fVar11 + fVar12 * fVar9) - fVar13 * fVar4;
+  (this->fields)._rotation.w = ((fVar15 * fVar11 - fVar12 * fVar4) - fVar13 * fVar9) - fVar14 * fVar10;
   return;
 }
 
@@ -53,26 +39,28 @@ void Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_AlignCentralAxis
 /* Boolean ContainsPoint(Vector3) */
 
 bool Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_ContainsPoint
-               (CylinderShape3D *this,Vector3 point,MethodInfo *method)
+               (CylinderShape3D *this,Vector3 *point,MethodInfo *method)
 
 {
   fVar1 = (this->fields)._baseCenter.z;
-  pCVar2 = &this->fields;
-  uVar3 = (pCVar2->_baseCenter).x;
-  uVar4 = (pCVar2->_baseCenter).y;
-  cylinderAxisPt0 = pCVar2->_baseCenter;
-  pVVar5 = TorusShape3D::TorusShape3D_get_Up
-                     ((Vector3 *)&stack0xffffffd0,(TorusShape3D *)this,(MethodInfo *)0x0);
-  uVar6 = pVVar5->x;
-  uVar7 = pVVar5->y;
-  fVar8 = (this->fields)._height;
-  cylinderAxisPt1.y = (float)uVar4 + (float)uVar7 * fVar8;
-  cylinderAxisPt1.x = (float)uVar3 + (float)uVar6 * fVar8;
-  cylinderAxisPt1.z = fVar1 + pVVar5->z * fVar8;
-  bVar9 = CylinderMath::CylinderMath_ContainsPoint_1
-                    (point,cylinderAxisPt0,cylinderAxisPt1,(this->fields)._radius,
-                     (this->fields)._height,(this->fields)._epsilon,(MethodInfo *)0x0);
-  return bVar9;
+  uVar2._0_4_ = (this->fields)._baseCenter.x;
+  uVar2._4_4_ = (this->fields)._baseCenter.y;
+  pVVar3 = TorusShape3D::TorusShape3D_get_Up(aVStack_4,(TorusShape3D *)this,(MethodInfo *)0x0);
+  fVar5 = (this->fields)._height;
+  uVar6 = pVVar3->x;
+  uVar7 = pVVar3->y;
+  aVStack_4[0].z = point->z;
+  aVStack_4[0].x = point->x;
+  aVStack_4[0].y = point->y;
+  VStack_8.z = fVar5 * pVVar3->z + fVar1;
+  VStack_8.y = fVar5 * (float)uVar7 + uVar2._4_4_;
+  VStack_8.x = fVar5 * (float)uVar6 + (float)uVar2;
+  VStack_9._0_8_ = uVar2;
+  VStack_9.z = fVar1;
+  bVar10 = CylinderMath::CylinderMath_ContainsPoint_1
+                    (aVStack_4,&VStack_9,&VStack_8,(this->fields)._radius,(this->fields)._height,
+                     (this->fields)._epsilon,(MethodInfo *)0x0);
+  return bVar10;
 }
 
 
@@ -84,81 +72,114 @@ AABB * Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_GetAABB
 {
   (__return_storage_ptr__->_size).x = 0.0;
   (__return_storage_ptr__->_size).y = 0.0;
-  (__return_storage_ptr__->_size).z = 0.0;
-  (__return_storage_ptr__->_center).x = 0.0;
+  *(undefined8 *)&(__return_storage_ptr__->_size).z = 0;
+  bVar1 = cRam_? == '\0';
   (__return_storage_ptr__->_center).y = 0.0;
   (__return_storage_ptr__->_center).z = 0.0;
   *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
-  fStack_1 = (this->fields)._radius;
-  fStack_1 = fStack_1 + fStack_1;
-  fStack_2 = 0.0;
-  fStack_3 = 0.0;
-  fStack_4 = 0.0;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+  fVar2 = (this->fields)._radius;
+  fVar2 = fVar2 + fVar2;
+  if (bVar1) {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uStack_6._0_4_ = (pVVar5->zeroVector).x;
-  uStack_6._4_4_ = (pVVar5->zeroVector).y;
-  fStack_7 = (pVVar5->zeroVector).z;
+  pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uStack_4._0_4_ = (pVVar3->zeroVector).x;
+  uStack_4._4_4_ = (pVVar3->zeroVector).y;
+  fVar5 = (pVVar3->zeroVector).z;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uStack_8._0_4_ = (pVVar5->upVector).x;
-  uStack_8._4_4_ = (pVVar5->upVector).y;
+  fVar6 = (this->fields)._height;
+  pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uStack_7._0_4_ = (pVVar3->upVector).x;
+  uStack_7._4_4_ = (pVVar3->upVector).y;
+  fVar8 = fVar6 * (pVVar3->upVector).z;
   fVar9 = (this->fields)._height;
-  fVar10 = (pVVar5->upVector).z * fVar9;
-  fStack_11 = fStack_7 + fVar10 + fVar10;
-  fStack_7 = fStack_1;
-  AStack_12._size.x = 0.0;
-  AStack_12._size.y = 0.0;
-  AStack_12._size.z = 0.0;
-  AStack_12._center.x = 0.0;
-  AStack_12._isValid = 0;
-  AStack_12._25_3_ = 0;
-  AStack_12._center.y = 0.0;
-  AStack_12._center.z = 0.0;
-  center.y = uStack_6._4_4_ + (float)uStack_8._4_4_ * fVar9 + (float)uStack_8._4_4_ * fVar9;
-  center.x = (float)uStack_6 +
-             (float)(undefined4)uStack_8 * fVar9 + (float)(undefined4)uStack_8 * fVar9;
-  center.z = fStack_11;
-  size.y = (this->fields)._height;
-  size.x = fStack_1;
-  size.z = fStack_1;
-  AABB::AABB__ctor(&AStack_12,center,size,(MethodInfo *)0x0);
-  (__return_storage_ptr__->_size).x = AStack_12._size.x;
-  (__return_storage_ptr__->_size).y = AStack_12._size.y;
-  (__return_storage_ptr__->_size).z = AStack_12._size.z;
-  (__return_storage_ptr__->_center).x = AStack_12._center.x;
-  (__return_storage_ptr__->_center).y = AStack_12._center.y;
-  (__return_storage_ptr__->_center).z = AStack_12._center.z;
-  __return_storage_ptr__->_isValid = AStack_12._isValid;
-  *(undefined3 *)&__return_storage_ptr__->field_0x19 = AStack_12._25_3_;
-  uStack_8._0_4_ = (this->fields)._baseCenter.x;
-  uStack_8._4_4_ = (this->fields)._baseCenter.y;
-  fStack_13 = (this->fields)._baseCenter.z;
-  fStack_1 = (this->fields)._rotation.x;
-  fStack_2 = (this->fields)._rotation.y;
-  fStack_3 = (this->fields)._rotation.z;
-  fStack_4 = (this->fields)._rotation.w;
-  if (cRam_? == '\0') {
-    func_?();
+  bVar1 = cRam_? == '\0';
+  fVar10 = fVar6 * (float)(undefined4)uStack_7 + fVar6 * (float)(undefined4)uStack_7 +
+           (float)uStack_4;
+  uStack_11 = 1;
+  (__return_storage_ptr__->_size).x = fVar2;
+  (__return_storage_ptr__->_size).y = fVar9;
+  (__return_storage_ptr__->_size).z = fVar2;
+  (__return_storage_ptr__->_center).x = fVar10;
+  (__return_storage_ptr__->_center).y =
+       fVar6 * (float)uStack_7._4_4_ + fVar6 * (float)uStack_7._4_4_ + uStack_4._4_4_;
+  (__return_storage_ptr__->_center).z = fVar8 + fVar8 + fVar5;
+  *(undefined4 *)&__return_storage_ptr__->_isValid = 1;
+  uVar12._0_4_ = (this->fields)._baseCenter.x;
+  uVar12._4_4_ = (this->fields)._baseCenter.y;
+  fVar5 = (this->fields)._baseCenter.z;
+  uVar13._0_4_ = (this->fields)._rotation.x;
+  uVar13._4_4_ = (this->fields)._rotation.y;
+  uVar14._0_4_ = (this->fields)._rotation.z;
+  uVar14._4_4_ = (this->fields)._rotation.w;
+  uStack_15 = CONCAT44(fVar9,fVar2);
+  uStack_16 = CONCAT44(fVar10,fVar2);
+  if (bVar1) {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pos.z = fStack_13;
-  pos.x = (float)(undefined4)uStack_8;
-  pos.y = (float)uStack_8._4_4_;
-  q.y = fStack_2;
-  q.x = fStack_1;
-  q.z = fStack_3;
-  q.w = fStack_4;
-  pMVar14 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                     ((Matrix4x4 *)&stack0xffffff60,pos,q,
-                      TypeInfo__UnityEngine__Vector3->static_fields->oneVector,(MethodInfo *)0x0);
-  AABB::AABB_Transform(__return_storage_ptr__,*pMVar14,(MethodInfo *)0x0);
+  pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uStack_4._0_4_ = (pVVar3->oneVector).x;
+  uStack_4._4_4_ = (pVVar3->oneVector).y;
+  fStack_17 = (pVVar3->oneVector).z;
+  MStack_18.m00 = 0.0;
+  MStack_18.m10 = 0.0;
+  MStack_18.m20 = 0.0;
+  MStack_18.m30 = 0.0;
+  MStack_18.m01 = 0.0;
+  MStack_18.m11 = 0.0;
+  MStack_18.m21 = 0.0;
+  MStack_18.m31 = 0.0;
+  MStack_18.m02 = 0.0;
+  MStack_18.m12 = 0.0;
+  MStack_18.m22 = 0.0;
+  MStack_18.m32 = 0.0;
+  MStack_18.m03 = 0.0;
+  MStack_18.m13 = 0.0;
+  MStack_18.m23 = 0.0;
+  MStack_18.m33 = 0.0;
+  pcVar19 = pcRam_?;
+  uStack_15 = uVar13;
+  uStack_16 = uVar14;
+  uStack_7 = uVar12;
+  fStack_20 = fVar5;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar19 = (code *)FUN_?(&UNK_?), pcVar19 == (code *)0x0)) {
+    uVar12 = func_?(&UNK_?);
+    FUN_?(uVar12,0);
+    pcVar19 = (code *)swi(3);
+    pAVar21 = (AABB *)(*pcVar19)();
+    return pAVar21;
+  }
+  pcRam_? = pcVar19;
+  (*pcRam_?)(&uStack_7,&uStack_15,&uStack_4,&MStack_18);
+  MStack_22.m00 = MStack_18.m00;
+  MStack_22.m10 = MStack_18.m10;
+  MStack_22.m20 = MStack_18.m20;
+  MStack_22.m30 = MStack_18.m30;
+  MStack_22.m01 = MStack_18.m01;
+  MStack_22.m11 = MStack_18.m11;
+  MStack_22.m21 = MStack_18.m21;
+  MStack_22.m31 = MStack_18.m31;
+  MStack_22.m02 = MStack_18.m02;
+  MStack_22.m12 = MStack_18.m12;
+  MStack_22.m22 = MStack_18.m22;
+  MStack_22.m32 = MStack_18.m32;
+  MStack_22.m03 = MStack_18.m03;
+  MStack_22.m13 = MStack_18.m13;
+  MStack_22.m23 = MStack_18.m23;
+  MStack_22.m33 = MStack_18.m33;
+  AABB::AABB_Transform(__return_storage_ptr__,&MStack_22,(MethodInfo *)0x0);
   return __return_storage_ptr__;
 }
 
@@ -170,10 +191,16 @@ Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_GetBottomCapExtentPoi
           (CylinderShape3D *this,MethodInfo *method)
 
 {
-  pLVar1 = CylinderMath::CylinderMath_CalcExtentPoints
-                     ((this->fields)._baseCenter,(this->fields)._radius,(this->fields)._rotation,
-                      (MethodInfo *)0x0);
-  return pLVar1;
+  VStack_1.x = (this->fields)._baseCenter.x;
+  VStack_1.y = (this->fields)._baseCenter.y;
+  QStack_2.x = (this->fields)._rotation.x;
+  QStack_2.y = (this->fields)._rotation.y;
+  QStack_2.z = (this->fields)._rotation.z;
+  QStack_2.w = (this->fields)._rotation.w;
+  VStack_1.z = (this->fields)._baseCenter.z;
+  pLVar3 = CylinderMath::CylinderMath_CalcExtentPoints
+                     (&VStack_1,(this->fields)._radius,&QStack_2,(MethodInfo *)0x0);
+  return pLVar3;
 }
 
 
@@ -186,7 +213,9 @@ AABB * Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_GetModelAABB
   fVar1 = (this->fields)._radius;
   fVar1 = fVar1 + fVar1;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
@@ -194,29 +223,26 @@ AABB * Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_GetModelAABB
   uVar4 = (pVVar2->zeroVector).y;
   fVar5 = (pVVar2->zeroVector).z;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  fVar6 = (this->fields)._height;
   pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uVar6 = (pVVar2->upVector).x;
-  uVar7 = (pVVar2->upVector).y;
-  fVar8 = (this->fields)._height;
-  fVar9 = (pVVar2->upVector).z * fVar8;
+  uVar7 = (pVVar2->upVector).x;
+  uVar8 = (pVVar2->upVector).y;
+  fVar9 = fVar6 * (pVVar2->upVector).z;
   fVar10 = (this->fields)._height;
-  (__return_storage_ptr__->_size).x = 0.0;
-  (__return_storage_ptr__->_size).y = 0.0;
-  (__return_storage_ptr__->_size).z = 0.0;
-  (__return_storage_ptr__->_center).x = 0.0;
-  size.y = fVar10;
-  size.x = fVar1;
-  (__return_storage_ptr__->_center).y = 0.0;
-  (__return_storage_ptr__->_center).z = 0.0;
-  center.y = (float)uVar4 + (float)uVar7 * fVar8 + (float)uVar7 * fVar8;
-  center.x = (float)uVar3 + (float)uVar6 * fVar8 + (float)uVar6 * fVar8;
-  *(undefined4 *)&__return_storage_ptr__->_isValid = 0;
-  center.z = fVar5 + fVar9 + fVar9;
-  size.z = fVar1;
-  AABB::AABB__ctor(__return_storage_ptr__,center,size,(MethodInfo *)0x0);
+  *(undefined2 *)&__return_storage_ptr__->field_0x19 = 0;
+  __return_storage_ptr__->field_0x1b = 0;
+  (__return_storage_ptr__->_size).x = fVar1;
+  (__return_storage_ptr__->_size).y = fVar10;
+  (__return_storage_ptr__->_center).x = fVar6 * (float)uVar7 + fVar6 * (float)uVar7 + (float)uVar3;
+  (__return_storage_ptr__->_center).y = fVar6 * (float)uVar8 + fVar6 * (float)uVar8 + (float)uVar4;
+  (__return_storage_ptr__->_size).z = fVar1;
+  (__return_storage_ptr__->_center).z = fVar9 + fVar9 + fVar5;
+  __return_storage_ptr__->_isValid = 1;
   return __return_storage_ptr__;
 }
 
@@ -231,43 +257,50 @@ Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_GetTopCapExtentPoints
   fVar1 = (this->fields)._baseCenter.z;
   uVar2 = (this->fields)._baseCenter.x;
   uVar3 = (this->fields)._baseCenter.y;
-  pVVar4 = TorusShape3D::TorusShape3D_get_Up
-                     ((Vector3 *)&stack0xffffffd8,(TorusShape3D *)this,(MethodInfo *)0x0);
-  uVar5 = pVVar4->x;
-  uVar6 = pVVar4->y;
-  fVar7 = (this->fields)._height;
-  center.y = (float)uVar3 + (float)uVar6 * fVar7;
-  center.x = (float)uVar2 + (float)uVar5 * fVar7;
-  center.z = fVar1 + pVVar4->z * fVar7;
-  pLVar8 = CylinderMath::CylinderMath_CalcExtentPoints
-                     (center,(this->fields)._radius,(this->fields)._rotation,(MethodInfo *)0x0);
-  return pLVar8;
+  pVVar4 = TorusShape3D::TorusShape3D_get_Up(&VStack_5,(TorusShape3D *)this,(MethodInfo *)0x0);
+  fVar6 = (this->fields)._height;
+  uVar7 = pVVar4->x;
+  uVar8 = pVVar4->y;
+  aQStack_9[0].x = (this->fields)._rotation.x;
+  aQStack_9[0].y = (this->fields)._rotation.y;
+  aQStack_9[0].z = (this->fields)._rotation.z;
+  aQStack_9[0].w = (this->fields)._rotation.w;
+  VStack_5.z = fVar6 * pVVar4->z + fVar1;
+  VStack_5.y = fVar6 * (float)uVar8 + (float)uVar3;
+  VStack_5.x = fVar6 * (float)uVar7 + (float)uVar2;
+  pLVar10 = CylinderMath::CylinderMath_CalcExtentPoints
+                     (&VStack_5,(this->fields)._radius,aQStack_9,(MethodInfo *)0x0);
+  return pLVar10;
 }
 
 
 /* Boolean Raycast(Ray, Single ByRef) */
 
 bool Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_Raycast
-               (CylinderShape3D *this,Ray ray,float *t,MethodInfo *method)
+               (CylinderShape3D *this,Ray *ray,float *t,MethodInfo *method)
 
 {
   fVar1 = (this->fields)._baseCenter.z;
-  pCVar2 = &this->fields;
-  uVar3 = (pCVar2->_baseCenter).x;
-  uVar4 = (pCVar2->_baseCenter).y;
-  cylinderAxisPt0 = pCVar2->_baseCenter;
-  pVVar5 = TorusShape3D::TorusShape3D_get_Up
-                     ((Vector3 *)&stack0xffffffd0,(TorusShape3D *)this,(MethodInfo *)0x0);
-  uVar6 = pVVar5->x;
-  uVar7 = pVVar5->y;
-  fVar8 = (this->fields)._height;
-  cylinderAxisPt1.y = (float)uVar4 + (float)uVar7 * fVar8;
-  cylinderAxisPt1.x = (float)uVar3 + (float)uVar6 * fVar8;
-  cylinderAxisPt1.z = fVar1 + pVVar5->z * fVar8;
-  bVar9 = CylinderMath::CylinderMath_Raycast_1
-                    (ray,t,cylinderAxisPt0,cylinderAxisPt1,(this->fields)._radius,
+  uVar2._0_4_ = (this->fields)._baseCenter.x;
+  uVar2._4_4_ = (this->fields)._baseCenter.y;
+  pVVar3 = TorusShape3D::TorusShape3D_get_Up(&VStack_4,(TorusShape3D *)this,(MethodInfo *)0x0);
+  fVar5 = (this->fields)._height;
+  uVar6 = pVVar3->x;
+  uVar7 = pVVar3->y;
+  aRStack_8[0].m_Origin.x = (ray->m_Origin).x;
+  aRStack_8[0].m_Origin.y = (ray->m_Origin).y;
+  aRStack_8[0]._8_8_ = *(undefined8 *)&(ray->m_Origin).z;
+  VStack_9.z = fVar5 * pVVar3->z + fVar1;
+  aRStack_8[0].m_Direction.y = (ray->m_Direction).y;
+  aRStack_8[0].m_Direction.z = (ray->m_Direction).z;
+  VStack_9.y = fVar5 * (float)uVar7 + uVar2._4_4_;
+  VStack_9.x = fVar5 * (float)uVar6 + (float)uVar2;
+  VStack_4._0_8_ = uVar2;
+  VStack_4.z = fVar1;
+  bVar10 = CylinderMath::CylinderMath_Raycast_1
+                    (aRStack_8,t,&VStack_4,&VStack_9,(this->fields)._radius,
                      (this->fields)._height,(this->fields)._epsilon,(MethodInfo *)0x0);
-  return bVar9;
+  return bVar10;
 }
 
 
@@ -278,115 +311,151 @@ void Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_RenderSolid
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Graphics);
-    func_?(&MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
-    func_?(&TypeInfo__RTG__Singleton<RTG::MeshPool>);
+    FUN_?(&TypeInfo__UnityEngine__Graphics);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__Singleton<RTG::MeshPool>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  fVar1 = (this->fields)._rotation.x;
-  fVar2 = (this->fields)._rotation.y;
-  fVar3 = (this->fields)._rotation.z;
-  fVar4 = (this->fields)._rotation.w;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Mathf);
-    cRam_? = '\x01';
+  if (*(int *)&(TypeInfo__RTG__Singleton<RTG::MeshPool>->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  dVar5 = (double)(fVar2 * fVar2 + fVar1 * fVar1 + fVar3 * fVar3 + fVar4 * fVar4);
-  if (dVar5 < 0.0) {
-    func_?();
-  }
-  else {
-    dVar5 = SQRT(dVar5);
-  }
-  fVar6 = (float)dVar5;
-  if (fVar6 < TypeInfo__UnityEngine__Mathf->static_fields->Epsilon) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Quaternion);
-      cRam_? = '\x01';
-    }
-    pQVar7 = TypeInfo__UnityEngine__Quaternion->static_fields;
-    fVar1 = (pQVar7->identityQuaternion).x;
-    fVar2 = (pQVar7->identityQuaternion).y;
-    fVar3 = (pQVar7->identityQuaternion).z;
-    fVar4 = (pQVar7->identityQuaternion).w;
-  }
-  else {
-    auVar8._4_4_ = fVar2;
-    auVar8._0_4_ = fVar1;
-    auVar8._8_4_ = fVar3;
-    auVar8._12_4_ = fVar4;
-    auVar9._4_4_ = fVar6;
-    auVar9._0_4_ = fVar6;
-    auVar9._8_4_ = fVar6;
-    auVar9._12_4_ = fVar6;
-    auVar9 = divps(auVar8,auVar9);
-    fVar1 = auVar9._0_4_;
-    fVar2 = auVar9._4_4_;
-    fVar3 = auVar9._8_4_;
-    fVar4 = auVar9._12_4_;
-  }
-  (this->fields)._rotation.x = fVar1;
-  (this->fields)._rotation.y = fVar2;
-  (this->fields)._rotation.z = fVar3;
-  (this->fields)._rotation.w = fVar4;
-  if ((TypeInfo__RTG__Singleton<RTG::MeshPool>->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__Singleton<RTG::MeshPool>);
-  }
-  this_00 = (MeshPool *)
-            Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
-                      (MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
-  if (this_00 != (MeshPool *)0x0) {
-    mesh = MeshPool::MeshPool_get_UnitCylinder(this_00,(MethodInfo *)0x0);
-    uVar10 = (this->fields)._radius;
-    uVar11 = (this->fields)._height;
-    s.y = (float)uVar11;
-    s.x = (float)uVar10;
-    s.z = (this->fields)._radius;
-    pMVar12 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                       ((Matrix4x4 *)&fStack_13,(this->fields)._baseCenter,(this->fields)._rotation,
-                        s,(MethodInfo *)0x0);
-    fStack_13 = pMVar12->m00;
-    fStack_14 = pMVar12->m10;
-    fStack_15 = pMVar12->m20;
-    fStack_16 = pMVar12->m30;
-    fVar1 = pMVar12->m01;
-    fVar2 = pMVar12->m11;
-    fVar3 = pMVar12->m21;
-    fVar4 = pMVar12->m31;
-    fStack_17 = pMVar12->m02;
-    fStack_18 = pMVar12->m12;
-    fStack_19 = pMVar12->m22;
-    fStack_20 = pMVar12->m32;
-    fStack_21 = pMVar12->m03;
-    fStack_22 = pMVar12->m13;
-    fStack_23 = pMVar12->m23;
-    fStack_24 = pMVar12->m33;
-    if ((TypeInfo__UnityEngine__Graphics->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Graphics);
-    }
-    matrix.m10 = fStack_14;
-    matrix.m00 = fStack_13;
-    matrix.m20 = fStack_15;
-    matrix.m30 = fStack_16;
-    matrix.m01 = fVar1;
-    matrix.m11 = fVar2;
-    matrix.m21 = fVar3;
-    matrix.m31 = fVar4;
-    matrix.m02 = fStack_17;
-    matrix.m12 = fStack_18;
-    matrix.m22 = fStack_19;
-    matrix.m32 = fStack_20;
-    matrix.m03 = fStack_21;
-    matrix.m13 = fStack_22;
-    matrix.m23 = fStack_23;
-    matrix.m33 = fStack_24;
-    UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_3
-              (mesh,matrix,(MethodInfo *)0x0);
+  pOVar1 = Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
+                     (MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
+  if (pOVar1 == (Object *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  func_?();
-  pcVar25 = (code *)swi(3);
-  (*pcVar25)();
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar3 = pOVar1[5].monitor;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pMVar3 != (MonitorData *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (*(longlong *)(pMVar3 + 0x10) != 0) goto code_?;
+  }
+  CStack_4.r = _UNK_?;
+  CStack_4.g = _UNK_?;
+  CStack_4.b = _UNK_?;
+  CStack_4.a = _UNK_?;
+  pMVar5 = CylinderMesh::CylinderMesh_CreateCylinder
+                     (_UNK_?,_UNK_?,_UNK_?,0x1e,0x1e,1,1,&CStack_4,
+                      (MethodInfo *)0x0);
+  bVar6 = iRam_? != 0;
+  pOVar1[5].monitor = (MonitorData *)pMVar5;
+  if (bVar6) {
+    uVar7 = (uint)((ulonglong)&pOVar1[5].monitor >> 0xc);
+    uVar8 = (ulonglong)((uVar7 & 0x1fffff) >> 6);
+    do {
+      uVar9 = *(ulonglong *)(uVar8 * 8 + 0xADDR);
+      puVar10 = (ulonglong *)(uVar8 * 8 + 0xADDR);
+      LOCK();
+      bVar6 = uVar9 == *puVar10;
+      if (bVar6) {
+        *puVar10 = uVar9 | 1L << (uVar7 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
+code_?:
+  fStack_11 = (this->fields)._radius;
+  uStack_12._0_4_ = (this->fields)._radius;
+  uStack_12._4_4_ = (this->fields)._height;
+  pMVar5 = (Mesh *)pOVar1[5].monitor;
+  CStack_4.r = (this->fields)._baseCenter.x;
+  CStack_4.g = (this->fields)._baseCenter.y;
+  uStack_13._0_4_ = (this->fields)._rotation.x;
+  uStack_13._4_4_ = (this->fields)._rotation.y;
+  uStack_14._0_4_ = (this->fields)._rotation.z;
+  uStack_14._4_4_ = (this->fields)._rotation.w;
+  CStack_4.b = (this->fields)._baseCenter.z;
+  MStack_15.m00 = 0.0;
+  MStack_15.m10 = 0.0;
+  MStack_15.m20 = 0.0;
+  MStack_15.m30 = 0.0;
+  MStack_15.m01 = 0.0;
+  MStack_15.m11 = 0.0;
+  MStack_15.m21 = 0.0;
+  MStack_15.m31 = 0.0;
+  MStack_15.m02 = 0.0;
+  MStack_15.m12 = 0.0;
+  MStack_15.m22 = 0.0;
+  MStack_15.m32 = 0.0;
+  MStack_15.m03 = 0.0;
+  MStack_15.m13 = 0.0;
+  MStack_15.m23 = 0.0;
+  MStack_15.m33 = 0.0;
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar16 = func_?(&UNK_?);
+    FUN_?(uVar16,0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcRam_? = pcVar2;
+  (*pcRam_?)(&CStack_4,&uStack_13,&uStack_12);
+  if (*(int *)&(TypeInfo__UnityEngine__Graphics->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Graphics);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Graphics->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  MStack_17.m00 = MStack_15.m00;
+  MStack_17.m10 = MStack_15.m10;
+  MStack_17.m20 = MStack_15.m20;
+  MStack_17.m30 = MStack_15.m30;
+  MStack_17.m01 = MStack_15.m01;
+  MStack_17.m11 = MStack_15.m11;
+  MStack_17.m21 = MStack_15.m21;
+  MStack_17.m31 = MStack_15.m31;
+  MStack_17.m02 = MStack_15.m02;
+  MStack_17.m12 = MStack_15.m12;
+  MStack_17.m22 = MStack_15.m22;
+  MStack_17.m32 = MStack_15.m32;
+  MStack_17.m03 = MStack_15.m03;
+  MStack_17.m13 = MStack_15.m13;
+  MStack_17.m23 = MStack_15.m23;
+  MStack_17.m33 = MStack_15.m33;
+  UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_1
+            (pMVar5,&MStack_17,-1,(MethodInfo *)0x0);
   return;
 }
 
@@ -398,227 +467,643 @@ void Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_RenderWire
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
-    func_?(&MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
-    func_?(&TypeInfo__RTG__Singleton<RTG::MeshPool>);
+    FUN_?(&TypeInfo__UnityEngine__Graphics);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__Singleton<RTG::MeshPool>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  fVar1 = (this->fields)._radius;
-  pLVar2 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry___Class *)
-            (this->fields)._rotation.x;
-  pSVar3 = (String *)(this->fields)._rotation.y;
-  pVVar4 = (VisualTreeAsset_UsingEntry__Array *)(this->fields)._rotation.z;
-  fVar5 = (this->fields)._rotation.w;
+  fVar1 = _UNK_?;
+  fVar2 = (this->fields)._radius;
+  QVar3 = (this->fields)._rotation;
+  fVar4 = QVar3.x;
+  fVar5 = QVar3.y;
+  fVar6 = QVar3.z;
+  fVar7 = QVar3.w;
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                      ((Quaternion *)&stack0xffffff80,90.0,
-                       TypeInfo__UnityEngine__Vector3->static_fields->rightVector,(MethodInfo *)0x0)
-  ;
-  fVar7 = pQVar6->y;
-  fVar8 = pQVar6->z;
-  fVar9 = pQVar6->w;
-  fVar10 = (fVar9 * (float)pLVar2 + pQVar6->x * fVar5 + fVar8 * (float)pSVar3) -
-           fVar7 * (float)pVVar4;
-  fVar11 = ((float)pSVar3 * fVar9 + fVar7 * fVar5 + (float)pVVar4 * pQVar6->x) -
-           fVar8 * (float)pLVar2;
-  fVar12 = ((float)pVVar4 * fVar9 + fVar8 * fVar5 + fVar7 * (float)pLVar2) -
-           (float)pSVar3 * pQVar6->x;
-  fVar5 = ((fVar9 * fVar5 - (float)pLVar2 * pQVar6->x) - fVar7 * (float)pSVar3) -
-          (float)pVVar4 * fVar8;
-  if ((TypeInfo__RTG__Singleton<RTG::MeshPool>->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  pVVar8 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uStack_9._0_4_ = (pVVar8->rightVector).x;
+  uStack_9._4_4_ = (pVVar8->rightVector).y;
+  fStack_10 = (pVVar8->rightVector).z;
+  QStack_11.x = 0.0;
+  QStack_11.y = 0.0;
+  QStack_11.z = 0.0;
+  QStack_11.w = 0.0;
+  pcVar12 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
+    uVar13 = func_?(&UNK_?);
+    FUN_?(uVar13,0);
+    pcVar12 = (code *)swi(3);
+    (*pcVar12)();
+    return;
   }
-  pMVar13 = (MeshPool *)
+  pcRam_? = pcVar12;
+  (*pcRam_?)(_UNK_?,&uStack_9,&QStack_11);
+  fVar14 = QStack_11.x;
+  fVar15 = QStack_11.y;
+  fVar16 = fVar6 * QStack_11.y;
+  fVar17 = fVar4 * QStack_11.x;
+  fVar18 = fVar4 * QStack_11.y;
+  fVar19 = fVar6 * QStack_11.w;
+  QStack_11.y = (fVar7 * QStack_11.y + fVar5 * QStack_11.w + fVar6 * QStack_11.x) -
+                 fVar4 * QStack_11.z;
+  QStack_11.x = (fVar7 * QStack_11.x + fVar4 * QStack_11.w + fVar5 * QStack_11.z) - fVar16;
+  QStack_11.w = ((fVar7 * QStack_11.w - fVar17) - fVar5 * fVar15) - fVar6 * QStack_11.z;
+  QStack_11.z = (fVar7 * QStack_11.z + fVar19 + fVar18) - fVar5 * fVar14;
+  if (*(int *)&(TypeInfo__RTG__Singleton<RTG::MeshPool>->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pMVar20 = (MeshPool *)
             Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
                       (MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
-  if (pMVar13 != (MeshPool *)0x0) {
-    pMVar14 = MeshPool::MeshPool_get_UnitWireCircleXY(pMVar13,(MethodInfo *)0x0);
-    q.y = fVar11;
-    q.x = fVar10;
-    q.z = fVar12;
-    q.w = fVar5;
-    s.y = fVar1;
-    s.x = fVar1;
-    s.z = 1.0;
-    pMVar15 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                        ((Matrix4x4 *)&stack0xffffff40,(this->fields)._baseCenter,q,s,
-                         (MethodInfo *)0x0);
-    pLVar2 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry___Class *)pMVar15->m00;
-    pSVar3 = (String *)pMVar15->m10;
-    pVVar4 = (VisualTreeAsset_UsingEntry__Array *)pMVar15->m20;
-    fVar16 = pMVar15->m30;
-    fVar7 = pMVar15->m01;
-    pOVar17 = (Object *)pMVar15->m11;
-    fVar8 = pMVar15->m21;
-    fVar9 = pMVar15->m31;
-    fVar18 = pMVar15->m02;
-    fVar19 = pMVar15->m12;
-    fVar20 = pMVar15->m22;
-    fVar21 = pMVar15->m32;
-    pGVar22 = (Graphics__Class *)pMVar15->m03;
-    fVar23 = pMVar15->m13;
-    fVar24 = pMVar15->m23;
-    fVar25 = pMVar15->m33;
-    if ((TypeInfo__UnityEngine__Graphics->_1).cctor_finished_or_no_cctor == 0) {
-      pGVar22 = TypeInfo__UnityEngine__Graphics;
-      func_?();
+  if (pMVar20 != (MeshPool *)0x0) {
+    pMVar21 = MeshPool::MeshPool_get_UnitWireCircleXY(pMVar20,(MethodInfo *)0x0);
+    uVar22 = QStack_11._8_8_;
+    uVar13 = QStack_11._0_8_;
+    PStack_23.Quadrant = (int32_t)(this->fields)._baseCenter.x;
+    PStack_23.FirstAxisSign = (int32_t)(this->fields)._baseCenter.y;
+    PStack_23.SecondAxisSign = (int32_t)(this->fields)._baseCenter.z;
+    fStack_10 = fVar1;
+    uStack_9 = CONCAT44(fVar2,fVar2);
+    MStack_24.m00 = 0.0;
+    MStack_24.m10 = 0.0;
+    MStack_24.m20 = 0.0;
+    MStack_24.m30 = 0.0;
+    MStack_24.m01 = 0.0;
+    MStack_24.m11 = 0.0;
+    MStack_24.m21 = 0.0;
+    MStack_24.m31 = 0.0;
+    MStack_24.m02 = 0.0;
+    MStack_24.m12 = 0.0;
+    MStack_24.m22 = 0.0;
+    MStack_24.m32 = 0.0;
+    MStack_24.m03 = 0.0;
+    MStack_24.m13 = 0.0;
+    MStack_24.m23 = 0.0;
+    MStack_24.m33 = 0.0;
+    pcVar12 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
+      uVar13 = func_?(&UNK_?);
+      FUN_?(uVar13,0);
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
+      return;
     }
-    matrix.m10 = (float)pSVar3;
-    matrix.m00 = (float)pLVar2;
-    matrix.m20 = (float)pVVar4;
-    matrix.m30 = fVar16;
-    matrix.m01 = fVar7;
-    matrix.m11 = (float)pOVar17;
-    matrix.m21 = fVar8;
-    matrix.m31 = fVar9;
-    matrix.m02 = fVar18;
-    matrix.m12 = fVar19;
-    matrix.m22 = fVar20;
-    matrix.m32 = fVar21;
-    matrix.m03 = (float)pGVar22;
-    matrix.m13 = fVar23;
-    matrix.m23 = fVar24;
-    matrix.m33 = fVar25;
-    UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_3
-              (pMVar14,matrix,(MethodInfo *)0x0);
-    pMVar13 = (MeshPool *)
+    pcRam_? = pcVar12;
+    (*pcRam_?)(&PStack_23,&QStack_11,&uStack_9);
+    if (*(int *)&(TypeInfo__UnityEngine__Graphics->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Graphics);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Graphics->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    aMStack_25[0].m00 = MStack_24.m00;
+    aMStack_25[0].m10 = MStack_24.m10;
+    aMStack_25[0].m20 = MStack_24.m20;
+    aMStack_25[0].m30 = MStack_24.m30;
+    aMStack_25[0].m01 = MStack_24.m01;
+    aMStack_25[0].m11 = MStack_24.m11;
+    aMStack_25[0].m21 = MStack_24.m21;
+    aMStack_25[0].m31 = MStack_24.m31;
+    aMStack_25[0].m02 = MStack_24.m02;
+    aMStack_25[0].m12 = MStack_24.m12;
+    aMStack_25[0].m22 = MStack_24.m22;
+    aMStack_25[0].m32 = MStack_24.m32;
+    aMStack_25[0].m03 = MStack_24.m03;
+    aMStack_25[0].m13 = MStack_24.m13;
+    aMStack_25[0].m23 = MStack_24.m23;
+    aMStack_25[0].m33 = MStack_24.m33;
+    UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_1
+              (pMVar21,aMStack_25,-1,(MethodInfo *)0x0);
+    pMVar20 = (MeshPool *)
               Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
                         (MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
-    if (pMVar13 != (MeshPool *)0x0) {
-      pMVar14 = MeshPool::MeshPool_get_UnitWireCircleXY(pMVar13,(MethodInfo *)0x0);
-      pOVar17 = (Object *)(this->fields)._baseCenter.x;
-      fVar8 = (this->fields)._baseCenter.y;
-      pVVar26 = TorusShape3D::TorusShape3D_get_Up
-                          ((Vector3 *)&stack0xffffffc0,(TorusShape3D *)this,(MethodInfo *)0x0);
-      uVar27 = pVVar26->x;
-      uVar28 = pVVar26->y;
-      fVar7 = (this->fields)._height;
-      pos.y = fVar8 + (float)uVar28 * fVar7;
-      pos.x = (float)pOVar17 + (float)uVar27 * fVar7;
-      pos.z = fVar1;
-      q_00.y = fVar11;
-      q_00.x = fVar10;
-      q_00.z = fVar12;
-      q_00.w = fVar5;
-      s_00.y = fVar1;
-      s_00.x = fVar1;
-      s_00.z = 1.0;
-      pMVar15 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_TRS
-                          ((Matrix4x4 *)&stack0xffffff40,pos,q_00,s_00,(MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_3
-                (pMVar14,*pMVar15,(MethodInfo *)0x0);
-      pLVar29 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-                CylinderMath::CylinderMath_CalcExtentPoints
-                          ((this->fields)._baseCenter,(this->fields)._radius,
-                           (this->fields)._rotation,(MethodInfo *)0x0);
-      fVar5 = (this->fields)._baseCenter.x;
-      fVar7 = (this->fields)._baseCenter.y;
-      fVar8 = (this->fields)._baseCenter.z;
-      pVVar26 = TorusShape3D::TorusShape3D_get_Up
-                          ((Vector3 *)&stack0xffffffc0,(TorusShape3D *)this,(MethodInfo *)0x0);
-      uVar30 = pVVar26->x;
-      uVar31 = pVVar26->y;
-      fVar1 = (this->fields)._height;
-      center.y = fVar7 + (float)uVar31 * fVar1;
-      center.x = fVar5 + (float)uVar30 * fVar1;
-      center.z = fVar8 + pVVar26->z * fVar1;
-      this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-                CylinderMath::CylinderMath_CalcExtentPoints
-                          (center,(this->fields)._radius,(this->fields)._rotation,(MethodInfo *)0x0)
+    if (pMVar20 != (MeshPool *)0x0) {
+      pMVar21 = MeshPool::MeshPool_get_UnitWireCircleXY(pMVar20,(MethodInfo *)0x0);
+      uVar26 = (this->fields)._baseCenter.x;
+      uVar27 = (this->fields)._baseCenter.y;
+      fVar5 = (this->fields)._baseCenter.z;
+      pVVar28 = TorusShape3D::TorusShape3D_get_Up
+                          ((Vector3 *)&QStack_11,(TorusShape3D *)this,(MethodInfo *)0x0);
+      uVar29 = QStack_11._8_8_;
+      uVar30 = QStack_11._0_8_;
+      fVar4 = (this->fields)._height;
+      uVar31 = pVVar28->x;
+      uVar32 = pVVar28->y;
+      PStack_23.SecondAxisSign = (int32_t)fVar1;
+      PStack_23.FirstAxisSign = (int32_t)fVar2;
+      PStack_23.Quadrant = (int32_t)fVar2;
+      fStack_10 = fVar4 * pVVar28->z + fVar5;
+      QStack_11.x = (float)uVar13;
+      QStack_11.y = SUB84(uVar13,4);
+      QStack_33.x = QStack_11.x;
+      QStack_33.y = QStack_11.y;
+      QStack_11.z = (float)uVar22;
+      QStack_11.w = SUB84(uVar22,4);
+      QStack_33.z = QStack_11.z;
+      QStack_33.w = QStack_11.w;
+      MStack_24.m00 = 0.0;
+      MStack_24.m10 = 0.0;
+      MStack_24.m20 = 0.0;
+      MStack_24.m30 = 0.0;
+      uStack_9 = CONCAT44(fVar4 * (float)uVar32 + (float)uVar27,
+                            fVar4 * (float)uVar31 + (float)uVar26);
+      MStack_24.m01 = 0.0;
+      MStack_24.m11 = 0.0;
+      MStack_24.m21 = 0.0;
+      MStack_24.m31 = 0.0;
+      MStack_24.m02 = 0.0;
+      MStack_24.m12 = 0.0;
+      MStack_24.m22 = 0.0;
+      MStack_24.m32 = 0.0;
+      MStack_24.m03 = 0.0;
+      MStack_24.m13 = 0.0;
+      MStack_24.m23 = 0.0;
+      MStack_24.m33 = 0.0;
+      pcVar12 = pcRam_?;
+      QStack_11._0_8_ = uVar30;
+      QStack_11._8_8_ = uVar29;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
+        uVar13 = func_?(&UNK_?);
+        FUN_?(uVar13,0);
+        pcVar12 = (code *)swi(3);
+        (*pcVar12)();
+        return;
+      }
+      pcRam_? = pcVar12;
+      (*pcRam_?)(&uStack_9,&QStack_33,&PStack_23);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Graphics);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Graphics->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      aMStack_25[0].m00 = MStack_24.m00;
+      aMStack_25[0].m10 = MStack_24.m10;
+      aMStack_25[0].m20 = MStack_24.m20;
+      aMStack_25[0].m30 = MStack_24.m30;
+      aMStack_25[0].m01 = MStack_24.m01;
+      aMStack_25[0].m11 = MStack_24.m11;
+      aMStack_25[0].m21 = MStack_24.m21;
+      aMStack_25[0].m31 = MStack_24.m31;
+      aMStack_25[0].m02 = MStack_24.m02;
+      aMStack_25[0].m12 = MStack_24.m12;
+      aMStack_25[0].m22 = MStack_24.m22;
+      aMStack_25[0].m32 = MStack_24.m32;
+      aMStack_25[0].m03 = MStack_24.m03;
+      aMStack_25[0].m13 = MStack_24.m13;
+      aMStack_25[0].m23 = MStack_24.m23;
+      aMStack_25[0].m33 = MStack_24.m33;
+      UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_1
+                (pMVar21,aMStack_25,-1,(MethodInfo *)0x0);
+      PStack_23.Quadrant = (int32_t)(this->fields)._baseCenter.x;
+      PStack_23.FirstAxisSign = (int32_t)(this->fields)._baseCenter.y;
+      QStack_33.x = (this->fields)._rotation.x;
+      QStack_33.y = (this->fields)._rotation.y;
+      QStack_33.z = (this->fields)._rotation.z;
+      QStack_33.w = (this->fields)._rotation.w;
+      PStack_23.SecondAxisSign = (int32_t)(this->fields)._baseCenter.z;
+      pLVar34 = CylinderMath::CylinderMath_CalcExtentPoints
+                          ((Vector3 *)&PStack_23,(this->fields)._radius,&QStack_33,
+                           (MethodInfo *)0x0);
+      uVar35 = (this->fields)._baseCenter.x;
+      uVar36 = (this->fields)._baseCenter.y;
+      fVar4 = (this->fields)._baseCenter.z;
+      pVVar28 = TorusShape3D::TorusShape3D_get_Up
+                          ((Vector3 *)&QStack_11,(TorusShape3D *)this,(MethodInfo *)0x0);
+      fVar2 = (this->fields)._height;
+      uVar37 = pVVar28->x;
+      uVar38 = pVVar28->y;
+      QStack_33.x = (this->fields)._rotation.x;
+      QStack_33.y = (this->fields)._rotation.y;
+      QStack_33.z = (this->fields)._rotation.z;
+      QStack_33.w = (this->fields)._rotation.w;
+      PStack_23.SecondAxisSign = (int32_t)(fVar2 * pVVar28->z + fVar4);
+      PStack_23.FirstAxisSign = (int32_t)(fVar2 * (float)uVar38 + (float)uVar36);
+      PStack_23.Quadrant = (int32_t)(fVar2 * (float)uVar37 + (float)uVar35);
+      pLVar39 = CylinderMath::CylinderMath_CalcExtentPoints
+                          ((Vector3 *)&PStack_23,(this->fields)._radius,&QStack_33,
+                           (MethodInfo *)0x0);
+      this_00 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
+                FUN_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
+      FUN_?(this_00,
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
+      pMVar40 = 
+      MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
       ;
-      pairPoints = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)func_?();
-      mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-      __Il2CppFullySharedGenericType]::
-      LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pairPoints,
-                 MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
-      if (pLVar29 != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-        VisualTreeAsset+UsingEntry]::
-        List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                  ((VisualTreeAsset_UsingEntry *)&stack0xffffffc0,pLVar29,0,
-                   MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                  );
-        if (pairPoints != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
-          func_?();
-          if (this_00 != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
-            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-            VisualTreeAsset+UsingEntry]::
-            List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                      ((VisualTreeAsset_UsingEntry *)&stack0xffffffc0,this_00,0,
-                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                      );
-            func_?();
-            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-            VisualTreeAsset+UsingEntry]::
-            List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                      ((VisualTreeAsset_UsingEntry *)&stack0xffffffc0,pLVar29,1,
-                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                      );
-            func_?();
-            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-            VisualTreeAsset+UsingEntry]::
-            List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                      ((VisualTreeAsset_UsingEntry *)&stack0xffffffc0,this_00,1,
-                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                      );
-            pLVar29 = pairPoints;
-            func_?();
-            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-            VisualTreeAsset+UsingEntry]::
-            List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                      ((VisualTreeAsset_UsingEntry *)&stack0xffffffc0,pLVar29,2,
-                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                      );
-            func_?();
-            pLVar29 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)&stack0xffffffc0;
-            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-            VisualTreeAsset+UsingEntry]::
-            List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                      ((VisualTreeAsset_UsingEntry *)pLVar29,this_00,2,
-                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                      );
-            pMStack32 =
-                 MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-            ;
-            func_?();
-            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-            VisualTreeAsset+UsingEntry]::
-            List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                      ((VisualTreeAsset_UsingEntry *)&stack0xffffffc0,pLVar29,3,
-                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                      );
-            pMStack33 =
-                 MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-            ;
-            pMStack32 = (MethodInfo *)pairPoints;
-            func_?();
-            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-            VisualTreeAsset+UsingEntry]::
-            List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                      ((VisualTreeAsset_UsingEntry *)&stack0xffffffc0,this_00,3,
-                       MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                      );
-            pMStack33 = (MethodInfo *)pairPoints;
-            func_?();
-            GLRenderer::GLRenderer_DrawLinePairs3D
-                      ((List_1_UnityEngine_Vector3_ *)pairPoints,(MethodInfo *)0x0);
-            return;
+      if (pLVar34 != (List_1_UnityEngine_Vector3_ *)0x0) {
+        if ((pLVar34->fields)._size == 0) {
+code_?:
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar12 = (code *)swi(3);
+          (*pcVar12)();
+          return;
+        }
+        pVVar41 = (pLVar34->fields)._items;
+        if (pVVar41 != (Vector3__Array *)0x0) {
+          if ((int)pVVar41->max_length == 0) goto code_?;
+          if (this_00 != (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) {
+            uVar13._0_4_ = (int32_t)pVVar41->vector[0].x;
+            uVar13._4_4_ = (int32_t)pVVar41->vector[0].y;
+            fVar2 = pVVar41->vector[0].z;
+            piVar42 = &(this_00->fields)._version;
+            *piVar42 = *piVar42 + 1;
+            pPVar43 = (this_00->fields)._items;
+            if (pPVar43 != (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) {
+              uVar44 = (this_00->fields)._size;
+              if (uVar44 < (uint)pPVar43->max_length) {
+                (this_00->fields)._size = uVar44 + 1;
+                if ((uint)pPVar43->max_length <= uVar44) goto code_?;
+                pPVar43->vector[(int)uVar44].Quadrant = (int32_t)uVar13;
+                pPVar43->vector[(int)uVar44].FirstAxisSign = uVar13._4_4_;
+                pPVar43->vector[(int)uVar44].SecondAxisSign = (int32_t)fVar2;
+              }
+              else {
+                PStack_23._0_8_ = uVar13;
+                PStack_23.SecondAxisSign = (int32_t)fVar2;
+                mscorlib.dll::System::Collections::Generic::List`1[RTG::
+                PlaneIdHelper+PlaneQuadrantInfo]::
+                List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                          (this_00,&PStack_23,pMVar40->klass->rgctx_data[0xe].method);
+              }
+              pMVar40 = 
+              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+              ;
+              if (pLVar39 != (List_1_UnityEngine_Vector3_ *)0x0) {
+                if ((pLVar39->fields)._size == 0) goto code_?;
+                pVVar41 = (pLVar39->fields)._items;
+                if (pVVar41 != (Vector3__Array *)0x0) {
+                  if ((int)pVVar41->max_length == 0) goto code_?;
+                  uVar22._0_4_ = (int32_t)pVVar41->vector[0].x;
+                  uVar22._4_4_ = (int32_t)pVVar41->vector[0].y;
+                  fVar2 = pVVar41->vector[0].z;
+                  piVar42 = &(this_00->fields)._version;
+                  *piVar42 = *piVar42 + 1;
+                  pPVar43 = (this_00->fields)._items;
+                  if (pPVar43 != (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) {
+                    uVar44 = (this_00->fields)._size;
+                    if (uVar44 < (uint)pPVar43->max_length) {
+                      (this_00->fields)._size = uVar44 + 1;
+                      if ((uint)pPVar43->max_length <= uVar44) goto code_?;
+                      pPVar43->vector[(int)uVar44].Quadrant = (int32_t)uVar22;
+                      pPVar43->vector[(int)uVar44].FirstAxisSign = uVar22._4_4_;
+                      pPVar43->vector[(int)uVar44].SecondAxisSign = (int32_t)fVar2;
+                    }
+                    else {
+                      PStack_23._0_8_ = uVar22;
+                      PStack_23.SecondAxisSign = (int32_t)fVar2;
+                      mscorlib.dll::System::Collections::Generic::List`1[RTG::
+                      PlaneIdHelper+PlaneQuadrantInfo]::
+                      List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                                (this_00,&PStack_23,pMVar40->klass->rgctx_data[0xe].method);
+                    }
+                    pMVar40 = 
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                    ;
+                    if ((uint)(pLVar34->fields)._size < 2) goto code_?;
+                    pVVar41 = (pLVar34->fields)._items;
+                    if (pVVar41 != (Vector3__Array *)0x0) {
+                      if ((uint)pVVar41->max_length < 2) goto code_?;
+                      uVar30._0_4_ = (int32_t)pVVar41->vector[1].x;
+                      uVar30._4_4_ = (int32_t)pVVar41->vector[1].y;
+                      fVar2 = pVVar41->vector[1].z;
+                      piVar42 = &(this_00->fields)._version;
+                      *piVar42 = *piVar42 + 1;
+                      pPVar43 = (this_00->fields)._items;
+                      if (pPVar43 != (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) {
+                        uVar44 = (this_00->fields)._size;
+                        if (uVar44 < (uint)pPVar43->max_length) {
+                          (this_00->fields)._size = uVar44 + 1;
+                          if ((uint)pPVar43->max_length <= uVar44) goto code_?;
+                          pPVar43->vector[(int)uVar44].Quadrant = (int32_t)uVar30;
+                          pPVar43->vector[(int)uVar44].FirstAxisSign = uVar30._4_4_;
+                          pPVar43->vector[(int)uVar44].SecondAxisSign = (int32_t)fVar2;
+                        }
+                        else {
+                          PStack_23._0_8_ = uVar30;
+                          PStack_23.SecondAxisSign = (int32_t)fVar2;
+                          mscorlib.dll::System::Collections::Generic::List`1[RTG::
+                          PlaneIdHelper+PlaneQuadrantInfo]::
+                          List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                                    (this_00,&PStack_23,pMVar40->klass->rgctx_data[0xe].method);
+                        }
+                        pMVar40 = 
+                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                        ;
+                        if ((uint)(pLVar39->fields)._size < 2) goto code_?;
+                        pVVar41 = (pLVar39->fields)._items;
+                        if (pVVar41 != (Vector3__Array *)0x0) {
+                          if ((uint)pVVar41->max_length < 2) goto code_?;
+                          uVar29._0_4_ = (int32_t)pVVar41->vector[1].x;
+                          uVar29._4_4_ = (int32_t)pVVar41->vector[1].y;
+                          fVar2 = pVVar41->vector[1].z;
+                          piVar42 = &(this_00->fields)._version;
+                          *piVar42 = *piVar42 + 1;
+                          pPVar43 = (this_00->fields)._items;
+                          if (pPVar43 != (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) {
+                            uVar44 = (this_00->fields)._size;
+                            if (uVar44 < (uint)pPVar43->max_length) {
+                              (this_00->fields)._size = uVar44 + 1;
+                              if ((uint)pPVar43->max_length <= uVar44) goto code_?;
+                              pPVar43->vector[(int)uVar44].Quadrant = (int32_t)uVar29;
+                              pPVar43->vector[(int)uVar44].FirstAxisSign = uVar29._4_4_;
+                              pPVar43->vector[(int)uVar44].SecondAxisSign = (int32_t)fVar2;
+                            }
+                            else {
+                              PStack_23._0_8_ = uVar29;
+                              PStack_23.SecondAxisSign = (int32_t)fVar2;
+                              mscorlib.dll::System::Collections::Generic::List`1[RTG::
+                              PlaneIdHelper+PlaneQuadrantInfo]::
+                              List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                                        (this_00,&PStack_23,pMVar40->klass->rgctx_data[0xe].method)
+                              ;
+                            }
+                            pMVar40 = 
+                            MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                            ;
+                            if ((uint)(pLVar34->fields)._size < 3) goto code_?;
+                            pVVar41 = (pLVar34->fields)._items;
+                            if (pVVar41 != (Vector3__Array *)0x0) {
+                              if ((uint)pVVar41->max_length < 3) goto code_?;
+                              uVar45._0_4_ = (int32_t)pVVar41->vector[2].x;
+                              uVar45._4_4_ = (int32_t)pVVar41->vector[2].y;
+                              fVar2 = pVVar41->vector[2].z;
+                              piVar42 = &(this_00->fields)._version;
+                              *piVar42 = *piVar42 + 1;
+                              pPVar43 = (this_00->fields)._items;
+                              if (pPVar43 != (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) {
+                                uVar44 = (this_00->fields)._size;
+                                if (uVar44 < (uint)pPVar43->max_length) {
+                                  (this_00->fields)._size = uVar44 + 1;
+                                  if ((uint)pPVar43->max_length <= uVar44)
+                                  goto code_?;
+                                  pPVar43->vector[(int)uVar44].Quadrant = (int32_t)uVar45;
+                                  pPVar43->vector[(int)uVar44].FirstAxisSign = uVar45._4_4_;
+                                  pPVar43->vector[(int)uVar44].SecondAxisSign = (int32_t)fVar2;
+                                }
+                                else {
+                                  PStack_23._0_8_ = uVar45;
+                                  PStack_23.SecondAxisSign = (int32_t)fVar2;
+                                  mscorlib.dll::System::Collections::Generic::List`1[RTG::
+                                  PlaneIdHelper+PlaneQuadrantInfo]::
+                                  List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                                            (this_00,&PStack_23,
+                                             pMVar40->klass->rgctx_data[0xe].method);
+                                }
+                                pMVar40 = 
+                                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                                ;
+                                if ((uint)(pLVar39->fields)._size < 3) goto code_?;
+                                pVVar41 = (pLVar39->fields)._items;
+                                if (pVVar41 != (Vector3__Array *)0x0) {
+                                  if ((uint)pVVar41->max_length < 3) goto code_?;
+                                  uVar46._0_4_ = (int32_t)pVVar41->vector[2].x;
+                                  uVar46._4_4_ = (int32_t)pVVar41->vector[2].y;
+                                  fVar2 = pVVar41->vector[2].z;
+                                  piVar42 = &(this_00->fields)._version;
+                                  *piVar42 = *piVar42 + 1;
+                                  pPVar43 = (this_00->fields)._items;
+                                  if (pPVar43 != (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) {
+                                    uVar44 = (this_00->fields)._size;
+                                    if (uVar44 < (uint)pPVar43->max_length) {
+                                      (this_00->fields)._size = uVar44 + 1;
+                                      if ((uint)pPVar43->max_length <= uVar44)
+                                      goto code_?;
+                                      pPVar43->vector[(int)uVar44].Quadrant = (int32_t)uVar46;
+                                      pPVar43->vector[(int)uVar44].FirstAxisSign = uVar46._4_4_;
+                                      pPVar43->vector[(int)uVar44].SecondAxisSign = (int32_t)fVar2;
+                                    }
+                                    else {
+                                      PStack_23._0_8_ = uVar46;
+                                      PStack_23.SecondAxisSign = (int32_t)fVar2;
+                                      mscorlib.dll::System::Collections::Generic::List`1[RTG::
+                                      PlaneIdHelper+PlaneQuadrantInfo]::
+                                      List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                                                (this_00,&PStack_23,
+                                                 pMVar40->klass->rgctx_data[0xe].method);
+                                    }
+                                    pMVar40 = 
+                                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                                    ;
+                                    if ((uint)(pLVar34->fields)._size < 4)
+                                    goto code_?;
+                                    pVVar41 = (pLVar34->fields)._items;
+                                    if (pVVar41 != (Vector3__Array *)0x0) {
+                                      if ((uint)pVVar41->max_length < 4) goto code_?;
+                                      uVar47._0_4_ = (int32_t)pVVar41->vector[3].x;
+                                      uVar47._4_4_ = (int32_t)pVVar41->vector[3].y;
+                                      fVar2 = pVVar41->vector[3].z;
+                                      piVar42 = &(this_00->fields)._version;
+                                      *piVar42 = *piVar42 + 1;
+                                      pPVar43 = (this_00->fields)._items;
+                                      if (pPVar43 != (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0)
+                                      {
+                                        uVar44 = (this_00->fields)._size;
+                                        if (uVar44 < (uint)pPVar43->max_length) {
+                                          (this_00->fields)._size = uVar44 + 1;
+                                          if ((uint)pPVar43->max_length <= uVar44)
+                                          goto code_?;
+                                          pPVar43->vector[(int)uVar44].Quadrant = (int32_t)uVar47;
+                                          pPVar43->vector[(int)uVar44].FirstAxisSign = uVar47._4_4_;
+                                          pPVar43->vector[(int)uVar44].SecondAxisSign =
+                                               (int32_t)fVar2;
+                                        }
+                                        else {
+                                          PStack_23._0_8_ = uVar47;
+                                          PStack_23.SecondAxisSign = (int32_t)fVar2;
+                                          mscorlib.dll::System::Collections::Generic::List`1[RTG::
+                                          PlaneIdHelper+PlaneQuadrantInfo]::
+                                          List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                                                    (this_00,&PStack_23,
+                                                     pMVar40->klass->rgctx_data[0xe].method);
+                                        }
+                                        pMVar40 = 
+                                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                                        ;
+                                        if ((uint)(pLVar39->fields)._size < 4)
+                                        goto code_?;
+                                        pVVar41 = (pLVar39->fields)._items;
+                                        if (pVVar41 != (Vector3__Array *)0x0) {
+                                          if ((uint)pVVar41->max_length < 4) {
+code_?:
+                                            FUN_?();
+                                            pcVar12 = (code *)swi(3);
+                                            (*pcVar12)();
+                                            return;
+                                          }
+                                          uVar48._0_4_ = (int32_t)pVVar41->vector[3].x;
+                                          uVar48._4_4_ = (int32_t)pVVar41->vector[3].y;
+                                          fVar2 = pVVar41->vector[3].z;
+                                          piVar42 = &(this_00->fields)._version;
+                                          *piVar42 = *piVar42 + 1;
+                                          pPVar43 = (this_00->fields)._items;
+                                          if (pPVar43 !=
+                                              (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) {
+                                            uVar44 = (this_00->fields)._size;
+                                            if (uVar44 < (uint)pPVar43->max_length) {
+                                              (this_00->fields)._size = uVar44 + 1;
+                                              if ((uint)pPVar43->max_length <= uVar44)
+                                              goto code_?;
+                                              pPVar43->vector[(int)uVar44].Quadrant =
+                                                   (int32_t)uVar48;
+                                              pPVar43->vector[(int)uVar44].FirstAxisSign =
+                                                   uVar48._4_4_;
+                                              pPVar43->vector[(int)uVar44].SecondAxisSign =
+                                                   (int32_t)fVar2;
+                                            }
+                                            else {
+                                              PStack_23._0_8_ = uVar48;
+                                              PStack_23.SecondAxisSign = (int32_t)fVar2;
+                                              mscorlib.dll::System::Collections::Generic::List`1[RTG
+                                              ::PlaneIdHelper+PlaneQuadrantInfo]::
+                                              List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                                                        (this_00,&PStack_23,
+                                                         pMVar40->klass->rgctx_data[0xe].method);
+                                            }
+                                            if (cRam_? == '\0') {
+                                              FUN_?(&
+                                                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__
+                                                  );
+                                              LOCK();
+                                              UNLOCK();
+                                              FUN_?(&
+                                                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                                                  );
+                                              LOCK();
+                                              UNLOCK();
+                                              cRam_? = '\x01';
+                                            }
+                                            if ((1 < (this_00->fields)._size) &&
+                                               (((this_00->fields)._size & 1) == 0)) {
+                                              pcVar12 = pcRam_?;
+                                              if ((pcRam_? == (code *)0x0) &&
+                                                 (pcVar12 = (code *)FUN_?(&UNK_?),
+                                                 pcVar12 == (code *)0x0)) {
+                                                uVar13 = func_?(&UNK_?);
+                                                FUN_?(uVar13,0);
+                                                pcVar12 = (code *)swi(3);
+                                                (*pcVar12)();
+                                                return;
+                                              }
+                                              pcRam_? = pcVar12;
+                                              (*pcRam_?)();
+                                              lVar49 = 0;
+                                              for (uVar44 = 0; (int)uVar44 < (this_00->fields)._size
+                                                  ; uVar44 = uVar44 + 2) {
+                                                if ((uint)(this_00->fields)._size <= uVar44)
+                                                goto code_?;
+                                                pPVar43 = (this_00->fields)._items;
+                                                if (pPVar43 ==
+                                                    (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0)
+                                                goto DAT_?;
+                                                if ((uint)pPVar43->max_length <= uVar44)
+                                                goto code_?;
+                                                if ((uint)(this_00->fields)._size <= uVar44 + 1)
+                                                goto code_?;
+                                                if ((uint)pPVar43->max_length <= uVar44 + 1)
+                                                goto code_?;
+                                                uVar13 = *(undefined8 *)
+                                                          ((longlong)&pPVar43->vector[1].Quadrant +
+                                                          lVar49);
+                                                fVar2 = *(float *)((longlong)
+                                                                   &pPVar43->vector[1].
+                                                                    SecondAxisSign + lVar49);
+                                                UnityEngine.CoreModule.dll::UnityEngine::GL::
+                                                GL_Vertex3((float)*(undefined8 *)
+                                                                   ((longlong)
+                                                                    &pPVar43->vector[0].Quadrant +
+                                                                   lVar49),
+                                                           *(float *)((longlong)
+                                                                      &pPVar43->vector[0].
+                                                                       FirstAxisSign + lVar49),
+                                                           *(float *)((longlong)
+                                                                      &pPVar43->vector[0].
+                                                                       SecondAxisSign + lVar49),
+                                                           (MethodInfo *)0x0);
+                                                UnityEngine.CoreModule.dll::UnityEngine::GL::
+                                                GL_Vertex3((float)uVar13,
+                                                           (float)((ulonglong)uVar13 >> 0x20),fVar2,
+                                                           (MethodInfo *)0x0);
+                                                lVar49 = lVar49 + 0x18;
+                                              }
+                                              pcVar12 = pcRam_?;
+                                              if ((pcRam_? == (code *)0x0) &&
+                                                 (pcVar12 = (code *)FUN_?(&UNK_?),
+                                                 pcVar12 == (code *)0x0)) {
+                                                uVar13 = func_?(&UNK_?);
+                                                FUN_?(uVar13,0);
+                                                pcVar12 = (code *)swi(3);
+                                                (*pcVar12)();
+                                                return;
+                                              }
+                                              pcRam_? = pcVar12;
+                                              (*pcRam_?)();
+                                            }
+                                            return;
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
     }
   }
-  func_?();
-  pcVar34 = (code *)swi(3);
-  (*pcVar34)();
+DAT_?:
+  FUN_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -630,31 +1115,34 @@ void Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-  fVar2 = (pVVar1->zeroVector).y;
-  fVar3 = (pVVar1->zeroVector).z;
-  (this->fields)._baseCenter.x = (pVVar1->zeroVector).x;
-  (this->fields)._baseCenter.y = fVar2;
-  (this->fields)._baseCenter.z = fVar3;
+  bVar1 = cRam_? == '\0';
+  pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar3 = (pVVar2->zeroVector).y;
+  fVar4 = (pVVar2->zeroVector).z;
+  (this->fields)._baseCenter.x = (pVVar2->zeroVector).x;
+  (this->fields)._baseCenter.y = fVar3;
+  (this->fields)._baseCenter.z = fVar4;
   (this->fields)._radius = 1.0;
   (this->fields)._height = 1.0;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Quaternion);
+  if (bVar1) {
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pQVar4 = TypeInfo__UnityEngine__Quaternion->static_fields;
-  fVar3 = (pQVar4->identityQuaternion).y;
-  fVar2 = (pQVar4->identityQuaternion).z;
-  fVar5 = (pQVar4->identityQuaternion).w;
-  (this->fields)._rotation.x = (pQVar4->identityQuaternion).x;
-  (this->fields)._rotation.y = fVar3;
-  (this->fields)._rotation.z = fVar2;
-  (this->fields)._rotation.w = fVar5;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  pQVar5 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar4 = (pQVar5->identityQuaternion).y;
+  fVar3 = (pQVar5->identityQuaternion).z;
+  fVar6 = (pQVar5->identityQuaternion).w;
+  (this->fields)._rotation.x = (pQVar5->identityQuaternion).x;
+  (this->fields)._rotation.y = fVar4;
+  (this->fields)._rotation.z = fVar3;
+  (this->fields)._rotation.w = fVar6;
   return;
 }
 
@@ -665,18 +1153,18 @@ Vector3 * Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_get_Center
                     (Vector3 *__return_storage_ptr__,CylinderShape3D *this,MethodInfo *method)
 
 {
-  fStack_1 = (this->fields)._baseCenter.z;
-  uStack_2._0_4_ = (this->fields)._baseCenter.x;
-  uStack_2._4_4_ = (this->fields)._baseCenter.y;
-  pVVar3 = TorusShape3D::TorusShape3D_get_Up(&VStack_4,(TorusShape3D *)this,(MethodInfo *)0x0);
-  uVar5 = pVVar3->x;
-  uVar6 = pVVar3->y;
-  fVar7 = (this->fields)._height;
-  fVar8 = (float)uVar6 * fVar7 * _UNK_?;
-  fVar9 = pVVar3->z * fVar7 * _UNK_?;
-  __return_storage_ptr__->x = (float)uStack_2 + (float)uVar5 * fVar7 * _UNK_?;
-  __return_storage_ptr__->y = uStack_2._4_4_ + fVar8;
-  __return_storage_ptr__->z = fStack_1 + fVar9;
+  fVar1 = (this->fields)._baseCenter.z;
+  uVar2 = (this->fields)._baseCenter.x;
+  uVar3 = (this->fields)._baseCenter.y;
+  pVVar4 = TorusShape3D::TorusShape3D_get_Up(aVStack_5,(TorusShape3D *)this,(MethodInfo *)0x0);
+  fVar6 = (this->fields)._height;
+  uVar7 = pVVar4->x;
+  uVar8 = pVVar4->y;
+  fVar9 = fVar6 * (float)uVar8 * _UNK_?;
+  fVar10 = fVar6 * pVVar4->z * _UNK_?;
+  __return_storage_ptr__->x = fVar6 * (float)uVar7 * _UNK_? + (float)uVar2;
+  __return_storage_ptr__->y = fVar9 + (float)uVar3;
+  __return_storage_ptr__->z = fVar10 + fVar1;
   return __return_storage_ptr__;
 }
 
@@ -698,17 +1186,17 @@ Vector3 * Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_get_TopCent
                     (Vector3 *__return_storage_ptr__,CylinderShape3D *this,MethodInfo *method)
 
 {
-  fStack_1 = (this->fields)._baseCenter.z;
-  uStack_2._0_4_ = (this->fields)._baseCenter.x;
-  uStack_2._4_4_ = (this->fields)._baseCenter.y;
-  pVVar3 = TorusShape3D::TorusShape3D_get_Up(&VStack_4,(TorusShape3D *)this,(MethodInfo *)0x0);
-  uVar5 = pVVar3->x;
-  uVar6 = pVVar3->y;
-  fVar7 = pVVar3->z;
-  fVar8 = (this->fields)._height;
-  __return_storage_ptr__->x = (float)uStack_2 + (float)uVar5 * fVar8;
-  __return_storage_ptr__->y = uStack_2._4_4_ + (float)uVar6 * fVar8;
-  __return_storage_ptr__->z = fStack_1 + fVar7 * fVar8;
+  fVar1 = (this->fields)._baseCenter.z;
+  uVar2 = (this->fields)._baseCenter.x;
+  uVar3 = (this->fields)._baseCenter.y;
+  pVVar4 = TorusShape3D::TorusShape3D_get_Up(aVStack_5,(TorusShape3D *)this,(MethodInfo *)0x0);
+  fVar6 = (this->fields)._height;
+  uVar7 = pVVar4->x;
+  uVar8 = pVVar4->y;
+  fVar9 = pVVar4->z;
+  __return_storage_ptr__->x = fVar6 * (float)uVar7 + (float)uVar2;
+  __return_storage_ptr__->y = fVar6 * (float)uVar8 + (float)uVar3;
+  __return_storage_ptr__->z = fVar6 * fVar9 + fVar1;
   return __return_storage_ptr__;
 }
 
@@ -716,18 +1204,21 @@ Vector3 * Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_get_TopCent
 /* Void set_Center(Vector3) */
 
 void Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_set_Center
-               (CylinderShape3D *this,Vector3 value,MethodInfo *method)
+               (CylinderShape3D *this,Vector3 *value,MethodInfo *method)
 
 {
-  pVVar1 = TorusShape3D::TorusShape3D_get_Up(&VStack_2,(TorusShape3D *)this,(MethodInfo *)0x0);
-  uVar3 = pVVar1->x;
-  uVar4 = pVVar1->y;
-  fVar5 = (this->fields)._height;
-  fVar6 = (float)uVar4 * fVar5 * _UNK_?;
-  fVar7 = pVVar1->z * fVar5 * _UNK_?;
-  (this->fields)._baseCenter.x = value.x - (float)uVar3 * fVar5 * _UNK_?;
-  (this->fields)._baseCenter.y = value.y - fVar6;
-  (this->fields)._baseCenter.z = value.z - fVar7;
+  pVVar1 = TorusShape3D::TorusShape3D_get_Up(aVStack_2,(TorusShape3D *)this,(MethodInfo *)0x0);
+  fVar3 = (this->fields)._height;
+  uVar4 = pVVar1->x;
+  uVar5 = pVVar1->y;
+  uVar6 = value->x;
+  fVar7 = value->y;
+  fVar8 = fVar3 * pVVar1->z * _UNK_?;
+  fVar9 = value->z;
+  fVar10 = fVar3 * (float)uVar5 * _UNK_?;
+  (this->fields)._baseCenter.x = (float)uVar6 - fVar3 * (float)uVar4 * _UNK_?;
+  (this->fields)._baseCenter.y = fVar7 - fVar10;
+  (this->fields)._baseCenter.z = fVar9 - fVar8;
   return;
 }
 
@@ -738,8 +1229,7 @@ void Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_set_Epsilon
                (CylinderShape3D *this,CylinderEpsilon value,MethodInfo *method)
 
 {
-  (this->fields)._epsilon._hrzEps = value._hrzEps;
-  (this->fields)._epsilon._vertEps = value._vertEps;
+  (this->fields)._epsilon = value;
   return;
 }
 
@@ -747,29 +1237,20 @@ void Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_set_Epsilon
 /* Void set_TopCenter(Vector3) */
 
 void Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_set_TopCenter
-               (CylinderShape3D *this,Vector3 value,MethodInfo *method)
+               (CylinderShape3D *this,Vector3 *value,MethodInfo *method)
 
 {
-  pVVar1 = TorusShape3D::TorusShape3D_get_Up(&VStack_2,(TorusShape3D *)this,(MethodInfo *)0x0);
-  uVar3 = pVVar1->x;
-  uVar4 = pVVar1->y;
-  fVar5 = pVVar1->z;
-  fVar6 = (this->fields)._height;
-  (this->fields)._baseCenter.x = value.x - (float)uVar3 * fVar6;
-  (this->fields)._baseCenter.y = value.y - (float)uVar4 * fVar6;
-  (this->fields)._baseCenter.z = value.z - fVar5 * fVar6;
-  return;
-}
-
-
-/* Void set_VertEps(Single) */
-
-void Assembly-CSharp.dll::RTG::CylinderShape3D::CylinderShape3D_set_VertEps
-               (CylinderShape3D *this,float value,MethodInfo *method)
-
-{
-  TorusEpsilon::TorusEpsilon_set_CylHrzRadius
-            ((TorusEpsilon *)&(this->fields)._epsilon,value,(MethodInfo *)0x0);
+  pVVar1 = TorusShape3D::TorusShape3D_get_Up(aVStack_2,(TorusShape3D *)this,(MethodInfo *)0x0);
+  fVar3 = (this->fields)._height;
+  uVar4 = pVVar1->x;
+  uVar5 = pVVar1->y;
+  uVar6 = value->x;
+  fVar7 = value->y;
+  fVar8 = pVVar1->z;
+  fVar9 = value->z;
+  (this->fields)._baseCenter.x = (float)uVar6 - fVar3 * (float)uVar4;
+  (this->fields)._baseCenter.y = fVar7 - fVar3 * (float)uVar5;
+  (this->fields)._baseCenter.z = fVar9 - fVar3 * fVar8;
   return;
 }
 

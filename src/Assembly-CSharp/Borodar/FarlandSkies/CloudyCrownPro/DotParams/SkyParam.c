@@ -5,18 +5,20 @@ void Assembly-CSharp.dll::Borodar::FarlandSkies::CloudyCrownPro::DotParams::SkyP
                (SkyParam *this,MethodInfo *method)
 
 {
-  fVar1 = _UNK_?;
-  fVar2 = _UNK_?;
-  fVar3 = _UNK_?;
-  fVar4 = _UNK_?;
-  (this->fields).TopColor.r = _UNK_?;
-  (this->fields).TopColor.g = fVar3;
-  (this->fields).TopColor.b = fVar2;
-  (this->fields).TopColor.a = fVar1;
-  (this->fields).BottomColor.r = fVar4;
-  (this->fields).BottomColor.g = fVar3;
-  (this->fields).BottomColor.b = fVar2;
-  (this->fields).BottomColor.a = fVar1;
+  uVar1 = _UNK_?;
+  uVar2 = _UNK_?;
+  uVar3 = _UNK_?;
+  (this->fields).TopColor.g = (float)_UNK_?;
+  (this->fields).TopColor.b = (float)uVar3;
+  *(undefined8 *)&(this->fields).TopColor.a = uVar1;
+  uVar4 = _UNK_?;
+  _UNK_? = (undefined4)uVar2;
+  _UNK_? = SUB84(uVar2,4);
+  uVar3 = _UNK_?;
+  (this->fields).BottomColor.g = (float)_UNK_?;
+  _UNK_? = uVar4;
+  (this->fields).BottomColor.b = (float)uVar3;
+  *(undefined8 *)&(this->fields).BottomColor.a = uVar1;
   return;
 }
 

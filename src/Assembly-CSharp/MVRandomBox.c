@@ -5,83 +5,174 @@ void Assembly-CSharp.dll::MVRandomBox::MVRandomBox_Initialize(MVRandomBox *this,
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
-    func_?(&
-                    MethodInfo__MVRandomBox__InputStateUpdateCallback_LogicInputState__LogicObjectManager_
-                   );
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
-    func_?(&TypeInfo__OutputSignalTransmitterSpecific);
-    func_?(&TypeInfo__MV__WorldObject__RandomGenerator);
+    FUN_?(&TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__MVRandomBox__InputStateUpdateCallback_LogicInputState__LogicObjectManager_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__OutputSignalTransmitterSpecific);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__RandomGenerator);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
   MVLogicObject::MVLogicObject_SetupCulling
-            ((MVLogicObject *)this,(this->fields)._._.gameObject,2.0,(MethodInfo *)0x0);
+            ((MVLogicObject *)this,(this->fields)._._.gameObject,TypeRef__System__Activator__T._0_4_
+             ,(MethodInfo *)0x0);
   pOVar1 = MVRandomBox_get_CurrentRandomValues(this,(MethodInfo *)0x0);
-  if (pOVar1 != (ObscuredInt__Array *)0x0) {
-    if (pOVar1->max_length == 0) goto code_?;
-    iVar2 = pOVar1->vector[0].currentCryptoKey;
-    iVar3 = pOVar1->vector[0].hiddenValue;
-    iVar4 = pOVar1->vector[0].fakeValue;
-    puVar5 = *(undefined **)&pOVar1->vector[0].inited;
-    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor
-        == 0) {
-      puVar5 = &UNK_?;
-      func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+  if (pOVar1 == (ObscuredInt__Array *)0x0) {
+code_?:
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  if ((int)pOVar1->max_length != 0) {
+    uVar3._0_4_ = pOVar1->vector[0].currentCryptoKey;
+    uVar3._4_4_ = pOVar1->vector[0].hiddenValue;
+    uVar4._0_4_ = pOVar1->vector[0].fakeValue;
+    uVar4._4_1_ = pOVar1->vector[0].inited;
+    uVar4._5_3_ = *(undefined3 *)&pOVar1->vector[0].field_0xd;
+    if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    value.hiddenValue = iVar3;
-    value.currentCryptoKey = iVar2;
-    value.fakeValue = iVar4;
-    value._12_4_ = puVar5;
-    method_00 = (MethodInfo *)
-                Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-                ObscuredInt_op_Implicit_1(value,(MethodInfo *)0x0);
-    pOVar1 = MVRandomBox_get_CurrentRandomValues(this,method_00);
-    if (pOVar1 != (ObscuredInt__Array *)0x0) {
-      if (pOVar1->max_length < 2) goto code_?;
-      step = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-             ObscuredInt_op_Implicit_1(pOVar1->vector[1],(MethodInfo *)0x0);
+    aOStack_5[0]._0_8_ = uVar3;
+    aOStack_5[0]._8_8_ = uVar4;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    uVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+            ObscuredInt_InternalDecrypt(aOStack_5,(MethodInfo *)0x0);
+    pOVar1 = MVRandomBox_get_CurrentRandomValues(this,(MethodInfo *)0x0);
+    if (pOVar1 == (ObscuredInt__Array *)0x0) goto code_?;
+    if (1 < (uint)pOVar1->max_length) {
+      aOStack_5[0].currentCryptoKey = pOVar1->vector[1].currentCryptoKey;
+      aOStack_5[0].hiddenValue = pOVar1->vector[1].hiddenValue;
+      aOStack_5[0].fakeValue = pOVar1->vector[1].fakeValue;
+      aOStack_5[0].inited = pOVar1->vector[1].inited;
+      aOStack_5[0]._13_3_ = *(undefined3 *)&pOVar1->vector[1].field_0xd;
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).field_0x1c == 0)
+      {
+        FUN_?();
+      }
+      uVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+              ObscuredInt_InternalDecrypt(aOStack_5,(MethodInfo *)0x0);
       pOVar1 = MVRandomBox_get_CurrentRandomValues(this,(MethodInfo *)0x0);
-      if (pOVar1 != (ObscuredInt__Array *)0x0) {
-        if (2 < pOVar1->max_length) {
-          round = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-                  ObscuredInt_op_Implicit_1(pOVar1->vector[2],(MethodInfo *)0x0);
-          this_00 = (RandomGenerator *)func_?();
-          MVWorldObject.dll::MV::WorldObject::RandomGenerator::RandomGenerator__ctor
-                    (this_00,(uint32_t)method_00,step,round,(MethodInfo *)0x0);
-          (this->fields).randomGenerator = this_00;
-          func_?();
-          this_01 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::
-          Int32]::UnityAction_2_System_Int32_System_Int32___ctor
-                    (this_01,(Object *)this,
-                     MethodInfo__MVRandomBox__InputStateUpdateCallback_LogicInputState__LogicObjectManager_
-                     ,(MethodInfo *)0x0);
-          pIVar6 = LogicClientsideFactory::
-                   LogicClientsideFactory_CreateStateChangeInputSignalReceiver
-                             ((MVWorldObject *)this,0,
-                              (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
-                              (Action_2_LogicInputState_LogicObjectManager_ *)this_01,
-                              (MethodInfo *)0x0);
-          (this->fields)._InputSignalReceiver_k__BackingField = pIVar6;
-          func_?();
-          iVar2 = (this->fields)._._._.id;
-          this_02 = (WorldObjectClientRef_1_System_Object_ *)func_?();
-          WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object___ctor
-                    (this_02,iVar2,(MethodInfo *)0x0);
-          (this->fields)._outputSignalTransmitter = (OutputSignalTransmitterSpecific *)this_02;
-          func_?();
-          return;
+      if (pOVar1 == (ObscuredInt__Array *)0x0) goto code_?;
+      if (2 < (uint)pOVar1->max_length) {
+        aOStack_5[0].currentCryptoKey = pOVar1->vector[2].currentCryptoKey;
+        aOStack_5[0].hiddenValue = pOVar1->vector[2].hiddenValue;
+        aOStack_5[0].fakeValue = pOVar1->vector[2].fakeValue;
+        aOStack_5[0].inited = pOVar1->vector[2].inited;
+        aOStack_5[0]._13_3_ = *(undefined3 *)&pOVar1->vector[2].field_0xd;
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
         }
-        goto code_?;
+        if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).field_0x1c ==
+            0) {
+          FUN_?();
+        }
+        uVar8 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+                ObscuredInt_InternalDecrypt(aOStack_5,(MethodInfo *)0x0);
+        pRVar9 = (RandomGenerator *)FUN_?(TypeInfo__MV__WorldObject__RandomGenerator);
+        bVar10 = iRam_? != 0;
+        (pRVar9->fields).step = uVar7;
+        (pRVar9->fields).seed = uVar6;
+        (pRVar9->fields).round = uVar8;
+        (this->fields).randomGenerator = pRVar9;
+        if (bVar10) {
+          uVar11 = (uint)((ulonglong)&(this->fields).randomGenerator >> 0xc);
+          uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
+          do {
+            uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
+            puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
+            LOCK();
+            bVar10 = uVar13 == *puVar14;
+            if (bVar10) {
+              *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar10);
+        }
+        this_00 = (Action_2_Int32Enum_Object_ *)
+                  FUN_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
+        mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
+                  (this_00,(Object *)this,
+                   MethodInfo__MVRandomBox__InputStateUpdateCallback_LogicInputState__LogicObjectManager_
+                   ,(MethodInfo *)0x0);
+        pIVar15 = LogicClientsideFactory::
+                  LogicClientsideFactory_CreateStateChangeInputSignalReceiver
+                            ((MVWorldObject *)this,0,
+                             (Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
+                             (Action_2_LogicInputState_LogicObjectManager_ *)this_00,
+                             (MethodInfo *)0x0);
+        bVar10 = iRam_? != 0;
+        (this->fields)._InputSignalReceiver_k__BackingField = pIVar15;
+        if (bVar10) {
+          uVar11 = (uint)((ulonglong)&(this->fields)._InputSignalReceiver_k__BackingField >> 0xc);
+          uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
+          do {
+            uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
+            puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
+            LOCK();
+            bVar10 = uVar13 == *puVar14;
+            if (bVar10) {
+              *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar10);
+        }
+        iVar16 = (this->fields)._._._.id;
+        pOVar17 = (OutputSignalTransmitterSpecific *)
+                  FUN_?(TypeInfo__OutputSignalTransmitterSpecific);
+        bVar10 = iRam_? != 0;
+        (pOVar17->fields).woId = iVar16;
+        (this->fields)._outputSignalTransmitter = pOVar17;
+        if (bVar10) {
+          uVar11 = (uint)((ulonglong)&(this->fields)._outputSignalTransmitter >> 0xc);
+          uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
+          do {
+            uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
+            puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
+            LOCK();
+            bVar10 = uVar13 == *puVar14;
+            if (bVar10) {
+              *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar10);
+        }
+        return;
       }
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -94,77 +185,226 @@ void Assembly-CSharp.dll::MVRandomBox::MVRandomBox_InputStateUpdateCallback
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__get_Count__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (logicInputState == LogicInputState__Enum_FromColdToHot) {
     pLVar1 = (this->fields)._._._.outputLinkRefs;
-    if (pLVar1 != (List_1_MV_WorldObject_Link_ *)0x0) {
-      if ((pLVar1->fields)._size == 0) {
-        MVRandomBox_set_CurrentValue(this,0,(MethodInfo *)0x0);
-      }
-      else {
-        this_00 = (this->fields).randomGenerator;
-        if (this_00 == (RandomGenerator *)0x0) goto code_?;
-        iVar2 = MVWorldObject.dll::MV::WorldObject::RandomGenerator::RandomGenerator_Range
-                          (this_00,0,(pLVar1->fields)._size,(MethodInfo *)0x0);
-        MVRandomBox_set_CurrentValue(this,iVar2,(MethodInfo *)0x0);
-      }
-code_?:
-      pOVar3 = (this->fields)._outputSignalTransmitter;
+    if (pLVar1 == (List_1_MV_WorldObject_Link_ *)0x0) goto code_?;
+    if ((pLVar1->fields)._size == 0) {
+      value = 0;
+    }
+    else {
+      this_00 = (this->fields).randomGenerator;
+      if (this_00 == (RandomGenerator *)0x0) goto code_?;
+      value = MVWorldObject.dll::MV::WorldObject::RandomGenerator::RandomGenerator_Range
+                        (this_00,0,(pLVar1->fields)._size,(MethodInfo *)0x0);
+    }
+    MVRandomBox_set_CurrentValue(this,value,(MethodInfo *)0x0);
+  }
+  else if (logicInputState != LogicInputState__Enum_Hot) {
+    pOVar2 = (this->fields)._outputSignalTransmitter;
+    if (pOVar2 == (OutputSignalTransmitterSpecific *)0x0) goto code_?;
+    uVar3 = 0xffffffff;
+    goto Assembly_CSharp_dll_OutputSignalTransmitterSpecific_OutputSignalTransmitterSpecific_Send;
+  }
+  pOVar2 = (this->fields)._outputSignalTransmitter;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__Extensions);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_currentValue);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  hashtable = (Dictionary_2_System_Object_System_Object_ *)
+              (*(this->klass->vtable).get_RunTimeData.methodPtr)
+                        (this,(this->klass->vtable).get_RunTimeData.method);
+  if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pOVar4 = Extensions::Extensions_GetObscuredType
+                     (hashtable,StringLiteral_currentValue,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (pOVar4 != (Object *)0x0) {
+    if ((pOVar4->klass->_0).element_class !=
+        (TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_0).element_class) {
+      FUN_?(pOVar4,TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    uVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+            ObscuredInt_InternalDecrypt((ObscuredInt *)&stack0xffffffffffffffe8,(MethodInfo *)0x0);
+    if (pOVar2 != (OutputSignalTransmitterSpecific *)0x0) {
+Assembly_CSharp_dll_OutputSignalTransmitterSpecific_OutputSignalTransmitterSpecific_Send:
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__Extensions);
-        func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
-        func_?(&StringLiteral_currentValue);
+        FUN_?(&TypeInfo__IInputSignalReceiver);
+        LOCK();
+        UNLOCK();
+        FUN_?(&TypeInfo__ILogicWorldObject);
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__get_Count__
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?();
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      hashtable = (Dictionary_2_System_Object_System_Object_ *)
-                  (*(code *)(this->klass->vtable).get_RunTimeData.method)
-                            (this,(this->klass->vtable).set_RunTimeData.methodPtr);
-      if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__Extensions);
-      }
-      this = (MVRandomBox *)
-             Extensions::Extensions_GetObscuredType
-                       (hashtable,StringLiteral_currentValue,(MethodInfo *)0x0);
-      if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).
-          cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
-      }
-      if (this != (MVRandomBox *)0x0) {
-        pOVar4 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt;
-        if ((this->klass->_0).element_class !=
-            (TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_0).element_class)
-        goto code_?;
-        pOVar5 = (ObscuredInt *)func_?(this);
-        iVar2 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-                ObscuredInt_op_Implicit_1(*pOVar5,(MethodInfo *)0x0);
-        if (pOVar3 != (OutputSignalTransmitterSpecific *)0x0) {
-          OutputSignalTransmitterSpecific::OutputSignalTransmitterSpecific_Send
-                    (pOVar3,iVar2,(MethodInfo *)0x0);
-          return;
+      pMVar6 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      if (pMVar6 != (MVWorldObjectClientManager *)0x0) {
+        pMVar7 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
+                            (pMVar6,(pOVar2->fields).woId,(MethodInfo *)0x0);
+        uVar8 = 0;
+        if (pMVar7 != (MVWorldObjectClient *)0x0) {
+          lVar9 = 0x20;
+          while( true ) {
+            pMVar6 = (MVWorldObjectClientManager *)0x0;
+            pLVar1 = (pMVar7->fields)._.outputLinkRefs;
+            if (pLVar1 == (List_1_MV_WorldObject_Link_ *)0x0) break;
+            if ((pLVar1->fields)._size <= (int)uVar8) {
+              return;
+            }
+            bVar10 = uVar8 == uVar3;
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__MVGameControllerBase);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pMVar11 = TypeInfo__MVGameControllerBase->static_fields->instance;
+            if ((pMVar11 == (MVGameControllerBase *)0x0) ||
+               (pMVar12 = (pMVar11->fields).game, pMVar12 == (MVNetworkGame *)0x0)) break;
+            if ((pMVar12->fields).worldNetwork != (WorldNetwork *)0x0) {
+              pMVar6 = (MVWorldObjectClientManager *)
+                        (((pMVar12->fields).worldNetwork)->fields)._.worldObjectClientManager;
+            }
+            pLVar1 = (pMVar7->fields)._.outputLinkRefs;
+            if (pLVar1 == (List_1_MV_WorldObject_Link_ *)0x0) break;
+            if ((uint)(pLVar1->fields)._size <= uVar8) {
+code_?:
+              mscorlib.dll::System::ThrowHelper::
+              ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+              pcVar5 = (code *)swi(3);
+              (*pcVar5)();
+              return;
+            }
+            pLVar13 = (pLVar1->fields)._items;
+            if (pLVar13 == (Link__Array *)0x0) break;
+            if ((uint)pLVar13->max_length <= uVar8) {
+code_?:
+              FUN_?();
+              pcVar5 = (code *)swi(3);
+              (*pcVar5)();
+              return;
+            }
+            lVar14 = *(longlong *)((longlong)pLVar13->vector + lVar9 + -0x20);
+            if (((lVar14 == 0) || (pMVar6 == (MVWorldObjectClientManager *)0x0)) ||
+               (pMVar15 = MVWorldObjectClientManager::
+                          MVWorldObjectClientManager_GetWorldObjectClient
+                                    (pMVar6,*(int32_t *)(lVar14 + 0x18),(MethodInfo *)0x0),
+               pIVar16 = TypeInfo__ILogicWorldObject, pMVar15 == (MVWorldObjectClient *)0x0)) break;
+            lVar14 = FUN_?(pMVar15,TypeInfo__ILogicWorldObject);
+            pIVar17 = TypeInfo__ILogicWorldObject;
+            if (lVar14 == 0) {
+              FUN_?(pMVar15,pIVar16);
+              pcVar5 = (code *)swi(3);
+              (*pcVar5)();
+              return;
+            }
+            plVar18 = (longlong *)FUN_?(pMVar15,TypeInfo__ILogicWorldObject);
+            if (plVar18 == (longlong *)0x0) {
+              FUN_?(pMVar15,pIVar17);
+              pcVar5 = (code *)swi(3);
+              (*pcVar5)();
+              return;
+            }
+            lVar14 = *plVar18;
+            uVar19 = 0;
+            if (*(ushort *)(lVar14 + 0x12e) != 0) {
+              uVar20 = uVar19;
+              do {
+                if (*(ILogicWorldObject__Class **)
+                     (*(longlong *)(lVar14 + 0xb0) + (ulonglong)uVar20 * 0x10) ==
+                    TypeInfo__ILogicWorldObject) {
+                  puVar21 = (undefined8 *)
+                            ((longlong)
+                             *(int *)(*(longlong *)(lVar14 + 0xb0) + 8 + (ulonglong)uVar20 * 0x10) *
+                             0x10 + 0x138 + lVar14);
+                  goto code_?;
+                }
+                uVar20 = uVar20 + 1;
+              } while (uVar20 < *(ushort *)(lVar14 + 0x12e));
+            }
+            puVar21 = (undefined8 *)FUN_?(plVar18,TypeInfo__ILogicWorldObject,0);
+code_?:
+            plVar18 = (longlong *)(*(code *)*puVar21)(plVar18,puVar21[1]);
+            if (plVar18 == (longlong *)0x0) break;
+            lVar14 = *plVar18;
+            if (*(ushort *)(lVar14 + 0x12e) != 0) {
+              do {
+                if (*(IInputSignalReceiver__Class **)
+                     (*(longlong *)(lVar14 + 0xb0) + (ulonglong)uVar19 * 0x10) ==
+                    TypeInfo__IInputSignalReceiver) {
+                  puVar21 = (undefined8 *)
+                            ((longlong)
+                             *(int *)(*(longlong *)(lVar14 + 0xb0) + 8 + (ulonglong)uVar19 * 0x10) *
+                             0x10 + 0x138 + lVar14);
+                  goto code_?;
+                }
+                uVar19 = uVar19 + 1;
+              } while (uVar19 < *(ushort *)(lVar14 + 0x12e));
+            }
+            puVar21 = (undefined8 *)FUN_?(plVar18,TypeInfo__IInputSignalReceiver,0);
+code_?:
+            (*(code *)*puVar21)(plVar18,bVar10);
+            pLVar1 = (pMVar7->fields)._.outputLinkRefs;
+            if (pLVar1 == (List_1_MV_WorldObject_Link_ *)0x0) break;
+            if ((uint)(pLVar1->fields)._size <= uVar8) goto code_?;
+            pLVar13 = (pLVar1->fields)._items;
+            if (pLVar13 == (Link__Array *)0x0) break;
+            if ((uint)pLVar13->max_length <= uVar8) goto code_?;
+            lVar14 = *(longlong *)((longlong)pLVar13->vector + lVar9 + -0x20);
+            if (lVar14 == 0) break;
+            uVar8 = uVar8 + 1;
+            *(bool *)(lVar14 + 0x1c) = bVar10;
+            lVar9 = lVar9 + 8;
+          }
         }
       }
-    }
-  }
-  else {
-    if (logicInputState == LogicInputState__Enum_Hot) goto code_?;
-    pOVar3 = (this->fields)._outputSignalTransmitter;
-    if (pOVar3 != (OutputSignalTransmitterSpecific *)0x0) {
-      OutputSignalTransmitterSpecific::OutputSignalTransmitterSpecific_Send
-                (pOVar3,-1,(MethodInfo *)0x0);
+      FUN_?();
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
       return;
     }
   }
 code_?:
-  func_?();
-  pOVar4 = extraout_ECX;
-code_?:
-  func_?(this,pOVar4);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -174,7 +414,59 @@ code_?:
 void Assembly-CSharp.dll::MVRandomBox::MVRandomBox_Reset(MVRandomBox *this,MethodInfo *method)
 
 {
-  MVRandomBox_set_CurrentValue(this,0,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_
+                  ,0,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Extensions);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_currentValue);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  uVar1 = (*(this->klass->vtable).get_RunTimeData.methodPtr)(this);
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  uStack_2 = 0;
+  uStack_3 = 0;
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  iVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+          ObscuredInt_Encrypt(0,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+  }
+  uStack_3._0_5_ = CONCAT14(1,(undefined4)uStack_3);
+  uStack_2 = CONCAT44(iVar4,TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->
+                             static_fields->cryptoKey);
+  Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ObscuredCheatingDetector::
+  ObscuredCheatingDetector_get_IsRunning((MethodInfo *)0x0);
+  uStack_3 = uStack_3 & 0xffffffff00000000;
+  if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  FUN_?(uVar1,StringLiteral_currentValue,&uStack_2);
   return;
 }
 
@@ -186,40 +478,62 @@ void Assembly-CSharp.dll::MVRandomBox::MVRandomBox_SetRandomIndex
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_
-                   );
-    func_?(&TypeInfo__Extensions);
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
-    func_?(&StringLiteral_currentValue);
+    FUN_?(&
+                  void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_
+                  ,CONCAT44(in_register_00000014,randomIndex),0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Extensions);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_currentValue);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  hashtable = (Dictionary_2_System_Object_System_Object_ *)
-              (*(code *)(this->klass->vtable).get_RunTimeData.method)
-                        (this,(this->klass->vtable).set_RunTimeData.methodPtr);
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
-      0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+  uVar1 = (*(this->klass->vtable).get_RunTimeData.methodPtr)(this);
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pOVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-           ObscuredInt_op_Implicit((ObscuredInt *)&stack0xffffffec,randomIndex,(MethodInfo *)0x0);
-  puVar2 = (undefined *)pOVar1->currentCryptoKey;
-  pEVar3 = (Extensions__Class *)pOVar1->hiddenValue;
-  iVar4 = pOVar1->fakeValue;
-  if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-    puVar2 = &UNK_?;
-    pEVar3 = TypeInfo__Extensions;
-    func_?();
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  value.hiddenValue = (int32_t)pEVar3;
-  value.currentCryptoKey = (int32_t)puVar2;
-  value.fakeValue = iVar4;
-  value.inited = pOVar1->inited;
-  value._13_3_ = *(undefined3 *)&pOVar1->field_0xd;
-  Extensions::Extensions_SetObscuredType_2
-            (hashtable,StringLiteral_currentValue,value,
-             void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_
-            );
+  uStack_2 = 0;
+  uStack_3 = 0;
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  iVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+          ObscuredInt_Encrypt(randomIndex,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+  }
+  uStack_3._0_5_ = CONCAT14(1,(int32_t)uStack_3);
+  uStack_2 = CONCAT44(iVar4,TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->
+                             static_fields->cryptoKey);
+  bVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ObscuredCheatingDetector::
+          ObscuredCheatingDetector_get_IsRunning((MethodInfo *)0x0);
+  iVar4 = 0;
+  if (bVar5 != 0) {
+    iVar4 = randomIndex;
+  }
+  uStack_3._0_4_ = iVar4;
+  if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  FUN_?(uVar1,StringLiteral_currentValue,&uStack_2);
   return;
 }
 
@@ -233,7 +547,9 @@ void Assembly-CSharp.dll::MVRandomBox::MVRandomBox__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PrefabPool);
+    FUN_?(&TypeInfo__PrefabPool);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
@@ -241,15 +557,13 @@ void Assembly-CSharp.dll::MVRandomBox::MVRandomBox__ctor
     MVLogicObject::MVLogicObject__ctor
               ((MVLogicObject *)this,data,(pPVar1->fields).mvRandomBoxPrefab,worldObjects,
                (MethodInfo *)0x0);
-    uVar2 = *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4);
-    piVar3 = &(this->fields)._._.interactionFlags;
-    *(uint *)piVar3 = (uint)*piVar3 | 0x10000;
-    *(undefined4 *)((int)&(this->fields)._._.interactionFlags + 4) = uVar2;
+    piVar2 = &(this->fields)._._.interactionFlags;
+    *piVar2 = *piVar2 | 0x10000;
     return;
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -262,31 +576,37 @@ Assembly-CSharp.dll::MVRandomBox::MVRandomBox_get_CurrentRandomValues
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Extensions);
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
-    func_?(&StringLiteral_currentRandomValues);
+    FUN_?(&TypeInfo__Extensions);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_currentRandomValues);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   hashtable = (Dictionary_2_System_Object_System_Object_ *)
-              (*(code *)(this->klass->vtable).get_RunTimeData.method)
-                        (this,(this->klass->vtable).set_RunTimeData.methodPtr);
-  if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Extensions);
+              (*(this->klass->vtable).get_RunTimeData.methodPtr)
+                        (this,(this->klass->vtable).get_RunTimeData.method);
+  if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+    FUN_?();
   }
   pOVar1 = Extensions::Extensions_GetObscuredType
                      (hashtable,StringLiteral_currentRandomValues,(MethodInfo *)0x0);
   pOVar2 = TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt;
-  if (pOVar1 == (Object *)0x0) {
-    return (ObscuredInt__Array *)0x0;
+  pOVar3 = (ObscuredInt__Array *)0x0;
+  if (pOVar1 != (Object *)0x0) {
+    pOVar3 = (ObscuredInt__Array *)
+             FUN_?(pOVar1,TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    if (pOVar3 == (ObscuredInt__Array *)0x0) {
+      FUN_?(pOVar1,pOVar2);
+      pcVar4 = (code *)swi(3);
+      pOVar3 = (ObscuredInt__Array *)(*pcVar4)();
+      return pOVar3;
+    }
   }
-  pOVar3 = (ObscuredInt__Array *)
-           func_?(pOVar1,TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
-  if (pOVar3 != (ObscuredInt__Array *)0x0) {
-    return pOVar3;
-  }
-  func_?(pOVar1,pOVar2);
-  pcVar4 = (code *)swi(3);
-  pOVar3 = (ObscuredInt__Array *)(*pcVar4)();
   return pOVar3;
 }
 
@@ -298,34 +618,55 @@ int32_t Assembly-CSharp.dll::MVRandomBox::MVRandomBox_get_CurrentValue
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Extensions);
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
-    func_?(&StringLiteral_currentValue);
+    FUN_?(&TypeInfo__Extensions);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_currentValue);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   hashtable = (Dictionary_2_System_Object_System_Object_ *)
-              (*(code *)(this->klass->vtable).get_RunTimeData.method)
-                        (this,(this->klass->vtable).set_RunTimeData.methodPtr);
-  if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Extensions);
+              (*(this->klass->vtable).get_RunTimeData.methodPtr)
+                        (this,(this->klass->vtable).get_RunTimeData.method);
+  if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+    FUN_?();
   }
   pOVar1 = Extensions::Extensions_GetObscuredType
                      (hashtable,StringLiteral_currentValue,(MethodInfo *)0x0);
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
-      0) {
-    func_?();
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  if (pOVar1 == (Object *)0x0) {
-    func_?();
-  }
-  else if ((pOVar1->klass->_0).element_class ==
-           (TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_0).element_class) {
-    pOVar2 = (ObscuredInt *)func_?();
-    iVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-            ObscuredInt_op_Implicit_1(*pOVar2,(MethodInfo *)0x0);
+  if (pOVar1 != (Object *)0x0) {
+    if ((pOVar1->klass->_0).element_class ==
+        (TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_0).element_class) {
+      OStack_2.currentCryptoKey = *(int32_t *)&pOVar1[1].klass;
+      OStack_2.hiddenValue = *(int32_t *)((longlong)&pOVar1[1].klass + 4);
+      OStack_2.fakeValue = *(int32_t *)&pOVar1[1].monitor;
+      OStack_2._12_4_ = *(undefined4 *)((longlong)&pOVar1[1].monitor + 4);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).field_0x1c == 0)
+      {
+        FUN_?();
+      }
+      iVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+              ObscuredInt_InternalDecrypt(&OStack_2,(MethodInfo *)0x0);
+      return iVar3;
+    }
+    FUN_?(pOVar1,TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    pcVar4 = (code *)swi(3);
+    iVar3 = (*pcVar4)();
     return iVar3;
   }
-  func_?(pOVar1);
+  FUN_?();
   pcVar4 = (code *)swi(3);
   iVar3 = (*pcVar4)();
   return iVar3;
@@ -350,40 +691,62 @@ void Assembly-CSharp.dll::MVRandomBox::MVRandomBox_set_CurrentValue
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_
-                   );
-    func_?(&TypeInfo__Extensions);
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
-    func_?(&StringLiteral_currentValue);
+    FUN_?(&
+                  void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Extensions);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_currentValue);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  hashtable = (Dictionary_2_System_Object_System_Object_ *)
-              (*(code *)(this->klass->vtable).get_RunTimeData.method)
-                        (this,(this->klass->vtable).set_RunTimeData.methodPtr);
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).cctor_finished_or_no_cctor ==
-      0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+  uVar1 = (*(this->klass->vtable).get_RunTimeData.methodPtr)(this);
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pOVar1 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
-           ObscuredInt_op_Implicit((ObscuredInt *)&stack0xffffffec,value,(MethodInfo *)0x0);
-  puVar2 = (undefined *)pOVar1->currentCryptoKey;
-  pEVar3 = (Extensions__Class *)pOVar1->hiddenValue;
-  iVar4 = pOVar1->fakeValue;
-  if ((TypeInfo__Extensions->_1).cctor_finished_or_no_cctor == 0) {
-    puVar2 = &UNK_?;
-    pEVar3 = TypeInfo__Extensions;
-    func_?();
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  value_00.hiddenValue = (int32_t)pEVar3;
-  value_00.currentCryptoKey = (int32_t)puVar2;
-  value_00.fakeValue = iVar4;
-  value_00.inited = pOVar1->inited;
-  value_00._13_3_ = *(undefined3 *)&pOVar1->field_0xd;
-  Extensions::Extensions_SetObscuredType_2
-            (hashtable,StringLiteral_currentValue,value_00,
-             void_MethodInfo__Extensions__SetObscuredType<CodeStage::AntiCheat::ObscuredTypes::ObscuredInt>_System__Collections__Generic__Dictionary<System::Object,_System::Object>__System__String__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt_
-            );
+  uStack_2 = 0;
+  uStack_3 = 0;
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  iVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredInt::
+          ObscuredInt_Encrypt(value,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt);
+  }
+  uStack_3._0_5_ = CONCAT14(1,(int32_t)uStack_3);
+  uStack_2 = CONCAT44(iVar4,TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredInt->
+                             static_fields->cryptoKey);
+  bVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ObscuredCheatingDetector::
+          ObscuredCheatingDetector_get_IsRunning((MethodInfo *)0x0);
+  iVar4 = 0;
+  if (bVar5 != 0) {
+    iVar4 = value;
+  }
+  uStack_3._0_4_ = iVar4;
+  if (*(int *)&(TypeInfo__Extensions->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  FUN_?(uVar1,StringLiteral_currentValue,&uStack_2);
   return;
 }
 

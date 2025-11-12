@@ -6,68 +6,120 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_Fire
 
 {
   if (cRam_? == '\0') {
-    func_?(&MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__);
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    FUN_?(&MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  cVar1 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)
-                    (this,(this->klass->vtable).CanFire.methodPtr);
+  cVar1 = (*(this->klass->vtable).get_IsAmmoDepleted.methodPtr)(this);
   if (cVar1 == '\0') {
-    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    fVar3 = (this->fields).lastFireTime;
-    iVar4 = (this->fields).fireInterval.currentCryptoKey;
-    AVar5 = (this->fields).fireInterval.hiddenValue;
-    pBVar6 = (this->fields).fireInterval.hiddenValueOld;
-    fVar7 = (this->fields).fireInterval.fakeValue;
-    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
-        cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
     }
-    value.hiddenValue = AVar5;
-    value.currentCryptoKey = iVar4;
-    value.hiddenValueOld = pBVar6;
-    value.fakeValue = fVar7;
-    value.inited = (this->fields).fireInterval.inited;
-    value._17_3_ = *(undefined3 *)&(this->fields).fireInterval.field_0x11;
+    pcRam_? = pcVar2;
+    fVar4 = (float)(*pcRam_?)();
+    fVar5 = (this->fields).lastFireTime;
+    aOStack_6[0].currentCryptoKey = (this->fields).fireInterval.currentCryptoKey;
+    aOStack_6[0].hiddenValue = (this->fields).fireInterval.hiddenValue;
+    aOStack_6[0].hiddenValueOld = (this->fields).fireInterval.hiddenValueOld;
+    aOStack_6[0].fakeValue = (this->fields).fireInterval.fakeValue;
+    aOStack_6[0].inited = (this->fields).fireInterval.inited;
+    aOStack_6[0]._21_3_ = *(undefined3 *)&(this->fields).fireInterval.field_0x15;
+    if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0)
+    {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0)
+    {
+      FUN_?();
+    }
     fVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-            ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
-    if (fVar7 < fVar2 - fVar3) {
-      fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
+            ObscuredFloat_InternalDecrypt(aOStack_6,(MethodInfo *)0x0);
+    if (fVar7 < fVar4 - fVar5) {
+      pcVar2 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+        uVar3 = func_?(&UNK_?);
+        FUN_?(uVar3,0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcRam_? = pcVar2;
+      fVar5 = (float)(*pcRam_?)();
       pMVar8 = (this->fields)._.owner;
-      (this->fields).lastFireTime = fVar3;
+      (this->fields).lastFireTime = fVar5;
       if (pMVar8 == (MVPickupOwner *)0x0) goto code_?;
-      (*(code *)(this->klass->vtable).OnFire.method)
-                (this,(pMVar8->fields)._IsLocal_k__BackingField,
-                 (this->klass->vtable).OnDestroy.methodPtr);
+      (*(this->klass->vtable).OnFire.methodPtr)
+                (this,(ulonglong)(pMVar8->fields)._IsLocal_k__BackingField,
+                 (this->klass->vtable).OnFire.method);
       (this->fields)._.firedThisFrame = 1;
     }
   }
-  cVar1 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)
-                    (this,(this->klass->vtable).CanFire.methodPtr);
+  cVar1 = (*(this->klass->vtable).get_IsAmmoDepleted.methodPtr)
+                    (this,(this->klass->vtable).get_IsAmmoDepleted.method);
   if (cVar1 != '\0') {
     pMVar8 = (this->fields)._.owner;
     if (((pMVar8 == (MVPickupOwner *)0x0) ||
         (pMVar9 = (pMVar8->fields)._.worldObjectParent, pMVar9 == (MVWorldObjectClient *)0x0)) ||
        (this_00 = (pMVar9->fields).gameObject, this_00 == (GameObject *)0x0)) {
 code_?:
-      func_?();
-      pcVar10 = (code *)swi(3);
-      (*pcVar10)();
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
-    x = (Object_1 *)
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                  (this_00,
-                   MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__);
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+    pOVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                       (this_00,
+                        MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__
+                       );
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar11 != 0) {
-      if (x == (Object_1 *)0x0) goto code_?;
-      (**(code **)&x->klass[1]._0.byval_arg.attrs)(x,x->klass[1]._0.this_arg.data.dummy);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (pOVar10 != (Object *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (pOVar10[1].klass != (Object__Class *)0x0) {
+        pOVar11 = pOVar10->klass;
+        uVar3._0_2_ = pOVar11[1]._0.byval_arg.attrs;
+        uVar3._2_1_ = pOVar11[1]._0.byval_arg.type;
+        uVar3._3_5_ = *(undefined5 *)&pOVar11[1]._0.byval_arg.field_0xb;
+        (*(code *)pOVar11[1]._0.byval_arg.data)(pOVar10,uVar3);
+      }
     }
     (this->fields).isFiring = 0;
   }
@@ -82,81 +134,103 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_OnDestroy
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UpdateController);
+    FUN_?(&TypeInfo__UpdateController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    in_ECX = extraout_ECX;
   }
-  if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UpdateController);
-    in_ECX = extraout_ECX_00;
+  if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+    FUN_?();
   }
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__RemoveAll_System__Predicate<PriorityDataUpdate>_
-                    ,in_ECX,unaff_EBP);
-    func_?(&TypeInfo__System__Predicate<PriorityDataUpdate>);
-    func_?(&
-                    MethodInfo__UpdateController____c__DisplayClass6_0___RemoveUpdateObject_b__0_PriorityDataUpdate_
-                   );
-    func_?(&TypeInfo__UpdateController____c__DisplayClass6_0);
-    func_?(&TypeInfo__UpdateController);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__RemoveAll_System__Predicate<PriorityDataUpdate>_
+                  ,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Predicate<PriorityDataUpdate>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__UpdateController____c__DisplayClass6_0___RemoveUpdateObject_b__0_PriorityDataUpdate_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UpdateController____c__DisplayClass6_0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UpdateController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__UpdateController____c__DisplayClass6_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value != (Object *)0x0) {
-    value[1].klass = (Object__Class *)this;
-    func_?(value + 1,this);
-    iVar1 = 0x10;
-    uVar2 = 0;
+  lVar1 = FUN_?(TypeInfo__UpdateController____c__DisplayClass6_0);
+  if (lVar1 != 0) {
+    bVar2 = iRam_? != 0;
+    *(PickupItemWithDelay **)(lVar1 + 0x10) = this;
+    if (bVar2) {
+      uVar3 = (uint)(lVar1 + 0x10U >> 0xc);
+      puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar5 = *puVar4;
+        LOCK();
+        uVar6 = *puVar4;
+        if (uVar5 == uVar6) {
+          *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar5 != uVar6);
+    }
+    uVar3 = 0;
+    lVar7 = 0x20;
     while( true ) {
-      if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UpdateController);
+      if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__UpdateController);
       }
-      pLVar3 = TypeInfo__UpdateController->static_fields->updateBuckets;
-      if (pLVar3 == (List_1_PriorityDataUpdate___Array *)0x0) goto code_?;
-      if ((int)pLVar3->max_length <= (int)uVar2) {
+      pLVar8 = TypeInfo__UpdateController->static_fields->updateBuckets;
+      if (pLVar8 == (List_1_PriorityDataUpdate___Array *)0x0) break;
+      if ((int)pLVar8->max_length <= (int)uVar3) {
         return;
       }
-      if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UpdateController);
+      if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__UpdateController);
       }
-      pLVar3 = TypeInfo__UpdateController->static_fields->updateBuckets;
-      if (pLVar3 == (List_1_PriorityDataUpdate___Array *)0x0) goto code_?;
-      if (pLVar3->max_length <= uVar2) break;
-      this_01 = *(List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ **)
-                 ((int)pLVar3->vector + iVar1 + -0x10);
-      this_00 = (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)value[1].monitor;
-      if (this_00 == (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
-        this_00 = (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-                  func_?(TypeInfo__System__Predicate<PriorityDataUpdate>);
-        mscorlib.dll::System::Predicate`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::
-        Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry___ctor
-                  (this_00,value,
-                   MethodInfo__UpdateController____c__DisplayClass6_0___RemoveUpdateObject_b__0_PriorityDataUpdate_
-                   ,(MethodInfo *)0x0);
-        value[1].monitor = (MonitorData *)this_00;
-        func_?(&value[1].monitor,this_00);
+      pLVar8 = TypeInfo__UpdateController->static_fields->updateBuckets;
+      if (pLVar8 == (List_1_PriorityDataUpdate___Array *)0x0) break;
+      if ((uint)pLVar8->max_length <= uVar3) {
+        FUN_?();
+        pcVar9 = (code *)swi(3);
+        (*pcVar9)();
+        return;
       }
-      if (this_01 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0)
-      goto code_?;
-      mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-      VisualTreeAsset+UsingEntry]::
-      List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__RemoveAll
-                (this_01,this_00,
+      match = *(Predicate_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ **)
+               (lVar1 + 0x18);
+      this_00 = *(List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ **)
+                 ((longlong)pLVar8->vector + lVar7 + -0x20);
+      if (match == (Predicate_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+      {
+        match = (Predicate_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
+                FUN_?(TypeInfo__System__Predicate<PriorityDataUpdate>);
+        FUN_?(match,lVar1);
+        *(Predicate_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ **)(lVar1 + 0x18)
+             = match;
+        func_?(lVar1 + 0x18);
+      }
+      if (this_00 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
+      break;
+      mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
+      XmlSchemaObjectTable+XmlSchemaObjectEntry]::
+      List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__RemoveAll
+                (this_00,match,
                  MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__RemoveAll_System__Predicate<PriorityDataUpdate>_
                 );
-      uVar2 = uVar2 + 1;
-      iVar1 = iVar1 + 4;
+      uVar3 = uVar3 + 1;
+      lVar7 = lVar7 + 8;
     }
-    func_?();
   }
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -168,16 +242,67 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_OnEquip
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UpdateController);
+    FUN_?(&TypeInfo__UpdateController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   PickupItem::PickupItem_OnEquip((PickupItem *)this,(MethodInfo *)0x0);
-  if ((TypeInfo__UpdateController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  UpdateController::UpdateController_AddUpdateObject
-            ((IUpdatecontrollerSubscriberUpdate *)this,UpdatePriority__Enum_UPDATEBUCKET_STANDARD,1,
-             (MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__Add_PriorityDataUpdate_
+                  ,2,1,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UpdateController);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)&uStack_2 >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar1 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
+  uStack_6 = 2;
+  uStack_7 = 1;
+  uStack_2 = this;
+  if (*(int *)&(TypeInfo__UpdateController->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__UpdateController);
+  }
+  pLVar8 = TypeInfo__UpdateController->static_fields->updateBuckets;
+  if (pLVar8 != (List_1_PriorityDataUpdate___Array *)0x0) {
+    if ((uint)pLVar8->max_length < 3) {
+      FUN_?();
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
+      return;
+    }
+    if (pLVar8->vector[2] != (List_1_PriorityDataUpdate_ *)0x0) {
+      uStack_10 = (undefined4)uStack_2;
+      uStack_11 = uStack_2._4_4_;
+      uStack_12 = uStack_6;
+      uStack_13 = uStack_7;
+      FUN_?(pLVar8->vector[2],&uStack_10,
+                    MethodInfo__System__Collections__Generic__List<PriorityDataUpdate>__Add_PriorityDataUpdate_
+                   );
+      return;
+    }
+  }
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -189,12 +314,18 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_TriggerBegin
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&StringLiteral_Got_TriggerStart__but_were_firin);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Got_TriggerStart__but_were_firin);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField != 0) {
@@ -205,11 +336,39 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_TriggerBegin
     (this->fields).isFiring = 1;
     return;
   }
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Debug);
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-            ((Object *)StringLiteral_Got_TriggerStart__but_were_firin,(MethodInfo *)0x0);
+  pSVar1 = StringLiteral_Got_TriggerStart__but_were_firin;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__ILogger);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pIVar2 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+  if (pIVar2 != (ILogger_1 *)0x0) {
+    FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar2,3,pSVar1);
+    return;
+  }
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -221,18 +380,20 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_TriggerEnd
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField != 0) {
-    if ((this->fields).triggerBegin != 0) {
-      pPVar1 = this->klass;
-      (this->fields).triggerBegin = 0;
-      (this->fields).isFiring = 1;
-      (*(code *)(pPVar1->vtable).UpdateControllerUpdate_1.method)(this,pPVar1[1]._0.image);
-      (this->fields).isFiring = 0;
+    if ((this->fields).triggerBegin == 0) {
+      return;
     }
-    return;
+    pPVar1 = this->klass;
+    (this->fields).triggerBegin = 0;
+    (this->fields).isFiring = 1;
+    (*(pPVar1->vtable).UpdateControllerUpdate_1.methodPtr)
+              (this,(pPVar1->vtable).UpdateControllerUpdate_1.method);
   }
   (this->fields).isFiring = 0;
   return;
@@ -245,74 +406,126 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_UpdateControl
                (PickupItemWithDelay *this,MethodInfo *method)
 
 {
-  if ((this->fields).isFiring != 0) {
+  if ((this->fields).isFiring == 0) {
+    return;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  cVar1 = (*(this->klass->vtable).get_IsAmmoDepleted.methodPtr)(this);
+  if (cVar1 == '\0') {
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    fVar4 = (float)(*pcRam_?)();
+    fVar5 = (this->fields).lastFireTime;
+    aOStack_6[0].currentCryptoKey = (this->fields).fireInterval.currentCryptoKey;
+    aOStack_6[0].hiddenValue = (this->fields).fireInterval.hiddenValue;
+    aOStack_6[0].hiddenValueOld = (this->fields).fireInterval.hiddenValueOld;
+    aOStack_6[0].fakeValue = (this->fields).fireInterval.fakeValue;
+    aOStack_6[0].inited = (this->fields).fireInterval.inited;
+    aOStack_6[0]._21_3_ = *(undefined3 *)&(this->fields).fireInterval.field_0x15;
+    if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0)
+    {
+      FUN_?();
+    }
     if (cRam_? == '\0') {
-      func_?(&MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__)
-      ;
-      func_?(&TypeInfo__UnityEngine__Object);
-      func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+      FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    cVar1 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)
-                      (this,(this->klass->vtable).CanFire.methodPtr);
-    if (cVar1 == '\0') {
-      fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      fVar3 = (this->fields).lastFireTime;
-      iVar4 = (this->fields).fireInterval.currentCryptoKey;
-      AVar5 = (this->fields).fireInterval.hiddenValue;
-      pBVar6 = (this->fields).fireInterval.hiddenValueOld;
-      fVar7 = (this->fields).fireInterval.fakeValue;
-      if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).
-          cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
-      }
-      value.hiddenValue = AVar5;
-      value.currentCryptoKey = iVar4;
-      value.hiddenValueOld = pBVar6;
-      value.fakeValue = fVar7;
-      value.inited = (this->fields).fireInterval.inited;
-      value._17_3_ = *(undefined3 *)&(this->fields).fireInterval.field_0x11;
-      fVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-              ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
-      if (fVar7 < fVar2 - fVar3) {
-        fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-        pMVar8 = (this->fields)._.owner;
-        (this->fields).lastFireTime = fVar3;
-        if (pMVar8 == (MVPickupOwner *)0x0) goto code_?;
-        (*(code *)(this->klass->vtable).OnFire.method)
-                  (this,(pMVar8->fields)._IsLocal_k__BackingField,
-                   (this->klass->vtable).OnDestroy.methodPtr);
-        (this->fields)._.firedThisFrame = 1;
-      }
+    if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0)
+    {
+      FUN_?();
     }
-    cVar1 = (*(code *)(this->klass->vtable).get_IsAmmoDepleted.method)
-                      (this,(this->klass->vtable).CanFire.methodPtr);
-    if (cVar1 != '\0') {
-      pMVar8 = (this->fields)._.owner;
-      if (((pMVar8 == (MVPickupOwner *)0x0) ||
-          (pMVar9 = (pMVar8->fields)._.worldObjectParent, pMVar9 == (MVWorldObjectClient *)0x0)) ||
-         (this_00 = (pMVar9->fields).gameObject, this_00 == (GameObject *)0x0)) {
-code_?:
-        func_?();
-        pcVar10 = (code *)swi(3);
-        (*pcVar10)();
+    fVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+            ObscuredFloat_InternalDecrypt(aOStack_6,(MethodInfo *)0x0);
+    if (fVar7 < fVar4 - fVar5) {
+      pcVar2 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+        uVar3 = func_?(&UNK_?);
+        FUN_?(uVar3,0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
         return;
       }
-      x = (Object_1 *)
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                    (this_00,
-                     MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__);
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
-      }
-      bVar11 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar11 != 0) {
-        if (x == (Object_1 *)0x0) goto code_?;
-        (**(code **)&x->klass[1]._0.byval_arg.attrs)(x,x->klass[1]._0.this_arg.data.dummy);
-      }
-      (this->fields).isFiring = 0;
+      pcRam_? = pcVar2;
+      fVar5 = (float)(*pcRam_?)();
+      pMVar8 = (this->fields)._.owner;
+      (this->fields).lastFireTime = fVar5;
+      if (pMVar8 == (MVPickupOwner *)0x0) goto code_?;
+      (*(this->klass->vtable).OnFire.methodPtr)
+                (this,(ulonglong)(pMVar8->fields)._IsLocal_k__BackingField,
+                 (this->klass->vtable).OnFire.method);
+      (this->fields)._.firedThisFrame = 1;
     }
+  }
+  cVar1 = (*(this->klass->vtable).get_IsAmmoDepleted.methodPtr)
+                    (this,(this->klass->vtable).get_IsAmmoDepleted.method);
+  if (cVar1 != '\0') {
+    pMVar8 = (this->fields)._.owner;
+    if (((pMVar8 == (MVPickupOwner *)0x0) ||
+        (pMVar9 = (pMVar8->fields)._.worldObjectParent, pMVar9 == (MVWorldObjectClient *)0x0)) ||
+       (this_00 = (pMVar9->fields).gameObject, this_00 == (GameObject *)0x0)) {
+code_?:
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pOVar10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                       (this_00,
+                        MVEquipable_MethodInfo__UnityEngine__GameObject__GetComponent<MVEquipable>__
+                       );
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (pOVar10 != (Object *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (pOVar10[1].klass != (Object__Class *)0x0) {
+        pOVar11 = pOVar10->klass;
+        uVar3._0_2_ = pOVar11[1]._0.byval_arg.attrs;
+        uVar3._2_1_ = pOVar11[1]._0.byval_arg.type;
+        uVar3._3_5_ = *(undefined5 *)&pOVar11[1]._0.byval_arg.field_0xb;
+        (*(code *)pOVar11[1]._0.byval_arg.data)(pOVar10,uVar3);
+      }
+    }
+    (this->fields).isFiring = 0;
   }
   return;
 }
@@ -325,49 +538,394 @@ void Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  fVar1 = _UNK_?;
-  fVar2 = _UNK_?;
-  fVar3 = _UNK_?;
-  (this->fields).crossHairCannotFireLow.r = _UNK_?;
-  (this->fields).crossHairCannotFireLow.g = fVar3;
-  (this->fields).crossHairCannotFireLow.b = fVar2;
-  (this->fields).crossHairCannotFireLow.a = fVar1;
-  fVar1 = _UNK_?;
-  fVar2 = _UNK_?;
-  fVar3 = _UNK_?;
-  (this->fields).crossHairCannotFireHigh.r = _UNK_?;
-  (this->fields).crossHairCannotFireHigh.g = fVar3;
-  (this->fields).crossHairCannotFireHigh.b = fVar2;
-  (this->fields).crossHairCannotFireHigh.a = fVar1;
-  fVar1 = _UNK_?;
-  fVar2 = _UNK_?;
-  fVar3 = _UNK_?;
-  (this->fields).crossHairCanFire.r = _UNK_?;
-  (this->fields).crossHairCanFire.g = fVar3;
-  (this->fields).crossHairCanFire.b = fVar2;
-  (this->fields).crossHairCanFire.a = fVar1;
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
-      == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+  uVar1 = _UNK_?;
+  uVar2 = _UNK_?;
+  uVar3 = _UNK_?;
+  uVar4 = _UNK_?;
+  (this->fields).crossHairCannotFireLow.r = (float)_UNK_?;
+  uVar5 = _UNK_?;
+  (this->fields).crossHairCannotFireLow.g = (float)uVar4;
+  _UNK_? = (undefined4)uVar3;
+  _UNK_? = SUB84(uVar3,4);
+  uVar4 = _UNK_?;
+  (this->fields).crossHairCannotFireLow.b = (float)_UNK_?;
+  _UNK_? = uVar5;
+  uVar3 = _UNK_?;
+  (this->fields).crossHairCannotFireLow.a = (float)uVar4;
+  uVar4 = _UNK_?;
+  (this->fields).crossHairCanFire.r = (float)_UNK_?;
+  uVar5 = _UNK_?;
+  (this->fields).crossHairCanFire.g = (float)uVar4;
+  _UNK_? = (undefined4)uVar3;
+  _UNK_? = SUB84(uVar3,4);
+  uVar4 = _UNK_?;
+  (this->fields).crossHairCanFire.b = (float)_UNK_?;
+  _UNK_? = uVar5;
+  uVar3 = _UNK_?;
+  (this->fields).crossHairCanFire.a = (float)uVar4;
+  _UNK_? = (undefined4)uVar2;
+  _UNK_? = SUB84(uVar2,4);
+  uVar4 = _UNK_?;
+  (this->fields).crossHairCannotFireHigh.r = (float)_UNK_?;
+  _UNK_? = uVar3;
+  uVar3 = _UNK_?;
+  (this->fields).crossHairCannotFireHigh.g = (float)uVar4;
+  _UNK_? = (undefined4)uVar1;
+  _UNK_? = SUB84(uVar1,4);
+  uVar4 = _UNK_?;
+  (this->fields).crossHairCannotFireHigh.b = (float)_UNK_?;
+  _UNK_? = uVar3;
+  (this->fields).crossHairCannotFireHigh.a = (float)uVar4;
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pOVar4 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-           ObscuredFloat_op_Implicit(&OStack_5,1.0,(MethodInfo *)0x0);
-  AVar6 = pOVar4->hiddenValue;
-  pBVar7 = pOVar4->hiddenValueOld;
-  fVar3 = pOVar4->fakeValue;
-  bVar8 = pOVar4->inited;
-  uVar9 = *(undefined3 *)&pOVar4->field_0x11;
-  (this->fields).fireInterval.currentCryptoKey = pOVar4->currentCryptoKey;
-  (this->fields).fireInterval.hiddenValue = AVar6;
-  (this->fields).fireInterval.hiddenValueOld = pBVar7;
-  (this->fields).fireInterval.fakeValue = fVar3;
-  (this->fields).fireInterval.inited = bVar8;
-  *(undefined3 *)&(this->fields).fireInterval.field_0x11 = uVar9;
-  func_?(&(this->fields).fireInterval.hiddenValueOld,0);
-  PickupItem::PickupItem__ctor((PickupItem *)this,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  uVar3._0_4_ = 0.0;
+  uVar3._4_1_ = 0;
+  uVar3._5_3_ = 0;
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  value = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+          ObscuredFloat_InternalEncrypt(_UNK_?,(MethodInfo *)0x0);
+  Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+  ObscuredFloat__ctor((ObscuredFloat *)&stack0xffffffffffffffd8,value,(MethodInfo *)0x0);
+  bVar6 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::Detectors::ObscuredCheatingDetector
+           ::ObscuredCheatingDetector_get_IsRunning((MethodInfo *)0x0);
+  if (bVar6 != 0) {
+    uVar3._0_4_ = 1.0;
+    uVar3._4_1_ = 0;
+    uVar3._5_3_ = 0;
+  }
+  bVar7 = iRam_? != 0;
+  (this->fields).fireInterval.currentCryptoKey = 0;
+  (this->fields).fireInterval.hiddenValue.b1 = 0;
+  (this->fields).fireInterval.hiddenValue.b2 = 0;
+  (this->fields).fireInterval.hiddenValue.b3 = 0;
+  (this->fields).fireInterval.hiddenValue.b4 = 0;
+  (this->fields).fireInterval.hiddenValueOld = (Byte__Array *)0x0;
+  (this->fields).fireInterval.fakeValue = (float)uVar3;
+  (this->fields).fireInterval.inited = SUB81(uVar3,4);
+  *(int3 *)&(this->fields).fireInterval.field_0x15 = SUB83(uVar3,5);
+  if (bVar7) {
+    uVar8 = (uint)((ulonglong)&(this->fields).fireInterval.hiddenValueOld >> 0xc);
+    uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+    do {
+      uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+      puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+      LOCK();
+      bVar7 = uVar10 == *puVar11;
+      if (bVar7) {
+        *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar7);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__MeshRenderer);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar12 = (MeshRenderer__Array *)FUN_?(TypeInfo__UnityEngine__MeshRenderer,0);
+  bVar7 = iRam_? != 0;
+  (this->fields)._.meshRenderers = pMVar12;
+  if (bVar7) {
+    uVar8 = (uint)((ulonglong)&(this->fields)._.meshRenderers >> 0xc);
+    puVar11 = (ulonglong *)((ulonglong)((uVar8 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar10 = *puVar11;
+      LOCK();
+      uVar9 = *puVar11;
+      if (uVar10 == uVar9) {
+        *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar10 != uVar9);
+  }
+  bVar7 = cRam_? == '\0';
+  (this->fields)._._AbleToFire_k__BackingField = 1;
+  if (bVar7) {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pOVar13 = TypeInfo__UnityEngine__Object;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c != 0) {
+    return;
+  }
+  ppMVar14 = (MethodInfo **)0x0;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c != 0) {
+    return;
+  }
+  lVar15 = _Baselib_Thread_GetCurrentThreadId_il2cpp_baselib__YA_JXZ();
+  ppMVar16 = ppMVar14;
+  if (lVar15 == lRam_?) {
+    iRam_? = iRam_? + 1;
+    lVar15 = lRam_?;
+  }
+  else {
+    do {
+      uVar8 = (uint)ppMVar16;
+      LOCK();
+      bVar7 = uVar8 != uRam_?;
+      uVar17 = uVar8;
+      uVar18 = uVar8 + 1;
+      if (bVar7) {
+        uVar17 = uRam_?;
+        uVar18 = uRam_?;
+      }
+      uRam_? = uVar18;
+      UNLOCK();
+    } while ((bVar7) && (ppMVar16 = (MethodInfo **)(ulonglong)uVar17, uVar8 = uVar17, uVar17 != 2)
+            );
+    while (uVar8 != 0) {
+      _Baselib_SystemFutex_Wait_il2cpp_baselib__YAXPEAHHI_Z(0xADDR,2,0xffffffff);
+      uVar8 = uRam_?;
+      LOCK();
+      uRam_? = 2;
+      UNLOCK();
+    }
+  }
+  lRam_? = lVar15;
+  puVar19 = &(pOVar13->_1).field_0x1c;
+  LOCK();
+  bVar7 = *(int *)puVar19 == 1;
+  if (bVar7) {
+    *(undefined4 *)puVar19 = 1;
+  }
+  uVar8 = uRam_?;
+  UNLOCK();
+  if (bVar7) {
+    if (iRam_? != 0) {
+      iRam_? = iRam_? + -1;
+      return;
+    }
+    lRam_? = 0;
+    LOCK();
+    uRam_? = 0;
+    UNLOCK();
+    if (uVar8 != 2) {
+      uRam_? = 0;
+      lRam_? = 0;
+      return;
+    }
+    _Baselib_SystemFutex_Notify_il2cpp_baselib__YAXPEAHIW4Baselib_WakeupFallbackStrategy_1__Z
+              (0xADDR,1,0);
+    return;
+  }
+  puVar20 = &(pOVar13->_1).cctor_finished_or_no_cctor;
+  LOCK();
+  bVar7 = *puVar20 == 1;
+  if (bVar7) {
+    *puVar20 = 1;
+  }
+  uVar8 = uRam_?;
+  UNLOCK();
+  if (bVar7) {
+    if (iRam_? == 0) {
+      lRam_? = 0;
+      LOCK();
+      uRam_? = 0;
+      UNLOCK();
+      if (uVar8 == 2) {
+        _Baselib_SystemFutex_Notify_il2cpp_baselib__YAXPEAHIW4Baselib_WakeupFallbackStrategy_1__Z
+                  (0xADDR,1,0);
+      }
+    }
+    else {
+      iRam_? = iRam_? + -1;
+    }
+    uVar8 = GetCurrentThreadId();
+    psVar21 = &(pOVar13->_1).cctor_thread;
+    LOCK();
+    bVar7 = (ulonglong)uVar8 == *psVar21;
+    if (bVar7) {
+      *psVar21 = (ulonglong)uVar8;
+    }
+    UNLOCK();
+    if (bVar7) {
+      return;
+    }
+    while( true ) {
+      puVar19 = &(pOVar13->_1).field_0x1c;
+      LOCK();
+      bVar7 = *(int *)puVar19 == 1;
+      if (bVar7) {
+        *(undefined4 *)puVar19 = 1;
+      }
+      UNLOCK();
+      if (bVar7) break;
+      LOCK();
+      lVar15._0_4_ = (pOVar13->_1).initializationExceptionGCHandle;
+      lVar15._4_4_ = (pOVar13->_1).cctor_started;
+      if (lVar15 == 0) {
+        (pOVar13->_1).initializationExceptionGCHandle = 0;
+        (pOVar13->_1).cctor_started = 0;
+      }
+      UNLOCK();
+      if (lVar15 != 0) break;
+      FUN_?(*puRam_?);
+    }
+code_?:
+    lVar22._0_4_ = (pOVar13->_1).initializationExceptionGCHandle;
+    lVar22._4_4_ = (pOVar13->_1).cctor_started;
+    if (lVar22 == 0) {
+      return;
+    }
+  }
+  else {
+    uVar8 = GetCurrentThreadId();
+    LOCK();
+    (pOVar13->_1).cctor_thread = (ulonglong)uVar8;
+    UNLOCK();
+    LOCK();
+    (pOVar13->_1).cctor_finished_or_no_cctor = 1;
+    uVar8 = uRam_?;
+    UNLOCK();
+    if (iRam_? == 0) {
+      lRam_? = 0;
+      LOCK();
+      uRam_? = 0;
+      UNLOCK();
+      if (uVar8 == 2) {
+        _Baselib_SystemFutex_Notify_il2cpp_baselib__YAXPEAHIW4Baselib_WakeupFallbackStrategy_1__Z
+                  (0xADDR,1,0);
+      }
+    }
+    else {
+      iRam_? = iRam_? + -1;
+    }
+    alStackX_10[0] = 0;
+    if (((pOVar13->_1).field_0x6e & 4) != 0) {
+      FUN_?(pOVar13);
+      ppMVar16 = ppMVar14;
+      pIVar23 = (Il2CppClass *)pOVar13;
+code_?:
+      do {
+        if (ppMVar16 == (MethodInfo **)0x0) {
+          FUN_?(pIVar23);
+          if (pIVar23->field_count != 0) {
+            ppMVar16 = pIVar23->methods;
+            pMVar24 = *ppMVar16;
+code_?:
+            if (pMVar24 != (MethodInfo *)0x0) {
+              if ((*pMVar24->name == '.') && ((pMVar24->flags & 0x800) != 0)) {
+                ppMVar25 = ppMVar14;
+                while (ppMVar26 = ppMVar25 + 0x30528cee,
+                      ppMVar25 = (MethodInfo **)((longlong)ppMVar25 + 1),
+                      *(char *)ppMVar26 == (pMVar24->name + -1)[(longlong)ppMVar25]) {
+                  if (ppMVar25 == (MethodInfo **)0x7) {
+                    FUN_?(pMVar24,0,0,alStackX_10);
+                    goto code_?;
+                  }
+                }
+              }
+              goto code_?;
+            }
+          }
+        }
+        else {
+          ppMVar16 = ppMVar16 + 1;
+          if (ppMVar16 < pIVar23->methods + pIVar23->field_count) {
+            pMVar24 = *ppMVar16;
+            goto code_?;
+          }
+        }
+        pIVar23 = pIVar23->parent;
+        ppMVar16 = ppMVar14;
+      } while (pIVar23 != (Il2CppClass *)0x0);
+    }
+code_?:
+    LOCK();
+    (pOVar13->_1).cctor_thread = 0;
+    uVar9 = _UNK_?;
+    uVar3 = _UNK_?;
+    UNLOCK();
+    if (alStackX_10[0] == 0) {
+      LOCK();
+      *(undefined4 *)&(pOVar13->_1).field_0x1c = 1;
+      UNLOCK();
+      goto code_?;
+    }
+    uStack_27 = 0;
+    uStack_28 = _UNK_?;
+    uStack_29 = _UNK_?;
+    pppppppuStack_78 = (undefined8 *******)0x0;
+    FUN_?(&pppppppuStack_78,&(pOVar13->_0).byval_arg,0,0);
+    pppppppuVar22 = &pppppppuStack_78;
+    if (0xf < uStack_29) {
+      pppppppuVar22 = pppppppuStack_78;
+    }
+    FUN_?(&pppppppuStack_58,&UNK_?,pppppppuVar22);
+    if (uStack_29 < 0x10) {
+code_?:
+      lVar15 = alStackX_10[0];
+      pppppppuStack_78 = (undefined8 *******)((ulonglong)pppppppuStack_78 & 0xffffffffffffff00);
+      pppppppuVar22 = &pppppppuStack_58;
+      if (0xf < uStack_30) {
+        pppppppuVar22 = pppppppuStack_58;
+      }
+      uStack_28 = uVar3;
+      uStack_29 = uVar9;
+      lVar22 = FUN_?(uRam_?,&UNK_?,&UNK_?,pppppppuVar22);
+      if (lVar15 != 0) {
+        *(longlong *)(lVar22 + 0x28U) = lVar15;
+        if (iRam_? != 0) {
+          uVar8 = (uint)(lVar22 + 0x28U >> 0xc);
+          puVar11 = (ulonglong *)((ulonglong)((uVar8 & 0x1fffff) >> 6) * 8 + 0xADDR);
+          do {
+            uVar10 = *puVar11;
+            LOCK();
+            uVar9 = *puVar11;
+            if (uVar10 == uVar9) {
+              *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+            }
+            UNLOCK();
+          } while (uVar10 != uVar9);
+        }
+      }
+      FUN_?(pOVar13,lVar22);
+      if (0xf < uStack_30) {
+        pppppppuVar22 = pppppppuStack_58;
+        if ((0xfff < uStack_30 + 1) &&
+           (pppppppuVar22 = (undefined8 *******)pppppppuStack_58[-1],
+           0x1f < (ulonglong)((longlong)pppppppuStack_58 + (-8 - (longlong)pppppppuVar22))))
+        goto code_?;
+        func_?(pppppppuVar22);
+      }
+      goto code_?;
+    }
+    pppppppuVar22 = pppppppuStack_78;
+    if ((uStack_29 + 1 < 0x1000) ||
+       (pppppppuVar22 = (undefined8 *******)pppppppuStack_78[-1],
+       (ulonglong)((longlong)pppppppuStack_78 + (-8 - (longlong)pppppppuVar22)) < 0x20)) {
+      func_?(pppppppuVar22);
+      uVar3 = _UNK_?;
+      uVar9 = _UNK_?;
+      goto code_?;
+    }
+    FUN_?(0,0,0,0,0);
+  }
+  uVar5._0_4_ = (pOVar13->_1).initializationExceptionGCHandle;
+  uVar5._4_4_ = (pOVar13->_1).cctor_started;
+  uVar3 = FUN_?(uVar5);
+  FUN_?(uVar3,0);
+code_?:
+  FUN_?(0,0,0,0,0);
+  pcVar31 = (code *)swi(3);
+  (*pcVar31)();
   return;
 }
 
@@ -379,52 +937,74 @@ Color * Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_get_CrossH
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  fVar2 = (this->fields).lastFireTime;
-  value = (this->fields).fireInterval;
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
-      == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    pCVar3 = (Color *)(*pcVar1)();
+    return pCVar3;
   }
-  fVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-          ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
-  fVar3 = (fVar1 - fVar2) / fVar3;
-  if (fVar3 < 0.0) {
-    fVar3 = 0.0;
+  pcRam_? = pcVar1;
+  fVar4 = (float)(*pcRam_?)();
+  fVar5 = (this->fields).lastFireTime;
+  aOStack_6[0].currentCryptoKey = (this->fields).fireInterval.currentCryptoKey;
+  aOStack_6[0].hiddenValue = (this->fields).fireInterval.hiddenValue;
+  aOStack_6[0].hiddenValueOld = (this->fields).fireInterval.hiddenValueOld;
+  aOStack_6[0].fakeValue = (this->fields).fireInterval.fakeValue;
+  aOStack_6[0].inited = (this->fields).fireInterval.inited;
+  aOStack_6[0]._21_3_ = *(undefined3 *)&(this->fields).fireInterval.field_0x15;
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  else if (_UNK_? < fVar3) {
-    fVar3 = _UNK_?;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  if (_UNK_? <= fVar3) {
-    fVar2 = (this->fields).crossHairCanFire.g;
-    fVar1 = (this->fields).crossHairCanFire.b;
-    fVar3 = (this->fields).crossHairCanFire.a;
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  fVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+           ObscuredFloat_InternalDecrypt(aOStack_6,(MethodInfo *)0x0);
+  fVar7 = (fVar4 - fVar5) / fVar7;
+  if (fVar7 < 0.0) {
+    fVar7 = 0.0;
+  }
+  else if ((_UNK_? < fVar7) || (_UNK_? <= fVar7)) {
+    fVar5 = (this->fields).crossHairCanFire.g;
+    fVar4 = (this->fields).crossHairCanFire.b;
+    fVar7 = (this->fields).crossHairCanFire.a;
     __return_storage_ptr__->r = (this->fields).crossHairCanFire.r;
-    __return_storage_ptr__->g = fVar2;
-    __return_storage_ptr__->b = fVar1;
-    __return_storage_ptr__->a = fVar3;
+    __return_storage_ptr__->g = fVar5;
+    __return_storage_ptr__->b = fVar4;
+    __return_storage_ptr__->a = fVar7;
     return __return_storage_ptr__;
   }
-  fVar2 = (this->fields).crossHairCannotFireLow.r;
-  fVar1 = (this->fields).crossHairCannotFireLow.g;
-  fVar4 = (this->fields).crossHairCannotFireLow.b;
-  fVar5 = (this->fields).crossHairCannotFireLow.a;
-  fVar6 = (this->fields).crossHairCannotFireHigh.g;
-  fVar7 = (this->fields).crossHairCannotFireHigh.b;
+  fVar5 = (this->fields).crossHairCannotFireHigh.g;
+  fVar4 = (this->fields).crossHairCannotFireHigh.b;
   fVar8 = (this->fields).crossHairCannotFireHigh.a;
-  if (fVar3 < 0.0) {
-    fVar3 = 0.0;
+  fVar9 = (this->fields).crossHairCannotFireLow.r;
+  fVar10 = (this->fields).crossHairCannotFireLow.g;
+  fVar11 = (this->fields).crossHairCannotFireLow.b;
+  fVar12 = (this->fields).crossHairCannotFireLow.a;
+  if (fVar7 < 0.0) {
+    fVar7 = 0.0;
   }
-  else if (_UNK_? < fVar3) {
-    fVar3 = _UNK_?;
+  else if (_UNK_? < fVar7) {
+    fVar7 = _UNK_?;
   }
-  __return_storage_ptr__->r = ((this->fields).crossHairCannotFireHigh.r - fVar2) * fVar3 + fVar2;
-  __return_storage_ptr__->g = (fVar6 - fVar1) * fVar3 + fVar1;
-  __return_storage_ptr__->b = (fVar7 - fVar4) * fVar3 + fVar4;
-  __return_storage_ptr__->a = (fVar8 - fVar5) * fVar3 + fVar5;
+  __return_storage_ptr__->r = ((this->fields).crossHairCannotFireHigh.r - fVar9) * fVar7 + fVar9;
+  __return_storage_ptr__->g = (fVar5 - fVar10) * fVar7 + fVar10;
+  __return_storage_ptr__->b = (fVar4 - fVar11) * fVar7 + fVar11;
+  __return_storage_ptr__->a = (fVar8 - fVar12) * fVar7 + fVar12;
   return __return_storage_ptr__;
 }
 
@@ -436,18 +1016,43 @@ bool Assembly-CSharp.dll::PickupItemWithDelay::PickupItemWithDelay_get_IsOnCoold
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  fVar2 = (this->fields).lastFireTime;
-  value = (this->fields).fireInterval;
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).cctor_finished_or_no_cctor
-      == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    bVar3 = (*pcVar1)();
+    return bVar3;
   }
-  fVar3 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
-          ObscuredFloat_op_Implicit_1(value,(MethodInfo *)0x0);
-  return fVar1 - fVar2 <= fVar3;
+  pcRam_? = pcVar1;
+  fVar4 = (float)(*pcRam_?)();
+  fVar5 = (this->fields).lastFireTime;
+  aOStack_6[0].currentCryptoKey = (this->fields).fireInterval.currentCryptoKey;
+  aOStack_6[0].hiddenValue = (this->fields).fireInterval.hiddenValue;
+  aOStack_6[0].hiddenValueOld = (this->fields).fireInterval.hiddenValueOld;
+  aOStack_6[0].fakeValue = (this->fields).fireInterval.fakeValue;
+  aOStack_6[0].inited = (this->fields).fireInterval.inited;
+  aOStack_6[0]._21_3_ = *(undefined3 *)&(this->fields).fireInterval.field_0x15;
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredFloat->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  fVar7 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredFloat::
+          ObscuredFloat_InternalDecrypt(aOStack_6,(MethodInfo *)0x0);
+  return fVar4 - fVar5 <= fVar7;
 }
 

@@ -17,7 +17,7 @@ public class InventoryPointerController : MonoBehaviour
 	// Fields
 	private int bubbleId;
 	[SerializeField]
-	protected Button button;
+	protected UnityEngine.UI.Button button;
 	[SerializeField]
 	protected RectTransform pointToTransform;
 	[SerializeField]
@@ -27,10 +27,10 @@ public class InventoryPointerController : MonoBehaviour
 	[SerializeField]
 	protected float bubbleLifetimeWhileShown;
 	[SerializeField]
-	private Button openButton;
+	private UnityEngine.UI.Button openButton;
 	private int slotToHighlight;
 	private int categoryToOpen;
-	private Button open;
+	private UnityEngine.UI.Button open;
 
 	// Nested types
 	[Serializable]

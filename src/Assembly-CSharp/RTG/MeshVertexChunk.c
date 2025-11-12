@@ -3,121 +3,139 @@
 
 Vector3 * Assembly-CSharp.dll::RTG::MeshVertexChunk::MeshVertexChunk_GetWorldVertClosestToScreenPt
                     (Vector3 *__return_storage_ptr__,MeshVertexChunk *this,Vector2 screenPoint,
-                    Matrix4x4 worldMtx,Camera *camera,MethodInfo *method)
+                    Matrix4x4 *worldMtx,Camera *camera,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff80;
-  puVar5 = &stack0xffffff80;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__GetEnumerator__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  bVar6 = cRam_? == '\0';
-  LStack_7._list = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0;
-  LStack_7._index = 0;
-  LStack_7._version = 0;
-  LStack_7._current.Quadrant = 0;
-  LStack_7._current.FirstAxisSign = 0;
-  LStack_7._current.SecondAxisSign = 0;
   __return_storage_ptr__->x = 0.0;
-  fStack_8 = _UNK_?;
   __return_storage_ptr__->y = 0.0;
   __return_storage_ptr__->z = 0.0;
-  if (bVar6) {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+  fVar1 = _UNK_?;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
-  fVar10 = (pVVar9->zeroVector).y;
-  fVar11 = (pVVar9->zeroVector).z;
-  __return_storage_ptr__->x = (pVVar9->zeroVector).x;
-  __return_storage_ptr__->y = fVar10;
-  __return_storage_ptr__->z = fVar11;
-  this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-            (this->fields)._modelSpaceVerts;
-  if (this_00 != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
-    pLVar12 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-             VisualTreeAsset+UsingEntry]::
-             List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__GetEnumerator
-                       ((List_1_T_Enumerator_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-                        auStack_13,this_00,
-                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__GetEnumerator__
-                       );
+  pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar3 = (pVVar2->zeroVector).y;
+  __return_storage_ptr__->x = (pVVar2->zeroVector).x;
+  __return_storage_ptr__->y = fVar3;
+  __return_storage_ptr__->z = (pVVar2->zeroVector).z;
+  pLVar4 = (this->fields)._modelSpaceVerts;
+  if (pLVar4 == (List_1_UnityEngine_Vector3_ *)0x0) {
+    FUN_?();
+    camera = unaff_R15;
+code_?:
+    uVar5 = func_?(&UNK_?);
+    FUN_?(uVar5);
+code_?:
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+  }
+  else {
+    if (iRam_? != 0) {
+      uVar6 = (uint)((ulonglong)&uStack_7 >> 0xc);
+      uVar8 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
+      do {
+        uVar9 = *(ulonglong *)(uVar8 * 8 + 0xADDR);
+        puVar10 = (ulonglong *)(uVar8 * 8 + 0xADDR);
+        LOCK();
+        bVar11 = uVar9 == *puVar10;
+        if (bVar11) {
+          *puVar10 = uVar9 | 1L << (uVar6 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar11);
+    }
+    fVar3 = _UNK_?;
+    iStack_12 = (pLVar4->fields)._version;
+    uStack_13 = 0;
     uStack_14 = 0;
-    LStack_7._list = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)pLVar12->_list;
-    LStack_7._index = pLVar12->_index;
-    LStack_7._version = pLVar12->_version;
-    LStack_7._current.Quadrant = (int32_t)(pLVar12->_current).alias;
-    uVar15 = (pLVar12->_current).path;
-    uVar16 = (pLVar12->_current).asset;
-    uStack_1 = 1;
-    LStack_7._current.FirstAxisSign = uVar15;
-    LStack_7._current.SecondAxisSign = uVar16;
-    pLStack_17 = &LStack_7;
+    uStack_7._0_4_ = SUB84(pLVar4,0);
+    uStack_7._4_4_ = (undefined4)((ulonglong)pLVar4 >> 0x20);
+    uStack_15 = (undefined4)uStack_7;
+    uStack_16 = uStack_7._4_4_;
+    uStack_17 = 0;
+    fStack_18 = 0.0;
+    fStack_19 = 0.0;
+    fStack_20 = 0.0;
+    uStack_21 = 0;
+    uStack_7 = 0;
+    puStack_22 = &uStack_15;
+    fStack_23 = screenPoint.y;
+    fStack_24 = screenPoint.x;
     while( true ) {
-      bVar18 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[RTG::
-              PlaneIdHelper+PlaneQuadrantInfo]::
-              List_1_T_Enumerator_RTG_PlaneIdHelper_PlaneQuadrantInfo__MoveNext
-                        (&LStack_7,
-                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__MoveNext__
-                        );
-      if (bVar18 == 0) {
-        uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&LStack_7,
-                   (ExceptionArgument__Enum)
-                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>__Dispose__
-                   ,in_stack_19);
-        *unaff_FS_OFFSET = uStack_3;
+      cVar25 = FUN_?(&uStack_15);
+      if (cVar25 == '\0') {
         return __return_storage_ptr__;
       }
-      point.y = (float)LStack_7._current.FirstAxisSign;
-      point.x = (float)LStack_7._current.Quadrant;
-      point.z = (float)LStack_7._current.SecondAxisSign;
-      pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint
-                         (&VStack_21,&worldMtx,point,(MethodInfo *)0x0);
-      uStack_22._0_4_ = pVVar20->x;
-      uStack_22._4_4_ = pVVar20->y;
-      fVar11 = pVVar20->z;
+      fVar26 = fVar3 / (fStack_20 * worldMtx->m32 +
+                        fStack_18 * worldMtx->m30 + fStack_19 * worldMtx->m31 + worldMtx->m33);
+      fVar27 = (fStack_20 * worldMtx->m02 + fStack_19 * worldMtx->m01 + fStack_18 * worldMtx->m00 +
+               worldMtx->m03) * fVar26;
+      fVar28 = (fStack_20 * worldMtx->m12 + fStack_18 * worldMtx->m10 + fStack_19 * worldMtx->m11 +
+               worldMtx->m13) * fVar26;
+      fVar26 = (fStack_20 * worldMtx->m22 + fStack_18 * worldMtx->m20 + fStack_19 * worldMtx->m21 +
+               worldMtx->m23) * fVar26;
       if (camera == (Camera *)0x0) break;
-      in_stack_19 = (MethodInfo *)(auStack_13 + 0xc);
-      pVVar20 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
-                         ((Vector3 *)in_stack_19,camera,*pVVar20,(MethodInfo *)0x0);
-      uStack_23._0_4_ = pVVar20->x;
-      uStack_23._4_4_ = pVVar20->y;
-      fVar10 = ((float)(undefined4)uStack_23 - screenPoint.x) *
-               ((float)(undefined4)uStack_23 - screenPoint.x) +
-               ((float)uStack_23._4_4_ - screenPoint.y) * ((float)uStack_23._4_4_ - screenPoint.y);
-      if (fVar10 < fStack_8) {
-        __return_storage_ptr__->x = (float)(undefined4)uStack_22;
-        __return_storage_ptr__->y = (float)uStack_22._4_4_;
-        __return_storage_ptr__->z = fVar11;
-        fStack_8 = fVar10;
+      uStack_29 = CONCAT44(fVar28,fVar27);
+      fStack_30 = fVar26;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_31 = 0;
+      uStack_32 = 0;
+      pvVar33 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar33 == (void *)0x0) goto code_?;
+      pcVar34 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar34 = (code *)FUN_?(&UNK_?), pcVar34 == (code *)0x0))
+      goto code_?;
+      pcRam_? = pcVar34;
+      (*pcRam_?)(pvVar33,&uStack_29,2,&uStack_31);
+      fVar35 = (uStack_31._4_4_ - fStack_23) * (uStack_31._4_4_ - fStack_23) +
+               ((float)uStack_31 - fStack_24) * ((float)uStack_31 - fStack_24);
+      if (fVar35 < fVar1) {
+        __return_storage_ptr__->x = fVar27;
+        __return_storage_ptr__->y = fVar28;
+        __return_storage_ptr__->z = fVar26;
+        fVar1 = fVar35;
       }
     }
   }
-  uVar24 = func_?();
-  func_?(uVar24);
-  pcVar25 = (code *)swi(3);
-  pVVar20 = (Vector3 *)(*pcVar25)();
-  return pVVar20;
+  FUN_?();
+  FUN_?();
+  pcVar34 = (code *)swi(3);
+  pVVar36 = (Vector3 *)(*pcVar34)();
+  return pVVar36;
 }
 
 
@@ -130,38 +148,56 @@ MeshVertexChunk_System_Collections_IEnumerable_GetEnumerator
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__GetEnumerator__
-                   );
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-            (this->fields)._modelSpaceVerts;
-  if (this_00 != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
-    pLVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-             VisualTreeAsset+UsingEntry]::
-             List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__GetEnumerator
-                       (&LStack_2,this_00,
-                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__GetEnumerator__
-                       );
-    pLStack_3 = pLVar1->_list;
-    iStack_4 = pLVar1->_index;
-    iStack_5 = pLVar1->_version;
-    pSStack_6 = (pLVar1->_current).alias;
-    uStack_7._0_4_ = (pLVar1->_current).path;
-    uStack_7._4_4_ = (pLVar1->_current).asset;
-    pIVar8 = (IEnumerator *)
-             func_?(TypeInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>
-                             ,&pLStack_3);
-    return pIVar8;
+  pLVar1 = (this->fields)._modelSpaceVerts;
+  if (pLVar1 == (List_1_UnityEngine_Vector3_ *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    pIVar3 = (IEnumerator *)(*pcVar2)();
+    return pIVar3;
   }
-  func_?();
-  pcVar9 = (code *)swi(3);
-  pIVar8 = (IEnumerator *)(*pcVar9)();
-  return pIVar8;
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)&uStack_5 >> 0xc);
+    puVar6 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar7 = *puVar6;
+      LOCK();
+      uVar8 = *puVar6;
+      if (uVar7 == uVar8) {
+        *puVar6 = uVar7 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar7 != uVar8);
+  }
+  uStack_9 = (pLVar1->fields)._version;
+  uStack_10 = 0;
+  uStack_11 = 0;
+  lStack_12 = (ulonglong)uStack_9 << 0x20;
+  uStack_5._0_4_ = SUB84(pLVar1,0);
+  uStack_5._4_4_ = (undefined4)((ulonglong)pLVar1 >> 0x20);
+  uStack_13 = 0;
+  uStack_14 = 0;
+  uStack_15 = 0;
+  uStack_16 = 0;
+  uStack_17 = (undefined4)uStack_5;
+  uStack_18 = uStack_5._4_4_;
+  uStack_19 = 0;
+  uStack_5 = pLVar1;
+  pIVar3 = (IEnumerator *)
+           FUN_?(TypeInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::Vector3>
+                         ,&uStack_17);
+  return pIVar3;
 }
 
 
@@ -173,50 +209,115 @@ void Assembly-CSharp.dll::RTG::MeshVertexChunk::MeshVertexChunk__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_System__Collections__Generic__IEnumerable<UnityEngine::Vector3>_
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_System__Collections__Generic__IEnumerable<UnityEngine::Vector3>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-             *)func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
-  MultiColumnCollectionHeader+ViewState+ColumnState]::
-  List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
-            (this_00,100,
-             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_int_);
-  method_00 = (MethodInfo *)&this->fields;
-  (this->fields)._modelSpaceVerts = (List_1_UnityEngine_Vector3_ *)this_00;
-  func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  this_01 = (List_1_UnityEngine_Vector3_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
+  pLVar1 = (List_1_UnityEngine_Vector3_ *)
+           FUN_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
+  pvVar2 = MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_int_->klass->
+           rgctx_data[3].rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar2 + 0x135) & 1) == 0) {
+    pvVar2 = (void *)FUN_?(pvVar2);
+  }
+  pVVar3 = (Vector3__Array *)FUN_?(pvVar2,100);
+  (pLVar1->fields)._items = pVVar3;
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)&pLVar1->fields >> 0xc);
+    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+      puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+      LOCK();
+      bVar8 = uVar6 == *puVar7;
+      if (bVar8) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar8);
+  }
+  iVar9 = iRam_?;
+  (this->fields)._modelSpaceVerts = pLVar1;
+  if (iVar9 != 0) {
+    uVar4 = (uint)((ulonglong)&this->fields >> 0xc);
+    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+      puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+      LOCK();
+      bVar8 = uVar6 == *puVar7;
+      if (bVar8) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar8);
+  }
+  pLVar1 = (List_1_UnityEngine_Vector3_ *)
+           FUN_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
   mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector3]::
   List_1_UnityEngine_Vector3___ctor_1
-            (this_01,(IEnumerable_1_UnityEngine_Vector3_ *)modelSpaceVerts,
+            (pLVar1,(IEnumerable_1_UnityEngine_Vector3_ *)modelSpaceVerts,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List_System__Collections__Generic__IEnumerable<UnityEngine::Vector3>_
             );
-  (this->fields)._modelSpaceVerts = this_01;
-  func_?(&this->fields,this_01);
+  iVar9 = iRam_?;
+  (this->fields)._modelSpaceVerts = pLVar1;
+  if (iVar9 != 0) {
+    uVar4 = (uint)((ulonglong)&this->fields >> 0xc);
+    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+      puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+      LOCK();
+      bVar8 = uVar6 == *puVar7;
+      if (bVar8) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+      iVar9 = iRam_?;
+    } while (!bVar8);
+  }
   (this->fields)._mesh = mesh;
-  func_?(&(this->fields)._mesh,mesh);
-  this_02 = (AABB *)&fStack_1;
-  fStack_1 = 0.0;
-  fStack_2 = 0.0;
-  uVar3._0_4_ = 0.0;
-  uVar3._4_4_ = 0.0;
-  AABB::AABB__ctor_2(this_02,(IEnumerable_1_UnityEngine_Vector3_ *)0x0,(MethodInfo *)0x0);
-  (this->fields)._modelSpaceAABB._size.x = fStack_1;
-  (this->fields)._modelSpaceAABB._size.y = fStack_2;
-  (this->fields)._modelSpaceAABB._size.z = (float)puStack_4;
-  (this->fields)._modelSpaceAABB._center.x = (float)this_02;
-  (this->fields)._modelSpaceAABB._center.y = (float)uVar3;
-  (this->fields)._modelSpaceAABB._center.z = SUB84(uVar3,4);
-  *(undefined4 *)&(this->fields)._modelSpaceAABB._isValid = 0;
+  if (iVar9 != 0) {
+    uVar4 = (uint)((ulonglong)&(this->fields)._mesh >> 0xc);
+    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+      puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+      LOCK();
+      bVar8 = uVar6 == *puVar7;
+      if (bVar8) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar8);
+  }
+  AStack_10._center.y = 0.0;
+  AStack_10._center.z = 0.0;
+  AStack_10._size.x = 0.0;
+  AStack_10._size.y = 0.0;
+  AStack_10._size.z = 0.0;
+  AStack_10._center.x = 0.0;
+  AStack_10._isValid = 0;
+  AStack_10._25_3_ = 0;
+  AABB::AABB__ctor_2(&AStack_10,
+                     (IEnumerable_1_UnityEngine_Vector3_ *)(this->fields)._modelSpaceVerts,
+                     (MethodInfo *)0x0);
+  (this->fields)._modelSpaceAABB._size.x = AStack_10._size.x;
+  (this->fields)._modelSpaceAABB._size.y = AStack_10._size.y;
+  *(undefined8 *)&(this->fields)._modelSpaceAABB._size.z = AStack_10._8_8_;
+  (this->fields)._modelSpaceAABB._center.y = AStack_10._center.y;
+  (this->fields)._modelSpaceAABB._center.z = AStack_10._center.z;
+  (this->fields)._modelSpaceAABB._isValid = AStack_10._isValid;
+  *(undefined3 *)&(this->fields)._modelSpaceAABB.field_0x19 = AStack_10._25_3_;
   return;
 }
 
@@ -229,31 +330,63 @@ Vector3 * Assembly-CSharp.dll::RTG::MeshVertexChunk::MeshVertexChunk_get_Item
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                   );
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-            (this->fields)._modelSpaceVerts;
-  if (this_00 != (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0) {
-    pVVar1 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-             VisualTreeAsset+UsingEntry]::
-             List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                       (&VStack_2,this_00,vertexIndex,
-                        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                       );
-    pSVar3 = pVVar1->path;
-    pVVar4 = pVVar1->asset;
-    __return_storage_ptr__->x = (float)pVVar1->alias;
-    __return_storage_ptr__->y = (float)pSVar3;
-    __return_storage_ptr__->z = (float)pVVar4;
-    return __return_storage_ptr__;
+  pLVar1 = (this->fields)._modelSpaceVerts;
+  if (pLVar1 != (List_1_UnityEngine_Vector3_ *)0x0) {
+    if ((uint)(pLVar1->fields)._size <= (uint)vertexIndex) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                ((MethodInfo *)0x0);
+      pcVar2 = (code *)swi(3);
+      pVVar3 = (Vector3 *)(*pcVar2)();
+      return pVVar3;
+    }
+    pVVar4 = (pLVar1->fields)._items;
+    if (pVVar4 != (Vector3__Array *)0x0) {
+      if ((uint)vertexIndex < (uint)pVVar4->max_length) {
+        fVar5 = pVVar4->vector[vertexIndex].z;
+        fVar6 = pVVar4->vector[vertexIndex].y;
+        __return_storage_ptr__->x = pVVar4->vector[vertexIndex].x;
+        __return_storage_ptr__->y = fVar6;
+        __return_storage_ptr__->z = fVar5;
+        return __return_storage_ptr__;
+      }
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      pVVar3 = (Vector3 *)(*pcVar2)();
+      return pVVar3;
+    }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pVVar6 = (Vector3 *)(*pcVar5)();
-  return pVVar6;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  pVVar3 = (Vector3 *)(*pcVar2)();
+  return pVVar3;
+}
+
+
+/* AABB get_ModelSpaceAABB() */
+
+AABB * Assembly-CSharp.dll::RTG::MeshVertexChunk::MeshVertexChunk_get_ModelSpaceAABB
+                 (AABB *__return_storage_ptr__,MeshVertexChunk *this,MethodInfo *method)
+
+{
+  bVar1 = (this->fields)._modelSpaceAABB._isValid;
+  uVar2 = *(undefined3 *)&(this->fields)._modelSpaceAABB.field_0x19;
+  fVar3 = (this->fields)._modelSpaceAABB._size.y;
+  uVar4 = *(undefined8 *)&(this->fields)._modelSpaceAABB._size.z;
+  fVar5 = (this->fields)._modelSpaceAABB._center.y;
+  fVar6 = (this->fields)._modelSpaceAABB._center.z;
+  (__return_storage_ptr__->_size).x = (this->fields)._modelSpaceAABB._size.x;
+  (__return_storage_ptr__->_size).y = fVar3;
+  *(undefined8 *)&(__return_storage_ptr__->_size).z = uVar4;
+  (__return_storage_ptr__->_center).y = fVar5;
+  (__return_storage_ptr__->_center).z = fVar6;
+  __return_storage_ptr__->_isValid = bVar1;
+  *(undefined3 *)&__return_storage_ptr__->field_0x19 = uVar2;
+  return __return_storage_ptr__;
 }
 
 
@@ -264,19 +397,19 @@ int32_t Assembly-CSharp.dll::RTG::MeshVertexChunk::MeshVertexChunk_get_VertexCou
 
 {
   if (cRam_? == '\0') {
-    ppMStack_1 = &MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__;
-    func_?();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pLVar2 = (this->fields)._modelSpaceVerts;
-  if (pLVar2 != (List_1_UnityEngine_Vector3_ *)0x0) {
-    return (pLVar2->fields)._size;
+  pLVar1 = (this->fields)._modelSpaceVerts;
+  if (pLVar1 != (List_1_UnityEngine_Vector3_ *)0x0) {
+    return (pLVar1->fields)._size;
   }
-  ppMStack_1 = (MethodInfo **)&stack0xfffffffc;
-  uVar3 = func_?(auStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  iVar6 = (*pcVar5)();
-  return iVar6;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  iVar3 = (*pcVar2)();
+  return iVar3;
 }
 

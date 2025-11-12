@@ -22,7 +22,7 @@ void Assembly-CSharp.dll::AdvancedGhostBehaviour+Idle::AdvancedGhostBehaviour_Id
       }
     }
   }
-  func_?();
+  FUN_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;
@@ -37,11 +37,13 @@ Type * Assembly-CSharp.dll::AdvancedGhostBehaviour+Idle::AdvancedGhostBehaviour_
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeRef__AdvancedGhostBehaviour__Alert);
-    func_?(&TypeInfo__System__Type);
+    FUN_?(&TypeRef__AdvancedGhostBehaviour__Alert);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMStack_1 = (MVWorldObjectClient *)0x0;
+  pTVar1 = (Type *)0x0;
+  pMStackX_10 = (MVWorldObjectClient *)0x0;
   if ((ghostBehaviour != (AdvancedGhostBehaviour *)0x0) &&
      (pAVar2 = (ghostBehaviour->fields).networkedValues,
      pAVar2 != (AdvancedGhostBehaviour_NetworkedValues *)0x0)) {
@@ -57,30 +59,35 @@ Type * Assembly-CSharp.dll::AdvancedGhostBehaviour+Idle::AdvancedGhostBehaviour_
                           (this_01,(this_00->fields).alliedTeam,(MethodInfo *)0x0);
       bVar5 = AdvancedGhostBehaviour+AdvancedGhostPerception::
               AdvancedGhostBehaviour_AdvancedGhostPerception_TryGetTarget
-                        (this_00,targets,&pMStack_1,(MethodInfo *)0x0);
+                        (this_00,targets,&pMStackX_10,(MethodInfo *)0x0);
       if (bVar5 == 0) {
-        this_02 = (Object *)(ghostBehaviour->fields).currentState;
-        if (this_02 != (Object *)0x0) {
-          pTVar6 = mscorlib.dll::System::Object::Object_GetType(this_02,(MethodInfo *)0x0);
-          return pTVar6;
+        pAVar6 = (ghostBehaviour->fields).currentState;
+        if (pAVar6 != (AdvancedGhostBehaviour_IGhostBehaviourState *)0x0) {
+          pTVar1 = (Type *)FUN_?(&(pAVar6->klass->_0).byval_arg);
+          return pTVar1;
         }
       }
-      else if (pMStack_1 != (MVWorldObjectClient *)0x0) {
-        (this_00->fields).currentWoID = (pMStack_1->fields)._.id;
-        handle = TypeRef__AdvancedGhostBehaviour__Alert;
-        if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+      else if (pMStackX_10 != (MVWorldObjectClient *)0x0) {
+        (this_00->fields).currentWoID = (pMStackX_10->fields)._.id;
+        pIVar7 = TypeRef__AdvancedGhostBehaviour__Alert;
+        if (*(int *)(lRam_? + 0xe4) == 0) {
+          FUN_?();
         }
-        pTVar6 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                           ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-        return pTVar6;
+        if (pIVar7 != (Il2CppType *)0x0) {
+          if (*(int *)(lRam_? + 0xe4) == 0) {
+            FUN_?();
+          }
+          lVar8 = FUN_?(pIVar7,1);
+          pTVar1 = (Type *)FUN_?(lVar8 + 0x20);
+        }
+        return pTVar1;
       }
     }
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  pTVar6 = (Type *)(*pcVar7)();
-  return pTVar6;
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  pTVar1 = (Type *)(*pcVar9)();
+  return pTVar1;
 }
 
 

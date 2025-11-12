@@ -8,21 +8,23 @@ void Assembly-CSharp.dll::RequirementNotification+<>c__DisplayClass16_0::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__INotificationRequirementPanel);
-    func_?(&TypeInfo__MV__WorldObject__MVTeam);
+    FUN_?(&TypeInfo__INotificationRequirementPanel);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__MVTeam);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pRVar1 = this;
-  this = (RequirementNotification_c_DisplayClass16_0 *)(this->fields).team;
-  uVar2 = func_?(TypeInfo__MV__WorldObject__MVTeam,&this);
+  aiStackX_8[0] = (this->fields).team;
+  FUN_?(TypeInfo__MV__WorldObject__MVTeam,aiStackX_8);
   if (x != (INotificationRequirementPanel *)0x0) {
-    func_?(0,TypeInfo__INotificationRequirementPanel,x,uVar2,(pRVar1->fields).checkMark,
-                    (pRVar1->fields).enabled);
+    FUN_?();
     return;
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

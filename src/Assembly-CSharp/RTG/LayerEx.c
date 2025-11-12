@@ -16,15 +16,21 @@ Assembly-CSharp.dll::RTG::LayerEx::LayerEx_GetAllLayerNames(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__List<System::String>__List__);
-    func_?(&TypeInfo__System__Collections__Generic__List<System::String>);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<System::String>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<System::String>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pLVar1 = (List_1_System_String_ *)
-           func_?(TypeInfo__System__Collections__Generic__List<System::String>);
+           FUN_?(TypeInfo__System__Collections__Generic__List<System::String>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
@@ -32,20 +38,18 @@ Assembly-CSharp.dll::RTG::LayerEx::LayerEx_GetAllLayerNames(MethodInfo *method)
              MethodInfo__System__Collections__Generic__List<System::String>__List__);
   layer = 0;
   do {
-    value = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_LayerToName
-                      (layer,(MethodInfo *)0x0);
-    bVar2 = mscorlib.dll::System::String::String_IsNullOrEmpty(value,(MethodInfo *)0x0);
-    if (bVar2 == 0) {
+    pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_LayerToName
+                       (layer,(MethodInfo *)0x0);
+    if ((pSVar2 != (String *)0x0) && ((pSVar2->fields)._stringLength != 0)) {
       if (pLVar1 == (List_1_System_String_ *)0x0) {
-        func_?();
+        FUN_?();
         pcVar3 = (code *)swi(3);
         pLVar1 = (List_1_System_String_ *)(*pcVar3)();
         return pLVar1;
       }
-      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-                ((List_1_System_Object_ *)pLVar1,(Object *)value,
-                 MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
-                );
+      FUN_?(pLVar1,pSVar2,
+                    MethodInfo__System__Collections__Generic__List<System::String>__Add_System__String_
+                   );
     }
     layer = layer + 1;
   } while (layer < 0x20);

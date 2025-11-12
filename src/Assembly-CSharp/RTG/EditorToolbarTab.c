@@ -6,34 +6,72 @@ void Assembly-CSharp.dll::RTG::EditorToolbarTab::EditorToolbarTab_AddTargetSetti
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::Settings>__Add_RTG__Settings_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::Settings>__Contains_RTG__Settings_
-                   );
+    FUN_?(&MethodInfo__System__Collections__Generic__List<RTG::Settings>__Add_RTG__Settings_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::Settings>__Contains_RTG__Settings_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pLVar1 = (this->fields)._targetSettings;
   if (pLVar1 != (List_1_RTG_Settings_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-            List_1_System_Object__Contains
-                      ((List_1_System_Object_ *)pLVar1,(Object *)targetSettings,
-                       MethodInfo__System__Collections__Generic__List<RTG::Settings>__Contains_RTG__Settings_
-                      );
-    if (bVar2 == 0) {
-      pLVar1 = (this->fields)._targetSettings;
-      if (pLVar1 == (List_1_RTG_Settings_ *)0x0) goto code_?;
-      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-                ((List_1_System_Object_ *)pLVar1,(Object *)targetSettings,
-                 MethodInfo__System__Collections__Generic__List<RTG::Settings>__Add_RTG__Settings_);
+    if (((pLVar1->fields)._size != 0) &&
+       (iVar2 = mscorlib.dll::System::Array::Array_IndexOf_69
+                          ((Object__Array *)(pLVar1->fields)._items,(Object *)targetSettings,0,
+                           (pLVar1->fields)._size,
+                           (MethodInfo__System__Collections__Generic__List<RTG::Settings>__Contains_RTG__Settings_
+                            ->klass->rgctx_data[0x17].method)->klass->rgctx_data[0x27].method),
+       iVar2 != -1)) {
+      return;
     }
-    return;
+    pMVar3 = MethodInfo__System__Collections__Generic__List<RTG::Settings>__Add_RTG__Settings_;
+    pLVar1 = (this->fields)._targetSettings;
+    if (pLVar1 != (List_1_RTG_Settings_ *)0x0) {
+      piVar4 = &(pLVar1->fields)._version;
+      *piVar4 = *piVar4 + 1;
+      pSVar5 = (pLVar1->fields)._items;
+      if (pSVar5 != (Settings__Array *)0x0) {
+        uVar6 = (pLVar1->fields)._size;
+        if ((uint)pSVar5->max_length <= uVar6) {
+          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+          List_1_System_Object__AddWithResize
+                    ((List_1_System_Object_ *)pLVar1,(Object *)targetSettings,
+                     pMVar3->klass->rgctx_data[0xe].method);
+          return;
+        }
+        (pLVar1->fields)._size = uVar6 + 1;
+        if (uVar6 < (uint)pSVar5->max_length) {
+          bVar7 = iRam_? != 0;
+          pSVar5->vector[(int)uVar6] = targetSettings;
+          if (bVar7) {
+            uVar6 = (uint)((ulonglong)(pSVar5->vector + (int)uVar6) >> 0xc);
+            puVar8 = (ulonglong *)((ulonglong)((uVar6 & 0x1fffff) >> 6) * 8 + 0xADDR);
+            do {
+              uVar9 = *puVar8;
+              LOCK();
+              uVar10 = *puVar8;
+              if (uVar9 == uVar10) {
+                *puVar8 = uVar9 | 1L << (uVar6 & 0x3f);
+              }
+              UNLOCK();
+            } while (uVar9 != uVar10);
+          }
+          return;
+        }
+        FUN_?();
+        pcVar11 = (code *)swi(3);
+        (*pcVar11)();
+        return;
+      }
+    }
   }
-code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -45,34 +83,101 @@ void Assembly-CSharp.dll::RTG::EditorToolbarTab::EditorToolbarTab__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<RTG::Settings>__List__);
-    func_?(&TypeInfo__System__Collections__Generic__List<RTG::Settings>);
-    func_?(&::StringLiteral__);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<RTG::Settings>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<RTG::Settings>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  iVar1 = iRam_?;
   (this->fields)._tooltip = ::StringLiteral__;
-  func_?(&this->fields,::StringLiteral__);
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields)._text = ::StringLiteral__;
-  func_?(&(this->fields)._text,::StringLiteral__);
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._text >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
   this_00 = (List_1_RTG_Settings_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<RTG::Settings>);
+            FUN_?(TypeInfo__System__Collections__Generic__List<RTG::Settings>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<RTG::Settings>__List__);
-  method_00 = (MethodInfo *)&(this->fields)._targetSettings;
+  iVar1 = iRam_?;
   (this->fields)._targetSettings = this_00;
-  func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  if (text != (String *)0x0) {
-    (this->fields)._text = text;
-    func_?(&(this->fields)._text);
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._targetSettings >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
   }
-  if (tooltip != (String *)0x0) {
-    (this->fields)._tooltip = tooltip;
-    func_?(&this->fields);
+  if ((text != (String *)0x0) && ((this->fields)._text = text, iVar1 != 0)) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._text >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
+  if ((tooltip != (String *)0x0) && ((this->fields)._tooltip = tooltip, iVar1 != 0)) {
+    uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
   }
   return;
 }
@@ -85,20 +190,19 @@ int32_t Assembly-CSharp.dll::RTG::EditorToolbarTab::EditorToolbarTab_get_NumTarg
 
 {
   if (cRam_? == '\0') {
-    ppMStack_1 = &MethodInfo__System__Collections__Generic__List<RTG::Settings>__get_Count__;
-    func_?();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<RTG::Settings>__get_Count__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pLVar2 = (this->fields)._targetSettings;
-  if (pLVar2 != (List_1_RTG_Settings_ *)0x0) {
-    return (pLVar2->fields)._size;
+  pLVar1 = (this->fields)._targetSettings;
+  if (pLVar1 != (List_1_RTG_Settings_ *)0x0) {
+    return (pLVar1->fields)._size;
   }
-  ppMStack_1 = (MethodInfo **)&stack0xfffffffc;
-  uVar3 = func_?(auStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  iVar6 = (*pcVar5)();
-  return iVar6;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  iVar3 = (*pcVar2)();
+  return iVar3;
 }
 
 
@@ -108,9 +212,19 @@ void Assembly-CSharp.dll::RTG::EditorToolbarTab::EditorToolbarTab_set_TargetTool
                (EditorToolbarTab *this,EditorToolbar *value,MethodInfo *method)
 
 {
-  if (value != (EditorToolbar *)0x0) {
-    (this->fields)._targetToolbar = value;
-    func_?(&(this->fields)._targetToolbar,value);
+  if ((value != (EditorToolbar *)0x0) &&
+     (bVar1 = iRam_? != 0, (this->fields)._targetToolbar = value, bVar1)) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._targetToolbar >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
   }
   return;
 }
@@ -122,9 +236,19 @@ void Assembly-CSharp.dll::RTG::EditorToolbarTab::EditorToolbarTab_set_Tooltip
                (EditorToolbarTab *this,String *value,MethodInfo *method)
 
 {
-  if (value != (String *)0x0) {
-    (this->fields)._tooltip = value;
-    func_?(&this->fields,value);
+  if ((value != (String *)0x0) &&
+     (bVar1 = iRam_? != 0, (this->fields)._tooltip = value, bVar1)) {
+    uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
   }
   return;
 }

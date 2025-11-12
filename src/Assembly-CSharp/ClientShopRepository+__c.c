@@ -6,15 +6,13 @@ int32_t Assembly-CSharp.dll::ClientShopRepository+<>c::
                   (ClientShopRepository_c *this,ShopItem *o,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
   if (o != (ShopItem *)0x0) {
     return (o->fields).slotPosition;
   }
-  uVar2 = func_?(auStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  iVar5 = (*pcVar4)();
-  return iVar5;
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  iVar2 = (*pcVar1)();
+  return iVar2;
 }
 
 
@@ -25,15 +23,26 @@ void Assembly-CSharp.dll::ClientShopRepository+<>c::ClientShopRepository_c__ccto
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__ClientShopRepository____c);
+    FUN_?(&TypeInfo__ClientShopRepository____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__ClientShopRepository____c;
-  value = (ClientShopRepository_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  TypeInfo__ClientShopRepository____c->static_fields->__9 = value;
-  func_?(TypeInfo__ClientShopRepository____c->static_fields,value);
+  pCVar1 = (ClientShopRepository_c *)FUN_?(TypeInfo__ClientShopRepository____c);
+  TypeInfo__ClientShopRepository____c->static_fields->__9 = pCVar1;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)TypeInfo__ClientShopRepository____c->static_fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 

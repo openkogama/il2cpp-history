@@ -7,14 +7,20 @@ bool Assembly-CSharp.dll::RTG::PlaneMath::PlaneMath_Raycast2D
 
 {
   *t = 0.0;
-  fVar1 = rayDir.x * planeNormal.x + rayDir.y * planeNormal.y;
-  if (_UNK_? <= (float)((uint)fVar1 & _UNK_?)) {
-    fVar1 = (planeNormal.x * (rayOrigin.x - ptOnPlane.x) +
-            planeNormal.y * (rayOrigin.y - ptOnPlane.y)) /
-            (float)((uint)fVar1 ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-    *t = fVar1;
-    return 0.0 <= fVar1;
+  uStack_1 = planeNormal.y;
+  uStack_2 = planeNormal.x;
+  uStack_3 = rayDir.y;
+  uStack_4 = rayDir.x;
+  fVar5 = uStack_1 * uStack_3 + uStack_2 * uStack_4;
+  if (_UNK_? <= (float)((uint)fVar5 & _UNK_?)) {
+    uStack_6 = rayOrigin.x;
+    uStack_7 = ptOnPlane.x;
+    uStack_8 = rayOrigin.y;
+    uStack_9 = ptOnPlane.y;
+    fVar5 = ((uStack_8 - uStack_9) * uStack_1 + (uStack_6 - uStack_7) * uStack_2) /
+            (float)((uint)fVar5 ^ _UNK_?);
+    *t = fVar5;
+    return 0.0 <= fVar5;
   }
   return 0;
 }

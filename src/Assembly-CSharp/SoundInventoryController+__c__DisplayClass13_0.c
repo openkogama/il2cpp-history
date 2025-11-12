@@ -7,15 +7,25 @@ bool Assembly-CSharp.dll::SoundInventoryController+<>c__DisplayClass13_0::
                MethodInfo *method)
 
 {
-  if (soundTabInfo != (SoundTabInfo *)0x0) {
-    bVar1 = mscorlib.dll::System::String::String_op_Inequality
-                      ((soundTabInfo->fields).name,(this->fields).soundName,(MethodInfo *)0x0);
-    return bVar1;
+  if (soundTabInfo == (SoundTabInfo *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    bVar2 = (*pcVar1)();
+    return bVar2;
   }
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  bVar1 = (*pcVar3)();
-  return bVar1;
+  pSVar3 = (soundTabInfo->fields).name;
+  pSVar4 = (this->fields).soundName;
+  if (pSVar3 != pSVar4) {
+    if (((pSVar3 != (String *)0x0) && (pSVar4 != (String *)0x0)) &&
+       ((pSVar3->fields)._stringLength == (pSVar4->fields)._stringLength)) {
+      bVar2 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                        ((uint8_t *)&(pSVar3->fields)._firstChar,
+                         (uint8_t *)&(pSVar4->fields)._firstChar,
+                         (longlong)(pSVar3->fields)._stringLength * 2,(MethodInfo *)0x0);
+      return bVar2 ^ 1;
+    }
+    return 1;
+  }
+  return 0;
 }
 

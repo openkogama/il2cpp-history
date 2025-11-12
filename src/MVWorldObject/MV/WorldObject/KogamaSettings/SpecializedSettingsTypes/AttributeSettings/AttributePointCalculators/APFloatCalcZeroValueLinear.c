@@ -7,43 +7,21 @@ int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsT
 
 {
   fVar1 = i - this->zeroValue;
-  if (fVar1 < _UNK_?) {
+  if (fVar1 < 0.0) {
     this = (APFloatCalcZeroValueLinear *)&this->exchangeRateNegative;
   }
-  fVar1 = fVar1 * this->exchangeRatePositive;
+  fVar2 = this->exchangeRatePositive;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Math);
+    FUN_?(&TypeInfo__System__Math);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Math);
+  if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  dVar2 = (double)fVar1;
-  if (dVar2 < _UNK_?) {
-    fVar3 = (float10)func_?(dVar2,&dStack_4);
-    if ((double)fVar3 == _UNK_?) {
-      uVar5 = func_?();
-      if ((uVar5 & 1) != 0) {
-        return (int)(dStack_4 - _UNK_?);
-      }
-    }
-    else {
-      fVar3 = (float10)func_?((double)fVar1 - _UNK_?);
-      dStack_4 = (double)fVar3;
-    }
-  }
-  else {
-    fVar3 = (float10)func_?(dVar2,&dStack_4);
-    if ((double)fVar3 != _UNK_?) {
-      fVar3 = (float10)func_?((double)fVar1 + _UNK_?);
-      return (int)fVar3;
-    }
-    uVar5 = func_?();
-    if ((uVar5 & 1) != 0) {
-      return (int)(dStack_4 + _UNK_?);
-    }
-  }
-  return (int)dStack_4;
+  dVar3 = (double)FUN_?((double)(fVar1 * fVar2));
+  return (int)dVar3;
 }
 
 
@@ -55,21 +33,31 @@ String * MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettings
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Single);
-    func_?(&StringLiteral_APFloatCalcZeroValueLinear__exch);
+    FUN_?(&StringLiteral_APFloatCalcZeroValueLinear__exch);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pAVar1 = this;
-  this = (APFloatCalcZeroValueLinear *)this->exchangeRatePositive;
-  arg0 = (Object *)func_?(TypeInfo__System__Single,&this);
-  fStack_2 = pAVar1->exchangeRateNegative;
-  arg1 = (Object *)func_?(TypeInfo__System__Single,&fStack_2);
-  fStack_3 = pAVar1->zeroValue;
-  arg2 = (Object *)func_?(TypeInfo__System__Single,&fStack_3);
-  pSVar4 = mscorlib.dll::System::String::String_Format_2
-                     (StringLiteral_APFloatCalcZeroValueLinear__exch,arg0,arg1,arg2,
-                      (MethodInfo *)0x0);
-  return pSVar4;
+  afStackX_8[0] = this->exchangeRatePositive;
+  arg0 = (Object *)FUN_?(uRam_?,afStackX_8);
+  afStackX_8[0] = this->exchangeRateNegative;
+  arg1 = (Object *)FUN_?(uRam_?,afStackX_8);
+  afStackX_8[0] = this->zeroValue;
+  arg2 = (Object *)FUN_?(uRam_?,afStackX_8);
+  pSVar1 = StringLiteral_APFloatCalcZeroValueLinear__exch;
+  PStack_2._arg0 = (Object *)0x0;
+  PStack_2._arg1 = (Object *)0x0;
+  PStack_2._arg2 = (Object *)0x0;
+  PStack_2._args = (Object__Array *)0x0;
+  mscorlib.dll::System::ParamsArray::ParamsArray__ctor_2
+            (&PStack_2,arg0,arg1,arg2,(MethodInfo *)0x0);
+  PStack_3._arg0 = PStack_2._arg0;
+  PStack_3._arg1 = PStack_2._arg1;
+  PStack_3._arg2 = PStack_2._arg2;
+  PStack_3._args = PStack_2._args;
+  pSVar1 = mscorlib.dll::System::String::String_FormatHelper
+                     ((IFormatProvider *)0x0,pSVar1,&PStack_3,(MethodInfo *)0x0);
+  return pSVar1;
 }
 
 

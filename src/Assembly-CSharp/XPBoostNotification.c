@@ -6,9 +6,20 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_ChangeState
                MethodInfo *method)
 
 {
-  (this->fields).currentState = (undefined1)newState;
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  (this->fields).stateStartTime = fVar1;
+  pcVar1 = pcRam_?;
+  (this->fields).currentState = (uint8_t)newState;
+  pcVar2 = pcRam_?;
+  if ((pcVar1 == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar2 = pcVar1, pcVar1 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar2;
+  fVar4 = (float)(*pcVar1)();
+  (this->fields).stateStartTime = fVar4;
   return;
 }
 
@@ -20,26 +31,183 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_CloseNotifica
 
 {
   pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)this,(MethodInfo *)0x0);
+                      ((Component *)this,(MethodInfo *)0x0);
   if (pGVar1 != (GameObject *)0x0) {
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                      (pGVar1,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar2 = (pGVar1->fields)._.m_CachedPtr;
+    if (pvVar2 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar1,(MethodInfo *)0x0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pcVar3 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pcRam_? = pcVar3;
+    cVar5 = (*pcRam_?)(pvVar2);
+    if (cVar5 != '\0') {
       pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)this,(MethodInfo *)0x0);
+                          ((Component *)this,(MethodInfo *)0x0);
       if (pGVar1 == (GameObject *)0x0) goto code_?;
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                 (pGVar1,0,(MethodInfo *)0x0);
     }
     this_00 = (this->fields)._.pool;
     if (this_00 != (NotificationObjectPool *)0x0) {
-      NotificationObjectPool::NotificationObjectPool_Return
-                (this_00,(Notification *)this,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__List<Notification>__Add_Notification_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if ((this != (XPBoostNotification *)0x0) &&
+         (pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)this,(MethodInfo *)0x0), pGVar1 != (GameObject *)0x0))
+      {
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pvVar2 = (pGVar1->fields)._.m_CachedPtr;
+        if (pvVar2 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar1,(MethodInfo *)0x0);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        pcVar3 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+          uVar4 = func_?(&UNK_?);
+          FUN_?(uVar4,0);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        pcRam_? = pcVar3;
+        cVar5 = (*pcRam_?)(pvVar2);
+        if (cVar5 != '\0') {
+          pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)this,(MethodInfo *)0x0);
+          if (pGVar1 == (GameObject *)0x0) goto code_?;
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                    (pGVar1,0,(MethodInfo *)0x0);
+        }
+        this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)this,(MethodInfo *)0x0);
+        parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)this_00,(MethodInfo *)0x0);
+        if (this_01 != (Transform *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                    (this_01,parent,1,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          MethodInfo__System__Collections__Generic__List<Notification>__Remove_Notification_
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pLVar6 = (this_00->fields).ActiveInstances;
+          if (pLVar6 != (List_1_Notification_ *)0x0) {
+            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+            List_1_System_Object__Remove
+                      ((List_1_System_Object_ *)pLVar6,(Object *)this,
+                       MethodInfo__System__Collections__Generic__List<Notification>__Remove_Notification_
+                      );
+            if ((this_00->fields).OnActiveInstancesChanged != (Action *)0x0) {
+              pAVar7 = (this_00->fields).OnActiveInstancesChanged;
+              (*(pAVar7->fields)._._.invoke_impl)
+                        ((pAVar7->fields)._._.method_code,(pAVar7->fields)._._.method);
+            }
+            pMVar8 = MethodInfo__System__Collections__Generic__List<Notification>__Add_Notification_
+            ;
+            pLVar6 = (this_00->fields).Instances;
+            if (pLVar6 != (List_1_Notification_ *)0x0) {
+              pNVar9 = (pLVar6->fields)._items;
+              piVar10 = &(pLVar6->fields)._version;
+              *piVar10 = *piVar10 + 1;
+              if (pNVar9 == (Notification__Array *)0x0) {
+                FUN_?();
+                pcVar3 = (code *)swi(3);
+                (*pcVar3)();
+                return;
+              }
+              uVar11 = (pLVar6->fields)._size;
+              if (uVar11 < (uint)pNVar9->max_length) {
+                (pLVar6->fields)._size = uVar11 + 1;
+              }
+              else {
+                uVar11 = (pLVar6->fields)._size;
+                FUN_?(pLVar6,uVar11 + 1,
+                              (pMVar8->klass->rgctx_data[0xe].method)->klass->rgctx_data[0xf].
+                              rgctxDataDummy,pNVar9,unaff_RDI);
+                pNVar9 = (pLVar6->fields)._items;
+                (pLVar6->fields)._size = uVar11 + 1;
+                if (pNVar9 == (Notification__Array *)0x0) {
+                  FUN_?();
+                  pcVar3 = (code *)swi(3);
+                  (*pcVar3)();
+                  return;
+                }
+              }
+              if ((uint)pNVar9->max_length <= uVar11) {
+                FUN_?();
+                pcVar3 = (code *)swi(3);
+                (*pcVar3)();
+                return;
+              }
+              bVar12 = iRam_? != 0;
+              pNVar9->vector[(int)uVar11] = (Notification *)this;
+              if (bVar12) {
+                uVar11 = (uint)((ulonglong)(pNVar9->vector + (int)uVar11) >> 0xc);
+                puVar13 = (ulonglong *)((ulonglong)((uVar11 & 0x1fffff) >> 6) * 8 + 0xADDR);
+                do {
+                  uVar14 = *puVar13;
+                  LOCK();
+                  uVar15 = *puVar13;
+                  if (uVar14 == uVar15) {
+                    *puVar13 = uVar14 | 1L << (uVar11 & 0x3f);
+                  }
+                  UNLOCK();
+                } while (uVar14 != uVar15);
+              }
+              return;
+            }
+          }
+        }
+      }
+code_?:
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
   }
 code_?:
-  func_?();
+  FUN_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -54,29 +222,95 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_CloseNotifica
 {
   pAVar1 = (this->fields).closeShrinkXEffectCurve;
   if (pAVar1 != (AnimationCurve *)0x0) {
-    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                      (pAVar1,stateProgress,(MethodInfo *)0x0);
+    pvVar2 = (pAVar1->fields).m_Ptr;
+    if (pvVar2 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pAVar1,(MethodInfo *)0x0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pcVar3 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pcRam_? = pcVar3;
+    fVar5 = (float)(*pcRam_?)(pvVar2,stateProgress);
     pAVar1 = (this->fields).closeShrinkYEffectCurve;
-    fVar3 = (this->fields).backgroundOriginalWidth;
-    fVar4 = (this->fields).backgroundOriginalWidth;
+    fVar6 = (this->fields).backgroundOriginalWidth;
+    fVar7 = (this->fields).backgroundOriginalWidth;
     if (pAVar1 != (AnimationCurve *)0x0) {
-      fVar5 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                        (pAVar1,stateProgress,(MethodInfo *)0x0);
-      this_00 = (this->fields).backGround;
-      if (this_00 != (RectTransform *)0x0) {
-        value.y = (this->fields).backgroundOriginalSizeDelta.y +
-                  (fVar5 * (this->fields).backgroundOriginalHeigt -
-                  (this->fields).backgroundOriginalHeigt);
-        value.x = (this->fields).backgroundOriginalSizeDelta.x + (fVar2 * fVar3 - fVar4);
-        UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_sizeDelta
-                  (this_00,value,(MethodInfo *)0x0);
+      pvVar2 = (pAVar1->fields).m_Ptr;
+      if (pvVar2 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pAVar1,(MethodInfo *)0x0);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pcVar3 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+        uVar4 = func_?(&UNK_?);
+        FUN_?(uVar4,0);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pcRam_? = pcVar3;
+      fVar8 = (float)(*pcRam_?)(pvVar2,stateProgress);
+      obj = (this->fields).backGround;
+      if (obj != (RectTransform *)0x0) {
+        auStack_9[0] =
+             CONCAT44((fVar8 * (this->fields).backgroundOriginalHeigt -
+                      (this->fields).backgroundOriginalHeigt) +
+                      (this->fields).backgroundOriginalSizeDelta.y,
+                      (fVar5 * fVar6 - fVar7) + (this->fields).backgroundOriginalSizeDelta.x);
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::RectTransform>_UnityEngine__RectTransform_
+                        ,auStack_9[0],0);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (obj == (RectTransform *)0x0) {
+          FUN_?();
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        pvVar2 = (obj->fields)._._._.m_CachedPtr;
+        if (pvVar2 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        pcVar3 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+          uVar4 = func_?(&UNK_?);
+          FUN_?(uVar4,0);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        pcRam_? = pcVar3;
+        (*pcRam_?)(pvVar2,auStack_9);
         return;
       }
     }
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -87,20 +321,73 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_FadeOut
                (XPBoostNotification *this,float stateProgress,MethodInfo *method)
 
 {
-  this_00 = (this->fields).backgroundCanvasGroup;
-  this_01 = (this->fields).fadeOutCurve;
-  if (this_01 != (AnimationCurve *)0x0) {
-    value = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                      (this_01,stateProgress,(MethodInfo *)0x0);
-    if (this_00 != (CanvasGroup *)0x0) {
-      UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                (this_00,value,(MethodInfo *)0x0);
+  obj = (this->fields).backgroundCanvasGroup;
+  obj_00 = (this->fields).fadeOutCurve;
+  uVar1 = CONCAT44(unaff_XMM6_Db,unaff_XMM6_Da);
+  uVar2 = CONCAT44(unaff_XMM6_Dd,unaff_XMM6_Dc);
+  if (obj_00 != (AnimationCurve *)0x0) {
+    pvVar3 = (obj_00->fields).m_Ptr;
+    if (pvVar3 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)obj_00,(MethodInfo *)0x0);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    pcVar4 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar4 = (code *)FUN_?(&UNK_?,in_RDX,method,in_R9,uVar1,uVar2),
+       pcVar4 == (code *)0x0)) {
+      uVar1 = func_?(&UNK_?);
+      FUN_?(uVar1,0);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    pcRam_? = pcVar4;
+    uVar5 = (*pcRam_?)(pvVar3,stateProgress);
+    if (obj != (CanvasGroup *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::CanvasGroup>_UnityEngine__CanvasGroup_
+                      ,uVar5,0,in_R9,uVar1,uVar2,unaff_RBX);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (obj == (CanvasGroup *)0x0) {
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pvVar3 = (obj->fields)._._._.m_CachedPtr;
+      if (pvVar3 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pcVar4 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+        uVar1 = func_?(&UNK_?);
+        FUN_?(uVar1,0);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pcRam_? = pcVar4;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*pcRam_?)(pvVar3,uVar5);
       return;
     }
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -112,24 +399,11 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_HandleClosing
 
 {
   XPBoostNotification_UpdateBoostTextEffect(this,currentStateTime,(MethodInfo *)0x0);
-  this_00 = (this->fields).fadeOutCurve;
-  this_01 = (this->fields).backgroundCanvasGroup;
-  if (this_00 != (AnimationCurve *)0x0) {
-    value = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                      (this_00,currentStateTime,(MethodInfo *)0x0);
-    if (this_01 != (CanvasGroup *)0x0) {
-      UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                (this_01,value,(MethodInfo *)0x0);
-      XPBoostNotification_CloseNotification_1(this,0.0,(MethodInfo *)0x0);
-      if (_UNK_? < 3.9771988e-29) {
-        XPBoostNotification_CloseNotification(this,(MethodInfo *)0x0);
-      }
-      return;
-    }
+  XPBoostNotification_FadeOut(this,currentStateTime,(MethodInfo *)0x0);
+  XPBoostNotification_CloseNotification_1(this,currentStateTime,(MethodInfo *)0x0);
+  if (_UNK_? < currentStateTime) {
+    XPBoostNotification_CloseNotification(this,(MethodInfo *)0x0);
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
   return;
 }
 
@@ -142,9 +416,10 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_HandleHighlig
 {
   if (0 < (this->fields).currentMemberBeingHighlighted) {
     XPBoostNotification_UpdateBoostTextEffect(this,currentStateTime,(MethodInfo *)0x0);
-    XPBoostNotification_SwapMemberName(this,currentStateTime,(MethodInfo *)0x0);
+    XPBoostNotification_SlideOutName(this,currentStateTime,(MethodInfo *)0x0);
+    XPBoostNotification_SlideInName(this,currentStateTime,(MethodInfo *)0x0);
   }
-  if (_UNK_? < currentStateTime) {
+  if (TypeRef__System__Activator__T._0_4_ < currentStateTime) {
     XPBoostNotification_StartNextState(this,(MethodInfo *)0x0);
   }
   return;
@@ -157,26 +432,14 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_HandleStartSt
                (XPBoostNotification *this,float currentStateTime,MethodInfo *method)
 
 {
-  XPBoostNotification_UpdateBoostTextEffect(this,currentStateTime - _UNK_?,(MethodInfo *)0x0)
-  ;
-  this_00 = (this->fields).fadeOutCurve;
-  this_01 = (this->fields).backgroundCanvasGroup;
-  if (this_00 != (AnimationCurve *)0x0) {
-    value = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                      (this_00,_UNK_? - currentStateTime,(MethodInfo *)0x0);
-    if (this_01 != (CanvasGroup *)0x0) {
-      UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                (this_01,value,(MethodInfo *)0x0);
-      XPBoostNotification_CloseNotification_1(this,_UNK_? - 0.0,(MethodInfo *)0x0);
-      if (_UNK_? < 3.977283e-29) {
-        XPBoostNotification_StartNextState(this,(MethodInfo *)0x0);
-      }
-      return;
-    }
+  XPBoostNotification_UpdateBoostTextEffect
+            (this,currentStateTime - _UNK_?,(MethodInfo *)0x0);
+  fVar1 = _UNK_?;
+  XPBoostNotification_FadeOut(this,_UNK_? - currentStateTime,(MethodInfo *)0x0);
+  XPBoostNotification_CloseNotification_1(this,fVar1 - currentStateTime,(MethodInfo *)0x0);
+  if (_UNK_? < currentStateTime) {
+    XPBoostNotification_StartNextState(this,(MethodInfo *)0x0);
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
   return;
 }
 
@@ -187,88 +450,111 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_HandleState
                (XPBoostNotification *this,MethodInfo *method)
 
 {
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  fVar1 = fVar1 - (this->fields).stateStartTime;
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  fVar3 = (float)(*pcRam_?)();
+  fVar3 = fVar3 - (this->fields).stateStartTime;
   switch((this->fields).currentState) {
-  case 0:
-  case 5:
-    break;
   case 1:
-    pGVar2 = (this->fields).content;
-    if (pGVar2 == (GameObject *)0x0) {
+    pGVar4 = (this->fields).content;
+    if (pGVar4 == (GameObject *)0x0) {
 code_?:
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
+      FUN_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
       return;
     }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                      (pGVar2,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      pGVar2 = (this->fields).content;
-      if (pGVar2 == (GameObject *)0x0) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar2,0,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
-    if (_UNK_? < fVar1) {
+    pvVar5 = (pGVar4->fields)._.m_CachedPtr;
+    if (pvVar5 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar4,(MethodInfo *)0x0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    cVar6 = (*pcRam_?)(pvVar5);
+    if (cVar6 != '\0') {
+      pGVar4 = (this->fields).content;
+      if (pGVar4 == (GameObject *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (pGVar4,0,(MethodInfo *)0x0);
+    }
+    pcVar1 = pcRam_?;
+    if (_UNK_? < fVar3) {
       (this->fields).currentState = 2;
-      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      pGVar2 = (this->fields).content;
-      (this->fields).stateStartTime = fVar1;
-      if (pGVar2 != (GameObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar2,1,(MethodInfo *)0x0);
-        (*(code *)(this->klass->vtable).Update.method)
-                  (this,(this->klass->vtable).OnReturn.methodPtr);
+      pcVar7 = pcRam_?;
+      if ((pcVar1 == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar7 = pcVar1, pcVar1 == (code *)0x0)) {
+        uVar2 = func_?(&UNK_?);
+        FUN_?(uVar2,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
         return;
       }
-      goto code_?;
+      pcRam_? = pcVar7;
+      fVar3 = (float)(*pcVar1)();
+      pGVar4 = (this->fields).content;
+      (this->fields).stateStartTime = fVar3;
+      if (pGVar4 == (GameObject *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (pGVar4,1,(MethodInfo *)0x0);
+      (*(this->klass->vtable).Update.methodPtr)(this,(this->klass->vtable).Update.method);
     }
     break;
   case 2:
-    XPBoostNotification_UpdateBoostTextEffect(this,fVar1 - _UNK_?,(MethodInfo *)0x0);
-    pAVar5 = (this->fields).fadeOutCurve;
-    pCVar6 = (this->fields).backgroundCanvasGroup;
-    if ((pAVar5 == (AnimationCurve *)0x0) ||
-       (fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                          (pAVar5,_UNK_? - fVar1,(MethodInfo *)0x0),
-       pCVar6 == (CanvasGroup *)0x0)) goto code_?;
-    UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-              (pCVar6,fVar1,(MethodInfo *)0x0);
-    XPBoostNotification_CloseNotification_1(this,_UNK_? - fVar1,(MethodInfo *)0x0);
-    if (fVar1 <= _UNK_?) {
+    XPBoostNotification_UpdateBoostTextEffect(this,fVar3 - _UNK_?,(MethodInfo *)0x0);
+    fVar8 = _UNK_?;
+    XPBoostNotification_FadeOut(this,_UNK_? - fVar3,(MethodInfo *)0x0);
+    XPBoostNotification_CloseNotification_1(this,fVar8 - fVar3,(MethodInfo *)0x0);
+    if (fVar3 <= _UNK_?) {
       return;
     }
 code_?:
     XPBoostNotification_StartNextState(this,(MethodInfo *)0x0);
-    break;
+    return;
   case 3:
     if (0 < (this->fields).currentMemberBeingHighlighted) {
-      XPBoostNotification_UpdateBoostTextEffect(this,fVar1,(MethodInfo *)0x0);
-      XPBoostNotification_SwapMemberName(this,fVar1,(MethodInfo *)0x0);
+      XPBoostNotification_UpdateBoostTextEffect(this,fVar3,(MethodInfo *)0x0);
+      XPBoostNotification_SlideOutName(this,fVar3,(MethodInfo *)0x0);
+      XPBoostNotification_SlideInName(this,fVar3,(MethodInfo *)0x0);
     }
-    if (_UNK_? < fVar1) goto code_?;
+    if (TypeRef__System__Activator__T._0_4_ < fVar3) goto code_?;
     break;
   case 4:
-    XPBoostNotification_UpdateBoostTextEffect(this,fVar1,(MethodInfo *)0x0);
-    pAVar5 = (this->fields).fadeOutCurve;
-    pCVar6 = (this->fields).backgroundCanvasGroup;
-    if ((pAVar5 == (AnimationCurve *)0x0) ||
-       (fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                          (pAVar5,fVar1,(MethodInfo *)0x0), pCVar6 == (CanvasGroup *)0x0))
-    goto code_?;
-    UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-              (pCVar6,fVar1,(MethodInfo *)0x0);
-    XPBoostNotification_CloseNotification_1(this,fVar1,(MethodInfo *)0x0);
-    if (_UNK_? < fVar1) {
+    XPBoostNotification_UpdateBoostTextEffect(this,fVar3,(MethodInfo *)0x0);
+    XPBoostNotification_FadeOut(this,fVar3,(MethodInfo *)0x0);
+    XPBoostNotification_CloseNotification_1(this,fVar3,(MethodInfo *)0x0);
+    if (_UNK_? < fVar3) {
       XPBoostNotification_CloseNotification(this,(MethodInfo *)0x0);
       return;
     }
-    break;
-  default:
-    goto code_?;
   }
-code_?:
   return;
 }
 
@@ -280,31 +566,67 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_HandleWaitBef
 
 {
   pGVar1 = (this->fields).content;
-  if (pGVar1 != (GameObject *)0x0) {
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                      (pGVar1,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      pGVar1 = (this->fields).content;
-      if (pGVar1 == (GameObject *)0x0) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar1,0,(MethodInfo *)0x0);
-    }
-    if (_UNK_? < currentStateTime) {
-      (this->fields).currentState = 2;
-      fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      pGVar1 = (this->fields).content;
-      (this->fields).stateStartTime = fVar3;
-      if (pGVar1 == (GameObject *)0x0) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar1,1,(MethodInfo *)0x0);
-      (*(code *)(this->klass->vtable).Update.method)(this);
-    }
+  if (pGVar1 == (GameObject *)0x0) {
+code_?:
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar3 = (pGVar1->fields)._.m_CachedPtr;
+  if (pvVar3 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar1,(MethodInfo *)0x0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar4 = func_?(&UNK_?);
+    FUN_?(uVar4,0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcRam_? = pcVar2;
+  cVar5 = (*pcRam_?)(pvVar3);
+  if (cVar5 != '\0') {
+    pGVar1 = (this->fields).content;
+    if (pGVar1 == (GameObject *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+              (pGVar1,0,(MethodInfo *)0x0);
+  }
+  pcVar2 = pcRam_?;
+  if (_UNK_? < currentStateTime) {
+    (this->fields).currentState = 2;
+    pcVar6 = pcRam_?;
+    if ((pcVar2 == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar6 = pcVar2, pcVar2 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar6;
+    fVar7 = (float)(*pcVar2)();
+    pGVar1 = (this->fields).content;
+    (this->fields).stateStartTime = fVar7;
+    if (pGVar1 == (GameObject *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+              (pGVar1,1,(MethodInfo *)0x0);
+    (*(this->klass->vtable).Update.methodPtr)(this,(this->klass->vtable).Update.method);
+  }
   return;
 }
 
@@ -316,175 +638,251 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_Initialize
                MethodInfo *method)
 
 {
-  *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__get_Current__
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__List<MVPlayer>__Add_MVPlayer_);
-    func_?(&MethodInfo__System__Collections__Generic__List<MVPlayer>__get_Count__);
-    func_?(&MethodInfo__System__Collections__Generic__List<MVPlayer>__get_Item_int_);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<MVPlayer>__Add_MVPlayer_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<MVPlayer>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<MVPlayer>__get_Item_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pOVar1 = (Object__Class *)0x0;
-  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar2 != (MVNetworkGame *)0x0) {
-    pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar2,(MethodInfo *)0x0);
-    if (pMVar3 != (MVLocalPlayer *)0x0) {
-      pOVar4 = (Object__Class *)(pMVar3->fields)._._ActorNr_k__BackingField;
-      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar2 != (MVNetworkGame *)0x0) &&
-         (pMVar5 = (pMVar2->fields).playerContainer, pMVar5 != (MVPlayerContainer *)0x0)) {
-        this_03 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                   *)MVPlayerContainer::MVPlayerContainer_get_ActivePlayers
-                               (pMVar5,(MethodInfo *)0x0);
-        if (this_03 !=
-            (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-             *)0x0) {
-          pDVar6 = mscorlib.dll::System::Collections::Generic::
-                   Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
-                   StyleSheetCache+SheetHandleKey,System::Object]::
-                   Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                             ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                               *)&stack0xffffffcc,this_03,
-                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_MVPlayer>__GetEnumerator__
-                             );
-          player = pDVar6->_currentValue;
-          while( true ) {
-            bVar7 = mscorlib.dll::System::Collections::Generic::
-                    Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                    UInt32,System::Object]::
-                    Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                              ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                                *)&stack0xffffffbc,
-                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__MoveNext__
-                              );
-            if (bVar7 == 0) break;
-            if ((player != (Object *)0x0) && (player[6].klass != pOVar4)) {
-              pOVar8 = player;
-              pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-              if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-              pMVar5 = (pMVar2->fields).playerContainer;
-              if (pMVar5 == (MVPlayerContainer *)0x0) goto code_?;
-              in_stack_9 = (MethodInfo *)0x0;
-              player = (Object *)&stack0xffffffe8;
-              bVar7 = MVPlayerContainer::MVPlayerContainer_TryGetValue
-                                (pMVar5,(int32_t)pOVar8[6].klass,(MVPlayer **)player,
-                                 (MethodInfo *)0x0);
-              if (bVar7 != 0) {
-                if ((pOVar1 == (Object__Class *)0x0) ||
-                   (this_00 = (pOVar1->_0).fields, this_00 == (FieldInfo *)0x0))
-                goto code_?;
-                bVar7 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
-                        SubscriptionRulesWrapper_HasBenefit
-                                  ((SubscriptionRulesWrapper *)this_00,
-                                   SubscriptionBenefit__Enum_XPBoost,(MethodInfo *)0x0);
-                if (bVar7 != 0) {
-                  pLVar10 = (this->fields).memberList;
-                  if (pLVar10 == (List_1_MVPlayer_ *)0x0) goto code_?;
-                  pOVar4 = (Object__Class *)
-                            MethodInfo__System__Collections__Generic__List<MVPlayer>__Add_MVPlayer_;
-                  pOVar1 = (Object__Class *)
-                            MethodInfo__System__Collections__Generic__List<MVPlayer>__Add_MVPlayer_;
-                  mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-                  List_1_System_Object__Add
-                            ((List_1_System_Object_ *)pLVar10,
-                             (Object *)
-                             MethodInfo__System__Collections__Generic__List<MVPlayer>__Add_MVPlayer_
-                             ,
-                             MethodInfo__System__Collections__Generic__List<MVPlayer>__Add_MVPlayer_
-                            );
-                }
-              }
-            }
+  pOStackX_20 = (Object *)0x0;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((((pMVar1 != (MVGameControllerBase *)0x0) &&
+       (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+      (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 != (MVPlayerContainer *)0x0)) &&
+     (pMVar4 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar3,(MethodInfo *)0x0),
+     pMVar4 != (MVLocalPlayer *)0x0)) {
+    iVar5 = (pMVar4->fields)._._ActorNr_k__BackingField;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if (((pMVar1 != (MVGameControllerBase *)0x0) &&
+        (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+       ((pMVar3 = (pMVar2->fields).playerContainer, pMVar3 != (MVPlayerContainer *)0x0 &&
+        (pDVar6 = MVPlayerContainer::MVPlayerContainer_get_ActivePlayers(pMVar3,(MethodInfo *)0x0),
+        pDVar6 != (Dictionary_2_TKey_TValue_ValueCollection_System_Int32_MVPlayer_ *)0x0)))) {
+      pDStack_7 = (pDVar6->fields)._dictionary;
+      uStack_8 = 0;
+      uStack_9 = 0;
+      if (iRam_? != 0) {
+        uVar10 = (uint)((ulonglong)&pDStack_7 >> 0xc);
+        uVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6);
+        do {
+          uVar12 = *(ulonglong *)(uVar11 * 8 + 0xADDR);
+          puVar13 = (ulonglong *)(uVar11 * 8 + 0xADDR);
+          LOCK();
+          bVar14 = uVar12 == *puVar13;
+          if (bVar14) {
+            *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
           }
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&stack0xffffffbc,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_MVPlayer>__Dispose__
-                     ,in_stack_9);
-          this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                    (this->fields).memberList;
-          if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-            if ((this_01->fields)._size < 1) {
-              pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                  ((Component *)this,(MethodInfo *)0x0);
-              if (pGVar11 != (GameObject *)0x0) {
-                bVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                        GameObject_get_activeSelf(pGVar11,(MethodInfo *)0x0);
-                if (bVar7 != 0) {
-                  pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                            Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
-                  if (pGVar11 == (GameObject *)0x0) goto code_?;
-                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                            (pGVar11,0,(MethodInfo *)0x0);
-                }
-                this_02 = (this->fields)._.pool;
-                if (this_02 != (NotificationObjectPool *)0x0) {
-                  NotificationObjectPool::NotificationObjectPool_Return
-                            (this_02,(Notification *)this,(MethodInfo *)0x0);
-                  *unaff_FS_OFFSET = this;
+          UNLOCK();
+        } while (!bVar14);
+      }
+      if (pDStack_7 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
+        FUN_?();
+        pcVar15 = (code *)swi(3);
+        (*pcVar15)();
+        return;
+      }
+      uStack_8 = (ulonglong)(uint)(pDStack_7->fields)._version << 0x20;
+      uStack_9 = 0;
+      uStack_16 = uStack_8;
+      pMStack_17 = (MVPlayer *)0x0;
+      pDStack_18 = pDStack_7;
+      while (pDStack_18 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
+        if (uStack_16._4_4_ != (pDStack_18->fields)._version) goto code_?;
+        uVar11 = uStack_16 & 0xffffffff;
+        do {
+          if (pDStack_18 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) goto code_?;
+          uVar10 = (uint)uVar11;
+          if ((uint)(pDStack_18->fields)._count <= uVar10) {
+            uStack_16 = CONCAT44(uStack_16._4_4_,(pDStack_18->fields)._count + 1);
+            pMStack_17 = (MVPlayer *)0x0;
+            pLVar19 = (this->fields).memberList;
+            if (pLVar19 != (List_1_MVPlayer_ *)0x0) {
+              if ((pLVar19->fields)._size < 1) {
+                XPBoostNotification_CloseNotification(this,(MethodInfo *)0x0);
+                return;
+              }
+              (this->fields).currentMemberBeingHighlighted = 0;
+              pTVar20 = (this->fields).UserNameText1;
+              if (pLVar19 != (List_1_MVPlayer_ *)0x0) {
+                if ((pLVar19->fields)._size == 0) {
+                  mscorlib.dll::System::ThrowHelper::
+                  ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+                  pcVar15 = (code *)swi(3);
+                  (*pcVar15)();
                   return;
                 }
-              }
-            }
-            else {
-              pTVar12 = (this->fields).UserNameText1;
-              (this->fields).currentMemberBeingHighlighted = 0;
-              if (this_01 !=
-                  (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-                RVar13 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                         RegularExpressions::RegexCharClass+SingleRange]::
-                         List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                   (this_01,0,
-                                    MethodInfo__System__Collections__Generic__List<MVPlayer>__get_Item_int_
-                                   );
-                if (((RVar13 != (RegexCharClass_SingleRange)0x0) &&
-                    (*(int *)((int)RVar13 + 0x3c) != 0)) && (pTVar12 != (Text *)0x0)) {
-                  (*(code *)(pTVar12->klass->vtable).set_text.method)();
-                  pLVar10 = (this->fields).memberList;
-                  if (pLVar10 != (List_1_MVPlayer_ *)0x0) {
-                    pRVar14 = (this->fields).backGround;
-                    fVar15 = (float)(pLVar10->fields)._size;
-                    (this->fields)._.timeSinceStart =
-                         (this->fields)._.timeSinceStart -
-                         (fVar15 + fVar15 + _UNK_? + _UNK_?);
-                    if (pRVar14 != (RectTransform *)0x0) {
-                      __return_storage_ptr__ = (Rect *)&stack0xffffffcc;
-                      pRVar16 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
-                                RectTransform_get_rect
-                                          (__return_storage_ptr__,pRVar14,(MethodInfo *)0x0);
-                      pRVar14 = (this->fields).backGround;
-                      (this->fields).backgroundOriginalWidth = pRVar16->m_Width;
-                      if (pRVar14 != (RectTransform *)0x0) {
-                        pRVar16 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
-                                  RectTransform_get_rect
-                                            ((Rect *)&stack0xffffffac,pRVar14,(MethodInfo *)0x0);
-                        pRVar14 = (this->fields).backGround;
-                        (this->fields).backgroundOriginalHeigt = pRVar16->m_Height;
-                        if (pRVar14 != (RectTransform *)0x0) {
-                          VVar17 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
-                                   RectTransform_get_sizeDelta(pRVar14,(MethodInfo *)0x0);
-                          (this->fields).backgroundOriginalSizeDelta.x =
-                               (float)__return_storage_ptr__;
-                          (this->fields).backgroundOriginalSizeDelta.y = (float)VVar17.y;
-                          XPBoostNotification_UpdateBoostAmount(this,(MethodInfo *)0x0);
-                          (this->fields).currentState = 1;
-                          puVar18 = &UNK_?;
-                          fVar15 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                                             ((MethodInfo *)0x0);
-                          (this->fields).stateStartTime = fVar15;
-                          *unaff_FS_OFFSET = puVar18;
+                pMVar21 = (pLVar19->fields)._items;
+                if (pMVar21 != (MVPlayer__Array *)0x0) {
+                  if ((int)pMVar21->max_length == 0) {
+                    FUN_?();
+                    pcVar15 = (code *)swi(3);
+                    (*pcVar15)();
+                    return;
+                  }
+                  if (((pMVar21->vector[0] != (MVPlayer *)0x0) &&
+                      (pUVar22 = (pMVar21->vector[0]->fields)._UserProfileData_k__BackingField,
+                      pUVar22 != (UserProfileData *)0x0)) && (pTVar20 != (Text *)0x0)) {
+                    (*(pTVar20->klass->vtable).set_text.methodPtr)
+                              (pTVar20,(pUVar22->fields).UserName,
+                               (pTVar20->klass->vtable).set_text.method);
+                    pLVar19 = (this->fields).memberList;
+                    if (pLVar19 != (List_1_MVPlayer_ *)0x0) {
+                      fVar23 = (float)(pLVar19->fields)._size;
+                      (this->fields)._.timeSinceStart =
+                           (this->fields)._.timeSinceStart -
+                           (fVar23 + fVar23 + _UNK_? + _UNK_?);
+                      pRVar24 = (this->fields).backGround;
+                      if (pRVar24 != (RectTransform *)0x0) {
+                        if (cRam_? == '\0') {
+                          FUN_?(&
+                                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::RectTransform>_UnityEngine__RectTransform_
+                                       );
+                          LOCK();
+                          UNLOCK();
+                          cRam_? = '\x01';
+                        }
+                        if ((pRVar24->fields)._._._.m_CachedPtr == (void *)0x0) {
+                          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                          ThrowHelper_2_ThrowNullReferenceException
+                                    ((Object *)pRVar24,(MethodInfo *)0x0);
+                          pcVar15 = (code *)swi(3);
+                          (*pcVar15)();
                           return;
+                        }
+                        pcVar15 = pcRam_?;
+                        if ((pcRam_? == (code *)0x0) &&
+                           (pcVar15 = (code *)FUN_?(&UNK_?), pcVar15 == (code *)0x0)
+                           ) {
+                          uVar25 = func_?(&UNK_?);
+                          FUN_?(uVar25,0);
+                          pcVar15 = (code *)swi(3);
+                          (*pcVar15)();
+                          return;
+                        }
+                        pcRam_? = pcVar15;
+                        (*pcRam_?)();
+                        (this->fields).backgroundOriginalWidth = 0.0;
+                        pRVar24 = (this->fields).backGround;
+                        if (pRVar24 != (RectTransform *)0x0) {
+                          if (cRam_? == '\0') {
+                            FUN_?(&
+                                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::RectTransform>_UnityEngine__RectTransform_
+                                         );
+                            LOCK();
+                            UNLOCK();
+                            cRam_? = '\x01';
+                          }
+                          pDStack_7 = (Dictionary_2_System_Int32_MVPlayer_ *)0x0;
+                          uStack_8 = 0;
+                          if ((pRVar24->fields)._._._.m_CachedPtr == (void *)0x0) {
+                            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                            ThrowHelper_2_ThrowNullReferenceException
+                                      ((Object *)pRVar24,(MethodInfo *)0x0);
+                            pcVar15 = (code *)swi(3);
+                            (*pcVar15)();
+                            return;
+                          }
+                          pcVar15 = pcRam_?;
+                          if ((pcRam_? == (code *)0x0) &&
+                             (pcVar15 = (code *)FUN_?(&UNK_?),
+                             pcVar15 == (code *)0x0)) {
+                            uVar25 = func_?(&UNK_?);
+                            FUN_?(uVar25,0);
+                            pcVar15 = (code *)swi(3);
+                            (*pcVar15)();
+                            return;
+                          }
+                          pcRam_? = pcVar15;
+                          (*pcRam_?)();
+                          (this->fields).backgroundOriginalHeigt = uStack_8._4_4_;
+                          pRVar24 = (this->fields).backGround;
+                          if (pRVar24 != (RectTransform *)0x0) {
+                            if (cRam_? == '\0') {
+                              FUN_?(&
+                                            void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::RectTransform>_UnityEngine__RectTransform_
+                                           );
+                              LOCK();
+                              UNLOCK();
+                              cRam_? = '\x01';
+                            }
+                            pvVar26 = (pRVar24->fields)._._._.m_CachedPtr;
+                            if (pvVar26 == (void *)0x0) {
+                              UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                              ThrowHelper_2_ThrowNullReferenceException
+                                        ((Object *)pRVar24,(MethodInfo *)0x0);
+                              pcVar15 = (code *)swi(3);
+                              (*pcVar15)();
+                              return;
+                            }
+                            pcVar15 = pcRam_?;
+                            if ((pcRam_? == (code *)0x0) &&
+                               (pcVar15 = (code *)FUN_?(&UNK_?),
+                               pcVar15 == (code *)0x0)) {
+                              uVar25 = func_?(&UNK_?);
+                              FUN_?(uVar25,0);
+                              pcVar15 = (code *)swi(3);
+                              (*pcVar15)();
+                              return;
+                            }
+                            pcRam_? = pcVar15;
+                            (*pcRam_?)(pvVar26);
+                            (this->fields).backgroundOriginalSizeDelta.x = 0.0;
+                            (this->fields).backgroundOriginalSizeDelta.y = 0.0;
+                            XPBoostNotification_UpdateBoostAmount(this,(MethodInfo *)0x0);
+                            (this->fields).currentState = 1;
+                            pcVar15 = pcRam_?;
+                            if ((pcRam_? == (code *)0x0) &&
+                               (pcVar15 = (code *)FUN_?(&UNK_?),
+                               pcVar15 == (code *)0x0)) {
+                              uVar25 = func_?(&UNK_?);
+                              FUN_?(uVar25,0);
+                              pcVar15 = (code *)swi(3);
+                              (*pcVar15)();
+                              return;
+                            }
+                            pcRam_? = pcVar15;
+                            fVar23 = (float)(*pcRam_?)();
+                            (this->fields).stateStartTime = fVar23;
+                            return;
+                          }
                         }
                       }
                     }
@@ -492,16 +890,88 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_Initialize
                 }
               }
             }
+            goto code_?;
+          }
+          pDVar27 = (pDStack_18->fields)._entries;
+          uVar11 = (ulonglong)(uVar10 + 1);
+          uStack_16 = CONCAT44(uStack_16._4_4_,uVar10 + 1);
+          if (pDVar27 == (Dictionary_2_TKey_TValue_Entry_System_Int32_MVPlayer___Array *)0x0)
+          goto code_?;
+          if ((uint)pDVar27->max_length <= uVar10) goto code_?;
+        } while (pDVar27->vector[(int)uVar10].hashCode < 0);
+        pMStack_17 = pDVar27->vector[(int)uVar10].value;
+        func_?();
+        pMVar28 = pMStack_17;
+        if ((pMStack_17 != (MVPlayer *)0x0) &&
+           ((pMStack_17->fields)._ActorNr_k__BackingField != iVar5)) {
+          pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
+          pMVar3 = (pMVar2->fields).playerContainer;
+          key = (pMVar28->fields)._ActorNr_k__BackingField;
+          if (pMVar3 == (MVPlayerContainer *)0x0) goto code_?;
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__TryGetValue_int__MVPlayer__
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          this_00 = (pMVar3->fields).players;
+          if (this_00 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) goto code_?;
+          bVar29 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                   Object]::Dictionary_2_System_Int32_System_Object__TryGetValue
+                             ((Dictionary_2_System_Int32_System_Object_ *)this_00,key,&pOStackX_20,
+                              MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__TryGetValue_int__MVPlayer__
+                             );
+          if (bVar29 != 0) {
+            if (pOStackX_20 == (Object *)0x0) goto code_?;
+            if ((SubscriptionRulesWrapper *)pOStackX_20[7].monitor ==
+                (SubscriptionRulesWrapper *)0x0) goto code_?;
+            bVar29 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
+                     SubscriptionRulesWrapper_HasBenefit
+                               ((SubscriptionRulesWrapper *)pOStackX_20[7].monitor,
+                                SubscriptionBenefit__Enum_XPBoost,(MethodInfo *)0x0);
+            if (bVar29 != 0) {
+              pLVar19 = (this->fields).memberList;
+              if (pLVar19 == (List_1_MVPlayer_ *)0x0) goto code_?;
+              FUN_?(pLVar19,pOStackX_20);
+            }
           }
         }
       }
+      goto code_?;
     }
   }
 code_?:
-  func_?();
-  func_?();
-  pcVar19 = (code *)swi(3);
-  (*pcVar19)();
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  mscorlib.dll::System::ThrowHelper::
+  ThrowHelper_1_ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion((MethodInfo *)0x0)
+  ;
+code_?:
+  FUN_?();
+  FUN_?();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -513,20 +983,19 @@ bool Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_IsMemberHighl
 
 {
   if (cRam_? == '\0') {
-    ppMStack_1 = &MethodInfo__System__Collections__Generic__List<MVPlayer>__get_Count__;
-    func_?();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<MVPlayer>__get_Count__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pLVar2 = (this->fields).memberList;
-  if (pLVar2 != (List_1_MVPlayer_ *)0x0) {
-    return (pLVar2->fields)._size == (this->fields).currentMemberBeingHighlighted + 1;
+  pLVar1 = (this->fields).memberList;
+  if (pLVar1 != (List_1_MVPlayer_ *)0x0) {
+    return (pLVar1->fields)._size == (this->fields).currentMemberBeingHighlighted + 1;
   }
-  ppMStack_1 = (MethodInfo **)&stack0xfffffffc;
-  uVar3 = func_?(auStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  bVar6 = (*pcVar5)();
-  return bVar6;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  bVar3 = (*pcVar2)();
+  return bVar3;
 }
 
 
@@ -538,47 +1007,185 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_SlideInName
 {
   if (((this->fields).currentMemberBeingHighlighted & 1) == 0) {
     pTVar1 = (this->fields).UserNameText1;
+    if ((pTVar1 == (Text *)0x0) ||
+       (pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pTVar1,(MethodInfo *)0x0), pTVar2 == (Transform *)0x0))
+    goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_3 = 0;
+    uStack_4 = 0;
+    pvVar5 = (pTVar2->fields)._._.m_CachedPtr;
+    if (pvVar5 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
+      return;
+    }
+    pcVar6 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+      uVar7 = func_?(&UNK_?);
+      FUN_?(uVar7,0);
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
+      return;
+    }
   }
   else {
     pTVar1 = (this->fields).UserNameText2;
+    if ((pTVar1 == (Text *)0x0) ||
+       (pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pTVar1,(MethodInfo *)0x0), pTVar2 == (Transform *)0x0))
+    goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_3 = 0;
+    uStack_4 = 0;
+    pvVar5 = (pTVar2->fields)._._.m_CachedPtr;
+    if (pvVar5 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
+      return;
+    }
+    pcVar6 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+      uVar7 = func_?(&UNK_?);
+      FUN_?(uVar7,0);
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
+      return;
+    }
   }
+  pcRam_? = pcVar6;
+  (*pcRam_?)(pvVar5);
+  uVar8 = uStack_4;
+  uStack_9 = uStack_3;
+  obj = (this->fields).slideUserNameInCurve;
+  if (obj == (AnimationCurve *)0x0) {
+code_?:
+    FUN_?();
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
+    return;
+  }
+  pvVar5 = (obj->fields).m_Ptr;
+  if (pvVar5 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
+    return;
+  }
+  pcVar6 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+    uVar7 = func_?(&UNK_?);
+    FUN_?(uVar7,0);
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
+    return;
+  }
+  pcRam_? = pcVar6;
+  uVar10 = (*pcRam_?)(pvVar5,stateProgress);
+  if (((this->fields).currentMemberBeingHighlighted & 1) != 0) {
+    pTVar1 = (this->fields).UserNameText2;
+    if (pTVar1 != (Text *)0x0) {
+      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)pTVar1,(MethodInfo *)0x0);
+      if (pTVar2 != (Transform *)0x0) {
+        uStack_3 = CONCAT44(uStack_9._4_4_,uVar10);
+        uStack_4 = uVar8;
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pvVar5 = (pTVar2->fields)._._.m_CachedPtr;
+        if (pvVar5 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+          pcVar6 = (code *)swi(3);
+          (*pcVar6)();
+          return;
+        }
+        pcVar6 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+          uVar7 = func_?(&UNK_?);
+          FUN_?(uVar7,0);
+          pcVar6 = (code *)swi(3);
+          (*pcVar6)();
+          return;
+        }
+code_?:
+        pcRam_? = pcVar6;
+        (*pcRam_?)(pvVar5,&uStack_3);
+        return;
+      }
+    }
+    FUN_?();
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
+    return;
+  }
+  pTVar1 = (this->fields).UserNameText1;
   if (pTVar1 != (Text *)0x0) {
     pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)pTVar1,(MethodInfo *)0x0);
     if (pTVar2 != (Transform *)0x0) {
-      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                         ((Vector3 *)&stack0xfffffff0,pTVar2,(MethodInfo *)0x0);
-      fVar4 = pVVar3->z;
-      this_00 = (this->fields).slideUserNameInCurve;
-      if (this_00 != (AnimationCurve *)0x0) {
-        fVar5 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                          (this_00,stateProgress,(MethodInfo *)0x0);
-        uVar6._4_4_ = stateProgress;
-        uVar6._0_4_ = fVar5;
-        if (((this->fields).currentMemberBeingHighlighted & 1) == 0) {
-          pTVar1 = (this->fields).UserNameText1;
-        }
-        else {
-          pTVar1 = (this->fields).UserNameText2;
-        }
-        if (pTVar1 != (Text *)0x0) {
-          pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             ((Component *)pTVar1,(MethodInfo *)0x0);
-          if (pTVar2 != (Transform *)0x0) {
-            value.z = fVar4;
-            value.x = (float)uVar6;
-            value.y = SUB84(uVar6,4);
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                      (pTVar2,value,(MethodInfo *)0x0);
-            return;
-          }
-        }
+      uStack_3 = CONCAT44(uStack_9._4_4_,uVar10);
+      uStack_4 = uVar8;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
+      pvVar5 = (pTVar2->fields)._._.m_CachedPtr;
+      if (pvVar5 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
+      }
+      pcVar6 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+        uVar7 = func_?(&UNK_?);
+        FUN_?(uVar7,0);
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
+      }
+      goto code_?;
     }
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -591,47 +1198,185 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_SlideOutName
 {
   if (((this->fields).currentMemberBeingHighlighted & 1) == 0) {
     pTVar1 = (this->fields).UserNameText2;
+    if ((pTVar1 == (Text *)0x0) ||
+       (pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pTVar1,(MethodInfo *)0x0), pTVar2 == (Transform *)0x0))
+    goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_3 = 0;
+    uStack_4 = 0;
+    pvVar5 = (pTVar2->fields)._._.m_CachedPtr;
+    if (pvVar5 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
+      return;
+    }
+    pcVar6 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+      uVar7 = func_?(&UNK_?);
+      FUN_?(uVar7,0);
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
+      return;
+    }
   }
   else {
     pTVar1 = (this->fields).UserNameText1;
+    if ((pTVar1 == (Text *)0x0) ||
+       (pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pTVar1,(MethodInfo *)0x0), pTVar2 == (Transform *)0x0))
+    goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_3 = 0;
+    uStack_4 = 0;
+    pvVar5 = (pTVar2->fields)._._.m_CachedPtr;
+    if (pvVar5 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
+      return;
+    }
+    pcVar6 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+      uVar7 = func_?(&UNK_?);
+      FUN_?(uVar7,0);
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
+      return;
+    }
   }
+  pcRam_? = pcVar6;
+  (*pcRam_?)(pvVar5);
+  uVar8 = uStack_4;
+  uStack_9 = uStack_3;
+  obj = (this->fields).slideUserNameOutCurve;
+  if (obj == (AnimationCurve *)0x0) {
+code_?:
+    FUN_?();
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
+    return;
+  }
+  pvVar5 = (obj->fields).m_Ptr;
+  if (pvVar5 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
+    return;
+  }
+  pcVar6 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+    uVar7 = func_?(&UNK_?);
+    FUN_?(uVar7,0);
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
+    return;
+  }
+  pcRam_? = pcVar6;
+  uVar10 = (*pcRam_?)(pvVar5,stateProgress);
+  if (((this->fields).currentMemberBeingHighlighted & 1) != 0) {
+    pTVar1 = (this->fields).UserNameText1;
+    if (pTVar1 != (Text *)0x0) {
+      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)pTVar1,(MethodInfo *)0x0);
+      if (pTVar2 != (Transform *)0x0) {
+        uStack_3 = CONCAT44(uStack_9._4_4_,uVar10);
+        uStack_4 = uVar8;
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pvVar5 = (pTVar2->fields)._._.m_CachedPtr;
+        if (pvVar5 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+          pcVar6 = (code *)swi(3);
+          (*pcVar6)();
+          return;
+        }
+        pcVar6 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+          uVar7 = func_?(&UNK_?);
+          FUN_?(uVar7,0);
+          pcVar6 = (code *)swi(3);
+          (*pcVar6)();
+          return;
+        }
+code_?:
+        pcRam_? = pcVar6;
+        (*pcRam_?)(pvVar5,&uStack_3);
+        return;
+      }
+    }
+    FUN_?();
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
+    return;
+  }
+  pTVar1 = (this->fields).UserNameText2;
   if (pTVar1 != (Text *)0x0) {
     pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)pTVar1,(MethodInfo *)0x0);
     if (pTVar2 != (Transform *)0x0) {
-      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                         ((Vector3 *)&stack0xfffffff0,pTVar2,(MethodInfo *)0x0);
-      fVar4 = pVVar3->z;
-      this_00 = (this->fields).slideUserNameOutCurve;
-      if (this_00 != (AnimationCurve *)0x0) {
-        fVar5 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                          (this_00,stateProgress,(MethodInfo *)0x0);
-        uVar6._4_4_ = stateProgress;
-        uVar6._0_4_ = fVar5;
-        if (((this->fields).currentMemberBeingHighlighted & 1) == 0) {
-          pTVar1 = (this->fields).UserNameText2;
-        }
-        else {
-          pTVar1 = (this->fields).UserNameText1;
-        }
-        if (pTVar1 != (Text *)0x0) {
-          pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             ((Component *)pTVar1,(MethodInfo *)0x0);
-          if (pTVar2 != (Transform *)0x0) {
-            value.z = fVar4;
-            value.x = (float)uVar6;
-            value.y = SUB84(uVar6,4);
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                      (pTVar2,value,(MethodInfo *)0x0);
-            return;
-          }
-        }
+      uStack_3 = CONCAT44(uStack_9._4_4_,uVar10);
+      uStack_4 = uVar8;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
+      pvVar5 = (pTVar2->fields)._._.m_CachedPtr;
+      if (pvVar5 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
+      }
+      pcVar6 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+        uVar7 = func_?(&UNK_?);
+        FUN_?(uVar7,0);
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
+      }
+      goto code_?;
     }
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -643,37 +1388,129 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_StartNewMembe
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<MVPlayer>__get_Item_int_);
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (this->fields).memberList;
-  index = (this->fields).currentMemberBeingHighlighted + 1;
-  (this->fields).currentMemberBeingHighlighted = index;
-  if ((index & 1) == 0) {
-    pTVar1 = (this->fields).UserNameText1;
+  iVar1 = (this->fields).currentMemberBeingHighlighted;
+  pLVar2 = (this->fields).memberList;
+  uVar3 = iVar1 + 1;
+  (this->fields).currentMemberBeingHighlighted = uVar3;
+  if ((uVar3 & 1) == 0) {
+    pTVar4 = (this->fields).UserNameText1;
+    if (pLVar2 == (List_1_MVPlayer_ *)0x0) goto code_?;
+    if ((uint)(pLVar2->fields)._size <= uVar3) goto code_?;
+    pMVar5 = (pLVar2->fields)._items;
+    if (pMVar5 == (MVPlayer__Array *)0x0) goto code_?;
+    uVar6 = (uint)pMVar5->max_length;
   }
   else {
-    pTVar1 = (this->fields).UserNameText2;
-  }
-  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-            RegexCharClass+SingleRange]::
-            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      (this_00,index,
-                       MethodInfo__System__Collections__Generic__List<MVPlayer>__get_Item_int_);
-    if (((RVar2 != (RegexCharClass_SingleRange)0x0) && (*(int *)((int)RVar2 + 0x3c) != 0)) &&
-       (pTVar1 != (Text *)0x0)) {
-      (*(code *)(pTVar1->klass->vtable).set_text.method)
-                (pTVar1,*(undefined4 *)(*(int *)((int)RVar2 + 0x3c) + 0xc),
-                 (pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-      XPBoostNotification_UpdateBoostAmount(this,(MethodInfo *)0x0);
+    pTVar4 = (this->fields).UserNameText2;
+    if (pLVar2 == (List_1_MVPlayer_ *)0x0) goto code_?;
+    if ((uint)(pLVar2->fields)._size <= uVar3) {
+code_?:
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                ((MethodInfo *)0x0);
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
       return;
     }
+    pMVar5 = (pLVar2->fields)._items;
+    if (pMVar5 == (MVPlayer__Array *)0x0) goto code_?;
+    uVar6 = (uint)pMVar5->max_length;
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  if (uVar6 <= uVar3) {
+    FUN_?();
+    pcVar7 = (code *)swi(3);
+    (*pcVar7)();
+    return;
+  }
+  if (((pMVar5->vector[(longlong)iVar1 + 1] != (MVPlayer *)0x0) &&
+      (pUVar8 = (pMVar5->vector[(longlong)iVar1 + 1]->fields)._UserProfileData_k__BackingField,
+      pUVar8 != (UserProfileData *)0x0)) && (pTVar4 != (Text *)0x0)) {
+    (*(pTVar4->klass->vtable).set_text.methodPtr)
+              (pTVar4,(pUVar8->fields).UserName,(pTVar4->klass->vtable).set_text.method);
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    MV__WorldObject__Subscription__SubscriptionRules__XpBooster_MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetRule<MV::WorldObject::Subscription::SubscriptionRules::XpBooster>_MV__WorldObject__Subscription__SubscriptionBenefit_
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&::StringLiteral__);
+      LOCK();
+      UNLOCK();
+      FUN_?(&StringLiteral____XP);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar9 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if ((((pMVar9 != (MVGameControllerBase *)0x0) &&
+         (pMVar10 = (pMVar9->fields).game, pMVar10 != (MVNetworkGame *)0x0)) &&
+        ((this_00 = (pMVar10->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0 &&
+         ((pMVar11 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0)
+          , pMVar11 != (MVLocalPlayer *)0x0 &&
+          (this_01 = (pMVar11->fields)._._SubscriptionRules_k__BackingField,
+          this_01 != (SubscriptionRulesWrapper *)0x0)))))) &&
+       (this_02 = (XpBooster *)
+                  MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
+                  SubscriptionRulesWrapper_GetRule
+                            (this_01,SubscriptionBenefit__Enum_XPBoost,
+                             MV__WorldObject__Subscription__SubscriptionRules__XpBooster_MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetRule<MV::WorldObject::Subscription::SubscriptionRules::XpBooster>_MV__WorldObject__Subscription__SubscriptionBenefit_
+                            ), this_02 != (XpBooster *)0x0)) {
+      value = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::XpBooster::
+              XpBooster_GetTotalXPBoost
+                        (this_02,(this->fields).currentMemberBeingHighlighted + 1,(MethodInfo *)0x0)
+      ;
+      pTVar4 = (this->fields).boostAmountText;
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__System__Number);
+        LOCK();
+        UNLOCK();
+        FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if ((MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____->klass->
+           field_0x135 & 1) == 0) {
+        FUN_?();
+      }
+      if (*(int *)&(TypeInfo__System__Number->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      aRStack_12[0]._pointer._value = (void *)0x0;
+      aRStack_12[0]._length = 0;
+      aRStack_12[0]._12_4_ = 0;
+      pSVar13 = mscorlib.dll::System::Number::Number_FormatInt32
+                          (value,aRStack_12,(IFormatProvider *)0x0,(MethodInfo *)0x0);
+      pSVar13 = mscorlib.dll::System::String::String_Concat_5
+                          (::StringLiteral__,pSVar13,StringLiteral____XP,(MethodInfo *)0x0);
+      if (pTVar4 != (Text *)0x0) {
+        UNRECOVERED_JUMPTABLE = (pTVar4->klass->vtable).set_text.methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        (*UNRECOVERED_JUMPTABLE)
+                  (pTVar4,pSVar13,(pTVar4->klass->vtable).set_text.method,UNRECOVERED_JUMPTABLE);
+        return;
+      }
+    }
+    FUN_?();
+    pcVar7 = (code *)swi(3);
+    (*pcVar7)();
+    return;
+  }
+code_?:
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -685,53 +1522,171 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_StartNextStat
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<MVPlayer>__get_Count__);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<MVPlayer>__get_Count__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pLVar1 = (this->fields).memberList;
-  if (pLVar1 != (List_1_MVPlayer_ *)0x0) {
-    if ((pLVar1->fields)._size == (this->fields).currentMemberBeingHighlighted + 1) {
+  pcVar1 = pcRam_?;
+  pLVar2 = (this->fields).memberList;
+  if (pLVar2 != (List_1_MVPlayer_ *)0x0) {
+    if ((pLVar2->fields)._size == (this->fields).currentMemberBeingHighlighted + 1) {
       (this->fields).currentState = 4;
-      fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      (this->fields).stateStartTime = fVar2;
+      pcVar3 = pcRam_?;
+      if ((pcVar1 == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar3 = pcVar1, pcVar1 == (code *)0x0)
+         ) {
+        uVar4 = func_?(&UNK_?);
+        FUN_?(uVar4,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pcRam_? = pcVar3;
+      fVar5 = (float)(*pcVar1)();
+      (this->fields).stateStartTime = fVar5;
       return;
     }
     (this->fields).currentState = 3;
-    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    bVar3 = cRam_? == '\0';
-    (this->fields).stateStartTime = fVar2;
-    if (bVar3) {
-      func_?(&MethodInfo__System__Collections__Generic__List<MVPlayer>__get_Item_int_);
+    pcVar3 = pcRam_?;
+    if ((pcVar1 == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar3 = pcVar1, pcVar1 == (code *)0x0))
+    {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar3;
+    fVar5 = (float)(*pcVar1)();
+    bVar6 = cRam_? == '\0';
+    (this->fields).stateStartTime = fVar5;
+    if (bVar6) {
+      FUN_?(&MethodInfo__System__Collections__Generic__List<MVPlayer>__get_Item_int_);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              (this->fields).memberList;
-    index = (this->fields).currentMemberBeingHighlighted + 1;
-    (this->fields).currentMemberBeingHighlighted = index;
-    if ((index & 1) == 0) {
-      pTVar4 = (this->fields).UserNameText1;
+    iVar7 = (this->fields).currentMemberBeingHighlighted;
+    pLVar2 = (this->fields).memberList;
+    uVar8 = iVar7 + 1;
+    (this->fields).currentMemberBeingHighlighted = uVar8;
+    if ((uVar8 & 1) == 0) {
+      pTVar9 = (this->fields).UserNameText1;
+      if (pLVar2 == (List_1_MVPlayer_ *)0x0) goto code_?;
+      if ((uint)(pLVar2->fields)._size <= uVar8) goto code_?;
+      pMVar10 = (pLVar2->fields)._items;
+      if (pMVar10 == (MVPlayer__Array *)0x0) goto code_?;
+      uVar11 = (uint)pMVar10->max_length;
     }
     else {
-      pTVar4 = (this->fields).UserNameText2;
-    }
-    if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (this_00,index,
-                         MethodInfo__System__Collections__Generic__List<MVPlayer>__get_Item_int_);
-      if (((RVar5 != (RegexCharClass_SingleRange)0x0) && (*(int *)((int)RVar5 + 0x3c) != 0)) &&
-         (pTVar4 != (Text *)0x0)) {
-        (*(code *)(pTVar4->klass->vtable).set_text.method)
-                  (pTVar4,*(undefined4 *)(*(int *)((int)RVar5 + 0x3c) + 0xc));
-        XPBoostNotification_UpdateBoostAmount(this,(MethodInfo *)0x0);
+      pTVar9 = (this->fields).UserNameText2;
+      if (pLVar2 == (List_1_MVPlayer_ *)0x0) goto code_?;
+      if ((uint)(pLVar2->fields)._size <= uVar8) {
+code_?:
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
         return;
       }
+      pMVar10 = (pLVar2->fields)._items;
+      if (pMVar10 == (MVPlayer__Array *)0x0) goto code_?;
+      uVar11 = (uint)pMVar10->max_length;
+    }
+    if (uVar11 <= uVar8) {
+      FUN_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    if (((pMVar10->vector[(longlong)iVar7 + 1] != (MVPlayer *)0x0) &&
+        (pUVar12 = (pMVar10->vector[(longlong)iVar7 + 1]->fields)._UserProfileData_k__BackingField,
+        pUVar12 != (UserProfileData *)0x0)) && (pTVar9 != (Text *)0x0)) {
+      (*(pTVar9->klass->vtable).set_text.methodPtr)
+                (pTVar9,(pUVar12->fields).UserName,(pTVar9->klass->vtable).set_text.method);
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      MV__WorldObject__Subscription__SubscriptionRules__XpBooster_MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetRule<MV::WorldObject::Subscription::SubscriptionRules::XpBooster>_MV__WorldObject__Subscription__SubscriptionBenefit_
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?(&::StringLiteral__);
+        LOCK();
+        UNLOCK();
+        FUN_?(&StringLiteral____XP);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pMVar13 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if ((((pMVar13 != (MVGameControllerBase *)0x0) &&
+           (pMVar14 = (pMVar13->fields).game, pMVar14 != (MVNetworkGame *)0x0)) &&
+          ((this_00 = (pMVar14->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0 &&
+           ((pMVar15 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer
+                                 (this_00,(MethodInfo *)0x0), pMVar15 != (MVLocalPlayer *)0x0 &&
+            (this_01 = (pMVar15->fields)._._SubscriptionRules_k__BackingField,
+            this_01 != (SubscriptionRulesWrapper *)0x0)))))) &&
+         (this_02 = (XpBooster *)
+                    MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
+                    SubscriptionRulesWrapper_GetRule
+                              (this_01,SubscriptionBenefit__Enum_XPBoost,
+                               MV__WorldObject__Subscription__SubscriptionRules__XpBooster_MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetRule<MV::WorldObject::Subscription::SubscriptionRules::XpBooster>_MV__WorldObject__Subscription__SubscriptionBenefit_
+                              ), this_02 != (XpBooster *)0x0)) {
+        value = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::XpBooster::
+                XpBooster_GetTotalXPBoost
+                          (this_02,(this->fields).currentMemberBeingHighlighted + 1,
+                           (MethodInfo *)0x0);
+        pTVar9 = (this->fields).boostAmountText;
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__System__Number);
+          LOCK();
+          UNLOCK();
+          FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if ((MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____->klass->
+             field_0x135 & 1) == 0) {
+          FUN_?();
+        }
+        if (*(int *)&(TypeInfo__System__Number->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        aRStack_16[0]._pointer._value = (void *)0x0;
+        aRStack_16[0]._length = 0;
+        aRStack_16[0]._12_4_ = 0;
+        pSVar17 = mscorlib.dll::System::Number::Number_FormatInt32
+                            (value,aRStack_16,(IFormatProvider *)0x0,(MethodInfo *)0x0);
+        pSVar17 = mscorlib.dll::System::String::String_Concat_5
+                            (::StringLiteral__,pSVar17,StringLiteral____XP,(MethodInfo *)0x0);
+        if (pTVar9 != (Text *)0x0) {
+          UNRECOVERED_JUMPTABLE = (pTVar9->klass->vtable).set_text.methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*UNRECOVERED_JUMPTABLE)
+                    (pTVar9,pSVar17,(pTVar9->klass->vtable).set_text.method,UNRECOVERED_JUMPTABLE);
+          return;
+        }
+      }
+      FUN_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
     }
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+code_?:
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -742,90 +1697,188 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_SwapMemberNam
                (XPBoostNotification *this,float stateProgress,MethodInfo *method)
 
 {
+  XPBoostNotification_SlideOutName(this,stateProgress,(MethodInfo *)0x0);
   if (((this->fields).currentMemberBeingHighlighted & 1) == 0) {
-    pTVar1 = (this->fields).UserNameText2;
+    pTVar1 = (this->fields).UserNameText1;
+    if ((pTVar1 == (Text *)0x0) ||
+       (pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pTVar1,(MethodInfo *)0x0), pTVar2 == (Transform *)0x0))
+    goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_3 = 0;
+    uStack_4 = 0;
+    pvVar5 = (pTVar2->fields)._._.m_CachedPtr;
+    if (pvVar5 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
+      return;
+    }
+    pcVar6 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+      uVar7 = func_?(&UNK_?);
+      FUN_?(uVar7,0);
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
+      return;
+    }
   }
   else {
-    pTVar1 = (this->fields).UserNameText1;
+    pTVar1 = (this->fields).UserNameText2;
+    if ((pTVar1 == (Text *)0x0) ||
+       (pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pTVar1,(MethodInfo *)0x0), pTVar2 == (Transform *)0x0))
+    goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_3 = 0;
+    uStack_4 = 0;
+    pvVar5 = (pTVar2->fields)._._.m_CachedPtr;
+    if (pvVar5 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
+      return;
+    }
+    pcVar6 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+      uVar7 = func_?(&UNK_?);
+      FUN_?(uVar7,0);
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
+      return;
+    }
   }
+  pcRam_? = pcVar6;
+  (*pcRam_?)(pvVar5);
+  uVar8 = uStack_4;
+  uStack_9 = uStack_3;
+  obj = (this->fields).slideUserNameInCurve;
+  if (obj == (AnimationCurve *)0x0) {
+code_?:
+    FUN_?();
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
+    return;
+  }
+  pvVar5 = (obj->fields).m_Ptr;
+  if (pvVar5 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
+    return;
+  }
+  pcVar6 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+    uVar7 = func_?(&UNK_?);
+    FUN_?(uVar7,0);
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
+    return;
+  }
+  pcRam_? = pcVar6;
+  uVar10 = (*pcRam_?)(pvVar5,stateProgress);
+  if (((this->fields).currentMemberBeingHighlighted & 1) != 0) {
+    pTVar1 = (this->fields).UserNameText2;
+    if (pTVar1 != (Text *)0x0) {
+      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                         ((Component *)pTVar1,(MethodInfo *)0x0);
+      if (pTVar2 != (Transform *)0x0) {
+        uStack_3 = CONCAT44(uStack_9._4_4_,uVar10);
+        uStack_4 = uVar8;
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pvVar5 = (pTVar2->fields)._._.m_CachedPtr;
+        if (pvVar5 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+          pcVar6 = (code *)swi(3);
+          (*pcVar6)();
+          return;
+        }
+        pcVar6 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+          uVar7 = func_?(&UNK_?);
+          FUN_?(uVar7,0);
+          pcVar6 = (code *)swi(3);
+          (*pcVar6)();
+          return;
+        }
+code_?:
+        pcRam_? = pcVar6;
+        (*pcRam_?)(pvVar5,&uStack_3);
+        return;
+      }
+    }
+    FUN_?();
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
+    return;
+  }
+  pTVar1 = (this->fields).UserNameText1;
   if (pTVar1 != (Text *)0x0) {
     pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                        ((Component *)pTVar1,(MethodInfo *)0x0);
     if (pTVar2 != (Transform *)0x0) {
-      pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                         ((Vector3 *)&stack0xfffffff0,pTVar2,(MethodInfo *)0x0);
-      fVar4 = pVVar3->z;
-      pAVar5 = (this->fields).slideUserNameOutCurve;
-      if (pAVar5 != (AnimationCurve *)0x0) {
-        fVar6 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                          (pAVar5,stateProgress,(MethodInfo *)0x0);
-        uVar7._4_4_ = stateProgress;
-        uVar7._0_4_ = fVar6;
-        if (((this->fields).currentMemberBeingHighlighted & 1) == 0) {
-          pTVar1 = (this->fields).UserNameText2;
-        }
-        else {
-          pTVar1 = (this->fields).UserNameText1;
-        }
-        if (pTVar1 != (Text *)0x0) {
-          pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             ((Component *)pTVar1,(MethodInfo *)0x0);
-          if (pTVar2 != (Transform *)0x0) {
-            value.z = fVar4;
-            value.x = (float)uVar7;
-            value.y = SUB84(uVar7,4);
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                      (pTVar2,value,(MethodInfo *)0x0);
-            if (((this->fields).currentMemberBeingHighlighted & 1) == 0) {
-              pTVar1 = (this->fields).UserNameText1;
-            }
-            else {
-              pTVar1 = (this->fields).UserNameText2;
-            }
-            if (pTVar1 != (Text *)0x0) {
-              pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                 ((Component *)pTVar1,(MethodInfo *)0x0);
-              if (pTVar2 != (Transform *)0x0) {
-                pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                         Transform_get_localPosition
-                                   ((Vector3 *)&stack0xfffffff0,pTVar2,(MethodInfo *)0x0);
-                fVar8 = pVVar3->z;
-                fVar6 = pVVar3->y;
-                pAVar5 = (this->fields).slideUserNameInCurve;
-                if (pAVar5 != (AnimationCurve *)0x0) {
-                  fVar4 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
-                          AnimationCurve_Evaluate(pAVar5,fVar4,(MethodInfo *)0x0);
-                  uVar9._4_4_ = fVar6;
-                  uVar9._0_4_ = fVar4;
-                  if (((this->fields).currentMemberBeingHighlighted & 1) == 0) {
-                    pTVar1 = (this->fields).UserNameText1;
-                  }
-                  else {
-                    pTVar1 = (this->fields).UserNameText2;
-                  }
-                  if (pTVar1 != (Text *)0x0) {
-                    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                             Component_get_transform((Component *)pTVar1,(MethodInfo *)0x0);
-                    if (pTVar2 != (Transform *)0x0) {
-                      value_00.z = fVar8;
-                      value_00.x = (float)uVar9;
-                      value_00.y = SUB84(uVar9,4);
-                      UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                      Transform_set_localPosition(pTVar2,value_00,(MethodInfo *)0x0);
-                      return;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
+      uStack_3 = CONCAT44(uStack_9._4_4_,uVar10);
+      uStack_4 = uVar8;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
+      pvVar5 = (pTVar2->fields)._._.m_CachedPtr;
+      if (pvVar5 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
+      }
+      pcVar6 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+        uVar7 = func_?(&UNK_?);
+        FUN_?(uVar7,0);
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
+      }
+      goto code_?;
     }
   }
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -836,88 +1889,111 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_Update
                (XPBoostNotification *this,MethodInfo *method)
 
 {
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  fVar1 = fVar1 - (this->fields).stateStartTime;
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?,0), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  fVar3 = (float)(*pcRam_?)();
+  fVar3 = fVar3 - (this->fields).stateStartTime;
   switch((this->fields).currentState) {
-  case 0:
-  case 5:
-    break;
   case 1:
-    pGVar2 = (this->fields).content;
-    if (pGVar2 == (GameObject *)0x0) {
+    pGVar4 = (this->fields).content;
+    if (pGVar4 == (GameObject *)0x0) {
 code_?:
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
+      FUN_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
       return;
     }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                      (pGVar2,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      pGVar2 = (this->fields).content;
-      if (pGVar2 == (GameObject *)0x0) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar2,0,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
-    if (_UNK_? < fVar1) {
+    pvVar5 = (pGVar4->fields)._.m_CachedPtr;
+    if (pvVar5 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar4,(MethodInfo *)0x0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    cVar6 = (*pcRam_?)(pvVar5);
+    if (cVar6 != '\0') {
+      pGVar4 = (this->fields).content;
+      if (pGVar4 == (GameObject *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (pGVar4,0,(MethodInfo *)0x0);
+    }
+    pcVar1 = pcRam_?;
+    if (_UNK_? < fVar3) {
       (this->fields).currentState = 2;
-      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      pGVar2 = (this->fields).content;
-      (this->fields).stateStartTime = fVar1;
-      if (pGVar2 != (GameObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar2,1,(MethodInfo *)0x0);
-        (*(code *)(this->klass->vtable).Update.method)
-                  (this,(this->klass->vtable).OnReturn.methodPtr);
+      pcVar7 = pcRam_?;
+      if ((pcVar1 == (code *)0x0) &&
+         (pcVar1 = (code *)FUN_?(&UNK_?), pcVar7 = pcVar1, pcVar1 == (code *)0x0)) {
+        uVar2 = func_?(&UNK_?);
+        FUN_?(uVar2,0);
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
         return;
       }
-      goto code_?;
+      pcRam_? = pcVar7;
+      fVar3 = (float)(*pcVar1)();
+      pGVar4 = (this->fields).content;
+      (this->fields).stateStartTime = fVar3;
+      if (pGVar4 == (GameObject *)0x0) goto code_?;
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (pGVar4,1,(MethodInfo *)0x0);
+      (*(this->klass->vtable).Update.methodPtr)(this,(this->klass->vtable).Update.method);
     }
     break;
   case 2:
-    XPBoostNotification_UpdateBoostTextEffect(this,fVar1 - _UNK_?,(MethodInfo *)0x0);
-    pAVar5 = (this->fields).fadeOutCurve;
-    pCVar6 = (this->fields).backgroundCanvasGroup;
-    if ((pAVar5 == (AnimationCurve *)0x0) ||
-       (fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                          (pAVar5,_UNK_? - fVar1,(MethodInfo *)0x0),
-       pCVar6 == (CanvasGroup *)0x0)) goto code_?;
-    UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-              (pCVar6,fVar1,(MethodInfo *)0x0);
-    XPBoostNotification_CloseNotification_1(this,_UNK_? - fVar1,(MethodInfo *)0x0);
-    if (fVar1 <= _UNK_?) {
+    XPBoostNotification_UpdateBoostTextEffect(this,fVar3 - _UNK_?,(MethodInfo *)0x0);
+    fVar8 = _UNK_?;
+    XPBoostNotification_FadeOut(this,_UNK_? - fVar3,(MethodInfo *)0x0);
+    XPBoostNotification_CloseNotification_1(this,fVar8 - fVar3,(MethodInfo *)0x0);
+    if (fVar3 <= _UNK_?) {
       return;
     }
 code_?:
     XPBoostNotification_StartNextState(this,(MethodInfo *)0x0);
-    break;
+    return;
   case 3:
     if (0 < (this->fields).currentMemberBeingHighlighted) {
-      XPBoostNotification_UpdateBoostTextEffect(this,fVar1,(MethodInfo *)0x0);
-      XPBoostNotification_SwapMemberName(this,fVar1,(MethodInfo *)0x0);
+      XPBoostNotification_UpdateBoostTextEffect(this,fVar3,(MethodInfo *)0x0);
+      XPBoostNotification_SlideOutName(this,fVar3,(MethodInfo *)0x0);
+      XPBoostNotification_SlideInName(this,fVar3,(MethodInfo *)0x0);
     }
-    if (_UNK_? < fVar1) goto code_?;
+    if (TypeRef__System__Activator__T._0_4_ < fVar3) goto code_?;
     break;
   case 4:
-    XPBoostNotification_UpdateBoostTextEffect(this,fVar1,(MethodInfo *)0x0);
-    pAVar5 = (this->fields).fadeOutCurve;
-    pCVar6 = (this->fields).backgroundCanvasGroup;
-    if ((pAVar5 == (AnimationCurve *)0x0) ||
-       (fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                          (pAVar5,fVar1,(MethodInfo *)0x0), pCVar6 == (CanvasGroup *)0x0))
-    goto code_?;
-    UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-              (pCVar6,fVar1,(MethodInfo *)0x0);
-    XPBoostNotification_CloseNotification_1(this,fVar1,(MethodInfo *)0x0);
-    if (_UNK_? < fVar1) {
+    XPBoostNotification_UpdateBoostTextEffect(this,fVar3,(MethodInfo *)0x0);
+    XPBoostNotification_FadeOut(this,fVar3,(MethodInfo *)0x0);
+    XPBoostNotification_CloseNotification_1(this,fVar3,(MethodInfo *)0x0);
+    if (_UNK_? < fVar3) {
       XPBoostNotification_CloseNotification(this,(MethodInfo *)0x0);
       return;
     }
-    break;
-  default:
-    goto code_?;
   }
-code_?:
   return;
 }
 
@@ -929,47 +2005,82 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_UpdateBoostAm
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MV__WorldObject__Subscription__SubscriptionRules__XpBooster_MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetRule<MV::WorldObject::Subscription::SubscriptionRules::XpBooster>_MV__WorldObject__Subscription__SubscriptionBenefit_
-                   );
-    func_?(&::StringLiteral__);
-    func_?(&StringLiteral____XP);
+    FUN_?(&
+                  MV__WorldObject__Subscription__SubscriptionRules__XpBooster_MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetRule<MV::WorldObject::Subscription::SubscriptionRules::XpBooster>_MV__WorldObject__Subscription__SubscriptionBenefit_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral____XP);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_01 != (MVNetworkGame *)0x0) {
-    pMVar1 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
-    if ((pMVar1 != (MVLocalPlayer *)0x0) &&
-       (this_00 = (pMVar1->fields)._._SubscriptionRules_k__BackingField,
-       this_00 != (SubscriptionRulesWrapper *)0x0)) {
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (((pMVar1 != (MVGameControllerBase *)0x0) &&
+      (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+     (this_00 = (pMVar2->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
+    pMVar3 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0);
+    if ((pMVar3 != (MVLocalPlayer *)0x0) &&
+       (this_01 = (pMVar3->fields)._._SubscriptionRules_k__BackingField,
+       this_01 != (SubscriptionRulesWrapper *)0x0)) {
       this_02 = (XpBooster *)
                 MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
                 SubscriptionRulesWrapper_GetRule
-                          (this_00,SubscriptionBenefit__Enum_XPBoost,
+                          (this_01,SubscriptionBenefit__Enum_XPBoost,
                            MV__WorldObject__Subscription__SubscriptionRules__XpBooster_MethodInfo__MV__WorldObject__Subscription__SubscriptionRulesWrapper__GetRule<MV::WorldObject::Subscription::SubscriptionRules::XpBooster>_MV__WorldObject__Subscription__SubscriptionBenefit_
                           );
       if (this_02 != (XpBooster *)0x0) {
-        MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::XpBooster::
-        XpBooster_GetTotalXPBoost
-                  (this_02,(this->fields).currentMemberBeingHighlighted + 1,(MethodInfo *)0x0);
-        pTVar2 = (this->fields).boostAmountText;
-        str1 = mscorlib.dll::System::Int32::Int32_ToString
-                         ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
-        pSStack3 =
-             mscorlib.dll::System::String::String_Concat_4
-                       (::StringLiteral__,str1,StringLiteral____XP,(MethodInfo *)0x0);
-        if (pTVar2 != (Text *)0x0) {
-          pIStack4 = (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-          pTStack5 = pTVar2;
-          (*(code *)(pTVar2->klass->vtable).set_text.method)();
+        value = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::XpBooster::
+                XpBooster_GetTotalXPBoost
+                          (this_02,(this->fields).currentMemberBeingHighlighted + 1,
+                           (MethodInfo *)0x0);
+        pTVar4 = (this->fields).boostAmountText;
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__System__Number);
+          LOCK();
+          UNLOCK();
+          FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if ((MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____->klass->
+             field_0x135 & 1) == 0) {
+          FUN_?();
+        }
+        if (*(int *)&(TypeInfo__System__Number->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        aRStack_5[0]._pointer._value = (void *)0x0;
+        aRStack_5[0]._length = 0;
+        aRStack_5[0]._12_4_ = 0;
+        pSVar6 = mscorlib.dll::System::Number::Number_FormatInt32
+                           (value,aRStack_5,(IFormatProvider *)0x0,(MethodInfo *)0x0);
+        pSVar6 = mscorlib.dll::System::String::String_Concat_5
+                           (::StringLiteral__,pSVar6,StringLiteral____XP,(MethodInfo *)0x0);
+        if (pTVar4 != (Text *)0x0) {
+          UNRECOVERED_JUMPTABLE = (pTVar4->klass->vtable).set_text.methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*UNRECOVERED_JUMPTABLE)
+                    (pTVar4,pSVar6,(pTVar4->klass->vtable).set_text.method,UNRECOVERED_JUMPTABLE);
           return;
         }
       }
     }
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -980,38 +2091,102 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification_UpdateBoostTe
                (XPBoostNotification *this,float stateProgress,MethodInfo *method)
 
 {
-  this_00 = (this->fields).updateBoostTextEffectCurve;
-  if (this_00 != (AnimationCurve *)0x0) {
-    method_00 = (MethodInfo *)
-                UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                          (this_00,stateProgress,(MethodInfo *)0x0);
-    pTVar1 = (this->fields).boostAmountText;
-    if (pTVar1 != (Text *)0x0) {
-      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)pTVar1,(MethodInfo *)0x0);
-      if (pTVar2 != (Transform *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                  ((Vector3 *)&stack0xffffffe4,pTVar2,method_00);
-        pTVar1 = (this->fields).boostAmountText;
-        if (pTVar1 != (Text *)0x0) {
-          puVar3 = &UNK_?;
-          pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                             ((Component *)pTVar1,(MethodInfo *)0x0);
-          if (pTVar2 != (Transform *)0x0) {
-            value.y = (float)puVar3;
-            value.x = (float)method_00;
-            value.z = (float)pTVar1;
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                      (pTVar2,value,(MethodInfo *)0x0);
-            return;
-          }
-        }
+  obj = (this->fields).updateBoostTextEffectCurve;
+  if (obj != (AnimationCurve *)0x0) {
+    pvVar1 = (obj->fields).m_Ptr;
+    if (pvVar1 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    uVar4 = (*pcRam_?)(pvVar1,stateProgress);
+    pTVar5 = (this->fields).boostAmountText;
+    if ((pTVar5 != (Text *)0x0) &&
+       (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)pTVar5,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0)) {
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
+      pvVar1 = (pTVar6->fields)._._.m_CachedPtr;
+      if (pvVar1 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar6,(MethodInfo *)0x0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcVar2 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+        uVar3 = func_?(&UNK_?);
+        FUN_?(uVar3,0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcRam_? = pcVar2;
+      (*pcRam_?)(pvVar1);
+      pTVar5 = (this->fields).boostAmountText;
+      if ((pTVar5 != (Text *)0x0) &&
+         (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             ((Component *)pTVar5,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0)) {
+        uStack_7 = CONCAT44(uVar4,uVar4);
+        uStack_8 = 0;
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pvVar1 = (pTVar6->fields)._._.m_CachedPtr;
+        if (pvVar1 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar6,(MethodInfo *)0x0);
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        pcVar2 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+          uVar3 = func_?(&UNK_?);
+          FUN_?(uVar3,0);
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        pcRam_? = pcVar2;
+        (*pcRam_?)(pvVar1,&uStack_7);
+        return;
+      }
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -1023,22 +2198,47 @@ void Assembly-CSharp.dll::XPBoostNotification::XPBoostNotification__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<MVPlayer>__List__);
-    func_?(&TypeInfo__System__Collections__Generic__List<MVPlayer>);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<MVPlayer>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<MVPlayer>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (List_1_MVPlayer_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<MVPlayer>);
+            FUN_?(TypeInfo__System__Collections__Generic__List<MVPlayer>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<MVPlayer>__List__);
+  bVar1 = iRam_? != 0;
   (this->fields).memberList = this_00;
-  func_?(&(this->fields).memberList,this_00);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).memberList >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
+  bVar1 = cRam_? == '\0';
   (this->fields).currentMemberBeingHighlighted = -1;
-  Borodar::FarlandSkies::CloudyCrownPro::Helpers::Singleton`1[System::Object]::
-  Singleton_1_System_Object___ctor((Singleton_1_System_Object_ *)this,(MethodInfo *)0x0);
+  if (bVar1) {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
   return;
 }
 

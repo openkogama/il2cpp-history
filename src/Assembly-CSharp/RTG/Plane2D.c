@@ -5,7 +5,9 @@ float Assembly-CSharp.dll::RTG::Plane2D::Plane2D_GetDistanceToPoint
                 (Plane2D *this,Vector2 point,MethodInfo *method)
 
 {
-  return (point.y * (this->fields)._normal.y + point.x * (this->fields)._normal.x) -
+  fStackX_c = point.y;
+  fStackX_8 = point.x;
+  return (fStackX_c * (this->fields)._normal.y + fStackX_8 * (this->fields)._normal.x) -
          (this->fields)._distance;
 }
 
@@ -17,12 +19,15 @@ bool Assembly-CSharp.dll::RTG::Plane2D::Plane2D_Raycast
 
 {
   *t = 0.0;
-  fVar1 = (this->fields)._normal.x * rayDir.x + (this->fields)._normal.y * rayDir.y;
+  fStackX_c = rayDir.y;
+  fStackX_8 = rayDir.x;
+  fVar1 = fStackX_c * (this->fields)._normal.y + fStackX_8 * (this->fields)._normal.x;
   if (_UNK_? <= (float)((uint)fVar1 & _UNK_?)) {
-    fVar1 = (float)((uint)(((this->fields)._normal.x * rayOrigin.x +
-                           (this->fields)._normal.y * rayOrigin.y) - (this->fields)._distance) ^
-                   __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) / fVar1
-    ;
+    fStack_2 = rayOrigin.x;
+    fStack_3 = rayOrigin.y;
+    fVar1 = (float)((uint)((fStack_3 * (this->fields)._normal.y +
+                           fStack_2 * (this->fields)._normal.x) - (this->fields)._distance) ^
+                   _UNK_?) / fVar1;
     *t = fVar1;
     return 0.0 <= fVar1;
   }
@@ -36,11 +41,13 @@ void Assembly-CSharp.dll::RTG::Plane2D::Plane2D__ctor
                (Plane2D *this,Vector2 normal,float distance,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  VVar1 = (Vector2)func_?(&normal,0);
-  (this->fields)._normal = VVar1;
+  aVStack_1[0] = normal;
+  uVar2 = FUN_?(aVStack_1);
+  fStackX_8 = (float)uVar2;
+  fStackX_c = (float)((ulonglong)uVar2 >> 0x20);
   (this->fields)._distance = distance;
+  (this->fields)._normal.x = fStackX_8;
+  (this->fields)._normal.y = fStackX_c;
   return;
 }
 
@@ -51,11 +58,26 @@ void Assembly-CSharp.dll::RTG::Plane2D::Plane2D__ctor_1
                (Plane2D *this,Vector2 normal,Vector2 pointOnPlane,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  VVar1 = (Vector2)func_?(&normal,0);
-  (this->fields)._normal = VVar1;
-  (this->fields)._distance = pointOnPlane.y * VVar1.y + pointOnPlane.x * VVar1.x;
+  VStack_1 = normal;
+  uVar2 = FUN_?(&VStack_1);
+  fStackX_8 = (float)uVar2;
+  fStackX_c = (float)((ulonglong)uVar2 >> 0x20);
+  (this->fields)._normal.x = fStackX_8;
+  (this->fields)._normal.y = fStackX_c;
+  fStack_3 = pointOnPlane.y;
+  fStack_4 = pointOnPlane.x;
+  (this->fields)._distance = fStackX_c * fStack_3 + fStackX_8 * fStack_4;
+  return;
+}
+
+
+/* Void set_Distance(Single) */
+
+void Assembly-CSharp.dll::RTG::Plane2D::Plane2D_set_Distance
+               (Plane2D *this,float value,MethodInfo *method)
+
+{
+  (this->fields)._distance = value;
   return;
 }
 
@@ -66,8 +88,12 @@ void Assembly-CSharp.dll::RTG::Plane2D::Plane2D_set_Normal
                (Plane2D *this,Vector2 value,MethodInfo *method)
 
 {
-  VVar1 = (Vector2)func_?(&value,0);
-  (this->fields)._normal = VVar1;
+  aVStack_1[0] = value;
+  uVar2 = FUN_?(aVStack_1);
+  fStackX_8 = (float)uVar2;
+  fStackX_c = (float)((ulonglong)uVar2 >> 0x20);
+  (this->fields)._normal.x = fStackX_8;
+  (this->fields)._normal.y = fStackX_c;
   return;
 }
 

@@ -12,7 +12,7 @@ using UnityEngine;
 public class StreamedAudioClip : StreamingAsset<AudioClip, AudioClip>
 {
 	// Fields
-	private IReceiver receiver;
+	protected IReceiver receiver;
 
 	// Nested types
 	public interface IReceiver

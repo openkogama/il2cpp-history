@@ -7,49 +7,51 @@ void Assembly-CSharp.dll::TierUnlockedNotification::TierUnlockedNotification_Ini
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&::StringLiteral__);
-    func_?(&StringLiteral__YOU_HAVE_UNLOCKED_TIER_);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__YOU_HAVE_UNLOCKED_TIER_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  n = this;
-  this = (TierUnlockedNotification *)CONCAT13(4,this._0_3_);
-  pTVar1 = (n->fields).tierUnlockedText;
-  (n->fields)._.timeSinceStart = 0.0;
-  key = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
+  pTVar1 = (this->fields).tierUnlockedText;
+  (this->fields)._.timeSinceStart = 0.0;
+  auStackX_8[0] = 4;
+  pOVar2 = (Object *)FUN_?(uRam_?,auStackX_8);
   if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,key,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    if (TVar2.m_Index != 0) {
+    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (data,pOVar2,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if (pOVar2 != (Object *)0x0) {
       pSVar3 = (String *)
-               (**(code **)(*(int *)TVar2.m_Index + 0xd8))
-                         (TVar2.m_Index,*(undefined4 *)(*(int *)TVar2.m_Index + 0xdc));
-      pSVar3 = mscorlib.dll::System::String::String_Concat_4
+               (*(pOVar2->klass->vtable).ToString.methodPtr)
+                         (pOVar2,(pOVar2->klass->vtable).ToString.method);
+      pSVar3 = mscorlib.dll::System::String::String_Concat_5
                          (StringLiteral__YOU_HAVE_UNLOCKED_TIER_,pSVar3,::StringLiteral__,
                           (MethodInfo *)0x0);
       if (pTVar1 != (Text *)0x0) {
-        (*(code *)(pTVar1->klass->vtable).set_text.method)
-                  (pTVar1,pSVar3,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
-        ;
-        this_00 = (n->fields).tertiaryNotificationUI;
-        l = (*(code *)(n->klass->vtable).get_Lifetime.method)
-                      (n,(n->klass->vtable).Initialize.methodPtr);
+        (*(pTVar1->klass->vtable).set_text.methodPtr)
+                  (pTVar1,pSVar3,(pTVar1->klass->vtable).set_text.method);
+        this_00 = (this->fields).tertiaryNotificationUI;
+        l = (*(this->klass->vtable).get_Lifetime.methodPtr)
+                      (this,(this->klass->vtable).get_Lifetime.method);
         if (this_00 != (TertiaryNotificationUI *)0x0) {
           TertiaryNotificationUI::TertiaryNotificationUI_Initialize
-                    (this_00,(Notification *)n,l,0,(MethodInfo *)0x0);
+                    (this_00,(Notification *)this,l,0,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;

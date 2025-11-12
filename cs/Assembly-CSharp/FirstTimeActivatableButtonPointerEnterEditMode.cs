@@ -27,7 +27,7 @@ public class FirstTimeActivatableButtonPointerEnterEditMode : FirstTimeActivatab
 	[SerializeField]
 	private float bubbleLifetimeWhileShown;
 	[SerializeField]
-	private Button skipElement;
+	private UnityEngine.UI.Button skipElement;
 	[SerializeField]
 	protected bool skipAllowed;
 	private bool shouldBeDelayedDestroyed;

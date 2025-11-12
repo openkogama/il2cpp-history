@@ -8,25 +8,28 @@ void Assembly-CSharp.dll::GamePassesViewCrystalsInInventory+<>c__DisplayClass10_
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((this->fields).CS___8__locals1 != (GamePassesViewCrystalsInInventory_c_DisplayClass10_0 *)0x0)
-  {
-    pSVar1 = (this->fields).currentlyBuyingItem;
-    if (pSVar1 != (ShopItem *)0x0) {
+  pGVar1 = (this->fields).CS___8__locals1;
+  if (pGVar1 != (GamePassesViewCrystalsInInventory_c_DisplayClass10_0 *)0x0) {
+    pSVar2 = (this->fields).currentlyBuyingItem;
+    iVar3 = (pGVar1->fields).returnCode;
+    if (pSVar2 != (ShopItem *)0x0) {
       s = mscorlib.dll::System::Int32::Int32_ToString
-                    ((Int32 *)&(pSVar1->fields).priceGold,(MethodInfo *)0x0);
-      mscorlib.dll::System::Int32::Int32_Parse(s,(MethodInfo *)0x0);
+                    ((Int32 *)&(pSVar2->fields).priceGold,(MethodInfo *)0x0);
+      iVar4 = mscorlib.dll::System::Int32::Int32_Parse(s,(MethodInfo *)0x0);
       if (x != (IModalPopupCreator *)0x0) {
-        func_?(0,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,x);
+        FUN_?(0,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,x,iVar3,iVar4);
         return;
       }
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

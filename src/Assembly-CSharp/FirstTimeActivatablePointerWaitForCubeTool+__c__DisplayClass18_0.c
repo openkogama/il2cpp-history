@@ -8,18 +8,19 @@ void Assembly-CSharp.dll::FirstTimeActivatablePointerWaitForCubeTool+<>c__Displa
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (x != (IUIStack *)0x0) {
-    cVar1 = func_?(5,TypeInfo__UnityEngine__EventSystems__IUIStack,x,
-                            (this->fields).popupGameObject);
+    cVar1 = FUN_?(5);
     if (cVar1 != '\0') {
-      func_?(2,TypeInfo__UnityEngine__EventSystems__IUIStack,x);
+      FUN_?(2,TypeInfo__UnityEngine__EventSystems__IUIStack,x);
     }
     return;
   }
-  func_?();
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

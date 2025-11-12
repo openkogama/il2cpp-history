@@ -18,7 +18,7 @@ public class SellAvatarController : MonoBehaviour
 	[SerializeField]
 	private InputField nameField;
 	[SerializeField]
-	private Button removeButton;
+	private UnityEngine.UI.Button removeButton;
 	[SerializeField]
 	private UnityEngine.UI.Text sellButtonText;
 	[SerializeField]

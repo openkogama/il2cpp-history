@@ -6,17 +6,40 @@ int32_t Assembly-CSharp.dll::LayerUtil::LayerUtil_GetLayerNumber
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&StringLiteral_layer_parameter_constant_should_);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_layer_parameter_constant_should_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  IStack_1.m_value = layer;
   if ((int)layer < 1) {
-    pSVar2 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_1,(MethodInfo *)0x0);
-    pSVar2 = mscorlib.dll::System::String::String_Concat_3
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__System__Number);
+      LOCK();
+      UNLOCK();
+      FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if ((MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____->klass->field_0x135
+        & 1) == 0) {
+      FUN_?();
+    }
+    if (*(int *)&(TypeInfo__System__Number->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    aRStack_1[0]._pointer._value = (void *)0x0;
+    aRStack_1[0]._length = 0;
+    aRStack_1[0]._12_4_ = 0;
+    pSVar2 = mscorlib.dll::System::Number::Number_FormatInt32
+                       (layer,aRStack_1,(IFormatProvider *)0x0,(MethodInfo *)0x0);
+    pSVar2 = mscorlib.dll::System::String::String_Concat_4
                        (StringLiteral_layer_parameter_constant_should_,pSVar2,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)pSVar2,(MethodInfo *)0x0);
@@ -25,8 +48,8 @@ int32_t Assembly-CSharp.dll::LayerUtil::LayerUtil_GetLayerNumber
     iVar3 = 0;
     if ((layer & LayerFlags__Enum_Default) == 0) {
       do {
-        layer = (int)layer >> 1;
         iVar3 = iVar3 + 1;
+        layer = (int)layer >> 1;
       } while ((layer & LayerFlags__Enum_Default) == 0);
       return iVar3;
     }
@@ -41,11 +64,31 @@ String * Assembly-CSharp.dll::LayerUtil::LayerUtil_GetName
                    (LayerFlags__Enum layers,MethodInfo *method)
 
 {
-  if (pcRam_? == (code *)0x0) {
-    pcRam_? = (code *)func_?(&UNK_?);
+  pVStack_1 = (Void *)0x0;
+  uStack_2._0_4_ = 0;
+  uStack_2._4_4_ = 0;
+  auStackX_18[0] = 0;
+  uStack_3 = 0;
+  ppVStack_4 = &pVStack_1;
+  puStack_5 = auStackX_18;
+  pcVar6 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar6 = (code *)FUN_?(&UNK_?,0), pcVar6 == (code *)0x0)) {
+    uVar7 = func_?(&UNK_?);
+    FUN_?(uVar7,0);
+    FUN_?();
+    pcVar6 = (code *)swi(3);
+    pSVar8 = (String *)(*pcVar6)();
+    return pSVar8;
   }
-  pSVar1 = (String *)(*pcRam_?)(layers);
-  return pSVar1;
+  pcRam_? = pcVar6;
+  (*pcRam_?)(layers);
+  MStack_9.begin = pVStack_1;
+  MStack_9.length = (int32_t)uStack_2;
+  MStack_9._12_4_ = uStack_2._4_4_;
+  pSVar8 = UnityEngine.CoreModule.dll::UnityEngine::Bindings::OutStringMarshaller::
+           OutStringMarshaller_GetStringAndDispose(&MStack_9,(MethodInfo *)0x0);
+  return pSVar8;
 }
 
 
@@ -67,79 +110,83 @@ void Assembly-CSharp.dll::LayerUtil::LayerUtil_SetLayerRecursively
                (Transform *transfrom,int32_t layer,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__IDisposable);
-    func_?(&TypeInfo__System__Collections__IEnumerator);
-    func_?(&TypeInfo__UnityEngine__Transform);
+    FUN_?(&TypeInfo__System__IDisposable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__IEnumerator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Transform);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (transfrom != (Transform *)0x0) {
-    this = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)transfrom,(MethodInfo *)0x0);
-    if (this != (GameObject *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
-                (this,layer,(MethodInfo *)0x0);
-      pIVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
-                         (transfrom,(MethodInfo *)0x0);
-      uStack_1 = 1;
-      while (pIVar4 != (IEnumerator *)0x0) {
-        cVar5 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIVar4);
-        if (cVar5 == '\0') {
-          uStack_1 = 0xffffffff;
-          iVar6 = func_?(pIVar4,TypeInfo__System__IDisposable);
-          if (iVar6 != 0) {
-            func_?(0,TypeInfo__System__IDisposable,iVar6);
-            *unaff_FS_OFFSET = uStack_3;
-            return;
-          }
-          *unaff_FS_OFFSET = uStack_3;
-          return;
-        }
-        if (pIVar4 == (IEnumerator *)0x0) break;
-        pIVar7 = pIVar4->klass;
-        uVar8 = 0;
-        uVar9._0_1_ = (pIVar7->_1).rank;
-        uVar9._1_1_ = (pIVar7->_1).minimumAlignment;
-        if (uVar9 != 0) {
-          do {
-            if (pIVar7->interfaceOffsets[uVar8].interfaceType ==
-                (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
-              ppMVar10 = &(&(pIVar4->klass->vtable).get_Current)
-                         [pIVar4->klass->interfaceOffsets[uVar8].offset].method;
-              goto code_?;
-            }
-            uVar8 = uVar8 + 1;
-          } while (uVar8 < uVar9);
-        }
-        ppMVar10 = (MethodInfo **)
-                  func_?(pIVar4,TypeInfo__System__Collections__IEnumerator,1);
+  if ((transfrom == (Transform *)0x0) ||
+     (this = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)transfrom,(MethodInfo *)0x0), this == (GameObject *)0x0)) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
+            (this,layer,(MethodInfo *)0x0);
+  pIVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
+                     (transfrom,(MethodInfo *)0x0);
+  do {
+    if (pIVar2 == (IEnumerator *)0x0) {
 code_?:
-        transfrom_00 = (Transform *)(*(code *)*ppMVar10)(pIVar4,ppMVar10[1]);
-        if (transfrom_00 == (Transform *)0x0) {
-          LayerUtil_SetLayerRecursively((Transform *)0x0,layer,(MethodInfo *)0x0);
+      FUN_?();
+      FUN_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    cVar3 = FUN_?(0,TypeInfo__System__Collections__IEnumerator);
+    if (cVar3 == '\0') {
+      lVar4 = FUN_?(pIVar2,TypeInfo__System__IDisposable);
+      if (lVar4 != 0) {
+        FUN_?(0,TypeInfo__System__IDisposable,lVar4);
+      }
+      return;
+    }
+    if (pIVar2 == (IEnumerator *)0x0) {
+code_?:
+      FUN_?();
+      goto code_?;
+    }
+    pIVar5 = pIVar2->klass;
+    uVar6 = 0;
+    uVar7._0_1_ = (pIVar5->_1).rank;
+    uVar7._1_1_ = (pIVar5->_1).minimumAlignment;
+    if (uVar7 != 0) {
+      do {
+        if (pIVar5->interfaceOffsets[uVar6].interfaceType ==
+            (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
+          pVVar8 = &(pIVar5->vtable).MoveNext + (pIVar5->interfaceOffsets[uVar6].offset + 1);
+          goto code_?;
         }
-        else {
-          if (((transfrom_00->klass->_1).naturalAligment <
-               (TypeInfo__UnityEngine__Transform->_1).naturalAligment) ||
-             ((transfrom_00->klass->_1).typeHierarchy
-              [(TypeInfo__UnityEngine__Transform->_1).naturalAligment - 1] !=
-              (Il2CppClass *)TypeInfo__UnityEngine__Transform)) {
-            func_?(transfrom_00,TypeInfo__UnityEngine__Transform);
-            break;
-          }
-          LayerUtil_SetLayerRecursively(transfrom_00,layer,(MethodInfo *)0x0);
-        }
+        uVar6 = uVar6 + 1;
+      } while (uVar6 < uVar7);
+    }
+    pVVar8 = (VirtualInvokeData *)FUN_?(pIVar2,TypeInfo__System__Collections__IEnumerator,1)
+    ;
+code_?:
+    pTVar9 = (Transform *)(*pVVar8->methodPtr)(pIVar2,pVVar8->method);
+    transfrom_00 = (Transform *)0x0;
+    if (pTVar9 != (Transform *)0x0) {
+      bVar10 = (TypeInfo__UnityEngine__Transform->_1).naturalAligment;
+      if (((pTVar9->klass->_1).naturalAligment < bVar10) ||
+         (transfrom_00 = pTVar9,
+         (pTVar9->klass->_1).typeHierarchy[(ulonglong)bVar10 - 1] !=
+         (Il2CppClass *)TypeInfo__UnityEngine__Transform)) {
+        FUN_?(pTVar9,TypeInfo__UnityEngine__Transform);
+        goto code_?;
       }
     }
-  }
-  func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
-  return;
+    LayerUtil_SetLayerRecursively(transfrom_00,layer,(MethodInfo *)0x0);
+  } while( true );
 }
 
 
@@ -149,19 +196,85 @@ void Assembly-CSharp.dll::LayerUtil::LayerUtil_SetLayerRecursively_1
                (Transform *transfrom,String *layer,MethodInfo *method)
 
 {
-  UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer(layer,(MethodInfo *)0x0)
-  ;
-  *(undefined1 **)unaff_FS_OFFSET = &stack0xfffffff8;
+  value = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                    (layer,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__IDisposable);
-    func_?(&TypeInfo__System__Collections__IEnumerator);
-    func_?(&TypeInfo__UnityEngine__Transform);
+    FUN_?(&TypeInfo__System__IDisposable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__IEnumerator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Transform);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
+  if ((transfrom == (Transform *)0x0) ||
+     (this = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)transfrom,(MethodInfo *)0x0), this == (GameObject *)0x0)) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
+            (this,value,(MethodInfo *)0x0);
+  pIVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
+                     (transfrom,(MethodInfo *)0x0);
+  do {
+    if (pIVar2 == (IEnumerator *)0x0) {
+code_?:
+      FUN_?();
+      FUN_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    cVar3 = FUN_?(0,TypeInfo__System__Collections__IEnumerator);
+    if (cVar3 == '\0') {
+      lVar4 = FUN_?(pIVar2,TypeInfo__System__IDisposable);
+      if (lVar4 != 0) {
+        FUN_?(0,TypeInfo__System__IDisposable,lVar4);
+      }
+      return;
+    }
+    if (pIVar2 == (IEnumerator *)0x0) {
+code_?:
+      FUN_?();
+      goto code_?;
+    }
+    pIVar5 = pIVar2->klass;
+    uVar6 = 0;
+    uVar7._0_1_ = (pIVar5->_1).rank;
+    uVar7._1_1_ = (pIVar5->_1).minimumAlignment;
+    if (uVar7 != 0) {
+      do {
+        if (pIVar5->interfaceOffsets[uVar6].interfaceType ==
+            (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
+          pVVar8 = &(pIVar5->vtable).MoveNext + (pIVar5->interfaceOffsets[uVar6].offset + 1);
+          goto code_?;
+        }
+        uVar6 = uVar6 + 1;
+      } while (uVar6 < uVar7);
+    }
+    pVVar8 = (VirtualInvokeData *)FUN_?(pIVar2,TypeInfo__System__Collections__IEnumerator,1)
+    ;
+code_?:
+    pTVar9 = (Transform *)(*pVVar8->methodPtr)(pIVar2,pVVar8->method);
+    transfrom_00 = (Transform *)0x0;
+    if (pTVar9 != (Transform *)0x0) {
+      bVar10 = (TypeInfo__UnityEngine__Transform->_1).naturalAligment;
+      if (((pTVar9->klass->_1).naturalAligment < bVar10) ||
+         (transfrom_00 = pTVar9,
+         (pTVar9->klass->_1).typeHierarchy[(ulonglong)bVar10 - 1] !=
+         (Il2CppClass *)TypeInfo__UnityEngine__Transform)) {
+        FUN_?(pTVar9,TypeInfo__UnityEngine__Transform);
+        goto code_?;
+      }
+    }
+    LayerUtil_SetLayerRecursively(transfrom_00,value,(MethodInfo *)0x0);
+  } while( true );
 }
 
 
@@ -171,89 +284,114 @@ void Assembly-CSharp.dll::LayerUtil::LayerUtil_SetLayerRecursively_2
                (Transform *transfrom,LayerMask layersToChange,int32_t layer,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__IDisposable);
-    func_?(&TypeInfo__System__Collections__IEnumerator);
-    func_?(&TypeInfo__UnityEngine__Transform);
+    FUN_?(&TypeInfo__System__IDisposable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__IEnumerator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Transform);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (transfrom != (Transform *)0x0) {
-    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)transfrom,(MethodInfo *)0x0);
-    if (pGVar4 != (GameObject *)0x0) {
-      iVar5 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
-                        (pGVar4,(MethodInfo *)0x0);
-      uVar6 = 1 << ((byte)iVar5 & 0x1f);
-      p_Var7 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
-               UnsafeUtility_AsRef_1((Void *)layersToChange.m_Mask,(MethodInfo *)0x0);
-      if ((uVar6 & (uint)p_Var7) == uVar6) {
-        pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+  alStack_1[0] = 0;
+  if ((transfrom != (Transform *)0x0) &&
+     (pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)transfrom,(MethodInfo *)0x0), pGVar2 != (GameObject *)0x0)) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar3 = (pGVar2->fields)._.m_CachedPtr;
+    if (pvVar3 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar2,(MethodInfo *)0x0);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    pcVar4 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+      uVar5 = func_?(&UNK_?);
+      FUN_?(uVar5,0);
+code_?:
+      FUN_?();
+code_?:
+      FUN_?();
+    }
+    else {
+      pcRam_? = pcVar4;
+      bVar6 = (*pcRam_?)(pvVar3);
+      uVar7 = 1 << (bVar6 & 0x1f);
+      if ((uVar7 & layersToChange.m_Mask) == uVar7) {
+        pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                            ((Component *)transfrom,(MethodInfo *)0x0);
-        if (pGVar4 == (GameObject *)0x0) goto code_?;
+        if (pGVar2 == (GameObject *)0x0) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
-                  (pGVar4,layer,(MethodInfo *)0x0);
+                  (pGVar2,layer,(MethodInfo *)0x0);
       }
-      pIVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
-                         (transfrom,(MethodInfo *)0x0);
-      uStack_1 = 1;
-      while (pIVar7 != (IEnumerator *)0x0) {
-        cVar8 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIVar7);
-        if (cVar8 == '\0') {
-          uStack_1 = 0xffffffff;
-          iVar9 = func_?(pIVar7,TypeInfo__System__IDisposable);
-          if (iVar9 != 0) {
-            func_?(0,TypeInfo__System__IDisposable,iVar9);
-            *unaff_FS_OFFSET = uStack_3;
-            return;
+      pIStackX_8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
+                             (transfrom,(MethodInfo *)0x0);
+      uStack_8 = 0;
+      ppIStack_9 = &pIStackX_8;
+      plStack_10 = alStack_1;
+      while (pIStackX_8 != (IEnumerator *)0x0) {
+        cVar11 = FUN_?(0,TypeInfo__System__Collections__IEnumerator);
+        pIVar12 = pIStackX_8;
+        if (cVar11 == '\0') {
+          alStack_1[0] = FUN_?(pIStackX_8,TypeInfo__System__IDisposable);
+          if (alStack_1[0] != 0) {
+            FUN_?(0,TypeInfo__System__IDisposable,alStack_1[0]);
           }
-          *unaff_FS_OFFSET = uStack_3;
           return;
         }
-        if (pIVar7 == (IEnumerator *)0x0) break;
-        pIVar10 = pIVar7->klass;
-        uVar11 = 0;
-        uVar12._0_1_ = (pIVar10->_1).rank;
-        uVar12._1_1_ = (pIVar10->_1).minimumAlignment;
-        if (uVar12 != 0) {
+        if (pIStackX_8 == (IEnumerator *)0x0) goto code_?;
+        pIVar13 = pIStackX_8->klass;
+        uVar14 = 0;
+        uVar15._0_1_ = (pIVar13->_1).rank;
+        uVar15._1_1_ = (pIVar13->_1).minimumAlignment;
+        if (uVar15 != 0) {
           do {
-            if (pIVar10->interfaceOffsets[uVar11].interfaceType ==
+            if (pIVar13->interfaceOffsets[uVar14].interfaceType ==
                 (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
-              ppMVar13 = &(&(pIVar7->klass->vtable).get_Current)
-                         [pIVar7->klass->interfaceOffsets[uVar11].offset].method;
+              pVVar16 = &(pIVar13->vtable).MoveNext + (pIVar13->interfaceOffsets[uVar14].offset + 1);
               goto code_?;
             }
-            uVar11 = uVar11 + 1;
-          } while (uVar11 < uVar12);
+            uVar14 = uVar14 + 1;
+          } while (uVar14 < uVar15);
         }
-        ppMVar13 = (MethodInfo **)
-                  func_?(pIVar7,TypeInfo__System__Collections__IEnumerator,1);
+        pVVar16 = (VirtualInvokeData *)
+                 FUN_?(pIStackX_8,TypeInfo__System__Collections__IEnumerator,1);
 code_?:
-        transfrom_00 = (Transform *)(*(code *)*ppMVar13)(pIVar7,ppMVar13[1]);
-        if (transfrom_00 == (Transform *)0x0) {
-          LayerUtil_SetLayerRecursively_2((Transform *)0x0,layersToChange,layer,(MethodInfo *)0x0);
+        pTVar17 = (Transform *)(*pVVar16->methodPtr)(pIVar12,pVVar16->method);
+        transfrom_00 = (Transform *)0x0;
+        if (pTVar17 != (Transform *)0x0) {
+          bVar6 = (TypeInfo__UnityEngine__Transform->_1).naturalAligment;
+          if (((pTVar17->klass->_1).naturalAligment < bVar6) ||
+             (transfrom_00 = pTVar17,
+             (pTVar17->klass->_1).typeHierarchy[(ulonglong)bVar6 - 1] !=
+             (Il2CppClass *)TypeInfo__UnityEngine__Transform)) goto code_?;
         }
-        else {
-          if (((transfrom_00->klass->_1).naturalAligment <
-               (TypeInfo__UnityEngine__Transform->_1).naturalAligment) ||
-             ((transfrom_00->klass->_1).typeHierarchy
-              [(TypeInfo__UnityEngine__Transform->_1).naturalAligment - 1] !=
-              (Il2CppClass *)TypeInfo__UnityEngine__Transform)) {
-            func_?(transfrom_00,TypeInfo__UnityEngine__Transform);
-            break;
-          }
-          LayerUtil_SetLayerRecursively_2(transfrom_00,layersToChange,layer,(MethodInfo *)0x0);
-        }
+        LayerUtil_SetLayerRecursively_2(transfrom_00,layersToChange,layer,(MethodInfo *)0x0);
       }
     }
+    FUN_?();
+    FUN_?();
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
+    return;
   }
 code_?:
-  func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -266,12 +404,116 @@ void Assembly-CSharp.dll::LayerUtil::LayerUtil_SetLayerRecursively_3
 {
   iVar1 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
                     (layerToChange,(MethodInfo *)0x0);
-  layer_00 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
-                       (layer,(MethodInfo *)0x0);
-  layersToChange.m_Mask =
-       (int32_t)UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
-                UnsafeUtility_AsRef_1((Void *)(1 << ((byte)iVar1 & 0x1f)),(MethodInfo *)0x0);
-  LayerUtil_SetLayerRecursively_2(transfrom,layersToChange,layer_00,(MethodInfo *)0x0);
+  layersToChange.m_Mask = 1 << ((byte)iVar1 & 0x1f);
+  iVar1 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                    (layer,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__IDisposable,layersToChange.m_Mask,iVar1,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__IEnumerator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Transform);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  alStack_2[0] = 0;
+  if ((transfrom != (Transform *)0x0) &&
+     (pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)transfrom,(MethodInfo *)0x0), pGVar3 != (GameObject *)0x0)) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar4 = (pGVar3->fields)._.m_CachedPtr;
+    if (pvVar4 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar3,(MethodInfo *)0x0);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    pcVar5 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+      uVar6 = func_?(&UNK_?);
+      FUN_?(uVar6,0);
+code_?:
+      FUN_?();
+code_?:
+      FUN_?();
+    }
+    else {
+      pcRam_? = pcVar5;
+      bVar7 = (*pcRam_?)(pvVar4);
+      uVar8 = 1 << (bVar7 & 0x1f);
+      if ((uVar8 & layersToChange.m_Mask) == uVar8) {
+        pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           ((Component *)transfrom,(MethodInfo *)0x0);
+        if (pGVar3 == (GameObject *)0x0) goto code_?;
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
+                  (pGVar3,iVar1,(MethodInfo *)0x0);
+      }
+      pIVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
+                         (transfrom,(MethodInfo *)0x0);
+      uStack_10 = 0;
+      puStack_11 = &stack0x00000008;
+      plStack_12 = alStack_2;
+      while (pIVar9 != (IEnumerator *)0x0) {
+        cVar13 = FUN_?(0,TypeInfo__System__Collections__IEnumerator);
+        if (cVar13 == '\0') {
+          alStack_2[0] = FUN_?(pIVar9,TypeInfo__System__IDisposable);
+          if (alStack_2[0] != 0) {
+            FUN_?(0,TypeInfo__System__IDisposable,alStack_2[0]);
+          }
+          return;
+        }
+        if (pIVar9 == (IEnumerator *)0x0) goto code_?;
+        pIVar14 = pIVar9->klass;
+        uVar15 = 0;
+        uVar16._0_1_ = (pIVar14->_1).rank;
+        uVar16._1_1_ = (pIVar14->_1).minimumAlignment;
+        if (uVar16 != 0) {
+          do {
+            if (pIVar14->interfaceOffsets[uVar15].interfaceType ==
+                (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
+              pVVar17 = &(pIVar14->vtable).MoveNext + (pIVar14->interfaceOffsets[uVar15].offset + 1);
+              goto code_?;
+            }
+            uVar15 = uVar15 + 1;
+          } while (uVar15 < uVar16);
+        }
+        pVVar17 = (VirtualInvokeData *)
+                  FUN_?(pIVar9,TypeInfo__System__Collections__IEnumerator,1);
+code_?:
+        pTVar18 = (Transform *)(*pVVar17->methodPtr)(pIVar9,pVVar17->method);
+        transfrom_00 = (Transform *)0x0;
+        if (pTVar18 != (Transform *)0x0) {
+          bVar7 = (TypeInfo__UnityEngine__Transform->_1).naturalAligment;
+          if (((pTVar18->klass->_1).naturalAligment < bVar7) ||
+             (transfrom_00 = pTVar18,
+             (pTVar18->klass->_1).typeHierarchy[(ulonglong)bVar7 - 1] !=
+             (Il2CppClass *)TypeInfo__UnityEngine__Transform)) goto code_?;
+        }
+        LayerUtil_SetLayerRecursively_2(transfrom_00,layersToChange,iVar1,(MethodInfo *)0x0);
+      }
+    }
+    FUN_?();
+    FUN_?();
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
+    return;
+  }
+code_?:
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -282,78 +524,84 @@ void Assembly-CSharp.dll::LayerUtil::LayerUtil_SetLayerRecursively_4
                (GameObject *gameObject,int32_t layer,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__IDisposable);
-    func_?(&TypeInfo__System__Collections__IEnumerator);
-    func_?(&TypeInfo__UnityEngine__Transform);
+    FUN_?(&TypeInfo__System__IDisposable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__IEnumerator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Transform);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (gameObject != (GameObject *)0x0) {
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_set_layer
               (gameObject,layer,(MethodInfo *)0x0);
-    pTVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                        (gameObject,(MethodInfo *)0x0);
-    if (pTVar4 != (Transform *)0x0) {
-      pIVar5 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
-                         (pTVar4,(MethodInfo *)0x0);
-      uStack_1 = 1;
-      while (pIVar5 != (IEnumerator *)0x0) {
-        cVar6 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIVar5);
-        if (cVar6 == '\0') {
-          uStack_1 = 0xffffffff;
-          iVar7 = func_?(pIVar5,TypeInfo__System__IDisposable);
-          if (iVar7 != 0) {
-            func_?(0,TypeInfo__System__IDisposable,iVar7);
-            *unaff_FS_OFFSET = uStack_3;
-            return;
-          }
-          *unaff_FS_OFFSET = uStack_3;
+    if (pTVar1 != (Transform *)0x0) {
+      pIVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetEnumerator
+                         (pTVar1,(MethodInfo *)0x0);
+      do {
+        if (pIVar2 == (IEnumerator *)0x0) {
+code_?:
+          FUN_?();
+          FUN_?();
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
           return;
         }
-        if (pIVar5 == (IEnumerator *)0x0) break;
-        pIVar8 = pIVar5->klass;
-        uVar9 = 0;
-        uVar10._0_1_ = (pIVar8->_1).rank;
-        uVar10._1_1_ = (pIVar8->_1).minimumAlignment;
-        if (uVar10 != 0) {
+        cVar4 = FUN_?(0,TypeInfo__System__Collections__IEnumerator);
+        if (cVar4 == '\0') {
+          lVar5 = FUN_?(pIVar2,TypeInfo__System__IDisposable);
+          if (lVar5 != 0) {
+            FUN_?(0,TypeInfo__System__IDisposable,lVar5);
+          }
+          return;
+        }
+        if (pIVar2 == (IEnumerator *)0x0) {
+code_?:
+          FUN_?();
+          goto code_?;
+        }
+        pIVar6 = pIVar2->klass;
+        uVar7 = 0;
+        uVar8._0_1_ = (pIVar6->_1).rank;
+        uVar8._1_1_ = (pIVar6->_1).minimumAlignment;
+        if (uVar8 != 0) {
           do {
-            if (pIVar8->interfaceOffsets[uVar9].interfaceType ==
+            if (pIVar6->interfaceOffsets[uVar7].interfaceType ==
                 (Il2CppClass *)TypeInfo__System__Collections__IEnumerator) {
-              ppMVar11 = &(&(pIVar5->klass->vtable).get_Current)
-                         [pIVar5->klass->interfaceOffsets[uVar9].offset].method;
+              pVVar9 = &(pIVar6->vtable).MoveNext + (pIVar6->interfaceOffsets[uVar7].offset + 1);
               goto code_?;
             }
-            uVar9 = uVar9 + 1;
-          } while (uVar9 < uVar10);
+            uVar7 = uVar7 + 1;
+          } while (uVar7 < uVar8);
         }
-        ppMVar11 = (MethodInfo **)
-                  func_?(pIVar5,TypeInfo__System__Collections__IEnumerator,1);
+        pVVar9 = (VirtualInvokeData *)
+                 FUN_?(pIVar2,TypeInfo__System__Collections__IEnumerator,1);
 code_?:
-        pTVar4 = (Transform *)(*(code *)*ppMVar11)(pIVar5,ppMVar11[1]);
-        if (pTVar4 == (Transform *)0x0) {
-          LayerUtil_SetLayerRecursively((Transform *)0x0,layer,(MethodInfo *)0x0);
-        }
-        else {
-          if (((pTVar4->klass->_1).naturalAligment <
-               (TypeInfo__UnityEngine__Transform->_1).naturalAligment) ||
-             ((pTVar4->klass->_1).typeHierarchy
-              [(TypeInfo__UnityEngine__Transform->_1).naturalAligment - 1] !=
-              (Il2CppClass *)TypeInfo__UnityEngine__Transform)) {
-            func_?(pTVar4,TypeInfo__UnityEngine__Transform);
-            break;
+        pTVar10 = (Transform *)(*pVVar9->methodPtr)(pIVar2,pVVar9->method);
+        pTVar1 = (Transform *)0x0;
+        if (pTVar10 != (Transform *)0x0) {
+          bVar11 = (TypeInfo__UnityEngine__Transform->_1).naturalAligment;
+          if (((pTVar10->klass->_1).naturalAligment < bVar11) ||
+             (pTVar1 = pTVar10,
+             (pTVar10->klass->_1).typeHierarchy[(ulonglong)bVar11 - 1] !=
+             (Il2CppClass *)TypeInfo__UnityEngine__Transform)) {
+            FUN_?(pTVar10,TypeInfo__UnityEngine__Transform);
+            goto code_?;
           }
-          LayerUtil_SetLayerRecursively(pTVar4,layer,(MethodInfo *)0x0);
         }
-      }
+        LayerUtil_SetLayerRecursively(pTVar1,layer,(MethodInfo *)0x0);
+      } while( true );
     }
   }
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

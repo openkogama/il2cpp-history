@@ -10,14 +10,17 @@ MVGameControllerBase_OnReceivedGameMsgDelegate_BeginInvoke
           Object *object,MethodInfo *method)
 
 {
+  aMStackX_10[0] = type;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__Common__MVGameMsgType);
+    FUN_?(&TypeInfo__MV__Common__MVGameMsgType);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   uStack_1 = 0;
-  uStack_2 = func_?(TypeInfo__MV__Common__MVGameMsgType,&type);
+  uStack_2 = FUN_?(TypeInfo__MV__Common__MVGameMsgType,aMStackX_10);
   pDStack_3 = gameMsgData;
-  pIVar4 = (IAsyncResult *)func_?(this,&uStack_2,callback,object);
+  pIVar4 = (IAsyncResult *)FUN_?(this,&uStack_2,callback,object);
   return pIVar4;
 }
 

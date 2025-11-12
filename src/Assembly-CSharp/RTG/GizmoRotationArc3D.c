@@ -7,63 +7,102 @@ void Assembly-CSharp.dll::RTG::GizmoRotationArc3D::GizmoRotationArc3D_Render
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
-    func_?(&MethodInfo__RTG__Singleton<RTG::GizmoSolidMaterial>__get_Get__);
-    func_?(&TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>);
-    func_?(&TypeInfo__RTG__Singleton<RTG::GizmoSolidMaterial>);
+    FUN_?(&MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__Singleton<RTG::GizmoSolidMaterial>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__Singleton<RTG::GizmoSolidMaterial>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (lookAndFeel != (GizmoRotationArc3DLookAndFeel *)0x0) {
+  if ((lookAndFeel == (GizmoRotationArc3DLookAndFeel *)0x0) ||
+     (pAVar1 = (this->fields)._arc, pAVar1 == (ArcShape3D *)0x0)) goto code_?;
+  (pAVar1->fields)._forceShortestArc = (lookAndFeel->fields)._useShortestRotation;
+  ArcShape3D::ArcShape3D_CalculateEndPoint(pAVar1,(MethodInfo *)0x0);
+  (pAVar1->fields)._areBorderPointsDirty = 1;
+  if (((lookAndFeel->fields)._fillFlags & 1) != 0) {
+    if (*(int *)&(TypeInfo__RTG__Singleton<RTG::GizmoSolidMaterial>->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    this_00 = (GizmoSolidMaterial *)
+              Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
+                        (MethodInfo__RTG__Singleton<RTG::GizmoSolidMaterial>__get_Get__);
+    if (this_00 == (GizmoSolidMaterial *)0x0) goto code_?;
+    GizmoSolidMaterial::GizmoSolidMaterial_ResetValuesToSensibleDefaults(this_00,(MethodInfo *)0x0);
+    GizmoSolidMaterial::GizmoSolidMaterial_SetCullModeOff(this_00,(MethodInfo *)0x0);
+    GizmoSolidMaterial::GizmoSolidMaterial_SetLit(this_00,0,(MethodInfo *)0x0);
+    uVar2._0_4_ = (lookAndFeel->fields)._color.r;
+    uVar2._4_4_ = (lookAndFeel->fields)._color.g;
+    uVar3._0_4_ = (lookAndFeel->fields)._color.b;
+    uVar3._4_4_ = (lookAndFeel->fields)._color.a;
+    if (cRam_? == '\0') {
+      FUN_?(&StringLiteral__Color);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar4 = GizmoSolidMaterial::GizmoSolidMaterial_get_Material(this_00,(MethodInfo *)0x0);
+    if (pMVar4 == (Material *)0x0) goto code_?;
+    aCStack_5[0]._0_8_ = uVar2;
+    aCStack_5[0]._8_8_ = uVar3;
+    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor
+              (pMVar4,StringLiteral__Color,aCStack_5,(MethodInfo *)0x0);
+    pMVar4 = GizmoSolidMaterial::GizmoSolidMaterial_get_Material(this_00,(MethodInfo *)0x0);
+    if (pMVar4 == (Material *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass(pMVar4,0,(MethodInfo *)0x0);
     pAVar1 = (this->fields)._arc;
-    if (pAVar1 != (ArcShape3D *)0x0) {
-      ArcShape3D::ArcShape3D_set_ForceShortestArc
-                (pAVar1,(lookAndFeel->fields)._useShortestRotation,(MethodInfo *)0x0);
-      if (((lookAndFeel->fields)._fillFlags & 1) != 0) {
-        if ((TypeInfo__RTG__Singleton<RTG::GizmoSolidMaterial>->_1).cctor_finished_or_no_cctor == 0)
-        {
-          func_?(TypeInfo__RTG__Singleton<RTG::GizmoSolidMaterial>);
-        }
-        this_00 = (GizmoSolidMaterial *)
-                  Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
-                            (MethodInfo__RTG__Singleton<RTG::GizmoSolidMaterial>__get_Get__);
-        if (this_00 == (GizmoSolidMaterial *)0x0) goto code_?;
-        GizmoSolidMaterial::GizmoSolidMaterial_ResetValuesToSensibleDefaults
-                  (this_00,(MethodInfo *)0x0);
-        GizmoSolidMaterial::GizmoSolidMaterial_SetCullModeOff(this_00,(MethodInfo *)0x0);
-        GizmoSolidMaterial::GizmoSolidMaterial_SetLit(this_00,0,(MethodInfo *)0x0);
-        GizmoSolidMaterial::GizmoSolidMaterial_SetColor
-                  (this_00,(lookAndFeel->fields)._color,(MethodInfo *)0x0);
-        GizmoSolidMaterial::GizmoSolidMaterial_SetPass(this_00,0,(MethodInfo *)0x0);
-        pAVar1 = (this->fields)._arc;
-        if (pAVar1 == (ArcShape3D *)0x0) goto code_?;
-        (*(code *)(pAVar1->klass->vtable).RenderSolid.method)
-                  (pAVar1,(pAVar1->klass->vtable).RenderWire.methodPtr);
-      }
-      if ((TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>);
-      }
-      this_01 = (GizmoLineMaterial *)
-                Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
-                          (MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
-      if (this_01 != (GizmoLineMaterial *)0x0) {
-        GizmoLineMaterial::GizmoLineMaterial_ResetValuesToSensibleDefaults
-                  (this_01,(MethodInfo *)0x0);
-        GizmoLineMaterial::GizmoLineMaterial_SetColor
-                  (this_01,(lookAndFeel->fields)._borderColor,(MethodInfo *)0x0);
-        GizmoLineMaterial::GizmoLineMaterial_SetPass(this_01,0,(MethodInfo *)0x0);
+    if (pAVar1 == (ArcShape3D *)0x0) goto code_?;
+    (*(pAVar1->klass->vtable).RenderSolid.methodPtr)();
+  }
+  if (*(int *)&(TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  this_01 = (GizmoLineMaterial *)
+            Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
+                      (MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
+  if (this_01 != (GizmoLineMaterial *)0x0) {
+    GizmoLineMaterial::GizmoLineMaterial_ResetValuesToSensibleDefaults(this_01,(MethodInfo *)0x0);
+    uVar6._0_4_ = (lookAndFeel->fields)._borderColor.r;
+    uVar6._4_4_ = (lookAndFeel->fields)._borderColor.g;
+    uVar7._0_4_ = (lookAndFeel->fields)._borderColor.b;
+    uVar7._4_4_ = (lookAndFeel->fields)._borderColor.a;
+    if (cRam_? == '\0') {
+      FUN_?(&StringLiteral__Color);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar4 = GizmoLineMaterial::GizmoLineMaterial_get_Material(this_01,(MethodInfo *)0x0);
+    if (pMVar4 != (Material *)0x0) {
+      aCStack_5[0]._0_8_ = uVar6;
+      aCStack_5[0]._8_8_ = uVar7;
+      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor
+                (pMVar4,StringLiteral__Color,aCStack_5,(MethodInfo *)0x0);
+      pMVar4 = GizmoLineMaterial::GizmoLineMaterial_get_Material(this_01,(MethodInfo *)0x0);
+      if (pMVar4 != (Material *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass
+                  (pMVar4,0,(MethodInfo *)0x0);
         pAVar1 = (this->fields)._arc;
         if (pAVar1 != (ArcShape3D *)0x0) {
-          (*(code *)(pAVar1->klass->vtable).RenderWire.method)
-                    (pAVar1,(pAVar1->klass->vtable).Raycast.methodPtr);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*(pAVar1->klass->vtable).RenderWire.methodPtr)
+                    (pAVar1,(pAVar1->klass->vtable).RenderWire.method);
           return;
         }
       }
     }
   }
 code_?:
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -71,56 +110,95 @@ code_?:
 /* Void SetArcData(Vector3, Vector3, Vector3, Single) */
 
 void Assembly-CSharp.dll::RTG::GizmoRotationArc3D::GizmoRotationArc3D_SetArcData
-               (GizmoRotationArc3D *this,Vector3 rotationAxis,Vector3 arcOrigin,Vector3 arcStart,
+               (GizmoRotationArc3D *this,Vector3 *rotationAxis,Vector3 *arcOrigin,Vector3 *arcStart,
                float radius,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Math);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Math);
-  }
-  dVar1 = (double)(rotationAxis.y * rotationAxis.y + rotationAxis.x * rotationAxis.x +
-                  rotationAxis.z * rotationAxis.z);
-  if (dVar1 < 0.0) {
-    func_?();
-  }
-  else {
-    dVar1 = SQRT(dVar1);
-  }
-  fVar2 = (float)dVar1;
-  if (_UNK_? < fVar2) {
-    fVar3 = rotationAxis.z / fVar2;
-    uVar4 = CONCAT44(rotationAxis.y / fVar2,rotationAxis.x / fVar2);
+  uStack_1._0_4_ = rotationAxis->x;
+  uStack_1._4_4_ = rotationAxis->y;
+  fStack_2 = rotationAxis->z;
+  fVar3 = (float)FUN_?(&uStack_1);
+  if (_UNK_? < fVar3) {
+    uVar4 = rotationAxis->x;
+    uVar5 = rotationAxis->y;
+    fStack_6 = rotationAxis->z / fVar3;
+    uStack_1 = CONCAT44((float)uVar5 / fVar3,(float)uVar4 / fVar3);
   }
   else {
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uVar4._0_4_ = (pVVar5->zeroVector).x;
-    uVar4._4_4_ = (pVVar5->zeroVector).y;
-    fVar3 = (pVVar5->zeroVector).z;
+    pVVar7 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uStack_1._0_4_ = (pVVar7->zeroVector).x;
+    uStack_1._4_4_ = (pVVar7->zeroVector).y;
+    fStack_6 = (pVVar7->zeroVector).z;
   }
-  fStack_6 = (float)uVar4;
-  fStack_7 = (float)((ulonglong)uVar4 >> 0x20);
+  uVar8 = arcOrigin->x;
+  uVar9 = arcOrigin->y;
+  fVar3 = (float)uStack_1;
+  fVar10 = uStack_1._4_4_;
   this_00 = (this->fields)._arc;
+  uStack_11 = uStack_1;
+  fStack_12 = (float)((uint)(uStack_1._4_4_ * (float)uVar9 + (float)uStack_1 * (float)uVar8 +
+                            fStack_6 * arcOrigin->z) ^ _UNK_?);
   if (this_00 != (ArcShape3D *)0x0) {
-    plane.m_Normal.z = fVar3;
-    plane.m_Normal.x = (float)(int)uVar4;
-    plane.m_Normal.y = (float)(int)((ulonglong)uVar4 >> 0x20);
-    plane.m_Distance =
-         (float)((uint)(arcOrigin.x * fStack_6 + arcOrigin.y * fStack_7 + arcOrigin.z * fVar3) ^
-                __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-    ArcShape3D::ArcShape3D_SetArcData(this_00,plane,arcOrigin,arcStart,radius,(MethodInfo *)0x0);
+    (this_00->fields)._plane.m_Normal.x = (float)uStack_1;
+    (this_00->fields)._plane.m_Normal.y = uStack_1._4_4_;
+    *(ulonglong *)&(this_00->fields)._plane.m_Normal.z = CONCAT44(fStack_12,fStack_6);
+    fVar13 = fVar10 * (float)uVar9 + fVar3 * (float)uVar8 + fStack_6 * arcOrigin->z + fStack_12;
+    fVar14 = arcOrigin->z;
+    (this_00->fields)._origin.x = (float)uVar8 - fVar3 * fVar13;
+    (this_00->fields)._origin.y = (float)uVar9 - fVar10 * fVar13;
+    (this_00->fields)._origin.z = fVar14 - fStack_6 * fVar13;
+    uVar15 = arcStart->x;
+    uVar16 = arcStart->y;
+    fVar13 = fVar10 * (float)uVar16 + fVar3 * (float)uVar15 + fStack_6 * arcStart->z + fStack_12;
+    fVar14 = arcStart->z;
+    (this_00->fields)._startPoint.x = (float)uVar15 - fVar13 * fVar3;
+    (this_00->fields)._startPoint.y = (float)uVar16 - fVar13 * fVar10;
+    (this_00->fields)._startPoint.z = fVar14 - fVar13 * fStack_6;
+    uStack_17._0_4_ = (this_00->fields)._origin.x;
+    uStack_17._4_4_ = (this_00->fields)._origin.y;
+    fVar3 = (this_00->fields)._origin.z;
+    fVar10 = (this_00->fields)._startPoint.z - (this_00->fields)._origin.z;
+    (this_00->fields)._radius = radius;
+    uVar18 = (this_00->fields)._startPoint.x;
+    uVar19 = (this_00->fields)._startPoint.y;
+    fVar20 = (float)uVar18 - (float)uStack_17;
+    fVar13 = (float)uVar19 - uStack_17._4_4_;
+    uStack_11 = CONCAT44(fVar13,fVar20);
+    fStack_6 = fVar10;
+    fVar14 = (float)FUN_?(&uStack_11);
+    if (_UNK_? < fVar14) {
+      fVar10 = fVar10 / fVar14;
+      uStack_11 = CONCAT44(fVar13 / fVar14,fVar20 / fVar14);
+    }
+    else {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Vector3);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pVVar7 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uStack_11._0_4_ = (pVVar7->zeroVector).x;
+      uStack_11._4_4_ = (pVVar7->zeroVector).y;
+      fVar10 = (pVVar7->zeroVector).z;
+    }
+    fVar14 = (this_00->fields)._radius;
+    (this_00->fields)._startPoint.x = fVar14 * (float)uStack_11 + (float)uStack_17;
+    (this_00->fields)._startPoint.y = fVar14 * uStack_11._4_4_ + uStack_17._4_4_;
+    (this_00->fields)._startPoint.z = fVar14 * fVar10 + fVar3;
+    ArcShape3D::ArcShape3D_CalculateEndPoint(this_00,(MethodInfo *)0x0);
+    (this_00->fields)._areBorderPointsDirty = 1;
     return;
   }
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  FUN_?();
+  pcVar21 = (code *)swi(3);
+  (*pcVar21)();
   return;
 }
 
@@ -132,16 +210,54 @@ void Assembly-CSharp.dll::RTG::GizmoRotationArc3D::GizmoRotationArc3D__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__ArcShape3D);
+    FUN_?(&TypeInfo__RTG__ArcShape3D);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (ArcShape3D *)func_?(TypeInfo__RTG__ArcShape3D);
-  ArcShape3D::ArcShape3D__ctor(this_00,(MethodInfo *)0x0);
-  method_00 = (MethodInfo *)&this->fields;
-  (this->fields)._arc = this_00;
-  func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  pAVar1 = (ArcShape3D *)FUN_?(TypeInfo__RTG__ArcShape3D);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__RTG__ArcShape3D__WireRenderDescriptor);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pAVar2 = (ArcShape3D_WireRenderDescriptor *)
+           FUN_?(TypeInfo__RTG__ArcShape3D__WireRenderDescriptor);
+  (pAVar2->fields)._wireFlags = 3;
+  (pAVar1->fields)._wireRenderDesc = pAVar2;
+  if (iRam_? != 0) {
+    uVar3 = (uint)((ulonglong)&pAVar1->fields >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar7 = uVar5 == *puVar6;
+      if (bVar7) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar7);
+  }
+  iVar8 = iRam_?;
+  (pAVar1->fields)._numBorderPoints = 100;
+  (pAVar1->fields)._areBorderPointsDirty = 1;
+  (this->fields)._arc = pAVar1;
+  if (iVar8 != 0) {
+    uVar3 = (uint)((ulonglong)&this->fields >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar7 = uVar5 == *puVar6;
+      if (bVar7) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar7);
+  }
   return;
 }
 
@@ -152,16 +268,14 @@ float Assembly-CSharp.dll::RTG::GizmoRotationArc3D::GizmoRotationArc3D_get_Radiu
                 (GizmoRotationArc3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pAVar2 = (this->fields)._arc;
-  if (pAVar2 != (ArcShape3D *)0x0) {
-    return (pAVar2->fields)._radius;
+  pAVar1 = (this->fields)._arc;
+  if (pAVar1 != (ArcShape3D *)0x0) {
+    return (pAVar1->fields)._radius;
   }
-  uVar3 = func_?(auStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  fVar6 = (float10)(*pcVar5)();
-  return (float)fVar6;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -171,16 +285,14 @@ float Assembly-CSharp.dll::RTG::GizmoRotationArc3D::GizmoRotationArc3D_get_Rotat
                 (GizmoRotationArc3D *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pAVar2 = (this->fields)._arc;
-  if (pAVar2 != (ArcShape3D *)0x0) {
-    return (pAVar2->fields)._degreeAngleFromStart;
+  pAVar1 = (this->fields)._arc;
+  if (pAVar1 != (ArcShape3D *)0x0) {
+    return (pAVar1->fields)._degreeAngleFromStart;
   }
-  uVar3 = func_?(auStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  fVar6 = (float10)(*pcVar5)();
-  return (float)fVar6;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  fVar3 = (float)(*pcVar2)();
+  return fVar3;
 }
 
 
@@ -192,13 +304,45 @@ void Assembly-CSharp.dll::RTG::GizmoRotationArc3D::GizmoRotationArc3D_set_Radius
 {
   this_00 = (this->fields)._arc;
   if (this_00 != (ArcShape3D *)0x0) {
-    ArcShape3D::ArcShape3D_set_Radius(this_00,value,(MethodInfo *)0x0);
+    uStack_1._0_4_ = (this_00->fields)._origin.x;
+    uStack_1._4_4_ = (this_00->fields)._origin.y;
+    fVar2 = (this_00->fields)._origin.z;
+    fVar3 = (this_00->fields)._startPoint.z - (this_00->fields)._origin.z;
+    (this_00->fields)._radius = value;
+    uVar4 = (this_00->fields)._startPoint.x;
+    uVar5 = (this_00->fields)._startPoint.y;
+    fVar6 = (float)uVar4 - (float)uStack_1;
+    fVar7 = (float)uVar5 - uStack_1._4_4_;
+    uStack_8 = CONCAT44(fVar7,fVar6);
+    fStack_9 = fVar3;
+    fVar10 = (float)FUN_?(&uStack_8,in_RDX,0);
+    if (_UNK_? < fVar10) {
+      fVar3 = fVar3 / fVar10;
+      uStack_8 = CONCAT44(fVar7 / fVar10,fVar6 / fVar10);
+    }
+    else {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Vector3);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pVVar11 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uStack_8._0_4_ = (pVVar11->zeroVector).x;
+      uStack_8._4_4_ = (pVVar11->zeroVector).y;
+      fVar3 = (pVVar11->zeroVector).z;
+    }
+    fVar10 = (this_00->fields)._radius;
+    (this_00->fields)._startPoint.x = fVar10 * (float)uStack_8 + (float)uStack_1;
+    (this_00->fields)._startPoint.y = fVar10 * uStack_8._4_4_ + uStack_1._4_4_;
+    (this_00->fields)._startPoint.z = fVar10 * fVar3 + fVar2;
+    ArcShape3D::ArcShape3D_CalculateEndPoint(this_00,(MethodInfo *)0x0);
+    (this_00->fields)._areBorderPointsDirty = 1;
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -211,11 +355,13 @@ void Assembly-CSharp.dll::RTG::GizmoRotationArc3D::GizmoRotationArc3D_set_Rotati
 {
   this_00 = (this->fields)._arc;
   if (this_00 != (ArcShape3D *)0x0) {
-    ArcShape3D::ArcShape3D_set_DegreeAngleFromStart(this_00,value,(MethodInfo *)0x0);
+    fVar1 = (float)FUN_?(value,_UNK_?);
+    (this_00->fields)._degreeAngleFromStart = fVar1;
+    ArcShape3D::ArcShape3D_CalculateEndPoint(this_00,(MethodInfo *)0x0);
+    (this_00->fields)._areBorderPointsDirty = 1;
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
+  FUN_?(value);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

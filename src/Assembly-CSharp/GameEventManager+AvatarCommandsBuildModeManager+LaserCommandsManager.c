@@ -9,8 +9,11 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager+LaserC
 {
   pAVar1 = (this->fields).OnActivateLaserForDuration;
   if (pAVar1 != (Action_1_Single_ *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,duration,(pAVar1->fields)._._.method);
+    return;
   }
   return;
 }
@@ -26,8 +29,31 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager+LaserC
 {
   pAVar1 = (this->fields).OnChangeState;
   if (pAVar1 != (Action_1_LaserPointerState_ *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,newState,(pAVar1->fields)._._.method);
+    return;
+  }
+  return;
+}
+
+
+/* Void SetCurrentCubeMaterial(Byte) */
+
+void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
+     GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_SetCurrentCubeMaterial
+               (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *this,
+               uint8_t cubeMaterial,MethodInfo *method)
+
+{
+  pAVar1 = (this->fields).OnCubeMaterialChanged;
+  if (pAVar1 != (Action_1_Byte__1 *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(pAVar1->fields)._._.invoke_impl)
+              ((pAVar1->fields)._._.method_code,cubeMaterial,(pAVar1->fields)._._.method);
+    return;
   }
   return;
 }
@@ -43,8 +69,11 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager+LaserC
 {
   pAVar1 = (this->fields).OnLaserActiveChanged;
   if (pAVar1 != (Action_1_Boolean_ *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
     (*(pAVar1->fields)._._.invoke_impl)
-              ((pAVar1->fields)._._.method_code,_isActive,(pAVar1->fields)._._.method);
+              ((pAVar1->fields)._._.method_code,isActive,(pAVar1->fields)._._.method);
+    return;
   }
   return;
 }
@@ -55,13 +84,16 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager+LaserC
 void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager+LaserCommandsManager::
      GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager_UpdatePosition
                (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *this,
-               Vector3 to,MethodInfo *method)
+               Vector3 *to,MethodInfo *method)
 
 {
   pAVar1 = (this->fields).OnUpdatePosition;
   if (pAVar1 != (Action_1_UnityEngine_Vector3_ *)0x0) {
+    fStack_2 = to->z;
+    uStack_3._0_4_ = to->x;
+    uStack_3._4_4_ = to->y;
     (*(pAVar1->fields)._._.invoke_impl)
-              ((pAVar1->fields)._._.method_code,to._0_8_,to.z,(pAVar1->fields)._._.method);
+              ((pAVar1->fields)._._.method_code,&uStack_3,(pAVar1->fields)._._.method);
   }
   return;
 }
@@ -76,29 +108,58 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager+LaserC
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<float>);
+    FUN_?(&TypeInfo__System__Action<float>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  ppAVar1 = &(this->fields).OnActivateLaserForDuration;
   a = (this->fields).OnActivateLaserForDuration;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<float>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__Action<float>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pAVar3 = TypeInfo__System__Action<float>;
+    if (pDVar2 == (Delegate *)0x0) {
+      pAVar4 = (Action_1_Single_ *)0x0;
+    }
+    else {
+      pAVar4 = (Action_1_Single_ *)FUN_?(pDVar2,TypeInfo__System__Action<float>);
+      if (pAVar4 == (Action_1_Single_ *)0x0) {
+        FUN_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_Single_ *)func_?(&(this->fields).OnActivateLaserForDuration,iVar3,a)
-    ;
-    bVar6 = pAVar5 != a;
-    a = pAVar5;
-  } while (bVar6);
+    LOCK();
+    pAVar6 = *ppAVar1;
+    bVar7 = a == pAVar6;
+    if (bVar7) {
+      *ppAVar1 = pAVar4;
+      pAVar6 = a;
+    }
+    UNLOCK();
+    pAVar4 = a;
+    if (!bVar7) {
+      pAVar4 = pAVar6;
+    }
+    if (iRam_? != 0) {
+      uVar8 = (uint)((ulonglong)ppAVar1 >> 0xc);
+      uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar10 == *puVar11;
+        if (bVar7) {
+          *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    bVar7 = pAVar4 != a;
+    a = pAVar4;
+  } while (bVar7);
   return;
 }
 
@@ -112,28 +173,59 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager+LaserC
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<LaserPointerState>);
+    FUN_?(&TypeInfo__System__Action<LaserPointerState>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  ppAVar1 = &(this->fields).OnChangeState;
   a = (this->fields).OnChangeState;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<LaserPointerState>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__Action<LaserPointerState>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pAVar3 = TypeInfo__System__Action<LaserPointerState>;
+    if (pDVar2 == (Delegate *)0x0) {
+      pAVar4 = (Action_1_LaserPointerState_ *)0x0;
+    }
+    else {
+      pAVar4 = (Action_1_LaserPointerState_ *)
+               FUN_?(pDVar2,TypeInfo__System__Action<LaserPointerState>);
+      if (pAVar4 == (Action_1_LaserPointerState_ *)0x0) {
+        FUN_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_LaserPointerState_ *)func_?(&(this->fields).OnChangeState,iVar3,a);
-    bVar6 = pAVar5 != a;
-    a = pAVar5;
-  } while (bVar6);
+    LOCK();
+    pAVar6 = *ppAVar1;
+    bVar7 = a == pAVar6;
+    if (bVar7) {
+      *ppAVar1 = pAVar4;
+      pAVar6 = a;
+    }
+    UNLOCK();
+    pAVar4 = a;
+    if (!bVar7) {
+      pAVar4 = pAVar6;
+    }
+    if (iRam_? != 0) {
+      uVar8 = (uint)((ulonglong)ppAVar1 >> 0xc);
+      uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar10 == *puVar11;
+        if (bVar7) {
+          *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    bVar7 = pAVar4 != a;
+    a = pAVar4;
+  } while (bVar7);
   return;
 }
 
@@ -147,28 +239,58 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager+LaserC
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<unsigned_char>);
+    FUN_?(&TypeInfo__System__Action<unsigned_char>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  ppAVar1 = &(this->fields).OnCubeMaterialChanged;
   a = (this->fields).OnCubeMaterialChanged;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<unsigned_char>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__Action<unsigned_char>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pAVar3 = TypeInfo__System__Action<unsigned_char>;
+    if (pDVar2 == (Delegate *)0x0) {
+      pAVar4 = (Action_1_Byte__1 *)0x0;
+    }
+    else {
+      pAVar4 = (Action_1_Byte__1 *)FUN_?(pDVar2,TypeInfo__System__Action<unsigned_char>);
+      if (pAVar4 == (Action_1_Byte__1 *)0x0) {
+        FUN_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_Byte__1 *)func_?(&(this->fields).OnCubeMaterialChanged,iVar3,a);
-    bVar6 = pAVar5 != a;
-    a = pAVar5;
-  } while (bVar6);
+    LOCK();
+    pAVar6 = *ppAVar1;
+    bVar7 = a == pAVar6;
+    if (bVar7) {
+      *ppAVar1 = pAVar4;
+      pAVar6 = a;
+    }
+    UNLOCK();
+    pAVar4 = a;
+    if (!bVar7) {
+      pAVar4 = pAVar6;
+    }
+    if (iRam_? != 0) {
+      uVar8 = (uint)((ulonglong)ppAVar1 >> 0xc);
+      uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar10 == *puVar11;
+        if (bVar7) {
+          *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    bVar7 = pAVar4 != a;
+    a = pAVar4;
+  } while (bVar7);
   return;
 }
 
@@ -182,28 +304,58 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager+LaserC
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<bool>);
+    FUN_?(&TypeInfo__System__Action<bool>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  pGVar1 = &this->fields;
   a = (this->fields).OnLaserActiveChanged;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<bool>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__Action<bool>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pAVar3 = TypeInfo__System__Action<bool>;
+    if (pDVar2 == (Delegate *)0x0) {
+      pAVar4 = (Action_1_Boolean_ *)0x0;
+    }
+    else {
+      pAVar4 = (Action_1_Boolean_ *)FUN_?(pDVar2,TypeInfo__System__Action<bool>);
+      if (pAVar4 == (Action_1_Boolean_ *)0x0) {
+        FUN_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_Boolean_ *)func_?(&this->fields,iVar3,a);
-    bVar6 = pAVar5 != a;
-    a = pAVar5;
-  } while (bVar6);
+    LOCK();
+    pAVar6 = pGVar1->OnLaserActiveChanged;
+    bVar7 = a == pAVar6;
+    if (bVar7) {
+      pGVar1->OnLaserActiveChanged = pAVar4;
+      pAVar6 = a;
+    }
+    UNLOCK();
+    pAVar4 = a;
+    if (!bVar7) {
+      pAVar4 = pAVar6;
+    }
+    if (iRam_? != 0) {
+      uVar8 = (uint)((ulonglong)pGVar1 >> 0xc);
+      uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar10 == *puVar11;
+        if (bVar7) {
+          *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    bVar7 = pAVar4 != a;
+    a = pAVar4;
+  } while (bVar7);
   return;
 }
 
@@ -217,29 +369,59 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager+LaserC
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<UnityEngine::Vector3>);
+    FUN_?(&TypeInfo__System__Action<UnityEngine::Vector3>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  ppAVar1 = &(this->fields).OnUpdatePosition;
   a = (this->fields).OnUpdatePosition;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<UnityEngine::Vector3>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__Action<UnityEngine::Vector3>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pAVar3 = TypeInfo__System__Action<UnityEngine::Vector3>;
+    if (pDVar2 == (Delegate *)0x0) {
+      pAVar4 = (Action_1_UnityEngine_Vector3_ *)0x0;
+    }
+    else {
+      pAVar4 = (Action_1_UnityEngine_Vector3_ *)
+               FUN_?(pDVar2,TypeInfo__System__Action<UnityEngine::Vector3>);
+      if (pAVar4 == (Action_1_UnityEngine_Vector3_ *)0x0) {
+        FUN_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_UnityEngine_Vector3_ *)
-             func_?(&(this->fields).OnUpdatePosition,iVar3,a);
-    bVar6 = pAVar5 != a;
-    a = pAVar5;
-  } while (bVar6);
+    LOCK();
+    pAVar6 = *ppAVar1;
+    bVar7 = a == pAVar6;
+    if (bVar7) {
+      *ppAVar1 = pAVar4;
+      pAVar6 = a;
+    }
+    UNLOCK();
+    pAVar4 = a;
+    if (!bVar7) {
+      pAVar4 = pAVar6;
+    }
+    if (iRam_? != 0) {
+      uVar8 = (uint)((ulonglong)ppAVar1 >> 0xc);
+      uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar10 == *puVar11;
+        if (bVar7) {
+          *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    bVar7 = pAVar4 != a;
+    a = pAVar4;
+  } while (bVar7);
   return;
 }
 
@@ -253,29 +435,58 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager+LaserC
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<float>);
+    FUN_?(&TypeInfo__System__Action<float>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  ppAVar1 = &(this->fields).OnActivateLaserForDuration;
   source = (this->fields).OnActivateLaserForDuration;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<float>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__Action<float>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pAVar3 = TypeInfo__System__Action<float>;
+    if (pDVar2 == (Delegate *)0x0) {
+      pAVar4 = (Action_1_Single_ *)0x0;
+    }
+    else {
+      pAVar4 = (Action_1_Single_ *)FUN_?(pDVar2,TypeInfo__System__Action<float>);
+      if (pAVar4 == (Action_1_Single_ *)0x0) {
+        FUN_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_Single_ *)
-             func_?(&(this->fields).OnActivateLaserForDuration,iVar3,source);
-    bVar6 = pAVar5 != source;
-    source = pAVar5;
-  } while (bVar6);
+    LOCK();
+    pAVar6 = *ppAVar1;
+    bVar7 = source == pAVar6;
+    if (bVar7) {
+      *ppAVar1 = pAVar4;
+      pAVar6 = source;
+    }
+    UNLOCK();
+    pAVar4 = source;
+    if (!bVar7) {
+      pAVar4 = pAVar6;
+    }
+    if (iRam_? != 0) {
+      uVar8 = (uint)((ulonglong)ppAVar1 >> 0xc);
+      uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar10 == *puVar11;
+        if (bVar7) {
+          *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    bVar7 = pAVar4 != source;
+    source = pAVar4;
+  } while (bVar7);
   return;
 }
 
@@ -289,29 +500,59 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager+LaserC
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<LaserPointerState>);
+    FUN_?(&TypeInfo__System__Action<LaserPointerState>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  ppAVar1 = &(this->fields).OnChangeState;
   source = (this->fields).OnChangeState;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<LaserPointerState>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__Action<LaserPointerState>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pAVar3 = TypeInfo__System__Action<LaserPointerState>;
+    if (pDVar2 == (Delegate *)0x0) {
+      pAVar4 = (Action_1_LaserPointerState_ *)0x0;
+    }
+    else {
+      pAVar4 = (Action_1_LaserPointerState_ *)
+               FUN_?(pDVar2,TypeInfo__System__Action<LaserPointerState>);
+      if (pAVar4 == (Action_1_LaserPointerState_ *)0x0) {
+        FUN_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_LaserPointerState_ *)
-             func_?(&(this->fields).OnChangeState,iVar3,source);
-    bVar6 = pAVar5 != source;
-    source = pAVar5;
-  } while (bVar6);
+    LOCK();
+    pAVar6 = *ppAVar1;
+    bVar7 = source == pAVar6;
+    if (bVar7) {
+      *ppAVar1 = pAVar4;
+      pAVar6 = source;
+    }
+    UNLOCK();
+    pAVar4 = source;
+    if (!bVar7) {
+      pAVar4 = pAVar6;
+    }
+    if (iRam_? != 0) {
+      uVar8 = (uint)((ulonglong)ppAVar1 >> 0xc);
+      uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar10 == *puVar11;
+        if (bVar7) {
+          *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    bVar7 = pAVar4 != source;
+    source = pAVar4;
+  } while (bVar7);
   return;
 }
 
@@ -325,29 +566,58 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager+LaserC
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<unsigned_char>);
+    FUN_?(&TypeInfo__System__Action<unsigned_char>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  ppAVar1 = &(this->fields).OnCubeMaterialChanged;
   source = (this->fields).OnCubeMaterialChanged;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<unsigned_char>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__Action<unsigned_char>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pAVar3 = TypeInfo__System__Action<unsigned_char>;
+    if (pDVar2 == (Delegate *)0x0) {
+      pAVar4 = (Action_1_Byte__1 *)0x0;
+    }
+    else {
+      pAVar4 = (Action_1_Byte__1 *)FUN_?(pDVar2,TypeInfo__System__Action<unsigned_char>);
+      if (pAVar4 == (Action_1_Byte__1 *)0x0) {
+        FUN_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_Byte__1 *)func_?(&(this->fields).OnCubeMaterialChanged,iVar3,source)
-    ;
-    bVar6 = pAVar5 != source;
-    source = pAVar5;
-  } while (bVar6);
+    LOCK();
+    pAVar6 = *ppAVar1;
+    bVar7 = source == pAVar6;
+    if (bVar7) {
+      *ppAVar1 = pAVar4;
+      pAVar6 = source;
+    }
+    UNLOCK();
+    pAVar4 = source;
+    if (!bVar7) {
+      pAVar4 = pAVar6;
+    }
+    if (iRam_? != 0) {
+      uVar8 = (uint)((ulonglong)ppAVar1 >> 0xc);
+      uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar10 == *puVar11;
+        if (bVar7) {
+          *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    bVar7 = pAVar4 != source;
+    source = pAVar4;
+  } while (bVar7);
   return;
 }
 
@@ -361,28 +631,58 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager+LaserC
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<bool>);
+    FUN_?(&TypeInfo__System__Action<bool>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  pGVar1 = &this->fields;
   source = (this->fields).OnLaserActiveChanged;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<bool>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__Action<bool>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pAVar3 = TypeInfo__System__Action<bool>;
+    if (pDVar2 == (Delegate *)0x0) {
+      pAVar4 = (Action_1_Boolean_ *)0x0;
+    }
+    else {
+      pAVar4 = (Action_1_Boolean_ *)FUN_?(pDVar2,TypeInfo__System__Action<bool>);
+      if (pAVar4 == (Action_1_Boolean_ *)0x0) {
+        FUN_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_Boolean_ *)func_?(&this->fields,iVar3,source);
-    bVar6 = pAVar5 != source;
-    source = pAVar5;
-  } while (bVar6);
+    LOCK();
+    pAVar6 = pGVar1->OnLaserActiveChanged;
+    bVar7 = source == pAVar6;
+    if (bVar7) {
+      pGVar1->OnLaserActiveChanged = pAVar4;
+      pAVar6 = source;
+    }
+    UNLOCK();
+    pAVar4 = source;
+    if (!bVar7) {
+      pAVar4 = pAVar6;
+    }
+    if (iRam_? != 0) {
+      uVar8 = (uint)((ulonglong)pGVar1 >> 0xc);
+      uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar10 == *puVar11;
+        if (bVar7) {
+          *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    bVar7 = pAVar4 != source;
+    source = pAVar4;
+  } while (bVar7);
   return;
 }
 
@@ -396,29 +696,59 @@ void Assembly-CSharp.dll::GameEventManager+AvatarCommandsBuildModeManager+LaserC
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<UnityEngine::Vector3>);
+    FUN_?(&TypeInfo__System__Action<UnityEngine::Vector3>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  ppAVar1 = &(this->fields).OnUpdatePosition;
   source = (this->fields).OnUpdatePosition;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<UnityEngine::Vector3>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__Action<UnityEngine::Vector3>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pAVar3 = TypeInfo__System__Action<UnityEngine::Vector3>;
+    if (pDVar2 == (Delegate *)0x0) {
+      pAVar4 = (Action_1_UnityEngine_Vector3_ *)0x0;
+    }
+    else {
+      pAVar4 = (Action_1_UnityEngine_Vector3_ *)
+               FUN_?(pDVar2,TypeInfo__System__Action<UnityEngine::Vector3>);
+      if (pAVar4 == (Action_1_UnityEngine_Vector3_ *)0x0) {
+        FUN_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_UnityEngine_Vector3_ *)
-             func_?(&(this->fields).OnUpdatePosition,iVar3,source);
-    bVar6 = pAVar5 != source;
-    source = pAVar5;
-  } while (bVar6);
+    LOCK();
+    pAVar6 = *ppAVar1;
+    bVar7 = source == pAVar6;
+    if (bVar7) {
+      *ppAVar1 = pAVar4;
+      pAVar6 = source;
+    }
+    UNLOCK();
+    pAVar4 = source;
+    if (!bVar7) {
+      pAVar4 = pAVar6;
+    }
+    if (iRam_? != 0) {
+      uVar8 = (uint)((ulonglong)ppAVar1 >> 0xc);
+      uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar10 == *puVar11;
+        if (bVar7) {
+          *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    bVar7 = pAVar4 != source;
+    source = pAVar4;
+  } while (bVar7);
   return;
 }
 

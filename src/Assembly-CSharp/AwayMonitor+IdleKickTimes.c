@@ -6,20 +6,56 @@ void Assembly-CSharp.dll::AwayMonitor+IdleKickTimes::AwayMonitor_IdleKickTimes__
                MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).idleKickTimeMinutes = kickAfterMinutes;
+  cVar1 = cRam_?;
   (this->fields).warningTimeMinutes = warnAfterMinutes;
-  TStack_1._ticks = 0;
-  mscorlib.dll::System::TimeSpan::TimeSpan__ctor_2
-            (&TStack_1,0,0,warnAfterMinutes,0,(MethodInfo *)0x0);
-  minutes = (this->fields).idleKickTimeMinutes;
-  *(undefined4 *)&(this->fields).warningTimeSpan._ticks = (undefined4)TStack_1._ticks;
-  *(undefined4 *)((int)&(this->fields).warningTimeSpan._ticks + 4) = TStack_1._ticks._4_4_;
-  TStack_2._ticks = 0;
-  mscorlib.dll::System::TimeSpan::TimeSpan__ctor_2(&TStack_2,0,0,minutes,0,(MethodInfo *)0x0);
-  *(undefined4 *)&(this->fields).idleKickTimeSpan._ticks = (undefined4)TStack_2._ticks;
-  *(undefined4 *)((int)&(this->fields).idleKickTimeSpan._ticks + 4) = TStack_2._ticks._4_4_;
+  if (cVar1 == '\0') {
+    FUN_?(&TypeInfo__System__TimeSpan);
+    LOCK();
+    UNLOCK();
+    cVar1 = '\x01';
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+    FUN_?();
+    cVar1 = cRam_?;
+  }
+  if ((longlong)warnAfterMinutes * 60000 + 0x346dc5d638865U < 0x68db8bac710cb) {
+    lVar2 = (longlong)(this->fields).idleKickTimeMinutes;
+    (this->fields).warningTimeSpan._ticks = (longlong)warnAfterMinutes * 600000000;
+    if (cVar1 == '\0') {
+      FUN_?(&TypeInfo__System__TimeSpan);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (lVar2 * 60000 + 0x346dc5d638865U < 0x68db8bac710cb) {
+      (this->fields).idleKickTimeSpan._ticks = lVar2 * 600000000;
+      return;
+    }
+    uVar3 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+    pAVar4 = (ArgumentOutOfRangeException *)func_?(uVar3);
+    pSVar5 = (String *)func_?(&StringLiteral_TimeSpan_overflowed_because_the_);
+    mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_2
+              (pAVar4,(String *)0x0,pSVar5,(MethodInfo *)0x0);
+    uVar3 = func_?(&MethodInfo__System__TimeSpan__TimeSpan_int__int__int__int__int_);
+    FUN_?(pAVar4,uVar3);
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
+    return;
+  }
+  uVar3 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+  pAVar4 = (ArgumentOutOfRangeException *)func_?(uVar3);
+  pSVar5 = (String *)func_?(&StringLiteral_TimeSpan_overflowed_because_the_);
+  mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_2
+            (pAVar4,(String *)0x0,pSVar5,(MethodInfo *)0x0);
+  uVar3 = func_?(&MethodInfo__System__TimeSpan__TimeSpan_int__int__int__int__int_);
+  FUN_?(pAVar4,uVar3);
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

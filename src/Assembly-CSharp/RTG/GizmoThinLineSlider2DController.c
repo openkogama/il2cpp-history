@@ -7,20 +7,19 @@ void Assembly-CSharp.dll::RTG::GizmoThinLineSlider2DController::
 
 {
   pGVar1 = (this->fields)._._data;
-  if (pGVar1 != (GizmoLineSlider2DControllerData *)0x0) {
-    this_00 = (pGVar1->fields).Segment;
-    pGVar2 = (pGVar1->fields).Slider;
-    if (((pGVar2 != (GizmoLineSlider2D *)0x0) &&
-        (pGVar3 = (&(pGVar2->fields)._settings)
-                  [(pGVar2->fields)._sharedSettings != (GizmoLineSlider2DSettings *)0x0],
-        pGVar3 != (GizmoLineSlider2DSettings *)0x0)) && (this_00 != (SegmentShape2D *)0x0)) {
-      SegmentShape2D::SegmentShape2D_set_PtOnSegmentEps
-                (this_00,(pGVar3->fields)._lineHoverEps,(MethodInfo *)0x0);
+  if ((pGVar1 != (GizmoLineSlider2DControllerData *)0x0) &&
+     (pGVar2 = (pGVar1->fields).Slider, pGVar2 != (GizmoLineSlider2D *)0x0)) {
+    lVar3 = 0xe0;
+    if ((pGVar2->fields)._sharedSettings == (GizmoLineSlider2DSettings *)0x0) {
+      lVar3 = 0xd8;
+    }
+    lVar3 = *(longlong *)((longlong)&pGVar2->klass + lVar3);
+    if ((lVar3 != 0) && (pSVar4 = (pGVar1->fields).Segment, pSVar4 != (SegmentShape2D *)0x0)) {
+      (pSVar4->fields)._epsilon._ptOnSegmentEps = (float)(*(uint *)(lVar3 + 0x10) & _UNK_?);
       return;
     }
   }
-  uVar4 = func_?(&stack0xfffffff0);
-  func_?(uVar4);
+  FUN_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;
@@ -43,15 +42,46 @@ void Assembly-CSharp.dll::RTG::GizmoThinLineSlider2DController::
     if ((pGVar1 != (GizmoLineSlider2DControllerData *)0x0) &&
        ((pGVar3 = (pGVar1->fields).Slider, pGVar3 != (GizmoLineSlider2D *)0x0 &&
         (pGVar2 = (pGVar1->fields).SliderHandle, pGVar2 != (GizmoHandle *)0x0)))) {
-      GizmoHandle::GizmoHandle_Set2DShapeVisible
-                (pGVar2,(pGVar1->fields).SegmentIndex,(pGVar3->fields)._._isVisible,
-                 (MethodInfo *)0x0);
+      bVar4 = (pGVar3->fields)._._isVisible;
+      uVar5 = (pGVar1->fields).SegmentIndex;
+      if (cRam_? == '\0') {
+        FUN_?();
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pLVar6 = (pGVar2->fields)._2DShapes;
+      if (pLVar6 != (List_1_RTG_GizmoHandleShape2D_ *)0x0) {
+        if ((uint)(pLVar6->fields)._size <= uVar5) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar7 = (code *)swi(3);
+          (*pcVar7)();
+          return;
+        }
+        pGVar8 = (pLVar6->fields)._items;
+        if (pGVar8 != (GizmoHandleShape2D__Array *)0x0) {
+          if ((uint)pGVar8->max_length <= uVar5) {
+            FUN_?();
+            pcVar7 = (code *)swi(3);
+            (*pcVar7)();
+            return;
+          }
+          if (pGVar8->vector[(int)uVar5] != (GizmoHandleShape2D *)0x0) {
+            (pGVar8->vector[(int)uVar5]->fields)._isVisible = bVar4;
+            return;
+          }
+        }
+      }
+      FUN_?();
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
       return;
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -64,29 +94,59 @@ void Assembly-CSharp.dll::RTG::GizmoThinLineSlider2DController::
 
 {
   pGVar1 = (this->fields)._._data;
-  if (pGVar1 != (GizmoLineSlider2DControllerData *)0x0) {
-    this_00 = (pGVar1->fields).Slider;
-    if ((this_00 != (GizmoLineSlider2D *)0x0) &&
-       (pGVar2 = (this_00->fields)._transform, pGVar2 != (GizmoTransform *)0x0)) {
-      this_01 = (pGVar1->fields).Segment;
-      if (this_01 != (SegmentShape2D *)0x0) {
-        SegmentShape2D::SegmentShape2D_set_StartPoint
-                  (this_01,(pGVar2->fields)._position2D,(MethodInfo *)0x0);
-        this_02 = (this_00->fields)._directionAxisMap;
-        if (this_02 != (GizmoTransformAxisMap2D *)0x0) {
-          dirDromStart = GizmoTransformAxisMap2D::GizmoTransformAxisMap2D_get_Axis
-                                   (this_02,(MethodInfo *)0x0);
-          offset = GizmoLineSlider2D::GizmoLineSlider2D_GetRealLength(this_00,(MethodInfo *)0x0);
-          SegmentShape2D::SegmentShape2D_SetEndPtFromStart
-                    ((SegmentShape2D *)dirDromStart.y,dirDromStart,offset,(MethodInfo *)0x0);
+  if (((pGVar1 != (GizmoLineSlider2DControllerData *)0x0) &&
+      (this_00 = (pGVar1->fields).Slider, this_00 != (GizmoLineSlider2D *)0x0)) &&
+     (pGVar2 = (this_00->fields)._transform, pGVar2 != (GizmoTransform *)0x0)) {
+    pSVar3 = (pGVar1->fields).Segment;
+    fVar4 = (pGVar2->fields)._position2D.x;
+    fVar5 = (pGVar2->fields)._position2D.y;
+    if (pSVar3 != (SegmentShape2D *)0x0) {
+      fVar6 = (pSVar3->fields)._length;
+      (pSVar3->fields)._startPoint.x = fVar4;
+      (pSVar3->fields)._startPoint.y = fVar5;
+      fVar7 = (pSVar3->fields)._direction.x;
+      (pSVar3->fields)._endPoint.y = fVar6 * (pSVar3->fields)._direction.y + fVar5;
+      (pSVar3->fields)._endPoint.x = fVar6 * fVar7 + fVar4;
+      this_01 = (this_00->fields)._directionAxisMap;
+      if (this_01 != (GizmoTransformAxisMap2D *)0x0) {
+        VVar8 = GizmoTransformAxisMap2D::GizmoTransformAxisMap2D_get_Axis(this_01,(MethodInfo *)0x0)
+        ;
+        fVar4 = GizmoLineSlider2D::GizmoLineSlider2D_GetRealLength(this_00,(MethodInfo *)0x0);
+        fStackX_8 = VVar8.x;
+        fStackX_c = VVar8.y;
+        fVar6 = fStackX_8 * fVar4 + (pSVar3->fields)._startPoint.x;
+        fVar5 = fStackX_c * fVar4 + (pSVar3->fields)._startPoint.y;
+        (pSVar3->fields)._endPoint.x = fVar6;
+        (pSVar3->fields)._endPoint.y = fVar5;
+        fVar4 = (pSVar3->fields)._startPoint.y;
+        (pSVar3->fields)._direction.x = fVar6 - (pSVar3->fields)._startPoint.x;
+        (pSVar3->fields)._direction.y = fVar5 - fVar4;
+        fVar4 = (float)FUN_?(&(pSVar3->fields)._direction);
+        pVVar9 = &(pSVar3->fields)._direction;
+        (pSVar3->fields)._length = fVar4;
+        fVar4 = (float)FUN_?();
+        if (fVar4 <= _UNK_?) {
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Vector2);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          fVar4 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
+          pVVar9->x = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
+          (pSVar3->fields)._direction.y = fVar4;
           return;
         }
+        fVar5 = (pSVar3->fields)._direction.y;
+        pVVar9->x = (*pVVar9).x / fVar4;
+        (pSVar3->fields)._direction.y = fVar5 / fVar4;
+        return;
       }
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

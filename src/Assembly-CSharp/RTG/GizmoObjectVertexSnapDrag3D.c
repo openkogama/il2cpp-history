@@ -6,189 +6,222 @@ void Assembly-CSharp.dll::RTG::GizmoObjectVertexSnapDrag3D::
                (GizmoObjectVertexSnapDrag3D *this,MethodInfo *method)
 
 {
-  undefined4 uVar1;
-  undefined4 uVar2;
-  undefined4 uVar3;
-  undefined4 uVar4;
-  undefined4 uVar5;
-  undefined4 uVar6;
-  undefined4 uVar7;
-  undefined4 uVar8;
-  undefined4 uVar9;
-  undefined4 uVar10;
-  undefined4 uVar11;
-  undefined4 uVar12;
-  undefined4 uVar13;
-  undefined4 uVar14;
-  Camera *focusCamera;
-  Vector3__StaticFields *pVVar15;
-  List_1_UnityEngine_GameObject_ *pLVar16;
-  GizmoObjectVertexSnapSettings *pGVar17;
-  code *pcVar18;
-  Ray ray;
-  undefined1 auVar19 [16];
-  bool bVar20;
-  Object *pOVar21;
-  undefined1 (*pauVar22) [16];
-  RTScene *this_00;
-  XZGridRayHit *pXVar23;
-  RTSceneGrid *this_01;
-  XZGridCell *this_02;
-  List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *this_03;
-  int32_t index;
-  VisualTreeAsset_UsingEntry *pVVar24;
-  float fVar25;
-  float fVar26;
-  float fVar27;
-  float fStack_28;
-  float fStack_29;
-  undefined1 auStack_30 [12];
-  VisualTreeAsset_UsingEntry VStack_31;
-  
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__IInputDevice);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                   );
-    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTScene>__get_Get__);
-    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTSceneGrid>__get_Get__);
-    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
-    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
-    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>);
-    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTScene>);
-    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>);
-    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTSceneGrid>);
+    FUN_?(&TypeInfo__RTG__IInputDevice);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__MonoSingleton<RTG::RTScene>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__MonoSingleton<RTG::RTSceneGrid>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__MonoSingleton<RTG::RTScene>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__MonoSingleton<RTG::RTSceneGrid>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  VStack_31.alias = (String *)0x0;
-  VStack_31.path = (String *)0x0;
-  VStack_31.asset = (VisualTreeAsset *)0x0;
-  if ((TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>);
+  VStack_1.x = 0.0;
+  VStack_1.y = 0.0;
+  VStack_1.z = 0.0;
+  if (*(int *)&(TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pOVar21 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+  pOVar2 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                       (MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
-  if (pOVar21 == (Object *)0x0) goto code_?;
-  focusCamera = (Camera *)pOVar21[4].monitor;
+  if (pOVar2 == (Object *)0x0) goto code_?;
+  focusCamera = (Camera *)pOVar2[4].monitor;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVVar15 = TypeInfo__UnityEngine__Vector3->static_fields;
-  fVar26 = (pVVar15->zeroVector).y;
-  fVar25 = (pVVar15->zeroVector).z;
-  (this->fields)._._relativeDragOffset.x = (pVVar15->zeroVector).x;
-  (this->fields)._._relativeDragOffset.y = fVar26;
-  (this->fields)._._relativeDragOffset.z = fVar25;
-  pLVar16 = (this->fields)._destinationObjects;
-  if (pLVar16 == (List_1_UnityEngine_GameObject_ *)0x0) goto code_?;
-  if ((pLVar16->fields)._size == 0) {
+  pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar4 = (pVVar3->zeroVector).z;
+  fVar5 = (pVVar3->zeroVector).y;
+  (this->fields)._._relativeDragOffset.x = (pVVar3->zeroVector).x;
+  (this->fields)._._relativeDragOffset.y = fVar5;
+  (this->fields)._._relativeDragOffset.z = fVar4;
+  pLVar6 = (this->fields)._destinationObjects;
+  if (pLVar6 == (List_1_UnityEngine_GameObject_ *)0x0) goto code_?;
+  if ((pLVar6->fields)._size == 0) {
 code_?:
-    pGVar17 = (this->fields)._settings;
-    if (pGVar17 == (GizmoObjectVertexSnapSettings *)0x0) goto code_?;
-    if ((pGVar17->fields)._canSnapToGrid == 0) goto code_?;
-    if ((TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>);
+    pGVar7 = (this->fields)._settings;
+    if (pGVar7 == (GizmoObjectVertexSnapSettings *)0x0) goto code_?;
+    if ((pGVar7->fields)._canSnapToGrid == 0) goto code_?;
+    if (*(int *)&(TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    pOVar21 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+    pOVar2 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                         (MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
-    if ((pOVar21 == (Object *)0x0) || (pOVar21[2].klass == (Object__Class *)0x0)) {
+    if ((pOVar2 == (Object *)0x0) || (pOVar2[2].klass == (Object__Class *)0x0)) {
 code_?:
-      func_?();
-      pcVar18 = (code *)swi(3);
-      (*pcVar18)();
+      FUN_?();
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
       return;
     }
-    pauVar22 = (undefined1 (*) [16])
-               func_?(auStack_30,6,TypeInfo__RTG__IInputDevice,pOVar21[2].klass,focusCamera
-                              );
-    auVar19 = *pauVar22;
-    VStack_31.path = (String *)*(undefined8 *)pauVar22[1];
-    VStack_31.asset = (VisualTreeAsset *)((ulonglong)*(undefined8 *)pauVar22[1] >> 0x20);
-    if ((TypeInfo__RTG__MonoSingleton<RTG::RTScene>->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__RTG__MonoSingleton<RTG::RTScene>);
+    puVar9 = (undefined8 *)FUN_?(aRStack_10);
+    uVar11 = *puVar9;
+    uVar12 = puVar9[1];
+    uVar13 = puVar9[2];
+    if (*(int *)&(TypeInfo__RTG__MonoSingleton<RTG::RTScene>->_1).field_0x1c == 0) {
+      FUN_?();
     }
     this_00 = (RTScene *)
               MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                         (MethodInfo__RTG__MonoSingleton<RTG::RTScene>__get_Get__);
     if (this_00 == (RTScene *)0x0) goto code_?;
-    ray.m_Direction.y = (float)VStack_31.path;
-    ray._0_16_ = auVar19;
-    ray.m_Direction.z = (float)VStack_31.asset;
-    pXVar23 = RTScene::RTScene_RaycastSceneGridIfVisible(this_00,ray,(MethodInfo *)0x0);
-    if (pXVar23 == (XZGridRayHit *)0x0) goto code_?;
-    if ((TypeInfo__RTG__MonoSingleton<RTG::RTSceneGrid>->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__RTG__MonoSingleton<RTG::RTSceneGrid>);
+    aRStack_10[0].m_Origin._0_8_ = uVar11;
+    aRStack_10[0]._8_8_ = uVar12;
+    aRStack_10[0].m_Direction._4_8_ = uVar13;
+    pXVar14 = RTScene::RTScene_RaycastSceneGridIfVisible(this_00,aRStack_10,(MethodInfo *)0x0);
+    if (pXVar14 == (XZGridRayHit *)0x0) goto code_?;
+    if (*(int *)&(TypeInfo__RTG__MonoSingleton<RTG::RTSceneGrid>->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    this_01 = (RTSceneGrid *)
-              MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+    pOVar2 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
                         (MethodInfo__RTG__MonoSingleton<RTG::RTSceneGrid>__get_Get__);
-    if (this_01 == (RTSceneGrid *)0x0) goto code_?;
-    this_02 = RTSceneGrid::RTSceneGrid_CellFromWorldPoint
-                        (this_01,(pXVar23->fields)._hitPoint,(MethodInfo *)0x0);
-    if (this_02 == (XZGridCell *)0x0) goto code_?;
-    this_03 = (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-              XZGridCell::XZGridCell_GetCenterAndCorners(this_02,(MethodInfo *)0x0);
-    index = Vector3Ex::Vector3Ex_GetPointClosestToPoint
-                      ((List_1_UnityEngine_Vector3_ *)this_03,(pXVar23->fields)._hitPoint,
-                       (MethodInfo *)0x0);
-    if (index < 0) goto code_?;
-    if (this_03 == (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)0x0)
+    if ((pOVar2 == (Object *)0x0) || (pMVar15 = pOVar2[2].monitor, pMVar15 == (MonitorData *)0x0))
     goto code_?;
-    pVVar24 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-              VisualTreeAsset+UsingEntry]::
-              List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                        (&VStack_31,this_03,index,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                        );
-    uVar2 = pVVar24->alias;
-    uVar9 = pVVar24->path;
-    uVar3 = (this->fields)._snapPivot.x;
-    uVar10 = (this->fields)._snapPivot.y;
-    fVar27 = (float)uVar2 - (float)uVar3;
-    fVar26 = (float)uVar9 - (float)uVar10;
-    fVar25 = (float)pVVar24->asset - (this->fields)._snapPivot.z;
+    uVar16 = 0;
+    aRStack_10[0].m_Origin.x = (pXVar14->fields)._hitPoint.x;
+    aRStack_10[0].m_Origin.y = (pXVar14->fields)._hitPoint.y;
+    aRStack_10[0].m_Origin.z = (pXVar14->fields)._hitPoint.z;
+    this_01 = XZGridCell::XZGridCell_FromPoint
+                        (&aRStack_10[0].m_Origin,*(float *)(pMVar15 + 0x2c),
+                         *(float *)(pMVar15 + 0x30),(IXZGrid *)pOVar2,(MethodInfo *)0x0);
+    if (this_01 == (XZGridCell *)0x0) goto code_?;
+    pLVar17 = XZGridCell::XZGridCell_GetCenterAndCorners(this_01,(MethodInfo *)0x0);
+    aRStack_10[0].m_Origin.x = (pXVar14->fields)._hitPoint.x;
+    aRStack_10[0].m_Origin.y = (pXVar14->fields)._hitPoint.y;
+    aRStack_10[0].m_Origin.z = (pXVar14->fields)._hitPoint.z;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (pLVar17 == (List_1_UnityEngine_Vector3_ *)0x0) goto code_?;
+    uVar18 = (pLVar17->fields)._size;
+    uVar19 = uVar16;
+    fVar4 = _UNK_?;
+    uVar20 = 0xffffffff;
+    while (uVar21 = (uint)uVar19, (int)uVar21 < (int)uVar18) {
+      if (uVar18 <= uVar21) goto code_?;
+      pVVar22 = (pLVar17->fields)._items;
+      if (pVVar22 == (Vector3__Array *)0x0) goto code_?;
+      if ((uint)pVVar22->max_length <= uVar21) goto code_?;
+      fVar23 = (float)*(undefined8 *)((longlong)&pVVar22->vector[0].x + uVar16) -
+               aRStack_10[0].m_Origin.x;
+      fVar5 = *(float *)((longlong)&pVVar22->vector[0].z + uVar16) - aRStack_10[0].m_Origin.z;
+      fVar24 = (float)((ulonglong)*(undefined8 *)((longlong)&pVVar22->vector[0].x + uVar16) >> 0x20)
+               - aRStack_10[0].m_Origin.y;
+      fVar5 = fVar24 * fVar24 + fVar23 * fVar23 + fVar5 * fVar5;
+      uVar25 = uVar21;
+      if (fVar4 <= fVar5) {
+        uVar25 = uVar20;
+        fVar5 = fVar4;
+      }
+      fVar4 = fVar5;
+      uVar16 = uVar16 + 0xc;
+      uVar20 = uVar25;
+      uVar19 = (ulonglong)(uVar21 + 1);
+    }
+    if ((int)uVar20 < 0) goto code_?;
+    if (uVar18 <= uVar20) {
+code_?:
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                ((MethodInfo *)0x0);
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
+      return;
+    }
+    pVVar22 = (pLVar17->fields)._items;
+    if (pVVar22 == (Vector3__Array *)0x0) goto code_?;
+    if ((uint)pVVar22->max_length <= uVar20) {
+code_?:
+      FUN_?();
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
+      return;
+    }
+    uVar26 = (this->fields)._snapPivot.x;
+    uVar27 = (this->fields)._snapPivot.y;
+    uVar28 = pVVar22->vector[(int)uVar20].x;
+    fVar4 = pVVar22->vector[(int)uVar20].y;
+    VStack_1.z = pVVar22->vector[(int)uVar20].z - (this->fields)._snapPivot.z;
+    (this->fields)._._relativeDragOffset.x = (float)uVar28 - (float)uVar26;
+    (this->fields)._._relativeDragOffset.y = fVar4 - (float)uVar27;
   }
   else {
-    pGVar17 = (this->fields)._settings;
-    if (pGVar17 == (GizmoObjectVertexSnapSettings *)0x0) goto code_?;
-    if ((pGVar17->fields)._canSnapToObjectVerts == 0) goto code_?;
-    bVar20 = GizmoObjectVertexSnapDrag3D_GetWorldPointClosestToInputDevice
+    pGVar7 = (this->fields)._settings;
+    if (pGVar7 == (GizmoObjectVertexSnapSettings *)0x0) goto code_?;
+    if ((pGVar7->fields)._canSnapToObjectVerts == 0) goto code_?;
+    bVar29 = GizmoObjectVertexSnapDrag3D_GetWorldPointClosestToInputDevice
                        (this,focusCamera,
                         (IEnumerable_1_UnityEngine_GameObject_ *)(this->fields)._destinationObjects,
-                        (Vector3 *)&VStack_31,(MethodInfo *)0x0);
-    if (bVar20 == 0) goto code_?;
-    uVar1 = (this->fields)._snapPivot.x;
-    uVar8 = (this->fields)._snapPivot.y;
-    fVar27 = (float)VStack_31.alias - (float)uVar1;
-    fVar26 = (float)VStack_31.path - (float)uVar8;
-    fVar25 = (float)VStack_31.asset - (this->fields)._snapPivot.z;
+                        &VStack_1,(MethodInfo *)0x0);
+    if (bVar29 == 0) goto code_?;
+    uVar30 = (this->fields)._snapPivot.x;
+    uVar31 = (this->fields)._snapPivot.y;
+    VStack_1.z = VStack_1.z - (this->fields)._snapPivot.z;
+    (this->fields)._._relativeDragOffset.x = VStack_1.x - (float)uVar30;
+    (this->fields)._._relativeDragOffset.y = VStack_1.y - (float)uVar31;
   }
-  (this->fields)._._relativeDragOffset.x = fVar27;
-  (this->fields)._._relativeDragOffset.y = fVar26;
-  (this->fields)._._relativeDragOffset.z = fVar25;
+  (this->fields)._._relativeDragOffset.z = VStack_1.z;
 code_?:
-  uVar4 = (this->fields)._snapPivot.x;
-  uVar11 = (this->fields)._snapPivot.y;
-  fVar25 = (this->fields)._snapPivot.z;
-  uVar5 = (this->fields)._._relativeDragOffset.x;
-  uVar12 = (this->fields)._._relativeDragOffset.y;
-  fVar26 = (this->fields)._._relativeDragOffset.z;
-  uVar6 = (this->fields)._._totalDragOffset.x;
-  uVar13 = (this->fields)._._totalDragOffset.y;
-  (this->fields)._snapPivot.x = (float)uVar5 + (float)uVar4;
-  (this->fields)._snapPivot.y = (float)uVar12 + (float)uVar11;
-  uVar7 = (this->fields)._._relativeDragOffset.x;
-  uVar14 = (this->fields)._._relativeDragOffset.y;
-  (this->fields)._snapPivot.z = fVar26 + fVar25;
-  fVar25 = (this->fields)._._totalDragOffset.z;
-  fVar26 = (this->fields)._._relativeDragOffset.z;
-  (this->fields)._._totalDragOffset.x = (float)uVar7 + (float)uVar6;
-  (this->fields)._._totalDragOffset.y = (float)uVar14 + (float)uVar13;
-  (this->fields)._._totalDragOffset.z = fVar26 + fVar25;
+  uVar32 = (this->fields)._snapPivot.x;
+  uVar33 = (this->fields)._snapPivot.y;
+  uVar34 = (this->fields)._._relativeDragOffset.x;
+  fVar4 = (this->fields)._._relativeDragOffset.y;
+  fVar5 = (this->fields)._._relativeDragOffset.z;
+  fVar23 = (this->fields)._snapPivot.z;
+  uVar35 = (this->fields)._._totalDragOffset.x;
+  uVar36 = (this->fields)._._totalDragOffset.y;
+  fVar24 = (this->fields)._._relativeDragOffset.y;
+  (this->fields)._snapPivot.x = (float)uVar34 + (float)uVar32;
+  (this->fields)._snapPivot.y = fVar4 + (float)uVar33;
+  uVar37 = (this->fields)._._relativeDragOffset.x;
+  (this->fields)._snapPivot.z = fVar5 + fVar23;
+  fVar4 = (this->fields)._._relativeDragOffset.z;
+  fVar5 = (this->fields)._._totalDragOffset.z;
+  (this->fields)._._totalDragOffset.x = (float)uVar37 + (float)uVar35;
+  (this->fields)._._totalDragOffset.y = fVar24 + (float)uVar36;
+  (this->fields)._._totalDragOffset.z = fVar4 + fVar5;
   return;
 }
 
@@ -202,18 +235,41 @@ bool Assembly-CSharp.dll::RTG::GizmoObjectVertexSnapDrag3D::
 {
   pGVar1 = (this->fields)._settings;
   if (gameObject != (GameObject *)0x0) {
-    layerNumber = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
-                            (gameObject,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar2 = (gameObject->fields)._.m_CachedPtr;
+    if (pvVar2 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)gameObject,(MethodInfo *)0x0);
+      pcVar3 = (code *)swi(3);
+      bVar4 = (*pcVar3)();
+      return bVar4;
+    }
+    pcVar3 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+      uVar5 = func_?(&UNK_?);
+      FUN_?(uVar5,0);
+      pcVar3 = (code *)swi(3);
+      bVar4 = (*pcVar3)();
+      return bVar4;
+    }
+    pcRam_? = pcVar3;
+    bVar6 = (*pcRam_?)(pvVar2);
     if (pGVar1 != (GizmoObjectVertexSnapSettings *)0x0) {
-      bVar2 = LayerEx::LayerEx_IsLayerBitSet
-                        ((pGVar1->fields)._snapDestinationLayers,layerNumber,(MethodInfo *)0x0);
-      return bVar2;
+      return ((pGVar1->fields)._snapDestinationLayers & 1 << (bVar6 & 0x1f)) != 0;
     }
   }
-  func_?();
+  FUN_?();
   pcVar3 = (code *)swi(3);
-  bVar2 = (*pcVar3)();
-  return bVar2;
+  bVar4 = (*pcVar3)();
+  return bVar4;
 }
 
 
@@ -238,27 +294,510 @@ void Assembly-CSharp.dll::RTG::GizmoObjectVertexSnapDrag3D::GizmoObjectVertexSna
                (GizmoObjectVertexSnapDrag3D *this,MethodInfo *method)
 
 {
+  int32_t *piVar1;
+  undefined1 *puVar2;
+  undefined1 auVar3 [32];
+  int iVar4;
+  int iVar5;
+  List_1_UnityEngine_GameObject_ *pLVar6;
+  GameObject__Array *this_00;
+  code *pcVar7;
+  int iVar8;
+  int32_t iVar9;
+  ArgumentNullException *this_01;
+  undefined8 uVar10;
+  IndexOutOfRangeException *pIVar11;
+  String *pSVar12;
+  undefined1 (*pauVar13) [32];
+  undefined1 (*pauVar14) [32];
+  undefined1 (*pauVar15) [16];
+  GameObject **ppGVar16;
+  ulonglong uVar17;
+  ulonglong uVar18;
+  longlong lVar19;
+  undefined1 auVar20 [32];
+  
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Clear__)
+    ;
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pLVar1 = (this->fields)._destinationObjects;
+  pLVar6 = (this->fields)._destinationObjects;
   (this->fields)._isActive = 0;
-  if (pLVar1 != (List_1_UnityEngine_GameObject_ *)0x0) {
-    length = (pLVar1->fields)._size;
-    piVar2 = &(pLVar1->fields)._version;
-    *piVar2 = *piVar2 + 1;
-    (pLVar1->fields)._size = 0;
-    if (0 < length) {
-      mscorlib.dll::System::Array::Array_Clear
-                ((Array *)(pLVar1->fields)._items,0,length,(MethodInfo *)0x0);
-    }
+  if (pLVar6 == (List_1_UnityEngine_GameObject_ *)0x0) {
+    FUN_?();
+    pcVar7 = (code *)swi(3);
+    (*pcVar7)();
     return;
   }
-  uVar3 = func_?(&stack0xfffffff0);
-  func_?(uVar3);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  iVar4 = (pLVar6->fields)._size;
+  piVar1 = &(pLVar6->fields)._version;
+  *piVar1 = *piVar1 + 1;
+  (pLVar6->fields)._size = 0;
+  if (iVar4 < 1) {
+    return;
+  }
+  this_00 = (pLVar6->fields)._items;
+  if (this_00 == (GameObject__Array *)0x0) {
+    uVar10 = func_?(&TypeInfo__System__ArgumentNullException,0,iVar4,0);
+    this_01 = (ArgumentNullException *)func_?(uVar10);
+    pSVar12 = (String *)func_?(&StringLiteral_array);
+    mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+              (this_01,pSVar12,(MethodInfo *)0x0);
+    uVar10 = func_?(&
+                                 MethodInfo__System__Array__Clear_MethodInfo__System__Array__int__int_
+                                );
+    FUN_?(this_01,uVar10);
+    pcVar7 = (code *)swi(3);
+    (*pcVar7)();
+    return;
+  }
+  if (iVar4 < 0) {
+    uVar10 = func_?(&TypeInfo__System__IndexOutOfRangeException,0,iVar4,0);
+    pIVar11 = (IndexOutOfRangeException *)func_?(uVar10);
+    pSVar12 = (String *)func_?(&StringLiteral_length___0);
+    mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1
+              (pIVar11,pSVar12,(MethodInfo *)0x0);
+    uVar10 = func_?(&
+                                 MethodInfo__System__Array__Clear_MethodInfo__System__Array__int__int_
+                                );
+    FUN_?(pIVar11,uVar10);
+    pcVar7 = (code *)swi(3);
+    (*pcVar7)();
+    return;
+  }
+  if ((((Array__Class *)this_00->klass)->_1).initialized_and_no_error == 0 &&
+      ((((Array__Class *)this_00->klass)->_1).initialized == 0 &&
+      ((((Array__Class *)this_00->klass)->_1).enumtype == 0 &&
+      ((((Array__Class *)this_00->klass)->_1).nullabletype == 0 &&
+      ((((Array__Class *)this_00->klass)->_1).is_generic == 0 &&
+      ((((Array__Class *)this_00->klass)->_1).has_references == 0 &&
+      ((((Array__Class *)this_00->klass)->_1).init_pending == 0 &&
+      (((Array__Class *)this_00->klass)->_1).size_init_pending == 0))))))) {
+    uVar10 = FUN_?();
+    FUN_?(uVar10,0);
+    pcVar7 = (code *)swi(3);
+    (*pcVar7)();
+    return;
+  }
+  if (this_00->bounds == (Il2CppArrayBounds *)0x0) {
+    iVar8 = 0;
+  }
+  else {
+    iVar8 = this_00->bounds->lower_bound;
+  }
+  if (0 < iVar8) {
+    uVar10 = func_?(&TypeInfo__System__IndexOutOfRangeException,0,iVar4,0);
+    pIVar11 = (IndexOutOfRangeException *)func_?(uVar10);
+    pSVar12 = (String *)func_?(&StringLiteral_index___lower_bound);
+    mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1
+              (pIVar11,pSVar12,(MethodInfo *)0x0);
+    uVar10 = func_?(&
+                                 MethodInfo__System__Array__Clear_MethodInfo__System__Array__int__int_
+                                );
+    FUN_?(pIVar11,uVar10);
+    pcVar7 = (code *)swi(3);
+    (*pcVar7)();
+    return;
+  }
+  iVar9 = mscorlib.dll::System::Array::Array_get_Length((Array *)this_00,(MethodInfo *)0x0);
+  if (iVar9 - iVar4 < -iVar8) {
+    uVar10 = func_?(&TypeInfo__System__IndexOutOfRangeException);
+    pIVar11 = (IndexOutOfRangeException *)func_?(uVar10);
+    pSVar12 = (String *)func_?(&StringLiteral_index___length___size);
+    mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor_1
+              (pIVar11,pSVar12,(MethodInfo *)0x0);
+    uVar10 = func_?(&
+                                 MethodInfo__System__Array__Clear_MethodInfo__System__Array__int__int_
+                                );
+    FUN_?(pIVar11,uVar10);
+    pcVar7 = (code *)swi(3);
+    (*pcVar7)();
+    return;
+  }
+  iVar5 = (((Array__Class *)this_00->klass)->_1).native_size;
+  uVar18 = (ulonglong)(iVar5 * iVar4);
+  ppGVar16 = (GameObject **)((longlong)this_00->vector + (longlong)iVar5 * (longlong)-iVar8);
+  switch(uVar18) {
+  case 0:
+    return;
+  case 8:
+    *(undefined8 *)((longlong)ppGVar16 + (uVar18 - 8)) = 0;
+    return;
+  case 9:
+    *(undefined8 *)((longlong)ppGVar16 + (uVar18 - 9)) = 0;
+    *(undefined1 *)((longlong)ppGVar16 + (uVar18 - 1)) = 0;
+    return;
+  case 10:
+    *(undefined8 *)((longlong)ppGVar16 + (uVar18 - 10)) = 0;
+    *(undefined2 *)((longlong)ppGVar16 + (uVar18 - 2)) = 0;
+    return;
+  case 0xb:
+    *(undefined8 *)((longlong)ppGVar16 + (uVar18 - 0xb)) = 0;
+    *(undefined2 *)((longlong)ppGVar16 + (uVar18 - 3)) = 0;
+    *(undefined1 *)((longlong)ppGVar16 + (uVar18 - 1)) = 0;
+    return;
+  case 0xc:
+    *(undefined8 *)((longlong)ppGVar16 + (uVar18 - 0xc)) = 0;
+  case 4:
+    *(undefined4 *)((longlong)ppGVar16 + (uVar18 - 4)) = 0;
+    return;
+  case 0xd:
+    *(undefined8 *)((longlong)ppGVar16 + (uVar18 - 0xd)) = 0;
+  case 5:
+    *(undefined4 *)((longlong)ppGVar16 + (uVar18 - 5)) = 0;
+    *(undefined1 *)((longlong)ppGVar16 + (uVar18 - 1)) = 0;
+    return;
+  case 0xe:
+    *(undefined8 *)((longlong)ppGVar16 + (uVar18 - 0xe)) = 0;
+  case 6:
+    *(undefined4 *)((longlong)ppGVar16 + (uVar18 - 6)) = 0;
+  case 2:
+    *(undefined2 *)((longlong)ppGVar16 + (uVar18 - 2)) = 0;
+    return;
+  case 0xf:
+    *(undefined8 *)((longlong)ppGVar16 + (uVar18 - 0xf)) = 0;
+  case 7:
+    *(undefined4 *)((longlong)ppGVar16 + (uVar18 - 7)) = 0;
+  case 3:
+    *(undefined2 *)((longlong)ppGVar16 + (uVar18 - 3)) = 0;
+  case 1:
+    *(undefined1 *)((longlong)ppGVar16 + (uVar18 - 1)) = 0;
+    return;
+  }
+  auVar20._0_16_ = ZEXT816(0);
+  if (uVar18 < 0x21) {
+    *(undefined1 (*) [16])ppGVar16 = auVar20._0_16_;
+    *(undefined1 (*) [16])((longlong)ppGVar16 + (uVar18 - 0x10)) = auVar20._0_16_;
+    return;
+  }
+  if (uRam_? < 3) {
+    if ((uVar18 <= uRam_?) || ((bRam_? & 2) == 0)) {
+      lVar19 = ((ulonglong)ppGVar16 & 0xf) - 0x10;
+      pauVar15 = (undefined1 (*) [16])((longlong)ppGVar16 - lVar19);
+      uVar18 = uVar18 + lVar19;
+      if (0x80 < uVar18) {
+        do {
+          *pauVar15 = auVar20._0_16_;
+          pauVar15[1] = auVar20._0_16_;
+          pauVar15[2] = auVar20._0_16_;
+          pauVar15[3] = auVar20._0_16_;
+          pauVar15[4] = auVar20._0_16_;
+          pauVar15[5] = auVar20._0_16_;
+          pauVar15[6] = auVar20._0_16_;
+          pauVar15[7] = auVar20._0_16_;
+          pauVar15 = pauVar15 + 8;
+          uVar18 = uVar18 - 0x80;
+        } while (0x7f < uVar18);
+      }
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*(code *)((ulonglong)*(uint *)(&UNK_? + (uVar18 + 0xf >> 4) * 4) + 0xADDR))
+                (pauVar15,-lVar19);
+      return;
+    }
+  }
+  else if (((uVar18 <= uRam_?) || (uRam_? < uVar18)) ||
+          ((bRam_? & 2) == 0)) {
+    auVar20._16_16_ = auVar20._0_16_;
+    lVar19 = ((ulonglong)ppGVar16 & 0x1f) - 0x20;
+    pauVar13 = (undefined1 (*) [32])((longlong)ppGVar16 - lVar19);
+    uVar18 = uVar18 + lVar19;
+    if (0x100 < uVar18) {
+      if (uRam_? < uVar18) {
+        do {
+          uVar17 = uVar18;
+          pauVar14 = pauVar13;
+          auVar3 = vmovntdq_avx(auVar20);
+          *pauVar14 = auVar3;
+          auVar3 = vmovntdq_avx(auVar20);
+          pauVar14[1] = auVar3;
+          auVar3 = vmovntdq_avx(auVar20);
+          pauVar14[2] = auVar3;
+          auVar3 = vmovntdq_avx(auVar20);
+          pauVar14[3] = auVar3;
+          auVar3 = vmovntdq_avx(auVar20);
+          pauVar14[4] = auVar3;
+          auVar3 = vmovntdq_avx(auVar20);
+          pauVar14[5] = auVar3;
+          auVar3 = vmovntdq_avx(auVar20);
+          pauVar14[6] = auVar3;
+          auVar3 = vmovntdq_avx(auVar20);
+          pauVar14[7] = auVar3;
+          pauVar13 = pauVar14 + 8;
+          uVar18 = uVar17 - 0x100;
+        } while (0xff < uVar17 - 0x100);
+        uVar18 = uVar17 - 0xe1 & 0xffffffffffffffe0;
+        switch(uVar17) {
+        case 0x1e1:
+        case 0x1e2:
+        case 0x1e3:
+        case 0x1e4:
+        case 0x1e5:
+        case 0x1e6:
+        case 0x1e7:
+        case 0x1e8:
+        case 0x1e9:
+        case 0x1ea:
+        case 0x1eb:
+        case 0x1ec:
+        case 0x1ed:
+        case 0x1ee:
+        case 0x1ef:
+        case 0x1f0:
+        case 0x1f1:
+        case 0x1f2:
+        case 499:
+        case 500:
+        case 0x1f5:
+        case 0x1f6:
+        case 0x1f7:
+        case 0x1f8:
+        case 0x1f9:
+        case 0x1fa:
+        case 0x1fb:
+        case 0x1fc:
+        case 0x1fd:
+        case 0x1fe:
+        case 0x1ff:
+          auVar3 = vmovntdq_avx(auVar20);
+          *(undefined1 (*) [32])(*pauVar14 + uVar18) = auVar3;
+        case 0x1c1:
+        case 0x1c2:
+        case 0x1c3:
+        case 0x1c4:
+        case 0x1c5:
+        case 0x1c6:
+        case 0x1c7:
+        case 0x1c8:
+        case 0x1c9:
+        case 0x1ca:
+        case 0x1cb:
+        case 0x1cc:
+        case 0x1cd:
+        case 0x1ce:
+        case 0x1cf:
+        case 0x1d0:
+        case 0x1d1:
+        case 0x1d2:
+        case 0x1d3:
+        case 0x1d4:
+        case 0x1d5:
+        case 0x1d6:
+        case 0x1d7:
+        case 0x1d8:
+        case 0x1d9:
+        case 0x1da:
+        case 0x1db:
+        case 0x1dc:
+        case 0x1dd:
+        case 0x1de:
+        case 0x1df:
+        case 0x1e0:
+          auVar3 = vmovntdq_avx(auVar20);
+          *(undefined1 (*) [32])(pauVar14[1] + uVar18) = auVar3;
+        case 0x1a1:
+        case 0x1a2:
+        case 0x1a3:
+        case 0x1a4:
+        case 0x1a5:
+        case 0x1a6:
+        case 0x1a7:
+        case 0x1a8:
+        case 0x1a9:
+        case 0x1aa:
+        case 0x1ab:
+        case 0x1ac:
+        case 0x1ad:
+        case 0x1ae:
+        case 0x1af:
+        case 0x1b0:
+        case 0x1b1:
+        case 0x1b2:
+        case 0x1b3:
+        case 0x1b4:
+        case 0x1b5:
+        case 0x1b6:
+        case 0x1b7:
+        case 0x1b8:
+        case 0x1b9:
+        case 0x1ba:
+        case 0x1bb:
+        case 0x1bc:
+        case 0x1bd:
+        case 0x1be:
+        case 0x1bf:
+        case 0x1c0:
+          auVar3 = vmovntdq_avx(auVar20);
+          *(undefined1 (*) [32])(pauVar14[2] + uVar18) = auVar3;
+        case 0x181:
+        case 0x182:
+        case 0x183:
+        case 0x184:
+        case 0x185:
+        case 0x186:
+        case 0x187:
+        case 0x188:
+        case 0x189:
+        case 0x18a:
+        case 0x18b:
+        case 0x18c:
+        case 0x18d:
+        case 0x18e:
+        case 399:
+        case 400:
+        case 0x191:
+        case 0x192:
+        case 0x193:
+        case 0x194:
+        case 0x195:
+        case 0x196:
+        case 0x197:
+        case 0x198:
+        case 0x199:
+        case 0x19a:
+        case 0x19b:
+        case 0x19c:
+        case 0x19d:
+        case 0x19e:
+        case 0x19f:
+        case 0x1a0:
+          auVar3 = vmovntdq_avx(auVar20);
+          *(undefined1 (*) [32])(pauVar14[3] + uVar18) = auVar3;
+        case 0x161:
+        case 0x162:
+        case 0x163:
+        case 0x164:
+        case 0x165:
+        case 0x166:
+        case 0x167:
+        case 0x168:
+        case 0x169:
+        case 0x16a:
+        case 0x16b:
+        case 0x16c:
+        case 0x16d:
+        case 0x16e:
+        case 0x16f:
+        case 0x170:
+        case 0x171:
+        case 0x172:
+        case 0x173:
+        case 0x174:
+        case 0x175:
+        case 0x176:
+        case 0x177:
+        case 0x178:
+        case 0x179:
+        case 0x17a:
+        case 0x17b:
+        case 0x17c:
+        case 0x17d:
+        case 0x17e:
+        case 0x17f:
+        case 0x180:
+          auVar3 = vmovntdq_avx(auVar20);
+          *(undefined1 (*) [32])(pauVar14[4] + uVar18) = auVar3;
+        case 0x141:
+        case 0x142:
+        case 0x143:
+        case 0x144:
+        case 0x145:
+        case 0x146:
+        case 0x147:
+        case 0x148:
+        case 0x149:
+        case 0x14a:
+        case 0x14b:
+        case 0x14c:
+        case 0x14d:
+        case 0x14e:
+        case 0x14f:
+        case 0x150:
+        case 0x151:
+        case 0x152:
+        case 0x153:
+        case 0x154:
+        case 0x155:
+        case 0x156:
+        case 0x157:
+        case 0x158:
+        case 0x159:
+        case 0x15a:
+        case 0x15b:
+        case 0x15c:
+        case 0x15d:
+        case 0x15e:
+        case 0x15f:
+        case 0x160:
+          auVar3 = vmovntdq_avx(auVar20);
+          *(undefined1 (*) [32])(pauVar14[5] + uVar18) = auVar3;
+        case 0x121:
+        case 0x122:
+        case 0x123:
+        case 0x124:
+        case 0x125:
+        case 0x126:
+        case 0x127:
+        case 0x128:
+        case 0x129:
+        case 0x12a:
+        case 299:
+        case 300:
+        case 0x12d:
+        case 0x12e:
+        case 0x12f:
+        case 0x130:
+        case 0x131:
+        case 0x132:
+        case 0x133:
+        case 0x134:
+        case 0x135:
+        case 0x136:
+        case 0x137:
+        case 0x138:
+        case 0x139:
+        case 0x13a:
+        case 0x13b:
+        case 0x13c:
+        case 0x13d:
+        case 0x13e:
+        case 0x13f:
+        case 0x140:
+          auVar3 = vmovntdq_avx(auVar20);
+          *(undefined1 (*) [32])(pauVar14[6] + uVar18) = auVar3;
+        default:
+          *(undefined1 (*) [32])(pauVar14[-1] + uVar17) = auVar20;
+        case 0x100:
+          *(undefined1 (*) [32])ppGVar16 = auVar20;
+          return;
+        }
+      }
+      do {
+        *pauVar13 = auVar20;
+        pauVar13[1] = auVar20;
+        pauVar13[2] = auVar20;
+        pauVar13[3] = auVar20;
+        pauVar13[4] = auVar20;
+        pauVar13[5] = auVar20;
+        pauVar13[6] = auVar20;
+        pauVar13[7] = auVar20;
+        pauVar13 = pauVar13 + 8;
+        uVar18 = uVar18 - 0x100;
+      } while (0xff < uVar18);
+    }
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(code *)((ulonglong)*(uint *)(&UNK_? + (uVar18 + 0x1f >> 5) * 4) + 0xADDR))
+              (0,-lVar19);
+    return;
+  }
+  for (; uVar18 != 0; uVar18 = uVar18 - 1) {
+    *(undefined1 *)ppGVar16 = 0;
+    ppGVar16 = (GameObject **)((longlong)ppGVar16 + 1);
+  }
   return;
 }
 
@@ -282,228 +821,287 @@ void Assembly-CSharp.dll::RTG::GizmoObjectVertexSnapDrag3D::
                (GizmoObjectVertexSnapDrag3D *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffa4;
-  puVar5 = &stack0xffffffa4;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__get_Current__
-                   );
-    func_?(&TypeInfo__RTG__GameObjectEx);
-    func_?(&TypeInfo__RTG__GameObjectTypeHelper);
-    func_?(&TypeInfo__RTG__IInputDevice);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Clear__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__RemoveAll_System__Predicate<UnityEngine::GameObject>_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List_System__Collections__Generic__IEnumerable<UnityEngine::GameObject>_
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
-    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
-    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
-    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>);
-    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>);
-    func_?(&TypeInfo__System__Predicate<UnityEngine::GameObject>);
-    func_?(&
-                    MethodInfo__RTG__GizmoObjectVertexSnapDrag3D____c__DisplayClass22_0___GatherDestinationObjects_b__0_UnityEngine__GameObject_
-                   );
-    func_?(&TypeInfo__RTG__GizmoObjectVertexSnapDrag3D____c__DisplayClass22_0);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GameObjectEx);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GameObjectTypeHelper);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__IInputDevice);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Clear__)
+    ;
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__RemoveAll_System__Predicate<UnityEngine::GameObject>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List_System__Collections__Generic__IEnumerable<UnityEngine::GameObject>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Predicate<UnityEngine::GameObject>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__RTG__GizmoObjectVertexSnapDrag3D____c__DisplayClass22_0___GatherDestinationObjects_b__0_UnityEngine__GameObject_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GizmoObjectVertexSnapDrag3D____c__DisplayClass22_0);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  method_01 = TypeInfo__RTG__GizmoObjectVertexSnapDrag3D____c__DisplayClass22_0;
-  value = (Object *)func_?();
-  pOStack_6 = value;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-  if ((TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  pOVar1 = (Object *)
+            FUN_?(TypeInfo__RTG__GizmoObjectVertexSnapDrag3D____c__DisplayClass22_0);
+  if (*(int *)&(TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pOVar7 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
-                     (MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
-  if ((pOVar7 != (Object *)0x0) && (value != (Object *)0x0)) {
-    value[1].monitor = pOVar7[4].monitor;
-    func_?();
+  pOVar2 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+                      (MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
+  if ((pOVar2 != (Object *)0x0) && (pOVar1 != (Object *)0x0)) {
+    pOVar1[1].monitor = pOVar2[4].monitor;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&pOVar1[1].monitor >> 0xc);
+      uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+      do {
+        uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+        puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar5 == *puVar6;
+        if (bVar7) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
     pLVar8 = (this->fields)._destinationObjects;
     if (pLVar8 != (List_1_UnityEngine_GameObject_ *)0x0) {
-      length = (pLVar8->fields)._size;
       piVar9 = &(pLVar8->fields)._version;
       *piVar9 = *piVar9 + 1;
+      length = (pLVar8->fields)._size;
       (pLVar8->fields)._size = 0;
       if (0 < length) {
         mscorlib.dll::System::Array::Array_Clear
                   ((Array *)(pLVar8->fields)._items,0,length,(MethodInfo *)0x0);
       }
-      if ((TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+      if (*(int *)&(TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      pOVar7 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
-                         (MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
-      if (pOVar7 != (Object *)0x0) {
-        pOStack_10 = pOVar7[2].klass;
-        if (pOStack_10 != (Object__Class *)0x0) {
-          cVar11 = func_?();
-          if (cVar11 == '\0') {
-code_?:
-            *unaff_FS_OFFSET = uStack_3;
-            return;
+      pOVar2 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+                          (MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
+      if ((pOVar2 != (Object *)0x0) && (pOVar2[2].klass != (Object__Class *)0x0)) {
+        cVar10 = FUN_?(8,TypeInfo__RTG__IInputDevice,pOVar2[2].klass);
+        if (cVar10 == '\0') {
+          return;
+        }
+        puVar11 = (undefined8 *)FUN_?(&uStack_12,7);
+        uStack_12 = *puVar11;
+        pLStack_13 = (List_1_T_Enumerator_System_Object_ *)
+                     CONCAT44(pLStack_13._4_4_,*(undefined4 *)(puVar11 + 1));
+        *(int *)&pOVar1[3].klass = (int)uStack_12;
+        *(int *)((longlong)&pOVar1[3].klass + 4) = (int)((ulonglong)uStack_12 >> 0x20);
+        pOVar1[2].klass = (Object__Class *)0x0;
+        pOVar1[2].monitor = (MonitorData *)0x0;
+        if (*(int *)&(TypeInfo__RTG__GameObjectTypeHelper->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        uVar14 = FUN_?();
+        *(undefined4 *)&pOVar1[2].klass = uVar14;
+        uVar14 = _UNK_?;
+        *(ulonglong *)((longlong)&pOVar1[2].klass + 4) = CONCAT44(_UNK_?,_UNK_?);
+        *(undefined4 *)((longlong)&pOVar1[2].monitor + 4) = uVar14;
+        if (*(int *)&(TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        this_00 = (RTFocusCamera *)
+                  MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+                            (MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
+        if (this_00 != (RTFocusCamera *)0x0) {
+          RTFocusCamera::RTFocusCamera_GetVisibleObjects
+                    (this_00,(this->fields)._visibleObjectBuffer,(MethodInfo *)0x0);
+          collection = (IEnumerable_1_System_Object_ *)(this->fields)._targetObjects;
+          this_01 = (Object__Class *)
+                    FUN_?(
+                                 TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>
+                                 );
+          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+          List_1_System_Object___ctor_1
+                    ((List_1_System_Object_ *)this_01,collection,
+                     MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List_System__Collections__Generic__IEnumerable<UnityEngine::GameObject>_
+                    );
+          pOVar1[1].klass = this_01;
+          if (iRam_? != 0) {
+            uVar3 = (uint)((ulonglong)(pOVar1 + 1) >> 0xc);
+            uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+            do {
+              uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+              puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+              LOCK();
+              bVar7 = uVar5 == *puVar6;
+              if (bVar7) {
+                *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar7);
           }
-          puVar12 = (undefined8 *)func_?(auStack_13 + 4);
-          uVar14 = *puVar12;
-          uStack_15._0_4_ = (Object__Class *)uVar14;
-          value[4].klass = (Object__Class *)uStack_15;
-          uStack_15._4_4_ = (MonitorData *)((ulonglong)uVar14 >> 0x20);
-          value[4].monitor = uStack_15._4_4_;
-          value[2].klass = (Object__Class *)0x0;
-          value[2].monitor = (MonitorData *)0x0;
-          value[3].klass = (Object__Class *)0x0;
-          value[3].monitor = (MonitorData *)0x0;
-          uStack_15 = uVar14;
-          if ((TypeInfo__RTG__GameObjectTypeHelper->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__RTG__GameObjectTypeHelper);
-          }
-          if (cRam_? == '\0') {
-            func_?(&TypeInfo__RTG__GameObjectTypeHelper);
-            cRam_? = '\x01';
-          }
-          if ((TypeInfo__RTG__GameObjectTypeHelper->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__RTG__GameObjectTypeHelper);
-          }
-          value[2].klass =
-               (Object__Class *)TypeInfo__RTG__GameObjectTypeHelper->static_fields->_allCombined;
-          pVVar16 = Vector3Ex::Vector3Ex_FromValue
-                              ((Vector3 *)(auStack_13 + 4),1e-05,(MethodInfo *)0x0);
-          pMVar17 = (MonitorData *)pVVar16->z;
-          *(undefined8 *)&value[2].monitor = *(undefined8 *)pVVar16;
-          value[3].monitor = pMVar17;
-          if ((TypeInfo__RTG__MonoSingleton<RTG::RTFocusCamera>->_1).cctor_finished_or_no_cctor == 0
-             ) {
-            func_?();
-          }
-          this_01 = (RTFocusCamera *)
-                    MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
-                              (MethodInfo__RTG__MonoSingleton<RTG::RTFocusCamera>__get_Get__);
-          if (this_01 != (RTFocusCamera *)0x0) {
-            RTFocusCamera::RTFocusCamera_GetVisibleObjects
-                      (this_01,(this->fields)._visibleObjectBuffer,(MethodInfo *)0x0);
-            collection = (IEnumerable_1_System_Object_ *)(this->fields)._targetObjects;
-            this_02 = (Object__Class *)func_?();
+          pLVar8 = (this->fields)._visibleObjectBuffer;
+          this_02 = (Predicate_1_Object_ *)
+                    FUN_?(TypeInfo__System__Predicate<UnityEngine::GameObject>);
+          mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
+                    (this_02,pOVar1,
+                     MethodInfo__RTG__GizmoObjectVertexSnapDrag3D____c__DisplayClass22_0___GatherDestinationObjects_b__0_UnityEngine__GameObject_
+                     ,(MethodInfo *)0x0);
+          if (pLVar8 != (List_1_UnityEngine_GameObject_ *)0x0) {
             mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-            List_1_System_Object___ctor_1
-                      ((List_1_System_Object_ *)this_02,collection,
-                       MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List_System__Collections__Generic__IEnumerable<UnityEngine::GameObject>_
+            List_1_System_Object__RemoveAll
+                      ((List_1_System_Object_ *)pLVar8,this_02,
+                       MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__RemoveAll_System__Predicate<UnityEngine::GameObject>_
                       );
-            pOStack_6[1].klass = this_02;
-            func_?();
-            pLVar8 = (this->fields)._visibleObjectBuffer;
-            pOStack_10 = (Object__Class *)
-                         func_?(TypeInfo__System__Predicate<UnityEngine::GameObject>);
-            mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
-                      ((Predicate_1_Object_ *)pOStack_10,pOStack_6,
-                       MethodInfo__RTG__GizmoObjectVertexSnapDrag3D____c__DisplayClass22_0___GatherDestinationObjects_b__0_UnityEngine__GameObject_
-                       ,(MethodInfo *)0x0);
-            if (pLVar8 != (List_1_UnityEngine_GameObject_ *)0x0) {
-              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-              List_1_System_Object__RemoveAll
-                        ((List_1_System_Object_ *)pLVar8,(Predicate_1_Object_ *)pOStack_10,
-                         MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__RemoveAll_System__Predicate<UnityEngine::GameObject>_
-                        );
-              this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                        (this->fields)._visibleObjectBuffer;
-              if (this_00 !=
-                  (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-                pLVar18 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                          RegularExpressions::RegexCharClass+SingleRange]::
-                          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                                    ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                      *)auStack_13,this_00,
-                                     MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__GetEnumerator__
-                                    );
-                uStack_19 = 0;
-                method_00 = (MethodInfo *)pLVar18->_version;
-                uStack_1 = 1;
-                RVar20 = pLVar18->_current;
-                pOStack_6 = (Object *)&stack0xffffffb0;
-                while( true ) {
-                  this_03 = RVar20;
-                  bVar21 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
-                          Object]::List_1_T_Enumerator_System_Object__MoveNext
-                                    ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffb0,
-                                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
-                                    );
-                  if (bVar21 == 0) break;
-                  pOStack_10 = (Object__Class *)(this->fields)._settings;
-                  if (this_03 == (RegexCharClass_SingleRange)0x0) goto code_?;
-                  method_00 = (MethodInfo *)
-                              UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                              GameObject_get_layer((GameObject *)this_03,(MethodInfo *)0x0);
-                  if (pOStack_10 == (Object__Class *)0x0) goto code_?;
-                  RVar20.First = 0;
-                  RVar20.Last = 0;
-                  layerBits._0_2_ = (pOStack_10->_0).byval_arg.attrs;
-                  layerBits._2_1_ = (pOStack_10->_0).byval_arg.type;
-                  layerBits._3_1_ = (pOStack_10->_0).byval_arg.field_0x7;
-                  bVar21 = LayerEx::LayerEx_IsLayerBitSet
-                                    (layerBits,(int32_t)method_00,(MethodInfo *)0x0);
-                  if (bVar21 != 0) {
-                    if ((TypeInfo__RTG__GameObjectEx->_1).cctor_finished_or_no_cctor == 0) {
-                      pGStack_22 = TypeInfo__RTG__GameObjectEx;
-                      auStack_13._4_4_ = &UNK_?;
-                      func_?();
-                    }
-                    GVar23 = GameObjectEx::GameObjectEx_GetGameObjectType
-                                       ((GameObject *)this_03,(MethodInfo *)0x0);
-                    if ((GVar23 == GameObjectType__Enum_Mesh) ||
-                       (GVar23 == GameObjectType__Enum_Sprite)) {
-                      pLVar8 = (this->fields)._destinationObjects;
-                      if (pLVar8 == (List_1_UnityEngine_GameObject_ *)0x0) goto code_?;
-                      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-                      List_1_System_Object__Add
-                                ((List_1_System_Object_ *)pLVar8,(Object *)this_03,
-                                 MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Add_UnityEngine__GameObject_
-                                );
-                    }
+            LStack_15._list = (List_1_System_Object_ *)(this->fields)._visibleObjectBuffer;
+            if ((List_1_UnityEngine_GameObject_ *)LStack_15._list !=
+                (List_1_UnityEngine_GameObject_ *)0x0) {
+              if (iRam_? != 0) {
+                uVar3 = (uint)((ulonglong)&uStack_12 >> 0xc);
+                uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+                do {
+                  uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+                  puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+                  LOCK();
+                  bVar7 = uVar5 == *puVar6;
+                  if (bVar7) {
+                    *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
                   }
+                  UNLOCK();
+                } while (!bVar7);
+              }
+              pLStack_13 = (List_1_T_Enumerator_System_Object_ *)
+                           ((ulonglong)
+                            (uint)(((List_1_UnityEngine_GameObject_ *)LStack_15._list)->fields).
+                                  _version << 0x20);
+              uStack_16 = 0;
+              LStack_15._8_8_ = pLStack_13;
+              LStack_15._current = (Object *)0x0;
+              uStack_12 = 0;
+              pLStack_13 = &LStack_15;
+code_?:
+              bVar17 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
+                      Object]::List_1_T_Enumerator_System_Object__MoveNext
+                                (&LStack_15,
+                                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__MoveNext__
+                                );
+              pOVar1 = LStack_15._current;
+              if (bVar17 == 0) {
+                return;
+              }
+              pGVar18 = (this->fields)._settings;
+              if ((GameObject *)LStack_15._current == (GameObject *)0x0) goto code_?;
+              if (cRam_? == '\0') {
+                FUN_?(&
+                              void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                             );
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              pvVar19 = (((GameObject__Fields *)((longlong)pOVar1 + 0x10))->_).m_CachedPtr;
+              if (pvVar19 != (void *)0x0) {
+                pcVar20 = pcRam_?;
+                if ((pcRam_? == (code *)0x0) &&
+                   (pcVar20 = (code *)FUN_?(&UNK_?), pcVar20 == (code *)0x0)) {
+                  uVar21 = func_?(&UNK_?);
+                  FUN_?(uVar21);
+                  goto code_?;
                 }
-                uStack_1 = 0xffffffff;
-                mscorlib.dll::System::ThrowHelper::
-                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                          ((Object *)&stack0xffffffb0,
-                           (ExceptionArgument__Enum)
-                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UnityEngine::GameObject>__Dispose__
-                           ,method_00);
+                pcRam_? = pcVar20;
+                bVar22 = (*pcRam_?)(pvVar19);
+                if (pGVar18 != (GizmoObjectVertexSnapSettings *)0x0) goto code_?;
                 goto code_?;
               }
+              goto code_?;
             }
           }
         }
       }
     }
   }
-code_?:
-  func_?();
-  pcVar24 = (code *)swi(3);
-  (*pcVar24)();
+  FUN_?();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
+code_?:
+  if (((pGVar18->fields)._snapDestinationLayers & 1 << (bVar22 & 0x1f)) != 0) {
+    if (*(int *)&(TypeInfo__RTG__GameObjectEx->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    GVar23 = GameObjectEx::GameObjectEx_GetGameObjectType((GameObject *)pOVar1,(MethodInfo *)0x0);
+    if ((GVar23 == GameObjectType__Enum_Mesh) || (GVar23 == GameObjectType__Enum_Sprite)) {
+      pLVar8 = (this->fields)._destinationObjects;
+      if (pLVar8 == (List_1_UnityEngine_GameObject_ *)0x0) {
+code_?:
+        FUN_?();
+code_?:
+        FUN_?();
+code_?:
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException(pOVar1,(MethodInfo *)0x0);
+code_?:
+        FUN_?();
+        FUN_?();
+        pcVar20 = (code *)swi(3);
+        (*pcVar20)();
+        return;
+      }
+      FUN_?(pLVar8,pOVar1);
+    }
+  }
+  goto code_?;
 }
 
 
@@ -516,310 +1114,409 @@ bool Assembly-CSharp.dll::RTG::GizmoObjectVertexSnapDrag3D::
                IEnumerable_1_UnityEngine_GameObject_ *gameObjects,Vector3 *point,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  uStack_2._0_1_ = 0xff;
-  uStack_2._1_3_ = 0xffffff;
-  puStack_3 = &DAT_?;
-  uStack_4 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_4;
-  puStack_5 = &stack0xfffffe48;
-  puVar6 = &stack0xfffffffc;
-  puVar7 = &stack0xfffffe48;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__CameraEx);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::MeshVertexChunk>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::MeshVertexChunk>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::MeshVertexChunk>__get_Current__
-                   );
-    func_?(&TypeInfo__RTG__GameObjectEx);
-    func_?(&TypeInfo__System__IDisposable);
-    func_?(&TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::GameObject>);
-    func_?(&TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::GameObject>);
-    func_?(&TypeInfo__System__Collections__IEnumerator);
-    func_?(&TypeInfo__RTG__IInputDevice);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::MeshVertexChunk>__Add_RTG__MeshVertexChunk_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::MeshVertexChunk>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::MeshVertexChunk>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
-                   );
-    func_?(&MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
-    func_?(&TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>);
-    func_?(&TypeInfo__RTG__ObjectBounds);
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&MethodInfo__RTG__Singleton<RTG::MeshVertexChunkCollectionDb>__get_Get__);
-    func_?(&TypeInfo__RTG__Singleton<RTG::MeshVertexChunkCollectionDb>);
+    FUN_?(&TypeInfo__RTG__CameraEx);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::MeshVertexChunk>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::MeshVertexChunk>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::MeshVertexChunk>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GameObjectEx);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__IDisposable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::GameObject>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::GameObject>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__IEnumerator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__IInputDevice);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::MeshVertexChunk>__Add_RTG__MeshVertexChunk_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::MeshVertexChunk>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<RTG::MeshVertexChunk>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__ObjectBounds);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__Singleton<RTG::MeshVertexChunkCollectionDb>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__Singleton<RTG::MeshVertexChunkCollectionDb>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar6 = puStack_1;
-    puVar7 = puStack_5;
   }
-  puStack_5 = puVar7;
-  puStack_1 = puVar6;
-  LStack_8._list = (List_1_System_Object_ *)0x0;
-  LStack_8._index = 0;
-  LStack_8._version = 0;
-  LStack_8._current = (Object *)0x0;
-  func_?(&stack0xfffffedc,0,0x2c);
+  LStack_1._list = (List_1_System_Object_ *)0x0;
+  LStack_1._index = 0;
+  LStack_1._version = 0;
+  LStack_1._current = (Object *)0x0;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
-  fVar10 = (pVVar9->zeroVector).y;
-  fVar11 = (pVVar9->zeroVector).z;
-  point->x = (pVVar9->zeroVector).x;
-  point->y = fVar10;
-  point->z = fVar11;
+  pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar3 = (pVVar2->zeroVector).z;
+  fVar4 = (pVVar2->zeroVector).y;
+  point->x = (pVVar2->zeroVector).x;
+  point->y = fVar4;
+  point->z = fVar3;
   if (gameObjects == (IEnumerable_1_UnityEngine_GameObject_ *)0x0) {
-code_?:
-    *unaff_FS_OFFSET = uStack_4;
     return 0;
   }
-  if ((TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>);
+  if (*(int *)&(TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pOVar12 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
-                     (MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
-  if ((pOVar12 != (Object *)0x0) && (pOVar12[2].klass != (Object__Class *)0x0)) {
-    cVar13 = func_?(8,TypeInfo__RTG__IInputDevice);
-    if (cVar13 == '\0') goto code_?;
-    if ((TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>);
+  pOVar5 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+                      (MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
+  if ((pOVar5 != (Object *)0x0) && (pOVar5[2].klass != (Object__Class *)0x0)) {
+    cVar6 = FUN_?(8,TypeInfo__RTG__IInputDevice);
+    if (cVar6 == '\0') {
+      return 0;
     }
-    pOVar12 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
-                       (MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
-    if ((pOVar12 != (Object *)0x0) && (pOVar12[2].klass != (Object__Class *)0x0)) {
-      pVVar14 = (Vector2 *)func_?(auStack_15,7,TypeInfo__RTG__IInputDevice);
-      VStack_16 = *pVVar14;
-      fStack_17 = VStack_16.x;
-      fStack_18 = VStack_16.x;
-      fStack_19 = VStack_16.y;
-      fStack_20 = VStack_16.y;
-      fStack_21 = _UNK_?;
-      bStack_22 = 0;
-      piStack_23 = (int *)func_?(0,
-                                          TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::GameObject>
-                                          ,gameObjects);
-      ppiVar24 = &piStack_23;
-      uStack_25 = 0;
-      uStack_2 = 0;
-      ppiStack_26 = ppiVar24;
-      do {
-        uStack_2._0_1_ = 1;
+    if (*(int *)&(TypeInfo__RTG__MonoSingleton<RTG::RTInputDevice>->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    pOVar5 = MonoSingleton`1[System::Object]::MonoSingleton_1_System_Object__get_Get
+                        (MethodInfo__RTG__MonoSingleton<RTG::RTInputDevice>__get_Get__);
+    if ((pOVar5 != (Object *)0x0) && (pOVar5[2].klass != (Object__Class *)0x0)) {
+      pVVar7 = (Vector2 *)FUN_?(&VStack_8,7,TypeInfo__RTG__IInputDevice);
+      fVar3 = _UNK_?;
+      pt = *pVVar7;
+      fStack_9 = pVVar7[1].x;
+      bStackX_18 = 0;
+      VStack_8 = pt;
+      lStack_10 = FUN_?(0,
+                                 TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::GameObject>
+                                 ,gameObjects);
+      uStack_11 = 0;
+      plStack_12 = &lStack_10;
+      VStack_13 = pt;
 code_?:
-        do {
-          if (piStack_23 == (int *)0x0) goto code_?;
-          cVar13 = func_?(0,TypeInfo__System__Collections__IEnumerator);
-          if (cVar13 == '\0') {
-            uStack_2 = 0xffffffff;
-            if (*ppiVar24 != (int *)0x0) {
-              func_?(0,TypeInfo__System__IDisposable);
-            }
-            *unaff_FS_OFFSET = uStack_4;
-            return bStack_22;
+      while (lStack_10 != 0) {
+        cVar6 = FUN_?(0,TypeInfo__System__Collections__IEnumerator);
+        if (cVar6 == '\0') {
+          if (lStack_10 != 0) {
+            FUN_?(0,TypeInfo__System__IDisposable,lStack_10);
+            return bStackX_18;
           }
-          uStack_27 = CONCAT44(piStack_23,(float)uStack_27);
-          if (piStack_23 == (int *)0x0) goto code_?;
-          pLStack_28 = (List_1_RTG_MeshVertexChunk_ *)*piStack_23;
-          uVar29 = 0;
-          pGStack_30 = (GameObject *)0x0;
-          uVar31 = *(ushort *)((int)&pLStack_28[7].fields._size + 2);
-          pLStack_32 = (List_1_UnityEngine_Vector3_ *)(uint)uVar31;
-          if (uVar31 != 0) {
-            do {
-              ppiVar24 = ppiStack_26;
-              if (*(IEnumerator_1_UnityEngine_GameObject___Class **)
-                   (pLStack_28[3].fields._version + (uint)uVar29 * 8) ==
-                  TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::GameObject>) {
-                ppLVar33 = &pLStack_28[8].klass +
-                           *(int *)(pLStack_28[3].fields._version + 4 + (uint)uVar29 * 8) * 2;
+          return bStackX_18;
+        }
+        if (lStack_10 == 0) goto code_?;
+        gameObject = (GameObject *)FUN_?(0);
+        if (*(int *)&(TypeInfo__RTG__GameObjectEx->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        mesh = GameObjectEx::GameObjectEx_GetMesh(gameObject,(MethodInfo *)0x0);
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (mesh == (Mesh *)0x0) {
+          bVar14 = false;
+        }
+        else {
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          bVar14 = (mesh->fields)._.m_CachedPtr != (void *)0x0;
+        }
+        if (!bVar14) goto code_?;
+        if (*(int *)&(TypeInfo__RTG__Singleton<RTG::MeshVertexChunkCollectionDb>->_1).field_0x1c ==
+            0) {
+          FUN_?();
+        }
+        this_00 = (MeshVertexChunkCollectionDb *)
+                  Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
+                            (MethodInfo__RTG__Singleton<RTG::MeshVertexChunkCollectionDb>__get_Get__
+                            );
+        if (this_00 == (MeshVertexChunkCollectionDb *)0x0) goto code_?;
+        this_01 = MeshVertexChunkCollectionDb::MeshVertexChunkCollectionDb_get_Item
+                            (this_00,mesh,(MethodInfo *)0x0);
+        if (this_01 != (MeshVertexChunkCollection *)0x0) {
+          if (gameObject == (GameObject *)0x0) goto code_?;
+          this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                              (gameObject,(MethodInfo *)0x0);
+          if (this_02 == (Transform *)0x0) goto code_?;
+          pMVar15 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
+                    Transform_get_localToWorldMatrix(aMStack_16,this_02,(MethodInfo *)0x0);
+          pLVar17 = *(List_1_RTG_MeshVertexChunk_ **)pMVar15;
+          lVar18._0_4_ = pMVar15->m20;
+          lVar18._4_4_ = pMVar15->m30;
+          uVar19._0_4_ = pMVar15->m01;
+          uVar19._4_4_ = pMVar15->m11;
+          uVar20._0_4_ = pMVar15->m21;
+          uVar20._4_4_ = pMVar15->m31;
+          uVar21._0_4_ = pMVar15->m02;
+          uVar21._4_4_ = pMVar15->m12;
+          uVar22._0_4_ = pMVar15->m22;
+          uVar22._4_4_ = pMVar15->m32;
+          uVar23._0_4_ = pMVar15->m03;
+          uVar23._4_4_ = pMVar15->m13;
+          uVar24._0_4_ = pMVar15->m23;
+          uVar24._4_4_ = pMVar15->m33;
+          fStack_25 = 0.0;
+          auStack_26._0_8_ = pLVar17;
+          auStack_26._8_8_ = lVar18;
+          auStack_26._16_8_ = uVar19;
+          auStack_26._24_8_ = uVar20;
+          auStack_26._32_8_ = uVar21;
+          auStack_26._40_8_ = uVar22;
+          auStack_26._48_8_ = uVar23;
+          auStack_26._56_8_ = uVar24;
+          VStack_27 = pt;
+          pLVar28 = MeshVertexChunkCollection::
+                    MeshVertexChunkCollection_GetWorldChunksHoveredByPoint
+                              (this_01,(Vector3 *)&VStack_27,(Matrix4x4 *)auStack_26,focusCamera,
+                               (MethodInfo *)0x0);
+          if (pLVar28 == (List_1_RTG_MeshVertexChunk_ *)0x0) goto code_?;
+          if ((((pLVar28->fields)._size == 0) &&
+              (auStack_26._0_8_ = pLVar17, auStack_26._8_8_ = lVar18, auStack_26._16_8_ = uVar19,
+              auStack_26._24_8_ = uVar20, auStack_26._32_8_ = uVar21, auStack_26._40_8_ = uVar22,
+              auStack_26._48_8_ = uVar23, auStack_26._56_8_ = uVar24,
+              this_03 = MeshVertexChunkCollection::
+                        MeshVertexChunkCollection_GetWorldVertChunkClosestToScreenPt
+                                  (this_01,pt,(Matrix4x4 *)auStack_26,focusCamera,(MethodInfo *)0x0
+                                  ), this_03 != (MeshVertexChunk *)0x0)) &&
+             (iVar29 = MeshVertexChunk::MeshVertexChunk_get_VertexCount(this_03,(MethodInfo *)0x0),
+             iVar29 != 0)) {
+            FUN_?(pLVar28,this_03);
+          }
+          auStack_26._8_4_ = 0.0;
+          auStack_26._12_4_ = 0.0;
+          auStack_26._16_4_ = 0.0;
+          auStack_26._20_4_ = 0.0;
+          auStack_26._0_8_ = pLVar28;
+          func_?(auStack_26);
+          auStack_26._8_8_ = (ulonglong)(uint)(pLVar28->fields)._version << 0x20;
+          auStack_26._16_4_ = 0.0;
+          auStack_26._20_4_ = 0.0;
+          LStack_1._list = (List_1_System_Object_ *)auStack_26._0_8_;
+          LStack_1._index = auStack_26._8_4_;
+          LStack_1._version = auStack_26._12_4_;
+          LStack_1._current = (Object *)0x0;
+          uStack_30 = 0;
+          pLStack_31 = &LStack_1;
+          while (bVar32 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
+                          Object]::List_1_T_Enumerator_System_Object__MoveNext
+                                    (&LStack_1,
+                                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::MeshVertexChunk>__MoveNext__
+                                    ), bVar32 != 0) {
+            if ((MeshVertexChunk *)LStack_1._current == (MeshVertexChunk *)0x0) {
+code_?:
+              FUN_?();
+              FUN_?();
+              goto code_?;
+            }
+            auStack_26._0_8_ = pLVar17;
+            auStack_26._8_8_ = lVar18;
+            auStack_26._16_8_ = uVar19;
+            auStack_26._24_8_ = uVar20;
+            auStack_26._32_8_ = uVar21;
+            auStack_26._40_8_ = uVar22;
+            auStack_26._48_8_ = uVar23;
+            auStack_26._56_8_ = uVar24;
+            pVVar33 = MeshVertexChunk::MeshVertexChunk_GetWorldVertClosestToScreenPt
+                                (&VStack_34,(MeshVertexChunk *)LStack_1._current,pt,
+                                 (Matrix4x4 *)auStack_26,focusCamera,(MethodInfo *)0x0);
+            VVar35.x = pVVar33->x;
+            VVar35.y = pVVar33->y;
+            fVar4 = pVVar33->z;
+            if (focusCamera == (Camera *)0x0) {
+code_?:
+              FUN_?();
+              goto code_?;
+            }
+            VStack_8 = VVar35;
+            fStack_9 = fVar4;
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                           );
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            uStack_36 = 0;
+            uStack_37 = 0;
+            pvVar38 = (focusCamera->fields)._._._.m_CachedPtr;
+            if (pvVar38 == (void *)0x0) {
+code_?:
+              UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+              ThrowHelper_2_ThrowNullReferenceException((Object *)focusCamera,(MethodInfo *)0x0);
+              goto code_?;
+            }
+            pcVar39 = pcRam_?;
+            if ((pcRam_? == (code *)0x0) &&
+               (pcVar39 = (code *)FUN_?(&UNK_?), pcVar39 == (code *)0x0)) {
+              uVar19 = func_?(&UNK_?);
+              FUN_?(uVar19);
+              goto code_?;
+            }
+            pcRam_? = pcVar39;
+            (*pcRam_?)(pvVar38,&VStack_8,2,&uStack_36);
+            fVar40 = pt.x - (float)uStack_36;
+            fVar41 = pt.y - uStack_36._4_4_;
+            fVar40 = fVar41 * fVar41 + fVar40 * fVar40;
+            if (fVar40 < fVar3) {
+              point->x = VVar35.x;
+              point->y = VVar35.y;
+              point->z = fVar4;
+              bStackX_18 = 1;
+              fVar3 = fVar40;
+            }
+          }
+        }
+      }
+code_?:
+      FUN_?();
+      FUN_?();
+      pcVar39 = (code *)swi(3);
+      bVar32 = (*pcVar39)();
+      return bVar32;
+    }
+  }
+  FUN_?();
+  pcVar39 = (code *)swi(3);
+  bVar32 = (*pcVar39)();
+  return bVar32;
+code_?:
+  if (*(int *)&(TypeInfo__RTG__ObjectBounds->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pOVar42 = ObjectBounds::ObjectBounds_CalcSpriteWorldOBB
+                      ((OBB *)auStack_26,gameObject,(MethodInfo *)0x0);
+  OStack_43._size.x = (pOVar42->_size).x;
+  OStack_43._size.y = (pOVar42->_size).y;
+  OStack_43._8_8_ = *(undefined8 *)&(pOVar42->_size).z;
+  OStack_43._center.y = (pOVar42->_center).y;
+  OStack_43._center.z = (pOVar42->_center).z;
+  OStack_43._rotation.x = (pOVar42->_rotation).x;
+  OStack_43._rotation.y = (pOVar42->_rotation).y;
+  OStack_43._rotation.z = (pOVar42->_rotation).z;
+  OStack_43._rotation.w = (pOVar42->_rotation).w;
+  OStack_43._isValid = pOVar42->_isValid;
+  OStack_43._41_3_ = *(undefined3 *)&pOVar42->field_0x29;
+  if (OStack_43._isValid != 0) {
+    worldPoints = OBB::OBB_GetCenterAndCornerPoints(&OStack_43,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__RTG__CameraEx->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    points = CameraEx::CameraEx_ConvertWorldToScreenPoints
+                       (focusCamera,worldPoints,(MethodInfo *)0x0);
+    uVar44 = Vector2Ex::Vector2Ex_GetPointClosestToPoint(points,pt,(MethodInfo *)0x0);
+    if (-1 < (int)uVar44) {
+      if (points != (List_1_UnityEngine_Vector2_ *)0x0) {
+        uVar19 = FUN_?(points,uVar44);
+        fStack_45 = (float)((ulonglong)uVar19 >> 0x20);
+        fStack_45 = pt.y - fStack_45;
+        fStack_46 = (float)uVar19;
+        fStack_46 = pt.x - fStack_46;
+        fVar4 = fStack_46 * fStack_46 + fStack_45 * fStack_45;
+        if (fVar3 <= fVar4) goto code_?;
+        if (worldPoints != (List_1_UnityEngine_Vector3_ *)0x0) {
+          if (uVar44 < (uint)(worldPoints->fields)._size) {
+            pVVar47 = (worldPoints->fields)._items;
+            if (pVVar47 != (Vector3__Array *)0x0) {
+              if (uVar44 < (uint)pVVar47->max_length) {
+                fVar3 = pVVar47->vector[(int)uVar44].z;
+                fVar40 = pVVar47->vector[(int)uVar44].y;
+                point->x = pVVar47->vector[(int)uVar44].x;
+                point->y = fVar40;
+                point->z = fVar3;
+                bStackX_18 = 1;
+                fVar3 = fVar4;
                 goto code_?;
               }
-              uVar29 = uVar29 + 1;
-            } while (uVar29 < uVar31);
-          }
-          ppLVar33 = (List_1_RTG_MeshVertexChunk___Class **)
-                     func_?(piStack_23,
-                                     TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::GameObject>
-                                    );
 code_?:
-          gameObject = (GameObject *)(*(code *)*ppLVar33)(uStack_27._4_4_);
-          pGStack_30 = gameObject;
-          if ((TypeInfo__RTG__GameObjectEx->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__RTG__GameObjectEx);
-          }
-          x = GameObjectEx::GameObjectEx_GetMesh(gameObject,(MethodInfo *)0x0);
-          uStack_27 = CONCAT44(x,(float)uStack_27);
-          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__UnityEngine__Object);
-            x = (Mesh *)uStack_27._4_4_;
-          }
-          bVar34 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                            ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar34 == 0) {
-            if ((TypeInfo__RTG__ObjectBounds->_1).cctor_finished_or_no_cctor == 0) {
-              func_?(TypeInfo__RTG__ObjectBounds);
+              FUN_?();
+code_?:
+              FUN_?();
+code_?:
+              FUN_?();
+code_?:
+              FUN_?();
+code_?:
+              FUN_?();
             }
-            pOVar35 = ObjectBounds::ObjectBounds_CalcSpriteWorldOBB
-                                ((OBB *)&stack0xfffffe68,gameObject,(MethodInfo *)0x0);
-            if ((char)*(undefined4 *)&pOVar35->_isValid != '\0') {
-              worldPoints = OBB::OBB_GetCenterAndCornerPoints
-                                      ((OBB *)&stack0xfffffedc,(MethodInfo *)0x0);
-              pLStack_32 = worldPoints;
-              if ((TypeInfo__RTG__CameraEx->_1).cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__RTG__CameraEx);
-              }
-              points = CameraEx::CameraEx_ConvertWorldToScreenPoints
-                                 (focusCamera,worldPoints,(MethodInfo *)0x0);
-              VVar36.y = fStack_20;
-              VVar36.x = fStack_18;
-              pGStack_30 = (GameObject *)
-                           Vector2Ex::Vector2Ex_GetPointClosestToPoint
-                                     (points,VVar36,(MethodInfo *)0x0);
-              if (-1 < (int)pGStack_30) {
-                if (points == (List_1_UnityEngine_Vector2_ *)0x0) goto code_?;
-                VVar36 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-                         List_1_UnityEngine_Vector2__get_Item
-                                   (points,(int32_t)pGStack_30,
-                                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
-                                   );
-                VStack_16.y = VVar36.y;
-                fVar11 = (fStack_17 - VStack_16.x) * (fStack_17 - VStack_16.x) +
-                         (fStack_19 - VStack_16.y) * (fStack_19 - VStack_16.y);
-                VStack_16 = VVar36;
-                if (fVar11 < fStack_21) {
-                  fStack_21 = fVar11;
-                  if (pLStack_32 == (List_1_UnityEngine_Vector3_ *)0x0) goto code_?;
-                  pfVar37 = (float *)func_?(auStack_38,pLStack_32,pGStack_30);
-                  bStack_22 = 1;
-                  fVar10 = pfVar37[1];
-                  fVar11 = pfVar37[2];
-                  point->x = *pfVar37;
-                  point->y = fVar10;
-                  point->z = fVar11;
-                }
-              }
-            }
-            goto code_?;
+            FUN_?();
           }
-          if ((TypeInfo__RTG__Singleton<RTG::MeshVertexChunkCollectionDb>->_1).
-              cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__RTG__Singleton<RTG::MeshVertexChunkCollectionDb>);
-          }
-          this_00 = (MeshVertexChunkCollectionDb *)
-                    Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
-                              (
-                              MethodInfo__RTG__Singleton<RTG::MeshVertexChunkCollectionDb>__get_Get__
-                              );
-          if (this_00 == (MeshVertexChunkCollectionDb *)0x0) goto code_?;
-          pMVar39 = MeshVertexChunkCollectionDb::MeshVertexChunkCollectionDb_get_Item
-                              (this_00,(Mesh *)uStack_27._4_4_,(MethodInfo *)0x0);
-          uStack_27 = CONCAT44(pMVar39,(float)uStack_27);
-        } while (pMVar39 == (MeshVertexChunkCollection *)0x0);
-        if ((gameObject == (GameObject *)0x0) ||
-           (this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (gameObject,(MethodInfo *)0x0), this_01 == (Transform *)0x0)) break;
-        pMVar40 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                  Transform_get_localToWorldMatrix
-                            ((Matrix4x4 *)&stack0xfffffe58,this_01,(MethodInfo *)0x0);
-        uStack_41 = 0;
-        worldMtx_00 = *pMVar40;
-        worldMtx = *pMVar40;
-        method_00 = (MethodInfo *)pMVar40->m20;
-        hoverPoint.y = fStack_19;
-        hoverPoint.x = fStack_17;
-        hoverPoint.z = 0.0;
-        pLStack_28 = MeshVertexChunkCollection::
-                     MeshVertexChunkCollection_GetWorldChunksHoveredByPoint
-                               (uStack_27._4_4_,hoverPoint,*pMVar40,focusCamera,(MethodInfo *)0x0);
-        if (pLStack_28 == (List_1_RTG_MeshVertexChunk_ *)0x0) break;
-        if ((pLStack_28->fields)._size == 0) {
-          screenPoint_00.y = fStack_20;
-          screenPoint_00.x = fStack_18;
-          this_02 = MeshVertexChunkCollection::
-                    MeshVertexChunkCollection_GetWorldVertChunkClosestToScreenPt
-                              (uStack_27._4_4_,screenPoint_00,worldMtx,focusCamera,(MethodInfo *)0x0
-                              );
-          if (this_02 != (MeshVertexChunk *)0x0) {
-            iVar42 = MeshVertexChunk::MeshVertexChunk_get_VertexCount(this_02,(MethodInfo *)0x0);
-            if (iVar42 != 0) {
-              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-              List_1_System_Object__Add
-                        ((List_1_System_Object_ *)pLStack_28,(Object *)this_02,
-                         MethodInfo__System__Collections__Generic__List<RTG::MeshVertexChunk>__Add_RTG__MeshVertexChunk_
-                        );
-            }
-          }
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
         }
-        puVar43 = (undefined4 *)func_?();
-        uStack_44 = 0;
-        LStack_8._list = (List_1_System_Object_ *)*puVar43;
-        LStack_8._index = puVar43[1];
-        LStack_8._version = puVar43[2];
-        LStack_8._current = (Object *)puVar43[3];
-        uStack_2._0_1_ = 3;
-        pLStack_45 = &LStack_8;
-        while (bVar34 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
-                       Object]::List_1_T_Enumerator_System_Object__MoveNext
-                                 (&LStack_8,
-                                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::MeshVertexChunk>__MoveNext__
-                                 ), bVar34 != 0) {
-          if ((MeshVertexChunk *)LStack_8._current == (MeshVertexChunk *)0x0)
-          goto code_?;
-          screenPoint.y = fStack_20;
-          screenPoint.x = fStack_18;
-          pVVar46 = MeshVertexChunk::MeshVertexChunk_GetWorldVertClosestToScreenPt
-                              (&VStack_47,(MeshVertexChunk *)LStack_8._current,screenPoint,
-                               worldMtx_00,focusCamera,(MethodInfo *)0x0);
-          pLStack_32 = (List_1_UnityEngine_Vector3_ *)pVVar46->z;
-          uStack_27._0_4_ = pVVar46->x;
-          uStack_27._4_4_ = (MeshVertexChunkCollection *)pVVar46->y;
-          if (focusCamera == (Camera *)0x0) goto code_?;
-          pVVar46 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_WorldToScreenPoint_1
-                              (&VStack_48,focusCamera,*pVVar46,(MethodInfo *)0x0);
-          uStack_49._0_4_ = pVVar46->x;
-          uStack_49._4_4_ = pVVar46->y;
-          fVar11 = (fStack_17 - (float)(undefined4)uStack_49) *
-                   (fStack_17 - (float)(undefined4)uStack_49) +
-                   (fStack_19 - (float)uStack_49._4_4_) * (fStack_19 - (float)uStack_49._4_4_);
-          if (fVar11 < fStack_21) {
-            point->x = (float)uStack_27;
-            point->y = (float)uStack_27._4_4_;
-            point->z = (float)pLStack_32;
-            bStack_22 = 1;
-            fStack_21 = fVar11;
-          }
-        }
-        uStack_2 = CONCAT31(uStack_2._1_3_,1);
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&LStack_8,
-                   (ExceptionArgument__Enum)
-                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::MeshVertexChunk>__Dispose__
-                   ,method_00);
-      } while( true );
+        FUN_?();
+      }
+      FUN_?();
+code_?:
+      FUN_?();
+      goto code_?;
     }
   }
-code_?:
-  func_?();
-  uVar50 = func_?();
-  func_?(uVar50);
-  pcVar51 = (code *)swi(3);
-  bVar34 = (*pcVar51)();
-  return bVar34;
+  goto code_?;
 }
 
 
@@ -831,8 +1528,7 @@ bool Assembly-CSharp.dll::RTG::GizmoObjectVertexSnapDrag3D::
 
 {
   if ((this->fields)._targetObjects != (IEnumerable_1_UnityEngine_GameObject_ *)0x0) {
-    cVar1 = (*(code *)(this->klass->vtable).get_IsActive_1.method)
-                      (this,(this->klass->vtable).get_DragChannel_1.methodPtr);
+    cVar1 = (*(this->klass->vtable).get_IsActive_1.methodPtr)();
     if (cVar1 == '\0') {
       if (gizmo != (Gizmo *)0x0) {
         focusCamera = Gizmo::Gizmo_get_FocusCamera(gizmo,(MethodInfo *)0x0);
@@ -841,7 +1537,7 @@ bool Assembly-CSharp.dll::RTG::GizmoObjectVertexSnapDrag3D::
                            ,(MethodInfo *)0x0);
         return bVar2;
       }
-      func_?();
+      FUN_?();
       pcVar3 = (code *)swi(3);
       bVar2 = (*pcVar3)();
       return bVar2;
@@ -859,11 +1555,22 @@ void Assembly-CSharp.dll::RTG::GizmoObjectVertexSnapDrag3D::
                IEnumerable_1_UnityEngine_GameObject_ *targetObjects,MethodInfo *method)
 
 {
-  cVar1 = (*(code *)(this->klass->vtable).get_IsActive_1.method)
-                    (this,(this->klass->vtable).get_DragChannel_1.methodPtr);
-  if (cVar1 == '\0') {
-    (this->fields)._targetObjects = targetObjects;
-    func_?(&(this->fields)._targetObjects,targetObjects);
+  cVar1 = (*(this->klass->vtable).get_IsActive_1.methodPtr)
+                    (this,(this->klass->vtable).get_IsActive_1.method);
+  if ((cVar1 == '\0') &&
+     (bVar2 = iRam_? != 0, (this->fields)._targetObjects = targetObjects, bVar2)) {
+    uVar3 = (uint)((ulonglong)&(this->fields)._targetObjects >> 0xc);
+    uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+    do {
+      uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+      puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
   }
   return;
 }
@@ -876,40 +1583,191 @@ void Assembly-CSharp.dll::RTG::GizmoObjectVertexSnapDrag3D::GizmoObjectVertexSna
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__GizmoObjectVertexSnapSettings);
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
+    FUN_?(&TypeInfo__RTG__GizmoObjectVertexSnapSettings);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pLVar1 = (List_1_UnityEngine_GameObject_ *)
-           func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
+            FUN_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
              MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
+  bVar2 = iRam_? != 0;
   (this->fields)._destinationObjects = pLVar1;
-  func_?(&(this->fields)._destinationObjects,pLVar1);
-  this_00 = (GizmoObjectVertexSnapSettings *)
-            func_?(TypeInfo__RTG__GizmoObjectVertexSnapSettings);
-  (this_00->fields)._snapDestinationLayers = -1;
-  (this_00->fields)._canSnapToGrid = 1;
-  (this_00->fields)._canSnapToObjectVerts = 1;
-  Settings::Settings__ctor((Settings *)this_00,(MethodInfo *)0x0);
-  (this->fields)._settings = this_00;
-  func_?(&(this->fields)._settings,this_00);
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields)._destinationObjects >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
+  this_01 = (GizmoObjectVertexSnapSettings *)
+            FUN_?(TypeInfo__RTG__GizmoObjectVertexSnapSettings);
+  (this_01->fields)._snapDestinationLayers = -1;
+  (this_01->fields)._canSnapToGrid = 1;
+  (this_01->fields)._canSnapToObjectVerts = 1;
+  Settings::Settings__ctor((Settings *)this_01,(MethodInfo *)0x0);
+  bVar2 = iRam_? != 0;
+  (this->fields)._settings = this_01;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields)._settings >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
   pLVar1 = (List_1_UnityEngine_GameObject_ *)
-           func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
+            FUN_?(TypeInfo__System__Collections__Generic__List<UnityEngine::GameObject>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
              MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__List__);
+  bVar2 = iRam_? != 0;
   (this->fields)._visibleObjectBuffer = pLVar1;
-  func_?(&(this->fields)._visibleObjectBuffer,pLVar1);
-  GizmoDragSession::GizmoDragSession__ctor((GizmoDragSession *)this,(MethodInfo *)0x0);
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields)._visibleObjectBuffer >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__List__,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<RTG::GizmoTransform>);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  this_00 = (List_1_RTG_GizmoTransform_ *)
+            FUN_?(TypeInfo__System__Collections__Generic__List<RTG::GizmoTransform>);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<RTG::GizmoTransform>__List__);
+  bVar2 = iRam_? != 0;
+  (this->fields)._._targetTransforms = this_00;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&this->fields >> 0xc);
+    puVar6 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar7 = *puVar6;
+      LOCK();
+      uVar5 = *puVar6;
+      if (uVar7 == uVar5) {
+        *puVar6 = uVar7 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar7 != uVar5);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  cVar8 = cRam_?;
+  cVar9 = cRam_?;
+  pQVar10 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar11 = (pQVar10->identityQuaternion).y;
+  fVar12 = (pQVar10->identityQuaternion).z;
+  fVar13 = (pQVar10->identityQuaternion).w;
+  (this->fields)._._totalDragRotation.x = (pQVar10->identityQuaternion).x;
+  (this->fields)._._totalDragRotation.y = fVar11;
+  (this->fields)._._totalDragRotation.z = fVar12;
+  (this->fields)._._totalDragRotation.w = fVar13;
+  if (cVar8 == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
+    cVar8 = '\x01';
+    cRam_? = '\x01';
+    cVar9 = cRam_?;
+  }
+  pVVar14 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar12 = (pVVar14->oneVector).y;
+  fVar11 = (pVVar14->oneVector).z;
+  (this->fields)._._totalDragScale.x = (pVVar14->oneVector).x;
+  (this->fields)._._totalDragScale.y = fVar12;
+  (this->fields)._._totalDragScale.z = fVar11;
+  if (cVar9 == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+    cVar8 = cRam_?;
+  }
+  pQVar10 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fVar11 = (pQVar10->identityQuaternion).y;
+  fVar12 = (pQVar10->identityQuaternion).z;
+  fVar13 = (pQVar10->identityQuaternion).w;
+  (this->fields)._._relativeDragRotation.x = (pQVar10->identityQuaternion).x;
+  (this->fields)._._relativeDragRotation.y = fVar11;
+  (this->fields)._._relativeDragRotation.z = fVar12;
+  (this->fields)._._relativeDragRotation.w = fVar13;
+  if (cVar8 == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pVVar14 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar12 = (pVVar14->oneVector).y;
+  fVar11 = (pVVar14->oneVector).z;
+  (this->fields)._._relativeDragScale.x = (pVVar14->oneVector).x;
+  (this->fields)._._relativeDragScale.y = fVar12;
+  (this->fields)._._relativeDragScale.z = fVar11;
   return;
+}
+
+
+/* Vector3 get_SnapPivot() */
+
+Vector3 * Assembly-CSharp.dll::RTG::GizmoObjectVertexSnapDrag3D::
+          GizmoObjectVertexSnapDrag3D_get_SnapPivot
+                    (Vector3 *__return_storage_ptr__,GizmoObjectVertexSnapDrag3D *this,
+                    MethodInfo *method)
+
+{
+  fVar1 = (this->fields)._snapPivot.z;
+  fVar2 = (this->fields)._snapPivot.y;
+  __return_storage_ptr__->x = (this->fields)._snapPivot.x;
+  __return_storage_ptr__->y = fVar2;
+  __return_storage_ptr__->z = fVar1;
+  return __return_storage_ptr__;
 }
 
 
@@ -920,9 +1778,19 @@ void Assembly-CSharp.dll::RTG::GizmoObjectVertexSnapDrag3D::GizmoObjectVertexSna
                MethodInfo *method)
 
 {
-  if (value != (GizmoObjectVertexSnapSettings *)0x0) {
-    (this->fields)._settings = value;
-    func_?(&(this->fields)._settings,value);
+  if ((value != (GizmoObjectVertexSnapSettings *)0x0) &&
+     (bVar1 = iRam_? != 0, (this->fields)._settings = value, bVar1)) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._settings >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
   }
   return;
 }

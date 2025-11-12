@@ -5,110 +5,360 @@ void Assembly-CSharp.dll::GameCoinChestSettings::GameCoinChestSettings_Initializ
                (GameCoinChestSettings *this,int32_t woID,GameObject *root,MethodInfo *method)
 
 {
-  pGVar1 = this;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Convert);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&StringLiteral_gameCoinAmount);
+    FUN_?(&TypeInfo__System__Convert);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_gameCoinAmount);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  iVar2 = woID;
-  this_00 = (pGVar1->fields).settingsBase;
+  this_00 = (this->fields).settingsBase;
   if (this_00 == (SettingsBase *)0x0) goto code_?;
+  uVar1 = 0;
   SettingsBase::SettingsBase_Initialize
             (this_00,woID,root,MVWorldObjectDocumentationType__Enum_CoinChest,(MethodInfo *)0x0);
-  if (iVar2 == -1) {
-    this_03 = (MethodInfo *)func_?();
+  if (woID == -1) {
+    this_04 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+               *)FUN_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                              );
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
-    ::StyleComplexSelector+PseudoStateData]::
-    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-              ((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-                *)this_03,
+    ::UIR::UIRenderDevice+DisableForceGammaMaterial]::
+    Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
+              (this_04,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
               );
-    this = (GameCoinChestSettings *)0x5;
-    value = (Object *)func_?(TypeInfo__System__Int32,&this);
-    if (this_03 == (MethodInfo *)0x0) goto code_?;
+    lStackX_10 = CONCAT44(lStackX_10._4_4_,5);
+    pOVar2 = (Object *)FUN_?(uRam_?,&lStackX_10);
+    if (this_04 ==
+        (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+         *)0x0) goto code_?;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)this_03,
-               (Object *)StringLiteral_gameCoinAmount,value,
+    Dictionary_2_System_Object_System_Object__TryInsert
+              ((Dictionary_2_System_Object_System_Object_ *)this_04,
+               (Object *)StringLiteral_gameCoinAmount,pOVar2,
+               (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar1 >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    this_04 = (pGVar1->fields).slider;
+               ->klass->rgctx_data[0x22].method);
+    this_05 = (this->fields).slider;
   }
   else {
-    this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (this_02 == (MVWorldObjectClientManager *)0x0) goto code_?;
-    this = (GameCoinChestSettings *)0x0;
-    pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                       (this_02,iVar2,(MethodInfo *)0x0);
-    if (pMVar3 == (MVWorldObject *)0x0) goto code_?;
-    this_03 = (MethodInfo *)(pMVar3->fields).data;
-    this_04 = (pGVar1->fields).slider;
-    if (this_03 == (MethodInfo *)0x0) goto code_?;
+    this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if ((this_03 == (MVWorldObjectClientManager *)0x0) ||
+       (pMVar3 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
+                           (this_03,woID,(MethodInfo *)0x0), pMVar3 == (MVWorldObjectClient *)0x0))
+    goto code_?;
+    this_04 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+               *)(pMVar3->fields)._.data;
+    this_05 = (this->fields).slider;
+    if (this_04 ==
+        (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+         *)0x0) goto code_?;
   }
-  this = (GameCoinChestSettings *)
-         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-  ;
-  root = (GameObject *)
-         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-         UIElements::TextureId]::
-         Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                   ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_03,
-                    (Object *)StringLiteral_gameCoinAmount,
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-  if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
-    method = (MethodInfo *)TypeInfo__System__Convert;
-    root = (GameObject *)&UNK_?;
-    func_?();
+  pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+           Dictionary_2_System_Object_System_Object__get_Item
+                     ((Dictionary_2_System_Object_System_Object_ *)this_04,
+                      (Object *)StringLiteral_gameCoinAmount,
+                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                     );
+  if (*(int *)&(TypeInfo__System__Convert->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  method = (MethodInfo *)0x0;
-  woID = (int32_t)&UNK_?;
-  value_00 = (GameObject *)
-             mscorlib.dll::System::Convert::Convert_ToInt32((Object *)root,(MethodInfo *)0x0);
-  if (this_04 != (SettingsSlider *)0x0) {
-    method = (MethodInfo *)0xfa;
-    woID = (int32_t)StringLiteral_gameCoinAmount;
-    this = (GameCoinChestSettings *)this_04;
-    root = value_00;
-    SettingsSlider::SettingsSlider_Initialize_1
-              (this_04,StringLiteral_gameCoinAmount,(int32_t)value_00,0xfa,5000,(MethodInfo *)0x0);
-    this_01 = (pGVar1->fields).inputField;
-    root = (GameObject *)&UNK_?;
-    method = this_03;
-    value_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-               UIElements::TextureId]::
-               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                         ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_03,
-                          (Object *)StringLiteral_gameCoinAmount,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-    method = (MethodInfo *)&UNK_?;
-    iVar2 = mscorlib.dll::System::Convert::Convert_ToInt32(value_01.m_Index,(MethodInfo *)0x0);
-    if (this_01 != (SettingsInputFieldSlider *)0x0) {
-      SettingsInputFieldSlider::SettingsInputFieldSlider_Initialize_2
-                (this_01,StringLiteral_gameCoinAmount,iVar2,(MethodInfo *)0x0);
-      return;
+  iVar4 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar2,(MethodInfo *)0x0);
+  if (this_05 == (SettingsSlider *)0x0) {
+code_?:
+    FUN_?();
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
+    return;
+  }
+  SettingsSlider::SettingsSlider_Initialize_1
+            (this_05,StringLiteral_gameCoinAmount,iVar4,0xfa,5000,(MethodInfo *)0x0);
+  this_01 = (this->fields).inputField;
+  pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+           Dictionary_2_System_Object_System_Object__get_Item
+                     ((Dictionary_2_System_Object_System_Object_ *)this_04,
+                      (Object *)StringLiteral_gameCoinAmount,
+                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                     );
+  iVar4 = mscorlib.dll::System::Convert::Convert_ToInt32(pOVar2,(MethodInfo *)0x0);
+  if (this_01 == (SettingsInputFieldSlider *)0x0) goto code_?;
+  bVar6 = iRam_? != 0;
+  (this_01->fields).key = StringLiteral_gameCoinAmount;
+  if (bVar6) {
+    uVar7 = (uint)((ulonglong)&(this_01->fields).key >> 0xc);
+    uVar8 = (ulonglong)((uVar7 & 0x1fffff) >> 6);
+    do {
+      uVar9 = *(ulonglong *)(uVar8 * 8 + 0xADDR);
+      puVar10 = (ulonglong *)(uVar8 * 8 + 0xADDR);
+      LOCK();
+      bVar6 = uVar9 == *puVar10;
+      if (bVar6) {
+        *puVar10 = uVar9 | 1L << (uVar7 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
+  inputFieldValue =
+       SettingsInputFieldSlider::SettingsInputFieldSlider_GetInputFieldValue
+                 (this_01,(float)iVar4,(MethodInfo *)0x0);
+  pSVar11 = SettingsInputFieldSlider::SettingsInputFieldSlider_ConvertFloatToString
+                      (inputFieldValue,(MethodInfo *)0x0);
+  this_02 = (this_01->fields).inputField;
+  if (this_02 == (InputField *)0x0) {
+    FUN_?();
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
+    return;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__UnityEngine__UI__InputField__Validate_System__String__int__wchar_t_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Math);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__UI__InputField__OnValidateInput);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_u000A);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_u0009);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pSVar12 = (this_02->fields).m_Text;
+  if (pSVar12 == pSVar11) {
+    return;
+  }
+  if (pSVar12 == (String *)0x0) {
+code_?:
+    if (pSVar11 == (String *)0x0) {
+code_?:
+      pSVar11 = ::StringLiteral__;
+      if (::StringLiteral__ == (String *)0x0) goto DAT_?;
     }
   }
+  else {
+    if (pSVar11 == (String *)0x0) goto code_?;
+    if ((pSVar12->fields)._stringLength == (pSVar11->fields)._stringLength) {
+      bVar13 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                        ((uint8_t *)&(pSVar12->fields)._firstChar,
+                         (uint8_t *)&(pSVar11->fields)._firstChar,
+                         (longlong)(pSVar12->fields)._stringLength * 2,(MethodInfo *)0x0);
+      if (bVar13 != 0) {
+        return;
+      }
+      goto code_?;
+    }
+  }
+  pSVar11 = mscorlib.dll::System::String::String_Replace_1
+                      (pSVar11,::StringLiteral__,
+                       (String *)**(undefined8 **)(lRam_? + 0xb8),(MethodInfo *)0x0);
+  if ((this_02->fields).m_LineType == 0) {
+    if ((pSVar11 == (String *)0x0) ||
+       (pSVar11 = mscorlib.dll::System::String::String_Replace_1
+                            (pSVar11,StringLiteral_u000A,::StringLiteral__,(MethodInfo *)0x0),
+       pSVar11 == (String *)0x0)) goto DAT_?;
+    pSVar11 = mscorlib.dll::System::String::String_Replace_1
+                        (pSVar11,StringLiteral_u0009,::StringLiteral__,(MethodInfo *)0x0);
+  }
+  if (((this_02->fields).m_OnValidateInput == (InputField_OnValidateInput *)0x0) &&
+     ((this_02->fields).m_CharacterValidation == 0)) {
+    if (0 < (this_02->fields).m_CharacterLimit) {
+      if (pSVar11 == (String *)0x0) goto DAT_?;
+      iVar14 = (this_02->fields).m_CharacterLimit;
+      if (iVar14 < (pSVar11->fields)._stringLength) {
+        pSVar11 = mscorlib.dll::System::String::String_Substring_1
+                            (pSVar11,0,iVar14,(MethodInfo *)0x0);
+      }
+    }
+    (this_02->fields).m_Text = pSVar11;
+    func_?(&(this_02->fields).m_Text);
+  }
+  else {
+    bVar6 = iRam_? != 0;
+    (this_02->fields).m_Text = ::StringLiteral__;
+    if (bVar6) {
+      uVar7 = (uint)((ulonglong)&(this_02->fields).m_Text >> 0xc);
+      lVar15 = (ulonglong)((uVar7 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar8 = *(ulonglong *)(lVar15 + 0xADDR);
+        puVar10 = (ulonglong *)(lVar15 + 0xADDR);
+        LOCK();
+        bVar6 = uVar8 == *puVar10;
+        if (bVar6) {
+          *puVar10 = uVar8 | 1L << (uVar7 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    pIVar16 = (this_02->fields).m_OnValidateInput;
+    if (pIVar16 == (InputField_OnValidateInput *)0x0) {
+      pIVar16 = (InputField_OnValidateInput *)
+                FUN_?(TypeInfo__UnityEngine__UI__InputField__OnValidateInput);
+      pMVar17 = MethodInfo__UnityEngine__UI__InputField__Validate_System__String__int__wchar_t_;
+      bVar6 = iRam_? != 0;
+      (pIVar16->fields)._._.method_ptr =
+           MethodInfo__UnityEngine__UI__InputField__Validate_System__String__int__wchar_t_->
+           virtualMethodPointer;
+      (pIVar16->fields)._._.method = pMVar17;
+      (pIVar16->fields)._._.m_target = (Object *)this_02;
+      if (bVar6) {
+        uVar7 = (uint)((ulonglong)&(pIVar16->fields)._._.m_target >> 0xc);
+        lVar15 = (ulonglong)((uVar7 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar8 = *(ulonglong *)(lVar15 + 0xADDR);
+          puVar10 = (ulonglong *)(lVar15 + 0xADDR);
+          LOCK();
+          bVar6 = uVar8 == *puVar10;
+          if (bVar6) {
+            *puVar10 = uVar8 | 1L << (uVar7 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar6);
+      }
+      uVar18 = pMVar17->parameters_count;
+      (pIVar16->fields)._._.method_code = pIVar16;
+      if ((pMVar17->flags & 0x10) == 0) {
+        if (uVar18 != 2) goto code_?;
+        pcVar5 = FUN_?;
+      }
+      else if (uVar18 == 3) {
+        pcVar5 = FUN_?;
+      }
+      else {
 code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+        (pIVar16->fields)._._.method_code = (pIVar16->fields)._._.m_target;
+        pcVar5 = (pIVar16->fields)._._.method_ptr;
+      }
+      (pIVar16->fields)._._.invoke_impl = pcVar5;
+      (pIVar16->fields)._._.extra_arg = FUN_?;
+    }
+    if (pSVar11 == (String *)0x0) goto DAT_?;
+    iVar4 = (pSVar11->fields)._stringLength;
+    (this_02->fields).m_CaretSelectPosition = iVar4;
+    (this_02->fields).m_CaretPosition = iVar4;
+    if ((this_02->fields).m_CharacterLimit < 1) {
+      iVar14 = (pSVar11->fields)._stringLength;
+    }
+    else {
+      iVar14 = (this_02->fields).m_CharacterLimit;
+      iVar19 = (pSVar11->fields)._stringLength;
+      if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (iVar19 < iVar14) {
+        iVar14 = iVar19;
+      }
+    }
+    uVar7 = 0;
+    if (0 < iVar14) {
+      lStackX_10 = (longlong)iVar14;
+      puVar20 = &(pSVar11->fields)._firstChar;
+      lVar15 = 0;
+      do {
+        pSVar12 = (this_02->fields).m_Text;
+        if (pSVar12 == (String *)0x0) goto DAT_?;
+        if ((longlong)(pSVar11->fields)._stringLength <= (longlong)(ulonglong)uVar7) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowIndexOutOfRangeException
+                    ((MethodInfo *)0x0);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
+        }
+        if (pIVar16 == (InputField_OnValidateInput *)0x0) goto DAT_?;
+        c = (*(pIVar16->fields)._._.invoke_impl)
+                      ((pIVar16->fields)._._.method_code,(this_02->fields).m_Text,
+                       (pSVar12->fields)._stringLength,*puVar20,(pIVar16->fields)._._.method);
+        if (c != 0) {
+          pSVar12 = (this_02->fields).m_Text;
+          if ((*(int *)(lRam_? + 0xe4) == 0) &&
+             (FUN_?(), *(int *)(lRam_? + 0xe4) == 0)) {
+            FUN_?();
+          }
+          str1 = mscorlib.dll::System::Char::Char_ToString_2(c,(MethodInfo *)0x0);
+          pSVar12 = mscorlib.dll::System::String::String_Concat_4(pSVar12,str1,(MethodInfo *)0x0);
+          (this_02->fields).m_Text = pSVar12;
+          func_?(&(this_02->fields).m_Text);
+        }
+        uVar7 = uVar7 + 1;
+        lVar15 = lVar15 + 1;
+        puVar20 = puVar20 + 1;
+      } while (lVar15 < lStackX_10);
+    }
+  }
+  if ((this_02->fields).m_Keyboard != (TouchScreenKeyboard *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::TouchScreenKeyboard::TouchScreenKeyboard_set_text
+              ((this_02->fields).m_Keyboard,(this_02->fields).m_Text,(MethodInfo *)0x0);
+  }
+  pSVar11 = (this_02->fields).m_Text;
+  if (pSVar11 == (String *)0x0) {
+DAT_?:
+    FUN_?();
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
+    return;
+  }
+  iVar14 = (pSVar11->fields)._stringLength;
+  if (iVar14 < (this_02->fields).m_CaretPosition) {
+    (this_02->fields).m_CaretPosition = iVar14;
+  }
+  else if ((this_02->fields).m_CaretSelectPosition <= iVar14) goto code_?;
+  (this_02->fields).m_CaretSelectPosition = iVar14;
+code_?:
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__UnityEngine__Events__UnityEvent<System::String>__Invoke_System__String_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_InputField_value);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  UnityEngine.UIModule.dll::UnityEngine::UISystemProfilerApi::UISystemProfilerApi_AddMarker
+            (StringLiteral_InputField_value,(Object_1 *)this_02,(MethodInfo *)0x0);
+  if ((this_02->fields).m_OnValueChanged != (InputField_OnChangeEvent *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent`1[System::Object]::
+    UnityEvent_1_System_Object__Invoke
+              ((UnityEvent_1_System_Object_ *)(this_02->fields).m_OnValueChanged,
+               (Object *)(this_02->fields).m_Text,
+               MethodInfo__UnityEngine__Events__UnityEvent<System::String>__Invoke_System__String_);
+  }
+  UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_UpdateLabel(this_02,(MethodInfo *)0x0)
+  ;
   return;
 }
 
@@ -120,24 +370,102 @@ void Assembly-CSharp.dll::GameCoinChestSettings::GameCoinChestSettings_OnSetting
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Convert);
-    func_?(&TypeInfo__System__Int32);
+    FUN_?(&TypeInfo__System__Convert);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).settingsBase;
-  if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Convert);
+  pSVar1 = (this->fields).settingsBase;
+  if (*(int *)&(TypeInfo__System__Convert->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  this = (GameCoinChestSettings *)
-         mscorlib.dll::System::Convert::Convert_ToInt32(value,(MethodInfo *)0x0);
-  value_00 = (Object *)func_?(TypeInfo__System__Int32,&this);
-  if (this_00 != (SettingsBase *)0x0) {
-    SettingsBase::SettingsBase_OnSettingChanged(this_00,key,value_00,(MethodInfo *)0x0);
+  aiStackX_8[0] = mscorlib.dll::System::Convert::Convert_ToInt32(value,(MethodInfo *)0x0);
+  value_00 = (Object *)FUN_?(uRam_?,aiStackX_8);
+  if (pSVar1 != (SettingsBase *)0x0) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?();
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if ((((pSVar1->fields).woID != -1) && (key != (String *)0x0)) &&
+       ((key->fields)._stringLength != 0)) {
+      this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      if (this_01 != (MVWorldObjectClientManager *)0x0) {
+        wo = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
+                       (this_01,(pSVar1->fields).woID,(MethodInfo *)0x0);
+        if (wo == (MVWorldObjectClient *)0x0) {
+          return;
+        }
+        if (*(int *)&(TypeInfo__WorldObjectDataValidator->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        uVar2 = 0;
+        WorldObjectDataValidator::WorldObjectDataValidator_Validate
+                  (wo,key,value_00,(MethodInfo *)0x0);
+        this_00 = (pSVar1->fields).result;
+        if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+          uVar2 = CONCAT71((int7)((ulonglong)uVar2 >> 8),1);
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__TryInsert
+                    (this_00,(Object *)key,value_00,(InsertionBehavior__Enum)uVar2,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                     ->klass->rgctx_data[0x22].method);
+          this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+                     *)FUN_?(
+                                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                    );
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+          UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::
+          Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
+                    (this_02,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                    );
+          if (this_02 !=
+              (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+               *)0x0) {
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__TryInsert
+                      ((Dictionary_2_System_Object_System_Object_ *)this_02,(Object *)key,value_00,
+                       (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar2 >> 8),2),
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                       ->klass->rgctx_data[0x22].method);
+            (*(wo->klass->vtable).PartialUpdateWOData.methodPtr)
+                      (wo,this_02,(wo->klass->vtable).PartialUpdateWOData.method);
+            return;
+          }
+        }
+      }
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

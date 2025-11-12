@@ -14,8 +14,8 @@ Assembly-CSharp.dll::MultiThrowingStarHitPackage::MultiThrowingStarHitPackage_Cr
   __return_storage_ptr__->playerKilledByType = 0;
   *(undefined2 *)&__return_storage_ptr__->field_0x12 = 0;
   MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_3
-            (__return_storage_ptr__,InteractionPackageType__Enum_MultiThrowingStarHit,
-             PlayerKilledByType__Enum_MultiThrowingStar,(MethodInfo *)0x0);
+            (__return_storage_ptr__,CONCAT31((int3)((ulonglong)method >> 8),0x18),
+             CONCAT31((int3)((uint)in_R8D >> 8),0x14),(MethodInfo *)0x0);
   return __return_storage_ptr__;
 }
 
@@ -25,20 +25,25 @@ Assembly-CSharp.dll::MultiThrowingStarHitPackage::MultiThrowingStarHitPackage_Cr
 void Assembly-CSharp.dll::MultiThrowingStarHitPackage::
      MultiThrowingStarHitPackage_ParseAndHandlePackage
                (MultiThrowingStarHitPackage *this,MVWorldObjectClient *worldObjectClient,
-               MVPlayer *shooter,InteractionData interactionStruct,MethodInfo *method)
+               MVPlayer *shooter,InteractionData *interactionStruct,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__MV__WorldObject__InteractionData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__MV__WorldObject__InteractionData->_1).field_0x1c == 0) {
+    FUN_?();
   }
+  VStack_1.z = (interactionStruct->impulse).z;
+  VStack_1.x = (interactionStruct->impulse).x;
+  VStack_1.y = (interactionStruct->impulse).y;
   InteractionPackage::InteractionPackage_HandlePackage_1
-            ((InteractionPackage *)this,worldObjectClient,shooter,interactionStruct.damage,
-             PlayerKilledByType__Enum_MultiThrowingStar,interactionStruct.impulse,(MethodInfo *)0x0)
-  ;
+            ((InteractionPackage *)this,worldObjectClient,shooter,interactionStruct->damage,
+             CONCAT31((int3)((uint)in_stack_2 >> 8),0x14),&VStack_1,
+             (MethodInfo *)0x0);
   return;
 }
 

@@ -14,14 +14,17 @@ Color * Assembly-CSharp.dll::RTG::RTSystemValues::RTSystemValues_get_CameraBkGra
                   (Color *__return_storage_ptr__,MethodInfo *method)
 
 {
-  pCVar1 = ColorEx::ColorEx_FromByteValues(&CStack_2,0x47,0x47,0x47,0xff,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  __return_storage_ptr__->r = pCVar1->r;
-  __return_storage_ptr__->g = fVar3;
-  __return_storage_ptr__->b = fVar4;
-  __return_storage_ptr__->a = fVar5;
+  uVar1 = _UNK_?;
+  uVar2 = _UNK_?;
+  __return_storage_ptr__->r = (float)_UNK_?;
+  uVar3 = _UNK_?;
+  __return_storage_ptr__->g = (float)uVar2;
+  _UNK_? = (undefined4)uVar1;
+  _UNK_? = SUB84(uVar1,4);
+  uVar2 = _UNK_?;
+  __return_storage_ptr__->b = (float)_UNK_?;
+  _UNK_? = uVar3;
+  __return_storage_ptr__->a = (float)uVar2;
   return __return_storage_ptr__;
 }
 
@@ -32,13 +35,17 @@ Color * Assembly-CSharp.dll::RTG::RTSystemValues::RTSystemValues_get_CameraBkGra
                   (Color *__return_storage_ptr__,MethodInfo *method)
 
 {
-  fVar1 = _UNK_?;
-  fVar2 = _UNK_?;
-  fVar3 = _UNK_?;
-  __return_storage_ptr__->r = _UNK_?;
-  __return_storage_ptr__->g = fVar3;
-  __return_storage_ptr__->b = fVar2;
-  __return_storage_ptr__->a = fVar1;
+  uVar1 = _UNK_?;
+  uVar2 = _UNK_?;
+  __return_storage_ptr__->r = (float)_UNK_?;
+  uVar3 = _UNK_?;
+  __return_storage_ptr__->g = (float)uVar2;
+  _UNK_? = (undefined4)uVar1;
+  _UNK_? = SUB84(uVar1,4);
+  uVar2 = _UNK_?;
+  __return_storage_ptr__->b = (float)_UNK_?;
+  _UNK_? = uVar3;
+  __return_storage_ptr__->a = (float)uVar2;
   return __return_storage_ptr__;
 }
 
@@ -49,14 +56,17 @@ Color * Assembly-CSharp.dll::RTG::RTSystemValues::RTSystemValues_get_CenterAxisC
                   (Color *__return_storage_ptr__,MethodInfo *method)
 
 {
-  pCVar1 = ColorEx::ColorEx_FromByteValues(&CStack_2,0xcc,0xcc,0xcc,0xff,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  __return_storage_ptr__->r = pCVar1->r;
-  __return_storage_ptr__->g = fVar3;
-  __return_storage_ptr__->b = fVar4;
-  __return_storage_ptr__->a = fVar5;
+  uVar1 = _UNK_?;
+  uVar2 = _UNK_?;
+  __return_storage_ptr__->r = (float)_UNK_?;
+  uVar3 = _UNK_?;
+  __return_storage_ptr__->g = (float)uVar2;
+  _UNK_? = (undefined4)uVar1;
+  _UNK_? = SUB84(uVar1,4);
+  uVar2 = _UNK_?;
+  __return_storage_ptr__->b = (float)_UNK_?;
+  _UNK_? = uVar3;
+  __return_storage_ptr__->a = (float)uVar2;
   return __return_storage_ptr__;
 }
 
@@ -67,14 +77,17 @@ Color * Assembly-CSharp.dll::RTG::RTSystemValues::RTSystemValues_get_GridLineCol
                   (Color *__return_storage_ptr__,MethodInfo *method)
 
 {
-  pCVar1 = ColorEx::ColorEx_FromByteValues(&CStack_2,0x80,0x80,0x80,0x66,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  __return_storage_ptr__->r = pCVar1->r;
-  __return_storage_ptr__->g = fVar3;
-  __return_storage_ptr__->b = fVar4;
-  __return_storage_ptr__->a = fVar5;
+  uVar1 = _UNK_?;
+  uVar2 = _UNK_?;
+  __return_storage_ptr__->r = (float)_UNK_?;
+  uVar3 = _UNK_?;
+  __return_storage_ptr__->g = (float)uVar2;
+  _UNK_? = (undefined4)uVar1;
+  _UNK_? = SUB84(uVar1,4);
+  uVar2 = _UNK_?;
+  __return_storage_ptr__->b = (float)_UNK_?;
+  _UNK_? = uVar3;
+  __return_storage_ptr__->a = (float)uVar2;
   return __return_storage_ptr__;
 }
 
@@ -113,14 +126,17 @@ Color * Assembly-CSharp.dll::RTG::RTSystemValues::RTSystemValues_get_HoveredAxis
                   (Color *__return_storage_ptr__,MethodInfo *method)
 
 {
-  pCVar1 = ColorEx::ColorEx_FromByteValues(&CStack_2,0xf6,0xf2,0x32,0xff,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  __return_storage_ptr__->r = pCVar1->r;
-  __return_storage_ptr__->g = fVar3;
-  __return_storage_ptr__->b = fVar4;
-  __return_storage_ptr__->a = fVar5;
+  uVar1 = _UNK_?;
+  uVar2 = _UNK_?;
+  __return_storage_ptr__->r = (float)_UNK_?;
+  uVar3 = _UNK_?;
+  __return_storage_ptr__->g = (float)uVar2;
+  _UNK_? = (undefined4)uVar1;
+  _UNK_? = SUB84(uVar1,4);
+  uVar2 = _UNK_?;
+  __return_storage_ptr__->b = (float)_UNK_?;
+  _UNK_? = uVar3;
+  __return_storage_ptr__->a = (float)uVar2;
   return __return_storage_ptr__;
 }
 
@@ -131,14 +147,17 @@ Color * Assembly-CSharp.dll::RTG::RTSystemValues::RTSystemValues_get_XAxisColor
                   (Color *__return_storage_ptr__,MethodInfo *method)
 
 {
-  pCVar1 = ColorEx::ColorEx_FromByteValues(&CStack_2,0xdb,0x3e,0x1d,0xff,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  __return_storage_ptr__->r = pCVar1->r;
-  __return_storage_ptr__->g = fVar3;
-  __return_storage_ptr__->b = fVar4;
-  __return_storage_ptr__->a = fVar5;
+  uVar1 = _UNK_?;
+  uVar2 = _UNK_?;
+  __return_storage_ptr__->r = (float)_UNK_?;
+  uVar3 = _UNK_?;
+  __return_storage_ptr__->g = (float)uVar2;
+  _UNK_? = (undefined4)uVar1;
+  _UNK_? = SUB84(uVar1,4);
+  uVar2 = _UNK_?;
+  __return_storage_ptr__->b = (float)_UNK_?;
+  _UNK_? = uVar3;
+  __return_storage_ptr__->a = (float)uVar2;
   return __return_storage_ptr__;
 }
 
@@ -149,14 +168,17 @@ Color * Assembly-CSharp.dll::RTG::RTSystemValues::RTSystemValues_get_YAxisColor
                   (Color *__return_storage_ptr__,MethodInfo *method)
 
 {
-  pCVar1 = ColorEx::ColorEx_FromByteValues(&CStack_2,0x9a,0xf3,0x48,0xff,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  __return_storage_ptr__->r = pCVar1->r;
-  __return_storage_ptr__->g = fVar3;
-  __return_storage_ptr__->b = fVar4;
-  __return_storage_ptr__->a = fVar5;
+  uVar1 = _UNK_?;
+  uVar2 = _UNK_?;
+  __return_storage_ptr__->r = (float)_UNK_?;
+  uVar3 = _UNK_?;
+  __return_storage_ptr__->g = (float)uVar2;
+  _UNK_? = (undefined4)uVar1;
+  _UNK_? = SUB84(uVar1,4);
+  uVar2 = _UNK_?;
+  __return_storage_ptr__->b = (float)_UNK_?;
+  _UNK_? = uVar3;
+  __return_storage_ptr__->a = (float)uVar2;
   return __return_storage_ptr__;
 }
 
@@ -167,14 +189,17 @@ Color * Assembly-CSharp.dll::RTG::RTSystemValues::RTSystemValues_get_ZAxisColor
                   (Color *__return_storage_ptr__,MethodInfo *method)
 
 {
-  pCVar1 = ColorEx::ColorEx_FromByteValues(&CStack_2,0x3a,0x7a,0xf8,0xff,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  __return_storage_ptr__->r = pCVar1->r;
-  __return_storage_ptr__->g = fVar3;
-  __return_storage_ptr__->b = fVar4;
-  __return_storage_ptr__->a = fVar5;
+  uVar1 = _UNK_?;
+  uVar2 = _UNK_?;
+  __return_storage_ptr__->r = (float)_UNK_?;
+  uVar3 = _UNK_?;
+  __return_storage_ptr__->g = (float)uVar2;
+  _UNK_? = (undefined4)uVar1;
+  _UNK_? = SUB84(uVar1,4);
+  uVar2 = _UNK_?;
+  __return_storage_ptr__->b = (float)_UNK_?;
+  _UNK_? = uVar3;
+  __return_storage_ptr__->a = (float)uVar2;
   return __return_storage_ptr__;
 }
 

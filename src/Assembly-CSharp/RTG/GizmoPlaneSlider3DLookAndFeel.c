@@ -6,16 +6,70 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::GizmoPlaneSlider3D
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__GizmoRotationArc3DLookAndFeel);
+    FUN_?(&TypeInfo__RTG__GizmoRotationArc3DLookAndFeel);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  fVar1 = _UNK_?;
-  fVar2 = _UNK_?;
-  fVar3 = _UNK_?;
-  fVar4 = _UNK_?;
+  uVar1 = _UNK_?;
+  uVar2 = _UNK_?;
+  uVar3 = _UNK_?;
+  uVar4 = _UNK_?;
+  uVar5 = _UNK_?;
+  (this->fields)._color.r = (float)_UNK_?;
+  uVar6 = _UNK_?;
+  (this->fields)._color.g = (float)uVar5;
+  _UNK_? = (undefined4)uVar1;
+  _UNK_? = SUB84(uVar1,4);
+  uVar5 = _UNK_?;
+  (this->fields)._color.b = (float)_UNK_?;
+  _UNK_? = uVar6;
+  (this->fields)._color.a = (float)uVar5;
   (this->fields)._scale = 1.0;
+  uVar6 = _UNK_?;
+  _UNK_? = (undefined4)uVar4;
+  _UNK_? = SUB84(uVar4,4);
+  uVar5 = _UNK_?;
+  (this->fields)._hoveredColor.r = (float)_UNK_?;
+  _UNK_? = uVar6;
+  uVar6 = _UNK_?;
+  (this->fields)._hoveredColor.g = (float)uVar5;
+  _UNK_? = (undefined4)uVar3;
+  _UNK_? = SUB84(uVar3,4);
+  uVar5 = _UNK_?;
+  (this->fields)._hoveredColor.b = (float)_UNK_?;
+  _UNK_? = uVar6;
+  (this->fields)._hoveredColor.a = (float)uVar5;
   (this->fields)._useZoomFactor = 1;
+  uVar6 = _UNK_?;
+  _UNK_? = (undefined4)uVar2;
+  _UNK_? = SUB84(uVar2,4);
+  uVar5 = _UNK_?;
+  (this->fields)._borderColor.r = (float)_UNK_?;
+  _UNK_? = uVar6;
+  uVar6 = _UNK_?;
+  (this->fields)._borderColor.g = (float)uVar5;
+  _UNK_? = (undefined4)uVar1;
+  _UNK_? = SUB84(uVar1,4);
+  uVar5 = _UNK_?;
+  (this->fields)._borderColor.b = (float)_UNK_?;
+  _UNK_? = uVar6;
+  (this->fields)._borderColor.a = (float)uVar5;
   (this->fields)._quadWidth = 1.0;
+  uVar6 = _UNK_?;
+  _UNK_? = (undefined4)uVar4;
+  _UNK_? = SUB84(uVar4,4);
+  uVar5 = _UNK_?;
+  (this->fields)._hoveredBorderColor.r = (float)_UNK_?;
+  _UNK_? = uVar6;
+  uVar4 = _UNK_?;
+  (this->fields)._hoveredBorderColor.g = (float)uVar5;
+  _UNK_? = (undefined4)uVar3;
+  _UNK_? = SUB84(uVar3,4);
+  uVar5 = _UNK_?;
+  (this->fields)._hoveredBorderColor.b = (float)_UNK_?;
+  _UNK_? = uVar4;
+  (this->fields)._hoveredBorderColor.a = (float)uVar5;
   (this->fields)._quadHeight = 1.0;
   (this->fields)._raTriangleXLength = 1.0;
   (this->fields)._raTriangleYLength = 1.0;
@@ -27,55 +81,60 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::GizmoPlaneSlider3D
   (this->fields)._borderCylTorusWidth = 0.18;
   (this->fields)._borderCylTorusHeight = 0.18;
   (this->fields)._shadeMode = 1;
-  (this->fields)._color.r = fVar4;
-  (this->fields)._color.g = fVar3;
-  (this->fields)._color.b = fVar2;
-  (this->fields)._color.a = fVar1;
-  pCVar5 = RTSystemValues::RTSystemValues_get_HoveredAxisColor(&CStack_6,(MethodInfo *)0x0);
-  fVar4 = pCVar5->g;
-  fVar3 = pCVar5->b;
-  fVar2 = pCVar5->a;
-  (this->fields)._hoveredColor.r = pCVar5->r;
-  (this->fields)._hoveredColor.g = fVar4;
-  (this->fields)._hoveredColor.b = fVar3;
-  (this->fields)._hoveredColor.a = fVar2;
-  fVar2 = _UNK_?;
-  fVar3 = _UNK_?;
-  fVar4 = _UNK_?;
-  (this->fields)._borderColor.r = _UNK_?;
-  (this->fields)._borderColor.g = fVar4;
-  (this->fields)._borderColor.b = fVar3;
-  (this->fields)._borderColor.a = fVar2;
-  pCVar5 = RTSystemValues::RTSystemValues_get_HoveredAxisColor(&CStack_6,(MethodInfo *)0x0);
-  fVar4 = pCVar5->r;
-  fVar3 = pCVar5->g;
-  fVar2 = pCVar5->b;
-  fVar1 = pCVar5->a;
   (this->fields)._isRotationArcVisible = 1;
-  (this->fields)._hoveredBorderColor.r = fVar4;
-  (this->fields)._hoveredBorderColor.g = fVar3;
-  (this->fields)._hoveredBorderColor.b = fVar2;
-  (this->fields)._hoveredBorderColor.a = fVar1;
-  this_00 = (GizmoRotationArc3DLookAndFeel *)
-            func_?(TypeInfo__RTG__GizmoRotationArc3DLookAndFeel);
-  GizmoRotationArc3DLookAndFeel::GizmoRotationArc3DLookAndFeel__ctor(this_00,(MethodInfo *)0x0);
-  method_00 = (MethodInfo *)&(this->fields)._rotationArcLookAndFeel;
-  (this->fields)._rotationArcLookAndFeel = this_00;
-  func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  pGVar7 = (GizmoRotationArc3DLookAndFeel *)
+           FUN_?(TypeInfo__RTG__GizmoRotationArc3DLookAndFeel);
+  uVar1 = _UNK_?;
+  uVar2 = _UNK_?;
+  uVar3 = _UNK_?;
+  uVar4 = _UNK_?;
+  bVar8 = iRam_? != 0;
+  (pGVar7->fields)._useShortestRotation = 1;
+  (pGVar7->fields)._fillFlags = 3;
+  uVar6 = _UNK_?;
+  _UNK_? = (undefined4)uVar4;
+  _UNK_? = SUB84(uVar4,4);
+  uVar5 = _UNK_?;
+  (pGVar7->fields)._color.r = (float)_UNK_?;
+  _UNK_? = uVar6;
+  uVar4 = _UNK_?;
+  (pGVar7->fields)._color.g = (float)uVar5;
+  _UNK_? = (undefined4)uVar3;
+  _UNK_? = SUB84(uVar3,4);
+  uVar5 = _UNK_?;
+  (pGVar7->fields)._color.b = (float)_UNK_?;
+  _UNK_? = uVar4;
+  uVar4 = _UNK_?;
+  (pGVar7->fields)._color.a = (float)uVar5;
+  _UNK_? = (undefined4)uVar2;
+  _UNK_? = SUB84(uVar2,4);
+  uVar5 = _UNK_?;
+  (pGVar7->fields)._borderColor.r = (float)_UNK_?;
+  _UNK_? = uVar4;
+  uVar4 = _UNK_?;
+  (pGVar7->fields)._borderColor.g = (float)uVar5;
+  _UNK_? = (undefined4)uVar1;
+  _UNK_? = SUB84(uVar1,4);
+  uVar5 = _UNK_?;
+  (pGVar7->fields)._borderColor.b = (float)_UNK_?;
+  _UNK_? = uVar4;
+  (pGVar7->fields)._borderColor.a = (float)uVar5;
+  (this->fields)._rotationArcLookAndFeel = pGVar7;
+  if (bVar8) {
+    uVar9 = (uint)((ulonglong)&(this->fields)._rotationArcLookAndFeel >> 0xc);
+    uVar10 = (ulonglong)((uVar9 & 0x1fffff) >> 6);
+    do {
+      uVar11 = *(ulonglong *)(uVar10 * 8 + 0xADDR);
+      puVar12 = (ulonglong *)(uVar10 * 8 + 0xADDR);
+      LOCK();
+      bVar8 = uVar11 == *puVar12;
+      if (bVar8) {
+        *puVar12 = uVar11 | 1L << (uVar9 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar8);
+  }
   return;
-}
-
-
-/* Single get_BorderCircleCullAlphaScale() */
-
-float Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::
-      GizmoPlaneSlider3DLookAndFeel_get_BorderCircleCullAlphaScale
-                (GizmoPlaneSlider3DLookAndFeel *this,MethodInfo *method)
-
-{
-  return (this->fields)._borderCircleCullAlphaScale;
 }
 
 
@@ -136,6 +195,29 @@ Color * Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::
 }
 
 
+/* Boolean get_IsRotationArcVisible() */
+
+bool Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::
+     GizmoPlaneSlider3DLookAndFeel_get_IsRotationArcVisible
+               (GizmoPlaneSlider3DLookAndFeel *this,MethodInfo *method)
+
+{
+  return (this->fields)._isRotationArcVisible;
+}
+
+
+/* GizmoRATriangle3DBorderType get_RATriangleBorderType() */
+
+GizmoRATriangle3DBorderType__Enum
+Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::
+GizmoPlaneSlider3DLookAndFeel_get_RATriangleBorderType
+          (GizmoPlaneSlider3DLookAndFeel *this,MethodInfo *method)
+
+{
+  return (this->fields)._raTriangleBorderType;
+}
+
+
 /* Void set_BorderBoxDepth(Single) */
 
 void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::
@@ -148,6 +230,22 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::
     fVar1 = value;
   }
   (this->fields)._borderBoxDepth = fVar1;
+  return;
+}
+
+
+/* Void set_BorderBoxHeight(Single) */
+
+void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::
+     GizmoPlaneSlider3DLookAndFeel_set_BorderBoxHeight
+               (GizmoPlaneSlider3DLookAndFeel *this,float value,MethodInfo *method)
+
+{
+  fVar1 = 0.0;
+  if (0.0 <= value) {
+    fVar1 = value;
+  }
+  (this->fields)._borderBoxHeight = fVar1;
   return;
 }
 
@@ -165,6 +263,24 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::
     return;
   }
   (this->fields)._borderCircleCullAlphaScale = fVar1;
+  return;
+}
+
+
+/* Void set_BorderColor(Color) */
+
+void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::
+     GizmoPlaneSlider3DLookAndFeel_set_BorderColor
+               (GizmoPlaneSlider3DLookAndFeel *this,Color *value,MethodInfo *method)
+
+{
+  fVar1 = value->g;
+  fVar2 = value->b;
+  fVar3 = value->a;
+  (this->fields)._borderColor.r = value->r;
+  (this->fields)._borderColor.g = fVar1;
+  (this->fields)._borderColor.b = fVar2;
+  (this->fields)._borderColor.a = fVar3;
   return;
 }
 
@@ -201,18 +317,6 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::
 }
 
 
-/* Void set_BorderFillMode(GizmoFillMode3D) */
-
-void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::
-     GizmoPlaneSlider3DLookAndFeel_set_BorderFillMode
-               (GizmoPlaneSlider3DLookAndFeel *this,GizmoFillMode3D__Enum value,MethodInfo *method)
-
-{
-  (this->fields)._borderFillMode = value;
-  return;
-}
-
-
 /* Void set_BorderTorusThickness(Single) */
 
 void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::
@@ -242,33 +346,20 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::
 }
 
 
-/* Void set_CircleRadius(Single) */
-
-void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::
-     GizmoPlaneSlider3DLookAndFeel_set_CircleRadius
-               (GizmoPlaneSlider3DLookAndFeel *this,float value,MethodInfo *method)
-
-{
-  fVar1 = 0.0;
-  if (0.0 <= value) {
-    fVar1 = value;
-  }
-  (this->fields)._circleRadius = fVar1;
-  return;
-}
-
-
 /* Void set_HoveredBorderColor(Color) */
 
 void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::
      GizmoPlaneSlider3DLookAndFeel_set_HoveredBorderColor
-               (GizmoPlaneSlider3DLookAndFeel *this,Color value,MethodInfo *method)
+               (GizmoPlaneSlider3DLookAndFeel *this,Color *value,MethodInfo *method)
 
 {
-  (this->fields)._hoveredBorderColor.r = value.r;
-  (this->fields)._hoveredBorderColor.g = value.g;
-  (this->fields)._hoveredBorderColor.b = value.b;
-  (this->fields)._hoveredBorderColor.a = value.a;
+  fVar1 = value->g;
+  fVar2 = value->b;
+  fVar3 = value->a;
+  (this->fields)._hoveredBorderColor.r = value->r;
+  (this->fields)._hoveredBorderColor.g = fVar1;
+  (this->fields)._hoveredBorderColor.b = fVar2;
+  (this->fields)._hoveredBorderColor.a = fVar3;
   return;
 }
 
@@ -277,13 +368,28 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::
 
 void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::
      GizmoPlaneSlider3DLookAndFeel_set_HoveredColor
-               (GizmoPlaneSlider3DLookAndFeel *this,Color value,MethodInfo *method)
+               (GizmoPlaneSlider3DLookAndFeel *this,Color *value,MethodInfo *method)
 
 {
-  (this->fields)._hoveredColor.r = value.r;
-  (this->fields)._hoveredColor.g = value.g;
-  (this->fields)._hoveredColor.b = value.b;
-  (this->fields)._hoveredColor.a = value.a;
+  fVar1 = value->g;
+  fVar2 = value->b;
+  fVar3 = value->a;
+  (this->fields)._hoveredColor.r = value->r;
+  (this->fields)._hoveredColor.g = fVar1;
+  (this->fields)._hoveredColor.b = fVar2;
+  (this->fields)._hoveredColor.a = fVar3;
+  return;
+}
+
+
+/* Void set_IsRotationArcVisible(Boolean) */
+
+void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::
+     GizmoPlaneSlider3DLookAndFeel_set_IsRotationArcVisible
+               (GizmoPlaneSlider3DLookAndFeel *this,bool value,MethodInfo *method)
+
+{
+  (this->fields)._isRotationArcVisible = value;
   return;
 }
 
@@ -300,6 +406,19 @@ void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::
     iVar1 = value;
   }
   (this->fields)._numBorderTorusWireAxialSlices = iVar1;
+  return;
+}
+
+
+/* Void set_RATriangleBorderType(GizmoRATriangle3DBorderType) */
+
+void Assembly-CSharp.dll::RTG::GizmoPlaneSlider3DLookAndFeel::
+     GizmoPlaneSlider3DLookAndFeel_set_RATriangleBorderType
+               (GizmoPlaneSlider3DLookAndFeel *this,GizmoRATriangle3DBorderType__Enum value,
+               MethodInfo *method)
+
+{
+  (this->fields)._raTriangleBorderType = value;
   return;
 }
 

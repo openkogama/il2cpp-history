@@ -45,70 +45,188 @@ void Assembly-CSharp.dll::SkillSettingBase::SkillSettingBase_Initialize
 
 {
   (this->fields).skillDataManager = skillDataManager;
-  func_?(&(this->fields).skillDataManager,skillDataManager);
-  (this->fields).currentSkillCost = skillCost;
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)&(this->fields).skillDataManager >> 0xc);
+    uVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6);
+    do {
+      uVar3 = *(ulonglong *)(uVar2 * 8 + 0xADDR);
+      puVar4 = (ulonglong *)(uVar2 * 8 + 0xADDR);
+      LOCK();
+      bVar5 = uVar3 == *puVar4;
+      if (bVar5) {
+        *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
+  iVar6 = iRam_?;
   (this->fields).spawnRoleCost = spawnRoleCost;
   (this->fields).spawnRoleTier = (undefined1)spawnRoleTier;
   (this->fields).skillSetting = skillSetting;
-  func_?(&(this->fields).skillSetting,skillSetting);
+  (this->fields).currentSkillCost = skillCost;
+  if (iVar6 != 0) {
+    uVar1 = (uint)((ulonglong)&(this->fields).skillSetting >> 0xc);
+    uVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6);
+    do {
+      uVar3 = *(ulonglong *)(uVar2 * 8 + 0xADDR);
+      puVar4 = (ulonglong *)(uVar2 * 8 + 0xADDR);
+      LOCK();
+      bVar5 = uVar3 == *puVar4;
+      if (bVar5) {
+        *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+      iVar6 = iRam_?;
+    } while (!bVar5);
+  }
   (this->fields).removeSkillCallback = removeSkillCallback;
-  func_?(&(this->fields).removeSkillCallback,removeSkillCallback);
+  iVar7 = 0;
+  if (iVar6 != 0) {
+    uVar1 = (uint)((ulonglong)&(this->fields).removeSkillCallback >> 0xc);
+    uVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6);
+    do {
+      uVar3 = *(ulonglong *)(uVar2 * 8 + 0xADDR);
+      puVar4 = (ulonglong *)(uVar2 * 8 + 0xADDR);
+      LOCK();
+      bVar5 = uVar3 == *puVar4;
+      if (bVar5) {
+        *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar5);
+  }
   (this->fields).updateSkillCallback = updateSkillCallback;
-  func_?(&(this->fields).updateSkillCallback,updateSkillCallback);
+  iVar6 = 0;
+  if (iVar7 != 0) {
+    uVar1 = (uint)((ulonglong)&(this->fields).updateSkillCallback >> 0xc);
+    uVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6);
+    do {
+      uVar3 = *(ulonglong *)(uVar2 * 8 + 0xADDR);
+      puVar4 = (ulonglong *)(uVar2 * 8 + 0xADDR);
+      LOCK();
+      bVar5 = uVar3 == *puVar4;
+      if (bVar5) {
+        *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+      iVar6 = iRam_?;
+    } while (!bVar5);
+  }
   (this->fields).cantUpdateSkillCallback = cantUpdateSkillCallback;
-  func_?(&(this->fields).cantUpdateSkillCallback,cantUpdateSkillCallback);
+  iVar7 = 0;
+  if (iVar6 != 0) {
+    uVar1 = (uint)((ulonglong)&(this->fields).cantUpdateSkillCallback >> 0xc);
+    uVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6);
+    do {
+      uVar3 = *(ulonglong *)(uVar2 * 8 + 0xADDR);
+      puVar4 = (ulonglong *)(uVar2 * 8 + 0xADDR);
+      LOCK();
+      bVar5 = uVar3 == *puVar4;
+      if (bVar5) {
+        *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar5);
+  }
   (this->fields).cantRemoveSkillCallback = cantRemoveSkillCallback;
-  func_?(&(this->fields).cantRemoveSkillCallback,cantRemoveSkillCallback);
-  pTVar1 = (this->fields).nameText;
-  if (skillDataManager != (SpawnRolesSkillDataManager *)0x0) {
-    pSVar2 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetNameText
-                       (skillDataManager,skill,(MethodInfo *)0x0);
-    if (pTVar1 != (Text *)0x0) {
-      (*(code *)(pTVar1->klass->vtable).set_text.method)
-                (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-      pTVar1 = (this->fields).skillCostText;
-      pSVar2 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&skillCost,(MethodInfo *)0x0);
-      if (pTVar1 != (Text *)0x0) {
-        (*(code *)(pTVar1->klass->vtable).set_text.method)
-                  (pTVar1,pSVar2,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
-        ;
-        pTVar1 = (this->fields).skillCostText;
-        pCVar3 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetCostColor
-                           (&CStack_4,skillCost,(MethodInfo *)0x0);
-        if (pTVar1 != (Text *)0x0) {
-          (*(code *)(pTVar1->klass->vtable).set_color.method)
-                    (pTVar1,pCVar3->r,pCVar3->g,pCVar3->b,pCVar3->a,
-                     (pTVar1->klass->vtable).get_raycastTarget.methodPtr);
-          pSVar5 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetImageClone
-                             (skillDataManager,skill,(this->fields).iconColor,
-                              (this->fields).iconBackgroundColor,(this->fields).iconWidth,
-                              (this->fields).iconHeight,(MethodInfo *)0x0);
-          (this->fields).skillIcon = pSVar5;
-          func_?(&(this->fields).skillIcon,pSVar5);
-          pSVar5 = (this->fields).skillIcon;
-          if (pSVar5 != (SpawnRoleSkillIconController *)0x0) {
-            this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                                ((Component *)pSVar5,(MethodInfo *)0x0);
-            if (this_00 != (Transform *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                        (this_00,(this->fields).imageContainer,0,(MethodInfo *)0x0);
-              pSVar5 = (this->fields).skillIcon;
-              if (pSVar5 != (SpawnRoleSkillIconController *)0x0) {
-                SpawnRoleSkillIconController::SpawnRoleSkillIconController_HandleNegativeState
-                          (pSVar5,skillCost,(MethodInfo *)0x0);
-                (*(code *)(this->klass->vtable).InitializeInfoButton.method)
-                          (this,skill,skillCost,skillDataManager,this->klass[1]._0.image);
-                return;
-              }
+  if (iVar7 != 0) {
+    uVar1 = (uint)((ulonglong)&(this->fields).cantRemoveSkillCallback >> 0xc);
+    uVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6);
+    do {
+      uVar3 = *(ulonglong *)(uVar2 * 8 + 0xADDR);
+      puVar4 = (ulonglong *)(uVar2 * 8 + 0xADDR);
+      LOCK();
+      bVar5 = uVar3 == *puVar4;
+      if (bVar5) {
+        *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
+  pTVar8 = (this->fields).nameText;
+  aIStackX_20[0].m_value = skillCost;
+  if ((skillDataManager != (SpawnRolesSkillDataManager *)0x0) &&
+     (pSVar9 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetNameText
+                         (skillDataManager,skill,(MethodInfo *)0x0), pTVar8 != (Text *)0x0)) {
+    (*(pTVar8->klass->vtable).set_text.methodPtr)
+              (pTVar8,pSVar9,(pTVar8->klass->vtable).set_text.method);
+    pTVar8 = (this->fields).skillCostText;
+    pSVar9 = mscorlib.dll::System::Int32::Int32_ToString(aIStackX_20,(MethodInfo *)0x0);
+    if (pTVar8 != (Text *)0x0) {
+      (*(pTVar8->klass->vtable).set_text.methodPtr)(pTVar8,pSVar9);
+      pTVar8 = (this->fields).skillCostText;
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__Styles);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (skillCost < 0) {
+        if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        colorStyle = ColorStyle__Enum_NegativeRed;
+      }
+      else {
+        if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        colorStyle = ColorStyle__Enum_OffWhite;
+      }
+      pCVar10 = Styles::Styles_GetColor(&CStack_11,colorStyle,(MethodInfo *)0x0);
+      if (pTVar8 != (Text *)0x0) {
+        CStack_11.r = pCVar10->r;
+        CStack_11.g = pCVar10->g;
+        CStack_11.b = pCVar10->b;
+        CStack_11.a = pCVar10->a;
+        (*(pTVar8->klass->vtable).set_color.methodPtr)
+                  (pTVar8,&CStack_11,(pTVar8->klass->vtable).set_color.method);
+        pSVar12 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetImageClone
+                           (skillDataManager,skill,(this->fields).iconColor,
+                            (this->fields).iconBackgroundColor,(this->fields).iconWidth,
+                            (this->fields).iconHeight,(MethodInfo *)0x0);
+        bVar5 = iRam_? != 0;
+        (this->fields).skillIcon = pSVar12;
+        if (bVar5) {
+          uVar1 = (uint)((ulonglong)&(this->fields).skillIcon >> 0xc);
+          uVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6);
+          do {
+            uVar3 = *(ulonglong *)(uVar2 * 8 + 0xADDR);
+            puVar4 = (ulonglong *)(uVar2 * 8 + 0xADDR);
+            LOCK();
+            bVar5 = uVar3 == *puVar4;
+            if (bVar5) {
+              *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
             }
+            UNLOCK();
+          } while (!bVar5);
+        }
+        pSVar12 = (this->fields).skillIcon;
+        if ((pSVar12 != (SpawnRoleSkillIconController *)0x0) &&
+           (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                ((Component *)pSVar12,(MethodInfo *)0x0), this_00 != (Transform *)0x0
+           )) {
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                    (this_00,(this->fields).imageContainer,0,(MethodInfo *)0x0);
+          pSVar12 = (this->fields).skillIcon;
+          if (pSVar12 != (SpawnRoleSkillIconController *)0x0) {
+            SpawnRoleSkillIconController::SpawnRoleSkillIconController_HandleNegativeState
+                      (pSVar12,skillCost,(MethodInfo *)0x0);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+            (*(this->klass->vtable).InitializeInfoButton.methodPtr)
+                      (this,skill,(ulonglong)(uint)skillCost,skillDataManager);
+            return;
           }
         }
       }
     }
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -120,27 +238,43 @@ void Assembly-CSharp.dll::SkillSettingBase::SkillSettingBase_InitializeInfoButto
                SpawnRolesSkillDataManager *skillDataManager,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
-    cRam_? = '\x01';
+  lVar1 = lRam_?;
+  this_00 = (this->fields).infoButton;
+  uStackX_8 = 0;
+  if (*(int *)(lRam_? + 0x28) < 0) {
+    if ((*(longlong *)(lRam_? + 0x60) == 0) ||
+       ((*(byte *)(lRam_? + 0x135) & 8) == 0)) {
+      skillValue = (Object *)FUN_?(lRam_?);
+      FUN_?(skillValue + 1,&uStackX_8,(longlong)*(int *)(lVar1 + 0xf8) + -0x10);
+      if (iRam_? != 0) {
+        uVar2 = (uint)((ulonglong)(skillValue + 1) >> 0xc);
+        puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+        do {
+          uVar4 = *puVar3;
+          LOCK();
+          uVar5 = *puVar3;
+          if (uVar4 == uVar5) {
+            *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+          }
+          UNLOCK();
+        } while (uVar4 != uVar5);
+      }
+    }
+    else {
+      skillValue = (Object *)0x0;
+    }
   }
-  pSVar1 = this;
-  this = (SkillSettingBase *)0x0;
-  pSVar2 = (pSVar1->fields).infoButton;
-  pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&this);
-  if (pSVar2 != (SpawnRoleSkillInfoButton *)0x0) {
-    (pSVar2->fields).skillType = skill;
-    func_?(&(pSVar2->fields).skillType,skill);
-    (pSVar2->fields).skillValue = pOVar3;
-    func_?(&(pSVar2->fields).skillValue,pOVar3);
-    (pSVar2->fields).skillDataManager = skillDataManager;
-    func_?(&(pSVar2->fields).skillDataManager,skillDataManager);
-    (pSVar2->fields).skillCost = skillCost;
+  else {
+    skillValue = (Object *)((ulonglong)uStackX_c << 0x20);
+  }
+  if (this_00 == (SpawnRoleSkillInfoButton *)0x0) {
+    FUN_?();
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
     return;
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  SpawnRoleSkillInfoButton::SpawnRoleSkillInfoButton_Initialize
+            (this_00,skill,skillValue,skillCost,skillDataManager,(MethodInfo *)0x0);
   return;
 }
 
@@ -152,13 +286,17 @@ void Assembly-CSharp.dll::SkillSettingBase::SkillSettingBase_RemoveSkill
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (((this->fields).spawnRoleTier == 0) &&
      (100 < (this->fields).spawnRoleCost - (this->fields).currentSkillCost)) {
     pUVar1 = (this->fields).cantRemoveSkillCallback;
     if (pUVar1 != (UnityAction *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
       (*(pUVar1->fields)._._.invoke_impl)
                 ((pUVar1->fields)._._.method_code,(pUVar1->fields)._._.method);
       return;
@@ -171,19 +309,62 @@ void Assembly-CSharp.dll::SkillSettingBase::SkillSettingBase_RemoveSkill
       (*(pUVar2->fields)._._.invoke_impl)
                 ((pUVar2->fields)._._.method_code,(this->fields).skillSetting,
                  (pUVar2->fields)._._.method);
-      obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                      ((Component *)this,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
+      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                ((Object_1 *)obj,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__Marshal<UnityEngine::Object>_UnityEngine__Object_
+                      ,0,0);
+        LOCK();
+        UNLOCK();
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if ((
+          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__Marshal<UnityEngine::Object>_UnityEngine__Object_
+          ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+        FUN_?();
+      }
+      pvVar4 = (void *)0x0;
+      if (pGVar3 != (GameObject *)0x0) {
+        pvVar4 = (pGVar3->fields)._.m_CachedPtr;
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      pcVar5 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+        uVar6 = func_?(&UNK_?);
+        FUN_?(uVar6,0);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      pcRam_? = pcVar5;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*pcRam_?)(pvVar4,0);
       return;
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -195,65 +376,93 @@ void Assembly-CSharp.dll::SkillSettingBase::SkillSettingBase_UpdateSkillCost
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                   );
+    FUN_?(&
+                  TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pIVar1 = 
   TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
   ;
-  pTVar2 = (Text *)(this->fields).skillSetting;
-  if (pTVar2 != (Text *)0x0) {
-    iVar3 = func_?(pTVar2,
-                            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                           );
+  pKVar2 = (this->fields).skillSetting;
+  if (pKVar2 != (KogamaSettingValueWrapperBase *)0x0) {
+    lVar3 = FUN_?(pKVar2,
+                          TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                         );
     pIVar4 = 
     TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
     ;
-    if (iVar3 == 0) goto code_?;
-    iVar3 = func_?(pTVar2,
-                            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                           );
-    pIVar1 = pIVar4;
-    if (iVar3 == 0) goto code_?;
-    iVar5 = func_?(0,
-                            TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
-                            ,iVar3);
-    pTVar2 = (this->fields).skillCostText;
-    (this->fields).currentSkillCost = iVar5;
-    pSVar6 = mscorlib.dll::System::Int32::Int32_ToString
-                       ((Int32 *)&(this->fields).currentSkillCost,(MethodInfo *)0x0);
-    if (pTVar2 != (Text *)0x0) {
-      (*(code *)(pTVar2->klass->vtable).set_text.method)
-                (pTVar2,pSVar6,(pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
-      ;
+    if (lVar3 == 0) {
+      FUN_?(pKVar2,pIVar1);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    lVar3 = FUN_?(pKVar2,
+                          TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                         );
+    if (lVar3 == 0) {
+      FUN_?(pKVar2,pIVar4);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    iVar6 = FUN_?(0,
+                          TypeInfo__MV__WorldObject__KogamaSettings__SpecializedSettingsTypes__AttributeSettings__AttributeSettingTypes__IAttributeSetting
+                          ,lVar3);
+    pTVar7 = (this->fields).skillCostText;
+    (this->fields).currentSkillCost = iVar6;
+    pSVar8 = mscorlib.dll::System::Int32::Int32_ToString
+                        ((Int32 *)&(this->fields).currentSkillCost,(MethodInfo *)0x0);
+    if (pTVar7 != (Text *)0x0) {
+      (*(pTVar7->klass->vtable).set_text.methodPtr)(pTVar7,pSVar8);
       this_00 = (this->fields).skillIcon;
       if (this_00 != (SpawnRoleSkillIconController *)0x0) {
         SpawnRoleSkillIconController::SpawnRoleSkillIconController_HandleNegativeState
                   (this_00,(this->fields).currentSkillCost,(MethodInfo *)0x0);
-        pSVar7 = (this->fields).infoButton;
-        if (pSVar7 != (SpawnRoleSkillInfoButton *)0x0) {
-          (pSVar7->fields).skillCost = (this->fields).currentSkillCost;
-          pTVar8 = (this->fields).skillCostText;
-          pCVar9 = SpawnRolesSkillDataManager::SpawnRolesSkillDataManager_GetCostColor
-                             (&CStack_10,(this->fields).currentSkillCost,(MethodInfo *)0x0);
-          pTVar2 = (Text *)0x0;
-          if (pTVar8 != (Text *)0x0) {
-            (*(code *)(pTVar8->klass->vtable).set_color.method)
-                      (pTVar8,pCVar9->r,pCVar9->g,pCVar9->b,pCVar9->a,
-                       (pTVar8->klass->vtable).get_raycastTarget.methodPtr);
+        pSVar9 = (this->fields).infoButton;
+        if (pSVar9 != (SpawnRoleSkillInfoButton *)0x0) {
+          bVar10 = cRam_? == '\0';
+          (pSVar9->fields).skillCost = (this->fields).currentSkillCost;
+          pTVar7 = (this->fields).skillCostText;
+          iVar11 = (this->fields).currentSkillCost;
+          if (bVar10) {
+            FUN_?(&TypeInfo__Styles);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (iVar11 < 0) {
+            if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            colorStyle = ColorStyle__Enum_NegativeRed;
+          }
+          else {
+            if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            colorStyle = ColorStyle__Enum_OffWhite;
+          }
+          pCVar12 = Styles::Styles_GetColor(&CStack_13,colorStyle,(MethodInfo *)0x0);
+          CStack_13.r = pCVar12->r;
+          CStack_13.g = pCVar12->g;
+          CStack_13.b = pCVar12->b;
+          CStack_13.a = pCVar12->a;
+          if (pTVar7 != (Text *)0x0) {
+            (*(pTVar7->klass->vtable).set_color.methodPtr)
+                      (pTVar7,&CStack_13,(pTVar7->klass->vtable).set_color.method);
             return;
           }
         }
       }
     }
   }
-  func_?();
-code_?:
-  func_?(pTVar2,pIVar1);
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -264,30 +473,28 @@ void Assembly-CSharp.dll::SkillSettingBase::SkillSettingBase_UpdateSkillData
                (SkillSettingBase *this,Object *newValue,MethodInfo *method)
 
 {
-  pOStack_1 = (Object *)&stack0xfffffffc;
-  pSVar2 = (this->fields).infoButton;
-  if (pSVar2 != (SpawnRoleSkillInfoButton *)0x0) {
-    pOStack_1 = newValue;
-    (pSVar2->fields).skillValue = newValue;
-    ppOStack_3 = &(pSVar2->fields).skillValue;
-    func_?();
+  pSVar1 = (this->fields).infoButton;
+  if (pSVar1 == (SpawnRoleSkillInfoButton *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  uVar4 = func_?(&puStack_5);
-  func_?(uVar4);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
-  return;
-}
-
-
-/* Void UpdateSpawnRoleTier(GamePassTier) */
-
-void Assembly-CSharp.dll::SkillSettingBase::SkillSettingBase_UpdateSpawnRoleTier
-               (SkillSettingBase *this,GamePassTier__Enum newTier,MethodInfo *method)
-
-{
-  (this->fields).spawnRoleTier = (undefined1)newTier;
+  bVar3 = iRam_? != 0;
+  (pSVar1->fields).skillValue = newValue;
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)&(pSVar1->fields).skillValue >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar6 != uVar7);
+  }
   return;
 }
 

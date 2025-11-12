@@ -8,21 +8,33 @@ void Assembly-CSharp.dll::BundleErrorPopUp::BundleErrorPopUp_Initialize
 {
   pTVar1 = (this->fields).buttonText;
   if (pTVar1 != (Text *)0x0) {
-    (*(code *)(pTVar1->klass->vtable).set_text.method)
-              (pTVar1,buttonText,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
-    ;
+    (*(pTVar1->klass->vtable).set_text.methodPtr)
+              (pTVar1,buttonText,(pTVar1->klass->vtable).set_text.method);
     pTVar1 = (this->fields).header;
     if (pTVar1 != (Text *)0x0) {
-      (*(code *)(pTVar1->klass->vtable).set_text.method)
-                (pTVar1,header,(pTVar1->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+      (*(pTVar1->klass->vtable).set_text.methodPtr)
+                (pTVar1,header,(pTVar1->klass->vtable).set_text.method);
+      bVar2 = iRam_? != 0;
       (this->fields).resultCallback = resultCallback;
-      func_?(&(this->fields).resultCallback,resultCallback);
+      if (bVar2) {
+        uVar3 = (uint)((ulonglong)&(this->fields).resultCallback >> 0xc);
+        puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+        do {
+          uVar5 = *puVar4;
+          LOCK();
+          uVar6 = *puVar4;
+          if (uVar5 == uVar6) {
+            *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+          }
+          UNLOCK();
+        } while (uVar5 != uVar6);
+      }
       return;
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -33,19 +45,17 @@ void Assembly-CSharp.dll::BundleErrorPopUp::BundleErrorPopUp_OnButtonPressed
                (BundleErrorPopUp *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pUVar2 = (this->fields).resultCallback;
-  if (pUVar2 != (UnityAction_1_System_Boolean_ *)0x0) {
-    puStack_1 = (pUVar2->fields)._._.method;
-    uStack_3 = 1;
-    pvStack_4 = (pUVar2->fields)._._.method_code;
-    (*(pUVar2->fields)._._.invoke_impl)();
+  pUVar1 = (this->fields).resultCallback;
+  if (pUVar1 != (UnityAction_1_System_Boolean_ *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(pUVar1->fields)._._.invoke_impl)
+              ((pUVar1->fields)._._.method_code,1,(pUVar1->fields)._._.method);
     return;
   }
-  uVar5 = func_?(&pvStack_4);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?(0,(char)method);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -56,19 +66,17 @@ void Assembly-CSharp.dll::BundleErrorPopUp::BundleErrorPopUp_OnExit
                (BundleErrorPopUp *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pUVar2 = (this->fields).resultCallback;
-  if (pUVar2 != (UnityAction_1_System_Boolean_ *)0x0) {
-    puStack_1 = (pUVar2->fields)._._.method;
-    uStack_3 = 0;
-    pvStack_4 = (pUVar2->fields)._._.method_code;
-    (*(pUVar2->fields)._._.invoke_impl)();
+  pUVar1 = (this->fields).resultCallback;
+  if (pUVar1 != (UnityAction_1_System_Boolean_ *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(pUVar1->fields)._._.invoke_impl)
+              ((pUVar1->fields)._._.method_code,0,(pUVar1->fields)._._.method);
     return;
   }
-  uVar5 = func_?(&pvStack_4);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

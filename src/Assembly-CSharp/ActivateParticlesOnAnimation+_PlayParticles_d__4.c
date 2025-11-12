@@ -6,36 +6,71 @@ bool Assembly-CSharp.dll::ActivateParticlesOnAnimation+<PlayParticles>d__4::
                (ActivateParticlesOnAnimation_PlayParticles_d_4 *this,MethodInfo *method)
 
 {
-  iVar1 = (this->fields).__1__state;
-  pAVar2 = (this->fields).__4__this;
-  if (iVar1 == 0) {
+  pcVar1 = pcRam_?;
+  iVar2 = (this->fields).__1__state;
+  pAVar3 = (this->fields).__4__this;
+  if (iVar2 == 0) {
     (this->fields).__1__state = -1;
-    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    (this->fields)._startTime_5__2 = fVar3;
+    pcVar4 = pcRam_?;
+    if ((pcVar1 == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar4 = pcVar1, pcVar1 == (code *)0x0)) {
+      uVar5 = func_?(&UNK_?);
+      FUN_?(uVar5,0);
+      pcVar1 = (code *)swi(3);
+      bVar6 = (*pcVar1)();
+      return bVar6;
+    }
+    pcRam_? = pcVar4;
+    fVar7 = (float)(*pcVar1)();
+    (this->fields)._startTime_5__2 = fVar7;
   }
   else {
-    if (iVar1 != 1) {
+    if (iVar2 != 1) {
       return 0;
     }
     (this->fields).__1__state = -1;
   }
-  fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  if ((this->fields)._startTime_5__2 + (this->fields).activationDelay <= fVar3) {
-    if ((pAVar2 != (ActivateParticlesOnAnimation *)0x0) &&
-       (this_00 = (pAVar2->fields).particles, this_00 != (ParticleSystem *)0x0)) {
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1
-                (this_00,(MethodInfo *)0x0);
-      return 0;
-    }
-    func_?();
-    pcVar4 = (code *)swi(3);
-    bVar5 = (*pcVar4)();
-    return bVar5;
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar5 = func_?(&UNK_?);
+    FUN_?(uVar5,0);
+    pcVar1 = (code *)swi(3);
+    bVar6 = (*pcVar1)();
+    return bVar6;
   }
-  (this->fields).__2__current = (Object *)0x0;
-  func_?(&(this->fields).__2__current,0);
-  (this->fields).__1__state = 1;
-  return 1;
+  pcRam_? = pcVar1;
+  fVar7 = (float)(*pcRam_?)();
+  if (fVar7 < (this->fields)._startTime_5__2 + (this->fields).activationDelay) {
+    bVar8 = iRam_? != 0;
+    (this->fields).__2__current = (Object *)0x0;
+    if (bVar8) {
+      uVar9 = (uint)((ulonglong)&(this->fields).__2__current >> 0xc);
+      uVar10 = (ulonglong)((uVar9 & 0x1fffff) >> 6);
+      do {
+        uVar11 = *(ulonglong *)(uVar10 * 8 + 0xADDR);
+        puVar12 = (ulonglong *)(uVar10 * 8 + 0xADDR);
+        LOCK();
+        bVar8 = uVar11 == *puVar12;
+        if (bVar8) {
+          *puVar12 = uVar11 | 1L << (uVar9 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar8);
+    }
+    (this->fields).__1__state = 1;
+    return 1;
+  }
+  if ((pAVar3 != (ActivateParticlesOnAnimation *)0x0) &&
+     (this_00 = (pAVar3->fields).particles, this_00 != (ParticleSystem *)0x0)) {
+    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play
+              (this_00,1,(MethodInfo *)0x0);
+    return 0;
+  }
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  bVar6 = (*pcVar1)();
+  return bVar6;
 }
 
 
@@ -50,10 +85,10 @@ void Assembly-CSharp.dll::ActivateParticlesOnAnimation+<PlayParticles>d__4::
   this_00 = (NotSupportedException *)func_?(uVar1);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
-  func_?(&
-                  MethodInfo__ActivateParticlesOnAnimation___PlayParticles_d__4__System_Collections_IEnumerator_Reset__
-                 );
-  func_?(this_00);
+  uVar1 = func_?(&
+                              MethodInfo__ActivateParticlesOnAnimation___PlayParticles_d__4__System_Collections_IEnumerator_Reset__
+                             );
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

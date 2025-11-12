@@ -6,47 +6,31 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::ButtonHandler
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    FUN_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pSVar1 = (this->fields).Name;
-  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+  if (*(int *)&(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+               field_0x1c == 0) {
+    FUN_?();
   }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
-  }
-  pVVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
-           static_fields->activeInput;
-  if (pVVar2 != (VirtualInput *)0x0) {
-    cVar3 = (*(code *)(pVVar2->klass->vtable).__unknown_1.method)
-                      (pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_2.methodPtr);
-    if (cVar3 != '\0') {
-      if (cRam_? == '\0') {
-        func_?(&
-                        TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager
-                       );
-        cRam_? = '\x01';
-      }
-      pSVar1 = (this->fields).Name;
-      if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-          cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager
-                       );
-      }
-      CrossPlatformInputManager::CrossPlatformInputManager_SetButtonUp(pSVar1,(MethodInfo *)0x0);
+  bVar2 = CrossPlatformInputManager::CrossPlatformInputManager_GetButton(pSVar1,(MethodInfo *)0x0);
+  if (bVar2 != 0) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
-    return;
+    pSVar1 = (this->fields).Name;
+    if (*(int *)&(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+                 field_0x1c == 0) {
+      FUN_?();
+    }
+    CrossPlatformInputManager::CrossPlatformInputManager_SetButtonUp(pSVar1,(MethodInfo *)0x0);
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
   return;
 }
 
@@ -58,30 +42,36 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::ButtonHandler
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    FUN_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pSVar1 = (this->fields).Name;
-  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+  if (*(int *)&(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+               field_0x1c == 0) {
+    FUN_?();
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    FUN_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+  if (*(int *)&(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+               field_0x1c == 0) {
+    FUN_?();
   }
   pVVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
            static_fields->activeInput;
   if (pVVar2 != (VirtualInput *)0x0) {
-    (*(code *)(pVVar2->klass->vtable).__unknown_7.method)
-              (pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_8.methodPtr);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(pVVar2->klass->vtable).__unknown_7.methodPtr)
+              (pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_7.method);
     return;
   }
-  func_?();
+  FUN_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -95,30 +85,36 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::ButtonHandler
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    FUN_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pSVar1 = (this->fields).Name;
-  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+  if (*(int *)&(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+               field_0x1c == 0) {
+    FUN_?();
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    FUN_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+  if (*(int *)&(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+               field_0x1c == 0) {
+    FUN_?();
   }
   pVVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
            static_fields->activeInput;
   if (pVVar2 != (VirtualInput *)0x0) {
-    (*(code *)(pVVar2->klass->vtable).__unknown_8.method)
-              (pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_9.methodPtr);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(pVVar2->klass->vtable).__unknown_8.methodPtr)
+              (pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_8.method);
     return;
   }
-  func_?();
+  FUN_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -132,30 +128,36 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::ButtonHandler
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    FUN_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pSVar1 = (this->fields).Name;
-  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+  if (*(int *)&(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+               field_0x1c == 0) {
+    FUN_?();
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    FUN_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+  if (*(int *)&(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+               field_0x1c == 0) {
+    FUN_?();
   }
   pVVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
            static_fields->activeInput;
   if (pVVar2 != (VirtualInput *)0x0) {
-    (*(code *)(pVVar2->klass->vtable).__unknown_6.method)
-              (pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_7.methodPtr);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(pVVar2->klass->vtable).__unknown_6.methodPtr)
+              (pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_6.method);
     return;
   }
-  func_?();
+  FUN_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -169,15 +171,38 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::ButtonHandler
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    FUN_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  name = (this->fields).Name;
-  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+  pSVar1 = (this->fields).Name;
+  if (*(int *)&(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+               field_0x1c == 0) {
+    FUN_?();
   }
-  CrossPlatformInputManager::CrossPlatformInputManager_SetButtonDown(name,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager,0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+               field_0x1c == 0) {
+    FUN_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+  }
+  pVVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
+           static_fields->activeInput;
+  if (pVVar2 != (VirtualInput *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(pVVar2->klass->vtable).__unknown_4.methodPtr)
+              (pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_4.method);
+    return;
+  }
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -189,15 +214,38 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::ButtonHandler
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    FUN_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  name = (this->fields).Name;
-  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+  pSVar1 = (this->fields).Name;
+  if (*(int *)&(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+               field_0x1c == 0) {
+    FUN_?();
   }
-  CrossPlatformInputManager::CrossPlatformInputManager_SetButtonUp(name,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager,0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+               field_0x1c == 0) {
+    FUN_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+  }
+  pVVar2 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
+           static_fields->activeInput;
+  if (pVVar2 != (VirtualInput *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(pVVar2->klass->vtable).__unknown_5.methodPtr)
+              (pVVar2,pSVar1,(pVVar2->klass->vtable).__unknown_5.method);
+    return;
+  }
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

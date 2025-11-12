@@ -6,31 +6,42 @@ void Assembly-CSharp.dll::RTG::MonoSingleton`1[System::Object]::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Object);
+    FUN_?(&TypeInfo__System__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__System__Object;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  pIVar1 = method->klass;
-  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar1 = (Il2CppClass *)func_?(pIVar1);
+  uVar1 = FUN_?(TypeInfo__System__Object);
+  pIVar2 = method->klass;
+  if ((pIVar2->field_0x135 & 1) == 0) {
+    pIVar2 = (Il2CppClass *)FUN_?(pIVar2);
   }
-  pIVar1 = pIVar1->rgctx_data[2].klass;
-  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar1 = (Il2CppClass *)func_?(pIVar1);
+  pIVar2 = pIVar2->rgctx_data[2].klass;
+  if ((pIVar2->field_0x135 & 1) == 0) {
+    pIVar2 = (Il2CppClass *)FUN_?(pIVar2);
   }
-  *(Object **)pIVar1->static_fields = value;
-  pIVar1 = method->klass;
-  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar1 = (Il2CppClass *)func_?(pIVar1);
+  *(undefined8 *)pIVar2->static_fields = uVar1;
+  pIVar2 = method->klass;
+  if ((pIVar2->field_0x135 & 1) == 0) {
+    pIVar2 = (Il2CppClass *)FUN_?(pIVar2);
   }
-  pIVar1 = pIVar1->rgctx_data[2].klass;
-  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar1 = (Il2CppClass *)func_?(pIVar1);
+  pIVar2 = pIVar2->rgctx_data[2].klass;
+  if ((pIVar2->field_0x135 & 1) == 0) {
+    pIVar2 = (Il2CppClass *)FUN_?(pIVar2);
   }
-  func_?(pIVar1->static_fields,value);
+  if (iRam_? != 0) {
+    uVar3 = (uint)((ulonglong)pIVar2->static_fields >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
   return;
 }
 
@@ -41,187 +52,244 @@ Object * Assembly-CSharp.dll::RTG::MonoSingleton`1[System::Object]::
          MonoSingleton_1_System_Object__get_Get(MethodInfo *method)
 
 {
-  method_00 = (MethodInfo *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Application);
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&TypeInfo__System__Type);
-    func_?(&StringLiteral_MonoSingleton_T__Instance__Only_);
+    FUN_?(&TypeInfo__UnityEngine__Application);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_MonoSingleton_T__Instance__Only_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pIVar1 = method->klass;
-  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar1 = (Il2CppClass *)func_?(pIVar1);
+  uVar1 = 0;
+  pIVar2 = method->klass;
+  if ((pIVar2->field_0x135 & 1) == 0) {
+    pIVar2 = (Il2CppClass *)FUN_?(pIVar2);
   }
-  pIVar1 = pIVar1->rgctx_data[2].klass;
-  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar1 = (Il2CppClass *)func_?(pIVar1);
+  pvVar3 = pIVar2->rgctx_data[2].rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar3 + 0x135) & 1) == 0) {
+    pvVar3 = (void *)FUN_?(pvVar3);
   }
-  if (pIVar1->cctor_finished_or_no_cctor == 0) {
-    func_?(pIVar1);
+  if (*(int *)((longlong)pvVar3 + 0xe4) == 0) {
+    FUN_?(pvVar3);
   }
-  pIVar1 = method->klass;
-  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar1 = (Il2CppClass *)func_?(pIVar1);
+  pIVar2 = method->klass;
+  if ((pIVar2->field_0x135 & 1) == 0) {
+    pIVar2 = (Il2CppClass *)FUN_?(pIVar2);
   }
-  pIVar1 = pIVar1->rgctx_data[2].klass;
-  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar1 = (Il2CppClass *)func_?(pIVar1);
+  pIVar2 = pIVar2->rgctx_data[2].klass;
+  if ((pIVar2->field_0x135 & 1) == 0) {
+    pIVar2 = (Il2CppClass *)FUN_?(pIVar2);
   }
-  x = *(Object_1 **)((int)pIVar1->static_fields + 4);
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  lVar4 = *(longlong *)((longlong)pIVar2->static_fields + 8);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (lVar4 != 0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (*(longlong *)(lVar4 + 0x10) != 0) goto code_?;
+  }
+  pIVar2 = method->klass;
+  if ((pIVar2->field_0x135 & 1) == 0) {
+    pIVar2 = (Il2CppClass *)FUN_?(pIVar2);
+  }
+  pvVar3 = pIVar2->rgctx_data[2].rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar3 + 0x135) & 1) == 0) {
+    pvVar3 = (void *)FUN_?(pvVar3);
+  }
+  if (*(int *)((longlong)pvVar3 + 0xe4) == 0) {
+    FUN_?(pvVar3);
+  }
+  pIVar2 = method->klass;
+  if ((pIVar2->field_0x135 & 1) == 0) {
+    pIVar2 = (Il2CppClass *)FUN_?(pIVar2);
+  }
+  pIVar2 = pIVar2->rgctx_data[2].klass;
+  if ((pIVar2->field_0x135 & 1) == 0) {
+    pIVar2 = (Il2CppClass *)FUN_?(pIVar2);
+  }
+  lVar4 = *(longlong *)pIVar2->static_fields;
+  if (lVar4 == 0) goto code_?;
+  cVar5 = FUN_?(lVar4,0xffffffff);
+  pIVar2 = method->klass;
+  if ((pIVar2->field_0x135 & 1) == 0) {
+    pIVar2 = (Il2CppClass *)FUN_?(pIVar2);
+  }
+  pvVar3 = pIVar2->rgctx_data[3].rgctxDataDummy;
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
+  }
+  if (pvVar3 != (void *)0x0) {
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    lVar6 = FUN_?(pvVar3,1);
+    uVar1 = FUN_?(lVar6 + 0x20);
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pcVar7 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+    uVar1 = func_?(&UNK_?);
+    FUN_?(uVar1,0);
 code_?:
-    pIVar1 = method->klass;
-    if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-      pIVar1 = (Il2CppClass *)func_?();
-    }
-    pIVar1 = pIVar1->rgctx_data[2].klass;
-    if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-      pIVar1 = (Il2CppClass *)func_?();
-    }
-    if (pIVar1->cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    pIVar1 = method->klass;
-    if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-      pIVar1 = (Il2CppClass *)func_?();
-    }
-    pIVar1 = pIVar1->rgctx_data[2].klass;
-    if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-      pIVar1 = (Il2CppClass *)func_?();
-    }
-    pOVar3 = *(Object **)((int)pIVar1->static_fields + 4);
-    *unaff_FS_OFFSET = method_00;
-    return pOVar3;
-  }
-  pIVar1 = method->klass;
-  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar1 = (Il2CppClass *)func_?();
-  }
-  pIVar1 = pIVar1->rgctx_data[2].klass;
-  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar1 = (Il2CppClass *)func_?();
-  }
-  if (pIVar1->cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  pIVar1 = method->klass;
-  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar1 = (Il2CppClass *)func_?();
-  }
-  pIVar1 = pIVar1->rgctx_data[2].klass;
-  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar1 = (Il2CppClass *)func_?();
-  }
-  mscorlib.dll::System::Threading::Monitor::Monitor_1_Enter_1
-            (*(Object **)pIVar1->static_fields,&stack0xffffffeb,(MethodInfo *)0x0);
-  pIVar1 = method->klass;
-  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar1 = (Il2CppClass *)func_?();
-  }
-  handle = pIVar1->rgctx_data[3];
-  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  type = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                   ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  pOVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_FindObjectsOfType
-                     (type,(MethodInfo *)0x0);
-  bVar2 = (bool)((uint)pOVar4 >> 0x18);
-  pIVar1 = method->klass;
-  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar1 = (Il2CppClass *)func_?();
-  }
-  if (((uint)(pIVar1->rgctx_data[4].klass)->vtable[0].methodPtr & 0x100) == 0) {
-    func_?();
-  }
-  pOVar3 = (Object *)&UNK_?;
-  iVar5 = func_?();
-  if (iVar5 == 0) {
+    FUN_?();
 code_?:
-    func_?();
-    func_?();
-    pcVar6 = (code *)swi(3);
-    pOVar3 = (Object *)(*pcVar6)();
-    return pOVar3;
+    uVar1 = FUN_?(&UNK_?);
+    FUN_?(uVar1,0);
+code_?:
+    uVar1 = FUN_?(&UNK_?);
+    FUN_?(uVar1,0);
+code_?:
+    uVar1 = FUN_?(&UNK_?);
+    FUN_?(uVar1,0);
   }
-  if (*(int *)(iVar5 + 0xc) != 0) {
-    if (*(int *)(iVar5 + 0xc) < 2) {
-      if (*(int *)(iVar5 + 0xc) != 0) {
-        uVar7 = *(undefined4 *)(iVar5 + 0x10);
-        pIVar1 = method->klass;
-        if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-          pIVar1 = (Il2CppClass *)func_?();
+  else {
+    pcRam_? = pcVar7;
+    uVar1 = (*pcRam_?)(uVar1,0);
+    pIVar2 = method->klass;
+    if ((pIVar2->field_0x135 & 1) == 0) {
+      pIVar2 = (Il2CppClass *)FUN_?(pIVar2);
+    }
+    pvVar3 = pIVar2->rgctx_data[4].rgctxDataDummy;
+    if ((*(byte *)((longlong)pvVar3 + 0x135) & 1) == 0) {
+      pvVar3 = (void *)FUN_?(pvVar3);
+    }
+    lVar6 = FUN_?(uVar1,pvVar3);
+    if (lVar6 != 0) {
+      if (*(longlong *)(lVar6 + 0x18) != 0) {
+        if (*(int *)(lVar6 + 0x18) < 2) {
+          if (*(int *)(lVar6 + 0x18) == 0) goto code_?;
+          uVar1 = *(undefined8 *)(lVar6 + 0x20);
+          pIVar2 = method->klass;
+          if ((pIVar2->field_0x135 & 1) == 0) {
+            pIVar2 = (Il2CppClass *)FUN_?(pIVar2);
+          }
+          pvVar3 = pIVar2->rgctx_data[2].rgctxDataDummy;
+          if ((*(byte *)((longlong)pvVar3 + 0x135) & 1) == 0) {
+            pvVar3 = (void *)FUN_?(pvVar3);
+          }
+          if (*(int *)((longlong)pvVar3 + 0xe4) == 0) {
+            FUN_?(pvVar3);
+          }
+          pIVar2 = method->klass;
+          if ((pIVar2->field_0x135 & 1) == 0) {
+            pIVar2 = (Il2CppClass *)FUN_?(pIVar2);
+          }
+          pIVar2 = pIVar2->rgctx_data[2].klass;
+          if ((pIVar2->field_0x135 & 1) == 0) {
+            pIVar2 = (Il2CppClass *)FUN_?(pIVar2);
+          }
+          *(undefined8 *)((longlong)pIVar2->static_fields + 8) = uVar1;
+          pIVar2 = method->klass;
+          if ((pIVar2->field_0x135 & 1) == 0) {
+            pIVar2 = (Il2CppClass *)FUN_?(pIVar2);
+          }
+          pIVar2 = pIVar2->rgctx_data[2].klass;
+          if ((pIVar2->field_0x135 & 1) == 0) {
+            pIVar2 = (Il2CppClass *)FUN_?(pIVar2);
+          }
+          func_?((longlong)pIVar2->static_fields + 8);
+          if (cVar5 == '\0') {
+code_?:
+            pIVar2 = method->klass;
+            if ((pIVar2->field_0x135 & 1) == 0) {
+              pIVar2 = (Il2CppClass *)FUN_?(pIVar2);
+            }
+            pvVar3 = pIVar2->rgctx_data[2].rgctxDataDummy;
+            if ((*(byte *)((longlong)pvVar3 + 0x135) & 1) == 0) {
+              pvVar3 = (void *)FUN_?(pvVar3);
+            }
+            if (*(int *)((longlong)pvVar3 + 0xe4) == 0) {
+              FUN_?(pvVar3);
+            }
+            pIVar2 = method->klass;
+            if ((pIVar2->field_0x135 & 1) == 0) {
+              pIVar2 = (Il2CppClass *)FUN_?(pIVar2);
+            }
+            pIVar2 = pIVar2->rgctx_data[2].klass;
+            if ((pIVar2->field_0x135 & 1) == 0) {
+              pIVar2 = (Il2CppClass *)FUN_?(pIVar2);
+            }
+            return *(Object **)((longlong)pIVar2->static_fields + 8);
+          }
+          if (lVar4 != 0) {
+            FUN_?();
+            goto code_?;
+          }
+          goto code_?;
         }
-        pIVar1 = pIVar1->rgctx_data[2].klass;
-        if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-          pIVar1 = (Il2CppClass *)func_?();
+        if (*(int *)&(TypeInfo__UnityEngine__Application->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        if (pIVar1->cctor_finished_or_no_cctor == 0) {
-          func_?();
+        if (cVar5 == '\0') {
+          return (Object *)0x0;
         }
-        pIVar1 = method->klass;
-        if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-          pIVar1 = (Il2CppClass *)func_?();
-        }
-        pIVar1 = pIVar1->rgctx_data[2].klass;
-        if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-          pIVar1 = (Il2CppClass *)func_?();
-        }
-        *(undefined4 *)((int)pIVar1->static_fields + 4) = uVar7;
-        pIVar1 = method->klass;
-        if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-          pIVar1 = (Il2CppClass *)func_?();
-        }
-        pIVar1 = pIVar1->rgctx_data[2].klass;
-        if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-          pIVar1 = (Il2CppClass *)func_?();
-        }
-        bVar2 = (bool)((uint)((int)pIVar1->static_fields + 4) >> 0x18);
-        pOVar3 = (Object *)&UNK_?;
-        func_?();
-        if (bVar2 != 0) {
-          mscorlib.dll::System::Threading::Monitor::Monitor_1_Exit(pOVar3,(MethodInfo *)0x0);
+        if (lVar4 != 0) {
+          FUN_?();
+          return (Object *)0x0;
         }
         goto code_?;
       }
-      func_?();
+      if (cVar5 == '\0') {
+        return (Object *)0x0;
+      }
+      if (lVar4 != 0) {
+        FUN_?();
+        return (Object *)0x0;
+      }
       goto code_?;
     }
-    if ((TypeInfo__UnityEngine__Application->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    bVar2 = 0x10;
-    bVar8 = System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[Unity::
-            IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
-            __Il2CppFullySharedGenericType]::
-            SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__System_Collections_ICollection_get_IsSynchronized
-                      ((SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                        *)0x0,method_00);
-    if (bVar8 != 0) {
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        method_00 = (MethodInfo *)&UNK_?;
-        func_?();
-      }
-      pOVar3 = (Object *)0x0;
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-                ((Object *)StringLiteral_MonoSingleton_T__Instance__Only_,(MethodInfo *)0x0);
-    }
   }
-  if (bVar2 != 0) {
-    mscorlib.dll::System::Threading::Monitor::Monitor_1_Exit(pOVar3,(MethodInfo *)0x0);
-  }
-  *unaff_FS_OFFSET = method_00;
-  return (Object *)0x0;
+  FUN_?();
+code_?:
+  uVar1 = func_?(&TypeInfo__System__ArgumentNullException);
+  this = (ArgumentNullException *)func_?(uVar1);
+  paramName = (String *)func_?(&StringLiteral_obj);
+  mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+            (this,paramName,(MethodInfo *)0x0);
+  uVar1 = func_?(&
+                              MethodInfo__System__Threading__Monitor__ReliableEnterTimeout_System__Object__int__System__Boolean__
+                             );
+  FUN_?(this,uVar1);
+  mscorlib.dll::System::Threading::Monitor::Monitor_ThrowLockTakenException((MethodInfo *)0x0);
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  pOVar8 = (Object *)(*pcVar7)();
+  return pOVar8;
 }
 

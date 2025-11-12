@@ -5,88 +5,151 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_OnChange
                (ProfileSettingButton *this,Object *value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
+  lVar1 = lRam_?;
   if (value != (Object *)0x0) {
-    if ((value->klass->_0).element_class != (TypeInfo__System__Int32->_0).element_class) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
+    method = (MethodInfo *)value->klass;
+    if ((((Object__Class *)method)->_0).element_class !=
+        *(Il2CppClass **)(lRam_? + 0x40)) {
+      FUN_?(value);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
-    func_?();
-    if ((this->fields).button != (Button *)0x0) {
+    if ((this->fields).isIncrease == 0) {
+      bVar3 = (this->fields).minValue < *(int *)&value[1].klass;
+    }
+    else {
+      bVar3 = *(int *)&value[1].klass < (this->fields).maxValue;
+    }
+    lVar1 = CONCAT71((int7)((ulonglong)lRam_? >> 8),bVar3);
+    this_00 = (this->fields).button;
+    this = (ProfileSettingButton *)0x0;
+    if (this_00 != (Button *)0x0) {
       if (cRam_? == '\0') {
-        func_?();
-        func_?();
-        func_?();
+        FUN_?(&TypeInfo__UnityEngine__EventSystems__EventSystem);
+        LOCK();
+        UNLOCK();
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      bool_MethodInfo__UnityEngine__UI__SetPropertyUtility__SetStruct<bool>_System__Boolean___bool_
+                     );
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      bVar2 = UnityEngine.UI.dll::UnityEngine::UI::SetPropertyUtility::SetPropertyUtility_SetStruct
-                        (&(in_stack_3->fields).m_Interactable,in_stack_4,
-                         bool_MethodInfo__UnityEngine__UI__SetPropertyUtility__SetStruct<bool>_System__Boolean___bool_
-                        );
-      if (bVar2 != 0) {
-        if ((in_stack_3->fields).m_Interactable == 0) {
-          if ((TypeInfo__UnityEngine__EventSystems__EventSystem->_1).cctor_finished_or_no_cctor == 0
-             ) {
-            func_?();
+      cVar4 = FUN_?(&(this_00->fields)._.m_Interactable);
+      if (cVar4 == '\0') {
+        return;
+      }
+      if ((this_00->fields)._.m_Interactable == 0) {
+        if (*(int *)&(TypeInfo__UnityEngine__EventSystems__EventSystem->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pEVar5 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::EventSystem_get_current
+                           ((MethodInfo *)0x0);
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (pEVar5 != (EventSystem *)0x0) {
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
           }
-          pEVar5 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
-                   EventSystem_get_current((MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                            ((Object_1 *)pEVar5,(Object_1 *)0x0,(MethodInfo *)0x0);
-          if (bVar2 != 0) {
-            if ((TypeInfo__UnityEngine__EventSystems__EventSystem->_1).cctor_finished_or_no_cctor ==
-                0) {
-              func_?();
+          if ((pEVar5->fields)._._._._._.m_CachedPtr != (void *)0x0) {
+            if (*(int *)&(TypeInfo__UnityEngine__EventSystems__EventSystem->_1).field_0x1c == 0) {
+              FUN_?();
             }
             pEVar5 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
                      EventSystem_get_current((MethodInfo *)0x0);
-            if (pEVar5 == (EventSystem *)0x0) goto code_?;
-            x = (pEVar5->fields).m_CurrentSelected;
-            y = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                          ((Component *)in_stack_3,(MethodInfo *)0x0);
-            if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                              ((Object_1 *)x,(Object_1 *)y,(MethodInfo *)0x0);
-            if (bVar2 != 0) {
-              if ((TypeInfo__UnityEngine__EventSystems__EventSystem->_1).cctor_finished_or_no_cctor
-                  == 0) {
-                func_?();
+            if (pEVar5 != (EventSystem *)0x0) {
+              pGVar6 = (pEVar5->fields).m_CurrentSelected;
+              pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                 ((Component *)this_00,(MethodInfo *)0x0);
+              if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__UnityEngine__Object);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__UnityEngine__Object);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              if (pGVar7 != (GameObject *)0x0 || pGVar6 != (GameObject *)0x0) {
+                if (pGVar7 == (GameObject *)0x0) {
+                  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                    FUN_?();
+                  }
+                  if (pGVar6 == (GameObject *)0x0) goto DAT_?;
+                  bVar3 = (pGVar6->fields)._.m_CachedPtr == (void *)0x0;
+                }
+                else if (pGVar6 == (GameObject *)0x0) {
+                  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                    FUN_?();
+                  }
+                  bVar3 = (pGVar7->fields)._.m_CachedPtr == (void *)0x0;
+                }
+                else {
+                  bVar3 = pGVar6 == pGVar7;
+                }
+                if (!bVar3) goto code_?;
+              }
+              if (*(int *)&(TypeInfo__UnityEngine__EventSystems__EventSystem->_1).field_0x1c == 0) {
+                FUN_?();
               }
               pEVar5 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
                        EventSystem_get_current((MethodInfo *)0x0);
-              if (pEVar5 == (EventSystem *)0x0) goto code_?;
-              UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
-              EventSystem_SetSelectedGameObject_1(pEVar5,(GameObject *)0x0,(MethodInfo *)0x0);
+              if (pEVar5 != (EventSystem *)0x0) {
+                UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
+                EventSystem_SetSelectedGameObject_1(pEVar5,(GameObject *)0x0,(MethodInfo *)0x0);
+                goto code_?;
+              }
             }
+DAT_?:
+            FUN_?();
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
           }
         }
-        UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_OnSetProperty
-                  (in_stack_3,(MethodInfo *)0x0);
       }
+code_?:
+      UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_OnSetProperty
+                ((Selectable *)this_00,(MethodInfo *)0x0);
       return;
     }
   }
-code_?:
-  uVar6 = func_?(&puStack_7);
-  func_?(uVar6);
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  FUN_?(this,lVar1,method);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
 
-/* WARNING: Instruction at (ram,0xADDR) overlaps instruction at (ram,0xADDR)
-    */
 /* Void OnClick() */
 
 void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_OnClick
@@ -94,176 +157,1140 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_OnClick
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
+    FUN_?(&TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pPVar1 = this;
-  PVar2 = (this->fields).profileSettingKey;
-  if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
+  profileSetting = (this->fields).profileSettingKey;
+  if (*(int *)&(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).field_0x1c
+      == 0) {
+    FUN_?();
   }
-  pOVar3 = Assets::Scripts::ProfileSettings::ProfileSettingsManager::
-           ProfileSettingsManager_GetSettingValue(PVar2,(MethodInfo *)0x0);
-  uVar4 = CONCAT44(TypeInfo__System__Int32,pOVar3);
-  bVar5 = 0;
-  if (pOVar3 == (Object *)0x0) {
-    uVar4 = func_?();
-  }
-  else {
-    pIVar6 = (pOVar3->klass->_0).element_class;
-    pIVar7 = (TypeInfo__System__Int32->_0).element_class;
-    bVar5 = pIVar6 < pIVar7;
-    if (pIVar6 == pIVar7) {
-      piVar8 = (int *)func_?(pOVar3);
-      pPVar9 = (ProfileSettingButton *)(pPVar1->fields).minValue;
-      pPVar10 = (ProfileSettingButton *)
-                ((uint)((pPVar1->fields).isIncrease != 0) * 2 + -1 + *piVar8);
-      if (((int)pPVar9 <= (int)pPVar10) &&
-         (pPVar11 = (ProfileSettingButton *)(pPVar1->fields).maxValue, pPVar9 = pPVar10,
-         (int)pPVar11 < (int)pPVar10)) {
-        pPVar9 = pPVar11;
-      }
-      PVar2 = (pPVar1->fields).profileSettingKey;
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel);
-        func_?(&TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel);
-        func_?(&TypeInfo__UnityEngine__FilterMode);
-        func_?(&TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel);
-        func_?(&TypeInfo__MV__WorldObject__MetaData__TargetFrameRateValue);
-        func_?(&TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel);
-        func_?(&StringLiteral_Error);
-        cRam_? = '\x01';
-      }
-      value = StringLiteral_Error;
-      switch((pPVar1->fields).profileSettingKey) {
-      case 1:
-        this = pPVar9;
-        value = (String *)
-                func_?(TypeInfo__MV__WorldObject__MetaData__TargetFrameRateValue,&this);
-        break;
-      case 2:
-        value = (String *)
-                func_?(TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel,
-                                &stack0xfffffff8);
-        break;
-      case 3:
-        value = (String *)func_?(TypeInfo__UnityEngine__FilterMode,&stack0xfffffff4);
-        break;
-      case 4:
-        pPStack_12 = pPVar9;
-        value = (String *)
-                func_?(TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel,
-                                &pPStack_12);
-        break;
-      case 5:
-        pPStack_13 = pPVar9;
-        value = (String *)
-                func_?(TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel,&pPStack_13);
-        break;
-      case 6:
-        pPStack_14 = pPVar9;
-        value = (String *)
-                func_?(TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel,
-                                &pPStack_14);
-      }
-      if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
-          cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
-      }
-      Assets::Scripts::ProfileSettings::ProfileSettingsManager::
-      ProfileSettingsManager_SetSettingValue(PVar2,(Object *)value,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  ppMVar15 = (MethodInfo **)uVar4;
-  uVar4 = func_?(uVar4);
-  pPVar16 = (ProfileSettingsManager__Class *)uVar4;
-  *(longlong *)((int)((ulonglong)uVar4 >> 0x20) + 0x23) = (longlong)ROUND(extraout_ST0);
-  bVar17 = (byte)((uint)unaff_EBX >> 8);
-  bVar18 = (byte)unaff_EBX + bVar17;
-  bVar19 = CARRY1((byte)unaff_EBX,bVar17) || CARRY1(bVar18,bVar5);
-  cVar20 = bVar18 + bVar5;
-  iVar21 = CONCAT31((int3)((uint)unaff_EBX >> 8),cVar20);
-  if ((POPCOUNT(cVar20) & 1U) == 0) {
-    if (extraout_ECX == 1 || cVar20 == '\0') {
-      func_?();
-      ppMVar15 = &
-                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
-      ;
-      goto code_?;
-    }
-    *(int *)(iVar21 + 0x408b04c4) =
-         (int)&(pPVar16->_0).image + (uint)bVar19 + *(int *)(iVar21 + 0x408b04c4);
-  }
-  else {
-    pcVar22 = (char *)(iVar21 + PVar2 * 2);
-    *pcVar22 = *pcVar22 + (char)((ulonglong)uVar4 >> 0x20) + bVar19;
-    if ((POPCOUNT((uint)((int)&pPVar16[-0x518725]._0.nestedTypes + 1) & 0xff) & 1U) == 0) {
-      *(char *)(PVar2 + 0x7b) =
-           *(char *)(PVar2 + 0x7b) + cVar20 +
-           (pPVar16 < (ProfileSettingsManager__Class *)0x4610237b);
-      pcVar23 = (code *)swi(3);
-      (*pcVar23)();
-      return;
-    }
-code_?:
-    func_?(ppMVar15);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__set_Item_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
-                   );
-    func_?(&MethodInfo__ProfileSettingButton__OnChange_System__Object_);
-    func_?(&TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
-    uRam_? = 1;
-    pPVar16 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager;
-    if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
-        cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
-      pPVar16 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager;
-    }
-  }
-  this_00 = pPVar16->static_fields->ProfileSettingsChanged;
-  key = (undefined *)(this->fields).profileSettingKey;
-  if (this_00 ==
-      (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_ *)0x0) {
-    func_?(PVar2,pPVar1,iVar21);
-code_?:
-    func_?();
-    pcVar23 = (code *)swi(3);
-    (*pcVar23)();
+  pOVar1 = Assets::Scripts::ProfileSettings::ProfileSettingsManager::
+            ProfileSettingsManager_GetSettingValue(profileSetting,(MethodInfo *)0x0);
+  if (pOVar1 == (Object *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  pDVar24 = (Delegate *)
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
-            Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
-                      ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,(Int32Enum__Enum)key,
-                       MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
-                      );
-  this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-             *)func_?(TypeInfo__System__Action<System::Object>);
-  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            (this_01,(Object *)this,MethodInfo__ProfileSettingButton__OnChange_System__Object_,
-             (MethodInfo *)0x0);
-  pDVar24 = mscorlib.dll::System::Delegate::Delegate_Remove
-                      (pDVar24,(Delegate *)this_01,(MethodInfo *)0x0);
-  this = (ProfileSettingButton *)
-         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__set_Item_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
-  ;
-  if (pDVar24 == (Delegate *)0x0) {
-    pOVar3 = (Object *)0x0;
+  if ((pOVar1->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+    FUN_?(pOVar1,lRam_?);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
   }
-  else {
-    key = &UNK_?;
-    pOVar3 = (Object *)func_?();
-    if (pOVar3 == (Object *)0x0) goto code_?;
+  iVar3 = (this->fields).minValue;
+  iVar4 = 1;
+  if ((this->fields).isIncrease == 0) {
+    iVar4 = -1;
   }
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-  Dictionary_2_System_Int32Enum_System_Object__set_Item
-            ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,(Int32Enum__Enum)key,pOVar3,
-             (MethodInfo *)this);
+  iVar4 = iVar4 + *(int *)&pOVar1[1].klass;
+  if ((iVar3 <= iVar4) && (iVar5 = (this->fields).maxValue, iVar3 = iVar4, iVar5 < iVar4)) {
+    iVar3 = iVar5;
+  }
+  key = (this->fields).profileSettingKey;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__FilterMode);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__MetaData__TargetFrameRateValue);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Error);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pSVar6 = StringLiteral_Error;
+  switch((this->fields).profileSettingKey) {
+  case 1:
+    aiStackX_8[0] = iVar3;
+    pSVar6 = (String *)
+              FUN_?(TypeInfo__MV__WorldObject__MetaData__TargetFrameRateValue,aiStackX_8);
+    break;
+  case 2:
+    aiStackX_8[0] = iVar3;
+    pSVar6 = (String *)
+              FUN_?(TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel,aiStackX_8);
+    break;
+  case 3:
+    aiStackX_8[0] = iVar3;
+    pSVar6 = (String *)FUN_?(TypeInfo__UnityEngine__FilterMode,aiStackX_8);
+    break;
+  case 4:
+    aiStackX_8[0] = iVar3;
+    pSVar6 = (String *)
+              FUN_?(TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel,aiStackX_8
+                           );
+    break;
+  case 5:
+    aiStackX_8[0] = iVar3;
+    pSVar6 = (String *)
+              FUN_?(TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel,aiStackX_8);
+    break;
+  case 6:
+    aiStackX_8[0] = iVar3;
+    pSVar6 = (String *)
+              FUN_?(TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel,aiStackX_8);
+  }
+  if (*(int *)&(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).field_0x1c
+      == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel,pSVar6,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__FilterMode);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVInputWrapper);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__MetaData__TargetFrameRateValue);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar7 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (((pMVar7 == (MVGameControllerBase *)0x0) ||
+      (pMVar8 = (pMVar7->fields).game, pMVar8 == (MVNetworkGame *)0x0)) ||
+     (this_00 = (pMVar8->fields).operationRequests,
+     this_00 == (MVNetworkGame_OperationRequests *)0x0)) goto code_?;
+  MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_SetProfileSettings
+            (this_00,key,(Object *)pSVar6,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).field_0x1c
+      == 0) {
+    FUN_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
+  }
+  this_01 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
+            ProfileSettingsChanged;
+  if ((this_01 ==
+       (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_ *)0x0) ||
+     (pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+                Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                          ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,key,
+                           MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                          ), pOVar1 == (Object *)0x0)) goto code_?;
+  (*(code *)pOVar1[1].monitor)(pOVar1[4].klass,pSVar6,pOVar1[2].monitor);
+  switch(key) {
+  case 0:
+    if (*(int *)&(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).field_0x1c
+        == 0) {
+      FUN_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
+    }
+    if (pSVar6 != (String *)0x0) {
+      if ((pSVar6->klass->_0).element_class == *(Il2CppClass **)(lRam_? + 0x40)) {
+        TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
+        mouseSensitivity = (float)(pSVar6->fields)._stringLength;
+        fVar9 = Assets::Scripts::ProfileSettings::ProfileSettingsManager::
+                 ProfileSettingsManager_CalculateMouseSensitivityFromValue
+                           (TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
+                            static_fields->mouseSensitivity,(MethodInfo *)0x0);
+        if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        FUN_?(fVar9);
+        return;
+      }
+      FUN_?(pSVar6,lRam_?);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    break;
+  case 1:
+    if (*(int *)&(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).field_0x1c
+        == 0) {
+      FUN_?();
+    }
+    if (pSVar6 != (String *)0x0) {
+      if ((pSVar6->klass->_0).element_class !=
+          (TypeInfo__MV__WorldObject__MetaData__TargetFrameRateValue->_0).element_class) {
+        FUN_?(pSVar6);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      FUN_?((pSVar6->fields)._stringLength);
+      iVar3 = FUN_?();
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if ((*(int *)&(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+                    field_0x1c == 0) &&
+         (FUN_?(),
+         *(int *)&(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+                  field_0x1c == 0)) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Application,0);
+        LOCK();
+        UNLOCK();
+        FUN_?(&TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Application->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      pcVar2 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+        uVar10 = func_?(&UNK_?);
+        FUN_?(uVar10,0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcRam_? = pcVar2;
+      (*pcRam_?)(0xffffffff);
+      if (*(int *)&(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
+                   field_0x1c == 0) {
+        FUN_?();
+      }
+      if (iVar3 == 0) {
+        uVar10 = 0;
+      }
+      else if (iVar3 == 1) {
+        uVar10 = 4;
+      }
+      else if (iVar3 == 2) {
+        uVar10 = 3;
+      }
+      else if (iVar3 == 3) {
+        uVar10 = 2;
+      }
+      else {
+        uVar10 = 1;
+      }
+      pcVar2 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+        uVar10 = func_?(&UNK_?);
+        FUN_?(uVar10,0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcRam_? = pcVar2;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*pcRam_?)(uVar10);
+      return;
+    }
+    break;
+  case 2:
+    if (*(int *)&(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).field_0x1c
+        == 0) {
+      FUN_?();
+    }
+    if (pSVar6 != (String *)0x0) {
+      if ((pSVar6->klass->_0).element_class !=
+          (TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel->_0).element_class) {
+        FUN_?(pSVar6);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      FUN_?();
+      pMVar11 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
+      iVar3 = FUN_?();
+      if (pMVar11 != (MaterialLoader *)0x0) {
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object,iVar3,0);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (iVar3 != (pMVar11->fields).selectedQuality) {
+          if ((pMVar11->fields).isStreamingTexture == 0) {
+            (pMVar11->fields).selectedQuality = iVar3;
+            if (iVar3 == 0) {
+              lVar12 = 0xb0;
+              lVar13 = 200;
+            }
+            else if (iVar3 == 1) {
+              lVar12 = 0xa8;
+              lVar13 = 0xc0;
+            }
+            else if (iVar3 == 2) {
+              lVar12 = 0xa0;
+              lVar13 = 0xb8;
+            }
+            else {
+              lVar12 = 0x70;
+              lVar13 = 0x78;
+            }
+            if ((pMVar11->fields).isUsingSM3Shader == 0) {
+              lVar12 = lVar13;
+            }
+            pTVar14 = *(Texture **)((longlong)&pMVar11->klass + lVar12);
+            if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__UnityEngine__Object);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__UnityEngine__Object);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            if (pTVar14 != (Texture *)0x0) {
+              if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              if ((pTVar14->fields)._.m_CachedPtr != (void *)0x0) {
+                if (cRam_? == '\0') {
+                  FUN_?(&TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager)
+                  ;
+                  LOCK();
+                  UNLOCK();
+                  FUN_?(&TypeInfo__TextureAtlasData);
+                  LOCK();
+                  UNLOCK();
+                  FUN_?(&StringLiteral__MainTex);
+                  LOCK();
+                  UNLOCK();
+                  cRam_? = '\x01';
+                }
+                if (pTVar14 != (Texture *)0x0) {
+                  uVar15 = (*(pTVar14->klass->vtable).GetHashCode.methodPtr)
+                                     (pTVar14,(pTVar14->klass->vtable).GetHashCode.method);
+                  (pMVar11->fields).atlasHash = uVar15;
+                  if (*(int *)&(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
+                               _1).field_0x1c == 0) {
+                    FUN_?();
+                  }
+                  if (cRam_? == '\0') {
+                    FUN_?(&
+                                  TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager
+                                 );
+                    LOCK();
+                    UNLOCK();
+                    cRam_? = '\x01';
+                  }
+                  if (*(int *)&(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
+                               _1).field_0x1c == 0) {
+                    FUN_?();
+                  }
+                  UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_filterMode
+                            (pTVar14,TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager
+                                     ->static_fields->_TextureFilter_k__BackingField,
+                             (MethodInfo *)0x0);
+                  if (cRam_? == '\0') {
+                    FUN_?(&
+                                  TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager
+                                 );
+                    LOCK();
+                    UNLOCK();
+                    cRam_? = '\x01';
+                  }
+                  if (*(int *)&(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
+                               _1).field_0x1c == 0) {
+                    FUN_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager
+                                 );
+                  }
+                  switch(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->
+                         static_fields->_AnistropicFilteringLevel_k__BackingField) {
+                  default:
+                    iVar16 = 0;
+                    break;
+                  case 1:
+                    iVar16 = 1;
+                    break;
+                  case 2:
+                    iVar16 = 2;
+                    break;
+                  case 3:
+                    iVar16 = 4;
+                    break;
+                  case 4:
+                    iVar16 = 8;
+                    break;
+                  case 5:
+                    iVar16 = 0x10;
+                  }
+                  UnityEngine.CoreModule.dll::UnityEngine::Texture::Texture_set_anisoLevel
+                            (pTVar14,iVar16,(MethodInfo *)0x0);
+                  pMVar17 = (pMVar11->fields)._CubeModelMaterial_k__BackingField;
+                  if (pMVar17 != (Material *)0x0) {
+                    iVar16 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID
+                                       (StringLiteral__MainTex,(MethodInfo *)0x0);
+                    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTextureImpl
+                              (pMVar17,iVar16,pTVar14,(MethodInfo *)0x0);
+                    pMVar17 = (pMVar11->fields)._CubeModelMaterialTransp_k__BackingField;
+                    if (pMVar17 != (Material *)0x0) {
+                      iVar16 = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID
+                                         (StringLiteral__MainTex,(MethodInfo *)0x0);
+                      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetTextureImpl
+                                (pMVar17,iVar16,pTVar14,(MethodInfo *)0x0);
+                      if ((pMVar11->fields).isUsingSM3Shader == 0) {
+                        if (*(int *)&(TypeInfo__TextureAtlasData->_1).field_0x1c == 0) {
+                          FUN_?();
+                        }
+                        TextureAtlasData::TextureAtlasData_StreamAtlasUVsToMaterial
+                                  ((Material **)&stack0x00000010,(MethodInfo *)0x0);
+                        TextureAtlasData::TextureAtlasData_StreamAtlasUVsToMaterial
+                                  ((Material **)&stack0x00000010,(MethodInfo *)0x0);
+                      }
+                      if (cRam_? == '\0') {
+                        FUN_?(&TypeInfo__MVGameControllerBase);
+                        LOCK();
+                        UNLOCK();
+                        cRam_? = '\x01';
+                      }
+                      pGVar18 = TypeInfo__MVGameControllerBase->static_fields->
+                               _GameSessionData_k__BackingField;
+                      if (pGVar18 != (GameSessionData *)0x0) {
+                        if ((pGVar18->fields).gameMode != 1) {
+                          pMVar8 = MVGameControllerBase::MVGameControllerBase_get_Game
+                                              ((MethodInfo *)0x0);
+                          if ((pMVar8 == (MVNetworkGame *)0x0) ||
+                             (this_02 = (pMVar8->fields)._MaterialRepository_k__BackingField,
+                             this_02 == (MVMaterialRepository *)0x0)) goto code_?;
+                          MVMaterialRepository::MVMaterialRepository_GenerateMaterialButtonTextures
+                                    (this_02,(MethodInfo *)0x0);
+                        }
+                        return;
+                      }
+                    }
+                  }
+                }
+code_?:
+                FUN_?();
+                pcVar2 = (code *)swi(3);
+                (*pcVar2)();
+                return;
+              }
+            }
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>,0);
+              LOCK();
+              UNLOCK();
+              FUN_?(&TypeInfo__AsyncWWWManager);
+              LOCK();
+              UNLOCK();
+              FUN_?(&TypeInfo__CachedAssetBundleRequest);
+              LOCK();
+              UNLOCK();
+              FUN_?(&
+                            MethodInfo__MaterialLoader__AtlasCallback_UnityEngine__Networking__UnityWebRequest_
+                           );
+              LOCK();
+              UNLOCK();
+              FUN_?(&MethodInfo__MaterialLoader__DownloadAtlasWhenPossible__);
+              LOCK();
+              UNLOCK();
+              FUN_?(&TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable);
+              LOCK();
+              UNLOCK();
+              FUN_?(&TypeInfo__MV__Common__Urls);
+              LOCK();
+              UNLOCK();
+              FUN_?(&StringLiteral_AssetBundles_Atlas_);
+              LOCK();
+              UNLOCK();
+              FUN_?(&StringLiteral_atlashigh);
+              LOCK();
+              UNLOCK();
+              FUN_?(&StringLiteral__unity3d);
+              LOCK();
+              UNLOCK();
+              FUN_?(&StringLiteral_array_unity3d);
+              LOCK();
+              UNLOCK();
+              FUN_?(&StringLiteral_atlaslow);
+              LOCK();
+              UNLOCK();
+              FUN_?(&StringLiteral_atlasmid);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            (pMVar11->fields).isStreamingTexture = 1;
+            if (*(int *)&(TypeInfo__MV__Common__Urls->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            bVar19 = MVCommon.dll::MV::Common::Urls::Urls_StreamingAssetUrlReady((MethodInfo *)0x0);
+            if (bVar19 == 0) {
+              if (*(int *)&(TypeInfo__MV__Common__Urls->_1).field_0x1c == 0) {
+                FUN_?(TypeInfo__MV__Common__Urls);
+              }
+              pUVar20 = TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable;
+              pNVar21 = (NavMesh_OnNavMeshPreUpdate *)
+                        FUN_?(TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable);
+              UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+              NavMesh_OnNavMeshPreUpdate__ctor
+                        (pNVar21,(Object *)pMVar11,
+                         MethodInfo__MaterialLoader__DownloadAtlasWhenPossible__,(MethodInfo *)0x0);
+              pUVar20 = (Urls_OnStreamingAssetsUrlAvailable *)
+                        mscorlib.dll::System::Delegate::Delegate_Combine
+                                  ((Delegate *)pUVar20,(Delegate *)pNVar21,(MethodInfo *)0x0);
+              if (pUVar20 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
+                TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable =
+                     (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+              }
+              else {
+                pUVar22 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+                if (pUVar20->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+                  pUVar22 = pUVar20;
+                }
+                if (pUVar22 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
+                  FUN_?(pUVar20,TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable);
+                  pcVar2 = (code *)swi(3);
+                  (*pcVar2)();
+                  return;
+                }
+                TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar22;
+                pUVar22 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+                if (pUVar20->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+                  pUVar22 = pUVar20;
+                }
+                if (pUVar22 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
+                  FUN_?(pUVar20);
+                  pcVar2 = (code *)swi(3);
+                  (*pcVar2)();
+                  return;
+                }
+              }
+              if (iRam_? != 0) {
+                uVar23 = (uint)((ulonglong)TypeInfo__MV__Common__Urls->static_fields >> 0xc);
+                lVar12 = (ulonglong)((uVar23 & 0x1fffff) >> 6) * 8;
+                do {
+                  uVar24 = *(ulonglong *)(lVar12 + 0xADDR);
+                  puVar25 = (ulonglong *)(lVar12 + 0xADDR);
+                  LOCK();
+                  bVar26 = uVar24 == *puVar25;
+                  if (bVar26) {
+                    *puVar25 = uVar24 | 1L << (uVar23 & 0x3f);
+                  }
+                  UNLOCK();
+                } while (!bVar26);
+              }
+            }
+            else {
+              if (*(int *)&(TypeInfo__MV__Common__Urls->_1).field_0x1c == 0) {
+                FUN_?(TypeInfo__MV__Common__Urls);
+              }
+              pUVar20 = TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable;
+              pNVar21 = (NavMesh_OnNavMeshPreUpdate *)
+                        FUN_?(TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable);
+              UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+              NavMesh_OnNavMeshPreUpdate__ctor
+                        (pNVar21,(Object *)pMVar11,
+                         MethodInfo__MaterialLoader__DownloadAtlasWhenPossible__,(MethodInfo *)0x0);
+              pUVar20 = (Urls_OnStreamingAssetsUrlAvailable *)
+                        mscorlib.dll::System::Delegate::Delegate_Remove
+                                  ((Delegate *)pUVar20,(Delegate *)pNVar21,(MethodInfo *)0x0);
+              if (pUVar20 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
+                TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable =
+                     (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+              }
+              else {
+                pUVar22 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+                if (pUVar20->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+                  pUVar22 = pUVar20;
+                }
+                if (pUVar22 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
+                  FUN_?(pUVar20,TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable);
+                  pcVar2 = (code *)swi(3);
+                  (*pcVar2)();
+                  return;
+                }
+                TypeInfo__MV__Common__Urls->static_fields->onStreamingAssetsUrlAvailable = pUVar22;
+                pUVar22 = (Urls_OnStreamingAssetsUrlAvailable *)0x0;
+                if (pUVar20->klass == TypeInfo__MV__Common__Urls__OnStreamingAssetsUrlAvailable) {
+                  pUVar22 = pUVar20;
+                }
+                if (pUVar22 == (Urls_OnStreamingAssetsUrlAvailable *)0x0) {
+                  FUN_?(pUVar20);
+                  pcVar2 = (code *)swi(3);
+                  (*pcVar2)();
+                  return;
+                }
+              }
+              if (iRam_? != 0) {
+                uVar23 = (uint)((ulonglong)TypeInfo__MV__Common__Urls->static_fields >> 0xc);
+                lVar12 = (ulonglong)((uVar23 & 0x1fffff) >> 6) * 8;
+                do {
+                  uVar24 = *(ulonglong *)(lVar12 + 0xADDR);
+                  puVar25 = (ulonglong *)(lVar12 + 0xADDR);
+                  LOCK();
+                  bVar26 = uVar24 == *puVar25;
+                  if (bVar26) {
+                    *puVar25 = uVar24 | 1L << (ulonglong)(uVar23 & 0x3f);
+                  }
+                  UNLOCK();
+                } while (!bVar26);
+              }
+              iVar3 = (pMVar11->fields).selectedQuality;
+              pSVar6 = StringLiteral_atlaslow;
+              if (((iVar3 != 0) && (pSVar6 = StringLiteral_atlasmid, iVar3 != 1)) &&
+                 (pSVar6 = StringLiteral_atlaslow, iVar3 == 2)) {
+                pSVar6 = StringLiteral_atlashigh;
+              }
+              if (*(int *)&(TypeInfo__MV__Common__Urls->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              str0 = MVCommon.dll::MV::Common::Urls::Urls_get_StreamingAssets((MethodInfo *)0x0);
+              str3 = StringLiteral_array_unity3d;
+              if ((pMVar11->fields).isUsingSM3Shader == 0) {
+                str3 = StringLiteral__unity3d;
+              }
+              pSVar6 = mscorlib.dll::System::String::String_Concat_6
+                                  (str0,StringLiteral_AssetBundles_Atlas_,pSVar6,str3,
+                                   (MethodInfo *)0x0);
+              this_03 = (UnityAction_1_System_Object_ *)
+                        FUN_?(
+                                     TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>
+                                     );
+              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+              UnityAction_1_System_Object___ctor
+                        (this_03,(Object *)pMVar11,
+                         MethodInfo__MaterialLoader__AtlasCallback_UnityEngine__Networking__UnityWebRequest_
+                         ,(MethodInfo *)0x0);
+              this_04 = (AsyncWebRequest *)FUN_?(TypeInfo__CachedAssetBundleRequest);
+              AsyncWebRequest::AsyncWebRequest__ctor
+                        (this_04,pSVar6,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_03
+                         ,WWWRequestPriority__Enum_WaitUntilSyncronizingIsDone,(MethodInfo *)0x0);
+              if (*(int *)&(TypeInfo__AsyncWWWManager->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              AsyncWWWManager::AsyncWWWManager_WWWRequest(this_04,(MethodInfo *)0x0);
+            }
+            return;
+          }
+          (pMVar11->fields).storedTextureQuality = iVar3;
+        }
+        return;
+      }
+    }
+    break;
+  case 3:
+    if (*(int *)&(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).field_0x1c
+        == 0) {
+      FUN_?();
+    }
+    if (pSVar6 != (String *)0x0) {
+      if ((pSVar6->klass->_0).element_class !=
+          (TypeInfo__UnityEngine__FilterMode->_0).element_class) {
+        FUN_?(pSVar6);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      FUN_?();
+      pMVar11 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
+      if ((pMVar11 != (MaterialLoader *)0x0) &&
+         (pMVar17 = (pMVar11->fields)._CubeModelMaterial_k__BackingField, pMVar17 != (Material *)0x0))
+      {
+        pTVar14 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
+                            (pMVar17,(MethodInfo *)0x0);
+        uVar27 = FUN_?();
+        if (pTVar14 != (Texture *)0x0) {
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Texture>_UnityEngine__Texture_
+                          ,uVar27,0);
+            LOCK();
+            UNLOCK();
+            FUN_?(&TypeInfo__UnityEngine__Texture);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (pTVar14 == (Texture *)0x0) {
+            FUN_?();
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pvVar28 = (pTVar14->fields)._.m_CachedPtr;
+          if (pvVar28 == (void *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar14,(MethodInfo *)0x0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          if (*(int *)&(TypeInfo__UnityEngine__Texture->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar10 = func_?(&UNK_?);
+            FUN_?(uVar10,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*pcRam_?)(pvVar28,uVar27);
+          return;
+        }
+      }
+    }
+    break;
+  case 4:
+    if (*(int *)&(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).field_0x1c
+        == 0) {
+      FUN_?();
+    }
+    if (pSVar6 != (String *)0x0) {
+      if ((pSVar6->klass->_0).element_class !=
+          (TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel->_0).element_class) {
+        FUN_?(pSVar6);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      FUN_?();
+      pMVar11 = MVGameControllerBase::MVGameControllerBase_get_MaterialLoader((MethodInfo *)0x0);
+      if ((pMVar11 != (MaterialLoader *)0x0) &&
+         (pMVar17 = (pMVar11->fields)._CubeModelMaterial_k__BackingField, pMVar17 != (Material *)0x0))
+      {
+        pTVar14 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_get_mainTexture
+                            (pMVar17,(MethodInfo *)0x0);
+        level = FUN_?();
+        iVar16 = Assets::Scripts::ProfileSettings::ProfileSettingsManager::
+                 ProfileSettingsManager_AnisoLevelToInt(level,(MethodInfo *)0x0);
+        if (pTVar14 != (Texture *)0x0) {
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Texture>_UnityEngine__Texture_
+                          ,iVar16,0);
+            LOCK();
+            UNLOCK();
+            FUN_?(&TypeInfo__UnityEngine__Texture);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (pTVar14 == (Texture *)0x0) {
+            FUN_?();
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pvVar28 = (pTVar14->fields)._.m_CachedPtr;
+          if (pvVar28 == (void *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar14,(MethodInfo *)0x0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          if (*(int *)&(TypeInfo__UnityEngine__Texture->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar10 = func_?(&UNK_?);
+            FUN_?(uVar10,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*pcRam_?)(pvVar28,iVar16);
+          return;
+        }
+      }
+    }
+    break;
+  case 5:
+    if (*(int *)&(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).field_0x1c
+        == 0) {
+      FUN_?();
+    }
+    if (pSVar6 == (String *)0x0) break;
+    if ((pSVar6->klass->_0).element_class !=
+        (TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel->_0).element_class) {
+      FUN_?(pSVar6);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    FUN_?((pSVar6->fields)._stringLength);
+    iVar3 = FUN_?();
+    if (iVar3 != 0) {
+      if (iVar3 == 1) {
+        uVar27 = 2;
+        goto UnityEngine_CoreModule_dll_UnityEngine_QualitySettings_QualitySettings_set_antiAliasing
+        ;
+      }
+      if (iVar3 == 2) {
+        uVar27 = 4;
+        goto UnityEngine_CoreModule_dll_UnityEngine_QualitySettings_QualitySettings_set_antiAliasing
+        ;
+      }
+      if (iVar3 == 3) {
+        uVar27 = 8;
+        goto UnityEngine_CoreModule_dll_UnityEngine_QualitySettings_QualitySettings_set_antiAliasing
+        ;
+      }
+    }
+    uVar27 = 0;
+UnityEngine_CoreModule_dll_UnityEngine_QualitySettings_QualitySettings_set_antiAliasing:
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?,0), pcVar2 == (code *)0x0)) {
+      uVar10 = func_?(&UNK_?);
+      FUN_?(uVar10,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*pcRam_?)(uVar27);
+    return;
+  case 6:
+    if (*(int *)&(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).field_0x1c
+        == 0) {
+      FUN_?();
+    }
+    if (pSVar6 != (String *)0x0) {
+      if ((pSVar6->klass->_0).element_class !=
+          (TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel->_0).element_class) {
+        FUN_?(pSVar6);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      FUN_?((pSVar6->fields)._stringLength);
+      iVar3 = FUN_?();
+      if (iVar3 == 0) {
+        pcVar2 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar2 = (code *)FUN_?(&UNK_?,0), pcVar2 == (code *)0x0)) {
+          uVar10 = func_?(&UNK_?);
+          FUN_?(uVar10,0);
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        pcRam_? = pcVar2;
+        (*pcRam_?)(1);
+        pcVar2 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+          uVar10 = func_?(&UNK_?);
+          FUN_?(uVar10,0);
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        pcRam_? = pcVar2;
+        (*pcRam_?)(0);
+        pcVar2 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+          uVar10 = func_?(&UNK_?);
+          FUN_?(uVar10,0);
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        pcRam_? = pcVar2;
+        (*pcRam_?)(4);
+        pcVar2 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+          uVar10 = func_?(&UNK_?);
+          FUN_?(uVar10,0);
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        pcRam_? = pcVar2;
+        (*pcRam_?)(0);
+        pcVar2 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+          uVar10 = func_?(&UNK_?);
+          FUN_?(uVar10,0);
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        pcRam_? = pcVar2;
+        (*pcRam_?)(_UNK_?);
+      }
+      else {
+        if (iVar3 == 1) {
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar10 = func_?(&UNK_?);
+            FUN_?(uVar10,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+          (*pcRam_?)(2);
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar10 = func_?(&UNK_?);
+            FUN_?(uVar10,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+          (*pcRam_?)(0);
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar10 = func_?(&UNK_?);
+            FUN_?(uVar10,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+          (*pcRam_?)(4);
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar10 = func_?(&UNK_?);
+            FUN_?(uVar10,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+          (*pcRam_?)(1);
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar10 = func_?(&UNK_?);
+            FUN_?(uVar10,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+          (*pcRam_?)(0);
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar10 = func_?(&UNK_?);
+            FUN_?(uVar10,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+          (*pcRam_?)(_UNK_?);
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar10 = func_?(&UNK_?);
+            FUN_?(uVar10,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+          (*pcRam_?)(2);
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar10 = func_?(&UNK_?);
+            FUN_?(uVar10,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+          (*pcRam_?)(_UNK_?);
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar10 = func_?(&UNK_?);
+            FUN_?(uVar10,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+          (*pcRam_?)(_UNK_?);
+          return;
+        }
+        if (iVar3 == 2) {
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar10 = func_?(&UNK_?);
+            FUN_?(uVar10,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+          (*pcRam_?)(4);
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar10 = func_?(&UNK_?);
+            FUN_?(uVar10,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+          (*pcRam_?)(1);
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar10 = func_?(&UNK_?);
+            FUN_?(uVar10,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+          (*pcRam_?)(0x10);
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar10 = func_?(&UNK_?);
+            FUN_?(uVar10,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+          (*pcRam_?)(2);
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar10 = func_?(&UNK_?);
+            FUN_?(uVar10,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+          (*pcRam_?)(2);
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar10 = func_?(&UNK_?);
+            FUN_?(uVar10,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+          (*pcRam_?)(_UNK_?);
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar10 = func_?(&UNK_?);
+            FUN_?(uVar10,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+          (*pcRam_?)(4);
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar10 = func_?(&UNK_?);
+            FUN_?(uVar10,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+          (*pcRam_?)(&stack0xffffffffffffffe8);
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar10 = func_?(&UNK_?);
+            FUN_?(uVar10,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+          (*pcRam_?)(_UNK_?);
+          return;
+        }
+      }
+      return;
+    }
+    break;
+  default:
+    return;
+  }
+code_?:
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -275,61 +1302,77 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_OnDestroy
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<System::Object>);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__set_Item_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
-                   );
-    func_?(&MethodInfo__ProfileSettingButton__OnChange_System__Object_);
-    func_?(&TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
+    FUN_?(&TypeInfo__System__Action<System::Object>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__set_Item_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__ProfileSettingButton__OnChange_System__Object_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
+  if (*(int *)&(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).field_0x1c
+      == 0) {
+    FUN_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
   }
   this_00 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
             ProfileSettingsChanged;
-  key = (this->fields).profileSettingKey;
   if (this_00 !=
       (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_ *)0x0) {
+    key = (this->fields).profileSettingKey;
     pDVar1 = (Delegate *)
              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
              Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
                        ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,key,
                         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
                        );
-    this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)func_?(TypeInfo__System__Action<System::Object>);
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+    this_01 = (UnityAction_1_System_Object_ *)
+              FUN_?(TypeInfo__System__Action<System::Object>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+    UnityAction_1_System_Object___ctor
               (this_01,(Object *)this,MethodInfo__ProfileSettingButton__OnChange_System__Object_,
                (MethodInfo *)0x0);
     pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
                        (pDVar1,(Delegate *)this_01,(MethodInfo *)0x0);
-    method_00 = 
+    pAVar2 = TypeInfo__System__Action<System::Object>;
+    pMVar3 = 
     MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__set_Item_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
     ;
     if (pDVar1 == (Delegate *)0x0) {
       value = (Object *)0x0;
     }
     else {
-      value = (Object *)func_?();
-      if (value == (Object *)0x0) goto code_?;
+      value = (Object *)FUN_?(pDVar1,TypeInfo__System__Action<System::Object>);
+      if (value == (Object *)0x0) {
+        FUN_?(pDVar1,pAVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
     }
+    pIVar5 = pMVar3->klass->rgctx_data;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__set_Item
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,key,value,method_00);
+    Dictionary_2_System_Int32Enum_System_Object__TryInsert
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,key,value,
+               (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pIVar5 >> 8),1),
+               pIVar5[0x22].method);
     return;
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -341,44 +1384,54 @@ Object * Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_Profile
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel);
-    func_?(&TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel);
-    func_?(&TypeInfo__UnityEngine__FilterMode);
-    func_?(&TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel);
-    func_?(&TypeInfo__MV__WorldObject__MetaData__TargetFrameRateValue);
-    func_?(&TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel);
-    func_?(&StringLiteral_Error);
+    FUN_?(&TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__FilterMode);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__MetaData__TargetFrameRateValue);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Error);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  aiStackX_8[0] = value;
   switch((this->fields).profileSettingKey) {
   case 1:
-    this = (ProfileSettingButton *)value;
     pOVar1 = (Object *)
-             func_?(TypeInfo__MV__WorldObject__MetaData__TargetFrameRateValue,&this);
+             FUN_?(TypeInfo__MV__WorldObject__MetaData__TargetFrameRateValue,aiStackX_8);
     return pOVar1;
   case 2:
-    this = (ProfileSettingButton *)value;
     pOVar1 = (Object *)
-             func_?(TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel,&this);
+             FUN_?(TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel,aiStackX_8);
     return pOVar1;
   case 3:
-    this = (ProfileSettingButton *)value;
-    pOVar1 = (Object *)func_?(TypeInfo__UnityEngine__FilterMode,&this);
+    pOVar1 = (Object *)FUN_?(TypeInfo__UnityEngine__FilterMode,aiStackX_8);
     return pOVar1;
   case 4:
-    this = (ProfileSettingButton *)value;
     pOVar1 = (Object *)
-             func_?(TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel,&this);
-    return pOVar1;
-  case 5:
-    this = (ProfileSettingButton *)value;
-    pOVar1 = (Object *)func_?(TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel,&this)
+             FUN_?(TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel,aiStackX_8)
     ;
     return pOVar1;
-  case 6:
-    this = (ProfileSettingButton *)value;
+  case 5:
     pOVar1 = (Object *)
-             func_?(TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel,&this);
+             FUN_?(TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel,aiStackX_8);
+    return pOVar1;
+  case 6:
+    pOVar1 = (Object *)
+             FUN_?(TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel,aiStackX_8);
     return pOVar1;
   default:
     return (Object *)StringLiteral_Error;
@@ -393,422 +1446,435 @@ void Assembly-CSharp.dll::ProfileSettingButton::ProfileSettingButton_Start
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    ppTVar1 = &TypeInfo__System__Type;
-    in_stack_2 = (TextureQualityLevel__Enum__Class **)&UNK_?;
-    func_?();
-    cRam_? = '\x01';
-    in_stack_3 = (TargetFrameRateValue__Enum__Class **)ppTVar1;
-  }
-  object = (Enum__Class *)this;
-  pBVar4 = (Button *)
-           UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
-                     ((Component *)this,
-                      UnityEngine__UI__Button_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Button>__
-                     );
-  (((ProfileSettingButton *)object)->fields).button = pBVar4;
-  func_?();
-  (((ProfileSettingButton *)object)->fields).minValue = 0;
-  (((ProfileSettingButton *)object)->fields).isIncrease =
-       (((ProfileSettingButton *)object)->fields).profileSettingButtonType == 0;
-  handle_04 = TypeRef__MV__WorldObject__MetaData__TextureQualityLevel;
-  handle_03 = TypeRef__MV__WorldObject__MetaData__TargetFrameRateValue;
-  handle_02 = TypeRef__MV__WorldObject__MetaData__LightingQualityLevel;
-  handle_01 = TypeRef__UnityEngine__FilterMode;
-  handle_00 = TypeRef__MV__WorldObject__MetaData__AntiAliasingLevel;
-  handle = TypeRef__MV__WorldObject__MetaData__AnistropicFilteringLevel;
-  switch((((ProfileSettingButton *)object)->fields).profileSettingKey) {
-  case 1:
-    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    unaff_ESI = (Enum__Class *)
-                mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                          ((RuntimeTypeHandle)handle_03,(MethodInfo *)0x0);
-    if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
-      IStack_5.m_value = (int32_t)TypeInfo__System__Enum;
-      func_?();
-    }
-    pAVar6 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
-    cVar7 = (int)pAVar6 < 0;
-    uVar8 = pAVar6 == (Array *)0x0;
-    if (!(bool)uVar8) {
-      iVar9 = mscorlib.dll::System::Array::Array_get_Length(pAVar6,(MethodInfo *)0x0);
-      iVar10 = iVar9 + -1;
-      break;
-    }
-    goto code_?;
-  case 2:
-    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    unaff_ESI = (Enum__Class *)
-                mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                          ((RuntimeTypeHandle)handle_04,(MethodInfo *)0x0);
-    if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
-      IStack_5.m_value = (int32_t)TypeInfo__System__Enum;
-      func_?();
-    }
-    pAVar6 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
-    cVar7 = (int)pAVar6 < 0;
-    uVar8 = true;
-    if (pAVar6 == (Array *)0x0) goto code_?;
-    iVar9 = mscorlib.dll::System::Array::Array_get_Length(pAVar6,(MethodInfo *)0x0);
-    iVar10 = iVar9 + -2;
-    break;
-  case 3:
-    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    unaff_ESI = (Enum__Class *)
-                mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                          ((RuntimeTypeHandle)handle_01,(MethodInfo *)0x0);
-    if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
-      IStack_5.m_value = (int32_t)TypeInfo__System__Enum;
-      func_?();
-    }
-    pAVar6 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
-    cVar7 = (int)pAVar6 < 0;
-    uVar8 = true;
-    if (pAVar6 == (Array *)0x0) goto code_?;
-    iVar9 = mscorlib.dll::System::Array::Array_get_Length(pAVar6,(MethodInfo *)0x0);
-    iVar10 = iVar9 + -1;
-    break;
-  case 4:
-    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    unaff_ESI = (Enum__Class *)
-                mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                          ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-    if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
-      IStack_5.m_value = (int32_t)TypeInfo__System__Enum;
-      func_?();
-    }
-    pAVar6 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
-    cVar7 = (int)pAVar6 < 0;
-    uVar8 = true;
-    if (pAVar6 == (Array *)0x0) goto code_?;
-    iVar9 = mscorlib.dll::System::Array::Array_get_Length(pAVar6,(MethodInfo *)0x0);
-    iVar10 = iVar9 + -1;
-    break;
-  case 5:
-    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    unaff_ESI = (Enum__Class *)
-                mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                          ((RuntimeTypeHandle)handle_00,(MethodInfo *)0x0);
-    if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
-      IStack_5.m_value = (int32_t)TypeInfo__System__Enum;
-      func_?();
-    }
-    pAVar6 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
-    cVar7 = (int)pAVar6 < 0;
-    uVar8 = true;
-    if (pAVar6 == (Array *)0x0) goto code_?;
-    iVar9 = mscorlib.dll::System::Array::Array_get_Length(pAVar6,(MethodInfo *)0x0);
-    iVar10 = iVar9 + -1;
-    break;
-  case 6:
-    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    unaff_ESI = (Enum__Class *)
-                mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                          ((RuntimeTypeHandle)handle_02,(MethodInfo *)0x0);
-    if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
-      IStack_5.m_value = (int32_t)TypeInfo__System__Enum;
-      func_?();
-    }
-    pAVar6 = mscorlib.dll::System::Enum::Enum_GetValues((Type *)unaff_ESI,(MethodInfo *)0x0);
-    cVar7 = (int)pAVar6 < 0;
-    uVar8 = true;
-    if (pAVar6 == (Array *)0x0) goto code_?;
-    iVar9 = mscorlib.dll::System::Array::Array_get_Length(pAVar6,(MethodInfo *)0x0);
-    iVar10 = iVar9 + -1;
-    break;
-  default:
-    iVar10 = 1;
-  }
-  (((ProfileSettingButton *)object)->fields).maxValue = iVar10;
-  if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  IStack_5.m_value = (((ProfileSettingButton *)object)->fields).profileSettingKey;
-  this_00 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
-            ProfileSettingsChanged;
-  cVar7 = (int)this_00 < 0;
-  uVar8 = true;
-  if (this_00 ==
-      (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_ *)0x0)
-  goto code_?;
-  a = (Delegate *)
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-      Dictionary_2_System_Int32Enum_System_Object__get_Item
-                ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,IStack_5.m_value,
-                 MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
-                );
-  this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-             *)func_?();
-  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            (this_01,(Object *)object,MethodInfo__ProfileSettingButton__OnChange_System__Object_,
-             (MethodInfo *)0x0);
-  pAVar11 = unaff_EDI;
-  unaff_ESI = (Enum__Class *)
-              mscorlib.dll::System::Delegate::Delegate_Combine
-                        (a,(Delegate *)this_01,(MethodInfo *)0x0);
-  unaff_EDI = TypeInfo__System__Action<System::Object>;
-  this = (ProfileSettingButton *)
-         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__set_Item_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
-  ;
-  if (unaff_ESI == (Enum__Class *)0x0) {
-    pOVar12 = (Object *)0x0;
-code_?:
-    unaff_EDI = pAVar11;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__set_Item
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,IStack_5.m_value,pOVar12,
-               (MethodInfo *)this);
-    unaff_ESI = (Enum__Class *)
-                Assets::Scripts::ProfileSettings::ProfileSettingsManager::
-                ProfileSettingsManager_GetSettingValue
-                          ((((ProfileSettingButton *)object)->fields).profileSettingKey,
-                           (MethodInfo *)0x0);
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    cVar7 = (int)unaff_ESI < 0;
-    uVar8 = true;
-    if (unaff_ESI == (Enum__Class *)0x0) {
-code_?:
-      cVar13 = '\0';
-      cVar14 = '\0';
-      func_?();
-    }
-    else {
-      pIVar15 = (((Type__Class *)(unaff_ESI->_0).image)->_0).element_class;
-      pIVar16 = (TypeInfo__System__Int32->_0).element_class;
-      cVar14 = pIVar15 < pIVar16;
-      cVar13 = SBORROW4((int)pIVar15,(int)pIVar16);
-      cVar7 = (int)pIVar15 - (int)pIVar16 < 0;
-      uVar8 = 0;
-      if (pIVar15 == pIVar16) {
-        pEVar17 = (Enum__Class *)&UNK_?;
-        pEVar18 = unaff_ESI;
-        piVar19 = (int *)func_?();
-        unaff_ESI = pEVar17;
-        if ((((ProfileSettingButton *)object)->fields).isIncrease == 0) {
-          value_00 = (((ProfileSettingButton *)object)->fields).minValue < *piVar19;
-        }
-        else {
-          value_00 = *piVar19 < (((ProfileSettingButton *)object)->fields).maxValue;
-        }
-        pBVar4 = (((ProfileSettingButton *)object)->fields).button;
-        cVar7 = (int)pBVar4 < 0;
-        uVar8 = pBVar4 == (Button *)0x0;
-        object = pEVar18;
-        if (!(bool)uVar8) {
-          UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_set_interactable
-                    ((Selectable *)pBVar4,value_00,(MethodInfo *)0x0);
-          return;
-        }
-        goto code_?;
-      }
-    }
-    func_?();
-  }
-  else {
-    pOVar12 = (Object *)func_?();
-    cVar14 = '\0';
-    cVar13 = '\0';
-    cVar7 = (int)pOVar12 < 0;
-    uVar8 = pOVar12 == (Object *)0x0;
-    if (!(bool)uVar8) goto code_?;
-  }
-  uVar20 = func_?();
-  iVar10 = (int)uVar20;
-  out((short)((uint6)uVar20 >> 0x20),iVar10);
-  if (!(bool)uVar8 && cVar13 == cVar7) {
-    pcVar21 = (char *)((int)&(unaff_EDI->_1).genericContainerHandle + 3);
-    *pcVar21 = *pcVar21 + extraout_CL + cVar14;
-    *(int *)(iVar10 + -0x7f8eefdd) = *(int *)(iVar10 + -0x7f8eefdd) + iVar10;
-    swi(4);
-    *(byte *)&(object->_0).image = *(byte *)&(object->_0).image & 0x10;
-    pcVar22 = (code *)swi(3);
-    (*pcVar22)();
-    return;
-  }
-  if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
-    func_?();
-    in_stack_3 = &TypeInfo__MV__WorldObject__MetaData__TargetFrameRateValue;
-    func_?();
-    in_stack_2 = &TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel;
-    func_?();
-    func_?(&::StringLiteral__);
+    FUN_?(&TypeInfo__System__Action<System::Object>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeRef__MV__WorldObject__MetaData__AnistropicFilteringLevel);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeRef__MV__WorldObject__MetaData__AntiAliasingLevel);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__UI__Button_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Button>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__set_Item_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeRef__UnityEngine__FilterMode);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeRef__MV__WorldObject__MetaData__LightingQualityLevel);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__ProfileSettingButton__OnChange_System__Object_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeRef__MV__WorldObject__MetaData__TargetFrameRateValue);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeRef__MV__WorldObject__MetaData__TextureQualityLevel);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  piVar19 = (int *)(this->fields).profileSettingKey;
-  switch((this->fields).profileSettingButtonType) {
+  pBVar1 = (Button *)
+            UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                      ((Component *)this,
+                       UnityEngine__UI__Button_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Button>__
+                      );
+  bVar2 = iRam_? != 0;
+  (this->fields).button = pBVar1;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).button >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
+  pOVar7 = (Object *)0x0;
+  (this->fields).isIncrease = (this->fields).profileSettingButtonType == 0;
+  (this->fields).minValue = 0;
+  handle_04 = TypeRef__MV__WorldObject__MetaData__AnistropicFilteringLevel;
+  handle_03 = TypeRef__UnityEngine__FilterMode;
+  handle_02 = TypeRef__MV__WorldObject__MetaData__AntiAliasingLevel;
+  handle_01 = TypeRef__MV__WorldObject__MetaData__LightingQualityLevel;
+  handle_00 = TypeRef__MV__WorldObject__MetaData__TextureQualityLevel;
+  handle = TypeRef__MV__WorldObject__MetaData__TargetFrameRateValue;
+  switch((this->fields).profileSettingKey) {
   case 1:
-    if (method == (MethodInfo *)0x0) goto code_?;
-    if (*(Il2CppClass **)(method->methodPointer + 0x20) ==
-        (TypeInfo__MV__WorldObject__MetaData__TargetFrameRateValue->_0).element_class) {
-      method_00 = (MethodInfo *)&UNK_?;
-      args = (Object__Array *)method;
-      pTVar23 = (TargetFrameRateValue__Enum *)func_?();
-      value = *pTVar23;
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
-        func_?(&StringLiteral__of_display);
-        func_?(&StringLiteral__1_);
-        func_?(&StringLiteral_Unlimited);
-        func_?(&StringLiteral_Match_display);
-        cRam_? = '\x01';
-      }
-      IStack_5.m_value = 0;
-      this = (ProfileSettingButton *)0x0;
-      pSVar24 = StringLiteral_Unlimited;
-      if ((value == TargetFrameRateValue__Enum_Unlimited) ||
-         (pSVar24 = StringLiteral_Match_display, value == TargetFrameRateValue__Enum_SameAsScreenHz)
-         ) {
-        pSVar24 = TM::TM__(pSVar24,(MethodInfo *)0x0);
-        TM::TM__(pSVar24,(MethodInfo *)0x0);
-      }
-      else {
-        if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
-            cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
-        }
-        pOVar12 = System.Core.dll::System::Runtime::CompilerServices::CallSiteBinder::
-                  CallSiteBinder_BindDelegate
-                            ((CallSiteBinder *)0x0,(CallSite_1_System_Object_ *)in_stack_2,
-                             (Object__Array *)in_stack_3,method_00);
-        if (pOVar12 != (Object *)0x0) {
-          if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
-              cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          pOVar12 = System.Core.dll::System::Runtime::CompilerServices::CallSiteBinder::
-                    CallSiteBinder_BindDelegate
-                              ((CallSiteBinder *)0x0,(CallSite_1_System_Object_ *)method_00,args,
-                               (MethodInfo *)unaff_ESI);
-          if ((pOVar12 != (Object *)0x1) || (cVar7 = func_?(), cVar7 != '\0')) {
-            if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
-                cctor_finished_or_no_cctor == 0) {
-              func_?();
-            }
-            this = (ProfileSettingButton *)
-                   Assets::Scripts::ProfileSettings::ProfileSettingsManager::
-                   ProfileSettingsManager_TargetFrameRateToInt(value,(MethodInfo *)0x0);
-            pSVar24 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&this,(MethodInfo *)0x0);
-            TM::TM__(pSVar24,(MethodInfo *)0x0);
-            goto code_?;
-          }
-        }
-        if ((TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).
-            cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        IStack_5.m_value =
-             Assets::Scripts::ProfileSettings::ProfileSettingsManager::
-             ProfileSettingsManager_TargetFrameRateToVSyncValue(value,(MethodInfo *)0x0);
-        pSVar24 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_5,(MethodInfo *)0x0);
-        str2 = TM::TM__(StringLiteral__of_display,(MethodInfo *)0x0);
-        pSVar24 = mscorlib.dll::System::String::String_Concat_4
-                            (StringLiteral__1_,pSVar24,str2,(MethodInfo *)0x0);
-        TM::TM__(pSVar24,(MethodInfo *)0x0);
-      }
-      goto code_?;
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
     }
-    break;
-  case 2:
-    if (method == (MethodInfo *)0x0) goto code_?;
-    if (*(Il2CppClass **)(method->methodPointer + 0x20) ==
-        (TypeInfo__MV__WorldObject__MetaData__TextureQualityLevel->_0).element_class) {
-      func_?();
-      this_02 = (Enum *)&stack0xffffffec;
-code_?:
-      pSVar24 = mscorlib.dll::System::Enum::Enum_ToString(this_02,(MethodInfo *)0x0);
-      TM::TM__(pSVar24,(MethodInfo *)0x0);
-      goto code_?;
+    pTVar8 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                        ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
     }
-    break;
-  case 3:
-    if (method == (MethodInfo *)0x0) goto code_?;
-    if (*(Il2CppClass **)(method->methodPointer + 0x20) ==
-        (TypeInfo__UnityEngine__FilterMode->_0).element_class) {
-      func_?();
-      this_02 = (Enum *)&stack0xffffffe0;
-      goto code_?;
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
     }
-    break;
-  case 4:
-    if (method == (MethodInfo *)0x0) goto code_?;
-    if (*(Il2CppClass **)(method->methodPointer + 0x20) ==
-        (TypeInfo__MV__WorldObject__MetaData__AnistropicFilteringLevel->_0).element_class) {
-      func_?();
-      mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xffffffd4,(MethodInfo *)0x0);
-      goto code_?;
-    }
-    break;
-  case 5:
-    if (method == (MethodInfo *)0x0) goto code_?;
-    if (*(Il2CppClass **)(method->methodPointer + 0x20) ==
-        (TypeInfo__MV__WorldObject__MetaData__AntiAliasingLevel->_0).element_class) {
-      func_?();
-      mscorlib.dll::System::Enum::Enum_ToString((Enum *)&stack0xffffffc8,(MethodInfo *)0x0);
-      goto code_?;
-    }
-    break;
-  case 6:
-    if (method == (MethodInfo *)0x0) goto code_?;
-    if (*(Il2CppClass **)(method->methodPointer + 0x20) ==
-        (TypeInfo__MV__WorldObject__MetaData__LightingQualityLevel->_0).element_class) {
-      func_?();
-      this_02 = (Enum *)&stack0xffffffbc;
-      goto code_?;
-    }
-    break;
-  default:
-code_?:
-    if (piVar19 != (int *)0x0) {
-      (**(code **)(*piVar19 + 0x318))();
+    if (pTVar8 == (Type *)0x0) {
+      uVar9 = func_?(&TypeInfo__System__ArgumentNullException);
+      pAVar10 = (ArgumentNullException *)func_?(uVar9);
+      pSVar11 = (String *)func_?(&StringLiteral_enumType);
+      mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+                (pAVar10,pSVar11,(MethodInfo *)0x0);
+      uVar9 = func_?(&MethodInfo__System__Enum__GetValues_System__Type_);
+      FUN_?(pAVar10,uVar9);
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
       return;
     }
-    goto code_?;
+    pAVar13 = (Array *)(*(pTVar8->klass->vtable).GetEnumValues.methodPtr)(pTVar8);
+    if (pAVar13 == (Array *)0x0) goto code_?;
+    iVar14 = mscorlib.dll::System::Array::Array_get_Length(pAVar13,(MethodInfo *)0x0);
+    iVar15 = iVar14 + -1;
+    break;
+  case 2:
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    pTVar8 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                        ((RuntimeTypeHandle)handle_00,(MethodInfo *)0x0);
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    if (pTVar8 == (Type *)0x0) {
+      uVar9 = func_?(&TypeInfo__System__ArgumentNullException);
+      pAVar10 = (ArgumentNullException *)func_?(uVar9);
+      pSVar11 = (String *)func_?(&StringLiteral_enumType);
+      mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+                (pAVar10,pSVar11,(MethodInfo *)0x0);
+      uVar9 = func_?(&MethodInfo__System__Enum__GetValues_System__Type_);
+      FUN_?(pAVar10,uVar9);
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
+      return;
+    }
+    pAVar13 = (Array *)(*(pTVar8->klass->vtable).GetEnumValues.methodPtr)(pTVar8);
+    if (pAVar13 == (Array *)0x0) goto code_?;
+    iVar14 = mscorlib.dll::System::Array::Array_get_Length(pAVar13,(MethodInfo *)0x0);
+    iVar15 = iVar14 + -2;
+    break;
+  case 3:
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    pTVar8 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                        ((RuntimeTypeHandle)handle_03,(MethodInfo *)0x0);
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    if (pTVar8 == (Type *)0x0) {
+      uVar9 = func_?(&TypeInfo__System__ArgumentNullException);
+      pAVar10 = (ArgumentNullException *)func_?(uVar9);
+      pSVar11 = (String *)func_?(&StringLiteral_enumType);
+      mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+                (pAVar10,pSVar11,(MethodInfo *)0x0);
+      uVar9 = func_?(&MethodInfo__System__Enum__GetValues_System__Type_);
+      FUN_?(pAVar10,uVar9);
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
+      return;
+    }
+    pAVar13 = (Array *)(*(pTVar8->klass->vtable).GetEnumValues.methodPtr)(pTVar8);
+    if (pAVar13 == (Array *)0x0) goto code_?;
+    iVar14 = mscorlib.dll::System::Array::Array_get_Length(pAVar13,(MethodInfo *)0x0);
+    iVar15 = iVar14 + -1;
+    break;
+  case 4:
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    pTVar8 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                        ((RuntimeTypeHandle)handle_04,(MethodInfo *)0x0);
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    if (pTVar8 == (Type *)0x0) {
+      uVar9 = func_?(&TypeInfo__System__ArgumentNullException);
+      pAVar10 = (ArgumentNullException *)func_?(uVar9);
+      pSVar11 = (String *)func_?(&StringLiteral_enumType);
+      mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+                (pAVar10,pSVar11,(MethodInfo *)0x0);
+      uVar9 = func_?(&MethodInfo__System__Enum__GetValues_System__Type_);
+      FUN_?(pAVar10,uVar9);
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
+      return;
+    }
+    pAVar13 = (Array *)(*(pTVar8->klass->vtable).GetEnumValues.methodPtr)(pTVar8);
+    if (pAVar13 == (Array *)0x0) goto code_?;
+    iVar14 = mscorlib.dll::System::Array::Array_get_Length(pAVar13,(MethodInfo *)0x0);
+    iVar15 = iVar14 + -1;
+    break;
+  case 5:
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    pTVar8 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                        ((RuntimeTypeHandle)handle_02,(MethodInfo *)0x0);
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    if (pTVar8 == (Type *)0x0) {
+      uVar9 = func_?(&TypeInfo__System__ArgumentNullException);
+      pAVar10 = (ArgumentNullException *)func_?(uVar9);
+      pSVar11 = (String *)func_?(&StringLiteral_enumType);
+      mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+                (pAVar10,pSVar11,(MethodInfo *)0x0);
+      uVar9 = func_?(&MethodInfo__System__Enum__GetValues_System__Type_);
+      FUN_?(pAVar10,uVar9);
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
+      return;
+    }
+    pAVar13 = (Array *)(*(pTVar8->klass->vtable).GetEnumValues.methodPtr)(pTVar8);
+    if (pAVar13 == (Array *)0x0) goto code_?;
+    iVar14 = mscorlib.dll::System::Array::Array_get_Length(pAVar13,(MethodInfo *)0x0);
+    iVar15 = iVar14 + -1;
+    break;
+  case 6:
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    pTVar8 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
+                        ((RuntimeTypeHandle)handle_01,(MethodInfo *)0x0);
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    if (pTVar8 == (Type *)0x0) {
+      uVar9 = func_?(&TypeInfo__System__ArgumentNullException);
+      pAVar10 = (ArgumentNullException *)func_?(uVar9);
+      pSVar11 = (String *)func_?(&StringLiteral_enumType);
+      mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+                (pAVar10,pSVar11,(MethodInfo *)0x0);
+      uVar9 = func_?(&MethodInfo__System__Enum__GetValues_System__Type_);
+      FUN_?(pAVar10,uVar9);
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
+      return;
+    }
+    pAVar13 = (Array *)(*(pTVar8->klass->vtable).GetEnumValues.methodPtr)(pTVar8);
+    if (pAVar13 == (Array *)0x0) goto code_?;
+    iVar14 = mscorlib.dll::System::Array::Array_get_Length(pAVar13,(MethodInfo *)0x0);
+    iVar15 = iVar14 + -1;
+    break;
+  default:
+    iVar15 = 1;
   }
-  func_?();
+  (this->fields).maxValue = iVar15;
+  if (*(int *)&(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->_1).field_0x1c
+      == 0) {
+    FUN_?(TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager);
+  }
+  this_00 = TypeInfo__Assets__Scripts__ProfileSettings__ProfileSettingsManager->static_fields->
+            ProfileSettingsChanged;
+  if (this_00 !=
+      (Dictionary_2_MV_WorldObject_MetaData_ProfileSettingKey_System_Action_1_Object_ *)0x0) {
+    key = (this->fields).profileSettingKey;
+    pDVar16 = (Delegate *)
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+              Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                        ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,key,
+                         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__get_Item_MV__WorldObject__MetaData__ProfileSettingKey_
+                        );
+    this_01 = (UnityAction_1_System_Object_ *)
+              FUN_?(TypeInfo__System__Action<System::Object>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+    UnityAction_1_System_Object___ctor
+              (this_01,(Object *)this,MethodInfo__ProfileSettingButton__OnChange_System__Object_,
+               (MethodInfo *)0x0);
+    pDVar16 = mscorlib.dll::System::Delegate::Delegate_Combine
+                        (pDVar16,(Delegate *)this_01,(MethodInfo *)0x0);
+    pAVar17 = TypeInfo__System__Action<System::Object>;
+    pMVar18 = 
+    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MetaData::ProfileSettingKey,_System::Action<System::Object>_>__set_Item_MV__WorldObject__MetaData__ProfileSettingKey__System__Action<System::Object>_
+    ;
+    if ((pDVar16 != (Delegate *)0x0) &&
+       (pOVar7 = (Object *)FUN_?(pDVar16,TypeInfo__System__Action<System::Object>),
+       pOVar7 == (Object *)0x0)) {
+      FUN_?(pDVar16,pAVar17);
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
+      return;
+    }
+    pIVar19 = pMVar18->klass->rgctx_data;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+    Dictionary_2_System_Int32Enum_System_Object__TryInsert
+              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,key,pOVar7,
+               (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pIVar19 >> 8),1),
+               pIVar19[0x22].method);
+    pOVar7 = Assets::Scripts::ProfileSettings::ProfileSettingsManager::
+              ProfileSettingsManager_GetSettingValue
+                        ((this->fields).profileSettingKey,(MethodInfo *)0x0);
+    if (pOVar7 != (Object *)0x0) {
+      if ((pOVar7->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+        FUN_?(pOVar7,lRam_?);
+        pcVar12 = (code *)swi(3);
+        (*pcVar12)();
+        return;
+      }
+      pBVar1 = (this->fields).button;
+      if (pBVar1 != (Button *)0x0) {
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__EventSystems__EventSystem);
+          LOCK();
+          UNLOCK();
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          FUN_?(&
+                        bool_MethodInfo__UnityEngine__UI__SetPropertyUtility__SetStruct<bool>_System__Boolean___bool_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        cVar20 = FUN_?(&(pBVar1->fields)._.m_Interactable);
+        if (cVar20 == '\0') {
+          return;
+        }
+        if ((pBVar1->fields)._.m_Interactable == 0) {
+          if (*(int *)&(TypeInfo__UnityEngine__EventSystems__EventSystem->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          pEVar21 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
+                    EventSystem_get_current((MethodInfo *)0x0);
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (pEVar21 != (EventSystem *)0x0) {
+            if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            if ((pEVar21->fields)._._._._._.m_CachedPtr != (void *)0x0) {
+              if (*(int *)&(TypeInfo__UnityEngine__EventSystems__EventSystem->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              pEVar21 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
+                        EventSystem_get_current((MethodInfo *)0x0);
+              if (pEVar21 != (EventSystem *)0x0) {
+                pGVar22 = (pEVar21->fields).m_CurrentSelected;
+                pGVar23 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                          Component_get_gameObject((Component *)pBVar1,(MethodInfo *)0x0);
+                if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                if (cRam_? == '\0') {
+                  FUN_?(&TypeInfo__UnityEngine__Object);
+                  LOCK();
+                  UNLOCK();
+                  cRam_? = '\x01';
+                }
+                if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                if (cRam_? == '\0') {
+                  FUN_?(&TypeInfo__UnityEngine__Object);
+                  LOCK();
+                  UNLOCK();
+                  cRam_? = '\x01';
+                }
+                if (pGVar23 != (GameObject *)0x0 || pGVar22 != (GameObject *)0x0) {
+                  if (pGVar23 == (GameObject *)0x0) {
+                    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                      FUN_?();
+                    }
+                    if (pGVar22 == (GameObject *)0x0) goto DAT_?;
+                    bVar2 = (pGVar22->fields)._.m_CachedPtr == (void *)0x0;
+                  }
+                  else if (pGVar22 == (GameObject *)0x0) {
+                    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                      FUN_?();
+                    }
+                    bVar2 = (pGVar23->fields)._.m_CachedPtr == (void *)0x0;
+                  }
+                  else {
+                    bVar2 = pGVar22 == pGVar23;
+                  }
+                  if (!bVar2) goto code_?;
+                }
+                if (*(int *)&(TypeInfo__UnityEngine__EventSystems__EventSystem->_1).field_0x1c == 0)
+                {
+                  FUN_?();
+                }
+                pEVar21 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
+                          EventSystem_get_current((MethodInfo *)0x0);
+                if (pEVar21 != (EventSystem *)0x0) {
+                  UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
+                  EventSystem_SetSelectedGameObject_1(pEVar21,(GameObject *)0x0,(MethodInfo *)0x0);
+                  goto code_?;
+                }
+              }
+DAT_?:
+              FUN_?();
+              pcVar12 = (code *)swi(3);
+              (*pcVar12)();
+              return;
+            }
+          }
+        }
 code_?:
-  func_?();
-  *(byte *)&(object->_0).image = *(byte *)&(object->_0).image & 0x10;
-  cVar7 = (char)((uint)object >> 8);
-  *(char *)&(object->_0).image = *(char *)&(object->_0).image + cVar7;
-  pcVar21 = (char *)(CONCAT22((short)((uint)extraout_ECX >> 0x10),
-                             CONCAT11((char)((uint)extraout_ECX >> 8) + cVar7,(char)extraout_ECX))
-                   + -0x2befdc7b);
-  *pcVar21 = *pcVar21 + (char)extraout_ECX;
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+        UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_OnSetProperty
+                  ((Selectable *)pBVar1,(MethodInfo *)0x0);
+        return;
+      }
+    }
+  }
+code_?:
+  FUN_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 

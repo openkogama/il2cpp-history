@@ -6,23 +6,28 @@ void Assembly-CSharp.dll::BoostEditMenu::BoostEditMenu_OnDestroy
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
-                   );
-    func_?(&
-                    MethodInfo__BoostEditMenu__OnProjectEarningsUpdatedCallback_MV__WorldObject__GamePassSystem__GamePassEarnings__ProjectEarningsReport_
-                   );
-    func_?(&TypeInfo__GamePassesProjectEarningsManager);
+    FUN_?(&
+                  TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__BoostEditMenu__OnProjectEarningsUpdatedCallback_MV__WorldObject__GamePassSystem__GamePassEarnings__ProjectEarningsReport_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__GamePassesProjectEarningsManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pAVar1 = TypeInfo__GamePassesProjectEarningsManager->static_fields->OnEarningsDataUpdated;
-  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-             *)func_?(
-                              TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
-                              );
-  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+  this_00 = (UnityAction_1_System_Object_ *)
+            FUN_?(
+                         TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
+                         );
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+  UnityAction_1_System_Object___ctor
             (this_00,(Object *)this,
              MethodInfo__BoostEditMenu__OnProjectEarningsUpdatedCallback_MV__WorldObject__GamePassSystem__GamePassEarnings__ProjectEarningsReport_
              ,(MethodInfo *)0x0);
@@ -34,38 +39,46 @@ void Assembly-CSharp.dll::BoostEditMenu::BoostEditMenu_OnDestroy
   if (pDVar2 == (Delegate *)0x0) {
     TypeInfo__GamePassesProjectEarningsManager->static_fields->OnEarningsDataUpdated =
          (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_ *)0x0;
-    pAStack4 =
-         (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport___Class *)
-         0x0;
-code_?:
-    func_?();
-    return;
   }
-  pAStack4 =
-       TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
-  ;
-  pAVar1 = (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_ *)
-           func_?();
-  if (pAVar1 != (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_ *)
-                0x0) {
+  else {
+    pAVar1 = (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_ *)
+             FUN_?(pDVar2,
+                           TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
+                          );
+    if (pAVar1 == (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_ *)
+                  0x0) {
+      FUN_?(pDVar2,pAVar3);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
     TypeInfo__GamePassesProjectEarningsManager->static_fields->OnEarningsDataUpdated = pAVar1;
     pAVar3 = 
     TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
     ;
-    pAStack4 =
-         TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
-    ;
-    pAStack4 =
-         (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport___Class *)
-         func_?();
-    if (pAStack4 !=
-        (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport___Class *)0x0
-       ) goto code_?;
+    lVar5 = FUN_?(pDVar2,
+                          TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
+                         );
+    if (lVar5 == 0) {
+      FUN_?(pDVar2,pAVar3);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
   }
-  pAStack4 = pAVar3;
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  if (iRam_? != 0) {
+    uVar6 = (uint)((ulonglong)TypeInfo__GamePassesProjectEarningsManager->static_fields >> 0xc);
+    puVar7 = (ulonglong *)((ulonglong)((uVar6 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar8 = *puVar7;
+      LOCK();
+      uVar9 = *puVar7;
+      if (uVar8 == uVar9) {
+        *puVar7 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar8 != uVar9);
+  }
   return;
 }
 
@@ -77,166 +90,123 @@ void Assembly-CSharp.dll::BoostEditMenu::BoostEditMenu_OnProjectEarningsUpdatedC
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
-                   );
-    func_?(&
-                    MethodInfo__BoostEditMenu__OnProjectEarningsUpdatedCallback_MV__WorldObject__GamePassSystem__GamePassEarnings__ProjectEarningsReport_
-                   );
-    func_?(&TypeInfo__GamePassesProjectEarningsManager);
+    FUN_?(&
+                  TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__BoostEditMenu__OnProjectEarningsUpdatedCallback_MV__WorldObject__GamePassSystem__GamePassEarnings__ProjectEarningsReport_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__GamePassesProjectEarningsManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pAVar1 = TypeInfo__GamePassesProjectEarningsManager->static_fields->OnEarningsDataUpdated;
-  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-             *)func_?(
-                              TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
-                              );
-  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            (this_00,(Object *)this,
+  this_01 = (UnityAction_1_System_Object_ *)
+            FUN_?(
+                         TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
+                         );
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+  UnityAction_1_System_Object___ctor
+            (this_01,(Object *)this,
              MethodInfo__BoostEditMenu__OnProjectEarningsUpdatedCallback_MV__WorldObject__GamePassSystem__GamePassEarnings__ProjectEarningsReport_
              ,(MethodInfo *)0x0);
   pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
-                     ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-  if (pDVar2 != (Delegate *)0x0) {
-    pAVar1 = (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_ *)
-             func_?();
-    if (pAVar1 != (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_ *)
-                  0x0) {
-      TypeInfo__GamePassesProjectEarningsManager->static_fields->OnEarningsDataUpdated = pAVar1;
-      iVar3 = func_?();
-      if (iVar3 != 0) goto code_?;
-    }
-    func_?();
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
-    return;
+                     ((Delegate *)pAVar1,(Delegate *)this_01,(MethodInfo *)0x0);
+  pAVar3 = 
+  TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
+  ;
+  if (pDVar2 == (Delegate *)0x0) {
+    TypeInfo__GamePassesProjectEarningsManager->static_fields->OnEarningsDataUpdated =
+         (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_ *)0x0;
   }
-  TypeInfo__GamePassesProjectEarningsManager->static_fields->OnEarningsDataUpdated =
-       (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_ *)0x0;
-code_?:
-  func_?();
+  else {
+    pAVar1 = (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_ *)
+             FUN_?(pDVar2,
+                           TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
+                          );
+    if (pAVar1 == (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_ *)
+                  0x0) {
+      FUN_?(pDVar2,pAVar3);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    TypeInfo__GamePassesProjectEarningsManager->static_fields->OnEarningsDataUpdated = pAVar1;
+    pAVar3 = 
+    TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
+    ;
+    lVar5 = FUN_?(pDVar2,
+                           TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
+                          );
+    if (lVar5 == 0) {
+      FUN_?(pDVar2,pAVar3);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+  }
+  if (iRam_? != 0) {
+    uVar6 = (uint)((ulonglong)TypeInfo__GamePassesProjectEarningsManager->static_fields >> 0xc);
+    puVar7 = (ulonglong *)((ulonglong)((uVar6 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar8 = *puVar7;
+      LOCK();
+      uVar9 = *puVar7;
+      if (uVar8 == uVar9) {
+        *puVar7 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar8 != uVar9);
+  }
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<BoostEditMenuItem>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<BoostEditMenuItem>__get_Item_int_)
+    ;
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  iStack5 = 0;
-  iVar3 = *(int *)(in_stack_6 + 0x1c);
-  if (iVar3 != 0) {
-    while( true ) {
-      if (*(int *)(iVar3 + 0xc) <= iStack5) {
+  pLVar10 = (this->fields).boostItems;
+  uVar6 = 0;
+  if (pLVar10 != (List_1_BoostEditMenuItem_ *)0x0) {
+    lVar5 = 0x20;
+    do {
+      if ((pLVar10->fields)._size <= (int)uVar6) {
         return;
       }
-      if ((*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
-            (in_stack_6 + 0x1c) ==
-           (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-         (RVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
-                              (in_stack_6 + 0x1c),iStack5,
-                             MethodInfo__System__Collections__Generic__List<BoostEditMenuItem>__get_Item_int_
-                            ), RVar7 == (RegexCharClass_SingleRange)0x0)) break;
-      if (cRam_? == '\0') {
-        func_?();
-        func_?();
-        func_?();
-        cRam_? = '\x01';
+      if (pLVar10 == (List_1_BoostEditMenuItem_ *)0x0) break;
+      if ((uint)(pLVar10->fields)._size <= uVar6) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
       }
-      in_stack_8.m_Index = 0;
-      pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar9 == (MVNetworkGame *)0x0) ||
-         (pMVar10 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar9,(MethodInfo *)0x0),
-         pMVar10 == (MVLocalPlayer *)0x0)) break;
-      if (cRam_? == '\0') {
-        func_?();
-        func_?(&
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__ContainsKey_int_
-                       );
-        func_?(&
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__get_Item_int_
-                       );
-        func_?(&
-                        MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__get_Item_System__String_
-                       );
-        cRam_? = '\x01';
+      pBVar11 = (pLVar10->fields)._items;
+      if (pBVar11 == (BoostEditMenuItem__Array *)0x0) break;
+      if ((uint)pBVar11->max_length <= uVar6) {
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
       }
-      pMVar9 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((((pMVar9 == (MVNetworkGame *)0x0) ||
-           (pMVar10 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar9,(MethodInfo *)0x0),
-           pMVar10 == (MVLocalPlayer *)0x0)) || (in_stack_11 == 0)) ||
-         (*(Dictionary_2_System_Int32_System_Single_ **)(in_stack_11 + 0xc) ==
-          (Dictionary_2_System_Int32_System_Single_ *)0x0)) break;
-      key = (pMVar10->fields)._._ProfileID_k__BackingField;
-      bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]
-              ::Dictionary_2_System_Int32_System_Single__ContainsKey
-                        (*(Dictionary_2_System_Int32_System_Single_ **)(in_stack_11 + 0xc),key
-                         ,
-                         MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__ContainsKey_int_
-                        );
-      if (bVar12 == 0) {
-code_?:
-        in_stack_8.m_Index = 0;
-      }
-      else {
-        if (((*(Dictionary_2_System_Int32_System_Object_ **)(in_stack_11 + 0xc) ==
-              (Dictionary_2_System_Int32_System_Object_ *)0x0) ||
-            (pOVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System
-                       ::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                 (*(Dictionary_2_System_Int32_System_Object_ **)
-                                   (in_stack_11 + 0xc),key,
-                                  MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__get_Item_int_
-                                 ), pOVar13 == (Object *)0x0)) ||
-           ((pOVar13[1].klass == (Object__Class *)0x0 ||
-            ((*(int *)((int)RVar7 + 0x34) == 0 ||
-             (pDVar14 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                       ((pOVar13[1].klass)->_0).namespaze,
-             pDVar14 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0))))))
-        break;
-        bVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                          (pDVar14,*(Object **)(*(int *)((int)RVar7 + 0x34) + 0xc),
-                           MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__ContainsKey_System__String_
-                          );
-        if (bVar12 == 0) goto code_?;
-        if ((((*(Dictionary_2_System_Int32_System_Object_ **)(in_stack_11 + 0xc) ==
-               (Dictionary_2_System_Int32_System_Object_ *)0x0) ||
-             (pOVar13 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                        Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                  (*(Dictionary_2_System_Int32_System_Object_ **)
-                                    (in_stack_11 + 0xc),key,
-                                   MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__get_Item_int_
-                                  ), pOVar13 == (Object *)0x0)) ||
-            (pOVar13[1].klass == (Object__Class *)0x0)) || (*(int *)((int)RVar7 + 0x34) == 0))
-        break;
-        pDVar14 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                 ((pOVar13[1].klass)->_0).namespaze;
-        if (pDVar14 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) break;
-        in_stack_8 =
-             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-             UIElements::TextureId]::
-             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                       (pDVar14,*(Object **)(*(int *)((int)RVar7 + 0x34) + 0xc),
-                        MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__get_Item_System__String_
-                       );
-      }
-      piVar15 = *(int **)((int)RVar7 + 0x1c);
-      pSVar16 = mscorlib.dll::System::Int32::Int32_ToString_1
-                          ((Int32 *)&stack0x00000014,StringLiteral_N0,(MethodInfo *)0x0);
-      if ((pSVar16 == (String *)0x0) ||
-         (pSVar16 = mscorlib.dll::System::String::String_Replace_1
-                              (pSVar16,::StringLiteral__,::StringLiteral__,(MethodInfo *)0x0),
-         piVar15 == (int *)0x0)) break;
-      (**(code **)(*piVar15 + 0x318))(piVar15,pSVar16);
-      iStack5 = iStack5 + 1;
-      iVar3 = *(int *)(in_stack_6 + 0x1c);
-      if (iVar3 == 0) break;
-    }
+      this_00 = *(BoostEditMenuItem **)((longlong)pBVar11->vector + lVar5 + -0x20);
+      if (this_00 == (BoostEditMenuItem *)0x0) break;
+      BoostEditMenuItem::BoostEditMenuItem_UpdateEarningsText
+                (this_00,projectEarningsReport,(MethodInfo *)0x0);
+      pLVar10 = (this->fields).boostItems;
+      uVar6 = uVar6 + 1;
+      lVar5 = lVar5 + 8;
+    } while (pLVar10 != (List_1_BoostEditMenuItem_ *)0x0);
   }
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -248,292 +218,400 @@ code_?:
 void Assembly-CSharp.dll::BoostEditMenu::BoostEditMenu_Start(BoostEditMenu *this,MethodInfo *method)
 
 {
-  pMVar1 = (MethodInfo *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &stack0xfffffff0;
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
-                   );
-    func_?(&
-                    MethodInfo__BoostEditMenu__OnProjectEarningsUpdatedCallback_MV__WorldObject__GamePassSystem__GamePassEarnings__ProjectEarningsReport_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__get_Current__
-                   );
-    func_?(&TypeInfo__GamePassesProjectEarningsManager);
-    func_?(&TypeInfo__UnityEngine__UI__LayoutRebuilder);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__AddRange_System__Collections__Generic__IEnumerable<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<BoostEditMenuItem>__Add_BoostEditMenuItem_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Item_int_
-                   );
-    func_?(&
-                    MVGameOptionDataObject_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVGameOptionDataObject>__
-                   );
-    func_?(&
-                    BoostEditMenuItem_MethodInfo__UnityEngine__Object__Instantiate<BoostEditMenuItem>_BoostEditMenuItem_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__GetEnumerator__
-                   );
+    FUN_?(&
+                  TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__BoostEditMenu__OnProjectEarningsUpdatedCallback_MV__WorldObject__GamePassSystem__GamePassEarnings__ProjectEarningsReport_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__GamePassesProjectEarningsManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__UI__LayoutRebuilder);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__AddRange_System__Collections__Generic__IEnumerable<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<BoostEditMenuItem>__Add_BoostEditMenuItem_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MVGameOptionDataObject_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVGameOptionDataObject>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  BoostEditMenuItem_MethodInfo__UnityEngine__Object__Instantiate<BoostEditMenuItem>_BoostEditMenuItem_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if (this_01 != (MVWorldObjectClientManager *)0x0) {
-    this_02 = (MVGameOptionDataObject *)
+  this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+  if (this_03 != (MVWorldObjectClientManager *)0x0) {
+    this_04 = (MVGameOptionDataObject *)
               MVWorldObjectClientManager::MVWorldObjectClientManager_GetSingletonWorldObject
-                        (this_01,
+                        (this_03,
                          MVGameOptionDataObject_MethodInfo__MVWorldObjectClientManager__GetSingletonWorldObject<MVGameOptionDataObject>__
                         );
-    this_03 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (this_03 != (MVNetworkGame *)0x0) {
-      pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_03,(MethodInfo *)0x0);
-      if ((pMVar2 != (MVLocalPlayer *)0x0) &&
-         (this_00 = (pMVar2->fields).boostController, this_00 != (BoostController *)0x0)) {
-        this_04 = (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                   *)BoostController::BoostController_GetAllBoosts(this_00,(MethodInfo *)0x0);
-        if (this_04 !=
-            (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-             *)0x0) {
-          mscorlib.dll::System::Collections::Generic::
-          Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
-          StyleSheetCache+SheetHandleKey,System::Object]::
-          Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                    ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                      *)&stack0xffffffc4,this_04,
-                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<BoostType,_Boost>__GetEnumerator__
-                    );
-          unaff_ESI = (Delegate *)&stack0xffffffb4;
-          method_00 = (MethodInfo *)0x0;
-          while( true ) {
-            unaff_EDI = (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport___Class
-                         *)
-                        MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__MoveNext__
-            ;
-            bVar3 = mscorlib.dll::System::Collections::Generic::
-                    Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-                    UInt32,System::Object]::
-                    Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                              ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                                *)&stack0xffffffb4,
-                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__MoveNext__
-                              );
-            if (bVar3 == 0) break;
-            if (this_02 == (MVGameOptionDataObject *)0x0) goto code_?;
-            method_00 = (MethodInfo *)
-                        MVGameOptionDataObject::
-                        MVGameOptionDataObject_get_GameBoosterSettingsManager
-                                  (this_02,(MethodInfo *)0x0);
-            if (method_00 == (MethodInfo *)0x0) goto code_?;
-            boost = (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport___Class
-                     *)MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes
-                       ::GameBoosterSettings::GameBoosterSettingsManager::
-                       GameBoosterSettingsManager_get_ActiveSettingsList
-                                 ((GameBoosterSettingsManager *)method_00,(MethodInfo *)0x0);
-            this_05 = MVGameOptionDataObject::MVGameOptionDataObject_get_GameBoosterSettingsManager
-                                (this_02,(MethodInfo *)0x0);
-            if (this_05 == (GameBoosterSettingsManager *)0x0) goto code_?;
-            this_06 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                      MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
-                      GameBoosterSettings::GameBoosterSettingsManager::
-                      GameBoosterSettingsManager_get_InactiveGameBoosterSettingsList
-                                (this_05,(MethodInfo *)0x0);
-            if (boost == (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport___Class
-                          *)0x0) goto code_?;
-            this_02 = (MVGameOptionDataObject *)
-                      MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__AddRange_System__Collections__Generic__IEnumerable<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>_
-            ;
-            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-            List_1_System_Object__AddRange
-                      ((List_1_System_Object_ *)boost,(IEnumerable_1_System_Object_ *)this_06,
-                       MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__AddRange_System__Collections__Generic__IEnumerable<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>_
-                      );
-            index = (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport___Class
-                     *)0x0;
-            while( true ) {
-              if ((this_06->fields)._size <= (int)index) break;
-              if (unaff_EDI ==
-                  (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport___Class
-                   *)0x0) goto code_?;
-              a = (String *)(unaff_EDI->_0).namespaze;
-              RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                      RegularExpressions::RegexCharClass+SingleRange]::
-                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                (this_06,(int32_t)index,
-                                 MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__get_Item_int_
-                                );
-              if (RVar4 == (RegexCharClass_SingleRange)0x0) goto code_?;
-              method_00 = (MethodInfo *)0x0;
-              bVar3 = mscorlib.dll::System::String::String_op_Equality
-                                (a,*(String **)((int)RVar4 + 0xc),(MethodInfo *)0x0);
-              if (bVar3 != 0) {
-                original = (this->fields).boostPrefab;
-                if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?();
-                }
-                unaff_EDI = (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport___Class
-                             *)UnityEngine.CoreModule.dll::UnityEngine::Object::
-                               Object_1_Instantiate_4
-                                         ((Object *)original,
-                                          BoostEditMenuItem_MethodInfo__UnityEngine__Object__Instantiate<BoostEditMenuItem>_BoostEditMenuItem_
-                                         );
-                if (unaff_EDI ==
-                    (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport___Class
-                     *)0x0) goto code_?;
-                this_07 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                          Component_get_transform((Component *)unaff_EDI,(MethodInfo *)0x0);
-                if (this_07 == (Transform *)0x0) goto code_?;
-                method_00 = (MethodInfo *)(this->fields).boostItemsContent;
-                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                          (this_07,(Transform *)method_00,0,(MethodInfo *)0x0);
-                index = unaff_EDI;
-                BoostEditMenuItem::BoostEditMenuItem_Initialize
-                          ((BoostEditMenuItem *)unaff_EDI,(Boost *)boost,(MethodInfo *)0x0);
-                this_02 = (MVGameOptionDataObject *)(this->fields).boostItems;
-                if (this_02 == (MVGameOptionDataObject *)0x0) goto code_?;
-                this_06 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                          &UNK_?;
-                pMVar1 = 
-                MethodInfo__System__Collections__Generic__List<BoostEditMenuItem>__Add_BoostEditMenuItem_
-                ;
-                mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-                List_1_System_Object__Add
-                          ((List_1_System_Object_ *)this_02,(Object *)unaff_EDI,
-                           MethodInfo__System__Collections__Generic__List<BoostEditMenuItem>__Add_BoostEditMenuItem_
-                          );
-                unaff_EDI = boost;
-                boost = unaff_EDI;
-              }
-              index = (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport___Class
-                       *)((int)&(index->_0).image + 1);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if ((((pMVar1 != (MVGameControllerBase *)0x0) &&
+         (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+        (this_00 = (pMVar2->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) &&
+       (((pMVar3 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0),
+         pMVar3 != (MVLocalPlayer *)0x0 &&
+         (this_01 = (pMVar3->fields).boostController, this_01 != (BoostController *)0x0)) &&
+        (pDVar4 = BoostController::BoostController_GetAllBoosts(this_01,(MethodInfo *)0x0),
+        pDVar4 != (Dictionary_2_TKey_TValue_ValueCollection_BoostType_Boost_ *)0x0)))) {
+      pDStack_5 = (pDVar4->fields)._dictionary;
+      uStack_6 = 0;
+      uStack_7 = 0;
+      if (iRam_? != 0) {
+        uVar8 = (uint)((ulonglong)&pDStack_5 >> 0xc);
+        uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+        do {
+          uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+          puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+          LOCK();
+          bVar12 = uVar10 == *puVar11;
+          if (bVar12) {
+            *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar12);
+      }
+      if (pDStack_5 == (Dictionary_2_BoostType_Boost_ *)0x0) {
+        FUN_?();
+        pcVar13 = (code *)swi(3);
+        (*pcVar13)();
+        return;
+      }
+      uStack_6 = (ulonglong)(uint)(pDStack_5->fields)._version << 0x20;
+      uStack_7 = 0;
+      uStack_14 = uStack_6;
+      pBStack_15 = (Boost *)0x0;
+      uStack_16 = 0;
+      ppDStack_17 = &pDStack_18;
+      pDStack_18 = pDStack_5;
+      while (pDStack_18 != (Dictionary_2_BoostType_Boost_ *)0x0) {
+        if (uStack_14._4_4_ != (pDStack_18->fields)._version) goto code_?;
+        uVar9 = uStack_14 & 0xffffffff;
+        do {
+          if (pDStack_18 == (Dictionary_2_BoostType_Boost_ *)0x0) goto code_?;
+          uVar8 = (uint)uVar9;
+          if ((uint)(pDStack_18->fields)._count <= uVar8) {
+            uStack_14 = CONCAT44(uStack_14._4_4_,(pDStack_18->fields)._count + 1);
+            pBStack_15 = (Boost *)0x0;
+            pRVar19 = (this->fields).boostItemsContent;
+            if (*(int *)&(TypeInfo__UnityEngine__UI__LayoutRebuilder->_1).field_0x1c == 0) {
+              FUN_?();
             }
-          }
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)unaff_ESI,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<BoostType,_Boost>__Dispose__
-                     ,method_00);
-          unaff_EDI = (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport___Class
-                       *)(this->fields).boostItemsContent;
-          if ((TypeInfo__UnityEngine__UI__LayoutRebuilder->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          UnityEngine.UI.dll::UnityEngine::UI::LayoutRebuilder::
-          LayoutRebuilder_ForceRebuildLayoutImmediate((RectTransform *)unaff_EDI,(MethodInfo *)0x0);
-          pRVar5 = (this->fields).boostItemsScrollRect;
-          unaff_ESI = (Delegate *)this;
-          if (pRVar5 != (RectTransform *)0x0) {
-            pRVar6 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                               ((Rect *)&stack0xffffffc4,pRVar5,(MethodInfo *)0x0);
-            pDVar7 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                      *)pRVar6->m_Width;
-            pRVar5 = (this->fields).boostItemsContent;
-            if (pRVar5 != (RectTransform *)0x0) {
-              pRVar6 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::
-                       RectTransform_get_rect((Rect *)&stack0xffffffa4,pRVar5,(MethodInfo *)0x0);
-              if ((float)pDVar7 < pRVar6->m_Width) {
-                pRVar5 = (this->fields).boostItemsContent;
-                if (pRVar5 == (RectTransform *)0x0) goto code_?;
-                pMVar1 = (MethodInfo *)0x0;
-                UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_pivot
-                          (pRVar5,(Vector2)0x3f00000000000000,(MethodInfo *)0x0);
-              }
-              if (cRam_? == '\0') {
-                func_?();
-                cRam_? = '\x01';
-              }
-              projectEarningsReport =
-                   TypeInfo__GamePassesProjectEarningsManager->static_fields->projectEarningReport;
-              if (projectEarningsReport != (ProjectEarningsReport *)0x0) {
-                BoostEditMenu_UpdateEarningsData(this,projectEarningsReport,(MethodInfo *)0x0);
-                *unaff_FS_OFFSET = pMVar1;
-                return;
-              }
-              pAVar8 = TypeInfo__GamePassesProjectEarningsManager->static_fields->
-                       OnEarningsDataUpdated;
-              this_08 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                         *)func_?();
-              DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::
-              Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
-              __Il2CppFullySharedGenericType]::
-              DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                        (this_08,(Object *)this,
+            UnityEngine.UI.dll::UnityEngine::UI::LayoutRebuilder::
+            LayoutRebuilder_ForceRebuildLayoutImmediate(pRVar19,(MethodInfo *)0x0);
+            pRVar19 = (this->fields).boostItemsScrollRect;
+            if (pRVar19 == (RectTransform *)0x0) goto code_?;
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::RectTransform>_UnityEngine__RectTransform_
+                           );
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pDStack_5 = (Dictionary_2_BoostType_Boost_ *)0x0;
+            uStack_6 = 0;
+            if ((pRVar19->fields)._._._.m_CachedPtr == (void *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+              ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar19,(MethodInfo *)0x0);
+              pcVar13 = (code *)swi(3);
+              (*pcVar13)();
+              return;
+            }
+            pcVar13 = pcRam_?;
+            if ((pcRam_? == (code *)0x0) &&
+               (pcVar13 = (code *)FUN_?(&UNK_?), pcVar13 == (code *)0x0)) {
+              uVar20 = func_?(&UNK_?);
+              FUN_?(uVar20,0);
+              pcVar13 = (code *)swi(3);
+              (*pcVar13)();
+              return;
+            }
+            pcRam_? = pcVar13;
+            (*pcRam_?)();
+            pRVar19 = (this->fields).boostItemsContent;
+            if (pRVar19 == (RectTransform *)0x0) goto code_?;
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::RectTransform>_UnityEngine__RectTransform_
+                           );
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            uStack_16 = 0;
+            ppDStack_17 = (Dictionary_2_BoostType_Boost_ **)0x0;
+            pvVar21 = (pRVar19->fields)._._._.m_CachedPtr;
+            if (pvVar21 == (void *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+              ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar19,(MethodInfo *)0x0);
+              pcVar13 = (code *)swi(3);
+              (*pcVar13)();
+              return;
+            }
+            pcVar13 = pcRam_?;
+            if ((pcRam_? == (code *)0x0) &&
+               (pcVar13 = (code *)FUN_?(&UNK_?), pcVar13 == (code *)0x0)) {
+              uVar20 = func_?(&UNK_?);
+              FUN_?(uVar20,0);
+              pcVar13 = (code *)swi(3);
+              (*pcVar13)();
+              return;
+            }
+            pcRam_? = pcVar13;
+            (*pcRam_?)(pvVar21,&uStack_16);
+            if ((float)uStack_6 < ppDStack_17._0_4_) {
+              pRVar19 = (this->fields).boostItemsContent;
+              if (pRVar19 == (RectTransform *)0x0) goto code_?;
+              UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_pivot
+                        (pRVar19,(Vector2)((ulonglong)_UNK_? << 0x20),(MethodInfo *)0x0);
+            }
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__GamePassesProjectEarningsManager);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            projectEarningsReport =
+                 TypeInfo__GamePassesProjectEarningsManager->static_fields->projectEarningReport;
+            if (projectEarningsReport == (ProjectEarningsReport *)0x0) {
+              pAVar22 = TypeInfo__GamePassesProjectEarningsManager->static_fields->
+                        OnEarningsDataUpdated;
+              this_07 = (UnityAction_1_System_Object_ *)
+                        FUN_?(
+                                     TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
+                                     );
+              UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+              UnityAction_1_System_Object___ctor
+                        (this_07,(Object *)this,
                          MethodInfo__BoostEditMenu__OnProjectEarningsUpdatedCallback_MV__WorldObject__GamePassSystem__GamePassEarnings__ProjectEarningsReport_
                          ,(MethodInfo *)0x0);
-              puVar9 = &UNK_?;
-              unaff_ESI = mscorlib.dll::System::Delegate::Delegate_Combine
-                                    ((Delegate *)pAVar8,(Delegate *)this_08,(MethodInfo *)0x0);
-              unaff_EDI = 
+              pDVar23 = mscorlib.dll::System::Delegate::Delegate_Combine
+                                  ((Delegate *)pAVar22,(Delegate *)this_07,(MethodInfo *)0x0);
+              pAVar24 = 
               TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
               ;
-              if (unaff_ESI == (Delegate *)0x0) {
+              if (pDVar23 == (Delegate *)0x0) {
                 TypeInfo__GamePassesProjectEarningsManager->static_fields->OnEarningsDataUpdated =
                      (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_
                       *)0x0;
-                pAStack10 =
-                     (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport___Class
-                      *)0x0;
-code_?:
-                pDStack11 =
-                     (Delegate *)TypeInfo__GamePassesProjectEarningsManager->static_fields;
-                func_?();
-                *unaff_FS_OFFSET = puVar9;
-                return;
               }
-              pAStack10 =
-                   TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
-              ;
-              pDStack11 = unaff_ESI;
-              pAVar8 = (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_
-                        *)func_?();
-              if (pAVar8 != (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_
-                             *)0x0) {
+              else {
+                pAVar22 = (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_
+                           *)FUN_?(pDVar23,
+                                           TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
+                                          );
+                if (pAVar22 ==
+                    (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport_
+                     *)0x0) {
+                  FUN_?(pDVar23,pAVar24);
+                  pcVar13 = (code *)swi(3);
+                  (*pcVar13)();
+                  return;
+                }
                 TypeInfo__GamePassesProjectEarningsManager->static_fields->OnEarningsDataUpdated =
-                     pAVar8;
-                unaff_EDI = 
+                     pAVar22;
+                pAVar24 = 
                 TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
                 ;
-                pAStack10 =
-                     TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
-                ;
-                pDStack11 = unaff_ESI;
-                pAStack10 =
-                     (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport___Class
-                      *)func_?();
-                if (pAStack10 !=
-                    (Action_1_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectEarningsReport___Class
-                     *)0x0) goto code_?;
+                lVar25 = FUN_?(pDVar23,
+                                       TypeInfo__System__Action<MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectEarningsReport>
+                                      );
+                if (lVar25 == 0) {
+                  FUN_?(pDVar23,pAVar24);
+                  pcVar13 = (code *)swi(3);
+                  (*pcVar13)();
+                  return;
+                }
               }
-              goto code_?;
+              if (iRam_? != 0) {
+                uVar8 = (uint)((ulonglong)TypeInfo__GamePassesProjectEarningsManager->static_fields
+                               >> 0xc);
+                uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+                do {
+                  uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+                  puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+                  LOCK();
+                  bVar12 = uVar10 == *puVar11;
+                  if (bVar12) {
+                    *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+                  }
+                  UNLOCK();
+                } while (!bVar12);
+              }
             }
+            else {
+              BoostEditMenu_UpdateEarningsData(this,projectEarningsReport,(MethodInfo *)0x0);
+            }
+            return;
+          }
+          pDVar26 = (pDStack_18->fields)._entries;
+          uVar9 = (ulonglong)(uVar8 + 1);
+          uStack_14 = CONCAT44(uStack_14._4_4_,uVar8 + 1);
+          if (pDVar26 == (Dictionary_2_TKey_TValue_Entry_BoostType_Boost___Array *)0x0)
+          goto code_?;
+          if ((uint)pDVar26->max_length <= uVar8) goto code_?;
+        } while (pDVar26->vector[(int)uVar8].hashCode < 0);
+        pBStack_15 = pDVar26->vector[(int)uVar8].value;
+        func_?();
+        boost = pBStack_15;
+        if (this_04 == (MVGameOptionDataObject *)0x0) goto code_?;
+        pGVar27 = MVGameOptionDataObject::MVGameOptionDataObject_get_GameBoosterSettingsManager
+                            (this_04,(MethodInfo *)0x0);
+        if (pGVar27 == (GameBoosterSettingsManager *)0x0) goto code_?;
+        this_05 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
+                  GameBoosterSettings::GameBoosterSettingsManager::
+                  GameBoosterSettingsManager_get_ActiveSettingsList(pGVar27,(MethodInfo *)0x0);
+        pGVar27 = MVGameOptionDataObject::MVGameOptionDataObject_get_GameBoosterSettingsManager
+                            (this_04,(MethodInfo *)0x0);
+        if (pGVar27 == (GameBoosterSettingsManager *)0x0) goto code_?;
+        collection = MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
+                     GameBoosterSettings::GameBoosterSettingsManager::
+                     GameBoosterSettingsManager_get_InactiveGameBoosterSettingsList
+                               (pGVar27,(MethodInfo *)0x0);
+        if (this_05 ==
+            (List_1_MV_WorldObject_KogamaSettings_SpecializedSettingsTypes_GameBoosterSettings_GameBoosterSettingTypes_GameBoosterSettingWithGoldSetting_
+             *)0x0) goto code_?;
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__InsertRange
+                  ((List_1_System_Object_ *)this_05,(this_05->fields)._size,
+                   (IEnumerable_1_System_Object_ *)collection,
+                   MethodInfo__System__Collections__Generic__List<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>__AddRange_System__Collections__Generic__IEnumerable<MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::GameBoosterSettings::GameBoosterSettingTypes::GameBoosterSettingWithGoldSetting>_
+                   ->klass->rgctx_data[0x12].method);
+        for (iVar28 = 0; iVar28 < (this_05->fields)._size; iVar28 = iVar28 + 1) {
+          if (boost == (Boost *)0x0) goto code_?;
+          pSVar29 = (boost->fields)._BoostKey_k__BackingField;
+          lVar25 = FUN_?(this_05,iVar28);
+          if (lVar25 == 0) goto code_?;
+          pSVar30 = *(String **)(lVar25 + 0x18);
+          if ((pSVar29 == pSVar30) ||
+             ((((pSVar29 != (String *)0x0 && (pSVar30 != (String *)0x0)) &&
+               ((pSVar29->fields)._stringLength == (pSVar30->fields)._stringLength)) &&
+              (bVar31 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                                  ((uint8_t *)&(pSVar29->fields)._firstChar,
+                                   (uint8_t *)&(pSVar30->fields)._firstChar,
+                                   (longlong)(pSVar29->fields)._stringLength * 2,(MethodInfo *)0x0),
+              bVar31 != 0)))) {
+            pBVar32 = (this->fields).boostPrefab;
+            if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            pBVar32 = (BoostEditMenuItem *)
+                      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                                ((Object *)pBVar32,
+                                 BoostEditMenuItem_MethodInfo__UnityEngine__Object__Instantiate<BoostEditMenuItem>_BoostEditMenuItem_
+                                );
+            if (pBVar32 == (BoostEditMenuItem *)0x0) goto code_?;
+            this_06 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                ((Component *)pBVar32,(MethodInfo *)0x0);
+            if (this_06 == (Transform *)0x0) goto code_?;
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                      (this_06,(Transform *)(this->fields).boostItemsContent,0,(MethodInfo *)0x0);
+            BoostEditMenuItem::BoostEditMenuItem_Initialize(pBVar32,boost,(MethodInfo *)0x0);
+            this_02 = (this->fields).boostItems;
+            if (this_02 == (List_1_BoostEditMenuItem_ *)0x0) goto code_?;
+            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+            List_1_System_Object__Add
+                      ((List_1_System_Object_ *)this_02,(Object *)pBVar32,
+                       MethodInfo__System__Collections__Generic__List<BoostEditMenuItem>__Add_BoostEditMenuItem_
+                      );
           }
         }
       }
+      goto code_?;
     }
   }
 code_?:
-  func_?();
-  func_?();
+  FUN_?();
 code_?:
-  pDStack11 = unaff_ESI;
-  pAStack10 = unaff_EDI;
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  mscorlib.dll::System::ThrowHelper::
+  ThrowHelper_1_ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion((MethodInfo *)0x0)
+  ;
+code_?:
+  FUN_?();
+  FUN_?();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 
@@ -545,132 +623,51 @@ void Assembly-CSharp.dll::BoostEditMenu::BoostEditMenu_UpdateEarningsData
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<BoostEditMenuItem>__get_Count__)
+    FUN_?(&MethodInfo__System__Collections__Generic__List<BoostEditMenuItem>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<BoostEditMenuItem>__get_Item_int_)
     ;
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<BoostEditMenuItem>__get_Item_int_
-                   );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  iStack_1 = 0;
-  pLVar2 = (this->fields).boostItems;
-  if (pLVar2 != (List_1_BoostEditMenuItem_ *)0x0) {
-    while( true ) {
-      if ((pLVar2->fields)._size <= iStack_1) {
+  pLVar1 = (this->fields).boostItems;
+  uVar2 = 0;
+  if (pLVar1 != (List_1_BoostEditMenuItem_ *)0x0) {
+    lVar3 = 0x20;
+    do {
+      if ((pLVar1->fields)._size <= (int)uVar2) {
         return;
       }
-      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                (this->fields).boostItems;
-      if ((this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-         (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (this_00,iStack_1,
-                             MethodInfo__System__Collections__Generic__List<BoostEditMenuItem>__get_Item_int_
-                            ), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
-      if (cRam_? == '\0') {
-        func_?(&StringLiteral_N0);
-        func_?(&::StringLiteral__);
-        func_?(&::StringLiteral__);
-        cRam_? = '\x01';
+      if (pLVar1 == (List_1_BoostEditMenuItem_ *)0x0) break;
+      if ((uint)(pLVar1->fields)._size <= uVar2) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
       }
-      IStack_4.m_value = 0;
-      pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar5 == (MVNetworkGame *)0x0) ||
-         (pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar5,(MethodInfo *)0x0),
-         pMVar6 == (MVLocalPlayer *)0x0)) break;
-      if (cRam_? == '\0') {
-        func_?(&
-                        MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__ContainsKey_System__String_
-                       );
-        func_?(&
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__ContainsKey_int_
-                       );
-        func_?(&
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__get_Item_int_
-                       );
-        func_?(&
-                        MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__get_Item_System__String_
-                       );
-        cRam_? = '\x01';
+      pBVar5 = (pLVar1->fields)._items;
+      if (pBVar5 == (BoostEditMenuItem__Array *)0x0) break;
+      if ((uint)pBVar5->max_length <= uVar2) {
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
       }
-      pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((((pMVar5 == (MVNetworkGame *)0x0) ||
-           (pMVar6 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar5,(MethodInfo *)0x0),
-           pMVar6 == (MVLocalPlayer *)0x0)) ||
-          (projectEarningsReport == (ProjectEarningsReport *)0x0)) ||
-         (pDVar7 = (projectEarningsReport->fields).projectMemberEarningsReports,
-         pDVar7 == (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_
-                    *)0x0)) break;
-      key = (pMVar6->fields)._._ProfileID_k__BackingField;
-      bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]
-              ::Dictionary_2_System_Int32_System_Single__ContainsKey
-                        ((Dictionary_2_System_Int32_System_Single_ *)pDVar7,key,
-                         MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__ContainsKey_int_
-                        );
-      if (bVar8 == 0) {
-code_?:
-        IStack_4.m_value = 0;
-      }
-      else {
-        pDVar7 = (projectEarningsReport->fields).projectMemberEarningsReports;
-        if (((pDVar7 == (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_
-                         *)0x0) ||
-            (pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System
-                       ::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                 ((Dictionary_2_System_Int32_System_Object_ *)pDVar7,key,
-                                  MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__get_Item_int_
-                                 ), pOVar9 == (Object *)0x0)) ||
-           ((pOVar9[1].klass == (Object__Class *)0x0 ||
-            ((*(int *)((int)RVar3 + 0x34) == 0 ||
-             (pDVar10 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                       ((pOVar9[1].klass)->_0).namespaze,
-             pDVar10 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0))))))
-        break;
-        bVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                          (pDVar10,*(Object **)(*(int *)((int)RVar3 + 0x34) + 0xc),
-                           MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__ContainsKey_System__String_
-                          );
-        if (bVar8 == 0) goto code_?;
-        pDVar7 = (projectEarningsReport->fields).projectMemberEarningsReports;
-        if ((((pDVar7 == (Dictionary_2_System_Int32_MV_WorldObject_GamePassSystem_GamePassEarnings_ProjectMemberEarningsReport_
-                          *)0x0) ||
-             (pOVar9 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                        Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                  ((Dictionary_2_System_Int32_System_Object_ *)pDVar7,key,
-                                   MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::GamePassSystem::GamePassEarnings::ProjectMemberEarningsReport>__get_Item_int_
-                                  ), pOVar9 == (Object *)0x0)) ||
-            (pOVar9[1].klass == (Object__Class *)0x0)) || (*(int *)((int)RVar3 + 0x34) == 0))
-        break;
-        pDVar10 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                 ((pOVar9[1].klass)->_0).namespaze;
-        if (pDVar10 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) break;
-        IStack_4.m_value =
-             (int32_t)mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Object,UnityEngine::UIElements::TextureId]::
-                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                (pDVar10,*(Object **)(*(int *)((int)RVar3 + 0x34) + 0xc),
-                                 MethodInfo__System__Collections__Generic__Dictionary<System::String,_int>__get_Item_System__String_
-                                );
-      }
-      piVar11 = *(int **)((int)RVar3 + 0x1c);
-      pSVar12 = mscorlib.dll::System::Int32::Int32_ToString_1
-                          (&IStack_4,StringLiteral_N0,(MethodInfo *)0x0);
-      if ((pSVar12 == (String *)0x0) ||
-         (pSVar12 = mscorlib.dll::System::String::String_Replace_1
-                              (pSVar12,::StringLiteral__,::StringLiteral__,(MethodInfo *)0x0),
-         piVar11 == (int *)0x0)) break;
-      (**(code **)(*piVar11 + 0x318))(piVar11,pSVar12,*(undefined4 *)(*piVar11 + 0x31c));
-      iStack_1 = iStack_1 + 1;
-      pLVar2 = (this->fields).boostItems;
-      if (pLVar2 == (List_1_BoostEditMenuItem_ *)0x0) break;
-    }
+      this_00 = *(BoostEditMenuItem **)((longlong)pBVar5->vector + lVar3 + -0x20);
+      if (this_00 == (BoostEditMenuItem *)0x0) break;
+      BoostEditMenuItem::BoostEditMenuItem_UpdateEarningsText
+                (this_00,projectEarningsReport,(MethodInfo *)0x0);
+      pLVar1 = (this->fields).boostItems;
+      uVar2 = uVar2 + 1;
+      lVar3 = lVar3 + 8;
+    } while (pLVar1 != (List_1_BoostEditMenuItem_ *)0x0);
   }
-  func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -681,21 +678,45 @@ void Assembly-CSharp.dll::BoostEditMenu::BoostEditMenu__ctor(BoostEditMenu *this
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<BoostEditMenuItem>__List__);
-    func_?(&TypeInfo__System__Collections__Generic__List<BoostEditMenuItem>);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<BoostEditMenuItem>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<BoostEditMenuItem>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (List_1_BoostEditMenuItem_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<BoostEditMenuItem>);
+            FUN_?(TypeInfo__System__Collections__Generic__List<BoostEditMenuItem>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<BoostEditMenuItem>__List__);
+  bVar1 = iRam_? != 0;
   (this->fields).boostItems = this_00;
-  func_?(&(this->fields).boostItems,this_00);
-  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
-            ((MonoBehaviour *)this,(MethodInfo *)0x0);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).boostItems >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
   return;
 }
 

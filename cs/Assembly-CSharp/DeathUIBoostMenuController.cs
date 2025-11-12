@@ -75,19 +75,6 @@ public class DeathUIBoostMenuController : MonoBehaviour
 	}
 
 	[CompilerGenerated]
-	private sealed class __c__DisplayClass19_0
-	{
-		// Fields
-		public bool readyForAd;
-
-		// Constructors
-		public __c__DisplayClass19_0();
-
-		// Methods
-		internal void _Initialize_b__0(IDeathPromotionSelector x, BaseEventData y);
-	}
-
-	[CompilerGenerated]
 	private sealed class __c__DisplayClass22_0
 	{
 		// Fields

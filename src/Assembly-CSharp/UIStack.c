@@ -5,93 +5,258 @@ void Assembly-CSharp.dll::UIStack::UIStack_DebugStack(UIStack *this,MethodInfo *
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                   );
-    func_?(&TypeInfo__System__String);
-    func_?(&TypeInfo__UIGroupFlags);
-    func_?(&::StringLiteral_____);
-    func_?(&::StringLiteral___);
-    func_?(&::StringLiteral____);
-    func_?(&StringLiteral_____Debugging_UI_Stack____);
-    func_?(&StringLiteral_____Debugging_UI_Stack____);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__String);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UIGroupFlags);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral_____);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral___);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral____);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_____Debugging_UI_Stack____);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_____Debugging_UI_Stack____);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Debug);
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_____Debugging_UI_Stack____,(MethodInfo *)0x0);
-  IStack_1.m_value = 0;
-  pLVar2 = (this->fields).stackableUiElements;
-  while (pLVar2 != (List_1_UIStack_StackElement_ *)0x0) {
-    if ((pLVar2->fields)._size <= IStack_1.m_value) {
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
+  pLVar1 = (this->fields).stackableUiElements;
+  value = 0;
+  if (pLVar1 != (List_1_UIStack_StackElement_ *)0x0) {
+    lVar2 = 0x20;
+    do {
+      if ((pLVar1->fields)._size <= (int)value) {
+        if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          EStack_3.monitor = (MonitorData *)&UNK_?;
+          FUN_?(&TypeInfo__UnityEngine__Debug,0);
+          LOCK();
+          UNLOCK();
+          EStack_3.monitor = (MonitorData *)&UNK_?;
+          FUN_?(&TypeInfo__UnityEngine__ILogger);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+          EStack_3.monitor = (MonitorData *)&UNK_?;
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          EStack_3.monitor = (MonitorData *)&UNK_?;
+          FUN_?(&TypeInfo__UnityEngine__Debug);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+          EStack_3.monitor = (MonitorData *)&UNK_?;
+          FUN_?();
+        }
+        pIVar4 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+        if (pIVar4 == (ILogger_1 *)0x0) {
+          EStack_3.monitor = (MonitorData *)&UNK_?;
+          FUN_?();
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
+        }
+        EStack_3.monitor = (MonitorData *)&UNK_?;
+        FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar4,3);
+        return;
+      }
+      pLVar1 = (this->fields).stackableUiElements;
+      if (pLVar1 == (List_1_UIStack_StackElement_ *)0x0) break;
+      if ((uint)(pLVar1->fields)._size <= value) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      pUVar6 = (pLVar1->fields)._items;
+      if (pUVar6 == (UIStack_StackElement__Array *)0x0) break;
+      if ((uint)pUVar6->max_length <= value) {
+code_?:
+        FUN_?();
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      lVar7 = *(longlong *)((longlong)pUVar6->vector + lVar2 + -0x20);
+      values = (String__Array *)FUN_?(TypeInfo__System__String,6);
+      if (values == (String__Array *)0x0) break;
+      if ((int)values->max_length == 0) goto code_?;
+      bVar8 = iRam_? != 0;
+      values->vector[0] = ::StringLiteral_____;
+      if (bVar8) {
+        uVar9 = (uint)((ulonglong)values->vector >> 0xc);
+        lVar10 = (ulonglong)((uVar9 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar11 = *(ulonglong *)(lVar10 + 0xADDR);
+          puVar12 = (ulonglong *)(lVar10 + 0xADDR);
+          LOCK();
+          bVar8 = uVar11 == *puVar12;
+          if (bVar8) {
+            *puVar12 = uVar11 | 1L << (uVar9 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar8);
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__System__Number);
+        LOCK();
+        UNLOCK();
+        FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if ((MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____->klass->
+           field_0x135 & 1) == 0) {
+        FUN_?();
+      }
+      if (*(int *)&(TypeInfo__System__Number->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      RStack_13._pointer._value = (void *)0x0;
+      RStack_13._length = 0;
+      RStack_13._12_4_ = 0;
+      pSVar14 = mscorlib.dll::System::Number::Number_FormatInt32
+                         (value,&RStack_13,(IFormatProvider *)0x0,(MethodInfo *)0x0);
+      iVar15 = iRam_?;
+      if ((uint)values->max_length < 2) goto code_?;
+      values->vector[1] = pSVar14;
+      if (iVar15 != 0) {
+        uVar9 = (uint)((ulonglong)(values->vector + 1) >> 0xc);
+        lVar10 = (ulonglong)((uVar9 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar11 = *(ulonglong *)(lVar10 + 0xADDR);
+          puVar12 = (ulonglong *)(lVar10 + 0xADDR);
+          LOCK();
+          bVar8 = uVar11 == *puVar12;
+          if (bVar8) {
+            *puVar12 = uVar11 | 1L << (uVar9 & 0x3f);
+          }
+          UNLOCK();
+          iVar15 = iRam_?;
+        } while (!bVar8);
+      }
+      if ((uint)values->max_length < 3) goto code_?;
+      values->vector[2] = ::StringLiteral___;
+      if (iVar15 != 0) {
+        uVar9 = (uint)((ulonglong)(values->vector + 2) >> 0xc);
+        lVar10 = (ulonglong)((uVar9 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar11 = *(ulonglong *)(lVar10 + 0xADDR);
+          puVar12 = (ulonglong *)(lVar10 + 0xADDR);
+          LOCK();
+          bVar8 = uVar11 == *puVar12;
+          if (bVar8) {
+            *puVar12 = uVar11 | 1L << (uVar9 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar8);
+      }
+      if (lVar7 == 0) break;
+      EStack_3.klass = (Enum__Class *)TypeInfo__UIGroupFlags;
+      uStack_16 = *(undefined4 *)(lVar7 + 0x28);
+      EStack_3.monitor = (MonitorData *)0xffffffffffffffff;
+      pSVar14 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_3,(MethodInfo *)0x0);
+      iVar15 = iRam_?;
+      if ((uint)values->max_length < 4) goto code_?;
+      values->vector[3] = pSVar14;
+      if (iVar15 != 0) {
+        uVar9 = (uint)((ulonglong)(values->vector + 3) >> 0xc);
+        lVar10 = (ulonglong)((uVar9 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar11 = *(ulonglong *)(lVar10 + 0xADDR);
+          puVar12 = (ulonglong *)(lVar10 + 0xADDR);
+          LOCK();
+          bVar8 = uVar11 == *puVar12;
+          if (bVar8) {
+            *puVar12 = uVar11 | 1L << (uVar9 & 0x3f);
+          }
+          UNLOCK();
+          iVar15 = iRam_?;
+        } while (!bVar8);
+      }
+      if ((uint)values->max_length < 5) goto code_?;
+      values->vector[4] = ::StringLiteral____;
+      iVar17 = 0;
+      if (iVar15 != 0) {
+        uVar9 = (uint)((ulonglong)(values->vector + 4) >> 0xc);
+        lVar10 = (ulonglong)((uVar9 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar11 = *(ulonglong *)(lVar10 + 0xADDR);
+          puVar12 = (ulonglong *)(lVar10 + 0xADDR);
+          LOCK();
+          bVar8 = uVar11 == *puVar12;
+          if (bVar8) {
+            *puVar12 = uVar11 | 1L << (uVar9 & 0x3f);
+          }
+          UNLOCK();
+          iVar17 = iRam_?;
+        } while (!bVar8);
+      }
+      if ((uint)values->max_length < 6) goto code_?;
+      values->vector[5] = *(String **)(lVar7 + 0x30);
+      if (iVar17 != 0) {
+        uVar9 = (uint)((ulonglong)(values->vector + 5) >> 0xc);
+        lVar7 = (ulonglong)((uVar9 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar11 = *(ulonglong *)(lVar7 + 0xADDR);
+          puVar12 = (ulonglong *)(lVar7 + 0xADDR);
+          LOCK();
+          bVar8 = uVar11 == *puVar12;
+          if (bVar8) {
+            *puVar12 = uVar11 | 1L << (uVar9 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar8);
+      }
+      pSVar14 = mscorlib.dll::System::String::String_Concat_7(values,(MethodInfo *)0x0);
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                ((Object *)StringLiteral_____Debugging_UI_Stack____,(MethodInfo *)0x0);
-      return;
-    }
-    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              (this->fields).stackableUiElements;
-    if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) break;
-    RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-            RegexCharClass+SingleRange]::
-            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      (this_00,IStack_1.m_value,
-                       MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                      );
-    values = (String__Array *)func_?(TypeInfo__System__String,6);
-    pSVar4 = ::StringLiteral_____;
-    if (values == (String__Array *)0x0) break;
-    if (values->max_length == 0) goto code_?;
-    values->vector[0] = ::StringLiteral_____;
-    func_?(values->vector,pSVar4);
-    EStack_5.klass =
-         (Enum__Class *)mscorlib.dll::System::Int32::Int32_ToString(&IStack_1,(MethodInfo *)0x0);
-    if (values->max_length < 2) goto code_?;
-    values->vector[1] = (String *)EStack_5.klass;
-    func_?(values->vector + 1);
-    if (values->max_length < 3) goto code_?;
-    EStack_5.klass = (Enum__Class *)::StringLiteral___;
-    values->vector[2] = ::StringLiteral___;
-    func_?(values->vector + 2);
-    if (RVar3 == (RegexCharClass_SingleRange)0x0) break;
-    EStack_5.klass = (Enum__Class *)TypeInfo__UIGroupFlags;
-    EStack_5.monitor = (MonitorData *)0xffffffff;
-    uStack_6 = *(undefined4 *)((int)RVar3 + 0x18);
-    EStack_5.klass =
-         (Enum__Class *)mscorlib.dll::System::Enum::Enum_ToString(&EStack_5,(MethodInfo *)0x0);
-    if (values->max_length < 4) goto code_?;
-    values->vector[3] = (String *)EStack_5.klass;
-    func_?(values->vector + 3);
-    if (values->max_length < 5) goto code_?;
-    EStack_5.klass = (Enum__Class *)::StringLiteral____;
-    values->vector[4] = ::StringLiteral____;
-    func_?(values->vector + 4);
-    EStack_5.klass = *(Enum__Class **)((int)RVar3 + 0x1c);
-    if (values->max_length < 6) goto code_?;
-    values->vector[5] = (String *)EStack_5.klass;
-    func_?(values->vector + 5);
-    pSVar4 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug);
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar4,(MethodInfo *)0x0);
-    IStack_1.m_value = IStack_1.m_value + 1;
-    pLVar2 = (this->fields).stackableUiElements;
+                ((Object *)pSVar14,(MethodInfo *)0x0);
+      pLVar1 = (this->fields).stackableUiElements;
+      value = value + 1;
+      lVar2 = lVar2 + 8;
+    } while (pLVar1 != (List_1_UIStack_StackElement_ *)0x0);
   }
-  func_?();
-code_?:
-  EStack_5.klass = (Enum__Class *)&UNK_?;
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -102,57 +267,106 @@ void Assembly-CSharp.dll::UIStack::UIStack_FindStackParent
                (UIStack *this,Transform *uiElement,int32_t *index,MethodInfo *method)
 
 {
-  while( true ) {
+  do {
     if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
-                     );
-      func_?(&
-                      MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                     );
-      func_?(&TypeInfo__UnityEngine__Object);
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?();
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    index_00 = 0;
+    uVar1 = 0;
+    lVar2 = 0x20;
     while( true ) {
-      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                (this->fields).stackableUiElements;
-      if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-      goto code_?;
-      if ((this_00->fields)._size <= index_00) break;
-      RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (this_00,index_00,
-                         MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                        );
-      if ((RVar1 == (RegexCharClass_SingleRange)0x0) ||
-         (*(GameObject **)((int)RVar1 + 8) == (GameObject *)0x0)) goto code_?;
-      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                         (*(GameObject **)((int)RVar1 + 8),(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                        ((Object_1 *)pTVar2,(Object_1 *)uiElement,(MethodInfo *)0x0);
-      if (bVar3 != 0) {
-        *index = index_00;
+      pLVar3 = (this->fields).stackableUiElements;
+      if (pLVar3 == (List_1_UIStack_StackElement_ *)0x0) goto code_?;
+      uVar4 = (pLVar3->fields)._size;
+      if ((int)uVar4 <= (int)uVar1) break;
+      if (uVar4 <= uVar1) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
-      index_00 = index_00 + 1;
-    }
-    if (uiElement == (Transform *)0x0) break;
-    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)uiElement,(MethodInfo *)0x0);
-    if (pTVar2 == (Transform *)0x0) break;
-    uiElement = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
-                          (pTVar2,(MethodInfo *)0x0);
-  }
+      pUVar6 = (pLVar3->fields)._items;
+      if (pUVar6 == (UIStack_StackElement__Array *)0x0) goto code_?;
+      if ((uint)pUVar6->max_length <= uVar1) {
+        FUN_?();
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      lVar7 = *(longlong *)((longlong)pUVar6->vector + lVar2 + -0x20);
+      if ((lVar7 == 0) || (this_00 = *(GameObject **)(lVar7 + 0x10), this_00 == (GameObject *)0x0))
+      goto code_?;
+      pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                         (this_00,(MethodInfo *)0x0);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (uiElement == (Transform *)0x0 && pTVar8 == (Transform *)0x0) {
 code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
-  return;
+        *index = uVar1;
+        return;
+      }
+      if (uiElement == (Transform *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (pTVar8 == (Transform *)0x0) goto code_?;
+        bVar9 = (pTVar8->fields)._._.m_CachedPtr == (void *)0x0;
+      }
+      else if (pTVar8 == (Transform *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        bVar9 = (uiElement->fields)._._.m_CachedPtr == (void *)0x0;
+      }
+      else {
+        bVar9 = pTVar8 == uiElement;
+      }
+      if (bVar9) goto code_?;
+      uVar1 = uVar1 + 1;
+      lVar2 = lVar2 + 8;
+    }
+    if (uiElement == (Transform *)0x0) {
+code_?:
+      FUN_?();
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                       ((Component *)uiElement,(MethodInfo *)0x0);
+    if (pTVar8 == (Transform *)0x0) goto code_?;
+    uiElement = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
+                          (pTVar8,(MethodInfo *)0x0);
+  } while( true );
 }
 
 
@@ -161,74 +375,98 @@ code_?:
 void Assembly-CSharp.dll::UIStack::UIStack_HideAll(UIStack *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffbc;
-  puVar5 = &stack0xffffffbc;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__GetEnumerator__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (this->fields).stackableUiElements;
-  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_8,this_00,
-                        MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__GetEnumerator__
-                       );
-    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
-    LStack_6._index = pLVar7->_index;
-    LStack_6._version = pLVar7->_version;
-    LStack_6._current = *(Object **)&pLVar7->_current;
-    LStack_8._version = 0;
-    uStack_1 = 1;
-    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
-    while( true ) {
-      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-              List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_6,
-                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
-                        );
-      if (bVar9 == 0) {
-        uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&LStack_6,
-                   (ExceptionArgument__Enum)
-                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
-                   ,unaff_EDI);
-        *unaff_FS_OFFSET = uStack_3;
-        return;
+  LStack_1._list = (List_1_System_Object_ *)(this->fields).stackableUiElements;
+  if ((List_1_UIStack_StackElement_ *)LStack_1._list == (List_1_UIStack_StackElement_ *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  if (iRam_? != 0) {
+    uVar3 = (uint)((ulonglong)&uStack_4 >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (uVar3 & 0x3f);
       }
-      if (((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) ||
-         (*(GameObject **)((int)LStack_6._current + 8) == (GameObject *)0x0)) break;
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (*(GameObject **)((int)LStack_6._current + 8),0,(MethodInfo *)0x0);
-    }
+      UNLOCK();
+    } while (uVar6 != uVar7);
   }
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  pLStack_8 = (List_1_T_Enumerator_System_Object_ *)
+               ((ulonglong)
+                (uint)(((List_1_UIStack_StackElement_ *)LStack_1._list)->fields)._version << 0x20);
+  uStack_9 = 0;
+  LStack_1._8_8_ = pLStack_8;
+  LStack_1._current = (Object *)0x0;
+  uStack_4 = 0;
+  pLStack_8 = &LStack_1;
+  while( true ) {
+    bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+            List_1_T_Enumerator_System_Object__MoveNext
+                      (&LStack_1,
+                       MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
+                      );
+    if (bVar10 == 0) {
+      return;
+    }
+    if (LStack_1._current == (Object *)0x0) goto code_?;
+    obj = LStack_1._current[1].klass;
+    if (obj == (Object__Class *)0x0) break;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pcVar11 = (obj->_0).name;
+    if (pcVar11 == (char *)0x0) {
+code_?:
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+      break;
+    }
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar12 = func_?(&UNK_?);
+      FUN_?(uVar12);
+      goto code_?;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)(pcVar11,0);
+  }
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -239,78 +477,77 @@ void Assembly-CSharp.dll::UIStack::UIStack_HideAllExceptStackBottom
                (UIStack *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffbc;
-  puVar5 = &stack0xffffffbc;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__GetEnumerator__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (this->fields).stackableUiElements;
-  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_8,this_00,
-                        MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__GetEnumerator__
-                       );
-    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
-    LStack_6._index = pLVar7->_index;
-    LStack_6._version = pLVar7->_version;
-    LStack_6._current = *(Object **)&pLVar7->_current;
-    LStack_8._version = 0;
-    uStack_1 = 1;
-    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
-    while( true ) {
-      do {
-        bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-                List_1_T_Enumerator_System_Object__MoveNext
-                          (&LStack_6,
-                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
-                          );
-        if (bVar9 == 0) {
-          uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&LStack_6,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
-                     ,unaff_EDI);
-          *unaff_FS_OFFSET = uStack_3;
-          return;
-        }
-        if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0)
-        goto code_?;
-      } while (*(int *)((int)LStack_6._current + 0x18) == 0x100);
-      if (*(GameObject **)((int)LStack_6._current + 8) == (GameObject *)0x0) break;
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (*(GameObject **)((int)LStack_6._current + 8),0,(MethodInfo *)0x0);
-    }
+  LStack_1._list = (List_1_System_Object_ *)(this->fields).stackableUiElements;
+  if ((List_1_UIStack_StackElement_ *)LStack_1._list == (List_1_UIStack_StackElement_ *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
   }
+  if (iRam_? != 0) {
+    uVar3 = (uint)((ulonglong)&uStack_4 >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (ulonglong)(uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar6 != uVar7);
+  }
+  pLStack_8 = (List_1_T_Enumerator_System_Object_ *)
+               ((ulonglong)
+                (uint)(((List_1_UIStack_StackElement_ *)LStack_1._list)->fields)._version << 0x20);
+  uStack_9 = 0;
+  LStack_1._8_8_ = pLStack_8;
+  LStack_1._current = (Object *)0x0;
+  uStack_4 = 0;
+  pLStack_8 = &LStack_1;
+  while( true ) {
+    do {
+      bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        (&LStack_1,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
+                        );
+      if (bVar10 == 0) {
+        return;
+      }
+      if (LStack_1._current == (Object *)0x0) goto code_?;
+    } while (*(int *)&LStack_1._current[2].monitor == 0x100);
+    if (LStack_1._current[1].klass == (Object__Class *)0x0) break;
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+              ((GameObject *)LStack_1._current[1].klass,0,(MethodInfo *)0x0);
+  }
+  FUN_?();
 code_?:
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  FUN_?();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -321,21 +558,21 @@ bool Assembly-CSharp.dll::UIStack::UIStack_IsStackEmpty(UIStack *this,MethodInfo
 
 {
   if (cRam_? == '\0') {
-    ppMStack_1 = &MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
-    ;
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pLVar2 = (this->fields).stackableUiElements;
-  if (pLVar2 != (List_1_UIStack_StackElement_ *)0x0) {
-    return (pLVar2->fields)._size < 3;
+  pLVar1 = (this->fields).stackableUiElements;
+  if (pLVar1 != (List_1_UIStack_StackElement_ *)0x0) {
+    return (pLVar1->fields)._size < 3;
   }
-  ppMStack_1 = (MethodInfo **)&stack0xfffffffc;
-  uVar3 = func_?(auStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  bVar6 = (*pcVar5)();
-  return bVar6;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  bVar3 = (*pcVar2)();
+  return bVar3;
 }
 
 
@@ -346,66 +583,192 @@ bool Assembly-CSharp.dll::UIStack::UIStack_IsUIElementBlocked
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                   );
-    func_?(&StringLiteral_IsUIElementBlocked_index____);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_IsUIElementBlocked_index____);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  IVar1.m_value = -1;
+  auStackX_10[0] = 0xffffffff;
   if (uiElement != (GameObject *)0x0) {
-    uiElement_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                             (uiElement,(MethodInfo *)0x0);
-    UIStack_FindStackParent(this,uiElement_00,(int32_t *)&stack0xfffffff8,(MethodInfo *)0x0);
-    if (IVar1.m_value == -1) {
-      pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
-                         ((Object_1 *)uiElement,(MethodInfo *)0x0);
-      str2 = mscorlib.dll::System::Int32::Int32_ToString
-                       ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
-      pSVar2 = mscorlib.dll::System::String::String_Concat_4
-                         (pSVar2,StringLiteral_IsUIElementBlocked_index____,str2,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                ((Object *)pSVar2,(MethodInfo *)0x0);
-      return 0;
+    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                       (uiElement,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
-    pLVar3 = (this->fields).stackableUiElements;
-    index = IVar1.m_value + 1;
-    if (pLVar3 != (List_1_UIStack_StackElement_ *)0x0) {
-      if ((pLVar3->fields)._size <= index) {
-        return 0;
+    pLVar2 = (this->fields).stackableUiElements;
+    uVar3 = 0;
+    if (pLVar2 != (List_1_UIStack_StackElement_ *)0x0) {
+      lVar4 = 0x20;
+      while ((int)uVar3 < (pLVar2->fields)._size) {
+        pLVar2 = (this->fields).stackableUiElements;
+        if (pLVar2 == (List_1_UIStack_StackElement_ *)0x0) goto code_?;
+        if ((uint)(pLVar2->fields)._size <= uVar3) goto code_?;
+        pUVar5 = (pLVar2->fields)._items;
+        if (pUVar5 == (UIStack_StackElement__Array *)0x0) goto code_?;
+        if ((uint)pUVar5->max_length <= uVar3) goto code_?;
+        lVar6 = *(longlong *)((longlong)pUVar5->vector + lVar4 + -0x20);
+        if ((lVar6 == 0) || (this_00 = *(GameObject **)(lVar6 + 0x10), this_00 == (GameObject *)0x0)
+           ) goto code_?;
+        pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                           (this_00,(MethodInfo *)0x0);
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (pTVar1 == (Transform *)0x0 && pTVar7 == (Transform *)0x0) goto code_?;
+        if (pTVar1 == (Transform *)0x0) {
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (pTVar7 == (Transform *)0x0) goto code_?;
+          bVar8 = (pTVar7->fields)._._.m_CachedPtr == (void *)0x0;
+        }
+        else if (pTVar7 == (Transform *)0x0) {
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          bVar8 = (pTVar1->fields)._._.m_CachedPtr == (void *)0x0;
+        }
+        else {
+          bVar8 = pTVar7 == pTVar1;
+        }
+        if (bVar8) goto code_?;
+        pLVar2 = (this->fields).stackableUiElements;
+        uVar3 = uVar3 + 1;
+        lVar4 = lVar4 + 8;
+        if (pLVar2 == (List_1_UIStack_StackElement_ *)0x0) goto code_?;
       }
-      do {
-        if ((pLVar3->fields)._size <= index) {
+      if ((pTVar1 != (Transform *)0x0) &&
+         (pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             ((Component *)pTVar1,(MethodInfo *)0x0), pTVar1 != (Transform *)0x0)) {
+        pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
+                           (pTVar1,(MethodInfo *)0x0);
+        UIStack_FindStackParent(this,pTVar1,(int32_t *)auStackX_10,(MethodInfo *)0x0);
+        uVar3 = auStackX_10[0];
+code_?:
+        auStackX_10[0] = uVar3;
+        if (auStackX_10[0] == 0xffffffff) {
+          pSVar9 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetName
+                             ((Object_1 *)uiElement,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__System__Number);
+            LOCK();
+            UNLOCK();
+            FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          uVar3 = auStackX_10[0];
+          if ((MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____->klass->
+               field_0x135 & 1) == 0) {
+            FUN_?();
+          }
+          if (*(int *)&(TypeInfo__System__Number->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          aRStack_10[0]._pointer._value = (void *)0x0;
+          aRStack_10[0]._length = 0;
+          aRStack_10[0]._12_4_ = 0;
+          str2 = mscorlib.dll::System::Number::Number_FormatInt32
+                           (uVar3,aRStack_10,(IFormatProvider *)0x0,(MethodInfo *)0x0);
+          pSVar9 = mscorlib.dll::System::String::String_Concat_5
+                             (pSVar9,StringLiteral_IsUIElementBlocked_index____,str2,
+                              (MethodInfo *)0x0);
+          if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                    ((Object *)pSVar9,(MethodInfo *)0x0);
           return 0;
         }
-        this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                  (this->fields).stackableUiElements;
-        if ((this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-           (RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                    RegularExpressions::RegexCharClass+SingleRange]::
-                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              (this_00,index,
-                               MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                              ), RVar4 == (RegexCharClass_SingleRange)0x0)) break;
-        if (*(char *)((int)RVar4 + 0xc) != '\0') {
-          return 1;
+        pLVar2 = (this->fields).stackableUiElements;
+        auStackX_10[0] = auStackX_10[0] + 1;
+        if (pLVar2 != (List_1_UIStack_StackElement_ *)0x0) {
+          if ((pLVar2->fields)._size <= (int)auStackX_10[0]) {
+            return 0;
+          }
+          lVar4 = (longlong)(int)auStackX_10[0] * 8 + 0x20;
+          uVar3 = auStackX_10[0];
+          goto code_?;
         }
-        pLVar3 = (this->fields).stackableUiElements;
-        index = index + 1;
-      } while (pLVar3 != (List_1_UIStack_StackElement_ *)0x0);
+      }
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  bVar6 = (*pcVar5)();
-  return bVar6;
+code_?:
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  bVar12 = (*pcVar11)();
+  return bVar12;
+code_?:
+  if ((pLVar2->fields)._size <= (int)uVar3) {
+    return 0;
+  }
+  if ((uint)(pLVar2->fields)._size <= uVar3) {
+code_?:
+    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+              ((MethodInfo *)0x0);
+    pcVar11 = (code *)swi(3);
+    bVar12 = (*pcVar11)();
+    return bVar12;
+  }
+  pUVar5 = (pLVar2->fields)._items;
+  if (pUVar5 == (UIStack_StackElement__Array *)0x0) goto code_?;
+  if ((uint)pUVar5->max_length <= uVar3) {
+code_?:
+    FUN_?();
+    pcVar11 = (code *)swi(3);
+    bVar12 = (*pcVar11)();
+    return bVar12;
+  }
+  lVar6 = *(longlong *)((longlong)pUVar5->vector + lVar4 + -0x20);
+  if (lVar6 == 0) goto code_?;
+  if (*(char *)(lVar6 + 0x18) != '\0') {
+    return 1;
+  }
+  uVar3 = uVar3 + 1;
+  lVar4 = lVar4 + 8;
+  goto code_?;
 }
 
 
@@ -414,78 +777,83 @@ bool Assembly-CSharp.dll::UIStack::UIStack_IsUIElementBlocked
 void Assembly-CSharp.dll::UIStack::UIStack_LateUpdate(UIStack *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffbc;
-  puVar5 = &stack0xffffffbc;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__GetEnumerator__
-                   );
-    func_?(&TypeInfo__MVInputWrapper);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (this->fields).stackableUiElements;
-  if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-code_?:
-    func_?();
-    pcVar7 = (code *)swi(3);
-    (*pcVar7)();
+  LStack_1._list = (List_1_System_Object_ *)(this->fields).stackableUiElements;
+  if ((List_1_UIStack_StackElement_ *)LStack_1._list != (List_1_UIStack_StackElement_ *)0x0) {
+    if (iRam_? != 0) {
+      uVar2 = (uint)((ulonglong)&uStack_3 >> 0xc);
+      puVar4 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar5 = *puVar4;
+        LOCK();
+        uVar6 = *puVar4;
+        if (uVar5 == uVar6) {
+          *puVar4 = uVar5 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar5 != uVar6);
+    }
+    pLStack_7 = (List_1_T_Enumerator_System_Object_ *)
+                 ((ulonglong)
+                  (uint)(((List_1_UIStack_StackElement_ *)LStack_1._list)->fields)._version << 0x20
+                 );
+    uStack_8 = 0;
+    LStack_1._8_8_ = pLStack_7;
+    LStack_1._current = (Object *)0x0;
+    uStack_3 = 0;
+    pLStack_7 = &LStack_1;
+    while( true ) {
+      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        (&LStack_1,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
+                        );
+      if (bVar9 == 0) {
+        return;
+      }
+      if (LStack_1._current == (Object *)0x0) break;
+      if (*(char *)&LStack_1._current[1].monitor != '\0') {
+        if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        MVInputWrapper::MVInputWrapper_SuppressShortcutKeys((MethodInfo *)0x0);
+        return;
+      }
+    }
+    FUN_?();
+    FUN_?();
+    pcVar10 = (code *)swi(3);
+    (*pcVar10)();
     return;
   }
-  pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-           RegexCharClass+SingleRange]::
-           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                     (&LStack_9,this_00,
-                      MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__GetEnumerator__
-                     );
-  LStack_6._list = (List_1_System_Object_ *)pLVar8->_list;
-  LStack_6._index = pLVar8->_index;
-  LStack_6._version = pLVar8->_version;
-  LStack_6._current = *(Object **)&pLVar8->_current;
-  LStack_9._version = 0;
-  uStack_1 = 1;
-  LStack_9._current = (RegexCharClass_SingleRange)&LStack_6;
-  do {
-    bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-            List_1_T_Enumerator_System_Object__MoveNext
-                      (&LStack_6,
-                       MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
-                      );
-    if (bVar10 == 0) goto code_?;
-    if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0)
-    goto code_?;
-  } while (*(char *)((int)LStack_6._current + 0xc) == '\0');
-  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MVInputWrapper);
-  }
-  MVInputWrapper::MVInputWrapper_SuppressShortcutKeys((MethodInfo *)0x0);
-code_?:
-  uStack_1 = 0xffffffff;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)&LStack_6,
-             (ExceptionArgument__Enum)
-             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
-             ,unaff_EDI);
-  *unaff_FS_OFFSET = uStack_3;
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -496,28 +864,45 @@ GameObject * Assembly-CSharp.dll::UIStack::UIStack_Peak(UIStack *this,MethodInfo
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pLVar1 = (this->fields).stackableUiElements;
   if (pLVar1 != (List_1_UIStack_StackElement_ *)0x0) {
-    RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-            RegexCharClass+SingleRange]::
-            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                       (this->fields).stackableUiElements,(pLVar1->fields)._size + -1,
-                       MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                      );
-    if (RVar2 != (RegexCharClass_SingleRange)0x0) {
-      return *(GameObject **)((int)RVar2 + 8);
+    iVar2 = (pLVar1->fields)._size;
+    if ((uint)(pLVar1->fields)._size <= iVar2 - 1U) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                ((MethodInfo *)0x0);
+      pcVar3 = (code *)swi(3);
+      pGVar4 = (GameObject *)(*pcVar3)();
+      return pGVar4;
+    }
+    pUVar5 = (pLVar1->fields)._items;
+    if (pUVar5 != (UIStack_StackElement__Array *)0x0) {
+      if ((uint)pUVar5->max_length <= iVar2 - 1U) {
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        pGVar4 = (GameObject *)(*pcVar3)();
+        return pGVar4;
+      }
+      if (pUVar5->vector[(longlong)iVar2 + -1] != (UIStack_StackElement *)0x0) {
+        return (pUVar5->vector[(longlong)iVar2 + -1]->fields).gameObject;
+      }
     }
   }
-  uVar3 = func_?(&stack0xfffffff0);
-  func_?(uVar3);
-  pcVar4 = (code *)swi(3);
-  pGVar5 = (GameObject *)(*pcVar4)();
-  return pGVar5;
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  pGVar4 = (GameObject *)(*pcVar3)();
+  return pGVar4;
 }
 
 
@@ -527,18 +912,119 @@ void Assembly-CSharp.dll::UIStack::UIStack_Pop(UIStack *this,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pLVar1 = (this->fields).stackableUiElements;
+  if (pLVar1 == (List_1_UIStack_StackElement_ *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  UIStack_RemoveElement(this,(pLVar1->fields)._size + -1,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                  ,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pLVar1 = (this->fields).stackableUiElements;
   if (pLVar1 != (List_1_UIStack_StackElement_ *)0x0) {
-    UIStack_RemoveElement(this,(pLVar1->fields)._size + -1,(MethodInfo *)0x0);
-    UIStack_UpdateStack(this,(MethodInfo *)0x0);
-    return;
+    if ((pLVar1->fields)._size == 0) {
+      return;
+    }
+    iVar3 = (pLVar1->fields)._size;
+    if ((uint)(pLVar1->fields)._size <= iVar3 - 1U) {
+code_?:
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                ((MethodInfo *)0x0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pUVar4 = (pLVar1->fields)._items;
+    if (pUVar4 != (UIStack_StackElement__Array *)0x0) {
+      if ((uint)pUVar4->max_length <= iVar3 - 1U) {
+code_?:
+        FUN_?();
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      if ((pUVar4->vector[(longlong)iVar3 + -1] != (UIStack_StackElement *)0x0) &&
+         (this_00 = (pUVar4->vector[(longlong)iVar3 + -1]->fields).gameObject,
+         this_00 != (GameObject *)0x0)) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (this_00,1,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                       );
+          LOCK();
+          UNLOCK();
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pLVar1 = (this->fields).stackableUiElements;
+        if (pLVar1 != (List_1_UIStack_StackElement_ *)0x0) {
+          if (1 < (pLVar1->fields)._size) {
+            uVar5 = (pLVar1->fields)._size;
+            iVar3 = uVar5 - 2;
+            lVar6 = (ulonglong)uVar5 * 8 + 0x18;
+            do {
+              uVar5 = uVar5 - 1;
+              pLVar1 = (this->fields).stackableUiElements;
+              if (pLVar1 == (List_1_UIStack_StackElement_ *)0x0) goto code_?;
+              if ((uint)(pLVar1->fields)._size <= uVar5) goto code_?;
+              pUVar4 = (pLVar1->fields)._items;
+              if (pUVar4 == (UIStack_StackElement__Array *)0x0) goto code_?;
+              if ((uint)pUVar4->max_length <= uVar5) goto code_?;
+              lVar7 = *(longlong *)((longlong)pUVar4->vector + lVar6 + -0x20);
+              if (lVar7 == 0) goto code_?;
+              if (*(char *)(lVar7 + 0x19) != '\0') break;
+              lVar7 = FUN_?((this->fields).stackableUiElements);
+              if (lVar7 == 0) goto code_?;
+              if (*(char *)(lVar7 + 0x1b) != '\0') break;
+              pLVar1 = (this->fields).stackableUiElements;
+              if (((pLVar1 == (List_1_UIStack_StackElement_ *)0x0) ||
+                  (lVar7 = FUN_?(pLVar1,iVar3), lVar7 == 0)) ||
+                 (*(GameObject **)(lVar7 + 0x10) == (GameObject *)0x0)) goto code_?;
+              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                        (*(GameObject **)(lVar7 + 0x10),1,(MethodInfo *)0x0);
+              lVar6 = lVar6 + -8;
+              iVar3 = iVar3 + -1;
+            } while (-1 < iVar3);
+          }
+          UIStack_UpdateBlocking(this,(MethodInfo *)0x0);
+          if ((this->fields).uiStackChangedPublisher == (Action *)0x0) {
+            return;
+          }
+          pAVar8 = (this->fields).uiStackChangedPublisher;
+          (*(pAVar8->fields)._._.invoke_impl)
+                    ((pAVar8->fields)._._.method_code,(pAVar8->fields)._._.method);
+          return;
+        }
+      }
+    }
   }
-  func_?();
+code_?:
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -552,42 +1038,157 @@ void Assembly-CSharp.dll::UIStack::UIStack_PopGroups
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pLVar1 = (this->fields).stackableUiElements;
+  if (pLVar1 == (List_1_UIStack_StackElement_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  uVar3 = (pLVar1->fields)._size;
+  uVar4 = (ulonglong)(int)uVar3;
+  if (0 < (int)uVar3) {
+    lVar5 = uVar4 * 8 + 0x18;
+    do {
+      uVar3 = uVar3 - 1;
+      pLVar1 = (this->fields).stackableUiElements;
+      if (pLVar1 == (List_1_UIStack_StackElement_ *)0x0) goto code_?;
+      if ((uint)(pLVar1->fields)._size <= uVar3) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pUVar6 = (pLVar1->fields)._items;
+      if (pUVar6 == (UIStack_StackElement__Array *)0x0) goto code_?;
+      if ((uint)pUVar6->max_length <= uVar3) {
+        FUN_?();
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      lVar7 = *(longlong *)((longlong)pUVar6->vector + lVar5 + -0x20);
+      if (lVar7 == 0) goto code_?;
+      if (0 < (int)(*(UIGroupFlags__Enum *)(lVar7 + 0x28) & popGroups)) {
+        UIStack_RemoveElement(this,uVar3,(MethodInfo *)0x0);
+      }
+      uVar8 = (int)uVar4 - 1;
+      uVar4 = (ulonglong)uVar8;
+      lVar5 = lVar5 + -8;
+    } while (0 < (int)uVar8);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                  ,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pLVar1 = (this->fields).stackableUiElements;
   if (pLVar1 != (List_1_UIStack_StackElement_ *)0x0) {
-    iVar2 = (pLVar1->fields)._size;
-    index = iVar2;
-    while( true ) {
-      if (iVar2 < 1) {
-        UIStack_UpdateStack(this,(MethodInfo *)0x0);
+    if ((pLVar1->fields)._size == 0) {
+      return;
+    }
+    iVar9 = (pLVar1->fields)._size;
+    if ((uint)(pLVar1->fields)._size <= iVar9 - 1U) {
+code_?:
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                ((MethodInfo *)0x0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pUVar6 = (pLVar1->fields)._items;
+    if (pUVar6 != (UIStack_StackElement__Array *)0x0) {
+      if ((uint)pUVar6->max_length <= iVar9 - 1U) {
+code_?:
+        FUN_?();
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
         return;
       }
-      index = index + -1;
-      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                (this->fields).stackableUiElements;
-      if ((this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-         (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (this_00,index,
-                             MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                            ), RVar3 == (RegexCharClass_SingleRange)0x0)) break;
-      if (0 < (int)(*(UIGroupFlags__Enum *)((int)RVar3 + 0x18) & popGroups)) {
-        UIStack_RemoveElement(this,index,(MethodInfo *)0x0);
+      if ((pUVar6->vector[(longlong)iVar9 + -1] != (UIStack_StackElement *)0x0) &&
+         (this_00 = (pUVar6->vector[(longlong)iVar9 + -1]->fields).gameObject,
+         this_00 != (GameObject *)0x0)) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (this_00,1,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                       );
+          LOCK();
+          UNLOCK();
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pLVar1 = (this->fields).stackableUiElements;
+        if (pLVar1 != (List_1_UIStack_StackElement_ *)0x0) {
+          if (1 < (pLVar1->fields)._size) {
+            uVar3 = (pLVar1->fields)._size;
+            iVar9 = uVar3 - 2;
+            lVar5 = (ulonglong)uVar3 * 8 + 0x18;
+            do {
+              uVar3 = uVar3 - 1;
+              pLVar1 = (this->fields).stackableUiElements;
+              if (pLVar1 == (List_1_UIStack_StackElement_ *)0x0) goto code_?;
+              if ((uint)(pLVar1->fields)._size <= uVar3) goto code_?;
+              pUVar6 = (pLVar1->fields)._items;
+              if (pUVar6 == (UIStack_StackElement__Array *)0x0) goto code_?;
+              if ((uint)pUVar6->max_length <= uVar3) goto code_?;
+              lVar7 = *(longlong *)((longlong)pUVar6->vector + lVar5 + -0x20);
+              if (lVar7 == 0) goto code_?;
+              if (*(char *)(lVar7 + 0x19) != '\0') break;
+              lVar7 = FUN_?((this->fields).stackableUiElements);
+              if (lVar7 == 0) goto code_?;
+              if (*(char *)(lVar7 + 0x1b) != '\0') break;
+              pLVar1 = (this->fields).stackableUiElements;
+              if (((pLVar1 == (List_1_UIStack_StackElement_ *)0x0) ||
+                  (lVar7 = FUN_?(pLVar1,iVar9), lVar7 == 0)) ||
+                 (*(GameObject **)(lVar7 + 0x10) == (GameObject *)0x0)) goto code_?;
+              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                        (*(GameObject **)(lVar7 + 0x10),1,(MethodInfo *)0x0);
+              lVar5 = lVar5 + -8;
+              iVar9 = iVar9 + -1;
+            } while (-1 < iVar9);
+          }
+          UIStack_UpdateBlocking(this,(MethodInfo *)0x0);
+          if ((this->fields).uiStackChangedPublisher == (Action *)0x0) {
+            return;
+          }
+          pAVar10 = (this->fields).uiStackChangedPublisher;
+          (*(pAVar10->fields)._._.invoke_impl)
+                    ((pAVar10->fields)._._.method_code,(pAVar10->fields)._._.method);
+          return;
+        }
       }
-      iVar2 = iVar2 + -1;
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+code_?:
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -598,130 +1199,140 @@ void Assembly-CSharp.dll::UIStack::UIStack_PopToGroup
                (UIStack *this,UIGroupFlags__Enum group,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffb8;
-  puVar5 = &stack0xffffffb8;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                   );
-    func_?(&TypeInfo__UnityEngine__StackTraceUtility);
-    func_?(&StringLiteral_PopToGroup__Element_not_found_ab);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__StackTraceUtility);
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
-  uStack_7 = 0;
-  method_00 = (MethodInfo *)(this->fields).stackableUiElements;
-  if (method_00 != (MethodInfo *)0x0) {
-    pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_9,
-                        (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                        method_00,
-                        MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__GetEnumerator__
-                       );
-    LStack_6._list = (List_1_System_Object_ *)pLVar8->_list;
-    LStack_6._index = pLVar8->_index;
-    LStack_6._version = pLVar8->_version;
-    LStack_6._current = *(Object **)&pLVar8->_current;
-    LStack_9._version = 0;
-    uStack_1 = 1;
-    LStack_9._current = (RegexCharClass_SingleRange)&LStack_6;
+  pLVar1 = (this->fields).stackableUiElements;
+  if (pLVar1 != (List_1_UIStack_StackElement_ *)0x0) {
+    if (iRam_? != 0) {
+      uVar2 = (uint)((ulonglong)&uStack_3 >> 0xc);
+      puVar4 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar5 = *puVar4;
+        LOCK();
+        uVar6 = *puVar4;
+        if (uVar5 == uVar6) {
+          *puVar4 = uVar5 | 1L << (ulonglong)(uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar5 != uVar6);
+    }
+    pLStack_7 = (List_1_T_Enumerator_System_Object_ *)
+                 ((ulonglong)(uint)(pLVar1->fields)._version << 0x20);
+    uStack_8 = 0;
+    LStack_9._8_8_ = pLStack_7;
+    LStack_9._current = (Object *)0x0;
+    uStack_3 = 0;
+    pLStack_7 = &LStack_9;
+    LStack_9._list = (List_1_System_Object_ *)pLVar1;
     do {
       bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_6,
+                        (&LStack_9,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
                         );
       if (bVar10 == 0) {
-        uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&LStack_6,
-                   (ExceptionArgument__Enum)
-                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
-                   ,method_00);
-        uStack_1 = 0xffffffff;
-        if ((TypeInfo__UnityEngine__StackTraceUtility->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__StackTraceUtility);
+        if (*(int *)&(TypeInfo__UnityEngine__StackTraceUtility->_1).field_0x1c == 0) {
+          FUN_?();
         }
         message = UnityEngine.CoreModule.dll::UnityEngine::StackTraceUtility::
                   StackTraceUtility_ExtractStackTrace((MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+        if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+          FUN_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                   ((Object *)message,(MethodInfo *)0x0);
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                   ((Object *)StringLiteral_PopToGroup__Element_not_found_ab,(MethodInfo *)0x0);
-        goto code_?;
+        return;
       }
-      if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0)
-      goto code_?;
-    } while (*(UIGroupFlags__Enum *)((int)LStack_6._current + 0x18) != group);
-    uStack_7 = 1;
-    uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&LStack_6,
-               (ExceptionArgument__Enum)
-               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
-               ,method_00);
-    uStack_1 = 0xffffffff;
-    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              (this->fields).stackableUiElements;
-    while ((this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0 &&
-           (RVar11 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                    RegularExpressions::RegexCharClass+SingleRange]::
-                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              (this_00,(this_00->fields)._size + -1,
-                               MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                              ), RVar11 != (RegexCharClass_SingleRange)0x0))) {
-      if (*(UIGroupFlags__Enum *)((int)RVar11 + 0x18) == group) {
-code_?:
-        *unaff_FS_OFFSET = uStack_3;
+      if (LStack_9._current == (Object *)0x0) {
+        FUN_?();
+        FUN_?();
+        pcVar11 = (code *)swi(3);
+        (*pcVar11)();
+        return;
+      }
+    } while (*(UIGroupFlags__Enum *)&LStack_9._current[2].monitor != group);
+    pLVar1 = (this->fields).stackableUiElements;
+    while (pLVar1 != (List_1_UIStack_StackElement_ *)0x0) {
+      iVar12 = (pLVar1->fields)._size;
+      if ((uint)(pLVar1->fields)._size <= iVar12 - 1U) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar11 = (code *)swi(3);
+        (*pcVar11)();
+        return;
+      }
+      pUVar13 = (pLVar1->fields)._items;
+      if (pUVar13 == (UIStack_StackElement__Array *)0x0) break;
+      if ((uint)pUVar13->max_length <= iVar12 - 1U) {
+        FUN_?();
+        pcVar11 = (code *)swi(3);
+        (*pcVar11)();
+        return;
+      }
+      if (pUVar13->vector[(longlong)iVar12 + -1] == (UIStack_StackElement *)0x0) break;
+      if ((pUVar13->vector[(longlong)iVar12 + -1]->fields).group == group) {
         return;
       }
       if (cRam_? == '\0') {
-        func_?();
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                     );
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      pLVar12 = (this->fields).stackableUiElements;
-      if (pLVar12 == (List_1_UIStack_StackElement_ *)0x0) break;
-      UIStack_RemoveElement(this,(pLVar12->fields)._size + -1,(MethodInfo *)0x0);
+      pLVar1 = (this->fields).stackableUiElements;
+      if (pLVar1 == (List_1_UIStack_StackElement_ *)0x0) break;
+      UIStack_RemoveElement(this,(pLVar1->fields)._size + -1,(MethodInfo *)0x0);
       UIStack_UpdateStack(this,(MethodInfo *)0x0);
-      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                (this->fields).stackableUiElements;
+      pLVar1 = (this->fields).stackableUiElements;
     }
   }
-code_?:
-  uVar13 = func_?();
-  func_?(uVar13);
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -732,135 +1343,212 @@ bool Assembly-CSharp.dll::UIStack::UIStack_PopToStackElement
                (UIStack *this,GameObject *gameObject,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__GetEnumerator__
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&TypeInfo__UnityEngine__StackTraceUtility);
-    func_?(&StringLiteral_PopToStackElement__Element_not_f);
+    FUN_?(&TypeInfo__UnityEngine__Debug,gameObject,method,in_R9,gameObject);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__StackTraceUtility);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_PopToStackElement__Element_not_f);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (this->fields).stackableUiElements;
-  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    pLVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                         *)&stack0xffffffd0,this_00,
-                        MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__GetEnumerator__
-                       );
-    method_00 = (Object__Class *)pLVar4->_list;
-    method_01 = (MethodInfo *)pLVar4->_version;
-    RVar5 = pLVar4->_current;
-    uStack_1 = 1;
-    do {
-      bVar6 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-              List_1_T_Enumerator_System_Object__MoveNext
-                        ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffc0,
-                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
-                        );
-      if (bVar6 == 0) {
-        uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&stack0xffffffc0,
-                   (ExceptionArgument__Enum)
-                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
-                   ,method_01);
-        uStack_1 = 0xffffffff;
-        if ((TypeInfo__UnityEngine__StackTraceUtility->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        message = UnityEngine.CoreModule.dll::UnityEngine::StackTraceUtility::
-                  StackTraceUtility_ExtractStackTrace((MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                  ((Object *)message,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                  ((Object *)StringLiteral_PopToStackElement__Element_not_f,(MethodInfo *)0x0);
-        *unaff_FS_OFFSET = uStack_3;
-        return 0;
-      }
-      if (RVar5 == (RegexCharClass_SingleRange)0x0) goto code_?;
-      pOVar7 = *(Object_1 **)((int)RVar5 + 8);
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        method_00 = (Object__Class *)&UNK_?;
-        func_?();
-      }
-      bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                        (pOVar7,(Object_1 *)gameObject,(MethodInfo *)0x0);
-    } while (bVar6 == 0);
-    uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&stack0xffffffc0,
-               (ExceptionArgument__Enum)
-               MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__Dispose__
-               ,(MethodInfo *)method_00);
-    uStack_1 = 0xffffffff;
-    while( true ) {
-      if (cRam_? == '\0') {
-        func_?();
-        func_?();
-        cRam_? = '\x01';
-      }
-      pLVar8 = (this->fields).stackableUiElements;
-      if (pLVar8 == (List_1_UIStack_StackElement_ *)0x0) break;
-      RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                         (this->fields).stackableUiElements,(pLVar8->fields)._size + -1,
-                         MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                        );
-      if ((RVar5 == (RegexCharClass_SingleRange)0x0) || (*(Void **)((int)RVar5 + 8) == (Void *)0x0))
-      break;
-      pOVar7 = (Object_1 *)
-               UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
-               UnsafeUtility_AsRef_1(*(Void **)((int)RVar5 + 8),(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        (pOVar7,(Object_1 *)gameObject,(MethodInfo *)0x0);
-      if (bVar6 == 0) {
-        *unaff_FS_OFFSET = uStack_3;
-        return 1;
-      }
-      if (cRam_? == '\0') {
-        func_?(&
-                        MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
-                       );
-        cRam_? = '\x01';
-      }
-      pLVar8 = (this->fields).stackableUiElements;
-      if (pLVar8 == (List_1_UIStack_StackElement_ *)0x0) break;
-      UIStack_RemoveElement(this,(pLVar8->fields)._size + -1,(MethodInfo *)0x0);
-      UIStack_UpdateStack(this,(MethodInfo *)0x0);
-    }
-  }
+  pLVar1 = (this->fields).stackableUiElements;
+  if (pLVar1 == (List_1_UIStack_StackElement_ *)0x0) {
 code_?:
-  uVar9 = func_?();
-  func_?(uVar9);
-  pcVar10 = (code *)swi(3);
-  bVar6 = (*pcVar10)();
-  return bVar6;
+    FUN_?();
+code_?:
+    FUN_?();
+code_?:
+    FUN_?();
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    bVar3 = (*pcVar2)();
+    return bVar3;
+  }
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)&uStack_5 >> 0xc);
+    puVar6 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar7 = *puVar6;
+      LOCK();
+      uVar8 = *puVar6;
+      if (uVar7 == uVar8) {
+        *puVar6 = uVar7 | 1L << (ulonglong)(uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar7 != uVar8);
+  }
+  pLStack_9 = (List_1_T_Enumerator_System_Object_ *)
+               ((ulonglong)(uint)(pLVar1->fields)._version << 0x20);
+  uStack_10 = 0;
+  LStack_11._8_8_ = pLStack_9;
+  LStack_11._current = (Object *)0x0;
+  uStack_5 = 0;
+  pLStack_9 = &LStack_11;
+  LStack_11._list = (List_1_System_Object_ *)pLVar1;
+  do {
+    bVar3 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+             List_1_T_Enumerator_System_Object__MoveNext
+                       (&LStack_11,
+                        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UIStack::StackElement>__MoveNext__
+                       );
+    if (bVar3 == 0) {
+      if (*(int *)&(TypeInfo__UnityEngine__StackTraceUtility->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      message = UnityEngine.CoreModule.dll::UnityEngine::StackTraceUtility::
+                StackTraceUtility_ExtractStackTrace((MethodInfo *)0x0);
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                ((Object *)message,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                ((Object *)StringLiteral_PopToStackElement__Element_not_f,(MethodInfo *)0x0);
+      return 0;
+    }
+    if (LStack_11._current == (Object *)0x0) goto code_?;
+    pOVar12 = LStack_11._current[1].klass;
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (gameObject == (GameObject *)0x0 && pOVar12 == (Object__Class *)0x0) break;
+    if (gameObject == (GameObject *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (pOVar12 == (Object__Class *)0x0) goto code_?;
+      bVar13 = (((GameObject__Fields *)&(pOVar12->_0).name)->_).m_CachedPtr == (void *)0x0;
+    }
+    else if (pOVar12 == (Object__Class *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      bVar13 = (gameObject->fields)._.m_CachedPtr == (void *)0x0;
+    }
+    else {
+      bVar13 = pOVar12 == (Object__Class *)gameObject;
+    }
+  } while (!bVar13);
+  do {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pLVar1 = (this->fields).stackableUiElements;
+    if (pLVar1 == (List_1_UIStack_StackElement_ *)0x0) goto code_?;
+    iVar14 = (pLVar1->fields)._size;
+    if ((uint)(pLVar1->fields)._size <= iVar14 - 1U) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                ((MethodInfo *)0x0);
+      pcVar2 = (code *)swi(3);
+      bVar3 = (*pcVar2)();
+      return bVar3;
+    }
+    pUVar15 = (pLVar1->fields)._items;
+    if (pUVar15 == (UIStack_StackElement__Array *)0x0) goto code_?;
+    if ((uint)pUVar15->max_length <= iVar14 - 1U) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      bVar3 = (*pcVar2)();
+      return bVar3;
+    }
+    if ((pUVar15->vector[(longlong)iVar14 + -1] == (UIStack_StackElement *)0x0) ||
+       (pGVar16 = (pUVar15->vector[(longlong)iVar14 + -1]->fields).gameObject,
+       pGVar16 == (GameObject *)0x0)) goto code_?;
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (gameObject == (GameObject *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      bVar13 = (pGVar16->fields)._.m_CachedPtr == (void *)0x0;
+    }
+    else {
+      bVar13 = pGVar16 == gameObject;
+    }
+    if (bVar13) {
+      return 1;
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pLVar1 = (this->fields).stackableUiElements;
+    if (pLVar1 == (List_1_UIStack_StackElement_ *)0x0) goto code_?;
+    UIStack_RemoveElement(this,(pLVar1->fields)._size + -1,(MethodInfo *)0x0);
+    UIStack_UpdateStack(this,(MethodInfo *)0x0);
+  } while( true );
 }
 
 
@@ -872,177 +1560,206 @@ void Assembly-CSharp.dll::UIStack::UIStack_Push
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Application);
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    UIStackDebugElement_MethodInfo__UnityEngine__GameObject__AddComponent<UIStackDebugElement>__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__Add_UIStack__StackElement_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                   );
-    func_?(&TypeInfo__UIStack__StackElement);
-    func_?(&StringLiteral_You_cannot_push_an_object_to_the);
-    func_?(&StringLiteral_Group_cannot_be_none_as_this_mak);
+    FUN_?(&TypeInfo__UnityEngine__Application);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UIStackDebugElement_MethodInfo__UnityEngine__GameObject__AddComponent<UIStackDebugElement>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__Add_UIStack__StackElement_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UIStack__StackElement);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_You_cannot_push_an_object_to_the);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Group_cannot_be_none_as_this_mak);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (group == UIGroupFlags__Enum_None) {
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug);
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-              ((Object *)StringLiteral_Group_cannot_be_none_as_this_mak,(MethodInfo *)0x0);
+    pSVar1 = StringLiteral_Group_cannot_be_none_as_this_mak;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Debug,0);
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeInfo__UnityEngine__ILogger);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Debug);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    pIVar2 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+    if (pIVar2 != (ILogger_1 *)0x0) {
+      FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar2,0,pSVar1);
+      return;
+    }
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
-  if ((TypeInfo__UnityEngine__Application->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Application);
+  if (*(int *)&(TypeInfo__UnityEngine__Application->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  method_00 = (MethodInfo *)0x0;
-  bVar1 = System.dll::System::Collections::Generic::SortedList`2[TKey,TValue]+ValueList[Unity::
-          IL2CPP::Metadata::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::
-          __Il2CppFullySharedGenericType]::
-          SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__System_Collections_ICollection_get_IsSynchronized
-                    ((SortedList_2_TKey_TValue_ValueList_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                      *)0x0,unaff_EDI);
-  if (bVar1 != 0) {
-    if (gameObject == (GameObject *)0x0) goto code_?;
-    method_00 = (MethodInfo *)&UNK_?;
-    pOVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                       (gameObject,
-                        UIStackDebugElement_MethodInfo__UnityEngine__GameObject__AddComponent<UIStackDebugElement>__
-                       );
-    if (pOVar2 == (Object *)0x0) goto code_?;
-    pOVar2[2].klass = (Object__Class *)pushOption;
-    pOVar2[2].monitor = (MonitorData *)group;
-  }
-  index = 0;
-  pLVar3 = (this->fields).stackableUiElements;
-  if (pLVar3 != (List_1_UIStack_StackElement_ *)0x0) {
-    while (index < (pLVar3->fields)._size) {
-      method_00 = (MethodInfo *)(this->fields).stackableUiElements;
-      if ((((method_00 == (MethodInfo *)0x0) ||
-           (RVar4 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                    RegularExpressions::RegexCharClass+SingleRange]::
-                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                               method_00,index,
-                               MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                              ), RVar4 == (RegexCharClass_SingleRange)0x0)) ||
-          (*(Object_1 **)((int)RVar4 + 8) == (Object_1 *)0x0)) ||
-         (iVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
-                            (*(Object_1 **)((int)RVar4 + 8),(MethodInfo *)0x0),
-         gameObject == (GameObject *)0x0)) goto code_?;
-      iVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
-                        ((Object_1 *)gameObject,(MethodInfo *)0x0);
-      if (iVar5 == iVar6) {
-        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+  pLVar4 = (this->fields).stackableUiElements;
+  uVar5 = 0;
+  if (pLVar4 != (List_1_UIStack_StackElement_ *)0x0) {
+    lVar6 = 0x20;
+    while ((int)uVar5 < (pLVar4->fields)._size) {
+      pLVar4 = (this->fields).stackableUiElements;
+      if (pLVar4 == (List_1_UIStack_StackElement_ *)0x0) goto DAT_?;
+      if ((uint)(pLVar4->fields)._size <= uVar5) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pUVar7 = (pLVar4->fields)._items;
+      if (pUVar7 == (UIStack_StackElement__Array *)0x0) goto DAT_?;
+      if ((uint)pUVar7->max_length <= uVar5) {
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      lVar8 = *(longlong *)((longlong)pUVar7->vector + lVar6 + -0x20);
+      if (((lVar8 == 0) || (this_00 = *(Object_1 **)(lVar8 + 0x10), this_00 == (Object_1 *)0x0)) ||
+         (iVar9 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
+                             (this_00,(MethodInfo *)0x0), gameObject == (GameObject *)0x0))
+      goto DAT_?;
+      iVar10 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
+                         ((Object_1 *)gameObject,(MethodInfo *)0x0);
+      if (iVar9 == iVar10) {
+        if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+          FUN_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                   ((Object *)StringLiteral_You_cannot_push_an_object_to_the,(MethodInfo *)0x0);
         return;
       }
-      pLVar3 = (this->fields).stackableUiElements;
-      index = index + 1;
-      if (pLVar3 == (List_1_UIStack_StackElement_ *)0x0) goto code_?;
+      pLVar4 = (this->fields).stackableUiElements;
+      uVar5 = uVar5 + 1;
+      lVar6 = lVar6 + 8;
+      if (pLVar4 == (List_1_UIStack_StackElement_ *)0x0) goto DAT_?;
     }
-    pOVar2 = (Object *)func_?(TypeInfo__UIStack__StackElement);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar2,ExceptionArgument__Enum_obj,method_00);
-    if (gameObject != (GameObject *)0x0) {
-      pSVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_get_name
-                         ((Object_1 *)gameObject,(MethodInfo *)0x0);
-      pOVar2[3].monitor = (MonitorData *)pSVar7;
-      func_?(&pOVar2[3].monitor,pSVar7);
-      pOVar2[1].klass = (Object__Class *)gameObject;
-      func_?(pOVar2 + 1,gameObject);
-      *(bool *)&pOVar2[1].monitor =
-           (pushOption & UIPushOption__Enum_Blocking) != UIPushOption__Enum_None ||
-           (pushOption & UIPushOption__Enum_InvisibleBlocker) != UIPushOption__Enum_None;
-      *(bool *)((int)&pOVar2[1].monitor + 1) =
-           (pushOption & UIPushOption__Enum_HideAll) != UIPushOption__Enum_None;
-      *(bool *)((int)&pOVar2[1].monitor + 2) =
-           (pushOption & UIPushOption__Enum_InvisibleBlocker) != UIPushOption__Enum_None;
-      *(bool *)((int)&pOVar2[1].monitor + 3) =
-           (pushOption & UIPushOption__Enum_HideAllExceptStackBottom) != UIPushOption__Enum_None;
-      *(bool *)&pOVar2[2].klass =
-           (pushOption & UIPushOption__Enum_SuppressInput) != UIPushOption__Enum_None;
-      pOVar2[2].monitor = (MonitorData *)onPop;
-      func_?(&pOVar2[2].monitor,onPop);
-      pOVar2[3].klass = (Object__Class *)group;
-      if (*(char *)((int)&pOVar2[1].monitor + 1) != '\0') {
+    this_02 = (UIStack_StackElement *)FUN_?(TypeInfo__UIStack__StackElement);
+    UIStack+StackElement::UIStack_StackElement__ctor
+              (this_02,gameObject,pushOption,onPop,group,(MethodInfo *)0x0);
+    if (this_02 != (UIStack_StackElement *)0x0) {
+      if ((this_02->fields).hideAll != 0) {
         UIStack_HideAll(this,(MethodInfo *)0x0);
       }
-      if (*(char *)((int)&pOVar2[1].monitor + 3) != '\0') {
+      if ((this_02->fields).hideAllExceptStackbottom != 0) {
         UIStack_HideAllExceptStackBottom(this,(MethodInfo *)0x0);
       }
-      if (*(char *)&pOVar2[1].monitor != '\0') {
-        pGVar8 = (this->fields).blockingObject;
-        if ((pGVar8 == (GameObject *)0x0) ||
-           (pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (pGVar8,(MethodInfo *)0x0), pTVar9 == (Transform *)0x0))
-        goto code_?;
+      if ((this_02->fields).blockingObject != 0) {
+        pGVar11 = (this->fields).blockingObject;
+        if ((pGVar11 == (GameObject *)0x0) ||
+           (pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                                (pGVar11,(MethodInfo *)0x0), pTVar12 == (Transform *)0x0))
+        goto DAT_?;
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
-                  (pTVar9,(MethodInfo *)0x0);
-        this_00 = (this->fields).inputBlocker;
-        if (this_00 == (DisableInput *)0x0) goto code_?;
+                  (pTVar12,(MethodInfo *)0x0);
+        this_01 = (this->fields).inputBlocker;
+        if (this_01 == (DisableInput *)0x0) goto DAT_?;
         UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                  ((Behaviour *)this_00,*(bool *)&pOVar2[2].klass,(MethodInfo *)0x0);
-        pGVar8 = (this->fields).blockingObject;
-        if ((pGVar8 == (GameObject *)0x0) ||
-           (pGVar8 = (GameObject *)
-                      UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::
-                      UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar8,(MethodInfo *)0x0),
-           pGVar8 == (GameObject *)0x0)) goto code_?;
+                  ((Behaviour *)this_01,(this_02->fields).suppressInput,(MethodInfo *)0x0);
+        pGVar11 = (this->fields).blockingObject;
+        if (pGVar11 == (GameObject *)0x0) goto DAT_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar8,1,(MethodInfo *)0x0);
+                  (pGVar11,1,(MethodInfo *)0x0);
       }
-      if (pOVar2[1].klass != (Object__Class *)0x0) {
-        pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                            ((GameObject *)pOVar2[1].klass,(MethodInfo *)0x0);
-        pGVar8 = (this->fields).root;
-        if ((pGVar8 != (GameObject *)0x0) &&
+      pGVar11 = (this_02->fields).gameObject;
+      if (pGVar11 != (GameObject *)0x0) {
+        pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (pGVar11,(MethodInfo *)0x0);
+        pGVar11 = (this->fields).root;
+        if ((pGVar11 != (GameObject *)0x0) &&
            (parent = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                               (pGVar8,(MethodInfo *)0x0), pTVar9 != (Transform *)0x0)) {
+                               (pGVar11,(MethodInfo *)0x0), pTVar12 != (Transform *)0x0)) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                    (pTVar9,parent,0,(MethodInfo *)0x0);
-          if (pOVar2[1].klass != (Object__Class *)0x0) {
+                    (pTVar12,parent,0,(MethodInfo *)0x0);
+          pGVar11 = (this_02->fields).gameObject;
+          if (pGVar11 != (GameObject *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      ((GameObject *)pOVar2[1].klass,1,(MethodInfo *)0x0);
-            pLVar3 = (this->fields).stackableUiElements;
-            if (pLVar3 != (List_1_UIStack_StackElement_ *)0x0) {
-              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-              List_1_System_Object__Add
-                        ((List_1_System_Object_ *)pLVar3,pOVar2,
-                         MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__Add_UIStack__StackElement_
-                        );
-              if ((this->fields).stackReady == 0) {
-                UIStack_HideAll(this,(MethodInfo *)0x0);
-              }
-              UIStack_UpdateBlocking(this,(MethodInfo *)0x0);
-              if ((this->fields).uiStackChangedPublisher == (Action *)0x0) {
+                      (pGVar11,1,(MethodInfo *)0x0);
+            pMVar13 = 
+            MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__Add_UIStack__StackElement_
+            ;
+            pLVar4 = (this->fields).stackableUiElements;
+            if (pLVar4 != (List_1_UIStack_StackElement_ *)0x0) {
+              piVar14 = &(pLVar4->fields)._version;
+              *piVar14 = *piVar14 + 1;
+              pUVar7 = (pLVar4->fields)._items;
+              if (pUVar7 != (UIStack_StackElement__Array *)0x0) {
+                uVar5 = (pLVar4->fields)._size;
+                if (uVar5 < (uint)pUVar7->max_length) {
+                  (pLVar4->fields)._size = uVar5 + 1;
+                  FUN_?(pUVar7,(longlong)(int)uVar5,this_02);
+                }
+                else {
+                  mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+                  List_1_System_Object__AddWithResize
+                            ((List_1_System_Object_ *)pLVar4,(Object *)this_02,
+                             pMVar13->klass->rgctx_data[0xe].method);
+                }
+                if ((this->fields).stackReady == 0) {
+                  UIStack_HideAll(this,(MethodInfo *)0x0);
+                }
+                UIStack_UpdateBlocking(this,(MethodInfo *)0x0);
+                if ((this->fields).uiStackChangedPublisher != (Action *)0x0) {
+                  pAVar15 = (this->fields).uiStackChangedPublisher;
+                  (*(pAVar15->fields)._._.invoke_impl)
+                            ((pAVar15->fields)._._.method_code,(pAVar15->fields)._._.method);
+                }
                 return;
               }
-              pAVar10 = (this->fields).uiStackChangedPublisher;
-              pvStack11 = (pAVar10->fields)._._.method;
-              pvStack12 = (pAVar10->fields)._._.method_code;
-              (*(pAVar10->fields)._._.invoke_impl)();
-              return;
             }
           }
         }
       }
     }
   }
-code_?:
-  func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+DAT_?:
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -1054,47 +1771,107 @@ void Assembly-CSharp.dll::UIStack::UIStack_RemoveElement
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__RemoveAt_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__RemoveAt_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            (this->fields).stackableUiElements;
-  if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    RVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-            RegexCharClass+SingleRange]::
-            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      (this_00,index,
-                       MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                      );
-    this_01 = (this->fields).stackableUiElements;
-    if (this_01 != (List_1_UIStack_StackElement_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-      List_1_System_Object__RemoveAt
-                ((List_1_System_Object_ *)this_01,index,
-                 MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__RemoveAt_int_
-                );
-      if (RVar1 != (RegexCharClass_SingleRange)0x0) {
-        if (*(int *)((int)RVar1 + 0x14) != 0) {
-          (**(code **)(*(int *)((int)RVar1 + 0x14) + 0xc))();
+  this_00 = (this->fields).stackableUiElements;
+  if (this_00 != (List_1_UIStack_StackElement_ *)0x0) {
+    if ((uint)(this_00->fields)._size <= (uint)index) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                ((MethodInfo *)0x0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pUVar2 = (this_00->fields)._items;
+    if (pUVar2 != (UIStack_StackElement__Array *)0x0) {
+      if ((uint)pUVar2->max_length <= (uint)index) {
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      pUVar3 = pUVar2->vector[index];
+      if ((this_00 != (List_1_UIStack_StackElement_ *)0x0) &&
+         (mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+          List_1_System_Object__RemoveAt
+                    ((List_1_System_Object_ *)this_00,index,
+                     MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__RemoveAt_int_
+                    ), pUVar3 != (UIStack_StackElement *)0x0)) {
+        if ((pUVar3->fields).onPop != (UnityAction *)0x0) {
+          pUVar4 = (pUVar3->fields).onPop;
+          (**(void **)((longlong)&(pUVar4->fields)._._ + 8))
+                    (*(void **)((longlong)&(pUVar4->fields)._._ + 0x30),
+                     *(void **)((longlong)&(pUVar4->fields)._._ + 0x18));
         }
-        obj = *(Object_1 **)((int)RVar1 + 8);
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+        pGVar5 = (pUVar3->fields).gameObject;
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1(obj,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__Marshal<UnityEngine::Object>_UnityEngine__Object_
+                        ,0,0);
+          LOCK();
+          UNLOCK();
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if ((
+            void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__Marshal<UnityEngine::Object>_UnityEngine__Object_
+            ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+          FUN_?();
+        }
+        pvVar6 = (void *)0x0;
+        if (pGVar5 != (GameObject *)0x0) {
+          pvVar6 = (pGVar5->fields)._.m_CachedPtr;
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pcVar1 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+          uVar7 = func_?(&UNK_?);
+          FUN_?(uVar7,0);
+          pcVar1 = (code *)swi(3);
+          (*pcVar1)();
+          return;
+        }
+        pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        (*pcRam_?)(pvVar6,0);
         return;
       }
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -1106,12 +1883,16 @@ void Assembly-CSharp.dll::UIStack::UIStack_SetStackReady(UIStack *this,MethodInf
 {
   (this->fields).stackReady = 1;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                  ,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pLVar1 = (this->fields).stackableUiElements;
@@ -1119,79 +1900,88 @@ void Assembly-CSharp.dll::UIStack::UIStack_SetStackReady(UIStack *this,MethodInf
     if ((pLVar1->fields)._size == 0) {
       return;
     }
-    RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-            RegexCharClass+SingleRange]::
-            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                       (this->fields).stackableUiElements,(pLVar1->fields)._size + -1,
-                       MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                      );
-    if ((RVar2 != (RegexCharClass_SingleRange)0x0) &&
-       (*(GameObject **)((int)RVar2 + 8) != (GameObject *)0x0)) {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (*(GameObject **)((int)RVar2 + 8),1,(MethodInfo *)0x0);
-      if (cRam_? == '\0') {
-        func_?();
-        func_?();
-        cRam_? = '\x01';
+    iVar2 = (pLVar1->fields)._size;
+    if ((uint)(pLVar1->fields)._size <= iVar2 - 1U) {
+code_?:
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                ((MethodInfo *)0x0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pUVar4 = (pLVar1->fields)._items;
+    if (pUVar4 != (UIStack_StackElement__Array *)0x0) {
+      if ((uint)pUVar4->max_length <= iVar2 - 1U) {
+code_?:
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
       }
-      pLVar1 = (this->fields).stackableUiElements;
-      if (pLVar1 != (List_1_UIStack_StackElement_ *)0x0) {
-        if (1 < (pLVar1->fields)._size) {
-          index = (pLVar1->fields)._size;
-          index_00 = index + -2;
-          do {
-            index = index + -1;
-            pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                     (this->fields).stackableUiElements;
-            if ((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-               || (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                           RegularExpressions::RegexCharClass+SingleRange]::
-                           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                     (pLVar3,index,
-                                      MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                                     ), RVar2 == (RegexCharClass_SingleRange)0x0))
-            goto code_?;
-            if (*(char *)((int)RVar2 + 0xd) != '\0') break;
-            pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                     (this->fields).stackableUiElements;
-            if ((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-               || (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                           RegularExpressions::RegexCharClass+SingleRange]::
-                           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                     (pLVar3,index,
-                                      MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                                     ), RVar2 == (RegexCharClass_SingleRange)0x0))
-            goto code_?;
-            if (*(char *)((int)RVar2 + 0xf) != '\0') break;
-            pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                     (this->fields).stackableUiElements;
-            if (((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0
-                 ) || (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                               RegularExpressions::RegexCharClass+SingleRange]::
-                               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                         (pLVar3,index_00,
-                                          MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                                         ), RVar2 == (RegexCharClass_SingleRange)0x0)) ||
-               (*(GameObject **)((int)RVar2 + 8) == (GameObject *)0x0)) goto code_?;
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (*(GameObject **)((int)RVar2 + 8),1,(MethodInfo *)0x0);
-            index_00 = index_00 + -1;
-          } while (-1 < index_00);
+      if ((pUVar4->vector[(longlong)iVar2 + -1] != (UIStack_StackElement *)0x0) &&
+         (this_00 = (pUVar4->vector[(longlong)iVar2 + -1]->fields).gameObject,
+         this_00 != (GameObject *)0x0)) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (this_00,1,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                       );
+          LOCK();
+          UNLOCK();
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
         }
-        UIStack_UpdateBlocking(this,(MethodInfo *)0x0);
-        if ((this->fields).uiStackChangedPublisher == (Action *)0x0) {
+        pLVar1 = (this->fields).stackableUiElements;
+        if (pLVar1 != (List_1_UIStack_StackElement_ *)0x0) {
+          if (1 < (pLVar1->fields)._size) {
+            uVar5 = (pLVar1->fields)._size;
+            iVar2 = uVar5 - 2;
+            lVar6 = (ulonglong)uVar5 * 8 + 0x18;
+            do {
+              uVar5 = uVar5 - 1;
+              pLVar1 = (this->fields).stackableUiElements;
+              if (pLVar1 == (List_1_UIStack_StackElement_ *)0x0) goto code_?;
+              if ((uint)(pLVar1->fields)._size <= uVar5) goto code_?;
+              pUVar4 = (pLVar1->fields)._items;
+              if (pUVar4 == (UIStack_StackElement__Array *)0x0) goto code_?;
+              if ((uint)pUVar4->max_length <= uVar5) goto code_?;
+              lVar7 = *(longlong *)((longlong)pUVar4->vector + lVar6 + -0x20);
+              if (lVar7 == 0) goto code_?;
+              if (*(char *)(lVar7 + 0x19) != '\0') break;
+              lVar7 = FUN_?((this->fields).stackableUiElements);
+              if (lVar7 == 0) goto code_?;
+              if (*(char *)(lVar7 + 0x1b) != '\0') break;
+              pLVar1 = (this->fields).stackableUiElements;
+              if (((pLVar1 == (List_1_UIStack_StackElement_ *)0x0) ||
+                  (lVar7 = FUN_?(pLVar1,iVar2), lVar7 == 0)) ||
+                 (*(GameObject **)(lVar7 + 0x10) == (GameObject *)0x0)) goto code_?;
+              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                        (*(GameObject **)(lVar7 + 0x10),1,(MethodInfo *)0x0);
+              lVar6 = lVar6 + -8;
+              iVar2 = iVar2 + -1;
+            } while (-1 < iVar2);
+          }
+          UIStack_UpdateBlocking(this,(MethodInfo *)0x0);
+          if ((this->fields).uiStackChangedPublisher == (Action *)0x0) {
+            return;
+          }
+          pAVar8 = (this->fields).uiStackChangedPublisher;
+          (*(pAVar8->fields)._._.invoke_impl)
+                    ((pAVar8->fields)._._.method_code,(pAVar8->fields)._._.method);
           return;
         }
-        (*(((this->fields).uiStackChangedPublisher)->fields)._._.invoke_impl)();
-        return;
       }
     }
   }
 code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -1202,66 +1992,69 @@ void Assembly-CSharp.dll::UIStack::UIStack_SetStackVisible(UIStack *this,MethodI
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pLVar1 = (this->fields).stackableUiElements;
   if (pLVar1 != (List_1_UIStack_StackElement_ *)0x0) {
     if (1 < (pLVar1->fields)._size) {
-      index = (pLVar1->fields)._size;
-      index_00 = index + -2;
+      uVar2 = (pLVar1->fields)._size;
+      iVar3 = uVar2 - 2;
+      lVar4 = (ulonglong)uVar2 * 8 + 0x18;
       do {
-        index = index + -1;
-        pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                 (this->fields).stackableUiElements;
-        if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-           (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                    RegularExpressions::RegexCharClass+SingleRange]::
-                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              (pLVar2,index,
-                               MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                              ), RVar3 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-        if (*(char *)((int)RVar3 + 0xd) != '\0') {
+        uVar2 = uVar2 - 1;
+        pLVar1 = (this->fields).stackableUiElements;
+        if (pLVar1 == (List_1_UIStack_StackElement_ *)0x0) goto code_?;
+        if ((uint)(pLVar1->fields)._size <= uVar2) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
           return;
         }
-        pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                 (this->fields).stackableUiElements;
-        if ((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-           (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                    RegularExpressions::RegexCharClass+SingleRange]::
-                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              (pLVar2,index,
-                               MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                              ), RVar3 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-        if (*(char *)((int)RVar3 + 0xf) != '\0') {
+        pUVar6 = (pLVar1->fields)._items;
+        if (pUVar6 == (UIStack_StackElement__Array *)0x0) goto code_?;
+        if ((uint)pUVar6->max_length <= uVar2) {
+          FUN_?();
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
           return;
         }
-        pLVar2 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                 (this->fields).stackableUiElements;
-        if (((pLVar2 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-            (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                     RegularExpressions::RegexCharClass+SingleRange]::
-                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                               (pLVar2,index_00,
-                                MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                               ), RVar3 == (RegexCharClass_SingleRange)0x0)) ||
-           (*(GameObject **)((int)RVar3 + 8) == (GameObject *)0x0)) goto code_?;
+        lVar7 = *(longlong *)((longlong)pUVar6->vector + lVar4 + -0x20);
+        if (lVar7 == 0) goto code_?;
+        if (*(char *)(lVar7 + 0x19) != '\0') {
+          return;
+        }
+        lVar7 = FUN_?((this->fields).stackableUiElements,uVar2);
+        if (lVar7 == 0) goto code_?;
+        if (*(char *)(lVar7 + 0x1b) != '\0') {
+          return;
+        }
+        pLVar1 = (this->fields).stackableUiElements;
+        if (((pLVar1 == (List_1_UIStack_StackElement_ *)0x0) ||
+            (lVar7 = FUN_?(pLVar1,iVar3), lVar7 == 0)) ||
+           (*(GameObject **)(lVar7 + 0x10) == (GameObject *)0x0)) goto code_?;
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (*(GameObject **)((int)RVar3 + 8),1,(MethodInfo *)0x0);
-        index_00 = index_00 + -1;
-      } while (-1 < index_00);
+                  (*(GameObject **)(lVar7 + 0x10),1,(MethodInfo *)0x0);
+        lVar4 = lVar4 + -8;
+        iVar3 = iVar3 + -1;
+      } while (-1 < iVar3);
     }
     return;
   }
 code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -1273,12 +2066,12 @@ void Assembly-CSharp.dll::UIStack::UIStack_Start(UIStack *this,MethodInfo *metho
 {
   pIVar1 = (this->fields).blockingObjectImage;
   if (pIVar1 != (Image *)0x0) {
-    iVar2 = (*(code *)(pIVar1->klass->vtable).get_color.method)
-                      (auStack_3,pIVar1,(pIVar1->klass->vtable).set_color.methodPtr);
-    (this->fields).origBlockerAlpha = *(float *)(iVar2 + 0xc);
+    lVar2 = (*(pIVar1->klass->vtable).get_color.methodPtr)
+                      (auStack_3,pIVar1,(pIVar1->klass->vtable).get_color.method);
+    (this->fields).origBlockerAlpha = *(float *)(lVar2 + 0xc);
     return;
   }
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -1292,7 +2085,9 @@ void Assembly-CSharp.dll::UIStack::UIStack_SubscribeToStackChanges
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action);
+    FUN_?(&TypeInfo__System__Action);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pAVar1 = (Action *)
@@ -1301,27 +2096,43 @@ void Assembly-CSharp.dll::UIStack::UIStack_SubscribeToStackChanges
                       (MethodInfo *)0x0);
   if (pAVar1 == (Action *)0x0) {
     (this->fields).uiStackChangedPublisher = (Action *)0x0;
-    func_?(&(this->fields).uiStackChangedPublisher);
-    return;
   }
-  pAVar2 = (Action *)0x0;
-  if (pAVar1->klass == TypeInfo__System__Action) {
-    pAVar2 = pAVar1;
-  }
-  if (pAVar2 != (Action *)0x0) {
+  else {
+    pAVar2 = (Action *)0x0;
+    if (pAVar1->klass == TypeInfo__System__Action) {
+      pAVar2 = pAVar1;
+    }
+    if (pAVar2 == (Action *)0x0) {
+      FUN_?(pAVar1,TypeInfo__System__Action);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
     (this->fields).uiStackChangedPublisher = pAVar2;
     pAVar2 = (Action *)0x0;
     if (pAVar1->klass == TypeInfo__System__Action) {
       pAVar2 = pAVar1;
     }
-    if (pAVar2 != (Action *)0x0) {
-      func_?(&(this->fields).uiStackChangedPublisher);
+    if (pAVar2 == (Action *)0x0) {
+      FUN_?(pAVar1);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
   }
-  func_?(pAVar1);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)&(this->fields).uiStackChangedPublisher >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar6 != uVar7);
+  }
   return;
 }
 
@@ -1333,7 +2144,9 @@ void Assembly-CSharp.dll::UIStack::UIStack_UnSubscribeToStackChanges
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action);
+    FUN_?(&TypeInfo__System__Action);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pAVar1 = (Action *)
@@ -1342,27 +2155,43 @@ void Assembly-CSharp.dll::UIStack::UIStack_UnSubscribeToStackChanges
                       (MethodInfo *)0x0);
   if (pAVar1 == (Action *)0x0) {
     (this->fields).uiStackChangedPublisher = (Action *)0x0;
-    func_?(&(this->fields).uiStackChangedPublisher);
-    return;
   }
-  pAVar2 = (Action *)0x0;
-  if (pAVar1->klass == TypeInfo__System__Action) {
-    pAVar2 = pAVar1;
-  }
-  if (pAVar2 != (Action *)0x0) {
+  else {
+    pAVar2 = (Action *)0x0;
+    if (pAVar1->klass == TypeInfo__System__Action) {
+      pAVar2 = pAVar1;
+    }
+    if (pAVar2 == (Action *)0x0) {
+      FUN_?(pAVar1,TypeInfo__System__Action);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
     (this->fields).uiStackChangedPublisher = pAVar2;
     pAVar2 = (Action *)0x0;
     if (pAVar1->klass == TypeInfo__System__Action) {
       pAVar2 = pAVar1;
     }
-    if (pAVar2 != (Action *)0x0) {
-      func_?(&(this->fields).uiStackChangedPublisher);
+    if (pAVar2 == (Action *)0x0) {
+      FUN_?(pAVar1);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
   }
-  func_?(pAVar1);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)&(this->fields).uiStackChangedPublisher >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar6 != uVar7);
+  }
   return;
 }
 
@@ -1373,127 +2202,161 @@ void Assembly-CSharp.dll::UIStack::UIStack_UpdateBlocking(UIStack *this,MethodIn
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pLVar1 = (this->fields).stackableUiElements;
   if (pLVar1 != (List_1_UIStack_StackElement_ *)0x0) {
-    index = (pLVar1->fields)._size;
-    do {
-      index = index + -1;
-      if (index < 0) {
-        pGVar2 = (this->fields).blockingObject;
-        if ((pGVar2 != (GameObject *)0x0) &&
-           (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                               (pGVar2,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0)) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsFirstSibling
-                    (pTVar3,(MethodInfo *)0x0);
-          pGVar2 = (this->fields).blockingObject;
-          if ((pGVar2 != (GameObject *)0x0) &&
-             (pGVar2 = (GameObject *)
-                       UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::
-                       UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar2,(MethodInfo *)0x0),
-             pGVar2 != (GameObject *)0x0)) {
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar2,0,(MethodInfo *)0x0);
-            return;
-          }
+    uVar2 = (pLVar1->fields)._size - 1;
+    if (-1 < (int)uVar2) {
+      lVar3 = (longlong)(int)uVar2;
+      lVar4 = lVar3 * 8 + 0x20;
+      do {
+        if ((uint)(pLVar1->fields)._size <= uVar2) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
         }
-        goto code_?;
-      }
-      pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-               (this->fields).stackableUiElements;
-      if ((pLVar4 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-         (RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (pLVar4,index,
-                             MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                            ), RVar5 == (RegexCharClass_SingleRange)0x0)) goto code_?;
-    } while (*(char *)((int)RVar5 + 0xc) == '\0');
-    pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-             (this->fields).stackableUiElements;
-    if ((pLVar4 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
-       (RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (pLVar4,index,
-                           MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                          ), RVar5 != (RegexCharClass_SingleRange)0x0)) {
-      pIVar6 = (this->fields).blockingObjectImage;
-      if (*(char *)((int)RVar5 + 0xe) == '\0') {
-        if (pIVar6 == (Image *)0x0) goto code_?;
-        puVar7 = (undefined4 *)func_?();
-        uVar8 = *puVar7;
-        uVar9 = puVar7[1];
-        uVar10 = puVar7[2];
-        fVar11 = (this->fields).origBlockerAlpha;
-      }
-      else {
-        if (pIVar6 == (Image *)0x0) goto code_?;
-        puVar7 = (undefined4 *)func_?();
-        uVar8 = *puVar7;
-        uVar9 = puVar7[1];
-        uVar10 = puVar7[2];
-        fVar11 = 0.0;
-      }
-      pIVar6 = (this->fields).blockingObjectImage;
-      if (pIVar6 != (Image *)0x0) {
-        func_?(0x17,pIVar6,uVar8,uVar9,uVar10,fVar11);
-        pGVar2 = (this->fields).blockingObject;
-        if ((pGVar2 != (GameObject *)0x0) &&
-           (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                               (pGVar2,(MethodInfo *)0x0), pTVar3 != (Transform *)0x0)) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
-                    (pTVar3,(MethodInfo *)0x0);
-          pLVar4 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                   (this->fields).stackableUiElements;
-          if ((pLVar4 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-             && (((RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                           RegularExpressions::RegexCharClass+SingleRange]::
-                           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                     (pLVar4,index,
-                                      MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                                     ), RVar5 != (RegexCharClass_SingleRange)0x0 &&
-                  (*(GameObject **)((int)RVar5 + 8) != (GameObject *)0x0)) &&
-                 (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                           GameObject_get_transform
-                                     (*(GameObject **)((int)RVar5 + 8),(MethodInfo *)0x0),
-                 pTVar3 != (Transform *)0x0)))) {
-            index_00 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetSiblingIndex
-                                 (pTVar3,(MethodInfo *)0x0);
-            pGVar2 = (this->fields).blockingObject;
-            if ((pGVar2 != (GameObject *)0x0) &&
-               (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                         GameObject_get_transform(pGVar2,(MethodInfo *)0x0),
-               pTVar3 != (Transform *)0x0)) {
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetSiblingIndex
-                        (pTVar3,index_00,(MethodInfo *)0x0);
-              pGVar2 = (this->fields).blockingObject;
-              if ((pGVar2 != (GameObject *)0x0) &&
-                 (pGVar2 = (GameObject *)
-                           UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::
-                           UnsafeUtility::UnsafeUtility_AsRef_1((Void *)pGVar2,(MethodInfo *)0x0),
-                 pGVar2 != (GameObject *)0x0)) {
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                          (pGVar2,1,(MethodInfo *)0x0);
-                return;
-              }
-            }
-          }
+        pUVar6 = (pLVar1->fields)._items;
+        if (pUVar6 == (UIStack_StackElement__Array *)0x0) goto code_?;
+        if ((uint)pUVar6->max_length <= uVar2) {
+          FUN_?();
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
         }
+        lVar7 = *(longlong *)((longlong)pUVar6->vector + lVar4 + -0x20);
+        if (lVar7 == 0) goto code_?;
+        if (*(char *)(lVar7 + 0x18) != '\0') {
+          lVar4 = FUN_?(pLVar1,uVar2);
+          if (lVar4 == 0) goto code_?;
+          pIVar8 = (this->fields).blockingObjectImage;
+          if (*(char *)(lVar4 + 0x1a) == '\0') {
+            if (pIVar8 == (Image *)0x0) goto code_?;
+            puVar9 = (undefined4 *)
+                      (*(pIVar8->klass->vtable).get_color.methodPtr)
+                                (&uStack_10,pIVar8,(pIVar8->klass->vtable).get_color.method);
+            pIVar8 = (this->fields).blockingObjectImage;
+            uVar11 = *puVar9;
+            uVar12 = puVar9[1];
+            uVar13 = puVar9[2];
+            fVar14 = (this->fields).origBlockerAlpha;
+            if (pIVar8 == (Image *)0x0) goto code_?;
+          }
+          else {
+            if (pIVar8 == (Image *)0x0) goto code_?;
+            puVar9 = (undefined4 *)
+                      (*(pIVar8->klass->vtable).get_color.methodPtr)
+                                (&uStack_10,pIVar8,(pIVar8->klass->vtable).get_color.method);
+            pIVar8 = (this->fields).blockingObjectImage;
+            if (pIVar8 == (Image *)0x0) goto code_?;
+            fStack_15 = 0.0;
+            uVar11 = *puVar9;
+            uVar12 = puVar9[1];
+            uVar13 = puVar9[2];
+            fVar14 = fStack_15;
+          }
+          fStack_15 = fVar14;
+          uStack_16 = uVar13;
+          uStack_17 = uVar12;
+          uStack_10 = uVar11;
+          (*(pIVar8->klass->vtable).set_color.methodPtr)();
+          pGVar18 = (this->fields).blockingObject;
+          if (((((pGVar18 == (GameObject *)0x0) ||
+                (pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                          GameObject_get_transform(pGVar18,(MethodInfo *)0x0),
+                pTVar19 == (Transform *)0x0)) ||
+               (UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsLastSibling
+                          (pTVar19,(MethodInfo *)0x0),
+               (this->fields).stackableUiElements == (List_1_UIStack_StackElement_ *)0x0)) ||
+              ((lVar4 = FUN_?(), lVar4 == 0 ||
+               (*(GameObject **)(lVar4 + 0x10) == (GameObject *)0x0)))) ||
+             (pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                                 (*(GameObject **)(lVar4 + 0x10),(MethodInfo *)0x0),
+             pTVar19 == (Transform *)0x0)) goto code_?;
+          index = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetSiblingIndex
+                            (pTVar19,(MethodInfo *)0x0);
+          pGVar18 = (this->fields).blockingObject;
+          if ((pGVar18 == (GameObject *)0x0) ||
+             (pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                                 (pGVar18,(MethodInfo *)0x0), pTVar19 == (Transform *)0x0))
+          goto code_?;
+          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetSiblingIndex
+                    (pTVar19,index,(MethodInfo *)0x0);
+          pGVar18 = (this->fields).blockingObject;
+          if (pGVar18 == (GameObject *)0x0) goto code_?;
+          uVar20 = 1;
+          goto UnityEngine_CoreModule_dll_UnityEngine_GameObject_GameObject_SetActive;
+        }
+        uVar2 = uVar2 - 1;
+        lVar4 = lVar4 + -8;
+        lVar3 = lVar3 + -1;
+      } while (-1 < lVar3);
+    }
+    pGVar18 = (this->fields).blockingObject;
+    if ((pGVar18 != (GameObject *)0x0) &&
+       (pTVar19 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                           (pGVar18,(MethodInfo *)0x0), pTVar19 != (Transform *)0x0)) {
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetAsFirstSibling
+                (pTVar19,(MethodInfo *)0x0);
+      pGVar18 = (this->fields).blockingObject;
+      if (pGVar18 != (GameObject *)0x0) {
+        uVar20 = 0;
+UnityEngine_CoreModule_dll_UnityEngine_GameObject_GameObject_SetActive:
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                        ,uVar20,0);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (pGVar18 == (GameObject *)0x0) {
+          FUN_?();
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
+        }
+        pvVar21 = (pGVar18->fields)._.m_CachedPtr;
+        if (pvVar21 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar18,(MethodInfo *)0x0);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
+        }
+        pcVar5 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+          uVar20 = func_?(&UNK_?);
+          FUN_?(uVar20,0);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
+        }
+        pcRam_? = pcVar5;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        (*pcRam_?)(pvVar21,uVar20);
+        return;
       }
     }
   }
 code_?:
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -1504,12 +2367,16 @@ void Assembly-CSharp.dll::UIStack::UIStack_UpdateStack(UIStack *this,MethodInfo 
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pLVar1 = (this->fields).stackableUiElements;
@@ -1517,79 +2384,88 @@ void Assembly-CSharp.dll::UIStack::UIStack_UpdateStack(UIStack *this,MethodInfo 
     if ((pLVar1->fields)._size == 0) {
       return;
     }
-    RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-            RegexCharClass+SingleRange]::
-            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                       (this->fields).stackableUiElements,(pLVar1->fields)._size + -1,
-                       MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                      );
-    if ((RVar2 != (RegexCharClass_SingleRange)0x0) &&
-       (*(GameObject **)((int)RVar2 + 8) != (GameObject *)0x0)) {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (*(GameObject **)((int)RVar2 + 8),1,(MethodInfo *)0x0);
-      if (cRam_? == '\0') {
-        func_?();
-        func_?();
-        cRam_? = '\x01';
+    iVar2 = (pLVar1->fields)._size;
+    if ((uint)(pLVar1->fields)._size <= iVar2 - 1U) {
+code_?:
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                ((MethodInfo *)0x0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pUVar4 = (pLVar1->fields)._items;
+    if (pUVar4 != (UIStack_StackElement__Array *)0x0) {
+      if ((uint)pUVar4->max_length <= iVar2 - 1U) {
+code_?:
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
       }
-      pLVar1 = (this->fields).stackableUiElements;
-      if (pLVar1 != (List_1_UIStack_StackElement_ *)0x0) {
-        if (1 < (pLVar1->fields)._size) {
-          index = (pLVar1->fields)._size;
-          index_00 = index + -2;
-          do {
-            index = index + -1;
-            pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                     (this->fields).stackableUiElements;
-            if ((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-               || (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                           RegularExpressions::RegexCharClass+SingleRange]::
-                           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                     (pLVar3,index,
-                                      MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                                     ), RVar2 == (RegexCharClass_SingleRange)0x0))
-            goto code_?;
-            if (*(char *)((int)RVar2 + 0xd) != '\0') break;
-            pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                     (this->fields).stackableUiElements;
-            if ((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-               || (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                           RegularExpressions::RegexCharClass+SingleRange]::
-                           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                     (pLVar3,index,
-                                      MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                                     ), RVar2 == (RegexCharClass_SingleRange)0x0))
-            goto code_?;
-            if (*(char *)((int)RVar2 + 0xf) != '\0') break;
-            pLVar3 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                     (this->fields).stackableUiElements;
-            if (((pLVar3 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0
-                 ) || (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                               RegularExpressions::RegexCharClass+SingleRange]::
-                               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                         (pLVar3,index_00,
-                                          MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
-                                         ), RVar2 == (RegexCharClass_SingleRange)0x0)) ||
-               (*(GameObject **)((int)RVar2 + 8) == (GameObject *)0x0)) goto code_?;
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (*(GameObject **)((int)RVar2 + 8),1,(MethodInfo *)0x0);
-            index_00 = index_00 + -1;
-          } while (-1 < index_00);
+      if ((pUVar4->vector[(longlong)iVar2 + -1] != (UIStack_StackElement *)0x0) &&
+         (this_00 = (pUVar4->vector[(longlong)iVar2 + -1]->fields).gameObject,
+         this_00 != (GameObject *)0x0)) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (this_00,1,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Count__
+                       );
+          LOCK();
+          UNLOCK();
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__get_Item_int_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
         }
-        UIStack_UpdateBlocking(this,(MethodInfo *)0x0);
-        if ((this->fields).uiStackChangedPublisher == (Action *)0x0) {
+        pLVar1 = (this->fields).stackableUiElements;
+        if (pLVar1 != (List_1_UIStack_StackElement_ *)0x0) {
+          if (1 < (pLVar1->fields)._size) {
+            uVar5 = (pLVar1->fields)._size;
+            iVar2 = uVar5 - 2;
+            lVar6 = (ulonglong)uVar5 * 8 + 0x18;
+            do {
+              uVar5 = uVar5 - 1;
+              pLVar1 = (this->fields).stackableUiElements;
+              if (pLVar1 == (List_1_UIStack_StackElement_ *)0x0) goto code_?;
+              if ((uint)(pLVar1->fields)._size <= uVar5) goto code_?;
+              pUVar4 = (pLVar1->fields)._items;
+              if (pUVar4 == (UIStack_StackElement__Array *)0x0) goto code_?;
+              if ((uint)pUVar4->max_length <= uVar5) goto code_?;
+              lVar7 = *(longlong *)((longlong)pUVar4->vector + lVar6 + -0x20);
+              if (lVar7 == 0) goto code_?;
+              if (*(char *)(lVar7 + 0x19) != '\0') break;
+              lVar7 = FUN_?((this->fields).stackableUiElements);
+              if (lVar7 == 0) goto code_?;
+              if (*(char *)(lVar7 + 0x1b) != '\0') break;
+              pLVar1 = (this->fields).stackableUiElements;
+              if (((pLVar1 == (List_1_UIStack_StackElement_ *)0x0) ||
+                  (lVar7 = FUN_?(pLVar1,iVar2), lVar7 == 0)) ||
+                 (*(GameObject **)(lVar7 + 0x10) == (GameObject *)0x0)) goto code_?;
+              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                        (*(GameObject **)(lVar7 + 0x10),1,(MethodInfo *)0x0);
+              lVar6 = lVar6 + -8;
+              iVar2 = iVar2 + -1;
+            } while (-1 < iVar2);
+          }
+          UIStack_UpdateBlocking(this,(MethodInfo *)0x0);
+          if ((this->fields).uiStackChangedPublisher == (Action *)0x0) {
+            return;
+          }
+          pAVar8 = (this->fields).uiStackChangedPublisher;
+          (*(pAVar8->fields)._._.invoke_impl)
+                    ((pAVar8->fields)._._.method_code,(pAVar8->fields)._._.method);
           return;
         }
-        (*(((this->fields).uiStackChangedPublisher)->fields)._._.invoke_impl)();
-        return;
       }
     }
   }
 code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -1600,22 +2476,47 @@ void Assembly-CSharp.dll::UIStack::UIStack__ctor(UIStack *this,MethodInfo *metho
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__List__);
-    func_?(&TypeInfo__System__Collections__Generic__List<UIStack::StackElement>);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<UIStack::StackElement>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   (this->fields).origBlockerAlpha = 0.5;
   this_00 = (List_1_UIStack_StackElement_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<UIStack::StackElement>);
+            FUN_?(TypeInfo__System__Collections__Generic__List<UIStack::StackElement>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<UIStack::StackElement>__List__);
+  bVar1 = iRam_? != 0;
   (this->fields).stackableUiElements = this_00;
-  func_?(&(this->fields).stackableUiElements,this_00);
-  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
-            ((MonoBehaviour *)this,(MethodInfo *)0x0);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).stackableUiElements >> 0xc);
+    uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+    do {
+      uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+      puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
   return;
 }
 

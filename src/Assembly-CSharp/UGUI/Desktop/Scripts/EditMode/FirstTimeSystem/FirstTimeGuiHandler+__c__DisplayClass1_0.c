@@ -9,22 +9,18 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IPlayerInventory;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IPlayerInventory);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (x != (IPlayerInventory *)0x0) {
-    ppIStack_1 = (IPlayerInventory__Class **)(this->fields).itemSlot;
-    puStack_2 = (undefined *)(this->fields).itemCategory;
-    uStack_3 = 1;
-    func_?(1,TypeInfo__UnityEngine__EventSystems__IPlayerInventory,x);
+    FUN_?(1,TypeInfo__UnityEngine__EventSystems__IPlayerInventory,x);
     return;
   }
-  ppIStack_1 = (IPlayerInventory__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&uStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -39,22 +35,18 @@ void Assembly-CSharp.dll::UGUI::Desktop::Scripts::EditMode::FirstTimeSystem::
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IHighLightClientShopItem;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IHighLightClientShopItem);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (x != (IHighLightClientShopItem *)0x0) {
-    ppIStack_1 = (IHighLightClientShopItem__Class **)(this->fields).itemSlot;
-    puStack_2 = (undefined *)(this->fields).itemCategory;
-    uStack_3 = 1;
-    func_?(0,TypeInfo__UnityEngine__EventSystems__IHighLightClientShopItem,x);
+    FUN_?(0,TypeInfo__UnityEngine__EventSystems__IHighLightClientShopItem,x);
     return;
   }
-  ppIStack_1 = (IHighLightClientShopItem__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&uStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

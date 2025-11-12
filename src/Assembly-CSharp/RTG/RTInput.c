@@ -1,26 +1,23 @@
 
-/* Boolean IsKeyPressed(KeyCode) */
-
-bool Assembly-CSharp.dll::RTG::RTInput::RTInput_IsKeyPressed
-               (KeyCode__Enum keyCode,MethodInfo *method)
-
-{
-  if (pcRam_? == (code *)0x0) {
-    pcRam_? = (code *)func_?(&UNK_?);
-  }
-  bVar1 = (*pcRam_?)(keyCode);
-  return bVar1;
-}
-
-
 /* Boolean IsLeftMouseButtonPressed() */
 
 bool Assembly-CSharp.dll::RTG::RTInput::RTInput_IsLeftMouseButtonPressed(MethodInfo *method)
 
 {
-  bVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetMouseButton
-                    (0,(MethodInfo *)0x0);
-  return bVar1;
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    bVar3 = (*pcVar1)();
+    return bVar3;
+  }
+  pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  bVar3 = (*pcRam_?)(0);
+  return bVar3;
 }
 
 
@@ -29,23 +26,20 @@ bool Assembly-CSharp.dll::RTG::RTInput::RTInput_IsLeftMouseButtonPressed(MethodI
 bool Assembly-CSharp.dll::RTG::RTInput::RTInput_IsMiddleMouseButtonPressed(MethodInfo *method)
 
 {
-  bVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetMouseButton
-                    (2,(MethodInfo *)0x0);
-  return bVar1;
-}
-
-
-/* Boolean IsMouseButtonPressed(Int32) */
-
-bool Assembly-CSharp.dll::RTG::RTInput::RTInput_IsMouseButtonPressed
-               (int32_t mouseButton,MethodInfo *method)
-
-{
-  if (pcRam_? == (code *)0x0) {
-    pcRam_? = (code *)func_?(&UNK_?);
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    bVar3 = (*pcVar1)();
+    return bVar3;
   }
-  bVar1 = (*pcRam_?)(mouseButton);
-  return bVar1;
+  pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  bVar3 = (*pcRam_?)(2);
+  return bVar3;
 }
 
 
@@ -54,9 +48,20 @@ bool Assembly-CSharp.dll::RTG::RTInput::RTInput_IsMouseButtonPressed
 bool Assembly-CSharp.dll::RTG::RTInput::RTInput_IsRightMouseButtonPressed(MethodInfo *method)
 
 {
-  bVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetMouseButton
-                    (1,(MethodInfo *)0x0);
-  return bVar1;
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    bVar3 = (*pcVar1)();
+    return bVar3;
+  }
+  pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  bVar3 = (*pcRam_?)(1);
+  return bVar3;
 }
 
 
@@ -66,12 +71,60 @@ float Assembly-CSharp.dll::RTG::RTInput::RTInput_MouseAxisX(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_Mouse_X);
+    FUN_?(&StringLiteral_Mouse_X);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  fVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Internal::InputUnsafeUtility::
-          InputUnsafeUtility_GetAxis(StringLiteral_Mouse_X,(MethodInfo *)0x0);
-  return fVar1;
+  pSVar1 = StringLiteral_Mouse_X;
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__GetPinnableReference__,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__get_Length__);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  apuStackX_18[0] = (uint16_t *)0x0;
+  puStack_2 = (uint16_t *)0x0;
+  uStack_3 = 0;
+  uStack_4 = 0;
+  ppuStack_5 = apuStackX_18;
+  if (pSVar1 != (String *)0x0) {
+    if ((pSVar1->fields)._stringLength == 0) {
+      puStack_2 = (uint16_t *)0x1;
+      uStack_3 = 0;
+    }
+    else {
+      if (cRam_? == '\0') {
+        FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__ReadOnlySpan_System__Char___int_);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      iVar6 = (pSVar1->fields)._stringLength;
+      apuStackX_18[0] = &(pSVar1->fields)._firstChar;
+      if (iVar6 == 0) {
+        apuStackX_18[0] = (uint16_t *)0x0;
+      }
+      uStack_3 = CONCAT44(uStack_3._4_4_,iVar6);
+      puStack_2 = apuStackX_18[0];
+    }
+  }
+  pcVar7 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+    uVar8 = func_?(&UNK_?);
+    FUN_?(uVar8,0);
+    FUN_?();
+    pcVar7 = (code *)swi(3);
+    fVar9 = (float)(*pcVar7)();
+    return fVar9;
+  }
+  pcRam_? = pcVar7;
+  fVar9 = (float)(*pcRam_?)(&puStack_2);
+  return fVar9;
 }
 
 
@@ -81,12 +134,60 @@ float Assembly-CSharp.dll::RTG::RTInput::RTInput_MouseAxisY(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_Mouse_Y);
+    FUN_?(&StringLiteral_Mouse_Y);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  fVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Internal::InputUnsafeUtility::
-          InputUnsafeUtility_GetAxis(StringLiteral_Mouse_Y,(MethodInfo *)0x0);
-  return fVar1;
+  pSVar1 = StringLiteral_Mouse_Y;
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__GetPinnableReference__,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__get_Length__);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  apuStackX_18[0] = (uint16_t *)0x0;
+  puStack_2 = (uint16_t *)0x0;
+  uStack_3 = 0;
+  uStack_4 = 0;
+  ppuStack_5 = apuStackX_18;
+  if (pSVar1 != (String *)0x0) {
+    if ((pSVar1->fields)._stringLength == 0) {
+      puStack_2 = (uint16_t *)0x1;
+      uStack_3 = 0;
+    }
+    else {
+      if (cRam_? == '\0') {
+        FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__ReadOnlySpan_System__Char___int_);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      iVar6 = (pSVar1->fields)._stringLength;
+      apuStackX_18[0] = &(pSVar1->fields)._firstChar;
+      if (iVar6 == 0) {
+        apuStackX_18[0] = (uint16_t *)0x0;
+      }
+      uStack_3 = CONCAT44(uStack_3._4_4_,iVar6);
+      puStack_2 = apuStackX_18[0];
+    }
+  }
+  pcVar7 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+    uVar8 = func_?(&UNK_?);
+    FUN_?(uVar8,0);
+    FUN_?();
+    pcVar7 = (code *)swi(3);
+    fVar9 = (float)(*pcVar7)();
+    return fVar9;
+  }
+  pcRam_? = pcVar7;
+  fVar9 = (float)(*pcRam_?)(&puStack_2);
+  return fVar9;
 }
 
 
@@ -96,12 +197,60 @@ float Assembly-CSharp.dll::RTG::RTInput::RTInput_MouseScroll(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_Mouse_ScrollWheel);
+    FUN_?(&StringLiteral_Mouse_ScrollWheel);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  fVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Internal::InputUnsafeUtility::
-          InputUnsafeUtility_GetAxis(StringLiteral_Mouse_ScrollWheel,(MethodInfo *)0x0);
-  return fVar1;
+  pSVar1 = StringLiteral_Mouse_ScrollWheel;
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__GetPinnableReference__,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__get_Length__);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  apuStackX_18[0] = (uint16_t *)0x0;
+  puStack_2 = (uint16_t *)0x0;
+  uStack_3 = 0;
+  uStack_4 = 0;
+  ppuStack_5 = apuStackX_18;
+  if (pSVar1 != (String *)0x0) {
+    if ((pSVar1->fields)._stringLength == 0) {
+      puStack_2 = (uint16_t *)0x1;
+      uStack_3 = 0;
+    }
+    else {
+      if (cRam_? == '\0') {
+        FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__ReadOnlySpan_System__Char___int_);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      iVar6 = (pSVar1->fields)._stringLength;
+      apuStackX_18[0] = &(pSVar1->fields)._firstChar;
+      if (iVar6 == 0) {
+        apuStackX_18[0] = (uint16_t *)0x0;
+      }
+      uStack_3 = CONCAT44(uStack_3._4_4_,iVar6);
+      puStack_2 = apuStackX_18[0];
+    }
+  }
+  pcVar7 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+    uVar8 = func_?(&UNK_?);
+    FUN_?(uVar8,0);
+    FUN_?();
+    pcVar7 = (code *)swi(3);
+    fVar9 = (float)(*pcVar7)();
+    return fVar9;
+  }
+  pcRam_? = pcVar7;
+  fVar9 = (float)(*pcRam_?)(&puStack_2);
+  return fVar9;
 }
 
 
@@ -110,33 +259,27 @@ float Assembly-CSharp.dll::RTG::RTInput::RTInput_MouseScroll(MethodInfo *method)
 bool Assembly-CSharp.dll::RTG::RTInput::RTInput_TouchBegan(int32_t touchIndex,MethodInfo *method)
 
 {
-  func_?(auStack_1,0,0x44);
-  pTVar2 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetTouch
-                     (&TStack_3,touchIndex,(MethodInfo *)0x0);
-  auStack_1._0_4_ = pTVar2->m_FingerId;
-  auStack_1._4_4_ = (pTVar2->m_Position).x;
-  auStack_1._8_4_ = (pTVar2->m_Position).y;
-  fStack_4 = (pTVar2->m_RawPosition).x;
-  fStack_5 = (pTVar2->m_RawPosition).y;
-  pFStack_6 = (Func_2_Single_Single_ *)(pTVar2->m_PositionDelta).x;
-  fStack_7 = (pTVar2->m_PositionDelta).y;
-  pAStack_8 = (Action *)pTVar2->m_TimeDelta;
-  iStack_9 = pTVar2->m_TapCount;
-  pVStack_10 = (VisualElement *)pTVar2->m_Phase;
-  pAStack_11 = (Action_2_UnityEngine_UIElements_VisualElement_UnityEngine_UIElements_Experimental_StyleValues_
-                *)pTVar2->m_Type;
-  pFStack_12 = (Func_2_UnityEngine_UIElements_VisualElement_UnityEngine_UIElements_Experimental_StyleValues_
-                *)pTVar2->m_Pressure;
-  pFStack_13 = (Func_4_UnityEngine_UIElements_Experimental_StyleValues_UnityEngine_UIElements_Experimental_StyleValues_Single_UnityEngine_UIElements_Experimental_StyleValues_
-                *)pTVar2->m_maximumPossiblePressure;
-  SStack_14.m_StyleValues = (StyleValueCollection *)pTVar2->m_Radius;
-  fStack_15 = pTVar2->m_RadiusVariance;
-  SStack_16.m_StyleValues = (StyleValueCollection *)pTVar2->m_AltitudeAngle;
-  fStack_17 = pTVar2->m_AzimuthAngle;
-  pVVar18 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::
-           ValueAnimation`1[StyleValues]::ValueAnimation_1_StyleValues__get_owner
-                     ((ValueAnimation_1_StyleValues_ *)auStack_1,(MethodInfo *)0x0);
-  return pVVar18 == (VisualElement *)0x0;
+  uStack_1 = 0;
+  uStack_2 = 0;
+  uStack_3 = 0;
+  uStack_4 = 0;
+  uStack_5 = 0;
+  uStack_6 = 0;
+  uStack_7 = 0;
+  uStack_8 = 0;
+  uStack_9 = 0;
+  pcVar10 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar10 = (code *)FUN_?(&UNK_?), pcVar10 == (code *)0x0)) {
+    uVar11 = func_?(&UNK_?);
+    FUN_?(uVar11,0);
+    pcVar10 = (code *)swi(3);
+    bVar12 = (*pcVar10)();
+    return bVar12;
+  }
+  pcRam_? = pcVar10;
+  (*pcRam_?)(touchIndex,&uStack_2);
+  return uStack_6._4_4_ == 0;
 }
 
 
@@ -145,29 +288,31 @@ bool Assembly-CSharp.dll::RTG::RTInput::RTInput_TouchBegan(int32_t touchIndex,Me
 Vector2 Assembly-CSharp.dll::RTG::RTInput::RTInput_TouchDelta(int32_t touchIndex,MethodInfo *method)
 
 {
-  func_?(&TStack_1,0,0x44);
-  pTVar2 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetTouch
-                     (&TStack_3,touchIndex,(MethodInfo *)0x0);
-  TStack_1.m_FingerId = pTVar2->m_FingerId;
-  TStack_1.m_Position.x = (pTVar2->m_Position).x;
-  TStack_1.m_Position.y = (pTVar2->m_Position).y;
-  TStack_1.m_RawPosition.x = (pTVar2->m_RawPosition).x;
-  TStack_1.m_RawPosition.y = (pTVar2->m_RawPosition).y;
-  TStack_1.m_PositionDelta.x = (pTVar2->m_PositionDelta).x;
-  TStack_1.m_PositionDelta.y = (pTVar2->m_PositionDelta).y;
-  TStack_1.m_TimeDelta = pTVar2->m_TimeDelta;
-  TStack_1.m_TapCount = pTVar2->m_TapCount;
-  TStack_1.m_Phase = pTVar2->m_Phase;
-  TStack_1.m_Type = pTVar2->m_Type;
-  TStack_1.m_Pressure = pTVar2->m_Pressure;
-  TStack_1.m_maximumPossiblePressure = pTVar2->m_maximumPossiblePressure;
-  TStack_1.m_Radius = pTVar2->m_Radius;
-  TStack_1.m_RadiusVariance = pTVar2->m_RadiusVariance;
-  TStack_1.m_AltitudeAngle = pTVar2->m_AltitudeAngle;
-  TStack_1.m_AzimuthAngle = pTVar2->m_AzimuthAngle;
-  VVar4 = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_deltaPosition
-                    (&TStack_1,(MethodInfo *)0x0);
-  return VVar4;
+  uStack_1 = 0;
+  uStack_2 = 0;
+  uStack_3 = 0;
+  uStack_4 = 0;
+  fStack_5 = 0.0;
+  fStack_6 = 0.0;
+  uStack_7 = 0;
+  uStack_8 = 0;
+  uStack_9 = 0;
+  uStack_10 = 0;
+  uStack_11 = 0;
+  pcVar12 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
+    uVar13 = func_?(&UNK_?);
+    FUN_?(uVar13,0);
+    pcVar12 = (code *)swi(3);
+    VVar14 = (Vector2)(*pcVar12)();
+    return VVar14;
+  }
+  pcRam_? = pcVar12;
+  (*pcRam_?)(touchIndex,&uStack_2);
+  VVar14.y = fStack_6;
+  VVar14.x = fStack_5;
+  return VVar14;
 }
 
 
@@ -177,39 +322,30 @@ bool Assembly-CSharp.dll::RTG::RTInput::RTInput_TouchEndedOrCanceled
                (int32_t touchIndex,MethodInfo *method)
 
 {
-  func_?(auStack_1,0,0x44);
-  pTVar2 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetTouch
-                     ((Touch *)&stack0xffffff74,touchIndex,(MethodInfo *)0x0);
-  auStack_1._0_4_ = pTVar2->m_FingerId;
-  auStack_1._4_4_ = (pTVar2->m_Position).x;
-  auStack_1._8_4_ = (pTVar2->m_Position).y;
-  fStack_3 = (pTVar2->m_RawPosition).x;
-  fStack_4 = (pTVar2->m_RawPosition).y;
-  pFStack_5 = (Func_2_Single_Single_ *)(pTVar2->m_PositionDelta).x;
-  fStack_6 = (pTVar2->m_PositionDelta).y;
-  pAStack_7 = (Action *)pTVar2->m_TimeDelta;
-  iStack_8 = pTVar2->m_TapCount;
-  pVStack_9 = (VisualElement *)pTVar2->m_Phase;
-  pAStack_10 = (Action_2_UnityEngine_UIElements_VisualElement_UnityEngine_UIElements_Experimental_StyleValues_
-                *)pTVar2->m_Type;
-  pFStack_11 = (Func_2_UnityEngine_UIElements_VisualElement_UnityEngine_UIElements_Experimental_StyleValues_
-                *)pTVar2->m_Pressure;
-  pFStack_12 = (Func_4_UnityEngine_UIElements_Experimental_StyleValues_UnityEngine_UIElements_Experimental_StyleValues_Single_UnityEngine_UIElements_Experimental_StyleValues_
-                *)pTVar2->m_maximumPossiblePressure;
-  SStack_13.m_StyleValues = (StyleValueCollection *)pTVar2->m_Radius;
-  fStack_14 = pTVar2->m_RadiusVariance;
-  SStack_15.m_StyleValues = (StyleValueCollection *)pTVar2->m_AltitudeAngle;
-  fStack_16 = pTVar2->m_AzimuthAngle;
-  pVVar17 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::
-           ValueAnimation`1[StyleValues]::ValueAnimation_1_StyleValues__get_owner
-                     ((ValueAnimation_1_StyleValues_ *)auStack_1,(MethodInfo *)0x0);
-  if (pVVar17 == (VisualElement *)0x3) {
-    return 1;
+  uStack_1 = 0;
+  uStack_2 = 0;
+  uStack_3 = 0;
+  uStack_4 = 0;
+  uStack_5 = 0;
+  uStack_6 = 0;
+  uStack_7 = 0;
+  uStack_8 = 0;
+  uStack_9 = 0;
+  pcVar10 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar10 = (code *)FUN_?(&UNK_?), pcVar10 == (code *)0x0)) {
+    uVar11 = func_?(&UNK_?);
+    FUN_?(uVar11,0);
+    pcVar10 = (code *)swi(3);
+    bVar12 = (*pcVar10)();
+    return bVar12;
   }
-  pVVar17 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::
-           ValueAnimation`1[StyleValues]::ValueAnimation_1_StyleValues__get_owner
-                     ((ValueAnimation_1_StyleValues_ *)auStack_1,(MethodInfo *)0x0);
-  return pVVar17 == (VisualElement *)0x4;
+  pcRam_? = pcVar10;
+  (*pcRam_?)(touchIndex,&uStack_2);
+  if (uStack_6._4_4_ != 3) {
+    return uStack_6._4_4_ == 4;
+  }
+  return 1;
 }
 
 
@@ -218,33 +354,27 @@ bool Assembly-CSharp.dll::RTG::RTInput::RTInput_TouchEndedOrCanceled
 bool Assembly-CSharp.dll::RTG::RTInput::RTInput_TouchMoved(int32_t touchIndex,MethodInfo *method)
 
 {
-  func_?(auStack_1,0,0x44);
-  pTVar2 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetTouch
-                     (&TStack_3,touchIndex,(MethodInfo *)0x0);
-  auStack_1._0_4_ = pTVar2->m_FingerId;
-  auStack_1._4_4_ = (pTVar2->m_Position).x;
-  auStack_1._8_4_ = (pTVar2->m_Position).y;
-  fStack_4 = (pTVar2->m_RawPosition).x;
-  fStack_5 = (pTVar2->m_RawPosition).y;
-  pFStack_6 = (Func_2_Single_Single_ *)(pTVar2->m_PositionDelta).x;
-  fStack_7 = (pTVar2->m_PositionDelta).y;
-  pAStack_8 = (Action *)pTVar2->m_TimeDelta;
-  iStack_9 = pTVar2->m_TapCount;
-  pVStack_10 = (VisualElement *)pTVar2->m_Phase;
-  pAStack_11 = (Action_2_UnityEngine_UIElements_VisualElement_UnityEngine_UIElements_Experimental_StyleValues_
-                *)pTVar2->m_Type;
-  pFStack_12 = (Func_2_UnityEngine_UIElements_VisualElement_UnityEngine_UIElements_Experimental_StyleValues_
-                *)pTVar2->m_Pressure;
-  pFStack_13 = (Func_4_UnityEngine_UIElements_Experimental_StyleValues_UnityEngine_UIElements_Experimental_StyleValues_Single_UnityEngine_UIElements_Experimental_StyleValues_
-                *)pTVar2->m_maximumPossiblePressure;
-  SStack_14.m_StyleValues = (StyleValueCollection *)pTVar2->m_Radius;
-  fStack_15 = pTVar2->m_RadiusVariance;
-  SStack_16.m_StyleValues = (StyleValueCollection *)pTVar2->m_AltitudeAngle;
-  fStack_17 = pTVar2->m_AzimuthAngle;
-  pVVar18 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::Experimental::
-           ValueAnimation`1[StyleValues]::ValueAnimation_1_StyleValues__get_owner
-                     ((ValueAnimation_1_StyleValues_ *)auStack_1,(MethodInfo *)0x0);
-  return pVVar18 == (VisualElement *)0x1;
+  uStack_1 = 0;
+  uStack_2 = 0;
+  uStack_3 = 0;
+  uStack_4 = 0;
+  uStack_5 = 0;
+  uStack_6 = 0;
+  uStack_7 = 0;
+  uStack_8 = 0;
+  uStack_9 = 0;
+  pcVar10 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar10 = (code *)FUN_?(&UNK_?), pcVar10 == (code *)0x0)) {
+    uVar11 = func_?(&UNK_?);
+    FUN_?(uVar11,0);
+    pcVar10 = (code *)swi(3);
+    bVar12 = (*pcVar10)();
+    return bVar12;
+  }
+  pcRam_? = pcVar10;
+  (*pcRam_?)(touchIndex,&uStack_2);
+  return uStack_6._4_4_ == 1;
 }
 
 
@@ -254,43 +384,31 @@ Vector2 Assembly-CSharp.dll::RTG::RTInput::RTInput_TouchPosition
                   (int32_t touchIndex,MethodInfo *method)
 
 {
-  func_?(&TStack_1,0,0x44);
-  pTVar2 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetTouch
-                     (&TStack_3,touchIndex,(MethodInfo *)0x0);
-  TStack_1.m_FingerId = pTVar2->m_FingerId;
-  TStack_1.m_Position.x = (pTVar2->m_Position).x;
-  TStack_1.m_Position.y = (pTVar2->m_Position).y;
-  TStack_1.m_RawPosition.x = (pTVar2->m_RawPosition).x;
-  TStack_1.m_RawPosition.y = (pTVar2->m_RawPosition).y;
-  TStack_1.m_PositionDelta.x = (pTVar2->m_PositionDelta).x;
-  TStack_1.m_PositionDelta.y = (pTVar2->m_PositionDelta).y;
-  TStack_1.m_TimeDelta = pTVar2->m_TimeDelta;
-  TStack_1.m_TapCount = pTVar2->m_TapCount;
-  TStack_1.m_Phase = pTVar2->m_Phase;
-  TStack_1.m_Type = pTVar2->m_Type;
-  TStack_1.m_Pressure = pTVar2->m_Pressure;
-  TStack_1.m_maximumPossiblePressure = pTVar2->m_maximumPossiblePressure;
-  TStack_1.m_Radius = pTVar2->m_Radius;
-  TStack_1.m_RadiusVariance = pTVar2->m_RadiusVariance;
-  TStack_1.m_AltitudeAngle = pTVar2->m_AltitudeAngle;
-  TStack_1.m_AzimuthAngle = pTVar2->m_AzimuthAngle;
-  VVar4 = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::Touch_get_position
-                    (&TStack_1,(MethodInfo *)0x0);
-  return VVar4;
-}
-
-
-/* Boolean WasKeyPressedThisFrame(KeyCode) */
-
-bool Assembly-CSharp.dll::RTG::RTInput::RTInput_WasKeyPressedThisFrame
-               (KeyCode__Enum keyCode,MethodInfo *method)
-
-{
-  if (pcRam_? == (code *)0x0) {
-    pcRam_? = (code *)func_?(&UNK_?);
+  uStack_1 = 0;
+  uStack_2 = 0;
+  fStack_3 = 0.0;
+  fStack_4 = 0.0;
+  uStack_5 = 0;
+  uStack_6 = 0;
+  uStack_7 = 0;
+  uStack_8 = 0;
+  uStack_9 = 0;
+  uStack_10 = 0;
+  uStack_11 = 0;
+  pcVar12 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
+    uVar13 = func_?(&UNK_?);
+    FUN_?(uVar13,0);
+    pcVar12 = (code *)swi(3);
+    VVar14 = (Vector2)(*pcVar12)();
+    return VVar14;
   }
-  bVar1 = (*pcRam_?)(keyCode);
-  return bVar1;
+  pcRam_? = pcVar12;
+  (*pcRam_?)(touchIndex,&uStack_2);
+  VVar14.y = fStack_4;
+  VVar14.x = fStack_3;
+  return VVar14;
 }
 
 
@@ -300,9 +418,20 @@ bool Assembly-CSharp.dll::RTG::RTInput::RTInput_WasLeftMouseButtonPressedThisFra
                (MethodInfo *method)
 
 {
-  bVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetMouseButtonDown
-                    (0,(MethodInfo *)0x0);
-  return bVar1;
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    bVar3 = (*pcVar1)();
+    return bVar3;
+  }
+  pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  bVar3 = (*pcRam_?)(0);
+  return bVar3;
 }
 
 
@@ -312,37 +441,20 @@ bool Assembly-CSharp.dll::RTG::RTInput::RTInput_WasMiddleMouseButtonPressedThisF
                (MethodInfo *method)
 
 {
-  bVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetMouseButtonDown
-                    (2,(MethodInfo *)0x0);
-  return bVar1;
-}
-
-
-/* Boolean WasMouseButtonPressedThisFrame(Int32) */
-
-bool Assembly-CSharp.dll::RTG::RTInput::RTInput_WasMouseButtonPressedThisFrame
-               (int32_t mouseButton,MethodInfo *method)
-
-{
-  if (pcRam_? == (code *)0x0) {
-    pcRam_? = (code *)func_?(&UNK_?);
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    bVar3 = (*pcVar1)();
+    return bVar3;
   }
-  bVar1 = (*pcRam_?)(mouseButton);
-  return bVar1;
-}
-
-
-/* Boolean WasMouseButtonReleasedThisFrame(Int32) */
-
-bool Assembly-CSharp.dll::RTG::RTInput::RTInput_WasMouseButtonReleasedThisFrame
-               (int32_t mouseButton,MethodInfo *method)
-
-{
-  if (pcRam_? == (code *)0x0) {
-    pcRam_? = (code *)func_?(&UNK_?);
-  }
-  bVar1 = (*pcRam_?)(mouseButton);
-  return bVar1;
+  pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  bVar3 = (*pcRam_?)(2);
+  return bVar3;
 }
 
 
@@ -352,18 +464,20 @@ bool Assembly-CSharp.dll::RTG::RTInput::RTInput_WasMouseMoved(MethodInfo *method
 
 {
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_Mouse_Y);
-    func_?(&StringLiteral_Mouse_X);
+    FUN_?(&StringLiteral_Mouse_Y);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Mouse_X);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   fVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Internal::InputUnsafeUtility::
           InputUnsafeUtility_GetAxis(StringLiteral_Mouse_X,(MethodInfo *)0x0);
-  if (fVar1 == 0.0) {
-    fVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Internal::InputUnsafeUtility::
-            InputUnsafeUtility_GetAxis(StringLiteral_Mouse_Y,(MethodInfo *)0x0);
-    if (fVar1 == 0.0) {
-      return 0;
-    }
+  if ((fVar1 == 0.0) &&
+     (fVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Internal::InputUnsafeUtility::
+              InputUnsafeUtility_GetAxis(StringLiteral_Mouse_Y,(MethodInfo *)0x0), fVar1 == 0.0)) {
+    return 0;
   }
   return 1;
 }
@@ -375,8 +489,19 @@ bool Assembly-CSharp.dll::RTG::RTInput::RTInput_WasRightMouseButtonPressedThisFr
                (MethodInfo *method)
 
 {
-  bVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetMouseButtonDown
-                    (1,(MethodInfo *)0x0);
-  return bVar1;
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    bVar3 = (*pcVar1)();
+    return bVar3;
+  }
+  pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  bVar3 = (*pcRam_?)(1);
+  return bVar3;
 }
 

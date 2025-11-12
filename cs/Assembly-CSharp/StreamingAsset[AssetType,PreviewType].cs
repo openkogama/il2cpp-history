@@ -21,6 +21,9 @@ public abstract class StreamingAsset<AssetType, PreviewType> : StreamingAsset
 	[SerializeField]
 	[Tooltip("If true, will not download this asset for WebGL")]
 	private bool excludeWebGL;
+	[SerializeField]
+	[Tooltip("Priority of Download Stream")]
+	private WWWRequestPriority requestPriority;
 	private AssetType asset;
 
 	// Properties

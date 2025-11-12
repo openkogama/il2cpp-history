@@ -6,29 +6,69 @@ void Assembly-CSharp.dll::RTG::GizmoQuad2DBorder::GizmoQuad2DBorder_OnGizmoPreUp
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__IGizmoQuad2DBorderController);
+    FUN_?(&TypeInfo__RTG__IGizmoQuad2DBorderController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pGVar1 = (this->fields)._planeSlider;
-  pIVar2 = (this->fields)._controllers;
   if (pGVar1 != (GizmoPlaneSlider2D *)0x0) {
-    pGVar3 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_LookAndFeel(pGVar1,(MethodInfo *)0x0);
-    if ((pGVar3 != (GizmoPlaneSlider2DLookAndFeel *)0x0) &&
-       (pIVar2 != (IGizmoQuad2DBorderController__Array *)0x0)) {
-      uVar4 = (pGVar3->fields)._quadBorderType;
-      if (pIVar2->max_length <= uVar4) goto code_?;
-      if (pIVar2->vector[uVar4] != (IGizmoQuad2DBorderController *)0x0) {
-        func_?(0,TypeInfo__RTG__IGizmoQuad2DBorderController,pIVar2->vector[uVar4]);
+    lVar2 = 0x110;
+    if ((pGVar1->fields)._sharedLookAndFeel == (GizmoPlaneSlider2DLookAndFeel *)0x0) {
+      lVar2 = 0x108;
+    }
+    lVar2 = *(longlong *)((longlong)&pGVar1->klass + lVar2);
+    if ((lVar2 != 0) &&
+       (pIVar3 = (this->fields)._controllers, pIVar3 != (IGizmoQuad2DBorderController__Array *)0x0))
+    {
+      uVar4 = *(uint *)(lVar2 + 0x78);
+      if ((uint)pIVar3->max_length <= uVar4) {
+code_?:
+        FUN_?();
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      if (pIVar3->vector[(int)uVar4] != (IGizmoQuad2DBorderController *)0x0) {
+        FUN_?(0,TypeInfo__RTG__IGizmoQuad2DBorderController);
         pGVar1 = (this->fields)._planeSlider;
-        pIVar2 = (this->fields)._controllers;
         if (pGVar1 != (GizmoPlaneSlider2D *)0x0) {
-          pGVar3 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_LookAndFeel(pGVar1,(MethodInfo *)0x0);
-          if ((pGVar3 != (GizmoPlaneSlider2DLookAndFeel *)0x0) &&
-             (pIVar2 != (IGizmoQuad2DBorderController__Array *)0x0)) {
-            uVar4 = (pGVar3->fields)._quadBorderType;
-            if (pIVar2->max_length <= uVar4) goto code_?;
-            if (pIVar2->vector[uVar4] != (IGizmoQuad2DBorderController *)0x0) {
-              func_?(1,TypeInfo__RTG__IGizmoQuad2DBorderController);
+          uVar4 = 0x110;
+          if ((pGVar1->fields)._sharedLookAndFeel == (GizmoPlaneSlider2DLookAndFeel *)0x0) {
+            uVar4 = 0x108;
+          }
+          lVar2 = *(longlong *)((longlong)&pGVar1->klass + (ulonglong)uVar4);
+          if ((lVar2 != 0) &&
+             (pIVar3 = (this->fields)._controllers,
+             pIVar3 != (IGizmoQuad2DBorderController__Array *)0x0)) {
+            uVar4 = *(uint *)(lVar2 + 0x78);
+            if ((uint)pIVar3->max_length <= uVar4) goto code_?;
+            pIVar6 = pIVar3->vector[(int)uVar4];
+            if (pIVar6 != (IGizmoQuad2DBorderController *)0x0) {
+              uVar7 = 0;
+              pIVar8 = pIVar6->klass;
+              uVar9._0_1_ = (pIVar8->_1).rank;
+              uVar9._1_1_ = (pIVar8->_1).minimumAlignment;
+              if (uVar9 != 0) {
+                do {
+                  if (pIVar8->interfaceOffsets[uVar7].interfaceType ==
+                      (Il2CppClass *)TypeInfo__RTG__IGizmoQuad2DBorderController) {
+                    ppIVar10 = &(&(pIVar8->vtable).UpdateHandles)
+                                [pIVar8->interfaceOffsets[uVar7].offset + 1].methodPtr;
+                    UNRECOVERED_JUMPTABLE = *ppIVar10;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+                    (*UNRECOVERED_JUMPTABLE)(pIVar6,(MethodInfo *)ppIVar10[1],UNRECOVERED_JUMPTABLE)
+                    ;
+                    return;
+                  }
+                  uVar7 = uVar7 + 1;
+                } while (uVar7 < uVar9);
+              }
+              puVar11 = (undefined8 *)FUN_?(pIVar6);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+              (*(code *)*puVar11)(pIVar6,puVar11[1],(code *)*puVar11);
               return;
             }
           }
@@ -36,9 +76,7 @@ void Assembly-CSharp.dll::RTG::GizmoQuad2DBorder::GizmoQuad2DBorder_OnGizmoPreUp
       }
     }
   }
-  func_?();
-code_?:
-  func_?();
+  FUN_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;
@@ -52,28 +90,60 @@ void Assembly-CSharp.dll::RTG::GizmoQuad2DBorder::GizmoQuad2DBorder_OnQuadShapeC
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__IGizmoQuad2DBorderController);
+    FUN_?(&TypeInfo__RTG__IGizmoQuad2DBorderController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._controllers;
-  this_00 = (this->fields)._planeSlider;
-  if (this_00 != (GizmoPlaneSlider2D *)0x0) {
-    pGVar2 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_LookAndFeel(this_00,(MethodInfo *)0x0);
-    if ((pGVar2 != (GizmoPlaneSlider2DLookAndFeel *)0x0) &&
-       (pIVar1 != (IGizmoQuad2DBorderController__Array *)0x0)) {
-      uVar3 = (pGVar2->fields)._quadBorderType;
-      if (pIVar1->max_length <= uVar3) goto code_?;
-      if (pIVar1->vector[uVar3] != (IGizmoQuad2DBorderController *)0x0) {
-        func_?(2,TypeInfo__RTG__IGizmoQuad2DBorderController,pIVar1->vector[uVar3]);
+  pGVar1 = (this->fields)._planeSlider;
+  if (pGVar1 != (GizmoPlaneSlider2D *)0x0) {
+    lVar2 = 0x110;
+    if ((pGVar1->fields)._sharedLookAndFeel == (GizmoPlaneSlider2DLookAndFeel *)0x0) {
+      lVar2 = 0x108;
+    }
+    lVar2 = *(longlong *)((longlong)&pGVar1->klass + lVar2);
+    if ((lVar2 != 0) &&
+       (pIVar3 = (this->fields)._controllers, pIVar3 != (IGizmoQuad2DBorderController__Array *)0x0))
+    {
+      uVar4 = *(uint *)(lVar2 + 0x78);
+      if ((uint)pIVar3->max_length <= uVar4) {
+        FUN_?();
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      pIVar6 = pIVar3->vector[(int)uVar4];
+      if (pIVar6 != (IGizmoQuad2DBorderController *)0x0) {
+        uVar7 = 0;
+        pIVar8 = pIVar6->klass;
+        uVar9._0_1_ = (pIVar8->_1).rank;
+        uVar9._1_1_ = (pIVar8->_1).minimumAlignment;
+        if (uVar9 != 0) {
+          do {
+            if (pIVar8->interfaceOffsets[uVar7].interfaceType ==
+                (Il2CppClass *)TypeInfo__RTG__IGizmoQuad2DBorderController) {
+              ppIVar10 = &(&(pIVar8->vtable).UpdateHandles)
+                          [pIVar8->interfaceOffsets[uVar7].offset + 2].methodPtr;
+              UNRECOVERED_JUMPTABLE = *ppIVar10;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+              (*UNRECOVERED_JUMPTABLE)(pIVar6,(MethodInfo *)ppIVar10[1],UNRECOVERED_JUMPTABLE);
+              return;
+            }
+            uVar7 = uVar7 + 1;
+          } while (uVar7 < uVar9);
+        }
+        puVar11 = (undefined8 *)FUN_?(pIVar6);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        (*(code *)*puVar11)(pIVar6,puVar11[1],(code *)*puVar11);
         return;
       }
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -85,71 +155,86 @@ void Assembly-CSharp.dll::RTG::GizmoQuad2DBorder::GizmoQuad2DBorder_Render
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
-    func_?(&TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>);
+    FUN_?(&MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields)._isVisible == 0) {
     return;
   }
   pGVar1 = (this->fields)._planeSlider;
-  if ((pGVar1 != (GizmoPlaneSlider2D *)0x0) &&
-     (pGVar2 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_LookAndFeel(pGVar1,(MethodInfo *)0x0),
-     pGVar2 != (GizmoPlaneSlider2DLookAndFeel *)0x0)) {
-    fVar3 = (pGVar2->fields)._borderColor.r;
-    fVar4 = (pGVar2->fields)._borderColor.g;
-    fStack_5 = (pGVar2->fields)._borderColor.b;
-    fStack_6 = (pGVar2->fields)._borderColor.a;
-    pGVar7 = (this->fields)._targetHandle;
-    if ((pGVar7 != (GizmoHandle *)0x0) &&
-       (this_00 = (pGVar7->fields)._gizmo, this_00 != (Gizmo *)0x0)) {
-      iVar8 = UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-              PointerCaptureEventBase`1[System::Object]::
-              PointerCaptureEventBase_1_System_Object__get_pointerId
-                        ((PointerCaptureEventBase_1_System_Object_ *)this_00,(MethodInfo *)0x0);
+  if (pGVar1 != (GizmoPlaneSlider2D *)0x0) {
+    lVar2 = 0x110;
+    if ((pGVar1->fields)._sharedLookAndFeel == (GizmoPlaneSlider2DLookAndFeel *)0x0) {
+      lVar2 = 0x108;
+    }
+    lVar2 = *(longlong *)((longlong)&pGVar1->klass + lVar2);
+    if (lVar2 != 0) {
+      fVar3 = *(float *)(lVar2 + 0x58);
+      fVar4 = *(float *)(lVar2 + 0x5c);
+      fVar5 = *(float *)(lVar2 + 0x60);
+      fVar6 = *(float *)(lVar2 + 100);
       pGVar7 = (this->fields)._targetHandle;
-      if (pGVar7 != (GizmoHandle *)0x0) {
-        if (iVar8 == (pGVar7->fields)._id) {
+      if ((pGVar7 != (GizmoHandle *)0x0) &&
+         (pGVar8 = (pGVar7->fields)._gizmo, pGVar8 != (Gizmo *)0x0)) {
+        if ((pGVar8->fields)._hoverInfo._handleId == (((this->fields)._targetHandle)->fields)._id) {
           pGVar1 = (this->fields)._planeSlider;
-          if ((pGVar1 == (GizmoPlaneSlider2D *)0x0) ||
-             (pGVar2 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_LookAndFeel
-                                 (pGVar1,(MethodInfo *)0x0),
-             pGVar2 == (GizmoPlaneSlider2DLookAndFeel *)0x0)) goto code_?;
-          fVar3 = (pGVar2->fields)._hoveredBorderColor.r;
-          fVar4 = (pGVar2->fields)._hoveredBorderColor.g;
-          fStack_5 = (pGVar2->fields)._hoveredBorderColor.b;
-          fStack_6 = (pGVar2->fields)._hoveredBorderColor.a;
+          uVar9 = 0x110;
+          if ((pGVar1->fields)._sharedLookAndFeel == (GizmoPlaneSlider2DLookAndFeel *)0x0) {
+            uVar9 = 0x108;
+          }
+          lVar2 = *(longlong *)((longlong)&pGVar1->klass + (ulonglong)uVar9);
+          fVar3 = *(float *)(lVar2 + 0x68);
+          fVar4 = *(float *)(lVar2 + 0x6c);
+          fVar5 = *(float *)(lVar2 + 0x70);
+          fVar6 = *(float *)(lVar2 + 0x74);
         }
-        if ((TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>->_1).cctor_finished_or_no_cctor == 0)
-        {
-          func_?(TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>);
+        if (*(int *)&(TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        this_01 = (GizmoLineMaterial *)
+        this_00 = (GizmoLineMaterial *)
                   Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
                             (MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
-        if (this_01 != (GizmoLineMaterial *)0x0) {
+        if (this_00 != (GizmoLineMaterial *)0x0) {
           GizmoLineMaterial::GizmoLineMaterial_ResetValuesToSensibleDefaults
-                    (this_01,(MethodInfo *)0x0);
-          color.g = fVar4;
-          color.r = fVar3;
-          color.b = fStack_5;
-          color.a = fStack_6;
-          GizmoLineMaterial::GizmoLineMaterial_SetColor(this_01,color,(MethodInfo *)0x0);
-          GizmoLineMaterial::GizmoLineMaterial_SetPass(this_01,0,(MethodInfo *)0x0);
-          pGVar7 = (this->fields)._targetHandle;
-          if (pGVar7 != (GizmoHandle *)0x0) {
-            GizmoHandle::GizmoHandle_Render2DWire_1
-                      (pGVar7,camera,(this->fields)._borderQuadIndex,(MethodInfo *)0x0);
-            return;
+                    (this_00,(MethodInfo *)0x0);
+          if (cRam_? == '\0') {
+            FUN_?(&StringLiteral__Color);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pMVar10 = GizmoLineMaterial::GizmoLineMaterial_get_Material(this_00,(MethodInfo *)0x0);
+          if (pMVar10 != (Material *)0x0) {
+            aCStack_11[0].r = fVar3;
+            aCStack_11[0].g = fVar4;
+            aCStack_11[0].b = fVar5;
+            aCStack_11[0].a = fVar6;
+            UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor
+                      (pMVar10,StringLiteral__Color,aCStack_11,(MethodInfo *)0x0);
+            pMVar10 = GizmoLineMaterial::GizmoLineMaterial_get_Material(this_00,(MethodInfo *)0x0);
+            if (pMVar10 != (Material *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass
+                        (pMVar10,0,(MethodInfo *)0x0);
+              pGVar7 = (this->fields)._targetHandle;
+              if (pGVar7 != (GizmoHandle *)0x0) {
+                GizmoHandle::GizmoHandle_Render2DWire_1
+                          (pGVar7,camera,(this->fields)._borderQuadIndex,(MethodInfo *)0x0);
+                return;
+              }
+            }
           }
         }
       }
     }
   }
-code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  FUN_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -160,15 +245,45 @@ void Assembly-CSharp.dll::RTG::GizmoQuad2DBorder::GizmoQuad2DBorder_SetHoverable
                (GizmoQuad2DBorder *this,bool isHoverable,MethodInfo *method)
 
 {
-  this_00 = (this->fields)._targetHandle;
+  pGVar1 = (this->fields)._targetHandle;
   (this->fields)._isHoverable = isHoverable;
-  if (this_00 != (GizmoHandle *)0x0) {
-    GizmoHandle::GizmoHandle_Set2DShapeHoverable
-              (this_00,(this->fields)._borderQuadIndex,isHoverable,(MethodInfo *)0x0);
+  if (pGVar1 == (GizmoHandle *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
+  uVar3 = (this->fields)._borderQuadIndex;
+  if (cRam_? == '\0') {
+    FUN_?();
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pLVar4 = (pGVar1->fields)._2DShapes;
+  if (pLVar4 != (List_1_RTG_GizmoHandleShape2D_ *)0x0) {
+    if ((uint)(pLVar4->fields)._size <= uVar3) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                ((MethodInfo *)0x0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pGVar5 = (pLVar4->fields)._items;
+    if (pGVar5 != (GizmoHandleShape2D__Array *)0x0) {
+      if ((uint)pGVar5->max_length <= uVar3) {
+        FUN_?();
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      if (pGVar5->vector[(int)uVar3] != (GizmoHandleShape2D *)0x0) {
+        (pGVar5->vector[(int)uVar3]->fields)._isHoverable = isHoverable;
+        return;
+      }
+    }
+  }
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -182,48 +297,50 @@ void Assembly-CSharp.dll::RTG::GizmoQuad2DBorder::GizmoQuad2DBorder_SetVisible
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__IGizmoQuad2DBorderController);
+    FUN_?(&TypeInfo__RTG__IGizmoQuad2DBorderController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._controllers;
+  pGVar1 = (this->fields)._planeSlider;
   (this->fields)._isVisible = isVisible;
-  pGVar2 = (this->fields)._planeSlider;
-  if (((pGVar2 != (GizmoPlaneSlider2D *)0x0) &&
-      (pGVar3 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_LookAndFeel(pGVar2,(MethodInfo *)0x0),
-      pGVar3 != (GizmoPlaneSlider2DLookAndFeel *)0x0)) &&
-     (pIVar1 != (IGizmoQuad2DBorderController__Array *)0x0)) {
-    uVar4 = (pGVar3->fields)._quadBorderType;
-    if (pIVar1->max_length <= uVar4) goto code_?;
-    if (pIVar1->vector[uVar4] != (IGizmoQuad2DBorderController *)0x0) {
-      func_?(0,TypeInfo__RTG__IGizmoQuad2DBorderController,pIVar1->vector[uVar4]);
-      if ((this->fields)._isVisible == 0) {
+  if (pGVar1 != (GizmoPlaneSlider2D *)0x0) {
+    lVar2 = 0x110;
+    if ((pGVar1->fields)._sharedLookAndFeel == (GizmoPlaneSlider2DLookAndFeel *)0x0) {
+      lVar2 = 0x108;
+    }
+    lVar2 = *(longlong *)((longlong)&pGVar1->klass + lVar2);
+    if ((lVar2 != 0) &&
+       (pIVar3 = (this->fields)._controllers, pIVar3 != (IGizmoQuad2DBorderController__Array *)0x0))
+    {
+      uVar4 = *(uint *)(lVar2 + 0x78);
+      if ((uint)pIVar3->max_length <= uVar4) {
+code_?:
+        FUN_?();
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
-      pGVar2 = (this->fields)._planeSlider;
-      pIVar1 = (this->fields)._controllers;
-      if (((pGVar2 != (GizmoPlaneSlider2D *)0x0) &&
-          (pGVar3 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_LookAndFeel(pGVar2,(MethodInfo *)0x0)
-          , pGVar3 != (GizmoPlaneSlider2DLookAndFeel *)0x0)) &&
-         (pIVar1 != (IGizmoQuad2DBorderController__Array *)0x0)) {
-        uVar4 = (pGVar3->fields)._quadBorderType;
-        if (pIVar1->max_length <= uVar4) goto code_?;
-        if (pIVar1->vector[uVar4] != (IGizmoQuad2DBorderController *)0x0) {
-          func_?(1,TypeInfo__RTG__IGizmoQuad2DBorderController,pIVar1->vector[uVar4]);
-          if (cRam_? == '\0') {
-            func_?(&TypeInfo__RTG__IGizmoQuad2DBorderController);
-            cRam_? = '\x01';
+      if (pIVar3->vector[(int)uVar4] != (IGizmoQuad2DBorderController *)0x0) {
+        FUN_?(0,TypeInfo__RTG__IGizmoQuad2DBorderController);
+        if ((this->fields)._isVisible == 0) {
+          return;
+        }
+        pGVar1 = (this->fields)._planeSlider;
+        if (pGVar1 != (GizmoPlaneSlider2D *)0x0) {
+          uVar4 = 0x110;
+          if ((pGVar1->fields)._sharedLookAndFeel == (GizmoPlaneSlider2DLookAndFeel *)0x0) {
+            uVar4 = 0x108;
           }
-          pGVar2 = (this->fields)._planeSlider;
-          pIVar1 = (this->fields)._controllers;
-          if (((pGVar2 != (GizmoPlaneSlider2D *)0x0) &&
-              (pGVar3 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_get_LookAndFeel
-                                  (pGVar2,(MethodInfo *)0x0),
-              pGVar3 != (GizmoPlaneSlider2DLookAndFeel *)0x0)) &&
-             (pIVar1 != (IGizmoQuad2DBorderController__Array *)0x0)) {
-            uVar4 = (pGVar3->fields)._quadBorderType;
-            if (pIVar1->max_length <= uVar4) goto code_?;
-            if (pIVar1->vector[uVar4] != (IGizmoQuad2DBorderController *)0x0) {
-              func_?(2,TypeInfo__RTG__IGizmoQuad2DBorderController,pIVar1->vector[uVar4]);
+          lVar2 = *(longlong *)((longlong)&pGVar1->klass + (ulonglong)uVar4);
+          if ((lVar2 != 0) &&
+             (pIVar3 = (this->fields)._controllers,
+             pIVar3 != (IGizmoQuad2DBorderController__Array *)0x0)) {
+            uVar4 = *(uint *)(lVar2 + 0x78);
+            if ((uint)pIVar3->max_length <= uVar4) goto code_?;
+            if (pIVar3->vector[(int)uVar4] != (IGizmoQuad2DBorderController *)0x0) {
+              FUN_?(1);
+              GizmoQuad2DBorder_OnQuadShapeChanged(this,(MethodInfo *)0x0);
               return;
             }
           }
@@ -231,9 +348,7 @@ void Assembly-CSharp.dll::RTG::GizmoQuad2DBorder::GizmoQuad2DBorder_SetVisible
       }
     }
   }
-  func_?();
-code_?:
-  func_?();
+  FUN_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;
@@ -248,132 +363,422 @@ void Assembly-CSharp.dll::RTG::GizmoQuad2DBorder::GizmoQuad2DBorder__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Enum);
-    func_?(&TypeInfo__RTG__GizmoPreUpdateBeginHandler);
-    func_?(&TypeInfo__RTG__GizmoQuad2DBorderControllerData);
-    func_?(&TypeRef__RTG__GizmoQuad2DBorderType);
-    func_?(&MethodInfo__RTG__GizmoQuad2DBorder__OnGizmoPreUpdateBegin_RTG__Gizmo_);
-    func_?(&TypeInfo__RTG__GizmoThinQuad2DBorderController);
-    func_?(&TypeInfo__RTG__IGizmoQuad2DBorderController);
-    func_?(&TypeInfo__RTG__QuadShape2D);
-    func_?(&TypeInfo__System__Type);
+    FUN_?(&TypeInfo__RTG__GizmoPreUpdateBeginHandler);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GizmoQuad2DBorderControllerData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeRef__RTG__GizmoQuad2DBorderType);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__GizmoQuad2DBorder__OnGizmoPreUpdateBegin_RTG__Gizmo_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__GizmoThinQuad2DBorderController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__IGizmoQuad2DBorderController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__QuadShape2D);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   (this->fields)._isVisible = 1;
   (this->fields)._isHoverable = 1;
-  pQVar1 = (QuadShape2D *)func_?(TypeInfo__RTG__QuadShape2D);
+  pQVar1 = (QuadShape2D *)FUN_?(TypeInfo__RTG__QuadShape2D);
   QuadShape2D::QuadShape2D__ctor(pQVar1,(MethodInfo *)0x0);
+  bVar2 = iRam_? != 0;
   (this->fields)._borderQuad = pQVar1;
-  func_?(&(this->fields)._borderQuad,pQVar1);
-  method_01 = TypeInfo__RTG__GizmoQuad2DBorderControllerData;
-  pGVar2 = (GizmoQuad2DBorderControllerData *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)pGVar2,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-  (this->fields)._controllerData = pGVar2;
-  func_?(&(this->fields)._controllerData,pGVar2);
-  handle = TypeRef__RTG__GizmoQuad2DBorderType;
-  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Type);
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields)._borderQuad >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
   }
-  enumType = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                       ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-  if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  pGVar7 = (GizmoQuad2DBorderControllerData *)
+            FUN_?(TypeInfo__RTG__GizmoQuad2DBorderControllerData);
+  bVar2 = iRam_? != 0;
+  (this->fields)._controllerData = pGVar7;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields)._controllerData >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
   }
-  this_01 = mscorlib.dll::System::Enum::Enum_GetValues(enumType,(MethodInfo *)0x0);
-  if (this_01 == (Array *)0x0) {
-code_?:
-    func_?();
+  pIVar8 = TypeRef__RTG__GizmoQuad2DBorderType;
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
   }
-  else {
-    pGVar3 = (GizmoHandle *)mscorlib.dll::System::Array::Array_get_Length(this_01,(MethodInfo *)0x0)
-    ;
-    pIVar4 = TypeInfo__RTG__IGizmoQuad2DBorderController;
-    pIVar5 = (IGizmoQuad2DBorderController__Array *)func_?();
-    (this->fields)._controllers = pIVar5;
-    method_00 = (MethodInfo *)&(this->fields)._controllers;
-    func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    (this->fields)._planeSlider = (GizmoPlaneSlider2D *)pIVar4;
-    func_?(&this->fields,pIVar4);
-    (this->fields)._targetHandle = pGVar3;
-    func_?(&(this->fields)._targetHandle,pGVar3);
+  plVar9 = (longlong *)0x0;
+  if (pIVar8 != (Il2CppType *)0x0) {
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    lVar4 = FUN_?(pIVar8,1);
+    plVar9 = (longlong *)FUN_?(lVar4 + 0x20);
+  }
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
+  }
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
+  }
+  if (plVar9 == (longlong *)0x0) {
+    uVar10 = func_?(&TypeInfo__System__ArgumentNullException);
+    this_02 = (ArgumentNullException *)func_?(uVar10);
+    paramName = (String *)func_?(&StringLiteral_enumType);
+    mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+              (this_02,paramName,(MethodInfo *)0x0);
+    uVar10 = func_?(&MethodInfo__System__Enum__GetValues_System__Type_);
+    FUN_?(this_02,uVar10);
+    pcVar11 = (code *)swi(3);
+    (*pcVar11)();
+    return;
+  }
+  this_00 = (Array *)(**(code **)(*plVar9 + 0x888))(plVar9);
+  if (this_00 != (Array *)0x0) {
+    iVar12 = mscorlib.dll::System::Array::Array_get_Length(this_00,(MethodInfo *)0x0);
+    pIVar13 = (IGizmoQuad2DBorderController__Array *)
+              FUN_?(TypeInfo__RTG__IGizmoQuad2DBorderController,iVar12);
+    (this->fields)._controllers = pIVar13;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&(this->fields)._controllers >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    iVar14 = iRam_?;
+    (this->fields)._planeSlider = planeSlider;
+    if (iVar14 != 0) {
+      uVar3 = (uint)((ulonglong)&this->fields >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+        iVar14 = iRam_?;
+      } while (!bVar2);
+    }
+    (this->fields)._targetHandle = targetHandle;
+    iVar15 = 0;
+    if (iVar14 != 0) {
+      uVar3 = (uint)((ulonglong)&(this->fields)._targetHandle >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+        iVar15 = iRam_?;
+      } while (!bVar2);
+    }
     (this->fields)._targetQuad = targetQuad;
-    func_?(&(this->fields)._targetQuad,targetQuad);
-    pGVar6 = (this->fields)._targetHandle;
-    if (pGVar6 == (GizmoHandle *)0x0) goto code_?;
-    iVar7 = GizmoHandle::GizmoHandle_Add2DShape
-                      (pGVar6,(Shape2D *)(this->fields)._borderQuad,(MethodInfo *)0x0);
-    (this->fields)._borderQuadIndex = iVar7;
-    pQVar1 = (this->fields)._borderQuad;
-    if (pQVar1 == (QuadShape2D *)0x0) goto code_?;
-    (pQVar1->fields)._ptContainMode = 1;
-    pGVar2 = (this->fields)._controllerData;
-    if (pGVar2 == (GizmoQuad2DBorderControllerData *)0x0) goto code_?;
-    (pGVar2->fields).Border = this;
-    func_?();
-    pGVar2 = (this->fields)._controllerData;
-    if (pGVar2 == (GizmoQuad2DBorderControllerData *)0x0) goto code_?;
-    (pGVar2->fields).PlaneSlider = (this->fields)._planeSlider;
-    func_?();
-    pGVar2 = (this->fields)._controllerData;
-    if (pGVar2 == (GizmoQuad2DBorderControllerData *)0x0) goto code_?;
-    (pGVar2->fields).BorderQuad = (this->fields)._borderQuad;
-    func_?();
-    pGVar2 = (this->fields)._controllerData;
-    if ((pGVar2 == (GizmoQuad2DBorderControllerData *)0x0) ||
-       ((pGVar2->fields).BorderQuadIndex = (this->fields)._borderQuadIndex,
-       pGVar3 == (GizmoHandle *)0x0)) goto code_?;
-    pGVar2 = (this->fields)._controllerData;
-    if (pGVar2 == (GizmoQuad2DBorderControllerData *)0x0) goto code_?;
-    (pGVar2->fields).Gizmo = (pGVar3->fields)._gizmo;
-    func_?();
-    pGVar2 = (this->fields)._controllerData;
-    if (pGVar2 == (GizmoQuad2DBorderControllerData *)0x0) goto code_?;
-    (pGVar2->fields).TargetHandle = pGVar3;
-    func_?();
-    pGVar2 = (this->fields)._controllerData;
-    if (pGVar2 == (GizmoQuad2DBorderControllerData *)0x0) goto code_?;
-    (pGVar2->fields).TargetQuad = (this->fields)._targetQuad;
-    func_?();
-    pIVar5 = (this->fields)._controllers;
-    pGVar2 = (this->fields)._controllerData;
-    value = (Il2CppClass *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)pIVar5);
-    value->name = (char *)pGVar2;
-    func_?(&value->name);
-    if (pIVar5 == (IGizmoQuad2DBorderController__Array *)0x0) goto code_?;
-    iVar8 = func_?();
-    if (iVar8 != 0) {
-      if ((char *)pIVar5->max_length == (char *)0x0) goto code_?;
-      pIVar5->vector[0] = (IGizmoQuad2DBorderController *)value;
-      func_?();
-      pGVar6 = (this->fields)._targetHandle;
-      if (pGVar6 != (GizmoHandle *)0x0) {
-        this_00 = (pGVar6->fields)._gizmo;
-        value_00 = (GizmoPreUpdateBeginHandler *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Windows::WebCam::
-        VideoCapture+OnVideoCaptureResourceCreatedCallback::
-        VideoCapture_OnVideoCaptureResourceCreatedCallback__ctor
-                  ((VideoCapture_OnVideoCaptureResourceCreatedCallback *)value_00,(Object *)this,
-                   MethodInfo__RTG__GizmoQuad2DBorder__OnGizmoPreUpdateBegin_RTG__Gizmo_,
-                   (MethodInfo *)0x0);
-        if (this_00 != (Gizmo *)0x0) {
-          Gizmo::Gizmo_add_PreUpdateBegin(this_00,value_00,(MethodInfo *)0x0);
-          return;
+    if (iVar15 != 0) {
+      uVar3 = (uint)((ulonglong)&(this->fields)._targetQuad >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    pGVar16 = (this->fields)._targetHandle;
+    if (pGVar16 != (GizmoHandle *)0x0) {
+      iVar12 = GizmoHandle::GizmoHandle_Add2DShape
+                        (pGVar16,(Shape2D *)(this->fields)._borderQuad,(MethodInfo *)0x0);
+      (this->fields)._borderQuadIndex = iVar12;
+      pQVar1 = (this->fields)._borderQuad;
+      if (pQVar1 != (QuadShape2D *)0x0) {
+        (pQVar1->fields)._ptContainMode = 1;
+        iVar14 = iRam_?;
+        pGVar7 = (this->fields)._controllerData;
+        if (pGVar7 != (GizmoQuad2DBorderControllerData *)0x0) {
+          (pGVar7->fields).Border = this;
+          if (iVar14 != 0) {
+            uVar3 = (uint)((ulonglong)&(pGVar7->fields).Border >> 0xc);
+            lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+            do {
+              uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+              puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+              LOCK();
+              bVar2 = uVar5 == *puVar6;
+              if (bVar2) {
+                *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+              }
+              UNLOCK();
+              iVar14 = iRam_?;
+            } while (!bVar2);
+          }
+          pGVar7 = (this->fields)._controllerData;
+          if (pGVar7 != (GizmoQuad2DBorderControllerData *)0x0) {
+            (pGVar7->fields).PlaneSlider = (this->fields)._planeSlider;
+            iVar15 = 0;
+            if (iVar14 != 0) {
+              uVar3 = (uint)((ulonglong)&(pGVar7->fields).PlaneSlider >> 0xc);
+              lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+              do {
+                uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+                puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+                LOCK();
+                bVar2 = uVar5 == *puVar6;
+                if (bVar2) {
+                  *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+                }
+                UNLOCK();
+                iVar15 = iRam_?;
+              } while (!bVar2);
+            }
+            pGVar7 = (this->fields)._controllerData;
+            if (pGVar7 != (GizmoQuad2DBorderControllerData *)0x0) {
+              (pGVar7->fields).BorderQuad = (this->fields)._borderQuad;
+              iVar14 = 0;
+              if (iVar15 != 0) {
+                uVar3 = (uint)((ulonglong)&(pGVar7->fields).BorderQuad >> 0xc);
+                lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+                do {
+                  uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+                  puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+                  LOCK();
+                  bVar2 = uVar5 == *puVar6;
+                  if (bVar2) {
+                    *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+                  }
+                  UNLOCK();
+                  iVar14 = iRam_?;
+                } while (!bVar2);
+              }
+              pGVar7 = (this->fields)._controllerData;
+              if (((pGVar7 != (GizmoQuad2DBorderControllerData *)0x0) &&
+                  ((pGVar7->fields).BorderQuadIndex = (this->fields)._borderQuadIndex,
+                  targetHandle != (GizmoHandle *)0x0)) &&
+                 (pGVar7 = (this->fields)._controllerData,
+                 pGVar7 != (GizmoQuad2DBorderControllerData *)0x0)) {
+                (pGVar7->fields).Gizmo = (targetHandle->fields)._gizmo;
+                iVar15 = 0;
+                if (iVar14 != 0) {
+                  uVar3 = (uint)((ulonglong)&pGVar7->fields >> 0xc);
+                  lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+                  do {
+                    uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+                    puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+                    LOCK();
+                    bVar2 = uVar5 == *puVar6;
+                    if (bVar2) {
+                      *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+                    }
+                    UNLOCK();
+                    iVar15 = iRam_?;
+                  } while (!bVar2);
+                }
+                pGVar7 = (this->fields)._controllerData;
+                if (pGVar7 != (GizmoQuad2DBorderControllerData *)0x0) {
+                  (pGVar7->fields).TargetHandle = targetHandle;
+                  iVar14 = 0;
+                  if (iVar15 != 0) {
+                    uVar3 = (uint)((ulonglong)&(pGVar7->fields).TargetHandle >> 0xc);
+                    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+                    do {
+                      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+                      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+                      LOCK();
+                      bVar2 = uVar5 == *puVar6;
+                      if (bVar2) {
+                        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+                      }
+                      UNLOCK();
+                      iVar14 = iRam_?;
+                    } while (!bVar2);
+                  }
+                  pGVar7 = (this->fields)._controllerData;
+                  if (pGVar7 != (GizmoQuad2DBorderControllerData *)0x0) {
+                    (pGVar7->fields).TargetQuad = (this->fields)._targetQuad;
+                    if (iVar14 != 0) {
+                      uVar3 = (uint)((ulonglong)&(pGVar7->fields).TargetQuad >> 0xc);
+                      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+                      do {
+                        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+                        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+                        LOCK();
+                        bVar2 = uVar5 == *puVar6;
+                        if (bVar2) {
+                          *puVar6 = uVar5 | 1L << (ulonglong)(uVar3 & 0x3f);
+                        }
+                        UNLOCK();
+                      } while (!bVar2);
+                    }
+                    pIVar13 = (this->fields)._controllers;
+                    pIVar17 = (IGizmoQuad2DBorderController__Class *)(this->fields)._controllerData;
+                    pIVar18 = (IGizmoQuad2DBorderController *)
+                              FUN_?(TypeInfo__RTG__GizmoThinQuad2DBorderController);
+                    bVar2 = iRam_? != 0;
+                    pIVar18[1].klass = pIVar17;
+                    if (bVar2) {
+                      uVar3 = (uint)((ulonglong)(pIVar18 + 1) >> 0xc);
+                      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+                      do {
+                        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+                        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+                        LOCK();
+                        bVar2 = uVar5 == *puVar6;
+                        if (bVar2) {
+                          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+                        }
+                        UNLOCK();
+                      } while (!bVar2);
+                    }
+                    if (pIVar13 != (IGizmoQuad2DBorderController__Array *)0x0) {
+                      lVar4 = FUN_?(pIVar18,(pIVar13->klass->_0).element_class);
+                      if (lVar4 == 0) {
+                        uVar10 = FUN_?();
+                        FUN_?(uVar10,0);
+                        pcVar11 = (code *)swi(3);
+                        (*pcVar11)();
+                        return;
+                      }
+                      if ((int)pIVar13->max_length == 0) {
+                        FUN_?();
+                        pcVar11 = (code *)swi(3);
+                        (*pcVar11)();
+                        return;
+                      }
+                      bVar2 = iRam_? != 0;
+                      pIVar13->vector[0] = pIVar18;
+                      if (bVar2) {
+                        uVar3 = (uint)((ulonglong)pIVar13->vector >> 0xc);
+                        lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+                        do {
+                          uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+                          puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+                          LOCK();
+                          bVar2 = uVar5 == *puVar6;
+                          if (bVar2) {
+                            *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+                          }
+                          UNLOCK();
+                        } while (!bVar2);
+                      }
+                      pGVar16 = (this->fields)._targetHandle;
+                      if (pGVar16 != (GizmoHandle *)0x0) {
+                        pGVar19 = (pGVar16->fields)._gizmo;
+                        this_01 = (UnityAction_1_System_Object_ *)
+                                  FUN_?(TypeInfo__RTG__GizmoPreUpdateBeginHandler);
+                        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::
+                        Object]::UnityAction_1_System_Object___ctor
+                                  (this_01,(Object *)this,
+                                   MethodInfo__RTG__GizmoQuad2DBorder__OnGizmoPreUpdateBegin_RTG__Gizmo_
+                                   ,(MethodInfo *)0x0);
+                        if (pGVar19 != (Gizmo *)0x0) {
+                          if (cRam_? == '\0') {
+                            FUN_?(&TypeInfo__RTG__GizmoPreUpdateBeginHandler);
+                            LOCK();
+                            UNLOCK();
+                            cRam_? = '\x01';
+                          }
+                          ppGVar20 = &(pGVar19->fields).PreUpdateBegin;
+                          a = (pGVar19->fields).PreUpdateBegin;
+                          do {
+                            pGVar21 = (GizmoPreUpdateBeginHandler *)
+                                      mscorlib.dll::System::Delegate::Delegate_Combine
+                                                ((Delegate *)a,(Delegate *)this_01,(MethodInfo *)0x0
+                                                );
+                            pGVar22 = (GizmoPreUpdateBeginHandler *)0x0;
+                            if (pGVar21 != (GizmoPreUpdateBeginHandler *)0x0) {
+                              if (pGVar21->klass == TypeInfo__RTG__GizmoPreUpdateBeginHandler) {
+                                pGVar22 = pGVar21;
+                              }
+                              if (pGVar22 == (GizmoPreUpdateBeginHandler *)0x0) {
+                                FUN_?(pGVar21);
+                                pcVar11 = (code *)swi(3);
+                                (*pcVar11)();
+                                return;
+                              }
+                            }
+                            LOCK();
+                            pGVar21 = *ppGVar20;
+                            bVar2 = a == pGVar21;
+                            if (bVar2) {
+                              *ppGVar20 = pGVar22;
+                              pGVar21 = a;
+                            }
+                            UNLOCK();
+                            pGVar22 = a;
+                            if (!bVar2) {
+                              pGVar22 = pGVar21;
+                            }
+                            if (iRam_? != 0) {
+                              uVar3 = (uint)((ulonglong)ppGVar20 >> 0xc);
+                              uVar5 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+                              do {
+                                uVar23 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                                puVar6 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                                LOCK();
+                                bVar2 = uVar23 == *puVar6;
+                                if (bVar2) {
+                                  *puVar6 = uVar23 | 1L << (uVar3 & 0x3f);
+                                }
+                                UNLOCK();
+                              } while (!bVar2);
+                            }
+                            bVar2 = pGVar22 != a;
+                            a = pGVar22;
+                          } while (bVar2);
+                          return;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
-      goto code_?;
     }
   }
-  func_?();
-  func_?();
-code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

@@ -6,36 +6,44 @@ int32_t Assembly-CSharp.dll::ThemeFogTypeSelector::ThemeFogTypeSelector_Constrai
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&StringLiteral_Fog_mode_is_outside_expected_ran);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Fog_mode_is_outside_expected_ran);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).availableModes;
   if (pTVar1 != (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) {
-    uVar2 = value % (int)pTVar1->max_length;
+    iVar2 = value % (int)pTVar1->max_length;
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__System__Math);
+      FUN_?(&TypeInfo__System__Math);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Math);
+    if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    uVar3 = (int)uVar2 >> 0x1f;
-    iVar4 = (uVar2 ^ uVar3) - uVar3;
-    if (iVar4 != value) {
-      iVar4 = 0;
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
+    iVar3 = -iVar2;
+    if (iVar3 < 0) {
+      iVar3 = iVar2;
+    }
+    if (iVar3 != value) {
+      iVar3 = 0;
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_Fog_mode_is_outside_expected_ran,(MethodInfo *)0x0);
     }
-    return iVar4;
+    return iVar3;
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  iVar4 = (*pcVar5)();
-  return iVar4;
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  iVar5 = (*pcVar4)();
+  return iVar5;
 }
 
 
@@ -49,42 +57,52 @@ void Assembly-CSharp.dll::ThemeFogTypeSelector::ThemeFogTypeSelector_Decrement
   (this->fields).modeIndex = iVar1;
   if (iVar1 < 0) {
     pTVar2 = (this->fields).availableModes;
-    if (pTVar2 == (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) goto code_?;
-    (this->fields).modeIndex = pTVar2->max_length + iVar1;
-  }
-  uVar3 = ThemeFogTypeSelector_Constrain(this,(this->fields).modeIndex,(MethodInfo *)0x0);
-  pTVar2 = (this->fields).availableModes;
-  pTVar4 = (this->fields).presetNameLabel;
-  (this->fields).modeIndex = uVar3;
-  if (pTVar2 != (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) {
-    if (pTVar2->max_length <= uVar3) {
-code_?:
-      func_?();
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
+    if (pTVar2 == (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) {
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
-    if ((pTVar2->vector[uVar3] != (ThemeFogTypeSelector_NamedFogMode *)0x0) &&
-       (pTVar4 != (Text *)0x0)) {
-      (*(code *)(pTVar4->klass->vtable).set_text.method)();
+    (this->fields).modeIndex = iVar1 + (int)pTVar2->max_length;
+  }
+  uVar4 = ThemeFogTypeSelector_Constrain(this,(this->fields).modeIndex,(MethodInfo *)0x0);
+  pTVar2 = (this->fields).availableModes;
+  pTVar5 = (this->fields).presetNameLabel;
+  (this->fields).modeIndex = uVar4;
+  if (pTVar2 != (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) {
+    if ((uint)pTVar2->max_length <= uVar4) {
+code_?:
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    if ((pTVar2->vector[(int)uVar4] != (ThemeFogTypeSelector_NamedFogMode *)0x0) &&
+       (pTVar5 != (Text *)0x0)) {
+      (*(pTVar5->klass->vtable).set_text.methodPtr)
+                (pTVar5,(pTVar2->vector[(int)uVar4]->fields)._Name_k__BackingField,
+                 (pTVar5->klass->vtable).set_text.method);
       pTVar2 = (this->fields).availableModes;
       pAVar6 = (this->fields).onChange;
       if (pTVar2 != (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) {
-        uVar3 = (this->fields).modeIndex;
-        if (pTVar2->max_length <= uVar3) goto code_?;
-        if ((pTVar2->vector[uVar3] != (ThemeFogTypeSelector_NamedFogMode *)0x0) &&
+        uVar4 = (this->fields).modeIndex;
+        if ((uint)pTVar2->max_length <= uVar4) goto code_?;
+        if ((pTVar2->vector[(int)uVar4] != (ThemeFogTypeSelector_NamedFogMode *)0x0) &&
            (pAVar6 != (Action_1_Int32_ *)0x0)) {
-          (*(pAVar6->fields)._._.invoke_impl)();
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*(pAVar6->fields)._._.invoke_impl)
+                    ((pAVar6->fields)._._.method_code,
+                     (pTVar2->vector[(int)uVar4]->fields)._Mode_k__BackingField,
+                     (pAVar6->fields)._._.method);
           return;
         }
       }
     }
   }
-code_?:
-  uVar7 = func_?(&stack0xfffffff4);
-  func_?(uVar7);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -98,43 +116,53 @@ void Assembly-CSharp.dll::ThemeFogTypeSelector::ThemeFogTypeSelector_Increment
   pTVar1 = (this->fields).availableModes;
   iVar2 = (this->fields).modeIndex + 1;
   (this->fields).modeIndex = iVar2;
+  if (pTVar1 == (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  if ((int)pTVar1->max_length <= iVar2) {
+    (this->fields).modeIndex = iVar2 - (int)pTVar1->max_length;
+  }
+  uVar4 = ThemeFogTypeSelector_Constrain(this,(this->fields).modeIndex,(MethodInfo *)0x0);
+  pTVar1 = (this->fields).availableModes;
+  pTVar5 = (this->fields).presetNameLabel;
+  (this->fields).modeIndex = uVar4;
   if (pTVar1 != (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) {
-    if ((int)pTVar1->max_length <= iVar2) {
-      (this->fields).modeIndex = iVar2 - pTVar1->max_length;
-    }
-    uVar3 = ThemeFogTypeSelector_Constrain(this,(this->fields).modeIndex,(MethodInfo *)0x0);
-    pTVar1 = (this->fields).availableModes;
-    pTVar4 = (this->fields).presetNameLabel;
-    (this->fields).modeIndex = uVar3;
-    if (pTVar1 != (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) {
-      if (pTVar1->max_length <= uVar3) {
+    if ((uint)pTVar1->max_length <= uVar4) {
 code_?:
-        func_?();
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
-        return;
-      }
-      if ((pTVar1->vector[uVar3] != (ThemeFogTypeSelector_NamedFogMode *)0x0) &&
-         (pTVar4 != (Text *)0x0)) {
-        (*(code *)(pTVar4->klass->vtable).set_text.method)();
-        pTVar1 = (this->fields).availableModes;
-        pAVar6 = (this->fields).onChange;
-        if (pTVar1 != (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) {
-          uVar3 = (this->fields).modeIndex;
-          if (pTVar1->max_length <= uVar3) goto code_?;
-          if ((pTVar1->vector[uVar3] != (ThemeFogTypeSelector_NamedFogMode *)0x0) &&
-             (pAVar6 != (Action_1_Int32_ *)0x0)) {
-            (*(pAVar6->fields)._._.invoke_impl)();
-            return;
-          }
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    if ((pTVar1->vector[(int)uVar4] != (ThemeFogTypeSelector_NamedFogMode *)0x0) &&
+       (pTVar5 != (Text *)0x0)) {
+      (*(pTVar5->klass->vtable).set_text.methodPtr)
+                (pTVar5,(pTVar1->vector[(int)uVar4]->fields)._Name_k__BackingField,
+                 (pTVar5->klass->vtable).set_text.method);
+      pTVar1 = (this->fields).availableModes;
+      pAVar6 = (this->fields).onChange;
+      if (pTVar1 != (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) {
+        uVar4 = (this->fields).modeIndex;
+        if ((uint)pTVar1->max_length <= uVar4) goto code_?;
+        if ((pTVar1->vector[(int)uVar4] != (ThemeFogTypeSelector_NamedFogMode *)0x0) &&
+           (pAVar6 != (Action_1_Int32_ *)0x0)) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*(pAVar6->fields)._._.invoke_impl)
+                    ((pAVar6->fields)._._.method_code,
+                     (pTVar1->vector[(int)uVar4]->fields)._Mode_k__BackingField,
+                     (pAVar6->fields)._._.method);
+          return;
         }
       }
     }
   }
-  uVar7 = func_?(&stack0xfffffff4);
-  func_?(uVar7);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -147,54 +175,81 @@ void Assembly-CSharp.dll::ThemeFogTypeSelector::ThemeFogTypeSelector_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__ThemeAttributes__NamedThemeAttribute<int>__get_Name__);
-    func_?(&MethodInfo__ThemeAttributes__ThemeAttribute<int>__get_Value__);
+    FUN_?(&MethodInfo__ThemeAttributes__NamedThemeAttribute<int>__get_Name__);
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  bVar1 = iRam_? != 0;
   (this->fields).onChange = onChange;
-  func_?(&(this->fields).onChange,onChange);
-  pTVar1 = (this->fields).availableModes;
-  uVar2 = 0;
-  if (pTVar1 != (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) {
-    iVar3 = 0x10;
-    for (; (int)uVar2 < (int)pTVar1->max_length; uVar2 = uVar2 + 1) {
-      if (pTVar1 == (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) goto code_?;
-      if (pTVar1->max_length <= uVar2) goto code_?;
-      iVar4 = *(int *)((int)pTVar1->vector + iVar3 + -0x10);
-      if ((iVar4 == 0) || (attrib == (IntAttribute *)0x0)) goto code_?;
-      if (*(int *)(iVar4 + 8) == (attrib->fields)._._.value) {
-        (this->fields).modeIndex = uVar2;
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).onChange >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
       }
-      iVar3 = iVar3 + 4;
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
+  pTVar6 = (this->fields).availableModes;
+  uVar2 = 0;
+  if (pTVar6 != (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) {
+    lVar7 = 0x20;
+    while ((int)uVar2 < (int)pTVar6->max_length) {
+      if (pTVar6 == (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) goto code_?;
+      if ((uint)pTVar6->max_length <= uVar2) goto code_?;
+      lVar8 = *(longlong *)((longlong)pTVar6->vector + lVar7 + -0x20);
+      if ((lVar8 == 0) || (attrib == (IntAttribute *)0x0)) goto code_?;
+      if (*(int *)(lVar8 + 0x10) == (attrib->fields)._._.value) {
+        (this->fields).modeIndex = uVar2;
+        uVar2 = uVar2 + 1;
+        lVar7 = lVar7 + 8;
+      }
+      else {
+        uVar2 = uVar2 + 1;
+        lVar7 = lVar7 + 8;
+      }
     }
-    iVar5 = ThemeFogTypeSelector_Constrain(this,(this->fields).modeIndex,(MethodInfo *)0x0);
-    (this->fields).modeIndex = iVar5;
+    iVar9 = ThemeFogTypeSelector_Constrain(this,(this->fields).modeIndex,(MethodInfo *)0x0);
+    (this->fields).modeIndex = iVar9;
     if ((attrib != (IntAttribute *)0x0) &&
-       (pTVar6 = (this->fields).settingNameLabel, pTVar6 != (Text *)0x0)) {
-      (*(code *)(pTVar6->klass->vtable).set_text.method)
-                (pTVar6,(attrib->fields)._.name,
-                 (pTVar6->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-      pTVar1 = (this->fields).availableModes;
-      pTVar6 = (this->fields).presetNameLabel;
-      if (pTVar1 != (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) {
+       (pTVar10 = (this->fields).settingNameLabel, pTVar10 != (Text *)0x0)) {
+      (*(pTVar10->klass->vtable).set_text.methodPtr)
+                (pTVar10,(attrib->fields)._.name,(pTVar10->klass->vtable).set_text.method);
+      pTVar6 = (this->fields).availableModes;
+      pTVar10 = (this->fields).presetNameLabel;
+      if (pTVar6 != (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) {
         uVar2 = (this->fields).modeIndex;
-        if (pTVar1->max_length <= uVar2) goto code_?;
-        if ((pTVar1->vector[uVar2] != (ThemeFogTypeSelector_NamedFogMode *)0x0) &&
-           (pTVar6 != (Text *)0x0)) {
-          (*(code *)(pTVar6->klass->vtable).set_text.method)
-                    (pTVar6,(pTVar1->vector[uVar2]->fields)._Name_k__BackingField,
-                     (pTVar6->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+        if ((uint)pTVar6->max_length <= uVar2) {
+code_?:
+          FUN_?();
+          pcVar11 = (code *)swi(3);
+          (*pcVar11)();
+          return;
+        }
+        if ((pTVar6->vector[(int)uVar2] != (ThemeFogTypeSelector_NamedFogMode *)0x0) &&
+           (pTVar10 != (Text *)0x0)) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*(pTVar10->klass->vtable).set_text.methodPtr)
+                    (pTVar10,(pTVar6->vector[(int)uVar2]->fields)._Name_k__BackingField,
+                     (pTVar10->klass->vtable).set_text.method);
           return;
         }
       }
     }
   }
 code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -210,31 +265,39 @@ void Assembly-CSharp.dll::ThemeFogTypeSelector::ThemeFogTypeSelector_OnSettingCh
   pTVar3 = (this->fields).presetNameLabel;
   (this->fields).modeIndex = uVar1;
   if (pTVar2 != (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) {
-    if (pTVar2->max_length <= uVar1) goto code_?;
-    if ((pTVar2->vector[uVar1] != (ThemeFogTypeSelector_NamedFogMode *)0x0) &&
+    if ((uint)pTVar2->max_length <= uVar1) {
+code_?:
+      FUN_?();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    if ((pTVar2->vector[(int)uVar1] != (ThemeFogTypeSelector_NamedFogMode *)0x0) &&
        (pTVar3 != (Text *)0x0)) {
-      (*(code *)(pTVar3->klass->vtable).set_text.method)
-                (pTVar3,(pTVar2->vector[uVar1]->fields)._Name_k__BackingField);
+      (*(pTVar3->klass->vtable).set_text.methodPtr)
+                (pTVar3,(pTVar2->vector[(int)uVar1]->fields)._Name_k__BackingField,
+                 (pTVar3->klass->vtable).set_text.method);
       pTVar2 = (this->fields).availableModes;
-      pAVar4 = (this->fields).onChange;
+      pAVar5 = (this->fields).onChange;
       if (pTVar2 != (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) {
         uVar1 = (this->fields).modeIndex;
-        if (pTVar2->max_length <= uVar1) goto code_?;
-        if ((pTVar2->vector[uVar1] != (ThemeFogTypeSelector_NamedFogMode *)0x0) &&
-           (pAVar4 != (Action_1_Int32_ *)0x0)) {
-          (*(pAVar4->fields)._._.invoke_impl)
-                    ((pAVar4->fields)._._.method_code,
-                     (pTVar2->vector[uVar1]->fields)._Mode_k__BackingField);
+        if ((uint)pTVar2->max_length <= uVar1) goto code_?;
+        if ((pTVar2->vector[(int)uVar1] != (ThemeFogTypeSelector_NamedFogMode *)0x0) &&
+           (pAVar5 != (Action_1_Int32_ *)0x0)) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*(pAVar5->fields)._._.invoke_impl)
+                    ((pAVar5->fields)._._.method_code,
+                     (pTVar2->vector[(int)uVar1]->fields)._Mode_k__BackingField,
+                     (pAVar5->fields)._._.method);
           return;
         }
       }
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -246,66 +309,112 @@ void Assembly-CSharp.dll::ThemeFogTypeSelector::ThemeFogTypeSelector__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__ThemeFogTypeSelector__NamedFogMode);
-    func_?(&TypeInfo__ThemeFogTypeSelector__NamedFogMode);
-    func_?(&StringLiteral_Heavy);
-    func_?(&StringLiteral_Light);
+    FUN_?(&TypeInfo__ThemeFogTypeSelector__NamedFogMode);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__ThemeFogTypeSelector__NamedFogMode);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Heavy);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Light);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   (this->fields).modeIndex = -1;
   pTVar1 = (ThemeFogTypeSelector_NamedFogMode__Array *)
-           func_?(TypeInfo__ThemeFogTypeSelector__NamedFogMode,2);
-  method_00 = TypeInfo__ThemeFogTypeSelector__NamedFogMode;
-  pTVar2 = (ThemeFogTypeSelector_NamedFogMode *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)pTVar2,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (pTVar2 == (ThemeFogTypeSelector_NamedFogMode *)0x0) {
-code_?:
-    func_?();
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-  }
-  else {
-    (pTVar2->fields)._Mode_k__BackingField = 2;
-    pSVar4 = StringLiteral_Light;
-    (pTVar2->fields)._Name_k__BackingField = StringLiteral_Light;
-    func_?(&(pTVar2->fields)._Name_k__BackingField,pSVar4);
-    if (pTVar1 == (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) goto code_?;
-    iVar5 = func_?(pTVar2,(pTVar1->klass->_0).element_class);
-    if (iVar5 == 0) goto code_?;
-    if (pTVar1->max_length == 0) goto code_?;
-    pTVar1->vector[0] = pTVar2;
-    func_?(pTVar1->vector,pTVar2);
-    pTVar2 = (ThemeFogTypeSelector_NamedFogMode *)
-             func_?(TypeInfo__ThemeFogTypeSelector__NamedFogMode);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)pTVar2,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    if (pTVar2 == (ThemeFogTypeSelector_NamedFogMode *)0x0) goto code_?;
-    (pTVar2->fields)._Mode_k__BackingField = 3;
-    pSVar4 = StringLiteral_Heavy;
-    (pTVar2->fields)._Name_k__BackingField = StringLiteral_Heavy;
-    func_?(&(pTVar2->fields)._Name_k__BackingField,pSVar4);
-    iVar5 = func_?(pTVar2,(pTVar1->klass->_0).element_class);
-    if (iVar5 != 0) {
-      if (1 < pTVar1->max_length) {
-        pTVar1->vector[1] = pTVar2;
-        func_?(pTVar1->vector + 1,pTVar2);
-        (this->fields).availableModes = pTVar1;
-        func_?(&(this->fields).availableModes,pTVar1);
-        Borodar::FarlandSkies::CloudyCrownPro::Helpers::Singleton`1[System::Object]::
-        Singleton_1_System_Object___ctor((Singleton_1_System_Object_ *)this,(MethodInfo *)0x0);
+           FUN_?(TypeInfo__ThemeFogTypeSelector__NamedFogMode,2);
+  lVar2 = FUN_?(TypeInfo__ThemeFogTypeSelector__NamedFogMode);
+  if (lVar2 != 0) {
+    bVar3 = iRam_? != 0;
+    *(undefined4 *)(lVar2 + 0x10) = 2;
+    *(String **)(lVar2 + 0x18) = StringLiteral_Light;
+    if (bVar3) {
+      uVar4 = (uint)(lVar2 + 0x18U >> 0xc);
+      lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+        puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+        LOCK();
+        bVar3 = uVar6 == *puVar7;
+        if (bVar3) {
+          *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar3);
+    }
+    if (pTVar1 != (ThemeFogTypeSelector_NamedFogMode__Array *)0x0) {
+      lVar5 = FUN_?(lVar2,(pTVar1->klass->_0).element_class);
+      if (lVar5 == 0) {
+        uVar8 = FUN_?();
+        FUN_?(uVar8,0);
+        pcVar9 = (code *)swi(3);
+        (*pcVar9)();
         return;
       }
-      goto code_?;
+      FUN_?(pTVar1,0,lVar2);
+      lVar2 = FUN_?(TypeInfo__ThemeFogTypeSelector__NamedFogMode);
+      if (lVar2 != 0) {
+        bVar3 = iRam_? != 0;
+        *(undefined4 *)(lVar2 + 0x10) = 3;
+        *(String **)(lVar2 + 0x18) = StringLiteral_Heavy;
+        if (bVar3) {
+          uVar4 = (uint)(lVar2 + 0x18U >> 0xc);
+          lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+            puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+            LOCK();
+            bVar3 = uVar6 == *puVar7;
+            if (bVar3) {
+              *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar3);
+        }
+        lVar5 = FUN_?(lVar2,(pTVar1->klass->_0).element_class);
+        if (lVar5 == 0) {
+          uVar8 = FUN_?();
+          FUN_?(uVar8,0);
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
+        }
+        FUN_?(pTVar1,1,lVar2);
+        bVar3 = iRam_? != 0;
+        (this->fields).availableModes = pTVar1;
+        if (bVar3) {
+          uVar4 = (uint)((ulonglong)&(this->fields).availableModes >> 0xc);
+          lVar2 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar6 = *(ulonglong *)(lVar2 + 0xADDR);
+            puVar7 = (ulonglong *)(lVar2 + 0xADDR);
+            LOCK();
+            bVar3 = uVar6 == *puVar7;
+            if (bVar3) {
+              *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar3);
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        return;
+      }
     }
   }
-  uVar3 = func_?(0);
-  func_?(uVar3);
-code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

@@ -26,7 +26,7 @@ public class PhysicsCollisionDatasWrapper
 
 	// Methods
 	public void Clear();
-	public void Add(RaycastHit hit);
+	public void Add(UnityEngine.RaycastHit hit);
 	public void Add(Collider collider, Vector3 origin);
 }
 

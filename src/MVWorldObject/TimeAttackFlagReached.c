@@ -8,8 +8,8 @@ void MVWorldObject.dll::TimeAttackFlagReached::TimeAttackFlagReached__ctor
 {
   WinningCondition::WinningCondition__ctor
             ((WinningCondition *)this,parent,id,gameCounterManager,0,1,
-             GameStatCounterType__Enum_TimeAttackFlag,WinningConditionPresentStyle__Enum_OneWinner,
-             (MethodInfo *)0x0);
+             CONCAT31((int3)((uint)in_stack_1 >> 8),8),
+             CONCAT31((int3)((uint)in_stack_2 >> 8),1),(MethodInfo *)0x0);
   return;
 }
 

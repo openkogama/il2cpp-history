@@ -20,32 +20,41 @@ void Assembly-CSharp.dll::RTG::InputDeviceScreenDragSession::InputDeviceScreenDr
                (InputDeviceScreenDragSession *this,MethodInfo *method)
 
 {
+  cVar1 = cRam_?;
   if ((this->fields)._isActive != 0) {
     (this->fields)._isActive = 0;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
+    if (cVar1 == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
+      cVar1 = '\x01';
       cRam_? = '\x01';
     }
-    uVar1 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).x;
-    uVar2 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).y;
-    (this->fields)._dragPoint.x = (float)uVar1;
-    (this->fields)._dragPoint.y = (float)uVar2;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
+    uVar2 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).x;
+    uVar3 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).y;
+    (this->fields)._dragPoint.x = (float)uVar2;
+    (this->fields)._dragPoint.y = (float)uVar3;
+    if (cVar1 == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
+      cVar1 = '\x01';
       cRam_? = '\x01';
     }
-    uVar3 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).x;
-    uVar4 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).y;
-    (this->fields)._dragDelta.x = (float)uVar3;
-    (this->fields)._dragDelta.y = (float)uVar4;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
+    uVar4 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).x;
+    uVar5 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).y;
+    (this->fields)._dragDelta.x = (float)uVar4;
+    (this->fields)._dragDelta.y = (float)uVar5;
+    if (cVar1 == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    uVar5 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).x;
-    uVar6 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).y;
-    (this->fields)._accumDrag.x = (float)uVar5;
-    (this->fields)._accumDrag.y = (float)uVar6;
+    uVar6 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).x;
+    uVar7 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).y;
+    (this->fields)._accumDrag.x = (float)uVar6;
+    (this->fields)._accumDrag.y = (float)uVar7;
   }
   return;
 }
@@ -57,30 +66,33 @@ bool Assembly-CSharp.dll::RTG::InputDeviceScreenDragSession::InputDeviceScreenDr
                (InputDeviceScreenDragSession *this,MethodInfo *method)
 
 {
-  if ((this->fields)._isActive != 0) {
-    fVar1 = (this->fields)._dragPoint.x;
-    fVar2 = (this->fields)._dragPoint.y;
-    bVar3 = InputDeviceScreenDragSession_UpdateDragPoint(this,(MethodInfo *)0x0);
-    if (bVar3 != 0) {
-      fVar1 = (this->fields)._dragPoint.x - fVar1;
-      fVar2 = (this->fields)._dragPoint.y - fVar2;
-      fVar4 = (this->fields)._accumDrag.x;
-      fVar5 = (this->fields)._accumDrag.y;
-      (this->fields)._dragDelta.x = fVar1;
-      (this->fields)._dragDelta.y = fVar2;
-      (this->fields)._accumDrag.x = fVar4 + fVar1;
-      (this->fields)._accumDrag.y = fVar5 + fVar2;
-      return 1;
-    }
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
-      cRam_? = '\x01';
-    }
-    uVar6 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).x;
-    uVar7 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).y;
-    (this->fields)._dragDelta.x = (float)uVar6;
-    (this->fields)._dragDelta.y = (float)uVar7;
+  if ((this->fields)._isActive == 0) {
+    return 0;
   }
+  fVar1 = (this->fields)._dragPoint.x;
+  fVar2 = (this->fields)._dragPoint.y;
+  bVar3 = InputDeviceScreenDragSession_UpdateDragPoint(this,(MethodInfo *)0x0);
+  if (bVar3 != 0) {
+    fVar1 = (this->fields)._dragPoint.x - fVar1;
+    fVar2 = (this->fields)._dragPoint.y - fVar2;
+    (this->fields)._dragDelta.x = fVar1;
+    fVar4 = (this->fields)._accumDrag.x;
+    (this->fields)._dragDelta.y = fVar2;
+    fVar5 = (this->fields)._accumDrag.y;
+    (this->fields)._accumDrag.x = fVar1 + fVar4;
+    (this->fields)._accumDrag.y = fVar2 + fVar5;
+    return 1;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  uVar6 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).x;
+  uVar7 = (TypeInfo__UnityEngine__Vector3->static_fields->zeroVector).y;
+  (this->fields)._dragDelta.y = (float)uVar7;
+  (this->fields)._dragDelta.x = (float)uVar6;
   return 0;
 }
 
@@ -93,29 +105,27 @@ bool Assembly-CSharp.dll::RTG::InputDeviceScreenDragSession::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__IInputDevice);
+    FUN_?(&TypeInfo__RTG__IInputDevice);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._inputDevice;
-  if (pIVar1 != (IInputDevice *)0x0) {
-    cVar2 = func_?(8,TypeInfo__RTG__IInputDevice,pIVar1);
-    if (cVar2 == '\0') {
+  if ((this->fields)._inputDevice != (IInputDevice *)0x0) {
+    cVar1 = FUN_?(8,TypeInfo__RTG__IInputDevice);
+    if (cVar1 == '\0') {
       return 0;
     }
-    pIVar1 = (this->fields)._inputDevice;
-    if (pIVar1 != (IInputDevice *)0x0) {
-      puVar3 = (undefined8 *)func_?(auStack_4,7,TypeInfo__RTG__IInputDevice,pIVar1);
-      uVar5 = *puVar3;
-      fStack_6 = (float)uVar5;
-      (this->fields)._dragPoint.x = fStack_6;
-      fStack_7 = (float)((ulonglong)uVar5 >> 0x20);
-      (this->fields)._dragPoint.y = fStack_7;
+    if ((this->fields)._inputDevice != (IInputDevice *)0x0) {
+      puVar2 = (undefined8 *)FUN_?(auStack_3,7,TypeInfo__RTG__IInputDevice);
+      uVar4 = *puVar2;
+      (this->fields)._dragPoint.x = (float)uVar4;
+      (this->fields)._dragPoint.y = (float)((ulonglong)uVar4 >> 0x20);
       return 1;
     }
   }
-  func_?();
-  pcVar8 = (code *)swi(3);
-  bVar9 = (*pcVar8)();
-  return bVar9;
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  bVar6 = (*pcVar5)();
+  return bVar6;
 }
 

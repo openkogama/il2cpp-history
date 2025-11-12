@@ -5,8 +5,8 @@ void Assembly-CSharp.dll::SayChatBubbleHandler::SayChatBubbleHandler_Deactivate
                (SayChatBubbleHandler *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).sayChatBubble;
   (this->fields).isActive = 0;
+  this_00 = (this->fields).sayChatBubble;
   if (this_00 != (MeshRenderer *)0x0) {
     this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)this_00,(MethodInfo *)0x0);
@@ -17,7 +17,7 @@ void Assembly-CSharp.dll::SayChatBubbleHandler::SayChatBubbleHandler_Deactivate
       return;
     }
   }
-  func_?();
+  FUN_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;
@@ -32,72 +32,148 @@ void Assembly-CSharp.dll::SayChatBubbleHandler::SayChatBubbleHandler_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<int,_bool>);
-    func_?(&
-                    TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-                   );
-    func_?(&
-                    MethodInfo__SayChatBubbleHandler__OnSayChatMessageReceived_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
-                   );
-    func_?(&MethodInfo__SayChatBubbleHandler__SetSayBubbleIndicatorVisibility_int__bool_);
-    func_?(&TypeInfo__SayChatBubbleVisibilityManager);
+    FUN_?(&TypeInfo__System__Action<int,_bool>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__SayChatBubbleHandler__OnSayChatMessageReceived_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__SayChatBubbleHandler__SetSayBubbleIndicatorVisibility_int__bool_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__SayChatBubbleVisibilityManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  bVar1 = iRam_? != 0;
   (this->fields).ownerActorNr = actorNr;
   (this->fields).chatAnchor = chatAnchor;
-  func_?(&(this->fields).chatAnchor,chatAnchor);
-  pAVar1 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).chatAnchor >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  pAVar6 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->
            OnSayChatIndicatorVisibilityChange;
-  this_00 = (UnityAction_2_System_Boolean_System_Boolean_ *)
-            func_?(TypeInfo__System__Action<int,_bool>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::Boolean]::
-  UnityAction_2_System_Boolean_System_Boolean___ctor
-            (this_00,(Object *)this,
-             MethodInfo__SayChatBubbleHandler__SetSayBubbleIndicatorVisibility_int__bool_,
-             (MethodInfo *)0x0);
-  pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
-                     ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-  if (pDVar2 == (Delegate *)0x0) {
+  pDVar7 = (Delegate *)FUN_?(TypeInfo__System__Action<int,_bool>);
+  FUN_?(pDVar7,this);
+  pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pAVar6,pDVar7,(MethodInfo *)0x0);
+  pAVar8 = TypeInfo__System__Action<int,_bool>;
+  if (pDVar7 == (Delegate *)0x0) {
     TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatIndicatorVisibilityChange =
          (Action_2_Int32_Boolean_ *)0x0;
   }
   else {
-    pAVar1 = (Action_2_Int32_Boolean_ *)func_?();
-    if (pAVar1 == (Action_2_Int32_Boolean_ *)0x0) goto code_?;
+    pAVar6 = (Action_2_Int32_Boolean_ *)FUN_?(pDVar7,TypeInfo__System__Action<int,_bool>);
+    if (pAVar6 == (Action_2_Int32_Boolean_ *)0x0) {
+      FUN_?(pDVar7,pAVar8);
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
+      return;
+    }
     TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatIndicatorVisibilityChange =
-         pAVar1;
-    iVar3 = func_?();
-    if (iVar3 == 0) goto code_?;
+         pAVar6;
+    pAVar8 = TypeInfo__System__Action<int,_bool>;
+    lVar3 = FUN_?(pDVar7,TypeInfo__System__Action<int,_bool>);
+    if (lVar3 == 0) {
+      FUN_?(pDVar7,pAVar8);
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
+      return;
+    }
   }
-  func_?();
-  pAVar4 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved;
-  this_01 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
-  UnityAction_2_System_Int32_System_Int32___ctor
-            (this_01,(Object *)this,
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)TypeInfo__SayChatBubbleVisibilityManager->static_fields >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  pAVar10 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved;
+  this_00 = (Action_2_Int32Enum_Object_ *)
+            FUN_?(
+                         TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+                         );
+  mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
+            (this_00,(Object *)this,
              MethodInfo__SayChatBubbleHandler__OnSayChatMessageReceived_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
              ,(MethodInfo *)0x0);
-  pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
-                     ((Delegate *)pAVar4,(Delegate *)this_01,(MethodInfo *)0x0);
-  if (pDVar2 == (Delegate *)0x0) {
+  pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pAVar10,(Delegate *)this_00,(MethodInfo *)0x0);
+  pAVar11 = 
+  TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+  ;
+  if (pDVar7 == (Delegate *)0x0) {
     TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved =
          (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0;
-code_?:
-    func_?();
-    return;
   }
-  pAVar4 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
-           func_?();
-  if (pAVar4 != (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
-                 *)0x0) {
-    TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved = pAVar4;
-    iVar3 = func_?();
-    if (iVar3 != 0) goto code_?;
+  else {
+    pAVar10 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
+             FUN_?(pDVar7,
+                           TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+                          );
+    if (pAVar10 == (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+                   *)0x0) {
+      FUN_?(pDVar7,pAVar11);
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
+      return;
+    }
+    TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved = pAVar10;
+    pAVar11 = 
+    TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+    ;
+    lVar3 = FUN_?(pDVar7,
+                          TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+                         );
+    if (lVar3 == 0) {
+      FUN_?(pDVar7,pAVar11);
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
+      return;
+    }
   }
-code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)
+                    &TypeInfo__SayChatBubbleVisibilityManager->static_fields->
+                     OnSayChatMessageRecieved >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   return;
 }
 
@@ -109,44 +185,85 @@ bool Assembly-CSharp.dll::SayChatBubbleHandler::SayChatBubbleHandler_IsPlayerInH
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>_
-                   );
+    FUN_?(&
+                  MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 != (MVNetworkGame *)0x0) {
-    this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
-    if (this_01 != (MVLocalPlayer *)0x0) {
-      bVar1 = MVPlayer::MVPlayer_get_IsReady((MVPlayer *)this_01,(MethodInfo *)0x0);
-      if (bVar1 == 0) {
-        return 0;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((((pMVar1 != (MVGameControllerBase *)0x0) &&
+       (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+      (this_00 = (pMVar2->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) &&
+     (pMVar3 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0),
+     pMVar3 != (MVLocalPlayer *)0x0)) {
+    if ((pMVar3->fields)._.playerState != 1) {
+      return 0;
+    }
+    pSVar4 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                       ((MethodInfo *)0x0);
+    if (((pSVar4 != (SpawnRoleDataMediator *)0x0) &&
+        (pSVar5 = (pSVar4->fields).position,
+        pSVar5 != (SpawnRoleDataMediator_SpawnRoleVariableInternal_1_UnityEngine_Vector3_ *)0x0)) &&
+       (pSVar6 = (pSVar5->fields)._.subscribableVariable,
+       pSVar6 != (SubscribableVariable_1_UnityEngine_Vector3_ *)0x0)) {
+      if ((MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>_
+           ->klass->field_0x135 & 1) == 0) {
+        FUN_?();
       }
-      pSVar2 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
-                         ((MethodInfo *)0x0);
-      if (pSVar2 != (SpawnRoleDataMediator *)0x0) {
-        Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-        SpawnRoleVariable`1[UnityEngine::Vector3]::
-        SpawnRoleVariable_1_UnityEngine_Vector3__op_Implicit
-                  ((Vector3 *)&stack0xffffffe0,
-                   (SpawnRoleVariable_1_UnityEngine_Vector3_ *)(pSVar2->fields).position,
-                   MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>__op_Implicit_MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<UnityEngine::Vector3>_
-                  );
-        this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            ((Component *)this,(MethodInfo *)0x0);
-        if (this_02 != (Transform *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                    ((Vector3 *)&stack0xffffffd4,this_02,(MethodInfo *)0x0);
-          fVar3 = (float10)func_?();
-          return (float)fVar3 < _UNK_?;
+      uStack_7._0_4_ = (pSVar6->fields)._.value.x;
+      uStack_7._4_4_ = (pSVar6->fields)._.value.y;
+      fVar8 = (pSVar6->fields)._.value.z;
+      obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                      ((Component *)this,(MethodInfo *)0x0);
+      if (obj != (Transform *)0x0) {
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
         }
+        uStack_9 = 0;
+        fStack_10 = 0.0;
+        pvVar11 = (obj->fields)._._.m_CachedPtr;
+        if (pvVar11 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+          pcVar12 = (code *)swi(3);
+          bVar13 = (*pcVar12)();
+          return bVar13;
+        }
+        pcVar12 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
+          uVar14 = func_?(&UNK_?);
+          FUN_?(uVar14,0);
+          pcVar12 = (code *)swi(3);
+          bVar13 = (*pcVar12)();
+          return bVar13;
+        }
+        pcRam_? = pcVar12;
+        (*pcRam_?)(pvVar11,&uStack_9);
+        fStack_15 = fVar8 - fStack_10;
+        uStack_7 = CONCAT44(uStack_7._4_4_ - uStack_9._4_4_,(float)uStack_7 - (float)uStack_9);
+        fVar8 = (float)FUN_?(&uStack_7);
+        return fVar8 < _UNK_?;
       }
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  bVar1 = (*pcVar4)();
-  return bVar1;
+  FUN_?();
+  pcVar12 = (code *)swi(3);
+  bVar13 = (*pcVar12)();
+  return bVar13;
 }
 
 
@@ -157,51 +274,131 @@ void Assembly-CSharp.dll::SayChatBubbleHandler::SayChatBubbleHandler_OnDestroy
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<int,_bool>);
-    func_?(&
-                    TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
-                   );
-    func_?(&
-                    MethodInfo__SayChatBubbleHandler__OnSayChatMessageReceived_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
-                   );
-    func_?(&MethodInfo__SayChatBubbleHandler__SetSayBubbleIndicatorVisibility_int__bool_);
-    func_?(&TypeInfo__SayChatBubbleVisibilityManager);
+    FUN_?(&TypeInfo__System__Action<int,_bool>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__SayChatBubbleHandler__OnSayChatMessageReceived_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__SayChatBubbleHandler__SetSayBubbleIndicatorVisibility_int__bool_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__SayChatBubbleVisibilityManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pAVar1 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->
            OnSayChatIndicatorVisibilityChange;
-  this_00 = (UnityAction_2_System_Boolean_System_Boolean_ *)
-            func_?(TypeInfo__System__Action<int,_bool>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::Boolean]::
-  UnityAction_2_System_Boolean_System_Boolean___ctor
-            (this_00,(Object *)this,
-             MethodInfo__SayChatBubbleHandler__SetSayBubbleIndicatorVisibility_int__bool_,
-             (MethodInfo *)0x0);
+  pDVar2 = (Delegate *)FUN_?(TypeInfo__System__Action<int,_bool>);
+  FUN_?(pDVar2,this);
   pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
-                     ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+                     ((Delegate *)pAVar1,pDVar2,(MethodInfo *)0x0);
   pAVar3 = TypeInfo__System__Action<int,_bool>;
   if (pDVar2 == (Delegate *)0x0) {
     TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatIndicatorVisibilityChange =
          (Action_2_Int32_Boolean_ *)0x0;
-    pAStack4 = (Action_2_Int32_Boolean___Class *)0x0;
-code_?:
-    func_?();
-    return;
   }
-  pAStack4 = TypeInfo__System__Action<int,_bool>;
-  pAVar1 = (Action_2_Int32_Boolean_ *)func_?();
-  if (pAVar1 != (Action_2_Int32_Boolean_ *)0x0) {
+  else {
+    pAVar1 = (Action_2_Int32_Boolean_ *)FUN_?(pDVar2,TypeInfo__System__Action<int,_bool>);
+    if (pAVar1 == (Action_2_Int32_Boolean_ *)0x0) {
+      FUN_?(pDVar2,pAVar3);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
     TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatIndicatorVisibilityChange =
          pAVar1;
     pAVar3 = TypeInfo__System__Action<int,_bool>;
-    pAStack4 = TypeInfo__System__Action<int,_bool>;
-    pAStack4 = (Action_2_Int32_Boolean___Class *)func_?();
-    if (pAStack4 != (Action_2_Int32_Boolean___Class *)0x0) goto code_?;
+    lVar5 = FUN_?(pDVar2,TypeInfo__System__Action<int,_bool>);
+    if (lVar5 == 0) {
+      FUN_?(pDVar2,pAVar3);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
   }
-  pAStack4 = pAVar3;
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  if (iRam_? != 0) {
+    uVar6 = (uint)((ulonglong)TypeInfo__SayChatBubbleVisibilityManager->static_fields >> 0xc);
+    lVar5 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar7 = *(ulonglong *)(lVar5 + 0xADDR);
+      puVar8 = (ulonglong *)(lVar5 + 0xADDR);
+      LOCK();
+      bVar9 = uVar7 == *puVar8;
+      if (bVar9) {
+        *puVar8 = uVar7 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar9);
+  }
+  pAVar10 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved;
+  this_00 = (Action_2_Int32Enum_Object_ *)
+            FUN_?(
+                         TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+                         );
+  mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
+            (this_00,(Object *)this,
+             MethodInfo__SayChatBubbleHandler__OnSayChatMessageReceived_int__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
+             ,(MethodInfo *)0x0);
+  pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)pAVar10,(Delegate *)this_00,(MethodInfo *)0x0);
+  pAVar11 = 
+  TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+  ;
+  if (pDVar2 == (Delegate *)0x0) {
+    TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved =
+         (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0;
+  }
+  else {
+    pAVar10 = (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)
+             FUN_?(pDVar2,
+                           TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+                          );
+    if (pAVar10 == (Action_2_Int32_System_Collections_Generic_Dictionary_2_System_Object_System_Object_
+                   *)0x0) {
+      FUN_?(pDVar2,pAVar11);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageRecieved = pAVar10;
+    pAVar11 = 
+    TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+    ;
+    lVar5 = FUN_?(pDVar2,
+                          TypeInfo__System__Action<int,_System::Collections::Generic::Dictionary<System::Object,_System::Object>_>
+                         );
+    if (lVar5 == 0) {
+      FUN_?(pDVar2,pAVar11);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+  }
+  if (iRam_? != 0) {
+    uVar6 = (uint)((ulonglong)
+                    &TypeInfo__SayChatBubbleVisibilityManager->static_fields->
+                     OnSayChatMessageRecieved >> 0xc);
+    lVar5 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar7 = *(ulonglong *)(lVar5 + 0xADDR);
+      puVar8 = (ulonglong *)(lVar5 + 0xADDR);
+      LOCK();
+      bVar9 = uVar7 == *puVar8;
+      if (bVar9) {
+        *puVar8 = uVar7 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar9);
+  }
   return;
 }
 
@@ -214,68 +411,60 @@ void Assembly-CSharp.dll::SayChatBubbleHandler::SayChatBubbleHandler_OnSayChatMe
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&TypeInfo__SayChatBubbleVisibilityManager);
-    func_?(&TypeInfo__System__String);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__SayChatBubbleVisibilityManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pSVar1 = this;
   if ((((this->fields).isActive == 0) || ((this->fields).ownerActorNr != actorNr)) ||
-     (bVar2 = SayChatBubbleHandler_IsPlayerInHearingDistance(this,(MethodInfo *)0x0), bVar2 == 0)) {
+     (bVar1 = SayChatBubbleHandler_IsPlayerInHearingDistance(this,(MethodInfo *)0x0), bVar1 == 0)) {
     return;
   }
-  this_00 = (pSVar1->fields).chatAnchor;
+  this_00 = (this->fields).chatAnchor;
   if (this_00 != (ChatAnchor *)0x0) {
     anchorId = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
                          ((Object_1 *)this_00,(MethodInfo *)0x0);
-    this = (SayChatBubbleHandler *)CONCAT13(5,this._0_3_);
-    key = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
-    pDVar3 = data;
+    auStackX_8[0] = 5;
+    key = (Object *)FUN_?(uRam_?,auStackX_8);
     if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      this = (SayChatBubbleHandler *)
-             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-             UIElements::TextureId]::
-             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                       ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,key,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-      text.m_Index = 0;
-      if (this == (SayChatBubbleHandler *)0x0) {
-code_?:
-        actorNr = 0;
-        this = (SayChatBubbleHandler *)(pSVar1->fields).chatAnchor;
-        ChatBubbleManager::ChatBubbleManager_ShowChatBubble
-                  ((String *)text.m_Index,anchorId,(ChatAnchor *)this,(MethodInfo *)0x0);
-        if (TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard ==
-            (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0) {
+      pSVar2 = (String *)
+               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__get_Item
+                         (data,key,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         );
+      text = (String *)0x0;
+      if (pSVar2 != (String *)0x0) {
+        if (pSVar2->klass == pSRam0000000182db2460) {
+          text = pSVar2;
+        }
+        if (text == (String *)0x0) {
+          FUN_?(pSVar2);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
           return;
         }
-        pAVar4 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard;
-        pvStack5 = (pAVar4->fields)._._.method;
-        pDStack6 = pDVar3;
-        method = (pAVar4->fields)._._.method_code;
-        data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
-        (*(pAVar4->fields)._._.invoke_impl)();
+      }
+      ChatBubbleManager::ChatBubbleManager_ShowChatBubble
+                (text,anchorId,(this->fields).chatAnchor,(MethodInfo *)0x0);
+      if (TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard ==
+          (Action_1_System_Collections_Generic_Dictionary_2_System_Object_System_Object_ *)0x0) {
         return;
       }
-      if (*(String__Class **)this == TypeInfo__System__String) {
-        text = (TextureId)this;
-      }
-      actorNr = (int32_t)TypeInfo__System__String;
-      if ((String *)text.m_Index != (String *)0x0) goto code_?;
-      goto code_?;
+      pAVar4 = TypeInfo__SayChatBubbleVisibilityManager->static_fields->OnSayChatMessageHeard;
+      (*(pAVar4->fields)._._.invoke_impl)
+                ((pAVar4->fields)._._.method_code,data,(pAVar4->fields)._._.method);
+      return;
     }
   }
-  func_?();
-  this = extraout_ECX;
-  actorNr = (int32_t)extraout_EDX;
-code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -298,7 +487,7 @@ void Assembly-CSharp.dll::SayChatBubbleHandler::SayChatBubbleHandler_SetSayBubbl
     (this->fields).isIndicatorActive = shouldBeVisible;
     return;
   }
-  func_?();
+  FUN_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;
@@ -311,38 +500,33 @@ void Assembly-CSharp.dll::SayChatBubbleHandler::SayChatBubbleHandler_Update
                (SayChatBubbleHandler *this,MethodInfo *method)
 
 {
-  if ((this->fields).isIndicatorActive == 0) {
-    return;
-  }
-  bVar1 = SayChatBubbleHandler_IsPlayerInHearingDistance(this,(MethodInfo *)0x0);
-  this_00 = (this->fields).sayChatBubble;
-  if (bVar1 == 0) {
-    if ((this_00 != (MeshRenderer *)0x0) &&
-       (pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                           ((Renderer *)this_00,(MethodInfo *)0x0), pMVar2 != (Material *)0x0)) {
-      value.g = (float)_UNK_?;
-      value.r = (float)_UNK_?;
-      value.b = (float)_UNK_?;
-      value.a = _UNK_?;
-      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
-                (pMVar2,value,(MethodInfo *)0x0);
+  if ((this->fields).isIndicatorActive != 0) {
+    bVar1 = SayChatBubbleHandler_IsPlayerInHearingDistance(this,(MethodInfo *)0x0);
+    this_00 = (this->fields).sayChatBubble;
+    if (bVar1 == 0) {
+      if (this_00 == (MeshRenderer *)0x0) goto code_?;
+      this_01 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                          ((Renderer *)this_00,(MethodInfo *)0x0);
+      CStack_2._0_8_ = _UNK_?;
+      CStack_2._8_8_ = _UNK_?;
+    }
+    else {
+      if (this_00 == (MeshRenderer *)0x0) goto code_?;
+      this_01 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                          ((Renderer *)this_00,(MethodInfo *)0x0);
+      CStack_2._0_8_ = _UNK_?;
+      CStack_2._8_8_ = _UNK_?;
+    }
+    if (this_01 == (Material *)0x0) {
+code_?:
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
-  }
-  else if ((this_00 != (MeshRenderer *)0x0) &&
-          (pMVar2 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
-                              ((Renderer *)this_00,(MethodInfo *)0x0), pMVar2 != (Material *)0x0)) {
-    value_00.g = (float)_UNK_?;
-    value_00.r = (float)_UNK_?;
-    value_00.b = (float)_UNK_?;
-    value_00.a = _UNK_?;
     UnityEngine.CoreModule.dll::UnityEngine::Material::Material_set_color
-              (pMVar2,value_00,(MethodInfo *)0x0);
-    return;
+              (this_01,&CStack_2,(MethodInfo *)0x0);
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
   return;
 }
 

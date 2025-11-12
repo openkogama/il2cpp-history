@@ -9,8 +9,9 @@ SpawnRoleVariable_1_T_SubDelegate_System_Object__BeginInvoke
           AsyncCallback *callback,Object *object,MethodInfo *method)
 
 {
-  uStack_1 = ZEXT48(value);
-  pIVar2 = (IAsyncResult *)func_?(this,&uStack_1,callback,object);
-  return pIVar2;
+  uStack_1 = 0;
+  pOStack_2 = value;
+  pIVar3 = (IAsyncResult *)FUN_?(this,&pOStack_2);
+  return pIVar3;
 }
 

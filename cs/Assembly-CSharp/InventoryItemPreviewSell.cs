@@ -21,11 +21,11 @@ public class InventoryItemPreviewSell : ManageItemPage
 	[SerializeField]
 	private RawImage previewImage;
 	[SerializeField]
-	private Button removeFromMarketButton;
+	private UnityEngine.UI.Button removeFromMarketButton;
 	[SerializeField]
 	private UnityEngine.UI.Text sellButtonText;
 	[SerializeField]
-	private Button sellButton;
+	private UnityEngine.UI.Button sellButton;
 	[SerializeField]
 	private ProgressBarAndroid compareSlider;
 	[SerializeField]

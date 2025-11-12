@@ -3,76 +3,90 @@
 
 CameraFocus_Data *
 Assembly-CSharp.dll::RTG::CameraFocus::CameraFocus_CalculateFocusData
-          (Camera *camera,AABB focusAABB,CameraFocusSettings *focusSettings,MethodInfo *method)
+          (Camera *camera,AABB *focusAABB,CameraFocusSettings *focusSettings,MethodInfo *method)
 
 {
-  AVar1 = focusAABB;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__CameraEx);
-    func_?(&TypeInfo__RTG__CameraFocus__Data);
+    FUN_?(&TypeInfo__RTG__CameraEx);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__CameraFocus__Data);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  VStack_2.z = focusAABB._size.z;
-  VStack_2.x = focusAABB._size.x;
-  VStack_2.y = focusAABB._size.y;
-  fVar3 = (float10)func_?(&VStack_2,0);
-  fStack_4 = (float)fVar3;
-  if ((TypeInfo__RTG__CameraEx->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__CameraEx);
+  aVStack_1[0].x = (focusAABB->_size).x;
+  aVStack_1[0].y = (focusAABB->_size).y;
+  aVStack_1[0].z = (focusAABB->_size).z;
+  fVar2 = (float)FUN_?(aVStack_1);
+  if (*(int *)&(TypeInfo__RTG__CameraEx->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  if (camera != (Camera *)0x0) {
-    fStack_5 = fStack_4 * _UNK_?;
-    fStack_4 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_fieldOfView
-                          (camera,(MethodInfo *)0x0);
-    dVar6 = (double)(fStack_4 * _UNK_? * _UNK_?);
-    func_?();
-    if (focusSettings != (CameraFocusSettings *)0x0) {
-      fStack_4 = fStack_5 / (float)dVar6 + (focusSettings->fields)._focusDistanceAdd;
-      fStack_5 = fStack_4;
-      fStack_7 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_nearClipPlane
-                            (camera,(MethodInfo *)0x0);
-      if (fStack_5 < fStack_7) {
-        fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_nearClipPlane
-                          (camera,(MethodInfo *)0x0);
-        fStack_4 = fStack_4 + (fVar8 - fStack_4);
-        fStack_5 = fStack_4;
-      }
-      this = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)camera,(MethodInfo *)0x0);
-      if (this != (Transform *)0x0) {
-        pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                           (&VStack_10,this,(MethodInfo *)0x0);
-        VStack_2.x = pVVar9->x;
-        VStack_2.y = pVVar9->y;
-        VStack_10.x = focusAABB._center.x - VStack_2.x * fStack_5;
-        fStack_7 = focusAABB._center.y - VStack_2.y * fStack_5;
-        VStack_10.y = 0.0;
-        VStack_10.z = 0.0;
-        uStack_11 = 0;
-        VStack_2.z = focusAABB._center.z - pVVar9->z * fStack_5;
-        method_00 = TypeInfo__RTG__CameraFocus__Data;
-        pCVar12 = (CameraFocus_Data *)func_?();
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)pCVar12,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-        (pCVar12->fields)._cameraWorldPosition.x = VStack_10.x;
-        (pCVar12->fields)._cameraWorldPosition.y = fStack_7;
-        (pCVar12->fields)._focusPoint.x = (float)(int)AVar1._center._0_8_;
-        (pCVar12->fields)._focusPoint.y = (float)(int)((ulonglong)AVar1._center._0_8_ >> 0x20);
-        VStack_10.z = VStack_2.z - focusAABB._center.z;
-        (pCVar12->fields)._cameraWorldPosition.z = VStack_2.z;
-        (pCVar12->fields)._focusPoint.z = focusAABB._center.z;
-        VStack_2.y = fStack_7 - focusAABB._center.y;
-        VStack_2.x = VStack_10.x - focusAABB._center.x;
-        VStack_2.z = VStack_10.z;
-        fVar3 = (float10)func_?(&VStack_2,0);
-        (pCVar12->fields)._focusPointOffset = (float)fVar3;
-        return pCVar12;
-      }
+  fVar2 = CameraEx::CameraEx_GetFrustumDistanceFromHeight(camera,fVar2,(MethodInfo *)0x0);
+  if ((focusSettings != (CameraFocusSettings *)0x0) &&
+     (fVar2 = fVar2 + (focusSettings->fields)._focusDistanceAdd, camera != (Camera *)0x0)) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar3 = (camera->fields)._._._.m_CachedPtr;
+    if (pvVar3 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+      pcVar4 = (code *)swi(3);
+      pCVar5 = (CameraFocus_Data *)(*pcVar4)();
+      return pCVar5;
+    }
+    pcVar4 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+      uVar6 = func_?(&UNK_?);
+      FUN_?(uVar6,0);
+      pcVar4 = (code *)swi(3);
+      pCVar5 = (CameraFocus_Data *)(*pcVar4)();
+      return pCVar5;
+    }
+    pcRam_? = pcVar4;
+    fVar7 = (float)(*pcRam_?)(pvVar3);
+    if (fVar2 < fVar7) {
+      fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_nearClipPlane
+                         (camera,(MethodInfo *)0x0);
+      fVar2 = fVar2 + (fVar7 - fVar2);
+    }
+    this = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                     ((Component *)camera,(MethodInfo *)0x0);
+    if (this != (Transform *)0x0) {
+      pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
+                         (aVStack_1,this,(MethodInfo *)0x0);
+      uVar9 = pVVar8->x;
+      uVar10 = (focusAABB->_center).x;
+      fVar11 = (float)uVar10 - (float)uVar9 * fVar2;
+      fVar7 = (focusAABB->_center).y - pVVar8->y * fVar2;
+      fVar2 = (focusAABB->_center).z - pVVar8->z * fVar2;
+      pCVar5 = (CameraFocus_Data *)FUN_?(TypeInfo__RTG__CameraFocus__Data);
+      (pCVar5->fields)._cameraWorldPosition.x = fVar11;
+      (pCVar5->fields)._cameraWorldPosition.y = fVar7;
+      uVar12 = (focusAABB->_center).x;
+      uVar13 = (focusAABB->_center).y;
+      (pCVar5->fields)._focusPoint.x = (float)uVar12;
+      (pCVar5->fields)._focusPoint.y = (float)uVar13;
+      (pCVar5->fields)._cameraWorldPosition.z = fVar2;
+      aVStack_1[0].z = fVar2 - (focusAABB->_center).z;
+      (pCVar5->fields)._focusPoint.z = (focusAABB->_center).z;
+      aVStack_1[0].y = fVar7 - (float)uVar13;
+      aVStack_1[0].x = fVar11 - (float)uVar12;
+      fVar2 = (float)FUN_?(aVStack_1);
+      (pCVar5->fields)._focusPointOffset = fVar2;
+      return pCVar5;
     }
   }
-  func_?();
-  pcVar13 = (code *)swi(3);
-  pCVar12 = (CameraFocus_Data *)(*pcVar13)();
-  return pCVar12;
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  pCVar5 = (CameraFocus_Data *)(*pcVar4)();
+  return pCVar5;
 }
 

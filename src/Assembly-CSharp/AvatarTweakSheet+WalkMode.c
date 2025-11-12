@@ -6,7 +6,9 @@ void Assembly-CSharp.dll::AvatarTweakSheet+WalkMode::AvatarTweakSheet_WalkMode__
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AvatarTweakSheet__WalkMode);
+    FUN_?(&TypeInfo__AvatarTweakSheet__WalkMode);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TypeInfo__AvatarTweakSheet__WalkMode->static_fields->walkSpeed = 8.0;

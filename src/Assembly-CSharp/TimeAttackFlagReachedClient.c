@@ -7,33 +7,35 @@ void Assembly-CSharp.dll::TimeAttackFlagReachedClient::TimeAttackFlagReachedClie
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__IBriefing);
+    FUN_?(&TypeInfo__IBriefing);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (winningConditionBriefingView != (IBriefing *)0x0) {
-    pIVar1 = winningConditionBriefingView->klass;
-    uVar2 = 0;
-    uVar3._0_1_ = (pIVar1->_1).rank;
-    uVar3._1_1_ = (pIVar1->_1).minimumAlignment;
-    if (uVar3 != 0) {
-      do {
-        if (pIVar1->interfaceOffsets[uVar2].interfaceType == (Il2CppClass *)TypeInfo__IBriefing) {
-          pIVar1 = winningConditionBriefingView->klass;
-          iVar4 = pIVar1->interfaceOffsets[uVar2].offset;
-          (*(code *)(&(pIVar1->vtable).AddBriefing_1)[iVar4].method)
-                    (winningConditionBriefingView,5,(&pIVar1[1]._0.image)[iVar4 * 2]);
-          return;
-        }
-        uVar2 = uVar2 + 1;
-      } while (uVar2 < uVar3);
-    }
-    puVar5 = (undefined4 *)func_?(winningConditionBriefingView,TypeInfo__IBriefing,1);
-    (*(code *)*puVar5)(winningConditionBriefingView,5,puVar5[1]);
+  if (winningConditionBriefingView == (IBriefing *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  uVar2 = 0;
+  pIVar3 = winningConditionBriefingView->klass;
+  uVar4._0_1_ = (pIVar3->_1).rank;
+  uVar4._1_1_ = (pIVar3->_1).minimumAlignment;
+  if (uVar4 != 0) {
+    do {
+      if (pIVar3->interfaceOffsets[uVar2].interfaceType == (Il2CppClass *)TypeInfo__IBriefing) {
+        pVVar5 = &(pIVar3->vtable).AddBriefing + (pIVar3->interfaceOffsets[uVar2].offset + 1);
+        goto code_?;
+      }
+      uVar2 = uVar2 + 1;
+    } while (uVar2 < uVar4);
+  }
+  pVVar5 = (VirtualInvokeData *)FUN_?(winningConditionBriefingView);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pVVar5->methodPtr)(winningConditionBriefingView,5,pVVar5->method,pVVar5->methodPtr);
   return;
 }
 
@@ -46,36 +48,22 @@ void Assembly-CSharp.dll::TimeAttackFlagReachedClient::TimeAttackFlagReachedClie
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__IDebriefing);
+    FUN_?(&TypeInfo__IDebriefing);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  uVar1 = (*(code *)(this->klass->vtable).get_HighScores.method)
-                    (this,(this->klass->vtable).Traverse_1.methodPtr);
-  bVar2 = (*(code *)(this->klass->vtable).get_IsTeamMode.method)
-                    (this,(this->klass->vtable).get_HighScores.methodPtr);
-  this = (TimeAttackFlagReachedClient *)(uint)bVar2;
+  (*(this->klass->vtable).get_HighScores.methodPtr)
+            (this,(this->klass->vtable).get_HighScores.method);
+  (*(this->klass->vtable).get_IsTeamMode.methodPtr)
+            (this,(this->klass->vtable).get_IsTeamMode.method);
   if (winningConditionDebriefingView != (IDebriefing *)0x0) {
-    func_?(0,TypeInfo__IDebriefing,winningConditionDebriefingView,5,uVar1,this);
+    FUN_?();
     return;
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
-  return;
-}
-
-
-/* TimeAttackFlagReachedClient(WinningCondition, Int32, GameStatCounterManager) */
-
-void Assembly-CSharp.dll::TimeAttackFlagReachedClient::TimeAttackFlagReachedClient__ctor
-               (TimeAttackFlagReachedClient *this,WinningCondition *parent,int32_t id,
-               GameStatCounterManager *gameCounterManager,MethodInfo *method)
-
-{
-  MVWorldObject.dll::WinningCondition::WinningCondition__ctor
-            ((WinningCondition *)this,parent,id,gameCounterManager,0,1,
-             GameStatCounterType__Enum_TimeAttackFlag,WinningConditionPresentStyle__Enum_OneWinner,
-             (MethodInfo *)0x0);
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

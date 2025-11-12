@@ -10,93 +10,90 @@ void Assembly-CSharp.dll::ARepository+<>c__DisplayClass11_0::
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__MV__WorldObject__WorldObjectDataParameters);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__WorldObjectDataParameters);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((undefined1)dataType != KogamaDataType__Enum_WorldObjects) {
-    return;
-  }
-  dataType = CONCAT13(3,(undefined3)dataType);
-  pOVar1 = (Object *)
-           func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,
-                           (byte *)((int)&dataType + 3));
-  if (returnData == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+  if ((char)dataType == '\x01') {
+    auStackX_18[0] = 3;
+    pOVar1 = (Object *)
+             FUN_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,auStackX_18);
+    if (returnData == (Dictionary_2_System_Object_System_Object_ *)0x0) {
 code_?:
-    func_?();
-    TVar2.m_Index = extraout_EDX;
-  }
-  else {
-    bVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)returnData,
-                       pOVar1,
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    iVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+            UIElements::StyleComplexSelector+PseudoStateData]::
+            Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
+                      ((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                        *)returnData,pOVar1,
                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                      );
-    if (bVar3 == 0) {
-      return;
-    }
-    dataType = CONCAT13(3,(undefined3)dataType);
-    pOVar1 = (Object *)
-             func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,
-                             (byte *)((int)&dataType + 3));
-    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)returnData,
-                       pOVar1,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    uVar4 = CONCAT44(TypeInfo__System__Int32,TVar2.m_Index);
-    if (TVar2.m_Index == 0) goto code_?;
-    if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
-        (TypeInfo__System__Int32->_0).element_class) goto code_?;
-    func_?(TVar2.m_Index);
-    if ((this->fields).onWorldObjectExtracted == (ARepository_OnWorldObjectTypeExtracted *)0x0) {
-      return;
-    }
-    pAVar5 = (this->fields).onWorldObjectExtracted;
-    dataType = CONCAT13(7,(undefined3)dataType);
-    pOVar1 = (Object *)
-             func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,
-                             (byte *)((int)&dataType + 3));
-    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)returnData,
-                       pOVar1,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    if ((TVar2.m_Index == 0) ||
-       ((returnData = (Dictionary_2_System_Object_System_Object_ *)
-                      TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-        , (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-          naturalAligment <= *(byte *)(*(int *)TVar2.m_Index + 0xb8) &&
-        (*(Dictionary_2_System_Object_System_Object___Class **)
-          (*(int *)(*(int *)TVar2.m_Index + 100) + -4 +
-          (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                ->_1).naturalAligment * 4) ==
-         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)))) {
-      (*(pAVar5->fields)._._.invoke_impl)
-                ((pAVar5->fields)._._.method_code,(pAVar5->fields)._._.method,TVar2.m_Index);
-      return;
+                       ->klass->rgctx_data[0x21].method);
+    if (-1 < iVar3) {
+      auStackX_18[0] = 3;
+      pOVar1 = (Object *)
+               FUN_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,auStackX_18);
+      pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__get_Item
+                         (returnData,pOVar1,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         );
+      if (pOVar1 == (Object *)0x0) goto code_?;
+      if ((pOVar1->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+        FUN_?(pOVar1,lRam_?);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      if ((this->fields).onWorldObjectExtracted != (ARepository_OnWorldObjectTypeExtracted *)0x0) {
+        pAVar4 = (this->fields).onWorldObjectExtracted;
+        uVar5 = *(undefined4 *)&pOVar1[1].klass;
+        auStackX_18[0] = 7;
+        pOVar1 = (Object *)
+                 FUN_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,auStackX_18);
+        pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                 Object]::Dictionary_2_System_Object_System_Object__get_Item
+                           (returnData,pOVar1,
+                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                           );
+        if (pOVar1 != (Object *)0x0) {
+          bVar6 = (
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                  ->_1).naturalAligment;
+          if (((pOVar1->klass->_1).naturalAligment < bVar6) ||
+             ((Dictionary_2_System_Object_System_Object___Class *)
+              (pOVar1->klass->_1).typeHierarchy[(ulonglong)bVar6 - 1] !=
+              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+            FUN_?();
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+        }
+        (*(pAVar4->fields)._._.invoke_impl)
+                  ((pAVar4->fields)._._.method_code,uVar5,pOVar1,(pAVar4->fields)._._.method);
+      }
     }
   }
-  uVar4 = func_?(TVar2.m_Index,returnData);
-code_?:
-  func_?(uVar4);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
   return;
 }
 

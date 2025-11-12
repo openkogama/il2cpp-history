@@ -2,32 +2,46 @@
 /* Single ComputeAvatarWaterProximity(Vector3) */
 
 float Assembly-CSharp.dll::WaterState::WaterState_ComputeAvatarWaterProximity
-                (WaterState *this,Vector3 position,MethodInfo *method)
+                (WaterState *this,Vector3 *position,MethodInfo *method)
 
 {
-  pWVar1 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0);
-  if (pWVar1 != (WaterPlaneManager *)0x0) {
-    bVar2 = WaterPlaneManager::WaterPlaneManager_get_IsActive(pWVar1,(MethodInfo *)0x0);
-    if (bVar2 == 0) {
-      return 0.0;
-    }
-    pWVar1 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0);
-    if (pWVar1 != (WaterPlaneManager *)0x0) {
-      fVar3 = WaterPlaneManager::WaterPlaneManager_get_WaterLevel(pWVar1,(MethodInfo *)0x0);
-      fVar3 = (fVar3 - position.y) / _UNK_?;
-      if (fVar3 < 0.0) {
-        return 0.0;
-      }
-      if (fVar3 <= _UNK_?) {
-        return fVar3;
-      }
-      return 1.0;
-    }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  fVar5 = (float10)(*pcVar4)();
-  return (float)fVar5;
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar1 != (MVGameControllerBase *)0x0) &&
+     (pWVar2 = (pMVar1->fields).waterPlaneManager, pWVar2 != (WaterPlaneManager *)0x0)) {
+    bVar3 = WaterPlaneManager::WaterPlaneManager_get_IsActive(pWVar2,(MethodInfo *)0x0);
+    if (bVar3 != 0) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if ((pMVar1 == (MVGameControllerBase *)0x0) ||
+         (pWVar2 = (pMVar1->fields).waterPlaneManager, pWVar2 == (WaterPlaneManager *)0x0))
+      goto code_?;
+      fVar4 = WaterPlaneManager::WaterPlaneManager_get_WaterLevel(pWVar2,(MethodInfo *)0x0);
+      fVar4 = (fVar4 - position->y) / _UNK_?;
+      if (0.0 <= fVar4) {
+        if (_UNK_? < fVar4) {
+          fVar4 = _UNK_?;
+        }
+        return fVar4;
+      }
+    }
+    return 0.0;
+  }
+code_?:
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  fVar4 = (float)(*pcVar5)();
+  return fVar4;
 }
 
 
@@ -37,13 +51,19 @@ void Assembly-CSharp.dll::WaterState::WaterState_Destroy(WaterState *this,Method
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__remove_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
-                   );
-    func_?(&
-                    TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
-                   );
-    func_?(&MethodInfo__WaterState__OnAvatarModeChange_MV__Common__SpawnRoleModeType_);
+    FUN_?(&
+                  MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__remove_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsAlive((MethodInfo *)0x0);
@@ -53,30 +73,21 @@ void Assembly-CSharp.dll::WaterState::WaterState_Destroy(WaterState *this,Method
   pSVar2 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
                      ((MethodInfo *)0x0);
   if (pSVar2 != (SpawnRoleDataMediator *)0x0) {
-    this_00 = (SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-              (pSVar2->fields).spawnRoleMode;
-    value = (SpawnRoleVariable_1_T_SubDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *
-            )func_?(
-                            TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
-                            );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-    UnityAction_1_System_Int32Enum___ctor
-              ((UnityAction_1_System_Int32Enum_ *)value,(Object *)this,
-               MethodInfo__WaterState__OnAvatarModeChange_MV__Common__SpawnRoleModeType_,
-               (MethodInfo *)0x0);
-    if (this_00 != (SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
-      Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-      SpawnRoleVariable`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-      SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__remove_OnChange
-                (this_00,value,
-                 MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__remove_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
-                );
+    pSVar3 = (pSVar2->fields).spawnRoleMode;
+    uVar4 = FUN_?(
+                         TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
+                         );
+    FUN_?(uVar4,this,
+                  MethodInfo__WaterState__OnAvatarModeChange_MV__Common__SpawnRoleModeType_);
+    if (pSVar3 != (SpawnRoleDataMediator_SpawnRoleVariableInternal_1_MV_Common_SpawnRoleModeType_ *)
+                  0x0) {
+      FUN_?(pSVar3,uVar4);
       return;
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -98,19 +109,29 @@ float Assembly-CSharp.dll::WaterState::WaterState_UnderwaterJumpPowerModifierCal
                 (WaterState *this,MethodInfo *method)
 
 {
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0);
-  if (this_00 == (WaterPlaneManager *)0x0) {
-    func_?();
-    pcVar1 = (code *)swi(3);
-    fVar2 = (float10)(*pcVar1)();
-    return (float)fVar2;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  fVar3 = WaterPlaneManager::WaterPlaneManager_ComputeAvatarWaterProximity
-                    (this_00,(this->fields).worldPosition,(MethodInfo *)0x0);
-  if (_UNK_? < (double)fVar3) {
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar1 != (MVGameControllerBase *)0x0) &&
+     (this_00 = (pMVar1->fields).waterPlaneManager, this_00 != (WaterPlaneManager *)0x0)) {
+    VStack_2.x = (this->fields).worldPosition.x;
+    VStack_2.y = (this->fields).worldPosition.y;
+    VStack_2.z = (this->fields).worldPosition.z;
+    fVar3 = WaterPlaneManager::WaterPlaneManager_ComputeAvatarWaterProximity
+                      (this_00,&VStack_2,(MethodInfo *)0x0);
+    if (_UNK_? < (double)fVar3) {
+      return TypeRef__System__Activator__T._0_4_;
+    }
     return _UNK_?;
   }
-  return 1.0;
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  fVar3 = (float)(*pcVar4)();
+  return fVar3;
 }
 
 
@@ -120,75 +141,74 @@ float Assembly-CSharp.dll::WaterState::WaterState_UnderwaterModifierCallback
                 (WaterState *this,MethodInfo *method)
 
 {
-  fVar1 = WaterState_ComputeAvatarWaterProximity
-                    (this,(this->fields).worldPosition,(MethodInfo *)0x0);
-  return (_UNK_? - fVar1) * _UNK_? + _UNK_?;
+  aVStack_1[0].x = (this->fields).worldPosition.x;
+  aVStack_1[0].y = (this->fields).worldPosition.y;
+  aVStack_1[0].z = (this->fields).worldPosition.z;
+  fVar2 = WaterState_ComputeAvatarWaterProximity(this,aVStack_1,(MethodInfo *)0x0);
+  return (_UNK_? - fVar2) * _UNK_? + _UNK_?;
 }
 
 
 /* Void Update(Vector3, MVInteractableBase) */
 
 void Assembly-CSharp.dll::WaterState::WaterState_Update
-               (WaterState *this,Vector3 worldPosition,MVInteractableBase *avatarInteractable,
+               (WaterState *this,Vector3 *worldPosition,MVInteractableBase *avatarInteractable,
                MethodInfo *method)
 
 {
-  (this->fields).worldPosition.x = (float)(int)worldPosition._0_8_;
-  (this->fields).worldPosition.y = (float)(int)((ulonglong)worldPosition._0_8_ >> 0x20);
-  (this->fields).worldPosition.z = worldPosition.z;
-  fVar1 = (this->fields).worldPosition.y;
-  pWVar2 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0);
-  if (pWVar2 == (WaterPlaneManager *)0x0) goto code_?;
-  fVar3 = WaterPlaneManager::WaterPlaneManager_get_WaterLevel(pWVar2,(MethodInfo *)0x0);
-  if (fVar1 < fVar3) {
-    pWVar2 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0);
-    if (pWVar2 == (WaterPlaneManager *)0x0) goto code_?;
-    bVar4 = WaterPlaneManager::WaterPlaneManager_get_IsActive(pWVar2,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      if (avatarInteractable == (MVInteractableBase *)0x0) goto code_?;
-      (*(code *)(avatarInteractable->klass->vtable).__unknown_4.method)(avatarInteractable);
-      pWVar2 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0);
-      if (pWVar2 == (WaterPlaneManager *)0x0) goto code_?;
-      bVar4 = WaterPlaneManager::WaterPlaneManager_get_IsLethal(pWVar2,(MethodInfo *)0x0);
-      if (bVar4 != 0) {
-        (*(code *)(avatarInteractable->klass->vtable).__unknown_4.method)
-                  (avatarInteractable,0x14,0xffffffff);
-      }
-      goto code_?;
-    }
-  }
-  if (avatarInteractable == (MVInteractableBase *)0x0) {
-code_?:
-    func_?();
-    pcVar5 = (code *)swi(3);
-    (*pcVar5)();
+  fVar1 = worldPosition->y;
+  fVar2 = worldPosition->z;
+  (this->fields).worldPosition.x = worldPosition->x;
+  (this->fields).worldPosition.y = fVar1;
+  (this->fields).worldPosition.z = fVar2;
+  WaterState_UpdateModifiers(this,avatarInteractable,(MethodInfo *)0x0);
+  aVStack_3[0].x = (this->fields).worldPosition.x;
+  aVStack_3[0].y = (this->fields).worldPosition.y;
+  aVStack_3[0].z = (this->fields).worldPosition.z;
+  fVar2 = WaterState_ComputeAvatarWaterProximity(this,aVStack_3,(MethodInfo *)0x0);
+  if ((fVar2 < _UNK_? ^ (this->fields).hasGillsNoLungs) == 1) {
+    (this->fields).oxygen = (this->fields).oxygenMax;
     return;
   }
-  cVar6 = (*(code *)(avatarInteractable->klass->vtable).__unknown_5.method)
-                    (avatarInteractable,9,(avatarInteractable->klass->vtable).__unknown_6.methodPtr)
-  ;
-  if (cVar6 != '\0') {
-    (*(code *)(avatarInteractable->klass->vtable).__unknown_6.method)(avatarInteractable,9);
+  fVar2 = (this->fields).oxygen;
+  pcVar4 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+    uVar5 = func_?(&UNK_?);
+    FUN_?(uVar5,0);
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
+    return;
   }
-code_?:
-  fVar1 = WaterState_ComputeAvatarWaterProximity
-                    (this,(this->fields).worldPosition,(MethodInfo *)0x0);
-  if (_UNK_? <= fVar1 == (bool)(this->fields).hasGillsNoLungs) {
-    (this->fields).oxygen = (this->fields).oxygenMax;
+  pcRam_? = pcVar4;
+  fVar1 = (float)(*pcRam_?)();
+  fVar2 = fVar2 - fVar1;
+  fVar1 = 0.0;
+  if (0.0 <= fVar2) {
+    fVar1 = fVar2;
   }
-  else {
-    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    fVar1 = 0.0;
-    if (0.0 <= 3.349319e-29 - fVar3) {
-      fVar1 = 3.349319e-29 - fVar3;
-    }
-    (this->fields).oxygen = fVar1;
-    if (fVar1 <= 0.0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-      pIStack7 = (avatarInteractable->klass->vtable).__unknown_1.methodPtr;
-      (*(code *)(avatarInteractable->klass->vtable).__unknown.method)();
+  (this->fields).oxygen = fVar1;
+  if (fVar1 <= 0.0) {
+    pcVar4 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+      uVar5 = func_?(&UNK_?);
+      FUN_?(uVar5,0);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
       return;
     }
+    pcRam_? = pcVar4;
+    fVar2 = (float)(*pcRam_?)();
+    if (avatarInteractable == (MVInteractableBase *)0x0) {
+      FUN_?();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    (*(avatarInteractable->klass->vtable).__unknown.methodPtr)
+              (avatarInteractable,fVar2 * _UNK_?,0,6,
+               (avatarInteractable->klass->vtable).__unknown.method);
   }
   return;
 }
@@ -200,24 +220,53 @@ void Assembly-CSharp.dll::WaterState::WaterState_UpdateLocalAvatarOxygen
                (WaterState *this,MVInteractableBase *avatarInteractable,MethodInfo *method)
 
 {
-  fVar1 = WaterState_ComputeAvatarWaterProximity
-                    (this,(this->fields).worldPosition,(MethodInfo *)0x0);
-  if (_UNK_? <= fVar1 == (bool)(this->fields).hasGillsNoLungs) {
+  aVStack_1[0].x = (this->fields).worldPosition.x;
+  aVStack_1[0].y = (this->fields).worldPosition.y;
+  aVStack_1[0].z = (this->fields).worldPosition.z;
+  fVar2 = WaterState_ComputeAvatarWaterProximity(this,aVStack_1,(MethodInfo *)0x0);
+  if ((fVar2 < _UNK_? ^ (this->fields).hasGillsNoLungs) == 1) {
     (this->fields).oxygen = (this->fields).oxygenMax;
+    return;
   }
-  else {
-    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    fVar1 = 0.0;
-    if (0.0 <= 3.3490947e-29 - fVar2) {
-      fVar1 = 3.3490947e-29 - fVar2;
-    }
-    (this->fields).oxygen = fVar1;
-    if (fVar1 <= 0.0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-      uStack3 = *(undefined4 *)(_UNK_? + 0xec);
-      (**(code **)(_UNK_? + 0xe8))();
+  fVar2 = (this->fields).oxygen;
+  pcVar3 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+    uVar4 = func_?(&UNK_?);
+    FUN_?(uVar4,0);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pcRam_? = pcVar3;
+  fVar5 = (float)(*pcRam_?)();
+  fVar2 = fVar2 - fVar5;
+  fVar5 = 0.0;
+  if (0.0 <= fVar2) {
+    fVar5 = fVar2;
+  }
+  (this->fields).oxygen = fVar5;
+  if (fVar5 <= 0.0) {
+    pcVar3 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
+    pcRam_? = pcVar3;
+    fVar2 = (float)(*pcRam_?)();
+    if (avatarInteractable == (MVInteractableBase *)0x0) {
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    (*(avatarInteractable->klass->vtable).__unknown.methodPtr)
+              (avatarInteractable,fVar2 * _UNK_?,0,6,
+               (avatarInteractable->klass->vtable).__unknown.method);
   }
   return;
 }
@@ -230,26 +279,50 @@ void Assembly-CSharp.dll::WaterState::WaterState_UpdateModifiers
 
 {
   fVar1 = (this->fields).worldPosition.y;
-  pWVar2 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0);
-  if (pWVar2 == (WaterPlaneManager *)0x0) goto code_?;
-  fVar3 = WaterPlaneManager::WaterPlaneManager_get_WaterLevel(pWVar2,(MethodInfo *)0x0);
-  if (fVar1 < fVar3) {
-    pWVar2 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0);
-    if (pWVar2 == (WaterPlaneManager *)0x0) goto code_?;
-    bVar4 = WaterPlaneManager::WaterPlaneManager_get_IsActive(pWVar2,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar2 == (MVGameControllerBase *)0x0) ||
+     (pWVar3 = (pMVar2->fields).waterPlaneManager, pWVar3 == (WaterPlaneManager *)0x0))
+  goto code_?;
+  fVar4 = WaterPlaneManager::WaterPlaneManager_get_WaterLevel(pWVar3,(MethodInfo *)0x0);
+  if (fVar1 < fVar4) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if ((pMVar2 == (MVGameControllerBase *)0x0) ||
+       (pWVar3 = (pMVar2->fields).waterPlaneManager, pWVar3 == (WaterPlaneManager *)0x0))
+    goto code_?;
+    bVar5 = WaterPlaneManager::WaterPlaneManager_get_IsActive(pWVar3,(MethodInfo *)0x0);
+    if (bVar5 != 0) {
       if (avatarInteractable != (MVInteractableBase *)0x0) {
-        (*(code *)(avatarInteractable->klass->vtable).__unknown_4.method)
-                  (avatarInteractable,9,0xffffffff);
-        pWVar2 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0)
-        ;
-        if (pWVar2 != (WaterPlaneManager *)0x0) {
-          bVar4 = WaterPlaneManager::WaterPlaneManager_get_IsLethal(pWVar2,(MethodInfo *)0x0);
-          if (bVar4 == 0) {
+        (*(avatarInteractable->klass->vtable).__unknown_4.methodPtr)
+                  (avatarInteractable,9,0xffffffff,(this->fields).additionalUnderWaterModifiers,
+                   (avatarInteractable->klass->vtable).__unknown_4.method);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+        if (((pMVar2 != (MVGameControllerBase *)0x0) &&
+            (pWVar3 = (pMVar2->fields).waterPlaneManager, pWVar3 != (WaterPlaneManager *)0x0)) &&
+           (pWVar6 = (pWVar3->fields).water, pWVar6 != (Water *)0x0)) {
+          if ((pWVar6->fields).isLethal == 0) {
             return;
           }
-          (*(code *)(avatarInteractable->klass->vtable).__unknown_4.method)
-                    (avatarInteractable,0x14,0xffffffff);
+          (*(avatarInteractable->klass->vtable).__unknown_4.methodPtr)
+                    (avatarInteractable,0x14,0xffffffff,0,
+                     (avatarInteractable->klass->vtable).__unknown_4.method);
           return;
         }
       }
@@ -257,21 +330,22 @@ void Assembly-CSharp.dll::WaterState::WaterState_UpdateModifiers
     }
   }
   if (avatarInteractable != (MVInteractableBase *)0x0) {
-    cVar5 = (*(code *)(avatarInteractable->klass->vtable).__unknown_5.method)
-                      (avatarInteractable,9,
-                       (avatarInteractable->klass->vtable).__unknown_6.methodPtr);
-    if (cVar5 == '\0') {
+    cVar7 = (*(avatarInteractable->klass->vtable).__unknown_5.methodPtr)
+                      (avatarInteractable,9,(avatarInteractable->klass->vtable).__unknown_5.method);
+    if (cVar7 == '\0') {
       return;
     }
-    (*(code *)(avatarInteractable->klass->vtable).__unknown_6.method)
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(avatarInteractable->klass->vtable).__unknown_6.methodPtr)
               (avatarInteractable,9,0xffffffff,
-               (avatarInteractable->klass->vtable).__unknown_7.methodPtr);
+               (avatarInteractable->klass->vtable).__unknown_6.method);
     return;
   }
 code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -283,117 +357,188 @@ void Assembly-CSharp.dll::WaterState::WaterState__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AvatarModifierPackage__AvatarModifier);
-    func_?(&TypeInfo__System__Func<float>);
-    func_?(&
-                    MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
-                   );
-    func_?(&
-                    TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
-                   );
-    func_?(&MethodInfo__WaterState__OnAvatarModeChange_MV__Common__SpawnRoleModeType_);
-    func_?(&MethodInfo__WaterState__UnderwaterJumpPowerModifierCallback__);
-    func_?(&MethodInfo__WaterState__UnderwaterModifierCallback__);
-    func_?(&StringLiteral_OxygenSupply);
-    func_?(&StringLiteral_BreathesWater);
+    FUN_?(&TypeInfo__AvatarModifierPackage__AvatarModifier);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Func<float>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__WaterState__OnAvatarModeChange_MV__Common__SpawnRoleModeType_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__WaterState__UnderwaterJumpPowerModifierCallback__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__WaterState__UnderwaterModifierCallback__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_OxygenSupply);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_BreathesWater);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  bVar1 = cRam_? == '\0';
   (this->fields).oxygenMax = 20.0;
   (this->fields).oxygen = 20.0;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+  if (bVar1) {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-  fVar2 = (pVVar1->zeroVector).y;
-  fVar3 = (pVVar1->zeroVector).z;
-  (this->fields).worldPosition.x = (pVVar1->zeroVector).x;
-  (this->fields).worldPosition.y = fVar2;
-  (this->fields).worldPosition.z = fVar3;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  pAVar4 = (AvatarModifierPackage_AvatarModifier__Array *)
-           func_?(TypeInfo__AvatarModifierPackage__AvatarModifier,2);
-  pFVar5 = (Func_1_Single_ *)func_?(TypeInfo__System__Func<float>);
-  mscorlib.dll::System::Func`1[Single]::Func_1_Single___ctor
-            (pFVar5,(Object *)this,MethodInfo__WaterState__UnderwaterModifierCallback__,
-             (MethodInfo *)0x0);
-  pFVar6 = (Func_1_Single_ *)0x0;
-  uVar7._0_4_ = 0;
-  uVar7._4_4_ = 0;
-  mscorlib.dll::System::ValueTuple`3[Int32Enum,Int32Enum,Object]::
-  ValueTuple_3_Int32Enum_Int32Enum_Object___ctor
-            ((ValueTuple_3_Int32Enum_Int32Enum_Object_ *)&stack0xfffffff0,0,3,(Object *)pFVar5,
-             (MethodInfo *)0x0);
-  if (pAVar4 != (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
-    if (pAVar4->max_length == 0) goto code_?;
-    pAVar4->vector[0].avatarModifierType = (int32_t)uVar7;
-    pAVar4->vector[0].avatarModifierEffect = SUB84(uVar7,4);
-    pAVar4->vector[0].value = pFVar6;
-    func_?();
-    pFVar5 = (Func_1_Single_ *)func_?();
-    mscorlib.dll::System::Func`1[Single]::Func_1_Single___ctor
-              (pFVar5,(Object *)this,MethodInfo__WaterState__UnderwaterJumpPowerModifierCallback__,
-               (MethodInfo *)0x0);
-    pFVar6 = (Func_1_Single_ *)0x0;
-    uStack_8._0_4_ = 0;
-    uStack_8._4_4_ = 0;
-    mscorlib.dll::System::ValueTuple`3[Int32Enum,Int32Enum,Object]::
-    ValueTuple_3_Int32Enum_Int32Enum_Object___ctor
-              ((ValueTuple_3_Int32Enum_Int32Enum_Object_ *)&uStack_8,0,2,(Object *)pFVar5,
-               (MethodInfo *)0x0);
-    if (pAVar4->max_length < 2) goto code_?;
-    pAVar4->vector[1].avatarModifierType = (int32_t)uStack_8;
-    pAVar4->vector[1].avatarModifierEffect = uStack_8._4_4_;
-    pAVar4->vector[1].value = pFVar6;
-    func_?();
-    (this->fields).additionalUnderWaterModifiers = pAVar4;
-    func_?();
-    uStack_8._4_4_ = (int32_t)&UNK_?;
-    pSVar9 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
-                       ((MethodInfo *)0x0);
-    if (pSVar9 != (SpawnRoleDataMediator *)0x0) {
-      this_00 = (SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                (pSVar9->fields).spawnRoleMode;
-      value = (SpawnRoleVariable_1_T_SubDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-      UnityAction_1_System_Int32Enum___ctor
-                ((UnityAction_1_System_Int32Enum_ *)value,(Object *)this,
-                 MethodInfo__WaterState__OnAvatarModeChange_MV__Common__SpawnRoleModeType_,
-                 (MethodInfo *)0x0);
-      if (this_00 != (SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0)
-      {
-        uStack_8._4_4_ = (int32_t)&UNK_?;
-        Assets::Scripts::Network::Player::SpawnRoles::SpawnRoleData::SpawnRoleVariableTypes::
-        SpawnRoleVariable`1[Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-        SpawnRoleVariable_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__add_OnChange
-                  (this_00,value,
-                   MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__add_OnChange_Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>_
-                  );
-        if (skillDataManager != (WorldObjectSkillDataManager *)0x0) {
-          bVar10 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
-                            (skillDataManager,StringLiteral_OxygenSupply,(MethodInfo *)0x0);
-          fVar3 = _UNK_?;
-          if (bVar10 != 0) {
-            fVar3 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_GetSkillFloatValue
-                              (skillDataManager,StringLiteral_OxygenSupply,(MethodInfo *)0x0);
+  pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar3 = (pVVar2->zeroVector).y;
+  fVar4 = (pVVar2->zeroVector).z;
+  (this->fields).worldPosition.x = (pVVar2->zeroVector).x;
+  (this->fields).worldPosition.y = fVar3;
+  (this->fields).worldPosition.z = fVar4;
+  pAVar5 = (AvatarModifierPackage_AvatarModifier__Array *)
+           FUN_?(TypeInfo__AvatarModifierPackage__AvatarModifier,2);
+  uVar6 = FUN_?(TypeInfo__System__Func<float>);
+  FUN_?(uVar6,this,MethodInfo__WaterState__UnderwaterModifierCallback__);
+  if (iRam_? != 0) {
+    uVar7 = (uint)((ulonglong)&uStack_8 >> 0xc);
+    uVar9 = (ulonglong)((uVar7 & 0x1fffff) >> 6);
+    do {
+      uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+      puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+      LOCK();
+      bVar1 = uVar10 == *puVar11;
+      if (bVar1) {
+        *puVar11 = uVar10 | 1L << (uVar7 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  iVar12 = iRam_?;
+  uStack_8 = uVar6;
+  if (pAVar5 == (AvatarModifierPackage_AvatarModifier__Array *)0x0) {
+code_?:
+    FUN_?();
+    pcVar13 = (code *)swi(3);
+    (*pcVar13)();
+    return;
+  }
+  if ((int)pAVar5->max_length != 0) {
+    uStack_8._0_4_ = (undefined4)uVar6;
+    uStack_8._4_4_ = (undefined4)((ulonglong)uVar6 >> 0x20);
+    pAVar5->vector[0].avatarModifierType = 0;
+    pAVar5->vector[0].avatarModifierEffect = 3;
+    *(undefined4 *)&pAVar5->vector[0].value = (undefined4)uStack_8;
+    *(undefined4 *)((longlong)&pAVar5->vector[0].value + 4) = uStack_8._4_4_;
+    if (iVar12 != 0) {
+      uVar7 = (uint)((ulonglong)&pAVar5->vector[0].value >> 0xc);
+      uVar9 = (ulonglong)((uVar7 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar1 = uVar10 == *puVar11;
+        if (bVar1) {
+          *puVar11 = uVar10 | 1L << (uVar7 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar1);
+    }
+    pFVar14 = (Func_1_Single_ *)FUN_?(TypeInfo__System__Func<float>);
+    FUN_?(pFVar14,this,MethodInfo__WaterState__UnderwaterJumpPowerModifierCallback__);
+    uStack_15 = 0;
+    uStack_16 = 2;
+    if (iRam_? != 0) {
+      uVar7 = (uint)((ulonglong)&pFStack_17 >> 0xc);
+      uVar9 = (ulonglong)((uVar7 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar1 = uVar10 == *puVar11;
+        if (bVar1) {
+          *puVar11 = uVar10 | 1L << (uVar7 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar1);
+    }
+    iVar12 = iRam_?;
+    pFStack_17 = pFVar14;
+    if (1 < (uint)pAVar5->max_length) {
+      pAVar5->vector[1].avatarModifierType = 0;
+      pAVar5->vector[1].avatarModifierEffect = 2;
+      pAVar5->vector[1].value = pFVar14;
+      if (iVar12 != 0) {
+        uVar7 = (uint)((ulonglong)&pAVar5->vector[1].value >> 0xc);
+        uVar9 = (ulonglong)((uVar7 & 0x1fffff) >> 6);
+        do {
+          uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+          puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+          LOCK();
+          bVar1 = uVar10 == *puVar11;
+          if (bVar1) {
+            *puVar11 = uVar10 | 1L << (uVar7 & 0x3f);
           }
-          (this->fields).oxygenMax = fVar3;
+          UNLOCK();
+          iVar12 = iRam_?;
+        } while (!bVar1);
+      }
+      (this->fields).additionalUnderWaterModifiers = pAVar5;
+      if (iVar12 != 0) {
+        uVar7 = (uint)((ulonglong)&this->fields >> 0xc);
+        uVar9 = (ulonglong)((uVar7 & 0x1fffff) >> 6);
+        do {
+          uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+          puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+          LOCK();
+          bVar1 = uVar10 == *puVar11;
+          if (bVar1) {
+            *puVar11 = uVar10 | 1L << (uVar7 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar1);
+      }
+      pSVar18 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                          ((MethodInfo *)0x0);
+      if (pSVar18 != (SpawnRoleDataMediator *)0x0) {
+        pSVar19 = (pSVar18->fields).spawnRoleMode;
+        uVar6 = FUN_?(
+                              TypeInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable_1_T___SubDelegate<MV::Common::SpawnRoleModeType>
+                              );
+        FUN_?(uVar6,this);
+        if ((pSVar19 != (SpawnRoleDataMediator_SpawnRoleVariableInternal_1_MV_Common_SpawnRoleModeType_
+                        *)0x0) &&
+           (FUN_?(pSVar19,uVar6), skillDataManager != (WorldObjectSkillDataManager *)0x0)) {
+          bVar20 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
+                            (skillDataManager,StringLiteral_OxygenSupply,(MethodInfo *)0x0);
+          fVar4 = _UNK_?;
+          if (bVar20 != 0) {
+            fVar4 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_GetSkillFloatValue
+                               (skillDataManager,StringLiteral_OxygenSupply,(MethodInfo *)0x0);
+          }
+          (this->fields).oxygenMax = fVar4;
           (this->fields).oxygen = (this->fields).oxygenMax;
-          bVar10 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
+          bVar20 = WorldObjectSkillDataManager::WorldObjectSkillDataManager_HasSkill
                             (skillDataManager,StringLiteral_BreathesWater,(MethodInfo *)0x0);
-          (this->fields).hasGillsNoLungs = bVar10;
+          (this->fields).hasGillsNoLungs = bVar20;
           return;
         }
       }
+      goto code_?;
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  FUN_?();
+  pcVar13 = (code *)swi(3);
+  (*pcVar13)();
   return;
 }
 

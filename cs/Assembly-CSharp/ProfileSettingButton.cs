@@ -18,7 +18,7 @@ public class ProfileSettingButton : MonoBehaviour
 	private ProfileSettingButtonType profileSettingButtonType;
 	[SerializeField]
 	private ProfileSettingKey profileSettingKey;
-	private Button button;
+	private UnityEngine.UI.Button button;
 	private bool isIncrease;
 	private int minValue;
 	private int maxValue;

@@ -6,189 +6,224 @@ void Assembly-CSharp.dll::AccessoryMenuButton::AccessoryMenuButton_CalculateShou
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>_MethodInfo__HighlightManager__GetHighLights<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_MV__WorldObject__HighlightSystem__HighlightType_
-                   );
-    func_?(&TypeInfo__HighlightManager);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__Add_AccessoryDataClient_
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__List__);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>__get_Item_int_
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__List<AccessoryDataClient>);
-    func_?(&
-                    AccessoryPreviewPopup_MethodInfo__UnityEngine__Object__Instantiate<AccessoryPreviewPopup>_AccessoryPreviewPopup_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&
-                    MethodInfo__AccessoryMenuButton____c__DisplayClass11_0___CalculateShouldShowAccessoryPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__AccessoryMenuButton____c__DisplayClass11_0);
-    func_?(&
-                    MethodInfo__AccessoryMenuButton____c__DisplayClass11_1___CalculateShouldShowAccessoryPopup_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__AccessoryMenuButton____c__DisplayClass11_1);
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>_MethodInfo__HighlightManager__GetHighLights<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_MV__WorldObject__HighlightSystem__HighlightType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__HighlightManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__Add_AccessoryDataClient_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__get_Count__)
+    ;
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<AccessoryDataClient>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  AccessoryPreviewPopup_MethodInfo__UnityEngine__Object__Instantiate<AccessoryPreviewPopup>_AccessoryPreviewPopup_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__AccessoryMenuButton____c__DisplayClass11_0___CalculateShouldShowAccessoryPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__AccessoryMenuButton____c__DisplayClass11_0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__AccessoryMenuButton____c__DisplayClass11_1___CalculateShouldShowAccessoryPopup_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__AccessoryMenuButton____c__DisplayClass11_1);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_01 = TypeInfo__AccessoryMenuButton____c__DisplayClass11_0;
-  pOVar1 = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
+  pOVar1 = (Object *)FUN_?(TypeInfo__AccessoryMenuButton____c__DisplayClass11_0);
   if (pOVar1 == (Object *)0x0) {
 code_?:
-    func_?();
+    FUN_?();
     pcVar2 = (code *)swi(3);
     (*pcVar2)();
     return;
   }
+  bVar3 = iRam_? != 0;
   pOVar1[1].monitor = (MonitorData *)this;
-  func_?(&pOVar1[1].monitor,this);
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)&pOVar1[1].monitor >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar6 != uVar7);
+  }
   *(undefined1 *)&pOVar1[1].klass = 0;
-  pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+  pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                      ((Component *)this,(MethodInfo *)0x0);
-  pEVar4 = (ExecuteEvents_EventFunction_1_System_Object_ *)
-           func_?(
-                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                          );
-  method_00 = (AccessoryData *)
-              MethodInfo__AccessoryMenuButton____c__DisplayClass11_0___CalculateShouldShowAccessoryPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-  ;
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-  UnityAction_2_System_Object_System_Object___ctor
-            ((UnityAction_2_System_Object_System_Object_ *)pEVar4,pOVar1,
+  pEVar9 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+           FUN_?(
+                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                        );
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+  ExecuteEvents_EventFunction_1_System_Object___ctor
+            (pEVar9,pOVar1,
              MethodInfo__AccessoryMenuButton____c__DisplayClass11_0___CalculateShouldShowAccessoryPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
              ,(MethodInfo *)0x0);
-  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  this = (AccessoryMenuButton *)
-         UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-  ;
   UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-            (pGVar3,(BaseEventData *)0x0,pEVar4,
+            (pGVar8,(BaseEventData *)0x0,pEVar9,
              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
             );
   if (*(char *)&pOVar1[1].klass == '\0') {
     if (cRam_? == '\0') {
-      func_?();
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
     if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
         (IEditModeUI *)0x0) {
-      if ((TypeInfo__HighlightManager->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+      pHVar10 = TypeInfo__HighlightManager;
+      if (*(int *)&(TypeInfo__HighlightManager->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                HighlightManager::HighlightManager_GetHighLights
-                          (HighlightType__Enum_AccessoryPopup,
+      pLVar11 = HighlightManager::HighlightManager_GetHighLights
+                          ((HighlightType__Enum)CONCAT71((int7)((ulonglong)pHVar10 >> 8),3),
                            System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>_MethodInfo__HighlightManager__GetHighLights<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_MV__WorldObject__HighlightSystem__HighlightType_
                           );
-      previewedAccessories = (List_1_AccessoryDataClient_ *)func_?();
+      previewedAccessories =
+           (List_1_AccessoryDataClient_ *)
+           FUN_?(TypeInfo__System__Collections__Generic__List<AccessoryDataClient>);
       mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
       __Il2CppFullySharedGenericType]::
       LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
                 ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
                  previewedAccessories,
                  MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__List__);
-      index = (AccessoryMenuButton *)0x0;
-      if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        for (; (int)index < (this_00->fields)._size;
-            index = (AccessoryMenuButton *)((int)&index->klass + 1)) {
-          RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                  RegularExpressions::RegexCharClass+SingleRange]::
-                  List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                            (this_00,(int32_t)index,
-                             MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>__get_Item_int_
-                            );
-          if ((RVar5 == (RegexCharClass_SingleRange)0x0) || (*(int *)((int)RVar5 + 0xc) == 0))
-          goto code_?;
-          this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0;
-          this_01 = (AccessoryData *)
-                    AccessoryDataManager::AccessoryDataManager_GetAccessoryDataByMetaDataId
-                              (*(int32_t *)(*(int *)((int)RVar5 + 0xc) + 8),(MethodInfo *)0x0);
-          if (this_01 != (AccessoryData *)0x0) {
-            this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                      &UNK_?;
-            bVar6 = MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryData::
-                    AccessoryData_GetShowInShop(this_01,(MethodInfo *)0x0);
-            if (((bVar6 != 0) && ((this_01->fields).owns == 0)) && ((this_01->fields).iAvlb != 0)) {
-              RVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                      RegularExpressions::RegexCharClass+SingleRange]::
-                      List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                (this_00,(int32_t)index,
-                                 MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>__get_Item_int_
-                                );
-              if (RVar5 == (RegexCharClass_SingleRange)0x0) goto code_?;
-              highlightId = *(int32_t *)((int)RVar5 + 8);
-              if ((TypeInfo__HighlightManager->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              HighlightManager::HighlightManager_SetHighlightToSeen(highlightId,(MethodInfo *)0x0);
-              if (previewedAccessories == (List_1_AccessoryDataClient_ *)0x0) goto code_?;
-              mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-              List_1_System_Object__Add
-                        ((List_1_System_Object_ *)previewedAccessories,(Object *)this_01,
-                         MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__Add_AccessoryDataClient_
-                        );
-              this = index;
-              method_00 = this_01;
-              if (2 < (previewedAccessories->fields)._size) goto code_?;
-            }
+      uVar4 = 0;
+      if (pLVar11 != (List_1_Highlight_1_System_Object_ *)0x0) {
+        lVar12 = 0x20;
+        for (; (int)uVar4 < (pLVar11->fields)._size; uVar4 = uVar4 + 1) {
+          if ((uint)(pLVar11->fields)._size <= uVar4) {
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                      ((MethodInfo *)0x0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
           }
+          pHVar13 = (pLVar11->fields)._items;
+          if (pHVar13 == (Highlight_1_System_Object___Array *)0x0) goto code_?;
+          if ((uint)pHVar13->max_length <= uVar4) {
+            FUN_?();
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          lVar14 = *(longlong *)((longlong)pHVar13->vector + lVar12 + -0x20);
+          if ((lVar14 == 0) || (lVar14 = *(longlong *)(lVar14 + 0x18), lVar14 == 0))
+          goto code_?;
+          this_00 = (AccessoryData *)
+                    AccessoryDataManager::AccessoryDataManager_GetAccessoryDataByMetaDataId
+                              (*(int32_t *)(lVar14 + 0x10),(MethodInfo *)0x0);
+          if ((this_00 != (AccessoryData *)0x0) &&
+             (((bVar15 = MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryData::
+                        AccessoryData_GetShowInShop(this_00,(MethodInfo *)0x0), bVar15 != 0 &&
+               ((this_00->fields).owns == 0)) && ((this_00->fields).iAvlb != 0)))) {
+            lVar14 = FUN_?(pLVar11);
+            if (lVar14 == 0) goto code_?;
+            highlightId = *(int32_t *)(lVar14 + 0x10);
+            if (*(int *)&(TypeInfo__HighlightManager->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            HighlightManager::HighlightManager_SetHighlightToSeen(highlightId,(MethodInfo *)0x0);
+            if (previewedAccessories == (List_1_AccessoryDataClient_ *)0x0)
+            goto code_?;
+            FUN_?();
+            if (2 < (previewedAccessories->fields)._size) goto code_?;
+          }
+          lVar12 = lVar12 + 8;
         }
         if (previewedAccessories != (List_1_AccessoryDataClient_ *)0x0) {
 code_?:
           if ((previewedAccessories->fields)._size < 1) {
             return;
           }
-          pOVar1 = (Object *)func_?(TypeInfo__AccessoryMenuButton____c__DisplayClass11_1);
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    (pOVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+          pOVar1 = (Object *)FUN_?(TypeInfo__AccessoryMenuButton____c__DisplayClass11_1);
           original = (this->fields).accessoryPreviewPopup;
-          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(TypeInfo__UnityEngine__Object);
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
           }
-          pOVar7 = (Object__Class *)
-                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                             ((Object *)original,
-                              AccessoryPreviewPopup_MethodInfo__UnityEngine__Object__Instantiate<AccessoryPreviewPopup>_AccessoryPreviewPopup_
-                             );
+          pOVar16 = (Object__Class *)
+                    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                              ((Object *)original,
+                               AccessoryPreviewPopup_MethodInfo__UnityEngine__Object__Instantiate<AccessoryPreviewPopup>_AccessoryPreviewPopup_
+                              );
           if (pOVar1 != (Object *)0x0) {
-            pOVar1[1].klass = pOVar7;
-            func_?(pOVar1 + 1,pOVar7);
-            pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+            pOVar1[1].klass = pOVar16;
+            func_?(pOVar1 + 1);
+            pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                                ((Component *)this,(MethodInfo *)0x0);
-            pEVar4 = (ExecuteEvents_EventFunction_1_System_Object_ *)
-                     func_?(
-                                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                                    );
-            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-            Object]::UnityAction_2_System_Object_System_Object___ctor
-                      ((UnityAction_2_System_Object_System_Object_ *)pEVar4,pOVar1,
+            pEVar9 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+                     FUN_?(
+                                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                                  );
+            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::
+            Object]::ExecuteEvents_EventFunction_1_System_Object___ctor
+                      (pEVar9,pOVar1,
                        MethodInfo__AccessoryMenuButton____c__DisplayClass11_1___CalculateShouldShowAccessoryPopup_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                        ,(MethodInfo *)0x0);
-            if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor
-                == 0) {
-              func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+            if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+              FUN_?();
             }
             UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
             ExecuteEvents_ExecuteHierarchy
-                      (pGVar3,(BaseEventData *)0x0,pEVar4,
+                      (pGVar8,(BaseEventData *)0x0,pEVar9,
                        UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                       );
             if (pOVar1[1].klass != (Object__Class *)0x0) {
@@ -214,162 +249,207 @@ void Assembly-CSharp.dll::AccessoryMenuButton::AccessoryMenuButton_CalculateShou
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IActivateUIElement>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IActivateUIElement>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IActivateUIElement>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessoryBundle>_>_MethodInfo__HighlightManager__GetHighLights<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessoryBundle>_MV__WorldObject__HighlightSystem__HighlightType_
-                   );
-    func_?(&TypeInfo__HighlightManager);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessoryBundle>_>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::Accessories::AccessoryBundleItem>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessoryBundle>_>__get_Item_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::Accessories::AccessoryBundleItem>__get_Item_int_
-                   );
-    func_?(&
-                    MethodInfo__AccessoryMenuButton____c___CalculateShouldShowBundleAd_b__13_0_UnityEngine__EventSystems__IActivateUIElement__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__AccessoryMenuButton____c);
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IActivateUIElement>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IActivateUIElement>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IActivateUIElement>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessoryBundle>_>_MethodInfo__HighlightManager__GetHighLights<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessoryBundle>_MV__WorldObject__HighlightSystem__HighlightType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__HighlightManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessoryBundle>_>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::WorldObject::Accessories::AccessoryBundleItem>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessoryBundle>_>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::WorldObject::Accessories::AccessoryBundleItem>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__AccessoryMenuButton____c___CalculateShouldShowBundleAd_b__13_0_UnityEngine__EventSystems__IActivateUIElement__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__AccessoryMenuButton____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__HighlightManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__HighlightManager);
+  pHVar1 = TypeInfo__HighlightManager;
+  if (*(int *)&(TypeInfo__HighlightManager->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-           HighlightManager::HighlightManager_GetHighLights
-                     (HighlightType__Enum_AccessoryBundle,
+  pLVar2 = HighlightManager::HighlightManager_GetHighLights
+                     ((HighlightType__Enum)CONCAT71((int7)((ulonglong)pHVar1 >> 8),1),
                       System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessoryBundle>_>_MethodInfo__HighlightManager__GetHighLights<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessoryBundle>_MV__WorldObject__HighlightSystem__HighlightType_
                      );
-  iVar2 = 0;
-  if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
+  uVar3 = 0;
+  uVar4 = 0;
+  if (pLVar2 != (List_1_Highlight_1_System_Object_ *)0x0) {
+    lVar5 = 0x20;
+    lVar6 = 0x20;
+    cVar7 = cRam_?;
     while( true ) {
-      if ((pLVar1->fields)._size <= iVar2) {
+      if ((pLVar2->fields)._size <= (int)uVar4) {
         return;
       }
-      RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (pLVar1,iVar2,
-                         MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessoryBundle>_>__get_Item_int_
-                        );
-      if ((RVar3 == (RegexCharClass_SingleRange)0x0) || (*(int *)((int)RVar3 + 0xc) == 0))
+      if ((uint)(pLVar2->fields)._size <= uVar4) goto code_?;
+      pHVar8 = (pLVar2->fields)._items;
+      if (pHVar8 == (Highlight_1_System_Object___Array *)0x0) goto code_?;
+      if ((uint)pHVar8->max_length <= uVar4) goto code_?;
+      lVar9 = *(longlong *)((longlong)pHVar8->vector + lVar6 + -0x20);
+      if ((lVar9 == 0) || (lVar9 = *(longlong *)(lVar9 + 0x18), lVar9 == 0))
       goto code_?;
-      iVar4 = *(int *)(*(int *)((int)RVar3 + 0xc) + 8);
-      iVar5 = AccessoryDataManager::AccessoryDataManager_get_AccessoryBundleId((MethodInfo *)0x0);
-      this_00 = 
-      MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessoryBundle>_>__get_Item_int_
-      ;
-      if (iVar4 == iVar5) break;
-      iVar2 = iVar2 + 1;
+      iVar10 = *(int *)(lVar9 + 0x10);
+      if (cVar7 == '\0') {
+        FUN_?(&TypeInfo__AccessoryDataManager);
+        LOCK();
+        UNLOCK();
+        cVar7 = '\x01';
+        cRam_? = '\x01';
+      }
+      pAVar11 = TypeInfo__AccessoryDataManager->static_fields->accessoryShopData;
+      if ((pAVar11 == (AccessoryShopDataClient *)0x0) ||
+         (pAVar12 = (pAVar11->fields).accessoryBundle, pAVar12 == (AccessoryBundleClient *)0x0))
+      goto code_?;
+      if (iVar10 == (pAVar12->fields)._.accessoryBundleID) break;
+      uVar4 = uVar4 + 1;
+      lVar6 = lVar6 + 8;
     }
-    RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-            RegexCharClass+SingleRange]::
-            List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                      (pLVar1,iVar2,
-                       MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessoryBundle>_>__get_Item_int_
-                      );
-    if (RVar3 != (RegexCharClass_SingleRange)0x0) {
-      iVar2 = *(int *)((int)RVar3 + 8);
-      if (iVar2 == -1) {
+    lVar6 = FUN_?();
+    if (lVar6 != 0) {
+      iVar10 = *(int *)(lVar6 + 0x10);
+      if (iVar10 == -1) {
         return;
       }
-      pAVar6 = AccessoryDataManager::AccessoryDataManager_get_AccessoryBundleClient
-                         ((MethodInfo *)0x0);
-      if (pAVar6 != (AccessoryBundleClient *)0x0) {
-        pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                 (pAVar6->fields)._.accessoryBundleItems;
-        iVar4 = 0;
-        if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-          while( true ) {
-            if ((pLVar1->fields)._size <= iVar4) {
-              return;
-            }
-            RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                    RegularExpressions::RegexCharClass+SingleRange]::
-                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              (pLVar1,iVar4,
-                               MethodInfo__System__Collections__Generic__List<MV::WorldObject::Accessories::AccessoryBundleItem>__get_Item_int_
-                              );
-            if ((RVar3 == (RegexCharClass_SingleRange)0x0) ||
-               (pAVar7 = AccessoryDataManager::AccessoryDataManager_GetAccessoryDataByMetaDataId
-                                   (*(int32_t *)((int)RVar3 + 0xc),(MethodInfo *)0x0),
-               pAVar7 == (AccessoryDataClient *)0x0)) goto code_?;
-            if ((pAVar7->fields)._.owns == 0) break;
-            iVar4 = iVar4 + 1;
+      pAVar12 = AccessoryDataManager::AccessoryDataManager_get_AccessoryBundleClient
+                          ((MethodInfo *)0x0);
+      if ((pAVar12 != (AccessoryBundleClient *)0x0) &&
+         (pLVar13 = (pAVar12->fields)._.accessoryBundleItems,
+         pLVar13 != (List_1_MV_WorldObject_Accessories_AccessoryBundleItem_ *)0x0)) {
+        do {
+          if ((pLVar13->fields)._size <= (int)uVar3) {
+            return;
           }
-          if (this_00->klass != (Il2CppClass *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      ((GameObject *)this_00->klass,1,(MethodInfo *)0x0);
-            if (((Component *)this_00->return_type != (Component *)0x0) &&
-               (pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                         Component_get_gameObject
-                                   ((Component *)this_00->return_type,(MethodInfo *)0x0),
-               pGVar8 != (GameObject *)0x0)) {
+          if ((uint)(pLVar13->fields)._size <= uVar3) {
+code_?:
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                      ((MethodInfo *)0x0);
+            pcVar14 = (code *)swi(3);
+            (*pcVar14)();
+            return;
+          }
+          pAVar15 = (pLVar13->fields)._items;
+          if (pAVar15 == (AccessoryBundleItem__Array *)0x0) break;
+          if ((uint)pAVar15->max_length <= uVar3) {
+code_?:
+            FUN_?();
+            pcVar14 = (code *)swi(3);
+            (*pcVar14)();
+            return;
+          }
+          lVar6 = *(longlong *)((longlong)pAVar15->vector + lVar5 + -0x20);
+          if ((lVar6 == 0) ||
+             (pAVar16 = AccessoryDataManager::AccessoryDataManager_GetAccessoryDataByMetaDataId
+                                  (*(int32_t *)(lVar6 + 0x14),(MethodInfo *)0x0),
+             pAVar16 == (AccessoryDataClient *)0x0)) break;
+          if ((pAVar16->fields)._.owns == 0) {
+            pGVar17 = (this->fields).redDotNotification;
+            if (pGVar17 != (GameObject *)0x0) {
               UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar8,1,(MethodInfo *)0x0);
-              bVar9 = FirstTimeEventManager::FirstTimeEventManager_HasFirstTimeEventOccured
-                                (FirstTimeEvent__Enum_PM_AccessoryShop,(MethodInfo *)0x0);
-              if (bVar9 == 0) {
+                        (pGVar17,1,(MethodInfo *)0x0);
+              this_00 = (this->fields).shineEffect;
+              if ((this_00 != (AccessoryShinyButton *)0x0) &&
+                 (pGVar17 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                            Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0),
+                 pGVar17 != (GameObject *)0x0)) {
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                          (pGVar17,1,(MethodInfo *)0x0);
+                bVar18 = FirstTimeEventManager::FirstTimeEventManager_HasFirstTimeEventOccured
+                                  (FirstTimeEvent__Enum_PM_AccessoryShop,(MethodInfo *)0x0);
+                if (bVar18 == 0) {
+                  return;
+                }
+                if (*(int *)&(TypeInfo__HighlightManager->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                HighlightManager::HighlightManager_SetHighlightToSeen(iVar10,(MethodInfo *)0x0);
+                pGVar17 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                          Component_get_gameObject((Component *)this,(MethodInfo *)0x0);
+                if (*(int *)&(TypeInfo__AccessoryMenuButton____c->_1).field_0x1c == 0) {
+                  FUN_?(TypeInfo__AccessoryMenuButton____c);
+                }
+                this_01 = TypeInfo__AccessoryMenuButton____c->static_fields->__9__13_0;
+                if (this_01 == (ExecuteEvents_EventFunction_1_IActivateUIElement_ *)0x0) {
+                  if (*(int *)&(TypeInfo__AccessoryMenuButton____c->_1).field_0x1c == 0) {
+                    FUN_?(TypeInfo__AccessoryMenuButton____c);
+                  }
+                  object = TypeInfo__AccessoryMenuButton____c->static_fields->__9;
+                  this_01 = (ExecuteEvents_EventFunction_1_IActivateUIElement_ *)
+                            FUN_?(
+                                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IActivateUIElement>
+                                         );
+                  UnityEngine.UI.dll::UnityEngine::EventSystems::
+                  ExecuteEvents+EventFunction`1[System::Object]::
+                  ExecuteEvents_EventFunction_1_System_Object___ctor
+                            ((ExecuteEvents_EventFunction_1_System_Object_ *)this_01,
+                             (Object *)object,
+                             MethodInfo__AccessoryMenuButton____c___CalculateShouldShowBundleAd_b__13_0_UnityEngine__EventSystems__IActivateUIElement__UnityEngine__EventSystems__BaseEventData_
+                             ,(MethodInfo *)0x0);
+                  TypeInfo__AccessoryMenuButton____c->static_fields->__9__13_0 = this_01;
+                  func_?(&TypeInfo__AccessoryMenuButton____c->static_fields->__9__13_0)
+                  ;
+                }
+                if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c ==
+                    0) {
+                  FUN_?();
+                }
+                UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+                ExecuteEvents_ExecuteHierarchy
+                          (pGVar17,(BaseEventData *)0x0,
+                           (ExecuteEvents_EventFunction_1_System_Object_ *)this_01,
+                           UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IActivateUIElement>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IActivateUIElement>_
+                          );
                 return;
               }
-              if ((TypeInfo__HighlightManager->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              HighlightManager::HighlightManager_SetHighlightToSeen(iVar2,(MethodInfo *)0x0);
-              pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                 ((Component *)this_00,(MethodInfo *)0x0);
-              if ((TypeInfo__AccessoryMenuButton____c->_1).cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              callbackFunction = TypeInfo__AccessoryMenuButton____c->static_fields->__9__13_0;
-              if (callbackFunction == (ExecuteEvents_EventFunction_1_IActivateUIElement_ *)0x0) {
-                if ((TypeInfo__AccessoryMenuButton____c->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?();
-                }
-                object = TypeInfo__AccessoryMenuButton____c->static_fields->__9;
-                callbackFunction =
-                     (ExecuteEvents_EventFunction_1_IActivateUIElement_ *)func_?();
-                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System
-                ::Object]::UnityAction_2_System_Object_System_Object___ctor
-                          ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,
-                           (Object *)object,
-                           MethodInfo__AccessoryMenuButton____c___CalculateShouldShowBundleAd_b__13_0_UnityEngine__EventSystems__IActivateUIElement__UnityEngine__EventSystems__BaseEventData_
-                           ,(MethodInfo *)0x0);
-                TypeInfo__AccessoryMenuButton____c->static_fields->__9__13_0 = callbackFunction;
-                func_?();
-              }
-              if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).
-                  cctor_finished_or_no_cctor == 0) {
-                func_?();
-              }
-              UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-              ExecuteEvents_ExecuteHierarchy
-                        (pGVar8,(BaseEventData *)0x0,
-                         (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-                         UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IActivateUIElement>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IActivateUIElement>_
-                        );
-              return;
             }
+            break;
           }
-        }
+          uVar3 = uVar3 + 1;
+          lVar5 = lVar5 + 8;
+        } while( true );
       }
     }
   }
 code_?:
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  FUN_?();
+  pcVar14 = (code *)swi(3);
+  (*pcVar14)();
   return;
 }
 
@@ -381,75 +461,202 @@ void Assembly-CSharp.dll::AccessoryMenuButton::AccessoryMenuButton_CalculateShou
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>_MethodInfo__HighlightManager__GetHighLights<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_MV__WorldObject__HighlightSystem__HighlightType_
-                   );
-    func_?(&TypeInfo__HighlightManager);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>__get_Item_int_
-                   );
+    FUN_?(&
+                  System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>_MethodInfo__HighlightManager__GetHighLights<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_MV__WorldObject__HighlightSystem__HighlightType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__HighlightManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__HighlightManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__HighlightManager);
+  pHVar1 = TypeInfo__HighlightManager;
+  if (*(int *)&(TypeInfo__HighlightManager->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  this_01 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-            HighlightManager::HighlightManager_GetHighLights
-                      (HighlightType__Enum_Accessory,
-                       System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>_MethodInfo__HighlightManager__GetHighLights<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_MV__WorldObject__HighlightSystem__HighlightType_
-                      );
-  IStack_1.m_value = 0;
-  index = 0;
-  if (this_01 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    for (; index < (this_01->fields)._size; index = index + 1) {
-      RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-              RegexCharClass+SingleRange]::
-              List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                        (this_01,index,
-                         MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>__get_Item_int_
-                        );
-      if ((RVar2 == (RegexCharClass_SingleRange)0x0) || (*(int *)((int)RVar2 + 0xc) == 0))
-      goto code_?;
-      this_02 = (AccessoryData *)
-                AccessoryDataManager::AccessoryDataManager_GetAccessoryDataByMetaDataId
-                          (*(int32_t *)(*(int *)((int)RVar2 + 0xc) + 8),(MethodInfo *)0x0);
-      if ((this_02 != (AccessoryData *)0x0) &&
-         ((bVar3 = MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryData::
-                   AccessoryData_GetShowInShop(this_02,(MethodInfo *)0x0), bVar3 != 0 &&
-          ((this_02->fields).owns == 0)))) {
-        IStack_1.m_value = IStack_1.m_value + 1;
+  pLVar2 = HighlightManager::HighlightManager_GetHighLights
+                     ((HighlightType__Enum)CONCAT71((int7)((ulonglong)pHVar1 >> 8),2),
+                      System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>_MethodInfo__HighlightManager__GetHighLights<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_MV__WorldObject__HighlightSystem__HighlightType_
+                     );
+  value = 0;
+  uVar3 = 0;
+  if (pLVar2 != (List_1_Highlight_1_System_Object_ *)0x0) {
+    lVar4 = 0x20;
+    for (; (int)uVar3 < (pLVar2->fields)._size; uVar3 = uVar3 + 1) {
+      if ((uint)(pLVar2->fields)._size <= uVar3) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
       }
+      pHVar6 = (pLVar2->fields)._items;
+      if (pHVar6 == (Highlight_1_System_Object___Array *)0x0) goto code_?;
+      if ((uint)pHVar6->max_length <= uVar3) {
+        FUN_?();
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      lVar7 = *(longlong *)((longlong)pHVar6->vector + lVar4 + -0x20);
+      if ((lVar7 == 0) || (lVar7 = *(longlong *)(lVar7 + 0x18), lVar7 == 0))
+      goto code_?;
+      this_00 = (AccessoryData *)
+                AccessoryDataManager::AccessoryDataManager_GetAccessoryDataByMetaDataId
+                          (*(int32_t *)(lVar7 + 0x10),(MethodInfo *)0x0);
+      if ((this_00 != (AccessoryData *)0x0) &&
+         ((bVar8 = MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryData::
+                   AccessoryData_GetShowInShop(this_00,(MethodInfo *)0x0), bVar8 != 0 &&
+          ((this_00->fields).owns == 0)))) {
+        value = value + 1;
+      }
+      lVar4 = lVar4 + 8;
     }
-    bVar3 = (this->fields).isSpecialEventActive;
-    bVar4 = 0 < IStack_1.m_value;
-    this_00 = (this->fields).shineEffect;
-    if ((this_00 != (AccessoryShinyButton *)0x0) &&
-       (pGVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)this_00,(MethodInfo *)0x0), pGVar5 != (GameObject *)0x0)) {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar5,bVar3 != 0 || bVar4,(MethodInfo *)0x0);
-      pGVar5 = (this->fields).redDotNotification;
-      if (pGVar5 != (GameObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar5,0 < IStack_1.m_value,(MethodInfo *)0x0);
-        pTVar6 = (this->fields).redDotNotificationText;
-        pSVar7 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_1,(MethodInfo *)0x0);
-        if (pTVar6 != (Text *)0x0) {
-          (*(code *)(pTVar6->klass->vtable).set_text.method)
-                    (pTVar6,pSVar7,
-                     (pTVar6->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+    obj = (this->fields).shineEffect;
+    if (obj != (AccessoryShinyButton *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Component>_UnityEngine__Component_
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      UnityEngine__GameObject_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::GameObject>_void__
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pvVar9 = (obj->fields)._._._._.m_CachedPtr;
+      if (pvVar9 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      pcVar5 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+        uVar10 = func_?(&UNK_?);
+        FUN_?(uVar10,0);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      pcRam_? = pcVar5;
+      pvVar9 = (void *)(*pcRam_?)(pvVar9);
+      obj_01 = UnityEngine.CoreModule.dll::UnityEngine::Bindings::Unmarshal::
+               Unmarshal_UnmarshalUnityObject
+                         (pvVar9,
+                          UnityEngine__GameObject_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::GameObject>_void__
+                         );
+      if (obj_01 != (Object *)0x0) {
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pOVar11 = obj_01[1].klass;
+        if (pOVar11 == (Object__Class *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException(obj_01,(MethodInfo *)0x0);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
           return;
+        }
+        pcVar5 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+          uVar10 = func_?(&UNK_?);
+          FUN_?(uVar10,0);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
+        }
+        pcRam_? = pcVar5;
+        (*pcRam_?)(pOVar11);
+        obj_00 = (this->fields).redDotNotification;
+        if (obj_00 != (GameObject *)0x0) {
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pvVar9 = (obj_00->fields)._.m_CachedPtr;
+          if (pvVar9 == (void *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)obj_00,(MethodInfo *)0x0);
+            pcVar5 = (code *)swi(3);
+            (*pcVar5)();
+            return;
+          }
+          pcVar5 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+            uVar10 = func_?(&UNK_?);
+            FUN_?(uVar10,0);
+            pcVar5 = (code *)swi(3);
+            (*pcVar5)();
+            return;
+          }
+          pcRam_? = pcVar5;
+          (*pcRam_?)(pvVar9,0 < value);
+          pTVar12 = (this->fields).redDotNotificationText;
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__System__Number);
+            LOCK();
+            UNLOCK();
+            FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if ((MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____->klass->
+               field_0x135 & 1) == 0) {
+            FUN_?();
+          }
+          if (*(int *)&(TypeInfo__System__Number->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          aRStack_13[0]._pointer._value = (void *)0x0;
+          aRStack_13[0]._length = 0;
+          aRStack_13[0]._12_4_ = 0;
+          pSVar14 = mscorlib.dll::System::Number::Number_FormatInt32
+                             (value,aRStack_13,(IFormatProvider *)0x0,(MethodInfo *)0x0);
+          if (pTVar12 != (Text *)0x0) {
+            UNRECOVERED_JUMPTABLE = (pTVar12->klass->vtable).set_text.methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+            (*UNRECOVERED_JUMPTABLE)
+                      (pTVar12,pSVar14,(pTVar12->klass->vtable).set_text.method,UNRECOVERED_JUMPTABLE);
+            return;
+          }
         }
       }
     }
   }
 code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -461,14 +668,19 @@ void Assembly-CSharp.dll::AccessoryMenuButton::AccessoryMenuButton_OnAccessoryDa
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AccessoryDataManager);
-    func_?(&MethodInfo__AccessoryMenuButton__OnAccessoryDataReady__);
-    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    FUN_?(&TypeInfo__AccessoryDataManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__AccessoryMenuButton__OnAccessoryDataReady__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pUVar1 = TypeInfo__AccessoryDataManager->static_fields->readyCallback;
-  this_00 = (NavMesh_OnNavMeshPreUpdate *)
-            func_?(TypeInfo__UnityEngine__Events__UnityAction);
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__UnityEngine__Events__UnityAction);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (this_00,(Object *)this,MethodInfo__AccessoryMenuButton__OnAccessoryDataReady__,
@@ -478,30 +690,278 @@ void Assembly-CSharp.dll::AccessoryMenuButton::AccessoryMenuButton_OnAccessoryDa
                      ((Delegate *)pUVar1,(Delegate *)this_00,(MethodInfo *)0x0);
   if (pUVar1 == (UnityAction *)0x0) {
     TypeInfo__AccessoryDataManager->static_fields->readyCallback = (UnityAction *)0x0;
-code_?:
-    func_?();
-    (this->fields).playerReady = 1;
-    AccessoryMenuButton_CalculateShouldShowHighlightIcon(this,(MethodInfo *)0x0);
-    AccessoryMenuButton_CalculateShouldShowBundleAd(this,(MethodInfo *)0x0);
-    AccessoryMenuButton_CalculateShouldShowAccessoryPopup(this,(MethodInfo *)0x0);
-    return;
-  }
-  pUVar2 = (UnityAction *)0x0;
-  if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-    pUVar2 = pUVar1;
-  }
-  if (pUVar2 == (UnityAction *)0x0) {
-    func_?();
   }
   else {
+    pUVar2 = (UnityAction *)0x0;
+    if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+      pUVar2 = pUVar1;
+    }
+    if (pUVar2 == (UnityAction *)0x0) {
+      FUN_?(pUVar1,TypeInfo__UnityEngine__Events__UnityAction);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
     TypeInfo__AccessoryDataManager->static_fields->readyCallback = pUVar2;
     pUVar2 = (UnityAction *)0x0;
     if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
       pUVar2 = pUVar1;
     }
-    if (pUVar2 != (UnityAction *)0x0) goto code_?;
+    if (pUVar2 == (UnityAction *)0x0) {
+      FUN_?(pUVar1,TypeInfo__UnityEngine__Events__UnityAction);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
   }
-  func_?();
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)TypeInfo__AccessoryDataManager->static_fields >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar6 != uVar7);
+  }
+  (this->fields).playerReady = 1;
+  AccessoryMenuButton_CalculateShouldShowHighlightIcon(this,(MethodInfo *)0x0);
+  AccessoryMenuButton_CalculateShouldShowBundleAd(this,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>_MethodInfo__HighlightManager__GetHighLights<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_MV__WorldObject__HighlightSystem__HighlightType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__HighlightManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__Add_AccessoryDataClient_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__get_Count__)
+    ;
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<AccessoryDataClient>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  AccessoryPreviewPopup_MethodInfo__UnityEngine__Object__Instantiate<AccessoryPreviewPopup>_AccessoryPreviewPopup_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__AccessoryMenuButton____c__DisplayClass11_0___CalculateShouldShowAccessoryPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__AccessoryMenuButton____c__DisplayClass11_0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__AccessoryMenuButton____c__DisplayClass11_1___CalculateShouldShowAccessoryPopup_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__AccessoryMenuButton____c__DisplayClass11_1);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pOVar8 = (Object *)FUN_?(TypeInfo__AccessoryMenuButton____c__DisplayClass11_0);
+  if (pOVar8 != (Object *)0x0) {
+    bVar9 = iRam_? != 0;
+    pOVar8[1].monitor = (MonitorData *)this;
+    if (bVar9) {
+      uVar4 = (uint)((ulonglong)&pOVar8[1].monitor >> 0xc);
+      puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar6 = *puVar5;
+        LOCK();
+        uVar7 = *puVar5;
+        if (uVar6 == uVar7) {
+          *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar6 != uVar7);
+    }
+    *(undefined1 *)&pOVar8[1].klass = 0;
+    pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)this,(MethodInfo *)0x0);
+    pEVar11 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+              FUN_?(
+                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                           );
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+    ExecuteEvents_EventFunction_1_System_Object___ctor
+              (pEVar11,pOVar8,
+               MethodInfo__AccessoryMenuButton____c__DisplayClass11_0___CalculateShouldShowAccessoryPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+              (pGVar10,(BaseEventData *)0x0,pEVar11,
+               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+              );
+    if (*(char *)&pOVar8[1].klass == '\0') {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (TypeInfo__MVGameControllerBase->static_fields->_EditModeUI_k__BackingField ==
+          (IEditModeUI *)0x0) {
+        pHVar12 = TypeInfo__HighlightManager;
+        if (*(int *)&(TypeInfo__HighlightManager->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pLVar13 = HighlightManager::HighlightManager_GetHighLights
+                            ((HighlightType__Enum)CONCAT71((int7)((ulonglong)pHVar12 >> 8),3),
+                             System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>_MethodInfo__HighlightManager__GetHighLights<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_MV__WorldObject__HighlightSystem__HighlightType_
+                            );
+        previewedAccessories =
+             (List_1_AccessoryDataClient_ *)
+             FUN_?(TypeInfo__System__Collections__Generic__List<AccessoryDataClient>);
+        mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+        __Il2CppFullySharedGenericType]::
+        LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+                  ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+                   previewedAccessories,
+                   MethodInfo__System__Collections__Generic__List<AccessoryDataClient>__List__);
+        uVar4 = 0;
+        if (pLVar13 != (List_1_Highlight_1_System_Object_ *)0x0) {
+          lVar14 = 0x20;
+          for (; (int)uVar4 < (pLVar13->fields)._size; uVar4 = uVar4 + 1) {
+            if ((uint)(pLVar13->fields)._size <= uVar4) {
+              mscorlib.dll::System::ThrowHelper::
+              ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+              pcVar3 = (code *)swi(3);
+              (*pcVar3)();
+              return;
+            }
+            pHVar15 = (pLVar13->fields)._items;
+            if (pHVar15 == (Highlight_1_System_Object___Array *)0x0) goto code_?;
+            if ((uint)pHVar15->max_length <= uVar4) {
+              FUN_?();
+              pcVar3 = (code *)swi(3);
+              (*pcVar3)();
+              return;
+            }
+            lVar16 = *(longlong *)((longlong)pHVar15->vector + lVar14 + -0x20);
+            if ((lVar16 == 0) || (lVar16 = *(longlong *)(lVar16 + 0x18), lVar16 == 0))
+            goto code_?;
+            this_01 = (AccessoryData *)
+                      AccessoryDataManager::AccessoryDataManager_GetAccessoryDataByMetaDataId
+                                (*(int32_t *)(lVar16 + 0x10),(MethodInfo *)0x0);
+            if ((this_01 != (AccessoryData *)0x0) &&
+               (((bVar17 = MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryData::
+                          AccessoryData_GetShowInShop(this_01,(MethodInfo *)0x0), bVar17 != 0 &&
+                 ((this_01->fields).owns == 0)) && ((this_01->fields).iAvlb != 0)))) {
+              lVar16 = FUN_?(pLVar13);
+              if (lVar16 == 0) goto code_?;
+              highlightId = *(int32_t *)(lVar16 + 0x10);
+              if (*(int *)&(TypeInfo__HighlightManager->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              HighlightManager::HighlightManager_SetHighlightToSeen(highlightId,(MethodInfo *)0x0);
+              if (previewedAccessories == (List_1_AccessoryDataClient_ *)0x0)
+              goto code_?;
+              FUN_?();
+              if (2 < (previewedAccessories->fields)._size) goto code_?;
+            }
+            lVar14 = lVar14 + 8;
+          }
+          if (previewedAccessories != (List_1_AccessoryDataClient_ *)0x0) {
+code_?:
+            if ((previewedAccessories->fields)._size < 1) {
+              return;
+            }
+            pOVar8 = (Object *)FUN_?(TypeInfo__AccessoryMenuButton____c__DisplayClass11_1);
+            original = (this->fields).accessoryPreviewPopup;
+            if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            pOVar18 = (Object__Class *)
+                      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                                ((Object *)original,
+                                 AccessoryPreviewPopup_MethodInfo__UnityEngine__Object__Instantiate<AccessoryPreviewPopup>_AccessoryPreviewPopup_
+                                );
+            if (pOVar8 != (Object *)0x0) {
+              pOVar8[1].klass = pOVar18;
+              func_?(pOVar8 + 1);
+              pGVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                 ((Component *)this,(MethodInfo *)0x0);
+              pEVar11 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+                        FUN_?(
+                                     TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                                     );
+              UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::
+              Object]::ExecuteEvents_EventFunction_1_System_Object___ctor
+                        (pEVar11,pOVar8,
+                         MethodInfo__AccessoryMenuButton____c__DisplayClass11_1___CalculateShouldShowAccessoryPopup_b__1_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                         ,(MethodInfo *)0x0);
+              if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0)
+              {
+                FUN_?();
+              }
+              UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+              ExecuteEvents_ExecuteHierarchy
+                        (pGVar10,(BaseEventData *)0x0,pEVar11,
+                         UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                        );
+              if (pOVar8[1].klass != (Object__Class *)0x0) {
+                AccessoryPreviewPopup::AccessoryPreviewPopup_Initialize
+                          ((AccessoryPreviewPopup *)pOVar8[1].klass,previewedAccessories,
+                           (MethodInfo *)0x0);
+                return;
+              }
+            }
+          }
+        }
+        goto code_?;
+      }
+    }
+    return;
+  }
+code_?:
+  FUN_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -515,17 +975,217 @@ void Assembly-CSharp.dll::AccessoryMenuButton::AccessoryMenuButton_OnEnable
 
 {
   if ((this->fields).playerReady != 0) {
-    this_00 = (this->fields).redDotNotification;
-    if (this_00 == (GameObject *)0x0) {
-      func_?();
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
+    pGVar1 = (this->fields).redDotNotification;
+    if (pGVar1 == (GameObject *)0x0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
-                      (this_00,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      AccessoryMenuButton_CalculateShouldShowHighlightIcon(this,(MethodInfo *)0x0);
+    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeInHierarchy
+                      (pGVar1,(MethodInfo *)0x0);
+    if (bVar3 != 0) {
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>_MethodInfo__HighlightManager__GetHighLights<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_MV__WorldObject__HighlightSystem__HighlightType_
+                      ,0);
+        LOCK();
+        UNLOCK();
+        FUN_?(&TypeInfo__HighlightManager);
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>__get_Count__
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>__get_Item_int_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pHVar4 = TypeInfo__HighlightManager;
+      if (*(int *)&(TypeInfo__HighlightManager->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      pLVar5 = HighlightManager::HighlightManager_GetHighLights
+                         ((HighlightType__Enum)CONCAT71((int7)((ulonglong)pHVar4 >> 8),2),
+                          System__Collections__Generic__List<Highlight<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_>_MethodInfo__HighlightManager__GetHighLights<MV::WorldObject::HighlightSystem::HighlightPayloads::HighlightAccessory>_MV__WorldObject__HighlightSystem__HighlightType_
+                         );
+      value = 0;
+      uVar6 = 0;
+      if (pLVar5 != (List_1_Highlight_1_System_Object_ *)0x0) {
+        lVar7 = 0x20;
+        for (; (int)uVar6 < (pLVar5->fields)._size; uVar6 = uVar6 + 1) {
+          if ((uint)(pLVar5->fields)._size <= uVar6) {
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                      ((MethodInfo *)0x0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pHVar8 = (pLVar5->fields)._items;
+          if (pHVar8 == (Highlight_1_System_Object___Array *)0x0) goto code_?;
+          if ((uint)pHVar8->max_length <= uVar6) {
+            FUN_?();
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          lVar9 = *(longlong *)((longlong)pHVar8->vector + lVar7 + -0x20);
+          if ((lVar9 == 0) || (lVar9 = *(longlong *)(lVar9 + 0x18), lVar9 == 0))
+          goto code_?;
+          this_00 = (AccessoryData *)
+                    AccessoryDataManager::AccessoryDataManager_GetAccessoryDataByMetaDataId
+                              (*(int32_t *)(lVar9 + 0x10),(MethodInfo *)0x0);
+          if ((this_00 != (AccessoryData *)0x0) &&
+             ((bVar3 = MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryData::
+                       AccessoryData_GetShowInShop(this_00,(MethodInfo *)0x0), bVar3 != 0 &&
+              ((this_00->fields).owns == 0)))) {
+            value = value + 1;
+          }
+          lVar7 = lVar7 + 8;
+        }
+        obj = (this->fields).shineEffect;
+        if (obj != (AccessoryShinyButton *)0x0) {
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Component>_UnityEngine__Component_
+                         );
+            LOCK();
+            UNLOCK();
+            FUN_?(&
+                          UnityEngine__GameObject_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::GameObject>_void__
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pvVar10 = (obj->fields)._._._._.m_CachedPtr;
+          if (pvVar10 == (void *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar11 = func_?(&UNK_?);
+            FUN_?(uVar11,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+          pvVar10 = (void *)(*pcRam_?)(pvVar10);
+          obj_00 = UnityEngine.CoreModule.dll::UnityEngine::Bindings::Unmarshal::
+                   Unmarshal_UnmarshalUnityObject
+                             (pvVar10,
+                              UnityEngine__GameObject_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::GameObject>_void__
+                             );
+          if (obj_00 != (Object *)0x0) {
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                           );
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pOVar12 = obj_00[1].klass;
+            if (pOVar12 == (Object__Class *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+              ThrowHelper_2_ThrowNullReferenceException(obj_00,(MethodInfo *)0x0);
+              pcVar2 = (code *)swi(3);
+              (*pcVar2)();
+              return;
+            }
+            pcVar2 = pcRam_?;
+            if ((pcRam_? == (code *)0x0) &&
+               (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+              uVar11 = func_?(&UNK_?);
+              FUN_?(uVar11,0);
+              pcVar2 = (code *)swi(3);
+              (*pcVar2)();
+              return;
+            }
+            pcRam_? = pcVar2;
+            (*pcRam_?)(pOVar12);
+            pGVar1 = (this->fields).redDotNotification;
+            if (pGVar1 != (GameObject *)0x0) {
+              if (cRam_? == '\0') {
+                FUN_?(&
+                              void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                             );
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              pvVar10 = (pGVar1->fields)._.m_CachedPtr;
+              if (pvVar10 == (void *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar1,(MethodInfo *)0x0);
+                pcVar2 = (code *)swi(3);
+                (*pcVar2)();
+                return;
+              }
+              pcVar2 = pcRam_?;
+              if ((pcRam_? == (code *)0x0) &&
+                 (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+                uVar11 = func_?(&UNK_?);
+                FUN_?(uVar11,0);
+                pcVar2 = (code *)swi(3);
+                (*pcVar2)();
+                return;
+              }
+              pcRam_? = pcVar2;
+              (*pcRam_?)(pvVar10,0 < value);
+              pTVar13 = (this->fields).redDotNotificationText;
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__System__Number);
+                LOCK();
+                UNLOCK();
+                FUN_?(&
+                              MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____
+                             );
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              if ((MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____->klass->
+                   field_0x135 & 1) == 0) {
+                FUN_?();
+              }
+              if (*(int *)&(TypeInfo__System__Number->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              auStack_14 = (undefined1  [8])0x0;
+              puStack_15 = (undefined *)0x0;
+              pSVar16 = mscorlib.dll::System::Number::Number_FormatInt32
+                                  (value,(ReadOnlySpan_1_Char_ *)auStack_14,(IFormatProvider *)0x0,
+                                   (MethodInfo *)0x0);
+              if (pTVar13 != (Text *)0x0) {
+                UNRECOVERED_JUMPTABLE = (pTVar13->klass->vtable).set_text.methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+                (*UNRECOVERED_JUMPTABLE)
+                          (pTVar13,pSVar16,(pTVar13->klass->vtable).set_text.method,
+                           UNRECOVERED_JUMPTABLE);
+                return;
+              }
+            }
+          }
+        }
+      }
+code_?:
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
     }
   }
   return;
@@ -539,31 +1199,49 @@ void Assembly-CSharp.dll::AccessoryMenuButton::AccessoryMenuButton_OnJoinChanged
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__AccessoryMenuButton__OnJoinChanged_MVJoinState_);
-    func_?(&TypeInfo__System__Action<MVJoinState>);
+    FUN_?(&MethodInfo__AccessoryMenuButton__OnJoinChanged_MVJoinState_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Action<MVJoinState>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (joinState == MVJoinState__Enum_Playing) {
-    pAVar1 = MVGameControllerBase::MVGameControllerBase_get_OnJoinStateChanged((MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if (pMVar1 == (MVGameControllerBase *)0x0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pAVar3 = (pMVar1->fields).onJoinStateChanged;
     this_00 = (UnityAction_1_System_Int32Enum_ *)
-              func_?(TypeInfo__System__Action<MVJoinState>);
+              FUN_?(TypeInfo__System__Action<MVJoinState>);
     UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
     UnityAction_1_System_Int32Enum___ctor
               (this_00,(Object *)this,MethodInfo__AccessoryMenuButton__OnJoinChanged_MVJoinState_,
                (MethodInfo *)0x0);
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pAVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-    pAVar1 = (Action_1_MVJoinState_ *)0x0;
-    if (pDVar2 != (Delegate *)0x0) {
-      pAVar1 = (Action_1_MVJoinState_ *)func_?();
-      if (pAVar1 == (Action_1_MVJoinState_ *)0x0) {
-        func_?();
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove
+                       ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+    pAVar5 = TypeInfo__System__Action<MVJoinState>;
+    pAVar3 = (Action_1_MVJoinState_ *)0x0;
+    if (pDVar4 != (Delegate *)0x0) {
+      pAVar3 = (Action_1_MVJoinState_ *)FUN_?(pDVar4);
+      if (pAVar3 == (Action_1_MVJoinState_ *)0x0) {
+        FUN_?(pDVar4,pAVar5);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
         return;
       }
     }
-    MVGameControllerBase::MVGameControllerBase_set_OnJoinStateChanged(pAVar1,(MethodInfo *)0x0);
+    MVGameControllerBase::MVGameControllerBase_set_OnJoinStateChanged(pAVar3,(MethodInfo *)0x0);
     AccessoryMenuButton_PlayerReady(this,(MethodInfo *)0x0);
   }
   return;
@@ -577,68 +1255,152 @@ void Assembly-CSharp.dll::AccessoryMenuButton::AccessoryMenuButton_PlayerReady
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AccessoryDataManager);
-    func_?(&MethodInfo__AccessoryMenuButton__OnAccessoryDataReady__);
-    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    FUN_?(&TypeInfo__AccessoryDataManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__AccessoryMenuButton__OnAccessoryDataReady__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (this_00 == (MVNetworkGame *)0x0) {
-code_?:
-    func_?();
-    pUStack1 = extraout_ECX;
-    pUStack2 = extraout_EDX;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  else {
-    this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
-    if (this_01 == (MVLocalPlayer *)0x0) goto code_?;
-    bVar3 = MVPlayer::MVPlayer_get_IsTourist((MVPlayer *)this_01,(MethodInfo *)0x0);
-    object = TypeInfo__UnityEngine__Events__UnityAction;
-    if (bVar3 != 0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                ((Behaviour *)0x0,0,(MethodInfo *)0x0);
-      return;
-    }
-    pUVar4 = TypeInfo__AccessoryDataManager->static_fields->readyCallback;
-    this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((((pMVar1 == (MVGameControllerBase *)0x0) ||
+       (pMVar2 = (pMVar1->fields).game, pMVar2 == (MVNetworkGame *)0x0)) ||
+      (this_00 = (pMVar2->fields).playerContainer, this_00 == (MVPlayerContainer *)0x0)) ||
+     (pMVar3 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0),
+     pMVar3 == (MVLocalPlayer *)0x0)) {
+    FUN_?();
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
+    return;
+  }
+  if ((pMVar3->fields)._._ProfileID_k__BackingField != 0) {
+    pUVar5 = TypeInfo__AccessoryDataManager->static_fields->readyCallback;
+    this_02 = (NavMesh_OnNavMeshPreUpdate *)
+              FUN_?(TypeInfo__UnityEngine__Events__UnityAction);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (this_02,(Object *)object,MethodInfo__AccessoryMenuButton__OnAccessoryDataReady__,
+              (this_02,(Object *)this,MethodInfo__AccessoryMenuButton__OnAccessoryDataReady__,
                (MethodInfo *)0x0);
-    pUStack1 =
-         (UnityAction *)
-         mscorlib.dll::System::Delegate::Delegate_Combine
-                   ((Delegate *)pUVar4,(Delegate *)this_02,(MethodInfo *)0x0);
-    if (pUStack1 == (UnityAction *)0x0) {
+    pUVar5 = (UnityAction *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pUVar5,(Delegate *)this_02,(MethodInfo *)0x0);
+    if (pUVar5 == (UnityAction *)0x0) {
       TypeInfo__AccessoryDataManager->static_fields->readyCallback = (UnityAction *)0x0;
-      pUVar4 = (UnityAction *)0x0;
-code_?:
-      pUStack1 = (UnityAction *)TypeInfo__AccessoryDataManager->static_fields;
-      pUStack2 = (UnityAction__Class *)pUVar4;
-      func_?();
-      AccessoryDataManager::AccessoryDataManager_SetReady((MethodInfo *)0x0);
+    }
+    else {
+      pUVar6 = (UnityAction *)0x0;
+      if (pUVar5->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+        pUVar6 = pUVar5;
+      }
+      if (pUVar6 == (UnityAction *)0x0) {
+        FUN_?(pUVar5,TypeInfo__UnityEngine__Events__UnityAction);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      TypeInfo__AccessoryDataManager->static_fields->readyCallback = pUVar6;
+      pUVar6 = (UnityAction *)0x0;
+      if (pUVar5->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+        pUVar6 = pUVar5;
+      }
+      if (pUVar6 == (UnityAction *)0x0) {
+        FUN_?(pUVar5,TypeInfo__UnityEngine__Events__UnityAction);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+    }
+    if (iRam_? != 0) {
+      uVar7 = (uint)((ulonglong)TypeInfo__AccessoryDataManager->static_fields >> 0xc);
+      puVar8 = (ulonglong *)((ulonglong)((uVar7 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar9 = *puVar8;
+        LOCK();
+        uVar10 = *puVar8;
+        if (uVar9 == uVar10) {
+          *puVar8 = uVar9 | 1L << (ulonglong)(uVar7 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar9 != uVar10);
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__AccessoryDataManager);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pAVar11 = TypeInfo__AccessoryDataManager->static_fields;
+    if (pAVar11->accessoriesReady == 0) {
+      if (pAVar11->accessoriesRequested == 0) {
+        this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                            ((MethodInfo *)0x0);
+        if (this_01 == (MVNetworkGame_OperationRequests *)0x0) {
+          FUN_?();
+          pcVar4 = (code *)swi(3);
+          (*pcVar4)();
+          return;
+        }
+        MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_RequestAccessoryData
+                  (this_01,(MethodInfo *)0x0);
+        TypeInfo__AccessoryDataManager->static_fields->accessoriesRequested = 1;
+        return;
+      }
+    }
+    else if (pAVar11->readyCallback != (UnityAction *)0x0) {
+      pUVar5 = pAVar11->readyCallback;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*(pUVar5->fields)._._.invoke_impl)
+                ((pUVar5->fields)._._.method_code,(pUVar5->fields)._._.method);
       return;
     }
-    pUVar4 = (UnityAction *)0x0;
-    if (pUStack1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar4 = pUStack1;
-    }
-    pUStack2 = TypeInfo__UnityEngine__Events__UnityAction;
-    if (pUVar4 == (UnityAction *)0x0) goto code_?;
-    TypeInfo__AccessoryDataManager->static_fields->readyCallback = pUVar4;
-    pUVar4 = (UnityAction *)0x0;
-    if (pUStack1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar4 = pUStack1;
-    }
-    pUStack2 = TypeInfo__UnityEngine__Events__UnityAction;
-    if (pUVar4 != (UnityAction *)0x0) goto code_?;
+    return;
   }
-  pUStack2 = (UnityAction__Class *)func_?();
-  pUStack1 = extraout_ECX_00;
-code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Behaviour>_UnityEngine__Behaviour_
+                  ,0,0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (this == (AccessoryMenuButton *)0x0) {
+    FUN_?();
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
+    return;
+  }
+  pvVar12 = (this->fields)._._._._.m_CachedPtr;
+  if (pvVar12 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)this,(MethodInfo *)0x0);
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
+    return;
+  }
+  pcVar4 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+    uVar13 = func_?(&UNK_?);
+    FUN_?(uVar13,0);
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
+    return;
+  }
+  pcRam_? = pcVar4;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pcRam_?)(pvVar12,0);
   return;
 }
 
@@ -650,115 +1412,251 @@ void Assembly-CSharp.dll::AccessoryMenuButton::AccessoryMenuButton_Start
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__AccessoryMenuButton__OnJoinChanged_MVJoinState_);
-    func_?(&TypeInfo__System__Action<MVJoinState>);
+    FUN_?(&MethodInfo__AccessoryMenuButton__OnJoinChanged_MVJoinState_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Action<MVJoinState>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar1 != (MVNetworkGame *)0x0) &&
-     (pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
-     pMVar2 != (MVLocalPlayer *)0x0)) {
-    bVar3 = MVPlayer::MVPlayer_get_IsReady((MVPlayer *)pMVar2,(MethodInfo *)0x0);
-    if (bVar3 == 0) {
-      pAVar4 = MVGameControllerBase::MVGameControllerBase_get_OnJoinStateChanged((MethodInfo *)0x0);
-      object = TypeInfo__System__Action<MVJoinState>;
-      this_01 = (UnityAction_1_System_Int32Enum_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-      UnityAction_1_System_Int32Enum___ctor
-                (this_01,(Object *)object,
-                 MethodInfo__AccessoryMenuButton__OnJoinChanged_MVJoinState_,(MethodInfo *)0x0);
-      pDVar5 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pAVar4,(Delegate *)this_01,(MethodInfo *)0x0);
-      if ((pDVar5 != (Delegate *)0x0) && (iVar6 = func_?(), iVar6 == 0))
-      goto code_?;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((((pMVar1 != (MVGameControllerBase *)0x0) &&
+       (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+      (pMVar3 = (pMVar2->fields).playerContainer, pMVar3 != (MVPlayerContainer *)0x0)) &&
+     (pMVar4 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar3,(MethodInfo *)0x0),
+     pMVar4 != (MVLocalPlayer *)0x0)) {
+    if ((pMVar4->fields)._.playerState == 1) {
       if (cRam_? == '\0') {
-        func_?();
+        FUN_?(&TypeInfo__AccessoryDataManager);
+        LOCK();
+        UNLOCK();
+        FUN_?(&MethodInfo__AccessoryMenuButton__OnAccessoryDataReady__);
+        LOCK();
+        UNLOCK();
+        FUN_?(&TypeInfo__UnityEngine__Events__UnityAction);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      pMVar7 = TypeInfo__MVGameControllerBase->static_fields->instance;
-      if (pMVar7 != (MVGameControllerBase *)0x0) {
-        (pMVar7->fields).onJoinStateChanged = in_stack_8;
-        func_?();
-        pMVar7 = TypeInfo__MVGameControllerBase->static_fields->instance;
-        if (pMVar7 != (MVGameControllerBase *)0x0) {
-          pAVar4 = (pMVar7->fields).onJoinStateChanged;
-          if (pAVar4 != (Action_1_MVJoinState_ *)0x0) {
-            (*(pAVar4->fields)._._.invoke_impl)();
-          }
-          return;
-        }
-      }
-    }
-    else {
       if (cRam_? == '\0') {
-        func_?();
-        func_?();
-        func_?();
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar1 != (MVNetworkGame *)0x0) &&
-         (pMVar2 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0),
-         pMVar2 != (MVLocalPlayer *)0x0)) {
-        bVar3 = MVPlayer::MVPlayer_get_IsTourist((MVPlayer *)pMVar2,(MethodInfo *)0x0);
-        object_00 = TypeInfo__UnityEngine__Events__UnityAction;
-        if (bVar3 != 0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                    ((Behaviour *)0x0,0,(MethodInfo *)0x0);
-          return;
-        }
-        pUVar9 = TypeInfo__AccessoryDataManager->static_fields->readyCallback;
-        this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-        NavMesh_OnNavMeshPreUpdate__ctor
-                  (this_00,(Object *)object_00,
-                   MethodInfo__AccessoryMenuButton__OnAccessoryDataReady__,(MethodInfo *)0x0);
-        pUStack10 =
-             (UnityAction *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pUVar9,(Delegate *)this_00,(MethodInfo *)0x0);
-        if (pUStack10 != (UnityAction *)0x0) {
-          pUVar9 = (UnityAction *)0x0;
-          if (pUStack10->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-            pUVar9 = pUStack10;
-          }
-          pUStack11 = TypeInfo__UnityEngine__Events__UnityAction;
-          if (pUVar9 != (UnityAction *)0x0) {
-            TypeInfo__AccessoryDataManager->static_fields->readyCallback = pUVar9;
-            pUStack11 = (UnityAction__Class *)(UnityAction *)0x0;
-            if (pUStack10->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-              pUStack11 = (UnityAction__Class *)pUStack10;
-            }
-            if (pUStack11 != (UnityAction__Class *)0x0) goto code_?;
-            pUStack11 = TypeInfo__UnityEngine__Events__UnityAction;
-            pUStack11 = (UnityAction__Class *)func_?();
-            pUStack10 = extraout_ECX;
-          }
-          func_?();
-          pcVar12 = (code *)swi(3);
-          (*pcVar12)();
-          return;
-        }
-        TypeInfo__AccessoryDataManager->static_fields->readyCallback = (UnityAction *)0x0;
-        pUStack11 = (UnityAction__Class *)0x0;
-code_?:
-        pUStack10 = (UnityAction *)TypeInfo__AccessoryDataManager->static_fields;
-        func_?();
-        AccessoryDataManager::AccessoryDataManager_SetReady((MethodInfo *)0x0);
+      pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if (((pMVar1 == (MVGameControllerBase *)0x0) ||
+          (pMVar2 = (pMVar1->fields).game, pMVar2 == (MVNetworkGame *)0x0)) ||
+         ((pMVar3 = (pMVar2->fields).playerContainer, pMVar3 == (MVPlayerContainer *)0x0 ||
+          (pMVar4 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(pMVar3,(MethodInfo *)0x0),
+          pMVar4 == (MVLocalPlayer *)0x0)))) {
+        FUN_?();
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
+      if ((pMVar4->fields)._._ProfileID_k__BackingField != 0) {
+        pUVar6 = TypeInfo__AccessoryDataManager->static_fields->readyCallback;
+        this_02 = (NavMesh_OnNavMeshPreUpdate *)
+                  FUN_?(TypeInfo__UnityEngine__Events__UnityAction);
+        UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+        NavMesh_OnNavMeshPreUpdate__ctor
+                  (this_02,(Object *)this,MethodInfo__AccessoryMenuButton__OnAccessoryDataReady__,
+                   (MethodInfo *)0x0);
+        pUVar6 = (UnityAction *)
+                  mscorlib.dll::System::Delegate::Delegate_Combine
+                            ((Delegate *)pUVar6,(Delegate *)this_02,(MethodInfo *)0x0);
+        if (pUVar6 == (UnityAction *)0x0) {
+          TypeInfo__AccessoryDataManager->static_fields->readyCallback = (UnityAction *)0x0;
+        }
+        else {
+          pUVar7 = (UnityAction *)0x0;
+          if (pUVar6->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+            pUVar7 = pUVar6;
+          }
+          if (pUVar7 == (UnityAction *)0x0) {
+            FUN_?(pUVar6,TypeInfo__UnityEngine__Events__UnityAction);
+            pcVar5 = (code *)swi(3);
+            (*pcVar5)();
+            return;
+          }
+          TypeInfo__AccessoryDataManager->static_fields->readyCallback = pUVar7;
+          pUVar7 = (UnityAction *)0x0;
+          if (pUVar6->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+            pUVar7 = pUVar6;
+          }
+          if (pUVar7 == (UnityAction *)0x0) {
+            FUN_?(pUVar6,TypeInfo__UnityEngine__Events__UnityAction);
+            pcVar5 = (code *)swi(3);
+            (*pcVar5)();
+            return;
+          }
+        }
+        if (iRam_? != 0) {
+          uVar8 = (uint)((ulonglong)TypeInfo__AccessoryDataManager->static_fields >> 0xc);
+          puVar9 = (ulonglong *)((ulonglong)((uVar8 & 0x1fffff) >> 6) * 8 + 0xADDR);
+          do {
+            uVar10 = *puVar9;
+            LOCK();
+            uVar11 = *puVar9;
+            if (uVar10 == uVar11) {
+              *puVar9 = uVar10 | 1L << (ulonglong)(uVar8 & 0x3f);
+            }
+            UNLOCK();
+          } while (uVar10 != uVar11);
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__AccessoryDataManager);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pAVar12 = TypeInfo__AccessoryDataManager->static_fields;
+        if (pAVar12->accessoriesReady == 0) {
+          if (pAVar12->accessoriesRequested == 0) {
+            this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                                ((MethodInfo *)0x0);
+            if (this_00 == (MVNetworkGame_OperationRequests *)0x0) {
+              FUN_?();
+              pcVar5 = (code *)swi(3);
+              (*pcVar5)();
+              return;
+            }
+            MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_RequestAccessoryData
+                      (this_00,(MethodInfo *)0x0);
+            TypeInfo__AccessoryDataManager->static_fields->accessoriesRequested = 1;
+            return;
+          }
+        }
+        else if (pAVar12->readyCallback != (UnityAction *)0x0) {
+          pUVar6 = pAVar12->readyCallback;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*(pUVar6->fields)._._.invoke_impl)
+                    ((pUVar6->fields)._._.method_code,(pUVar6->fields)._._.method);
+          return;
+        }
+        return;
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Behaviour>_UnityEngine__Behaviour_
+                      ,0,0);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (this == (AccessoryMenuButton *)0x0) {
+        FUN_?();
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      pvVar13 = (this->fields)._._._._.m_CachedPtr;
+      if (pvVar13 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)this,(MethodInfo *)0x0);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      pcVar5 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+        uVar14 = func_?(&UNK_?);
+        FUN_?(uVar14,0);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      pcRam_? = pcVar5;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*pcRam_?)(pvVar13,0);
+      return;
     }
-    func_?();
-    func_?();
-    pcVar12 = (code *)swi(3);
-    (*pcVar12)();
-    return;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if (pMVar1 != (MVGameControllerBase *)0x0) {
+      pAVar15 = (pMVar1->fields).onJoinStateChanged;
+      this_01 = (UnityAction_1_System_Int32Enum_ *)
+                FUN_?(TypeInfo__System__Action<MVJoinState>);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
+      UnityAction_1_System_Int32Enum___ctor
+                (this_01,(Object *)this,MethodInfo__AccessoryMenuButton__OnJoinChanged_MVJoinState_,
+                 (MethodInfo *)0x0);
+      pDVar16 = mscorlib.dll::System::Delegate::Delegate_Combine
+                          ((Delegate *)pAVar15,(Delegate *)this_01,(MethodInfo *)0x0);
+      pAVar17 = TypeInfo__System__Action<MVJoinState>;
+      pAVar15 = (Action_1_MVJoinState_ *)0x0;
+      if ((pDVar16 != (Delegate *)0x0) &&
+         (pAVar15 = (Action_1_MVJoinState_ *)
+                    FUN_?(pDVar16,TypeInfo__System__Action<MVJoinState>),
+         pAVar15 == (Action_1_MVJoinState_ *)0x0)) {
+        FUN_?(pDVar16,pAVar17);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase,0);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if (pMVar1 != (MVGameControllerBase *)0x0) {
+        bVar18 = iRam_? != 0;
+        (pMVar1->fields).onJoinStateChanged = pAVar15;
+        if (bVar18) {
+          uVar8 = (uint)((ulonglong)&(pMVar1->fields).onJoinStateChanged >> 0xc);
+          puVar9 = (ulonglong *)((ulonglong)((uVar8 & 0x1fffff) >> 6) * 8 + 0xADDR);
+          do {
+            uVar10 = *puVar9;
+            LOCK();
+            uVar11 = *puVar9;
+            if (uVar10 == uVar11) {
+              *puVar9 = uVar10 | 1L << (ulonglong)(uVar8 & 0x3f);
+            }
+            UNLOCK();
+          } while (uVar10 != uVar11);
+        }
+        pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+        if (pMVar1 != (MVGameControllerBase *)0x0) {
+          pAVar15 = (pMVar1->fields).onJoinStateChanged;
+          if (pAVar15 == (Action_1_MVJoinState_ *)0x0) {
+            return;
+          }
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*(pAVar15->fields)._._.invoke_impl)
+                    ((pAVar15->fields)._._.method_code,
+                     (TypeInfo__MVGameControllerBase->static_fields->instance->fields)._joinState,
+                     (pAVar15->fields)._._.method);
+          return;
+        }
+      }
+      FUN_?();
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

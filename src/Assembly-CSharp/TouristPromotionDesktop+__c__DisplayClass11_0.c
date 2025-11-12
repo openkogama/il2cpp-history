@@ -8,22 +8,18 @@ void Assembly-CSharp.dll::TouristPromotionDesktop+<>c__DisplayClass11_0::
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (x != (IUIStack *)0x0) {
-    ppIStack_1 = (IUIStack__Class **)0x20;
-    puStack_2 = (undefined *)0x0;
-    uStack_3 = 1;
-    func_?(1,TypeInfo__UnityEngine__EventSystems__IUIStack,x,(this->fields).popUp);
+    FUN_?();
     return;
   }
-  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&uStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

@@ -4,13 +4,23 @@
 
 int32_t Assembly-CSharp.dll::RTG::Object2ObjectSnap+<>c::
         Object2ObjectSnap_c__CalculateSnapResult_b__14_0
-                  (Object2ObjectSnap_c *this,Object2ObjectSnap_SnapSortData s0,
-                  Object2ObjectSnap_SnapSortData s1,MethodInfo *method)
+                  (Object2ObjectSnap_c *this,Object2ObjectSnap_SnapSortData *s0,
+                  Object2ObjectSnap_SnapSortData *s1,MethodInfo *method)
 
 {
-  iVar1 = mscorlib.dll::System::Single::Single_CompareTo_1
-                    ((Single *)&s0.SnapDistance,s1.SnapDistance,(MethodInfo *)0x0);
-  return iVar1;
+  fVar1 = s1->SnapDistance;
+  if (s0->SnapDistance <= fVar1 && fVar1 != s0->SnapDistance) {
+    return -1;
+  }
+  if (s0->SnapDistance <= fVar1) {
+    if (s0->SnapDistance == fVar1) {
+      return 0;
+    }
+    if (0x7f800000 < (uint)ABS(s0->SnapDistance)) {
+      return (0x7f800000 < (uint)ABS(fVar1)) - 1;
+    }
+  }
+  return 1;
 }
 
 
@@ -19,13 +29,23 @@ int32_t Assembly-CSharp.dll::RTG::Object2ObjectSnap+<>c::
 
 int32_t Assembly-CSharp.dll::RTG::Object2ObjectSnap+<>c::
         Object2ObjectSnap_c__CalculateSnapResult_b__14_1
-                  (Object2ObjectSnap_c *this,Object2ObjectSnap_SnapSortData s0,
-                  Object2ObjectSnap_SnapSortData s1,MethodInfo *method)
+                  (Object2ObjectSnap_c *this,Object2ObjectSnap_SnapSortData *s0,
+                  Object2ObjectSnap_SnapSortData *s1,MethodInfo *method)
 
 {
-  iVar1 = mscorlib.dll::System::Single::Single_CompareTo_1
-                    ((Single *)&s0.FaceAreaDiff,s1.FaceAreaDiff,(MethodInfo *)0x0);
-  return iVar1;
+  fVar1 = s1->FaceAreaDiff;
+  if (s0->FaceAreaDiff <= fVar1 && fVar1 != s0->FaceAreaDiff) {
+    return -1;
+  }
+  if (s0->FaceAreaDiff <= fVar1) {
+    if (s0->FaceAreaDiff == fVar1) {
+      return 0;
+    }
+    if (0x7f800000 < (uint)ABS(s0->FaceAreaDiff)) {
+      return (0x7f800000 < (uint)ABS(fVar1)) - 1;
+    }
+  }
+  return 1;
 }
 
 
@@ -35,15 +55,26 @@ void Assembly-CSharp.dll::RTG::Object2ObjectSnap+<>c::Object2ObjectSnap_c__cctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__Object2ObjectSnap____c);
+    FUN_?(&TypeInfo__RTG__Object2ObjectSnap____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__RTG__Object2ObjectSnap____c;
-  value = (Object2ObjectSnap_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  TypeInfo__RTG__Object2ObjectSnap____c->static_fields->__9 = value;
-  func_?(TypeInfo__RTG__Object2ObjectSnap____c->static_fields,value);
+  pOVar1 = (Object2ObjectSnap_c *)FUN_?(TypeInfo__RTG__Object2ObjectSnap____c);
+  TypeInfo__RTG__Object2ObjectSnap____c->static_fields->__9 = pOVar1;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)TypeInfo__RTG__Object2ObjectSnap____c->static_fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 

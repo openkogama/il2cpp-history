@@ -5,7 +5,9 @@ void Assembly-CSharp.dll::RTG::CameraMoveSettings::CameraMoveSettings__cctor(Met
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__CameraMoveSettings);
+    FUN_?(&TypeInfo__RTG__CameraMoveSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TypeInfo__RTG__CameraMoveSettings->static_fields->_minMoveSpeed = 0.1;
@@ -19,35 +21,31 @@ void Assembly-CSharp.dll::RTG::CameraMoveSettings::CameraMoveSettings__ctor
                (CameraMoveSettings *this,MethodInfo *method)
 
 {
-  bVar1 = cRam_? == '\0';
   (this->fields)._moveSpeed = 6.0;
   (this->fields)._accelerationRate = 15.0;
-  if (bVar1) {
-    func_?(&StringLiteral_Settings);
+  if (cRam_? == '\0') {
+    FUN_?(&StringLiteral_Settings,0);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  bVar1 = iRam_? != 0;
   (this->fields)._._canBeDisplayed = 1;
   (this->fields)._._isExpanded = 1;
   (this->fields)._._foldoutLabel = StringLiteral_Settings;
-  method_00 = (MethodInfo *)&(this->fields)._._foldoutLabel;
-  func_?(method_00,StringLiteral_Settings);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  return;
-}
-
-
-/* Void set_AccelerationRate(Single) */
-
-void Assembly-CSharp.dll::RTG::CameraMoveSettings::CameraMoveSettings_set_AccelerationRate
-               (CameraMoveSettings *this,float value,MethodInfo *method)
-
-{
-  fVar1 = 0.0;
-  if (0.0 <= value) {
-    fVar1 = value;
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._._foldoutLabel >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
   }
-  (this->fields)._accelerationRate = fVar1;
   return;
 }
 
@@ -59,11 +57,13 @@ void Assembly-CSharp.dll::RTG::CameraMoveSettings::CameraMoveSettings_set_MoveSp
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__CameraMoveSettings);
+    FUN_?(&TypeInfo__RTG__CameraMoveSettings);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__RTG__CameraMoveSettings->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__CameraMoveSettings);
+  if (*(int *)&(TypeInfo__RTG__CameraMoveSettings->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__RTG__CameraMoveSettings);
   }
   fVar1 = TypeInfo__RTG__CameraMoveSettings->static_fields->_minMoveSpeed;
   if (fVar1 <= value) {

@@ -8,22 +8,23 @@ void Assembly-CSharp.dll::SettingsInputFieldSlider+<>c__DisplayClass18_0::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IHandleSettingChanged);
-    func_?(&TypeInfo__System__Single);
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IHandleSettingChanged);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pSVar1 = (this->fields).__4__this;
   if (pSVar1 != (SettingsInputFieldSlider *)0x0) {
-    this = (SettingsInputFieldSlider_c_DisplayClass18_0 *)(this->fields).floatValue;
+    afStackX_8[0] = (this->fields).floatValue;
     pSVar2 = (pSVar1->fields).key;
-    uVar3 = func_?(TypeInfo__System__Single,&this);
+    uVar3 = FUN_?(uRam_?,afStackX_8);
     if (handler != (IHandleSettingChanged *)0x0) {
-      func_?(0,TypeInfo__UnityEngine__EventSystems__IHandleSettingChanged,handler,pSVar2,
-                      uVar3);
+      FUN_?(0,TypeInfo__UnityEngine__EventSystems__IHandleSettingChanged,handler,pSVar2,
+                    uVar3);
       return;
     }
   }
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;

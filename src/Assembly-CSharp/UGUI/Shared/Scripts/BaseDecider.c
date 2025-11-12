@@ -6,50 +6,93 @@ void Assembly-CSharp.dll::UGUI::Shared::Scripts::BaseDecider::BaseDecider_Awake
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    ppSStack_1 = &StringLiteral_Starting_directly_DesktopBase;
-    func_?();
-    func_?(&StringLiteral_DesktopBase);
-    func_?(&StringLiteral_Not_starting_directly__showing_c);
-    func_?(&StringLiteral_Starting_directly_Base);
+    FUN_?(&TypeInfo__UnityEngine__SceneManagement__SceneManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Base);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Starting_directly_DesktopBase);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_DesktopBase);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Not_starting_directly__showing_c);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Starting_directly_Base);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (this->fields).canvas;
-  if (this_00 != (Canvas *)0x0) {
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                        ((Component *)this_00,(MethodInfo *)0x0);
-    if (this_01 != (GameObject *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (this_01,0,(MethodInfo *)0x0);
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-        BaseDecider_Log(StringLiteral_Starting_directly_DesktopBase,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).cctor_finished_or_no_cctor ==
-            0) {
-          func_?();
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::SceneManagement::SceneManager::
-        SceneManager_LoadScene(StringLiteral_DesktopBase,(MethodInfo *)0x0);
-        return;
-      }
-      BaseDecider_Log(StringLiteral_Starting_directly_Base,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).cctor_finished_or_no_cctor == 0
-         ) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::SceneManagement::SceneManager::SceneManager_LoadScene
-                (StringLiteral_Base,(MethodInfo *)0x0);
-      return;
+  if ((this_00 == (Canvas *)0x0) ||
+     (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)this_00,(MethodInfo *)0x0), this_01 == (GameObject *)0x0)) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+            (this_01,0,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
+    BaseDecider_Log(StringLiteral_Starting_directly_DesktopBase,(MethodInfo *)0x0);
+    sceneName = StringLiteral_DesktopBase;
+    if (*(int *)&(TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).field_0x1c == 0) {
+      FUN_?();
+      sceneName = StringLiteral_DesktopBase;
     }
   }
-  uVar2 = func_?(&ppSStack_1);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  else {
+    BaseDecider_Log(StringLiteral_Starting_directly_Base,(MethodInfo *)0x0);
+    sceneName = StringLiteral_Base;
+    if (*(int *)&(TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).field_0x1c == 0) {
+      FUN_?();
+      sceneName = StringLiteral_Base;
+    }
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__SceneManagement__SceneManager,0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__SceneManagement__SceneManager);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::SceneManagement::SceneManager::
+  SceneManager_LoadSceneAsyncNameIndexInternal
+            (sceneName,-1,(LoadSceneParameters)0x0,1,(MethodInfo *)0x0);
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  iVar3 = (*pcRam_?)();
+  UnityEngine.CoreModule.dll::UnityEngine::SceneManagement::SceneManager::SceneManager_GetSceneAt
+            (iVar3 + -1,(MethodInfo *)0x0);
   return;
 }
 
@@ -61,39 +104,49 @@ void Assembly-CSharp.dll::UGUI::Shared::Scripts::BaseDecider::BaseDecider_Log
 
 {
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_BaseDecider___);
+    FUN_?(&StringLiteral_BaseDecider___);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::String::String_Concat_3(StringLiteral_BaseDecider___,msg,(MethodInfo *)0x0);
+  pSVar1 = mscorlib.dll::System::String::String_Concat_4
+                     (StringLiteral_BaseDecider___,msg,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  uStack1 = 0;
-  if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
   }
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__Debug,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__ILogger);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  if (TypeInfo__UnityEngine__Debug->static_fields->s_Logger != (ILogger_1 *)0x0) {
-    func_?(6,TypeInfo__UnityEngine__ILogger);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pIVar2 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+  if (pIVar2 != (ILogger_1 *)0x0) {
+    FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar2,3,pSVar1);
     return;
   }
-  uVar2 = func_?(&stack0xfffffffc);
-  func_?(uVar2);
+  FUN_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -107,59 +160,94 @@ void Assembly-CSharp.dll::UGUI::Shared::Scripts::BaseDecider::BaseDecider_StartB
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__SceneManagement__SceneManager);
-    func_?(&StringLiteral_Starting_by_button_Base);
-    func_?(&StringLiteral_Base);
-    func_?(&StringLiteral_DesktopBase);
-    func_?(&StringLiteral_Starting_by_button_DesktopBase);
+    FUN_?(&TypeInfo__UnityEngine__SceneManagement__SceneManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Starting_by_button_Base);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Base);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_DesktopBase);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Starting_by_button_DesktopBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouchInitialized_k__BackingField = 1;
-  str1 = StringLiteral_Starting_by_button_DesktopBase;
-  pSVar1 = StringLiteral_Starting_by_button_Base;
   if (mobile == 0) {
+    BaseDecider_Log(StringLiteral_Starting_by_button_DesktopBase,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
-      func_?(&StringLiteral_BaseDecider___);
-      cRam_? = '\x01';
-    }
-    pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                       (StringLiteral_BaseDecider___,str1,(MethodInfo *)0x0);
-    Assets::Scripts::AdIntegration::Web::WebAdManager::WebAdManager_AdLog_1
-              (pSVar1,(MethodInfo *)0x0);
-    if (cRam_? == '\0') {
-      func_?();
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
     TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField = 0;
-    if ((TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).cctor_finished_or_no_cctor == 0)
-    {
-      func_?();
+    sceneName = StringLiteral_DesktopBase;
+    if (*(int *)&(TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).field_0x1c == 0) {
+      FUN_?();
+      sceneName = StringLiteral_DesktopBase;
     }
-    UnityEngine.CoreModule.dll::UnityEngine::SceneManagement::SceneManager::SceneManager_LoadScene
-              (StringLiteral_DesktopBase,(MethodInfo *)0x0);
+  }
+  else {
+    BaseDecider_Log(StringLiteral_Starting_by_button_Base,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField = 1;
+    sceneName = StringLiteral_Base;
+    if (*(int *)&(TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).field_0x1c == 0) {
+      FUN_?();
+      sceneName = StringLiteral_Base;
+    }
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__SceneManagement__SceneManager,0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__SceneManagement__SceneManager);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::SceneManagement::SceneManager::
+  SceneManager_LoadSceneAsyncNameIndexInternal
+            (sceneName,-1,(LoadSceneParameters)0x0,1,(MethodInfo *)0x0);
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  if (cRam_? == '\0') {
-    func_?(&StringLiteral_BaseDecider___);
-    cRam_? = '\x01';
-  }
-  pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_BaseDecider___,pSVar1,(MethodInfo *)0x0);
-  Assets::Scripts::AdIntegration::Web::WebAdManager::WebAdManager_AdLog_1(pSVar1,(MethodInfo *)0x0);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField = 1;
-  if ((TypeInfo__UnityEngine__SceneManagement__SceneManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  UnityEngine.CoreModule.dll::UnityEngine::SceneManagement::SceneManager::SceneManager_LoadScene
-            (StringLiteral_Base,(MethodInfo *)0x0);
+  pcRam_? = pcVar1;
+  iVar3 = (*pcRam_?)();
+  UnityEngine.CoreModule.dll::UnityEngine::SceneManagement::SceneManager::SceneManager_GetSceneAt
+            (iVar3 + -1,(MethodInfo *)0x0);
   return;
 }
 

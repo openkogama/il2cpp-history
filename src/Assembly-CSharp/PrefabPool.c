@@ -5,12 +5,805 @@ void Assembly-CSharp.dll::PrefabPool::PrefabPool_Awake(PrefabPool *this,MethodIn
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PrefabPool);
+    FUN_?(&TypeInfo__PrefabPool);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TypeInfo__PrefabPool->static_fields->instance = this;
-  func_?(TypeInfo__PrefabPool->static_fields,this);
-  PrefabPool_BuildLookupTables(this,(MethodInfo *)0x0);
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)TypeInfo__PrefabPool->static_fields >> 0xc);
+    puVar2 = (ulonglong *)((ulonglong)((uVar1 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar3 = *puVar2;
+      LOCK();
+      uVar4 = *puVar2;
+      if (uVar3 == uVar4) {
+        *puVar2 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar3 != uVar4);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Add_bool__EquipableData_
+                  ,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>__Add_MVJetPack__JetPackType__WorldObjectTypes__VehiclesBase__Shared__VehicleBaseObject_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  this_00 = (Dictionary_2_MV_Common_AvatarItemType_EquipableData_ *)
+            FUN_?(
+                         TypeInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>
+                         );
+  pEVar5 = mscorlib.dll::System::Collections::Generic::EqualityComparer`1[System::Int32Enum]::
+           EqualityComparer_1_System_Int32Enum__get_Default
+                     (MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Dictionary__
+                      ->klass->rgctx_data->method->klass->rgctx_data[3].method);
+  if ((pEVar5 != (EqualityComparer_1_System_Int32Enum_ *)0x0) &&
+     (bVar6 = iRam_? != 0,
+     (this_00->fields)._comparer = (IEqualityComparer_1_MV_Common_AvatarItemType_ *)0x0, bVar6)) {
+    uVar1 = (uint)((ulonglong)&(this_00->fields)._comparer >> 0xc);
+    lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+      puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar2;
+      if (bVar6) {
+        *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
+  pMStack_8 = (this->fields).avatarCenterGunPrefab;
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)&pMStack_8 >> 0xc);
+    lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+      puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar2;
+      if (bVar6) {
+        *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
+  uStack_9 = 0;
+  if (this_00 != (Dictionary_2_MV_Common_AvatarItemType_EquipableData_ *)0x0) {
+    IVar10 = CONCAT31((int3)((uint)in_R9D >> 8),2);
+    EStack_11.equipableType = 0;
+    EStack_11._12_4_ = 0;
+    EStack_11.prefabObject = (ObjectPrefab *)pMStack_8;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,1,&EStack_11,IVar10,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+               ->klass->rgctx_data[0x22].method);
+    EStack_11.prefabObject = (ObjectPrefab *)(this->fields).avatarImpulseGunPrefab;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&pMStack_12 >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    uStack_13 = 0;
+    IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+    EStack_11.equipableType = 0;
+    EStack_11._12_4_ = 0;
+    pMStack_12 = (MVPickupItemBaseObject *)EStack_11.prefabObject;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,2,&EStack_11,IVar10,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+               ->klass->rgctx_data[0x22].method);
+    EStack_11.prefabObject = (ObjectPrefab *)(this->fields).avatarHealthPrefab;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&pMStack_14 >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    uStack_15 = 1;
+    IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+    EStack_11.equipableType = 1;
+    EStack_11._12_4_ = 0;
+    pMStack_14 = (MVPickupItemBaseObject *)EStack_11.prefabObject;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,3,&EStack_11,IVar10,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+               ->klass->rgctx_data[0x22].method);
+    EStack_11.prefabObject = (ObjectPrefab *)(this->fields).avatarBazookaPrefab;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&pMStack_16 >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    uStack_17 = 0;
+    IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+    EStack_11.equipableType = 0;
+    EStack_11._12_4_ = 0;
+    pMStack_16 = (MVPickupItemBaseObject *)EStack_11.prefabObject;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,4,&EStack_11,IVar10,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+               ->klass->rgctx_data[0x22].method);
+    EStack_11.prefabObject = (ObjectPrefab *)(this->fields).avatarRailGunPrefab;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&pMStack_18 >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    uStack_19 = 0;
+    IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+    EStack_11.equipableType = 0;
+    EStack_11._12_4_ = 0;
+    pMStack_18 = (MVPickupItemBaseObject *)EStack_11.prefabObject;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,6,&EStack_11,IVar10,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+               ->klass->rgctx_data[0x22].method);
+    EStack_11.prefabObject = (ObjectPrefab *)(this->fields).avatarMutantPrefab;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&pMStack_20 >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    uStack_21 = 1;
+    IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+    EStack_11.equipableType = 1;
+    EStack_11._12_4_ = 0;
+    pMStack_20 = (MVPickupItemBaseObject *)EStack_11.prefabObject;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,7,&EStack_11,IVar10,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+               ->klass->rgctx_data[0x22].method);
+    EStack_11.prefabObject = (ObjectPrefab *)(this->fields).avatarMeleeWeaponPrefab;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&pMStack_22 >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    uStack_23 = 0;
+    IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+    EStack_11.equipableType = 0;
+    EStack_11._12_4_ = 0;
+    pMStack_22 = (MVPickupItemBaseObject *)EStack_11.prefabObject;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,8,&EStack_11,IVar10,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+               ->klass->rgctx_data[0x22].method);
+    EStack_11.prefabObject = (ObjectPrefab *)(this->fields).avatarShotgunPrefab;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&pMStack_24 >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    uStack_25 = 0;
+    IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+    EStack_11.equipableType = 0;
+    EStack_11._12_4_ = 0;
+    pMStack_24 = (MVPickupItemBaseObject *)EStack_11.prefabObject;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,9,&EStack_11,IVar10,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+               ->klass->rgctx_data[0x22].method);
+    EStack_11.prefabObject = (ObjectPrefab *)(this->fields).avatarFlamethrowerPrefab;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&pMStack_26 >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    uStack_27 = 0;
+    IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+    EStack_11.equipableType = 0;
+    EStack_11._12_4_ = 0;
+    pMStack_26 = (MVPickupItemBaseObject *)EStack_11.prefabObject;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,10,&EStack_11,IVar10,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+               ->klass->rgctx_data[0x22].method);
+    EStack_11.prefabObject = (ObjectPrefab *)(this->fields).avatarCubeGunPrefab;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&pMStack_28 >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    uStack_29 = 0;
+    IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+    EStack_11.equipableType = 0;
+    EStack_11._12_4_ = 0;
+    pMStack_28 = (MVPickupItemBaseObject *)EStack_11.prefabObject;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xb,&EStack_11,IVar10,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+               ->klass->rgctx_data[0x22].method);
+    EStack_11.prefabObject = (ObjectPrefab *)(this->fields).avatarNinjaRunPrefab;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&pMStack_30 >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    uStack_31 = 1;
+    IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+    EStack_11.equipableType = 1;
+    EStack_11._12_4_ = 0;
+    pMStack_30 = (MVPickupItemBaseObject *)EStack_11.prefabObject;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xe,&EStack_11,IVar10,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+               ->klass->rgctx_data[0x22].method);
+    EStack_11.prefabObject = (ObjectPrefab *)(this->fields).avatarSixShooterPrefab;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&pMStack_32 >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    uStack_33 = 0;
+    IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+    EStack_11.equipableType = 0;
+    EStack_11._12_4_ = 0;
+    pMStack_32 = (MVPickupItemBaseObject *)EStack_11.prefabObject;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xc,&EStack_11,IVar10,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+               ->klass->rgctx_data[0x22].method);
+    EStack_11.prefabObject = (ObjectPrefab *)(this->fields).avatarDoubleSixShooterPrefab;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&pMStack_34 >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    uStack_35 = 0;
+    IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+    EStack_11.equipableType = 0;
+    EStack_11._12_4_ = 0;
+    pMStack_34 = (MVPickupItemBaseObject *)EStack_11.prefabObject;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xd,&EStack_11,IVar10,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+               ->klass->rgctx_data[0x22].method);
+    EStack_11.prefabObject = (ObjectPrefab *)(this->fields).avatarThrowingStarPrefab;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&pMStack_36 >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    uStack_37 = 0;
+    IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+    EStack_11.equipableType = 0;
+    EStack_11._12_4_ = 0;
+    pMStack_36 = (MVPickupItemBaseObject *)EStack_11.prefabObject;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x2d,&EStack_11,IVar10,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+               ->klass->rgctx_data[0x22].method);
+    EStack_11.prefabObject = (ObjectPrefab *)(this->fields).avatarMultiThrowingStarPrefab;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&pMStack_38 >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    uStack_39 = 0;
+    IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+    EStack_11.equipableType = 0;
+    EStack_11._12_4_ = 0;
+    pMStack_38 = (MVPickupItemBaseObject *)EStack_11.prefabObject;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x2e,&EStack_11,IVar10,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+               ->klass->rgctx_data[0x22].method);
+    EStack_11.prefabObject = (ObjectPrefab *)(this->fields).avatarMouseGunPrefab;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&pMStack_40 >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    uStack_41 = 0;
+    IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+    EStack_11.equipableType = 0;
+    EStack_11._12_4_ = 0;
+    pMStack_40 = (MVPickupItemBaseObject *)EStack_11.prefabObject;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x3c,&EStack_11,IVar10,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+               ->klass->rgctx_data[0x22].method);
+    EStack_11.prefabObject = (ObjectPrefab *)(this->fields).avatarGrowthGunPrefab;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&pMStack_42 >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    uStack_43 = 0;
+    IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+    EStack_11.equipableType = 0;
+    EStack_11._12_4_ = 0;
+    pMStack_42 = (MVPickupItemBaseObject *)EStack_11.prefabObject;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x3e,&EStack_11,IVar10,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+               ->klass->rgctx_data[0x22].method);
+    EStack_11.prefabObject = (ObjectPrefab *)(this->fields).avatarMousePackPrefab;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&pMStack_44 >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    uStack_45 = 1;
+    IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+    EStack_11.equipableType = 1;
+    EStack_11._12_4_ = 0;
+    pMStack_44 = (MVPickupItemBaseObject *)EStack_11.prefabObject;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x3f,&EStack_11,IVar10,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+               ->klass->rgctx_data[0x22].method);
+    EStack_11.prefabObject = (ObjectPrefab *)(this->fields).avatarGrowthPackPrefab;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&pMStack_46 >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    uStack_47 = 1;
+    IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+    EStack_11.equipableType = 1;
+    EStack_11._12_4_ = 0;
+    pMStack_46 = (MVPickupItemBaseObject *)EStack_11.prefabObject;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x40,&EStack_11,IVar10,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+               ->klass->rgctx_data[0x22].method);
+    EStack_11.prefabObject = (ObjectPrefab *)(this->fields).avatarHealRayPrefab;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&pMStack_48 >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    uStack_49 = 0;
+    IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+    EStack_11.equipableType = 0;
+    EStack_11._12_4_ = 0;
+    pMStack_48 = (MVPickupItemBaseObject *)EStack_11.prefabObject;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x46,&EStack_11,IVar10,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+               ->klass->rgctx_data[0x22].method);
+    EStack_11.prefabObject = (ObjectPrefab *)(this->fields).avatarCostumePrefab;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&pMStack_50 >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    uStack_51 = 0;
+    IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+    EStack_11.equipableType = 0;
+    EStack_11._12_4_ = 0;
+    pMStack_50 = (MVPickupItemBaseObject *)EStack_11.prefabObject;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x3b,&EStack_11,IVar10,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+               ->klass->rgctx_data[0x22].method);
+    EStack_11.prefabObject = (ObjectPrefab *)(this->fields).avatarCustomGunPrefab;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&pMStack_52 >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    puStack_53 = (undefined *)0x0;
+    IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+    EStack_11.equipableType = 0;
+    EStack_11._12_4_ = 0;
+    pMStack_52 = (MVPickupItemBaseObject *)EStack_11.prefabObject;
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xf,&EStack_11,IVar10,
+               MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+               ->klass->rgctx_data[0x22].method);
+    bVar6 = iRam_? != 0;
+    (this->fields).pickupPrefabLUT = this_00;
+    if (bVar6) {
+      uVar1 = (uint)((ulonglong)&(this->fields).pickupPrefabLUT >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    this_01 = (Dictionary_2_System_Boolean_EquipableData_ *)
+              FUN_?(TypeInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>)
+    ;
+    pEVar54 = mscorlib.dll::System::Collections::Generic::EqualityComparer`1[System::Boolean]::
+             EqualityComparer_1_System_Boolean__get_Default
+                       (MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Dictionary__
+                        ->klass->rgctx_data->method->klass->rgctx_data[3].method);
+    if ((pEVar54 != (EqualityComparer_1_System_Boolean_ *)0x0) &&
+       (bVar6 = iRam_? != 0,
+       (this_01->fields)._comparer = (IEqualityComparer_1_System_Boolean_ *)0x0, bVar6)) {
+      uVar1 = (uint)((ulonglong)&(this_01->fields)._comparer >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    pMStack_55 = (this->fields).avatarMeleeWeaponPrefab;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&pMStack_55 >> 0xc);
+      lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar2;
+        if (bVar6) {
+          *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    uStack_56 = 0;
+    if (this_01 != (Dictionary_2_System_Boolean_EquipableData_ *)0x0) {
+      IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+      EStack_11.equipableType = 0;
+      EStack_11._12_4_ = 0;
+      EStack_11.prefabObject = (ObjectPrefab *)pMStack_55;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Boolean,EquipableData]::
+      Dictionary_2_System_Boolean_EquipableData__TryInsert
+                (this_01,0,&EStack_11,IVar10,
+                 MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Add_bool__EquipableData_
+                 ->klass->rgctx_data[0x22].method);
+      EStack_11.prefabObject = (ObjectPrefab *)(this->fields).avatarSwordPrefab;
+      if (iRam_? != 0) {
+        uVar1 = (uint)((ulonglong)&pMStack_57 >> 0xc);
+        lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+          puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+          LOCK();
+          bVar6 = uVar4 == *puVar2;
+          if (bVar6) {
+            *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar6);
+      }
+      uStack_58 = 0;
+      IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+      EStack_11.equipableType = 0;
+      EStack_11._12_4_ = 0;
+      pMStack_57 = (MVPickupItemBaseObject *)EStack_11.prefabObject;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Boolean,EquipableData]::
+      Dictionary_2_System_Boolean_EquipableData__TryInsert
+                (this_01,1,&EStack_11,IVar10,
+                 MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Add_bool__EquipableData_
+                 ->klass->rgctx_data[0x22].method);
+      bVar6 = iRam_? != 0;
+      (this->fields).meleeWeaponPrefabLUT = this_01;
+      if (bVar6) {
+        uVar1 = (uint)((ulonglong)&(this->fields).meleeWeaponPrefabLUT >> 0xc);
+        lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+          puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+          LOCK();
+          bVar6 = uVar4 == *puVar2;
+          if (bVar6) {
+            *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar6);
+      }
+      this_02 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
+                 *)FUN_?(
+                                TypeInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>
+                                );
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
+      RuntimeEvents::ExplosionEvent+ExplosionValues]::
+      Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues___ctor
+                (this_02,
+                 MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>__Dictionary__
+                );
+      if (this_02 !=
+          (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
+           *)0x0) {
+        IVar10 = CONCAT31((int3)(IVar10 >> 8),2);
+        uVar59 = 0;
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
+        Dictionary_2_System_ByteEnum_System_Object__TryInsert
+                  ((Dictionary_2_System_ByteEnum_System_Object_ *)this_02,0,
+                   (Object *)(this->fields).mvJetPackPrefab,IVar10,
+                   MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>__Add_MVJetPack__JetPackType__WorldObjectTypes__VehiclesBase__Shared__VehicleBaseObject_
+                   ->klass->rgctx_data[0x22].method);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
+        Dictionary_2_System_ByteEnum_System_Object__TryInsert
+                  ((Dictionary_2_System_ByteEnum_System_Object_ *)this_02,
+                   (ByteEnum__Enum)CONCAT71((int7)((ulonglong)uVar59 >> 8),1),
+                   (Object *)(this->fields).mvJetPackDeluxePrefab,CONCAT31((int3)(IVar10 >> 8),2),
+                   MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>__Add_MVJetPack__JetPackType__WorldObjectTypes__VehiclesBase__Shared__VehicleBaseObject_
+                   ->klass->rgctx_data[0x22].method);
+        bVar6 = iRam_? != 0;
+        (this->fields).jetPackPrefabLUT =
+             (Dictionary_2_MVJetPack_JetPackType_WorldObjectTypes_VehiclesBase_Shared_VehicleBaseObject_
+              *)this_02;
+        if (bVar6) {
+          uVar1 = (uint)((ulonglong)&(this->fields).jetPackPrefabLUT >> 0xc);
+          lVar7 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar4 = *(ulonglong *)(lVar7 + 0xADDR);
+            puVar2 = (ulonglong *)(lVar7 + 0xADDR);
+            LOCK();
+            bVar6 = uVar4 == *puVar2;
+            if (bVar6) {
+              *puVar2 = uVar4 | 1L << (uVar1 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar6);
+        }
+        return;
+      }
+    }
+  }
+  FUN_?();
+  pcVar60 = (code *)swi(3);
+  (*pcVar60)();
   return;
 }
 
@@ -22,380 +815,736 @@ void Assembly-CSharp.dll::PrefabPool::PrefabPool_BuildLookupTables
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Add_bool__EquipableData_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>__Add_MVJetPack__JetPackType__WorldObjectTypes__VehiclesBase__Shared__VehicleBaseObject_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>__Dictionary__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Dictionary__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Dictionary__
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>);
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Add_bool__EquipableData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>__Add_MVJetPack__JetPackType__WorldObjectTypes__VehiclesBase__Shared__VehicleBaseObject_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (Dictionary_2_MV_Common_AvatarItemType_EquipableData_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>
-                           );
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-  Int32Enum,GamePassesHighScoreList+HighScoreListData]::
-  Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
-            ((Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)this_00,
-             MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Dictionary__
-            );
-  SStack_1._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
-  SStack_1._index = 0;
-  mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-  SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-            (&SStack_1,
-             (SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarCenterGunPrefab
-             ,0,(MethodInfo *)0x0);
+            FUN_?(
+                         TypeInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>
+                         );
+  pEVar1 = mscorlib.dll::System::Collections::Generic::EqualityComparer`1[System::Int32Enum]::
+           EqualityComparer_1_System_Int32Enum__get_Default
+                     (MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Dictionary__
+                      ->klass->rgctx_data->method->klass->rgctx_data[3].method);
+  if ((pEVar1 != (EqualityComparer_1_System_Int32Enum_ *)0x0) &&
+     (bVar2 = iRam_? != 0,
+     (this_00->fields)._comparer = (IEqualityComparer_1_MV_Common_AvatarItemType_ *)0x0, bVar2)) {
+    uVar3 = (uint)((ulonglong)&(this_00->fields)._comparer >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
+  pMStack_7 = (this->fields).avatarCenterGunPrefab;
+  if (iRam_? != 0) {
+    uVar3 = (uint)((ulonglong)&pMStack_7 >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
+  uStack_8 = 0;
   if (this_00 != (Dictionary_2_MV_Common_AvatarItemType_EquipableData_ *)0x0) {
+    IVar9 = CONCAT31((int3)((uint)in_R9D >> 8),2);
+    EStack_10.equipableType = 0;
+    EStack_10._12_4_ = 0;
+    EStack_10.prefabObject = (ObjectPrefab *)pMStack_7;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
-    Dictionary_2_System_Int32Enum_EquipableData__Add
-              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,1,(EquipableData)SStack_1,
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,1,&EStack_10,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    SStack_2._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
-    SStack_2._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-              (&SStack_2,
-               (SparselyPopulatedArrayFragment_1_System_Object_ *)
-               (this->fields).avatarImpulseGunPrefab,0,(MethodInfo *)0x0);
+               ->klass->rgctx_data[0x22].method);
+    EStack_10.prefabObject = (ObjectPrefab *)(this->fields).avatarImpulseGunPrefab;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&pMStack_11 >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    uStack_12 = 0;
+    IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+    EStack_10.equipableType = 0;
+    EStack_10._12_4_ = 0;
+    pMStack_11 = (MVPickupItemBaseObject *)EStack_10.prefabObject;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
-    Dictionary_2_System_Int32Enum_EquipableData__Add
-              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,2,(EquipableData)SStack_2,
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,2,&EStack_10,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    SStack_3._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
-    SStack_3._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-              (&SStack_3,
-               (SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarHealthPrefab,
-               1,(MethodInfo *)0x0);
-    stack0xffffff80 = (int32_t)this_00;
+               ->klass->rgctx_data[0x22].method);
+    EStack_10.prefabObject = (ObjectPrefab *)(this->fields).avatarHealthPrefab;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&pMStack_13 >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    uStack_14 = 1;
+    IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+    EStack_10.equipableType = 1;
+    EStack_10._12_4_ = 0;
+    pMStack_13 = (MVPickupItemBaseObject *)EStack_10.prefabObject;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
-    Dictionary_2_System_Int32Enum_EquipableData__Add
-              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,3,(EquipableData)SStack_3,
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,3,&EStack_10,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    SStack_4._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
-    SStack_4._index = 0;
-    stack0xffffff80 = (int32_t)&UNK_?;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-              (&SStack_4,
-               (SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarBazookaPrefab
-               ,0,(MethodInfo *)0x0);
-    stack0xffffff80 = (int32_t)this_00;
+               ->klass->rgctx_data[0x22].method);
+    EStack_10.prefabObject = (ObjectPrefab *)(this->fields).avatarBazookaPrefab;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&pMStack_15 >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    uStack_16 = 0;
+    IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+    EStack_10.equipableType = 0;
+    EStack_10._12_4_ = 0;
+    pMStack_15 = (MVPickupItemBaseObject *)EStack_10.prefabObject;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
-    Dictionary_2_System_Int32Enum_EquipableData__Add
-              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,4,(EquipableData)SStack_4,
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,4,&EStack_10,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    stack0xffffff80 = (int32_t)&UNK_?;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-              ((SparselyPopulatedArrayAddInfo_1_System_Object_ *)&stack0xffffffd4,
-               (SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarRailGunPrefab
-               ,0,(MethodInfo *)0x0);
-    stack0xffffffc8 = (int32_t)this_00;
-    value_03.equipableType =
-         (int32_t)
-         MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-    ;
-    value_03.prefabObject =
-         (ObjectPrefab *)
-         MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-    ;
+               ->klass->rgctx_data[0x22].method);
+    EStack_10.prefabObject = (ObjectPrefab *)(this->fields).avatarRailGunPrefab;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&pMStack_17 >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    uStack_18 = 0;
+    IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+    EStack_10.equipableType = 0;
+    EStack_10._12_4_ = 0;
+    pMStack_17 = (MVPickupItemBaseObject *)EStack_10.prefabObject;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
-    Dictionary_2_System_Int32Enum_EquipableData__Add
-              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,6,value_03,
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,6,&EStack_10,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar5 = (ObjectPrefab *)0x0;
-    iVar6 = 0;
-    stack0xffffffc8 = (int32_t)&UNK_?;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-              ((SparselyPopulatedArrayAddInfo_1_System_Object_ *)0x0,
-               (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0,1,(MethodInfo *)0x0);
-    stack0xffffffc8 = (int32_t)this_00;
-    value_04.equipableType = iVar6;
-    value_04.prefabObject = pOVar5;
+               ->klass->rgctx_data[0x22].method);
+    EStack_10.prefabObject = (ObjectPrefab *)(this->fields).avatarMutantPrefab;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&pMStack_19 >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    uStack_20 = 1;
+    IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+    EStack_10.equipableType = 1;
+    EStack_10._12_4_ = 0;
+    pMStack_19 = (MVPickupItemBaseObject *)EStack_10.prefabObject;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
-    Dictionary_2_System_Int32Enum_EquipableData__Add
-              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,7,value_04,
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,7,&EStack_10,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pSStack_7 = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
-    stack0xffffffc8 = 0xADDR;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-              ((SparselyPopulatedArrayAddInfo_1_System_Object_ *)&pSStack_7,
-               (SparselyPopulatedArrayFragment_1_System_Object_ *)
-               (this->fields).avatarMeleeWeaponPrefab,0,(MethodInfo *)0x0);
+               ->klass->rgctx_data[0x22].method);
+    EStack_10.prefabObject = (ObjectPrefab *)(this->fields).avatarMeleeWeaponPrefab;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&pMStack_21 >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    uStack_22 = 0;
+    IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+    EStack_10.equipableType = 0;
+    EStack_10._12_4_ = 0;
+    pMStack_21 = (MVPickupItemBaseObject *)EStack_10.prefabObject;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
-    Dictionary_2_System_Int32Enum_EquipableData__Add
-              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,8,(EquipableData)_pSStack_3c,
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,8,&EStack_10,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    SStack_8._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
-    SStack_8._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-              (&SStack_8,
-               (SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarShotgunPrefab
-               ,0,(MethodInfo *)0x0);
+               ->klass->rgctx_data[0x22].method);
+    EStack_10.prefabObject = (ObjectPrefab *)(this->fields).avatarShotgunPrefab;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&pMStack_23 >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    uStack_24 = 0;
+    IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+    EStack_10.equipableType = 0;
+    EStack_10._12_4_ = 0;
+    pMStack_23 = (MVPickupItemBaseObject *)EStack_10.prefabObject;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
-    Dictionary_2_System_Int32Enum_EquipableData__Add
-              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,9,(EquipableData)SStack_8,
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,9,&EStack_10,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    SStack_9._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
-    SStack_9._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-              (&SStack_9,
-               (SparselyPopulatedArrayFragment_1_System_Object_ *)
-               (this->fields).avatarFlamethrowerPrefab,0,(MethodInfo *)0x0);
+               ->klass->rgctx_data[0x22].method);
+    EStack_10.prefabObject = (ObjectPrefab *)(this->fields).avatarFlamethrowerPrefab;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&pMStack_25 >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    uStack_26 = 0;
+    IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+    EStack_10.equipableType = 0;
+    EStack_10._12_4_ = 0;
+    pMStack_25 = (MVPickupItemBaseObject *)EStack_10.prefabObject;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
-    Dictionary_2_System_Int32Enum_EquipableData__Add
-              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,10,(EquipableData)SStack_9,
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,10,&EStack_10,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    SStack_10._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
-    SStack_10._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-              (&SStack_10,
-               (SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarCubeGunPrefab
-               ,0,(MethodInfo *)0x0);
+               ->klass->rgctx_data[0x22].method);
+    EStack_10.prefabObject = (ObjectPrefab *)(this->fields).avatarCubeGunPrefab;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&pMStack_27 >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    uStack_28 = 0;
+    IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+    EStack_10.equipableType = 0;
+    EStack_10._12_4_ = 0;
+    pMStack_27 = (MVPickupItemBaseObject *)EStack_10.prefabObject;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
-    Dictionary_2_System_Int32Enum_EquipableData__Add
-              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xb,(EquipableData)SStack_10,
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xb,&EStack_10,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    SStack_11._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
-    SStack_11._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-              (&SStack_11,
-               (SparselyPopulatedArrayFragment_1_System_Object_ *)
-               (this->fields).avatarNinjaRunPrefab,1,(MethodInfo *)0x0);
+               ->klass->rgctx_data[0x22].method);
+    EStack_10.prefabObject = (ObjectPrefab *)(this->fields).avatarNinjaRunPrefab;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&pMStack_29 >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    uStack_30 = 1;
+    IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+    EStack_10.equipableType = 1;
+    EStack_10._12_4_ = 0;
+    pMStack_29 = (MVPickupItemBaseObject *)EStack_10.prefabObject;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
-    Dictionary_2_System_Int32Enum_EquipableData__Add
-              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xe,(EquipableData)SStack_11,
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xe,&EStack_10,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    SStack_12._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
-    SStack_12._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-              (&SStack_12,
-               (SparselyPopulatedArrayFragment_1_System_Object_ *)
-               (this->fields).avatarSixShooterPrefab,0,(MethodInfo *)0x0);
+               ->klass->rgctx_data[0x22].method);
+    EStack_10.prefabObject = (ObjectPrefab *)(this->fields).avatarSixShooterPrefab;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&pMStack_31 >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    uStack_32 = 0;
+    IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+    EStack_10.equipableType = 0;
+    EStack_10._12_4_ = 0;
+    pMStack_31 = (MVPickupItemBaseObject *)EStack_10.prefabObject;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
-    Dictionary_2_System_Int32Enum_EquipableData__Add
-              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xc,(EquipableData)SStack_12,
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xc,&EStack_10,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    SStack_13._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
-    SStack_13._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-              (&SStack_13,
-               (SparselyPopulatedArrayFragment_1_System_Object_ *)
-               (this->fields).avatarDoubleSixShooterPrefab,0,(MethodInfo *)0x0);
+               ->klass->rgctx_data[0x22].method);
+    EStack_10.prefabObject = (ObjectPrefab *)(this->fields).avatarDoubleSixShooterPrefab;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&pMStack_33 >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    uStack_34 = 0;
+    IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+    EStack_10.equipableType = 0;
+    EStack_10._12_4_ = 0;
+    pMStack_33 = (MVPickupItemBaseObject *)EStack_10.prefabObject;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
-    Dictionary_2_System_Int32Enum_EquipableData__Add
-              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xd,(EquipableData)SStack_13,
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xd,&EStack_10,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar5 = (ObjectPrefab *)0x0;
-    iVar6 = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-              ((SparselyPopulatedArrayAddInfo_1_System_Object_ *)&stack0xffffff8c,
-               (SparselyPopulatedArrayFragment_1_System_Object_ *)
-               (this->fields).avatarThrowingStarPrefab,0,(MethodInfo *)0x0);
-    value.equipableType = iVar6;
-    value.prefabObject = pOVar5;
+               ->klass->rgctx_data[0x22].method);
+    EStack_10.prefabObject = (ObjectPrefab *)(this->fields).avatarThrowingStarPrefab;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&pMStack_35 >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    uStack_36 = 0;
+    IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+    EStack_10.equipableType = 0;
+    EStack_10._12_4_ = 0;
+    pMStack_35 = (MVPickupItemBaseObject *)EStack_10.prefabObject;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
-    Dictionary_2_System_Int32Enum_EquipableData__Add
-              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x2d,value,
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x2d,&EStack_10,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOVar5 = (ObjectPrefab *)0x0;
-    iVar6 = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-              ((SparselyPopulatedArrayAddInfo_1_System_Object_ *)&stack0xffffff84,
-               (SparselyPopulatedArrayFragment_1_System_Object_ *)
-               (this->fields).avatarMultiThrowingStarPrefab,0,(MethodInfo *)0x0);
-    value_00.equipableType = iVar6;
-    value_00.prefabObject = pOVar5;
+               ->klass->rgctx_data[0x22].method);
+    EStack_10.prefabObject = (ObjectPrefab *)(this->fields).avatarMultiThrowingStarPrefab;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&pMStack_37 >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    uStack_38 = 0;
+    IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+    EStack_10.equipableType = 0;
+    EStack_10._12_4_ = 0;
+    pMStack_37 = (MVPickupItemBaseObject *)EStack_10.prefabObject;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
-    Dictionary_2_System_Int32Enum_EquipableData__Add
-              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x2e,value_00,
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x2e,&EStack_10,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    pOStack_14 = (ObjectPrefab *)0x0;
-    stack0xffffff80 = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-              ((SparselyPopulatedArrayAddInfo_1_System_Object_ *)&pOStack_14,
-               (SparselyPopulatedArrayFragment_1_System_Object_ *)
-               (this->fields).avatarMouseGunPrefab,0,(MethodInfo *)0x0);
+               ->klass->rgctx_data[0x22].method);
+    EStack_10.prefabObject = (ObjectPrefab *)(this->fields).avatarMouseGunPrefab;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&pMStack_39 >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    uStack_40 = 0;
+    IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+    EStack_10.equipableType = 0;
+    EStack_10._12_4_ = 0;
+    pMStack_39 = (MVPickupItemBaseObject *)EStack_10.prefabObject;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
-    Dictionary_2_System_Int32Enum_EquipableData__Add
-              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x3c,
-               (EquipableData)_pOStack_84,
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x3c,&EStack_10,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    SStack_15._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
-    SStack_15._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-              (&SStack_15,
-               (SparselyPopulatedArrayFragment_1_System_Object_ *)
-               (this->fields).avatarGrowthGunPrefab,0,(MethodInfo *)0x0);
+               ->klass->rgctx_data[0x22].method);
+    EStack_10.prefabObject = (ObjectPrefab *)(this->fields).avatarGrowthGunPrefab;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&pMStack_41 >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    uStack_42 = 0;
+    IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+    EStack_10.equipableType = 0;
+    EStack_10._12_4_ = 0;
+    pMStack_41 = (MVPickupItemBaseObject *)EStack_10.prefabObject;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
-    Dictionary_2_System_Int32Enum_EquipableData__Add
-              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x3e,(EquipableData)SStack_15
-               ,
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x3e,&EStack_10,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    SStack_16._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
-    SStack_16._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-              (&SStack_16,
-               (SparselyPopulatedArrayFragment_1_System_Object_ *)
-               (this->fields).avatarMousePackPrefab,1,(MethodInfo *)0x0);
+               ->klass->rgctx_data[0x22].method);
+    EStack_10.prefabObject = (ObjectPrefab *)(this->fields).avatarMousePackPrefab;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&pMStack_43 >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    uStack_44 = 1;
+    IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+    EStack_10.equipableType = 1;
+    EStack_10._12_4_ = 0;
+    pMStack_43 = (MVPickupItemBaseObject *)EStack_10.prefabObject;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
-    Dictionary_2_System_Int32Enum_EquipableData__Add
-              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x3f,(EquipableData)SStack_16
-               ,
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x3f,&EStack_10,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    SStack_17._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
-    SStack_17._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-              (&SStack_17,
-               (SparselyPopulatedArrayFragment_1_System_Object_ *)
-               (this->fields).avatarGrowthPackPrefab,1,(MethodInfo *)0x0);
+               ->klass->rgctx_data[0x22].method);
+    EStack_10.prefabObject = (ObjectPrefab *)(this->fields).avatarGrowthPackPrefab;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&pMStack_45 >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    uStack_46 = 1;
+    IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+    EStack_10.equipableType = 1;
+    EStack_10._12_4_ = 0;
+    pMStack_45 = (MVPickupItemBaseObject *)EStack_10.prefabObject;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
-    Dictionary_2_System_Int32Enum_EquipableData__Add
-              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x40,(EquipableData)SStack_17
-               ,
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x40,&EStack_10,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    SStack_18._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
-    SStack_18._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-              (&SStack_18,
-               (SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarHealRayPrefab
-               ,0,(MethodInfo *)0x0);
+               ->klass->rgctx_data[0x22].method);
+    EStack_10.prefabObject = (ObjectPrefab *)(this->fields).avatarHealRayPrefab;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&pMStack_47 >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    uStack_48 = 0;
+    IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+    EStack_10.equipableType = 0;
+    EStack_10._12_4_ = 0;
+    pMStack_47 = (MVPickupItemBaseObject *)EStack_10.prefabObject;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
-    Dictionary_2_System_Int32Enum_EquipableData__Add
-              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x46,(EquipableData)SStack_18
-               ,
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x46,&EStack_10,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    SStack_19._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
-    SStack_19._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-              (&SStack_19,
-               (SparselyPopulatedArrayFragment_1_System_Object_ *)(this->fields).avatarCostumePrefab
-               ,0,(MethodInfo *)0x0);
+               ->klass->rgctx_data[0x22].method);
+    EStack_10.prefabObject = (ObjectPrefab *)(this->fields).avatarCostumePrefab;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&pMStack_49 >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    uStack_50 = 0;
+    IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+    EStack_10.equipableType = 0;
+    EStack_10._12_4_ = 0;
+    pMStack_49 = (MVPickupItemBaseObject *)EStack_10.prefabObject;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
-    Dictionary_2_System_Int32Enum_EquipableData__Add
-              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x3b,(EquipableData)SStack_19
-               ,
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0x3b,&EStack_10,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
-    SStack_20._source = (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0;
-    SStack_20._index = 0;
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-              (&SStack_20,
-               (SparselyPopulatedArrayFragment_1_System_Object_ *)
-               (this->fields).avatarCustomGunPrefab,0,(MethodInfo *)0x0);
+               ->klass->rgctx_data[0x22].method);
+    EStack_10.prefabObject = (ObjectPrefab *)(this->fields).avatarCustomGunPrefab;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&pMStack_51 >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    uStack_52 = 0;
+    IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+    EStack_10.equipableType = 0;
+    EStack_10._12_4_ = 0;
+    pMStack_51 = (MVPickupItemBaseObject *)EStack_10.prefabObject;
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,EquipableData]::
-    Dictionary_2_System_Int32Enum_EquipableData__Add
-              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xf,(EquipableData)SStack_20,
+    Dictionary_2_System_Int32Enum_EquipableData__TryInsert
+              ((Dictionary_2_System_Int32Enum_EquipableData_ *)this_00,0xf,&EStack_10,IVar9,
                MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__Add_MV__Common__AvatarItemType__EquipableData_
-              );
+               ->klass->rgctx_data[0x22].method);
+    bVar2 = iRam_? != 0;
     (this->fields).pickupPrefabLUT = this_00;
-    func_?();
-    this_01 = (Dictionary_2_System_Boolean_EquipableData_ *)func_?();
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Boolean,EquipableData]::
-    Dictionary_2_System_Boolean_EquipableData___ctor
-              (this_01,
-               MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Dictionary__
-              );
-    mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-    SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-              ((SparselyPopulatedArrayAddInfo_1_System_Object_ *)&stack0xffffff44,
-               (SparselyPopulatedArrayFragment_1_System_Object_ *)
-               (this->fields).avatarMeleeWeaponPrefab,0,(MethodInfo *)0x0);
+    if (bVar2) {
+      uVar3 = (uint)((ulonglong)&(this->fields).pickupPrefabLUT >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    this_01 = (Dictionary_2_System_Boolean_EquipableData_ *)
+              FUN_?(TypeInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>)
+    ;
+    pEVar53 = mscorlib.dll::System::Collections::Generic::EqualityComparer`1[System::Boolean]::
+             EqualityComparer_1_System_Boolean__get_Default
+                       (MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Dictionary__
+                        ->klass->rgctx_data->method->klass->rgctx_data[3].method);
+    if ((pEVar53 != (EqualityComparer_1_System_Boolean_ *)0x0) &&
+       (bVar2 = iRam_? != 0,
+       (this_01->fields)._comparer = (IEqualityComparer_1_System_Boolean_ *)0x0, bVar2)) {
+      uVar3 = (uint)((ulonglong)&(this_01->fields)._comparer >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    pMStack_54 = (this->fields).avatarMeleeWeaponPrefab;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&pMStack_54 >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    uStack_55 = 0;
     if (this_01 != (Dictionary_2_System_Boolean_EquipableData_ *)0x0) {
-      value_01.equipableType =
-           (int32_t)
-           MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Add_bool__EquipableData_
-      ;
-      value_01.prefabObject =
-           (ObjectPrefab *)
-           MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Add_bool__EquipableData_
-      ;
+      IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+      EStack_10.equipableType = 0;
+      EStack_10._12_4_ = 0;
+      EStack_10.prefabObject = (ObjectPrefab *)pMStack_54;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Boolean,EquipableData]::
-      Dictionary_2_System_Boolean_EquipableData__Add
-                (this_01,0,value_01,
+      Dictionary_2_System_Boolean_EquipableData__TryInsert
+                (this_01,0,&EStack_10,IVar9,
                  MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Add_bool__EquipableData_
-                );
-      pOVar5 = (ObjectPrefab *)0x0;
-      iVar6 = 0;
-      mscorlib.dll::System::Threading::SparselyPopulatedArrayAddInfo`1[System::Object]::
-      SparselyPopulatedArrayAddInfo_1_System_Object___ctor
-                ((SparselyPopulatedArrayAddInfo_1_System_Object_ *)0x0,
-                 (SparselyPopulatedArrayFragment_1_System_Object_ *)0x0,0,(MethodInfo *)0x0);
-      value_02.equipableType = iVar6;
-      value_02.prefabObject = pOVar5;
+                 ->klass->rgctx_data[0x22].method);
+      EStack_10.prefabObject = (ObjectPrefab *)(this->fields).avatarSwordPrefab;
+      if (iRam_? != 0) {
+        uVar3 = (uint)((ulonglong)&pMStack_56 >> 0xc);
+        lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+          puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+          LOCK();
+          bVar2 = uVar5 == *puVar6;
+          if (bVar2) {
+            *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar2);
+      }
+      uStack_57 = 0;
+      IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+      EStack_10.equipableType = 0;
+      EStack_10._12_4_ = 0;
+      pMStack_56 = (MVPickupItemBaseObject *)EStack_10.prefabObject;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Boolean,EquipableData]::
-      Dictionary_2_System_Boolean_EquipableData__Add
-                (this_01,1,value_02,
+      Dictionary_2_System_Boolean_EquipableData__TryInsert
+                (this_01,1,&EStack_10,IVar9,
                  MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__Add_bool__EquipableData_
-                );
+                 ->klass->rgctx_data[0x22].method);
+      bVar2 = iRam_? != 0;
       (this->fields).meleeWeaponPrefabLUT = this_01;
-      func_?();
-      stack0xffffff80 =
-           (int32_t)
-           TypeInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>
-      ;
+      if (bVar2) {
+        uVar3 = (uint)((ulonglong)&(this->fields).meleeWeaponPrefabLUT >> 0xc);
+        lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+          puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+          LOCK();
+          bVar2 = uVar5 == *puVar6;
+          if (bVar2) {
+            *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar2);
+      }
       this_02 = (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
-                 *)func_?();
+                 *)FUN_?(
+                                TypeInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>
+                                );
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,MV::WorldObject::
       RuntimeEvents::ExplosionEvent+ExplosionValues]::
       Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues___ctor
@@ -405,29 +1554,46 @@ void Assembly-CSharp.dll::PrefabPool::PrefabPool_BuildLookupTables
       if (this_02 !=
           (Dictionary_2_System_ByteEnum_MV_WorldObject_RuntimeEvents_ExplosionEvent_ExplosionValues_
            *)0x0) {
+        IVar9 = CONCAT31((int3)(IVar9 >> 8),2);
+        uVar58 = 0;
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
-        Dictionary_2_System_ByteEnum_System_Object__Add
+        Dictionary_2_System_ByteEnum_System_Object__TryInsert
                   ((Dictionary_2_System_ByteEnum_System_Object_ *)this_02,0,
-                   (Object *)(this->fields).mvJetPackPrefab,
+                   (Object *)(this->fields).mvJetPackPrefab,IVar9,
                    MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>__Add_MVJetPack__JetPackType__WorldObjectTypes__VehiclesBase__Shared__VehicleBaseObject_
-                  );
+                   ->klass->rgctx_data[0x22].method);
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::Object]::
-        Dictionary_2_System_ByteEnum_System_Object__Add
-                  ((Dictionary_2_System_ByteEnum_System_Object_ *)this_02,1,
-                   (Object *)(this->fields).mvJetPackDeluxePrefab,
+        Dictionary_2_System_ByteEnum_System_Object__TryInsert
+                  ((Dictionary_2_System_ByteEnum_System_Object_ *)this_02,
+                   (ByteEnum__Enum)CONCAT71((int7)((ulonglong)uVar58 >> 8),1),
+                   (Object *)(this->fields).mvJetPackDeluxePrefab,CONCAT31((int3)(IVar9 >> 8),2),
                    MethodInfo__System__Collections__Generic__Dictionary<MVJetPack::JetPackType,_WorldObjectTypes::VehiclesBase::Shared::VehicleBaseObject>__Add_MVJetPack__JetPackType__WorldObjectTypes__VehiclesBase__Shared__VehicleBaseObject_
-                  );
+                   ->klass->rgctx_data[0x22].method);
+        bVar2 = iRam_? != 0;
         (this->fields).jetPackPrefabLUT =
              (Dictionary_2_MVJetPack_JetPackType_WorldObjectTypes_VehiclesBase_Shared_VehicleBaseObject_
               *)this_02;
-        func_?();
+        if (bVar2) {
+          uVar3 = (uint)((ulonglong)&(this->fields).jetPackPrefabLUT >> 0xc);
+          lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+            puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+            LOCK();
+            bVar2 = uVar5 == *puVar6;
+            if (bVar2) {
+              *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar2);
+        }
         return;
       }
     }
   }
-  func_?();
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
+  FUN_?();
+  pcVar59 = (code *)swi(3);
+  (*pcVar59)();
   return;
 }
 
@@ -454,66 +1620,103 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_CubeEditHelpTextBubble
 
 /* EquipableData GetPickupPrefab(AvatarItemType, Int32) */
 
-EquipableData
+EquipableData *
 Assembly-CSharp.dll::PrefabPool::PrefabPool_GetPickupPrefab
-          (AvatarItemType__Enum avatarItemType,int32_t itemId,MethodInfo *method)
+          (EquipableData *__return_storage_ptr__,AvatarItemType__Enum avatarItemType,int32_t itemId,
+          MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__get_Item_MV__Common__AvatarItemType_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__get_Item_bool_
-                   );
-    func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData);
-    func_?(&TypeInfo__PrefabPool);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__get_Item_MV__Common__AvatarItemType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__get_Item_bool_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__PrefabPool);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (avatarItemType == AvatarItemType__Enum_MeleeWeapon) {
     pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
     if (pPVar1 != (PrefabPool *)0x0) {
-      this_00 = (pPVar1->fields).meleeWeaponPrefabLUT;
-      if ((TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->_1).
-          cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData);
+      this = (pPVar1->fields).meleeWeaponPrefabLUT;
+      if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__MeleeWeapon__MeleeWeaponData->_1).
+                   field_0x1c == 0) {
+        FUN_?();
       }
       key = Assets::Scripts::WorldObjectTypes::MeleeWeapon::MeleeWeaponData::
             MeleeWeaponData_IsLegacySword(itemId,(MethodInfo *)0x0);
-      if (this_00 != (Dictionary_2_System_Boolean_EquipableData_ *)0x0) {
-        EVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                Boolean,EquipableData]::Dictionary_2_System_Boolean_EquipableData__get_Item
-                          (this_00,key,
-                           MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__get_Item_bool_
-                          );
-        return EVar2;
+      pMVar2 = 
+      MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__get_Item_bool_;
+      if (this != (Dictionary_2_System_Boolean_EquipableData_ *)0x0) {
+        uVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                Boolean,EquipableData]::Dictionary_2_System_Boolean_EquipableData__FindEntry
+                          (this,key,MethodInfo__System__Collections__Generic__Dictionary<bool,_EquipableData>__get_Item_bool_
+                                    ->klass->rgctx_data[0x21].method);
+        if ((int)uVar3 < 0) {
+          uVar4 = func_?(pMVar2->klass->rgctx_data,0xe);
+          key_00 = (Object *)func_?(uVar4);
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowKeyNotFoundException
+                    (key_00,(MethodInfo *)0x0);
+          pcVar5 = (code *)swi(3);
+          pEVar6 = (EquipableData *)(*pcVar5)();
+          return pEVar6;
+        }
+        pDVar7 = (this->fields)._entries;
+        if (pDVar7 != (Dictionary_2_TKey_TValue_Entry_System_Boolean_EquipableData___Array *)0x0) {
+          if ((uint)pDVar7->max_length <= uVar3) {
+            FUN_?();
+            pcVar5 = (code *)swi(3);
+            pEVar6 = (EquipableData *)(*pcVar5)();
+            return pEVar6;
+          }
+          pEVar6 = &pDVar7->vector[(int)uVar3].value;
+          uVar8 = *(undefined4 *)&pEVar6->prefabObject;
+          uVar9 = *(undefined4 *)((longlong)&pEVar6->prefabObject + 4);
+          iVar10 = pEVar6->equipableType;
+          uVar11 = *(undefined4 *)&pEVar6->field_0xc;
+          goto code_?;
+        }
       }
     }
   }
   else {
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__PrefabPool);
+      FUN_?(&TypeInfo__PrefabPool);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
     pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
     if ((pPVar1 != (PrefabPool *)0x0) &&
-       (this = (pPVar1->fields).pickupPrefabLUT,
-       this != (Dictionary_2_MV_Common_AvatarItemType_EquipableData_ *)0x0)) {
-      EVar2 = (EquipableData)
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-              Int32Enum,GamePassesHighScoreList+HighScoreListData]::
-              Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData__get_Item
-                        ((Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *
-                         )this,avatarItemType,
-                         MethodInfo__System__Collections__Generic__Dictionary<MV::Common::AvatarItemType,_EquipableData>__get_Item_MV__Common__AvatarItemType_
-                        );
-      return EVar2;
+       (pDVar12 = (pPVar1->fields).pickupPrefabLUT,
+       pDVar12 != (Dictionary_2_MV_Common_AvatarItemType_EquipableData_ *)0x0)) {
+      puVar13 = (undefined4 *)FUN_?(auStack_14,pDVar12,avatarItemType);
+      uVar8 = *puVar13;
+      uVar9 = puVar13[1];
+      iVar10 = puVar13[2];
+      uVar11 = puVar13[3];
+code_?:
+      *(undefined4 *)&__return_storage_ptr__->prefabObject = uVar8;
+      *(undefined4 *)((longlong)&__return_storage_ptr__->prefabObject + 4) = uVar9;
+      __return_storage_ptr__->equipableType = iVar10;
+      *(undefined4 *)&__return_storage_ptr__->field_0xc = uVar11;
+      return __return_storage_ptr__;
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  EVar2 = (EquipableData)(*pcVar3)();
-  return EVar2;
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  pEVar6 = (EquipableData *)(*pcVar5)();
+  return pEVar6;
 }
 
 
@@ -523,144 +1726,37 @@ void Assembly-CSharp.dll::PrefabPool::PrefabPool_OnDestroy(PrefabPool *this,Meth
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PrefabPool);
+    FUN_?(&TypeInfo__PrefabPool);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TypeInfo__PrefabPool->static_fields->instance = (PrefabPool *)0x0;
-  func_?(TypeInfo__PrefabPool->static_fields,0);
+  if (iRam_? != 0) {
+    uVar1 = (uint)((ulonglong)TypeInfo__PrefabPool->static_fields >> 0xc);
+    puVar2 = (ulonglong *)((ulonglong)((uVar1 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar3 = *puVar2;
+      LOCK();
+      uVar4 = *puVar2;
+      if (uVar3 == uVar4) {
+        *puVar2 = uVar3 | 1L << (uVar1 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar3 != uVar4);
+  }
   return;
 }
 
 
-/* Texture2D get_AvatarAccessoryMoveIcon() */
-
-Texture2D *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarAccessoryMoveIcon
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarAccessoryMoveIcon;
-}
-
-
-/* MVPickupItemBaseObject get_AvatarBazookaPrefab() */
+/* MVPickupItemBaseObject get_AvatarCenterGunPrefab() */
 
 MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarBazookaPrefab
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarCenterGunPrefab
           (PrefabPool *this,MethodInfo *method)
 
 {
-  return (this->fields).avatarBazookaPrefab;
-}
-
-
-/* MVPickupItemBaseObject get_AvatarCostumePrefab() */
-
-MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarCostumePrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarCostumePrefab;
-}
-
-
-/* MVPickupItemBaseObject get_AvatarCubeGunPrefab() */
-
-MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarCubeGunPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarCubeGunPrefab;
-}
-
-
-/* MVPickupItemBaseObject get_AvatarCustomGunPrefab() */
-
-MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarCustomGunPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarCustomGunPrefab;
-}
-
-
-/* MVPickupItemBaseObject get_AvatarDoubleSixShooterPrefab() */
-
-MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarDoubleSixShooterPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarDoubleSixShooterPrefab;
-}
-
-
-/* MVPickupItemBaseObject get_AvatarFlamethrowerPrefab() */
-
-MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarFlamethrowerPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarFlamethrowerPrefab;
-}
-
-
-/* MVPickupItemBaseObject get_AvatarGrowthGunPrefab() */
-
-MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarGrowthGunPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarGrowthGunPrefab;
-}
-
-
-/* MVPickupItemBaseObject get_AvatarGrowthPackPrefab() */
-
-MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarGrowthPackPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarGrowthPackPrefab;
-}
-
-
-/* MVPickupItemBaseObject get_AvatarHealRayPrefab() */
-
-MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarHealRayPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarHealRayPrefab;
-}
-
-
-/* MVPickupItemBaseObject get_AvatarHealthPrefab() */
-
-MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarHealthPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarHealthPrefab;
-}
-
-
-/* MVPickupItemBaseObject get_AvatarImpulseGunPrefab() */
-
-MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarImpulseGunPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarImpulseGunPrefab;
+  return (this->fields).avatarCenterGunPrefab;
 }
 
 
@@ -686,28 +1782,6 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemBazooka
 }
 
 
-/* GameObject get_AvatarItemCenterGun() */
-
-GameObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemCenterGun
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarItemCenterGun;
-}
-
-
-/* GameObject get_AvatarItemCollectTheItem() */
-
-GameObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemCollectTheItem
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarItemCollectTheItem;
-}
-
-
 /* GameObject get_AvatarItemCostume() */
 
 GameObject *
@@ -716,17 +1790,6 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemCostume
 
 {
   return (this->fields).avatarItemCostume;
-}
-
-
-/* GameObject get_AvatarItemCubeGun() */
-
-GameObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemCubeGun
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarItemCubeGun;
 }
 
 
@@ -741,17 +1804,6 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemCustomGun
 }
 
 
-/* GameObject get_AvatarItemDoubleSixShooter() */
-
-GameObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemDoubleSixShooter
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarItemDoubleSixShooter;
-}
-
-
 /* GameObject get_AvatarItemFlamethrower() */
 
 GameObject *
@@ -760,17 +1812,6 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemFlamethrower
 
 {
   return (this->fields).avatarItemFlamethrower;
-}
-
-
-/* GameObject get_AvatarItemGrowthGun() */
-
-GameObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemGrowthGun
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarItemGrowthGun;
 }
 
 
@@ -795,28 +1836,6 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemHealRay
 }
 
 
-/* GameObject get_AvatarItemImpulseGun() */
-
-GameObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemImpulseGun
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarItemImpulseGun;
-}
-
-
-/* GameObject get_AvatarItemLaserPointer() */
-
-GameObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemLaserPointer
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarItemLaserPointer;
-}
-
-
 /* GameObject get_AvatarItemMeleeWeapon() */
 
 GameObject *
@@ -825,39 +1844,6 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemMeleeWeapon
 
 {
   return (this->fields).avatarItemMeleeWeapon;
-}
-
-
-/* GameObject get_AvatarItemMouseGun() */
-
-GameObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemMouseGun
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarItemMouseGun;
-}
-
-
-/* GameObject get_AvatarItemMultiThrowingStar() */
-
-GameObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemMultiThrowingStar
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarItemMultiThrowingStar;
-}
-
-
-/* GameObject get_AvatarItemRailGun() */
-
-GameObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemRailGun
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarItemRailGun;
 }
 
 
@@ -872,28 +1858,6 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemShotgun
 }
 
 
-/* GameObject get_AvatarItemSixShooter() */
-
-GameObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemSixShooter
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarItemSixShooter;
-}
-
-
-/* GameObject get_AvatarItemSlapGun() */
-
-GameObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemSlapGun
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarItemSlapGun;
-}
-
-
 /* GameObject get_AvatarItemSword() */
 
 GameObject *
@@ -904,102 +1868,14 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemSword(PrefabPool *this
 }
 
 
-/* GameObject get_AvatarItemThrowingStar() */
+/* Material get_BlinkerDefaultMaterial() */
 
-GameObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarItemThrowingStar
+Material *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_BlinkerDefaultMaterial
           (PrefabPool *this,MethodInfo *method)
 
 {
-  return (this->fields).avatarItemThrowingStar;
-}
-
-
-/* MVPickupItemBaseObject get_AvatarMeleeWeaponPrefab() */
-
-MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarMeleeWeaponPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarMeleeWeaponPrefab;
-}
-
-
-/* MVPickupItemBaseObject get_AvatarMousePackPrefab() */
-
-MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarMousePackPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarMousePackPrefab;
-}
-
-
-/* MVPickupItemBaseObject get_AvatarMultiThrowingStarPrefab() */
-
-MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarMultiThrowingStarPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarMultiThrowingStarPrefab;
-}
-
-
-/* MVPickupItemBaseObject get_AvatarMutantPrefab() */
-
-MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarMutantPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarMutantPrefab;
-}
-
-
-/* MVPickupItemBaseObject get_AvatarNinjaRunPrefab() */
-
-MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarNinjaRunPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarNinjaRunPrefab;
-}
-
-
-/* MVPickupItemBaseObject get_AvatarShotgunPrefab() */
-
-MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarShotgunPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarShotgunPrefab;
-}
-
-
-/* MVPickupItemBaseObject get_AvatarSixShooterPrefab() */
-
-MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarSixShooterPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarSixShooterPrefab;
-}
-
-
-/* MVPickupItemBaseObject get_AvatarSwordPrefab() */
-
-MVPickupItemBaseObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_AvatarSwordPrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).avatarSwordPrefab;
+  return (this->fields).blinkerDefaultMaterial;
 }
 
 
@@ -1025,16 +1901,6 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_CellCursorMaterial
 }
 
 
-/* ChatBubble get_ChatBubble() */
-
-ChatBubble *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_ChatBubble(PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).chatBubble;
-}
-
-
 /* ParticleSystem get_CollectTheItemParticles() */
 
 ParticleSystem *
@@ -1043,16 +1909,6 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_CollectTheItemParticles
 
 {
   return (this->fields).collectTheItemParticles;
-}
-
-
-/* Texture2D get_CrosshairCursor() */
-
-Texture2D *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_CrosshairCursor(PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).crosshairCursor;
 }
 
 
@@ -1067,6 +1923,49 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_CubeModelChunkPrefab
 }
 
 
+/* Material get_Cursor2dCornerMaterial() */
+
+Material *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_Cursor2dCornerMaterial
+          (PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).cursor2dCornerMaterial;
+}
+
+
+/* Material get_Cursor2dEdgeMaterial() */
+
+Material *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_Cursor2dEdgeMaterial
+          (PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).cursor2dEdgeMaterial;
+}
+
+
+/* Material get_CursorCornerMaterial() */
+
+Material *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_CursorCornerMaterial
+          (PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).cursorCornerMaterial;
+}
+
+
+/* Material get_CursorMaterial() */
+
+Material *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_CursorMaterial(PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).cursorMaterial;
+}
+
+
 /* Material get_CursorNoneMaterial() */
 
 Material *
@@ -1075,6 +1974,16 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_CursorNoneMaterial
 
 {
   return (this->fields).cursorNoneMaterial;
+}
+
+
+/* ObjectPrefab get_DoorPrefab() */
+
+ObjectPrefab *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_DoorPrefab(PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).doorPrefab;
 }
 
 
@@ -1088,14 +1997,23 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_DrawPlaneObject(PrefabPool *this
 }
 
 
-/* GameCoinDisplayObject get_GameCoinDisplayPrefab() */
+/* SentryGunBeam get_FireBeamObject() */
 
-GameCoinDisplayObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_GameCoinDisplayPrefab
-          (PrefabPool *this,MethodInfo *method)
+SentryGunBeam *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_FireBeamObject(PrefabPool *this,MethodInfo *method)
 
 {
-  return (this->fields).gameCoinDisplayPrefab;
+  return (this->fields).fireBeamObject;
+}
+
+
+/* MVGamePointObject get_GamePointPrefab() */
+
+MVGamePointObject *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_GamePointPrefab(PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).gamePointPrefab;
 }
 
 
@@ -1142,6 +2060,16 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_HealingParticles
 }
 
 
+/* SentryGunBeam get_IceBeamObject() */
+
+SentryGunBeam *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_IceBeamObject(PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).iceBeamObject;
+}
+
+
 /* Material get_IndentMaterial() */
 
 Material *
@@ -1149,16 +2077,6 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_IndentMaterial(PrefabPool *this,
 
 {
   return (this->fields).indentMaterial;
-}
-
-
-/* InsertCursor get_InsertCursor() */
-
-InsertCursor *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_InsertCursor(PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).insertCursor;
 }
 
 
@@ -1179,7 +2097,9 @@ PrefabPool * Assembly-CSharp.dll::PrefabPool::PrefabPool_get_Instance(MethodInfo
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PrefabPool);
+    FUN_?(&TypeInfo__PrefabPool);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return TypeInfo__PrefabPool->static_fields->instance;
@@ -1194,19 +2114,20 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_JetPackPrefabLUT(MethodInfo *met
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__PrefabPool);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
   if (pPVar1 != (PrefabPool *)0x0) {
     return (pPVar1->fields).jetPackPrefabLUT;
   }
-  uVar2 = func_?(auStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  pDVar5 = (Dictionary_2_MVJetPack_JetPackType_WorldObjectTypes_VehiclesBase_Shared_VehicleBaseObject_
-            *)(*pcVar4)();
-  return pDVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  pDVar3 = (Dictionary_2_MVJetPack_JetPackType_WorldObjectTypes_VehiclesBase_Shared_VehicleBaseObject_
+            *)(*pcVar2)();
+  return pDVar3;
 }
 
 
@@ -1221,14 +2142,13 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_LineRangeIndicator
 }
 
 
-/* Material get_LogicCubeConnectorBlueMaterial() */
+/* LinkObjectScript get_LinkObject() */
 
-Material *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_LogicCubeConnectorBlueMaterial
-          (PrefabPool *this,MethodInfo *method)
+LinkObjectScript *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_LinkObject(PrefabPool *this,MethodInfo *method)
 
 {
-  return (this->fields).logicCubeConnectorBlueMaterial;
+  return (this->fields).linkObject;
 }
 
 
@@ -1243,14 +2163,14 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_LogicCubeConnectorBlueSelectedMa
 }
 
 
-/* Material get_LogicCubeConnectorRedSelectedMaterial() */
+/* Material get_LogicCubeConnectorRedMaterial() */
 
 Material *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_LogicCubeConnectorRedSelectedMaterial
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_LogicCubeConnectorRedMaterial
           (PrefabPool *this,MethodInfo *method)
 
 {
-  return (this->fields).logicCubeConnectorRedSelectedMaterial;
+  return (this->fields).logicCubeConnectorRedMaterial;
 }
 
 
@@ -1265,6 +2185,17 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_LogicInputConnectorPrefab
 }
 
 
+/* GameObject get_LogicObjectConnectorPrefab() */
+
+GameObject *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_LogicObjectConnectorPrefab
+          (PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).logicObjectConnectorPrefab;
+}
+
+
 /* GameObject get_LogicOutputConnectorPrefab() */
 
 GameObject *
@@ -1276,36 +2207,25 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_LogicOutputConnectorPrefab
 }
 
 
-/* MaterialButtonTextureGenerator get_MaterialButtonTextureGenerator() */
+/* MVObjectTransparencyObject get_MVObjectTransparencyPrefab() */
 
-MaterialButtonTextureGenerator *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MaterialButtonTextureGenerator
+MVObjectTransparencyObject *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MVObjectTransparencyPrefab
           (PrefabPool *this,MethodInfo *method)
 
 {
-  return (this->fields).materialButtonTextureGenerator;
+  return (this->fields).mvObjectTransparencyPrefab;
 }
 
 
-/* Material get_ModelConstraintsMaterial() */
+/* Material get_ModelCubeSpaceMaterial() */
 
 Material *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_ModelConstraintsMaterial
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_ModelCubeSpaceMaterial
           (PrefabPool *this,MethodInfo *method)
 
 {
-  return (this->fields).modelConstraintsMaterial;
-}
-
-
-/* GameObject get_MuzzleEditNodePrefab() */
-
-GameObject *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_MuzzleEditNodePrefab
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).muzzleEditNodePrefab;
+  return (this->fields).modelCubeSpaceMaterial;
 }
 
 
@@ -1364,17 +2284,6 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_ParticleExplosion
 }
 
 
-/* ParticleSystem get_ParticleFluffySmoke() */
-
-ParticleSystem *
-Assembly-CSharp.dll::PrefabPool::PrefabPool_get_ParticleFluffySmoke
-          (PrefabPool *this,MethodInfo *method)
-
-{
-  return (this->fields).particleFluffySmoke;
-}
-
-
 /* Dictionary`2[MV.Common.AvatarItemType,EquipableData] get_PickupPrefabLUT() */
 
 Dictionary_2_MV_Common_AvatarItemType_EquipableData_ *
@@ -1382,18 +2291,19 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_PickupPrefabLUT(MethodInfo *meth
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__PrefabPool);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
   if (pPVar1 != (PrefabPool *)0x0) {
     return (pPVar1->fields).pickupPrefabLUT;
   }
-  uVar2 = func_?(auStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  pDVar5 = (Dictionary_2_MV_Common_AvatarItemType_EquipableData_ *)(*pcVar4)();
-  return pDVar5;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  pDVar3 = (Dictionary_2_MV_Common_AvatarItemType_EquipableData_ *)(*pcVar2)();
+  return pDVar3;
 }
 
 
@@ -1415,6 +2325,28 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_PreviewBoxMaterial
 
 {
   return (this->fields).previewBoxMaterial;
+}
+
+
+/* SphereVolumeIndicator get_RangeVisualizationObject() */
+
+SphereVolumeIndicator *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_RangeVisualizationObject
+          (PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).rangeVisualizationObject;
+}
+
+
+/* RewardedAdDisplayObject get_RewardedAdDisplayPrefab() */
+
+RewardedAdDisplayObject *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_RewardedAdDisplayPrefab
+          (PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).rewardedAdDisplayPrefab;
 }
 
 
@@ -1447,5 +2379,70 @@ Assembly-CSharp.dll::PrefabPool::PrefabPool_get_ShieldModifier(PrefabPool *this,
 
 {
   return (this->fields).shieldModifier;
+}
+
+
+/* StarDisplayObject get_StarDisplayPrefab() */
+
+StarDisplayObject *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_StarDisplayPrefab
+          (PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).starDisplayPrefab;
+}
+
+
+/* ObjectPrefab get_TeamEditorPrefab() */
+
+ObjectPrefab *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_TeamEditorPrefab
+          (PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).teamEditorPrefab;
+}
+
+
+/* TeleportAvatar get_TeleportAvatarPrefab() */
+
+TeleportAvatar *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_TeleportAvatarPrefab
+          (PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).teleportAvatarPrefab;
+}
+
+
+/* TransformGizmo get_TransformGizmo() */
+
+TransformGizmo *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_TransformGizmo(PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).transformGizmo;
+}
+
+
+/* TriggerCubePrefab get_TriggerCubePrefab() */
+
+TriggerCubePrefab *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_TriggerCubePrefab
+          (PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).triggerCubePrefab;
+}
+
+
+/* ObjectPrefab get_VehicleEnergyPrefab() */
+
+ObjectPrefab *
+Assembly-CSharp.dll::PrefabPool::PrefabPool_get_VehicleEnergyPrefab
+          (PrefabPool *this,MethodInfo *method)
+
+{
+  return (this->fields).vehicleEnergyPrefab;
 }
 

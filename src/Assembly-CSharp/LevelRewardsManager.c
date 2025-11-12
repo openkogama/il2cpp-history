@@ -6,104 +6,108 @@ void Assembly-CSharp.dll::LevelRewardsManager::LevelRewardsManager_AddClaimedLev
                MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffa0;
-  puVar5 = &stack0xffffffa0;
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_int>__ContainsKey_int_
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_int>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__get_Current__
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<int,_int>__get_Key__);
-    func_?(&MethodInfo__System__Collections__Generic__KeyValuePair<int,_int>__get_Value__);
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_int>__ContainsKey_int_)
+    ;
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_int>__GetEnumerator__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__KeyValuePair<int,_int>__get_Key__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__KeyValuePair<int,_int>__get_Value__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  DStack_6._16_8_ = 0;
-  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Int32_ *)0x0;
-  DStack_6._version = 0;
-  DStack_6._index = 0;
-  DStack_6._current.key = 0;
-  if (levelRewards != (Dictionary_2_System_Int32_System_Int32_ *)0x0) {
-    method_00 = (MethodInfo *)auStack_7;
-    pDVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
-             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                        method_00,(Dictionary_2_System_UInt32_System_Object_ *)levelRewards,
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_int>__GetEnumerator__
-                       );
+  if (levelRewards == (Dictionary_2_System_Int32_System_Int32_ *)0x0) {
+    FUN_?();
+  }
+  else {
+    uVar1 = 0;
+    if (iRam_? != 0) {
+      uVar2 = (uint)((ulonglong)&uStack_3 >> 0xc);
+      puVar4 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar5 = *puVar4;
+        LOCK();
+        uVar6 = *puVar4;
+        if (uVar5 == uVar6) {
+          *puVar4 = uVar5 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar5 != uVar6);
+    }
+    ppDStack_7 = (Dictionary_2_System_Int32_System_Int32_ **)
+                  (ulonglong)(uint)(levelRewards->fields)._version;
+    uStack_8 = 2;
     uStack_9 = 0;
-    DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Int32_ *)pDVar8->_dictionary;
-    DStack_6._version = pDVar8->_version;
-    DStack_6._index = pDVar8->_index;
-    DStack_6._current.key = (pDVar8->_current).key;
-    DStack_6._16_8_ = *(undefined8 *)&(pDVar8->_current).value;
-    uStack_1 = 1;
-    pOStack_10 = (Object *)(auStack_7 + 0x18);
+    uStack_10 = (ulonglong)ppDStack_7;
+    uStack_11 = 0;
+    uStack_12 = 2;
+    uStack_3 = 0;
+    ppDStack_7 = &pDStack_13;
+    pDStack_13 = levelRewards;
     while( true ) {
       do {
-        bVar11 = mscorlib.dll::System::Collections::Generic::
-                Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Int32]::
-                Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Int32__MoveNext
-                          ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Int32_ *)
-                           (auStack_7 + 0x18),
-                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__MoveNext__
-                          );
-        if (bVar11 == 0) {
-          uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)(auStack_7 + 0x18),
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__Dispose__
-                     ,method_00);
-          uStack_1 = 0xffffffff;
+        cVar14 = FUN_?(&pDStack_13,
+                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<int,_int>__MoveNext__
+                             );
+        uVar15 = uStack_11;
+        if (cVar14 == '\0') {
           if ((this->fields).OnRewardsReturned != (Action *)0x0) {
-            pAVar12 = (this->fields).OnRewardsReturned;
-            (*(pAVar12->fields)._._.invoke_impl)
-                      ((pAVar12->fields)._._.method_code,(pAVar12->fields)._._.method);
+            pAVar16 = (this->fields).OnRewardsReturned;
+            (*(pAVar16->fields)._._.invoke_impl)
+                      ((pAVar16->fields)._._.method_code,(pAVar16->fields)._._.method);
           }
-          *unaff_FS_OFFSET = uStack_3;
           return;
         }
-        value = DStack_6._current.value;
         this_00 = (Dictionary_2_System_Int32_System_Single_ *)(this->fields).unseenLevelRewards;
-        pMStack_13 = (MethodInfo *)DStack_6._current.key;
         if (this_00 == (Dictionary_2_System_Int32_System_Single_ *)0x0) goto code_?;
-        bVar11 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                Single]::Dictionary_2_System_Int32_System_Single__ContainsKey
-                          (this_00,DStack_6._current.key,
+        key = (int32_t)uStack_11;
+        iVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                Single]::Dictionary_2_System_Int32_System_Single__FindEntry
+                          (this_00,key,
                            MethodInfo__System__Collections__Generic__Dictionary<int,_int>__ContainsKey_int_
-                          );
-      } while (bVar11 != 0);
+                           ->klass->rgctx_data[0x21].method);
+      } while (-1 < iVar17);
       this_01 = (this->fields).unseenLevelRewards;
       if (this_01 == (Dictionary_2_System_Int32_System_Int32_ *)0x0) break;
-      method_00 = pMStack_13;
+      uVar1 = CONCAT71((int7)((ulonglong)uVar1 >> 8),2);
+      iStackX_14 = (int32_t)((ulonglong)uVar15 >> 0x20);
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
-      Dictionary_2_System_Int32_System_Int32__Add
-                (this_01,(int32_t)pMStack_13,value,
-                 MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+      Dictionary_2_System_Int32_System_Int32__TryInsert
+                (this_01,key,iStackX_14,(InsertionBehavior__Enum)uVar1,
+                 MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_->
+                 klass->rgctx_data[0x22].method);
     }
   }
+  FUN_?();
 code_?:
-  uVar14 = func_?();
-  func_?(uVar14);
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  FUN_?();
+  FUN_?();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -115,22 +119,36 @@ void Assembly-CSharp.dll::LevelRewardsManager::LevelRewardsManager_ClearRewards
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Clear__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-             *)(this->fields).unseenLevelRewards;
-  if (this_00 !=
-      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-       *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::StyleSheets::
-    StyleSheetCache+SheetHandleKey,System::Object]::
-    Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__Clear
-              (this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Clear__);
+  pDVar1 = (this->fields).unseenLevelRewards;
+  if (pDVar1 != (Dictionary_2_System_Int32_System_Int32_ *)0x0) {
+    length = (pDVar1->fields)._count;
+    if (0 < length) {
+      pIVar2 = (pDVar1->fields)._buckets;
+      if (pIVar2 == (Int32__Array *)0x0) {
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      mscorlib.dll::System::Array::Array_Clear
+                ((Array *)(pDVar1->fields)._buckets,0,(int32_t)pIVar2->max_length,(MethodInfo *)0x0)
+      ;
+      (pDVar1->fields)._count = 0;
+      (pDVar1->fields)._freeCount = 0;
+      (pDVar1->fields)._freeList = -1;
+      mscorlib.dll::System::Array::Array_Clear
+                ((Array *)(pDVar1->fields)._entries,0,length,(MethodInfo *)0x0);
+    }
+    piVar4 = &(pDVar1->fields)._version;
+    *piVar4 = *piVar4 + 1;
     return;
   }
-  uVar1 = func_?(&puStack_2);
-  func_?(uVar1);
+  FUN_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -143,36 +161,37 @@ void Assembly-CSharp.dll::LevelRewardsManager::LevelRewardsManager_SetNextLevelR
                (LevelRewardsManager *this,int32_t level,int32_t gold,MethodInfo *method)
 
 {
+  aIStackX_10[0].m_value = level;
+  aIStackX_18[0].m_value = gold;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<int,_int>__KeyValuePair_int__int_
-                   );
-    func_?(&StringLiteral___Gold_);
-    func_?(&StringLiteral_Next_level_reward__Level_);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<int,_int>__KeyValuePair_int__int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral___Gold_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Next_level_reward__Level_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pSVar1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&level,(MethodInfo *)0x0);
-  str3 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&gold,(MethodInfo *)0x0);
-  pSVar1 = mscorlib.dll::System::String::String_Concat_5
+  pSVar1 = mscorlib.dll::System::Int32::Int32_ToString(aIStackX_10,(MethodInfo *)0x0);
+  str3 = mscorlib.dll::System::Int32::Int32_ToString(aIStackX_18,(MethodInfo *)0x0);
+  pSVar1 = mscorlib.dll::System::String::String_Concat_6
                      (StringLiteral_Next_level_reward__Level_,pSVar1,StringLiteral___Gold_,str3,
                       (MethodInfo *)0x0);
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    method = (MethodInfo *)TypeInfo__UnityEngine__Debug;
-    gold = (int32_t)&UNK_?;
-    func_?();
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  method = (MethodInfo *)0x0;
-  level = (int32_t)&UNK_?;
-  gold = (int32_t)pSVar1;
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
-  method = MethodInfo__System__Collections__Generic__KeyValuePair<int,_int>__KeyValuePair_int__int_;
-  VStack_2.Item1 = 0;
-  VStack_2.Item2 = (void *)0x0;
-  mscorlib.dll::System::ValueTuple`2[Int32,IntPtr]::ValueTuple_2_Int32_IntPtr___ctor
-            (&VStack_2,level,(void *)gold,
-             MethodInfo__System__Collections__Generic__KeyValuePair<int,_int>__KeyValuePair_int__int_
-            );
+  KVar2.value = gold;
+  KVar2.key = level;
+  (this->fields)._NextReward_k__BackingField = KVar2;
   return;
 }
 
@@ -184,21 +203,33 @@ void Assembly-CSharp.dll::LevelRewardsManager::LevelRewardsManager__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
-    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
-            )func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
-  ::TextResourceManager+FontAssetRef]::
-  Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
-            (this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
-  method_00 = (MethodInfo *)&this->fields;
-  (this->fields).unseenLevelRewards = (Dictionary_2_System_Int32_System_Int32_ *)this_00;
-  func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  pDVar1 = (Dictionary_2_System_Int32_System_Int32_ *)
+           FUN_?(TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
+  FUN_?(pDVar1,MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__)
+  ;
+  bVar2 = iRam_? != 0;
+  (this->fields).unseenLevelRewards = pDVar1;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&this->fields >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
   return;
 }
 

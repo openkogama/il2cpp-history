@@ -8,22 +8,19 @@ void Assembly-CSharp.dll::BundleView+<>c__DisplayClass20_0::
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IModalPopupCreator;
-    func_?();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (x != (IModalPopupCreator *)0x0) {
-    ppIStack_1 = (IModalPopupCreator__Class **)0x0;
-    puStack_2 = (undefined *)(this->fields).returnCode;
-    pIStack_3 = x;
-    func_?(0,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+    FUN_?(0,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,x,
+                  (this->fields).returnCode,0);
     return;
   }
-  ppIStack_1 = (IModalPopupCreator__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

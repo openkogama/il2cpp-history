@@ -8,7 +8,6 @@ void Assembly-CSharp.dll::AsyncWWWManager+TemporaryHashSet`1[Unity::IL2CPP::Meta
                 *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
   if (this != (AsyncWWWManager_TemporaryHashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                *)0x0) {
                     /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
@@ -16,10 +15,9 @@ void Assembly-CSharp.dll::AsyncWWWManager+TemporaryHashSet`1[Unity::IL2CPP::Meta
     (*method->klass->rgctx_data->method->methodPointer)();
     return;
   }
-  uVar2 = func_?(auStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

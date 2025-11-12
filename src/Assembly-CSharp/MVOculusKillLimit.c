@@ -6,9 +6,11 @@ void Assembly-CSharp.dll::MVOculusKillLimit::MVOculusKillLimit_Destroy
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
-                   );
+    FUN_?(&
+                  OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   MVGamePointRewardLogicObject::MVGamePointRewardLogicObject_Destroy
@@ -16,34 +18,108 @@ void Assembly-CSharp.dll::MVOculusKillLimit::MVOculusKillLimit_Destroy
   if ((this->fields).initializedInWorld == 0) {
     return;
   }
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar1 != (MVNetworkGame *)0x0) &&
-     (pWVar2 = (pMVar1->fields)._WinningConditionManager_k__BackingField,
-     pWVar2 != (WinningConditionManager *)0x0)) {
-    pOVar3 = MVWorldObject.dll::WinningConditionManager::
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (((pMVar1 != (MVGameControllerBase *)0x0) &&
+      (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+     (pWVar3 = (pMVar2->fields)._WinningConditionManager_k__BackingField,
+     pWVar3 != (WinningConditionManager *)0x0)) {
+    pOVar4 = MVWorldObject.dll::WinningConditionManager::
              WinningConditionManager_GetSingletonWinnerConditionByType
-                       (pWVar2,
+                       (pWVar3,
                         OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
                        );
-    if (pOVar3 == (Object *)0x0) goto code_?;
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar1 != (MVNetworkGame *)0x0) &&
-       (pWVar2 = (pMVar1->fields)._WinningConditionManager_k__BackingField,
-       pWVar2 != (WinningConditionManager *)0x0)) {
-      MVWorldObject.dll::WinningConditionManager::WinningConditionManager_RemoveWinnerCondition
-                (pWVar2,(int32_t)pOVar3[1].monitor,(MethodInfo *)0x0);
+    if (pOVar4 == (Object *)0x0) {
+      uVar5 = func_?(&TypeInfo__System__Exception);
+      this_00 = (Exception *)func_?(uVar5);
+      message = (String *)func_?(&StringLiteral_Couldn_t_find_OculusKillLimitCli);
+      mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
+      uVar5 = func_?(&MethodInfo__MVOculusKillLimit__Destroy__);
+      FUN_?(this_00,uVar5);
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
+      return;
+    }
+    pMVar2 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+    if ((pMVar2 != (MVNetworkGame *)0x0) &&
+       (pWVar3 = (pMVar2->fields)._WinningConditionManager_k__BackingField,
+       pWVar3 != (WinningConditionManager *)0x0)) {
+      key = *(int32_t *)((longlong)&pOVar4[1].klass + 4);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__System__EventArgs,key,0);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      object = (pWVar3->fields).winnerConditionsRoot;
+      if (object != (WinningConditionOr *)0x0) {
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<int,_IWinningCondition>__Remove_int_
+                       );
+          LOCK();
+          UNLOCK();
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<int,_IWinningCondition>__get_Item_int_
+                       );
+          LOCK();
+          UNLOCK();
+          FUN_?(&TypeInfo__System__EventHandler<System::EventArgs>);
+          LOCK();
+          UNLOCK();
+          FUN_?(&TypeInfo__IWinningCondition);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pDVar7 = (object->fields)._.winnerConditions;
+        if (pDVar7 != (Dictionary_2_System_Int32_IWinningCondition_ *)0x0) {
+          pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                   Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                             ((Dictionary_2_System_Int32_System_Object_ *)pDVar7,key,
+                              MethodInfo__System__Collections__Generic__Dictionary<int,_IWinningCondition>__get_Item_int_
+                             );
+          this_01 = (UnityAction_2_System_Object_System_Object_ *)
+                    FUN_?(TypeInfo__System__EventHandler<System::EventArgs>);
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
+          Object]::UnityAction_2_System_Object_System_Object___ctor
+                    (this_01,(Object *)object,
+                     (object->klass->vtable).winnerCondition_OnWinningConditionChanged.method,
+                     (MethodInfo *)0x0);
+          if (pOVar4 != (Object *)0x0) {
+            FUN_?(2,TypeInfo__IWinningCondition,pOVar4,this_01);
+            pDVar7 = (object->fields)._.winnerConditions;
+            if (pDVar7 != (Dictionary_2_System_Int32_IWinningCondition_ *)0x0) {
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
+              ::Dictionary_2_System_Int32_System_Object__Remove
+                        ((Dictionary_2_System_Int32_System_Object_ *)pDVar7,key,
+                         MethodInfo__System__Collections__Generic__Dictionary<int,_IWinningCondition>__Remove_int_
+                        );
+              if ((pWVar3->fields).OnWinningConditionAddedOrRemoved !=
+                  (EventHandler_1_EventArgs_ *)0x0) {
+                pEVar8 = (pWVar3->fields).OnWinningConditionAddedOrRemoved;
+                uVar5 = FUN_?(TypeInfo__System__EventArgs);
+                (*(pEVar8->fields)._._.invoke_impl)
+                          ((pEVar8->fields)._._.method_code,pWVar3,uVar5,(pEVar8->fields)._._.method
+                          );
+              }
+              return;
+            }
+          }
+        }
+      }
+      FUN_?();
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
       return;
     }
   }
-  func_?();
-code_?:
-  func_?();
-  this_00 = (Exception *)func_?();
-  message = (String *)func_?();
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,message,(MethodInfo *)0x0);
-  uStack4 = func_?();
-  pEStack5 = this_00;
-  func_?();
+  FUN_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
   return;
@@ -57,30 +133,42 @@ void Assembly-CSharp.dll::MVOculusKillLimit::MVOculusKillLimit_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__System__Object);
-    func_?(&
-                    OculusKillLimitClient_MethodInfo__WinningConditionManager__CreateWinnerCondition<OculusKillLimitClient>_System__Object____
-                   );
+    FUN_?(&TypeInfo__System__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  OculusKillLimitClient_MethodInfo__WinningConditionManager__CreateWinnerCondition<OculusKillLimitClient>_System__Object____
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar1 == (MVNetworkGame *)0x0) {
-code_?:
-    func_?();
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  else {
-    this_00 = (pMVar1->fields)._WinningConditionManager_k__BackingField;
-    args = (Object__Array *)func_?(TypeInfo__System__Object,1);
-    iStack_2 = MVOculusKillLimit_get_KillLimit(this,(MethodInfo *)0x0);
-    pOVar3 = (Object *)func_?(TypeInfo__System__Int32,&iStack_2);
-    if (args == (Object__Array *)0x0) goto code_?;
-    if (pOVar3 == (Object *)0x0) {
-code_?:
-      if (args->max_length == 0) goto code_?;
-      args->vector[0] = pOVar3;
-      func_?(args->vector,pOVar3);
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar1 != (MVGameControllerBase *)0x0) &&
+     (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) {
+    this_00 = (pMVar2->fields)._WinningConditionManager_k__BackingField;
+    args = (Object__Array *)FUN_?(TypeInfo__System__Object);
+    aiStackX_18[0] = MVOculusKillLimit_get_KillLimit(this,(MethodInfo *)0x0);
+    lVar3 = FUN_?(uRam_?,aiStackX_18);
+    if (args != (Object__Array *)0x0) {
+      if (lVar3 != 0) {
+        lVar4 = FUN_?(lVar3,(args->klass->_0).element_class);
+        if (lVar4 == 0) {
+          uVar5 = FUN_?();
+          FUN_?(uVar5,0);
+          pcVar6 = (code *)swi(3);
+          (*pcVar6)();
+          return;
+        }
+      }
+      FUN_?(args,0,lVar3);
       if (this_00 != (WinningConditionManager *)0x0) {
         MVWorldObject.dll::WinningConditionManager::WinningConditionManager_CreateWinnerCondition
                   (this_00,args,
@@ -89,15 +177,9 @@ code_?:
         (this->fields).initializedInWorld = 1;
         return;
       }
-      goto code_?;
     }
-    iVar4 = func_?(pOVar3,(args->klass->_0).element_class);
-    if (iVar4 != 0) goto code_?;
   }
-  uVar5 = func_?(0);
-  func_?(uVar5);
-code_?:
-  func_?();
+  FUN_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
   return;
@@ -111,42 +193,57 @@ void Assembly-CSharp.dll::MVOculusKillLimit::MVOculusKillLimit_OnDataUpdate
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
-                   );
+    FUN_?(&
+                  OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   MVGamePointRewardLogicObject::MVGamePointRewardLogicObject_OnDataUpdate
             ((MVGamePointRewardLogicObject *)this,(MethodInfo *)0x0);
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar1 == (MVNetworkGame *)0x0) ||
-     (this_00 = (pMVar1->fields)._WinningConditionManager_k__BackingField,
-     this_00 == (WinningConditionManager *)0x0)) {
-    func_?();
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  else {
-    this_01 = (WinningCondition *)
-              MVWorldObject.dll::WinningConditionManager::
-              WinningConditionManager_GetSingletonWinnerConditionByType
-                        (this_00,
-                         OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
-                        );
-    if (this_01 != (WinningCondition *)0x0) {
-      limit = MVOculusKillLimit_get_KillLimit(this,(MethodInfo *)0x0);
-      MVWorldObject.dll::WinningCondition::WinningCondition_SetLimit
-                (this_01,limit,(MethodInfo *)0x0);
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (((pMVar1 != (MVGameControllerBase *)0x0) &&
+      (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+     (this_00 = (pMVar2->fields)._WinningConditionManager_k__BackingField,
+     this_00 != (WinningConditionManager *)0x0)) {
+    pOVar3 = MVWorldObject.dll::WinningConditionManager::
+             WinningConditionManager_GetSingletonWinnerConditionByType
+                       (this_00,
+                        OculusKillLimitClient_MethodInfo__WinningConditionManager__GetSingletonWinnerConditionByType<OculusKillLimitClient>__
+                       );
+    if (pOVar3 != (Object *)0x0) {
+      iVar4 = MVOculusKillLimit_get_KillLimit(this,(MethodInfo *)0x0);
+      pOVar5 = pOVar3[4].klass;
+      *(int32_t *)&pOVar3[1].monitor = iVar4;
+      if (pOVar5 != (Object__Class *)0x0) {
+        pOVar5 = pOVar3[4].klass;
+        uVar6._0_2_ = (pOVar5->_0).byval_arg.attrs;
+        uVar6._2_1_ = (pOVar5->_0).byval_arg.type;
+        uVar6._3_5_ = *(undefined5 *)&(pOVar5->_0).byval_arg.field_0xb;
+        (*(code *)(pOVar5->_0).namespaze)((pOVar5->_0).element_class,pOVar3,0,uVar6);
+      }
       return;
     }
+    uVar6 = func_?(&TypeInfo__System__Exception);
+    this_01 = (Exception *)func_?(uVar6);
+    message = (String *)func_?(&StringLiteral_Couldn_t_find_OculusKillLimitCli);
+    mscorlib.dll::System::Exception::Exception__ctor_1(this_01,message,(MethodInfo *)0x0);
+    uVar6 = func_?(&MethodInfo__MVOculusKillLimit__OnDataUpdate__);
+    FUN_?(this_01,uVar6);
+    pcVar7 = (code *)swi(3);
+    (*pcVar7)();
+    return;
   }
-  func_?();
-  this_02 = (Exception *)func_?();
-  message = (String *)func_?();
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_02,message,(MethodInfo *)0x0);
-  uStack2 = func_?();
-  pEStack3 = this_02;
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -160,7 +257,9 @@ void Assembly-CSharp.dll::MVOculusKillLimit::MVOculusKillLimit__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PrefabPool);
+    FUN_?(&TypeInfo__PrefabPool);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
@@ -168,19 +267,13 @@ void Assembly-CSharp.dll::MVOculusKillLimit::MVOculusKillLimit__ctor
     MVGamePointRewardLogicObject::MVGamePointRewardLogicObject__ctor
               ((MVGamePointRewardLogicObject *)this,data,(pPVar1->fields).mvOculusKillLimitPrefab,
                worldObjects,(MethodInfo *)0x0);
-    piVar2 = &(this->fields)._._._.interactionFlags;
-    *(uint *)piVar2 = (uint)*piVar2 | 0x8000;
-    uVar3 = *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
-    piVar2 = &(this->fields)._._._.interactionFlags;
-    *(uint *)piVar2 = (uint)*piVar2 | 0x40000000;
-    piVar2 = &(this->fields)._._._.interactionFlags;
-    *(uint *)piVar2 = (uint)*piVar2 & 0xffffdfff;
-    *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) = uVar3;
+    (this->fields)._._._.interactionFlags =
+         (this->fields)._._._.interactionFlags & 0xffffffffffffdfffU | 0x40008000;
     return;
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -194,8 +287,38 @@ int32_t Assembly-CSharp.dll::MVOculusKillLimit::MVOculusKillLimit_get_GamePointR
   iVar1 = MVGamePointRewardLogicObject::MVGamePointRewardLogicObject_GetGamePointsRewardAmount
                     ((MVGamePointRewardLogicObject *)this,(this->fields)._._._._.data,
                      (MethodInfo *)0x0);
-  iVar2 = MVOculusKillLimit_get_KillLimit(this,(MethodInfo *)0x0);
-  return iVar2 * iVar1;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_killLimit);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  this_00 = (this->fields)._._._._.data;
+  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (this_00,(Object *)StringLiteral_killLimit,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if (pOVar2 != (Object *)0x0) {
+      if ((pOVar2->klass->_0).element_class == *(Il2CppClass **)(lRam_? + 0x40)) {
+        return iVar1 * *(int *)&pOVar2[1].klass;
+      }
+      FUN_?(pOVar2,lRam_?);
+      pcVar3 = (code *)swi(3);
+      iVar1 = (*pcVar3)();
+      return iVar1;
+    }
+  }
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  iVar1 = (*pcVar3)();
+  return iVar1;
 }
 
 
@@ -206,36 +329,36 @@ int32_t Assembly-CSharp.dll::MVOculusKillLimit::MVOculusKillLimit_get_KillLimit
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_killLimit);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-            (this->fields)._._._._.data;
-  if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (this_00,(Object *)StringLiteral_killLimit,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    if (TVar1.m_Index != 0) {
-      if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) ==
-          (TypeInfo__System__Int32->_0).element_class) {
-        piVar2 = (int32_t *)func_?();
-        return *piVar2;
+  this_00 = (this->fields)._._._._.data;
+  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (this_00,(Object *)StringLiteral_killLimit,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if (pOVar1 != (Object *)0x0) {
+      if ((pOVar1->klass->_0).element_class == *(Il2CppClass **)(lRam_? + 0x40)) {
+        return *(int32_t *)&pOVar1[1].klass;
       }
-      func_?();
-      pcVar3 = (code *)swi(3);
-      iVar4 = (*pcVar3)();
-      return iVar4;
+      FUN_?(pOVar1,lRam_?);
+      pcVar2 = (code *)swi(3);
+      iVar3 = (*pcVar2)();
+      return iVar3;
     }
   }
-  uVar5 = func_?(&stack0xfffffff0);
-  func_?(uVar5);
-  pcVar3 = (code *)swi(3);
-  iVar4 = (*pcVar3)();
-  return iVar4;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  iVar3 = (*pcVar2)();
+  return iVar3;
 }
 

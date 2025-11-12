@@ -17,10 +17,6 @@ public class PressurePlateTintObject : TintObject
 	private MeshRenderer meshRendererToTint;
 	[SerializeField]
 	private Material materialCylinderToTint;
-	[SerializeField]
-	private Texture teamTexture;
-	[SerializeField]
-	private Texture defaultTexture;
 	private Color OriginalColor;
 
 	// Constructors

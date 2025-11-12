@@ -6,60 +6,88 @@ void Assembly-CSharp.dll::CollectTheItemBlinker::CollectTheItemBlinker_Awake
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
-    func_?(&TypeInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>);
+    FUN_?(&TypeInfo__Blinker);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
-            func_?();
+            FUN_?(TypeInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
   Int32Enum,GamePassesHighScoreList+HighScoreListData]::
   Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Dictionary__)
   ;
-  uVar1 = (this->fields).dropOffCollectedItemColor.r;
-  uVar2 = (this->fields).dropOffCollectedItemColor.g;
-  uVar3 = (this->fields).dropOffCollectedItemColor.b;
-  color_00.b = (float)uVar3;
-  color_00.g = (float)uVar2;
-  color_00.r = (float)uVar1;
-  fVar4 = (this->fields).dropOffCollectedItemColor.a;
-  pMVar5 = (this->fields)._.blinkMaterial;
-  pBVar6 = (Blinker *)func_?();
-  color_00.a = fVar4;
-  Blinker::Blinker__ctor(pBVar6,2.0,pMVar5,color_00,(MethodInfo *)0x0);
-  if (this_00 != (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,6,(Object *)pBVar6,
-               MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
-              );
-    pMVar5 = (this->fields)._.blinkMaterial;
-    uVar7 = (this->fields).DespawnColor.r;
-    uVar8 = (this->fields).DespawnColor.g;
-    uVar9 = (this->fields).DespawnColor.b;
-    color.b = (float)uVar9;
-    color.g = (float)uVar8;
-    color.r = (float)uVar7;
-    fVar4 = (this->fields).DespawnColor.a;
-    pBVar6 = (Blinker *)func_?();
-    color.a = fVar4;
-    Blinker::Blinker__ctor(pBVar6,2.0,pMVar5,color,(MethodInfo *)0x0);
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,5,(Object *)pBVar6,
-               MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
-              );
-    (this_00->fields)._comparer = (IEqualityComparer_1_System_Int32Enum_ *)this_00;
-    func_?();
+  pMVar1 = (this->fields)._.blinkMaterial;
+  uVar2._0_4_ = (this->fields).dropOffCollectedItemColor.r;
+  uVar2._4_4_ = (this->fields).dropOffCollectedItemColor.g;
+  uVar3._0_4_ = (this->fields).dropOffCollectedItemColor.b;
+  uVar3._4_4_ = (this->fields).dropOffCollectedItemColor.a;
+  pBVar4 = (Blinker *)FUN_?(TypeInfo__Blinker);
+  pCVar5 = aCStack_6;
+  aCStack_6[0]._0_8_ = uVar2;
+  aCStack_6[0]._8_8_ = uVar3;
+  Blinker::Blinker__ctor
+            (pBVar4,TypeRef__System__Activator__T._0_4_,pMVar1,pCVar5,(MethodInfo *)0x0);
+  if (this_00 == (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
+    FUN_?();
+    pcVar7 = (code *)swi(3);
+    (*pcVar7)();
     return;
   }
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,6,(Object *)pBVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pCVar5 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
+             ->klass->rgctx_data[0x22].method);
+  pMVar1 = (this->fields)._.blinkMaterial;
+  uVar8._0_4_ = (this->fields).DespawnColor.r;
+  uVar8._4_4_ = (this->fields).DespawnColor.g;
+  uVar9._0_4_ = (this->fields).DespawnColor.b;
+  uVar9._4_4_ = (this->fields).DespawnColor.a;
+  pBVar4 = (Blinker *)FUN_?(TypeInfo__Blinker);
+  pCVar5 = aCStack_6;
+  aCStack_6[0]._0_8_ = uVar8;
+  aCStack_6[0]._8_8_ = uVar9;
+  Blinker::Blinker__ctor
+            (pBVar4,TypeRef__System__Activator__T._0_4_,pMVar1,pCVar5,(MethodInfo *)0x0);
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,5,(Object *)pBVar4,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pCVar5 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__Add_BlinkType__Blinker_
+             ->klass->rgctx_data[0x22].method);
+  bVar10 = iRam_? != 0;
+  (this->fields)._.blinkers = (Dictionary_2_BlinkType_Blinker_ *)this_00;
+  if (bVar10) {
+    uVar11 = (uint)((ulonglong)&(this->fields)._.blinkers >> 0xc);
+    uVar12 = (ulonglong)((uVar11 & 0x1fffff) >> 6);
+    do {
+      uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
+      puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
+      LOCK();
+      bVar10 = uVar13 == *puVar14;
+      if (bVar10) {
+        *puVar14 = uVar13 | 1L << (uVar11 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar10);
+  }
   return;
 }
 
@@ -70,81 +98,153 @@ void Assembly-CSharp.dll::CollectTheItemBlinker::CollectTheItemBlinker_Deactivat
                (CollectTheItemBlinker *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__get_Keys__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<BlinkType,_Blinker>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<BlinkType,_Blinker>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<BlinkType,_Blinker>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<BlinkType,_Blinker>__GetEnumerator__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__get_Keys__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<BlinkType,_Blinker>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<BlinkType,_Blinker>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<BlinkType,_Blinker>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<BlinkType,_Blinker>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-             *)(this->fields)._.blinkers;
-  if (this_00 !=
-      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-       *)0x0) {
-    this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
-              StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
-              Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Keys
-                        (this_00,
-                         MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__get_Keys__
-                        );
-    if (this_01 !=
-        (Dictionary_2_TKey_TValue_KeyCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-         *)0x0) {
-      mscorlib.dll::System::Collections::Generic::
-      Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
-      StyleSheetCache+SheetHandleKey,System::Object]::
-      Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                ((Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                  *)&stack0xffffffd8,
-                 (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                  *)this_01,
-                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<BlinkType,_Blinker>__GetEnumerator__
-                );
-      uStack_1 = 1;
-      while( true ) {
-        bVar4 = mscorlib.dll::System::Collections::Generic::
-                Dictionary`2[TKey,TValue]+KeyCollection[TKey,TValue]+Enumerator[System::
-                UInt32,System::Object]::
-                Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                          ((Dictionary_2_TKey_TValue_KeyCollection_TKey_TValue_Enumerator_System_UInt32_System_Object_
-                            *)&stack0xffffffc8,
-                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<BlinkType,_Blinker>__MoveNext__
-                          );
-        if (bVar4 == 0) break;
-        BlinkerBase::BlinkerBase_StopBlinking
-                  ((BlinkerBase *)this,BlinkType__Enum_Damage,(MethodInfo *)0x0);
+  this_00 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *
+            )(this->fields)._.blinkers;
+  if ((this_00 ==
+       (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *)0x0)
+     || (pDVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+                  TypeConverterRegistry+ConverterKey,System::Object]::
+                  Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object__get_Keys
+                            (this_00,
+                             MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__get_Keys__
+                            ),
+        pDVar1 == (Dictionary_2_TKey_TValue_KeyCollection_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                   *)0x0)) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  uStack_3 = (pDVar1->fields)._dictionary;
+  puStack_4 = (undefined4 *)0x0;
+  uStack_5 = 0;
+  if (iRam_? != 0) {
+    uVar6 = (uint)((ulonglong)&uStack_3 >> 0xc);
+    uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
+    do {
+      uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
+      puVar9 = (ulonglong *)(uVar7 * 8 + 0xADDR);
+      LOCK();
+      bVar10 = uVar8 == *puVar9;
+      if (bVar10) {
+        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
       }
-      uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)&stack0xffffffc8,
-                 (ExceptionArgument__Enum)
-                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__KeyCollection_TKey_TValue___Enumerator<BlinkType,_Blinker>__Dispose__
-                 ,in_stack_5);
-      *unaff_FS_OFFSET = uStack_3;
+      UNLOCK();
+    } while (!bVar10);
+  }
+  if (uStack_3 ==
+      (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *)0x0)
+  {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  iStack_11 = (uStack_3->fields)._version;
+  uStack_5 = 0;
+  uStack_3._4_4_ = (undefined4)((ulonglong)uStack_3 >> 0x20);
+  uStack_12 = (undefined4)uStack_3;
+  uStack_13 = uStack_3._4_4_;
+  uStack_14 = 0;
+  uStack_15 = 0;
+  uStack_3 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+               *)0x0;
+  puStack_4 = &uStack_12;
+  do {
+    lVar16 = CONCAT44(uStack_13,uStack_12);
+    if (lVar16 == 0) {
+code_?:
+      FUN_?();
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
-  }
-  uVar6 = func_?();
-  func_?(uVar6);
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
-  return;
+    if (iStack_11 != *(int *)(lVar16 + 0x2c)) {
+code_?:
+      mscorlib.dll::System::ThrowHelper::
+      ThrowHelper_1_ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion
+                ((MethodInfo *)0x0);
+      goto code_?;
+    }
+    do {
+      if (lVar16 == 0) goto code_?;
+      if (*(uint *)(lVar16 + 0x20) <= uStack_14) {
+        return;
+      }
+      lVar17 = *(longlong *)(lVar16 + 0x18);
+      lVar18 = (longlong)(int)uStack_14;
+      uVar6 = uStack_14 + 1;
+      if (lVar17 == 0) goto code_?;
+      if (*(uint *)(lVar17 + 0x18) <= uStack_14) {
+        uStack_14 = uVar6;
+        FUN_?();
+        goto code_?;
+      }
+      uStack_14 = uVar6;
+    } while (*(int *)(lVar17 + 0x20 + lVar18 * 0x18) < 0);
+    key = *(Int32Enum__Enum *)(lVar17 + 0x28 + lVar18 * 0x18);
+    uStack_15 = CONCAT44(uStack_15._4_4_,key);
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__get_Item_BlinkType_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    this_01 = (this->fields)._.blinkers;
+    if (this_01 == (Dictionary_2_BlinkType_Blinker_ *)0x0) {
+code_?:
+      FUN_?();
+      uVar6 = uStack_14;
+code_?:
+      uStack_14 = uVar6;
+      FUN_?();
+code_?:
+      FUN_?();
+      goto code_?;
+    }
+    pOVar19 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+             Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                       ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,key,
+                        MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__get_Item_BlinkType_
+                       );
+    if (pOVar19 == (Object *)0x0) {
+code_?:
+      FUN_?();
+      goto code_?;
+    }
+    pOVar19[1].monitor = (MonitorData *)0x0;
+  } while( true );
 }
 
 
@@ -155,9 +255,43 @@ void Assembly-CSharp.dll::CollectTheItemBlinker::CollectTheItemBlinker_OnBlinkin
                )
 
 {
-  if (shouldBlink != 0) {
-    BlinkerBase::BlinkerBase_StartBlinking((BlinkerBase *)this,type,2.0,(MethodInfo *)0x0);
+  uVar1 = TypeRef__System__Activator__T._0_4_;
+  if (shouldBlink == 0) {
+    return;
   }
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__get_Item_BlinkType_
+                  ,type,CONCAT44(in_register_00000084,type),0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  this_00 = (this->fields)._.blinkers;
+  if ((this_00 != (Dictionary_2_BlinkType_Blinker_ *)0x0) &&
+     (pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+               Object]::Dictionary_2_System_Int32Enum_System_Object__get_Item
+                         ((Dictionary_2_System_Int32Enum_System_Object_ *)this_00,type,
+                          MethodInfo__System__Collections__Generic__Dictionary<BlinkType,_Blinker>__get_Item_BlinkType_
+                         ), pOVar2 != (Object *)0x0)) {
+    pcVar3 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pcRam_? = pcVar3;
+    uVar5 = (*pcRam_?)();
+    *(undefined4 *)((longlong)&pOVar2[1].monitor + 4) = uVar1;
+    *(undefined4 *)&pOVar2[1].monitor = uVar5;
+    return;
+  }
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

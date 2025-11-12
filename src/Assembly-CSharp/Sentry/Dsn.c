@@ -5,133 +5,134 @@ void Assembly-CSharp.dll::Sentry::Dsn::Dsn__ctor(Dsn *this,String *dsn,MethodInf
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__UriBuilder);
-    func_?(&TypeInfo__System__Uri);
-    func_?(&StringLiteral__0__api__1__store_);
-    func_?(&::StringLiteral__);
+    FUN_?(&TypeInfo__System__UriBuilder);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Uri);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__0__api__1__store_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  bVar1 = mscorlib.dll::System::String::String_op_Equality(dsn,::StringLiteral__,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    pUVar2 = (Uri *)func_?();
-    System.dll::System::Uri::Uri__ctor(pUVar2,dsn,(MethodInfo *)0x0);
-    (this->fields)._uri = pUVar2;
-    func_?(&this->fields,pUVar2);
-    pUVar2 = (this->fields)._uri;
-    if (pUVar2 == (Uri *)0x0) goto code_?;
-    pSVar3 = System.dll::System::Uri::Uri_get_UserInfo(pUVar2,(MethodInfo *)0x0);
-    bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar3,(MethodInfo *)0x0);
-    if (bVar1 != 0) goto code_?;
-    pUVar2 = (this->fields)._uri;
-    if (pUVar2 == (Uri *)0x0) goto code_?;
-    pSVar3 = System.dll::System::Uri::Uri_get_UserInfo(pUVar2,(MethodInfo *)0x0);
-    if (pSVar3 == (String *)0x0) goto code_?;
-    pSVar4 = mscorlib.dll::System::String::String_Split
-                       (pSVar3,0x3a,StringSplitOptions__Enum_None,(MethodInfo *)0x0);
-    if (pSVar4 == (String__Array *)0x0) goto code_?;
-    if (pSVar4->max_length != 0) {
-      (this->fields).publicKey = pSVar4->vector[0];
-      func_?();
-      bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty
-                        ((this->fields).publicKey,(MethodInfo *)0x0);
-      if (bVar1 != 0) goto code_?;
-      (this->fields).secretKey = (String *)0x0;
-      func_?();
-      if (1 < (int)pSVar4->max_length) {
-        if (pSVar4->max_length < 2) goto code_?;
-        (this->fields).secretKey = pSVar4->vector[1];
-        func_?();
+  if ((dsn == ::StringLiteral__) ||
+     ((((dsn != (String *)0x0 && (::StringLiteral__ != (String *)0x0)) &&
+       ((dsn->fields)._stringLength == (::StringLiteral__->fields)._stringLength)) &&
+      (bVar1 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                         ((uint8_t *)&(dsn->fields)._firstChar,
+                          (uint8_t *)&(::StringLiteral__->fields)._firstChar,
+                          (longlong)(dsn->fields)._stringLength * 2,(MethodInfo *)0x0), bVar1 != 0))
+     )) {
+    uVar2 = func_?(&TypeInfo__System__ArgumentException);
+    pIVar3 = (InvalidEnumArgumentException *)func_?(uVar2);
+    pSVar4 = (String *)func_?(&StringLiteral_invalid_argument___DSN_cannot_be);
+    System.dll::System::ComponentModel::InvalidEnumArgumentException::
+    InvalidEnumArgumentException__ctor_1(pIVar3,pSVar4,(MethodInfo *)0x0);
+    uVar2 = func_?(&MethodInfo__Sentry__Dsn__Dsn_System__String_);
+    FUN_?(pIVar3,uVar2);
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
+    return;
+  }
+  pUVar6 = (Uri *)FUN_?(TypeInfo__System__Uri);
+  System.dll::System::Uri::Uri__ctor(pUVar6,dsn,(MethodInfo *)0x0);
+  bVar7 = iRam_? != 0;
+  (this->fields)._uri = pUVar6;
+  if (bVar7) {
+    uVar8 = (uint)((ulonglong)&this->fields >> 0xc);
+    lVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar10 = *(ulonglong *)(lVar9 + 0xADDR);
+      puVar11 = (ulonglong *)(lVar9 + 0xADDR);
+      LOCK();
+      bVar7 = uVar10 == *puVar11;
+      if (bVar7) {
+        *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
       }
-      pUVar2 = (this->fields)._uri;
-      if (pUVar2 == (Uri *)0x0) goto code_?;
-      pSVar3 = System.dll::System::Uri::Uri_get_AbsolutePath(pUVar2,(MethodInfo *)0x0);
-      pUVar2 = (this->fields)._uri;
-      if (pUVar2 == (Uri *)0x0) goto code_?;
-      pSVar5 = System.dll::System::Uri::Uri_get_AbsolutePath(pUVar2,(MethodInfo *)0x0);
-      if (pSVar5 == (String *)0x0) goto code_?;
-      iVar6 = mscorlib.dll::System::String::String_LastIndexOf(pSVar5,0x2f,(MethodInfo *)0x0);
-      if (pSVar3 == (String *)0x0) goto code_?;
-      mscorlib.dll::System::String::String_Substring_1(pSVar3,0,iVar6,(MethodInfo *)0x0);
-      pUVar2 = (this->fields)._uri;
-      if (pUVar2 == (Uri *)0x0) goto code_?;
-      pSVar3 = System.dll::System::Uri::Uri_get_AbsoluteUri(pUVar2,(MethodInfo *)0x0);
-      pUVar2 = (this->fields)._uri;
-      if (pUVar2 == (Uri *)0x0) goto code_?;
-      pSVar5 = System.dll::System::Uri::Uri_get_AbsoluteUri(pUVar2,(MethodInfo *)0x0);
-      if (pSVar5 == (String *)0x0) goto code_?;
-      iVar6 = mscorlib.dll::System::String::String_LastIndexOf(pSVar5,0x2f,(MethodInfo *)0x0);
-      if (pSVar3 == (String *)0x0) goto code_?;
-      pSVar3 = mscorlib.dll::System::String::String_Substring(pSVar3,iVar6 + 1,(MethodInfo *)0x0);
-      bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty(pSVar3,(MethodInfo *)0x0);
-      if (bVar1 == 0) {
-        this_00 = (UriBuilder *)func_?();
-        System.dll::System::UriBuilder::UriBuilder__ctor(this_00,(MethodInfo *)0x0);
-        pUVar2 = (this->fields)._uri;
-        if (pUVar2 != (Uri *)0x0) {
-          pSVar5 = System.dll::System::Uri::Uri_get_Scheme(pUVar2,(MethodInfo *)0x0);
-          if (this_00 != (UriBuilder *)0x0) {
-            System.dll::System::UriBuilder::UriBuilder_set_Scheme(this_00,pSVar5,(MethodInfo *)0x0);
-            pUVar2 = (this->fields)._uri;
-            if (pUVar2 != (Uri *)0x0) {
-              pSVar5 = System.dll::System::Uri::Uri_get_DnsSafeHost(pUVar2,(MethodInfo *)0x0);
-              System.dll::System::UriBuilder::UriBuilder_set_Host(this_00,pSVar5,(MethodInfo *)0x0);
-              pUVar2 = (this->fields)._uri;
-              if (pUVar2 != (Uri *)0x0) {
-                iVar6 = System.dll::System::Uri::Uri_get_Port(pUVar2,(MethodInfo *)0x0);
-                System.dll::System::UriBuilder::UriBuilder_set_Port(this_00,iVar6,(MethodInfo *)0x0)
-                ;
-                pSVar3 = mscorlib.dll::System::String::String_Format_1
-                                   (StringLiteral__0__api__1__store_,(Object *)&UNK_?,
-                                    (Object *)pSVar3,(MethodInfo *)0x0);
-                System.dll::System::UriBuilder::UriBuilder_set_Path
-                          (this_00,pSVar3,(MethodInfo *)0x0);
-                pUVar2 = System.dll::System::UriBuilder::UriBuilder_get_Uri
-                                   (this_00,(MethodInfo *)0x0);
-                (this->fields).callUri = pUVar2;
-                func_?();
-                return;
-              }
-            }
+      UNLOCK();
+    } while (!bVar7);
+  }
+  pUVar6 = (this->fields)._uri;
+  if (pUVar6 != (Uri *)0x0) {
+    pSVar4 = System.dll::System::Uri::Uri_get_UserInfo(pUVar6,(MethodInfo *)0x0);
+    if ((pSVar4 == (String *)0x0) || ((pSVar4->fields)._stringLength == 0)) {
+      uVar2 = func_?(&TypeInfo__System__ArgumentException);
+      pIVar3 = (InvalidEnumArgumentException *)func_?(uVar2);
+      pSVar4 = (String *)func_?(&StringLiteral_Invalid_DSN__No_public_key_provi);
+      System.dll::System::ComponentModel::InvalidEnumArgumentException::
+      InvalidEnumArgumentException__ctor_1(pIVar3,pSVar4,(MethodInfo *)0x0);
+      uVar2 = func_?(&MethodInfo__Sentry__Dsn__Dsn_System__String_);
+      FUN_?(pIVar3,uVar2);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    pUVar6 = (this->fields)._uri;
+    if (((pUVar6 != (Uri *)0x0) &&
+        (pSVar4 = System.dll::System::Uri::Uri_get_UserInfo(pUVar6,(MethodInfo *)0x0),
+        pSVar4 != (String *)0x0)) &&
+       (pSVar12 = mscorlib.dll::System::String::String_Split
+                           (pSVar4,0x3a,StringSplitOptions__Enum_None,(MethodInfo *)0x0),
+       pSVar12 != (String__Array *)0x0)) {
+      if ((int)pSVar12->max_length == 0) {
+        FUN_?();
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      bVar7 = iRam_? != 0;
+      (this->fields).publicKey = pSVar12->vector[0];
+      if (bVar7) {
+        uVar8 = (uint)((ulonglong)&(this->fields).publicKey >> 0xc);
+        lVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar10 = *(ulonglong *)(lVar9 + 0xADDR);
+          puVar11 = (ulonglong *)(lVar9 + 0xADDR);
+          LOCK();
+          bVar7 = uVar10 == *puVar11;
+          if (bVar7) {
+            *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
           }
-        }
-        goto code_?;
+          UNLOCK();
+        } while (!bVar7);
       }
-      goto code_?;
+      pSVar4 = (this->fields).publicKey;
+      if ((pSVar4 != (String *)0x0) && ((pSVar4->fields)._stringLength != 0)) {
+        (this->fields).secretKey = (String *)0x0;
+        if (iRam_? != 0) {
+          uVar8 = (uint)((ulonglong)&(this->fields).secretKey >> 0xc);
+          puVar11 = (ulonglong *)((ulonglong)((uVar8 & 0x1fffff) >> 6) * 8 + 0xADDR);
+          do {
+            uVar13 = *puVar11;
+            LOCK();
+            uVar10 = *puVar11;
+            if (uVar13 == uVar10) {
+              *puVar11 = uVar13 | 1L << (uVar8 & 0x3f);
+            }
+            UNLOCK();
+          } while (uVar13 != uVar10);
+        }
+        return;
+      }
+      uVar2 = func_?(&TypeInfo__System__ArgumentException);
+      pIVar3 = (InvalidEnumArgumentException *)func_?(uVar2);
+      pSVar4 = (String *)func_?(&StringLiteral_Invalid_DSN__No_public_key_provi);
+      System.dll::System::ComponentModel::InvalidEnumArgumentException::
+      InvalidEnumArgumentException__ctor_1(pIVar3,pSVar4,(MethodInfo *)0x0);
+      uVar2 = func_?(&MethodInfo__Sentry__Dsn__Dsn_System__String_);
+      FUN_?(pIVar3,uVar2);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
     }
   }
-  else {
-    uVar7 = func_?();
-    pAVar8 = (ArgumentException *)func_?(uVar7);
-    method_00 = (MethodInfo *)0x0;
-    pSVar3 = (String *)func_?(&StringLiteral_invalid_argument___DSN_cannot_be);
-    mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1(pAVar8,pSVar3,method_00);
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    pAVar8 = (ArgumentException *)func_?();
-    pSVar3 = (String *)func_?();
-    mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1
-              (pAVar8,pSVar3,(MethodInfo *)0x0);
-    func_?();
-    func_?();
-code_?:
-    func_?();
-    pAVar8 = (ArgumentException *)func_?();
-    pSVar3 = (String *)func_?();
-    mscorlib.dll::System::ArgumentException::ArgumentException__ctor_1
-              (pAVar8,pSVar3,(MethodInfo *)0x0);
-    func_?();
-    func_?();
-  }
-code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 

@@ -9,78 +9,289 @@ void Assembly-CSharp.dll::Sentry::SentryEvent::SentryEvent__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Application);
-    func_?(&TypeInfo__Sentry__Context);
-    func_?(&TypeInfo__System__DateTime);
-    func_?(&TypeInfo__Sentry__SdkVersion);
-    func_?(&StringLiteral_csharp);
-    func_?(&StringLiteral_yyyy_MM_ddTHH__mm__ss);
-    func_?(&StringLiteral_N);
-    func_?(&StringLiteral_error);
+    FUN_?(&TypeInfo__UnityEngine__Application);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Sentry__Context);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__DateTime);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Sentry__SdkVersion);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_csharp);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_yyyy_MM_ddTHH__mm__ss);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_N);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_error);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  bVar1 = iRam_? != 0;
   (this->fields).platform = StringLiteral_csharp;
-  func_?(&(this->fields).platform,StringLiteral_csharp);
-  value = (SdkVersion *)func_?(TypeInfo__Sentry__SdkVersion);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).platform >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  pSVar6 = (SdkVersion *)FUN_?(TypeInfo__Sentry__SdkVersion);
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_sentry_unity_lite);
-    func_?(&StringLiteral__0_0_4);
+    FUN_?(&StringLiteral_sentry_unity_lite);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__0_0_4);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  (value->fields).name = StringLiteral_sentry_unity_lite;
-  func_?(&value->fields,StringLiteral_sentry_unity_lite);
-  (value->fields).version = StringLiteral__0_0_4;
-  pMVar1 = (MethodInfo *)&(value->fields).version;
-  func_?(pMVar1,StringLiteral__0_0_4);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,pMVar1);
-  pMVar1 = (MethodInfo *)&(this->fields).sdk;
-  (this->fields).sdk = value;
-  func_?(pMVar1,value);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,pMVar1);
-  mscorlib.dll::System::Guid::Guid_NewGuid((Guid *)auStack_2,(MethodInfo *)0x0);
-  pSVar3 = mscorlib.dll::System::Guid::Guid_ToString_1
-                     ((Guid *)&stack0xffffffe4,StringLiteral_N,(MethodInfo *)0x0);
-  (this->fields).event_id = pSVar3;
-  func_?(&this->fields,pSVar3);
+  (pSVar6->fields).name = StringLiteral_sentry_unity_lite;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)&pSVar6->fields >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  iVar7 = iRam_?;
+  (pSVar6->fields).version = StringLiteral__0_0_4;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(pSVar6->fields).version >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar1);
+  }
+  (this->fields).sdk = pSVar6;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).sdk >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  uStack_8 = 0;
+  uStack_9 = 0;
+  mscorlib.dll::Interop::Interop_GetRandomBytes((uint8_t *)&uStack_8,0x10,(MethodInfo *)0x0);
+  uStack_8 = uStack_8 & 0xfffffffffffffff | 0x4000000000000000;
+  uStack_9 = uStack_9 & 0xffffffffffffff3f | 0x80;
+  GStack_10._a = (undefined4)uStack_8;
+  GStack_10._b = uStack_8._4_2_;
+  GStack_10._c = uStack_8._6_2_;
+  GStack_10._d = (undefined1)uStack_9;
+  GStack_10._e = uStack_9._1_1_;
+  GStack_10._f = uStack_9._2_1_;
+  GStack_10._g = uStack_9._3_1_;
+  GStack_10._h = uStack_9._4_1_;
+  GStack_10._i = uStack_9._5_1_;
+  GStack_10._j = uStack_9._6_1_;
+  GStack_10._k = uStack_9._7_1_;
+  pSVar11 = mscorlib.dll::System::Guid::Guid_ToString_2
+                     (&GStack_10,StringLiteral_N,(IFormatProvider *)0x0,(MethodInfo *)0x0);
+  (this->fields).event_id = pSVar11;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  iVar7 = iRam_?;
   (this->fields).message = message;
-  func_?();
-  if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).message >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
   }
-  uStack_4 = mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
-  pSVar3 = mscorlib.dll::System::DateTime::DateTime_ToString_1
-                     ((DateTime *)&uStack_4,StringLiteral_yyyy_MM_ddTHH__mm__ss,(MethodInfo *)0x0);
-  (this->fields).timestamp = pSVar3;
-  func_?();
+  if (*(int *)&(TypeInfo__System__DateTime->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  dateTime = mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
+  pSVar11 = StringLiteral_yyyy_MM_ddTHH__mm__ss;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__DateTimeFormat);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__System__DateTimeFormat->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pSVar11 = mscorlib.dll::System::DateTimeFormat::DateTimeFormat_Format
+                     (dateTime,pSVar11,(IFormatProvider *)0x0,(MethodInfo *)0x0);
+  iVar7 = iRam_?;
+  (this->fields).timestamp = pSVar11;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).timestamp >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar1);
+  }
   (this->fields).level = StringLiteral_error;
-  ppSStack_5 = &(this->fields).level;
-  func_?();
-  pLStack_6 = breadcrumbs;
-  (this->fields).breadcrumbs = breadcrumbs;
-  auStack_2._4_4_ = &(this->fields).breadcrumbs;
-  auStack_2._0_4_ = &UNK_?;
-  func_?();
-  auStack_2._0_4_ = TypeInfo__Sentry__Context;
-  this_00 = (Context *)func_?();
-  Context::Context__ctor(this_00,(MethodInfo *)0x0);
-  (this->fields).contexts = this_00;
-  func_?(&(this->fields).contexts,this_00);
-  if ((TypeInfo__UnityEngine__Application->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  iVar12 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).level >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar12 = iRam_?;
+    } while (!bVar1);
   }
-  pSVar3 = UnityEngine.CoreModule.dll::UnityEngine::Application::Application_get_version
+  (this->fields).breadcrumbs = breadcrumbs;
+  if (iVar12 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).breadcrumbs >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  this_00 = (Context *)FUN_?(TypeInfo__Sentry__Context);
+  Context::Context__ctor(this_00,(MethodInfo *)0x0);
+  bVar1 = iRam_? != 0;
+  (this->fields).contexts = this_00;
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).contexts >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Application->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pSVar11 = UnityEngine.CoreModule.dll::UnityEngine::Application::Application_get_version
                      ((MethodInfo *)0x0);
-  (this->fields).release = pSVar3;
-  func_?();
+  (this->fields).release = pSVar11;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).release >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  iVar7 = iRam_?;
   (this->fields).tags = tags;
-  uStack_4._4_4_ = &(this->fields).tags;
-  uStack_4._0_4_ = (Dictionary_2_System_String_System_Object_ *)&UNK_?;
-  func_?();
-  uStack_4._0_4_ = extra;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).tags >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar1);
+  }
   (this->fields).extra = extra;
-  func_?();
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).extra >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   return;
 }
 

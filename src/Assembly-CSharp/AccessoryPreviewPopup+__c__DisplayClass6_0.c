@@ -8,12 +8,14 @@ void Assembly-CSharp.dll::AccessoryPreviewPopup+<>c__DisplayClass6_0::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IAccessoryPopupHandler);
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pAVar1 = (this->fields).accessoryData;
   if (x == (IAccessoryPopupHandler *)0x0) {
-    func_?();
+    FUN_?();
     pcVar2 = (code *)swi(3);
     (*pcVar2)();
     return;
@@ -26,17 +28,18 @@ void Assembly-CSharp.dll::AccessoryPreviewPopup+<>c__DisplayClass6_0::
     do {
       if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
           (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IAccessoryPopupHandler) {
-        ppMVar6 = &(&x->klass->vtable)[x->klass->interfaceOffsets[uVar4].offset].OpenInventoryAtItem
-                   .method;
+        pIVar6 = &pIVar3->vtable + pIVar3->interfaceOffsets[uVar4].offset;
         goto code_?;
       }
       uVar4 = uVar4 + 1;
     } while (uVar4 < uVar5);
   }
-  ppMVar6 = (MethodInfo **)
-            func_?(x,TypeInfo__UnityEngine__EventSystems__IAccessoryPopupHandler,0);
+  pIVar6 = (IAccessoryPopupHandler__VTable *)
+           FUN_?(x,TypeInfo__UnityEngine__EventSystems__IAccessoryPopupHandler,0);
 code_?:
-  (*(code *)*ppMVar6)(x,1,pAVar1,ppMVar6[1]);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(pIVar6->OpenInventoryAtItem).methodPtr)(x,1,pAVar1,(pIVar6->OpenInventoryAtItem).method);
   return;
 }
 

@@ -6,26 +6,33 @@ void Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::UnityAds::UnityAds::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds);
+    FUN_?(&TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds,
+                  CONCAT71(in_register_00000011,metaDataValue));
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds->_1).cctor_finished_or_no_cctor
-      == 0) {
-    func_?(TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds);
+  if (*(int *)&(TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds->_1).field_0x1c == 0)
+  {
+    FUN_?();
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GoogleMobileAds__Mediation__UnityAds__Common__IUnityAdsClient,
-                    unaff_EBP);
-    func_?(&TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds);
+    FUN_?(&TypeInfo__GoogleMobileAds__Mediation__UnityAds__Common__IUnityAdsClient,
+                  metaDataValue);
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds->_1).cctor_finished_or_no_cctor
-      == 0) {
-    func_?(TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds);
+  if (*(int *)&(TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds->_1).field_0x1c == 0)
+  {
+    FUN_?();
   }
   pIVar1 = TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds->static_fields->client;
   if (pIVar1 == (IUnityAdsClient *)0x0) {
-    func_?();
+    FUN_?();
     pcVar2 = (code *)swi(3);
     (*pcVar2)();
     return;
@@ -38,19 +45,22 @@ void Assembly-CSharp.dll::GoogleMobileAds::Api::Mediation::UnityAds::UnityAds::
     do {
       if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
           (Il2CppClass *)TypeInfo__GoogleMobileAds__Mediation__UnityAds__Common__IUnityAdsClient) {
-        ppMVar6 = &(&pIVar1->klass->vtable)[pIVar1->klass->interfaceOffsets[uVar4].offset].
-                   SetConsentMetaData.method;
+        pIVar6 = &pIVar3->vtable + pIVar3->interfaceOffsets[uVar4].offset;
         goto code_?;
       }
       uVar4 = uVar4 + 1;
     } while (uVar4 < uVar5);
   }
-  ppMVar6 = (MethodInfo **)
-            func_?(pIVar1,
-                            TypeInfo__GoogleMobileAds__Mediation__UnityAds__Common__IUnityAdsClient,
-                            0);
+  pIVar6 = (IUnityAdsClient__VTable *)
+           FUN_?(pIVar1,
+                         TypeInfo__GoogleMobileAds__Mediation__UnityAds__Common__IUnityAdsClient,0,
+                         TypeInfo__GoogleMobileAds__Mediation__UnityAds__Common__IUnityAdsClient,
+                         unaff_RDI);
 code_?:
-  (*(code *)*ppMVar6)(pIVar1,key,_metaDataValue,ppMVar6[1]);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(pIVar6->SetConsentMetaData).methodPtr)
+            (pIVar1,key,(ulonglong)metaDataValue,(pIVar6->SetConsentMetaData).method);
   return;
 }
 

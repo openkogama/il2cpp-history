@@ -6,55 +6,122 @@ void Assembly-CSharp.dll::ThemeSelectionGridResizer::ThemeSelectionGridResizer_U
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__RectTransform);
+    FUN_?(&TypeInfo__UnityEngine__RectTransform);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                      ((Component *)this,(MethodInfo *)0x0);
   if (pTVar1 != (Transform *)0x0) {
-    this_00 = (Transform *)0x0;
+    obj = (Transform *)0x0;
     if (pTVar1->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
-      this_00 = pTVar1;
+      obj = pTVar1;
     }
-    if (this_00 == (Transform *)0x0) goto code_?;
-    pRVar2 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                       ((Rect *)&stack0xffffffe4,(RectTransform *)this_00,(MethodInfo *)0x0);
-    fVar3 = pRVar2->m_Width;
-    if (fVar3 == (this->fields).prevSize) {
+    if (obj == (Transform *)0x0) {
+      FUN_?(pTVar1);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
-    pGVar4 = (this->fields).grid;
-    if (pGVar4 != (GridLayoutGroup *)0x0) {
-      fVar5 = (pGVar4->fields).m_Spacing.y;
-      pRVar6 = (pGVar4->fields)._.m_Padding;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::RectTransform>_UnityEngine__RectTransform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar3 = (obj->fields)._._.m_CachedPtr;
+    if (pvVar3 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)(pvVar3);
+    if ((this->fields).prevSize == 0.0) {
+      return;
+    }
+    pGVar5 = (this->fields).grid;
+    if (pGVar5 != (GridLayoutGroup *)0x0) {
+      pRVar6 = (pGVar5->fields)._.m_Padding;
+      fVar7 = (float)(pGVar5->fields).m_Constraint;
       if (pRVar6 != (RectOffset *)0x0) {
-        iVar7 = UnityEngine.CoreModule.dll::UnityEngine::RectOffset::RectOffset_get_left
-                          (pRVar6,(MethodInfo *)0x0);
-        pGVar4 = (this->fields).grid;
-        if ((pGVar4 != (GridLayoutGroup *)0x0) &&
-           (pRVar6 = (pGVar4->fields)._.m_Padding, pRVar6 != (RectOffset *)0x0)) {
-          method_00 = (MethodInfo *)((fVar3 - fVar5) - (float)iVar7);
-          iVar7 = UnityEngine.CoreModule.dll::UnityEngine::RectOffset::RectOffset_get_right
-                            (pRVar6,method_00);
-          pGVar4 = (this->fields).grid;
-          fVar5 = ((float)method_00 - (float)iVar7) * _UNK_?;
-          if (pGVar4 != (GridLayoutGroup *)0x0) {
-            value.y = fVar5;
-            value.x = fVar5;
-            UnityEngine.UI.dll::UnityEngine::UI::GridLayoutGroup::GridLayoutGroup_set_cellSize
-                      (pGVar4,value,(MethodInfo *)0x0);
-            (this->fields).prevSize = fVar3;
+        pvVar3 = (pRVar6->fields).m_Ptr;
+        if (pvVar3 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar6,(MethodInfo *)0x0);
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        pcVar2 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+          uVar4 = func_?(&UNK_?);
+          FUN_?(uVar4,0);
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        pcRam_? = pcVar2;
+        iVar8 = (*pcRam_?)(pvVar3);
+        pGVar5 = (this->fields).grid;
+        if ((pGVar5 != (GridLayoutGroup *)0x0) &&
+           (pRVar6 = (pGVar5->fields)._.m_Padding, pRVar6 != (RectOffset *)0x0)) {
+          pvVar3 = (pRVar6->fields).m_Ptr;
+          if (pvVar3 == (void *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar6,(MethodInfo *)0x0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar4 = func_?(&UNK_?);
+            FUN_?(uVar4,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+          iVar9 = (*pcRam_?)(pvVar3);
+          pGVar5 = (this->fields).grid;
+          fVar7 = (((0.0 - fVar7) - (float)iVar8) - (float)iVar9) * _UNK_?;
+          if (pGVar5 != (GridLayoutGroup *)0x0) {
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            void_MethodInfo__UnityEngine__UI__LayoutGroup__SetProperty<UnityEngine::Vector2>_UnityEngine__Vector2___UnityEngine__Vector2_
+                           );
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            FUN_?(pGVar5,&(pGVar5->fields).m_Spacing,CONCAT44(fVar7,fVar7));
+            (this->fields).prevSize = 0.0;
             return;
           }
         }
       }
     }
   }
-  pTVar1 = (Transform *)func_?();
-code_?:
-  func_?(pTVar1);
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -67,18 +134,21 @@ Assembly-CSharp.dll::ThemeSelectionGridResizer::ThemeSelectionGridResizer_get_Re
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__RectTransform);
+    FUN_?(&TypeInfo__UnityEngine__RectTransform);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                      ((Component *)this,(MethodInfo *)0x0);
-  pTVar2 = (Transform *)0x0;
+  pTVar2 = pTVar1;
   if (pTVar1 != (Transform *)0x0) {
+    pTVar2 = (Transform *)0x0;
     if (pTVar1->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
       pTVar2 = pTVar1;
     }
     if (pTVar2 == (Transform *)0x0) {
-      func_?(pTVar1);
+      FUN_?();
       pcVar3 = (code *)swi(3);
       pRVar4 = (RectTransform *)(*pcVar3)();
       return pRVar4;

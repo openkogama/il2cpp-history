@@ -6,15 +6,21 @@ void Assembly-CSharp.dll::MVPickupItemBaseObject::MVPickupItemBaseObject_OnValid
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TriggerBoxEvents_MethodInfo__UnityEngine__Component__GetComponentInChildren<TriggerBoxEvents>__
-                   );
-    func_?(&
-                    UnityEngine__AudioSource_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::AudioSource>__
-                   );
-    func_?(&
-                    GreyOutObjectScript_MethodInfo__UnityEngine__Component__GetComponent<GreyOutObjectScript>__
-                   );
+    FUN_?(&
+                  TriggerBoxEvents_MethodInfo__UnityEngine__Component__GetComponentInChildren<TriggerBoxEvents>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__AudioSource_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::AudioSource>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  GreyOutObjectScript_MethodInfo__UnityEngine__Component__GetComponent<GreyOutObjectScript>__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pGVar1 = (GreyOutObjectScript *)
@@ -22,22 +28,64 @@ void Assembly-CSharp.dll::MVPickupItemBaseObject::MVPickupItemBaseObject_OnValid
                      ((Component *)this,
                       GreyOutObjectScript_MethodInfo__UnityEngine__Component__GetComponent<GreyOutObjectScript>__
                      );
+  bVar2 = iRam_? != 0;
   (this->fields).pickupItem = pGVar1;
-  func_?(&(this->fields).pickupItem,pGVar1);
-  pTVar2 = (TriggerBoxEvents *)
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).pickupItem >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
+  pTVar7 = (TriggerBoxEvents *)
            UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentInChildren_1
                      ((Component *)this,
                       TriggerBoxEvents_MethodInfo__UnityEngine__Component__GetComponentInChildren<TriggerBoxEvents>__
                      );
-  (this->fields).triggerBoxEvents = pTVar2;
-  func_?(&(this->fields).triggerBoxEvents,pTVar2);
-  pAVar3 = (AudioSource *)
+  bVar2 = iRam_? != 0;
+  (this->fields).triggerBoxEvents = pTVar7;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).triggerBoxEvents >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
+  pAVar8 = (AudioSource *)
            UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
                      ((Component *)this,
                       UnityEngine__AudioSource_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::AudioSource>__
                      );
-  (this->fields).audioSource = pAVar3;
-  func_?(&(this->fields).audioSource,pAVar3);
+  bVar2 = iRam_? != 0;
+  (this->fields).audioSource = pAVar8;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).audioSource >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
   return;
 }
 

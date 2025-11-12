@@ -6,22 +6,34 @@ String * Assembly-CSharp.dll::LSEnumGenerator::LSEnumGenerator_Generate
 
 {
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_u000Du000A____public_static_string____0_);
+    FUN_?(&StringLiteral_u000Du000A____public_static_string____0_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pSVar1 = LSEnumGenerator_GenerateEnumCode(type,customStringCallback,(MethodInfo *)0x0);
   if (type != (Type *)0x0) {
     arg0 = (Object *)
-           (*(code *)(type->klass->vtable).__unknown.method)
-                     (type,(type->klass->vtable).get_DeclaringType.methodPtr);
-    pSVar1 = mscorlib.dll::System::String::String_Format_1
-                       (StringLiteral_u000Du000A____public_static_string____0_,arg0,(Object *)pSVar1
-                        ,(MethodInfo *)0x0);
+           (*(type->klass->vtable).__unknown.methodPtr)(type,(type->klass->vtable).__unknown.method)
+    ;
+    format = StringLiteral_u000Du000A____public_static_string____0_;
+    PStack_2._arg0 = (Object *)0x0;
+    PStack_2._arg1 = (Object *)0x0;
+    PStack_2._arg2 = (Object *)0x0;
+    PStack_2._args = (Object__Array *)0x0;
+    mscorlib.dll::System::ParamsArray::ParamsArray__ctor_1
+              (&PStack_2,arg0,(Object *)pSVar1,(MethodInfo *)0x0);
+    PStack_3._arg0 = PStack_2._arg0;
+    PStack_3._arg1 = PStack_2._arg1;
+    PStack_3._arg2 = PStack_2._arg2;
+    PStack_3._args = PStack_2._args;
+    pSVar1 = mscorlib.dll::System::String::String_FormatHelper
+                       ((IFormatProvider *)0x0,format,&PStack_3,(MethodInfo *)0x0);
     return pSVar1;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar2)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar4)();
   return pSVar1;
 }
 
@@ -32,68 +44,78 @@ String * Assembly-CSharp.dll::LSEnumGenerator::LSEnumGenerator_GenerateEnumCode
                    (Type *type,Func_2_String_String_ *customStringCallback,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Enum);
-    func_?(&TypeInfo__System__IDisposable);
-    func_?(&TypeInfo__System__Collections__IEnumerator);
-    func_?(&StringLiteral_____________map_Add__int__0___1_);
-    func_?(&::StringLiteral__);
+    FUN_?(&TypeInfo__System__IDisposable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__IEnumerator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_____________map_Add__int__0___1_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pSVar4 = ::StringLiteral__;
+  pSVar1 = ::StringLiteral__;
   if (type != (Type *)0x0) {
     arg0 = (Object *)
-           (*(code *)(type->klass->vtable).__unknown.method)
-                     (type,(type->klass->vtable).get_DeclaringType.methodPtr);
-    if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Enum);
+           (*(type->klass->vtable).__unknown.methodPtr)(type,(type->klass->vtable).__unknown.method)
+    ;
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
     }
-    this = mscorlib.dll::System::Enum::Enum_GetValues(type,(MethodInfo *)0x0);
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    this = (Array *)(*(type->klass->vtable).GetEnumValues.methodPtr)(type);
     if (this != (Array *)0x0) {
-      pIVar5 = mscorlib.dll::System::Array::Array_GetEnumerator(this,(MethodInfo *)0x0);
-      uStack_1 = 1;
-      while (pIVar5 != (IEnumerator *)0x0) {
-        cVar6 = func_?(0,TypeInfo__System__Collections__IEnumerator,pIVar5);
-        if (cVar6 == '\0') {
-          uStack_1 = 0xffffffff;
-          iVar7 = func_?(pIVar5,TypeInfo__System__IDisposable);
-          if (iVar7 != 0) {
-            func_?(0,TypeInfo__System__IDisposable,iVar7);
-            *unaff_FS_OFFSET = uStack_3;
-            return pSVar4;
+      pIVar2 = mscorlib.dll::System::Array::Array_GetEnumerator(this,(MethodInfo *)0x0);
+      while (pIVar2 != (IEnumerator *)0x0) {
+        cVar3 = FUN_?(0,TypeInfo__System__Collections__IEnumerator);
+        if (cVar3 == '\0') {
+          lVar4 = FUN_?(pIVar2,TypeInfo__System__IDisposable);
+          if (lVar4 != 0) {
+            FUN_?(0,TypeInfo__System__IDisposable,lVar4);
           }
-          *unaff_FS_OFFSET = uStack_3;
-          return pSVar4;
+          return pSVar1;
         }
-        if (pIVar5 == (IEnumerator *)0x0) break;
-        value = (Object *)func_?(1,TypeInfo__System__Collections__IEnumerator,pIVar5);
-        if ((TypeInfo__System__Enum->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__System__Enum);
+        if (pIVar2 == (IEnumerator *)0x0) goto code_?;
+        uVar5 = FUN_?(1,TypeInfo__System__Collections__IEnumerator);
+        if (*(int *)(lRam_? + 0xe4) == 0) {
+          FUN_?();
         }
-        arg1 = mscorlib.dll::System::Enum::Enum_GetName(type,value,(MethodInfo *)0x0);
-        pSVar8 = arg1;
+        if (*(int *)(lRam_? + 0xe4) == 0) {
+          FUN_?();
+        }
+        arg1 = (Object *)
+               (*(type->klass->vtable).GetEnumName.methodPtr)
+                         (type,uVar5,(type->klass->vtable).GetEnumName.method);
+        arg2 = arg1;
         if (customStringCallback != (Func_2_String_String_ *)0x0) {
-          uStack_1._0_1_ = 2;
-          pSVar8 = (String *)
-                   (*(customStringCallback->fields)._._.invoke_impl)
-                             ((customStringCallback->fields)._._.method_code,arg1,
-                              (customStringCallback->fields)._._.method);
-          uStack_1 = CONCAT31(uStack_1._1_3_,1);
+          arg2 = (Object *)
+                 (*(customStringCallback->fields)._._.invoke_impl)
+                           ((customStringCallback->fields)._._.method_code,arg1,
+                            (customStringCallback->fields)._._.method);
         }
-        pSVar8 = mscorlib.dll::System::String::String_Format_2
-                           (StringLiteral_____________map_Add__int__0___1_,arg0,(Object *)arg1,
-                            (Object *)pSVar8,(MethodInfo *)0x0);
-        pSVar4 = mscorlib.dll::System::String::String_Concat_3(pSVar4,pSVar8,(MethodInfo *)0x0);
+        str1 = mscorlib.dll::System::String::String_Format_2
+                         (StringLiteral_____________map_Add__int__0___1_,arg0,arg1,arg2,
+                          (MethodInfo *)0x0);
+        pSVar1 = mscorlib.dll::System::String::String_Concat_4(pSVar1,str1,(MethodInfo *)0x0);
       }
+      goto code_?;
     }
   }
-  func_?();
-  pcVar9 = (code *)swi(3);
-  pSVar4 = (String *)(*pcVar9)();
-  return pSVar4;
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar6)();
+  return pSVar1;
 }
 

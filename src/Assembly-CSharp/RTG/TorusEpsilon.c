@@ -9,3 +9,14 @@ void Assembly-CSharp.dll::RTG::TorusEpsilon::TorusEpsilon_set_CylHrzRadius
   return;
 }
 
+
+/* Void set_CylVertRadius(Single) */
+
+void Assembly-CSharp.dll::RTG::TorusEpsilon::TorusEpsilon_set_CylVertRadius
+               (TorusEpsilon *this,float value,MethodInfo *method)
+
+{
+  this->_cylVertRadius = (float)((uint)value & _UNK_?);
+  return;
+}
+

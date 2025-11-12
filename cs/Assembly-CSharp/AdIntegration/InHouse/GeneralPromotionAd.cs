@@ -36,7 +36,7 @@ namespace AdIntegration.InHouse
 		[SerializeField]
 		private UnityEngine.UI.Text actionText;
 		[SerializeField]
-		private Button continueButton;
+		private UnityEngine.UI.Button continueButton;
 		[SerializeField]
 		private UnityEngine.UI.Text continueText;
 		[SerializeField]

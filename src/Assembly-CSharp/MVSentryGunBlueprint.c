@@ -8,187 +8,222 @@ bool Assembly-CSharp.dll::MVSentryGunBlueprint::MVSentryGunBlueprint_CompareWith
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__MVCubeModelInstance);
-    func_?(&TypeInfo__MVSentryGunBlueprint);
-    func_?(&TypeInfo__MVSentryGun);
-    func_?(&StringLiteral_editableCubeModel);
-    func_?(&StringLiteral_sentryGun);
-    func_?(&StringLiteral_ChildrenMap);
-    func_?(&StringLiteral_BlueprintData);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVCubeModelInstance);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVSentryGunBlueprint);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVSentryGun);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_editableCubeModel);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_sentryGun);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ChildrenMap);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_BlueprintData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (wo == (MVWorldObjectClient *)0x0) {
-code_?:
-    func_?();
-    pMVar1 = extraout_EDX;
-code_?:
-    func_?(pMVar1,unaff_EBX);
-    pMVar2 = extraout_EDX_00;
-code_?:
-    func_?(wo,pMVar2);
-    pMVar3 = extraout_EDX_01;
-code_?:
-    func_?(unaff_EDI,pMVar3);
-    pMVar2 = extraout_EDX_02;
-    pMVar4 = unaff_EBX;
-  }
-  else {
-    unaff_EDI = wo->klass;
-    pMVar2 = (MVCubeModelInstance__Class *)TypeInfo__MVSentryGunBlueprint;
-    if (((unaff_EDI->_1).naturalAligment < (TypeInfo__MVSentryGunBlueprint->_1).naturalAligment) ||
-       ((MVSentryGunBlueprint__Class *)
-        (unaff_EDI->_1).typeHierarchy[(TypeInfo__MVSentryGunBlueprint->_1).naturalAligment - 1] !=
-        TypeInfo__MVSentryGunBlueprint)) goto code_?;
-    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(wo->fields)._.data;
-    if ((this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) ||
-       (wo = (MVWorldObjectClient *)
-             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-             UIElements::TextureId]::
-             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                       (this_00,(Object *)StringLiteral_BlueprintData,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       ), wo == (MVWorldObjectClient *)0x0)) goto code_?;
-    pMVar2 = (MVCubeModelInstance__Class *)
-              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-    if ((*(byte *)(*(int *)wo + 0xb8) <
-         (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         naturalAligment) ||
-       (*(Dictionary_2_System_Object_System_Object___Class **)
-         (*(int *)(*(int *)wo + 100) + -4 +
-         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-               _1).naturalAligment * 4) !=
-        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
-    goto code_?;
-    wo = (MVWorldObjectClient *)
-         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-         UIElements::TextureId]::
-         Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                   ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)wo,
-                    (Object *)StringLiteral_ChildrenMap,
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    if (wo == (MVWorldObjectClient *)0x0) goto code_?;
-    pMVar2 = (MVCubeModelInstance__Class *)
-              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>;
-    if ((*(byte *)(*(int *)wo + 0xb8) <
-         (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         naturalAligment) ||
-       (*(Dictionary_2_System_Object_System_Object___Class **)
-         (*(int *)(*(int *)wo + 100) + -4 +
-         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-               _1).naturalAligment * 4) !=
-        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
-    goto code_?;
-    TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)wo,
-                       (Object *)StringLiteral_editableCubeModel,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    uVar6 = CONCAT44(TypeInfo__System__Int32,TVar5.m_Index);
-    if (TVar5.m_Index == 0) goto code_?;
-    if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) !=
-        (TypeInfo__System__Int32->_0).element_class) goto code_?;
-    piVar7 = (int32_t *)func_?();
-    unaff_EBX = (MVSentryGun__Class *)*piVar7;
-    TVar8 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)wo,
-                       (Object *)StringLiteral_sentryGun,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    uVar6 = CONCAT44(TypeInfo__System__Int32,TVar8.m_Index);
-    if (TVar8.m_Index == 0) goto code_?;
-    if (*(Il2CppClass **)(*(int *)TVar8.m_Index + 0x20) !=
-        (TypeInfo__System__Int32->_0).element_class) goto code_?;
-    piVar9 = (int *)func_?(TVar8.m_Index);
-    unaff_EDI = (MVWorldObjectClient__Class *)*piVar9;
-    wo = (MVWorldObjectClient *)TVar5;
-    if ((TVar5.m_Index == 0) ||
-       (*(Dictionary_2_System_Int32_System_Object_ **)(TVar5.m_Index + 0xc) ==
-        (Dictionary_2_System_Int32_System_Object_ *)0x0)) goto code_?;
-    pMVar10 = unaff_EDI;
-    pMVar4 = (MVSentryGun__Class *)
-              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
-              ::Dictionary_2_System_Int32_System_Object__get_Item
-                        (*(Dictionary_2_System_Int32_System_Object_ **)(TVar5.m_Index + 0xc),
-                         (int32_t)unaff_EBX,
-                         MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
-                        );
-    if ((pMVar4 == (MVSentryGun__Class *)0x0) ||
-       ((pIVar11 = (pMVar4->_0).image, pMVar2 = TypeInfo__MVCubeModelInstance,
-        (TypeInfo__MVCubeModelInstance->_1).naturalAligment <= *(byte *)&pIVar11[4].assembly &&
-        (unaff_EDI = pMVar10,
-        *(MVCubeModelInstance__Class **)
-         ((pIVar11[2].typeCount - 4) + (uint)(TypeInfo__MVCubeModelInstance->_1).naturalAligment * 4)
-        == TypeInfo__MVCubeModelInstance)))) {
-      unaff_EBX = pMVar4;
-      if (*(Dictionary_2_System_Int32_System_Object_ **)(TVar5.m_Index + 0xc) ==
-          (Dictionary_2_System_Int32_System_Object_ *)0x0) goto code_?;
-      unaff_EDI = (MVWorldObjectClient__Class *)
-                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                  Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                            (*(Dictionary_2_System_Int32_System_Object_ **)(TVar5.m_Index + 0xc),
-                             (int32_t)unaff_EDI,
-                             MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
-                            );
-      if ((unaff_EDI == (MVWorldObjectClient__Class *)0x0) ||
-         ((pOVar12 = (Object__Class *)(unaff_EDI->_0).image, pMVar3 = TypeInfo__MVSentryGun,
-          (TypeInfo__MVSentryGun->_1).naturalAligment <= (pOVar12->_1).naturalAligment &&
-          ((MVSentryGun__Class *)
-           (pOVar12->_1).typeHierarchy[(TypeInfo__MVSentryGun->_1).naturalAligment - 1] ==
-           TypeInfo__MVSentryGun)))) {
-        wo = MVBlueprintBase::MVBlueprintBase_GetChild
-                       ((MVBlueprintBase *)this,StringLiteral_editableCubeModel,(MethodInfo *)0x0);
-        if ((wo != (MVWorldObjectClient *)0x0) &&
-           ((unaff_EBX = (MVSentryGun__Class *)wo->klass, pMVar2 = TypeInfo__MVCubeModelInstance,
-            (unaff_EBX->_1).naturalAligment < (TypeInfo__MVCubeModelInstance->_1).naturalAligment ||
-            ((MVCubeModelInstance__Class *)
-             (unaff_EBX->_1).typeHierarchy[(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1]
-             != TypeInfo__MVCubeModelInstance)))) goto code_?;
-        pMVar1 = MVBlueprintBase::MVBlueprintBase_GetChild
-                            ((MVBlueprintBase *)this,StringLiteral_sentryGun,(MethodInfo *)0x0);
-        if ((pMVar1 == (MVWorldObjectClient *)0x0) ||
-           ((unaff_EBX = TypeInfo__MVSentryGun,
-            (TypeInfo__MVSentryGun->_1).naturalAligment <= (pMVar1->klass->_1).naturalAligment &&
-            ((MVSentryGun__Class *)
-             (pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVSentryGun->_1).naturalAligment - 1] ==
-             TypeInfo__MVSentryGun)))) {
-          if ((wo != (MVWorldObjectClient *)0x0) &&
-             ((pMVar1 != (MVWorldObjectClient *)0x0 &&
-              (cVar13 = (*(code *)(pMVar1->klass->vtable).CompareWithKoGaMaPackage.method)
-                                 (pMVar1,unaff_EDI,TVar5.m_Index,insertedByProfileId,
-                                  (pMVar1->klass->vtable).Compare.methodPtr), cVar13 != '\0')))) {
-            bVar14 = (*(code *)(wo->klass->vtable).CompareWithKoGaMaPackage.method)
-                              (wo,pMVar4,TVar5.m_Index,insertedByProfileId,
-                               (wo->klass->vtable).Compare.methodPtr);
-            return bVar14;
-          }
-          return 0;
-        }
-        goto code_?;
+  if (wo != (MVWorldObjectClient *)0x0) {
+    bVar1 = (TypeInfo__MVSentryGunBlueprint->_1).naturalAligment;
+    if (((wo->klass->_1).naturalAligment < bVar1) ||
+       ((MVSentryGunBlueprint__Class *)(wo->klass->_1).typeHierarchy[(ulonglong)bVar1 - 1] !=
+        TypeInfo__MVSentryGunBlueprint)) {
+      FUN_?(wo);
+      pcVar2 = (code *)swi(3);
+      bVar3 = (*pcVar2)();
+      return bVar3;
+    }
+    pDVar4 = (wo->fields)._.data;
+    if ((pDVar4 != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
+       (pDVar4 = (Dictionary_2_System_Object_System_Object_ *)
+                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                 Object]::Dictionary_2_System_Object_System_Object__get_Item
+                           (pDVar4,(Object *)StringLiteral_BlueprintData,
+                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                           ), pDVar4 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
+      bVar1 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+              _1).naturalAligment;
+      if (((pDVar4->klass->_1).naturalAligment < bVar1) ||
+         ((Dictionary_2_System_Object_System_Object___Class *)
+          (pDVar4->klass->_1).typeHierarchy[(ulonglong)bVar1 - 1] !=
+          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+        FUN_?(pDVar4,
+                      TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                     );
+        pcVar2 = (code *)swi(3);
+        bVar3 = (*pcVar2)();
+        return bVar3;
       }
-      goto code_?;
+      pDVar4 = (Dictionary_2_System_Object_System_Object_ *)
+               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__get_Item
+                         (pDVar4,(Object *)StringLiteral_ChildrenMap,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         );
+      if (pDVar4 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        bVar1 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                ->_1).naturalAligment;
+        if (((pDVar4->klass->_1).naturalAligment < bVar1) ||
+           ((Dictionary_2_System_Object_System_Object___Class *)
+            (pDVar4->klass->_1).typeHierarchy[(ulonglong)bVar1 - 1] !=
+            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+          FUN_?(pDVar4);
+          pcVar2 = (code *)swi(3);
+          bVar3 = (*pcVar2)();
+          return bVar3;
+        }
+        pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                 Object]::Dictionary_2_System_Object_System_Object__get_Item
+                           (pDVar4,(Object *)StringLiteral_editableCubeModel,
+                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                           );
+        if (pOVar5 != (Object *)0x0) {
+          if ((pOVar5->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+            FUN_?(pOVar5,lRam_?);
+            pcVar2 = (code *)swi(3);
+            bVar3 = (*pcVar2)();
+            return bVar3;
+          }
+          key = *(int32_t *)&pOVar5[1].klass;
+          pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                   Object]::Dictionary_2_System_Object_System_Object__get_Item
+                             (pDVar4,(Object *)StringLiteral_sentryGun,
+                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                             );
+          if (pOVar5 != (Object *)0x0) {
+            if ((pOVar5->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40))
+            {
+              FUN_?(pOVar5);
+              pcVar2 = (code *)swi(3);
+              bVar3 = (*pcVar2)();
+              return bVar3;
+            }
+            key_00 = *(int32_t *)&pOVar5[1].klass;
+            if ((koGaMaPackageClient != (KoGaMaPackageClient *)0x0) &&
+               (pDVar6 = (koGaMaPackageClient->fields).worldObjects,
+               pDVar6 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0)) {
+              pOVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System
+                       ::Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                                 ((Dictionary_2_System_Int32_System_Object_ *)pDVar6,key,
+                                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
+                                 );
+              pMVar7 = (MVWorldObjectClient *)0x0;
+              if (pOVar5 == (Object *)0x0) {
+                pOVar5 = (Object *)0x0;
+              }
+              else {
+                bVar1 = (TypeInfo__MVCubeModelInstance->_1).naturalAligment;
+                if (((pOVar5->klass->_1).naturalAligment < bVar1) ||
+                   ((MVCubeModelInstance__Class *)
+                    (pOVar5->klass->_1).typeHierarchy[(ulonglong)bVar1 - 1] !=
+                    TypeInfo__MVCubeModelInstance)) {
+                  FUN_?(pOVar5);
+                  pcVar2 = (code *)swi(3);
+                  bVar3 = (*pcVar2)();
+                  return bVar3;
+                }
+              }
+              pDVar6 = (koGaMaPackageClient->fields).worldObjects;
+              if (pDVar6 != (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0) {
+                pMVar8 = (MVWorldObjectClient *)
+                         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                         Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                                   ((Dictionary_2_System_Int32_System_Object_ *)pDVar6,key_00,
+                                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
+                                   );
+                pMVar9 = pMVar7;
+                if (pMVar8 != (MVWorldObjectClient *)0x0) {
+                  bVar1 = (TypeInfo__MVSentryGun->_1).naturalAligment;
+                  if (((pMVar8->klass->_1).naturalAligment < bVar1) ||
+                     (pMVar9 = pMVar8,
+                     (MVSentryGun__Class *)(pMVar8->klass->_1).typeHierarchy[(ulonglong)bVar1 - 1]
+                     != TypeInfo__MVSentryGun)) {
+                    FUN_?(pMVar8);
+                    pcVar2 = (code *)swi(3);
+                    bVar3 = (*pcVar2)();
+                    return bVar3;
+                  }
+                }
+                pMVar10 = MVBlueprintBase::MVBlueprintBase_GetChild
+                                   ((MVBlueprintBase *)this,StringLiteral_editableCubeModel,
+                                    (MethodInfo *)0x0);
+                pMVar8 = pMVar7;
+                if (pMVar10 != (MVWorldObjectClient *)0x0) {
+                  bVar1 = (TypeInfo__MVCubeModelInstance->_1).naturalAligment;
+                  if (((pMVar10->klass->_1).naturalAligment < bVar1) ||
+                     (pMVar8 = pMVar10,
+                     (MVCubeModelInstance__Class *)
+                     (pMVar10->klass->_1).typeHierarchy[(ulonglong)bVar1 - 1] !=
+                     TypeInfo__MVCubeModelInstance)) {
+                    FUN_?(pMVar10);
+                    pcVar2 = (code *)swi(3);
+                    bVar3 = (*pcVar2)();
+                    return bVar3;
+                  }
+                }
+                pMVar10 = MVBlueprintBase::MVBlueprintBase_GetChild
+                                   ((MVBlueprintBase *)this,StringLiteral_sentryGun,
+                                    (MethodInfo *)0x0);
+                if (pMVar10 != (MVWorldObjectClient *)0x0) {
+                  bVar1 = (TypeInfo__MVSentryGun->_1).naturalAligment;
+                  if (((pMVar10->klass->_1).naturalAligment < bVar1) ||
+                     (pMVar7 = pMVar10,
+                     (MVSentryGun__Class *)(pMVar10->klass->_1).typeHierarchy[(ulonglong)bVar1 - 1]
+                     != TypeInfo__MVSentryGun)) {
+                    FUN_?(pMVar10);
+                    pcVar2 = (code *)swi(3);
+                    bVar3 = (*pcVar2)();
+                    return bVar3;
+                  }
+                }
+                if (((pMVar8 == (MVWorldObjectClient *)0x0) ||
+                    (pMVar7 == (MVWorldObjectClient *)0x0)) ||
+                   (cVar11 = (*(pMVar7->klass->vtable).CompareWithKoGaMaPackage.methodPtr)
+                                      (pMVar7,pMVar9,koGaMaPackageClient,insertedByProfileId,
+                                       (pMVar7->klass->vtable).CompareWithKoGaMaPackage.method),
+                   cVar11 == '\0')) {
+                  bVar3 = 0;
+                }
+                else {
+                  bVar3 = (*(pMVar8->klass->vtable).CompareWithKoGaMaPackage.methodPtr)
+                                    (pMVar8,pOVar5,koGaMaPackageClient,insertedByProfileId,
+                                     (pMVar8->klass->vtable).CompareWithKoGaMaPackage.method);
+                }
+                return bVar3;
+              }
+            }
+          }
+        }
+      }
     }
   }
-  uVar6 = func_?(pMVar4,pMVar2);
-code_?:
-  func_?(uVar6);
-  pcVar15 = (code *)swi(3);
-  bVar14 = (*pcVar15)();
-  return bVar14;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  bVar3 = (*pcVar2)();
+  return bVar3;
 }
 
 
@@ -200,9 +235,247 @@ void Assembly-CSharp.dll::MVSentryGunBlueprint::MVSentryGunBlueprint_Initialize
 {
   MVBlueprintBase::MVBlueprintBase_Initialize((MVBlueprintBase *)this,(MethodInfo *)0x0);
   MVSentryGunBlueprint_InitializeCommon(this,(MethodInfo *)0x0);
-  if ((this->fields).editableCubes != (MVCubeModelInstance *)0x0) {
-    MVCubeModelInstance::MVCubeModelInstance_EnableCulling
-              ((this->fields).editableCubes,(MethodInfo *)0x0);
+  if ((this->fields).editableCubes == (MVCubeModelInstance *)0x0) {
+    return;
+  }
+  this_00 = (this->fields).editableCubes;
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__MVCubeModelInstance__OnStateChanged_UnityEngine__CullingGroupEvent_,0
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  callback = (UnityAction_1_UnityEngine_CullingGroupEvent_ *)
+             FUN_?(
+                          TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>
+                          );
+  FUN_?(callback,this_00);
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CullingSubscriberBase);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__MVCubeModelInstance__OnChanged_System__Collections__Generic__HashSet<MV::WorldObject::IntVector>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__MVCubeModelInstance__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__MVCubeModelInstance__OnRotationChanged_MVWorldObjectClient__RotationChangedEventArgs_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_RotationChangedEventArgs>
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  this_01 = (CullingSubscriberBase *)FUN_?(TypeInfo__CullingSubscriberBase);
+  CullingSubscriberBase::CullingSubscriberBase__ctor_1(this_01,callback,(MethodInfo *)0x0);
+  bVar1 = iRam_? != 0;
+  (this_00->fields).cullingSubscriberBase = this_01;
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this_00->fields).cullingSubscriberBase >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  MVCubeModelInstance::MVCubeModelInstance_SetCullSphereToMeshBounds(this_00,(MethodInfo *)0x0);
+  pUVar6 = (this_00->fields)._._.PositionChanged;
+  pUVar7 = (UnityAction_2_System_Object_System_Object_ *)
+           FUN_?(
+                        TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                        );
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+  UnityAction_2_System_Object_System_Object___ctor
+            (pUVar7,(Object *)this_00,
+             MethodInfo__MVCubeModelInstance__OnPositionChanged_MVWorldObjectClient__PositionChangedEventArgs_
+             ,(MethodInfo *)0x0);
+  pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pUVar6,(Delegate *)pUVar7,(MethodInfo *)0x0);
+  pUVar9 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+  ;
+  if (pDVar8 == (Delegate *)0x0) {
+    (this_00->fields)._._.PositionChanged =
+         (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0;
+  }
+  else {
+    pUVar6 = (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)
+             FUN_?(pDVar8,
+                           TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                          );
+    if (pUVar6 == (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
+      FUN_?(pDVar8,pUVar9);
+      pcVar10 = (code *)swi(3);
+      (*pcVar10)();
+      return;
+    }
+    (this_00->fields)._._.PositionChanged = pUVar6;
+    pUVar9 = 
+    TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>;
+    lVar3 = FUN_?(pDVar8,
+                           TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_PositionChangedEventArgs>
+                          );
+    if (lVar3 == 0) {
+      FUN_?(pDVar8,pUVar9);
+      pcVar10 = (code *)swi(3);
+      (*pcVar10)();
+      return;
+    }
+  }
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)&(this_00->fields)._._.PositionChanged >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  pUVar11 = (this_00->fields)._._.RotationChanged;
+  pUVar7 = (UnityAction_2_System_Object_System_Object_ *)
+           FUN_?(
+                        TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_RotationChangedEventArgs>
+                        );
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
+  UnityAction_2_System_Object_System_Object___ctor
+            (pUVar7,(Object *)this_00,
+             MethodInfo__MVCubeModelInstance__OnRotationChanged_MVWorldObjectClient__RotationChangedEventArgs_
+             ,(MethodInfo *)0x0);
+  pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pUVar11,(Delegate *)pUVar7,(MethodInfo *)0x0);
+  pUVar12 = TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_RotationChangedEventArgs>
+  ;
+  if (pDVar8 == (Delegate *)0x0) {
+    (this_00->fields)._._.RotationChanged =
+         (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0;
+  }
+  else {
+    pUVar11 = (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)
+              FUN_?(pDVar8,
+                            TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_RotationChangedEventArgs>
+                           );
+    if (pUVar11 == (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0) {
+      FUN_?(pDVar8,pUVar12);
+      pcVar10 = (code *)swi(3);
+      (*pcVar10)();
+      return;
+    }
+    (this_00->fields)._._.RotationChanged = pUVar11;
+    pUVar12 = 
+    TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_RotationChangedEventArgs>;
+    lVar3 = FUN_?(pDVar8,
+                           TypeInfo__UnityEngine__Events__UnityAction<MVWorldObjectClient,_RotationChangedEventArgs>
+                          );
+    if (lVar3 == 0) {
+      FUN_?(pDVar8,pUVar12);
+      pcVar10 = (code *)swi(3);
+      (*pcVar10)();
+      return;
+    }
+  }
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)&(this_00->fields)._._.RotationChanged >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  pAVar13 = (this_00->fields)._.ChunksChanged;
+  this_02 = (UnityAction_1_System_Object_ *)
+            FUN_?(
+                         TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>
+                         );
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+  UnityAction_1_System_Object___ctor
+            (this_02,(Object *)this_00,
+             MethodInfo__MVCubeModelInstance__OnChanged_System__Collections__Generic__HashSet<MV::WorldObject::IntVector>_
+             ,(MethodInfo *)0x0);
+  pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pAVar13,(Delegate *)this_02,(MethodInfo *)0x0);
+  pAVar14 = 
+  TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>;
+  if (pDVar8 == (Delegate *)0x0) {
+    (this_00->fields)._.ChunksChanged =
+         (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)0x0;
+  }
+  else {
+    pAVar13 = (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)
+              FUN_?(pDVar8,
+                            TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>
+                           );
+    if (pAVar13 == (Action_1_System_Collections_Generic_HashSet_1_MV_WorldObject_IntVector_ *)0x0) {
+      FUN_?(pDVar8,pAVar14);
+      pcVar10 = (code *)swi(3);
+      (*pcVar10)();
+      return;
+    }
+    (this_00->fields)._.ChunksChanged = pAVar13;
+    pAVar14 = 
+    TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>;
+    lVar3 = FUN_?(pDVar8,
+                           TypeInfo__System__Action<System::Collections::Generic::HashSet<MV::WorldObject::IntVector>_>
+                          );
+    if (lVar3 == 0) {
+      FUN_?(pDVar8,pAVar14);
+      pcVar10 = (code *)swi(3);
+      (*pcVar10)();
+      return;
+    }
+  }
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)&(this_00->fields)._.ChunksChanged >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
   }
   return;
 }
@@ -215,192 +488,347 @@ void Assembly-CSharp.dll::MVSentryGunBlueprint::MVSentryGunBlueprint_InitializeC
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__System__Func<IModelingConstraint>);
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-    func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
-    func_?(&TypeInfo__MVCubeModelInstance);
-    func_?(&MethodInfo__MVSentryGunBlueprint___InitializeCommon_b__9_0__);
-    func_?(&TypeInfo__MVSentryGun);
-    func_?(&StringLiteral_editableCubeModel);
-    func_?(&StringLiteral_MVSentryGunBlueprint_does_not_ha);
-    func_?(&StringLiteral_sentryGun);
-    func_?(&StringLiteral_ChildrenMap);
-    func_?(&StringLiteral_Missing_editable_cubes);
-    func_?(&StringLiteral_Missing_gun);
-    func_?(&StringLiteral_BlueprintData);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Func<IModelingConstraint>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVCubeModelInstance);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__MVSentryGunBlueprint___InitializeCommon_b__9_0__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVSentryGun);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_editableCubeModel);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_MVSentryGunBlueprint_does_not_ha);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_sentryGun);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ChildrenMap);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Missing_editable_cubes);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Missing_gun);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_BlueprintData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-            (this->fields)._._._._.data;
-  if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-code_?:
-    func_?();
-  }
-  else {
-    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (this_00,(Object *)StringLiteral_BlueprintData,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    if (TVar1.m_Index == 0) goto code_?;
-    if ((*(byte *)(*(int *)TVar1.m_Index + 0xb8) <
-         (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         naturalAligment) ||
-       (*(Dictionary_2_System_Object_System_Object___Class **)
-         (*(int *)(*(int *)TVar1.m_Index + 100) + -4 +
-         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-               _1).naturalAligment * 4) !=
-        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
-    goto code_?;
-    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (TVar1.m_Index,(Object *)StringLiteral_ChildrenMap,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    if (TVar1.m_Index == 0) {
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-                ((Object *)StringLiteral_MVSentryGunBlueprint_does_not_ha,(MethodInfo *)0x0);
-      this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if (this_03 != (MVWorldObjectClientManager *)0x0) {
-        MVWorldObjectClientManager::MVWorldObjectClientManager_UnregisterWorldObject
-                  (this_03,(this->fields)._._._._.id,(MethodInfo *)0x0);
+  pDVar1 = (this->fields)._._._._.data;
+  if ((pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
+     (pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                Object]::Dictionary_2_System_Object_System_Object__get_Item
+                          (pDVar1,(Object *)StringLiteral_BlueprintData,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          ), pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
+    bVar2 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
+            .naturalAligment;
+    if (((pDVar1->klass->_1).naturalAligment < bVar2) ||
+       ((Dictionary_2_System_Object_System_Object___Class *)
+        (pDVar1->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] !=
+        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+      FUN_?(pDVar1);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__get_Item
+                        (pDVar1,(Object *)StringLiteral_ChildrenMap,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+    if (pOVar4 != (Object *)0x0) {
+      bVar2 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+              _1).naturalAligment;
+      if (((pOVar4->klass->_1).naturalAligment < bVar2) ||
+         ((Dictionary_2_System_Object_System_Object___Class *)
+          (pOVar4->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] !=
+          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+        FUN_?(pOVar4);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
-      goto code_?;
-    }
-    if ((*(byte *)(*(int *)TVar1.m_Index + 0xb8) <
-         (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         naturalAligment) ||
-       (*(Dictionary_2_System_Object_System_Object___Class **)
-         (*(int *)(*(int *)TVar1.m_Index + 100) + -4 +
-         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-               _1).naturalAligment * 4) !=
-        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
-    goto code_?;
-    pMVar2 = (MVCubeModelInstance *)
-             MVBlueprintBase::MVBlueprintBase_GetChild
-                       ((MVBlueprintBase *)this,StringLiteral_editableCubeModel,(MethodInfo *)0x0);
-    if (pMVar2 == (MVCubeModelInstance *)0x0) {
-      (this->fields).editableCubes = (MVCubeModelInstance *)0x0;
-code_?:
-      func_?();
-      pMVar3 = (MVSentryGun *)
-               MVBlueprintBase::MVBlueprintBase_GetChild
-                         ((MVBlueprintBase *)this,StringLiteral_sentryGun,(MethodInfo *)0x0);
-      if (pMVar3 == (MVSentryGun *)0x0) {
+      pMVar5 = (MVCubeModelInstance *)
+                MVBlueprintBase::MVBlueprintBase_GetChild
+                          ((MVBlueprintBase *)this,StringLiteral_editableCubeModel,(MethodInfo *)0x0
+                          );
+      if (pMVar5 == (MVCubeModelInstance *)0x0) {
+        (this->fields).editableCubes = (MVCubeModelInstance *)0x0;
+      }
+      else {
+        bVar2 = (TypeInfo__MVCubeModelInstance->_1).naturalAligment;
+        if (((pMVar5->klass->_1).naturalAligment < bVar2) ||
+           ((MVCubeModelInstance__Class *)(pMVar5->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1]
+            != TypeInfo__MVCubeModelInstance)) {
+          FUN_?(pMVar5);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        (this->fields).editableCubes = pMVar5;
+        bVar2 = (TypeInfo__MVCubeModelInstance->_1).naturalAligment;
+        if (((pMVar5->klass->_1).naturalAligment < bVar2) ||
+           ((MVCubeModelInstance__Class *)(pMVar5->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1]
+            != TypeInfo__MVCubeModelInstance)) {
+          FUN_?(pMVar5);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+      }
+      if (iRam_? != 0) {
+        uVar6 = (uint)((ulonglong)&(this->fields).editableCubes >> 0xc);
+        lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+          puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+          LOCK();
+          bVar10 = uVar8 == *puVar9;
+          if (bVar10) {
+            *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar10);
+      }
+      pMVar11 = (MVSentryGun *)
+                MVBlueprintBase::MVBlueprintBase_GetChild
+                          ((MVBlueprintBase *)this,StringLiteral_sentryGun,(MethodInfo *)0x0);
+      if (pMVar11 == (MVSentryGun *)0x0) {
         (this->fields).gun = (MVSentryGun *)0x0;
-code_?:
-        func_?();
-        if ((this->fields).editableCubes == (MVCubeModelInstance *)0x0) {
-          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-                    ((Object *)StringLiteral_Missing_editable_cubes,(MethodInfo *)0x0);
+      }
+      else {
+        bVar2 = (TypeInfo__MVSentryGun->_1).naturalAligment;
+        if (((pMVar11->klass->_1).naturalAligment < bVar2) ||
+           ((MVSentryGun__Class *)(pMVar11->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] !=
+            TypeInfo__MVSentryGun)) {
+          FUN_?(pMVar11);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
           return;
         }
-        if ((this->fields).gun == (MVSentryGun *)0x0) {
-          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-                    ((Object *)StringLiteral_Missing_gun,(MethodInfo *)0x0);
+        (this->fields).gun = pMVar11;
+        bVar2 = (TypeInfo__MVSentryGun->_1).naturalAligment;
+        if (((pMVar11->klass->_1).naturalAligment < bVar2) ||
+           ((MVSentryGun__Class *)(pMVar11->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] !=
+            TypeInfo__MVSentryGun)) {
+          FUN_?(pMVar11);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
           return;
         }
-        pMVar3 = (this->fields).gun;
-        this_01 = (HashSet_1_System_Int32_ *)func_?();
-        System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-        HashSet_1_System_Int32___ctor
-                  (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-        pMVar4 = (this->fields).gun;
-        if ((pMVar4 != (MVSentryGun *)0x0) && (this_01 != (HashSet_1_System_Int32_ *)0x0)) {
-          System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-          HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
-                    (this_01,(pMVar4->fields)._._._.id,
-                     MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
-          pMVar2 = (this->fields).editableCubes;
-          if (pMVar2 != (MVCubeModelInstance *)0x0) {
+      }
+      if (iRam_? != 0) {
+        uVar6 = (uint)((ulonglong)&(this->fields).gun >> 0xc);
+        lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+          puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+          LOCK();
+          bVar10 = uVar8 == *puVar9;
+          if (bVar10) {
+            *puVar9 = uVar8 | 1L << (ulonglong)(uVar6 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar10);
+      }
+      if ((this->fields).editableCubes == (MVCubeModelInstance *)0x0) {
+        pSVar12 = StringLiteral_Missing_editable_cubes;
+        if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+          FUN_?();
+          pSVar12 = StringLiteral_Missing_editable_cubes;
+        }
+      }
+      else {
+        if ((this->fields).gun != (MVSentryGun *)0x0) {
+          this_00 = (FontAsset *)(this->fields).gun;
+          value = (FontFeatureTable *)
+                  FUN_?(TypeInfo__System__Collections__Generic__HashSet<int>);
+          FUN_?(value,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+          pMVar11 = (this->fields).gun;
+          if ((pMVar11 != (MVSentryGun *)0x0) && (value != (FontFeatureTable *)0x0)) {
             System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-            HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
-                      (this_01,(pMVar2->fields)._._._.id,
-                       MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
-            (pMVar3->fields)._RaycastIgnoreWorldObjectIds_k__BackingField = this_01;
-            func_?(&(pMVar3->fields)._RaycastIgnoreWorldObjectIds_k__BackingField,this_01);
-            pMVar3 = (this->fields).gun;
-            if (pMVar3 != (MVSentryGun *)0x0) {
-              uVar5 = *(undefined4 *)((int)&(pMVar3->fields)._._.interactionFlags + 4);
-              piVar6 = &(pMVar3->fields)._._.interactionFlags;
-              *(uint *)piVar6 = (uint)*piVar6 | 0x30;
-              *(undefined4 *)((int)&(pMVar3->fields)._._.interactionFlags + 4) = uVar5;
-              pMVar2 = (this->fields).editableCubes;
-              if (pMVar2 != (MVCubeModelInstance *)0x0) {
-                piVar6 = &(pMVar2->fields)._._.interactionFlags;
-                *(uint *)piVar6 = (uint)*piVar6 | 0x30;
-                *(undefined4 *)((int)&(pMVar2->fields)._._.interactionFlags + 4) =
-                     *(undefined4 *)((int)&(pMVar2->fields)._._.interactionFlags + 4);
-                pMVar2 = (this->fields).editableCubes;
-                this_02 = (Func_1_Object_ *)
-                          func_?(TypeInfo__System__Func<IModelingConstraint>);
-                mscorlib.dll::System::Func`1[Object]::Func_1_Object___ctor
-                          (this_02,(Object *)this,
-                           MethodInfo__MVSentryGunBlueprint___InitializeCommon_b__9_0__,
-                           (MethodInfo *)0x0);
-                if (pMVar2 != (MVCubeModelInstance *)0x0) {
-                  (pMVar2->fields)._._ModelingConstraintBuilder_k__BackingField =
-                       (Func_1_IModelingConstraint_ *)this_02;
-                  func_?(&(pMVar2->fields)._._ModelingConstraintBuilder_k__BackingField,
-                                  this_02);
-                  return;
+            HashSet_1_System_Int32__AddIfNotPresent
+                      ((HashSet_1_System_Int32_ *)value,(pMVar11->fields)._._._.id,
+                       MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_->klass->
+                       rgctx_data[0x15].method);
+            pMVar5 = (this->fields).editableCubes;
+            if (pMVar5 != (MVCubeModelInstance *)0x0) {
+              method_00 = MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_->klass->
+                          rgctx_data[0x15].method;
+              System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+              HashSet_1_System_Int32__AddIfNotPresent
+                        ((HashSet_1_System_Int32_ *)value,(pMVar5->fields)._._._.id,method_00);
+              UnityEngine.TextCoreTextEngineModule.dll::UnityEngine::TextCore::Text::FontAsset::
+              FontAsset_set_fontFeatureTable(this_00,value,method_00);
+              pMVar11 = (this->fields).gun;
+              if (pMVar11 != (MVSentryGun *)0x0) {
+                piVar13 = &(pMVar11->fields)._._.interactionFlags;
+                *piVar13 = *piVar13 | 0x30;
+                pMVar5 = (this->fields).editableCubes;
+                if (pMVar5 != (MVCubeModelInstance *)0x0) {
+                  piVar13 = &(pMVar5->fields)._._.interactionFlags;
+                  *piVar13 = *piVar13 | 0x30;
+                  pMVar5 = (this->fields).editableCubes;
+                  this_02 = (Func_1_UnityEngine_Vector2Int_ *)
+                            FUN_?(TypeInfo__System__Func<IModelingConstraint>);
+                  mscorlib.dll::System::Func`1[UnityEngine::Vector2Int]::
+                  Func_1_UnityEngine_Vector2Int___ctor
+                            (this_02,(Object *)this,
+                             MethodInfo__MVSentryGunBlueprint___InitializeCommon_b__9_0__,
+                             (MethodInfo *)0x0);
+                  if (pMVar5 != (MVCubeModelInstance *)0x0) {
+                    bVar10 = iRam_? != 0;
+                    (pMVar5->fields)._._ModelingConstraintBuilder_k__BackingField =
+                         (Func_1_IModelingConstraint_ *)this_02;
+                    if (bVar10) {
+                      uVar6 = (uint)((ulonglong)
+                                      &(pMVar5->fields)._.
+                                       _ModelingConstraintBuilder_k__BackingField >> 0xc);
+                      puVar9 = (ulonglong *)
+                               ((ulonglong)((uVar6 & 0x1fffff) >> 6) * 8 + 0xADDR);
+                      do {
+                        uVar14 = *puVar9;
+                        LOCK();
+                        uVar8 = *puVar9;
+                        if (uVar14 == uVar8) {
+                          *puVar9 = uVar14 | 1L << (uVar6 & 0x3f);
+                        }
+                        UNLOCK();
+                      } while (uVar14 != uVar8);
+                    }
+                    return;
+                  }
                 }
               }
             }
           }
+          goto code_?;
         }
-        goto code_?;
+        pSVar12 = StringLiteral_Missing_gun;
+        if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+          FUN_?();
+          pSVar12 = StringLiteral_Missing_gun;
+        }
       }
-      if (((TypeInfo__MVSentryGun->_1).naturalAligment <= (pMVar3->klass->_1).naturalAligment) &&
-         ((MVSentryGun__Class *)
-          (pMVar3->klass->_1).typeHierarchy[(TypeInfo__MVSentryGun->_1).naturalAligment - 1] ==
-          TypeInfo__MVSentryGun)) {
-        (this->fields).gun = pMVar3;
-        if (((TypeInfo__MVSentryGun->_1).naturalAligment <= (pMVar3->klass->_1).naturalAligment) &&
-           ((MVSentryGun__Class *)
-            (pMVar3->klass->_1).typeHierarchy[(TypeInfo__MVSentryGun->_1).naturalAligment - 1] ==
-            TypeInfo__MVSentryGun)) goto code_?;
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Debug,0);
+        LOCK();
+        UNLOCK();
+        FUN_?(&TypeInfo__UnityEngine__ILogger);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Debug);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      pIVar15 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+      if (pIVar15 == (ILogger_1 *)0x0) {
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar15,2,pSVar12);
+      return;
     }
-    else if (((TypeInfo__MVCubeModelInstance->_1).naturalAligment <=
-              (pMVar2->klass->_1).naturalAligment) &&
-            ((MVCubeModelInstance__Class *)
-             (pMVar2->klass->_1).typeHierarchy
-             [(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] ==
-             TypeInfo__MVCubeModelInstance)) {
-      (this->fields).editableCubes = pMVar2;
-      if (((TypeInfo__MVCubeModelInstance->_1).naturalAligment <=
-           (pMVar2->klass->_1).naturalAligment) &&
-         ((MVCubeModelInstance__Class *)
-          (pMVar2->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1]
-          == TypeInfo__MVCubeModelInstance)) goto code_?;
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
+              ((Object *)StringLiteral_MVSentryGunBlueprint_does_not_ha,(MethodInfo *)0x0);
+    pMVar16 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (pMVar16 != (MVWorldObjectClientManager *)0x0) {
+      key = (this->fields)._._._._.id;
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Debug,key,0);
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__ContainsKey_int_
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?(&StringLiteral_trying_to_unregister_none_existi);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      this_01 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(pMVar16->fields).worldObjects;
+      if (this_01 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+        iVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
+                Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                          (this_01,key,
+                           MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__ContainsKey_int_
+                           ->klass->rgctx_data[0x21].method);
+        if (iVar17 < 0) {
+          if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
+                    ((Object *)StringLiteral_trying_to_unregister_none_existi,(MethodInfo *)0x0);
+          return;
+        }
+        this_03 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                            ((MethodInfo *)0x0);
+        if (this_03 != (MVNetworkGame_OperationRequests *)0x0) {
+          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_UnregisterWorldObject
+                    (this_03,key,(MethodInfo *)0x0);
+          return;
+        }
+      }
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
     }
   }
-  func_?();
 code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -413,191 +841,347 @@ void Assembly-CSharp.dll::MVSentryGunBlueprint::MVSentryGunBlueprint_InitializeI
 {
   MVGroup::MVGroup_InitializeInventory((MVGroup *)this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__System__Func<IModelingConstraint>);
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-    func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
-    func_?(&TypeInfo__MVCubeModelInstance);
-    func_?(&MethodInfo__MVSentryGunBlueprint___InitializeCommon_b__9_0__);
-    func_?(&TypeInfo__MVSentryGun);
-    func_?(&StringLiteral_editableCubeModel);
-    func_?(&StringLiteral_MVSentryGunBlueprint_does_not_ha);
-    func_?(&StringLiteral_sentryGun);
-    func_?(&StringLiteral_ChildrenMap);
-    func_?(&StringLiteral_Missing_editable_cubes);
-    func_?(&StringLiteral_Missing_gun);
-    func_?(&StringLiteral_BlueprintData);
+    FUN_?(&TypeInfo__UnityEngine__Debug,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Func<IModelingConstraint>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVCubeModelInstance);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__MVSentryGunBlueprint___InitializeCommon_b__9_0__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVSentryGun);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_editableCubeModel);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_MVSentryGunBlueprint_does_not_ha);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_sentryGun);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ChildrenMap);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Missing_editable_cubes);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Missing_gun);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_BlueprintData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-            (in_stack_1->fields)._._._.data;
-  if (this_00 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-code_?:
-    func_?();
-  }
-  else {
-    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (this_00,(Object *)StringLiteral_BlueprintData,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    if (TVar2.m_Index == 0) goto code_?;
-    if ((*(byte *)(*(int *)TVar2.m_Index + 0xb8) <
-         (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         naturalAligment) ||
-       (*(Dictionary_2_System_Object_System_Object___Class **)
-         (*(int *)(*(int *)TVar2.m_Index + 100) + -4 +
-         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-               _1).naturalAligment * 4) !=
-        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
-    goto code_?;
-    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (TVar2.m_Index,(Object *)StringLiteral_ChildrenMap,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    if (TVar2.m_Index == 0) {
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-                ((Object *)StringLiteral_MVSentryGunBlueprint_does_not_ha,(MethodInfo *)0x0);
-      this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if (this_03 != (MVWorldObjectClientManager *)0x0) {
-        MVWorldObjectClientManager::MVWorldObjectClientManager_UnregisterWorldObject
-                  (this_03,(in_stack_1->fields)._._._.id,(MethodInfo *)0x0);
+  pDVar1 = (this->fields)._._._._.data;
+  if ((pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
+     (pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                Object]::Dictionary_2_System_Object_System_Object__get_Item
+                          (pDVar1,(Object *)StringLiteral_BlueprintData,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          ), pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0)) {
+    bVar2 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
+            .naturalAligment;
+    if (((pDVar1->klass->_1).naturalAligment < bVar2) ||
+       ((Dictionary_2_System_Object_System_Object___Class *)
+        (pDVar1->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] !=
+        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+      FUN_?(pDVar1);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__get_Item
+                        (pDVar1,(Object *)StringLiteral_ChildrenMap,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+    if (pOVar4 != (Object *)0x0) {
+      bVar2 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
+              _1).naturalAligment;
+      if (((pOVar4->klass->_1).naturalAligment < bVar2) ||
+         ((Dictionary_2_System_Object_System_Object___Class *)
+          (pOVar4->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] !=
+          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+        FUN_?(pOVar4);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
-      goto code_?;
-    }
-    if ((*(byte *)(*(int *)TVar2.m_Index + 0xb8) <
-         (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         naturalAligment) ||
-       (*(Dictionary_2_System_Object_System_Object___Class **)
-         (*(int *)(*(int *)TVar2.m_Index + 100) + -4 +
-         (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->
-               _1).naturalAligment * 4) !=
-        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>))
-    goto code_?;
-    pMVar3 = (MVBlueprintBase__Class *)
-             MVBlueprintBase::MVBlueprintBase_GetChild
-                       (in_stack_1,StringLiteral_editableCubeModel,(MethodInfo *)0x0);
-    if (pMVar3 == (MVBlueprintBase__Class *)0x0) {
-      in_stack_1[1].klass = (MVBlueprintBase__Class *)0x0;
-code_?:
-      func_?();
-      pMVar4 = MVBlueprintBase::MVBlueprintBase_GetChild
-                         (in_stack_1,StringLiteral_sentryGun,(MethodInfo *)0x0);
-      if (pMVar4 == (MVWorldObjectClient *)0x0) {
-        in_stack_1[1].monitor = (MonitorData *)0x0;
-code_?:
-        func_?();
-        if (in_stack_1[1].klass == (MVBlueprintBase__Class *)0x0) {
-          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-                    ((Object *)StringLiteral_Missing_editable_cubes,(MethodInfo *)0x0);
+      pMVar5 = (MVCubeModelInstance *)
+                MVBlueprintBase::MVBlueprintBase_GetChild
+                          ((MVBlueprintBase *)this,StringLiteral_editableCubeModel,(MethodInfo *)0x0
+                          );
+      if (pMVar5 == (MVCubeModelInstance *)0x0) {
+        (this->fields).editableCubes = (MVCubeModelInstance *)0x0;
+      }
+      else {
+        bVar2 = (TypeInfo__MVCubeModelInstance->_1).naturalAligment;
+        if (((pMVar5->klass->_1).naturalAligment < bVar2) ||
+           ((MVCubeModelInstance__Class *)(pMVar5->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1]
+            != TypeInfo__MVCubeModelInstance)) {
+          FUN_?(pMVar5);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
           return;
         }
-        if (in_stack_1[1].monitor == (MonitorData *)0x0) {
-          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-                    ((Object *)StringLiteral_Missing_gun,(MethodInfo *)0x0);
+        (this->fields).editableCubes = pMVar5;
+        bVar2 = (TypeInfo__MVCubeModelInstance->_1).naturalAligment;
+        if (((pMVar5->klass->_1).naturalAligment < bVar2) ||
+           ((MVCubeModelInstance__Class *)(pMVar5->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1]
+            != TypeInfo__MVCubeModelInstance)) {
+          FUN_?(pMVar5);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
           return;
         }
-        pMVar5 = in_stack_1[1].monitor;
-        this_01 = (HashSet_1_System_Int32_ *)func_?();
-        System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-        HashSet_1_System_Int32___ctor
-                  (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-        if ((in_stack_1[1].monitor != (MonitorData *)0x0) &&
-           (this_01 != (HashSet_1_System_Int32_ *)0x0)) {
-          System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-          HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
-                    (this_01,*(int32_t *)(in_stack_1[1].monitor + 8),
-                     MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
-          if (in_stack_1[1].klass != (MVBlueprintBase__Class *)0x0) {
+      }
+      if (iRam_? != 0) {
+        uVar6 = (uint)((ulonglong)&(this->fields).editableCubes >> 0xc);
+        lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+          puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+          LOCK();
+          bVar10 = uVar8 == *puVar9;
+          if (bVar10) {
+            *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar10);
+      }
+      pMVar11 = (MVSentryGun *)
+                MVBlueprintBase::MVBlueprintBase_GetChild
+                          ((MVBlueprintBase *)this,StringLiteral_sentryGun,(MethodInfo *)0x0);
+      if (pMVar11 == (MVSentryGun *)0x0) {
+        (this->fields).gun = (MVSentryGun *)0x0;
+      }
+      else {
+        bVar2 = (TypeInfo__MVSentryGun->_1).naturalAligment;
+        if (((pMVar11->klass->_1).naturalAligment < bVar2) ||
+           ((MVSentryGun__Class *)(pMVar11->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] !=
+            TypeInfo__MVSentryGun)) {
+          FUN_?(pMVar11);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        (this->fields).gun = pMVar11;
+        bVar2 = (TypeInfo__MVSentryGun->_1).naturalAligment;
+        if (((pMVar11->klass->_1).naturalAligment < bVar2) ||
+           ((MVSentryGun__Class *)(pMVar11->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] !=
+            TypeInfo__MVSentryGun)) {
+          FUN_?(pMVar11);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+      }
+      if (iRam_? != 0) {
+        uVar6 = (uint)((ulonglong)&(this->fields).gun >> 0xc);
+        lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+          puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+          LOCK();
+          bVar10 = uVar8 == *puVar9;
+          if (bVar10) {
+            *puVar9 = uVar8 | 1L << (ulonglong)(uVar6 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar10);
+      }
+      if ((this->fields).editableCubes == (MVCubeModelInstance *)0x0) {
+        pSVar12 = StringLiteral_Missing_editable_cubes;
+        if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+          FUN_?();
+          pSVar12 = StringLiteral_Missing_editable_cubes;
+        }
+      }
+      else {
+        if ((this->fields).gun != (MVSentryGun *)0x0) {
+          this_00 = (FontAsset *)(this->fields).gun;
+          value = (FontFeatureTable *)
+                  FUN_?(TypeInfo__System__Collections__Generic__HashSet<int>);
+          FUN_?(value,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+          pMVar11 = (this->fields).gun;
+          if ((pMVar11 != (MVSentryGun *)0x0) && (value != (FontFeatureTable *)0x0)) {
             System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-            HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
-                      (this_01,(int32_t)((in_stack_1[1].klass)->_0).name,
-                       MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
-            *(HashSet_1_System_Int32_ **)(pMVar5 + 0xfc) = this_01;
-            func_?(pMVar5 + 0xfc,this_01);
-            pMVar5 = in_stack_1[1].monitor;
-            if (pMVar5 != (MonitorData *)0x0) {
-              *(uint *)(pMVar5 + 0xb8) = *(uint *)(pMVar5 + 0xb8) | 0x30;
-              *(undefined4 *)(pMVar5 + 0xbc) = *(undefined4 *)(pMVar5 + 0xbc);
-              pMVar3 = in_stack_1[1].klass;
-              if (pMVar3 != (MVBlueprintBase__Class *)0x0) {
-                uVar6._0_1_ = (pMVar3->_1).naturalAligment;
-                uVar6._1_1_ = (pMVar3->_1).packingSize;
-                uVar6._2_2_ = *(undefined2 *)&(pMVar3->_1).field_0x56;
-                uVar6 = uVar6 | 0x30;
-                (pMVar3->_1).naturalAligment = (char)uVar6;
-                (pMVar3->_1).packingSize = (char)(uVar6 >> 8);
-                *(short *)&(pMVar3->_1).field_0x56 = (short)(uVar6 >> 0x10);
-                (pMVar3->vtable).Equals.methodPtr = (pMVar3->vtable).Equals.methodPtr;
-                pMVar3 = in_stack_1[1].klass;
-                this_02 = (Func_1_Object_ *)
-                          func_?(TypeInfo__System__Func<IModelingConstraint>);
-                mscorlib.dll::System::Func`1[Object]::Func_1_Object___ctor
-                          (this_02,(Object *)in_stack_1,
-                           MethodInfo__MVSentryGunBlueprint___InitializeCommon_b__9_0__,
-                           (MethodInfo *)0x0);
-                if (pMVar3 != (MVBlueprintBase__Class *)0x0) {
-                  (pMVar3->vtable).get_Position.method = (MethodInfo *)this_02;
-                  func_?(&(pMVar3->vtable).get_Position.method,this_02);
-                  return;
+            HashSet_1_System_Int32__AddIfNotPresent
+                      ((HashSet_1_System_Int32_ *)value,(pMVar11->fields)._._._.id,
+                       MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_->klass->
+                       rgctx_data[0x15].method);
+            pMVar5 = (this->fields).editableCubes;
+            if (pMVar5 != (MVCubeModelInstance *)0x0) {
+              method_00 = MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_->klass->
+                          rgctx_data[0x15].method;
+              System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+              HashSet_1_System_Int32__AddIfNotPresent
+                        ((HashSet_1_System_Int32_ *)value,(pMVar5->fields)._._._.id,method_00);
+              UnityEngine.TextCoreTextEngineModule.dll::UnityEngine::TextCore::Text::FontAsset::
+              FontAsset_set_fontFeatureTable(this_00,value,method_00);
+              pMVar11 = (this->fields).gun;
+              if (pMVar11 != (MVSentryGun *)0x0) {
+                piVar13 = &(pMVar11->fields)._._.interactionFlags;
+                *piVar13 = *piVar13 | 0x30;
+                pMVar5 = (this->fields).editableCubes;
+                if (pMVar5 != (MVCubeModelInstance *)0x0) {
+                  piVar13 = &(pMVar5->fields)._._.interactionFlags;
+                  *piVar13 = *piVar13 | 0x30;
+                  pMVar5 = (this->fields).editableCubes;
+                  this_02 = (Func_1_UnityEngine_Vector2Int_ *)
+                            FUN_?(TypeInfo__System__Func<IModelingConstraint>);
+                  mscorlib.dll::System::Func`1[UnityEngine::Vector2Int]::
+                  Func_1_UnityEngine_Vector2Int___ctor
+                            (this_02,(Object *)this,
+                             MethodInfo__MVSentryGunBlueprint___InitializeCommon_b__9_0__,
+                             (MethodInfo *)0x0);
+                  if (pMVar5 != (MVCubeModelInstance *)0x0) {
+                    bVar10 = iRam_? != 0;
+                    (pMVar5->fields)._._ModelingConstraintBuilder_k__BackingField =
+                         (Func_1_IModelingConstraint_ *)this_02;
+                    if (bVar10) {
+                      uVar6 = (uint)((ulonglong)
+                                      &(pMVar5->fields)._.
+                                       _ModelingConstraintBuilder_k__BackingField >> 0xc);
+                      puVar9 = (ulonglong *)
+                               ((ulonglong)((uVar6 & 0x1fffff) >> 6) * 8 + 0xADDR);
+                      do {
+                        uVar14 = *puVar9;
+                        LOCK();
+                        uVar8 = *puVar9;
+                        if (uVar14 == uVar8) {
+                          *puVar9 = uVar14 | 1L << (uVar6 & 0x3f);
+                        }
+                        UNLOCK();
+                      } while (uVar14 != uVar8);
+                    }
+                    return;
+                  }
                 }
               }
             }
           }
+          goto code_?;
         }
-        goto code_?;
+        pSVar12 = StringLiteral_Missing_gun;
+        if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+          FUN_?();
+          pSVar12 = StringLiteral_Missing_gun;
+        }
       }
-      if (((TypeInfo__MVSentryGun->_1).naturalAligment <= (pMVar4->klass->_1).naturalAligment) &&
-         ((MVSentryGun__Class *)
-          (pMVar4->klass->_1).typeHierarchy[(TypeInfo__MVSentryGun->_1).naturalAligment - 1] ==
-          TypeInfo__MVSentryGun)) {
-        in_stack_1[1].monitor = (MonitorData *)pMVar4;
-        if (((TypeInfo__MVSentryGun->_1).naturalAligment <= (pMVar4->klass->_1).naturalAligment) &&
-           ((MVSentryGun__Class *)
-            (pMVar4->klass->_1).typeHierarchy[(TypeInfo__MVSentryGun->_1).naturalAligment - 1] ==
-            TypeInfo__MVSentryGun)) goto code_?;
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Debug,0);
+        LOCK();
+        UNLOCK();
+        FUN_?(&TypeInfo__UnityEngine__ILogger);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Debug);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      pIVar15 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+      if (pIVar15 == (ILogger_1 *)0x0) {
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar15,2,pSVar12);
+      return;
     }
-    else {
-      pMVar7 = (MVWorldObjectClient__Class *)(pMVar3->_0).image;
-      if (((TypeInfo__MVCubeModelInstance->_1).naturalAligment <= (pMVar7->_1).naturalAligment) &&
-         ((MVCubeModelInstance__Class *)
-          (pMVar7->_1).typeHierarchy[(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] ==
-          TypeInfo__MVCubeModelInstance)) {
-        in_stack_1[1].klass = pMVar3;
-        pMVar7 = (MVWorldObjectClient__Class *)(pMVar3->_0).image;
-        if (((TypeInfo__MVCubeModelInstance->_1).naturalAligment <= (pMVar7->_1).naturalAligment) &&
-           ((MVCubeModelInstance__Class *)
-            (pMVar7->_1).typeHierarchy[(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] ==
-            TypeInfo__MVCubeModelInstance)) goto code_?;
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
+              ((Object *)StringLiteral_MVSentryGunBlueprint_does_not_ha,(MethodInfo *)0x0);
+    pMVar16 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (pMVar16 != (MVWorldObjectClientManager *)0x0) {
+      key = (this->fields)._._._._.id;
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Debug,key,0);
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__ContainsKey_int_
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?(&StringLiteral_trying_to_unregister_none_existi);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
+      this_01 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(pMVar16->fields).worldObjects;
+      if (this_01 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+        iVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
+                Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                          (this_01,key,
+                           MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__ContainsKey_int_
+                           ->klass->rgctx_data[0x21].method);
+        if (iVar17 < 0) {
+          if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
+                    ((Object *)StringLiteral_trying_to_unregister_none_existi,(MethodInfo *)0x0);
+          return;
+        }
+        this_03 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests
+                            ((MethodInfo *)0x0);
+        if (this_03 != (MVNetworkGame_OperationRequests *)0x0) {
+          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_UnregisterWorldObject
+                    (this_03,key,(MethodInfo *)0x0);
+          return;
+        }
+      }
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
     }
   }
-  func_?();
 code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -609,28 +1193,69 @@ bool Assembly-CSharp.dll::MVSentryGunBlueprint::MVSentryGunBlueprint_OnEnterObje
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__EditorEvent);
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-  if (this_00 != (MainCameraManager *)0x0) {
-    pMVar1 = MainCameraManager::MainCameraManager_get_CurrentCamera(this_00,(MethodInfo *)0x0);
-    if (pMVar1 != (MVCameraBase *)0x0) {
-      (*(code *)(pMVar1->klass->vtable).FocusOnObject.method)(pMVar1,this,0x40000000,0,0,0);
-      pMVar2 = (this->fields).editableCubes;
-      if ((pMVar2 != (MVCubeModelInstance *)0x0) && (e != (EditorStateMachine *)0x0)) {
-        EditorStateMachine::EditorStateMachine_SelectWO
-                  (e,(pMVar2->fields)._._._.id,0,1,(MethodInfo *)0x0);
-        value = (Object *)func_?();
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+  if (((pMVar1 != (MainCameraManager *)0x0) &&
+      (pMVar2 = (pMVar1->fields).cameraController, pMVar2 != (MVCameraController *)0x0)) &&
+     (this_00 = (pMVar2->fields).cameraStack, this_00 != (MVCameraController_CameraStack *)0x0)) {
+    pMVar3 = MVCameraController+CameraStack::MVCameraController_CameraStack_get_CurCamera
+                       (this_00,(MethodInfo *)0x0);
+    uStack_4 = 0;
+    if (pMVar3 != (MVCameraBase *)0x0) {
+      uStack_5 = 0;
+      uStack_6 = 0;
+      uStack_7 = 0;
+      uStack_4 = 0;
+      (*(pMVar3->klass->vtable).FocusOnObject.methodPtr)
+                (pMVar3,this,TypeRef__System__Activator__T._0_4_,&uStack_4,&uStack_7,
+                 (pMVar3->klass->vtable).FocusOnObject.method);
+      pMVar8 = (this->fields).editableCubes;
+      if (((pMVar8 != (MVCubeModelInstance *)0x0) && (e != (EditorStateMachine *)0x0)) &&
+         (this_01 = (e->fields).selectionController, this_01 != (SelectionController *)0x0)) {
+        value = (Object *)0x0;
+        SelectionController::SelectionController_SelectWO
+                  (this_01,(pMVar8->fields)._._._.id,0,1,(MethodInfo *)0x0);
+        uStackX_20 = 0;
+        iVar9._0_2_ = (TypeInfo__EditorEvent->_0).byval_arg.attrs;
+        iVar9._2_1_ = (TypeInfo__EditorEvent->_0).byval_arg.type;
+        iVar9._3_1_ = (TypeInfo__EditorEvent->_0).byval_arg.field_0xb;
+        if (iVar9 < 0) {
+          if (((TypeInfo__EditorEvent->_0).generic_class == (Il2CppGenericClass *)0x0) ||
+             (((TypeInfo__EditorEvent->_1).field_0x6d & 8) == 0)) {
+            value = (Object *)FUN_?(TypeInfo__EditorEvent);
+            FUN_?(value + 1,&uStackX_20);
+            if (iRam_? != 0) {
+              uVar10 = (uint)((ulonglong)(value + 1) >> 0xc);
+              uVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6);
+              do {
+                uVar12 = *(ulonglong *)(uVar11 * 8 + 0xADDR);
+                puVar13 = (ulonglong *)(uVar11 * 8 + 0xADDR);
+                LOCK();
+                bVar14 = uVar12 == *puVar13;
+                if (bVar14) {
+                  *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
+                }
+                UNLOCK();
+              } while (!bVar14);
+            }
+          }
+        }
+        else {
+          value = (Object *)((ulonglong)uStackX_24 << 0x20);
+        }
         FSMEntity::FSMEntity_set_Event((FSMEntity *)e,value,(MethodInfo *)0x0);
         return 1;
       }
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  bVar4 = (*pcVar3)();
-  return bVar4;
+  FUN_?();
+  pcVar15 = (code *)swi(3);
+  bVar16 = (*pcVar15)();
+  return bVar16;
 }
 
 
@@ -641,18 +1266,19 @@ bool Assembly-CSharp.dll::MVSentryGunBlueprint::MVSentryGunBlueprint_OnExitObjec
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__EditorEvent);
+    FUN_?(&TypeInfo__EditorEvent);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = e;
   if (e != (EditorStateMachine *)0x0) {
     EditorStateMachine::EditorStateMachine_ExitGroup(e,(MethodInfo *)0x0);
-    e = (EditorStateMachine *)0x2f;
-    value = (Object *)func_?(TypeInfo__EditorEvent,&e);
-    FSMEntity::FSMEntity_set_Event((FSMEntity *)this_00,value,(MethodInfo *)0x0);
+    auStackX_10[0] = 0x2f;
+    value = (Object *)FUN_?(TypeInfo__EditorEvent,auStackX_10);
+    FSMEntity::FSMEntity_set_Event((FSMEntity *)e,value,(MethodInfo *)0x0);
     return 1;
   }
-  func_?();
+  FUN_?();
   pcVar1 = (code *)swi(3);
   bVar2 = (*pcVar1)();
   return bVar2;
@@ -667,28 +1293,38 @@ Assembly-CSharp.dll::MVSentryGunBlueprint::MVSentryGunBlueprint__InitializeCommo
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__ModelingBoxCountConstraint);
+    FUN_?(&TypeInfo__ModelingBoxCountConstraint);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  cubeModel = (this->fields).editableCubes;
-  uVar1._0_2_ = 0;
-  uVar1._2_2_ = 0;
-  MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-            ((IntVector *)&stack0xffffffec,-4,-2,-4,(MethodInfo *)0x0);
-  uVar2._0_2_ = 0;
-  uVar2._2_2_ = 0;
-  iVar3 = 0;
-  MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-            ((IntVector *)&stack0xfffffff4,3,8,3,(MethodInfo *)0x0);
-  this_00 = (ModelingBoxCountConstraint *)func_?(TypeInfo__ModelingBoxCountConstraint);
-  minCorner.z = (int16_t)cubeModel;
-  minCorner.x = (int16_t)uVar1;
-  minCorner.y = SUB42(uVar1,2);
-  maxCorner.z = iVar3;
-  maxCorner.x = (int16_t)uVar2;
-  maxCorner.y = SUB42(uVar2,2);
-  ModelingBoxCountConstraint::ModelingBoxCountConstraint__ctor
-            (this_00,(MVCubeModelBase *)cubeModel,minCorner,maxCorner,0x32,(MethodInfo *)0x0);
+  pMVar1 = (ModelingBoxConstraint__Class *)(this->fields).editableCubes;
+  this_00 = (ModelingBoxConstraint *)FUN_?(TypeInfo__ModelingBoxCountConstraint);
+  IStackX_8.x = 3;
+  IStackX_8.y = 8;
+  IStackX_8.z = 3;
+  aIStackX_18[0].z = -4;
+  aIStackX_18[0].x = -4;
+  aIStackX_18[0].y = -2;
+  ModelingBoxConstraint::ModelingBoxConstraint__ctor_1
+            (this_00,aIStackX_18,&IStackX_8,(MethodInfo *)0x0);
+  bVar2 = iRam_? != 0;
+  this_00[1].klass = pMVar1;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)(this_00 + 1) >> 0xc);
+    uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+    do {
+      uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+      puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
+  *(undefined4 *)&this_00[1].monitor = 0x32;
   return (IModelingConstraint *)this_00;
 }
 
@@ -703,10 +1339,8 @@ void Assembly-CSharp.dll::MVSentryGunBlueprint::MVSentryGunBlueprint__ctor
 {
   MVBlueprintBase::MVBlueprintBase__ctor
             ((MVBlueprintBase *)this,data,worldObjects,(MethodInfo *)0x0);
-  uVar1 = *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
-  piVar2 = &(this->fields)._._._.interactionFlags;
-  *(uint *)piVar2 = (uint)*piVar2 | 0x1000;
-  *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) = uVar1;
+  piVar1 = &(this->fields)._._._.interactionFlags;
+  *piVar1 = *piVar1 | 0x1000;
   return;
 }
 
@@ -721,8 +1355,10 @@ Assembly-CSharp.dll::MVSentryGunBlueprint::MVSentryGunBlueprint_get_Documentatio
   if ((this->fields).gun != (MVSentryGun *)0x0) {
     pMVar1 = (this->fields).gun;
     pMVar2 = pMVar1->klass;
-    MVar3 = (*(code *)(pMVar2->vtable).get_DocumentationType.method)
-                      (pMVar1,(pMVar2->vtable).TraverseRecursiveTail.methodPtr);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    MVar3 = (*(pMVar2->vtable).get_DocumentationType.methodPtr)
+                      (pMVar1,(pMVar2->vtable).get_DocumentationType.method);
     return MVar3;
   }
   return MVWorldObjectDocumentationType__Enum_FireSentryTower;

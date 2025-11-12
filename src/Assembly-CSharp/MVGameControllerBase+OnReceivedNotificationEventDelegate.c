@@ -10,14 +10,17 @@ MVGameControllerBase_OnReceivedNotificationEventDelegate_BeginInvoke
           AsyncCallback *callback,Object *object,MethodInfo *method)
 
 {
+  aNStackX_10[0] = type;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__Common__NotificationType);
+    FUN_?(&TypeInfo__MV__Common__NotificationType);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   uStack_1 = 0;
-  uStack_2 = func_?(TypeInfo__MV__Common__NotificationType,&type);
+  uStack_2 = FUN_?(TypeInfo__MV__Common__NotificationType,aNStackX_10);
   pDStack_3 = data;
-  pIVar4 = (IAsyncResult *)func_?(this,&uStack_2,callback,object);
+  pIVar4 = (IAsyncResult *)FUN_?(this,&uStack_2,callback,object);
   return pIVar4;
 }
 

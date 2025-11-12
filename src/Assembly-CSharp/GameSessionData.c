@@ -6,130 +6,148 @@ String * Assembly-CSharp.dll::GameSessionData::GameSessionData_ToString
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__MV__Common__MVGameMode);
-    func_?(&TypeInfo__System__Object);
-    func_?(&StringLiteral_serverIP__0___profileID__1___pla);
+    FUN_?(&TypeInfo__MV__Common__MVGameMode);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_serverIP__0___profileID__1___pla);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  args = (Object__Array *)func_?(TypeInfo__System__Object,9);
+  args = (Object__Array *)FUN_?(TypeInfo__System__Object,9);
   pSVar1 = (this->fields).serverIP;
-  if (args == (Object__Array *)0x0) {
-    func_?();
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-  }
-  else {
+  if (args != (Object__Array *)0x0) {
     if (pSVar1 != (String *)0x0) {
-      iVar3 = func_?(pSVar1,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+      lVar2 = FUN_?(pSVar1,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (args->max_length == 0) goto code_?;
-    args->vector[0] = (Object *)pSVar1;
-    func_?(args->vector,pSVar1);
-    iStack_4 = (this->fields).profileID;
-    pOVar5 = (Object *)func_?(TypeInfo__System__Int32,&iStack_4);
-    if (pOVar5 != (Object *)0x0) {
-      iVar3 = func_?(pOVar5,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+    FUN_?(args,0,pSVar1);
+    aiStackX_8[0] = (this->fields).profileID;
+    lVar2 = FUN_?(uRam_?,aiStackX_8);
+    if (lVar2 != 0) {
+      lVar5 = FUN_?(lVar2,(args->klass->_0).element_class);
+      if (lVar5 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (args->max_length < 2) goto code_?;
-    args->vector[1] = pOVar5;
-    func_?(args->vector + 1,pOVar5);
-    iStack_6 = (this->fields).planetID;
-    pOVar5 = (Object *)func_?(TypeInfo__System__Int32,&iStack_6);
-    if (pOVar5 != (Object *)0x0) {
-      iVar3 = func_?(pOVar5,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+    FUN_?(args,1,lVar2);
+    aiStackX_8[0] = (this->fields).planetID;
+    lVar2 = FUN_?(uRam_?,aiStackX_8);
+    if (lVar2 != 0) {
+      lVar5 = FUN_?(lVar2,(args->klass->_0).element_class);
+      if (lVar5 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (args->max_length < 3) goto code_?;
-    args->vector[2] = pOVar5;
-    func_?(args->vector + 2,pOVar5);
-    iStack_7 = (this->fields).gameMode;
-    pOVar5 = (Object *)func_?(TypeInfo__MV__Common__MVGameMode,&iStack_7);
-    if (pOVar5 != (Object *)0x0) {
-      iVar3 = func_?(pOVar5,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+    FUN_?(args,2,lVar2);
+    aiStackX_8[0] = (this->fields).gameMode;
+    lVar2 = FUN_?(TypeInfo__MV__Common__MVGameMode,aiStackX_8);
+    if (lVar2 != 0) {
+      lVar5 = FUN_?(lVar2,(args->klass->_0).element_class);
+      if (lVar5 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (args->max_length < 4) goto code_?;
-    args->vector[3] = pOVar5;
-    func_?(args->vector + 3,pOVar5);
+    FUN_?(args,3,lVar2);
     pSVar1 = (this->fields).language;
     if (pSVar1 != (String *)0x0) {
-      iVar3 = func_?(pSVar1,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+      lVar2 = FUN_?(pSVar1,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (args->max_length < 5) goto code_?;
-    args->vector[4] = (Object *)pSVar1;
-    func_?(args->vector + 4,pSVar1);
-    bStack_8 = (this->fields).embedded;
-    pOVar5 = (Object *)func_?(TypeInfo__System__Boolean,&bStack_8);
-    if (pOVar5 != (Object *)0x0) {
-      iVar3 = func_?(pOVar5,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+    FUN_?(args,4,pSVar1);
+    aiStackX_8[0] = CONCAT31(aiStackX_8[0]._1_3_,(this->fields).embedded);
+    lVar2 = FUN_?(uRam_?,aiStackX_8);
+    if (lVar2 != 0) {
+      lVar5 = FUN_?(lVar2,(args->klass->_0).element_class);
+      if (lVar5 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (args->max_length < 6) goto code_?;
-    args->vector[5] = pOVar5;
-    func_?(args->vector + 5,pOVar5);
+    FUN_?(args,5,lVar2);
     pSVar1 = (this->fields).token;
     if (pSVar1 != (String *)0x0) {
-      iVar3 = func_?(pSVar1,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+      lVar2 = FUN_?(pSVar1,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (args->max_length < 7) goto code_?;
-    args->vector[6] = (Object *)pSVar1;
-    func_?(args->vector + 6,pSVar1);
+    FUN_?(args,6,pSVar1);
     pSVar1 = (this->fields).sessionToken;
     if (pSVar1 != (String *)0x0) {
-      iVar3 = func_?(pSVar1,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+      lVar2 = FUN_?(pSVar1,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (args->max_length < 8) goto code_?;
-    args->vector[7] = (Object *)pSVar1;
-    func_?(args->vector + 7,pSVar1);
+    FUN_?(args,7,pSVar1);
     pSVar1 = (this->fields).newPlanetName;
     if (pSVar1 != (String *)0x0) {
-      iVar3 = func_?(pSVar1,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+      lVar2 = FUN_?(pSVar1,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (8 < args->max_length) {
-      args->vector[8] = (Object *)pSVar1;
-      func_?(args->vector + 8,pSVar1);
-      pSVar1 = mscorlib.dll::System::String::String_Format_3
-                         (StringLiteral_serverIP__0___profileID__1___pla,args,(MethodInfo *)0x0);
-      return pSVar1;
-    }
+    FUN_?(args,8);
+    pSVar1 = StringLiteral_serverIP__0___profileID__1___pla;
+    PStack_6._arg0 = (Object *)0x0;
+    PStack_6._arg1 = (Object *)0x0;
+    PStack_6._arg2 = (Object *)0x0;
+    PStack_6._args = (Object__Array *)0x0;
+    mscorlib.dll::System::ParamsArray::ParamsArray__ctor_3(&PStack_6,args,(MethodInfo *)0x0);
+    PStack_7._arg0 = PStack_6._arg0;
+    PStack_7._arg1 = PStack_6._arg1;
+    PStack_7._arg2 = PStack_6._arg2;
+    PStack_7._args = PStack_6._args;
+    pSVar1 = mscorlib.dll::System::String::String_FormatHelper
+                       ((IFormatProvider *)0x0,pSVar1,&PStack_7,(MethodInfo *)0x0);
+    return pSVar1;
   }
-code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar9)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar4)();
   return pSVar1;
 }
 
@@ -141,65 +159,429 @@ void Assembly-CSharp.dll::GameSessionData::GameSessionData__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_game_server_test);
-    func_?(&StringLiteral_h5g9REtmi1LT7JY5);
-    func_?(&::StringLiteral__);
-    func_?(&StringLiteral_RegionNotDefined);
+    FUN_?(&StringLiteral_game_server_test);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_h5g9REtmi1LT7JY5);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_RegionNotDefined);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  iVar1 = iRam_?;
   (this->fields).serverIP = ::StringLiteral__;
-  func_?(&this->fields,::StringLiteral__);
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).profileID = -1;
   (this->fields).planetID = -1;
   (this->fields).gameMode = 1;
   (this->fields).language = ::StringLiteral__;
-  func_?(&(this->fields).language,::StringLiteral__);
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).language >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).embeddedSite = ::StringLiteral__;
-  func_?(&(this->fields).embeddedSite,::StringLiteral__);
+  iVar1 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).embeddedSite >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).token = ::StringLiteral__;
-  func_?(&(this->fields).token,::StringLiteral__);
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).token >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).sessionToken = ::StringLiteral__;
-  func_?(&(this->fields).sessionToken,::StringLiteral__);
+  iVar1 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).sessionToken >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).newPlanetName = StringLiteral_game_server_test;
-  func_?(&(this->fields).newPlanetName,StringLiteral_game_server_test);
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).newPlanetName >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).planetName = ::StringLiteral__;
-  func_?(&(this->fields).planetName,::StringLiteral__);
+  iVar1 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).planetName >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).planetImageURL = ::StringLiteral__;
-  func_?(&(this->fields).planetImageURL,::StringLiteral__);
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).planetImageURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).pingURL = ::StringLiteral__;
-  func_?(&(this->fields).pingURL,::StringLiteral__);
+  iVar1 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).pingURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).disconnectURL = ::StringLiteral__;
-  func_?(&(this->fields).disconnectURL,::StringLiteral__);
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).disconnectURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).gameRewardURL = ::StringLiteral__;
-  func_?(&(this->fields).gameRewardURL,::StringLiteral__);
+  iVar1 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).gameRewardURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).gamePublishedURL = ::StringLiteral__;
-  func_?(&(this->fields).gamePublishedURL,::StringLiteral__);
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).gamePublishedURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).purchaseGoldURL = ::StringLiteral__;
-  func_?(&(this->fields).purchaseGoldURL,::StringLiteral__);
+  iVar1 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).purchaseGoldURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).loginURL = ::StringLiteral__;
-  func_?(&(this->fields).loginURL,::StringLiteral__);
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).loginURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).signupURL = ::StringLiteral__;
-  func_?(&(this->fields).signupURL,::StringLiteral__);
+  iVar1 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).signupURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).idleURL = ::StringLiteral__;
-  func_?(&(this->fields).idleURL,::StringLiteral__);
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).idleURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).disconnectedURL = ::StringLiteral__;
-  func_?(&(this->fields).disconnectedURL,::StringLiteral__);
+  iVar1 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).disconnectedURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).playerProfileURL = ::StringLiteral__;
-  func_?(&(this->fields).playerProfileURL,::StringLiteral__);
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).playerProfileURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).eliteUpgradeURL = ::StringLiteral__;
-  func_?(&(this->fields).eliteUpgradeURL,::StringLiteral__);
+  iVar1 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).eliteUpgradeURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).region = StringLiteral_RegionNotDefined;
-  func_?(&(this->fields).region,StringLiteral_RegionNotDefined);
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).region >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).ezKey = StringLiteral_h5g9REtmi1LT7JY5;
-  func_?(&(this->fields).ezKey,StringLiteral_h5g9REtmi1LT7JY5);
+  iVar1 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).ezKey >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).reauthURL = ::StringLiteral__;
-  func_?(&(this->fields).reauthURL,::StringLiteral__);
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).reauthURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).gameRewardDataURL = ::StringLiteral__;
-  func_?(&(this->fields).gameRewardDataURL,::StringLiteral__);
+  iVar1 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).gameRewardDataURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).referrer = ::StringLiteral__;
-  func_?(&(this->fields).referrer,::StringLiteral__);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).referrer >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
   return;
 }
 
@@ -211,398 +593,1108 @@ void Assembly-CSharp.dll::GameSessionData::GameSessionData__ctor_1
                MethodInfo *method)
 
 {
-  value = this;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&
-                    System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::String,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::String,_System::Object>__System__String__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__MV__Common__MVGameMode);
-    func_?(&TypeInfo__System__String);
-    func_?(&StringLiteral_playButtonAdsEnabledDefault);
-    func_?(&StringLiteral_token);
-    func_?(&StringLiteral_planetName);
-    func_?(&StringLiteral_game_server_test);
-    func_?(&StringLiteral_profileID);
-    func_?(&StringLiteral_embedded);
-    func_?(&StringLiteral_rewardedAdsEnabledDefault);
-    func_?(&StringLiteral_newPlanetName);
-    func_?(&StringLiteral_sessionToken);
-    func_?(&StringLiteral_planetImageURL);
-    func_?(&StringLiteral_interstitialsAdsEnabledDefault);
-    func_?(&StringLiteral_serverIP);
-    func_?(&StringLiteral_h5g9REtmi1LT7JY5);
-    func_?(&StringLiteral_language);
-    func_?(&StringLiteral_embeddedSite);
-    func_?(&::StringLiteral__);
-    func_?(&StringLiteral_boostersEnabledDefault);
-    func_?(&StringLiteral_planetID);
-    func_?(&StringLiteral_gameMode);
-    func_?(&StringLiteral_RegionNotDefined);
+    FUN_?(&
+                  System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::String,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::String,_System::Object>__System__String__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__Common__MVGameMode);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_playButtonAdsEnabledDefault);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_token);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_planetName);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_game_server_test);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_profileID);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_embedded);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_rewardedAdsEnabledDefault);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_newPlanetName);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_sessionToken);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_planetImageURL);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_interstitialsAdsEnabledDefault);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_serverIP);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_h5g9REtmi1LT7JY5);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_language);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_embeddedSite);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_boostersEnabledDefault);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_planetID);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_gameMode);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_RegionNotDefined);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  (value->fields).serverIP = ::StringLiteral__;
-  func_?(&value->fields,::StringLiteral__);
-  (value->fields).profileID = -1;
-  (value->fields).planetID = -1;
-  (value->fields).gameMode = 1;
-  (value->fields).language = ::StringLiteral__;
-  func_?(&(value->fields).language,::StringLiteral__);
-  (value->fields).embeddedSite = ::StringLiteral__;
-  func_?(&(value->fields).embeddedSite,::StringLiteral__);
-  (value->fields).token = ::StringLiteral__;
-  func_?(&(value->fields).token,::StringLiteral__);
-  (value->fields).sessionToken = ::StringLiteral__;
-  func_?(&(value->fields).sessionToken,::StringLiteral__);
-  (value->fields).newPlanetName = StringLiteral_game_server_test;
-  func_?(&(value->fields).newPlanetName,StringLiteral_game_server_test);
-  (value->fields).planetName = ::StringLiteral__;
-  func_?(&(value->fields).planetName,::StringLiteral__);
-  (value->fields).planetImageURL = ::StringLiteral__;
-  func_?(&(value->fields).planetImageURL,::StringLiteral__);
-  (value->fields).pingURL = ::StringLiteral__;
-  func_?(&(value->fields).pingURL,::StringLiteral__);
-  (value->fields).disconnectURL = ::StringLiteral__;
-  func_?(&(value->fields).disconnectURL,::StringLiteral__);
-  (value->fields).gameRewardURL = ::StringLiteral__;
-  func_?(&(value->fields).gameRewardURL,::StringLiteral__);
-  (value->fields).gamePublishedURL = ::StringLiteral__;
-  func_?(&(value->fields).gamePublishedURL,::StringLiteral__);
-  (value->fields).purchaseGoldURL = ::StringLiteral__;
-  func_?(&(value->fields).purchaseGoldURL,::StringLiteral__);
-  (value->fields).loginURL = ::StringLiteral__;
-  func_?(&(value->fields).loginURL,::StringLiteral__);
-  (value->fields).signupURL = ::StringLiteral__;
-  func_?(&(value->fields).signupURL,::StringLiteral__);
-  (value->fields).idleURL = ::StringLiteral__;
-  func_?(&(value->fields).idleURL,::StringLiteral__);
-  (value->fields).disconnectedURL = ::StringLiteral__;
-  func_?(&(value->fields).disconnectedURL,::StringLiteral__);
-  (value->fields).playerProfileURL = ::StringLiteral__;
-  func_?(&(value->fields).playerProfileURL,::StringLiteral__);
-  (value->fields).eliteUpgradeURL = ::StringLiteral__;
-  func_?(&(value->fields).eliteUpgradeURL,::StringLiteral__);
-  (value->fields).region = StringLiteral_RegionNotDefined;
-  func_?(&(value->fields).region,StringLiteral_RegionNotDefined);
-  (value->fields).ezKey = StringLiteral_h5g9REtmi1LT7JY5;
-  func_?(&(value->fields).ezKey,StringLiteral_h5g9REtmi1LT7JY5);
-  (value->fields).reauthURL = ::StringLiteral__;
-  func_?(&(value->fields).reauthURL,::StringLiteral__);
-  (value->fields).gameRewardDataURL = ::StringLiteral__;
-  func_?(&(value->fields).gameRewardDataURL,::StringLiteral__);
-  (value->fields).referrer = ::StringLiteral__;
-  func_?(&(value->fields).referrer,::StringLiteral__);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,unaff_EDI);
-  this_00 = gameSessionData;
+  iVar1 = iRam_?;
+  (this->fields).serverIP = ::StringLiteral__;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).profileID = -1;
+  (this->fields).planetID = -1;
+  (this->fields).gameMode = 1;
+  (this->fields).language = ::StringLiteral__;
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).language >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).embeddedSite = ::StringLiteral__;
+  iVar1 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).embeddedSite >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).token = ::StringLiteral__;
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).token >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).sessionToken = ::StringLiteral__;
+  iVar1 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).sessionToken >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).newPlanetName = StringLiteral_game_server_test;
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).newPlanetName >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).planetName = ::StringLiteral__;
+  iVar1 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).planetName >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).planetImageURL = ::StringLiteral__;
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).planetImageURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).pingURL = ::StringLiteral__;
+  iVar1 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).pingURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).disconnectURL = ::StringLiteral__;
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).disconnectURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).gameRewardURL = ::StringLiteral__;
+  iVar1 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).gameRewardURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).gamePublishedURL = ::StringLiteral__;
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).gamePublishedURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).purchaseGoldURL = ::StringLiteral__;
+  iVar1 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).purchaseGoldURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).loginURL = ::StringLiteral__;
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).loginURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).signupURL = ::StringLiteral__;
+  iVar1 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).signupURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).idleURL = ::StringLiteral__;
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).idleURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).disconnectedURL = ::StringLiteral__;
+  iVar1 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).disconnectedURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).playerProfileURL = ::StringLiteral__;
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).playerProfileURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).eliteUpgradeURL = ::StringLiteral__;
+  iVar1 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).eliteUpgradeURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).region = StringLiteral_RegionNotDefined;
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).region >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).ezKey = StringLiteral_h5g9REtmi1LT7JY5;
+  iVar1 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).ezKey >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).reauthURL = ::StringLiteral__;
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).reauthURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).gameRewardDataURL = ::StringLiteral__;
+  iVar1 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).gameRewardDataURL >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields).referrer = ::StringLiteral__;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).referrer >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
   if (gameSessionData != (Dictionary_2_System_String_System_Object_ *)0x0) {
-    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                       gameSessionData,(Object *)StringLiteral_serverIP,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
-                      );
-    if (TVar1.m_Index == 0) {
-      (value->fields).serverIP = (String *)0x0;
+    pSVar8 = (String *)
+             mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       ((Dictionary_2_System_Object_System_Object_ *)gameSessionData,
+                        (Object *)StringLiteral_serverIP,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
+                       );
+    pSVar9 = (String *)0x0;
+    if (pSVar8 == (String *)0x0) {
+      (this->fields).serverIP = (String *)0x0;
     }
     else {
-      TVar2.m_Index = (int32_t)(String *)0x0;
-      if (*(String__Class **)TVar1.m_Index == TypeInfo__System__String) {
-        TVar2 = TVar1;
+      pSVar10 = pSVar9;
+      if (pSVar8->klass == pSRam0000000182db2460) {
+        pSVar10 = pSVar8;
       }
-      if ((String *)TVar2.m_Index == (String *)0x0) goto code_?;
-      (value->fields).serverIP = (String *)TVar2.m_Index;
-      TVar2.m_Index = 0;
-      if (*(String__Class **)TVar1.m_Index == TypeInfo__System__String) {
-        TVar2 = TVar1;
+      if (pSVar10 == (String *)0x0) {
+        FUN_?();
+        pcVar11 = (code *)swi(3);
+        (*pcVar11)();
+        return;
       }
-      if (TVar2.m_Index == 0) goto code_?;
+      (this->fields).serverIP = pSVar10;
+      pSVar10 = pSVar9;
+      if (pSVar8->klass == pSRam0000000182db2460) {
+        pSVar10 = pSVar8;
+      }
+      if (pSVar10 == (String *)0x0) {
+        FUN_?();
+        pcVar11 = (code *)swi(3);
+        (*pcVar11)();
+        return;
+      }
     }
-    func_?();
-    TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,
-                       (Object *)StringLiteral_profileID,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
-                      );
-    if (TVar1.m_Index != 0) {
-      if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) !=
-          (TypeInfo__System__Int32->_0).element_class) goto code_?;
-      piVar3 = (int32_t *)func_?();
-      (value->fields).profileID = *piVar3;
-      TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,
-                         (Object *)StringLiteral_planetID,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
-                        );
-      if (TVar1.m_Index != 0) {
-        if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) !=
-            (TypeInfo__System__Int32->_0).element_class) goto code_?;
-        piVar3 = (int32_t *)func_?();
-        (value->fields).planetID = *piVar3;
-        TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,
-                           (Object *)StringLiteral_gameMode,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
-                          );
-        if (TVar1.m_Index != 0) {
-          if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) !=
-              (TypeInfo__MV__Common__MVGameMode->_0).element_class) goto code_?;
-          piVar3 = (int32_t *)func_?();
-          (value->fields).gameMode = *piVar3;
-          TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00
-                             ,(Object *)StringLiteral_language,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
-                            );
-          if (TVar1.m_Index == 0) {
-            (value->fields).language = (String *)0x0;
+    if (iRam_? != 0) {
+      uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+      lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+        puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar5;
+        if (bVar6) {
+          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    pOVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       ((Dictionary_2_System_Object_System_Object_ *)gameSessionData,
+                        (Object *)StringLiteral_profileID,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
+                       );
+    if (pOVar12 != (Object *)0x0) {
+      if ((pOVar12->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+        FUN_?(pOVar12);
+        pcVar11 = (code *)swi(3);
+        (*pcVar11)();
+        return;
+      }
+      (this->fields).profileID = *(int32_t *)&pOVar12[1].klass;
+      pOVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__get_Item
+                         ((Dictionary_2_System_Object_System_Object_ *)gameSessionData,
+                          (Object *)StringLiteral_planetID,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
+                         );
+      if (pOVar12 != (Object *)0x0) {
+        if ((pOVar12->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+          FUN_?(pOVar12);
+          pcVar11 = (code *)swi(3);
+          (*pcVar11)();
+          return;
+        }
+        (this->fields).planetID = *(int32_t *)&pOVar12[1].klass;
+        pOVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                 Object]::Dictionary_2_System_Object_System_Object__get_Item
+                           ((Dictionary_2_System_Object_System_Object_ *)gameSessionData,
+                            (Object *)StringLiteral_gameMode,
+                            MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
+                           );
+        if (pOVar12 != (Object *)0x0) {
+          if ((pOVar12->klass->_0).element_class !=
+              (TypeInfo__MV__Common__MVGameMode->_0).element_class) {
+            FUN_?(pOVar12);
+            pcVar11 = (code *)swi(3);
+            (*pcVar11)();
+            return;
+          }
+          (this->fields).gameMode = *(int32_t *)&pOVar12[1].klass;
+          pSVar8 = (String *)
+                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                   Object]::Dictionary_2_System_Object_System_Object__get_Item
+                             ((Dictionary_2_System_Object_System_Object_ *)gameSessionData,
+                              (Object *)StringLiteral_language,
+                              MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
+                             );
+          if (pSVar8 == (String *)0x0) {
+            (this->fields).language = (String *)0x0;
           }
           else {
-            TVar2.m_Index = (int32_t)(String *)0x0;
-            if (*(String__Class **)TVar1.m_Index == TypeInfo__System__String) {
-              TVar2 = TVar1;
+            pSVar10 = pSVar9;
+            if (pSVar8->klass == pSRam0000000182db2460) {
+              pSVar10 = pSVar8;
             }
-            if ((String *)TVar2.m_Index == (String *)0x0) goto code_?;
-            (value->fields).language = (String *)TVar2.m_Index;
-            TVar2.m_Index = 0;
-            if (*(String__Class **)TVar1.m_Index == TypeInfo__System__String) {
-              TVar2 = TVar1;
+            if (pSVar10 == (String *)0x0) {
+              FUN_?();
+              pcVar11 = (code *)swi(3);
+              (*pcVar11)();
+              return;
             }
-            if (TVar2.m_Index == 0) goto code_?;
+            (this->fields).language = pSVar10;
+            pSVar10 = pSVar9;
+            if (pSVar8->klass == pSRam0000000182db2460) {
+              pSVar10 = pSVar8;
+            }
+            if (pSVar10 == (String *)0x0) {
+              FUN_?();
+              pcVar11 = (code *)swi(3);
+              (*pcVar11)();
+              return;
+            }
           }
-          func_?();
-          TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00
-                             ,(Object *)StringLiteral_embedded,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
-                            );
-          if (TVar1.m_Index != 0) {
-            if (*(Il2CppClass **)(*(int *)TVar1.m_Index + 0x20) !=
-                (TypeInfo__System__Boolean->_0).element_class) goto code_?;
-            pbVar4 = (bool *)func_?();
-            (value->fields).embedded = *pbVar4;
-            pSVar5 = (String *)
+          if (iRam_? != 0) {
+            uVar2 = (uint)((ulonglong)&(this->fields).language >> 0xc);
+            lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+            do {
+              uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+              puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+              LOCK();
+              bVar6 = uVar4 == *puVar5;
+              if (bVar6) {
+                *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar6);
+          }
+          pOVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                   Object]::Dictionary_2_System_Object_System_Object__get_Item
+                             ((Dictionary_2_System_Object_System_Object_ *)gameSessionData,
+                              (Object *)StringLiteral_embedded,
+                              MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
+                             );
+          if (pOVar12 != (Object *)0x0) {
+            if ((pOVar12->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40))
+            {
+              FUN_?(pOVar12);
+              pcVar11 = (code *)swi(3);
+              (*pcVar11)();
+              return;
+            }
+            (this->fields).embedded = *(bool *)&pOVar12[1].klass;
+            pSVar8 = (String *)
                      mscorlib.dll::System::Collections::Generic::CollectionExtensions::
                      CollectionExtensions_GetValueOrDefault_5
-                               ((IReadOnlyDictionary_2_System_Object_System_Object_ *)this_00,
-                                (Object *)StringLiteral_embeddedSite,
-                                (Object *)(value->fields).embeddedSite,
+                               ((IReadOnlyDictionary_2_System_Object_System_Object_ *)
+                                gameSessionData,(Object *)StringLiteral_embeddedSite,
+                                (Object *)(this->fields).embeddedSite,
                                 System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::String,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::String,_System::Object>__System__String__System__Object_
                                );
-            if (pSVar5 == (String *)0x0) {
-              (value->fields).embeddedSite = (String *)0x0;
+            if (pSVar8 == (String *)0x0) {
+              (this->fields).embeddedSite = (String *)0x0;
             }
             else {
-              pSVar6 = (String *)0x0;
-              if (pSVar5->klass == TypeInfo__System__String) {
-                pSVar6 = pSVar5;
+              pSVar10 = pSVar9;
+              if (pSVar8->klass == pSRam0000000182db2460) {
+                pSVar10 = pSVar8;
               }
-              if (pSVar6 == (String *)0x0) goto code_?;
-              (value->fields).embeddedSite = pSVar6;
-              pSVar6 = (String *)0x0;
-              if (pSVar5->klass == TypeInfo__System__String) {
-                pSVar6 = pSVar5;
+              if (pSVar10 == (String *)0x0) {
+                FUN_?();
+                pcVar11 = (code *)swi(3);
+                (*pcVar11)();
+                return;
               }
-              if (pSVar6 == (String *)0x0) goto code_?;
+              (this->fields).embeddedSite = pSVar10;
+              pSVar10 = pSVar9;
+              if (pSVar8->klass == pSRam0000000182db2460) {
+                pSVar10 = pSVar8;
+              }
+              if (pSVar10 == (String *)0x0) {
+                FUN_?();
+                pcVar11 = (code *)swi(3);
+                (*pcVar11)();
+                return;
+              }
             }
-            func_?();
-            TVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Object,UnityEngine::UIElements::TextureId]::
-                    Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                              ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                               this_00,(Object *)StringLiteral_token,
-                               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
-                              );
-            if (TVar1.m_Index == 0) {
-              (value->fields).token = (String *)0x0;
+            if (iRam_? != 0) {
+              uVar2 = (uint)((ulonglong)&(this->fields).embeddedSite >> 0xc);
+              lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+              do {
+                uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+                puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+                LOCK();
+                bVar6 = uVar4 == *puVar5;
+                if (bVar6) {
+                  *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+                }
+                UNLOCK();
+              } while (!bVar6);
+            }
+            pSVar8 = (String *)
+                     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
+                     ::Object]::Dictionary_2_System_Object_System_Object__get_Item
+                               ((Dictionary_2_System_Object_System_Object_ *)gameSessionData,
+                                (Object *)StringLiteral_token,
+                                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::Object>__get_Item_System__String_
+                               );
+            if (pSVar8 == (String *)0x0) {
+              (this->fields).token = (String *)0x0;
             }
             else {
-              TVar2.m_Index = (int32_t)(String *)0x0;
-              if (*(String__Class **)TVar1.m_Index == TypeInfo__System__String) {
-                TVar2 = TVar1;
+              pSVar10 = pSVar9;
+              if (pSVar8->klass == pSRam0000000182db2460) {
+                pSVar10 = pSVar8;
               }
-              if ((String *)TVar2.m_Index == (String *)0x0) goto code_?;
-              (value->fields).token = (String *)TVar2.m_Index;
-              TVar2.m_Index = 0;
-              if (*(String__Class **)TVar1.m_Index == TypeInfo__System__String) {
-                TVar2 = TVar1;
+              if (pSVar10 == (String *)0x0) {
+                FUN_?();
+                pcVar11 = (code *)swi(3);
+                (*pcVar11)();
+                return;
               }
-              if (TVar2.m_Index == 0) goto code_?;
+              (this->fields).token = pSVar10;
+              pSVar10 = pSVar9;
+              if (pSVar8->klass == pSRam0000000182db2460) {
+                pSVar10 = pSVar8;
+              }
+              if (pSVar10 == (String *)0x0) {
+                FUN_?();
+                pcVar11 = (code *)swi(3);
+                (*pcVar11)();
+                return;
+              }
             }
-            func_?();
-            pSVar5 = (String *)
+            if (iRam_? != 0) {
+              uVar2 = (uint)((ulonglong)&(this->fields).token >> 0xc);
+              lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+              do {
+                uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+                puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+                LOCK();
+                bVar6 = uVar4 == *puVar5;
+                if (bVar6) {
+                  *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+                }
+                UNLOCK();
+              } while (!bVar6);
+            }
+            pSVar8 = (String *)
                      mscorlib.dll::System::Collections::Generic::CollectionExtensions::
                      CollectionExtensions_GetValueOrDefault_5
-                               ((IReadOnlyDictionary_2_System_Object_System_Object_ *)this_00,
-                                (Object *)StringLiteral_sessionToken,
-                                (Object *)(value->fields).sessionToken,
+                               ((IReadOnlyDictionary_2_System_Object_System_Object_ *)
+                                gameSessionData,(Object *)StringLiteral_sessionToken,
+                                (Object *)(this->fields).sessionToken,
                                 System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::String,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::String,_System::Object>__System__String__System__Object_
                                );
-            if (pSVar5 == (String *)0x0) {
-              (value->fields).sessionToken = (String *)0x0;
+            if (pSVar8 == (String *)0x0) {
+              (this->fields).sessionToken = (String *)0x0;
             }
             else {
-              pSVar6 = (String *)0x0;
-              if (pSVar5->klass == TypeInfo__System__String) {
-                pSVar6 = pSVar5;
+              pSVar10 = pSVar9;
+              if (pSVar8->klass == pSRam0000000182db2460) {
+                pSVar10 = pSVar8;
               }
-              if (pSVar6 == (String *)0x0) goto code_?;
-              (value->fields).sessionToken = pSVar6;
-              pSVar6 = (String *)0x0;
-              if (pSVar5->klass == TypeInfo__System__String) {
-                pSVar6 = pSVar5;
+              if (pSVar10 == (String *)0x0) {
+                FUN_?();
+                pcVar11 = (code *)swi(3);
+                (*pcVar11)();
+                return;
               }
-              if (pSVar6 == (String *)0x0) goto code_?;
+              (this->fields).sessionToken = pSVar10;
+              pSVar10 = pSVar9;
+              if (pSVar8->klass == pSRam0000000182db2460) {
+                pSVar10 = pSVar8;
+              }
+              if (pSVar10 == (String *)0x0) {
+                FUN_?();
+                pcVar11 = (code *)swi(3);
+                (*pcVar11)();
+                return;
+              }
             }
-            func_?();
-            this = (GameSessionData *)((uint)this & 0xffffff);
-            pOVar7 = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
-            pOVar7 = mscorlib.dll::System::Collections::Generic::CollectionExtensions::
+            if (iRam_? != 0) {
+              uVar2 = (uint)((ulonglong)&(this->fields).sessionToken >> 0xc);
+              lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+              do {
+                uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+                puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+                LOCK();
+                bVar6 = uVar4 == *puVar5;
+                if (bVar6) {
+                  *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+                }
+                UNLOCK();
+              } while (!bVar6);
+            }
+            lVar3 = lRam_?;
+            uStackX_8 = 0;
+            if (*(int *)(lRam_? + 0x28) < 0) {
+              if ((*(longlong *)(lRam_? + 0x60) == 0) ||
+                 (pSVar8 = pSVar9, (*(byte *)(lRam_? + 0x135) & 8) == 0)) {
+                pSVar8 = (String *)FUN_?(lRam_?);
+                FUN_?(&pSVar8->fields,&uStackX_8,(longlong)*(int *)(lVar3 + 0xf8) + -0x10);
+                if (iRam_? != 0) {
+                  uVar2 = (uint)((ulonglong)&pSVar8->fields >> 0xc);
+                  lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+                  do {
+                    uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+                    puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+                    LOCK();
+                    bVar6 = uVar4 == *puVar5;
+                    if (bVar6) {
+                      *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+                    }
+                    UNLOCK();
+                  } while (!bVar6);
+                }
+              }
+            }
+            else {
+              pSVar8 = (String *)((ulonglong)uStackX_9 << 8);
+            }
+            pOVar12 = mscorlib.dll::System::Collections::Generic::CollectionExtensions::
                      CollectionExtensions_GetValueOrDefault_5
-                               ((IReadOnlyDictionary_2_System_Object_System_Object_ *)this_00,
-                                (Object *)StringLiteral_playButtonAdsEnabledDefault,pOVar7,
+                               ((IReadOnlyDictionary_2_System_Object_System_Object_ *)
+                                gameSessionData,(Object *)StringLiteral_playButtonAdsEnabledDefault,
+                                (Object *)pSVar8,
                                 System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::String,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::String,_System::Object>__System__String__System__Object_
                                );
-            if (pOVar7 != (Object *)0x0) {
-              if ((pOVar7->klass->_0).element_class != (TypeInfo__System__Boolean->_0).element_class
-                 ) goto code_?;
-              pbVar4 = (bool *)func_?();
-              (value->fields).playButtonAdsEnabledDefault = *pbVar4;
-              pOVar7 = (Object *)func_?((uint)TypeInfo__System__Boolean & 0xffffff);
-              pOVar7 = mscorlib.dll::System::Collections::Generic::CollectionExtensions::
+            if (pOVar12 != (Object *)0x0) {
+              if ((pOVar12->klass->_0).element_class !=
+                  *(Il2CppClass **)(lRam_? + 0x40)) {
+                FUN_?(pOVar12);
+                pcVar11 = (code *)swi(3);
+                (*pcVar11)();
+                return;
+              }
+              (this->fields).playButtonAdsEnabledDefault = *(bool *)&pOVar12[1].klass;
+              lVar3 = lRam_?;
+              uStackX_8 = 0;
+              if (*(int *)(lRam_? + 0x28) < 0) {
+                if ((*(longlong *)(lRam_? + 0x60) == 0) ||
+                   (pSVar8 = pSVar9, (*(byte *)(lRam_? + 0x135) & 8) == 0)) {
+                  pSVar8 = (String *)FUN_?(lRam_?);
+                  FUN_?(&pSVar8->fields,&uStackX_8,(longlong)*(int *)(lVar3 + 0xf8) + -0x10)
+                  ;
+                  if (iRam_? != 0) {
+                    uVar2 = (uint)((ulonglong)&pSVar8->fields >> 0xc);
+                    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+                    do {
+                      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+                      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+                      LOCK();
+                      bVar6 = uVar4 == *puVar5;
+                      if (bVar6) {
+                        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+                      }
+                      UNLOCK();
+                    } while (!bVar6);
+                  }
+                }
+              }
+              else {
+                pSVar8 = (String *)((ulonglong)uStackX_9 << 8);
+              }
+              pOVar12 = mscorlib.dll::System::Collections::Generic::CollectionExtensions::
                        CollectionExtensions_GetValueOrDefault_5
-                                 ((IReadOnlyDictionary_2_System_Object_System_Object_ *)this_00,
-                                  (Object *)StringLiteral_boostersEnabledDefault,pOVar7,
+                                 ((IReadOnlyDictionary_2_System_Object_System_Object_ *)
+                                  gameSessionData,(Object *)StringLiteral_boostersEnabledDefault,
+                                  (Object *)pSVar8,
                                   System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::String,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::String,_System::Object>__System__String__System__Object_
                                  );
-              if (pOVar7 != (Object *)0x0) {
-                if ((pOVar7->klass->_0).element_class !=
-                    (TypeInfo__System__Boolean->_0).element_class) goto code_?;
-                pbVar4 = (bool *)func_?();
-                (value->fields).boostersEnabledDefault = *pbVar4;
-                pOVar7 = (Object *)
-                         func_?(CONCAT13((char)((uint)TypeInfo__System__Boolean >> 0x18),
-                                                  (uint3)(ushort)TypeInfo__System__Boolean));
-                pOVar7 = mscorlib.dll::System::Collections::Generic::CollectionExtensions::
+              if (pOVar12 != (Object *)0x0) {
+                if ((pOVar12->klass->_0).element_class !=
+                    *(Il2CppClass **)(lRam_? + 0x40)) {
+                  FUN_?(pOVar12);
+                  pcVar11 = (code *)swi(3);
+                  (*pcVar11)();
+                  return;
+                }
+                (this->fields).boostersEnabledDefault = *(bool *)&pOVar12[1].klass;
+                lVar3 = lRam_?;
+                uStackX_8 = 0;
+                if (*(int *)(lRam_? + 0x28) < 0) {
+                  if ((*(longlong *)(lRam_? + 0x60) == 0) ||
+                     (pSVar8 = pSVar9, (*(byte *)(lRam_? + 0x135) & 8) == 0)) {
+                    pSVar8 = (String *)FUN_?(lRam_?);
+                    FUN_?(&pSVar8->fields,&uStackX_8,
+                                  (longlong)*(int *)(lVar3 + 0xf8) + -0x10);
+                    if (iRam_? != 0) {
+                      uVar2 = (uint)((ulonglong)&pSVar8->fields >> 0xc);
+                      lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+                      do {
+                        uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+                        puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+                        LOCK();
+                        bVar6 = uVar4 == *puVar5;
+                        if (bVar6) {
+                          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+                        }
+                        UNLOCK();
+                      } while (!bVar6);
+                    }
+                  }
+                }
+                else {
+                  pSVar8 = (String *)((ulonglong)uStackX_9 << 8);
+                }
+                pOVar12 = mscorlib.dll::System::Collections::Generic::CollectionExtensions::
                          CollectionExtensions_GetValueOrDefault_5
-                                   ((IReadOnlyDictionary_2_System_Object_System_Object_ *)this_00,
-                                    (Object *)StringLiteral_interstitialsAdsEnabledDefault,pOVar7,
+                                   ((IReadOnlyDictionary_2_System_Object_System_Object_ *)
+                                    gameSessionData,
+                                    (Object *)StringLiteral_interstitialsAdsEnabledDefault,
+                                    (Object *)pSVar8,
                                     System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::String,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::String,_System::Object>__System__String__System__Object_
                                    );
-                if (pOVar7 != (Object *)0x0) {
-                  if ((pOVar7->klass->_0).element_class !=
-                      (TypeInfo__System__Boolean->_0).element_class) goto code_?;
-                  pbVar4 = (bool *)func_?();
-                  (value->fields).interstitialsAdsEnabledDefault = *pbVar4;
-                  pOVar7 = (Object *)
-                           func_?(CONCAT22((short)((uint)TypeInfo__System__Boolean >> 0x10)
-                                                    ,(ushort)(byte)TypeInfo__System__Boolean));
-                  pOVar7 = mscorlib.dll::System::Collections::Generic::CollectionExtensions::
+                if (pOVar12 != (Object *)0x0) {
+                  if ((pOVar12->klass->_0).element_class !=
+                      *(Il2CppClass **)(lRam_? + 0x40)) {
+                    FUN_?(pOVar12);
+                    pcVar11 = (code *)swi(3);
+                    (*pcVar11)();
+                    return;
+                  }
+                  (this->fields).interstitialsAdsEnabledDefault = *(bool *)&pOVar12[1].klass;
+                  lVar3 = lRam_?;
+                  uStackX_8 = 0;
+                  if (*(int *)(lRam_? + 0x28) < 0) {
+                    if ((*(longlong *)(lRam_? + 0x60) == 0) ||
+                       (pSVar8 = pSVar9, (*(byte *)(lRam_? + 0x135) & 8) == 0)) {
+                      pSVar8 = (String *)FUN_?(lRam_?);
+                      FUN_?(&pSVar8->fields,&uStackX_8,
+                                    (longlong)*(int *)(lVar3 + 0xf8) + -0x10);
+                      if (iRam_? != 0) {
+                        uVar2 = (uint)((ulonglong)&pSVar8->fields >> 0xc);
+                        lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+                        do {
+                          uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+                          puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+                          LOCK();
+                          bVar6 = uVar4 == *puVar5;
+                          if (bVar6) {
+                            *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+                          }
+                          UNLOCK();
+                        } while (!bVar6);
+                      }
+                    }
+                  }
+                  else {
+                    pSVar8 = (String *)((ulonglong)uStackX_9 << 8);
+                  }
+                  pOVar12 = mscorlib.dll::System::Collections::Generic::CollectionExtensions::
                            CollectionExtensions_GetValueOrDefault_5
-                                     ((IReadOnlyDictionary_2_System_Object_System_Object_ *)this_00,
-                                      (Object *)StringLiteral_rewardedAdsEnabledDefault,pOVar7,
+                                     ((IReadOnlyDictionary_2_System_Object_System_Object_ *)
+                                      gameSessionData,
+                                      (Object *)StringLiteral_rewardedAdsEnabledDefault,
+                                      (Object *)pSVar8,
                                       System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::String,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::String,_System::Object>__System__String__System__Object_
                                      );
-                  if (pOVar7 != (Object *)0x0) {
-                    if ((pOVar7->klass->_0).element_class !=
-                        (TypeInfo__System__Boolean->_0).element_class) goto code_?;
-                    pbVar4 = (bool *)func_?();
-                    (value->fields).rewardedAdsEnabledDefault = *pbVar4;
-                    pSVar5 = (String *)
-                             mscorlib.dll::System::Collections::Generic::CollectionExtensions::
-                             CollectionExtensions_GetValueOrDefault_5
-                                       ((IReadOnlyDictionary_2_System_Object_System_Object_ *)
-                                        this_00,(Object *)StringLiteral_newPlanetName,
-                                        (Object *)(value->fields).newPlanetName,
-                                        System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::String,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::String,_System::Object>__System__String__System__Object_
-                                       );
-                    if (pSVar5 == (String *)0x0) {
-                      (value->fields).newPlanetName = (String *)0x0;
-                    }
-                    else {
-                      pSVar6 = (String *)0x0;
-                      if (pSVar5->klass == TypeInfo__System__String) {
-                        pSVar6 = pSVar5;
-                      }
-                      if (pSVar6 == (String *)0x0) goto code_?;
-                      (value->fields).newPlanetName = pSVar6;
-                      pSVar6 = (String *)0x0;
-                      if (pSVar5->klass == TypeInfo__System__String) {
-                        pSVar6 = pSVar5;
-                      }
-                      if (pSVar6 == (String *)0x0) goto code_?;
-                    }
-                    func_?();
-                    pSVar5 = (String *)
-                             mscorlib.dll::System::Collections::Generic::CollectionExtensions::
-                             CollectionExtensions_GetValueOrDefault_5
-                                       ((IReadOnlyDictionary_2_System_Object_System_Object_ *)
-                                        this_00,(Object *)StringLiteral_planetName,
-                                        (Object *)(value->fields).planetName,
-                                        System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::String,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::String,_System::Object>__System__String__System__Object_
-                                       );
-                    if (pSVar5 == (String *)0x0) {
-                      (value->fields).planetName = (String *)0x0;
-                    }
-                    else {
-                      pSVar6 = (String *)0x0;
-                      if (pSVar5->klass == TypeInfo__System__String) {
-                        pSVar6 = pSVar5;
-                      }
-                      if (pSVar6 == (String *)0x0) goto code_?;
-                      (value->fields).planetName = pSVar6;
-                      pSVar6 = (String *)0x0;
-                      if (pSVar5->klass == TypeInfo__System__String) {
-                        pSVar6 = pSVar5;
-                      }
-                      if (pSVar6 == (String *)0x0) goto code_?;
-                    }
-                    func_?();
-                    pSVar5 = (String *)
-                             mscorlib.dll::System::Collections::Generic::CollectionExtensions::
-                             CollectionExtensions_GetValueOrDefault_5
-                                       ((IReadOnlyDictionary_2_System_Object_System_Object_ *)
-                                        this_00,(Object *)StringLiteral_planetImageURL,
-                                        (Object *)(value->fields).planetImageURL,
-                                        System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::String,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::String,_System::Object>__System__String__System__Object_
-                                       );
-                    if (pSVar5 == (String *)0x0) {
-                      (value->fields).planetImageURL = (String *)0x0;
-code_?:
-                      func_?();
-                      if ((value->fields).gameMode == 2) {
-                        (value->fields).planetID = -1;
-                      }
+                  if (pOVar12 != (Object *)0x0) {
+                    if ((pOVar12->klass->_0).element_class !=
+                        *(Il2CppClass **)(lRam_? + 0x40)) {
+                      FUN_?(pOVar12);
+                      pcVar11 = (code *)swi(3);
+                      (*pcVar11)();
                       return;
                     }
-                    pSVar6 = (String *)0x0;
-                    if (pSVar5->klass == TypeInfo__System__String) {
-                      pSVar6 = pSVar5;
+                    (this->fields).rewardedAdsEnabledDefault = *(bool *)&pOVar12[1].klass;
+                    pSVar8 = (String *)
+                             mscorlib.dll::System::Collections::Generic::CollectionExtensions::
+                             CollectionExtensions_GetValueOrDefault_5
+                                       ((IReadOnlyDictionary_2_System_Object_System_Object_ *)
+                                        gameSessionData,(Object *)StringLiteral_newPlanetName,
+                                        (Object *)(this->fields).newPlanetName,
+                                        System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::String,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::String,_System::Object>__System__String__System__Object_
+                                       );
+                    if (pSVar8 == (String *)0x0) {
+                      (this->fields).newPlanetName = (String *)0x0;
                     }
-                    if (pSVar6 != (String *)0x0) {
-                      (value->fields).planetImageURL = pSVar6;
-                      pSVar6 = (String *)0x0;
-                      if (pSVar5->klass == TypeInfo__System__String) {
-                        pSVar6 = pSVar5;
+                    else {
+                      pSVar10 = pSVar9;
+                      if (pSVar8->klass == pSRam0000000182db2460) {
+                        pSVar10 = pSVar8;
                       }
-                      if (pSVar6 != (String *)0x0) goto code_?;
+                      if (pSVar10 == (String *)0x0) {
+                        FUN_?();
+                        pcVar11 = (code *)swi(3);
+                        (*pcVar11)();
+                        return;
+                      }
+                      (this->fields).newPlanetName = pSVar10;
+                      pSVar10 = pSVar9;
+                      if (pSVar8->klass == pSRam0000000182db2460) {
+                        pSVar10 = pSVar8;
+                      }
+                      if (pSVar10 == (String *)0x0) {
+                        FUN_?();
+                        pcVar11 = (code *)swi(3);
+                        (*pcVar11)();
+                        return;
+                      }
                     }
-                    goto code_?;
+                    if (iRam_? != 0) {
+                      uVar2 = (uint)((ulonglong)&(this->fields).newPlanetName >> 0xc);
+                      lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+                      do {
+                        uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+                        puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+                        LOCK();
+                        bVar6 = uVar4 == *puVar5;
+                        if (bVar6) {
+                          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+                        }
+                        UNLOCK();
+                      } while (!bVar6);
+                    }
+                    pSVar8 = (String *)
+                             mscorlib.dll::System::Collections::Generic::CollectionExtensions::
+                             CollectionExtensions_GetValueOrDefault_5
+                                       ((IReadOnlyDictionary_2_System_Object_System_Object_ *)
+                                        gameSessionData,(Object *)StringLiteral_planetName,
+                                        (Object *)(this->fields).planetName,
+                                        System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::String,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::String,_System::Object>__System__String__System__Object_
+                                       );
+                    if (pSVar8 == (String *)0x0) {
+                      (this->fields).planetName = (String *)0x0;
+                    }
+                    else {
+                      pSVar10 = pSVar9;
+                      if (pSVar8->klass == pSRam0000000182db2460) {
+                        pSVar10 = pSVar8;
+                      }
+                      if (pSVar10 == (String *)0x0) {
+                        FUN_?();
+                        pcVar11 = (code *)swi(3);
+                        (*pcVar11)();
+                        return;
+                      }
+                      (this->fields).planetName = pSVar10;
+                      pSVar10 = pSVar9;
+                      if (pSVar8->klass == pSRam0000000182db2460) {
+                        pSVar10 = pSVar8;
+                      }
+                      if (pSVar10 == (String *)0x0) {
+                        FUN_?();
+                        pcVar11 = (code *)swi(3);
+                        (*pcVar11)();
+                        return;
+                      }
+                    }
+                    if (iRam_? != 0) {
+                      uVar2 = (uint)((ulonglong)&(this->fields).planetName >> 0xc);
+                      lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+                      do {
+                        uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+                        puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+                        LOCK();
+                        bVar6 = uVar4 == *puVar5;
+                        if (bVar6) {
+                          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+                        }
+                        UNLOCK();
+                      } while (!bVar6);
+                    }
+                    pSVar8 = (String *)
+                             mscorlib.dll::System::Collections::Generic::CollectionExtensions::
+                             CollectionExtensions_GetValueOrDefault_5
+                                       ((IReadOnlyDictionary_2_System_Object_System_Object_ *)
+                                        gameSessionData,(Object *)StringLiteral_planetImageURL,
+                                        (Object *)(this->fields).planetImageURL,
+                                        System__Object_MethodInfo__System__Collections__Generic__CollectionExtensions__GetValueOrDefault<System::String,_System::Object>_System__Collections__Generic__IReadOnlyDictionary<System::String,_System::Object>__System__String__System__Object_
+                                       );
+                    if (pSVar8 == (String *)0x0) {
+                      (this->fields).planetImageURL = (String *)0x0;
+                    }
+                    else {
+                      pSVar10 = pSVar9;
+                      if (pSVar8->klass == pSRam0000000182db2460) {
+                        pSVar10 = pSVar8;
+                      }
+                      if (pSVar10 == (String *)0x0) {
+                        FUN_?(pSVar8);
+                        pcVar11 = (code *)swi(3);
+                        (*pcVar11)();
+                        return;
+                      }
+                      (this->fields).planetImageURL = pSVar10;
+                      if (pSVar8->klass == pSRam0000000182db2460) {
+                        pSVar9 = pSVar8;
+                      }
+                      if (pSVar9 == (String *)0x0) {
+                        FUN_?(pSVar8);
+                        pcVar11 = (code *)swi(3);
+                        (*pcVar11)();
+                        return;
+                      }
+                    }
+                    if (iRam_? != 0) {
+                      uVar2 = (uint)((ulonglong)&(this->fields).planetImageURL >> 0xc);
+                      lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+                      do {
+                        uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+                        puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+                        LOCK();
+                        bVar6 = uVar4 == *puVar5;
+                        if (bVar6) {
+                          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+                        }
+                        UNLOCK();
+                      } while (!bVar6);
+                    }
+                    if ((this->fields).gameMode == 2) {
+                      (this->fields).planetID = -1;
+                    }
+                    return;
                   }
                 }
               }
@@ -612,11 +1704,9 @@ code_?:
       }
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

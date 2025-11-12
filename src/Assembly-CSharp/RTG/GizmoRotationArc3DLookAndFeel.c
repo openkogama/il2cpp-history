@@ -5,26 +5,35 @@ void Assembly-CSharp.dll::RTG::GizmoRotationArc3DLookAndFeel::GizmoRotationArc3D
                (GizmoRotationArc3DLookAndFeel *this,MethodInfo *method)
 
 {
+  uVar1 = _UNK_?;
+  uVar2 = _UNK_?;
+  uVar3 = _UNK_?;
+  uVar4 = _UNK_?;
+  (this->fields)._color.r = (float)_UNK_?;
+  uVar5 = _UNK_?;
+  (this->fields)._color.g = (float)uVar4;
+  _UNK_? = (undefined4)uVar3;
+  _UNK_? = SUB84(uVar3,4);
+  uVar4 = _UNK_?;
+  (this->fields)._color.b = (float)_UNK_?;
+  _UNK_? = uVar5;
+  (this->fields)._color.a = (float)uVar4;
   (this->fields)._useShortestRotation = 1;
+  uVar3 = _UNK_?;
+  _UNK_? = (undefined4)uVar2;
+  _UNK_? = SUB84(uVar2,4);
+  uVar4 = _UNK_?;
+  (this->fields)._borderColor.r = (float)_UNK_?;
+  _UNK_? = uVar3;
+  uVar3 = _UNK_?;
+  (this->fields)._borderColor.g = (float)uVar4;
+  _UNK_? = (undefined4)uVar1;
+  _UNK_? = SUB84(uVar1,4);
+  uVar4 = _UNK_?;
+  (this->fields)._borderColor.b = (float)_UNK_?;
+  _UNK_? = uVar3;
+  (this->fields)._borderColor.a = (float)uVar4;
   (this->fields)._fillFlags = 3;
-  pCVar1 = RTSystemValues::RTSystemValues_get_GuideFillColor(&CStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  (this->fields)._color.r = pCVar1->r;
-  (this->fields)._color.g = fVar3;
-  (this->fields)._color.b = fVar4;
-  (this->fields)._color.a = fVar5;
-  pCVar1 = RTSystemValues::RTSystemValues_get_GuideBorderColor(&CStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  (this->fields)._borderColor.r = pCVar1->r;
-  (this->fields)._borderColor.g = fVar3;
-  (this->fields)._borderColor.b = fVar4;
-  (this->fields)._borderColor.a = fVar5;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   return;
 }
 

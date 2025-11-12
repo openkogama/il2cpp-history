@@ -6,89 +6,96 @@ void Assembly-CSharp.dll::ChatConsoleModes::ChatConsoleModes_Set
                RectTransform **rectTransform,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffbc;
-  puVar5 = &stack0xffffffbc;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ChatConsoleModeDef>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ChatConsoleModeDef>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ChatConsoleModeDef>__get_Current__
-                   );
-    func_?(&TypeInfo__IPlayModeUI);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<ChatConsoleModeDef>__GetEnumerator__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ChatConsoleModeDef>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ChatConsoleModeDef>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ChatConsoleModeDef>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__IPlayModeUI);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<ChatConsoleModeDef>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
   (this->fields).chatConsoleMode = chatConsoleMode;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pIVar7 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
-  if (pIVar7 != (IPlayModeUI *)0x0) {
-    iVar8 = func_?(5,TypeInfo__IPlayModeUI,pIVar7);
-    if (iVar8 != 0) {
-      (**(code **)(iVar8 + 0xc))
-                (*(undefined4 *)(iVar8 + 0x20),chatConsoleMode,*(undefined4 *)(iVar8 + 0x14));
+  if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField !=
+      (IPlayModeUI *)0x0) {
+    lVar1 = FUN_?();
+    if (lVar1 != 0) {
+      (**(code **)(lVar1 + 0x18))(*(undefined8 *)(lVar1 + 0x40),chatConsoleMode);
     }
-    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              (this->fields).chatConsoleModeDefs;
-    if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      pLVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-               RegexCharClass+SingleRange]::
-               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                         (&LStack_10,this_00,
-                          MethodInfo__System__Collections__Generic__List<ChatConsoleModeDef>__GetEnumerator__
-                         );
-      LStack_6._list = (List_1_System_Object_ *)pLVar9->_list;
-      LStack_6._index = pLVar9->_index;
-      LStack_6._version = pLVar9->_version;
-      LStack_6._current = *(Object **)&pLVar9->_current;
-      LStack_10._version = 0;
-      uStack_1 = 1;
-      LStack_10._current = (RegexCharClass_SingleRange)&LStack_6;
-      do {
-        bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+    LStack_2._list = (List_1_System_Object_ *)(this->fields).chatConsoleModeDefs;
+    if ((List_1_ChatConsoleModeDef_ *)LStack_2._list != (List_1_ChatConsoleModeDef_ *)0x0) {
+      if (iRam_? != 0) {
+        uVar3 = (uint)((ulonglong)&uStack_4 >> 0xc);
+        puVar5 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+        do {
+          uVar6 = *puVar5;
+          LOCK();
+          uVar7 = *puVar5;
+          if (uVar6 == uVar7) {
+            *puVar5 = uVar6 | 1L << (ulonglong)(uVar3 & 0x3f);
+          }
+          UNLOCK();
+        } while (uVar6 != uVar7);
+      }
+      pLStack_8 = (List_1_T_Enumerator_System_Object_ *)
+                   ((ulonglong)
+                    (uint)(((List_1_ChatConsoleModeDef_ *)LStack_2._list)->fields)._version << 0x20
+                   );
+      uStack_9 = 0;
+      LStack_2._8_8_ = pLStack_8;
+      LStack_2._current = (Object *)0x0;
+      uStack_4 = 0;
+      pLStack_8 = &LStack_2;
+      while( true ) {
+        bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
                 List_1_T_Enumerator_System_Object__MoveNext
-                          (&LStack_6,
+                          (&LStack_2,
                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ChatConsoleModeDef>__MoveNext__
                           );
-        if (bVar11 == 0) goto code_?;
-        if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0)
-        goto code_?;
-      } while (*(ChatConsoleMode__Enum *)((int)LStack_6._current + 0x10) != chatConsoleMode);
-      ChatConsoleModeDef::ChatConsoleModeDef_Set
-                ((ChatConsoleModeDef *)LStack_6._current,rectTransform,(MethodInfo *)0x0);
-code_?:
-      uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)&LStack_6,
-                 (ExceptionArgument__Enum)
-                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<ChatConsoleModeDef>__Dispose__
-                 ,unaff_EDI);
-      *unaff_FS_OFFSET = uStack_3;
+        if (bVar10 == 0) {
+          return;
+        }
+        if ((ChatConsoleModeDef *)LStack_2._current == (ChatConsoleModeDef *)0x0) break;
+        if (((ChatConsoleModeDef__Fields *)((longlong)LStack_2._current + 0x10))->ChatConsoleMode
+            == chatConsoleMode) {
+          ChatConsoleModeDef::ChatConsoleModeDef_Set
+                    ((ChatConsoleModeDef *)LStack_2._current,rectTransform,(MethodInfo *)0x0);
+          return;
+        }
+      }
+      FUN_?();
+      FUN_?();
+      pcVar11 = (code *)swi(3);
+      (*pcVar11)();
       return;
     }
   }
-code_?:
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -100,21 +107,45 @@ void Assembly-CSharp.dll::ChatConsoleModes::ChatConsoleModes__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<ChatConsoleModeDef>__List__);
-    func_?(&TypeInfo__System__Collections__Generic__List<ChatConsoleModeDef>);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<ChatConsoleModeDef>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<ChatConsoleModeDef>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (List_1_ChatConsoleModeDef_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<ChatConsoleModeDef>);
+            FUN_?(TypeInfo__System__Collections__Generic__List<ChatConsoleModeDef>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<ChatConsoleModeDef>__List__);
+  bVar1 = iRam_? != 0;
   (this->fields).chatConsoleModeDefs = this_00;
-  func_?(&(this->fields).chatConsoleModeDefs,this_00);
-  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
-            ((MonoBehaviour *)this,(MethodInfo *)0x0);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).chatConsoleModeDefs >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
   return;
 }
 

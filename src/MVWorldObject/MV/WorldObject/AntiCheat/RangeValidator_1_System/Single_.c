@@ -7,18 +7,28 @@ String * MVWorldObject.dll::MV::WorldObject::AntiCheat::RangeValidator`1[System:
 
 {
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_min__0___max__1__);
+    FUN_?(&StringLiteral_min__0___max__1__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar1 = method;
-  pRVar2 = this;
-  this = (RangeValidator_1_System_Single_ *)(this->fields).min;
-  arg0 = (Object *)func_?(method->klass->rgctx_data->rgctxDataDummy,&this);
-  method = (MethodInfo *)(pRVar2->fields).max;
-  arg1 = (Object *)func_?(pMVar1->klass->rgctx_data->rgctxDataDummy,&method);
-  pSVar3 = mscorlib.dll::System::String::String_Format_1
-                     (StringLiteral_min__0___max__1__,arg0,arg1,(MethodInfo *)0x0);
-  return pSVar3;
+  afStackX_8[0] = (this->fields).min;
+  arg0 = (Object *)FUN_?(method->klass->rgctx_data->rgctxDataDummy,afStackX_8);
+  afStackX_8[0] = (this->fields).max;
+  arg1 = (Object *)FUN_?(method->klass->rgctx_data->rgctxDataDummy,afStackX_8);
+  pSVar1 = StringLiteral_min__0___max__1__;
+  PStack_2._arg0 = (Object *)0x0;
+  PStack_2._arg1 = (Object *)0x0;
+  PStack_2._arg2 = (Object *)0x0;
+  PStack_2._args = (Object__Array *)0x0;
+  mscorlib.dll::System::ParamsArray::ParamsArray__ctor_1(&PStack_2,arg0,arg1,(MethodInfo *)0x0);
+  PStack_3._arg0 = PStack_2._arg0;
+  PStack_3._arg1 = PStack_2._arg1;
+  PStack_3._arg2 = PStack_2._arg2;
+  PStack_3._args = PStack_2._args;
+  pSVar1 = mscorlib.dll::System::String::String_FormatHelper
+                     ((IFormatProvider *)0x0,pSVar1,&PStack_3,(MethodInfo *)0x0);
+  return pSVar1;
 }
 
 
@@ -30,44 +40,38 @@ float MVWorldObject.dll::MV::WorldObject::AntiCheat::RangeValidator`1[System::Si
                 MethodInfo *method)
 
 {
-  pMVar1 = method;
-  iVar2 = mscorlib.dll::System::Single::Single_CompareTo_1
-                    ((Single *)&value,(this->fields).min,method->klass->rgctx_data[3].method);
-  if (iVar2 < 0) {
-    if (fixIfInValid != 0) {
-      return (this->fields).min;
+  fVar1 = (this->fields).min;
+  if ((value < fVar1) ||
+     ((((value <= fVar1 && (value != fVar1)) && (0x7f800000 < (uint)ABS(value))) &&
+      ((uint)ABS(fVar1) < 0x7f800001)))) {
+    if (fixIfInValid == 0) {
+      uVar2 = func_?(&TypeInfo__System__Exception);
+      pEVar3 = (Exception *)func_?(uVar2);
+      pSVar4 = (String *)func_?(&StringLiteral_value__minVal);
+      mscorlib.dll::System::Exception::Exception__ctor_1(pEVar3,pSVar4,(MethodInfo *)0x0);
+      FUN_?(pEVar3,method);
+      pcVar5 = (code *)swi(3);
+      fVar1 = (float)(*pcVar5)();
+      return fVar1;
     }
   }
   else {
-    iVar2 = mscorlib.dll::System::Single::Single_CompareTo_1
-                      ((Single *)&value,(this->fields).max,pMVar1->klass->rgctx_data[3].method);
-    if (iVar2 < 1) {
-      return value;
+    fVar6 = (this->fields).max;
+    fVar1 = value;
+    if (((fVar6 <= value) &&
+        ((fVar6 < value || ((value != fVar6 && ((uint)ABS(value) < 0x7f800001)))))) &&
+       (fVar1 = fVar6, fixIfInValid == 0)) {
+      uVar2 = func_?(&TypeInfo__System__Exception);
+      pEVar3 = (Exception *)func_?(uVar2);
+      pSVar4 = (String *)func_?(&StringLiteral_value___maxVal);
+      mscorlib.dll::System::Exception::Exception__ctor_1(pEVar3,pSVar4,(MethodInfo *)0x0);
+      FUN_?(pEVar3,method);
+      pcVar5 = (code *)swi(3);
+      fVar1 = (float)(*pcVar5)();
+      return fVar1;
     }
-    if (fixIfInValid != 0) {
-      return (this->fields).max;
-    }
-    value = (float)&TypeInfo__System__Exception;
-    func_?();
-    pEVar3 = (Exception *)func_?();
-    value = 0.0;
-    pSVar4 = (String *)func_?();
-    mscorlib.dll::System::Exception::Exception__ctor_1(pEVar3,pSVar4,(MethodInfo *)value);
-    in_stack_5 = pMVar1;
-    _fixIfInValid = &UNK_?;
-    method = (MethodInfo *)pEVar3;
-    func_?();
   }
-  uVar6 = func_?(&TypeInfo__System__Exception);
-  pEVar3 = (Exception *)func_?(uVar6);
-  method_00 = (MethodInfo *)0x0;
-  pSVar4 = (String *)func_?(&StringLiteral_value__minVal);
-  mscorlib.dll::System::Exception::Exception__ctor_1(pEVar3,pSVar4,method_00);
-  value = (float)pMVar1;
-  func_?();
-  pcVar7 = (code *)swi(3);
-  fVar8 = (float10)(*pcVar7)();
-  return (float)fVar8;
+  return fVar1;
 }
 
 
@@ -78,8 +82,6 @@ void MVWorldObject.dll::MV::WorldObject::AntiCheat::RangeValidator`1[System::Sin
                (RangeValidator_1_System_Single_ *this,float min,float max,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).min = min;
   (this->fields).max = max;
   return;

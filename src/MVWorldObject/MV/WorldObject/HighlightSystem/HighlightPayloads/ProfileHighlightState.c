@@ -6,21 +6,33 @@ void MVWorldObject.dll::MV::WorldObject::HighlightSystem::HighlightPayloads::Pro
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
-    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
-            )func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
-  ::TextResourceManager+FontAssetRef]::
-  Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
-            (this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
-  method_00 = (MethodInfo *)&this->fields;
-  (this->fields).slotSeenIdMap = (Dictionary_2_System_Int32_System_Int32_ *)this_00;
-  func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  pDVar1 = (Dictionary_2_System_Int32_System_Int32_ *)
+           FUN_?(TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
+  FUN_?(pDVar1,MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__)
+  ;
+  bVar2 = iRam_? != 0;
+  (this->fields).slotSeenIdMap = pDVar1;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&this->fields >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
   return;
 }
 

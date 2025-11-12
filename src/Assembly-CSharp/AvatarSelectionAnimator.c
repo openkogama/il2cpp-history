@@ -6,34 +6,33 @@ int32_t Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_Ge
 
 {
   if (cRam_? == '\0') {
-    ppMStack_1 = &MethodInfo__System__Collections__Generic__List<MVBody>__get_Count__;
-    func_?();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Count__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields).forward == 0) {
     if ((this->fields).currentIndex != 0) {
       return (this->fields).currentIndex + -1;
     }
-    pLVar2 = (this->fields).Bodies;
-    if (pLVar2 != (List_1_MVBody_ *)0x0) {
-      return (pLVar2->fields)._size + -1;
+    pLVar1 = (this->fields).Bodies;
+    if (pLVar1 != (List_1_MVBody_ *)0x0) {
+      return (pLVar1->fields)._size + -1;
     }
   }
   else {
-    pLVar2 = (this->fields).Bodies;
-    if (pLVar2 != (List_1_MVBody_ *)0x0) {
-      if ((this->fields).currentIndex == (pLVar2->fields)._size + -1) {
+    pLVar1 = (this->fields).Bodies;
+    if (pLVar1 != (List_1_MVBody_ *)0x0) {
+      if ((this->fields).currentIndex == (pLVar1->fields)._size + -1) {
         return 0;
       }
       return (this->fields).currentIndex + 1;
     }
   }
-  ppMStack_1 = (MethodInfo **)&stack0xfffffffc;
-  uVar3 = func_?(auStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  iVar6 = (*pcVar5)();
-  return iVar6;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  iVar3 = (*pcVar2)();
+  return iVar3;
 }
 
 
@@ -45,83 +44,128 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_SetTa
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Count__);
-    func_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((currentIndexInp == TargetIndexInp) && ((this->fields).targetIndex == -1)) {
-    pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-             (this->fields).Bodies;
-    if ((pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
-       (RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (pLVar1,currentIndexInp,
-                           MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_),
-       RVar2 != (RegexCharClass_SingleRange)0x0)) {
-      uVar3._0_4_ = (this->fields).displayPos.x;
-      uVar3._4_4_ = (this->fields).displayPos.y;
-      (**(code **)(*(int *)RVar2 + 400))
-                (RVar2,uVar3,(this->fields).displayPos.z,*(undefined4 *)(*(int *)RVar2 + 0x194));
-      pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-               (this->fields).Bodies;
-      if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (pLVar1,currentIndexInp,
-                           MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__UnityEngine__Vector3);
-          cRam_? = '\x01';
-        }
-        pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
-        if (RVar2 != (RegexCharClass_SingleRange)0x0) {
-          uVar5._0_4_ = (pVVar4->oneVector).x;
-          uVar5._4_4_ = (pVVar4->oneVector).y;
-          (**(code **)(*(int *)RVar2 + 0x108))
-                    (RVar2,uVar5,(pVVar4->oneVector).z,*(undefined4 *)(*(int *)RVar2 + 0x10c));
-          return;
-        }
-      }
-    }
-  }
-  else {
-    (this->fields).targetIndex = TargetIndexInp;
-    if ((this->fields).currentIndex == -1) {
-      (this->fields).currentIndex = currentIndexInp;
-    }
-    if ((this->fields).currentIndex < TargetIndexInp) {
-      iVar6 = TargetIndexInp - (this->fields).currentIndex;
-    }
-    else {
-      pLVar7 = (this->fields).Bodies;
-      if (pLVar7 == (List_1_MVBody_ *)0x0) goto code_?;
-      iVar6 = ((pLVar7->fields)._size - (this->fields).currentIndex) + -1 + TargetIndexInp;
-      if (TargetIndexInp < (this->fields).currentIndex) {
-        iVar8 = (this->fields).currentIndex - TargetIndexInp;
-        goto code_?;
-      }
-    }
-    pLVar7 = (this->fields).Bodies;
-    if (pLVar7 != (List_1_MVBody_ *)0x0) {
-      iVar8 = (((pLVar7->fields)._size + (this->fields).currentIndex) - TargetIndexInp) + -1;
+    pLVar1 = (this->fields).Bodies;
+    if (pLVar1 != (List_1_MVBody_ *)0x0) {
+      if ((uint)(pLVar1->fields)._size <= (uint)currentIndexInp) {
 code_?:
-      if ((bool)(this->fields).forward == iVar6 < iVar8) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
         return;
       }
-      iVar9 = AvatarSelectionAnimator_GetNextIndex(this,(MethodInfo *)0x0);
-      fVar10 = _UNK_? - (this->fields).time;
-      (this->fields).forward = iVar6 < iVar8;
-      (this->fields).currentIndex = iVar9;
-      (this->fields).time = fVar10;
+      pMVar3 = (pLVar1->fields)._items;
+      if (pMVar3 != (MVBody__Array *)0x0) {
+        if ((uint)pMVar3->max_length <= (uint)currentIndexInp) {
+code_?:
+          FUN_?();
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        pMVar4 = pMVar3->vector[currentIndexInp];
+        if (pMVar4 != (MVBody *)0x0) {
+          fStack_5 = (this->fields).displayPos.z;
+          uStack_6._0_4_ = (this->fields).displayPos.x;
+          uStack_6._4_4_ = (this->fields).displayPos.y;
+          (*(pMVar4->klass->vtable).set_WorldPosition.methodPtr)
+                    (pMVar4,&uStack_6,(pMVar4->klass->vtable).set_WorldPosition.method);
+          pLVar1 = (this->fields).Bodies;
+          if (pLVar1 != (List_1_MVBody_ *)0x0) {
+            if ((uint)(pLVar1->fields)._size <= (uint)currentIndexInp) goto code_?;
+            pMVar3 = (pLVar1->fields)._items;
+            if (pMVar3 != (MVBody__Array *)0x0) {
+              if ((uint)pMVar3->max_length <= (uint)currentIndexInp) goto code_?;
+              pMVar4 = pMVar3->vector[currentIndexInp];
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__UnityEngine__Vector3);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              pVVar7 = TypeInfo__UnityEngine__Vector3->static_fields;
+              if (pMVar4 != (MVBody *)0x0) {
+                uStack_6._0_4_ = (pVVar7->oneVector).x;
+                uStack_6._4_4_ = (pVVar7->oneVector).y;
+                fStack_5 = (pVVar7->oneVector).z;
+                (*(pMVar4->klass->vtable).set_Scale.methodPtr)
+                          (pMVar4,&uStack_6,(pMVar4->klass->vtable).set_Scale.method);
+                return;
+              }
+            }
+          }
+        }
+      }
+    }
+    goto code_?;
+  }
+  (this->fields).targetIndex = TargetIndexInp;
+  if ((this->fields).currentIndex == -1) {
+    (this->fields).currentIndex = currentIndexInp;
+  }
+  if ((this->fields).currentIndex < TargetIndexInp) {
+    iVar8 = TargetIndexInp - (this->fields).currentIndex;
+code_?:
+    pLVar1 = (this->fields).Bodies;
+    if (pLVar1 == (List_1_MVBody_ *)0x0) goto code_?;
+    iVar9 = (((pLVar1->fields)._size + (this->fields).currentIndex) - TargetIndexInp) + -1;
+  }
+  else {
+    pLVar1 = (this->fields).Bodies;
+    if (pLVar1 == (List_1_MVBody_ *)0x0) goto code_?;
+    iVar8 = ((pLVar1->fields)._size - (this->fields).currentIndex) + -1 + TargetIndexInp;
+    if ((this->fields).currentIndex <= TargetIndexInp) goto code_?;
+    iVar9 = (this->fields).currentIndex - TargetIndexInp;
+  }
+  if ((bool)(this->fields).forward == iVar8 < iVar9) {
+    return;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Count__);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if ((this->fields).forward == 0) {
+    if ((this->fields).currentIndex == 0) {
+      pLVar1 = (this->fields).Bodies;
+      if (pLVar1 == (List_1_MVBody_ *)0x0) goto code_?;
+      iVar10 = (pLVar1->fields)._size;
+    }
+    else {
+      iVar10 = (this->fields).currentIndex;
+    }
+    iVar10 = iVar10 + -1;
+  }
+  else {
+    pLVar1 = (this->fields).Bodies;
+    if (pLVar1 == (List_1_MVBody_ *)0x0) {
+code_?:
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
+    if ((this->fields).currentIndex == (pLVar1->fields)._size + -1) {
+      iVar10 = 0;
+    }
+    else {
+      iVar10 = (this->fields).currentIndex + 1;
+    }
   }
-code_?:
-  func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  fVar11 = _UNK_? - (this->fields).time;
+  (this->fields).currentIndex = iVar10;
+  (this->fields).forward = iVar8 < iVar9;
+  (this->fields).time = fVar11;
   return;
 }
 
@@ -134,115 +178,137 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_SetTa
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields).currentIndex != -1) {
-    pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-             (this->fields).Bodies;
-    if (pLVar1 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-    goto code_?;
-    RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                       (pLVar1,(this->fields).currentIndex,
-                        MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
-    if (RVar2 == (RegexCharClass_SingleRange)0x0) goto code_?;
-    uVar3._0_4_ = (this->fields).hidePos.x;
-    uVar3._4_4_ = (this->fields).hidePos.y;
-    (**(code **)(*(int *)RVar2 + 400))
-              (RVar2,uVar3,(this->fields).hidePos.z,*(undefined4 *)(*(int *)RVar2 + 0x194));
-    pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-             (this->fields).Bodies;
-    if (pLVar1 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-    goto code_?;
-    RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                       (pLVar1,(this->fields).currentIndex,
-                        MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
+    pLVar1 = (this->fields).Bodies;
+    if (pLVar1 == (List_1_MVBody_ *)0x0) goto code_?;
+    uVar2 = (this->fields).currentIndex;
+    if ((uint)(pLVar1->fields)._size <= uVar2) goto code_?;
+    pMVar3 = (pLVar1->fields)._items;
+    if (pMVar3 == (MVBody__Array *)0x0) goto code_?;
+    if ((uint)pMVar3->max_length <= uVar2) goto code_?;
+    pMVar4 = pMVar3->vector[(int)uVar2];
+    if (pMVar4 == (MVBody *)0x0) goto code_?;
+    fStack_5 = (this->fields).hidePos.z;
+    uStack_6._0_4_ = (this->fields).hidePos.x;
+    uStack_6._4_4_ = (this->fields).hidePos.y;
+    (*(pMVar4->klass->vtable).set_WorldPosition.methodPtr)
+              (pMVar4,&uStack_6,(pMVar4->klass->vtable).set_WorldPosition.method);
+    pLVar1 = (this->fields).Bodies;
+    if (pLVar1 == (List_1_MVBody_ *)0x0) goto code_?;
+    uVar2 = (this->fields).currentIndex;
+    if ((uint)(pLVar1->fields)._size <= uVar2) goto code_?;
+    pMVar3 = (pLVar1->fields)._items;
+    if (pMVar3 == (MVBody__Array *)0x0) goto code_?;
+    if ((uint)pMVar3->max_length <= uVar2) goto code_?;
+    pMVar4 = pMVar3->vector[(int)uVar2];
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
-    if (RVar2 == (RegexCharClass_SingleRange)0x0) goto code_?;
-    uVar5._0_4_ = (pVVar4->oneVector).x;
-    uVar5._4_4_ = (pVVar4->oneVector).y;
-    (**(code **)(*(int *)RVar2 + 0x108))
-              (RVar2,uVar5,(pVVar4->oneVector).z,*(undefined4 *)(*(int *)RVar2 + 0x10c));
+    pVVar7 = TypeInfo__UnityEngine__Vector3->static_fields;
+    if (pMVar4 == (MVBody *)0x0) goto code_?;
+    uStack_6._0_4_ = (pVVar7->oneVector).x;
+    uStack_6._4_4_ = (pVVar7->oneVector).y;
+    fStack_5 = (pVVar7->oneVector).z;
+    (*(pMVar4->klass->vtable).set_Scale.methodPtr)
+              (pMVar4,&uStack_6,(pMVar4->klass->vtable).set_Scale.method);
   }
-  pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-           (this->fields).Bodies;
-  if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-    RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                       (pLVar1,oldindex,
-                        MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
-    if (RVar2 != (RegexCharClass_SingleRange)0x0) {
-      uVar6._0_4_ = (this->fields).hidePos.x;
-      uVar6._4_4_ = (this->fields).hidePos.y;
-      (**(code **)(*(int *)RVar2 + 400))
-                (RVar2,uVar6,(this->fields).hidePos.z,*(undefined4 *)(*(int *)RVar2 + 0x194));
-      pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-               (this->fields).Bodies;
-      if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                 ::RegexCharClass+SingleRange]::
-                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                           (pLVar1,oldindex,
-                            MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
-        if (cRam_? == '\0') {
-          func_?(&TypeInfo__UnityEngine__Vector3);
-          cRam_? = '\x01';
-        }
-        pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
-        if (RVar2 != (RegexCharClass_SingleRange)0x0) {
-          uVar7._0_4_ = (pVVar4->oneVector).x;
-          uVar7._4_4_ = (pVVar4->oneVector).y;
-          (**(code **)(*(int *)RVar2 + 0x108))
-                    (RVar2,uVar7,(pVVar4->oneVector).z,*(undefined4 *)(*(int *)RVar2 + 0x10c));
-          pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                   (this->fields).Bodies;
-          if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-            RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                     RegularExpressions::RegexCharClass+SingleRange]::
-                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                               (pLVar1,TargetIndexInp,
-                                MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_
-                               );
-            if (RVar2 != (RegexCharClass_SingleRange)0x0) {
-              uVar8._0_4_ = (this->fields).displayPos.x;
-              uVar8._4_4_ = (this->fields).displayPos.y;
-              (**(code **)(*(int *)RVar2 + 400))
-                        (RVar2,uVar8,(this->fields).displayPos.z,
-                         *(undefined4 *)(*(int *)RVar2 + 0x194));
-              pLVar1 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                       (this->fields).Bodies;
-              if (pLVar1 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0
-                 ) {
-                RVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                         RegularExpressions::RegexCharClass+SingleRange]::
-                         List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                   (pLVar1,TargetIndexInp,
-                                    MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_
-                                   );
-                if (cRam_? == '\0') {
-                  func_?(&TypeInfo__UnityEngine__Vector3);
-                  cRam_? = '\x01';
-                }
-                pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
-                if (RVar2 != (RegexCharClass_SingleRange)0x0) {
-                  uVar9._0_4_ = (pVVar4->oneVector).x;
-                  uVar9._4_4_ = (pVVar4->oneVector).y;
-                  (**(code **)(*(int *)RVar2 + 0x108))
-                            (RVar2,uVar9,(pVVar4->oneVector).z,
-                             *(undefined4 *)(*(int *)RVar2 + 0x10c));
-                  (this->fields).currentIndex = -1;
-                  (this->fields).targetIndex = -1;
-                  (this->fields).time = 0.0;
-                  return;
+  pLVar1 = (this->fields).Bodies;
+  if (pLVar1 != (List_1_MVBody_ *)0x0) {
+    if ((uint)(pLVar1->fields)._size <= (uint)oldindex) {
+code_?:
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                ((MethodInfo *)0x0);
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
+      return;
+    }
+    pMVar3 = (pLVar1->fields)._items;
+    if (pMVar3 != (MVBody__Array *)0x0) {
+      if ((uint)pMVar3->max_length <= (uint)oldindex) {
+code_?:
+        FUN_?();
+        pcVar8 = (code *)swi(3);
+        (*pcVar8)();
+        return;
+      }
+      pMVar4 = pMVar3->vector[oldindex];
+      if (pMVar4 != (MVBody *)0x0) {
+        fStack_5 = (this->fields).hidePos.z;
+        uStack_6._0_4_ = (this->fields).hidePos.x;
+        uStack_6._4_4_ = (this->fields).hidePos.y;
+        (*(pMVar4->klass->vtable).set_WorldPosition.methodPtr)
+                  (pMVar4,&uStack_6,(pMVar4->klass->vtable).set_WorldPosition.method);
+        pLVar1 = (this->fields).Bodies;
+        if (pLVar1 != (List_1_MVBody_ *)0x0) {
+          if ((uint)(pLVar1->fields)._size <= (uint)oldindex) goto code_?;
+          pMVar3 = (pLVar1->fields)._items;
+          if (pMVar3 != (MVBody__Array *)0x0) {
+            if ((uint)pMVar3->max_length <= (uint)oldindex) goto code_?;
+            pMVar4 = pMVar3->vector[oldindex];
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__UnityEngine__Vector3);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pVVar7 = TypeInfo__UnityEngine__Vector3->static_fields;
+            if (pMVar4 != (MVBody *)0x0) {
+              uStack_6._0_4_ = (pVVar7->oneVector).x;
+              uStack_6._4_4_ = (pVVar7->oneVector).y;
+              fStack_5 = (pVVar7->oneVector).z;
+              (*(pMVar4->klass->vtable).set_Scale.methodPtr)
+                        (pMVar4,&uStack_6,(pMVar4->klass->vtable).set_Scale.method);
+              pLVar1 = (this->fields).Bodies;
+              if (pLVar1 != (List_1_MVBody_ *)0x0) {
+                if ((uint)(pLVar1->fields)._size <= (uint)TargetIndexInp) goto code_?;
+                pMVar3 = (pLVar1->fields)._items;
+                if (pMVar3 != (MVBody__Array *)0x0) {
+                  if ((uint)pMVar3->max_length <= (uint)TargetIndexInp) goto code_?;
+                  pMVar4 = pMVar3->vector[TargetIndexInp];
+                  if (pMVar4 != (MVBody *)0x0) {
+                    fStack_5 = (this->fields).displayPos.z;
+                    uStack_6._0_4_ = (this->fields).displayPos.x;
+                    uStack_6._4_4_ = (this->fields).displayPos.y;
+                    (*(pMVar4->klass->vtable).set_WorldPosition.methodPtr)
+                              (pMVar4,&uStack_6,(pMVar4->klass->vtable).set_WorldPosition.method);
+                    pLVar1 = (this->fields).Bodies;
+                    if (pLVar1 != (List_1_MVBody_ *)0x0) {
+                      if ((uint)(pLVar1->fields)._size <= (uint)TargetIndexInp)
+                      goto code_?;
+                      pMVar3 = (pLVar1->fields)._items;
+                      if (pMVar3 != (MVBody__Array *)0x0) {
+                        if ((uint)pMVar3->max_length <= (uint)TargetIndexInp)
+                        goto code_?;
+                        pMVar4 = pMVar3->vector[TargetIndexInp];
+                        if (cRam_? == '\0') {
+                          FUN_?(&TypeInfo__UnityEngine__Vector3);
+                          LOCK();
+                          UNLOCK();
+                          cRam_? = '\x01';
+                        }
+                        pVVar7 = TypeInfo__UnityEngine__Vector3->static_fields;
+                        if (pMVar4 != (MVBody *)0x0) {
+                          uStack_6._0_4_ = (pVVar7->oneVector).x;
+                          uStack_6._4_4_ = (pVVar7->oneVector).y;
+                          fStack_5 = (pVVar7->oneVector).z;
+                          (*(pMVar4->klass->vtable).set_Scale.methodPtr)
+                                    (pMVar4,&uStack_6,(pMVar4->klass->vtable).set_Scale.method);
+                          (this->fields).currentIndex = -1;
+                          (this->fields).targetIndex = -1;
+                          (this->fields).time = 0.0;
+                          return;
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -252,9 +318,9 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_SetTa
     }
   }
 code_?:
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -278,172 +344,242 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_Updat
                (AvatarSelectionAnimator *this,MethodInfo *method)
 
 {
-  this_00 = this;
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
-    func_?(&TypeInfo__System__Math);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Math);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((this->fields).targetIndex != -1) {
-    if ((this->fields).currentIndex == -1) {
+  fVar1 = _UNK_?;
+  if ((this->fields).targetIndex == -1) {
+    return;
+  }
+  if ((this->fields).currentIndex == -1) {
+    return;
+  }
+  iVar2 = (this->fields).targetIndex;
+  iVar3 = (this->fields).currentIndex;
+  if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  iVar2 = iVar2 - iVar3;
+  iVar3 = -iVar2;
+  if (iVar3 < 0) {
+    iVar3 = iVar2;
+  }
+  fVar4 = (float)(iVar3 + -1) + fVar1;
+  (this->fields).SuperspeedFactor = fVar4;
+  fVar4 = fVar4 * (this->fields).baseTimeMultiplier;
+  uVar5 = AvatarSelectionAnimator_GetNextIndex(this,(MethodInfo *)0x0);
+  fVar6 = fVar1;
+  if ((this->fields).forward == 0) {
+    fVar6 = _UNK_?;
+  }
+  fVar7 = (this->fields).time;
+  pfVar8 = &(this->fields).timeSlowThreshold;
+  if ((*pfVar8 <= fVar7 && fVar7 != *pfVar8) && (uVar5 == (this->fields).targetIndex)) {
+    fVar4 = (((this->fields).endmultiplier - (this->fields).addition) * fVar7 +
+             (this->fields).addition) * (this->fields).baseTimeMultiplier;
+  }
+  pcVar9 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0)) {
+    uVar10 = func_?(&UNK_?);
+    FUN_?(uVar10,0);
+    pcVar9 = (code *)swi(3);
+    (*pcVar9)();
+    return;
+  }
+  pcRam_? = pcVar9;
+  fVar11 = (float)(*pcRam_?)();
+  pLVar12 = (this->fields).Bodies;
+  fVar7 = fVar11 * fVar4 + fVar7;
+  (this->fields).time = fVar7;
+  if (pLVar12 != (List_1_MVBody_ *)0x0) {
+    uVar13 = (this->fields).currentIndex;
+    if ((uint)(pLVar12->fields)._size <= uVar13) {
+code_?:
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                ((MethodInfo *)0x0);
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
       return;
     }
-    iVar1 = (this->fields).targetIndex;
-    iVar2 = (this->fields).currentIndex;
-    this = _UNK_?;
-    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Math);
-    }
-    uVar3 = iVar1 - iVar2;
-    uVar4 = (int)uVar3 >> 0x1f;
-    fStack_5 = (float)(int)(((uVar3 ^ uVar4) - uVar4) + -1) + (float)_UNK_?;
-    (this_00->fields).SuperspeedFactor = fStack_5;
-    fStack_5 = fStack_5 * (this_00->fields).baseTimeMultiplier;
-    index = AvatarSelectionAnimator_GetNextIndex(this_00,(MethodInfo *)0x0);
-    if ((this_00->fields).forward == 0) {
-      this = _UNK_?;
-    }
-    fVar6 = (this_00->fields).time;
-    pfVar7 = &(this_00->fields).timeSlowThreshold;
-    if ((*pfVar7 <= fVar6 && fVar6 != *pfVar7) && (index == (this_00->fields).targetIndex)) {
-      fStack_5 = (((this_00->fields).endmultiplier - (this_00->fields).addition) *
-                  (this_00->fields).time + (this_00->fields).addition) *
-                 (this_00->fields).baseTimeMultiplier;
-    }
-    fVar6 = (this_00->fields).time;
-    fVar8 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              (this_00->fields).Bodies;
-    (this_00->fields).time = fVar8 * fStack_5 + fVar6;
-    if (pLVar9 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      RVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-               RegexCharClass+SingleRange]::
-               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                         (pLVar9,(this_00->fields).currentIndex,
-                          MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_);
-      uVar11 = (this_00->fields).displayPos.x;
-      uVar12 = (this_00->fields).distance.x;
-      if (RVar10 != (RegexCharClass_SingleRange)0x0) {
-        (**(code **)(*(int *)RVar10 + 400))
-                  (RVar10,(float)uVar11 + (float)uVar12 * (float)this * (this_00->fields).time);
-        pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                  (this_00->fields).Bodies;
-        if (pLVar9 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-          RVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                   RegularExpressions::RegexCharClass+SingleRange]::
-                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                             (pLVar9,(this_00->fields).currentIndex,
-                              MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_)
-          ;
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          uVar13 = (TypeInfo__UnityEngine__Vector3->static_fields->oneVector).x;
-          if (RVar10 != (RegexCharClass_SingleRange)0x0) {
-            (**(code **)(*(int *)RVar10 + 0x108))
-                      (RVar10,(float)uVar13 * ((float)_UNK_? - (this_00->fields).time));
-            pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                      (this_00->fields).Bodies;
-            if (pLVar9 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-            {
-              RVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                       RegularExpressions::RegexCharClass+SingleRange]::
-                       List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                 (pLVar9,index,
-                                  MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_
-                                 );
-              uVar14 = (this_00->fields).displayPos.x;
-              uVar15 = (this_00->fields).distance.x;
-              uVar16 = (this_00->fields).distance.x;
-              if (RVar10 != (RegexCharClass_SingleRange)0x0) {
-                (**(code **)(*(int *)RVar10 + 400))
-                          (RVar10,((float)uVar14 +
-                                  (this_00->fields).time * (float)uVar15 * (float)this) -
-                                  (float)uVar16 * (float)this);
-                pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                          (this_00->fields).Bodies;
-                if (pLVar9 !=
-                    (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-                  RVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                           RegularExpressions::RegexCharClass+SingleRange]::
-                           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                     (pLVar9,index,
-                                      MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_
-                                     );
-                  if (cRam_? == '\0') {
-                    func_?();
-                    cRam_? = '\x01';
-                  }
-                  uVar17 = (TypeInfo__UnityEngine__Vector3->static_fields->oneVector).x;
-                  if (RVar10 != (RegexCharClass_SingleRange)0x0) {
-                    (**(code **)(*(int *)RVar10 + 0x108))
-                              (RVar10,(float)uVar17 * (this_00->fields).time);
-                    if ((this_00->fields).time <= (float)_UNK_?) {
-                      return;
-                    }
-                    pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                              (this_00->fields).Bodies;
-                    if ((pLVar9 !=
-                         (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-                       && (RVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text
-                                    ::RegularExpressions::RegexCharClass+SingleRange]::
-                                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                              (pLVar9,(this_00->fields).currentIndex,
-                                               MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_
-                                              ), RVar10 != (RegexCharClass_SingleRange)0x0)) {
-                      uVar18 = (this_00->fields).hidePos.x;
-                      (**(code **)(*(int *)RVar10 + 400))(RVar10,uVar18);
-                      pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *
-                                )(this_00->fields).Bodies;
-                      if (pLVar9 !=
-                          (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-                      {
-                        RVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                                 RegularExpressions::RegexCharClass+SingleRange]::
-                                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                           (pLVar9,(this_00->fields).currentIndex,
-                                            MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_
-                                           );
-                        puVar19 = (undefined8 *)func_?();
-                        if (RVar10 != (RegexCharClass_SingleRange)0x0) {
-                          (**(code **)(*(int *)RVar10 + 0x108))(RVar10,(int)*puVar19);
-                          (this_00->fields).time = 0.0;
-                          if (index != (this_00->fields).targetIndex) {
-                            (this_00->fields).currentIndex = index;
+    pMVar14 = (pLVar12->fields)._items;
+    if (pMVar14 != (MVBody__Array *)0x0) {
+      if ((uint)pMVar14->max_length <= uVar13) {
+code_?:
+        FUN_?();
+        pcVar9 = (code *)swi(3);
+        (*pcVar9)();
+        return;
+      }
+      pMVar15 = pMVar14->vector[(int)uVar13];
+      uVar16 = (this->fields).distance.x;
+      uVar17 = (this->fields).distance.y;
+      uStack_18._0_4_ = (this->fields).displayPos.x;
+      uStack_18._4_4_ = (this->fields).displayPos.y;
+      if (pMVar15 != (MVBody *)0x0) {
+        uStack_18 = CONCAT44((float)uVar17 * fVar6 * fVar7 + (float)uStack_18._4_4_,
+                             (float)uVar16 * fVar6 * fVar7 + (float)(undefined4)uStack_18);
+        fStack_19 = (this->fields).distance.z * fVar6 * fVar7 + (this->fields).displayPos.z;
+        (*(pMVar15->klass->vtable).set_WorldPosition.methodPtr)
+                  (pMVar15,&uStack_18,(pMVar15->klass->vtable).set_WorldPosition.method);
+        pLVar12 = (this->fields).Bodies;
+        if (pLVar12 != (List_1_MVBody_ *)0x0) {
+          uVar13 = (this->fields).currentIndex;
+          if ((uint)(pLVar12->fields)._size <= uVar13) goto code_?;
+          pMVar14 = (pLVar12->fields)._items;
+          if (pMVar14 != (MVBody__Array *)0x0) {
+            if ((uint)pMVar14->max_length <= uVar13) goto code_?;
+            pMVar15 = pMVar14->vector[(int)uVar13];
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__UnityEngine__Vector3);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            fVar4 = fVar1 - (this->fields).time;
+            pVVar20 = TypeInfo__UnityEngine__Vector3->static_fields;
+            uStack_18._0_4_ = (pVVar20->oneVector).x;
+            uStack_18._4_4_ = (pVVar20->oneVector).y;
+            if (pMVar15 != (MVBody *)0x0) {
+              uStack_18 = CONCAT44(fVar4 * (float)uStack_18._4_4_,
+                                   fVar4 * (float)(undefined4)uStack_18);
+              fStack_19 = fVar4 * (pVVar20->oneVector).z;
+              (*(pMVar15->klass->vtable).set_Scale.methodPtr)
+                        (pMVar15,&uStack_18,(pMVar15->klass->vtable).set_Scale.method);
+              pLVar12 = (this->fields).Bodies;
+              if (pLVar12 != (List_1_MVBody_ *)0x0) {
+                if ((uint)(pLVar12->fields)._size <= uVar5) goto code_?;
+                pMVar14 = (pLVar12->fields)._items;
+                if (pMVar14 != (MVBody__Array *)0x0) {
+                  if ((uint)pMVar14->max_length <= uVar5) goto code_?;
+                  pMVar15 = pMVar14->vector[(int)uVar5];
+                  uStack_18._0_4_ = (this->fields).distance.x;
+                  uStack_18._4_4_ = (this->fields).distance.y;
+                  fVar4 = (this->fields).time;
+                  uVar21 = (this->fields).displayPos.x;
+                  uVar22 = (this->fields).displayPos.y;
+                  if (pMVar15 != (MVBody *)0x0) {
+                    uStack_18 = CONCAT44(((float)uStack_18._4_4_ * fVar6 * fVar4 + (float)uVar22) -
+                                         (float)uStack_18._4_4_ * fVar6,
+                                         ((float)(undefined4)uStack_18 * fVar6 * fVar4 +
+                                         (float)uVar21) - (float)(undefined4)uStack_18 * fVar6);
+                    fStack_19 = ((this->fields).distance.z * fVar6 * fVar4 +
+                                (this->fields).displayPos.z) - (this->fields).distance.z * fVar6;
+                    (*(pMVar15->klass->vtable).set_WorldPosition.methodPtr)
+                              (pMVar15,&uStack_18,(pMVar15->klass->vtable).set_WorldPosition.method);
+                    pLVar12 = (this->fields).Bodies;
+                    if (pLVar12 != (List_1_MVBody_ *)0x0) {
+                      if ((uint)(pLVar12->fields)._size <= uVar5) goto code_?;
+                      pMVar14 = (pLVar12->fields)._items;
+                      if (pMVar14 != (MVBody__Array *)0x0) {
+                        if ((uint)pMVar14->max_length <= uVar5) goto code_?;
+                        pMVar15 = pMVar14->vector[(int)uVar5];
+                        if (cRam_? == '\0') {
+                          FUN_?(&TypeInfo__UnityEngine__Vector3);
+                          LOCK();
+                          UNLOCK();
+                          cRam_? = '\x01';
+                        }
+                        fVar6 = (this->fields).time;
+                        pVVar20 = TypeInfo__UnityEngine__Vector3->static_fields;
+                        uStack_18._0_4_ = (pVVar20->oneVector).x;
+                        uStack_18._4_4_ = (pVVar20->oneVector).y;
+                        if (pMVar15 != (MVBody *)0x0) {
+                          uStack_18 = CONCAT44(fVar6 * (float)uStack_18._4_4_,
+                                               fVar6 * (float)(undefined4)uStack_18);
+                          fStack_19 = fVar6 * (pVVar20->oneVector).z;
+                          (*(pMVar15->klass->vtable).set_Scale.methodPtr)
+                                    (pMVar15,&uStack_18,(pMVar15->klass->vtable).set_Scale.method);
+                          if ((this->fields).time <= fVar1) {
                             return;
                           }
-                          pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                     *)(this_00->fields).Bodies;
-                          if ((pLVar9 !=
-                               (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                               0x0) && (RVar10 = mscorlib.dll::System::Collections::Generic::
-                                                 List`1[System::Text::RegularExpressions::
-                                                 RegexCharClass+SingleRange]::
-                                                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                                           (pLVar9,index,
-                                                                                                                        
-                                                  MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_
-                                                  ), RVar10 != (RegexCharClass_SingleRange)0x0)) {
-                            func_?(0x1a,RVar10);
-                            pLVar9 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                       *)(this_00->fields).Bodies;
-                            if (pLVar9 !=
-                                (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *
-                                )0x0) {
-                              RVar10 = mscorlib.dll::System::Collections::Generic::List`1[System::
-                                       Text::RegularExpressions::RegexCharClass+SingleRange]::
-                                       List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                                                 (pLVar9,index,
-                                                  MethodInfo__System__Collections__Generic__List<MVBody>__get_Item_int_
-                                                 );
-                              func_?();
-                              if (RVar10 != (RegexCharClass_SingleRange)0x0) {
-                                func_?(9,RVar10);
-                                (this_00->fields).currentIndex = -1;
-                                (this_00->fields).targetIndex = -1;
-                                (this_00->fields).SuperspeedFactor = 1.0;
-                                return;
+                          pLVar12 = (this->fields).Bodies;
+                          if (pLVar12 != (List_1_MVBody_ *)0x0) {
+                            uVar13 = (this->fields).currentIndex;
+                            if ((uint)(pLVar12->fields)._size <= uVar13) goto code_?;
+                            pMVar14 = (pLVar12->fields)._items;
+                            if (pMVar14 != (MVBody__Array *)0x0) {
+                              if ((uint)pMVar14->max_length <= uVar13) goto code_?;
+                              pMVar15 = pMVar14->vector[(int)uVar13];
+                              if (pMVar15 != (MVBody *)0x0) {
+                                fStack_19 = (this->fields).hidePos.z;
+                                uStack_18._0_4_ = (this->fields).hidePos.x;
+                                uStack_18._4_4_ = (this->fields).hidePos.y;
+                                (*(pMVar15->klass->vtable).set_WorldPosition.methodPtr)
+                                          (pMVar15,&uStack_18,
+                                           (pMVar15->klass->vtable).set_WorldPosition.method);
+                                pLVar12 = (this->fields).Bodies;
+                                if (pLVar12 != (List_1_MVBody_ *)0x0) {
+                                  uVar13 = (this->fields).currentIndex;
+                                  if ((uint)(pLVar12->fields)._size <= uVar13)
+                                  goto code_?;
+                                  pMVar14 = (pLVar12->fields)._items;
+                                  if (pMVar14 != (MVBody__Array *)0x0) {
+                                    if ((uint)pMVar14->max_length <= uVar13)
+                                    goto code_?;
+                                    pMVar15 = pMVar14->vector[(int)uVar13];
+                                    if (cRam_? == '\0') {
+                                      FUN_?(&TypeInfo__UnityEngine__Vector3);
+                                      LOCK();
+                                      UNLOCK();
+                                      cRam_? = '\x01';
+                                    }
+                                    pVVar20 = TypeInfo__UnityEngine__Vector3->static_fields;
+                                    if (pMVar15 != (MVBody *)0x0) {
+                                      uStack_18._0_4_ = (pVVar20->oneVector).x;
+                                      uStack_18._4_4_ = (pVVar20->oneVector).y;
+                                      fStack_19 = (pVVar20->oneVector).z;
+                                      (*(pMVar15->klass->vtable).set_Scale.methodPtr)
+                                                (pMVar15,&uStack_18,
+                                                 (pMVar15->klass->vtable).set_Scale.method);
+                                      (this->fields).time = 0.0;
+                                      if (uVar5 != (this->fields).targetIndex) {
+                                        (this->fields).currentIndex = uVar5;
+                                        return;
+                                      }
+                                      pLVar12 = (this->fields).Bodies;
+                                      if ((pLVar12 != (List_1_MVBody_ *)0x0) &&
+                                         (plVar23 = (longlong *)FUN_?(pLVar12,uVar5),
+                                         plVar23 != (longlong *)0x0)) {
+                                        fStack_19 = (this->fields).displayPos.z;
+                                        uStack_18._0_4_ = (this->fields).displayPos.x;
+                                        uStack_18._4_4_ = (this->fields).displayPos.y;
+                                        (**(code **)(*plVar23 + 0x2d8))
+                                                  (plVar23,&uStack_18,
+                                                   *(undefined8 *)(*plVar23 + 0x2e0));
+                                        pLVar12 = (this->fields).Bodies;
+                                        if (pLVar12 != (List_1_MVBody_ *)0x0) {
+                                          plVar23 = (longlong *)FUN_?(pLVar12,uVar5);
+                                          if (cRam_? == '\0') {
+                                            FUN_?(&TypeInfo__UnityEngine__Vector3);
+                                            LOCK();
+                                            UNLOCK();
+                                            cRam_? = '\x01';
+                                          }
+                                          pVVar20 = TypeInfo__UnityEngine__Vector3->static_fields;
+                                          if (plVar23 != (longlong *)0x0) {
+                                            uStack_18._0_4_ = (pVVar20->oneVector).x;
+                                            uStack_18._4_4_ = (pVVar20->oneVector).y;
+                                            fStack_19 = (pVVar20->oneVector).z;
+                                            (**(code **)(*plVar23 + 0x1c8))
+                                                      (plVar23,&uStack_18,
+                                                       *(undefined8 *)(*plVar23 + 0x1d0));
+                                            (this->fields).currentIndex = -1;
+                                            (this->fields).targetIndex = -1;
+                                            (this->fields).SuperspeedFactor = 1.0;
+                                            return;
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
                               }
                             }
                           }
@@ -458,11 +594,10 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator_Updat
         }
       }
     }
-    func_?();
-    pcVar20 = (code *)swi(3);
-    (*pcVar20)();
-    return;
   }
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -474,39 +609,67 @@ void Assembly-CSharp.dll::AvatarSelectionAnimator::AvatarSelectionAnimator__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<MVBody>__List__);
-    func_?(&TypeInfo__System__Collections__Generic__List<MVBody>);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<MVBody>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<MVBody>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_MVBody_ *)func_?(TypeInfo__System__Collections__Generic__List<MVBody>);
+  this_00 = (List_1_MVBody_ *)FUN_?(TypeInfo__System__Collections__Generic__List<MVBody>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<MVBody>__List__);
+  bVar1 = iRam_? != 0;
   (this->fields).Bodies = this_00;
-  func_?(&(this->fields).Bodies,this_00);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).Bodies >> 0xc);
+    uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+    do {
+      uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+      puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  bVar1 = cRam_? == '\0';
   (this->fields).currentIndex = -1;
   (this->fields).targetIndex = -1;
   (this->fields).baseTimeMultiplier = 2.0;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+  if (bVar1) {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uVar2 = (pVVar1->rightVector).x;
-  uVar3 = (pVVar1->rightVector).y;
-  fVar4 = (pVVar1->rightVector).z * _UNK_?;
-  fVar5 = (float)uVar3 * _UNK_?;
-  (this->fields).distance.x = (float)uVar2 * _UNK_?;
-  (this->fields).distance.y = fVar5;
-  (this->fields).distance.z = fVar4;
+  pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uVar7 = (pVVar6->rightVector).x;
+  fVar8 = (pVVar6->rightVector).y * _UNK_?;
+  fVar9 = (pVVar6->rightVector).z * _UNK_?;
+  bVar1 = cRam_? == '\0';
+  (this->fields).distance.x = (float)uVar7 * _UNK_?;
+  (this->fields).distance.y = fVar8;
+  (this->fields).distance.z = fVar9;
   (this->fields).forward = 1;
   (this->fields).timeSlowThreshold = 0.8;
   (this->fields).endmultiplier = 0.01;
   (this->fields).SuperspeedFactor = 1.0;
-  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
-            ((MonoBehaviour *)this,(MethodInfo *)0x0);
+  if (bVar1) {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
   return;
 }
 

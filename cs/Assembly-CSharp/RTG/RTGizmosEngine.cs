@@ -27,11 +27,7 @@ namespace RTG
 		private Gizmo _hoveredGizmo;
 		private GizmoHoverInfo _gizmoHoverInfo;
 		private List<Gizmo> _gizmos;
-		private List<ISceneGizmo> _sceneGizmos;
-		private List<RTSceneGizmoCamera> _sceneGizmoCameras;
 		private List<Camera> _renderCameras;
-		[SerializeField]
-		private SceneGizmoLookAndFeel _sceneGizmoLookAndFeel;
 		[SerializeField]
 		private MoveGizmoSettings2D _moveGizmoSettings2D;
 		[SerializeField]
@@ -85,7 +81,6 @@ namespace RTG
 		public Gizmo DraggedGizmo { get; }
 		public bool JustReleasedDrag { get; }
 		public int NumRenderCameras { get; }
-		public SceneGizmoLookAndFeel SceneGizmoLookAndFeel { get; }
 		public MoveGizmoSettings2D MoveGizmoSettings2D { get; }
 		public MoveGizmoSettings3D MoveGizmoSettings3D { get; }
 		public MoveGizmoLookAndFeel2D MoveGizmoLookAndFeel2D { get; }
@@ -115,54 +110,41 @@ namespace RTG
 	
 		// Nested types
 		[CompilerGenerated]
-		private sealed class __c__DisplayClass100_0
-		{
-			// Fields
-			public Camera camera;
-	
-			// Constructors
-			public __c__DisplayClass100_0();
-	
-			// Methods
-			internal bool _IsSceneGizmoCamera_b__0(RTSceneGizmoCamera item);
-		}
-	
-		[CompilerGenerated]
-		private sealed class __c__DisplayClass114_0
+		private sealed class __c__DisplayClass105_0
 		{
 			// Fields
 			public Gizmo gizmo;
 			public Vector3 screenRayOrigin;
 	
 			// Constructors
-			public __c__DisplayClass114_0();
+			public __c__DisplayClass105_0();
 	
 			// Methods
 			internal int _GetGizmoHandleHoverData_b__0(GizmoHandleHoverData h0, GizmoHandleHoverData h1);
 		}
 	
 		[CompilerGenerated]
-		private sealed class __c__DisplayClass115_0
+		private sealed class __c__DisplayClass106_0
 		{
 			// Fields
 			public Vector3 camPos;
 	
 			// Constructors
-			public __c__DisplayClass115_0();
+			public __c__DisplayClass106_0();
 	
 			// Methods
 			internal int _Render_SystemCall_b__0(Gizmo g0, Gizmo g1);
 		}
 	
 		[CompilerGenerated]
-		private sealed class __c__DisplayClass116_0
+		private sealed class __c__DisplayClass107_0
 		{
 			// Fields
 			public Vector3 inputDevicePos;
 			public Ray hoverRay;
 	
 			// Constructors
-			public __c__DisplayClass116_0();
+			public __c__DisplayClass107_0();
 	
 			// Methods
 			internal int _SortHandleHoverDataCollection_b__0(GizmoHandleHoverData h0, GizmoHandleHoverData h1);
@@ -175,12 +157,8 @@ namespace RTG
 		public void AddRenderCamera(Camera camera);
 		public bool IsRenderCamera(Camera camera);
 		public void RemoveRenderCamera(Camera camera);
-		public RTSceneGizmoCamera CreateSceneGizmoCamera(Camera sceneCamera, ISceneGizmoCamViewportUpdater viewportUpdater);
-		public bool IsSceneGizmoCamera(Camera camera);
-		public ISceneGizmo GetSceneGizmoByCamera(Camera sceneCamera);
 		public Gizmo CreateGizmo();
 		public void RemoveGizmo(Gizmo gizmo);
-		public SceneGizmo CreateSceneGizmo(Camera sceneCamera);
 		public MoveGizmo CreateMoveGizmo();
 		public ObjectTransformGizmo CreateObjectMoveGizmo();
 		public RotationGizmo CreateRotationGizmo();

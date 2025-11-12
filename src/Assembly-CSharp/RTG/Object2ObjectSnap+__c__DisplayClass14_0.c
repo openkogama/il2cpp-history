@@ -7,35 +7,32 @@ bool Assembly-CSharp.dll::RTG::Object2ObjectSnap+<>c__DisplayClass14_0::
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Contains_UnityEngine__GameObject_
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Contains_UnityEngine__GameObject_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (item != (GameObject *)0x0) {
-    this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+    this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                         (item,(MethodInfo *)0x0);
     this_00 = (this->fields).root;
     if (this_00 != (GameObject *)0x0) {
       parent = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                          (this_00,(MethodInfo *)0x0);
-      if (this_02 != (Transform *)0x0) {
+      if (this_01 != (Transform *)0x0) {
         bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_IsChildOf
-                          (this_02,parent,(MethodInfo *)0x0);
+                          (this_01,parent,(MethodInfo *)0x0);
         if (bVar1 == 0) {
-          this_01 = (this->fields).snapConfig.IgnoreDestObjects;
-          if (this_01 == (List_1_UnityEngine_GameObject_ *)0x0) goto code_?;
-          bVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-                  List_1_System_Object__Contains
-                            ((List_1_System_Object_ *)this_01,(Object *)item,
-                             MethodInfo__System__Collections__Generic__List<UnityEngine::GameObject>__Contains_UnityEngine__GameObject_
-                            );
-          if (bVar1 == 0) {
-            layerBits = (this->fields).snapConfig.DestinationLayers;
-            layerNumber = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
-                                    (item,(MethodInfo *)0x0);
-            bVar1 = LayerEx::LayerEx_IsLayerBitSet(layerBits,layerNumber,(MethodInfo *)0x0);
-            return bVar1 ^ 1;
+          if ((this->fields).snapConfig.IgnoreDestObjects == (List_1_UnityEngine_GameObject_ *)0x0)
+          goto code_?;
+          cVar2 = FUN_?();
+          if (cVar2 == '\0') {
+            uVar3 = (this->fields).snapConfig.DestinationLayers;
+            iVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_layer
+                              (item,(MethodInfo *)0x0);
+            return (uVar3 & 1 << ((byte)iVar4 & 0x1f)) == 0;
           }
         }
         return 1;
@@ -43,9 +40,9 @@ bool Assembly-CSharp.dll::RTG::Object2ObjectSnap+<>c__DisplayClass14_0::
     }
   }
 code_?:
-  func_?();
-  pcVar2 = (code *)swi(3);
-  bVar1 = (*pcVar2)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  bVar1 = (*pcVar5)();
   return bVar1;
 }
 

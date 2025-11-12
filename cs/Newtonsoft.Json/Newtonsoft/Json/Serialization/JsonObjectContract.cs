@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using Newtonsoft.Json;
 
-// Image 8: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
+// Image 9: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
 
 namespace Newtonsoft.Json.Serialization
 {
@@ -53,7 +53,7 @@ namespace Newtonsoft.Json.Serialization
 		public Required? ItemRequired { [CompilerGenerated] get; [CompilerGenerated] set; }
 		public NullValueHandling? ItemNullValueHandling { [CompilerGenerated] get; [CompilerGenerated] set; }
 		[Nullable(1)]
-		public JsonPropertyCollection Properties { [CompilerGenerated] [NullableContext(1)] get; }
+		public JsonPropertyCollection Properties { [NullableContext(1)] [CompilerGenerated] get; }
 		[Nullable(1)]
 		public JsonPropertyCollection CreatorParameters { [NullableContext(1)] get; }
 		[Nullable(new byte[2] {2, 1 })]

@@ -6,30 +6,110 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_CreateConstrain
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    ConstraintVisualizer_MethodInfo__UnityEngine__GameObject__AddComponent<ConstraintVisualizer>__
-                   );
-    func_?(&TypeInfo__UnityEngine__GameObject);
-    func_?(&StringLiteral_ConstrainVisualizer);
-    func_?(&StringLiteral_UIItems);
+    FUN_?(&
+                  ConstraintVisualizer_MethodInfo__UnityEngine__GameObject__AddComponent<ConstraintVisualizer>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__GameObject);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ConstrainVisualizer);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_UIItems);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
-  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
-            (this_00,StringLiteral_ConstrainVisualizer,(MethodInfo *)0x0);
-  if (this_00 != (GameObject *)0x0) {
+  self = (GameObject *)FUN_?(TypeInfo__UnityEngine__GameObject);
+  name = StringLiteral_ConstrainVisualizer;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_Internal_CreateGameObject
+            (self,name,(MethodInfo *)0x0);
+  if (self != (GameObject *)0x0) {
     pCVar1 = (ConstraintVisualizer *)
              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                       (this_00,
+                       (self,
                         ConstraintVisualizer_MethodInfo__UnityEngine__GameObject__AddComponent<ConstraintVisualizer>__
                        );
+    bVar2 = iRam_? != 0;
     (this->fields).constraintVisualizer = pCVar1;
-    func_?(&(this->fields).constraintVisualizer,&stack0xfffffffc,&UNK_?);
-    return;
+    if (bVar2) {
+      uVar3 = (uint)((ulonglong)&(this->fields).constraintVisualizer >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    pMVar7 = CEEditCubeTutorial_get_TargetCubeModel(this,(MethodInfo *)0x0);
+    if ((pMVar7 != (MVCubeModelBase *)0x0) &&
+       (pFVar8 = (pMVar7->fields)._ModelingConstraintBuilder_k__BackingField,
+       pFVar8 != (Func_1_IModelingConstraint_ *)0x0)) {
+      pIVar9 = (IModelingConstraint *)
+               (*(pFVar8->fields)._._.invoke_impl)((pFVar8->fields)._._.method_code);
+      bVar2 = iRam_? != 0;
+      (this->fields).constraint = pIVar9;
+      if (bVar2) {
+        uVar3 = (uint)((ulonglong)&(this->fields).constraint >> 0xc);
+        lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+          puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+          LOCK();
+          bVar2 = uVar5 == *puVar6;
+          if (bVar2) {
+            *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar2);
+      }
+      pCVar1 = (this->fields).constraintVisualizer;
+      pMVar7 = CEEditCubeTutorial_get_TargetCubeModel(this,(MethodInfo *)0x0);
+      if (pCVar1 != (ConstraintVisualizer *)0x0) {
+        ConstraintVisualizer::ConstraintVisualizer_Init
+                  (pCVar1,pMVar7,(this->fields).constraint,StringLiteral_UIItems,(MethodInfo *)0x0);
+        pCVar10 = (this->fields).CMSM;
+        if (pCVar10 != (CubeModelingStateMachine *)0x0) {
+          bVar2 = iRam_? != 0;
+          (pCVar10->fields).constraint = (this->fields).constraint;
+          if (bVar2) {
+            uVar3 = (uint)((ulonglong)&(pCVar10->fields).constraint >> 0xc);
+            lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+            do {
+              uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+              puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+              LOCK();
+              bVar2 = uVar5 == *puVar6;
+              if (bVar2) {
+                *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar2);
+          }
+          return;
+        }
+      }
+    }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -41,16 +121,22 @@ bool Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_DoReset
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__CubeBase);
-    func_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
-    func_?(0x8a30);
+    FUN_?(&TypeInfo__MV__WorldObject__CubeBase);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__CubeDataPacker);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Cube);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pCVar1 = (this->fields).resettingBookkeeping;
   if (pCVar1 != (CEEditCubeTutorial_ResettingBookkeeping *)0x0) {
-    iVar2 = WaitForTicksLocal::WaitForTicksLocal_Diff
-                      ((pCVar1->fields).resettingBeginTime,(MethodInfo *)0x0);
-    if (iVar2 <= (pCVar1->fields).resettingDelay) {
+    iVar2 = (pCVar1->fields).resettingBeginTime;
+    iVar3 = FUN_?();
+    if (iVar3 - iVar2 <= (pCVar1->fields).resettingDelay) {
       return 0;
     }
     pCVar1 = (this->fields).resettingBookkeeping;
@@ -60,83 +146,84 @@ bool Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_DoReset
       if (this_00 != (CubeModelingStateMachine *)0x0) {
         CubeModelingStateMachine::CubeModelingStateMachine_set_CursorVisible
                   (this_00,1,(MethodInfo *)0x0);
-        pEVar3 = (this->fields).cubeModelWrapper;
-        if (pEVar3 != (EditableCubeModelWrapper *)0x0) {
-          pMVar4 = (pEVar3->fields).cubeModelBase;
-          if (pMVar4 != (MVCubeModelInstance *)0x0) {
-            pCVar5 = MVCubeModelBase::MVCubeModelBase_GetCube
-                               ((MVCubeModelBase *)pMVar4,(this->fields).zeroPos,(MethodInfo *)0x0)
-            ;
-            if ((pCVar5 != (Cube *)0x0) &&
-               (pBVar6 = (pCVar5->fields)._.faceMaterials, pBVar6 != (Byte__Array *)0x0)) {
-              if (pBVar6->max_length == 0) {
-                func_?();
-              }
-              else {
-                pEVar3 = (this->fields).cubeModelWrapper;
-                if ((pEVar3 != (EditableCubeModelWrapper *)0x0) &&
-                   (pMVar4 = (pEVar3->fields).cubeModelBase, pMVar4 != (MVCubeModelInstance *)0x0)
-                   ) {
-                  MVCubeModelBase::MVCubeModelBase_RemoveCube
-                            ((MVCubeModelBase *)pMVar4,(this->fields).zeroPos,(MethodInfo *)0x0);
-                  x = -1;
+        pEVar4 = (this->fields).cubeModelWrapper;
+        if (((pEVar4 != (EditableCubeModelWrapper *)0x0) &&
+            (pMVar5 = (pEVar4->fields).cubeModelBase, pMVar5 != (MVCubeModelInstance *)0x0)) &&
+           (this_01 = (pMVar5->fields)._.prototypeCubeModel,
+           this_01 != (RuntimePrototypeCubeModel *)0x0)) {
+          IStackX_8.x = (this->fields).zeroPos.x;
+          IStackX_8.y = (this->fields).zeroPos.y;
+          IStackX_8.z = (this->fields).zeroPos.z;
+          pCVar6 = RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_GetCube
+                             (this_01,&IStackX_8,(MethodInfo *)0x0);
+          if ((pCVar6 != (Cube *)0x0) &&
+             (pBVar7 = (pCVar6->fields)._.faceMaterials, pBVar7 != (Byte__Array *)0x0)) {
+            if ((int)pBVar7->max_length == 0) {
+              FUN_?();
+              pcVar8 = (code *)swi(3);
+              bVar9 = (*pcVar8)();
+              return bVar9;
+            }
+            material = pBVar7->vector[0];
+            pEVar4 = (this->fields).cubeModelWrapper;
+            if ((pEVar4 != (EditableCubeModelWrapper *)0x0) &&
+               (pMVar5 = (pEVar4->fields).cubeModelBase, pMVar5 != (MVCubeModelInstance *)0x0)) {
+              IStackX_8.x = (this->fields).zeroPos.x;
+              IStackX_8.y = (this->fields).zeroPos.y;
+              IStackX_8.z = (this->fields).zeroPos.z;
+              MVCubeModelBase::MVCubeModelBase_RemoveCube
+                        ((MVCubeModelBase *)pMVar5,&IStackX_8,(MethodInfo *)0x0);
+              iVar2 = -1;
+              do {
+                iVar3 = -1;
+                do {
+                  iVar10 = -1;
                   do {
-                    y = -1;
-                    do {
-                      z = -1;
-                      do {
-                        pEVar3 = (this->fields).cubeModelWrapper;
-                        if (pEVar3 == (EditableCubeModelWrapper *)0x0) goto code_?;
-                        this_01 = (pEVar3->fields).cubeModelBase;
-                        uVar7 = 0;
-                        MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                                  ((IntVector *)&stack0xffffffec,x,y,z,(MethodInfo *)0x0);
-                        if (this_01 == (MVCubeModelInstance *)0x0) goto code_?;
-                        pos_00.y = 0;
-                        pos_00.z = 0;
-                        pos_00.x = uVar7;
-                        MVCubeModelBase::MVCubeModelBase_RemoveCube
-                                  ((MVCubeModelBase *)this_01,pos_00,(MethodInfo *)0x0);
-                        material = (uint8_t)pMVar4;
-                        z = z + 1;
-                      } while (z < 2);
-                      y = y + 1;
-                    } while (y < 2);
-                    x = x + 1;
-                  } while (x < 2);
-                  pEVar3 = (this->fields).cubeModelWrapper;
-                  if (pEVar3 != (EditableCubeModelWrapper *)0x0) {
-                    pMVar4 = (pEVar3->fields).cubeModelBase;
-                    iVar8 = (this->fields).zeroPos.x;
-                    uVar9 = (this->fields).zeroPos.y;
-                    iVar10 = (this->fields).zeroPos.z;
-                    if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
-                      func_?();
-                    }
-                    corners = MVWorldObject.dll::MV::WorldObject::CubeBase::
-                              CubeBase_get_IdentityCorners((MethodInfo *)0x0);
-                    if ((TypeInfo__MV__WorldObject__CubeDataPacker->_1).cctor_finished_or_no_cctor
-                        == 0) {
-                      func_?(TypeInfo__MV__WorldObject__CubeDataPacker);
-                    }
-                    pBVar6 = MVWorldObject.dll::MV::WorldObject::CubeDataPacker::
-                              CubeDataPacker_CornersToByteArray(corners,(MethodInfo *)0x0);
-                    if ((TypeInfo__Cube->_1).cctor_finished_or_no_cctor == 0) {
-                      func_?(TypeInfo__Cube);
-                    }
-                    faceMaterials = Cube::Cube_CreateMaterialArray(material,(MethodInfo *)0x0);
-                    pCVar5 = (Cube *)func_?(TypeInfo__Cube);
-                    Cube::Cube__ctor(pCVar5,pBVar6,faceMaterials,(MethodInfo *)0x0);
-                    if (pMVar4 != (MVCubeModelInstance *)0x0) {
-                      pos.y = uVar9;
-                      pos.x = iVar8;
-                      pos.z = iVar10;
-                      MVCubeModelBase::MVCubeModelBase_AddCube
-                                ((MVCubeModelBase *)pMVar4,pos,(CubeBase *)pCVar5,(MethodInfo *)0x0
-                                );
-                      return 1;
-                    }
-                  }
+                    pEVar4 = (this->fields).cubeModelWrapper;
+                    if (pEVar4 == (EditableCubeModelWrapper *)0x0) goto code_?;
+                    pMVar5 = (pEVar4->fields).cubeModelBase;
+                    IStackX_8.y = (int16_t)iVar3;
+                    IStackX_8.x = (int16_t)iVar2;
+                    if (pMVar5 == (MVCubeModelInstance *)0x0) goto code_?;
+                    IStackX_18.z = (int16_t)iVar10;
+                    IStackX_18._0_4_ = IStackX_8._0_4_;
+                    MVCubeModelBase::MVCubeModelBase_RemoveCube
+                              ((MVCubeModelBase *)pMVar5,&IStackX_18,(MethodInfo *)0x0);
+                    iVar10 = iVar10 + 1;
+                  } while (iVar10 < 2);
+                  iVar3 = iVar3 + 1;
+                } while (iVar3 < 2);
+                iVar2 = iVar2 + 1;
+              } while (iVar2 < 2);
+              pEVar4 = (this->fields).cubeModelWrapper;
+              if (pEVar4 != (EditableCubeModelWrapper *)0x0) {
+                pMVar5 = (pEVar4->fields).cubeModelBase;
+                uVar11._0_2_ = (this->fields).zeroPos.x;
+                uVar11._2_2_ = (this->fields).zeroPos.y;
+                iVar12 = (this->fields).zeroPos.z;
+                if (*(int *)&(TypeInfo__MV__WorldObject__CubeBase->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                corners = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_IdentityCorners
+                                    ((MethodInfo *)0x0);
+                if (*(int *)&(TypeInfo__MV__WorldObject__CubeDataPacker->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                pBVar7 = MVWorldObject.dll::MV::WorldObject::CubeDataPacker::
+                          CubeDataPacker_CornersToByteArray(corners,(MethodInfo *)0x0);
+                if (*(int *)&(TypeInfo__Cube->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                faceMaterials = Cube::Cube_CreateMaterialArray(material,(MethodInfo *)0x0);
+                pCVar6 = (Cube *)FUN_?(TypeInfo__Cube);
+                Cube::Cube__ctor(pCVar6,pBVar7,faceMaterials,(MethodInfo *)0x0);
+                if (pMVar5 != (MVCubeModelInstance *)0x0) {
+                  IStackX_8._0_4_ = uVar11;
+                  IStackX_8.z = iVar12;
+                  MVCubeModelBase::MVCubeModelBase_AddCube
+                            ((MVCubeModelBase *)pMVar5,&IStackX_8,(CubeBase *)pCVar6,
+                             (MethodInfo *)0x0);
+                  return 1;
                 }
               }
             }
@@ -146,10 +233,10 @@ bool Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_DoReset
     }
   }
 code_?:
-  func_?();
-  pcVar11 = (code *)swi(3);
-  bVar12 = (*pcVar11)();
-  return bVar12;
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  bVar9 = (*pcVar8)();
+  return bVar9;
 }
 
 
@@ -160,43 +247,76 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_Enter
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<int,_EditCubeChange>);
-    func_?(&
-                    TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
-                   );
-    func_?(&MethodInfo__CEEditCubeTutorial__OnEditCubeChange_int__EditCubeChange_);
-    func_?(&
-                    MethodInfo__CEEditCubeTutorial__SetFirstTimeEventsHappened_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
-                   );
-    func_?(&
-                    MethodInfo__CEEditCubeTutorial___Enter_b__23_0_UnityEngine__EventSystems__IHandleCubeEditTutorial__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__CubeModelTool);
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&TypeInfo__MVBuildModeAvatarLocal_EditMode__ESEditCubeTutorialData);
-    func_?(&TypeInfo__EditableCubeModelWrapper);
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleCubeEditTutorial>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleCubeEditTutorial>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleCubeEditTutorial>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&TypeInfo__MVCubeModelBase);
-    func_?(&TypeInfo__MVCubeModelInstance);
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&TypeInfo__SharedCubeFunctions);
-    func_?(&StringLiteral_ESEditCubeTutorial_must_not_be_e);
+    FUN_?(&TypeInfo__System__Action<int,_EditCubeChange>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__CEEditCubeTutorial__OnEditCubeChange_int__EditCubeChange_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__CEEditCubeTutorial__SetFirstTimeEventsHappened_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__CEEditCubeTutorial___Enter_b__23_0_UnityEngine__EventSystems__IHandleCubeEditTutorial__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CubeModelTool);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVBuildModeAvatarLocal_EditMode__ESEditCubeTutorialData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__EditableCubeModelWrapper);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleCubeEditTutorial>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleCubeEditTutorial>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleCubeEditTutorial>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVCubeModelBase);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVCubeModelInstance);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__SharedCubeFunctions);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ESEditCubeTutorial_must_not_be_e);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   (this->fields).exiting = 0;
   (this->fields).hasExited = 0;
-  this_02 = (MVCubeModelBase__Class *)e;
   if (e == (EditorStateMachine *)0x0) goto code_?;
   pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
   if (pMVar1 == (MVWorldObjectClient *)0x0) {
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?((short)TypeInfo__UnityEngine__Debug);
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_ESEditCubeTutorial_must_not_be_e,(MethodInfo *)0x0);
@@ -204,353 +324,418 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_Enter
     return;
   }
   pDVar2 = CEEditCubeTutorial_GetFirstTimeEventCheck(this,(MethodInfo *)0x0);
+  bVar3 = iRam_? != 0;
   (this->fields).firstTimeEventChangeCheck = pDVar2;
-  func_?(&(this->fields).firstTimeEventChangeCheck,(short)pDVar2);
-  pMVar3 = (MVCubeModelInstance *)
-           EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
-  if (pMVar3 == (MVCubeModelInstance *)0x0) {
-    (this->fields).selectedInstance = (MVCubeModelInstance *)0x0;
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)&(this->fields).firstTimeEventChangeCheck >> 0xc);
+    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+      puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+      LOCK();
+      bVar3 = uVar6 == *puVar7;
+      if (bVar3) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar3);
   }
-  else {
-    if (((pMVar3->klass->_1).naturalAligment < (TypeInfo__MVCubeModelInstance->_1).naturalAligment)
-       || ((MVCubeModelInstance__Class *)
-           (pMVar3->klass->_1).typeHierarchy
-           [(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] !=
-           TypeInfo__MVCubeModelInstance)) {
-      bVar4 = false;
+  pMVar8 = (MVCubeModelInstance *)
+            EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
+  targetCubeModel = (MVCubeModelInstance *)0x0;
+  pMVar9 = targetCubeModel;
+  if (pMVar8 != (MVCubeModelInstance *)0x0) {
+    bVar10 = (TypeInfo__MVCubeModelInstance->_1).naturalAligment;
+    if (((pMVar8->klass->_1).naturalAligment < bVar10) ||
+       (bVar3 = true,
+       (MVCubeModelInstance__Class *)(pMVar8->klass->_1).typeHierarchy[(ulonglong)bVar10 - 1] !=
+       TypeInfo__MVCubeModelInstance)) {
+      bVar3 = false;
     }
-    else {
-      bVar4 = true;
+    pMVar9 = (MVCubeModelInstance *)0x0;
+    if (bVar3) {
+      pMVar9 = pMVar8;
     }
-    pMVar5 = (MVCubeModelInstance *)0x0;
-    if (bVar4) {
-      pMVar5 = pMVar3;
-    }
-    (this->fields).selectedInstance = pMVar5;
   }
-  func_?();
+  bVar3 = iRam_? != 0;
+  (this->fields).selectedInstance = pMVar9;
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)&(this->fields).selectedInstance >> 0xc);
+    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+      puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+      LOCK();
+      bVar3 = uVar6 == *puVar7;
+      if (bVar3) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar3);
+  }
   pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
   if (pMVar1 == (MVWorldObjectClient *)0x0) {
-    iVar6 = -1;
-code_?:
-    (this->fields).targetCubeModelId = iVar6;
-    (this->fields).CMSM = (e->fields).cubeModelingStateMachine;
-    func_?();
-    pAVar7 = TypeInfo__CubeModelTool->static_fields->OnEditCubeChange;
-    this_01 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
-    UnityAction_2_System_Int32_System_Int32___ctor
-              (this_01,(Object *)this,
-               MethodInfo__CEEditCubeTutorial__OnEditCubeChange_int__EditCubeChange_,
-               (MethodInfo *)0x0);
-    pDVar8 = mscorlib.dll::System::Delegate::Delegate_Combine
-                        ((Delegate *)pAVar7,(Delegate *)this_01,(MethodInfo *)0x0);
-    if (pDVar8 == (Delegate *)0x0) {
-      TypeInfo__CubeModelTool->static_fields->OnEditCubeChange =
-           (Action_2_Int32_EditCubeChange_ *)0x0;
+    iVar11 = -1;
+  }
+  else {
+    bVar10 = (TypeInfo__MVCubeModelBase->_1).naturalAligment;
+    if (((pMVar1->klass->_1).naturalAligment < bVar10) ||
+       ((MVCubeModelBase__Class *)(pMVar1->klass->_1).typeHierarchy[(ulonglong)bVar10 - 1] !=
+        TypeInfo__MVCubeModelBase)) {
+      FUN_?(pMVar1);
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
+      return;
     }
-    else {
-      pAVar7 = (Action_2_Int32_EditCubeChange_ *)func_?();
-      if (pAVar7 == (Action_2_Int32_EditCubeChange_ *)0x0) goto code_?;
-      TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = pAVar7;
-      iVar9 = func_?();
-      if (iVar9 == 0) goto code_?;
-    }
-    func_?();
-    this_02 = (MVCubeModelBase__Class *)func_?();
-    mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-              ((EventHandler_1_Object_ *)this_02,(Object *)this,
-               MethodInfo__CEEditCubeTutorial__SetFirstTimeEventsHappened_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
-               ,(MethodInfo *)0x0);
-    FirstTimeEventManager::FirstTimeEventManager_SubscribeToFirstTimeState
-              ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
-                *)this_02,(MethodInfo *)0x0);
-    if ((this->fields).bordersExpanded == 0) {
-      pMVar3 = (this->fields).selectedInstance;
-      iVar10 = 0;
-      iVar11 = 0;
-      MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                ((IntVector *)&stack0xffffffec,-1,-1,-1,(MethodInfo *)0x0);
-      uVar12._0_2_ = 0;
-      uVar12._2_2_ = 0;
-      iVar13 = 0;
-      MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                ((IntVector *)&stack0xfffffff4,1,1,1,(MethodInfo *)0x0);
-      this_02 = (MVCubeModelBase__Class *)func_?(TypeInfo__EditableCubeModelWrapper);
-      min.y = iVar11;
-      min.x = iVar10;
-      min.z = 0x1b;
-      max.z = iVar13;
-      max.x = (int16_t)uVar12;
-      max.y = SUB42(uVar12,2);
-      EditableCubeModelWrapper::EditableCubeModelWrapper__ctor_1
-                ((EditableCubeModelWrapper *)this_02,pMVar3,min,max,0x1b,(MethodInfo *)0x0);
-      (this->fields).cubeModelWrapper = (EditableCubeModelWrapper *)this_02;
-      func_?();
-    }
-    DrawPlane::DrawPlane_HideDrawPlane((MethodInfo *)0x0);
-    pGVar14 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager((MethodInfo *)0x0);
-    if (pGVar14 == (GameEventManager *)0x0) {
-code_?:
-      func_?();
-      goto code_?;
-    }
-    this_00 = (pGVar14->fields).AvatarCommandsBuildMode;
-    editorEvent = (this->fields)._.stateType;
-    pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
-    if (pMVar1 == (MVWorldObjectClient *)0x0) goto code_?;
-    this_02 = (MVCubeModelBase__Class *)(pMVar1->fields)._.id;
-    this_03 = (SubscribableVariable_1_System_Int32Enum_ *)
-              func_?(TypeInfo__MVBuildModeAvatarLocal_EditMode__ESEditCubeTutorialData);
-    SubscribableVariable`1[System::Int32Enum]::SubscribableVariable_1_System_Int32Enum___ctor
-              (this_03,(Int32Enum__Enum)this_02,(MethodInfo *)0x0);
-    if (this_00 == (GameEventManager_AvatarCommandsBuildModeManager *)0x0) goto code_?;
-    GameEventManager+AvatarCommandsBuildModeManager::
-    GameEventManager_AvatarCommandsBuildModeManager_EnterBuildStateEvent
-              (this_00,editorEvent,(Object *)this_03,(MethodInfo *)0x0);
-    pGVar15 = (e->fields).gameObject;
-    callbackFunction =
-         (ExecuteEvents_EventFunction_1_System_Object_ *)
-         func_?(
-                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleCubeEditTutorial>
-                        );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
-               MethodInfo__CEEditCubeTutorial___Enter_b__23_0_UnityEngine__EventSystems__IHandleCubeEditTutorial__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (pGVar15,(BaseEventData *)0x0,callbackFunction,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleCubeEditTutorial>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleCubeEditTutorial>_
-              );
-    (this->fields)._.tintedWo = (WorldObjectClientRef *)0x0;
-    func_?();
-    this_02 = (MVCubeModelBase__Class *)(this->fields).constraintVisualizer;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar16 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)this_02,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar16 != 0) {
-      CEEditCubeTutorial_CreateConstraint(this,(MethodInfo *)0x0);
-    }
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__MVCubeModelBase);
-      cRam_? = '\x01';
-    }
-    if (((this->fields).targetCubeModelId == -1) ||
-       (pMVar17 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0),
-       pMVar17 == (MVWorldObjectClientManager *)0x0)) goto code_?;
-    targetCubeModel =
-         (MVCubeModelBase *)
-         MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                   (pMVar17,(this->fields).targetCubeModelId,(MethodInfo *)0x0);
-    this_02 = TypeInfo__MVCubeModelBase;
-    if ((targetCubeModel != (MVCubeModelBase *)0x0) &&
-       ((pMVar18 = TypeInfo__MVCubeModelBase,
-        (targetCubeModel->klass->_1).naturalAligment <
-        (TypeInfo__MVCubeModelBase->_1).naturalAligment ||
-        ((MVCubeModelBase__Class *)
-         (targetCubeModel->klass->_1).typeHierarchy
-         [(TypeInfo__MVCubeModelBase->_1).naturalAligment - 1] != TypeInfo__MVCubeModelBase))))
-    goto code_?;
-    if (targetCubeModel == (MVCubeModelBase *)0x0) goto code_?;
-    (*(code *)(targetCubeModel->klass->vtable).RemoveSelectionBox.method)(targetCubeModel);
-    bVar16 = EditorStateMachine::EditorStateMachine_get_ParentGroupIsRoot(e,(MethodInfo *)0x0);
-    if (bVar16 == 0) {
-      this_02 = (MVCubeModelBase__Class *)
-                MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      iVar6 = EditorStateMachine::EditorStateMachine_get_ParentGroupID(e,(MethodInfo *)0x0);
-      if ((this_02 == (MVCubeModelBase__Class *)0x0) ||
-         (pMVar19 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                              ((MVWorldObjectClientManager *)this_02,iVar6,(MethodInfo *)0x0),
-         pMVar19 == (MVWorldObject *)0x0)) goto code_?;
-      this_02 = (MVCubeModelBase__Class *)pMVar19[1].fields.ownerActorNr;
-      if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+    iVar11 = (pMVar1->fields)._.id;
+  }
+  (this->fields).targetCubeModelId = iVar11;
+  bVar3 = iRam_? != 0;
+  (this->fields).CMSM = (e->fields).cubeModelingStateMachine;
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)&(this->fields).CMSM >> 0xc);
+    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+      puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+      LOCK();
+      bVar3 = uVar6 == *puVar7;
+      if (bVar3) {
+        *puVar7 = uVar6 | 1L << (ulonglong)(uVar4 & 0x3f);
       }
-      SharedCubeFunctions::SharedCubeFunctions_SetLayerRecursively
-                ((Transform *)this_02,0,(MethodInfo *)0x0);
+      UNLOCK();
+    } while (!bVar3);
+  }
+  pAVar13 = TypeInfo__CubeModelTool->static_fields->OnEditCubeChange;
+  pDVar14 = (Delegate *)FUN_?(TypeInfo__System__Action<int,_EditCubeChange>);
+  FUN_?(pDVar14,this);
+  pDVar14 = mscorlib.dll::System::Delegate::Delegate_Combine
+                      ((Delegate *)pAVar13,pDVar14,(MethodInfo *)0x0);
+  pAVar15 = TypeInfo__System__Action<int,_EditCubeChange>;
+  if (pDVar14 == (Delegate *)0x0) {
+    TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = (Action_2_Int32_EditCubeChange_ *)0x0
+    ;
+  }
+  else {
+    pAVar13 = (Action_2_Int32_EditCubeChange_ *)
+              FUN_?(pDVar14,TypeInfo__System__Action<int,_EditCubeChange>);
+    if (pAVar13 == (Action_2_Int32_EditCubeChange_ *)0x0) {
+      FUN_?(pDVar14,pAVar15);
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
+      return;
     }
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__MVCubeModelBase);
-      cRam_? = '\x01';
+    TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = pAVar13;
+    pAVar15 = TypeInfo__System__Action<int,_EditCubeChange>;
+    lVar5 = FUN_?(pDVar14,TypeInfo__System__Action<int,_EditCubeChange>);
+    if (lVar5 == 0) {
+      FUN_?(pDVar14,pAVar15);
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
+      return;
     }
-    if (((this->fields).targetCubeModelId == -1) ||
-       (pMVar17 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0),
-       pMVar17 == (MVWorldObjectClientManager *)0x0)) goto code_?;
-    targetCubeModel =
-         (MVCubeModelBase *)
-         MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                   (pMVar17,(this->fields).targetCubeModelId,(MethodInfo *)0x0);
-    if ((targetCubeModel != (MVCubeModelBase *)0x0) &&
-       ((pMVar18 = TypeInfo__MVCubeModelBase,
-        (targetCubeModel->klass->_1).naturalAligment <
-        (TypeInfo__MVCubeModelBase->_1).naturalAligment ||
-        ((MVCubeModelBase__Class *)
-         (targetCubeModel->klass->_1).typeHierarchy
-         [(TypeInfo__MVCubeModelBase->_1).naturalAligment - 1] != TypeInfo__MVCubeModelBase))))
-    goto code_?;
-    this_02 = TypeInfo__MVCubeModelBase;
-    if (targetCubeModel == (MVCubeModelBase *)0x0) goto code_?;
-    t = (targetCubeModel->fields)._.transform;
-    if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+  }
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)&TypeInfo__CubeModelTool->static_fields->OnEditCubeChange >> 0xc);
+    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+      puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+      LOCK();
+      bVar3 = uVar6 == *puVar7;
+      if (bVar3) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar3);
+  }
+  this_01 = (UnityAction_2_System_Object_System_Int32_ *)
+            FUN_?(
+                         TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
+                         );
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Int32]::
+  UnityAction_2_System_Object_System_Int32___ctor
+            (this_01,(Object *)this,
+             MethodInfo__CEEditCubeTutorial__SetFirstTimeEventsHappened_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
+             ,(MethodInfo *)0x0);
+  FirstTimeEventManager::FirstTimeEventManager_SubscribeToFirstTimeState
+            ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
+              *)this_01,(MethodInfo *)0x0);
+  if ((this->fields).bordersExpanded == 0) {
+    pMVar9 = (this->fields).selectedInstance;
+    this_02 = (EditableCubeModelWrapper *)FUN_?(TypeInfo__EditableCubeModelWrapper);
+    bVar3 = iRam_? != 0;
+    IStackX_8.x = 1;
+    IStackX_8.y = 1;
+    (this_02->fields).cubeModelBase = pMVar9;
+    if (bVar3) {
+      uVar4 = (uint)((ulonglong)&this_02->fields >> 0xc);
+      lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+        puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+        LOCK();
+        bVar3 = uVar6 == *puVar7;
+        if (bVar3) {
+          *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar3);
     }
-    SharedCubeFunctions::SharedCubeFunctions_SetLayerRecursively(t,1,(MethodInfo *)0x0);
-    this_02 = (MVCubeModelBase__Class *)(this->fields).CMSM;
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__MVCubeModelBase);
-      cRam_? = '\x01';
+    if (pMVar9 == (MVCubeModelInstance *)0x0) goto code_?;
+    piVar16 = &(pMVar9->fields)._._.interactionFlags;
+    *piVar16 = *piVar16 | 0x10;
+    IStackX_8.x = 1;
+    IStackX_8.y = 1;
+    uStackX_10 = 0xffffffff;
+    aIStack_17[0].x = -1;
+    aIStack_17[0].y = -1;
+    IStackX_8.z = 1;
+    aIStack_17[0].z = -1;
+    EditableCubeModelWrapper::EditableCubeModelWrapper_SetConstraints
+              (this_02,aIStack_17,&IStackX_8,0x1b,(MethodInfo *)0x0);
+    bVar3 = iRam_? != 0;
+    (this->fields).cubeModelWrapper = this_02;
+    if (bVar3) {
+      uVar4 = (uint)((ulonglong)&(this->fields).cubeModelWrapper >> 0xc);
+      lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+        puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+        LOCK();
+        bVar3 = uVar6 == *puVar7;
+        if (bVar3) {
+          *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar3);
     }
-    if ((this->fields).targetCubeModelId == -1) {
-      targetCubeModel = (MVCubeModelBase *)0x0;
+  }
+  DrawPlane::DrawPlane_HideDrawPlane((MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar18 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (((pMVar18 == (MVGameControllerBase *)0x0) ||
+      (pMVar19 = (pMVar18->fields).game, pMVar19 == (MVNetworkGame *)0x0)) ||
+     (pGVar20 = (pMVar19->fields).GameEventManager, pGVar20 == (GameEventManager *)0x0))
+  goto code_?;
+  pGVar21 = (pGVar20->fields).AvatarCommandsBuildMode;
+  iVar11 = (this->fields)._.stateType;
+  pMVar1 = EditorStateMachine::EditorStateMachine_get_SingleSelectedWO(e,(MethodInfo *)0x0);
+  if (pMVar1 == (MVWorldObjectClient *)0x0) goto code_?;
+  iVar22 = (pMVar1->fields)._.id;
+  lVar5 = FUN_?(TypeInfo__MVBuildModeAvatarLocal_EditMode__ESEditCubeTutorialData);
+  *(int32_t *)(lVar5 + 0x10) = iVar22;
+  if (pGVar21 == (GameEventManager_AvatarCommandsBuildModeManager *)0x0) goto code_?;
+  if ((pGVar21->fields).OnEnterBuildStateEvent != (Action_2_EditorEvent_Object_ *)0x0) {
+    pAVar23 = (pGVar21->fields).OnEnterBuildStateEvent;
+    (*(pAVar23->fields)._._.invoke_impl)((pAVar23->fields)._._.method_code,iVar11,lVar5);
+  }
+  root = (e->fields).gameObject;
+  this_03 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+            FUN_?(
+                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleCubeEditTutorial>
+                         );
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+  ExecuteEvents_EventFunction_1_System_Object___ctor
+            (this_03,(Object *)this,
+             MethodInfo__CEEditCubeTutorial___Enter_b__23_0_UnityEngine__EventSystems__IHandleCubeEditTutorial__UnityEngine__EventSystems__BaseEventData_
+             ,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (root,(BaseEventData *)0x0,this_03,
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IHandleCubeEditTutorial>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IHandleCubeEditTutorial>_
+            );
+  bVar3 = iRam_? != 0;
+  (this->fields)._.tintedWo = (WorldObjectClientRef *)0x0;
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)&(this->fields)._.tintedWo >> 0xc);
+    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+      puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+      LOCK();
+      bVar3 = uVar6 == *puVar7;
+      if (bVar3) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar3);
+  }
+  pCVar24 = (this->fields).constraintVisualizer;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pCVar24 == (ConstraintVisualizer *)0x0) {
+code_?:
+    CEEditCubeTutorial_CreateConstraint(this,(MethodInfo *)0x0);
+  }
+  else {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    else {
-      pMVar17 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if (pMVar17 == (MVWorldObjectClientManager *)0x0) goto code_?;
-      targetCubeModel =
-           (MVCubeModelBase *)
-           MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                     (pMVar17,(this->fields).targetCubeModelId,(MethodInfo *)0x0);
-      if ((targetCubeModel != (MVCubeModelBase *)0x0) &&
-         ((pMVar18 = TypeInfo__MVCubeModelBase,
-          (targetCubeModel->klass->_1).naturalAligment <
-          (TypeInfo__MVCubeModelBase->_1).naturalAligment ||
-          ((MVCubeModelBase__Class *)
-           (targetCubeModel->klass->_1).typeHierarchy
-           [(TypeInfo__MVCubeModelBase->_1).naturalAligment - 1] != TypeInfo__MVCubeModelBase))))
-      goto code_?;
+    if ((pCVar24->fields)._._._._.m_CachedPtr == (void *)0x0) goto code_?;
+  }
+  if (cRam_? == '\0') {
+    FUN_?();
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (((this->fields).targetCubeModelId != -1) &&
+     (pMVar25 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0),
+     pMVar25 != (MVWorldObjectClientManager *)0x0)) {
+    pMVar8 = (MVCubeModelInstance *)
+              MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
+                        (pMVar25,(this->fields).targetCubeModelId,(MethodInfo *)0x0);
+    pMVar9 = targetCubeModel;
+    if (pMVar8 != (MVCubeModelInstance *)0x0) {
+      bVar10 = (TypeInfo__MVCubeModelBase->_1).naturalAligment;
+      if (((pMVar8->klass->_1).naturalAligment < bVar10) ||
+         (pMVar9 = pMVar8,
+         (MVCubeModelBase__Class *)(pMVar8->klass->_1).typeHierarchy[(ulonglong)bVar10 - 1] !=
+         TypeInfo__MVCubeModelBase)) {
+        FUN_?(pMVar8,TypeInfo__MVCubeModelBase);
+        pcVar12 = (code *)swi(3);
+        (*pcVar12)();
+        return;
+      }
     }
-    if (this_02 == (MVCubeModelBase__Class *)0x0) goto code_?;
-    CubeModelingStateMachine::CubeModelingStateMachine_StartEdit
-              ((CubeModelingStateMachine *)this_02,targetCubeModel,(this->fields).constraint,
-               (MethodInfo *)0x0);
-    pMVar20 = (e->fields).weCamera;
-    if ((pMVar20 == (MainCameraManager *)0x0) ||
-       (pCVar21 = (pMVar20->fields).mainCamera, pCVar21 == (Camera *)0x0)) goto code_?;
-    iVar6 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_cullingMask
-                       (pCVar21,(MethodInfo *)0x0);
-    (this->fields).mainCameraDefaultMask = iVar6;
-    pMVar20 = (e->fields).weCamera;
-    if ((pMVar20 == (MainCameraManager *)0x0) ||
-       (pCVar21 = (pMVar20->fields).mainCamera, pCVar21 == (Camera *)0x0)) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
-              (pCVar21,0,(MethodInfo *)0x0);
-    pMVar20 = (e->fields).weCamera;
-    if (pMVar20 == (MainCameraManager *)0x0) goto code_?;
-    MainCameraManager::MainCameraManager_set_BlueModeEnabled(pMVar20,1,(MethodInfo *)0x0);
-    if (cRam_? == '\0') {
-      func_?();
-      func_?();
-      cRam_? = '\x01';
-    }
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__MVCubeModelBase);
-      cRam_? = '\x01';
-    }
-    if (((this->fields).targetCubeModelId == -1) ||
-       (pMVar17 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0),
-       pMVar17 == (MVWorldObjectClientManager *)0x0)) goto code_?;
-    targetCubeModel =
-         (MVCubeModelBase *)
-         MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                   (pMVar17,(this->fields).targetCubeModelId,(MethodInfo *)0x0);
-    if ((targetCubeModel == (MVCubeModelBase *)0x0) ||
-       ((pMVar18 = TypeInfo__MVCubeModelBase,
-        (TypeInfo__MVCubeModelBase->_1).naturalAligment <=
-        (targetCubeModel->klass->_1).naturalAligment &&
-        ((MVCubeModelBase__Class *)
-         (targetCubeModel->klass->_1).typeHierarchy
-         [(TypeInfo__MVCubeModelBase->_1).naturalAligment - 1] == TypeInfo__MVCubeModelBase)))) {
-      this_02 = TypeInfo__MVCubeModelBase;
-      if ((targetCubeModel != (MVCubeModelBase *)0x0) &&
-         (pGVar15 = (targetCubeModel->fields)._.gameObject, pGVar15 != (GameObject *)0x0)) {
-        pFVar22 = (FirstTimeCubeModelBlinker *)
-                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                            (pGVar15,
-                             FirstTimeCubeModelBlinker_MethodInfo__UnityEngine__GameObject__AddComponent<FirstTimeCubeModelBlinker>__
-                            );
-        (this->fields).blinker = pFVar22;
-        func_?(&(this->fields).blinker);
-        pFVar22 = (this->fields).blinker;
+    if (pMVar9 != (MVCubeModelInstance *)0x0) {
+      (*(pMVar9->klass->vtable).RemoveSelectionBox.methodPtr)();
+      bVar26 = EditorStateMachine::EditorStateMachine_get_ParentGroupIsRoot(e,(MethodInfo *)0x0);
+      if (bVar26 == 0) {
+        pMVar25 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+        pSVar27 = (e->fields).selectionController;
+        if (pSVar27 == (SelectionController *)0x0) goto code_?;
         if (cRam_? == '\0') {
-          func_?(&TypeInfo__PrefabPool);
+          FUN_?(&MethodInfo__System__Collections__Generic__Stack<int>__Peek__);
+          LOCK();
+          UNLOCK();
           cRam_? = '\x01';
         }
-        pPVar23 = TypeInfo__PrefabPool->static_fields->instance;
-        this_02 = (MVCubeModelBase__Class *)0x0;
-        if (pPVar23 != (PrefabPool *)0x0) {
-          this_02 = (MVCubeModelBase__Class *)(pPVar23->fields).blinkerDefaultMaterial;
-          this_04 = (Material *)func_?(TypeInfo__UnityEngine__Material);
-          UnityEngine.CoreModule.dll::UnityEngine::Material::Material__ctor_1
-                    (this_04,(Material *)this_02,(MethodInfo *)0x0);
-          pMVar20 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
-                              ((MethodInfo *)0x0);
-          if (pMVar20 != (MainCameraManager *)0x0) {
-            this_02 = (MVCubeModelBase__Class *)
-                      MainCameraManager::MainCameraManager_get_SecondaryCamera
-                                (pMVar20,(MethodInfo *)0x0);
-            if (cRam_? == '\0') {
-              func_?(&TypeInfo__MVCubeModelBase);
-              cRam_? = '\x01';
-            }
-            if ((this->fields).targetCubeModelId == -1) {
-              targetCubeModel = (MVCubeModelBase *)0x0;
-            }
-            else {
-              pMVar17 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-              if (pMVar17 == (MVWorldObjectClientManager *)0x0) goto code_?;
-              targetCubeModel =
-                   (MVCubeModelBase *)
-                   MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                             (pMVar17,(this->fields).targetCubeModelId,(MethodInfo *)0x0);
-              if ((targetCubeModel != (MVCubeModelBase *)0x0) &&
-                 ((pMVar18 = TypeInfo__MVCubeModelBase,
-                  (targetCubeModel->klass->_1).naturalAligment <
-                  (TypeInfo__MVCubeModelBase->_1).naturalAligment ||
-                  ((MVCubeModelBase__Class *)
-                   (targetCubeModel->klass->_1).typeHierarchy
-                   [(TypeInfo__MVCubeModelBase->_1).naturalAligment - 1] !=
-                   TypeInfo__MVCubeModelBase)))) goto code_?;
-            }
-            if (pFVar22 != (FirstTimeCubeModelBlinker *)0x0) {
-              FirstTimeCubeModelBlinker::FirstTimeCubeModelBlinker_Initialize
-                        (pFVar22,this_04,(Camera *)this_02,targetCubeModel,(MethodInfo *)0x0);
-              pFVar22 = (this->fields).blinker;
-              if (pFVar22 != (FirstTimeCubeModelBlinker *)0x0) {
-                (pFVar22->fields)._.visible = 1;
+        if ((((pSVar27->fields).parentGroups == (Stack_1_System_Int32_ *)0x0) ||
+            (iVar11 = FUN_?(), pMVar25 == (MVWorldObjectClientManager *)0x0)) ||
+           (pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
+                                (pMVar25,iVar11,(MethodInfo *)0x0),
+           pMVar1 == (MVWorldObjectClient *)0x0)) goto code_?;
+        pTVar28 = (pMVar1->fields).transform;
+        if (*(int *)&(TypeInfo__SharedCubeFunctions->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        SharedCubeFunctions::SharedCubeFunctions_SetLayerRecursively(pTVar28,0,(MethodInfo *)0x0);
+      }
+      if (cRam_? == '\0') {
+        FUN_?();
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (((this->fields).targetCubeModelId != -1) &&
+         (pMVar25 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0),
+         pMVar25 != (MVWorldObjectClientManager *)0x0)) {
+        pMVar8 = (MVCubeModelInstance *)
+                  MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
+                            (pMVar25,(this->fields).targetCubeModelId,(MethodInfo *)0x0);
+        pMVar9 = targetCubeModel;
+        if (pMVar8 != (MVCubeModelInstance *)0x0) {
+          bVar10 = (TypeInfo__MVCubeModelBase->_1).naturalAligment;
+          if (((pMVar8->klass->_1).naturalAligment < bVar10) ||
+             (pMVar9 = pMVar8,
+             (MVCubeModelBase__Class *)(pMVar8->klass->_1).typeHierarchy[(ulonglong)bVar10 - 1] !=
+             TypeInfo__MVCubeModelBase)) {
+            FUN_?(pMVar8);
+            pcVar12 = (code *)swi(3);
+            (*pcVar12)();
+            return;
+          }
+        }
+        if (pMVar9 != (MVCubeModelInstance *)0x0) {
+          pTVar28 = (pMVar9->fields)._._.transform;
+          if (*(int *)&(TypeInfo__SharedCubeFunctions->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          SharedCubeFunctions::SharedCubeFunctions_SetLayerRecursively(pTVar28,1,(MethodInfo *)0x0);
+          this_00 = (this->fields).CMSM;
+          if (cRam_? == '\0') {
+            FUN_?();
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if ((this->fields).targetCubeModelId != -1) {
+            pMVar25 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+            if (pMVar25 == (MVWorldObjectClientManager *)0x0) goto code_?;
+            pMVar9 = (MVCubeModelInstance *)
+                      MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
+                                (pMVar25,(this->fields).targetCubeModelId,(MethodInfo *)0x0);
+            if (pMVar9 != (MVCubeModelInstance *)0x0) {
+              bVar10 = (TypeInfo__MVCubeModelBase->_1).naturalAligment;
+              if (((pMVar9->klass->_1).naturalAligment < bVar10) ||
+                 (targetCubeModel = pMVar9,
+                 (MVCubeModelBase__Class *)(pMVar9->klass->_1).typeHierarchy[(ulonglong)bVar10 - 1]
+                 != TypeInfo__MVCubeModelBase)) {
+                FUN_?(pMVar9);
+                pcVar12 = (code *)swi(3);
+                (*pcVar12)();
                 return;
+              }
+            }
+          }
+          if (this_00 != (CubeModelingStateMachine *)0x0) {
+            CubeModelingStateMachine::CubeModelingStateMachine_StartEdit
+                      (this_00,(MVCubeModelBase *)targetCubeModel,(this->fields).constraint,
+                       (MethodInfo *)0x0);
+            pMVar29 = (e->fields).weCamera;
+            if ((pMVar29 != (MainCameraManager *)0x0) &&
+               (pCVar30 = (pMVar29->fields).mainCamera, pCVar30 != (Camera *)0x0)) {
+              iVar11 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_cullingMask
+                                 (pCVar30,(MethodInfo *)0x0);
+              (this->fields).mainCameraDefaultMask = iVar11;
+              pMVar29 = (e->fields).weCamera;
+              if ((pMVar29 != (MainCameraManager *)0x0) &&
+                 (pCVar30 = (pMVar29->fields).mainCamera, pCVar30 != (Camera *)0x0)) {
+                UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
+                          (pCVar30,0,(MethodInfo *)0x0);
+                pMVar29 = (e->fields).weCamera;
+                if (pMVar29 != (MainCameraManager *)0x0) {
+                  MainCameraManager::MainCameraManager_set_BlueModeEnabled
+                            (pMVar29,1,(MethodInfo *)0x0);
+                  CEEditCubeTutorial_SetupBlinker(this,(MethodInfo *)0x0);
+                  return;
+                }
               }
             }
           }
         }
       }
-      goto code_?;
     }
   }
-  else {
-    if (((TypeInfo__MVCubeModelBase->_1).naturalAligment <= (pMVar1->klass->_1).naturalAligment) &&
-       ((MVCubeModelBase__Class *)
-        (pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelBase->_1).naturalAligment - 1] ==
-        TypeInfo__MVCubeModelBase)) {
-      iVar6 = (pMVar1->fields)._.id;
-      goto code_?;
-    }
 code_?:
-    func_?();
-    targetCubeModel = extraout_EDX;
-    pMVar18 = this_02;
-  }
-code_?:
-  func_?(targetCubeModel,pMVar18);
-code_?:
-  func_?();
-  pcVar24 = (code *)swi(3);
-  (*pcVar24)();
+  FUN_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -562,73 +747,77 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_Execute
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&TypeInfo__EditorEvent);
-    func_?(&StringLiteral_Hiding_cursor);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__EditorEvent);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Hiding_cursor);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = this;
   if ((this->fields).exiting == 0) {
     pMVar1 = CEEditCubeTutorial_get_TargetCubeModel(this,(MethodInfo *)0x0);
-    bVar2 = 1 - (pMVar1 != (MVCubeModelBase *)0x0);
+    bVar2 = pMVar1 == (MVCubeModelBase *)0x0;
   }
   else {
-    bVar2 = 1;
+    bVar2 = true;
   }
-  (this_00->fields).exiting = bVar2;
-  if (bVar2 == 0) {
-    if ((this_00->fields).hasExited != 0) {
+  (this->fields).exiting = bVar2;
+  if (bVar2 == false) {
+    if ((this->fields).hasExited != 0) {
       return;
     }
-    pCVar3 = (this_00->fields).resettingBookkeeping;
+    pCVar3 = (this->fields).resettingBookkeeping;
     if (pCVar3 != (CEEditCubeTutorial_ResettingBookkeeping *)0x0) {
-      if ((((pCVar3->fields).doReset != 0) || ((this_00->fields).disableCubeModeling != 0)) &&
-         (bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_1_get_visible
-                            ((MethodInfo *)0x0), bVar2 != 0)) {
-        pCVar3 = (this_00->fields).resettingBookkeeping;
+      if ((((pCVar3->fields).doReset != 0) || ((this->fields).disableCubeModeling != 0)) &&
+         (bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_1_get_visible
+                            ((MethodInfo *)0x0), bVar4 != 0)) {
+        pCVar3 = (this->fields).resettingBookkeeping;
         if (pCVar3 == (CEEditCubeTutorial_ResettingBookkeeping *)0x0) goto code_?;
         if ((pCVar3->fields).doReset != 0) {
           (pCVar3->fields).doReset = 0;
           (pCVar3->fields).isResetting = 1;
-          iVar4 = WaitForTicksLocal::WaitForTicksLocal_GetEnvironmentTick(0,(MethodInfo *)0x0);
-          (pCVar3->fields).resettingBeginTime = iVar4;
+          iVar5 = FUN_?();
+          (pCVar3->fields).resettingBeginTime = iVar5;
         }
-        pCVar5 = (this_00->fields).CMSM;
-        if (pCVar5 == (CubeModelingStateMachine *)0x0) goto code_?;
+        pCVar6 = (this->fields).CMSM;
+        if (pCVar6 == (CubeModelingStateMachine *)0x0) goto code_?;
         CubeModelingStateMachine::CubeModelingStateMachine_set_CursorVisible
-                  (pCVar5,0,(MethodInfo *)0x0);
-        (this_00->fields).disableCubeModeling = 0;
-        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          e = (EditorStateMachine *)TypeInfo__UnityEngine__Debug;
-          this = (CEEditCubeTutorial *)&UNK_?;
-          func_?();
+                  (pCVar6,0,(MethodInfo *)0x0);
+        (this->fields).disableCubeModeling = 0;
+        if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        e = (EditorStateMachine *)0x0;
-        this = (CEEditCubeTutorial *)StringLiteral_Hiding_cursor;
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
                   ((Object *)StringLiteral_Hiding_cursor,(MethodInfo *)0x0);
       }
-      pCVar3 = (this_00->fields).resettingBookkeeping;
+      pCVar3 = (this->fields).resettingBookkeeping;
       if (pCVar3 != (CEEditCubeTutorial_ResettingBookkeeping *)0x0) {
         if ((pCVar3->fields).isResetting == 0) {
-          if ((this_00->fields).enableCubemodeling == 0) {
+          if ((this->fields).enableCubemodeling == 0) {
             UnityEngine.CoreModule.dll::UnityEngine::Cursor::Cursor_1_set_visible
                       (1,(MethodInfo *)0x0);
             return;
           }
           if ((e != (EditorStateMachine *)0x0) &&
-             (pCVar5 = (e->fields).cubeModelingStateMachine,
-             pCVar5 != (CubeModelingStateMachine *)0x0)) {
-            (*(code *)(pCVar5->klass->vtable).Update.method)(pCVar5,pCVar5->klass[1]._0.image);
+             (pCVar6 = (e->fields).cubeModelingStateMachine,
+             pCVar6 != (CubeModelingStateMachine *)0x0)) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+            (*(pCVar6->klass->vtable).Update.methodPtr)
+                      (pCVar6,(pCVar6->klass->vtable).Update.method);
             return;
           }
         }
         else {
-          bVar2 = CEEditCubeTutorial_DoReset(this_00,(MethodInfo *)0x0);
-          if (bVar2 == 0) {
+          bVar4 = CEEditCubeTutorial_DoReset(this,(MethodInfo *)0x0);
+          if (bVar4 == 0) {
             return;
           }
-          pCVar3 = (this_00->fields).resettingBookkeeping;
+          pCVar3 = (this->fields).resettingBookkeeping;
           if (pCVar3 != (CEEditCubeTutorial_ResettingBookkeeping *)0x0) {
             (pCVar3->fields).isResetting = 0;
             return;
@@ -638,18 +827,18 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_Execute
     }
   }
   else {
-    this = (CEEditCubeTutorial *)0x39;
-    value = (Object *)func_?(TypeInfo__EditorEvent,&this);
+    auStackX_8[0] = 0x39;
+    value = (Object *)FUN_?(TypeInfo__EditorEvent,auStackX_8);
     if (e != (EditorStateMachine *)0x0) {
       FSMEntity::FSMEntity_set_Event((FSMEntity *)e,value,(MethodInfo *)0x0);
-      (this_00->fields).hasExited = 1;
+      (this->fields).hasExited = 1;
       return;
     }
   }
 code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -661,148 +850,266 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_Exit
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<int,_EditCubeChange>);
-    func_?(&
-                    TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
-                   );
-    func_?(&MethodInfo__CEEditCubeTutorial__OnEditCubeChange_int__EditCubeChange_);
-    func_?(&
-                    MethodInfo__CEEditCubeTutorial__SetFirstTimeEventsHappened_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
-                   );
-    func_?(&TypeInfo__CubeModelTool);
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&
-                    MethodInfo__CEEditCubeTutorial____c__DisplayClass28_0___Exit_b__0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__CEEditCubeTutorial____c__DisplayClass28_0);
-    func_?(&::StringLiteral__);
+    FUN_?(&TypeInfo__System__Action<int,_EditCubeChange>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__CEEditCubeTutorial__OnEditCubeChange_int__EditCubeChange_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__CEEditCubeTutorial__SetFirstTimeEventsHappened_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CubeModelTool);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__CEEditCubeTutorial____c__DisplayClass28_0___Exit_b__0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CEEditCubeTutorial____c__DisplayClass28_0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__CEEditCubeTutorial____c__DisplayClass28_0;
-  obj = (Delegate *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)obj,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (((esm != (EditorStateMachine *)0x0) &&
-      (pMVar1 = (esm->fields).weCamera, pMVar1 != (MainCameraManager *)0x0)) &&
-     (this_00 = (pMVar1->fields).mainCamera, this_00 != (Camera *)0x0)) {
-    UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
-              (this_00,(this->fields).mainCameraDefaultMask,(MethodInfo *)0x0);
-    if (obj != (Delegate *)0x0) {
-      ((Object_1__Fields *)&(obj->fields).method_ptr)->m_CachedPtr = ::StringLiteral__;
-      func_?(&obj->fields,::StringLiteral__);
-      pMVar2 = CEEditCubeTutorial_get_TargetCubeModel(this,(MethodInfo *)0x0);
-      MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if (pMVar2 != (MVCubeModelBase *)0x0) {
-        cVar3 = (*(code *)(pMVar2->klass->vtable).Delete.method)
-                          (pMVar2,&obj->fields,&obj->fields,
-                           (pMVar2->klass->vtable).get_Visible.methodPtr);
-        if (cVar3 == '\0') {
-          root = (GameObject *)&UNK_?;
-          callbackFunction =
-               (ExecuteEvents_EventFunction_1_System_Object_ *)
-               func_?(
-                              TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                              );
-          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-          Object]::UnityAction_2_System_Object_System_Object___ctor
-                    ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)obj,
-                     MethodInfo__CEEditCubeTutorial____c__DisplayClass28_0___Exit_b__0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-                     ,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor ==
-              0) {
-            func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-          }
-          UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
-          ExecuteEvents_ExecuteHierarchy
-                    (root,(BaseEventData *)0x0,callbackFunction,
-                     UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                    );
+  object = (Object *)FUN_?(TypeInfo__CEEditCubeTutorial____c__DisplayClass28_0);
+  if ((((esm != (EditorStateMachine *)0x0) &&
+       (pMVar1 = (esm->fields).weCamera, pMVar1 != (MainCameraManager *)0x0)) &&
+      (this_00 = (pMVar1->fields).mainCamera, this_00 != (Camera *)0x0)) &&
+     (UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
+                (this_00,(this->fields).mainCameraDefaultMask,(MethodInfo *)0x0),
+     object != (Object *)0x0)) {
+    bVar2 = iRam_? != 0;
+    object[1].klass = (Object__Class *)::StringLiteral__;
+    if (bVar2) {
+      uVar3 = (uint)((ulonglong)(object + 1) >> 0xc);
+      uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+      do {
+        uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+        puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
         }
-        this_01 = (this->fields).constraintVisualizer;
-        if (this_01 != (ConstraintVisualizer *)0x0) {
-          obj = (Delegate *)
-                UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                          ((Component *)this_01,(MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
+        UNLOCK();
+      } while (!bVar2);
+    }
+    if (cRam_? == '\0') {
+      FUN_?();
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if ((this->fields).targetCubeModelId == -1) {
+      MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    }
+    else {
+      this_03 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      if (this_03 != (MVWorldObjectClientManager *)0x0) {
+        pMVar7 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
+                            (this_03,(this->fields).targetCubeModelId,(MethodInfo *)0x0);
+        if (pMVar7 != (MVWorldObjectClient *)0x0) {
+          bVar8 = (TypeInfo__MVCubeModelBase->_1).naturalAligment;
+          if (((pMVar7->klass->_1).naturalAligment < bVar8) ||
+             ((MVCubeModelBase__Class *)(pMVar7->klass->_1).typeHierarchy[(ulonglong)bVar8 - 1] !=
+              TypeInfo__MVCubeModelBase)) {
+            FUN_?(pMVar7);
+            pcVar9 = (code *)swi(3);
+            (*pcVar9)();
+            return;
           }
-          UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                    ((Object_1 *)obj,(MethodInfo *)0x0);
-          pGVar4 = MVGameControllerBase::MVGameControllerBase_get_GameEventManager
-                             ((MethodInfo *)0x0);
-          if ((pGVar4 != (GameEventManager *)0x0) &&
-             (this_02 = (pGVar4->fields).AvatarCommandsBuildMode,
-             this_02 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)) {
-            GameEventManager+AvatarCommandsBuildModeManager::
-            GameEventManager_AvatarCommandsBuildModeManager_ExitBuildStateEvent
-                      (this_02,(this->fields)._.stateType,(Object *)0x0,(MethodInfo *)0x0);
-            pCVar5 = (esm->fields).cubeModelingStateMachine;
-            if (pCVar5 != (CubeModelingStateMachine *)0x0) {
-              CubeModelingStateMachine::CubeModelingStateMachine_RemoveCursors
-                        (pCVar5,(MethodInfo *)0x0);
-              pCVar5 = (esm->fields).cubeModelingStateMachine;
-              if (pCVar5 != (CubeModelingStateMachine *)0x0) {
-                CubeModelingStateMachine::CubeModelingStateMachine_EndEdit(pCVar5,(MethodInfo *)0x0)
-                ;
-                (this->fields).targetCubeModelId = -1;
-                (this->fields).selectedInstance = (MVCubeModelInstance *)0x0;
-                func_?(&(this->fields).selectedInstance,0);
-                EditorStateMachine::EditorStateMachine_DeSelectAll(esm,(MethodInfo *)0x0);
-                this_03 = (EventHandler_1_Object_ *)
-                          func_?(
-                                         TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
-                                         );
-                mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                          (this_03,(Object *)this,
-                           MethodInfo__CEEditCubeTutorial__SetFirstTimeEventsHappened_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
-                           ,(MethodInfo *)0x0);
-                FirstTimeEventManager::FirstTimeEventManager_UnSubscribeToFirstTimeState
-                          ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
-                            *)this_03,(MethodInfo *)0x0);
-                pAVar6 = TypeInfo__CubeModelTool->static_fields->OnEditCubeChange;
-                this_04 = (UnityAction_2_System_Int32_System_Int32_ *)
-                          func_?(TypeInfo__System__Action<int,_EditCubeChange>);
-                UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System
-                ::Int32]::UnityAction_2_System_Int32_System_Int32___ctor
-                          (this_04,(Object *)this,
-                           MethodInfo__CEEditCubeTutorial__OnEditCubeChange_int__EditCubeChange_,
-                           (MethodInfo *)0x0);
-                obj = mscorlib.dll::System::Delegate::Delegate_Remove
-                                ((Delegate *)pAVar6,(Delegate *)this_04,(MethodInfo *)0x0);
-                esm = (EditorStateMachine *)TypeInfo__System__Action<int,_EditCubeChange>;
-                if (obj == (Delegate *)0x0) {
-                  TypeInfo__CubeModelTool->static_fields->OnEditCubeChange =
-                       (Action_2_Int32_EditCubeChange_ *)0x0;
-                  pAStack7 = (Action_2_Int32_EditCubeChange___Class *)0x0;
-code_?:
-                  pDStack8 =
-                       (Delegate *)&TypeInfo__CubeModelTool->static_fields->OnEditCubeChange;
-                  func_?();
-                  (this->fields).blinker = (FirstTimeCubeModelBlinker *)0x0;
-                  puStack9 = (undefined *)0x0;
-                  func_?();
-                  return;
+        }
+        MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+        if (pMVar7 != (MVWorldObjectClient *)0x0) {
+          cVar10 = (*(pMVar7->klass->vtable).Delete.methodPtr)(pMVar7);
+          if (cVar10 == '\0') {
+            pGVar11 = (esm->fields).gameObject;
+            this_04 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+                      FUN_?(
+                                   TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                                   );
+            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::
+            Object]::ExecuteEvents_EventFunction_1_System_Object___ctor
+                      (this_04,object,
+                       MethodInfo__CEEditCubeTutorial____c__DisplayClass28_0___Exit_b__0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                       ,(MethodInfo *)0x0);
+            if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+            ExecuteEvents_ExecuteHierarchy
+                      (pGVar11,(BaseEventData *)0x0,this_04,
+                       UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                      );
+          }
+          this_01 = (this->fields).constraintVisualizer;
+          if (this_01 != (ConstraintVisualizer *)0x0) {
+            pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                ((Component *)this_01,(MethodInfo *)0x0);
+            if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__UnityEngine__Object);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy
+                      ((Object_1 *)pGVar11,0.0,(MethodInfo *)0x0);
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__MVGameControllerBase);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pMVar12 = TypeInfo__MVGameControllerBase->static_fields->instance;
+            if (((pMVar12 != (MVGameControllerBase *)0x0) &&
+                (pMVar13 = (pMVar12->fields).game, pMVar13 != (MVNetworkGame *)0x0)) &&
+               ((pGVar14 = (pMVar13->fields).GameEventManager, pGVar14 != (GameEventManager *)0x0 &&
+                (pGVar15 = (pGVar14->fields).AvatarCommandsBuildMode,
+                pGVar15 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0)))) {
+              if ((pGVar15->fields).OnExitBuildStateEvent != (Action_2_EditorEvent_Object_ *)0x0) {
+                pAVar16 = (pGVar15->fields).OnExitBuildStateEvent;
+                (*(pAVar16->fields)._._.invoke_impl)
+                          ((pAVar16->fields)._._.method_code,(this->fields)._.stateType,0);
+              }
+              pCVar17 = (esm->fields).cubeModelingStateMachine;
+              if (pCVar17 != (CubeModelingStateMachine *)0x0) {
+                CubeModelingStateMachine::CubeModelingStateMachine_RemoveCursors
+                          (pCVar17,(MethodInfo *)0x0);
+                pCVar17 = (esm->fields).cubeModelingStateMachine;
+                if (pCVar17 != (CubeModelingStateMachine *)0x0) {
+                  CubeModelingStateMachine::CubeModelingStateMachine_EndEdit
+                            (pCVar17,(MethodInfo *)0x0);
+                  (this->fields).targetCubeModelId = -1;
+                  bVar2 = iRam_? != 0;
+                  (this->fields).selectedInstance = (MVCubeModelInstance *)0x0;
+                  if (bVar2) {
+                    uVar3 = (uint)((ulonglong)&(this->fields).selectedInstance >> 0xc);
+                    uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+                    do {
+                      uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+                      puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+                      LOCK();
+                      bVar2 = uVar5 == *puVar6;
+                      if (bVar2) {
+                        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+                      }
+                      UNLOCK();
+                    } while (!bVar2);
+                  }
+                  this_02 = (esm->fields).selectionController;
+                  if (this_02 != (SelectionController *)0x0) {
+                    SelectionController::SelectionController_DeSelectAll(this_02,(MethodInfo *)0x0);
+                    this_05 = (UnityAction_2_System_Object_System_Int32_ *)
+                              FUN_?(
+                                           TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
+                                           );
+                    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::
+                    Object,System::Int32]::UnityAction_2_System_Object_System_Int32___ctor
+                              (this_05,(Object *)this,
+                               MethodInfo__CEEditCubeTutorial__SetFirstTimeEventsHappened_MV__WorldObject__MetaData__FirstTimeState__MV__WorldObject__MetaData__FirstTimeEvent_
+                               ,(MethodInfo *)0x0);
+                    FirstTimeEventManager::FirstTimeEventManager_UnSubscribeToFirstTimeState
+                              ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
+                                *)this_05,(MethodInfo *)0x0);
+                    pAVar18 = TypeInfo__CubeModelTool->static_fields->OnEditCubeChange;
+                    pDVar19 = (Delegate *)
+                              FUN_?(TypeInfo__System__Action<int,_EditCubeChange>);
+                    FUN_?(pDVar19,this);
+                    pDVar19 = mscorlib.dll::System::Delegate::Delegate_Remove
+                                        ((Delegate *)pAVar18,pDVar19,(MethodInfo *)0x0);
+                    pAVar20 = TypeInfo__System__Action<int,_EditCubeChange>;
+                    if (pDVar19 == (Delegate *)0x0) {
+                      TypeInfo__CubeModelTool->static_fields->OnEditCubeChange =
+                           (Action_2_Int32_EditCubeChange_ *)0x0;
+                    }
+                    else {
+                      pAVar18 = (Action_2_Int32_EditCubeChange_ *)
+                                FUN_?(pDVar19,TypeInfo__System__Action<int,_EditCubeChange>)
+                      ;
+                      if (pAVar18 == (Action_2_Int32_EditCubeChange_ *)0x0) {
+                        FUN_?(pDVar19,pAVar20);
+                        pcVar9 = (code *)swi(3);
+                        (*pcVar9)();
+                        return;
+                      }
+                      TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = pAVar18;
+                      pAVar20 = TypeInfo__System__Action<int,_EditCubeChange>;
+                      lVar21 = FUN_?(pDVar19,TypeInfo__System__Action<int,_EditCubeChange>);
+                      if (lVar21 == 0) {
+                        FUN_?(pDVar19,pAVar20);
+                        pcVar9 = (code *)swi(3);
+                        (*pcVar9)();
+                        return;
+                      }
+                    }
+                    if (iRam_? != 0) {
+                      uVar3 = (uint)((ulonglong)
+                                      &TypeInfo__CubeModelTool->static_fields->OnEditCubeChange >>
+                                     0xc);
+                      uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+                      do {
+                        uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+                        puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+                        LOCK();
+                        bVar2 = uVar5 == *puVar6;
+                        if (bVar2) {
+                          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+                        }
+                        UNLOCK();
+                      } while (!bVar2);
+                    }
+                    iVar22 = iRam_?;
+                    (this->fields).blinker = (FirstTimeCubeModelBlinker *)0x0;
+                    if (iVar22 != 0) {
+                      uVar3 = (uint)((ulonglong)&(this->fields).blinker >> 0xc);
+                      uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+                      do {
+                        uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+                        puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+                        LOCK();
+                        bVar2 = uVar5 == *puVar6;
+                        if (bVar2) {
+                          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+                        }
+                        UNLOCK();
+                      } while (!bVar2);
+                    }
+                    return;
+                  }
                 }
-                pAStack7 = TypeInfo__System__Action<int,_EditCubeChange>;
-                pDStack8 = obj;
-                pAVar6 = (Action_2_Int32_EditCubeChange_ *)func_?();
-                if (pAVar6 != (Action_2_Int32_EditCubeChange_ *)0x0) {
-                  TypeInfo__CubeModelTool->static_fields->OnEditCubeChange = pAVar6;
-                  esm = (EditorStateMachine *)TypeInfo__System__Action<int,_EditCubeChange>;
-                  pAStack7 = TypeInfo__System__Action<int,_EditCubeChange>;
-                  pDStack8 = obj;
-                  pAStack7 = (Action_2_Int32_EditCubeChange___Class *)func_?();
-                  if (pAStack7 != (Action_2_Int32_EditCubeChange___Class *)0x0)
-                  goto code_?;
-                }
-                goto code_?;
               }
             }
           }
@@ -810,13 +1117,9 @@ code_?:
       }
     }
   }
-  func_?();
-code_?:
-  pDStack8 = obj;
-  pAStack7 = (Action_2_Int32_EditCubeChange___Class *)esm;
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -829,59 +1132,125 @@ Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_GetFirstTimeEventChe
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__Add_EditCubeChange__bool_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__Dictionary__
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__Add_EditCubeChange__bool_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  bVar1 = FirstTimeEventManager::FirstTimeEventManager_HasFirstTimeEventOccured
-                    (FirstTimeEvent__Enum_BM_TryExtrudingCube,(MethodInfo *)0x0);
-  bVar2 = FirstTimeEventManager::FirstTimeEventManager_HasFirstTimeEventOccured
-                    (FirstTimeEvent__Enum_BM_TryTiltingCube,(MethodInfo *)0x0);
-  bVar3 = FirstTimeEventManager::FirstTimeEventManager_HasFirstTimeEventOccured
-                    (FirstTimeEvent__Enum_BM_TryTiltingCorner,(MethodInfo *)0x0);
-  bVar4 = FirstTimeEventManager::FirstTimeEventManager_HasFirstTimeEventOccured
-                    (FirstTimeEvent__Enum_BM_TryAddingCube,(MethodInfo *)0x0);
-  this_00 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
-            func_?(TypeInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>
-                           );
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-  Int32Enum,GamePassesHighScoreList+HighScoreListData]::
-  Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
-            (this_00,
-             MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__Dictionary__
-            );
-  if (this_00 != (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Boolean]::
-    Dictionary_2_System_Int32Enum_System_Boolean__Add
-              ((Dictionary_2_System_Int32Enum_System_Boolean_ *)this_00,3,bVar1 ^ 1,
-               MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__Add_EditCubeChange__bool_
-              );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Boolean]::
-    Dictionary_2_System_Int32Enum_System_Boolean__Add
-              ((Dictionary_2_System_Int32Enum_System_Boolean_ *)this_00,2,bVar2 ^ 1,
-               MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__Add_EditCubeChange__bool_
-              );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Boolean]::
-    Dictionary_2_System_Int32Enum_System_Boolean__Add
-              ((Dictionary_2_System_Int32Enum_System_Boolean_ *)this_00,1,bVar3 ^ 1,
-               MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__Add_EditCubeChange__bool_
-              );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Boolean]::
-    Dictionary_2_System_Int32Enum_System_Boolean__Add
-              ((Dictionary_2_System_Int32Enum_System_Boolean_ *)this_00,5,bVar4 ^ 1,
-               MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__Add_EditCubeChange__bool_
-              );
-    return (Dictionary_2_EditCubeChange_System_Boolean_ *)this_00;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__FirstTimeEventManager);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pDVar6 = (Dictionary_2_EditCubeChange_System_Boolean_ *)(*pcVar5)();
-  return pDVar6;
+  pFVar1 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeState;
+  if ((pFVar1 != (FirstTimeState *)0x0) &&
+     (pBVar2 = (pFVar1->fields).bitArray, pBVar2 != (BitArray *)0x0)) {
+    if ((pBVar2->fields).m_length < 0x7b) {
+      bVar3 = 0;
+    }
+    else {
+      bVar3 = mscorlib.dll::System::Collections::BitArray::BitArray_Get
+                        (pBVar2,0x7a,(MethodInfo *)0x0);
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__FirstTimeEventManager);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pFVar1 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeState;
+    if ((pFVar1 != (FirstTimeState *)0x0) &&
+       (pBVar2 = (pFVar1->fields).bitArray, pBVar2 != (BitArray *)0x0)) {
+      if ((pBVar2->fields).m_length < 0x7a) {
+        bVar4 = 0;
+      }
+      else {
+        bVar4 = mscorlib.dll::System::Collections::BitArray::BitArray_Get
+                          (pBVar2,0x79,(MethodInfo *)0x0);
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__FirstTimeEventManager);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pFVar1 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeState;
+      if ((pFVar1 != (FirstTimeState *)0x0) &&
+         (pBVar2 = (pFVar1->fields).bitArray, pBVar2 != (BitArray *)0x0)) {
+        if ((pBVar2->fields).m_length < 0x7e) {
+          bVar5 = 0;
+        }
+        else {
+          bVar5 = mscorlib.dll::System::Collections::BitArray::BitArray_Get
+                            (pBVar2,0x7d,(MethodInfo *)0x0);
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__FirstTimeEventManager);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pFVar1 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeState;
+        if ((pFVar1 != (FirstTimeState *)0x0) &&
+           (pBVar2 = (pFVar1->fields).bitArray, pBVar2 != (BitArray *)0x0)) {
+          if ((pBVar2->fields).m_length < 0x79) {
+            bVar6 = 0;
+          }
+          else {
+            bVar6 = mscorlib.dll::System::Collections::BitArray::BitArray_Get
+                              (pBVar2,0x78,(MethodInfo *)0x0);
+          }
+          pDVar7 = (Dictionary_2_EditCubeChange_System_Boolean_ *)
+                   FUN_?(
+                                TypeInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>
+                                );
+          FUN_?(pDVar7);
+          if (pDVar7 != (Dictionary_2_EditCubeChange_System_Boolean_ *)0x0) {
+            IVar8 = CONCAT31((int3)((uint)in_R9D >> 8),2);
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+            Boolean]::Dictionary_2_System_Int32Enum_System_Boolean__TryInsert
+                      ((Dictionary_2_System_Int32Enum_System_Boolean_ *)pDVar7,3,bVar3 ^ 1,IVar8,
+                       MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__Add_EditCubeChange__bool_
+                       ->klass->rgctx_data[0x22].method);
+            IVar8 = CONCAT31((int3)(IVar8 >> 8),2);
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+            Boolean]::Dictionary_2_System_Int32Enum_System_Boolean__TryInsert
+                      ((Dictionary_2_System_Int32Enum_System_Boolean_ *)pDVar7,2,bVar4 ^ 1,IVar8,
+                       MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__Add_EditCubeChange__bool_
+                       ->klass->rgctx_data[0x22].method);
+            IVar8 = CONCAT31((int3)(IVar8 >> 8),2);
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+            Boolean]::Dictionary_2_System_Int32Enum_System_Boolean__TryInsert
+                      ((Dictionary_2_System_Int32Enum_System_Boolean_ *)pDVar7,1,bVar5 ^ 1,IVar8,
+                       MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__Add_EditCubeChange__bool_
+                       ->klass->rgctx_data[0x22].method);
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::
+            Boolean]::Dictionary_2_System_Int32Enum_System_Boolean__TryInsert
+                      ((Dictionary_2_System_Int32Enum_System_Boolean_ *)pDVar7,5,bVar6 ^ 1,
+                       CONCAT31((int3)(IVar8 >> 8),2),
+                       MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__Add_EditCubeChange__bool_
+                       ->klass->rgctx_data[0x22].method);
+            return pDVar7;
+          }
+        }
+      }
+    }
+  }
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  pDVar7 = (Dictionary_2_EditCubeChange_System_Boolean_ *)(*pcVar9)();
+  return pDVar7;
 }
 
 
@@ -892,20 +1261,24 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_HandleCubeModel
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CEEditCubeTutorial);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Contains_MV__WorldObject__MetaData__FirstTimeEvent_
-                   );
+    FUN_?(&TypeInfo__CEEditCubeTutorial);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Contains_MV__WorldObject__MetaData__FirstTimeEvent_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__CEEditCubeTutorial->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__CEEditCubeTutorial);
+  if (*(int *)&(TypeInfo__CEEditCubeTutorial->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__CEEditCubeTutorial);
   }
-  pHVar1 = (HashSet_1_System_UInt32_ *)
+  pHVar1 = (HashSet_1_System_Int32Enum_ *)
            TypeInfo__CEEditCubeTutorial->static_fields->enableCubeModelingEvents;
-  if (pHVar1 != (HashSet_1_System_UInt32_ *)0x0) {
-    bVar2 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
-            HashSet_1_System_UInt32__Contains
+  if (pHVar1 != (HashSet_1_System_Int32Enum_ *)0x0) {
+    bVar2 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+            HashSet_1_System_Int32Enum__Contains
                       (pHVar1,firstTimeEvent,
                        MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Contains_MV__WorldObject__MetaData__FirstTimeEvent_
                       );
@@ -917,14 +1290,14 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_HandleCubeModel
       CubeModelingStateMachine::CubeModelingStateMachine_set_CursorVisible
                 (this_00,1,(MethodInfo *)0x0);
     }
-    if ((TypeInfo__CEEditCubeTutorial->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__CEEditCubeTutorial);
+    if (*(int *)&(TypeInfo__CEEditCubeTutorial->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__CEEditCubeTutorial);
     }
-    pHVar1 = (HashSet_1_System_UInt32_ *)
+    pHVar1 = (HashSet_1_System_Int32Enum_ *)
              TypeInfo__CEEditCubeTutorial->static_fields->disableCubeModelingEvents;
-    if (pHVar1 != (HashSet_1_System_UInt32_ *)0x0) {
-      bVar2 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
-              HashSet_1_System_UInt32__Contains
+    if (pHVar1 != (HashSet_1_System_Int32Enum_ *)0x0) {
+      bVar2 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+              HashSet_1_System_Int32Enum__Contains
                         (pHVar1,firstTimeEvent,
                          MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Contains_MV__WorldObject__MetaData__FirstTimeEvent_
                         );
@@ -936,7 +1309,7 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_HandleCubeModel
     }
   }
 code_?:
-  func_?();
+  FUN_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -950,18 +1323,35 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_OnEditCubeChang
                MethodInfo *method)
 
 {
-  if ((this->fields).bordersExpanded == 0) {
-    this_00 = (this->fields).resettingBookkeeping;
-    if (this_00 == (CEEditCubeTutorial_ResettingBookkeeping *)0x0) {
-      uVar1 = func_?(&stack0xfffffff0);
-      func_?(uVar1);
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
-    CEEditCubeTutorial+ResettingBookkeeping::
-    CEEditCubeTutorial_ResettingBookkeeping_InitializeResetting(this_00,400,(MethodInfo *)0x0);
+  if ((this->fields).bordersExpanded != 0) {
+    return;
   }
+  pCVar1 = (this->fields).resettingBookkeeping;
+  if (pCVar1 != (CEEditCubeTutorial_ResettingBookkeeping *)0x0) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Debug,400,0);
+      LOCK();
+      UNLOCK();
+      FUN_?(&StringLiteral_InitializeResetting);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+              ((Object *)StringLiteral_InitializeResetting,(MethodInfo *)0x0);
+    (pCVar1->fields).doReset = 1;
+    (pCVar1->fields).isResetting = 0;
+    if ((pCVar1->fields).resettingDelay < 400) {
+      (pCVar1->fields).resettingDelay = 400;
+    }
+    return;
+  }
+  FUN_?(0,CONCAT44(in_register_00000014,cubeCount));
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -973,214 +1363,340 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_SetFirstTimeEve
                FirstTimeEvent__Enum firstTimeEvent,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff94;
-  puVar5 = &stack0xffffff94;
+  this_08._4_4_ = 0;
+  this_08.key = firstTimeEvent;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CEEditCubeTutorial);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__get_Item_EditCubeChange_
-                   );
-    func_?(&TypeInfo__EditableCubeModelWrapper);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<EditCubeChange,_bool>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<EditCubeChange,_bool>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<EditCubeChange,_bool>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Contains_MV__WorldObject__MetaData__FirstTimeEvent_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<EditCubeChange,_bool>__get_Key__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<EditCubeChange,_bool>__get_Value__
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&TypeInfo__CEEditCubeTutorial);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__get_Item_EditCubeChange_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__EditableCubeModelWrapper);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<EditCubeChange,_bool>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<EditCubeChange,_bool>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<EditCubeChange,_bool>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Contains_MV__WorldObject__MetaData__FirstTimeEvent_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<EditCubeChange,_bool>__get_Key__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<EditCubeChange,_bool>__get_Value__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CEEditCubeTutorial);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Contains_MV__WorldObject__MetaData__FirstTimeEvent_
-                   );
+    FUN_?(&TypeInfo__CEEditCubeTutorial);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Contains_MV__WorldObject__MetaData__FirstTimeEvent_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__CEEditCubeTutorial->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__CEEditCubeTutorial);
+  if (*(int *)&(TypeInfo__CEEditCubeTutorial->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__CEEditCubeTutorial);
   }
-  pHVar6 = (HashSet_1_System_UInt32_ *)
+  pHVar1 = (HashSet_1_System_Int32Enum_ *)
            TypeInfo__CEEditCubeTutorial->static_fields->enableCubeModelingEvents;
-  if (pHVar6 != (HashSet_1_System_UInt32_ *)0x0) {
-    bVar7 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
-            HashSet_1_System_UInt32__Contains
-                      (pHVar6,firstTimeEvent,
+  if (pHVar1 != (HashSet_1_System_Int32Enum_ *)0x0) {
+    bVar2 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+            HashSet_1_System_Int32Enum__Contains
+                      (pHVar1,firstTimeEvent,
                        MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Contains_MV__WorldObject__MetaData__FirstTimeEvent_
                       );
-    if (bVar7 != 0) {
-      this_00 = (this->fields).CMSM;
+    if (bVar2 != 0) {
       (this->fields).disableCubeModeling = 0;
       (this->fields).enableCubemodeling = 1;
+      this_00 = (this->fields).CMSM;
       if (this_00 == (CubeModelingStateMachine *)0x0) goto code_?;
       CubeModelingStateMachine::CubeModelingStateMachine_set_CursorVisible
                 (this_00,1,(MethodInfo *)0x0);
     }
-    if ((TypeInfo__CEEditCubeTutorial->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__CEEditCubeTutorial);
+    if (*(int *)&(TypeInfo__CEEditCubeTutorial->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__CEEditCubeTutorial);
     }
-    pHVar6 = (HashSet_1_System_UInt32_ *)
+    pHVar1 = (HashSet_1_System_Int32Enum_ *)
              TypeInfo__CEEditCubeTutorial->static_fields->disableCubeModelingEvents;
-    if (pHVar6 != (HashSet_1_System_UInt32_ *)0x0) {
-      bVar7 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
-              HashSet_1_System_UInt32__Contains
-                        (pHVar6,firstTimeEvent,
+    if (pHVar1 != (HashSet_1_System_Int32Enum_ *)0x0) {
+      bVar2 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+              HashSet_1_System_Int32Enum__Contains
+                        (pHVar1,firstTimeEvent,
                          MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Contains_MV__WorldObject__MetaData__FirstTimeEvent_
                         );
-      if (bVar7 != 0) {
+      if (bVar2 != 0) {
         (this->fields).disableCubeModeling = 1;
         (this->fields).enableCubemodeling = 0;
       }
-      if ((TypeInfo__CEEditCubeTutorial->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+      if (*(int *)&(TypeInfo__CEEditCubeTutorial->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__CEEditCubeTutorial);
       }
-      pHVar6 = (HashSet_1_System_UInt32_ *)
+      pHVar1 = (HashSet_1_System_Int32Enum_ *)
                TypeInfo__CEEditCubeTutorial->static_fields->successEvents;
-      if (pHVar6 != (HashSet_1_System_UInt32_ *)0x0) {
-        bVar7 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
-                HashSet_1_System_UInt32__Contains
-                          (pHVar6,firstTimeEvent,
+      if (pHVar1 != (HashSet_1_System_Int32Enum_ *)0x0) {
+        bVar2 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+                HashSet_1_System_Int32Enum__Contains
+                          (pHVar1,firstTimeEvent,
                            MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Contains_MV__WorldObject__MetaData__FirstTimeEvent_
                           );
-        if (bVar7 != 0) {
+        if (bVar2 != 0) {
           this_01 = (this->fields).blinker;
           if (this_01 == (FirstTimeCubeModelBlinker *)0x0) goto code_?;
           BlinkerBase::BlinkerBase_StartBlinking
-                    ((BlinkerBase *)this_01,BlinkType__Enum_OnBoardingCubeModelSuccess,2.0,
-                     (MethodInfo *)0x0);
+                    ((BlinkerBase *)this_01,BlinkType__Enum_OnBoardingCubeModelSuccess,
+                     TypeRef__System__Activator__T._0_4_,(MethodInfo *)0x0);
         }
-        this_02 = (Dictionary_2_System_UInt32_System_Object_ *)
-                  (this->fields).firstTimeEventChangeCheck;
-        pDVar8 = CEEditCubeTutorial_GetFirstTimeEventCheck(this,(MethodInfo *)0x0);
-        (this->fields).firstTimeEventChangeCheck = pDVar8;
-        func_?(&(this->fields).firstTimeEventChangeCheck,pDVar8);
+        pDVar3 = (this->fields).firstTimeEventChangeCheck;
+        pDVar4 = CEEditCubeTutorial_GetFirstTimeEventCheck(this,(MethodInfo *)0x0);
+        (this->fields).firstTimeEventChangeCheck = pDVar4;
+        if (iRam_? != 0) {
+          uVar5 = (uint)((ulonglong)&(this->fields).firstTimeEventChangeCheck >> 0xc);
+          uVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+          do {
+            uVar7 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+            puVar8 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+            LOCK();
+            bVar9 = uVar7 == *puVar8;
+            if (bVar9) {
+              *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar9);
+        }
         bVar9 = true;
-        if (this_02 != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-          pDVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::
-                    Object]::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                              ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                               &stack0xffffffa0,this_02,
-                               MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__GetEnumerator__
-                              );
-          uVar11 = (pDVar10->_current).key;
-          uVar12 = (undefined2)uVar11;
-          uStack_13 = (undefined2)(uVar11 >> 0x10);
-          pOVar14 = (pDVar10->_current).value;
-          uStack_1 = 1;
-          while( true ) {
-            bVar7 = mscorlib.dll::System::Collections::Generic::
-                    Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Byte]::
-                    Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Byte__MoveNext
-                              ((Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Byte_ *)
-                               &stack0xffffffb8,
-                               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<EditCubeChange,_bool>__MoveNext__
-                              );
-            if (bVar7 == 0) break;
-            IStack_15._0_4_ = CONCAT22(uStack_13,uVar12);
-            pDVar8 = (this->fields).firstTimeEventChangeCheck;
-            pOStack_16 = pOVar14;
-            if (pDVar8 == (Dictionary_2_EditCubeChange_System_Boolean_ *)0x0) goto code_?;
-            uVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Int32Enum,System::Byte]::Dictionary_2_System_Int32Enum_System_Byte__get_Item
-                              ((Dictionary_2_System_Int32Enum_System_Byte_ *)pDVar8,IStack_15._0_4_,
-                               MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__get_Item_EditCubeChange_
-                              );
-            if (uVar17 != (uint8_t)pOStack_16) {
-              in_stack_18 = (MethodInfo *)(this->fields).resettingBookkeeping;
-              if (in_stack_18 == (MethodInfo *)0x0) goto code_?;
+        this_08.key = 0;
+        this_08.value = 0;
+        this_08._5_3_ = 0;
+        if (pDVar3 != (Dictionary_2_EditCubeChange_System_Boolean_ *)0x0) {
+          if (iRam_? != 0) {
+            uVar5 = (uint)((ulonglong)&uStack_10 >> 0xc);
+            uVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+            do {
+              uVar7 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+              puVar8 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+              LOCK();
+              bVar11 = uVar7 == *puVar8;
+              if (bVar11) {
+                *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar11);
+          }
+          pDStack_12 = (Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Byte_ *)
+                       (ulonglong)(uint)(pDVar3->fields)._version;
+          uStack_13 = 2;
+          uStack_14 = 0;
+          DStack_15._8_8_ = pDStack_12;
+          DStack_15._current.key = 0;
+          DStack_15._current.value = 0;
+          DStack_15._current._5_3_ = 0;
+          DStack_15._getEnumeratorRetType = 2;
+          DStack_15._28_4_ = 0;
+          uStack_10 = 0;
+          pDStack_12 = &DStack_15;
+          pMVar16 = unaff_R13;
+          DStack_15._dictionary = (Dictionary_2_System_Int32Enum_System_Byte_ *)pDVar3;
+          while (bVar2 = mscorlib.dll::System::Collections::Generic::
+                         Dictionary`2[TKey,TValue]+Enumerator[System::Int32Enum,System::Byte]::
+                         Dictionary_2_TKey_TValue_Enumerator_System_Int32Enum_System_Byte__MoveNext
+                                   (&DStack_15,
+                                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<EditCubeChange,_bool>__MoveNext__
+                                   ), this_08 = DStack_15._current,
+                unaff_R13 = 
+                MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__get_Item_EditCubeChange_
+                , bVar2 != 0) {
+            aKStack_17[0] = DStack_15._current;
+            this_02 = (Dictionary_2_System_Int32Enum_System_Single_ *)
+                      (this->fields).firstTimeEventChangeCheck;
+            if (this_02 == (Dictionary_2_System_Int32Enum_System_Single_ *)0x0)
+            goto code_?;
+            uVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                     Int32Enum,System::Single]::
+                     Dictionary_2_System_Int32Enum_System_Single__FindEntry
+                               (this_02,DStack_15._current.key,
+                                MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__get_Item_EditCubeChange_
+                                ->klass->rgctx_data[0x21].method);
+            if ((int)uVar5 < 0) goto code_?;
+            pDVar18 = (this_02->fields)._entries;
+            if (pDVar18 == (Dictionary_2_TKey_TValue_Entry_System_Int32Enum_System_Single___Array *)
+                          0x0) goto code_?;
+            if ((uint)pDVar18->max_length <= uVar5) goto code_?;
+            if (*(uint8_t *)&pDVar18->vector[(int)uVar5].value != aKStack_17[0].value) {
+              this_03 = (this->fields).resettingBookkeeping;
+              if (this_03 == (CEEditCubeTutorial_ResettingBookkeeping *)0x0)
+              goto code_?;
               CEEditCubeTutorial+ResettingBookkeeping::
               CEEditCubeTutorial_ResettingBookkeeping_InitializeResetting
-                        ((CEEditCubeTutorial_ResettingBookkeeping *)in_stack_18,2000,
-                         (MethodInfo *)0x0);
+                        (this_03,2000,(MethodInfo *)0x0);
             }
-            pDVar8 = (this->fields).firstTimeEventChangeCheck;
-            if (pDVar8 == (Dictionary_2_EditCubeChange_System_Boolean_ *)0x0) goto code_?;
-            uVar17 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                    Int32Enum,System::Byte]::Dictionary_2_System_Int32Enum_System_Byte__get_Item
-                              ((Dictionary_2_System_Int32Enum_System_Byte_ *)pDVar8,IStack_15._0_4_,
-                               MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__get_Item_EditCubeChange_
-                              );
-            if (uVar17 != 0) {
+            pDVar3 = (this->fields).firstTimeEventChangeCheck;
+            if (pDVar3 == (Dictionary_2_EditCubeChange_System_Boolean_ *)0x0)
+            goto code_?;
+            cVar19 = FUN_?(pDVar3,(ulonglong)this_08 & 0xffffffff);
+            pMVar16 = unaff_R13;
+            if (cVar19 != '\0') {
               bVar9 = false;
             }
           }
-          uStack_1 = 0xffffffff;
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)&stack0xffffffb8,
-                     (ExceptionArgument__Enum)
-                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<EditCubeChange,_bool>__Dispose__
-                     ,in_stack_18);
-          uStack_1 = 0xffffffff;
           if (bVar9) {
             if ((this->fields).bordersExpanded == 0) {
               (this->fields).bordersExpanded = 1;
-              cubeModelBase = (this->fields).selectedInstance;
-              pOStack_16 = (Object *)0x0;
-              iStack_19 = 0;
-              MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                        ((IntVector *)&pOStack_16,-0xf,-0xf,-0xf,(MethodInfo *)0x0);
-              IStack_15.x = 0;
-              IStack_15.y = 0;
-              IStack_15.z = 0;
-              MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-                        (&IStack_15,0xf,0xf,0xf,(MethodInfo *)0x0);
-              this_03 = (EditableCubeModelWrapper *)func_?();
-              max.z = IStack_15.z;
-              max.x = IStack_15.x;
-              max.y = IStack_15.y;
-              min.z = iStack_19;
-              min._0_4_ = pOStack_16;
-              EditableCubeModelWrapper::EditableCubeModelWrapper__ctor_1
-                        (this_03,cubeModelBase,min,max,1,(MethodInfo *)0x0);
-              (this->fields).cubeModelWrapper = this_03;
-              func_?();
-              CEEditCubeTutorial_SetFocus(this,(this->fields).multiCubeDistance,(MethodInfo *)0x0);
-              this_04 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
-                                  ((MethodInfo *)0x0);
-              if (this_04 != (MainCameraManager *)0x0) {
-                MainCameraManager::MainCameraManager_StartTransitionCam
-                          (this_04,1.0,0,(MethodInfo *)0x0);
-                pCVar20 = (this->fields).constraintVisualizer;
-                if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?(TypeInfo__UnityEngine__Object);
-                }
-                bVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                                  ((Object_1 *)pCVar20,(Object_1 *)0x0,(MethodInfo *)0x0);
-                if (bVar7 != 0) {
-                  pCVar20 = (this->fields).constraintVisualizer;
-                  if (pCVar20 == (ConstraintVisualizer *)0x0) goto code_?;
-                  obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                                  ((Component *)pCVar20,(MethodInfo *)0x0);
-                  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-                    func_?();
+              this_08 = (KeyValuePair_2_System_Int32Enum_System_Byte_)
+                        (this->fields).selectedInstance;
+              this_06 = (EditableCubeModelWrapper *)
+                        FUN_?(TypeInfo__EditableCubeModelWrapper);
+              aIStack_20[0].x = 0xf;
+              aIStack_20[0].y = 0xf;
+              (this_06->fields).cubeModelBase = (MVCubeModelInstance *)this_08;
+              if (iRam_? != 0) {
+                uVar5 = (uint)((ulonglong)&this_06->fields >> 0xc);
+                uVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+                do {
+                  uVar7 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+                  puVar8 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+                  LOCK();
+                  bVar9 = uVar7 == *puVar8;
+                  if (bVar9) {
+                    *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
                   }
-                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-                            ((Object_1 *)obj,(MethodInfo *)0x0);
+                  UNLOCK();
+                } while (!bVar9);
+              }
+              unaff_R13 = pMVar16;
+              if (this_08 != (KeyValuePair_2_System_Int32Enum_System_Byte_)0x0) {
+                *(ulonglong *)((longlong)this_08 + 0x118) =
+                     *(ulonglong *)((longlong)this_08 + 0x118) | 0x10;
+                aIStack_20[0].x = 0xf;
+                aIStack_20[0].y = 0xf;
+                aIStack_20[0].z = 0xf;
+                aKStack_17[0].key = -0xe000f;
+                aKStack_17[0].value = 0xf1;
+                aKStack_17[0]._5_1_ = 0xff;
+                EditableCubeModelWrapper::EditableCubeModelWrapper_SetConstraints
+                          (this_06,(IntVector *)aKStack_17,aIStack_20,1,(MethodInfo *)0x0);
+                (this->fields).cubeModelWrapper = this_06;
+                if (iRam_? != 0) {
+                  uVar5 = (uint)((ulonglong)&(this->fields).cubeModelWrapper >> 0xc);
+                  uVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+                  do {
+                    uVar7 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+                    puVar8 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+                    LOCK();
+                    bVar9 = uVar7 == *puVar8;
+                    if (bVar9) {
+                      *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+                    }
+                    UNLOCK();
+                  } while (!bVar9);
                 }
-                CEEditCubeTutorial_CreateConstraint(this,(MethodInfo *)0x0);
-                *unaff_FS_OFFSET = uStack_3;
-                return;
+                CEEditCubeTutorial_SetFocus(this,(this->fields).multiCubeDistance,(MethodInfo *)0x0)
+                ;
+                pMVar21 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager
+                                    ((MethodInfo *)0x0);
+                if (pMVar21 != (MainCameraManager *)0x0) {
+                  this_08 = (KeyValuePair_2_System_Int32Enum_System_Byte_)
+                            (pMVar21->fields).transitionCamera;
+                  pMVar22 = (pMVar21->fields).cameraController;
+                  if ((((pMVar22 != (MVCameraController *)0x0) &&
+                       (this_04 = (pMVar22->fields).cameraStack,
+                       this_04 != (MVCameraController_CameraStack *)0x0)) &&
+                      (this_07 = MVCameraController+CameraStack::
+                                 MVCameraController_CameraStack_get_CurCamera
+                                           (this_04,(MethodInfo *)0x0),
+                      this_07 != (MVCameraBase *)0x0)) &&
+                     (targetCameraTransform =
+                           UnityEngine.CoreModule.dll::UnityEngine::Component::
+                           Component_get_transform((Component *)this_07,(MethodInfo *)0x0),
+                     this_08 != (KeyValuePair_2_System_Int32Enum_System_Byte_)0x0)) {
+                    TransitionCamera::TransitionCamera_InitTransition
+                              ((TransitionCamera *)this_08,targetCameraTransform,_UNK_?,0,
+                               (MethodInfo *)0x0);
+                    this_08 = (KeyValuePair_2_System_Int32Enum_System_Byte_)
+                              (this->fields).constraintVisualizer;
+                    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                      FUN_?();
+                    }
+                    if (cRam_? == '\0') {
+                      FUN_?(&TypeInfo__UnityEngine__Object);
+                      LOCK();
+                      UNLOCK();
+                      cRam_? = '\x01';
+                    }
+                    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                      FUN_?();
+                    }
+                    if (cRam_? == '\0') {
+                      FUN_?(&TypeInfo__UnityEngine__Object);
+                      LOCK();
+                      UNLOCK();
+                      cRam_? = '\x01';
+                    }
+                    if (this_08 != (KeyValuePair_2_System_Int32Enum_System_Byte_)0x0) {
+                      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                        FUN_?();
+                      }
+                      if ((Object_1__Fields)
+                          *(Component__Fields *)
+                           &(((MVCubeModelInstance__Fields *)((longlong)this_08 + 0x10))->_)._._ !=
+                          (Object_1__Fields)0x0) {
+                        this_05 = (this->fields).constraintVisualizer;
+                        if (this_05 == (ConstraintVisualizer *)0x0) goto code_?;
+                        obj = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                              Component_get_gameObject((Component *)this_05,(MethodInfo *)0x0);
+                        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                          FUN_?();
+                        }
+                        if (cRam_? == '\0') {
+                          FUN_?(&TypeInfo__UnityEngine__Object);
+                          LOCK();
+                          UNLOCK();
+                          cRam_? = '\x01';
+                        }
+                        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                          FUN_?();
+                        }
+                        UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy
+                                  ((Object_1 *)obj,0.0,(MethodInfo *)0x0);
+                      }
+                    }
+                    CEEditCubeTutorial_CreateConstraint(this,(MethodInfo *)0x0);
+                    return;
+                  }
+                }
               }
               goto code_?;
             }
@@ -1188,17 +1704,31 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_SetFirstTimeEve
           else if ((this->fields).bordersExpanded == 0) {
             CEEditCubeTutorial_SetFocus(this,(this->fields).oneCubeDistance,(MethodInfo *)0x0);
           }
-          *unaff_FS_OFFSET = uStack_3;
           return;
         }
       }
     }
   }
 code_?:
-  uVar21 = func_?();
-  func_?(uVar21);
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  FUN_?();
+code_?:
+  aIStack_20[0]._0_4_ = this_08.key;
+  uVar23 = func_?(unaff_R13->klass->rgctx_data,0xe);
+  key = (Object *)func_?(uVar23);
+  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowKeyNotFoundException(key,(MethodInfo *)0x0);
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+  pcVar24 = (code *)swi(3);
+  (*pcVar24)();
   return;
 }
 
@@ -1210,60 +1740,140 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_SetFocus
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__JetPackCamera);
+    FUN_?(&TypeInfo__JetPackCamera);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = CEEditCubeTutorial_get_TargetCubeModel(this,(MethodInfo *)0x0);
   if ((pMVar1 != (MVCubeModelBase *)0x0) &&
      (pTVar2 = (pMVar1->fields)._.transform, pTVar2 != (Transform *)0x0)) {
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-              ((Vector3 *)&stack0xfffffff0,pTVar2,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    VStack_3.x = 0.0;
+    VStack_3.y = 0.0;
+    VStack_3.z = 0.0;
+    pvVar4 = (pTVar2->fields)._._.m_CachedPtr;
+    if (pvVar4 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    pcVar5 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+      uVar6 = func_?(&UNK_?);
+      FUN_?(uVar6,0);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    pcRam_? = pcVar5;
+    (*pcRam_?)(pvVar4);
     pMVar1 = CEEditCubeTutorial_get_TargetCubeModel(this,(MethodInfo *)0x0);
     if ((pMVar1 != (MVCubeModelBase *)0x0) &&
        (pTVar2 = (pMVar1->fields)._.transform, pTVar2 != (Transform *)0x0)) {
-      pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                         ((Quaternion *)&stack0xffffffd4,pTVar2,(MethodInfo *)0x0);
-      pVVar4 = &(this->fields).focusOffset;
-      fVar5 = pVVar4->x;
-      fVar6 = pVVar4->y;
-      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                         ((Vector3 *)&stack0xffffffd8,*pQVar3,*pVVar4,(MethodInfo *)0x0);
-      uVar7 = pVVar4->x;
-      uVar8 = pVVar4->y;
-      fVar5 = fVar5 + (float)uVar7 * distance;
-      fVar6 = fVar6 + (float)uVar8 * distance;
-      puVar9 = &UNK_?;
-      this_00 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-      if (this_00 != (MainCameraManager *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_7 = 0;
+      uStack_8 = 0;
+      if ((pTVar2->fields)._._.m_CachedPtr == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      pcVar5 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+        uVar6 = func_?(&UNK_?);
+        FUN_?(uVar6,0);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      pcRam_? = pcVar5;
+      (*pcRam_?)();
+      VStack_9.x = (this->fields).focusOffset.x;
+      VStack_9.y = (this->fields).focusOffset.y;
+      fVar10 = uStack_7._4_4_ + uStack_7._4_4_;
+      fVar11 = (float)uStack_8 + (float)uStack_8;
+      fVar12 = (float)uStack_7 * ((float)uStack_7 + (float)uStack_7);
+      fVar13 = uStack_8._4_4_ * ((float)uStack_7 + (float)uStack_7);
+      fVar14 = (this->fields).focusOffset.z;
+      fVar15 = ((_UNK_? - ((float)uStack_8 * fVar11 + uStack_7._4_4_ * fVar10)) *
+                VStack_9.x + ((float)uStack_7 * fVar10 - uStack_8._4_4_ * fVar11) * VStack_9.y +
+               (uStack_8._4_4_ * fVar10 + (float)uStack_7 * fVar11) * fVar14) * distance +
+               VStack_3.x;
+      fVar16 = ((_UNK_? - ((float)uStack_8 * fVar11 + fVar12)) * VStack_9.y +
+                (uStack_8._4_4_ * fVar11 + (float)uStack_7 * fVar10) * VStack_9.x +
+               (uStack_7._4_4_ * fVar11 - fVar13) * fVar14) * distance + VStack_3.y;
+      fVar14 = (((float)uStack_7 * fVar11 - uStack_8._4_4_ * fVar10) * VStack_9.x +
+                (fVar13 + uStack_7._4_4_ * fVar11) * VStack_9.y +
+               (_UNK_? - (uStack_7._4_4_ * fVar10 + fVar12)) * fVar14) * distance +
+               VStack_3.z;
+      pMVar17 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+      if (((pMVar17 != (MainCameraManager *)0x0) &&
+          (pMVar18 = (pMVar17->fields).cameraController, pMVar18 != (MVCameraController *)0x0)) &&
+         (this_00 = (pMVar18->fields).cameraStack, this_00 != (MVCameraController_CameraStack *)0x0))
+      {
         this_01 = (JetPackCamera *)
-                  MainCameraManager::MainCameraManager_get_CurrentCamera(this_00,(MethodInfo *)0x0);
+                  MVCameraController+CameraStack::MVCameraController_CameraStack_get_CurCamera
+                            (this_00,(MethodInfo *)0x0);
         pMVar1 = CEEditCubeTutorial_get_TargetCubeModel(this,(MethodInfo *)0x0);
-        if (pMVar1 != (MVCubeModelBase *)0x0) {
-          pVVar4 = (Vector3 *)(*(code *)(pMVar1->klass->vtable).get_WorldPivot.method)();
-          if (this_01 != (JetPackCamera *)0x0) {
-            if (((TypeInfo__JetPackCamera->_1).naturalAligment <=
-                 (this_01->klass->_1).naturalAligment) &&
-               ((this_01->klass->_1).typeHierarchy
-                [(TypeInfo__JetPackCamera->_1).naturalAligment - 1] ==
+        if ((pMVar1 != (MVCubeModelBase *)0x0) &&
+           (puVar19 = (undefined8 *)
+                     (*(pMVar1->klass->vtable).get_WorldPivot.methodPtr)
+                               (&uStack_7,pMVar1,(pMVar1->klass->vtable).get_WorldPivot.method),
+           this_01 != (JetPackCamera *)0x0)) {
+          bVar20 = (TypeInfo__JetPackCamera->_1).naturalAligment;
+          if ((bVar20 <= (this_01->klass->_1).naturalAligment) &&
+             ((this_01->klass->_1).typeHierarchy[(ulonglong)bVar20 - 1] ==
+              (Il2CppClass *)TypeInfo__JetPackCamera)) {
+            VStack_9.z = *(float *)(puVar19 + 1);
+            VStack_9._0_8_ = *puVar19;
+            bVar20 = (TypeInfo__JetPackCamera->_1).naturalAligment;
+            VStack_3.y = fVar16;
+            VStack_3.x = fVar15;
+            VStack_3.z = fVar14;
+            if ((bVar20 <= (this_01->klass->_1).naturalAligment) &&
+               ((this_01->klass->_1).typeHierarchy[(ulonglong)bVar20 - 1] ==
                 (Il2CppClass *)TypeInfo__JetPackCamera)) {
-              avatarPosition.y = fVar6;
-              avatarPosition.x = fVar5;
-              avatarPosition.z = (float)puVar9;
               JetPackCamera::JetPackCamera_FocusOnPointFromAvatarPosition
-                        (this_01,*pVVar4,avatarPosition,(MethodInfo *)0x0);
+                        (this_01,&VStack_9,&VStack_3,(MethodInfo *)0x0);
               return;
             }
-            goto code_?;
+            FUN_?(this_01,TypeInfo__JetPackCamera);
+            pcVar5 = (code *)swi(3);
+            (*pcVar5)();
+            return;
           }
+          FUN_?(this_01,TypeInfo__JetPackCamera);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
         }
       }
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -1275,10 +1885,14 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_SetupBlinker
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    FirstTimeCubeModelBlinker_MethodInfo__UnityEngine__GameObject__AddComponent<FirstTimeCubeModelBlinker>__
-                   );
-    func_?(&TypeInfo__UnityEngine__Material);
+    FUN_?(&
+                  FirstTimeCubeModelBlinker_MethodInfo__UnityEngine__GameObject__AddComponent<FirstTimeCubeModelBlinker>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Material);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = CEEditCubeTutorial_get_TargetCubeModel(this,(MethodInfo *)0x0);
@@ -1289,39 +1903,69 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_SetupBlinker
                        (this_00,
                         FirstTimeCubeModelBlinker_MethodInfo__UnityEngine__GameObject__AddComponent<FirstTimeCubeModelBlinker>__
                        );
+    bVar3 = iRam_? != 0;
     (this->fields).blinker = pFVar2;
-    func_?(&(this->fields).blinker,pFVar2);
+    if (bVar3) {
+      uVar4 = (uint)((ulonglong)&(this->fields).blinker >> 0xc);
+      puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar6 = *puVar5;
+        LOCK();
+        uVar7 = *puVar5;
+        if (uVar6 == uVar7) {
+          *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar6 != uVar7);
+    }
     pFVar2 = (this->fields).blinker;
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__PrefabPool);
+      FUN_?(&TypeInfo__PrefabPool);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    pPVar3 = TypeInfo__PrefabPool->static_fields->instance;
-    if (pPVar3 != (PrefabPool *)0x0) {
-      source = (pPVar3->fields).blinkerDefaultMaterial;
-      this_01 = (Material *)func_?(TypeInfo__UnityEngine__Material);
+    pPVar8 = TypeInfo__PrefabPool->static_fields->instance;
+    if (pPVar8 != (PrefabPool *)0x0) {
+      source = (pPVar8->fields).blinkerDefaultMaterial;
+      this_02 = (Material *)FUN_?(TypeInfo__UnityEngine__Material);
       UnityEngine.CoreModule.dll::UnityEngine::Material::Material__ctor_1
-                (this_01,source,(MethodInfo *)0x0);
-      this_02 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-      if (this_02 != (MainCameraManager *)0x0) {
-        targetCamera = MainCameraManager::MainCameraManager_get_SecondaryCamera
-                                 (this_02,(MethodInfo *)0x0);
-        pMVar1 = CEEditCubeTutorial_get_TargetCubeModel(this,(MethodInfo *)0x0);
-        if (pFVar2 != (FirstTimeCubeModelBlinker *)0x0) {
-          FirstTimeCubeModelBlinker::FirstTimeCubeModelBlinker_Initialize
-                    (pFVar2,this_01,targetCamera,pMVar1,(MethodInfo *)0x0);
-          pFVar2 = (this->fields).blinker;
+                (this_02,source,(MethodInfo *)0x0);
+      pMVar9 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+      if (pMVar9 != (MainCameraManager *)0x0) {
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        UnityEngine__Camera_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Camera>__
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        this_01 = (pMVar9->fields).secondaryCamera;
+        if (this_01 != (Transform *)0x0) {
+          targetCamera = (Camera *)
+                         UnityEngine.CoreModule.dll::UnityEngine::Component::
+                         Component_GetComponent_1
+                                   ((Component *)this_01,
+                                    UnityEngine__Camera_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::Camera>__
+                                   );
+          pMVar1 = CEEditCubeTutorial_get_TargetCubeModel(this,(MethodInfo *)0x0);
           if (pFVar2 != (FirstTimeCubeModelBlinker *)0x0) {
-            (pFVar2->fields)._.visible = 1;
-            return;
+            FirstTimeCubeModelBlinker::FirstTimeCubeModelBlinker_Initialize
+                      (pFVar2,this_02,targetCamera,pMVar1,(MethodInfo *)0x0);
+            pFVar2 = (this->fields).blinker;
+            if (pFVar2 != (FirstTimeCubeModelBlinker *)0x0) {
+              (pFVar2->fields)._.visible = 1;
+              return;
+            }
           }
         }
       }
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -1334,18 +1978,23 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial__Enter_b__23_0
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__CEEditCubeTutorial__OnClosed__);
-    func_?(&TypeInfo__UnityEngine__EventSystems__IHandleCubeEditTutorial);
-    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    FUN_?(&MethodInfo__CEEditCubeTutorial__OnClosed__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IHandleCubeEditTutorial);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (NavMesh_OnNavMeshPreUpdate *)
-            func_?(TypeInfo__UnityEngine__Events__UnityAction);
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__UnityEngine__Events__UnityAction);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (this_00,(Object *)this,MethodInfo__CEEditCubeTutorial__OnClosed__,(MethodInfo *)0x0);
   if (handler == (IHandleCubeEditTutorial *)0x0) {
-    func_?();
+    FUN_?();
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
@@ -1354,21 +2003,28 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial__Enter_b__23_0
   uVar3 = 0;
   uVar4._0_1_ = (pIVar2->_1).rank;
   uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
+  pNVar5 = this_00;
   if (uVar4 != 0) {
+    pNVar5 = (NavMesh_OnNavMeshPreUpdate *)pIVar2->interfaceOffsets;
     do {
-      if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
-          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IHandleCubeEditTutorial) {
-        ppMVar5 = &(&handler->klass->vtable)[handler->klass->interfaceOffsets[uVar3].offset].
-                   PushCubeEditCubeTutorialTools.method;
+      if ((&pNVar5->klass)[(ulonglong)uVar3 * 2] ==
+          (NavMesh_OnNavMeshPreUpdate__Class *)
+          TypeInfo__UnityEngine__EventSystems__IHandleCubeEditTutorial) {
+        pIVar6 = &pIVar2->vtable + *(int *)(&pNVar5->monitor + (ulonglong)uVar3 * 2);
         goto code_?;
       }
       uVar3 = uVar3 + 1;
     } while (uVar3 < uVar4);
   }
-  ppMVar5 = (MethodInfo **)
-            func_?(handler,TypeInfo__UnityEngine__EventSystems__IHandleCubeEditTutorial,0);
+  pIVar6 = (IHandleCubeEditTutorial__VTable *)
+           FUN_?(handler,TypeInfo__UnityEngine__EventSystems__IHandleCubeEditTutorial,0,
+                         pNVar5,unaff_RDI);
 code_?:
-  (*(code *)*ppMVar5)(handler,ppMVar5[1]);
+  UNRECOVERED_JUMPTABLE = (pIVar6->PushCubeEditCubeTutorialTools).methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*UNRECOVERED_JUMPTABLE)
+            (handler,this_00,(pIVar6->PushCubeEditCubeTutorialTools).method,UNRECOVERED_JUMPTABLE);
   return;
 }
 
@@ -1379,22 +2035,30 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial__cctor(MethodIn
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CEEditCubeTutorial);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Add_MV__WorldObject__MetaData__FirstTimeEvent_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__HashSet__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>
-                   );
+    FUN_?(&TypeInfo__CEEditCubeTutorial);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Add_MV__WorldObject__MetaData__FirstTimeEvent_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__HashSet__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pHVar1 = (HashSet_1_System_Int32Enum_ *)
-           func_?(
-                          TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>
-                          );
+           FUN_?(
+                        TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>
+                        );
   System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
   HashSet_1_System_Int32Enum___ctor
             (pHVar1,
@@ -1402,44 +2066,60 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial__cctor(MethodIn
             );
   if (pHVar1 != (HashSet_1_System_Int32Enum_ *)0x0) {
     System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
-    HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
+    HashSet_1_System_Int32Enum__AddIfNotPresent
               (pHVar1,0x7a,
                MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Add_MV__WorldObject__MetaData__FirstTimeEvent_
-              );
+               ->klass->rgctx_data[0x15].method);
     System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
-    HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
+    HashSet_1_System_Int32Enum__AddIfNotPresent
               (pHVar1,0x79,
                MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Add_MV__WorldObject__MetaData__FirstTimeEvent_
-              );
+               ->klass->rgctx_data[0x15].method);
     System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
-    HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
+    HashSet_1_System_Int32Enum__AddIfNotPresent
               (pHVar1,0x7d,
                MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Add_MV__WorldObject__MetaData__FirstTimeEvent_
-              );
+               ->klass->rgctx_data[0x15].method);
     System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
-    HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
+    HashSet_1_System_Int32Enum__AddIfNotPresent
               (pHVar1,0x78,
                MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Add_MV__WorldObject__MetaData__FirstTimeEvent_
-              );
+               ->klass->rgctx_data[0x15].method);
     System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
-    HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
+    HashSet_1_System_Int32Enum__AddIfNotPresent
               (pHVar1,0x8d,
                MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Add_MV__WorldObject__MetaData__FirstTimeEvent_
-              );
+               ->klass->rgctx_data[0x15].method);
     System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
-    HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
+    HashSet_1_System_Int32Enum__AddIfNotPresent
               (pHVar1,0x8e,
                MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Add_MV__WorldObject__MetaData__FirstTimeEvent_
-              );
+               ->klass->rgctx_data[0x15].method);
     System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
-    HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
+    HashSet_1_System_Int32Enum__AddIfNotPresent
               (pHVar1,0x8f,
                MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Add_MV__WorldObject__MetaData__FirstTimeEvent_
-              );
+               ->klass->rgctx_data[0x15].method);
     TypeInfo__CEEditCubeTutorial->static_fields->successEvents =
          (HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)pHVar1;
-    func_?();
-    pHVar1 = (HashSet_1_System_Int32Enum_ *)func_?();
+    if (iRam_? != 0) {
+      uVar2 = (uint)((ulonglong)TypeInfo__CEEditCubeTutorial->static_fields >> 0xc);
+      lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+        puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar5;
+        if (bVar6) {
+          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    pHVar1 = (HashSet_1_System_Int32Enum_ *)
+             FUN_?(
+                          TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>
+                          );
     System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
     HashSet_1_System_Int32Enum___ctor
               (pHVar1,
@@ -1447,22 +2127,37 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial__cctor(MethodIn
               );
     if (pHVar1 != (HashSet_1_System_Int32Enum_ *)0x0) {
       System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
-      HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
+      HashSet_1_System_Int32Enum__AddIfNotPresent
                 (pHVar1,0x8d,
                  MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Add_MV__WorldObject__MetaData__FirstTimeEvent_
-                );
+                 ->klass->rgctx_data[0x15].method);
       System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
-      HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
+      HashSet_1_System_Int32Enum__AddIfNotPresent
                 (pHVar1,0x8e,
                  MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Add_MV__WorldObject__MetaData__FirstTimeEvent_
-                );
+                 ->klass->rgctx_data[0x15].method);
       TypeInfo__CEEditCubeTutorial->static_fields->disableCubeModelingEvents =
            (HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)pHVar1;
-      func_?(&TypeInfo__CEEditCubeTutorial->static_fields->disableCubeModelingEvents);
+      if (iRam_? != 0) {
+        uVar2 = (uint)((ulonglong)
+                       &TypeInfo__CEEditCubeTutorial->static_fields->disableCubeModelingEvents >>
+                      0xc);
+        lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+          puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+          LOCK();
+          bVar6 = uVar4 == *puVar5;
+          if (bVar6) {
+            *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar6);
+      }
       pHVar1 = (HashSet_1_System_Int32Enum_ *)
-               func_?(
-                              TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>
-                              );
+               FUN_?(
+                            TypeInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>
+                            );
       System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
       HashSet_1_System_Int32Enum___ctor
                 (pHVar1,
@@ -1470,25 +2165,40 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial__cctor(MethodIn
                 );
       if (pHVar1 != (HashSet_1_System_Int32Enum_ *)0x0) {
         System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
-        HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
+        HashSet_1_System_Int32Enum__AddIfNotPresent
                   (pHVar1,0x7c,
                    MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Add_MV__WorldObject__MetaData__FirstTimeEvent_
-                  );
+                   ->klass->rgctx_data[0x15].method);
         System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
-        HashSet_1_System_Int32Enum__System_Collections_Generic_ICollection_T__Add
+        HashSet_1_System_Int32Enum__AddIfNotPresent
                   (pHVar1,0x77,
                    MethodInfo__System__Collections__Generic__HashSet<MV::WorldObject::MetaData::FirstTimeEvent>__Add_MV__WorldObject__MetaData__FirstTimeEvent_
-                  );
+                   ->klass->rgctx_data[0x15].method);
         TypeInfo__CEEditCubeTutorial->static_fields->enableCubeModelingEvents =
              (HashSet_1_MV_WorldObject_MetaData_FirstTimeEvent_ *)pHVar1;
-        func_?(&TypeInfo__CEEditCubeTutorial->static_fields->enableCubeModelingEvents);
+        if (iRam_? != 0) {
+          uVar2 = (uint)((ulonglong)
+                         &TypeInfo__CEEditCubeTutorial->static_fields->enableCubeModelingEvents >>
+                        0xc);
+          uVar4 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+          do {
+            uVar7 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+            puVar5 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+            LOCK();
+            bVar6 = uVar7 == *puVar5;
+            if (bVar6) {
+              *puVar5 = uVar7 | 1L << (uVar2 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar6);
+        }
         return;
       }
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -1500,80 +2210,158 @@ void Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__Dictionary__
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>);
-    func_?(&TypeInfo__CEEditCubeTutorial__ResettingBookkeeping);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__CEEditCubeTutorial__ResettingBookkeeping);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  bVar1 = cRam_? == '\0';
   (this->fields).targetCubeModelId = -1;
   (this->fields).oneCubeDistance = 4.0;
   (this->fields).multiCubeDistance = 16.0;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+  if (bVar1) {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-  VStack_2.x = (pVVar1->rightVector).x;
-  VStack_2.y = (pVVar1->rightVector).y;
-  VStack_2.z = (pVVar1->rightVector).z;
+  pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uVar3 = (pVVar2->rightVector).x;
+  uVar4 = (pVVar2->rightVector).y;
+  fVar5 = (pVVar2->rightVector).z;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uStack_3._0_4_ = (pVVar1->upVector).x;
-  uStack_3._4_4_ = (pVVar1->upVector).y;
-  puStack_4 = (undefined *)(pVVar1->upVector).z;
-  fVar5 = (float)(undefined4)uStack_3 + VStack_2.x;
-  fVar6 = (float)uStack_3._4_4_ + VStack_2.y;
-  fVar7 = (float)puStack_4 + VStack_2.z;
+  pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uVar6 = (pVVar2->upVector).x;
+  uVar7 = (pVVar2->upVector).y;
+  fVar8 = (pVVar2->upVector).z;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-  VStack_2.x = (pVVar1->backVector).x;
-  VStack_2.y = (pVVar1->backVector).y;
-  VStack_2.z = (pVVar1->backVector).z + fVar7;
-  value.y = VStack_2.y + fVar6;
-  value.x = VStack_2.x + fVar5;
-  value.z = VStack_2.z;
-  pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                     (&VStack_2,value,(MethodInfo *)0x0);
-  fVar6 = pVVar8->y;
-  fVar5 = pVVar8->z;
-  (this->fields).focusOffset.x = pVVar8->x;
-  (this->fields).focusOffset.y = fVar6;
+  pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uVar9 = (pVVar2->backVector).x;
+  uVar10 = (pVVar2->backVector).y;
+  fVar11 = (pVVar2->backVector).z;
+  fVar12 = (float)FUN_?();
+  if (_UNK_? < fVar12) {
+    fVar5 = (fVar11 + fVar5 + fVar8) / fVar12;
+    uVar13 = CONCAT44(((float)uVar10 + (float)uVar4 + (float)uVar7) / fVar12,
+                      ((float)uVar9 + (float)uVar3 + (float)uVar6) / fVar12);
+  }
+  else {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar13._0_4_ = (pVVar2->zeroVector).x;
+    uVar13._4_4_ = (pVVar2->zeroVector).y;
+    fVar5 = (pVVar2->zeroVector).z;
+  }
+  (this->fields).focusOffset.x = (float)(int)uVar13;
+  (this->fields).focusOffset.y = (float)(int)((ulonglong)uVar13 >> 0x20);
+  (this->fields).zeroPos.x = 0;
+  (this->fields).zeroPos.y = 0;
   (this->fields).focusOffset.z = fVar5;
-  uVar9._0_2_ = 0;
-  uVar9._2_2_ = 0;
-  iVar10 = 0;
-  MVWorldObject.dll::MV::WorldObject::IntVector::IntVector__ctor_1
-            ((IntVector *)&stack0xffffffec,0,0,0,(MethodInfo *)0x0);
-  (this->fields).zeroPos.x = (int16_t)uVar9;
-  (this->fields).zeroPos.y = SUB42(uVar9,2);
-  (this->fields).zeroPos.z = iVar10;
-  this_00 = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
-            func_?(TypeInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>
-                           );
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-  Int32Enum,GamePassesHighScoreList+HighScoreListData]::
-  Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
-            (this_00,
-             MethodInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>__Dictionary__
-            );
-  (this->fields).firstTimeEventChangeCheck = (Dictionary_2_EditCubeChange_System_Boolean_ *)this_00;
-  func_?(&(this->fields).firstTimeEventChangeCheck,this_00);
-  value_00 = (CEEditCubeTutorial_ResettingBookkeeping *)
-             func_?(TypeInfo__CEEditCubeTutorial__ResettingBookkeeping);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value_00,ExceptionArgument__Enum_obj,unaff_EBP);
-  (this->fields).resettingBookkeeping = value_00;
-  func_?();
+  (this->fields).zeroPos.z = 0;
+  pDVar14 = (Dictionary_2_EditCubeChange_System_Boolean_ *)
+            FUN_?(TypeInfo__System__Collections__Generic__Dictionary<EditCubeChange,_bool>);
+  FUN_?(pDVar14);
+  bVar1 = iRam_? != 0;
+  (this->fields).firstTimeEventChangeCheck = pDVar14;
+  if (bVar1) {
+    uVar15 = (uint)((ulonglong)&(this->fields).firstTimeEventChangeCheck >> 0xc);
+    uVar16 = (ulonglong)((uVar15 & 0x1fffff) >> 6);
+    do {
+      uVar17 = *(ulonglong *)(uVar16 * 8 + 0xADDR);
+      puVar18 = (ulonglong *)(uVar16 * 8 + 0xADDR);
+      LOCK();
+      bVar1 = uVar17 == *puVar18;
+      if (bVar1) {
+        *puVar18 = uVar17 | 1L << (uVar15 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  pCVar19 = (CEEditCubeTutorial_ResettingBookkeeping *)
+            FUN_?(TypeInfo__CEEditCubeTutorial__ResettingBookkeeping);
+  bVar1 = iRam_? != 0;
+  (this->fields).resettingBookkeeping = pCVar19;
+  if (bVar1) {
+    uVar15 = (uint)((ulonglong)&(this->fields).resettingBookkeeping >> 0xc);
+    uVar16 = (ulonglong)((uVar15 & 0x1fffff) >> 6);
+    do {
+      uVar17 = *(ulonglong *)(uVar16 * 8 + 0xADDR);
+      puVar18 = (ulonglong *)(uVar16 * 8 + 0xADDR);
+      LOCK();
+      bVar1 = uVar17 == *puVar18;
+      if (bVar1) {
+        *puVar18 = uVar17 | 1L << (uVar15 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   (this->fields).enableCubemodeling = 1;
-  ESStateBase::ESStateBase__ctor((ESStateBase *)this,(MethodInfo *)0x0);
+  pWVar20 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClientRefNullRef
+                      ((MethodInfo *)0x0);
+  bVar1 = iRam_? != 0;
+  (this->fields)._.tintedWo = pWVar20;
+  if (bVar1) {
+    uVar15 = (uint)((ulonglong)&(this->fields)._.tintedWo >> 0xc);
+    lVar21 = (ulonglong)((uVar15 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar16 = *(ulonglong *)(lVar21 + 0xADDR);
+      puVar18 = (ulonglong *)(lVar21 + 0xADDR);
+      LOCK();
+      bVar1 = uVar16 == *puVar18;
+      if (bVar1) {
+        *puVar18 = uVar16 | 1L << (uVar15 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  this_00 = LoggerManager::LoggerManager_get_Instance((MethodInfo *)0x0);
+  type = (Type *)FUN_?(&(this->klass->_0).byval_arg);
+  if (this_00 == (LoggerManager *)0x0) {
+    FUN_?();
+    pcVar22 = (code *)swi(3);
+    (*pcVar22)();
+    return;
+  }
+  pIVar23 = LoggerManager::LoggerManager_GetLogger(this_00,type,(MethodInfo *)0x0);
+  bVar1 = iRam_? != 0;
+  (this->fields)._.logger = pIVar23;
+  if (bVar1) {
+    uVar15 = (uint)((ulonglong)&(this->fields)._.logger >> 0xc);
+    lVar21 = (ulonglong)((uVar15 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar16 = *(ulonglong *)(lVar21 + 0xADDR);
+      puVar18 = (ulonglong *)(lVar21 + 0xADDR);
+      LOCK();
+      bVar1 = uVar16 == *puVar18;
+      if (bVar1) {
+        *puVar18 = uVar16 | 1L << (uVar15 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   return;
 }
 
@@ -1586,32 +2374,36 @@ Assembly-CSharp.dll::CEEditCubeTutorial::CEEditCubeTutorial_get_TargetCubeModel
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVCubeModelBase);
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((this->fields).targetCubeModelId == -1) {
-    return (MVCubeModelBase *)0x0;
-  }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if (this_00 != (MVWorldObjectClientManager *)0x0) {
-    pMVar1 = (MVCubeModelBase *)
-             MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+  if ((this->fields).targetCubeModelId != -1) {
+    this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (this_00 == (MVWorldObjectClientManager *)0x0) {
+      FUN_?();
+      pcVar1 = (code *)swi(3);
+      pMVar2 = (MVCubeModelBase *)(*pcVar1)();
+      return pMVar2;
+    }
+    pMVar2 = (MVCubeModelBase *)
+             MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
                        (this_00,(this->fields).targetCubeModelId,(MethodInfo *)0x0);
-    if (pMVar1 == (MVCubeModelBase *)0x0) {
-      return (MVCubeModelBase *)0x0;
+    if (pMVar2 != (MVCubeModelBase *)0x0) {
+      bVar3 = (TypeInfo__MVCubeModelBase->_1).naturalAligment;
+      if ((bVar3 <= (pMVar2->klass->_1).naturalAligment) &&
+         ((MVCubeModelBase__Class *)(pMVar2->klass->_1).typeHierarchy[(ulonglong)bVar3 - 1] ==
+          TypeInfo__MVCubeModelBase)) {
+        return pMVar2;
+      }
+      FUN_?(pMVar2,TypeInfo__MVCubeModelBase);
+      pcVar1 = (code *)swi(3);
+      pMVar2 = (MVCubeModelBase *)(*pcVar1)();
+      return pMVar2;
     }
-    if (((TypeInfo__MVCubeModelBase->_1).naturalAligment <= (pMVar1->klass->_1).naturalAligment) &&
-       ((MVCubeModelBase__Class *)
-        (pMVar1->klass->_1).typeHierarchy[(TypeInfo__MVCubeModelBase->_1).naturalAligment - 1] ==
-        TypeInfo__MVCubeModelBase)) {
-      return pMVar1;
-    }
-    func_?(pMVar1);
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  pMVar1 = (MVCubeModelBase *)(*pcVar2)();
-  return pMVar1;
+  return (MVCubeModelBase *)0x0;
 }
 
 

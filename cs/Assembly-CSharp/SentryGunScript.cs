@@ -16,8 +16,6 @@ public class SentryGunScript : MonoBehaviour
 	public Transform glowPlane;
 	public Material materialFireBeam;
 	public Material materialIceBeam;
-	public AudioClip audioClipFireBeam;
-	public AudioClip audioClipIceBeam;
 	public Material blinkDamageMaterial;
 	public GameObject smokeEffect;
 	public Transform healthPivot;
@@ -29,6 +27,10 @@ public class SentryGunScript : MonoBehaviour
 	private ParticleSystem smokeEffectEmitter;
 	[SerializeField]
 	private Renderer glowPlaneRenderer;
+	[SerializeField]
+	private StreamedAudioClipManual audioClipFireBeamStream;
+	[SerializeField]
+	private StreamedAudioClipManual audioClipIceBeamStream;
 	private Color color;
 	private SphereVolumeIndicator rangeVisualization;
 	private float damageBlinkTimeoutTime;

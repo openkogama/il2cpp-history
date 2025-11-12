@@ -7,41 +7,54 @@ void Assembly-CSharp.dll::DebugLogHandler+StatHatErrorCount::
                ,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&StringLiteral_An_errorDetected_and_onGoingErro);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_An_errorDetected_and_onGoingErro);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  uStack_1 = 0;
   if (errorDetected == onGoingErrorDetected) {
-    if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Boolean);
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
     }
-    pSVar4 = mscorlib.dll::System::Boolean::Boolean_ToString
-                       ((Boolean *)&errorDetected,(MethodInfo *)0x0);
-    pSVar4 = mscorlib.dll::System::String::String_Concat_3
-                       (StringLiteral_An_errorDetected_and_onGoingErro,pSVar4,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (cRam_? == '\0') {
+      FUN_?(&StringLiteral_False);
+      LOCK();
+      UNLOCK();
+      FUN_?(&StringLiteral_True);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pSVar1 = StringLiteral_False;
+    if (errorDetected != 0) {
+      pSVar1 = StringLiteral_True;
+    }
+    pSVar1 = mscorlib.dll::System::String::String_Concat_4
+                       (StringLiteral_An_errorDetected_and_onGoingErro,pSVar1,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-              ((Object *)pSVar4,(MethodInfo *)0x0);
+              ((Object *)pSVar1,(MethodInfo *)0x0);
   }
   else {
     if (onGoingErrorDetected != 0) {
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__StatHatWrapper);
-        func_?(&StringLiteral_errorcountongoing);
+        FUN_?(&TypeInfo__StatHatWrapper);
+        LOCK();
+        UNLOCK();
+        FUN_?(&StringLiteral_errorcountongoing);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
       if ((this->fields).reportedOngoingError == 0) {
-        if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__StatHatWrapper);
+        if (*(int *)&(TypeInfo__StatHatWrapper->_1).field_0x1c == 0) {
+          FUN_?();
         }
         StatHatWrapper::StatHatWrapper_Count(StringLiteral_errorcountongoing,1,(MethodInfo *)0x0);
         (this->fields).reportedOngoingError = 1;
@@ -49,22 +62,23 @@ void Assembly-CSharp.dll::DebugLogHandler+StatHatErrorCount::
     }
     if (errorDetected != 0) {
       if (cRam_? == '\0') {
-        func_?(&TypeInfo__StatHatWrapper);
-        func_?(&StringLiteral_errorcount);
+        FUN_?(&TypeInfo__StatHatWrapper);
+        LOCK();
+        UNLOCK();
+        FUN_?(&StringLiteral_errorcount);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
       if ((this->fields).reportedError == 0) {
-        if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__StatHatWrapper);
+        if (*(int *)&(TypeInfo__StatHatWrapper->_1).field_0x1c == 0) {
+          FUN_?();
         }
         StatHatWrapper::StatHatWrapper_Count(StringLiteral_errorcount,1,(MethodInfo *)0x0);
         (this->fields).reportedError = 1;
-        *unaff_FS_OFFSET = uStack_3;
-        return;
       }
     }
   }
-  *unaff_FS_OFFSET = uStack_3;
   return;
 }
 
@@ -77,13 +91,17 @@ void Assembly-CSharp.dll::DebugLogHandler+StatHatErrorCount::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__StatHatWrapper);
-    func_?(&StringLiteral_errorcount);
+    FUN_?(&TypeInfo__StatHatWrapper);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_errorcount);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields).reportedError == 0) {
-    if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__StatHatWrapper);
+    if (*(int *)&(TypeInfo__StatHatWrapper->_1).field_0x1c == 0) {
+      FUN_?();
     }
     StatHatWrapper::StatHatWrapper_Count(StringLiteral_errorcount,1,(MethodInfo *)0x0);
     (this->fields).reportedError = 1;
@@ -100,13 +118,17 @@ void Assembly-CSharp.dll::DebugLogHandler+StatHatErrorCount::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__StatHatWrapper);
-    func_?(&StringLiteral_errorcountongoing);
+    FUN_?(&TypeInfo__StatHatWrapper);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_errorcountongoing);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields).reportedOngoingError == 0) {
-    if ((TypeInfo__StatHatWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__StatHatWrapper);
+    if (*(int *)&(TypeInfo__StatHatWrapper->_1).field_0x1c == 0) {
+      FUN_?();
     }
     StatHatWrapper::StatHatWrapper_Count(StringLiteral_errorcountongoing,1,(MethodInfo *)0x0);
     (this->fields).reportedOngoingError = 1;

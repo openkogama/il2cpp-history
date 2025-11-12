@@ -8,23 +8,23 @@ void Assembly-CSharp.dll::PlayerListsLayout+<>c__DisplayClass9_0::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pPVar1 = (this->fields).newPlayerLists;
-  if (pPVar1 != (PlayerListsLayout *)0x0) {
-    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)pPVar1,(MethodInfo *)0x0);
-    pPVar1 = (this->fields).__4__this;
-    if ((pPVar1 != (PlayerListsLayout *)0x0) && (x != (IUIStack *)0x0)) {
-      func_?(1,TypeInfo__UnityEngine__EventSystems__IUIStack,x,pGVar2,
-                      (pPVar1->fields).pushOptions,0);
+  this_00 = (this->fields).newPlayerLists;
+  if (this_00 != (PlayerListsLayout *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+              ((Component *)this_00,(MethodInfo *)0x0);
+    if (((this->fields).__4__this != (PlayerListsLayout *)0x0) && (x != (IUIStack *)0x0)) {
+      FUN_?();
       return;
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

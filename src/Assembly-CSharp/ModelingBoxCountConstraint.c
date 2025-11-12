@@ -2,170 +2,88 @@
 /* Boolean CanAddCubeAt(IntVector) */
 
 bool Assembly-CSharp.dll::ModelingBoxCountConstraint::ModelingBoxCountConstraint_CanAddCubeAt
-               (ModelingBoxCountConstraint *this,IntVector pos,MethodInfo *method)
+               (ModelingBoxCountConstraint *this,IntVector *pos,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort);
-    cRam_? = '\x01';
-  }
-  uVar1._0_2_ = (this->fields)._.minCorner.x.currentCryptoKey;
-  uVar1._2_2_ = (this->fields)._.minCorner.x.hiddenValue;
-  pMVar2 = &this->fields;
-  uVar3._0_2_ = (pMVar2->_).minCorner.x.fakeValue;
-  uVar3._2_1_ = (pMVar2->_).minCorner.x.inited;
-  uVar3._3_1_ = (pMVar2->_).minCorner.x.field_0x7;
-  if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).cctor_finished_or_no_cctor
-      == 0) {
-    func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort);
-  }
-  OVar4.fakeValue = (short)uVar3;
-  OVar4.inited = (char)((uint)uVar3 >> 0x10);
-  OVar4._7_1_ = (char)((uint)uVar3 >> 0x18);
-  OVar4.currentCryptoKey = (short)uVar1;
-  OVar4.hiddenValue = (short)((uint)uVar1 >> 0x10);
-  iVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-          ObscuredShort_op_Implicit_1(OVar4,(MethodInfo *)0x0);
-  if (iVar5 <= pos.x) {
-    uVar6._0_2_ = (this->fields)._.minCorner.y.currentCryptoKey;
-    uVar6._2_2_ = (this->fields)._.minCorner.y.hiddenValue;
-    pMVar2 = &this->fields;
-    uVar7._0_2_ = (pMVar2->_).minCorner.y.fakeValue;
-    uVar7._2_1_ = (pMVar2->_).minCorner.y.inited;
-    uVar7._3_1_ = (pMVar2->_).minCorner.y.field_0x7;
-    OVar4 = (this->fields)._.minCorner.z;
-    if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).
-        cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort,uVar6,uVar7,
-                      OVar4._0_4_,OVar4._4_4_);
-    }
-    value_01.fakeValue = (short)uVar7;
-    value_01.inited = (char)((uint)uVar7 >> 0x10);
-    value_01._7_1_ = (char)((uint)uVar7 >> 0x18);
-    value_01.currentCryptoKey = (short)uVar6;
-    value_01.hiddenValue = (short)((uint)uVar6 >> 0x10);
-    iVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-            ObscuredShort_op_Implicit_1(value_01,(MethodInfo *)0x0);
-    if (iVar5 <= pos.y) {
-      uVar8 = SUB84((this->fields)._.minCorner.z,4);
-      if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).
-          cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort);
-      }
-      iVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-              ObscuredShort_op_Implicit_1
-                        ((ObscuredShort)((ulonglong)uVar8 << 0x20),(MethodInfo *)0x0);
-      if (iVar5 <= pos.z) {
-        uVar9._0_2_ = (this->fields)._.maxCorner.x.currentCryptoKey;
-        uVar9._2_2_ = (this->fields)._.maxCorner.x.hiddenValue;
-        pMVar2 = &this->fields;
-        uVar10._0_2_ = (pMVar2->_).maxCorner.x.fakeValue;
-        uVar10._2_1_ = (pMVar2->_).maxCorner.x.inited;
-        uVar10._3_1_ = (pMVar2->_).maxCorner.x.field_0x7;
-        if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).
-            cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        value_02.fakeValue = (short)uVar10;
-        value_02.inited = (char)((uint)uVar10 >> 0x10);
-        value_02._7_1_ = (char)((uint)uVar10 >> 0x18);
-        value_02.currentCryptoKey = (short)uVar9;
-        value_02.hiddenValue = (short)((uint)uVar9 >> 0x10);
-        iVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort::
-                ObscuredShort_op_Implicit_1(value_02,(MethodInfo *)0x0);
-        if (pos.x <= iVar5) {
-          uVar11._0_2_ = (this->fields)._.maxCorner.y.currentCryptoKey;
-          uVar11._2_2_ = (this->fields)._.maxCorner.y.hiddenValue;
-          pMVar2 = &this->fields;
-          uVar12._0_2_ = (pMVar2->_).maxCorner.y.fakeValue;
-          uVar12._2_1_ = (pMVar2->_).maxCorner.y.inited;
-          uVar12._3_1_ = (pMVar2->_).maxCorner.y.field_0x7;
-          if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).
-              cctor_finished_or_no_cctor == 0) {
-            uStack13 =
-                 (undefined2)
-                 ((uint)TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort >> 0x10);
-            func_?();
-          }
-          uStack13 = 0;
-          pos.x = (int16_t)uVar12;
-          pos.y = (int16_t)((uint)uVar12 >> 0x10);
-          value.fakeValue = pos.x;
-          value.currentCryptoKey = (short)uVar11;
-          value.hiddenValue = (short)((uint)uVar11 >> 0x10);
-          value._6_2_ = pos.y;
-          iVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::ObscuredShort
-                  ::ObscuredShort_op_Implicit_1(value,(MethodInfo *)0x0);
-          if (pos.y <= iVar5) {
-            OVar4 = (this->fields)._.maxCorner.z;
-            uVar1 = OVar4._0_4_;
-            uVar3 = OVar4._4_4_;
-            puStack14 = (undefined *)uVar3;
-            if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredShort->_1).
-                cctor_finished_or_no_cctor == 0) {
-              func_?();
-              puStack14 = (undefined *)uVar3;
-            }
-            uStack13 = 0x1046;
-            value_00.fakeValue = (short)puStack14;
-            value_00.inited = (char)((uint)puStack14 >> 0x10);
-            value_00._7_1_ = (char)((uint)puStack14 >> 0x18);
-            value_00.currentCryptoKey = (short)uVar1;
-            value_00.hiddenValue = (short)((uint)uVar1 >> 0x10);
-            iVar5 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
-                    ObscuredShort::ObscuredShort_op_Implicit_1(value_00,(MethodInfo *)0x0);
-            if (-0x771f < iVar5) {
-              return 1;
-            }
-          }
-        }
-      }
-    }
-  }
-  return 0;
+  aIStack_1[0].x = pos->x;
+  aIStack_1[0].y = pos->y;
+  aIStack_1[0].z = pos->z;
+  bVar2 = ModelingBoxConstraint::ModelingBoxConstraint_CanAddCubeAt
+                    ((ModelingBoxConstraint *)this,aIStack_1,(MethodInfo *)0x0);
+  return bVar2;
 }
 
 
 /* Boolean CanRemoveCubeAt(IntVector) */
 
 bool Assembly-CSharp.dll::ModelingBoxCountConstraint::ModelingBoxCountConstraint_CanRemoveCubeAt
-               (ModelingBoxCountConstraint *this,IntVector pos,MethodInfo *method)
+               (ModelingBoxCountConstraint *this,IntVector *pos,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&StringLiteral_Constraint_violited__min__);
-    func_?(&StringLiteral__current_);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Constraint_violited__min__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__current_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields).cubeModel;
   iVar2 = (this->fields).minCubesCount;
-  if (pMVar1 != (MVCubeModelBase *)0x0) {
-    iVar3 = MVCubeModelBase::MVCubeModelBase_get_CubeCount(pMVar1,(MethodInfo *)0x0);
-    if (iVar3 <= iVar2) {
-      pSVar4 = mscorlib.dll::System::Int32::Int32_ToString
+  if ((pMVar1 != (MVCubeModelBase *)0x0) &&
+     (pRVar3 = (pMVar1->fields).prototypeCubeModel, pRVar3 != (RuntimePrototypeCubeModel *)0x0)) {
+    iVar4 = RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_get_CubeCount
+                      (pRVar3,(MethodInfo *)0x0);
+    if (iVar4 <= iVar2) {
+      pSVar5 = mscorlib.dll::System::Int32::Int32_ToString
                          ((Int32 *)&(this->fields).minCubesCount,(MethodInfo *)0x0);
       pMVar1 = (this->fields).cubeModel;
-      if (pMVar1 == (MVCubeModelBase *)0x0) goto code_?;
-      MVCubeModelBase::MVCubeModelBase_get_CubeCount(pMVar1,(MethodInfo *)0x0);
-      str3 = mscorlib.dll::System::Int32::Int32_ToString
-                       ((Int32 *)&stack0xfffffff8,(MethodInfo *)0x0);
-      pSVar4 = mscorlib.dll::System::String::String_Concat_5
-                         (StringLiteral_Constraint_violited__min__,pSVar4,StringLiteral__current_,
+      if ((pMVar1 == (MVCubeModelBase *)0x0) ||
+         (pRVar3 = (pMVar1->fields).prototypeCubeModel, pRVar3 == (RuntimePrototypeCubeModel *)0x0))
+      goto code_?;
+      value = RuntimePrototypeCubeModel::RuntimePrototypeCubeModel_get_CubeCount
+                        (pRVar3,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__System__Number);
+        LOCK();
+        UNLOCK();
+        FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if ((MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____->klass->
+           field_0x135 & 1) == 0) {
+        FUN_?();
+      }
+      if (*(int *)&(TypeInfo__System__Number->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      aRStack_6[0]._pointer._value = (void *)0x0;
+      aRStack_6[0]._length = 0;
+      aRStack_6[0]._12_4_ = 0;
+      str3 = mscorlib.dll::System::Number::Number_FormatInt32
+                       (value,aRStack_6,(IFormatProvider *)0x0,(MethodInfo *)0x0);
+      pSVar5 = mscorlib.dll::System::String::String_Concat_6
+                         (StringLiteral_Constraint_violited__min__,pSVar5,StringLiteral__current_,
                           str3,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                ((Object *)pSVar4,(MethodInfo *)0x0);
+                ((Object *)pSVar5,(MethodInfo *)0x0);
     }
-    return iVar2 < iVar3;
+    return iVar2 < iVar4;
   }
 code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  bVar6 = (*pcVar5)();
-  return bVar6;
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  bVar8 = (*pcVar7)();
+  return bVar8;
 }
 
 
@@ -176,14 +94,12 @@ void Assembly-CSharp.dll::ModelingBoxCountConstraint::ModelingBoxCountConstraint
                MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
   if (e != (CubeModelChangedEventArgs *)0x0) {
     return;
   }
-  uVar2 = func_?(auStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -191,14 +107,34 @@ void Assembly-CSharp.dll::ModelingBoxCountConstraint::ModelingBoxCountConstraint
 /* ModelingBoxCountConstraint(MVCubeModelBase, IntVector, IntVector, Int32) */
 
 void Assembly-CSharp.dll::ModelingBoxCountConstraint::ModelingBoxCountConstraint__ctor
-               (ModelingBoxCountConstraint *this,MVCubeModelBase *cubeModel,IntVector minCorner,
-               IntVector maxCorner,int32_t minCubeCount,MethodInfo *method)
+               (ModelingBoxCountConstraint *this,MVCubeModelBase *cubeModel,IntVector *minCorner,
+               IntVector *maxCorner,int32_t minCubeCount,MethodInfo *method)
 
 {
+  IStackX_8.x = maxCorner->x;
+  IStackX_8.y = maxCorner->y;
+  IStackX_8.z = maxCorner->z;
+  aIStackX_18[0].x = minCorner->x;
+  aIStackX_18[0].y = minCorner->y;
+  aIStackX_18[0].z = minCorner->z;
   ModelingBoxConstraint::ModelingBoxConstraint__ctor_1
-            ((ModelingBoxConstraint *)this,minCorner,maxCorner,(MethodInfo *)0x0);
+            ((ModelingBoxConstraint *)this,aIStackX_18,&IStackX_8,(MethodInfo *)0x0);
+  bVar1 = iRam_? != 0;
   (this->fields).cubeModel = cubeModel;
-  func_?((short)&(this->fields).cubeModel,cubeModel);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).cubeModel >> 0xc);
+    uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+    do {
+      uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+      puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   (this->fields).minCubesCount = minCubeCount;
   return;
 }

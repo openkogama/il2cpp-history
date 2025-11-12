@@ -6,8 +6,10 @@ void Assembly-CSharp.dll::ThemeAttributes::ThemeAttribute`1[System::Single]::
                (ThemeAttribute_1_System_Single_ *this,MethodInfo *method)
 
 {
-  (*(code *)(this->klass->vtable).__unknown_2.method)
-            (this,(this->fields).value,this->klass[1]._0.image);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(this->klass->vtable).__unknown_2.methodPtr)
+            (this,(this->fields).value,(this->klass->vtable).__unknown_2.method);
   return;
 }
 
@@ -20,16 +22,29 @@ void Assembly-CSharp.dll::ThemeAttributes::ThemeAttribute`1[System::Single]::
                int32_t groups,Action_1_Single_ *onChange,MethodInfo *method)
 
 {
-  if (this != (ThemeAttribute_1_System_Single_ *)0x0) {
-    ThemeAttribute::ThemeAttribute_Initialize
-              ((ThemeAttribute *)this,settings,key,groups,(MethodInfo *)0x0);
-    (this->fields).themeCallback = onChange;
-    func_?(&(this->fields).themeCallback,onChange);
+  if (this == (ThemeAttribute_1_System_Single_ *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  ThemeAttribute::ThemeAttribute_Initialize
+            ((ThemeAttribute *)this,settings,key,groups,(MethodInfo *)0x0);
+  bVar2 = iRam_? != 0;
+  (this->fields).themeCallback = onChange;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).themeCallback >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
   return;
 }
 

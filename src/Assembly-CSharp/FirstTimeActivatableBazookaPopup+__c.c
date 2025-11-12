@@ -8,22 +8,18 @@ void Assembly-CSharp.dll::FirstTimeActivatableBazookaPopup+<>c::
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IPlayerInventory;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IPlayerInventory);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (x != (IPlayerInventory *)0x0) {
-    ppIStack_1 = (IPlayerInventory__Class **)0x7;
-    puStack_2 = (undefined *)0x1;
-    pIStack_3 = x;
-    func_?(2,TypeInfo__UnityEngine__EventSystems__IPlayerInventory);
+    FUN_?(2,TypeInfo__UnityEngine__EventSystems__IPlayerInventory,x,1,7);
     return;
   }
-  ppIStack_1 = (IPlayerInventory__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -35,15 +31,28 @@ void Assembly-CSharp.dll::FirstTimeActivatableBazookaPopup+<>c::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__FirstTimeActivatableBazookaPopup____c);
+    FUN_?(&TypeInfo__FirstTimeActivatableBazookaPopup____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__FirstTimeActivatableBazookaPopup____c;
-  value = (FirstTimeActivatableBazookaPopup_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  TypeInfo__FirstTimeActivatableBazookaPopup____c->static_fields->__9 = value;
-  func_?(TypeInfo__FirstTimeActivatableBazookaPopup____c->static_fields,value);
+  pFVar1 = (FirstTimeActivatableBazookaPopup_c *)
+           FUN_?(TypeInfo__FirstTimeActivatableBazookaPopup____c);
+  TypeInfo__FirstTimeActivatableBazookaPopup____c->static_fields->__9 = pFVar1;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)TypeInfo__FirstTimeActivatableBazookaPopup____c->static_fields >> 0xc)
+    ;
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 

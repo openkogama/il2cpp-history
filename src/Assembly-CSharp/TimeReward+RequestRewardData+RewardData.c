@@ -7,22 +7,30 @@ String * Assembly-CSharp.dll::TimeReward+RequestRewardData+RewardData::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&TypeInfo__System__Int32);
-    func_?(&StringLiteral_rewardEnabled__0___timeInSeconds);
+    FUN_?(&StringLiteral_rewardEnabled__0___timeInSeconds);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pTVar1 = this;
-  this = (TimeReward_RequestRewardData_RewardData *)
-         CONCAT13((this->fields).rewardEnabled,this._0_3_);
-  arg0 = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
-  iStack_2 = (pTVar1->fields).timeInSeconds;
-  arg1 = (Object *)func_?(TypeInfo__System__Int32,&iStack_2);
-  iStack_3 = (pTVar1->fields).gold;
-  arg2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_3);
-  pSVar4 = mscorlib.dll::System::String::String_Format_2
-                     (StringLiteral_rewardEnabled__0___timeInSeconds,arg0,arg1,arg2,
-                      (MethodInfo *)0x0);
-  return pSVar4;
+  aiStackX_8[0] = CONCAT31(aiStackX_8[0]._1_3_,(this->fields).rewardEnabled);
+  arg0 = (Object *)FUN_?(uRam_?,aiStackX_8);
+  aiStackX_8[0] = (this->fields).timeInSeconds;
+  arg1 = (Object *)FUN_?(uRam_?,aiStackX_8);
+  aiStackX_8[0] = (this->fields).gold;
+  arg2 = (Object *)FUN_?(uRam_?,aiStackX_8);
+  pSVar1 = StringLiteral_rewardEnabled__0___timeInSeconds;
+  PStack_2._arg0 = (Object *)0x0;
+  PStack_2._arg1 = (Object *)0x0;
+  PStack_2._arg2 = (Object *)0x0;
+  PStack_2._args = (Object__Array *)0x0;
+  mscorlib.dll::System::ParamsArray::ParamsArray__ctor_2
+            (&PStack_2,arg0,arg1,arg2,(MethodInfo *)0x0);
+  PStack_3._arg0 = PStack_2._arg0;
+  PStack_3._arg1 = PStack_2._arg1;
+  PStack_3._arg2 = PStack_2._arg2;
+  PStack_3._args = PStack_2._args;
+  pSVar1 = mscorlib.dll::System::String::String_FormatHelper
+                     ((IFormatProvider *)0x0,pSVar1,&PStack_3,(MethodInfo *)0x0);
+  return pSVar1;
 }
 

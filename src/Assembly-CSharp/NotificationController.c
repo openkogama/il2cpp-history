@@ -6,62 +6,70 @@ void Assembly-CSharp.dll::NotificationController::NotificationController_Awake
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
-    func_?(&
-                    MethodInfo__NotificationController__OnNotificationReceived_MV__Common__NotificationType__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
-                   );
-    func_?(&TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate);
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__NotificationController__OnNotificationReceived_MV__Common__NotificationType__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = TypeInfo__MVGameControllerBase->static_fields->OnReceivedNotification;
-  this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
-            func_?(TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
-  UnityAction_2_System_Int32_System_Int32___ctor
+  this_00 = (Action_2_Int32Enum_Object_ *)
+            FUN_?(TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate);
+  mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
             (this_00,(Object *)0x0,
              MethodInfo__NotificationController__OnNotificationReceived_MV__Common__NotificationType__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
              ,(MethodInfo *)0x0);
-  pMStack2 =
-       (MVGameControllerBase_OnReceivedNotificationEventDelegate *)
-       mscorlib.dll::System::Delegate::Delegate_Combine
-                 ((Delegate *)pMVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-  if (pMStack2 == (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0) {
+  pMVar1 = (MVGameControllerBase_OnReceivedNotificationEventDelegate *)
+           mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pMVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pMVar1 == (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0) {
     TypeInfo__MVGameControllerBase->static_fields->OnReceivedNotification =
          (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0;
-    pMVar1 = (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0;
-code_?:
-    pMStack2 =
-         (MVGameControllerBase_OnReceivedNotificationEventDelegate *)
-         &TypeInfo__MVGameControllerBase->static_fields->OnReceivedNotification;
-    pMStack3 = (MVGameControllerBase_OnReceivedNotificationEventDelegate__Class *)pMVar1;
-    func_?();
-    return;
-  }
-  pMVar1 = (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0;
-  if (pMStack2->klass == TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate)
-  {
-    pMVar1 = pMStack2;
-  }
-  if (pMVar1 == (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0) {
-    pMStack3 = TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate;
-    func_?();
-    pMStack2 = extraout_ECX;
-    pMStack3 = extraout_EDX;
   }
   else {
-    TypeInfo__MVGameControllerBase->static_fields->OnReceivedNotification = pMVar1;
-    pMVar1 = (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0;
-    if (pMStack2->klass ==
-        TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate) {
-      pMVar1 = pMStack2;
+    pMVar2 = (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0;
+    if (pMVar1->klass == TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate) {
+      pMVar2 = pMVar1;
     }
-    pMStack3 = TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate;
-    if (pMVar1 != (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0)
-    goto code_?;
+    if (pMVar2 == (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0) {
+      FUN_?(pMVar1,TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    TypeInfo__MVGameControllerBase->static_fields->OnReceivedNotification = pMVar2;
+    pMVar2 = (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0;
+    if (pMVar1->klass == TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate) {
+      pMVar2 = pMVar1;
+    }
+    if (pMVar2 == (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0) {
+      FUN_?(pMVar1,TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)&TypeInfo__MVGameControllerBase->static_fields->OnReceivedNotification
+                  >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar6 != uVar7);
+  }
   return;
 }
 
@@ -73,54 +81,71 @@ void Assembly-CSharp.dll::NotificationController::NotificationController_FriendR
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&TypeInfo__Friend);
-    func_?(&TypeInfo__NotificationController);
-    func_?(&StringLiteral__accepted_your_friend_request_);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Friend);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__accepted_your_friend_request_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  key = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffb);
+  auStackX_8[0] = 10;
+  apMStackX_18[0] = (MVPlayer *)0x0;
+  pOVar1 = (Object *)FUN_?(uRam_?,auStackX_8);
   if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    unaff_ESI = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,key,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                          );
-    if (unaff_ESI.m_Index != 0) {
-      if ((*(byte *)(*(int *)unaff_ESI.m_Index + 0xb8) < (TypeInfo__Friend->_1).naturalAligment) ||
-         (*(Friend__Class **)
-           (*(int *)(*(int *)unaff_ESI.m_Index + 100) + -4 +
-           (uint)(TypeInfo__Friend->_1).naturalAligment * 4) != TypeInfo__Friend))
-      goto code_?;
-    }
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar1 != (MVNetworkGame *)0x0) &&
-       ((unaff_ESI.m_Index != 0 &&
-        (this = (pMVar1->fields).playerContainer, this != (MVPlayerContainer *)0x0)))) {
-      profileId = *(MVPlayer **)(unaff_ESI.m_Index + 8);
-      MVPlayerContainer::MVPlayerContainer_TryGetPlayerByProfileId
-                (this,(int32_t)profileId,(MVPlayer **)&stack0xfffffff4,(MethodInfo *)0x0);
-      if ((profileId != (MVPlayer *)0x0) &&
-         (pUVar2 = (profileId->fields)._UserProfileData_k__BackingField, unaff_ESI.m_Index = 0,
-         pUVar2 != (UserProfileData *)0x0)) {
-        pSVar3 = (pUVar2->fields).UserName;
-        str1 = TM::TM__(StringLiteral__accepted_your_friend_request_,(MethodInfo *)0x0);
-        pSVar3 = mscorlib.dll::System::String::String_Concat_3(pSVar3,str1,(MethodInfo *)0x0);
-        if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        NotificationController_PushNotification(pSVar3,(Sprite *)0x0,5,(MethodInfo *)0x0);
+    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (data,pOVar1,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    pOVar1 = (Object *)0x0;
+    if (pOVar2 != (Object *)0x0) {
+      bVar3 = (TypeInfo__Friend->_1).naturalAligment;
+      if (((pOVar2->klass->_1).naturalAligment < bVar3) ||
+         (pOVar1 = pOVar2,
+         (pOVar2->klass->_1).typeHierarchy[(ulonglong)bVar3 - 1] != (Il2CppClass *)TypeInfo__Friend)
+         ) {
+        FUN_?(pOVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar5 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if ((((pMVar5 != (MVGameControllerBase *)0x0) &&
+         (pMVar6 = (pMVar5->fields).game, pMVar6 != (MVNetworkGame *)0x0)) &&
+        (pOVar1 != (Object *)0x0)) &&
+       (((this = (pMVar6->fields).playerContainer, this != (MVPlayerContainer *)0x0 &&
+         (MVPlayerContainer::MVPlayerContainer_TryGetPlayerByProfileId
+                    (this,*(int32_t *)&pOVar1[1].klass,apMStackX_18,(MethodInfo *)0x0),
+         apMStackX_18[0] != (MVPlayer *)0x0)) &&
+        (pUVar7 = (apMStackX_18[0]->fields)._UserProfileData_k__BackingField,
+        pUVar7 != (UserProfileData *)0x0)))) {
+      pSVar8 = (pUVar7->fields).UserName;
+      str1 = TM::TM__(StringLiteral__accepted_your_friend_request_,(MethodInfo *)0x0);
+      pSVar8 = mscorlib.dll::System::String::String_Concat_4(pSVar8,str1,(MethodInfo *)0x0);
+      if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      NotificationController_PushNotification(pSVar8,(Sprite *)0x0,5,(MethodInfo *)0x0);
+      return;
+    }
   }
-  func_?();
-code_?:
-  func_?(unaff_ESI.m_Index);
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -134,62 +159,70 @@ void Assembly-CSharp.dll::NotificationController::NotificationController_OnDestr
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
-    func_?(&
-                    MethodInfo__NotificationController__OnNotificationReceived_MV__Common__NotificationType__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
-                   );
-    func_?(&TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate);
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__NotificationController__OnNotificationReceived_MV__Common__NotificationType__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = TypeInfo__MVGameControllerBase->static_fields->OnReceivedNotification;
-  this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
-            func_?(TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
-  UnityAction_2_System_Int32_System_Int32___ctor
+  this_00 = (Action_2_Int32Enum_Object_ *)
+            FUN_?(TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate);
+  mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
             (this_00,(Object *)0x0,
              MethodInfo__NotificationController__OnNotificationReceived_MV__Common__NotificationType__System__Collections__Generic__Dictionary<System::Object,_System::Object>_
              ,(MethodInfo *)0x0);
-  pMStack2 =
-       (MVGameControllerBase_OnReceivedNotificationEventDelegate *)
-       mscorlib.dll::System::Delegate::Delegate_Remove
-                 ((Delegate *)pMVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-  if (pMStack2 == (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0) {
+  pMVar1 = (MVGameControllerBase_OnReceivedNotificationEventDelegate *)
+           mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)pMVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pMVar1 == (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0) {
     TypeInfo__MVGameControllerBase->static_fields->OnReceivedNotification =
          (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0;
-    pMVar1 = (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0;
-code_?:
-    pMStack2 =
-         (MVGameControllerBase_OnReceivedNotificationEventDelegate *)
-         &TypeInfo__MVGameControllerBase->static_fields->OnReceivedNotification;
-    pMStack3 = (MVGameControllerBase_OnReceivedNotificationEventDelegate__Class *)pMVar1;
-    func_?();
-    return;
-  }
-  pMVar1 = (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0;
-  if (pMStack2->klass == TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate)
-  {
-    pMVar1 = pMStack2;
-  }
-  if (pMVar1 == (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0) {
-    pMStack3 = TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate;
-    func_?();
-    pMStack2 = extraout_ECX;
-    pMStack3 = extraout_EDX;
   }
   else {
-    TypeInfo__MVGameControllerBase->static_fields->OnReceivedNotification = pMVar1;
-    pMVar1 = (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0;
-    if (pMStack2->klass ==
-        TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate) {
-      pMVar1 = pMStack2;
+    pMVar2 = (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0;
+    if (pMVar1->klass == TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate) {
+      pMVar2 = pMVar1;
     }
-    pMStack3 = TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate;
-    if (pMVar1 != (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0)
-    goto code_?;
+    if (pMVar2 == (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0) {
+      FUN_?(pMVar1,TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    TypeInfo__MVGameControllerBase->static_fields->OnReceivedNotification = pMVar2;
+    pMVar2 = (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0;
+    if (pMVar1->klass == TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate) {
+      pMVar2 = pMVar1;
+    }
+    if (pMVar2 == (MVGameControllerBase_OnReceivedNotificationEventDelegate *)0x0) {
+      FUN_?(pMVar1,TypeInfo__MVGameControllerBase__OnReceivedNotificationEventDelegate);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)&TypeInfo__MVGameControllerBase->static_fields->OnReceivedNotification
+                  >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar6 != uVar7);
+  }
   return;
 }
 
@@ -202,92 +235,163 @@ void Assembly-CSharp.dll::NotificationController::NotificationController_OnNotif
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__NotificationController);
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__NotificationsManager);
+    FUN_?(&TypeInfo__NotificationsManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (TypeInfo__NotificationsManager->static_fields->_Initialized_k__BackingField == 0) {
-    return;
-  }
-  if (type == NotificationType__Enum_FriendRequest) {
-    if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__NotificationController);
-    }
-    NotificationController_ReceivedFriendsRequest(data,(MethodInfo *)0x0);
-    return;
-  }
-  if (type == NotificationType__Enum_FriendRequestAccepted) {
-    if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__NotificationController);
-    }
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__System__Byte);
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                     );
-      func_?(&TypeInfo__Friend);
-      func_?(&TypeInfo__NotificationController);
-      func_?(&StringLiteral__accepted_your_friend_request_);
-      cRam_? = '\x01';
-    }
-    pMVar1 = (MVPlayer *)0x0;
-    key = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffb);
-    if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-      TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,key,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        );
-      if ((TVar2.m_Index == 0) ||
-         (((TypeInfo__Friend->_1).naturalAligment <= *(byte *)(*(int *)TVar2.m_Index + 0xb8) &&
-          (*(Friend__Class **)
-            (*(int *)(*(int *)TVar2.m_Index + 100) + -4 +
-            (uint)(TypeInfo__Friend->_1).naturalAligment * 4) == TypeInfo__Friend)))) {
-        pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if ((((pMVar3 != (MVNetworkGame *)0x0) && (TVar2.m_Index != 0)) &&
-            (this = (pMVar3->fields).playerContainer, this != (MVPlayerContainer *)0x0)) &&
-           ((MVPlayerContainer::MVPlayerContainer_TryGetPlayerByProfileId
-                       (this,*(int32_t *)(TVar2.m_Index + 8),(MVPlayer **)&stack0xfffffff4,
-                        (MethodInfo *)0x0), pMVar1 != (MVPlayer *)0x0 &&
-            (pUVar4 = (pMVar1->fields)._UserProfileData_k__BackingField,
-            pUVar4 != (UserProfileData *)0x0)))) {
-          pSVar5 = (pUVar4->fields).UserName;
-          str1 = TM::TM__(StringLiteral__accepted_your_friend_request_,(MethodInfo *)0x0);
-          pSVar5 = mscorlib.dll::System::String::String_Concat_3(pSVar5,str1,(MethodInfo *)0x0);
-          if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          NotificationController_PushNotification(pSVar5,(Sprite *)0x0,5,(MethodInfo *)0x0);
-          return;
+  if (TypeInfo__NotificationsManager->static_fields->_Initialized_k__BackingField != 0) {
+    if (type != NotificationType__Enum_FriendRequest) {
+      if (type == NotificationType__Enum_FriendRequestAccepted) {
+        if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+          FUN_?();
         }
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        ,0);
+          LOCK();
+          UNLOCK();
+          FUN_?(&TypeInfo__Friend);
+          LOCK();
+          UNLOCK();
+          FUN_?(&TypeInfo__NotificationController);
+          LOCK();
+          UNLOCK();
+          FUN_?(&StringLiteral__accepted_your_friend_request_);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pOVar1 = (Object *)FUN_?(uRam_?,&stack0x00000008);
+        if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+          pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                   Object]::Dictionary_2_System_Object_System_Object__get_Item
+                             (data,pOVar1,
+                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                             );
+          pOVar1 = (Object *)0x0;
+          if (pOVar2 != (Object *)0x0) {
+            bVar3 = (TypeInfo__Friend->_1).naturalAligment;
+            if (((pOVar2->klass->_1).naturalAligment < bVar3) ||
+               (pOVar1 = pOVar2,
+               (pOVar2->klass->_1).typeHierarchy[(ulonglong)bVar3 - 1] !=
+               (Il2CppClass *)TypeInfo__Friend)) {
+              FUN_?(pOVar2);
+              pcVar4 = (code *)swi(3);
+              (*pcVar4)();
+              return;
+            }
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__MVGameControllerBase);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pMVar5 = TypeInfo__MVGameControllerBase->static_fields->instance;
+          if ((((pMVar5 != (MVGameControllerBase *)0x0) &&
+               (pMVar6 = (pMVar5->fields).game, pMVar6 != (MVNetworkGame *)0x0)) &&
+              (pOVar1 != (Object *)0x0)) &&
+             (this = (pMVar6->fields).playerContainer, this != (MVPlayerContainer *)0x0)) {
+            MVPlayerContainer::MVPlayerContainer_TryGetPlayerByProfileId
+                      (this,*(int32_t *)&pOVar1[1].klass,(MVPlayer **)&stack0x00000018,
+                       (MethodInfo *)0x0);
+          }
+        }
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
       }
-      else {
-        func_?(TVar2.m_Index,TypeInfo__Friend);
+      if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+        FUN_?();
       }
-    }
-  }
-  else {
-    if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__NotificationController);
-    }
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__NotificationsManager);
-      cRam_? = '\x01';
-    }
-    this_00 = TypeInfo__NotificationsManager->static_fields->_activeInstance;
-    if (this_00 != (NotificationsManager *)0x0) {
-      NotificationsManager::NotificationsManager_InstantiateNotification
-                (this_00,type,data,(MethodInfo *)0x0);
+      pNVar7 = NotificationController_get_NotificationsManager((MethodInfo *)0x0);
+      if (pNVar7 == (NotificationsManager *)0x0) {
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Debug,type,data,0);
+        LOCK();
+        UNLOCK();
+        FUN_?(&TypeInfo__MV__Common__NotificationType);
+        LOCK();
+        UNLOCK();
+        FUN_?(&StringLiteral_Could_not_find_a_notification_ar);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pNVar8 = (pNVar7->fields).notificationAreas;
+      uVar9 = 0;
+      if (pNVar8 != (NotificationArea__Array *)0x0) {
+        lVar10 = 0x20;
+        do {
+          if ((int)pNVar8->max_length <= (int)uVar9) {
+            EStack_11.klass = (Enum__Class *)TypeInfo__MV__Common__NotificationType;
+            EStack_11.monitor = (MonitorData *)0xffffffffffffffff;
+            NStack_12 = type;
+            pSVar13 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_11,(MethodInfo *)0x0);
+            pSVar13 = mscorlib.dll::System::String::String_Concat_4
+                                (StringLiteral_Could_not_find_a_notification_ar,pSVar13,
+                                 (MethodInfo *)0x0);
+            if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
+                      ((Object *)pSVar13,(MethodInfo *)0x0);
+            return;
+          }
+          if (pNVar8 == (NotificationArea__Array *)0x0) break;
+          if ((uint)pNVar8->max_length <= uVar9) {
+code_?:
+            FUN_?();
+            pcVar4 = (code *)swi(3);
+            (*pcVar4)();
+            return;
+          }
+          pNVar14 = *(NotificationArea **)((longlong)pNVar8->vector + lVar10 + -0x20);
+          if (pNVar14 == (NotificationArea *)0x0) break;
+          bVar15 = NotificationArea::NotificationArea_CanInstantiateNotificationType
+                            (pNVar14,type,(MethodInfo *)0x0);
+          pNVar8 = (pNVar7->fields).notificationAreas;
+          if (bVar15 != 0) {
+            if (pNVar8 != (NotificationArea__Array *)0x0) {
+              if ((uint)pNVar8->max_length <= uVar9) goto code_?;
+              pNVar14 = pNVar8->vector[(int)uVar9];
+              if (pNVar14 != (NotificationArea *)0x0) {
+                (*(pNVar14->klass->vtable).InstantiateNotification.methodPtr)
+                          (pNVar14,(ulonglong)type,data,
+                           (pNVar14->klass->vtable).InstantiateNotification.method);
+                return;
+              }
+            }
+            break;
+          }
+          uVar9 = uVar9 + 1;
+          lVar10 = lVar10 + 8;
+        } while (pNVar8 != (NotificationArea__Array *)0x0);
+      }
+      FUN_?();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
       return;
     }
+    if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    NotificationController_ReceivedFriendsRequest(data,(MethodInfo *)0x0);
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
   return;
 }
 
@@ -299,48 +403,109 @@ void Assembly-CSharp.dll::NotificationController::NotificationController_PushNot
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__NotificationController);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
-         func_?(
-                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                        );
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+             *)FUN_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                            );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
-  StyleComplexSelector+PseudoStateData]::
-  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-            (this,
+  UIR::UIRenderDevice+DisableForceGammaMaterial]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
+            (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  key = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffb);
-  if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-               *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)this,key,(Object *)instruction,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    NotificationController_PushNotification_2
-              (NotificationType__Enum_FirstTimeXPRewarded,
-               (Dictionary_2_System_Object_System_Object_ *)this,0,(MethodInfo *)0x0);
+  auStackX_8[0] = 1;
+  pOVar1 = (Object *)FUN_?(uRam_?,auStackX_8);
+  if (this_00 ==
+      (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+       *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+  Dictionary_2_System_Object_System_Object__TryInsert
+            ((Dictionary_2_System_Object_System_Object_ *)this_00,pOVar1,(Object *)instruction,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+             ->klass->rgctx_data[0x22].method);
+  if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  uVar3 = 0;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                  ,this_00,lifeTime,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationLifetime);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pOVar1 = (Object *)FUN_?(uRam_?,&stack0x00000018);
+  value = (Object *)FUN_?(TypeInfo__NotificationLifetime,&stack0x00000018);
+  if (this_00 !=
+      (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+       *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__TryInsert
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,pOVar1,value,
+               (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar3 >> 8),2),
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+               ->klass->rgctx_data[0x22].method);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__NotificationsManager);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (TypeInfo__NotificationsManager->static_fields->_Initialized_k__BackingField != 0) {
+      if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__NotificationsManager);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      this = TypeInfo__NotificationsManager->static_fields->_activeInstance;
+      if (this == (NotificationsManager *)0x0) goto code_?;
+      NotificationsManager::NotificationsManager_InstantiateNotification
+                (this,NotificationType__Enum_FirstTimeXPRewarded,
+                 (Dictionary_2_System_Object_System_Object_ *)this_00,(MethodInfo *)0x0);
+    }
+    return;
+  }
+code_?:
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -352,75 +517,111 @@ void Assembly-CSharp.dll::NotificationController::NotificationController_PushNot
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__NotificationController);
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__NotificationsManager);
+    FUN_?(&TypeInfo__NotificationsManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (TypeInfo__NotificationsManager->static_fields->_Initialized_k__BackingField == 0) {
     return;
   }
-  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-             *)func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                              );
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+             *)FUN_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                            );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
-  StyleComplexSelector+PseudoStateData]::
-  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+  UIR::UIRenderDevice+DisableForceGammaMaterial]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  uStack_1 = 1;
-  pOVar2 = (Object *)func_?(TypeInfo__System__Byte,&uStack_1);
+  auStack_1[0] = 1;
+  pOVar2 = (Object *)FUN_?(uRam_?,auStack_1);
   if (this_00 !=
-      (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)0x0
-     ) {
+      (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+       *)0x0) {
+    uVar3 = CONCAT71((int7)((ulonglong)method >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
+    Dictionary_2_System_Object_System_Object__TryInsert
               ((Dictionary_2_System_Object_System_Object_ *)this_00,pOVar2,(Object *)text,
+               (InsertionBehavior__Enum)uVar3,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    uStack_3 = 2;
-    pOVar2 = (Object *)func_?(TypeInfo__System__Byte,&uStack_3);
-    value = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff4);
+               ->klass->rgctx_data[0x22].method);
+    auStack_1[0] = 2;
+    pOVar2 = (Object *)FUN_?(uRam_?,auStack_1);
+    aiStack_4[0] = lifeTime;
+    value = (Object *)FUN_?(uRam_?,aiStack_4);
+    uVar3 = CONCAT71((int7)((ulonglong)uVar3 >> 8),2);
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
+    Dictionary_2_System_Object_System_Object__TryInsert
               ((Dictionary_2_System_Object_System_Object_ *)this_00,pOVar2,value,
+               (InsertionBehavior__Enum)uVar3,
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)sprite,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar4 != 0) {
-      uStack_5 = 3;
-      pOVar2 = (Object *)func_?(TypeInfo__System__Byte,&uStack_5);
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-      Dictionary_2_System_Object_System_Object__Add
-                ((Dictionary_2_System_Object_System_Object_ *)this_00,pOVar2,(Object *)sprite,
-                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                );
-    }
-    if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+               ->klass->rgctx_data[0x22].method);
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
     if (cRam_? == '\0') {
-      func_?();
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (sprite != (Sprite *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if ((sprite->fields)._.m_CachedPtr != (void *)0x0) {
+        auStack_1[0] = 3;
+        pOVar2 = (Object *)FUN_?(uRam_?,auStack_1);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__TryInsert
+                  ((Dictionary_2_System_Object_System_Object_ *)this_00,pOVar2,(Object *)sprite,
+                   (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar3 >> 8),2),
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                   ->klass->rgctx_data[0x22].method);
+      }
+    }
+    if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__NotificationsManager);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
     this = TypeInfo__NotificationsManager->static_fields->_activeInstance;
@@ -431,9 +632,9 @@ void Assembly-CSharp.dll::NotificationController::NotificationController_PushNot
       return;
     }
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -446,31 +647,90 @@ void Assembly-CSharp.dll::NotificationController::NotificationController_PushNot
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__NotificationController);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
-         func_?(
-                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                        );
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+             *)FUN_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                            );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
-  StyleComplexSelector+PseudoStateData]::
-  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-            (this,
+  UIR::UIRenderDevice+DisableForceGammaMaterial]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
+            (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__NotificationController);
+  if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  NotificationController_PushNotification_2
-            (notificationType,(Dictionary_2_System_Object_System_Object_ *)this,lifeTime,
-             (MethodInfo *)0x0);
+  uVar1 = 0;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                  ,this_00,lifeTime,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationLifetime);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  aNStackX_18[0] = CONCAT31(aNStackX_18[0]._1_3_,2);
+  key = (Object *)FUN_?(uRam_?,aNStackX_18);
+  aNStackX_18[0] = lifeTime;
+  value = (Object *)FUN_?(TypeInfo__NotificationLifetime,aNStackX_18);
+  if (this_00 !=
+      (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+       *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__TryInsert
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,key,value,
+               (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar1 >> 8),2),
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+               ->klass->rgctx_data[0x22].method);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__NotificationsManager);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (TypeInfo__NotificationsManager->static_fields->_Initialized_k__BackingField != 0) {
+      if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__NotificationsManager);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      this = TypeInfo__NotificationsManager->static_fields->_activeInstance;
+      if (this == (NotificationsManager *)0x0) goto code_?;
+      NotificationsManager::NotificationsManager_InstantiateNotification
+                (this,notificationType,(Dictionary_2_System_Object_System_Object_ *)this_00,
+                 (MethodInfo *)0x0);
+    }
+    return;
+  }
+code_?:
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -485,32 +745,43 @@ void Assembly-CSharp.dll::NotificationController::NotificationController_PushNot
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&TypeInfo__NotificationController);
-    func_?(&TypeInfo__NotificationLifetime);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationLifetime);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  key = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffb);
-  value = (Object *)func_?(TypeInfo__NotificationLifetime,&stack0xfffffff4);
+  aNStackX_18[0] = CONCAT31(aNStackX_18[0]._1_3_,2);
+  key = (Object *)FUN_?(uRam_?,aNStackX_18);
+  aNStackX_18[0] = lifeTime;
+  value = (Object *)FUN_?(TypeInfo__NotificationLifetime,aNStackX_18);
   if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              (data,key,value,
+    Dictionary_2_System_Object_System_Object__TryInsert
+              (data,key,value,(InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)method >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
+               ->klass->rgctx_data[0x22].method);
     if (cRam_? == '\0') {
-      func_?();
+      FUN_?(&TypeInfo__NotificationsManager);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
     if (TypeInfo__NotificationsManager->static_fields->_Initialized_k__BackingField != 0) {
-      if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+      if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+        FUN_?();
       }
       if (cRam_? == '\0') {
-        func_?();
+        FUN_?(&TypeInfo__NotificationsManager);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
       this = TypeInfo__NotificationsManager->static_fields->_activeInstance;
@@ -521,7 +792,7 @@ void Assembly-CSharp.dll::NotificationController::NotificationController_PushNot
     return;
   }
 code_?:
-  func_?();
+  FUN_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;
@@ -535,104 +806,152 @@ void Assembly-CSharp.dll::NotificationController::NotificationController_Receive
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_Friend>__get_Values__
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
-    func_?(&TypeInfo__System__Int32);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<Friend>__List_System__Collections__Generic__IEnumerable<Friend>_
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__List<Friend>__get_Count__);
-    func_?(&MethodInfo__System__Collections__Generic__List<Friend>__get_Item_int_);
-    func_?(&TypeInfo__System__Collections__Generic__List<Friend>);
-    func_?(&TypeInfo__NotificationController);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_Friend>__get_Values__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<Friend>__List_System__Collections__Generic__IEnumerable<Friend>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<Friend>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<Friend>__get_Item_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<Friend>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (((pMVar1 != (MVNetworkGame *)0x0) &&
-      (pFVar2 = (pMVar1->fields)._Friends_k__BackingField, pFVar2 != (FriendList *)0x0)) &&
-     (this = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-              *)(pFVar2->fields).pending,
-     this != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((((pMVar1 != (MVGameControllerBase *)0x0) &&
+       (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
+      (pFVar3 = (pMVar2->fields)._Friends_k__BackingField, pFVar3 != (FriendList *)0x0)) &&
+     (this = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+              *)(pFVar3->fields).pending,
+     this != (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
               *)0x0)) {
     collection = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
-                 StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
-                 Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
+                 TypeConverterRegistry+ConverterKey,System::Object]::
+                 Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object__get_Values
                            (this,
                             MethodInfo__System__Collections__Generic__Dictionary<int,_Friend>__get_Values__
                            );
-    this_03 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              func_?(TypeInfo__System__Collections__Generic__List<Friend>);
+    this_02 = (List_1_System_Object_ *)
+              FUN_?(TypeInfo__System__Collections__Generic__List<Friend>);
     mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
     List_1_System_Object___ctor_1
-              ((List_1_System_Object_ *)this_03,(IEnumerable_1_System_Object_ *)collection,
+              (this_02,(IEnumerable_1_System_Object_ *)collection,
                MethodInfo__System__Collections__Generic__List<Friend>__List_System__Collections__Generic__IEnumerable<Friend>_
               );
-    if ((this_03 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) &&
-       (RVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                          (this_03,(this_03->fields)._size + -1,
-                           MethodInfo__System__Collections__Generic__List<Friend>__get_Item_int_),
-       RVar3 != (RegexCharClass_SingleRange)0x0)) {
-      if ((*(int *)((int)RVar3 + 0x10) != 1) ||
-         (MVar4 = MVGameControllerBase::MVGameControllerBase_get_JoinState((MethodInfo *)0x0),
-         MVar4 != MVJoinState__Enum_Playing)) {
+    if (this_02 != (List_1_System_Object_ *)0x0) {
+      iVar4 = (this_02->fields)._size;
+      if ((uint)(this_02->fields)._size <= iVar4 - 1U) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
-      if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      this_00 = (HashSet_1_System_UInt32_ *)
-                TypeInfo__NotificationController->static_fields->incomingPlayerFriendRequests;
-      if (this_00 != (HashSet_1_System_UInt32_ *)0x0) {
-        bVar5 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
-                HashSet_1_System_UInt32__Contains
-                          (this_00,*(uint32_t *)((int)RVar3 + 8),
-                           MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
-        if (bVar5 != 0) {
+      pOVar6 = (this_02->fields)._items;
+      if (pOVar6 != (Object__Array *)0x0) {
+        if ((uint)pOVar6->max_length <= iVar4 - 1U) {
+          FUN_?();
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
           return;
         }
-        if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        this_01 = TypeInfo__NotificationController->static_fields->incomingPlayerFriendRequests;
-        if (this_01 != (HashSet_1_System_Int32_ *)0x0) {
-          System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-          HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
-                    (this_01,*(int32_t *)((int)RVar3 + 8),
-                     MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
-          key = (Object *)func_?(TypeInfo__System__Byte);
-          value = (Object *)func_?(TypeInfo__System__Int32,&stack0xfffffff4);
-          if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
-            ::Dictionary_2_System_Object_System_Object__Add
-                      (data,key,value,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                      );
-            if (cRam_? == '\0') {
-              func_?();
-              cRam_? = '\x01';
-            }
-            this_02 = TypeInfo__NotificationsManager->static_fields->_activeInstance;
-            if (this_02 != (NotificationsManager *)0x0) {
-              NotificationsManager::NotificationsManager_InstantiateNotification
-                        (this_02,NotificationType__Enum_FriendRequest,data,(MethodInfo *)0x0);
+        pOVar7 = pOVar6->vector[(longlong)iVar4 + -1];
+        if (pOVar7 != (Object *)0x0) {
+          if (*(int *)&pOVar7[1].monitor != 1) {
+            return;
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__MVGameControllerBase);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+          if (pMVar1 != (MVGameControllerBase *)0x0) {
+            if ((pMVar1->fields)._joinState != 3) {
               return;
+            }
+            if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+              FUN_?(TypeInfo__NotificationController);
+            }
+            this_00 = (HashSet_1_System_Int32Enum_ *)
+                      TypeInfo__NotificationController->static_fields->incomingPlayerFriendRequests;
+            if (this_00 != (HashSet_1_System_Int32Enum_ *)0x0) {
+              bVar8 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+                      HashSet_1_System_Int32Enum__Contains
+                                (this_00,*(Int32Enum__Enum *)&pOVar7[1].klass,
+                                 MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_
+                                );
+              if (bVar8 != 0) {
+                return;
+              }
+              if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+                FUN_?(TypeInfo__NotificationController);
+              }
+              this_01 = TypeInfo__NotificationController->static_fields->
+                        incomingPlayerFriendRequests;
+              if (this_01 != (HashSet_1_System_Int32_ *)0x0) {
+                System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+                HashSet_1_System_Int32__AddIfNotPresent
+                          (this_01,*(int32_t *)&pOVar7[1].klass,
+                           MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_->klass->
+                           rgctx_data[0x15].method);
+                auStackX_18[0] = CONCAT31(auStackX_18[0]._1_3_,0xf);
+                key = (Object *)FUN_?(uRam_?,auStackX_18);
+                auStackX_18[0] = *(undefined4 *)((longlong)&pOVar7[1].klass + 4);
+                pOVar7 = (Object *)FUN_?(uRam_?,auStackX_18);
+                if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                  Object]::Dictionary_2_System_Object_System_Object__TryInsert
+                            (data,key,pOVar7,
+                             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                             ->klass->rgctx_data[0x22].method);
+                  this_03 = NotificationController_get_NotificationsManager((MethodInfo *)0x0);
+                  if (this_03 != (NotificationsManager *)0x0) {
+                    NotificationsManager::NotificationsManager_InstantiateNotification
+                              (this_03,NotificationType__Enum_FriendRequest,data,(MethodInfo *)0x0);
+                    return;
+                  }
+                }
+              }
             }
           }
         }
       }
     }
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -644,50 +963,114 @@ void Assembly-CSharp.dll::NotificationController::NotificationController_ToggleH
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__NotificationController);
-    func_?(&StringLiteral_Toggling_HD_is_deprecated__pleas);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Toggling_HD_is_deprecated__pleas);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   value = TM::TM__(StringLiteral_Toggling_HD_is_deprecated__pleas,(MethodInfo *)0x0);
-  this = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
-         func_?(
-                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                        );
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+             *)FUN_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                            );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
-  StyleComplexSelector+PseudoStateData]::
-  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-            (this,
+  UIR::UIRenderDevice+DisableForceGammaMaterial]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
+            (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
-  key = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffb);
-  if (this != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-               *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)this,key,(Object *)value,
-               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
-              );
-    if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    NotificationController_PushNotification_2
-              (NotificationType__Enum_PlayerTip,(Dictionary_2_System_Object_System_Object_ *)this,
-               NotificationLifetime__Enum_High,(MethodInfo *)0x0);
+  pOVar1 = (Object *)FUN_?(uRam_?,&stack0x00000010);
+  if (this_00 ==
+      (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+       *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+  Dictionary_2_System_Object_System_Object__TryInsert
+            ((Dictionary_2_System_Object_System_Object_ *)this_00,pOVar1,(Object *)value,
+             (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)in_R9 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+             ->klass->rgctx_data[0x22].method);
+  if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  uVar3 = 0;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                  ,this_00,8,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationLifetime);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  auStackX_18[0] = CONCAT31(auStackX_18[0]._1_3_,2);
+  pOVar1 = (Object *)FUN_?(uRam_?,auStackX_18);
+  auStackX_18[0] = 8;
+  value_00 = (Object *)FUN_?(TypeInfo__NotificationLifetime,auStackX_18);
+  if (this_00 !=
+      (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+       *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__TryInsert
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,pOVar1,value_00,
+               (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar3 >> 8),2),
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+               ->klass->rgctx_data[0x22].method);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__NotificationsManager);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (TypeInfo__NotificationsManager->static_fields->_Initialized_k__BackingField != 0) {
+      if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__NotificationsManager);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      this = TypeInfo__NotificationsManager->static_fields->_activeInstance;
+      if (this == (NotificationsManager *)0x0) goto code_?;
+      NotificationsManager::NotificationsManager_InstantiateNotification
+                (this,NotificationType__Enum_PlayerTip,
+                 (Dictionary_2_System_Object_System_Object_ *)this_00,(MethodInfo *)0x0);
+    }
+    return;
+  }
+code_?:
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -698,18 +1081,35 @@ void Assembly-CSharp.dll::NotificationController::NotificationController__cctor(
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-    func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
-    func_?(&TypeInfo__NotificationController);
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this = (HashSet_1_System_Int32_ *)
-         func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
-  System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-  HashSet_1_System_Int32___ctor
-            (this,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-  TypeInfo__NotificationController->static_fields->incomingPlayerFriendRequests = this;
-  func_?(TypeInfo__NotificationController->static_fields,this);
+  pHVar1 = (HashSet_1_System_Int32_ *)
+           FUN_?(TypeInfo__System__Collections__Generic__HashSet<int>);
+  FUN_?(pHVar1,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+  bVar2 = iRam_? != 0;
+  TypeInfo__NotificationController->static_fields->incomingPlayerFriendRequests = pHVar1;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)TypeInfo__NotificationController->static_fields >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
   return;
 }
 
@@ -722,7 +1122,9 @@ Assembly-CSharp.dll::NotificationController::NotificationController_get_Notifica
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__NotificationsManager);
+    FUN_?(&TypeInfo__NotificationsManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return TypeInfo__NotificationsManager->static_fields->_activeInstance;

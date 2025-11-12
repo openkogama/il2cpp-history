@@ -6,23 +6,34 @@ String * MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerTierThreshold
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__System__TimeSpan);
-    func_?(&StringLiteral_goldPriceRequirement__0___gamePo);
+    FUN_?(&TypeInfo__System__TimeSpan);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_goldPriceRequirement__0___gamePo);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pPVar1 = this;
-  this = (PlayerTierThresholds *)(this->fields).goldPriceRequirement;
-  arg0 = (Object *)func_?(TypeInfo__System__Int32,&this);
-  iStack_2 = (pPVar1->fields).gamePointRequirement;
-  arg1 = (Object *)func_?(TypeInfo__System__Int32,&iStack_2);
-  uStack_3 = (undefined4)(pPVar1->fields).estimatedRequiredPlaytime._ticks;
-  uStack_4 = *(undefined4 *)((int)&(pPVar1->fields).estimatedRequiredPlaytime._ticks + 4);
-  arg2 = (Object *)func_?(TypeInfo__System__TimeSpan,&uStack_3);
-  pSVar5 = mscorlib.dll::System::String::String_Format_2
-                     (StringLiteral_goldPriceRequirement__0___gamePo,arg0,arg1,arg2,
-                      (MethodInfo *)0x0);
-  return pSVar5;
+  iStackX_8._0_4_ = (this->fields).goldPriceRequirement;
+  arg0 = (Object *)FUN_?(uRam_?,&iStackX_8);
+  iStackX_8 = CONCAT44(iStackX_8._4_4_,(this->fields).gamePointRequirement);
+  arg1 = (Object *)FUN_?(uRam_?,&iStackX_8);
+  iStackX_8 = (this->fields).estimatedRequiredPlaytime._ticks;
+  arg2 = (Object *)FUN_?(TypeInfo__System__TimeSpan,&iStackX_8);
+  pSVar1 = StringLiteral_goldPriceRequirement__0___gamePo;
+  PStack_2._arg0 = (Object *)0x0;
+  PStack_2._arg1 = (Object *)0x0;
+  PStack_2._arg2 = (Object *)0x0;
+  PStack_2._args = (Object__Array *)0x0;
+  mscorlib.dll::System::ParamsArray::ParamsArray__ctor_2
+            (&PStack_2,arg0,arg1,arg2,(MethodInfo *)0x0);
+  PStack_3._arg0 = PStack_2._arg0;
+  PStack_3._arg1 = PStack_2._arg1;
+  PStack_3._arg2 = PStack_2._arg2;
+  PStack_3._args = PStack_2._args;
+  pSVar1 = mscorlib.dll::System::String::String_FormatHelper
+                     ((IFormatProvider *)0x0,pSVar1,&PStack_3,(MethodInfo *)0x0);
+  return pSVar1;
 }
 
 
@@ -34,13 +45,9 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerTierThresholds::
                ,TimeSpan estimatedRequiredPlaytime,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields).goldPriceRequirement = goldPriceRequirement;
   (this->fields).gamePointRequirement = gamePointRequirement;
-  *(undefined4 *)&(this->fields).estimatedRequiredPlaytime._ticks = in_stack_1;
-  *(undefined4 *)((int)&(this->fields).estimatedRequiredPlaytime._ticks + 4) =
-       (undefined4)estimatedRequiredPlaytime._ticks;
+  (this->fields).estimatedRequiredPlaytime._ticks = estimatedRequiredPlaytime._ticks;
   return;
 }
 
@@ -53,33 +60,33 @@ PlayerTierThresholds_op_Addition(PlayerTierThresholds *a,PlayerTierThresholds *b
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierThresholds);
-    func_?(&TypeInfo__System__TimeSpan);
+    FUN_?(&TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierThresholds);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__TimeSpan);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (a != (PlayerTierThresholds *)0x0) {
-    iVar1 = (a->fields).goldPriceRequirement;
-    if (b != (PlayerTierThresholds *)0x0) {
-      iVar2 = (b->fields).goldPriceRequirement;
-      iVar3 = (a->fields).gamePointRequirement;
-      TVar4._ticks = (a->fields).estimatedRequiredPlaytime._ticks;
-      t2._ticks = (b->fields).estimatedRequiredPlaytime._ticks;
-      iVar5 = (b->fields).gamePointRequirement;
-      if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__System__TimeSpan);
-      }
-      TVar4 = mscorlib.dll::System::TimeSpan::TimeSpan_op_Addition(TVar4,t2,(MethodInfo *)0x0);
-      method_00 = TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierThresholds;
-      pPVar6 = (PlayerTierThresholds *)func_?();
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)pPVar6,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-      (pPVar6->fields).goldPriceRequirement = iVar2 + iVar1;
-      (pPVar6->fields).estimatedRequiredPlaytime._ticks = TVar4._ticks;
-      (pPVar6->fields).gamePointRequirement = iVar5 + iVar3;
-      return pPVar6;
+  if ((a != (PlayerTierThresholds *)0x0) &&
+     (iVar1 = (a->fields).goldPriceRequirement, b != (PlayerTierThresholds *)0x0)) {
+    iVar2 = (a->fields).gamePointRequirement;
+    TVar3._ticks = (a->fields).estimatedRequiredPlaytime._ticks;
+    iVar4 = (b->fields).goldPriceRequirement;
+    iVar5 = (b->fields).gamePointRequirement;
+    t2._ticks = (b->fields).estimatedRequiredPlaytime._ticks;
+    if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+      FUN_?();
     }
+    TVar3 = mscorlib.dll::System::TimeSpan::TimeSpan_op_Addition(TVar3,t2,(MethodInfo *)0x0);
+    pPVar6 = (PlayerTierThresholds *)
+             FUN_?(TypeInfo__MV__WorldObject__GamePassSystem__PlayerTierThresholds);
+    (pPVar6->fields).goldPriceRequirement = iVar4 + iVar1;
+    (pPVar6->fields).gamePointRequirement = iVar5 + iVar2;
+    (pPVar6->fields).estimatedRequiredPlaytime._ticks = TVar3._ticks;
+    return pPVar6;
   }
-  func_?();
+  FUN_?();
   pcVar7 = (code *)swi(3);
   pPVar6 = (PlayerTierThresholds *)(*pcVar7)();
   return pPVar6;

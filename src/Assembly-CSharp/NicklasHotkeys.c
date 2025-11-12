@@ -4,124 +4,154 @@
 void Assembly-CSharp.dll::NicklasHotkeys::NicklasHotkeys_Handle(MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffa0;
-  puVar5 = &stack0xffffffa0;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>__get_Current__
-                   );
-    func_?(&TypeInfo__UnityEngine__KeyCode);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>__get_Key__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>__get_Value__
-                   );
-    func_?(&TypeInfo__MVInputWrapper);
-    func_?(&TypeInfo__NicklasHotkeys);
-    func_?(&StringLiteral_Successfully_invoked_hot_key_);
-    func_?(&StringLiteral_Failed_invocation_of_hot_key_);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__KeyCode);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>__get_Key__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>__get_Value__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVInputWrapper);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NicklasHotkeys);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Successfully_invoked_hot_key_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Failed_invocation_of_hot_key_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
-  DStack_6._version = 0;
-  DStack_6._index = 0;
-  DStack_6._current.key = KeyCode__Enum_None;
-  DStack_6._current.value = (Object *)0x0;
-  DStack_6._getEnumeratorRetType = 0;
-  if ((TypeInfo__NicklasHotkeys->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__NicklasHotkeys);
+  if (*(int *)&(TypeInfo__NicklasHotkeys->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__NicklasHotkeys);
   }
-  this = (Dictionary_2_System_UInt32_System_Object_ *)
-         TypeInfo__NicklasHotkeys->static_fields->keyBindings;
-  if (this != (Dictionary_2_System_UInt32_System_Object_ *)0x0) {
-    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
-             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       (&DStack_8,this,
-                        MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>__GetEnumerator__
-                       );
-    uStack_9 = 0;
-    DStack_6._dictionary = pDVar7->_dictionary;
-    DStack_6._version = pDVar7->_version;
-    DStack_6._index = pDVar7->_index;
-    DStack_6._current.key = (pDVar7->_current).key;
-    DStack_6._16_8_ = *(undefined8 *)&(pDVar7->_current).value;
-    uStack_1 = 1;
-    pDStack_10 = &DStack_6;
+  EStack_1.klass = (Enum__Class *)TypeInfo__NicklasHotkeys->static_fields->keyBindings;
+  if (EStack_1.klass == (Enum__Class *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  uStack_3 = 0;
+  uStack_4 = 0;
+  if (iRam_? != 0) {
+    uVar5 = (uint)((ulonglong)&EStack_1 >> 0xc);
+    puVar6 = (ulonglong *)((ulonglong)((uVar5 & 0x1fffff) >> 6) * 8 + 0xADDR);
     do {
-      bVar11 = mscorlib.dll::System::Collections::Generic::
-              Dictionary`2[TKey,TValue]+Enumerator[System::UInt32,System::Object]::
-              Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                        (&DStack_6,
-                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>__MoveNext__
-                        );
-      key = DStack_6._current.key;
-      if (bVar11 == 0) goto code_?;
-      pOStack_12 = DStack_6._current.value;
-      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+      uVar7 = *puVar6;
+      LOCK();
+      uVar8 = *puVar6;
+      if (uVar7 == uVar8) {
+        *puVar6 = uVar7 | 1L << (uVar5 & 0x3f);
       }
-      bVar11 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_GetKeyUp
-                        (key,(MethodInfo *)0x0);
-    } while (bVar11 == 0);
-    if (pOStack_12 != (Object *)0x0) {
-      cVar13 = (*(code *)pOStack_12[1].monitor)(pOStack_12[4].klass,key,pOStack_12[2].monitor);
-      DStack_8._current.value = (Object *)0xffffffff;
-      DStack_8._getEnumeratorRetType = key;
-      DStack_8._current.key = (uint32_t)TypeInfo__UnityEngine__KeyCode;
-      if (cVar13 == '\0') {
-        pSVar14 = mscorlib.dll::System::Enum::Enum_ToString
-                           ((Enum *)&DStack_8._current,(MethodInfo *)0x0);
-        pSVar14 = mscorlib.dll::System::String::String_Concat_3
-                           (StringLiteral_Failed_invocation_of_hot_key_,pSVar14,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Debug);
+      UNLOCK();
+    } while (uVar7 != uVar8);
+  }
+  EStack_1.monitor =
+       (MonitorData *)(ulonglong)*(uint *)&((EStack_1.klass)->_0).byval_arg.field_0xc;
+  uStack_9 = 2;
+  auStack_10._8_8_ = EStack_1.monitor;
+  uStack_11 = 0;
+  pOStack_12 = (Object *)0x0;
+  uStack_13._0_4_ = 2;
+  uStack_13._4_4_ = 0;
+  uStack_14 = 0;
+  puStack_15 = auStack_10;
+  auStack_10._0_8_ = EStack_1.klass;
+  while( true ) {
+    bVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System
+            ::UInt32,System::Object]::
+            Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
+                      ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
+                       auStack_10,
+                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>__MoveNext__
+                      );
+    pOVar17 = pOStack_12;
+    uVar8 = uStack_11;
+    if (bVar16 == 0) {
+      return;
+    }
+    uVar18 = (undefined4)uStack_11;
+    if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) break;
+    pcRam_? = pcVar2;
+    cVar19 = (*pcRam_?)(uVar8 & 0xffffffff);
+    if (cVar19 != '\0') {
+      if (pOVar17 != (Object *)0x0) {
+        cVar19 = (*(code *)pOVar17[1].monitor)(pOVar17[4].klass);
+        EStack_1.monitor = (MonitorData *)0xffffffffffffffff;
+        uStack_3 = CONCAT44(uStack_3._4_4_,uVar18);
+        EStack_1.klass = (Enum__Class *)TypeInfo__UnityEngine__KeyCode;
+        if (cVar19 == '\0') {
+          pSVar20 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_1,(MethodInfo *)0x0);
+          pSVar20 = mscorlib.dll::System::String::String_Concat_4
+                             (StringLiteral_Failed_invocation_of_hot_key_,pSVar20,(MethodInfo *)0x0);
+          if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                    ((Object *)pSVar20,(MethodInfo *)0x0);
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                  ((Object *)pSVar14,(MethodInfo *)0x0);
-      }
-      else {
-        pSVar14 = mscorlib.dll::System::Enum::Enum_ToString
-                           ((Enum *)&DStack_8._current,(MethodInfo *)0x0);
-        pSVar14 = mscorlib.dll::System::String::String_Concat_3
-                           (StringLiteral_Successfully_invoked_hot_key_,pSVar14,(MethodInfo *)0x0);
-        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Debug);
+        else {
+          pSVar20 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_1,(MethodInfo *)0x0);
+          pSVar20 = mscorlib.dll::System::String::String_Concat_4
+                             (StringLiteral_Successfully_invoked_hot_key_,pSVar20,(MethodInfo *)0x0);
+          if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                    ((Object *)pSVar20,(MethodInfo *)0x0);
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                  ((Object *)pSVar14,(MethodInfo *)0x0);
+        return;
       }
 code_?:
-      uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)&DStack_6,
-                 (ExceptionArgument__Enum)
-                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>__Dispose__
-                 ,unaff_EBX);
-      *unaff_FS_OFFSET = uStack_3;
+      FUN_?();
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
   }
-  func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
-  return;
+  uVar21 = func_?(&UNK_?);
+  FUN_?(uVar21,0);
+  goto code_?;
 }
 
 
@@ -133,7 +163,9 @@ bool Assembly-CSharp.dll::NicklasHotkeys::NicklasHotkeys_PushNotification
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__NotificationsManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this = TypeInfo__NotificationsManager->static_fields->_activeInstance;
@@ -142,11 +174,10 @@ bool Assembly-CSharp.dll::NicklasHotkeys::NicklasHotkeys_PushNotification
               (this,type,data,(MethodInfo *)0x0);
     return 1;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  bVar2 = (*pcVar1)();
+  return bVar2;
 }
 
 
@@ -156,54 +187,120 @@ void Assembly-CSharp.dll::NicklasHotkeys::NicklasHotkeys__cctor(MethodInfo *meth
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>__Add_UnityEngine__KeyCode__System__Func<UnityEngine::KeyCode,_bool>_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>
-                   );
-    func_?(&TypeInfo__System__Func<UnityEngine::KeyCode,_bool>);
-    func_?(&TypeInfo__NicklasHotkeys);
-    func_?(&MethodInfo__NicklasHotkeys____c____cctor_b__3_0_UnityEngine__KeyCode_);
-    func_?(&TypeInfo__NicklasHotkeys____c);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>__Add_UnityEngine__KeyCode__System__Func<UnityEngine::KeyCode,_bool>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Func<UnityEngine::KeyCode,_bool>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NicklasHotkeys);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__NicklasHotkeys____c____cctor_b__3_0_UnityEngine__KeyCode_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NicklasHotkeys____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this = (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)
-         func_?(
-                        TypeInfo__System__Collections__Generic__Dictionary<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>
-                        );
+         FUN_?(
+                      TypeInfo__System__Collections__Generic__Dictionary<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>
+                      );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
   Int32Enum,GamePassesHighScoreList+HighScoreListData]::
   Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData___ctor
             (this,
              MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>__Dictionary__
             );
-  if ((TypeInfo__NicklasHotkeys____c->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__NicklasHotkeys____c);
+  if (*(int *)&(TypeInfo__NicklasHotkeys____c->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  object = (Object *)TypeInfo__NicklasHotkeys____c->static_fields->__9;
-  this_00 = (Predicate_1_UInt32_ *)
-            func_?(TypeInfo__System__Func<UnityEngine::KeyCode,_bool>);
-  mscorlib.dll::System::Predicate`1[UInt32]::Predicate_1_UInt32___ctor
-            (this_00,object,MethodInfo__NicklasHotkeys____c____cctor_b__3_0_UnityEngine__KeyCode_,
-             (MethodInfo *)0x0);
-  if (this != (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
-    Dictionary_2_System_Int32Enum_System_Object__Add
-              ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x2c,(Object *)this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>__Add_UnityEngine__KeyCode__System__Func<UnityEngine::KeyCode,_bool>_
-              );
-    TypeInfo__NicklasHotkeys->static_fields->keyBindings =
-         (Dictionary_2_UnityEngine_KeyCode_System_Func_2_UnityEngine_KeyCode_Boolean_ *)this;
-    func_?();
+  pNVar1 = TypeInfo__NicklasHotkeys____c->static_fields->__9;
+  value = (Object *)FUN_?(TypeInfo__System__Func<UnityEngine::KeyCode,_bool>);
+  pMVar2 = MethodInfo__NicklasHotkeys____c____cctor_b__3_0_UnityEngine__KeyCode_;
+  bVar3 = iRam_? != 0;
+  value[1].klass =
+       (Object__Class *)
+       MethodInfo__NicklasHotkeys____c____cctor_b__3_0_UnityEngine__KeyCode_->virtualMethodPointer;
+  value[2].monitor = (MonitorData *)pMVar2;
+  value[2].klass = (Object__Class *)pNVar1;
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)(value + 2) >> 0xc);
+    in_R9 = (ulonglong)(uVar4 & 0x3f);
+    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+      puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+      LOCK();
+      bVar3 = uVar6 == *puVar7;
+      if (bVar3) {
+        *puVar7 = uVar6 | 1L << in_R9;
+      }
+      UNLOCK();
+    } while (!bVar3);
+  }
+  uVar8 = pMVar2->parameters_count;
+  value[4].klass = (Object__Class *)value;
+  if ((pMVar2->flags & 0x10) == 0) {
+    if (pNVar1 == (NicklasHotkeys_c *)0x0) {
+      uVar9 = func_?();
+      FUN_?(uVar9,0);
+      pcVar10 = (code *)swi(3);
+      (*pcVar10)();
+      return;
+    }
+  }
+  else if (uVar8 == 1) {
+    pMVar11 = (MonitorData *)&UNK_?;
+    goto code_?;
+  }
+  value[4].klass = value[2].klass;
+  pMVar11 = (MonitorData *)value[1].klass;
+code_?:
+  value[1].monitor = pMVar11;
+  value[3].monitor = (MonitorData *)FUN_?;
+  if (this == (Dictionary_2_System_Int32Enum_GamePassesHighScoreList_HighScoreListData_ *)0x0) {
+    FUN_?();
+    pcVar10 = (code *)swi(3);
+    (*pcVar10)();
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32Enum,System::Object]::
+  Dictionary_2_System_Int32Enum_System_Object__TryInsert
+            ((Dictionary_2_System_Int32Enum_System_Object_ *)this,0x2c,value,
+             (InsertionBehavior__Enum)CONCAT71((int7)(in_R9 >> 8),2),
+             MethodInfo__System__Collections__Generic__Dictionary<UnityEngine::KeyCode,_System::Func<UnityEngine::KeyCode,_bool>_>__Add_UnityEngine__KeyCode__System__Func<UnityEngine::KeyCode,_bool>_
+             ->klass->rgctx_data[0x22].method);
+  TypeInfo__NicklasHotkeys->static_fields->keyBindings =
+       (Dictionary_2_UnityEngine_KeyCode_System_Func_2_UnityEngine_KeyCode_Boolean_ *)this;
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)TypeInfo__NicklasHotkeys->static_fields >> 0xc);
+    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+      puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+      LOCK();
+      bVar3 = uVar6 == *puVar7;
+      if (bVar3) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar3);
+  }
   return;
 }
 

@@ -7,18 +7,44 @@ Assembly-CSharp.dll::ImageGenerator::ImageGenerator_CreateTextureFromData
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__ImageGenerator___CreateTextureFromData_d__0);
+    FUN_?(&TypeInfo__ImageGenerator___CreateTextureFromData_d__0);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__ImageGenerator___CreateTextureFromData_d__0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)wo;
-  value[1].klass = (Object__Class *)0x0;
-  func_?(value + 2,wo);
-  value[2].monitor = (MonitorData *)callback;
-  func_?(&value[2].monitor,callback);
-  return (IEnumerator *)value;
+  pIVar1 = (IEnumerator *)FUN_?(TypeInfo__ImageGenerator___CreateTextureFromData_d__0);
+  *(undefined4 *)&pIVar1[1].klass = 0;
+  pIVar1[2].klass = (IEnumerator__Class *)wo;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)(pIVar1 + 2) >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
+  iVar7 = iRam_?;
+  pIVar1[2].monitor = (MonitorData *)callback;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&pIVar1[2].monitor >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
+  return pIVar1;
 }
 

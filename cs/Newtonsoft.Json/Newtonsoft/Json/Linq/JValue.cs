@@ -15,7 +15,7 @@ using System.Runtime.Versioning;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Utilities;
 
-// Image 8: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
+// Image 9: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
 
 namespace Newtonsoft.Json.Linq
 {
@@ -42,7 +42,7 @@ namespace Newtonsoft.Json.Linq
 	
 			// Methods
 			public override bool TryConvert(JValue instance, ConvertBinder binder, [Nullable(2)] [NotNullWhen(true)] out object result);
-			public override bool TryBinaryOperation(JValue instance, BinaryOperationBinder binder, object arg, [NotNullWhen(true)] [Nullable(2)] out object result);
+			public override bool TryBinaryOperation(JValue instance, BinaryOperationBinder binder, object arg, [Nullable(2)] [NotNullWhen(true)] out object result);
 		}
 	
 		// Constructors
@@ -55,12 +55,12 @@ namespace Newtonsoft.Json.Linq
 		public JValue(ulong value);
 		public JValue(double value);
 		public JValue(float value);
-		public JValue(DateTime value);
+		public JValue(System.DateTime value);
 		public JValue(DateTimeOffset value);
 		public JValue(bool value);
 		public JValue(string value);
 		public JValue(Guid value);
-		public JValue(Uri value);
+		public JValue(System.Uri value);
 		public JValue(TimeSpan value);
 		public JValue(object value);
 	
@@ -111,7 +111,7 @@ namespace Newtonsoft.Json.Linq
 		float IConvertible.ToSingle(IFormatProvider provider);
 		double IConvertible.ToDouble(IFormatProvider provider);
 		decimal IConvertible.ToDecimal(IFormatProvider provider);
-		DateTime IConvertible.ToDateTime(IFormatProvider provider);
+		System.DateTime IConvertible.ToDateTime(IFormatProvider provider);
 		[NullableContext(1)]
 		object IConvertible.ToType(System.Type conversionType, [Nullable(2)] IFormatProvider provider);
 	}

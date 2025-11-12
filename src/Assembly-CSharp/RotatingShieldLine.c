@@ -5,40 +5,78 @@ void Assembly-CSharp.dll::RotatingShieldLine::RotatingShieldLine_CreatePoints
                (RotatingShieldLine *this,MethodInfo *method)
 
 {
-  index = 0;
-  fStack_1 = 0.0;
-  iVar2 = (this->fields).segments;
-  if (iVar2 != -1 && -1 < iVar2 + 1) {
+  fVar1 = _UNK_?;
+  fVar2 = _UNK_?;
+  fVar3 = _UNK_?;
+  iVar4 = 0;
+  fVar5 = 0.0;
+  if (0 < (this->fields).segments + 1) {
     do {
-      dVar3 = (double)(fStack_1 * _UNK_?);
-      func_?();
-      dVar4 = (double)(fStack_1 * _UNK_?);
-      func_?();
-      fVar5 = (this->fields).radius;
-      this_00 = (this->fields).line;
-      if (this_00 == (LineRenderer *)0x0) {
-code_?:
-        func_?();
-        pcVar6 = (code *)swi(3);
-        (*pcVar6)();
+      fVar6 = (this->fields).radius;
+      fVar7 = (float)FUN_?(fVar5 * fVar3);
+      fVar8 = (float)FUN_?(fVar5 * fVar3);
+      fVar9 = fVar6 * 0.0;
+      obj = (this->fields).line;
+      if (obj == (LineRenderer *)0x0) {
+        FUN_?();
+        pcVar10 = (code *)swi(3);
+        (*pcVar10)();
         return;
       }
-      position.y = (float)dVar4 * fVar5;
-      position.x = (float)dVar3 * fVar5;
-      position.z = fVar5 * 0.0;
-      UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition
-                (this_00,index,position,(MethodInfo *)0x0);
-      fVar7 = _UNK_?;
-      if ((index % ((this->fields).segments / 3) == 0) && ((this->fields).currIndex < 3)) {
-        iVar2 = (this->fields).currIndex;
-        (this->fields).currIndex = iVar2 + 1;
-        if ((this->fields).positions == (Vector3__Array *)0x0) goto code_?;
-        func_?(iVar2,CONCAT44((float)dVar4 * fVar5 * fVar7,(float)dVar3 * fVar5 * fVar7),
-                        fVar5 * 0.0 * fVar7);
+      uStack_11 = CONCAT44(fVar8 * fVar6,fVar7 * fVar6);
+      fStack_12 = fVar9;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::LineRenderer>_UnityEngine__LineRenderer_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
-      index = index + 1;
-      fStack_1 = _UNK_? / (float)(this->fields).segments + fStack_1;
-    } while (index < (this->fields).segments + 1);
+      pvVar13 = (obj->fields)._._._.m_CachedPtr;
+      if (pvVar13 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+        pcVar10 = (code *)swi(3);
+        (*pcVar10)();
+        return;
+      }
+      pcVar10 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar10 = (code *)FUN_?(&UNK_?), pcVar10 == (code *)0x0)) {
+        uVar14 = func_?(&UNK_?);
+        FUN_?(uVar14,0);
+        pcVar10 = (code *)swi(3);
+        (*pcVar10)();
+        return;
+      }
+      pcRam_? = pcVar10;
+      (*pcRam_?)(pvVar13,iVar4,&uStack_11);
+      iVar15 = (this->fields).segments;
+      if ((iVar4 % ((int)(((longlong)iVar15 / 3 + ((longlong)iVar15 >> 0x3f) & 0xffffffffU) >> 0x1f)
+                    + iVar15 / 3 + (iVar15 >> 0x1f)) == 0) && ((this->fields).currIndex < 3)) {
+        uVar16 = (this->fields).currIndex;
+        pVVar17 = (this->fields).positions;
+        (this->fields).currIndex = uVar16 + 1;
+        if (pVVar17 == (Vector3__Array *)0x0) {
+          FUN_?();
+          pcVar10 = (code *)swi(3);
+          (*pcVar10)();
+          return;
+        }
+        if ((uint)pVVar17->max_length <= uVar16) {
+          FUN_?();
+          pcVar10 = (code *)swi(3);
+          (*pcVar10)();
+          return;
+        }
+        pVVar17->vector[(int)uVar16].x = fVar7 * fVar6 * fVar2;
+        pVVar17->vector[(int)uVar16].y = fVar8 * fVar6 * fVar2;
+        pVVar17->vector[(int)uVar16].z = fVar9 * fVar2;
+      }
+      iVar4 = iVar4 + 1;
+      fVar5 = fVar5 + fVar1 / (float)(this->fields).segments;
+    } while (iVar4 < (this->fields).segments + 1);
   }
   return;
 }
@@ -50,168 +88,119 @@ void Assembly-CSharp.dll::RotatingShieldLine::RotatingShieldLine_Initialize
                (RotatingShieldLine *this,MethodInfo *method)
 
 {
-  func_?();
-  index = 0;
-  fStack_1 = 0.0;
-  iVar2 = (this->fields).segments;
-  if (iVar2 != -1 && -1 < iVar2 + 1) {
-    do {
-      dVar3 = (double)(fStack_1 * _UNK_?);
-      func_?();
-      dVar4 = (double)(fStack_1 * _UNK_?);
-      func_?();
-      fVar5 = (this->fields).radius;
-      this_00 = (this->fields).line;
-      if (this_00 == (LineRenderer *)0x0) goto code_?;
-      position.y = (float)dVar4 * fVar5;
-      position.x = (float)dVar3 * fVar5;
-      position.z = fVar5 * _UNK_?;
-      UnityEngine.CoreModule.dll::UnityEngine::LineRenderer::LineRenderer_SetPosition
-                (this_00,index,position,(MethodInfo *)0x0);
-      if ((index % ((this->fields).segments / 3) == 0) && ((this->fields).currIndex < 3)) {
-        (this->fields).currIndex = (this->fields).currIndex + 1;
-        if ((this->fields).positions == (Vector3__Array *)0x0) goto code_?;
-        func_?();
-      }
-      index = index + 1;
-      fStack_1 = _UNK_? / (float)(this->fields).segments + fStack_1;
-    } while (index < (this->fields).segments + 1);
+  RotatingShieldLine_CreatePoints(this,(MethodInfo *)0x0);
+  uVar1 = _UNK_?;
+  uVar2 = _UNK_?;
+  uVar3 = 0;
+  pVVar4 = (this->fields).positions;
+  uVar5 = uVar3;
+  while (pVVar4 != (Vector3__Array *)0x0) {
+    uVar6 = (uint)uVar5;
+    if ((int)pVVar4->max_length <= (int)uVar6) {
+      (this->fields).recreatOrbs = 0;
+      return;
+    }
+    pVVar4 = (this->fields).positions;
+    if (pVVar4 == (Vector3__Array *)0x0) break;
+    if ((uint)pVVar4->max_length <= uVar6) {
+      FUN_?();
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
+      return;
+    }
+    uVar8 = *(undefined8 *)((longlong)&pVVar4->vector[0].x + uVar3);
+    uVar9 = *(undefined4 *)((longlong)&pVVar4->vector[0].z + uVar3);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pVVar10 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar11 = (pVVar10->zeroVector).x;
+    uVar12 = (pVVar10->zeroVector).y;
+    fVar13 = (pVVar10->zeroVector).z;
+    fVar14 = (float)FUN_?(uVar1);
+    fVar15 = (float)FUN_?(uVar1);
+    fVar16 = (float)FUN_?(uVar1);
+    fVar17 = (float)FUN_?(uVar1);
+    obj = (this->fields).orbSpawner;
+    uStack_18 = (ulonglong)
+                 CONCAT31(CONCAT21(CONCAT11((char)(int)fVar17,(char)(int)fVar16),(char)(int)fVar15),
+                          (char)(int)fVar14);
+    if (obj == (ParticleSystem *)0x0) {
+      FUN_?();
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
+      return;
+    }
+    uStack_19 = CONCAT44(uVar11,uVar9);
+    uStack_20 = CONCAT44(fVar13,uVar12);
+    lStack_21 = (ulonglong)uVar2 << 0x20;
+    uStack_22 = CONCAT44(uVar2,uVar2);
+    uStack_23 = 0;
+    uStack_24 = uStack_18;
+    uStack_25 = 0;
+    uStack_26 = 0x47c35000;
+    uStack_27 = 0;
+    uStack_28 = 0;
+    uStack_29 = 0;
+    uStack_30 = 0;
+    uStack_31 = 0x101;
+    uStack_32 = 0x10100;
+    uStack_33 = 1;
+    uStack_34 = 0;
+    uStack_35 = 0;
+    uStack_36 = 0;
+    uStack_37 = 0;
+    uStack_38 = 0;
+    uStack_39 = 0;
+    uStack_40 = uVar8;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar41 = (obj->fields)._._.m_CachedPtr;
+    if (pvVar41 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
+      return;
+    }
+    pcVar7 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+      uVar8 = func_?(&UNK_?);
+      FUN_?(uVar8,0);
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
+      return;
+    }
+    pcRam_? = pcVar7;
+    (*pcRam_?)(pvVar41,&uStack_40,1);
+    uVar5 = (ulonglong)(uVar6 + 1);
+    uVar3 = uVar3 + 0xc;
+    pVVar4 = (this->fields).positions;
   }
-  pVVar6 = (this->fields).positions;
-  uStack_7 = 0;
-  if (pVVar6 != (Vector3__Array *)0x0) {
-    iStack_8 = 0;
-    do {
-      if ((int)pVVar6->max_length <= (int)uStack_7) {
-        (this->fields).recreatOrbs = 0;
-        return;
-      }
-      func_?();
-      pVVar6 = (this->fields).positions;
-      if (pVVar6 == (Vector3__Array *)0x0) break;
-      if (pVVar6->max_length <= uStack_7) goto code_?;
-      value_00.z = *(float *)((int)&pVVar6->vector[0].z + iStack_8);
-      value_00._0_8_ = *(undefined8 *)((int)&pVVar6->vector[0].x + iStack_8);
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmitParams::
-      ParticleSystem_EmitParams_set_position
-                ((ParticleSystem_EmitParams *)&stack0xffffff34,value_00,(MethodInfo *)0x0);
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmitParams::
-      ParticleSystem_EmitParams_set_velocity
-                ((ParticleSystem_EmitParams *)&stack0xffffff34,
-                 TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,(MethodInfo *)0x0);
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmitParams::
-      ParticleSystem_EmitParams_set_startSize
-                ((ParticleSystem_EmitParams *)&stack0xffffff34,0.3,(MethodInfo *)0x0);
-      fVar9 = (float10)func_?();
-      fVar10 = (float10)func_?();
-      fVar11 = (float10)func_?();
-      fVar12 = (float10)func_?();
-      uStack_13 = (undefined1)(int)fVar12;
-      uVar14 = CONCAT21((short)(int)fVar11,(char)(int)fVar10) & 0xffff;
-      this_02 = (ParticleSystem_EmitParams *)&stack0xffffff34;
-      uVar15 = CONCAT13(uStack_13,
-                        CONCAT12((char)(uVar14 >> 8),CONCAT11((char)uVar14,(char)(int)fVar9)));
-      uVar16 = 0;
-      puVar17 = &UNK_?;
-      value.r = 0;
-      value.g = 0;
-      value.b = 0;
-      value.a = 0;
-      value.rgba = uVar15;
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmitParams::
-      ParticleSystem_EmitParams_set_startColor(this_02,value,in_stack_18);
-      this_03 = (ParticleSystem_EmitParams *)&stack0xffffff34;
-      uVar19 = 0;
-      uVar20 = 0x47c35000;
-      in_stack_18 = (MethodInfo *)&UNK_?;
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmitParams::
-      ParticleSystem_EmitParams_set_startLifetime(this_03,100000.0,(MethodInfo *)0x0);
-      this_01 = (this->fields).orbSpawner;
-      if (this_01 == (ParticleSystem *)0x0) break;
-      count = 0;
-      uVar21 = 1;
-      puVar22 = (undefined4 *)&stack0xffffff34;
-      puVar23 = (undefined4 *)&stack0xfffffdf0;
-      for (iVar2 = 0x24; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *puVar23 = *puVar22;
-        puVar22 = puVar22 + 1;
-        puVar23 = puVar23 + 1;
-      }
-      emitParams.m_Particle.m_ParentRandomSeed = (uint32_t)puVar17;
-      auVar24 = in_stack_25._0_12_;
-      auVar26 = in_stack_25._12_12_;
-      auVar27 = in_stack_25._24_12_;
-      auVar28 = in_stack_25._36_12_;
-      auVar29 = in_stack_25._48_12_;
-      auVar30 = in_stack_25._60_12_;
-      auVar31 = in_stack_25._72_12_;
-      auVar32 = in_stack_25._84_12_;
-      uVar33 = in_stack_25._96_8_;
-      emitParams.m_Particle.m_Position.x = (float)auVar24._0_4_;
-      emitParams.m_Particle.m_Position.y = (float)auVar24._4_4_;
-      emitParams.m_Particle.m_Position.z = (float)auVar24._8_4_;
-      emitParams.m_Particle.m_Velocity.x = (float)auVar26._0_4_;
-      emitParams.m_Particle.m_Velocity.y = (float)auVar26._4_4_;
-      emitParams.m_Particle.m_Velocity.z = (float)auVar26._8_4_;
-      emitParams.m_Particle.m_AnimatedVelocity.x = (float)auVar27._0_4_;
-      emitParams.m_Particle.m_AnimatedVelocity.y = (float)auVar27._4_4_;
-      emitParams.m_Particle.m_AnimatedVelocity.z = (float)auVar27._8_4_;
-      emitParams.m_Particle.m_InitialVelocity.x = (float)auVar28._0_4_;
-      emitParams.m_Particle.m_InitialVelocity.y = (float)auVar28._4_4_;
-      emitParams.m_Particle.m_InitialVelocity.z = (float)auVar28._8_4_;
-      emitParams.m_Particle.m_AxisOfRotation.x = (float)auVar29._0_4_;
-      emitParams.m_Particle.m_AxisOfRotation.y = (float)auVar29._4_4_;
-      emitParams.m_Particle.m_AxisOfRotation.z = (float)auVar29._8_4_;
-      emitParams.m_Particle.m_Rotation.x = (float)auVar30._0_4_;
-      emitParams.m_Particle.m_Rotation.y = (float)auVar30._4_4_;
-      emitParams.m_Particle.m_Rotation.z = (float)auVar30._8_4_;
-      emitParams.m_Particle.m_AngularVelocity.x = (float)auVar31._0_4_;
-      emitParams.m_Particle.m_AngularVelocity.y = (float)auVar31._4_4_;
-      emitParams.m_Particle.m_AngularVelocity.z = (float)auVar31._8_4_;
-      emitParams.m_Particle.m_StartSize.x = (float)auVar32._0_4_;
-      emitParams.m_Particle.m_StartSize.y = (float)auVar32._4_4_;
-      emitParams.m_Particle.m_StartSize.z = (float)auVar32._8_4_;
-      emitParams.m_Particle.m_StartColor.rgba = (int)uVar33;
-      emitParams.m_Particle.m_StartColor.r = (char)((ulonglong)uVar33 >> 0x20);
-      emitParams.m_Particle.m_StartColor.g = (char)((ulonglong)uVar33 >> 0x28);
-      emitParams.m_Particle.m_StartColor.b = (char)((ulonglong)uVar33 >> 0x30);
-      emitParams.m_Particle.m_StartColor.a = (char)((ulonglong)uVar33 >> 0x38);
-      emitParams.m_Particle.m_RandomSeed = in_stack_25._104_4_;
-      emitParams.m_Particle.m_Lifetime = (float)this_02;
-      emitParams.m_Particle.m_StartLifetime = (float)uVar15;
-      emitParams.m_Particle.m_MeshIndex = uVar16;
-      emitParams.m_Particle.m_EmitAccumulator0 = (float)in_stack_18;
-      emitParams.m_Particle.m_EmitAccumulator1 = (float)this_03;
-      emitParams.m_Particle.m_Flags = uVar20;
-      emitParams.m_PositionSet = (char)uVar19;
-      emitParams.m_VelocitySet = (char)((uint)uVar19 >> 8);
-      emitParams.m_AxisOfRotationSet = (char)((uint)uVar19 >> 0x10);
-      emitParams.m_RotationSet = (char)((uint)uVar19 >> 0x18);
-      emitParams.m_AngularVelocitySet = (char)in_stack_34;
-      emitParams.m_StartSizeSet = (char)((uint)in_stack_34 >> 8);
-      emitParams.m_StartColorSet = (char)((uint)in_stack_34 >> 0x10);
-      emitParams.m_RandomSeedSet = (char)((uint)in_stack_34 >> 0x18);
-      emitParams.m_StartLifetimeSet = (char)uVar21;
-      emitParams.m_MeshIndexSet = (char)((uint)uVar21 >> 8);
-      emitParams.m_ApplyShapeToPosition = (char)((uint)uVar21 >> 0x10);
-      emitParams._147_1_ = (char)((uint)uVar21 >> 0x18);
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Emit_3
-                (this_01,emitParams,count,in_stack_35);
-      uStack_7 = uStack_7 + 1;
-      pVVar6 = (this->fields).positions;
-      iStack_8 = iStack_8 + 0xc;
-    } while (pVVar6 != (Vector3__Array *)0x0);
-  }
-code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar36 = (code *)swi(3);
-  (*pcVar36)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
+  return;
+}
+
+
+/* Void OnSetHidden() */
+
+void Assembly-CSharp.dll::RotatingShieldLine::RotatingShieldLine_OnSetHidden
+               (RotatingShieldLine *this,MethodInfo *method)
+
+{
+  (this->fields).recreatOrbs = 1;
   return;
 }
 
@@ -222,138 +211,94 @@ void Assembly-CSharp.dll::RotatingShieldLine::RotatingShieldLine_OnSetVisible
                (RotatingShieldLine *this,MethodInfo *method)
 
 {
+  uVar1 = _UNK_?;
+  fVar2 = _UNK_?;
+  fVar3 = _UNK_?;
+  fVar4 = _UNK_?;
   if ((this->fields).recreatOrbs != 0) {
-    iStack_1 = 0;
-    fStack_2 = 0.0;
+    fVar5 = 0.0;
+    iVar6 = 0;
     do {
-      auVar3._0_8_ = (double)(fStack_2 * _UNK_?);
-      auVar3._8_8_ = 0;
-      func_?();
-      dVar4 = (double)(fStack_2 * _UNK_?);
-      func_?();
-      fVar5 = (this->fields).radius;
-      fVar6 = fVar5 * _UNK_?;
-      fStack_2 = fStack_2 + _UNK_?;
-      func_?();
-      value_00.y = (float)dVar4 * fVar5 * _UNK_?;
-      value_00.x = (float)auVar3._0_8_ * fVar5 * _UNK_?;
-      value_00.z = fVar6 * _UNK_?;
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmitParams::
-      ParticleSystem_EmitParams_set_position
-                ((ParticleSystem_EmitParams *)&stack0xffffff10,value_00,(MethodInfo *)0x0);
+      fVar7 = (this->fields).radius;
+      fVar8 = (float)FUN_?(fVar5 * fVar4);
+      fVar9 = (float)FUN_?(fVar5 * fVar4);
+      fVar5 = fVar5 + fVar2;
+      uStack_10 = CONCAT44(fVar9 * fVar7 * fVar3,fVar8 * fVar7 * fVar3);
       if (cRam_? == '\0') {
-        func_?();
+        FUN_?(&TypeInfo__UnityEngine__Vector3);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmitParams::
-      ParticleSystem_EmitParams_set_velocity
-                ((ParticleSystem_EmitParams *)&stack0xffffff10,
-                 TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,(MethodInfo *)0x0);
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmitParams::
-      ParticleSystem_EmitParams_set_startSize
-                ((ParticleSystem_EmitParams *)&stack0xffffff10,0.3,(MethodInfo *)0x0);
-      fVar7 = (float10)func_?();
-      fVar8 = (float10)func_?();
-      fVar9 = (float10)func_?();
-      fVar10 = (float10)func_?();
-      uStack_11 = (undefined1)(int)fVar10;
-      uVar12 = CONCAT21((short)(int)fVar9,(char)(int)fVar8) & 0xffff;
-      this_01 = (ParticleSystem_EmitParams *)&stack0xffffff10;
-      uVar13 = CONCAT13(uStack_11,
-                        CONCAT12((char)(uVar12 >> 8),CONCAT11((char)uVar12,(char)(int)fVar7)));
-      uVar14 = 0;
-      puVar15 = &UNK_?;
-      value.r = 0;
-      value.g = 0;
-      value.b = 0;
-      value.a = 0;
-      value.rgba = uVar13;
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmitParams::
-      ParticleSystem_EmitParams_set_startColor(this_01,value,in_stack_16);
-      this_02 = (ParticleSystem_EmitParams *)&stack0xffffff10;
-      uVar17 = 0;
-      uVar18 = 0x47c35000;
-      in_stack_16 = (MethodInfo *)&UNK_?;
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmitParams::
-      ParticleSystem_EmitParams_set_startLifetime(this_02,100000.0,(MethodInfo *)0x0);
-      this_00 = (this->fields).orbSpawner;
-      if (this_00 == (ParticleSystem *)0x0) {
-        func_?();
-        pcVar19 = (code *)swi(3);
-        (*pcVar19)();
+      pVVar11 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uVar12 = (pVVar11->zeroVector).x;
+      uVar13 = (pVVar11->zeroVector).y;
+      fVar8 = (pVVar11->zeroVector).z;
+      fVar9 = (float)FUN_?(uVar1);
+      fVar14 = (float)FUN_?(uVar1);
+      fVar15 = (float)FUN_?(uVar1);
+      fVar16 = (float)FUN_?(uVar1);
+      obj = (this->fields).orbSpawner;
+      uStack_17 = (ulonglong)
+                   CONCAT31(CONCAT21(CONCAT11((char)(int)fVar16,(char)(int)fVar15),(char)(int)fVar14
+                                    ),(char)(int)fVar9);
+      if (obj == (ParticleSystem *)0x0) {
+        FUN_?();
+        pcVar18 = (code *)swi(3);
+        (*pcVar18)();
         return;
       }
-      count = 0;
-      uVar20 = 1;
-      puVar21 = (undefined4 *)&stack0xffffff10;
-      puVar22 = (undefined4 *)&stack0xfffffdc8;
-      for (iVar23 = 0x24; iVar23 != 0; iVar23 = iVar23 + -1) {
-        *puVar22 = *puVar21;
-        puVar21 = puVar21 + 1;
-        puVar22 = puVar22 + 1;
+      uStack_19 = CONCAT44(uVar12,fVar7 * 0.0 * fVar3);
+      uStack_20 = CONCAT44(fVar8,uVar13);
+      uStack_21 = uStack_10;
+      uStack_22 = 0x3e99999a00000000;
+      uStack_23 = 0x3e99999a3e99999a;
+      uStack_24 = 0;
+      uStack_25 = uStack_17;
+      uStack_26 = 0;
+      uStack_27 = 0x47c35000;
+      uStack_28 = 0;
+      uStack_29 = 0;
+      uStack_30 = 0;
+      uStack_31 = 0;
+      uStack_32 = 0x101;
+      uStack_33 = 0x10100;
+      uStack_34 = 1;
+      uStack_35 = 0;
+      uStack_36 = 0;
+      uStack_37 = 0;
+      uStack_38 = 0;
+      uStack_39 = 0;
+      uStack_40 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
-      emitParams.m_Particle.m_ParentRandomSeed = (uint32_t)puVar15;
-      auVar24 = in_stack_25._0_12_;
-      auVar26 = in_stack_25._12_12_;
-      auVar27 = in_stack_25._24_12_;
-      auVar28 = in_stack_25._36_12_;
-      auVar29 = in_stack_25._48_12_;
-      auVar30 = in_stack_25._60_12_;
-      auVar31 = in_stack_25._72_12_;
-      auVar32 = in_stack_25._84_12_;
-      uVar33 = in_stack_25._96_8_;
-      emitParams.m_Particle.m_Position.x = (float)auVar24._0_4_;
-      emitParams.m_Particle.m_Position.y = (float)auVar24._4_4_;
-      emitParams.m_Particle.m_Position.z = (float)auVar24._8_4_;
-      emitParams.m_Particle.m_Velocity.x = (float)auVar26._0_4_;
-      emitParams.m_Particle.m_Velocity.y = (float)auVar26._4_4_;
-      emitParams.m_Particle.m_Velocity.z = (float)auVar26._8_4_;
-      emitParams.m_Particle.m_AnimatedVelocity.x = (float)auVar27._0_4_;
-      emitParams.m_Particle.m_AnimatedVelocity.y = (float)auVar27._4_4_;
-      emitParams.m_Particle.m_AnimatedVelocity.z = (float)auVar27._8_4_;
-      emitParams.m_Particle.m_InitialVelocity.x = (float)auVar28._0_4_;
-      emitParams.m_Particle.m_InitialVelocity.y = (float)auVar28._4_4_;
-      emitParams.m_Particle.m_InitialVelocity.z = (float)auVar28._8_4_;
-      emitParams.m_Particle.m_AxisOfRotation.x = (float)auVar29._0_4_;
-      emitParams.m_Particle.m_AxisOfRotation.y = (float)auVar29._4_4_;
-      emitParams.m_Particle.m_AxisOfRotation.z = (float)auVar29._8_4_;
-      emitParams.m_Particle.m_Rotation.x = (float)auVar30._0_4_;
-      emitParams.m_Particle.m_Rotation.y = (float)auVar30._4_4_;
-      emitParams.m_Particle.m_Rotation.z = (float)auVar30._8_4_;
-      emitParams.m_Particle.m_AngularVelocity.x = (float)auVar31._0_4_;
-      emitParams.m_Particle.m_AngularVelocity.y = (float)auVar31._4_4_;
-      emitParams.m_Particle.m_AngularVelocity.z = (float)auVar31._8_4_;
-      emitParams.m_Particle.m_StartSize.x = (float)auVar32._0_4_;
-      emitParams.m_Particle.m_StartSize.y = (float)auVar32._4_4_;
-      emitParams.m_Particle.m_StartSize.z = (float)auVar32._8_4_;
-      emitParams.m_Particle.m_StartColor.rgba = (int)uVar33;
-      emitParams.m_Particle.m_StartColor.r = (char)((ulonglong)uVar33 >> 0x20);
-      emitParams.m_Particle.m_StartColor.g = (char)((ulonglong)uVar33 >> 0x28);
-      emitParams.m_Particle.m_StartColor.b = (char)((ulonglong)uVar33 >> 0x30);
-      emitParams.m_Particle.m_StartColor.a = (char)((ulonglong)uVar33 >> 0x38);
-      emitParams.m_Particle.m_RandomSeed = in_stack_25._104_4_;
-      emitParams.m_Particle.m_Lifetime = (float)this_01;
-      emitParams.m_Particle.m_StartLifetime = (float)uVar13;
-      emitParams.m_Particle.m_MeshIndex = uVar14;
-      emitParams.m_Particle.m_EmitAccumulator0 = (float)in_stack_16;
-      emitParams.m_Particle.m_EmitAccumulator1 = (float)this_02;
-      emitParams.m_Particle.m_Flags = uVar18;
-      emitParams.m_PositionSet = (char)uVar17;
-      emitParams.m_VelocitySet = (char)((uint)uVar17 >> 8);
-      emitParams.m_AxisOfRotationSet = (char)((uint)uVar17 >> 0x10);
-      emitParams.m_RotationSet = (char)((uint)uVar17 >> 0x18);
-      emitParams.m_AngularVelocitySet = (char)in_stack_34;
-      emitParams.m_StartSizeSet = (char)((uint)in_stack_34 >> 8);
-      emitParams.m_StartColorSet = (char)((uint)in_stack_34 >> 0x10);
-      emitParams.m_RandomSeedSet = (char)((uint)in_stack_34 >> 0x18);
-      emitParams.m_StartLifetimeSet = (char)uVar20;
-      emitParams.m_MeshIndexSet = (char)((uint)uVar20 >> 8);
-      emitParams.m_ApplyShapeToPosition = (char)((uint)uVar20 >> 0x10);
-      emitParams._147_1_ = (char)((uint)uVar20 >> 0x18);
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Emit_3
-                (this_00,emitParams,count,in_stack_35);
-      iStack_1 = iStack_1 + 1;
-    } while (iStack_1 < 3);
+      pvVar41 = (obj->fields)._._.m_CachedPtr;
+      if (pvVar41 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+        pcVar18 = (code *)swi(3);
+        (*pcVar18)();
+        return;
+      }
+      pcVar18 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar18 = (code *)FUN_?(&UNK_?), pcVar18 == (code *)0x0)) {
+        uVar42 = func_?(&UNK_?);
+        FUN_?(uVar42,0);
+        pcVar18 = (code *)swi(3);
+        (*pcVar18)();
+        return;
+      }
+      pcRam_? = pcVar18;
+      (*pcRam_?)(pvVar41,&uStack_21,1);
+      iVar6 = iVar6 + 1;
+    } while (iVar6 < 3);
   }
   return;
 }
@@ -367,13 +312,14 @@ void Assembly-CSharp.dll::RotatingShieldLine::RotatingShieldLine_Update
 {
   this_00 = (this->fields).lineTransform;
   if (this_00 != (Transform *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Rotate_2
-              (this_00,(this->fields).lineRotationSpeed.x,(this->fields).lineRotationSpeed.y,
-               (this->fields).lineRotationSpeed.z,Space__Enum_Self,(MethodInfo *)0x0);
+    aVStack_1[0].x = (this->fields).lineRotationSpeed.x;
+    aVStack_1[0].y = (this->fields).lineRotationSpeed.y;
+    aVStack_1[0].z = (this->fields).lineRotationSpeed.z;
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_Rotate
+              (this_00,aVStack_1,Space__Enum_Self,(MethodInfo *)0x0);
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -387,14 +333,298 @@ void Assembly-CSharp.dll::RotatingShieldLine::RotatingShieldLine__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVVar1 = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,3);
+  pVVar1 = (Vector3__Array *)FUN_?(TypeInfo__UnityEngine__Vector3,3);
+  bVar2 = iRam_? != 0;
   (this->fields).positions = pVVar1;
-  func_?(&(this->fields).positions,pVVar1);
-  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
-            ((MonoBehaviour *)this,(MethodInfo *)0x0);
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).positions >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pOVar7 = TypeInfo__UnityEngine__Object;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c != 0) {
+    return;
+  }
+  ppMVar8 = (MethodInfo **)0x0;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c != 0) {
+    return;
+  }
+  lVar9 = _Baselib_Thread_GetCurrentThreadId_il2cpp_baselib__YA_JXZ();
+  ppMVar10 = ppMVar8;
+  if (lVar9 == lRam_?) {
+    iRam_? = iRam_? + 1;
+    lVar9 = lRam_?;
+  }
+  else {
+    do {
+      uVar3 = (uint)ppMVar10;
+      LOCK();
+      bVar2 = uVar3 != uRam_?;
+      uVar11 = uVar3;
+      uVar12 = uVar3 + 1;
+      if (bVar2) {
+        uVar11 = uRam_?;
+        uVar12 = uRam_?;
+      }
+      uRam_? = uVar12;
+      UNLOCK();
+    } while ((bVar2) && (ppMVar10 = (MethodInfo **)(ulonglong)uVar11, uVar3 = uVar11, uVar11 != 2)
+            );
+    while (uVar3 != 0) {
+      _Baselib_SystemFutex_Wait_il2cpp_baselib__YAXPEAHHI_Z(0xADDR,2,0xffffffff);
+      uVar3 = uRam_?;
+      LOCK();
+      uRam_? = 2;
+      UNLOCK();
+    }
+  }
+  lRam_? = lVar9;
+  puVar13 = &(pOVar7->_1).field_0x1c;
+  LOCK();
+  bVar2 = *(int *)puVar13 == 1;
+  if (bVar2) {
+    *(undefined4 *)puVar13 = 1;
+  }
+  uVar3 = uRam_?;
+  UNLOCK();
+  if (bVar2) {
+    if (iRam_? != 0) {
+      iRam_? = iRam_? + -1;
+      return;
+    }
+    lRam_? = 0;
+    LOCK();
+    uRam_? = 0;
+    UNLOCK();
+    if (uVar3 != 2) {
+      uRam_? = 0;
+      lRam_? = 0;
+      return;
+    }
+    _Baselib_SystemFutex_Notify_il2cpp_baselib__YAXPEAHIW4Baselib_WakeupFallbackStrategy_1__Z
+              (0xADDR,1,0);
+    return;
+  }
+  puVar14 = &(pOVar7->_1).cctor_finished_or_no_cctor;
+  LOCK();
+  bVar2 = *puVar14 == 1;
+  if (bVar2) {
+    *puVar14 = 1;
+  }
+  uVar3 = uRam_?;
+  UNLOCK();
+  if (bVar2) {
+    if (iRam_? == 0) {
+      lRam_? = 0;
+      LOCK();
+      uRam_? = 0;
+      UNLOCK();
+      if (uVar3 == 2) {
+        _Baselib_SystemFutex_Notify_il2cpp_baselib__YAXPEAHIW4Baselib_WakeupFallbackStrategy_1__Z
+                  (0xADDR,1,0);
+      }
+    }
+    else {
+      iRam_? = iRam_? + -1;
+    }
+    uVar3 = GetCurrentThreadId();
+    psVar15 = &(pOVar7->_1).cctor_thread;
+    LOCK();
+    bVar2 = (ulonglong)uVar3 == *psVar15;
+    if (bVar2) {
+      *psVar15 = (ulonglong)uVar3;
+    }
+    UNLOCK();
+    if (bVar2) {
+      return;
+    }
+    while( true ) {
+      puVar13 = &(pOVar7->_1).field_0x1c;
+      LOCK();
+      bVar2 = *(int *)puVar13 == 1;
+      if (bVar2) {
+        *(undefined4 *)puVar13 = 1;
+      }
+      UNLOCK();
+      if (bVar2) break;
+      LOCK();
+      lVar9._0_4_ = (pOVar7->_1).initializationExceptionGCHandle;
+      lVar9._4_4_ = (pOVar7->_1).cctor_started;
+      if (lVar9 == 0) {
+        (pOVar7->_1).initializationExceptionGCHandle = 0;
+        (pOVar7->_1).cctor_started = 0;
+      }
+      UNLOCK();
+      if (lVar9 != 0) break;
+      FUN_?(*puRam_?);
+    }
+code_?:
+    lVar16._0_4_ = (pOVar7->_1).initializationExceptionGCHandle;
+    lVar16._4_4_ = (pOVar7->_1).cctor_started;
+    if (lVar16 == 0) {
+      return;
+    }
+  }
+  else {
+    uVar3 = GetCurrentThreadId();
+    LOCK();
+    (pOVar7->_1).cctor_thread = (ulonglong)uVar3;
+    UNLOCK();
+    LOCK();
+    (pOVar7->_1).cctor_finished_or_no_cctor = 1;
+    uVar3 = uRam_?;
+    UNLOCK();
+    if (iRam_? == 0) {
+      lRam_? = 0;
+      LOCK();
+      uRam_? = 0;
+      UNLOCK();
+      if (uVar3 == 2) {
+        _Baselib_SystemFutex_Notify_il2cpp_baselib__YAXPEAHIW4Baselib_WakeupFallbackStrategy_1__Z
+                  (0xADDR,1,0);
+      }
+    }
+    else {
+      iRam_? = iRam_? + -1;
+    }
+    alStackX_10[0] = 0;
+    if (((pOVar7->_1).field_0x6e & 4) != 0) {
+      FUN_?(pOVar7);
+      ppMVar10 = ppMVar8;
+      pIVar17 = (Il2CppClass *)pOVar7;
+code_?:
+      do {
+        if (ppMVar10 == (MethodInfo **)0x0) {
+          FUN_?(pIVar17);
+          if (pIVar17->field_count != 0) {
+            ppMVar10 = pIVar17->methods;
+            pMVar18 = *ppMVar10;
+code_?:
+            if (pMVar18 != (MethodInfo *)0x0) {
+              if ((*pMVar18->name == '.') && ((pMVar18->flags & 0x800) != 0)) {
+                ppMVar19 = ppMVar8;
+                while (ppMVar20 = ppMVar19 + 0x30528cee,
+                      ppMVar19 = (MethodInfo **)((longlong)ppMVar19 + 1),
+                      *(char *)ppMVar20 == (pMVar18->name + -1)[(longlong)ppMVar19]) {
+                  if (ppMVar19 == (MethodInfo **)0x7) {
+                    FUN_?(pMVar18,0,0,alStackX_10);
+                    goto code_?;
+                  }
+                }
+              }
+              goto code_?;
+            }
+          }
+        }
+        else {
+          ppMVar10 = ppMVar10 + 1;
+          if (ppMVar10 < pIVar17->methods + pIVar17->field_count) {
+            pMVar18 = *ppMVar10;
+            goto code_?;
+          }
+        }
+        pIVar17 = pIVar17->parent;
+        ppMVar10 = ppMVar8;
+      } while (pIVar17 != (Il2CppClass *)0x0);
+    }
+code_?:
+    LOCK();
+    (pOVar7->_1).cctor_thread = 0;
+    uVar6 = _UNK_?;
+    uVar21 = _UNK_?;
+    UNLOCK();
+    if (alStackX_10[0] == 0) {
+      LOCK();
+      *(undefined4 *)&(pOVar7->_1).field_0x1c = 1;
+      UNLOCK();
+      goto code_?;
+    }
+    uStack_22 = 0;
+    uStack_23 = _UNK_?;
+    uStack_24 = _UNK_?;
+    pppppppuStack_78 = (undefined8 *******)0x0;
+    FUN_?(&pppppppuStack_78,&(pOVar7->_0).byval_arg,0,0);
+    pppppppuVar17 = &pppppppuStack_78;
+    if (0xf < uStack_24) {
+      pppppppuVar17 = pppppppuStack_78;
+    }
+    FUN_?(apppppppuStack_58,&UNK_?,pppppppuVar17);
+    if (uStack_24 < 0x10) {
+code_?:
+      lVar9 = alStackX_10[0];
+      pppppppuStack_78 = (undefined8 *******)((ulonglong)pppppppuStack_78 & 0xffffffffffffff00);
+      pppppppuVar17 = apppppppuStack_58;
+      if (0xf < uStack_25) {
+        pppppppuVar17 = apppppppuStack_58[0];
+      }
+      uStack_23 = uVar21;
+      uStack_24 = uVar6;
+      lVar16 = FUN_?(uRam_?,&UNK_?,&UNK_?,pppppppuVar17);
+      if (lVar9 != 0) {
+        *(longlong *)(lVar16 + 0x28U) = lVar9;
+        if (iRam_? != 0) {
+          uVar3 = (uint)(lVar16 + 0x28U >> 0xc);
+          puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+          do {
+            uVar5 = *puVar4;
+            LOCK();
+            uVar6 = *puVar4;
+            if (uVar5 == uVar6) {
+              *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+            }
+            UNLOCK();
+          } while (uVar5 != uVar6);
+        }
+      }
+      FUN_?(pOVar7,lVar16);
+      if (0xf < uStack_25) {
+        pppppppuVar17 = apppppppuStack_58[0];
+        if ((0xfff < uStack_25 + 1) &&
+           (pppppppuVar17 = (undefined8 *******)apppppppuStack_58[0][-1],
+           0x1f < (ulonglong)((longlong)apppppppuStack_58[0] + (-8 - (longlong)pppppppuVar17))))
+        goto code_?;
+        func_?(pppppppuVar17);
+      }
+      goto code_?;
+    }
+    pppppppuVar17 = pppppppuStack_78;
+    if ((uStack_24 + 1 < 0x1000) ||
+       (pppppppuVar17 = (undefined8 *******)pppppppuStack_78[-1],
+       (ulonglong)((longlong)pppppppuStack_78 + (-8 - (longlong)pppppppuVar17)) < 0x20)) {
+      func_?(pppppppuVar17);
+      uVar21 = _UNK_?;
+      uVar6 = _UNK_?;
+      goto code_?;
+    }
+    FUN_?(0,0,0,0,0);
+  }
+  uVar21._0_4_ = (pOVar7->_1).initializationExceptionGCHandle;
+  uVar21._4_4_ = (pOVar7->_1).cctor_started;
+  uVar21 = FUN_?(uVar21);
+  FUN_?(uVar21,0);
+code_?:
+  FUN_?(0,0,0,0,0);
+  pcVar26 = (code *)swi(3);
+  (*pcVar26)();
   return;
 }
 

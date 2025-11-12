@@ -1,4 +1,166 @@
 
+/* String DetectRegionFromEnvironment() */
+
+String * Assembly-CSharp.dll::RegionConfigManager::RegionConfigManager_DetectRegionFromEnvironment
+                   (RegionConfigManager *this,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__region);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_region__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Region_from_session_data__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral___region);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_RegionConfigManager__DetectRegio);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_local);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_RegionNotDefined);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField ==
+      (GameSessionData *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+              ((Object *)StringLiteral_RegionConfigManager__DetectRegio,(MethodInfo *)0x0);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  cVar1 = cRam_?;
+  pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if ((pGVar2 == (GameSessionData *)0x0) ||
+     (pSVar3 = (pGVar2->fields).region, pSVar3 == (String *)0x0)) goto DAT_?;
+  if (pSVar3 == StringLiteral_RegionNotDefined) {
+code_?:
+    pSVar3 = StringLiteral_local;
+    pSVar4 = mscorlib.dll::System::Environment::Environment_GetCommandLineArgs((MethodInfo *)0x0);
+    pSVar5 = StringLiteral__region;
+    pSVar6 = StringLiteral___region;
+    uVar7 = 0;
+    if (pSVar4 != (String__Array *)0x0) {
+      ppSVar8 = pSVar4->vector;
+      iVar9 = pSVar4->max_length;
+      do {
+        if ((int)iVar9 + -1 <= (int)uVar7) {
+          pSVar6 = mscorlib.dll::System::String::String_Concat_4
+                              (StringLiteral_region__,pSVar3,(MethodInfo *)0x0);
+          if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                    ((Object *)pSVar6,(MethodInfo *)0x0);
+          return pSVar3;
+        }
+        if ((uint)pSVar4->max_length <= uVar7) goto DAT_?;
+        pSVar10 = *ppSVar8;
+        if (pSVar10 == pSVar6) {
+code_?:
+          if ((uint)pSVar4->max_length <= uVar7 + 1) {
+DAT_?:
+            FUN_?();
+            pcVar11 = (code *)swi(3);
+            pSVar3 = (String *)(*pcVar11)();
+            return pSVar3;
+          }
+          pSVar3 = ppSVar8[1];
+        }
+        else {
+          if (((pSVar10 != (String *)0x0) && (pSVar6 != (String *)0x0)) &&
+             ((pSVar10->fields)._stringLength == (pSVar6->fields)._stringLength)) {
+            bVar12 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                              ((uint8_t *)&(pSVar10->fields)._firstChar,
+                               (uint8_t *)&(pSVar6->fields)._firstChar,
+                               (longlong)(pSVar10->fields)._stringLength * 2,(MethodInfo *)0x0);
+            if (bVar12 != 0) goto code_?;
+          }
+          if ((uint)pSVar4->max_length <= uVar7) goto DAT_?;
+          pSVar10 = *ppSVar8;
+          if (pSVar10 == pSVar5) goto code_?;
+          if (((pSVar10 != (String *)0x0) && (pSVar5 != (String *)0x0)) &&
+             ((pSVar10->fields)._stringLength == (pSVar5->fields)._stringLength)) {
+            bVar12 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                              ((uint8_t *)&(pSVar10->fields)._firstChar,
+                               (uint8_t *)&(pSVar5->fields)._firstChar,
+                               (longlong)(pSVar10->fields)._stringLength * 2,(MethodInfo *)0x0);
+            if (bVar12 != 0) goto code_?;
+          }
+        }
+        uVar7 = uVar7 + 1;
+        ppSVar8 = ppSVar8 + 1;
+      } while( true );
+    }
+  }
+  else {
+    if ((StringLiteral_RegionNotDefined != (String *)0x0) &&
+       ((pSVar3->fields)._stringLength == (StringLiteral_RegionNotDefined->fields)._stringLength)) {
+      bVar12 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                        ((uint8_t *)&(pSVar3->fields)._firstChar,
+                         (uint8_t *)&(StringLiteral_RegionNotDefined->fields)._firstChar,
+                         (longlong)(pSVar3->fields)._stringLength * 2,(MethodInfo *)0x0);
+      if (bVar12 != 0) goto code_?;
+    }
+    if (cVar1 == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar2 != (GameSessionData *)0x0) {
+      pSVar3 = mscorlib.dll::System::String::String_Concat_4
+                         (StringLiteral_Region_from_session_data__,(pGVar2->fields).region,
+                          (MethodInfo *)0x0);
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
+                ((Object *)pSVar3,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pGVar2 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar2 != (GameSessionData *)0x0) {
+        return (pGVar2->fields).region;
+      }
+    }
+  }
+DAT_?:
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  pSVar3 = (String *)(*pcVar11)();
+  return pSVar3;
+}
+
+
 /* RegionConfig get_RegionConfig() */
 
 RegionConfig *
@@ -7,211 +169,146 @@ Assembly-CSharp.dll::RegionConfigManager::RegionConfigManager_get_RegionConfig
 
 {
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_friends);
-    func_?(&StringLiteral_br);
-    func_?(&StringLiteral_www);
-    func_?(&StringLiteral_test);
-    func_?(&StringLiteral_dev);
-    func_?(&StringLiteral_ut);
-    func_?(&StringLiteral_local);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_friends);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_br);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_RegionConfigManager_GetRegionCon);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_www);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_test);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_dev);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ut);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_local);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pTVar1 = (this->fields).regionTag;
-  if (pTVar1 != (TextAsset *)0x0) {
-    pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
-                       (pTVar1,(MethodInfo *)0x0);
-    bVar3 = mscorlib.dll::System::String::String_op_Equality
-                      (pSVar2,StringLiteral_local,(MethodInfo *)0x0);
-    if (bVar3 != 0) {
-      return (this->fields).local;
-    }
-    pTVar1 = (this->fields).regionTag;
-    if (pTVar1 != (TextAsset *)0x0) {
-      pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
-                         (pTVar1,(MethodInfo *)0x0);
-      bVar3 = mscorlib.dll::System::String::String_op_Equality
-                        (pSVar2,StringLiteral_dev,(MethodInfo *)0x0);
-      if (bVar3 != 0) {
-        return (this->fields).dev;
-      }
-      pTVar1 = (this->fields).regionTag;
-      if (pTVar1 != (TextAsset *)0x0) {
-        pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
-                           (pTVar1,(MethodInfo *)0x0);
-        bVar3 = mscorlib.dll::System::String::String_op_Equality
-                          (pSVar2,StringLiteral_test,(MethodInfo *)0x0);
-        if (bVar3 != 0) {
-          return (this->fields).test;
+  pSVar1 = (this->fields).region;
+  if ((pSVar1 == (String *)0x0) || ((pSVar1->fields)._stringLength == 0)) {
+    pSVar1 = RegionConfigManager_DetectRegionFromEnvironment(this,(MethodInfo *)0x0);
+    bVar2 = iRam_? != 0;
+    (this->fields).region = pSVar1;
+    if (bVar2) {
+      uVar3 = (uint)((ulonglong)&(this->fields).region >> 0xc);
+      puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar5 = *puVar4;
+        LOCK();
+        uVar6 = *puVar4;
+        if (uVar5 == uVar6) {
+          *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
         }
-        pTVar1 = (this->fields).regionTag;
-        if (pTVar1 != (TextAsset *)0x0) {
-          pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
-                             (pTVar1,(MethodInfo *)0x0);
-          bVar3 = mscorlib.dll::System::String::String_op_Equality
-                            (pSVar2,StringLiteral_friends,(MethodInfo *)0x0);
-          if (bVar3 != 0) {
-            return (this->fields).friends;
-          }
-          pTVar1 = (this->fields).regionTag;
-          if (pTVar1 != (TextAsset *)0x0) {
-            pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::TextAsset::TextAsset_ToString
-                               (pTVar1,(MethodInfo *)0x0);
-            bVar3 = mscorlib.dll::System::String::String_op_Equality
-                              (pSVar2,StringLiteral_br,(MethodInfo *)0x0);
-            if (bVar3 != 0) {
-              return (this->fields).br;
-            }
-            pSVar2 = RegionConfigManager_get_RegionTag(this,(MethodInfo *)0x0);
-            bVar3 = mscorlib.dll::System::String::String_op_Equality
-                              (pSVar2,StringLiteral_www,(MethodInfo *)0x0);
-            if (bVar3 != 0) {
-              return (this->fields).www;
-            }
-            pSVar2 = RegionConfigManager_get_RegionTag(this,(MethodInfo *)0x0);
-            bVar3 = mscorlib.dll::System::String::String_op_Equality
-                              (pSVar2,StringLiteral_ut,(MethodInfo *)0x0);
-            if (bVar3 != 0) {
-              return (this->fields).ut;
-            }
-            goto code_?;
-          }
-        }
-      }
+        UNLOCK();
+      } while (uVar5 != uVar6);
     }
+    pSVar1 = RegionConfigManager_DetectRegionFromEnvironment(this,(MethodInfo *)0x0);
+    pSVar1 = mscorlib.dll::System::String::String_Concat_4
+                       (StringLiteral_RegionConfigManager_GetRegionCon,pSVar1,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
   }
-  func_?();
-code_?:
-  func_?();
-  this_00 = (Exception *)func_?();
-  method_00 = (MethodInfo *)0x0;
-  pSVar2 = (String *)func_?();
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_00,pSVar2,method_00);
-  uStack4 = func_?();
-  pEStack5 = this_00;
-  func_?();
-  pcVar6 = (code *)swi(3);
-  pRVar7 = (RegionConfig *)(*pcVar6)();
-  return pRVar7;
-}
-
-
-/* String get_RegionTag() */
-
-String * Assembly-CSharp.dll::RegionConfigManager::RegionConfigManager_get_RegionTag
-                   (RegionConfigManager *this,MethodInfo *method)
-
-{
-  pTVar1 = (this->fields).regionTag;
-  if (pTVar1 != (TextAsset *)0x0) {
-    if (cRam_? == '\0') {
-      pTStack_2 = (TextAsset *)&TypeInfo__System__String;
-      func_?();
-      cRam_? = '\x01';
-    }
-    if (pcRam_? == (code *)0x0) {
-      pcRam_? = (code *)func_?();
-    }
-    pTStack_2 = pTVar1;
-    iVar3 = (*pcRam_?)();
-    if (iVar3 != 0) {
-      if (*(int *)(iVar3 + 0xc) == 0) {
-        return TypeInfo__System__String->static_fields->Empty;
-      }
-      pTStack_2 = (TextAsset *)0xffffffff;
-      puStack_4 = &DAT_?;
-      uStack_5 = *unaff_FS_OFFSET;
-      *unaff_FS_OFFSET = &uStack_5;
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__UnityEngine__TextAsset__EncodingUtility);
-        func_?(&
-                        MethodInfo__System__Collections__Generic__KeyValuePair<System::Byte_[],_System::Text::Encoding>__get_Key__
-                       );
-        func_?(&
-                        MethodInfo__System__Collections__Generic__KeyValuePair<System::Byte_[],_System::Text::Encoding>__get_Value__
-                       );
-        cRam_? = '\x01';
-      }
-      if ((TypeInfo__UnityEngine__TextAsset__EncodingUtility->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__TextAsset__EncodingUtility);
-      }
-      pKVar6 = TypeInfo__UnityEngine__TextAsset__EncodingUtility->static_fields->encodingLookup;
-      if (pKVar6 != (KeyValuePair_2_System_Byte_System_Text_Encoding___Array *)0x0) {
-        iVar7 = pKVar6->max_length;
-        pTVar8 = TypeInfo__UnityEngine__TextAsset__EncodingUtility;
-        for (uVar9 = 0; (int)uVar9 < (int)iVar7; uVar9 = uVar9 + 1) {
-          if ((pTVar8->_1).cctor_finished_or_no_cctor == 0) {
-            func_?(pTVar8);
-            pTVar8 = TypeInfo__UnityEngine__TextAsset__EncodingUtility;
-          }
-          pKVar6 = pTVar8->static_fields->encodingLookup;
-          if (pKVar6 == (KeyValuePair_2_System_Byte_System_Text_Encoding___Array *)0x0)
-          goto code_?;
-          if (pKVar6->max_length <= uVar9) {
-code_?:
-            func_?();
-            pcVar10 = (code *)swi(3);
-            pSVar11 = (String *)(*pcVar10)();
-            return pSVar11;
-          }
-          pBVar12 = pKVar6->vector[uVar9].key;
-          if ((pBVar12 == (Byte__Array *)0x0) || (iVar13 = pBVar12->max_length, iVar3 == 0))
-          goto code_?;
-          if ((int)iVar13 <= *(int *)(iVar3 + 0xc)) {
-            uVar14 = 0;
-            if (0 < (int)iVar13) {
-              do {
-                if ((pBVar12->max_length <= uVar14) || (*(uint *)(iVar3 + 0xc) <= uVar14))
-                goto code_?;
-                if (pBVar12->vector[uVar14] != *(uint8_t *)(uVar14 + 0x10 + iVar3)) {
-                  iVar13 = 0xffffffff;
-                }
-                uVar14 = uVar14 + 1;
-                pTVar8 = TypeInfo__UnityEngine__TextAsset__EncodingUtility;
-              } while ((int)uVar14 < (int)iVar13);
-            }
-            if (-1 < (int)iVar13) {
-              pTStack_2 = (TextAsset *)0x0;
-              if ((TypeInfo__UnityEngine__TextAsset__EncodingUtility->_1).cctor_finished_or_no_cctor
-                  == 0) {
-                func_?(TypeInfo__UnityEngine__TextAsset__EncodingUtility);
-              }
-              if (TypeInfo__UnityEngine__TextAsset__EncodingUtility->static_fields->encodingLookup
-                  != (KeyValuePair_2_System_Byte_System_Text_Encoding___Array *)0x0) {
-                iVar15 = func_?(uVar9);
-                if (*(int *)(iVar15 + 4) != 0) {
-                  pSVar11 = (String *)
-                           func_?(0x23,*(int *)(iVar15 + 4),iVar3,iVar13,
-                                           *(int *)(iVar3 + 0xc) - iVar13);
-                  *unaff_FS_OFFSET = uStack_5;
-                  return pSVar11;
-                }
-              }
-              goto code_?;
-            }
-          }
-        }
-        if ((pTVar8->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(pTVar8);
-          pTVar8 = TypeInfo__UnityEngine__TextAsset__EncodingUtility;
-        }
-        pEVar16 = pTVar8->static_fields->targetEncoding;
-        if ((iVar3 != 0) && (pEVar16 != (Encoding *)0x0)) {
-          pSVar11 = (String *)
-                   (*(code *)(pEVar16->klass->vtable).GetString_1.method)
-                             (pEVar16,iVar3,0,*(undefined4 *)(iVar3 + 0xc),
-                              (pEVar16->klass->vtable).GetBestFitUnicodeToBytesData.methodPtr);
-          *unaff_FS_OFFSET = uStack_5;
-          return pSVar11;
-        }
-      }
-    }
+  pSVar1 = (this->fields).region;
+  if ((pSVar1 == StringLiteral_local) ||
+     ((((pSVar1 != (String *)0x0 && (StringLiteral_local != (String *)0x0)) &&
+       ((pSVar1->fields)._stringLength == (StringLiteral_local->fields)._stringLength)) &&
+      (bVar7 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                         ((uint8_t *)&(pSVar1->fields)._firstChar,
+                          (uint8_t *)&(StringLiteral_local->fields)._firstChar,
+                          (longlong)(pSVar1->fields)._stringLength * 2,(MethodInfo *)0x0),
+      bVar7 != 0)))) {
+    return (this->fields).local;
   }
-code_?:
-  pTStack_2 = (TextAsset *)&stack0xfffffffc;
-  func_?();
-  func_?();
-  pcVar10 = (code *)swi(3);
-  pSVar11 = (String *)(*pcVar10)();
-  return pSVar11;
+  pSVar1 = (this->fields).region;
+  if ((pSVar1 == StringLiteral_dev) ||
+     (((pSVar1 != (String *)0x0 && (StringLiteral_dev != (String *)0x0)) &&
+      (((pSVar1->fields)._stringLength == (StringLiteral_dev->fields)._stringLength &&
+       (bVar7 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                          ((uint8_t *)&(pSVar1->fields)._firstChar,
+                           (uint8_t *)&(StringLiteral_dev->fields)._firstChar,
+                           (longlong)(pSVar1->fields)._stringLength * 2,(MethodInfo *)0x0),
+       bVar7 != 0)))))) {
+    return (this->fields).dev;
+  }
+  pSVar1 = (this->fields).region;
+  if ((pSVar1 != StringLiteral_test) &&
+     (((pSVar1 == (String *)0x0 || (StringLiteral_test == (String *)0x0)) ||
+      (((pSVar1->fields)._stringLength != (StringLiteral_test->fields)._stringLength ||
+       (bVar7 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                          ((uint8_t *)&(pSVar1->fields)._firstChar,
+                           (uint8_t *)&(StringLiteral_test->fields)._firstChar,
+                           (longlong)(pSVar1->fields)._stringLength * 2,(MethodInfo *)0x0),
+       bVar7 == 0)))))) {
+    pSVar1 = (this->fields).region;
+    if ((pSVar1 == StringLiteral_friends) ||
+       ((((pSVar1 != (String *)0x0 && (StringLiteral_friends != (String *)0x0)) &&
+         ((pSVar1->fields)._stringLength == (StringLiteral_friends->fields)._stringLength)) &&
+        (bVar7 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                           ((uint8_t *)&(pSVar1->fields)._firstChar,
+                            (uint8_t *)&(StringLiteral_friends->fields)._firstChar,
+                            (longlong)(pSVar1->fields)._stringLength * 2,(MethodInfo *)0x0),
+        bVar7 != 0)))) {
+      return (this->fields).friends;
+    }
+    pSVar1 = (this->fields).region;
+    if ((pSVar1 == StringLiteral_br) ||
+       (((pSVar1 != (String *)0x0 && (StringLiteral_br != (String *)0x0)) &&
+        (((pSVar1->fields)._stringLength == (StringLiteral_br->fields)._stringLength &&
+         (bVar7 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                            ((uint8_t *)&(pSVar1->fields)._firstChar,
+                             (uint8_t *)&(StringLiteral_br->fields)._firstChar,
+                             (longlong)(pSVar1->fields)._stringLength * 2,(MethodInfo *)0x0),
+         bVar7 != 0)))))) {
+      return (this->fields).br;
+    }
+    pSVar1 = (this->fields).region;
+    if ((pSVar1 != StringLiteral_www) &&
+       (((pSVar1 == (String *)0x0 || (StringLiteral_www == (String *)0x0)) ||
+        (((pSVar1->fields)._stringLength != (StringLiteral_www->fields)._stringLength ||
+         (bVar7 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                            ((uint8_t *)&(pSVar1->fields)._firstChar,
+                             (uint8_t *)&(StringLiteral_www->fields)._firstChar,
+                             (longlong)(pSVar1->fields)._stringLength * 2,(MethodInfo *)0x0),
+         bVar7 == 0)))))) {
+      pSVar1 = (this->fields).region;
+      if ((pSVar1 != StringLiteral_ut) &&
+         ((((pSVar1 == (String *)0x0 || (StringLiteral_ut == (String *)0x0)) ||
+           ((pSVar1->fields)._stringLength != (StringLiteral_ut->fields)._stringLength)) ||
+          (bVar7 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                             ((uint8_t *)&(pSVar1->fields)._firstChar,
+                              (uint8_t *)&(StringLiteral_ut->fields)._firstChar,
+                              (longlong)(pSVar1->fields)._stringLength * 2,(MethodInfo *)0x0),
+          bVar7 == 0)))) {
+        uVar8 = func_?(&TypeInfo__System__Exception);
+        this_00 = (Exception *)func_?(uVar8);
+        pSVar1 = (String *)func_?(&StringLiteral_RegionConfig_not_found);
+        mscorlib.dll::System::Exception::Exception__ctor_1(this_00,pSVar1,(MethodInfo *)0x0);
+        uVar8 = func_?(&MethodInfo__RegionConfigManager__get_RegionConfig__);
+        FUN_?(this_00,uVar8);
+        pcVar9 = (code *)swi(3);
+        pRVar10 = (RegionConfig *)(*pcVar9)();
+        return pRVar10;
+      }
+      return (this->fields).ut;
+    }
+    return (this->fields).www;
+  }
+  return (this->fields).test;
 }
 

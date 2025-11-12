@@ -15,7 +15,7 @@ public class FirstTimeEventPopup : MonoBehaviour
 {
 	// Fields
 	[SerializeField]
-	private Button skipButton;
+	private UnityEngine.UI.Button skipButton;
 	[SerializeField]
 	private FirstTimeFadeHandler fader;
 

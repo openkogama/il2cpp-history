@@ -7,74 +7,186 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action);
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode__OnShown__);
-    func_?(&
-                    MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode___Clear_b__15_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
-                   );
+    FUN_?(&TypeInfo__System__Action);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode__OnShown__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode___Clear_b__15_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pEVar1 = (this->fields).button;
   if (pEVar1 == (EnterPlayModeButton *)0x0) {
-    func_?();
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pAVar3 = (pEVar1->fields).enteringPlayMode;
+  this_01 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_01,(Object *)this,
+             MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode__OnShown__,(MethodInfo *)0x0
+            );
+  pAVar3 = (Action *)
+            mscorlib.dll::System::Delegate::Delegate_Remove
+                      ((Delegate *)pAVar3,(Delegate *)this_01,(MethodInfo *)0x0);
+  if (pAVar3 == (Action *)0x0) {
+    (pEVar1->fields).enteringPlayMode = (Action *)0x0;
   }
   else {
-    pAVar2 = (pEVar1->fields).enteringPlayMode;
-    this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_01,(Object *)this,
-               MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode__OnShown__,
-               (MethodInfo *)0x0);
-    pAVar2 = (Action *)
-             mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pAVar2,(Delegate *)this_01,(MethodInfo *)0x0);
-    if (pAVar2 == (Action *)0x0) {
-      (pEVar1->fields).enteringPlayMode = (Action *)0x0;
-code_?:
-      this_00 = &(pEVar1->fields).enteringPlayMode;
-      func_?();
-      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this_00,(MethodInfo *)0x0);
-      callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this_00,
-                 MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode___Clear_b__15_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?();
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
-                );
+    pAVar4 = (Action *)0x0;
+    if (pAVar3->klass == TypeInfo__System__Action) {
+      pAVar4 = pAVar3;
+    }
+    if (pAVar4 == (Action *)0x0) {
+      FUN_?(pAVar3,TypeInfo__System__Action);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
-    pAVar3 = (Action *)0x0;
-    if (pAVar2->klass == TypeInfo__System__Action) {
-      pAVar3 = pAVar2;
+    (pEVar1->fields).enteringPlayMode = pAVar4;
+    pAVar4 = (Action *)0x0;
+    if (pAVar3->klass == TypeInfo__System__Action) {
+      pAVar4 = pAVar3;
     }
-    if (pAVar3 != (Action *)0x0) {
-      (pEVar1->fields).enteringPlayMode = pAVar3;
-      pAVar3 = (Action *)0x0;
-      if (pAVar2->klass == TypeInfo__System__Action) {
-        pAVar3 = pAVar2;
-      }
-      if (pAVar3 != (Action *)0x0) goto code_?;
+    if (pAVar4 == (Action *)0x0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  if (iRam_? != 0) {
+    uVar5 = (uint)((ulonglong)&(pEVar1->fields).enteringPlayMode >> 0xc);
+    puVar6 = (ulonglong *)((ulonglong)((uVar5 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar7 = *puVar6;
+      LOCK();
+      uVar8 = *puVar6;
+      if (uVar7 == uVar8) {
+        *puVar6 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar7 != uVar8);
+  }
+  pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)this,(MethodInfo *)0x0);
+  this_02 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+            FUN_?(
+                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
+                         );
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+  ExecuteEvents_EventFunction_1_System_Object___ctor
+            (this_02,(Object *)this,
+             MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode___Clear_b__15_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+             ,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pMVar10 = 
+  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+  ;
+  if ((
+      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+      ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    if ((pMVar10->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(pMVar10);
+    }
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_GetEventChain
+            (pGVar9,(IList_1_UnityEngine_Transform_ *)
+                     TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                     s_InternalTransformList,(MethodInfo *)0x0);
+  pLVar11 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+           s_InternalTransformList;
+  if (pLVar11 != (List_1_UnityEngine_Transform_ *)0x0) {
+    lVar12 = (longlong)(pLVar11->fields)._size;
+    uVar5 = 0;
+    if (0 < lVar12) {
+      lVar13 = 0;
+      lVar14 = 0x20;
+      do {
+        if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pLVar11 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                 s_InternalTransformList;
+        if (pLVar11 == (List_1_UnityEngine_Transform_ *)0x0) goto code_?;
+        if ((uint)(pLVar11->fields)._size <= uVar5) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        pTVar15 = (pLVar11->fields)._items;
+        if (pTVar15 == (Transform__Array *)0x0) goto code_?;
+        if ((uint)pTVar15->max_length <= uVar5) {
+          FUN_?();
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        this_00 = *(Component **)((longlong)pTVar15->vector + lVar14 + -0x20);
+        if (this_00 == (Component *)0x0) goto code_?;
+        pGVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            (this_00,(MethodInfo *)0x0);
+        bVar16 = UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+                ExecuteEvents_Execute_18
+                          (pGVar9,(BaseEventData *)0x0,this_02,
+                           (pMVar10->field7_0x38).rgctx_data[1].method);
+        if (bVar16 != 0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    (this_00,(MethodInfo *)0x0);
+          return;
+        }
+        uVar5 = uVar5 + 1;
+        lVar13 = lVar13 + 1;
+        lVar14 = lVar14 + 8;
+      } while (lVar13 < lVar12);
+    }
+    return;
+  }
+code_?:
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -87,37 +199,124 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode___CreateBubble_b__13_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
-                   );
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode___CreateBubble_b__13_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                   ((Component *)this,(MethodInfo *)0x0);
-  callbackFunction =
-       (ExecuteEvents_EventFunction_1_System_Object_ *)
-       func_?(
-                      TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
-                      );
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-  UnityAction_2_System_Object_System_Object___ctor
-            ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+  this_01 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+            FUN_?(
+                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
+                         );
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+  ExecuteEvents_EventFunction_1_System_Object___ctor
+            (this_01,(Object *)this,
              MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode___CreateBubble_b__13_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
              ,(MethodInfo *)0x0);
-  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-            (root,(BaseEventData *)0x0,callbackFunction,
-             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
-            );
+  pMVar2 = 
+  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+  ;
+  if ((
+      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+      ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    if ((pMVar2->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(pMVar2);
+    }
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_GetEventChain
+            (pGVar1,(IList_1_UnityEngine_Transform_ *)
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                    s_InternalTransformList,(MethodInfo *)0x0);
+  pLVar3 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+           s_InternalTransformList;
+  if (pLVar3 != (List_1_UnityEngine_Transform_ *)0x0) {
+    lVar4 = (longlong)(pLVar3->fields)._size;
+    uVar5 = 0;
+    if (0 < lVar4) {
+      lVar6 = 0;
+      lVar7 = 0x20;
+      do {
+        if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pLVar3 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                 s_InternalTransformList;
+        if (pLVar3 == (List_1_UnityEngine_Transform_ *)0x0) goto code_?;
+        if ((uint)(pLVar3->fields)._size <= uVar5) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar8 = (code *)swi(3);
+          (*pcVar8)();
+          return;
+        }
+        pTVar9 = (pLVar3->fields)._items;
+        if (pTVar9 == (Transform__Array *)0x0) goto code_?;
+        if ((uint)pTVar9->max_length <= uVar5) {
+          FUN_?();
+          pcVar8 = (code *)swi(3);
+          (*pcVar8)();
+          return;
+        }
+        this_00 = *(Component **)((longlong)pTVar9->vector + lVar7 + -0x20);
+        if (this_00 == (Component *)0x0) goto code_?;
+        pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           (this_00,(MethodInfo *)0x0);
+        bVar10 = UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+                ExecuteEvents_Execute_18
+                          (pGVar1,(BaseEventData *)0x0,this_01,
+                           (pMVar2->field7_0x38).rgctx_data[1].method);
+        if (bVar10 != 0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    (this_00,(MethodInfo *)0x0);
+          return;
+        }
+        uVar5 = uVar5 + 1;
+        lVar6 = lVar6 + 1;
+        lVar7 = lVar7 + 8;
+      } while (lVar6 < lVar4);
+    }
+    return;
+  }
+code_?:
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -130,55 +329,70 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action);
-    func_?(&MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode__OnShown__);
+    FUN_?(&TypeInfo__System__Action);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode__OnShown__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pEVar1 = (this->fields).button;
   if (pEVar1 == (EnterPlayModeButton *)0x0) {
-    uVar2 = func_?();
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pAVar3 = (pEVar1->fields).enteringPlayMode;
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_00,(Object *)this,
+             MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode__OnShown__,(MethodInfo *)0x0
+            );
+  pAVar3 = (Action *)
+           mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pAVar3 == (Action *)0x0) {
+    (pEVar1->fields).enteringPlayMode = (Action *)0x0;
   }
   else {
-    pAVar3 = (pEVar1->fields).enteringPlayMode;
-    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,
-               MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode__OnShown__,
-               (MethodInfo *)0x0);
-    pAVar3 = (Action *)
-             mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
-    uVar2 = CONCAT44(TypeInfo__System__Action,pAVar3);
-    if (pAVar3 == (Action *)0x0) {
-      (pEVar1->fields).enteringPlayMode = (Action *)0x0;
-      ppAStack4 = &(pEVar1->fields).enteringPlayMode;
-      pAStack5 = (Action *)0x0;
-      func_?();
+    pAVar4 = (Action *)0x0;
+    if (pAVar3->klass == TypeInfo__System__Action) {
+      pAVar4 = pAVar3;
+    }
+    if (pAVar4 == (Action *)0x0) {
+      FUN_?(pAVar3,TypeInfo__System__Action);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
-    pAVar6 = (Action *)0x0;
+    (pEVar1->fields).enteringPlayMode = pAVar4;
+    pAVar4 = (Action *)0x0;
     if (pAVar3->klass == TypeInfo__System__Action) {
-      pAVar6 = pAVar3;
+      pAVar4 = pAVar3;
     }
-    if (pAVar6 != (Action *)0x0) {
-      (pEVar1->fields).enteringPlayMode = pAVar6;
-      uVar2 = CONCAT44(TypeInfo__System__Action,pAVar3);
-      pAStack5 = (Action *)0x0;
-      if (pAVar3->klass == TypeInfo__System__Action) {
-        pAStack5 = pAVar3;
-      }
-      if (pAStack5 != (Action *)0x0) {
-        ppAStack4 = &(pEVar1->fields).enteringPlayMode;
-        func_?();
-        return;
-      }
+    if (pAVar4 == (Action *)0x0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
     }
   }
-  _ppAStack0000000c = uVar2;
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  if (iRam_? != 0) {
+    uVar5 = (uint)((ulonglong)&(pEVar1->fields).enteringPlayMode >> 0xc);
+    puVar6 = (ulonglong *)((ulonglong)((uVar5 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar7 = *puVar6;
+      LOCK();
+      uVar8 = *puVar6;
+      if (uVar7 == uVar8) {
+        *puVar6 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar7 != uVar8);
+  }
   return;
 }
 
@@ -190,88 +404,93 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::
                (FirstTimeActivatableButtonPointerEnterEditMode *this,MethodInfo *method)
 
 {
+  FirstTimeActivatableButtonPointerEnterEditMode_Clear(this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action);
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode__OnShown__);
-    func_?(&
-                    MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode___Clear_b__15_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
-                   );
+    FUN_?(&
+                  TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pEVar1 = (this->fields).button;
-  if (pEVar1 == (EnterPlayModeButton *)0x0) {
-    func_?();
+  FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_UnRegister
+            ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
+  this_00 = (UnityAction_2_System_Object_System_Int32_ *)
+            FUN_?(
+                         TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
+                         );
+  if (this == (FirstTimeActivatableButtonPointerEnterEditMode *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Int32]::
+  UnityAction_2_System_Object_System_Int32___ctor
+            (this_00,(Object *)this,(this->klass->vtable).OnFirstTimeState.method,(MethodInfo *)0x0)
+  ;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
+                  ,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__FirstTimeEventManager);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)
+                      TypeInfo__FirstTimeEventManager->static_fields->firstTimeStatePublisher,
+                      (Delegate *)this_00,(MethodInfo *)0x0);
+  pAVar3 = 
+  TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
+  ;
+  if (pDVar2 == (Delegate *)0x0) {
+    TypeInfo__FirstTimeEventManager->static_fields->firstTimeStatePublisher =
+         (Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_ *)
+         0x0;
   }
   else {
-    pAVar2 = (pEVar1->fields).enteringPlayMode;
-    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,
-               MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode__OnShown__,
-               (MethodInfo *)0x0);
-    pAVar2 = (Action *)
-             mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pAVar2,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pAVar2 == (Action *)0x0) {
-      (pEVar1->fields).enteringPlayMode = (Action *)0x0;
-code_?:
-      func_?();
-      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
-      callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
-                 MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode___Clear_b__15_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?();
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
-                );
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_UnRegister
-                ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
-      this_01 = (EventHandler_1_Object_ *)func_?();
-      mscorlib.dll::System::EventHandler`1[Object]::EventHandler_1_Object___ctor
-                (this_01,(Object *)this,(this->klass->vtable).OnDestroy.methodPtr,(MethodInfo *)0x0)
-      ;
-      FirstTimeEventManager::FirstTimeEventManager_UnSubscribeToFirstTimeState
-                ((Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
-                  *)this_01,(MethodInfo *)0x0);
+    pAVar4 = (Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
+              *)FUN_?(pDVar2,
+                              TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
+                             );
+    if (pAVar4 == (Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_
+                   *)0x0) {
+      FUN_?(pDVar2,pAVar3);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
       return;
     }
-    pAVar3 = (Action *)0x0;
-    if (pAVar2->klass == TypeInfo__System__Action) {
-      pAVar3 = pAVar2;
+    TypeInfo__FirstTimeEventManager->static_fields->firstTimeStatePublisher = pAVar4;
+    pAVar3 = 
+    TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
+    ;
+    lVar5 = FUN_?(pDVar2,
+                          TypeInfo__System__Action<MV::WorldObject::MetaData::FirstTimeState,_MV::WorldObject::MetaData::FirstTimeEvent>
+                         );
+    if (lVar5 == 0) {
+      FUN_?(pDVar2,pAVar3);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
     }
-    if (pAVar3 == (Action *)0x0) goto code_?;
-    (pEVar1->fields).enteringPlayMode = pAVar3;
-    pAVar3 = (Action *)0x0;
-    if (pAVar2->klass == TypeInfo__System__Action) {
-      pAVar3 = pAVar2;
-    }
-    if (pAVar3 != (Action *)0x0) goto code_?;
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  if (iRam_? != 0) {
+    uVar6 = (uint)((ulonglong)TypeInfo__FirstTimeEventManager->static_fields >> 0xc);
+    puVar7 = (ulonglong *)((ulonglong)((uVar6 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar8 = *puVar7;
+      LOCK();
+      uVar9 = *puVar7;
+      if (uVar8 == uVar9) {
+        *puVar7 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar8 != uVar9);
+  }
   return;
 }
 
@@ -286,13 +505,109 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::
   if ((this->fields)._.waitingForDelay != 0) {
     routine = FirstTimeActivatableElementBase::FirstTimeActivatableElementBase_ShowDelay
                         ((FirstTimeActivatableElementBase *)this,(MethodInfo *)0x0);
-    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
+    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_2
               ((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
   }
-  if ((this->fields).shouldBeDelayedDestroyed != 0) {
-    FirstTimeEventManager::FirstTimeEventManager_SetFirstTimeEvent
-              ((this->fields)._._.firstTimeEvent,(MethodInfo *)0x0);
+  if ((this->fields).shouldBeDelayedDestroyed == 0) {
+    return;
   }
+  index = (this->fields)._._.firstTimeEvent;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__FirstTimeEventManager,0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pFVar1 = TypeInfo__FirstTimeEventManager->static_fields->firstTimeState;
+  if ((pFVar1 != (FirstTimeState *)0x0) &&
+     (pBVar2 = (pFVar1->fields).bitArray, pBVar2 != (BitArray *)0x0)) {
+    if ((pBVar2->fields).m_length <= index) {
+      mscorlib.dll::System::Collections::BitArray::BitArray_set_Length
+                (pBVar2,index + 1,(MethodInfo *)0x0);
+    }
+    pBVar2 = (pFVar1->fields).bitArray;
+    if (pBVar2 != (BitArray *)0x0) {
+      pvVar3 = (void *)0x0;
+      mscorlib.dll::System::Collections::BitArray::BitArray_Set(pBVar2,index,1,(MethodInfo *)0x0);
+      pFVar4 = TypeInfo__FirstTimeEventManager->static_fields;
+      if (pFVar4->firstTimeStatePublisher !=
+          (Action_2_MV_WorldObject_MetaData_FirstTimeState_MV_WorldObject_MetaData_FirstTimeEvent_ *
+          )0x0) {
+        pAVar5 = pFVar4->firstTimeStatePublisher;
+        pvVar3 = (pAVar5->fields)._._.method;
+        (*(pAVar5->fields)._._.invoke_impl)
+                  ((pAVar5->fields)._._.method_code,pFVar4->firstTimeState,index,pvVar3);
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pMVar6 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if (((pMVar6 != (MVGameControllerBase *)0x0) &&
+          (pMVar7 = (pMVar6->fields).game, pMVar7 != (MVNetworkGame *)0x0)) &&
+         (pMVar8 = (pMVar7->fields).operationRequests,
+         pMVar8 != (MVNetworkGame_OperationRequests *)0x0)) {
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
+                       );
+          LOCK();
+          UNLOCK();
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
+                       );
+          LOCK();
+          UNLOCK();
+          FUN_?(&
+                        TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
+                       );
+          LOCK();
+          UNLOCK();
+          FUN_?(&TypeInfo__ExitGames__Client__Photon__SendOptions);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        this_00 = (Dictionary_2_System_Byte_System_Object_ *)
+                  FUN_?(
+                               TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
+                               );
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
+        Dictionary_2_System_Byte_System_Object___ctor
+                  (this_00,
+                   MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
+                  );
+        aiStackX_8[0] = index;
+        value = (Object *)FUN_?(uRam_?,aiStackX_8);
+        if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
+          method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
+                      ->klass->rgctx_data[0x22].method;
+          uVar9 = CONCAT71((int7)((ulonglong)method_00 >> 8),0xbf);
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
+          Dictionary_2_System_Byte_System_Object__TryInsert
+                    (this_00,0xbf,value,
+                     (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pvVar3 >> 8),2),method_00)
+          ;
+          pPVar10 = (pMVar8->fields).peer;
+          if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
+            FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
+          }
+          if (pPVar10 != (PhotonPeer *)0x0) {
+            (*(pPVar10->klass->vtable).SendOperation.methodPtr)
+                      (pPVar10,CONCAT71((int7)((ulonglong)uVar9 >> 8),0x54),this_00,
+                       TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable
+                       ,(pPVar10->klass->vtable).SendOperation.method);
+            return;
+          }
+        }
+      }
+    }
+  }
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -305,52 +620,71 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action);
-    func_?(&MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode__OnShown__);
+    FUN_?(&TypeInfo__System__Action);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode__OnShown__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pEVar1 = (this->fields).button;
   if (pEVar1 == (EnterPlayModeButton *)0x0) {
-    uVar2 = func_?();
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pAVar3 = (pEVar1->fields).enteringPlayMode;
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+  NavMesh_OnNavMeshPreUpdate__ctor
+            (this_00,(Object *)this,
+             MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode__OnShown__,(MethodInfo *)0x0
+            );
+  pAVar3 = (Action *)
+           mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
+  if (pAVar3 == (Action *)0x0) {
+    (pEVar1->fields).enteringPlayMode = (Action *)0x0;
   }
   else {
-    pAVar3 = (pEVar1->fields).enteringPlayMode;
-    this_00 = (NavMesh_OnNavMeshPreUpdate *)func_?(TypeInfo__System__Action);
-    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-    NavMesh_OnNavMeshPreUpdate__ctor
-              (this_00,(Object *)this,
-               MethodInfo__FirstTimeActivatableButtonPointerEnterEditMode__OnShown__,
-               (MethodInfo *)0x0);
-    pAVar3 = (Action *)
-             mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pAVar3,(Delegate *)this_00,(MethodInfo *)0x0);
-    uVar2 = CONCAT44(TypeInfo__System__Action,pAVar3);
-    pAStack4 = (Action *)0x0;
-    if (pAVar3 == (Action *)0x0) {
-      (pEVar1->fields).enteringPlayMode = (Action *)0x0;
-code_?:
-      ppAStack5 = &(pEVar1->fields).enteringPlayMode;
-      func_?();
-      (this->fields).shouldBeDelayedDestroyed = 1;
+    pAVar4 = (Action *)0x0;
+    if (pAVar3->klass == TypeInfo__System__Action) {
+      pAVar4 = pAVar3;
+    }
+    if (pAVar4 == (Action *)0x0) {
+      FUN_?(pAVar3,TypeInfo__System__Action);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
+    (pEVar1->fields).enteringPlayMode = pAVar4;
+    pAVar4 = (Action *)0x0;
     if (pAVar3->klass == TypeInfo__System__Action) {
-      pAStack4 = pAVar3;
+      pAVar4 = pAVar3;
     }
-    if (pAStack4 != (Action *)0x0) {
-      (pEVar1->fields).enteringPlayMode = pAStack4;
-      uVar2 = CONCAT44(TypeInfo__System__Action,pAVar3);
-      pAStack4 = (Action *)0x0;
-      if (pAVar3->klass == TypeInfo__System__Action) {
-        pAStack4 = pAVar3;
-      }
-      if (pAStack4 != (Action *)0x0) goto code_?;
+    if (pAVar4 == (Action *)0x0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
     }
   }
-  _ppAStack0000000c = uVar2;
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  if (iRam_? != 0) {
+    uVar5 = (uint)((ulonglong)&(pEVar1->fields).enteringPlayMode >> 0xc);
+    puVar6 = (ulonglong *)((ulonglong)((uVar5 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar7 = *puVar6;
+      LOCK();
+      uVar8 = *puVar6;
+      if (uVar7 == uVar8) {
+        *puVar6 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar7 != uVar8);
+  }
+  (this->fields).shouldBeDelayedDestroyed = 1;
   return;
 }
 
@@ -363,17 +697,97 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::
                BaseEventData *y,MethodInfo *method)
 
 {
-  if ((this->fields).bubbleId != -1) {
-    if (x == (TextBubbleController *)0x0) {
-      uVar1 = func_?(&stack0xfffffff0);
-      func_?(uVar1);
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
-    TextBubbleController::TextBubbleController_ClearBubblesOfTypeImmediately
-              (x,(this->fields).bubbleId,(MethodInfo *)0x0);
+  if ((this->fields).bubbleId == -1) {
+    return;
   }
+  if (x != (TextBubbleController *)0x0) {
+    key = (this->fields).bubbleId;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__ContainsKey_int_
+                    ,key,0);
+      LOCK();
+      UNLOCK();
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__Remove_int_
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    this_00 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(x->fields).textBubbles;
+    if (this_00 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+      iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
+              Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                        (this_00,key,
+                         MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__ContainsKey_int_
+                         ->klass->rgctx_data[0x21].method);
+      if (iVar1 < 0) {
+        return;
+      }
+      pDVar2 = (x->fields).textBubbles;
+      if ((pDVar2 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
+         (pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                   Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                             ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,key,
+                              MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
+                             ), pOVar3 != (Object *)0x0)) {
+        pDVar2 = (x->fields).textBubbles;
+        *(undefined4 *)&pOVar3[1].klass = 0;
+        if (pDVar2 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) {
+          pTVar4 = (TextBubbleController_BubbleTracker *)
+                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                   Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                             ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,key,
+                              MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
+                             );
+          TextBubbleController::TextBubbleController_UpdateBubble(x,pTVar4,(MethodInfo *)0x0);
+          pDVar2 = (x->fields).textBubbles;
+          if (((pDVar2 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
+              (pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                                  ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,key,
+                                   MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
+                                  ), pOVar3 != (Object *)0x0)) &&
+             ((TextBubble *)pOVar3[1].monitor != (TextBubble *)0x0)) {
+            TextBubble::TextBubble_OnRemoved((TextBubble *)pOVar3[1].monitor,(MethodInfo *)0x0);
+            pDVar2 = (x->fields).textBubbles;
+            if ((pDVar2 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
+               (pTVar4 = (TextBubbleController_BubbleTracker *)
+                         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                         Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                                   ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,key,
+                                    MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
+                                   ), pTVar4 != (TextBubbleController_BubbleTracker *)0x0)) {
+              TextBubbleController+BubbleTracker::TextBubbleController_BubbleTracker_Clear
+                        (pTVar4,(MethodInfo *)0x0);
+              pDVar2 = (x->fields).textBubbles;
+              if (pDVar2 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) {
+                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                Object]::Dictionary_2_System_Int32_System_Object__Remove
+                          ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,key,
+                           MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__Remove_int_
+                          );
+                return;
+              }
+            }
+          }
+        }
+      }
+    }
+    FUN_?();
+    pcVar5 = (code *)swi(3);
+    (*pcVar5)();
+    return;
+  }
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -387,46 +801,100 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    UnityEngine__UI__Button_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Button>_UnityEngine__UI__Button_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&TypeInfo__UnityEngine__RectTransform);
-    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    FUN_?(&
+                  UnityEngine__UI__Button_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Button>_UnityEngine__UI__Button_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__RectTransform);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pTVar1 = (Transform *)(this->fields).pointToTransform;
-  if (pTVar1 != (Transform *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-              ((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
-    pTVar1 = (Transform *)(this->fields).pointToTransform;
-    if (pTVar1 != (Transform *)0x0) {
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         ((Vector3 *)&stack0xffffffd8,pTVar1,(MethodInfo *)0x0);
-      uVar3 = pVVar2->x;
-      uVar4 = pVVar2->y;
-      fVar5 = (float)uVar3 + (this->fields).pointerBodyDirectionOffset.x;
-      fVar6 = (float)uVar4 + (this->fields).pointerBodyDirectionOffset.y;
-      fVar6 = fVar6 + fVar6;
+  pRVar1 = (this->fields).pointToTransform;
+  if (pRVar1 != (RectTransform *)0x0) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar2 = (pRVar1->fields)._._._.m_CachedPtr;
+    if (pvVar2 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar1,(MethodInfo *)0x0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pcVar3 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pcRam_? = pcVar3;
+    (*pcRam_?)(pvVar2);
+    pRVar1 = (this->fields).pointToTransform;
+    if (pRVar1 != (RectTransform *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pvVar2 = (pRVar1->fields)._._._.m_CachedPtr;
+      if (pvVar2 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar1,(MethodInfo *)0x0);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pcVar3 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+        uVar4 = func_?(&UNK_?);
+        FUN_?(uVar4,0);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pcRam_? = pcVar3;
+      (*pcRam_?)(pvVar2);
+      fVar5 = (this->fields).pointerBodyDirectionOffset.x + 0.0;
+      fVar6 = (this->fields).pointerBodyDirectionOffset.y + 0.0;
       lifeTime = (this->fields).bubbleLifetimeWhileShown;
       content = (this->fields).bubbleContent;
-      pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+      pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                          ((Component *)this,(MethodInfo *)0x0);
       if (x != (TextBubbleController *)0x0) {
-        anchoredPosition.y = 0.0;
-        anchoredPosition.x = (float)pTVar1;
-        targetCenterPoint.y = fVar6;
+        element = (Transform *)0x0;
+        targetCenterPoint.y = fVar6 + fVar6;
         targetCenterPoint.x = fVar5 + fVar5;
-        iVar7 = TextBubbleController::TextBubbleController_ShowBubble2D
-                          (x,anchoredPosition,targetCenterPoint,lifeTime,content,pTVar1,
+        iVar8 = TextBubbleController::TextBubbleController_ShowBubble2D
+                          (x,(Vector2)0x0,targetCenterPoint,lifeTime,content,pTVar7,
                            (MethodInfo *)0x0);
-        (this->fields).bubbleId = iVar7;
+        (this->fields).bubbleId = iVar8;
         if ((this->fields).skipAllowed == 0) {
           return;
         }
         original = (this->fields).skipElement;
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
         }
         this_01 = (Component *)
                   UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
@@ -434,41 +902,330 @@ void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::
                              UnityEngine__UI__Button_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::UI::Button>_UnityEngine__UI__Button_
                             );
         if (this_01 != (Component *)0x0) {
-          this_00 = this_01[0xf].klass;
-          this_02 = (NavMesh_OnNavMeshPreUpdate *)func_?();
+          this_00 = this_01[10].fields._.m_CachedPtr;
+          this_02 = (NavMesh_OnNavMeshPreUpdate *)
+                    FUN_?(TypeInfo__UnityEngine__Events__UnityAction);
           UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
           NavMesh_OnNavMeshPreUpdate__ctor
-                    (this_02,(Object *)this,(this->klass->vtable).get_CanShow_1.methodPtr,
-                     (MethodInfo *)this_02);
-          if (this_00 != (Component__Class *)0x0) {
+                    (this_02,(Object *)this,(this->klass->vtable).SkipEvent.method,(MethodInfo *)0x0
+                    );
+          if (this_00 != (UnityEvent *)0x0) {
             UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
-                      ((UnityEvent *)this_00,(UnityAction *)this_02,(MethodInfo *)0x0);
-            iVar7 = (this->fields).bubbleId;
-            pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                      (this_00,(UnityAction *)this_02,(MethodInfo *)0x0);
+            iVar8 = (this->fields).bubbleId;
+            pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                                (this_01,(MethodInfo *)0x0);
-            pTVar1 = (Transform *)0x0;
-            if (pTVar8 == (Transform *)0x0) {
-code_?:
-              TextBubbleController::TextBubbleController_AddFirstElement
-                        ((TextBubbleController *)&UNK_?,iVar7,(RectTransform *)pTVar1,
-                         (MethodInfo *)0x0);
-              return;
+            if (pTVar7 != (Transform *)0x0) {
+              if (pTVar7->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
+                element = pTVar7;
+              }
+              if (element == (Transform *)0x0) {
+                FUN_?(pTVar7);
+                pcVar3 = (code *)swi(3);
+                (*pcVar3)();
+                return;
+              }
             }
-            if (pTVar8->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
-              pTVar1 = pTVar8;
-            }
-            if (pTVar1 != (Transform *)0x0) goto code_?;
-            goto code_?;
+            TextBubbleController::TextBubbleController_AddFirstElement
+                      (x,iVar8,(RectTransform *)element,(MethodInfo *)0x0);
+            return;
           }
         }
       }
     }
   }
-  func_?();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
+  return;
+}
+
+
+/* FirstTimeActivatableButtonPointerEnterEditMode() */
+
+void Assembly-CSharp.dll::FirstTimeActivatableButtonPointerEnterEditMode::
+     FirstTimeActivatableButtonPointerEnterEditMode__ctor
+               (FirstTimeActivatableButtonPointerEnterEditMode *this,MethodInfo *method)
+
+{
+  bVar1 = cRam_? == '\0';
+  (this->fields).bubbleId = -1;
+  (this->fields).bubbleLifetimeWhileShown = 3.4028235e+38;
+  (this->fields).skipAllowed = 1;
+  (this->fields)._.onShowSound = 3;
+  (this->fields)._.prerequisiteEvent = -1;
+  (this->fields)._.checkForStackBlocking = 1;
+  if (bVar1) {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pOVar2 = TypeInfo__UnityEngine__Object;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c != 0) {
+    return;
+  }
+  ppMVar3 = (MethodInfo **)0x0;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c != 0) {
+    return;
+  }
+  lVar4 = _Baselib_Thread_GetCurrentThreadId_il2cpp_baselib__YA_JXZ();
+  ppMVar5 = ppMVar3;
+  if (lVar4 == lRam_?) {
+    iRam_? = iRam_? + 1;
+    lVar4 = lRam_?;
+  }
+  else {
+    do {
+      uVar6 = (uint)ppMVar5;
+      LOCK();
+      bVar1 = uVar6 != uRam_?;
+      uVar7 = uVar6;
+      uVar8 = uVar6 + 1;
+      if (bVar1) {
+        uVar7 = uRam_?;
+        uVar8 = uRam_?;
+      }
+      uRam_? = uVar8;
+      UNLOCK();
+    } while ((bVar1) && (ppMVar5 = (MethodInfo **)(ulonglong)uVar7, uVar6 = uVar7, uVar7 != 2)
+            );
+    while (uVar6 != 0) {
+      _Baselib_SystemFutex_Wait_il2cpp_baselib__YAXPEAHHI_Z(0xADDR,2,0xffffffff);
+      uVar6 = uRam_?;
+      LOCK();
+      uRam_? = 2;
+      UNLOCK();
+    }
+  }
+  lRam_? = lVar4;
+  puVar9 = &(pOVar2->_1).field_0x1c;
+  LOCK();
+  bVar1 = *(int *)puVar9 == 1;
+  if (bVar1) {
+    *(undefined4 *)puVar9 = 1;
+  }
+  uVar6 = uRam_?;
+  UNLOCK();
+  if (bVar1) {
+    if (iRam_? != 0) {
+      iRam_? = iRam_? + -1;
+      return;
+    }
+    lRam_? = 0;
+    LOCK();
+    uRam_? = 0;
+    UNLOCK();
+    if (uVar6 != 2) {
+      uRam_? = 0;
+      lRam_? = 0;
+      return;
+    }
+    _Baselib_SystemFutex_Notify_il2cpp_baselib__YAXPEAHIW4Baselib_WakeupFallbackStrategy_1__Z
+              (0xADDR,1,0);
+    return;
+  }
+  puVar10 = &(pOVar2->_1).cctor_finished_or_no_cctor;
+  LOCK();
+  bVar1 = *puVar10 == 1;
+  if (bVar1) {
+    *puVar10 = 1;
+  }
+  uVar6 = uRam_?;
+  UNLOCK();
+  if (bVar1) {
+    if (iRam_? == 0) {
+      lRam_? = 0;
+      LOCK();
+      uRam_? = 0;
+      UNLOCK();
+      if (uVar6 == 2) {
+        _Baselib_SystemFutex_Notify_il2cpp_baselib__YAXPEAHIW4Baselib_WakeupFallbackStrategy_1__Z
+                  (0xADDR,1,0);
+      }
+    }
+    else {
+      iRam_? = iRam_? + -1;
+    }
+    uVar6 = GetCurrentThreadId();
+    psVar11 = &(pOVar2->_1).cctor_thread;
+    LOCK();
+    bVar1 = (ulonglong)uVar6 == *psVar11;
+    if (bVar1) {
+      *psVar11 = (ulonglong)uVar6;
+    }
+    UNLOCK();
+    if (bVar1) {
+      return;
+    }
+    while( true ) {
+      puVar9 = &(pOVar2->_1).field_0x1c;
+      LOCK();
+      bVar1 = *(int *)puVar9 == 1;
+      if (bVar1) {
+        *(undefined4 *)puVar9 = 1;
+      }
+      UNLOCK();
+      if (bVar1) break;
+      LOCK();
+      lVar4._0_4_ = (pOVar2->_1).initializationExceptionGCHandle;
+      lVar4._4_4_ = (pOVar2->_1).cctor_started;
+      if (lVar4 == 0) {
+        (pOVar2->_1).initializationExceptionGCHandle = 0;
+        (pOVar2->_1).cctor_started = 0;
+      }
+      UNLOCK();
+      if (lVar4 != 0) break;
+      FUN_?(*puRam_?);
+    }
 code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+    lVar12._0_4_ = (pOVar2->_1).initializationExceptionGCHandle;
+    lVar12._4_4_ = (pOVar2->_1).cctor_started;
+    if (lVar12 == 0) {
+      return;
+    }
+  }
+  else {
+    uVar6 = GetCurrentThreadId();
+    LOCK();
+    (pOVar2->_1).cctor_thread = (ulonglong)uVar6;
+    UNLOCK();
+    LOCK();
+    (pOVar2->_1).cctor_finished_or_no_cctor = 1;
+    uVar6 = uRam_?;
+    UNLOCK();
+    if (iRam_? == 0) {
+      lRam_? = 0;
+      LOCK();
+      uRam_? = 0;
+      UNLOCK();
+      if (uVar6 == 2) {
+        _Baselib_SystemFutex_Notify_il2cpp_baselib__YAXPEAHIW4Baselib_WakeupFallbackStrategy_1__Z
+                  (0xADDR,1,0);
+      }
+    }
+    else {
+      iRam_? = iRam_? + -1;
+    }
+    lStackX_10 = 0;
+    if (((pOVar2->_1).field_0x6e & 4) != 0) {
+      FUN_?(pOVar2);
+      ppMVar5 = ppMVar3;
+      pIVar13 = (Il2CppClass *)pOVar2;
+code_?:
+      do {
+        if (ppMVar5 == (MethodInfo **)0x0) {
+          FUN_?(pIVar13);
+          if (pIVar13->field_count != 0) {
+            ppMVar5 = pIVar13->methods;
+            pMVar14 = *ppMVar5;
+code_?:
+            if (pMVar14 != (MethodInfo *)0x0) {
+              if ((*pMVar14->name == '.') && ((pMVar14->flags & 0x800) != 0)) {
+                ppMVar15 = ppMVar3;
+                while (ppMVar16 = ppMVar15 + 0x30528cee,
+                      ppMVar15 = (MethodInfo **)((longlong)ppMVar15 + 1),
+                      *(char *)ppMVar16 == (pMVar14->name + -1)[(longlong)ppMVar15]) {
+                  if (ppMVar15 == (MethodInfo **)0x7) {
+                    FUN_?(pMVar14,0,0,&lStackX_10);
+                    goto code_?;
+                  }
+                }
+              }
+              goto code_?;
+            }
+          }
+        }
+        else {
+          ppMVar5 = ppMVar5 + 1;
+          if (ppMVar5 < pIVar13->methods + pIVar13->field_count) {
+            pMVar14 = *ppMVar5;
+            goto code_?;
+          }
+        }
+        pIVar13 = pIVar13->parent;
+        ppMVar5 = ppMVar3;
+      } while (pIVar13 != (Il2CppClass *)0x0);
+    }
+code_?:
+    LOCK();
+    (pOVar2->_1).cctor_thread = 0;
+    uVar17 = _UNK_?;
+    uVar18 = _UNK_?;
+    UNLOCK();
+    if (lStackX_10 == 0) {
+      LOCK();
+      *(undefined4 *)&(pOVar2->_1).field_0x1c = 1;
+      UNLOCK();
+      goto code_?;
+    }
+    uStack_19 = 0;
+    uStack_20 = _UNK_?;
+    uStack_21 = _UNK_?;
+    pppppppuStack_78 = (undefined8 *******)0x0;
+    FUN_?(&pppppppuStack_78,&(pOVar2->_0).byval_arg,0,0);
+    pppppppuVar16 = &pppppppuStack_78;
+    if (0xf < uStack_21) {
+      pppppppuVar16 = pppppppuStack_78;
+    }
+    FUN_?(apppppppuStack_58,&UNK_?,pppppppuVar16);
+    if (uStack_21 < 0x10) {
+code_?:
+      lVar4 = lStackX_10;
+      pppppppuStack_78 = (undefined8 *******)((ulonglong)pppppppuStack_78 & 0xffffffffffffff00);
+      pppppppuVar16 = apppppppuStack_58;
+      if (0xf < uStack_22) {
+        pppppppuVar16 = apppppppuStack_58[0];
+      }
+      uStack_20 = uVar18;
+      uStack_21 = uVar17;
+      lVar12 = FUN_?(uRam_?,&UNK_?,&UNK_?,pppppppuVar16);
+      if (lVar4 != 0) {
+        *(longlong *)(lVar12 + 0x28U) = lVar4;
+        if (iRam_? != 0) {
+          uVar6 = (uint)(lVar12 + 0x28U >> 0xc);
+          puVar23 = (ulonglong *)((ulonglong)((uVar6 & 0x1fffff) >> 6) * 8 + 0xADDR);
+          do {
+            uVar24 = *puVar23;
+            LOCK();
+            uVar17 = *puVar23;
+            if (uVar24 == uVar17) {
+              *puVar23 = uVar24 | 1L << (uVar6 & 0x3f);
+            }
+            UNLOCK();
+          } while (uVar24 != uVar17);
+        }
+      }
+      FUN_?(pOVar2,lVar12);
+      if (0xf < uStack_22) {
+        pppppppuVar16 = apppppppuStack_58[0];
+        if ((0xfff < uStack_22 + 1) &&
+           (pppppppuVar16 = (undefined8 *******)apppppppuStack_58[0][-1],
+           0x1f < (ulonglong)((longlong)apppppppuStack_58[0] + (-8 - (longlong)pppppppuVar16))))
+        goto code_?;
+        func_?(pppppppuVar16);
+      }
+      goto code_?;
+    }
+    pppppppuVar16 = pppppppuStack_78;
+    if ((uStack_21 + 1 < 0x1000) ||
+       (pppppppuVar16 = (undefined8 *******)pppppppuStack_78[-1],
+       (ulonglong)((longlong)pppppppuStack_78 + (-8 - (longlong)pppppppuVar16)) < 0x20)) {
+      func_?(pppppppuVar16);
+      uVar18 = _UNK_?;
+      uVar17 = _UNK_?;
+      goto code_?;
+    }
+    FUN_?(0,0,0,0,0);
+  }
+  uVar18._0_4_ = (pOVar2->_1).initializationExceptionGCHandle;
+  uVar18._4_4_ = (pOVar2->_1).cctor_started;
+  uVar18 = FUN_?(uVar18);
+  FUN_?(uVar18,0);
+code_?:
+  FUN_?(0,0,0,0,0);
+  pcVar25 = (code *)swi(3);
+  (*pcVar25)();
   return;
 }
 

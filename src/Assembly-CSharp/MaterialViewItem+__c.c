@@ -6,37 +6,25 @@ void Assembly-CSharp.dll::MaterialViewItem+<>c::MaterialViewItem_c__OnClick_b__1
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
-    func_?(&StringLiteral_Destructible_material_only_avail);
-    func_?(&::StringLiteral__);
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Destructible_material_only_avail);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pSVar1 = TM::TM__(StringLiteral_Destructible_material_only_avail,(MethodInfo *)0x0);
-  pSVar2 = ::StringLiteral__;
-  if (x == (IModalPopupCreator *)0x0) {
-    func_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+  TM::TM__(StringLiteral_Destructible_material_only_avail,(MethodInfo *)0x0);
+  if (x != (IModalPopupCreator *)0x0) {
+    FUN_?();
     return;
   }
-  uVar4 = 0;
-  pIVar5 = x->klass;
-  uVar6._0_1_ = (pIVar5->_1).rank;
-  uVar6._1_1_ = (pIVar5->_1).minimumAlignment;
-  if (uVar6 != 0) {
-    do {
-      if (pIVar5->interfaceOffsets[uVar4].interfaceType ==
-          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-        ppMVar7 = &(&(x->klass->vtable).Create_3)[x->klass->interfaceOffsets[uVar4].offset].method;
-        goto code_?;
-      }
-      uVar4 = uVar4 + 1;
-    } while (uVar4 < uVar6);
-  }
-  ppMVar7 = (MethodInfo **)
-            func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,4);
-code_?:
-  (*(code *)*ppMVar7)(x,pSVar1,pSVar2,ppMVar7[1]);
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -48,22 +36,36 @@ void Assembly-CSharp.dll::MaterialViewItem+<>c::MaterialViewItem_c__OnClick_b__1
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (handler != (IUIStack *)0x0) {
-    ppIStack_1 = (IUIStack__Class **)0x8;
-    pIStack_2 = handler;
-    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?(3);
+  if (handler == (IUIStack *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  uVar2 = 0;
+  pIVar3 = handler->klass;
+  uVar4._0_1_ = (pIVar3->_1).rank;
+  uVar4._1_1_ = (pIVar3->_1).minimumAlignment;
+  if (uVar4 != 0) {
+    do {
+      if (pIVar3->interfaceOffsets[uVar2].interfaceType ==
+          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
+        pVVar5 = &(pIVar3->vtable).get_StackReady + (pIVar3->interfaceOffsets[uVar2].offset + 3);
+        goto code_?;
+      }
+      uVar2 = uVar2 + 1;
+    } while (uVar2 < uVar4);
+  }
+  pVVar5 = (VirtualInvokeData *)FUN_?(handler);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pVVar5->methodPtr)(handler,8,pVVar5->method,pVVar5->methodPtr);
   return;
 }
 
@@ -75,22 +77,36 @@ void Assembly-CSharp.dll::MaterialViewItem+<>c::MaterialViewItem_c__OnInfoClick_
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (handler != (IUIStack *)0x0) {
-    ppIStack_1 = (IUIStack__Class **)0x8;
-    pIStack_2 = handler;
-    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?(3);
+  if (handler == (IUIStack *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  uVar2 = 0;
+  pIVar3 = handler->klass;
+  uVar4._0_1_ = (pIVar3->_1).rank;
+  uVar4._1_1_ = (pIVar3->_1).minimumAlignment;
+  if (uVar4 != 0) {
+    do {
+      if (pIVar3->interfaceOffsets[uVar2].interfaceType ==
+          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
+        pVVar5 = &(pIVar3->vtable).get_StackReady + (pIVar3->interfaceOffsets[uVar2].offset + 3);
+        goto code_?;
+      }
+      uVar2 = uVar2 + 1;
+    } while (uVar2 < uVar4);
+  }
+  pVVar5 = (VirtualInvokeData *)FUN_?(handler);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pVVar5->methodPtr)(handler,8,pVVar5->method,pVVar5->methodPtr);
   return;
 }
 
@@ -101,15 +117,26 @@ void Assembly-CSharp.dll::MaterialViewItem+<>c::MaterialViewItem_c__cctor(Method
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MaterialViewItem____c);
+    FUN_?(&TypeInfo__MaterialViewItem____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__MaterialViewItem____c;
-  value = (MaterialViewItem_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  TypeInfo__MaterialViewItem____c->static_fields->__9 = value;
-  func_?(TypeInfo__MaterialViewItem____c->static_fields,value);
+  pMVar1 = (MaterialViewItem_c *)FUN_?(TypeInfo__MaterialViewItem____c);
+  TypeInfo__MaterialViewItem____c->static_fields->__9 = pMVar1;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)TypeInfo__MaterialViewItem____c->static_fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 

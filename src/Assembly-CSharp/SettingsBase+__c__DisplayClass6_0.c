@@ -8,22 +8,37 @@ void Assembly-CSharp.dll::SettingsBase+<>c__DisplayClass6_0::
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (handler != (IUIStack *)0x0) {
-    ppIStack_1 = (IUIStack__Class **)(this->fields).GroupFlags;
-    pIStack_2 = handler;
-    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?(3);
+  if (handler == (IUIStack *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  uVar2 = (this->fields).GroupFlags;
+  uVar3 = 0;
+  pIVar4 = handler->klass;
+  uVar5._0_1_ = (pIVar4->_1).rank;
+  uVar5._1_1_ = (pIVar4->_1).minimumAlignment;
+  if (uVar5 != 0) {
+    do {
+      if (pIVar4->interfaceOffsets[uVar3].interfaceType ==
+          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
+        pVVar6 = &(pIVar4->vtable).get_StackReady + (pIVar4->interfaceOffsets[uVar3].offset + 3);
+        goto code_?;
+      }
+      uVar3 = uVar3 + 1;
+    } while (uVar3 < uVar5);
+  }
+  pVVar6 = (VirtualInvokeData *)FUN_?(handler);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pVVar6->methodPtr)(handler,(ulonglong)uVar2,pVVar6->method,pVVar6->methodPtr);
   return;
 }
 
@@ -37,31 +52,35 @@ void Assembly-CSharp.dll::SettingsBase+<>c__DisplayClass6_0::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
-    func_?(&MethodInfo__SettingsBase__OnPop__);
-    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__SettingsBase__OnPop__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pSVar1 = (this->fields).__4__this;
   if (pSVar1 != (SettingsBase *)0x0) {
-    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)pSVar1,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+              ((Component *)pSVar1,(MethodInfo *)0x0);
     pSVar1 = (this->fields).__4__this;
-    iVar3 = (this->fields).PushOptions;
     this_00 = (NavMesh_OnNavMeshPreUpdate *)
-              func_?(TypeInfo__UnityEngine__Events__UnityAction);
+              FUN_?(TypeInfo__UnityEngine__Events__UnityAction);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
               (this_00,(Object *)pSVar1,MethodInfo__SettingsBase__OnPop__,(MethodInfo *)0x0);
     if (handler != (IUIStack *)0x0) {
-      func_?(1,TypeInfo__UnityEngine__EventSystems__IUIStack,handler,pGVar2,iVar3,this_00,
-                      (this->fields).GroupFlags);
+      FUN_?();
       return;
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

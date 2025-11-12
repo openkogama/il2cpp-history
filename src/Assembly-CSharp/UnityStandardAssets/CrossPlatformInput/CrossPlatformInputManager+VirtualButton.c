@@ -6,10 +6,21 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
                (CrossPlatformInputManager_VirtualButton *this,MethodInfo *method)
 
 {
+  pcVar1 = pcRam_?;
   if ((this->fields).m_Pressed == 0) {
     (this->fields).m_Pressed = 1;
-    iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_frameCount((MethodInfo *)0x0);
-    (this->fields).m_LastPressedFrame = iVar1;
+    pcVar2 = pcRam_?;
+    if ((pcVar1 == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar2 = pcVar1, pcVar1 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    iVar4 = (*pcVar1)();
+    (this->fields).m_LastPressedFrame = iVar4;
   }
   return;
 }
@@ -22,9 +33,20 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
                (CrossPlatformInputManager_VirtualButton *this,MethodInfo *method)
 
 {
+  pcVar1 = pcRam_?;
   (this->fields).m_Pressed = 0;
-  iVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_frameCount((MethodInfo *)0x0);
-  (this->fields).m_ReleasedFrame = iVar1;
+  pcVar2 = pcRam_?;
+  if ((pcVar1 == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar2 = pcVar1, pcVar1 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar2;
+  iVar4 = (*pcVar1)();
+  (this->fields).m_ReleasedFrame = iVar4;
   return;
 }
 
@@ -37,44 +59,54 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    FUN_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   key = (this->fields)._name_k__BackingField;
-  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+  if (*(int *)&(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+               field_0x1c == 0) {
+    FUN_?();
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    FUN_?(&TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
-      cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager);
+  if (*(int *)&(TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->_1).
+               field_0x1c == 0) {
+    FUN_?();
   }
   pVVar1 = TypeInfo__UnityStandardAssets__CrossPlatformInput__CrossPlatformInputManager->
            static_fields->activeInput;
   if (pVVar1 != (VirtualInput *)0x0) {
     if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualButton>__ContainsKey_System__String_
-                     );
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualButton>__Remove_System__String_
-                     );
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualButton>__ContainsKey_System__String_
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualButton>__Remove_System__String_
+                   );
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-              (pVVar1->fields).m_VirtualButtons;
-    if (this_00 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
+    this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+               *)(pVVar1->fields).m_VirtualButtons;
+    if (this_00 !=
+        (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_ *)
+        0x0) {
+      iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::StyleComplexSelector+PseudoStateData]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
                         (this_00,(Object *)key,
                          MethodInfo__System__Collections__Generic__Dictionary<System::String,_UnityStandardAssets::CrossPlatformInput::CrossPlatformInputManager::VirtualButton>__ContainsKey_System__String_
-                        );
-      if (bVar2 != 0) {
+                         ->klass->rgctx_data[0x21].method);
+      if (-1 < iVar2) {
         this_01 = (pVVar1->fields).m_VirtualButtons;
         if (this_01 ==
             (Dictionary_2_System_String_UnityStandardAssets_CrossPlatformInput_CrossPlatformInputManager_VirtualButton_
@@ -89,7 +121,7 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
     }
   }
 code_?:
-  func_?();
+  FUN_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -103,12 +135,25 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
                (CrossPlatformInputManager_VirtualButton *this,String *name,MethodInfo *method)
 
 {
+  bVar1 = iRam_? == 0;
   (this->fields).m_LastPressedFrame = -5;
   (this->fields).m_ReleasedFrame = -5;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._name_k__BackingField = name;
-  func_?(&this->fields,name);
+  if (bVar1) {
+    (this->fields)._matchWithInputManager_k__BackingField = 1;
+    return;
+  }
+  uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+  puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+  do {
+    uVar4 = *puVar3;
+    LOCK();
+    uVar5 = *puVar3;
+    if (uVar4 == uVar5) {
+      *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+    }
+    UNLOCK();
+  } while (uVar4 != uVar5);
   (this->fields)._matchWithInputManager_k__BackingField = 1;
   return;
 }
@@ -122,12 +167,25 @@ void Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
                ,MethodInfo *method)
 
 {
+  bVar1 = iRam_? == 0;
   (this->fields).m_LastPressedFrame = -5;
   (this->fields).m_ReleasedFrame = -5;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._name_k__BackingField = name;
-  func_?(&this->fields,name);
+  if (bVar1) {
+    (this->fields)._matchWithInputManager_k__BackingField = matchToInputSettings;
+    return;
+  }
+  uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+  puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+  do {
+    uVar4 = *puVar3;
+    LOCK();
+    uVar5 = *puVar3;
+    if (uVar4 == uVar5) {
+      *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+    }
+    UNLOCK();
+  } while (uVar4 != uVar5);
   (this->fields)._matchWithInputManager_k__BackingField = matchToInputSettings;
   return;
 }
@@ -142,8 +200,18 @@ bool Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
 
 {
   iVar1 = (this->fields).m_LastPressedFrame;
-  iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_frameCount((MethodInfo *)0x0);
-  return iVar1 - iVar2 == -1;
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar2 = (code *)swi(3);
+    bVar4 = (*pcVar2)();
+    return bVar4;
+  }
+  pcRam_? = pcVar2;
+  iVar5 = (*pcRam_?)();
+  return iVar1 - iVar5 == -1;
 }
 
 
@@ -156,7 +224,17 @@ bool Assembly-CSharp.dll::UnityStandardAssets::CrossPlatformInput::
 
 {
   iVar1 = (this->fields).m_ReleasedFrame;
-  iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_frameCount((MethodInfo *)0x0);
-  return iVar1 == iVar2 + -1;
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar2 = (code *)swi(3);
+    bVar4 = (*pcVar2)();
+    return bVar4;
+  }
+  pcRam_? = pcVar2;
+  iVar5 = (*pcRam_?)();
+  return iVar1 == iVar5 + -1;
 }
 

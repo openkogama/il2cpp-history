@@ -6,79 +6,164 @@ void Assembly-CSharp.dll::CollectTheItemObject::CollectTheItemObject_InitializeG
 
 {
   pGVar1 = (this->fields).greyOutObject;
-  if (pGVar1 != (GreyOutObjectScript *)0x0) {
-    if (cRam_? == '\0') {
-      ppMStack_2 = &
-                    UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______
-      ;
-      func_?();
-      func_?(&
-                      MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Add_GreyOutObjectScript__PickupOriginalMaterials_
-                     );
-      func_?(&
-                      MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Clear__
-                     );
-      func_?(&TypeInfo__GreyOutObjectScript__PickupOriginalMaterials);
-      cRam_? = '\x01';
+  if (pGVar1 == (GreyOutObjectScript *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Add_GreyOutObjectScript__PickupOriginalMaterials_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Clear__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__GreyOutObjectScript__PickupOriginalMaterials);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pLVar3 = (pGVar1->fields).pickupOriginalMaterials;
+  if (pLVar3 != (List_1_GreyOutObjectScript_PickupOriginalMaterials_ *)0x0) {
+    length = (pLVar3->fields)._size;
+    uVar4 = 0;
+    piVar5 = &(pLVar3->fields)._version;
+    *piVar5 = *piVar5 + 1;
+    (pLVar3->fields)._size = 0;
+    if (0 < length) {
+      mscorlib.dll::System::Array::Array_Clear
+                ((Array *)(pLVar3->fields)._items,0,length,(MethodInfo *)0x0);
     }
-    pLVar3 = (pGVar1->fields).pickupOriginalMaterials;
-    if (pLVar3 != (List_1_GreyOutObjectScript_PickupOriginalMaterials_ *)0x0) {
-      length = (pLVar3->fields)._size;
-      piVar4 = &(pLVar3->fields)._version;
-      *piVar4 = *piVar4 + 1;
-      (pLVar3->fields)._size = 0;
-      if (0 < length) {
-        mscorlib.dll::System::Array::Array_Clear
-                  ((Array *)(pLVar3->fields)._items,0,length,(MethodInfo *)0x0);
+    pMVar6 = 
+    UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______
+    ;
+    this_00 = (pGVar1->fields).pickupObject;
+    if (this_00 != (GameObject *)0x0) {
+      if ((
+          UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______
+          ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+        FUN_?(
+                     UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______
+                     );
       }
-      this_00 = (pGVar1->fields).pickupObject;
-      if (this_00 != (GameObject *)0x0) {
-        this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                  GameObject_GetComponentsInChildren
-                            (this_00,
-                             UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______
-                            );
-        uVar5 = 0;
-        if (this_02 != (Object__Array *)0x0) {
-          ppOVar6 = this_02->vector;
-          while( true ) {
-            method_00 = TypeInfo__GreyOutObjectScript__PickupOriginalMaterials;
-            if ((int)this_02->max_length <= (int)uVar5) {
-              return;
-            }
-            if (this_02->max_length <= uVar5) break;
-            this_01 = (Object__Class *)*ppOVar6;
-            value = (Object *)func_?();
-            *(undefined1 *)&value[2].klass = 1;
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                      (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-            value[1].klass = this_01;
-            func_?();
-            if (this_01 == (Object__Class *)0x0) goto code_?;
-            pMVar7 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_sharedMaterials
-                               ((Renderer *)this_01,(MethodInfo *)0x0);
-            value[1].monitor = (MonitorData *)pMVar7;
-            func_?();
-            this_02 = *(Object__Array **)&(this_01->_0).this_arg.attrs;
-            if (this_02 == (Object__Array *)0x0) goto code_?;
-            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-            List_1_System_Object__Add
-                      ((List_1_System_Object_ *)this_02,value,
-                       MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Add_GreyOutObjectScript__PickupOriginalMaterials_
-                      );
-            uVar5 = uVar5 + 1;
-            ppOVar6 = (Object **)&value->monitor;
+      p_Var10 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                GameObject_GetComponentsInChildren_4
+                          (this_00,0,((pMVar6->field7_0x38).rgctx_data)->method);
+      if (p_Var10 != (_Il2CppFullySharedGenericType__Array *)0x0) {
+        pp_Var16 = p_Var10->vector;
+        while( true ) {
+          if ((int)p_Var10->max_length <= (int)uVar4) {
+            return;
           }
-          func_?();
+          if ((uint)p_Var10->max_length <= uVar4) {
+            FUN_?();
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          obj = (Object__Class *)*pp_Var16;
+          item = (Object *)FUN_?(TypeInfo__GreyOutObjectScript__PickupOriginalMaterials);
+          bVar7 = iRam_? != 0;
+          *(undefined1 *)&item[2].klass = 1;
+          item[1].klass = obj;
+          if (bVar7) {
+            uVar8 = (uint)((ulonglong)(item + 1) >> 0xc);
+            lVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6) * 8;
+            do {
+              uVar10 = *(ulonglong *)(lVar9 + 0xADDR);
+              puVar11 = (ulonglong *)(lVar9 + 0xADDR);
+              LOCK();
+              bVar7 = uVar10 == *puVar11;
+              if (bVar7) {
+                *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar7);
+          }
+          if (obj == (Object__Class *)0x0) break;
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Renderer>_UnityEngine__Renderer_
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pcVar12 = (obj->_0).name;
+          if (pcVar12 == (char *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcVar2 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+            uVar13 = func_?(&UNK_?);
+            FUN_?(uVar13,0);
+            pcVar2 = (code *)swi(3);
+            (*pcVar2)();
+            return;
+          }
+          pcRam_? = pcVar2;
+          pMVar14 = (MonitorData *)(*pcRam_?)(pcVar12);
+          bVar7 = iRam_? != 0;
+          item[1].monitor = pMVar14;
+          if (bVar7) {
+            uVar8 = (uint)((ulonglong)&item[1].monitor >> 0xc);
+            lVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6) * 8;
+            do {
+              uVar10 = *(ulonglong *)(lVar9 + 0xADDR);
+              puVar11 = (ulonglong *)(lVar9 + 0xADDR);
+              LOCK();
+              bVar7 = uVar10 == *puVar11;
+              if (bVar7) {
+                *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar7);
+          }
+          pMVar6 = 
+          MethodInfo__System__Collections__Generic__List<GreyOutObjectScript::PickupOriginalMaterials>__Add_GreyOutObjectScript__PickupOriginalMaterials_
+          ;
+          pLVar3 = (pGVar1->fields).pickupOriginalMaterials;
+          if (pLVar3 == (List_1_GreyOutObjectScript_PickupOriginalMaterials_ *)0x0) break;
+          piVar5 = &(pLVar3->fields)._version;
+          *piVar5 = *piVar5 + 1;
+          pGVar15 = (pLVar3->fields)._items;
+          if (pGVar15 == (GreyOutObjectScript_PickupOriginalMaterials__Array *)0x0) break;
+          uVar8 = (pLVar3->fields)._size;
+          if (uVar8 < (uint)pGVar15->max_length) {
+            (pLVar3->fields)._size = uVar8 + 1;
+            FUN_?(pGVar15,(longlong)(int)uVar8,item);
+            uVar4 = uVar4 + 1;
+            pp_Var16 = pp_Var16 + 1;
+          }
+          else {
+            mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+            List_1_System_Object__AddWithResize
+                      ((List_1_System_Object_ *)pLVar3,item,pMVar6->klass->rgctx_data[0xe].method);
+            uVar4 = uVar4 + 1;
+            pp_Var16 = pp_Var16 + 1;
+          }
         }
       }
     }
   }
-code_?:
-  uVar8 = func_?(&ppMStack_2);
-  func_?(uVar8);
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -91,19 +176,30 @@ bool Assembly-CSharp.dll::CollectTheItemObject::CollectTheItemObject_ShouldDoBli
 {
   pCVar1 = (this->fields).blinker;
   if (pCVar1 == (CollectTheItemBlinker *)0x0) {
-    func_?();
+    FUN_?();
     pcVar2 = (code *)swi(3);
     bVar3 = (*pcVar2)();
     return bVar3;
   }
-  if ((pCVar1->fields)._.visible != 0) {
-    fVar4 = (this->fields).fadeTimer;
-    if (_UNK_? <= fVar4) {
-      return 1;
-    }
-    fVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    (this->fields).fadeTimer = fVar5 + fVar4;
+  if ((pCVar1->fields)._.visible == 0) {
+    return 0;
   }
+  fVar4 = (this->fields).fadeTimer;
+  if (_UNK_? <= fVar4) {
+    return 1;
+  }
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar5 = func_?(&UNK_?);
+    FUN_?(uVar5,0);
+    pcVar2 = (code *)swi(3);
+    bVar3 = (*pcVar2)();
+    return bVar3;
+  }
+  pcRam_? = pcVar2;
+  fVar6 = (float)(*pcRam_?)();
+  (this->fields).fadeTimer = fVar6 + fVar4;
   return 0;
 }
 
@@ -116,8 +212,8 @@ void Assembly-CSharp.dll::CollectTheItemObject::CollectTheItemObject_Update
 {
   this_00 = (this->fields).blinker;
   if (this_00 == (CollectTheItemBlinker *)0x0) {
-code_?:
-    func_?();
+DAT_?:
+    FUN_?();
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
@@ -127,31 +223,61 @@ code_?:
     if (_UNK_? <= fVar2) {
       if (this_00 != (CollectTheItemBlinker *)0x0) {
         BlinkerBase::BlinkerBase_StartBlinking
-                  ((BlinkerBase *)this_00,BlinkType__Enum_AboutToExpire,INFINITY,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-                  ((Behaviour *)this,0,(MethodInfo *)0x0);
+                  ((BlinkerBase *)this_00,BlinkType__Enum_AboutToExpire,_UNK_?,
+                   (MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Behaviour>_UnityEngine__Behaviour_
+                        ,0,0);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (this == (CollectTheItemObject *)0x0) {
+          FUN_?();
+          pcVar1 = (code *)swi(3);
+          (*pcVar1)();
+          return;
+        }
+        pvVar3 = (this->fields)._._._._._.m_CachedPtr;
+        if (pvVar3 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)this,(MethodInfo *)0x0);
+          pcVar1 = (code *)swi(3);
+          (*pcVar1)();
+          return;
+        }
+        pcVar1 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+          uVar4 = func_?(&UNK_?);
+          FUN_?(uVar4,0);
+          pcVar1 = (code *)swi(3);
+          (*pcVar1)();
+          return;
+        }
+        pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        (*pcRam_?)(pvVar3,0);
         return;
       }
-      goto code_?;
+      goto DAT_?;
     }
-    fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    (this->fields).fadeTimer = fVar3 + fVar2;
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    fVar5 = (float)(*pcRam_?)();
+    (this->fields).fadeTimer = fVar5 + fVar2;
   }
   return;
-}
-
-
-/* Boolean get_EnableFading() */
-
-bool Assembly-CSharp.dll::CollectTheItemObject::CollectTheItemObject_get_EnableFading
-               (CollectTheItemObject *this,MethodInfo *method)
-
-{
-  if (pcRam_? == (code *)0x0) {
-    pcRam_? = (code *)func_?(&UNK_?);
-  }
-  bVar1 = (*pcRam_?)(this);
-  return bVar1;
 }
 
 
@@ -161,10 +287,41 @@ void Assembly-CSharp.dll::CollectTheItemObject::CollectTheItemObject_set_EnableF
                (CollectTheItemObject *this,bool value,MethodInfo *method)
 
 {
-  if (pcRam_? == (code *)0x0) {
-    pcRam_? = (code *)func_?(&UNK_?);
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Behaviour>_UnityEngine__Behaviour_
+                  ,CONCAT71(in_register_00000011,value),0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  (*pcRam_?)(this,_value);
+  if (this == (CollectTheItemObject *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pvVar2 = (this->fields)._._._._._.m_CachedPtr;
+  if (pvVar2 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)this,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pcRam_?)(pvVar2,value);
   return;
 }
 

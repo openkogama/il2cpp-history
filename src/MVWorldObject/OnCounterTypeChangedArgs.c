@@ -6,88 +6,105 @@ String * MVWorldObject.dll::OnCounterTypeChangedArgs::OnCounterTypeChangedArgs_T
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GameStatCounterType);
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__MV__WorldObject__MVTeam);
-    func_?(&TypeInfo__System__Object);
-    func_?(&StringLiteral_CounterType___0___Value___1___Ac);
+    FUN_?(&TypeInfo__GameStatCounterType);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__MVTeam);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_CounterType___0___Value___1___Ac);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  args = (Object__Array *)func_?(TypeInfo__System__Object,5);
-  uStack_1 = (this->fields).counterType;
-  pOVar2 = (Object *)func_?(TypeInfo__GameStatCounterType,&uStack_1);
-  if (args == (Object__Array *)0x0) {
-    func_?();
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
+  args = (Object__Array *)FUN_?(TypeInfo__System__Object,5);
+  aiStackX_8[0] = CONCAT31(aiStackX_8[0]._1_3_,(this->fields).counterType);
+  lVar1 = FUN_?(TypeInfo__GameStatCounterType,aiStackX_8);
+  if (args != (Object__Array *)0x0) {
+    if (lVar1 != 0) {
+      lVar2 = FUN_?(lVar1,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar5 = (String *)(*pcVar4)();
+        return pSVar5;
+      }
+    }
+    FUN_?(args,0,lVar1);
+    aiStackX_8[0] = (this->fields).count;
+    lVar1 = FUN_?(uRam_?,aiStackX_8);
+    if (lVar1 != 0) {
+      lVar2 = FUN_?(lVar1,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar5 = (String *)(*pcVar4)();
+        return pSVar5;
+      }
+    }
+    FUN_?(args,1,lVar1);
+    aiStackX_8[0] = (this->fields).actorNumber;
+    lVar1 = FUN_?(uRam_?,aiStackX_8);
+    if (lVar1 != 0) {
+      lVar2 = FUN_?(lVar1,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar5 = (String *)(*pcVar4)();
+        return pSVar5;
+      }
+    }
+    FUN_?(args,2,lVar1);
+    aiStackX_8[0] = (this->fields).team;
+    lVar1 = FUN_?(TypeInfo__MV__WorldObject__MVTeam,aiStackX_8);
+    if (lVar1 != 0) {
+      lVar2 = FUN_?(lVar1,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar5 = (String *)(*pcVar4)();
+        return pSVar5;
+      }
+    }
+    FUN_?(args,3,lVar1);
+    aiStackX_8[0] = (this->fields).otherID;
+    lVar1 = FUN_?(uRam_?,aiStackX_8);
+    if (lVar1 != 0) {
+      lVar1 = FUN_?(lVar1,(args->klass->_0).element_class);
+      if (lVar1 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar5 = (String *)(*pcVar4)();
+        return pSVar5;
+      }
+    }
+    FUN_?(args,4);
+    pSVar5 = StringLiteral_CounterType___0___Value___1___Ac;
+    PStack_6._arg0 = (Object *)0x0;
+    PStack_6._arg1 = (Object *)0x0;
+    PStack_6._arg2 = (Object *)0x0;
+    PStack_6._args = (Object__Array *)0x0;
+    mscorlib.dll::System::ParamsArray::ParamsArray__ctor_3(&PStack_6,args,(MethodInfo *)0x0);
+    PStack_7._arg0 = PStack_6._arg0;
+    PStack_7._arg1 = PStack_6._arg1;
+    PStack_7._arg2 = PStack_6._arg2;
+    PStack_7._args = PStack_6._args;
+    pSVar5 = mscorlib.dll::System::String::String_FormatHelper
+                       ((IFormatProvider *)0x0,pSVar5,&PStack_7,(MethodInfo *)0x0);
+    return pSVar5;
   }
-  else {
-    if (pOVar2 != (Object *)0x0) {
-      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar4 == 0) goto code_?;
-    }
-    if (args->max_length == 0) goto code_?;
-    args->vector[0] = pOVar2;
-    func_?(args->vector,pOVar2);
-    iStack_5 = (this->fields).count;
-    pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_5);
-    if (pOVar2 != (Object *)0x0) {
-      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar4 == 0) goto code_?;
-    }
-    if (args->max_length < 2) goto code_?;
-    args->vector[1] = pOVar2;
-    func_?(args->vector + 1,pOVar2);
-    iStack_6 = (this->fields).actorNumber;
-    pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_6);
-    if (pOVar2 != (Object *)0x0) {
-      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar4 == 0) goto code_?;
-    }
-    if (args->max_length < 3) goto code_?;
-    args->vector[2] = pOVar2;
-    func_?(args->vector + 2,pOVar2);
-    iStack_7 = (this->fields).team;
-    pOVar2 = (Object *)func_?(TypeInfo__MV__WorldObject__MVTeam,&iStack_7);
-    if (pOVar2 != (Object *)0x0) {
-      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar4 == 0) goto code_?;
-    }
-    if (args->max_length < 4) goto code_?;
-    args->vector[3] = pOVar2;
-    func_?(args->vector + 3,pOVar2);
-    iStack_8 = (this->fields).otherID;
-    pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_8);
-    if (pOVar2 != (Object *)0x0) {
-      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar4 == 0) goto code_?;
-    }
-    if (4 < args->max_length) {
-      args->vector[4] = pOVar2;
-      func_?(args->vector + 4,pOVar2);
-      pSVar9 = mscorlib.dll::System::String::String_Format_3
-                         (StringLiteral_CounterType___0___Value___1___Ac,args,(MethodInfo *)0x0);
-      return pSVar9;
-    }
-  }
-code_?:
-  func_?();
-  pcVar10 = (code *)swi(3);
-  pSVar9 = (String *)(*pcVar10)();
-  return pSVar9;
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  pSVar5 = (String *)(*pcVar4)();
+  return pSVar5;
 }
 
 
@@ -99,22 +116,20 @@ void MVWorldObject.dll::OnCounterTypeChangedArgs::OnCounterTypeChangedArgs__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__EventArgs);
+    FUN_?(&TypeInfo__System__EventArgs);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   (this->fields).otherID = -1;
-  if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__EventArgs);
+  if (*(int *)&(TypeInfo__System__EventArgs->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-  UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor
-            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
-  (this->fields).count = count;
-  (this->fields).counterType = (undefined1)counterType;
-  (this->fields).actorNumber = actorNumber;
   (this->fields).team = team;
+  (this->fields).count = count;
+  (this->fields).counterType = (uint8_t)counterType;
   (this->fields).otherID = otherID;
+  (this->fields).actorNumber = actorNumber;
   return;
 }
 

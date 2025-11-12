@@ -18,7 +18,11 @@ Assembly-CSharp.dll::RTG::AxisDescriptor::AxisDescriptor_GetAssociatedBoxFace
     return BoxFace__Enum_Left;
   }
   if (iVar1 != 0) {
-    return (uint)((this->fields)._index == 1) * 4 + BoxFace__Enum_Back;
+    BVar2 = BoxFace__Enum_Top;
+    if ((this->fields)._index != 1) {
+      BVar2 = BoxFace__Enum_Back;
+    }
+    return BVar2;
   }
   return BoxFace__Enum_Right;
 }
@@ -30,8 +34,6 @@ void Assembly-CSharp.dll::RTG::AxisDescriptor::AxisDescriptor__ctor
                (AxisDescriptor *this,int32_t axisIndex,AxisSign__Enum axisSign,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._sign = axisSign;
   (this->fields)._index = axisIndex;
   return;
@@ -44,16 +46,24 @@ void Assembly-CSharp.dll::RTG::AxisDescriptor::AxisDescriptor__ctor_1
                (AxisDescriptor *this,int32_t axisIndex,bool isNegative,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   if (this != (AxisDescriptor *)0x0) {
     (this->fields)._sign = (uint)isNegative;
     (this->fields)._index = axisIndex;
     return;
   }
-  func_?();
+  FUN_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;
+}
+
+
+/* Boolean get_IsPositive() */
+
+bool Assembly-CSharp.dll::RTG::AxisDescriptor::AxisDescriptor_get_IsPositive
+               (AxisDescriptor *this,MethodInfo *method)
+
+{
+  return (this->fields)._sign == 0;
 }
 

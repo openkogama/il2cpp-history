@@ -8,58 +8,162 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Costume::MVCostumeB
   pMVar1 = (this->fields)._.editableCubeModel;
   if ((pMVar1 != (MVCubeModelInstance *)0x0) &&
      (this_00 = (pMVar1->fields)._._.transform, this_00 != (Transform *)0x0)) {
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent
-              (this_00,(this->fields)._.cubeModelBaseParent,(MethodInfo *)0x0);
+    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+              (this_00,(this->fields)._.cubeModelBaseParent,1,(MethodInfo *)0x0);
     pMVar1 = (this->fields)._.editableCubeModel;
     if (pMVar1 != (MVCubeModelInstance *)0x0) {
       pBVar2 = MVCubeModelBase::MVCubeModelBase_GetBounds
-                          ((Bounds *)&stack0xffffffd8,(MVCubeModelBase *)pMVar1,(MethodInfo *)0x0);
-      fVar3 = (pBVar2->m_Extents).y;
-      fVar4 = (pBVar2->m_Extents).z;
+                         (aBStack_3,(MVCubeModelBase *)pMVar1,(MethodInfo *)0x0);
+      uStack_4._0_4_ = (pBVar2->m_Extents).y;
+      uStack_4._4_4_ = (pBVar2->m_Extents).z;
+      fVar5 = (pBVar2->m_Extents).x;
       pMVar1 = (this->fields)._.editableCubeModel;
       if ((pMVar1 != (MVCubeModelInstance *)0x0) &&
-         (this_01 = (pMVar1->fields)._._.transform, this_01 != (Transform *)0x0)) {
-        fVar5 = 0.0;
-        pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                            ((Vector3 *)&stack0xffffffe4,this_01,(MethodInfo *)0x0);
-        uVar7 = pVVar6->x;
-        uVar8 = pVVar6->y;
-        value.y = (float)((uint)(fVar3 * (float)uVar8) ^
-                         __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field) *
-                  _UNK_?;
-        value.x = fVar5 * (float)uVar7 * _UNK_?;
-        value.z = fVar4 * pVVar6->z * _UNK_?;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                  (this_00,value,(MethodInfo *)0x0);
+         (obj = (pMVar1->fields)._._.transform, obj != (Transform *)0x0)) {
         if (cRam_? == '\0') {
-          func_?();
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                       );
+          LOCK();
+          UNLOCK();
           cRam_? = '\x01';
         }
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                  (this_00,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
-                   (MethodInfo *)0x0);
+        uStack_6 = 0;
+        fStack_7 = 0.0;
+        pvVar8 = (obj->fields)._._.m_CachedPtr;
+        if (pvVar8 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
+        }
+        pcVar9 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0)) {
+          uVar10 = func_?(&UNK_?);
+          FUN_?(uVar10,0);
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
+        }
+        pcRam_? = pcVar9;
+        (*pcRam_?)(pvVar8);
+        fStack_11 = uStack_4._4_4_ * fStack_7 * _UNK_?;
+        uStack_12 = CONCAT44((float)((uint)((float)uStack_4 * uStack_6._4_4_) ^ _UNK_?) *
+                             _UNK_?,fVar5 * (float)uStack_6 * _UNK_?);
         if (cRam_? == '\0') {
-          func_?();
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                       );
+          LOCK();
+          UNLOCK();
           cRam_? = '\x01';
         }
-        pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
-        uVar10 = (pVVar9->oneVector).x;
-        uVar11 = (pVVar9->oneVector).y;
-        fVar4 = (pVVar9->oneVector).z;
-        fVar12 = (float10)(*(code *)(this->klass->vtable).get_CubeModelScale.method)();
-        fVar3 = (float)fVar12;
-        value_00.y = (float)uVar11 * fVar3;
-        value_00.x = (float)uVar10 * fVar3;
-        value_00.z = fVar4 * fVar3;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                  (this_00,value_00,(MethodInfo *)0x0);
+        pvVar8 = (this_00->fields)._._.m_CachedPtr;
+        if (pvVar8 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)this_00,(MethodInfo *)0x0);
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
+        }
+        pcVar9 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0)) {
+          uVar10 = func_?(&UNK_?);
+          FUN_?(uVar10,0);
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
+        }
+        pcRam_? = pcVar9;
+        (*pcRam_?)(pvVar8);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Quaternion);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pQVar13 = TypeInfo__UnityEngine__Quaternion->static_fields;
+        uStack_6._0_4_ = (pQVar13->identityQuaternion).x;
+        uStack_6._4_4_ = (pQVar13->identityQuaternion).y;
+        fStack_7 = (pQVar13->identityQuaternion).z;
+        fStack_14 = (pQVar13->identityQuaternion).w;
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pvVar8 = (this_00->fields)._._.m_CachedPtr;
+        if (pvVar8 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)this_00,(MethodInfo *)0x0);
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
+        }
+        pcVar9 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0)) {
+          uVar10 = func_?(&UNK_?);
+          FUN_?(uVar10,0);
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
+        }
+        pcRam_? = pcVar9;
+        (*pcRam_?)(pvVar8,&uStack_6);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Vector3);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pVVar15 = TypeInfo__UnityEngine__Vector3->static_fields;
+        uVar16 = (pVVar15->oneVector).x;
+        uVar17 = (pVVar15->oneVector).y;
+        fVar5 = (pVVar15->oneVector).z;
+        fVar18 = (float)(*(this->klass->vtable).get_CubeModelScale.methodPtr)(this);
+        fStack_11 = fVar5 * fVar18;
+        uStack_12 = CONCAT44((float)uVar17 * fVar18,(float)uVar16 * fVar18);
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pvVar8 = (this_00->fields)._._.m_CachedPtr;
+        if (pvVar8 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)this_00,(MethodInfo *)0x0);
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
+        }
+        pcVar9 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0)) {
+          uVar10 = func_?(&UNK_?);
+          FUN_?(uVar10,0);
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
+        }
+        pcRam_? = pcVar9;
+        (*pcRam_?)(pvVar8,&uStack_12);
         return;
       }
     }
   }
-  func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -77,12 +181,8 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::Costume::MVCostumeB
   (this->fields)._.cubeModelPid = -1;
   MVBlueprintBase::MVBlueprintBase__ctor
             ((MVBlueprintBase *)this,data,worldObjects,(MethodInfo *)0x0);
-  iVar1 = (this->fields)._._._._.interactionFlags;
-  *(undefined4 *)((int)&(this->fields)._._._._.interactionFlags + 4) =
-       *(undefined4 *)((int)&(this->fields)._._._._.interactionFlags + 4);
-  puVar2 = (uint *)((int)&(this->fields)._._._._.interactionFlags + 4);
-  *puVar2 = *puVar2 | 2;
-  *(uint *)&(this->fields)._._._._.interactionFlags = (uint)iVar1 | 0xADDR;
+  piVar1 = &(this->fields)._._._._.interactionFlags;
+  *piVar1 = *piVar1 | 0x21030b100;
   return;
 }
 

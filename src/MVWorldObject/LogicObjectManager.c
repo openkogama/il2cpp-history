@@ -6,21 +6,25 @@ void MVWorldObject.dll::LogicObjectManager::LogicObjectManager_AddLogicObjectToU
                IInputSignalReceiver *logicWorldObject,MethodInfo *method)
 
 {
+  uVar1 = SUB84(method,0);
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__Add_int__IInputSignalReceiver_
+                  ,CONCAT44(in_register_00000014,worldObjectID),logicWorldObject,uVar1);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (Dictionary_2_System_Int32_System_Object_ *)(this->fields).logicWorldObjects;
   if (this_00 != (Dictionary_2_System_Int32_System_Object_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-    Dictionary_2_System_Int32_System_Object__Add
-              (this_00,worldObjectID,(Object *)logicWorldObject,
-               MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__Add_int__IInputSignalReceiver_
-              );
+    Dictionary_2_System_Int32_System_Object__TryInsert
+              (this_00,worldObjectID,(Object *)logicWorldObject,CONCAT31((int3)((uint)uVar1 >> 8),2)
+               ,MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__Add_int__IInputSignalReceiver_
+                ->klass->rgctx_data[0x22].method);
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -34,22 +38,33 @@ void MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ClearDebugIds
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-            (this->fields).updatedIds;
-  if (this_00 != (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
-    System.Core.dll::System::Collections::Generic::HashSet`1[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType]::
-    HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__Clear
-              (this_00,MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
+  pHVar1 = (this->fields).updatedIds;
+  if (pHVar1 != (HashSet_1_System_Int32_ *)0x0) {
+    if (0 < (pHVar1->fields)._lastIndex) {
+      mscorlib.dll::System::Array::Array_Clear
+                ((Array *)(pHVar1->fields)._slots,0,(pHVar1->fields)._lastIndex,(MethodInfo *)0x0);
+      pIVar2 = (pHVar1->fields)._buckets;
+      if (pIVar2 == (Int32__Array *)0x0) goto code_?;
+      mscorlib.dll::System::Array::Array_Clear
+                ((Array *)(pHVar1->fields)._buckets,0,(int32_t)pIVar2->max_length,(MethodInfo *)0x0)
+      ;
+      (pHVar1->fields)._freeList = -1;
+      (pHVar1->fields)._count = 0;
+      (pHVar1->fields)._lastIndex = 0;
+    }
+    piVar3 = &(pHVar1->fields)._version;
+    *piVar3 = *piVar3 + 1;
     return;
   }
-  uVar1 = func_?(&puStack_2);
-  func_?(uVar1);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+code_?:
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -61,36 +76,175 @@ void MVWorldObject.dll::LogicObjectManager::LogicObjectManager_DebugAddId
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (HashSet_1_System_UInt32_ *)(this->fields).updatedIds;
-  if (this_00 != (HashSet_1_System_UInt32_ *)0x0) {
-    bVar1 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
-            HashSet_1_System_UInt32__Contains
+  this_00 = (HashSet_1_System_Int32Enum_ *)(this->fields).updatedIds;
+  if (this_00 != (HashSet_1_System_Int32Enum_ *)0x0) {
+    bVar1 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+            HashSet_1_System_Int32Enum__Contains
                       (this_00,id,
                        MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
-    if (bVar1 != 0) goto code_?;
+    if (bVar1 != 0) {
+      uVar2 = func_?(&TypeInfo__System__Exception);
+      this_04 = (Exception *)func_?(uVar2);
+      pSVar3 = (String *)func_?(&StringLiteral_Id_already_evaluated__This_is_a_);
+      mscorlib.dll::System::Exception::Exception__ctor_1(this_04,pSVar3,(MethodInfo *)0x0);
+      uVar2 = func_?(&MethodInfo__LogicObjectManager__DebugAddId_int_);
+      FUN_?(this_04,uVar2);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
     this_01 = (this->fields).updatedIds;
     if (this_01 != (HashSet_1_System_Int32_ *)0x0) {
-      System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-      HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
-                (this_01,id,MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+      pMVar5 = MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_->klass->rgctx_data
+               [0x15].method;
+      if ((this_01->fields)._buckets == (Int32__Array *)0x0) {
+        FUN_?(this_01,0,pMVar5->klass->rgctx_data[0xe].rgctxDataDummy);
+      }
+      pIVar6 = (this_01->fields)._comparer;
+      if (pIVar6 != (IEqualityComparer_1_System_Int32_ *)0x0) {
+        pvVar7 = (pMVar5->klass->rgctx_data[0x16].method)->klass->rgctx_data[4].rgctxDataDummy;
+        if ((*(byte *)((longlong)pvVar7 + 0x135) & 1) == 0) {
+          pvVar7 = (void *)FUN_?(pvVar7);
+        }
+        uVar8 = FUN_?(1,pvVar7,pIVar6,id);
+        pIVar9 = (this_01->fields)._buckets;
+        uVar8 = uVar8 & 0x7fffffff;
+        if (pIVar9 != (Int32__Array *)0x0) {
+          pHVar10 = (this_01->fields)._slots;
+          uVar11 = (int)uVar8 % (int)pIVar9->max_length;
+          if (uVar11 < (uint)pIVar9->max_length) {
+            uVar12 = pIVar9->vector[(int)uVar11] - 1;
+            if (-1 < (int)uVar12) {
+              iVar13 = 0;
+              if (pHVar10 == (HashSet_1_T_Slot_System_Int32___Array *)0x0)
+              goto code_?;
+              do {
+                if ((uint)pHVar10->max_length <= uVar12) goto code_?;
+                if (pHVar10->vector[(int)uVar12].hashCode == uVar8) {
+                  if ((this_01->fields)._comparer == (IEqualityComparer_1_System_Int32_ *)0x0)
+                  goto code_?;
+                  pvVar7 = pMVar5->klass->rgctx_data[4].rgctxDataDummy;
+                  if ((*(byte *)((longlong)pvVar7 + 0x135) & 1) == 0) {
+                    FUN_?(pvVar7);
+                  }
+                  cVar14 = FUN_?();
+                  if (cVar14 != '\0') {
+                    return;
+                  }
+                }
+                if ((int)pHVar10->max_length <= iVar13) {
+                  uVar2 = func_?(&TypeInfo__System__InvalidOperationException);
+                  this_02 = (ProtocolViolationException *)func_?(uVar2);
+                  pSVar3 = (String *)
+                            func_?(&StringLiteral_Operations_that_change_non_concu);
+                  System.dll::System::Net::ProtocolViolationException::
+                  ProtocolViolationException__ctor_1(this_02,pSVar3,(MethodInfo *)0x0);
+                  FUN_?(this_02,pMVar5);
+                  pcVar4 = (code *)swi(3);
+                  (*pcVar4)();
+                  return;
+                }
+                iVar13 = iVar13 + 1;
+                if ((uint)pHVar10->max_length <= uVar12) goto code_?;
+                uVar12 = pHVar10->vector[(int)uVar12].next;
+              } while (-1 < (int)uVar12);
+            }
+            if ((this_01->fields)._freeList < 0) {
+              if (pHVar10 == (HashSet_1_T_Slot_System_Int32___Array *)0x0)
+              goto code_?;
+              if ((this_01->fields)._lastIndex == (int)pHVar10->max_length) {
+                pMVar5 = pMVar5->klass->rgctx_data[0x2b].method;
+                if (cRam_? == '\0') {
+                  FUN_?(&TypeInfo__System__Collections__HashHelpers);
+                  LOCK();
+                  UNLOCK();
+                  cRam_? = '\x01';
+                }
+                iVar15 = (this_01->fields)._count;
+                if (*(int *)&(TypeInfo__System__Collections__HashHelpers->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                iVar15 = mscorlib.dll::System::Collections::HashHelpers::HashHelpers_1_ExpandPrime
+                                  (iVar15,(MethodInfo *)0x0);
+                if (iVar15 <= (this_01->fields)._count) {
+                  uVar2 = func_?(&TypeInfo__System__ArgumentException);
+                  this_03 = (InvalidEnumArgumentException *)func_?(uVar2);
+                  pSVar3 = (String *)
+                            func_?(&StringLiteral_HashSet_capacity_is_too_big_);
+                  System.dll::System::ComponentModel::InvalidEnumArgumentException::
+                  InvalidEnumArgumentException__ctor_1(this_03,pSVar3,(MethodInfo *)0x0);
+                  FUN_?(this_03,pMVar5);
+                  pcVar4 = (code *)swi(3);
+                  (*pcVar4)();
+                  return;
+                }
+                System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+                HashSet_1_System_Int32__SetCapacity
+                          (this_01,iVar15,pMVar5->klass->rgctx_data[0x2a].method);
+                pIVar9 = (this_01->fields)._buckets;
+                pHVar10 = (this_01->fields)._slots;
+                if (pIVar9 == (Int32__Array *)0x0) goto code_?;
+                uVar11 = (int)uVar8 % (int)pIVar9->max_length;
+              }
+              uVar12 = (this_01->fields)._lastIndex;
+              piVar16 = &(this_01->fields)._lastIndex;
+              *piVar16 = *piVar16 + 1;
+              if (pHVar10 == (HashSet_1_T_Slot_System_Int32___Array *)0x0)
+              goto code_?;
+            }
+            else {
+              uVar12 = (this_01->fields)._freeList;
+              if (pHVar10 == (HashSet_1_T_Slot_System_Int32___Array *)0x0)
+              goto code_?;
+              if ((uint)pHVar10->max_length <= uVar12) goto code_?;
+              (this_01->fields)._freeList = pHVar10->vector[(int)uVar12].next;
+            }
+            if ((uVar12 < (uint)pHVar10->max_length) &&
+               (pHVar10->vector[(int)uVar12].hashCode = uVar8, uVar12 < (uint)pHVar10->max_length))
+            {
+              pHVar10->vector[(int)uVar12].value = id;
+              pIVar9 = (this_01->fields)._buckets;
+              if (pIVar9 == (Int32__Array *)0x0) goto code_?;
+              if ((uVar11 < (uint)pIVar9->max_length) && (uVar12 < (uint)pHVar10->max_length)) {
+                pHVar10->vector[(int)uVar12].next = pIVar9->vector[(int)uVar11] + -1;
+                pIVar9 = (this_01->fields)._buckets;
+                if (pIVar9 == (Int32__Array *)0x0) goto code_?;
+                if (uVar11 < (uint)pIVar9->max_length) {
+                  pIVar9->vector[(int)uVar11] = uVar12 + 1;
+                  piVar16 = &(this_01->fields)._count;
+                  *piVar16 = *piVar16 + 1;
+                  piVar16 = &(this_01->fields)._version;
+                  *piVar16 = *piVar16 + 1;
+                  return;
+                }
+              }
+            }
+          }
+code_?:
+          FUN_?();
+          pcVar4 = (code *)swi(3);
+          (*pcVar4)();
+          return;
+        }
+      }
+code_?:
+      FUN_?();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
       return;
     }
   }
-  func_?();
-code_?:
-  uVar2 = func_?();
-  this_02 = (Exception *)func_?(uVar2);
-  method_00 = (MethodInfo *)0x0;
-  message = (String *)func_?(&StringLiteral_Id_already_evaluated__This_is_a_);
-  mscorlib.dll::System::Exception::Exception__ctor_1(this_02,message,method_00);
-  func_?();
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -101,83 +255,73 @@ bool MVWorldObject.dll::LogicObjectManager::LogicObjectManager_DoesLinkExist
                (MVWorldObject *outputWo,int32_t inputWOID,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffbc;
-  puVar5 = &stack0xffffffbc;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__GetEnumerator__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
-  if ((outputWo != (MVWorldObject *)0x0) &&
-     (this = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-             (outputWo->fields).outputLinkRefs,
-     this != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) {
-    pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-             RegexCharClass+SingleRange]::
-             List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                       (&LStack_8,this,
-                        MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__GetEnumerator__
-                       );
-    LStack_6._list = (List_1_System_Object_ *)pLVar7->_list;
-    LStack_6._index = pLVar7->_index;
-    LStack_6._version = pLVar7->_version;
-    LStack_6._current = *(Object **)&pLVar7->_current;
-    LStack_8._version = 0;
-    uStack_1 = 1;
-    LStack_8._current = (RegexCharClass_SingleRange)&LStack_6;
+  if ((outputWo == (MVWorldObject *)0x0) ||
+     (pLVar1 = (outputWo->fields).outputLinkRefs, pLVar1 == (List_1_MV_WorldObject_Link_ *)0x0)) {
+    FUN_?();
+  }
+  else {
+    if (iRam_? != 0) {
+      uVar2 = (uint)((ulonglong)&uStack_3 >> 0xc);
+      puVar4 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar5 = *puVar4;
+        LOCK();
+        uVar6 = *puVar4;
+        if (uVar5 == uVar6) {
+          *puVar4 = uVar5 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar5 != uVar6);
+    }
+    pLStack_7 = (List_1_T_Enumerator_System_Object_ *)
+                 ((ulonglong)(uint)(pLVar1->fields)._version << 0x20);
+    uStack_8 = 0;
+    LStack_9._8_8_ = pLStack_7;
+    LStack_9._current = (Object *)0x0;
+    uStack_3 = 0;
+    pLStack_7 = &LStack_9;
+    LStack_9._list = (List_1_System_Object_ *)pLVar1;
     while( true ) {
-      bVar9 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+      bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
               List_1_T_Enumerator_System_Object__MoveNext
-                        (&LStack_6,
+                        (&LStack_9,
                          MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__
                         );
-      if (bVar9 == 0) {
-        uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&LStack_6,
-                   (ExceptionArgument__Enum)
-                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
-                   ,unaff_EDI);
-        *unaff_FS_OFFSET = uStack_3;
+      if (bVar10 == 0) {
         return 0;
       }
-      if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0) break;
-      if (*(int *)((int)LStack_6._current + 0x10) == inputWOID) {
-        uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&LStack_6,
-                   (ExceptionArgument__Enum)
-                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
-                   ,unaff_EDI);
-        *unaff_FS_OFFSET = uStack_3;
+      if (LStack_9._current == (Object *)0x0) break;
+      if (*(int *)&LStack_9._current[1].monitor == inputWOID) {
         return 1;
       }
     }
   }
-  func_?();
-  pcVar10 = (code *)swi(3);
-  bVar9 = (*pcVar10)();
-  return bVar9;
+  FUN_?();
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  bVar10 = (*pcVar11)();
+  return bVar10;
 }
 
 
@@ -188,22 +332,26 @@ void MVWorldObject.dll::LogicObjectManager::LogicObjectManager_RemoveLogicObject
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__ContainsKey_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__Remove_int_
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__ContainsKey_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__Remove_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).logicWorldObjects;
-  if (this_00 != (Dictionary_2_System_Int32_IInputSignalReceiver_ *)0x0) {
-    bVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
-            Dictionary_2_System_Int32_System_Single__ContainsKey
-                      ((Dictionary_2_System_Int32_System_Single_ *)this_00,worldObjectID,
+  this_00 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(this->fields).logicWorldObjects;
+  if (this_00 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+    iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
+            Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                      (this_00,worldObjectID,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__ContainsKey_int_
-                      );
-    if (bVar1 != 0) {
+                       ->klass->rgctx_data[0x21].method);
+    if (-1 < iVar1) {
       this_01 = (Dictionary_2_System_Int32_System_Object_ *)(this->fields).logicWorldObjects;
       if (this_01 == (Dictionary_2_System_Int32_System_Object_ *)0x0) goto code_?;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
@@ -215,7 +363,7 @@ void MVWorldObject.dll::LogicObjectManager::LogicObjectManager_RemoveLogicObject
     return;
   }
 code_?:
-  func_?();
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -240,21 +388,25 @@ int32_t MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ResetChunk
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__get_Count__);
-    func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this = (HashSet_1_System_Int32_ *)
-         func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
-  System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-  HashSet_1_System_Int32___ctor
-            (this,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-  LogicObjectManager_ResetNode(woID,this,worldObjectManager,(MethodInfo *)0x0);
-  if (this != (HashSet_1_System_Int32_ *)0x0) {
-    return (this->fields)._count;
+  resetNodes = (HashSet_1_System_Int32_ *)
+               FUN_?(TypeInfo__System__Collections__Generic__HashSet<int>);
+  FUN_?(resetNodes,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+  LogicObjectManager_ResetNode(woID,resetNodes,worldObjectManager,(MethodInfo *)0x0);
+  if (resetNodes != (HashSet_1_System_Int32_ *)0x0) {
+    return (resetNodes->fields)._count;
   }
-  func_?();
+  FUN_?();
   pcVar1 = (code *)swi(3);
   iVar2 = (*pcVar1)();
   return iVar2;
@@ -268,161 +420,169 @@ void MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ResetNode
                IWorldObjectManager *worldObjectManager,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffb4;
-  puVar5 = &stack0xffffffb4;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__get_Current__
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
-    func_?(&TypeInfo__IInputSignalReceiver);
-    in_stack_6 = &TypeInfo__ILogicWorldObject;
-    func_?();
-    func_?(&TypeInfo__MV__WorldObject__IWorldObjectManager);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__GetEnumerator__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__IInputSignalReceiver);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__ILogicWorldObject);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__IWorldObjectManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  LStack_7._list = (List_1_System_Object_ *)0x0;
-  LStack_7._index = 0;
-  LStack_7._version = 0;
-  LStack_7._current = (Object *)0x0;
   if (resetNodes != (HashSet_1_System_Int32_ *)0x0) {
-    bVar8 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
-            HashSet_1_System_UInt32__Contains
-                      ((HashSet_1_System_UInt32_ *)resetNodes,woID,
+    bVar1 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+            HashSet_1_System_Int32Enum__Contains
+                      ((HashSet_1_System_Int32Enum_ *)resetNodes,woID,
                        MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
-    if (bVar8 != 0) {
-code_?:
-      *unaff_FS_OFFSET = uStack_3;
+    if (bVar1 != 0) {
       return;
     }
-    if (worldObjectManager != (IWorldObjectManager *)0x0) {
-      method_00 = TypeInfo__MV__WorldObject__IWorldObjectManager;
-      piVar9 = (int *)func_?(0);
-      LStack_10._current = (RegexCharClass_SingleRange)TypeInfo__ILogicWorldObject;
-      piStack_11 = piVar9;
-      if (piVar9 != (int *)0x0) {
-        iVar12 = func_?(piVar9,TypeInfo__ILogicWorldObject);
-        if (iVar12 != 0) {
-          LStack_10._current = (RegexCharClass_SingleRange)TypeInfo__ILogicWorldObject;
-          iVar12 = func_?(piVar9,TypeInfo__ILogicWorldObject);
-          if (iVar12 != 0) {
-            iVar12 = func_?(0,TypeInfo__ILogicWorldObject,iVar12);
-            if (iVar12 != 0) {
-              func_?(3,TypeInfo__IInputSignalReceiver,iVar12);
-              (**(code **)(*piVar9 + 0x150))(piVar9,*(undefined4 *)(*piVar9 + 0x154));
-              System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-              HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
-                        (resetNodes,woID,
-                         MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
-              if ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)piVar9[7] !=
-                  (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-                pLVar13 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                         RegularExpressions::RegexCharClass+SingleRange]::
-                         List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                                   (&LStack_10,
-                                    (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                     *)piVar9[7],
-                                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__GetEnumerator__
-                                   );
-                LStack_7._list = (List_1_System_Object_ *)pLVar13->_list;
-                LStack_7._index = pLVar13->_index;
-                LStack_7._version = pLVar13->_version;
-                LStack_7._current = *(Object **)&pLVar13->_current;
-                LStack_10._version = 0;
-                uStack_1 = 1;
-                LStack_10._current = (RegexCharClass_SingleRange)&LStack_7;
-                while( true ) {
-                  bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
-                          Object]::List_1_T_Enumerator_System_Object__MoveNext
-                                    (&LStack_7,
-                                     MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__
-                                    );
-                  if (bVar8 == 0) break;
-                  if ((RegexCharClass_SingleRange)LStack_7._current ==
-                      (RegexCharClass_SingleRange)0x0) goto code_?;
-                  LogicObjectManager_ResetNode
-                            (*(int32_t *)((int)LStack_7._current + 0xc),resetNodes,
-                             worldObjectManager,(MethodInfo *)0x0);
-                }
-                uStack_1 = 0xffffffff;
-                mscorlib.dll::System::ThrowHelper::
-                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                          ((Object *)&LStack_7,
-                           (ExceptionArgument__Enum)
-                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
-                           ,(MethodInfo *)in_stack_6);
-                uStack_1 = 0xffffffff;
-                if ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                    piStack_11[6] !=
-                    (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-                  pLVar13 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                           RegularExpressions::RegexCharClass+SingleRange]::
-                           List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                                     (&LStack_10,
-                                      (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                       *)piStack_11[6],
-                                      MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__GetEnumerator__
-                                     );
-                  LStack_7._list = (List_1_System_Object_ *)pLVar13->_list;
-                  LStack_7._index = pLVar13->_index;
-                  LStack_7._version = pLVar13->_version;
-                  LStack_7._current = *(Object **)&pLVar13->_current;
-                  LStack_10._version = 0;
-                  uStack_1 = 4;
-                  LStack_10._current = (RegexCharClass_SingleRange)&LStack_7;
-                  while( true ) {
-                    bVar8 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System
-                            ::Object]::List_1_T_Enumerator_System_Object__MoveNext
-                                      (&LStack_7,
-                                       MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__
-                                      );
-                    if (bVar8 == 0) break;
-                    if ((RegexCharClass_SingleRange)LStack_7._current ==
-                        (RegexCharClass_SingleRange)0x0) goto code_?;
-                    LogicObjectManager_ResetNode
-                              (*(int32_t *)((int)LStack_7._current + 0x10),resetNodes,
-                               worldObjectManager,(MethodInfo *)0x0);
-                  }
-                  uStack_1 = 0xffffffff;
-                  mscorlib.dll::System::ThrowHelper::
-                  ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                            ((Object *)&LStack_7,
-                             (ExceptionArgument__Enum)
-                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
-                             ,(MethodInfo *)method_00);
-                  goto code_?;
-                }
+    if ((worldObjectManager != (IWorldObjectManager *)0x0) &&
+       (plVar2 = (longlong *)FUN_?(), pIVar3 = TypeInfo__ILogicWorldObject,
+       plVar2 != (longlong *)0x0)) {
+      lVar4 = FUN_?(plVar2,TypeInfo__ILogicWorldObject);
+      pIVar5 = TypeInfo__ILogicWorldObject;
+      if (lVar4 == 0) {
+        FUN_?(plVar2,pIVar3);
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
+      }
+      lVar4 = FUN_?(plVar2,TypeInfo__ILogicWorldObject);
+      if (lVar4 == 0) {
+        FUN_?(plVar2,pIVar5);
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
+      }
+      lVar4 = FUN_?(0,TypeInfo__ILogicWorldObject,lVar4);
+      if (lVar4 != 0) {
+        FUN_?(3,TypeInfo__IInputSignalReceiver,lVar4);
+        (**(code **)(*plVar2 + 600))(plVar2,*(undefined8 *)(*plVar2 + 0x260));
+        System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+        HashSet_1_System_Int32__AddIfNotPresent
+                  (resetNodes,woID,
+                   MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_->klass->
+                   rgctx_data[0x15].method);
+        pLVar7 = (List_1_System_Object_ *)plVar2[5];
+        if (pLVar7 != (List_1_System_Object_ *)0x0) {
+          if (iRam_? != 0) {
+            uVar8 = (uint)((ulonglong)&uStack_9 >> 0xc);
+            lVar4 = (ulonglong)((uVar8 & 0x1fffff) >> 6) * 8;
+            do {
+              uVar10 = *(ulonglong *)(lVar4 + 0xADDR);
+              puVar11 = (ulonglong *)(lVar4 + 0xADDR);
+              LOCK();
+              bVar12 = uVar10 == *puVar11;
+              if (bVar12) {
+                *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
               }
+              UNLOCK();
+            } while (!bVar12);
+          }
+          pLStack_13 = (List_1_T_Enumerator_System_Object_ *)
+                       ((ulonglong)(uint)(pLVar7->fields)._version << 0x20);
+          uStack_14 = 0;
+          LStack_15._8_8_ = pLStack_13;
+          LStack_15._current = (Object *)0x0;
+          uStack_9 = 0;
+          pLStack_13 = &LStack_15;
+          LStack_15._list = pLVar7;
+          while (bVar1 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
+                         Object]::List_1_T_Enumerator_System_Object__MoveNext
+                                   (&LStack_15,
+                                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__
+                                   ), bVar1 != 0) {
+            if (LStack_15._current == (Object *)0x0) {
+              FUN_?();
+              FUN_?();
+              goto code_?;
             }
-            goto code_?;
+            LogicObjectManager_ResetNode
+                      (*(int32_t *)((longlong)&LStack_15._current[1].klass + 4),resetNodes,
+                       worldObjectManager,(MethodInfo *)0x0);
+          }
+          pLVar7 = (List_1_System_Object_ *)plVar2[4];
+          if (pLVar7 != (List_1_System_Object_ *)0x0) {
+            if (iRam_? != 0) {
+              uVar8 = (uint)((ulonglong)&uStack_9 >> 0xc);
+              lVar4 = (ulonglong)((uVar8 & 0x1fffff) >> 6) * 8;
+              do {
+                uVar10 = *(ulonglong *)(lVar4 + 0xADDR);
+                puVar11 = (ulonglong *)(lVar4 + 0xADDR);
+                LOCK();
+                bVar12 = uVar10 == *puVar11;
+                if (bVar12) {
+                  *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+                }
+                UNLOCK();
+              } while (!bVar12);
+            }
+            pLStack_13 = (List_1_T_Enumerator_System_Object_ *)
+                         ((ulonglong)(uint)(pLVar7->fields)._version << 0x20);
+            uStack_14 = 0;
+            LStack_15._8_8_ = pLStack_13;
+            LStack_15._current = (Object *)0x0;
+            uStack_9 = 0;
+            pLStack_13 = &LStack_15;
+            LStack_15._list = pLVar7;
+            while( true ) {
+              bVar1 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
+                      Object]::List_1_T_Enumerator_System_Object__MoveNext
+                                (&LStack_15,
+                                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__
+                                );
+              if (bVar1 == 0) {
+                return;
+              }
+              if (LStack_15._current == (Object *)0x0) break;
+              LogicObjectManager_ResetNode
+                        (*(int32_t *)&LStack_15._current[1].monitor,resetNodes,worldObjectManager,
+                         (MethodInfo *)0x0);
+            }
+code_?:
+            FUN_?();
+            FUN_?();
+            pcVar6 = (code *)swi(3);
+            (*pcVar6)();
+            return;
           }
         }
-        func_?(piVar9,LStack_10._current);
       }
     }
   }
-code_?:
-  uVar14 = func_?();
-  uVar14 = func_?(uVar14);
-  func_?(uVar14);
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -434,44 +594,57 @@ String * MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ToString
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
-    func_?(&StringLiteral_logicWorldObjects_Count__0__);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__get_Values__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_IInputSignalReceiver>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_logicWorldObjects_Count__0__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-             *)(this->fields).logicWorldObjects;
-  if (this_00 !=
-      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-       *)0x0) {
-    this_01 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
-              StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
-              Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
-                        (this_00,
-                         MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__get_Values__
-                        );
-    if (this_01 !=
-        (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-         *)0x0) {
-      mscorlib.dll::System::Collections::Generic::
-      Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
-      StyleSheetCache+SheetHandleKey,System::Object]::
-      Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
-                (this_01,
-                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_IInputSignalReceiver>__get_Count__
-                );
-      arg0 = (Object *)func_?();
-      pSVar1 = mscorlib.dll::System::String::String_Format
-                         (StringLiteral_logicWorldObjects_Count__0__,arg0,(MethodInfo *)0x0);
-      return pSVar1;
+  pDVar1 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *)
+           (this->fields).logicWorldObjects;
+  if (pDVar1 != (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                 *)0x0) {
+    pDVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+             TypeConverterRegistry+ConverterKey,System::Object]::
+             Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object__get_Values
+                       (pDVar1,
+                        MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__get_Values__
+                       );
+    if ((pDVar2 != (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                    *)0x0) &&
+       (pDVar1 = (pDVar2->fields)._dictionary,
+       pDVar1 != (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                  *)0x0)) {
+      aiStackX_8[0] = (pDVar1->fields)._count - (pDVar1->fields)._freeCount;
+      arg0 = (Object *)FUN_?(uRam_?,aiStackX_8);
+      pSVar3 = StringLiteral_logicWorldObjects_Count__0__;
+      PStack_4._arg0 = (Object *)0x0;
+      PStack_4._arg1 = (Object *)0x0;
+      PStack_4._arg2 = (Object *)0x0;
+      PStack_4._args = (Object__Array *)0x0;
+      mscorlib.dll::System::ParamsArray::ParamsArray__ctor(&PStack_4,arg0,(MethodInfo *)0x0);
+      PStack_5._arg0 = PStack_4._arg0;
+      PStack_5._arg1 = PStack_4._arg1;
+      PStack_5._arg2 = PStack_4._arg2;
+      PStack_5._args = PStack_4._args;
+      pSVar3 = mscorlib.dll::System::String::String_FormatHelper
+                         ((IFormatProvider *)0x0,pSVar3,&PStack_5,(MethodInfo *)0x0);
+      return pSVar3;
     }
   }
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar3)();
-  return pSVar1;
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  pSVar3 = (String *)(*pcVar6)();
+  return pSVar3;
 }
 
 
@@ -481,160 +654,197 @@ void MVWorldObject.dll::LogicObjectManager::LogicObjectManager_Update
                (LogicObjectManager *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffac;
-  puVar5 = &stack0xffffffac;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__get_Values__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_IInputSignalReceiver>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_IInputSignalReceiver>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_IInputSignalReceiver>__get_Current__
-                   );
-    func_?(&TypeInfo__IInputSignalReceiver);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_IInputSignalReceiver>__GetEnumerator__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__get_Values__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_IInputSignalReceiver>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_IInputSignalReceiver>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_IInputSignalReceiver>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__IInputSignalReceiver);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_IInputSignalReceiver>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)0x0;
-  DStack_6._index = 0;
-  DStack_6._version = 0;
-  DStack_6._currentValue = (Object *)0x0;
-  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-             *)(this->fields).logicWorldObjects;
-  if (this_00 !=
-      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-       *)0x0) {
-    this_02 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
-              StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
-              Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Values
-                        (this_00,
-                         MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__get_Values__
-                        );
-    if (this_02 !=
-        (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-         *)0x0) {
-      method_00 = (MethodInfo *)&UNK_?;
-      pDVar7 = mscorlib.dll::System::Collections::Generic::
-                Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
-                StyleSheetCache+SheetHandleKey,System::Object]::
-                Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__GetEnumerator
-                          (&DStack_8,this_02,
-                           MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___ValueCollection<int,_IInputSignalReceiver>__GetEnumerator__
-                          );
-      DStack_8._currentValue = (Object *)&DStack_6;
-      DStack_6._dictionary = (Dictionary_2_System_UInt32_System_Object_ *)pDVar7->_dictionary;
-      DStack_6._index = pDVar7->_index;
-      DStack_6._version = pDVar7->_version;
-      DStack_6._currentValue = pDVar7->_currentValue;
-      DStack_8._version = 0;
-      uStack_1 = 1;
+  this_00 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *
+            )(this->fields).logicWorldObjects;
+  if ((this_00 ==
+       (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *)0x0)
+     || (pDVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements
+                   ::TypeConverterRegistry+ConverterKey,System::Object]::
+                   Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object__get_Values
+                             (this_00,
+                              MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__get_Values__
+                             ),
+        pDVar1 ==
+        (Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+         *)0x0)) {
 code_?:
-      bVar9 = mscorlib.dll::System::Collections::Generic::
-               Dictionary`2[TKey,TValue]+ValueCollection[TKey,TValue]+Enumerator[System::
-               UInt32,System::Object]::
-               Dictionary_2_TKey_TValue_ValueCollection_TKey_TValue_Enumerator_System_UInt32_System_Object__MoveNext
-                         (&DStack_6,
-                          MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_IInputSignalReceiver>__MoveNext__
-                         );
-      pOVar10 = DStack_6._currentValue;
-      if (bVar9 != 0) {
-        pOStack_11 = DStack_6._currentValue;
-        if (DStack_6._currentValue == (Object *)0x0) goto code_?;
-        pOStack_12 = (DStack_6._currentValue)->klass;
-        uVar13 = 0;
-        pOStack_14 = (Object__Class *)0x0;
-        sVar15._0_1_ = (pOStack_12->_1).rank;
-        sVar15._1_1_ = (pOStack_12->_1).minimumAlignment;
-        if (sVar15 != 0) {
-          do {
-            if (pOStack_12->interfaceOffsets[uVar13].interfaceType ==
-                (Il2CppClass *)TypeInfo__IInputSignalReceiver) {
-              ppMVar16 = &(&((DStack_6._currentValue)->klass->vtable).GetHashCode)
-                          [(DStack_6._currentValue)->klass->interfaceOffsets[uVar13].offset].method
-              ;
-              goto code_?;
-            }
-            uVar13 = uVar13 + 1;
-            uVar17._0_1_ = ((DStack_6._currentValue)->klass->_1).rank;
-            uVar17._1_1_ = ((DStack_6._currentValue)->klass->_1).minimumAlignment;
-          } while (uVar13 < uVar17);
-        }
-        ppMVar16 = (MethodInfo **)
-                   func_?(DStack_6._currentValue,TypeInfo__IInputSignalReceiver,2);
+    FUN_?();
 code_?:
-        uVar18 = (*(code *)*ppMVar16)(pOVar10,ppMVar16[1]);
-        uVar13 = 0;
-        pMStack_19 = (MethodInfo *)CONCAT31(pMStack_19._1_3_,uVar18);
-        pOStack_14 = pOVar10->klass;
-        pOStack_12 = (Object__Class *)0x0;
-        sVar20._0_1_ = (pOStack_14->_1).rank;
-        sVar20._1_1_ = (pOStack_14->_1).minimumAlignment;
-        if (sVar20 != 0) {
-          do {
-            if (pOStack_14->interfaceOffsets[uVar13].interfaceType ==
-                (Il2CppClass *)TypeInfo__IInputSignalReceiver) {
-              pOVar21 = pOStack_11->klass;
-              iVar22 = pOVar21->interfaceOffsets[uVar13].offset;
-              method_00 = pMStack_19;
-              (*(code *)(&(pOVar21->vtable).Equals)[iVar22].method)
-                        (pOStack_11,pMStack_19,(&(pOVar21->vtable).Finalize)[iVar22].methodPtr);
-              goto code_?;
-            }
-            uVar13 = uVar13 + 1;
-            uVar23._0_1_ = (pOStack_11->klass->_1).rank;
-            uVar23._1_1_ = (pOStack_11->klass->_1).minimumAlignment;
-            pOVar10 = pOStack_11;
-          } while (uVar13 < uVar23);
+    FUN_?();
+code_?:
+    FUN_?();
+code_?:
+    FUN_?();
+    uVar2 = uStack_3;
+code_?:
+    uStack_3 = uVar2;
+    FUN_?();
+code_?:
+    FUN_?();
+code_?:
+    mscorlib.dll::System::ThrowHelper::
+    ThrowHelper_1_ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion
+              ((MethodInfo *)0x0);
+  }
+  else {
+    uStack_4 = (pDVar1->fields)._dictionary;
+    puStack_5 = (undefined4 *)0x0;
+    uStack_6 = 0;
+    if (iRam_? != 0) {
+      uVar2 = (uint)((ulonglong)&uStack_4 >> 0xc);
+      puVar7 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar8 = *puVar7;
+        LOCK();
+        uVar9 = *puVar7;
+        if (uVar8 == uVar9) {
+          *puVar7 = uVar8 | 1L << (uVar2 & 0x3f);
         }
-        puVar24 = (undefined4 *)func_?(pOVar10,TypeInfo__IInputSignalReceiver,0);
-        method_00 = pMStack_19;
-        (*(code *)*puVar24)(pOVar10,pMStack_19,puVar24[1]);
-        goto code_?;
-      }
-      uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)&DStack_6,
-                 (ExceptionArgument__Enum)
-                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue__ValueCollection_TKey_TValue___Enumerator<int,_IInputSignalReceiver>__Dispose__
-                 ,method_00);
-      uStack_1 = 0xffffffff;
-      piVar25 = &(this->fields)._TimeStamp_k__BackingField;
-      *piVar25 = *piVar25 + 100;
-      if ((this->fields).trackLoops != 0) {
-        if (cRam_? == '\0') {
-          func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
-          cRam_? = '\x01';
-        }
-        this_01 = (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                  (this->fields).updatedIds;
-        if (this_01 == (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0)
-        goto code_?;
-        System.Core.dll::System::Collections::Generic::HashSet`1[Unity::IL2CPP::Metadata::
-        __Il2CppFullySharedGenericType]::
-        HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__Clear
-                  (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
-      }
-      *unaff_FS_OFFSET = uStack_3;
+        UNLOCK();
+      } while (uVar8 != uVar9);
+    }
+    if (uStack_4 ==
+        (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *)0x0
+       ) {
+      FUN_?();
+      pcVar10 = (code *)swi(3);
+      (*pcVar10)();
       return;
     }
-  }
+    iStack_11 = (uStack_4->fields)._version;
+    uStack_6 = 0;
+    uStack_4._4_4_ = (undefined4)((ulonglong)uStack_4 >> 0x20);
+    uStack_12 = (undefined4)uStack_4;
+    uStack_13 = uStack_4._4_4_;
+    uStack_3 = 0;
+    plStack_14 = (longlong *)0x0;
+    uStack_4 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                 *)0x0;
+    puStack_5 = &uStack_12;
+    while (lVar15 = CONCAT44(uStack_13,uStack_12), lVar15 != 0) {
+      if (iStack_11 != *(int *)(lVar15 + 0x2c)) goto code_?;
+      do {
+        if (lVar15 == 0) goto code_?;
+        if (*(uint *)(lVar15 + 0x20) <= uStack_3) {
+          uStack_3 = *(int *)(lVar15 + 0x20) + 1;
+          plStack_14 = (longlong *)0x0;
+          piVar16 = &(this->fields)._TimeStamp_k__BackingField;
+          *piVar16 = *piVar16 + 100;
+          if ((this->fields).trackLoops != 0) {
+            if (cRam_? == '\0') {
+              FUN_?();
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pHVar17 = (this->fields).updatedIds;
+            if (pHVar17 == (HashSet_1_System_Int32_ *)0x0) goto code_?;
+            if (0 < (pHVar17->fields)._lastIndex) {
+              mscorlib.dll::System::Array::Array_Clear
+                        ((Array *)(pHVar17->fields)._slots,0,(pHVar17->fields)._lastIndex,
+                         (MethodInfo *)0x0);
+              pIVar18 = (pHVar17->fields)._buckets;
+              if (pIVar18 == (Int32__Array *)0x0) goto code_?;
+              mscorlib.dll::System::Array::Array_Clear
+                        ((Array *)(pHVar17->fields)._buckets,0,(int32_t)pIVar18->max_length,
+                         (MethodInfo *)0x0);
+              (pHVar17->fields)._count = 0;
+              (pHVar17->fields)._lastIndex = 0;
+              (pHVar17->fields)._freeList = -1;
+            }
+            piVar16 = &(pHVar17->fields)._version;
+            *piVar16 = *piVar16 + 1;
+          }
+          return;
+        }
+        lVar19 = *(longlong *)(lVar15 + 0x18);
+        lVar20 = (longlong)(int)uStack_3;
+        uVar2 = uStack_3 + 1;
+        if (lVar19 == 0) goto code_?;
+        bVar21 = *(uint *)(lVar19 + 0x18) <= uStack_3;
+        uStack_3 = uVar2;
+        if (bVar21) goto code_?;
+      } while (*(int *)(lVar19 + 0x20 + lVar20 * 0x18) < 0);
+      plStack_14 = *(longlong **)(lVar19 + (lVar20 + 2) * 0x18);
+      func_?();
+      plVar22 = plStack_14;
+      if (plStack_14 == (longlong *)0x0) goto code_?;
+      lVar15 = *plStack_14;
+      uVar23 = 0;
+      if (*(ushort *)(lVar15 + 0x12e) != 0) {
+        uVar24 = uVar23;
+        do {
+          if (*(IInputSignalReceiver__Class **)
+               (*(longlong *)(lVar15 + 0xb0) + (ulonglong)uVar24 * 0x10) ==
+              TypeInfo__IInputSignalReceiver) {
+            puVar25 = (undefined8 *)
+                      ((longlong)
+                       (*(int *)(*(longlong *)(lVar15 + 0xb0) + 8 + (ulonglong)uVar24 * 0x10) + 2) *
+                       0x10 + 0x138 + lVar15);
+            goto code_?;
+          }
+          uVar24 = uVar24 + 1;
+        } while (uVar24 < *(ushort *)(lVar15 + 0x12e));
+      }
+      puVar25 = (undefined8 *)FUN_?(plStack_14,TypeInfo__IInputSignalReceiver,2);
 code_?:
-  func_?();
-  pcVar26 = (code *)swi(3);
-  (*pcVar26)();
+      uVar26 = (*(code *)*puVar25)(plVar22,puVar25[1]);
+      if (plVar22 == (longlong *)0x0) goto code_?;
+      lVar15 = *plVar22;
+      if (*(ushort *)(lVar15 + 0x12e) != 0) {
+        do {
+          if (*(IInputSignalReceiver__Class **)
+               (*(longlong *)(lVar15 + 0xb0) + (ulonglong)uVar23 * 0x10) ==
+              TypeInfo__IInputSignalReceiver) {
+            puVar25 = (undefined8 *)
+                      ((longlong)
+                       *(int *)(*(longlong *)(lVar15 + 0xb0) + 8 + (ulonglong)uVar23 * 0x10) * 0x10 +
+                       0x138 + lVar15);
+            goto code_?;
+          }
+          uVar23 = uVar23 + 1;
+        } while (uVar23 < *(ushort *)(lVar15 + 0x12e));
+      }
+      puVar25 = (undefined8 *)FUN_?(plVar22,TypeInfo__IInputSignalReceiver,0);
+code_?:
+      (*(code *)*puVar25)(plVar22,uVar26,puVar25[1]);
+    }
+  }
+  FUN_?();
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -650,69 +860,45 @@ MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ValidateLink
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__IWorldObjectManager);
+    FUN_?(&TypeInfo__MV__WorldObject__IWorldObjectManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMStack_1 = (MVWorldObject *)0x0;
-  piVar2 = (int *)0x0;
   if (linkInputWoId < 1) {
     *reportSeverity = LogicObjectManager_ReportSeverity__Enum_Error;
-    return LogicObjectManager_ValidateLinkStatus__Enum_InputObjectIdIsZeroOrLess;
+    LVar1 = LogicObjectManager_ValidateLinkStatus__Enum_InputObjectIdIsZeroOrLess;
   }
-  if (linkOutputWoId < 1) {
+  else if (linkOutputWoId < 1) {
     *reportSeverity = LogicObjectManager_ReportSeverity__Enum_Error;
-    return LogicObjectManager_ValidateLinkStatus__Enum_OutputObjectIdIsZeroOrLess;
+    LVar1 = LogicObjectManager_ValidateLinkStatus__Enum_OutputObjectIdIsZeroOrLess;
   }
-  if (worldObjectManager != (IWorldObjectManager *)0x0) {
-    cVar3 = func_?(1,TypeInfo__MV__WorldObject__IWorldObjectManager,worldObjectManager,
-                            linkOutputWoId,&pMStack_1);
-    cVar4 = func_?(1,TypeInfo__MV__WorldObject__IWorldObjectManager,worldObjectManager,
-                            linkInputWoId,&stack0xfffffff0);
+  else {
+    if (worldObjectManager == (IWorldObjectManager *)0x0) {
+code_?:
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      LVar1 = (*pcVar2)();
+      return LVar1;
+    }
+    cVar3 = FUN_?();
+    cVar4 = FUN_?();
     if (cVar3 == '\0') {
       *reportSeverity = LogicObjectManager_ReportSeverity__Enum_Info;
-      if (cVar4 != '\0') {
-        return LogicObjectManager_ValidateLinkStatus__Enum_OutputObjectIsNull;
+      if (cVar4 == '\0') {
+        LVar1 = LogicObjectManager_ValidateLinkStatus__Enum_BothInputAndOutputIsNull;
       }
-      return LogicObjectManager_ValidateLinkStatus__Enum_BothInputAndOutputIsNull;
+      else {
+        LVar1 = LogicObjectManager_ValidateLinkStatus__Enum_OutputObjectIsNull;
+      }
     }
-    if (cVar4 == '\0') {
+    else {
+      if (cVar4 != '\0') goto code_?;
       *reportSeverity = LogicObjectManager_ReportSeverity__Enum_Info;
-      return LogicObjectManager_ValidateLinkStatus__Enum_InputObjectIsNull;
-    }
-    if (piVar2 != (int *)0x0) {
-      cVar3 = (**(code **)(*piVar2 + 0x138))(piVar2,*(undefined4 *)(*piVar2 + 0x13c));
-      if (cVar3 == '\0') {
-        *reportSeverity = LogicObjectManager_ReportSeverity__Enum_Error;
-        return LogicObjectManager_ValidateLinkStatus__Enum_InputObjectDoesNotHaveConnector;
-      }
-      if (pMStack_1 != (MVWorldObject *)0x0) {
-        cVar3 = func_?(0xe,pMStack_1);
-        if (cVar3 == '\0') {
-          *reportSeverity = LogicObjectManager_ReportSeverity__Enum_Error;
-          return LogicObjectManager_ValidateLinkStatus__Enum_OutputObjectDoesNotHaveConnector;
-        }
-        bStack_5 = LogicObjectManager_DoesLinkExist(pMStack_1,linkInputWoId,(MethodInfo *)0x0);
-        if (bStack_5 == 0) {
-          if (validateLoops != 0) {
-            LogicObjectManager_ValidateLink_1
-                      (linkOutputWoId,linkInputWoId,worldObjectManager,&bStack_5,(MethodInfo *)0x0);
-            if (bStack_5 != 0) {
-              *reportSeverity = LogicObjectManager_ReportSeverity__Enum_Error;
-              return LogicObjectManager_ValidateLinkStatus__Enum_LoopDetected;
-            }
-          }
-          *reportSeverity = LogicObjectManager_ReportSeverity__Enum_Info;
-          return LogicObjectManager_ValidateLinkStatus__Enum_Ok;
-        }
-        *reportSeverity = LogicObjectManager_ReportSeverity__Enum_Info;
-        return LogicObjectManager_ValidateLinkStatus__Enum_LinkAlreadyExists;
-      }
+      LVar1 = LogicObjectManager_ValidateLinkStatus__Enum_InputObjectIsNull;
     }
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  LVar7 = (*pcVar6)();
-  return LVar7;
+  return LVar1;
 }
 
 
@@ -723,88 +909,85 @@ void MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ValidateLink_1
                bool *loopDetected,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffbc;
-  puVar5 = &stack0xffffffbc;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__get_Current__
-                   );
-    func_?(&TypeInfo__MV__WorldObject__IWorldObjectManager);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__GetEnumerator__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__IWorldObjectManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
   if (woIdFrom == woIdTo) {
     *loopDetected = 1;
-    *unaff_FS_OFFSET = uStack_3;
-    return;
   }
-  if (worldObjectManager != (IWorldObjectManager *)0x0) {
-    iVar7 = func_?(0,TypeInfo__MV__WorldObject__IWorldObjectManager,worldObjectManager,
-                            woIdTo);
-    if ((iVar7 != 0) &&
-       (*(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)(iVar7 + 0x18) !=
-        (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) {
-      pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-               RegexCharClass+SingleRange]::
-               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                         (&LStack_9,
-                          *(List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ **)
-                           (iVar7 + 0x18),
-                          MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__GetEnumerator__
-                         );
-      LStack_6._list = (List_1_System_Object_ *)pLVar8->_list;
-      LStack_6._index = pLVar8->_index;
-      LStack_6._version = pLVar8->_version;
-      LStack_6._current = *(Object **)&pLVar8->_current;
-      LStack_9._version = 0;
-      uStack_1 = 1;
-      LStack_9._current = (RegexCharClass_SingleRange)&LStack_6;
-      do {
-        bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-                List_1_T_Enumerator_System_Object__MoveNext
-                          (&LStack_6,
-                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__
-                          );
-        if (bVar10 == 0) break;
-        if ((RegexCharClass_SingleRange)LStack_6._current == (RegexCharClass_SingleRange)0x0)
-        goto code_?;
-        LogicObjectManager_ValidateLink_1
-                  (woIdFrom,*(int32_t *)((int)LStack_6._current + 0x10),worldObjectManager,
-                   loopDetected,(MethodInfo *)0x0);
-      } while (*loopDetected == 0);
-      uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)&LStack_6,
-                 (ExceptionArgument__Enum)
-                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
-                 ,unaff_EDI);
-      *unaff_FS_OFFSET = uStack_3;
+  else {
+    if (((worldObjectManager == (IWorldObjectManager *)0x0) || (lVar1 = FUN_?(), lVar1 == 0)
+        ) || (LStack_2._list = *(List_1_System_Object_ **)(lVar1 + 0x20),
+             LStack_2._list == (List_1_System_Object_ *)0x0)) {
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
+    if (iRam_? != 0) {
+      uVar4 = (uint)((ulonglong)&uStack_5 >> 0xc);
+      puVar6 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar7 = *puVar6;
+        LOCK();
+        uVar8 = *puVar6;
+        if (uVar7 == uVar8) {
+          *puVar6 = uVar7 | 1L << (uVar4 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar7 != uVar8);
+    }
+    pLStack_9 = (List_1_T_Enumerator_System_Object_ *)
+                 ((ulonglong)(uint)((LStack_2._list)->fields)._version << 0x20);
+    uStack_10 = 0;
+    LStack_2._8_8_ = pLStack_9;
+    LStack_2._current = (Object *)0x0;
+    uStack_5 = 0;
+    pLStack_9 = &LStack_2;
+    do {
+      bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+              List_1_T_Enumerator_System_Object__MoveNext
+                        (&LStack_2,
+                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__
+                        );
+      if (bVar11 == 0) {
+        return;
+      }
+      if (LStack_2._current == (Object *)0x0) {
+        FUN_?();
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      LogicObjectManager_ValidateLink_1
+                (woIdFrom,*(int32_t *)&LStack_2._current[1].monitor,worldObjectManager,loopDetected
+                 ,(MethodInfo *)0x0);
+    } while (*loopDetected == 0);
   }
-code_?:
-  uVar11 = func_?();
-  func_?(uVar11);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
   return;
 }
 
@@ -819,11 +1002,11 @@ MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ValidateObjectLink
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__IWorldObjectManager);
+    FUN_?(&TypeInfo__MV__WorldObject__IWorldObjectManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMStack_1 = (MVWorldObject *)0x0;
-  pMStack_2 = (MVWorldObject *)0x0;
   if (objectLink != (ObjectLink *)0x0) {
     if ((objectLink->fields).objectConnectorWOID < 1) {
       *reportSeverity = LogicObjectManager_ReportSeverity__Enum_Error;
@@ -834,55 +1017,26 @@ MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ValidateObjectLink
       return LogicObjectManager_ValidateObjectLinkStatus__Enum_ObjectWOIDIsZeroOrLess;
     }
     if (worldObjectManager != (IWorldObjectManager *)0x0) {
-      cVar3 = func_?(1,TypeInfo__MV__WorldObject__IWorldObjectManager,worldObjectManager,
-                              (objectLink->fields).objectConnectorWOID,&pMStack_1);
-      cVar4 = func_?(1,TypeInfo__MV__WorldObject__IWorldObjectManager,worldObjectManager,
-                              (objectLink->fields).objectWOID,&pMStack_2);
-      if (cVar3 == '\0') {
+      cVar1 = FUN_?();
+      cVar2 = FUN_?();
+      if (cVar1 == '\0') {
         *reportSeverity = LogicObjectManager_ReportSeverity__Enum_Info;
-        if (cVar4 != '\0') {
+        if (cVar2 != '\0') {
           return LogicObjectManager_ValidateObjectLinkStatus__Enum_ObjectConnector;
         }
         return 
         LogicObjectManager_ValidateObjectLinkStatus__Enum_BothObjectConnectorAndObjectWOIsNull;
       }
-      if (cVar4 == '\0') {
+      if (cVar2 == '\0') {
         *reportSeverity = LogicObjectManager_ReportSeverity__Enum_Info;
         return LogicObjectManager_ValidateObjectLinkStatus__Enum_ObjectWO;
       }
-      if (pMStack_1 != (MVWorldObject *)0x0) {
-        cVar3 = (*(code *)(pMStack_1->klass->vtable).get_HasObjectConnector.method)
-                          (pMStack_1,(pMStack_1->klass->vtable).OnInputStateChanged.methodPtr);
-        if (cVar3 == '\0') {
-          *reportSeverity = LogicObjectManager_ReportSeverity__Enum_Error;
-          return 
-          LogicObjectManager_ValidateObjectLinkStatus__Enum_ObjectConnectorHasNoObjectConnector;
-        }
-        if (pMStack_1 != (MVWorldObject *)0x0) {
-          iVar5 = MV::WorldObject::MVWorldObject::MVWorldObject_GetIndexOfObjectLink
-                            (pMStack_1,objectLink,(MethodInfo *)0x0);
-          if (iVar5 != -1) {
-            *reportSeverity = LogicObjectManager_ReportSeverity__Enum_Info;
-            return 
-            LogicObjectManager_ValidateObjectLinkStatus__Enum_ObjectConnectorContainsLinkAlready;
-          }
-          if (pMStack_2 != (MVWorldObject *)0x0) {
-            iVar5 = MV::WorldObject::MVWorldObject::MVWorldObject_GetIndexOfObjectLink
-                              (pMStack_2,objectLink,(MethodInfo *)0x0);
-            *reportSeverity = LogicObjectManager_ReportSeverity__Enum_Info;
-            if (iVar5 != -1) {
-              return LogicObjectManager_ValidateObjectLinkStatus__Enum_ObjectWOContainsLinkAlready;
-            }
-            return LogicObjectManager_ValidateObjectLinkStatus__Enum_Ok;
-          }
-        }
-      }
     }
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  LVar7 = (*pcVar6)();
-  return LVar7;
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  LVar4 = (*pcVar3)();
+  return LVar4;
 }
 
 
@@ -893,38 +1047,69 @@ void MVWorldObject.dll::LogicObjectManager::LogicObjectManager__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__Dictionary__
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>);
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-    func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
-            )func_?(
-                            TypeInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>
-                            );
+            )FUN_?(
+                          TypeInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>
+                          );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
   ::TextResourceManager+FontAssetRef]::
   Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<int,_IInputSignalReceiver>__Dictionary__
             );
+  bVar1 = iRam_? != 0;
   (this->fields).logicWorldObjects = (Dictionary_2_System_Int32_IInputSignalReceiver_ *)this_00;
-  func_?(&this->fields,this_00);
-  this_01 = (HashSet_1_System_Int32_ *)
-            func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
-  System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-  HashSet_1_System_Int32___ctor
-            (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-  method_00 = (MethodInfo *)&(this->fields).updatedIds;
-  (this->fields).updatedIds = this_01;
-  func_?(method_00,this_01);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-  (this->fields).trackLoops = trackLoops;
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  pHVar6 = (HashSet_1_System_Int32_ *)
+           FUN_?(TypeInfo__System__Collections__Generic__HashSet<int>);
+  FUN_?(pHVar6,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+  bVar1 = iRam_? != 0;
+  (this->fields).updatedIds = pHVar6;
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).updatedIds >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   (this->fields)._TimeStamp_k__BackingField = timeStamp;
+  (this->fields).trackLoops = trackLoops;
   return;
 }
 

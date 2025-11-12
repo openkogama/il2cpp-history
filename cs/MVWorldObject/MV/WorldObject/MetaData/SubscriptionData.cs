@@ -19,7 +19,7 @@ namespace MV.WorldObject.MetaData
 		// Fields
 		public SubscriptionType SubscriptionType;
 		public SubscriptionType ExpiredSubscriptionType;
-		public DateTime SubscriptionActivateTime;
+		public System.DateTime SubscriptionActivateTime;
 		public TimeSpan SubscriptionDuration;
 	
 		// Constructors

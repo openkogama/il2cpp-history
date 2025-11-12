@@ -9,10 +9,14 @@ void Assembly-CSharp.dll::LoggerManager+Logger::LoggerManager_Logger_Log
   item = (this->fields).name;
   if (pLVar1 != (LoggerManager *)0x0) {
     if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__HashSet<System::String>__Contains_System__String_
-                     );
-      func_?(&TypeInfo__IAppender);
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__HashSet<System::String>__Contains_System__String_
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeInfo__IAppender);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
     if ((pLVar1->fields).appendAll == 0) {
@@ -29,30 +33,14 @@ void Assembly-CSharp.dll::LoggerManager+Logger::LoggerManager_Logger_Log
     }
     pIVar3 = (pLVar1->fields).appender;
     if (pIVar3 != (IAppender *)0x0) {
-      pIVar4 = pIVar3->klass;
-      uVar5 = 0;
-      uVar6._0_1_ = (pIVar4->_1).rank;
-      uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
-      if (uVar6 != 0) {
-        do {
-          if (pIVar4->interfaceOffsets[uVar5].interfaceType == (Il2CppClass *)TypeInfo__IAppender) {
-            ppMVar7 = &(&pIVar3->klass->vtable)[pIVar3->klass->interfaceOffsets[uVar5].offset].Log.
-                       method;
-            goto code_?;
-          }
-          uVar5 = uVar5 + 1;
-        } while (uVar5 < uVar6);
-      }
-      ppMVar7 = (MethodInfo **)func_?(pIVar3,TypeInfo__IAppender,0);
-code_?:
-      (*(code *)*ppMVar7)(pIVar3,item,message,ppMVar7[1]);
+      FUN_?(0,TypeInfo__IAppender,pIVar3,item,message);
       return;
     }
   }
 code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

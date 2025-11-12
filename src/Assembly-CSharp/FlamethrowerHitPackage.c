@@ -14,7 +14,7 @@ Assembly-CSharp.dll::FlamethrowerHitPackage::FlamethrowerHitPackage_Create
   __return_storage_ptr__->playerKilledByType = 0;
   *(undefined2 *)&__return_storage_ptr__->field_0x12 = 0;
   MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor
-            (__return_storage_ptr__,InteractionPackageType__Enum_FlamethrowerHit,(MethodInfo *)0x0);
+            (__return_storage_ptr__,CONCAT31((int3)((ulonglong)method >> 8),8),(MethodInfo *)0x0);
   return __return_storage_ptr__;
 }
 
@@ -23,12 +23,68 @@ Assembly-CSharp.dll::FlamethrowerHitPackage::FlamethrowerHitPackage_Create
 
 void Assembly-CSharp.dll::FlamethrowerHitPackage::FlamethrowerHitPackage_ParseAndHandlePackage
                (FlamethrowerHitPackage *this,MVWorldObjectClient *worldObjectClient,
-               MVPlayer *shooter,InteractionData interactionStruct,MethodInfo *method)
+               MVPlayer *shooter,InteractionData *interactionStruct,MethodInfo *method)
 
 {
-  InteractionPackage::InteractionPackage_HandlePackage_6
-            ((InteractionPackage *)this,worldObjectClient,shooter,
-             AvatarModifierPackageType__Enum_FlamerBurn,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if ((worldObjectClient != (MVWorldObjectClient *)0x0) &&
+     (this_00 = (worldObjectClient->fields).gameObject, this_00 != (GameObject *)0x0)) {
+    targetInteractable =
+         (MVInteractableBase *)
+         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                   (this_00,
+                    MVInteractableBase_MethodInfo__UnityEngine__GameObject__GetComponent<MVInteractableBase>__
+                   );
+    bVar1 = InteractionPackage::InteractionPackage_IsSpawnProtected
+                      ((InteractionPackage *)this,targetInteractable,(MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (targetInteractable != (MVInteractableBase *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if ((targetInteractable->fields)._._._._._.m_CachedPtr != (void *)0x0) {
+          if (shooter == (MVPlayer *)0x0) goto code_?;
+          (*(targetInteractable->klass->vtable).__unknown_4.methodPtr)
+                    (targetInteractable,8,
+                     (ulonglong)(uint)(shooter->fields)._ActorNr_k__BackingField,0,
+                     (targetInteractable->klass->vtable).__unknown_4.method);
+        }
+      }
+    }
+    return;
+  }
+code_?:
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

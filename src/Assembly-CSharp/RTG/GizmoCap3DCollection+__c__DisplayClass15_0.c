@@ -7,34 +7,38 @@ int32_t Assembly-CSharp.dll::RTG::GizmoCap3DCollection+<>c__DisplayClass15_0::
                   MethodInfo *method)
 
 {
-  if ((c0 != (GizmoCap3D *)0x0) &&
-     (pGVar1 = (c0->fields)._transform, pGVar1 != (GizmoTransform *)0x0)) {
-    uVar2 = (pGVar1->fields)._position3D.x;
-    uVar3 = (pGVar1->fields)._position3D.y;
-    uVar4 = (this->fields).cameraPos.x;
-    uVar5 = (this->fields).cameraPos.y;
-    fVar6 = (pGVar1->fields)._position3D.z - (this->fields).cameraPos.z;
-    if ((c1 != (GizmoCap3D *)0x0) &&
-       (pGVar1 = (c1->fields)._transform, pGVar1 != (GizmoTransform *)0x0)) {
-      uVar7 = (pGVar1->fields)._position3D.x;
-      uVar8 = (pGVar1->fields)._position3D.y;
-      uVar9 = (this->fields).cameraPos.x;
-      uVar10 = (this->fields).cameraPos.y;
-      fVar11 = (pGVar1->fields)._position3D.z - (this->fields).cameraPos.z;
-      c0 = (GizmoCap3D *)
-           (((float)uVar7 - (float)uVar9) * ((float)uVar7 - (float)uVar9) +
-            ((float)uVar8 - (float)uVar10) * ((float)uVar8 - (float)uVar10) + fVar11 * fVar11);
-      iVar12 = mscorlib.dll::System::Single::Single_CompareTo_1
-                         ((Single *)&c0,
-                          ((float)uVar2 - (float)uVar4) * ((float)uVar2 - (float)uVar4) +
-                          ((float)uVar3 - (float)uVar5) * ((float)uVar3 - (float)uVar5) +
-                          fVar6 * fVar6,(MethodInfo *)0x0);
-      return iVar12;
+  if ((((c0 == (GizmoCap3D *)0x0) ||
+       (pGVar1 = (c0->fields)._transform, pGVar1 == (GizmoTransform *)0x0)) ||
+      (uVar2 = (this->fields).cameraPos.x, uVar3 = (this->fields).cameraPos.y,
+      uVar4 = (pGVar1->fields)._position3D.x,
+      fVar5 = (pGVar1->fields)._position3D.z - (this->fields).cameraPos.z,
+      fVar6 = (pGVar1->fields)._position3D.y - (float)uVar3,
+      fVar5 = fVar6 * fVar6 + ((float)uVar4 - (float)uVar2) * ((float)uVar4 - (float)uVar2) +
+               fVar5 * fVar5, c1 == (GizmoCap3D *)0x0)) ||
+     (pGVar1 = (c1->fields)._transform, pGVar1 == (GizmoTransform *)0x0)) {
+    FUN_?();
+    pcVar7 = (code *)swi(3);
+    iVar8 = (*pcVar7)();
+    return iVar8;
+  }
+  uVar9 = (this->fields).cameraPos.x;
+  uVar10 = (this->fields).cameraPos.y;
+  uVar11 = (pGVar1->fields)._position3D.x;
+  fVar6 = (pGVar1->fields)._position3D.z - (this->fields).cameraPos.z;
+  fVar12 = (pGVar1->fields)._position3D.y - (float)uVar10;
+  fVar6 = fVar12 * fVar12 + ((float)uVar11 - (float)uVar9) * ((float)uVar11 - (float)uVar9) +
+           fVar6 * fVar6;
+  if (fVar6 < fVar5) {
+    return -1;
+  }
+  if (fVar6 <= fVar5) {
+    if (fVar6 == fVar5) {
+      return 0;
+    }
+    if (0x7f800000 < (uint)ABS(fVar6)) {
+      return (0x7f800000 < (uint)ABS(fVar5)) - 1;
     }
   }
-  func_?();
-  pcVar13 = (code *)swi(3);
-  iVar12 = (*pcVar13)();
-  return iVar12;
+  return 1;
 }
 

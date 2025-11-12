@@ -10,27 +10,54 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[Unity::IL2CPP::Metadata::
                 *other,MethodInfo *method)
 
 {
-  pMVar1 = method;
-  uVar2 = (method->klass->rgctx_data[5].klass)->actualSize;
-  pIVar3 = method->klass->rgctx_data[5].klass;
-  if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
-    func_?(pIVar3);
+  pIVar1 = method->klass->rgctx_data[5].klass;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    apuStack_2[0] = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
   }
-  func_?();
-  func_?();
-  uVar4 = func_?(other,pMVar1->klass->rgctx_data->klass->fields);
-  func_?(&stack0xffffffe8,uVar4,uVar2);
-  pSVar5 = (SubscribableVariableBase_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-           func_?(pMVar1->klass->rgctx_data[5].rgctxDataDummy,&stack0xffffffe8);
-  uVar4 = func_?(this,pMVar1->klass->rgctx_data->klass->fields);
-  pvVar6 = pMVar1->klass->rgctx_data[9].rgctxDataDummy;
-  pIVar3 = pMVar1->klass->rgctx_data[5].klass;
-  if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar3 = (Il2CppClass *)func_?(pIVar3);
+  apuStack_2[0] = &UNK_?;
+  lVar3 = FUN_?(pIVar1->actualSize + 0x10,0xffffffffffffff0);
+  lVar3 = -lVar3;
+  *(undefined **)((longlong)apuStack_2 + lVar3) = &UNK_?;
+  lVar4 = FUN_?();
+  lVar4 = -lVar4;
+  pFVar5 = method->klass->rgctx_data->klass->fields;
+  pIVar1 = pFVar5->parent;
+  lVar6 = (longlong)&other->klass + (longlong)pFVar5->offset;
+  iVar7._0_2_ = (pIVar1->byval_arg).attrs;
+  iVar7._2_1_ = (pIVar1->byval_arg).type;
+  iVar7._3_1_ = (pIVar1->byval_arg).field_0xb;
+  lVar8 = lVar6 + -0x10;
+  if (-1 < iVar7) {
+    lVar8 = lVar6;
   }
-  other = pSVar5;
-  func_?(pIVar3,pvVar6,&stack0xffffffe8,uVar4,&other,(int)&method + 3);
-  return method._3_1_;
+  *(undefined **)((longlong)apuStack_2 + lVar4 + lVar3) = &UNK_?;
+  FUN_?(&stack0xffffffffffffffd8 + lVar4 + lVar3,lVar8);
+  pvVar9 = method->klass->rgctx_data[5].rgctxDataDummy;
+  *(undefined **)((longlong)apuStack_2 + lVar4 + lVar3) = &UNK_?;
+  uStackX_10 = FUN_?(pvVar9,&stack0xffffffffffffffd8 + lVar4 + lVar3);
+  pFVar5 = method->klass->rgctx_data->klass->fields;
+  pIVar1 = pFVar5->parent;
+  lVar6 = (longlong)&this->klass + (longlong)pFVar5->offset;
+  iVar10._0_2_ = (pIVar1->byval_arg).attrs;
+  iVar10._2_1_ = (pIVar1->byval_arg).type;
+  iVar10._3_1_ = (pIVar1->byval_arg).field_0xb;
+  lVar8 = lVar6 + -0x10;
+  if (-1 < iVar10) {
+    lVar8 = lVar6;
+  }
+  pIVar11 = method->klass->rgctx_data;
+  pvVar9 = pIVar11[9].rgctxDataDummy;
+  pvVar12 = pIVar11[5].rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar12 + 0x135) & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar4 + lVar3) = &UNK_?;
+    pvVar12 = (void *)FUN_?(pvVar12);
+  }
+  *(bool **)((longlong)alStack_13 + lVar4 + lVar3 + 8) = abStackX_8;
+  *(undefined8 **)((longlong)alStack_13 + lVar4 + lVar3) = &uStackX_10;
+  *(undefined **)((longlong)apuStack_2 + lVar4 + lVar3) = &UNK_?;
+  FUN_?(pvVar12,pvVar9,&stack0xffffffffffffffd8 + lVar3,lVar8);
+  return abStackX_8[0];
 }
 
 
@@ -43,46 +70,43 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[Unity::IL2CPP::Metadata::
                ,Object *obj,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Type);
-    cRam_? = '\x01';
-  }
-  if (obj == (Object *)0x0) {
-    return 0;
-  }
-  if (this == (SubscribableVariableBase_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)obj)
-  {
-    return 1;
-  }
-  left = (XNamespace *)mscorlib.dll::System::Object::Object_GetType(obj,(MethodInfo *)0x0);
-  if (this != (SubscribableVariableBase_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0)
-  {
-    right = (XNamespace *)
-            mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
-    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Type);
+  if (obj != (Object *)0x0) {
+    if (this == (SubscribableVariableBase_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+                obj) {
+      return 1;
     }
-    bVar1 = System.Xml.Linq.dll::System::Xml::Linq::XNamespace::XNamespace_op_Inequality
-                      (left,right,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      return 0;
+    lVar1 = FUN_?(&(obj->klass->_0).byval_arg);
+    if (this == (SubscribableVariableBase_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
+                0x0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      bVar3 = (*pcVar2)();
+      return bVar3;
     }
-    pIVar2 = (method->klass->rgctx_data[1].method)->methodPointer;
-    pIVar3 = method->klass->rgctx_data->klass;
-    if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
-      pIVar3 = (Il2CppClass *)func_?();
+    lVar4 = FUN_?(&(this->klass->_0).byval_arg);
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
     }
-    if ((pIVar3->naturalAligment <= (obj->klass->_1).naturalAligment) &&
-       ((obj->klass->_1).typeHierarchy[pIVar3->naturalAligment - 1] == pIVar3)) {
-      bVar1 = (*pIVar2)(this);
-      return bVar1;
+    if (lVar1 == lVar4) {
+      pIVar5 = (method->klass->rgctx_data[1].method)->methodPointer;
+      pIVar6 = method->klass->rgctx_data;
+      pIVar7 = pIVar6->klass;
+      pvVar8 = pIVar6[1].rgctxDataDummy;
+      if ((pIVar7->field_0x135 & 1) == 0) {
+        pIVar7 = (Il2CppClass *)FUN_?(pIVar7);
+      }
+      if ((pIVar7->naturalAligment <= (obj->klass->_1).naturalAligment) &&
+         ((obj->klass->_1).typeHierarchy[(ulonglong)pIVar7->naturalAligment - 1] == pIVar7)) {
+        bVar3 = (*pIVar5)(this,obj,pvVar8);
+        return bVar3;
+      }
+      FUN_?(obj,pIVar7);
+      pcVar2 = (code *)swi(3);
+      bVar3 = (*pcVar2)();
+      return bVar3;
     }
-    func_?();
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  bVar1 = (*pcVar4)();
-  return bVar1;
+  return 0;
 }
 
 
@@ -95,29 +119,45 @@ int32_t Assembly-CSharp.dll::SubscribableVariableBase`1[Unity::IL2CPP::Metadata:
                    *this,MethodInfo *method)
 
 {
-  pMVar1 = method;
-  uVar2 = (method->klass->rgctx_data[5].klass)->actualSize;
-  func_?();
-  method = (MethodInfo *)
-           (*(pMVar1->klass->rgctx_data[2].method)->methodPointer)
-                     (pMVar1->klass->rgctx_data[2].rgctxDataDummy);
-  uVar3 = func_?(this,pMVar1->klass->rgctx_data->klass->fields);
-  func_?(&stack0xffffffec,uVar3,uVar2);
-  pMVar4 = method;
-  if (method != (MethodInfo *)0x0) {
-    pMVar5 = (MethodInfo *)&stack0xffffffec;
-    if (-1 < (int)(pMVar1->klass->rgctx_data[5].method)->return_type) {
-      pMVar5 = unaff_EDI;
-    }
-    iVar6 = *(int *)(method->methodPointer + 0x10c);
-    method = pMVar5;
-    (**(code **)(iVar6 + 8))(*(undefined4 *)(iVar6 + 4),iVar6,pMVar4,&method,&pcStack_7);
-    return (int32_t)pcStack_7;
+  uVar1 = (method->klass->rgctx_data[5].klass)->actualSize;
+  apuStack_2[0] = &UNK_?;
+  pMVar3 = method;
+  lVar4 = FUN_?();
+  lVar4 = -lVar4;
+  plVar5 = (longlong *)(&stack0xffffffffffffffd8 + lVar4);
+  pIVar6 = (pMVar3->klass->rgctx_data[2].method)->methodPointer;
+  *(undefined **)((longlong)apuStack_2 + lVar4) = &UNK_?;
+  plVar7 = (longlong *)(*pIVar6)();
+  pFVar8 = method->klass->rgctx_data->klass->fields;
+  pIVar9 = pFVar8->parent;
+  lVar10 = (longlong)&this->klass + (longlong)pFVar8->offset;
+  iVar11._0_2_ = (pIVar9->byval_arg).attrs;
+  iVar11._2_1_ = (pIVar9->byval_arg).type;
+  iVar11._3_1_ = (pIVar9->byval_arg).field_0xb;
+  lVar12 = lVar10 + -0x10;
+  if (-1 < iVar11) {
+    lVar12 = lVar10;
   }
-  func_?();
-  pcVar8 = (code *)swi(3);
-  iVar9 = (*pcVar8)();
-  return iVar9;
+  *(undefined **)((longlong)apuStack_2 + lVar4) = &UNK_?;
+  FUN_?(plVar5,lVar12,uVar1);
+  if (plVar7 != (longlong *)0x0) {
+    if (-1 < *(int *)&(method->klass->rgctx_data[5].method)->return_type) {
+      plVar5 = (longlong *)*plVar5;
+    }
+    lVar12 = *(longlong *)(*plVar7 + 0x1d0);
+    pcVar13 = *(code **)(lVar12 + 0x10);
+    uVar14 = *(undefined8 *)(lVar12 + 8);
+    *(int32_t **)((longlong)alStack_15 + lVar4) = aiStackX_8;
+    *(undefined **)((longlong)apuStack_2 + lVar4) = &UNK_?;
+    lStackX_10 = (longlong)plVar5;
+    (*pcVar13)(uVar14,lVar12,plVar7,&lStackX_10);
+    return aiStackX_8[0];
+  }
+  *(undefined **)((longlong)apuStack_2 + lVar4) = &UNK_?;
+  FUN_?();
+  pcVar13 = (code *)swi(3);
+  iVar16 = (*pcVar13)();
+  return iVar16;
 }
 
 
@@ -130,28 +170,55 @@ void Assembly-CSharp.dll::SubscribableVariableBase`1[Unity::IL2CPP::Metadata::
                ,MethodInfo *method)
 
 {
-  pMVar1 = method;
-  method = (MethodInfo *)(method->klass->rgctx_data[5].klass)->actualSize;
-  func_?();
-  piVar2 = (int *)func_?(this,pMVar1->klass->rgctx_data->klass->fields + 1);
-  if (*piVar2 != 0) {
-    puVar3 = (undefined4 *)func_?(this,pMVar1->klass->rgctx_data->klass->fields + 1);
-    pvVar4 = (void *)*puVar3;
-    uVar5 = func_?(this,pMVar1->klass->rgctx_data->klass->fields);
-    func_?(&stack0xffffffec,uVar5,method);
-    if (pvVar4 == (void *)0x0) {
-      func_?();
-      pcVar6 = (code *)swi(3);
-      (*pcVar6)();
-      return;
+  apuStack_1[0] = &UNK_?;
+  pMVar2 = method;
+  lVar3 = FUN_?();
+  lVar3 = -lVar3;
+  pvStackX_8 = &stack0xfffffffffffffff8 + lVar3;
+  pFVar4 = pMVar2->klass->rgctx_data->klass->fields;
+  pIVar5 = pFVar4[1].parent;
+  plVar6 = (longlong *)((longlong)&this->klass + (longlong)pFVar4[1].offset);
+  iVar7._0_2_ = (pIVar5->byval_arg).attrs;
+  iVar7._2_1_ = (pIVar5->byval_arg).type;
+  iVar7._3_1_ = (pIVar5->byval_arg).field_0xb;
+  plVar8 = plVar6 + -2;
+  if (-1 < iVar7) {
+    plVar8 = plVar6;
+  }
+  if (*plVar8 != 0) {
+    pFVar4 = method->klass->rgctx_data->klass->fields;
+    pIVar5 = pFVar4[1].parent;
+    puVar9 = (undefined8 *)((longlong)&this->klass + (longlong)pFVar4[1].offset);
+    iVar10._0_2_ = (pIVar5->byval_arg).attrs;
+    iVar10._2_1_ = (pIVar5->byval_arg).type;
+    iVar10._3_1_ = (pIVar5->byval_arg).field_0xb;
+    puVar11 = puVar9 + -2;
+    if (-1 < iVar10) {
+      puVar11 = puVar9;
     }
-    method = (MethodInfo *)&stack0xffffffec;
-    if (-1 < (int)(pMVar1->klass->rgctx_data[5].method)->return_type) {
-      method = unaff_EDI;
+    pvVar12 = (void *)*puVar11;
+    pFVar4 = method->klass->rgctx_data->klass->fields;
+    lVar13 = (longlong)&this->klass + (longlong)pFVar4->offset;
+    pIVar5 = pFVar4->parent;
+    iVar14._0_2_ = (pIVar5->byval_arg).attrs;
+    iVar14._2_1_ = (pIVar5->byval_arg).type;
+    iVar14._3_1_ = (pIVar5->byval_arg).field_0xb;
+    lVar15 = lVar13 + -0x10;
+    if (-1 < iVar14) {
+      lVar15 = lVar13;
     }
-    pMVar7 = pMVar1->klass->rgctx_data[0xc].method;
-    (*pMVar7->invoker_method)
-              ((pMVar1->klass->rgctx_data[0xc].method)->methodPointer,pMVar7,pvVar4,&method,method);
+    *(undefined **)((longlong)apuStack_1 + lVar3) = &UNK_?;
+    FUN_?(pvStackX_8,lVar15);
+    if (-1 < *(int *)&(method->klass->rgctx_data[5].method)->return_type) {
+      pvStackX_8 = *(void **)pvStackX_8;
+    }
+    pIVar5 = method->klass;
+    *(void **)((longlong)alStack_16 + lVar3) = pvStackX_8;
+    pMVar2 = pIVar5->rgctx_data[0xc].method;
+    pIVar17 = pMVar2->invoker_method;
+    pIVar18 = pMVar2->methodPointer;
+    *(undefined **)((longlong)apuStack_1 + lVar3) = &UNK_?;
+    (*pIVar17)(pIVar18,pMVar2,pvVar12,&pvStackX_8,*(void **)((longlong)alStack_16 + lVar3));
   }
   return;
 }
@@ -168,15 +235,19 @@ void Assembly-CSharp.dll::SubscribableVariableBase`1[Unity::IL2CPP::Metadata::
 
 {
   uVar1 = (method->klass->rgctx_data[5].klass)->actualSize;
-  func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  p_Var2 = (_Il2CppFullySharedGenericType *)&value;
-  if ((int)(method->klass->rgctx_data[5].method)->return_type < 0) {
-    p_Var2 = value;
+  apuStack_2[0] = &UNK_?;
+  p_StackX_10 = (_Il2CppFullySharedGenericType__Class *)value;
+  lVar3 = FUN_?(this,value,value);
+  lVar3 = -lVar3;
+  p_Var4 = (_Il2CppFullySharedGenericType *)&p_StackX_10;
+  if (*(int *)&(method->klass->rgctx_data[5].method)->return_type < 0) {
+    p_Var4 = value;
   }
-  func_?(&stack0xfffffff4,p_Var2,uVar1);
-  func_?(this,method->klass->rgctx_data->klass->fields,&stack0xfffffff4,uVar1);
+  *(undefined **)((longlong)apuStack_2 + lVar3) = &UNK_?;
+  FUN_?(&stack0xffffffffffffffe8 + lVar3,p_Var4,uVar1);
+  pFVar4 = method->klass->rgctx_data->klass->fields;
+  *(undefined **)((longlong)apuStack_2 + lVar3) = &UNK_?;
+  FUN_?(this,pFVar4,&stack0xffffffffffffffe8 + lVar3,uVar1);
   return;
 }
 
@@ -191,32 +262,75 @@ void Assembly-CSharp.dll::SubscribableVariableBase`1[Unity::IL2CPP::Metadata::
                MethodInfo *method)
 
 {
-  puVar1 = (undefined4 *)func_?(this,method->klass->rgctx_data->klass->fields + 1);
-  a = (Delegate *)*puVar1;
+  pFVar1 = method->klass->rgctx_data->klass->fields;
+  pIVar2 = pFVar1[1].parent;
+  puVar3 = (undefined8 *)((longlong)&this->klass + (longlong)pFVar1[1].offset);
+  iVar4._0_2_ = (pIVar2->byval_arg).attrs;
+  iVar4._2_1_ = (pIVar2->byval_arg).type;
+  iVar4._3_1_ = (pIVar2->byval_arg).field_0xb;
+  puVar5 = puVar3 + -2;
+  if (-1 < iVar4) {
+    puVar5 = puVar3;
+  }
+  a = (Delegate *)*puVar5;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine(a,(Delegate *)value,(MethodInfo *)0x0)
+    pDVar6 = mscorlib.dll::System::Delegate::Delegate_Combine(a,(Delegate *)value,(MethodInfo *)0x0)
     ;
-    pIVar3 = method->klass->rgctx_data[7].klass;
-    if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
-      pIVar3 = (Il2CppClass *)func_?(pIVar3);
+    pvVar7 = method->klass->rgctx_data[7].rgctxDataDummy;
+    if ((*(byte *)((longlong)pvVar7 + 0x135) & 1) == 0) {
+      pvVar7 = (void *)FUN_?(pvVar7);
     }
-    if (pDVar2 == (Delegate *)0x0) {
-      iVar4 = 0;
+    if (pDVar6 == (Delegate *)0x0) {
+      lVar8 = 0;
     }
     else {
-      iVar4 = func_?(pDVar2,pIVar3);
-      if (iVar4 == 0) {
-        func_?(pDVar2,pIVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+      lVar8 = FUN_?(pDVar6,pvVar7);
+      if (lVar8 == 0) {
+        FUN_?(pDVar6,pvVar7);
+        pcVar9 = (code *)swi(3);
+        (*pcVar9)();
         return;
       }
     }
-    uVar6 = func_?(this,method->klass->rgctx_data->klass->fields + 1);
-    pDVar2 = (Delegate *)func_?(uVar6,iVar4,a);
-    bVar7 = pDVar2 != a;
-    a = pDVar2;
-  } while (bVar7);
+    pFVar1 = method->klass->rgctx_data->klass->fields;
+    pIVar2 = pFVar1[1].parent;
+    plVar10 = (longlong *)((longlong)&this->klass + (longlong)pFVar1[1].offset);
+    iVar11._0_2_ = (pIVar2->byval_arg).attrs;
+    iVar11._2_1_ = (pIVar2->byval_arg).type;
+    iVar11._3_1_ = (pIVar2->byval_arg).field_0xb;
+    plVar12 = plVar10 + -2;
+    if (-1 < iVar11) {
+      plVar12 = plVar10;
+    }
+    LOCK();
+    pDVar6 = (Delegate *)*plVar12;
+    bVar13 = a == pDVar6;
+    if (bVar13) {
+      *plVar12 = lVar8;
+      pDVar6 = a;
+    }
+    UNLOCK();
+    pDVar14 = a;
+    if (!bVar13) {
+      pDVar14 = pDVar6;
+    }
+    if (iRam_? != 0) {
+      uVar15 = (uint)((ulonglong)plVar12 >> 0xc);
+      uVar16 = (ulonglong)((uVar15 & 0x1fffff) >> 6);
+      do {
+        uVar17 = *(ulonglong *)(uVar16 * 8 + 0xADDR);
+        puVar18 = (ulonglong *)(uVar16 * 8 + 0xADDR);
+        LOCK();
+        bVar13 = uVar17 == *puVar18;
+        if (bVar13) {
+          *puVar18 = uVar17 | 1L << (uVar15 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar13);
+    }
+    bVar13 = pDVar14 != a;
+    a = pDVar14;
+  } while (bVar13);
   return;
 }
 
@@ -232,13 +346,22 @@ SubscribableVariableBase_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__g
 
 {
   uVar1 = *(undefined4 *)
-           (*(int *)(*(int *)(*(int *)(in_stack_2 + 0x10) + 0x60) + 0x14) + 0x84);
-  func_?();
-  uVar3 = func_?(this,*(undefined4 *)
-                                (**(int **)(*(int *)(in_stack_2 + 0x10) + 0x60) + 0x40));
-  func_?(&stack0xfffffff0,uVar3,uVar1);
-  p_Var3 = (_Il2CppFullySharedGenericType *)func_?(method,&stack0xfffffff0,uVar1);
-  return p_Var3;
+           (*(longlong *)(*(longlong *)(*(longlong *)(in_R8 + 0x20) + 0xc0) + 0x28) + 0xfc);
+  apuStack_2[0] = &UNK_?;
+  lVar3 = FUN_?(this,this);
+  lVar3 = -lVar3;
+  lVar4 = *(longlong *)(**(longlong **)(*(longlong *)(in_R8 + 0x20) + 0xc0) + 0x80);
+  lVar5 = (longlong)&this->klass + (longlong)*(int *)(lVar4 + 0x18);
+  lVar6 = lVar5 + -0x10;
+  if (-1 < *(int *)(*(longlong *)(lVar4 + 0x10) + 0x28)) {
+    lVar6 = lVar5;
+  }
+  *(undefined **)((longlong)apuStack_2 + lVar3) = &UNK_?;
+  FUN_?(&stack0xfffffffffffffff8 + lVar3,lVar6,uVar1);
+  *(undefined **)((longlong)apuStack_2 + lVar3) = &UNK_?;
+  p_Var4 = (_Il2CppFullySharedGenericType *)
+           FUN_?(method,&stack0xfffffffffffffff8 + lVar3,uVar1);
+  return p_Var4;
 }
 
 
@@ -253,56 +376,90 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[Unity::IL2CPP::Metadata::
                MethodInfo *method)
 
 {
-  pMVar1 = method;
-  pIVar2 = method->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  pIVar1 = method->klass;
+  p_StackX_8 = (_Il2CppFullySharedGenericType__Class *)b;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    apuStack_2[0] = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
   }
-  uVar3 = (pIVar2->rgctx_data[5].klass)->actualSize;
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  pIVar3 = method->klass;
+  uVar4 = (ulonglong)(pIVar1->rgctx_data[5].klass)->actualSize;
+  if ((pIVar3->field_0x135 & 1) == 0) {
+    apuStack_2[0] = &UNK_?;
+    pIVar3 = (Il2CppClass *)FUN_?(pIVar3);
   }
-  if (((uint)(pIVar2->rgctx_data[5].klass)->vtable[0].methodPtr & 0x100) == 0) {
-    func_?(pIVar2->rgctx_data[5].klass);
+  if (((pIVar3->rgctx_data[5].klass)->field_0x135 & 1) == 0) {
+    apuStack_2[0] = &UNK_?;
+    FUN_?(pIVar3->rgctx_data[5].klass);
   }
-  func_?();
-  func_?();
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  uVar5 = 0xffffffffffffff0;
+  apuStack_2[0] = &UNK_?;
+  lVar6 = FUN_?();
+  lVar6 = -lVar6;
+  uVar7 = uVar4 + 0xf;
+  if (uVar4 + 0xf <= uVar4) {
+    uVar7 = uVar5;
   }
-  uVar4 = func_?(a,pIVar2->rgctx_data->klass->fields);
-  func_?(&stack0xffffffec,uVar4,uVar3);
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  uVar7 = uVar7 & 0xfffffffffffffff0;
+  *(undefined **)((longlong)apuStack_2 + lVar6) = &UNK_?;
+  FUN_?();
+  pIVar1 = method->klass;
+  lVar8 = -uVar7;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
   }
-  method = (MethodInfo *)func_?(pIVar2->rgctx_data[5].rgctxDataDummy,&stack0xffffffec);
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  pFVar9 = pIVar1->rgctx_data->klass->fields;
+  pIVar1 = pFVar9->parent;
+  lVar10 = (longlong)&a->klass + (longlong)pFVar9->offset;
+  iVar11._0_2_ = (pIVar1->byval_arg).attrs;
+  iVar11._2_1_ = (pIVar1->byval_arg).type;
+  iVar11._3_1_ = (pIVar1->byval_arg).field_0xb;
+  lVar12 = lVar10 + -0x10;
+  if (-1 < iVar11) {
+    lVar12 = lVar10;
   }
-  pIVar5 = pMVar1->klass;
-  p_Var7 = (_Il2CppFullySharedGenericType *)&b;
-  if ((int)(pIVar2->rgctx_data[5].method)->return_type < 0) {
-    p_Var7 = b;
+  *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+  FUN_?(&stack0xffffffffffffffd8 + lVar8 + lVar6,lVar12,uVar4);
+  pIVar1 = method->klass;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
   }
-  if (((uint)pIVar5->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar5 = (Il2CppClass *)func_?(pIVar5);
+  pvVar13 = pIVar1->rgctx_data[5].rgctxDataDummy;
+  *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+  uVar14 = FUN_?(pvVar13,&stack0xffffffffffffffd8 + lVar8 + lVar6);
+  pIVar1 = method->klass;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
   }
-  pvVar6 = pIVar5->rgctx_data[9].rgctxDataDummy;
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  pIVar3 = method->klass;
+  p_Var15 = (_Il2CppFullySharedGenericType__Class *)&p_StackX_8;
+  if (*(int *)&(pIVar1->rgctx_data[5].method)->return_type < 0) {
+    p_Var15 = p_StackX_8;
   }
-  pIVar2 = pIVar2->rgctx_data[5].klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  if ((pIVar3->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar3 = (Il2CppClass *)FUN_?(pIVar3);
   }
-  a = (SubscribableVariableBase_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)method;
-  func_?(pIVar2,pvVar6,&stack0xffffffec,p_Var7,&a,(int)&method + 3);
-  return method._3_1_;
+  pvVar13 = pIVar3->rgctx_data[9].rgctxDataDummy;
+  pIVar1 = method->klass;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
+  }
+  pvVar15 = pIVar1->rgctx_data[5].rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar15 + 0x135) & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pvVar15 = (void *)FUN_?(pvVar15);
+  }
+  *(bool **)((longlong)alStack_16 + lVar8 + lVar6 + 8) = abStackX_10;
+  *(undefined8 **)((longlong)alStack_16 + lVar8 + lVar6) = &uStackX_18;
+  *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+  uStackX_18 = uVar14;
+  FUN_?(pvVar15,pvVar13,&stack0xffffffffffffffd8 + lVar6,p_Var15);
+  return abStackX_10[0];
 }
 
 
@@ -317,56 +474,90 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[Unity::IL2CPP::Metadata::
                _Il2CppFullySharedGenericType *b,MethodInfo *method)
 
 {
-  pMVar1 = method;
-  pIVar2 = method->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  pIVar1 = method->klass;
+  p_StackX_10 = (_Il2CppFullySharedGenericType__Class *)b;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    apuStack_2[0] = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
   }
-  uVar3 = (pIVar2->rgctx_data[5].klass)->actualSize;
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  pIVar3 = method->klass;
+  uVar4 = (ulonglong)(pIVar1->rgctx_data[5].klass)->actualSize;
+  if ((pIVar3->field_0x135 & 1) == 0) {
+    apuStack_2[0] = &UNK_?;
+    pIVar3 = (Il2CppClass *)FUN_?(pIVar3);
   }
-  if (((uint)(pIVar2->rgctx_data[5].klass)->vtable[0].methodPtr & 0x100) == 0) {
-    func_?(pIVar2->rgctx_data[5].klass);
+  if (((pIVar3->rgctx_data[5].klass)->field_0x135 & 1) == 0) {
+    apuStack_2[0] = &UNK_?;
+    FUN_?(pIVar3->rgctx_data[5].klass);
   }
-  func_?();
-  func_?();
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  uVar5 = 0xffffffffffffff0;
+  apuStack_2[0] = &UNK_?;
+  lVar6 = FUN_?();
+  lVar6 = -lVar6;
+  uVar7 = uVar4 + 0xf;
+  if (uVar4 + 0xf <= uVar4) {
+    uVar7 = uVar5;
   }
-  uVar4 = func_?(a,pIVar2->rgctx_data->klass->fields);
-  func_?(&stack0xffffffec,uVar4,uVar3);
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  uVar7 = uVar7 & 0xfffffffffffffff0;
+  *(undefined **)((longlong)apuStack_2 + lVar6) = &UNK_?;
+  FUN_?();
+  pIVar1 = method->klass;
+  lVar8 = -uVar7;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
   }
-  method = (MethodInfo *)func_?(pIVar2->rgctx_data[5].rgctxDataDummy,&stack0xffffffec);
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  pFVar9 = pIVar1->rgctx_data->klass->fields;
+  pIVar1 = pFVar9->parent;
+  lVar10 = (longlong)&a->klass + (longlong)pFVar9->offset;
+  iVar11._0_2_ = (pIVar1->byval_arg).attrs;
+  iVar11._2_1_ = (pIVar1->byval_arg).type;
+  iVar11._3_1_ = (pIVar1->byval_arg).field_0xb;
+  lVar12 = lVar10 + -0x10;
+  if (-1 < iVar11) {
+    lVar12 = lVar10;
   }
-  pIVar5 = pMVar1->klass;
-  p_Var7 = (_Il2CppFullySharedGenericType *)&b;
-  if ((int)(pIVar2->rgctx_data[5].method)->return_type < 0) {
-    p_Var7 = b;
+  *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+  FUN_?(&stack0xffffffffffffffd8 + lVar8 + lVar6,lVar12,uVar4);
+  pIVar1 = method->klass;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
   }
-  if (((uint)pIVar5->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar5 = (Il2CppClass *)func_?(pIVar5);
+  pvVar13 = pIVar1->rgctx_data[5].rgctxDataDummy;
+  *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+  pMVar14 = (MonitorData *)FUN_?(pvVar13,&stack0xffffffffffffffd8 + lVar8 + lVar6);
+  pIVar1 = method->klass;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
   }
-  pvVar6 = pIVar5->rgctx_data[9].rgctxDataDummy;
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  pIVar3 = method->klass;
+  p_Var15 = (_Il2CppFullySharedGenericType__Class *)&p_StackX_10;
+  if (*(int *)&(pIVar1->rgctx_data[5].method)->return_type < 0) {
+    p_Var15 = p_StackX_10;
   }
-  pIVar2 = pIVar2->rgctx_data[5].klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  if ((pIVar3->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar3 = (Il2CppClass *)FUN_?(pIVar3);
   }
-  a = (SubscribableVariableBase_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)method;
-  func_?(pIVar2,pvVar6,&stack0xffffffec,p_Var7,&a,(int)&method + 3);
-  return method._3_1_;
+  pvVar13 = pIVar3->rgctx_data[9].rgctxDataDummy;
+  pIVar1 = method->klass;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
+  }
+  pvVar15 = pIVar1->rgctx_data[5].rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar15 + 0x135) & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pvVar15 = (void *)FUN_?(pvVar15);
+  }
+  *(bool **)((longlong)alStack_16 + lVar8 + lVar6 + 8) = abStackX_8;
+  *(MonitorData ***)((longlong)alStack_16 + lVar8 + lVar6) = &pMStackX_18;
+  *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+  pMStackX_18 = pMVar14;
+  FUN_?(pvVar15,pvVar13,&stack0xffffffffffffffd8 + lVar6,p_Var15);
+  return abStackX_8[0];
 }
 
 
@@ -382,53 +573,95 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[Unity::IL2CPP::Metadata::
                MethodInfo *method)
 
 {
-  pMVar1 = method;
-  pIVar2 = method->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  pIVar1 = method->klass;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    apuStack_2[0] = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
   }
-  uVar3 = (pIVar2->rgctx_data[5].klass)->actualSize;
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  pIVar3 = method->klass;
+  uVar4 = (ulonglong)(pIVar1->rgctx_data[5].klass)->actualSize;
+  if ((pIVar3->field_0x135 & 1) == 0) {
+    apuStack_2[0] = &UNK_?;
+    pIVar3 = (Il2CppClass *)FUN_?(pIVar3);
   }
-  if (((uint)(pIVar2->rgctx_data[5].klass)->vtable[0].methodPtr & 0x100) == 0) {
-    func_?(pIVar2->rgctx_data[5].klass);
+  if (((pIVar3->rgctx_data[5].klass)->field_0x135 & 1) == 0) {
+    apuStack_2[0] = &UNK_?;
+    FUN_?(pIVar3->rgctx_data[5].klass);
   }
-  func_?();
-  func_?();
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  uVar5 = 0xffffffffffffff0;
+  apuStack_2[0] = &UNK_?;
+  lVar6 = FUN_?();
+  lVar6 = -lVar6;
+  uVar7 = uVar4 + 0xf;
+  if (uVar4 + 0xf <= uVar4) {
+    uVar7 = uVar5;
   }
-  uVar4 = func_?(b,pIVar2->rgctx_data->klass->fields);
-  func_?(&stack0xffffffec,uVar4,uVar3);
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  uVar7 = uVar7 & 0xfffffffffffffff0;
+  *(undefined **)((longlong)apuStack_2 + lVar6) = &UNK_?;
+  FUN_?();
+  pIVar1 = method->klass;
+  lVar8 = -uVar7;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
   }
-  method = (MethodInfo *)func_?(pIVar2->rgctx_data[5].rgctxDataDummy,&stack0xffffffec);
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  pFVar9 = pIVar1->rgctx_data->klass->fields;
+  pIVar1 = pFVar9->parent;
+  lVar10 = (longlong)&b->klass + (longlong)pFVar9->offset;
+  iVar11._0_2_ = (pIVar1->byval_arg).attrs;
+  iVar11._2_1_ = (pIVar1->byval_arg).type;
+  iVar11._3_1_ = (pIVar1->byval_arg).field_0xb;
+  lVar12 = lVar10 + -0x10;
+  if (-1 < iVar11) {
+    lVar12 = lVar10;
   }
-  uVar4 = func_?(a,pIVar2->rgctx_data->klass->fields);
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+  FUN_?(&stack0xffffffffffffffd8 + lVar8 + lVar6,lVar12,uVar4);
+  pIVar1 = method->klass;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
   }
-  pvVar5 = pIVar2->rgctx_data[9].rgctxDataDummy;
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  pvVar13 = pIVar1->rgctx_data[5].rgctxDataDummy;
+  *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+  uVar14 = FUN_?(pvVar13,&stack0xffffffffffffffd8 + lVar8 + lVar6);
+  pIVar1 = method->klass;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
   }
-  pIVar2 = pIVar2->rgctx_data[5].klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  pFVar9 = pIVar1->rgctx_data->klass->fields;
+  pIVar1 = pFVar9->parent;
+  lVar10 = (longlong)&a->klass + (longlong)pFVar9->offset;
+  iVar15._0_2_ = (pIVar1->byval_arg).attrs;
+  iVar15._2_1_ = (pIVar1->byval_arg).type;
+  iVar15._3_1_ = (pIVar1->byval_arg).field_0xb;
+  pIVar1 = method->klass;
+  lVar12 = lVar10 + -0x10;
+  if (-1 < iVar15) {
+    lVar12 = lVar10;
   }
-  b = (SubscribableVariableBase_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)method;
-  func_?(pIVar2,pvVar5,&stack0xffffffec,uVar4,&b,(int)&method + 3);
-  return method._3_1_;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
+  }
+  pvVar13 = pIVar1->rgctx_data[9].rgctxDataDummy;
+  pIVar1 = method->klass;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
+  }
+  pvVar16 = pIVar1->rgctx_data[5].rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar16 + 0x135) & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pvVar16 = (void *)FUN_?(pvVar16);
+  }
+  *(bool **)((longlong)alStack_17 + lVar8 + lVar6 + 8) = abStackX_8;
+  *(undefined8 **)((longlong)alStack_17 + lVar8 + lVar6) = &uStackX_10;
+  *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+  uStackX_10 = uVar14;
+  FUN_?(pvVar16,pvVar13,&stack0xffffffffffffffd8 + lVar6,lVar12);
+  return abStackX_8[0];
 }
 
 
@@ -443,19 +676,31 @@ SubscribableVariableBase_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__o
           MethodInfo *method)
 
 {
-  iVar1 = *(int *)(in_stack_2 + 0x10);
-  if ((*(byte *)(iVar1 + 0xbd) & 1) == 0) {
-    iVar1 = func_?(iVar1);
+  lVar1 = *(longlong *)(in_R8 + 0x20);
+  if ((*(byte *)(lVar1 + 0x135) & 1) == 0) {
+    apuStack_2[0] = &UNK_?;
+    lVar1 = FUN_?(lVar1);
   }
-  uVar3 = *(undefined4 *)(*(int *)(*(int *)(iVar1 + 0x60) + 0x14) + 0x84);
-  func_?();
-  iVar1 = *(int *)(in_stack_2 + 0x10);
-  if ((*(byte *)(iVar1 + 0xbd) & 1) == 0) {
-    iVar1 = func_?(iVar1);
+  uVar3 = *(undefined4 *)(*(longlong *)(*(longlong *)(lVar1 + 0xc0) + 0x28) + 0xfc);
+  apuStack_2[0] = &UNK_?;
+  lVar4 = FUN_?();
+  lVar4 = -lVar4;
+  lVar1 = *(longlong *)(in_R8 + 0x20);
+  if ((*(byte *)(lVar1 + 0x135) & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar4) = &UNK_?;
+    lVar1 = FUN_?(lVar1);
   }
-  uVar4 = func_?(s,*(undefined4 *)(**(int **)(iVar1 + 0x60) + 0x40));
-  func_?(&stack0xfffffff0,uVar4,uVar3);
-  p_Var4 = (_Il2CppFullySharedGenericType *)func_?(method,&stack0xfffffff0,uVar3);
+  lVar1 = *(longlong *)(**(longlong **)(lVar1 + 0xc0) + 0x80);
+  lVar5 = (longlong)&s->klass + (longlong)*(int *)(lVar1 + 0x18);
+  lVar6 = lVar5 + -0x10;
+  if (-1 < *(int *)(*(longlong *)(lVar1 + 0x10) + 0x28)) {
+    lVar6 = lVar5;
+  }
+  *(undefined **)((longlong)apuStack_2 + lVar4) = &UNK_?;
+  FUN_?(&stack0xffffffffffffffe8 + lVar4,lVar6,uVar3);
+  *(undefined **)((longlong)apuStack_2 + lVar4) = &UNK_?;
+  p_Var4 = (_Il2CppFullySharedGenericType *)
+           FUN_?(method,&stack0xffffffffffffffe8 + lVar4,uVar3);
   return p_Var4;
 }
 
@@ -471,56 +716,90 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[Unity::IL2CPP::Metadata::
                MethodInfo *method)
 
 {
-  pMVar1 = method;
-  pIVar2 = method->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  pIVar1 = method->klass;
+  p_StackX_8 = (_Il2CppFullySharedGenericType__Class *)b;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    apuStack_2[0] = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
   }
-  uVar3 = (pIVar2->rgctx_data[5].klass)->actualSize;
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  pIVar3 = method->klass;
+  uVar4 = (ulonglong)(pIVar1->rgctx_data[5].klass)->actualSize;
+  if ((pIVar3->field_0x135 & 1) == 0) {
+    apuStack_2[0] = &UNK_?;
+    pIVar3 = (Il2CppClass *)FUN_?(pIVar3);
   }
-  if (((uint)(pIVar2->rgctx_data[5].klass)->vtable[0].methodPtr & 0x100) == 0) {
-    func_?(pIVar2->rgctx_data[5].klass);
+  if (((pIVar3->rgctx_data[5].klass)->field_0x135 & 1) == 0) {
+    apuStack_2[0] = &UNK_?;
+    FUN_?(pIVar3->rgctx_data[5].klass);
   }
-  func_?();
-  func_?();
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  uVar5 = 0xffffffffffffff0;
+  apuStack_2[0] = &UNK_?;
+  lVar6 = FUN_?();
+  lVar6 = -lVar6;
+  uVar7 = uVar4 + 0xf;
+  if (uVar4 + 0xf <= uVar4) {
+    uVar7 = uVar5;
   }
-  uVar4 = func_?(a,pIVar2->rgctx_data->klass->fields);
-  func_?(&stack0xffffffec,uVar4,uVar3);
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  uVar7 = uVar7 & 0xfffffffffffffff0;
+  *(undefined **)((longlong)apuStack_2 + lVar6) = &UNK_?;
+  FUN_?();
+  pIVar1 = method->klass;
+  lVar8 = -uVar7;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
   }
-  method = (MethodInfo *)func_?(pIVar2->rgctx_data[5].rgctxDataDummy,&stack0xffffffec);
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  pFVar9 = pIVar1->rgctx_data->klass->fields;
+  pIVar1 = pFVar9->parent;
+  lVar10 = (longlong)&a->klass + (longlong)pFVar9->offset;
+  iVar11._0_2_ = (pIVar1->byval_arg).attrs;
+  iVar11._2_1_ = (pIVar1->byval_arg).type;
+  iVar11._3_1_ = (pIVar1->byval_arg).field_0xb;
+  lVar12 = lVar10 + -0x10;
+  if (-1 < iVar11) {
+    lVar12 = lVar10;
   }
-  pIVar5 = pMVar1->klass;
-  p_Var7 = (_Il2CppFullySharedGenericType *)&b;
-  if ((int)(pIVar2->rgctx_data[5].method)->return_type < 0) {
-    p_Var7 = b;
+  *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+  FUN_?(&stack0xffffffffffffffd8 + lVar8 + lVar6,lVar12,uVar4);
+  pIVar1 = method->klass;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
   }
-  if (((uint)pIVar5->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar5 = (Il2CppClass *)func_?(pIVar5);
+  pvVar13 = pIVar1->rgctx_data[5].rgctxDataDummy;
+  *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+  uVar14 = FUN_?(pvVar13,&stack0xffffffffffffffd8 + lVar8 + lVar6);
+  pIVar1 = method->klass;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
   }
-  pvVar6 = pIVar5->rgctx_data[9].rgctxDataDummy;
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  pIVar3 = method->klass;
+  p_Var15 = (_Il2CppFullySharedGenericType__Class *)&p_StackX_8;
+  if (*(int *)&(pIVar1->rgctx_data[5].method)->return_type < 0) {
+    p_Var15 = p_StackX_8;
   }
-  pIVar2 = pIVar2->rgctx_data[5].klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  if ((pIVar3->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar3 = (Il2CppClass *)FUN_?(pIVar3);
   }
-  a = (SubscribableVariableBase_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)method;
-  func_?(pIVar2,pvVar6,&stack0xffffffec,p_Var7,&a,(int)&method + 3);
-  return method._3_1_ == '\0';
+  pvVar13 = pIVar3->rgctx_data[9].rgctxDataDummy;
+  pIVar1 = method->klass;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
+  }
+  pvVar15 = pIVar1->rgctx_data[5].rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar15 + 0x135) & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pvVar15 = (void *)FUN_?(pvVar15);
+  }
+  *(char **)((longlong)alStack_16 + lVar8 + lVar6 + 8) = acStackX_10;
+  *(undefined8 **)((longlong)alStack_16 + lVar8 + lVar6) = &uStackX_18;
+  *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+  uStackX_18 = uVar14;
+  FUN_?(pvVar15,pvVar13,&stack0xffffffffffffffd8 + lVar6,p_Var15);
+  return acStackX_10[0] == '\0';
 }
 
 
@@ -535,56 +814,90 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[Unity::IL2CPP::Metadata::
                _Il2CppFullySharedGenericType *b,MethodInfo *method)
 
 {
-  pMVar1 = method;
-  pIVar2 = method->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  pIVar1 = method->klass;
+  p_StackX_10 = (_Il2CppFullySharedGenericType__Class *)b;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    apuStack_2[0] = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
   }
-  uVar3 = (pIVar2->rgctx_data[5].klass)->actualSize;
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  pIVar3 = method->klass;
+  uVar4 = (ulonglong)(pIVar1->rgctx_data[5].klass)->actualSize;
+  if ((pIVar3->field_0x135 & 1) == 0) {
+    apuStack_2[0] = &UNK_?;
+    pIVar3 = (Il2CppClass *)FUN_?(pIVar3);
   }
-  if (((uint)(pIVar2->rgctx_data[5].klass)->vtable[0].methodPtr & 0x100) == 0) {
-    func_?(pIVar2->rgctx_data[5].klass);
+  if (((pIVar3->rgctx_data[5].klass)->field_0x135 & 1) == 0) {
+    apuStack_2[0] = &UNK_?;
+    FUN_?(pIVar3->rgctx_data[5].klass);
   }
-  func_?();
-  func_?();
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  uVar5 = 0xffffffffffffff0;
+  apuStack_2[0] = &UNK_?;
+  lVar6 = FUN_?();
+  lVar6 = -lVar6;
+  uVar7 = uVar4 + 0xf;
+  if (uVar4 + 0xf <= uVar4) {
+    uVar7 = uVar5;
   }
-  uVar4 = func_?(a,pIVar2->rgctx_data->klass->fields);
-  func_?(&stack0xffffffec,uVar4,uVar3);
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  uVar7 = uVar7 & 0xfffffffffffffff0;
+  *(undefined **)((longlong)apuStack_2 + lVar6) = &UNK_?;
+  FUN_?();
+  pIVar1 = method->klass;
+  lVar8 = -uVar7;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
   }
-  method = (MethodInfo *)func_?(pIVar2->rgctx_data[5].rgctxDataDummy,&stack0xffffffec);
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  pFVar9 = pIVar1->rgctx_data->klass->fields;
+  pIVar1 = pFVar9->parent;
+  lVar10 = (longlong)&a->klass + (longlong)pFVar9->offset;
+  iVar11._0_2_ = (pIVar1->byval_arg).attrs;
+  iVar11._2_1_ = (pIVar1->byval_arg).type;
+  iVar11._3_1_ = (pIVar1->byval_arg).field_0xb;
+  lVar12 = lVar10 + -0x10;
+  if (-1 < iVar11) {
+    lVar12 = lVar10;
   }
-  pIVar5 = pMVar1->klass;
-  p_Var7 = (_Il2CppFullySharedGenericType *)&b;
-  if ((int)(pIVar2->rgctx_data[5].method)->return_type < 0) {
-    p_Var7 = b;
+  *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+  FUN_?(&stack0xffffffffffffffd8 + lVar8 + lVar6,lVar12,uVar4);
+  pIVar1 = method->klass;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
   }
-  if (((uint)pIVar5->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar5 = (Il2CppClass *)func_?(pIVar5);
+  pvVar13 = pIVar1->rgctx_data[5].rgctxDataDummy;
+  *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+  pMVar14 = (MonitorData *)FUN_?(pvVar13,&stack0xffffffffffffffd8 + lVar8 + lVar6);
+  pIVar1 = method->klass;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
   }
-  pvVar6 = pIVar5->rgctx_data[9].rgctxDataDummy;
-  pIVar2 = pMVar1->klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  pIVar3 = method->klass;
+  p_Var15 = (_Il2CppFullySharedGenericType__Class *)&p_StackX_10;
+  if (*(int *)&(pIVar1->rgctx_data[5].method)->return_type < 0) {
+    p_Var15 = p_StackX_10;
   }
-  pIVar2 = pIVar2->rgctx_data[5].klass;
-  if (((uint)pIVar2->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar2 = (Il2CppClass *)func_?(pIVar2);
+  if ((pIVar3->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar3 = (Il2CppClass *)FUN_?(pIVar3);
   }
-  a = (SubscribableVariableBase_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)method;
-  func_?(pIVar2,pvVar6,&stack0xffffffec,p_Var7,&a,(int)&method + 3);
-  return method._3_1_ == '\0';
+  pvVar13 = pIVar3->rgctx_data[9].rgctxDataDummy;
+  pIVar1 = method->klass;
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
+  }
+  pvVar15 = pIVar1->rgctx_data[5].rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar15 + 0x135) & 1) == 0) {
+    *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+    pvVar15 = (void *)FUN_?(pvVar15);
+  }
+  *(char **)((longlong)alStack_16 + lVar8 + lVar6 + 8) = acStackX_8;
+  *(MonitorData ***)((longlong)alStack_16 + lVar8 + lVar6) = &pMStackX_18;
+  *(undefined **)((longlong)apuStack_2 + lVar8 + lVar6) = &UNK_?;
+  pMStackX_18 = pMVar14;
+  FUN_?(pvVar15,pvVar13,&stack0xffffffffffffffd8 + lVar6,p_Var15);
+  return acStackX_8[0] == '\0';
 }
 
 
@@ -601,16 +914,16 @@ bool Assembly-CSharp.dll::SubscribableVariableBase`1[Unity::IL2CPP::Metadata::
 
 {
   pIVar1 = method->klass;
-  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar1 = (Il2CppClass *)func_?(pIVar1);
+  if ((pIVar1->field_0x135 & 1) == 0) {
+    pIVar1 = (Il2CppClass *)FUN_?(pIVar1);
   }
-  pIVar2 = (pIVar1->rgctx_data[10].method)->methodPointer;
-  pIVar1 = method->klass;
-  if (((uint)pIVar1->vtable[0].methodPtr & 0x100) == 0) {
-    pIVar1 = (Il2CppClass *)func_?(pIVar1);
+  pIVar2 = method->klass;
+  pIVar3 = (pIVar1->rgctx_data[10].method)->methodPointer;
+  if ((pIVar2->field_0x135 & 1) == 0) {
+    pIVar2 = (Il2CppClass *)FUN_?(pIVar2);
   }
-  cVar3 = (*pIVar2)(a,b,pIVar1->rgctx_data[10].rgctxDataDummy);
-  return cVar3 == '\0';
+  cVar4 = (*pIVar3)(a,b,pIVar2->rgctx_data[10].rgctxDataDummy);
+  return cVar4 == '\0';
 }
 
 
@@ -624,32 +937,75 @@ void Assembly-CSharp.dll::SubscribableVariableBase`1[Unity::IL2CPP::Metadata::
                MethodInfo *method)
 
 {
-  puVar1 = (undefined4 *)func_?(this,method->klass->rgctx_data->klass->fields + 1);
-  source = (Delegate *)*puVar1;
+  pFVar1 = method->klass->rgctx_data->klass->fields;
+  pIVar2 = pFVar1[1].parent;
+  puVar3 = (undefined8 *)((longlong)&this->klass + (longlong)pFVar1[1].offset);
+  iVar4._0_2_ = (pIVar2->byval_arg).attrs;
+  iVar4._2_1_ = (pIVar2->byval_arg).type;
+  iVar4._3_1_ = (pIVar2->byval_arg).field_0xb;
+  puVar5 = puVar3 + -2;
+  if (-1 < iVar4) {
+    puVar5 = puVar3;
+  }
+  source = (Delegate *)*puVar5;
   do {
-    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar6 = mscorlib.dll::System::Delegate::Delegate_Remove
                        (source,(Delegate *)value,(MethodInfo *)0x0);
-    pIVar3 = method->klass->rgctx_data[7].klass;
-    if (((uint)pIVar3->vtable[0].methodPtr & 0x100) == 0) {
-      pIVar3 = (Il2CppClass *)func_?(pIVar3);
+    pvVar7 = method->klass->rgctx_data[7].rgctxDataDummy;
+    if ((*(byte *)((longlong)pvVar7 + 0x135) & 1) == 0) {
+      pvVar7 = (void *)FUN_?(pvVar7);
     }
-    if (pDVar2 == (Delegate *)0x0) {
-      iVar4 = 0;
+    if (pDVar6 == (Delegate *)0x0) {
+      lVar8 = 0;
     }
     else {
-      iVar4 = func_?(pDVar2,pIVar3);
-      if (iVar4 == 0) {
-        func_?(pDVar2,pIVar3);
-        pcVar5 = (code *)swi(3);
-        (*pcVar5)();
+      lVar8 = FUN_?(pDVar6,pvVar7);
+      if (lVar8 == 0) {
+        FUN_?(pDVar6,pvVar7);
+        pcVar9 = (code *)swi(3);
+        (*pcVar9)();
         return;
       }
     }
-    uVar6 = func_?(this,method->klass->rgctx_data->klass->fields + 1);
-    pDVar2 = (Delegate *)func_?(uVar6,iVar4,source);
-    bVar7 = pDVar2 != source;
-    source = pDVar2;
-  } while (bVar7);
+    pFVar1 = method->klass->rgctx_data->klass->fields;
+    pIVar2 = pFVar1[1].parent;
+    plVar10 = (longlong *)((longlong)&this->klass + (longlong)pFVar1[1].offset);
+    iVar11._0_2_ = (pIVar2->byval_arg).attrs;
+    iVar11._2_1_ = (pIVar2->byval_arg).type;
+    iVar11._3_1_ = (pIVar2->byval_arg).field_0xb;
+    plVar12 = plVar10 + -2;
+    if (-1 < iVar11) {
+      plVar12 = plVar10;
+    }
+    LOCK();
+    pDVar6 = (Delegate *)*plVar12;
+    bVar13 = source == pDVar6;
+    if (bVar13) {
+      *plVar12 = lVar8;
+      pDVar6 = source;
+    }
+    UNLOCK();
+    pDVar14 = source;
+    if (!bVar13) {
+      pDVar14 = pDVar6;
+    }
+    if (iRam_? != 0) {
+      uVar15 = (uint)((ulonglong)plVar12 >> 0xc);
+      uVar16 = (ulonglong)((uVar15 & 0x1fffff) >> 6);
+      do {
+        uVar17 = *(ulonglong *)(uVar16 * 8 + 0xADDR);
+        puVar18 = (ulonglong *)(uVar16 * 8 + 0xADDR);
+        LOCK();
+        bVar13 = uVar17 == *puVar18;
+        if (bVar13) {
+          *puVar18 = uVar17 | 1L << (uVar15 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar13);
+    }
+    bVar13 = pDVar14 != source;
+    source = pDVar14;
+  } while (bVar13);
   return;
 }
 

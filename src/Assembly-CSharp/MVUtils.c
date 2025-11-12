@@ -4,78 +4,86 @@
 bool Assembly-CSharp.dll::MVUtils::MVUtils_CheckPro(MethodInfo *method)
 
 {
-  puStack_1 = (undefined *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &puStack_1;
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_Elysiox);
-    func_?(&StringLiteral_engine);
-    func_?(&StringLiteral_cheat);
+    FUN_?(&StringLiteral_Elysiox);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_engine);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_cheat);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (TypeInfo__MVGameControllerBase->static_fields->_WebPlayAsTouch_k__BackingField == 0) {
-    pPVar2 = System.dll::System::Diagnostics::Process::Process_GetProcesses((MethodInfo *)0x0);
-    uVar3 = 0;
-    if (pPVar2 == (Process__Array *)0x0) {
-code_?:
-      func_?();
-      func_?(&stack0xffffffe4);
-      pcVar4 = (code *)swi(3);
-      bVar5 = (*pcVar4)();
-      return bVar5;
+    if (cRam_? == '\0') {
+      FUN_?(&::StringLiteral__);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
-    pSVar6 = (String *)pPVar2->vector;
-    while( true ) {
-      if ((int)pPVar2->max_length <= (int)uVar3) break;
-      if (pPVar2->max_length <= uVar3) {
-        func_?();
-        goto code_?;
-      }
-      this = pSVar6->klass;
-      if (this != (String__Class *)0x0) {
-        bVar5 = System.dll::System::Diagnostics::Process::Process_get_HasExited
-                          ((Process *)this,(MethodInfo *)0x0);
-        if (bVar5 == 0) {
-          pSVar6 = System.dll::System::Diagnostics::Process::Process_get_ProcessName
-                             ((Process *)this,(MethodInfo *)0x0);
-          if (pSVar6 == (String *)0x0) goto code_?;
-          pSVar7 = mscorlib.dll::System::String::String_ToLower(pSVar6,(MethodInfo *)0x0);
-          if (pSVar7 == (String *)0x0) goto code_?;
-          pSVar6 = StringLiteral_cheat;
-          bVar5 = mscorlib.dll::System::String::String_Contains
-                            (pSVar7,StringLiteral_cheat,(MethodInfo *)0x0);
-          if (bVar5 != 0) {
-            pSVar7 = System.dll::System::Diagnostics::Process::Process_get_ProcessName
-                               ((Process *)this,(MethodInfo *)0x0);
-            if (pSVar7 == (String *)0x0) goto code_?;
-            pSVar7 = mscorlib.dll::System::String::String_ToLower(pSVar7,(MethodInfo *)0x0);
-            if (pSVar7 == (String *)0x0) goto code_?;
-            bVar5 = mscorlib.dll::System::String::String_Contains
-                              (pSVar7,StringLiteral_engine,(MethodInfo *)0x0);
-            if (bVar5 != 0) goto code_?;
-          }
-          pSVar7 = System.dll::System::Diagnostics::Process::Process_get_ProcessName
-                             ((Process *)this,(MethodInfo *)0x0);
-          if (pSVar7 == (String *)0x0) goto code_?;
-          pSVar7 = mscorlib.dll::System::String::String_ToLower(pSVar7,(MethodInfo *)0x0);
-          if (pSVar7 == (String *)0x0) goto code_?;
-          bVar5 = mscorlib.dll::System::String::String_Contains
-                            (pSVar7,StringLiteral_Elysiox,(MethodInfo *)0x0);
-          if (bVar5 != 0) {
+    pPVar1 = System.dll::System::Diagnostics::Process::Process_GetProcesses_1
+                       (::StringLiteral__,(MethodInfo *)0x0);
+    uVar2 = 0;
+    if (pPVar1 == (Process__Array *)0x0) {
 code_?:
-            *unaff_FS_OFFSET = puStack_1;
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      bVar4 = (*pcVar3)();
+      return bVar4;
+    }
+    ppPVar5 = pPVar1->vector;
+    for (; (int)uVar2 < (int)pPVar1->max_length; uVar2 = uVar2 + 1) {
+      if ((uint)pPVar1->max_length <= uVar2) {
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        bVar4 = (*pcVar3)();
+        return bVar4;
+      }
+      this = *ppPVar5;
+      if ((this != (Process *)0x0) &&
+         (bVar4 = System.dll::System::Diagnostics::Process::Process_get_HasExited
+                            (this,(MethodInfo *)0x0), bVar4 == 0)) {
+        pSVar6 = System.dll::System::Diagnostics::Process::Process_get_ProcessName
+                           (this,(MethodInfo *)0x0);
+        if ((pSVar6 == (String *)0x0) ||
+           (pSVar6 = mscorlib.dll::System::String::String_ToLower(pSVar6,(MethodInfo *)0x0),
+           pSVar6 == (String *)0x0)) goto code_?;
+        bVar4 = mscorlib.dll::System::String::String_Contains
+                          (pSVar6,StringLiteral_cheat,(MethodInfo *)0x0);
+        if (bVar4 != 0) {
+          pSVar6 = System.dll::System::Diagnostics::Process::Process_get_ProcessName
+                             (this,(MethodInfo *)0x0);
+          if ((pSVar6 == (String *)0x0) ||
+             (pSVar6 = mscorlib.dll::System::String::String_ToLower(pSVar6,(MethodInfo *)0x0),
+             pSVar6 == (String *)0x0)) goto code_?;
+          bVar4 = mscorlib.dll::System::String::String_Contains
+                            (pSVar6,StringLiteral_engine,(MethodInfo *)0x0);
+          if (bVar4 != 0) {
             return 0;
           }
         }
+        pSVar6 = System.dll::System::Diagnostics::Process::Process_get_ProcessName
+                           (this,(MethodInfo *)0x0);
+        if ((pSVar6 == (String *)0x0) ||
+           (pSVar6 = mscorlib.dll::System::String::String_ToLower(pSVar6,(MethodInfo *)0x0),
+           pSVar6 == (String *)0x0)) goto code_?;
+        bVar4 = mscorlib.dll::System::String::String_Contains
+                          (pSVar6,StringLiteral_Elysiox,(MethodInfo *)0x0);
+        if (bVar4 != 0) {
+          return 0;
+        }
       }
-      uVar3 = uVar3 + 1;
-      pSVar6 = (String *)&pSVar6->monitor;
+      ppPVar5 = ppPVar5 + 1;
     }
   }
-  *unaff_FS_OFFSET = puStack_1;
   return 1;
 }
 

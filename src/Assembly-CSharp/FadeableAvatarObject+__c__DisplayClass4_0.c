@@ -8,30 +8,63 @@ void Assembly-CSharp.dll::FadeableAvatarObject+<>c__DisplayClass4_0::
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    FUN_?(&TypeInfo__IFadeParent);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pFVar1 = (this->fields).__4__this;
   if ((pFVar1 != (FadeableAvatarObject *)0x0) &&
-     (this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                (pFVar1->fields).materials,
-     this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) {
-    mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-    RegexCharClass+SingleRange]::
-    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-              (this_00,(this->fields).i,
-               MethodInfo__System__Collections__Generic__List<UnityEngine::Material>__get_Item_int_)
-    ;
-    if (x != (IFadeParent *)0x0) {
-      func_?();
+     (pLVar2 = (pFVar1->fields).materials, pLVar2 != (List_1_UnityEngine_Material_ *)0x0)) {
+    uVar3 = (this->fields).i;
+    if ((uint)(pLVar2->fields)._size <= uVar3) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                ((MethodInfo *)0x0);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
       return;
     }
+    pMVar5 = (pLVar2->fields)._items;
+    if (pMVar5 != (Material__Array *)0x0) {
+      if ((uint)pMVar5->max_length <= uVar3) {
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      if (x != (IFadeParent *)0x0) {
+        pMVar6 = pMVar5->vector[(int)uVar3];
+        pIVar7 = x->klass;
+        uVar8 = 0;
+        uVar9._0_1_ = (pIVar7->_1).rank;
+        uVar9._1_1_ = (pIVar7->_1).minimumAlignment;
+        if (uVar9 != 0) {
+          do {
+            if (pIVar7->interfaceOffsets[uVar8].interfaceType ==
+                (Il2CppClass *)TypeInfo__IFadeParent) {
+              pVVar10 = &(pIVar7->vtable).AddFadeMaterial + pIVar7->interfaceOffsets[uVar8].offset;
+              goto code_?;
+            }
+            uVar8 = uVar8 + 1;
+          } while (uVar8 < uVar9);
+        }
+        pVVar10 = (VirtualInvokeData *)FUN_?(x,TypeInfo__IFadeParent,0,pMVar6,unaff_RDI);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        (*pVVar10->methodPtr)(x,pMVar6,pVVar10->method,pVVar10->methodPtr);
+        return;
+      }
+    }
   }
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

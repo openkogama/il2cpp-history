@@ -6,12 +6,25 @@ void Assembly-CSharp.dll::InventoryItemData::InventoryItemData__ctor
                ,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  bVar1 = iRam_? == 0;
+  (this->fields).name = name;
   (this->fields).slotIndex = slotIndex;
   (this->fields).categoryId = categoryId;
-  (this->fields).name = name;
-  func_?(&(this->fields).name,name);
+  if (bVar1) {
+    (this->fields).id = id;
+    return;
+  }
+  uVar2 = (uint)((ulonglong)&(this->fields).name >> 0xc);
+  puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+  do {
+    uVar4 = *puVar3;
+    LOCK();
+    uVar5 = *puVar3;
+    if (uVar4 == uVar5) {
+      *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+    }
+    UNLOCK();
+  } while (uVar4 != uVar5);
   (this->fields).id = id;
   return;
 }

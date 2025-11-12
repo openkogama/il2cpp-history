@@ -6,28 +6,55 @@ void Assembly-CSharp.dll::LevelRequirementPanel::LevelRequirementPanel_OnDestroy
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-    func_?(&TypeInfo__BadgeManager);
-    func_?(&
-                    MethodInfo__LevelRequirementPanel__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_
-                   );
+    FUN_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__BadgeManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__LevelRequirementPanel__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-             *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+  this_00 = (UnityAction_1_System_Object_ *)
+            FUN_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+  UnityAction_1_System_Object___ctor
             (this_00,(Object *)this,
              MethodInfo__LevelRequirementPanel__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_
              ,(MethodInfo *)0x0);
-  if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__BadgeManager->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  BadgeManager::BadgeManager_UnsubscribeGetBadgeRequest
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__AsyncWWWManager);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__AsyncWWWManager->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  AsyncWWWManager::AsyncWWWManager_UnsubscribeWWWRequest
             ((Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
+  bVar1 = iRam_? != 0;
   (this->fields).levelRequirementTextureAsset = (Texture2D *)0x0;
-  func_?(&(this->fields).levelRequirementTextureAsset);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).levelRequirementTextureAsset >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 
@@ -39,17 +66,22 @@ void Assembly-CSharp.dll::LevelRequirementPanel::LevelRequirementPanel_OnLevelin
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__LevelRequirementPanel__OnLevelingIsReady__);
-    func_?(&TypeInfo__LevelingManager);
-    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    FUN_?(&MethodInfo__LevelRequirementPanel__OnLevelingIsReady__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__LevelingManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__LevelingManager);
+  if (*(int *)&(TypeInfo__LevelingManager->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__LevelingManager);
   }
   pUVar1 = TypeInfo__LevelingManager->static_fields->OnLevelingInitialized;
-  this_00 = (NavMesh_OnNavMeshPreUpdate *)
-            func_?(TypeInfo__UnityEngine__Events__UnityAction);
+  this_00 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__UnityEngine__Events__UnityAction);
   UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
   NavMesh_OnNavMeshPreUpdate__ctor
             (this_00,(Object *)this,MethodInfo__LevelRequirementPanel__OnLevelingIsReady__,
@@ -59,56 +91,73 @@ void Assembly-CSharp.dll::LevelRequirementPanel::LevelRequirementPanel_OnLevelin
                      ((Delegate *)pUVar1,(Delegate *)this_00,(MethodInfo *)0x0);
   if (pUVar1 == (UnityAction *)0x0) {
     TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = (UnityAction *)0x0;
-code_?:
-    func_?();
-    if (cRam_? == '\0') {
-      func_?();
-      func_?();
-      ppMStack2 =
-           &
-           MethodInfo__LevelRequirementPanel__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_
-      ;
-      func_?();
-      cRam_? = '\x01';
-    }
-    level = (Object__Class *)in_stack_3[3].monitor;
-    if (level != in_stack_3[3].klass) {
-      in_stack_3[3].klass = level;
-      this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                 *)func_?();
-      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                (this_01,in_stack_3,
-                 MethodInfo__LevelRequirementPanel__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_
-                 ,(MethodInfo *)0x0);
-      if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      BadgeManager::BadgeManager_GetBadgeTexture
-                ((int32_t)level,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,
-                 (MethodInfo *)0x0);
-    }
-    return;
-  }
-  pUVar4 = (UnityAction *)0x0;
-  if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-    pUVar4 = pUVar1;
-  }
-  if (pUVar4 == (UnityAction *)0x0) {
-    func_?();
   }
   else {
-    TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = pUVar4;
-    pUVar4 = (UnityAction *)0x0;
+    pUVar2 = (UnityAction *)0x0;
     if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar4 = pUVar1;
+      pUVar2 = pUVar1;
     }
-    if (pUVar4 != (UnityAction *)0x0) goto code_?;
+    if (pUVar2 == (UnityAction *)0x0) {
+      FUN_?(pUVar1,TypeInfo__UnityEngine__Events__UnityAction);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = pUVar2;
+    pUVar2 = (UnityAction *)0x0;
+    if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+      pUVar2 = pUVar1;
+    }
+    if (pUVar2 == (UnityAction *)0x0) {
+      FUN_?(pUVar1,TypeInfo__UnityEngine__Events__UnityAction);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)TypeInfo__LevelingManager->static_fields >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (ulonglong)(uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar6 != uVar7);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__BadgeManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__LevelRequirementPanel__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if ((this->fields).desiredLevel != (this->fields).prevLevel) {
+    level = (this->fields).desiredLevel;
+    (this->fields).prevLevel = level;
+    this_01 = (UnityAction_1_System_Object_ *)
+              FUN_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+    UnityAction_1_System_Object___ctor
+              (this_01,(Object *)this,
+               MethodInfo__LevelRequirementPanel__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_
+               ,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__BadgeManager->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    BadgeManager::BadgeManager_GetBadgeTexture
+              (level,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_01,(MethodInfo *)0x0);
+  }
   return;
 }
 
@@ -120,27 +169,31 @@ void Assembly-CSharp.dll::LevelRequirementPanel::LevelRequirementPanel_SetLevelB
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
-    func_?(&TypeInfo__BadgeManager);
-    func_?(&
-                    MethodInfo__LevelRequirementPanel__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_
-                   );
+    FUN_?(&TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__BadgeManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__LevelRequirementPanel__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  level = (this->fields).desiredLevel;
-  if (level != (this->fields).prevLevel) {
+  if ((this->fields).desiredLevel != (this->fields).prevLevel) {
+    level = (this->fields).desiredLevel;
     (this->fields).prevLevel = level;
-    this_00 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-               *)func_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>)
-    ;
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+    this_00 = (UnityAction_1_System_Object_ *)
+              FUN_?(TypeInfo__System__Action<UnityEngine::Networking::UnityWebRequest>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+    UnityAction_1_System_Object___ctor
               (this_00,(Object *)this,
                MethodInfo__LevelRequirementPanel__StreamingAssetCallback_UnityEngine__Networking__UnityWebRequest_
                ,(MethodInfo *)0x0);
-    if ((TypeInfo__BadgeManager->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__BadgeManager);
+    if (*(int *)&(TypeInfo__BadgeManager->_1).field_0x1c == 0) {
+      FUN_?();
     }
     BadgeManager::BadgeManager_GetBadgeTexture
               (level,(Action_1_UnityEngine_Networking_UnityWebRequest_ *)this_00,(MethodInfo *)0x0);
@@ -156,70 +209,88 @@ void Assembly-CSharp.dll::LevelRequirementPanel::LevelRequirementPanel_SetLevelS
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__LevelRequirementPanel__OnLevelingIsReady__);
-    func_?(&TypeInfo__LevelingManager);
-    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    FUN_?(&MethodInfo__LevelRequirementPanel__OnLevelingIsReady__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__LevelingManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   (this->fields).desiredLevel = level;
-  if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__LevelingManager);
+  if (*(int *)&(TypeInfo__LevelingManager->_1).field_0x1c == 0) {
+    FUN_?();
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__LevelingManager);
+    FUN_?(&TypeInfo__LevelingManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__LevelingManager);
+  if (*(int *)&(TypeInfo__LevelingManager->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  if (TypeInfo__LevelingManager->static_fields->_IsInitialized_k__BackingField != 0) {
-    LevelRequirementPanel_SetLevelBadge(this,(MethodInfo *)0x0);
-    return;
-  }
-  if ((TypeInfo__LevelingManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__LevelingManager);
-  }
-  pUVar1 = TypeInfo__LevelingManager->static_fields->OnLevelingInitialized;
-  this_00 = (NavMesh_OnNavMeshPreUpdate *)
-            func_?(TypeInfo__UnityEngine__Events__UnityAction);
-  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-  NavMesh_OnNavMeshPreUpdate__ctor
-            (this_00,(Object *)this,MethodInfo__LevelRequirementPanel__OnLevelingIsReady__,
-             (MethodInfo *)0x0);
-  pUVar1 = (UnityAction *)
-           mscorlib.dll::System::Delegate::Delegate_Combine
-                     ((Delegate *)pUVar1,(Delegate *)this_00,(MethodInfo *)0x0);
-  if (pUVar1 == (UnityAction *)0x0) {
-    TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = (UnityAction *)0x0;
-    pUStack2 = (UnityAction__Class *)0x0;
-    func_?();
-    return;
-  }
-  pUVar3 = (UnityAction *)0x0;
-  if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-    pUVar3 = pUVar1;
-  }
-  if (pUVar3 == (UnityAction *)0x0) {
-    pUStack2 = TypeInfo__UnityEngine__Events__UnityAction;
-    func_?();
-    pUStack2 = extraout_EDX;
-  }
-  else {
-    TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = pUVar3;
-    pUVar3 = (UnityAction *)0x0;
-    if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
-      pUVar3 = pUVar1;
+  if (TypeInfo__LevelingManager->static_fields->_IsInitialized_k__BackingField == 0) {
+    if (*(int *)&(TypeInfo__LevelingManager->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    pUStack2 = TypeInfo__UnityEngine__Events__UnityAction;
-    if (pUVar3 != (UnityAction *)0x0) {
-      pUStack2 = (UnityAction__Class *)pUVar3;
-      func_?();
+    pUVar1 = TypeInfo__LevelingManager->static_fields->OnLevelingInitialized;
+    this_00 = (NavMesh_OnNavMeshPreUpdate *)
+              FUN_?(TypeInfo__UnityEngine__Events__UnityAction);
+    UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+    NavMesh_OnNavMeshPreUpdate__ctor
+              (this_00,(Object *)this,MethodInfo__LevelRequirementPanel__OnLevelingIsReady__,
+               (MethodInfo *)0x0);
+    pUVar1 = (UnityAction *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
+                       ((Delegate *)pUVar1,(Delegate *)this_00,(MethodInfo *)0x0);
+    if (pUVar1 == (UnityAction *)0x0) {
+      TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = (UnityAction *)0x0;
+    }
+    else {
+      pUVar2 = (UnityAction *)0x0;
+      if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+        pUVar2 = pUVar1;
+      }
+      if (pUVar2 == (UnityAction *)0x0) {
+        FUN_?(pUVar1,TypeInfo__UnityEngine__Events__UnityAction);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      TypeInfo__LevelingManager->static_fields->OnLevelingInitialized = pUVar2;
+      pUVar2 = (UnityAction *)0x0;
+      if (pUVar1->klass == TypeInfo__UnityEngine__Events__UnityAction) {
+        pUVar2 = pUVar1;
+      }
+      if (pUVar2 == (UnityAction *)0x0) {
+        FUN_?(pUVar1,TypeInfo__UnityEngine__Events__UnityAction);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+    }
+    if (iRam_? != 0) {
+      uVar4 = (uint)((ulonglong)TypeInfo__LevelingManager->static_fields >> 0xc);
+      puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar6 = *puVar5;
+        LOCK();
+        uVar7 = *puVar5;
+        if (uVar6 == uVar7) {
+          *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar6 != uVar7);
       return;
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  else {
+    LevelRequirementPanel_SetLevelBadge(this,(MethodInfo *)0x0);
+  }
   return;
 }
 
@@ -231,54 +302,89 @@ void Assembly-CSharp.dll::LevelRequirementPanel::LevelRequirementPanel_Streaming
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pTVar1 = UnityEngine.UnityWebRequestTextureModule.dll::UnityEngine::Networking::
-           DownloadHandlerTexture::DownloadHandlerTexture_GetContent(www,(MethodInfo *)0x0);
-  (this->fields).levelRequirementTextureAsset = pTVar1;
-  func_?(&(this->fields).levelRequirementTextureAsset,pTVar1);
-  pTVar1 = (this->fields).levelRequirementTextureAsset;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  UnityEngine__Networking__DownloadHandlerTexture_MethodInfo__UnityEngine__Networking__DownloadHandler__GetCheckedDownloader<UnityEngine::Networking::DownloadHandlerTexture>_UnityEngine__Networking__UnityWebRequest_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
+  this_00 = (DownloadHandlerTexture *)
+            UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::DownloadHandler::
+            DownloadHandler_GetCheckedDownloader
+                      (www,
+                       UnityEngine__Networking__DownloadHandlerTexture_MethodInfo__UnityEngine__Networking__DownloadHandler__GetCheckedDownloader<UnityEngine::Networking::DownloadHandlerTexture>_UnityEngine__Networking__UnityWebRequest_
+                      );
+  if (this_00 != (DownloadHandlerTexture *)0x0) {
+    pTVar1 = UnityEngine.UnityWebRequestTextureModule.dll::UnityEngine::Networking::
+             DownloadHandlerTexture::DownloadHandlerTexture_InternalGetTextureNative
+                       (this_00,(MethodInfo *)0x0);
+    bVar2 = iRam_? != 0;
+    (this->fields).levelRequirementTextureAsset = pTVar1;
+    if (bVar2) {
+      uVar3 = (uint)((ulonglong)&(this->fields).levelRequirementTextureAsset >> 0xc);
+      puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar5 = *puVar4;
+        LOCK();
+        uVar6 = *puVar4;
+        if (uVar5 == uVar6) {
+          *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar5 != uVar6);
+    }
+    pTVar1 = (this->fields).levelRequirementTextureAsset;
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (pTVar1 != (Texture2D *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if ((pTVar1->fields)._._.m_CachedPtr != (void *)0x0) {
+        pRVar7 = (this->fields).levelRequirementImage;
+        if (pRVar7 != (RawImage *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+                    ((Behaviour *)pRVar7,1,(MethodInfo *)0x0);
+          pRVar7 = (this->fields).levelRequirementImage;
+          if (pRVar7 != (RawImage *)0x0) {
+            UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
+                      (pRVar7,(Texture *)(this->fields).levelRequirementTextureAsset,
+                       (MethodInfo *)0x0);
+            return;
+          }
+        }
+        goto code_?;
+      }
+    }
     return;
   }
-  pRVar3 = (this->fields).levelRequirementImage;
-  if (pRVar3 != (RawImage *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-              ((Behaviour *)pRVar3,1,(MethodInfo *)0x0);
-    pRVar3 = (this->fields).levelRequirementImage;
-    if (pRVar3 != (RawImage *)0x0) {
-      UnityEngine.UI.dll::UnityEngine::UI::RawImage::RawImage_set_texture
-                (pRVar3,(Texture *)(this->fields).levelRequirementTextureAsset,(MethodInfo *)0x0);
-      return;
-    }
-  }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
-  return;
-}
-
-
-/* LevelRequirementPanel() */
-
-void Assembly-CSharp.dll::LevelRequirementPanel::LevelRequirementPanel__ctor
-               (LevelRequirementPanel *this,MethodInfo *method)
-
-{
-  (this->fields).prevLevel = -1;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
-  }
+code_?:
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 

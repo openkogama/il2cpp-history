@@ -5,9 +5,11 @@ void Assembly-CSharp.dll::RTG::MeshTree::MeshTree_Build(MeshTree *this,MethodInf
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__AddNode_RTG__MeshTriangle__RTG__Sphere_
-                   );
+    FUN_?(&
+                  MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__AddNode_RTG__MeshTriangle__RTG__Sphere_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields)._isBuilt != 0) {
@@ -26,33 +28,29 @@ void Assembly-CSharp.dll::RTG::MeshTree::MeshTree_Build(MeshTree *this,MethodInf
     this_00 = (this->fields)._tree;
     if (nodeData == (MeshTriangle *)0x0) break;
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    this_01 = (nodeData->fields)._vertices;
-    if (this_01 == (Vector3__Array *)0x0) break;
-    pOVar2 = UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::
-             PlayableBehaviour_Clone((PlayableBehaviour *)this_01,(MethodInfo *)0x0);
+    if ((nodeData->fields)._vertices == (Vector3__Array *)0x0) break;
+    uVar2 = FUN_?();
     pointCloud = (IEnumerable_1_UnityEngine_Vector3_ *)
-                 func_?(pOVar2,TypeInfo__UnityEngine__Vector3);
+                 FUN_?(uVar2,TypeInfo__UnityEngine__Vector3);
     SStack_3._center.x = 0.0;
     SStack_3._center.y = 0.0;
     SStack_3._center.z = 0.0;
     SStack_3._radius = 0.0;
     Sphere::Sphere__ctor_2(&SStack_3,pointCloud,(MethodInfo *)0x0);
     if (this_00 == (SphereTree_1_MeshTriangle_ *)0x0) break;
-    sphere._center.y = SStack_3._center.y;
-    sphere._center.x = SStack_3._center.x;
-    sphere._center.z = SStack_3._center.z;
-    sphere._radius = SStack_3._radius;
     SphereTree`1[System::Object]::SphereTree_1_System_Object__AddNode
-              ((SphereTree_1_System_Object_ *)this_00,(Object *)nodeData,sphere,
+              ((SphereTree_1_System_Object_ *)this_00,(Object *)nodeData,&SStack_3,
                MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__AddNode_RTG__MeshTriangle__RTG__Sphere_
               );
     triangleIndex = triangleIndex + 1;
     pRVar1 = (this->fields)._mesh;
   }
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -65,18 +63,192 @@ void Assembly-CSharp.dll::RTG::MeshTree::MeshTree_DebugDraw(MeshTree *this,Metho
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__DebugDraw__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields)._tree;
-  if (this_00 != (SphereTree_1_MeshTriangle_ *)0x0) {
-    SphereTree`1[System::Object]::SphereTree_1_System_Object__DebugDraw
-              ((SphereTree_1_System_Object_ *)this_00,
-               MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__DebugDraw__);
+  pMVar1 = MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__DebugDraw__;
+  pSVar2 = (this->fields)._tree;
+  if (pSVar2 == (SphereTree_1_MeshTriangle_ *)0x0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
-  uVar1 = func_?(&puStack_2);
-  func_?(uVar1);
+  if (cRam_? == '\0') {
+    auStack_4._24_8_ = &UNK_?;
+    FUN_?(&MethodInfo__RTG__Singleton<RTG::MaterialPool>__get_Get__);
+    LOCK();
+    UNLOCK();
+    auStack_4._24_8_ = &UNK_?;
+    FUN_?(&TypeInfo__RTG__Singleton<RTG::MaterialPool>);
+    LOCK();
+    UNLOCK();
+    auStack_4._24_8_ = &UNK_?;
+    FUN_?(&StringLiteral__IsLit);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__RTG__Singleton<RTG::MaterialPool>->_1).field_0x1c == 0) {
+    auStack_4._24_8_ = &UNK_?;
+    FUN_?();
+  }
+  auStack_4._24_8_ = &UNK_?;
+  this_01 = (MaterialPool *)
+            Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
+                      (MethodInfo__RTG__Singleton<RTG::MaterialPool>__get_Get__);
+  if (this_01 != (MaterialPool *)0x0) {
+    auStack_4._24_8_ = &UNK_?;
+    this_02 = MaterialPool::MaterialPool_get_GizmoSolidHandle(this_01,(MethodInfo *)0x0);
+    if (this_02 != (Material *)0x0) {
+      auStack_4._24_8_ = &UNK_?;
+      name = UnityEngine.CoreModule.dll::UnityEngine::Shader::Shader_PropertyToID
+                       (StringLiteral__IsLit,(MethodInfo *)0x0);
+      auStack_4._24_8_ = &UNK_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetFloatImpl
+                (this_02,name,0.0,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        auStack_4._24_8_ = &UNK_?;
+        FUN_?(&StringLiteral__Color);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      CStack_5.r = _UNK_?;
+      CStack_5.g = _UNK_?;
+      CStack_5.b = _UNK_?;
+      CStack_5.a = _UNK_?;
+      auStack_4._24_8_ = &UNK_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor
+                (this_02,StringLiteral__Color,&CStack_5,(MethodInfo *)0x0);
+      auStack_4._24_8_ = &UNK_?;
+      UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass
+                (this_02,0,(MethodInfo *)0x0);
+      pSVar6 = (pSVar2->fields)._root;
+      if (pSVar6 != (SphereTreeNode_1_MeshTriangle_ *)0x0) {
+        pMVar1 = pMVar1->klass->rgctx_data[4].method;
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Graphics);
+          LOCK();
+          UNLOCK();
+          FUN_?(&MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
+          LOCK();
+          UNLOCK();
+          FUN_?(&TypeInfo__RTG__Singleton<RTG::MeshPool>);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        uVar7._0_4_ = (pSVar6->fields)._sphere._center.x;
+        uVar7._4_4_ = (pSVar6->fields)._sphere._center.y;
+        fVar8 = (pSVar6->fields)._sphere._center.z;
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Quaternion);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        fStack_9 = (pSVar6->fields)._sphere._radius;
+        uStack_10 = CONCAT44(fStack_9,fStack_9);
+        pQVar11 = TypeInfo__UnityEngine__Quaternion->static_fields;
+        uStack_12._0_4_ = (pQVar11->identityQuaternion).x;
+        uStack_12._4_4_ = (pQVar11->identityQuaternion).y;
+        uStack_13._0_4_ = (pQVar11->identityQuaternion).z;
+        uStack_13._4_4_ = (pQVar11->identityQuaternion).w;
+        auStack_14._0_4_ = 0.0;
+        auStack_14._4_4_ = 0.0;
+        auStack_14._8_4_ = 0.0;
+        auStack_14._12_4_ = 0.0;
+        auStack_14._16_4_ = 0.0;
+        auStack_14._20_4_ = 0.0;
+        puStack_15 = (undefined *)0x0;
+        uStack_16._0_4_ = 0.0;
+        uStack_16._4_4_ = 0.0;
+        puStack_17 = (undefined *)0x0;
+        uStack_18._0_4_ = 0.0;
+        uStack_18._4_4_ = 0.0;
+        uStack_19._0_4_ = 0.0;
+        uStack_19._4_4_ = 0.0;
+        pcVar3 = pcRam_?;
+        uStack_20 = uVar7;
+        fStack_21 = fVar8;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+          uVar7 = func_?(&UNK_?);
+          FUN_?(uVar7,0);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        pcRam_? = pcVar3;
+        (*pcRam_?)(&uStack_20,&uStack_12,&uStack_10);
+        if (*(int *)&(TypeInfo__RTG__Singleton<RTG::MeshPool>->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        this_00 = (MeshPool *)
+                  Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
+                            (MethodInfo__RTG__Singleton<RTG::MeshPool>__get_Get__);
+        if (this_00 != (MeshPool *)0x0) {
+          mesh = MeshPool::MeshPool_get_UnitSphere(this_00,(MethodInfo *)0x0);
+          if (*(int *)&(TypeInfo__UnityEngine__Graphics->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Graphics);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (*(int *)&(TypeInfo__UnityEngine__Graphics->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          auStack_4._0_8_ = auStack_14._0_8_;
+          auStack_4._8_8_ = auStack_14._8_8_;
+          auStack_4._16_8_ = auStack_14._16_8_;
+          auStack_4._24_8_ = puStack_15;
+          auStack_4._32_4_ = (float)uStack_16;
+          auStack_4._36_4_ = uStack_16._4_4_;
+          puStack_22 = puStack_17;
+          fStack_23 = (float)uStack_18;
+          fStack_24 = uStack_18._4_4_;
+          fStack_25 = (float)uStack_19;
+          fStack_26 = uStack_19._4_4_;
+          UnityEngine.CoreModule.dll::UnityEngine::Graphics::Graphics_DrawMeshNow_1
+                    (mesh,(Matrix4x4 *)auStack_4,-1,(MethodInfo *)0x0);
+          pSVar27 = (pSVar6->fields)._children;
+          uVar28 = 0;
+          if (pSVar27 != (SphereTreeNode_1_MeshTriangle___Array *)0x0) {
+            ppSVar29 = pSVar27->vector;
+            while( true ) {
+              if ((int)pSVar27->max_length <= (int)uVar28) {
+                return;
+              }
+              if ((uint)pSVar27->max_length <= uVar28) {
+                FUN_?();
+                pcVar3 = (code *)swi(3);
+                (*pcVar3)();
+                return;
+              }
+              if (*ppSVar29 == (SphereTreeNode_1_MeshTriangle_ *)0x0) break;
+              SphereTreeNode`1[System::Object]::SphereTreeNode_1_System_Object__DebugDraw
+                        ((SphereTreeNode_1_System_Object_ *)*ppSVar29,
+                         pMVar1->klass->rgctx_data[10].method);
+              uVar28 = uVar28 + 1;
+              ppSVar29 = ppSVar29 + 1;
+            }
+          }
+        }
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+    }
+  }
+  auStack_4._24_8_ = &UNK_?;
+  FUN_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -86,384 +258,519 @@ void Assembly-CSharp.dll::RTG::MeshTree::MeshTree_DebugDraw(MeshTree *this,Metho
 /* Boolean OverlapModelVerts(OBB, List`1[UnityEngine.Vector3]) */
 
 bool Assembly-CSharp.dll::RTG::MeshTree::MeshTree_OverlapModelVerts
-               (MeshTree *this,OBB modelOBB,List_1_UnityEngine_Vector3_ *verts,MethodInfo *method)
+               (MeshTree *this,OBB *modelOBB,List_1_UnityEngine_Vector3_ *verts,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__BoxMath);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNode<RTG::MeshTriangle>_>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNode<RTG::MeshTriangle>_>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNode<RTG::MeshTriangle>_>__get_Current__
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Clear__);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNode<RTG::MeshTriangle>_>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__
-                   );
-    func_?(&MethodInfo__RTG__SphereTreeNode<RTG::MeshTriangle>__get_Data__);
-    func_?(&
-                    MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__OverlapBox_RTG__OBB__System__Collections__Generic__List<RTG::SphereTreeNode<RTG::MeshTriangle>_>_
-                   );
+    FUN_?(&TypeInfo__RTG__BoxMath);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNode<RTG::MeshTriangle>_>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNode<RTG::MeshTriangle>_>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNode<RTG::MeshTriangle>_>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Clear__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNode<RTG::MeshTriangle>_>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__SphereTreeNode<RTG::MeshTriangle>__get_Data__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__OverlapBox_RTG__OBB__System__Collections__Generic__List<RTG::SphereTreeNode<RTG::MeshTriangle>_>_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  LStack_4._index = 0;
-  LStack_4._version = 0;
-  LStack_4._current.First = 0;
-  LStack_4._current.Last = 0;
   if (verts != (List_1_UnityEngine_Vector3_ *)0x0) {
-    piVar5 = &(verts->fields)._version;
-    *piVar5 = *piVar5 + 1;
+    piVar1 = &(verts->fields)._version;
+    *piVar1 = *piVar1 + 1;
     (verts->fields)._size = 0;
     if ((this->fields)._isBuilt == 0) {
       MeshTree_Build(this,(MethodInfo *)0x0);
     }
     this_00 = (this->fields)._tree;
     if (this_00 != (SphereTree_1_MeshTriangle_ *)0x0) {
-      bVar6 = SphereTree`1[System::Object]::SphereTree_1_System_Object__OverlapBox
-                        ((SphereTree_1_System_Object_ *)this_00,modelOBB,
+      OStack_2._size._0_8_ = *(undefined8 *)&modelOBB->_size;
+      OStack_2._8_8_ = *(undefined8 *)&(modelOBB->_size).z;
+      OStack_2._center.y = (modelOBB->_center).y;
+      OStack_2._center.z = (modelOBB->_center).z;
+      OStack_2._rotation.x = (modelOBB->_rotation).x;
+      OStack_2._rotation.y = (modelOBB->_rotation).y;
+      OStack_2._rotation.z = (modelOBB->_rotation).z;
+      OStack_2._rotation.w = (modelOBB->_rotation).w;
+      OStack_2._isValid = modelOBB->_isValid;
+      OStack_2._41_3_ = *(undefined3 *)&modelOBB->field_0x29;
+      bVar3 = SphereTree`1[System::Object]::SphereTree_1_System_Object__OverlapBox
+                        ((SphereTree_1_System_Object_ *)this_00,&OStack_2,
                          (List_1_RTG_SphereTreeNode_1_System_Object_ *)(this->fields)._nodeBuffer,
                          MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__OverlapBox_RTG__OBB__System__Collections__Generic__List<RTG::SphereTreeNode<RTG::MeshTriangle>_>_
                         );
-      if (bVar6 == 0) {
-        *unaff_FS_OFFSET = uStack_3;
+      if (bVar3 == 0) {
         return 0;
       }
-      this_01 = (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                (this->fields)._vertexIndexSet;
-      if (this_01 != (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
-        System.Core.dll::System::Collections::Generic::HashSet`1[Unity::IL2CPP::Metadata::
-        __Il2CppFullySharedGenericType]::
-        HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__Clear
-                  (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
-        this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                  (this->fields)._nodeBuffer;
-        if (this_02 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-          pLVar7 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                   RegularExpressions::RegexCharClass+SingleRange]::
-                   List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                             (&LStack_4,this_02,
-                              MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNode<RTG::MeshTriangle>_>__GetEnumerator__
-                             );
-          puStack_8 = (undefined *)0x0;
-          method_00 = (MethodInfo *)pLVar7->_version;
-          RStack_9 = pLVar7->_current;
-          uStack_1 = 1;
+      if ((this->fields)._vertexIndexSet != (HashSet_1_System_Int32_ *)0x0) {
+        FUN_?();
+        pLVar4 = (this->fields)._nodeBuffer;
+        if (pLVar4 != (List_1_RTG_SphereTreeNode_1_MeshTriangle_ *)0x0) {
+          if (iRam_? != 0) {
+            uVar5 = (uint)((ulonglong)&OStack_2 >> 0xc);
+            puVar6 = (ulonglong *)((ulonglong)((uVar5 & 0x1fffff) >> 6) * 8 + 0xADDR);
+            do {
+              uVar7 = *puVar6;
+              LOCK();
+              uVar8 = *puVar6;
+              if (uVar7 == uVar8) {
+                *puVar6 = uVar7 | 1L << (uVar5 & 0x3f);
+              }
+              UNLOCK();
+            } while (uVar7 != uVar8);
+          }
+          OStack_2._8_8_ = (ulonglong)(uint)(pLVar4->fields)._version << 0x20;
+          OStack_2._center.y = 0.0;
+          OStack_2._center.z = 0.0;
+          aLStack_9[0]._index = (int32_t)OStack_2._size.z;
+          aLStack_9[0]._version = (int32_t)OStack_2._center.x;
+          aLStack_9[0]._current = (Object *)0x0;
+          uStack_10 = 0;
+          pLStack_11 = aLStack_9;
+          OStack_2._size._0_8_ = pLVar4;
+          aLStack_9[0]._list = (List_1_System_Object_ *)pLVar4;
           while( true ) {
-            bVar6 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
+            bVar3 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
                     ::List_1_T_Enumerator_System_Object__MoveNext
-                              ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffb4,
+                              (aLStack_9,
                                MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNode<RTG::MeshTriangle>_>__MoveNext__
                               );
-            if (bVar6 == 0) {
-              uStack_1 = 0xffffffff;
-              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                        ((Object *)&stack0xffffffb4,
-                         (ExceptionArgument__Enum)
-                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNode<RTG::MeshTriangle>_>__Dispose__
-                         ,method_00);
-              iVar10 = (verts->fields)._size;
-              *unaff_FS_OFFSET = uStack_3;
-              return iVar10 != 0;
+            if (bVar3 == 0) {
+              return (verts->fields)._size != 0;
             }
-            if ((RStack_9 == (RegexCharClass_SingleRange)0x0) ||
-               (*(int *)((int)RStack_9 + 0x20) == 0)) break;
-            this_03 = (this->fields)._mesh;
-            if ((this_03 == (RTMesh *)0x0) ||
-               (pRVar11 = (RecordManager *)
-                         RTMesh::RTMesh_GetTriangle
-                                   (this_03,*(int32_t *)(*(int *)((int)RStack_9 + 0x20) + 0x18),
-                                    (MethodInfo *)0x0), pRVar11 == (RecordManager *)0x0)) break;
-            this_07 = pRVar11;
+            if (aLStack_9[0]._current == (Object *)0x0) break;
+            if (aLStack_9[0]._current[3].klass == (Object__Class *)0x0) goto code_?;
+            this_01 = (this->fields)._mesh;
+            if (this_01 == (RTMesh *)0x0) goto code_?;
+            pMVar12 = RTMesh::RTMesh_GetTriangle
+                                (this_01,*(int32_t *)
+                                          ((longlong)
+                                           &((aLStack_9[0]._current[3].klass)->_0).byval_arg.data +
+                                          4),(MethodInfo *)0x0);
+            if (pMVar12 == (MeshTriangle *)0x0) goto code_?;
             if (cRam_? == '\0') {
-              LStack_4._list =
-                   (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                   &TypeInfo__UnityEngine__Vector3;
-              func_?();
+              FUN_?(&TypeInfo__UnityEngine__Vector3);
+              LOCK();
+              UNLOCK();
               cRam_? = '\x01';
             }
-            this_04 = (Vector3__Array *)(pRVar11->fields)._table;
-            if (this_04 == (Vector3__Array *)0x0) break;
-            UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::
-            PlayableBehaviour_Clone((PlayableBehaviour *)this_04,(MethodInfo *)0x0);
-            iVar12 = func_?();
-            iVar10 = 0;
-            if (iVar12 == 0) break;
-            for (; iVar10 < *(int *)(iVar12 + 0xc); iVar10 = iVar10 + 1) {
-              item = System.Data.dll::System::Data::RecordManager::RecordManager_get_Item
-                               (this_07,iVar10,(MethodInfo *)0x0);
-              this_05 = (HashSet_1_System_UInt32_ *)(this->fields)._vertexIndexSet;
-              if (this_05 == (HashSet_1_System_UInt32_ *)0x0) goto code_?;
-              method_00 = MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_;
-              bVar6 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
-                      HashSet_1_System_UInt32__Contains
-                                (this_05,(uint32_t)item,
+            if ((pMVar12->fields)._vertices == (Vector3__Array *)0x0) goto code_?;
+            uVar13 = FUN_?();
+            lVar14 = FUN_?(uVar13,TypeInfo__UnityEngine__Vector3);
+            uVar5 = 0;
+            if (lVar14 == 0) goto code_?;
+            for (; (int)uVar5 < *(int *)(lVar14 + 0x18); uVar5 = uVar5 + 1) {
+              pIVar15 = (pMVar12->fields)._vertIndices;
+              if (pIVar15 == (Int32__Array *)0x0) goto code_?;
+              if ((uint)pIVar15->max_length <= uVar5) goto code_?;
+              item = pIVar15->vector[(int)uVar5];
+              this_02 = (HashSet_1_System_Int32Enum_ *)(this->fields)._vertexIndexSet;
+              if (this_02 == (HashSet_1_System_Int32Enum_ *)0x0) goto code_?;
+              bVar3 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+                      HashSet_1_System_Int32Enum__Contains
+                                (this_02,item,
                                  MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_
                                 );
-              if (bVar6 == 0) {
-                LStack_4._list =
-                     (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                     &LStack_4._index;
-                LStack_4._index = iVar10;
-                func_?();
-                if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?(TypeInfo__RTG__BoxMath);
+              if (bVar3 == 0) {
+                if (*(uint *)(lVar14 + 0x18) <= uVar5) goto code_?;
+                uVar13 = *(undefined8 *)(lVar14 + 0x20 + (longlong)(int)uVar5 * 0xc);
+                fVar16 = *(float *)(lVar14 + 0x28 + (longlong)(int)uVar5 * 0xc);
+                if (*(int *)&(TypeInfo__RTG__BoxMath->_1).field_0x1c == 0) {
+                  FUN_?();
                 }
-                point.z = (float)LStack_4._current;
-                point.x = (float)LStack_4._index;
-                point.y = (float)LStack_4._version;
-                bVar6 = BoxMath::BoxMath_ContainsPoint
-                                  (point,modelOBB._center,modelOBB._size,modelOBB._rotation,
-                                   (BoxEpsilon)ZEXT812(0),(MethodInfo *)0x0);
-                if (bVar6 != 0) {
-                  func_?(verts,LStack_4._index);
-                  this_06 = (this->fields)._vertexIndexSet;
-                  if (this_06 == (HashSet_1_System_Int32_ *)0x0) goto code_?;
+                VStack_17.z = 0.0;
+                VStack_17.x = 0.0;
+                VStack_17.y = 0.0;
+                OStack_2._size._0_8_ = *(undefined8 *)&modelOBB->_rotation;
+                OStack_2._size.z = (modelOBB->_rotation).z;
+                OStack_2._center.x = (modelOBB->_rotation).w;
+                VStack_18.x = (modelOBB->_size).x;
+                VStack_18.y = (modelOBB->_size).y;
+                VStack_18.z = (modelOBB->_size).z;
+                VStack_19.x = (modelOBB->_center).x;
+                VStack_19.y = (modelOBB->_center).y;
+                VStack_19.z = (modelOBB->_center).z;
+                VStack_20._0_8_ = uVar13;
+                VStack_20.z = fVar16;
+                bVar3 = BoxMath::BoxMath_ContainsPoint
+                                  (&VStack_20,&VStack_19,&VStack_18,(Quaternion *)&OStack_2,
+                                   (BoxEpsilon *)&VStack_17,(MethodInfo *)0x0);
+                if (bVar3 != 0) {
+                  VStack_21._0_8_ = uVar13;
+                  VStack_21.z = fVar16;
+                  FUN_?(verts,&VStack_21,
+                                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                               );
+                  this_03 = (this->fields)._vertexIndexSet;
+                  if (this_03 == (HashSet_1_System_Int32_ *)0x0) goto code_?;
                   System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-                  HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
-                            (this_06,(int32_t)item,
-                             MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+                  HashSet_1_System_Int32__AddIfNotPresent
+                            (this_03,item,
+                             MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_->klass
+                             ->rgctx_data[0x15].method);
                 }
               }
             }
           }
+          goto code_?;
         }
       }
     }
   }
+  FUN_?();
 code_?:
-  uVar13 = func_?();
-  func_?(uVar13);
-  pcVar14 = (code *)swi(3);
-  bVar6 = (*pcVar14)();
-  return bVar6;
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+  pcVar22 = (code *)swi(3);
+  bVar3 = (*pcVar22)();
+  return bVar3;
 }
 
 
 /* Boolean OverlapVerts(OBB, MeshTransform, List`1[UnityEngine.Vector3]) */
 
 bool Assembly-CSharp.dll::RTG::MeshTree::MeshTree_OverlapVerts
-               (MeshTree *this,OBB obb,MeshTransform *meshTransform,
+               (MeshTree *this,OBB *obb,MeshTransform *meshTransform,
                List_1_UnityEngine_Vector3_ *verts,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff44;
-  puVar5 = &stack0xffffff44;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__BoxMath);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNode<RTG::MeshTriangle>_>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNode<RTG::MeshTriangle>_>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNode<RTG::MeshTriangle>_>__get_Current__
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Clear__);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNode<RTG::MeshTriangle>_>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__
-                   );
-    func_?(&MethodInfo__RTG__SphereTreeNode<RTG::MeshTriangle>__get_Data__);
-    func_?(&
-                    MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__OverlapBox_RTG__OBB__System__Collections__Generic__List<RTG::SphereTreeNode<RTG::MeshTriangle>_>_
-                   );
+    FUN_?(&TypeInfo__RTG__BoxMath);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNode<RTG::MeshTriangle>_>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNode<RTG::MeshTriangle>_>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNode<RTG::MeshTriangle>_>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Clear__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNode<RTG::MeshTriangle>_>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__SphereTreeNode<RTG::MeshTriangle>__get_Data__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__OverlapBox_RTG__OBB__System__Collections__Generic__List<RTG::SphereTreeNode<RTG::MeshTriangle>_>_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  uStack_6 = 0;
-  fStack_7 = 0.0;
-  LStack_8._list = (List_1_System_Object_ *)0x0;
-  LStack_8._index = 0;
-  LStack_8._version = 0;
-  LStack_8._current = (Object *)0x0;
   if (verts != (List_1_UnityEngine_Vector3_ *)0x0) {
-    piVar9 = &(verts->fields)._version;
-    *piVar9 = *piVar9 + 1;
+    piVar1 = &(verts->fields)._version;
+    *piVar1 = *piVar1 + 1;
     (verts->fields)._size = 0;
     if ((this->fields)._isBuilt == 0) {
       MeshTree_Build(this,(MethodInfo *)0x0);
     }
     if (meshTransform != (MeshTransform *)0x0) {
-      pOVar10 = MeshTransform::MeshTransform_InverseTransformOBB
-                         ((OBB *)&stack0xffffff50,meshTransform,obb,(MethodInfo *)0x0);
+      auStack_2._0_4_ = (obb->_size).x;
+      auStack_2._4_4_ = (obb->_size).y;
+      uVar3 = *(undefined8 *)&(obb->_size).z;
+      auStack_2._8_4_ = (undefined4)uVar3;
+      auStack_2._12_4_ = (undefined4)((ulonglong)uVar3 >> 0x20);
+      uVar4 = (obb->_center).y;
+      uVar5 = (obb->_center).z;
+      QStack_6.x = (obb->_rotation).x;
+      QStack_6.y = (obb->_rotation).y;
+      QStack_6.z = (obb->_rotation).z;
+      QStack_6.w = (obb->_rotation).w;
+      uStack_7._0_1_ = obb->_isValid;
+      uStack_7._1_3_ = *(undefined3 *)&obb->field_0x29;
+      auStack_2._16_4_ = uVar4;
+      auStack_2._20_4_ = uVar5;
+      pOVar8 = MeshTransform::MeshTransform_InverseTransformOBB
+                          (aOStack_9,meshTransform,(OBB *)auStack_2,(MethodInfo *)0x0);
+      auStack_2._0_4_ = (pOVar8->_size).x;
+      auStack_2._4_4_ = (pOVar8->_size).y;
+      uVar3 = *(undefined8 *)&(pOVar8->_size).z;
+      auStack_2._8_4_ = (undefined4)uVar3;
+      auStack_2._12_4_ = (undefined4)((ulonglong)uVar3 >> 0x20);
+      uVar3._0_4_ = (pOVar8->_center).y;
+      uVar3._4_4_ = (pOVar8->_center).z;
+      QStack_6._0_8_ = *(undefined8 *)&pOVar8->_rotation;
+      QStack_6.z = (pOVar8->_rotation).z;
+      QStack_6.w = (pOVar8->_rotation).w;
       this_00 = (this->fields)._tree;
-      fStack_11 = (pOVar10->_size).x;
-      fStack_12 = (pOVar10->_size).y;
-      fStack_13 = (pOVar10->_size).z;
-      fStack_14 = (pOVar10->_center).x;
-      method_00 = (MethodInfo *)(pOVar10->_center).y;
-      fStack_15 = (pOVar10->_center).y;
-      fStack_16 = (pOVar10->_center).z;
-      fStack_17 = (pOVar10->_rotation).x;
-      puStack_18 = (undefined *)(pOVar10->_rotation).y;
+      auStack_2._16_4_ = (float)uVar3;
+      auStack_2._20_4_ = uVar3._4_4_;
       if (this_00 != (SphereTree_1_MeshTriangle_ *)0x0) {
-        bVar19 = SphereTree`1[System::Object]::SphereTree_1_System_Object__OverlapBox
-                          ((SphereTree_1_System_Object_ *)this_00,*pOVar10,
-                           (List_1_RTG_SphereTreeNode_1_System_Object_ *)(this->fields)._nodeBuffer,
-                           MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__OverlapBox_RTG__OBB__System__Collections__Generic__List<RTG::SphereTreeNode<RTG::MeshTriangle>_>_
-                          );
-        if (bVar19 == 0) {
-          *unaff_FS_OFFSET = uStack_3;
+        auStack_10._0_8_ = *(undefined8 *)&pOVar8->_size;
+        auStack_10._8_8_ = *(undefined8 *)&(pOVar8->_size).z;
+        auStack_10._32_4_ = (pOVar8->_rotation).z;
+        auStack_10._36_4_ = (pOVar8->_rotation).w;
+        auStack_10[0x28] = pOVar8->_isValid;
+        auStack_10._41_3_ = *(undefined3 *)&pOVar8->field_0x29;
+        auStack_10._16_8_ = uVar3;
+        auStack_10._24_8_ = QStack_6._0_8_;
+        bVar11 = SphereTree`1[System::Object]::SphereTree_1_System_Object__OverlapBox
+                           ((SphereTree_1_System_Object_ *)this_00,(OBB *)auStack_10,
+                            (List_1_RTG_SphereTreeNode_1_System_Object_ *)(this->fields)._nodeBuffer
+                            ,
+                            MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__OverlapBox_RTG__OBB__System__Collections__Generic__List<RTG::SphereTreeNode<RTG::MeshTriangle>_>_
+                           );
+        if (bVar11 == 0) {
           return 0;
         }
-        this_01 = (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                  (this->fields)._vertexIndexSet;
-        if (this_01 != (HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)0x0) {
-          System.Core.dll::System::Collections::Generic::HashSet`1[Unity::IL2CPP::Metadata::
-          __Il2CppFullySharedGenericType]::
-          HashSet_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__Clear
-                    (this_01,MethodInfo__System__Collections__Generic__HashSet<int>__Clear__);
-          this_02 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                    (this->fields)._nodeBuffer;
-          if (this_02 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-            uVar20 = CONCAT44((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                               *)auStack_21,&UNK_?);
-            pLVar22 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                     RegularExpressions::RegexCharClass+SingleRange]::
-                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                               ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                                 *)auStack_21,this_02,
-                                MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNode<RTG::MeshTriangle>_>__GetEnumerator__
-                               );
-            uStack_23 = 0;
-            LStack_8._list = (List_1_System_Object_ *)pLVar22->_list;
-            LStack_8._index = pLVar22->_index;
-            LStack_8._version = pLVar22->_version;
-            LStack_8._current = *(Object **)&pLVar22->_current;
-            uStack_1 = 1;
-            pLStack_24 = &LStack_8;
+        if ((this->fields)._vertexIndexSet != (HashSet_1_System_Int32_ *)0x0) {
+          FUN_?();
+          uVar12 = QStack_6._8_8_;
+          uVar13 = QStack_6._0_8_;
+          uVar3 = auStack_2._0_8_;
+          pLVar14 = (this->fields)._nodeBuffer;
+          if (pLVar14 != (List_1_RTG_SphereTreeNode_1_MeshTriangle_ *)0x0) {
+            if (iRam_? != 0) {
+              uVar15 = (uint)((ulonglong)auStack_10 >> 0xc);
+              puVar16 = (ulonglong *)((ulonglong)((uVar15 & 0x1fffff) >> 6) * 8 + 0xADDR);
+              do {
+                uVar17 = *puVar16;
+                LOCK();
+                uVar18 = *puVar16;
+                if (uVar17 == uVar18) {
+                  *puVar16 = uVar17 | 1L << (uVar15 & 0x3f);
+                }
+                UNLOCK();
+              } while (uVar17 != uVar18);
+            }
+            auStack_10._8_8_ = (ulonglong)(uint)(pLVar14->fields)._version << 0x20;
+            auStack_10._16_4_ = 0.0;
+            auStack_10._20_4_ = 0.0;
+            LStack_19._index = auStack_10._8_4_;
+            LStack_19._version = auStack_10._12_4_;
+            LStack_19._current = (Object *)0x0;
+            uStack_20 = 0;
+            pLStack_21 = &LStack_19;
+            uVar22._4_4_ = (float)auStack_2._16_4_;
+            uVar22._0_4_ = (float)auStack_2._12_4_;
+            auStack_10._0_8_ = pLVar14;
+            LStack_19._list = (List_1_System_Object_ *)pLVar14;
             while( true ) {
-              bVar19 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
-                      Object]::List_1_T_Enumerator_System_Object__MoveNext
-                                (&LStack_8,
-                                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNode<RTG::MeshTriangle>_>__MoveNext__
-                                );
-              if (bVar19 == 0) {
-                uStack_1 = 0xffffffff;
-                mscorlib.dll::System::ThrowHelper::
-                ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                          ((Object *)&LStack_8,
-                           (ExceptionArgument__Enum)
-                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNode<RTG::MeshTriangle>_>__Dispose__
-                           ,method_00);
-                iVar25 = (verts->fields)._size;
-                *unaff_FS_OFFSET = uStack_3;
-                return iVar25 != 0;
+              bVar11 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
+                       Object]::List_1_T_Enumerator_System_Object__MoveNext
+                                 (&LStack_19,
+                                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNode<RTG::MeshTriangle>_>__MoveNext__
+                                 );
+              if (bVar11 == 0) {
+                return (verts->fields)._size != 0;
               }
-              if (((RegexCharClass_SingleRange)LStack_8._current == (RegexCharClass_SingleRange)0x0
-                  ) || (*(int *)((int)LStack_8._current + 0x20) == 0)) break;
-              this_03 = (this->fields)._mesh;
-              if ((this_03 == (RTMesh *)0x0) ||
-                 (pRVar26 = (RecordManager *)
-                           RTMesh::RTMesh_GetTriangle
-                                     (this_03,*(int32_t *)
-                                               (*(int *)((int)LStack_8._current + 0x20) + 0x18),
-                                      (MethodInfo *)0x0), pRStack_27 = pRVar26,
-                 pRVar26 == (RecordManager *)0x0)) break;
+              if (LStack_19._current == (Object *)0x0) break;
+              if (LStack_19._current[3].klass == (Object__Class *)0x0) goto code_?;
+              this_01 = (this->fields)._mesh;
+              if (this_01 == (RTMesh *)0x0) goto code_?;
+              pMVar23 = RTMesh::RTMesh_GetTriangle
+                                  (this_01,*(int32_t *)
+                                            ((longlong)
+                                             &((LStack_19._current[3].klass)->_0).byval_arg.data + 4
+                                            ),(MethodInfo *)0x0);
+              if (pMVar23 == (MeshTriangle *)0x0) goto code_?;
               if (cRam_? == '\0') {
-                func_?();
+                FUN_?(&TypeInfo__UnityEngine__Vector3);
+                LOCK();
+                UNLOCK();
                 cRam_? = '\x01';
               }
-              this_04 = (Vector3__Array *)(pRVar26->fields)._table;
-              if (this_04 == (Vector3__Array *)0x0) break;
-              UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::
-              PlayableBehaviour_Clone((PlayableBehaviour *)this_04,(MethodInfo *)0x0);
-              iStack_28 = func_?();
-              iVar25 = 0;
-              if (iStack_28 == 0) break;
-              for (; iVar25 < *(int *)(iStack_28 + 0xc); iVar25 = iVar25 + 1) {
-                pDStack_29 = System.Data.dll::System::Data::RecordManager::RecordManager_get_Item
-                                       (pRStack_27,iVar25,(MethodInfo *)0x0);
-                this_05 = (HashSet_1_System_UInt32_ *)(this->fields)._vertexIndexSet;
-                if (this_05 == (HashSet_1_System_UInt32_ *)0x0) goto code_?;
-                method_00 = MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_;
-                bVar19 = System.Core.dll::System::Collections::Generic::HashSet`1[System::UInt32]::
-                        HashSet_1_System_UInt32__Contains
-                                  (this_05,(uint32_t)pDStack_29,
-                                   MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_
-                                  );
-                if (bVar19 == 0) {
-                  func_?();
-                  if ((TypeInfo__RTG__BoxMath->_1).cctor_finished_or_no_cctor == 0) {
-                    func_?(TypeInfo__RTG__BoxMath);
+              if ((pMVar23->fields)._vertices == (Vector3__Array *)0x0) goto code_?;
+              uVar24 = FUN_?();
+              lVar25 = FUN_?(uVar24,TypeInfo__UnityEngine__Vector3);
+              uVar15 = 0;
+              if (lVar25 == 0) goto code_?;
+              for (; (int)uVar15 < *(int *)(lVar25 + 0x18); uVar15 = uVar15 + 1) {
+                pIVar26 = (pMVar23->fields)._vertIndices;
+                if (pIVar26 == (Int32__Array *)0x0) goto code_?;
+                if ((uint)pIVar26->max_length <= uVar15) goto code_?;
+                item = pIVar26->vector[(int)uVar15];
+                this_02 = (HashSet_1_System_Int32Enum_ *)(this->fields)._vertexIndexSet;
+                if (this_02 == (HashSet_1_System_Int32Enum_ *)0x0) goto code_?;
+                bVar11 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]
+                         ::HashSet_1_System_Int32Enum__Contains
+                                   (this_02,item,
+                                    MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_
+                                   );
+                if (bVar11 == 0) {
+                  if (*(uint *)(lVar25 + 0x18) <= uVar15) goto code_?;
+                  uVar24 = *(undefined8 *)(lVar25 + 0x20 + (longlong)(int)uVar15 * 0xc);
+                  fVar27 = *(float *)(lVar25 + 0x28 + (longlong)(int)uVar15 * 0xc);
+                  if (*(int *)&(TypeInfo__RTG__BoxMath->_1).field_0x1c == 0) {
+                    FUN_?();
                   }
-                  boxSize.y = fStack_12;
-                  boxSize.x = fStack_11;
-                  boxCenter.y = fStack_15;
-                  boxCenter.x = fStack_14;
-                  point.z = fStack_7;
-                  point.x = (float)(undefined4)uStack_6;
-                  point.y = (float)uStack_6._4_4_;
-                  boxCenter.z = fStack_16;
-                  boxSize.z = fStack_13;
-                  boxRotation.y = (float)puStack_18;
-                  boxRotation.x = fStack_17;
-                  boxRotation.z = (float)(int)uVar20;
-                  boxRotation.w = (float)((ulonglong)uVar20 >> 0x20);
-                  bVar19 = BoxMath::BoxMath_ContainsPoint
-                                    (point,boxCenter,boxSize,boxRotation,(BoxEpsilon)ZEXT812(0),
-                                     (MethodInfo *)0x0);
-                  if (bVar19 != 0) {
-                    point_00.z = fStack_7;
-                    point_00.x = (float)(undefined4)uStack_6;
-                    point_00.y = (float)uStack_6._4_4_;
-                    pVVar30 = MeshTransform::MeshTransform_TransformPoint
-                                       ((Vector3 *)(auStack_21 + 4),meshTransform,point_00,
-                                        (MethodInfo *)0x0);
-                    method_00 = (MethodInfo *)pVVar30->x;
-                    func_?();
-                    this_06 = (this->fields)._vertexIndexSet;
-                    if (this_06 == (HashSet_1_System_Int32_ *)0x0) goto code_?;
+                  uVar28 = QStack_6._8_8_;
+                  uVar29 = QStack_6._0_8_;
+                  uVar30 = auStack_2._0_8_;
+                  VStack_31.z = 0.0;
+                  VStack_31.x = 0.0;
+                  VStack_31.y = 0.0;
+                  QStack_6.x = (float)uVar13;
+                  QStack_6.y = SUB84(uVar13,4);
+                  auStack_10._0_4_ = QStack_6.x;
+                  auStack_10._4_4_ = QStack_6.y;
+                  QStack_6.z = (float)uVar12;
+                  QStack_6.w = SUB84(uVar12,4);
+                  auStack_10._8_4_ = QStack_6.z;
+                  auStack_10._12_4_ = QStack_6.w;
+                  auStack_2._0_4_ = (undefined4)uVar3;
+                  auStack_2._4_4_ = SUB84(uVar3,4);
+                  VStack_32.x = (float)auStack_2._0_4_;
+                  VStack_32.y = (float)auStack_2._4_4_;
+                  VStack_32.z = (float)auStack_2._8_4_;
+                  VStack_33.z = (float)auStack_2._20_4_;
+                  auStack_2._0_8_ = uVar30;
+                  QStack_6._0_8_ = uVar29;
+                  QStack_6._8_8_ = uVar28;
+                  VStack_33._0_8_ = uVar22;
+                  VStack_34._0_8_ = uVar24;
+                  VStack_34.z = fVar27;
+                  bVar11 = BoxMath::BoxMath_ContainsPoint
+                                     (&VStack_34,&VStack_33,&VStack_32,(Quaternion *)auStack_10,
+                                      (BoxEpsilon *)&VStack_31,(MethodInfo *)0x0);
+                  if (bVar11 != 0) {
+                    VStack_35._0_8_ = uVar24;
+                    VStack_35.z = fVar27;
+                    pVVar36 = MeshTransform::MeshTransform_TransformPoint
+                                        (&VStack_37,meshTransform,&VStack_35,(MethodInfo *)0x0);
+                    uStack_38._0_4_ = pVVar36->x;
+                    uStack_38._4_4_ = pVVar36->y;
+                    fStack_39 = pVVar36->z;
+                    FUN_?(verts,&uStack_38,
+                                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                                 );
+                    this_03 = (this->fields)._vertexIndexSet;
+                    if (this_03 == (HashSet_1_System_Int32_ *)0x0) goto code_?;
                     System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-                    HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
-                              (this_06,(int32_t)pDStack_29,
-                               MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+                    HashSet_1_System_Int32__AddIfNotPresent
+                              (this_03,item,
+                               MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_->
+                               klass->rgctx_data[0x15].method);
                   }
                 }
               }
             }
+            goto code_?;
           }
         }
       }
     }
   }
+  FUN_?();
 code_?:
-  uVar31 = func_?();
-  func_?(uVar31);
-  pcVar32 = (code *)swi(3);
-  bVar19 = (*pcVar32)();
-  return bVar19;
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+  pcVar40 = (code *)swi(3);
+  bVar11 = (*pcVar40)();
+  return bVar11;
 }
 
 
@@ -471,252 +778,377 @@ code_?:
 
 MeshRayHit *
 Assembly-CSharp.dll::RTG::MeshTree::MeshTree_RaycastClosest
-          (MeshTree *this,Ray ray,Matrix4x4 meshTransform,MethodInfo *method)
+          (MeshTree *this,Ray *ray,Matrix4x4 *meshTransform,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xfffffec8;
-  puVar5 = &stack0xfffffec8;
+  VStack_1._0_8_ = meshTransform;
+  pRStack_2 = ray;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>__GetEnumerator__
-                   );
-    func_?(&TypeInfo__RTG__MeshRayHit);
-    func_?(&MethodInfo__RTG__SphereTreeNodeRayHit<RTG::MeshTriangle>__get_HitNode__);
-    func_?(&MethodInfo__RTG__SphereTreeNode<RTG::MeshTriangle>__get_Data__);
-    func_?(&
-                    MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__RaycastAll_UnityEngine__Ray__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>_
-                   );
-    func_?(&TypeInfo__RTG__TriangleMath);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__MeshRayHit);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__SphereTreeNodeRayHit<RTG::MeshTriangle>__get_HitNode__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__SphereTreeNode<RTG::MeshTriangle>__get_Data__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__RaycastAll_UnityEngine__Ray__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__TriangleMath);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  fStack_6 = 0.0;
-  RStack_7.m_Direction.y = 0.0;
-  RStack_7.m_Direction.z = 0.0;
-  RStack_7.m_Origin.x = 0.0;
-  RStack_7.m_Origin.y = 0.0;
-  RStack_7.m_Origin.z = 0.0;
-  RStack_7.m_Direction.x = 0.0;
-  func_?(&stack0xffffff2c,0,0x40);
+  fStack_3 = 0.0;
+  MStack_4.m00 = 0.0;
+  MStack_4.m10 = 0.0;
+  MStack_4.m20 = 0.0;
+  MStack_4.m30 = 0.0;
+  MStack_4.m01 = 0.0;
+  MStack_4.m11 = 0.0;
+  MStack_4.m21 = 0.0;
+  MStack_4.m31 = 0.0;
+  MStack_4.m02 = 0.0;
+  MStack_4.m12 = 0.0;
+  MStack_4.m22 = 0.0;
+  MStack_4.m32 = 0.0;
+  MStack_4.m03 = 0.0;
+  MStack_4.m13 = 0.0;
+  MStack_4.m23 = 0.0;
+  MStack_4.m33 = 0.0;
   if ((this->fields)._isBuilt == 0) {
     MeshTree_Build(this,(MethodInfo *)0x0);
   }
-  transformMatrix.m10 = meshTransform.m10;
-  transformMatrix.m00 = meshTransform.m00;
-  transformMatrix.m20 = meshTransform.m20;
-  transformMatrix.m30 = meshTransform.m30;
-  transformMatrix.m01 = meshTransform.m01;
-  transformMatrix.m11 = meshTransform.m11;
-  transformMatrix.m21 = meshTransform.m21;
-  transformMatrix.m31 = meshTransform.m31;
-  transformMatrix.m02 = meshTransform.m02;
-  transformMatrix.m12 = meshTransform.m12;
-  transformMatrix.m22 = meshTransform.m22;
-  transformMatrix.m32 = meshTransform.m32;
-  transformMatrix.m03 = meshTransform.m03;
-  transformMatrix.m13 = meshTransform.m13;
-  transformMatrix.m23 = meshTransform.m23;
-  transformMatrix.m33 = meshTransform.m33;
-  pRVar8 = RayEx::RayEx_InverseTransform
-                      ((Ray *)&stack0xffffff14,ray,transformMatrix,(MethodInfo *)0x0);
+  MStack_4.m00 = meshTransform->m00;
+  MStack_4.m10 = meshTransform->m10;
+  MStack_4.m20 = meshTransform->m20;
+  MStack_4.m30 = meshTransform->m30;
+  MStack_4.m01 = meshTransform->m01;
+  MStack_4.m11 = meshTransform->m11;
+  MStack_4.m21 = meshTransform->m21;
+  MStack_4.m31 = meshTransform->m31;
+  MStack_4.m02 = meshTransform->m02;
+  MStack_4.m12 = meshTransform->m12;
+  MStack_4.m22 = meshTransform->m22;
+  MStack_4.m32 = meshTransform->m32;
+  MStack_4.m03 = meshTransform->m03;
+  MStack_4.m13 = meshTransform->m13;
+  MStack_4.m23 = meshTransform->m23;
+  MStack_4.m33 = meshTransform->m33;
+  RStack_5.m_Origin.x = (ray->m_Origin).x;
+  RStack_5.m_Origin.y = (ray->m_Origin).y;
+  RStack_5._8_8_ = *(undefined8 *)&(ray->m_Origin).z;
+  RStack_5.m_Direction.y = (ray->m_Direction).y;
+  RStack_5.m_Direction.z = (ray->m_Direction).z;
+  pRVar6 = RayEx::RayEx_InverseTransform
+                      ((Ray *)&piStack_7,&RStack_5,&MStack_4,(MethodInfo *)0x0);
+  piVar8 = *(int **)&pRVar6->m_Origin;
+  uVar9._0_4_ = (pRVar6->m_Origin).x;
+  uVar9._4_4_ = (pRVar6->m_Origin).y;
+  RStack_5.m_Origin.x = (pRVar6->m_Origin).x;
+  RStack_5.m_Origin.y = (pRVar6->m_Origin).y;
+  pfVar10 = &(pRVar6->m_Origin).z;
+  fVar11 = *pfVar10;
+  fVar12 = (pRVar6->m_Direction).x;
+  RStack_5._8_8_ = *(undefined8 *)pfVar10;
+  uVar13._0_4_ = (pRVar6->m_Direction).y;
+  uVar13._4_4_ = (pRVar6->m_Direction).z;
   this_00 = (this->fields)._tree;
-  RStack_7.m_Origin.x = (pRVar8->m_Origin).x;
-  RStack_7.m_Origin.y = (pRVar8->m_Origin).y;
-  RStack_7.m_Origin.z = (pRVar8->m_Origin).z;
-  RStack_7.m_Direction.x = (pRVar8->m_Direction).x;
-  RStack_7.m_Direction.y = (pRVar8->m_Direction).y;
-  RStack_7.m_Direction.z = (pRVar8->m_Direction).z;
-  uVar9 = (pRVar8->m_Direction).z;
-  uVar10 = (pRVar8->m_Origin).x;
-  uVar11 = (pRVar8->m_Origin).y;
-  uVar12 = (pRVar8->m_Origin).z;
-  ray_00.m_Origin.z = (float)uVar12;
-  ray_00.m_Origin.y = (float)uVar11;
-  ray_00.m_Origin.x = (float)uVar10;
-  uVar13 = (pRVar8->m_Direction).x;
-  uVar14 = (pRVar8->m_Direction).y;
-  ray_00.m_Direction.y = (float)uVar14;
-  ray_00.m_Direction.x = (float)uVar13;
+  RStack_5.m_Direction._4_8_ = uVar13;
   if (this_00 != (SphereTree_1_MeshTriangle_ *)0x0) {
-    ray_00.m_Direction.z = (float)uVar9;
-    bVar15 = SphereTree`1[System::Object]::SphereTree_1_System_Object__RaycastAll
-                       ((SphereTree_1_System_Object_ *)this_00,ray_00,
+    auStack_14._0_8_ = uVar9;
+    auStack_14._8_8_ = *(List_1_T_Enumerator_System_Object_ **)pfVar10;
+    uStack_15 = uVar13;
+    bVar16 = SphereTree`1[System::Object]::SphereTree_1_System_Object__RaycastAll
+                       ((SphereTree_1_System_Object_ *)this_00,(Ray *)auStack_14,
                         (List_1_RTG_SphereTreeNodeRayHit_1_System_Object_ *)
                         (this->fields)._nodeHitBuffer,
                         MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__RaycastAll_UnityEngine__Ray__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>_
                        );
-    if (bVar15 == 0) {
-code_?:
-      *unaff_FS_OFFSET = uStack_3;
+    fVar17 = _UNK_?;
+    if (bVar16 == 0) {
       return (MeshRayHit *)0x0;
     }
-    bVar16 = false;
-    pLVar17 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              (this->fields)._nodeHitBuffer;
     fStack_18 = _UNK_?;
-    iStack_19 = 0;
-    if (pLVar17 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-      pLVar20 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                ::RegexCharClass+SingleRange]::
-                List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                          ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_
-                            *)&stack0xffffff1c,pLVar17,
-                           MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>__GetEnumerator__
-                          );
-      uStack_21 = 0;
-      RVar22 = pLVar20->_current;
-      uStack_1 = 1;
-      pOStack_23 = (Object *)&stack0xffffff8c;
-      while( true ) {
-        bVar15 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-                 List_1_T_Enumerator_System_Object__MoveNext
-                           ((List_1_T_Enumerator_System_Object_ *)&stack0xffffff8c,
-                            MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>__MoveNext__
-                           );
-        if (bVar15 == 0) break;
-        if ((RVar22 == (RegexCharClass_SingleRange)0x0) ||
-           (iVar24 = *(int *)((int)RVar22 + 8), iVar24 == 0)) goto code_?;
-        iVar24 = *(int *)(iVar24 + 0x20);
-        VStack_25.y = RStack_7.m_Direction.y;
-        VStack_25.z = RStack_7.m_Direction.z;
-        if ((iVar24 == 0) || (iVar26 = *(int *)(iVar24 + 8), iVar26 == 0)) goto code_?;
-        if (*(int *)(iVar26 + 0xc) == 0) {
-          func_?();
-code_?:
-          func_?();
-code_?:
-          func_?();
-          goto code_?;
-        }
-        fStack_27 = *(float *)(iVar26 + 0x18);
-        iVar28 = *(int *)(iVar24 + 8);
-        fVar29 = (float)*(undefined8 *)(iVar26 + 0x10);
-        fVar30 = (float)((ulonglong)*(undefined8 *)(iVar26 + 0x10) >> 0x20);
-        if (iVar28 == 0) goto code_?;
-        if (*(uint *)(iVar28 + 0xc) < 2) goto code_?;
-        uVar31 = *(undefined8 *)(iVar28 + 0x1c);
-        pMStack_32 = *(MeshRayHit **)(iVar28 + 0x24);
-        iVar26 = *(int *)(iVar24 + 8);
-        uVar33 = (undefined4)uVar31;
-        uVar34 = (undefined4)((ulonglong)uVar31 >> 0x20);
-        if (iVar26 == 0) goto code_?;
-        if (*(uint *)(iVar26 + 0xc) < 3) goto code_?;
-        uVar35 = *(undefined8 *)(iVar26 + 0x28);
-        fStack_36 = *(float *)(iVar26 + 0x30);
-        uVar37 = (undefined4)uVar35;
-        uVar38 = (undefined4)((ulonglong)uVar35 >> 0x20);
-        pLVar17 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                  RStack_7.m_Origin.x;
-        fVar39 = RStack_7.m_Origin.y;
-        fVar40 = RStack_7.m_Origin.z;
-        RVar41 = (RegexCharClass_SingleRange)RStack_7.m_Direction.x;
-        if ((TypeInfo__RTG__TriangleMath->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-          uVar31 = CONCAT44(uVar34,uVar33);
-          uVar35 = CONCAT44(uVar38,uVar37);
-        }
-        ray_01.m_Origin.y = fVar39;
-        ray_01.m_Origin.x = (float)pLVar17;
-        ray_01.m_Origin.z = fVar40;
-        ray_01.m_Direction.x = (float)RVar41;
-        ray_01.m_Direction.y = VStack_25.y;
-        ray_01.m_Direction.z = VStack_25.z;
-        p0.y = fVar30;
-        p0.x = fVar29;
-        p0.z = fStack_27;
-        p1.z = (float)pMStack_32;
-        p1.x = (float)(int)uVar31;
-        p1.y = (float)(int)((ulonglong)uVar31 >> 0x20);
-        p2.z = fStack_36;
-        p2.x = (float)(int)uVar35;
-        p2.y = (float)(int)((ulonglong)uVar35 >> 0x20);
-        bVar15 = TriangleMath::TriangleMath_Raycast
-                           (ray_01,&fStack_6,p0,p1,p2,(TriangleEpsilon)ZEXT812(0),(MethodInfo *)0x0
-                           );
-        if (bVar15 != 0) {
-          VStack_42._0_8_ = *(undefined8 *)(iVar24 + 0xc);
-          VStack_42.z = *(float *)(iVar24 + 0x14);
-          if ((RStack_7.m_Direction.y * VStack_42.y + RStack_7.m_Direction.x * VStack_42.x +
-               RStack_7.m_Direction.z * VStack_42.z < 0.0) && (fStack_6 < fStack_18)) {
-            bVar16 = true;
-            iStack_19 = iVar24;
-            fStack_18 = fStack_6;
+    pIStack_19 = (Il2CppArrayType *)0x0;
+    bVar20 = false;
+    pLVar21 = (this->fields)._nodeHitBuffer;
+    if (pLVar21 != (List_1_RTG_SphereTreeNodeRayHit_1_MeshTriangle_ *)0x0) {
+      if (iRam_? != 0) {
+        uVar22 = (uint)((ulonglong)auStack_14 >> 0xc);
+        uVar23 = (ulonglong)((uVar22 & 0x1fffff) >> 6);
+        do {
+          uVar24 = *(ulonglong *)(uVar23 * 8 + 0xADDR);
+          puVar25 = (ulonglong *)(uVar23 * 8 + 0xADDR);
+          LOCK();
+          bVar26 = uVar24 == *puVar25;
+          if (bVar26) {
+            *puVar25 = uVar24 | 1L << (uVar22 & 0x3f);
           }
+          UNLOCK();
+        } while (!bVar26);
+      }
+      auStack_14._8_8_ = (ulonglong)(uint)(pLVar21->fields)._version << 0x20;
+      uStack_15._0_4_ = 0.0;
+      uStack_15._4_4_ = 0.0;
+      LStack_27._index = auStack_14._8_4_;
+      LStack_27._version = auStack_14._12_4_;
+      LStack_27._current = (Object *)0x0;
+      auStack_14._0_4_ = 0.0;
+      auStack_14._4_4_ = 0.0;
+      auStack_14._8_8_ = &LStack_27;
+      fVar28 = RStack_5.m_Direction.z;
+      fVar29 = RStack_5.m_Direction.y;
+      pIVar30 = (Il2CppArrayType *)0x0;
+      LStack_27._list = (List_1_System_Object_ *)pLVar21;
+      while (bVar16 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::
+                      Object]::List_1_T_Enumerator_System_Object__MoveNext
+                                (&LStack_27,
+                                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>__MoveNext__
+                                ), bVar16 != 0) {
+        if (LStack_27._current == (Object *)0x0) goto code_?;
+        if (LStack_27._current[1].klass == (Object__Class *)0x0) goto code_?;
+        pIVar31 = ((LStack_27._current[1].klass)->_0).this_arg.data.array;
+        if (pIVar31 == (Il2CppArrayType *)0x0) goto code_?;
+        piVar32 = pIVar31->sizes;
+        if (piVar32 == (int *)0x0) goto code_?;
+        if (piVar32[6] == 0) goto code_?;
+        uVar33._0_4_ = (float)piVar32[8];
+        uVar33._4_4_ = (float)piVar32[9];
+        fVar34 = (float)piVar32[10];
+        if (piVar32 == (int *)0x0) goto code_?;
+        if ((uint)piVar32[6] < 2) goto code_?;
+        uVar35._0_4_ = (float)piVar32[0xb];
+        uVar35._4_4_ = (float)piVar32[0xc];
+        fVar36 = (float)piVar32[0xd];
+        if (piVar32 == (int *)0x0) goto code_?;
+        if ((uint)piVar32[6] < 3) goto code_?;
+        uVar37._0_4_ = (float)piVar32[0xe];
+        uVar37._4_4_ = (float)piVar32[0xf];
+        fVar38 = (float)piVar32[0x10];
+        TStack_39._areaEps = 0.0;
+        TStack_39._extrudeEps = 0.0;
+        fVar40 = 0.0;
+        if (*(int *)&(TypeInfo__RTG__TriangleMath->_1).field_0x1c == 0) {
+          FUN_?();
+          fVar40 = TStack_39._areaEps;
+        }
+        TStack_41._areaEps = TStack_39._areaEps;
+        TStack_41._extrudeEps = TStack_39._extrudeEps;
+        VStack_42._0_8_ = uVar33;
+        VStack_42.z = fVar34;
+        TStack_41._wireEps = fVar40;
+        VStack_43._0_8_ = uVar37;
+        VStack_43.z = fVar38;
+        VStack_44._0_8_ = uVar35;
+        VStack_44.z = fVar36;
+        piStack_7 = piVar8;
+        fStack_45 = fVar11;
+        fStack_46 = fVar12;
+        uStack_47 = uVar13;
+        bVar16 = TriangleMath::TriangleMath_Raycast
+                           ((Ray *)&piStack_7,&fStack_3,&VStack_42,&VStack_44,&VStack_43,
+                            &TStack_41,(MethodInfo *)0x0);
+        if (((bVar16 != 0) &&
+            (piStack_7 = pIVar31->lobounds,
+            (float)((ulonglong)piStack_7 >> 0x20) * fVar29 + SUB84(piStack_7,0) * fVar12 +
+            *(float *)&pIVar31[1].etype * fVar28 < 0.0)) && (fStack_3 < fVar17)) {
+          bVar20 = true;
+          pIVar30 = pIVar31;
+          fVar17 = fStack_3;
+          fStack_18 = fStack_3;
+          pIStack_19 = pIVar31;
         }
       }
-      uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)&stack0xffffff8c,
-                 (ExceptionArgument__Enum)
-                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>__Dispose__
-                 ,in_stack_43);
-      uStack_1 = 0xffffffff;
-      if (!bVar16) goto code_?;
-      pVVar44 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-                          (&VStack_42,&RStack_7,fStack_18,(MethodInfo *)0x0);
-      pVVar44 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyPoint
-                          (&VStack_25,&meshTransform,*pVVar44,(MethodInfo *)0x0);
-      VStack_42.x = pVVar44->x;
-      VStack_42.y = pVVar44->y;
-      VStack_25.x = ray.m_Origin.x - VStack_42.x;
-      VStack_25.z = ray.m_Origin.z - pVVar44->z;
-      VStack_25.y = ray.m_Origin.y - VStack_42.y;
-      VStack_42.z = VStack_25.z;
-      fVar45 = (float10)func_?();
-      VStack_25.z = ray.m_Direction.z;
-      VStack_25.x = ray.m_Direction.x;
-      VStack_25.y = ray.m_Direction.y;
-      fVar46 = (float10)func_?();
-      fStack_27 = (float)fVar46;
-      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_inverse
-                ((Matrix4x4 *)&stack0xfffffed4,&meshTransform,(MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_transpose
-                ((Matrix4x4 *)&stack0xfffffed4,(Matrix4x4 *)&stack0xffffff2c,(MethodInfo *)0x0);
-      iVar24 = iStack_19;
-      if (iStack_19 != 0) {
-        pVVar44 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_MultiplyVector
-                            (&VStack_42,(Matrix4x4 *)&stack0xffffff2c,*(Vector3 *)(iStack_19 + 0xc),
-                             (MethodInfo *)0x0);
-        pVVar44 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                            ((Vector3 *)&stack0xffffff6c,*pVVar44,(MethodInfo *)0x0);
-        uVar47 = pVVar44->x;
-        uVar48 = pVVar44->y;
-        hitTriangleIndex = *(int32_t *)(iVar24 + 0x18);
-        fVar29 = pVVar44->z;
-        VStack_25.y = (float)uVar47;
-        VStack_25.z = (float)uVar48;
-        pMStack_32 = (MeshRayHit *)func_?();
-        hitNormal.y = VStack_25.z;
-        hitNormal.x = VStack_25.y;
-        hitNormal.z = fVar29;
-        MeshRayHit::MeshRayHit__ctor
-                  (pMStack_32,ray,hitTriangleIndex,(float)fVar45 / fStack_27,hitNormal,
-                   (MethodInfo *)0x0);
-        *unaff_FS_OFFSET = uStack_3;
-        return pMStack_32;
+      if (!bVar20) {
+        return (MeshRayHit *)0x0;
+      }
+      fVar12 = fVar12 * fVar17 + RStack_5.m_Origin.x;
+      fVar29 = fVar29 * fVar17 + RStack_5.m_Origin.y;
+      fVar17 = fVar28 * fVar17 + RStack_5.m_Origin.z;
+      fVar11 = _UNK_? /
+              (fVar29 * meshTransform->m31 + fVar12 * meshTransform->m30 +
+               fVar17 * meshTransform->m32 + meshTransform->m33);
+      piStack_7 = *(int **)&pRStack_2->m_Origin;
+      VStack_1.z = (pRStack_2->m_Origin).z -
+                     (fVar29 * meshTransform->m21 + fVar12 * meshTransform->m20 +
+                      fVar17 * meshTransform->m22 + meshTransform->m23) * fVar11;
+      VStack_1._0_8_ =
+           CONCAT44((float)((ulonglong)piStack_7 >> 0x20) -
+                    (fVar29 * meshTransform->m11 + fVar12 * meshTransform->m10 +
+                     fVar17 * meshTransform->m12 + meshTransform->m13) * fVar11,
+                    SUB84(piStack_7,0) -
+                    (fVar29 * meshTransform->m01 + fVar12 * *(float *)VStack_1._0_8_ +
+                     fVar17 * meshTransform->m02 + meshTransform->m03) * fVar11);
+      fVar11 = (float)FUN_?(&VStack_1);
+      VStack_1._0_8_ = *(undefined8 *)&ray->m_Direction;
+      VStack_1.z = (ray->m_Direction).z;
+      fVar12 = (float)FUN_?(&VStack_1);
+      fVar11 = fVar11 / fVar12;
+      pMVar48 = UnityEngine.CoreModule.dll::UnityEngine::Matrix4x4::Matrix4x4_get_inverse
+                          (aMStack_49,meshTransform,(MethodInfo *)0x0);
+      fStack_50 = pMVar48->m00;
+      fStack_51 = pMVar48->m10;
+      fStack_52 = pMVar48->m20;
+      fStack_53 = pMVar48->m30;
+      fStack_54 = pMVar48->m01;
+      fStack_55 = pMVar48->m11;
+      fStack_56 = pMVar48->m21;
+      fStack_57 = pMVar48->m31;
+      uStack_58._0_4_ = pMVar48->m02;
+      uStack_58._4_4_ = pMVar48->m12;
+      uStack_59._0_4_ = pMVar48->m22;
+      uStack_59._4_4_ = pMVar48->m32;
+      uStack_60._0_4_ = pMVar48->m03;
+      uStack_60._4_4_ = pMVar48->m13;
+      uStack_61._0_4_ = pMVar48->m23;
+      uStack_61._4_4_ = pMVar48->m33;
+      MStack_4.m00 = 0.0;
+      MStack_4.m10 = 0.0;
+      MStack_4.m20 = 0.0;
+      MStack_4.m30 = 0.0;
+      MStack_4.m01 = 0.0;
+      MStack_4.m11 = 0.0;
+      MStack_4.m21 = 0.0;
+      MStack_4.m31 = 0.0;
+      MStack_4.m02 = 0.0;
+      MStack_4.m12 = 0.0;
+      MStack_4.m22 = 0.0;
+      MStack_4.m32 = 0.0;
+      MStack_4.m03 = 0.0;
+      MStack_4.m13 = 0.0;
+      MStack_4.m23 = 0.0;
+      MStack_4.m33 = 0.0;
+      pcVar62 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar62 = (code *)FUN_?(&UNK_?), pcVar62 == (code *)0x0)) {
+        uVar13 = func_?(&UNK_?);
+        FUN_?(uVar13,0);
+        pcVar62 = (code *)swi(3);
+        pMVar63 = (MeshRayHit *)(*pcVar62)();
+        return pMVar63;
+      }
+      pcRam_? = pcVar62;
+      (*pcRam_?)(&fStack_50,&MStack_4);
+      if (pIVar30 != (Il2CppArrayType *)0x0) {
+        fVar17 = (float)((ulonglong)pIVar30->lobounds >> 0x20);
+        VStack_42.x = SUB84(pIVar30->lobounds,0);
+        fVar12 = *(float *)&pIVar30[1].etype;
+        fVar28 = fVar17 * MStack_4.m01 + VStack_42.x * MStack_4.m00 + fVar12 * MStack_4.m02;
+        fVar34 = fVar17 * MStack_4.m11 + VStack_42.x * MStack_4.m10 + fVar12 * MStack_4.m12;
+        fVar12 = fVar17 * MStack_4.m21 + VStack_42.x * MStack_4.m20 + fVar12 * MStack_4.m22;
+        VStack_42.y = fVar34;
+        VStack_42.x = fVar28;
+        VStack_42.z = fVar12;
+        fVar29 = (float)FUN_?(&VStack_42);
+        fVar17 = _UNK_?;
+        if (_UNK_? < fVar29) {
+          fVar12 = fVar12 / fVar29;
+          VStack_1.y = fVar34 / fVar29;
+          VStack_1.x = fVar28 / fVar29;
+        }
+        else {
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Vector3);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pVVar64 = TypeInfo__UnityEngine__Vector3->static_fields;
+          VStack_1.x = (pVVar64->zeroVector).x;
+          VStack_1.y = (pVVar64->zeroVector).y;
+          fVar12 = (pVVar64->zeroVector).z;
+        }
+        iVar65 = *(int32_t *)((longlong)&pIVar30[1].etype + 4);
+        pMVar63 = (MeshRayHit *)FUN_?(TypeInfo__RTG__MeshRayHit);
+        fVar28 = (ray->m_Origin).x;
+        fVar34 = (ray->m_Origin).y;
+        fVar36 = (ray->m_Origin).z;
+        fVar38 = (ray->m_Direction).x;
+        (pMVar63->fields)._hitTriangleIndex = iVar65;
+        uVar66 = (ray->m_Direction).y;
+        fVar29 = (ray->m_Direction).z;
+        (pMVar63->fields)._hitPoint.x = fVar38 * fVar11 + fVar28;
+        (pMVar63->fields)._hitPoint.y = (float)uVar66 * fVar11 + fVar34;
+        (pMVar63->fields)._hitPoint.z = fVar29 * fVar11 + fVar36;
+        (pMVar63->fields)._hitEnter = fVar11;
+        fVar11 = VStack_1.x;
+        fVar29 = VStack_1.y;
+        VStack_42.x = VStack_1.x;
+        VStack_42.y = VStack_1.y;
+        VStack_42.z = fVar12;
+        fVar28 = (float)FUN_?(&VStack_42);
+        if (fVar17 < fVar28) {
+          fVar11 = fVar11 / fVar28;
+          fVar29 = fVar29 / fVar28;
+          fVar12 = fVar12 / fVar28;
+        }
+        else {
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Vector3);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pVVar64 = TypeInfo__UnityEngine__Vector3->static_fields;
+          fVar11 = (pVVar64->zeroVector).x;
+          fVar29 = (pVVar64->zeroVector).y;
+          fVar12 = (pVVar64->zeroVector).z;
+        }
+        (pMVar63->fields)._hitNormal.x = fVar11;
+        (pMVar63->fields)._hitNormal.y = fVar29;
+        (pMVar63->fields)._hitNormal.z = fVar12;
+        return pMVar63;
       }
     }
   }
+  FUN_?();
 code_?:
-  func_?();
-  func_?();
-  pcVar49 = (code *)swi(3);
-  pMVar50 = (MeshRayHit *)(*pcVar49)();
-  return pMVar50;
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+  pcVar62 = (code *)swi(3);
+  pMVar63 = (MeshRayHit *)(*pcVar62)();
+  return pMVar63;
 }
 
 
@@ -726,18 +1158,35 @@ void Assembly-CSharp.dll::RTG::MeshTree::MeshTree_SetDirty(MeshTree *this,Method
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__SphereTree__);
-    func_?(&TypeInfo__RTG__SphereTree<RTG::MeshTriangle>);
+    FUN_?(&MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__SphereTree__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__SphereTree<RTG::MeshTriangle>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   (this->fields)._isBuilt = 0;
   this_00 = (SphereTree_1_MeshTriangle_ *)
-            func_?(TypeInfo__RTG__SphereTree<RTG::MeshTriangle>);
+            FUN_?(TypeInfo__RTG__SphereTree<RTG::MeshTriangle>);
   SphereTree`1[System::Object]::SphereTree_1_System_Object___ctor
             ((SphereTree_1_System_Object_ *)this_00,
              MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__SphereTree__);
+  bVar1 = iRam_? != 0;
   (this->fields)._tree = this_00;
-  func_?(&(this->fields)._tree,this_00);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._tree >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 
@@ -749,67 +1198,148 @@ void Assembly-CSharp.dll::RTG::MeshTree::MeshTree__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-    func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>__List__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNode<RTG::MeshTriangle>_>__List__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__List<RTG::SphereTreeNode<RTG::MeshTriangle>_>
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>
-                   );
-    func_?(&MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__SphereTree__);
-    func_?(&TypeInfo__RTG__SphereTree<RTG::MeshTriangle>);
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>__List__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNode<RTG::MeshTriangle>_>__List__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__List<RTG::SphereTreeNode<RTG::MeshTriangle>_>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__SphereTree__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__SphereTree<RTG::MeshTriangle>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (SphereTree_1_MeshTriangle_ *)
-            func_?(TypeInfo__RTG__SphereTree<RTG::MeshTriangle>);
+            FUN_?(TypeInfo__RTG__SphereTree<RTG::MeshTriangle>);
   SphereTree`1[System::Object]::SphereTree_1_System_Object___ctor
             ((SphereTree_1_System_Object_ *)this_00,
              MethodInfo__RTG__SphereTree<RTG::MeshTriangle>__SphereTree__);
+  bVar1 = iRam_? != 0;
   (this->fields)._tree = this_00;
-  func_?(&(this->fields)._tree,this_00);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._tree >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   this_01 = (List_1_RTG_SphereTreeNode_1_MeshTriangle_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__List<RTG::SphereTreeNode<RTG::MeshTriangle>_>
-                           );
+            FUN_?(
+                         TypeInfo__System__Collections__Generic__List<RTG::SphereTreeNode<RTG::MeshTriangle>_>
+                         );
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
              MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNode<RTG::MeshTriangle>_>__List__
             );
+  bVar1 = iRam_? != 0;
   (this->fields)._nodeBuffer = this_01;
-  func_?(&(this->fields)._nodeBuffer,this_01);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._nodeBuffer >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   this_02 = (List_1_RTG_SphereTreeNodeRayHit_1_MeshTriangle_ *)
-            func_?(
-                           TypeInfo__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>
-                           );
+            FUN_?(
+                         TypeInfo__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>
+                         );
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_02,
              MethodInfo__System__Collections__Generic__List<RTG::SphereTreeNodeRayHit<RTG::MeshTriangle>_>__List__
             );
+  bVar1 = iRam_? != 0;
   (this->fields)._nodeHitBuffer = this_02;
-  func_?(&(this->fields)._nodeHitBuffer,this_02);
-  this_03 = (RTMesh *)func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
-  System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-  HashSet_1_System_Int32___ctor
-            ((HashSet_1_System_Int32_ *)this_03,
-             MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-  (this->fields)._vertexIndexSet = (HashSet_1_System_Int32_ *)this_03;
-  func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,
-             (MethodInfo *)&(this->fields)._vertexIndexSet);
-  (this->fields)._mesh = this_03;
-  func_?(&this->fields);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._nodeHitBuffer >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  pHVar6 = (HashSet_1_System_Int32_ *)
+           FUN_?(TypeInfo__System__Collections__Generic__HashSet<int>);
+  FUN_?(pHVar6,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+  iVar7 = iRam_?;
+  (this->fields)._vertexIndexSet = pHVar6;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._vertexIndexSet >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar1);
+  }
+  (this->fields)._mesh = mesh;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   return;
 }
 

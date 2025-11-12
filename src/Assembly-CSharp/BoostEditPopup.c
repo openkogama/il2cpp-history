@@ -6,72 +6,85 @@ void Assembly-CSharp.dll::BoostEditPopup::BoostEditPopup_CreateBoostImage
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<BoostEditPopup::BoosterDef>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<BoostEditPopup::BoosterDef>__get_Item_int_
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<BoostEditPopup::BoosterDef>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<BoostEditPopup::BoosterDef>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  index = 0;
-  pLVar1 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-           (this->fields).boosterList;
-  do {
-    if (pLVar1 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
+  pLVar1 = (this->fields).boosterList;
+  uVar2 = 0;
+  if (pLVar1 == (List_1_BoostEditPopup_BoosterDef_ *)0x0) {
 code_?:
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  lVar4 = 0x20;
+  do {
+    if ((pLVar1->fields)._size <= (int)uVar2) {
       return;
     }
-    if ((pLVar1->fields)._size <= index) {
+    if ((uint)(pLVar1->fields)._size <= uVar2) {
+code_?:
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                ((MethodInfo *)0x0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
-    pLVar1 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-             (this->fields).boosterList;
-    if (pLVar1 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
-    goto code_?;
-    XVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
-            XmlSchemaObjectTable+XmlSchemaObjectEntry]::
-            List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                      (pLVar1,index,
-                       MethodInfo__System__Collections__Generic__List<BoostEditPopup::BoosterDef>__get_Item_int_
-                      );
+    pBVar5 = (pLVar1->fields)._items;
+    if (pBVar5 == (BoostEditPopup_BoosterDef__Array *)0x0) goto code_?;
+    if ((uint)pBVar5->max_length <= uVar2) {
+code_?:
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
     if (boost == (Boost *)0x0) goto code_?;
-    pLVar1 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-             (this->fields).boosterList;
-    if (XVar3.qname == (XmlQualifiedName *)(boost->fields)._Type_k__BackingField) {
-      if (pLVar1 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
-        XVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
-                XmlSchemaObjectTable+XmlSchemaObjectEntry]::
-                List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                          (pLVar1,index,
-                           MethodInfo__System__Collections__Generic__List<BoostEditPopup::BoosterDef>__get_Item_int_
-                          );
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Object);
+    if (*(int *)((longlong)&((BoostEditPopup_BoosterDef__Array *)(pBVar5->vector + -2))->klass +
+                lVar4) == (boost->fields)._Type_k__BackingField) {
+      if ((uint)(pLVar1->fields)._size <= uVar2) goto code_?;
+      pBVar5 = (pLVar1->fields)._items;
+      if (pBVar5 != (BoostEditPopup_BoosterDef__Array *)0x0) {
+        if ((uint)pBVar5->max_length <= uVar2) goto code_?;
+        pGVar6 = pBVar5->vector[(int)uVar2].iconPrefab;
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
         }
-        this_00 = (GameObject *)
-                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                            ((Object *)XVar3.xso,
-                             UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
-                            );
-        if ((this_00 != (GameObject *)0x0) &&
-           (this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (this_00,(MethodInfo *)0x0), this_01 != (Transform *)0x0)) {
+        pGVar6 = (GameObject *)
+                 UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                           ((Object *)pGVar6,
+                            UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                           );
+        if ((pGVar6 != (GameObject *)0x0) &&
+           (this_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                                (pGVar6,(MethodInfo *)0x0), this_00 != (Transform *)0x0)) {
           UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                    (this_01,(Transform *)(this->fields).boostImageParent,0,(MethodInfo *)0x0);
+                    (this_00,(Transform *)(this->fields).boostImageParent,0,(MethodInfo *)0x0);
           return;
         }
       }
       goto code_?;
     }
-    index = index + 1;
+    uVar2 = uVar2 + 1;
+    lVar4 = lVar4 + 0x10;
   } while( true );
 }
 
@@ -87,139 +100,194 @@ void Assembly-CSharp.dll::BoostEditPopup::BoostEditPopup_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__get_NumericValue__
-                   );
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  iVar1 = iRam_?;
   (this->fields).boostSetting = boostSetting;
-  func_?(&(this->fields).boostSetting,boostSetting);
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).boostSetting >> 0xc);
+    uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+    do {
+      uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+      puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).settingChangedCallback = settingChangedCallback;
-  func_?(&(this->fields).settingChangedCallback,settingChangedCallback);
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).settingChangedCallback >> 0xc);
+    uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+    do {
+      uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+      puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).priceChangedCallback = priceChangedCallback;
-  func_?(&(this->fields).priceChangedCallback,priceChangedCallback);
+  iVar1 = 0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).priceChangedCallback >> 0xc);
+    uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+    do {
+      uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+      puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).submitDataCallback = submitDataCallback;
-  func_?(&(this->fields).submitDataCallback,submitDataCallback);
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).submitDataCallback >> 0xc);
+    uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+    do {
+      uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+      puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<BoostEditPopup::BoosterDef>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<BoostEditPopup::BoosterDef>__get_Item_int_
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<BoostEditPopup::BoosterDef>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<BoostEditPopup::BoosterDef>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pLVar1 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-           (this->fields).boosterList;
-  index = 0;
-  do {
-    if (pLVar1 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
+  pLVar8 = (this->fields).boosterList;
+  uVar2 = 0;
+  if (pLVar8 != (List_1_BoostEditPopup_BoosterDef_ *)0x0) {
+    lVar9 = 0x20;
+    for (; (int)uVar2 < (pLVar8->fields)._size; uVar2 = uVar2 + 1) {
+      if ((uint)(pLVar8->fields)._size <= uVar2) {
 code_?:
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar10 = (code *)swi(3);
+        (*pcVar10)();
+        return;
+      }
+      pBVar11 = (pLVar8->fields)._items;
+      if (pBVar11 == (BoostEditPopup_BoosterDef__Array *)0x0) goto code_?;
+      if ((uint)pBVar11->max_length <= uVar2) {
+code_?:
+        FUN_?();
+        pcVar10 = (code *)swi(3);
+        (*pcVar10)();
+        return;
+      }
+      if (boost == (Boost *)0x0) goto code_?;
+      if (*(int *)((longlong)&((BoostEditPopup_BoosterDef__Array *)(pBVar11->vector + -2))->klass +
+                  lVar9) == (boost->fields)._Type_k__BackingField) {
+        if ((uint)(pLVar8->fields)._size <= uVar2) goto code_?;
+        pBVar11 = (pLVar8->fields)._items;
+        if (pBVar11 == (BoostEditPopup_BoosterDef__Array *)0x0) goto code_?;
+        if ((uint)pBVar11->max_length <= uVar2) goto code_?;
+        pGVar12 = pBVar11->vector[(int)uVar2].iconPrefab;
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pGVar12 = (GameObject *)
+                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
+                            ((Object *)pGVar12,
+                             UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                            );
+        if ((pGVar12 == (GameObject *)0x0) ||
+           (this_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                                (pGVar12,(MethodInfo *)0x0), this_00 == (Transform *)0x0))
+        goto code_?;
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+                  (this_00,(Transform *)(this->fields).boostImageParent,0,(MethodInfo *)0x0);
+        goto code_?;
+      }
+      lVar9 = lVar9 + 0x10;
     }
-    if ((pLVar1->fields)._size <= index) {
-      if (boost != (Boost *)0x0) {
+    if (boost != (Boost *)0x0) {
 code_?:
-        pTVar3 = (this->fields).headerText;
-        if (((((pTVar3 != (Text *)0x0) &&
-              ((*(code *)(pTVar3->klass->vtable).set_text.method)
-                         (pTVar3,(boost->fields)._EditTitle_k__BackingField,
-                          (pTVar3->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr),
-              boostSetting != (GameBoosterSettingWithGoldSetting *)0x0)) &&
-             (this_02 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes
-                        ::GameBoosterSettings::GameBoosterSettingTypes::
-                        GameBoosterSettingWithGoldSetting::
-                        GameBoosterSettingWithGoldSetting_get_GoldPrice
-                                  (boostSetting,(MethodInfo *)0x0),
-             this_02 != (KogamaSettingNumericBase_1_System_Int32_ *)0x0)) &&
-            ((pKVar4 = (this_02->fields).KogamaSettingNumeric,
-             pKVar4 != (KogamaSettingNumeric_1_System_Int32_ *)0x0 &&
-             (pRVar5 = (pKVar4->fields).RangeValidator,
-             pRVar5 != (RangeValidator_1_System_Int32_ *)0x0)))) &&
-           (pSVar6 = (this->fields).priceSlider, pSVar6 != (Slider *)0x0)) {
-          UnityEngine.UI.dll::UnityEngine::UI::Slider::Slider_set_maxValue
-                    (pSVar6,(float)(pRVar5->fields).max,(MethodInfo *)0x0);
-          pKVar4 = (this_02->fields).KogamaSettingNumeric;
-          if (((pKVar4 != (KogamaSettingNumeric_1_System_Int32_ *)0x0) &&
-              (pRVar5 = (pKVar4->fields).RangeValidator,
-              pRVar5 != (RangeValidator_1_System_Int32_ *)0x0)) &&
-             (pSVar6 = (this->fields).priceSlider, pSVar6 != (Slider *)0x0)) {
-            UnityEngine.UI.dll::UnityEngine::UI::Slider::Slider_set_minValue
-                      (pSVar6,(float)(pRVar5->fields).min,(MethodInfo *)0x0);
-            pSVar6 = (this->fields).priceSlider;
-            iVar7 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-                    KogamaSettingTypes::KogamaSettingNumericBase`1[System::Int32]::
-                    KogamaSettingNumericBase_1_System_Int32__get_NumericValue
-                              (this_02,
-                               MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__get_NumericValue__
-                              );
-            if (pSVar6 != (Slider *)0x0) {
-              (*(code *)(pSVar6->klass->vtable).set_value.method)
-                        (pSVar6,(float)iVar7,(pSVar6->klass->vtable).SetValueWithoutNotify.methodPtr
-                        );
-              iVar7 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::
-                      KogamaSettingTypes::KogamaSettingNumericBase`1[System::Int32]::
-                      KogamaSettingNumericBase_1_System_Int32__get_NumericValue
-                                (this_02,
-                                 MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__get_NumericValue__
-                                );
-              (this->fields).originalPrice = iVar7;
-              (this->fields).isInitialized = 1;
-              return;
-            }
+      pTVar13 = (this->fields).headerText;
+      if (((((pTVar13 != (Text *)0x0) &&
+            ((*(pTVar13->klass->vtable).set_text.methodPtr)(),
+            boostSetting != (GameBoosterSettingWithGoldSetting *)0x0)) &&
+           (pKVar14 = MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsTypes::
+                      GameBoosterSettings::GameBoosterSettingTypes::
+                      GameBoosterSettingWithGoldSetting::
+                      GameBoosterSettingWithGoldSetting_get_GoldPrice
+                                (boostSetting,(MethodInfo *)0x0),
+           pKVar14 != (KogamaSettingNumericBase_1_System_Int32_ *)0x0)) &&
+          ((pKVar15 = (pKVar14->fields).KogamaSettingNumeric,
+           pKVar15 != (KogamaSettingNumeric_1_System_Int32_ *)0x0 &&
+           (pRVar16 = (pKVar15->fields).RangeValidator,
+           pRVar16 != (RangeValidator_1_System_Int32_ *)0x0)))) &&
+         (pSVar17 = (this->fields).priceSlider, pSVar17 != (Slider *)0x0)) {
+        UnityEngine.UI.dll::UnityEngine::UI::Slider::Slider_set_maxValue
+                  (pSVar17,(float)(pRVar16->fields).max,(MethodInfo *)0x0);
+        pKVar15 = (pKVar14->fields).KogamaSettingNumeric;
+        if (((pKVar15 != (KogamaSettingNumeric_1_System_Int32_ *)0x0) &&
+            (pRVar16 = (pKVar15->fields).RangeValidator,
+            pRVar16 != (RangeValidator_1_System_Int32_ *)0x0)) &&
+           (pSVar17 = (this->fields).priceSlider, pSVar17 != (Slider *)0x0)) {
+          UnityEngine.UI.dll::UnityEngine::UI::Slider::Slider_set_minValue
+                    (pSVar17,(float)(pRVar16->fields).min,(MethodInfo *)0x0);
+          pSVar17 = (this->fields).priceSlider;
+          FUN_?(pKVar14,
+                        MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__get_NumericValue__
+                       );
+          if (pSVar17 != (Slider *)0x0) {
+            (*(pSVar17->klass->vtable).set_value.methodPtr)(pSVar17);
+            iVar18 = FUN_?(pKVar14,
+                                   MethodInfo__MV__WorldObject__KogamaSettings__KogamaSettingsCore__KogamaSettingTypes__KogamaSettingNumericBase<int>__get_NumericValue__
+                                  );
+            (this->fields).originalPrice = iVar18;
+            (this->fields).isInitialized = 1;
+            return;
           }
         }
       }
-      goto code_?;
     }
-    pLVar1 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-             (this->fields).boosterList;
-    if (pLVar1 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
-    goto code_?;
-    XVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
-            XmlSchemaObjectTable+XmlSchemaObjectEntry]::
-            List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                      (pLVar1,index,
-                       MethodInfo__System__Collections__Generic__List<BoostEditPopup::BoosterDef>__get_Item_int_
-                      );
-    if (boost == (Boost *)0x0) goto code_?;
-    pLVar1 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-             (this->fields).boosterList;
-    if (XVar8.qname == (XmlQualifiedName *)(boost->fields)._Type_k__BackingField) {
-      if (pLVar1 != (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0) {
-        XVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
-                XmlSchemaObjectTable+XmlSchemaObjectEntry]::
-                List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                          (pLVar1,index,
-                           MethodInfo__System__Collections__Generic__List<BoostEditPopup::BoosterDef>__get_Item_int_
-                          );
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Object);
-        }
-        this_00 = (GameObject *)
-                  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
-                            ((Object *)XVar8.xso,
-                             UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
-                            );
-        if ((this_00 != (GameObject *)0x0) &&
-           (this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (this_00,(MethodInfo *)0x0), this_01 != (Transform *)0x0)) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                    (this_01,(Transform *)(this->fields).boostImageParent,0,(MethodInfo *)0x0);
-          goto code_?;
-        }
-      }
-      goto code_?;
-    }
-    index = index + 1;
-  } while( true );
+  }
+code_?:
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
+  return;
 }
 
 
@@ -230,76 +298,172 @@ void Assembly-CSharp.dll::BoostEditPopup::BoostEditPopup_OnCancelBoostEdit
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    MethodInfo__BoostEditPopup____c___OnCancelBoostEdit_b__13_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__BoostEditPopup____c);
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__BoostEditPopup____c___OnCancelBoostEdit_b__13_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__BoostEditPopup____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pSVar1 = (this->fields).priceSlider;
   if (pSVar1 != (Slider *)0x0) {
-    (*(code *)(pSVar1->klass->vtable).set_value.method)
-              (pSVar1,(float)(this->fields).originalPrice,
-               (pSVar1->klass->vtable).SetValueWithoutNotify.methodPtr);
-    if ((this->fields).isInitialized == 0) {
-code_?:
-      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
-      if ((TypeInfo__BoostEditPopup____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__BoostEditPopup____c);
+    (*(pSVar1->klass->vtable).set_value.methodPtr)();
+    if ((this->fields).isInitialized != 0) {
+      pSVar1 = (this->fields).priceSlider;
+      pUVar2 = (this->fields).priceChangedCallback;
+      if ((pSVar1 == (Slider *)0x0) ||
+         (fVar3 = (float)(*(pSVar1->klass->vtable).get_value.methodPtr)
+                                    (pSVar1,(pSVar1->klass->vtable).get_value.method),
+         pUVar2 == (UnityAction_1_System_Int32_ *)0x0)) goto DAT_?;
+      (*(pUVar2->fields)._._.invoke_impl)
+                ((pUVar2->fields)._._.method_code,(int)fVar3,(pUVar2->fields)._._.method);
+    }
+    pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)this,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__BoostEditPopup____c->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__BoostEditPopup____c);
+    }
+    this_01 = TypeInfo__BoostEditPopup____c->static_fields->__9__13_0;
+    if (this_01 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+      if (*(int *)&(TypeInfo__BoostEditPopup____c->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__BoostEditPopup____c);
       }
-      callbackFunction = TypeInfo__BoostEditPopup____c->static_fields->__9__13_0;
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-        if ((TypeInfo__BoostEditPopup____c->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__BoostEditPopup____c);
-        }
-        object = TypeInfo__BoostEditPopup____c->static_fields->__9;
-        callbackFunction =
-             (ExecuteEvents_EventFunction_1_IUIStack_ *)
-             func_?(
-                            TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                            );
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-                   MethodInfo__BoostEditPopup____c___OnCancelBoostEdit_b__13_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   ,(MethodInfo *)0x0);
-        TypeInfo__BoostEditPopup____c->static_fields->__9__13_0 = callbackFunction;
-        func_?(&TypeInfo__BoostEditPopup____c->static_fields->__9__13_0,callbackFunction);
+      object = TypeInfo__BoostEditPopup____c->static_fields->__9;
+      this_01 = (ExecuteEvents_EventFunction_1_IUIStack_ *)
+                FUN_?(
+                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                             );
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+      ExecuteEvents_EventFunction_1_System_Object___ctor
+                ((ExecuteEvents_EventFunction_1_System_Object_ *)this_01,(Object *)object,
+                 MethodInfo__BoostEditPopup____c___OnCancelBoostEdit_b__13_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 ,(MethodInfo *)0x0);
+      TypeInfo__BoostEditPopup____c->static_fields->__9__13_0 = this_01;
+      if (iRam_? != 0) {
+        uVar5 = (uint)((ulonglong)&TypeInfo__BoostEditPopup____c->static_fields->__9__13_0 >> 0xc);
+        uVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+        do {
+          uVar7 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+          puVar8 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+          LOCK();
+          bVar9 = uVar7 == *puVar8;
+          if (bVar9) {
+            *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar9);
       }
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    pMVar10 = 
+    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+    ;
+    if ((
+        UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+        ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      LOCK();
+      UNLOCK();
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Count__
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Item_int_
+                   );
+      LOCK();
+      UNLOCK();
+      if ((pMVar10->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+        FUN_?(pMVar10);
       }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,
-                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    }
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_GetEventChain
+              (pGVar4,(IList_1_UnityEngine_Transform_ *)
+                       TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                       s_InternalTransformList,(MethodInfo *)0x0);
+    pLVar11 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+             s_InternalTransformList;
+    if (pLVar11 != (List_1_UnityEngine_Transform_ *)0x0) {
+      lVar12 = (longlong)(pLVar11->fields)._size;
+      uVar5 = 0;
+      if (0 < lVar12) {
+        lVar13 = 0;
+        lVar14 = 0x20;
+        do {
+          if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          pLVar11 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                   s_InternalTransformList;
+          if (pLVar11 == (List_1_UnityEngine_Transform_ *)0x0) goto code_?;
+          if ((uint)(pLVar11->fields)._size <= uVar5) {
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                      ((MethodInfo *)0x0);
+            pcVar15 = (code *)swi(3);
+            (*pcVar15)();
+            return;
+          }
+          pTVar16 = (pLVar11->fields)._items;
+          if (pTVar16 == (Transform__Array *)0x0) goto code_?;
+          if ((uint)pTVar16->max_length <= uVar5) {
+            FUN_?();
+            pcVar15 = (code *)swi(3);
+            (*pcVar15)();
+            return;
+          }
+          this_00 = *(Component **)((longlong)pTVar16->vector + lVar14 + -0x20);
+          if (this_00 == (Component *)0x0) goto code_?;
+          pGVar4 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              (this_00,(MethodInfo *)0x0);
+          bVar17 = UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+                  ExecuteEvents_Execute_18
+                            (pGVar4,(BaseEventData *)0x0,
+                             (ExecuteEvents_EventFunction_1_System_Object_ *)this_01,
+                             (pMVar10->field7_0x38).rgctx_data[1].method);
+          if (bVar17 != 0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      (this_00,(MethodInfo *)0x0);
+            return;
+          }
+          uVar5 = uVar5 + 1;
+          lVar13 = lVar13 + 1;
+          lVar14 = lVar14 + 8;
+        } while (lVar13 < lVar12);
+      }
       return;
     }
-    pSVar1 = (this->fields).priceSlider;
-    pUVar2 = (this->fields).priceChangedCallback;
-    if (pSVar1 != (Slider *)0x0) {
-      fVar3 = (float10)(*(code *)(pSVar1->klass->vtable).get_value.method)
-                                 (pSVar1,(pSVar1->klass->vtable).set_value.methodPtr);
-      if (pUVar2 != (UnityAction_1_System_Int32_ *)0x0) {
-        (*(pUVar2->fields)._._.invoke_impl)
-                  ((pUVar2->fields)._._.method_code,(int)fVar3,(pUVar2->fields)._._.method);
-        goto code_?;
-      }
-    }
+code_?:
+    FUN_?();
+    pcVar15 = (code *)swi(3);
+    (*pcVar15)();
+    return;
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+DAT_?:
+  FUN_?();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -311,61 +475,81 @@ void Assembly-CSharp.dll::BoostEditPopup::BoostEditPopup_OnConfirmButtonPressed
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    MethodInfo__BoostEditPopup____c___OnConfirmButtonPressed_b__12_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__BoostEditPopup____c);
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__BoostEditPopup____c___OnConfirmButtonPressed_b__12_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__BoostEditPopup____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                    ((Component *)this,(MethodInfo *)0x0);
-  if ((TypeInfo__BoostEditPopup____c->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__BoostEditPopup____c);
+  if (*(int *)&(TypeInfo__BoostEditPopup____c->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__BoostEditPopup____c);
   }
-  callbackFunction = TypeInfo__BoostEditPopup____c->static_fields->__9__12_0;
-  if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-    if ((TypeInfo__BoostEditPopup____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__BoostEditPopup____c);
+  this_00 = TypeInfo__BoostEditPopup____c->static_fields->__9__12_0;
+  if (this_00 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+    if (*(int *)&(TypeInfo__BoostEditPopup____c->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__BoostEditPopup____c);
     }
     object = TypeInfo__BoostEditPopup____c->static_fields->__9;
-    callbackFunction =
-         (ExecuteEvents_EventFunction_1_IUIStack_ *)
-         func_?(
-                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                        );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+    this_00 = (ExecuteEvents_EventFunction_1_IUIStack_ *)
+              FUN_?(
+                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                           );
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+    ExecuteEvents_EventFunction_1_System_Object___ctor
+              ((ExecuteEvents_EventFunction_1_System_Object_ *)this_00,(Object *)object,
                MethodInfo__BoostEditPopup____c___OnConfirmButtonPressed_b__12_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
-    TypeInfo__BoostEditPopup____c->static_fields->__9__12_0 = callbackFunction;
-    func_?(&TypeInfo__BoostEditPopup____c->static_fields->__9__12_0,callbackFunction);
+    TypeInfo__BoostEditPopup____c->static_fields->__9__12_0 = this_00;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&TypeInfo__BoostEditPopup____c->static_fields->__9__12_0 >> 0xc);
+      puVar2 = (ulonglong *)((ulonglong)((uVar1 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar3 = *puVar2;
+        LOCK();
+        uVar4 = *puVar2;
+        if (uVar3 == uVar4) {
+          *puVar2 = uVar3 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar3 != uVar4);
+    }
   }
-  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?();
   }
   UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-            (root,(BaseEventData *)0x0,
-             (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+            (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)this_00,
              UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
             );
-  pUVar1 = (this->fields).submitDataCallback;
-  if (pUVar1 != (UnityAction *)0x0) {
-    puStack2 = (pUVar1->fields)._._.method;
-    pvStack3 = (pUVar1->fields)._._.method_code;
-    (*(pUVar1->fields)._._.invoke_impl)();
+  pUVar5 = (this->fields).submitDataCallback;
+  if (pUVar5 == (UnityAction *)0x0) {
+    FUN_?();
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
     return;
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(pUVar5->fields)._._.invoke_impl)((pUVar5->fields)._._.method_code,(pUVar5->fields)._._.method);
   return;
 }
 
@@ -376,32 +560,51 @@ void Assembly-CSharp.dll::BoostEditPopup::BoostEditPopup_PriceInputFieldChange
                (BoostEditPopup *this,MethodInfo *method)
 
 {
-  pSStack_1 = (Slider *)0x0;
-  pIVar2 = (this->fields).priceInputField;
-  if (pIVar2 != (InputField *)0x0) {
-    mscorlib.dll::System::Single::Single_TryParse
-              ((pIVar2->fields).m_Text,(float *)&pSStack_1,(MethodInfo *)0x0);
-    pSVar3 = (this->fields).priceSlider;
-    if (pSVar3 != (Slider *)0x0) {
-      (*(code *)(pSVar3->klass->vtable).set_value.method)(pSVar3);
+  pIVar1 = (this->fields).priceInputField;
+  afStackX_8[0] = 0.0;
+  if (pIVar1 != (InputField *)0x0) {
+    pSVar2 = (pIVar1->fields).m_Text;
+    if (pSVar2 != (String *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?();
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      RStack_3._pointer._value = &(pSVar2->fields)._firstChar;
+      RStack_3._12_4_ = 0;
+      RStack_3._length = (pSVar2->fields)._stringLength;
+      info = mscorlib.dll::System::Globalization::NumberFormatInfo::NumberFormatInfo_get_CurrentInfo
+                       ((MethodInfo *)0x0);
+      mscorlib.dll::System::Single::Single_TryParse_2
+                (&RStack_3,
+                 NumberStyles__Enum_AllowExponent|NumberStyles__Enum_AllowThousands|
+                 NumberStyles__Enum_AllowDecimalPoint|NumberStyles__Enum_Integer,info,afStackX_8,
+                 (MethodInfo *)0x0);
+    }
+    pSVar4 = (this->fields).priceSlider;
+    if (pSVar4 != (Slider *)0x0) {
+      (*(pSVar4->klass->vtable).set_value.methodPtr)
+                (pSVar4,afStackX_8[0],(pSVar4->klass->vtable).set_value.method);
       BoostEditPopup_UpdatePriceTextInputFieldWithPriceSliderValue(this,(MethodInfo *)0x0);
       if ((this->fields).isInitialized == 0) {
         return;
       }
-      pSVar3 = (this->fields).priceSlider;
-      pUVar4 = (this->fields).priceChangedCallback;
-      if ((pSVar3 != (Slider *)0x0) &&
-         (pSStack_1 = pSVar3, fVar5 = (float10)(*(code *)(pSVar3->klass->vtable).get_value.method)()
-         , pUVar4 != (UnityAction_1_System_Int32_ *)0x0)) {
-        pSStack_1 = (Slider *)(int)fVar5;
-        (*(pUVar4->fields)._._.invoke_impl)((pUVar4->fields)._._.method_code);
+      pSVar4 = (this->fields).priceSlider;
+      pUVar5 = (this->fields).priceChangedCallback;
+      if ((pSVar4 != (Slider *)0x0) &&
+         (fVar6 = (float)(*(pSVar4->klass->vtable).get_value.methodPtr)
+                                   (pSVar4,(pSVar4->klass->vtable).get_value.method),
+         pUVar5 != (UnityAction_1_System_Int32_ *)0x0)) {
+        (*(pUVar5->fields)._._.invoke_impl)
+                  ((pUVar5->fields)._._.method_code,(int)fVar6,(pUVar5->fields)._._.method);
         return;
       }
     }
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -419,14 +622,14 @@ void Assembly-CSharp.dll::BoostEditPopup::BoostEditPopup_PriceSliderValueChanged
   pSVar1 = (this->fields).priceSlider;
   pUVar2 = (this->fields).priceChangedCallback;
   if ((pSVar1 != (Slider *)0x0) &&
-     (fVar3 = (float10)(*(code *)(pSVar1->klass->vtable).get_value.method)
-                                 (pSVar1,(pSVar1->klass->vtable).set_value.methodPtr),
+     (fVar3 = (float)(*(pSVar1->klass->vtable).get_value.methodPtr)
+                               (pSVar1,(pSVar1->klass->vtable).get_value.method),
      pUVar2 != (UnityAction_1_System_Int32_ *)0x0)) {
     (*(pUVar2->fields)._._.invoke_impl)
               ((pUVar2->fields)._._.method_code,(int)fVar3,(pUVar2->fields)._._.method);
     return;
   }
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -442,17 +645,20 @@ void Assembly-CSharp.dll::BoostEditPopup::BoostEditPopup_UpdatePriceData
   if ((this->fields).isInitialized == 0) {
     return;
   }
-  pSVar1 = (this->fields).priceSlider;
-  pUVar2 = (this->fields).priceChangedCallback;
-  if ((pSVar1 != (Slider *)0x0) &&
-     (fVar3 = (float10)(*(code *)(pSVar1->klass->vtable).get_value.method)
-                                 (pSVar1,(pSVar1->klass->vtable).set_value.methodPtr),
-     pUVar2 != (UnityAction_1_System_Int32_ *)0x0)) {
-    (*(pUVar2->fields)._._.invoke_impl)
-              ((pUVar2->fields)._._.method_code,(int)fVar3,(pUVar2->fields)._._.method);
-    return;
+  pUVar1 = (this->fields).priceChangedCallback;
+  pSVar2 = (this->fields).priceSlider;
+  if (pSVar2 != (Slider *)0x0) {
+    fVar3 = (float)(*(pSVar2->klass->vtable).get_value.methodPtr)
+                             (pSVar2,(pSVar2->klass->vtable).get_value.method);
+    if (pUVar1 != (UnityAction_1_System_Int32_ *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*(pUVar1->fields)._._.invoke_impl)
+                ((pUVar1->fields)._._.method_code,(int)fVar3,(pUVar1->fields)._._.method);
+      return;
+    }
   }
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -466,21 +672,41 @@ void Assembly-CSharp.dll::BoostEditPopup::
                (BoostEditPopup *this,MethodInfo *method)
 
 {
-  pSStack_1 = (Slider *)0x0;
-  pIVar2 = (this->fields).priceInputField;
-  if (pIVar2 != (InputField *)0x0) {
-    mscorlib.dll::System::Single::Single_TryParse
-              ((pIVar2->fields).m_Text,(float *)&pSStack_1,(MethodInfo *)0x0);
-    pSVar3 = (this->fields).priceSlider;
-    if (pSVar3 != (Slider *)0x0) {
-      pSStack_1 = pSVar3;
-      (*(code *)(pSVar3->klass->vtable).set_value.method)();
+  pIVar1 = (this->fields).priceInputField;
+  afStackX_8[0] = 0.0;
+  if (pIVar1 != (InputField *)0x0) {
+    pSVar2 = (pIVar1->fields).m_Text;
+    if (pSVar2 != (String *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?();
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      RStack_3._pointer._value = &(pSVar2->fields)._firstChar;
+      RStack_3._12_4_ = 0;
+      RStack_3._length = (pSVar2->fields)._stringLength;
+      info = mscorlib.dll::System::Globalization::NumberFormatInfo::NumberFormatInfo_get_CurrentInfo
+                       ((MethodInfo *)0x0);
+      mscorlib.dll::System::Single::Single_TryParse_2
+                (&RStack_3,
+                 NumberStyles__Enum_AllowExponent|NumberStyles__Enum_AllowThousands|
+                 NumberStyles__Enum_AllowDecimalPoint|NumberStyles__Enum_Integer,info,afStackX_8,
+                 (MethodInfo *)0x0);
+    }
+    pSVar4 = (this->fields).priceSlider;
+    this = (BoostEditPopup *)0x0;
+    if (pSVar4 != (Slider *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*(pSVar4->klass->vtable).set_value.methodPtr)
+                (pSVar4,afStackX_8[0],(pSVar4->klass->vtable).set_value.method);
       return;
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?(this,afStackX_8[0]);
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -492,32 +718,262 @@ void Assembly-CSharp.dll::BoostEditPopup::
                (BoostEditPopup *this,MethodInfo *method)
 
 {
-  pSVar1 = (this->fields).priceSlider;
   this_00 = (this->fields).priceInputField;
-  if (pSVar1 != (Slider *)0x0) {
-    fVar2 = (float10)(*(code *)(pSVar1->klass->vtable).get_value.method)
-                               (pSVar1,(pSVar1->klass->vtable).set_value.methodPtr);
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    uStack_3 = (double)(float)fVar2;
-    fVar2 = (float10)func_?(uStack_3);
-    uStack_3 = (double)CONCAT44((int)fVar2,SUB84((double)fVar2,0));
-    value = mscorlib.dll::System::Int32::Int32_ToString
-                      ((Int32 *)((int)&uStack_3 + 4),(MethodInfo *)0x0);
-    if (this_00 != (InputField *)0x0) {
-      UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_set_text
-                (this_00,value,(MethodInfo *)0x0);
-      return;
+  pSVar1 = (this->fields).priceSlider;
+  if (pSVar1 == (Slider *)0x0) {
+code_?:
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  (*(pSVar1->klass->vtable).get_value.methodPtr)(pSVar1,(pSVar1->klass->vtable).get_value.method);
+  iVar3 = FUN_?();
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__Number);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if ((MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____->klass->field_0x135 &
+      1) == 0) {
+    FUN_?();
+  }
+  if (*(int *)&(TypeInfo__System__Number->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pSVar4 = mscorlib.dll::System::Number::Number_FormatInt32
+                     (iVar3,(ReadOnlySpan_1_Char_ *)&stack0xffffffffffffffd8,(IFormatProvider *)0x0,
+                      (MethodInfo *)0x0);
+  if (this_00 == (InputField *)0x0) goto code_?;
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__UnityEngine__UI__InputField__Validate_System__String__int__wchar_t_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Math);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__UI__InputField__OnValidateInput);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_u000A);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_u0009);
+    LOCK();
+    UNLOCK();
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pSVar5 = (this_00->fields).m_Text;
+  if (pSVar5 == pSVar4) {
+    return;
+  }
+  if (pSVar5 == (String *)0x0) {
+code_?:
+    if (pSVar4 == (String *)0x0) {
+code_?:
+      pSVar4 = ::StringLiteral__;
+      if (::StringLiteral__ == (String *)0x0) goto DAT_?;
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  else {
+    if (pSVar4 == (String *)0x0) goto code_?;
+    if ((pSVar5->fields)._stringLength == (pSVar4->fields)._stringLength) {
+      bVar6 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                        ((uint8_t *)&(pSVar5->fields)._firstChar,
+                         (uint8_t *)&(pSVar4->fields)._firstChar,
+                         (longlong)(pSVar5->fields)._stringLength * 2,(MethodInfo *)0x0);
+      if (bVar6 != 0) {
+        return;
+      }
+      goto code_?;
+    }
+  }
+  pSVar4 = mscorlib.dll::System::String::String_Replace_1
+                     (pSVar4,::StringLiteral__,
+                      (String *)**(undefined8 **)(lRam_? + 0xb8),(MethodInfo *)0x0);
+  if ((this_00->fields).m_LineType == 0) {
+    if ((pSVar4 == (String *)0x0) ||
+       (pSVar4 = mscorlib.dll::System::String::String_Replace_1
+                           (pSVar4,StringLiteral_u000A,::StringLiteral__,(MethodInfo *)0x0),
+       pSVar4 == (String *)0x0)) goto DAT_?;
+    pSVar4 = mscorlib.dll::System::String::String_Replace_1
+                       (pSVar4,StringLiteral_u0009,::StringLiteral__,(MethodInfo *)0x0);
+  }
+  if (((this_00->fields).m_OnValidateInput == (InputField_OnValidateInput *)0x0) &&
+     ((this_00->fields).m_CharacterValidation == 0)) {
+    if (0 < (this_00->fields).m_CharacterLimit) {
+      if (pSVar4 == (String *)0x0) goto DAT_?;
+      iVar7 = (this_00->fields).m_CharacterLimit;
+      if (iVar7 < (pSVar4->fields)._stringLength) {
+        pSVar4 = mscorlib.dll::System::String::String_Substring_1(pSVar4,0,iVar7,(MethodInfo *)0x0)
+        ;
+      }
+    }
+    (this_00->fields).m_Text = pSVar4;
+    func_?(&(this_00->fields).m_Text);
+  }
+  else {
+    bVar8 = iRam_? != 0;
+    (this_00->fields).m_Text = ::StringLiteral__;
+    if (bVar8) {
+      uVar9 = (uint)((ulonglong)&(this_00->fields).m_Text >> 0xc);
+      lVar10 = (ulonglong)((uVar9 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar11 = *(ulonglong *)(lVar10 + 0xADDR);
+        puVar12 = (ulonglong *)(lVar10 + 0xADDR);
+        LOCK();
+        bVar8 = uVar11 == *puVar12;
+        if (bVar8) {
+          *puVar12 = uVar11 | 1L << (uVar9 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar8);
+    }
+    pIVar13 = (this_00->fields).m_OnValidateInput;
+    if (pIVar13 == (InputField_OnValidateInput *)0x0) {
+      pIVar13 = (InputField_OnValidateInput *)
+                FUN_?(TypeInfo__UnityEngine__UI__InputField__OnValidateInput);
+      pMVar14 = MethodInfo__UnityEngine__UI__InputField__Validate_System__String__int__wchar_t_;
+      bVar8 = iRam_? != 0;
+      (pIVar13->fields)._._.method_ptr =
+           MethodInfo__UnityEngine__UI__InputField__Validate_System__String__int__wchar_t_->
+           virtualMethodPointer;
+      (pIVar13->fields)._._.method = pMVar14;
+      (pIVar13->fields)._._.m_target = (Object *)this_00;
+      if (bVar8) {
+        uVar9 = (uint)((ulonglong)&(pIVar13->fields)._._.m_target >> 0xc);
+        lVar10 = (ulonglong)((uVar9 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar11 = *(ulonglong *)(lVar10 + 0xADDR);
+          puVar12 = (ulonglong *)(lVar10 + 0xADDR);
+          LOCK();
+          bVar8 = uVar11 == *puVar12;
+          if (bVar8) {
+            *puVar12 = uVar11 | 1L << (uVar9 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar8);
+      }
+      uVar15 = pMVar14->parameters_count;
+      (pIVar13->fields)._._.method_code = pIVar13;
+      if ((pMVar14->flags & 0x10) == 0) {
+        if (uVar15 != 2) goto code_?;
+        pcVar2 = FUN_?;
+      }
+      else if (uVar15 == 3) {
+        pcVar2 = FUN_?;
+      }
+      else {
+code_?:
+        (pIVar13->fields)._._.method_code = (pIVar13->fields)._._.m_target;
+        pcVar2 = (pIVar13->fields)._._.method_ptr;
+      }
+      (pIVar13->fields)._._.invoke_impl = pcVar2;
+      (pIVar13->fields)._._.extra_arg = FUN_?;
+    }
+    if (pSVar4 == (String *)0x0) goto DAT_?;
+    iVar3 = (pSVar4->fields)._stringLength;
+    (this_00->fields).m_CaretSelectPosition = iVar3;
+    (this_00->fields).m_CaretPosition = iVar3;
+    if ((this_00->fields).m_CharacterLimit < 1) {
+      iVar7 = (pSVar4->fields)._stringLength;
+    }
+    else {
+      iVar7 = (this_00->fields).m_CharacterLimit;
+      iVar16 = (pSVar4->fields)._stringLength;
+      if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (iVar16 < iVar7) {
+        iVar7 = iVar16;
+      }
+    }
+    uVar9 = 0;
+    if (0 < iVar7) {
+      puVar17 = &(pSVar4->fields)._firstChar;
+      lVar10 = 0;
+      do {
+        pSVar5 = (this_00->fields).m_Text;
+        if (pSVar5 == (String *)0x0) goto DAT_?;
+        if ((longlong)(pSVar4->fields)._stringLength <= (longlong)(ulonglong)uVar9) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowIndexOutOfRangeException
+                    ((MethodInfo *)0x0);
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        if (pIVar13 == (InputField_OnValidateInput *)0x0) goto DAT_?;
+        c = (*(pIVar13->fields)._._.invoke_impl)
+                      ((pIVar13->fields)._._.method_code,(this_00->fields).m_Text,
+                       (pSVar5->fields)._stringLength,*puVar17,(pIVar13->fields)._._.method);
+        if (c != 0) {
+          pSVar5 = (this_00->fields).m_Text;
+          if ((*(int *)(lRam_? + 0xe4) == 0) &&
+             (FUN_?(), *(int *)(lRam_? + 0xe4) == 0)) {
+            FUN_?();
+          }
+          str1 = mscorlib.dll::System::Char::Char_ToString_2(c,(MethodInfo *)0x0);
+          pSVar5 = mscorlib.dll::System::String::String_Concat_4(pSVar5,str1,(MethodInfo *)0x0);
+          (this_00->fields).m_Text = pSVar5;
+          func_?(&(this_00->fields).m_Text);
+        }
+        uVar9 = uVar9 + 1;
+        lVar10 = lVar10 + 1;
+        puVar17 = puVar17 + 1;
+      } while (lVar10 < iVar7);
+    }
+  }
+  if ((this_00->fields).m_Keyboard != (TouchScreenKeyboard *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::TouchScreenKeyboard::TouchScreenKeyboard_set_text
+              ((this_00->fields).m_Keyboard,(this_00->fields).m_Text,(MethodInfo *)0x0);
+  }
+  pSVar4 = (this_00->fields).m_Text;
+  if (pSVar4 == (String *)0x0) {
+DAT_?:
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  iVar7 = (pSVar4->fields)._stringLength;
+  if (iVar7 < (this_00->fields).m_CaretPosition) {
+    (this_00->fields).m_CaretPosition = iVar7;
+  }
+  else if ((this_00->fields).m_CaretSelectPosition <= iVar7) goto code_?;
+  (this_00->fields).m_CaretSelectPosition = iVar7;
+code_?:
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__UnityEngine__Events__UnityEvent<System::String>__Invoke_System__String_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_InputField_value);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  UnityEngine.UIModule.dll::UnityEngine::UISystemProfilerApi::UISystemProfilerApi_AddMarker
+            (StringLiteral_InputField_value,(Object_1 *)this_00,(MethodInfo *)0x0);
+  if ((this_00->fields).m_OnValueChanged != (InputField_OnChangeEvent *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent`1[System::Object]::
+    UnityEvent_1_System_Object__Invoke
+              ((UnityEvent_1_System_Object_ *)(this_00->fields).m_OnValueChanged,
+               (Object *)(this_00->fields).m_Text,
+               MethodInfo__UnityEngine__Events__UnityEvent<System::String>__Invoke_System__String_);
+  }
+  UnityEngine.UI.dll::UnityEngine::UI::InputField::InputField_UpdateLabel(this_00,(MethodInfo *)0x0)
+  ;
   return;
 }
 

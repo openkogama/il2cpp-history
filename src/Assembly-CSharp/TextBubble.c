@@ -6,29 +6,93 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_Add
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Object>__Add_UnityEngine__Object_
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Object>__Add_UnityEngine__Object_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (this->fields).content;
-  if (transformContent != (RectTransform *)0x0) {
-    item = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)transformContent,(MethodInfo *)0x0);
-    if (this_00 != (List_1_UnityEngine_Object_ *)0x0) {
-      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-                ((List_1_System_Object_ *)this_00,(Object *)item,
-                 MethodInfo__System__Collections__Generic__List<UnityEngine::Object>__Add_UnityEngine__Object_
-                );
-      parent = (Transform *)TextBubble_get_BubbleTransform(this,(MethodInfo *)0x0);
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                ((Transform *)transformContent,parent,0,(MethodInfo *)0x0);
+  if ((transformContent != (RectTransform *)0x0) &&
+     (item = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                       ((Component *)transformContent,(MethodInfo *)0x0),
+     pMVar1 = 
+     MethodInfo__System__Collections__Generic__List<UnityEngine::Object>__Add_UnityEngine__Object_,
+     this_00 != (List_1_UnityEngine_Object_ *)0x0)) {
+    piVar2 = &(this_00->fields)._version;
+    *piVar2 = *piVar2 + 1;
+    pOVar3 = (this_00->fields)._items;
+    if (pOVar3 != (Object_1__Array *)0x0) {
+      uVar4 = (this_00->fields)._size;
+      if (uVar4 < (uint)pOVar3->max_length) {
+        (this_00->fields)._size = uVar4 + 1;
+        FUN_?(pOVar3,(longlong)(int)uVar4,item);
+      }
+      else {
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__AddWithResize
+                  ((List_1_System_Object_ *)this_00,(Object *)item,
+                   pMVar1->klass->rgctx_data[0xe].method);
+      }
+      pRVar5 = TextBubble_get_BubbleTransform(this,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                      ,pRVar5,0,0,unaff_RDI);
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__Marshal<UnityEngine::Transform>_UnityEngine__Transform_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (transformContent == (RectTransform *)0x0) {
+        FUN_?();
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
+      }
+      pvVar7 = (transformContent->fields)._._._.m_CachedPtr;
+      if (pvVar7 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)transformContent,(MethodInfo *)0x0);
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
+      }
+      if ((
+          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__Marshal<UnityEngine::Transform>_UnityEngine__Transform_
+          ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+        FUN_?();
+      }
+      if (pRVar5 == (RectTransform *)0x0) {
+        pvVar8 = (void *)0x0;
+      }
+      else {
+        pvVar8 = (pRVar5->fields)._._._.m_CachedPtr;
+      }
+      pcVar6 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+        uVar9 = func_?(&UNK_?);
+        FUN_?(uVar9,0);
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
+      }
+      pcRam_? = pcVar6;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*pcRam_?)(pvVar7,pvVar8,0);
       return;
     }
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -39,22 +103,52 @@ float Assembly-CSharp.dll::TextBubble::TextBubble_CalculatePivotNearEdgeOffset
                 (TextBubble *this,float pivot,MethodInfo *method)
 
 {
-  fStack_1 = 0.0;
-  fStack_2 = (float)(int)((uint)(_UNK_? < pivot) * 2 + -1);
-  fVar3 = (pivot - _UNK_?) * fStack_2;
-  if (_UNK_? < fVar3) {
-    this_00 = (this->fields).tail;
-    if (this_00 == (RectTransform *)0x0) {
-      func_?();
-      pcVar4 = (code *)swi(3);
-      fVar5 = (float10)(*pcVar4)();
-      return (float)fVar5;
-    }
-    pRVar6 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                       (&RStack_7,this_00,(MethodInfo *)0x0);
-    fStack_1 = (_UNK_? / fVar3) * pRVar6->m_Height * fStack_2;
+  fVar1 = 0.0;
+  iVar2 = -1;
+  if (_UNK_? < pivot) {
+    iVar2 = 1;
   }
-  return fStack_1;
+  fVar3 = (pivot - _UNK_?) * (float)iVar2;
+  if (_UNK_? < fVar3) {
+    obj = (this->fields).tail;
+    if (obj == (RectTransform *)0x0) {
+      FUN_?();
+      pcVar4 = (code *)swi(3);
+      fVar1 = (float)(*pcVar4)();
+      return fVar1;
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::RectTransform>_UnityEngine__RectTransform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_5 = 0;
+    uStack_6 = 0;
+    pvVar7 = (obj->fields)._._._.m_CachedPtr;
+    if (pvVar7 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+      pcVar4 = (code *)swi(3);
+      fVar1 = (float)(*pcVar4)();
+      return fVar1;
+    }
+    pcVar4 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+      uVar8 = func_?(&UNK_?);
+      FUN_?(uVar8,0);
+      pcVar4 = (code *)swi(3);
+      fVar1 = (float)(*pcVar4)();
+      return fVar1;
+    }
+    pcRam_? = pcVar4;
+    (*pcRam_?)(pvVar7,&uStack_5);
+    fVar1 = (_UNK_? / fVar3) * uStack_6._4_4_ * (float)iVar2;
+  }
+  return fVar1;
 }
 
 
@@ -64,58 +158,82 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_ClearContent(TextBubble *this,M
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Object>__Clear__);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Object>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Object>__get_Item_int_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Object>__Clear__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Object>__get_Count__)
+    ;
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Object>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  iVar1 = 0;
-  pLVar2 = (this->fields).content;
-  do {
-    if (pLVar2 == (List_1_UnityEngine_Object_ *)0x0) {
-code_?:
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
-    }
-    this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-              (this->fields).content;
-    if ((pLVar2->fields)._size <= iVar1) {
-      if (this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) {
-        iVar1 = (this_00->fields)._size;
-        piVar4 = &(this_00->fields)._version;
-        *piVar4 = *piVar4 + 1;
-        (this_00->fields)._size = 0;
-        if (0 < iVar1) {
-          mscorlib.dll::System::Array::Array_Clear
-                    ((Array *)(this_00->fields)._items,0,iVar1,(MethodInfo *)0x0);
+  pLVar1 = (this->fields).content;
+  uVar2 = 0;
+  if (pLVar1 != (List_1_UnityEngine_Object_ *)0x0) {
+    lVar3 = 0x20;
+    do {
+      pLVar4 = (this->fields).content;
+      if ((pLVar1->fields)._size <= (int)uVar2) {
+        if (pLVar4 != (List_1_UnityEngine_Object_ *)0x0) {
+          length = (pLVar4->fields)._size;
+          piVar5 = &(pLVar4->fields)._version;
+          *piVar5 = *piVar5 + 1;
+          (pLVar4->fields)._size = 0;
+          if (0 < length) {
+            mscorlib.dll::System::Array::Array_Clear
+                      ((Array *)(pLVar4->fields)._items,0,length,(MethodInfo *)0x0);
+          }
+          return;
         }
+        break;
+      }
+      if (pLVar4 == (List_1_UnityEngine_Object_ *)0x0) break;
+      if ((uint)(pLVar4->fields)._size <= uVar2) {
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
         return;
       }
-      goto code_?;
-    }
-    if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-    goto code_?;
-    obj = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-          RegexCharClass+SingleRange]::
-          List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                    (this_00,iVar1,
-                     MethodInfo__System__Collections__Generic__List<UnityEngine::Object>__get_Item_int_
-                    );
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-              ((Object_1 *)obj,(MethodInfo *)0x0);
-    pLVar2 = (this->fields).content;
-    iVar1 = iVar1 + 1;
-  } while( true );
+      pOVar7 = (pLVar4->fields)._items;
+      if (pOVar7 == (Object_1__Array *)0x0) break;
+      if ((uint)pOVar7->max_length <= uVar2) {
+        FUN_?();
+        pcVar6 = (code *)swi(3);
+        (*pcVar6)();
+        return;
+      }
+      obj = *(Object_1 **)((longlong)pOVar7->vector + lVar3 + -0x20);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy(obj,0.0,(MethodInfo *)0x0);
+      pLVar1 = (this->fields).content;
+      uVar2 = uVar2 + 1;
+      lVar3 = lVar3 + 8;
+    } while (pLVar1 != (List_1_UnityEngine_Object_ *)0x0);
+  }
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
+  return;
 }
 
 
@@ -126,8 +244,7 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_Initialize
 
 {
   (this->fields).bubbleId = bubbleId;
-  (this->fields).centerPoint.x = center.x;
-  (this->fields).centerPoint.y = center.y;
+  (this->fields).centerPoint = center;
   return;
 }
 
@@ -138,43 +255,54 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_OnDestroy(TextBubble *this,Meth
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    MethodInfo__TextBubble___OnDestroy_b__16_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&StringLiteral_Bubble_not_removed_from_controll);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__TextBubble___OnDestroy_b__16_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Bubble_not_removed_from_controll);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields).bubbleId != -1) {
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug);
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
               ((Object *)StringLiteral_Bubble_not_removed_from_controll,(MethodInfo *)0x0);
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                      ((Component *)this,(MethodInfo *)0x0);
-    callbackFunction =
-         (ExecuteEvents_EventFunction_1_System_Object_ *)
-         func_?(
-                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
-                        );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
+    this_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+              FUN_?(
+                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>
+                           );
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+    ExecuteEvents_EventFunction_1_System_Object___ctor
+              (this_00,(Object *)this,
                MethodInfo__TextBubble___OnDestroy_b__16_0_TextBubbleController__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+      FUN_?();
     }
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (root,(BaseEventData *)0x0,callbackFunction,
+              (root,(BaseEventData *)0x0,this_00,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<TextBubbleController>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<TextBubbleController>_
               );
   }
@@ -188,12 +316,16 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_OnRemoved(TextBubble *this,Meth
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&StringLiteral_OnRemoved);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_OnRemoved);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Debug);
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_OnRemoved,(MethodInfo *)0x0);
@@ -208,41 +340,75 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_OnValidate(TextBubble *this,Met
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__RectTransform);
+    FUN_?(&TypeInfo__UnityEngine__RectTransform);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                      ((Component *)this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector2);
+    FUN_?(&TypeInfo__UnityEngine__Vector2);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (pTVar1 == (Transform *)0x0) {
-    func_?();
-    pRVar2 = extraout_ECX;
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
   }
-  else {
-    pTVar3 = (Transform *)0x0;
-    if (pTVar1->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
-      pTVar3 = pTVar1;
-    }
-    pRVar2 = TypeInfo__UnityEngine__RectTransform;
-    if (pTVar3 != (Transform *)0x0) {
-      pTVar3 = (Transform *)0x0;
-      if (pTVar1->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
-        pTVar3 = pTVar1;
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_anchoredPosition
-                ((RectTransform *)pTVar3,
-                 (Vector2)((ulonglong)
-                           (uint)(TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y <<
-                          0x20),(MethodInfo *)0x0);
-      return;
-    }
+  pTVar3 = (Transform *)0x0;
+  if (pTVar1->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
+    pTVar3 = pTVar1;
   }
-  func_?(pTVar1,pRVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  if (pTVar3 == (Transform *)0x0) {
+    FUN_?(pTVar1,TypeInfo__UnityEngine__RectTransform);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pTVar3 = (Transform *)0x0;
+  if (pTVar1->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
+    pTVar3 = pTVar1;
+  }
+  auStack_4[0] =
+       CONCAT44((TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y,
+                (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x);
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::RectTransform>_UnityEngine__RectTransform_
+                  ,auStack_4[0],0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pTVar3 == (Transform *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pvVar5 = (pTVar3->fields)._._.m_CachedPtr;
+  if (pvVar5 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar3,(MethodInfo *)0x0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar6 = func_?(&UNK_?);
+    FUN_?(uVar6,0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcRam_? = pcVar2;
+  (*pcRam_?)(pvVar5,auStack_4);
   return;
 }
 
@@ -255,104 +421,353 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_RecalcPositionAndSize
 {
   fVar1 = (this->fields).centerPoint.x * _UNK_?;
   fVar2 = (this->fields).centerPoint.y * _UNK_?;
-  pTVar3 = (Transform *)(this->fields).tail;
-  if (pTVar3 == (Transform *)0x0) goto code_?;
-  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                      ((Vector3 *)&stack0xffffffd8,pTVar3,(MethodInfo *)0x0);
-  uVar5 = pVVar4->x;
-  uVar6 = pVVar4->y;
-  fVar1 = fVar1 - (float)uVar5;
-  pTVar3 = (Transform *)(this->fields).tail;
-  if ((float)((uint)(fVar2 - (float)uVar6) & _UNK_?) < (float)((uint)fVar1 & _UNK_?))
-  {
-    iVar7 = (uint)(fVar1 <= 0.0) * 2 + -1;
-    if (pTVar3 == (Transform *)0x0) goto code_?;
-    value_02.y = 0.0;
-    value_02.z = 0.0;
-    value_02.x = (float)iVar7;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_up
-              (pTVar3,value_02,(MethodInfo *)0x0);
-    pTVar3 = (Transform *)(this->fields).tail;
-    if (pTVar3 == (Transform *)0x0) goto code_?;
-    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                        ((Vector3 *)&stack0xffffffd8,pTVar3,(MethodInfo *)0x0);
-    fVar1 = pVVar4->y;
-    iVar8 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
-    TextBubble_CalculatePivotNearEdgeOffset(this,fVar1 / (float)iVar8,(MethodInfo *)0x0);
-    pRVar9 = (this->fields).tail;
-    if (pRVar9 == (RectTransform *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-              ((Rect *)&stack0xffffffc8,pRVar9,(MethodInfo *)0x0);
-    fVar1 = 0.0;
-    puVar10 = &UNK_?;
-    pRVar9 = TextBubble_get_BubbleTransform(this,(MethodInfo *)0x0);
-    if (pRVar9 == (RectTransform *)0x0) goto code_?;
-    value.y = (float)puVar10;
-    value.x = (float)(iVar7 < 1);
-    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_pivot
-              (pRVar9,value,(MethodInfo *)0x0);
-    this_00 = (Transform *)TextBubble_get_BubbleTransform(this,(MethodInfo *)0x0);
-    pTVar3 = (Transform *)(this->fields).tail;
-    if (pTVar3 == (Transform *)0x0) goto code_?;
-    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                        ((Vector3 *)&stack0xffffffd8,pTVar3,(MethodInfo *)0x0);
-    uVar11 = pVVar4->x;
-    uVar12 = pVVar4->y;
-    fVar2 = (float)uVar11 + 3.6309762e-29;
-    fVar1 = (float)uVar12 + fVar1;
-  }
-  else {
-    if (pTVar3 == (Transform *)0x0) goto code_?;
-    auVar13._4_8_ = 0;
-    auVar13._0_4_ = (float)(int)((uint)(fVar2 - (float)uVar6 <= 0.0) * 2 + -1);
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_up
-              (pTVar3,(Vector3)(auVar13 << 0x20),(MethodInfo *)0x0);
-    pTVar3 = (Transform *)(this->fields).tail;
-    if (pTVar3 == (Transform *)0x0) goto code_?;
-    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                        ((Vector3 *)&stack0xffffffd8,pTVar3,(MethodInfo *)0x0);
-    fVar2 = pVVar4->x;
-    iVar8 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
-    TextBubble_CalculatePivotNearEdgeOffset(this,fVar2 / (float)iVar8,(MethodInfo *)0x0);
-    pRVar9 = (this->fields).tail;
-    if (pRVar9 == (RectTransform *)0x0) goto code_?;
-    __return_storage_ptr__ = (Rect *)&stack0xffffffc8;
-    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-              (__return_storage_ptr__,pRVar9,(MethodInfo *)0x0);
-    pRVar9 = (this->fields).tail;
-    if (pRVar9 == (RectTransform *)0x0) goto code_?;
-    puVar10 = &UNK_?;
-    pRVar14 = UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_get_rect
-                        ((Rect *)&stack0xffffffc8,pRVar9,(MethodInfo *)0x0);
-    fVar1 = pRVar14->m_Height * 0.0;
-    pRVar9 = TextBubble_get_BubbleTransform(this,(MethodInfo *)0x0);
-    if (pRVar9 == (RectTransform *)0x0) goto code_?;
-    value_00.y = 1.0;
-    value_00.x = (float)puVar10;
-    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_pivot
-              (pRVar9,value_00,(MethodInfo *)0x0);
-    this_00 = (Transform *)TextBubble_get_BubbleTransform(this,(MethodInfo *)0x0);
-    pTVar3 = (Transform *)(this->fields).tail;
-    if (pTVar3 == (Transform *)0x0) goto code_?;
-    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                        ((Vector3 *)&stack0xffffffd8,pTVar3,(MethodInfo *)0x0);
-    uVar15 = pVVar4->x;
-    uVar16 = pVVar4->y;
-    fVar2 = (float)uVar15 + (float)__return_storage_ptr__;
-    fVar1 = (float)uVar16 + fVar1;
-  }
-  if (this_00 != (Transform *)0x0) {
-    value_01.y = fVar1;
-    value_01.x = fVar2;
-    value_01.z = 0.0;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-              (this_00,value_01,(MethodInfo *)0x0);
-    return;
-  }
+  pRVar3 = (this->fields).tail;
+  if (pRVar3 != (RectTransform *)0x0) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    auStack_4 = (undefined1  [8])0x0;
+    uStack_5 = uStack_5 & 0xffffffff00000000;
+    pvVar6 = (pRVar3->fields)._._._.m_CachedPtr;
+    if (pvVar6 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar3,(MethodInfo *)0x0);
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
+      return;
+    }
+    pcVar7 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+      uVar8 = func_?(&UNK_?);
+      FUN_?(uVar8,0);
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
+      return;
+    }
+    pcRam_? = pcVar7;
+    (*pcRam_?)(pvVar6,auStack_4);
+    fVar1 = fVar1 - (float)auStack_4._0_4_;
+    fVar2 = fVar2 - (float)auStack_4._4_4_;
+    this_00 = (Transform *)(this->fields).tail;
+    if ((float)((uint)fVar2 & _UNK_?) < (float)((uint)fVar1 & _UNK_?)) {
+      iVar9 = 1;
+      if (0.0 < fVar1) {
+        iVar9 = -1;
+      }
+      if (this_00 != (Transform *)0x0) {
+        auStack_10 = (undefined1  [8])(ulonglong)(uint)(float)iVar9;
+        uStack_11 = uStack_11 & 0xffffffff00000000;
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_up
+                  (this_00,(Vector3 *)auStack_10,(MethodInfo *)0x0);
+        VVar12 = TextBubble_get_Position(this,(MethodInfo *)0x0);
+        pcVar7 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+          uVar8 = func_?(&UNK_?);
+          FUN_?(uVar8,0);
+          pcVar7 = (code *)swi(3);
+          (*pcVar7)();
+          return;
+        }
+        pcRam_? = pcVar7;
+        iVar13 = (*pcRam_?)();
+        fStackX_c = VVar12.y;
+        fVar1 = TextBubble_CalculatePivotNearEdgeOffset
+                           (this,fStackX_c / (float)iVar13,(MethodInfo *)0x0);
+        pRVar3 = (this->fields).tail;
+        if (pRVar3 != (RectTransform *)0x0) {
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::RectTransform>_UnityEngine__RectTransform_
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          auStack_10 = (undefined1  [8])0x0;
+          uStack_11 = 0;
+          pvVar6 = (pRVar3->fields)._._._.m_CachedPtr;
+          if (pvVar6 == (void *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar3,(MethodInfo *)0x0);
+            pcVar7 = (code *)swi(3);
+            (*pcVar7)();
+            return;
+          }
+          pcVar7 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+            uVar8 = func_?(&UNK_?);
+            FUN_?(uVar8,0);
+            pcVar7 = (code *)swi(3);
+            (*pcVar7)();
+            return;
+          }
+          pcRam_? = pcVar7;
+          (*pcRam_?)(pvVar6);
+          fVar2 = (float)iVar9 * uStack_11._4_4_;
+          pRVar3 = TextBubble_get_BubbleTransform(this,(MethodInfo *)0x0);
+          VVar12.x = (float)(iVar9 < 1);
+          if (pRVar3 != (RectTransform *)0x0) {
+            VVar12.y = fStackX_c / (float)iVar13;
+            UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_pivot
+                      (pRVar3,VVar12,(MethodInfo *)0x0);
+            pRVar14 = TextBubble_get_BubbleTransform(this,(MethodInfo *)0x0);
+            pRVar3 = (this->fields).tail;
+            if (pRVar3 != (RectTransform *)0x0) {
+              if (cRam_? == '\0') {
+                FUN_?(&
+                              void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                             );
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              auStack_4._0_4_ = 0.0;
+              auStack_4._4_4_ = 0.0;
+              uStack_5 = uStack_5 & 0xffffffff00000000;
+              pvVar6 = (pRVar3->fields)._._._.m_CachedPtr;
+              if (pvVar6 == (void *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar3,(MethodInfo *)0x0);
+                pcVar7 = (code *)swi(3);
+                (*pcVar7)();
+                return;
+              }
+              pcVar7 = pcRam_?;
+              if ((pcRam_? == (code *)0x0) &&
+                 (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+                uVar8 = func_?(&UNK_?);
+                FUN_?(uVar8,0);
+                pcVar7 = (code *)swi(3);
+                (*pcVar7)();
+                return;
+              }
+              pcRam_? = pcVar7;
+              (*pcRam_?)(pvVar6);
+              uVar8._0_4_ = (float)auStack_4._0_4_ + fVar2;
+              if (pRVar14 == (RectTransform *)0x0) {
+                FUN_?();
+                pcVar7 = (code *)swi(3);
+                (*pcVar7)();
+                return;
+              }
+              uVar8._4_4_ = (float)auStack_4._4_4_ + fVar1;
+              uStack_11 = uStack_11 & 0xffffffff00000000;
+              auStack_10 = (undefined1  [8])uVar8;
+              if (cRam_? == '\0') {
+                FUN_?(&
+                              void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                             );
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              pvVar6 = (pRVar14->fields)._._._.m_CachedPtr;
+              if (pvVar6 == (void *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar14,(MethodInfo *)0x0);
+                pcVar7 = (code *)swi(3);
+                (*pcVar7)();
+                return;
+              }
+              pcVar7 = pcRam_?;
+              if ((pcRam_? == (code *)0x0) &&
+                 (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+                uVar8 = func_?(&UNK_?);
+                FUN_?(uVar8,0);
+                pcVar7 = (code *)swi(3);
+                (*pcVar7)();
+                return;
+              }
 code_?:
-  func_?();
-  pcVar17 = (code *)swi(3);
-  (*pcVar17)();
+              pcRam_? = pcVar7;
+              (*pcRam_?)(pvVar6,auStack_10);
+              return;
+            }
+          }
+        }
+      }
+    }
+    else {
+      iVar9 = 1;
+      if (0.0 < fVar2) {
+        iVar9 = -1;
+      }
+      if (this_00 != (Transform *)0x0) {
+        uStack_5 = uStack_5 & 0xffffffff00000000;
+        auStack_4 = (undefined1  [8])((ulonglong)(uint)(float)iVar9 << 0x20);
+        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_up
+                  (this_00,(Vector3 *)auStack_4,(MethodInfo *)0x0);
+        VVar12 = TextBubble_get_Position(this,(MethodInfo *)0x0);
+        pcVar7 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+          uVar8 = func_?(&UNK_?);
+          FUN_?(uVar8,0);
+          pcVar7 = (code *)swi(3);
+          (*pcVar7)();
+          return;
+        }
+        pcRam_? = pcVar7;
+        iVar13 = (*pcRam_?)();
+        fStackX_8 = VVar12.x;
+        fVar1 = TextBubble_CalculatePivotNearEdgeOffset
+                           (this,fStackX_8 / (float)iVar13,(MethodInfo *)0x0);
+        pRVar3 = (this->fields).tail;
+        if (pRVar3 != (RectTransform *)0x0) {
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::RectTransform>_UnityEngine__RectTransform_
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          auStack_4 = (undefined1  [8])0x0;
+          uStack_5 = 0;
+          pvVar6 = (pRVar3->fields)._._._.m_CachedPtr;
+          if (pvVar6 == (void *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar3,(MethodInfo *)0x0);
+            pcVar7 = (code *)swi(3);
+            (*pcVar7)();
+            return;
+          }
+          pcVar7 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+            uVar8 = func_?(&UNK_?);
+            FUN_?(uVar8,0);
+            pcVar7 = (code *)swi(3);
+            (*pcVar7)();
+            return;
+          }
+          pcRam_? = pcVar7;
+          (*pcRam_?)(pvVar6);
+          pRVar3 = (this->fields).tail;
+          if (pRVar3 != (RectTransform *)0x0) {
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::RectTransform>_UnityEngine__RectTransform_
+                           );
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            auStack_10 = (undefined1  [8])0x0;
+            uStack_11 = 0;
+            pvVar6 = (pRVar3->fields)._._._.m_CachedPtr;
+            if (pvVar6 == (void *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+              ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar3,(MethodInfo *)0x0);
+              pcVar7 = (code *)swi(3);
+              (*pcVar7)();
+              return;
+            }
+            pcVar7 = pcRam_?;
+            if ((pcRam_? == (code *)0x0) &&
+               (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+              uVar8 = func_?(&UNK_?);
+              FUN_?(uVar8,0);
+              pcVar7 = (code *)swi(3);
+              (*pcVar7)();
+              return;
+            }
+            pcRam_? = pcVar7;
+            (*pcRam_?)(pvVar6);
+            fVar2 = (float)iVar9 * uStack_11._4_4_;
+            pRVar3 = TextBubble_get_BubbleTransform(this,(MethodInfo *)0x0);
+            if (pRVar3 != (RectTransform *)0x0) {
+              value.y = (float)((float)iVar9 <= 0.0);
+              value.x = fStackX_8 / (float)iVar13;
+              UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_set_pivot
+                        (pRVar3,value,(MethodInfo *)0x0);
+              pRVar14 = TextBubble_get_BubbleTransform(this,(MethodInfo *)0x0);
+              pRVar3 = (this->fields).tail;
+              if (pRVar3 != (RectTransform *)0x0) {
+                if (cRam_? == '\0') {
+                  FUN_?(&
+                                void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                               );
+                  LOCK();
+                  UNLOCK();
+                  cRam_? = '\x01';
+                }
+                auStack_4._0_4_ = 0.0;
+                auStack_4._4_4_ = 0.0;
+                uStack_5 = uStack_5 & 0xffffffff00000000;
+                pvVar6 = (pRVar3->fields)._._._.m_CachedPtr;
+                if (pvVar6 == (void *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                  ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar3,(MethodInfo *)0x0);
+                  pcVar7 = (code *)swi(3);
+                  (*pcVar7)();
+                  return;
+                }
+                pcVar7 = pcRam_?;
+                if ((pcRam_? == (code *)0x0) &&
+                   (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+                  uVar8 = func_?(&UNK_?);
+                  FUN_?(uVar8,0);
+                  pcVar7 = (code *)swi(3);
+                  (*pcVar7)();
+                  return;
+                }
+                pcRam_? = pcVar7;
+                (*pcRam_?)(pvVar6);
+                uVar15._0_4_ = (float)auStack_4._0_4_ + fVar1;
+                if (pRVar14 == (RectTransform *)0x0) {
+                  FUN_?();
+                  pcVar7 = (code *)swi(3);
+                  (*pcVar7)();
+                  return;
+                }
+                uVar15._4_4_ = (float)auStack_4._4_4_ + fVar2;
+                uStack_11 = uStack_11 & 0xffffffff00000000;
+                auStack_10 = (undefined1  [8])uVar15;
+                if (cRam_? == '\0') {
+                  FUN_?(&
+                                void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                               );
+                  LOCK();
+                  UNLOCK();
+                  cRam_? = '\x01';
+                }
+                pvVar6 = (pRVar14->fields)._._._.m_CachedPtr;
+                if (pvVar6 == (void *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                  ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar14,(MethodInfo *)0x0);
+                  pcVar7 = (code *)swi(3);
+                  (*pcVar7)();
+                  return;
+                }
+                pcVar7 = pcRam_?;
+                if ((pcRam_? == (code *)0x0) &&
+                   (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+                  uVar8 = func_?(&UNK_?);
+                  FUN_?(uVar8,0);
+                  pcVar7 = (code *)swi(3);
+                  (*pcVar7)();
+                  return;
+                }
+                goto code_?;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -364,56 +779,79 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_RecalcPositionWithScreenCollisi
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TextBubble_RecalcPositionAndSize(this,1,(MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_width((MethodInfo *)0x0);
-  UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_height((MethodInfo *)0x0);
-  fourCornersArray = (Vector3__Array *)func_?(TypeInfo__UnityEngine__Vector3,4);
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  iVar3 = (*pcRam_?)();
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  fVar4 = (float)iVar3;
+  iVar3 = (*pcRam_?)();
+  fVar5 = (float)iVar3;
+  fourCornersArray = (Vector3__Array *)FUN_?(TypeInfo__UnityEngine__Vector3);
   this_00 = TextBubble_get_BubbleTransform(this,(MethodInfo *)0x0);
-  if (this_00 != (RectTransform *)0x0) {
-    fVar1 = 0.0;
-    pVVar2 = fourCornersArray;
-    UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_GetWorldCorners
-              (this_00,fourCornersArray,(MethodInfo *)0x0);
-    if (fourCornersArray != (Vector3__Array *)0x0) {
-      if (fourCornersArray->max_length != 0) {
-        uVar3 = fourCornersArray->vector[0].x;
-        uVar4 = fourCornersArray->vector[0].y;
-        if ((((0.0 <= (float)uVar3) && ((float)uVar3 < fVar1 + 0.0)) && (0.0 <= (float)uVar4)) &&
-           ((float)uVar4 < (float)pVVar2 + 0.0)) {
-          if (fourCornersArray->max_length < 2) goto code_?;
-          uVar5 = fourCornersArray->vector[1].x;
-          uVar6 = fourCornersArray->vector[1].y;
-          if (((0.0 <= (float)uVar5) && ((float)uVar5 < fVar1 + 0.0)) &&
-             ((0.0 <= (float)uVar6 && ((float)uVar6 < (float)pVVar2 + 0.0)))) {
-            if (fourCornersArray->max_length < 3) goto code_?;
-            uVar7 = fourCornersArray->vector[2].x;
-            uVar8 = fourCornersArray->vector[2].y;
-            if (((0.0 <= (float)uVar7) && ((float)uVar7 < fVar1 + 0.0)) &&
-               ((0.0 <= (float)uVar8 && ((float)uVar8 < (float)pVVar2 + 0.0)))) {
-              if (fourCornersArray->max_length < 4) goto code_?;
-              uVar9 = fourCornersArray->vector[3].x;
-              uVar10 = fourCornersArray->vector[3].y;
-              if ((((0.0 <= (float)uVar9) && ((float)uVar9 < fVar1 + 0.0)) && (0.0 <= (float)uVar10)
-                  ) && ((float)uVar10 < (float)pVVar2 + 0.0)) {
-                return;
-              }
-            }
+  if ((this_00 == (RectTransform *)0x0) ||
+     (UnityEngine.CoreModule.dll::UnityEngine::RectTransform::RectTransform_GetWorldCorners
+                (this_00,fourCornersArray,(MethodInfo *)0x0),
+     fourCornersArray == (Vector3__Array *)0x0)) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  if ((int)fourCornersArray->max_length != 0) {
+    uVar6 = fourCornersArray->vector[0].x;
+    uVar7 = fourCornersArray->vector[0].y;
+    if ((((0.0 <= (float)uVar6) && ((float)uVar6 < fVar4 + 0.0)) && (0.0 <= (float)uVar7)) &&
+       ((float)uVar7 < fVar5 + 0.0)) {
+      if ((uint)fourCornersArray->max_length < 2) goto DAT_?;
+      uVar8 = fourCornersArray->vector[1].x;
+      uVar9 = fourCornersArray->vector[1].y;
+      if (((0.0 <= (float)uVar8) && ((float)uVar8 < fVar4 + 0.0)) &&
+         ((0.0 <= (float)uVar9 && ((float)uVar9 < fVar5 + 0.0)))) {
+        if ((uint)fourCornersArray->max_length < 3) goto DAT_?;
+        uVar10 = fourCornersArray->vector[2].x;
+        uVar11 = fourCornersArray->vector[2].y;
+        if (((0.0 <= (float)uVar10) && ((float)uVar10 < fVar4 + 0.0)) &&
+           ((0.0 <= (float)uVar11 && ((float)uVar11 < fVar5 + 0.0)))) {
+          if ((uint)fourCornersArray->max_length < 4) goto DAT_?;
+          uVar12 = fourCornersArray->vector[3].x;
+          uVar13 = fourCornersArray->vector[3].y;
+          if ((((0.0 <= (float)uVar12) && ((float)uVar12 < fVar4 + 0.0)) && (0.0 <= (float)uVar13)) &&
+             ((float)uVar13 < fVar5 + 0.0)) {
+            return;
           }
         }
-        TextBubble_RecalcPositionAndSize(this,-1,(MethodInfo *)0x0);
-        return;
       }
-      goto code_?;
     }
+    TextBubble_RecalcPositionAndSize(this,-1,(MethodInfo *)0x0);
+    return;
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+DAT_?:
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -424,16 +862,48 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_SetTransparancy
                (TextBubble *this,float a,MethodInfo *method)
 
 {
-  this_00 = (this->fields).fadeGroup;
-  if (this_00 != (CanvasGroup *)0x0) {
-    UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-              (this_00,a,(MethodInfo *)0x0);
+  obj = (this->fields).fadeGroup;
+  if (obj == (CanvasGroup *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::CanvasGroup>_UnityEngine__CanvasGroup_
+                  ,in_RDX,0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (obj == (CanvasGroup *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pvVar2 = (obj->fields)._._._.m_CachedPtr;
+  if (pvVar2 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pcRam_?)(pvVar2,a);
   return;
 }
 
@@ -443,16 +913,48 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_SetTransparancy
 void Assembly-CSharp.dll::TextBubble::TextBubble_Start(TextBubble *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).fadeGroup;
-  if (this_00 != (CanvasGroup *)0x0) {
-    UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-              (this_00,0.0,(MethodInfo *)0x0);
+  obj = (this->fields).fadeGroup;
+  if (obj == (CanvasGroup *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::CanvasGroup>_UnityEngine__CanvasGroup_
+                  ,0,0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (obj == (CanvasGroup *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pvVar2 = (obj->fields)._._._.m_CachedPtr;
+  if (pvVar2 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pcRam_?)(pvVar2,0);
   return;
 }
 
@@ -463,84 +965,94 @@ void Assembly-CSharp.dll::TextBubble::TextBubble__OnDestroy_b__16_0
                (TextBubble *this,TextBubbleController *x,BaseEventData *y,MethodInfo *method)
 
 {
+  if (x == (TextBubbleController *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
   key = (this->fields).bubbleId;
-  if (x != (TextBubbleController *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__ContainsKey_int_
-                     );
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__Remove_int_
-                     );
-      func_?(&
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
-                     );
-      cRam_? = '\x01';
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__ContainsKey_int_
+                  ,key,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__Remove_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  this_00 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(x->fields).textBubbles;
+  if (this_00 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+    iVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
+            Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                      (this_00,key,
+                       MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__ContainsKey_int_
+                       ->klass->rgctx_data[0x21].method);
+    if (iVar2 < 0) {
+      return;
     }
-    pDVar1 = (x->fields).textBubbles;
-    if (pDVar1 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) {
-      bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]
-              ::Dictionary_2_System_Int32_System_Single__ContainsKey
-                        ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,key,
-                         MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__ContainsKey_int_
+    pDVar3 = (x->fields).textBubbles;
+    if ((pDVar3 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
+       (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                 Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                           ((Dictionary_2_System_Int32_System_Object_ *)pDVar3,key,
+                            MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
+                           ), pOVar4 != (Object *)0x0)) {
+      pDVar3 = (x->fields).textBubbles;
+      *(undefined4 *)&pOVar4[1].klass = 0;
+      if (pDVar3 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) {
+        pTVar5 = (TextBubbleController_BubbleTracker *)
+                 mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                 Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                           ((Dictionary_2_System_Int32_System_Object_ *)pDVar3,key,
+                            MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
+                           );
+        TextBubbleController::TextBubbleController_UpdateBubble(x,pTVar5,(MethodInfo *)0x0);
+        pDVar3 = (x->fields).textBubbles;
+        if (((pDVar3 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
+            (pOVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System
+                      ::Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                                ((Dictionary_2_System_Int32_System_Object_ *)pDVar3,key,
+                                 MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
+                                ), pOVar4 != (Object *)0x0)) &&
+           ((TextBubble *)pOVar4[1].monitor != (TextBubble *)0x0)) {
+          TextBubble_OnRemoved((TextBubble *)pOVar4[1].monitor,(MethodInfo *)0x0);
+          pDVar3 = (x->fields).textBubbles;
+          if ((pDVar3 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
+             (pTVar5 = (TextBubbleController_BubbleTracker *)
+                       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System
+                       ::Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                                 ((Dictionary_2_System_Int32_System_Object_ *)pDVar3,key,
+                                  MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
+                                 ), pTVar5 != (TextBubbleController_BubbleTracker *)0x0)) {
+            TextBubbleController+BubbleTracker::TextBubbleController_BubbleTracker_Clear
+                      (pTVar5,(MethodInfo *)0x0);
+            pDVar3 = (x->fields).textBubbles;
+            if (pDVar3 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) {
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
+              ::Dictionary_2_System_Int32_System_Object__Remove
+                        ((Dictionary_2_System_Int32_System_Object_ *)pDVar3,key,
+                         MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__Remove_int_
                         );
-      if (bVar2 == 0) {
-        return;
-      }
-      pDVar1 = (x->fields).textBubbles;
-      if ((pDVar1 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
-         (pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                   Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                             ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,key,
-                              MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
-                             ), pOVar3 != (Object *)0x0)) {
-        pOVar3[1].klass = (Object__Class *)0x0;
-        pDVar1 = (x->fields).textBubbles;
-        if (pDVar1 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) {
-          pTVar4 = (TextBubbleController_BubbleTracker *)
-                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                   Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                             ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,key,
-                              MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
-                             );
-          TextBubbleController::TextBubbleController_UpdateBubble(x,pTVar4,(MethodInfo *)0x0);
-          pDVar1 = (x->fields).textBubbles;
-          if (((pDVar1 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
-              (pOVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                        Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                  ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,key,
-                                   MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
-                                  ), pOVar3 != (Object *)0x0)) &&
-             (pOVar3[2].klass != (Object__Class *)0x0)) {
-            TextBubble_OnRemoved((TextBubble *)pOVar3[2].klass,(MethodInfo *)0x0);
-            pDVar1 = (x->fields).textBubbles;
-            if ((pDVar1 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) &&
-               (pTVar4 = (TextBubbleController_BubbleTracker *)
-                         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                         Int32,System::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                   ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,key,
-                                    MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__get_Item_int_
-                                   ), pTVar4 != (TextBubbleController_BubbleTracker *)0x0)) {
-              TextBubbleController+BubbleTracker::TextBubbleController_BubbleTracker_Clear
-                        (pTVar4,(MethodInfo *)0x0);
-              pDVar1 = (x->fields).textBubbles;
-              if (pDVar1 != (Dictionary_2_System_Int32_TextBubbleController_BubbleTracker_ *)0x0) {
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                Object]::Dictionary_2_System_Int32_System_Object__Remove
-                          ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,key,
-                           MethodInfo__System__Collections__Generic__Dictionary<int,_TextBubbleController::BubbleTracker>__Remove_int_
-                          );
-                return;
-              }
+              return;
             }
           }
         }
       }
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -551,22 +1063,47 @@ void Assembly-CSharp.dll::TextBubble::TextBubble__ctor(TextBubble *this,MethodIn
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Object>__List__);
-    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Object>);
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Object>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Object>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (List_1_UnityEngine_Object_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Object>);
+            FUN_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Object>);
   mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
   __Il2CppFullySharedGenericType]::
   LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
             ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
              MethodInfo__System__Collections__Generic__List<UnityEngine::Object>__List__);
+  bVar1 = iRam_? != 0;
   (this->fields).content = this_00;
-  func_?(&(this->fields).content,this_00);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).content >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
+  bVar1 = cRam_? == '\0';
   (this->fields).bubbleId = -1;
-  UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
-            ((MonoBehaviour *)this,(MethodInfo *)0x0);
+  if (bVar1) {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
   return;
 }
 
@@ -578,32 +1115,34 @@ Assembly-CSharp.dll::TextBubble::TextBubble_get_BubbleTransform(TextBubble *this
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__RectTransform);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (this->fields).bubble;
   if (this_00 == (LayoutGroup *)0x0) {
-    uVar1 = func_?(&puStack_2);
-    func_?(uVar1);
-    pcVar3 = (code *)swi(3);
-    pRVar4 = (RectTransform *)(*pcVar3)();
-    return pRVar4;
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    pRVar2 = (RectTransform *)(*pcVar1)();
+    return pRVar2;
   }
-  pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+  pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                      ((Component *)this_00,(MethodInfo *)0x0);
-  pTVar6 = (Transform *)0x0;
-  if (pTVar5 != (Transform *)0x0) {
-    if (pTVar5->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
-      pTVar6 = pTVar5;
+  pTVar4 = pTVar3;
+  if (pTVar3 != (Transform *)0x0) {
+    pTVar4 = (Transform *)0x0;
+    if (pTVar3->klass == (Transform__Class *)TypeInfo__UnityEngine__RectTransform) {
+      pTVar4 = pTVar3;
     }
-    if (pTVar6 == (Transform *)0x0) {
-      func_?();
-      pcVar3 = (code *)swi(3);
-      pRVar4 = (RectTransform *)(*pcVar3)();
-      return pRVar4;
+    if (pTVar4 == (Transform *)0x0) {
+      FUN_?();
+      pcVar1 = (code *)swi(3);
+      pRVar2 = (RectTransform *)(*pcVar1)();
+      return pRVar2;
     }
   }
-  return (RectTransform *)pTVar6;
+  return (RectTransform *)pTVar4;
 }
 
 
@@ -616,20 +1155,54 @@ float Assembly-CSharp.dll::TextBubble::TextBubble_get_HorizontalPadding
   pLVar1 = (this->fields).bubble;
   if ((pLVar1 != (LayoutGroup *)0x0) &&
      (pRVar2 = (pLVar1->fields).m_Padding, pRVar2 != (RectOffset *)0x0)) {
-    iVar3 = UnityEngine.CoreModule.dll::UnityEngine::RectOffset::RectOffset_get_left
-                      (pRVar2,(MethodInfo *)0x0);
+    pvVar3 = (pRVar2->fields).m_Ptr;
+    if (pvVar3 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar2,(MethodInfo *)0x0);
+      pcVar4 = (code *)swi(3);
+      fVar5 = (float)(*pcVar4)();
+      return fVar5;
+    }
+    pcVar4 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+      uVar6 = func_?(&UNK_?);
+      FUN_?(uVar6,0);
+      pcVar4 = (code *)swi(3);
+      fVar5 = (float)(*pcVar4)();
+      return fVar5;
+    }
+    pcRam_? = pcVar4;
+    iVar7 = (*pcRam_?)(pvVar3);
     pLVar1 = (this->fields).bubble;
     if ((pLVar1 != (LayoutGroup *)0x0) &&
        (pRVar2 = (pLVar1->fields).m_Padding, pRVar2 != (RectOffset *)0x0)) {
-      iVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectOffset::RectOffset_get_right
-                        (pRVar2,(MethodInfo *)0x0);
-      return (float)(iVar4 + iVar3);
+      pvVar3 = (pRVar2->fields).m_Ptr;
+      if (pvVar3 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar2,(MethodInfo *)0x0);
+        pcVar4 = (code *)swi(3);
+        fVar5 = (float)(*pcVar4)();
+        return fVar5;
+      }
+      pcVar4 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+        uVar6 = func_?(&UNK_?);
+        FUN_?(uVar6,0);
+        pcVar4 = (code *)swi(3);
+        fVar5 = (float)(*pcVar4)();
+        return fVar5;
+      }
+      pcRam_? = pcVar4;
+      iVar8 = (*pcRam_?)(pvVar3);
+      return (float)(iVar8 + iVar7);
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  fVar6 = (float10)(*pcVar5)();
-  return (float)fVar6;
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  fVar5 = (float)(*pcVar4)();
+  return fVar5;
 }
 
 
@@ -639,18 +1212,44 @@ Vector2 Assembly-CSharp.dll::TextBubble::TextBubble_get_Position
                   (TextBubble *this,MethodInfo *method)
 
 {
-  this_00 = (Transform *)(this->fields).tail;
-  if (this_00 != (Transform *)0x0) {
-    pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       (&VStack_2,this_00,(MethodInfo *)0x0);
-    VVar3.x = pVVar1->x;
-    VVar3.y = pVVar1->y;
-    return VVar3;
+  obj = (this->fields).tail;
+  if (obj == (RectTransform *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    VVar2 = (Vector2)(*pcVar1)();
+    return VVar2;
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  VVar3 = (Vector2)(*pcVar4)();
-  return VVar3;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  VStack_3.x = 0.0;
+  VStack_3.y = 0.0;
+  uStack_4 = 0;
+  pvVar5 = (obj->fields)._._._.m_CachedPtr;
+  if (pvVar5 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    VVar2 = (Vector2)(*pcVar1)();
+    return VVar2;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar6 = func_?(&UNK_?);
+    FUN_?(uVar6,0);
+    pcVar1 = (code *)swi(3);
+    VVar2 = (Vector2)(*pcVar1)();
+    return VVar2;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(pvVar5,&VStack_3);
+  return VStack_3;
 }
 
 
@@ -663,20 +1262,54 @@ float Assembly-CSharp.dll::TextBubble::TextBubble_get_VerticalPadding
   pLVar1 = (this->fields).bubble;
   if ((pLVar1 != (LayoutGroup *)0x0) &&
      (pRVar2 = (pLVar1->fields).m_Padding, pRVar2 != (RectOffset *)0x0)) {
-    iVar3 = UnityEngine.CoreModule.dll::UnityEngine::RectOffset::RectOffset_get_top
-                      (pRVar2,(MethodInfo *)0x0);
+    pvVar3 = (pRVar2->fields).m_Ptr;
+    if (pvVar3 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar2,(MethodInfo *)0x0);
+      pcVar4 = (code *)swi(3);
+      fVar5 = (float)(*pcVar4)();
+      return fVar5;
+    }
+    pcVar4 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+      uVar6 = func_?(&UNK_?);
+      FUN_?(uVar6,0);
+      pcVar4 = (code *)swi(3);
+      fVar5 = (float)(*pcVar4)();
+      return fVar5;
+    }
+    pcRam_? = pcVar4;
+    iVar7 = (*pcRam_?)(pvVar3);
     pLVar1 = (this->fields).bubble;
     if ((pLVar1 != (LayoutGroup *)0x0) &&
        (pRVar2 = (pLVar1->fields).m_Padding, pRVar2 != (RectOffset *)0x0)) {
-      iVar4 = UnityEngine.CoreModule.dll::UnityEngine::RectOffset::RectOffset_get_bottom
-                        (pRVar2,(MethodInfo *)0x0);
-      return (float)(iVar4 + iVar3);
+      pvVar3 = (pRVar2->fields).m_Ptr;
+      if (pvVar3 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar2,(MethodInfo *)0x0);
+        pcVar4 = (code *)swi(3);
+        fVar5 = (float)(*pcVar4)();
+        return fVar5;
+      }
+      pcVar4 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+        uVar6 = func_?(&UNK_?);
+        FUN_?(uVar6,0);
+        pcVar4 = (code *)swi(3);
+        fVar5 = (float)(*pcVar4)();
+        return fVar5;
+      }
+      pcRam_? = pcVar4;
+      iVar8 = (*pcRam_?)(pvVar3);
+      return (float)(iVar8 + iVar7);
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  fVar6 = (float10)(*pcVar5)();
-  return (float)fVar6;
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  fVar5 = (float)(*pcVar4)();
+  return fVar5;
 }
 
 
@@ -686,18 +1319,41 @@ void Assembly-CSharp.dll::TextBubble::TextBubble_set_Position
                (TextBubble *this,Vector2 value,MethodInfo *method)
 
 {
-  this_00 = (Transform *)(this->fields).tail;
-  if (this_00 != (Transform *)0x0) {
-    value_00.z = 0.0;
-    value_00._0_8_ = value;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-              (this_00,value_00,(MethodInfo *)0x0);
-    TextBubble_RecalcPositionWithScreenCollision(this,(MethodInfo *)0x0);
+  obj = (this->fields).tail;
+  if (obj == (RectTransform *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar2 = (obj->fields)._._._.m_CachedPtr;
+  if (pvVar2 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(pvVar2);
+  TextBubble_RecalcPositionWithScreenCollision(this,(MethodInfo *)0x0);
   return;
 }
 

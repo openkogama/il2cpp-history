@@ -10,8 +10,11 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
       (Action_1_MV_WorldObject_KogamaSettings_KogamaSettingsCore_KogamaSettingTypes_KogamaSettingValueWrapperBase_
        *)0x0) {
     pAVar1 = (this->fields).OnValueChange;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
     (*(pAVar1->fields)._._.invoke_impl)
               ((pAVar1->fields)._._.method_code,this,(pAVar1->fields)._._.method);
+    return;
   }
   return;
 }
@@ -24,21 +27,22 @@ String * MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore:
                    (KogamaSettingValueWrapperBase *this,MethodInfo *method)
 
 {
-  pIStack_1 = this->klass[1]._0.image;
-  pKStack_2 = this;
-  piVar3 = (int *)(*(code *)(this->klass->vtable).__unknown.method)();
-  if (piVar3 != (int *)0x0) {
-    pIStack_1 = *(Il2CppImage **)(*piVar3 + 0xdc);
-    pKStack_2 = (KogamaSettingValueWrapperBase *)piVar3;
-    pSVar4 = (String *)(**(code **)(*piVar3 + 0xd8))();
-    return pSVar4;
+  plVar1 = (longlong *)
+           (*(this->klass->vtable).__unknown.methodPtr)(this,(this->klass->vtable).__unknown.method)
+  ;
+  if (plVar1 != (longlong *)0x0) {
+    UNRECOVERED_JUMPTABLE = *(code **)(*plVar1 + 0x168);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    pSVar2 = (String *)
+             (*UNRECOVERED_JUMPTABLE)(plVar1,*(undefined8 *)(*plVar1 + 0x170),UNRECOVERED_JUMPTABLE)
+    ;
+    return pSVar2;
   }
-  pIStack_1 = (Il2CppImage *)&stack0xfffffffc;
-  uVar5 = func_?(&puStack_6);
-  func_?(uVar5);
-  pcVar7 = (code *)swi(3);
-  pSVar4 = (String *)(*pcVar7)();
-  return pSVar4;
+  FUN_?();
+  UNRECOVERED_JUMPTABLE = (code *)swi(3);
+  pSVar2 = (String *)(*UNRECOVERED_JUMPTABLE)();
+  return pSVar2;
 }
 
 
@@ -50,12 +54,38 @@ void MVWorldObject.dll::MV::WorldObject::KogamaSettings::KogamaSettingsCore::Kog
                ,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  iVar1 = iRam_?;
   (this->fields)._._Parent_k__BackingField = parent;
-  func_?(&this->fields,parent);
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields)._.key = key;
-  func_?(&(this->fields)._.key,key);
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._.key >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
   return;
 }
 

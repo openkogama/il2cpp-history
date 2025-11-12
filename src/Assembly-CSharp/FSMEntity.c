@@ -5,29 +5,183 @@ void Assembly-CSharp.dll::FSMEntity::FSMEntity_ClearStateStack(FSMEntity *this,M
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__EditorEvent);
-    func_?(&MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Pop__);
-    func_?(&MethodInfo__System__Collections__Generic__Stack<EditorEvent>__get_Count__);
+    FUN_?(&TypeInfo__EditorEvent);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Pop__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Stack<EditorEvent>__get_Count__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_01 = this;
   this_00 = (Stack_1_UnityEngine_UIElements_TextureId_ *)(this->fields).stateStack;
-  if (this_00 != (Stack_1_UnityEngine_UIElements_TextureId_ *)0x0) {
-    if (0 < (this_00->fields)._size) {
-      this = (FSMEntity *)
-             mscorlib.dll::System::Collections::Generic::Stack`1[UnityEngine::UIElements::TextureId]
-             ::Stack_1_UnityEngine_UIElements_TextureId__Pop
-                       (this_00,MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Pop__)
-      ;
-      (this_01->fields).clearStack = 1;
-      value = (Object *)func_?(TypeInfo__EditorEvent,&this);
-      FSMEntity_set_Event(this_01,value,(MethodInfo *)0x0);
-    }
+  if (this_00 == (Stack_1_UnityEngine_UIElements_TextureId_ *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  if ((this_00->fields)._size < 1) {
+    return;
+  }
+  mscorlib.dll::System::Collections::Generic::Stack`1[UnityEngine::UIElements::TextureId]::
+  Stack_1_UnityEngine_UIElements_TextureId__Pop
+            (this_00,MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Pop__);
+  (this->fields).clearStack = 1;
+  evt = (Object *)FUN_?(TypeInfo__EditorEvent,&stack0x00000008);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Clear__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__IState);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Clear__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_State_is_locked__could_not_set_s);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pSVar2 = StringLiteral_State_is_locked__could_not_set_s;
+  if ((this->fields).lockState != 0) {
+    if (evt == (Object *)0x0) {
+      str1 = (String *)0x0;
+    }
+    else {
+      str1 = (String *)
+             (*(evt->klass->vtable).ToString.methodPtr)(evt,(evt->klass->vtable).ToString.method);
+    }
+    pSVar2 = mscorlib.dll::System::String::String_Concat_4(pSVar2,str1,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Debug,0);
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeInfo__UnityEngine__ILogger);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Debug);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    pIVar3 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+    if (pIVar3 == (ILogger_1 *)0x0) {
+      FUN_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar3,2,pSVar2);
+    return;
+  }
+  bVar4 = iRam_? != 0;
+  (this->fields).nextEvent = evt;
+  if (bVar4) {
+    uVar5 = (uint)((ulonglong)&(this->fields).nextEvent >> 0xc);
+    lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+      puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+      LOCK();
+      bVar4 = uVar7 == *puVar8;
+      if (bVar4) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar4);
+  }
+  if (evt == (Object *)0x0) {
+    if ((this->fields).currentState == (IState *)0x0) goto DAT_?;
+    FUN_?(2);
+    bVar4 = iRam_? != 0;
+    (this->fields).currentState = (IState *)0x0;
+    if (bVar4) {
+      uVar5 = (uint)((ulonglong)&(this->fields).currentState >> 0xc);
+      lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+        puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+        LOCK();
+        bVar4 = uVar7 == *puVar8;
+        if (bVar4) {
+          *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar4);
+    }
+  }
+  else {
+    this_01 = (this->fields).transitionTable;
+    if (this_01 == (StateTransitionTable *)0x0) goto DAT_?;
+    pIVar9 = StateTransitionTable::StateTransitionTable_GetState(this_01,evt,(MethodInfo *)0x0);
+    if (pIVar9 != (IState *)0x0) {
+      if ((this->fields).currentState != (IState *)0x0) {
+        FUN_?(2);
+      }
+      pSVar2 = (String *)
+               (*(evt->klass->vtable).ToString.methodPtr)(evt,(evt->klass->vtable).ToString.method);
+      (this->fields).stateName = pSVar2;
+      func_?(&(this->fields).stateName);
+      (this->fields).currentState = pIVar9;
+      func_?(&(this->fields).currentState);
+      (this->fields).nextEvent = (Object *)0x0;
+      func_?(&(this->fields).nextEvent);
+      (this->fields).prevEvent = (this->fields).curEvent;
+      func_?(&this->fields);
+      (this->fields).curEvent = evt;
+      func_?(&(this->fields).curEvent);
+      if ((this->fields).currentState == (IState *)0x0) goto DAT_?;
+      FUN_?(0);
+      this_02 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                 *)(this->fields).data;
+      if (this_02 ==
+          (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *)
+          0x0) goto DAT_?;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+      TypeConverterRegistry+ConverterKey,System::Object]::
+      Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object__Clear
+                (this_02,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Clear__
+                );
+    }
+    if ((this->fields).clearStack == 0) {
+      (this->fields).clearStack = 1;
+    }
+    else {
+      pSVar10 = (this->fields).stateStack;
+      if (pSVar10 == (Stack_1_EditorEvent_ *)0x0) {
+DAT_?:
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      piVar11 = &(pSVar10->fields)._version;
+      *piVar11 = *piVar11 + 1;
+      (pSVar10->fields)._size = 0;
+    }
+  }
   return;
 }
 
@@ -38,29 +192,34 @@ bool Assembly-CSharp.dll::FSMEntity::FSMEntity_PopState(FSMEntity *this,MethodIn
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__EditorEvent);
-    func_?(&MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Pop__);
-    func_?(&MethodInfo__System__Collections__Generic__Stack<EditorEvent>__get_Count__);
+    FUN_?(&TypeInfo__EditorEvent);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Pop__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Stack<EditorEvent>__get_Count__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_01 = this;
   if ((this->fields).lockState == 0) {
     this_00 = (Stack_1_UnityEngine_UIElements_TextureId_ *)(this->fields).stateStack;
     if (this_00 == (Stack_1_UnityEngine_UIElements_TextureId_ *)0x0) {
-      func_?();
+      FUN_?();
       pcVar1 = (code *)swi(3);
       bVar2 = (*pcVar1)();
       return bVar2;
     }
     if (0 < (this_00->fields)._size) {
-      this = (FSMEntity *)
-             mscorlib.dll::System::Collections::Generic::Stack`1[UnityEngine::UIElements::TextureId]
-             ::Stack_1_UnityEngine_UIElements_TextureId__Pop
-                       (this_00,MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Pop__)
-      ;
-      (this_01->fields).clearStack = 0;
-      value = (Object *)func_?(TypeInfo__EditorEvent,&this);
-      FSMEntity_set_Event(this_01,value,(MethodInfo *)0x0);
+      aiStackX_8[0] =
+           (int32_t)mscorlib.dll::System::Collections::Generic::Stack`1[UnityEngine::UIElements::
+                    TextureId]::Stack_1_UnityEngine_UIElements_TextureId__Pop
+                              (this_00,
+                               MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Pop__);
+      (this->fields).clearStack = 0;
+      value = (Object *)FUN_?(TypeInfo__EditorEvent,aiStackX_8);
+      FSMEntity_set_Event(this,value,(MethodInfo *)0x0);
       return 1;
     }
   }
@@ -74,44 +233,56 @@ void Assembly-CSharp.dll::FSMEntity::FSMEntity_PushState
                (FSMEntity *this,EditorEvent__Enum nextState,MethodInfo *method)
 
 {
-  this_01 = this;
   if ((this->fields).lockState != 0) {
     return;
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__EditorEvent);
-    func_?(&MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Push_EditorEvent_
-                   );
+    FUN_?(&TypeInfo__EditorEvent,CONCAT44(in_register_00000014,nextState),0x12,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Push_EditorEvent_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Push_EditorEvent_;
-  if ((this_01->fields).lockState == 0) {
-    this_00 = (Stack_1_UnityEngine_UIElements_TextureId_ *)(this_01->fields).stateStack;
-    pOVar1 = (this_01->fields).curEvent;
-    if ((this_00 == (Stack_1_UnityEngine_UIElements_TextureId_ *)0x0) || (pOVar1 == (Object *)0x0))
-    {
-      func_?();
-      pOVar1 = extraout_ECX;
-      pEVar2 = extraout_EDX;
-    }
-    else {
-      pEVar2 = TypeInfo__EditorEvent;
-      if ((pOVar1->klass->_0).element_class == (TypeInfo__EditorEvent->_0).element_class) {
-        piVar3 = (int32_t *)func_?(pOVar1);
-        mscorlib.dll::System::Collections::Generic::Stack`1[UnityEngine::UIElements::TextureId]::
-        Stack_1_UnityEngine_UIElements_TextureId__Push(this_00,(TextureId)*piVar3,method_00);
-        this = (FSMEntity *)nextState;
-        (this_01->fields).clearStack = 0;
-        pOVar1 = (Object *)func_?(TypeInfo__EditorEvent,&this);
-        FSMEntity_set_Event(this_01,pOVar1,(MethodInfo *)0x0);
-        return;
-      }
-    }
-    func_?(pOVar1,pEVar2);
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
+  if ((this->fields).lockState != 0) {
     return;
   }
+  this_00 = (Stack_1_System_Int32Enum_ *)(this->fields).stateStack;
+  pOVar1 = (this->fields).curEvent;
+  if ((this_00 != (Stack_1_System_Int32Enum_ *)0x0) && (pOVar1 != (Object *)0x0)) {
+    if ((pOVar1->klass->_0).element_class != (TypeInfo__EditorEvent->_0).element_class) {
+      FUN_?(pOVar1);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pIVar3 = (this_00->fields)._array;
+    if (pIVar3 != (Int32Enum__Enum__Array *)0x0) {
+      uVar4 = (this_00->fields)._size;
+      if (uVar4 < (uint)pIVar3->max_length) {
+        pIVar3->vector[(int)uVar4] = *(Int32Enum__Enum *)&pOVar1[1].klass;
+        (this_00->fields)._size = uVar4 + 1;
+        piVar5 = &(this_00->fields)._version;
+        *piVar5 = *piVar5 + 1;
+      }
+      else {
+        mscorlib.dll::System::Collections::Generic::Stack`1[System::Int32Enum]::
+        Stack_1_System_Int32Enum__PushWithResize
+                  (this_00,*(Int32Enum__Enum *)&pOVar1[1].klass,
+                   MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Push_EditorEvent_->
+                   klass->rgctx_data[0xc].method);
+      }
+      (this->fields).clearStack = 0;
+      aEStackX_8[0] = nextState;
+      pOVar1 = (Object *)FUN_?(TypeInfo__EditorEvent,aEStackX_8);
+      FSMEntity_set_Event(this,pOVar1,(MethodInfo *)0x0);
+      return;
+    }
+  }
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -124,67 +295,69 @@ void Assembly-CSharp.dll::FSMEntity::FSMEntity_PushState_1
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__EditorEvent);
-    func_?(&MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Push_EditorEvent_
-                   );
+    FUN_?(&TypeInfo__EditorEvent);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Push_EditorEvent_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_01 = this;
-  method_00 = MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Push_EditorEvent_;
   if ((this->fields).lockState != 0) {
     return;
   }
-  this_00 = (Stack_1_UnityEngine_UIElements_TextureId_ *)(this->fields).stateStack;
+  this_00 = (Stack_1_System_Int32Enum_ *)(this->fields).stateStack;
   if (overridePushState == EditorEvent__Enum_UndefinedState) {
     pOVar1 = (this->fields).curEvent;
-    if ((this_00 != (Stack_1_UnityEngine_UIElements_TextureId_ *)0x0) && (pOVar1 != (Object *)0x0))
-    {
-      pEVar2 = TypeInfo__EditorEvent;
-      if ((pOVar1->klass->_0).element_class == (TypeInfo__EditorEvent->_0).element_class) {
-        piVar3 = (int32_t *)func_?(pOVar1);
-        mscorlib.dll::System::Collections::Generic::Stack`1[UnityEngine::UIElements::TextureId]::
-        Stack_1_UnityEngine_UIElements_TextureId__Push(this_00,(TextureId)*piVar3,method_00);
-        goto code_?;
-      }
+    if ((this_00 == (Stack_1_System_Int32Enum_ *)0x0) || (pOVar1 == (Object *)0x0)) {
+code_?:
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    if ((pOVar1->klass->_0).element_class != (TypeInfo__EditorEvent->_0).element_class) {
+      FUN_?(pOVar1);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pIVar3 = (this_00->fields)._array;
+    if (pIVar3 == (Int32Enum__Enum__Array *)0x0) goto code_?;
+    uVar4 = (this_00->fields)._size;
+    if ((uint)pIVar3->max_length <= uVar4) {
+      mscorlib.dll::System::Collections::Generic::Stack`1[System::Int32Enum]::
+      Stack_1_System_Int32Enum__PushWithResize
+                (this_00,*(Int32Enum__Enum *)&pOVar1[1].klass,
+                 MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Push_EditorEvent_->
+                 klass->rgctx_data[0xc].method);
       goto code_?;
     }
+    pIVar3->vector[(int)uVar4] = *(Int32Enum__Enum *)&pOVar1[1].klass;
   }
-  else if (this_00 != (Stack_1_UnityEngine_UIElements_TextureId_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Stack`1[UnityEngine::UIElements::TextureId]::
-    Stack_1_UnityEngine_UIElements_TextureId__Push
-              (this_00,(TextureId)overridePushState,
-               MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Push_EditorEvent_);
+  else {
+    if ((this_00 == (Stack_1_System_Int32Enum_ *)0x0) ||
+       (pIVar3 = (this_00->fields)._array, pIVar3 == (Int32Enum__Enum__Array *)0x0))
+    goto code_?;
+    uVar4 = (this_00->fields)._size;
+    if ((uint)pIVar3->max_length <= uVar4) {
+      mscorlib.dll::System::Collections::Generic::Stack`1[System::Int32Enum]::
+      Stack_1_System_Int32Enum__PushWithResize
+                (this_00,overridePushState,
+                 MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Push_EditorEvent_->
+                 klass->rgctx_data[0xc].method);
+      goto code_?;
+    }
+    pIVar3->vector[(int)uVar4] = overridePushState;
+  }
+  (this_00->fields)._size = uVar4 + 1;
+  piVar5 = &(this_00->fields)._version;
+  *piVar5 = *piVar5 + 1;
 code_?:
-    this = (FSMEntity *)nextState;
-    (this_01->fields).clearStack = 0;
-    pOVar1 = (Object *)func_?(TypeInfo__EditorEvent,&this);
-    FSMEntity_set_Event(this_01,pOVar1,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pOVar1 = extraout_ECX;
-  pEVar2 = extraout_EDX;
-code_?:
-  func_?(pOVar1,pEVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
-  return;
-}
-
-
-/* Void Update() */
-
-void Assembly-CSharp.dll::FSMEntity::FSMEntity_Update(FSMEntity *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__IState);
-    cRam_? = '\x01';
-  }
-  pIVar1 = (this->fields).currentState;
-  if (pIVar1 != (IState *)0x0) {
-    func_?(1,TypeInfo__IState,pIVar1,this);
-  }
+  (this->fields).clearStack = 0;
+  aEStackX_8[0] = nextState;
+  pOVar1 = (Object *)FUN_?(TypeInfo__EditorEvent,aEStackX_8);
+  FSMEntity_set_Event(this,pOVar1,(MethodInfo *)0x0);
   return;
 }
 
@@ -195,40 +368,71 @@ void Assembly-CSharp.dll::FSMEntity::FSMEntity__ctor(FSMEntity *this,MethodInfo 
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Stack__);
-    func_?(&TypeInfo__System__Collections__Generic__Stack<EditorEvent>);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Stack__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__Stack<EditorEvent>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-             *)func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                              );
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+             *)FUN_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                            );
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
-  StyleComplexSelector+PseudoStateData]::
-  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+  UIR::UIRenderDevice+DisableForceGammaMaterial]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
             );
+  bVar1 = iRam_? != 0;
   (this->fields).data = (Dictionary_2_System_Object_System_Object_ *)this_00;
-  func_?(&(this->fields).data,this_00);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).data >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   (this->fields).clearStack = 1;
-  this_01 = (Stack_1_System_Dynamic_BindingRestrictions_TestBuilder_AndNode_ *)
-            func_?(TypeInfo__System__Collections__Generic__Stack<EditorEvent>);
-  mscorlib.dll::System::Collections::Generic::Stack`1[System::Dynamic::
-  BindingRestrictions+TestBuilder+AndNode]::
-  Stack_1_System_Dynamic_BindingRestrictions_TestBuilder_AndNode___ctor
+  this_01 = (Stack_1_System_Object_ *)
+            FUN_?(TypeInfo__System__Collections__Generic__Stack<EditorEvent>);
+  mscorlib.dll::System::Collections::Generic::Stack`1[System::Object]::Stack_1_System_Object___ctor
             (this_01,MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Stack__);
-  method_00 = (MethodInfo *)&(this->fields).stateStack;
+  bVar1 = iRam_? != 0;
   (this->fields).stateStack = (Stack_1_EditorEvent_ *)this_01;
-  func_?(method_00,this_01);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).stateStack >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
   return;
 }
 
@@ -240,13 +444,23 @@ void Assembly-CSharp.dll::FSMEntity::FSMEntity_set_Event
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Clear__
-                   );
-    func_?(&TypeInfo__IState);
-    func_?(&MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Clear__);
-    func_?(&StringLiteral_State_is_locked__could_not_set_s);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Clear__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__IState);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Clear__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_State_is_locked__could_not_set_s);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pSVar1 = StringLiteral_State_is_locked__could_not_set_s;
@@ -256,83 +470,132 @@ void Assembly-CSharp.dll::FSMEntity::FSMEntity_set_Event
     }
     else {
       str1 = (String *)
-             (*(code *)(value->klass->vtable).ToString.method)(value,value->klass[1]._0.image);
+             (*(value->klass->vtable).ToString.methodPtr)
+                       (value,(value->klass->vtable).ToString.method);
     }
-    pSVar1 = mscorlib.dll::System::String::String_Concat_3(pSVar1,str1,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    pSVar1 = mscorlib.dll::System::String::String_Concat_4(pSVar1,str1,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-              ((Object *)pSVar1,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Debug,0);
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeInfo__UnityEngine__ILogger);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Debug);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    pIVar2 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+    if (pIVar2 == (ILogger_1 *)0x0) {
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar2,2,pSVar1);
     return;
   }
+  bVar4 = iRam_? != 0;
   (this->fields).nextEvent = value;
-  func_?(&(this->fields).nextEvent,value);
+  if (bVar4) {
+    uVar5 = (uint)((ulonglong)&(this->fields).nextEvent >> 0xc);
+    lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+      puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+      LOCK();
+      bVar4 = uVar7 == *puVar8;
+      if (bVar4) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar4);
+  }
   if (value == (Object *)0x0) {
-    pIVar2 = (this->fields).currentState;
-    if (pIVar2 != (IState *)0x0) {
-      func_?(2,TypeInfo__IState,pIVar2,this);
-      (this->fields).currentState = (IState *)0x0;
-      func_?(&(this->fields).currentState,0);
-      return;
+    if ((this->fields).currentState == (IState *)0x0) goto DAT_?;
+    FUN_?(2);
+    bVar4 = iRam_? != 0;
+    (this->fields).currentState = (IState *)0x0;
+    if (bVar4) {
+      uVar5 = (uint)((ulonglong)&(this->fields).currentState >> 0xc);
+      lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+        puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+        LOCK();
+        bVar4 = uVar7 == *puVar8;
+        if (bVar4) {
+          *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar4);
     }
   }
   else {
     this_00 = (this->fields).transitionTable;
-    if (this_00 != (StateTransitionTable *)0x0) {
-      pIVar2 = StateTransitionTable::StateTransitionTable_GetState(this_00,value,(MethodInfo *)0x0);
-      if (pIVar2 != (IState *)0x0) {
-        if ((this->fields).currentState != (IState *)0x0) {
-          func_?(2,TypeInfo__IState,(this->fields).currentState,this);
-        }
-        pSVar1 = (String *)
-                 (*(code *)(value->klass->vtable).ToString.method)(value,value->klass[1]._0.image);
-        (this->fields).stateName = pSVar1;
-        func_?(&(this->fields).stateName,pSVar1);
-        (this->fields).currentState = pIVar2;
-        func_?(&(this->fields).currentState,pIVar2);
-        (this->fields).nextEvent = (Object *)0x0;
-        func_?(&(this->fields).nextEvent,0);
-        pOVar3 = (this->fields).curEvent;
-        (this->fields).prevEvent = pOVar3;
-        func_?(&this->fields,pOVar3);
-        (this->fields).curEvent = value;
-        func_?(&(this->fields).curEvent,value);
-        pIVar2 = (this->fields).currentState;
-        if (pIVar2 == (IState *)0x0) goto code_?;
-        func_?(0,TypeInfo__IState,pIVar2,this);
-        this_01 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                   *)(this->fields).data;
-        if (this_01 ==
-            (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-             *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
-        StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
-        Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__Clear
-                  (this_01,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Clear__
-                  );
+    if (this_00 == (StateTransitionTable *)0x0) goto DAT_?;
+    pIVar9 = StateTransitionTable::StateTransitionTable_GetState(this_00,value,(MethodInfo *)0x0);
+    if (pIVar9 != (IState *)0x0) {
+      if ((this->fields).currentState != (IState *)0x0) {
+        FUN_?(2);
       }
-      if ((this->fields).clearStack == 0) {
-        (this->fields).clearStack = 1;
+      pSVar1 = (String *)
+               (*(value->klass->vtable).ToString.methodPtr)
+                         (value,(value->klass->vtable).ToString.method);
+      (this->fields).stateName = pSVar1;
+      func_?(&(this->fields).stateName);
+      (this->fields).currentState = pIVar9;
+      func_?(&(this->fields).currentState);
+      (this->fields).nextEvent = (Object *)0x0;
+      func_?(&(this->fields).nextEvent);
+      (this->fields).prevEvent = (this->fields).curEvent;
+      func_?(&this->fields);
+      (this->fields).curEvent = value;
+      func_?(&(this->fields).curEvent);
+      if ((this->fields).currentState == (IState *)0x0) goto DAT_?;
+      FUN_?(0);
+      this_01 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                 *)(this->fields).data;
+      if (this_01 ==
+          (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *)
+          0x0) goto DAT_?;
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+      TypeConverterRegistry+ConverterKey,System::Object]::
+      Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object__Clear
+                (this_01,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Clear__
+                );
+    }
+    if ((this->fields).clearStack == 0) {
+      (this->fields).clearStack = 1;
+    }
+    else {
+      pSVar10 = (this->fields).stateStack;
+      if (pSVar10 == (Stack_1_EditorEvent_ *)0x0) {
+DAT_?:
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
-      this_02 = (Stack_1_UnityEngine_UIElements_StyleSheets_BaseStyleMatcher_MatchContext_ *)
-                (this->fields).stateStack;
-      if (this_02 !=
-          (Stack_1_UnityEngine_UIElements_StyleSheets_BaseStyleMatcher_MatchContext_ *)0x0) {
-        mscorlib.dll::System::Collections::Generic::Stack`1[UnityEngine::UIElements::StyleSheets::
-        BaseStyleMatcher+MatchContext]::
-        Stack_1_UnityEngine_UIElements_StyleSheets_BaseStyleMatcher_MatchContext__Clear
-                  (this_02,MethodInfo__System__Collections__Generic__Stack<EditorEvent>__Clear__);
-        return;
-      }
+      piVar11 = &(pSVar10->fields)._version;
+      *piVar11 = *piVar11 + 1;
+      (pSVar10->fields)._size = 0;
     }
   }
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
   return;
 }
 

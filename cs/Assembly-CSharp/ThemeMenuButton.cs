@@ -16,7 +16,7 @@ public class ThemeMenuButton : MonoBehaviour
 {
 	// Fields
 	[SerializeField]
-	private Button button;
+	private UnityEngine.UI.Button button;
 	[SerializeField]
 	private ToolTip toolTip;
 	private static readonly string toolTipStr_ButtonDisabled;

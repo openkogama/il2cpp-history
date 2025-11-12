@@ -8,59 +8,39 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Assets__Scripts__AdIntegration__IAdManager);
-    func_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
-    func_?(&StringLiteral_No_Ad_Available);
+    FUN_?(&TypeInfo__Assets__Scripts__AdIntegration__IAdManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_No_Ad_Available);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pIVar1 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-  if (pIVar1 != (IAdManager *)0x0) {
-    pIVar2 = pIVar1->klass;
-    uVar3 = 0;
-    uVar4._0_1_ = (pIVar2->_1).rank;
-    uVar4._1_1_ = (pIVar2->_1).minimumAlignment;
-    if (uVar4 != 0) {
-      do {
-        if (pIVar2->interfaceOffsets[uVar3].interfaceType ==
-            (Il2CppClass *)TypeInfo__Assets__Scripts__AdIntegration__IAdManager) {
-          ppMVar5 = &(&(pIVar1->klass->vtable).get_RewardedAdNotAvailableText)
-                     [pIVar1->klass->interfaceOffsets[uVar3].offset].method;
-          goto code_?;
-        }
-        uVar3 = uVar3 + 1;
-      } while (uVar3 < uVar4);
-    }
-    ppMVar5 = (MethodInfo **)
-              func_?(pIVar1,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,0);
-code_?:
-    uVar6 = (*(code *)*ppMVar5)(pIVar1,ppMVar5[1]);
-    pSVar7 = TM::TM__(StringLiteral_No_Ad_Available,(MethodInfo *)0x0);
-    if (x != (IModalPopupCreator *)0x0) {
-      pIVar8 = x->klass;
-      uVar4 = 0;
-      uVar3._0_1_ = (pIVar8->_1).rank;
-      uVar3._1_1_ = (pIVar8->_1).minimumAlignment;
-      if (uVar3 != 0) {
-        do {
-          if (pIVar8->interfaceOffsets[uVar4].interfaceType ==
-              (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-            ppMVar5 = &(&(x->klass->vtable).Create_3)[x->klass->interfaceOffsets[uVar4].offset].
-                       method;
-            goto code_?;
-          }
-          uVar4 = uVar4 + 1;
-        } while (uVar4 < uVar3);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (pMVar1 != (MVGameControllerBase *)0x0) {
+    lVar2 = (*(pMVar1->klass->vtable).__unknown.methodPtr)
+                      (pMVar1,(pMVar1->klass->vtable).__unknown.method);
+    if (lVar2 != 0) {
+      FUN_?(0,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,lVar2);
+      TM::TM__(StringLiteral_No_Ad_Available,(MethodInfo *)0x0);
+      if (x != (IModalPopupCreator *)0x0) {
+        FUN_?();
+        return;
       }
-      ppMVar5 = (MethodInfo **)
-                func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,4);
-code_?:
-      (*(code *)*ppMVar5)(x,uVar6,pSVar7,ppMVar5[1]);
-      return;
     }
   }
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -72,17 +52,32 @@ void Assembly-CSharp.dll::WorldObjectInteractionSystem::UseSystem::RewardedAdReq
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement____c);
+    FUN_?(&TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement____c;
-  value = (RewardedAdRequirement_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  pRVar1 = (RewardedAdRequirement_c *)
+           FUN_?(
+                        TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement____c
+                        );
   TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement____c->static_fields->__9
-       = value;
-  func_?(TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement____c->
-                  static_fields,value);
+       = pRVar1;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)
+                   TypeInfo__WorldObjectInteractionSystem__UseSystem__RewardedAdRequirement____c->
+                   static_fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 

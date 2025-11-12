@@ -6,45 +6,84 @@ Avatar * Assembly-CSharp.dll::ActivateOnAnimationBase::ActivateOnAnimationBase_G
 
 {
   if (cRam_? == '\0') {
-    func_?(&Avatar_MethodInfo__UnityEngine__Component__GetComponent<Avatar>__);
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&Avatar_MethodInfo__UnityEngine__Component__GetComponent<Avatar>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pAVar1 = (Avatar *)0x0;
   pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                      ((Component *)this,(MethodInfo *)0x0);
-  if (pTVar2 != (Transform *)0x0) {
+  if (pTVar2 == (Transform *)0x0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    pAVar1 = (Avatar *)(*pcVar3)();
+    return pAVar1;
+  }
+  pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
+                     (pTVar2,(MethodInfo *)0x0);
+  while( true ) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (pTVar2 == (Transform *)0x0) break;
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((pTVar2->fields)._._.m_CachedPtr == (void *)0x0) {
+      return pAVar1;
+    }
+    pAVar1 = (Avatar *)
+             UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                       ((Component *)pTVar2,
+                        Avatar_MethodInfo__UnityEngine__Component__GetComponent<Avatar>__);
     pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
                        (pTVar2,(MethodInfo *)0x0);
-    while( true ) {
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (pAVar1 != (Avatar *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        ((Object_1 *)pTVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar3 == 0) {
-        return pAVar1;
-      }
-      if (pTVar2 == (Transform *)0x0) break;
-      pAVar1 = (Avatar *)
-               UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
-                         ((Component *)pTVar2,
-                          Avatar_MethodInfo__UnityEngine__Component__GetComponent<Avatar>__);
-      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
-                         (pTVar2,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        ((Object_1 *)pAVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar3 != 0) {
+      if ((pAVar1->fields)._._._._.m_CachedPtr != (void *)0x0) {
         return pAVar1;
       }
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  pAVar1 = (Avatar *)(*pcVar4)();
   return pAVar1;
 }
 
@@ -56,75 +95,115 @@ void Assembly-CSharp.dll::ActivateOnAnimationBase::ActivateOnAnimationBase_OnDes
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<System::String>);
+    FUN_?(&TypeInfo__System__Action<System::String>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields).mvAvatar == (MVAvatar *)0x0) {
     return;
   }
-  this_00 = (((this->fields).mvAvatar)->fields).body;
-  if ((this_00 == (MVBody *)0x0) ||
-     (pBVar1 = MVBody::MVBody_get_Animation(this_00,(MethodInfo *)0x0),
-     pBVar1 == (BoneAnimation *)0x0)) {
-code_?:
-    func_?();
-code_?:
-    func_?();
-  }
-  else {
-    pAVar2 = (pBVar1->fields).OnAnimationChange;
-    pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-              *)func_?(TypeInfo__System__Action<System::String>);
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              (pDVar3,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
-    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pAVar2,(Delegate *)pDVar3,(MethodInfo *)0x0);
-    if (pDVar4 == (Delegate *)0x0) {
-      (pBVar1->fields).OnAnimationChange = (Action_1_String_ *)0x0;
-code_?:
-      func_?();
-      pMVar5 = (this->fields).mvAvatar;
-      if ((pMVar5 == (MVAvatar *)0x0) ||
-         (pAVar6 = (pMVar5->fields).limbManager, pAVar6 == (AvatarLimbManager *)0x0))
-      goto code_?;
-      pAVar2 = (pAVar6->fields).OnEmoteStart;
-      pDVar3 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                *)func_?(TypeInfo__System__Action<System::String>);
-      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                (pDVar3,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
-      pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove
-                         ((Delegate *)pAVar2,(Delegate *)pDVar3,(MethodInfo *)0x0);
-      if (pDVar4 == (Delegate *)0x0) {
-        (pAVar6->fields).OnEmoteStart = (Action_1_String_ *)0x0;
-        func_?();
+  pMVar1 = (((this->fields).mvAvatar)->fields).body;
+  if (((pMVar1 != (MVBody *)0x0) &&
+      (pMVar2 = (pMVar1->fields).bodyObject, pMVar2 != (MVBodyObject *)0x0)) &&
+     (pBVar3 = (pMVar2->fields).boneAnimation, pBVar3 != (BoneAnimation *)0x0)) {
+    pAVar4 = (pBVar3->fields).OnAnimationChange;
+    pUVar5 = (UnityAction_1_System_Object_ *)
+              FUN_?(TypeInfo__System__Action<System::String>);
+    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+    UnityAction_1_System_Object___ctor
+              (pUVar5,(Object *)this,(this->klass->vtable).__unknown.method,(MethodInfo *)0x0);
+    pDVar6 = mscorlib.dll::System::Delegate::Delegate_Remove
+                        ((Delegate *)pAVar4,(Delegate *)pUVar5,(MethodInfo *)0x0);
+    pAVar7 = TypeInfo__System__Action<System::String>;
+    if (pDVar6 == (Delegate *)0x0) {
+      (pBVar3->fields).OnAnimationChange = (Action_1_String_ *)0x0;
+    }
+    else {
+      pAVar4 = (Action_1_String_ *)FUN_?(pDVar6,TypeInfo__System__Action<System::String>);
+      if (pAVar4 == (Action_1_String_ *)0x0) {
+        FUN_?(pDVar6,pAVar7);
+        pcVar8 = (code *)swi(3);
+        (*pcVar8)();
         return;
       }
-      pAVar2 = (Action_1_String_ *)func_?();
-      if (pAVar2 == (Action_1_String_ *)0x0) goto code_?;
-      (pAVar6->fields).OnEmoteStart = pAVar2;
-      iVar7 = func_?();
-      if (iVar7 != 0) {
-        func_?();
+      (pBVar3->fields).OnAnimationChange = pAVar4;
+      pAVar7 = TypeInfo__System__Action<System::String>;
+      lVar9 = FUN_?(pDVar6,TypeInfo__System__Action<System::String>);
+      if (lVar9 == 0) {
+        FUN_?(pDVar6,pAVar7);
+        pcVar8 = (code *)swi(3);
+        (*pcVar8)();
         return;
       }
-      goto code_?;
     }
-    pAVar2 = (Action_1_String_ *)func_?();
-    if (pAVar2 != (Action_1_String_ *)0x0) {
-      (pBVar1->fields).OnAnimationChange = pAVar2;
-      iVar7 = func_?();
-      if (iVar7 == 0) goto code_?;
-      goto code_?;
+    if (iRam_? != 0) {
+      uVar10 = (uint)((ulonglong)&(pBVar3->fields).OnAnimationChange >> 0xc);
+      lVar9 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar11 = *(ulonglong *)(lVar9 + 0xADDR);
+        puVar12 = (ulonglong *)(lVar9 + 0xADDR);
+        LOCK();
+        bVar13 = uVar11 == *puVar12;
+        if (bVar13) {
+          *puVar12 = uVar11 | 1L << (uVar10 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar13);
+    }
+    pMVar14 = (this->fields).mvAvatar;
+    if ((pMVar14 != (MVAvatar *)0x0) &&
+       (pAVar15 = (pMVar14->fields).limbManager, pAVar15 != (AvatarLimbManager *)0x0)) {
+      pAVar4 = (pAVar15->fields).OnEmoteStart;
+      pUVar5 = (UnityAction_1_System_Object_ *)
+                FUN_?(TypeInfo__System__Action<System::String>);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+      UnityAction_1_System_Object___ctor
+                (pUVar5,(Object *)this,(this->klass->vtable).__unknown.method,(MethodInfo *)0x0);
+      pDVar6 = mscorlib.dll::System::Delegate::Delegate_Remove
+                          ((Delegate *)pAVar4,(Delegate *)pUVar5,(MethodInfo *)0x0);
+      pAVar7 = TypeInfo__System__Action<System::String>;
+      if (pDVar6 == (Delegate *)0x0) {
+        (pAVar15->fields).OnEmoteStart = (Action_1_String_ *)0x0;
+      }
+      else {
+        pAVar4 = (Action_1_String_ *)
+                  FUN_?(pDVar6,TypeInfo__System__Action<System::String>);
+        if (pAVar4 == (Action_1_String_ *)0x0) {
+          FUN_?(pDVar6,pAVar7);
+          pcVar8 = (code *)swi(3);
+          (*pcVar8)();
+          return;
+        }
+        (pAVar15->fields).OnEmoteStart = pAVar4;
+        pAVar7 = TypeInfo__System__Action<System::String>;
+        lVar9 = FUN_?(pDVar6,TypeInfo__System__Action<System::String>);
+        if (lVar9 == 0) {
+          FUN_?(pDVar6,pAVar7);
+          pcVar8 = (code *)swi(3);
+          (*pcVar8)();
+          return;
+        }
+      }
+      if (iRam_? == 0) {
+        return;
+      }
+      uVar10 = (uint)((ulonglong)&(pAVar15->fields).OnEmoteStart >> 0xc);
+      lVar9 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar11 = *(ulonglong *)(lVar9 + 0xADDR);
+        puVar12 = (ulonglong *)(lVar9 + 0xADDR);
+        LOCK();
+        bVar13 = uVar11 == *puVar12;
+        if (bVar13) {
+          *puVar12 = uVar11 | 1L << (uVar10 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar13);
+      return;
     }
   }
-code_?:
-  func_?();
-code_?:
-  func_?();
+  FUN_?();
   pcVar8 = (code *)swi(3);
   (*pcVar8)();
   return;
@@ -138,117 +217,235 @@ void Assembly-CSharp.dll::ActivateOnAnimationBase::ActivateOnAnimationBase_Start
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<System::String>);
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&TypeInfo__System__Action<System::String>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&Avatar_MethodInfo__UnityEngine__Component__GetComponent<Avatar>__);
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&Avatar_MethodInfo__UnityEngine__Component__GetComponent<Avatar>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  x = (Object_1 *)0x0;
-  pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                     ((Component *)this,(MethodInfo *)0x0);
-  if (pTVar1 == (Transform *)0x0) {
-code_?:
-    func_?();
-code_?:
-    func_?();
-  }
-  else {
-    pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
-                       (pTVar1,(MethodInfo *)0x0);
+  pOVar1 = (Object *)0x0;
+  pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                      ((Component *)this,(MethodInfo *)0x0);
+  if (pTVar2 != (Transform *)0x0) {
+    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
+                        (pTVar2,(MethodInfo *)0x0);
     do {
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
+      do {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (pTVar2 == (Transform *)0x0) goto code_?;
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if ((pTVar2->fields)._._.m_CachedPtr == (void *)0x0) goto code_?;
+        pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
+                            ((Component *)pTVar2,
+                             Avatar_MethodInfo__UnityEngine__Component__GetComponent<Avatar>__);
+        pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
+                            (pTVar2,(MethodInfo *)0x0);
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+      } while (pOVar1 == (Object *)0x0);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar2 == 0) break;
-      if (pTVar1 == (Transform *)0x0) goto code_?;
-      x = (Object_1 *)
-          UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponent_1
-                    ((Component *)pTVar1,
-                     Avatar_MethodInfo__UnityEngine__Component__GetComponent<Avatar>__);
-      pTVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_GetParent
-                         (pTVar1,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                        (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    } while (bVar2 == 0);
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      (x,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      return;
-    }
-    if (x == (Object_1 *)0x0) goto code_?;
-    (this->fields).mvAvatar = (MVAvatar *)x[1].monitor;
-    func_?();
-    pMVar3 = (this->fields).mvAvatar;
-    if (((pMVar3 == (MVAvatar *)0x0) || (this_00 = (pMVar3->fields).body, this_00 == (MVBody *)0x0))
-       || (pBVar4 = MVBody::MVBody_get_Animation(this_00,(MethodInfo *)0x0),
-          pBVar4 == (BoneAnimation *)0x0)) goto code_?;
-    pAVar5 = (pBVar4->fields).OnAnimationChange;
-    pDVar6 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-              *)func_?();
-    DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-    DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              (pDVar6,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
-    pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
-                       ((Delegate *)pAVar5,(Delegate *)pDVar6,(MethodInfo *)0x0);
-    if (pDVar7 == (Delegate *)0x0) {
-      (pAVar5->fields)._._.m_target = (Object *)0x0;
+    } while (pOVar1[1].klass == (Object__Class *)0x0);
 code_?:
-      func_?();
-      pMVar3 = (this->fields).mvAvatar;
-      if ((pMVar3 == (MVAvatar *)0x0) ||
-         (pAVar8 = (pMVar3->fields).limbManager, pAVar8 == (AvatarLimbManager *)0x0))
-      goto code_?;
-      pAVar5 = (pAVar8->fields).OnEmoteStart;
-      pDVar6 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                *)func_?();
-      DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-      __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-      DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                (pDVar6,(Object *)this,this->klass[1]._0.image,(MethodInfo *)0x0);
-      pDVar7 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pAVar5,(Delegate *)pDVar6,(MethodInfo *)0x0);
-      if (pDVar7 == (Delegate *)0x0) {
-        (pAVar5->fields)._._.invoke_impl = (void *)0x0;
-        func_?();
-        return;
-      }
-      pvVar9 = (void *)func_?();
-      if (pvVar9 == (void *)0x0) goto code_?;
-      (pAVar5->fields)._._.invoke_impl = pvVar9;
-      iVar10 = func_?();
-      if (iVar10 != 0) {
-        func_?();
-        return;
-      }
-      goto code_?;
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    pOVar11 = (Object *)func_?();
-    if (pOVar11 != (Object *)0x0) {
-      (pAVar5->fields)._._.m_target = pOVar11;
-      iVar10 = func_?();
-      if (iVar10 == 0) goto code_?;
-      goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (pOVar1 != (Object *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (pOVar1[1].klass != (Object__Class *)0x0) {
+        bVar3 = iRam_? != 0;
+        (this->fields).mvAvatar = (MVAvatar *)pOVar1[2].klass;
+        if (bVar3) {
+          uVar4 = (uint)((ulonglong)&(this->fields).mvAvatar >> 0xc);
+          lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+            puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+            LOCK();
+            bVar3 = uVar6 == *puVar7;
+            if (bVar3) {
+              *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar3);
+        }
+        pMVar8 = (this->fields).mvAvatar;
+        if ((((pMVar8 != (MVAvatar *)0x0) &&
+             (pMVar9 = (pMVar8->fields).body, pMVar9 != (MVBody *)0x0)) &&
+            (pMVar10 = (pMVar9->fields).bodyObject, pMVar10 != (MVBodyObject *)0x0)) &&
+           (pBVar11 = (pMVar10->fields).boneAnimation, pBVar11 != (BoneAnimation *)0x0)) {
+          pAVar12 = (pBVar11->fields).OnAnimationChange;
+          pUVar13 = (UnityAction_1_System_Object_ *)
+                    FUN_?(TypeInfo__System__Action<System::String>);
+          UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+          UnityAction_1_System_Object___ctor
+                    (pUVar13,(Object *)this,(this->klass->vtable).__unknown.method,(MethodInfo *)0x0
+                    );
+          pDVar14 = mscorlib.dll::System::Delegate::Delegate_Combine
+                              ((Delegate *)pAVar12,(Delegate *)pUVar13,(MethodInfo *)0x0);
+          pAVar15 = TypeInfo__System__Action<System::String>;
+          if (pDVar14 == (Delegate *)0x0) {
+            (pBVar11->fields).OnAnimationChange = (Action_1_String_ *)0x0;
+          }
+          else {
+            pAVar12 = (Action_1_String_ *)
+                      FUN_?(pDVar14,TypeInfo__System__Action<System::String>);
+            if (pAVar12 == (Action_1_String_ *)0x0) {
+              FUN_?(pDVar14,pAVar15);
+              pcVar16 = (code *)swi(3);
+              (*pcVar16)();
+              return;
+            }
+            (pBVar11->fields).OnAnimationChange = pAVar12;
+            pAVar15 = TypeInfo__System__Action<System::String>;
+            lVar5 = FUN_?(pDVar14,TypeInfo__System__Action<System::String>);
+            if (lVar5 == 0) {
+              FUN_?(pDVar14,pAVar15);
+              pcVar16 = (code *)swi(3);
+              (*pcVar16)();
+              return;
+            }
+          }
+          if (iRam_? != 0) {
+            uVar4 = (uint)((ulonglong)&(pBVar11->fields).OnAnimationChange >> 0xc);
+            lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+            do {
+              uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+              puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+              LOCK();
+              bVar3 = uVar6 == *puVar7;
+              if (bVar3) {
+                *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar3);
+          }
+          pMVar8 = (this->fields).mvAvatar;
+          if ((pMVar8 != (MVAvatar *)0x0) &&
+             (pAVar17 = (pMVar8->fields).limbManager, pAVar17 != (AvatarLimbManager *)0x0)) {
+            pAVar12 = (pAVar17->fields).OnEmoteStart;
+            pUVar13 = (UnityAction_1_System_Object_ *)
+                      FUN_?(TypeInfo__System__Action<System::String>);
+            UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+            UnityAction_1_System_Object___ctor
+                      (pUVar13,(Object *)this,(this->klass->vtable).__unknown.method,
+                       (MethodInfo *)0x0);
+            pDVar14 = mscorlib.dll::System::Delegate::Delegate_Combine
+                                ((Delegate *)pAVar12,(Delegate *)pUVar13,(MethodInfo *)0x0);
+            pAVar15 = TypeInfo__System__Action<System::String>;
+            if (pDVar14 == (Delegate *)0x0) {
+              (pAVar17->fields).OnEmoteStart = (Action_1_String_ *)0x0;
+            }
+            else {
+              pAVar12 = (Action_1_String_ *)
+                        FUN_?(pDVar14,TypeInfo__System__Action<System::String>);
+              if (pAVar12 == (Action_1_String_ *)0x0) {
+                FUN_?(pDVar14,pAVar15);
+                pcVar16 = (code *)swi(3);
+                (*pcVar16)();
+                return;
+              }
+              (pAVar17->fields).OnEmoteStart = pAVar12;
+              pAVar15 = TypeInfo__System__Action<System::String>;
+              lVar5 = FUN_?(pDVar14,TypeInfo__System__Action<System::String>);
+              if (lVar5 == 0) {
+                FUN_?(pDVar14,pAVar15);
+                pcVar16 = (code *)swi(3);
+                (*pcVar16)();
+                return;
+              }
+            }
+            if (iRam_? == 0) {
+              return;
+            }
+            uVar4 = (uint)((ulonglong)&(pAVar17->fields).OnEmoteStart >> 0xc);
+            lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+            do {
+              uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+              puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+              LOCK();
+              bVar3 = uVar6 == *puVar7;
+              if (bVar3) {
+                *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar3);
+            return;
+          }
+        }
+        goto code_?;
+      }
+    }
+    return;
   }
 code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  FUN_?();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 

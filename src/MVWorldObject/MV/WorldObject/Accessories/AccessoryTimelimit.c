@@ -6,17 +6,17 @@ bool MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryTimelimit::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__TimeSpan);
+    FUN_?(&TypeInfo__System__TimeSpan);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields).timeLimit != 0) {
-    AccessoryTimelimit_GetTimeLeft(this,(MethodInfo *)0x0);
-    if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    TVar1 = AccessoryTimelimit_GetTimeLeft(this,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    dVar1 = mscorlib.dll::System::TimeSpan::TimeSpan_get_TotalSeconds
-                      ((TimeSpan *)&stack0xfffffff4,(MethodInfo *)0x0);
-    return _UNK_? < dVar1;
+    return 0.0 < (double)TVar1._ticks * _UNK_?;
   }
   return 1;
 }
@@ -29,32 +29,67 @@ TimeSpan MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryTimelimit::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__DateTime);
-    func_?(&TypeInfo__System__TimeSpan);
+    FUN_?(&TypeInfo__System__DateTime);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__TimeSpan);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((this->fields).timeLimit != 0) {
-    if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__DateTime);
+  if ((this->fields).timeLimit == 0) {
+    if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__System__TimeSpan);
     }
-    d1 = mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
-    TVar1 = mscorlib.dll::System::DateTime::DateTime_op_Subtraction_1
-                      (d1,(DateTime)(this->fields).timeLimitStartTime._dateData,(MethodInfo *)0x0);
-    TStack_2._ticks = 0;
-    mscorlib.dll::System::TimeSpan::TimeSpan__ctor_3
-              (&TStack_2,0,0,0,(this->fields).timeLimit,0,(MethodInfo *)0x0);
-    if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    return (TimeSpan)(TypeInfo__System__TimeSpan->static_fields->MaxValue)._ticks;
+  }
+  if (*(int *)&(TypeInfo__System__DateTime->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  d1 = mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
+  TVar1 = mscorlib.dll::System::DateTime::DateTime_op_Subtraction_1
+                    (d1,(DateTime)(this->fields).timeLimitStartTime._dateData,(MethodInfo *)0x0);
+  lVar2 = (longlong)(this->fields).timeLimit;
+  if (lVar2 * 1000 + 0x346dc5d638865U < 0x68db8bac710cb) {
+    uVar3 = lVar2 * 10000000;
+    if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    uStack3 = TStack_2._ticks._4_4_;
-    TVar1 = mscorlib.dll::System::TimeSpan::TimeSpan_op_Subtraction
-                      (TStack_2,TVar1,(MethodInfo *)0x0);
-    return (TimeSpan)TVar1._ticks;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__System__TimeSpan);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (((longlong)(uVar3 ^ TVar1._ticks) < 0) && ((longlong)(uVar3 - TVar1._ticks ^ uVar3) < 0)) {
+      uVar4 = func_?(&TypeInfo__System__OverflowException);
+      this_00 = (OverflowException *)func_?(uVar4);
+      pSVar5 = (String *)func_?(&StringLiteral_TimeSpan_overflowed_because_the_);
+      mscorlib.dll::System::OverflowException::OverflowException__ctor_1
+                (this_00,pSVar5,(MethodInfo *)0x0);
+      uVar4 = func_?(&
+                                  MethodInfo__System__TimeSpan__Subtract_MethodInfo__System__TimeSpan_
+                                 );
+      FUN_?(this_00,uVar4);
+      pcVar6 = (code *)swi(3);
+      TVar1._ticks = (*pcVar6)();
+      return (TimeSpan)TVar1._ticks;
+    }
+    return (TimeSpan)(uVar3 - TVar1._ticks);
   }
-  if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__TimeSpan);
-  }
-  return (TimeSpan)(TypeInfo__System__TimeSpan->static_fields->MaxValue)._ticks;
+  uVar4 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+  this_01 = (ArgumentOutOfRangeException *)func_?(uVar4);
+  pSVar5 = (String *)func_?(&StringLiteral_TimeSpan_overflowed_because_the_);
+  mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_2
+            (this_01,(String *)0x0,pSVar5,(MethodInfo *)0x0);
+  uVar4 = func_?(&MethodInfo__System__TimeSpan__TimeSpan_int__int__int__int__int_);
+  FUN_?(this_01,uVar4);
+  pcVar6 = (code *)swi(3);
+  TVar1._ticks = (*pcVar6)();
+  return (TimeSpan)TVar1._ticks;
 }
 
 
@@ -64,117 +99,111 @@ String * MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryTimelimit::
          AccessoryTimelimit_ToPrettyFormat(TimeSpan span,MethodInfo *method)
 
 {
-  t1._ticks = span._ticks;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__System__Text__StringBuilder);
-    func_?(&TypeInfo__System__String);
-    func_?(&TypeInfo__System__TimeSpan);
-    func_?(&StringLiteral__0__hour_1__);
-    func_?(&StringLiteral__0__minute_1__);
-    func_?(&StringLiteral__0_minutes);
-    func_?(&StringLiteral__0__day_1__);
-    func_?(&StringLiteral_s);
+    FUN_?(&TypeInfo__System__Text__StringBuilder);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__TimeSpan);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__0__hour_1__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__0__minute_1__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__0_minutes);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__0__day_1__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_s);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    t1 = span;
   }
-  span._ticks = t1._ticks;
-  if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__TimeSpan);
+  if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__System__TimeSpan);
   }
-  bVar1 = mscorlib.dll::System::TimeSpan::TimeSpan_op_Equality
-                    (t1,(TimeSpan)(TypeInfo__System__TimeSpan->static_fields->Zero)._ticks,
-                     (MethodInfo *)0x0);
-  if (bVar1 != 0) {
+  if (span._ticks == (TypeInfo__System__TimeSpan->static_fields->Zero)._ticks) {
     return StringLiteral__0_minutes;
   }
-  this = (StringBuilder *)func_?();
+  this = (StringBuilder *)FUN_?(TypeInfo__System__Text__StringBuilder);
   mscorlib.dll::System::Text::StringBuilder::StringBuilder__ctor(this,(MethodInfo *)0x0);
-  if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
-    span._ticks._4_4_ = TypeInfo__System__TimeSpan;
-    span._ticks._0_4_ = (TimeSpan *)&UNK_?;
-    func_?();
+  if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__System__TimeSpan);
   }
-  span._ticks._0_4_ = &span;
-  span._ticks._4_4_ = (TimeSpan__Class *)0x0;
-  iVar2 = mscorlib.dll::System::TimeSpan::TimeSpan_get_Days
-                    ((TimeSpan *)span._ticks,(MethodInfo *)0x0);
-  if (0 < iVar2) {
-    if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+  if (0 < (int)(span._ticks / 864000000000)) {
+    if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__System__TimeSpan,span._ticks % 864000000000);
     }
-    span._ticks._4_4_ = (TimeSpan__Class *)&UNK_?;
-    mscorlib.dll::System::TimeSpan::TimeSpan_get_Days(&span,(MethodInfo *)0x0);
-    span._ticks._4_4_ = (TimeSpan__Class *)&UNK_?;
-    pOVar3 = (Object *)func_?();
-    span._ticks._0_4_ = &span;
-    span._ticks._4_4_ = (TimeSpan__Class *)0x0;
-    iVar2 = mscorlib.dll::System::TimeSpan::TimeSpan_get_Days
-                      ((TimeSpan *)span._ticks,(MethodInfo *)0x0);
-    pSVar4 = StringLiteral_s;
-    if (iVar2 < 2) {
-      pSVar4 = TypeInfo__System__String->static_fields->Empty;
+    aiStackX_8[0] = (int)(span._ticks / 864000000000);
+    pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_8);
+    pSVar2 = StringLiteral_s;
+    if ((uint)(span._ticks / 864000000000) < 2) {
+      pSVar2 = (String *)**(undefined8 **)(lRam_? + 0xb8);
     }
-    if (this == (StringBuilder *)0x0) goto code_?;
+    if (this == (StringBuilder *)0x0) goto DAT_?;
     mscorlib.dll::System::Text::StringBuilder::StringBuilder_AppendFormat_1
-              (this,StringLiteral__0__day_1__,pOVar3,(Object *)pSVar4,(MethodInfo *)0x0);
+              (this,StringLiteral__0__day_1__,pOVar1,(Object *)pSVar2,(MethodInfo *)0x0);
   }
-  if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__System__TimeSpan);
   }
-  span._ticks._4_4_ = (TimeSpan__Class *)&UNK_?;
-  iVar2 = mscorlib.dll::System::TimeSpan::TimeSpan_get_Hours(&span,(MethodInfo *)0x0);
-  if (0 < iVar2) {
-    if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+  if (0 < (int)(span._ticks / 36000000000) + (int)((span._ticks / 36000000000) / 0x18) * -0x18) {
+    if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__System__TimeSpan);
     }
-    mscorlib.dll::System::TimeSpan::TimeSpan_get_Hours(&span,(MethodInfo *)0x0);
-    pOVar3 = (Object *)func_?();
-    span._ticks._0_4_ = &span;
-    span._ticks._4_4_ = (TimeSpan__Class *)0x0;
-    iVar2 = mscorlib.dll::System::TimeSpan::TimeSpan_get_Hours
-                      ((TimeSpan *)span._ticks,(MethodInfo *)0x0);
-    pSVar4 = StringLiteral_s;
-    if (iVar2 < 2) {
-      pSVar4 = TypeInfo__System__String->static_fields->Empty;
+    aiStackX_8[0] =
+         (int)(span._ticks / 36000000000) + (int)((span._ticks / 36000000000) / 0x18) * -0x18;
+    pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_8);
+    pSVar2 = StringLiteral_s;
+    if ((uint)((int)(span._ticks / 36000000000) + (int)((span._ticks / 36000000000) / 0x18) * -0x18)
+        < 2) {
+      pSVar2 = (String *)**(undefined8 **)(lRam_? + 0xb8);
     }
-    if (this == (StringBuilder *)0x0) goto code_?;
+    if (this == (StringBuilder *)0x0) goto DAT_?;
     mscorlib.dll::System::Text::StringBuilder::StringBuilder_AppendFormat_1
-              (this,StringLiteral__0__hour_1__,pOVar3,(Object *)pSVar4,(MethodInfo *)0x0);
+              (this,StringLiteral__0__hour_1__,pOVar1,(Object *)pSVar2,(MethodInfo *)0x0);
   }
-  if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__System__TimeSpan);
   }
-  iVar2 = mscorlib.dll::System::TimeSpan::TimeSpan_get_Minutes(&span,(MethodInfo *)0x0);
-  if (iVar2 < 1) {
-    if (this == (StringBuilder *)0x0) goto code_?;
+  lVar3 = span._ticks / 600000000;
+  lVar4 = SUB168(SEXT816(-0x7777777777777777) * SEXT816(lVar3),8) + lVar3;
+  if ((int)lVar3 + ((int)(lVar4 >> 5) - (int)(lVar4 >> 0x3f)) * -0x3c < 1) {
+    if (this == (StringBuilder *)0x0) goto DAT_?;
   }
   else {
-    if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__System__TimeSpan);
     }
-    mscorlib.dll::System::TimeSpan::TimeSpan_get_Minutes(&span,(MethodInfo *)0x0);
-    pOVar3 = (Object *)func_?();
-    span._ticks._0_4_ = &span;
-    span._ticks._4_4_ = (TimeSpan__Class *)0x0;
-    iVar2 = mscorlib.dll::System::TimeSpan::TimeSpan_get_Minutes
-                      ((TimeSpan *)span._ticks,(MethodInfo *)0x0);
-    pSVar4 = StringLiteral_s;
-    if (iVar2 < 2) {
-      pSVar4 = TypeInfo__System__String->static_fields->Empty;
+    lVar3 = span._ticks / 600000000;
+    lVar4 = SUB168(SEXT816(-0x7777777777777777) * SEXT816(lVar3),8) + lVar3;
+    aiStackX_8[0] = (int)lVar3 + ((int)(lVar4 >> 5) - (int)(lVar4 >> 0x3f)) * -0x3c;
+    pOVar1 = (Object *)FUN_?(uRam_?,aiStackX_8);
+    lVar3 = span._ticks / 600000000;
+    lVar4 = SUB168(SEXT816(-0x7777777777777777) * SEXT816(lVar3),8) + lVar3;
+    pSVar2 = StringLiteral_s;
+    if ((uint)((int)lVar3 + ((int)(lVar4 >> 5) - (int)(lVar4 >> 0x3f)) * -0x3c) < 2) {
+      pSVar2 = (String *)**(undefined8 **)(lRam_? + 0xb8);
     }
     if (this == (StringBuilder *)0x0) {
-code_?:
-      func_?();
+DAT_?:
+      FUN_?();
       pcVar5 = (code *)swi(3);
-      pSVar4 = (String *)(*pcVar5)();
-      return pSVar4;
+      pSVar2 = (String *)(*pcVar5)();
+      return pSVar2;
     }
     mscorlib.dll::System::Text::StringBuilder::StringBuilder_AppendFormat_1
-              (this,StringLiteral__0__minute_1__,pOVar3,(Object *)pSVar4,(MethodInfo *)0x0);
+              (this,StringLiteral__0__minute_1__,pOVar1,(Object *)pSVar2,(MethodInfo *)0x0);
   }
-  pSVar4 = (String *)(*(code *)(this->klass->vtable).ToString.method)();
-  return pSVar4;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  pSVar2 = (String *)
+           (*(this->klass->vtable).ToString.methodPtr)(this,(this->klass->vtable).ToString.method);
+  return pSVar2;
 }
 
 
@@ -185,15 +214,121 @@ String * MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryTimelimit::
 
 {
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_No_timelimit);
+    FUN_?(&StringLiteral_No_timelimit);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((this->fields).timeLimit != 0) {
-    span = AccessoryTimelimit_GetTimeLeft(this,(MethodInfo *)0x0);
-    pSVar1 = AccessoryTimelimit_ToPrettyFormat(span,(MethodInfo *)0x0);
-    return pSVar1;
+  if ((this->fields).timeLimit == 0) {
+    return StringLiteral_No_timelimit;
   }
-  return StringLiteral_No_timelimit;
+  TVar1 = AccessoryTimelimit_GetTimeLeft(this,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__Text__StringBuilder);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__TimeSpan);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__0__hour_1__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__0__minute_1__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__0_minutes);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__0__day_1__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_s);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__System__TimeSpan);
+  }
+  if (TVar1._ticks == (TypeInfo__System__TimeSpan->static_fields->Zero)._ticks) {
+    return StringLiteral__0_minutes;
+  }
+  this_00 = (StringBuilder *)FUN_?(TypeInfo__System__Text__StringBuilder);
+  mscorlib.dll::System::Text::StringBuilder::StringBuilder__ctor(this_00,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__System__TimeSpan);
+  }
+  if (0 < (int)(TVar1._ticks / 864000000000)) {
+    if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__System__TimeSpan,TVar1._ticks % 864000000000);
+    }
+    aiStackX_8[0] = (int)(TVar1._ticks / 864000000000);
+    pOVar2 = (Object *)FUN_?(uRam_?,aiStackX_8);
+    pSVar3 = StringLiteral_s;
+    if ((uint)(TVar1._ticks / 864000000000) < 2) {
+      pSVar3 = (String *)**(undefined8 **)(lRam_? + 0xb8);
+    }
+    if (this_00 == (StringBuilder *)0x0) goto DAT_?;
+    mscorlib.dll::System::Text::StringBuilder::StringBuilder_AppendFormat_1
+              (this_00,StringLiteral__0__day_1__,pOVar2,(Object *)pSVar3,(MethodInfo *)0x0);
+  }
+  if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__System__TimeSpan);
+  }
+  if (0 < (int)(TVar1._ticks / 36000000000) + (int)((TVar1._ticks / 36000000000) / 0x18) * -0x18) {
+    if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__System__TimeSpan);
+    }
+    aiStackX_8[0] =
+         (int)(TVar1._ticks / 36000000000) + (int)((TVar1._ticks / 36000000000) / 0x18) * -0x18;
+    pOVar2 = (Object *)FUN_?(uRam_?,aiStackX_8);
+    pSVar3 = StringLiteral_s;
+    if ((uint)((int)(TVar1._ticks / 36000000000) +
+              (int)((TVar1._ticks / 36000000000) / 0x18) * -0x18) < 2) {
+      pSVar3 = (String *)**(undefined8 **)(lRam_? + 0xb8);
+    }
+    if (this_00 == (StringBuilder *)0x0) goto DAT_?;
+    mscorlib.dll::System::Text::StringBuilder::StringBuilder_AppendFormat_1
+              (this_00,StringLiteral__0__hour_1__,pOVar2,(Object *)pSVar3,(MethodInfo *)0x0);
+  }
+  if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__System__TimeSpan);
+  }
+  lVar4 = TVar1._ticks / 600000000;
+  lVar5 = SUB168(SEXT816(-0x7777777777777777) * SEXT816(lVar4),8) + lVar4;
+  if ((int)lVar4 + ((int)(lVar5 >> 5) - (int)(lVar5 >> 0x3f)) * -0x3c < 1) {
+    if (this_00 == (StringBuilder *)0x0) goto DAT_?;
+  }
+  else {
+    if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__System__TimeSpan);
+    }
+    lVar4 = TVar1._ticks / 600000000;
+    lVar5 = SUB168(SEXT816(-0x7777777777777777) * SEXT816(lVar4),8) + lVar4;
+    aiStackX_8[0] = (int)lVar4 + ((int)(lVar5 >> 5) - (int)(lVar5 >> 0x3f)) * -0x3c;
+    pOVar2 = (Object *)FUN_?(uRam_?,aiStackX_8);
+    lVar4 = TVar1._ticks / 600000000;
+    lVar5 = SUB168(SEXT816(-0x7777777777777777) * SEXT816(lVar4),8) + lVar4;
+    pSVar3 = StringLiteral_s;
+    if ((uint)((int)lVar4 + ((int)(lVar5 >> 5) - (int)(lVar5 >> 0x3f)) * -0x3c) < 2) {
+      pSVar3 = (String *)**(undefined8 **)(lRam_? + 0xb8);
+    }
+    if (this_00 == (StringBuilder *)0x0) {
+DAT_?:
+      FUN_?();
+      pcVar6 = (code *)swi(3);
+      pSVar3 = (String *)(*pcVar6)();
+      return pSVar3;
+    }
+    mscorlib.dll::System::Text::StringBuilder::StringBuilder_AppendFormat_1
+              (this_00,StringLiteral__0__minute_1__,pOVar2,(Object *)pSVar3,(MethodInfo *)0x0);
+  }
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  pSVar3 = (String *)
+           (*(this_00->klass->vtable).ToString.methodPtr)
+                     (this_00,(this_00->klass->vtable).ToString.method);
+  return pSVar3;
 }
 
 

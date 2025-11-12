@@ -6,24 +6,45 @@ void Assembly-CSharp.dll::AdvancedGhostVisualizaton+Die::AdvancedGhostVisualizat
                MethodInfo *method)
 
 {
-  if (ghost != (AdvancedGhostVisualizaton *)0x0) {
-    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+  if ((ghost != (AdvancedGhostVisualizaton *)0x0) &&
+     (obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                      ((Component *)ghost,(MethodInfo *)0x0), obj != (Transform *)0x0)) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar1 = (obj->fields)._._.m_CachedPtr;
+    if (pvVar1 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)(pvVar1);
+    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                         ((Component *)ghost,(MethodInfo *)0x0);
-    if (this_00 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                (this_00,(ghost->fields).baseScale,(MethodInfo *)0x0);
-      pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)ghost,(MethodInfo *)0x0);
-      if (pGVar1 != (GameObject *)0x0) {
-        if (pcRam_? == (code *)0x0) {
-          pcRam_? = (code *)func_?();
-        }
-        (*pcRam_?)();
-        return;
-      }
+    if (this_00 != (GameObject *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (this_00,0,(MethodInfo *)0x0);
+      return;
     }
   }
-  func_?();
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -37,27 +58,53 @@ void Assembly-CSharp.dll::AdvancedGhostVisualizaton+Die::AdvancedGhostVisualizat
                MethodInfo *method)
 
 {
-  if (ghostVisualizaton != (AdvancedGhostVisualizaton *)0x0) {
-    fVar1 = (ghostVisualizaton->fields).baseScale.z;
-    uVar2 = (ghostVisualizaton->fields).baseScale.x;
-    uVar3 = (ghostVisualizaton->fields).baseScale.y;
-    fVar4 = (this->fields)._.timeLeft / (this->fields)._.duration;
-    fVar5 = (float)uVar2 * fVar4;
-    fVar6 = (float)uVar3 * fVar4;
-    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)ghostVisualizaton,(MethodInfo *)0x0);
-    if (this_00 != (Transform *)0x0) {
-      value.y = fVar6;
-      value.x = fVar5;
-      value.z = fVar1 * fVar4;
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                (this_00,value,(MethodInfo *)0x0);
-      return;
-    }
+  if (ghostVisualizaton == (AdvancedGhostVisualizaton *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  fVar2 = (ghostVisualizaton->fields).baseScale.z;
+  uVar3 = (ghostVisualizaton->fields).baseScale.x;
+  uVar4 = (ghostVisualizaton->fields).baseScale.y;
+  fVar5 = (this->fields)._.timeLeft / (this->fields)._.duration;
+  obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                  ((Component *)ghostVisualizaton,(MethodInfo *)0x0);
+  fStack_6 = fVar5 * fVar2;
+  if (obj == (Transform *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  uStack_7 = CONCAT44(fVar5 * (float)uVar4,fVar5 * (float)uVar3);
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar8 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar8 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar9 = func_?(&UNK_?);
+    FUN_?(uVar9,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(pvVar8,&uStack_7);
   return;
 }
 
@@ -71,16 +118,16 @@ Vector3 * Assembly-CSharp.dll::AdvancedGhostVisualizaton+Die::
 
 {
   if (ghostVisualizaton != (AdvancedGhostVisualizaton *)0x0) {
-    uVar1 = (ghostVisualizaton->fields).baseScale.x;
-    uVar2 = (ghostVisualizaton->fields).baseScale.y;
-    fVar3 = (ghostVisualizaton->fields).baseScale.z;
-    fVar4 = (this->fields)._.timeLeft / (this->fields)._.duration;
-    __return_storage_ptr__->x = (float)uVar1 * fVar4;
-    __return_storage_ptr__->y = (float)uVar2 * fVar4;
-    __return_storage_ptr__->z = fVar3 * fVar4;
+    fVar1 = (this->fields)._.timeLeft / (this->fields)._.duration;
+    uVar2 = (ghostVisualizaton->fields).baseScale.x;
+    uVar3 = (ghostVisualizaton->fields).baseScale.y;
+    fVar4 = (ghostVisualizaton->fields).baseScale.z;
+    __return_storage_ptr__->x = fVar1 * (float)uVar2;
+    __return_storage_ptr__->y = fVar1 * (float)uVar3;
+    __return_storage_ptr__->z = fVar1 * fVar4;
     return __return_storage_ptr__;
   }
-  func_?();
+  FUN_?();
   pcVar5 = (code *)swi(3);
   pVVar6 = (Vector3 *)(*pcVar5)();
   return pVVar6;
@@ -94,8 +141,6 @@ void Assembly-CSharp.dll::AdvancedGhostVisualizaton+Die::AdvancedGhostVisualizat
                AdvancedGhostVisualizaton *ghostVisualizaton,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._.duration = duration;
   (this->fields)._.timeLeft = duration;
   return;

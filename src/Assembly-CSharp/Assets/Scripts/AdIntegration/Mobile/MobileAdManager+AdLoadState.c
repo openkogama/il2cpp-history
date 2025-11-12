@@ -6,24 +6,40 @@ bool Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManage
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&StringLiteral_Failed_to_get_an_ad_after_);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Failed_to_get_an_ad_after_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = &(this->fields).loadAttempts;
   if (-1 < (this->fields).loadAttempts) {
-    pSVar1 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)this_00,(MethodInfo *)0x0);
-    pSVar1 = mscorlib.dll::System::String::String_Concat_3
+    pSVar1 = mscorlib.dll::System::Int32::Int32_ToString
+                       ((Int32 *)&(this->fields).loadAttempts,(MethodInfo *)0x0);
+    pSVar1 = mscorlib.dll::System::String::String_Concat_4
                        (StringLiteral_Failed_to_get_an_ad_after_,pSVar1,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)pSVar1,(MethodInfo *)0x0);
     return 0;
   }
-  (this->fields).loadAttempts = *this_00 + 1;
+  piVar2 = &(this->fields).loadAttempts;
+  *piVar2 = *piVar2 + 1;
   return 1;
+}
+
+
+/* Void ResetAttempts() */
+
+void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdManager+AdLoadState::
+     MobileAdManager_AdLoadState_ResetAttempts(MobileAdManager_AdLoadState *this,MethodInfo *method)
+
+{
+  (this->fields).loadAttempts = 0;
+  return;
 }
 
 
@@ -34,23 +50,32 @@ String * Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::MobileAdMa
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&TypeInfo__System__Int32);
-    func_?(&StringLiteral_IsOk__0_u000A_loadingAd__1_u000A_loadAtt);
+    FUN_?(&StringLiteral_IsOk__0_u000A_loadingAd__1_u000A_loadAtt);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar1 = this;
-  this = (MobileAdManager_AdLoadState *)
-         (CONCAT13((byte)((uint)(this->fields).loadAttempts >> 0x1f),this._0_3_) ^ 0x1000000);
-  arg0 = (Object *)func_?(TypeInfo__System__Boolean,(int)&this + 3);
-  bStack_2 = (pMVar1->fields).loadingAd;
-  arg1 = (Object *)func_?(TypeInfo__System__Boolean,&bStack_2);
-  iStack_3 = (pMVar1->fields).loadAttempts;
-  arg2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_3);
-  pSVar4 = mscorlib.dll::System::String::String_Format_2
-                     (StringLiteral_IsOk__0_u000A_loadingAd__1_u000A_loadAtt,arg0,arg1,arg2,
-                      (MethodInfo *)0x0);
-  return pSVar4;
+  auStackX_8[0] =
+       CONCAT31(auStackX_8[0]._1_3_,(byte)((uint)(this->fields).loadAttempts >> 0x1f)) ^ 1;
+  arg0 = (Object *)FUN_?(uRam_?,auStackX_8);
+  auStackX_8[0] = CONCAT31(auStackX_8[0]._1_3_,(this->fields).loadingAd);
+  arg1 = (Object *)FUN_?(uRam_?,auStackX_8);
+  auStackX_8[0] = (this->fields).loadAttempts;
+  arg2 = (Object *)FUN_?(uRam_?,auStackX_8);
+  pSVar1 = StringLiteral_IsOk__0_u000A_loadingAd__1_u000A_loadAtt;
+  PStack_2._arg0 = (Object *)0x0;
+  PStack_2._arg1 = (Object *)0x0;
+  PStack_2._arg2 = (Object *)0x0;
+  PStack_2._args = (Object__Array *)0x0;
+  mscorlib.dll::System::ParamsArray::ParamsArray__ctor_2
+            (&PStack_2,arg0,arg1,arg2,(MethodInfo *)0x0);
+  PStack_3._arg0 = PStack_2._arg0;
+  PStack_3._arg1 = PStack_2._arg1;
+  PStack_3._arg2 = PStack_2._arg2;
+  PStack_3._args = PStack_2._args;
+  pSVar1 = mscorlib.dll::System::String::String_FormatHelper
+                     ((IFormatProvider *)0x0,pSVar1,&PStack_3,(MethodInfo *)0x0);
+  return pSVar1;
 }
 
 

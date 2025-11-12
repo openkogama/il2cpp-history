@@ -7,165 +7,158 @@ StarsParamsList_GetParamPerTime(StarsParamsList *this,float currentTime,MethodIn
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__DotParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__FindIndexPerTime_float_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__IList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__IList<float>);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__Add_float__Borodar__FarlandSkies__CloudyCrownPro__DotParams__StarsParam_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__get_Keys__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__get_Values__
-                   );
-    in_stack_1 = &TypeInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__StarsParam;
-    func_?();
-    func_?(&StringLiteral_Stars_params_list_is_empty);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__DotParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__FindIndexPerTime_float_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__IList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__IList<float>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__Add_float__Borodar__FarlandSkies__CloudyCrownPro__DotParams__StarsParam_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__get_Keys__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__get_Values__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__StarsParam);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Stars_params_list_is_empty);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pDVar2 = (this->fields)._.SortedParams;
-  if (pDVar2 != (DotParamsList_1_StarsParam_ *)0x0) {
-    if ((pDVar2->fields)._._size < 1) {
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Debug);
+  pDVar1 = (this->fields)._.SortedParams;
+  if (pDVar1 != (DotParamsList_1_StarsParam_ *)0x0) {
+    if ((pDVar1->fields)._._size < 1) {
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                 ((Object *)StringLiteral_Stars_params_list_is_empty,(MethodInfo *)0x0);
-      pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
+      this_00 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
       value = (Object *)
-              func_?(TypeInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__StarsParam
-                             );
-      pOVar4 = _UNK_?;
-      pMVar5 = _UNK_?;
-      pOVar6 = _UNK_?;
+              FUN_?(TypeInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__StarsParam);
+      pOVar2 = _UNK_?;
       value[1].monitor = _UNK_?;
-      value[2].klass = pOVar6;
-      value[2].monitor = pMVar5;
-      value[3].klass = pOVar4;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                (value,ExceptionArgument__Enum_obj,(MethodInfo *)in_stack_1);
-      if (pSVar3 == (SortedList_2_System_Single_System_Object_ *)0x0) goto code_?;
+      value[2].klass = pOVar2;
+      if (this_00 == (SortedList_2_System_Single_System_Object_ *)0x0) goto DAT_?;
       System.dll::System::Collections::Generic::SortedList`2[System::Single,System::Object]::
       SortedList_2_System_Single_System_Object__Add
-                (pSVar3,0.0,value,
+                (this_00,0.0,value,
                  MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__Add_float__Borodar__FarlandSkies__CloudyCrownPro__DotParams__StarsParam_
                 );
     }
-    pDVar2 = (this->fields)._.SortedParams;
-    if (pDVar2 != (DotParamsList_1_StarsParam_ *)0x0) {
-      iVar7 = DotParamsList`1[System::Object]::DotParamsList_1_System_Object__FindIndexPerTime
-                         ((DotParamsList_1_System_Object_ *)pDVar2,currentTime,
-                          MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__DotParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__FindIndexPerTime_float_
-                         );
-      pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
-      if (iVar7 < 1) {
-        if (pSVar3 == (SortedList_2_System_Single_System_Object_ *)0x0) goto code_?;
-        iVar7 = (pSVar3->fields)._size;
+    pMVar3 = 
+    MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__DotParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__FindIndexPerTime_float_
+    ;
+    pDVar1 = (this->fields)._.SortedParams;
+    if (pDVar1 != (DotParamsList_1_StarsParam_ *)0x0) {
+      list = (IList_1_System_Single_ *)
+             FUN_?(pDVar1,(MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__DotParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__FindIndexPerTime_float_
+                                   ->klass->rgctx_data[2].method)->klass->rgctx_data[0x1c].
+                                  rgctxDataDummy);
+      iVar4 = DotParamsList`1[System::Object]::DotParamsList_1_System_Object__BinarySearch
+                         (list,currentTime,pMVar3->klass->rgctx_data[3].method);
+      pDVar1 = (this->fields)._.SortedParams;
+      if (iVar4 < 1) {
+        if (pDVar1 == (DotParamsList_1_StarsParam_ *)0x0) goto DAT_?;
+        iVar4 = (pDVar1->fields)._._size;
       }
-      else if (pSVar3 == (SortedList_2_System_Single_System_Object_ *)0x0) goto code_?;
-      pIVar8 = System.dll::System::Collections::Generic::SortedList`2[System::Single,System::
-                Object]::SortedList_2_System_Single_System_Object__get_Keys
-                          (pSVar3,
-                           MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__get_Keys__
-                          );
-      if (pIVar8 != (IList_1_System_Single_ *)0x0) {
-        fVar9 = (float10)func_?(0,TypeInfo__System__Collections__Generic__IList<float>,
-                                          pIVar8,iVar7 + -1);
-        pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
-        fVar10 = (float)fVar9;
-        if (pSVar3 != (SortedList_2_System_Single_System_Object_ *)0x0) {
-          pIVar11 = System.dll::System::Collections::Generic::SortedList`2[System::Single,System::
-                    Object]::SortedList_2_System_Single_System_Object__get_Values
-                              (pSVar3,
-                               MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__get_Values__
-                              );
-          if (pIVar11 != (IList_1_System_Object_ *)0x0) {
-            iVar12 = func_?(0,
-                                     TypeInfo__System__Collections__Generic__IList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>
-                                     ,pIVar11,iVar7 + -1);
-            if (iVar12 != 0) {
-              fVar13 = *(float *)(iVar12 + 0xc);
-              fVar14 = *(float *)(iVar12 + 0x10);
-              fVar15 = *(float *)(iVar12 + 0x14);
-              fVar16 = *(float *)(iVar12 + 0x18);
-              pSVar3 = (SortedList_2_System_Single_System_Object_ *)(this->fields)._.SortedParams;
-              if (pSVar3 != (SortedList_2_System_Single_System_Object_ *)0x0) {
-                iVar12 = 0;
-                if (iVar7 < (pSVar3->fields)._size) {
-                  iVar12 = iVar7;
+      else if (pDVar1 == (DotParamsList_1_StarsParam_ *)0x0) goto DAT_?;
+      lVar5 = FUN_?(pDVar1,MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__get_Keys__
+                                    ->klass->rgctx_data[0x1c].rgctxDataDummy);
+      if (lVar5 != 0) {
+        fVar6 = (float)FUN_?(extraout_XMM0_Qa,
+                                      TypeInfo__System__Collections__Generic__IList<float>,lVar5,
+                                      iVar4 + -1);
+        pDVar1 = (this->fields)._.SortedParams;
+        if (pDVar1 != (DotParamsList_1_StarsParam_ *)0x0) {
+          lVar5 = FUN_?(pDVar1,MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__get_Values__
+                                        ->klass->rgctx_data[0x21].rgctxDataDummy);
+          if (lVar5 != 0) {
+            lVar5 = FUN_?(extraout_XMM0_Qa_00,
+                                   TypeInfo__System__Collections__Generic__IList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>
+                                   ,lVar5,iVar4 + -1);
+            if (lVar5 != 0) {
+              fVar7 = *(float *)(lVar5 + 0x18);
+              fVar8 = *(float *)(lVar5 + 0x1c);
+              fVar9 = *(float *)(lVar5 + 0x20);
+              fVar10 = *(float *)(lVar5 + 0x24);
+              pDVar1 = (this->fields)._.SortedParams;
+              if (pDVar1 != (DotParamsList_1_StarsParam_ *)0x0) {
+                iVar11 = 0;
+                if (iVar4 < (pDVar1->fields)._._size) {
+                  iVar11 = iVar4;
                 }
-                pIVar8 = System.dll::System::Collections::Generic::SortedList`2[System::
-                          Single,System::Object]::SortedList_2_System_Single_System_Object__get_Keys
-                                    (pSVar3,
-                                     MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__get_Keys__
-                                    );
-                if (pIVar8 != (IList_1_System_Single_ *)0x0) {
-                  fVar9 = (float10)func_?(0,
-                                                  TypeInfo__System__Collections__Generic__IList<float>
-                                                  ,pIVar8,iVar12);
-                  pSVar3 = (SortedList_2_System_Single_System_Object_ *)
-                           (this->fields)._.SortedParams;
-                  fVar17 = (float)fVar9;
-                  if (pSVar3 != (SortedList_2_System_Single_System_Object_ *)0x0) {
-                    pIVar11 = System.dll::System::Collections::Generic::SortedList`2[System::
-                              Single,System::Object]::
-                              SortedList_2_System_Single_System_Object__get_Values
-                                        (pSVar3,
-                                         MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__get_Values__
-                                        );
-                    if (pIVar11 != (IList_1_System_Object_ *)0x0) {
-                      iVar12 = func_?(0,
-                                               TypeInfo__System__Collections__Generic__IList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>
-                                               ,pIVar11,iVar12);
-                      if (iVar12 != 0) {
-                        fVar18 = *(float *)(iVar12 + 0xc);
-                        fVar19 = *(float *)(iVar12 + 0x10);
-                        fVar20 = *(float *)(iVar12 + 0x14);
-                        fVar21 = *(float *)(iVar12 + 0x18);
-                        if (currentTime <= fVar10) {
-                          fVar22 = currentTime + (_UNK_? - fVar10);
+                lVar5 = FUN_?((this->fields)._.SortedParams,
+                                       MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__get_Keys__
+                                       ->klass->rgctx_data[0x1c].rgctxDataDummy);
+                if (lVar5 != 0) {
+                  fVar12 = (float)FUN_?(extraout_XMM0_Qa_01,
+                                                TypeInfo__System__Collections__Generic__IList<float>
+                                                ,lVar5,iVar11);
+                  pDVar1 = (this->fields)._.SortedParams;
+                  if (pDVar1 != (DotParamsList_1_StarsParam_ *)0x0) {
+                    lVar5 = FUN_?(pDVar1,MethodInfo__System__Collections__Generic__SortedList<float,_Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__get_Values__
+                                                  ->klass->rgctx_data[0x21].rgctxDataDummy);
+                    if (lVar5 != 0) {
+                      lVar5 = FUN_?(extraout_XMM0_Qa_02,
+                                             TypeInfo__System__Collections__Generic__IList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>
+                                             ,lVar5,iVar11);
+                      if (lVar5 != 0) {
+                        fVar13 = *(float *)(lVar5 + 0x18);
+                        fVar14 = *(float *)(lVar5 + 0x1c);
+                        fVar15 = *(float *)(lVar5 + 0x20);
+                        fVar16 = *(float *)(lVar5 + 0x24);
+                        if (currentTime <= fVar6) {
+                          fVar17 = (_UNK_? - fVar6) + currentTime;
                         }
                         else {
-                          fVar22 = currentTime - fVar10;
+                          fVar17 = currentTime - fVar6;
                         }
-                        if (fVar17 <= fVar10) {
-                          fVar17 = fVar17 + _UNK_?;
+                        if (fVar12 <= fVar6) {
+                          fVar12 = fVar12 + _UNK_?;
                         }
-                        method_00 = 
-                        TypeInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__StarsParam;
-                        pSVar23 = (StarsParam *)func_?();
-                        pOVar4 = _UNK_?;
-                        pMVar5 = _UNK_?;
-                        pOVar6 = _UNK_?;
-                        (pSVar23->fields).TintColor.r = (float)_UNK_?;
-                        (pSVar23->fields).TintColor.g = (float)pOVar6;
-                        (pSVar23->fields).TintColor.b = (float)pMVar5;
-                        (pSVar23->fields).TintColor.a = (float)pOVar4;
-                        mscorlib.dll::System::ThrowHelper::
-                        ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                                  ((Object *)pSVar23,ExceptionArgument__Enum_obj,
-                                   (MethodInfo *)method_00);
-                        fVar22 = fVar22 / (fVar17 - fVar10);
-                        if (fVar22 < 0.0) {
-                          fVar22 = 0.0;
+                        pSVar18 = (StarsParam *)
+                                  FUN_?(
+                                               TypeInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__StarsParam
+                                               );
+                        fVar17 = fVar17 / (fVar12 - fVar6);
+                        if (fVar17 < 0.0) {
+                          fVar17 = 0.0;
                         }
-                        else if (_UNK_? < fVar22) {
-                          fVar22 = _UNK_?;
+                        else if (_UNK_? < fVar17) {
+                          fVar17 = _UNK_?;
                         }
-                        (pSVar23->fields).TintColor.r = (fVar18 - fVar13) * fVar22 + fVar13;
-                        (pSVar23->fields).TintColor.g = (fVar19 - fVar14) * fVar22 + fVar14;
-                        (pSVar23->fields).TintColor.b = (fVar20 - fVar15) * fVar22 + fVar15;
-                        (pSVar23->fields).TintColor.a = (fVar21 - fVar16) * fVar22 + fVar16;
-                        return pSVar23;
+                        (pSVar18->fields).TintColor.g = (fVar13 - fVar7) * fVar17 + fVar7;
+                        (pSVar18->fields).TintColor.b = (fVar14 - fVar8) * fVar17 + fVar8;
+                        (pSVar18->fields).TintColor.a = (fVar15 - fVar9) * fVar17 + fVar9;
+                        *(float *)&pSVar18->field_0x24 = (fVar16 - fVar10) * fVar17 + fVar10;
+                        return pSVar18;
                       }
                     }
                   }
@@ -177,11 +170,11 @@ StarsParamsList_GetParamPerTime(StarsParamsList *this,float currentTime,MethodIn
       }
     }
   }
-code_?:
-  func_?();
-  pcVar24 = (code *)swi(3);
-  pSVar23 = (StarsParam *)(*pcVar24)();
-  return pSVar23;
+DAT_?:
+  FUN_?();
+  pcVar19 = (code *)swi(3);
+  pSVar18 = (StarsParam *)(*pcVar19)();
+  return pSVar18;
 }
 
 
@@ -192,15 +185,34 @@ void Assembly-CSharp.dll::Borodar::FarlandSkies::CloudyCrownPro::DotParams::Star
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SortedParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__SortedParamsList__
-                   );
+    FUN_?(&
+                  MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SortedParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__SortedParamsList__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  SortedParamsList`1[System::Object]::SortedParamsList_1_System_Object___ctor
-            ((SortedParamsList_1_System_Object_ *)this,
-             MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SortedParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__SortedParamsList__
-            );
+  pvVar1 = MethodInfo__Borodar__FarlandSkies__CloudyCrownPro__DotParams__SortedParamsList<Borodar::FarlandSkies::CloudyCrownPro::DotParams::StarsParam>__SortedParamsList__
+           ->klass->rgctx_data[8].rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar1 + 0x135) & 1) == 0) {
+    pvVar1 = (void *)FUN_?(pvVar1);
+  }
+  pSVar2 = (StarsParam__Array *)FUN_?(pvVar1,0);
+  bVar3 = iRam_? != 0;
+  (this->fields)._.Params = pSVar2;
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)&this->fields >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar6 != uVar7);
+  }
   return;
 }
 

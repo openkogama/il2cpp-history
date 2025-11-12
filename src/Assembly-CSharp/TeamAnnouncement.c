@@ -7,51 +7,92 @@ void Assembly-CSharp.dll::TeamAnnouncement::TeamAnnouncement_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
-                   );
-    func_?(&TypeInfo__Styles);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Styles);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).fader;
-  if (this_00 != (NotificationFade *)0x0) {
-    NotificationFade::NotificationFade_Activate(this_00,(MethodInfo *)0x0);
-    Notification::Notification_Initialize((Notification *)this,data,(MethodInfo *)0x0);
-    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (pMVar1 != (MVNetworkGame *)0x0) {
-      pMVar2 = (pMVar1->fields).teamManager;
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if (pMVar1 != (MVNetworkGame *)0x0) {
-        pMVar3 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar1,(MethodInfo *)0x0);
-        if ((pMVar3 != (MVLocalPlayer *)0x0) && (pMVar2 != (MVTeamManager *)0x0)) {
-          key = MVTeamManager::MVTeamManager_GetTeamFromActorNr
-                          (pMVar2,(pMVar3->fields)._._ActorNr_k__BackingField,(MethodInfo *)0x0);
-          if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          pCVar4 = Styles::Styles_GetTeamColor((Color *)&stack0xffffffec,key,0,(MethodInfo *)0x0);
-          pTVar5 = (this->fields).teamColorText;
-          if (pTVar5 != (Text *)0x0) {
-            (*(code *)(pTVar5->klass->vtable).set_color.method)
-                      (pTVar5,pCVar4->r,pCVar4->g,pCVar4->b,pCVar4->a,
-                       (pTVar5->klass->vtable).get_raycastTarget.methodPtr);
-            pTVar5 = (this->fields).teamColorText;
-            pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            if (((pMVar1 != (MVNetworkGame *)0x0) &&
-                (pMVar2 = (pMVar1->fields).teamManager, pMVar2 != (MVTeamManager *)0x0)) &&
-               (this_01 = (pMVar2->fields).teamNames,
-               this_01 != (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)0x0)) {
-              pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       Int32Enum,System::Object]::
-                       Dictionary_2_System_Int32Enum_System_Object__get_Item
-                                 ((Dictionary_2_System_Int32Enum_System_Object_ *)this_01,key,
-                                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
-                                 );
-              if (pTVar5 != (Text *)0x0) {
-                (*(code *)(pTVar5->klass->vtable).set_text.method)
-                          (pTVar5,pOVar6,
-                           (pTVar5->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
-                return;
+  pNVar1 = (this->fields).fader;
+  if (pNVar1 != (NotificationFade *)0x0) {
+    this_00 = (pNVar1->fields).group;
+    (pNVar1->fields).playing = 1;
+    (pNVar1->fields).pauseAt = (pNVar1->fields).duration;
+    if (this_00 != (CanvasGroup *)0x0) {
+      UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                (this_00,0.0,(MethodInfo *)0x0);
+      cVar2 = cRam_?;
+      (pNVar1->fields).currentTime = 0.0;
+      (this->fields)._.timeSinceStart = 0.0;
+      if (cVar2 == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cVar2 = '\x01';
+        cRam_? = '\x01';
+      }
+      pMVar3 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if ((pMVar3 != (MVGameControllerBase *)0x0) &&
+         (pMVar4 = (pMVar3->fields).game, pMVar4 != (MVNetworkGame *)0x0)) {
+        pMVar5 = (pMVar4->fields).teamManager;
+        if (cVar2 == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pMVar3 = TypeInfo__MVGameControllerBase->static_fields->instance;
+        if (((pMVar3 != (MVGameControllerBase *)0x0) &&
+            (pMVar4 = (pMVar3->fields).game, pMVar4 != (MVNetworkGame *)0x0)) &&
+           (this_01 = (pMVar4->fields).playerContainer, this_01 != (MVPlayerContainer *)0x0)) {
+          pMVar6 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_01,(MethodInfo *)0x0);
+          if ((pMVar6 != (MVLocalPlayer *)0x0) && (pMVar5 != (MVTeamManager *)0x0)) {
+            key = MVTeamManager::MVTeamManager_GetTeamFromActorNr
+                            (pMVar5,(pMVar6->fields)._._ActorNr_k__BackingField,(MethodInfo *)0x0);
+            if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            pCVar7 = Styles::Styles_GetTeamColor(&CStack_8,key,0,(MethodInfo *)0x0);
+            pTVar9 = (this->fields).teamColorText;
+            if (pTVar9 != (Text *)0x0) {
+              CStack_8.r = pCVar7->r;
+              CStack_8.g = pCVar7->g;
+              CStack_8.b = pCVar7->b;
+              CStack_8.a = pCVar7->a;
+              (*(pTVar9->klass->vtable).set_color.methodPtr)
+                        (pTVar9,&CStack_8,(pTVar9->klass->vtable).set_color.method);
+              pTVar9 = (this->fields).teamColorText;
+              if (cRam_? == '\0') {
+                FUN_?(&TypeInfo__MVGameControllerBase);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              pMVar3 = TypeInfo__MVGameControllerBase->static_fields->instance;
+              if (((pMVar3 != (MVGameControllerBase *)0x0) &&
+                  (pMVar4 = (pMVar3->fields).game, pMVar4 != (MVNetworkGame *)0x0)) &&
+                 ((pMVar5 = (pMVar4->fields).teamManager, pMVar5 != (MVTeamManager *)0x0 &&
+                  (this_02 = (pMVar5->fields).teamNames,
+                  this_02 != (Dictionary_2_MV_WorldObject_MVTeam_System_String_ *)0x0)))) {
+                pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                         Int32Enum,System::Object]::
+                         Dictionary_2_System_Int32Enum_System_Object__get_Item
+                                   ((Dictionary_2_System_Int32Enum_System_Object_ *)this_02,key,
+                                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::MVTeam,_System::String>__get_Item_MV__WorldObject__MVTeam_
+                                   );
+                if (pTVar9 != (Text *)0x0) {
+                  UNRECOVERED_JUMPTABLE = (pTVar9->klass->vtable).set_text.methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+                  (*UNRECOVERED_JUMPTABLE)
+                            (pTVar9,pOVar10,(pTVar9->klass->vtable).set_text.method,
+                             UNRECOVERED_JUMPTABLE);
+                  return;
+                }
               }
             }
           }
@@ -59,9 +100,9 @@ void Assembly-CSharp.dll::TeamAnnouncement::TeamAnnouncement_Initialize
       }
     }
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 

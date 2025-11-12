@@ -6,30 +6,29 @@ void Assembly-CSharp.dll::RTG::GizmoThinCircle3DBorderController::
                (GizmoThinCircle3DBorderController *this,float zoomFactor,MethodInfo *method)
 
 {
-  pGVar1 = (this->fields)._._data;
-  if (pGVar1 != (GizmoCircle3DBorderControllerData *)0x0) {
-    this_00 = (PolygonShape2D *)(pGVar1->fields).BorderCircle;
-    this_01 = (pGVar1->fields).PlaneSlider;
-    if (this_01 != (GizmoPlaneSlider3D *)0x0) {
-      pGVar2 = GizmoPlaneSlider3D::GizmoPlaneSlider3D_get_Settings(this_01,(MethodInfo *)0x0);
-      if ((pGVar2 != (GizmoPlaneSlider3DSettings *)0x0) && (this_00 != (PolygonShape2D *)0x0)) {
-        PolygonShape2D::PolygonShape2D_set_WireEps
-                  (this_00,zoomFactor * (pGVar2->fields)._borderLineHoverEps,(MethodInfo *)0x0);
-        pGVar1 = (this->fields)._._data;
-        if ((pGVar1 != (GizmoCircle3DBorderControllerData *)0x0) &&
-           (this_02 = (Touch *)(pGVar1->fields).BorderCircle, this_02 != (Touch *)0x0)) {
-          value = UnityEngine.InputLegacyModule.dll::UnityEngine::Touch::
-                  Touch_get_maximumPossiblePressure(this_02,(MethodInfo *)0x0);
-          CircleShape3D::CircleShape3D_set_ExtrudeEps
-                    ((CircleShape3D *)this_02,value,(MethodInfo *)0x0);
-          return;
-        }
+  uVar1 = _UNK_?;
+  pGVar2 = (this->fields)._._data;
+  if ((pGVar2 != (GizmoCircle3DBorderControllerData *)0x0) &&
+     (pGVar3 = (pGVar2->fields).PlaneSlider, pGVar3 != (GizmoPlaneSlider3D *)0x0)) {
+    lVar4 = 200;
+    if ((pGVar3->fields)._sharedSettings == (GizmoPlaneSlider3DSettings *)0x0) {
+      lVar4 = 0xc0;
+    }
+    lVar4 = *(longlong *)((longlong)&pGVar3->klass + lVar4);
+    if ((lVar4 != 0) && (pCVar5 = (pGVar2->fields).BorderCircle, pCVar5 != (CircleShape3D *)0x0)) {
+      (pCVar5->fields)._epsilon._wireEps =
+           (float)((uint)(zoomFactor * *(float *)(lVar4 + 0x18)) & _UNK_?);
+      if ((pGVar2 != (GizmoCircle3DBorderControllerData *)0x0) && (pCVar5 != (CircleShape3D *)0x0))
+      {
+        (pCVar5->fields)._epsilon._extrudeEps =
+             (float)((uint)(pCVar5->fields)._epsilon._wireEps & uVar1);
+        return;
       }
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -55,16 +54,47 @@ void Assembly-CSharp.dll::RTG::GizmoThinCircle3DBorderController::
       if (((pGVar1 != (GizmoCircle3DBorderControllerData *)0x0) &&
           (pGVar3 = (pGVar1->fields).Border, pGVar3 != (GizmoCircle3DBorder *)0x0)) &&
          (pGVar2 = (pGVar1->fields).TargetHandle, pGVar2 != (GizmoHandle *)0x0)) {
-        GizmoHandle::GizmoHandle_Set3DShapeVisible
-                  (pGVar2,(pGVar1->fields).BorderCircleIndex,(pGVar3->fields)._isVisible,
-                   (MethodInfo *)0x0);
+        bVar4 = (pGVar3->fields)._isVisible;
+        uVar5 = (pGVar1->fields).BorderCircleIndex;
+        if (cRam_? == '\0') {
+          FUN_?();
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pLVar6 = (pGVar2->fields)._3DShapes;
+        if (pLVar6 != (List_1_RTG_GizmoHandleShape3D_ *)0x0) {
+          if ((uint)(pLVar6->fields)._size <= uVar5) {
+            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                      ((MethodInfo *)0x0);
+            pcVar7 = (code *)swi(3);
+            (*pcVar7)();
+            return;
+          }
+          pGVar8 = (pLVar6->fields)._items;
+          if (pGVar8 != (GizmoHandleShape3D__Array *)0x0) {
+            if ((uint)pGVar8->max_length <= uVar5) {
+              FUN_?();
+              pcVar7 = (code *)swi(3);
+              (*pcVar7)();
+              return;
+            }
+            if (pGVar8->vector[(int)uVar5] != (GizmoHandleShape3D *)0x0) {
+              (pGVar8->vector[(int)uVar5]->fields)._isVisible = bVar4;
+              return;
+            }
+          }
+        }
+        FUN_?();
+        pcVar7 = (code *)swi(3);
+        (*pcVar7)();
         return;
       }
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -77,29 +107,25 @@ void Assembly-CSharp.dll::RTG::GizmoThinCircle3DBorderController::
 
 {
   pGVar1 = (this->fields)._._data;
-  if ((pGVar1 != (GizmoCircle3DBorderControllerData *)0x0) &&
-     (pCVar2 = (pGVar1->fields).TargetCircle, pCVar2 != (CircleShape3D *)0x0)) {
-    this_00 = (pGVar1->fields).BorderCircle;
-    fVar3 = (pCVar2->fields)._rotation.y;
-    fVar4 = (pCVar2->fields)._rotation.z;
-    fVar5 = (pCVar2->fields)._rotation.w;
-    if (this_00 != (CircleShape3D *)0x0) {
-      (this_00->fields)._rotation.x = (pCVar2->fields)._rotation.x;
-      (this_00->fields)._rotation.y = fVar3;
-      ((Quaternion *)&(this_00->fields)._rotation.z)->x = fVar4;
-      (this_00->fields)._rotation.w = fVar5;
-      fVar3 = (pCVar2->fields)._center.z;
-      fVar4 = (pCVar2->fields)._center.y;
-      (this_00->fields)._center.x = (pCVar2->fields)._center.x;
-      (this_00->fields)._center.y = fVar4;
-      (this_00->fields)._center.z = fVar3;
-      TriangPrismShape3D::TriangPrismShape3D_set_Width
-                ((TriangPrismShape3D *)this_00,(pCVar2->fields)._radius,(MethodInfo *)0x0);
-      return;
-    }
+  if (((pGVar1 != (GizmoCircle3DBorderControllerData *)0x0) &&
+      (pCVar2 = (pGVar1->fields).TargetCircle, pCVar2 != (CircleShape3D *)0x0)) &&
+     (pCVar3 = (pGVar1->fields).BorderCircle, pCVar3 != (CircleShape3D *)0x0)) {
+    fVar4 = (pCVar2->fields)._rotation.y;
+    fVar5 = (pCVar2->fields)._rotation.z;
+    fVar6 = (pCVar2->fields)._rotation.w;
+    (pCVar3->fields)._rotation.x = (pCVar2->fields)._rotation.x;
+    (pCVar3->fields)._rotation.y = fVar4;
+    (pCVar3->fields)._rotation.z = fVar5;
+    (pCVar3->fields)._rotation.w = fVar6;
+    fVar4 = (pCVar2->fields)._center.z;
+    fVar5 = (pCVar2->fields)._center.y;
+    (pCVar3->fields)._center.x = (pCVar2->fields)._center.x;
+    (pCVar3->fields)._center.y = fVar5;
+    (pCVar3->fields)._center.z = fVar4;
+    (pCVar3->fields)._radius = (float)((uint)(pCVar2->fields)._radius & _UNK_?);
+    return;
   }
-  uVar6 = func_?(&stack0xfffffff0);
-  func_?(uVar6);
+  FUN_?();
   pcVar7 = (code *)swi(3);
   (*pcVar7)();
   return;

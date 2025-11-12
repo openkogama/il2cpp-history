@@ -6,18 +6,44 @@ void Assembly-CSharp.dll::AdvancedGhostVisualizaton+Respawn::AdvancedGhostVisual
                MethodInfo *method)
 
 {
-  if (ghost != (AdvancedGhostVisualizaton *)0x0) {
-    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)ghost,(MethodInfo *)0x0);
-    if (this_00 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                (this_00,(ghost->fields).baseScale,(MethodInfo *)0x0);
-      return;
-    }
+  if ((ghost == (AdvancedGhostVisualizaton *)0x0) ||
+     (obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                      ((Component *)ghost,(MethodInfo *)0x0), obj == (Transform *)0x0)) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uStack_2._0_4_ = (ghost->fields).baseScale.x;
+  uStack_2._4_4_ = (ghost->fields).baseScale.y;
+  fStack_3 = (ghost->fields).baseScale.z;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar4 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar4 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar5 = func_?(&UNK_?);
+    FUN_?(uVar5,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(pvVar4,&uStack_2);
   return;
 }
 
@@ -30,27 +56,53 @@ void Assembly-CSharp.dll::AdvancedGhostVisualizaton+Respawn::
                ,MethodInfo *method)
 
 {
-  if (ghostVisualizaton != (AdvancedGhostVisualizaton *)0x0) {
-    fVar1 = (ghostVisualizaton->fields).baseScale.z;
-    uVar2 = (ghostVisualizaton->fields).baseScale.x;
-    uVar3 = (ghostVisualizaton->fields).baseScale.y;
-    fVar4 = ((this->fields)._.duration - (this->fields)._.timeLeft) / (this->fields)._.duration;
-    fVar5 = (float)uVar2 * fVar4;
-    fVar6 = (float)uVar3 * fVar4;
-    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)ghostVisualizaton,(MethodInfo *)0x0);
-    if (this_00 != (Transform *)0x0) {
-      value.y = fVar6;
-      value.x = fVar5;
-      value.z = fVar1 * fVar4;
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                (this_00,value,(MethodInfo *)0x0);
-      return;
-    }
+  if (ghostVisualizaton == (AdvancedGhostVisualizaton *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  fVar2 = (ghostVisualizaton->fields).baseScale.z;
+  uVar3 = (ghostVisualizaton->fields).baseScale.x;
+  uVar4 = (ghostVisualizaton->fields).baseScale.y;
+  fVar5 = ((this->fields)._.duration - (this->fields)._.timeLeft) / (this->fields)._.duration;
+  obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                  ((Component *)ghostVisualizaton,(MethodInfo *)0x0);
+  fStack_6 = fVar5 * fVar2;
+  if (obj == (Transform *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  uStack_7 = CONCAT44(fVar5 * (float)uVar4,fVar5 * (float)uVar3);
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar8 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar8 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar9 = func_?(&UNK_?);
+    FUN_?(uVar9,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(pvVar8,&uStack_7);
   return;
 }
 
@@ -66,14 +118,14 @@ Vector3 * Assembly-CSharp.dll::AdvancedGhostVisualizaton+Respawn::
   if (ghostVisualizaton != (AdvancedGhostVisualizaton *)0x0) {
     uVar1 = (ghostVisualizaton->fields).baseScale.x;
     uVar2 = (ghostVisualizaton->fields).baseScale.y;
-    fVar3 = (ghostVisualizaton->fields).baseScale.z;
-    fVar4 = ((this->fields)._.duration - (this->fields)._.timeLeft) / (this->fields)._.duration;
-    __return_storage_ptr__->x = (float)uVar1 * fVar4;
-    __return_storage_ptr__->y = (float)uVar2 * fVar4;
+    fVar3 = ((this->fields)._.duration - (this->fields)._.timeLeft) / (this->fields)._.duration;
+    fVar4 = (ghostVisualizaton->fields).baseScale.z;
+    __return_storage_ptr__->x = fVar3 * (float)uVar1;
+    __return_storage_ptr__->y = fVar3 * (float)uVar2;
     __return_storage_ptr__->z = fVar3 * fVar4;
     return __return_storage_ptr__;
   }
-  func_?();
+  FUN_?();
   pcVar5 = (code *)swi(3);
   pVVar6 = (Vector3 *)(*pcVar5)();
   return pVVar6;
@@ -87,31 +139,59 @@ void Assembly-CSharp.dll::AdvancedGhostVisualizaton+Respawn::AdvancedGhostVisual
                AdvancedGhostVisualizaton *ghostVisualizaton,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   (this->fields)._.duration = duration;
   (this->fields)._.timeLeft = duration;
-  if (ghostVisualizaton != (AdvancedGhostVisualizaton *)0x0) {
-    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)ghostVisualizaton,(MethodInfo *)0x0);
+  if (ghostVisualizaton == (AdvancedGhostVisualizaton *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                  ((Component *)ghostVisualizaton,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (obj != (Transform *)0x0) {
     if (cRam_? == '\0') {
-      func_?();
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    if (this_00 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                (this_00,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,(MethodInfo *)0x0
-                );
-      this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                          ((Component *)ghostVisualizaton,(MethodInfo *)0x0);
-      if (this_01 != (GameObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (this_01,1,(MethodInfo *)0x0);
-        return;
-      }
+    pvVar2 = (obj->fields)._._.m_CachedPtr;
+    if (pvVar2 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)(pvVar2);
+    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        ((Component *)ghostVisualizaton,(MethodInfo *)0x0);
+    if (this_00 != (GameObject *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                (this_00,1,(MethodInfo *)0x0);
+      return;
     }
   }
-  func_?();
+  FUN_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;

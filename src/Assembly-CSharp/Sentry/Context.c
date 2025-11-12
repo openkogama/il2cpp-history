@@ -5,213 +5,620 @@ void Assembly-CSharp.dll::Sentry::Context::Context__ctor(Context *this,MethodInf
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Sentry__App);
-    func_?(&TypeInfo__UnityEngine__BatteryStatus);
-    func_?(&TypeInfo__System__DateTimeOffset);
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&TypeInfo__UnityEngine__DeviceType);
-    func_?(&TypeInfo__Sentry__Device);
-    func_?();
-    func_?(&TypeInfo__UnityEngine__Rendering__GraphicsDeviceType);
-    func_?(&TypeInfo__UnityEngine__NPOTSupport);
-    func_?(&TypeInfo__Sentry__OperatingSystem);
-    func_?(&StringLiteral_System_Product_Name__System_manu);
-    func_?(&StringLiteral_debug);
-    func_?(&StringLiteral_landscape);
-    func_?(&StringLiteral_n_a);
-    func_?(&StringLiteral_portrait);
-    func_?(&StringLiteral_yyyy_MM_ddTHH__mm__ssZ);
-    func_?(&StringLiteral_release);
+    FUN_?(&TypeInfo__Sentry__App);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__BatteryStatus);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__DateTimeOffset);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__DeviceType);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Sentry__Device);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Sentry__Gpu);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Rendering__GraphicsDeviceType);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__NPOTSupport);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Sentry__OperatingSystem);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_System_Product_Name__System_manu);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_landscape);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_n_a);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_portrait);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_yyyy_MM_ddTHH__mm__ssZ);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_release);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  method_00 = TypeInfo__Sentry__OperatingSystem;
-  value = (OperatingSystem *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  pSVar1 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetOperatingSystem
+  pOVar1 = (OperatingSystem *)FUN_?();
+  pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetOperatingSystem
                       ((MethodInfo *)0x0);
-  if (value == (OperatingSystem *)0x0) goto code_?;
-  (value->fields).name = pSVar1;
-  func_?();
-  (this->fields).os = value;
-  func_?(&(this->fields).os);
-  method_01 = TypeInfo__Sentry__Device;
-  pDVar2 = (Device *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)pDVar2,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-  (this->fields).device = pDVar2;
-  func_?(&(this->fields).device,pDVar2);
-  DVar3 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_deviceOrientation
-                     ((MethodInfo *)0x0);
-  switch(DVar3) {
-  case DeviceOrientation__Enum_Portrait:
-  case DeviceOrientation__Enum_PortraitUpsideDown:
-    pDVar2 = (this->fields).device;
-    if (pDVar2 == (Device *)0x0) goto code_?;
-    (pDVar2->fields).orientation = StringLiteral_portrait;
+  iVar3 = iRam_?;
+  if (pOVar1 == (OperatingSystem *)0x0) goto code_?;
+  (pOVar1->fields).name = pSVar2;
+  if (iVar3 != 0) {
+    uVar4 = (uint)((ulonglong)&pOVar1->fields >> 0xc);
+    uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+    do {
+      uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+      puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+      LOCK();
+      bVar8 = uVar6 == *puVar7;
+      if (bVar8) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+      iVar3 = iRam_?;
+    } while (!bVar8);
+  }
+  (this->fields).os = pOVar1;
+  if (iVar3 != 0) {
+    uVar4 = (uint)((ulonglong)&(this->fields).os >> 0xc);
+    uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+    do {
+      uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+      puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+      LOCK();
+      bVar8 = uVar6 == *puVar7;
+      if (bVar8) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar8);
+  }
+  pDVar9 = (Device *)FUN_?();
+  bVar8 = iRam_? != 0;
+  (this->fields).device = pDVar9;
+  if (bVar8) {
+    uVar4 = (uint)((ulonglong)&(this->fields).device >> 0xc);
+    uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+    do {
+      uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+      puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+      LOCK();
+      bVar8 = uVar6 == *puVar7;
+      if (bVar8) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar8);
+  }
+  pcVar10 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar10 = (code *)FUN_?(), pcVar10 == (code *)0x0)) {
+    uVar11 = func_?(&UNK_?);
+    FUN_?(uVar11,0);
+    pcVar10 = (code *)swi(3);
+    (*pcVar10)();
+    return;
+  }
+  pcRam_? = pcVar10;
+  uVar12 = (*pcRam_?)();
+  switch(uVar12) {
+  case 1:
+  case 2:
+    pDVar9 = (this->fields).device;
+    pSVar2 = StringLiteral_portrait;
     break;
-  case DeviceOrientation__Enum_LandscapeLeft:
-  case DeviceOrientation__Enum_LandscapeRight:
-    pDVar2 = (this->fields).device;
-    if (pDVar2 == (Device *)0x0) goto code_?;
-    (pDVar2->fields).orientation = StringLiteral_landscape;
+  case 3:
+  case 4:
+    pDVar9 = (this->fields).device;
+    pSVar2 = StringLiteral_landscape;
     break;
   default:
     goto code_?;
   }
-  func_?();
-code_?:
-  pGVar4 = (Gpu *)UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetDeviceModel
-                             ((MethodInfo *)0x0);
-  bVar5 = mscorlib.dll::System::String::String_op_Inequality
-                    ((String *)pGVar4,StringLiteral_n_a,(MethodInfo *)0x0);
-  if ((bVar5 != 0) &&
-     (bVar5 = mscorlib.dll::System::String::String_op_Inequality
-                        ((String *)pGVar4,StringLiteral_System_Product_Name__System_manu,
-                         (MethodInfo *)0x0), bVar5 != 0)) {
-    pDVar2 = (this->fields).device;
-    if (pDVar2 == (Device *)0x0) goto code_?;
-    (pDVar2->fields).model = (String *)pGVar4;
-    EStack_6.klass = (Enum__Class *)&(pDVar2->fields).model;
-    EStack_6.monitor = (MonitorData *)pGVar4;
+  if (pDVar9 != (Device *)0x0) {
+    (pDVar9->fields).orientation = pSVar2;
     func_?();
-  }
-  pDVar2 = (this->fields).device;
-  fStack_7 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetBatteryLevel
-                       ((MethodInfo *)0x0);
-  if (pDVar2 != (Device *)0x0) {
-    (pDVar2->fields).battery_level = fStack_7 * _UNK_?;
-    pDVar2 = (this->fields).device;
-    DStack_8 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetBatteryStatus
-                         ((MethodInfo *)0x0);
-    EStack_9.klass = (Enum__Class *)TypeInfo__UnityEngine__BatteryStatus;
-    EStack_9.monitor = (MonitorData *)0xffffffff;
-    pSVar1 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_9,(MethodInfo *)0x0);
-    if (pDVar2 != (Device *)0x0) {
-      (pDVar2->fields).battery_status = pSVar1;
-      EStack_6.monitor = (MonitorData *)&(pDVar2->fields).battery_status;
-      EStack_6.klass = (Enum__Class *)&UNK_?;
-      func_?();
-      iVar10 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetPhysicalMemoryMB
-                         ((MethodInfo *)0x0);
-      if (iVar10 != 0) {
-        pDVar2 = (this->fields).device;
-        iVar10 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetPhysicalMemoryMB
-                           ((MethodInfo *)0x0);
-        if (pDVar2 == (Device *)0x0) goto code_?;
-        (pDVar2->fields).memory_size = (longlong)iVar10 * 0x100000;
+code_?:
+    pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetDeviceModel
+                        ((MethodInfo *)0x0);
+    if ((((pSVar2 != StringLiteral_n_a) &&
+         ((((pSVar2 == (String *)0x0 || (StringLiteral_n_a == (String *)0x0)) ||
+           ((pSVar2->fields)._stringLength != (StringLiteral_n_a->fields)._stringLength)) ||
+          (bVar13 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                             ((uint8_t *)&(pSVar2->fields)._firstChar,
+                              (uint8_t *)&(StringLiteral_n_a->fields)._firstChar,
+                              (longlong)(pSVar2->fields)._stringLength * 2,(MethodInfo *)0x0),
+          bVar13 == 0)))) && (pSVar2 != StringLiteral_System_Product_Name__System_manu)) &&
+       (((pSVar2 == (String *)0x0 ||
+         (StringLiteral_System_Product_Name__System_manu == (String *)0x0)) ||
+        (((pSVar2->fields)._stringLength !=
+          (StringLiteral_System_Product_Name__System_manu->fields)._stringLength ||
+         (bVar13 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                            ((uint8_t *)&(pSVar2->fields)._firstChar,
+                             (uint8_t *)
+                             &(StringLiteral_System_Product_Name__System_manu->fields)._firstChar,
+                             (longlong)(pSVar2->fields)._stringLength * 2,(MethodInfo *)0x0),
+         bVar13 == 0)))))) {
+      pDVar9 = (this->fields).device;
+      if (pDVar9 == (Device *)0x0) goto code_?;
+      bVar8 = iRam_? != 0;
+      (pDVar9->fields).model = pSVar2;
+      if (bVar8) {
+        uVar4 = (uint)((ulonglong)&(pDVar9->fields).model >> 0xc);
+        uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+        do {
+          uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+          puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+          LOCK();
+          bVar8 = uVar6 == *puVar7;
+          if (bVar8) {
+            *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar8);
       }
-      pDVar2 = (this->fields).device;
-      DStack_8 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetDeviceType
-                           ((MethodInfo *)0x0);
-      EStack_9.klass = (Enum__Class *)TypeInfo__UnityEngine__DeviceType;
-      EStack_9.monitor = (MonitorData *)0xffffffff;
-      pSVar1 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_9,(MethodInfo *)0x0);
-      if (pDVar2 != (Device *)0x0) {
-        (pDVar2->fields).device_type = pSVar1;
-        func_?();
-        pDVar2 = (this->fields).device;
-        method_02 = (MethodInfo *)0x0;
-        pSVar1 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetProcessorType
-                            ((MethodInfo *)0x0);
-        if (pDVar2 != (Device *)0x0) {
-          (pDVar2->fields).cpu_description = pSVar1;
-          func_?();
-          pDVar2 = (this->fields).device;
-          if (pDVar2 != (Device *)0x0) {
-            (pDVar2->fields).simulator = 0;
-            pGVar4 = (Gpu *)func_?();
-            mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                      ((Object *)pGVar4,ExceptionArgument__Enum_obj,method_02);
-            iVar10 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                     SystemInfo_GetGraphicsDeviceID((MethodInfo *)0x0);
-            if (pGVar4 != (Gpu *)0x0) {
-              (pGVar4->fields).id = iVar10;
-              pSVar1 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                        SystemInfo_GetGraphicsDeviceName((MethodInfo *)0x0);
-              (pGVar4->fields).name = pSVar1;
-              func_?();
-              iVar10 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                       SystemInfo_GetGraphicsDeviceVendorID((MethodInfo *)0x0);
-              (pGVar4->fields).vendor_id = iVar10;
-              pSVar1 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                        SystemInfo_GetGraphicsDeviceVendor((MethodInfo *)0x0);
-              (pGVar4->fields).vendor_name = pSVar1;
-              func_?(&(pGVar4->fields).vendor_name);
-              iVar10 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                       SystemInfo_GetGraphicsMemorySize((MethodInfo *)0x0);
-              (pGVar4->fields).memory_size = iVar10;
-              bVar5 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                      SystemInfo_GetGraphicsMultiThreaded((MethodInfo *)0x0);
-              (pGVar4->fields).multi_threaded_rendering = bVar5;
-              UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetNPOTSupport
-                        ((MethodInfo *)0x0);
-              pSVar1 = mscorlib.dll::System::Enum::Enum_ToString
-                                  ((Enum *)&stack0xffffffe0,(MethodInfo *)0x0);
-              (pGVar4->fields).npot_support = pSVar1;
-              func_?(&(pGVar4->fields).npot_support,pSVar1);
-              pSVar1 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
-                        SystemInfo_GetGraphicsDeviceVersion((MethodInfo *)0x0);
-              (pGVar4->fields).version = pSVar1;
-              func_?(&(pGVar4->fields).version,pSVar1);
-              UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetGraphicsDeviceType
-                        ((MethodInfo *)0x0);
-              EStack_6.klass = (Enum__Class *)TypeInfo__UnityEngine__Rendering__GraphicsDeviceType;
-              EStack_6.monitor = (MonitorData *)&UNK_?;
-              pSVar1 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_6,(MethodInfo *)0x0);
-              (pGVar4->fields).api_type = pSVar1;
-              EStack_6.monitor = (MonitorData *)&UNK_?;
-              func_?();
-              EStack_6.klass = (Enum__Class *)&(this->fields).gpu;
-              (this->fields).gpu = pGVar4;
-              EStack_6.monitor = (MonitorData *)pGVar4;
-              func_?();
-              method_03 = TypeInfo__Sentry__App;
-              pAVar11 = (App *)func_?();
-              mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                        ((Object *)pAVar11,ExceptionArgument__Enum_obj,(MethodInfo *)method_03);
-              (this->fields).app = pAVar11;
-              func_?();
-              pAVar11 = (this->fields).app;
-              if ((TypeInfo__System__DateTimeOffset->_1).cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__System__DateTimeOffset);
+    }
+    pDVar9 = (this->fields).device;
+    pcVar10 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar10 = (code *)FUN_?(&UNK_?), pcVar10 == (code *)0x0)) {
+      uVar11 = func_?(&UNK_?);
+      FUN_?(uVar11,0);
+      pcVar10 = (code *)swi(3);
+      (*pcVar10)();
+      return;
+    }
+    pcRam_? = pcVar10;
+    fVar14 = (float)(*pcRam_?)();
+    pcVar10 = pcRam_?;
+    if (pDVar9 != (Device *)0x0) {
+      (pDVar9->fields).battery_level = fVar14 * _UNK_?;
+      pDVar9 = (this->fields).device;
+      pcVar15 = pcRam_?;
+      if ((pcVar10 == (code *)0x0) &&
+         (pcVar10 = (code *)FUN_?(&UNK_?), pcVar15 = pcVar10, pcVar10 == (code *)0x0)
+         ) {
+        uVar11 = func_?(&UNK_?);
+        FUN_?(uVar11,0);
+        pcVar10 = (code *)swi(3);
+        (*pcVar10)();
+        return;
+      }
+      pcRam_? = pcVar15;
+      uStack_16 = (*pcVar10)();
+      auStack_17._0_8_ = TypeInfo__UnityEngine__BatteryStatus;
+      auStack_17._8_8_ = (MonitorData *)0xffffffffffffffff;
+      pSVar2 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)auStack_17,(MethodInfo *)0x0);
+      if (pDVar9 != (Device *)0x0) {
+        bVar8 = iRam_? != 0;
+        (pDVar9->fields).battery_status = pSVar2;
+        if (bVar8) {
+          uVar4 = (uint)((ulonglong)&(pDVar9->fields).battery_status >> 0xc);
+          uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+          do {
+            uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+            puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+            LOCK();
+            bVar8 = uVar6 == *puVar7;
+            if (bVar8) {
+              *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar8);
+        }
+        pcVar10 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar10 = (code *)FUN_?(&UNK_?), pcVar10 == (code *)0x0)) {
+          uVar11 = func_?(&UNK_?);
+          FUN_?(uVar11,0);
+          pcVar10 = (code *)swi(3);
+          (*pcVar10)();
+          return;
+        }
+        pcRam_? = pcVar10;
+        iVar3 = (*pcRam_?)();
+        if (iVar3 != 0) {
+          pDVar9 = (this->fields).device;
+          pcVar10 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar10 = (code *)FUN_?(&UNK_?), pcVar10 == (code *)0x0)) {
+            uVar11 = func_?(&UNK_?);
+            FUN_?(uVar11,0);
+            pcVar10 = (code *)swi(3);
+            (*pcVar10)();
+            return;
+          }
+          pcRam_? = pcVar10;
+          iVar3 = (*pcRam_?)();
+          if (pDVar9 == (Device *)0x0) goto code_?;
+          (pDVar9->fields).memory_size = (longlong)iVar3 << 0x14;
+        }
+        pDVar9 = (this->fields).device;
+        pcVar10 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar10 = (code *)FUN_?(&UNK_?), pcVar10 == (code *)0x0)) {
+          uVar11 = func_?(&UNK_?);
+          FUN_?(uVar11,0);
+          pcVar10 = (code *)swi(3);
+          (*pcVar10)();
+          return;
+        }
+        pcRam_? = pcVar10;
+        uStack_16 = (*pcRam_?)();
+        auStack_17._0_8_ = TypeInfo__UnityEngine__DeviceType;
+        auStack_17._8_8_ = (MonitorData *)0xffffffffffffffff;
+        pSVar2 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)auStack_17,(MethodInfo *)0x0);
+        if (pDVar9 != (Device *)0x0) {
+          bVar8 = iRam_? != 0;
+          (pDVar9->fields).device_type = pSVar2;
+          if (bVar8) {
+            uVar4 = (uint)((ulonglong)&(pDVar9->fields).device_type >> 0xc);
+            uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+            do {
+              uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+              puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+              LOCK();
+              bVar8 = uVar6 == *puVar7;
+              if (bVar8) {
+                *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
               }
-              mscorlib.dll::System::DateTimeOffset::DateTimeOffset_get_UtcNow
-                        ((DateTimeOffset *)&stack0xffffffb4,(MethodInfo *)0x0);
-              fStack_7 = UnityEngine.CoreModule.dll::UnityEngine::Time::
-                         Time_1_get_realtimeSinceStartup((MethodInfo *)0x0);
-              mscorlib.dll::System::DateTimeOffset::DateTimeOffset_AddSeconds
-                        ((DateTimeOffset *)&stack0xffffffb4,(DateTimeOffset *)&stack0xffffffc4,
-                         (double)(float)((uint)fStack_7 ^
-                                        __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field
-                                        ),(MethodInfo *)0x0);
-              pSVar1 = mscorlib.dll::System::DateTimeOffset::DateTimeOffset_ToString_1
-                                  ((DateTimeOffset *)&stack0xffffffc4,
-                                   StringLiteral_yyyy_MM_ddTHH__mm__ssZ,(MethodInfo *)0x0);
-              if (pAVar11 != (App *)0x0) {
-                (pAVar11->fields).app_start_time = pSVar1;
-                pCVar12 = (Context *)&(pAVar11->fields).app_start_time;
-                func_?();
-                if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?(TypeInfo__UnityEngine__Debug);
+              UNLOCK();
+            } while (!bVar8);
+          }
+          pDVar9 = (this->fields).device;
+          pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetProcessorType
+                              ((MethodInfo *)0x0);
+          if (pDVar9 != (Device *)0x0) {
+            bVar8 = iRam_? != 0;
+            (pDVar9->fields).cpu_description = pSVar2;
+            if (bVar8) {
+              uVar4 = (uint)((ulonglong)&(pDVar9->fields).cpu_description >> 0xc);
+              uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+              do {
+                uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                LOCK();
+                bVar8 = uVar6 == *puVar7;
+                if (bVar8) {
+                  *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
                 }
-                bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_get_isDebugBuild
-                                  ((MethodInfo *)0x0);
-                pAVar11 = (this->fields).app;
-                this = pCVar12;
-                if (bVar5 == 0) {
-                  if (pAVar11 != (App *)0x0) {
-                    (pAVar11->fields).build_type = StringLiteral_release;
-                    func_?();
+                UNLOCK();
+              } while (!bVar8);
+            }
+            pDVar9 = (this->fields).device;
+            if (pDVar9 != (Device *)0x0) {
+              (pDVar9->fields).simulator = 0;
+              pGVar18 = (Gpu *)FUN_?();
+              pcVar10 = pcRam_?;
+              if ((pcRam_? == (code *)0x0) &&
+                 (pcVar10 = (code *)FUN_?(), pcVar10 == (code *)0x0)) {
+                uVar11 = func_?(&UNK_?);
+                FUN_?(uVar11,0);
+                pcVar10 = (code *)swi(3);
+                (*pcVar10)();
+                return;
+              }
+              pcRam_? = pcVar10;
+              iVar19 = (*pcRam_?)();
+              if (pGVar18 != (Gpu *)0x0) {
+                (pGVar18->fields).id = iVar19;
+                pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
+                          SystemInfo_GetGraphicsDeviceName((MethodInfo *)0x0);
+                bVar8 = iRam_? != 0;
+                (pGVar18->fields).name = pSVar2;
+                if (bVar8) {
+                  uVar4 = (uint)((ulonglong)&pGVar18->fields >> 0xc);
+                  uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                  do {
+                    uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                    puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                    LOCK();
+                    bVar8 = uVar6 == *puVar7;
+                    if (bVar8) {
+                      *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                    }
+                    UNLOCK();
+                  } while (!bVar8);
+                }
+                pcVar10 = pcRam_?;
+                if ((pcRam_? == (code *)0x0) &&
+                   (pcVar10 = (code *)FUN_?(), pcVar10 == (code *)0x0)) {
+                  uVar11 = func_?(&UNK_?);
+                  FUN_?(uVar11,0);
+                  pcVar10 = (code *)swi(3);
+                  (*pcVar10)();
+                  return;
+                }
+                pcRam_? = pcVar10;
+                iVar19 = (*pcRam_?)();
+                (pGVar18->fields).vendor_id = iVar19;
+                pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
+                          SystemInfo_GetGraphicsDeviceVendor((MethodInfo *)0x0);
+                bVar8 = iRam_? != 0;
+                (pGVar18->fields).vendor_name = pSVar2;
+                if (bVar8) {
+                  uVar4 = (uint)((ulonglong)&(pGVar18->fields).vendor_name >> 0xc);
+                  uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                  do {
+                    uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                    puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                    LOCK();
+                    bVar8 = uVar6 == *puVar7;
+                    if (bVar8) {
+                      *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                    }
+                    UNLOCK();
+                  } while (!bVar8);
+                }
+                pcVar10 = pcRam_?;
+                if ((pcRam_? == (code *)0x0) &&
+                   (pcVar10 = (code *)FUN_?(&UNK_?), pcVar10 == (code *)0x0)) {
+                  uVar11 = func_?(&UNK_?);
+                  FUN_?(uVar11,0);
+                  pcVar10 = (code *)swi(3);
+                  (*pcVar10)();
+                  return;
+                }
+                pcRam_? = pcVar10;
+                iVar19 = (*pcRam_?)();
+                (pGVar18->fields).memory_size = iVar19;
+                pcVar10 = pcRam_?;
+                if ((pcRam_? == (code *)0x0) &&
+                   (pcVar10 = (code *)FUN_?(&UNK_?), pcVar10 == (code *)0x0)) {
+                  uVar11 = func_?(&UNK_?);
+                  FUN_?(uVar11,0);
+                  pcVar10 = (code *)swi(3);
+                  (*pcVar10)();
+                  return;
+                }
+                pcRam_? = pcVar10;
+                bVar13 = (*pcRam_?)();
+                (pGVar18->fields).multi_threaded_rendering = bVar13;
+                pcVar10 = pcRam_?;
+                if ((pcRam_? == (code *)0x0) &&
+                   (pcVar10 = (code *)FUN_?(&UNK_?), pcVar10 == (code *)0x0)) {
+                  uVar11 = func_?(&UNK_?);
+                  FUN_?(uVar11,0);
+                  pcVar10 = (code *)swi(3);
+                  (*pcVar10)();
+                  return;
+                }
+                pcRam_? = pcVar10;
+                uStack_16 = (*pcRam_?)();
+                auStack_17._0_8_ = TypeInfo__UnityEngine__NPOTSupport;
+                auStack_17._8_8_ = (MonitorData *)0xffffffffffffffff;
+                pSVar2 = mscorlib.dll::System::Enum::Enum_ToString
+                                    ((Enum *)auStack_17,(MethodInfo *)0x0);
+                bVar8 = iRam_? != 0;
+                (pGVar18->fields).npot_support = pSVar2;
+                if (bVar8) {
+                  uVar4 = (uint)((ulonglong)&(pGVar18->fields).npot_support >> 0xc);
+                  uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                  do {
+                    uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                    puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                    LOCK();
+                    bVar8 = uVar6 == *puVar7;
+                    if (bVar8) {
+                      *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                    }
+                    UNLOCK();
+                  } while (!bVar8);
+                }
+                pSVar2 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::
+                          SystemInfo_GetGraphicsDeviceVersion((MethodInfo *)0x0);
+                bVar8 = iRam_? != 0;
+                (pGVar18->fields).version = pSVar2;
+                if (bVar8) {
+                  uVar4 = (uint)((ulonglong)&(pGVar18->fields).version >> 0xc);
+                  uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                  do {
+                    uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                    puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                    LOCK();
+                    bVar8 = uVar6 == *puVar7;
+                    if (bVar8) {
+                      *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                    }
+                    UNLOCK();
+                  } while (!bVar8);
+                }
+                pcVar10 = pcRam_?;
+                if ((pcRam_? == (code *)0x0) &&
+                   (pcVar10 = (code *)FUN_?(&UNK_?), pcVar10 == (code *)0x0)) {
+                  uVar11 = func_?(&UNK_?);
+                  FUN_?(uVar11,0);
+                  pcVar10 = (code *)swi(3);
+                  (*pcVar10)();
+                  return;
+                }
+                pcRam_? = pcVar10;
+                uStack_16 = (*pcRam_?)();
+                auStack_17._0_8_ = TypeInfo__UnityEngine__Rendering__GraphicsDeviceType;
+                auStack_17._8_8_ = (MonitorData *)0xffffffffffffffff;
+                pSVar2 = mscorlib.dll::System::Enum::Enum_ToString
+                                    ((Enum *)auStack_17,(MethodInfo *)0x0);
+                (pGVar18->fields).api_type = pSVar2;
+                if (iRam_? != 0) {
+                  uVar4 = (uint)((ulonglong)&(pGVar18->fields).api_type >> 0xc);
+                  uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                  do {
+                    uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                    puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                    LOCK();
+                    bVar8 = uVar6 == *puVar7;
+                    if (bVar8) {
+                      *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                    }
+                    UNLOCK();
+                  } while (!bVar8);
+                }
+                iVar3 = iRam_?;
+                (this->fields).gpu = pGVar18;
+                if (iVar3 != 0) {
+                  uVar4 = (uint)((ulonglong)&(this->fields).gpu >> 0xc);
+                  uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                  do {
+                    uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                    puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                    LOCK();
+                    bVar8 = uVar6 == *puVar7;
+                    if (bVar8) {
+                      *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                    }
+                    UNLOCK();
+                  } while (!bVar8);
+                }
+                pAVar20 = (App *)FUN_?(TypeInfo__Sentry__App);
+                bVar8 = iRam_? != 0;
+                (this->fields).app = pAVar20;
+                if (bVar8) {
+                  uVar4 = (uint)((ulonglong)&this->fields >> 0xc);
+                  uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                  do {
+                    uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                    puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                    LOCK();
+                    bVar8 = uVar6 == *puVar7;
+                    if (bVar8) {
+                      *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                    }
+                    UNLOCK();
+                  } while (!bVar8);
+                }
+                pAVar20 = (this->fields).app;
+                if (*(int *)&(TypeInfo__System__DateTimeOffset->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                if (cRam_? == '\0') {
+                  FUN_?(&TypeInfo__System__DateTime);
+                  LOCK();
+                  UNLOCK();
+                  cRam_? = '\x01';
+                }
+                if (*(int *)&(TypeInfo__System__DateTime->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                dateTime = mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
+                DStack_21._dateTime._dateData = 0;
+                DStack_21._offsetMinutes = 0;
+                DStack_21._10_6_ = 0;
+                mscorlib.dll::System::DateTimeOffset::DateTimeOffset__ctor_1
+                          (&DStack_21,dateTime,(MethodInfo *)0x0);
+                pcVar10 = pcRam_?;
+                if ((pcRam_? == (code *)0x0) &&
+                   (pcVar10 = (code *)FUN_?(&UNK_?), pcVar10 == (code *)0x0)) {
+                  uVar11 = func_?(&UNK_?);
+                  FUN_?(uVar11,0);
+                  pcVar10 = (code *)swi(3);
+                  (*pcVar10)();
+                  return;
+                }
+                pcRam_? = pcVar10;
+                uVar4 = (*pcRam_?)();
+                pDVar22 = mscorlib.dll::System::DateTimeOffset::DateTimeOffset_AddSeconds
+                                    ((DateTimeOffset *)auStack_17,&DStack_21,
+                                     (double)(float)(uVar4 ^ _UNK_?),(MethodInfo *)0x0);
+                DStack_21._dateTime._dateData = (pDVar22->_dateTime)._dateData;
+                DStack_21._offsetMinutes = pDVar22->_offsetMinutes;
+                DStack_21._10_6_ = *(undefined6 *)&pDVar22->field_0xa;
+                pSVar2 = mscorlib.dll::System::DateTimeOffset::DateTimeOffset_ToString_1
+                                    (&DStack_21,StringLiteral_yyyy_MM_ddTHH__mm__ssZ,
+                                     (MethodInfo *)0x0);
+                if (pAVar20 != (App *)0x0) {
+                  bVar8 = iRam_? != 0;
+                  (pAVar20->fields).app_start_time = pSVar2;
+                  if (bVar8) {
+                    uVar4 = (uint)((ulonglong)&(pAVar20->fields).app_start_time >> 0xc);
+                    uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                    do {
+                      uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                      puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                      LOCK();
+                      bVar8 = uVar6 == *puVar7;
+                      if (bVar8) {
+                        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                      }
+                      UNLOCK();
+                    } while (!bVar8);
+                  }
+                  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+                    FUN_?();
+                  }
+                  pcVar10 = pcRam_?;
+                  if ((pcRam_? == (code *)0x0) &&
+                     (pcVar10 = (code *)FUN_?(&UNK_?), pcVar10 == (code *)0x0)) {
+                    uVar11 = func_?(&UNK_?);
+                    FUN_?(uVar11,0);
+                    pcVar10 = (code *)swi(3);
+                    (*pcVar10)();
                     return;
                   }
-                }
-                else if (pAVar11 != (App *)0x0) {
-                  (pAVar11->fields).build_type = StringLiteral_debug;
-                  func_?();
-                  return;
+                  pcRam_? = pcVar10;
+                  cVar23 = (*pcRam_?)();
+                  pAVar20 = (this->fields).app;
+                  if (cVar23 == '\0') {
+                    if (pAVar20 != (App *)0x0) {
+                      bVar8 = iRam_? != 0;
+                      (pAVar20->fields).build_type = StringLiteral_release;
+                      if (bVar8) {
+                        uVar4 = (uint)((ulonglong)&(pAVar20->fields).build_type >> 0xc);
+                        uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                        do {
+                          uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                          puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                          LOCK();
+                          bVar8 = uVar6 == *puVar7;
+                          if (bVar8) {
+                            *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                          }
+                          UNLOCK();
+                        } while (!bVar8);
+                      }
+                      return;
+                    }
+                  }
+                  else if (pAVar20 != (App *)0x0) {
+                    bVar8 = iRam_? == 0;
+                    (pAVar20->fields).build_type = StringLiteral_debug;
+                    if (bVar8) {
+                      return;
+                    }
+                    uVar4 = (uint)((ulonglong)&(pAVar20->fields).build_type >> 0xc);
+                    uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+                    do {
+                      uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+                      puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+                      LOCK();
+                      bVar8 = uVar6 == *puVar7;
+                      if (bVar8) {
+                        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+                      }
+                      UNLOCK();
+                    } while (!bVar8);
+                    return;
+                  }
                 }
               }
             }
@@ -221,25 +628,9 @@ code_?:
     }
   }
 code_?:
-  uVar13 = func_?();
-  ppOVar14 = &(this->fields).os;
-  *ppOVar14 = (OperatingSystem *)((uint)*ppOVar14 >> 1 | (uint)(((uint)*ppOVar14 & 1) != 0) << 0x1f);
-  ppOVar14 = &(this->fields).os;
-  bVar15 = ((uint)*ppOVar14 & 1) != 0;
-  *ppOVar14 = (OperatingSystem *)((uint)*ppOVar14 >> 1 | (uint)bVar15 << 0x1f);
-  sVar16 = ((ushort)((uint6)uVar13 >> 0x20) & 3) - (extraout_CX & 3);
-  pbVar17 = (byte *)(unaff_EBX + -0x2f);
-  bVar18 = *pbVar17;
-  bVar19 = (byte)((uint)((int)uVar13 + -2) >> 8);
-  bVar20 = *pbVar17 + bVar19;
-  *pbVar17 = bVar20 + bVar15;
-  pcVar21 = (char *)((int)uVar13 + -0x77efb031);
-  *pcVar21 = *pcVar21 + (char)extraout_CX + (0 < sVar16) * (char)sVar16 +
-            (CARRY1(bVar18,bVar19) || CARRY1(bVar20,bVar15));
-  puVar22 = (uint *)((int)&(this->fields).gpu + 2);
-  *puVar22 = *puVar22 >> 1 | (uint)((*puVar22 & 1) != 0) << 0x1f;
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

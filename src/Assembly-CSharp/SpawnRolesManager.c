@@ -2,18 +2,20 @@
 /* Void ActivateSpawnRole(Int32, Vector3, Quaternion) */
 
 void Assembly-CSharp.dll::SpawnRolesManager::SpawnRolesManager_ActivateSpawnRole
-               (SpawnRolesManager *this,int32_t newSpawnRoleId,Vector3 position,Quaternion rotation,
-               MethodInfo *method)
+               (SpawnRolesManager *this,int32_t newSpawnRoleId,Vector3 *position,
+               Quaternion *rotation,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__ISpawnRoleChangeHandler);
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pSVar1 = (this->fields).spawnRolesRuntimeData;
   if (pSVar1 != (SpawnRolesRuntimeData *)0x0) {
-    iVar2 = (pSVar1->fields).activeSpawnRole;
-    (((this->fields).spawnRolesRuntimeData)->fields).activeSpawnRole = newSpawnRoleId;
+    uVar2 = (pSVar1->fields).activeSpawnRole;
+    (pSVar1->fields).activeSpawnRole = newSpawnRoleId;
     pIVar3 = (this->fields).spawnRoleChangeHandler;
     if (pIVar3 != (ISpawnRoleChangeHandler *)0x0) {
       pIVar4 = pIVar3->klass;
@@ -24,28 +26,36 @@ void Assembly-CSharp.dll::SpawnRolesManager::SpawnRolesManager_ActivateSpawnRole
         do {
           if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
               (Il2CppClass *)TypeInfo__ISpawnRoleChangeHandler) {
-            ppMVar7 = &(&pIVar3->klass->vtable)[pIVar3->klass->interfaceOffsets[uVar5].offset].
-                       ActivateSpawnRole.method;
+            pIVar7 = &pIVar4->vtable + pIVar4->interfaceOffsets[uVar5].offset;
             goto code_?;
           }
           uVar5 = uVar5 + 1;
         } while (uVar5 < uVar6);
       }
-      ppMVar7 = (MethodInfo **)func_?(pIVar3,TypeInfo__ISpawnRoleChangeHandler,0);
+      pIVar7 = (ISpawnRoleChangeHandler__VTable *)
+               FUN_?(pIVar3,TypeInfo__ISpawnRoleChangeHandler,0);
 code_?:
-      (*(code *)*ppMVar7)(pIVar3,iVar2,newSpawnRoleId,position._0_8_,position.z,rotation.x,
-                          rotation.y,rotation.z,rotation.w,ppMVar7[1]);
+      fStack_8 = position->z;
+      fStack_9 = rotation->x;
+      fStack_10 = rotation->y;
+      fStack_11 = rotation->z;
+      fStack_12 = rotation->w;
+      uStack_13._0_4_ = position->x;
+      uStack_13._4_4_ = position->y;
+      (*(pIVar7->ActivateSpawnRole).methodPtr)
+                (pIVar3,(ulonglong)uVar2,(ulonglong)(uint)newSpawnRoleId,&uStack_13,&fStack_9,
+                 (pIVar7->ActivateSpawnRole).method);
       if ((this->fields).OnSpawnRoleActivated != (Action_1_Int32_ *)0x0) {
-        pAVar8 = (this->fields).OnSpawnRoleActivated;
-        (*(pAVar8->fields)._._.invoke_impl)
-                  ((pAVar8->fields)._._.method_code,newSpawnRoleId,(pAVar8->fields)._._.method);
+        pAVar14 = (this->fields).OnSpawnRoleActivated;
+        (*(pAVar14->fields)._._.invoke_impl)
+                  ((pAVar14->fields)._._.method_code,newSpawnRoleId,(pAVar14->fields)._._.method);
       }
       return;
     }
   }
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  FUN_?();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -59,28 +69,35 @@ void Assembly-CSharp.dll::SpawnRolesManager::SpawnRolesManager_AddSpawnRole
   pSVar1 = (this->fields).spawnRolesRuntimeData;
   if (pSVar1 != (SpawnRolesRuntimeData *)0x0) {
     if (cRam_? == '\0') {
-      func_?();
+      FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
     this_00 = (pSVar1->fields).spawnRoleAvatarIds;
     if (this_00 != (HashSet_1_System_Int32_ *)0x0) {
-      System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-      HashSet_1_System_Int32__System_Collections_Generic_ICollection_T__Add
-                (this_00,id,MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_);
-      if (extraout_AL != '\0') {
+      bVar2 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
+              HashSet_1_System_Int32__AddIfNotPresent
+                        (this_00,id,
+                         MethodInfo__System__Collections__Generic__HashSet<int>__Add_int_->klass->
+                         rgctx_data[0x15].method);
+      if (bVar2 != 0) {
         return;
       }
-      func_?();
-      this_01 = (Exception *)func_?();
-      method_00 = (MethodInfo *)0x0;
-      message = (String *)func_?();
-      mscorlib.dll::System::Exception::Exception__ctor_1(this_01,message,method_00);
-      func_?();
-      func_?();
+      uVar3 = func_?(&TypeInfo__System__Exception);
+      this_01 = (Exception *)func_?(uVar3);
+      message = (String *)func_?(&StringLiteral_Id_already_added);
+      mscorlib.dll::System::Exception::Exception__ctor_1(this_01,message,(MethodInfo *)0x0);
+      uVar3 = func_?(&
+                                  MethodInfo__MV__WorldObject__SpawnRoles__SpawnRolesRuntimeData__AddSpawnRole_int_
+                                 );
+      FUN_?(this_01,uVar3);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
     }
   }
-  uVar2 = func_?(&puStack_3);
-  func_?(uVar2);
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -98,84 +115,41 @@ void Assembly-CSharp.dll::SpawnRolesManager::SpawnRolesManager_OnAvatarCreated
     if (id != (pSVar1->fields).activeSpawnRole) {
       return;
     }
-    this_00 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if (((this_00 != (MVNetworkGame *)0x0) &&
-        (this_01 = MVNetworkGame::MVNetworkGame_get_WorldObjectClientManager
-                             (this_00,(MethodInfo *)0x0),
-        this_01 != (MVWorldObjectClientManager *)0x0)) &&
-       (pIVar2 = (ISpawnRoleChangeHandler__Class *)
-                 MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                           (this_01,id,(MethodInfo *)0x0),
-       pIVar2 != (ISpawnRoleChangeHandler__Class *)0x0)) {
-      pMVar3 = (MVWorldObject__Class *)(pIVar2->_0).image;
-      pIStack_4 = &IStack_5;
-      IStack_5.monitor = (MonitorData *)(pMVar3->vtable).set_Position.methodPtr;
-      IStack_5.klass = pIVar2;
-      puVar6 = (undefined8 *)(*(code *)(pMVar3->vtable).get_Position.method)();
-      uStack_7 = *puVar6;
-      uStack_8 = *(undefined4 *)(puVar6 + 1);
-      pMVar3 = (MVWorldObject__Class *)(pIVar2->_0).image;
-      piVar9 = (int *)(*(code *)(pMVar3->vtable).get_Rotation.method)
-                                (&pIStack_4,pIVar2,(pMVar3->vtable).set_Rotation.methodPtr);
-      pIStack_4 = (ISpawnRoleChangeHandler *)*piVar9;
-      IStack_5.klass = (ISpawnRoleChangeHandler__Class *)piVar9[1];
-      pIStack_10 = (ISpawnRoleChangeHandler__Class *)piVar9[3];
-      if (cRam_? == '\0') {
-        IStack_5.monitor = (MonitorData *)&TypeInfo__ISpawnRoleChangeHandler;
-        IStack_5.klass = (ISpawnRoleChangeHandler__Class *)&UNK_?;
-        func_?();
-        cRam_? = '\x01';
-      }
-      pSVar1 = (this->fields).spawnRolesRuntimeData;
-      if (pSVar1 != (SpawnRolesRuntimeData *)0x0) {
-        iStack_11 = (pSVar1->fields).activeSpawnRole;
-        (((this->fields).spawnRolesRuntimeData)->fields).activeSpawnRole = id;
-        pIStack_12 = (this->fields).spawnRoleChangeHandler;
-        if (pIStack_12 != (ISpawnRoleChangeHandler *)0x0) {
-          pIStack_13 = pIStack_12->klass;
-          uVar14 = 0;
-          uStack_15 = 0;
-          uVar16._0_1_ = (pIStack_13->_1).rank;
-          uVar16._1_1_ = (pIStack_13->_1).minimumAlignment;
-          if (uVar16 != 0) {
-            do {
-              if (pIStack_13->interfaceOffsets[uVar14].interfaceType ==
-                  (Il2CppClass *)TypeInfo__ISpawnRoleChangeHandler) {
-                ppMVar17 = &(&pIStack_13->vtable)[pIStack_13->interfaceOffsets[uVar14].offset].
-                            ActivateSpawnRole.method;
-                goto code_?;
-              }
-              uVar14 = uVar14 + 1;
-            } while (uVar14 < uVar16);
-          }
-          IStack_5.monitor = (MonitorData *)0x0;
-          IStack_5.klass = TypeInfo__ISpawnRoleChangeHandler;
-          pIStack_4 = pIStack_12;
-          ppMVar17 = (MethodInfo **)func_?();
-code_?:
-          pIVar2 = IStack_5.klass;
-          pIVar18 = pIStack_4;
-          pIStack_4 = (ISpawnRoleChangeHandler *)ppMVar17[1];
-          IStack_5.klass = pIStack_10;
-          IStack_5.monitor = (MonitorData *)pIStack_4;
-          (*(code *)*ppMVar17)(pIStack_12,iStack_11,id,uStack_7,uStack_8,pIVar18,pIVar2);
-          if ((this->fields).OnSpawnRoleActivated == (Action_1_Int32_ *)0x0) {
-            return;
-          }
-          pAVar19 = (this->fields).OnSpawnRoleActivated;
-          IStack_5.monitor = (pAVar19->fields)._._.method;
-          IStack_5.klass = (ISpawnRoleChangeHandler__Class *)id;
-          pIStack_4 = (pAVar19->fields)._._.method_code;
-          (*(pAVar19->fields)._._.invoke_impl)();
-          return;
-        }
-      }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if ((((pMVar2 != (MVGameControllerBase *)0x0) &&
+         (pMVar3 = (pMVar2->fields).game, pMVar3 != (MVNetworkGame *)0x0)) &&
+        ((pMVar3->fields).worldNetwork != (WorldNetwork *)0x0)) &&
+       ((this_00 = (MVWorldObjectClientManager *)
+                   (((pMVar3->fields).worldNetwork)->fields)._.worldObjectClientManager,
+        this_00 != (MVWorldObjectClientManager *)0x0 &&
+        (pMVar4 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
+                            (this_00,id,(MethodInfo *)0x0), pMVar4 != (MVWorldObjectClient *)0x0))))
+    {
+      puVar5 = (undefined8 *)
+               (*(pMVar4->klass->vtable).get_Position.methodPtr)
+                         (&VStack_6,pMVar4,(pMVar4->klass->vtable).get_Position.method);
+      uVar7 = *puVar5;
+      fVar8 = *(float *)(puVar5 + 1);
+      puVar5 = (undefined8 *)
+               (*(pMVar4->klass->vtable).get_Rotation.methodPtr)
+                         (&QStack_9,pMVar4,(pMVar4->klass->vtable).get_Rotation.method);
+      QStack_9._0_8_ = *puVar5;
+      QStack_9._8_8_ = puVar5[1];
+      VStack_6._0_8_ = uVar7;
+      VStack_6.z = fVar8;
+      SpawnRolesManager_ActivateSpawnRole(this,id,&VStack_6,&QStack_9,(MethodInfo *)0x0);
+      return;
     }
   }
-  IStack_5.monitor = (MonitorData *)&UNK_?;
-  func_?();
-  pcVar20 = (code *)swi(3);
-  (*pcVar20)();
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -187,28 +161,58 @@ void Assembly-CSharp.dll::SpawnRolesManager::SpawnRolesManager_add_OnSpawnRoleAc
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<int>);
+    FUN_?(&TypeInfo__System__Action<int>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  ppAVar1 = &(this->fields).OnSpawnRoleActivated;
   a = (this->fields).OnSpawnRoleActivated;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<int>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__Action<int>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pAVar3 = TypeInfo__System__Action<int>;
+    if (pDVar2 == (Delegate *)0x0) {
+      pAVar4 = (Action_1_Int32_ *)0x0;
+    }
+    else {
+      pAVar4 = (Action_1_Int32_ *)FUN_?(pDVar2,TypeInfo__System__Action<int>);
+      if (pAVar4 == (Action_1_Int32_ *)0x0) {
+        FUN_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_Int32_ *)func_?(&(this->fields).OnSpawnRoleActivated,iVar3,a);
-    bVar6 = pAVar5 != a;
-    a = pAVar5;
-  } while (bVar6);
+    LOCK();
+    pAVar6 = *ppAVar1;
+    bVar7 = a == pAVar6;
+    if (bVar7) {
+      *ppAVar1 = pAVar4;
+      pAVar6 = a;
+    }
+    UNLOCK();
+    pAVar4 = a;
+    if (!bVar7) {
+      pAVar4 = pAVar6;
+    }
+    if (iRam_? != 0) {
+      uVar8 = (uint)((ulonglong)ppAVar1 >> 0xc);
+      uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar10 == *puVar11;
+        if (bVar7) {
+          *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    bVar7 = pAVar4 != a;
+    a = pAVar4;
+  } while (bVar7);
   return;
 }
 
@@ -220,28 +224,58 @@ void Assembly-CSharp.dll::SpawnRolesManager::SpawnRolesManager_remove_OnSpawnRol
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<int>);
+    FUN_?(&TypeInfo__System__Action<int>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  ppAVar1 = &(this->fields).OnSpawnRoleActivated;
   source = (this->fields).OnSpawnRoleActivated;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pAVar2 = TypeInfo__System__Action<int>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__Action<int>);
-      if (iVar3 == 0) {
-        func_?(pDVar1,pAVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pAVar3 = TypeInfo__System__Action<int>;
+    if (pDVar2 == (Delegate *)0x0) {
+      pAVar4 = (Action_1_Int32_ *)0x0;
+    }
+    else {
+      pAVar4 = (Action_1_Int32_ *)FUN_?(pDVar2,TypeInfo__System__Action<int>);
+      if (pAVar4 == (Action_1_Int32_ *)0x0) {
+        FUN_?(pDVar2,pAVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pAVar5 = (Action_1_Int32_ *)func_?(&(this->fields).OnSpawnRoleActivated,iVar3,source);
-    bVar6 = pAVar5 != source;
-    source = pAVar5;
-  } while (bVar6);
+    LOCK();
+    pAVar6 = *ppAVar1;
+    bVar7 = source == pAVar6;
+    if (bVar7) {
+      *ppAVar1 = pAVar4;
+      pAVar6 = source;
+    }
+    UNLOCK();
+    pAVar4 = source;
+    if (!bVar7) {
+      pAVar4 = pAVar6;
+    }
+    if (iRam_? != 0) {
+      uVar8 = (uint)((ulonglong)ppAVar1 >> 0xc);
+      uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar10 == *puVar11;
+        if (bVar7) {
+          *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    bVar7 = pAVar4 != source;
+    source = pAVar4;
+  } while (bVar7);
   return;
 }
 

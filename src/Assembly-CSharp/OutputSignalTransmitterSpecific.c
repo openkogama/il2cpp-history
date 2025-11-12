@@ -6,102 +6,145 @@ void Assembly-CSharp.dll::OutputSignalTransmitterSpecific::OutputSignalTransmitt
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__IInputSignalReceiver);
-    func_?(&TypeInfo__ILogicWorldObject);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__get_Item_int_
-                   );
+    FUN_?(&TypeInfo__IInputSignalReceiver);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__ILogicWorldObject);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
   if (pMVar1 != (MVWorldObjectClientManager *)0x0) {
-    pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+    pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
                        (pMVar1,(this->fields).woId,(MethodInfo *)0x0);
-    puVar3 = (undefined *)0x0;
-    if (pMVar2 != (MVWorldObject *)0x0) {
-      while (pLVar4 = (pMVar2->fields).outputLinkRefs, pLVar4 != (List_1_MV_WorldObject_Link_ *)0x0)
-      {
-        if ((pLVar4->fields)._size <= (int)puVar3) {
+    uVar3 = 0;
+    if (pMVar2 != (MVWorldObjectClient *)0x0) {
+      lVar4 = 0x20;
+      while( true ) {
+        pMVar1 = (MVWorldObjectClientManager *)0x0;
+        pLVar5 = (pMVar2->fields)._.outputLinkRefs;
+        if (pLVar5 == (List_1_MV_WorldObject_Link_ *)0x0) break;
+        if ((pLVar5->fields)._size <= (int)uVar3) {
           return;
         }
-        pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-        pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                 (pMVar2->fields).outputLinkRefs;
-        if (((pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-            (RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                     RegularExpressions::RegexCharClass+SingleRange]::
-                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                               (pLVar5,(int32_t)puVar3,
-                                MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__get_Item_int_
-                               ), RVar6 == (RegexCharClass_SingleRange)0x0)) ||
-           (pMVar1 == (MVWorldObjectClientManager *)0x0)) break;
-        this = (OutputSignalTransmitterSpecific *)0x0;
-        puVar3 = &UNK_?;
-        pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                           (pMVar1,*(int32_t *)((int)RVar6 + 0x10),(MethodInfo *)0x0);
-        if (pMVar2 == (MVWorldObject *)0x0) break;
-        iVar7 = func_?();
-        if ((iVar7 == 0) || (piVar8 = (int *)func_?(), piVar8 == (int *)0x0)) {
-          func_?();
-          break;
+        bVar6 = uVar3 == hotIndex;
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
         }
-        uVar9 = 0;
-        uVar10 = *(ushort *)(*piVar8 + 0xb6);
-        if (uVar10 != 0) {
+        pMVar7 = TypeInfo__MVGameControllerBase->static_fields->instance;
+        if ((pMVar7 == (MVGameControllerBase *)0x0) ||
+           (pMVar8 = (pMVar7->fields).game, pMVar8 == (MVNetworkGame *)0x0)) break;
+        if ((pMVar8->fields).worldNetwork != (WorldNetwork *)0x0) {
+          pMVar1 = (MVWorldObjectClientManager *)
+                   (((pMVar8->fields).worldNetwork)->fields)._.worldObjectClientManager;
+        }
+        pLVar5 = (pMVar2->fields)._.outputLinkRefs;
+        if (pLVar5 == (List_1_MV_WorldObject_Link_ *)0x0) break;
+        if ((uint)(pLVar5->fields)._size <= uVar3) {
+code_?:
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
+        }
+        pLVar10 = (pLVar5->fields)._items;
+        if (pLVar10 == (Link__Array *)0x0) break;
+        if ((uint)pLVar10->max_length <= uVar3) {
+code_?:
+          FUN_?();
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
+        }
+        lVar11 = *(longlong *)((longlong)pLVar10->vector + lVar4 + -0x20);
+        if (((lVar11 == 0) || (pMVar1 == (MVWorldObjectClientManager *)0x0)) ||
+           (pMVar12 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
+                                (pMVar1,*(int32_t *)(lVar11 + 0x18),(MethodInfo *)0x0),
+           pIVar13 = TypeInfo__ILogicWorldObject, pMVar12 == (MVWorldObjectClient *)0x0)) break;
+        lVar11 = FUN_?(pMVar12,TypeInfo__ILogicWorldObject);
+        pIVar14 = TypeInfo__ILogicWorldObject;
+        if (lVar11 == 0) {
+          FUN_?(pMVar12,pIVar13);
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
+        }
+        plVar15 = (longlong *)FUN_?(pMVar12,TypeInfo__ILogicWorldObject);
+        if (plVar15 == (longlong *)0x0) {
+          FUN_?(pMVar12,pIVar14);
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
+        }
+        lVar11 = *plVar15;
+        uVar16 = 0;
+        if (*(ushort *)(lVar11 + 0x12e) != 0) {
+          uVar17 = uVar16;
           do {
-            if (*(ILogicWorldObject__Class **)(*(int *)(*piVar8 + 0x58) + (uint)uVar9 * 8) ==
+            if (*(ILogicWorldObject__Class **)
+                 (*(longlong *)(lVar11 + 0xb0) + (ulonglong)uVar17 * 0x10) ==
                 TypeInfo__ILogicWorldObject) {
-              puVar11 = (undefined4 *)
-                        (*piVar8 +
-                        (*(int *)(*(int *)(*piVar8 + 0x58) + 4 + (uint)uVar9 * 8) + 0x18) * 8);
+              puVar18 = (undefined8 *)
+                        ((longlong)
+                         *(int *)(*(longlong *)(lVar11 + 0xb0) + 8 + (ulonglong)uVar17 * 0x10) *
+                         0x10 + 0x138 + lVar11);
               goto code_?;
             }
-            uVar9 = uVar9 + 1;
-          } while (uVar9 < uVar10);
+            uVar17 = uVar17 + 1;
+          } while (uVar17 < *(ushort *)(lVar11 + 0x12e));
         }
-        this = (OutputSignalTransmitterSpecific *)&UNK_?;
-        puVar11 = (undefined4 *)func_?();
+        puVar18 = (undefined8 *)FUN_?(plVar15,TypeInfo__ILogicWorldObject,0);
 code_?:
-        piVar8 = (int *)(*(code *)*puVar11)();
-        if (piVar8 == (int *)0x0) break;
-        uVar9 = 0;
-        uVar10 = *(ushort *)(*piVar8 + 0xb6);
-        if (uVar10 != 0) {
+        plVar15 = (longlong *)(*(code *)*puVar18)(plVar15,puVar18[1]);
+        if (plVar15 == (longlong *)0x0) break;
+        lVar11 = *plVar15;
+        if (*(ushort *)(lVar11 + 0x12e) != 0) {
           do {
-            if (*(IInputSignalReceiver__Class **)(*(int *)(*piVar8 + 0x58) + (uint)uVar9 * 8) ==
+            if (*(IInputSignalReceiver__Class **)
+                 (*(longlong *)(lVar11 + 0xb0) + (ulonglong)uVar16 * 0x10) ==
                 TypeInfo__IInputSignalReceiver) {
-              puVar11 = (undefined4 *)
-                        (*piVar8 +
-                        (*(int *)(*(int *)(*piVar8 + 0x58) + 4 + (uint)uVar9 * 8) + 0x18) * 8);
+              puVar18 = (undefined8 *)
+                        ((longlong)
+                         *(int *)(*(longlong *)(lVar11 + 0xb0) + 8 + (ulonglong)uVar16 * 0x10) *
+                         0x10 + 0x138 + lVar11);
               goto code_?;
             }
-            uVar9 = uVar9 + 1;
-          } while (uVar9 < uVar10);
+            uVar16 = uVar16 + 1;
+          } while (uVar16 < *(ushort *)(lVar11 + 0x12e));
         }
-        puVar11 = (undefined4 *)func_?(piVar8,TypeInfo__IInputSignalReceiver,0);
+        puVar18 = (undefined8 *)FUN_?(plVar15,TypeInfo__IInputSignalReceiver,0);
 code_?:
-        pMVar2 = (MVWorldObject *)puVar11[1];
-        (*(code *)*puVar11)(piVar8,this);
-        pLVar5 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                 (pMVar2->fields).outputLinkRefs;
-        if ((pLVar5 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0) ||
-           (RVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                    RegularExpressions::RegexCharClass+SingleRange]::
-                    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                              (pLVar5,(int32_t)puVar3,
-                               MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__get_Item_int_
-                              ), RVar6 == (RegexCharClass_SingleRange)0x0)) break;
-        puVar3 = puVar3 + 1;
-        *(undefined1 *)((int)RVar6 + 0x14) = this._0_1_;
+        (*(code *)*puVar18)(plVar15,bVar6);
+        pLVar5 = (pMVar2->fields)._.outputLinkRefs;
+        if (pLVar5 == (List_1_MV_WorldObject_Link_ *)0x0) break;
+        if ((uint)(pLVar5->fields)._size <= uVar3) goto code_?;
+        pLVar10 = (pLVar5->fields)._items;
+        if (pLVar10 == (Link__Array *)0x0) break;
+        if ((uint)pLVar10->max_length <= uVar3) goto code_?;
+        lVar11 = *(longlong *)((longlong)pLVar10->vector + lVar4 + -0x20);
+        if (lVar11 == 0) break;
+        uVar3 = uVar3 + 1;
+        *(bool *)(lVar11 + 0x1c) = bVar6;
+        lVar4 = lVar4 + 8;
       }
     }
   }
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 

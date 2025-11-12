@@ -5,12 +5,22 @@ bool Assembly-CSharp.dll::TimeoutClock::TimeoutClock_IsInTimeout
                (TimeoutClock *this,MethodInfo *method)
 
 {
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  if ((this->fields).timeoutTime <= fVar1 - (this->fields).lastTimeout) {
-    (this->fields).lastTimeout = fVar1;
-    return 0;
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    bVar3 = (*pcVar1)();
+    return bVar3;
   }
-  return 1;
+  pcRam_? = pcVar1;
+  fVar4 = (float)(*pcRam_?)();
+  if (fVar4 - (this->fields).lastTimeout < (this->fields).timeoutTime) {
+    return 1;
+  }
+  (this->fields).lastTimeout = fVar4;
+  return 0;
 }
 
 
@@ -20,11 +30,20 @@ void Assembly-CSharp.dll::TimeoutClock::TimeoutClock__ctor
                (TimeoutClock *this,float timeoutTime,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  pcVar1 = pcRam_?;
   (this->fields).timeoutTime = timeoutTime;
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  (this->fields).lastTimeout = fVar1;
+  pcVar2 = pcRam_?;
+  if ((pcVar1 == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar2 = pcVar1, pcVar1 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar2;
+  fVar4 = (float)(*pcVar1)();
+  (this->fields).lastTimeout = fVar4;
   return;
 }
 

@@ -79,6 +79,6 @@ public abstract class MVLocalPlayer : MVPlayer
 	public bool HasDiedInRound();
 	public void RoundEnded();
 	public bool IsAvatarDriving(MVVehicleBase vehicleBase);
-	public void ToggleAudioListener(bool on);
+	public void SetLocalAvatarEarsState(bool activeState);
 }
 

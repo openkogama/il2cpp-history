@@ -7,7 +7,7 @@ bool MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryData::AccessoryDa
 {
   this_00 = (this->fields).time;
   if (this_00 == (AccessoryTimelimit *)0x0) {
-    func_?();
+    FUN_?();
     pcVar1 = (code *)swi(3);
     bVar2 = (*pcVar1)();
     return bVar2;
@@ -29,159 +29,180 @@ String * MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryData::Accesso
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__Common__AccessoryCategory);
-    func_?(&TypeInfo__MV__Common__AccessorySlotType);
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__System__Object);
-    func_?(&StringLiteral__0__u000Du000A__isAvailable__1_u000Du000A__isLim);
+    FUN_?(&TypeInfo__MV__Common__AccessoryCategory);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__Common__AccessorySlotType);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__0__u000Du000A__isAvailable__1_u000Du000A__isLim);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  args = (Object__Array *)func_?(TypeInfo__System__Object,0xb);
+  args = (Object__Array *)FUN_?(TypeInfo__System__Object,0xb);
   pSVar1 = (this->fields).name;
-  if (args == (Object__Array *)0x0) {
-    func_?();
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-code_?:
-    uVar2 = func_?(0);
-    func_?(uVar2);
-  }
-  else {
+  if (args != (Object__Array *)0x0) {
     if (pSVar1 != (String *)0x0) {
-      iVar3 = func_?(pSVar1,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+      lVar2 = FUN_?(pSVar1,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (args->max_length == 0) goto code_?;
-    args->vector[0] = (Object *)pSVar1;
-    func_?(args->vector,pSVar1);
-    bStack_4 = (this->fields).iAvlb;
-    pOVar5 = (Object *)func_?(TypeInfo__System__Boolean,&bStack_4);
-    if (pOVar5 != (Object *)0x0) {
-      iVar3 = func_?(pOVar5,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+    FUN_?(args,0,pSVar1);
+    aiStackX_8[0] = CONCAT31(aiStackX_8[0]._1_3_,(this->fields).iAvlb);
+    lVar2 = FUN_?(uRam_?,aiStackX_8);
+    if (lVar2 != 0) {
+      lVar5 = FUN_?(lVar2,(args->klass->_0).element_class);
+      if (lVar5 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (args->max_length < 2) goto code_?;
-    args->vector[1] = pOVar5;
-    func_?(args->vector + 1,pOVar5);
-    bStack_6 = (this->fields).iNew;
-    pOVar5 = (Object *)func_?(TypeInfo__System__Boolean,&bStack_6);
-    if (pOVar5 != (Object *)0x0) {
-      iVar3 = func_?(pOVar5,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+    FUN_?(args,1,lVar2);
+    aiStackX_8[0] = CONCAT31(aiStackX_8[0]._1_3_,(this->fields).iNew);
+    lVar2 = FUN_?(uRam_?,aiStackX_8);
+    if (lVar2 != 0) {
+      lVar5 = FUN_?(lVar2,(args->klass->_0).element_class);
+      if (lVar5 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (args->max_length < 3) goto code_?;
-    args->vector[2] = pOVar5;
-    func_?(args->vector + 2,pOVar5);
-    bStack_7 = (this->fields).iFtr;
-    pOVar5 = (Object *)func_?(TypeInfo__System__Boolean,&bStack_7);
-    if (pOVar5 != (Object *)0x0) {
-      iVar3 = func_?(pOVar5,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+    FUN_?(args,2,lVar2);
+    aiStackX_8[0] = CONCAT31(aiStackX_8[0]._1_3_,(this->fields).iFtr);
+    lVar2 = FUN_?(uRam_?,aiStackX_8);
+    if (lVar2 != 0) {
+      lVar5 = FUN_?(lVar2,(args->klass->_0).element_class);
+      if (lVar5 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (args->max_length < 4) goto code_?;
-    args->vector[3] = pOVar5;
-    func_?(args->vector + 3,pOVar5);
-    iStack_8 = (this->fields).cost;
-    pOVar5 = (Object *)func_?(TypeInfo__System__Int32,&iStack_8);
-    if (pOVar5 != (Object *)0x0) {
-      iVar3 = func_?(pOVar5,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+    FUN_?(args,3,lVar2);
+    aiStackX_8[0] = (this->fields).cost;
+    lVar2 = FUN_?(uRam_?,aiStackX_8);
+    if (lVar2 != 0) {
+      lVar5 = FUN_?(lVar2,(args->klass->_0).element_class);
+      if (lVar5 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (args->max_length < 5) goto code_?;
-    args->vector[4] = pOVar5;
-    func_?(args->vector + 4,pOVar5);
-    iStack_9 = (this->fields).dsc;
-    pOVar5 = (Object *)func_?(TypeInfo__System__Int32,&iStack_9);
-    if (pOVar5 != (Object *)0x0) {
-      iVar3 = func_?(pOVar5,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+    FUN_?(args,4,lVar2);
+    aiStackX_8[0] = (this->fields).dsc;
+    lVar2 = FUN_?(uRam_?,aiStackX_8);
+    if (lVar2 != 0) {
+      lVar5 = FUN_?(lVar2,(args->klass->_0).element_class);
+      if (lVar5 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (args->max_length < 6) goto code_?;
-    args->vector[5] = pOVar5;
-    func_?(args->vector + 5,pOVar5);
-    iStack_10 = (this->fields).lvl;
-    pOVar5 = (Object *)func_?(TypeInfo__System__Int32,&iStack_10);
-    if (pOVar5 != (Object *)0x0) {
-      iVar3 = func_?(pOVar5,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+    FUN_?(args,5,lVar2);
+    aiStackX_8[0] = (this->fields).lvl;
+    lVar2 = FUN_?(uRam_?,aiStackX_8);
+    if (lVar2 != 0) {
+      lVar5 = FUN_?(lVar2,(args->klass->_0).element_class);
+      if (lVar5 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (args->max_length < 7) goto code_?;
-    args->vector[6] = pOVar5;
-    func_?(args->vector + 6,pOVar5);
-    iStack_11 = (this->fields).cat;
-    pOVar5 = (Object *)func_?(TypeInfo__MV__Common__AccessoryCategory,&iStack_11);
-    if (pOVar5 != (Object *)0x0) {
-      iVar3 = func_?(pOVar5,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+    FUN_?(args,6,lVar2);
+    aiStackX_8[0] = (this->fields).cat;
+    lVar2 = FUN_?(TypeInfo__MV__Common__AccessoryCategory,aiStackX_8);
+    if (lVar2 != 0) {
+      lVar5 = FUN_?(lVar2,(args->klass->_0).element_class);
+      if (lVar5 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (args->max_length < 8) goto code_?;
-    args->vector[7] = pOVar5;
-    func_?(args->vector + 7,pOVar5);
-    iStack_12 = (this->fields).pos;
-    pOVar5 = (Object *)func_?(TypeInfo__System__Int32,&iStack_12);
-    if (pOVar5 != (Object *)0x0) {
-      iVar3 = func_?(pOVar5,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+    FUN_?(args,7,lVar2);
+    aiStackX_8[0] = (this->fields).pos;
+    lVar2 = FUN_?(uRam_?,aiStackX_8);
+    if (lVar2 != 0) {
+      lVar5 = FUN_?(lVar2,(args->klass->_0).element_class);
+      if (lVar5 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (args->max_length < 9) goto code_?;
-    args->vector[8] = pOVar5;
-    func_?(args->vector + 8,pOVar5);
+    FUN_?(args,8,lVar2);
     pSVar1 = (this->fields).url;
     if (pSVar1 != (String *)0x0) {
-      iVar3 = func_?(pSVar1,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+      lVar2 = FUN_?(pSVar1,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (args->max_length < 10) goto code_?;
-    args->vector[9] = (Object *)pSVar1;
-    func_?(args->vector + 9,pSVar1);
-    iStack_13 = (this->fields).slot;
-    pOVar5 = (Object *)func_?(TypeInfo__MV__Common__AccessorySlotType,&iStack_13);
-    if (pOVar5 != (Object *)0x0) {
-      iVar3 = func_?(pOVar5,(args->klass->_0).element_class);
-      if (iVar3 == 0) goto code_?;
+    FUN_?(args,9,pSVar1);
+    aiStackX_8[0] = (this->fields).slot;
+    lVar2 = FUN_?(TypeInfo__MV__Common__AccessorySlotType,aiStackX_8);
+    if (lVar2 != 0) {
+      lVar2 = FUN_?(lVar2,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar1 = (String *)(*pcVar4)();
+        return pSVar1;
+      }
     }
-    if (10 < args->max_length) {
-      args->vector[10] = pOVar5;
-      func_?(args->vector + 10,pOVar5);
-      pSVar1 = mscorlib.dll::System::String::String_Format_3
-                         (StringLiteral__0__u000Du000A__isAvailable__1_u000Du000A__isLim,args,
-                          (MethodInfo *)0x0);
-      return pSVar1;
-    }
+    FUN_?(args,10);
+    pSVar1 = StringLiteral__0__u000Du000A__isAvailable__1_u000Du000A__isLim;
+    PStack_6._arg0 = (Object *)0x0;
+    PStack_6._arg1 = (Object *)0x0;
+    PStack_6._arg2 = (Object *)0x0;
+    PStack_6._args = (Object__Array *)0x0;
+    mscorlib.dll::System::ParamsArray::ParamsArray__ctor_3(&PStack_6,args,(MethodInfo *)0x0);
+    PStack_7._arg0 = PStack_6._arg0;
+    PStack_7._arg1 = PStack_6._arg1;
+    PStack_7._arg2 = PStack_6._arg2;
+    PStack_7._args = PStack_6._args;
+    pSVar1 = mscorlib.dll::System::String::String_FormatHelper
+                       ((IFormatProvider *)0x0,pSVar1,&PStack_7,(MethodInfo *)0x0);
+    return pSVar1;
   }
-code_?:
-  func_?();
-  pcVar14 = (code *)swi(3);
-  pSVar1 = (String *)(*pcVar14)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar4)();
   return pSVar1;
 }
 
@@ -193,18 +214,28 @@ void MVWorldObject.dll::MV::WorldObject::Accessories::AccessoryData::AccessoryDa
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__Accessories__AccessoryTimelimit);
+    FUN_?(&TypeInfo__MV__WorldObject__Accessories__AccessoryTimelimit);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_01 = TypeInfo__MV__WorldObject__Accessories__AccessoryTimelimit;
-  value = (AccessoryTimelimit *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-  method_00 = (MethodInfo *)&(this->fields).time;
-  (this->fields).time = value;
-  func_?(method_00,value);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  pAVar1 = (AccessoryTimelimit *)
+           FUN_?(TypeInfo__MV__WorldObject__Accessories__AccessoryTimelimit);
+  bVar2 = iRam_? != 0;
+  (this->fields).time = pAVar1;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).time >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
   return;
 }
 

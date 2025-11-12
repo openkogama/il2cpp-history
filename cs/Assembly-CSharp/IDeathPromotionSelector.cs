@@ -12,10 +12,7 @@ using UnityEngine.EventSystems;
 
 internal interface IDeathPromotionSelector : IEventSystemHandler
 {
-	// Properties
-	bool ReadyForAd { get; }
-
 	// Methods
-	void TryShowPromotion(UnityAction<bool, bool> onPromotionPopped);
+	void TryShowPromotionOrAd(UnityAction<bool, bool> onPromotionPopped);
 }
 

@@ -12,14 +12,22 @@ using UnityEngine;
 public class AudioBuild : MonoBehaviour
 {
 	// Fields
-	public AudioClip cubeAdded;
-	public AudioClip cubeRemoved;
-	public AudioClip faceMoved;
-	public AudioClip edgeMoved;
-	public AudioClip vertexMoved;
-	public AudioClip cubePainted;
-	public AudioClip translateNotGrid;
-	public AudioClip translateGrid;
+	[SerializeField]
+	private StreamedAudioClipManual cubeAddedClipStream;
+	[SerializeField]
+	private StreamedAudioClipManual cubeRemovedClipStream;
+	[SerializeField]
+	private StreamedAudioClipManual faceMovedClipStream;
+	[SerializeField]
+	private StreamedAudioClipManual edgeMovedClipStream;
+	[SerializeField]
+	private StreamedAudioClipManual vertexMovedClipStream;
+	[SerializeField]
+	private StreamedAudioClipManual cubePaintedClipStream;
+	[SerializeField]
+	private StreamedAudioClipManual translateNotGridClipStream;
+	[SerializeField]
+	private StreamedAudioClipManual translateGridClipStream;
 	private AudioSource buildSource;
 	private float currentTranslateMoveValue;
 
@@ -35,6 +43,6 @@ public class AudioBuild : MonoBehaviour
 	public void VertexMoved(Vector3 worldPos);
 	public void CubePainted(Vector3 worldPos);
 	public void Translate(float moveValue, bool moveToGridPos, Vector3 worldPos);
-	public void PlayClip(Vector3 worldPos, AudioClip audioClip, float randMin, float randMax);
+	private void PlayClip(Vector3 worldPos, AudioClip audioClip, float pitchMin = 1f, float pitchMax = 1f, float volumeMin = 0.7f, float volumeMax = 1f, bool checkSourceTime = true);
 }
 

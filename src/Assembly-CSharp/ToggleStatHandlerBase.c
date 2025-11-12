@@ -6,18 +6,31 @@ void Assembly-CSharp.dll::ToggleStatHandlerBase::ToggleStatHandlerBase_OnValidat
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Application);
+    FUN_?(&TypeInfo__UnityEngine__Application);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Application->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Application);
+  if (*(int *)&(TypeInfo__UnityEngine__Application->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Application::Application_get_isPlaying
-                    ((MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    (*(code *)(this->klass->vtable).__unknown.method)
-              (this,(this->klass->vtable).CurrentToggleState.methodPtr);
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
   }
+  pcRam_? = pcVar1;
+  cVar3 = (*pcRam_?)();
+  if (cVar3 != '\0') {
+    return;
+  }
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(this->klass->vtable).__unknown.methodPtr)(this,(this->klass->vtable).__unknown.method);
   return;
 }
 
@@ -29,9 +42,11 @@ void Assembly-CSharp.dll::ToggleStatHandlerBase::ToggleStatHandlerBase_Reset
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    UnityEngine__UI__Button_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Button>__
-                   );
+    FUN_?(&
+                  UnityEngine__UI__Button_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Button>__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pBVar1 = (Button *)
@@ -39,8 +54,21 @@ void Assembly-CSharp.dll::ToggleStatHandlerBase::ToggleStatHandlerBase_Reset
                      ((Component *)this,
                       UnityEngine__UI__Button_MethodInfo__UnityEngine__Component__GetComponent<UnityEngine::UI::Button>__
                      );
+  bVar2 = iRam_? != 0;
   (this->fields).button = pBVar1;
-  func_?(&(this->fields).button,pBVar1);
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).button >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
   return;
 }
 
@@ -52,13 +80,16 @@ void Assembly-CSharp.dll::ToggleStatHandlerBase::ToggleStatHandlerBase_Start
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__ToggleStatHandlerBase__Toggle__);
-    func_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    FUN_?(&MethodInfo__ToggleStatHandlerBase__Toggle__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields).OnStartSetValue == (ToggleStateHandlerOnStartSetValue *)0x0) {
-    (*(code *)(this->klass->vtable).__unknown.method)
-              (this,(this->klass->vtable).CurrentToggleState.methodPtr);
+    (*(this->klass->vtable).__unknown.methodPtr)(this,(this->klass->vtable).__unknown.method);
   }
   else {
     pTVar1 = (this->fields).OnStartSetValue;
@@ -69,23 +100,50 @@ void Assembly-CSharp.dll::ToggleStatHandlerBase::ToggleStatHandlerBase_Start
   }
   pBVar2 = (this->fields).button;
   if (pBVar2 != (Button *)0x0) {
-    this_00 = (UnityEvent *)(pBVar2->fields).m_OnClick;
-    this_01 = (NavMesh_OnNavMeshPreUpdate *)
-              func_?(TypeInfo__UnityEngine__Events__UnityAction);
+    pBVar3 = (pBVar2->fields).m_OnClick;
+    this_00 = (NavMesh_OnNavMeshPreUpdate *)
+              FUN_?(TypeInfo__UnityEngine__Events__UnityAction);
     UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
     NavMesh_OnNavMeshPreUpdate__ctor
-              (this_01,(Object *)this,MethodInfo__ToggleStatHandlerBase__Toggle__,(MethodInfo *)0x0)
+              (this_00,(Object *)this,MethodInfo__ToggleStatHandlerBase__Toggle__,(MethodInfo *)0x0)
     ;
-    if (this_00 != (UnityEvent *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEvent::UnityEvent_AddListener
-                (this_00,(UnityAction *)this_01,(MethodInfo *)0x0);
+    if (pBVar3 != (Button_ButtonClickedEvent *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Events__InvokableCall);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      this_01 = (InvokableCall *)FUN_?(TypeInfo__UnityEngine__Events__InvokableCall);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_add_Delegate
+                (this_01,(UnityAction *)this_00,(MethodInfo *)0x0);
+      pIVar4 = (pBVar3->fields)._._.m_Calls;
+      if (pIVar4 != (InvokableCallList *)0x0) {
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__Add_UnityEngine__Events__BaseInvokableCall_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pLVar5 = (pIVar4->fields).m_RuntimeCalls;
+        if (pLVar5 != (List_1_UnityEngine_Events_BaseInvokableCall_ *)0x0) {
+          FUN_?(pLVar5,this_01);
+          (pIVar4->fields).m_NeedsUpdate = 1;
+          return;
+        }
+      }
+      FUN_?();
+      pcVar6 = (code *)swi(3);
+      (*pcVar6)();
       return;
     }
   }
 code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -97,35 +155,58 @@ void Assembly-CSharp.dll::ToggleStatHandlerBase::ToggleStatHandlerBase_Toggle
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&MethodInfo__ToggleStatHandlerBase__ToggleCallback_bool_);
-    func_?(&TypeInfo__UnityEngine__Events__UnityAction<bool>);
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__ToggleStatHandlerBase__ToggleCallback_bool_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction<bool>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields).waitingForToggleCallback == 0) {
-    (*(code *)(this->klass->vtable).CurrentToggleState.method)(this,this->klass[1]._0.image);
-    pTVar1 = (this->fields).toggleHandler;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+    cVar1 = (*(this->klass->vtable).CurrentToggleState.methodPtr)
+                      (this,(this->klass->vtable).CurrentToggleState.method);
+    pTVar2 = (this->fields).toggleHandler;
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)pTVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      pTVar1 = (this->fields).toggleHandler;
-      (this->fields).waitingForToggleCallback = 1;
-      this_00 = (UnityAction_1_System_Int32Enum_ *)
-                func_?(TypeInfo__UnityEngine__Events__UnityAction<bool>);
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Int32Enum]::
-      UnityAction_1_System_Int32Enum___ctor
-                (this_00,(Object *)this,MethodInfo__ToggleStatHandlerBase__ToggleCallback_bool_,
-                 (MethodInfo *)0x0);
-      if (pTVar1 == (ToggleHandler *)0x0) {
-        func_?();
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
-        return;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (pTVar2 != (ToggleHandler *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      (*(code *)(pTVar1->klass->vtable).__unknown.method)(pTVar1);
+      if ((pTVar2->fields)._._._._.m_CachedPtr != (void *)0x0) {
+        pTVar2 = (this->fields).toggleHandler;
+        (this->fields).waitingForToggleCallback = 1;
+        uVar3 = FUN_?(TypeInfo__UnityEngine__Events__UnityAction<bool>);
+        FUN_?(uVar3,this,MethodInfo__ToggleStatHandlerBase__ToggleCallback_bool_);
+        if (pTVar2 == (ToggleHandler *)0x0) {
+          FUN_?();
+          pcVar4 = (code *)swi(3);
+          (*pcVar4)();
+          return;
+        }
+        (*(pTVar2->klass->vtable).__unknown.methodPtr)
+                  (pTVar2,(ulonglong)(cVar1 == '\0'),uVar3,(pTVar2->klass->vtable).__unknown.method)
+        ;
+      }
     }
   }
   return;
@@ -139,8 +220,7 @@ void Assembly-CSharp.dll::ToggleStatHandlerBase::ToggleStatHandlerBase_ToggleCal
 
 {
   (this->fields).toggleState = newState;
-  (*(code *)(this->klass->vtable).__unknown.method)
-            (this,(this->klass->vtable).CurrentToggleState.methodPtr);
+  (*(this->klass->vtable).__unknown.methodPtr)(this,(this->klass->vtable).__unknown.method);
   (this->fields).waitingForToggleCallback = 0;
   return;
 }
@@ -156,30 +236,33 @@ Image * Assembly-CSharp.dll::ToggleStatHandlerBase::ToggleStatHandlerBase_get_Cu
     return (this->fields).imageComponent;
   }
   pBVar1 = (this->fields).button;
-  if (pBVar1 == (Button *)0x0) {
-    uVar2 = func_?(auStack_3);
-    func_?(uVar2);
-    pcVar4 = (code *)swi(3);
-    pIVar5 = (Image *)(*pcVar4)();
-    return pIVar5;
-  }
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  pIVar5 = (Image *)(pBVar1->fields)._.m_TargetGraphic;
-  if (pIVar5 != (Image *)0x0) {
-    if (((TypeInfo__UnityEngine__UI__Image->_1).naturalAligment <=
-         (pIVar5->klass->_1).naturalAligment) &&
-       ((Image__Class *)
-        (pIVar5->klass->_1).typeHierarchy
-        [(TypeInfo__UnityEngine__UI__Image->_1).naturalAligment - 1] ==
-        TypeInfo__UnityEngine__UI__Image)) {
-      return pIVar5;
+  if (pBVar1 != (Button *)0x0) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__UI__Image);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
-    return (Image *)0x0;
+    pIVar2 = (Image *)(pBVar1->fields)._.m_TargetGraphic;
+    pIVar3 = (Image *)0x0;
+    if (pIVar2 != (Image *)0x0) {
+      bVar4 = (TypeInfo__UnityEngine__UI__Image->_1).naturalAligment;
+      if (((pIVar2->klass->_1).naturalAligment < bVar4) ||
+         (bVar5 = true,
+         (Image__Class *)(pIVar2->klass->_1).typeHierarchy[(ulonglong)bVar4 - 1] !=
+         TypeInfo__UnityEngine__UI__Image)) {
+        bVar5 = false;
+      }
+      if (bVar5) {
+        pIVar3 = pIVar2;
+      }
+    }
+    return pIVar3;
   }
-  return (Image *)0x0;
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  pIVar2 = (Image *)(*pcVar6)();
+  return pIVar2;
 }
 
 
@@ -190,20 +273,26 @@ void Assembly-CSharp.dll::ToggleStatHandlerBase::ToggleStatHandlerBase_set_Toggl
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&StringLiteral_Overriding_toggle_state_while_wa);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Overriding_toggle_state_while_wa);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields).waitingForToggleCallback != 0) {
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug);
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_Overriding_toggle_state_while_wa,(MethodInfo *)0x0);
   }
+  pTVar1 = this->klass;
   (this->fields).toggleState = value;
-  (*(code *)(this->klass->vtable).__unknown.method)
-            (this,(this->klass->vtable).CurrentToggleState.methodPtr);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(pTVar1->vtable).__unknown.methodPtr)(this,(pTVar1->vtable).__unknown.method);
   return;
 }
 

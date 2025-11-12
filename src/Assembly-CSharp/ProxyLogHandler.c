@@ -6,38 +6,53 @@ void Assembly-CSharp.dll::ProxyLogHandler::ProxyLogHandler_Disable
 
 {
   if (cRam_? == '\0') {
-    pDStack_1 = (Debug_2__Class *)&TypeInfo__UnityEngine__Debug;
-    func_?();
-    pIStack_2 = (ILogger_1 *)&TypeInfo__UnityEngine__ILogger;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__ILogger);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    pDStack_1 = TypeInfo__UnityEngine__Debug;
-    func_?();
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
   }
   if (cRam_? == '\0') {
-    pDStack_1 = (Debug_2__Class *)&TypeInfo__UnityEngine__Debug;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    pDStack_1 = TypeInfo__UnityEngine__Debug;
-    func_?();
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pIVar3 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
-  if (pIVar3 != (ILogger_1 *)0x0) {
-    pDStack_1 = (Debug_2__Class *)(this->fields).defaultLogHandler;
-    pIStack_4 = TypeInfo__UnityEngine__ILogger;
-    pIStack_2 = pIVar3;
-    func_?(1);
+  pIVar1 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+  if (pIVar1 == (ILogger_1 *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  pDStack_1 = (Debug_2__Class *)&stack0xfffffffc;
-  uVar5 = func_?(&pIStack_4);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  pIVar3 = (this->fields).defaultLogHandler;
+  uVar4 = 0;
+  pIVar5 = pIVar1->klass;
+  uVar6._0_1_ = (pIVar5->_1).rank;
+  uVar6._1_1_ = (pIVar5->_1).minimumAlignment;
+  if (uVar6 != 0) {
+    do {
+      if (pIVar5->interfaceOffsets[uVar4].interfaceType ==
+          (Il2CppClass *)TypeInfo__UnityEngine__ILogger) {
+        pVVar7 = &(pIVar5->vtable).get_logHandler + (pIVar5->interfaceOffsets[uVar4].offset + 1);
+        goto code_?;
+      }
+      uVar4 = uVar4 + 1;
+    } while (uVar4 < uVar6);
+  }
+  pVVar7 = (VirtualInvokeData *)FUN_?(pIVar1);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pVVar7->methodPtr)(pIVar1,pIVar3,pVVar7->method,pVVar7->methodPtr);
   return;
 }
 
@@ -49,34 +64,18 @@ void Assembly-CSharp.dll::ProxyLogHandler::ProxyLogHandler_LogException
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__ILogHandler);
+    FUN_?(&TypeInfo__UnityEngine__ILogHandler);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields).defaultLogHandler;
-  if (pIVar1 == (ILogHandler *)0x0) {
-    func_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
+  if ((this->fields).defaultLogHandler != (ILogHandler *)0x0) {
+    FUN_?();
     return;
   }
-  pIVar3 = pIVar1->klass;
-  uVar4 = 0;
-  uVar5._0_1_ = (pIVar3->_1).rank;
-  uVar5._1_1_ = (pIVar3->_1).minimumAlignment;
-  if (uVar5 != 0) {
-    do {
-      if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
-          (Il2CppClass *)TypeInfo__UnityEngine__ILogHandler) {
-        ppMVar6 = &(&(pIVar1->klass->vtable).LogException)
-                   [pIVar1->klass->interfaceOffsets[uVar4].offset].method;
-        goto code_?;
-      }
-      uVar4 = uVar4 + 1;
-    } while (uVar4 < uVar5);
-  }
-  ppMVar6 = (MethodInfo **)func_?(pIVar1,TypeInfo__UnityEngine__ILogHandler,1);
-code_?:
-  (*(code *)*ppMVar6)(pIVar1,exception,context,ppMVar6[1]);
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -89,65 +88,91 @@ void Assembly-CSharp.dll::ProxyLogHandler::ProxyLogHandler_LogFormat
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__ILogHandler);
-    func_?(&TypeInfo__ProxyLogHandler__LogFormatData);
+    FUN_?(&TypeInfo__UnityEngine__ILogHandler);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__ProxyLogHandler__LogFormatData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((logType != LogType__Enum_Exception) &&
-     ((this->fields).filterLogTypeConsoleWrite < (int)logType)) {
-    if ((this->fields).OnLogReceived != (EventHandler_1_ProxyLogHandler_LogFormatData_ *)0x0) {
-      this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
-                func_?(TypeInfo__ProxyLogHandler__LogFormatData);
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__System__EventArgs);
-        cRam_? = '\x01';
-      }
-      if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__System__EventArgs);
-      }
-      UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-      UxmlObjectListAttributeDescription`1[System::Object]::
-      UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
-      this_00[1].klass = (UxmlObjectListAttributeDescription_1_System_Object___Class *)context;
-      (this_00->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)logType;
-      func_?(this_00 + 1,context);
-      this_00[1].monitor = (MonitorData *)format;
-      func_?(&this_00[1].monitor,format);
-      this_00[1].fields._._defaultValue_k__BackingField = (List_1_System_Object_ *)args;
-      func_?(&this_00[1].fields,args);
-      pEVar1 = (this->fields).OnLogReceived;
-      if (pEVar1 == (EventHandler_1_ProxyLogHandler_LogFormatData_ *)0x0) goto code_?;
-      (*(pEVar1->fields)._._.invoke_impl)
-                ((pEVar1->fields)._._.method_code,this,this_00,(pEVar1->fields)._._.method);
+  if ((logType == LogType__Enum_Exception) ||
+     ((int)logType <= (this->fields).filterLogTypeConsoleWrite)) {
+    if ((this->fields).defaultLogHandler == (ILogHandler *)0x0) {
+code_?:
+      FUN_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
     }
-    return;
+    FUN_?();
   }
-  pIVar2 = (this->fields).defaultLogHandler;
-  if (pIVar2 != (ILogHandler *)0x0) {
-    pIVar3 = pIVar2->klass;
-    uVar4 = 0;
-    uVar5._0_1_ = (pIVar3->_1).rank;
-    uVar5._1_1_ = (pIVar3->_1).minimumAlignment;
-    if (uVar5 != 0) {
+  else if ((this->fields).OnLogReceived != (EventHandler_1_ProxyLogHandler_LogFormatData_ *)0x0) {
+    lVar2 = FUN_?(TypeInfo__ProxyLogHandler__LogFormatData);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__System__EventArgs);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__System__EventArgs->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    iVar3 = iRam_?;
+    *(LogType__Enum *)(lVar2 + 0x10) = logType;
+    *(Object_1 **)(lVar2 + 0x18) = context;
+    if (iVar3 != 0) {
+      uVar4 = (uint)(lVar2 + 0x18U >> 0xc);
+      lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
       do {
-        if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
-            (Il2CppClass *)TypeInfo__UnityEngine__ILogHandler) {
-          ppMVar6 = &(&(pIVar2->klass->vtable).LogFormat)
-                     [pIVar2->klass->interfaceOffsets[uVar4].offset].method;
-          goto code_?;
+        uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+        puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+        LOCK();
+        bVar8 = uVar6 == *puVar7;
+        if (bVar8) {
+          *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
         }
-        uVar4 = uVar4 + 1;
-      } while (uVar4 < uVar5);
+        UNLOCK();
+        iVar3 = iRam_?;
+      } while (!bVar8);
     }
-    ppMVar6 = (MethodInfo **)func_?(pIVar2,TypeInfo__UnityEngine__ILogHandler,0);
-code_?:
-    (*(code *)*ppMVar6)(pIVar2,logType,context,format,args,ppMVar6[1]);
-    return;
+    *(String **)(lVar2 + 0x20) = format;
+    iVar9 = 0;
+    if (iVar3 != 0) {
+      uVar4 = (uint)(lVar2 + 0x20U >> 0xc);
+      lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+        puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+        LOCK();
+        bVar8 = uVar6 == *puVar7;
+        if (bVar8) {
+          *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+        }
+        UNLOCK();
+        iVar9 = iRam_?;
+      } while (!bVar8);
+    }
+    *(Object__Array **)(lVar2 + 0x28) = args;
+    if (iVar9 != 0) {
+      uVar4 = (uint)(lVar2 + 0x28U >> 0xc);
+      lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+        puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+        LOCK();
+        bVar8 = uVar6 == *puVar7;
+        if (bVar8) {
+          *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar8);
+    }
+    pEVar10 = (this->fields).OnLogReceived;
+    if (pEVar10 == (EventHandler_1_ProxyLogHandler_LogFormatData_ *)0x0) goto code_?;
+    (*(pEVar10->fields)._._.invoke_impl)
+              ((pEVar10->fields)._._.method_code,this,lVar2,(pEVar10->fields)._._.method);
   }
-code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
   return;
 }
 
@@ -159,45 +184,82 @@ void Assembly-CSharp.dll::ProxyLogHandler::ProxyLogHandler__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&TypeInfo__UnityEngine__ILogger);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__ILogger);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Debug);
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Debug);
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pIVar1 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
-  if (pIVar1 != (ILogger_1 *)0x0) {
-    pIVar2 = (ILogHandler *)func_?(0,TypeInfo__UnityEngine__ILogger,pIVar1);
-    (this->fields).defaultLogHandler = pIVar2;
-    method_00 = (MethodInfo *)&UNK_?;
-    func_?(&this->fields,pIVar2);
+  if (TypeInfo__UnityEngine__Debug->static_fields->s_Logger != (ILogger_1 *)0x0) {
+    pIVar1 = (ILogHandler *)FUN_?(0,TypeInfo__UnityEngine__ILogger);
+    bVar2 = iRam_? != 0;
+    (this->fields).defaultLogHandler = pIVar1;
+    if (bVar2) {
+      uVar3 = (uint)((ulonglong)&this->fields >> 0xc);
+      puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar5 = *puVar4;
+        LOCK();
+        uVar6 = *puVar4;
+        if (uVar5 == uVar6) {
+          *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar5 != uVar6);
+    }
+    bVar2 = cRam_? == '\0';
     (this->fields).filterLogTypeConsoleWrite = 3;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)this,ExceptionArgument__Enum_obj,method_00);
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Debug);
+    if (bVar2) {
+      FUN_?(&TypeInfo__UnityEngine__Debug);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug);
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__UnityEngine__Debug);
     }
-    pIVar1 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
-    if (pIVar1 != (ILogger_1 *)0x0) {
-      func_?(1,TypeInfo__UnityEngine__ILogger,pIVar1,this);
+    pIVar7 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+    if (pIVar7 != (ILogger_1 *)0x0) {
+      uVar8 = 0;
+      pIVar9 = pIVar7->klass;
+      uVar10._0_1_ = (pIVar9->_1).rank;
+      uVar10._1_1_ = (pIVar9->_1).minimumAlignment;
+      if (uVar10 != 0) {
+        do {
+          if (pIVar9->interfaceOffsets[uVar8].interfaceType ==
+              (Il2CppClass *)TypeInfo__UnityEngine__ILogger) {
+            pVVar11 = &(pIVar9->vtable).get_logHandler + (pIVar9->interfaceOffsets[uVar8].offset + 1)
+            ;
+            goto code_?;
+          }
+          uVar8 = uVar8 + 1;
+        } while (uVar8 < uVar10);
+      }
+      pVVar11 = (VirtualInvokeData *)FUN_?(pIVar7);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*pVVar11->methodPtr)(pIVar7,this,pVVar11->method,pVVar11->methodPtr);
       return;
     }
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -210,30 +272,59 @@ void Assembly-CSharp.dll::ProxyLogHandler::ProxyLogHandler_add_OnLogReceived
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
+    FUN_?(&TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  ppEVar1 = &(this->fields).OnLogReceived;
   a = (this->fields).OnLogReceived;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pEVar2 = TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>)
-      ;
-      if (iVar3 == 0) {
-        func_?(pDVar1,pEVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pEVar3 = TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>;
+    if (pDVar2 == (Delegate *)0x0) {
+      pEVar4 = (EventHandler_1_ProxyLogHandler_LogFormatData_ *)0x0;
+    }
+    else {
+      pEVar4 = (EventHandler_1_ProxyLogHandler_LogFormatData_ *)
+               FUN_?(pDVar2,TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
+      if (pEVar4 == (EventHandler_1_ProxyLogHandler_LogFormatData_ *)0x0) {
+        FUN_?(pDVar2,pEVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pEVar5 = (EventHandler_1_ProxyLogHandler_LogFormatData_ *)
-             func_?(&(this->fields).OnLogReceived,iVar3,a);
-    bVar6 = pEVar5 != a;
-    a = pEVar5;
-  } while (bVar6);
+    LOCK();
+    pEVar6 = *ppEVar1;
+    bVar7 = a == pEVar6;
+    if (bVar7) {
+      *ppEVar1 = pEVar4;
+      pEVar6 = a;
+    }
+    UNLOCK();
+    pEVar4 = a;
+    if (!bVar7) {
+      pEVar4 = pEVar6;
+    }
+    if (iRam_? != 0) {
+      uVar8 = (uint)((ulonglong)ppEVar1 >> 0xc);
+      uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar10 == *puVar11;
+        if (bVar7) {
+          *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    bVar7 = pEVar4 != a;
+    a = pEVar4;
+  } while (bVar7);
   return;
 }
 
@@ -260,30 +351,59 @@ void Assembly-CSharp.dll::ProxyLogHandler::ProxyLogHandler_remove_OnLogReceived
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
+    FUN_?(&TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  ppEVar1 = &(this->fields).OnLogReceived;
   source = (this->fields).OnLogReceived;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pDVar2 = mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pEVar2 = TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>;
-    iVar3 = 0;
-    if (pDVar1 != (Delegate *)0x0) {
-      iVar3 = func_?(pDVar1,TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>)
-      ;
-      if (iVar3 == 0) {
-        func_?(pDVar1,pEVar2);
-        pcVar4 = (code *)swi(3);
-        (*pcVar4)();
+    pEVar3 = TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>;
+    if (pDVar2 == (Delegate *)0x0) {
+      pEVar4 = (EventHandler_1_ProxyLogHandler_LogFormatData_ *)0x0;
+    }
+    else {
+      pEVar4 = (EventHandler_1_ProxyLogHandler_LogFormatData_ *)
+               FUN_?(pDVar2,TypeInfo__System__EventHandler<ProxyLogHandler::LogFormatData>);
+      if (pEVar4 == (EventHandler_1_ProxyLogHandler_LogFormatData_ *)0x0) {
+        FUN_?(pDVar2,pEVar3);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
     }
-    pEVar5 = (EventHandler_1_ProxyLogHandler_LogFormatData_ *)
-             func_?(&(this->fields).OnLogReceived,iVar3,source);
-    bVar6 = pEVar5 != source;
-    source = pEVar5;
-  } while (bVar6);
+    LOCK();
+    pEVar6 = *ppEVar1;
+    bVar7 = source == pEVar6;
+    if (bVar7) {
+      *ppEVar1 = pEVar4;
+      pEVar6 = source;
+    }
+    UNLOCK();
+    pEVar4 = source;
+    if (!bVar7) {
+      pEVar4 = pEVar6;
+    }
+    if (iRam_? != 0) {
+      uVar8 = (uint)((ulonglong)ppEVar1 >> 0xc);
+      uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+      do {
+        uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+        puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar10 == *puVar11;
+        if (bVar7) {
+          *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    bVar7 = pEVar4 != source;
+    source = pEVar4;
+  } while (bVar7);
   return;
 }
 

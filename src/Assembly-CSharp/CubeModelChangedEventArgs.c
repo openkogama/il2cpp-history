@@ -6,48 +6,75 @@ String * Assembly-CSharp.dll::CubeModelChangedEventArgs::CubeModelChangedEventAr
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__CubeAction);
-    func_?(&TypeInfo__MV__WorldObject__IntVector);
-    func_?(&StringLiteral__0___1_);
+    FUN_?(&TypeInfo__MV__WorldObject__CubeAction);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__IntVector);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__0___1_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pCVar1 = this;
-  this = (CubeModelChangedEventArgs *)CONCAT13((this->fields).Action,this._0_3_);
-  arg0 = (Object *)func_?(TypeInfo__MV__WorldObject__CubeAction,(int)&this + 3);
-  uStack_2._0_2_ = (pCVar1->fields).Pos.x;
-  uStack_2._2_2_ = (pCVar1->fields).Pos.y;
-  iStack_3 = (pCVar1->fields).Pos.z;
-  arg1 = (Object *)func_?(TypeInfo__MV__WorldObject__IntVector,&uStack_2);
-  pSVar4 = mscorlib.dll::System::String::String_Format_1
-                     (StringLiteral__0___1_,arg0,arg1,(MethodInfo *)0x0);
-  return pSVar4;
+  uStackX_8 = CONCAT31(uStackX_8._1_3_,(this->fields).Action);
+  arg0 = (Object *)FUN_?(TypeInfo__MV__WorldObject__CubeAction,&uStackX_8);
+  uStackX_8._0_2_ = (this->fields).Pos.x;
+  uStackX_8._2_2_ = (this->fields).Pos.y;
+  iStackX_c = (this->fields).Pos.z;
+  arg1 = (Object *)FUN_?(TypeInfo__MV__WorldObject__IntVector,&uStackX_8);
+  pSVar1 = StringLiteral__0___1_;
+  PStack_2._arg0 = (Object *)0x0;
+  PStack_2._arg1 = (Object *)0x0;
+  PStack_2._arg2 = (Object *)0x0;
+  PStack_2._args = (Object__Array *)0x0;
+  mscorlib.dll::System::ParamsArray::ParamsArray__ctor_1(&PStack_2,arg0,arg1,(MethodInfo *)0x0);
+  PStack_3._arg0 = PStack_2._arg0;
+  PStack_3._arg1 = PStack_2._arg1;
+  PStack_3._arg2 = PStack_2._arg2;
+  PStack_3._args = PStack_2._args;
+  pSVar1 = mscorlib.dll::System::String::String_FormatHelper
+                     ((IFormatProvider *)0x0,pSVar1,&PStack_3,(MethodInfo *)0x0);
+  return pSVar1;
 }
 
 
 /* CubeModelChangedEventArgs(CubeAction, IntVector, MVCubeModelBase) */
 
 void Assembly-CSharp.dll::CubeModelChangedEventArgs::CubeModelChangedEventArgs__ctor
-               (CubeModelChangedEventArgs *this,CubeAction__Enum action,IntVector pos,
+               (CubeModelChangedEventArgs *this,CubeAction__Enum action,IntVector *pos,
                MVCubeModelBase *sender,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__EventArgs);
+    FUN_?(&TypeInfo__System__EventArgs);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__EventArgs);
+  if (*(int *)&(TypeInfo__System__EventArgs->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-  UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor
-            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
-  (this->fields).Action = (undefined1)action;
-  (this->fields).Pos.x = pos.x;
-  (this->fields).Pos.y = pos.y;
-  (this->fields).Pos.z = pos.z;
+  bVar1 = iRam_? != 0;
+  iVar2 = pos->y;
+  (this->fields).Pos.x = pos->x;
+  (this->fields).Pos.y = iVar2;
+  (this->fields).Pos.z = pos->z;
+  (this->fields).Action = (uint8_t)action;
   (this->fields).Sender = sender;
-  func_?(&(this->fields).Sender,sender);
+  if (bVar1) {
+    uVar3 = (uint)((ulonglong)&(this->fields).Sender >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
   return;
 }
 

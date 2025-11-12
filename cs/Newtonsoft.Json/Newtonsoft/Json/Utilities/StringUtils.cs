@@ -12,7 +12,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-// Image 8: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
+// Image 9: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
 
 namespace Newtonsoft.Json.Utilities
 {
@@ -69,7 +69,7 @@ namespace Newtonsoft.Json.Utilities
 		public static string FormatWith(this string format, IFormatProvider provider, [Nullable(2)] object arg0, [Nullable(2)] object arg1, [Nullable(2)] object arg2);
 		[NullableContext(2)]
 		public static string FormatWith([Nullable(1)] this string format, [Nullable(1)] IFormatProvider provider, object arg0, object arg1, object arg2, object arg3);
-		private static string FormatWith(this string format, IFormatProvider provider, [Nullable(new byte[2] {1, 2 })] params object[] args);
+		private static string FormatWith(this string format, IFormatProvider provider, params [Nullable(new byte[2] {1, 2 })] object[] args);
 		public static TSource ForgivingCaseSensitiveFind<TSource>(this IEnumerable<TSource> source, Func<TSource, string> valueSelector, string testValue);
 		public static bool StartsWith(this string source, char value);
 		public static bool EndsWith(this string source, char value);

@@ -5,34 +5,25 @@ void Assembly-CSharp.dll::RTG::QuadShape2D::QuadShape2D_AlignWidth
                (QuadShape2D *this,Vector2 axis,MethodInfo *method)
 
 {
-  pQVar1 = this;
   from = RightAngTriangle2D::RightAngTriangle2D_get_Right
                    ((RightAngTriangle2D *)this,(MethodInfo *)0x0);
-  pQVar2 = QuaternionEx::QuaternionEx_FromToRotation2D
-                     ((Quaternion *)&stack0xffffffec,from,axis,(MethodInfo *)0x0);
-  fVar3 = pQVar2->w;
-  fVar4 = (this->fields)._rotationDegrees;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  fVar5 = 0.0;
-  pVVar6 = &TypeInfo__UnityEngine__Vector3->static_fields->forwardVector;
-  fVar7 = pVVar6->y;
-  fVar8 = (TypeInfo__UnityEngine__Vector3->static_fields->forwardVector).z;
-  pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                     ((Quaternion *)&puStack_9,fVar4,*pVVar6,(MethodInfo *)0x0);
-  fVar4 = pQVar2->y;
-  fVar10 = pQVar2->z;
-  fVar11 = pQVar2->w;
-  this = (QuadShape2D *)((fVar10 * fVar3 + fVar5 * fVar11 + fVar4 * fVar7) - fVar8 * pQVar2->x);
-  fVar12 = (fVar4 * fVar3 + fVar8 * fVar11 + fVar5 * pQVar2->x) - fVar10 * fVar7;
-  axis.x = ((fVar3 * fVar11 - pQVar2->x * fVar7) - fVar4 * fVar8) - fVar5 * fVar10;
-  quat.x = (fVar3 * pQVar2->x + fVar7 * fVar11 + fVar10 * fVar8) - fVar4 * fVar5;
-  quat = (Quaternion)CONCAT124(quat._0_12_,quat.x);
-  QuaternionEx::QuaternionEx_ConvertTo2DRotation(quat,(MethodInfo *)0x0);
-  fVar13 = (float10)func_?();
-  (pQVar1->fields)._rotationDegrees = (float)fVar13;
+  pQVar1 = QuaternionEx::QuaternionEx_FromToRotation2D(aQStack_2,from,axis,(MethodInfo *)0x0);
+  fVar3 = pQVar1->x;
+  fVar4 = pQVar1->y;
+  fVar5 = pQVar1->z;
+  fVar6 = pQVar1->w;
+  pQVar1 = QuadShape2D_get_Rotation(aQStack_2,this,(MethodInfo *)0x0);
+  fVar7 = pQVar1->x;
+  fVar8 = pQVar1->y;
+  fVar9 = pQVar1->z;
+  fVar10 = pQVar1->w;
+  aQStack_2[0].x = (fVar6 * fVar7 + fVar3 * fVar10 + fVar4 * fVar9) - fVar5 * fVar8;
+  aQStack_2[0].y = (fVar6 * fVar8 + fVar4 * fVar10 + fVar5 * fVar7) - fVar3 * fVar9;
+  aQStack_2[0].w = ((fVar6 * fVar10 - fVar3 * fVar7) - fVar4 * fVar8) - fVar5 * fVar9;
+  aQStack_2[0].z = (fVar6 * fVar9 + fVar5 * fVar10 + fVar3 * fVar8) - fVar4 * fVar7;
+  fVar3 = QuaternionEx::QuaternionEx_ConvertTo2DRotation(aQStack_2,(MethodInfo *)0x0);
+  fVar3 = (float)FUN_?(fVar3,_UNK_?);
+  (this->fields)._rotationDegrees = fVar3;
   return;
 }
 
@@ -43,27 +34,46 @@ bool Assembly-CSharp.dll::RTG::QuadShape2D::QuadShape2D_ContainsPoint
                (QuadShape2D *this,Vector2 point,MethodInfo *method)
 
 {
-  fVar1 = (this->fields)._center.y;
   quadWidth = (this->fields)._size.x;
-  quadHeight = (this->fields)._size.y;
-  if ((this->fields)._ptContainMode != 0) {
-    VVar2 = RightAngTriangle2D::RightAngTriangle2D_get_Right
+  if ((this->fields)._ptContainMode == 0) {
+    fVar1 = (this->fields)._center.x;
+    fVar2 = (this->fields)._center.y;
+    fVar3 = (this->fields)._size.y;
+    VVar4 = RightAngTriangle2D::RightAngTriangle2D_get_Right
                       ((RightAngTriangle2D *)this,(MethodInfo *)0x0);
-    VVar3 = RightAngTriangle2D::RightAngTriangle2D_get_Up
+    VVar5 = RightAngTriangle2D::RightAngTriangle2D_get_Up
                       ((RightAngTriangle2D *)this,(MethodInfo *)0x0);
-    bVar4 = QuadMath::QuadMath_Is2DPointOnBorder_1
-                      (point,(Vector2)((ulonglong)(uint)fVar1 << 0x20),quadWidth,quadHeight,VVar2,
-                       VVar3,(this->fields)._epsilon,(MethodInfo *)0x0);
-    return bVar4;
+    fStack_6 = point.x;
+    fStack_7 = point.y;
+    fStack_6 = fStack_6 - fVar1;
+    fStack_7 = fStack_7 - fVar2;
+    fStackX_c = VVar4.y;
+    fStackX_8 = VVar4.x;
+    if ((quadWidth + (this->fields)._epsilon._sizeEps.x) * _UNK_? <
+        (float)((uint)(fStack_7 * fStackX_c + fStack_6 * fStackX_8) & _UNK_?)) {
+      bVar8 = 0;
+    }
+    else {
+      fStackX_24 = VVar5.y;
+      fStackX_20 = VVar5.x;
+      bVar8 = (float)((uint)(fStackX_24 * fStack_7 + fStackX_20 * fStack_6) & _UNK_?) <=
+              ((this->fields)._epsilon._sizeEps.y + fVar3) * _UNK_?;
+    }
   }
-  VVar2 = RightAngTriangle2D::RightAngTriangle2D_get_Right
-                    ((RightAngTriangle2D *)this,(MethodInfo *)0x0);
-  VVar3 = RightAngTriangle2D::RightAngTriangle2D_get_Up
-                    ((RightAngTriangle2D *)this,(MethodInfo *)0x0);
-  bVar4 = QuadMath::QuadMath_Contains2DPoint_1
-                    (point,(Vector2)((ulonglong)(uint)fVar1 << 0x20),quadWidth,quadHeight,VVar2,
-                     VVar3,(this->fields)._epsilon,(MethodInfo *)0x0);
-  return bVar4;
+  else {
+    VVar4 = (this->fields)._center;
+    fVar1 = (this->fields)._size.y;
+    VVar5 = RightAngTriangle2D::RightAngTriangle2D_get_Right
+                      ((RightAngTriangle2D *)this,(MethodInfo *)0x0);
+    quadUp = RightAngTriangle2D::RightAngTriangle2D_get_Up
+                       ((RightAngTriangle2D *)this,(MethodInfo *)0x0);
+    aQStack_9[0]._sizeEps = (this->fields)._epsilon._sizeEps;
+    aQStack_9[0]._extrudeEps = (this->fields)._epsilon._extrudeEps;
+    aQStack_9[0]._wireEps = (this->fields)._epsilon._wireEps;
+    bVar8 = QuadMath::QuadMath_Is2DPointOnBorder_1
+                      (point,VVar4,quadWidth,fVar1,VVar5,quadUp,aQStack_9,(MethodInfo *)0x0);
+  }
+  return bVar8;
 }
 
 
@@ -73,23 +83,18 @@ Rect * Assembly-CSharp.dll::RTG::QuadShape2D::QuadShape2D_GetEncapsulatingRect
                  (Rect *__return_storage_ptr__,QuadShape2D *this,MethodInfo *method)
 
 {
-  RStack_1.m_Width = (this->fields)._center.x;
-  RStack_1.m_Height = (this->fields)._center.y;
-  pVVar2 = &(this->fields)._size;
-  fStack_3 = pVVar2->x;
-  fStack_4 = (this->fields)._size.y;
   points = QuadMath::QuadMath_Calc2DQuadCornerPoints
-                     ((this->fields)._center,*pVVar2,(this->fields)._rotationDegrees,
+                     ((this->fields)._center,(this->fields)._size,(this->fields)._rotationDegrees,
                       (MethodInfo *)0x0);
-  pRVar5 = RectEx::RectEx_FromPoints
-                     (&RStack_1,(IEnumerable_1_UnityEngine_Vector2_ *)points,(MethodInfo *)0x0);
-  fVar6 = pRVar5->m_YMin;
-  fVar7 = pRVar5->m_Width;
-  fVar8 = pRVar5->m_Height;
-  __return_storage_ptr__->m_XMin = pRVar5->m_XMin;
-  __return_storage_ptr__->m_YMin = fVar6;
-  __return_storage_ptr__->m_Width = fVar7;
-  __return_storage_ptr__->m_Height = fVar8;
+  pRVar1 = RectEx::RectEx_FromPoints
+                     (&RStack_2,(IEnumerable_1_UnityEngine_Vector2_ *)points,(MethodInfo *)0x0);
+  fVar3 = pRVar1->m_YMin;
+  fVar4 = pRVar1->m_Width;
+  fVar5 = pRVar1->m_Height;
+  __return_storage_ptr__->m_XMin = pRVar1->m_XMin;
+  __return_storage_ptr__->m_YMin = fVar3;
+  __return_storage_ptr__->m_Width = fVar4;
+  __return_storage_ptr__->m_Height = fVar5;
   return __return_storage_ptr__;
 }
 
@@ -102,49 +107,60 @@ Vector2 Assembly-CSharp.dll::RTG::QuadShape2D::QuadShape2D_GetExtentPoint
 {
   fVar1 = (this->fields)._size.x * _UNK_?;
   fVar2 = (this->fields)._size.y * _UNK_?;
-  switch(extentPt) {
-  case Shape2DExtentPoint__Enum_Left:
-    fVar2 = (this->fields)._center.x;
-    fVar3 = (this->fields)._center.y;
-    VVar4 = RightAngTriangle2D::RightAngTriangle2D_get_Right
+  if (extentPt == Shape2DExtentPoint__Enum_Left) {
+    fVar3 = (this->fields)._center.x;
+    fVar4 = (this->fields)._center.y;
+    VVar5 = RightAngTriangle2D::RightAngTriangle2D_get_Right
                       ((RightAngTriangle2D *)this,(MethodInfo *)0x0);
-    VStack_5.y = VVar4.y;
-    VStack_5.y = fVar3 - VStack_5.y * fVar1;
-    VStack_5.x = fVar2 - VStack_5.x * fVar1;
-    return VStack_5;
-  case Shape2DExtentPoint__Enum_Top:
-    fVar1 = (this->fields)._center.x;
-    fVar3 = (this->fields)._center.y;
-    VVar4 = RightAngTriangle2D::RightAngTriangle2D_get_Up
-                      ((RightAngTriangle2D *)this,(MethodInfo *)0x0);
-    VStack_5.y = VVar4.y;
-    VStack_5.y = VStack_5.y * fVar2 + fVar3;
-    VStack_5.x = VStack_5.x * fVar2 + fVar1;
-    return VStack_5;
-  case Shape2DExtentPoint__Enum_Right:
-    fVar2 = (this->fields)._center.x;
-    fVar3 = (this->fields)._center.y;
-    VVar4 = RightAngTriangle2D::RightAngTriangle2D_get_Right
-                      ((RightAngTriangle2D *)this,(MethodInfo *)0x0);
-    VStack_5.y = VVar4.y;
-    VStack_5.y = VStack_5.y * fVar1 + fVar3;
-    VStack_5.x = VStack_5.x * fVar1 + fVar2;
-    return VStack_5;
-  case Shape2DExtentPoint__Enum_Bottom:
-    fVar1 = (this->fields)._center.x;
-    fVar3 = (this->fields)._center.y;
-    VVar4 = RightAngTriangle2D::RightAngTriangle2D_get_Up
-                      ((RightAngTriangle2D *)this,(MethodInfo *)0x0);
-    VStack_5.y = VVar4.y;
-    VStack_5.y = fVar3 - VStack_5.y * fVar2;
-    VStack_5.x = fVar1 - VStack_5.x * fVar2;
-    return VStack_5;
+    fStackX_8 = VVar5.x;
+    fStackX_c = VVar5.y;
+    fStackX_8 = fStackX_8 * fVar1;
+    fStackX_c = fStackX_c * fVar1;
+code_?:
+    VVar5.y = fVar4 - fStackX_c;
+    VVar5.x = fVar3 - fStackX_8;
   }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector2);
-    cRam_? = '\x01';
+  else {
+    if (extentPt == Shape2DExtentPoint__Enum_Top) {
+      fVar3 = (this->fields)._center.x;
+      fVar4 = (this->fields)._center.y;
+      VVar5 = RightAngTriangle2D::RightAngTriangle2D_get_Up
+                        ((RightAngTriangle2D *)this,(MethodInfo *)0x0);
+      fStackX_8 = VVar5.x;
+      fStackX_c = VVar5.y;
+      fStackX_8 = fStackX_8 * fVar2;
+      fStackX_c = fStackX_c * fVar2;
+    }
+    else {
+      if (extentPt != Shape2DExtentPoint__Enum_Right) {
+        if (extentPt != Shape2DExtentPoint__Enum_Bottom) {
+          VVar5 = RightAngTriangle2D::RightAngTriangle2D_get_ModelRightAngleCorner
+                            ((MethodInfo *)this);
+          return VVar5;
+        }
+        fVar3 = (this->fields)._center.x;
+        fVar4 = (this->fields)._center.y;
+        VVar5 = RightAngTriangle2D::RightAngTriangle2D_get_Up
+                          ((RightAngTriangle2D *)this,(MethodInfo *)0x0);
+        fStackX_8 = VVar5.x;
+        fStackX_c = VVar5.y;
+        fStackX_8 = fStackX_8 * fVar2;
+        fStackX_c = fStackX_c * fVar2;
+        goto code_?;
+      }
+      fVar3 = (this->fields)._center.x;
+      fVar4 = (this->fields)._center.y;
+      VVar5 = RightAngTriangle2D::RightAngTriangle2D_get_Right
+                        ((RightAngTriangle2D *)this,(MethodInfo *)0x0);
+      fStackX_8 = VVar5.x;
+      fStackX_c = VVar5.y;
+      fStackX_8 = fStackX_8 * fVar1;
+      fStackX_c = fStackX_c * fVar1;
+    }
+    VVar5.y = fStackX_c + fVar4;
+    VVar5.x = fStackX_8 + fVar3;
   }
-  return TypeInfo__UnityEngine__Vector2->static_fields->zeroVector;
+  return VVar5;
 }
 
 
@@ -154,24 +170,23 @@ float Assembly-CSharp.dll::RTG::QuadShape2D::QuadShape2D_GetSizeAlongDirection
                 (QuadShape2D *this,Vector2 direction,MethodInfo *method)
 
 {
-  fVar1 = (this->fields)._rotationDegrees;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                     ((Quaternion *)&stack0xffffffec,fVar1,
-                      TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,(MethodInfo *)0x0
-                     );
-  point.z = 0.0;
-  point.x = (this->fields)._size.x;
-  point.y = (this->fields)._size.y;
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                     ((Vector3 *)&stack0xfffffff0,*pQVar2,point,(MethodInfo *)0x0);
-  v2.x = pVVar3->x;
-  v2.y = pVVar3->y;
-  fVar1 = Vector2Ex::Vector2Ex_AbsDot(direction,v2,(MethodInfo *)0x0);
-  return fVar1;
+  pQVar1 = QuadShape2D_get_Rotation(aQStack_2,this,(MethodInfo *)0x0);
+  fVar3 = pQVar1->x;
+  fVar4 = pQVar1->y;
+  fVar5 = pQVar1->z;
+  fVar6 = pQVar1->w;
+  fVar7 = fVar5 + fVar5;
+  fVar8 = fVar4 + fVar4;
+  fStackX_8 = direction.x;
+  fStackX_c = direction.y;
+  return (float)((uint)(((_UNK_? - (fVar8 * fVar4 + fVar7 * fVar5)) * (this->fields)._size.x
+                         + (fVar8 * fVar3 - fVar7 * fVar6) * (this->fields)._size.y +
+                        (fVar7 * fVar3 + fVar8 * fVar6) * 0.0) * fStackX_8 +
+                       ((_UNK_? - ((fVar3 + fVar3) * fVar3 + fVar7 * fVar5)) *
+                        (this->fields)._size.y +
+                        (fVar7 * fVar6 + fVar8 * fVar3) * (this->fields)._size.x +
+                       (fVar7 * fVar4 - (fVar3 + fVar3) * fVar6) * 0.0) * fStackX_c) &
+                _UNK_?);
 }
 
 
@@ -207,21 +222,24 @@ void Assembly-CSharp.dll::RTG::QuadShape2D::QuadShape2D__ctor(QuadShape2D *this,
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector2);
+    FUN_?(&TypeInfo__UnityEngine__Vector2);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   fVar1 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
+  bVar2 = cRam_? == '\0';
   (this->fields)._center.x = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
   (this->fields)._center.y = fVar1;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector2);
+  if (bVar2) {
+    FUN_?(&TypeInfo__UnityEngine__Vector2);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   fVar1 = (TypeInfo__UnityEngine__Vector2->static_fields->oneVector).y;
   (this->fields)._size.x = (TypeInfo__UnityEngine__Vector2->static_fields->oneVector).x;
   (this->fields)._size.y = fVar1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   return;
 }
 
@@ -238,16 +256,6 @@ Vector2 Assembly-CSharp.dll::RTG::QuadShape2D::QuadShape2D_get_Extents
 }
 
 
-/* Single get_HeightEps() */
-
-float Assembly-CSharp.dll::RTG::QuadShape2D::QuadShape2D_get_HeightEps
-                (QuadShape2D *this,MethodInfo *method)
-
-{
-  return (this->fields)._epsilon._sizeEps.y;
-}
-
-
 /* Quaternion get_Rotation() */
 
 Quaternion *
@@ -257,30 +265,33 @@ Assembly-CSharp.dll::RTG::QuadShape2D::QuadShape2D_get_Rotation
 {
   fVar1 = (this->fields)._rotationDegrees;
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                     (&QStack_3,fVar1,TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
-                      (MethodInfo *)0x0);
-  fVar1 = pQVar2->y;
-  fVar4 = pQVar2->z;
-  fVar5 = pQVar2->w;
-  __return_storage_ptr__->x = pQVar2->x;
-  __return_storage_ptr__->y = fVar1;
-  __return_storage_ptr__->z = fVar4;
-  __return_storage_ptr__->w = fVar5;
+  pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uStack_3._0_4_ = (pVVar2->forwardVector).x;
+  uStack_3._4_4_ = (pVVar2->forwardVector).y;
+  fStack_4 = (pVVar2->forwardVector).z;
+  uStack_5 = 0;
+  uStack_6 = 0;
+  pcVar7 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+    uVar8 = func_?(&UNK_?);
+    FUN_?(uVar8,0);
+    pcVar7 = (code *)swi(3);
+    pQVar9 = (Quaternion *)(*pcVar7)();
+    return pQVar9;
+  }
+  pcRam_? = pcVar7;
+  (*pcRam_?)(fVar1,&uStack_3,&uStack_5);
+  __return_storage_ptr__->x = (float)(undefined4)uStack_5;
+  __return_storage_ptr__->y = (float)uStack_5._4_4_;
+  __return_storage_ptr__->z = (float)(undefined4)uStack_6;
+  __return_storage_ptr__->w = (float)uStack_6._4_4_;
   return __return_storage_ptr__;
-}
-
-
-/* Single get_WidthEps() */
-
-float Assembly-CSharp.dll::RTG::QuadShape2D::QuadShape2D_get_WidthEps
-                (QuadShape2D *this,MethodInfo *method)
-
-{
-  return (this->fields)._epsilon._sizeEps.x;
 }
 
 
@@ -290,8 +301,7 @@ void Assembly-CSharp.dll::RTG::QuadShape2D::QuadShape2D_set_HeightEps
                (QuadShape2D *this,float value,MethodInfo *method)
 
 {
-  TorusEpsilon::TorusEpsilon_set_CylHrzRadius
-            ((TorusEpsilon *)&(this->fields)._epsilon,value,(MethodInfo *)0x0);
+  (this->fields)._epsilon._sizeEps.y = (float)((uint)value & _UNK_?);
   return;
 }
 
@@ -302,8 +312,8 @@ void Assembly-CSharp.dll::RTG::QuadShape2D::QuadShape2D_set_RotationDegrees
                (QuadShape2D *this,float value,MethodInfo *method)
 
 {
-  fVar1 = (float10)func_?((double)value);
-  (this->fields)._rotationDegrees = (float)fVar1;
+  fVar1 = (float)FUN_?(value,_UNK_?);
+  (this->fields)._rotationDegrees = fVar1;
   return;
 }
 
@@ -314,10 +324,10 @@ void Assembly-CSharp.dll::RTG::QuadShape2D::QuadShape2D_set_Size
                (QuadShape2D *this,Vector2 value,MethodInfo *method)
 
 {
-  VVar1 = Vector2Ex::Vector2Ex_Abs(value,(MethodInfo *)0x0);
-  (this->fields)._size.x = value.x;
-  value.y = VVar1.y;
-  (this->fields)._size.y = value.y;
+  fStackX_8 = value.x;
+  (this->fields)._size.x = (float)((uint)fStackX_8 & _UNK_?);
+  fStackX_c = value.y;
+  (this->fields)._size.y = (float)((uint)fStackX_c & _UNK_?);
   return;
 }
 
@@ -328,19 +338,10 @@ void Assembly-CSharp.dll::RTG::QuadShape2D::QuadShape2D_set_SizeEps
                (QuadShape2D *this,Vector2 value,MethodInfo *method)
 
 {
-  QuadEpsilon::QuadEpsilon_set_SizeEps(&(this->fields)._epsilon,value,(MethodInfo *)0x0);
-  return;
-}
-
-
-/* Void set_WireEps(Single) */
-
-void Assembly-CSharp.dll::RTG::QuadShape2D::QuadShape2D_set_WireEps
-               (QuadShape2D *this,float value,MethodInfo *method)
-
-{
-  TorusShape3D::TorusShape3D_set_TubeRadius
-            ((TorusShape3D *)&(this->fields)._epsilon,value,(MethodInfo *)0x0);
+  fStackX_8 = value.x;
+  (this->fields)._epsilon._sizeEps.x = (float)((uint)fStackX_8 & _UNK_?);
+  fStackX_c = value.y;
+  (this->fields)._epsilon._sizeEps.y = (float)((uint)fStackX_c & _UNK_?);
   return;
 }
 

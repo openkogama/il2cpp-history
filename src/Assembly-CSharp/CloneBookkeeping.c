@@ -6,44 +6,79 @@ void Assembly-CSharp.dll::CloneBookkeeping::CloneBookkeeping__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
-    func_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
-    func_?(&MethodInfo__System__Collections__Generic__List<int>__List__);
-    func_?(&TypeInfo__System__Collections__Generic__List<int>);
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<int>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<int>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   (this->fields).cloneIdIncrement = -1;
   (this->fields).cloneLinkIdIncrement = -1;
   (this->fields).cloneObjectLinkIdIncrement = -1;
-  pLVar1 = (List_1_System_Int32_ *)
-           func_?(TypeInfo__System__Collections__Generic__List<int>);
-  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType]::
-  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
-             MethodInfo__System__Collections__Generic__List<int>__List__);
+  pLVar1 = (List_1_System_Int32_ *)FUN_?(TypeInfo__System__Collections__Generic__List<int>);
+  FUN_?(pLVar1,MethodInfo__System__Collections__Generic__List<int>__List__);
+  bVar2 = iRam_? != 0;
   (this->fields).linkIds = pLVar1;
-  func_?(&(this->fields).linkIds,pLVar1);
-  pLVar1 = (List_1_System_Int32_ *)
-           func_?(TypeInfo__System__Collections__Generic__List<int>);
-  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType]::
-  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
-             MethodInfo__System__Collections__Generic__List<int>__List__);
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).linkIds >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
+  pLVar1 = (List_1_System_Int32_ *)FUN_?(TypeInfo__System__Collections__Generic__List<int>);
+  FUN_?(pLVar1,MethodInfo__System__Collections__Generic__List<int>__List__);
+  bVar2 = iRam_? != 0;
   (this->fields).objectLinkIds = pLVar1;
-  func_?(&(this->fields).objectLinkIds,pLVar1);
-  this_00 = (Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef_ *
-            )func_?(TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::TextCore::Text
-  ::TextResourceManager+FontAssetRef]::
-  Dictionary_2_System_Int32_UnityEngine_TextCore_Text_TextResourceManager_FontAssetRef___ctor
-            (this_00,MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__);
-  method_00 = (MethodInfo *)&(this->fields).worldObjectIdsMaps;
-  (this->fields).worldObjectIdsMaps = (Dictionary_2_System_Int32_System_Int32_ *)this_00;
-  func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).objectLinkIds >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
+  pDVar7 = (Dictionary_2_System_Int32_System_Int32_ *)
+           FUN_?(TypeInfo__System__Collections__Generic__Dictionary<int,_int>);
+  FUN_?(pDVar7,MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Dictionary__)
+  ;
+  bVar2 = iRam_? != 0;
+  (this->fields).worldObjectIdsMaps = pDVar7;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).worldObjectIdsMaps >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
   return;
 }
 

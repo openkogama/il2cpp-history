@@ -8,24 +8,22 @@ void Assembly-CSharp.dll::DesktopEditModeController+<>c__DisplayClass76_0::
 
 {
   if (cRam_? == '\0') {
-    pSStack_1 = (String *)&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator;
-    func_?();
-    pSStack_2 = (String *)&StringLiteral_Error;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Error);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (x != (IModalPopupCreator *)0x0) {
-    pSStack_1 = StringLiteral_Error;
-    pSStack_2 = (this->fields).errorText;
-    pIStack_3 = x;
-    func_?(1,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+    FUN_?(1,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,x,
+                  (this->fields).errorText,StringLiteral_Error);
     return;
   }
-  pSStack_1 = (String *)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

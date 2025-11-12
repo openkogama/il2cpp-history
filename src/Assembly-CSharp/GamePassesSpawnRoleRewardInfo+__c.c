@@ -8,22 +8,36 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo+<>c::
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (handler != (IUIStack *)0x0) {
-    ppIStack_1 = (IUIStack__Class **)0x80;
-    pIStack_2 = handler;
-    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?(4);
+  if (handler == (IUIStack *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  uVar2 = 0;
+  pIVar3 = handler->klass;
+  uVar4._0_1_ = (pIVar3->_1).rank;
+  uVar4._1_1_ = (pIVar3->_1).minimumAlignment;
+  if (uVar4 != 0) {
+    do {
+      if (pIVar3->interfaceOffsets[uVar2].interfaceType ==
+          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
+        pVVar5 = &(pIVar3->vtable).get_StackReady + (pIVar3->interfaceOffsets[uVar2].offset + 4);
+        goto code_?;
+      }
+      uVar2 = uVar2 + 1;
+    } while (uVar2 < uVar4);
+  }
+  pVVar5 = (VirtualInvokeData *)FUN_?(handler);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pVVar5->methodPtr)(handler,0x80,pVVar5->method,pVVar5->methodPtr);
   return;
 }
 
@@ -37,22 +51,41 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo+<>c::
 
 {
   if (cRam_? == '\0') {
-    pIStack_1 = (IModalPopupCreator *)&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (x != (IModalPopupCreator *)0x0) {
-    pIStack_1 = x;
-    pIStack_2 = TypeInfo__UnityEngine__EventSystems__IModalPopupCreator;
-    uStack_3 = 2;
-    func_?();
+    pIVar1 = x->klass;
+    uVar2 = 0;
+    uVar3._0_1_ = (pIVar1->_1).rank;
+    uVar3._1_1_ = (pIVar1->_1).minimumAlignment;
+    if (uVar3 != 0) {
+      do {
+        if (pIVar1->interfaceOffsets[uVar2].interfaceType ==
+            (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
+          pVVar4 = &(pIVar1->vtable).Create + (pIVar1->interfaceOffsets[uVar2].offset + 2);
+          UNRECOVERED_JUMPTABLE = pVVar4->methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*UNRECOVERED_JUMPTABLE)(x,pVVar4->method,UNRECOVERED_JUMPTABLE);
+          return;
+        }
+        uVar2 = uVar2 + 1;
+      } while (uVar2 < uVar3);
+    }
+    puVar5 = (undefined8 *)
+             FUN_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,2,uVar3,
+                           unaff_RBX);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(code *)*puVar5)(x,puVar5[1],(code *)*puVar5);
     return;
   }
-  pIStack_1 = (IModalPopupCreator *)&stack0xfffffffc;
-  uVar4 = func_?(&uStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -66,22 +99,39 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo+<>c::
 
 {
   if (cRam_? == '\0') {
-    pIStack_1 = (IUIStack *)&TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (x != (IUIStack *)0x0) {
-    pIStack_1 = x;
-    pIStack_2 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    uStack_3 = 2;
-    func_?();
+    uVar1 = 0;
+    pIVar2 = x->klass;
+    uVar3._0_1_ = (pIVar2->_1).rank;
+    uVar3._1_1_ = (pIVar2->_1).minimumAlignment;
+    if (uVar3 != 0) {
+      do {
+        if (pIVar2->interfaceOffsets[uVar1].interfaceType ==
+            (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
+          pVVar4 = &(pIVar2->vtable).get_StackReady + (pIVar2->interfaceOffsets[uVar1].offset + 2);
+          UNRECOVERED_JUMPTABLE = pVVar4->methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*UNRECOVERED_JUMPTABLE)(x,pVVar4->method,UNRECOVERED_JUMPTABLE);
+          return;
+        }
+        uVar1 = uVar1 + 1;
+      } while (uVar1 < uVar3);
+    }
+    puVar5 = (undefined8 *)FUN_?(x);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(code *)*puVar5)(x,puVar5[1],(code *)*puVar5);
     return;
   }
-  pIStack_1 = (IUIStack *)&stack0xfffffffc;
-  uVar4 = func_?(&uStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -95,22 +145,39 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo+<>c::
 
 {
   if (cRam_? == '\0') {
-    pIStack_1 = (IUIStack *)&TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (x != (IUIStack *)0x0) {
-    pIStack_1 = x;
-    pIStack_2 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    uStack_3 = 2;
-    func_?();
+    uVar1 = 0;
+    pIVar2 = x->klass;
+    uVar3._0_1_ = (pIVar2->_1).rank;
+    uVar3._1_1_ = (pIVar2->_1).minimumAlignment;
+    if (uVar3 != 0) {
+      do {
+        if (pIVar2->interfaceOffsets[uVar1].interfaceType ==
+            (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
+          pVVar4 = &(pIVar2->vtable).get_StackReady + (pIVar2->interfaceOffsets[uVar1].offset + 2);
+          UNRECOVERED_JUMPTABLE = pVVar4->methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*UNRECOVERED_JUMPTABLE)(x,pVVar4->method,UNRECOVERED_JUMPTABLE);
+          return;
+        }
+        uVar1 = uVar1 + 1;
+      } while (uVar1 < uVar3);
+    }
+    puVar5 = (undefined8 *)FUN_?(x);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(code *)*puVar5)(x,puVar5[1],(code *)*puVar5);
     return;
   }
-  pIStack_1 = (IUIStack *)&stack0xfffffffc;
-  uVar4 = func_?(&uStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -124,22 +191,41 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo+<>c::
 
 {
   if (cRam_? == '\0') {
-    pIStack_1 = (IModalPopupCreator *)&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (x != (IModalPopupCreator *)0x0) {
-    pIStack_1 = x;
-    pIStack_2 = TypeInfo__UnityEngine__EventSystems__IModalPopupCreator;
-    uStack_3 = 2;
-    func_?();
+    pIVar1 = x->klass;
+    uVar2 = 0;
+    uVar3._0_1_ = (pIVar1->_1).rank;
+    uVar3._1_1_ = (pIVar1->_1).minimumAlignment;
+    if (uVar3 != 0) {
+      do {
+        if (pIVar1->interfaceOffsets[uVar2].interfaceType ==
+            (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
+          pVVar4 = &(pIVar1->vtable).Create + (pIVar1->interfaceOffsets[uVar2].offset + 2);
+          UNRECOVERED_JUMPTABLE = pVVar4->methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*UNRECOVERED_JUMPTABLE)(x,pVVar4->method,UNRECOVERED_JUMPTABLE);
+          return;
+        }
+        uVar2 = uVar2 + 1;
+      } while (uVar2 < uVar3);
+    }
+    puVar5 = (undefined8 *)
+             FUN_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,2,uVar3,
+                           unaff_RBX);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(code *)*puVar5)(x,puVar5[1],(code *)*puVar5);
     return;
   }
-  pIStack_1 = (IModalPopupCreator *)&stack0xfffffffc;
-  uVar4 = func_?(&uStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -153,18 +239,24 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo+<>c::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
-    func_?(&StringLiteral_An_error_occurred);
-    func_?(&StringLiteral_Free_try_cannot_be_activated_at_);
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_An_error_occurred);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Free_try_cannot_be_activated_at_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TM::TM__(StringLiteral_Free_try_cannot_be_activated_at_,(MethodInfo *)0x0);
   TM::TM__(StringLiteral_An_error_occurred,(MethodInfo *)0x0);
   if (x != (IModalPopupCreator *)0x0) {
-    func_?(4,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,x);
+    FUN_?();
     return;
   }
-  func_?();
+  FUN_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;
@@ -180,18 +272,24 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo+<>c::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
-    func_?(&StringLiteral_Video_canceled);
-    func_?(&StringLiteral_The_video_was_canceled__Your_Fre);
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Video_canceled);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_The_video_was_canceled__Your_Fre);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TM::TM__(StringLiteral_The_video_was_canceled__Your_Fre,(MethodInfo *)0x0);
   TM::TM__(StringLiteral_Video_canceled,(MethodInfo *)0x0);
   if (x != (IModalPopupCreator *)0x0) {
-    func_?(4,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,x);
+    FUN_?();
     return;
   }
-  func_?();
+  FUN_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;
@@ -207,23 +305,39 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo+<>c::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Assets__Scripts__AdIntegration__IAdManager);
-    func_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
-    func_?(&StringLiteral_No_Ad_Available);
+    FUN_?(&TypeInfo__Assets__Scripts__AdIntegration__IAdManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_No_Ad_Available);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pIVar1 = MVGameControllerBase::MVGameControllerBase_get_AdManager((MethodInfo *)0x0);
-  if (pIVar1 != (IAdManager *)0x0) {
-    uVar2 = func_?(0,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,pIVar1);
-    pSVar3 = TM::TM__(StringLiteral_No_Ad_Available,(MethodInfo *)0x0);
-    if (x != (IModalPopupCreator *)0x0) {
-      func_?(4,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,x,uVar2,pSVar3);
-      return;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (pMVar1 != (MVGameControllerBase *)0x0) {
+    lVar2 = (*(pMVar1->klass->vtable).__unknown.methodPtr)
+                      (pMVar1,(pMVar1->klass->vtable).__unknown.method);
+    if (lVar2 != 0) {
+      FUN_?(0,TypeInfo__Assets__Scripts__AdIntegration__IAdManager,lVar2);
+      TM::TM__(StringLiteral_No_Ad_Available,(MethodInfo *)0x0);
+      if (x != (IModalPopupCreator *)0x0) {
+        FUN_?();
+        return;
+      }
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -237,18 +351,24 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo+<>c::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
-    func_?(&StringLiteral_An_error_occurred);
-    func_?(&StringLiteral_Free_try_cannot_be_activated_at_);
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_An_error_occurred);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Free_try_cannot_be_activated_at_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TM::TM__(StringLiteral_Free_try_cannot_be_activated_at_,(MethodInfo *)0x0);
   TM::TM__(StringLiteral_An_error_occurred,(MethodInfo *)0x0);
   if (x != (IModalPopupCreator *)0x0) {
-    func_?(4,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,x);
+    FUN_?();
     return;
   }
-  func_?();
+  FUN_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;
@@ -264,22 +384,39 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo+<>c::
 
 {
   if (cRam_? == '\0') {
-    pIStack_1 = (IUIStack *)&TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (x != (IUIStack *)0x0) {
-    pIStack_1 = x;
-    pIStack_2 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    uStack_3 = 2;
-    func_?();
+    uVar1 = 0;
+    pIVar2 = x->klass;
+    uVar3._0_1_ = (pIVar2->_1).rank;
+    uVar3._1_1_ = (pIVar2->_1).minimumAlignment;
+    if (uVar3 != 0) {
+      do {
+        if (pIVar2->interfaceOffsets[uVar1].interfaceType ==
+            (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
+          pVVar4 = &(pIVar2->vtable).get_StackReady + (pIVar2->interfaceOffsets[uVar1].offset + 2);
+          UNRECOVERED_JUMPTABLE = pVVar4->methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*UNRECOVERED_JUMPTABLE)(x,pVVar4->method,UNRECOVERED_JUMPTABLE);
+          return;
+        }
+        uVar1 = uVar1 + 1;
+      } while (uVar1 < uVar3);
+    }
+    puVar5 = (undefined8 *)FUN_?(x);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(code *)*puVar5)(x,puVar5[1],(code *)*puVar5);
     return;
   }
-  pIStack_1 = (IUIStack *)&stack0xfffffffc;
-  uVar4 = func_?(&uStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -291,15 +428,27 @@ void Assembly-CSharp.dll::GamePassesSpawnRoleRewardInfo+<>c::GamePassesSpawnRole
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GamePassesSpawnRoleRewardInfo____c);
+    FUN_?(&TypeInfo__GamePassesSpawnRoleRewardInfo____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__GamePassesSpawnRoleRewardInfo____c;
-  value = (GamePassesSpawnRoleRewardInfo_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  TypeInfo__GamePassesSpawnRoleRewardInfo____c->static_fields->__9 = value;
-  func_?(TypeInfo__GamePassesSpawnRoleRewardInfo____c->static_fields,value);
+  pGVar1 = (GamePassesSpawnRoleRewardInfo_c *)
+           FUN_?(TypeInfo__GamePassesSpawnRoleRewardInfo____c);
+  TypeInfo__GamePassesSpawnRoleRewardInfo____c->static_fields->__9 = pGVar1;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)TypeInfo__GamePassesSpawnRoleRewardInfo____c->static_fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 

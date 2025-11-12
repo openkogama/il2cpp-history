@@ -9,8 +9,8 @@ int32_t MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::XpB
   if ((0 < membersCount) &&
      (fVar1 = (float)(this->fields).firstOtherMemberBoost / _UNK_? + 0.0, 1 < membersCount))
   {
-    fVar1 = fVar1 + ((float)(this->fields).otherMembersBoost / _UNK_?) *
-                    (float)(membersCount + -1);
+    fVar1 = ((float)(this->fields).otherMembersBoost / _UNK_?) * (float)(membersCount + -1)
+            + fVar1;
   }
   if ((float)(this->fields).maxMemberBoost / _UNK_? < fVar1) {
     fVar1 = (float)(this->fields).maxMemberBoost / _UNK_?;
@@ -26,12 +26,10 @@ void MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRules::XpBoos
                int32_t otherMembersBoost,int32_t maxMemberBoost,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  (this->fields).maxMemberBoost = maxMemberBoost;
   (this->fields).baseBoost = baseBoost;
   (this->fields).firstOtherMemberBoost = firstOtherMemberBoost;
   (this->fields).otherMembersBoost = otherMembersBoost;
-  (this->fields).maxMemberBoost = maxMemberBoost;
   return;
 }
 

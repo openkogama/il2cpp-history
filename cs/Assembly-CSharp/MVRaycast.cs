@@ -20,7 +20,7 @@ public static class MVRaycast
 	private static Ray intersectRay;
 	private static HashSet<int> foundWos;
 	private static List<VoxelHit> voxelHits;
-	private static List<RaycastHit> sortedHits;
+	private static List<UnityEngine.RaycastHit> sortedHits;
 	private static List<Collider> colliderList;
 
 	// Constructors

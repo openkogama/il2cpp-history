@@ -23,7 +23,7 @@ public class ButtonAnimationController : MonoBehaviour, IPointerUpHandler, IPoin
 	[SerializeField]
 	private RectTransform transformToMove;
 	[SerializeField]
-	private Button button;
+	private UnityEngine.UI.Button button;
 	[SerializeField]
 	private ButtonType buttonType;
 	private float pressedMoveAmount;

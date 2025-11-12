@@ -6,17 +6,22 @@ void Assembly-CSharp.dll::GoogleMobileAds::Mediation::UnityAds::Api::UnityAds::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GoogleMobileAds__Mediation__UnityAds__Common__IUnityAdsClient);
-    func_?(&TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds);
+    FUN_?(&TypeInfo__GoogleMobileAds__Mediation__UnityAds__Common__IUnityAdsClient,
+                  CONCAT71(in_register_00000011,metaDataValue));
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds->_1).cctor_finished_or_no_cctor
-      == 0) {
-    func_?(TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds);
+  if (*(int *)&(TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds->_1).field_0x1c == 0)
+  {
+    FUN_?();
   }
   pIVar1 = TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds->static_fields->client;
   if (pIVar1 == (IUnityAdsClient *)0x0) {
-    func_?();
+    FUN_?();
     pcVar2 = (code *)swi(3);
     (*pcVar2)();
     return;
@@ -29,19 +34,20 @@ void Assembly-CSharp.dll::GoogleMobileAds::Mediation::UnityAds::Api::UnityAds::
     do {
       if (pIVar3->interfaceOffsets[uVar4].interfaceType ==
           (Il2CppClass *)TypeInfo__GoogleMobileAds__Mediation__UnityAds__Common__IUnityAdsClient) {
-        ppMVar6 = &(&pIVar1->klass->vtable)[pIVar1->klass->interfaceOffsets[uVar4].offset].
-                   SetConsentMetaData.method;
+        pIVar6 = &pIVar3->vtable + pIVar3->interfaceOffsets[uVar4].offset;
         goto code_?;
       }
       uVar4 = uVar4 + 1;
     } while (uVar4 < uVar5);
   }
-  ppMVar6 = (MethodInfo **)
-            func_?(pIVar1,
-                            TypeInfo__GoogleMobileAds__Mediation__UnityAds__Common__IUnityAdsClient,
-                            0);
+  pIVar6 = (IUnityAdsClient__VTable *)
+           FUN_?(pIVar1,
+                         TypeInfo__GoogleMobileAds__Mediation__UnityAds__Common__IUnityAdsClient,0);
 code_?:
-  (*(code *)*ppMVar6)(pIVar1,key,_metaDataValue,ppMVar6[1]);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(pIVar6->SetConsentMetaData).methodPtr)
+            (pIVar1,key,(ulonglong)metaDataValue,(pIVar6->SetConsentMetaData).method);
   return;
 }
 
@@ -53,50 +59,69 @@ void Assembly-CSharp.dll::GoogleMobileAds::Mediation::UnityAds::Api::UnityAds::U
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds);
+    FUN_?(&TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GoogleMobileAds__Mediation__UnityAds__Common__DummyClient);
+    FUN_?(&TypeInfo__GoogleMobileAds__Mediation__UnityAds__Common__DummyClient);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  value = (Object *)
-          func_?(TypeInfo__GoogleMobileAds__Mediation__UnityAds__Common__DummyClient);
+  pIVar1 = (IUnityAdsClient *)
+           FUN_?(TypeInfo__GoogleMobileAds__Mediation__UnityAds__Common__DummyClient);
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__GoogleMobileAds__Mediation__UnityAds__Common__DummyClient__DummyClient__
-                   );
-    func_?(&StringLiteral_Dummy_);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__GoogleMobileAds__Mediation__UnityAds__Common__DummyClient__DummyClient__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Dummy_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,unaff_EDI);
-  pMVar1 = MethodInfo__GoogleMobileAds__Mediation__UnityAds__Common__DummyClient__DummyClient__;
+  pMVar2 = MethodInfo__GoogleMobileAds__Mediation__UnityAds__Common__DummyClient__DummyClient__;
   if (MethodInfo__GoogleMobileAds__Mediation__UnityAds__Common__DummyClient__DummyClient__->
       is_inflated != 0) {
-    pMVar1 = (MethodInfo *)
-             func_?(
-                            MethodInfo__GoogleMobileAds__Mediation__UnityAds__Common__DummyClient__DummyClient__
-                            );
+    pMVar2 = ((MethodInfo__GoogleMobileAds__Mediation__UnityAds__Common__DummyClient__DummyClient__
+              ->field8_0x40).genericMethod)->methodDefinition;
   }
-  piVar2 = (int *)func_?(pMVar1,pMVar1->klass);
-  if (piVar2 != (int *)0x0) {
-    pSVar3 = (String *)(**(code **)(*piVar2 + 0x100))(piVar2,*(undefined4 *)(*piVar2 + 0x104));
-    pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                       (StringLiteral_Dummy_,pSVar3,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar3,(MethodInfo *)0x0);
-    TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds->static_fields->client =
-         (IUnityAdsClient *)value;
-    func_?();
+  plVar3 = (longlong *)FUN_?(pMVar2,pMVar2->klass);
+  if (plVar3 == (longlong *)0x0) {
+    FUN_?();
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
     return;
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  pSVar5 = (String *)(**(code **)(*plVar3 + 0x1b8))(plVar3,*(undefined8 *)(*plVar3 + 0x1c0));
+  pSVar5 = mscorlib.dll::System::String::String_Concat_4
+                     (StringLiteral_Dummy_,pSVar5,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar5,(MethodInfo *)0x0);
+  TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds->static_fields->client = pIVar1;
+  if (iRam_? != 0) {
+    uVar6 = (uint)((ulonglong)
+                   TypeInfo__GoogleMobileAds__Mediation__UnityAds__Api__UnityAds->static_fields >>
+                  0xc);
+    puVar7 = (ulonglong *)((ulonglong)((uVar6 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar8 = *puVar7;
+      LOCK();
+      uVar9 = *puVar7;
+      if (uVar8 == uVar9) {
+        *puVar7 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar8 != uVar9);
+  }
   return;
 }
 

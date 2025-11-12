@@ -6,16 +6,17 @@ bool Assembly-CSharp.dll::CSUACSelfElevation::SafeTokenHandle::SafeTokenHandle_C
 
 {
   if (pcRam_? == (code *)0x0) {
-    pcStack_1 = pcRam_?;
-    uStack_2 = 0;
-    uStack_3 = 0xc;
-    uStack_4 = 0xb;
-    uStack_5 = 1;
-    uStack_6 = 4;
-    pcRam_? = (code *)func_?(&puStack_7);
+    uStack_1 = 0xc;
+    uStack_2 = 0xb;
+    uStack_3 = 0;
+    uStack_4 = 1;
+    uStack_5 = 8;
+    uStack_6 = 0;
+    pcRam_? = (code *)FUN_?(&puStack_7);
   }
   iVar8 = (*pcRam_?)(handle);
-  func_?();
+  uVar9 = GetLastError();
+  FUN_?(uVar9);
   return iVar8 != 0;
 }
 
@@ -28,29 +29,17 @@ bool Assembly-CSharp.dll::CSUACSelfElevation::SafeTokenHandle::SafeTokenHandle_R
 {
   pvVar1 = (this->fields)._._.handle;
   if (pcRam_? == (code *)0x0) {
-    pcStack_2 = pcRam_?;
-    uStack_3 = 0;
-    uStack_4 = 0xc;
-    uStack_5 = 0xb;
-    uStack_6 = 1;
-    uStack_7 = 4;
-    pcRam_? = (code *)func_?(&puStack_8);
+    uStack_2 = 0xc;
+    uStack_3 = 0xb;
+    uStack_4 = 0;
+    uStack_5 = 1;
+    uStack_6 = 8;
+    uStack_7 = 0;
+    pcRam_? = (code *)FUN_?(&puStack_8);
   }
   iVar9 = (*pcRam_?)(pvVar1);
-  func_?();
+  uVar10 = GetLastError();
+  FUN_?(uVar10);
   return iVar9 != 0;
-}
-
-
-/* SafeTokenHandle() */
-
-void Assembly-CSharp.dll::CSUACSelfElevation::SafeTokenHandle::SafeTokenHandle__ctor
-               (SafeTokenHandle *this,MethodInfo *method)
-
-{
-  mscorlib.dll::Microsoft::Win32::SafeHandles::SafeHandleZeroOrMinusOneIsInvalid::
-  SafeHandleZeroOrMinusOneIsInvalid__ctor
-            ((SafeHandleZeroOrMinusOneIsInvalid *)this,1,(MethodInfo *)0x0);
-  return;
 }
 

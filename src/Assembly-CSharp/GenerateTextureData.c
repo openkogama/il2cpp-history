@@ -7,152 +7,122 @@ void Assembly-CSharp.dll::GenerateTextureData::GenerateTextureData_AddPostProces
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
-    in_stack_1 =
-         &
-         UnityEngine__Rendering__PostProcessing__PostProcessProfile_MethodInfo__UnityEngine__ScriptableObject__CreateInstance<UnityEngine::Rendering::PostProcessing::PostProcessProfile>__
-    ;
-    in_stack_2 = &UNK_?;
-    func_?();
+    FUN_?(&
+                  PostProcessingManager_MethodInfo__UnityEngine__GameObject__AddComponent<PostProcessingManager>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__PostProcessingManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__PostProcessingManager->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  if (TypeInfo__MainCameraManager->static_fields->gameHasCameraEffects == 0) {
+  cVar1 = FUN_?();
+  if (cVar1 == '\0') {
     return;
   }
-  if ((TypeInfo__MainCameraManager->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  pPVar3 = &TypeInfo__MainCameraManager->static_fields->CurrentPostProcessingSettings;
-  puVar4 = auStack_5;
-  for (iVar6 = 0x2a; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *puVar4 = *(undefined4 *)&pPVar3->colorSettings;
-    pPVar3 = (PostProcessingSettings *)&(pPVar3->colorSettings).postExposure;
-    puVar4 = puVar4 + 1;
-  }
-  if (((screenshotCamObject != (GameObject *)0x0) &&
-      (this = (PostProcessLayer *)
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                        (screenshotCamObject,
-                         UnityEngine__Rendering__PostProcessing__PostProcessLayer_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::Rendering::PostProcessing::PostProcessLayer>__
-                        ), mainCameraManager != (MainCameraManager *)0x0)) &&
-     (this != (PostProcessLayer *)0x0)) {
-    Unity.Postprocessing.Runtime.dll::UnityEngine::Rendering::PostProcessing::PostProcessLayer::
-    PostProcessLayer_Init(this,(mainCameraManager->fields).postProcessResources,(MethodInfo *)0x0);
-    pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                       (screenshotCamObject,(MethodInfo *)0x0);
-    (this->fields).volumeTrigger = pTVar7;
-    func_?();
-    p_Var3 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
-             UnsafeUtility_AsRef_1((Void *)layers,(MethodInfo *)0x0);
-    (this->fields).volumeLayer.m_Mask = (int32_t)p_Var3;
-    (this->fields).antialiasingMode = 0;
-    (this->fields).stopNaNPropagation = 1;
-    (this->fields).finalBlitToCameraTarget = 0;
-    puVar8 = &UNK_?;
-    pMVar9 = 
-    UnityEngine__Rendering__PostProcessing__PostProcessVolume_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::Rendering::PostProcessing::PostProcessVolume>__
-    ;
-    pPVar10 = (PostProcessVolume *)
-             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                       (screenshotCamObject,
-                        UnityEngine__Rendering__PostProcessing__PostProcessVolume_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::Rendering::PostProcessing::PostProcessVolume>__
-                       );
-    pPStack_11 = pPVar10;
-    if (pPVar10 != (PostProcessVolume *)0x0) {
-      (pPVar10->fields).isGlobal = 1;
-      (pPVar10->fields).weight = 0.0;
-      pPVar12 = (PostProcessProfile *)
-               UnityEngine.CoreModule.dll::UnityEngine::ScriptableObject::
-               ScriptableObject_CreateInstance_1
-                         (
-                         UnityEngine__Rendering__PostProcessing__PostProcessProfile_MethodInfo__UnityEngine__ScriptableObject__CreateInstance<UnityEngine::Rendering::PostProcessing::PostProcessProfile>__
-                         );
-      (pPVar10->fields).m_InternalProfile = pPVar12;
-      ppPVar13 = &(pPVar10->fields).m_InternalProfile;
-      puVar14 = &UNK_?;
-      func_?();
-      method_00 = (MethodInfo *)0x0;
-      puVar4 = auStack_5;
-      puVar15 = (undefined4 *)&stack0xfffffe9c;
-      for (iVar6 = 0x2a; iVar6 != 0; iVar6 = iVar6 + -1) {
-        *puVar15 = *puVar4;
-        puVar4 = puVar4 + 1;
-        puVar15 = puVar15 + 1;
-      }
-      data.vignetteSettings.roundness = (int32_t)puVar8;
-      auVar16 = in_stack_17._0_20_;
-      auVar18 = in_stack_17._20_32_;
-      auVar19 = in_stack_17._52_28_;
-      auVar20 = in_stack_17._80_20_;
-      data.colorSettings.colors = auVar16[0];
-      data.colorSettings._1_3_ = auVar16._1_3_;
-      data.colorSettings.postExposure = auVar16._4_4_;
-      data.colorSettings.temperature = auVar16._8_4_;
-      data.colorSettings.saturation = auVar16._12_4_;
-      data.colorSettings.contrast = auVar16._16_4_;
-      auVar21 = auVar18._16_16_;
-      data.bloomSettings.bloom = auVar18[0];
-      data.bloomSettings._1_3_ = auVar18._1_3_;
-      data.bloomSettings.intensity = auVar18._4_4_;
-      data.bloomSettings.softKnee = auVar18._8_4_;
-      data.bloomSettings.diffusion = auVar18._12_4_;
-      data.bloomSettings.color.r = (float)auVar21._0_4_;
-      data.bloomSettings.color.g = (float)auVar21._4_4_;
-      data.bloomSettings.color.b = (float)auVar21._8_4_;
-      data.bloomSettings.color.a = (float)auVar21._12_4_;
-      auVar21 = auVar19._12_16_;
-      data.ambientOcclusionSettings.ambientOcclusion = auVar19[0];
-      data.ambientOcclusionSettings._1_3_ = auVar19._1_3_;
-      data.ambientOcclusionSettings.intensity = auVar19._4_4_;
-      data.ambientOcclusionSettings.thickness = auVar19._8_4_;
-      data.ambientOcclusionSettings.color.r = (float)auVar21._0_4_;
-      data.ambientOcclusionSettings.color.g = (float)auVar21._4_4_;
-      data.ambientOcclusionSettings.color.b = (float)auVar21._8_4_;
-      data.ambientOcclusionSettings.color.a = (float)auVar21._12_4_;
-      data.depthOfFieldSettings.depthOfField = auVar20[0];
-      data.depthOfFieldSettings._1_3_ = auVar20._1_3_;
-      data.depthOfFieldSettings.focusDistance = auVar20._4_4_;
-      data.depthOfFieldSettings.aperture = auVar20._8_4_;
-      data.depthOfFieldSettings.focalLength = auVar20._12_4_;
-      data.depthOfFieldSettings.maxBlurSize = auVar20._16_4_;
-      data.vignetteSettings.vignette = in_stack_17[100];
-      data.vignetteSettings._1_3_ = in_stack_17._101_3_;
-      data.vignetteSettings.intensity = in_stack_17._104_4_;
-      data.vignetteSettings.smoothness = in_stack_17._108_4_;
-      data.vignetteSettings.color.r = (float)screenshotCamObject;
-      data.vignetteSettings.color.g = (float)pMVar9;
-      data.vignetteSettings.color.b = (float)in_stack_22._0_4_;
-      data.vignetteSettings.color.a = (float)in_stack_22._4_4_;
-      data.vignetteSettings.rounded = in_stack_22[8];
-      data.vignetteSettings._33_3_ = in_stack_22._9_3_;
-      data.grainSettings.grain = in_stack_22[0xc];
-      data.grainSettings._1_3_ = in_stack_22._13_3_;
-      data.grainSettings.intensity = in_stack_22._16_4_;
-      data.grainSettings.size = in_stack_22._20_4_;
-      data.grainSettings.luminanceContribution = (int32_t)in_stack_2;
-      data.lensDistortionSettings._0_4_ = in_stack_1;
-      data.lensDistortionSettings.intensity = (int32_t)puVar14;
-      data.lensDistortionSettings.xMultiplier = (int32_t)ppPVar13;
-      data.lensDistortionSettings.yMultiplier = (int32_t)pPVar12;
-      MainCameraManager::MainCameraManager_ApplyPostProcessing(this,pPStack_11,data,method_00);
+  if (screenshotCamObject != (GameObject *)0x0) {
+    this = (PostProcessingManager *)
+           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                     (screenshotCamObject,
+                      PostProcessingManager_MethodInfo__UnityEngine__GameObject__AddComponent<PostProcessingManager>__
+                     );
+    if (*(int *)&(TypeInfo__PostProcessingManager->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    pPVar2 = TypeInfo__PostProcessingManager->static_fields;
+    if (this != (PostProcessingManager *)0x0) {
+      PStack_3.colorSettings.colors = (pPVar2->CurrentPostProcessingSettings).colorSettings.colors;
+      PStack_3.colorSettings._1_3_ =
+           *(undefined3 *)&(pPVar2->CurrentPostProcessingSettings).colorSettings.field_0x1;
+      PStack_3.colorSettings.postExposure =
+           (pPVar2->CurrentPostProcessingSettings).colorSettings.postExposure;
+      PStack_3.colorSettings.temperature =
+           (pPVar2->CurrentPostProcessingSettings).colorSettings.temperature;
+      PStack_3.colorSettings.saturation =
+           (pPVar2->CurrentPostProcessingSettings).colorSettings.saturation;
+      PStack_3._16_8_ =
+           *(undefined8 *)&(pPVar2->CurrentPostProcessingSettings).colorSettings.contrast;
+      PStack_3.bloomSettings.intensity =
+           (pPVar2->CurrentPostProcessingSettings).bloomSettings.intensity;
+      PStack_3.bloomSettings.softKnee =
+           (pPVar2->CurrentPostProcessingSettings).bloomSettings.softKnee;
+      PStack_3.bloomSettings.diffusion =
+           (pPVar2->CurrentPostProcessingSettings).bloomSettings.diffusion;
+      PStack_3.bloomSettings.color.r =
+           (pPVar2->CurrentPostProcessingSettings).bloomSettings.color.r;
+      PStack_3.bloomSettings.color.g =
+           (pPVar2->CurrentPostProcessingSettings).bloomSettings.color.g;
+      PStack_3.bloomSettings.color.b =
+           (pPVar2->CurrentPostProcessingSettings).bloomSettings.color.b;
+      PStack_3._48_8_ =
+           *(undefined8 *)&(pPVar2->CurrentPostProcessingSettings).bloomSettings.color.a;
+      PStack_3.ambientOcclusionSettings.intensity =
+           (pPVar2->CurrentPostProcessingSettings).ambientOcclusionSettings.intensity;
+      PStack_3.ambientOcclusionSettings.thickness =
+           (pPVar2->CurrentPostProcessingSettings).ambientOcclusionSettings.thickness;
+      PStack_3.ambientOcclusionSettings.color.r =
+           (pPVar2->CurrentPostProcessingSettings).ambientOcclusionSettings.color.r;
+      PStack_3.ambientOcclusionSettings.color.g =
+           (pPVar2->CurrentPostProcessingSettings).ambientOcclusionSettings.color.g;
+      PStack_3.ambientOcclusionSettings.color.b =
+           (pPVar2->CurrentPostProcessingSettings).ambientOcclusionSettings.color.b;
+      PStack_3.ambientOcclusionSettings.color.a =
+           (pPVar2->CurrentPostProcessingSettings).ambientOcclusionSettings.color.a;
+      PStack_3.depthOfFieldSettings.depthOfField =
+           (pPVar2->CurrentPostProcessingSettings).depthOfFieldSettings.depthOfField;
+      PStack_3.depthOfFieldSettings._1_3_ =
+           *(undefined3 *)&(pPVar2->CurrentPostProcessingSettings).depthOfFieldSettings.field_0x1;
+      PStack_3.depthOfFieldSettings.focusDistance =
+           (pPVar2->CurrentPostProcessingSettings).depthOfFieldSettings.focusDistance;
+      PStack_3.depthOfFieldSettings.aperture =
+           (pPVar2->CurrentPostProcessingSettings).depthOfFieldSettings.aperture;
+      PStack_3.depthOfFieldSettings.focalLength =
+           (pPVar2->CurrentPostProcessingSettings).depthOfFieldSettings.focalLength;
+      PStack_3._96_8_ =
+           *(undefined8 *)&(pPVar2->CurrentPostProcessingSettings).depthOfFieldSettings.maxBlurSize;
+      PStack_3.vignetteSettings.intensity =
+           (pPVar2->CurrentPostProcessingSettings).vignetteSettings.intensity;
+      PStack_3.vignetteSettings.smoothness =
+           (pPVar2->CurrentPostProcessingSettings).vignetteSettings.smoothness;
+      PStack_3.vignetteSettings._28_8_ =
+           *(undefined8 *)&(pPVar2->CurrentPostProcessingSettings).vignetteSettings.color.a;
+      PStack_3.grainSettings.grain = (pPVar2->CurrentPostProcessingSettings).grainSettings.grain;
+      PStack_3.grainSettings._1_3_ =
+           *(undefined3 *)&(pPVar2->CurrentPostProcessingSettings).grainSettings.field_0x1;
+      PStack_3.grainSettings.intensity =
+           (pPVar2->CurrentPostProcessingSettings).grainSettings.intensity;
+      PStack_3.vignetteSettings.roundness =
+           (pPVar2->CurrentPostProcessingSettings).vignetteSettings.roundness;
+      PStack_3.vignetteSettings.color.r =
+           (pPVar2->CurrentPostProcessingSettings).vignetteSettings.color.r;
+      PStack_3.vignetteSettings.color.g =
+           (pPVar2->CurrentPostProcessingSettings).vignetteSettings.color.g;
+      PStack_3.vignetteSettings.color.b =
+           (pPVar2->CurrentPostProcessingSettings).vignetteSettings.color.b;
+      PStack_3.grainSettings.size = (pPVar2->CurrentPostProcessingSettings).grainSettings.size;
+      PStack_3.grainSettings.luminanceContribution =
+           (pPVar2->CurrentPostProcessingSettings).grainSettings.luminanceContribution;
+      PStack_3.lensDistortionSettings.lensDistortion =
+           (pPVar2->CurrentPostProcessingSettings).lensDistortionSettings.lensDistortion;
+      PStack_3.lensDistortionSettings._1_3_ =
+           *(undefined3 *)&(pPVar2->CurrentPostProcessingSettings).lensDistortionSettings.field_0x1;
+      PStack_3.lensDistortionSettings.intensity =
+           (pPVar2->CurrentPostProcessingSettings).lensDistortionSettings.intensity;
+      PStack_3.lensDistortionSettings.xMultiplier =
+           (pPVar2->CurrentPostProcessingSettings).lensDistortionSettings.xMultiplier;
+      PStack_3.lensDistortionSettings.yMultiplier =
+           (pPVar2->CurrentPostProcessingSettings).lensDistortionSettings.yMultiplier;
+      PostProcessingManager::PostProcessingManager_Initialize(this,&PStack_3,(MethodInfo *)0x0);
       return;
     }
   }
-  func_?();
-  pcVar23 = (code *)swi(3);
-  (*pcVar23)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -165,19 +135,45 @@ Assembly-CSharp.dll::GenerateTextureData::GenerateTextureData_GenerateTexture
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GenerateTextureData___GenerateTexture_d__5);
+    FUN_?(&TypeInfo__GenerateTextureData___GenerateTexture_d__5);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__GenerateTextureData___GenerateTexture_d__5;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].monitor = (MonitorData *)this;
-  value[1].klass = (Object__Class *)0x0;
-  func_?(&value[2].monitor,this);
-  value[2].klass = (Object__Class *)textureDataCallback;
-  func_?(value + 2,textureDataCallback);
-  return (IEnumerator *)value;
+  pIVar1 = (IEnumerator *)FUN_?(TypeInfo__GenerateTextureData___GenerateTexture_d__5);
+  *(undefined4 *)&pIVar1[1].klass = 0;
+  pIVar1[2].monitor = (MonitorData *)this;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)&pIVar1[2].monitor >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
+  iVar7 = iRam_?;
+  pIVar1[2].klass = (IEnumerator__Class *)textureDataCallback;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)(pIVar1 + 2) >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
+  return pIVar1;
 }
 
 
@@ -188,45 +184,179 @@ void Assembly-CSharp.dll::GenerateTextureData::GenerateTextureData_GenerateTextu
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&StringLiteral_Texture_is_being_generated);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Texture_is_being_generated);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GenerateTextureData);
+    FUN_?(&TypeInfo__GenerateTextureData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (TypeInfo__GenerateTextureData->static_fields->_IsCreatingScreenShot_k__BackingField == 0) {
+  if (TypeInfo__GenerateTextureData->static_fields->_IsCreatingScreenShot_k__BackingField != 0) {
+    obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    ((Component *)this,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__GenerateTextureData___GenerateTexture_d__5);
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    method_00 = TypeInfo__GenerateTextureData___GenerateTexture_d__5;
-    value = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    value[1].klass = (Object__Class *)0x0;
-    value[2].monitor = (MonitorData *)this;
-    func_?(&value[2].monitor,this);
-    value[2].klass = (Object__Class *)callback;
-    func_?(value + 2,callback);
-    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-              ((MonoBehaviour *)this,(IEnumerator *)value,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy
+              ((Object_1 *)obj,0.0,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    pSVar1 = StringLiteral_Texture_is_being_generated;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Debug,0);
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeInfo__UnityEngine__ILogger);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Debug);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    pIVar2 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+    if (pIVar2 == (ILogger_1 *)0x0) {
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar2,0,pSVar1);
     return;
   }
-  obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                  ((Component *)this,(MethodInfo *)0x0);
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__GenerateTextureData___GenerateTexture_d__5);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-            ((Object_1 *)obj,(MethodInfo *)0x0);
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  lVar4 = FUN_?(TypeInfo__GenerateTextureData___GenerateTexture_d__5);
+  *(undefined4 *)(lVar4 + 0x10) = 0;
+  *(GenerateTextureData **)(lVar4 + 0x28) = this;
+  if (iRam_? != 0) {
+    uVar5 = (uint)(lVar4 + 0x28U >> 0xc);
+    uVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+    do {
+      uVar7 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+      puVar8 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+      LOCK();
+      bVar9 = uVar7 == *puVar8;
+      if (bVar9) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar9);
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-            ((Object *)StringLiteral_Texture_is_being_generated,(MethodInfo *)0x0);
+  iVar10 = iRam_?;
+  *(Action_1_Byte_ **)(lVar4 + 0x20) = callback;
+  if (iVar10 != 0) {
+    uVar5 = (uint)(lVar4 + 0x20U >> 0xc);
+    uVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+    do {
+      uVar7 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+      puVar8 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+      LOCK();
+      bVar9 = uVar7 == *puVar8;
+      if (bVar9) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar9);
+  }
+  if (lVar4 == 0) {
+    uVar11 = func_?(&TypeInfo__System__NullReferenceException);
+    this_00 = (NullReferenceException *)func_?(uVar11);
+    pSVar1 = (String *)func_?(&StringLiteral_routine_is_null);
+    mscorlib.dll::System::NullReferenceException::NullReferenceException__ctor_1
+              (this_00,pSVar1,(MethodInfo *)0x0);
+    uVar11 = func_?(&
+                                MethodInfo__UnityEngine__MonoBehaviour__StartCoroutine_System__Collections__IEnumerator_
+                               );
+    FUN_?(this_00,uVar11);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  bVar12 = UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::
+          MonoBehaviour_IsObjectMonoBehaviour((Object_1 *)this,(MethodInfo *)0x0);
+  if (bVar12 == 0) {
+    uVar11 = func_?(&TypeInfo__System__ArgumentException);
+    this_01 = (InvalidEnumArgumentException *)func_?(uVar11);
+    pSVar1 = (String *)func_?(&StringLiteral_Coroutines_can_only_be_stopped_o);
+    System.dll::System::ComponentModel::InvalidEnumArgumentException::
+    InvalidEnumArgumentException__ctor_1(this_01,pSVar1,(MethodInfo *)0x0);
+    uVar11 = func_?(&
+                                MethodInfo__UnityEngine__MonoBehaviour__StartCoroutine_System__Collections__IEnumerator_
+                               );
+    FUN_?(this_01,uVar11);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::MonoBehaviour>_UnityEngine__MonoBehaviour_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (this == (GenerateTextureData *)0x0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pvVar13 = (this->fields)._._._._.m_CachedPtr;
+  if (pvVar13 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)this,(MethodInfo *)0x0);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pcVar3 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+    uVar11 = func_?(&UNK_?);
+    FUN_?(uVar11,0);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pcRam_? = pcVar3;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pcRam_?)(pvVar13,lVar4);
   return;
 }
 
@@ -238,7 +368,9 @@ bool Assembly-CSharp.dll::GenerateTextureData::GenerateTextureData_get_IsCreatin
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GenerateTextureData);
+    FUN_?(&TypeInfo__GenerateTextureData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return TypeInfo__GenerateTextureData->static_fields->_IsCreatingScreenShot_k__BackingField;
@@ -252,7 +384,9 @@ void Assembly-CSharp.dll::GenerateTextureData::GenerateTextureData_set_IsCreatin
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GenerateTextureData);
+    FUN_?(&TypeInfo__GenerateTextureData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TypeInfo__GenerateTextureData->static_fields->_IsCreatingScreenShot_k__BackingField = value;

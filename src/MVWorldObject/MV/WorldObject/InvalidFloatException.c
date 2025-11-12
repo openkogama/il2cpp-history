@@ -6,32 +6,88 @@ void MVWorldObject.dll::MV::WorldObject::InvalidFloatException::InvalidFloatExce
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Exception);
+    FUN_?(&TypeInfo__System__Exception);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__System__Exception->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Exception);
+  if (*(int *)&(TypeInfo__System__Exception->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EBP);
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__System__Runtime__Serialization__SafeSerializationManager,0);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  *(undefined4 *)(in_stack_1 + 0xc) = 0;
-  func_?(in_stack_1 + 0xc,0);
-  *(undefined4 *)(in_stack_1 + 0x1c) = 0;
-  func_?(in_stack_1 + 0x1c,0);
-  *(undefined4 *)(in_stack_1 + 0x2c) = 0;
-  func_?(in_stack_1 + 0x2c,0);
-  *(undefined4 *)(in_stack_1 + 0x30) = 0x80131500;
-  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
-            func_?(TypeInfo__System__Runtime__Serialization__SafeSerializationManager);
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-  UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
-  *(UxmlObjectListAttributeDescription_1_System_Object_ **)(in_stack_1 + 0x38) = this_00;
-  func_?(in_stack_1 + 0x38,this_00);
+  iVar1 = iRam_?;
+  (this->fields)._._message = (String *)0x0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._._message >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields)._._stackTrace = (Object *)0x0;
+  iVar7 = 0;
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._._stackTrace >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar6);
+  }
+  (this->fields)._._dynamicMethods = (Object *)0x0;
+  if (iVar7 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._._dynamicMethods >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
+  (this->fields)._._HResult = -0x7feceb00;
+  pSVar8 = (SafeSerializationManager *)
+           FUN_?(TypeInfo__System__Runtime__Serialization__SafeSerializationManager);
+  bVar6 = iRam_? != 0;
+  (this->fields)._._safeSerializationManager = pSVar8;
+  if (bVar6) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._._safeSerializationManager >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
   return;
 }
 

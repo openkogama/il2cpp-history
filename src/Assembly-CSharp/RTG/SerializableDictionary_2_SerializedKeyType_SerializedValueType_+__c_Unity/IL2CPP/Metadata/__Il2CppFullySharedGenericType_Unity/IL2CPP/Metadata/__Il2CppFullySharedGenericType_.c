@@ -9,52 +9,90 @@ bool Assembly-CSharp.dll::RTG::
      SerializableDictionary_2_SerializedKeyType_SerializedValueType_c_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___RemoveNullKeys_b__14_0
                (SerializableDictionary_2_SerializedKeyType_SerializedValueType_c_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
                 *this,KeyValuePair_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                      keyValuePair,MethodInfo *method)
+                      *keyValuePair,MethodInfo *method)
 
 {
-  uVar1 = ((keyValuePair.value[2].klass)->rgctx_data[6].klass)->actualSize;
-  piStack_2 = (int *)((keyValuePair.value[2].klass)->rgctx_data[9].klass)->actualSize;
-  func_?();
-  puStack_3 = (undefined4 *)&stack0xffffffd4;
-  func_?();
-  puStack_4 = (undefined4 *)&stack0xffffffd4;
-  func_?();
-  func_?();
-  func_?(&stack0xffffffd4,0,uVar1);
-  func_?();
-  ppuStack_5 = (undefined4 **)&stack0xffffffd4;
-  func_?(&stack0xffffffd4,0,piStack_2);
-  piStack_6 = (int *)(*((keyValuePair.value[2].klass)->rgctx_data[3].method)->methodPointer)
-                                ((keyValuePair.value[2].klass)->rgctx_data[3].rgctxDataDummy);
-  func_?(&stack0xffffffd4,keyValuePair.key,uVar1);
-  func_?(&stack0xffffffd4,&stack0xffffffd4,uVar1);
-  pMVar7 = (keyValuePair.value[2].klass)->rgctx_data[7].method;
-  puStack_8 = puStack_3;
-  (*pMVar7->invoker_method)
-            (((keyValuePair.value[2].klass)->rgctx_data[7].method)->methodPointer,pMVar7,
-             &stack0xffffffd4,&puStack_8,puStack_3);
-  piVar9 = piStack_2;
-  ppuVar10 = ppuStack_5;
-  func_?(ppuStack_5,0,piStack_2);
-  puVar11 = puStack_4;
-  piStack_6 = piVar9;
-  pppuStack_12 = (undefined4 ***)ppuVar10;
-  func_?();
-  if (piStack_6 != (int *)0x0) {
-    if (-1 < (int)((keyValuePair.value[2].klass)->rgctx_data[9].method)->return_type) {
-      puVar11 = (undefined4 *)*puVar11;
-      puStack_3 = (undefined4 *)*puStack_3;
-    }
-    iVar13 = *piStack_6;
-    pppuStack_12 = &pppuStack_12;
-    piStack_6 = puVar11;
-    (**(code **)(*(int *)(iVar13 + 0x104) + 8))();
-    return keyValuePair.value._3_1_ == '\0';
+  uVar1 = (method->klass->rgctx_data[6].klass)->actualSize;
+  uVar2 = (ulonglong)(method->klass->rgctx_data[9].klass)->actualSize;
+  apuStack_3[0] = &UNK_?;
+  lVar4 = FUN_?();
+  lVar4 = -lVar4;
+  plVar5 = (longlong *)((longlong)alStack_6 + lVar4);
+  *(undefined **)((longlong)apuStack_3 + lVar4) = &UNK_?;
+  lVar7 = FUN_?();
+  lVar7 = -lVar7;
+  plVar8 = (longlong *)((longlong)alStack_6 + lVar7 + lVar4);
+  *(undefined **)((longlong)apuStack_3 + lVar7 + lVar4) = &UNK_?;
+  lVar9 = FUN_?();
+  lVar9 = -lVar9;
+  plStackX_18 = (longlong *)((longlong)alStack_6 + lVar9 + lVar7 + lVar4);
+  *(undefined **)((longlong)apuStack_3 + lVar9 + lVar7 + lVar4) = &UNK_?;
+  lVar10 = FUN_?();
+  lVar10 = -lVar10;
+  pvStackX_20 = (void *)((longlong)alStack_6 + lVar10 + lVar9 + lVar7 + lVar4);
+  *(undefined **)((longlong)apuStack_3 + lVar10 + lVar9 + lVar7 + lVar4) = &UNK_?;
+  FUN_?(pvStackX_20,0,uVar1);
+  uVar11 = uVar2 + 0xf;
+  if (uVar11 <= uVar2) {
+    uVar11 = 0xffffffffffffff0;
   }
-  func_?();
-  pcVar14 = (code *)swi(3);
-  bVar15 = (*pcVar14)();
-  return bVar15;
+  uVar11 = uVar11 & 0xfffffffffffffff0;
+  *(undefined **)((longlong)apuStack_3 + lVar10 + lVar9 + lVar7 + lVar4) = &UNK_?;
+  FUN_?();
+  lVar12 = -uVar11;
+  lVar13 = (longlong)alStack_6 + lVar12 + lVar10 + lVar9 + lVar7 + lVar4;
+  *(undefined **)((longlong)apuStack_3 + lVar12 + lVar10 + lVar9 + lVar7 + lVar4) =
+       &UNK_?;
+  FUN_?(lVar13,0,uVar2);
+  pIVar14 = (method->klass->rgctx_data[3].method)->methodPointer;
+  *(undefined **)((longlong)apuStack_3 + lVar12 + lVar10 + lVar9 + lVar7 + lVar4) =
+       &UNK_?;
+  plVar15 = (longlong *)(*pIVar14)();
+  *(undefined **)((longlong)apuStack_3 + lVar12 + lVar10 + lVar9 + lVar7 + lVar4) =
+       &UNK_?;
+  FUN_?(plStackX_18,keyValuePair,uVar1);
+  *(undefined **)((longlong)apuStack_3 + lVar12 + lVar10 + lVar9 + lVar7 + lVar4) =
+       &UNK_?;
+  FUN_?(pvStackX_20,plStackX_18,uVar1);
+  pIVar16 = method->klass;
+  *(longlong **)((longlong)alStack_17 + lVar12 + lVar10 + lVar9 + lVar7 + lVar4) = plVar5;
+  pMVar18 = pIVar16->rgctx_data[7].method;
+  pIVar19 = pMVar18->invoker_method;
+  pIVar14 = (pIVar16->rgctx_data[7].method)->methodPointer;
+  *(undefined **)((longlong)apuStack_3 + lVar12 + lVar10 + lVar9 + lVar7 + lVar4) =
+       &UNK_?;
+  plStackX_18 = plVar5;
+  (*pIVar19)(pIVar14,pMVar18,pvStackX_20,&plStackX_18,
+            *(void **)((longlong)alStack_17 + lVar12 + lVar10 + lVar9 + lVar7 + lVar4));
+  *(undefined **)((longlong)apuStack_3 + lVar12 + lVar10 + lVar9 + lVar7 + lVar4) =
+       &UNK_?;
+  FUN_?(lVar13,0,uVar2);
+  *(undefined **)((longlong)apuStack_3 + lVar12 + lVar10 + lVar9 + lVar7 + lVar4) =
+       &UNK_?;
+  FUN_?(plVar8,lVar13,uVar2);
+  if (plVar15 != (longlong *)0x0) {
+    if (-1 < *(int *)&(method->klass->rgctx_data[9].method)->return_type) {
+      plVar8 = (longlong *)*plVar8;
+      plVar5 = (longlong *)*plVar5;
+    }
+    lVar13 = *(longlong *)(*plVar15 + 0x1c0);
+    pcVar20 = *(code **)(lVar13 + 0x10);
+    uVar21 = *(undefined8 *)(lVar13 + 8);
+    alStack_6[0] = (longlong)plVar5;
+    alStack_6[1] = (longlong)plVar8;
+    *(longlong ***)((longlong)alStack_17 + lVar12 + lVar10 + lVar9 + lVar7 + lVar4) = &plStackX_18
+    ;
+    *(undefined **)((longlong)apuStack_3 + lVar12 + lVar10 + lVar9 + lVar7 + lVar4) =
+         &UNK_?;
+    (*pcVar20)(uVar21,lVar13,plVar15,alStack_6);
+    return (char)plStackX_18 == '\0';
+  }
+  *(undefined **)((longlong)apuStack_3 + lVar12 + lVar10 + lVar9 + lVar7 + lVar4) =
+       &UNK_?;
+  FUN_?();
+  pcVar20 = (code *)swi(3);
+  bVar22 = (*pcVar20)();
+  return bVar22;
 }
 
 
@@ -69,20 +107,25 @@ __Il2CppFullySharedGenericType]::
 SerializableDictionary_2_SerializedKeyType_SerializedValueType_c_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___RemoveNullKeys_b__14_1
           (SerializableDictionary_2_SerializedKeyType_SerializedValueType_c_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
            *this,KeyValuePair_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                 keyValuePair,MethodInfo *method)
+                 *keyValuePair,MethodInfo *method)
 
 {
-  pMVar1 = method;
-  uVar2 = (method->klass->rgctx_data[9].klass)->actualSize;
-  func_?();
-  pMVar3 = pMVar1->klass->rgctx_data[7].method;
-  method = (MethodInfo *)&stack0xfffffff0;
-  (*pMVar3->invoker_method)
-            ((pMVar1->klass->rgctx_data[7].method)->methodPointer,pMVar3,keyValuePair.key,&method,
-             &stack0xfffffff0);
-  p_Var4 = (_Il2CppFullySharedGenericType *)
-           func_?(keyValuePair.value,&stack0xfffffff0,uVar2);
-  return p_Var4;
+  lVar1 = *(longlong *)(*(longlong *)(in_R9 + 0x20) + 0xc0);
+  uVar2 = *(undefined4 *)(*(longlong *)(lVar1 + 0x48) + 0xfc);
+  apuStack_3[0] = &UNK_?;
+  lVar4 = FUN_?(lVar1,keyValuePair,keyValuePair);
+  lVar4 = -lVar4;
+  lVar1 = *(longlong *)(*(longlong *)(in_R9 + 0x20) + 0xc0);
+  *(undefined1 **)((longlong)alStack_5 + lVar4) = &stack0xfffffffffffffff8 + lVar4;
+  puVar6 = *(undefined8 **)(lVar1 + 0x38);
+  pcVar7 = (code *)puVar6[2];
+  uVar8 = *puVar6;
+  *(undefined **)((longlong)apuStack_3 + lVar4) = &UNK_?;
+  (*pcVar7)(uVar8);
+  *(undefined **)((longlong)apuStack_3 + lVar4) = &UNK_?;
+  p_Var7 = (_Il2CppFullySharedGenericType *)
+           FUN_?(method,&stack0xfffffffffffffff8 + lVar4,uVar2);
+  return p_Var7;
 }
 
 
@@ -97,19 +140,24 @@ __Il2CppFullySharedGenericType]::
 SerializableDictionary_2_SerializedKeyType_SerializedValueType_c_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___RemoveNullKeys_b__14_2
           (SerializableDictionary_2_SerializedKeyType_SerializedValueType_c_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
            *this,KeyValuePair_2_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                 keyValuePair,MethodInfo *method)
+                 *keyValuePair,MethodInfo *method)
 
 {
-  pMVar1 = method;
-  uVar2 = (method->klass->rgctx_data[0xc].klass)->actualSize;
-  func_?();
-  pMVar3 = pMVar1->klass->rgctx_data[0xb].method;
-  method = (MethodInfo *)&stack0xfffffff0;
-  (*pMVar3->invoker_method)
-            ((pMVar1->klass->rgctx_data[0xb].method)->methodPointer,pMVar3,keyValuePair.key,&method,
-             &stack0xfffffff0);
-  p_Var4 = (_Il2CppFullySharedGenericType *)
-           func_?(keyValuePair.value,&stack0xfffffff0,uVar2);
-  return p_Var4;
+  lVar1 = *(longlong *)(*(longlong *)(in_R9 + 0x20) + 0xc0);
+  uVar2 = *(undefined4 *)(*(longlong *)(lVar1 + 0x60) + 0xfc);
+  apuStack_3[0] = &UNK_?;
+  lVar4 = FUN_?(lVar1,keyValuePair,keyValuePair);
+  lVar4 = -lVar4;
+  lVar1 = *(longlong *)(*(longlong *)(in_R9 + 0x20) + 0xc0);
+  *(undefined1 **)((longlong)alStack_5 + lVar4) = &stack0xfffffffffffffff8 + lVar4;
+  puVar6 = *(undefined8 **)(lVar1 + 0x58);
+  pcVar7 = (code *)puVar6[2];
+  uVar8 = *puVar6;
+  *(undefined **)((longlong)apuStack_3 + lVar4) = &UNK_?;
+  (*pcVar7)(uVar8);
+  *(undefined **)((longlong)apuStack_3 + lVar4) = &UNK_?;
+  p_Var7 = (_Il2CppFullySharedGenericType *)
+           FUN_?(method,&stack0xfffffffffffffff8 + lVar4,uVar2);
+  return p_Var7;
 }
 

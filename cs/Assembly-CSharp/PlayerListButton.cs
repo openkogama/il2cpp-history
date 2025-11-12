@@ -18,7 +18,7 @@ public class PlayerListButton : MonoBehaviour
 	[SerializeField]
 	private PlayerListsLayout playerListsPrefab;
 	[SerializeField]
-	private Button button;
+	private UnityEngine.UI.Button button;
 	[SerializeField]
 	private UnityEngine.UI.Text playersCount;
 	[SerializeField]

@@ -6,63 +6,161 @@ void Assembly-CSharp.dll::RTG::CameraPrjSwitchTransition::CameraPrjSwitchTransit
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields)._targetMono;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pMVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
-    pCVar3 = (this->fields)._targetCamera;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pMVar1 != (MonoBehaviour *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)pCVar3,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      return;
-    }
-    if ((this->fields)._transitionType != 0) {
-      pMVar1 = (this->fields)._targetMono;
-      if (pMVar1 == (MonoBehaviour *)0x0) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopCoroutine
-                (pMVar1,(this->fields)._transitionCrtn,(MethodInfo *)0x0);
-      (this->fields)._transitionCrtn = (IEnumerator *)0x0;
-      func_?();
-      pCVar3 = (this->fields)._targetCamera;
-      if ((pCVar3 == (Camera *)0x0) ||
-         (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              ((Component *)pCVar3,(MethodInfo *)0x0), this_00 == (Transform *)0x0))
-      goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                (this_00,(this->fields)._camRestorePosition,(MethodInfo *)0x0);
-    }
-    pMVar1 = (this->fields)._targetMono;
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    method_00 = TypeInfo__RTG__CameraPrjSwitchTransition___DoTransition_d__41;
-    value = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-    value[1].klass = (Object__Class *)0x0;
-    value[2].klass = (Object__Class *)this;
-    func_?();
-    (this->fields)._transitionCrtn = (IEnumerator *)value;
-    func_?(&(this->fields)._transitionCrtn,value);
-    if (pMVar1 == (MonoBehaviour *)0x0) {
+    if ((pMVar1->fields)._._._.m_CachedPtr != (void *)0x0) {
+      pCVar2 = (this->fields)._targetCamera;
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (pCVar2 != (Camera *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if ((pCVar2->fields)._._._.m_CachedPtr != (void *)0x0) {
+          if ((this->fields)._transitionType != 0) {
+            pMVar1 = (this->fields)._targetMono;
+            if (pMVar1 == (MonoBehaviour *)0x0) {
 code_?:
-      func_?();
-      pcVar4 = (code *)swi(3);
-      (*pcVar4)();
-      return;
+              FUN_?();
+              pcVar3 = (code *)swi(3);
+              (*pcVar3)();
+              return;
+            }
+            UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopCoroutine
+                      (pMVar1,(this->fields)._transitionCrtn,(MethodInfo *)0x0);
+            (this->fields)._transitionCrtn = (IEnumerator *)0x0;
+            func_?(&(this->fields)._transitionCrtn);
+            pCVar2 = (this->fields)._targetCamera;
+            if ((pCVar2 == (Camera *)0x0) ||
+               (obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                ((Component *)pCVar2,(MethodInfo *)0x0), obj == (Transform *)0x0))
+            goto code_?;
+            uStack_4._0_4_ = (this->fields)._camRestorePosition.x;
+            uStack_4._4_4_ = (this->fields)._camRestorePosition.y;
+            fStack_5 = (this->fields)._camRestorePosition.z;
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                           );
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pvVar6 = (obj->fields)._._.m_CachedPtr;
+            if (pvVar6 == (void *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+              ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+              pcVar3 = (code *)swi(3);
+              (*pcVar3)();
+              return;
+            }
+            pcVar3 = pcRam_?;
+            if ((pcRam_? == (code *)0x0) &&
+               (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+              uVar7 = func_?(&UNK_?);
+              FUN_?(uVar7,0);
+              pcVar3 = (code *)swi(3);
+              (*pcVar3)();
+              return;
+            }
+            pcRam_? = pcVar3;
+            (*pcRam_?)(pvVar6,&uStack_4);
+          }
+          pMVar1 = (this->fields)._targetMono;
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__RTG__CameraPrjSwitchTransition___DoTransition_d__41);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          routine = (IEnumerator *)
+                    FUN_?(TypeInfo__RTG__CameraPrjSwitchTransition___DoTransition_d__41);
+          iVar8 = iRam_?;
+          *(undefined4 *)&routine[1].klass = 0;
+          routine[2].klass = (IEnumerator__Class *)this;
+          if (iVar8 != 0) {
+            uVar9 = (uint)((ulonglong)(routine + 2) >> 0xc);
+            lVar10 = (ulonglong)((uVar9 & 0x1fffff) >> 6) * 8;
+            do {
+              uVar11 = *(ulonglong *)(lVar10 + 0xADDR);
+              puVar12 = (ulonglong *)(lVar10 + 0xADDR);
+              LOCK();
+              bVar13 = uVar11 == *puVar12;
+              if (bVar13) {
+                *puVar12 = uVar11 | 1L << (uVar9 & 0x3f);
+              }
+              UNLOCK();
+              iVar8 = iRam_?;
+            } while (!bVar13);
+          }
+          (this->fields)._transitionCrtn = routine;
+          if (iVar8 != 0) {
+            uVar9 = (uint)((ulonglong)&(this->fields)._transitionCrtn >> 0xc);
+            lVar10 = (ulonglong)((uVar9 & 0x1fffff) >> 6) * 8;
+            do {
+              uVar11 = *(ulonglong *)(lVar10 + 0xADDR);
+              puVar12 = (ulonglong *)(lVar10 + 0xADDR);
+              LOCK();
+              bVar13 = uVar11 == *puVar12;
+              if (bVar13) {
+                *puVar12 = uVar11 | 1L << (uVar9 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar13);
+          }
+          if (pMVar1 == (MonoBehaviour *)0x0) {
+            FUN_?();
+            pcVar3 = (code *)swi(3);
+            (*pcVar3)();
+            return;
+          }
+          UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_2
+                    (pMVar1,routine,(MethodInfo *)0x0);
+        }
+      }
     }
-    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
-              (pMVar1,(IEnumerator *)value,(MethodInfo *)0x0);
   }
   return;
 }
@@ -76,17 +174,30 @@ Assembly-CSharp.dll::RTG::CameraPrjSwitchTransition::CameraPrjSwitchTransition_D
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__CameraPrjSwitchTransition___DoTransition_d__41);
+    FUN_?(&TypeInfo__RTG__CameraPrjSwitchTransition___DoTransition_d__41);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__RTG__CameraPrjSwitchTransition___DoTransition_d__41;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)this;
-  value[1].klass = (Object__Class *)0x0;
-  func_?(value + 2,this);
-  return (IEnumerator *)value;
+  pIVar1 = (IEnumerator *)
+           FUN_?(TypeInfo__RTG__CameraPrjSwitchTransition___DoTransition_d__41);
+  bVar2 = iRam_? != 0;
+  *(undefined4 *)&pIVar1[1].klass = 0;
+  pIVar1[2].klass = (IEnumerator__Class *)this;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)(pIVar1 + 2) >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
+  return pIVar1;
 }
 
 
@@ -111,33 +222,59 @@ void Assembly-CSharp.dll::RTG::CameraPrjSwitchTransition::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__CameraProjectionSwitchBeginHandler);
+    FUN_?(&TypeInfo__RTG__CameraProjectionSwitchBeginHandler);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  pCVar1 = &this->fields;
   a = (this->fields).TransitionBegin;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pCVar2 = (CameraProjectionSwitchBeginHandler *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((CameraProjectionSwitchBeginHandler__Class *)pDVar1->klass ==
-          TypeInfo__RTG__CameraProjectionSwitchBeginHandler) {
-        pDVar2 = pDVar1;
+    pCVar3 = (CameraProjectionSwitchBeginHandler *)0x0;
+    if (pCVar2 != (CameraProjectionSwitchBeginHandler *)0x0) {
+      if (pCVar2->klass == TypeInfo__RTG__CameraProjectionSwitchBeginHandler) {
+        pCVar3 = pCVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__CameraProjectionSwitchBeginHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pCVar3 == (CameraProjectionSwitchBeginHandler *)0x0) {
+        FUN_?(pCVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pCVar4 = (CameraProjectionSwitchBeginHandler *)func_?(&this->fields,pDVar2,a);
-    bVar5 = pCVar4 == a;
-    a = pCVar4;
+    LOCK();
+    pCVar2 = pCVar1->TransitionBegin;
+    bVar5 = a == pCVar2;
     if (bVar5) {
-      return;
+      pCVar1->TransitionBegin = pCVar3;
+      pCVar2 = a;
     }
-  } while( true );
+    UNLOCK();
+    pCVar3 = a;
+    if (!bVar5) {
+      pCVar3 = pCVar2;
+    }
+    if (iRam_? != 0) {
+      uVar6 = (uint)((ulonglong)pCVar1 >> 0xc);
+      uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
+      do {
+        uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
+        puVar9 = (ulonglong *)(uVar7 * 8 + 0xADDR);
+        LOCK();
+        bVar5 = uVar8 == *puVar9;
+        if (bVar5) {
+          *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar5);
+    }
+    bVar5 = pCVar3 != a;
+    a = pCVar3;
+  } while (bVar5);
+  return;
 }
 
 
@@ -150,34 +287,59 @@ void Assembly-CSharp.dll::RTG::CameraPrjSwitchTransition::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__CameraProjectionSwitchBeginHandler);
+    FUN_?(&TypeInfo__RTG__CameraProjectionSwitchBeginHandler);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  ppCVar1 = &(this->fields).TransitionEnd;
   a = (this->fields).TransitionEnd;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pCVar2 = (CameraProjectionSwitchBeginHandler *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((CameraProjectionSwitchBeginHandler__Class *)pDVar1->klass ==
-          TypeInfo__RTG__CameraProjectionSwitchBeginHandler) {
-        pDVar2 = pDVar1;
+    pCVar3 = (CameraProjectionSwitchBeginHandler *)0x0;
+    if (pCVar2 != (CameraProjectionSwitchBeginHandler *)0x0) {
+      if (pCVar2->klass == TypeInfo__RTG__CameraProjectionSwitchBeginHandler) {
+        pCVar3 = pCVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__CameraProjectionSwitchBeginHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pCVar3 == (CameraProjectionSwitchBeginHandler *)0x0) {
+        FUN_?(pCVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pCVar4 = (CameraProjectionSwitchBeginHandler *)
-             func_?(&(this->fields).TransitionEnd,pDVar2,a);
-    bVar5 = pCVar4 == a;
-    a = pCVar4;
+    LOCK();
+    pCVar2 = *ppCVar1;
+    bVar5 = a == pCVar2;
     if (bVar5) {
-      return;
+      *ppCVar1 = pCVar3;
+      pCVar2 = a;
     }
-  } while( true );
+    UNLOCK();
+    pCVar3 = a;
+    if (!bVar5) {
+      pCVar3 = pCVar2;
+    }
+    if (iRam_? != 0) {
+      uVar6 = (uint)((ulonglong)ppCVar1 >> 0xc);
+      uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
+      do {
+        uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
+        puVar9 = (ulonglong *)(uVar7 * 8 + 0xADDR);
+        LOCK();
+        bVar5 = uVar8 == *puVar9;
+        if (bVar5) {
+          *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar5);
+    }
+    bVar5 = pCVar3 != a;
+    a = pCVar3;
+  } while (bVar5);
+  return;
 }
 
 
@@ -190,34 +352,69 @@ void Assembly-CSharp.dll::RTG::CameraPrjSwitchTransition::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__CameraProjectionSwitchUpdateHandler);
+    FUN_?(&TypeInfo__RTG__CameraProjectionSwitchUpdateHandler);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  ppCVar1 = &(this->fields).TransitionUpdate;
   a = (this->fields).TransitionUpdate;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Combine
+    pCVar2 = (CameraProjectionSwitchUpdateHandler *)
+             mscorlib.dll::System::Delegate::Delegate_Combine
                        ((Delegate *)a,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((CameraProjectionSwitchUpdateHandler__Class *)pDVar1->klass ==
-          TypeInfo__RTG__CameraProjectionSwitchUpdateHandler) {
-        pDVar2 = pDVar1;
+    pCVar3 = (CameraProjectionSwitchUpdateHandler *)0x0;
+    if (pCVar2 != (CameraProjectionSwitchUpdateHandler *)0x0) {
+      if (pCVar2->klass == TypeInfo__RTG__CameraProjectionSwitchUpdateHandler) {
+        pCVar3 = pCVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__CameraProjectionSwitchUpdateHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pCVar3 == (CameraProjectionSwitchUpdateHandler *)0x0) {
+        FUN_?(pCVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pCVar4 = (CameraProjectionSwitchUpdateHandler *)
-             func_?(&(this->fields).TransitionUpdate,pDVar2,a);
-    bVar5 = pCVar4 == a;
-    a = pCVar4;
+    LOCK();
+    pCVar2 = *ppCVar1;
+    bVar5 = a == pCVar2;
     if (bVar5) {
-      return;
+      *ppCVar1 = pCVar3;
+      pCVar2 = a;
     }
-  } while( true );
+    UNLOCK();
+    pCVar3 = a;
+    if (!bVar5) {
+      pCVar3 = pCVar2;
+    }
+    if (iRam_? != 0) {
+      uVar6 = (uint)((ulonglong)ppCVar1 >> 0xc);
+      uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
+      do {
+        uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
+        puVar9 = (ulonglong *)(uVar7 * 8 + 0xADDR);
+        LOCK();
+        bVar5 = uVar8 == *puVar9;
+        if (bVar5) {
+          *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar5);
+    }
+    bVar5 = pCVar3 != a;
+    a = pCVar3;
+  } while (bVar5);
+  return;
+}
+
+
+/* Boolean get_IsActive() */
+
+bool Assembly-CSharp.dll::RTG::CameraPrjSwitchTransition::CameraPrjSwitchTransition_get_IsActive
+               (CameraPrjSwitchTransition *this,MethodInfo *method)
+
+{
+  return (this->fields)._transitionType != 0;
 }
 
 
@@ -230,33 +427,59 @@ void Assembly-CSharp.dll::RTG::CameraPrjSwitchTransition::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__CameraProjectionSwitchBeginHandler);
+    FUN_?(&TypeInfo__RTG__CameraProjectionSwitchBeginHandler);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  pCVar1 = &this->fields;
   source = (this->fields).TransitionBegin;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pCVar2 = (CameraProjectionSwitchBeginHandler *)
+             mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((CameraProjectionSwitchBeginHandler__Class *)pDVar1->klass ==
-          TypeInfo__RTG__CameraProjectionSwitchBeginHandler) {
-        pDVar2 = pDVar1;
+    pCVar3 = (CameraProjectionSwitchBeginHandler *)0x0;
+    if (pCVar2 != (CameraProjectionSwitchBeginHandler *)0x0) {
+      if (pCVar2->klass == TypeInfo__RTG__CameraProjectionSwitchBeginHandler) {
+        pCVar3 = pCVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__CameraProjectionSwitchBeginHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pCVar3 == (CameraProjectionSwitchBeginHandler *)0x0) {
+        FUN_?(pCVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pCVar4 = (CameraProjectionSwitchBeginHandler *)func_?(&this->fields,pDVar2,source);
-    bVar5 = pCVar4 == source;
-    source = pCVar4;
+    LOCK();
+    pCVar2 = pCVar1->TransitionBegin;
+    bVar5 = source == pCVar2;
     if (bVar5) {
-      return;
+      pCVar1->TransitionBegin = pCVar3;
+      pCVar2 = source;
     }
-  } while( true );
+    UNLOCK();
+    pCVar3 = source;
+    if (!bVar5) {
+      pCVar3 = pCVar2;
+    }
+    if (iRam_? != 0) {
+      uVar6 = (uint)((ulonglong)pCVar1 >> 0xc);
+      uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
+      do {
+        uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
+        puVar9 = (ulonglong *)(uVar7 * 8 + 0xADDR);
+        LOCK();
+        bVar5 = uVar8 == *puVar9;
+        if (bVar5) {
+          *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar5);
+    }
+    bVar5 = pCVar3 != source;
+    source = pCVar3;
+  } while (bVar5);
+  return;
 }
 
 
@@ -269,34 +492,59 @@ void Assembly-CSharp.dll::RTG::CameraPrjSwitchTransition::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__CameraProjectionSwitchBeginHandler);
+    FUN_?(&TypeInfo__RTG__CameraProjectionSwitchBeginHandler);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  ppCVar1 = &(this->fields).TransitionEnd;
   source = (this->fields).TransitionEnd;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pCVar2 = (CameraProjectionSwitchBeginHandler *)
+             mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((CameraProjectionSwitchBeginHandler__Class *)pDVar1->klass ==
-          TypeInfo__RTG__CameraProjectionSwitchBeginHandler) {
-        pDVar2 = pDVar1;
+    pCVar3 = (CameraProjectionSwitchBeginHandler *)0x0;
+    if (pCVar2 != (CameraProjectionSwitchBeginHandler *)0x0) {
+      if (pCVar2->klass == TypeInfo__RTG__CameraProjectionSwitchBeginHandler) {
+        pCVar3 = pCVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__CameraProjectionSwitchBeginHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pCVar3 == (CameraProjectionSwitchBeginHandler *)0x0) {
+        FUN_?(pCVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pCVar4 = (CameraProjectionSwitchBeginHandler *)
-             func_?(&(this->fields).TransitionEnd,pDVar2,source);
-    bVar5 = pCVar4 == source;
-    source = pCVar4;
+    LOCK();
+    pCVar2 = *ppCVar1;
+    bVar5 = source == pCVar2;
     if (bVar5) {
-      return;
+      *ppCVar1 = pCVar3;
+      pCVar2 = source;
     }
-  } while( true );
+    UNLOCK();
+    pCVar3 = source;
+    if (!bVar5) {
+      pCVar3 = pCVar2;
+    }
+    if (iRam_? != 0) {
+      uVar6 = (uint)((ulonglong)ppCVar1 >> 0xc);
+      uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
+      do {
+        uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
+        puVar9 = (ulonglong *)(uVar7 * 8 + 0xADDR);
+        LOCK();
+        bVar5 = uVar8 == *puVar9;
+        if (bVar5) {
+          *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar5);
+    }
+    bVar5 = pCVar3 != source;
+    source = pCVar3;
+  } while (bVar5);
+  return;
 }
 
 
@@ -309,34 +557,59 @@ void Assembly-CSharp.dll::RTG::CameraPrjSwitchTransition::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__CameraProjectionSwitchUpdateHandler);
+    FUN_?(&TypeInfo__RTG__CameraProjectionSwitchUpdateHandler);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  ppCVar1 = &(this->fields).TransitionUpdate;
   source = (this->fields).TransitionUpdate;
   do {
-    pDVar1 = mscorlib.dll::System::Delegate::Delegate_Remove
+    pCVar2 = (CameraProjectionSwitchUpdateHandler *)
+             mscorlib.dll::System::Delegate::Delegate_Remove
                        ((Delegate *)source,(Delegate *)value,(MethodInfo *)0x0);
-    pDVar2 = (Delegate *)0x0;
-    if (pDVar1 != (Delegate *)0x0) {
-      if ((CameraProjectionSwitchUpdateHandler__Class *)pDVar1->klass ==
-          TypeInfo__RTG__CameraProjectionSwitchUpdateHandler) {
-        pDVar2 = pDVar1;
+    pCVar3 = (CameraProjectionSwitchUpdateHandler *)0x0;
+    if (pCVar2 != (CameraProjectionSwitchUpdateHandler *)0x0) {
+      if (pCVar2->klass == TypeInfo__RTG__CameraProjectionSwitchUpdateHandler) {
+        pCVar3 = pCVar2;
       }
-      if (pDVar2 == (Delegate *)0x0) {
-        func_?(pDVar1,TypeInfo__RTG__CameraProjectionSwitchUpdateHandler);
-        pcVar3 = (code *)swi(3);
-        (*pcVar3)();
+      if (pCVar3 == (CameraProjectionSwitchUpdateHandler *)0x0) {
+        FUN_?(pCVar2);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
         return;
       }
     }
-    pCVar4 = (CameraProjectionSwitchUpdateHandler *)
-             func_?(&(this->fields).TransitionUpdate,pDVar2,source);
-    bVar5 = pCVar4 == source;
-    source = pCVar4;
+    LOCK();
+    pCVar2 = *ppCVar1;
+    bVar5 = source == pCVar2;
     if (bVar5) {
-      return;
+      *ppCVar1 = pCVar3;
+      pCVar2 = source;
     }
-  } while( true );
+    UNLOCK();
+    pCVar3 = source;
+    if (!bVar5) {
+      pCVar3 = pCVar2;
+    }
+    if (iRam_? != 0) {
+      uVar6 = (uint)((ulonglong)ppCVar1 >> 0xc);
+      uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
+      do {
+        uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
+        puVar9 = (ulonglong *)(uVar7 * 8 + 0xADDR);
+        LOCK();
+        bVar5 = uVar8 == *puVar9;
+        if (bVar5) {
+          *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar5);
+    }
+    bVar5 = pCVar3 != source;
+    source = pCVar3;
+  } while (bVar5);
+  return;
 }
 
 
@@ -358,13 +631,15 @@ void Assembly-CSharp.dll::RTG::CameraPrjSwitchTransition::
 
 void Assembly-CSharp.dll::RTG::CameraPrjSwitchTransition::
      CameraPrjSwitchTransition_set_CamFocusPoint
-               (CameraPrjSwitchTransition *this,Vector3 value,MethodInfo *method)
+               (CameraPrjSwitchTransition *this,Vector3 *value,MethodInfo *method)
 
 {
   if ((this->fields)._transitionType == 0) {
-    (this->fields)._camFocusPoint.x = value.x;
-    (this->fields)._camFocusPoint.y = value.y;
-    (this->fields)._camFocusPoint.z = value.z;
+    fVar1 = value->y;
+    fVar2 = value->z;
+    (this->fields)._camFocusPoint.x = value->x;
+    (this->fields)._camFocusPoint.y = fVar1;
+    (this->fields)._camFocusPoint.z = fVar2;
   }
   return;
 }
@@ -395,18 +670,48 @@ void Assembly-CSharp.dll::RTG::CameraPrjSwitchTransition::CameraPrjSwitchTransit
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields)._transitionType == 0) {
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)value,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      (this->fields)._targetCamera = value;
-      func_?(&(this->fields)._targetCamera,value);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (value != (Camera *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (((value->fields)._._._.m_CachedPtr != (void *)0x0) &&
+         (bVar1 = iRam_? != 0, (this->fields)._targetCamera = value, bVar1)) {
+        uVar2 = (uint)((ulonglong)&(this->fields)._targetCamera >> 0xc);
+        puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+        do {
+          uVar4 = *puVar3;
+          LOCK();
+          uVar5 = *puVar3;
+          if (uVar4 == uVar5) {
+            *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+          }
+          UNLOCK();
+        } while (uVar4 != uVar5);
+      }
     }
   }
   return;
@@ -420,18 +725,48 @@ void Assembly-CSharp.dll::RTG::CameraPrjSwitchTransition::CameraPrjSwitchTransit
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields)._transitionType == 0) {
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)value,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      (this->fields)._targetMono = value;
-      func_?(&(this->fields)._targetMono,value);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (value != (MonoBehaviour *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (((value->fields)._._._.m_CachedPtr != (void *)0x0) &&
+         (bVar1 = iRam_? != 0, (this->fields)._targetMono = value, bVar1)) {
+        uVar2 = (uint)((ulonglong)&(this->fields)._targetMono >> 0xc);
+        puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+        do {
+          uVar4 = *puVar3;
+          LOCK();
+          uVar5 = *puVar3;
+          if (uVar4 == uVar5) {
+            *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+          }
+          UNLOCK();
+        } while (uVar4 != uVar5);
+      }
     }
   }
   return;

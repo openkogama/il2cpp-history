@@ -6,19 +6,40 @@ void Assembly-CSharp.dll::TimedPlayReward+RewardTracker::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&TypeInfo__TimedPlayReward__RewardTracker);
-    func_?(&StringLiteral_TimedPlayReward_RewardTracker_Co);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__TimedPlayReward__RewardTracker);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_TimedPlayReward_RewardTracker_Co);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged != (Action *)0x0) {
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug);
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
               ((Object *)StringLiteral_TimedPlayReward_RewardTracker_Co,(MethodInfo *)0x0);
+    bVar1 = iRam_? != 0;
     TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged = (Action *)0x0;
-    func_?(&TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged,0);
+    if (bVar1) {
+      uVar2 = (uint)((ulonglong)
+                     &TypeInfo__TimedPlayReward__RewardTracker->static_fields->CollectedChanged >>
+                    0xc);
+      puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar4 = *puVar3;
+        LOCK();
+        uVar5 = *puVar3;
+        if (uVar4 == uVar5) {
+          *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar4 != uVar5);
+    }
   }
   return;
 }
@@ -31,7 +52,9 @@ void Assembly-CSharp.dll::TimedPlayReward+RewardTracker::TimedPlayReward_RewardT
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__TimedPlayReward__RewardTracker);
+    FUN_?(&TypeInfo__TimedPlayReward__RewardTracker);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TypeInfo__TimedPlayReward__RewardTracker->static_fields->IsCollected = 0;

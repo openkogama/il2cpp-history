@@ -6,19 +6,24 @@ int32_t Assembly-CSharp.dll::DllProtector::DllProtector_FirstIndexOf
 
 {
   if (data == (Byte__Array *)0x0) {
-    func_?();
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    iVar2 = (*pcVar1)();
+    return iVar2;
   }
-  else {
-    for (; (uint)startIndex < data->max_length; startIndex = startIndex + 1) {
-      if (data->vector[startIndex] == val) {
-        return startIndex;
-      }
+  lVar3 = (longlong)startIndex;
+  while( true ) {
+    if ((uint)data->max_length <= (uint)startIndex) {
+      FUN_?();
+      pcVar1 = (code *)swi(3);
+      iVar2 = (*pcVar1)();
+      return iVar2;
     }
+    if (data->vector[lVar3] == val) break;
+    lVar3 = lVar3 + 1;
+    startIndex = startIndex + 1;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  iVar2 = (*pcVar1)();
-  return iVar2;
+  return startIndex;
 }
 
 
@@ -29,99 +34,42 @@ Assembly-CSharp.dll::DllProtector::DllProtector_GetCRCData(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&StringLiteral_Buffer_is_too_small__causing_und);
+    FUN_?(&TypeInfo__System__Byte);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Buffer_is_too_small__causing_und);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pBVar1 = (Byte__Array *)func_?(TypeInfo__System__Byte,0x2800);
-  pBStack_2 = pBVar1;
+  crcData = (Byte__Array *)FUN_?(TypeInfo__System__Byte,0x2800);
   if (pcRam_? == (code *)0x0) {
-    pcStack_3 = pcRam_?;
-    uStack_4 = 0;
+    uStack_1 = 0xc;
+    uStack_2 = 10;
+    uStack_3 = 0;
+    uStack_4 = 2;
     uStack_5 = 0xc;
-    uStack_6 = 10;
-    uStack_7 = 2;
-    uStack_8 = 8;
-    pcRam_? = (code *)func_?(&puStack_9);
+    uStack_6 = 0;
+    pcRam_? = (code *)FUN_?(&puStack_7);
   }
-  uVar10 = (*pcRam_?)(-(uint)(pBVar1 != (Byte__Array *)0x0) & (uint)pBVar1->vector,0x2800);
-  this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-          *)0x0;
-  uStack_11 = uVar10;
-  if (uVar10 < 0x2801) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__System__Byte);
-      func_?(&TypeInfo__MV__WorldObject__AntiCheat__FileData);
-      func_?(&
-                      MethodInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>__Add_MV__WorldObject__AntiCheat__FileData_
-                     );
-      func_?(&
-                      MethodInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>__List_int_
-                     );
-      func_?(&
-                      TypeInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>
-                     );
-      cRam_? = '\x01';
-    }
-    this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-            *)func_?(
-                             TypeInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>
-                             );
-    pLStack_12 = this;
-    mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
-    MultiColumnCollectionHeader+ViewState+ColumnState]::
-    List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
-              (this,0x10,
-               MethodInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>__List_int_
-              );
-    startIndex = 0;
-    if (uVar10 != 0) {
-      while( true ) {
-        do {
-          uVar13 = mscorlib.dll::System::BitConverter::BitConverter_ToUInt16
-                            (pBStack_2,startIndex,(MethodInfo *)0x0);
-          uVar10 = (uint)uVar13;
-          pBVar1 = (Byte__Array *)func_?(TypeInfo__System__Byte,uVar10);
-          mscorlib.dll::System::Array::Array_Copy_3
-                    ((Array *)pBStack_2,startIndex + 2,(Array *)pBVar1,0,uVar10,(MethodInfo *)0x0);
-          startIndex_00 = startIndex + 2 + uVar10;
-          crc = mscorlib.dll::System::BitConverter::BitConverter_ToUInt32
-                          (pBStack_2,startIndex_00,(MethodInfo *)0x0);
-          startIndex = startIndex_00 + 4;
-          pFStack_14 = (FileData *)func_?(TypeInfo__MV__WorldObject__AntiCheat__FileData);
-          MVWorldObject.dll::MV::WorldObject::AntiCheat::FileData::FileData__ctor
-                    (pFStack_14,pBVar1,crc,(MethodInfo *)0x0);
-          this = pLStack_12;
-          if (pLStack_12 ==
-              (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-               *)0x0) {
-            func_?();
-            pcVar15 = (code *)swi(3);
-            pLVar16 = (List_1_MV_WorldObject_AntiCheat_FileData_ *)(*pcVar15)();
-            return pLVar16;
-          }
-          mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-          List_1_System_Object__Add
-                    ((List_1_System_Object_ *)pLStack_12,(Object *)pFStack_14,
-                     MethodInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>__Add_MV__WorldObject__AntiCheat__FileData_
-                    );
-        } while ((int)startIndex >> 0x1f < 0);
-        if ((int)startIndex < 0) break;
-        if (uStack_11 <= startIndex) {
-          return (List_1_MV_WorldObject_AntiCheat_FileData_ *)this;
-        }
-      }
-    }
+  puVar8 = crcData->vector;
+  if (crcData == (Byte__Array *)0x0) {
+    puVar8 = (uint8_t *)0x0;
   }
-  else {
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug);
+  numOfWrittenBytes = (*pcRam_?)(puVar8);
+  if (0x2800 < numOfWrittenBytes) {
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_Buffer_is_too_small__causing_und,(MethodInfo *)0x0);
+    return (List_1_MV_WorldObject_AntiCheat_FileData_ *)0x0;
   }
-  return (List_1_MV_WorldObject_AntiCheat_FileData_ *)this;
+  pLVar9 = DllProtector_ParseCrcData(crcData,numOfWrittenBytes,(MethodInfo *)0x0);
+  return pLVar9;
 }
 
 
@@ -132,16 +80,22 @@ uint32_t Assembly-CSharp.dll::DllProtector::DllProtector_GetCrcData
 
 {
   if (pcRam_? == (code *)0x0) {
-    pcStack_1 = pcRam_?;
-    uStack_2 = 0;
-    uStack_3 = 0xc;
-    uStack_4 = 10;
-    uStack_5 = 2;
-    uStack_6 = 8;
-    pcRam_? = (code *)func_?(&puStack_7);
+    uStack_1 = 0xc;
+    uStack_2 = 10;
+    uStack_3 = 0;
+    uStack_4 = 2;
+    uStack_5 = 0xc;
+    uStack_6 = 0;
+    pcRam_? = (code *)FUN_?(&puStack_7);
   }
-  uVar8 = (*pcRam_?)(-(uint)(buffer != (Byte__Array *)0x0) & (uint)buffer->vector,len);
-  return uVar8;
+  puVar8 = buffer->vector;
+  if (buffer == (Byte__Array *)0x0) {
+    puVar8 = (uint8_t *)0x0;
+  }
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  uVar9 = (*pcRam_?)(puVar8,len);
+  return uVar9;
 }
 
 
@@ -153,59 +107,151 @@ Assembly-CSharp.dll::DllProtector::DllProtector_ParseCrcData
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&TypeInfo__MV__WorldObject__AntiCheat__FileData);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>__Add_MV__WorldObject__AntiCheat__FileData_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>__List_int_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>
-                   );
+    FUN_?(&TypeInfo__System__Byte);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__AntiCheat__FileData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>__Add_MV__WorldObject__AntiCheat__FileData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>__List_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-          *)func_?(
-                           TypeInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>
-                           );
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
-  MultiColumnCollectionHeader+ViewState+ColumnState]::
-  List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
-            (this,0x10,
-             MethodInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>__List_int_
-            );
-  startIndex = 0;
-  if (numOfWrittenBytes != 0) {
-    do {
-      uVar1 = mscorlib.dll::System::BitConverter::BitConverter_ToUInt16
-                        (crcData,startIndex,(MethodInfo *)0x0);
-      length = (uint)uVar1;
-      name = (Byte__Array *)func_?(TypeInfo__System__Byte,length);
-      mscorlib.dll::System::Array::Array_Copy_3
-                ((Array *)crcData,startIndex + 2,(Array *)name,0,length,(MethodInfo *)0x0);
-      startIndex_00 = startIndex + 2 + length;
-      crc = mscorlib.dll::System::BitConverter::BitConverter_ToUInt32
-                      (crcData,startIndex_00,(MethodInfo *)0x0);
-      startIndex = startIndex_00 + 4;
-      this_00 = (FileData *)func_?(TypeInfo__MV__WorldObject__AntiCheat__FileData);
-      MVWorldObject.dll::MV::WorldObject::AntiCheat::FileData::FileData__ctor
-                (this_00,name,crc,(MethodInfo *)0x0);
-      if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                   *)0x0) {
-        func_?();
-        pcVar2 = (code *)swi(3);
-        pLVar3 = (List_1_MV_WorldObject_AntiCheat_FileData_ *)(*pcVar2)();
-        return pLVar3;
-      }
-      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-                ((List_1_System_Object_ *)this,(Object *)this_00,
-                 MethodInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>__Add_MV__WorldObject__AntiCheat__FileData_
-                );
-    } while (((int)startIndex >> 0x1f < 0) ||
-            ((-1 < (int)startIndex && (startIndex < numOfWrittenBytes))));
+  pLVar1 = (List_1_MV_WorldObject_AntiCheat_FileData_ *)
+           FUN_?(
+                        TypeInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>
+                        );
+  pvVar2 = MethodInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>__List_int_
+           ->klass->rgctx_data[3].rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar2 + 0x135) & 1) == 0) {
+    pvVar2 = (void *)FUN_?(pvVar2);
   }
-  return (List_1_MV_WorldObject_AntiCheat_FileData_ *)this;
+  pFVar3 = (FileData__Array *)FUN_?(pvVar2);
+  bVar4 = iRam_? != 0;
+  (pLVar1->fields)._items = pFVar3;
+  if (bVar4) {
+    uVar5 = (uint)((ulonglong)&pLVar1->fields >> 0xc);
+    lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+      puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+      LOCK();
+      bVar4 = uVar7 == *puVar8;
+      if (bVar4) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar4);
+  }
+  if (numOfWrittenBytes != 0) {
+    uVar5 = 0;
+    if (crcData == (Byte__Array *)0x0) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentNullException
+                (ExceptionArgument__Enum_value,(MethodInfo *)0x0);
+      pcVar9 = (code *)swi(3);
+      pLVar1 = (List_1_MV_WorldObject_AntiCheat_FileData_ *)(*pcVar9)();
+      return pLVar1;
+    }
+    do {
+      if ((uint)crcData->max_length <= uVar5) {
+code_?:
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRangeException_2
+                  (ExceptionArgument__Enum_startIndex,
+                   ExceptionResource__Enum_ArgumentOutOfRange_Index,(MethodInfo *)0x0);
+        pcVar9 = (code *)swi(3);
+        pLVar1 = (List_1_MV_WorldObject_AntiCheat_FileData_ *)(*pcVar9)();
+        return pLVar1;
+      }
+      if ((int)crcData->max_length + -2 < (int)uVar5) {
+code_?:
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentException_1
+                  (ExceptionResource__Enum_Arg_ArrayPlusOffTooSmall,ExceptionArgument__Enum_value,
+                   (MethodInfo *)0x0);
+        pcVar9 = (code *)swi(3);
+        pLVar1 = (List_1_MV_WorldObject_AntiCheat_FileData_ *)(*pcVar9)();
+        return pLVar1;
+      }
+      uVar10 = (uint)*(ushort *)(crcData->vector + (int)uVar5);
+      destinationArray = (Array *)FUN_?(TypeInfo__System__Byte,uVar10);
+      mscorlib.dll::System::Array::Array_Copy_3
+                ((Array *)crcData,uVar5 + 2,destinationArray,0,uVar10,(MethodInfo *)0x0);
+      uVar10 = uVar5 + 2 + uVar10;
+      if ((uint)crcData->max_length <= uVar10) goto code_?;
+      if ((int)crcData->max_length + -4 < (int)uVar10) goto code_?;
+      uVar5 = uVar10 + 4;
+      uVar11 = *(undefined4 *)(crcData->vector + (int)uVar10);
+      item = (Object *)FUN_?(TypeInfo__MV__WorldObject__AntiCheat__FileData);
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__List<unsigned_char>__List_System__Collections__Generic__IEnumerable<unsigned_char>_
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?(&TypeInfo__System__Collections__Generic__List<unsigned_char>);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      this = (Object__Class *)
+             FUN_?(TypeInfo__System__Collections__Generic__List<unsigned_char>);
+      mscorlib.dll::System::Collections::Generic::List`1[System::Byte]::List_1_System_Byte___ctor_1
+                ((List_1_System_Byte_ *)this,(IEnumerable_1_System_Byte_ *)destinationArray,
+                 MethodInfo__System__Collections__Generic__List<unsigned_char>__List_System__Collections__Generic__IEnumerable<unsigned_char>_
+                );
+      bVar4 = iRam_? != 0;
+      item[1].klass = this;
+      if (bVar4) {
+        uVar10 = (uint)((ulonglong)(item + 1) >> 0xc);
+        lVar6 = (ulonglong)((uVar10 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+          puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+          LOCK();
+          bVar4 = uVar7 == *puVar8;
+          if (bVar4) {
+            *puVar8 = uVar7 | 1L << (uVar10 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar4);
+      }
+      *(undefined4 *)&item[1].monitor = uVar11;
+      pMVar12 = 
+      MethodInfo__System__Collections__Generic__List<MV::WorldObject::AntiCheat::FileData>__Add_MV__WorldObject__AntiCheat__FileData_
+      ;
+      piVar13 = &(pLVar1->fields)._version;
+      *piVar13 = *piVar13 + 1;
+      pFVar3 = (pLVar1->fields)._items;
+      if (pFVar3 == (FileData__Array *)0x0) {
+        FUN_?();
+        pcVar9 = (code *)swi(3);
+        pLVar1 = (List_1_MV_WorldObject_AntiCheat_FileData_ *)(*pcVar9)();
+        return pLVar1;
+      }
+      uVar10 = (pLVar1->fields)._size;
+      if (uVar10 < (uint)pFVar3->max_length) {
+        (pLVar1->fields)._size = uVar10 + 1;
+        FUN_?();
+      }
+      else {
+        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+        List_1_System_Object__AddWithResize
+                  ((List_1_System_Object_ *)pLVar1,item,pMVar12->klass->rgctx_data[0xe].method);
+      }
+    } while ((longlong)(int)uVar5 < (longlong)(ulonglong)numOfWrittenBytes);
+  }
+  return pLVar1;
 }
 

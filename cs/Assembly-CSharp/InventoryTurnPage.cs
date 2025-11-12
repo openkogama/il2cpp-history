@@ -17,7 +17,7 @@ public class InventoryTurnPage : MonoBehaviour, IPointerEnterHandler
 	[SerializeField]
 	private bool pageForward;
 	[SerializeField]
-	private Button button;
+	private UnityEngine.UI.Button button;
 
 	// Constructors
 	public InventoryTurnPage();

@@ -7,29 +7,44 @@ void Assembly-CSharp.dll::GoogleMobileAds::Mediation::AdColony::Api::AdColonyMed
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
-                   );
-    func_?(&StringLiteral_show_post_popup);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_show_post_popup);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (this->fields)._._Extras_k__BackingField;
-  if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Boolean);
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
   }
-  value = mscorlib.dll::System::Boolean::Boolean_ToString
-                    ((Boolean *)&showPostPopup,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&StringLiteral_False);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_True);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  value = StringLiteral_False;
+  if (showPostPopup != 0) {
+    value = StringLiteral_True;
+  }
   if (this_00 != (Dictionary_2_System_String_System_String_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
+    Dictionary_2_System_Object_System_Object__TryInsert
               ((Dictionary_2_System_Object_System_Object_ *)this_00,
                (Object *)StringLiteral_show_post_popup,(Object *)value,
+               CONCAT31((int3)((uint)in_R9D >> 8),2),
                MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
-              );
+               ->klass->rgctx_data[0x22].method);
     return;
   }
-  func_?();
+  FUN_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;
@@ -44,64 +59,46 @@ void Assembly-CSharp.dll::GoogleMobileAds::Mediation::AdColony::Api::AdColonyMed
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
-                   );
-    func_?(&StringLiteral_show_pre_popup);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_show_pre_popup);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (this->fields)._._Extras_k__BackingField;
-  if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Boolean);
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
   }
-  value = mscorlib.dll::System::Boolean::Boolean_ToString
-                    ((Boolean *)&showPrePopup,(MethodInfo *)0x0);
-  if (this_00 != (Dictionary_2_System_String_System_String_ *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-    Dictionary_2_System_Object_System_Object__Add
-              ((Dictionary_2_System_Object_System_Object_ *)this_00,
-               (Object *)StringLiteral_show_pre_popup,(Object *)value,
-               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
-              );
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
-}
-
-
-/* AdColonyMediationExtras() */
-
-void Assembly-CSharp.dll::GoogleMobileAds::Mediation::AdColony::Api::AdColonyMediationExtras::
-     AdColonyMediationExtras__ctor(AdColonyMediationExtras *this,MethodInfo *method)
-
-{
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
-                   );
+    FUN_?(&StringLiteral_False);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_True);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-             *)func_?(
-                              TypeInfo__System__Collections__Generic__Dictionary<System::String,_System::String>
-                              );
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
-  StyleComplexSelector+PseudoStateData]::
-  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
-            (this_00,
-             MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Dictionary__
-            );
-  (this->fields)._._Extras_k__BackingField = (Dictionary_2_System_String_System_String_ *)this_00;
-  func_?(&this->fields,this_00);
+  value = StringLiteral_False;
+  if (showPrePopup != 0) {
+    value = StringLiteral_True;
+  }
+  if (this_00 != (Dictionary_2_System_String_System_String_ *)0x0) {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__TryInsert
+              ((Dictionary_2_System_Object_System_Object_ *)this_00,
+               (Object *)StringLiteral_show_pre_popup,(Object *)value,
+               CONCAT31((int3)((uint)in_R9D >> 8),2),
+               MethodInfo__System__Collections__Generic__Dictionary<System::String,_System::String>__Add_System__String__System__String_
+               ->klass->rgctx_data[0x22].method);
+    return;
+  }
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -114,7 +111,9 @@ String * Assembly-CSharp.dll::GoogleMobileAds::Mediation::AdColony::Api::AdColon
 
 {
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_com_google_unity_mediation_adcol);
+    FUN_?(&StringLiteral_com_google_unity_mediation_adcol);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return StringLiteral_com_google_unity_mediation_adcol;
@@ -129,7 +128,9 @@ String * Assembly-CSharp.dll::GoogleMobileAds::Mediation::AdColony::Api::AdColon
 
 {
   if (cRam_? == '\0') {
-    func_?(&StringLiteral_AdColonyExtrasBuilder);
+    FUN_?(&StringLiteral_AdColonyExtrasBuilder);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   return StringLiteral_AdColonyExtrasBuilder;

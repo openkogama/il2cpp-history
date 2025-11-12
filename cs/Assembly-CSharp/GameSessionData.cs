@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using ExitGames.Client.Photon;
 using MV.Common;
+using UnityEngine.Scripting;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
@@ -68,6 +69,7 @@ public class GameSessionData
 	public ConnectionProtocol ConnectionProtocol { get; }
 
 	// Constructors
+	[Preserve]
 	public GameSessionData();
 	public GameSessionData(Dictionary<string, object> gameSessionData);
 

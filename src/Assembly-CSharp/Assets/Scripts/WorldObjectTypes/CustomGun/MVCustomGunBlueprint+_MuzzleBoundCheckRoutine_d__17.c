@@ -8,302 +8,743 @@ bool Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData);
-    func_?(&TypeInfo__MV__WorldObject__IntVector);
+    FUN_?(&TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__IntVector);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  IStack_1.x = 0;
-  IStack_1.y = 0;
-  IStack_1.z = 0;
-  IStack_2.x = 0;
-  IStack_2.y = 0;
+  iVar1 = (this->fields).__1__state;
   this_00 = (this->fields).__4__this;
-  IStack_2.z = 0;
-  iVar3 = (this->fields).__1__state;
-  if (iVar3 == 0) {
+  if (iVar1 == 0) {
     (this->fields).__1__state = -1;
-    if ((TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->_1).
-        cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData);
+    if (*(int *)&(TypeInfo__Assets__Scripts__WorldObjectTypes__CustomGun__CustomGunData->_1).
+                 field_0x1c == 0) {
+      FUN_?();
     }
-    pVVar4 = CustomGunData::CustomGunData_GetEditPoints
-                        ((ValueTuple_2_MV_WorldObject_IntVector_MV_WorldObject_IntVector_ *)
-                         &stack0xffffffc0,(MethodInfo *)0x0);
-    uVar5._0_2_ = (pVVar4->Item1).x;
-    uVar5._2_2_ = (pVVar4->Item1).y;
-    uVar5._4_2_ = (pVVar4->Item1).z;
-    uVar6 = (pVVar4->Item2).x;
-    uVar7 = (pVVar4->Item2).y;
-    uVar8 = (pVVar4->Item2).z;
-    IStack_1._0_4_ = SUB64(uVar5,0);
-    IStack_2.y = uVar7;
-    IStack_2.x = uVar6;
-    IStack_1.z = uVar5._4_2_;
-    IStack_2.z = uVar8;
-    if ((TypeInfo__MV__WorldObject__IntVector->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MV__WorldObject__IntVector);
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    MethodInfo__System__ValueTuple<MV::WorldObject::IntVector,_MV::WorldObject::IntVector>__ValueTuple_MV__WorldObject__IntVector__MV__WorldObject__IntVector_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
-    pVVar9 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_ToVector3
-                        ((Vector3 *)&stack0xffffffc0,&IStack_2,(MethodInfo *)0x0);
-    fVar10 = pVVar9->y;
-    fVar11 = pVVar9->z;
-    (this->fields)._max_5__2.x = pVVar9->x;
-    (this->fields)._max_5__2.y = fVar10;
-    (this->fields)._max_5__2.z = fVar11;
-    pVVar9 = MVWorldObject.dll::MV::WorldObject::IntVector::IntVector_ToVector3
-                        ((Vector3 *)&stack0xffffffc0,&IStack_1,(MethodInfo *)0x0);
-    fVar10 = pVVar9->y;
-    fVar11 = pVVar9->z;
-    (this->fields)._min_5__3.x = pVVar9->x;
-    (this->fields)._min_5__3.y = fVar10;
-    (this->fields)._min_5__3.z = fVar11;
+    if (*(int *)&(TypeInfo__MV__WorldObject__IntVector->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    uVar2 = _UNK_?;
+    fVar3 = _UNK_?;
+    uVar4 = _UNK_?;
+    (this->fields)._max_5__2.x = (float)_UNK_?;
+    uVar5 = _UNK_?;
+    (this->fields)._max_5__2.y = (float)uVar4;
+    (this->fields)._max_5__2.z = fVar3;
+    fVar3 = _UNK_?;
+    (this->fields)._min_5__3.x = (float)uVar5;
+    (this->fields)._min_5__3.y = (float)uVar2;
+    (this->fields)._min_5__3.z = fVar3;
   }
   else {
-    if (iVar3 != 1) {
+    if (iVar1 != 1) {
       return 0;
     }
     (this->fields).__1__state = -1;
   }
-  if ((this_00 != (MVCustomGunBlueprint *)0x0) &&
-     (pGVar12 = (this_00->fields).muzzlePoint, pGVar12 != (GameObject *)0x0)) {
-    pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                        (pGVar12,(MethodInfo *)0x0);
-    if (pTVar13 != (Transform *)0x0) {
-      pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                          ((Vector3 *)&stack0xffffffc0,pTVar13,(MethodInfo *)0x0);
-      pVVar9 = &(this->fields)._max_5__2;
-      if (pVVar9->x <= pVVar14->x && pVVar14->x != pVVar9->x) {
-        pGVar12 = (this_00->fields).muzzlePoint;
-        if (pGVar12 == (GameObject *)0x0) goto code_?;
-        pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                            (pGVar12,(MethodInfo *)0x0);
-        if (pTVar13 == (Transform *)0x0) goto code_?;
-        pVVar9 = (Vector3 *)&stack0xffffffc0;
-        pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                            (pVVar9,pTVar13,(MethodInfo *)0x0);
-        fStack_15 = pVVar14->y;
-        pGVar12 = (this_00->fields).muzzlePoint;
-        if (pGVar12 == (GameObject *)0x0) goto code_?;
-        pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                            (pGVar12,(MethodInfo *)0x0);
-        if (pTVar13 == (Transform *)0x0) goto code_?;
-        fVar11 = (float)pVVar9 - _UNK_?;
-        pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                            ((Vector3 *)&stack0xffffffc0,pTVar13,(MethodInfo *)0x0);
-        pMVar16 = (MethodInfo *)pVVar9->z;
-        pos.y = fStack_15;
-        pos.x = fVar11;
-        pos.z._0_2_ = (short)pMVar16;
-        pos.z._2_2_ = (short)((uint)pMVar16 >> 0x10);
-        MVCustomGunBlueprint::MVCustomGunBlueprint_SetMuzzlePointPosition(this_00,pos,pMVar16);
-      }
-      pGVar12 = (this_00->fields).muzzlePoint;
-      if (pGVar12 != (GameObject *)0x0) {
-        pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                            (pGVar12,(MethodInfo *)0x0);
-        if (pTVar13 != (Transform *)0x0) {
-          pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                              ((Vector3 *)&stack0xffffffc0,pTVar13,(MethodInfo *)0x0);
-          fVar11 = (this->fields)._min_5__3.x;
-          if (pVVar9->x <= fVar11 && fVar11 != pVVar9->x) {
-            pGVar12 = (this_00->fields).muzzlePoint;
-            if (pGVar12 == (GameObject *)0x0) goto code_?;
-            pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (pGVar12,(MethodInfo *)0x0);
-            if (pTVar13 == (Transform *)0x0) goto code_?;
-            pVVar9 = (Vector3 *)&stack0xffffffc0;
-            pVVar14 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                      Transform_get_localPosition(pVVar9,pTVar13,(MethodInfo *)0x0);
-            fStack_15 = pVVar14->y;
-            pGVar12 = (this_00->fields).muzzlePoint;
-            if (pGVar12 == (GameObject *)0x0) goto code_?;
-            pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (pGVar12,(MethodInfo *)0x0);
-            if (pTVar13 == (Transform *)0x0) goto code_?;
-            fVar11 = (float)pVVar9 + _UNK_?;
-            pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                      Transform_get_localPosition
-                                ((Vector3 *)&stack0xffffffc0,pTVar13,(MethodInfo *)0x0);
-            pos_00.y = fStack_15;
-            pos_00.x = fVar11;
-            pos_00.z._0_2_ = SUB42(pVVar9->z,0);
-            pos_00.z._2_2_ = (short)((uint)pVVar9->z >> 0x10);
-            MVCustomGunBlueprint::MVCustomGunBlueprint_SetMuzzlePointPosition
-                      (this_00,pos_00,(MethodInfo *)0x0);
-          }
-          pGVar12 = (this_00->fields).muzzlePoint;
-          if (pGVar12 != (GameObject *)0x0) {
-            pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (pGVar12,(MethodInfo *)0x0);
-            if (pTVar13 != (Transform *)0x0) {
-              pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                        Transform_get_localPosition
-                                  ((Vector3 *)&stack0xffffffc0,pTVar13,(MethodInfo *)0x0);
-              pfVar17 = &(this->fields)._max_5__2.y;
-              if (*pfVar17 <= pVVar9->y && pVVar9->y != *pfVar17) {
-                pGVar12 = (this_00->fields).muzzlePoint;
-                if (pGVar12 == (GameObject *)0x0) goto code_?;
-                pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                          GameObject_get_transform(pGVar12,(MethodInfo *)0x0);
-                if (pTVar13 == (Transform *)0x0) goto code_?;
-                pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                          Transform_get_localPosition
-                                    ((Vector3 *)&stack0xffffffc0,pTVar13,(MethodInfo *)0x0);
-                fVar11 = pVVar9->x;
-                pGVar12 = (this_00->fields).muzzlePoint;
-                fStack_15 = (this->fields)._max_5__2.y;
-                if (pGVar12 == (GameObject *)0x0) goto code_?;
-                pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                          GameObject_get_transform(pGVar12,(MethodInfo *)0x0);
-                if (pTVar13 == (Transform *)0x0) goto code_?;
-                fStack_15 = fStack_15 - _UNK_?;
-                pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                          Transform_get_localPosition
-                                    ((Vector3 *)&stack0xffffffc0,pTVar13,(MethodInfo *)0x0);
-                pos_01.y = fStack_15;
-                pos_01.x = fVar11;
-                pos_01.z._0_2_ = SUB42(pVVar9->z,0);
-                pos_01.z._2_2_ = (short)((uint)pVVar9->z >> 0x10);
-                MVCustomGunBlueprint::MVCustomGunBlueprint_SetMuzzlePointPosition
-                          (this_00,pos_01,(MethodInfo *)0x0);
-              }
-              pGVar12 = (this_00->fields).muzzlePoint;
-              if (pGVar12 != (GameObject *)0x0) {
-                pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                          GameObject_get_transform(pGVar12,(MethodInfo *)0x0);
-                if (pTVar13 != (Transform *)0x0) {
-                  pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                            Transform_get_localPosition
-                                      ((Vector3 *)&stack0xffffffc0,pTVar13,(MethodInfo *)0x0);
-                  fVar11 = (this->fields)._min_5__3.y;
-                  if (pVVar9->y <= fVar11 && fVar11 != pVVar9->y) {
-                    pGVar12 = (this_00->fields).muzzlePoint;
-                    if (pGVar12 == (GameObject *)0x0) goto code_?;
-                    pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                              GameObject_get_transform(pGVar12,(MethodInfo *)0x0);
-                    if (pTVar13 == (Transform *)0x0) goto code_?;
-                    pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                              Transform_get_localPosition
-                                        ((Vector3 *)&stack0xffffffc0,pTVar13,(MethodInfo *)0x0);
-                    fVar11 = pVVar9->x;
-                    pGVar12 = (this_00->fields).muzzlePoint;
-                    fStack_15 = (this->fields)._min_5__3.y;
-                    if (pGVar12 == (GameObject *)0x0) goto code_?;
-                    pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                              GameObject_get_transform(pGVar12,(MethodInfo *)0x0);
-                    if (pTVar13 == (Transform *)0x0) goto code_?;
-                    fStack_15 = fStack_15 + _UNK_?;
-                    pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                              Transform_get_localPosition
-                                        ((Vector3 *)&stack0xffffffc0,pTVar13,(MethodInfo *)0x0);
-                    pos_02.y = fStack_15;
-                    pos_02.x = fVar11;
-                    pos_02.z._0_2_ = SUB42(pVVar9->z,0);
-                    pos_02.z._2_2_ = (short)((uint)pVVar9->z >> 0x10);
-                    MVCustomGunBlueprint::MVCustomGunBlueprint_SetMuzzlePointPosition
-                              (this_00,pos_02,(MethodInfo *)0x0);
-                  }
-                  pGVar12 = (this_00->fields).muzzlePoint;
-                  if (pGVar12 != (GameObject *)0x0) {
-                    pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                              GameObject_get_transform(pGVar12,(MethodInfo *)0x0);
-                    if (pTVar13 != (Transform *)0x0) {
-                      pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                Transform_get_localPosition
-                                          ((Vector3 *)&stack0xffffffc0,pTVar13,(MethodInfo *)0x0);
-                      pfVar17 = &(this->fields)._max_5__2.z;
-                      if (*pfVar17 <= pVVar9->z && pVVar9->z != *pfVar17) {
-                        pGVar12 = (this_00->fields).muzzlePoint;
-                        if (pGVar12 == (GameObject *)0x0) goto code_?;
-                        pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                  GameObject_get_transform(pGVar12,(MethodInfo *)0x0);
-                        if (pTVar13 == (Transform *)0x0) goto code_?;
-                        pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                  Transform_get_localPosition
-                                            ((Vector3 *)&stack0xffffffc0,pTVar13,(MethodInfo *)0x0);
-                        fVar11 = pVVar9->x;
-                        pGVar12 = (this_00->fields).muzzlePoint;
-                        if (pGVar12 == (GameObject *)0x0) goto code_?;
-                        pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                  GameObject_get_transform(pGVar12,(MethodInfo *)0x0);
-                        if (pTVar13 == (Transform *)0x0) goto code_?;
-                        pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                  Transform_get_localPosition
-                                            ((Vector3 *)&stack0xffffffc0,pTVar13,(MethodInfo *)0x0);
-                        pMVar16 = (MethodInfo *)((this->fields)._max_5__2.z - _UNK_?);
-                        pos_03.y = pVVar9->y;
-                        pos_03.x = fVar11;
-                        pos_03.z._0_2_ = (short)pMVar16;
-                        pos_03.z._2_2_ = (short)((uint)pMVar16 >> 0x10);
-                        MVCustomGunBlueprint::MVCustomGunBlueprint_SetMuzzlePointPosition
-                                  (this_00,pos_03,pMVar16);
-                      }
-                      pGVar12 = (this_00->fields).muzzlePoint;
-                      if (pGVar12 != (GameObject *)0x0) {
-                        pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                  GameObject_get_transform(pGVar12,(MethodInfo *)0x0);
-                        if (pTVar13 != (Transform *)0x0) {
-                          pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                    Transform_get_localPosition
-                                              ((Vector3 *)&stack0xffffffc0,pTVar13,(MethodInfo *)0x0
-                                              );
-                          fVar11 = (this->fields)._min_5__3.z;
-                          if (fVar11 < pVVar9->z || fVar11 == pVVar9->z) {
+  if (((this_00 == (MVCustomGunBlueprint *)0x0) ||
+      (pGVar6 = (this_00->fields).muzzlePoint, pGVar6 == (GameObject *)0x0)) ||
+     (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                          (pGVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0))
+  goto code_?;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  uStack_8 = 0;
+  fStack_9 = 0.0;
+  pvVar10 = (pTVar7->fields)._._.m_CachedPtr;
+  if (pvVar10 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+    pcVar11 = (code *)swi(3);
+    bVar12 = (*pcVar11)();
+    return bVar12;
+  }
+  pcVar11 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+    uVar13 = func_?(&UNK_?);
+    FUN_?(uVar13,0);
+    pcVar11 = (code *)swi(3);
+    bVar12 = (*pcVar11)();
+    return bVar12;
+  }
+  pcRam_? = pcVar11;
+  (*pcRam_?)(pvVar10);
+  fVar3 = _UNK_?;
+  pVVar14 = &(this->fields)._max_5__2;
+  if (pVVar14->x <= (float)uStack_8 && (float)uStack_8 != pVVar14->x) {
+    pGVar6 = (this_00->fields).muzzlePoint;
+    fVar15 = (this->fields)._max_5__2.x;
+    if ((pGVar6 == (GameObject *)0x0) ||
+       (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (pGVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0))
+    goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_8 = 0;
+    fStack_9 = 0.0;
+    pvVar10 = (pTVar7->fields)._._.m_CachedPtr;
+    if (pvVar10 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+      pcVar11 = (code *)swi(3);
+      bVar12 = (*pcVar11)();
+      return bVar12;
+    }
+    pcVar11 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+      uVar13 = func_?(&UNK_?);
+      FUN_?(uVar13,0);
+      pcVar11 = (code *)swi(3);
+      bVar12 = (*pcVar11)();
+      return bVar12;
+    }
+    pcRam_? = pcVar11;
+    (*pcRam_?)(pvVar10);
+    pGVar6 = (this_00->fields).muzzlePoint;
+    if ((pGVar6 == (GameObject *)0x0) ||
+       (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (pGVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0))
+    goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    aVStack_16[0].x = 0.0;
+    aVStack_16[0].y = 0.0;
+    aVStack_16[0].z = 0.0;
+    pvVar10 = (pTVar7->fields)._._.m_CachedPtr;
+    if (pvVar10 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+      pcVar11 = (code *)swi(3);
+      bVar12 = (*pcVar11)();
+      return bVar12;
+    }
+    pcVar11 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+      uVar13 = func_?(&UNK_?);
+      FUN_?(uVar13,0);
+      pcVar11 = (code *)swi(3);
+      bVar12 = (*pcVar11)();
+      return bVar12;
+    }
+    pcRam_? = pcVar11;
+    (*pcRam_?)(pvVar10,aVStack_16);
+    aVStack_16[0].y = uStack_8._4_4_;
+    aVStack_16[0].x = fVar15 - fVar3;
+    MVCustomGunBlueprint::MVCustomGunBlueprint_SetMuzzlePointPosition
+              (this_00,aVStack_16,(MethodInfo *)0x0);
+  }
+  pGVar6 = (this_00->fields).muzzlePoint;
+  if ((pGVar6 == (GameObject *)0x0) ||
+     (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                          (pGVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0))
+  goto code_?;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  aVStack_16[0].x = 0.0;
+  aVStack_16[0].y = 0.0;
+  aVStack_16[0].z = 0.0;
+  pvVar10 = (pTVar7->fields)._._.m_CachedPtr;
+  if (pvVar10 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+    pcVar11 = (code *)swi(3);
+    bVar12 = (*pcVar11)();
+    return bVar12;
+  }
+  pcVar11 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+    uVar13 = func_?(&UNK_?);
+    FUN_?(uVar13,0);
+    pcVar11 = (code *)swi(3);
+    bVar12 = (*pcVar11)();
+    return bVar12;
+  }
+  pcRam_? = pcVar11;
+  (*pcRam_?)(pvVar10);
+  fVar15 = (this->fields)._min_5__3.x;
+  if (aVStack_16[0].x < fVar15) {
+    pGVar6 = (this_00->fields).muzzlePoint;
+    if ((pGVar6 == (GameObject *)0x0) ||
+       (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (pGVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0))
+    goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    aVStack_16[0].x = 0.0;
+    aVStack_16[0].y = 0.0;
+    aVStack_16[0].z = 0.0;
+    pvVar10 = (pTVar7->fields)._._.m_CachedPtr;
+    if (pvVar10 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+      pcVar11 = (code *)swi(3);
+      bVar12 = (*pcVar11)();
+      return bVar12;
+    }
+    pcVar11 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+      uVar13 = func_?(&UNK_?);
+      FUN_?(uVar13,0);
+      pcVar11 = (code *)swi(3);
+      bVar12 = (*pcVar11)();
+      return bVar12;
+    }
+    pcRam_? = pcVar11;
+    (*pcRam_?)(pvVar10);
+    pGVar6 = (this_00->fields).muzzlePoint;
+    if ((pGVar6 == (GameObject *)0x0) ||
+       (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (pGVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0))
+    goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_8 = 0;
+    fStack_9 = 0.0;
+    pvVar10 = (pTVar7->fields)._._.m_CachedPtr;
+    if (pvVar10 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+      pcVar11 = (code *)swi(3);
+      bVar12 = (*pcVar11)();
+      return bVar12;
+    }
+    pcVar11 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+      uVar13 = func_?(&UNK_?);
+      FUN_?(uVar13,0);
+      pcVar11 = (code *)swi(3);
+      bVar12 = (*pcVar11)();
+      return bVar12;
+    }
+    pcRam_? = pcVar11;
+    (*pcRam_?)(pvVar10,&uStack_8);
+    aVStack_16[0].z = fStack_9;
+    aVStack_16[0].x = fVar15 + fVar3;
+    MVCustomGunBlueprint::MVCustomGunBlueprint_SetMuzzlePointPosition
+              (this_00,aVStack_16,(MethodInfo *)0x0);
+  }
+  pGVar6 = (this_00->fields).muzzlePoint;
+  if ((pGVar6 == (GameObject *)0x0) ||
+     (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                          (pGVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0))
+  goto code_?;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  aVStack_16[0].x = 0.0;
+  aVStack_16[0].y = 0.0;
+  aVStack_16[0].z = 0.0;
+  pvVar10 = (pTVar7->fields)._._.m_CachedPtr;
+  if (pvVar10 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+    pcVar11 = (code *)swi(3);
+    bVar12 = (*pcVar11)();
+    return bVar12;
+  }
+  pcVar11 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+    uVar13 = func_?(&UNK_?);
+    FUN_?(uVar13,0);
+    pcVar11 = (code *)swi(3);
+    bVar12 = (*pcVar11)();
+    return bVar12;
+  }
+  pcRam_? = pcVar11;
+  (*pcRam_?)(pvVar10);
+  pfVar17 = &(this->fields)._max_5__2.y;
+  if (*pfVar17 <= aVStack_16[0].y && aVStack_16[0].y != *pfVar17) {
+    pGVar6 = (this_00->fields).muzzlePoint;
+    if ((pGVar6 == (GameObject *)0x0) ||
+       (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (pGVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0))
+    goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_8 = 0;
+    fStack_9 = 0.0;
+    pvVar10 = (pTVar7->fields)._._.m_CachedPtr;
+    if (pvVar10 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+      pcVar11 = (code *)swi(3);
+      bVar12 = (*pcVar11)();
+      return bVar12;
+    }
+    pcVar11 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+      uVar13 = func_?(&UNK_?);
+      FUN_?(uVar13,0);
+      pcVar11 = (code *)swi(3);
+      bVar12 = (*pcVar11)();
+      return bVar12;
+    }
+    pcRam_? = pcVar11;
+    (*pcRam_?)(pvVar10);
+    pGVar6 = (this_00->fields).muzzlePoint;
+    fVar15 = (this->fields)._max_5__2.y;
+    if ((pGVar6 == (GameObject *)0x0) ||
+       (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (pGVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0))
+    goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    aVStack_16[0].x = 0.0;
+    aVStack_16[0].y = 0.0;
+    aVStack_16[0].z = 0.0;
+    pvVar10 = (pTVar7->fields)._._.m_CachedPtr;
+    if (pvVar10 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+      pcVar11 = (code *)swi(3);
+      bVar12 = (*pcVar11)();
+      return bVar12;
+    }
+    pcVar11 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+      uVar13 = func_?(&UNK_?);
+      FUN_?(uVar13,0);
+      pcVar11 = (code *)swi(3);
+      bVar12 = (*pcVar11)();
+      return bVar12;
+    }
+    pcRam_? = pcVar11;
+    (*pcRam_?)(pvVar10,aVStack_16);
+    aVStack_16[0].y = fVar15 - fVar3;
+    aVStack_16[0].x = (float)uStack_8;
+    MVCustomGunBlueprint::MVCustomGunBlueprint_SetMuzzlePointPosition
+              (this_00,aVStack_16,(MethodInfo *)0x0);
+  }
+  pGVar6 = (this_00->fields).muzzlePoint;
+  if ((pGVar6 == (GameObject *)0x0) ||
+     (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                          (pGVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0))
+  goto code_?;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  aVStack_16[0].x = 0.0;
+  aVStack_16[0].y = 0.0;
+  aVStack_16[0].z = 0.0;
+  pvVar10 = (pTVar7->fields)._._.m_CachedPtr;
+  if (pvVar10 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+    pcVar11 = (code *)swi(3);
+    bVar12 = (*pcVar11)();
+    return bVar12;
+  }
+  pcVar11 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+    uVar13 = func_?(&UNK_?);
+    FUN_?(uVar13,0);
+    pcVar11 = (code *)swi(3);
+    bVar12 = (*pcVar11)();
+    return bVar12;
+  }
+  pcRam_? = pcVar11;
+  (*pcRam_?)(pvVar10);
+  if (aVStack_16[0].y < (this->fields)._min_5__3.y) {
+    pGVar6 = (this_00->fields).muzzlePoint;
+    if ((pGVar6 == (GameObject *)0x0) ||
+       (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (pGVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0))
+    goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_8 = 0;
+    fStack_9 = 0.0;
+    pvVar10 = (pTVar7->fields)._._.m_CachedPtr;
+    if (pvVar10 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+      pcVar11 = (code *)swi(3);
+      bVar12 = (*pcVar11)();
+      return bVar12;
+    }
+    pcVar11 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+      uVar13 = func_?(&UNK_?);
+      FUN_?(uVar13,0);
+      pcVar11 = (code *)swi(3);
+      bVar12 = (*pcVar11)();
+      return bVar12;
+    }
+    pcRam_? = pcVar11;
+    (*pcRam_?)(pvVar10);
+    pGVar6 = (this_00->fields).muzzlePoint;
+    fVar15 = (this->fields)._min_5__3.y;
+    if ((pGVar6 == (GameObject *)0x0) ||
+       (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (pGVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0))
+    goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    aVStack_16[0].x = 0.0;
+    aVStack_16[0].y = 0.0;
+    aVStack_16[0].z = 0.0;
+    pvVar10 = (pTVar7->fields)._._.m_CachedPtr;
+    if (pvVar10 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+      pcVar11 = (code *)swi(3);
+      bVar12 = (*pcVar11)();
+      return bVar12;
+    }
+    pcVar11 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+      uVar13 = func_?(&UNK_?);
+      FUN_?(uVar13,0);
+      pcVar11 = (code *)swi(3);
+      bVar12 = (*pcVar11)();
+      return bVar12;
+    }
+    pcRam_? = pcVar11;
+    (*pcRam_?)(pvVar10,aVStack_16);
+    aVStack_16[0].y = fVar15 + fVar3;
+    aVStack_16[0].x = (float)uStack_8;
+    MVCustomGunBlueprint::MVCustomGunBlueprint_SetMuzzlePointPosition
+              (this_00,aVStack_16,(MethodInfo *)0x0);
+  }
+  pGVar6 = (this_00->fields).muzzlePoint;
+  if ((pGVar6 == (GameObject *)0x0) ||
+     (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                          (pGVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0))
+  goto code_?;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  aVStack_16[0].x = 0.0;
+  aVStack_16[0].y = 0.0;
+  aVStack_16[0].z = 0.0;
+  pvVar10 = (pTVar7->fields)._._.m_CachedPtr;
+  if (pvVar10 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+    pcVar11 = (code *)swi(3);
+    bVar12 = (*pcVar11)();
+    return bVar12;
+  }
+  pcVar11 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+    uVar13 = func_?(&UNK_?);
+    FUN_?(uVar13,0);
+    pcVar11 = (code *)swi(3);
+    bVar12 = (*pcVar11)();
+    return bVar12;
+  }
+  pcRam_? = pcVar11;
+  (*pcRam_?)(pvVar10);
+  pfVar17 = &(this->fields)._max_5__2.z;
+  if (*pfVar17 <= aVStack_16[0].z && aVStack_16[0].z != *pfVar17) {
+    pGVar6 = (this_00->fields).muzzlePoint;
+    if ((pGVar6 == (GameObject *)0x0) ||
+       (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (pGVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0))
+    goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_8 = 0;
+    fStack_9 = 0.0;
+    pvVar10 = (pTVar7->fields)._._.m_CachedPtr;
+    if (pvVar10 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+      pcVar11 = (code *)swi(3);
+      bVar12 = (*pcVar11)();
+      return bVar12;
+    }
+    pcVar11 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+      uVar13 = func_?(&UNK_?);
+      FUN_?(uVar13,0);
+      pcVar11 = (code *)swi(3);
+      bVar12 = (*pcVar11)();
+      return bVar12;
+    }
+    pcRam_? = pcVar11;
+    (*pcRam_?)(pvVar10);
+    pGVar6 = (this_00->fields).muzzlePoint;
+    if ((pGVar6 == (GameObject *)0x0) ||
+       (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (pGVar6,(MethodInfo *)0x0), pTVar7 == (Transform *)0x0))
+    goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    aVStack_16[0].x = 0.0;
+    aVStack_16[0].y = 0.0;
+    aVStack_16[0].z = 0.0;
+    pvVar10 = (pTVar7->fields)._._.m_CachedPtr;
+    if (pvVar10 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+      pcVar11 = (code *)swi(3);
+      bVar12 = (*pcVar11)();
+      return bVar12;
+    }
+    pcVar11 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+      uVar13 = func_?(&UNK_?);
+      FUN_?(uVar13,0);
+      pcVar11 = (code *)swi(3);
+      bVar12 = (*pcVar11)();
+      return bVar12;
+    }
+    pcRam_? = pcVar11;
+    (*pcRam_?)(pvVar10,aVStack_16);
+    aVStack_16[0].z = (this->fields)._max_5__2.z - fVar3;
+    aVStack_16[0].x = (float)uStack_8;
+    MVCustomGunBlueprint::MVCustomGunBlueprint_SetMuzzlePointPosition
+              (this_00,aVStack_16,(MethodInfo *)0x0);
+  }
+  pGVar6 = (this_00->fields).muzzlePoint;
+  if ((pGVar6 != (GameObject *)0x0) &&
+     (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                          (pGVar6,(MethodInfo *)0x0), pTVar7 != (Transform *)0x0)) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    aVStack_16[0].x = 0.0;
+    aVStack_16[0].y = 0.0;
+    aVStack_16[0].z = 0.0;
+    pvVar10 = (pTVar7->fields)._._.m_CachedPtr;
+    if (pvVar10 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+      pcVar11 = (code *)swi(3);
+      bVar12 = (*pcVar11)();
+      return bVar12;
+    }
+    pcVar11 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+      uVar13 = func_?(&UNK_?);
+      FUN_?(uVar13,0);
+      pcVar11 = (code *)swi(3);
+      bVar12 = (*pcVar11)();
+      return bVar12;
+    }
+    pcRam_? = pcVar11;
+    (*pcRam_?)(pvVar10);
+    if ((this->fields)._min_5__3.z <= aVStack_16[0].z) {
 code_?:
-                            (this->fields).__2__current = (Object *)0x0;
-                            func_?(&(this->fields).__2__current,0);
-                            (this->fields).__1__state = 1;
-                            return 1;
-                          }
-                          pGVar12 = (this_00->fields).muzzlePoint;
-                          if (pGVar12 != (GameObject *)0x0) {
-                            pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                      GameObject_get_transform(pGVar12,(MethodInfo *)0x0);
-                            if (pTVar13 != (Transform *)0x0) {
-                              pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                        Transform_get_localPosition
-                                                  ((Vector3 *)&stack0xffffffc0,pTVar13,
-                                                   (MethodInfo *)0x0);
-                              fVar11 = pVVar9->x;
-                              pGVar12 = (this_00->fields).muzzlePoint;
-                              if (pGVar12 != (GameObject *)0x0) {
-                                pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                                          GameObject_get_transform(pGVar12,(MethodInfo *)0x0);
-                                if (pTVar13 != (Transform *)0x0) {
-                                  pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                            Transform_get_localPosition
-                                                      ((Vector3 *)&stack0xffffffc0,pTVar13,
-                                                       (MethodInfo *)0x0);
-                                  pMVar16 = (MethodInfo *)
-                                            ((this->fields)._min_5__3.z + _UNK_?);
-                                  pos_04.y = pVVar9->y;
-                                  pos_04.x = fVar11;
-                                  pos_04.z._0_2_ = (short)pMVar16;
-                                  pos_04.z._2_2_ = (short)((uint)pMVar16 >> 0x10);
-                                  MVCustomGunBlueprint::MVCustomGunBlueprint_SetMuzzlePointPosition
-                                            (this_00,pos_04,pMVar16);
-                                  goto code_?;
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
+      bVar18 = iRam_? != 0;
+      (this->fields).__2__current = (Object *)0x0;
+      if (bVar18) {
+        uVar19 = (uint)((ulonglong)&(this->fields).__2__current >> 0xc);
+        uVar20 = (ulonglong)((uVar19 & 0x1fffff) >> 6);
+        do {
+          uVar21 = *(ulonglong *)(uVar20 * 8 + 0xADDR);
+          puVar22 = (ulonglong *)(uVar20 * 8 + 0xADDR);
+          LOCK();
+          bVar18 = uVar21 == *puVar22;
+          if (bVar18) {
+            *puVar22 = uVar21 | 1L << (uVar19 & 0x3f);
           }
+          UNLOCK();
+        } while (!bVar18);
+      }
+      (this->fields).__1__state = 1;
+      return 1;
+    }
+    pGVar6 = (this_00->fields).muzzlePoint;
+    if ((pGVar6 != (GameObject *)0x0) &&
+       (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (pGVar6,(MethodInfo *)0x0), pTVar7 != (Transform *)0x0)) {
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_8 = 0;
+      fStack_9 = 0.0;
+      pvVar10 = (pTVar7->fields)._._.m_CachedPtr;
+      if (pvVar10 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+        pcVar11 = (code *)swi(3);
+        bVar12 = (*pcVar11)();
+        return bVar12;
+      }
+      pcVar11 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+        uVar13 = func_?(&UNK_?);
+        FUN_?(uVar13,0);
+        pcVar11 = (code *)swi(3);
+        bVar12 = (*pcVar11)();
+        return bVar12;
+      }
+      pcRam_? = pcVar11;
+      (*pcRam_?)(pvVar10);
+      pGVar6 = (this_00->fields).muzzlePoint;
+      if ((pGVar6 != (GameObject *)0x0) &&
+         (pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                              (pGVar6,(MethodInfo *)0x0), pTVar7 != (Transform *)0x0)) {
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
         }
+        aVStack_16[0].x = 0.0;
+        aVStack_16[0].y = 0.0;
+        aVStack_16[0].z = 0.0;
+        pvVar10 = (pTVar7->fields)._._.m_CachedPtr;
+        if (pvVar10 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+          pcVar11 = (code *)swi(3);
+          bVar12 = (*pcVar11)();
+          return bVar12;
+        }
+        pcVar11 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+          uVar13 = func_?(&UNK_?);
+          FUN_?(uVar13,0);
+          pcVar11 = (code *)swi(3);
+          bVar12 = (*pcVar11)();
+          return bVar12;
+        }
+        pcRam_? = pcVar11;
+        (*pcRam_?)(pvVar10,aVStack_16);
+        aVStack_16[0].z = (this->fields)._min_5__3.z + fVar3;
+        aVStack_16[0].x = (float)uStack_8;
+        MVCustomGunBlueprint::MVCustomGunBlueprint_SetMuzzlePointPosition
+                  (this_00,aVStack_16,(MethodInfo *)0x0);
+        goto code_?;
       }
     }
   }
 code_?:
-  func_?();
-  pcVar18 = (code *)swi(3);
-  bVar19 = (*pcVar18)();
-  return bVar19;
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  bVar12 = (*pcVar11)();
+  return bVar12;
 }
 
 
@@ -319,10 +760,10 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::CustomGun::
   this_00 = (NotSupportedException *)func_?(uVar1);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
-  func_?(&
-                  MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint___MuzzleBoundCheckRoutine_d__17__System_Collections_IEnumerator_Reset__
-                 );
-  func_?(this_00);
+  uVar1 = func_?(&
+                              MethodInfo__Assets__Scripts__WorldObjectTypes__CustomGun__MVCustomGunBlueprint___MuzzleBoundCheckRoutine_d__17__System_Collections_IEnumerator_Reset__
+                             );
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

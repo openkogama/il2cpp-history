@@ -3,37 +3,45 @@
 
 Quaternion *
 MVWorldObject.dll::MV::WorldObject::QuaternionCompression::QuaternionCompression_FromEuler
-          (Quaternion *__return_storage_ptr__,Vector3 eulerAngles,MethodInfo *method)
+          (Quaternion *__return_storage_ptr__,Vector3 *eulerAngles,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Math);
-    func_?(&TypeInfo__MV__WorldObject__QuaternionCompression);
+    FUN_?(&TypeInfo__System__Math);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__QuaternionCompression);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__WorldObject__QuaternionCompression);
+  if (*(int *)&(TypeInfo__MV__WorldObject__QuaternionCompression->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__MV__WorldObject__QuaternionCompression);
   }
-  fVar1 = TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->radToDeg;
-  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Math);
+  pMVar1 = TypeInfo__System__Math;
+  uVar2 = eulerAngles->x;
+  uVar3 = eulerAngles->y;
+  fVar4 = TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->radToDeg;
+  eulerAngles->x = fVar4 * (float)uVar2;
+  eulerAngles->y = fVar4 * (float)uVar3;
+  eulerAngles->z = fVar4 * eulerAngles->z;
+  fVar4 = eulerAngles->y;
+  fVar5 = eulerAngles->z;
+  fVar6 = eulerAngles->x;
+  if (*(int *)&(pMVar1->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  dVar2 = (double)(eulerAngles.x * fVar1) * _UNK_?;
-  func_?();
-  dVar3 = (double)(eulerAngles.x * fVar1) * _UNK_?;
-  func_?();
-  dVar4 = (double)(eulerAngles.y * fVar1) * _UNK_?;
-  func_?();
-  dVar5 = (double)(eulerAngles.y * fVar1) * _UNK_?;
-  func_?();
-  dVar6 = (double)(eulerAngles.z * fVar1) * _UNK_?;
-  func_?();
-  dVar7 = (double)(eulerAngles.z * fVar1) * _UNK_?;
-  func_?();
-  __return_storage_ptr__->x = (float)(dVar4 * dVar2 * dVar7 + dVar5 * dVar3 * dVar6);
-  __return_storage_ptr__->y = (float)(dVar5 * dVar2 * dVar7 + dVar4 * dVar3 * dVar6);
-  __return_storage_ptr__->z = (float)(dVar5 * dVar2 * dVar6 - dVar4 * dVar3 * dVar7);
-  __return_storage_ptr__->w = (float)(dVar4 * dVar2 * dVar6 - dVar5 * dVar3 * dVar7);
+  dVar7 = _UNK_?;
+  dVar8 = (double)FUN_?((double)fVar6 * _UNK_?);
+  dVar9 = (double)FUN_?((double)fVar6 * dVar7);
+  dVar10 = (double)FUN_?((double)fVar4 * dVar7);
+  dVar11 = (double)FUN_?((double)fVar4 * dVar7);
+  dVar12 = (double)FUN_?((double)fVar5 * dVar7);
+  dVar7 = (double)FUN_?((double)fVar5 * dVar7);
+  __return_storage_ptr__->y = (float)(dVar11 * dVar8 * dVar7 + dVar10 * dVar9 * dVar12);
+  __return_storage_ptr__->z = (float)(dVar11 * dVar8 * dVar12 - dVar10 * dVar9 * dVar7);
+  __return_storage_ptr__->w = (float)(dVar10 * dVar8 * dVar12 - dVar11 * dVar9 * dVar7);
+  __return_storage_ptr__->x = (float)(dVar10 * dVar8 * dVar7 + dVar11 * dVar9 * dVar12);
   return __return_storage_ptr__;
 }
 
@@ -44,7 +52,7 @@ float MVWorldObject.dll::MV::WorldObject::QuaternionCompression::
       QuaternionCompression_NormalizeAngle(float angle,MethodInfo *method)
 
 {
-  for (; _UNK_? < angle; angle = angle - _UNK_?) {
+  for (; _UNK_? < angle; angle = angle + _UNK_?) {
   }
   for (; angle < 0.0; angle = angle + _UNK_?) {
   }
@@ -56,31 +64,41 @@ float MVWorldObject.dll::MV::WorldObject::QuaternionCompression::
 
 Vector3 * MVWorldObject.dll::MV::WorldObject::QuaternionCompression::
           QuaternionCompression_NormalizeAngles
-                    (Vector3 *__return_storage_ptr__,Vector3 angles,MethodInfo *method)
+                    (Vector3 *__return_storage_ptr__,Vector3 *angles,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__QuaternionCompression);
+    FUN_?(&TypeInfo__MV__WorldObject__QuaternionCompression);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__WorldObject__QuaternionCompression);
+  fVar1 = angles->x;
+  if (*(int *)&(TypeInfo__MV__WorldObject__QuaternionCompression->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  for (; _UNK_? < angles.x; angles.x = angles.x - _UNK_?) {
+  for (; fVar2 = _UNK_?, fVar3 = _UNK_?, _UNK_? < fVar1;
+      fVar1 = fVar1 + _UNK_?) {
   }
-  for (; angles.x < 0.0; angles.x = angles.x + _UNK_?) {
+  for (; fVar1 < 0.0; fVar1 = fVar1 + _UNK_?) {
   }
-  for (; _UNK_? < angles.y; angles.y = angles.y - _UNK_?) {
+  fVar4 = angles->y;
+  angles->x = fVar1;
+  for (; fVar3 < fVar4; fVar4 = fVar4 + fVar2) {
   }
-  for (; angles.y < 0.0; angles.y = angles.y + _UNK_?) {
+  for (; fVar4 < 0.0; fVar4 = fVar4 + fVar3) {
   }
-  for (; _UNK_? < angles.z; angles.z = angles.z - _UNK_?) {
+  angles->y = fVar4;
+  for (fVar1 = angles->z; fVar3 < fVar1; fVar1 = fVar1 + fVar2) {
   }
-  for (; angles.z < 0.0; angles.z = angles.z + _UNK_?) {
+  for (; fVar1 < 0.0; fVar1 = fVar1 + fVar3) {
   }
-  __return_storage_ptr__->x = angles.x;
-  __return_storage_ptr__->y = angles.y;
-  __return_storage_ptr__->z = angles.z;
+  angles->z = fVar1;
+  fVar1 = angles->z;
+  fVar3 = angles->y;
+  __return_storage_ptr__->x = angles->x;
+  __return_storage_ptr__->y = fVar3;
+  __return_storage_ptr__->z = fVar1;
   return __return_storage_ptr__;
 }
 
@@ -89,113 +107,138 @@ Vector3 * MVWorldObject.dll::MV::WorldObject::QuaternionCompression::
 
 Byte__Array *
 MVWorldObject.dll::MV::WorldObject::QuaternionCompression::QuaternionCompression_ToBytes
-          (Quaternion quaternion,MethodInfo *method)
+          (Quaternion *quaternion,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&TypeInfo__MV__WorldObject__QuaternionCompression);
+    FUN_?(&TypeInfo__System__Byte);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__QuaternionCompression);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__WorldObject__QuaternionCompression);
+  if (*(int *)&(TypeInfo__MV__WorldObject__QuaternionCompression->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pVVar1 = QuaternionCompression_ToEuler(&VStack_2,quaternion,(MethodInfo *)0x0);
-  fVar3 = pVVar1->x;
-  fVar4 = pVVar1->y;
-  fVar5 = pVVar1->z;
+  QStack_1.x = quaternion->x;
+  QStack_1.y = quaternion->y;
+  QStack_1.z = quaternion->z;
+  QStack_1.w = quaternion->w;
+  pVVar2 = QuaternionCompression_ToEuler(aVStack_3,&QStack_1,(MethodInfo *)0x0);
+  QStack_1.x = pVVar2->x;
+  QStack_1.y = pVVar2->y;
+  fVar4 = pVVar2->z;
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__MV__WorldObject__QuaternionCompression);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__MV__WorldObject__QuaternionCompression->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__MV__WorldObject__QuaternionCompression);
   }
-  for (; _UNK_? < fVar3; fVar3 = fVar3 - _UNK_?) {
-  }
-  for (; fVar3 < 0.0; fVar3 = fVar3 + _UNK_?) {
-  }
-  for (; _UNK_? < fVar4; fVar4 = fVar4 - _UNK_?) {
-  }
-  for (; fVar4 < 0.0; fVar4 = fVar4 + _UNK_?) {
-  }
-  for (; _UNK_? < fVar5; fVar5 = fVar5 - _UNK_?) {
+  for (fVar5 = QStack_1.x; _UNK_? < fVar5; fVar5 = fVar5 + _UNK_?) {
   }
   for (; fVar5 < 0.0; fVar5 = fVar5 + _UNK_?) {
   }
-  fVar4 = TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->degreesToByteFactor;
-  pBStack_6 = TypeInfo__System__Byte;
-  pBVar7 = (Byte__Array *)func_?();
-  if (pBVar7 == (Byte__Array *)0x0) {
-    func_?();
+  for (fVar6 = QStack_1.y; _UNK_? < fVar6; fVar6 = fVar6 + _UNK_?) {
   }
-  else if (pBVar7->max_length != 0) {
-    pBVar7->vector[0] = (uint8_t)(int)(fVar3 * fVar4);
-    if (1 < pBVar7->max_length) {
-      pBVar7->vector[1] = (uint8_t)(int)(float)pBStack_6;
-      if (2 < pBVar7->max_length) {
-        pBVar7->vector[2] = (uint8_t)(int)(float)puStack_8;
-        return pBVar7;
+  for (; fVar6 < 0.0; fVar6 = fVar6 + _UNK_?) {
+  }
+  for (; _UNK_? < fVar4; fVar4 = fVar4 + _UNK_?) {
+  }
+  for (; fVar4 < 0.0; fVar4 = fVar4 + _UNK_?) {
+  }
+  fVar7 = TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->degreesToByteFactor;
+  pBVar8 = (Byte__Array *)FUN_?(TypeInfo__System__Byte,3);
+  if (pBVar8 == (Byte__Array *)0x0) {
+    FUN_?();
+    pcVar9 = (code *)swi(3);
+    pBVar8 = (Byte__Array *)(*pcVar9)();
+    return pBVar8;
+  }
+  if ((int)pBVar8->max_length != 0) {
+    pBVar8->vector[0] = (uint8_t)(int)(fVar7 * fVar5);
+    if (1 < (uint)pBVar8->max_length) {
+      pBVar8->vector[1] = (uint8_t)(int)(fVar7 * fVar6);
+      if (2 < (uint)pBVar8->max_length) {
+        pBVar8->vector[2] = (uint8_t)(int)(fVar7 * fVar4);
+        return pBVar8;
       }
     }
   }
-  func_?();
+  FUN_?();
   pcVar9 = (code *)swi(3);
-  pBVar7 = (Byte__Array *)(*pcVar9)();
-  return pBVar7;
+  pBVar8 = (Byte__Array *)(*pcVar9)();
+  return pBVar8;
 }
 
 
 /* Vector3 ToEuler(Quaternion) */
 
 Vector3 * MVWorldObject.dll::MV::WorldObject::QuaternionCompression::QuaternionCompression_ToEuler
-                    (Vector3 *__return_storage_ptr__,Quaternion q1,MethodInfo *method)
+                    (Vector3 *__return_storage_ptr__,Quaternion *q1,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Math);
-    func_?(&TypeInfo__MV__WorldObject__QuaternionCompression);
+    FUN_?(&TypeInfo__System__Math);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__QuaternionCompression);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  dVar1 = (double)(q1.y * q1.y) + (double)(q1.x * q1.x) + (double)(q1.z * q1.z) +
-          (double)(q1.w * q1.w);
-  dVar2 = (double)(q1.y * q1.x + q1.z * q1.w);
-  if (dVar1 * _UNK_? < dVar2) {
-    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Math);
+  dVar1 = (double)(q1->w * q1->w);
+  dVar2 = (double)(q1->x * q1->x);
+  dVar3 = (double)(q1->y * q1->y);
+  dVar4 = (double)(q1->z * q1->z);
+  dVar5 = (double)(q1->w * q1->z + q1->y * q1->x);
+  dVar6 = dVar3 + dVar2 + dVar4 + dVar1;
+  if (dVar6 * _UNK_? < dVar5) {
+    if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    fVar3 = (float10)func_?();
-    dVar2 = (double)fVar3 + (double)fVar3;
+    dVar6 = (double)func_?((double)q1->x,(double)q1->w);
+    dVar6 = dVar6 + dVar6;
     __return_storage_ptr__->y = 1.5707964;
+    __return_storage_ptr__->z = 0.0;
   }
   else {
-    if (dVar1 * _UNK_? <= dVar2) {
-      if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__System__Math);
+    if (dVar6 * _UNK_? <= dVar5) {
+      if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      fVar3 = (float10)func_?();
-      fVar4 = (float)fVar3;
-      dVar1 = (dVar2 + dVar2) / dVar1;
-      func_?(fVar4,0,0,0);
-      fVar3 = (float10)func_?();
-      if ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MV__WorldObject__QuaternionCompression);
+      dVar7 = (double)func_?(((double)q1->y + (double)q1->y) * (double)q1->w -
+                                          ((double)q1->x + (double)q1->x) * (double)q1->z,
+                                          ((dVar2 - dVar3) - dVar4) + dVar1);
+      dVar6 = (double)func_?((dVar5 + dVar5) / dVar6);
+      dVar5 = (double)func_?(((double)q1->x + (double)q1->x) * (double)q1->w -
+                                          (double)((q1->y + q1->y) * q1->z),
+                                          (((double)CONCAT44((uint)((ulonglong)dVar2 >> 0x20) ^
+                                                             _UNK_?,
+                                                             SUB84(dVar2,0) ^ _UNK_?) +
+                                           dVar3) - dVar4) + dVar1);
+      if (*(int *)&(TypeInfo__MV__WorldObject__QuaternionCompression->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__MV__WorldObject__QuaternionCompression);
       }
-      fVar5 = TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->degToRad;
-      __return_storage_ptr__->x = fVar4 * fVar5;
-      __return_storage_ptr__->y = (float)dVar1 * fVar5;
-      __return_storage_ptr__->z = (float)fVar3 * fVar5;
+      fVar8 = TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->degToRad;
+      __return_storage_ptr__->x = fVar8 * (float)dVar7;
+      __return_storage_ptr__->y = fVar8 * (float)dVar6;
+      __return_storage_ptr__->z = fVar8 * (float)dVar5;
       return __return_storage_ptr__;
     }
-    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Math);
+    if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    fVar3 = (float10)func_?();
-    dVar2 = (double)fVar3 * _UNK_?;
+    dVar6 = (double)func_?((double)q1->x,(double)q1->w);
+    dVar6 = dVar6 * _UNK_?;
     __return_storage_ptr__->y = -1.5707964;
+    __return_storage_ptr__->z = 0.0;
   }
-  __return_storage_ptr__->z = 0.0;
-  __return_storage_ptr__->x = (float)dVar2;
+  __return_storage_ptr__->x = (float)dVar6;
   return __return_storage_ptr__;
 }
 
@@ -208,42 +251,44 @@ MVWorldObject.dll::MV::WorldObject::QuaternionCompression::QuaternionCompression
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__QuaternionCompression);
+    FUN_?(&TypeInfo__MV__WorldObject__QuaternionCompression);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (eulerAnglesByteRange == (Byte__Array *)0x0) {
-    func_?();
-  }
-  else if (((eulerAnglesByteRange->max_length != 0) && (1 < eulerAnglesByteRange->max_length)) &&
-          (2 < eulerAnglesByteRange->max_length)) {
-    QStack_1.x = (float)eulerAnglesByteRange->vector[0];
-    fStack_2 = (float)eulerAnglesByteRange->vector[1];
-    fStack_3 = (float)eulerAnglesByteRange->vector[2];
-    QStack_1.y = 0.0;
-    QStack_1.z = 0.0;
-    QStack_1.w = 0.0;
-    if ((TypeInfo__MV__WorldObject__QuaternionCompression->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MV__WorldObject__QuaternionCompression);
+  if (eulerAnglesByteRange != (Byte__Array *)0x0) {
+    if ((((int)eulerAnglesByteRange->max_length != 0) &&
+        (1 < (uint)eulerAnglesByteRange->max_length)) &&
+       (2 < (uint)eulerAnglesByteRange->max_length)) {
+      bVar1 = eulerAnglesByteRange->vector[0];
+      bVar2 = eulerAnglesByteRange->vector[1];
+      bVar3 = eulerAnglesByteRange->vector[2];
+      if (*(int *)&(TypeInfo__MV__WorldObject__QuaternionCompression->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__MV__WorldObject__QuaternionCompression);
+      }
+      fVar4 = TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->byteToDegreeFactor;
+      VStack_5.z = fVar4 * (float)bVar3;
+      VStack_5.y = fVar4 * (float)bVar2;
+      VStack_5.x = fVar4 * (float)bVar1;
+      pQVar6 = QuaternionCompression_FromEuler(aQStack_7,&VStack_5,(MethodInfo *)0x0);
+      fVar4 = pQVar6->y;
+      fVar8 = pQVar6->z;
+      fVar9 = pQVar6->w;
+      __return_storage_ptr__->x = pQVar6->x;
+      __return_storage_ptr__->y = fVar4;
+      __return_storage_ptr__->z = fVar8;
+      __return_storage_ptr__->w = fVar9;
+      return __return_storage_ptr__;
     }
-    fVar4 = TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->byteToDegreeFactor;
-    QStack_1.z = fStack_3 * fVar4;
-    eulerAngles.y = fStack_2 * fVar4;
-    eulerAngles.x = QStack_1.x * fVar4;
-    eulerAngles.z = QStack_1.z;
-    pQVar5 = QuaternionCompression_FromEuler(&QStack_1,eulerAngles,(MethodInfo *)0x0);
-    fVar4 = pQVar5->y;
-    fVar6 = pQVar5->z;
-    fVar7 = pQVar5->w;
-    __return_storage_ptr__->x = pQVar5->x;
-    __return_storage_ptr__->y = fVar4;
-    __return_storage_ptr__->z = fVar6;
-    __return_storage_ptr__->w = fVar7;
-    return __return_storage_ptr__;
+    FUN_?();
+    pcVar10 = (code *)swi(3);
+    pQVar6 = (Quaternion *)(*pcVar10)();
+    return pQVar6;
   }
-  func_?();
-  pcVar8 = (code *)swi(3);
-  pQVar5 = (Quaternion *)(*pcVar8)();
-  return pQVar5;
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  pQVar6 = (Quaternion *)(*pcVar10)();
+  return pQVar6;
 }
 
 
@@ -254,7 +299,9 @@ void MVWorldObject.dll::MV::WorldObject::QuaternionCompression::QuaternionCompre
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__QuaternionCompression);
+    FUN_?(&TypeInfo__MV__WorldObject__QuaternionCompression);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TypeInfo__MV__WorldObject__QuaternionCompression->static_fields->degreesToByteFactor = 0.7111111;

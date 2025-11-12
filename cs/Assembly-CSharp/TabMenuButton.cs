@@ -17,7 +17,7 @@ public class TabMenuButton : TabMenuButtonBase
 	[SerializeField]
 	private UnityEngine.UI.Text buttonText;
 	[SerializeField]
-	private Button button;
+	private UnityEngine.UI.Button button;
 
 	// Nested types
 	[CompilerGenerated]

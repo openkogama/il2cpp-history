@@ -7,17 +7,27 @@ bool Assembly-CSharp.dll::IntervalWithRandomSeed::IntervalWithRandomSeed_Update
 {
   bVar1 = 0;
   fVar2 = (this->fields).currentDeltaTime;
-  fVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar3 = fVar3 + fVar2;
-  (this->fields).currentDeltaTime = fVar3;
-  if (((this->fields).newIteration != 0) && ((this->fields).range <= fVar3)) {
+  pcVar3 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+    uVar4 = func_?(&UNK_?);
+    FUN_?(uVar4,0);
+    pcVar3 = (code *)swi(3);
+    bVar1 = (*pcVar3)();
+    return bVar1;
+  }
+  pcRam_? = pcVar3;
+  fVar5 = (float)(*pcRam_?)();
+  fVar5 = fVar5 + fVar2;
+  (this->fields).currentDeltaTime = fVar5;
+  if (((this->fields).newIteration != 0) && ((this->fields).range <= fVar5)) {
     bVar1 = 1;
     (this->fields).newIteration = 0;
   }
-  fVar3 = fVar3 - (this->fields).range;
-  if (_UNK_? < fVar3) {
+  fVar5 = fVar5 - (this->fields).range;
+  if (0.0 < fVar5) {
+    (this->fields).currentDeltaTime = fVar5;
     (this->fields).newIteration = 1;
-    (this->fields).currentDeltaTime = fVar3;
     IntervalWithRandomSeed_WrapDeltaTime(this,(MethodInfo *)0x0);
   }
   return bVar1;
@@ -49,12 +59,20 @@ void Assembly-CSharp.dll::IntervalWithRandomSeed::IntervalWithRandomSeed__ctor
                (IntervalWithRandomSeed *this,float interval,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  pcVar1 = pcRam_?;
   (this->fields).range = interval;
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Random::Random_1_Range
-                    (0.0,interval,(MethodInfo *)0x0);
-  (this->fields).currentDeltaTime = fVar1;
+  pcVar2 = pcRam_?;
+  if ((pcVar1 == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar2 = pcVar1, pcVar1 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar2;
+  fVar4 = (float)(*pcVar1)(0,interval);
+  (this->fields).currentDeltaTime = fVar4;
   return;
 }
 

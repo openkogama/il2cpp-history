@@ -6,22 +6,36 @@ void Assembly-CSharp.dll::PlayerListHoldHotkey+<>c::PlayerListHoldHotkey_c__Crea
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (x != (IUIStack *)0x0) {
-    ppIStack_1 = (IUIStack__Class **)0xc;
-    pIStack_2 = x;
-    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?(3);
+  if (x == (IUIStack *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  uVar2 = 0;
+  pIVar3 = x->klass;
+  uVar4._0_1_ = (pIVar3->_1).rank;
+  uVar4._1_1_ = (pIVar3->_1).minimumAlignment;
+  if (uVar4 != 0) {
+    do {
+      if (pIVar3->interfaceOffsets[uVar2].interfaceType ==
+          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
+        pVVar5 = &(pIVar3->vtable).get_StackReady + (pIVar3->interfaceOffsets[uVar2].offset + 3);
+        goto code_?;
+      }
+      uVar2 = uVar2 + 1;
+    } while (uVar2 < uVar4);
+  }
+  pVVar5 = (VirtualInvokeData *)FUN_?(x);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pVVar5->methodPtr)(x,0xc,pVVar5->method,pVVar5->methodPtr);
   return;
 }
 
@@ -33,22 +47,36 @@ void Assembly-CSharp.dll::PlayerListHoldHotkey+<>c::PlayerListHoldHotkey_c__Dest
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (x != (IUIStack *)0x0) {
-    ppIStack_1 = (IUIStack__Class **)0xc;
-    pIStack_2 = x;
-    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?(3);
+  if (x == (IUIStack *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  uVar2 = 0;
+  pIVar3 = x->klass;
+  uVar4._0_1_ = (pIVar3->_1).rank;
+  uVar4._1_1_ = (pIVar3->_1).minimumAlignment;
+  if (uVar4 != 0) {
+    do {
+      if (pIVar3->interfaceOffsets[uVar2].interfaceType ==
+          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
+        pVVar5 = &(pIVar3->vtable).get_StackReady + (pIVar3->interfaceOffsets[uVar2].offset + 3);
+        goto code_?;
+      }
+      uVar2 = uVar2 + 1;
+    } while (uVar2 < uVar4);
+  }
+  pVVar5 = (VirtualInvokeData *)FUN_?(x);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pVVar5->methodPtr)(x,0xc,pVVar5->method,pVVar5->methodPtr);
   return;
 }
 
@@ -60,22 +88,36 @@ void Assembly-CSharp.dll::PlayerListHoldHotkey+<>c::PlayerListHoldHotkey_c__OnDe
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (x != (IUIStack *)0x0) {
-    ppIStack_1 = (IUIStack__Class **)0xc;
-    pIStack_2 = x;
-    pIStack_3 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?(3);
+  if (x == (IUIStack *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  ppIStack_1 = (IUIStack__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  uVar2 = 0;
+  pIVar3 = x->klass;
+  uVar4._0_1_ = (pIVar3->_1).rank;
+  uVar4._1_1_ = (pIVar3->_1).minimumAlignment;
+  if (uVar4 != 0) {
+    do {
+      if (pIVar3->interfaceOffsets[uVar2].interfaceType ==
+          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
+        pVVar5 = &(pIVar3->vtable).get_StackReady + (pIVar3->interfaceOffsets[uVar2].offset + 3);
+        goto code_?;
+      }
+      uVar2 = uVar2 + 1;
+    } while (uVar2 < uVar4);
+  }
+  pVVar5 = (VirtualInvokeData *)FUN_?(x);
+code_?:
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pVVar5->methodPtr)(x,0xc,pVVar5->method,pVVar5->methodPtr);
   return;
 }
 
@@ -88,22 +130,18 @@ void Assembly-CSharp.dll::PlayerListHoldHotkey+<>c::PlayerListHoldHotkey_c__OnDe
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IShortcutKeyUnRegister;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IShortcutKeyUnRegister);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (x != (IShortcutKeyUnRegister *)0x0) {
-    ppIStack_1 = (IShortcutKeyUnRegister__Class **)0x2;
-    puStack_2 = (undefined *)0x12;
-    pIStack_3 = x;
-    func_?(0,TypeInfo__UnityEngine__EventSystems__IShortcutKeyUnRegister);
+    FUN_?(0,TypeInfo__UnityEngine__EventSystems__IShortcutKeyUnRegister,x,0x12,2);
     return;
   }
-  ppIStack_1 = (IShortcutKeyUnRegister__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -116,22 +154,18 @@ void Assembly-CSharp.dll::PlayerListHoldHotkey+<>c::PlayerListHoldHotkey_c__OnDe
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__IShortcutKeyUnRegister;
-    func_?();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (x != (IShortcutKeyUnRegister *)0x0) {
-    ppIStack_1 = (IShortcutKeyUnRegister__Class **)0x0;
-    puStack_2 = (undefined *)0x12;
-    pIStack_3 = x;
-    func_?(0,TypeInfo__UnityEngine__EventSystems__IShortcutKeyUnRegister);
+    FUN_?(0,TypeInfo__UnityEngine__EventSystems__IShortcutKeyUnRegister,x,0x12,0);
     return;
   }
-  ppIStack_1 = (IShortcutKeyUnRegister__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&pIStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -143,15 +177,26 @@ void Assembly-CSharp.dll::PlayerListHoldHotkey+<>c::PlayerListHoldHotkey_c__ccto
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PlayerListHoldHotkey____c);
+    FUN_?(&TypeInfo__PlayerListHoldHotkey____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__PlayerListHoldHotkey____c;
-  value = (PlayerListHoldHotkey_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  TypeInfo__PlayerListHoldHotkey____c->static_fields->__9 = value;
-  func_?(TypeInfo__PlayerListHoldHotkey____c->static_fields,value);
+  pPVar1 = (PlayerListHoldHotkey_c *)FUN_?(TypeInfo__PlayerListHoldHotkey____c);
+  TypeInfo__PlayerListHoldHotkey____c->static_fields->__9 = pPVar1;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)TypeInfo__PlayerListHoldHotkey____c->static_fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 

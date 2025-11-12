@@ -6,162 +6,315 @@ void Assembly-CSharp.dll::RTG::GizmoScaleGuide::GizmoScaleGuide_Render
                Camera *camera,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__CameraEx);
-    func_?(&TypeInfo__System__IDisposable);
-    func_?(&TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::GameObject>);
-    func_?(&TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::GameObject>);
-    func_?(&TypeInfo__System__Collections__IEnumerator);
-    func_?(&MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
-    func_?(&TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>);
+    FUN_?(&TypeInfo__RTG__CameraEx);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__IDisposable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::GameObject>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::GameObject>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__IEnumerator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (gameObjects == (IEnumerable_1_UnityEngine_GameObject_ *)0x0) {
-code_?:
-    *unaff_FS_OFFSET = uStack_3;
     return;
   }
-  if ((TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>);
+  if (*(int *)&(TypeInfo__RTG__Singleton<RTG::GizmoLineMaterial>->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pGStack_4 = (GizmoLineMaterial *)
-               Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
-                         (MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
-  if (pGStack_4 != (GizmoLineMaterial *)0x0) {
-    GizmoLineMaterial::GizmoLineMaterial_ResetValuesToSensibleDefaults(pGStack_4,(MethodInfo *)0x0)
-    ;
-    piVar5 = (int *)func_?(0,
-                                     TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::GameObject>
-                                    );
-    uStack_1 = 1;
-    while (piVar5 != (int *)0x0) {
-      cVar6 = func_?(0,TypeInfo__System__Collections__IEnumerator);
-      if (cVar6 == '\0') {
-        uStack_1 = 0xffffffff;
-        if (piVar5 != (int *)0x0) {
-          func_?(0,TypeInfo__System__IDisposable);
-        }
-        goto code_?;
-      }
-      if (piVar5 == (int *)0x0) break;
-      iVar7 = *piVar5;
-      uVar8 = 0;
-      if (*(ushort *)(iVar7 + 0xb6) != 0) {
-        do {
-          if (*(IEnumerator_1_UnityEngine_GameObject___Class **)
-               (*(int *)(iVar7 + 0x58) + (uint)uVar8 * 8) ==
-              TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::GameObject>) {
-            puVar9 = (undefined4 *)
-                      (iVar7 + (*(int *)(*(int *)(iVar7 + 0x58) + 4 + (uint)uVar8 * 8) + 0x18) * 8)
-            ;
-            goto code_?;
-          }
-          uVar8 = uVar8 + 1;
-        } while (uVar8 < *(ushort *)(iVar7 + 0xb6));
-      }
-      puVar9 = (undefined4 *)
-                func_?(piVar5,
-                                TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::GameObject>
-                               );
+  this_00 = (GizmoLineMaterial *)
+            Singleton`1[System::Object]::Singleton_1_System_Object__1_get_Get
+                      (MethodInfo__RTG__Singleton<RTG::GizmoLineMaterial>__get_Get__);
+  if (this_00 == (GizmoLineMaterial *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  GizmoLineMaterial::GizmoLineMaterial_ResetValuesToSensibleDefaults(this_00,(MethodInfo *)0x0);
+  aplStack_2[0] =
+       (longlong *)
+       FUN_?(0,TypeInfo__System__Collections__Generic__IEnumerable<UnityEngine::GameObject>,
+                     gameObjects);
+  uStack_3 = 0;
+  pplStack_4 = aplStack_2;
+  do {
+    if (aplStack_2[0] == (longlong *)0x0) {
 code_?:
-      this_00 = (GameObject *)(*(code *)*puVar9)(piVar5);
-      if ((this_00 == (GameObject *)0x0) ||
-         (this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                              (this_00,(MethodInfo *)0x0), this_01 == (Transform *)0x0)) break;
-      pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                          ((Vector3 *)&stack0xffffff5c,this_01,(MethodInfo *)0x0);
-      fVar11 = pVVar10->x;
-      fVar12 = pVVar10->y;
-      fVar13 = pVVar10->z;
-      fVar14 = fVar11;
-      fVar15 = fVar12;
-      fVar16 = fVar13;
-      pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
-                          ((Vector3 *)&stack0xffffff50,this_01,(MethodInfo *)0x0);
-      fVar17 = pVVar10->x;
-      fVar18 = pVVar10->y;
-      fVar19 = pVVar10->z;
-      pVVar10 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                          ((Vector3 *)&stack0xffffff44,this_01,(MethodInfo *)0x0);
-      uVar20 = pVVar10->x;
-      uVar21 = pVVar10->y;
-      fVar22 = pVVar10->z;
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                ((Vector3 *)&stack0xffffff38,this_01,(MethodInfo *)0x0);
-      pGVar23 = (&(this->fields)._lookAndFeel)
-               [(this->fields)._sharedLookAndFeel != (GizmoScaleGuideLookAndFeel *)0x0];
-      if (pGVar23 == (GizmoScaleGuideLookAndFeel *)0x0) break;
-      fVar24 = _UNK_?;
-      if ((pGVar23->fields)._useZoomFactor != 0) {
-        if ((TypeInfo__RTG__CameraEx->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        worldPos.y = fVar12;
-        worldPos.x = fVar11;
-        worldPos.z = fVar13;
-        fVar24 = CameraEx::CameraEx_EstimateZoomFactor(camera,worldPos,(MethodInfo *)0x0);
-      }
-      pGVar23 = (&(this->fields)._lookAndFeel)
-               [(this->fields)._sharedLookAndFeel != (GizmoScaleGuideLookAndFeel *)0x0];
-      if (pGVar23 == (GizmoScaleGuideLookAndFeel *)0x0) break;
-      fVar24 = (pGVar23->fields)._axisLength * fVar24;
-      fVar13 = fVar16 - fVar19 * fVar24;
-      fVar12 = fVar15 - fVar18 * fVar24;
-      fVar11 = fVar14 - fVar17 * fVar24;
-      fVar17 = fVar17 * fVar24 + fVar14;
-      pGVar23 = (&(this->fields)._lookAndFeel)
-               [(this->fields)._sharedLookAndFeel != (GizmoScaleGuideLookAndFeel *)0x0];
-      if (pGVar23 == (GizmoScaleGuideLookAndFeel *)0x0) break;
-      GizmoLineMaterial::GizmoLineMaterial_SetColor
-                (pGStack_4,(pGVar23->fields)._xAxisColor,(MethodInfo *)0x0);
-      GizmoLineMaterial::GizmoLineMaterial_SetPass(pGStack_4,0,(MethodInfo *)0x0);
-      startPoint.y = fVar12;
-      startPoint.x = fVar11;
-      startPoint.z = fVar13;
-      endPoint.y = fVar15 + fVar18 * fVar24;
-      endPoint.x = fVar17;
-      endPoint.z = fVar16 + fVar19 * fVar24;
-      GLRenderer::GLRenderer_DrawLine3D(startPoint,endPoint,(MethodInfo *)0x0);
-      fVar17 = fVar16 + fVar22 * fVar24;
-      fVar12 = (float)uVar20 * fVar24 + fVar14;
-      fVar11 = fVar15 + (float)uVar21 * fVar24;
-      pGVar23 = (&(this->fields)._lookAndFeel)
-               [(this->fields)._sharedLookAndFeel != (GizmoScaleGuideLookAndFeel *)0x0];
-      if (pGVar23 == (GizmoScaleGuideLookAndFeel *)0x0) break;
-      GizmoLineMaterial::GizmoLineMaterial_SetColor
-                (pGStack_4,(pGVar23->fields)._yAxisColor,(MethodInfo *)0x0);
-      GizmoLineMaterial::GizmoLineMaterial_SetPass(pGStack_4,0,(MethodInfo *)0x0);
-      startPoint_00.y = fVar11;
-      startPoint_00.x = fVar12;
-      startPoint_00.z = fVar17;
-      endPoint_00.y = fVar11;
-      endPoint_00.x = fVar12;
-      endPoint_00.z = fVar17;
-      GLRenderer::GLRenderer_DrawLine3D(startPoint_00,endPoint_00,(MethodInfo *)0x0);
-      fVar18 = fVar14 - fVar12 * fVar24;
-      pGVar23 = (&(this->fields)._lookAndFeel)
-               [(this->fields)._sharedLookAndFeel != (GizmoScaleGuideLookAndFeel *)0x0];
-      if (pGVar23 == (GizmoScaleGuideLookAndFeel *)0x0) break;
-      GizmoLineMaterial::GizmoLineMaterial_SetColor
-                (pGStack_4,(pGVar23->fields)._zAxisColor,(MethodInfo *)0x0);
-      GizmoLineMaterial::GizmoLineMaterial_SetPass(pGStack_4,0,(MethodInfo *)0x0);
-      startPoint_01.y = fVar15 - fVar11 * fVar24;
-      startPoint_01.x = fVar18;
-      startPoint_01.z = fVar16 - fVar17 * fVar24;
-      endPoint_01.y = fVar15 + fVar11 * fVar24;
-      endPoint_01.x = fVar12 * fVar24 + fVar14;
-      endPoint_01.z = fVar16 + fVar17 * fVar24;
-      GLRenderer::GLRenderer_DrawLine3D(startPoint_01,endPoint_01,(MethodInfo *)0x0);
+      FUN_?();
+      FUN_?();
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
+      return;
     }
-  }
-  func_?();
-  pcVar25 = (code *)swi(3);
-  (*pcVar25)();
-  return;
+    cVar5 = FUN_?(0,TypeInfo__System__Collections__IEnumerator);
+    plVar6 = aplStack_2[0];
+    if (cVar5 == '\0') {
+      if (aplStack_2[0] == (longlong *)0x0) {
+        return;
+      }
+      FUN_?(0,TypeInfo__System__IDisposable,aplStack_2[0]);
+      return;
+    }
+    if (aplStack_2[0] == (longlong *)0x0) {
+code_?:
+      FUN_?();
+      goto code_?;
+    }
+    lVar7 = *aplStack_2[0];
+    uVar8 = 0;
+    if (*(ushort *)(lVar7 + 0x12e) != 0) {
+      do {
+        if (*(IEnumerator_1_UnityEngine_GameObject___Class **)
+             (*(longlong *)(lVar7 + 0xb0) + (ulonglong)uVar8 * 0x10) ==
+            TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::GameObject>) {
+          puVar9 = (undefined8 *)
+                   ((longlong)*(int *)(*(longlong *)(lVar7 + 0xb0) + 8 + (ulonglong)uVar8 * 0x10)
+                    * 0x10 + 0x138 + lVar7);
+          goto code_?;
+        }
+        uVar8 = uVar8 + 1;
+      } while (uVar8 < *(ushort *)(lVar7 + 0x12e));
+    }
+    puVar9 = (undefined8 *)
+             FUN_?(aplStack_2[0],
+                           TypeInfo__System__Collections__Generic__IEnumerator<UnityEngine::GameObject>
+                          );
+code_?:
+    this_01 = (GameObject *)(*(code *)*puVar9)(plVar6);
+    if (this_01 == (GameObject *)0x0) {
+code_?:
+      FUN_?();
+      goto code_?;
+    }
+    this_02 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                        (this_01,(MethodInfo *)0x0);
+    if (this_02 == (Transform *)0x0) {
+code_?:
+      FUN_?();
+      goto code_?;
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    VStack_10.x = 0.0;
+    VStack_10.y = 0.0;
+    VStack_10.z = 0.0;
+    pvVar11 = (this_02->fields)._._.m_CachedPtr;
+    if (pvVar11 == (void *)0x0) {
+code_?:
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)this_02,(MethodInfo *)0x0);
+      goto code_?;
+    }
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar12 = func_?(&UNK_?);
+      FUN_?(uVar12);
+code_?:
+      FUN_?();
+code_?:
+      FUN_?();
+code_?:
+      FUN_?();
+code_?:
+      FUN_?();
+code_?:
+      FUN_?();
+code_?:
+      FUN_?();
+code_?:
+      FUN_?();
+code_?:
+      FUN_?();
+code_?:
+      FUN_?();
+code_?:
+      FUN_?();
+code_?:
+      FUN_?();
+      goto code_?;
+    }
+    pcRam_? = pcVar1;
+    (*pcRam_?)(pvVar11,&VStack_10);
+    pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
+                       (&VStack_14,this_02,(MethodInfo *)0x0);
+    uStack_15._0_4_ = pVVar13->x;
+    uStack_15._4_4_ = pVVar13->y;
+    fVar16 = pVVar13->z;
+    pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
+                       (&VStack_17,this_02,(MethodInfo *)0x0);
+    uStack_18._0_4_ = pVVar13->x;
+    uStack_18._4_4_ = pVVar13->y;
+    fVar19 = pVVar13->z;
+    pVVar13 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
+                       (aVStack_20,this_02,(MethodInfo *)0x0);
+    uStack_21._0_4_ = pVVar13->x;
+    uStack_21._4_4_ = pVVar13->y;
+    fVar22 = pVVar13->z;
+    this_02 = (Transform *)(ulonglong)(uint)fVar22;
+    lVar7 = 0x18;
+    if ((this->fields)._sharedLookAndFeel == (GizmoScaleGuideLookAndFeel *)0x0) {
+      lVar7 = 0x10;
+    }
+    lVar7 = *(longlong *)((longlong)&this->klass + lVar7);
+    if (lVar7 == 0) goto code_?;
+    fVar23 = _UNK_?;
+    if (*(char *)(lVar7 + 0x10) != '\0') {
+      if (*(int *)&(TypeInfo__RTG__CameraEx->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      VStack_24.x = VStack_10.x;
+      VStack_24.y = VStack_10.y;
+      VStack_24.z = VStack_10.z;
+      fVar23 = CameraEx::CameraEx_EstimateZoomFactor(camera,&VStack_24,(MethodInfo *)0x0);
+    }
+    lVar7 = 0x18;
+    if ((this->fields)._sharedLookAndFeel == (GizmoScaleGuideLookAndFeel *)0x0) {
+      lVar7 = 0x10;
+    }
+    lVar7 = *(longlong *)((longlong)&this->klass + lVar7);
+    if (lVar7 == 0) goto code_?;
+    fVar23 = fVar23 * *(float *)(lVar7 + 0x44);
+    fVar25 = VStack_10.x - (float)uStack_15 * fVar23;
+    fVar26 = VStack_10.y - uStack_15._4_4_ * fVar23;
+    fVar27 = VStack_10.z - fVar16 * fVar23;
+    fVar28 = (float)uStack_15 * fVar23 + VStack_10.x;
+    fVar29 = uStack_15._4_4_ * fVar23 + VStack_10.y;
+    fVar16 = fVar16 * fVar23 + VStack_10.z;
+    lVar7 = 0x18;
+    if ((this->fields)._sharedLookAndFeel == (GizmoScaleGuideLookAndFeel *)0x0) {
+      lVar7 = 0x10;
+    }
+    lVar7 = *(longlong *)((longlong)&this->klass + lVar7);
+    if (lVar7 == 0) goto code_?;
+    uVar12 = *(undefined8 *)(lVar7 + 0x14);
+    uVar30 = *(undefined8 *)(lVar7 + 0x1c);
+    fVar31 = VStack_10.x;
+    fVar32 = VStack_10.y;
+    if (cRam_? == '\0') {
+      FUN_?(&StringLiteral__Color);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+      fVar31 = VStack_10.x;
+      fVar32 = VStack_10.y;
+    }
+    fVar33 = VStack_10.z;
+    pMVar34 = GizmoLineMaterial::GizmoLineMaterial_get_Material(this_00,(MethodInfo *)0x0);
+    if (pMVar34 == (Material *)0x0) goto code_?;
+    CStack_35._0_8_ = uVar12;
+    CStack_35._8_8_ = uVar30;
+    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor
+              (pMVar34,StringLiteral__Color,&CStack_35,(MethodInfo *)0x0);
+    pMVar34 = GizmoLineMaterial::GizmoLineMaterial_get_Material(this_00,(MethodInfo *)0x0);
+    if (pMVar34 == (Material *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass(pMVar34,0,(MethodInfo *)0x0)
+    ;
+    VStack_36.y = fVar29;
+    VStack_36.x = fVar28;
+    VStack_37.y = fVar26;
+    VStack_37.x = fVar25;
+    VStack_36.z = fVar16;
+    VStack_37.z = fVar27;
+    GLRenderer::GLRenderer_DrawLine3D(&VStack_37,&VStack_36,(MethodInfo *)0x0);
+    fVar16 = (float)uStack_18 * fVar23;
+    fVar27 = uStack_18._4_4_ * fVar23;
+    fVar28 = (float)uStack_18 * fVar23;
+    fVar29 = uStack_18._4_4_ * fVar23;
+    lVar7 = 0x18;
+    if ((this->fields)._sharedLookAndFeel == (GizmoScaleGuideLookAndFeel *)0x0) {
+      lVar7 = 0x10;
+    }
+    lVar7 = *(longlong *)((longlong)&this->klass + lVar7);
+    if (lVar7 == 0) goto code_?;
+    uVar12 = *(undefined8 *)(lVar7 + 0x24);
+    uVar30 = *(undefined8 *)(lVar7 + 0x2c);
+    fVar25 = fVar31;
+    fVar26 = fVar32;
+    fVar38 = fVar33;
+    if (cRam_? == '\0') {
+      FUN_?(&StringLiteral__Color);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+      fVar25 = VStack_10.x;
+      fVar26 = VStack_10.y;
+      fVar38 = VStack_10.z;
+    }
+    pMVar34 = GizmoLineMaterial::GizmoLineMaterial_get_Material(this_00,(MethodInfo *)0x0);
+    if (pMVar34 == (Material *)0x0) goto code_?;
+    CStack_35._0_8_ = uVar12;
+    CStack_35._8_8_ = uVar30;
+    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor
+              (pMVar34,StringLiteral__Color,&CStack_35,(MethodInfo *)0x0);
+    pMVar34 = GizmoLineMaterial::GizmoLineMaterial_get_Material(this_00,(MethodInfo *)0x0);
+    if (pMVar34 == (Material *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass(pMVar34,0,(MethodInfo *)0x0)
+    ;
+    VStack_39.y = fVar29 + fVar32;
+    VStack_39.x = fVar28 + fVar31;
+    VStack_40.y = fVar32 - fVar27;
+    VStack_40.x = fVar31 - fVar16;
+    VStack_39.z = fVar19 * fVar23 + fVar33;
+    VStack_40.z = fVar33 - fVar19 * fVar23;
+    GLRenderer::GLRenderer_DrawLine3D(&VStack_40,&VStack_39,(MethodInfo *)0x0);
+    fVar16 = (float)uStack_21 * fVar23;
+    fVar19 = uStack_21._4_4_ * fVar23;
+    fVar27 = (float)uStack_21 * fVar23;
+    fVar28 = uStack_21._4_4_ * fVar23;
+    lVar7 = 0x18;
+    if ((this->fields)._sharedLookAndFeel == (GizmoScaleGuideLookAndFeel *)0x0) {
+      lVar7 = 0x10;
+    }
+    lVar7 = *(longlong *)((longlong)&this->klass + lVar7);
+    if (lVar7 == 0) goto code_?;
+    uVar12 = *(undefined8 *)(lVar7 + 0x34);
+    uVar30 = *(undefined8 *)(lVar7 + 0x3c);
+    if (cRam_? == '\0') {
+      FUN_?(&StringLiteral__Color);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar34 = GizmoLineMaterial::GizmoLineMaterial_get_Material(this_00,(MethodInfo *)0x0);
+    if (pMVar34 == (Material *)0x0) goto code_?;
+    CStack_35._0_8_ = uVar12;
+    CStack_35._8_8_ = uVar30;
+    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetColor
+              (pMVar34,StringLiteral__Color,&CStack_35,(MethodInfo *)0x0);
+    pMVar34 = GizmoLineMaterial::GizmoLineMaterial_get_Material(this_00,(MethodInfo *)0x0);
+    if (pMVar34 == (Material *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::Material::Material_SetPass(pMVar34,0,(MethodInfo *)0x0)
+    ;
+    VStack_41.y = fVar28 + fVar26;
+    VStack_41.x = fVar27 + fVar25;
+    aVStack_42[0].y = fVar26 - fVar19;
+    aVStack_42[0].x = fVar25 - fVar16;
+    VStack_41.z = fVar22 * fVar23 + fVar38;
+    aVStack_42[0].z = fVar38 - fVar22 * fVar23;
+    GLRenderer::GLRenderer_DrawLine3D(aVStack_42,&VStack_41,(MethodInfo *)0x0);
+  } while( true );
 }
 
 
@@ -172,45 +325,68 @@ void Assembly-CSharp.dll::RTG::GizmoScaleGuide::GizmoScaleGuide__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__GizmoScaleGuideLookAndFeel);
+    FUN_?(&TypeInfo__RTG__GizmoScaleGuideLookAndFeel);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_01 = TypeInfo__RTG__GizmoScaleGuideLookAndFeel;
-  value = (GizmoScaleGuideLookAndFeel *)func_?();
-  (value->fields)._useZoomFactor = 1;
-  pCVar1 = RTSystemValues::RTSystemValues_get_XAxisColor(&CStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  (value->fields)._xAxisColor.r = pCVar1->r;
-  (value->fields)._xAxisColor.g = fVar3;
-  (value->fields)._xAxisColor.b = fVar4;
-  (value->fields)._xAxisColor.a = fVar5;
-  pCVar1 = RTSystemValues::RTSystemValues_get_YAxisColor(&CStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->g;
-  fVar4 = pCVar1->b;
-  fVar5 = pCVar1->a;
-  (value->fields)._yAxisColor.r = pCVar1->r;
-  (value->fields)._yAxisColor.g = fVar3;
-  (value->fields)._yAxisColor.b = fVar4;
-  (value->fields)._yAxisColor.a = fVar5;
-  pCVar1 = RTSystemValues::RTSystemValues_get_ZAxisColor(&CStack_2,(MethodInfo *)0x0);
-  fVar3 = pCVar1->r;
-  fVar4 = pCVar1->g;
-  fVar5 = pCVar1->b;
-  fVar6 = pCVar1->a;
-  (value->fields)._axisLength = (float)&DAT_?;
-  (value->fields)._zAxisColor.r = fVar3;
-  (value->fields)._zAxisColor.g = fVar4;
-  (value->fields)._zAxisColor.b = fVar5;
-  (value->fields)._zAxisColor.a = fVar6;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-  method_00 = (MethodInfo *)&this->fields;
-  (this->fields)._lookAndFeel = value;
-  func_?(method_00,value);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  pGVar1 = (GizmoScaleGuideLookAndFeel *)FUN_?(TypeInfo__RTG__GizmoScaleGuideLookAndFeel);
+  uVar2 = _UNK_?;
+  uVar3 = _UNK_?;
+  uVar4 = _UNK_?;
+  bVar5 = iRam_? != 0;
+  uVar6 = _UNK_?;
+  (pGVar1->fields)._xAxisColor.r = (float)_UNK_?;
+  uVar7 = _UNK_?;
+  (pGVar1->fields)._xAxisColor.g = (float)uVar6;
+  _UNK_? = (undefined4)uVar4;
+  _UNK_? = SUB84(uVar4,4);
+  uVar6 = _UNK_?;
+  (pGVar1->fields)._xAxisColor.b = (float)_UNK_?;
+  _UNK_? = uVar7;
+  (pGVar1->fields)._xAxisColor.a = (float)uVar6;
+  (pGVar1->fields)._useZoomFactor = 1;
+  uVar4 = _UNK_?;
+  uVar6 = _UNK_?;
+  (pGVar1->fields)._zAxisColor.r = (float)_UNK_?;
+  uVar7 = _UNK_?;
+  (pGVar1->fields)._zAxisColor.g = (float)uVar6;
+  _UNK_? = (undefined4)uVar4;
+  _UNK_? = SUB84(uVar4,4);
+  uVar6 = _UNK_?;
+  (pGVar1->fields)._zAxisColor.b = (float)_UNK_?;
+  _UNK_? = uVar7;
+  (pGVar1->fields)._zAxisColor.a = (float)uVar6;
+  (pGVar1->fields)._axisLength = 2.0;
+  uVar4 = _UNK_?;
+  _UNK_? = (undefined4)uVar3;
+  _UNK_? = SUB84(uVar3,4);
+  uVar6 = _UNK_?;
+  (pGVar1->fields)._yAxisColor.r = (float)_UNK_?;
+  _UNK_? = uVar4;
+  uVar4 = _UNK_?;
+  (pGVar1->fields)._yAxisColor.g = (float)uVar6;
+  _UNK_? = (undefined4)uVar2;
+  _UNK_? = SUB84(uVar2,4);
+  uVar6 = _UNK_?;
+  (pGVar1->fields)._yAxisColor.b = (float)_UNK_?;
+  _UNK_? = uVar4;
+  (pGVar1->fields)._yAxisColor.a = (float)uVar6;
+  (this->fields)._lookAndFeel = pGVar1;
+  if (bVar5) {
+    uVar8 = (uint)((ulonglong)&this->fields >> 0xc);
+    uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+    do {
+      uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+      puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+      LOCK();
+      bVar5 = uVar10 == *puVar11;
+      if (bVar5) {
+        *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
   return;
 }
 

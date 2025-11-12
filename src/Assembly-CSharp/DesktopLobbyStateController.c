@@ -7,61 +7,164 @@ void Assembly-CSharp.dll::DesktopLobbyStateController::
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&
-                    MethodInfo__DesktopLobbyStateController____c__DisplayClass24_0___CreateStartGoldRewardPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__DesktopLobbyStateController____c__DisplayClass24_0);
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__DesktopLobbyStateController____c__DisplayClass24_0___CreateStartGoldRewardPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__DesktopLobbyStateController____c__DisplayClass24_0);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__DesktopLobbyStateController____c__DisplayClass24_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  object = (Object *)FUN_?(TypeInfo__DesktopLobbyStateController____c__DisplayClass24_0);
   pGVar1 = (this->fields).startGoldRewardPopupPrefab;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
   pOVar2 = (Object__Class *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                      ((Object *)pGVar1,
                       UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject_
                      );
-  if (value != (Object *)0x0) {
-    value[1].klass = pOVar2;
-    func_?(value + 1,pOVar2);
-    pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
-    callbackFunction =
-         (ExecuteEvents_EventFunction_1_System_Object_ *)
-         func_?(
-                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                        );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-               MethodInfo__DesktopLobbyStateController____c__DisplayClass24_0___CreateStartGoldRewardPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (pGVar1,(BaseEventData *)0x0,callbackFunction,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-              );
+  if (object == (Object *)0x0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
-  func_?();
+  bVar4 = iRam_? != 0;
+  object[1].klass = pOVar2;
+  if (bVar4) {
+    uVar5 = (uint)((ulonglong)(object + 1) >> 0xc);
+    puVar6 = (ulonglong *)((ulonglong)((uVar5 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar7 = *puVar6;
+      LOCK();
+      uVar8 = *puVar6;
+      if (uVar7 == uVar8) {
+        *puVar6 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar7 != uVar8);
+  }
+  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)this,(MethodInfo *)0x0);
+  this_01 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+            FUN_?(
+                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                         );
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+  ExecuteEvents_EventFunction_1_System_Object___ctor
+            (this_01,object,
+             MethodInfo__DesktopLobbyStateController____c__DisplayClass24_0___CreateStartGoldRewardPopup_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+             ,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pMVar9 = 
+  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+  ;
+  if ((
+      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+      ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    if ((pMVar9->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(pMVar9);
+    }
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_GetEventChain
+            (pGVar1,(IList_1_UnityEngine_Transform_ *)
+                     TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                     s_InternalTransformList,(MethodInfo *)0x0);
+  pLVar10 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+           s_InternalTransformList;
+  if (pLVar10 != (List_1_UnityEngine_Transform_ *)0x0) {
+    lVar11 = (longlong)(pLVar10->fields)._size;
+    uVar5 = 0;
+    if (0 < lVar11) {
+      lVar12 = 0;
+      lVar13 = 0x20;
+      do {
+        if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pLVar10 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                 s_InternalTransformList;
+        if (pLVar10 == (List_1_UnityEngine_Transform_ *)0x0) goto code_?;
+        if ((uint)(pLVar10->fields)._size <= uVar5) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        pTVar14 = (pLVar10->fields)._items;
+        if (pTVar14 == (Transform__Array *)0x0) goto code_?;
+        if ((uint)pTVar14->max_length <= uVar5) {
+          FUN_?();
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        this_00 = *(Component **)((longlong)pTVar14->vector + lVar13 + -0x20);
+        if (this_00 == (Component *)0x0) goto code_?;
+        pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            (this_00,(MethodInfo *)0x0);
+        bVar15 = UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+                ExecuteEvents_Execute_18
+                          (pGVar1,(BaseEventData *)0x0,this_01,
+                           (pMVar9->field7_0x38).rgctx_data[1].method);
+        if (bVar15 != 0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    (this_00,(MethodInfo *)0x0);
+          return;
+        }
+        uVar5 = uVar5 + 1;
+        lVar12 = lVar12 + 1;
+        lVar13 = lVar13 + 8;
+      } while (lVar12 < lVar11);
+    }
+    return;
+  }
+code_?:
+  FUN_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -76,14 +179,20 @@ void Assembly-CSharp.dll::DesktopLobbyStateController::
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    GamePassesUI_MethodInfo__UnityEngine__Object__Instantiate<GamePassesUI>_GamePassesUI__UnityEngine__Transform__bool_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&
+                  GamePassesUI_MethodInfo__UnityEngine__Object__Instantiate<GamePassesUI>_GamePassesUI__UnityEngine__Transform__bool_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GamePassesManager);
+    FUN_?(&TypeInfo__GamePassesManager);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField == 0) {
@@ -92,50 +201,97 @@ void Assembly-CSharp.dll::DesktopLobbyStateController::
   pGVar1 = (this->fields).gamePassesUIPrefab;
   parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                      ((Component *)this,(MethodInfo *)0x0);
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
   pGVar1 = (GamePassesUI *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
                      ((Object *)pGVar1,parent,0,
                       GamePassesUI_MethodInfo__UnityEngine__Object__Instantiate<GamePassesUI>_GamePassesUI__UnityEngine__Transform__bool_
                      );
+  bVar2 = iRam_? != 0;
   (this->fields).gamePassesUI = pGVar1;
-  func_?(&(this->fields).gamePassesUI,pGVar1);
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).gamePassesUI >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
   pGVar1 = (this->fields).gamePassesUI;
   if (pGVar1 != (GamePassesUI *)0x0) {
     GamePassesUI::GamePassesUI_Initialize(pGVar1,(MethodInfo *)0x0);
     pGVar1 = (this->fields).gamePassesUI;
     if (pGVar1 != (GamePassesUI *)0x0) {
       GamePassesUI::GamePassesUI_TryShowWelcomeReward(pGVar1,(MethodInfo *)0x0);
-      bVar2 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled
+      bVar7 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled
                         ((MethodInfo *)0x0);
-      if (bVar2 != 0) {
+      if (bVar7 != 0) {
         if (cRam_? == '\0') {
-          func_?();
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
           cRam_? = '\x01';
         }
-        pGVar3 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-        if (pGVar3 == (GameSessionData *)0x0) goto code_?;
-        if ((pGVar3->fields).gameMode != 0) {
+        pGVar8 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+        if (pGVar8 == (GameSessionData *)0x0) goto code_?;
+        if ((pGVar8->fields).gameMode != 0) {
           return;
         }
       }
       pGVar1 = (this->fields).gamePassesUI;
       if ((pGVar1 != (GamePassesUI *)0x0) &&
-         (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                              ((Component *)pGVar1,(MethodInfo *)0x0), this_00 != (GameObject *)0x0)
-         ) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (this_00,0,(MethodInfo *)0x0);
+         (obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)pGVar1,(MethodInfo *)0x0), obj != (GameObject *)0x0)) {
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                        ,0,0);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (obj == (GameObject *)0x0) {
+          FUN_?();
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
+        }
+        pvVar10 = (obj->fields)._.m_CachedPtr;
+        if (pvVar10 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
+        }
+        pcVar9 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0)) {
+          uVar11 = func_?(&UNK_?);
+          FUN_?(uVar11,0);
+          pcVar9 = (code *)swi(3);
+          (*pcVar9)();
+          return;
+        }
+        pcRam_? = pcVar9;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        (*pcRam_?)(pvVar10,0);
         return;
       }
     }
   }
 code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -147,59 +303,135 @@ void Assembly-CSharp.dll::DesktopLobbyStateController::
                (DesktopLobbyStateController *this,bool isTourist,MethodInfo *method)
 
 {
-  this_00 = (this->fields).embeddedPlayerConfig;
-  if (this_00 != (EmbeddedPlayerConfig *)0x0) {
-    pEVar1 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
-                       ((EmbeddedSiteConfigData *)&stack0xffffffd4,this_00,(MethodInfo *)0x0);
-    uVar2._0_1_ = pEVar1->showTouristPromotion;
-    uVar2._1_1_ = pEVar1->allowsOpenInNewTab;
-    uVar2._2_1_ = pEVar1->allowsRedirectToWebpage;
-    uVar2._3_1_ = pEVar1->allowsModals;
-    cVar3 = pEVar1->hideGoldShop;
+  pEVar1 = (this->fields).embeddedPlayerConfig;
+  if (pEVar1 != (EmbeddedPlayerConfig *)0x0) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Debug);
+      LOCK();
+      UNLOCK();
+      FUN_?(&StringLiteral_Embedded_site_data_not_initializ);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if ((pEVar1->fields).initialized == 0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                ((Object *)StringLiteral_Embedded_site_data_not_initializ,(MethodInfo *)0x0);
+      uStackY_30._0_4_ = (pEVar1->fields).kogamaDefaultData.siteEnum;
+      uStackY_30._4_1_ = (pEVar1->fields).kogamaDefaultData.showTouristPromotion;
+      uStackY_30._5_1_ = (pEVar1->fields).kogamaDefaultData.allowsOpenInNewTab;
+      uStackY_30._6_1_ = (pEVar1->fields).kogamaDefaultData.allowsRedirectToWebpage;
+      uStackY_30._7_1_ = (pEVar1->fields).kogamaDefaultData.allowsModals;
+      uVar2 = (pEVar1->fields).kogamaDefaultData.hideGoldShop;
+      cVar3 = uVar2;
+    }
+    else {
+      uStackY_30._0_4_ = (pEVar1->fields).currentSite.siteEnum;
+      uStackY_30._4_1_ = (pEVar1->fields).currentSite.showTouristPromotion;
+      uStackY_30._5_1_ = (pEVar1->fields).currentSite.allowsOpenInNewTab;
+      uStackY_30._6_1_ = (pEVar1->fields).currentSite.allowsRedirectToWebpage;
+      uStackY_30._7_1_ = (pEVar1->fields).currentSite.allowsModals;
+      cVar3 = (pEVar1->fields).currentSite.hideGoldShop;
+    }
     if (isTourist == 0) {
       bVar4 = 0;
     }
     else {
-      bVar4 = MVClientSettings::MVClientSettings_get_ShowTouristPromotion((MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVClientSettings);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      bVar4 = (byte)((uint)TypeInfo__MVClientSettings->static_fields->flags >> 2);
     }
-    if (((char)(uVar2 >> 0x18) == '\0') && ((char)(uVar2 >> 8) == '\0')) {
-      uVar2 = uVar2 >> 0x10 & 0xff;
+    if (((char)((ulonglong)uStackY_30 >> 0x38) == '\0') &&
+       ((char)((ulonglong)uStackY_30 >> 0x28) == '\0')) {
+      uVar5 = (ushort)((ulonglong)uStackY_30 >> 0x30) & 0xff;
     }
     else {
-      uVar2 = 1;
+      uVar5 = 1;
     }
-    pGVar5 = (this->fields).touristRegisterButton;
-    if (pGVar5 != (GameObject *)0x0) {
-      value = 0;
-      if (uVar2 != 0) {
-        value = bVar4;
-      }
+    pGVar6 = (this->fields).touristRegisterButton;
+    if (pGVar6 != (GameObject *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                (pGVar5,value,(MethodInfo *)0x0);
+                (pGVar6,bVar4 & uVar5 != 0,(MethodInfo *)0x0);
       if (cVar3 == '\0') {
         if (isTourist == 0) {
-          bVar4 = 1;
+          value = 1;
         }
         else {
-          bVar4 = -(uVar2 != 0) & isTourist;
+          value = uVar5 != 0 & isTourist;
         }
       }
       else {
-        bVar4 = 0;
+        value = 0;
       }
-      pGVar5 = (this->fields).avatarAccessoriesButton;
-      if (pGVar5 != (GameObject *)0x0) {
+      pGVar6 = (this->fields).avatarAccessoriesButton;
+      if (pGVar6 != (GameObject *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (pGVar5,bVar4,(MethodInfo *)0x0);
-        pGVar5 = (this->fields).adminObserveButton;
-        this_01 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if (this_01 != (MVNetworkGame *)0x0) {
-          this_02 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_01,(MethodInfo *)0x0);
-          if (this_02 != (MVLocalPlayer *)0x0) {
-            bVar4 = MVLocalPlayer::MVLocalPlayer_get_IsAdmin(this_02,(MethodInfo *)0x0);
-            if (pGVar5 != (GameObject *)0x0) {
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                        (pGVar5,bVar4,(MethodInfo *)0x0);
+                  (pGVar6,value,(MethodInfo *)0x0);
+        pGVar6 = (this->fields).adminObserveButton;
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pMVar7 = TypeInfo__MVGameControllerBase->static_fields->instance;
+        if (((pMVar7 != (MVGameControllerBase *)0x0) &&
+            (pMVar8 = (pMVar7->fields).game, pMVar8 != (MVNetworkGame *)0x0)) &&
+           (this_00 = (pMVar8->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
+          uVar9 = 0;
+          pMVar10 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0);
+          if (pMVar10 != (MVLocalPlayer *)0x0) {
+            if ((pMVar10->fields)._._ProfileID_k__BackingField < 1) {
+              uVar9 = uVar9 & 0xffffffffffffff00;
+            }
+            else {
+              pUVar11 = (pMVar10->fields)._._UserProfileData_k__BackingField;
+              if (pUVar11 == (UserProfileData *)0x0) goto code_?;
+              uVar9 = (ulonglong)(pUVar11->fields).IsAdmin;
+            }
+            if (pGVar6 != (GameObject *)0x0) {
+              if (cRam_? == '\0') {
+                FUN_?(&
+                              void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                              ,uVar9,0,in_R9,unaff_RSI);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              if (pGVar6 == (GameObject *)0x0) {
+                FUN_?();
+                pcVar12 = (code *)swi(3);
+                (*pcVar12)();
+                return;
+              }
+              pvVar13 = (pGVar6->fields)._.m_CachedPtr;
+              if (pvVar13 == (void *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar6,(MethodInfo *)0x0);
+                pcVar12 = (code *)swi(3);
+                (*pcVar12)();
+                return;
+              }
+              pcVar12 = pcRam_?;
+              if ((pcRam_? == (code *)0x0) &&
+                 (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
+                uVar14 = func_?(&UNK_?);
+                FUN_?(uVar14,0);
+                pcVar12 = (code *)swi(3);
+                (*pcVar12)();
+                return;
+              }
+              pcRam_? = pcVar12;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+              (*pcRam_?)(pvVar13,uVar9 & 0xff);
               return;
             }
           }
@@ -207,9 +439,10 @@ void Assembly-CSharp.dll::DesktopLobbyStateController::
       }
     }
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+code_?:
+  FUN_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -222,19 +455,63 @@ void Assembly-CSharp.dll::DesktopLobbyStateController::DesktopLobbyStateControll
 {
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
   if (pMVar1 != (MainCameraManager *)0x0) {
-    if ((pMVar1->fields).maskMode == 1) {
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-      if (pMVar1 == (MainCameraManager *)0x0) goto code_?;
-      MainCameraManager::MainCameraManager_set_CamMaskMode
-                (pMVar1,MaskMode__Enum_Default,(MethodInfo *)0x0);
+    if ((pMVar1->fields).maskMode != 1) {
+      return;
     }
-    return;
-  }
+    pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+    if (pMVar1 != (MainCameraManager *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&StringLiteral_CamRotateTarget);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      (pMVar1->fields).maskMode = 0;
+      pCVar2 = (pMVar1->fields).mainCamera;
+      if (pCVar2 != (Camera *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
+                  (pCVar2,(pMVar1->fields).cullingMask,(MethodInfo *)0x0);
+        bVar3 = (pMVar1->fields).isLogicRendered;
+        (pMVar1->fields).blueModeEnabled = 0;
+        if (cRam_? == '\0') {
+          FUN_?(&StringLiteral_Logic);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pCVar2 = (pMVar1->fields).mainCamera;
+        if (bVar3 == 0) {
+          if (pCVar2 == (Camera *)0x0) {
 code_?:
-  uVar2 = func_?(&stack0xfffffffc);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+            FUN_?();
+            pcVar4 = (code *)swi(3);
+            (*pcVar4)();
+            return;
+          }
+          uVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_cullingMask
+                            (pCVar2,(MethodInfo *)0x0);
+          uVar6 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                            (StringLiteral_Logic,(MethodInfo *)0x0);
+          uVar5 = uVar5 & ~(1 << (uVar6 & 0x1f));
+        }
+        else {
+          if (pCVar2 == (Camera *)0x0) goto code_?;
+          uVar5 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_get_cullingMask
+                            (pCVar2,(MethodInfo *)0x0);
+          uVar6 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                            (StringLiteral_Logic,(MethodInfo *)0x0);
+          uVar5 = uVar5 | 1 << (uVar6 & 0x1f);
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
+                  (pCVar2,uVar5,(MethodInfo *)0x0);
+        (pMVar1->fields).isLogicRendered = bVar3;
+        return;
+      }
+    }
+  }
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -246,45 +523,135 @@ void Assembly-CSharp.dll::DesktopLobbyStateController::DesktopLobbyStateControll
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pGVar1 = (this->fields).gamePassesUI;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pGVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pGVar1 = (this->fields).gamePassesUI;
-    if (pGVar1 != (GamePassesUI *)0x0) {
-      this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                          ((Component *)pGVar1,(MethodInfo *)0x0);
-      bVar2 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled
-                        ((MethodInfo *)0x0);
-      if (bVar2 == 0) {
-        bVar2 = 0;
-      }
-      else {
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pGVar1 != (GamePassesUI *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((pGVar1->fields)._._._._.m_CachedPtr != (void *)0x0) {
+      pGVar1 = (this->fields).gamePassesUI;
+      if (pGVar1 != (GamePassesUI *)0x0) {
+        this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                            ((Component *)pGVar1,(MethodInfo *)0x0);
+        bVar2 = GamePassProgressionController::
+                GamePassProgressionController_get_IsProgressionEnabled((MethodInfo *)0x0);
+        if (bVar2 == 0) {
+          bVar2 = 0;
         }
-        bVar2 = TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField;
+        else {
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__GamePassesManager);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          bVar2 = TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField;
+        }
+        if (this_00 != (GameObject *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                    (this_00,bVar2 != 0,(MethodInfo *)0x0);
+          goto 
+          Assembly_CSharp_dll_DesktopLobbyStateController_DesktopLobbyStateController_SetCamMaskMode
+          ;
+        }
       }
-      if (this_00 != (GameObject *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                  (this_00,bVar2 != 0,(MethodInfo *)0x0);
-        goto code_?;
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+  }
+Assembly_CSharp_dll_DesktopLobbyStateController_DesktopLobbyStateController_SetCamMaskMode:
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase,0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar4 != (GameSessionData *)0x0) {
+    if ((pGVar4->fields).gameMode == 0) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pGVar4 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar4 != (GameSessionData *)0x0) {
+        if ((pGVar4->fields).gameMode != 0) {
+          return;
+        }
+        pMVar5 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0)
+        ;
+        if (pMVar5 != (MainCameraManager *)0x0) {
+          if (cRam_? == '\0') {
+            FUN_?(&StringLiteral_CamRotateTarget);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          (pMVar5->fields).maskMode = 0;
+          pCVar6 = (pMVar5->fields).mainCamera;
+          if (pCVar6 != (Camera *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
+                      (pCVar6,(pMVar5->fields).cullingMask,(MethodInfo *)0x0);
+            (pMVar5->fields).blueModeEnabled = 0;
+            MainCameraManager::MainCameraManager_RenderLogic
+                      (pMVar5,(pMVar5->fields).isLogicRendered,(MethodInfo *)0x0);
+            return;
+          }
+        }
       }
     }
-    func_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
-    return;
+    else {
+      pMVar5 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+      if (pMVar5 != (MainCameraManager *)0x0) {
+        if (cRam_? == '\0') {
+          FUN_?(&StringLiteral_CamRotateTarget);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        (pMVar5->fields).maskMode = 1;
+        pCVar6 = (pMVar5->fields).mainCamera;
+        iVar7 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                          (StringLiteral_CamRotateTarget,(MethodInfo *)0x0);
+        if (pCVar6 != (Camera *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
+                    (pCVar6,1 << ((byte)iVar7 & 0x1f),(MethodInfo *)0x0);
+          (pMVar5->fields).blueModeEnabled = 1;
+          return;
+        }
+      }
+    }
   }
-code_?:
-  DesktopLobbyStateController_SetCamMaskMode(this,(MethodInfo *)0x0);
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -295,28 +662,73 @@ void Assembly-CSharp.dll::DesktopLobbyStateController::DesktopLobbyStateControll
                (DesktopLobbyStateController *this,MethodInfo *method)
 
 {
-  MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-  if (MVar1 == MVGameMode__Enum_Edit) {
-    MVar1 = MVGameControllerBase::MVGameControllerBase_get_GameMode((MethodInfo *)0x0);
-    if (MVar1 == MVGameMode__Enum_Edit) {
-      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-      if (pMVar2 == (MainCameraManager *)0x0) goto code_?;
-      MainCameraManager::MainCameraManager_set_CamMaskMode
-                (pMVar2,MaskMode__Enum_Default,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+  if (pGVar1 != (GameSessionData *)0x0) {
+    if ((pGVar1->fields).gameMode == 0) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+      if (pGVar1 != (GameSessionData *)0x0) {
+        if ((pGVar1->fields).gameMode != 0) {
+          return;
+        }
+        pMVar2 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0)
+        ;
+        if (pMVar2 != (MainCameraManager *)0x0) {
+          if (cRam_? == '\0') {
+            FUN_?(&StringLiteral_CamRotateTarget);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          (pMVar2->fields).maskMode = 0;
+          pCVar3 = (pMVar2->fields).mainCamera;
+          if (pCVar3 != (Camera *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
+                      (pCVar3,(pMVar2->fields).cullingMask,(MethodInfo *)0x0);
+            (pMVar2->fields).blueModeEnabled = 0;
+            MainCameraManager::MainCameraManager_RenderLogic
+                      (pMVar2,(pMVar2->fields).isLogicRendered,(MethodInfo *)0x0);
+            return;
+          }
+        }
+      }
     }
-    return;
+    else {
+      pMVar2 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+      if (pMVar2 != (MainCameraManager *)0x0) {
+        if (cRam_? == '\0') {
+          FUN_?(&StringLiteral_CamRotateTarget);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        (pMVar2->fields).maskMode = 1;
+        pCVar3 = (pMVar2->fields).mainCamera;
+        iVar4 = UnityEngine.CoreModule.dll::UnityEngine::LayerMask::LayerMask_NameToLayer
+                          (StringLiteral_CamRotateTarget,(MethodInfo *)0x0);
+        if (pCVar3 != (Camera *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_set_cullingMask
+                    (pCVar3,1 << ((byte)iVar4 & 0x1f),(MethodInfo *)0x0);
+          (pMVar2->fields).blueModeEnabled = 1;
+          return;
+        }
+      }
+    }
   }
-  pMVar2 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
-  if (pMVar2 != (MainCameraManager *)0x0) {
-    MainCameraManager::MainCameraManager_set_CamMaskMode
-              (pMVar2,MaskMode__Enum_AvatarLobbyFocus,(MethodInfo *)0x0);
-    return;
-  }
-code_?:
-  uVar3 = func_?(&stack0xfffffffc);
-  func_?(uVar3);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -328,16 +740,14 @@ void Assembly-CSharp.dll::DesktopLobbyStateController::
                (DesktopLobbyStateController *this,bool shouldPop,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pLVar2 = (this->fields).lobbyStatePlayButton;
-  if (pLVar2 != (LobbyStateButton *)0x0) {
-    (pLVar2->fields).shouldPop = shouldPop;
+  pLVar1 = (this->fields).lobbyStatePlayButton;
+  if (pLVar1 != (LobbyStateButton *)0x0) {
+    (pLVar1->fields).shouldPop = shouldPop;
     return;
   }
-  uVar3 = func_?(auStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -349,67 +759,210 @@ void Assembly-CSharp.dll::DesktopLobbyStateController::DesktopLobbyStateControll
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
-    func_?(&
-                    BoostMenuController_MethodInfo__UnityEngine__Object__Instantiate<BoostMenuController>_BoostMenuController_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&
-                    MethodInfo__DesktopLobbyStateController____c__DisplayClass23_0___ShowBoostMenu_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__DesktopLobbyStateController____c__DisplayClass23_0);
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  BoostMenuController_MethodInfo__UnityEngine__Object__Instantiate<BoostMenuController>_BoostMenuController_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__DesktopLobbyStateController____c__DisplayClass23_0___ShowBoostMenu_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__DesktopLobbyStateController____c__DisplayClass23_0);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__DesktopLobbyStateController____c__DisplayClass23_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  object = (Object *)FUN_?(TypeInfo__DesktopLobbyStateController____c__DisplayClass23_0);
   original = (this->fields).boosterMenu;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
   pOVar1 = (Object__Class *)
            UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_4
                      ((Object *)original,
                       BoostMenuController_MethodInfo__UnityEngine__Object__Instantiate<BoostMenuController>_BoostMenuController_
                      );
-  if (value != (Object *)0x0) {
-    value[1].klass = pOVar1;
-    func_?();
-    if (value[1].klass != (Object__Class *)0x0) {
+  if (object != (Object *)0x0) {
+    bVar2 = iRam_? != 0;
+    object[1].klass = pOVar1;
+    if (bVar2) {
+      uVar3 = (uint)((ulonglong)(object + 1) >> 0xc);
+      puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar5 = *puVar4;
+        LOCK();
+        uVar6 = *puVar4;
+        if (uVar5 == uVar6) {
+          *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar5 != uVar6);
+    }
+    if (object[1].klass != (Object__Class *)0x0) {
       BoostMenuController::BoostMenuController_Initialize
-                ((BoostMenuController *)value[1].klass,(MethodInfo *)0x0);
-      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
-      callbackFunction = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
+                ((BoostMenuController *)object[1].klass,(MethodInfo *)0x0);
+      pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                         ((Component *)this,(MethodInfo *)0x0);
+      this_01 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+                FUN_?(
+                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                             );
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+      ExecuteEvents_EventFunction_1_System_Object___ctor
+                (this_01,object,
                  MethodInfo__DesktopLobbyStateController____c__DisplayClass23_0___ShowBoostMenu_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+        FUN_?();
       }
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,callbackFunction,
+                (pGVar7,(BaseEventData *)0x0,this_01,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
-      pLVar2 = (this->fields).playButton;
-      if ((pLVar2 != (LobbyStateButton *)0x0) &&
-         (this_00 = (pLVar2->fields).lobbyStateButton, this_00 != (Button *)0x0)) {
-        UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_set_interactable
-                  ((Selectable *)this_00,1,(MethodInfo *)0x0);
+      pLVar8 = (this->fields).playButton;
+      if ((pLVar8 != (LobbyStateButton *)0x0) &&
+         (this_00 = (pLVar8->fields).lobbyStateButton, this_00 != (Button *)0x0)) {
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__EventSystems__EventSystem);
+          LOCK();
+          UNLOCK();
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          FUN_?(&
+                        bool_MethodInfo__UnityEngine__UI__SetPropertyUtility__SetStruct<bool>_System__Boolean___bool_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        cVar9 = FUN_?(&(this_00->fields)._.m_Interactable);
+        if (cVar9 == '\0') {
+          return;
+        }
+        if ((this_00->fields)._.m_Interactable == 0) {
+          if (*(int *)&(TypeInfo__UnityEngine__EventSystems__EventSystem->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          pEVar10 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
+                   EventSystem_get_current((MethodInfo *)0x0);
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (pEVar10 != (EventSystem *)0x0) {
+            if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            if ((pEVar10->fields)._._._._._.m_CachedPtr != (void *)0x0) {
+              if (*(int *)&(TypeInfo__UnityEngine__EventSystems__EventSystem->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              pEVar10 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
+                       EventSystem_get_current((MethodInfo *)0x0);
+              if (pEVar10 != (EventSystem *)0x0) {
+                pGVar7 = (pEVar10->fields).m_CurrentSelected;
+                pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::
+                          Component_get_gameObject((Component *)this_00,(MethodInfo *)0x0);
+                if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                if (cRam_? == '\0') {
+                  FUN_?(&TypeInfo__UnityEngine__Object);
+                  LOCK();
+                  UNLOCK();
+                  cRam_? = '\x01';
+                }
+                if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                  FUN_?();
+                }
+                if (cRam_? == '\0') {
+                  FUN_?(&TypeInfo__UnityEngine__Object);
+                  LOCK();
+                  UNLOCK();
+                  cRam_? = '\x01';
+                }
+                if (pGVar11 != (GameObject *)0x0 || pGVar7 != (GameObject *)0x0) {
+                  if (pGVar11 == (GameObject *)0x0) {
+                    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                      FUN_?();
+                    }
+                    if (pGVar7 == (GameObject *)0x0) goto DAT_?;
+                    bVar2 = (pGVar7->fields)._.m_CachedPtr == (void *)0x0;
+                  }
+                  else if (pGVar7 == (GameObject *)0x0) {
+                    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+                      FUN_?();
+                    }
+                    bVar2 = (pGVar11->fields)._.m_CachedPtr == (void *)0x0;
+                  }
+                  else {
+                    bVar2 = pGVar7 == pGVar11;
+                  }
+                  if (!bVar2) goto code_?;
+                }
+                if (*(int *)&(TypeInfo__UnityEngine__EventSystems__EventSystem->_1).field_0x1c == 0)
+                {
+                  FUN_?();
+                }
+                pEVar10 = UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
+                         EventSystem_get_current((MethodInfo *)0x0);
+                if (pEVar10 != (EventSystem *)0x0) {
+                  UnityEngine.UI.dll::UnityEngine::EventSystems::EventSystem::
+                  EventSystem_SetSelectedGameObject_1(pEVar10,(GameObject *)0x0,(MethodInfo *)0x0);
+                  goto code_?;
+                }
+              }
+DAT_?:
+              FUN_?();
+              pcVar12 = (code *)swi(3);
+              (*pcVar12)();
+              return;
+            }
+          }
+        }
+code_?:
+        UnityEngine.UI.dll::UnityEngine::UI::Selectable::Selectable_OnSetProperty
+                  ((Selectable *)this_00,(MethodInfo *)0x0);
         return;
       }
     }
   }
-  uVar3 = func_?(&stack0xfffffff0);
-  func_?(uVar3);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -420,152 +973,123 @@ void Assembly-CSharp.dll::DesktopLobbyStateController::DesktopLobbyStateControll
                (DesktopLobbyStateController *this,MethodInfo *method)
 
 {
-  this_01 = this;
-  LobbyFlowMenu::LobbyFlowMenu_Start((LobbyFlowMenu *)this,(MethodInfo *)0x0);
-  bVar1 = MVGameControllerBase::MVGameControllerBase_get_IsTouristSession((MethodInfo *)0x0);
-  this_00 = (this->fields).embeddedPlayerConfig;
-  if (this_00 == (EmbeddedPlayerConfig *)0x0) goto code_?;
-  pEVar2 = EmbeddedPlayerConfig::EmbeddedPlayerConfig_GetCurrentSiteData
-                     ((EmbeddedSiteConfigData *)&stack0xffffffd4,this_00,(MethodInfo *)0x0);
-  uVar3._0_1_ = pEVar2->showTouristPromotion;
-  uVar3._1_1_ = pEVar2->allowsOpenInNewTab;
-  uVar3._2_1_ = pEVar2->allowsRedirectToWebpage;
-  uVar3._3_1_ = pEVar2->allowsModals;
-  uVar4 = pEVar2->hideGoldShop;
-  if (bVar1 == 0) {
-    bVar5 = 0;
-  }
-  else {
-    bVar5 = MVClientSettings::MVClientSettings_get_ShowTouristPromotion((MethodInfo *)0x0);
-  }
-  if ((uVar3._3_1_ == '\0') && (uVar3._1_1_ == '\0')) {
-    uVar3 = uVar3 >> 0x10 & 0xff;
-  }
-  else {
-    uVar3 = 1;
-  }
-  pGVar6 = (this->fields).touristRegisterButton;
-  if (pGVar6 == (GameObject *)0x0) goto code_?;
-  value = 0;
-  if (uVar3 != 0) {
-    value = bVar5;
-  }
-  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-            (pGVar6,value,(MethodInfo *)0x0);
-  if (uVar4 == '\0') {
-    if (bVar1 == 0) {
-      this._0_1_ = 1;
+  this_00 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
+  if (this_00 != (MainCameraManager *)0x0) {
+    value = (this->fields)._.cameraMaskMode;
+    player = (MVPlayer *)(ulonglong)value;
+    method_00 = (MethodInfo *)0x0;
+    MainCameraManager::MainCameraManager_set_CamMaskMode(this_00,value,(MethodInfo *)0x0);
+    if ((this->fields)._.haveSetSelectedTeam == 0) {
+      MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,player,method_00);
+      if (extraout_RAX == 0) goto code_?;
+      (this->fields)._.selectedTeam = *(int32_t *)(extraout_RAX + 0x84);
     }
-    else {
-      this._0_1_ = 0;
-      if (uVar3 != 0) {
-        this._0_1_ = bVar1;
-      }
+    LobbyFlowMenu::LobbyFlowMenu_UpdateAvailableMenues((LobbyFlowMenu *)this,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
-  }
-  else {
-    this._0_1_ = 0;
-  }
-  pGVar6 = (this_01->fields).avatarAccessoriesButton;
-  if (pGVar6 == (GameObject *)0x0) goto code_?;
-  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-            (pGVar6,(bool)this,(MethodInfo *)0x0);
-  pGVar6 = (this_01->fields).adminObserveButton;
-  this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (((this_02 == (MVNetworkGame *)0x0) ||
-      (this_03 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_02,(MethodInfo *)0x0),
-      this_03 == (MVLocalPlayer *)0x0)) ||
-     (bVar5 = MVLocalPlayer::MVLocalPlayer_get_IsAdmin(this_03,(MethodInfo *)0x0),
-     pGVar6 == (GameObject *)0x0)) goto code_?;
-  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-            (pGVar6,bVar5,(MethodInfo *)0x0);
-  DesktopLobbyStateController_SetCamMaskMode(this_01,(MethodInfo *)0x0);
-  if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    cRam_? = '\x01';
-  }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__GamePassesManager);
-    cRam_? = '\x01';
-  }
-  if (TypeInfo__GamePassesManager->static_fields->_GamePassesActive_k__BackingField != 0) {
-    pGVar7 = (this_01->fields).gamePassesUIPrefab;
-    parent = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                       ((Component *)this_01,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    pGVar7 = (GamePassesUI *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_6
-                       ((Object *)pGVar7,parent,0,
-                        GamePassesUI_MethodInfo__UnityEngine__Object__Instantiate<GamePassesUI>_GamePassesUI__UnityEngine__Transform__bool_
-                       );
-    (this_01->fields).gamePassesUI = pGVar7;
-    func_?(&(this_01->fields).gamePassesUI,pGVar7);
-    pGVar7 = (this_01->fields).gamePassesUI;
-    if (pGVar7 == (GamePassesUI *)0x0) goto code_?;
-    GamePassesUI::GamePassesUI_Initialize(pGVar7,(MethodInfo *)0x0);
-    pGVar7 = (this_01->fields).gamePassesUI;
-    if (pGVar7 == (GamePassesUI *)0x0) goto code_?;
-    GamePassesUI::GamePassesUI_TryShowWelcomeReward(pGVar7,(MethodInfo *)0x0);
-    bVar5 = GamePassProgressionController::GamePassProgressionController_get_IsProgressionEnabled
-                      ((MethodInfo *)0x0);
-    if (bVar5 != 0) {
+    pGVar1 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
+    if (pGVar1 != (GameSessionData *)0x0) {
+      iVar2 = (pGVar1->fields).profileID;
+      DesktopLobbyStateController_InitializeLobbyMenuButtons(this,iVar2 < 1,(MethodInfo *)0x0);
+      DesktopLobbyStateController_SetCamMaskMode(this,(MethodInfo *)0x0);
+      DesktopLobbyStateController_InitializeGamePassesUI(this,(MethodInfo *)0x0);
       if (cRam_? == '\0') {
-        func_?();
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
         cRam_? = '\x01';
       }
-      pGVar8 = TypeInfo__MVGameControllerBase->static_fields->_GameSessionData_k__BackingField;
-      if (pGVar8 == (GameSessionData *)0x0) goto code_?;
-      if ((pGVar8->fields).gameMode != 0) goto code_?;
-    }
-    pGVar7 = (this_01->fields).gamePassesUI;
-    if ((pGVar7 == (GamePassesUI *)0x0) ||
-       (pGVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)pGVar7,(MethodInfo *)0x0), pGVar6 == (GameObject *)0x0))
-    goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar6,0,(MethodInfo *)0x0);
-  }
-code_?:
-  pGVar9 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
-  if (pGVar9 != (GoldRewardManager *)0x0) {
-    bVar5 = GoldRewardManager::GoldRewardManager_CanGetGoldReward(pGVar9,(MethodInfo *)0x0);
-    pGVar9 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0);
-    if (pGVar9 != (GoldRewardManager *)0x0) {
-      bVar10 = 0;
-      if ((pGVar9->fields).isCountingDownGoldReward == 0) {
-        bVar10 = (bVar1 ^ 1) & bVar5;
-      }
-      if (bVar10 == 0) {
-        pGVar6 = (this_01->fields).goldIconOnPlayButton;
-        if (pGVar6 != (GameObject *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                    (pGVar6,0,(MethodInfo *)0x0);
-          return;
+      pMVar3 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if ((pMVar3 != (MVGameControllerBase *)0x0) &&
+         (pGVar4 = (pMVar3->fields).goldRewardManager, pGVar4 != (GoldRewardManager *)0x0)) {
+        bVar5 = GoldRewardManager::GoldRewardManager_CanGetGoldReward(pGVar4,(MethodInfo *)0x0);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
         }
-      }
-      else {
-        pGVar9 = MVGameControllerBase::MVGameControllerBase_get_GoldRewardManager((MethodInfo *)0x0)
-        ;
-        if (pGVar9 != (GoldRewardManager *)0x0) {
-          GoldRewardManager::GoldRewardManager_StartGoldRewardCountdownWhenReady
-                    (pGVar9,(MethodInfo *)0x0);
-          pGVar6 = (this_01->fields).goldIconOnPlayButton;
-          if (pGVar6 != (GameObject *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-                      (pGVar6,1,(MethodInfo *)0x0);
-            return;
+        pMVar3 = TypeInfo__MVGameControllerBase->static_fields->instance;
+        if ((pMVar3 != (MVGameControllerBase *)0x0) &&
+           (pGVar4 = (pMVar3->fields).goldRewardManager, pGVar4 != (GoldRewardManager *)0x0)) {
+          bVar6 = 0;
+          if (0 < iVar2) {
+            bVar6 = bVar5;
+          }
+          if (((pGVar4->fields).isCountingDownGoldReward == 0 & bVar6) == 0) {
+            obj = (this->fields).goldIconOnPlayButton;
+            if (obj != (GameObject *)0x0) {
+              uVar7 = 0;
+code_?:
+              if (cRam_? == '\0') {
+                FUN_?(&
+                              void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                              ,uVar7,0);
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              if (obj == (GameObject *)0x0) {
+                FUN_?();
+                pcVar8 = (code *)swi(3);
+                (*pcVar8)();
+                return;
+              }
+              pvVar9 = (obj->fields)._.m_CachedPtr;
+              if (pvVar9 == (void *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+                pcVar8 = (code *)swi(3);
+                (*pcVar8)();
+                return;
+              }
+              pcVar8 = pcRam_?;
+              if ((pcRam_? == (code *)0x0) &&
+                 (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+                uVar7 = func_?(&UNK_?);
+                FUN_?(uVar7,0);
+                pcVar8 = (code *)swi(3);
+                (*pcVar8)();
+                return;
+              }
+              pcRam_? = pcVar8;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+              (*pcRam_?)(pvVar9,uVar7);
+              return;
+            }
+          }
+          else {
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__MVGameControllerBase);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pMVar3 = TypeInfo__MVGameControllerBase->static_fields->instance;
+            if ((pMVar3 != (MVGameControllerBase *)0x0) &&
+               (pGVar4 = (pMVar3->fields).goldRewardManager, pGVar4 != (GoldRewardManager *)0x0)) {
+              GoldRewardManager::GoldRewardManager_StartGoldRewardCountdownWhenReady
+                        (pGVar4,(MethodInfo *)0x0);
+              obj = (this->fields).goldIconOnPlayButton;
+              if (obj != (GameObject *)0x0) {
+                uVar7 = 1;
+                goto code_?;
+              }
+            }
           }
         }
       }
     }
   }
 code_?:
-  func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -576,56 +1100,102 @@ void Assembly-CSharp.dll::DesktopLobbyStateController::DesktopLobbyStateControll
                (DesktopLobbyStateController *this,MethodInfo *method)
 
 {
-  pDVar1 = this;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVInputWrapper);
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pIVar2 = (this->fields).lobbyStateBlockingOverlay;
-  bVar3 = MVGameControllerDesktop::MVGameControllerDesktop_get_IsCursorLock((MethodInfo *)0x0);
-  this = (DesktopLobbyStateController *)(uint)bVar3;
-  if (pIVar2 == (Image *)0x0) {
+  pIVar1 = (this->fields).lobbyStateBlockingOverlay;
+  bVar2 = MVGameControllerDesktop::MVGameControllerDesktop_get_IsCursorLock((MethodInfo *)0x0);
+  if (pIVar1 == (Image *)0x0) {
 code_?:
-    func_?();
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
-  (*(code *)(pIVar2->klass->vtable).set_raycastTarget.method)
-            (pIVar2,this,(pIVar2->klass->vtable).SetAllDirty.methodPtr);
-  pSVar5 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
-                     ((MethodInfo *)0x0);
-  if ((pSVar5 == (SpawnRoleDataMediator *)0x0) ||
-     (this_00 = (pSVar5->fields).SpawnRoleModeTypeWrapper,
-     this_00 == (SpawnRoleModeTypeWrapper *)0x0)) goto code_?;
-  bVar3 = SpawnRoleModeTypeWrapper::SpawnRoleModeTypeWrapper_IsInMode
-                    (this_00,SpawnRoleModeType__Enum_Playing,(MethodInfo *)0x0);
-  pGVar6 = (pDVar1->fields).respawnButton;
-  if (bVar3 == 0) {
-    if (pGVar6 == (GameObject *)0x0) goto code_?;
-    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                      (pGVar6,(MethodInfo *)0x0);
-    if (bVar3 == 0) goto code_?;
-    pGVar6 = (pDVar1->fields).respawnButton;
-    if (pGVar6 == (GameObject *)0x0) goto code_?;
-    bVar3 = 0;
+  (*(pIVar1->klass->vtable).set_raycastTarget.methodPtr)(pIVar1,(ulonglong)bVar2);
+  pSVar4 = MVGameControllerBase::MVGameControllerBase_get_SpawnRoleDataMediatorLocal
+                      ((MethodInfo *)0x0);
+  if ((pSVar4 == (SpawnRoleDataMediator *)0x0) ||
+     (pSVar5 = (pSVar4->fields).SpawnRoleModeTypeWrapper, pSVar5 == (SpawnRoleModeTypeWrapper *)0x0
+     )) goto code_?;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__Assets__Scripts__Network__Player__SpawnRoles__SpawnRoleData__SpawnRoleVariableTypes__SpawnRoleVariable<MV::Common::SpawnRoleModeType>__get_Value__
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pSVar6 = (pSVar5->fields).spawnRoleType;
+  if ((pSVar6 == (SpawnRoleVariable_1_MV_Common_SpawnRoleModeType_ *)0x0) ||
+     (pSVar7 = (pSVar6->fields).subscribableVariable,
+     pSVar7 == (SubscribableVariable_1_MV_Common_SpawnRoleModeType_ *)0x0))
+  goto code_?;
+  pGVar8 = (this->fields).respawnButton;
+  if (((pSVar7->fields)._.value & 1) == 0) {
+    if (pGVar8 == (GameObject *)0x0) goto code_?;
+    uVar9 = 0;
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                       (pGVar8,(MethodInfo *)0x0);
+    if (bVar2 == 0) goto code_?;
+    pGVar8 = (this->fields).respawnButton;
+    if (pGVar8 == (GameObject *)0x0) goto code_?;
+    uVar9 = 0;
   }
   else {
-    if (pGVar6 == (GameObject *)0x0) goto code_?;
-    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
-                      (pGVar6,(MethodInfo *)0x0);
-    if (bVar3 != 0) goto code_?;
-    pGVar6 = (pDVar1->fields).respawnButton;
-    if (pGVar6 == (GameObject *)0x0) goto code_?;
-    bVar3 = 1;
+    if (pGVar8 == (GameObject *)0x0) goto code_?;
+    uVar9 = 0;
+    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_activeSelf
+                       (pGVar8,(MethodInfo *)0x0);
+    if (bVar2 != 0) goto code_?;
+    pGVar8 = (this->fields).respawnButton;
+    if (pGVar8 == (GameObject *)0x0) goto code_?;
+    uVar9 = CONCAT71((int7)((ulonglong)uVar9 >> 8),1);
   }
   UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-            (pGVar6,bVar3,(MethodInfo *)0x0);
+            (pGVar8,(bool)uVar9,(MethodInfo *)0x0);
 code_?:
-  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MVInputWrapper);
+  if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  MVInputWrapper::MVInputWrapper_SuppressInGameInput((MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVInputWrapper);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVInputWrapper__InputSuppression);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar10 = (MVInputWrapper_InputSuppression *)
+            FUN_?(TypeInfo__MVInputWrapper__InputSuppression);
+  pIVar11 = (pMVar10->klass->vtable).set_IsSuppressed.methodPtr;
+  (*pIVar11)(pMVar10,CONCAT71((int7)((ulonglong)uVar9 >> 8),1),
+            (pMVar10->klass->vtable).set_IsSuppressed.method,pIVar11,unaff_RBX);
+  if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__MVInputWrapper);
+  }
+  TypeInfo__MVInputWrapper->static_fields->isInGameInputSuppressed = pMVar10;
+  if (iRam_? != 0) {
+    uVar12 = (uint)((ulonglong)&TypeInfo__MVInputWrapper->static_fields->isInGameInputSuppressed >>
+                   0xc);
+    puVar13 = (ulonglong *)((ulonglong)((uVar12 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar14 = *puVar13;
+      LOCK();
+      uVar15 = *puVar13;
+      if (uVar14 == uVar15) {
+        *puVar13 = uVar14 | 1L << (uVar12 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar14 != uVar15);
+  }
   return;
 }
 

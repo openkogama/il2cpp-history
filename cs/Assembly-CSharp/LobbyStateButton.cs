@@ -24,7 +24,7 @@ public class LobbyStateButton : MonoBehaviour, IPointerDownHandler, IPointerEnte
 	[SerializeField]
 	private Image countdownFill;
 	[SerializeField]
-	private Button lobbyStateButton;
+	private UnityEngine.UI.Button lobbyStateButton;
 	[SerializeField]
 	private LevelRewardsLobbyState levelRewards;
 	[SerializeField]

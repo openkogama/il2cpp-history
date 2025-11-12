@@ -6,125 +6,144 @@ void Assembly-CSharp.dll::InputToPlayerMovement::InputToPlayerMovement_HandleInp
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__IPlayModeUI);
-    func_?(&TypeInfo__MVInputWrapper);
+    FUN_?(&TypeInfo__IPlayModeUI);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVInputWrapper);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
-  if (pIVar1 == (IPlayModeUI *)0x0) {
-code_?:
-    func_?();
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
+  if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField !=
+      (IPlayModeUI *)0x0) {
+    cVar1 = FUN_?(7,TypeInfo__IPlayModeUI);
+    if (cVar1 == '\0') {
+      (this->fields).movementMapState = 0;
+      if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      bVar2 = MVInputWrapper::MVInputWrapper_get_IsInGameInputSuppressed((MethodInfo *)0x0);
+      if (bVar2 == 0) {
+        if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVInputWrapper);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
+                          (KogamaControls__Enum_MoveForward,KeyState__Enum_Pressed,(MethodInfo *)0x0
+                          );
+        if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVInputWrapper);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
+                          (KogamaControls__Enum_MoveBackwards,KeyState__Enum_Pressed,
+                           (MethodInfo *)0x0);
+        uVar4 = (uint)bVar2 * 2 | 8;
+        if (bVar3 == 0) {
+          uVar4 = (uint)bVar2 * 2;
+        }
+        if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVInputWrapper);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
+                          (KogamaControls__Enum_MoveLeft,KeyState__Enum_Pressed,(MethodInfo *)0x0);
+        uVar5 = uVar4 | 1;
+        if (bVar2 == 0) {
+          uVar5 = uVar4;
+        }
+        if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVInputWrapper);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
+                          (KogamaControls__Enum_MoveRight,KeyState__Enum_Pressed,(MethodInfo *)0x0);
+        uVar4 = uVar5 | 4;
+        if (bVar2 == 0) {
+          uVar4 = uVar5;
+        }
+        if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVInputWrapper);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
+                          (KogamaControls__Enum_Jump,KeyState__Enum_Pressed,(MethodInfo *)0x0);
+        uVar5 = uVar4 | 0x10;
+        if (bVar2 == 0) {
+          uVar5 = uVar4;
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField ==
+            (IPlayModeUI *)0x0) goto code_?;
+        cVar1 = FUN_?(7,TypeInfo__IPlayModeUI);
+        if (cVar1 == '\0') {
+          uVar4 = (this->fields).frameUpdateMovementMapState;
+          if (fromFrameUpdate != 0) {
+            (this->fields).frameUpdateMovementMapState = uVar4 | uVar5;
+            return;
+          }
+          (this->fields).frameUpdateMovementMapState = 0;
+          (this->fields).movementMapState = uVar4 | (this->fields).movementMapState | uVar5;
+        }
+      }
+    }
     return;
   }
-  cVar3 = func_?(7,TypeInfo__IPlayModeUI,pIVar1);
-  if (cVar3 == '\0') {
-    (this->fields).movementMapState = 0;
-    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MVInputWrapper);
-    }
-    bVar4 = MVInputWrapper::MVInputWrapper_get_IsInGameInputSuppressed((MethodInfo *)0x0);
-    if (bVar4 == 0) {
-      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MVInputWrapper);
-      }
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__MVInputWrapper);
-        cRam_? = '\x01';
-      }
-      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MVInputWrapper);
-      }
-      bVar4 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
-                        (KogamaControls__Enum_MoveForward,KeyState__Enum_Pressed,(MethodInfo *)0x0);
-      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MVInputWrapper);
-      }
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__MVInputWrapper);
-        cRam_? = '\x01';
-      }
-      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MVInputWrapper);
-      }
-      bVar5 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
-                        (KogamaControls__Enum_MoveBackwards,KeyState__Enum_Pressed,(MethodInfo *)0x0
-                        );
-      uVar6 = (uint)bVar4 * 2 | 8;
-      if (bVar5 == 0) {
-        uVar6 = (uint)bVar4 * 2;
-      }
-      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MVInputWrapper);
-      }
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__MVInputWrapper);
-        cRam_? = '\x01';
-      }
-      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MVInputWrapper);
-      }
-      bVar4 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
-                        (KogamaControls__Enum_MoveLeft,KeyState__Enum_Pressed,(MethodInfo *)0x0);
-      uVar7 = uVar6 | 1;
-      if (bVar4 == 0) {
-        uVar7 = uVar6;
-      }
-      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MVInputWrapper);
-      }
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__MVInputWrapper);
-        cRam_? = '\x01';
-      }
-      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MVInputWrapper);
-      }
-      bVar4 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
-                        (KogamaControls__Enum_MoveRight,KeyState__Enum_Pressed,(MethodInfo *)0x0);
-      uVar6 = uVar7 | 4;
-      if (bVar4 == 0) {
-        uVar6 = uVar7;
-      }
-      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MVInputWrapper);
-      }
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__MVInputWrapper);
-        cRam_? = '\x01';
-      }
-      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MVInputWrapper);
-      }
-      bVar4 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
-                        (KogamaControls__Enum_Jump,KeyState__Enum_Pressed,(MethodInfo *)0x0);
-      uVar7 = uVar6 | 0x10;
-      if (bVar4 == 0) {
-        uVar7 = uVar6;
-      }
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__MVGameControllerBase);
-        cRam_? = '\x01';
-      }
-      pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
-      if (pIVar1 == (IPlayModeUI *)0x0) goto code_?;
-      cVar3 = func_?(7,TypeInfo__IPlayModeUI,pIVar1);
-      if (cVar3 == '\0') {
-        uVar6 = (this->fields).frameUpdateMovementMapState;
-        if (fromFrameUpdate != 0) {
-          (this->fields).frameUpdateMovementMapState = uVar7 | uVar6;
-          return;
-        }
-        (this->fields).frameUpdateMovementMapState = 0;
-        (this->fields).movementMapState = (this->fields).movementMapState | uVar7 | uVar6;
-      }
-    }
-  }
+code_?:
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

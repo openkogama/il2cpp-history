@@ -12,15 +12,15 @@ SpawnRoleVariable_1_T_SubDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGeneric
 
 {
   uStack_1 = 0;
-  iVar2 = func_?(**(undefined4 **)((int)(this->fields)._._.method + 0x18));
-  if ((*(byte *)(iVar2 + 0xbd) & 1) == 0) {
-    iVar2 = func_?(iVar2);
+  lVar2 = FUN_?(**(undefined8 **)((longlong)(this->fields)._._.method + 0x30),1);
+  if ((*(byte *)(lVar2 + 0x135) & 1) == 0) {
+    lVar2 = FUN_?(lVar2);
   }
-  if (*(int *)(iVar2 + 0x14) < 0) {
-    value = (_Il2CppFullySharedGenericType *)func_?(iVar2,value);
+  if (*(int *)(lVar2 + 0x28) < 0) {
+    value = (_Il2CppFullySharedGenericType *)FUN_?(lVar2,value);
   }
-  uStack_1 = CONCAT44(uStack_1._4_4_,value);
-  pIVar3 = (IAsyncResult *)func_?(this,&uStack_1,callback,object);
+  p_Stack_18 = value;
+  pIVar3 = (IAsyncResult *)FUN_?(this,&p_Stack_18,callback,object);
   return pIVar3;
 }
 
@@ -35,7 +35,13 @@ void Assembly-CSharp.dll::Assets::Scripts::Network::Player::SpawnRoles::SpawnRol
                 *this,IAsyncResult *result,MethodInfo *method)
 
 {
-  func_?(result,0);
+  FUN_?(result,auStack_1,&pIStackX_20);
+  if (pIStackX_20 == (Il2CppChar *)0x0) {
+    return;
+  }
+  il2cpp_set_config_utf16(pIStackX_20);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

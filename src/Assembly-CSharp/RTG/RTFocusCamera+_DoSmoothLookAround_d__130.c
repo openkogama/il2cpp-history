@@ -10,71 +10,90 @@ bool Assembly-CSharp.dll::RTG::RTFocusCamera+<DoSmoothLookAround>d__130::
   this_00 = (this->fields).__4__this;
   if (iVar1 == 0) {
     (this->fields).__1__state = -1;
-    if (this_00 == (RTFocusCamera *)0x0) goto code_?;
+    if (this_00 == (RTFocusCamera *)0x0) goto DAT_?;
     VVar2 = RTFocusCamera::RTFocusCamera_CalculateLookAroundRotation
-                      (this_00,(this->fields).deviceAxisX,(this->fields).deviceAxisY,
-                       (MethodInfo *)0x0);
-    (this->fields)._rotationAmount_5__2.x = in_stack_3;
-    (this->fields)._rotationAmount_5__2.y = VVar2.y;
+                       (this_00,(this->fields).deviceAxisX,(this->fields).deviceAxisY,
+                        (MethodInfo *)0x0);
+    fStackX_8 = VVar2.x;
+    fStackX_c = VVar2.y;
+    (this->fields)._rotationAmount_5__2.x = fStackX_8;
+    (this->fields)._rotationAmount_5__2.y = fStackX_c;
   }
   else {
     if (iVar1 != 1) {
       return 0;
     }
     (this->fields).__1__state = -1;
-    if (this_00 == (RTFocusCamera *)0x0) goto code_?;
+    if (this_00 == (RTFocusCamera *)0x0) goto DAT_?;
   }
   RTFocusCamera::RTFocusCamera_LookAround
             (this_00,(this->fields)._rotationAmount_5__2.x,(this->fields)._rotationAmount_5__2.y,
              (MethodInfo *)0x0);
-  fVar4 = (this->fields)._rotationAmount_5__2.x;
-  fVar5 = (this->fields)._rotationAmount_5__2.y;
+  fVar3 = (this->fields)._rotationAmount_5__2.x;
+  fVar4 = (this->fields)._rotationAmount_5__2.y;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector2);
+    FUN_?(&TypeInfo__UnityEngine__Vector2);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  fVar5 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).x;
   fVar6 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
   pCVar7 = (this_00->fields)._lookAroundSettings;
   if (pCVar7 != (CameraLookAroundSettings *)0x0) {
     fVar8 = (pCVar7->fields).smoothValue;
-    fVar9 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-    fVar9 = fVar9 * fVar8;
-    if (fVar9 < 0.0) {
-      fVar9 = 0.0;
+    pcVar9 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0)) {
+      uVar10 = func_?(&UNK_?);
+      FUN_?(uVar10,0);
+      pcVar9 = (code *)swi(3);
+      bVar11 = (*pcVar9)();
+      return bVar11;
     }
-    else if (_UNK_? < fVar9) {
-      fVar9 = _UNK_?;
+    pcRam_? = pcVar9;
+    fVar12 = (float)(*pcRam_?)();
+    fVar12 = fVar12 * fVar8;
+    if (fVar12 < 0.0) {
+      fVar12 = 0.0;
     }
-    fVar4 = (4.3646595e-29 - fVar4) * fVar9 + fVar4;
-    fVar5 = (fVar6 - fVar5) * fVar9 + fVar5;
-    (this->fields)._rotationAmount_5__2.x = fVar4;
-    (this->fields)._rotationAmount_5__2.y = fVar5;
-    fVar4 = fVar4 * fVar4 + fVar5 * fVar5;
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
+    else if (_UNK_? < fVar12) {
+      fVar12 = _UNK_?;
     }
-    fVar5 = (float)((uint)fVar4 & _UNK_?);
-    if (fVar5 <= 0.0) {
-      fVar5 = 0.0;
+    fVar3 = (fVar5 - fVar3) * fVar12 + fVar3;
+    fVar4 = (fVar6 - fVar4) * fVar12 + fVar4;
+    (this->fields)._rotationAmount_5__2.y = fVar4;
+    (this->fields)._rotationAmount_5__2.x = fVar3;
+    cVar13 = FUN_?(fVar4 * fVar4 + fVar3 * fVar3,0);
+    if (cVar13 == '\0') {
+      bVar14 = iRam_? != 0;
+      (this->fields).__2__current = (Object *)0x0;
+      if (bVar14) {
+        uVar15 = (uint)((ulonglong)&(this->fields).__2__current >> 0xc);
+        uVar16 = (ulonglong)((uVar15 & 0x1fffff) >> 6);
+        do {
+          uVar17 = *(ulonglong *)(uVar16 * 8 + 0xADDR);
+          puVar18 = (ulonglong *)(uVar16 * 8 + 0xADDR);
+          LOCK();
+          bVar14 = uVar17 == *puVar18;
+          if (bVar14) {
+            *puVar18 = uVar17 | 1L << (uVar15 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar14);
+      }
+      (this->fields).__1__state = 1;
+      bVar11 = 1;
     }
-    fVar8 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * _UNK_?;
-    fVar6 = fVar5 * _UNK_?;
-    if (fVar5 * _UNK_? <= fVar8) {
-      fVar6 = fVar8;
+    else {
+      bVar11 = 0;
     }
-    if ((float)((uint)(0.0 - fVar4) & _UNK_?) < fVar6) {
-      return 0;
-    }
-    (this->fields).__2__current = (Object *)0x0;
-    func_?(&(this->fields).__2__current);
-    (this->fields).__1__state = 1;
-    return 1;
+    return bVar11;
   }
-code_?:
-  func_?();
-  pcVar10 = (code *)swi(3);
-  bVar11 = (*pcVar10)();
+DAT_?:
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  bVar11 = (*pcVar9)();
   return bVar11;
 }
 
@@ -90,10 +109,10 @@ void Assembly-CSharp.dll::RTG::RTFocusCamera+<DoSmoothLookAround>d__130::
   this_00 = (NotSupportedException *)func_?(uVar1);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
-  func_?(&
-                  MethodInfo__RTG__RTFocusCamera___DoSmoothLookAround_d__130__System_Collections_IEnumerator_Reset__
-                 );
-  func_?(this_00);
+  uVar1 = func_?(&
+                              MethodInfo__RTG__RTFocusCamera___DoSmoothLookAround_d__130__System_Collections_IEnumerator_Reset__
+                             );
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

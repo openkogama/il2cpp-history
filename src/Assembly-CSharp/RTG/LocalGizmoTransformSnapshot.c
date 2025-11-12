@@ -5,216 +5,161 @@ void Assembly-CSharp.dll::RTG::LocalGizmoTransformSnapshot::LocalGizmoTransformS
                (LocalGizmoTransformSnapshot *this,MethodInfo *method)
 
 {
+  fVar1 = _UNK_?;
   if ((this->fields)._transform == (GizmoTransform *)0x0) {
     return;
   }
-  pGVar1 = (this->fields)._transform;
+  pGVar2 = (this->fields)._transform;
+  bVar3 = (pGVar2->fields)._firingChanged3DEvent;
   if ((this->fields)._parentTransform == (GizmoTransform *)0x0) {
-    GizmoTransform::GizmoTransform_set_Position3D
-              (pGVar1,(this->fields)._localPosition3D,(MethodInfo *)0x0);
-    pGVar1 = (this->fields)._transform;
-    if (pGVar1 != (GizmoTransform *)0x0) {
-      GizmoTransform::GizmoTransform_set_Rotation3D
-                (pGVar1,(this->fields)._localRotation3D,(MethodInfo *)0x0);
-      pGVar1 = (this->fields)._transform;
-      fVar2 = (this->fields)._localPosition2D.x;
-      fVar3 = (this->fields)._localPosition2D.y;
-      if (pGVar1 != (GizmoTransform *)0x0) {
-        if (((pGVar1->fields)._firingChanged2DEvent == 0) &&
-           (fVar4 = (pGVar1->fields)._position2D.x - fVar2,
-           fVar5 = (pGVar1->fields)._position2D.y - fVar3,
-           _UNK_? <= fVar5 * fVar5 + fVar4 * fVar4)) {
-          (pGVar1->fields)._position2D.x = fVar2;
-          (pGVar1->fields)._position2D.y = fVar3;
-          if ((pGVar1->fields)._parent != (GizmoTransform *)0x0) {
-            pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_Inverse
-                                ((Quaternion *)&stack0xffffffb8,
-                                 (((pGVar1->fields)._parent)->fields)._rotation2D,(MethodInfo *)0x0
-                                );
-            pGVar7 = (pGVar1->fields)._parent;
-            if (pGVar7 == (GizmoTransform *)0x0) goto code_?;
-            VVar8.y = (pGVar1->fields)._position2D.y - (pGVar7->fields)._position2D.y;
-            VVar8.x = (pGVar1->fields)._position2D.x - (pGVar7->fields)._position2D.x;
-            VVar8.z = 0.0;
-            pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                                ((Vector3 *)&stack0xfffffff0,*pQVar6,VVar8,(MethodInfo *)0x0);
-            fVar2 = pVVar9->x;
-            fVar3 = pVVar9->y;
-          }
-          (pGVar1->fields)._localPosition2D.x = fVar2;
-          (pGVar1->fields)._localPosition2D.y = fVar3;
-          GizmoTransform::GizmoTransform_UpdateChildTransforms2D(pGVar1,(MethodInfo *)0x0);
-          (pGVar1->fields)._firingChanged2DEvent = 1;
-          if ((pGVar1->fields).Changed != (GizmoEntityTransformChangedHandler *)0x0) {
-            (*(((pGVar1->fields).Changed)->fields)._._.invoke_impl)();
-          }
-          (pGVar1->fields)._firingChanged2DEvent = 0;
-        }
-        pGVar1 = (this->fields)._transform;
-        if (pGVar1 != (GizmoTransform *)0x0) {
-          if ((pGVar1->fields)._firingChanged2DEvent != 0) {
+    if ((bVar3 == 0) &&
+       (uVar4 = (this->fields)._localPosition3D.x, uVar5 = (this->fields)._localPosition3D.y,
+       uVar6 = (pGVar2->fields)._position3D.x,
+       fVar1 = (pGVar2->fields)._position3D.z - (this->fields)._localPosition3D.z,
+       fVar7 = (pGVar2->fields)._position3D.y - (float)uVar5,
+       _UNK_? <=
+       fVar7 * fVar7 + ((float)uVar6 - (float)uVar4) * ((float)uVar6 - (float)uVar4) +
+       fVar1 * fVar1)) {
+      fVar7 = (this->fields)._localPosition3D.y;
+      fVar1 = (this->fields)._localPosition3D.z;
+      (pGVar2->fields)._position3D.x = (this->fields)._localPosition3D.x;
+      (pGVar2->fields)._position3D.y = fVar7;
+      (pGVar2->fields)._position3D.z = fVar1;
+      GizmoTransform::GizmoTransform_OnPosition3DChanged(pGVar2,(MethodInfo *)0x0);
+    }
+    pGVar2 = (this->fields)._transform;
+    if (pGVar2 != (GizmoTransform *)0x0) {
+      aQStack_8[0].x = (this->fields)._localRotation3D.x;
+      aQStack_8[0].y = (this->fields)._localRotation3D.y;
+      aQStack_8[0].z = (this->fields)._localRotation3D.z;
+      aQStack_8[0].w = (this->fields)._localRotation3D.w;
+      GizmoTransform::GizmoTransform_set_Rotation3D(pGVar2,aQStack_8,(MethodInfo *)0x0);
+      pGVar2 = (this->fields)._transform;
+      if (pGVar2 != (GizmoTransform *)0x0) {
+        value.y = (this->fields)._localPosition2D.y;
+        value.x = (this->fields)._localPosition2D.x;
+        GizmoTransform::GizmoTransform_set_Position2D(pGVar2,value,(MethodInfo *)0x0);
+        pGVar2 = (this->fields)._transform;
+        if (pGVar2 != (GizmoTransform *)0x0) {
+          if ((pGVar2->fields)._firingChanged2DEvent != 0) {
             return;
           }
-          fVar2 = (this->fields)._localRotation2D_Degrees;
-          if ((pGVar1->fields)._rotation2DDegrees == fVar2) {
+          fVar1 = (this->fields)._localRotation2D_Degrees;
+          if ((pGVar2->fields)._rotation2DDegrees == fVar1) {
             return;
           }
-          GizmoTransform::GizmoTransform_ChangeRotation2D(pGVar1,fVar2,(MethodInfo *)0x0);
+          GizmoTransform::GizmoTransform_ChangeRotation2D(pGVar2,fVar1,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
   else {
-    pVVar9 = &(this->fields)._localPosition3D;
-    uVar10 = pVVar9->x;
-    uVar11 = pVVar9->y;
-    fVar2 = (this->fields)._localPosition3D.z;
-    VVar8 = *pVVar9;
-    if (((pGVar1->fields)._firingChanged3DEvent == 0) &&
-       (uVar12 = (pGVar1->fields)._localPosition3D.x, uVar13 = (pGVar1->fields)._localPosition3D.y,
-       fVar3 = (pGVar1->fields)._localPosition3D.z - fVar2,
+    if ((bVar3 == 0) &&
+       (uVar9 = (pGVar2->fields)._localPosition3D.x, uVar10 = (pGVar2->fields)._localPosition3D.y,
+       uStack_11._0_4_ = (this->fields)._localPosition3D.x,
+       uStack_11._4_4_ = (this->fields)._localPosition3D.y,
+       fVar7 = (pGVar2->fields)._localPosition3D.z - (this->fields)._localPosition3D.z,
        _UNK_? <=
-       ((float)uVar13 - (float)uVar11) * ((float)uVar13 - (float)uVar11) +
-       ((float)uVar12 - (float)uVar10) * ((float)uVar12 - (float)uVar10) + fVar3 * fVar3)) {
-      (pGVar1->fields)._localPosition3D.x = (float)uVar10;
-      (pGVar1->fields)._localPosition3D.y = (float)uVar11;
-      (pGVar1->fields)._localPosition3D.z = fVar2;
-      if ((pGVar1->fields)._parent == (GizmoTransform *)0x0) {
-        (pGVar1->fields)._position3D.x = (float)uVar10;
-        (pGVar1->fields)._position3D.y = (float)uVar11;
-        (pGVar1->fields)._position3D.z = fVar2;
-      }
-      else {
-        pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                            ((Vector3 *)&stack0xffffffe4,
-                             (((pGVar1->fields)._parent)->fields)._rotation3D,VVar8,
-                             (MethodInfo *)0x0);
-        uVar14 = pVVar9->x;
-        uVar15 = pVVar9->y;
-        fVar2 = pVVar9->z;
-        pGVar7 = (pGVar1->fields)._parent;
-        if (pGVar7 == (GizmoTransform *)0x0) goto code_?;
-        uVar16 = (pGVar7->fields)._position3D.x;
-        uVar17 = (pGVar7->fields)._position3D.y;
-        fVar3 = (pGVar7->fields)._position3D.z;
-        (pGVar1->fields)._position3D.x = (float)uVar16 + (float)uVar14;
-        (pGVar1->fields)._position3D.y = (float)uVar17 + (float)uVar15;
-        (pGVar1->fields)._position3D.z = fVar3 + fVar2;
-      }
-      GizmoTransform::GizmoTransform_UpdateChildTransforms3D(pGVar1,(MethodInfo *)0x0);
-      (pGVar1->fields)._firingChanged3DEvent = 1;
-      if ((pGVar1->fields).Changed != (GizmoEntityTransformChangedHandler *)0x0) {
-        (*(((pGVar1->fields).Changed)->fields)._._.invoke_impl)();
-      }
-      (pGVar1->fields)._firingChanged3DEvent = 0;
+       ((float)uVar10 - (float)uStack_11._4_4_) * ((float)uVar10 - (float)uStack_11._4_4_) +
+       ((float)uVar9 - (float)(undefined4)uStack_11) * ((float)uVar9 - (float)(undefined4)uStack_11)
+       + fVar7 * fVar7)) {
+      fVar12 = (this->fields)._localPosition3D.y;
+      fVar7 = (this->fields)._localPosition3D.z;
+      (pGVar2->fields)._localPosition3D.x = (this->fields)._localPosition3D.x;
+      (pGVar2->fields)._localPosition3D.y = fVar12;
+      (pGVar2->fields)._localPosition3D.z = fVar7;
+      GizmoTransform::GizmoTransform_OnLocalPosition3DChanged(pGVar2,(MethodInfo *)0x0);
     }
-    pGVar1 = (this->fields)._transform;
-    if (pGVar1 != (GizmoTransform *)0x0) {
-      if ((pGVar1->fields)._firingChanged3DEvent == 0) {
-        puVar18 = (undefined8 *)func_?();
-        fVar4 = 0.0;
-        fVar2 = *(float *)(puVar18 + 1);
-        puVar19 = &stack0xffffffc8;
-        puVar20 = &stack0xffffffd8;
-        fVar3 = (float)*puVar18;
-        fVar5 = (float)((ulonglong)*puVar18 >> 0x20);
-        puVar21 = &UNK_?;
-        puVar18 = (undefined8 *)func_?();
-        fStack_22 = (float)((ulonglong)*puVar18 >> 0x20);
-        fVar3 = fVar3 - (float)*puVar18;
-        if (_UNK_? <=
-            (fVar5 - fStack_22) * (fVar5 - fStack_22) + fVar3 * fVar3 +
-            (fVar2 - *(float *)(puVar18 + 1)) * (fVar2 - *(float *)(puVar18 + 1))) {
-          quat.y = (float)puVar20;
-          quat.x = (float)puVar21;
-          quat.z = (float)puVar19;
-          quat.w = fVar4;
-          pQVar6 = QuaternionEx::QuaternionEx_Normalize
-                              ((Quaternion *)&stack0xffffffb8,quat,(MethodInfo *)0x0);
-          fVar2 = pQVar6->y;
-          fVar3 = pQVar6->z;
-          fVar4 = pQVar6->w;
-          (pGVar1->fields)._localRotation3D.x = pQVar6->x;
-          (pGVar1->fields)._localRotation3D.y = fVar2;
-          (pGVar1->fields)._localRotation3D.z = fVar3;
-          (pGVar1->fields)._localRotation3D.w = fVar4;
-          GizmoTransform::GizmoTransform_OnLocalRotation3DChanged(pGVar1,(MethodInfo *)0x0);
+    pGVar2 = (this->fields)._transform;
+    if (pGVar2 != (GizmoTransform *)0x0) {
+      aQStack_8[0].x = (this->fields)._localRotation3D.x;
+      aQStack_8[0].y = (this->fields)._localRotation3D.y;
+      aQStack_8[0].z = (this->fields)._localRotation3D.z;
+      aQStack_8[0].w = (this->fields)._localRotation3D.w;
+      GizmoTransform::GizmoTransform_set_LocalRotation3D(pGVar2,aQStack_8,(MethodInfo *)0x0);
+      pGVar2 = (this->fields)._transform;
+      fVar7 = (this->fields)._localPosition2D.x;
+      fVar12 = (this->fields)._localPosition2D.y;
+      if (pGVar2 != (GizmoTransform *)0x0) {
+        if (((pGVar2->fields)._firingChanged2DEvent == 0) &&
+           (fVar13 = (pGVar2->fields)._localPosition2D.x - fVar7,
+           fVar14 = (pGVar2->fields)._localPosition2D.y - fVar12,
+           fVar1 <= fVar14 * fVar14 + fVar13 * fVar13)) {
+          (pGVar2->fields)._localPosition2D.x = fVar7;
+          (pGVar2->fields)._localPosition2D.y = fVar12;
+          GizmoTransform::GizmoTransform_OnLocalPosition2DChanged(pGVar2,(MethodInfo *)0x0);
         }
-      }
-      pGVar1 = (this->fields)._transform;
-      pVVar23 = &(this->fields)._localPosition2D;
-      fVar2 = pVVar23->x;
-      fVar3 = (this->fields)._localPosition2D.y;
-      if (pGVar1 != (GizmoTransform *)0x0) {
-        if (((pGVar1->fields)._firingChanged2DEvent == 0) &&
-           (fVar4 = (pGVar1->fields)._localPosition2D.x - fVar2,
-           fVar5 = (pGVar1->fields)._localPosition2D.y - fVar3,
-           bVar24 = fVar5 * fVar5 + fVar4 * fVar4 < _UNK_?, !bVar24)) {
-          (pGVar1->fields)._localPosition2D.x = fVar2;
-          (pGVar1->fields)._localPosition2D.y = fVar3;
-          if ((pGVar1->fields)._parent != (GizmoTransform *)0x0) {
-            point.z._0_1_ = bVar24;
-            point.x = pVVar23->x;
-            point.y = pVVar23->y;
-            point.z._1_3_ = 0;
-            pVVar9 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                                ((Vector3 *)&stack0xffffffd8,
-                                 (((pGVar1->fields)._parent)->fields)._rotation2D,point,
-                                 (MethodInfo *)0x0);
-            uVar25 = pVVar9->x;
-            uVar26 = pVVar9->y;
-            pGVar7 = (pGVar1->fields)._parent;
-            if (pGVar7 == (GizmoTransform *)0x0) goto code_?;
-            fVar2 = (pGVar7->fields)._position2D.x + (float)uVar25;
-            fVar3 = (pGVar7->fields)._position2D.y + (float)uVar26;
-          }
-          (pGVar1->fields)._position2D.x = fVar2;
-          (pGVar1->fields)._position2D.y = fVar3;
-          GizmoTransform::GizmoTransform_UpdateChildTransforms2D(pGVar1,(MethodInfo *)0x0);
-          (pGVar1->fields)._firingChanged2DEvent = 1;
-          if ((pGVar1->fields).Changed != (GizmoEntityTransformChangedHandler *)0x0) {
-            (*(((pGVar1->fields).Changed)->fields)._._.invoke_impl)();
-          }
-          (pGVar1->fields)._firingChanged2DEvent = 0;
-        }
-        pGVar1 = (this->fields)._transform;
-        if (pGVar1 != (GizmoTransform *)0x0) {
-          if ((pGVar1->fields)._firingChanged2DEvent != 0) {
+        pGVar2 = (this->fields)._transform;
+        if (pGVar2 != (GizmoTransform *)0x0) {
+          if ((pGVar2->fields)._firingChanged2DEvent != 0) {
             return;
           }
-          fVar2 = (this->fields)._localRotation2D_Degrees;
-          if ((pGVar1->fields)._localRotation2DDegrees == fVar2) {
+          fVar1 = (this->fields)._localRotation2D_Degrees;
+          if ((pGVar2->fields)._localRotation2DDegrees == fVar1) {
             return;
           }
-          (pGVar1->fields)._localRotation2DDegrees = fVar2;
-          if (cRam_? == '\0') {
-            func_?();
+          bVar15 = cRam_? == '\0';
+          (pGVar2->fields)._localRotation2DDegrees = fVar1;
+          if (bVar15) {
+            FUN_?(&TypeInfo__UnityEngine__Vector3);
+            LOCK();
+            UNLOCK();
             cRam_? = '\x01';
           }
-          pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                              ((Quaternion *)&stack0xffffffb8,fVar2,
-                               TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
-                               (MethodInfo *)0x0);
-          pQVar6 = QuaternionEx::QuaternionEx_Normalize
-                              ((Quaternion *)&stack0xffffffb8,*pQVar6,(MethodInfo *)0x0);
-          fVar2 = pQVar6->y;
-          fVar3 = pQVar6->z;
-          fVar4 = pQVar6->w;
-          (pGVar1->fields)._localRotation2D.x = pQVar6->x;
-          (pGVar1->fields)._localRotation2D.y = fVar2;
-          (pGVar1->fields)._localRotation2D.z = fVar3;
-          (pGVar1->fields)._localRotation2D.w = fVar4;
-          GizmoTransform::GizmoTransform_OnLocalRotation2DChanged(pGVar1,(MethodInfo *)0x0);
+          pVVar16 = TypeInfo__UnityEngine__Vector3->static_fields;
+          uStack_11._0_4_ = (pVVar16->forwardVector).x;
+          uStack_11._4_4_ = (pVVar16->forwardVector).y;
+          fStack_17 = (pVVar16->forwardVector).z;
+          aQStack_8[0].x = 0.0;
+          aQStack_8[0].y = 0.0;
+          aQStack_8[0].z = 0.0;
+          aQStack_8[0].w = 0.0;
+          pcVar18 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar18 = (code *)FUN_?(&UNK_?), pcVar18 == (code *)0x0)) {
+            uVar19 = func_?(&UNK_?);
+            FUN_?(uVar19,0);
+            pcVar18 = (code *)swi(3);
+            (*pcVar18)();
+            return;
+          }
+          pcRam_? = pcVar18;
+          (*pcRam_?)(fVar1,&uStack_11,aQStack_8);
+          fVar7 = aQStack_8[0].y;
+          fVar1 = aQStack_8[0].x;
+          fVar12 = aQStack_8[0].z;
+          fStack_20 = aQStack_8[0].w;
+          fVar13 = aQStack_8[0].y * aQStack_8[0].y + aQStack_8[0].x * aQStack_8[0].x +
+                   aQStack_8[0].z * aQStack_8[0].z + aQStack_8[0].w * aQStack_8[0].w;
+          if (fVar13 < 0.0) {
+            fVar13 = (float)FUN_?(fVar13);
+          }
+          else {
+            fVar13 = SQRT(fVar13);
+          }
+          if (_UNK_? <= fVar13) {
+            fVar13 = _UNK_? / fVar13;
+            fVar1 = fVar1 * fVar13;
+            fVar7 = fVar7 * fVar13;
+            fVar12 = fVar12 * fVar13;
+            fStack_20 = fStack_20 * fVar13;
+          }
+          uStack_11 = CONCAT44(fVar7,fVar1);
+          (pGVar2->fields)._localRotation2D.x = fVar1;
+          (pGVar2->fields)._localRotation2D.y = fVar7;
+          (pGVar2->fields)._localRotation2D.z = fVar12;
+          (pGVar2->fields)._localRotation2D.w = fStack_20;
+          fStack_17 = fVar12;
+          GizmoTransform::GizmoTransform_OnLocalRotation2DChanged(pGVar2,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
-code_?:
-  func_?();
-  pcVar27 = (code *)swi(3);
-  (*pcVar27)();
+  FUN_?();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -227,116 +172,207 @@ LocalGizmoTransformSnapshot_GetSnapshotCollection
           (IEnumerable_1_RTG_Gizmo_ *gizmos,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__IDisposable);
-    func_?(&TypeInfo__System__Collections__Generic__IEnumerable<RTG::Gizmo>);
-    func_?(&TypeInfo__System__Collections__Generic__IEnumerator<RTG::Gizmo>);
-    func_?(&TypeInfo__System__Collections__IEnumerator);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::LocalGizmoTransformSnapshot>__Add_RTG__LocalGizmoTransformSnapshot_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::LocalGizmoTransformSnapshot>__List__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::LocalGizmoTransformSnapshot>__List_int_
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__List<RTG::LocalGizmoTransformSnapshot>)
-    ;
-    func_?(&TypeInfo__RTG__LocalGizmoTransformSnapshot);
+    FUN_?(&TypeInfo__System__IDisposable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__IEnumerable<RTG::Gizmo>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__IEnumerator<RTG::Gizmo>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__IEnumerator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::LocalGizmoTransformSnapshot>__Add_RTG__LocalGizmoTransformSnapshot_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::LocalGizmoTransformSnapshot>__List__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::LocalGizmoTransformSnapshot>__List_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<RTG::LocalGizmoTransformSnapshot>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__LocalGizmoTransformSnapshot);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-          *)func_?(
-                           TypeInfo__System__Collections__Generic__List<RTG::LocalGizmoTransformSnapshot>
-                           );
+  pLVar1 = (List_1_RTG_LocalGizmoTransformSnapshot_ *)
+            FUN_?(
+                         TypeInfo__System__Collections__Generic__List<RTG::LocalGizmoTransformSnapshot>
+                         );
   if (gizmos == (IEnumerable_1_RTG_Gizmo_ *)0x0) {
     mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
     __Il2CppFullySharedGenericType]::
     LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this,
+              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar1,
                MethodInfo__System__Collections__Generic__List<RTG::LocalGizmoTransformSnapshot>__List__
               );
-    *unaff_FS_OFFSET = uStack_3;
-    return (List_1_RTG_LocalGizmoTransformSnapshot_ *)this;
+    return pLVar1;
   }
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
-  MultiColumnCollectionHeader+ViewState+ColumnState]::
-  List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
-            (this,0x14,
-             MethodInfo__System__Collections__Generic__List<RTG::LocalGizmoTransformSnapshot>__List_int_
-            );
-  piVar4 = (int *)func_?(0,TypeInfo__System__Collections__Generic__IEnumerable<RTG::Gizmo>,
-                                  gizmos);
-  uStack_1 = 1;
-  while (piVar4 != (int *)0x0) {
-    cVar5 = func_?();
-    if (cVar5 == '\0') {
-      uStack_1 = 0xffffffff;
-      if (piVar4 != (int *)0x0) {
-        func_?();
+  pvVar2 = MethodInfo__System__Collections__Generic__List<RTG::LocalGizmoTransformSnapshot>__List_int_
+            ->klass->rgctx_data[3].rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar2 + 0x135) & 1) == 0) {
+    pvVar2 = (void *)FUN_?(pvVar2);
+  }
+  pLVar3 = (LocalGizmoTransformSnapshot__Array *)FUN_?(pvVar2,0x14);
+  (pLVar1->fields)._items = pLVar3;
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)&pLVar1->fields >> 0xc);
+    uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+    do {
+      uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+      puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+      LOCK();
+      bVar8 = uVar6 == *puVar7;
+      if (bVar8) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
       }
-      *unaff_FS_OFFSET = uStack_3;
-      return (List_1_RTG_LocalGizmoTransformSnapshot_ *)this;
+      UNLOCK();
+    } while (!bVar8);
+  }
+  plVar9 = (longlong *)
+            FUN_?(0,TypeInfo__System__Collections__Generic__IEnumerable<RTG::Gizmo>,gizmos);
+  do {
+    if (plVar9 == (longlong *)0x0) {
+code_?:
+      FUN_?();
+      FUN_?();
+      pcVar10 = (code *)swi(3);
+      pLVar1 = (List_1_RTG_LocalGizmoTransformSnapshot_ *)(*pcVar10)();
+      return pLVar1;
     }
-    if (piVar4 == (int *)0x0) break;
-    iVar6 = *piVar4;
-    uVar7 = 0;
-    if (*(ushort *)(iVar6 + 0xb6) != 0) {
+    cVar11 = FUN_?(0,TypeInfo__System__Collections__IEnumerator);
+    if (cVar11 == '\0') {
+      if (plVar9 == (longlong *)0x0) {
+        return pLVar1;
+      }
+      FUN_?(0,TypeInfo__System__IDisposable,plVar9);
+      return pLVar1;
+    }
+    if (plVar9 == (longlong *)0x0) {
+code_?:
+      FUN_?();
+      goto code_?;
+    }
+    lVar12 = *plVar9;
+    uVar13 = 0;
+    if (*(ushort *)(lVar12 + 0x12e) != 0) {
       do {
-        if (*(IEnumerator_1_RTG_Gizmo___Class **)(*(int *)(iVar6 + 0x58) + (uint)uVar7 * 8) ==
+        if (*(IEnumerator_1_RTG_Gizmo___Class **)
+             (*(longlong *)(lVar12 + 0xb0) + (ulonglong)uVar13 * 0x10) ==
             TypeInfo__System__Collections__Generic__IEnumerator<RTG::Gizmo>) {
-          puVar8 = (undefined4 *)
-                   (iVar6 + (*(int *)(*(int *)(iVar6 + 0x58) + 4 + (uint)uVar7 * 8) + 0x18) * 8);
+          puVar14 = (undefined8 *)
+                    ((longlong)*(int *)(*(longlong *)(lVar12 + 0xb0) + 8 + (ulonglong)uVar13 * 0x10)
+                     * 0x10 + 0x138 + lVar12);
           goto code_?;
         }
-        uVar7 = uVar7 + 1;
-      } while (uVar7 < *(ushort *)(iVar6 + 0xb6));
+        uVar13 = uVar13 + 1;
+      } while (uVar13 < *(ushort *)(lVar12 + 0x12e));
     }
-    puVar8 = (undefined4 *)func_?();
+    puVar14 = (undefined8 *)
+              FUN_?(plVar9,TypeInfo__System__Collections__Generic__IEnumerator<RTG::Gizmo>,
+                            0);
 code_?:
-    iVar6 = (*(code *)*puVar8)();
-    method_00 = (MethodInfo *)&UNK_?;
-    value = (Object *)func_?();
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (value,ExceptionArgument__Enum_obj,method_00);
-    if ((iVar6 == 0) || (pOVar9 = *(Object__Class **)(iVar6 + 0xf8), value == (Object *)0x0)) break;
-    if (pOVar9 != (Object__Class *)0x0) {
-      value[1].klass = pOVar9;
-      func_?();
-      value[1].monitor = (MonitorData *)(pOVar9->_1).element_size;
-      func_?();
-      pIVar10 = (pOVar9->_0).castClass;
-      value[2] = *(Object *)&(pOVar9->_0).this_arg.attrs;
-      value[3].klass = (Object__Class *)pIVar10;
-      pIVar10 = (pOVar9->_0).klass;
-      pFVar11 = (pOVar9->_0).fields;
-      pOVar12 = (Object__Class *)(pOVar9->_0).events;
-      value[3].monitor = (MonitorData *)(pOVar9->_0).interopData;
-      value[4].klass = (Object__Class *)pIVar10;
-      value[4].monitor = (MonitorData *)pFVar11;
-      value[5].klass = pOVar12;
-      pOVar12 = (Object__Class *)(pOVar9->_0).implementedInterfaces;
-      value[5].monitor = (MonitorData *)(pOVar9->_0).nestedTypes;
-      value[6].klass = pOVar12;
-      value[6].monitor = (MonitorData *)(pOVar9->_1).initializationExceptionGCHandle;
+    lVar12 = (*(code *)*puVar14)(plVar9,puVar14[1]);
+    item = (Object *)FUN_?(TypeInfo__RTG__LocalGizmoTransformSnapshot);
+    if (lVar12 == 0) {
+code_?:
+      FUN_?();
+      goto code_?;
     }
-    if (this == (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-                 *)0x0) break;
-    mscorlib.dll::System::Collections::Generic::List`1[System::Object]::List_1_System_Object__Add
-              ((List_1_System_Object_ *)this,value,
-               MethodInfo__System__Collections__Generic__List<RTG::LocalGizmoTransformSnapshot>__Add_RTG__LocalGizmoTransformSnapshot_
-              );
-  }
-  func_?();
-  func_?();
-  pcVar13 = (code *)swi(3);
-  pLVar14 = (List_1_RTG_LocalGizmoTransformSnapshot_ *)(*pcVar13)();
-  return pLVar14;
+    pOVar15 = *(Object__Class **)(lVar12 + 0x170);
+    if (item == (Object *)0x0) {
+code_?:
+      FUN_?();
+      goto code_?;
+    }
+    if (pOVar15 != (Object__Class *)0x0) {
+      item[1].klass = pOVar15;
+      if (iRam_? != 0) {
+        uVar4 = (uint)((ulonglong)(item + 1) >> 0xc);
+        uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+        do {
+          uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+          puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+          LOCK();
+          bVar8 = uVar6 == *puVar7;
+          if (bVar8) {
+            *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar8);
+      }
+      iVar16 = iRam_?;
+      item[1].monitor = (MonitorData *)(pOVar15->_0).nestedTypes;
+      if (iVar16 != 0) {
+        uVar4 = (uint)((ulonglong)&item[1].monitor >> 0xc);
+        uVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+        do {
+          uVar6 = *(ulonglong *)(uVar5 * 8 + 0xADDR);
+          puVar7 = (ulonglong *)(uVar5 * 8 + 0xADDR);
+          LOCK();
+          bVar8 = uVar6 == *puVar7;
+          if (bVar8) {
+            *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar8);
+      }
+      TVar17 = (pOVar15->_0).this_arg.data.__klassIndex;
+      item[2].klass = *(Object__Class **)&(pOVar15->_0).byval_arg.attrs;
+      *(TypeDefinitionIndex *)&item[2].monitor = TVar17;
+      uVar18 = *(undefined4 *)&(pOVar15->_0).castClass;
+      uVar19 = *(undefined4 *)((longlong)&(pOVar15->_0).castClass + 4);
+      uVar20 = *(undefined4 *)&(pOVar15->_0).declaringType;
+      *(undefined4 *)((longlong)&item[2].monitor + 4) =
+           *(undefined4 *)((longlong)&(pOVar15->_0).element_class + 4);
+      *(undefined4 *)&item[3].klass = uVar18;
+      *(undefined4 *)((longlong)&item[3].klass + 4) = uVar19;
+      *(undefined4 *)&item[3].monitor = uVar20;
+      uVar18 = *(undefined4 *)&(pOVar15->_0).generic_class;
+      *(undefined4 *)((longlong)&item[3].monitor + 4) =
+           *(undefined4 *)((longlong)&(pOVar15->_0).parent + 4);
+      *(undefined4 *)&item[4].klass = uVar18;
+      *(undefined4 *)((longlong)&item[4].klass + 4) = *(undefined4 *)&(pOVar15->_0).klass;
+    }
+    pMVar21 = 
+    MethodInfo__System__Collections__Generic__List<RTG::LocalGizmoTransformSnapshot>__Add_RTG__LocalGizmoTransformSnapshot_
+    ;
+    if (pLVar1 == (List_1_RTG_LocalGizmoTransformSnapshot_ *)0x0) {
+code_?:
+      FUN_?();
+      goto code_?;
+    }
+    piVar22 = &(pLVar1->fields)._version;
+    *piVar22 = *piVar22 + 1;
+    pLVar3 = (pLVar1->fields)._items;
+    uVar4 = (pLVar1->fields)._size;
+    if (pLVar3 == (LocalGizmoTransformSnapshot__Array *)0x0) {
+      FUN_?();
+      goto code_?;
+    }
+    if (uVar4 < (uint)pLVar3->max_length) {
+      (pLVar1->fields)._size = uVar4 + 1;
+      FUN_?(pLVar3,(longlong)(int)uVar4,item);
+    }
+    else {
+      mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
+      List_1_System_Object__AddWithResize
+                ((List_1_System_Object_ *)pLVar1,item,pMVar21->klass->rgctx_data[0xe].method);
+    }
+  } while( true );
 }
 
 
@@ -348,25 +384,51 @@ void Assembly-CSharp.dll::RTG::LocalGizmoTransformSnapshot::LocalGizmoTransformS
 {
   if (transform != (GizmoTransform *)0x0) {
     (this->fields)._transform = transform;
-    func_?(&this->fields,transform);
-    pGVar1 = (transform->fields)._parent;
-    (this->fields)._parentTransform = pGVar1;
-    func_?(&(this->fields)._parentTransform,pGVar1);
-    fVar2 = (transform->fields)._localPosition3D.y;
-    fVar3 = (transform->fields)._localPosition3D.z;
+    if (iRam_? != 0) {
+      uVar1 = (uint)((ulonglong)&this->fields >> 0xc);
+      uVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6);
+      do {
+        uVar3 = *(ulonglong *)(uVar2 * 8 + 0xADDR);
+        puVar4 = (ulonglong *)(uVar2 * 8 + 0xADDR);
+        LOCK();
+        bVar5 = uVar3 == *puVar4;
+        if (bVar5) {
+          *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar5);
+    }
+    iVar6 = iRam_?;
+    (this->fields)._parentTransform = (transform->fields)._parent;
+    if (iVar6 != 0) {
+      uVar1 = (uint)((ulonglong)&(this->fields)._parentTransform >> 0xc);
+      uVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6);
+      do {
+        uVar3 = *(ulonglong *)(uVar2 * 8 + 0xADDR);
+        puVar4 = (ulonglong *)(uVar2 * 8 + 0xADDR);
+        LOCK();
+        bVar5 = uVar3 == *puVar4;
+        if (bVar5) {
+          *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar5);
+    }
+    fVar7 = (transform->fields)._localPosition3D.y;
+    fVar8 = (transform->fields)._localPosition3D.z;
     (this->fields)._localPosition3D.x = (transform->fields)._localPosition3D.x;
-    (this->fields)._localPosition3D.y = fVar2;
-    (this->fields)._localPosition3D.z = fVar3;
-    fVar3 = (transform->fields)._localRotation3D.y;
-    fVar2 = (transform->fields)._localRotation3D.z;
-    fVar4 = (transform->fields)._localRotation3D.w;
+    (this->fields)._localPosition3D.y = fVar7;
+    (this->fields)._localPosition3D.z = fVar8;
+    fVar8 = (transform->fields)._localRotation3D.y;
+    fVar7 = (transform->fields)._localRotation3D.z;
+    fVar9 = (transform->fields)._localRotation3D.w;
     (this->fields)._localRotation3D.x = (transform->fields)._localRotation3D.x;
-    (this->fields)._localRotation3D.y = fVar3;
-    (this->fields)._localRotation3D.z = fVar2;
-    (this->fields)._localRotation3D.w = fVar4;
-    fVar3 = (transform->fields)._localPosition2D.y;
-    (this->fields)._localPosition2D.x = (transform->fields)._localPosition2D.x;
-    (this->fields)._localPosition2D.y = fVar3;
+    (this->fields)._localRotation3D.y = fVar8;
+    (this->fields)._localRotation3D.z = fVar7;
+    (this->fields)._localRotation3D.w = fVar9;
+    fVar8 = (transform->fields)._localPosition2D.x;
+    (this->fields)._localPosition2D.y = (transform->fields)._localPosition2D.y;
+    (this->fields)._localPosition2D.x = fVar8;
     (this->fields)._localRotation2D_Degrees = (transform->fields)._localRotation2DDegrees;
   }
   return;

@@ -12,7 +12,7 @@ using UnityEngine.UI;
 
 namespace UGUI.Desktop.Scripts.EditMode.Gizmo
 {
-	[RequireComponent(typeof(Button))]
+	[RequireComponent(typeof(UnityEngine.UI.Button))]
 	public class GizmoRotationButtonNg : MonoBehaviour
 	{
 		// Fields

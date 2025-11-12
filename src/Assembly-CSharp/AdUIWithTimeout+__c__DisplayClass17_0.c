@@ -8,23 +8,19 @@ void Assembly-CSharp.dll::AdUIWithTimeout+<>c__DisplayClass17_0::
 
 {
   if (cRam_? == '\0') {
-    pIStack_1 = (IUIStack *)&TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (x != (IUIStack *)0x0) {
-    pIStack_1 = x;
-    pIStack_2 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    uStack_3 = 0;
-    bVar4 = func_?();
-    (this->fields).stackReady = bVar4;
+    bVar1 = FUN_?(0,TypeInfo__UnityEngine__EventSystems__IUIStack,x);
+    (this->fields).stackReady = bVar1;
     return;
   }
-  pIStack_1 = (IUIStack *)&stack0xfffffffc;
-  uVar5 = func_?(&uStack_3);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

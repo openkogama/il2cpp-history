@@ -5,8 +5,23 @@ void Assembly-CSharp.dll::PointerDownController::PointerDownController_Initializ
                (PointerDownController *this,UnityAction *pointerDownCallback,MethodInfo *method)
 
 {
+  bVar1 = iRam_? == 0;
   (this->fields).pointerDownCallback = pointerDownCallback;
-  func_?(&(this->fields).pointerDownCallback,pointerDownCallback);
+  if (bVar1) {
+    (this->fields).isInitialized = 1;
+    return;
+  }
+  uVar2 = (uint)((ulonglong)&(this->fields).pointerDownCallback >> 0xc);
+  puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+  do {
+    uVar4 = *puVar3;
+    LOCK();
+    uVar5 = *puVar3;
+    if (uVar4 == uVar5) {
+      *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+    }
+    UNLOCK();
+  } while (uVar4 != uVar5);
   (this->fields).isInitialized = 1;
   return;
 }
@@ -19,8 +34,9 @@ void Assembly-CSharp.dll::PointerDownController::PointerDownController_OnPointer
 
 {
   if (cRam_? == '\0') {
-    ppMStack_1 = &TypeInfo__MVGameControllerBase;
-    func_?();
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields).isInitialized != 0) {
@@ -30,19 +46,16 @@ void Assembly-CSharp.dll::PointerDownController::PointerDownController_OnPointer
         return;
       }
     }
-    pUVar2 = (this->fields).pointerDownCallback;
-    if (pUVar2 == (UnityAction *)0x0) {
+    pUVar1 = (this->fields).pointerDownCallback;
+    if (pUVar1 == (UnityAction *)0x0) {
 code_?:
-      ppMStack_1 = (MVGameControllerBase__Class **)&stack0xfffffffc;
-      uVar3 = func_?(&puStack_4);
-      func_?(uVar3);
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
-    ppMStack_1 = (pUVar2->fields)._._.method;
-    puStack_6 = (pUVar2->fields)._._.method_code;
-    (*(pUVar2->fields)._._.invoke_impl)();
+    (*(pUVar1->fields)._._.invoke_impl)
+              ((pUVar1->fields)._._.method_code,(pUVar1->fields)._._.method);
   }
   return;
 }

@@ -3,27 +3,32 @@
 
 bool Assembly-CSharp.dll::AvatarModifierPackages+<>c__DisplayClass25_0::
      AvatarModifierPackages_c_DisplayClass25_0__RemoveModifierPackage_b__0
-               (AvatarModifierPackages_c_DisplayClass25_0 *this,AvatarModifierPackage x,
+               (AvatarModifierPackages_c_DisplayClass25_0 *this,AvatarModifierPackage *x,
                MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AvatarModifierPackage);
+    FUN_?(&TypeInfo__AvatarModifierPackage);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__AvatarModifierPackage->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__AvatarModifierPackage);
+  if (*(int *)&(TypeInfo__AvatarModifierPackage->_1).field_0x1c == 0) {
+    FUN_?();
   }
+  uVar1 = x->avatarModifierPackageType;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AvatarModifierPackage);
+    FUN_?(&TypeInfo__AvatarModifierPackage);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__AvatarModifierPackage->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__AvatarModifierPackage);
+  if (*(int *)&(TypeInfo__AvatarModifierPackage->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  if (x.avatarModifierPackageType != (this->fields).modifierPackage.avatarModifierPackageType) {
+  if (uVar1 != (this->fields).modifierPackage.avatarModifierPackageType) {
     return 0;
   }
-  return x.id == (this->fields).modifierPackage.id;
+  return x->id == (this->fields).modifierPackage.id;
 }
 

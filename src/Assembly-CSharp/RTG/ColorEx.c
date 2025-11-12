@@ -19,49 +19,45 @@ Color * Assembly-CSharp.dll::RTG::ColorEx::ColorEx_FromByteValues
 
 Color__Array *
 Assembly-CSharp.dll::RTG::ColorEx::ColorEx_GetFilledColorArray
-          (int32_t arrayLength,Color fillValue,MethodInfo *method)
+          (int32_t arrayLength,Color *fillValue,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Color);
+    FUN_?(&TypeInfo__UnityEngine__Color);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pCVar1 = (Color__Array *)func_?(TypeInfo__UnityEngine__Color,arrayLength);
+  pCVar1 = (Color__Array *)FUN_?(TypeInfo__UnityEngine__Color,arrayLength);
   if (0 < arrayLength) {
     uVar2 = 0;
-    pCVar3 = pCVar1;
+    pCVar3 = pCVar1->vector;
+    uVar4 = uVar2;
     if (pCVar1 == (Color__Array *)0x0) {
-      func_?();
-code_?:
-      func_?();
-      pcVar4 = (code *)swi(3);
-      pCVar1 = (Color__Array *)(*pcVar4)();
+      FUN_?();
+      pcVar5 = (code *)swi(3);
+      pCVar1 = (Color__Array *)(*pcVar5)();
       return pCVar1;
     }
     do {
-      if (pCVar1->max_length <= uVar2) goto code_?;
-      pCVar3->vector[0].r = fillValue.r;
-      pCVar3->vector[0].g = fillValue.g;
-      pCVar3->vector[0].b = fillValue.b;
-      pCVar3->vector[0].a = fillValue.a;
-      uVar2 = uVar2 + 1;
-      pCVar3 = (Color__Array *)pCVar3->vector;
-    } while ((int)uVar2 < arrayLength);
+      if ((uint)pCVar1->max_length <= (uint)uVar2) {
+        FUN_?();
+        pcVar5 = (code *)swi(3);
+        pCVar1 = (Color__Array *)(*pcVar5)();
+        return pCVar1;
+      }
+      fVar6 = fillValue->g;
+      fVar7 = fillValue->b;
+      fVar8 = fillValue->a;
+      uVar2 = (ulonglong)((uint)uVar2 + 1);
+      uVar4 = uVar4 + 1;
+      pCVar3->r = fillValue->r;
+      pCVar3->g = fVar6;
+      pCVar3->b = fVar7;
+      pCVar3->a = fVar8;
+      pCVar3 = pCVar3 + 1;
+    } while ((longlong)uVar4 < (longlong)arrayLength);
   }
   return pCVar1;
-}
-
-
-/* Color KeepAllButAlpha(Color, Single) */
-
-Color * Assembly-CSharp.dll::RTG::ColorEx::ColorEx_KeepAllButAlpha
-                  (Color *__return_storage_ptr__,Color color,float newAlpha,MethodInfo *method)
-
-{
-  __return_storage_ptr__->r = color.r;
-  __return_storage_ptr__->g = color.g;
-  __return_storage_ptr__->b = color.b;
-  __return_storage_ptr__->a = newAlpha;
-  return __return_storage_ptr__;
 }
 

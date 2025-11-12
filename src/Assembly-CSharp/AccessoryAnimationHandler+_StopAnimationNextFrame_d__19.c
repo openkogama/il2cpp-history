@@ -7,7 +7,9 @@ bool Assembly-CSharp.dll::AccessoryAnimationHandler+<StopAnimationNextFrame>d__1
 
 {
   if (cRam_? == '\0') {
-    func_?(&::StringLiteral__);
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   iVar1 = (this->fields).__1__state;
@@ -24,18 +26,46 @@ bool Assembly-CSharp.dll::AccessoryAnimationHandler+<StopAnimationNextFrame>d__1
        (this_00 = (pAVar2->fields).animations, this_00 != (Animation *)0x0)) {
       UnityEngine.AnimationModule.dll::UnityEngine::Animation::Animation_Stop
                 (this_00,(MethodInfo *)0x0);
+      bVar3 = iRam_? != 0;
       (pAVar2->fields).currentCrossFadedAnimation = ::StringLiteral__;
-      func_?(&(pAVar2->fields).currentCrossFadedAnimation,::StringLiteral__);
+      if (bVar3) {
+        uVar4 = (uint)((ulonglong)&(pAVar2->fields).currentCrossFadedAnimation >> 0xc);
+        lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+          puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+          LOCK();
+          bVar3 = uVar6 == *puVar7;
+          if (bVar3) {
+            *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar3);
+      }
       return 0;
     }
-    func_?();
-    pcVar3 = (code *)swi(3);
-    bVar4 = (*pcVar3)();
-    return bVar4;
+    FUN_?();
+    pcVar8 = (code *)swi(3);
+    bVar9 = (*pcVar8)();
+    return bVar9;
   }
+  bVar3 = iRam_? != 0;
   (this->fields)._hasFramePassed_5__2 = 1;
   (this->fields).__2__current = (Object *)0x0;
-  func_?(&(this->fields).__2__current,0);
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)&(this->fields).__2__current >> 0xc);
+    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+      puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+      LOCK();
+      bVar3 = uVar6 == *puVar7;
+      if (bVar3) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar3);
+  }
   (this->fields).__1__state = 1;
   return 1;
 }
@@ -52,10 +82,10 @@ void Assembly-CSharp.dll::AccessoryAnimationHandler+<StopAnimationNextFrame>d__1
   this_00 = (NotSupportedException *)func_?(uVar1);
   mscorlib.dll::System::NotSupportedException::NotSupportedException__ctor
             (this_00,(MethodInfo *)0x0);
-  func_?(&
-                  MethodInfo__AccessoryAnimationHandler___StopAnimationNextFrame_d__19__System_Collections_IEnumerator_Reset__
-                 );
-  func_?(this_00);
+  uVar1 = func_?(&
+                              MethodInfo__AccessoryAnimationHandler___StopAnimationNextFrame_d__19__System_Collections_IEnumerator_Reset__
+                             );
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;

@@ -6,70 +6,179 @@ void Assembly-CSharp.dll::BoostIconActivationEffectController::
                (BoostIconActivationEffectController *this,MethodInfo *method)
 
 {
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_LocalPlayer((MethodInfo *)0x0);
-  if ((pMVar1 != (MVLocalPlayer *)0x0) &&
-     (this_00 = (pMVar1->fields).boostController, this_00 != (BoostController *)0x0)) {
-    bVar2 = BoostController::BoostController_IsBoostActive
-                      (this_00,(this->fields).boostType,(MethodInfo *)0x0);
-    if (bVar2 == 0) {
-      pUVar3 = (this->fields).startNewEffect;
-      if (pUVar3 != (UnityAction *)0x0) {
-        (*(pUVar3->fields)._._.invoke_impl)((pUVar3->fields)._._.method_code);
+  MVTriggerBox::MVTriggerBox_OnExit((MVTriggerBox *)0x0,(MVPlayer *)method,in_R8);
+  if ((extraout_RAX != 0) && (*(BoostController **)(extraout_RAX + 0xa0) != (BoostController *)0x0))
+  {
+    bVar1 = BoostController::BoostController_IsBoostActive
+                      (*(BoostController **)(extraout_RAX + 0xa0),(this->fields).boostType,
+                       (MethodInfo *)0x0);
+    if (bVar1 == 0) {
+      pUVar2 = (this->fields).startNewEffect;
+      if (pUVar2 != (UnityAction *)0x0) {
+        (*(pUVar2->fields)._._.invoke_impl)
+                  ((pUVar2->fields)._._.method_code,(pUVar2->fields)._._.method);
         return;
       }
     }
     else {
-      this_01 = (this->fields).canvasGroup;
-      if (this_01 != (CanvasGroup *)0x0) {
+      this_00 = (this->fields).canvasGroup;
+      if (this_00 != (CanvasGroup *)0x0) {
         UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                  (this_01,1.0,(MethodInfo *)0x0);
+                  (this_00,_UNK_?,(MethodInfo *)0x0);
+        pcVar3 = pcRam_?;
         (this->fields).currentState = 1;
-        fVar4 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-        (this->fields).stateStartTime = fVar4;
+        pcVar4 = pcRam_?;
+        if ((pcVar3 == (code *)0x0) &&
+           (pcVar3 = (code *)FUN_?(&UNK_?), pcVar4 = pcVar3, pcVar3 == (code *)0x0))
+        {
+          uVar5 = func_?(&UNK_?);
+          FUN_?(uVar5,0);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        pcRam_? = pcVar4;
+        fVar6 = (float)(*pcVar3)();
+        (this->fields).stateStartTime = fVar6;
         (this->fields).haveStartedNewEffect = 0;
-        this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            ((Component *)this,(MethodInfo *)0x0);
-        this_03 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                            ((Component *)this,(MethodInfo *)0x0);
-        pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+        obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)this,(MethodInfo *)0x0);
+        obj_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                            ((Component *)this,(MethodInfo *)0x0);
-        if (pTVar5 != (Transform *)0x0) {
-          pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                             (&VStack_7,pTVar5,(MethodInfo *)0x0);
-          puStack_8 = (undefined *)pVVar6->x;
-          fStack_9 = (this->fields).originalYPosition;
-          pTVar5 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+        pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                           ((Component *)this,(MethodInfo *)0x0);
+        if (pTVar7 != (Transform *)0x0) {
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pvVar8 = (pTVar7->fields)._._.m_CachedPtr;
+          if (pvVar8 == (void *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+            pcVar3 = (code *)swi(3);
+            (*pcVar3)();
+            return;
+          }
+          pcVar3 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+            uVar5 = func_?(&UNK_?);
+            FUN_?(uVar5,0);
+            pcVar3 = (code *)swi(3);
+            (*pcVar3)();
+            return;
+          }
+          pcRam_? = pcVar3;
+          (*pcRam_?)(pvVar8);
+          fVar6 = (this->fields).originalYPosition;
+          pTVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                              ((Component *)this,(MethodInfo *)0x0);
-          if (pTVar5 != (Transform *)0x0) {
-            VStack_7.x = (float)puStack_8;
-            VStack_7.y = fStack_9;
-            pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                               ((Vector3 *)&stack0xffffffdc,pTVar5,(MethodInfo *)0x0);
-            fVar4 = pVVar6->z;
-            VStack_7.z = fVar4;
-            if (this_03 != (Transform *)0x0) {
-              value.y = VStack_7.y;
-              value.x = VStack_7.x;
-              value.z = fVar4;
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                        (this_03,value,(MethodInfo *)0x0);
-              if (this_02 != (Transform *)0x0) {
-                value_00.y = VStack_7.y;
-                value_00.x = VStack_7.x;
-                value_00.z = fVar4;
-                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                          (this_02,value_00,(MethodInfo *)0x0);
+          if (pTVar7 != (Transform *)0x0) {
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                           );
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pvVar8 = (pTVar7->fields)._._.m_CachedPtr;
+            if (pvVar8 == (void *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+              ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar7,(MethodInfo *)0x0);
+              pcVar3 = (code *)swi(3);
+              (*pcVar3)();
+              return;
+            }
+            pcVar3 = pcRam_?;
+            if ((pcRam_? == (code *)0x0) &&
+               (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+              uVar5 = func_?(&UNK_?);
+              FUN_?(uVar5,0);
+              pcVar3 = (code *)swi(3);
+              (*pcVar3)();
+              return;
+            }
+            pcRam_? = pcVar3;
+            (*pcRam_?)(pvVar8);
+            if (obj_00 != (Transform *)0x0) {
+              if (cRam_? == '\0') {
+                FUN_?(&
+                              void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                             );
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              pvVar8 = (obj_00->fields)._._.m_CachedPtr;
+              if (pvVar8 == (void *)0x0) {
+                UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                ThrowHelper_2_ThrowNullReferenceException((Object *)obj_00,(MethodInfo *)0x0);
+                pcVar3 = (code *)swi(3);
+                (*pcVar3)();
+                return;
+              }
+              pcVar3 = pcRam_?;
+              if ((pcRam_? == (code *)0x0) &&
+                 (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+                uVar5 = func_?(&UNK_?);
+                FUN_?(uVar5,0);
+                pcVar3 = (code *)swi(3);
+                (*pcVar3)();
+                return;
+              }
+              pcRam_? = pcVar3;
+              (*pcRam_?)(pvVar8);
+              if (obj != (Transform *)0x0) {
+                lStack_9 = (ulonglong)(uint)fVar6 << 0x20;
+                uStack_10 = 0;
+                if (cRam_? == '\0') {
+                  FUN_?(&
+                                void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                               );
+                  LOCK();
+                  UNLOCK();
+                  cRam_? = '\x01';
+                }
+                pvVar8 = (obj->fields)._._.m_CachedPtr;
+                if (pvVar8 != (void *)0x0) {
+                  pcVar3 = pcRam_?;
+                  if ((pcRam_? == (code *)0x0) &&
+                     (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+                    uVar5 = func_?(&UNK_?);
+                    FUN_?(uVar5,0);
+                    pcVar3 = (code *)swi(3);
+                    (*pcVar3)();
+                    return;
+                  }
+                  pcRam_? = pcVar3;
+                  (*pcRam_?)(pvVar8,&lStack_9);
+                  return;
+                }
+                UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+                pcVar3 = (code *)swi(3);
+                (*pcVar3)();
                 return;
               }
             }
+            FUN_?();
+            pcVar3 = (code *)swi(3);
+            (*pcVar3)();
+            return;
           }
         }
       }
     }
   }
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -83,64 +192,174 @@ void Assembly-CSharp.dll::BoostIconActivationEffectController::
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<BoostIconActivationEffectController::BoosterIcons>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<BoostIconActivationEffectController::BoosterIcons>__get_Item_int_
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<BoostIconActivationEffectController::BoosterIcons>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<BoostIconActivationEffectController::BoosterIcons>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  index = 0;
   pLVar1 = (this->fields).boosterIcons;
-  do {
-    if (pLVar1 == (List_1_BoostIconActivationEffectController_BoosterIcons_ *)0x0) {
+  uVar2 = 0;
+  if (pLVar1 != (List_1_BoostIconActivationEffectController_BoosterIcons_ *)0x0) {
+    lVar3 = 0x20;
+    do {
+      if ((pLVar1->fields)._size <= (int)uVar2) {
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Component>_UnityEngine__Component_
+                       );
+          LOCK();
+          UNLOCK();
+          FUN_?(&
+                        UnityEngine__Transform_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::Transform>_void__
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pvVar4 = (this->fields)._._._._.m_CachedPtr;
+        if (pvVar4 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)this,(MethodInfo *)0x0);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
+        }
+        pcVar5 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+          uVar6 = func_?(&UNK_?);
+          FUN_?(uVar6,0);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
+        }
+        pcRam_? = pcVar5;
+        pvVar4 = (void *)(*pcRam_?)(pvVar4);
+        pOVar7 = UnityEngine.CoreModule.dll::UnityEngine::Bindings::Unmarshal::
+                 Unmarshal_UnmarshalUnityObject
+                           (pvVar4,
+                            UnityEngine__Transform_MethodInfo__UnityEngine__Bindings__Unmarshal__UnmarshalUnityObject<UnityEngine::Transform>_void__
+                           );
+        if (pOVar7 != (Object *)0x0) {
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          uStack_8 = 0;
+          uStack_9 = 0;
+          pOVar10 = pOVar7[1].klass;
+          if (pOVar10 == (Object__Class *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException(pOVar7,(MethodInfo *)0x0);
+            pcVar5 = (code *)swi(3);
+            (*pcVar5)();
+            return;
+          }
+          pcVar5 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+            uVar6 = func_?(&UNK_?);
+            FUN_?(uVar6,0);
+            pcVar5 = (code *)swi(3);
+            (*pcVar5)();
+            return;
+          }
+          pcRam_? = pcVar5;
+          (*pcRam_?)(pOVar10,&uStack_8);
+          bVar11 = iRam_? != 0;
+          (this->fields).originalYPosition = uStack_8._4_4_;
+          (this->fields).boostType = type;
+          (this->fields).startNewEffect = startNewEffect;
+          if (bVar11) {
+            uVar2 = (uint)((ulonglong)&(this->fields).startNewEffect >> 0xc);
+            uVar12 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+            do {
+              uVar13 = *(ulonglong *)(uVar12 * 8 + 0xADDR);
+              puVar14 = (ulonglong *)(uVar12 * 8 + 0xADDR);
+              LOCK();
+              bVar11 = uVar13 == *puVar14;
+              if (bVar11) {
+                *puVar14 = uVar13 | 1L << (uVar2 & 0x3f);
+              }
+              UNLOCK();
+            } while (!bVar11);
+          }
+          return;
+        }
+        break;
+      }
+      pLVar1 = (this->fields).boosterIcons;
+      if (pLVar1 == (List_1_BoostIconActivationEffectController_BoosterIcons_ *)0x0) break;
+      if ((uint)(pLVar1->fields)._size <= uVar2) {
 code_?:
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
-      return;
-    }
-    if ((pLVar1->fields)._size <= index) {
-      this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                          ((Component *)this,(MethodInfo *)0x0);
-      if (this_00 != (Transform *)0x0) {
-        pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                           ((Vector3 *)&stack0xfffffff0,this_00,(MethodInfo *)0x0);
-        (this->fields).originalYPosition = pVVar3->y;
-        (this->fields).boostType = type;
-        (this->fields).startNewEffect = startNewEffect;
-        func_?(&(this->fields).startNewEffect,startNewEffect);
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
         return;
       }
-      goto code_?;
-    }
-    pLVar4 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-             (this->fields).boosterIcons;
-    if (pLVar4 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
-    goto code_?;
-    XVar5 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
-            XmlSchemaObjectTable+XmlSchemaObjectEntry]::
-            List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                      (pLVar4,index,
-                       MethodInfo__System__Collections__Generic__List<BoostIconActivationEffectController::BoosterIcons>__get_Item_int_
-                      );
-    pLVar4 = (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-             (this->fields).boosterIcons;
-    if (pLVar4 == (List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)0x0)
-    goto code_?;
-    XVar6 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
-            XmlSchemaObjectTable+XmlSchemaObjectEntry]::
-            List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                      (pLVar4,index,
-                       MethodInfo__System__Collections__Generic__List<BoostIconActivationEffectController::BoosterIcons>__get_Item_int_
-                      );
-    if (XVar6.xso == (XmlSchemaObject *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              ((GameObject *)XVar6.xso,XVar5.qname == (XmlQualifiedName *)type,(MethodInfo *)0x0);
-    pLVar1 = (this->fields).boosterIcons;
-    index = index + 1;
-  } while( true );
+      pBVar15 = (pLVar1->fields)._items;
+      if (pBVar15 == (BoostIconActivationEffectController_BoosterIcons__Array *)0x0) break;
+      if ((uint)pBVar15->max_length <= uVar2) {
+code_?:
+        FUN_?();
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      if (pLVar1 == (List_1_BoostIconActivationEffectController_BoosterIcons_ *)0x0) break;
+      if ((uint)(pLVar1->fields)._size <= uVar2) goto code_?;
+      if (pBVar15 == (BoostIconActivationEffectController_BoosterIcons__Array *)0x0) break;
+      if ((uint)pBVar15->max_length <= uVar2) goto code_?;
+      pOVar7 = *(Object **)((longlong)pBVar15->vector + lVar3 + -0x18);
+      if (pOVar7 == (Object *)0x0) break;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pOVar10 = pOVar7[1].klass;
+      if (pOVar10 == (Object__Class *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException(pOVar7,(MethodInfo *)0x0);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      pcVar5 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+        uVar6 = func_?(&UNK_?);
+        FUN_?(uVar6,0);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      pcRam_? = pcVar5;
+      (*pcRam_?)(pOVar10);
+      pLVar1 = (this->fields).boosterIcons;
+      uVar2 = uVar2 + 1;
+      lVar3 = lVar3 + 0x10;
+    } while (pLVar1 != (List_1_BoostIconActivationEffectController_BoosterIcons_ *)0x0);
+  }
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
+  return;
 }
 
 
@@ -152,9 +371,20 @@ void Assembly-CSharp.dll::BoostIconActivationEffectController::
                BoostIconActivationEffectController_EffectState__Enum newState,MethodInfo *method)
 
 {
+  pcVar1 = pcRam_?;
   (this->fields).currentState = newState;
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  (this->fields).stateStartTime = fVar1;
+  pcVar2 = pcRam_?;
+  if ((pcVar1 == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar2 = pcVar1, pcVar1 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar2;
+  fVar4 = (float)(*pcVar1)();
+  (this->fields).stateStartTime = fVar4;
   return;
 }
 
@@ -167,75 +397,198 @@ void Assembly-CSharp.dll::BoostIconActivationEffectController::
 
 {
   if ((this->fields).currentState == 1) {
-    fVar1 = (this->fields).showingDuration + (this->fields).stateStartTime;
-    fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    if (fVar1 <= fVar2) {
+    fVar1 = (this->fields).stateStartTime;
+    fVar2 = (this->fields).showingDuration;
+    pcVar3 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pcRam_? = pcVar3;
+    fVar5 = (float)(*pcRam_?)();
+    pcVar3 = pcRam_?;
+    if (fVar2 + fVar1 <= fVar5) {
       (this->fields).currentState = 2;
-      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      this_01 = (this->fields).fader;
-      (this->fields).stateStartTime = fVar1;
-      if (this_01 != (NotificationFade *)0x0) {
-        NotificationFade::NotificationFade_Activate(this_01,(MethodInfo *)0x0);
+      pcVar6 = pcRam_?;
+      if ((pcVar3 == (code *)0x0) &&
+         (pcVar3 = (code *)FUN_?(&UNK_?), pcVar6 = pcVar3, pcVar3 == (code *)0x0)) {
+        uVar4 = func_?(&UNK_?);
+        FUN_?(uVar4,0);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
+      }
+      pcRam_? = pcVar6;
+      fVar1 = (float)(*pcVar3)();
+      (this->fields).stateStartTime = fVar1;
+      pNVar7 = (this->fields).fader;
+      if (pNVar7 != (NotificationFade *)0x0) {
+        pCVar8 = (pNVar7->fields).group;
+        (pNVar7->fields).playing = 1;
+        (pNVar7->fields).pauseAt = (pNVar7->fields).duration;
+        if (pCVar8 != (CanvasGroup *)0x0) {
+          UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                    (pCVar8,0.0,(MethodInfo *)0x0);
+          (pNVar7->fields).currentTime = 0.0;
+          return;
+        }
       }
       goto code_?;
     }
   }
   else {
     if ((this->fields).currentState == 2) {
-      UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+      pcVar3 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+        uVar4 = func_?(&UNK_?);
+        FUN_?(uVar4,0);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pcRam_? = pcVar3;
+      fVar5 = (float)(*pcRam_?)();
+      fVar1 = (this->fields).stateStartTime;
+      fVar2 = (this->fields).fadingDuration;
+      obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                      ((Component *)this,(MethodInfo *)0x0);
+      pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
                           ((Component *)this,(MethodInfo *)0x0);
-      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)this,(MethodInfo *)0x0);
-      if (pTVar3 != (Transform *)0x0) {
-        pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                           ((Vector3 *)&fStack_5,pTVar3,(MethodInfo *)0x0);
-        fVar1 = pVVar4->x;
-        pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)this,(MethodInfo *)0x0);
-        if (pTVar3 != (Transform *)0x0) {
-          fStack_5 = fVar1;
-          pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                             ((Vector3 *)&stack0xffffffd4,pTVar3,(MethodInfo *)0x0);
-          if (this_02 != (Transform *)0x0) {
-            value.y = (float)puStack_6;
-            value.x = fStack_5;
-            value.z = pVVar4->z;
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                      (this_02,value,(MethodInfo *)0x0);
-            fVar1 = (this->fields).startNewEffectDelay + (this->fields).stateStartTime;
-            fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                              ((MethodInfo *)0x0);
-            if ((fVar1 <= fVar2) && ((this->fields).haveStartedNewEffect == 0)) {
-              pUVar7 = (this->fields).startNewEffect;
-              if (pUVar7 == (UnityAction *)0x0) goto code_?;
-              puStack8 = (pUVar7->fields)._._.method_code;
-              (*(pUVar7->fields)._._.invoke_impl)();
-              (this->fields).haveStartedNewEffect = 1;
-            }
-            if ((float)this_02 < _UNK_?) {
-              return;
-            }
-            (this->fields).currentState = 0;
-            fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time
-                              ((MethodInfo *)0x0);
-            (this->fields).stateStartTime = fVar1;
+      if (pTVar9 != (Transform *)0x0) {
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pvVar10 = (pTVar9->fields)._._.m_CachedPtr;
+        if (pvVar10 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar9,(MethodInfo *)0x0);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        pcVar3 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+          uVar4 = func_?(&UNK_?);
+          FUN_?(uVar4,0);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        pcRam_? = pcVar3;
+        (*pcRam_?)(pvVar10);
+        pTVar9 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                            ((Component *)this,(MethodInfo *)0x0);
+        if (pTVar9 != (Transform *)0x0) {
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pvVar10 = (pTVar9->fields)._._.m_CachedPtr;
+          if (pvVar10 == (void *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar9,(MethodInfo *)0x0);
+            pcVar3 = (code *)swi(3);
+            (*pcVar3)();
             return;
           }
+          pcVar3 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+            uVar4 = func_?(&UNK_?);
+            FUN_?(uVar4,0);
+            pcVar3 = (code *)swi(3);
+            (*pcVar3)();
+            return;
+          }
+          pcRam_? = pcVar3;
+          (*pcRam_?)(pvVar10);
+          if (obj == (Transform *)0x0) {
+            FUN_?();
+            pcVar3 = (code *)swi(3);
+            (*pcVar3)();
+            return;
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pvVar10 = (obj->fields)._._.m_CachedPtr;
+          if (pvVar10 == (void *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+            pcVar3 = (code *)swi(3);
+            (*pcVar3)();
+            return;
+          }
+          pcVar3 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+            uVar4 = func_?(&UNK_?);
+            FUN_?(uVar4,0);
+            pcVar3 = (code *)swi(3);
+            (*pcVar3)();
+            return;
+          }
+          pcRam_? = pcVar3;
+          (*pcRam_?)(pvVar10);
+          fVar11 = (this->fields).stateStartTime;
+          fVar12 = (this->fields).startNewEffectDelay;
+          pcVar3 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+            uVar4 = func_?(&UNK_?);
+            FUN_?(uVar4,0);
+            pcVar3 = (code *)swi(3);
+            (*pcVar3)();
+            return;
+          }
+          pcRam_? = pcVar3;
+          fVar13 = (float)(*pcRam_?)();
+          if ((fVar12 + fVar11 <= fVar13) && ((this->fields).haveStartedNewEffect == 0)) {
+            pUVar14 = (this->fields).startNewEffect;
+            if (pUVar14 == (UnityAction *)0x0) goto code_?;
+            (*(pUVar14->fields)._._.invoke_impl)((pUVar14->fields)._._.method_code);
+            (this->fields).haveStartedNewEffect = 1;
+          }
+          if ((fVar5 - fVar1) / fVar2 < _UNK_?) {
+            return;
+          }
+          BoostIconActivationEffectController_SetState
+                    (this,BoostIconActivationEffectController_EffectState__Enum_Inactive,
+                     (MethodInfo *)0x0);
+          return;
         }
       }
 code_?:
-      func_?();
-      pcVar9 = (code *)swi(3);
-      (*pcVar9)();
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
     if ((this->fields).currentState == 0) {
-      this_00 = (this->fields).canvasGroup;
-      if (this_00 == (CanvasGroup *)0x0) goto code_?;
+      pCVar8 = (this->fields).canvasGroup;
+      if (pCVar8 == (CanvasGroup *)0x0) goto code_?;
       UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                (this_00,0.0,(MethodInfo *)0x0);
+                (pCVar8,0.0,(MethodInfo *)0x0);
     }
   }
   return;

@@ -7,19 +7,49 @@ void Assembly-CSharp.dll::FirstTimeActivatableRewardFirstLobby::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&TypeInfo__MV__WorldObject__MetaData__FirstTimeEvent);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__MetaData__FirstTimeEvent);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pFVar1 = this;
-  FirstTimeActivatableSetEventOnShow::FirstTimeActivatableSetEventOnShow_OnShow
-            ((FirstTimeActivatableSetEventOnShow *)this,(MethodInfo *)0x0);
-  this = (FirstTimeActivatableRewardFirstLobby *)(pFVar1->fields)._._._.firstTimeEvent;
-  message = (Object *)func_?(TypeInfo__MV__WorldObject__MetaData__FirstTimeEvent,&this);
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Debug);
+  aiStackX_8[0] = (this->fields)._._._.firstTimeEvent;
+  (this->fields)._.setFirstTimeEvent = 1;
+  uVar1 = FUN_?(TypeInfo__MV__WorldObject__MetaData__FirstTimeEvent,aiStackX_8);
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log(message,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__ILogger);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pIVar2 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+  if (pIVar2 != (ILogger_1 *)0x0) {
+    FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar2,3,uVar1);
+    return;
+  }
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

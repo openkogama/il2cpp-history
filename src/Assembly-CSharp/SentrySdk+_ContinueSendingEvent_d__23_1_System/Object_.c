@@ -7,194 +7,357 @@ bool Assembly-CSharp.dll::SentrySdk+<ContinueSendingEvent>d__23`1[System::Object
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__DateTime);
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&TypeInfo__UnityEngine__Networking__DownloadHandlerBuffer);
-    func_?(&TypeInfo__Newtonsoft__Json__JsonConvert);
-    func_?(&TypeInfo__UnityEngine__Networking__UnityWebRequest);
-    func_?(&TypeInfo__UnityEngine__Networking__UploadHandlerRaw);
-    func_?(&StringLiteral_X_Sentry_Auth);
-    func_?(&StringLiteral_POST);
-    func_?(&StringLiteral_yyyy_MM_ddTHH__mm__ss);
-    func_?(&StringLiteral_Sentry_sent_back__);
-    func_?(&StringLiteral_Sentry_sentry_version_5_sentry_c);
-    func_?(&StringLiteral_error_sending_request_to_sentry_);
+    FUN_?(&TypeInfo__System__DateTime);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Networking__DownloadHandlerBuffer);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Newtonsoft__Json__JsonConvert);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Networking__UnityWebRequest);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Networking__UploadHandlerRaw);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_X_Sentry_Auth);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_POST);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_yyyy_MM_ddTHH__mm__ss);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Sentry_sent_back__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Sentry_sentry_version_5_sentry_c);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_error_sending_request_to_sentry_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   iVar1 = (this->fields).__1__state;
-  this_00 = (this->fields).__4__this;
+  pSVar2 = (this->fields).__4__this;
   if (iVar1 == 0) {
+    pOVar3 = (this->fields).event;
     (this->fields).__1__state = -1;
-    if (this_00 != (SentrySdk *)0x0) {
-      SentrySdk::SentrySdk_PrepareEvent
-                (this_00,(SentryEvent *)(this->fields).event,(MethodInfo *)0x0);
-      value = (this->fields).event;
-      if ((TypeInfo__Newtonsoft__Json__JsonConvert->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__Newtonsoft__Json__JsonConvert);
-      }
-      pSVar2 = Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_SerializeObject
-                         (value,(MethodInfo *)0x0);
-      pDVar3 = (this_00->fields)._dsn;
-      if (pDVar3 != (Dsn *)0x0) {
-        pSVar4 = (pDVar3->fields).secretKey;
-        pSVar5 = (pDVar3->fields).publicKey;
-        if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
-        arg0 = mscorlib.dll::System::DateTime::DateTime_ToString_1
-                         ((DateTime *)&stack0xfffffff0,StringLiteral_yyyy_MM_ddTHH__mm__ss,
-                          (MethodInfo *)0x0);
-        pSVar4 = mscorlib.dll::System::String::String_Format_2
-                           (StringLiteral_Sentry_sentry_version_5_sentry_c,(Object *)arg0,
-                            (Object *)pSVar5,(Object *)pSVar4,(MethodInfo *)0x0);
-        pDVar3 = (this_00->fields)._dsn;
-        if ((pDVar3 != (Dsn *)0x0) && (pUVar6 = (pDVar3->fields).callUri, pUVar6 != (Uri *)0x0)) {
-          pSVar5 = (String *)
-                   (*(code *)(pUVar6->klass->vtable).ToString.method)
-                             (pUVar6,(pUVar6->klass->vtable).
-                                     System_Runtime_Serialization_ISerializable_GetObjectData.
-                                     methodPtr);
-          pUVar7 = (UnityWebRequest *)
-                   func_?(TypeInfo__UnityEngine__Networking__UnityWebRequest);
-          UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
-          UnityWebRequest__ctor(pUVar7,pSVar5,(MethodInfo *)0x0);
-          (this->fields)._www_5__2 = pUVar7;
-          func_?(&(this->fields)._www_5__2,pUVar7);
-          pUVar7 = (this->fields)._www_5__2;
-          if (pUVar7 != (UnityWebRequest *)0x0) {
-            UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
-            UnityWebRequest_set_method(pUVar7,StringLiteral_POST,(MethodInfo *)0x0);
-            pUVar7 = (this->fields)._www_5__2;
-            if (pUVar7 != (UnityWebRequest *)0x0) {
-              UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
-              UnityWebRequest_SetRequestHeader
-                        (pUVar7,StringLiteral_X_Sentry_Auth,pSVar4,(MethodInfo *)0x0);
-              pUVar7 = (this->fields)._www_5__2;
-              pEVar8 = mscorlib.dll::System::Text::Encoding::Encoding_get_UTF8((MethodInfo *)0x0);
-              if (pEVar8 != (Encoding *)0x0) {
-                data = (Byte__Array *)
-                       (*(code *)(pEVar8->klass->vtable).GetBytes_1.method)
-                                 (pEVar8,pSVar2,(pEVar8->klass->vtable).GetBytes_2.methodPtr);
-                this_02 = (UploadHandlerRaw *)
-                          func_?(TypeInfo__UnityEngine__Networking__UploadHandlerRaw);
-                UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UploadHandlerRaw::
-                UploadHandlerRaw__ctor(this_02,data,(MethodInfo *)0x0);
-                if (pUVar7 != (UnityWebRequest *)0x0) {
-                  UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
-                  UnityWebRequest_set_uploadHandler
-                            (pUVar7,(UploadHandler *)this_02,(MethodInfo *)0x0);
-                  pUVar7 = (this->fields)._www_5__2;
-                  this_03 = (DownloadHandlerBuffer *)
-                            func_?(TypeInfo__UnityEngine__Networking__DownloadHandlerBuffer
-                                           );
-                  UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::
-                  DownloadHandlerBuffer::DownloadHandlerBuffer__ctor(this_03,(MethodInfo *)0x0);
-                  if (pUVar7 != (UnityWebRequest *)0x0) {
-                    UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest
-                    ::UnityWebRequest_set_downloadHandler
-                              (pUVar7,(DownloadHandler *)this_03,(MethodInfo *)0x0);
-                    pUVar7 = (this->fields)._www_5__2;
-                    if (pUVar7 != (UnityWebRequest *)0x0) {
-                      pUVar9 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::
-                                UnityWebRequest::UnityWebRequest_SendWebRequest
-                                          (pUVar7,(MethodInfo *)0x0);
-                      (this->fields).__2__current = pUVar9;
-                      func_?(&(this->fields).__2__current,pUVar9);
-                      (this->fields).__1__state = 1;
-                      return 1;
-                    }
-                  }
-                }
-              }
-            }
+    if (pSVar2 == (SentrySdk *)0x0) goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__SentrySdk);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pSVar4 = TypeInfo__SentrySdk->static_fields->_instance;
+    if (pSVar4 == (SentrySdk *)0x0) goto code_?;
+    if ((pSVar4->fields).sendDefaultPii != 0) {
+      if ((pOVar3 == (Object *)0x0) || (pMVar5 = pOVar3[4].monitor, pMVar5 == (MonitorData *)0x0))
+      goto code_?;
+      lVar6 = *(longlong *)(pMVar5 + 0x28);
+      pSVar7 = UnityEngine.CoreModule.dll::UnityEngine::SystemInfo::SystemInfo_GetDeviceName
+                          ((MethodInfo *)0x0);
+      if (lVar6 == 0) goto code_?;
+      bVar8 = iRam_? != 0;
+      *(String **)(lVar6 + 0x10) = pSVar7;
+      if (bVar8) {
+        uVar9 = (uint)(lVar6 + 0x10U >> 0xc);
+        lVar6 = (ulonglong)((uVar9 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar10 = *(ulonglong *)(lVar6 + 0xADDR);
+          puVar11 = (ulonglong *)(lVar6 + 0xADDR);
+          LOCK();
+          bVar8 = uVar10 == *puVar11;
+          if (bVar8) {
+            *puVar11 = uVar10 | 1L << (uVar9 & 0x3f);
           }
-        }
+          UNLOCK();
+        } while (!bVar8);
       }
     }
+    pOVar3 = (this->fields).event;
+    if (*(int *)&(TypeInfo__Newtonsoft__Json__JsonConvert->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    pSVar7 = Newtonsoft.Json.dll::Newtonsoft::Json::JsonConvert::JsonConvert_SerializeObject
+                        (pOVar3,(MethodInfo *)0x0);
+    pDVar12 = (pSVar2->fields)._dsn;
+    if (pDVar12 == (Dsn *)0x0) goto code_?;
+    pSVar13 = (pDVar12->fields).secretKey;
+    pSVar14 = (pDVar12->fields).publicKey;
+    if (*(int *)&(TypeInfo__System__DateTime->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    dateTime = mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
+    pSVar15 = StringLiteral_yyyy_MM_ddTHH__mm__ss;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__System__DateTimeFormat);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__System__DateTimeFormat->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    arg0 = mscorlib.dll::System::DateTimeFormat::DateTimeFormat_Format
+                     (dateTime,pSVar15,(IFormatProvider *)0x0,(MethodInfo *)0x0);
+    pSVar15 = StringLiteral_Sentry_sentry_version_5_sentry_c;
+    PStack_16._arg0 = (Object *)0x0;
+    PStack_16._arg1 = (Object *)0x0;
+    PStack_16._arg2 = (Object *)0x0;
+    PStack_16._args = (Object__Array *)0x0;
+    mscorlib.dll::System::ParamsArray::ParamsArray__ctor_2
+              (&PStack_16,(Object *)arg0,(Object *)pSVar14,(Object *)pSVar13,(MethodInfo *)0x0);
+    PStack_17._arg0 = PStack_16._arg0;
+    PStack_17._arg1 = PStack_16._arg1;
+    PStack_17._arg2 = PStack_16._arg2;
+    PStack_17._args = PStack_16._args;
+    pSVar13 = mscorlib.dll::System::String::String_FormatHelper
+                        ((IFormatProvider *)0x0,pSVar15,&PStack_17,(MethodInfo *)0x0);
+    pDVar12 = (pSVar2->fields)._dsn;
+    if ((pDVar12 == (Dsn *)0x0) || (pUVar18 = (pDVar12->fields).callUri, pUVar18 == (Uri *)0x0))
+    goto code_?;
+    pSVar14 = (String *)
+              (*(pUVar18->klass->vtable).ToString.methodPtr)
+                        (pUVar18,(pUVar18->klass->vtable).ToString.method);
+    pUVar19 = (UnityWebRequest *)FUN_?(TypeInfo__UnityEngine__Networking__UnityWebRequest);
+    pcVar20 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar20 = (code *)FUN_?(&UNK_?), pcVar20 == (code *)0x0)) {
+      uVar21 = func_?(&UNK_?);
+      FUN_?(uVar21,0);
+      pcVar20 = (code *)swi(3);
+      bVar22 = (*pcVar20)();
+      return bVar22;
+    }
+    pcRam_? = pcVar20;
+    pvVar23 = (void *)(*pcRam_?)();
+    (pUVar19->fields).m_Ptr = pvVar23;
+    (pUVar19->fields)._disposeDownloadHandlerOnDispose_k__BackingField = 1;
+    (pUVar19->fields)._disposeUploadHandlerOnDispose_k__BackingField = 1;
+    (pUVar19->fields)._disposeCertificateHandlerOnDispose_k__BackingField = 1;
+    UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
+    UnityWebRequest_set_url(pUVar19,pSVar14,(MethodInfo *)0x0);
+    bVar8 = iRam_? != 0;
+    (this->fields)._www_5__2 = pUVar19;
+    if (bVar8) {
+      uVar9 = (uint)((ulonglong)&(this->fields)._www_5__2 >> 0xc);
+      lVar6 = (ulonglong)((uVar9 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar10 = *(ulonglong *)(lVar6 + 0xADDR);
+        puVar11 = (ulonglong *)(lVar6 + 0xADDR);
+        LOCK();
+        bVar8 = uVar10 == *puVar11;
+        if (bVar8) {
+          *puVar11 = uVar10 | 1L << (uVar9 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar8);
+    }
+    pUVar19 = (this->fields)._www_5__2;
+    if (pUVar19 == (UnityWebRequest *)0x0) goto code_?;
+    UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
+    UnityWebRequest_set_method(pUVar19,StringLiteral_POST,(MethodInfo *)0x0);
+    pUVar19 = (this->fields)._www_5__2;
+    if (pUVar19 == (UnityWebRequest *)0x0) goto code_?;
+    UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
+    UnityWebRequest_SetRequestHeader(pUVar19,StringLiteral_X_Sentry_Auth,pSVar13,(MethodInfo *)0x0);
+    pUVar19 = (this->fields)._www_5__2;
+    pEVar24 = mscorlib.dll::System::Text::Encoding::Encoding_get_UTF8((MethodInfo *)0x0);
+    if (pEVar24 == (Encoding *)0x0) goto code_?;
+    data = (Byte__Array *)(*(pEVar24->klass->vtable).GetBytes_1.methodPtr)(pEVar24,pSVar7);
+    this_00 = (UploadHandlerRaw *)FUN_?(TypeInfo__UnityEngine__Networking__UploadHandlerRaw)
+    ;
+    UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UploadHandlerRaw::
+    UploadHandlerRaw__ctor(this_00,data,(MethodInfo *)0x0);
+    if (pUVar19 == (UnityWebRequest *)0x0) goto code_?;
+    UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
+    UnityWebRequest_set_uploadHandler(pUVar19,(UploadHandler *)this_00,(MethodInfo *)0x0);
+    pUVar19 = (this->fields)._www_5__2;
+    this_01 = (DownloadHandlerBuffer *)
+              FUN_?(TypeInfo__UnityEngine__Networking__DownloadHandlerBuffer);
+    UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::DownloadHandlerBuffer::
+    DownloadHandlerBuffer__ctor(this_01,(MethodInfo *)0x0);
+    if (pUVar19 == (UnityWebRequest *)0x0) goto code_?;
+    UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
+    UnityWebRequest_set_downloadHandler(pUVar19,(DownloadHandler *)this_01,(MethodInfo *)0x0);
+    pUVar19 = (this->fields)._www_5__2;
+    if (pUVar19 == (UnityWebRequest *)0x0) goto code_?;
+    pUVar25 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
+              UnityWebRequest_SendWebRequest(pUVar19,(MethodInfo *)0x0);
+    bVar8 = iRam_? != 0;
+    (this->fields).__2__current = pUVar25;
+    if (bVar8) {
+      uVar9 = (uint)((ulonglong)&(this->fields).__2__current >> 0xc);
+      lVar6 = (ulonglong)((uVar9 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar10 = *(ulonglong *)(lVar6 + 0xADDR);
+        puVar11 = (ulonglong *)(lVar6 + 0xADDR);
+        LOCK();
+        bVar8 = uVar10 == *puVar11;
+        if (bVar8) {
+          *puVar11 = uVar10 | 1L << (uVar9 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar8);
+    }
+    (this->fields).__1__state = 1;
+code_?:
+    bVar22 = 1;
   }
   else {
-    if ((iVar1 != 1) && (iVar1 != 2)) {
-      return 0;
-    }
-    pUVar7 = (this->fields)._www_5__2;
-    (this->fields).__1__state = -1;
-    if (pUVar7 != (UnityWebRequest *)0x0) {
-      bVar10 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
-              UnityWebRequest_get_isDone(pUVar7,(MethodInfo *)0x0);
-      if (bVar10 == 0) {
-        (this->fields).__2__current = (UnityWebRequestAsyncOperation *)0x0;
-        func_?(&(this->fields).__2__current,0);
-        (this->fields).__1__state = 2;
-        return 1;
+    if ((iVar1 == 1) || (iVar1 == 2)) {
+      pUVar19 = (this->fields)._www_5__2;
+      (this->fields).__1__state = -1;
+      if (pUVar19 == (UnityWebRequest *)0x0) goto code_?;
+      pvVar23 = (pUVar19->fields).m_Ptr;
+      if (pvVar23 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pUVar19,(MethodInfo *)0x0);
+        pcVar20 = (code *)swi(3);
+        bVar22 = (*pcVar20)();
+        return bVar22;
       }
-      pUVar7 = (this->fields)._www_5__2;
-      if (pUVar7 != (UnityWebRequest *)0x0) {
-        bVar10 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
-                UnityWebRequest_get_isNetworkError(pUVar7,(MethodInfo *)0x0);
-        if (bVar10 == 0) {
-          pUVar7 = (this->fields)._www_5__2;
-          if (pUVar7 == (UnityWebRequest *)0x0) goto code_?;
-          bVar10 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
-                  UnityWebRequest_get_isHttpError(pUVar7,(MethodInfo *)0x0);
-          if (bVar10 == 0) {
-            pUVar7 = (this->fields)._www_5__2;
-            if (pUVar7 == (UnityWebRequest *)0x0) goto code_?;
-            iVar11 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest
-                     ::UnityWebRequest_get_responseCode(pUVar7,(MethodInfo *)0x0);
-            if (iVar11 == 200) {
-              if (this_00 != (SentrySdk *)0x0) {
-                if ((this_00->fields).Debug == 0) {
-                  return 0;
-                }
-                pUVar7 = (this->fields)._www_5__2;
-                if ((pUVar7 != (UnityWebRequest *)0x0) &&
-                   (this_01 = System.dll::System::Net::WebCompletionSource`1[Unity::IL2CPP::Metadata
-                              ::__Il2CppFullySharedGenericType]::
-                              WebCompletionSource_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType__get_CurrentResult
-                                        ((WebCompletionSource_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                                          *)pUVar7,(MethodInfo *)0x0),
-                   this_01 !=
-                   (WebCompletionSource_1_T_Result_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                    *)0x0)) {
-                  pSVar2 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::
-                           DownloadHandler::DownloadHandler_get_text
-                                     ((DownloadHandler *)this_01,(MethodInfo *)0x0);
-                  pSVar2 = mscorlib.dll::System::String::String_Concat_3
-                                     (StringLiteral_Sentry_sent_back__,pSVar2,(MethodInfo *)0x0);
-                  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                    func_?();
+      pcVar20 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar20 = (code *)FUN_?(&UNK_?), pcVar20 == (code *)0x0)) {
+        uVar21 = func_?(&UNK_?);
+        FUN_?(uVar21,0);
+        pcVar20 = (code *)swi(3);
+        bVar22 = (*pcVar20)();
+        return bVar22;
+      }
+      pcRam_? = pcVar20;
+      iVar1 = (*pcRam_?)(pvVar23);
+      if (iVar1 == 0) {
+        bVar8 = iRam_? != 0;
+        (this->fields).__2__current = (UnityWebRequestAsyncOperation *)0x0;
+        if (bVar8) {
+          uVar9 = (uint)((ulonglong)&(this->fields).__2__current >> 0xc);
+          lVar6 = (ulonglong)((uVar9 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar10 = *(ulonglong *)(lVar6 + 0xADDR);
+            puVar11 = (ulonglong *)(lVar6 + 0xADDR);
+            LOCK();
+            bVar8 = uVar10 == *puVar11;
+            if (bVar8) {
+              *puVar11 = uVar10 | 1L << (uVar9 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar8);
+        }
+        (this->fields).__1__state = 2;
+        goto code_?;
+      }
+      pUVar19 = (this->fields)._www_5__2;
+      if (pUVar19 == (UnityWebRequest *)0x0) goto code_?;
+      pvVar23 = (pUVar19->fields).m_Ptr;
+      if (pvVar23 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pUVar19,(MethodInfo *)0x0);
+        pcVar20 = (code *)swi(3);
+        bVar22 = (*pcVar20)();
+        return bVar22;
+      }
+      pcVar20 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar20 = (code *)FUN_?(&UNK_?), pcVar20 == (code *)0x0)) {
+        uVar21 = func_?(&UNK_?);
+        FUN_?(uVar21,0);
+        pcVar20 = (code *)swi(3);
+        bVar22 = (*pcVar20)();
+        return bVar22;
+      }
+      pcRam_? = pcVar20;
+      iVar1 = (*pcRam_?)(pvVar23);
+      if (iVar1 != 2) {
+        pUVar19 = (this->fields)._www_5__2;
+        if (pUVar19 == (UnityWebRequest *)0x0) goto code_?;
+        pvVar23 = (pUVar19->fields).m_Ptr;
+        if (pvVar23 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)pUVar19,(MethodInfo *)0x0);
+          pcVar20 = (code *)swi(3);
+          bVar22 = (*pcVar20)();
+          return bVar22;
+        }
+        pcVar20 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar20 = (code *)FUN_?(&UNK_?), pcVar20 == (code *)0x0)) {
+          uVar21 = func_?(&UNK_?);
+          FUN_?(uVar21,0);
+          pcVar20 = (code *)swi(3);
+          bVar22 = (*pcVar20)();
+          return bVar22;
+        }
+        pcRam_? = pcVar20;
+        iVar1 = (*pcRam_?)(pvVar23);
+        if (iVar1 != 4) {
+          pUVar19 = (this->fields)._www_5__2;
+          if (pUVar19 == (UnityWebRequest *)0x0) goto code_?;
+          UVar26 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
+                   UnityWebRequest_get_result(pUVar19,(MethodInfo *)0x0);
+          if (UVar26 != UnityWebRequest_Result__Enum_ProtocolError) {
+            pUVar19 = (this->fields)._www_5__2;
+            if (pUVar19 == (UnityWebRequest *)0x0) goto code_?;
+            iVar27 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest
+                     ::UnityWebRequest_get_responseCode(pUVar19,(MethodInfo *)0x0);
+            if (iVar27 == 200) {
+              if (pSVar2 == (SentrySdk *)0x0) goto code_?;
+              if ((pSVar2->fields).Debug != 0) {
+                pUVar19 = (this->fields)._www_5__2;
+                if ((pUVar19 != (UnityWebRequest *)0x0) &&
+                   (pDVar28 = (pUVar19->fields).m_DownloadHandler, pDVar28 != (DownloadHandler *)0x0))
+                {
+                  pSVar7 = (String *)
+                            (*(pDVar28->klass->vtable).GetText.methodPtr)
+                                      (pDVar28,(pDVar28->klass->vtable).GetText.method);
+                  pSVar7 = mscorlib.dll::System::String::String_Concat_4
+                                      (StringLiteral_Sentry_sent_back__,pSVar7,(MethodInfo *)0x0);
+                  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+                    FUN_?();
                   }
                   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                            ((Object *)pSVar2,(MethodInfo *)0x0);
+                            ((Object *)pSVar7,(MethodInfo *)0x0);
                   return 0;
                 }
+                goto code_?;
               }
               goto code_?;
             }
           }
         }
-        pUVar7 = (this->fields)._www_5__2;
-        if (pUVar7 != (UnityWebRequest *)0x0) {
-          pSVar2 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
-                   UnityWebRequest_get_error(pUVar7,(MethodInfo *)0x0);
-          pSVar2 = mscorlib.dll::System::String::String_Concat_3
-                             (StringLiteral_error_sending_request_to_sentry_,pSVar2,
-                              (MethodInfo *)0x0);
-          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
-          }
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-                    ((Object *)pSVar2,(MethodInfo *)0x0);
-          return 0;
-        }
       }
-    }
-  }
+      pUVar19 = (this->fields)._www_5__2;
+      if (pUVar19 == (UnityWebRequest *)0x0) {
 code_?:
-  func_?();
-  pcVar12 = (code *)swi(3);
-  bVar10 = (*pcVar12)();
-  return bVar10;
+        FUN_?();
+        pcVar20 = (code *)swi(3);
+        bVar22 = (*pcVar20)();
+        return bVar22;
+      }
+      pSVar7 = UnityEngine.UnityWebRequestModule.dll::UnityEngine::Networking::UnityWebRequest::
+                UnityWebRequest_get_error(pUVar19,(MethodInfo *)0x0);
+      pSVar7 = mscorlib.dll::System::String::String_Concat_4
+                          (StringLiteral_error_sending_request_to_sentry_,pSVar7,(MethodInfo *)0x0)
+      ;
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
+                ((Object *)pSVar7,(MethodInfo *)0x0);
+    }
+code_?:
+    bVar22 = 0;
+  }
+  return bVar22;
 }
 

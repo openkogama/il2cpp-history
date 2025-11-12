@@ -7,21 +7,39 @@ void Assembly-CSharp.dll::ContextMenuButton+<>c::ContextMenuButton_c__OnPointerD
 
 {
   if (cRam_? == '\0') {
-    pIStack_1 = (IHandlePointerDownOnContextMenuButton *)
-                &TypeInfo__IHandlePointerDownOnContextMenuButton;
-    func_?();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (x != (IHandlePointerDownOnContextMenuButton *)0x0) {
-    pIStack_1 = x;
-    pIStack_2 = TypeInfo__IHandlePointerDownOnContextMenuButton;
-    uStack_3 = 0;
-    func_?();
+    uVar1 = 0;
+    pIVar2 = x->klass;
+    uVar3._0_1_ = (pIVar2->_1).rank;
+    uVar3._1_1_ = (pIVar2->_1).minimumAlignment;
+    if (uVar3 != 0) {
+      do {
+        if (pIVar2->interfaceOffsets[uVar1].interfaceType ==
+            (Il2CppClass *)TypeInfo__IHandlePointerDownOnContextMenuButton) {
+          UNRECOVERED_JUMPTABLE =
+               (&pIVar2->vtable)[pIVar2->interfaceOffsets[uVar1].offset].PointerIsDown.methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*UNRECOVERED_JUMPTABLE)
+                    (x,(&pIVar2->vtable)[pIVar2->interfaceOffsets[uVar1].offset].PointerIsDown.
+                       method,UNRECOVERED_JUMPTABLE);
+          return;
+        }
+        uVar1 = uVar1 + 1;
+      } while (uVar1 < uVar3);
+    }
+    puVar4 = (undefined8 *)FUN_?(x);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(code *)*puVar4)(x,puVar4[1],(code *)*puVar4);
     return;
   }
-  pIStack_1 = (IHandlePointerDownOnContextMenuButton *)&stack0xfffffffc;
-  uVar4 = func_?(&uStack_3);
-  func_?(uVar4);
+  FUN_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;
@@ -34,15 +52,26 @@ void Assembly-CSharp.dll::ContextMenuButton+<>c::ContextMenuButton_c__cctor(Meth
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__ContextMenuButton____c);
+    FUN_?(&TypeInfo__ContextMenuButton____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__ContextMenuButton____c;
-  value = (ContextMenuButton_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  TypeInfo__ContextMenuButton____c->static_fields->__9 = value;
-  func_?(TypeInfo__ContextMenuButton____c->static_fields,value);
+  pCVar1 = (ContextMenuButton_c *)FUN_?(TypeInfo__ContextMenuButton____c);
+  TypeInfo__ContextMenuButton____c->static_fields->__9 = pCVar1;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)TypeInfo__ContextMenuButton____c->static_fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 

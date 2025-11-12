@@ -6,13 +6,39 @@ void Assembly-CSharp.dll::CustomTouristPromotionSettings::CustomTouristPromotion
                bool shouldRedirect,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  iVar1 = iRam_?;
   (this->fields)._FrequencyPercent_k__BackingField = frequency;
   (this->fields)._URL_k__BackingField = url;
-  func_?(&(this->fields)._URL_k__BackingField,url);
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._URL_k__BackingField >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields)._AssetURL_k__BackingField = asset;
-  func_?(&(this->fields)._AssetURL_k__BackingField,asset);
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields)._AssetURL_k__BackingField >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
   (this->fields)._Redirect_k__BackingField = shouldRedirect;
   return;
 }

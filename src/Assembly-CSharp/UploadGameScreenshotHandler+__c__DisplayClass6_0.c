@@ -8,19 +8,22 @@ void Assembly-CSharp.dll::UploadGameScreenshotHandler+<>c__DisplayClass6_0::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
-    func_?(&StringLiteral_Screenshot_upload);
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Screenshot_upload);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pSVar1 = (this->fields).text;
-  pSVar2 = TM::TM__(StringLiteral_Screenshot_upload,(MethodInfo *)0x0);
+  TM::TM__(StringLiteral_Screenshot_upload,(MethodInfo *)0x0);
   if (x != (IModalPopupCreator *)0x0) {
-    func_?(4,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,x,pSVar1,pSVar2);
+    FUN_?();
     return;
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

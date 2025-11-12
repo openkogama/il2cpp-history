@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using GoogleMobileAds.Api.Mediation;
 
-// Image 55: GoogleMobileAds.Core.dll - Assembly: GoogleMobileAds.Core, Version=8.7.0.0, Culture=neutral, PublicKeyToken=null
+// Image 60: GoogleMobileAds.Core.dll - Assembly: GoogleMobileAds.Core, Version=8.7.0.0, Culture=neutral, PublicKeyToken=null
 [assembly: AssemblyCompany("Google LLC")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCopyright("Copyright 2023 Google LLC. All Rights Reserved.")]

@@ -5,118 +5,168 @@ void Assembly-CSharp.dll::OutputSignalTransmitter::OutputSignalTransmitter_Send
                (OutputSignalTransmitter *this,bool isHot,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__get_Current__
-                   );
-    func_?(&TypeInfo__IInputSignalReceiver);
-    func_?(&TypeInfo__ILogicWorldObject);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__GetEnumerator__
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__IInputSignalReceiver);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__ILogicWorldObject);
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar4 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if (((pMVar4 != (MVWorldObjectClientManager *)0x0) &&
-      (pMVar5 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                          (pMVar4,(this->fields).woId,(MethodInfo *)0x0),
-      pMVar5 != (MVWorldObject *)0x0)) &&
-     (this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                (pMVar5->fields).outputLinkRefs,
-     this_00 != (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)) {
-    mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-    RegexCharClass+SingleRange]::
-    List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-              ((List_1_T_Enumerator_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-               &stack0xffffffc8,this_00,
-               MethodInfo__System__Collections__Generic__List<MV::WorldObject::Link>__GetEnumerator__
-              );
-    method_00 = (MethodInfo *)0x0;
-    uStack_1 = 1;
-    while( true ) {
-      pMVar6 = 
-      MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__
-      ;
-      bVar7 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-              List_1_T_Enumerator_System_Object__MoveNext
-                        ((List_1_T_Enumerator_System_Object_ *)&stack0xffffffb8,
-                         MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__
-                        );
-      if (bVar7 == 0) {
-        uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&stack0xffffffb8,
-                   (ExceptionArgument__Enum)
-                   MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__Dispose__
-                   ,method_00);
-        *unaff_FS_OFFSET = uStack_3;
-        return;
-      }
-      pMVar4 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-      if (((pMVar6 == (MethodInfo *)0x0) || (pMVar4 == (MVWorldObjectClientManager *)0x0)) ||
-         (pMVar5 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                             (pMVar4,(int32_t)pMVar6->klass,(MethodInfo *)0x0),
-         pMVar5 == (MVWorldObject *)0x0)) break;
-      iVar8 = func_?();
-      if (iVar8 == 0) goto code_?;
-      piVar9 = (int *)func_?();
-      if (piVar9 == (int *)0x0) goto code_?;
-      uVar10 = 0;
-      uVar11 = *(ushort *)(*piVar9 + 0xb6);
-      if (uVar11 != 0) {
-        do {
-          if (*(ILogicWorldObject__Class **)(*(int *)(*piVar9 + 0x58) + (uint)uVar10 * 8) ==
-              TypeInfo__ILogicWorldObject) {
-            puVar12 = (undefined4 *)
-                     (*piVar9 +
-                     (*(int *)(*(int *)(*piVar9 + 0x58) + 4 + (uint)uVar10 * 8) + 0x18) * 8);
-            goto code_?;
-          }
-          uVar10 = uVar10 + 1;
-        } while (uVar10 < uVar11);
-      }
-      puVar12 = (undefined4 *)func_?();
-code_?:
-      piVar9 = (int *)(*(code *)*puVar12)();
-      if (piVar9 == (int *)0x0) break;
-      iVar8 = *piVar9;
-      uVar11 = 0;
-      if (*(ushort *)(iVar8 + 0xb6) != 0) {
-        do {
-          if (*(IInputSignalReceiver__Class **)(*(int *)(iVar8 + 0x58) + (uint)uVar11 * 8) ==
-              TypeInfo__IInputSignalReceiver) {
-            puVar12 = (undefined4 *)
-                     (iVar8 + (*(int *)(*(int *)(iVar8 + 0x58) + 4 + (uint)uVar11 * 8) + 0x18) * 8);
-            goto code_?;
-          }
-          uVar11 = uVar11 + 1;
-        } while (uVar11 < *(ushort *)(iVar8 + 0xb6));
-      }
-      puVar12 = (undefined4 *)func_?();
-code_?:
-      iVar8 = puVar12[1];
-      method_00 = (MethodInfo *)&UNK_?;
-      (*(code *)*puVar12)();
-      *(bool *)(iVar8 + 0x14) = isHot;
-    }
+  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+  if (((pMVar1 == (MVWorldObjectClientManager *)0x0) ||
+      (pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
+                           (pMVar1,(this->fields).woId,(MethodInfo *)0x0),
+      pMVar2 == (MVWorldObjectClient *)0x0)) ||
+     (LStack_3._list = (List_1_System_Object_ *)(pMVar2->fields)._.outputLinkRefs,
+     (List_1_MV_WorldObject_Link_ *)LStack_3._list == (List_1_MV_WorldObject_Link_ *)0x0)) {
+    FUN_?();
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
+    return;
   }
-  func_?();
+  if (iRam_? != 0) {
+    uVar5 = (uint)((ulonglong)&uStack_6 >> 0xc);
+    puVar7 = (ulonglong *)((ulonglong)((uVar5 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar8 = *puVar7;
+      LOCK();
+      uVar9 = *puVar7;
+      if (uVar8 == uVar9) {
+        *puVar7 = uVar8 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar8 != uVar9);
+  }
+  pLStack_10 = (List_1_T_Enumerator_System_Object_ *)
+               ((ulonglong)(uint)(((List_1_MV_WorldObject_Link_ *)LStack_3._list)->fields)._version
+               << 0x20);
+  uStack_11 = 0;
+  LStack_3._8_8_ = pLStack_10;
+  LStack_3._current = (Object *)0x0;
+  uStack_6 = 0;
+  pLStack_10 = &LStack_3;
+  while( true ) {
+    bVar12 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+             List_1_T_Enumerator_System_Object__MoveNext
+                       (&LStack_3,
+                        MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MV::WorldObject::Link>__MoveNext__
+                       );
+    pOVar13 = LStack_3._current;
+    if (bVar12 == 0) {
+      return;
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar14 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if (pMVar14 == (MVGameControllerBase *)0x0) goto code_?;
+    pMVar15 = (pMVar14->fields).game;
+    if (pMVar15 == (MVNetworkGame *)0x0) break;
+    pMVar1 = (MVWorldObjectClientManager *)0x0;
+    if ((pMVar15->fields).worldNetwork != (WorldNetwork *)0x0) {
+      pMVar1 = (MVWorldObjectClientManager *)
+                (((pMVar15->fields).worldNetwork)->fields)._.worldObjectClientManager;
+    }
+    if (pOVar13 == (Object *)0x0) {
 code_?:
-  func_?();
+      FUN_?();
+      break;
+    }
+    if (pMVar1 == (MVWorldObjectClientManager *)0x0) {
 code_?:
-  func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+      FUN_?();
+      goto code_?;
+    }
+    pMVar2 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
+                        (pMVar1,*(int32_t *)&pOVar13[1].monitor,(MethodInfo *)0x0);
+    pIVar16 = TypeInfo__ILogicWorldObject;
+    if (pMVar2 == (MVWorldObjectClient *)0x0) {
+      FUN_?();
+code_?:
+      FUN_?();
+code_?:
+      uVar17 = FUN_?(pMVar2,unaff_RSI);
+code_?:
+      FUN_?(uVar17,pIVar16);
+      goto code_?;
+    }
+    lVar18 = FUN_?(pMVar2,TypeInfo__ILogicWorldObject);
+    unaff_RSI = TypeInfo__ILogicWorldObject;
+    uVar17 = extraout_XMM0_Da;
+    if (lVar18 == 0) goto code_?;
+    pIVar16 = (ILogicWorldObject__Class *)FUN_?(pMVar2,TypeInfo__ILogicWorldObject);
+    if (pIVar16 == (ILogicWorldObject__Class *)0x0) goto code_?;
+    pIVar19 = (pIVar16->_0).image;
+    uVar20 = 0;
+    uVar21 = *(ushort *)((longlong)&pIVar19[4].nameNoExt + 6);
+    if (uVar21 != 0) {
+      uVar22 = uVar20;
+      do {
+        if (*(ILogicWorldObject__Class **)
+             (*(longlong *)&pIVar19[2].customAttributeCount + (ulonglong)uVar22 * 0x10) ==
+            TypeInfo__ILogicWorldObject) {
+          puVar23 = &pIVar19[4].typeCount +
+                    (longlong)
+                    *(int *)(*(longlong *)&pIVar19[2].customAttributeCount + 8 +
+                            (ulonglong)uVar22 * 0x10) * 4;
+          goto code_?;
+        }
+        uVar22 = uVar22 + 1;
+      } while (uVar22 < uVar21);
+    }
+    puVar23 = (uint32_t *)FUN_?(pIVar16,TypeInfo__ILogicWorldObject,0);
+code_?:
+    plVar24 = (longlong *)(**(code **)puVar23)(pIVar16,*(undefined8 *)(puVar23 + 2));
+    pMVar2 = (MVWorldObjectClient *)0x0;
+    if (plVar24 == (longlong *)0x0) goto code_?;
+    lVar18 = *plVar24;
+    if (*(ushort *)(lVar18 + 0x12e) != 0) {
+      do {
+        if (*(IInputSignalReceiver__Class **)
+             (*(longlong *)(lVar18 + 0xb0) + (ulonglong)uVar20 * 0x10) ==
+            TypeInfo__IInputSignalReceiver) {
+          puVar25 = (undefined8 *)
+                    ((longlong)*(int *)(*(longlong *)(lVar18 + 0xb0) + 8 + (ulonglong)uVar20 * 0x10)
+                     * 0x10 + 0x138 + lVar18);
+          goto code_?;
+        }
+        uVar20 = uVar20 + 1;
+      } while (uVar20 < *(ushort *)(lVar18 + 0x12e));
+    }
+    puVar25 = (undefined8 *)FUN_?(plVar24,TypeInfo__IInputSignalReceiver,0);
+code_?:
+    (*(code *)*puVar25)(plVar24,isHot);
+    *(bool *)((longlong)&pOVar13[1].monitor + 4) = isHot;
+  }
+  FUN_?();
+code_?:
+  FUN_?();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

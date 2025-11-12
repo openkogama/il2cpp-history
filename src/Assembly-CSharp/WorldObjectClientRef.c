@@ -6,14 +6,15 @@ void Assembly-CSharp.dll::WorldObjectClientRef::WorldObjectClientRef__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__WorldObjectClientRef_int_
-                   );
-    cRam_? = '\x01';
+    FUN_?(&MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__WorldObjectClientRef_int_)
+    ;
+    LOCK();
+    UNLOCK();
+    cRam_? = 1;
+    (this->fields)._.woId = woId;
+    return;
   }
-  WorldObjectClientRef`1[System::Object]::WorldObjectClientRef_1_System_Object___ctor
-            ((WorldObjectClientRef_1_System_Object_ *)this,woId,
-             MethodInfo__WorldObjectClientRef<MVWorldObjectClient>__WorldObjectClientRef_int_);
+  (this->fields)._.woId = woId;
   return;
 }
 

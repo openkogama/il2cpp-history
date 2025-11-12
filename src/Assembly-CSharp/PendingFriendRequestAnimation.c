@@ -5,43 +5,146 @@ void Assembly-CSharp.dll::PendingFriendRequestAnimation::PendingFriendRequestAni
                (PendingFriendRequestAnimation *this,float amount,MethodInfo *method)
 
 {
-  pTVar1 = (Transform *)(this->fields).maskTransform;
-  if (pTVar1 != (Transform *)0x0) {
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                       ((Vector3 *)&stack0xffffffe4,pTVar1,(MethodInfo *)0x0);
-    fVar3 = pVVar2->x;
-    uVar4 = pVVar2->y;
-    fVar5 = pVVar2->z;
-    pTVar1 = (Transform *)(this->fields).friendRequestImageTransform;
-    if (pTVar1 != (Transform *)0x0) {
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                         ((Vector3 *)&stack0xffffffd8,pTVar1,(MethodInfo *)0x0);
-      pTVar1 = (Transform *)(this->fields).maskTransform;
-      uVar6 = pVVar2->x;
-      fVar7 = pVVar2->y;
-      fVar8 = pVVar2->z;
-      fVar9 = (float)uVar6 - amount;
-      if (pTVar1 != (Transform *)0x0) {
-        value.y = (float)uVar4;
-        value.x = fVar3 + amount;
-        value.z = fVar5;
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                  (pTVar1,value,(MethodInfo *)0x0);
-        pTVar1 = (Transform *)(this->fields).friendRequestImageTransform;
-        if (pTVar1 != (Transform *)0x0) {
-          value_00.y = fVar7;
-          value_00.x = fVar9;
-          value_00.z = fVar8;
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                    (pTVar1,value_00,(MethodInfo *)0x0);
+  pRVar1 = (this->fields).maskTransform;
+  if (pRVar1 != (RectTransform *)0x0) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_2 = 0;
+    uStack_3 = 0;
+    pvVar4 = (pRVar1->fields)._._._.m_CachedPtr;
+    if (pvVar4 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar1,(MethodInfo *)0x0);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    pcVar5 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+      uVar6 = func_?(&UNK_?);
+      FUN_?(uVar6,0);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    pcRam_? = pcVar5;
+    (*pcRam_?)(pvVar4);
+    uVar7 = uStack_3;
+    pRVar1 = (this->fields).friendRequestImageTransform;
+    uStack_8 = uStack_2;
+    if (pRVar1 != (RectTransform *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_9 = 0;
+      uStack_10 = 0;
+      pvVar4 = (pRVar1->fields)._._._.m_CachedPtr;
+      if (pvVar4 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar1,(MethodInfo *)0x0);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      pcVar5 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+        uVar6 = func_?(&UNK_?);
+        FUN_?(uVar6,0);
+        pcVar5 = (code *)swi(3);
+        (*pcVar5)();
+        return;
+      }
+      pcRam_? = pcVar5;
+      (*pcRam_?)(pvVar4);
+      uVar11 = uStack_10;
+      pRVar1 = (this->fields).maskTransform;
+      uStack_12 = CONCAT44((int)((ulonglong)uStack_9 >> 0x20),(float)uStack_9 - amount);
+      uStack_8 = CONCAT44(uStack_8._4_4_,(float)uStack_2 + amount);
+      if (pRVar1 != (RectTransform *)0x0) {
+        uStack_13 = uVar7;
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pvVar4 = (pRVar1->fields)._._._.m_CachedPtr;
+        if (pvVar4 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar1,(MethodInfo *)0x0);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
+        }
+        pcVar5 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+          uVar6 = func_?(&UNK_?);
+          FUN_?(uVar6,0);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
+        }
+        pcRam_? = pcVar5;
+        (*pcRam_?)(pvVar4);
+        pRVar1 = (this->fields).friendRequestImageTransform;
+        if (pRVar1 != (RectTransform *)0x0) {
+          uStack_2 = uStack_12;
+          uStack_3 = uVar11;
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pvVar4 = (pRVar1->fields)._._._.m_CachedPtr;
+          if (pvVar4 == (void *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)pRVar1,(MethodInfo *)0x0);
+            pcVar5 = (code *)swi(3);
+            (*pcVar5)();
+            return;
+          }
+          pcVar5 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+            uVar6 = func_?(&UNK_?);
+            FUN_?(uVar6,0);
+            pcVar5 = (code *)swi(3);
+            (*pcVar5)();
+            return;
+          }
+          pcRam_? = pcVar5;
+          (*pcRam_?)(pvVar4,&uStack_2);
           return;
         }
       }
+      FUN_?();
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
     }
   }
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -52,25 +155,42 @@ void Assembly-CSharp.dll::PendingFriendRequestAnimation::PendingFriendRequestAni
                (PendingFriendRequestAnimation *this,MethodInfo *method)
 
 {
-  fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-  if ((this->fields).lastDotAnimationTime + (this->fields).dotAnimationCooldown < fVar1) {
-    fVar1 = (this->fields).moveAmount;
-    if ((this->fields).currentDot != (this->fields).dotAmount) {
-      PendingFriendRequestAnimation_MoveAnimation(this,fVar1,(MethodInfo *)0x0);
-      piVar2 = &(this->fields).currentDot;
-      *piVar2 = *piVar2 + 1;
-      fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-      (this->fields).lastDotAnimationTime = fVar1;
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  fVar3 = (float)(*pcRam_?)();
+  if ((this->fields).lastDotAnimationTime + (this->fields).dotAnimationCooldown < fVar3) {
+    fVar3 = (this->fields).moveAmount;
+    iVar4 = (this->fields).dotAmount;
+    if ((this->fields).currentDot == iVar4) {
+      PendingFriendRequestAnimation_MoveAnimation
+                (this,(float)iVar4 * (float)((uint)fVar3 ^ _UNK_?),(MethodInfo *)0x0);
+      (this->fields).currentDot = 0;
+    }
+    else {
+      PendingFriendRequestAnimation_MoveAnimation(this,fVar3,(MethodInfo *)0x0);
+      piVar5 = &(this->fields).currentDot;
+      *piVar5 = *piVar5 + 1;
+    }
+    pcVar1 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+      uVar2 = func_?(&UNK_?);
+      FUN_?(uVar2,0);
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
       return;
     }
-    PendingFriendRequestAnimation_MoveAnimation
-              (this,(float)(this->fields).dotAmount *
-                    (float)((uint)fVar1 ^
-                           __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field)
-               ,(MethodInfo *)0x0);
-    (this->fields).currentDot = 0;
-    fVar1 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_time((MethodInfo *)0x0);
-    (this->fields).lastDotAnimationTime = fVar1;
+    pcRam_? = pcVar1;
+    fVar3 = (float)(*pcRam_?)();
+    (this->fields).lastDotAnimationTime = fVar3;
   }
   return;
 }

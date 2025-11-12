@@ -2,31 +2,46 @@
 /* MeshRayHit(Ray, Int32, Single, Vector3) */
 
 void Assembly-CSharp.dll::RTG::MeshRayHit::MeshRayHit__ctor
-               (MeshRayHit *this,Ray ray,int32_t hitTriangleIndex,float hitEnter,Vector3 hitNormal,
-               MethodInfo *method)
+               (MeshRayHit *this,Ray *ray,int32_t hitTriangleIndex,float hitEnter,Vector3 *hitNormal
+               ,MethodInfo *method)
 
 {
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
+  uVar1 = (ray->m_Direction).x;
+  uVar2 = (ray->m_Direction).y;
   (this->fields)._hitTriangleIndex = hitTriangleIndex;
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-                     ((Vector3 *)&stack0xfffffff0,&ray,hitEnter,(MethodInfo *)0x0);
-  fVar2 = pVVar1->y;
-  fVar3 = pVVar1->z;
-  (this->fields)._hitPoint.x = pVVar1->x;
-  (this->fields)._hitPoint.y = fVar2;
+  uVar3 = (ray->m_Origin).x;
+  uVar4 = (ray->m_Origin).y;
+  fVar5 = (ray->m_Direction).z;
+  fVar6 = (ray->m_Origin).z;
+  (this->fields)._hitPoint.x = (float)uVar1 * hitEnter + (float)uVar3;
+  (this->fields)._hitPoint.y = (float)uVar2 * hitEnter + (float)uVar4;
+  (this->fields)._hitPoint.z = fVar5 * hitEnter + fVar6;
+  uStack_7._0_4_ = hitNormal->x;
+  uStack_7._4_4_ = hitNormal->y;
+  fStack_8 = hitNormal->z;
   (this->fields)._hitEnter = hitEnter;
-  (this->fields)._hitPoint.z = fVar3;
-  value.z = hitNormal.z;
-  value.x = hitNormal.x;
-  value.y = hitNormal.y;
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                     (&hitNormal,value,(MethodInfo *)0x0);
-  fVar2 = pVVar1->y;
-  fVar3 = pVVar1->z;
-  (this->fields)._hitNormal.x = pVVar1->x;
-  (this->fields)._hitNormal.y = fVar2;
-  (this->fields)._hitNormal.z = fVar3;
+  fVar5 = (float)FUN_?(&uStack_7);
+  if (fVar5 <= _UNK_?) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
+    fVar6 = (pVVar9->zeroVector).y;
+    fVar5 = (pVVar9->zeroVector).z;
+    (this->fields)._hitNormal.x = (pVVar9->zeroVector).x;
+    (this->fields)._hitNormal.y = fVar6;
+    (this->fields)._hitNormal.z = fVar5;
+    return;
+  }
+  uVar10 = hitNormal->x;
+  fVar6 = hitNormal->y;
+  fVar11 = hitNormal->z;
+  (this->fields)._hitNormal.x = (float)uVar10 / fVar5;
+  (this->fields)._hitNormal.y = fVar6 / fVar5;
+  (this->fields)._hitNormal.z = fVar11 / fVar5;
   return;
 }
 

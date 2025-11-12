@@ -6,95 +6,114 @@ void Assembly-CSharp.dll::SoundEmitterSettings::SoundEmitterSettings_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__System__Single);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (this->fields).settingsBase;
-  if (this_00 == (SettingsBase *)0x0) {
-code_?:
-    func_?();
-  }
-  else {
+  if (this_00 != (SettingsBase *)0x0) {
     SettingsBase::SettingsBase_Initialize
               (this_00,woID,root,MVWorldObjectDocumentationType__Enum_SoundEmitter,(MethodInfo *)0x0
               );
     this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (this_02 == (MVWorldObjectClientManager *)0x0) goto code_?;
-    pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                       (this_02,woID,(MethodInfo *)0x0);
-    if (pMVar1 == (MVWorldObject *)0x0) goto code_?;
-    this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pMVar1->fields).data;
-    pSVar2 = (this->fields).keys;
-    pSVar3 = (this->fields).volumeSlider;
-    if ((pSVar2 == (SoundEmitterSettings_Keys *)0x0) ||
-       (pSVar4 = (pSVar2->fields).keys, pSVar4 == (String__Array *)0x0)) goto code_?;
-    if (pSVar4->max_length == 0) goto code_?;
-    if (this_01 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
-    goto code_?;
-    TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (this_01,(Object *)((((this->fields).keys)->fields).keys)->vector[0],
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    if ((pSVar3 == (SettingsSlider *)0x0) || (TVar5.m_Index == 0)) goto code_?;
-    if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) !=
-        (TypeInfo__System__Single->_0).element_class) goto code_?;
-    pfVar6 = (float *)func_?();
-    SettingsSlider::SettingsSlider_Initialize
-              (pSVar3,(String *)&UNK_?,*pfVar6,0.0,1.0,(MethodInfo *)0x0);
-    pSVar2 = (this->fields).keys;
-    pSVar3 = (this->fields).pitchSlider;
-    if ((pSVar2 == (SoundEmitterSettings_Keys *)0x0) ||
-       (pSVar4 = (pSVar2->fields).keys, pSVar4 == (String__Array *)0x0)) goto code_?;
-    if (pSVar4->max_length < 2) goto code_?;
-    TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (this_01,(Object *)((((this->fields).keys)->fields).keys)->vector[1],
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    if ((pSVar3 == (SettingsSlider *)0x0) || (TVar5.m_Index == 0)) goto code_?;
-    if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) ==
-        (TypeInfo__System__Single->_0).element_class) {
-      pfVar6 = (float *)func_?();
-      SettingsSlider::SettingsSlider_Initialize
-                (pSVar3,(String *)&UNK_?,*pfVar6,0.5,2.0,(MethodInfo *)0x0);
-      pSVar2 = (this->fields).keys;
-      pSVar3 = (this->fields).rangeSlider;
-      if ((pSVar2 != (SoundEmitterSettings_Keys *)0x0) &&
-         (pSVar4 = (pSVar2->fields).keys, pSVar4 != (String__Array *)0x0)) {
-        if (pSVar4->max_length < 3) goto code_?;
-        TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          (this_01,(Object *)((((this->fields).keys)->fields).keys)->vector[2],
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                          );
-        if ((pSVar3 != (SettingsSlider *)0x0) && (TVar5.m_Index != 0)) {
-          if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) ==
-              (TypeInfo__System__Int32->_0).element_class) {
-            piVar7 = (int32_t *)func_?();
-            SettingsSlider::SettingsSlider_Initialize_1
-                      (pSVar3,(String *)&UNK_?,*piVar7,0,2,(MethodInfo *)0x0);
-            return;
+    if (this_02 != (MVWorldObjectClientManager *)0x0) {
+      pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
+                         (this_02,woID,(MethodInfo *)0x0);
+      if (pMVar1 != (MVWorldObjectClient *)0x0) {
+        this_01 = (pMVar1->fields)._.data;
+        pSVar2 = (this->fields).keys;
+        pSVar3 = (this->fields).volumeSlider;
+        if ((pSVar2 != (SoundEmitterSettings_Keys *)0x0) &&
+           (pSVar4 = (pSVar2->fields).keys, pSVar4 != (String__Array *)0x0)) {
+          if ((int)pSVar4->max_length == 0) goto code_?;
+          pSVar5 = pSVar4->vector[0];
+          if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+            pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
+                     ::Object]::Dictionary_2_System_Object_System_Object__get_Item
+                               (this_01,(Object *)((((this->fields).keys)->fields).keys)->vector[0],
+                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                               );
+            if ((pSVar3 != (SettingsSlider *)0x0) && (pOVar6 != (Object *)0x0)) {
+              if ((pOVar6->klass->_0).element_class !=
+                  *(Il2CppClass **)(lRam_? + 0x40)) {
+                FUN_?(pOVar6);
+                pcVar7 = (code *)swi(3);
+                (*pcVar7)();
+                return;
+              }
+              SettingsSlider::SettingsSlider_Initialize
+                        (pSVar3,pSVar5,*(float *)&pOVar6[1].klass,0.0,_UNK_?,
+                         (MethodInfo *)0x0);
+              pSVar2 = (this->fields).keys;
+              pSVar3 = (this->fields).pitchSlider;
+              if ((pSVar2 != (SoundEmitterSettings_Keys *)0x0) &&
+                 (pSVar4 = (pSVar2->fields).keys, pSVar4 != (String__Array *)0x0)) {
+                if ((uint)pSVar4->max_length < 2) {
+code_?:
+                  FUN_?();
+                  pcVar7 = (code *)swi(3);
+                  (*pcVar7)();
+                  return;
+                }
+                pSVar5 = pSVar4->vector[1];
+                pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                         Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
+                                   (this_01,(Object *)
+                                            ((((this->fields).keys)->fields).keys)->vector[1],
+                                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                   );
+                if ((pSVar3 != (SettingsSlider *)0x0) && (pOVar6 != (Object *)0x0)) {
+                  if ((pOVar6->klass->_0).element_class !=
+                      *(Il2CppClass **)(lRam_? + 0x40)) {
+                    FUN_?(pOVar6);
+                    pcVar7 = (code *)swi(3);
+                    (*pcVar7)();
+                    return;
+                  }
+                  SettingsSlider::SettingsSlider_Initialize
+                            (pSVar3,pSVar5,*(float *)&pOVar6[1].klass,_UNK_?,
+                             TypeRef__System__Activator__T._0_4_,(MethodInfo *)0x0);
+                  pSVar2 = (this->fields).keys;
+                  pSVar3 = (this->fields).rangeSlider;
+                  if ((pSVar2 != (SoundEmitterSettings_Keys *)0x0) &&
+                     (pSVar4 = (pSVar2->fields).keys, pSVar4 != (String__Array *)0x0)) {
+                    if ((uint)pSVar4->max_length < 3) goto code_?;
+                    pSVar5 = pSVar4->vector[2];
+                    pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                             Object,System::Object]::
+                             Dictionary_2_System_Object_System_Object__get_Item
+                                       (this_01,(Object *)
+                                                ((((this->fields).keys)->fields).keys)->vector[2],
+                                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                       );
+                    if ((pSVar3 != (SettingsSlider *)0x0) && (pOVar6 != (Object *)0x0)) {
+                      if ((pOVar6->klass->_0).element_class ==
+                          *(Il2CppClass **)(lRam_? + 0x40)) {
+                        SettingsSlider::SettingsSlider_Initialize_1
+                                  (pSVar3,pSVar5,*(int32_t *)&pOVar6[1].klass,0,2,(MethodInfo *)0x0)
+                        ;
+                        return;
+                      }
+                      FUN_?(pOVar6);
+                      pcVar7 = (code *)swi(3);
+                      (*pcVar7)();
+                      return;
+                    }
+                  }
+                }
+              }
+            }
           }
-          goto code_?;
         }
       }
-      goto code_?;
     }
   }
-code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -106,62 +125,149 @@ void Assembly-CSharp.dll::SoundEmitterSettings::SoundEmitterSettings_OnSettingCh
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Convert);
-    func_?(&TypeInfo__System__Decimal);
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__System__Single);
+    FUN_?(&TypeInfo__System__Convert);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Decimal);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pSVar1 = (this->fields).keys;
-  if ((pSVar1 != (SoundEmitterSettings_Keys *)0x0) &&
-     (pSVar2 = (pSVar1->fields).keys, pSVar2 != (String__Array *)0x0)) {
-    if (pSVar2->max_length < 3) {
-      func_?();
+  if ((pSVar1 == (SoundEmitterSettings_Keys *)0x0) ||
+     (pSVar2 = (pSVar1->fields).keys, pSVar2 == (String__Array *)0x0)) goto code_?;
+  if ((uint)pSVar2->max_length < 3) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pSVar4 = pSVar2->vector[2];
+  if (key == pSVar4) {
+    pSVar5 = (this->fields).settingsBase;
+code_?:
+    if (*(int *)&(TypeInfo__System__Convert->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    afStackX_8[0] = (float)mscorlib.dll::System::Convert::Convert_ToInt32(value,(MethodInfo *)0x0);
+    value_00 = (Object *)FUN_?(uRam_?,afStackX_8);
+  }
+  else {
+    if (((key == (String *)0x0) || (pSVar4 == (String *)0x0)) ||
+       ((key->fields)._stringLength != (pSVar4->fields)._stringLength)) {
+      pSVar5 = (this->fields).settingsBase;
     }
     else {
-      bVar3 = mscorlib.dll::System::String::String_op_Inequality
-                        (key,pSVar2->vector[2],(MethodInfo *)0x0);
-      this_00 = (this->fields).settingsBase;
-      if (bVar3 == 0) {
-        if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        mscorlib.dll::System::Convert::Convert_ToInt32(value,(MethodInfo *)0x0);
-        value_01 = (Object *)func_?(TypeInfo__System__Int32);
-      }
-      else {
-        if ((TypeInfo__System__Convert->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        pDVar4 = mscorlib.dll::System::Convert::Convert_ToDecimal
-                           ((Decimal *)&stack0xffffffec,value,(MethodInfo *)0x0);
-        iVar5 = pDVar4->flags;
-        iVar6 = pDVar4->hi;
-        puVar7 = (undefined *)pDVar4->lo;
-        pDVar8 = (Decimal__Class *)pDVar4->mid;
-        if ((TypeInfo__System__Decimal->_1).cctor_finished_or_no_cctor == 0) {
-          puVar7 = &UNK_?;
-          pDVar8 = TypeInfo__System__Decimal;
-          func_?();
-        }
-        value_00.hi = iVar6;
-        value_00.flags = iVar5;
-        value_00.lo = (int32_t)puVar7;
-        value_00.mid = (int32_t)pDVar8;
-        value_00.ulomidLE._0_4_ = 0;
-        value_00.ulomidLE._4_4_ = unaff_EBP;
-        mscorlib.dll::System::Decimal::Decimal_op_Explicit_5(value_00,unaff_retaddr);
-        value_01 = (Object *)func_?();
-      }
-      if (this_00 != (SettingsBase *)0x0) {
-        SettingsBase::SettingsBase_OnSettingChanged(this_00,key,value_01,(MethodInfo *)0x0);
-        return;
-      }
+      bVar6 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                        ((uint8_t *)&(key->fields)._firstChar,
+                         (uint8_t *)&(pSVar4->fields)._firstChar,
+                         (longlong)(key->fields)._stringLength * 2,(MethodInfo *)0x0);
+      pSVar5 = (this->fields).settingsBase;
+      if (bVar6 != 0) goto code_?;
     }
+    if (*(int *)&(TypeInfo__System__Convert->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    pDVar7 = mscorlib.dll::System::Convert::Convert_ToDecimal
+                       ((Decimal *)&uStackY_28,value,(MethodInfo *)0x0);
+    uStackY_28._0_4_ = pDVar7->flags;
+    uStackY_28._4_4_ = pDVar7->hi;
+    uStackY_20._0_4_ = pDVar7->lo;
+    uStackY_20._4_4_ = pDVar7->mid;
+    if (*(int *)&(TypeInfo__System__Decimal->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    afStackX_8[0] =
+         mscorlib.dll::System::Decimal::Decimal_op_Explicit_5
+                   ((Decimal *)&uStackY_28,(MethodInfo *)0x0);
+    value_00 = (Object *)FUN_?(uRam_?,afStackX_8);
   }
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  if (pSVar5 != (SettingsBase *)0x0) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?();
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if ((((pSVar5->fields).woID != -1) && (key != (String *)0x0)) &&
+       ((key->fields)._stringLength != 0)) {
+      this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+      if (this_01 != (MVWorldObjectClientManager *)0x0) {
+        wo = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
+                       (this_01,(pSVar5->fields).woID,(MethodInfo *)0x0);
+        if (wo == (MVWorldObjectClient *)0x0) {
+          return;
+        }
+        if (*(int *)&(TypeInfo__WorldObjectDataValidator->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        uVar8 = 0;
+        WorldObjectDataValidator::WorldObjectDataValidator_Validate
+                  (wo,key,value_00,(MethodInfo *)0x0);
+        this_00 = (pSVar5->fields).result;
+        if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+          uVar8 = CONCAT71((int7)((ulonglong)uVar8 >> 8),1);
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__TryInsert
+                    (this_00,(Object *)key,value_00,(InsertionBehavior__Enum)uVar8,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                     ->klass->rgctx_data[0x22].method);
+          this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+                     *)FUN_?(
+                                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                    );
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+          UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::
+          Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
+                    (this_02,
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                    );
+          if (this_02 !=
+              (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+               *)0x0) {
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__TryInsert
+                      ((Dictionary_2_System_Object_System_Object_ *)this_02,(Object *)key,value_00,
+                       (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar8 >> 8),2),
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                       ->klass->rgctx_data[0x22].method);
+            (*(wo->klass->vtable).PartialUpdateWOData.methodPtr)
+                      (wo,this_02,(wo->klass->vtable).PartialUpdateWOData.method);
+            return;
+          }
+        }
+      }
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    return;
+  }
+code_?:
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -172,20 +278,93 @@ void Assembly-CSharp.dll::SoundEmitterSettings::SoundEmitterSettings_OnSettingCh
                (SoundEmitterSettings *this,String *key,int32_t value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
-    cRam_? = '\x01';
-  }
-  this_00 = (this->fields).settingsBase;
-  this = (SoundEmitterSettings *)value;
-  value_00 = (Object *)func_?(TypeInfo__System__Int32,&this);
-  if (this_00 != (SettingsBase *)0x0) {
-    SettingsBase::SettingsBase_OnSettingChanged(this_00,key,value_00,(MethodInfo *)0x0);
+  pSVar1 = (this->fields).settingsBase;
+  value_00 = (Object *)FUN_?(uRam_?,&stack0x00000018);
+  if (pSVar1 == (SettingsBase *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if ((((pSVar1->fields).woID != -1) && (key != (String *)0x0)) &&
+     ((key->fields)._stringLength != 0)) {
+    this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (this_01 != (MVWorldObjectClientManager *)0x0) {
+      wo = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
+                     (this_01,(pSVar1->fields).woID,(MethodInfo *)0x0);
+      if (wo == (MVWorldObjectClient *)0x0) {
+        return;
+      }
+      if (*(int *)&(TypeInfo__WorldObjectDataValidator->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      uVar3 = 0;
+      WorldObjectDataValidator::WorldObjectDataValidator_Validate(wo,key,value_00,(MethodInfo *)0x0)
+      ;
+      this_00 = (pSVar1->fields).result;
+      if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        uVar3 = CONCAT71((int7)((ulonglong)uVar3 >> 8),1);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__TryInsert
+                  (this_00,(Object *)key,value_00,(InsertionBehavior__Enum)uVar3,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                   ->klass->rgctx_data[0x22].method);
+        this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+                   *)FUN_?(
+                                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                  );
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+        UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
+                  (this_02,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                  );
+        if (this_02 !=
+            (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+             *)0x0) {
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__TryInsert
+                    ((Dictionary_2_System_Object_System_Object_ *)this_02,(Object *)key,value_00,
+                     (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar3 >> 8),2),
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                     ->klass->rgctx_data[0x22].method);
+          (*(wo->klass->vtable).PartialUpdateWOData.methodPtr)
+                    (wo,this_02,(wo->klass->vtable).PartialUpdateWOData.method);
+          return;
+        }
+      }
+    }
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
   return;
 }
 
@@ -196,21 +375,93 @@ void Assembly-CSharp.dll::SoundEmitterSettings::SoundEmitterSettings_OnSettingCh
                (SoundEmitterSettings *this,String *key,float value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Single);
-    cRam_? = '\x01';
-  }
-  pSVar1 = this;
-  this = (SoundEmitterSettings *)value;
-  this_00 = (pSVar1->fields).settingsBase;
-  value_00 = (Object *)func_?(TypeInfo__System__Single,&this);
-  if (this_00 != (SettingsBase *)0x0) {
-    SettingsBase::SettingsBase_OnSettingChanged(this_00,key,value_00,(MethodInfo *)0x0);
+  pSVar1 = (this->fields).settingsBase;
+  value_00 = (Object *)FUN_?(uRam_?,&stack0x00000018);
+  if (pSVar1 == (SettingsBase *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if ((((pSVar1->fields).woID != -1) && (key != (String *)0x0)) &&
+     ((key->fields)._stringLength != 0)) {
+    this_01 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if (this_01 != (MVWorldObjectClientManager *)0x0) {
+      wo = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
+                     (this_01,(pSVar1->fields).woID,(MethodInfo *)0x0);
+      if (wo == (MVWorldObjectClient *)0x0) {
+        return;
+      }
+      if (*(int *)&(TypeInfo__WorldObjectDataValidator->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      uVar3 = 0;
+      WorldObjectDataValidator::WorldObjectDataValidator_Validate(wo,key,value_00,(MethodInfo *)0x0)
+      ;
+      this_00 = (pSVar1->fields).result;
+      if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+        uVar3 = CONCAT71((int7)((ulonglong)uVar3 >> 8),1);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+        Dictionary_2_System_Object_System_Object__TryInsert
+                  (this_00,(Object *)key,value_00,(InsertionBehavior__Enum)uVar3,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                   ->klass->rgctx_data[0x22].method);
+        this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+                   *)FUN_?(
+                                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                                  );
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+        UIElements::UIR::UIRenderDevice+DisableForceGammaMaterial]::
+        Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
+                  (this_02,
+                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                  );
+        if (this_02 !=
+            (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+             *)0x0) {
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__TryInsert
+                    ((Dictionary_2_System_Object_System_Object_ *)this_02,(Object *)key,value_00,
+                     (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar3 >> 8),2),
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                     ->klass->rgctx_data[0x22].method);
+          (*(wo->klass->vtable).PartialUpdateWOData.methodPtr)
+                    (wo,this_02,(wo->klass->vtable).PartialUpdateWOData.method);
+          return;
+        }
+      }
+    }
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
   return;
 }
 
@@ -222,49 +473,78 @@ void Assembly-CSharp.dll::SoundEmitterSettings::SoundEmitterSettings__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__SoundEmitterSettings__Keys);
+    FUN_?(&TypeInfo__SoundEmitterSettings__Keys);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  value = (SoundEmitterSettings_Keys *)func_?(TypeInfo__SoundEmitterSettings__Keys);
+  pSVar1 = (SoundEmitterSettings_Keys *)FUN_?(TypeInfo__SoundEmitterSettings__Keys);
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__String);
-    func_?(&StringLiteral_range);
-    func_?(&StringLiteral_pitch);
-    func_?(&StringLiteral_volume);
+    FUN_?(&TypeInfo__System__String);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_range);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_pitch);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_volume);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pSVar1 = (String__Array *)func_?(TypeInfo__System__String,3);
-  pSVar2 = StringLiteral_volume;
-  if (pSVar1 == (String__Array *)0x0) {
-    func_?();
+  pSVar2 = (String__Array *)FUN_?(TypeInfo__System__String,3);
+  if (pSVar2 == (String__Array *)0x0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
   }
-  else if (pSVar1->max_length != 0) {
-    pSVar1->vector[0] = StringLiteral_volume;
-    func_?(pSVar1->vector,pSVar2);
-    pSVar2 = StringLiteral_pitch;
-    if (1 < pSVar1->max_length) {
-      pSVar1->vector[1] = StringLiteral_pitch;
-      func_?(pSVar1->vector + 1,pSVar2);
-      pSVar2 = StringLiteral_range;
-      if (2 < pSVar1->max_length) {
-        pSVar1->vector[2] = StringLiteral_range;
-        func_?(pSVar1->vector + 2,pSVar2);
-        method_00 = (MethodInfo *)&value->fields;
-        (value->fields).keys = pSVar1;
-        func_?(method_00,pSVar1);
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)value,ExceptionArgument__Enum_obj,method_00);
-        (this->fields).keys = value;
-        func_?(&(this->fields).keys,value);
-        UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
-                  ((MonoBehaviour *)this,(MethodInfo *)0x0);
-        return;
+  FUN_?(pSVar2,0,StringLiteral_volume);
+  FUN_?(pSVar2,1,StringLiteral_pitch);
+  FUN_?(pSVar2,2,StringLiteral_range);
+  iVar4 = iRam_?;
+  (pSVar1->fields).keys = pSVar2;
+  if (iVar4 != 0) {
+    uVar5 = (uint)((ulonglong)&pSVar1->fields >> 0xc);
+    lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+      puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+      LOCK();
+      bVar9 = uVar7 == *puVar8;
+      if (bVar9) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
       }
-    }
+      UNLOCK();
+      iVar4 = iRam_?;
+    } while (!bVar9);
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  (this->fields).keys = pSVar1;
+  if (iVar4 != 0) {
+    uVar5 = (uint)((ulonglong)&(this->fields).keys >> 0xc);
+    lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+      puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+      LOCK();
+      bVar9 = uVar7 == *puVar8;
+      if (bVar9) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar9);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
   return;
 }
 

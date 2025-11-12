@@ -2,13 +2,15 @@
 /* Vector3 BoundsToPosition(Bounds) */
 
 Vector3 * Assembly-CSharp.dll::SplashController::SplashController_BoundsToPosition
-                    (Vector3 *__return_storage_ptr__,Bounds b,MethodInfo *method)
+                    (Vector3 *__return_storage_ptr__,Bounds *b,MethodInfo *method)
 
 {
-  __return_storage_ptr__->x = b.m_Center.x;
-  __return_storage_ptr__->y = b.m_Center.y;
-  __return_storage_ptr__->z = b.m_Center.z;
-  __return_storage_ptr__->y = __return_storage_ptr__->y - b.m_Extents.y;
+  fVar1 = (b->m_Center).y;
+  fVar2 = (b->m_Center).z;
+  __return_storage_ptr__->x = (b->m_Center).x;
+  __return_storage_ptr__->y = fVar1;
+  __return_storage_ptr__->z = fVar2;
+  __return_storage_ptr__->y = __return_storage_ptr__->y - (b->m_Extents).y;
   return __return_storage_ptr__;
 }
 
@@ -16,18 +18,17 @@ Vector3 * Assembly-CSharp.dll::SplashController::SplashController_BoundsToPositi
 /* Single CalcSplashSoundVolume(Vector3) */
 
 float Assembly-CSharp.dll::SplashController::SplashController_CalcSplashSoundVolume
-                (SplashController *this,Vector3 velocity,MethodInfo *method)
+                (SplashController *this,Vector3 *velocity,MethodInfo *method)
 
 {
-  velocity.z = (float)((uint)velocity.y ^
-                      __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-  if (velocity.z < 0.0) {
-    velocity.z = 0.0;
+  fVar1 = (float)((uint)velocity->y ^ _UNK_?);
+  if (fVar1 < 0.0) {
+    fVar1 = 0.0;
   }
-  else if (_UNK_? < velocity.z) {
-    return (30.0 / _UNK_?) * (this->fields).splashSoundVolume;
+  else if (_UNK_? < fVar1) {
+    return (_UNK_? / _UNK_?) * (this->fields).splashSoundVolume;
   }
-  return (velocity.z / _UNK_?) * (this->fields).splashSoundVolume;
+  return (fVar1 / _UNK_?) * (this->fields).splashSoundVolume;
 }
 
 
@@ -38,118 +39,136 @@ void Assembly-CSharp.dll::SplashController::SplashController_CleanUpInactiveObje
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__Remove_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__get_Item_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__get_Keys__
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<int,_SplashController::ObjectData>__CopyTo_System__Int32_____int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<int,_SplashController::ObjectData>__get_Count__
-                   );
-    func_?(&TypeInfo__SplashController);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__Remove_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__get_Keys__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Int32);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<int,_SplashController::ObjectData>__CopyTo_System__Int32_____int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<int,_SplashController::ObjectData>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__SplashController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__SplashController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__SplashController);
+  if (*(int *)&(TypeInfo__SplashController->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__SplashController);
   }
-  pDVar1 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-            *)TypeInfo__SplashController->static_fields->objectIDToData;
-  if (pDVar1 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                 *)0x0) {
-    pDVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
-             StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
-             Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Keys
-                       (pDVar1,
-                        MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__get_Keys__
-                       );
-    if (pDVar2 != (Dictionary_2_TKey_TValue_KeyCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                   *)0x0) {
-      iVar3 = mscorlib.dll::System::Collections::Generic::
-              Dictionary`2[TKey,TValue]+ValueCollection[UnityEngine::UIElements::StyleSheets::
-              StyleSheetCache+SheetHandleKey,System::Object]::
-              Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Count
-                        ((Dictionary_2_TKey_TValue_ValueCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                          *)pDVar2,
-                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<int,_SplashController::ObjectData>__get_Count__
-                        );
-      array = (UInt32__Array *)func_?(TypeInfo__System__Int32,iVar3);
-      pDVar1 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                *)TypeInfo__SplashController->static_fields->objectIDToData;
-      if (pDVar1 != (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                     *)0x0) {
-        pDVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
-                 StyleSheets::StyleSheetCache+SheetHandleKey,System::Object]::
-                 Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__get_Keys
+  pDVar1 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *)
+           TypeInfo__SplashController->static_fields->objectIDToData;
+  if (((pDVar1 != (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                   *)0x0) &&
+      (pDVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+                TypeConverterRegistry+ConverterKey,System::Object]::
+                Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object__get_Keys
+                          (pDVar1,
+                           MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__get_Keys__
+                          ),
+      pDVar2 != (Dictionary_2_TKey_TValue_KeyCollection_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                 *)0x0)) &&
+     (pDVar1 = (pDVar2->fields)._dictionary,
+     pDVar1 != (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                *)0x0)) {
+    array = (UInt32__Array *)
+            FUN_?(TypeInfo__System__Int32,
+                          (pDVar1->fields)._count - (pDVar1->fields)._freeCount);
+    pDVar1 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+              *)TypeInfo__SplashController->static_fields->objectIDToData;
+    if ((pDVar1 != (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                    *)0x0) &&
+       (pDVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+                 TypeConverterRegistry+ConverterKey,System::Object]::
+                 Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object__get_Keys
                            (pDVar1,
                             MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__get_Keys__
-                           );
-        if (pDVar2 != (Dictionary_2_TKey_TValue_KeyCollection_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-                       *)0x0) {
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+KeyCollection[System
-          ::UInt32,System::Object]::
-          Dictionary_2_TKey_TValue_KeyCollection_System_UInt32_System_Object__CopyTo
-                    ((Dictionary_2_TKey_TValue_KeyCollection_System_UInt32_System_Object_ *)pDVar2,
-                     array,0,
-                     MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<int,_SplashController::ObjectData>__CopyTo_System__Int32_____int_
-                    );
-          uVar4 = 0;
-          if (array != (UInt32__Array *)0x0) {
-            puVar5 = array->vector;
-            while( true ) {
-              if ((int)array->max_length <= (int)uVar4) {
-                return;
-              }
-              if (array->max_length <= uVar4) break;
-              key = (undefined *)*puVar5;
-              if ((TypeInfo__SplashController->_1).cctor_finished_or_no_cctor == 0) {
-                key = &UNK_?;
-                func_?(TypeInfo__SplashController);
-              }
-              pDVar6 = TypeInfo__SplashController->static_fields->objectIDToData;
-              if (pDVar6 == (Dictionary_2_System_Int32_SplashController_ObjectData_ *)0x0)
-              goto code_?;
-              pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System
-                       ::Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                                 ((Dictionary_2_System_Int32_System_Object_ *)pDVar6,(int32_t)key,
-                                  MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__get_Item_int_
-                                 );
-              iVar3 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_frameCount
-                                ((MethodInfo *)0x0);
-              if (pOVar7 == (Object *)0x0) goto code_?;
-              if (1 < iVar3 - (int)pOVar7[3].klass) {
-                if ((TypeInfo__SplashController->_1).cctor_finished_or_no_cctor == 0) {
-                  func_?();
-                }
-                pDVar6 = TypeInfo__SplashController->static_fields->objectIDToData;
-                if (pDVar6 == (Dictionary_2_System_Int32_SplashController_ObjectData_ *)0x0)
-                goto code_?;
-                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-                Object]::Dictionary_2_System_Int32_System_Object__Remove
-                          ((Dictionary_2_System_Int32_System_Object_ *)pDVar6,(int32_t)key,
-                           MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__Remove_int_
-                          );
-              }
-              uVar4 = uVar4 + 1;
-              puVar5 = puVar5 + 1;
-            }
-            func_?();
+                           ),
+       pDVar2 != (Dictionary_2_TKey_TValue_KeyCollection_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
+                  *)0x0)) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+KeyCollection[System::
+      UInt32,System::Object]::
+      Dictionary_2_TKey_TValue_KeyCollection_System_UInt32_System_Object__CopyTo
+                ((Dictionary_2_TKey_TValue_KeyCollection_System_UInt32_System_Object_ *)pDVar2,array
+                 ,0,
+                 MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___KeyCollection<int,_SplashController::ObjectData>__CopyTo_System__Int32_____int_
+                );
+      uVar3 = 0;
+      if (array != (UInt32__Array *)0x0) {
+        puVar4 = array->vector;
+        while( true ) {
+          if ((int)array->max_length <= (int)uVar3) {
+            return;
           }
+          if ((uint)array->max_length <= uVar3) {
+            FUN_?();
+            pcVar5 = (code *)swi(3);
+            (*pcVar5)();
+            return;
+          }
+          key = *puVar4;
+          if (*(int *)&(TypeInfo__SplashController->_1).field_0x1c == 0) {
+            FUN_?(TypeInfo__SplashController);
+          }
+          pDVar6 = TypeInfo__SplashController->static_fields->objectIDToData;
+          if (pDVar6 == (Dictionary_2_System_Int32_SplashController_ObjectData_ *)0x0) break;
+          pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                   Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                             ((Dictionary_2_System_Int32_System_Object_ *)pDVar6,key,
+                              MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__get_Item_int_
+                             );
+          pcVar5 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+            uVar8 = func_?(&UNK_?);
+            FUN_?(uVar8,0);
+            pcVar5 = (code *)swi(3);
+            (*pcVar5)();
+            return;
+          }
+          pcRam_? = pcVar5;
+          iVar9 = (*pcRam_?)();
+          if (pOVar7 == (Object *)0x0) break;
+          if (1 < iVar9 - *(int *)&pOVar7[2].klass) {
+            if (*(int *)&(TypeInfo__SplashController->_1).field_0x1c == 0) {
+              FUN_?(TypeInfo__SplashController);
+            }
+            pDVar6 = TypeInfo__SplashController->static_fields->objectIDToData;
+            if (pDVar6 == (Dictionary_2_System_Int32_SplashController_ObjectData_ *)0x0) break;
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+            Dictionary_2_System_Int32_System_Object__Remove
+                      ((Dictionary_2_System_Int32_System_Object_ *)pDVar6,key,
+                       MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__Remove_int_
+                      );
+          }
+          uVar3 = uVar3 + 1;
+          puVar4 = puVar4 + 1;
         }
       }
     }
   }
-code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -161,31 +180,36 @@ void Assembly-CSharp.dll::SplashController::SplashController_Destroy
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__Clear__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__SplashController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__SplashController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__SplashController->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__SplashController);
   }
-  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-             *)TypeInfo__SplashController->static_fields->objectIDToData;
+  this_00 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *
+            )TypeInfo__SplashController->static_fields->objectIDToData;
   if (this_00 !=
-      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-       *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::StyleSheets::
-    StyleSheetCache+SheetHandleKey,System::Object]::
-    Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__Clear
+      (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *)0x0)
+  {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+    TypeConverterRegistry+ConverterKey,System::Object]::
+    Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object__Clear
               (this_00,
                MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__Clear__
               );
     TypeInfo__SplashController->static_fields->currentObjectID = 0;
     return;
   }
-  uVar1 = func_?(&puStack_2);
-  func_?(uVar1);
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -193,69 +217,165 @@ void Assembly-CSharp.dll::SplashController::SplashController_Destroy
 /* Void EmitWaterPillar(Vector3, Vector3) */
 
 void Assembly-CSharp.dll::SplashController::SplashController_EmitWaterPillar
-               (SplashController *this,Vector3 position,Vector3 impactVelocity,MethodInfo *method)
+               (SplashController *this,Vector3 *position,Vector3 *impactVelocity,MethodInfo *method)
 
 {
-  pSVar1 = this;
-  pPVar2 = (this->fields).waterPillarParticles;
-  if (pPVar2 != (ParticleSystem *)0x0) {
-    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)pPVar2,(MethodInfo *)0x0);
-    if (this_00 != (Transform *)0x0) {
-      value.z = position.z;
-      value.x = position.x;
-      value.y = position.y;
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                (this_00,value,(MethodInfo *)0x0);
-      fVar3 = (float10)func_?(&impactVelocity,0);
-      pPVar2 = (pSVar1->fields).waterPillarParticles;
-      fStack_4 = (float)fVar3 * (pSVar1->fields).waterPillarDensity;
-      if (pPVar2 != (ParticleSystem *)0x0) {
-        this = (SplashController *)
-               UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-               ParticleSystem_get_collision(pPVar2,(MethodInfo *)0x0);
-        this_01 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager
-                            ((MethodInfo *)0x0);
-        if (this_01 != (WaterPlaneManager *)0x0) {
-          pCVar5 = WaterPlaneManager::WaterPlaneManager_get_WaterColor
-                             (&CStack_6,this_01,(MethodInfo *)0x0);
-          CStack_6.r = ((pSVar1->fields).pillarTint.r + pCVar5->r) * _UNK_?;
-          CStack_6.g = ((pSVar1->fields).pillarTint.g + pCVar5->g) * _UNK_?;
-          CStack_6.b = ((pSVar1->fields).pillarTint.b + pCVar5->b) * _UNK_?;
-          CStack_6.a = ((pSVar1->fields).pillarTint.a + pCVar5->a) * _UNK_?;
-          color.g = CStack_6.g;
-          color.r = CStack_6.r;
-          color.b = CStack_6.b;
-          color.a = CStack_6.a;
-          pPVar7 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient
-                   ::ParticleSystem_MinMaxGradient_op_Implicit(&PStack_8,color,(MethodInfo *)0x0);
-          UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
-          ParticleSystem_MainModule_set_startColor
-                    ((ParticleSystem_MainModule *)&this,*pPVar7,(MethodInfo *)0x0);
-          iVar9 = 1;
-          fVar10 = _UNK_?;
-          if (_UNK_? < fStack_4) {
-            do {
-              UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
-              ParticleSystem_MainModule_set_startSpeedMultiplier_Injected
-                        ((ParticleSystem_MainModule *)&this,fStack_4 - fVar10,(MethodInfo *)0x0);
-              pPVar2 = (pSVar1->fields).waterPillarParticles;
-              if (pPVar2 == (ParticleSystem *)0x0) goto code_?;
-              UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-              ParticleSystem_Emit_Internal(pPVar2,1,(MethodInfo *)0x0);
-              iVar9 = iVar9 + 1;
-              fVar10 = (float)iVar9;
-            } while (fVar10 < fStack_4);
+  pPVar1 = (this->fields).waterPillarParticles;
+  if ((pPVar1 != (ParticleSystem *)0x0) &&
+     (obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                      ((Component *)pPVar1,(MethodInfo *)0x0), obj != (Transform *)0x0)) {
+    CStack_2.r = position->x;
+    CStack_2.g = position->y;
+    CStack_2.b = position->z;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar3 = (obj->fields)._._.m_CachedPtr;
+    if (pvVar3 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    pcVar4 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+      uVar5 = func_?(&UNK_?);
+      FUN_?(uVar5,0);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    pcRam_? = pcVar4;
+    (*pcRam_?)(pvVar3);
+    fVar6 = (float)FUN_?(impactVelocity);
+    pPStackX_8 = (this->fields).waterPillarParticles;
+    fVar6 = fVar6 * (this->fields).waterPillarDensity;
+    if (pPStackX_8 != (ParticleSystem *)0x0) {
+      if (iRam_? != 0) {
+        uVar7 = (uint)((ulonglong)&pPStackX_8 >> 0xc);
+        uVar8 = (ulonglong)((uVar7 & 0x1fffff) >> 6);
+        do {
+          uVar9 = *(ulonglong *)(uVar8 * 8 + 0xADDR);
+          puVar10 = (ulonglong *)(uVar8 * 8 + 0xADDR);
+          LOCK();
+          bVar11 = uVar9 == *puVar10;
+          if (bVar11) {
+            *puVar10 = uVar9 | 1L << (uVar7 & 0x3f);
           }
-          return;
+          UNLOCK();
+        } while (!bVar11);
+      }
+      aPStack_12[0].m_ParticleSystem = pPStackX_8;
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pMVar13 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if ((pMVar13 != (MVGameControllerBase *)0x0) &&
+         (pWVar14 = (pMVar13->fields).waterPlaneManager, pWVar14 != (WaterPlaneManager *)0x0)) {
+        if (cRam_? == '\0') {
+          FUN_?(&StringLiteral__RefrColor);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pWVar15 = (pWVar14->fields).water;
+        if (((pWVar15 != (Water *)0x0) &&
+            (this_00 = (pWVar15->fields).meshRenderer, this_00 != (Renderer *)0x0)) &&
+           (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                                (this_00,(MethodInfo *)0x0), this_01 != (Material *)0x0)) {
+          pCVar16 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetColor
+                             (&CStack_2,this_01,StringLiteral__RefrColor,(MethodInfo *)0x0);
+          CStack_2.b = ((this->fields).pillarTint.b + pCVar16->b) * _UNK_?;
+          CStack_2.a = ((this->fields).pillarTint.a + pCVar16->a) * _UNK_?;
+          CStack_2.g = ((this->fields).pillarTint.g + pCVar16->g) * _UNK_?;
+          CStack_2.r = ((this->fields).pillarTint.r + pCVar16->r) * _UNK_?;
+          pPVar17 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient
+                    ::ParticleSystem_MinMaxGradient_op_Implicit
+                              (&PStack_18,&CStack_2,(MethodInfo *)0x0);
+          PStack_19.m_Mode = pPVar17->m_Mode;
+          PStack_19._4_4_ = *(undefined4 *)&pPVar17->field_0x4;
+          PStack_19.m_GradientMin = pPVar17->m_GradientMin;
+          PStack_19.m_GradientMax = pPVar17->m_GradientMax;
+          PStack_19.m_ColorMin.r = (pPVar17->m_ColorMin).r;
+          PStack_19.m_ColorMin.g = (pPVar17->m_ColorMin).g;
+          PStack_19.m_ColorMin.b = (pPVar17->m_ColorMin).b;
+          PStack_19.m_ColorMin.a = (pPVar17->m_ColorMin).a;
+          PStack_19.m_ColorMax.r = (pPVar17->m_ColorMax).r;
+          PStack_19.m_ColorMax.g = (pPVar17->m_ColorMax).g;
+          PStack_19.m_ColorMax.b = (pPVar17->m_ColorMax).b;
+          PStack_19.m_ColorMax.a = (pPVar17->m_ColorMax).a;
+          UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
+          ParticleSystem_MainModule_set_startColor(aPStack_12,&PStack_19,(MethodInfo *)0x0);
+          iVar20 = 1;
+          fVar21 = _UNK_?;
+          while( true ) {
+            if (fVar6 <= fVar21) {
+              return;
+            }
+            pcVar4 = pcRam_?;
+            if ((pcRam_? == (code *)0x0) &&
+               (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+              uVar5 = func_?(&UNK_?);
+              FUN_?(uVar5,0);
+              pcVar4 = (code *)swi(3);
+              (*pcVar4)();
+              return;
+            }
+            pcRam_? = pcVar4;
+            (*pcRam_?)(aPStack_12,fVar6 - fVar21);
+            pPVar1 = (this->fields).waterPillarParticles;
+            if (pPVar1 == (ParticleSystem *)0x0) break;
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem_
+                           );
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pvVar3 = (pPVar1->fields)._._.m_CachedPtr;
+            if (pvVar3 == (void *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+              ThrowHelper_2_ThrowNullReferenceException((Object *)pPVar1,(MethodInfo *)0x0);
+              pcVar4 = (code *)swi(3);
+              (*pcVar4)();
+              return;
+            }
+            pcVar4 = pcRam_?;
+            if ((pcRam_? == (code *)0x0) &&
+               (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+              uVar5 = func_?(&UNK_?);
+              FUN_?(uVar5,0);
+              pcVar4 = (code *)swi(3);
+              (*pcVar4)();
+              return;
+            }
+            pcRam_? = pcVar4;
+            (*pcRam_?)(pvVar3);
+            iVar20 = iVar20 + 1;
+            fVar21 = (float)iVar20;
+          }
         }
       }
+      FUN_?();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
     }
   }
-code_?:
-  func_?();
-  pcVar11 = (code *)swi(3);
-  (*pcVar11)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -263,27 +383,75 @@ code_?:
 /* Void EmitWaterRing(Vector3) */
 
 void Assembly-CSharp.dll::SplashController::SplashController_EmitWaterRing
-               (SplashController *this,Vector3 position,MethodInfo *method)
+               (SplashController *this,Vector3 *position,MethodInfo *method)
 
 {
   pPVar1 = (this->fields).waterRingParticles;
-  if (pPVar1 != (ParticleSystem *)0x0) {
-    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)pPVar1,(MethodInfo *)0x0);
-    if (this_00 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                (this_00,position,(MethodInfo *)0x0);
-      pPVar1 = (this->fields).waterRingParticles;
-      if (pPVar1 != (ParticleSystem *)0x0) {
-        UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-        ParticleSystem_Emit_Internal(pPVar1,1,(MethodInfo *)0x0);
+  if ((pPVar1 != (ParticleSystem *)0x0) &&
+     (obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                      ((Component *)pPVar1,(MethodInfo *)0x0), obj != (Transform *)0x0)) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar2 = (obj->fields)._._.m_CachedPtr;
+    if (pvVar2 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pcVar3 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pcRam_? = pcVar3;
+    (*pcRam_?)(pvVar2);
+    pPVar1 = (this->fields).waterRingParticles;
+    if (pPVar1 != (ParticleSystem *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pvVar2 = (pPVar1->fields)._._.m_CachedPtr;
+      if (pvVar2 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pPVar1,(MethodInfo *)0x0);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
         return;
       }
+      pcVar3 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+        uVar4 = func_?(&UNK_?);
+        FUN_?(uVar4,0);
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      pcRam_? = pcVar3;
+      (*pcRam_?)(pvVar2,1);
+      return;
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -291,83 +459,136 @@ void Assembly-CSharp.dll::SplashController::SplashController_EmitWaterRing
 /* Void EmitWaterSplash(Vector3, Vector3) */
 
 void Assembly-CSharp.dll::SplashController::SplashController_EmitWaterSplash
-               (SplashController *this,Vector3 position,Vector3 velocity,MethodInfo *method)
+               (SplashController *this,Vector3 *position,Vector3 *velocity,MethodInfo *method)
 
 {
-  pSVar1 = this;
-  pPVar2 = (this->fields).waterSplashParticles;
-  if (pPVar2 != (ParticleSystem *)0x0) {
-    this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                        ((Component *)pPVar2,(MethodInfo *)0x0);
-    if (this_00 != (Transform *)0x0) {
-      value.z = position.z;
-      value.x = position.x;
-      value.y = position.y;
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                (this_00,value,(MethodInfo *)0x0);
-      pPVar2 = (pSVar1->fields).waterSplashParticles;
-      if (pPVar2 != (ParticleSystem *)0x0) {
-        this = (SplashController *)
-               UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-               ParticleSystem_get_collision(pPVar2,(MethodInfo *)0x0);
-        fVar3 = (float10)func_?();
-        UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
-        ParticleSystem_MainModule_set_startSpeedMultiplier_Injected
-                  ((ParticleSystem_MainModule *)&this,
-                   (float)fVar3 * (pSVar1->fields).baseSplashParticlesSpeed,(MethodInfo *)0x0);
-        this_01 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager
-                            ((MethodInfo *)0x0);
-        if (this_01 != (WaterPlaneManager *)0x0) {
-          pCVar4 = WaterPlaneManager::WaterPlaneManager_get_WaterColor
-                              ((Color *)&stack0xffffffe8,this_01,(MethodInfo *)0x0);
-          color.g = ((pSVar1->fields).splashTint.g + pCVar4->g) * _UNK_?;
-          color.r = ((pSVar1->fields).splashTint.r + pCVar4->r) * _UNK_?;
-          color.b = ((pSVar1->fields).splashTint.b + pCVar4->b) * _UNK_?;
-          color.a = ((pSVar1->fields).splashTint.a + pCVar4->a) * _UNK_?;
-          pPVar5 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient
+  pPVar1 = (this->fields).waterSplashParticles;
+  if ((pPVar1 != (ParticleSystem *)0x0) &&
+     (obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                      ((Component *)pPVar1,(MethodInfo *)0x0), obj != (Transform *)0x0)) {
+    CStack_2.r = position->x;
+    CStack_2.g = position->y;
+    CStack_2.b = position->z;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar3 = (obj->fields)._._.m_CachedPtr;
+    if (pvVar3 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    pcVar4 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+      uVar5 = func_?(&UNK_?);
+      FUN_?(uVar5,0);
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    pcRam_? = pcVar4;
+    (*pcRam_?)(pvVar3);
+    pPStackX_8 = (this->fields).waterSplashParticles;
+    if (pPStackX_8 != (ParticleSystem *)0x0) {
+      if (iRam_? != 0) {
+        uVar6 = (uint)((ulonglong)&pPStackX_8 >> 0xc);
+        uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
+        do {
+          uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
+          puVar9 = (ulonglong *)(uVar7 * 8 + 0xADDR);
+          LOCK();
+          bVar10 = uVar8 == *puVar9;
+          if (bVar10) {
+            *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar10);
+      }
+      aPStack_11[0].m_ParticleSystem = pPStackX_8;
+      fVar12 = (float)FUN_?(velocity);
+      fVar13 = (this->fields).baseSplashParticlesSpeed;
+      pcVar4 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+        uVar5 = func_?(&UNK_?);
+        FUN_?(uVar5,0);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pcRam_? = pcVar4;
+      (*pcRam_?)(aPStack_11,fVar12 * fVar13);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pMVar14 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if ((pMVar14 != (MVGameControllerBase *)0x0) &&
+         (pWVar15 = (pMVar14->fields).waterPlaneManager, pWVar15 != (WaterPlaneManager *)0x0)) {
+        if (cRam_? == '\0') {
+          FUN_?(&StringLiteral__RefrColor);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pWVar16 = (pWVar15->fields).water;
+        if (((pWVar16 != (Water *)0x0) &&
+            (this_00 = (pWVar16->fields).meshRenderer, this_00 != (Renderer *)0x0)) &&
+           (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                                (this_00,(MethodInfo *)0x0), this_01 != (Material *)0x0)) {
+          pCVar17 = UnityEngine.CoreModule.dll::UnityEngine::Material::Material_GetColor
+                             (&CStack_2,this_01,StringLiteral__RefrColor,(MethodInfo *)0x0);
+          CStack_2.b = ((this->fields).splashTint.b + pCVar17->b) * _UNK_?;
+          CStack_2.a = ((this->fields).splashTint.a + pCVar17->a) * _UNK_?;
+          CStack_2.g = ((this->fields).splashTint.g + pCVar17->g) * _UNK_?;
+          CStack_2.r = ((this->fields).splashTint.r + pCVar17->r) * _UNK_?;
+          pPVar18 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient
                     ::ParticleSystem_MinMaxGradient_op_Implicit
-                              ((ParticleSystem_MinMaxGradient *)&stack0xffffffbc,color,
-                               (MethodInfo *)0x0);
-          uVar6 = (pPVar5->m_ColorMax).b;
-          uVar7 = pPVar5->m_Mode;
-          uVar8 = pPVar5->m_GradientMin;
-          uVar9 = pPVar5->m_GradientMax;
-          uVar10 = (pPVar5->m_ColorMin).r;
-          uVar11 = (pPVar5->m_ColorMin).g;
-          uVar12 = (pPVar5->m_ColorMin).b;
-          uVar13 = (pPVar5->m_ColorMin).a;
-          value_00.m_ColorMin.a = (float)uVar13;
-          value_00.m_ColorMin.b = (float)uVar12;
-          value_00.m_ColorMin.g = (float)uVar11;
-          value_00.m_ColorMin.r = (float)uVar10;
-          uVar14 = (pPVar5->m_ColorMax).r;
-          uVar15 = (pPVar5->m_ColorMax).g;
-          value_00.m_ColorMax.g = (float)uVar15;
-          value_00.m_ColorMax.r = (float)uVar14;
-          value_00.m_GradientMax = (Gradient *)uVar9;
-          value_00.m_GradientMin = (Gradient *)uVar8;
-          value_00.m_Mode = uVar7;
-          value_00.m_ColorMax.b = (float)uVar6;
-          value_00.m_ColorMax.a = (pPVar5->m_ColorMax).a;
+                              (&PStack_19,&CStack_2,(MethodInfo *)0x0);
+          PStack_20.m_Mode = pPVar18->m_Mode;
+          PStack_20._4_4_ = *(undefined4 *)&pPVar18->field_0x4;
+          PStack_20.m_GradientMin = pPVar18->m_GradientMin;
+          PStack_20.m_GradientMax = pPVar18->m_GradientMax;
+          PStack_20.m_ColorMin.r = (pPVar18->m_ColorMin).r;
+          PStack_20.m_ColorMin.g = (pPVar18->m_ColorMin).g;
+          PStack_20.m_ColorMin.b = (pPVar18->m_ColorMin).b;
+          PStack_20.m_ColorMin.a = (pPVar18->m_ColorMin).a;
+          PStack_20.m_ColorMax.r = (pPVar18->m_ColorMax).r;
+          PStack_20.m_ColorMax.g = (pPVar18->m_ColorMax).g;
+          PStack_20.m_ColorMax.b = (pPVar18->m_ColorMax).b;
+          PStack_20.m_ColorMax.a = (pPVar18->m_ColorMax).a;
           UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
-          ParticleSystem_MainModule_set_startColor
-                    ((ParticleSystem_MainModule *)&this,value_00,(MethodInfo *)0x0);
-          pPVar2 = (pSVar1->fields).waterSplashParticles;
-          fVar3 = (float10)func_?();
-          if (pPVar2 != (ParticleSystem *)0x0) {
+          ParticleSystem_MainModule_set_startColor(aPStack_11,&PStack_20,(MethodInfo *)0x0);
+          pPVar1 = (this->fields).waterSplashParticles;
+          fVar13 = (float)FUN_?(velocity);
+          if (pPVar1 != (ParticleSystem *)0x0) {
             UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
             ParticleSystem_Emit_Internal
-                      (pPVar2,(int)((float)fVar3 * (pSVar1->fields).baseNumberOfSplashParticles),
+                      (pPVar1,(int)(fVar13 * (this->fields).baseNumberOfSplashParticles),
                        (MethodInfo *)0x0);
             return;
           }
         }
       }
+      FUN_?();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
     }
   }
-  func_?();
-  pcVar16 = (code *)swi(3);
-  (*pcVar16)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -380,75 +601,103 @@ Assembly-CSharp.dll::SplashController::SplashController_GetObjectData
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__ContainsKey_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__get_Item_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__set_Item_int__SplashController__ObjectData_
-                   );
-    func_?(&TypeInfo__SplashController__ObjectData);
-    func_?(&TypeInfo__SplashController);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__ContainsKey_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__set_Item_int__SplashController__ObjectData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__SplashController__ObjectData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__SplashController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__SplashController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__SplashController);
+  if (*(int *)&(TypeInfo__SplashController->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__SplashController);
   }
-  pDVar1 = TypeInfo__SplashController->static_fields->objectIDToData;
-  if (pDVar1 != (Dictionary_2_System_Int32_SplashController_ObjectData_ *)0x0) {
-    bVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
-            Dictionary_2_System_Int32_System_Single__ContainsKey
-                      ((Dictionary_2_System_Int32_System_Single_ *)pDVar1,objectID,
+  this = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)
+         TypeInfo__SplashController->static_fields->objectIDToData;
+  if (this != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+    iVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
+            Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                      (this,objectID,
                        MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__ContainsKey_int_
-                      );
-    if (bVar2 == 0) {
-      if ((TypeInfo__SplashController->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__SplashController);
+                       ->klass->rgctx_data[0x21].method);
+    if (iVar1 < 0) {
+      if (*(int *)&(TypeInfo__SplashController->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__SplashController);
       }
-      pDVar1 = TypeInfo__SplashController->static_fields->objectIDToData;
-      value = (Object *)func_?(TypeInfo__SplashController__ObjectData);
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                (value,ExceptionArgument__Enum_obj,in_stack_3);
-      value[1].klass = (Object__Class *)0x7f800000;
-      *(undefined1 *)&value[3].monitor = 0;
-      if (pDVar1 == (Dictionary_2_System_Int32_SplashController_ObjectData_ *)0x0)
-      goto code_?;
+      pDVar2 = TypeInfo__SplashController->static_fields->objectIDToData;
+      value = (Object *)FUN_?(TypeInfo__SplashController__ObjectData);
+      *(undefined4 *)&value[1].klass = 0x7f800000;
+      *(undefined1 *)((longlong)&value[2].klass + 4) = 0;
+      if (pDVar2 == (Dictionary_2_System_Int32_SplashController_ObjectData_ *)0x0)
+      goto DAT_?;
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-      Dictionary_2_System_Int32_System_Object__set_Item
-                ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,objectID,value,
+      Dictionary_2_System_Int32_System_Object__TryInsert
+                ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,objectID,value,
+                 CONCAT31((int3)((uint)in_R9D >> 8),1),
                  MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__set_Item_int__SplashController__ObjectData_
-                );
+                 ->klass->rgctx_data[0x22].method);
     }
-    if ((TypeInfo__SplashController->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__SplashController);
+    if (*(int *)&(TypeInfo__SplashController->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__SplashController);
     }
-    pDVar1 = TypeInfo__SplashController->static_fields->objectIDToData;
-    if (pDVar1 != (Dictionary_2_System_Int32_SplashController_ObjectData_ *)0x0) {
-      pSVar4 = (SplashController_ObjectData *)
+    pDVar2 = TypeInfo__SplashController->static_fields->objectIDToData;
+    if (pDVar2 != (Dictionary_2_System_Int32_SplashController_ObjectData_ *)0x0) {
+      pSVar3 = (SplashController_ObjectData *)
                mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
                Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                         ((Dictionary_2_System_Int32_System_Object_ *)pDVar1,objectID,
+                         ((Dictionary_2_System_Int32_System_Object_ *)pDVar2,objectID,
                           MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__get_Item_int_
                          );
-      iVar5 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_frameCount
-                        ((MethodInfo *)0x0);
-      if (pSVar4 != (SplashController_ObjectData *)0x0) {
-        (pSVar4->fields)._LastFrameInWater_k__BackingField = iVar5;
-        fVar6 = (pSVar4->fields)._TimeSinceLastRingEmission_k__BackingField;
-        fVar7 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime
-                          ((MethodInfo *)0x0);
-        (pSVar4->fields)._TimeSinceLastRingEmission_k__BackingField = fVar7 + fVar6;
-        return pSVar4;
+      pcVar4 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+        uVar5 = func_?(&UNK_?);
+        FUN_?(uVar5,0);
+        pcVar4 = (code *)swi(3);
+        pSVar3 = (SplashController_ObjectData *)(*pcVar4)();
+        return pSVar3;
+      }
+      pcRam_? = pcVar4;
+      iVar1 = (*pcRam_?)();
+      if (pSVar3 != (SplashController_ObjectData *)0x0) {
+        (pSVar3->fields)._LastFrameInWater_k__BackingField = iVar1;
+        fVar6 = (pSVar3->fields)._TimeSinceLastRingEmission_k__BackingField;
+        pcVar4 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+          uVar5 = func_?(&UNK_?);
+          FUN_?(uVar5,0);
+          pcVar4 = (code *)swi(3);
+          pSVar3 = (SplashController_ObjectData *)(*pcVar4)();
+          return pSVar3;
+        }
+        pcRam_? = pcVar4;
+        fVar7 = (float)(*pcRam_?)();
+        (pSVar3->fields)._TimeSinceLastRingEmission_k__BackingField = fVar7 + fVar6;
+        return pSVar3;
       }
     }
   }
-code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  pSVar4 = (SplashController_ObjectData *)(*pcVar8)();
-  return pSVar4;
+DAT_?:
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  pSVar3 = (SplashController_ObjectData *)(*pcVar4)();
+  return pSVar3;
 }
 
 
@@ -458,18 +707,28 @@ void Assembly-CSharp.dll::SplashController::SplashController_Initialize
                (SplashController *this,MethodInfo *method)
 
 {
-  ppSStack_1 = (StreamedAudioClip_IReceiver **)&stack0xfffffffc;
-  pSVar2 = (this->fields).streamedSplashSound;
-  if (pSVar2 != (StreamedAudioClip *)0x0) {
-    (pSVar2->fields).receiver = (StreamedAudioClip_IReceiver *)this;
-    ppSStack_1 = &(pSVar2->fields).receiver;
-    func_?();
+  pSVar1 = (this->fields).streamedSplashSound;
+  if (pSVar1 == (StreamedAudioClip *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  uVar3 = func_?(auStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  bVar3 = iRam_? != 0;
+  (pSVar1->fields).receiver = (StreamedAudioClip_IReceiver *)this;
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)&(pSVar1->fields).receiver >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar6 != uVar7);
+  }
   return;
 }
 
@@ -477,178 +736,183 @@ void Assembly-CSharp.dll::SplashController::SplashController_Initialize
 /* Void WaterSplash(Bounds, Vector3, Int32) */
 
 void Assembly-CSharp.dll::SplashController::SplashController_WaterSplash
-               (SplashController *this,Bounds bounds,Vector3 velocity,int32_t objectID,
+               (SplashController *this,Bounds *bounds,Vector3 *velocity,int32_t objectID,
                MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__SplashController);
-    func_?(&StringLiteral_AvatarWaterSplashSound);
+    FUN_?(&TypeInfo__SplashController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_AvatarWaterSplashSound);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__SplashController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__SplashController);
+  if (*(int *)&(TypeInfo__SplashController->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  fVar1 = bounds.m_Center.x;
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_WaterPlaneManager((MethodInfo *)0x0);
-  if ((this_00 == (WaterPlaneManager *)0x0) ||
-     (pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                         ((Component *)this_00,(MethodInfo *)0x0), pTVar2 == (Transform *)0x0))
-  goto code_?;
-  method_00 = (MethodInfo *)&UNK_?;
-  pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                     ((Vector3 *)&stack0xfffffff4,pTVar2,(MethodInfo *)0x0);
-  if (pVVar3->y < fVar1) {
-    return;
-  }
-  if ((TypeInfo__SplashController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__SplashController);
-  }
+  VStack_1.x = (bounds->m_Center).x;
+  VStack_1.y = (bounds->m_Center).y;
+  uStack_2._0_4_ = (bounds->m_Extents).y;
+  uStack_2._4_4_ = (bounds->m_Extents).z;
+  fVar3 = (bounds->m_Center).z;
+  fVar4 = (bounds->m_Center).y - (float)(undefined4)uStack_2;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__ContainsKey_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__get_Item_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__set_Item_int__SplashController__ObjectData_
-                   );
-    func_?(&TypeInfo__SplashController__ObjectData);
-    func_?(&TypeInfo__SplashController);
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__SplashController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__SplashController);
-  }
-  pDVar4 = TypeInfo__SplashController->static_fields->objectIDToData;
-  if (pDVar4 == (Dictionary_2_System_Int32_SplashController_ObjectData_ *)0x0)
+  pMVar5 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar5 == (MVGameControllerBase *)0x0) ||
+     (this_00 = (pMVar5->fields).waterPlaneManager, this_00 == (WaterPlaneManager *)0x0))
   goto code_?;
-  bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Single]::
-          Dictionary_2_System_Int32_System_Single__ContainsKey
-                    ((Dictionary_2_System_Int32_System_Single_ *)pDVar4,objectID,
-                     MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__ContainsKey_int_
-                    );
-  if (bVar5 == 0) {
-    if ((TypeInfo__SplashController->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__SplashController);
-    }
-    in_stack_6 = TypeInfo__SplashController->static_fields->objectIDToData;
-    this_02 = (Dictionary_2_System_Int32_System_Object_ *)&UNK_?;
-    pOVar7 = (Object *)func_?(TypeInfo__SplashController__ObjectData);
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              (pOVar7,ExceptionArgument__Enum_obj,method_00);
-    pOVar7[1].klass = (Object__Class *)0x7f800000;
-    *(undefined1 *)&pOVar7[3].monitor = 0;
-    if (this_02 == (Dictionary_2_System_Int32_System_Object_ *)0x0) goto code_?;
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-    Dictionary_2_System_Int32_System_Object__set_Item
-              (this_02,objectID,pOVar7,
-               MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__set_Item_int__SplashController__ObjectData_
-              );
-  }
-  if ((TypeInfo__SplashController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__SplashController);
-  }
-  pDVar4 = TypeInfo__SplashController->static_fields->objectIDToData;
-  if (pDVar4 == (Dictionary_2_System_Int32_SplashController_ObjectData_ *)0x0)
-  goto code_?;
-  pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-           Dictionary_2_System_Int32_System_Object__get_Item
-                     ((Dictionary_2_System_Int32_System_Object_ *)pDVar4,objectID,
-                      MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__get_Item_int_
-                     );
-  pOVar8 = (Object__Class *)
-           UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_frameCount((MethodInfo *)0x0);
-  if (pOVar7 == (Object *)0x0) goto code_?;
-  pOVar7[3].klass = pOVar8;
-  puVar9 = &UNK_?;
-  fVar10 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar1 = bounds.m_Extents.y * _UNK_?;
-  pOVar7[1].klass = (Object__Class *)(fVar10 + in_stack_11);
-  if (in_stack_12 + fVar1 <= (float)in_stack_6) {
+  fVar6 = WaterPlaneManager::WaterPlaneManager_get_WaterLevel(this_00,(MethodInfo *)0x0);
+  if (fVar6 < fVar4) {
     return;
   }
-  pfVar13 = &(this->fields).timeBeforeNewRingIsEmitted;
-  uVar14 = bounds.m_Center._4_8_;
-  pSVar15 = this;
-  if (*pfVar13 <= (float)pOVar7[1].klass && (float)pOVar7[1].klass != *pfVar13) {
-code_?:
-    pPVar16 = (this->fields).waterRingParticles;
-    if ((pPVar16 == (ParticleSystem *)0x0) ||
-       (pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                           ((Component *)pPVar16,(MethodInfo *)0x0), pTVar2 == (Transform *)0x0))
-    goto code_?;
-    value.y = bounds.m_Center.y;
-    value.x = (float)pSVar15;
-    value.z = bounds.m_Center.z;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-              (pTVar2,value,(MethodInfo *)0x0);
-    pPVar16 = (this->fields).waterRingParticles;
-    if (pPVar16 == (ParticleSystem *)0x0) goto code_?;
-    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Emit_Internal
-              (pPVar16,1,(MethodInfo *)0x0);
-    *(undefined8 *)&pOVar7[1].monitor = uVar14;
-    pOVar7[1].klass = (Object__Class *)0x0;
-    pOVar7[2].monitor = (MonitorData *)bounds.m_Extents.x;
+  if (*(int *)&(TypeInfo__SplashController->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  else {
-    bounds.m_Extents.x = (float)*(undefined8 *)&pOVar7[1].monitor;
-    fVar1 = bounds.m_Center.y;
-    pDVar4 = in_stack_6;
+  pSVar7 = SplashController_GetObjectData(objectID,(MethodInfo *)0x0);
+  VStack_8.z = (bounds->m_Extents).z;
+  VStack_8.x = (bounds->m_Extents).x;
+  VStack_8.y = (bounds->m_Extents).y;
+  if (VStack_8.y + VStack_8.y + fVar4 <= fVar6) {
+    return;
+  }
+  fVar4 = VStack_1.x;
+  uVar9._4_4_ = fVar6;
+  uVar9._0_4_ = VStack_1.x;
+  VStack_1._0_8_ = uVar9;
+  VStack_1.z = fVar3;
+  if (pSVar7 == (SplashController_ObjectData *)0x0) goto code_?;
+  fVar10 = (pSVar7->fields)._TimeSinceLastRingEmission_k__BackingField;
+  pfVar11 = &(this->fields).timeBeforeNewRingIsEmitted;
+  if (*pfVar11 <= fVar10 && fVar10 != *pfVar11) {
+code_?:
+    pPVar12 = (this->fields).waterRingParticles;
+    if ((pPVar12 == (ParticleSystem *)0x0) ||
+       (obj = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                        ((Component *)pPVar12,(MethodInfo *)0x0), obj == (Transform *)0x0)) {
+code_?:
+      FUN_?();
+      pcVar13 = (code *)swi(3);
+      (*pcVar13)();
+      return;
+    }
+    VStack_8.y = fVar6;
+    VStack_8.x = fVar4;
+    VStack_8.z = fVar3;
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__System__Math);
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    fVar10 = (float)pDVar4 - in_stack_12;
-    fVar1 = fVar1 - (float)puVar9;
-    in_stack_11 = (float)this - in_stack_11;
-    if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Math);
+    pvVar14 = (obj->fields)._._.m_CachedPtr;
+    if (pvVar14 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+      pcVar13 = (code *)swi(3);
+      (*pcVar13)();
+      return;
     }
-    dVar17 = (double)(fVar1 * fVar1 + fVar10 * fVar10 + in_stack_11 * in_stack_11);
-    if (dVar17 < 0.0) {
-      func_?();
+    pcVar13 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar13 = (code *)FUN_?(&UNK_?), pcVar13 == (code *)0x0)) {
+      uVar9 = func_?(&UNK_?);
+      FUN_?(uVar9,0);
+      pcVar13 = (code *)swi(3);
+      (*pcVar13)();
+      return;
     }
-    else {
-      dVar17 = SQRT(dVar17);
+    pcRam_? = pcVar13;
+    (*pcRam_?)(pvVar14);
+    pPVar12 = (this->fields).waterRingParticles;
+    if (pPVar12 == (ParticleSystem *)0x0) goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
-    pfVar13 = &(this->fields).distanceBeforeNewRingIsEmitted;
-    if (*pfVar13 <= (float)dVar17 && (float)dVar17 != *pfVar13) goto code_?;
+    pvVar14 = (pPVar12->fields)._._.m_CachedPtr;
+    if (pvVar14 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pPVar12,(MethodInfo *)0x0);
+      pcVar13 = (code *)swi(3);
+      (*pcVar13)();
+      return;
+    }
+    pcVar13 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar13 = (code *)FUN_?(&UNK_?), pcVar13 == (code *)0x0)) {
+      uVar9 = func_?(&UNK_?);
+      FUN_?(uVar9,0);
+      pcVar13 = (code *)swi(3);
+      (*pcVar13)();
+      return;
+    }
+    pcRam_? = pcVar13;
+    (*pcRam_?)(pvVar14,1);
+    (pSVar7->fields)._TimeSinceLastRingEmission_k__BackingField = 0.0;
+    (pSVar7->fields)._LastRingPosition_k__BackingField.x = fVar4;
+    (pSVar7->fields)._LastRingPosition_k__BackingField.y = fVar6;
+    (pSVar7->fields)._LastRingPosition_k__BackingField.z = fVar3;
   }
-  if (*(char *)&pOVar7[3].monitor == '\0') {
-    *(undefined1 *)&pOVar7[3].monitor = 1;
+  else {
+    VStack_8.x = (pSVar7->fields)._LastRingPosition_k__BackingField.x;
+    VStack_8.y = (pSVar7->fields)._LastRingPosition_k__BackingField.y;
+    VStack_8.z = (pSVar7->fields)._LastRingPosition_k__BackingField.z;
+    fVar10 = (float)FUN_?();
+    pfVar11 = &(this->fields).distanceBeforeNewRingIsEmitted;
+    if (*pfVar11 <= fVar10 && fVar10 != *pfVar11) goto code_?;
+  }
+  if ((pSVar7->fields)._IsInWater_k__BackingField == 0) {
+    (pSVar7->fields)._IsInWater_k__BackingField = 1;
     this_01 = MVGameControllerBase::MVGameControllerBase_get_AudioManager((MethodInfo *)0x0);
-    fVar1 = (float)((uint)velocity.y ^
-                    __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-    if (fVar1 < 0.0) {
-      fVar1 = 0.0;
+    VStack_8.x = velocity->x;
+    VStack_8.y = velocity->y;
+    VStack_8.z = velocity->z;
+    fVar10 = (float)((uint)VStack_8.y ^ _UNK_?);
+    if (fVar10 < 0.0) {
+      fVar10 = 0.0;
     }
-    else if (_UNK_? < fVar1) {
-      fVar1 = _UNK_?;
+    else if (_UNK_? < fVar10) {
+      fVar10 = _UNK_?;
     }
     if (this_01 == (AudioManager *)0x0) {
 code_?:
-      func_?();
-      pcVar18 = (code *)swi(3);
-      (*pcVar18)();
+      FUN_?();
+      pcVar13 = (code *)swi(3);
+      (*pcVar13)();
       return;
     }
-    position.y = (float)in_stack_6;
-    position.x = (float)in_stack_19;
-    position.z = in_stack_12;
+    VStack_8.y = fVar6;
+    VStack_8.x = fVar4;
+    VStack_8.z = fVar3;
     AudioManager::AudioManager_Play
-              (this_01,StringLiteral_AvatarWaterSplashSound,(this->fields).splashSound,position,
-               (fVar1 / _UNK_?) * (this->fields).splashSoundVolume,
-               SoundRangeDistance__Enum_Long,1.0,(MethodInfo *)0x0);
-    position_00.z = bounds.m_Extents.x;
-    position_00.x = (float)(int)uVar14;
-    position_00.y = (float)(int)((ulonglong)uVar14 >> 0x20);
-    SplashController_EmitWaterPillar(this,position_00,velocity,(MethodInfo *)0x0);
-    position_01.y = (float)method;
-    position_01.x = (float)objectID;
-    position_01.z = in_stack_20;
-    SplashController_EmitWaterSplash(this,position_01,velocity,(MethodInfo *)0x0);
+              (this_01,StringLiteral_AvatarWaterSplashSound,(this->fields).splashSound,&VStack_8,
+               (fVar10 / _UNK_?) * (this->fields).splashSoundVolume,
+               SoundRangeDistance__Enum_Long,_UNK_?,(MethodInfo *)0x0);
+    VStack_8.x = velocity->x;
+    VStack_8.y = velocity->y;
+    VStack_8.z = velocity->z;
+    VStack_1._0_8_ = uVar9;
+    VStack_1.z = fVar3;
+    SplashController_EmitWaterPillar(this,&VStack_1,&VStack_8,(MethodInfo *)0x0);
+    VStack_8.x = velocity->x;
+    VStack_8.y = velocity->y;
+    VStack_8.z = velocity->z;
+    VStack_1._0_8_ = uVar9;
+    VStack_1.z = fVar3;
+    SplashController_EmitWaterSplash(this,&VStack_1,&VStack_8,(MethodInfo *)0x0);
   }
   return;
 }
@@ -660,27 +924,62 @@ void Assembly-CSharp.dll::SplashController::SplashController__cctor(MethodInfo *
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__Dictionary_int_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>
-                   );
-    func_?(&TypeInfo__SplashController);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__Dictionary_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__SplashController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TypeInfo__SplashController->static_fields->currentObjectID = 0;
-  this = (Dictionary_2_System_Int32_SplashController_ObjectData_ *)
-         func_?(
+  pDVar1 = (Dictionary_2_System_Int32_SplashController_ObjectData_ *)
+           FUN_?(
                         TypeInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>
                         );
-  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
-  Dictionary_2_System_Int32_System_Object___ctor_3
-            ((Dictionary_2_System_Int32_System_Object_ *)this,8,
-             MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__Dictionary_int_
-            );
-  TypeInfo__SplashController->static_fields->objectIDToData = this;
-  func_?(&TypeInfo__SplashController->static_fields->objectIDToData,this);
+  pMVar2 = MethodInfo__System__Collections__Generic__Dictionary<int,_SplashController::ObjectData>__Dictionary_int_
+           ->klass->rgctx_data->method;
+  FUN_?(pDVar1,8,pMVar2->klass->rgctx_data[2].rgctxDataDummy);
+  pEVar3 = mscorlib.dll::System::Collections::Generic::EqualityComparer`1[System::Int32]::
+           EqualityComparer_1_System_Int32__get_Default(pMVar2->klass->rgctx_data[3].method);
+  if ((pEVar3 != (EqualityComparer_1_System_Int32_ *)0x0) &&
+     (bVar4 = iRam_? != 0,
+     (pDVar1->fields)._comparer = (IEqualityComparer_1_System_Int32_ *)0x0, bVar4)) {
+    uVar5 = (uint)((ulonglong)&(pDVar1->fields)._comparer >> 0xc);
+    lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+      puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+      LOCK();
+      bVar4 = uVar7 == *puVar8;
+      if (bVar4) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar4);
+  }
+  TypeInfo__SplashController->static_fields->objectIDToData = pDVar1;
+  if (iRam_? != 0) {
+    uVar5 = (uint)((ulonglong)&TypeInfo__SplashController->static_fields->objectIDToData >> 0xc);
+    uVar7 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+    do {
+      uVar9 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
+      puVar8 = (ulonglong *)(uVar7 * 8 + 0xADDR);
+      LOCK();
+      bVar4 = uVar9 == *puVar8;
+      if (bVar4) {
+        *puVar8 = uVar9 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar4);
+  }
   return;
 }
 
@@ -708,11 +1007,13 @@ int32_t Assembly-CSharp.dll::SplashController::SplashController_get_NewObjectID
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__SplashController);
+    FUN_?(&TypeInfo__SplashController);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__SplashController->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__SplashController);
+  if (*(int *)&(TypeInfo__SplashController->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__SplashController);
   }
   TypeInfo__SplashController->static_fields->currentObjectID =
        TypeInfo__SplashController->static_fields->currentObjectID + 1;

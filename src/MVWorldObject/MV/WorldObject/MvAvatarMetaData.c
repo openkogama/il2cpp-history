@@ -6,85 +6,97 @@ String * MVWorldObject.dll::MV::WorldObject::MvAvatarMetaData::MvAvatarMetaData_
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__System__Object);
-    func_?(&StringLiteral_avatarID___0___name___1___priceG);
+    FUN_?(&TypeInfo__System__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_avatarID___0___name___1___priceG);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  args = (Object__Array *)func_?(TypeInfo__System__Object,5);
-  iStack_1 = (this->fields).avatarID;
-  pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_1);
-  if (args == (Object__Array *)0x0) {
-    func_?();
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-code_?:
-    uVar3 = func_?(0);
-    func_?(uVar3);
-  }
-  else {
-    if (pOVar2 != (Object *)0x0) {
-      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar4 == 0) goto code_?;
+  args = (Object__Array *)FUN_?(TypeInfo__System__Object,5);
+  aiStackX_8[0] = (this->fields).avatarID;
+  lVar1 = FUN_?(uRam_?,aiStackX_8);
+  if (args != (Object__Array *)0x0) {
+    if (lVar1 != 0) {
+      lVar2 = FUN_?(lVar1,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar5 = (String *)(*pcVar4)();
+        return pSVar5;
+      }
     }
-    if (args->max_length == 0) goto code_?;
-    args->vector[0] = pOVar2;
-    func_?(args->vector,pOVar2);
+    FUN_?(args,0,lVar1);
     pSVar5 = (this->fields).name;
     if (pSVar5 != (String *)0x0) {
-      iVar4 = func_?(pSVar5,(args->klass->_0).element_class);
-      if (iVar4 == 0) goto code_?;
+      lVar1 = FUN_?(pSVar5,(args->klass->_0).element_class);
+      if (lVar1 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar5 = (String *)(*pcVar4)();
+        return pSVar5;
+      }
     }
-    if (args->max_length < 2) goto code_?;
-    args->vector[1] = (Object *)pSVar5;
-    func_?(args->vector + 1,pSVar5);
-    iStack_6 = (this->fields).priceGold;
-    pOVar2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_6);
-    if (pOVar2 != (Object *)0x0) {
-      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar4 == 0) goto code_?;
+    FUN_?(args,1,pSVar5);
+    aiStackX_8[0] = (this->fields).priceGold;
+    lVar1 = FUN_?(uRam_?,aiStackX_8);
+    if (lVar1 != 0) {
+      lVar2 = FUN_?(lVar1,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar5 = (String *)(*pcVar4)();
+        return pSVar5;
+      }
     }
-    if (args->max_length < 3) goto code_?;
-    args->vector[2] = pOVar2;
-    func_?(args->vector + 2,pOVar2);
-    bStack_7 = (this->fields).isOnMarketPlace;
-    pOVar2 = (Object *)func_?(TypeInfo__System__Boolean,&bStack_7);
-    if (pOVar2 != (Object *)0x0) {
-      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar4 == 0) goto code_?;
+    FUN_?(args,2,lVar1);
+    aiStackX_8[0] = CONCAT31(aiStackX_8[0]._1_3_,(this->fields).isOnMarketPlace);
+    lVar1 = FUN_?(uRam_?,aiStackX_8);
+    if (lVar1 != 0) {
+      lVar2 = FUN_?(lVar1,(args->klass->_0).element_class);
+      if (lVar2 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar5 = (String *)(*pcVar4)();
+        return pSVar5;
+      }
     }
-    if (args->max_length < 4) goto code_?;
-    args->vector[3] = pOVar2;
-    func_?(args->vector + 3,pOVar2);
-    bStack_8 = (this->fields).canBeSoldOnMarketPlace;
-    pOVar2 = (Object *)func_?(TypeInfo__System__Boolean,&bStack_8);
-    if (pOVar2 != (Object *)0x0) {
-      iVar4 = func_?(pOVar2,(args->klass->_0).element_class);
-      if (iVar4 == 0) goto code_?;
+    FUN_?(args,3,lVar1);
+    aiStackX_8[0] = CONCAT31(aiStackX_8[0]._1_3_,(this->fields).canBeSoldOnMarketPlace);
+    lVar1 = FUN_?(uRam_?,aiStackX_8);
+    if (lVar1 != 0) {
+      lVar1 = FUN_?(lVar1,(args->klass->_0).element_class);
+      if (lVar1 == 0) {
+        uVar3 = FUN_?();
+        FUN_?(uVar3,0);
+        pcVar4 = (code *)swi(3);
+        pSVar5 = (String *)(*pcVar4)();
+        return pSVar5;
+      }
     }
-    if (4 < args->max_length) {
-      args->vector[4] = pOVar2;
-      func_?(args->vector + 4,pOVar2);
-      pSVar5 = mscorlib.dll::System::String::String_Format_3
-                         (StringLiteral_avatarID___0___name___1___priceG,args,(MethodInfo *)0x0);
-      return pSVar5;
-    }
+    FUN_?(args,4);
+    pSVar5 = StringLiteral_avatarID___0___name___1___priceG;
+    PStack_6._arg0 = (Object *)0x0;
+    PStack_6._arg1 = (Object *)0x0;
+    PStack_6._arg2 = (Object *)0x0;
+    PStack_6._args = (Object__Array *)0x0;
+    mscorlib.dll::System::ParamsArray::ParamsArray__ctor_3(&PStack_6,args,(MethodInfo *)0x0);
+    PStack_7._arg0 = PStack_6._arg0;
+    PStack_7._arg1 = PStack_6._arg1;
+    PStack_7._arg2 = PStack_6._arg2;
+    PStack_7._args = PStack_6._args;
+    pSVar5 = mscorlib.dll::System::String::String_FormatHelper
+                       ((IFormatProvider *)0x0,pSVar5,&PStack_7,(MethodInfo *)0x0);
+    return pSVar5;
   }
-code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  pSVar5 = (String *)(*pcVar9)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  pSVar5 = (String *)(*pcVar4)();
   return pSVar5;
 }
 
@@ -96,54 +108,60 @@ void MVWorldObject.dll::MV::WorldObject::MvAvatarMetaData::MvAvatarMetaData__cto
 
 {
   if (cRam_? == '\0') {
-    func_?(&::StringLiteral__);
+    FUN_?(&::StringLiteral__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  bVar1 = iRam_? != 0;
   (this->fields).avatarID = -1;
   (this->fields).name = ::StringLiteral__;
-  pMVar1 = (MethodInfo *)&(this->fields).name;
-  func_?(pMVar1,::StringLiteral__);
-  (this->fields).priceGold = -1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,pMVar1);
-  if (bp != (BytePacker *)0x0) {
-    iVar2 = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-    (this->fields).avatarID = iVar2;
-    count = 0;
-    iVar3 = 0;
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).name >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
     do {
-      if (iVar3 == 0x23) goto code_?;
-      uVar4 = BytePacker::BytePacker_ReadByte(bp,(MethodInfo *)0x0);
-      count = count | (uVar4 & 0x7f) << ((byte)iVar3 & 0x1f);
-      iVar3 = iVar3 + 7;
-    } while ((char)uVar4 < '\0');
-    pBVar5 = BytePacker::BytePacker_ReadBytes(bp,count,(MethodInfo *)0x0);
-    pEVar6 = mscorlib.dll::System::Text::Encoding::Encoding_get_UTF8((MethodInfo *)0x0);
-    if (pEVar6 != (Encoding *)0x0) {
-      pBStack7 = pBVar5;
-      pSVar8 = (String *)(*(code *)(pEVar6->klass->vtable).GetString.method)();
-      (this->fields).name = pSVar8;
-      func_?();
-      iVar2 = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
-      (this->fields).priceGold = iVar2;
-      uVar4 = BytePacker::BytePacker_ReadByte(bp,(MethodInfo *)0x0);
-      (this->fields).isOnMarketPlace = uVar4 != 0;
-      uVar4 = BytePacker::BytePacker_ReadByte(bp,(MethodInfo *)0x0);
-      (this->fields).canBeSoldOnMarketPlace = uVar4 != 0;
-      return;
-    }
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
   }
-  func_?();
-code_?:
-  uVar9 = func_?(&TypeInfo__System__FormatException);
-  this_00 = (FormatException *)func_?(uVar9);
-  pMVar1 = (MethodInfo *)0x0;
-  pSVar8 = (String *)func_?(&StringLiteral_Error_in_the_byte_stream__too_ma);
-  mscorlib.dll::System::FormatException::FormatException__ctor_1(this_00,pSVar8,pMVar1);
-  func_?(&MethodInfo__MV__WorldObject__BytePacker__Read7BitEncodedInt__);
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  (this->fields).priceGold = -1;
+  if (bp == (BytePacker *)0x0) {
+    FUN_?();
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
+    return;
+  }
+  iVar7 = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+  (this->fields).avatarID = iVar7;
+  pSVar8 = BytePacker::BytePacker_ReadString(bp,(MethodInfo *)0x0);
+  bVar1 = iRam_? != 0;
+  (this->fields).name = pSVar8;
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).name >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar1 = uVar4 == *puVar5;
+      if (bVar1) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar1);
+  }
+  iVar7 = BytePacker::BytePacker_ReadInt32(bp,(MethodInfo *)0x0);
+  (this->fields).priceGold = iVar7;
+  uVar9 = BytePacker::BytePacker_ReadByte(bp,(MethodInfo *)0x0);
+  (this->fields).isOnMarketPlace = uVar9 != 0;
+  uVar9 = BytePacker::BytePacker_ReadByte(bp,(MethodInfo *)0x0);
+  (this->fields).canBeSoldOnMarketPlace = uVar9 != 0;
   return;
 }
 

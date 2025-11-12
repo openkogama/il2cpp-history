@@ -6,22 +6,39 @@ void Assembly-CSharp.dll::MaterialPurchasePopup+<>c::MaterialPurchasePopup_c__On
 
 {
   if (cRam_? == '\0') {
-    pIStack_1 = (IUIStack *)&TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (x != (IUIStack *)0x0) {
-    pIStack_1 = x;
-    pIStack_2 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    uStack_3 = 2;
-    func_?();
+    uVar1 = 0;
+    pIVar2 = x->klass;
+    uVar3._0_1_ = (pIVar2->_1).rank;
+    uVar3._1_1_ = (pIVar2->_1).minimumAlignment;
+    if (uVar3 != 0) {
+      do {
+        if (pIVar2->interfaceOffsets[uVar1].interfaceType ==
+            (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
+          pVVar4 = &(pIVar2->vtable).get_StackReady + (pIVar2->interfaceOffsets[uVar1].offset + 2);
+          UNRECOVERED_JUMPTABLE = pVVar4->methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*UNRECOVERED_JUMPTABLE)(x,pVVar4->method,UNRECOVERED_JUMPTABLE);
+          return;
+        }
+        uVar1 = uVar1 + 1;
+      } while (uVar1 < uVar3);
+    }
+    puVar5 = (undefined8 *)FUN_?(x);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(code *)*puVar5)(x,puVar5[1],(code *)*puVar5);
     return;
   }
-  pIStack_1 = (IUIStack *)&stack0xfffffffc;
-  uVar4 = func_?(&uStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -34,7 +51,9 @@ void Assembly-CSharp.dll::MaterialPurchasePopup+<>c::MaterialPurchasePopup_c__On
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (x != (IModalPopupCreator *)0x0) {
@@ -46,21 +65,25 @@ void Assembly-CSharp.dll::MaterialPurchasePopup+<>c::MaterialPurchasePopup_c__On
       do {
         if (pIVar1->interfaceOffsets[uVar2].interfaceType ==
             (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-          pIVar1 = x->klass;
-          iVar4 = pIVar1->interfaceOffsets[uVar2].offset;
-          (*(code *)(&(pIVar1->vtable).Create_1)[iVar4].method)
-                    (x,(&(pIVar1->vtable).Create_2)[iVar4].methodPtr);
+          pVVar4 = &(pIVar1->vtable).Create + (pIVar1->interfaceOffsets[uVar2].offset + 2);
+          UNRECOVERED_JUMPTABLE = pVVar4->methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*UNRECOVERED_JUMPTABLE)(x,pVVar4->method,UNRECOVERED_JUMPTABLE);
           return;
         }
         uVar2 = uVar2 + 1;
       } while (uVar2 < uVar3);
     }
-    puVar5 = (undefined4 *)
-             func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,2);
-    (*(code *)*puVar5)(x,puVar5[1]);
+    puVar5 = (undefined8 *)
+             FUN_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator,2,uVar3,
+                           unaff_RBX);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(code *)*puVar5)(x,puVar5[1],(code *)*puVar5);
     return;
   }
-  func_?();
+  FUN_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
   return;
@@ -75,22 +98,39 @@ void Assembly-CSharp.dll::MaterialPurchasePopup+<>c::
 
 {
   if (cRam_? == '\0') {
-    pIStack_1 = (IUIStack *)&TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (x != (IUIStack *)0x0) {
-    pIStack_1 = x;
-    pIStack_2 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    uStack_3 = 2;
-    func_?();
+    uVar1 = 0;
+    pIVar2 = x->klass;
+    uVar3._0_1_ = (pIVar2->_1).rank;
+    uVar3._1_1_ = (pIVar2->_1).minimumAlignment;
+    if (uVar3 != 0) {
+      do {
+        if (pIVar2->interfaceOffsets[uVar1].interfaceType ==
+            (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
+          pVVar4 = &(pIVar2->vtable).get_StackReady + (pIVar2->interfaceOffsets[uVar1].offset + 2);
+          UNRECOVERED_JUMPTABLE = pVVar4->methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*UNRECOVERED_JUMPTABLE)(x,pVVar4->method,UNRECOVERED_JUMPTABLE);
+          return;
+        }
+        uVar1 = uVar1 + 1;
+      } while (uVar1 < uVar3);
+    }
+    puVar5 = (undefined8 *)FUN_?(x);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(code *)*puVar5)(x,puVar5[1],(code *)*puVar5);
     return;
   }
-  pIStack_1 = (IUIStack *)&stack0xfffffffc;
-  uVar4 = func_?(&uStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -103,22 +143,39 @@ void Assembly-CSharp.dll::MaterialPurchasePopup+<>c::
 
 {
   if (cRam_? == '\0') {
-    pIStack_1 = (IUIStack *)&TypeInfo__UnityEngine__EventSystems__IUIStack;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IUIStack);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (x != (IUIStack *)0x0) {
-    pIStack_1 = x;
-    pIStack_2 = TypeInfo__UnityEngine__EventSystems__IUIStack;
-    uStack_3 = 2;
-    func_?();
+    uVar1 = 0;
+    pIVar2 = x->klass;
+    uVar3._0_1_ = (pIVar2->_1).rank;
+    uVar3._1_1_ = (pIVar2->_1).minimumAlignment;
+    if (uVar3 != 0) {
+      do {
+        if (pIVar2->interfaceOffsets[uVar1].interfaceType ==
+            (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IUIStack) {
+          pVVar4 = &(pIVar2->vtable).get_StackReady + (pIVar2->interfaceOffsets[uVar1].offset + 2);
+          UNRECOVERED_JUMPTABLE = pVVar4->methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          (*UNRECOVERED_JUMPTABLE)(x,pVVar4->method,UNRECOVERED_JUMPTABLE);
+          return;
+        }
+        uVar1 = uVar1 + 1;
+      } while (uVar1 < uVar3);
+    }
+    puVar5 = (undefined8 *)FUN_?(x);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(code *)*puVar5)(x,puVar5[1],(code *)*puVar5);
     return;
   }
-  pIStack_1 = (IUIStack *)&stack0xfffffffc;
-  uVar4 = func_?(&uStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -130,15 +187,26 @@ void Assembly-CSharp.dll::MaterialPurchasePopup+<>c::MaterialPurchasePopup_c__cc
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MaterialPurchasePopup____c);
+    FUN_?(&TypeInfo__MaterialPurchasePopup____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__MaterialPurchasePopup____c;
-  value = (MaterialPurchasePopup_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  TypeInfo__MaterialPurchasePopup____c->static_fields->__9 = value;
-  func_?(TypeInfo__MaterialPurchasePopup____c->static_fields,value);
+  pMVar1 = (MaterialPurchasePopup_c *)FUN_?(TypeInfo__MaterialPurchasePopup____c);
+  TypeInfo__MaterialPurchasePopup____c->static_fields->__9 = pMVar1;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)TypeInfo__MaterialPurchasePopup____c->static_fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 

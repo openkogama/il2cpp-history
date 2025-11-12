@@ -29,7 +29,7 @@ public class FirstTimeActivatableLogicPointer : FirstTimeActivatableElementBase
 	[SerializeField]
 	private Vector3 bubbleWorldSpaceOffset;
 	[SerializeField]
-	private Button skipElement;
+	private UnityEngine.UI.Button skipElement;
 	[SerializeField]
 	protected bool skipAllowed;
 	[SerializeField]

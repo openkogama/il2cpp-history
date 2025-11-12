@@ -16,7 +16,7 @@ void Assembly-CSharp.dll::FirstTimeEventPopup::FirstTimeEventPopup_FadeIn
       return;
     }
   }
-  func_?();
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -30,48 +30,147 @@ void Assembly-CSharp.dll::FirstTimeEventPopup::FirstTimeEventPopup_PopSelf
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    MethodInfo__FirstTimeEventPopup____c__DisplayClass5_0___PopSelf_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__FirstTimeEventPopup____c__DisplayClass5_0);
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__FirstTimeEventPopup____c__DisplayClass5_0___PopSelf_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__FirstTimeEventPopup____c__DisplayClass5_0);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__FirstTimeEventPopup____c__DisplayClass5_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value != (Object *)0x0) {
-    value[1].klass = (Object__Class *)popupGameObject;
-    func_?(value + 1,popupGameObject);
-    root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                     ((Component *)this,(MethodInfo *)0x0);
-    callbackFunction =
-         (ExecuteEvents_EventFunction_1_System_Object_ *)
-         func_?(
-                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                        );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,value,
-               MethodInfo__FirstTimeEventPopup____c__DisplayClass5_0___PopSelf_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-               ,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (root,(BaseEventData *)0x0,callbackFunction,
-               UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-              );
+  object = (Object *)FUN_?(TypeInfo__FirstTimeEventPopup____c__DisplayClass5_0);
+  if (object == (Object *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
+  bVar2 = iRam_? != 0;
+  object[1].klass = (Object__Class *)popupGameObject;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)(object + 1) >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
+  }
+  pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+  this_01 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+            FUN_?(
+                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                         );
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+  ExecuteEvents_EventFunction_1_System_Object___ctor
+            (this_01,object,
+             MethodInfo__FirstTimeEventPopup____c__DisplayClass5_0___PopSelf_b__0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+             ,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pMVar8 = 
+  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+  ;
+  if ((
+      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+      ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    if ((pMVar8->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(pMVar8);
+    }
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_GetEventChain
+            (pGVar7,(IList_1_UnityEngine_Transform_ *)
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                    s_InternalTransformList,(MethodInfo *)0x0);
+  pLVar9 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+           s_InternalTransformList;
+  if (pLVar9 != (List_1_UnityEngine_Transform_ *)0x0) {
+    lVar10 = (longlong)(pLVar9->fields)._size;
+    uVar3 = 0;
+    if (0 < lVar10) {
+      lVar11 = 0;
+      lVar12 = 0x20;
+      do {
+        if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pLVar9 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                 s_InternalTransformList;
+        if (pLVar9 == (List_1_UnityEngine_Transform_ *)0x0) goto code_?;
+        if ((uint)(pLVar9->fields)._size <= uVar3) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar1 = (code *)swi(3);
+          (*pcVar1)();
+          return;
+        }
+        pTVar13 = (pLVar9->fields)._items;
+        if (pTVar13 == (Transform__Array *)0x0) goto code_?;
+        if ((uint)pTVar13->max_length <= uVar3) {
+          FUN_?();
+          pcVar1 = (code *)swi(3);
+          (*pcVar1)();
+          return;
+        }
+        this_00 = *(Component **)((longlong)pTVar13->vector + lVar12 + -0x20);
+        if (this_00 == (Component *)0x0) goto code_?;
+        pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           (this_00,(MethodInfo *)0x0);
+        bVar14 = UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+                ExecuteEvents_Execute_18
+                          (pGVar7,(BaseEventData *)0x0,this_01,
+                           (pMVar8->field7_0x38).rgctx_data[1].method);
+        if (bVar14 != 0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    (this_00,(MethodInfo *)0x0);
+          return;
+        }
+        uVar3 = uVar3 + 1;
+        lVar11 = lVar11 + 1;
+        lVar12 = lVar12 + 8;
+      } while (lVar11 < lVar10);
+    }
+    return;
+  }
+code_?:
+  FUN_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
   return;
@@ -85,32 +184,49 @@ void Assembly-CSharp.dll::FirstTimeEventPopup::FirstTimeEventPopup_SetSkippable
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pBVar1 = (this->fields).skipButton;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pBVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pBVar1 = (this->fields).skipButton;
-    if (pBVar1 != (Button *)0x0) {
-      pGVar3 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                         ((Component *)pBVar1,(MethodInfo *)0x0);
-      if (pGVar3 != (GameObject *)0x0) {
-        if (pcRam_? == (code *)0x0) {
-          pcRam_? = (code *)func_?();
-        }
-        (*pcRam_?)();
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pBVar1 != (Button *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((pBVar1->fields)._._._._._._.m_CachedPtr != (void *)0x0) {
+      pBVar1 = (this->fields).skipButton;
+      if ((pBVar1 != (Button *)0x0) &&
+         (this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                              ((Component *)pBVar1,(MethodInfo *)0x0), this_00 != (GameObject *)0x0)
+         ) {
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (this_00,skipAllowed,(MethodInfo *)0x0);
         return;
       }
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
     }
-    func_?();
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
-    return;
   }
   return;
 }
@@ -123,18 +239,89 @@ void Assembly-CSharp.dll::FirstTimeEventPopup::FirstTimeEventPopup_StartFade
                MethodInfo *method)
 
 {
-  this_00 = (this->fields).fader;
-  targetGameObject =
-       UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                 ((Component *)this,(MethodInfo *)0x0);
-  if (this_00 != (FirstTimeFadeHandler *)0x0) {
-    FirstTimeFadeHandler::FirstTimeFadeHandler_StartFadeOut
-              (this_00,finishedAction,targetGameObject,(MethodInfo *)0x0);
+  pFVar1 = (this->fields).fader;
+  pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+  if (pFVar1 == (FirstTimeFadeHandler *)0x0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__Action<UnityEngine::GameObject>,finishedAction,pGVar2,0,
+                  unaff_RDI);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  this_00 = (pFVar1->fields).canvasGroup;
+  (pFVar1->fields).currentFadeOutTime = (pFVar1->fields).fadeOutTime;
+  (pFVar1->fields).fadingOut = 1;
+  if (this_00 == (CanvasGroup *)0x0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+            (this_00,_UNK_?,(MethodInfo *)0x0);
+  pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)(pFVar1->fields).finishedAction,(Delegate *)finishedAction,
+                      (MethodInfo *)0x0);
+  pAVar5 = TypeInfo__System__Action<UnityEngine::GameObject>;
+  if (pDVar4 == (Delegate *)0x0) {
+    (pFVar1->fields).finishedAction = (Action_1_UnityEngine_GameObject_ *)0x0;
+  }
+  else {
+    pAVar6 = (Action_1_UnityEngine_GameObject_ *)
+             FUN_?(pDVar4,TypeInfo__System__Action<UnityEngine::GameObject>);
+    if (pAVar6 == (Action_1_UnityEngine_GameObject_ *)0x0) {
+      FUN_?(pDVar4,pAVar5);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    (pFVar1->fields).finishedAction = pAVar6;
+    pAVar5 = TypeInfo__System__Action<UnityEngine::GameObject>;
+    lVar7 = FUN_?(pDVar4,TypeInfo__System__Action<UnityEngine::GameObject>);
+    if (lVar7 == 0) {
+      FUN_?(pDVar4,pAVar5);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+  }
+  if (iRam_? != 0) {
+    uVar8 = (uint)((ulonglong)&(pFVar1->fields).finishedAction >> 0xc);
+    uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+    do {
+      uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+      puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+      LOCK();
+      bVar12 = uVar10 == *puVar11;
+      if (bVar12) {
+        *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar12);
+  }
+  iVar13 = iRam_?;
+  (pFVar1->fields).targetGameObject = pGVar2;
+  if (iVar13 != 0) {
+    uVar8 = (uint)((ulonglong)&(pFVar1->fields).targetGameObject >> 0xc);
+    uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+    do {
+      uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+      puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+      LOCK();
+      bVar12 = uVar10 == *puVar11;
+      if (bVar12) {
+        *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar12);
+  }
   return;
 }
 
@@ -146,30 +333,102 @@ void Assembly-CSharp.dll::FirstTimeEventPopup::FirstTimeEventPopup_StartFadeWith
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<UnityEngine::GameObject>);
-    func_?(&MethodInfo__FirstTimeEventPopup__PopSelf_UnityEngine__GameObject_);
+    FUN_?(&TypeInfo__System__Action<UnityEngine::GameObject>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__FirstTimeEventPopup__PopSelf_UnityEngine__GameObject_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).fader;
-  this_01 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-             *)func_?(TypeInfo__System__Action<UnityEngine::GameObject>);
-  DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-  DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+  pFVar1 = (this->fields).fader;
+  this_01 = (UnityAction_1_System_Object_ *)
+            FUN_?(TypeInfo__System__Action<UnityEngine::GameObject>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+  UnityAction_1_System_Object___ctor
             (this_01,(Object *)this,
              MethodInfo__FirstTimeEventPopup__PopSelf_UnityEngine__GameObject_,(MethodInfo *)0x0);
-  targetGameObject =
-       UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                 ((Component *)this,(MethodInfo *)0x0);
-  if (this_00 != (FirstTimeFadeHandler *)0x0) {
-    FirstTimeFadeHandler::FirstTimeFadeHandler_StartFadeOut
-              (this_00,(Action_1_UnityEngine_GameObject_ *)this_01,targetGameObject,
-               (MethodInfo *)0x0);
+  pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+  if (pFVar1 == (FirstTimeFadeHandler *)0x0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__Action<UnityEngine::GameObject>,this_01,pGVar2,0,unaff_RDI);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  this_00 = (pFVar1->fields).canvasGroup;
+  (pFVar1->fields).currentFadeOutTime = (pFVar1->fields).fadeOutTime;
+  (pFVar1->fields).fadingOut = 1;
+  if (this_00 == (CanvasGroup *)0x0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+            (this_00,_UNK_?,(MethodInfo *)0x0);
+  pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
+                     ((Delegate *)(pFVar1->fields).finishedAction,(Delegate *)this_01,
+                      (MethodInfo *)0x0);
+  pAVar5 = TypeInfo__System__Action<UnityEngine::GameObject>;
+  if (pDVar4 == (Delegate *)0x0) {
+    (pFVar1->fields).finishedAction = (Action_1_UnityEngine_GameObject_ *)0x0;
+  }
+  else {
+    pAVar6 = (Action_1_UnityEngine_GameObject_ *)
+             FUN_?(pDVar4,TypeInfo__System__Action<UnityEngine::GameObject>);
+    if (pAVar6 == (Action_1_UnityEngine_GameObject_ *)0x0) {
+      FUN_?(pDVar4,pAVar5);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    (pFVar1->fields).finishedAction = pAVar6;
+    pAVar5 = TypeInfo__System__Action<UnityEngine::GameObject>;
+    lVar7 = FUN_?(pDVar4,TypeInfo__System__Action<UnityEngine::GameObject>);
+    if (lVar7 == 0) {
+      FUN_?(pDVar4,pAVar5);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+  }
+  if (iRam_? != 0) {
+    uVar8 = (uint)((ulonglong)&(pFVar1->fields).finishedAction >> 0xc);
+    uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+    do {
+      uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+      puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+      LOCK();
+      bVar12 = uVar10 == *puVar11;
+      if (bVar12) {
+        *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar12);
+  }
+  iVar13 = iRam_?;
+  (pFVar1->fields).targetGameObject = pGVar2;
+  if (iVar13 != 0) {
+    uVar8 = (uint)((ulonglong)&(pFVar1->fields).targetGameObject >> 0xc);
+    uVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6);
+    do {
+      uVar10 = *(ulonglong *)(uVar9 * 8 + 0xADDR);
+      puVar11 = (ulonglong *)(uVar9 * 8 + 0xADDR);
+      LOCK();
+      bVar12 = uVar10 == *puVar11;
+      if (bVar12) {
+        *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar12);
+  }
   return;
 }
 

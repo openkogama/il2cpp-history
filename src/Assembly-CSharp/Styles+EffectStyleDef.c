@@ -9,8 +9,12 @@ void Assembly-CSharp.dll::Styles+EffectStyleDef::Styles_EffectStyleDef_Set
      (pSVar1 = (Shadow *)(effectStyleObject->fields).shadow, pSVar1 != (Shadow *)0x0)) {
     UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
               ((Behaviour *)pSVar1,(this->fields).shadow,(MethodInfo *)0x0);
+    CStack_2.r = (this->fields).shadowEffectColor.r;
+    CStack_2.g = (this->fields).shadowEffectColor.g;
+    CStack_2.b = (this->fields).shadowEffectColor.b;
+    CStack_2.a = (this->fields).shadowEffectColor.a;
     UnityEngine.UI.dll::UnityEngine::UI::Shadow::Shadow_set_effectColor
-              (pSVar1,(this->fields).shadowEffectColor,(MethodInfo *)0x0);
+              (pSVar1,&CStack_2,(MethodInfo *)0x0);
     UnityEngine.UI.dll::UnityEngine::UI::Shadow::Shadow_set_effectDistance
               (pSVar1,(this->fields).shadowEffectDistance,(MethodInfo *)0x0);
     UnityEngine.UI.dll::UnityEngine::UI::Shadow::Shadow_set_useGraphicAlpha
@@ -19,8 +23,12 @@ void Assembly-CSharp.dll::Styles+EffectStyleDef::Styles_EffectStyleDef_Set
     if (pSVar1 != (Shadow *)0x0) {
       UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                 ((Behaviour *)pSVar1,(this->fields).outline,(MethodInfo *)0x0);
+      CStack_2.r = (this->fields).outlineEffectColor.r;
+      CStack_2.g = (this->fields).outlineEffectColor.g;
+      CStack_2.b = (this->fields).outlineEffectColor.b;
+      CStack_2.a = (this->fields).outlineEffectColor.a;
       UnityEngine.UI.dll::UnityEngine::UI::Shadow::Shadow_set_effectColor
-                (pSVar1,(this->fields).outlineEffectColor,(MethodInfo *)0x0);
+                (pSVar1,&CStack_2,(MethodInfo *)0x0);
       UnityEngine.UI.dll::UnityEngine::UI::Shadow::Shadow_set_effectDistance
                 (pSVar1,(this->fields).outlineEffectDistance,(MethodInfo *)0x0);
       UnityEngine.UI.dll::UnityEngine::UI::Shadow::Shadow_set_useGraphicAlpha
@@ -29,27 +37,27 @@ void Assembly-CSharp.dll::Styles+EffectStyleDef::Styles_EffectStyleDef_Set
       if (this_00 != (GradientEffect *)0x0) {
         UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
                   ((Behaviour *)this_00,(this->fields).gradient,(MethodInfo *)0x0);
-        fVar2 = (this->fields).gradientTop.g;
-        fVar3 = (this->fields).gradientTop.b;
-        fVar4 = (this->fields).gradientTop.a;
+        fVar3 = (this->fields).gradientTop.g;
+        fVar4 = (this->fields).gradientTop.b;
+        fVar5 = (this->fields).gradientTop.a;
         (this_00->fields).top.r = (this->fields).gradientTop.r;
-        (this_00->fields).top.g = fVar2;
-        (this_00->fields).top.b = fVar3;
-        (this_00->fields).top.a = fVar4;
-        fVar2 = (this->fields).gradientBottom.g;
-        fVar3 = (this->fields).gradientBottom.b;
-        fVar4 = (this->fields).gradientBottom.a;
+        (this_00->fields).top.g = fVar3;
+        (this_00->fields).top.b = fVar4;
+        (this_00->fields).top.a = fVar5;
+        fVar3 = (this->fields).gradientBottom.g;
+        fVar4 = (this->fields).gradientBottom.b;
+        fVar5 = (this->fields).gradientBottom.a;
         (this_00->fields).bottom.r = (this->fields).gradientBottom.r;
-        (this_00->fields).bottom.g = fVar2;
-        (this_00->fields).bottom.b = fVar3;
-        (this_00->fields).bottom.a = fVar4;
+        (this_00->fields).bottom.g = fVar3;
+        (this_00->fields).bottom.b = fVar4;
+        (this_00->fields).bottom.a = fVar5;
         return;
       }
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -79,7 +87,7 @@ void Assembly-CSharp.dll::Styles+EffectStyleDef::Styles_EffectStyleDef_SetGradie
     (gradient->fields).bottom.a = fVar3;
     return;
   }
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -92,22 +100,67 @@ void Assembly-CSharp.dll::Styles+EffectStyleDef::Styles_EffectStyleDef_SetOutlin
                (Styles_EffectStyleDef *this,Outline *outline,MethodInfo *method)
 
 {
-  if (outline != (Outline *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-              ((Behaviour *)outline,(this->fields).outline,(MethodInfo *)0x0);
-    UnityEngine.UI.dll::UnityEngine::UI::Shadow::Shadow_set_effectColor
-              ((Shadow *)outline,(this->fields).outlineEffectColor,(MethodInfo *)0x0);
-    UnityEngine.UI.dll::UnityEngine::UI::Shadow::Shadow_set_effectDistance
-              ((Shadow *)outline,
-               (Vector2)((ulonglong)(uint)(this->fields).outlineEffectDistance.y << 0x20),
-               (MethodInfo *)0x0);
-    UnityEngine.UI.dll::UnityEngine::UI::Shadow::Shadow_set_useGraphicAlpha
-              ((Shadow *)outline,(this->fields).outlineUseGraphicAlpha,(MethodInfo *)0x0);
+  if (outline == (Outline *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+            ((Behaviour *)outline,(this->fields).outline,(MethodInfo *)0x0);
+  CStack_2.r = (this->fields).outlineEffectColor.r;
+  CStack_2.g = (this->fields).outlineEffectColor.g;
+  CStack_2.b = (this->fields).outlineEffectColor.b;
+  CStack_2.a = (this->fields).outlineEffectColor.a;
+  UnityEngine.UI.dll::UnityEngine::UI::Shadow::Shadow_set_effectColor
+            ((Shadow *)outline,&CStack_2,(MethodInfo *)0x0);
+  UnityEngine.UI.dll::UnityEngine::UI::Shadow::Shadow_set_effectDistance
+            ((Shadow *)outline,(this->fields).outlineEffectDistance,(MethodInfo *)0x0);
+  bVar3 = (this->fields).outlineUseGraphicAlpha;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object,bVar3,0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  (outline->fields)._.m_UseGraphicAlpha = bVar3;
+  pGVar4 = UnityEngine.UI.dll::UnityEngine::UI::BaseMeshEffect::BaseMeshEffect_get_graphic
+                     ((BaseMeshEffect *)outline,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pGVar4 != (Graphic *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((pGVar4->fields)._._._._._.m_CachedPtr != (void *)0x0) {
+      pGVar4 = UnityEngine.UI.dll::UnityEngine::UI::BaseMeshEffect::BaseMeshEffect_get_graphic
+                         ((BaseMeshEffect *)outline,(MethodInfo *)0x0);
+      if (pGVar4 == (Graphic *)0x0) {
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      (*(pGVar4->klass->vtable).SetVerticesDirty.methodPtr)
+                (pGVar4,(pGVar4->klass->vtable).SetVerticesDirty.method);
+    }
+  }
   return;
 }
 
@@ -118,21 +171,67 @@ void Assembly-CSharp.dll::Styles+EffectStyleDef::Styles_EffectStyleDef_SetShadow
                (Styles_EffectStyleDef *this,Shadow *shadow,MethodInfo *method)
 
 {
-  if (shadow != (Shadow *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
-              ((Behaviour *)shadow,(this->fields).shadow,(MethodInfo *)0x0);
-    UnityEngine.UI.dll::UnityEngine::UI::Shadow::Shadow_set_effectColor
-              (shadow,(this->fields).shadowEffectColor,(MethodInfo *)0x0);
-    UnityEngine.UI.dll::UnityEngine::UI::Shadow::Shadow_set_effectDistance
-              (shadow,(Vector2)((ulonglong)(uint)(this->fields).shadowEffectDistance.y << 0x20),
-               (MethodInfo *)0x0);
-    UnityEngine.UI.dll::UnityEngine::UI::Shadow::Shadow_set_useGraphicAlpha
-              (shadow,(this->fields).shadowUseGraphicAlpha,(MethodInfo *)0x0);
+  if (shadow == (Shadow *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  UnityEngine.CoreModule.dll::UnityEngine::Behaviour::Behaviour_set_enabled
+            ((Behaviour *)shadow,(this->fields).shadow,(MethodInfo *)0x0);
+  CStack_2.r = (this->fields).shadowEffectColor.r;
+  CStack_2.g = (this->fields).shadowEffectColor.g;
+  CStack_2.b = (this->fields).shadowEffectColor.b;
+  CStack_2.a = (this->fields).shadowEffectColor.a;
+  UnityEngine.UI.dll::UnityEngine::UI::Shadow::Shadow_set_effectColor
+            (shadow,&CStack_2,(MethodInfo *)0x0);
+  UnityEngine.UI.dll::UnityEngine::UI::Shadow::Shadow_set_effectDistance
+            (shadow,(this->fields).shadowEffectDistance,(MethodInfo *)0x0);
+  bVar3 = (this->fields).shadowUseGraphicAlpha;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object,bVar3,0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  (shadow->fields).m_UseGraphicAlpha = bVar3;
+  pGVar4 = UnityEngine.UI.dll::UnityEngine::UI::BaseMeshEffect::BaseMeshEffect_get_graphic
+                     ((BaseMeshEffect *)shadow,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pGVar4 != (Graphic *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((pGVar4->fields)._._._._._.m_CachedPtr != (void *)0x0) {
+      pGVar4 = UnityEngine.UI.dll::UnityEngine::UI::BaseMeshEffect::BaseMeshEffect_get_graphic
+                         ((BaseMeshEffect *)shadow,(MethodInfo *)0x0);
+      if (pGVar4 == (Graphic *)0x0) {
+        FUN_?();
+        pcVar1 = (code *)swi(3);
+        (*pcVar1)();
+        return;
+      }
+      (*(pGVar4->klass->vtable).SetVerticesDirty.methodPtr)
+                (pGVar4,(pGVar4->klass->vtable).SetVerticesDirty.method);
+    }
+  }
   return;
 }
 
@@ -143,39 +242,65 @@ void Assembly-CSharp.dll::Styles+EffectStyleDef::Styles_EffectStyleDef__ctor
                (Styles_EffectStyleDef *this,MethodInfo *method)
 
 {
-  fVar1 = _UNK_?;
-  fVar2 = _UNK_?;
-  fVar3 = _UNK_?;
-  fVar4 = _UNK_?;
-  (this->fields).shadowEffectColor.r = _UNK_?;
-  (this->fields).shadowEffectColor.g = fVar3;
-  (this->fields).shadowEffectColor.b = fVar2;
-  (this->fields).shadowEffectColor.a = fVar1;
+  uVar1 = _UNK_?;
+  uVar2 = _UNK_?;
+  uVar3 = _UNK_?;
+  uVar4 = _UNK_?;
+  uVar5 = _UNK_?;
+  (this->fields).shadowEffectColor.r = (float)_UNK_?;
+  uVar6 = _UNK_?;
+  (this->fields).shadowEffectColor.g = (float)uVar5;
+  _UNK_? = (undefined4)uVar3;
+  _UNK_? = SUB84(uVar3,4);
+  uVar5 = _UNK_?;
+  (this->fields).shadowEffectColor.b = (float)_UNK_?;
+  _UNK_? = uVar6;
+  (this->fields).shadowEffectColor.a = (float)uVar5;
   (this->fields).shadowEffectDistance.x = 1.0;
+  uVar6 = _UNK_?;
+  _UNK_? = (undefined4)uVar4;
+  _UNK_? = SUB84(uVar4,4);
+  uVar5 = _UNK_?;
+  (this->fields).outlineEffectColor.r = (float)_UNK_?;
+  _UNK_? = uVar6;
+  uVar4 = _UNK_?;
+  (this->fields).outlineEffectColor.g = (float)uVar5;
+  _UNK_? = (undefined4)uVar3;
+  _UNK_? = SUB84(uVar3,4);
+  uVar5 = _UNK_?;
+  (this->fields).outlineEffectColor.b = (float)_UNK_?;
+  _UNK_? = uVar4;
+  (this->fields).outlineEffectColor.a = (float)uVar5;
   (this->fields).shadowEffectDistance.y = -1.0;
+  uVar4 = _UNK_?;
+  uVar5 = _UNK_?;
+  (this->fields).gradientTop.r = (float)_UNK_?;
+  uVar6 = _UNK_?;
+  (this->fields).gradientTop.g = (float)uVar5;
+  _UNK_? = (undefined4)uVar4;
+  _UNK_? = SUB84(uVar4,4);
+  uVar5 = _UNK_?;
+  (this->fields).gradientTop.b = (float)_UNK_?;
+  _UNK_? = uVar6;
+  (this->fields).gradientTop.a = (float)uVar5;
   (this->fields).shadowUseGraphicAlpha = 1;
-  fVar5 = _UNK_?;
-  fVar6 = _UNK_?;
-  fVar7 = _UNK_?;
-  fVar8 = _UNK_?;
-  (this->fields).outlineEffectColor.r = fVar4;
-  (this->fields).outlineEffectColor.g = fVar3;
-  (this->fields).outlineEffectColor.b = fVar2;
-  (this->fields).outlineEffectColor.a = fVar1;
   (this->fields).outlineEffectDistance.x = 1.0;
   (this->fields).outlineEffectDistance.y = -1.0;
   (this->fields).outlineUseGraphicAlpha = 1;
-  (this->fields).gradientTop.r = fVar8;
-  (this->fields).gradientTop.g = fVar7;
-  (this->fields).gradientTop.b = fVar6;
-  (this->fields).gradientTop.a = fVar5;
-  fVar2 = _UNK_?;
-  fVar3 = _UNK_?;
-  fVar4 = _UNK_?;
-  (this->fields).gradientBottom.r = _UNK_?;
-  (this->fields).gradientBottom.g = fVar4;
-  (this->fields).gradientBottom.b = fVar3;
-  (this->fields).gradientBottom.a = fVar2;
+  uVar4 = _UNK_?;
+  _UNK_? = (undefined4)uVar2;
+  _UNK_? = SUB84(uVar2,4);
+  uVar5 = _UNK_?;
+  (this->fields).gradientBottom.r = (float)_UNK_?;
+  _UNK_? = uVar4;
+  uVar4 = _UNK_?;
+  (this->fields).gradientBottom.g = (float)uVar5;
+  _UNK_? = (undefined4)uVar1;
+  _UNK_? = SUB84(uVar1,4);
+  uVar5 = _UNK_?;
+  (this->fields).gradientBottom.b = (float)_UNK_?;
+  _UNK_? = uVar4;
+  (this->fields).gradientBottom.a = (float)uVar5;
   return;
 }
 

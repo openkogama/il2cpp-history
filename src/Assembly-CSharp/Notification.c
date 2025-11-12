@@ -4,8 +4,7 @@
 void Assembly-CSharp.dll::Notification::Notification_Close(Notification *this,MethodInfo *method)
 
 {
-  iVar1 = (*(code *)(this->klass->vtable).__unknown.method)
-                    (this,(this->klass->vtable).Initialize.methodPtr);
+  iVar1 = (*(this->klass->vtable).__unknown.methodPtr)(this,(this->klass->vtable).__unknown.method);
   (this->fields).timeSinceStart = (float)(iVar1 + 1);
   return;
 }
@@ -29,35 +28,63 @@ void Assembly-CSharp.dll::Notification::Notification_Update(Notification *this,M
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   fVar1 = (this->fields).timeSinceStart;
-  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar2 = fVar2 + fVar1;
-  pNVar3 = this->klass;
-  (this->fields).timeSinceStart = fVar2;
-  iVar4 = (*(code *)(pNVar3->vtable).__unknown.method)(this,(pNVar3->vtable).Initialize.methodPtr);
-  if ((float)iVar4 <= fVar2) {
-    pNVar5 = (this->fields).pool;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcRam_? = pcVar2;
+  fVar4 = (float)(*pcRam_?)();
+  pNVar5 = this->klass;
+  fVar4 = fVar4 + fVar1;
+  (this->fields).timeSinceStart = fVar4;
+  iVar6 = (*(pNVar5->vtable).__unknown.methodPtr)(this,(pNVar5->vtable).__unknown.method);
+  if ((float)iVar6 <= fVar4) {
+    pNVar7 = (this->fields).pool;
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)pNVar5,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar6 != 0) {
-      pNVar5 = (this->fields).pool;
-      if (pNVar5 == (NotificationObjectPool *)0x0) {
-        func_?();
-        pcVar7 = (code *)swi(3);
-        (*pcVar7)();
-        return;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (pNVar7 != (NotificationObjectPool *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      NotificationObjectPool::NotificationObjectPool_Return(pNVar5,this,(MethodInfo *)0x0);
+      if ((pNVar7->fields)._._._._.m_CachedPtr != (void *)0x0) {
+        pNVar7 = (this->fields).pool;
+        if (pNVar7 == (NotificationObjectPool *)0x0) {
+          FUN_?();
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
+          return;
+        }
+        NotificationObjectPool::NotificationObjectPool_Return(pNVar7,this,(MethodInfo *)0x0);
+      }
     }
-    pIStack8 = this->klass[1]._0.image;
-    pNStack9 = this;
-    (*(code *)(this->klass->vtable).OnReturn.method)();
+    (*(this->klass->vtable).OnReturn.methodPtr)(this,(this->klass->vtable).OnReturn.method);
   }
   return;
 }
@@ -70,8 +97,7 @@ float Assembly-CSharp.dll::Notification::Notification_get_Progress
 
 {
   fVar1 = (this->fields).timeSinceStart;
-  iVar2 = (*(code *)(this->klass->vtable).__unknown.method)
-                    (this,(this->klass->vtable).Initialize.methodPtr);
+  iVar2 = (*(this->klass->vtable).__unknown.methodPtr)(this,(this->klass->vtable).__unknown.method);
   return fVar1 / (float)iVar2;
 }
 

@@ -8,23 +8,18 @@ void Assembly-CSharp.dll::ContextMenuController+<>c__DisplayClass37_0::
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__UnityEngine__EventSystems__ICloneHandler;
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ICloneHandler);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (handler != (ICloneHandler *)0x0) {
-    ppIStack_1 = (ICloneHandler__Class **)0x0;
-    puStack_2 = (undefined *)0x0;
-    uStack_3 = 0;
-    func_?(0,TypeInfo__UnityEngine__EventSystems__ICloneHandler,handler,(this->fields).root
-                   );
+    FUN_?();
     return;
   }
-  ppIStack_1 = (ICloneHandler__Class **)&stack0xfffffffc;
-  uVar4 = func_?(&uStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

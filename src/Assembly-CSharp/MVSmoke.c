@@ -5,59 +5,91 @@ void Assembly-CSharp.dll::MVSmoke::MVSmoke_Initialize(MVSmoke *this,MethodInfo *
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
-    func_?(&TypeInfo__IInputSignalReceiver);
-    func_?(&MethodInfo__MVSmoke__OnInputStateUpdate_LogicInputState__LogicObjectManager_);
+    FUN_?(&TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__IInputSignalReceiver);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__MVSmoke__OnInputStateUpdate_LogicInputState__LogicObjectManager_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   MVLogicObject::MVLogicObject_Initialize((MVLogicObject *)this,(MethodInfo *)0x0);
   MVLogicObject::MVLogicObject_SetupCulling
-            ((MVLogicObject *)this,(this->fields)._._.gameObject,2.0,(MethodInfo *)0x0);
+            ((MVLogicObject *)this,(this->fields)._._.gameObject,TypeRef__System__Activator__T._0_4_
+             ,(MethodInfo *)0x0);
   pPVar1 = (this->fields).particleSystem;
   if (pPVar1 != (ParticleSystem *)0x0) {
-    PStack_2.m_ParticleSystem = (ParticleSystem *)&UNK_?;
-    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_get_collision
-              (pPVar1,(MethodInfo *)0x0);
-    PStack_2.m_ParticleSystem = (ParticleSystem *)&UNK_?;
-    radius = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
-             ParticleSystem_MainModule_get_startLifetimeMultiplier_Injected
-                       (&PStack_2,(MethodInfo *)0x0);
+    if (iRam_? != 0) {
+      uVar2 = (uint)((ulonglong)&pPStackX_8 >> 0xc);
+      uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+      do {
+        uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+        puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar5;
+        if (bVar6) {
+          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    pcVar7 = pcRam_?;
+    pPStackX_8 = pPVar1;
+    pPStackX_18 = pPVar1;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+      uVar8 = func_?(&UNK_?);
+      FUN_?(uVar8,0);
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
+      return;
+    }
+    pcRam_? = pcVar7;
+    radius = (float)(*pcRam_?)(&pPStackX_18);
     MVSmoke_SetupSmokeCulling(this,radius,(this->fields)._._.gameObject,(MethodInfo *)0x0);
     MVSmoke_SetSmokeProperties(this,(MethodInfo *)0x0);
-    this_00 = (UnityAction_2_System_Int32_System_Int32_ *)func_?();
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
-    UnityAction_2_System_Int32_System_Int32___ctor
+    this_00 = (Action_2_Int32Enum_Object_ *)
+              FUN_?(TypeInfo__System__Action<LogicInputState,_LogicObjectManager>);
+    mscorlib.dll::System::Action`2[Int32Enum,Object]::Action_2_Int32Enum_Object___ctor
               (this_00,(Object *)this,
                MethodInfo__MVSmoke__OnInputStateUpdate_LogicInputState__LogicObjectManager_,
                (MethodInfo *)0x0);
-    PStack_2.m_ParticleSystem = (ParticleSystem *)&UNK_?;
-    pIVar3 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver
+    pIVar9 = LogicClientsideFactory::LogicClientsideFactory_CreateStateChangeInputSignalReceiver
                        ((MVWorldObject *)this,1,(Action_3_Boolean_Boolean_LogicObjectManager_ *)0x0,
                         (Action_2_LogicInputState_LogicObjectManager_ *)this_00,(MethodInfo *)0x0);
-    (this->fields)._InputSignalReceiver_k__BackingField = pIVar3;
-    func_?();
+    bVar6 = iRam_? != 0;
+    (this->fields)._InputSignalReceiver_k__BackingField = pIVar9;
+    if (bVar6) {
+      uVar2 = (uint)((ulonglong)&(this->fields)._InputSignalReceiver_k__BackingField >> 0xc);
+      uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+      do {
+        uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+        puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar5;
+        if (bVar6) {
+          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
     if ((this->fields)._InputSignalReceiver_k__BackingField != (IInputSignalReceiver *)0x0) {
-      PStack_2.m_ParticleSystem = (ParticleSystem *)&UNK_?;
-      value = func_?();
+      toggle = FUN_?(1,TypeInfo__IInputSignalReceiver);
+      MVSmoke_ToggleEmitter(this,toggle,(MethodInfo *)0x0);
       pPVar1 = (this->fields).particleSystem;
       if (pPVar1 != (ParticleSystem *)0x0) {
-        UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-        ParticleSystem_get_collision(pPVar1,(MethodInfo *)0x0);
-        UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::
-        ParticleSystem_EmissionModule_set_enabled_Injected
-                  ((ParticleSystem_EmissionModule *)&stack0xfffffff4,value,(MethodInfo *)0x0);
-        pPVar1 = (this->fields).particleSystem;
-        if (pPVar1 != (ParticleSystem *)0x0) {
-          UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play_1
-                    (pPVar1,(MethodInfo *)0x0);
-          return;
-        }
+        UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::ParticleSystem_Play
+                  (pPVar1,1,(MethodInfo *)0x0);
+        return;
       }
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -68,19 +100,42 @@ void Assembly-CSharp.dll::MVSmoke::MVSmoke_InitializeInventory(MVSmoke *this,Met
 
 {
   MVLogicObject::MVLogicObject_InitializeInventory((MVLogicObject *)this,(MethodInfo *)0x0);
-  if ((this->fields).particleSystem != (ParticleSystem *)0x0) {
-    if (pcRam_? == (code *)0x0) {
-      pcRam_? = (code *)func_?();
-    }
-    uStack1 = 1;
-                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
-                    /* WARNING: Treating indirect jump as call */
-    (*pcRam_?)();
+  obj = (this->fields).particleSystem;
+  if (obj == (ParticleSystem *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar2 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar2 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*pcRam_?)(pvVar2,1);
   return;
 }
 
@@ -93,8 +148,30 @@ void Assembly-CSharp.dll::MVSmoke::MVSmoke_OnDataUpdate(MVSmoke *this,MethodInfo
   MVSmoke_SetSmokeProperties(this,(MethodInfo *)0x0);
   woID = (this->fields)._._._.id;
   worldObjectManager = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ResetChunk
-            (woID,(IWorldObjectManager *)worldObjectManager,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__,
+                  worldObjectManager,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__get_Count__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  resetNodes = (HashSet_1_System_Int32_ *)
+               FUN_?(TypeInfo__System__Collections__Generic__HashSet<int>);
+  FUN_?(resetNodes,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+  MVWorldObject.dll::LogicObjectManager::LogicObjectManager_ResetNode
+            (woID,resetNodes,(IWorldObjectManager *)worldObjectManager,(MethodInfo *)0x0);
+  if (resetNodes != (HashSet_1_System_Int32_ *)0x0) {
+    return;
+  }
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -107,35 +184,46 @@ void Assembly-CSharp.dll::MVSmoke::MVSmoke_OnInputStateUpdate
 
 {
   if (logicInputState == LogicInputState__Enum_FromColdToHot) {
-    pPVar1 = (this->fields).particleSystem;
-    if (pPVar1 != (ParticleSystem *)0x0) {
-      logicInputState =
-           (LogicInputState__Enum)
-           UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-           ParticleSystem_get_collision(pPVar1,(MethodInfo *)0x0);
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::
-      ParticleSystem_EmissionModule_set_enabled_Injected
-                ((ParticleSystem_EmissionModule *)&logicInputState,1,(MethodInfo *)0x0);
+    uVar1 = CONCAT71((int7)(CONCAT44(in_register_00000014,logicInputState) >> 8),1);
+  }
+  else {
+    if (logicInputState != LogicInputState__Enum_FromHotToCold) {
       return;
     }
-code_?:
-    uVar2 = func_?(&stack0xfffffff0);
-    func_?(uVar2);
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+    uVar1 = 0;
+  }
+  apPStackX_8[0] = (this->fields).particleSystem;
+  if (apPStackX_8[0] == (ParticleSystem *)0x0) {
+    FUN_?(this,uVar1,0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  if (logicInputState == LogicInputState__Enum_FromHotToCold) {
-    pPVar1 = (this->fields).particleSystem;
-    if (pPVar1 == (ParticleSystem *)0x0) goto code_?;
-    logicInputState =
-         (LogicInputState__Enum)
-         UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-         ParticleSystem_get_collision(pPVar1,(MethodInfo *)0x0);
-    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::
-    ParticleSystem_EmissionModule_set_enabled_Injected
-              ((ParticleSystem_EmissionModule *)&logicInputState,0,(MethodInfo *)0x0);
+  if (iRam_? != 0) {
+    uVar3 = (uint)((ulonglong)apPStackX_8 >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (ulonglong)(uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
   }
+  pcVar2 = pcRam_?;
+  pPStackX_20 = apPStackX_8[0];
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar7 = func_?(&UNK_?);
+    FUN_?(uVar7,0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcRam_? = pcVar2;
+  (*pcRam_?)(&pPStackX_20,uVar1 & 0xff);
   return;
 }
 
@@ -145,249 +233,398 @@ code_?:
 void Assembly-CSharp.dll::MVSmoke::MVSmoke_SetSmokeProperties(MVSmoke *this,MethodInfo *method)
 
 {
-  this_01 = this;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__AnimationCurve);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&TypeInfo__System__Single);
-    func_?(&TypeInfo__System__Single);
-    func_?(&StringLiteral_color);
-    func_?(&StringLiteral_wind);
-    func_?(&StringLiteral_length);
+    FUN_?(&TypeInfo__UnityEngine__AnimationCurve);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Single);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_color);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_wind);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_length);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  PStack_1.m_ParticleSystem = (ParticleSystem *)0x0;
-  pPVar2 = (this->fields).particleSystem;
-  if (pPVar2 == (ParticleSystem *)0x0) {
-code_?:
-    func_?();
-code_?:
-    func_?();
-  }
-  else {
-    PStack_3.m_ParticleSystem =
-         (ParticleSystem *)
-         UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-         ParticleSystem_get_collision(pPVar2,(MethodInfo *)0x0);
-    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
-    ParticleSystem_MainModule_get_startLifetimeMultiplier_Injected(&PStack_3,(MethodInfo *)0x0);
-    pDVar4 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-             (this->fields)._._._.data;
-    if (pDVar4 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
-    goto code_?;
-    bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-             UIElements::TextureId]::
-             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                       (pDVar4,(Object *)StringLiteral_color,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                       );
-    if (bVar5 == 0) {
-code_?:
-      pDVar4 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-               (this_01->fields)._._._.data;
-      this = (MVSmoke *)0x0;
-      if (pDVar4 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-        bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                 ::UIElements::TextureId]::
-                 Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                           (pDVar4,(Object *)StringLiteral_length,
-                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                           );
-        if (bVar5 == 0) {
+  pPVar1 = (this->fields).particleSystem;
+  PStackX_18.m_ParticleSystem = (ParticleSystem *)0x0;
+  if (pPVar1 != (ParticleSystem *)0x0) {
+    if (iRam_? != 0) {
+      uVar2 = (uint)((ulonglong)&pPStackX_8 >> 0xc);
+      uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+      do {
+        uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+        puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+        LOCK();
+        bVar6 = uVar4 == *puVar5;
+        if (bVar6) {
+          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar6);
+    }
+    pcVar7 = pcRam_?;
+    pPStackX_8 = pPVar1;
+    pPStackX_20 = pPVar1;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+      uVar8 = func_?(&UNK_?);
+      FUN_?(uVar8,0);
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
+      return;
+    }
+    pcRam_? = pcVar7;
+    (*pcRam_?)(&pPStackX_20);
+    pDVar9 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+              *)(this->fields)._._._.data;
+    if (pDVar9 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                   *)0x0) {
+      iVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
+              UIElements::StyleComplexSelector+PseudoStateData]::
+              Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
+                        (pDVar9,(Object *)StringLiteral_color,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                         ->klass->rgctx_data[0x21].method);
+      if (-1 < iVar10) {
+        pDVar11 = (this->fields)._._._.data;
+        if (pDVar11 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+        pOVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                  Object]::Dictionary_2_System_Object_System_Object__get_Item
+                            (pDVar11,(Object *)StringLiteral_color,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                            );
+        pSVar13 = TypeInfo__System__Single;
+        if (pOVar12 == (Object *)0x0) {
+          lVar14 = 0;
+        }
+        else {
+          lVar14 = FUN_?(pOVar12,TypeInfo__System__Single);
+          if (lVar14 == 0) {
+            FUN_?(pOVar12,pSVar13);
+            pcVar7 = (code *)swi(3);
+            (*pcVar7)();
+            return;
+          }
+        }
+        pPVar1 = (this->fields).particleSystem;
+        if (pPVar1 == (ParticleSystem *)0x0) goto code_?;
+        if (iRam_? != 0) {
+          uVar2 = (uint)((ulonglong)&pPStackX_8 >> 0xc);
+          uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+          do {
+            uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+            puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+            LOCK();
+            bVar6 = uVar4 == *puVar5;
+            if (bVar6) {
+              *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar6);
+        }
+        pPStackX_8 = pPVar1;
+        PStackX_18.m_ParticleSystem = pPVar1;
+        if (lVar14 == 0) goto code_?;
+        if ((((*(int *)(lVar14 + 0x18) == 0) || (*(uint *)(lVar14 + 0x18) < 2)) ||
+            (*(uint *)(lVar14 + 0x18) < 3)) || (*(uint *)(lVar14 + 0x18) < 4)) {
+          FUN_?();
+          pcVar7 = (code *)swi(3);
+          (*pcVar7)();
           return;
         }
-        pDVar4 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                 (this_01->fields)._._._.data;
-        if (pDVar4 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-          bVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                   Object,UnityEngine::UIElements::TextureId]::
-                   Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                             (pDVar4,(Object *)StringLiteral_wind,
-                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                             );
-          if (bVar5 == 0) {
-code_?:
-            pDVar4 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                     (this_01->fields)._._._.data;
-            if (pDVar4 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-              TVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       Object,UnityEngine::UIElements::TextureId]::
-                       Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                 (pDVar4,(Object *)StringLiteral_length,
-                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+        auStack_15._4_4_ = *(float *)(lVar14 + 0x24);
+        auStack_15._0_4_ = *(float *)(lVar14 + 0x20);
+        uStack_16._4_4_ = *(float *)(lVar14 + 0x2c);
+        uStack_16._0_4_ = *(float *)(lVar14 + 0x28);
+        pPVar17 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient::
+                  ParticleSystem_MinMaxGradient_op_Implicit
+                            (&PStack_18,(Color *)auStack_15,(MethodInfo *)0x0);
+        PStack_19.m_Mode = pPVar17->m_Mode;
+        PStack_19._4_4_ = *(undefined4 *)&pPVar17->field_0x4;
+        PStack_19.m_GradientMin = pPVar17->m_GradientMin;
+        PStack_19.m_GradientMax = pPVar17->m_GradientMax;
+        PStack_19.m_ColorMin.r = (pPVar17->m_ColorMin).r;
+        PStack_19.m_ColorMin.g = (pPVar17->m_ColorMin).g;
+        PStack_19.m_ColorMin.b = (pPVar17->m_ColorMin).b;
+        PStack_19.m_ColorMin.a = (pPVar17->m_ColorMin).a;
+        PStack_19.m_ColorMax.r = (pPVar17->m_ColorMax).r;
+        PStack_19.m_ColorMax.g = (pPVar17->m_ColorMax).g;
+        PStack_19.m_ColorMax.b = (pPVar17->m_ColorMax).b;
+        PStack_19.m_ColorMax.a = (pPVar17->m_ColorMax).a;
+        UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
+        ParticleSystem_MainModule_set_startColor(&PStackX_18,&PStack_19,(MethodInfo *)0x0);
+      }
+      pDVar9 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                *)(this->fields)._._._.data;
+      fVar20 = 0.0;
+      if (pDVar9 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                     *)0x0) {
+        iVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
+                ::UIElements::StyleComplexSelector+PseudoStateData]::
+                Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
+                          (pDVar9,(Object *)StringLiteral_length,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                           ->klass->rgctx_data[0x21].method);
+        if (iVar10 < 0) {
+          return;
+        }
+        pDVar9 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                  *)(this->fields)._._._.data;
+        if (pDVar9 != (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                       *)0x0) {
+          iVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                  Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::
+                  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
+                            (pDVar9,(Object *)StringLiteral_wind,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                             ->klass->rgctx_data[0x21].method);
+          if (-1 < iVar10) {
+            pDVar11 = (this->fields)._._._.data;
+            if ((pDVar11 == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
+               (pOVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                          Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
+                                    (pDVar11,(Object *)StringLiteral_wind,
+                                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                    ), pOVar12 == (Object *)0x0)) goto code_?;
+            if ((pOVar12->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)
+               ) {
+              FUN_?(pOVar12,lRam_?);
+              pcVar7 = (code *)swi(3);
+              (*pcVar7)();
+              return;
+            }
+            fVar20 = *(float *)&pOVar12[1].klass;
+          }
+          pDVar11 = (this->fields)._._._.data;
+          if ((pDVar11 != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
+             (pOVar12 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
+                                  (pDVar11,(Object *)StringLiteral_length,
+                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                  ), pOVar12 != (Object *)0x0)) {
+            if ((pOVar12->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)
+               ) {
+              FUN_?(pOVar12);
+              pcVar7 = (code *)swi(3);
+              (*pcVar7)();
+              return;
+            }
+            fVar21 = *(float *)&pOVar12[1].klass;
+            MVSmoke_SetupSmokeCulling
+                      (this,fVar21 * (this->fields).lengthCullingScale,(this->fields)._._.gameObject,
+                       (MethodInfo *)0x0);
+            pPVar1 = (this->fields).particleSystem;
+            if (pPVar1 != (ParticleSystem *)0x0) {
+              if (iRam_? != 0) {
+                uVar2 = (uint)((ulonglong)&pPStackX_8 >> 0xc);
+                uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+                do {
+                  uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+                  puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+                  LOCK();
+                  bVar6 = uVar4 == *puVar5;
+                  if (bVar6) {
+                    *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+                  }
+                  UNLOCK();
+                } while (!bVar6);
+              }
+              fVar22 = fVar20 + _UNK_?;
+              pcVar7 = pcRam_?;
+              pPStackX_8 = pPVar1;
+              pPStack_23 = pPVar1;
+              if ((pcRam_? == (code *)0x0) &&
+                 (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+                uVar8 = func_?(&UNK_?);
+                FUN_?(uVar8,0);
+                pcVar7 = (code *)swi(3);
+                (*pcVar7)();
+                return;
+              }
+              pcRam_? = pcVar7;
+              (*pcRam_?)(&pPStack_23,fVar21 / fVar22);
+              pPVar1 = (this->fields).particleSystem;
+              if (pPVar1 != (ParticleSystem *)0x0) {
+                obj_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                   ((Component *)pPVar1,(MethodInfo *)0x0);
+                obj = (this->fields)._._.transform;
+                if (obj != (Transform *)0x0) {
+                  if (cRam_? == '\0') {
+                    FUN_?(&
+                                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
                                  );
-              uVar7 = CONCAT44(TypeInfo__System__Single,TVar6.m_Index);
-              if (TVar6.m_Index != 0) {
-                if (*(Il2CppClass **)(*(int *)TVar6.m_Index + 0x20) !=
-                    (TypeInfo__System__Single->_0).element_class) goto code_?;
-                pfVar8 = (float *)func_?(TVar6.m_Index);
-                fStack_9 = *pfVar8;
-                MVSmoke_SetupSmokeCulling
-                          (this_01,fStack_9 * (this_01->fields).lengthCullingScale,
-                           (this_01->fields)._._.gameObject,(MethodInfo *)0x0);
-                pPVar2 = (this_01->fields).particleSystem;
-                if (pPVar2 != (ParticleSystem *)0x0) {
-                  PStack_10.m_ParticleSystem =
-                       (ParticleSystem *)
-                       UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-                       ParticleSystem_get_collision(pPVar2,(MethodInfo *)0x0);
-                  UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
-                  ParticleSystem_MainModule_set_startLifetimeMultiplier_Injected
-                            (&PStack_10,fStack_9 / ((float)this + _UNK_?),(MethodInfo *)0x0)
-                  ;
-                  pPVar2 = (this_01->fields).particleSystem;
-                  if (pPVar2 != (ParticleSystem *)0x0) {
-                    this_02 = UnityEngine.CoreModule.dll::UnityEngine::Component::
-                              Component_get_transform((Component *)pPVar2,(MethodInfo *)0x0);
-                    this_00 = (this_01->fields)._._.transform;
-                    if ((this_00 != (Transform *)0x0) &&
-                       (pQVar11 = UnityEngine.CoreModule.dll::UnityEngine::Transform::
-                                  Transform_get_rotation(&QStack_12,this_00,(MethodInfo *)0x0),
-                       this_02 != (Transform *)0x0)) {
-                      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
-                                (this_02,*pQVar11,(MethodInfo *)0x0);
-                      pPVar2 = (this_01->fields).particleSystem;
-                      if (pPVar2 != (ParticleSystem *)0x0) {
-                        PStack_13.m_ParticleSystem =
-                             (ParticleSystem *)
-                             UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-                             ParticleSystem_get_collision(pPVar2,(MethodInfo *)0x0);
-                        this_03 = (AnimationCurve *)
-                                  func_?(TypeInfo__UnityEngine__AnimationCurve);
-                        UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
-                        AnimationCurve__ctor_1(this_03,(MethodInfo *)0x0);
-                        if (this_03 != (AnimationCurve *)0x0) {
-                          UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
-                          AnimationCurve_AddKey(this_03,0.0,0.0,(MethodInfo *)0x0);
-                          UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
-                          AnimationCurve_AddKey(this_03,0.05,(float)this,(MethodInfo *)0x0);
-                          fVar14 = 0.0;
-                          fVar15 = 0.0;
-                          pAVar16 = (AnimationCurve *)0x0;
-                          pAVar17 = (AnimationCurve *)0x0;
+                    LOCK();
+                    UNLOCK();
+                    cRam_? = '\x01';
+                  }
+                  auStack_15 = (undefined1  [8])0x0;
+                  uStack_16 = (Gradient *)0x0;
+                  pvVar24 = (obj->fields)._._.m_CachedPtr;
+                  if (pvVar24 == (void *)0x0) {
+                    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+                    pcVar7 = (code *)swi(3);
+                    (*pcVar7)();
+                    return;
+                  }
+                  pcVar7 = pcRam_?;
+                  if ((pcRam_? == (code *)0x0) &&
+                     (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+                    uVar8 = func_?(&UNK_?);
+                    FUN_?(uVar8,0);
+                    pcVar7 = (code *)swi(3);
+                    (*pcVar7)();
+                    return;
+                  }
+                  pcRam_? = pcVar7;
+                  (*pcRam_?)(pvVar24);
+                  if (obj_00 != (Transform *)0x0) {
+                    PStack_18._0_8_ = auStack_15;
+                    PStack_18.m_GradientMin = uStack_16;
+                    if (cRam_? == '\0') {
+                      FUN_?(&
+                                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                                   );
+                      LOCK();
+                      UNLOCK();
+                      cRam_? = '\x01';
+                    }
+                    pvVar24 = (obj_00->fields)._._.m_CachedPtr;
+                    if (pvVar24 == (void *)0x0) {
+                      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                      ThrowHelper_2_ThrowNullReferenceException((Object *)obj_00,(MethodInfo *)0x0);
+                      pcVar7 = (code *)swi(3);
+                      (*pcVar7)();
+                      return;
+                    }
+                    pcVar7 = pcRam_?;
+                    if ((pcRam_? == (code *)0x0) &&
+                       (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+                      uVar8 = func_?(&UNK_?);
+                      FUN_?(uVar8,0);
+                      pcVar7 = (code *)swi(3);
+                      (*pcVar7)();
+                      return;
+                    }
+                    pcRam_? = pcVar7;
+                    (*pcRam_?)(pvVar24);
+                    PStack_25.m_ParticleSystem = (this->fields).particleSystem;
+                    if (PStack_25.m_ParticleSystem != (ParticleSystem *)0x0) {
+                      if (iRam_? != 0) {
+                        uVar2 = (uint)((ulonglong)&pPStackX_8 >> 0xc);
+                        uVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6);
+                        do {
+                          uVar4 = *(ulonglong *)(uVar3 * 8 + 0xADDR);
+                          puVar5 = (ulonglong *)(uVar3 * 8 + 0xADDR);
+                          LOCK();
+                          bVar6 = uVar4 == *puVar5;
+                          if (bVar6) {
+                            *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+                          }
+                          UNLOCK();
+                        } while (!bVar6);
+                      }
+                      pPStackX_8 = PStack_25.m_ParticleSystem;
+                      min = (AnimationCurve *)FUN_?();
+                      pvVar24 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::
+                                AnimationCurve_Internal_Create
+                                          ((Keyframe__Array *)0x0,(MethodInfo *)0x0);
+                      (min->fields).m_Ptr = pvVar24;
+                      (min->fields).m_RequiresNativeCleanup = 1;
+                      if (pvVar24 != (void *)0x0) {
+                        pcVar7 = pcRam_?;
+                        if ((pcRam_? == (code *)0x0) &&
+                           (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0))
+                        {
+                          uVar8 = func_?(&UNK_?);
+                          FUN_?(uVar8,0);
+                          pcVar7 = (code *)swi(3);
+                          (*pcVar7)();
+                          return;
+                        }
+                        pcRam_? = pcVar7;
+                        (*pcRam_?)(pvVar24,0,0);
+                        pvVar24 = (min->fields).m_Ptr;
+                        if (pvVar24 != (void *)0x0) {
+                          pcVar7 = pcRam_?;
+                          if ((pcRam_? == (code *)0x0) &&
+                             (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)
+                             ) {
+                            uVar8 = func_?(&UNK_?);
+                            FUN_?(uVar8,0);
+                            pcVar7 = (code *)swi(3);
+                            (*pcVar7)();
+                            return;
+                          }
+                          pcRam_? = pcVar7;
+                          (*pcRam_?)(pvVar24,_UNK_?,fVar20);
+                          PStack_19.m_Mode = 0;
+                          PStack_19._4_4_ = 0;
+                          PStack_19.m_GradientMin = (Gradient *)0x0;
+                          PStack_19.m_GradientMax = (Gradient *)0x0;
+                          PStack_19.m_ColorMin.r = 0.0;
+                          PStack_19.m_ColorMin.g = 0.0;
                           UnityEngine.ParticleSystemModule.dll::UnityEngine::
                           ParticleSystem+MinMaxCurve::ParticleSystem_MinMaxCurve__ctor_2
-                                    ((ParticleSystem_MinMaxCurve *)&stack0xffffffc0,1.0,this_03,
-                                     this_03,(MethodInfo *)0x0);
-                          value_00.m_CurveMultiplier = fVar15;
-                          value_00.m_Mode = (int32_t)fVar14;
-                          value_00.m_CurveMin = pAVar16;
-                          value_00.m_CurveMax = pAVar17;
-                          value_00.m_ConstantMin = 0.0;
-                          value_00.m_ConstantMax = 0.0;
+                                    ((ParticleSystem_MinMaxCurve *)&PStack_19,_UNK_?,min,min
+                                     ,(MethodInfo *)0x0);
+                          PStack_18.m_Mode = PStack_19.m_Mode;
+                          PStack_18._4_4_ = PStack_19._4_4_;
+                          PStack_18.m_GradientMin = PStack_19.m_GradientMin;
+                          PStack_18.m_GradientMax = PStack_19.m_GradientMax;
+                          PStack_18.m_ColorMin.r = PStack_19.m_ColorMin.r;
+                          PStack_18.m_ColorMin.g = PStack_19.m_ColorMin.g;
                           UnityEngine.ParticleSystemModule.dll::UnityEngine::
                           ParticleSystem+ForceOverLifetimeModule::
                           ParticleSystem_ForceOverLifetimeModule_set_x
-                                    (&PStack_13,value_00,(MethodInfo *)0x0);
+                                    (&PStack_25,(ParticleSystem_MinMaxCurve *)&PStack_18,
+                                     (MethodInfo *)0x0);
                           return;
                         }
                       }
+                      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                      ThrowHelper_2_ThrowNullReferenceException((Object *)min,(MethodInfo *)0x0);
+                      pcVar7 = (code *)swi(3);
+                      (*pcVar7)();
+                      return;
                     }
                   }
+                  FUN_?();
+                  pcVar7 = (code *)swi(3);
+                  (*pcVar7)();
+                  return;
                 }
               }
             }
           }
-          else {
-            pDVar4 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                     (this_01->fields)._._._.data;
-            if (pDVar4 != (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0) {
-              TVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                       Object,UnityEngine::UIElements::TextureId]::
-                       Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                 (pDVar4,(Object *)StringLiteral_wind,
-                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                 );
-              uVar7 = CONCAT44(TypeInfo__System__Single,TVar6.m_Index);
-              if (TVar6.m_Index != 0) {
-                if (*(Il2CppClass **)(*(int *)TVar6.m_Index + 0x20) !=
-                    (TypeInfo__System__Single->_0).element_class) goto code_?;
-                puVar18 = (undefined4 *)func_?();
-                this = (MVSmoke *)*puVar18;
-                goto code_?;
-              }
-            }
-          }
+          FUN_?();
+          pcVar7 = (code *)swi(3);
+          (*pcVar7)();
+          return;
         }
       }
-      goto code_?;
     }
-    pDVar4 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-             (this->fields)._._._.data;
-    if (pDVar4 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
-    goto code_?;
-    unaff_EBX = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          (pDVar4,(Object *)StringLiteral_color,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                          );
-    this = (MVSmoke *)TypeInfo__System__Single;
-    if (unaff_EBX.m_Index == 0) {
-      iVar19 = 0;
-code_?:
-      pPVar2 = (this_01->fields).particleSystem;
-      if ((pPVar2 == (ParticleSystem *)0x0) ||
-         (PStack_1.m_ParticleSystem =
-               (ParticleSystem *)
-               UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-               ParticleSystem_get_collision(pPVar2,(MethodInfo *)0x0), iVar19 == 0))
-      goto code_?;
-      if ((*(int *)(iVar19 + 0xc) != 0) &&
-         (((1 < *(uint *)(iVar19 + 0xc) && (2 < *(uint *)(iVar19 + 0xc))) &&
-          (3 < *(uint *)(iVar19 + 0xc))))) {
-        QStack_12.w = *(float *)(iVar19 + 0x1c);
-        color.g = *(float *)(iVar19 + 0x14);
-        color.r = *(float *)(iVar19 + 0x10);
-        color.b = *(float *)(iVar19 + 0x18);
-        color.a = QStack_12.w;
-        QStack_12.x = *(float *)(iVar19 + 0x10);
-        QStack_12.y = *(float *)(iVar19 + 0x14);
-        QStack_12.z = *(float *)(iVar19 + 0x18);
-        pPVar20 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MinMaxGradient::
-                  ParticleSystem_MinMaxGradient_op_Implicit
-                            ((ParticleSystem_MinMaxGradient *)&stack0xffffffac,color,
-                             (MethodInfo *)0x0);
-        uVar21 = (pPVar20->m_ColorMax).b;
-        uVar22 = pPVar20->m_Mode;
-        uVar23 = pPVar20->m_GradientMin;
-        uVar24 = pPVar20->m_GradientMax;
-        uVar25 = (pPVar20->m_ColorMin).r;
-        uVar26 = (pPVar20->m_ColorMin).g;
-        uVar27 = (pPVar20->m_ColorMin).b;
-        uVar28 = (pPVar20->m_ColorMin).a;
-        value.m_ColorMin.a = (float)uVar28;
-        value.m_ColorMin.b = (float)uVar27;
-        value.m_ColorMin.g = (float)uVar26;
-        value.m_ColorMin.r = (float)uVar25;
-        uVar29 = (pPVar20->m_ColorMax).r;
-        uVar30 = (pPVar20->m_ColorMax).g;
-        value.m_ColorMax.g = (float)uVar30;
-        value.m_ColorMax.r = (float)uVar29;
-        value.m_GradientMax = (Gradient *)uVar24;
-        value.m_GradientMin = (Gradient *)uVar23;
-        value.m_Mode = uVar22;
-        value.m_ColorMax.b = (float)uVar21;
-        value.m_ColorMax.a = (pPVar20->m_ColorMax).a;
-        UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
-        ParticleSystem_MainModule_set_startColor(&PStack_1,value,(MethodInfo *)0x0);
-        goto code_?;
-      }
-      goto code_?;
-    }
-    iVar19 = func_?();
-    if (iVar19 != 0) goto code_?;
   }
-  uVar7 = func_?(unaff_EBX.m_Index,this);
 code_?:
-  func_?(uVar7);
-  pcVar31 = (code *)swi(3);
-  (*pcVar31)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -400,32 +637,51 @@ Assembly-CSharp.dll::MVSmoke::MVSmoke_SetupSmokeCulling
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?(&TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>);
+    FUN_?(&TypeInfo__CullingSubscriberBase);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields)._.cullingSubscriberBase != (CullingSubscriberBase *)0x0) {
     CullingSubscriberBase::CullingSubscriberBase_Destroy
               ((this->fields)._.cullingSubscriberBase,(MethodInfo *)0x0);
   }
-  pVVar1 = (Vector3 *)
-           (*(code *)(this->klass->vtable).get_WorldPosition_1.method)(&stack0xffffffe8,this);
-  position = *pVVar1;
-  this_00 = (UnityAction_1_UnityEngine_Vector2_ *)
-            func_?(
-                           TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>
-                           );
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[UnityEngine::Vector2]::
-  UnityAction_1_UnityEngine_Vector2___ctor
-            (this_00,(Object *)this,(this->klass->vtable).UpdateControllerUpdate_1.methodPtr,
-             (MethodInfo *)0x0);
-  this_01 = (CullingSubscriberBase *)func_?(TypeInfo__CullingSubscriberBase);
-  CullingSubscriberBase::CullingSubscriberBase__ctor_2
-            (this_01,radius,position,(UnityAction_1_UnityEngine_CullingGroupEvent_ *)this_00,
-             (MethodInfo *)0x0);
-  (this->fields)._.cullingSubscriberBase = this_01;
-  func_?();
-  return (this->fields)._.cullingSubscriberBase;
+  puVar1 = (undefined8 *)
+           (*(this->klass->vtable).get_WorldPosition_1.methodPtr)
+                     (aVStack_2,this,(this->klass->vtable).get_WorldPosition_1.method);
+  uVar3 = *puVar1;
+  fVar4 = *(float *)(puVar1 + 1);
+  callback = (UnityAction_1_UnityEngine_CullingGroupEvent_ *)
+             FUN_?(
+                          TypeInfo__UnityEngine__Events__UnityAction<UnityEngine::CullingGroupEvent>
+                          );
+  FUN_?(callback,this);
+  this_00 = (CullingSubscriberBase *)FUN_?(TypeInfo__CullingSubscriberBase);
+  CullingSubscriberBase::CullingSubscriberBase__ctor_1(this_00,callback,(MethodInfo *)0x0);
+  aVStack_2[0]._0_8_ = uVar3;
+  aVStack_2[0].z = fVar4;
+  CullingSubscriberBase::CullingSubscriberBase_Setup(this_00,radius,aVStack_2,(MethodInfo *)0x0);
+  bVar5 = iRam_? != 0;
+  (this->fields)._.cullingSubscriberBase = this_00;
+  if (bVar5) {
+    uVar6 = (uint)((ulonglong)&(this->fields)._.cullingSubscriberBase >> 0xc);
+    uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
+    do {
+      uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
+      puVar9 = (ulonglong *)(uVar7 * 8 + 0xADDR);
+      LOCK();
+      bVar5 = uVar8 == *puVar9;
+      if (bVar5) {
+        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+    this_00 = (this->fields)._.cullingSubscriberBase;
+  }
+  return this_00;
 }
 
 
@@ -435,20 +691,40 @@ void Assembly-CSharp.dll::MVSmoke::MVSmoke_ToggleEmitter
                (MVSmoke *this,bool toggle,MethodInfo *method)
 
 {
-  this_00 = (this->fields).particleSystem;
-  if (this_00 != (ParticleSystem *)0x0) {
-    this = (MVSmoke *)
-           UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-           ParticleSystem_get_collision(this_00,(MethodInfo *)0x0);
-    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule::
-    ParticleSystem_EmissionModule_set_enabled_Injected
-              ((ParticleSystem_EmissionModule *)&this,(bool)_toggle,(MethodInfo *)0x0);
+  puVar1 = (ulonglong *)CONCAT71(in_register_00000011,toggle);
+  apPStackX_8[0] = (this->fields).particleSystem;
+  if (apPStackX_8[0] == (ParticleSystem *)0x0) {
+    FUN_?(this,puVar1);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  if (iRam_? != 0) {
+    uVar3 = (uint)((ulonglong)apPStackX_8 >> 0xc);
+    method = (MethodInfo *)(ulonglong)(uVar3 & 0x3f);
+    puVar1 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar1;
+      LOCK();
+      uVar5 = *puVar1;
+      if (uVar4 == uVar5) {
+        *puVar1 = uVar4 | 1L << (longlong)method;
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
+  pcVar2 = pcRam_?;
+  pPStackX_20 = apPStackX_8[0];
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar2 = (code *)FUN_?(&UNK_?,puVar1,method), pcVar2 == (code *)0x0)) {
+    uVar6 = func_?(&UNK_?);
+    FUN_?(uVar6,0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcRam_? = pcVar2;
+  (*pcRam_?)(&pPStackX_20,toggle);
   return;
 }
 
@@ -462,105 +738,165 @@ void Assembly-CSharp.dll::MVSmoke::MVSmoke__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem__UnityEngine__Vector3__UnityEngine__Quaternion_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&
+                  UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem__UnityEngine__Vector3__UnityEngine__Quaternion_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = this;
+  bVar1 = cRam_? == '\0';
   (this->fields).lengthCullingScale = 1.5;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__PrefabPool);
+  if (bVar1) {
+    FUN_?(&TypeInfo__PrefabPool);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
-  if (pPVar1 != (PrefabPool *)0x0) {
+  pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar2 != (PrefabPool *)0x0) {
     MVLogicObject::MVLogicObject__ctor
-              ((MVLogicObject *)this_00,data,(pPVar1->fields).mvSmokePrefab,worldObjects,
+              ((MVLogicObject *)this,data,(pPVar2->fields).mvSmokePrefab,worldObjects,
                (MethodInfo *)0x0);
-    piVar2 = &(this_00->fields)._._.interactionFlags;
-    *(uint *)piVar2 = (uint)*piVar2 | 0x10000;
-    uVar3 = *(undefined4 *)((int)&(this_00->fields)._._.interactionFlags + 4);
-    piVar2 = &(this_00->fields)._._.interactionFlags;
-    *(uint *)piVar2 = (uint)*piVar2 | 0x8000;
-    *(undefined4 *)((int)&(this_00->fields)._._.interactionFlags + 4) = uVar3;
+    piVar3 = &(this->fields)._._.interactionFlags;
+    *piVar3 = *piVar3 | 0x18000;
     if (cRam_? == '\0') {
-      func_?();
+      FUN_?(&TypeInfo__PrefabPool);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
-    if (pPVar1 != (PrefabPool *)0x0) {
-      pPVar4 = (pPVar1->fields).particleFluffySmoke;
-      pGVar5 = (this_00->fields)._._.gameObject;
-      if (pGVar5 != (GameObject *)0x0) {
-        pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                           (pGVar5,(MethodInfo *)0x0);
-        if (pTVar6 != (Transform *)0x0) {
-          pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                              ((Vector3 *)&stack0xffffffe8,pTVar6,(MethodInfo *)0x0);
-          position = *pVVar7;
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          pQVar8 = TypeInfo__UnityEngine__Quaternion->static_fields;
-          puVar9 = (undefined *)(pQVar8->identityQuaternion).x;
-          pOVar10 = (Object_1__Class *)(pQVar8->identityQuaternion).y;
-          fVar11 = (pQVar8->identityQuaternion).z;
-          fVar12 = (pQVar8->identityQuaternion).w;
-          if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-            puVar9 = &UNK_?;
-            pOVar10 = TypeInfo__UnityEngine__Object;
-            func_?();
-          }
-          rotation.y = (float)pOVar10;
-          rotation.x = (float)puVar9;
-          rotation.z = fVar11;
-          rotation.w = fVar12;
-          pPVar4 = (ParticleSystem *)
-                    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_7
-                              ((Object *)pPVar4,position,rotation,
-                               UnityEngine__ParticleSystem_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::ParticleSystem>_UnityEngine__ParticleSystem__UnityEngine__Vector3__UnityEngine__Quaternion_
-                              );
-          (this_00->fields).particleSystem = pPVar4;
-          func_?(&(this_00->fields).particleSystem);
-          pPVar4 = (this_00->fields).particleSystem;
-          if (pPVar4 != (ParticleSystem *)0x0) {
-            pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                               ((Component *)pPVar4,(MethodInfo *)0x0);
-            pGVar5 = (this_00->fields)._._.gameObject;
-            if (pGVar5 != (GameObject *)0x0) {
-              value = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (pGVar5,(MethodInfo *)0x0);
-              if (pTVar6 != (Transform *)0x0) {
-                UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                          (pTVar6,value,(MethodInfo *)0x0);
-                pPVar4 = (this_00->fields).particleSystem;
-                if (pPVar4 != (ParticleSystem *)0x0) {
-                  UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-                  ParticleSystem_Stop_2(pPVar4,(MethodInfo *)0x0);
-                  pPVar4 = (this_00->fields).particleSystem;
-                  if (pPVar4 != (ParticleSystem *)0x0) {
-                    this = (MVSmoke *)
-                           UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-                           ParticleSystem_get_collision(pPVar4,(MethodInfo *)0x0);
-                    UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+EmissionModule
-                    ::ParticleSystem_EmissionModule_set_enabled_Injected
-                              ((ParticleSystem_EmissionModule *)&this,0,(MethodInfo *)0x0);
-                    return;
+    pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
+    if (pPVar2 != (PrefabPool *)0x0) {
+      pGVar4 = (this->fields)._._.gameObject;
+      pPVar5 = (pPVar2->fields).particleFluffySmoke;
+      if ((pGVar4 != (GameObject *)0x0) &&
+         (pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                             (pGVar4,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0)) {
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        uStack_7 = 0;
+        uStack_8 = 0;
+        pvVar9 = (pTVar6->fields)._._.m_CachedPtr;
+        if (pvVar9 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar6,(MethodInfo *)0x0);
+          pcVar10 = (code *)swi(3);
+          (*pcVar10)();
+          return;
+        }
+        pcVar10 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar10 = (code *)FUN_?(&UNK_?), pcVar10 == (code *)0x0)) {
+          uVar11 = func_?(&UNK_?);
+          FUN_?(uVar11,0);
+          pcVar10 = (code *)swi(3);
+          (*pcVar10)();
+          return;
+        }
+        pcRam_? = pcVar10;
+        (*pcRam_?)(pvVar9,&uStack_7);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Quaternion);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pQVar12 = TypeInfo__UnityEngine__Quaternion->static_fields;
+        uVar11._0_4_ = (pQVar12->identityQuaternion).x;
+        uVar11._4_4_ = (pQVar12->identityQuaternion).y;
+        uVar13._0_4_ = (pQVar12->identityQuaternion).z;
+        uVar13._4_4_ = (pQVar12->identityQuaternion).w;
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        uStack_14 = uStack_7;
+        puStack_15 = (undefined *)CONCAT44(puStack_15._4_4_,uStack_8);
+        uStack_16 = uVar11;
+        uStack_17 = uVar13;
+        pPVar5 = (ParticleSystem *)FUN_?(pPVar5);
+        bVar1 = iRam_? != 0;
+        (this->fields).particleSystem = pPVar5;
+        if (bVar1) {
+          uVar18 = (uint)((ulonglong)&(this->fields).particleSystem >> 0xc);
+          uVar19 = (ulonglong)((uVar18 & 0x1fffff) >> 6);
+          do {
+            uVar20 = *(ulonglong *)(uVar19 * 8 + 0xADDR);
+            puVar21 = (ulonglong *)(uVar19 * 8 + 0xADDR);
+            LOCK();
+            bVar1 = uVar20 == *puVar21;
+            if (bVar1) {
+              *puVar21 = uVar20 | 1L << (uVar18 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar1);
+        }
+        pPVar5 = (this->fields).particleSystem;
+        if (pPVar5 != (ParticleSystem *)0x0) {
+          pTVar6 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                             ((Component *)pPVar5,(MethodInfo *)0x0);
+          pGVar4 = (this->fields)._._.gameObject;
+          if ((pGVar4 != (GameObject *)0x0) &&
+             (value = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                                (pGVar4,(MethodInfo *)0x0), pTVar6 != (Transform *)0x0)) {
+            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
+                      (pTVar6,value,(MethodInfo *)0x0);
+            pPVar5 = (this->fields).particleSystem;
+            if (pPVar5 != (ParticleSystem *)0x0) {
+              UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
+              ParticleSystem_Stop_1(pPVar5,1,(MethodInfo *)0x0);
+              pPStackX_20 = (this->fields).particleSystem;
+              if (pPStackX_20 == (ParticleSystem *)0x0) {
+                FUN_?(this,0,0);
+                pcVar10 = (code *)swi(3);
+                (*pcVar10)();
+                return;
+              }
+              if (iRam_? != 0) {
+                uVar18 = (uint)((ulonglong)&stack0x00000008 >> 0xc);
+                puVar21 = (ulonglong *)((ulonglong)((uVar18 & 0x1fffff) >> 6) * 8 + 0xADDR);
+                do {
+                  uVar20 = *puVar21;
+                  LOCK();
+                  uVar19 = *puVar21;
+                  if (uVar20 == uVar19) {
+                    *puVar21 = uVar20 | 1L << (ulonglong)(uVar18 & 0x3f);
                   }
+                  UNLOCK();
+                } while (uVar20 != uVar19);
+              }
+              pcVar10 = pcRam_?;
+              if (pcRam_? == (code *)0x0) {
+                pcVar10 = (code *)FUN_?(&UNK_?);
+                if (pcVar10 == (code *)0x0) {
+                  uVar11 = func_?(&UNK_?);
+                  FUN_?(uVar11,0);
+                  pcVar10 = (code *)swi(3);
+                  (*pcVar10)();
+                  return;
                 }
               }
+              pcRam_? = pcVar10;
+              (*pcRam_?)(&pPStackX_20,0);
+              return;
             }
           }
         }
       }
     }
   }
-  func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 

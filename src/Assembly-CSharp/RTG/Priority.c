@@ -5,16 +5,17 @@ int32_t Assembly-CSharp.dll::RTG::Priority::Priority_CompareTo
                   (Priority *this,Priority *other,MethodInfo *method)
 
 {
-  if (other != (Priority *)0x0) {
-    iVar1 = mscorlib.dll::System::Int32::Int32_CompareTo_1
-                      ((Int32 *)&this->fields,(other->fields)._priority,(MethodInfo *)0x0);
-    return iVar1;
+  if (other == (Priority *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    iVar2 = (*pcVar1)();
+    return iVar2;
   }
-  uVar2 = func_?(&stack0xfffffff0);
-  func_?(uVar2);
-  pcVar3 = (code *)swi(3);
-  iVar1 = (*pcVar3)();
-  return iVar1;
+  iVar3 = (other->fields)._priority;
+  if (iVar3 <= (this->fields)._priority) {
+    return (int32_t)(iVar3 < (this->fields)._priority);
+  }
+  return -1;
 }
 
 
@@ -25,23 +26,27 @@ bool Assembly-CSharp.dll::RTG::Priority::Priority_Equals
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__Priority);
+    FUN_?(&TypeInfo__RTG__Priority);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (obj != (Object *)0x0) {
     pOVar1 = obj->klass;
-    if (((TypeInfo__RTG__Priority->_1).naturalAligment <= (pOVar1->_1).naturalAligment) &&
-       ((pOVar1->_1).typeHierarchy[(TypeInfo__RTG__Priority->_1).naturalAligment - 1] ==
-        (Il2CppClass *)TypeInfo__RTG__Priority)) {
-      if (((TypeInfo__RTG__Priority->_1).naturalAligment <= (pOVar1->_1).naturalAligment) &&
-         ((pOVar1->_1).typeHierarchy[(TypeInfo__RTG__Priority->_1).naturalAligment - 1] ==
-          (Il2CppClass *)TypeInfo__RTG__Priority)) {
-        return (Object__Class *)(this->fields)._priority == obj[1].klass;
+    bVar2 = (TypeInfo__RTG__Priority->_1).naturalAligment;
+    if ((bVar2 <= (pOVar1->_1).naturalAligment) &&
+       ((pOVar1->_1).typeHierarchy[(ulonglong)bVar2 - 1] == (Il2CppClass *)TypeInfo__RTG__Priority))
+    {
+      bVar2 = (TypeInfo__RTG__Priority->_1).naturalAligment;
+      if ((bVar2 <= (pOVar1->_1).naturalAligment) &&
+         ((pOVar1->_1).typeHierarchy[(ulonglong)bVar2 - 1] == (Il2CppClass *)TypeInfo__RTG__Priority
+         )) {
+        return (this->fields)._priority == *(int *)&obj[1].klass;
       }
-      func_?(obj,TypeInfo__RTG__Priority);
-      pcVar2 = (code *)swi(3);
-      bVar3 = (*pcVar2)();
-      return bVar3;
+      FUN_?(obj);
+      pcVar3 = (code *)swi(3);
+      bVar4 = (*pcVar3)();
+      return bVar4;
     }
   }
   return 0;
@@ -54,25 +59,13 @@ void Assembly-CSharp.dll::RTG::Priority::Priority_MakeHigherThan
                (Priority *this,Priority *priority,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
   if (priority != (Priority *)0x0) {
     (this->fields)._priority = (priority->fields)._priority + -1;
     return;
   }
-  uVar2 = func_?(auStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
-  return;
-}
-
-
-/* Void MakeHighest() */
-
-void Assembly-CSharp.dll::RTG::Priority::Priority_MakeHighest(Priority *this,MethodInfo *method)
-
-{
-  (this->fields)._priority = -0x80000000;
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -83,15 +76,13 @@ void Assembly-CSharp.dll::RTG::Priority::Priority_MakeLowerThan
                (Priority *this,Priority *priority,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
   if (priority != (Priority *)0x0) {
     (this->fields)._priority = (priority->fields)._priority + 1;
     return;
   }
-  uVar2 = func_?(auStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -112,15 +103,13 @@ bool Assembly-CSharp.dll::RTG::Priority::Priority_op_Equality
                (Priority *firstPriority,Priority *secondPriority,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
   if ((firstPriority != (Priority *)0x0) && (secondPriority != (Priority *)0x0)) {
     return (firstPriority->fields)._priority == (secondPriority->fields)._priority;
   }
-  uVar2 = func_?(auStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  bVar2 = (*pcVar1)();
+  return bVar2;
 }
 
 
@@ -130,15 +119,13 @@ bool Assembly-CSharp.dll::RTG::Priority::Priority_op_GreaterThan
                (Priority *firstPriority,Priority *secondPriority,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
   if ((firstPriority != (Priority *)0x0) && (secondPriority != (Priority *)0x0)) {
     return (firstPriority->fields)._priority < (secondPriority->fields)._priority;
   }
-  uVar2 = func_?(auStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  bVar2 = (*pcVar1)();
+  return bVar2;
 }
 
 
@@ -148,15 +135,13 @@ bool Assembly-CSharp.dll::RTG::Priority::Priority_op_GreaterThanOrEqual
                (Priority *firstPriority,Priority *secondPriority,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
   if ((firstPriority != (Priority *)0x0) && (secondPriority != (Priority *)0x0)) {
     return (firstPriority->fields)._priority <= (secondPriority->fields)._priority;
   }
-  uVar2 = func_?(auStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  bVar2 = (*pcVar1)();
+  return bVar2;
 }
 
 
@@ -166,15 +151,13 @@ bool Assembly-CSharp.dll::RTG::Priority::Priority_op_Inequality
                (Priority *firstPriority,Priority *secondPriority,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
   if ((firstPriority != (Priority *)0x0) && (secondPriority != (Priority *)0x0)) {
     return (firstPriority->fields)._priority != (secondPriority->fields)._priority;
   }
-  uVar2 = func_?(auStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  bVar2 = (*pcVar1)();
+  return bVar2;
 }
 
 
@@ -184,15 +167,13 @@ bool Assembly-CSharp.dll::RTG::Priority::Priority_op_LessThan
                (Priority *firstPriority,Priority *secondPriority,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
   if ((firstPriority != (Priority *)0x0) && (secondPriority != (Priority *)0x0)) {
     return (secondPriority->fields)._priority < (firstPriority->fields)._priority;
   }
-  uVar2 = func_?(auStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  bVar2 = (*pcVar1)();
+  return bVar2;
 }
 
 
@@ -202,14 +183,12 @@ bool Assembly-CSharp.dll::RTG::Priority::Priority_op_LessThanOrEqual
                (Priority *firstPriority,Priority *secondPriority,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
   if ((firstPriority != (Priority *)0x0) && (secondPriority != (Priority *)0x0)) {
     return (secondPriority->fields)._priority <= (firstPriority->fields)._priority;
   }
-  uVar2 = func_?(auStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  bVar5 = (*pcVar4)();
-  return bVar5;
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  bVar2 = (*pcVar1)();
+  return bVar2;
 }
 

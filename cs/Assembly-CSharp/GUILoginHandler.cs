@@ -16,8 +16,6 @@ public class GUILoginHandler : MonoBehaviour
 {
 	// Fields
 	[SerializeField]
-	private KoGaMaSettingsContainer kogamaSettings;
-	[SerializeField]
 	private Dropdown serverDropdown;
 	[SerializeField]
 	private InputField serverIp;
@@ -38,9 +36,9 @@ public class GUILoginHandler : MonoBehaviour
 	[SerializeField]
 	private Dropdown embeddedSiteDropdown;
 	[SerializeField]
-	private Button buildButton;
+	private UnityEngine.UI.Button buildButton;
 	[SerializeField]
-	private Button avatarEditButton;
+	private UnityEngine.UI.Button avatarEditButton;
 	private string profileId;
 	private string serverip;
 	private string planetId;
@@ -95,8 +93,8 @@ public class GUILoginHandler : MonoBehaviour
 	private string GetPrefOrDefault(string prefName, string target);
 	private string UpdateIfChanged(string prefName, string current, string target);
 	[CompilerGenerated]
-	private void _SetupPlanetID_b__30_0(string value);
+	private void _SetupPlanetID_b__29_0(string value);
 	[CompilerGenerated]
-	private void _SetupProfileID_b__31_0(string value);
+	private void _SetupProfileID_b__30_0(string value);
 }
 

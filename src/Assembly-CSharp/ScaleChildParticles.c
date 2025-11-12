@@ -5,45 +5,98 @@ void Assembly-CSharp.dll::ScaleChildParticles::ScaleChildParticles_Start
                (ScaleChildParticles *this,MethodInfo *method)
 
 {
-  uVar1 = 0;
-  PStack_2.m_ParticleSystem = (ParticleSystem *)0x0;
-  pPVar3 = (this->fields).ToScale;
-  if (pPVar3 != (ParticleSystem__Array *)0x0) {
-    ppPVar4 = pPVar3->vector;
+  pPVar1 = (this->fields).ToScale;
+  uVar2 = 0;
+  apPStackX_8[0] = (ParticleSystem *)0x0;
+  pPStackX_20 = (ParticleSystem *)0x0;
+  if (pPVar1 != (ParticleSystem__Array *)0x0) {
+    ppPVar3 = pPVar1->vector;
     while( true ) {
-      if ((int)pPVar3->max_length <= (int)uVar1) {
+      if ((int)pPVar1->max_length <= (int)uVar2) {
         return;
       }
-      if (pPVar3->max_length <= uVar1) break;
-      if (*ppPVar4 == (ParticleSystem *)0x0) goto code_?;
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-      ParticleSystem_get_collision(*ppPVar4,(MethodInfo *)0x0);
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
-      ParticleSystem_MainModule_get_startSizeMultiplier_Injected
-                ((ParticleSystem_MainModule *)&stack0xfffffff8,(MethodInfo *)0x0);
-      this_00 = (this->fields).Source;
-      if (this_00 == (ParticleSystem *)0x0) goto code_?;
-      PStack_2.m_ParticleSystem =
-           (ParticleSystem *)
-           UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem::
-           ParticleSystem_get_collision(this_00,(MethodInfo *)0x0);
-      fVar5 = 0.0;
-      fVar6 = UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
-              ParticleSystem_MainModule_get_startSizeMultiplier_Injected
-                        (&PStack_2,(MethodInfo *)0x0);
-      PStack_2.m_ParticleSystem = (ParticleSystem *)&UNK_?;
-      UnityEngine.ParticleSystemModule.dll::UnityEngine::ParticleSystem+MainModule::
-      ParticleSystem_MainModule_set_startSizeMultiplier_Injected
-                ((ParticleSystem_MainModule *)&stack0xfffffff8,fVar6 * fVar5,(MethodInfo *)0x0);
-      uVar1 = uVar1 + 1;
-      ppPVar4 = ppPVar4 + 1;
+      if ((uint)pPVar1->max_length <= uVar2) {
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pPVar5 = *ppPVar3;
+      if (pPVar5 == (ParticleSystem *)0x0) break;
+      if (iRam_? != 0) {
+        uVar6 = (uint)((ulonglong)&pPStackX_18 >> 0xc);
+        uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
+        do {
+          uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
+          puVar9 = (ulonglong *)(uVar7 * 8 + 0xADDR);
+          LOCK();
+          bVar10 = uVar8 == *puVar9;
+          if (bVar10) {
+            *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar10);
+      }
+      pcVar4 = pcRam_?;
+      apPStackX_8[0] = pPVar5;
+      pPStackX_18 = pPVar5;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+        uVar11 = func_?(&UNK_?);
+        FUN_?(uVar11,0);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pcRam_? = pcVar4;
+      fVar12 = (float)(*pcRam_?)(apPStackX_8);
+      pPVar5 = (this->fields).Source;
+      if (pPVar5 == (ParticleSystem *)0x0) break;
+      if (iRam_? != 0) {
+        uVar6 = (uint)((ulonglong)&pPStackX_18 >> 0xc);
+        uVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6);
+        do {
+          uVar8 = *(ulonglong *)(uVar7 * 8 + 0xADDR);
+          puVar9 = (ulonglong *)(uVar7 * 8 + 0xADDR);
+          LOCK();
+          bVar10 = uVar8 == *puVar9;
+          if (bVar10) {
+            *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar10);
+      }
+      pcVar4 = pcRam_?;
+      pPStackX_18 = pPVar5;
+      pPStackX_20 = pPVar5;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+        uVar11 = func_?(&UNK_?);
+        FUN_?(uVar11,0);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pcRam_? = pcVar4;
+      fVar13 = (float)(*pcRam_?)(&pPStackX_20);
+      pcVar4 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+        uVar11 = func_?(&UNK_?);
+        FUN_?(uVar11,0);
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
+      }
+      pcRam_? = pcVar4;
+      (*pcRam_?)(apPStackX_8,fVar13 * fVar12);
+      uVar2 = uVar2 + 1;
+      ppPVar3 = ppPVar3 + 1;
     }
-    func_?();
   }
-code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 

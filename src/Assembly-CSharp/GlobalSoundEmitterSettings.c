@@ -6,126 +6,88 @@ void Assembly-CSharp.dll::GlobalSoundEmitterSettings::GlobalSoundEmitterSettings
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&TypeInfo__System__Single);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   this_00 = (this->fields).settingsBase;
-  if (this_00 == (SettingsBase *)0x0) {
-code_?:
-    func_?();
-  }
-  else {
+  if (this_00 != (SettingsBase *)0x0) {
     SettingsBase::SettingsBase_Initialize
               (this_00,woID,root,MVWorldObjectDocumentationType__Enum_GlobalSoundEmitter,
                (MethodInfo *)0x0);
     this_02 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-    if (this_02 == (MVWorldObjectClientManager *)0x0) goto code_?;
-    pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
-                       (this_02,woID,(MethodInfo *)0x0);
-    if (pMVar1 == (MVWorldObject *)0x0) goto code_?;
-    this_01 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)(pMVar1->fields).data;
-    pGVar2 = (this->fields).keys;
-    pSVar3 = (this->fields).volumeSlider;
-    if ((pGVar2 == (GlobalSoundEmitterSettings_Keys *)0x0) ||
-       (pSVar4 = (pGVar2->fields).keys, pSVar4 == (String__Array *)0x0)) goto code_?;
-    if (pSVar4->max_length == 0) goto code_?;
-    if (this_01 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0)
-    goto code_?;
-    TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      (this_01,(Object *)((((this->fields).keys)->fields).keys)->vector[0],
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    if ((pSVar3 == (SettingsSlider *)0x0) || (TVar5.m_Index == 0)) goto code_?;
-    if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) ==
-        (TypeInfo__System__Single->_0).element_class) {
-      pfVar6 = (float *)func_?();
-      SettingsSlider::SettingsSlider_Initialize
-                (pSVar3,(String *)&UNK_?,*pfVar6,0.0,1.0,(MethodInfo *)0x0);
-      pGVar2 = (this->fields).keys;
-      pSVar3 = (this->fields).pitchSlider;
-      if ((pGVar2 != (GlobalSoundEmitterSettings_Keys *)0x0) &&
-         (pSVar4 = (pGVar2->fields).keys, pSVar4 != (String__Array *)0x0)) {
-        if (pSVar4->max_length < 2) goto code_?;
-        TVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          (this_01,(Object *)((((this->fields).keys)->fields).keys)->vector[1],
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                          );
-        if ((pSVar3 != (SettingsSlider *)0x0) && (TVar5.m_Index != 0)) {
-          if (*(Il2CppClass **)(*(int *)TVar5.m_Index + 0x20) ==
-              (TypeInfo__System__Single->_0).element_class) {
-            pfVar6 = (float *)func_?();
-            SettingsSlider::SettingsSlider_Initialize
-                      (pSVar3,(String *)&UNK_?,*pfVar6,0.5,2.0,(MethodInfo *)0x0);
+    if (this_02 != (MVWorldObjectClientManager *)0x0) {
+      pMVar1 = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
+                         (this_02,woID,(MethodInfo *)0x0);
+      if (pMVar1 != (MVWorldObjectClient *)0x0) {
+        this_01 = (pMVar1->fields)._.data;
+        pGVar2 = (this->fields).keys;
+        pSVar3 = (this->fields).volumeSlider;
+        if ((pGVar2 != (GlobalSoundEmitterSettings_Keys *)0x0) &&
+           (pSVar4 = (pGVar2->fields).keys, pSVar4 != (String__Array *)0x0)) {
+          if ((int)pSVar4->max_length == 0) {
+code_?:
+            FUN_?();
+            pcVar5 = (code *)swi(3);
+            (*pcVar5)();
             return;
           }
-          goto code_?;
+          pSVar6 = pSVar4->vector[0];
+          if (this_01 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+            pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
+                     ::Object]::Dictionary_2_System_Object_System_Object__get_Item
+                               (this_01,(Object *)((((this->fields).keys)->fields).keys)->vector[0],
+                                MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                               );
+            if ((pSVar3 != (SettingsSlider *)0x0) && (pOVar7 != (Object *)0x0)) {
+              if ((pOVar7->klass->_0).element_class !=
+                  *(Il2CppClass **)(lRam_? + 0x40)) {
+                FUN_?(pOVar7);
+                pcVar5 = (code *)swi(3);
+                (*pcVar5)();
+                return;
+              }
+              SettingsSlider::SettingsSlider_Initialize
+                        (pSVar3,pSVar6,*(float *)&pOVar7[1].klass,0.0,_UNK_?,
+                         (MethodInfo *)0x0);
+              pGVar2 = (this->fields).keys;
+              pSVar3 = (this->fields).pitchSlider;
+              if ((pGVar2 != (GlobalSoundEmitterSettings_Keys *)0x0) &&
+                 (pSVar4 = (pGVar2->fields).keys, pSVar4 != (String__Array *)0x0)) {
+                if ((uint)pSVar4->max_length < 2) goto code_?;
+                pSVar6 = pSVar4->vector[1];
+                pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                         Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
+                                   (this_01,(Object *)
+                                            ((((this->fields).keys)->fields).keys)->vector[1],
+                                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                   );
+                if ((pSVar3 != (SettingsSlider *)0x0) && (pOVar7 != (Object *)0x0)) {
+                  if ((pOVar7->klass->_0).element_class ==
+                      *(Il2CppClass **)(lRam_? + 0x40)) {
+                    SettingsSlider::SettingsSlider_Initialize
+                              (pSVar3,pSVar6,*(float *)&pOVar7[1].klass,_UNK_?,
+                               TypeRef__System__Activator__T._0_4_,(MethodInfo *)0x0);
+                    return;
+                  }
+                  FUN_?(pOVar7);
+                  pcVar5 = (code *)swi(3);
+                  (*pcVar5)();
+                  return;
+                }
+              }
+            }
+          }
         }
       }
-      goto code_?;
     }
   }
-code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
-  return;
-}
-
-
-/* Void OnSettingChanged(String, Int32) */
-
-void Assembly-CSharp.dll::GlobalSoundEmitterSettings::GlobalSoundEmitterSettings_OnSettingChanged_1
-               (GlobalSoundEmitterSettings *this,String *key,int32_t value,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
-    cRam_? = '\x01';
-  }
-  this_00 = (this->fields).settingsBase;
-  this = (GlobalSoundEmitterSettings *)value;
-  value_00 = (Object *)func_?(TypeInfo__System__Int32,&this);
-  if (this_00 != (SettingsBase *)0x0) {
-    SettingsBase::SettingsBase_OnSettingChanged(this_00,key,value_00,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
-  return;
-}
-
-
-/* Void OnSettingChanged(String, Single) */
-
-void Assembly-CSharp.dll::GlobalSoundEmitterSettings::GlobalSoundEmitterSettings_OnSettingChanged_2
-               (GlobalSoundEmitterSettings *this,String *key,float value,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Single);
-    cRam_? = '\x01';
-  }
-  pGVar1 = this;
-  this = (GlobalSoundEmitterSettings *)value;
-  this_00 = (pGVar1->fields).settingsBase;
-  value_00 = (Object *)func_?(TypeInfo__System__Single,&this);
-  if (this_00 != (SettingsBase *)0x0) {
-    SettingsBase::SettingsBase_OnSettingChanged(this_00,key,value_00,(MethodInfo *)0x0);
-    return;
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -137,44 +99,75 @@ void Assembly-CSharp.dll::GlobalSoundEmitterSettings::GlobalSoundEmitterSettings
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__GlobalSoundEmitterSettings__Keys);
+    FUN_?(&TypeInfo__GlobalSoundEmitterSettings__Keys);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  value = (GlobalSoundEmitterSettings_Keys *)
-          func_?(TypeInfo__GlobalSoundEmitterSettings__Keys);
+  pGVar1 = (GlobalSoundEmitterSettings_Keys *)
+           FUN_?(TypeInfo__GlobalSoundEmitterSettings__Keys);
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__String);
-    func_?(&StringLiteral_pitch);
-    func_?(&StringLiteral_volume);
+    FUN_?(&TypeInfo__System__String);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_pitch);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_volume);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pSVar1 = (String__Array *)func_?(TypeInfo__System__String,2);
-  pSVar2 = StringLiteral_volume;
-  if (pSVar1 == (String__Array *)0x0) {
-    func_?();
+  pSVar2 = (String__Array *)FUN_?(TypeInfo__System__String,2);
+  if (pSVar2 == (String__Array *)0x0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
   }
-  else if (pSVar1->max_length != 0) {
-    pSVar1->vector[0] = StringLiteral_volume;
-    func_?(pSVar1->vector,pSVar2);
-    pSVar2 = StringLiteral_pitch;
-    if (1 < pSVar1->max_length) {
-      pSVar1->vector[1] = StringLiteral_pitch;
-      func_?(pSVar1->vector + 1,pSVar2);
-      method_00 = (MethodInfo *)&value->fields;
-      (value->fields).keys = pSVar1;
-      func_?(method_00,pSVar1);
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)value,ExceptionArgument__Enum_obj,method_00);
-      (this->fields).keys = value;
-      func_?(&(this->fields).keys,value);
-      UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour__ctor
-                ((MonoBehaviour *)this,(MethodInfo *)0x0);
-      return;
-    }
+  FUN_?(pSVar2,0,StringLiteral_volume);
+  FUN_?(pSVar2,1,StringLiteral_pitch);
+  iVar4 = iRam_?;
+  (pGVar1->fields).keys = pSVar2;
+  if (iVar4 != 0) {
+    uVar5 = (uint)((ulonglong)&pGVar1->fields >> 0xc);
+    lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+      puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+      LOCK();
+      bVar9 = uVar7 == *puVar8;
+      if (bVar9) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+      iVar4 = iRam_?;
+    } while (!bVar9);
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  (this->fields).keys = pGVar1;
+  if (iVar4 != 0) {
+    uVar5 = (uint)((ulonglong)&(this->fields).keys >> 0xc);
+    lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+      puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+      LOCK();
+      bVar9 = uVar7 == *puVar8;
+      if (bVar9) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar9);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
   return;
 }
 

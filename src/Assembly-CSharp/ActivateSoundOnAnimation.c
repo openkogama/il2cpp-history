@@ -6,57 +6,80 @@ void Assembly-CSharp.dll::ActivateSoundOnAnimation::ActivateSoundOnAnimation_OnA
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<ActivateSoundOnAnimation::ActivationData>__get_Count__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<ActivateSoundOnAnimation::ActivationData>__get_Item_int_
-                   );
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<ActivateSoundOnAnimation::ActivationData>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<ActivateSoundOnAnimation::ActivationData>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  index = 0;
   pLVar1 = (this->fields).activationDataList;
-  do {
-    if (pLVar1 == (List_1_ActivateSoundOnAnimation_ActivationData_ *)0x0) {
+  uVar2 = 0;
+  if (pLVar1 != (List_1_ActivateSoundOnAnimation_ActivationData_ *)0x0) {
+    lVar3 = 0x20;
+    while( true ) {
+      if ((pLVar1->fields)._size <= (int)uVar2) {
+        return;
+      }
+      if ((uint)(pLVar1->fields)._size <= uVar2) goto code_?;
+      pAVar4 = (pLVar1->fields)._items;
+      if (pAVar4 == (ActivateSoundOnAnimation_ActivationData__Array *)0x0)
+      goto code_?;
+      if ((uint)pAVar4->max_length <= uVar2) goto code_?;
+      pSVar5 = *(String **)
+                ((longlong)
+                 &((ActivateSoundOnAnimation_ActivationData__Array *)(pAVar4->vector + -2))->klass +
+                lVar3);
+      if (pSVar5 == newAnimation) break;
+      if (((pSVar5 == (String *)0x0) || (newAnimation == (String *)0x0)) ||
+         ((pSVar5->fields)._stringLength != (newAnimation->fields)._stringLength)) {
+        uVar2 = uVar2 + 1;
+        lVar3 = lVar3 + 0x10;
+      }
+      else {
+        bVar6 = mscorlib.dll::System::SpanHelpers::SpanHelpers_SequenceEqual
+                          ((uint8_t *)&(pSVar5->fields)._firstChar,
+                           (uint8_t *)&(newAnimation->fields)._firstChar,
+                           (longlong)(pSVar5->fields)._stringLength * 2,(MethodInfo *)0x0);
+        if (bVar6 != 0) break;
+        uVar2 = uVar2 + 1;
+        lVar3 = lVar3 + 0x10;
+      }
+    }
+    if ((uint)(pLVar1->fields)._size <= uVar2) {
 code_?:
-      func_?();
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                ((MethodInfo *)0x0);
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
       return;
     }
-    if ((pLVar1->fields)._size <= index) {
-      return;
-    }
-    pLVar1 = (this->fields).activationDataList;
-    if (pLVar1 == (List_1_ActivateSoundOnAnimation_ActivationData_ *)0x0) goto code_?;
-    XVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
-            XmlSchemaObjectTable+XmlSchemaObjectEntry]::
-            List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                      ((List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)pLVar1
-                       ,index,
-                       MethodInfo__System__Collections__Generic__List<ActivateSoundOnAnimation::ActivationData>__get_Item_int_
-                      );
-    bVar4 = mscorlib.dll::System::String::String_op_Equality
-                      ((String *)XVar3.qname,newAnimation,(MethodInfo *)0x0);
-    pLVar1 = (this->fields).activationDataList;
-    if (bVar4 != 0) {
-      if (pLVar1 != (List_1_ActivateSoundOnAnimation_ActivationData_ *)0x0) {
-        XVar3 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
-                XmlSchemaObjectTable+XmlSchemaObjectEntry]::
-                List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                          ((List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)
-                           pLVar1,index,
-                           MethodInfo__System__Collections__Generic__List<ActivateSoundOnAnimation::ActivationData>__get_Item_int_
-                          );
-        routine = ActivateSoundOnAnimation_PlaySound(this,(float)XVar3.xso,(MethodInfo *)0x0);
-        UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_Auto
+    pAVar4 = (pLVar1->fields)._items;
+    if (pAVar4 != (ActivateSoundOnAnimation_ActivationData__Array *)0x0) {
+      if (uVar2 < (uint)pAVar4->max_length) {
+        routine = ActivateSoundOnAnimation_PlaySound
+                            (this,pAVar4->vector[(int)uVar2].activationDelay,(MethodInfo *)0x0);
+        UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_2
                   ((MonoBehaviour *)this,routine,(MethodInfo *)0x0);
         return;
       }
-      goto code_?;
+code_?:
+      FUN_?();
+      pcVar7 = (code *)swi(3);
+      (*pcVar7)();
+      return;
     }
-    index = index + 1;
-  } while( true );
+  }
+code_?:
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
+  return;
 }
 
 
@@ -68,17 +91,32 @@ Assembly-CSharp.dll::ActivateSoundOnAnimation::ActivateSoundOnAnimation_PlaySoun
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__ActivateSoundOnAnimation___PlaySound_d__4);
+    FUN_?(&TypeInfo__ActivateSoundOnAnimation___PlaySound_d__4);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__ActivateSoundOnAnimation___PlaySound_d__4;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].monitor = (MonitorData *)this;
-  value[1].klass = (Object__Class *)0x0;
-  func_?(&value[2].monitor,this);
-  value[2].klass = (Object__Class *)activationDelay;
-  return (IEnumerator *)value;
+  pIVar1 = (IEnumerator *)FUN_?(TypeInfo__ActivateSoundOnAnimation___PlaySound_d__4);
+  bVar2 = iRam_? == 0;
+  *(undefined4 *)&pIVar1[1].klass = 0;
+  pIVar1[2].monitor = (MonitorData *)this;
+  if (bVar2) {
+    *(float *)&pIVar1[2].klass = activationDelay;
+    return pIVar1;
+  }
+  uVar3 = (uint)((ulonglong)&pIVar1[2].monitor >> 0xc);
+  uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+  do {
+    uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+    puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+    LOCK();
+    bVar2 = uVar5 == *puVar6;
+    if (bVar2) {
+      *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+    }
+    UNLOCK();
+  } while (!bVar2);
+  *(float *)&pIVar1[2].klass = activationDelay;
+  return pIVar1;
 }
 

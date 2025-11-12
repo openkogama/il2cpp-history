@@ -3,45 +3,61 @@
 
 bool Assembly-CSharp.dll::MVNetworkReporter+SendTransformData::
      MVNetworkReporter_SendTransformData_Equals
-               (MVNetworkReporter_SendTransformData *this,MVNetworkReporter_SendTransformData other,
-               MethodInfo *method)
+               (MVNetworkReporter_SendTransformData *this,MVNetworkReporter_SendTransformData *other
+               ,MethodInfo *method)
 
 {
   uVar1 = (this->position).x;
   uVar2 = (this->position).y;
-  fVar3 = other.position.z - (this->position).z;
+  uVar3 = (other->position).x;
+  fVar4 = (other->position).z - (this->position).z;
+  fVar5 = (other->position).y - (float)uVar2;
   if (_UNK_? <=
-      (other.position.y - (float)uVar2) * (other.position.y - (float)uVar2) +
-      (other.position.x - (float)uVar1) * (other.position.x - (float)uVar1) + fVar3 * fVar3) {
+      fVar5 * fVar5 + ((float)uVar3 - (float)uVar1) * ((float)uVar3 - (float)uVar1) + fVar4 * fVar4)
+  {
     return 0;
   }
-  if (other.rotation != (Byte__Array *)0x0) {
-    if ((other.rotation)->max_length != 0) {
-      pBVar4 = this->rotation;
-      if (pBVar4 == (Byte__Array *)0x0) goto code_?;
-      if (pBVar4->max_length != 0) {
-        if ((other.rotation)->vector[0] != pBVar4->vector[0]) {
-          return 0;
-        }
-        if ((1 < (other.rotation)->max_length) && (1 < pBVar4->max_length)) {
-          if ((other.rotation)->vector[1] != pBVar4->vector[1]) {
+  pBVar6 = other->rotation;
+  if (pBVar6 == (Byte__Array *)0x0) {
+code_?:
+    FUN_?(_UNK_?,pBVar6,method);
+    pcVar7 = (code *)swi(3);
+    bVar8 = (*pcVar7)();
+    return bVar8;
+  }
+  if ((int)pBVar6->max_length != 0) {
+    method = (MethodInfo *)(ulonglong)pBVar6->vector[0];
+    pBVar9 = this->rotation;
+    if (pBVar9 == (Byte__Array *)0x0) goto code_?;
+    if ((int)pBVar9->max_length != 0) {
+      if (pBVar6->vector[0] != pBVar9->vector[0]) {
+        return 0;
+      }
+      if (pBVar6 == (Byte__Array *)0x0) goto code_?;
+      if (1 < (uint)pBVar6->max_length) {
+        method = (MethodInfo *)(ulonglong)pBVar6->vector[1];
+        pBVar9 = this->rotation;
+        if (pBVar9 == (Byte__Array *)0x0) goto code_?;
+        if (1 < (uint)pBVar9->max_length) {
+          if (pBVar6->vector[1] != pBVar9->vector[1]) {
             return 0;
           }
-          if (2 < (other.rotation)->max_length) {
-            if (2 < this->rotation->max_length) {
-              return (other.rotation)->vector[2] == this->rotation->vector[2];
+          if (pBVar6 == (Byte__Array *)0x0) goto code_?;
+          if (2 < (uint)pBVar6->max_length) {
+            pBVar9 = this->rotation;
+            if (pBVar9 == (Byte__Array *)0x0) goto code_?;
+            if (2 < (uint)pBVar9->max_length) {
+              return pBVar6->vector[2] == pBVar9->vector[2];
             }
           }
         }
       }
     }
-    func_?();
   }
-code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  bVar6 = (*pcVar5)();
-  return bVar6;
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  bVar8 = (*pcVar7)();
+  return bVar8;
 }
 
 
@@ -52,37 +68,46 @@ bool Assembly-CSharp.dll::MVNetworkReporter+SendTransformData::
                (MVNetworkReporter_SendTransformData *this,Object *obj,MethodInfo *method)
 
 {
-  uVar1 = CONCAT44(unaff_EBP,unaff_EBX);
   if (cRam_? == '\0') {
-    func_?(&TypeRef__MVNetworkReporter__SendTransformData);
-    func_?(&TypeInfo__MVNetworkReporter__SendTransformData);
-    func_?(&TypeInfo__System__Type);
+    FUN_?(&TypeRef__MVNetworkReporter__SendTransformData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVNetworkReporter__SendTransformData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (obj != (Object *)0x0) {
-    left = (XNamespace *)mscorlib.dll::System::Object::Object_GetType(obj,(MethodInfo *)0x0);
-    handle = TypeRef__MVNetworkReporter__SendTransformData;
-    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Type,uVar1);
+    lVar1 = FUN_?(&(obj->klass->_0).byval_arg);
+    pIVar2 = TypeRef__MVNetworkReporter__SendTransformData;
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
     }
-    right = (XNamespace *)
-            mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                      ((RuntimeTypeHandle)handle,(MethodInfo *)0x0);
-    bVar2 = System.Xml.Linq.dll::System::Xml::Linq::XNamespace::XNamespace_op_Inequality
-                      (left,right,(MethodInfo *)0x0);
-    if (bVar2 == 0) {
+    if (pIVar2 == (Il2CppType *)0x0) {
+      lVar3 = 0;
+    }
+    else {
+      if (*(int *)(lRam_? + 0xe4) == 0) {
+        FUN_?();
+      }
+      lVar3 = FUN_?(pIVar2,1);
+      lVar3 = FUN_?(lVar3 + 0x20);
+    }
+    if (lVar1 == lVar3) {
       if ((obj->klass->_0).element_class ==
           (TypeInfo__MVNetworkReporter__SendTransformData->_0).element_class) {
-        pMVar3 = (MVNetworkReporter_SendTransformData *)func_?();
-        bVar2 = MVNetworkReporter_SendTransformData_Equals
-                          ((MVNetworkReporter_SendTransformData *)&UNK_?,*pMVar3,
-                           (MethodInfo *)0x0);
-        return bVar2;
+        pOStack_4 = obj[1].klass;
+        pMStack_5 = obj[1].monitor;
+        pOStack_6 = obj[2].klass;
+        bVar7 = MVNetworkReporter_SendTransformData_Equals
+                          (this,(MVNetworkReporter_SendTransformData *)&pOStack_4,(MethodInfo *)0x0
+                          );
+        return bVar7;
       }
-      func_?();
-      pcVar4 = (code *)swi(3);
-      bVar2 = (*pcVar4)();
-      return bVar2;
+      FUN_?(obj);
+      pcVar8 = (code *)swi(3);
+      bVar7 = (*pcVar8)();
+      return bVar7;
     }
   }
   return 0;
@@ -96,17 +121,29 @@ int32_t Assembly-CSharp.dll::MVNetworkReporter+SendTransformData::
                   (MVNetworkReporter_SendTransformData *this,MethodInfo *method)
 
 {
-  uVar1 = mscorlib.dll::System::Single::Single_GetHashCode((Single *)this,(MethodInfo *)0x0);
-  iVar2 = mscorlib.dll::System::Single::Single_GetHashCode
-                    ((Single *)&(this->position).y,(MethodInfo *)0x0);
-  iVar3 = mscorlib.dll::System::Single::Single_GetHashCode
-                    ((Single *)&(this->position).z,(MethodInfo *)0x0);
-  uVar1 = iVar3 >> 2 ^ iVar2 * 4 ^ uVar1;
-  if (this->rotation != (Byte__Array *)0x0) {
-    uVar4 = (**(code **)&this->rotation->klass[1]._0.byval_arg.attrs)();
-    return uVar1 * 0x18d ^ uVar4;
+  fVar1 = (this->position).x;
+  if (0x7f7fffff < ((int)fVar1 - 1U & 0x7fffffff)) {
+    fVar1 = (float)((uint)fVar1 & 0x7f800000);
   }
-  return uVar1 * 0x18d;
+  fVar2 = (this->position).y;
+  if (0x7f7fffff < ((int)fVar2 - 1U & 0x7fffffff)) {
+    fVar2 = (float)((uint)fVar2 & 0x7f800000);
+  }
+  fVar3 = (this->position).z;
+  if (0x7f7fffff < ((int)fVar3 - 1U & 0x7fffffff)) {
+    fVar3 = (float)((uint)fVar3 & 0x7f800000);
+  }
+  if (this->rotation == (Byte__Array *)0x0) {
+    uVar4 = 0;
+  }
+  else {
+    pBVar5 = this->rotation->klass;
+    uVar6._0_2_ = pBVar5[1]._0.byval_arg.attrs;
+    uVar6._2_1_ = pBVar5[1]._0.byval_arg.type;
+    uVar6._3_5_ = *(undefined5 *)&pBVar5[1]._0.byval_arg.field_0xb;
+    uVar4 = (*(code *)pBVar5[1]._0.byval_arg.data)(this->rotation,uVar6);
+  }
+  return ((int)fVar2 * 4 ^ (int)fVar3 >> 2 ^ (uint)fVar1) * 0x18d ^ uVar4;
 }
 
 
@@ -114,12 +151,16 @@ int32_t Assembly-CSharp.dll::MVNetworkReporter+SendTransformData::
 
 bool Assembly-CSharp.dll::MVNetworkReporter+SendTransformData::
      MVNetworkReporter_SendTransformData_op_Equality
-               (MVNetworkReporter_SendTransformData std1,MVNetworkReporter_SendTransformData std2,
+               (MVNetworkReporter_SendTransformData *std1,MVNetworkReporter_SendTransformData *std2,
                MethodInfo *method)
 
 {
-  bVar1 = MVNetworkReporter_SendTransformData_Equals(&std1,std2,(MethodInfo *)0x0);
-  return bVar1;
+  MStack_1.position.x = (std2->position).x;
+  MStack_1.position.y = (std2->position).y;
+  MStack_1._8_8_ = *(undefined8 *)&(std2->position).z;
+  MStack_1.rotation = std2->rotation;
+  bVar2 = MVNetworkReporter_SendTransformData_Equals(std1,&MStack_1,(MethodInfo *)0x0);
+  return bVar2;
 }
 
 
@@ -128,11 +169,15 @@ bool Assembly-CSharp.dll::MVNetworkReporter+SendTransformData::
 
 bool Assembly-CSharp.dll::MVNetworkReporter+SendTransformData::
      MVNetworkReporter_SendTransformData_op_Inequality
-               (MVNetworkReporter_SendTransformData std1,MVNetworkReporter_SendTransformData std2,
+               (MVNetworkReporter_SendTransformData *std1,MVNetworkReporter_SendTransformData *std2,
                MethodInfo *method)
 
 {
-  bVar1 = MVNetworkReporter_SendTransformData_Equals(&std1,std2,(MethodInfo *)0x0);
-  return bVar1 ^ 1;
+  MStack_1.position.x = (std2->position).x;
+  MStack_1.position.y = (std2->position).y;
+  MStack_1._8_8_ = *(undefined8 *)&(std2->position).z;
+  MStack_1.rotation = std2->rotation;
+  bVar2 = MVNetworkReporter_SendTransformData_Equals(std1,&MStack_1,(MethodInfo *)0x0);
+  return bVar2 ^ 1;
 }
 

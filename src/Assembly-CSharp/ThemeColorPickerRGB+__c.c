@@ -5,15 +5,26 @@ void Assembly-CSharp.dll::ThemeColorPickerRGB+<>c::ThemeColorPickerRGB_c__cctor(
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__ThemeColorPickerRGB____c);
+    FUN_?(&TypeInfo__ThemeColorPickerRGB____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__ThemeColorPickerRGB____c;
-  value = (ThemeColorPickerRGB_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  TypeInfo__ThemeColorPickerRGB____c->static_fields->__9 = value;
-  func_?(TypeInfo__ThemeColorPickerRGB____c->static_fields,value);
+  pTVar1 = (ThemeColorPickerRGB_c *)FUN_?(TypeInfo__ThemeColorPickerRGB____c);
+  TypeInfo__ThemeColorPickerRGB____c->static_fields->__9 = pTVar1;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)TypeInfo__ThemeColorPickerRGB____c->static_fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 

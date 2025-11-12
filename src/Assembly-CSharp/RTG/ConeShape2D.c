@@ -6,24 +6,48 @@ bool Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_ContainsPoint
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__TriangleMath);
+    FUN_?(&TypeInfo__RTG__TriangleMath);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  ConeShape2D_get_Right(this,(MethodInfo *)0x0);
-  ConeShape2D_get_Up(this,(MethodInfo *)0x0);
-  fVar1 = (this->fields)._baseCenter.y;
-  VVar2 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
-  fStack_3 = VVar2.y;
-  fVar1 = fStack_3 * (this->fields)._baseRadius + fVar1;
-  if ((TypeInfo__RTG__TriangleMath->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__TriangleMath);
+  fVar1 = (this->fields)._baseCenter.x;
+  fVar2 = (this->fields)._baseCenter.y;
+  VVar3 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
+  fVar4 = (this->fields)._baseRadius;
+  fStackX_c = VVar3.y;
+  fVar5 = fVar4 * fStackX_c;
+  fStackX_8 = VVar3.x;
+  fVar4 = fVar4 * fStackX_8;
+  fVar6 = (this->fields)._baseCenter.x;
+  fVar7 = (this->fields)._baseCenter.y;
+  VVar3 = ConeShape2D_get_Up(this,(MethodInfo *)0x0);
+  fVar8 = (this->fields)._height;
+  fStackX_c = VVar3.y;
+  fVar9 = fVar8 * fStackX_c;
+  fStackX_8 = VVar3.x;
+  fVar8 = fVar8 * fStackX_8;
+  fVar10 = (this->fields)._baseCenter.x;
+  fVar11 = (this->fields)._baseCenter.y;
+  VVar3 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
+  fVar12 = (this->fields)._baseRadius;
+  fStackX_c = VVar3.y;
+  fStackX_8 = VVar3.x;
+  aTStack_13[0]._areaEps = 0.0;
+  aTStack_13[0]._extrudeEps = 0.0;
+  if (*(int *)&(TypeInfo__RTG__TriangleMath->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  VVar2.y = 0.0;
-  VVar2.x = fVar1;
-  bVar4 = TriangleMath::TriangleMath_Contains2DPoint
-                    (point,VVar2,(Vector2)0x0,(Vector2)((ulonglong)(uint)fVar1 << 0x20),
-                     (TriangleEpsilon)ZEXT812(0),(MethodInfo *)0x0);
-  return bVar4;
+  p2.y = fVar12 * fStackX_c + fVar11;
+  p2.x = fVar12 * fStackX_8 + fVar10;
+  VVar3.y = fVar9 + fVar7;
+  VVar3.x = fVar8 + fVar6;
+  p0.y = fVar2 - fVar5;
+  p0.x = fVar1 - fVar4;
+  aTStack_13[0]._wireEps = 0.0;
+  bVar14 = TriangleMath::TriangleMath_Contains2DPoint(point,p0,VVar3,p2,aTStack_13,(MethodInfo *)0x0)
+  ;
+  return bVar14;
 }
 
 
@@ -34,121 +58,62 @@ Rect * Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_GetEncapsulatingRect
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
-    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_Vector2_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
-  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType]::
-  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
-             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
+  points = (IEnumerable_1_UnityEngine_Vector2_ *)
+           FUN_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
+  FUN_?(points);
   fVar1 = (this->fields)._baseCenter.x;
   fVar2 = (this->fields)._baseCenter.y;
   VVar3 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
-  pMVar4 = 
-  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
-  fVar1 = fVar1 - (float)puStack_5 * (this->fields)._baseRadius;
-  fVar2 = fVar2 - VVar3.y * (this->fields)._baseRadius;
-  if (this_00 != (List_1_UnityEngine_Vector2_ *)0x0) {
-    piVar6 = &(this_00->fields)._version;
-    *piVar6 = *piVar6 + 1;
-    pVVar7 = (this_00->fields)._items;
-    if (pVVar7 != (Vector2__Array *)0x0) {
-      uVar8 = (this_00->fields)._size;
-      if (uVar8 < pVVar7->max_length) {
-        (this_00->fields)._size = uVar8 + 1;
-        if (pVVar7->max_length <= uVar8) goto code_?;
-        pVVar7->vector[uVar8].x = fVar1;
-        pVVar7->vector[uVar8].y = fVar2;
-      }
-      else {
-        VVar3.y = fVar2;
-        VVar3.x = fVar1;
-        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-        List_1_UnityEngine_Vector2__AddWithResize
-                  (this_00,VVar3,pMVar4->klass->rgctx_data[0xe].method);
-      }
-      fVar1 = (this->fields)._baseCenter.x;
-      pMVar4 = (MethodInfo *)(this->fields)._baseCenter.y;
-      VVar3 = ConeShape2D_get_Up(this,pMVar4);
-      pMVar9 = 
-      MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-      ;
-      puVar10 = (undefined *)((this->fields)._height * 4.4431493e-29 + fVar1);
-      fVar1 = VVar3.y * (this->fields)._height + (float)pMVar4;
-      piVar6 = &(this_00->fields)._version;
-      *piVar6 = *piVar6 + 1;
-      pVVar7 = (this_00->fields)._items;
-      if (pVVar7 != (Vector2__Array *)0x0) {
-        uVar8 = (this_00->fields)._size;
-        if (uVar8 < pVVar7->max_length) {
-          (this_00->fields)._size = uVar8 + 1;
-          if (pVVar7->max_length <= uVar8) goto code_?;
-          pVVar7->vector[uVar8].x = (float)puVar10;
-          pVVar7->vector[uVar8].y = fVar1;
-          puStack_5 = puVar10;
-        }
-        else {
-          item_00.y = fVar1;
-          item_00.x = (float)puVar10;
-          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-          List_1_UnityEngine_Vector2__AddWithResize
-                    (this_00,item_00,pMVar9->klass->rgctx_data[0xe].method);
-        }
-        fVar1 = (this->fields)._baseCenter.y;
-        VVar3 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
-        pMVar4 = 
-        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-        ;
-        fVar2 = (float)puStack_5 * (this->fields)._baseRadius + 4.4431968e-29;
-        fVar1 = VVar3.y * (this->fields)._baseRadius + fVar1;
-        piVar6 = &(this_00->fields)._version;
-        *piVar6 = *piVar6 + 1;
-        pVVar7 = (this_00->fields)._items;
-        if (pVVar7 != (Vector2__Array *)0x0) {
-          uVar8 = (this_00->fields)._size;
-          if (pVVar7->max_length <= uVar8) {
-            item.y = fVar1;
-            item.x = fVar2;
-            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-            List_1_UnityEngine_Vector2__AddWithResize
-                      (this_00,item,pMVar4->klass->rgctx_data[0xe].method);
-code_?:
-            pRVar11 = RectEx::RectEx_FromPoints
-                               ((Rect *)&stack0xffffffe8,
-                                (IEnumerable_1_UnityEngine_Vector2_ *)this_00,(MethodInfo *)0x0);
-            fVar1 = pRVar11->m_YMin;
-            fVar2 = pRVar11->m_Width;
-            fVar12 = pRVar11->m_Height;
-            __return_storage_ptr__->m_XMin = pRVar11->m_XMin;
-            __return_storage_ptr__->m_YMin = fVar1;
-            __return_storage_ptr__->m_Width = fVar2;
-            __return_storage_ptr__->m_Height = fVar12;
-            return __return_storage_ptr__;
-          }
-          (this_00->fields)._size = uVar8 + 1;
-          if (uVar8 < pVVar7->max_length) {
-            pVVar7->vector[uVar8].x = fVar2;
-            pVVar7->vector[uVar8].y = fVar1;
-            goto code_?;
-          }
-          goto code_?;
-        }
-      }
-    }
+  fVar4 = (this->fields)._baseRadius;
+  fStackX_c = VVar3.y;
+  fStackX_8 = VVar3.x;
+  if (points != (IEnumerable_1_UnityEngine_Vector2_ *)0x0) {
+    FUN_?(points,CONCAT44(fVar2 - fVar4 * fStackX_c,fVar1 - fVar4 * fStackX_8),
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+                 );
+    fVar1 = (this->fields)._baseCenter.x;
+    fVar2 = (this->fields)._baseCenter.y;
+    VVar3 = ConeShape2D_get_Up(this,(MethodInfo *)0x0);
+    fVar4 = (this->fields)._height;
+    fStackX_c = VVar3.y;
+    fStackX_8 = VVar3.x;
+    FUN_?(points,CONCAT44(fVar4 * fStackX_c + fVar2,fVar4 * fStackX_8 + fVar1),
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+                 );
+    fVar1 = (this->fields)._baseCenter.x;
+    fVar2 = (this->fields)._baseCenter.y;
+    VVar3 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
+    fVar4 = (this->fields)._baseRadius;
+    fStackX_c = VVar3.y;
+    fStackX_8 = VVar3.x;
+    FUN_?(points,CONCAT44(fVar4 * fStackX_c + fVar2,fVar4 * fStackX_8 + fVar1));
+    pRVar5 = RectEx::RectEx_FromPoints(aRStack_6,points,(MethodInfo *)0x0);
+    fVar1 = pRVar5->m_YMin;
+    fVar2 = pRVar5->m_Width;
+    fVar4 = pRVar5->m_Height;
+    __return_storage_ptr__->m_XMin = pRVar5->m_XMin;
+    __return_storage_ptr__->m_YMin = fVar1;
+    __return_storage_ptr__->m_Width = fVar2;
+    __return_storage_ptr__->m_Height = fVar4;
+    return __return_storage_ptr__;
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar13 = (code *)swi(3);
-  pRVar11 = (Rect *)(*pcVar13)();
-  return pRVar11;
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  pRVar5 = (Rect *)(*pcVar7)();
+  return pRVar5;
 }
 
 
@@ -158,96 +123,265 @@ void Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_RenderArea
                (ConeShape2D *this,Camera *camera,MethodInfo *method)
 
 {
+  uStack_1 = CONCAT44(unaff_XMM9_Db,unaff_XMM9_Da);
+  uStack_2 = unaff_XMM9_Dc;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
-    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  fVar1 = (this->fields)._baseCenter.x;
-  fVar2 = (this->fields)._baseCenter.y;
-  VVar3 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
-  fStack_4 = VVar3.y;
-  pMVar5 = (MethodInfo *)(fVar1 - in_stack_6 * (this->fields)._baseRadius);
-  fVar2 = fVar2 - fStack_4 * (this->fields)._baseRadius;
-  this_00 = (List_1_UnityEngine_Vector2_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
-  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType]::
-  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
-             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
-  fVar1 = (this->fields)._baseCenter.x;
-  fVar7 = (this->fields)._baseCenter.y;
-  VVar8 = ConeShape2D_get_Up(this,(MethodInfo *)0x0);
-  pMVar9 = 
-  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
-  fStack_4 = VVar8.y;
-  method_00 = (MethodInfo *)(VVar3.x * (this->fields)._height + fVar1);
-  fVar7 = fStack_4 * (this->fields)._height + fVar7;
-  if (this_00 != (List_1_UnityEngine_Vector2_ *)0x0) {
-    piVar10 = &(this_00->fields)._version;
-    *piVar10 = *piVar10 + 1;
-    pVVar11 = (this_00->fields)._items;
-    if (pVVar11 != (Vector2__Array *)0x0) {
-      uVar12 = (this_00->fields)._size;
-      if (uVar12 < pVVar11->max_length) {
-        (this_00->fields)._size = uVar12 + 1;
-        if (pVVar11->max_length <= uVar12) goto code_?;
-        pVVar11->vector[uVar12].x = (float)method_00;
-        pVVar11->vector[uVar12].y = fVar7;
-      }
-      else {
-        method_00 = pMVar9->klass->rgctx_data[0xe].method;
-        VVar3.y = fVar7;
-        VVar3.x = (float)method_00;
-        pMVar5 = method_00;
-        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-        List_1_UnityEngine_Vector2__AddWithResize(this_00,VVar3,method_00);
-        fVar2 = fVar7;
-      }
-      fVar1 = (this->fields)._baseCenter.x;
-      VVar3 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
-      pMVar9 = 
-      MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-      ;
-      fStack_4 = VVar3.y;
-      fVar1 = (float)method_00 * (this->fields)._baseRadius + fVar1;
-      fVar7 = fStack_4 * (this->fields)._baseRadius + 4.4433593e-29;
-      piVar10 = &(this_00->fields)._version;
-      *piVar10 = *piVar10 + 1;
-      pVVar11 = (this_00->fields)._items;
-      if (pVVar11 != (Vector2__Array *)0x0) {
-        uVar12 = (this_00->fields)._size;
-        if (pVVar11->max_length <= uVar12) {
-          camera = (Camera *)pMVar9->klass->rgctx_data[0xe].method;
-          VVar8.y = fVar7;
-          VVar8.x = fVar1;
-          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-          List_1_UnityEngine_Vector2__AddWithResize(this_00,VVar8,(MethodInfo *)camera);
-code_?:
-          origin.y = fVar2;
-          origin.x = (float)pMVar5;
-          GLRenderer::GLRenderer_DrawTriangleFan2D_1(origin,this_00,camera,(MethodInfo *)0x0);
-          return;
-        }
-        (this_00->fields)._size = uVar12 + 1;
-        if (uVar12 < pVVar11->max_length) {
-          pVVar11->vector[uVar12].x = fVar1;
-          pVVar11->vector[uVar12].y = fVar7;
-          goto code_?;
-        }
-        goto code_?;
-      }
-    }
+  fVar3 = (this->fields)._baseCenter.x;
+  fVar4 = (this->fields)._baseCenter.y;
+  VVar5 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
+  fVar6 = (this->fields)._baseRadius;
+  fStackX_c = VVar5.y;
+  fVar7 = fVar6 * fStackX_c;
+  fStackX_8 = VVar5.x;
+  fVar6 = fVar6 * fStackX_8;
+  lVar8 = FUN_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
+  FUN_?(lVar8);
+  fVar9 = (this->fields)._baseCenter.x;
+  fVar10 = (this->fields)._baseCenter.y;
+  VVar5 = ConeShape2D_get_Up(this,(MethodInfo *)0x0);
+  fVar11 = (this->fields)._height;
+  fStackX_c = VVar5.y;
+  fStackX_8 = VVar5.x;
+  if (lVar8 == 0) {
+    FUN_?();
+    pcVar12 = (code *)swi(3);
+    (*pcVar12)();
+    return;
   }
-  func_?();
+  FUN_?(lVar8,CONCAT44(fVar11 * fStackX_c + fVar10,fVar11 * fStackX_8 + fVar9),
+                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+               );
+  fVar9 = (this->fields)._baseCenter.x;
+  fVar10 = (this->fields)._baseCenter.y;
+  VVar5 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
+  fVar11 = (this->fields)._baseRadius;
+  fStackX_c = VVar5.y;
+  fStackX_8 = VVar5.x;
+  FUN_?(lVar8,CONCAT44(fVar11 * fStackX_c + fVar10,fVar11 * fStackX_8 + fVar9),
+                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+               );
+  uVar13 = CONCAT44(fVar4 - fVar7,fVar3 - fVar6);
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Count__
+                  ,lVar8,camera,0,uVar13);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (lVar8 == 0) {
 code_?:
-  func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+    FUN_?();
+    pcVar12 = (code *)swi(3);
+    (*pcVar12)();
+    return;
+  }
+  iVar14 = *(int *)(lVar8 + 0x18) + -1;
+  if (0 < iVar14) {
+    pcVar12 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
+      uVar13 = func_?(&UNK_?);
+      FUN_?(uVar13,0);
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
+      return;
+    }
+    pcRam_? = pcVar12;
+    (*pcRam_?)();
+    pcVar12 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
+      uVar13 = func_?(&UNK_?);
+      FUN_?(uVar13,0);
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
+      return;
+    }
+    pcRam_? = pcVar12;
+    (*pcRam_?)();
+    pcVar12 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
+      uVar13 = func_?(&UNK_?);
+      FUN_?(uVar13,0);
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
+      return;
+    }
+    pcRam_? = pcVar12;
+    (*pcRam_?)(4);
+    if (camera == (Camera *)0x0) goto code_?;
+    uStack_15 = 0;
+    uStack_16 = uVar13;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_17 = 0;
+    uStack_18 = 0;
+    pvVar19 = (camera->fields)._._._.m_CachedPtr;
+    if (pvVar19 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
+      return;
+    }
+    pcVar12 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
+      uVar13 = func_?(&UNK_?);
+      FUN_?(uVar13,0);
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
+      return;
+    }
+    pcRam_? = pcVar12;
+    (*pcRam_?)(pvVar19,&uStack_16,&uStack_17);
+    uVar20 = 0;
+    lVar21 = 0x28;
+    uVar22 = uVar20;
+    do {
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_17,uStack_17._4_4_,0.0,(MethodInfo *)0x0);
+      uVar23 = (uint)uVar20;
+      if (*(uint *)(lVar8 + 0x18) <= uVar23) {
+code_?:
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar12 = (code *)swi(3);
+        (*pcVar12)();
+        return;
+      }
+      lVar24 = *(longlong *)(lVar8 + 0x10);
+      if (lVar24 == 0) goto code_?;
+      if (*(uint *)(lVar24 + 0x18) <= uVar23) {
+code_?:
+        FUN_?();
+        pcVar12 = (code *)swi(3);
+        (*pcVar12)();
+        return;
+      }
+      uStack_25 = CONCAT44(*(undefined4 *)(lVar21 + -4 + lVar24),*(undefined4 *)(lVar21 + -8 + lVar24)
+                          );
+      uStack_26 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_27 = 0;
+      fStack_28 = 0.0;
+      pvVar19 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar19 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar12 = (code *)swi(3);
+        (*pcVar12)();
+        return;
+      }
+      pcVar12 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
+        uVar13 = func_?(&UNK_?);
+        FUN_?(uVar13,0);
+        pcVar12 = (code *)swi(3);
+        (*pcVar12)();
+        return;
+      }
+      pcRam_? = pcVar12;
+      (*pcRam_?)(pvVar19,&uStack_25,&uStack_27);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_27,uStack_27._4_4_,fStack_28,(MethodInfo *)0x0);
+      if (*(uint *)(lVar8 + 0x18) <= uVar23 + 1) goto code_?;
+      lVar24 = *(longlong *)(lVar8 + 0x10);
+      if (lVar24 == 0) goto code_?;
+      if (*(uint *)(lVar24 + 0x18) <= uVar23 + 1) goto code_?;
+      uStack_1 = CONCAT44(*(undefined4 *)(lVar24 + 4 + lVar21),*(undefined4 *)(lVar24 + lVar21));
+      uStack_2 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_29 = 0;
+      fStack_30 = 0.0;
+      pvVar19 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar19 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar12 = (code *)swi(3);
+        (*pcVar12)();
+        return;
+      }
+      pcVar12 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
+        uVar13 = func_?(&UNK_?);
+        FUN_?(uVar13,0);
+        pcVar12 = (code *)swi(3);
+        (*pcVar12)();
+        return;
+      }
+      pcRam_? = pcVar12;
+      (*pcRam_?)(pvVar19,&uStack_1,&uStack_29);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_29,uStack_29._4_4_,fStack_30,(MethodInfo *)0x0);
+      uVar20 = (ulonglong)(uVar23 + 1);
+      uVar22 = uVar22 + 1;
+      lVar21 = lVar21 + 8;
+    } while ((longlong)uVar22 < (longlong)iVar14);
+    pcVar12 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
+      uVar13 = func_?(&UNK_?);
+      FUN_?(uVar13,0);
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
+      return;
+    }
+    pcRam_? = pcVar12;
+    (*pcRam_?)();
+    pcVar12 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
+      uVar13 = func_?(&UNK_?);
+      FUN_?(uVar13,0);
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
+      return;
+    }
+    pcRam_? = pcVar12;
+    (*pcRam_?)();
+  }
   return;
 }
 
@@ -258,114 +392,229 @@ void Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_RenderBorder
                (ConeShape2D *this,Camera *camera,MethodInfo *method)
 
 {
+  uStack_1 = CONCAT44(unaff_XMM7_Db,unaff_XMM7_Da);
+  uStack_2 = CONCAT44(unaff_XMM7_Dd,unaff_XMM7_Dc);
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
-    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (List_1_UnityEngine_Vector2_ *)
-            func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
-  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType]::
-  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
-             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
-  fVar1 = (this->fields)._baseCenter.x;
-  fVar2 = (this->fields)._baseCenter.y;
-  VVar3 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
-  pMVar4 = 
-  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
-  fStack_5 = VVar3.y;
-  pMVar6 = (MethodInfo *)(fVar1 - in_stack_7 * (this->fields)._baseRadius);
-  fVar2 = fVar2 - fStack_5 * (this->fields)._baseRadius;
-  if (this_00 != (List_1_UnityEngine_Vector2_ *)0x0) {
-    piVar8 = &(this_00->fields)._version;
-    *piVar8 = *piVar8 + 1;
-    pVVar9 = (this_00->fields)._items;
-    if (pVVar9 != (Vector2__Array *)0x0) {
-      uVar10 = (this_00->fields)._size;
-      if (uVar10 < pVVar9->max_length) {
-        (this_00->fields)._size = uVar10 + 1;
-        if (pVVar9->max_length <= uVar10) goto code_?;
-        pVVar9->vector[uVar10].x = (float)pMVar6;
-        pVVar9->vector[uVar10].y = fVar2;
-      }
-      else {
-        pMVar6 = pMVar4->klass->rgctx_data[0xe].method;
-        VVar3.y = fVar2;
-        VVar3.x = (float)pMVar6;
-        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-        List_1_UnityEngine_Vector2__AddWithResize(this_00,VVar3,pMVar6);
-      }
-      fVar1 = (this->fields)._baseCenter.x;
-      VVar3 = ConeShape2D_get_Up(this,(MethodInfo *)0x0);
-      pMVar4 = 
-      MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-      ;
-      fStack_5 = VVar3.y;
-      fVar1 = (float)pMVar6 * (this->fields)._height + fVar1;
-      fVar2 = fStack_5 * (this->fields)._height + 4.443496e-29;
-      piVar8 = &(this_00->fields)._version;
-      *piVar8 = *piVar8 + 1;
-      pVVar9 = (this_00->fields)._items;
-      if (pVVar9 != (Vector2__Array *)0x0) {
-        uVar10 = (this_00->fields)._size;
-        if (uVar10 < pVVar9->max_length) {
-          (this_00->fields)._size = uVar10 + 1;
-          if (pVVar9->max_length <= uVar10) goto code_?;
-          pVVar9->vector[uVar10].x = fVar1;
-          pVVar9->vector[uVar10].y = fVar2;
-        }
-        else {
-          camera = (Camera *)pMVar4->klass->rgctx_data[0xe].method;
-          item.y = fVar2;
-          item.x = fVar1;
-          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-          List_1_UnityEngine_Vector2__AddWithResize(this_00,item,(MethodInfo *)camera);
-        }
-        fVar2 = (this->fields)._baseCenter.x;
-        fVar11 = (this->fields)._baseCenter.y;
-        VVar3 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
-        pMVar6 = 
-        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-        ;
-        fStack_5 = VVar3.y;
-        fVar2 = fVar1 * (this->fields)._baseRadius + fVar2;
-        fVar11 = fStack_5 * (this->fields)._baseRadius + fVar11;
-        piVar8 = &(this_00->fields)._version;
-        *piVar8 = *piVar8 + 1;
-        pVVar9 = (this_00->fields)._items;
-        if (pVVar9 != (Vector2__Array *)0x0) {
-          uVar10 = (this_00->fields)._size;
-          if (pVVar9->max_length <= uVar10) {
-            item_00.y = fVar11;
-            item_00.x = fVar2;
-            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-            List_1_UnityEngine_Vector2__AddWithResize
-                      (this_00,item_00,pMVar6->klass->rgctx_data[0xe].method);
-code_?:
-            GLRenderer::GLRenderer_DrawLineLoop2D(this_00,camera,(MethodInfo *)0x0);
-            return;
-          }
-          (this_00->fields)._size = uVar10 + 1;
-          if (uVar10 < pVVar9->max_length) {
-            pVVar9->vector[uVar10].x = fVar2;
-            pVVar9->vector[uVar10].y = fVar11;
-            goto code_?;
-          }
-          goto code_?;
-        }
-      }
-    }
+  lVar3 = FUN_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
+  FUN_?(lVar3);
+  fVar4 = (this->fields)._baseCenter.x;
+  fVar5 = (this->fields)._baseCenter.y;
+  VVar6 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
+  fVar7 = (this->fields)._baseRadius;
+  fStackX_c = VVar6.y;
+  fStackX_8 = VVar6.x;
+  if (lVar3 == 0) {
+    FUN_?();
+    pcVar8 = (code *)swi(3);
+    (*pcVar8)();
+    return;
   }
-  func_?();
+  FUN_?(lVar3,CONCAT44(fVar5 - fVar7 * fStackX_c,fVar4 - fVar7 * fStackX_8),
+                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+               );
+  fVar4 = (this->fields)._baseCenter.x;
+  fVar5 = (this->fields)._baseCenter.y;
+  VVar6 = ConeShape2D_get_Up(this,(MethodInfo *)0x0);
+  fVar7 = (this->fields)._height;
+  fStackX_c = VVar6.y;
+  fStackX_8 = VVar6.x;
+  FUN_?(lVar3,CONCAT44(fVar7 * fStackX_c + fVar5,fVar7 * fStackX_8 + fVar4),
+                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+               );
+  fVar4 = (this->fields)._baseCenter.x;
+  fVar5 = (this->fields)._baseCenter.y;
+  VVar6 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
+  fVar7 = (this->fields)._baseRadius;
+  fStackX_c = VVar6.y;
+  fStackX_8 = VVar6.x;
+  FUN_?(lVar3,CONCAT44(fVar7 * fStackX_c + fVar5,fVar7 * fStackX_8 + fVar4),
+                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+               );
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Count__
+                  ,camera,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  uStack_9 = uStack_1;
+  uStack_10 = uStack_2;
+  if (lVar3 == 0) {
 code_?:
-  func_?();
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+    FUN_?();
+    pcVar8 = (code *)swi(3);
+    (*pcVar8)();
+    return;
+  }
+  if (1 < *(int *)(lVar3 + 0x18)) {
+    pcVar8 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+      uVar11 = func_?(&UNK_?);
+      FUN_?(uVar11,0);
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
+      return;
+    }
+    pcRam_? = pcVar8;
+    (*pcRam_?)();
+    pcVar8 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+      uVar11 = func_?(&UNK_?);
+      FUN_?(uVar11,0);
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
+      return;
+    }
+    pcRam_? = pcVar8;
+    (*pcRam_?)();
+    pcVar8 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+      uVar11 = func_?(&UNK_?);
+      FUN_?(uVar11,0);
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
+      return;
+    }
+    pcRam_? = pcVar8;
+    (*pcRam_?)();
+    lVar12 = 0x20;
+    for (uVar13 = 0; (int)uVar13 < *(int *)(lVar3 + 0x18); uVar13 = uVar13 + 1) {
+      if (*(uint *)(lVar3 + 0x18) <= uVar13) {
+code_?:
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar8 = (code *)swi(3);
+        (*pcVar8)();
+        return;
+      }
+      lVar14 = *(longlong *)(lVar3 + 0x10);
+      if (lVar14 == 0) goto code_?;
+      if (*(uint *)(lVar14 + 0x18) <= uVar13) {
+code_?:
+        FUN_?();
+        pcVar8 = (code *)swi(3);
+        (*pcVar8)();
+        return;
+      }
+      uVar15 = (int)(uVar13 + 1) % *(int *)(lVar3 + 0x18);
+      if (*(uint *)(lVar3 + 0x18) <= uVar15) goto code_?;
+      if (lVar14 == 0) goto code_?;
+      if (*(uint *)(lVar14 + 0x18) <= uVar15) goto code_?;
+      uVar16 = *(undefined4 *)(lVar14 + 0x20 + (longlong)(int)uVar15 * 8);
+      uVar17 = *(undefined4 *)(lVar14 + 0x24 + (longlong)(int)uVar15 * 8);
+      if (camera == (Camera *)0x0) goto code_?;
+      uStack_18 = CONCAT44(*(undefined4 *)(lVar12 + 4 + lVar14),*(undefined4 *)(lVar12 + lVar14));
+      uStack_19 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_20 = 0;
+      uStack_21 = 0;
+      pvVar22 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar22 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar8 = (code *)swi(3);
+        (*pcVar8)();
+        return;
+      }
+      pcVar8 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+        uVar11 = func_?(&UNK_?);
+        FUN_?(uVar11,0);
+        pcVar8 = (code *)swi(3);
+        (*pcVar8)();
+        return;
+      }
+      pcRam_? = pcVar8;
+      (*pcRam_?)(pvVar22,&uStack_18,&uStack_20);
+      uStack_23 = CONCAT44(uVar17,uVar16);
+      uStack_24 = 0;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_25 = 0;
+      uStack_26 = 0;
+      pvVar22 = (camera->fields)._._._.m_CachedPtr;
+      if (pvVar22 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+        pcVar8 = (code *)swi(3);
+        (*pcVar8)();
+        return;
+      }
+      pcVar8 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+        uVar11 = func_?(&UNK_?);
+        FUN_?(uVar11,0);
+        pcVar8 = (code *)swi(3);
+        (*pcVar8)();
+        return;
+      }
+      pcRam_? = pcVar8;
+      (*pcRam_?)(pvVar22,&uStack_23,&uStack_25);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_20,uStack_20._4_4_,0.0,(MethodInfo *)0x0);
+      UnityEngine.CoreModule.dll::UnityEngine::GL::GL_Vertex3
+                ((float)uStack_25,uStack_25._4_4_,0.0,(MethodInfo *)0x0);
+      lVar12 = lVar12 + 8;
+    }
+    pcVar8 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+      uVar11 = func_?(&UNK_?);
+      FUN_?(uVar11,0);
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
+      return;
+    }
+    pcRam_? = pcVar8;
+    (*pcRam_?)();
+    pcVar8 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+      uVar11 = func_?(&UNK_?);
+      FUN_?(uVar11,0);
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
+      return;
+    }
+    pcRam_? = pcVar8;
+    (*pcRam_?)();
+  }
   return;
 }
 
@@ -376,7 +625,9 @@ void Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D__ctor(ConeShape2D *this,
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector2);
+    FUN_?(&TypeInfo__UnityEngine__Vector2);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   fVar1 = (TypeInfo__UnityEngine__Vector2->static_fields->zeroVector).y;
@@ -397,10 +648,12 @@ Vector2 Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_get_BaseLeft
   fVar1 = (this->fields)._baseCenter.x;
   fVar2 = (this->fields)._baseCenter.y;
   VVar3 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
-  VStack_4.y = VVar3.y;
-  VStack_4.y = fVar2 - VStack_4.y * (this->fields)._baseRadius;
-  VStack_4.x = fVar1 - VStack_4.x * (this->fields)._baseRadius;
-  return VStack_4;
+  fVar4 = (this->fields)._baseRadius;
+  fStackX_c = VVar3.y;
+  fStackX_8 = VVar3.x;
+  VVar3.y = fVar2 - fVar4 * fStackX_c;
+  VVar3.x = fVar1 - fVar4 * fStackX_8;
+  return VVar3;
 }
 
 
@@ -413,10 +666,12 @@ Vector2 Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_get_BaseRight
   fVar1 = (this->fields)._baseCenter.x;
   fVar2 = (this->fields)._baseCenter.y;
   VVar3 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
-  VStack_4.y = VVar3.y;
-  VStack_4.y = VStack_4.y * (this->fields)._baseRadius + fVar2;
-  VStack_4.x = fVar1 + VStack_4.x * (this->fields)._baseRadius;
-  return VStack_4;
+  fVar4 = (this->fields)._baseRadius;
+  fStackX_c = VVar3.y;
+  fStackX_8 = VVar3.x;
+  VVar3.y = fVar4 * fStackX_c + fVar2;
+  VVar3.x = fVar4 * fStackX_8 + fVar1;
+  return VVar3;
 }
 
 
@@ -426,35 +681,27 @@ Vector2 Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_get_Right
                   (ConeShape2D *this,MethodInfo *method)
 
 {
-  fVar1 = (this->fields)._rotationDegrees;
+  pQVar1 = ConeShape2D_get_Rotation(aQStack_2,this,(MethodInfo *)0x0);
+  fVar3 = pQVar1->x;
+  fVar4 = pQVar1->y;
+  fVar5 = pQVar1->z;
+  fVar6 = pQVar1->w;
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__Vector2);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                     ((Quaternion *)&stack0xffffffdc,fVar1,
-                      TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,(MethodInfo *)0x0
-                     );
-  puVar3 = (undefined *)pQVar2->x;
-  fVar1 = pQVar2->z;
-  fVar4 = pQVar2->w;
-  if (cRam_? == '\0') {
-    puVar3 = &UNK_?;
-    func_?();
-    cRam_? = '\x01';
-  }
-  rotation.y = 0.0;
-  rotation.x = (float)puVar3;
-  rotation.z = fVar1;
-  rotation.w = fVar4;
-  point.z = 0.0;
-  point.x = (TypeInfo__UnityEngine__Vector2->static_fields->rightVector).x;
-  point.y = (TypeInfo__UnityEngine__Vector2->static_fields->rightVector).y;
-  pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                     ((Vector3 *)&stack0xfffffff0,rotation,point,(MethodInfo *)0x0);
-  VVar6.x = pVVar5->x;
-  VVar6.y = pVVar5->y;
-  return VVar6;
+  pVVar7 = TypeInfo__UnityEngine__Vector2->static_fields;
+  fVar8 = fVar5 + fVar5;
+  fVar9 = fVar4 + fVar4;
+  VVar10.y = (_UNK_? - ((fVar3 + fVar3) * fVar3 + fVar8 * fVar5)) * (pVVar7->rightVector).y +
+            (fVar8 * fVar6 + fVar9 * fVar3) * (pVVar7->rightVector).x +
+            (fVar8 * fVar4 - (fVar3 + fVar3) * fVar6) * 0.0;
+  VVar10.x = (_UNK_? - (fVar9 * fVar4 + fVar8 * fVar5)) * (pVVar7->rightVector).x +
+            (fVar9 * fVar3 - fVar8 * fVar6) * (pVVar7->rightVector).y +
+            (fVar8 * fVar3 + fVar9 * fVar6) * 0.0;
+  return VVar10;
 }
 
 
@@ -467,19 +714,32 @@ Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_get_Rotation
 {
   fVar1 = (this->fields)._rotationDegrees;
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                     (&QStack_3,fVar1,TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
-                      (MethodInfo *)0x0);
-  fVar1 = pQVar2->y;
-  fVar4 = pQVar2->z;
-  fVar5 = pQVar2->w;
-  __return_storage_ptr__->x = pQVar2->x;
-  __return_storage_ptr__->y = fVar1;
-  __return_storage_ptr__->z = fVar4;
-  __return_storage_ptr__->w = fVar5;
+  pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uStack_3._0_4_ = (pVVar2->forwardVector).x;
+  uStack_3._4_4_ = (pVVar2->forwardVector).y;
+  fStack_4 = (pVVar2->forwardVector).z;
+  uStack_5 = 0;
+  uStack_6 = 0;
+  pcVar7 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+    uVar8 = func_?(&UNK_?);
+    FUN_?(uVar8,0);
+    pcVar7 = (code *)swi(3);
+    pQVar9 = (Quaternion *)(*pcVar7)();
+    return pQVar9;
+  }
+  pcRam_? = pcVar7;
+  (*pcRam_?)(fVar1,&uStack_3,&uStack_5);
+  __return_storage_ptr__->x = (float)(undefined4)uStack_5;
+  __return_storage_ptr__->y = (float)uStack_5._4_4_;
+  __return_storage_ptr__->z = (float)(undefined4)uStack_6;
+  __return_storage_ptr__->w = (float)uStack_6._4_4_;
   return __return_storage_ptr__;
 }
 
@@ -493,10 +753,12 @@ Vector2 Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_get_Tip
   fVar1 = (this->fields)._baseCenter.x;
   fVar2 = (this->fields)._baseCenter.y;
   VVar3 = ConeShape2D_get_Up(this,(MethodInfo *)0x0);
-  VStack_4.y = VVar3.y;
-  VStack_4.y = VStack_4.y * (this->fields)._height + fVar2;
-  VStack_4.x = fVar1 + VStack_4.x * (this->fields)._height;
-  return VStack_4;
+  fVar4 = (this->fields)._height;
+  fStackX_c = VVar3.y;
+  fStackX_8 = VVar3.x;
+  VVar3.y = fVar4 * fStackX_c + fVar2;
+  VVar3.x = fVar4 * fStackX_8 + fVar1;
+  return VVar3;
 }
 
 
@@ -506,35 +768,27 @@ Vector2 Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_get_Up
                   (ConeShape2D *this,MethodInfo *method)
 
 {
-  fVar1 = (this->fields)._rotationDegrees;
+  pQVar1 = ConeShape2D_get_Rotation(aQStack_2,this,(MethodInfo *)0x0);
+  fVar3 = pQVar1->x;
+  fVar4 = pQVar1->y;
+  fVar5 = pQVar1->z;
+  fVar6 = pQVar1->w;
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__Vector2);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                     ((Quaternion *)&stack0xffffffdc,fVar1,
-                      TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,(MethodInfo *)0x0
-                     );
-  puVar3 = (undefined *)pQVar2->x;
-  fVar1 = pQVar2->z;
-  fVar4 = pQVar2->w;
-  if (cRam_? == '\0') {
-    puVar3 = &UNK_?;
-    func_?();
-    cRam_? = '\x01';
-  }
-  rotation.y = 0.0;
-  rotation.x = (float)puVar3;
-  rotation.z = fVar1;
-  rotation.w = fVar4;
-  point.z = 0.0;
-  point.x = (TypeInfo__UnityEngine__Vector2->static_fields->upVector).x;
-  point.y = (TypeInfo__UnityEngine__Vector2->static_fields->upVector).y;
-  pVVar5 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                     ((Vector3 *)&stack0xfffffff0,rotation,point,(MethodInfo *)0x0);
-  VVar6.x = pVVar5->x;
-  VVar6.y = pVVar5->y;
-  return VVar6;
+  pVVar7 = TypeInfo__UnityEngine__Vector2->static_fields;
+  fVar8 = fVar5 + fVar5;
+  fVar9 = fVar4 + fVar4;
+  VVar10.y = (_UNK_? - ((fVar3 + fVar3) * fVar3 + fVar8 * fVar5)) * (pVVar7->upVector).y +
+            (fVar8 * fVar6 + fVar9 * fVar3) * (pVVar7->upVector).x +
+            (fVar8 * fVar4 - (fVar3 + fVar3) * fVar6) * 0.0;
+  VVar10.x = (_UNK_? - (fVar9 * fVar4 + fVar8 * fVar5)) * (pVVar7->upVector).x +
+            (fVar9 * fVar3 - fVar8 * fVar6) * (pVVar7->upVector).y +
+            (fVar8 * fVar3 + fVar9 * fVar6) * 0.0;
+  return VVar10;
 }
 
 
@@ -545,10 +799,13 @@ void Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_set_BaseLeft
 
 {
   VVar1 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
-  fStack_2 = VVar1.y;
-  fVar3 = (this->fields)._baseRadius;
-  (this->fields)._baseCenter.x = value.x + fStack_4 * (this->fields)._baseRadius;
-  (this->fields)._baseCenter.y = value.y + fStack_2 * fVar3;
+  fVar2 = (this->fields)._baseRadius;
+  fStackX_c = VVar1.y;
+  fStackX_8 = VVar1.x;
+  fStackX_24 = value.y;
+  fStackX_20 = value.x;
+  (this->fields)._baseCenter.y = fVar2 * fStackX_c + fStackX_24;
+  (this->fields)._baseCenter.x = fVar2 * fStackX_8 + fStackX_20;
   return;
 }
 
@@ -560,10 +817,13 @@ void Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_set_BaseRight
 
 {
   VVar1 = ConeShape2D_get_Right(this,(MethodInfo *)0x0);
-  fStack_2 = VVar1.y;
-  fVar3 = (this->fields)._baseRadius;
-  (this->fields)._baseCenter.x = value.x - fStack_4 * (this->fields)._baseRadius;
-  (this->fields)._baseCenter.y = value.y - fStack_2 * fVar3;
+  fVar2 = (this->fields)._baseRadius;
+  fStackX_20 = value.x;
+  fStackX_8 = VVar1.x;
+  fStackX_c = VVar1.y;
+  (this->fields)._baseCenter.x = fStackX_20 - fVar2 * fStackX_8;
+  fStackX_24 = value.y;
+  (this->fields)._baseCenter.y = fStackX_24 - fVar2 * fStackX_c;
   return;
 }
 
@@ -574,8 +834,8 @@ void Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_set_RotationDegrees
                (ConeShape2D *this,float value,MethodInfo *method)
 
 {
-  fVar1 = (float10)func_?((double)value);
-  (this->fields)._rotationDegrees = (float)fVar1;
+  fVar1 = (float)FUN_?(value,_UNK_?);
+  (this->fields)._rotationDegrees = fVar1;
   return;
 }
 
@@ -587,10 +847,13 @@ void Assembly-CSharp.dll::RTG::ConeShape2D::ConeShape2D_set_Tip
 
 {
   VVar1 = ConeShape2D_get_Up(this,(MethodInfo *)0x0);
-  fStack_2 = VVar1.y;
-  fVar3 = (this->fields)._height;
-  (this->fields)._baseCenter.x = value.x - fStack_4 * (this->fields)._height;
-  (this->fields)._baseCenter.y = value.y - fStack_2 * fVar3;
+  fVar2 = (this->fields)._height;
+  fStackX_20 = value.x;
+  fStackX_8 = VVar1.x;
+  fStackX_c = VVar1.y;
+  (this->fields)._baseCenter.x = fStackX_20 - fVar2 * fStackX_8;
+  fStackX_24 = value.y;
+  (this->fields)._baseCenter.y = fStackX_24 - fVar2 * fStackX_c;
   return;
 }
 

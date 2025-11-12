@@ -7,21 +7,37 @@ void Assembly-CSharp.dll::RewardStateDataEventArgs::RewardStateDataEventArgs__ct
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__EventArgs);
+    FUN_?(&TypeInfo__System__EventArgs);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__EventArgs);
+  if (*(int *)&(TypeInfo__System__EventArgs->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-  UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor
-            ((UxmlObjectListAttributeDescription_1_System_Object_ *)this,(MethodInfo *)0x0);
-  TStack_1._ticks = 0;
-  mscorlib.dll::System::TimeSpan::TimeSpan__ctor_2(&TStack_1,0,0,0,timeInSeconds,(MethodInfo *)0x0);
-  *(undefined4 *)&(this->fields).timeSpan._ticks = (undefined4)TStack_1._ticks;
-  *(undefined4 *)((int)&(this->fields).timeSpan._ticks + 4) = TStack_1._ticks._4_4_;
-  (this->fields).amountGold = amountGold;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__TimeSpan);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if ((longlong)timeInSeconds * 1000 + 0x346dc5d638865U < 0x68db8bac710cb) {
+    (this->fields).amountGold = amountGold;
+    (this->fields).timeSpan._ticks = (longlong)timeInSeconds * 10000000;
+    return;
+  }
+  uVar1 = func_?(&TypeInfo__System__ArgumentOutOfRangeException);
+  this_00 = (ArgumentOutOfRangeException *)func_?(uVar1);
+  message = (String *)func_?(&StringLiteral_TimeSpan_overflowed_because_the_);
+  mscorlib.dll::System::ArgumentOutOfRangeException::ArgumentOutOfRangeException__ctor_2
+            (this_00,(String *)0x0,message,(MethodInfo *)0x0);
+  uVar1 = func_?(&MethodInfo__System__TimeSpan__TimeSpan_int__int__int__int__int_);
+  FUN_?(this_00,uVar1);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

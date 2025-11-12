@@ -6,43 +6,48 @@ void Assembly-CSharp.dll::TintObject::TintObject_TeamTint
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Styles);
+    FUN_?(&TypeInfo__Styles);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  switch(team) {
-  case MVTeam__Enum_Blue:
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__Styles);
+  if (team == MVTeam__Enum_Blue) {
+    if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+      FUN_?();
     }
     colorStyle = ColorStyle__Enum_TeamBlue;
-    break;
-  case MVTeam__Enum_Red:
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__Styles);
+  }
+  else if (team == MVTeam__Enum_Red) {
+    if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+      FUN_?();
     }
     colorStyle = ColorStyle__Enum_TeamRed;
-    break;
-  case MVTeam__Enum_Green:
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__Styles);
+  }
+  else if (team == MVTeam__Enum_Green) {
+    if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+      FUN_?();
     }
     colorStyle = ColorStyle__Enum_TeamGreen;
-    break;
-  case MVTeam__Enum_Yellow:
-    if ((TypeInfo__Styles->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__Styles);
+  }
+  else {
+    if (team != MVTeam__Enum_Yellow) {
+      pIVar1 = (this->klass->vtable).Tint.methodPtr;
+      (*pIVar1)(this,pIVar1,_UNK_?,_UNK_?,_UNK_?,
+                (this->klass->vtable).Tint.method);
+      return;
+    }
+    if (*(int *)&(TypeInfo__Styles->_1).field_0x1c == 0) {
+      FUN_?();
     }
     colorStyle = ColorStyle__Enum_TeamYellow;
-    break;
-  default:
-    (*(code *)(this->klass->vtable).Tint.method)
-              (this,0x3f800000,0x3f800000,0x3f800000,0x3f800000,this->klass[1]._0.image);
-    return;
   }
-  pCVar1 = Styles::Styles_GetColor(&CStack_2,colorStyle,(MethodInfo *)0x0);
-  CStack_2.r = pCVar1->a;
-  CStack_2.g = (float)(this->klass->vtable).TeamTint.methodPtr;
-  (*(code *)(this->klass->vtable).__unknown.method)(this,pCVar1->r,pCVar1->g,pCVar1->b);
+  pCVar2 = Styles::Styles_GetColor(&CStack_3,colorStyle,(MethodInfo *)0x0);
+  CStack_3.r = pCVar2->r;
+  CStack_3.g = pCVar2->g;
+  CStack_3.b = pCVar2->b;
+  CStack_3.a = pCVar2->a;
+  (*(this->klass->vtable).__unknown.methodPtr)
+            (this,&CStack_3,(this->klass->vtable).__unknown.method);
   return;
 }
 
@@ -53,8 +58,11 @@ void Assembly-CSharp.dll::TintObject::TintObject_Tint
                (TintObject *this,float r,float g,float b,float a,MethodInfo *method)
 
 {
-  (*(code *)(this->klass->vtable).__unknown.method)
-            (this,r,g,b,a,(this->klass->vtable).TeamTint.methodPtr);
+  fStack_1 = a;
+  fStack_2 = r;
+  fStack_3 = g;
+  fStack_4 = b;
+  (*(this->klass->vtable).__unknown.methodPtr)(a,&fStack_2,(this->klass->vtable).__unknown.method);
   return;
 }
 

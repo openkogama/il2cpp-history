@@ -8,19 +8,16 @@ bool Assembly-CSharp.dll::MVEquipableProxy::MVEquipableProxy_Equip
                MethodInfo *method)
 
 {
-  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
-  pMVar2 = (this->fields).equipable;
-  if (pMVar2 != (MVEquipable *)0x0) {
-    pIStack_1 = (pMVar2->klass->vtable).__unknown_1.methodPtr;
-    iStack_3 = variantID;
-    pDStack_4 = itemData;
-    bVar5 = (*(code *)(pMVar2->klass->vtable).__unknown.method)(pMVar2,type,equipType);
-    return bVar5;
+  pMVar1 = (this->fields).equipable;
+  if (pMVar1 != (MVEquipable *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    bVar2 = (*(pMVar1->klass->vtable).__unknown.methodPtr)();
+    return bVar2;
   }
-  uVar6 = func_?(&pDStack_4);
-  func_?(uVar6);
-  pcVar7 = (code *)swi(3);
-  bVar5 = (*pcVar7)();
-  return bVar5;
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  bVar2 = (*pcVar3)();
+  return bVar2;
 }
 

@@ -6,27 +6,62 @@ Ray * Assembly-CSharp.dll::RTG::MouseInputDevice::MouseInputDevice_GetRay
                 MethodInfo *method)
 
 {
-  pVVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
-                     (&VStack_2,(MethodInfo *)0x0);
-  if (camera != (Camera *)0x0) {
-    pRVar3 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenPointToRay_2
-                       ((Ray *)&stack0xffffffe4,camera,*pVVar1,(MethodInfo *)0x0);
-    fVar4 = (pRVar3->m_Origin).y;
-    fVar5 = (pRVar3->m_Origin).z;
-    fVar6 = (pRVar3->m_Direction).x;
-    (__return_storage_ptr__->m_Origin).x = (pRVar3->m_Origin).x;
-    (__return_storage_ptr__->m_Origin).y = fVar4;
-    (__return_storage_ptr__->m_Origin).z = fVar5;
-    (__return_storage_ptr__->m_Direction).x = fVar6;
-    fVar4 = (pRVar3->m_Direction).z;
-    (__return_storage_ptr__->m_Direction).y = (pRVar3->m_Direction).y;
-    (__return_storage_ptr__->m_Direction).z = fVar4;
-    return __return_storage_ptr__;
+  uStack_1 = 0;
+  uStack_2 = 0;
+  pcVar3 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+    uVar4 = func_?(&UNK_?);
+    FUN_?(uVar4,0);
+    pcVar3 = (code *)swi(3);
+    pRVar5 = (Ray *)(*pcVar3)();
+    return pRVar5;
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  pRVar3 = (Ray *)(*pcVar7)();
-  return pRVar3;
+  pcRam_? = pcVar3;
+  (*pcRam_?)(&uStack_1);
+  if (camera == (Camera *)0x0) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    pRVar5 = (Ray *)(*pcVar3)();
+    return pRVar5;
+  }
+  uStackX_8 = uStack_1;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  uStack_6 = 0;
+  uStack_7 = 0;
+  uStack_8 = 0;
+  pvVar9 = (camera->fields)._._._.m_CachedPtr;
+  if (pvVar9 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)camera,(MethodInfo *)0x0);
+    pcVar3 = (code *)swi(3);
+    pRVar5 = (Ray *)(*pcVar3)();
+    return pRVar5;
+  }
+  pcVar3 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+    uVar4 = func_?(&UNK_?);
+    FUN_?(uVar4,0);
+    pcVar3 = (code *)swi(3);
+    pRVar5 = (Ray *)(*pcVar3)();
+    return pRVar5;
+  }
+  pcRam_? = pcVar3;
+  (*pcRam_?)(pvVar9,&uStackX_8,2,&uStack_6);
+  (__return_storage_ptr__->m_Origin).x = (float)(undefined4)uStack_6;
+  (__return_storage_ptr__->m_Origin).y = (float)uStack_6._4_4_;
+  *(undefined8 *)&(__return_storage_ptr__->m_Origin).z = uStack_7;
+  (__return_storage_ptr__->m_Direction).y = (float)(undefined4)uStack_8;
+  (__return_storage_ptr__->m_Direction).z = (float)uStack_8._4_4_;
+  return __return_storage_ptr__;
 }
 
 
@@ -36,24 +71,42 @@ void Assembly-CSharp.dll::RTG::MouseInputDevice::MouseInputDevice_UpateFrameDelt
                (MouseInputDevice *this,MethodInfo *method)
 
 {
-  pVVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
-                     (&VStack_2,(MethodInfo *)0x0);
-  uStack_3._0_4_ = pVVar1->x;
-  uStack_3._4_4_ = pVVar1->y;
-  fStack_4 = pVVar1->z;
-  VStack_2.x = (this->fields)._mousePosInLastFrame.x;
-  VStack_2.y = (this->fields)._mousePosInLastFrame.y;
-  VStack_2.z = fStack_4 - (this->fields)._mousePosInLastFrame.z;
-  (this->fields)._frameDelta.x = (float)(undefined4)uStack_3 - VStack_2.x;
-  (this->fields)._frameDelta.y = (float)uStack_3._4_4_ - VStack_2.y;
-  (this->fields)._frameDelta.z = VStack_2.z;
-  pVVar1 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
-                     (&VStack_2,(MethodInfo *)0x0);
-  fVar5 = pVVar1->y;
-  fVar6 = pVVar1->z;
-  (this->fields)._mousePosInLastFrame.x = pVVar1->x;
-  (this->fields)._mousePosInLastFrame.y = fVar5;
-  (this->fields)._mousePosInLastFrame.z = fVar6;
+  uStack_1 = 0;
+  fStack_2 = 0.0;
+  pcVar3 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+    uVar4 = func_?(&UNK_?);
+    FUN_?(uVar4,0);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pcRam_? = pcVar3;
+  (*pcRam_?)(&uStack_1);
+  pcVar3 = pcRam_?;
+  uVar5 = (this->fields)._mousePosInLastFrame.x;
+  uVar6 = (this->fields)._mousePosInLastFrame.y;
+  fVar7 = (this->fields)._mousePosInLastFrame.z;
+  uStack_8 = 0;
+  fStack_9 = 0.0;
+  (this->fields)._frameDelta.x = (float)uStack_1 - (float)uVar5;
+  (this->fields)._frameDelta.y = uStack_1._4_4_ - (float)uVar6;
+  (this->fields)._frameDelta.z = fStack_2 - fVar7;
+  pcVar10 = pcRam_?;
+  if ((pcVar3 == (code *)0x0) &&
+     (pcVar3 = (code *)FUN_?(&UNK_?), pcVar10 = pcVar3, pcVar3 == (code *)0x0)) {
+    uVar4 = func_?(&UNK_?);
+    FUN_?(uVar4,0);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pcRam_? = pcVar10;
+  (*pcVar3)(&uStack_8);
+  (this->fields)._mousePosInLastFrame.x = (float)(undefined4)uStack_8;
+  (this->fields)._mousePosInLastFrame.y = (float)uStack_8._4_4_;
+  (this->fields)._mousePosInLastFrame.z = fStack_9;
   return;
 }
 
@@ -66,22 +119,33 @@ void Assembly-CSharp.dll::RTG::MouseInputDevice::MouseInputDevice__ctor
 {
   InputDeviceBase::InputDeviceBase__ctor((InputDeviceBase *)this,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
-  fVar2 = (pVVar1->zeroVector).y;
-  fVar3 = (pVVar1->zeroVector).z;
+  fVar2 = (pVVar1->zeroVector).z;
+  fVar3 = (pVVar1->zeroVector).y;
   (this->fields)._frameDelta.x = (pVVar1->zeroVector).x;
-  (this->fields)._frameDelta.y = fVar2;
-  (this->fields)._frameDelta.z = fVar3;
-  pVVar4 = UnityEngine.InputLegacyModule.dll::UnityEngine::Input::Input_get_mousePosition
-                     ((Vector3 *)&stack0xfffffff0,(MethodInfo *)0x0);
-  fVar2 = pVVar4->y;
-  fVar3 = pVVar4->z;
-  (this->fields)._mousePosInLastFrame.x = pVVar4->x;
-  (this->fields)._mousePosInLastFrame.y = fVar2;
-  (this->fields)._mousePosInLastFrame.z = fVar3;
+  (this->fields)._frameDelta.y = fVar3;
+  (this->fields)._frameDelta.z = fVar2;
+  uStack_4 = 0;
+  fStack_5 = 0.0;
+  pcVar6 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+    uVar7 = func_?(&UNK_?);
+    FUN_?(uVar7,0);
+    pcVar6 = (code *)swi(3);
+    (*pcVar6)();
+    return;
+  }
+  pcRam_? = pcVar6;
+  (*pcRam_?)(&uStack_4);
+  (this->fields)._mousePosInLastFrame.x = (float)(undefined4)uStack_4;
+  (this->fields)._mousePosInLastFrame.y = (float)uStack_4._4_4_;
+  (this->fields)._mousePosInLastFrame.z = fStack_5;
   return;
 }
 

@@ -7,29 +7,64 @@ bool MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerPlanetMetaDataCli
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__DateTime);
+    FUN_?(&TypeInfo__System__DateTime);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__DateTime);
+  if (*(int *)&(TypeInfo__System__DateTime->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  DVar1 = mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
-  puStack_2 = (undefined *)DVar1._dateData;
-  iVar3 = mscorlib.dll::System::DateTime::DateTime_get_DayOfYear
-                    (&(this->fields).lastDailyWelcomeRewardClaim,(MethodInfo *)0x0);
-  iVar4 = mscorlib.dll::System::DateTime::DateTime_get_DayOfYear
-                    ((DateTime *)&puStack_2,(MethodInfo *)0x0);
-  if (iVar3 != iVar4) {
+  DStackX_8 = mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__DateTime);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__System__DateTime->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  iVar1 = mscorlib.dll::System::DateTime::DateTime_GetDatePart
+                    (&(this->fields).lastDailyWelcomeRewardClaim,1,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__DateTime);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__System__DateTime->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  iVar2 = mscorlib.dll::System::DateTime::DateTime_GetDatePart(&DStackX_8,1,(MethodInfo *)0x0);
+  if (iVar1 != iVar2) {
     return 0;
   }
-  if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__System__DateTime->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  iVar3 = mscorlib.dll::System::DateTime::DateTime_get_Year
-                    (&(this->fields).lastDailyWelcomeRewardClaim,(MethodInfo *)0x0);
-  iVar4 = mscorlib.dll::System::DateTime::DateTime_get_Year
-                    ((DateTime *)&puStack_2,(MethodInfo *)0x0);
-  return iVar3 == iVar4;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__DateTime);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__System__DateTime->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  iVar1 = mscorlib.dll::System::DateTime::DateTime_GetDatePart
+                    (&(this->fields).lastDailyWelcomeRewardClaim,0,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__DateTime);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__System__DateTime->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  iVar2 = mscorlib.dll::System::DateTime::DateTime_GetDatePart(&DStackX_8,0,(MethodInfo *)0x0);
+  return iVar1 == iVar2;
 }
 
 
@@ -40,24 +75,37 @@ String * MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerPlanetMetaDat
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&TypeInfo__System__DateTime);
-    func_?(&TypeInfo__MV__Common__GamePassTier);
-    func_?(&StringLiteral_gamePassTierSeen___0_u000AwelcomeRew);
+    FUN_?(&TypeInfo__System__DateTime);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__Common__GamePassTier);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_gamePassTierSeen___0_u000AwelcomeRew);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pPVar1 = this;
-  this = (PlayerPlanetMetaDataClient *)CONCAT13((this->fields).gamePassTierSeen,this._0_3_);
-  arg0 = (Object *)func_?(TypeInfo__MV__Common__GamePassTier,(int)&this + 3);
-  bStack_2 = (pPVar1->fields).welcomeRewardClaimed;
-  arg1 = (Object *)func_?(TypeInfo__System__Boolean,&bStack_2);
-  uStack_3 = (undefined4)(pPVar1->fields).lastDailyWelcomeRewardClaim._dateData;
-  uStack_4 = *(undefined4 *)((int)&(pPVar1->fields).lastDailyWelcomeRewardClaim._dateData + 4);
-  arg2 = (Object *)func_?(TypeInfo__System__DateTime,&uStack_3);
-  pSVar5 = mscorlib.dll::System::String::String_Format_2
-                     (StringLiteral_gamePassTierSeen___0_u000AwelcomeRew,arg0,arg1,arg2,
-                      (MethodInfo *)0x0);
-  return pSVar5;
+  uStackX_8._0_1_ = (this->fields).gamePassTierSeen;
+  arg0 = (Object *)FUN_?(TypeInfo__MV__Common__GamePassTier,&uStackX_8);
+  uStackX_8 = CONCAT71(uStackX_8._1_7_,(this->fields).welcomeRewardClaimed);
+  arg1 = (Object *)FUN_?(uRam_?,&uStackX_8);
+  uStackX_8 = (this->fields).lastDailyWelcomeRewardClaim._dateData;
+  arg2 = (Object *)FUN_?(TypeInfo__System__DateTime,&uStackX_8);
+  pSVar1 = StringLiteral_gamePassTierSeen___0_u000AwelcomeRew;
+  PStack_2._arg0 = (Object *)0x0;
+  PStack_2._arg1 = (Object *)0x0;
+  PStack_2._arg2 = (Object *)0x0;
+  PStack_2._args = (Object__Array *)0x0;
+  mscorlib.dll::System::ParamsArray::ParamsArray__ctor_2
+            (&PStack_2,arg0,arg1,arg2,(MethodInfo *)0x0);
+  PStack_3._arg0 = PStack_2._arg0;
+  PStack_3._arg1 = PStack_2._arg1;
+  PStack_3._arg2 = PStack_2._arg2;
+  PStack_3._args = PStack_2._args;
+  pSVar1 = mscorlib.dll::System::String::String_FormatHelper
+                     ((IFormatProvider *)0x0,pSVar1,&PStack_3,(MethodInfo *)0x0);
+  return pSVar1;
 }
 
 
@@ -68,17 +116,16 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerPlanetMetaDataCli
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__DateTime);
+    FUN_?(&TypeInfo__System__DateTime);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__DateTime);
+  if (*(int *)&(TypeInfo__System__DateTime->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__System__DateTime);
   }
-  uVar1 = *(undefined4 *)((int)&(TypeInfo__System__DateTime->static_fields->MinValue)._dateData + 4)
-  ;
-  *(int *)&(this->fields).lastDailyWelcomeRewardClaim._dateData =
-       (int)(TypeInfo__System__DateTime->static_fields->MinValue)._dateData;
-  *(undefined4 *)((int)&(this->fields).lastDailyWelcomeRewardClaim._dateData + 4) = uVar1;
+  (this->fields).lastDailyWelcomeRewardClaim._dateData =
+       (TypeInfo__System__DateTime->static_fields->MinValue)._dateData;
   return;
 }
 
@@ -92,24 +139,17 @@ void MVWorldObject.dll::MV::WorldObject::GamePassSystem::PlayerPlanetMetaDataCli
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__DateTime);
+    FUN_?(&TypeInfo__System__DateTime);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__DateTime);
+  if (*(int *)&(TypeInfo__System__DateTime->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  uVar1 = *(undefined4 *)((int)&(TypeInfo__System__DateTime->static_fields->MinValue)._dateData + 4)
-  ;
-  *(int *)&(this->fields).lastDailyWelcomeRewardClaim._dateData =
-       (int)(TypeInfo__System__DateTime->static_fields->MinValue)._dateData;
-  *(undefined4 *)((int)&(this->fields).lastDailyWelcomeRewardClaim._dateData + 4) = uVar1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  (this->fields).gamePassTierSeen = (undefined1)gamePassTierSeen;
+  (this->fields).gamePassTierSeen = (uint8_t)gamePassTierSeen;
   (this->fields).welcomeRewardClaimed = welcomeRewardClaimed;
-  *(undefined4 *)&(this->fields).lastDailyWelcomeRewardClaim._dateData = in_stack_2;
-  *(undefined4 *)((int)&(this->fields).lastDailyWelcomeRewardClaim._dateData + 4) =
-       (undefined4)lastDailyWelcomeRewardClaim._dateData;
+  (this->fields).lastDailyWelcomeRewardClaim._dateData = lastDailyWelcomeRewardClaim._dateData;
   return;
 }
 

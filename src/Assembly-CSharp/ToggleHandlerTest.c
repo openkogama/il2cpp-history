@@ -7,33 +7,71 @@ void Assembly-CSharp.dll::ToggleHandlerTest::ToggleHandlerTest_ExecuteToggleStat
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&StringLiteral_Toggle_is_);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Toggle_is_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (toggleCallback != (UnityAction_1_System_Boolean_ *)0x0) {
-    (*(toggleCallback->fields)._._.invoke_impl)
-              ((toggleCallback->fields)._._.method_code,_toggleState,
-               (toggleCallback->fields)._._.method);
-    if ((TypeInfo__System__Boolean->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__Boolean);
-    }
-    pSVar1 = mscorlib.dll::System::Boolean::Boolean_ToString
-                       ((Boolean *)&toggleState,(MethodInfo *)0x0);
-    pSVar1 = mscorlib.dll::System::String::String_Concat_3
-                       (StringLiteral_Toggle_is_,pSVar1,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      _toggleState = TypeInfo__UnityEngine__Debug;
-      func_?();
-    }
-    _toggleState = (Debug_2__Class *)0x0;
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar1,(MethodInfo *)0x0);
+  if (toggleCallback == (UnityAction_1_System_Boolean_ *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  (*(toggleCallback->fields)._._.invoke_impl)((toggleCallback->fields)._._.method_code,toggleState);
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&StringLiteral_False);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_True);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pSVar2 = StringLiteral_False;
+  if (toggleState != 0) {
+    pSVar2 = StringLiteral_True;
+  }
+  pSVar2 = mscorlib.dll::System::String::String_Concat_4
+                     (StringLiteral_Toggle_is_,pSVar2,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__ILogger);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pIVar3 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+  if (pIVar3 != (ILogger_1 *)0x0) {
+    FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar3,3,pSVar2);
+    return;
+  }
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

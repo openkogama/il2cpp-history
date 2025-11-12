@@ -6,7 +6,7 @@ Assembly-CSharp.dll::Misc::OrientationControl::OrientationControl_MapFromResolut
           (int32_t width,int32_t height,MethodInfo *method)
 
 {
-  return (uint)(height <= width);
+  return (MVOrientation__Enum)(height <= width);
 }
 
 
@@ -36,27 +36,40 @@ Assembly-CSharp.dll::Misc::OrientationControl::OrientationControl_get_CurrentOri
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Misc__MVOrientation);
-    func_?(&StringLiteral_Calculated_orientation__);
+    FUN_?(&TypeInfo__Misc__MVOrientation);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Calculated_orientation__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  SVar1 = UnityEngine.CoreModule.dll::UnityEngine::Screen::Screen_get_orientation((MethodInfo *)0x0)
-  ;
-  if (SVar1 == ScreenOrientation__Enum_Landscape) {
-    MVar2 = MVOrientation__Enum_LandscapeLeft;
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar2 = func_?(&UNK_?);
+    FUN_?(uVar2,0);
+    pcVar1 = (code *)swi(3);
+    MVar3 = (*pcVar1)();
+    return MVar3;
+  }
+  pcRam_? = pcVar1;
+  iVar4 = (*pcRam_?)();
+  if (iVar4 == 3) {
+    MVar3 = MVOrientation__Enum_LandscapeLeft;
   }
   else {
-    MVar2 = MVOrientation__Enum_Portrait;
-    if (SVar1 == ScreenOrientation__Enum_LandscapeRight) {
-      MVar2 = MVOrientation__Enum_LandscapeRight;
+    MVar3 = MVOrientation__Enum_Portrait;
+    if (iVar4 == 4) {
+      MVar3 = MVOrientation__Enum_LandscapeRight;
     }
   }
-  EStack_3.klass = (Enum__Class *)TypeInfo__Misc__MVOrientation;
-  EStack_3.monitor = (MonitorData *)0xffffffff;
-  MStack_4 = MVar2;
-  str1 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_3,(MethodInfo *)0x0);
-  mscorlib.dll::System::String::String_Concat_3
+  EStack_5.klass = (Enum__Class *)TypeInfo__Misc__MVOrientation;
+  EStack_5.monitor = (MonitorData *)0xffffffffffffffff;
+  MStack_6 = MVar3;
+  str1 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_5,(MethodInfo *)0x0);
+  mscorlib.dll::System::String::String_Concat_4
             (StringLiteral_Calculated_orientation__,str1,(MethodInfo *)0x0);
-  return MVar2;
+  return MVar3;
 }
 

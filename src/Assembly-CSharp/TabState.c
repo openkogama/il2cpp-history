@@ -4,16 +4,20 @@
 bool Assembly-CSharp.dll::TabState::TabState_SetPage(TabState *this,int32_t page,MethodInfo *method)
 
 {
-  iVar1 = TabState_get_MaxPages(this,(MethodInfo *)0x0);
-  if (page < 1) {
-    (this->fields).currentPage = 1;
+  iVar1 = FUN_?((float)(this->fields).highestSlotIndex / (float)(this->fields).slotsPrPage);
+  iVar2 = 1;
+  if (1 < iVar1) {
+    iVar2 = iVar1;
+  }
+  if (0 < page) {
+    if (iVar2 < page) {
+      (this->fields).currentPage = iVar2;
+      return 1;
+    }
+    (this->fields).currentPage = page;
     return 1;
   }
-  if (iVar1 < page) {
-    (this->fields).currentPage = iVar1;
-    return 1;
-  }
-  (this->fields).currentPage = page;
+  (this->fields).currentPage = 1;
   return 1;
 }
 
@@ -24,41 +28,25 @@ bool Assembly-CSharp.dll::TabState::TabState_SlotIndexIsInRange
                (TabState *this,int32_t slotIndex,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__System__Int32;
-    func_?();
-    cRam_? = '\x01';
+  pIVar1 = TabState_get_SlotRange(this,(MethodInfo *)0x0);
+  if (pIVar1 == (Int32__Array *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    bVar3 = (*pcVar2)();
+    return bVar3;
   }
-  ppIStack_1 = (Int32__Array__Class **)0x2;
-  pIStack_2 = TypeInfo__System__Int32;
-  iVar3 = func_?();
-  if (iVar3 == 0) {
-    ppIStack_1 = (Int32__Array__Class **)&stack0xfffffffc;
-    uVar4 = func_?(&puStack_5);
-    func_?(uVar4);
-    pcVar6 = (code *)swi(3);
-    bVar7 = (*pcVar6)();
-    return bVar7;
-  }
-  if (*(int *)(iVar3 + 0xc) != 0) {
-    *(int32_t *)(iVar3 + 0x10) = ((this->fields).currentPage + -1) * (this->fields).slotsPrPage;
-    if ((1 < *(uint *)(iVar3 + 0xc)) &&
-       (*(int32_t *)(iVar3 + 0x14) = (this->fields).currentPage * (this->fields).slotsPrPage,
-       *(int *)(iVar3 + 0xc) != 0)) {
-      if (slotIndex < *(int *)(iVar3 + 0x10)) {
-        return 0;
-      }
-      if (1 < *(uint *)(iVar3 + 0xc)) {
-        return slotIndex < *(int *)(iVar3 + 0x14);
-      }
+  if ((int)pIVar1->max_length != 0) {
+    if (slotIndex < pIVar1->vector[0]) {
+      return 0;
+    }
+    if (1 < (uint)pIVar1->max_length) {
+      return slotIndex < pIVar1->vector[1];
     }
   }
-  ppIStack_1 = (Int32__Array__Class **)0x0;
-  pIStack_2 = (Int32__Array__Class *)func_?();
-  func_?();
-  pcVar6 = (code *)swi(3);
-  bVar7 = (*pcVar6)();
-  return bVar7;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  bVar3 = (*pcVar2)();
+  return bVar3;
 }
 
 
@@ -70,21 +58,30 @@ bool Assembly-CSharp.dll::TabState::TabState_UpdatePage
 {
   if (pageDir == -1) {
     if ((this->fields).currentPage == 1) {
-      iVar1 = TabState_get_MaxPages(this,(MethodInfo *)0x0);
-      (this->fields).currentPage = iVar1;
+      iVar1 = FUN_?((float)(this->fields).highestSlotIndex /
+                            (float)(this->fields).slotsPrPage);
+      iVar2 = 1;
+      if (1 < iVar1) {
+        iVar2 = iVar1;
+      }
+code_?:
+      (this->fields).currentPage = iVar2;
       return 1;
     }
   }
   else if (pageDir == 1) {
-    iVar2 = (this->fields).currentPage;
-    iVar1 = TabState_get_MaxPages(this,(MethodInfo *)0x0);
-    if (iVar2 == iVar1) {
-      (this->fields).currentPage = 1;
-      return 1;
+    iVar1 = (this->fields).currentPage;
+    iVar2 = FUN_?((float)(this->fields).highestSlotIndex / (float)(this->fields).slotsPrPage
+                         );
+    iVar3 = 1;
+    if (1 < iVar2) {
+      iVar3 = iVar2;
     }
+    iVar2 = 1;
+    if (iVar1 == iVar3) goto code_?;
   }
-  piVar3 = &(this->fields).currentPage;
-  *piVar3 = *piVar3 + pageDir;
+  piVar4 = &(this->fields).currentPage;
+  *piVar4 = *piVar4 + pageDir;
   return 1;
 }
 
@@ -95,13 +92,24 @@ void Assembly-CSharp.dll::TabState::TabState__ctor
                (TabState *this,int32_t tabId,String *name,int32_t slotsPrPage,MethodInfo *method)
 
 {
+  bVar1 = iRam_? != 0;
   (this->fields).currentPage = 1;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
   (this->fields)._TabID_k__BackingField = tabId;
   (this->fields).slotsPrPage = slotsPrPage;
   (this->fields).name = name;
-  func_?(&(this->fields).name,name);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&(this->fields).name >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 
@@ -111,21 +119,12 @@ void Assembly-CSharp.dll::TabState::TabState__ctor
 int32_t Assembly-CSharp.dll::TabState::TabState_get_MaxPages(TabState *this,MethodInfo *method)
 
 {
-  iVar1 = (this->fields).highestSlotIndex;
-  iVar2 = (this->fields).slotsPrPage;
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
+  iVar1 = FUN_?((float)(this->fields).highestSlotIndex / (float)(this->fields).slotsPrPage);
+  iVar2 = 1;
+  if (1 < iVar1) {
+    iVar2 = iVar1;
   }
-  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-  }
-  fVar3 = (float10)func_?((double)((float)iVar1 / (float)iVar2));
-  iVar4 = 1;
-  if (1 < (int)fVar3) {
-    iVar4 = (int)fVar3;
-  }
-  return iVar4;
+  return iVar2;
 }
 
 
@@ -136,33 +135,28 @@ Assembly-CSharp.dll::TabState::TabState_get_SlotRange(TabState *this,MethodInfo 
 
 {
   if (cRam_? == '\0') {
-    ppIStack_1 = &TypeInfo__System__Int32;
-    func_?();
+    FUN_?(&TypeInfo__System__Int32);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  ppIStack_1 = (Int32__Array__Class **)0x2;
-  pIStack_2 = TypeInfo__System__Int32;
-  pIVar3 = (Int32__Array *)func_?();
-  if (pIVar3 != (Int32__Array *)0x0) {
-    if (pIVar3->max_length != 0) {
-      pIVar3->vector[0] = ((this->fields).currentPage + -1) * (this->fields).slotsPrPage;
-      if (1 < pIVar3->max_length) {
-        pIVar3->vector[1] = (this->fields).currentPage * (this->fields).slotsPrPage;
-        return pIVar3;
+  pIVar1 = (Int32__Array *)FUN_?(TypeInfo__System__Int32,2);
+  if (pIVar1 != (Int32__Array *)0x0) {
+    if ((int)pIVar1->max_length != 0) {
+      pIVar1->vector[0] = ((this->fields).currentPage + -1) * (this->fields).slotsPrPage;
+      if (1 < (uint)pIVar1->max_length) {
+        pIVar1->vector[1] = (this->fields).currentPage * (this->fields).slotsPrPage;
+        return pIVar1;
       }
     }
-    ppIStack_1 = (Int32__Array__Class **)0x0;
-    pIStack_2 = (Int32__Array__Class *)func_?();
-    func_?();
-    pcVar4 = (code *)swi(3);
-    pIVar3 = (Int32__Array *)(*pcVar4)();
-    return pIVar3;
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    pIVar1 = (Int32__Array *)(*pcVar2)();
+    return pIVar1;
   }
-  ppIStack_1 = (Int32__Array__Class **)&stack0xfffffffc;
-  uVar5 = func_?(&puStack_6);
-  func_?(uVar5);
-  pcVar4 = (code *)swi(3);
-  pIVar3 = (Int32__Array *)(*pcVar4)();
-  return pIVar3;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  pIVar1 = (Int32__Array *)(*pcVar2)();
+  return pIVar1;
 }
 

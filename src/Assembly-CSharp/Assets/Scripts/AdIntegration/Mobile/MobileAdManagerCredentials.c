@@ -7,40 +7,107 @@ MobileAdManagerCredentials_GetAdMobCredentials(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&StringLiteral_AdMobCredentials_not_set_for_bui);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_AdMobCredentials_not_set_for_bui);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Debug);
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
             ((Object *)StringLiteral_AdMobCredentials_not_set_for_bui,(MethodInfo *)0x0);
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Assets__Scripts__AdIntegration__Mobile__AdMobCredentials);
-    func_?(&StringLiteral_AppId_not_set);
-    func_?(&StringLiteral_Reward_ad_unit_not_set);
-    func_?(&StringLiteral_Interstitial_ad_unit_not_set);
-    func_?(&StringLiteral_Banner_ad_unit_not);
+    FUN_?(&TypeInfo__Assets__Scripts__AdIntegration__Mobile__AdMobCredentials);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_AppId_not_set);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Reward_ad_unit_not_set);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Interstitial_ad_unit_not_set);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Banner_ad_unit_not);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__Assets__Scripts__AdIntegration__Mobile__AdMobCredentials;
-  value = (AdMobCredentials *)func_?();
-  pSVar1 = StringLiteral_Interstitial_ad_unit_not_set;
-  pSVar2 = StringLiteral_Reward_ad_unit_not_set;
-  pSVar3 = StringLiteral_AppId_not_set;
-  pSVar4 = StringLiteral_Banner_ad_unit_not;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  (value->fields).AppId = pSVar3;
-  func_?(&value->fields,pSVar3);
-  (value->fields).RewardedAdUnitId = pSVar2;
-  func_?(&(value->fields).RewardedAdUnitId,pSVar2);
-  (value->fields).InterstitialAdUnitId = pSVar1;
-  func_?(&(value->fields).InterstitialAdUnitId,pSVar1);
-  (value->fields).BannerAdUnitId = pSVar4;
-  func_?(&(value->fields).BannerAdUnitId,pSVar4);
-  return value;
+  pAVar1 = (AdMobCredentials *)
+           FUN_?(TypeInfo__Assets__Scripts__AdIntegration__Mobile__AdMobCredentials);
+  pSVar2 = StringLiteral_Banner_ad_unit_not;
+  pSVar3 = StringLiteral_Reward_ad_unit_not_set;
+  pSVar4 = StringLiteral_Interstitial_ad_unit_not_set;
+  (pAVar1->fields).AppId = StringLiteral_AppId_not_set;
+  if (iRam_? != 0) {
+    uVar5 = (uint)((ulonglong)&pAVar1->fields >> 0xc);
+    lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+      puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+      LOCK();
+      bVar9 = uVar7 == *puVar8;
+      if (bVar9) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar9);
+  }
+  iVar10 = iRam_?;
+  (pAVar1->fields).RewardedAdUnitId = pSVar3;
+  if (iVar10 != 0) {
+    uVar5 = (uint)((ulonglong)&(pAVar1->fields).RewardedAdUnitId >> 0xc);
+    lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+      puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+      LOCK();
+      bVar9 = uVar7 == *puVar8;
+      if (bVar9) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+      iVar10 = iRam_?;
+    } while (!bVar9);
+  }
+  (pAVar1->fields).InterstitialAdUnitId = pSVar4;
+  iVar11 = 0;
+  if (iVar10 != 0) {
+    uVar5 = (uint)((ulonglong)&(pAVar1->fields).InterstitialAdUnitId >> 0xc);
+    lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+      puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+      LOCK();
+      bVar9 = uVar7 == *puVar8;
+      if (bVar9) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+      iVar11 = iRam_?;
+    } while (!bVar9);
+  }
+  (pAVar1->fields).BannerAdUnitId = pSVar2;
+  if (iVar11 != 0) {
+    uVar5 = (uint)((ulonglong)&(pAVar1->fields).BannerAdUnitId >> 0xc);
+    lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+      puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+      LOCK();
+      bVar9 = uVar7 == *puVar8;
+      if (bVar9) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar9);
+  }
+  return pAVar1;
 }
 
 
@@ -52,29 +119,92 @@ MobileAdManagerCredentials_GetDefault(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Assets__Scripts__AdIntegration__Mobile__AdMobCredentials);
-    func_?(&StringLiteral_AppId_not_set);
-    func_?(&StringLiteral_Reward_ad_unit_not_set);
-    func_?(&StringLiteral_Interstitial_ad_unit_not_set);
-    func_?(&StringLiteral_Banner_ad_unit_not);
+    FUN_?(&TypeInfo__Assets__Scripts__AdIntegration__Mobile__AdMobCredentials);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_AppId_not_set);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Reward_ad_unit_not_set);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Interstitial_ad_unit_not_set);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Banner_ad_unit_not);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__Assets__Scripts__AdIntegration__Mobile__AdMobCredentials;
-  value = (AdMobCredentials *)func_?();
-  pSVar1 = StringLiteral_Interstitial_ad_unit_not_set;
+  pAVar1 = (AdMobCredentials *)
+           FUN_?(TypeInfo__Assets__Scripts__AdIntegration__Mobile__AdMobCredentials);
   pSVar2 = StringLiteral_Banner_ad_unit_not;
   pSVar3 = StringLiteral_Reward_ad_unit_not_set;
-  pSVar4 = StringLiteral_AppId_not_set;
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  (value->fields).AppId = pSVar4;
-  func_?(&value->fields,pSVar4);
-  (value->fields).RewardedAdUnitId = pSVar3;
-  func_?(&(value->fields).RewardedAdUnitId,pSVar3);
-  (value->fields).InterstitialAdUnitId = pSVar1;
-  func_?(&(value->fields).InterstitialAdUnitId,pSVar1);
-  (value->fields).BannerAdUnitId = pSVar2;
-  func_?(&(value->fields).BannerAdUnitId,pSVar2);
-  return value;
+  pSVar4 = StringLiteral_Interstitial_ad_unit_not_set;
+  (pAVar1->fields).AppId = StringLiteral_AppId_not_set;
+  if (iRam_? != 0) {
+    uVar5 = (uint)((ulonglong)&pAVar1->fields >> 0xc);
+    lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+      puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+      LOCK();
+      bVar9 = uVar7 == *puVar8;
+      if (bVar9) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar9);
+  }
+  iVar10 = iRam_?;
+  (pAVar1->fields).RewardedAdUnitId = pSVar3;
+  if (iVar10 != 0) {
+    uVar5 = (uint)((ulonglong)&(pAVar1->fields).RewardedAdUnitId >> 0xc);
+    lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+      puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+      LOCK();
+      bVar9 = uVar7 == *puVar8;
+      if (bVar9) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+      iVar10 = iRam_?;
+    } while (!bVar9);
+  }
+  (pAVar1->fields).InterstitialAdUnitId = pSVar4;
+  iVar11 = 0;
+  if (iVar10 != 0) {
+    uVar5 = (uint)((ulonglong)&(pAVar1->fields).InterstitialAdUnitId >> 0xc);
+    lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+      puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+      LOCK();
+      bVar9 = uVar7 == *puVar8;
+      if (bVar9) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+      iVar11 = iRam_?;
+    } while (!bVar9);
+  }
+  (pAVar1->fields).BannerAdUnitId = pSVar2;
+  if (iVar11 != 0) {
+    uVar5 = (uint)((ulonglong)&(pAVar1->fields).BannerAdUnitId >> 0xc);
+    lVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar7 = *(ulonglong *)(lVar6 + 0xADDR);
+      puVar8 = (ulonglong *)(lVar6 + 0xADDR);
+      LOCK();
+      bVar9 = uVar7 == *puVar8;
+      if (bVar9) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar9);
+  }
+  return pAVar1;
 }
 

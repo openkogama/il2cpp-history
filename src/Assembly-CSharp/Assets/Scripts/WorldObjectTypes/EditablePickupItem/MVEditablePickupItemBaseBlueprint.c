@@ -6,17 +6,16 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
                (MVEditablePickupItemBaseBlueprint *this,MethodInfo *method)
 
 {
-  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
-  pMStack_2 = (this->fields).itemBase;
-  if (pMStack_2 != (MVEditablePickupItemBase *)0x0) {
-    pIStack_1 = (pMStack_2->klass->vtable).AddPreviewBox.methodPtr;
-    (*(code *)(pMStack_2->klass->vtable).DeSelect.method)();
+  pMVar1 = (this->fields).itemBase;
+  if (pMVar1 != (MVEditablePickupItemBase *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(pMVar1->klass->vtable).DeSelect.methodPtr)(pMVar1,(pMVar1->klass->vtable).DeSelect.method);
     return;
   }
-  uVar3 = func_?(&puStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -29,189 +28,603 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__EditableCubeModelWrapper);
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__MVCubeModelInstance);
-    func_?(&
-                    TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase
-                   );
-    func_?(&StringLiteral_CubeModelId);
-    func_?(&StringLiteral_ItemCubeModel);
-    func_?(&StringLiteral_itemData);
-    func_?(&StringLiteral_ItemBase);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__EditableCubeModelWrapper);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVCubeModelInstance);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_CubeModelId);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ItemCubeModel);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_itemData);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ItemBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   MVBlueprintBase::MVBlueprintBase_Initialize((MVBlueprintBase *)this,(MethodInfo *)0x0);
   pMVar1 = (MVEditablePickupItemBase *)
-           MVBlueprintBase::MVBlueprintBase_GetChild
-                     ((MVBlueprintBase *)this,StringLiteral_ItemBase,(MethodInfo *)0x0);
+            MVBlueprintBase::MVBlueprintBase_GetChild
+                      ((MVBlueprintBase *)this,StringLiteral_ItemBase,(MethodInfo *)0x0);
   if (pMVar1 == (MVEditablePickupItemBase *)0x0) {
     (this->fields).itemBase = (MVEditablePickupItemBase *)0x0;
-code_?:
-    func_?();
-    pMVar1 = (this->fields).itemBase;
-    if (pMVar1 == (MVEditablePickupItemBase *)0x0) goto code_?;
-    this_00 = (pMVar1->fields)._._._.transform;
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    if (this_00 == (Transform *)0x0) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-              (this_00,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,(MethodInfo *)0x0);
-    pMVar1 = (this->fields).itemBase;
-    if (pMVar1 == (MVEditablePickupItemBase *)0x0) goto code_?;
-    pMVar2 = MVEditablePickupItemBase::MVEditablePickupItemBase_get_BaseObject
-                       (pMVar1,(MethodInfo *)0x0);
-    if (pMVar2 == (MVEditablePickupItemBaseObject *)0x0) goto code_?;
-    (this->fields).cubeModelBaseParent = (pMVar2->fields).cubeModelParent;
-    func_?();
-    pMVar3 = (MVCubeModelInstance *)
-             MVBlueprintBase::MVBlueprintBase_GetChild
-                       ((MVBlueprintBase *)this,StringLiteral_ItemCubeModel,(MethodInfo *)0x0);
-    if (pMVar3 == (MVCubeModelInstance *)0x0) goto code_?;
-    if (((TypeInfo__MVCubeModelInstance->_1).naturalAligment <= (pMVar3->klass->_1).naturalAligment)
-       && ((MVCubeModelInstance__Class *)
-           (pMVar3->klass->_1).typeHierarchy
-           [(TypeInfo__MVCubeModelInstance->_1).naturalAligment - 1] ==
-           TypeInfo__MVCubeModelInstance)) {
-      (*(code *)(pMVar3->klass->vtable).set_Visible.method)((short)pMVar3);
-      pMVar1 = (this->fields).itemBase;
-      if (pMVar1 == (MVEditablePickupItemBase *)0x0) goto code_?;
-      puVar4 = (undefined8 *)
-               (*(code *)(pMVar1->klass->vtable).__unknown.method)((short)&stack0xffffffe0);
-      uVar5 = *puVar4;
-      uStack_6 = (undefined2)((ulonglong)uVar5 >> 0x30);
-      uVar7 = (undefined2)*(undefined4 *)(puVar4 + 1);
-      iVar8 = (int16_t)((uint)*(undefined4 *)(puVar4 + 1) >> 0x10);
-      pEVar9 = (EditableCubeModelWrapper *)func_?(TypeInfo__EditableCubeModelWrapper);
-      max.y = uVar7;
-      max.x = uStack_6;
-      max.z = iVar8;
-      EditableCubeModelWrapper::EditableCubeModelWrapper__ctor_1
-                (pEVar9,pMVar3,SUB86(uVar5,0),max,10,(MethodInfo *)0x0);
-      (this->fields).editableCubeModelWrapper = pEVar9;
-      func_?();
-      pEVar9 = (this->fields).editableCubeModelWrapper;
-      if (pEVar9 == (EditableCubeModelWrapper *)0x0) goto code_?;
-      (this->fields).editableCubeModel = (pEVar9->fields).cubeModelBase;
-      func_?();
-      pMVar3 = (this->fields).editableCubeModel;
-      if (pMVar3 == (MVCubeModelInstance *)0x0) goto code_?;
-      (this->fields).cubeModelId = (pMVar3->fields)._._._.id;
-      pMVar3 = (this->fields).editableCubeModel;
-      if (pMVar3 == (MVCubeModelInstance *)0x0) goto code_?;
-      iVar10 = MVCubeModelBase::MVCubeModelBase_get_Pid((MVCubeModelBase *)pMVar3,(MethodInfo *)0x0)
-      ;
-      (this->fields).cubeModelPid = iVar10;
-      (*(code *)(this->klass->vtable).OnEndEditing.method)();
-      (*(code *)(this->klass->vtable).SetCubeSize.method)(this,(short)this->klass[1]._0.image);
-      pMVar3 = (this->fields).editableCubeModel;
-      if (pMVar3 == (MVCubeModelInstance *)0x0) goto code_?;
-      MVCubeModelInstance::MVCubeModelInstance_EnableCulling(pMVar3,(MethodInfo *)0x0);
-      MVEditablePickupItemBaseBlueprint_ToggleCubeModelColliders(this,0,(MethodInfo *)0x0);
-      pMVar1 = (this->fields).itemBase;
-      if (pMVar1 == (MVEditablePickupItemBase *)0x0) goto code_?;
-      pMVar2 = MVEditablePickupItemBase::MVEditablePickupItemBase_get_BaseObject
-                         (pMVar1,(MethodInfo *)0x0);
-      if ((pMVar2 == (MVEditablePickupItemBaseObject *)0x0) ||
-         (this_01 = (pMVar2->fields)._.pickupItem, this_01 == (GreyOutObjectScript *)0x0))
-      goto code_?;
-      GreyOutObjectScript::GreyOutObjectScript_InitializeOriginalMaterials
-                (this_01,(MethodInfo *)0x0);
-      pMVar1 = (this->fields).itemBase;
-      if ((pMVar1 == (MVEditablePickupItemBase *)0x0) ||
-         (this_02 = (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                    (pMVar1->fields)._._._._.data,
-         this_02 == (Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)0x0))
-      goto code_?;
-      this_04 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          (this_02,(Object *)StringLiteral_itemData,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                          );
-      if ((this->fields).editableCubeModel == (MVCubeModelInstance *)0x0) goto code_?;
-      value = (Object *)func_?();
-      if (this_04.m_Index == 0) goto code_?;
-      if (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-           naturalAligment <= *(byte *)(*(int *)this_04.m_Index + 0xb8)) &&
-         (*(Dictionary_2_System_Object_System_Object___Class **)
-           (*(int *)(*(int *)this_04.m_Index + 100) + -4 +
-           (uint)(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                 ->_1).naturalAligment * 4) ==
-          TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__set_Item
-                  ((Dictionary_2_System_Object_System_Object_ *)this_04.m_Index,
-                   (Object *)StringLiteral_CubeModelId,value,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                  );
-        pMVar1 = (this->fields).itemBase;
-        if (pMVar1 != (MVEditablePickupItemBase *)0x0) {
-          uVar11 = *(undefined4 *)((int)&(pMVar1->fields)._._._.interactionFlags + 4);
-          piVar12 = &(pMVar1->fields)._._._.interactionFlags;
-          *(uint *)piVar12 = (uint)*piVar12 | 0x30;
-          *(undefined4 *)((int)&(pMVar1->fields)._._._.interactionFlags + 4) = uVar11;
-          pMVar3 = (this->fields).editableCubeModel;
-          if (pMVar3 != (MVCubeModelInstance *)0x0) {
-            uVar11 = *(undefined4 *)((int)&(pMVar3->fields)._._.interactionFlags + 4);
-            piVar12 = &(pMVar3->fields)._._.interactionFlags;
-            *(uint *)piVar12 = (uint)*piVar12 | 0x30;
-            *(undefined4 *)((int)&(pMVar3->fields)._._.interactionFlags + 4) = uVar11;
-            pMVar1 = (this->fields).itemBase;
-            if ((pMVar1 != (MVEditablePickupItemBase *)0x0) &&
-               (this_03 = (pMVar1->fields)._.useInteractor, this_03 != (UseInteractor *)0x0)) {
-              UseInteractor::UseInteractor_UpdateData
-                        (this_03,(this->fields)._._._._.data,(MethodInfo *)0x0);
-              return;
-            }
-          }
-        }
-        goto code_?;
-      }
-      goto code_?;
-    }
   }
   else {
-    if (((TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase
-         ->_1).naturalAligment <= (pMVar1->klass->_1).naturalAligment) &&
-       ((MVEditablePickupItemBase__Class *)
-        (pMVar1->klass->_1).typeHierarchy
-        [(TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase
-         ->_1).naturalAligment - 1] ==
-        TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase))
-    {
-      (this->fields).itemBase = pMVar1;
-      if (((
-           TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase
-           ->_1).naturalAligment <= (pMVar1->klass->_1).naturalAligment) &&
-         ((MVEditablePickupItemBase__Class *)
-          (pMVar1->klass->_1).typeHierarchy
-          [(
-           TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase
-           ->_1).naturalAligment - 1] ==
-          TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase)
-         ) goto code_?;
+    bVar2 = (
+            TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase
+            ->_1).naturalAligment;
+    if (((pMVar1->klass->_1).naturalAligment < bVar2) ||
+       ((MVEditablePickupItemBase__Class *)(pMVar1->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1]
+        != TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase
+       )) {
+      FUN_?(pMVar1);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
     }
-    func_?();
-code_?:
-    func_?();
+    (this->fields).itemBase = pMVar1;
+    bVar2 = (
+            TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase
+            ->_1).naturalAligment;
+    if (((pMVar1->klass->_1).naturalAligment < bVar2) ||
+       ((MVEditablePickupItemBase__Class *)(pMVar1->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1]
+        != TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase
+       )) {
+      FUN_?(pMVar1);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
   }
-  func_?();
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)&(this->fields).itemBase >> 0xc);
+    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+      puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+      LOCK();
+      bVar8 = uVar6 == *puVar7;
+      if (bVar8) {
+        *puVar7 = uVar6 | 1L << (ulonglong)(uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar8);
+  }
+  pMVar1 = (this->fields).itemBase;
+  if (pMVar1 == (MVEditablePickupItemBase *)0x0) goto code_?;
+  obj = (pMVar1->fields)._._._.transform;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
+  if (obj == (Transform *)0x0) {
 code_?:
-  func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  uStack_10._0_4_ = (pVVar9->zeroVector).x;
+  uStack_10._4_4_ = (pVVar9->zeroVector).y;
+  LStack_11._list = (List_1_System_Object_ *)CONCAT44(LStack_11._list._4_4_,(pVVar9->zeroVector).z);
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar12 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar12 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pcVar3 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+    uVar13 = func_?(&UNK_?);
+    FUN_?(uVar13,0);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pcRam_? = pcVar3;
+  (*pcRam_?)(pvVar12);
+  pMVar1 = (this->fields).itemBase;
+  if ((pMVar1 == (MVEditablePickupItemBase *)0x0) ||
+     (pMVar14 = MVEditablePickupItemBase::MVEditablePickupItemBase_get_BaseObject
+                          (pMVar1,(MethodInfo *)0x0),
+     pMVar14 == (MVEditablePickupItemBaseObject *)0x0)) goto code_?;
+  bVar8 = iRam_? != 0;
+  (this->fields).cubeModelBaseParent = (pMVar14->fields).cubeModelParent;
+  if (bVar8) {
+    uVar4 = (uint)((ulonglong)&(this->fields).cubeModelBaseParent >> 0xc);
+    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+      puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+      LOCK();
+      bVar8 = uVar6 == *puVar7;
+      if (bVar8) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar8);
+  }
+  pMVar15 = (MVCubeModelInstance *)
+            MVBlueprintBase::MVBlueprintBase_GetChild
+                      ((MVBlueprintBase *)this,StringLiteral_ItemCubeModel,(MethodInfo *)0x0);
+  if (pMVar15 == (MVCubeModelInstance *)0x0) goto code_?;
+  pMVar16 = pMVar15->klass;
+  bVar2 = (TypeInfo__MVCubeModelInstance->_1).naturalAligment;
+  if (((pMVar16->_1).naturalAligment < bVar2) ||
+     ((MVCubeModelInstance__Class *)(pMVar16->_1).typeHierarchy[(ulonglong)bVar2 - 1] !=
+      TypeInfo__MVCubeModelInstance)) {
+    FUN_?(pMVar15);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  (*(pMVar16->vtable).set_Visible.methodPtr)
+            (pMVar15,CONCAT71((int7)((ulonglong)TypeInfo__MVCubeModelInstance >> 8),1),
+             (pMVar16->vtable).set_Visible.method);
+  pMVar1 = (this->fields).itemBase;
+  if (pMVar1 == (MVEditablePickupItemBase *)0x0) goto code_?;
+  puVar17 = (undefined8 *)
+            (*(pMVar1->klass->vtable).__unknown.methodPtr)
+                      (auStack_18,pMVar1,(pMVar1->klass->vtable).__unknown.method);
+  uVar13 = *puVar17;
+  LStack_11._index = (int32_t)uVar13;
+  LStack_11._version._0_2_ = (int16_t)((ulonglong)uVar13 >> 0x20);
+  LStack_11._version._2_2_ = (undefined2)((ulonglong)uVar13 >> 0x30);
+  LStack_11._current._0_2_ = (undefined2)*(undefined4 *)(puVar17 + 1);
+  LStack_11._current._2_2_ = (int16_t)((uint)*(undefined4 *)(puVar17 + 1) >> 0x10);
+  pEVar19 = (EditableCubeModelWrapper *)FUN_?(TypeInfo__EditableCubeModelWrapper);
+  bVar8 = iRam_? != 0;
+  (pEVar19->fields).cubeModelBase = pMVar15;
+  if (bVar8) {
+    uVar4 = (uint)((ulonglong)&pEVar19->fields >> 0xc);
+    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+      puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+      LOCK();
+      bVar8 = uVar6 == *puVar7;
+      if (bVar8) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar8);
+  }
+  piVar20 = &(pMVar15->fields)._._.interactionFlags;
+  *piVar20 = *piVar20 | 0x10;
+  IStackX_18 = (IntVector)
+               CONCAT24(LStack_11._current._2_2_,
+                        CONCAT22(LStack_11._current._0_2_,LStack_11._version._2_2_));
+  uStack_10._0_6_ = (IntVector)CONCAT24((int16_t)LStack_11._version,LStack_11._index);
+  EditableCubeModelWrapper::EditableCubeModelWrapper_SetConstraints
+            (pEVar19,(IntVector *)&uStack_10,&IStackX_18,10,(MethodInfo *)0x0);
+  iVar21 = iRam_?;
+  (this->fields).editableCubeModelWrapper = pEVar19;
+  if (iVar21 != 0) {
+    uVar4 = (uint)((ulonglong)&(this->fields).editableCubeModelWrapper >> 0xc);
+    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+      puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+      LOCK();
+      bVar8 = uVar6 == *puVar7;
+      if (bVar8) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+      iVar21 = iRam_?;
+    } while (!bVar8);
+  }
+  pEVar19 = (this->fields).editableCubeModelWrapper;
+  if (pEVar19 == (EditableCubeModelWrapper *)0x0) {
+code_?:
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  (this->fields).editableCubeModel = (pEVar19->fields).cubeModelBase;
+  if (iVar21 != 0) {
+    uVar4 = (uint)((ulonglong)&(this->fields).editableCubeModel >> 0xc);
+    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+      puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+      LOCK();
+      bVar8 = uVar6 == *puVar7;
+      if (bVar8) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar8);
+  }
+  pMVar15 = (this->fields).editableCubeModel;
+  if (pMVar15 == (MVCubeModelInstance *)0x0) goto code_?;
+  (this->fields).cubeModelId = (pMVar15->fields)._._._.id;
+  pMVar15 = (this->fields).editableCubeModel;
+  if ((pMVar15 == (MVCubeModelInstance *)0x0) ||
+     (pRVar22 = (pMVar15->fields)._.prototypeCubeModel, pRVar22 == (RuntimePrototypeCubeModel *)0x0)
+     ) goto code_?;
+  pMVar23 = this->klass;
+  (this->fields).cubeModelPid = (pRVar22->fields).prototypeId;
+  (*(pMVar23->vtable).OnEndEditing.methodPtr)(this,(pMVar23->vtable).OnEndEditing.method);
+  (*(this->klass->vtable).SetCubeSize.methodPtr)(this);
+  pMVar15 = (this->fields).editableCubeModel;
+  if (pMVar15 == (MVCubeModelInstance *)0x0) goto code_?;
+  MVCubeModelInstance::MVCubeModelInstance_EnableCulling(pMVar15,(MethodInfo *)0x0);
+  MVEditablePickupItemBaseBlueprint_ToggleCubeModelColliders(this,0,(MethodInfo *)0x0);
+  pMVar1 = (this->fields).itemBase;
+  if (((pMVar1 == (MVEditablePickupItemBase *)0x0) ||
+      (pMVar14 = MVEditablePickupItemBase::MVEditablePickupItemBase_get_BaseObject
+                           (pMVar1,(MethodInfo *)0x0),
+      pMVar14 == (MVEditablePickupItemBaseObject *)0x0)) ||
+     (this_00 = (pMVar14->fields)._.pickupItem, this_00 == (GreyOutObjectScript *)0x0))
+  goto code_?;
+  GreyOutObjectScript::GreyOutObjectScript_InitializeOriginalMaterials(this_00,(MethodInfo *)0x0);
+  pMVar1 = (this->fields).itemBase;
+  if ((pMVar1 == (MVEditablePickupItemBase *)0x0) ||
+     (pDVar24 = (pMVar1->fields)._._._._.data,
+     pDVar24 == (Dictionary_2_System_Object_System_Object_ *)0x0)) goto code_?;
+  pDVar24 = (Dictionary_2_System_Object_System_Object_ *)
+            mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__get_Item
+                      (pDVar24,(Object *)StringLiteral_itemData,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+  pMVar15 = (this->fields).editableCubeModel;
+  if (pMVar15 == (MVCubeModelInstance *)0x0) goto code_?;
+  _IStackX_18 = CONCAT44(stack0x0000001c,(pMVar15->fields)._._._.id);
+  pOVar25 = (Object *)FUN_?(uRam_?,&IStackX_18);
+  if (pDVar24 == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
+  bVar2 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
+          naturalAligment;
+  if (((pDVar24->klass->_1).naturalAligment < bVar2) ||
+     ((Dictionary_2_System_Object_System_Object___Class *)
+      (pDVar24->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] !=
+      TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+    FUN_?(pDVar24,
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+  Dictionary_2_System_Object_System_Object__TryInsert
+            (pDVar24,(Object *)StringLiteral_CubeModelId,pOVar25,
+             (InsertionBehavior__Enum)
+             CONCAT71((int7)((ulonglong)
+                             TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                            >> 8),1),
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+             ->klass->rgctx_data[0x22].method);
+  pMVar1 = (this->fields).itemBase;
+  if (pMVar1 == (MVEditablePickupItemBase *)0x0) goto code_?;
+  piVar20 = &(pMVar1->fields)._._._.interactionFlags;
+  *piVar20 = *piVar20 | 0x30;
+  pMVar15 = (this->fields).editableCubeModel;
+  if (pMVar15 == (MVCubeModelInstance *)0x0) goto code_?;
+  piVar20 = &(pMVar15->fields)._._.interactionFlags;
+  *piVar20 = *piVar20 | 0x30;
+  pMVar1 = (this->fields).itemBase;
+  if (((pMVar1 == (MVEditablePickupItemBase *)0x0) ||
+      (pUVar26 = (pMVar1->fields)._.useInteractor, pUVar26 == (UseInteractor *)0x0)) ||
+     (this_01 = (pUVar26->fields).useInteractorVisuals, this_01 == (UseInteractorVisualization *)0x0
+     )) goto code_?;
+  iVar27 = (pUVar26->fields).woOwnerID;
+  pOVar28 = (Object__Class *)(this->fields)._._._._.data;
+  if (cRam_? == '\0') {
+    LStack_11._list = (List_1_System_Object_ *)&UNK_?;
+    FUN_?(&TypeInfo__System__Func<UseRequirement,_bool>);
+    LOCK();
+    UNLOCK();
+    LStack_11._list = (List_1_System_Object_ *)&UNK_?;
+    FUN_?(&MethodInfo__UseInteractorVisualization____c___UpdateData_b__36_0_UseRequirement_)
+    ;
+    LOCK();
+    UNLOCK();
+    LStack_11._list = (List_1_System_Object_ *)&UNK_?;
+    FUN_?(&
+                  MethodInfo__UseInteractorVisualization____c__DisplayClass36_0___UpdateData_b__1_UseRequirement_
+                 );
+    LOCK();
+    UNLOCK();
+    LStack_11._list = (List_1_System_Object_ *)&UNK_?;
+    FUN_?(&TypeInfo__UseInteractorVisualization____c__DisplayClass36_0);
+    LOCK();
+    UNLOCK();
+    LStack_11._list = (List_1_System_Object_ *)&UNK_?;
+    FUN_?(&TypeInfo__UseInteractorVisualization____c);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  LStack_11._list = (List_1_System_Object_ *)&UNK_?;
+  pOVar25 = (Object *)FUN_?(TypeInfo__UseInteractorVisualization____c__DisplayClass36_0);
+  if (pOVar25 == (Object *)0x0) {
+code_?:
+    LStack_11._list = (List_1_System_Object_ *)&UNK_?;
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  bVar8 = iRam_? != 0;
+  pOVar25[1].klass = pOVar28;
+  if (bVar8) {
+    uVar4 = (uint)((ulonglong)(pOVar25 + 1) >> 0xc);
+    lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+      puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+      LOCK();
+      bVar8 = uVar6 == *puVar7;
+      if (bVar8) {
+        *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar8);
+  }
+  *(int32_t *)&pOVar25[1].monitor = iVar27;
+  if (*(int *)&(TypeInfo__UseInteractorVisualization____c->_1).field_0x1c == 0) {
+    LStack_11._list = (List_1_System_Object_ *)&UNK_?;
+    FUN_?();
+  }
+  this_02 = TypeInfo__UseInteractorVisualization____c->static_fields->__9__36_0;
+  if (this_02 == (Func_2_UseRequirement_Boolean_ *)0x0) {
+    if (*(int *)&(TypeInfo__UseInteractorVisualization____c->_1).field_0x1c == 0) {
+      LStack_11._list = (List_1_System_Object_ *)&UNK_?;
+      FUN_?();
+    }
+    object = TypeInfo__UseInteractorVisualization____c->static_fields->__9;
+    LStack_11._list = (List_1_System_Object_ *)&UNK_?;
+    this_02 = (Func_2_UseRequirement_Boolean_ *)
+              FUN_?(TypeInfo__System__Func<UseRequirement,_bool>);
+    LStack_11._list = (List_1_System_Object_ *)&UNK_?;
+    mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
+              ((Predicate_1_Object_ *)this_02,(Object *)object,
+               MethodInfo__UseInteractorVisualization____c___UpdateData_b__36_0_UseRequirement_,
+               (MethodInfo *)0x0);
+    TypeInfo__UseInteractorVisualization____c->static_fields->__9__36_0 = this_02;
+    if (iRam_? != 0) {
+      uVar4 = (uint)((ulonglong)
+                      &TypeInfo__UseInteractorVisualization____c->static_fields->__9__36_0 >> 0xc);
+      lVar5 = (ulonglong)((uVar4 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar6 = *(ulonglong *)(lVar5 + 0xADDR);
+        puVar7 = (ulonglong *)(lVar5 + 0xADDR);
+        LOCK();
+        bVar8 = uVar6 == *puVar7;
+        if (bVar8) {
+          *puVar7 = uVar6 | 1L << (uVar4 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar8);
+    }
+  }
+  LStack_11._list = (List_1_System_Object_ *)&UNK_?;
+  this_03 = (Predicate_1_Object_ *)FUN_?(TypeInfo__System__Func<UseRequirement,_bool>);
+  LStack_11._list = (List_1_System_Object_ *)&UNK_?;
+  mscorlib.dll::System::Predicate`1[Object]::Predicate_1_Object___ctor
+            (this_03,pOVar25,
+             MethodInfo__UseInteractorVisualization____c__DisplayClass36_0___UpdateData_b__1_UseRequirement_
+             ,(MethodInfo *)0x0);
+  if (this_01 == (UseInteractorVisualization *)0x0) goto code_?;
+  LStack_11._list = (List_1_System_Object_ *)&UNK_?;
+  UseInteractorVisualization::UseInteractorVisualization_ChangeUseRequirements
+            (this_01,this_02,(Func_2_UseRequirement_Boolean_ *)this_03,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__Dispose__
+                  ,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UseRequirement>__GetEnumerator__);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  (this_01->fields).active = 0;
+  (this_01->fields).dist = 1.3;
+  pLVar29 = (this_01->fields).useRequirements;
+  if (pLVar29 == (List_1_UseRequirement_ *)0x0) {
+code_?:
+    FUN_?();
+code_?:
+    FUN_?();
+    FUN_?();
+code_?:
+    FUN_?();
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)&stack0xffffffffffffffb8 >> 0xc);
+    uVar6 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+    do {
+      uVar30 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+      puVar7 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+      LOCK();
+      bVar8 = uVar30 == *puVar7;
+      if (bVar8) {
+        *puVar7 = uVar30 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar8);
+  }
+  iVar27 = (pLVar29->fields)._version;
+  uStack_10 = 0;
+  LStack_11._index = 0;
+  LStack_11._version._0_2_ = (int16_t)iVar27;
+  LStack_11._version._2_2_ = (undefined2)((uint)iVar27 >> 0x10);
+  LStack_11._current._0_2_ = 0;
+  LStack_11._current._2_2_ = 0;
+  LStack_11._current._4_4_ = 0;
+  uStack_31 = 0;
+  pLStack_32 = &LStack_11;
+  LStack_11._list = (List_1_System_Object_ *)pLVar29;
+  while (bVar33 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+                  List_1_T_Enumerator_System_Object__MoveNext
+                            (&LStack_11,
+                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__MoveNext__
+                            ), bVar33 != 0) {
+    plVar34 = (longlong *)
+              CONCAT44(LStack_11._current._4_4_,
+                       CONCAT22(LStack_11._current._2_2_,LStack_11._current._0_2_));
+    if (plVar34 == (longlong *)0x0) goto code_?;
+    cVar35 = (**(code **)(*plVar34 + 0x1e8))(plVar34,*(undefined8 *)(*plVar34 + 0x1f0));
+    if (cVar35 != '\0') {
+      piVar36 = &(this_01->fields).active;
+      *piVar36 = *piVar36 + 1;
+    }
+  }
+  if ((this_01->fields).active == 1) {
+    (this_01->fields).dist = 0.01;
+  }
+  bVar8 = (this_01->fields).active == 0;
+  if (!bVar8) {
+    (this_01->fields).spacing = (float)(int)(0x168 / (longlong)(this_01->fields).active);
+    bVar8 = (this_01->fields).active == 0;
+  }
+  (this_01->fields)._HasUseRequirements_k__BackingField = !bVar8;
+  fVar37 = 0.0;
+  pLVar29 = (this_01->fields).useRequirements;
+  if (pLVar29 == (List_1_UseRequirement_ *)0x0) goto code_?;
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)&stack0xffffffffffffffb8 >> 0xc);
+    uVar6 = (ulonglong)((uVar4 & 0x1fffff) >> 6);
+    do {
+      uVar30 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+      puVar7 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+      LOCK();
+      bVar8 = uVar30 == *puVar7;
+      if (bVar8) {
+        *puVar7 = uVar30 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar8);
+  }
+  iVar27 = (pLVar29->fields)._version;
+  uStack_10 = 0;
+  LStack_11._index = 0;
+  LStack_11._version._0_2_ = (int16_t)iVar27;
+  LStack_11._version._2_2_ = (undefined2)((uint)iVar27 >> 0x10);
+  LStack_11._current._0_2_ = 0;
+  LStack_11._current._2_2_ = 0;
+  LStack_11._current._4_4_ = 0;
+  LStack_11._list = (List_1_System_Object_ *)pLVar29;
+  while (bVar33 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
+                  List_1_T_Enumerator_System_Object__MoveNext
+                            (&LStack_11,
+                             MethodInfo__System__Collections__Generic__List_1_T___Enumerator<UseRequirement>__MoveNext__
+                            ), bVar33 != 0) {
+    plVar34 = (longlong *)
+              CONCAT44(LStack_11._current._4_4_,
+                       CONCAT22(LStack_11._current._2_2_,LStack_11._current._0_2_));
+    if (plVar34 == (longlong *)0x0) goto code_?;
+    cVar35 = (**(code **)(*plVar34 + 0x1e8))(plVar34,*(undefined8 *)(*plVar34 + 0x1f0));
+    if (cVar35 != '\0') {
+      uStack_31._0_4_ = (this_01->fields).pivot.x;
+      uStack_31._4_4_ = (this_01->fields).pivot.y;
+      pLStack_32 = (List_1_T_Enumerator_System_Object_ *)
+                   CONCAT44(pLStack_32._4_4_,(this_01->fields).pivot.z);
+      (**(code **)(*plVar34 + 0x1f8))
+                (plVar34,&uStack_31,fVar37,(this_01->fields).dist,*(undefined8 *)(*plVar34 + 0x200))
+      ;
+      fVar37 = fVar37 + (this_01->fields).spacing;
+    }
+  }
+  if ((this_01->fields)._HasUseRequirements_k__BackingField != 0) {
+    if ((this_01->fields).cullingSubscriberBase == (CullingSubscriberBase *)0x0) {
+      UseInteractorVisualization::UseInteractorVisualization_SetupCulling(this_01,(MethodInfo *)0x0)
+      ;
+      goto code_?;
+    }
+    if ((this_01->fields)._HasUseRequirements_k__BackingField != 0) goto code_?;
+  }
+  if ((this_01->fields).cullingSubscriberBase != (CullingSubscriberBase *)0x0) {
+    UseInteractorVisualization::UseInteractorVisualization_RemoveCulling(this_01,(MethodInfo *)0x0);
+  }
+code_?:
+  bVar33 = (this_01->fields)._HasUseRequirements_k__BackingField;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Behaviour>_UnityEngine__Behaviour_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar12 = (this_01->fields)._._._._.m_CachedPtr;
+  if (pvVar12 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)this_01,(MethodInfo *)0x0);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pcVar3 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+    uVar13 = func_?(&UNK_?);
+    FUN_?(uVar13,0);
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pcRam_? = pcVar3;
+  (*pcRam_?)(pvVar12,bVar33);
   return;
 }
 
@@ -224,10 +637,14 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase
-                   );
-    func_?(&StringLiteral_ItemBase);
+    FUN_?(&
+                  TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ItemBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   MVGroup::MVGroup_InitializeInventory((MVGroup *)this,(MethodInfo *)0x0);
@@ -236,32 +653,47 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
                      ((MVBlueprintBase *)this,StringLiteral_ItemBase,(MethodInfo *)0x0);
   if (pMVar1 == (MVEditablePickupItemBase *)0x0) {
     (this->fields).itemBase = (MVEditablePickupItemBase *)0x0;
-    func_?();
-    return;
   }
-  if (((TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase->
-       _1).naturalAligment <= (pMVar1->klass->_1).naturalAligment) &&
-     ((MVEditablePickupItemBase__Class *)
-      (pMVar1->klass->_1).typeHierarchy
-      [(TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase->
-       _1).naturalAligment - 1] ==
-      TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase)) {
+  else {
+    bVar2 = (
+            TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase
+            ->_1).naturalAligment;
+    if (((pMVar1->klass->_1).naturalAligment < bVar2) ||
+       ((MVEditablePickupItemBase__Class *)(pMVar1->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1]
+        != TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase
+       )) {
+      FUN_?(pMVar1);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
     (this->fields).itemBase = pMVar1;
-    if (((TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase
-         ->_1).naturalAligment <= (pMVar1->klass->_1).naturalAligment) &&
-       ((MVEditablePickupItemBase__Class *)
-        (pMVar1->klass->_1).typeHierarchy
-        [(TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase
-         ->_1).naturalAligment - 1] ==
-        TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase))
-    {
-      func_?();
+    bVar2 = (
+            TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase
+            ->_1).naturalAligment;
+    if (((pMVar1->klass->_1).naturalAligment < bVar2) ||
+       ((MVEditablePickupItemBase__Class *)(pMVar1->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1]
+        != TypeInfo__Assets__Scripts__WorldObjectTypes__EditablePickupItem__MVEditablePickupItemBase
+       )) {
+      FUN_?(pMVar1);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
   }
-  func_?(pMVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)&(this->fields).itemBase >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar6 != uVar7);
+  }
   return;
 }
 
@@ -273,13 +705,16 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
                (MVEditablePickupItemBaseBlueprint *this,MethodInfo *method)
 
 {
-  MVBlueprintBase::MVBlueprintBase_OnDataUpdate((MVBlueprintBase *)this,(MethodInfo *)0x0);
+  MVBlueprintBase::MVBlueprintBase_MapDataToFields((MVBlueprintBase *)this,(MethodInfo *)0x0);
   pMVar1 = (this->fields).itemBase;
   if (pMVar1 != (MVEditablePickupItemBase *)0x0) {
-    (*(code *)(pMVar1->klass->vtable).OnDataUpdate.method)(pMVar1);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(pMVar1->klass->vtable).OnDataUpdate.methodPtr)
+              (pMVar1,(pMVar1->klass->vtable).OnDataUpdate.method);
     return;
   }
-  func_?();
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -294,43 +729,130 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
 
 {
   pMVar1 = (this->fields).editableCubeModel;
-  if ((pMVar1 != (MVCubeModelInstance *)0x0) &&
-     (this_00 = (pMVar1->fields)._._.transform, this_00 != (Transform *)0x0)) {
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent
-              (this_00,(this->fields).cubeModelBaseParent,(MethodInfo *)0x0);
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
-      cRam_? = '\x01';
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-              (this_00,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,(MethodInfo *)0x0);
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-              (this_00,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
-               (MethodInfo *)0x0);
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
-    fVar3 = (pVVar2->oneVector).x;
-    fVar4 = (pVVar2->oneVector).y;
-    fVar5 = (pVVar2->oneVector).z;
-    fVar6 = (float10)(*(code *)(this->klass->vtable).get_CubeModelScale.method)();
-    fVar7 = (float)fVar6;
-    value.y = fVar4 * fVar7;
-    value.x = fVar3 * fVar7;
-    value.z = fVar5 * fVar7;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-              (this_00,value,(MethodInfo *)0x0);
+  if ((pMVar1 == (MVCubeModelInstance *)0x0) ||
+     (this_00 = (pMVar1->fields)._._.transform, this_00 == (Transform *)0x0)) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+            (this_00,(this->fields).cubeModelBaseParent,1,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uStack_4._0_4_ = (pVVar3->zeroVector).x;
+  uStack_4._4_4_ = (pVVar3->zeroVector).y;
+  fStack_5 = (pVVar3->zeroVector).z;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar6 = (this_00->fields)._._.m_CachedPtr;
+  if (pvVar6 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)this_00,(MethodInfo *)0x0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar7 = func_?(&UNK_?);
+    FUN_?(uVar7,0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcRam_? = pcVar2;
+  (*pcRam_?)(pvVar6);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pQVar8 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  fStack_9 = (pQVar8->identityQuaternion).x;
+  fStack_10 = (pQVar8->identityQuaternion).y;
+  fStack_11 = (pQVar8->identityQuaternion).z;
+  fStack_12 = (pQVar8->identityQuaternion).w;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar6 = (this_00->fields)._._.m_CachedPtr;
+  if (pvVar6 != (void *)0x0) {
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar7 = func_?(&UNK_?);
+      FUN_?(uVar7,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)(pvVar6,&fStack_9);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar13 = (pVVar3->oneVector).x;
+    uVar14 = (pVVar3->oneVector).y;
+    fVar15 = (pVVar3->oneVector).z;
+    fVar16 = (float)(*(this->klass->vtable).get_CubeModelScale.methodPtr)(this);
+    fStack_5 = fVar15 * fVar16;
+    uStack_4 = CONCAT44((float)uVar14 * fVar16,(float)uVar13 * fVar16);
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar6 = (this_00->fields)._._.m_CachedPtr;
+    if (pvVar6 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)this_00,(MethodInfo *)0x0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar7 = func_?(&UNK_?);
+      FUN_?(uVar7,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)(pvVar6,&uStack_4);
+    return;
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+  ThrowHelper_2_ThrowNullReferenceException((Object *)this_00,(MethodInfo *)0x0);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -354,17 +876,20 @@ bool Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (this_02,0,(MethodInfo *)0x0);
         MVEditablePickupItemBaseBlueprint_ToggleCubeModelColliders(this,1,(MethodInfo *)0x0);
-        (*(code *)(this->klass->vtable).OnStartEditing.method)();
+        (*(this->klass->vtable).OnStartEditing.methodPtr)
+                  (this,(this->klass->vtable).OnStartEditing.method);
         pEVar2 = (this->fields).editableCubeModelWrapper;
         if (pEVar2 != (EditableCubeModelWrapper *)0x0) {
-          bVar3 = (*(code *)(pEVar2->klass->vtable).OnEnterObject.method)
-                            (pEVar2,e,(pEVar2->klass->vtable).OnExitObject.methodPtr);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          bVar3 = (*(pEVar2->klass->vtable).OnEnterObject.methodPtr)
+                            (pEVar2,e,(pEVar2->klass->vtable).OnEnterObject.method);
           return bVar3;
         }
       }
     }
   }
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   bVar3 = (*pcVar4)();
   return bVar3;
@@ -390,18 +915,22 @@ bool Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
         UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
                   (this_02,1,(MethodInfo *)0x0);
         MVEditablePickupItemBaseBlueprint_ToggleCubeModelColliders(this,0,(MethodInfo *)0x0);
-        (*(code *)(this->klass->vtable).OnEndEditing.method)();
-        (*(code *)(this->klass->vtable).SetCubeSize.method)(this,this->klass[1]._0.image);
+        (*(this->klass->vtable).OnEndEditing.methodPtr)
+                  (this,(this->klass->vtable).OnEndEditing.method);
+        (*(this->klass->vtable).SetCubeSize.methodPtr)
+                  (this,(this->klass->vtable).SetCubeSize.method);
         pEVar2 = (this->fields).editableCubeModelWrapper;
         if (pEVar2 != (EditableCubeModelWrapper *)0x0) {
-          bVar3 = (*(code *)(pEVar2->klass->vtable).OnExitObject.method)
-                            (pEVar2,e,pEVar2->klass[1]._0.image);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+          bVar3 = (*(pEVar2->klass->vtable).OnExitObject.methodPtr)
+                            (pEVar2,e,(pEVar2->klass->vtable).OnExitObject.method);
           return bVar3;
         }
       }
     }
   }
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   bVar3 = (*pcVar4)();
   return bVar3;
@@ -416,41 +945,120 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
 
 {
   pMVar1 = (this->fields).editableCubeModel;
-  if ((pMVar1 != (MVCubeModelInstance *)0x0) &&
-     (this_00 = (pMVar1->fields)._._.transform, this_00 != (Transform *)0x0)) {
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent
-              (this_00,(this->fields)._._._.transform,(MethodInfo *)0x0);
-    auVar2._4_8_ = 0;
-    auVar2._0_4_ = _UNK_?;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-              (this_00,(Vector3)(auVar2 << 0x20),(MethodInfo *)0x0);
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-              (this_00,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
-               (MethodInfo *)0x0);
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
-    fVar4 = (pVVar3->oneVector).x;
-    fVar5 = (pVVar3->oneVector).y;
-    fVar6 = (pVVar3->oneVector).z;
-    fVar7 = (float10)(*(code *)(this->klass->vtable).get_CubeModelScale.method)();
-    fVar8 = (float)fVar7;
-    value.y = fVar5 * fVar8;
-    value.x = fVar4 * fVar8;
-    value.z = fVar6 * fVar8;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-              (this_00,value,(MethodInfo *)0x0);
+  if ((pMVar1 == (MVCubeModelInstance *)0x0) ||
+     (this_00 = (pMVar1->fields)._._.transform, this_00 == (Transform *)0x0)) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
+            (this_00,(this->fields)._._._.transform,1,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar3 = (this_00->fields)._._.m_CachedPtr;
+  if (pvVar3 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)this_00,(MethodInfo *)0x0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar4 = func_?(&UNK_?);
+    FUN_?(uVar4,0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcRam_? = pcVar2;
+  (*pcRam_?)(pvVar3);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pQVar5 = TypeInfo__UnityEngine__Quaternion->static_fields;
+  uStack_6._0_4_ = (pQVar5->identityQuaternion).x;
+  uStack_6._4_4_ = (pQVar5->identityQuaternion).y;
+  fStack_7 = (pQVar5->identityQuaternion).z;
+  fStack_8 = (pQVar5->identityQuaternion).w;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar3 = (this_00->fields)._._.m_CachedPtr;
+  if (pvVar3 != (void *)0x0) {
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)(pvVar3,&uStack_6);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pVVar9 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uVar10 = (pVVar9->oneVector).x;
+    uVar11 = (pVVar9->oneVector).y;
+    fVar12 = (pVVar9->oneVector).z;
+    fVar13 = (float)(*(this->klass->vtable).get_CubeModelScale.methodPtr)(this);
+    fStack_7 = fVar12 * fVar13;
+    uStack_6 = CONCAT44((float)uVar11 * fVar13,(float)uVar10 * fVar13);
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar3 = (this_00->fields)._._.m_CachedPtr;
+    if (pvVar3 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)this_00,(MethodInfo *)0x0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)(pvVar3,&uStack_6);
+    return;
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+  ThrowHelper_2_ThrowNullReferenceException((Object *)this_00,(MethodInfo *)0x0);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -459,20 +1067,20 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
 
 void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem::
      MVEditablePickupItemBaseBlueprint::MVEditablePickupItemBaseBlueprint_Select
-               (MVEditablePickupItemBaseBlueprint *this,Color color,MethodInfo *method)
+               (MVEditablePickupItemBaseBlueprint *this,Color *color,MethodInfo *method)
 
 {
-  pIStack_1 = (Il2CppMethodPointer)&stack0xfffffffc;
-  pMVar2 = (this->fields).itemBase;
-  if (pMVar2 != (MVEditablePickupItemBase *)0x0) {
-    pIStack_1 = (pMVar2->klass->vtable).DeSelect.methodPtr;
-    fStack_3 = color.b;
-    fStack_4 = color.a;
-    (*(code *)(pMVar2->klass->vtable).Select_1.method)(pMVar2,color.r,color.g);
+  pMVar1 = (this->fields).itemBase;
+  if (pMVar1 != (MVEditablePickupItemBase *)0x0) {
+    fStack_2 = color->r;
+    fStack_3 = color->g;
+    fStack_4 = color->b;
+    fStack_5 = color->a;
+    (*(pMVar1->klass->vtable).Select_1.methodPtr)
+              (pMVar1,&fStack_2,(pMVar1->klass->vtable).Select_1.method);
     return;
   }
-  uVar5 = func_?(&fStack_3);
-  func_?(uVar5);
+  FUN_?();
   pcVar6 = (code *)swi(3);
   (*pcVar6)();
   return;
@@ -487,89 +1095,150 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Single);
+    FUN_?(&TypeInfo__System__Single);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = (this->fields).editableCubeModel;
   if (pMVar1 != (MVCubeModelInstance *)0x0) {
     pBVar2 = MVCubeModelBase::MVCubeModelBase_GetBounds
-                       (&BStack_3,(MVCubeModelBase *)pMVar1,(MethodInfo *)0x0);
-    fStack_4 = (pBVar2->m_Center).x;
-    fStack_5 = (pBVar2->m_Center).y;
-    fStack_6 = (pBVar2->m_Center).z;
-    VStack_7.x = (pBVar2->m_Extents).x;
-    uVar8 = (pBVar2->m_Extents).y;
-    uVar9 = (pBVar2->m_Extents).z;
-    VStack_7.y = (float)uVar8;
-    VStack_7.z = (float)uVar9;
-    iVar10 = func_?(TypeInfo__System__Single,3);
-    if (iVar10 != 0) {
-      if (((*(int *)(iVar10 + 0xc) == 0) ||
-          (*(float *)(iVar10 + 0x10) = VStack_7.x, *(uint *)(iVar10 + 0xc) < 2)) ||
-         (*(float *)(iVar10 + 0x14) = VStack_7.y, *(uint *)(iVar10 + 0xc) < 3))
-      goto code_?;
-      *(float *)(iVar10 + 0x18) = VStack_7.z;
-      uVar11 = *(uint *)(iVar10 + 0xc);
-      if (uVar11 == 0) {
-        fVar12 = 0.0;
-      }
-      else {
-        fVar12 = *(float *)(iVar10 + 0x10);
-        uVar13 = 1;
-        if (1 < (int)uVar11) {
-          pfVar14 = (float *)(iVar10 + 0x14);
-          do {
-            if (uVar11 <= uVar13) goto code_?;
-            if (fVar12 < *pfVar14) {
-              fVar12 = *pfVar14;
+                       (aBStack_3,(MVCubeModelBase *)pMVar1,(MethodInfo *)0x0);
+    aBStack_3[0].m_Extents.y = (pBVar2->m_Extents).y;
+    aBStack_3[0].m_Extents.z = (pBVar2->m_Extents).z;
+    fVar4 = (pBVar2->m_Extents).x;
+    lVar5 = FUN_?(TypeInfo__System__Single,3);
+    if (lVar5 != 0) {
+      if ((*(int *)(lVar5 + 0x18) != 0) &&
+         (*(float *)(lVar5 + 0x20) = fVar4, 1 < *(uint *)(lVar5 + 0x18))) {
+        *(float *)(lVar5 + 0x24) = aBStack_3[0].m_Extents.y;
+        if (2 < *(uint *)(lVar5 + 0x18)) {
+          *(float *)(lVar5 + 0x28) = aBStack_3[0].m_Extents.z;
+          iVar6 = *(int *)(lVar5 + 0x18);
+          if (iVar6 == 0) {
+            fVar4 = 0.0;
+          }
+          else {
+            if (*(int *)(lVar5 + 0x18) == 0) goto code_?;
+            uVar7 = 1;
+            if (1 < iVar6) {
+              lVar8 = 1;
+              pfVar9 = (float *)(lVar5 + 0x24);
+              do {
+                if (*(uint *)(lVar5 + 0x18) <= uVar7) goto code_?;
+                if (fVar4 < *pfVar9) {
+                  fVar4 = *pfVar9;
+                }
+                uVar7 = uVar7 + 1;
+                lVar8 = lVar8 + 1;
+                pfVar9 = pfVar9 + 1;
+              } while (lVar8 < iVar6);
             }
-            uVar13 = uVar13 + 1;
-            pfVar14 = pfVar14 + 1;
-          } while ((int)uVar13 < (int)uVar11);
-        }
-      }
-      fVar12 = fVar12 * _UNK_?;
-      pMVar1 = (this->fields).editableCubeModel;
-      if ((pMVar1 != (MVCubeModelInstance *)0x0) &&
-         (pTVar15 = (pMVar1->fields)._._.transform, pTVar15 != (Transform *)0x0)) {
-        pVVar16 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_lossyScale
-                            (&VStack_7,pTVar15,(MethodInfo *)0x0);
-        fVar17 = pVVar16->x;
-        fStack_18 = fVar12 * fVar17;
-        fStack_19 = fVar12 * fVar17;
-        pMVar20 = (this->fields).itemBase;
-        if ((pMVar20 != (MVEditablePickupItemBase *)0x0) &&
-           ((pMVar21 = MVEditablePickupItemBase::MVEditablePickupItemBase_get_BaseObject
-                                 (pMVar20,(MethodInfo *)0x0),
-            pMVar21 != (MVEditablePickupItemBaseObject *)0x0 &&
-            (this_00 = (pMVar21->fields)._._.mainCollider, this_00 != (Collider *)0x0)))) {
-          pTVar15 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
-                              ((Component *)this_00,(MethodInfo *)0x0);
-          VStack_7.x = fStack_18 + fStack_18;
-          VStack_7.y = fStack_19 + fStack_19;
-          VStack_7.z = fVar12 * fVar17 + fVar12 * fVar17;
-          if (pTVar15 != (Transform *)0x0) {
-            value.y = VStack_7.y;
-            value.x = VStack_7.x;
-            value.z = VStack_7.z;
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                      (pTVar15,value,(MethodInfo *)0x0);
-            pMVar20 = (this->fields).itemBase;
-            if (pMVar20 != (MVEditablePickupItemBase *)0x0) {
-              MVLogicObject::MVLogicObject_SetLocalBounds((MVLogicObject *)pMVar20,(MethodInfo *)0x0)
-              ;
+          }
+          fVar4 = fVar4 * _UNK_?;
+          pMVar1 = (this->fields).editableCubeModel;
+          if ((pMVar1 != (MVCubeModelInstance *)0x0) &&
+             (pTVar10 = (pMVar1->fields)._._.transform, pTVar10 != (Transform *)0x0)) {
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                           );
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            aBStack_3[0].m_Center.x = 0.0;
+            aBStack_3[0].m_Center.y = 0.0;
+            aBStack_3[0].m_Center.z = 0.0;
+            pvVar11 = (pTVar10->fields)._._.m_CachedPtr;
+            if (pvVar11 == (void *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+              ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar10,(MethodInfo *)0x0);
+              pcVar12 = (code *)swi(3);
+              (*pcVar12)();
+              return;
+            }
+            pcVar12 = pcRam_?;
+            if ((pcRam_? == (code *)0x0) &&
+               (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
+              uVar13 = func_?(&UNK_?);
+              FUN_?(uVar13,0);
+              pcVar12 = (code *)swi(3);
+              (*pcVar12)();
+              return;
+            }
+            pcRam_? = pcVar12;
+            (*pcRam_?)(pvVar11);
+            fVar14 = aBStack_3[0].m_Center.x * fVar4;
+            fVar15 = aBStack_3[0].m_Center.x * fVar4;
+            fVar4 = aBStack_3[0].m_Center.x * fVar4;
+            pMVar16 = (this->fields).itemBase;
+            if (((pMVar16 != (MVEditablePickupItemBase *)0x0) &&
+                (pMVar17 = MVEditablePickupItemBase::MVEditablePickupItemBase_get_BaseObject
+                                    (pMVar16,(MethodInfo *)0x0),
+                pMVar17 != (MVEditablePickupItemBaseObject *)0x0)) &&
+               (this_00 = (pMVar17->fields)._._.mainCollider, this_00 != (Collider *)0x0)) {
+              pTVar10 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_transform
+                                  ((Component *)this_00,(MethodInfo *)0x0);
+              fVar4 = fVar4 + fVar4;
+              if (pTVar10 != (Transform *)0x0) {
+                aBStack_3[0].m_Center.y = fVar15 + fVar15;
+                aBStack_3[0].m_Center.x = fVar14 + fVar14;
+                aBStack_3[0].m_Center.z = fVar4;
+                if (cRam_? == '\0') {
+                  FUN_?(&
+                                void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                               );
+                  LOCK();
+                  UNLOCK();
+                  cRam_? = '\x01';
+                }
+                pvVar11 = (pTVar10->fields)._._.m_CachedPtr;
+                if (pvVar11 == (void *)0x0) {
+                  UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+                  ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar10,(MethodInfo *)0x0);
+                  pcVar12 = (code *)swi(3);
+                  (*pcVar12)();
+                  return;
+                }
+                pcVar12 = pcRam_?;
+                if ((pcRam_? == (code *)0x0) &&
+                   (pcVar12 = (code *)FUN_?(&UNK_?), pcVar12 == (code *)0x0)) {
+                  uVar13 = func_?(&UNK_?);
+                  FUN_?(uVar13,0);
+                  pcVar12 = (code *)swi(3);
+                  (*pcVar12)();
+                  return;
+                }
+                pcRam_? = pcVar12;
+                (*pcRam_?)(pvVar11);
+                pMVar16 = (this->fields).itemBase;
+                if (pMVar16 != (MVEditablePickupItemBase *)0x0) {
+                  MVLogicObject::MVLogicObject_SetLocalBounds
+                            ((MVLogicObject *)pMVar16,(MethodInfo *)0x0);
+                  return;
+                }
+              }
+              FUN_?();
+              pcVar12 = (code *)swi(3);
+              (*pcVar12)();
               return;
             }
           }
+          goto code_?;
         }
       }
+code_?:
+      FUN_?();
+      pcVar12 = (code *)swi(3);
+      (*pcVar12)();
+      return;
     }
   }
-  func_?();
 code_?:
-  func_?();
-  pcVar22 = (code *)swi(3);
-  (*pcVar22)();
+  FUN_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -581,103 +1250,156 @@ void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem:
                (MVEditablePickupItemBaseBlueprint *this,bool state,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__IDisposable);
-    func_?(&TypeInfo__System__Collections__IEnumerable);
-    func_?(&TypeInfo__System__Collections__IEnumerator);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>__get_Value__
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
-                   );
+    FUN_?(&TypeInfo__System__IDisposable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__IEnumerable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__IEnumerator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>__get_Value__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar4 = (this->fields).editableCubeModel;
-  if ((pMVar4 != (MVCubeModelInstance *)0x0) &&
-     (pCVar5 = (pMVar4->fields)._.chunkInstances, pCVar5 != (ChunkInstances *)0x0)) {
-    piVar6 = (int *)func_?(0,TypeInfo__System__Collections__IEnumerable,pCVar5);
-    uStack_1 = 1;
-    while (piVar6 != (int *)0x0) {
-      cVar7 = func_?(0,TypeInfo__System__Collections__IEnumerator,piVar6);
-      if (cVar7 == '\0') {
-        uStack_1 = 0xffffffff;
-        iVar8 = func_?(piVar6,TypeInfo__System__IDisposable);
-        if (iVar8 != 0) {
-          func_?(0,TypeInfo__System__IDisposable,iVar8);
-          *unaff_FS_OFFSET = uStack_3;
-          return;
-        }
-        *unaff_FS_OFFSET = uStack_3;
-        return;
-      }
-      if (piVar6 == (int *)0x0) break;
-      uVar9 = 0;
-      uVar10 = *(ushort *)(*piVar6 + 0xb6);
-      if (uVar10 != 0) {
-        do {
-          if (*(IEnumerator__Class **)(*(int *)(*piVar6 + 0x58) + (uint)uVar9 * 8) ==
-              TypeInfo__System__Collections__IEnumerator) {
-            puVar11 = (undefined4 *)
-                     (*piVar6 +
-                     (*(int *)(*(int *)(*piVar6 + 0x58) + 4 + (uint)uVar9 * 8) + 0x19) * 8);
-            goto code_?;
-          }
-          uVar9 = uVar9 + 1;
-        } while (uVar9 < uVar10);
-      }
-      puVar11 = (undefined4 *)func_?(piVar6,TypeInfo__System__Collections__IEnumerator,1);
-code_?:
-      piVar12 = (int *)(*(code *)*puVar11)(piVar6,puVar11[1]);
-      uVar13 = CONCAT44(TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
-                        ,piVar12);
-      if (piVar12 == (int *)0x0) break;
-      if (*(Il2CppClass **)(*piVar12 + 0x20) !=
-          (
-          TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
-          ->_0).element_class) goto code_?;
-      iVar8 = func_?(piVar12);
-      this_00 = *(Collider **)(iVar8 + 0x1c);
-      if (this_00 == (Collider *)0x0) break;
-      UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_enabled
-                (this_00,state,(MethodInfo *)0x0);
-      UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_set_isTrigger
-                (this_00,1,(MethodInfo *)0x0);
-    }
+  pMVar1 = (this->fields).editableCubeModel;
+  if ((pMVar1 == (MVCubeModelInstance *)0x0) ||
+     ((pMVar1->fields)._.chunkInstances == (ChunkInstances *)0x0)) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
   }
-  uVar13 = func_?();
+  plVar3 = (longlong *)FUN_?(0,TypeInfo__System__Collections__IEnumerable);
+  do {
+    if (plVar3 == (longlong *)0x0) {
 code_?:
-  func_?(uVar13);
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
-  return;
+      FUN_?();
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    cVar4 = FUN_?(0,TypeInfo__System__Collections__IEnumerator);
+    if (cVar4 == '\0') {
+      lVar5 = FUN_?(plVar3,TypeInfo__System__IDisposable);
+      if (lVar5 != 0) {
+        FUN_?(0,TypeInfo__System__IDisposable,lVar5);
+      }
+      return;
+    }
+    if (plVar3 == (longlong *)0x0) {
+code_?:
+      FUN_?();
+      goto code_?;
+    }
+    lVar5 = *plVar3;
+    uVar6 = 0;
+    if (*(ushort *)(lVar5 + 0x12e) != 0) {
+      do {
+        if (*(IEnumerator__Class **)(*(longlong *)(lVar5 + 0xb0) + (ulonglong)uVar6 * 0x10) ==
+            TypeInfo__System__Collections__IEnumerator) {
+          puVar7 = (undefined8 *)
+                   ((longlong)
+                    (*(int *)(*(longlong *)(lVar5 + 0xb0) + 8 + (ulonglong)uVar6 * 0x10) + 1) *
+                    0x10 + 0x138 + lVar5);
+          goto code_?;
+        }
+        uVar6 = uVar6 + 1;
+      } while (uVar6 < *(ushort *)(lVar5 + 0x12e));
+    }
+    puVar7 = (undefined8 *)FUN_?(plVar3,TypeInfo__System__Collections__IEnumerator,1);
+code_?:
+    plVar8 = (longlong *)(*(code *)*puVar7)(plVar3,puVar7[1]);
+    if (plVar8 == (longlong *)0x0) {
+code_?:
+      FUN_?();
+      goto code_?;
+    }
+    pKVar9 = 
+    TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
+    ;
+    if (*(Il2CppClass **)(*plVar8 + 0x40) !=
+        (
+        TypeInfo__System__Collections__Generic__KeyValuePair<MV::WorldObject::IntVector,_ChunkInstances::ChunkInstanceVariables>
+        ->_0).element_class) {
+code_?:
+      FUN_?(plVar8,pKVar9);
+      goto code_?;
+    }
+    obj = (Object *)plVar8[6];
+    if (obj == (Object *)0x0) {
+code_?:
+      plVar8 = (longlong *)FUN_?();
+      goto code_?;
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Collider>_UnityEngine__Collider_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pOVar10 = obj[1].klass;
+    if (pOVar10 == (Object__Class *)0x0) {
+code_?:
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException(obj,(MethodInfo *)0x0);
+      goto code_?;
+    }
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar11 = func_?(&UNK_?);
+      FUN_?(uVar11);
+code_?:
+      uVar11 = func_?(&UNK_?);
+      FUN_?(uVar11);
+code_?:
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException(obj,(MethodInfo *)0x0);
+      goto code_?;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)(pOVar10);
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Collider>_UnityEngine__Collider_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pOVar10 = obj[1].klass;
+    if (pOVar10 == (Object__Class *)0x0) goto code_?;
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0))
+    goto code_?;
+    pcRam_? = pcVar2;
+    (*pcRam_?)(pOVar10,1);
+  } while( true );
 }
 
 
-/* MVEditablePickupItemBaseBlueprint(Dictionary`2[System.Object,System.Object],
-   Dictionary`2[System.Int32,MVWorldObjectClient]) */
+/* Int32 get_CubeModelPid() */
 
-void Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem::
-     MVEditablePickupItemBaseBlueprint::MVEditablePickupItemBaseBlueprint__ctor
-               (MVEditablePickupItemBaseBlueprint *this,
-               Dictionary_2_System_Object_System_Object_ *data,
-               Dictionary_2_System_Int32_MVWorldObjectClient_ *worldObjects,MethodInfo *method)
+int32_t Assembly-CSharp.dll::Assets::Scripts::WorldObjectTypes::EditablePickupItem::
+        MVEditablePickupItemBaseBlueprint::MVEditablePickupItemBaseBlueprint_get_CubeModelPid
+                  (MVEditablePickupItemBaseBlueprint *this,MethodInfo *method)
 
 {
-  (this->fields).cubeModelId = -1;
-  (this->fields).cubeModelPid = -1;
-  MVBlueprintBase::MVBlueprintBase__ctor
-            ((MVBlueprintBase *)this,data,worldObjects,(MethodInfo *)0x0);
-  iVar1 = (this->fields)._._._.interactionFlags;
-  *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4) =
-       *(undefined4 *)((int)&(this->fields)._._._.interactionFlags + 4);
-  puVar2 = (uint *)((int)&(this->fields)._._._.interactionFlags + 4);
-  *puVar2 = *puVar2 | 2;
-  *(uint *)&(this->fields)._._._.interactionFlags = (uint)iVar1 | 0xADDR;
-  return;
+  return (this->fields).cubeModelPid;
 }
 

@@ -7,54 +7,54 @@ Vector2 Assembly-CSharp.dll::RTG::GizmoCirclePlaneSlider2DController::
                   MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pGVar2 = (this->fields)._._data;
-  if ((pGVar2 == (GizmoPlaneSlider2DControllerData *)0x0) ||
-     (this_00 = (pGVar2->fields).Circle, this_00 == (CircleShape2D *)0x0)) {
-    uVar3 = func_?(&VStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    VVar6 = (Vector2)(*pcVar5)();
-    return VVar6;
+  pGVar1 = (this->fields)._._data;
+  if ((pGVar1 == (GizmoPlaneSlider2DControllerData *)0x0) ||
+     (this_00 = (pGVar1->fields).Circle, this_00 == (CircleShape2D *)0x0)) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    VVar3 = (Vector2)(*pcVar2)();
+    return VVar3;
   }
-  switch(extentPt) {
-  case Shape2DExtentPoint__Enum_Left:
-    extentPt = (Shape2DExtentPoint__Enum)(this_00->fields)._center.x;
-    puStack_1 = (undefined1 *)(this_00->fields)._center.y;
-    VVar6 = CircleShape2D::CircleShape2D_get_Right(this_00,(MethodInfo *)0x0);
-    fVar7 = VVar6.y;
-    break;
-  case Shape2DExtentPoint__Enum_Top:
-    extentPt = (Shape2DExtentPoint__Enum)(this_00->fields)._center.x;
-    puStack_1 = (undefined1 *)(this_00->fields)._center.y;
-    VVar6 = CircleShape2D::CircleShape2D_get_Up(this_00,(MethodInfo *)0x0);
-    fVar7 = VVar6.y;
-    goto code_?;
-  case Shape2DExtentPoint__Enum_Right:
-    extentPt = (Shape2DExtentPoint__Enum)(this_00->fields)._center.x;
-    puStack_1 = (undefined1 *)(this_00->fields)._center.y;
-    VVar6 = CircleShape2D::CircleShape2D_get_Right(this_00,(MethodInfo *)0x0);
-    fVar7 = VVar6.y;
+  if (extentPt == Shape2DExtentPoint__Enum_Left) {
+    fVar4 = (this_00->fields)._center.x;
+    fVar5 = (this_00->fields)._center.y;
+    VVar3 = CircleShape2D::CircleShape2D_get_Right(this_00,(MethodInfo *)0x0);
 code_?:
-    VStack_4.y = fVar7 * (this_00->fields)._radius + (float)puStack_1;
-    VStack_4.x = VStack_4.x * (this_00->fields)._radius + (float)extentPt;
-    return VStack_4;
-  case Shape2DExtentPoint__Enum_Bottom:
-    extentPt = (Shape2DExtentPoint__Enum)(this_00->fields)._center.x;
-    puStack_1 = (undefined1 *)(this_00->fields)._center.y;
-    VVar6 = CircleShape2D::CircleShape2D_get_Up(this_00,(MethodInfo *)0x0);
-    fVar7 = VVar6.y;
-    break;
-  default:
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector2);
-      cRam_? = '\x01';
-    }
-    return TypeInfo__UnityEngine__Vector2->static_fields->zeroVector;
+    fVar6 = (this_00->fields)._radius;
+    fStackX_c = VVar3.y;
+    fStackX_8 = VVar3.x;
+    VVar3.y = fVar5 - fVar6 * fStackX_c;
+    VVar3.x = fVar4 - fVar6 * fStackX_8;
   }
-  VStack_4.y = (float)puStack_1 - fVar7 * (this_00->fields)._radius;
-  VStack_4.x = (float)extentPt - VStack_4.x * (this_00->fields)._radius;
-  return VStack_4;
+  else {
+    if (extentPt == Shape2DExtentPoint__Enum_Top) {
+      fVar4 = (this_00->fields)._center.x;
+      fVar5 = (this_00->fields)._center.y;
+      VVar3 = CircleShape2D::CircleShape2D_get_Up(this_00,(MethodInfo *)0x0);
+    }
+    else {
+      if (extentPt != Shape2DExtentPoint__Enum_Right) {
+        if (extentPt != Shape2DExtentPoint__Enum_Bottom) {
+          VVar3 = RightAngTriangle2D::RightAngTriangle2D_get_ModelRightAngleCorner
+                            ((MethodInfo *)this);
+          return VVar3;
+        }
+        fVar4 = (this_00->fields)._center.x;
+        fVar5 = (this_00->fields)._center.y;
+        VVar3 = CircleShape2D::CircleShape2D_get_Up(this_00,(MethodInfo *)0x0);
+        goto code_?;
+      }
+      fVar4 = (this_00->fields)._center.x;
+      fVar5 = (this_00->fields)._center.y;
+      VVar3 = CircleShape2D::CircleShape2D_get_Right(this_00,(MethodInfo *)0x0);
+    }
+    fVar6 = (this_00->fields)._radius;
+    fStackX_c = VVar3.y;
+    fStackX_8 = VVar3.x;
+    VVar3.y = fVar6 * fStackX_c + fVar5;
+    VVar3.x = fVar6 * fStackX_8 + fVar4;
+  }
+  return VVar3;
 }
 
 
@@ -66,20 +66,19 @@ void Assembly-CSharp.dll::RTG::GizmoCirclePlaneSlider2DController::
 
 {
   pGVar1 = (this->fields)._._data;
-  if (pGVar1 != (GizmoPlaneSlider2DControllerData *)0x0) {
-    this_00 = (pGVar1->fields).Circle;
-    pGVar2 = (pGVar1->fields).Slider;
-    if (((pGVar2 != (GizmoPlaneSlider2D *)0x0) &&
-        (pGVar3 = (&(pGVar2->fields)._settings)
-                  [(pGVar2->fields)._sharedSettings != (GizmoPlaneSlider2DSettings *)0x0],
-        pGVar3 != (GizmoPlaneSlider2DSettings *)0x0)) && (this_00 != (CircleShape2D *)0x0)) {
-      SegmentShape2D::SegmentShape2D_set_RaycastEps
-                ((SegmentShape2D *)this_00,(pGVar3->fields)._areaHoverEps,(MethodInfo *)0x0);
+  if ((pGVar1 != (GizmoPlaneSlider2DControllerData *)0x0) &&
+     (pGVar2 = (pGVar1->fields).Slider, pGVar2 != (GizmoPlaneSlider2D *)0x0)) {
+    lVar3 = 0x100;
+    if ((pGVar2->fields)._sharedSettings == (GizmoPlaneSlider2DSettings *)0x0) {
+      lVar3 = 0xf8;
+    }
+    lVar3 = *(longlong *)((longlong)&pGVar2->klass + lVar3);
+    if ((lVar3 != 0) && (pCVar4 = (pGVar1->fields).Circle, pCVar4 != (CircleShape2D *)0x0)) {
+      (pCVar4->fields)._epsilon._radiusEps = (float)(*(uint *)(lVar3 + 0x10) & _UNK_?);
       return;
     }
   }
-  uVar4 = func_?(&stack0xfffffff0);
-  func_?(uVar4);
+  FUN_?();
   pcVar5 = (code *)swi(3);
   (*pcVar5)();
   return;
@@ -121,9 +120,40 @@ void Assembly-CSharp.dll::RTG::GizmoCirclePlaneSlider2DController::
             if (((pGVar1 != (GizmoPlaneSlider2DControllerData *)0x0) &&
                 (pGVar3 = (pGVar1->fields).Slider, pGVar3 != (GizmoPlaneSlider2D *)0x0)) &&
                (pGVar2 = (pGVar1->fields).SliderHandle, pGVar2 != (GizmoHandle *)0x0)) {
-              GizmoHandle::GizmoHandle_Set2DShapeVisible
-                        (pGVar2,(pGVar1->fields).CircleIndex,(pGVar3->fields)._._isVisible,
-                         (MethodInfo *)0x0);
+              bVar4 = (pGVar3->fields)._._isVisible;
+              uVar5 = (pGVar1->fields).CircleIndex;
+              if (cRam_? == '\0') {
+                FUN_?();
+                LOCK();
+                UNLOCK();
+                cRam_? = '\x01';
+              }
+              pLVar6 = (pGVar2->fields)._2DShapes;
+              if (pLVar6 != (List_1_RTG_GizmoHandleShape2D_ *)0x0) {
+                if ((uint)(pLVar6->fields)._size <= uVar5) {
+                  mscorlib.dll::System::ThrowHelper::
+                  ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+                  pcVar7 = (code *)swi(3);
+                  (*pcVar7)();
+                  return;
+                }
+                pGVar8 = (pLVar6->fields)._items;
+                if (pGVar8 != (GizmoHandleShape2D__Array *)0x0) {
+                  if ((uint)pGVar8->max_length <= uVar5) {
+                    FUN_?();
+                    pcVar7 = (code *)swi(3);
+                    (*pcVar7)();
+                    return;
+                  }
+                  if (pGVar8->vector[(int)uVar5] != (GizmoHandleShape2D *)0x0) {
+                    (pGVar8->vector[(int)uVar5]->fields)._isVisible = bVar4;
+                    return;
+                  }
+                }
+              }
+              FUN_?();
+              pcVar7 = (code *)swi(3);
+              (*pcVar7)();
               return;
             }
           }
@@ -131,9 +161,9 @@ void Assembly-CSharp.dll::RTG::GizmoCirclePlaneSlider2DController::
       }
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -147,53 +177,87 @@ void Assembly-CSharp.dll::RTG::GizmoCirclePlaneSlider2DController::
 {
   pGVar1 = (this->fields)._._data;
   if (((pGVar1 != (GizmoPlaneSlider2DControllerData *)0x0) &&
-      (this_00 = (pGVar1->fields).Slider, this_00 != (GizmoPlaneSlider2D *)0x0)) &&
-     (pGVar2 = (this_00->fields)._transform, pGVar2 != (GizmoTransform *)0x0)) {
-    this_01 = (pGVar1->fields).Circle;
-    fVar3 = (pGVar2->fields)._position2D.y;
-    if (this_01 != (CircleShape2D *)0x0) {
-      (this_01->fields)._center.x = (pGVar2->fields)._position2D.x;
-      (this_01->fields)._center.y = fVar3;
-      pGVar2 = (this_00->fields)._transform;
-      if (pGVar2 != (GizmoTransform *)0x0) {
-        (this_01->fields)._rotationDegrees = (pGVar2->fields)._rotation2DDegrees;
-        fVar3 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_GetRealCircleRadius
-                          (this_00,(MethodInfo *)0x0);
-        RightAngTriangle2D::RightAngTriangle2D_set_XLength
-                  ((RightAngTriangle2D *)this_01,fVar3,(MethodInfo *)0x0);
+      (pGVar2 = (pGVar1->fields).Slider, pGVar2 != (GizmoPlaneSlider2D *)0x0)) &&
+     (pGVar3 = (pGVar2->fields)._transform, pGVar3 != (GizmoTransform *)0x0)) {
+    pCVar4 = (pGVar1->fields).Circle;
+    fVar5 = (pGVar3->fields)._position2D.y;
+    if (pCVar4 != (CircleShape2D *)0x0) {
+      (pCVar4->fields)._center.x = (pGVar3->fields)._position2D.x;
+      (pCVar4->fields)._center.y = fVar5;
+      pGVar3 = (pGVar2->fields)._transform;
+      if (pGVar3 != (GizmoTransform *)0x0) {
+        (pCVar4->fields)._rotationDegrees = (pGVar3->fields)._rotation2DDegrees;
+        fVar5 = GizmoPlaneSlider2D::GizmoPlaneSlider2D_GetRealCircleRadius
+                           (pGVar2,(MethodInfo *)0x0);
+        (pCVar4->fields)._radius = (float)((uint)fVar5 & _UNK_?);
         pGVar1 = (this->fields)._._data;
         if ((pGVar1 != (GizmoPlaneSlider2DControllerData *)0x0) &&
-           ((pGVar1->fields).CircleBorder != (GizmoCircle2DBorder *)0x0)) {
+           (pGVar6 = (pGVar1->fields).CircleBorder, pGVar6 != (GizmoCircle2DBorder *)0x0)) {
           if (cRam_? == '\0') {
-            func_?();
+            FUN_?(&TypeInfo__RTG__IGizmoCircle2DBorderController,0);
+            LOCK();
+            UNLOCK();
             cRam_? = '\x01';
           }
-          iVar4 = *(int *)(in_stack_5 + 8);
-          iVar6 = *(int *)(in_stack_5 + 0x24);
-          if (((iVar4 != 0) &&
-              (iVar4 = *(int *)((uint)(*(int *)(iVar4 + 0xa4) != 0) * 4 + 0xa0 + iVar4), iVar4 != 0)
-              ) && (iVar6 != 0)) {
-            uVar7 = *(uint *)(iVar4 + 0x6c);
-            if (*(uint *)(iVar6 + 0xc) <= uVar7) {
-              func_?();
-              func_?();
-              pcVar8 = (code *)swi(3);
-              (*pcVar8)();
-              return;
+          pGVar2 = (pGVar6->fields)._planeSlider;
+          if (pGVar2 != (GizmoPlaneSlider2D *)0x0) {
+            lVar7 = 0x110;
+            if ((pGVar2->fields)._sharedLookAndFeel == (GizmoPlaneSlider2DLookAndFeel *)0x0) {
+              lVar7 = 0x108;
             }
-            if (*(int *)(iVar6 + 0x10 + uVar7 * 4) != 0) {
-              func_?();
-              return;
+            lVar7 = *(longlong *)((longlong)&pGVar2->klass + lVar7);
+            if ((lVar7 != 0) &&
+               (pIVar8 = (pGVar6->fields)._controllers,
+               pIVar8 != (IGizmoCircle2DBorderController__Array *)0x0)) {
+              uVar9 = *(uint *)(lVar7 + 0x7c);
+              if ((uint)pIVar8->max_length <= uVar9) {
+                FUN_?();
+                UNRECOVERED_JUMPTABLE = (code *)swi(3);
+                (*UNRECOVERED_JUMPTABLE)();
+                return;
+              }
+              pIVar10 = pIVar8->vector[(int)uVar9];
+              if (pIVar10 != (IGizmoCircle2DBorderController *)0x0) {
+                uVar11 = 0;
+                pIVar12 = pIVar10->klass;
+                uVar13._0_1_ = (pIVar12->_1).rank;
+                uVar13._1_1_ = (pIVar12->_1).minimumAlignment;
+                if (uVar13 != 0) {
+                  do {
+                    if (pIVar12->interfaceOffsets[uVar11].interfaceType ==
+                        (Il2CppClass *)TypeInfo__RTG__IGizmoCircle2DBorderController) {
+                      pVVar14 = &(pIVar12->vtable).UpdateHandles +
+                                (pIVar12->interfaceOffsets[uVar11].offset + 2);
+                      UNRECOVERED_JUMPTABLE = pVVar14->methodPtr;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+                      (*UNRECOVERED_JUMPTABLE)(pIVar10,pVVar14->method,UNRECOVERED_JUMPTABLE);
+                      return;
+                    }
+                    uVar11 = uVar11 + 1;
+                  } while (uVar11 < uVar13);
+                }
+                puVar15 = (undefined8 *)
+                          FUN_?(pIVar10,TypeInfo__RTG__IGizmoCircle2DBorderController,2,
+                                        uVar13,unaff_RBX);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+                (*(code *)*puVar15)(pIVar10,puVar15[1],(code *)*puVar15);
+                return;
+              }
             }
           }
+          FUN_?();
+          UNRECOVERED_JUMPTABLE = (code *)swi(3);
+          (*UNRECOVERED_JUMPTABLE)();
+          return;
         }
       }
     }
   }
-  func_?();
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  FUN_?();
+  UNRECOVERED_JUMPTABLE = (code *)swi(3);
+  (*UNRECOVERED_JUMPTABLE)();
   return;
 }
 

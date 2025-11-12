@@ -6,31 +6,35 @@ bool MVWorldObject.dll::MV::WorldObject::MetaData::SubscriptionData::Subscriptio
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__TimeSpan);
+    FUN_?(&TypeInfo__System__TimeSpan);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__DateTime);
-    func_?(&TypeInfo__System__TimeSpan);
+    FUN_?(&TypeInfo__System__DateTime);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__TimeSpan);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__DateTime);
+  if (*(int *)&(TypeInfo__System__DateTime->_1).field_0x1c == 0) {
+    FUN_?();
   }
   d1 = mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
   t2 = mscorlib.dll::System::DateTime::DateTime_op_Subtraction_1
                  (d1,(DateTime)(this->fields).SubscriptionActivateTime._dateData,(MethodInfo *)0x0);
-  t1._ticks = (this->fields).SubscriptionDuration._ticks;
-  if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  TVar1._ticks = (this->fields).SubscriptionDuration._ticks;
+  if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  mscorlib.dll::System::TimeSpan::TimeSpan_op_Subtraction(t1,t2,(MethodInfo *)0x0);
-  if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  TVar1 = mscorlib.dll::System::TimeSpan::TimeSpan_op_Subtraction(TVar1,t2,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  dVar1 = mscorlib.dll::System::TimeSpan::TimeSpan_get_TotalSeconds
-                    ((TimeSpan *)&stack0xfffffff4,(MethodInfo *)0x0);
-  return _UNK_? < dVar1;
+  return 0.0 < (double)TVar1._ticks * _UNK_?;
 }
 
 
@@ -41,28 +45,49 @@ TimeSpan MVWorldObject.dll::MV::WorldObject::MetaData::SubscriptionData::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__DateTime);
-    func_?(&TypeInfo__System__TimeSpan);
+    FUN_?(&TypeInfo__System__DateTime);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__TimeSpan);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__System__DateTime->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__DateTime);
+  if (*(int *)&(TypeInfo__System__DateTime->_1).field_0x1c == 0) {
+    FUN_?();
   }
   d1 = mscorlib.dll::System::DateTime::DateTime_get_UtcNow((MethodInfo *)0x0);
   TVar1 = mscorlib.dll::System::DateTime::DateTime_op_Subtraction_1
                     (d1,(DateTime)(this->fields).SubscriptionActivateTime._dateData,
                      (MethodInfo *)0x0);
-  pTVar2 = TypeInfo__System__TimeSpan;
-  uVar3 = *(undefined4 *)((int)&(this->fields).SubscriptionDuration._ticks + 4);
-  pTVar4 = *(TimeSpan__Class **)&(this->fields).SubscriptionDuration._ticks;
-  if ((TypeInfo__System__TimeSpan->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
-    pTVar4 = pTVar2;
+  uVar2 = (this->fields).SubscriptionDuration._ticks;
+  if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  t1._ticks._4_4_ = uVar3;
-  t1._ticks._0_4_ = pTVar4;
-  TVar1 = mscorlib.dll::System::TimeSpan::TimeSpan_op_Subtraction(t1,TVar1,(MethodInfo *)0x0);
-  return (TimeSpan)TVar1._ticks;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__TimeSpan);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__System__TimeSpan->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (((longlong)(uVar2 ^ TVar1._ticks) < 0) && ((longlong)(uVar2 - TVar1._ticks ^ uVar2) < 0)) {
+    uVar3 = func_?(&TypeInfo__System__OverflowException);
+    this_00 = (OverflowException *)func_?(uVar3);
+    message = (String *)func_?(&StringLiteral_TimeSpan_overflowed_because_the_);
+    mscorlib.dll::System::OverflowException::OverflowException__ctor_1
+              (this_00,message,(MethodInfo *)0x0);
+    uVar3 = func_?(&
+                                MethodInfo__System__TimeSpan__Subtract_MethodInfo__System__TimeSpan_
+                               );
+    FUN_?(this_00,uVar3);
+    pcVar4 = (code *)swi(3);
+    TVar1._ticks = (*pcVar4)();
+    return (TimeSpan)TVar1._ticks;
+  }
+  return (TimeSpan)(uVar2 - TVar1._ticks);
 }
 
 
@@ -74,18 +99,17 @@ SubscriptionData_GetTouristProfileData(MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MV__WorldObject__MetaData__SubscriptionData);
+    FUN_?(&TypeInfo__MV__WorldObject__MetaData__SubscriptionData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__MV__WorldObject__MetaData__SubscriptionData;
-  pSVar1 = (SubscriptionData *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)pSVar1,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
+  pSVar1 = (SubscriptionData *)FUN_?(TypeInfo__MV__WorldObject__MetaData__SubscriptionData);
   if (pSVar1 != (SubscriptionData *)0x0) {
     (pSVar1->fields).SubscriptionType = 0;
     return pSVar1;
   }
-  func_?();
+  FUN_?();
   pcVar2 = (code *)swi(3);
   pSVar1 = (SubscriptionData *)(*pcVar2)();
   return pSVar1;

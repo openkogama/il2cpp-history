@@ -5,28 +5,20 @@ void Assembly-CSharp.dll::LogFileAppender::LogFileAppender_Finalize
                (LogFileAppender *this,MethodInfo *method)
 
 {
-  puStack_1 = &DAT_?;
-  uStack_2 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_2;
-  uStack_3 = 1;
-  pSVar4 = (this->fields).writer;
-  if (pSVar4 != (StreamWriter *)0x0) {
-    (*(code *)(pSVar4->klass->vtable).Close.method)
-              (pSVar4,(pSVar4->klass->vtable).Dispose_1.methodPtr);
-    pFVar5 = (this->fields).fs;
-    if (pFVar5 != (FileStream *)0x0) {
-      (*(code *)(pFVar5->klass->vtable).Close.method)
-                (pFVar5,(pFVar5->klass->vtable).Dispose_1.methodPtr);
-      uStack_3 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-      *unaff_FS_OFFSET = uStack_2;
+  pSVar1 = (this->fields).writer;
+  if (pSVar1 != (StreamWriter *)0x0) {
+    (*(pSVar1->klass->vtable).Close.methodPtr)(pSVar1,(pSVar1->klass->vtable).Close.method);
+    pFVar2 = (this->fields).fs;
+    if (pFVar2 != (FileStream *)0x0) {
+      (*(pFVar2->klass->vtable).Close.methodPtr)(pFVar2,(pFVar2->klass->vtable).Close.method);
       return;
     }
+    FUN_?();
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -38,21 +30,26 @@ void Assembly-CSharp.dll::LogFileAppender::LogFileAppender_Log
 
 {
   if (cRam_? == '\0') {
-    func_?(&::StringLiteral___);
+    FUN_?(&::StringLiteral___);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pSVar1 = (this->fields).writer;
-  pSVar2 = mscorlib.dll::System::String::String_Concat_4
+  pSVar2 = mscorlib.dll::System::String::String_Concat_5
                      (loggerName,::StringLiteral___,message,(MethodInfo *)0x0);
   if (pSVar1 != (StreamWriter *)0x0) {
-    (*(code *)(pSVar1->klass->vtable).WriteLine_1.method)(pSVar1,pSVar2);
+    (*(pSVar1->klass->vtable).WriteLine_1.methodPtr)
+              (pSVar1,pSVar2,(pSVar1->klass->vtable).WriteLine_1.method);
     pSVar1 = (this->fields).writer;
     if (pSVar1 != (StreamWriter *)0x0) {
-      (*(code *)(pSVar1->klass->vtable).Flush.method)(pSVar1);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*(pSVar1->klass->vtable).Flush.methodPtr)(pSVar1,(pSVar1->klass->vtable).Flush.method);
       return;
     }
   }
-  func_?();
+  FUN_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -66,23 +63,54 @@ void Assembly-CSharp.dll::LogFileAppender::LogFileAppender__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__IO__FileStream);
-    func_?(&TypeInfo__System__IO__StreamWriter);
+    FUN_?(&TypeInfo__System__IO__FileStream);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__IO__StreamWriter);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  pFVar1 = (FileStream *)func_?(TypeInfo__System__IO__FileStream);
-  mscorlib.dll::System::IO::FileStream::FileStream__ctor_2
-            (pFVar1,filename,FileMode__Enum_OpenOrCreate,FileAccess__Enum_Write,(MethodInfo *)0x0);
+  pFVar1 = (FileStream *)FUN_?(TypeInfo__System__IO__FileStream);
+  mscorlib.dll::System::IO::FileStream::FileStream__ctor_8
+            (pFVar1,filename,FileMode__Enum_OpenOrCreate,FileAccess__Enum_Write,FileShare__Enum_None
+             ,0x1000,0,FileOptions__Enum_None,(MethodInfo *)0x0);
+  bVar2 = iRam_? != 0;
   (this->fields).fs = pFVar1;
-  func_?(&this->fields,pFVar1);
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&this->fields >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
   pFVar1 = (this->fields).fs;
-  this_00 = (StreamWriter *)func_?(TypeInfo__System__IO__StreamWriter);
+  this_00 = (StreamWriter *)FUN_?(TypeInfo__System__IO__StreamWriter);
   mscorlib.dll::System::IO::StreamWriter::StreamWriter__ctor_1
             (this_00,(Stream *)pFVar1,(MethodInfo *)0x0);
+  bVar2 = iRam_? != 0;
   (this->fields).writer = this_00;
-  func_?(&(this->fields).writer,this_00);
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).writer >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
   return;
 }
 

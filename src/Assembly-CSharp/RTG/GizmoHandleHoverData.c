@@ -2,42 +2,62 @@
 /* GizmoHandleHoverData(Ray, IGizmoHandle, Single) */
 
 void Assembly-CSharp.dll::RTG::GizmoHandleHoverData::GizmoHandleHoverData__ctor
-               (GizmoHandleHoverData *this,Ray hoverRay,IGizmoHandle *gizmoHandle,float hoverEnter3D
-               ,MethodInfo *method)
+               (GizmoHandleHoverData *this,Ray *hoverRay,IGizmoHandle *gizmoHandle,
+               float hoverEnter3D,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__IGizmoHandle);
+    FUN_?(&TypeInfo__RTG__IGizmoHandle);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  if (gizmoHandle != (IGizmoHandle *)0x0) {
-    iVar1 = func_?(0,TypeInfo__RTG__IGizmoHandle,gizmoHandle);
-    (this->fields)._handleId = iVar1;
-    pGVar2 = (Gizmo *)func_?(1,TypeInfo__RTG__IGizmoHandle,gizmoHandle);
-    (this->fields)._gizmo = pGVar2;
-    func_?(&(this->fields)._gizmo,pGVar2);
-    (this->fields)._handleDimension = 2;
-    (this->fields)._hoverRay.m_Origin.x = hoverRay.m_Origin.x;
-    (this->fields)._hoverRay.m_Origin.y = hoverRay.m_Origin.y;
-    (this->fields)._hoverRay.m_Origin.z = hoverRay.m_Origin.z;
-    (this->fields)._hoverRay.m_Direction.x = hoverRay.m_Direction.x;
-    (this->fields)._hoverRay.m_Direction.y = hoverRay.m_Direction.y;
-    (this->fields)._hoverRay.m_Direction.z = hoverRay.m_Direction.z;
-    (this->fields)._hoverEnter3D = hoverEnter3D;
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-                       (&VStack_4,&(this->fields)._hoverRay,hoverEnter3D,(MethodInfo *)0x0);
-    fVar5 = pVVar3->y;
-    fVar6 = pVVar3->z;
-    (this->fields)._hoverPoint.x = pVVar3->x;
-    (this->fields)._hoverPoint.y = fVar5;
-    (this->fields)._hoverPoint.z = fVar6;
+  if (gizmoHandle == (IGizmoHandle *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  iVar2 = FUN_?(0,TypeInfo__RTG__IGizmoHandle,gizmoHandle);
+  (this->fields)._handleId = iVar2;
+  pGVar3 = (Gizmo *)FUN_?(1,TypeInfo__RTG__IGizmoHandle,gizmoHandle);
+  bVar4 = iRam_? != 0;
+  (this->fields)._gizmo = pGVar3;
+  if (bVar4) {
+    uVar5 = (uint)((ulonglong)&(this->fields)._gizmo >> 0xc);
+    uVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+    do {
+      uVar7 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+      puVar8 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+      LOCK();
+      bVar4 = uVar7 == *puVar8;
+      if (bVar4) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar4);
+  }
+  fVar9 = (hoverRay->m_Origin).x;
+  fVar10 = (hoverRay->m_Origin).y;
+  uVar11 = *(undefined8 *)&(hoverRay->m_Origin).z;
+  (this->fields)._handleDimension = 2;
+  fVar12 = (hoverRay->m_Direction).y;
+  fVar13 = (hoverRay->m_Direction).z;
+  (this->fields)._hoverRay.m_Origin.x = fVar9;
+  (this->fields)._hoverRay.m_Origin.y = fVar10;
+  *(undefined8 *)&(this->fields)._hoverRay.m_Origin.z = uVar11;
+  (this->fields)._hoverRay.m_Direction.y = fVar12;
+  (this->fields)._hoverRay.m_Direction.z = fVar13;
+  (this->fields)._hoverEnter3D = hoverEnter3D;
+  uVar14 = (this->fields)._hoverRay.m_Origin.x;
+  uVar15 = (this->fields)._hoverRay.m_Origin.y;
+  uVar16 = (this->fields)._hoverRay.m_Direction.x;
+  fVar9 = (this->fields)._hoverRay.m_Direction.y;
+  fVar10 = (this->fields)._hoverRay.m_Direction.z;
+  fVar12 = (this->fields)._hoverRay.m_Origin.z;
+  (this->fields)._hoverPoint.x = (float)uVar16 * hoverEnter3D + (float)uVar14;
+  (this->fields)._hoverPoint.y = fVar9 * hoverEnter3D + (float)uVar15;
+  (this->fields)._hoverPoint.z = fVar10 * hoverEnter3D + fVar12;
   return;
 }
 
@@ -45,37 +65,74 @@ void Assembly-CSharp.dll::RTG::GizmoHandleHoverData::GizmoHandleHoverData__ctor
 /* GizmoHandleHoverData(Ray, IGizmoHandle, Vector2) */
 
 void Assembly-CSharp.dll::RTG::GizmoHandleHoverData::GizmoHandleHoverData__ctor_1
-               (GizmoHandleHoverData *this,Ray hoverRay,IGizmoHandle *gizmoHandle,Vector2 hoverPt2D,
-               MethodInfo *method)
+               (GizmoHandleHoverData *this,Ray *hoverRay,IGizmoHandle *gizmoHandle,Vector2 hoverPt2D
+               ,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__IGizmoHandle);
+    FUN_?(&TypeInfo__RTG__IGizmoHandle);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
-  if (gizmoHandle != (IGizmoHandle *)0x0) {
-    iVar1 = func_?(0,TypeInfo__RTG__IGizmoHandle,gizmoHandle);
-    (this->fields)._handleId = iVar1;
-    pGVar2 = (Gizmo *)func_?(1,TypeInfo__RTG__IGizmoHandle,gizmoHandle);
-    (this->fields)._gizmo = pGVar2;
-    func_?(&(this->fields)._gizmo,pGVar2);
-    (this->fields)._handleDimension = 1;
-    (this->fields)._hoverRay.m_Origin.x = hoverRay.m_Origin.x;
-    (this->fields)._hoverRay.m_Origin.y = hoverRay.m_Origin.y;
-    (this->fields)._hoverRay.m_Origin.z = hoverRay.m_Origin.z;
-    (this->fields)._hoverRay.m_Direction.x = hoverRay.m_Direction.x;
-    (this->fields)._hoverRay.m_Direction.y = hoverRay.m_Direction.y;
-    (this->fields)._hoverRay.m_Direction.z = hoverRay.m_Direction.z;
-    (this->fields)._hoverPoint.x = hoverPt2D.x;
-    (this->fields)._hoverPoint.y = hoverPt2D.y;
-    (this->fields)._hoverPoint.z = 0.0;
+  if (gizmoHandle == (IGizmoHandle *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar3 = (code *)swi(3);
-  (*pcVar3)();
+  iVar2 = FUN_?(0,TypeInfo__RTG__IGizmoHandle,gizmoHandle);
+  (this->fields)._handleId = iVar2;
+  pGVar3 = (Gizmo *)FUN_?(1,TypeInfo__RTG__IGizmoHandle,gizmoHandle);
+  bVar4 = iRam_? != 0;
+  (this->fields)._gizmo = pGVar3;
+  if (bVar4) {
+    uVar5 = (uint)((ulonglong)&(this->fields)._gizmo >> 0xc);
+    uVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+    do {
+      uVar7 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+      puVar8 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+      LOCK();
+      bVar4 = uVar7 == *puVar8;
+      if (bVar4) {
+        *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar4);
+  }
+  fVar9 = (hoverRay->m_Origin).x;
+  fVar10 = (hoverRay->m_Origin).y;
+  uVar11 = *(undefined8 *)&(hoverRay->m_Origin).z;
+  (this->fields)._handleDimension = 1;
+  fVar12 = (hoverRay->m_Direction).y;
+  fVar13 = (hoverRay->m_Direction).z;
+  (this->fields)._hoverRay.m_Origin.x = fVar9;
+  (this->fields)._hoverRay.m_Origin.y = fVar10;
+  *(undefined8 *)&(this->fields)._hoverRay.m_Origin.z = uVar11;
+  (this->fields)._hoverRay.m_Direction.y = fVar12;
+  (this->fields)._hoverRay.m_Direction.z = fVar13;
+  (this->fields)._hoverPoint.x = hoverPt2D.x;
+  (this->fields)._hoverPoint.y = hoverPt2D.y;
+  (this->fields)._hoverPoint.z = 0.0;
   return;
+}
+
+
+/* Ray get_HoverRay() */
+
+Ray * Assembly-CSharp.dll::RTG::GizmoHandleHoverData::GizmoHandleHoverData_get_HoverRay
+                (Ray *__return_storage_ptr__,GizmoHandleHoverData *this,MethodInfo *method)
+
+{
+  fVar1 = (this->fields)._hoverRay.m_Origin.y;
+  uVar2 = *(undefined8 *)&(this->fields)._hoverRay.m_Origin.z;
+  fVar3 = (this->fields)._hoverRay.m_Direction.y;
+  fVar4 = (this->fields)._hoverRay.m_Direction.z;
+  (__return_storage_ptr__->m_Origin).x = (this->fields)._hoverRay.m_Origin.x;
+  (__return_storage_ptr__->m_Origin).y = fVar1;
+  *(undefined8 *)&(__return_storage_ptr__->m_Origin).z = uVar2;
+  (__return_storage_ptr__->m_Direction).y = fVar3;
+  (__return_storage_ptr__->m_Direction).z = fVar4;
+  return __return_storage_ptr__;
 }
 

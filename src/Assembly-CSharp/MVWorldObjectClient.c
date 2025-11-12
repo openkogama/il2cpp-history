@@ -6,53 +6,371 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_AddPreviewBox
 
 {
   if (cRam_? == '\0') {
-    func_?(&PreviewBox_MethodInfo__UnityEngine__GameObject__AddComponent<PreviewBox>__);
-    func_?(&
-                    PreviewBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<PreviewBox>__
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&StringLiteral_PreviewBox);
+    FUN_?(&PreviewBox_MethodInfo__UnityEngine__GameObject__AddComponent<PreviewBox>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  PreviewBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<PreviewBox>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_PreviewBox);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pGVar1 = (this->fields).gameObject;
-  if (pGVar1 != (GameObject *)0x0) {
-    this_00 = (PreviewBox *)
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-              GameObject_GetComponentInChildren_1
-                        (pGVar1,
-                         PreviewBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<PreviewBox>__
+  pMVar1 = PreviewBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<PreviewBox>__;
+  pGVar2 = (this->fields).gameObject;
+  if (pGVar2 == (GameObject *)0x0) goto code_?;
+  if ((PreviewBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<PreviewBox>__->
+      field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(
+                 PreviewBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<PreviewBox>__
+                 );
+  }
+  this_00 = (Component *)
+            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentInChildren_3
+                      (pGVar2,0,((pMVar1->field7_0x38).rgctx_data)->method);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (this_00 == (Component *)0x0) {
+code_?:
+    pGVar2 = MVWorldObjectClient_CreateBox
+                        (this,StringLiteral_PreviewBox,_UNK_?,(MethodInfo *)0x0);
+    if (pGVar2 == (GameObject *)0x0) goto code_?;
+    this_00 = (Component *)
+              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                        (pGVar2,
+                         PreviewBox_MethodInfo__UnityEngine__GameObject__AddComponent<PreviewBox>__)
+    ;
+  }
+  else {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((this_00->fields)._.m_CachedPtr == (void *)0x0) goto code_?;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__PrefabPool);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pPVar3 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar3 == (PrefabPool *)0x0) {
+code_?:
+    FUN_?();
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
+    return;
+  }
+  pMVar5 = (pPVar3->fields).previewBoxMaterial;
+  pVVar6 = MVWorldObjectClient_GetBoundsCornersLocal
+                      (this,BoundsContext__Enum_BoxVisualization,(MethodInfo *)0x0);
+  if (this_00 == (Component *)0x0) goto code_?;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  UnityEngine__MeshFilter_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshFilter>__
+                  ,pMVar5,pVVar6,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshRenderer>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__SharedCubeFunctions);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar7 = this_00[1].monitor;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pMVar7 == (MonitorData *)0x0) {
+code_?:
+    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        (this_00,(MethodInfo *)0x0);
+    if (pGVar2 == (GameObject *)0x0) goto code_?;
+    pOVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                        (pGVar2,
+                         UnityEngine__MeshRenderer_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshRenderer>__
                         );
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+    bVar9 = iRam_? != 0;
+    this_00[1].monitor = (MonitorData *)pOVar8;
+    if (bVar9) {
+      uVar10 = (uint)((ulonglong)&this_00[1].monitor >> 0xc);
+      uVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6);
+      do {
+        uVar12 = *(ulonglong *)(uVar11 * 8 + 0xADDR);
+        puVar13 = (ulonglong *)(uVar11 * 8 + 0xADDR);
+        LOCK();
+        bVar9 = uVar12 == *puVar13;
+        if (bVar9) {
+          *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar9);
     }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      pGVar1 = MVWorldObjectClient_CreateBox(this,StringLiteral_PreviewBox,1.005,(MethodInfo *)0x0);
-      if (pGVar1 == (GameObject *)0x0) goto code_?;
-      this_00 = (PreviewBox *)
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                          (pGVar1,
-                           PreviewBox_MethodInfo__UnityEngine__GameObject__AddComponent<PreviewBox>__
-                          );
+  }
+  else {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
+    if (*(longlong *)(pMVar7 + 0x10) == 0) goto code_?;
+  }
+  if ((Renderer *)this_00[1].monitor == (Renderer *)0x0) goto code_?;
+  UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_SetMaterial
+            ((Renderer *)this_00[1].monitor,pMVar5,(MethodInfo *)0x0);
+  pvVar14 = this_00[1].fields._.m_CachedPtr;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pvVar14 == (void *)0x0) {
+code_?:
+    pGVar2 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        (this_00,(MethodInfo *)0x0);
+    if (pGVar2 == (GameObject *)0x0) goto code_?;
+    pOVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                        (pGVar2,
+                         UnityEngine__MeshFilter_MethodInfo__UnityEngine__GameObject__AddComponent<UnityEngine::MeshFilter>__
+                        );
+    bVar9 = iRam_? != 0;
+    this_00[1].fields._.m_CachedPtr = pOVar8;
+    if (bVar9) {
+      uVar10 = (uint)((ulonglong)&this_00[1].fields >> 0xc);
+      uVar11 = (ulonglong)((uVar10 & 0x1fffff) >> 6);
+      do {
+        uVar12 = *(ulonglong *)(uVar11 * 8 + 0xADDR);
+        puVar13 = (ulonglong *)(uVar11 * 8 + 0xADDR);
+        LOCK();
+        bVar9 = uVar12 == *puVar13;
+        if (bVar9) {
+          *puVar13 = uVar12 | 1L << (uVar10 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar9);
     }
-    pPVar3 = TypeInfo__PrefabPool->static_fields->instance;
-    if (pPVar3 != (PrefabPool *)0x0) {
-      material = (pPVar3->fields).previewBoxMaterial;
-      corners = MVWorldObjectClient_GetBoundsCornersLocal
-                          (this,BoundsContext__Enum_BoxVisualization,(MethodInfo *)0x0);
-      if (this_00 != (PreviewBox *)0x0) {
-        PreviewBox::PreviewBox_Show(this_00,material,corners,(MethodInfo *)0x0);
-        return;
+  }
+  else {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (*(longlong *)((longlong)pvVar14 + 0x10) == 0) goto code_?;
+  }
+  if ((Renderer *)this_00[1].monitor != (Renderer *)0x0) {
+    pMVar5 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_material
+                        ((Renderer *)this_00[1].monitor,(MethodInfo *)0x0);
+    if (pMVar5 != (Material *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_hideFlags
+                ((Object_1 *)pMVar5,HideFlags__Enum_DontSave,(MethodInfo *)0x0);
+      pMVar15 = this_00[1].fields._.m_CachedPtr;
+      if (pMVar15 != (MeshFilter *)0x0) {
+        pMVar16 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_get_mesh
+                            (pMVar15,(MethodInfo *)0x0);
+        if (pMVar16 != (Mesh *)0x0) {
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Mesh>_UnityEngine__Mesh_
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pvVar14 = (pMVar16->fields)._.m_CachedPtr;
+          if (pvVar14 == (void *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)pMVar16,(MethodInfo *)0x0);
+            pcVar4 = (code *)swi(3);
+            (*pcVar4)();
+            return;
+          }
+          pcVar4 = pcRam_?;
+          if (pcRam_? == (code *)0x0) {
+            pcVar4 = (code *)FUN_?(&UNK_?);
+            if (pcVar4 == (code *)0x0) {
+              uVar17 = func_?(&UNK_?);
+              FUN_?(uVar17,0);
+              pcVar4 = (code *)swi(3);
+              (*pcVar4)();
+              return;
+            }
+          }
+          pcRam_? = pcVar4;
+          (*pcRam_?)(pvVar14);
+          pMVar15 = this_00[1].fields._.m_CachedPtr;
+          if (pMVar15 != (MeshFilter *)0x0) {
+            pMVar16 = UnityEngine.CoreModule.dll::UnityEngine::MeshFilter::MeshFilter_get_mesh
+                                (pMVar15,(MethodInfo *)0x0);
+            if (*(int *)&(TypeInfo__SharedCubeFunctions->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            diagonalWidth = _UNK_?;
+            if (cRam_? == '\0') {
+              FUN_?(&TypeInfo__SharedCubeFunctions,pVVar6,_UNK_?,0);
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            uVar18 = 0;
+            pVVar19 = pVVar6->vector;
+            uVar11 = uVar18;
+            uVar12 = uVar18;
+            if (pVVar6 == (Vector3__Array *)0x0) {
+              FUN_?();
+              pcVar4 = (code *)swi(3);
+              (*pcVar4)();
+              return;
+            }
+            do {
+              uVar10 = (uint)uVar11;
+              if ((uint)pVVar6->max_length <= uVar10) goto DAT_?;
+              uVar17._0_4_ = pVVar19->x;
+              uVar17._4_4_ = pVVar19->y;
+              fVar20 = pVVar19->z;
+              uVar21 = uVar10 + 1 & 0x80000003;
+              if ((int)uVar21 < 0) {
+                uVar21 = (uVar21 - 1 | 0xfffffffc) + 1;
+              }
+              if ((uint)pVVar6->max_length <= uVar21) goto DAT_?;
+              uVar22._0_4_ = pVVar6->vector[(int)uVar21].x;
+              uVar22._4_4_ = pVVar6->vector[(int)uVar21].y;
+              fVar23 = pVVar6->vector[(int)uVar21].z;
+              if (*(int *)&(TypeInfo__SharedCubeFunctions->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              VStack_24._0_8_ = uVar22;
+              VStack_24.z = fVar23;
+              aVStack_25[0]._0_8_ = uVar17;
+              aVStack_25[0].z = fVar20;
+              SharedCubeFunctions::SharedCubeFunctions_AddCubeLine
+                        (pMVar16,aVStack_25,&VStack_24,diagonalWidth,(MethodInfo *)0x0);
+              uVar12 = uVar12 + 1;
+              pVVar19 = pVVar19 + 1;
+              uVar11 = (ulonglong)(uVar10 + 1);
+            } while ((longlong)uVar12 < 4);
+            uVar10 = 4;
+            pVVar19 = pVVar6->vector + 4;
+            lVar26 = 4;
+            do {
+              if ((uint)pVVar6->max_length <= uVar10) goto DAT_?;
+              uVar27._0_4_ = pVVar19->x;
+              uVar27._4_4_ = pVVar19->y;
+              fVar20 = pVVar19->z;
+              uVar21 = uVar10 + 1 & 0x80000003;
+              if ((int)uVar21 < 0) {
+                uVar21 = (uVar21 - 1 | 0xfffffffc) + 1;
+              }
+              if ((uint)pVVar6->max_length <= uVar21 + 4) goto DAT_?;
+              uVar28._0_4_ = pVVar6->vector[(longlong)(int)uVar21 + 4].x;
+              uVar28._4_4_ = pVVar6->vector[(longlong)(int)uVar21 + 4].y;
+              fVar23 = pVVar6->vector[(longlong)(int)uVar21 + 4].z;
+              if (*(int *)&(TypeInfo__SharedCubeFunctions->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              VStack_24._0_8_ = uVar27;
+              VStack_24.z = fVar20;
+              aVStack_25[0]._0_8_ = uVar28;
+              aVStack_25[0].z = fVar23;
+              SharedCubeFunctions::SharedCubeFunctions_AddCubeLine
+                        (pMVar16,&VStack_24,aVStack_25,diagonalWidth,(MethodInfo *)0x0);
+              uVar10 = uVar10 + 1;
+              lVar26 = lVar26 + 1;
+              pVVar19 = pVVar19 + 1;
+            } while (lVar26 < 8);
+            pVVar19 = pVVar6->vector;
+            pVVar29 = pVVar6->vector + 7;
+            uVar11 = uVar18;
+            while (uVar10 = (uint)uVar18, uVar10 < (uint)pVVar6->max_length) {
+              uVar30._0_4_ = pVVar19->x;
+              uVar30._4_4_ = pVVar19->y;
+              fVar20 = pVVar19->z;
+              if ((uint)pVVar6->max_length <= 7 - uVar10) break;
+              uVar31._0_4_ = pVVar29->x;
+              uVar31._4_4_ = pVVar29->y;
+              fVar23 = pVVar29->z;
+              if (*(int *)&(TypeInfo__SharedCubeFunctions->_1).field_0x1c == 0) {
+                FUN_?();
+              }
+              VStack_24._0_8_ = uVar30;
+              VStack_24.z = fVar20;
+              aVStack_25[0]._0_8_ = uVar31;
+              aVStack_25[0].z = fVar23;
+              SharedCubeFunctions::SharedCubeFunctions_AddCubeLine
+                        (pMVar16,&VStack_24,aVStack_25,diagonalWidth,(MethodInfo *)0x0);
+              uVar18 = (ulonglong)(uVar10 + 1);
+              uVar11 = uVar11 + 1;
+              pVVar19 = pVVar19 + 1;
+              pVVar29 = pVVar29 + -1;
+              if (3 < (longlong)uVar11) {
+                return;
+              }
+            }
+DAT_?:
+            FUN_?();
+            pcVar4 = (code *)swi(3);
+            (*pcVar4)();
+            return;
+          }
+        }
       }
     }
   }
 code_?:
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -66,55 +384,87 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_AddSelectionB
 
 {
   if (cRam_? == '\0') {
-    func_?(&SelectionBox_MethodInfo__UnityEngine__GameObject__AddComponent<SelectionBox>__)
-    ;
-    func_?(&
-                    SelectionBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<SelectionBox>__
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&StringLiteral_SelectionBox);
+    FUN_?(&SelectionBox_MethodInfo__UnityEngine__GameObject__AddComponent<SelectionBox>__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  SelectionBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<SelectionBox>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_SelectionBox);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pGVar1 = (this->fields).gameObject;
-  if (pGVar1 != (GameObject *)0x0) {
+  pMVar1 = SelectionBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<SelectionBox>__;
+  pGVar2 = (this->fields).gameObject;
+  if (pGVar2 == (GameObject *)0x0) goto code_?;
+  if ((SelectionBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<SelectionBox>__->
+      field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(
+                 SelectionBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<SelectionBox>__
+                 );
+  }
+  this_00 = (SelectionBox *)
+            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentInChildren_3
+                      (pGVar2,0,((pMVar1->field7_0x38).rgctx_data)->method);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (this_00 == (SelectionBox *)0x0) {
+code_?:
+    pGVar2 = MVWorldObjectClient_CreateBox
+                       (this,StringLiteral_SelectionBox,_UNK_?,(MethodInfo *)0x0);
+    if (pGVar2 == (GameObject *)0x0) goto code_?;
     this_00 = (SelectionBox *)
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-              GameObject_GetComponentInChildren_1
-                        (pGVar1,
-                         SelectionBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<SelectionBox>__
+              UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
+                        (pGVar2,
+                         SelectionBox_MethodInfo__UnityEngine__GameObject__AddComponent<SelectionBox>__
                         );
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+  }
+  else {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      pGVar1 = MVWorldObjectClient_CreateBox
-                         (this,StringLiteral_SelectionBox,1.001,(MethodInfo *)0x0);
-      if (pGVar1 == (GameObject *)0x0) goto code_?;
-      this_00 = (SelectionBox *)
-                UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_AddComponent_1
-                          (pGVar1,
-                           SelectionBox_MethodInfo__UnityEngine__GameObject__AddComponent<SelectionBox>__
-                          );
-    }
-    if (cRam_? == '\0') {
-      func_?();
-      cRam_? = '\x01';
-    }
-    pPVar3 = TypeInfo__PrefabPool->static_fields->instance;
-    if (pPVar3 != (PrefabPool *)0x0) {
-      material = (pPVar3->fields).selectBoxMaterial;
-      corners = MVWorldObjectClient_GetBoundsCornersLocal
-                          (this,BoundsContext__Enum_BoxVisualization,(MethodInfo *)0x0);
-      if (this_00 != (SelectionBox *)0x0) {
-        SelectionBox::SelectionBox_FadeIn(this_00,0.2,material,corners,(MethodInfo *)0x0);
-        return;
-      }
+    if ((this_00->fields)._._._._.m_CachedPtr == (void *)0x0) goto code_?;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__PrefabPool);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pPVar3 = TypeInfo__PrefabPool->static_fields->instance;
+  if (pPVar3 != (PrefabPool *)0x0) {
+    material = (pPVar3->fields).selectBoxMaterial;
+    corners = MVWorldObjectClient_GetBoundsCornersLocal
+                        (this,BoundsContext__Enum_BoxVisualization,(MethodInfo *)0x0);
+    if (this_00 != (SelectionBox *)0x0) {
+      SelectionBox::SelectionBox_FadeIn(this_00,_UNK_?,material,corners,(MethodInfo *)0x0);
+      return;
     }
   }
 code_?:
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;
@@ -129,276 +479,377 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_ApplyData
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__MV__WorldObject__RuntimeVariablesRepository);
-    func_?(&TypeInfo__UnityEngine__Vector3);
-    func_?(&TypeInfo__MV__WorldObject__WorldObjectDataParameters);
-    func_?(&TypeInfo__MV__WorldObject__WorldObjectType);
-    func_?(&StringLiteral_Nan_scale_detected);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__RuntimeVariablesRepository);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__WorldObjectDataParameters);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__WorldObjectType);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Nan_scale_detected);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pOVar1 = (Object *)
-           func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&stack0xfffffffb);
-  this_01 = data;
-  if (data == (Dictionary_2_System_Object_System_Object_ *)0x0) goto code_?;
-  TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-          UIElements::TextureId]::
-          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,pOVar1,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                    );
-  uVar3 = CONCAT44(TypeInfo__System__Int32,TVar2.m_Index);
-  if (TVar2.m_Index == 0) goto code_?;
-  if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) == (TypeInfo__System__Int32->_0).element_class
-     ) {
-    piVar4 = (int32_t *)func_?(TVar2.m_Index);
-    (this->fields)._.id = *piVar4;
-    pOVar1 = (Object *)
-             func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&stack0xfffffffa);
-    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,
-                       pOVar1,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    uVar3 = CONCAT44(TypeInfo__System__Int32,TVar2.m_Index);
-    if (TVar2.m_Index == 0) goto code_?;
-    if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
-        (TypeInfo__System__Int32->_0).element_class) {
-      piVar4 = (int32_t *)func_?(TVar2.m_Index);
-      (this->fields)._.groupId = *piVar4;
-      pOVar1 = (Object *)
-               func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&stack0xfffffff9
-                              );
-      TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,
-                         pOVar1,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        );
-      uVar3 = CONCAT44(TypeInfo__System__Int32,TVar2.m_Index);
-      if (TVar2.m_Index == 0) goto code_?;
-      if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
-          (TypeInfo__System__Int32->_0).element_class) {
-        piVar4 = (int32_t *)func_?(TVar2.m_Index);
-        (this->fields)._.itemId = *piVar4;
-        pOVar1 = (Object *)
-                 func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,
-                                 &stack0xfffffff8);
-        TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine
-                ::UIElements::TextureId]::
-                Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                          ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,
-                           pOVar1,
-                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                          );
-        uVar3 = CONCAT44(TypeInfo__MV__WorldObject__WorldObjectType,TVar2.m_Index);
-        if (TVar2.m_Index == 0) goto code_?;
-        if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
-            (TypeInfo__MV__WorldObject__WorldObjectType->_0).element_class) {
-          piVar4 = (int32_t *)func_?(TVar2.m_Index);
-          (this->fields)._.type = *piVar4;
-          pOVar1 = (Object *)
-                   func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,
-                                   &stack0xfffffff7);
-          TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                  Object,UnityEngine::UIElements::TextureId]::
-                  Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                            ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01
-                             ,pOVar1,
-                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                            );
-          uVar3 = CONCAT44(TypeInfo__UnityEngine__Vector3,TVar2.m_Index);
-          if (TVar2.m_Index == 0) goto code_?;
-          if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
-              (TypeInfo__UnityEngine__Vector3->_0).element_class) {
-            pVVar5 = (Vector3 *)func_?(TVar2.m_Index);
-            uVar3._0_4_ = pVVar5->x;
-            uVar3._4_4_ = pVVar5->y;
-            fVar6 = pVVar5->z;
-            bVar7 = MathFunctions::MathFunctions_VectorIsNan(*pVVar5,(MethodInfo *)0x0);
-            if (bVar7 != 0) {
-              if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__UnityEngine__Debug);
+  pWVar1 = TypeInfo__MV__WorldObject__WorldObjectDataParameters;
+  pDVar2 = (Dictionary_2_System_Object_System_Object_ *)0x0;
+  uStackX_10 = 0;
+  iVar3._0_2_ = (TypeInfo__MV__WorldObject__WorldObjectDataParameters->_0).byval_arg.attrs;
+  iVar3._2_1_ = (TypeInfo__MV__WorldObject__WorldObjectDataParameters->_0).byval_arg.type;
+  iVar3._3_1_ = (TypeInfo__MV__WorldObject__WorldObjectDataParameters->_0).byval_arg.field_0xb;
+  if (iVar3 < 0) {
+    if (((TypeInfo__MV__WorldObject__WorldObjectDataParameters->_0).generic_class ==
+         (Il2CppGenericClass *)0x0) ||
+       (pDVar4 = pDVar2,
+       ((TypeInfo__MV__WorldObject__WorldObjectDataParameters->_1).field_0x6d & 8) == 0)) {
+      pDVar4 = (Dictionary_2_System_Object_System_Object_ *)
+                FUN_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters);
+      FUN_?(&pDVar4->fields,&uStackX_10,(longlong)(int)(pWVar1->_1).instance_size + -0x10);
+      if (iRam_? != 0) {
+        uVar5 = (uint)((ulonglong)&pDVar4->fields >> 0xc);
+        uVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+        do {
+          uVar7 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+          puVar8 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+          LOCK();
+          bVar9 = uVar7 == *puVar8;
+          if (bVar9) {
+            *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar9);
+      }
+    }
+  }
+  else {
+    pDVar4 = (Dictionary_2_System_Object_System_Object_ *)((ulonglong)uStackX_11 << 8);
+  }
+  if ((data != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
+     (pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__get_Item
+                         (data,(Object *)pDVar4,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         ), pOVar10 != (Object *)0x0)) {
+    if ((pOVar10->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+      FUN_?(pOVar10);
+      pcVar11 = (code *)swi(3);
+      (*pcVar11)();
+      return;
+    }
+    (this->fields)._.id = *(int32_t *)&pOVar10[1].klass;
+    uStackX_10 = 1;
+    pOVar10 = (Object *)
+             FUN_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&uStackX_10);
+    pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (data,pOVar10,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if (pOVar10 != (Object *)0x0) {
+      if ((pOVar10->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+        FUN_?(pOVar10);
+        pcVar11 = (code *)swi(3);
+        (*pcVar11)();
+        return;
+      }
+      (this->fields)._.groupId = *(int32_t *)&pOVar10[1].klass;
+      uStackX_10 = 2;
+      pOVar10 = (Object *)
+               FUN_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&uStackX_10);
+      pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__get_Item
+                         (data,pOVar10,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         );
+      if (pOVar10 != (Object *)0x0) {
+        if ((pOVar10->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+          FUN_?(pOVar10);
+          pcVar11 = (code *)swi(3);
+          (*pcVar11)();
+          return;
+        }
+        (this->fields)._.itemId = *(int32_t *)&pOVar10[1].klass;
+        uStackX_10 = 3;
+        pOVar10 = (Object *)
+                 FUN_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&uStackX_10);
+        pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                 Object]::Dictionary_2_System_Object_System_Object__get_Item
+                           (data,pOVar10,
+                            MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                           );
+        if (pOVar10 != (Object *)0x0) {
+          if ((pOVar10->klass->_0).element_class !=
+              (TypeInfo__MV__WorldObject__WorldObjectType->_0).element_class) {
+            FUN_?(pOVar10);
+            pcVar11 = (code *)swi(3);
+            (*pcVar11)();
+            return;
+          }
+          (this->fields)._.type = *(int32_t *)&pOVar10[1].klass;
+          uStackX_10 = 6;
+          pOVar10 = (Object *)
+                   FUN_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&uStackX_10);
+          pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                   Object]::Dictionary_2_System_Object_System_Object__get_Item
+                             (data,pOVar10,
+                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                             );
+          if (pOVar10 != (Object *)0x0) {
+            if ((pOVar10->klass->_0).element_class !=
+                (TypeInfo__UnityEngine__Vector3->_0).element_class) {
+              FUN_?(pOVar10);
+              pcVar11 = (code *)swi(3);
+              (*pcVar11)();
+              return;
+            }
+            pOVar12 = pOVar10[1].klass;
+            fStack_13 = *(float *)&pOVar10[1].monitor;
+            uStack_14 = pOVar12;
+            if (((0x7f800000 < ((uint)pOVar12 & 0x7fffffff)) ||
+                (uStack_14._4_4_ = (uint)((ulonglong)pOVar12 >> 0x20),
+                0x7f800000 < (uStack_14._4_4_ & 0x7fffffff))) || (0x7f800000 < (uint)ABS(fStack_13))
+               ) {
+              if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+                FUN_?();
               }
               UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                         ((Object *)StringLiteral_Nan_scale_detected,(MethodInfo *)0x0);
               if (cRam_? == '\0') {
-                func_?();
+                FUN_?(&TypeInfo__UnityEngine__Vector3);
+                LOCK();
+                UNLOCK();
                 cRam_? = '\x01';
               }
-              pVVar8 = TypeInfo__UnityEngine__Vector3->static_fields;
-              uVar3._0_4_ = (pVVar8->oneVector).x;
-              uVar3._4_4_ = (pVVar8->oneVector).y;
-              fVar6 = (pVVar8->oneVector).z;
+              pOVar12 = *(Object__Class **)&TypeInfo__UnityEngine__Vector3->static_fields->oneVector
+              ;
+              fStack_13 = (TypeInfo__UnityEngine__Vector3->static_fields->oneVector).z;
             }
-            this_00 = (this->fields).transform;
-            if (this_00 == (Transform *)0x0) goto code_?;
-            value.z = fVar6;
-            value.x = (float)(int)uVar3;
-            value.y = (float)(int)((ulonglong)uVar3 >> 0x20);
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                      (this_00,value,(MethodInfo *)0x0);
-            data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(7,data._0_3_);
-            pOVar1 = (Object *)
-                     func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,
-                                     (int)&data + 3);
-            data = (Dictionary_2_System_Object_System_Object_ *)
-                   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                   Object,UnityEngine::UIElements::TextureId]::
-                   Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                             ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                              this_01,pOVar1,
-                              MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                             );
-            if ((data == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
-               (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                 ->_1).naturalAligment <= *(byte *)(*(int *)data + 0xb8) &&
-                (*(Dictionary_2_System_Object_System_Object___Class **)
-                  (*(int *)(*(int *)data + 100) + -4 +
-                  (uint)(
-                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                        ->_1).naturalAligment * 4) ==
-                 TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)
-                ))) {
-              (this->fields)._.data = data;
-              func_?();
-              pOVar1 = (Object *)func_?();
-              bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Object,UnityEngine::UIElements::TextureId]::
-                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                 this_01,pOVar1,
-                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                                );
-              if (bVar7 == 0) {
-                worldObjectType = (this->fields)._.type;
-                if ((TypeInfo__MV__WorldObject__RuntimeVariablesRepository->_1).
-                    cctor_finished_or_no_cctor == 0) {
-                  func_?();
-                }
-                method = (MethodInfo *)&UNK_?;
-                MVWorldObject.dll::MV::WorldObject::RuntimeVariablesRepository::
-                RuntimeVariablesRepository_GetRuntimeVariables(worldObjectType,(MethodInfo *)0x0);
-                method = (MethodInfo *)this;
-                data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
-                (*(code *)(this->klass->vtable).set_RunTimeData.method)();
-              }
-              else {
-                data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(8,data._0_3_);
-                method = (MethodInfo *)&UNK_?;
-                pOVar1 = (Object *)func_?();
-                TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                        Object,UnityEngine::UIElements::TextureId]::
-                        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                  ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                   this_01,pOVar1,
-                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                  );
-                if ((TVar2.m_Index != 0) &&
-                   ((*(byte *)(*(int *)TVar2.m_Index + 0xb8) <
-                     (
-                     TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                     ->_1).naturalAligment ||
-                    (*(Dictionary_2_System_Object_System_Object___Class **)
-                      (*(int *)(*(int *)TVar2.m_Index + 100) + -4 +
-                      (uint)(
-                            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                            ->_1).naturalAligment * 4) !=
-                     TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                    )))) goto code_?;
-                data = (Dictionary_2_System_Object_System_Object_ *)
-                       (this->klass->vtable).get_HasOutputConnector.methodPtr;
-                (*(code *)(this->klass->vtable).set_RunTimeData.method)();
-              }
-              data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(9,data._0_3_);
-              pOVar1 = (Object *)func_?();
-              method = (MethodInfo *)this_01;
-              data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
-              bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Object,UnityEngine::UIElements::TextureId]::
-                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                 this_01,pOVar1,
-                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                                );
-              if (bVar7 != 0) {
-                data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(9,data._0_3_);
-                pOVar1 = (Object *)func_?();
-                TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                        Object,UnityEngine::UIElements::TextureId]::
-                        Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                  ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                   this_01,pOVar1,
-                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                                  );
-                uVar3 = CONCAT44(TypeInfo__System__Int32,TVar2.m_Index);
-                if (TVar2.m_Index == 0) goto code_?;
-                if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
-                    (TypeInfo__System__Int32->_0).element_class) goto code_?;
-                piVar4 = (int32_t *)func_?(TVar2.m_Index);
-                (this->fields)._.ownerActorNr = *piVar4;
-              }
-              data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(10,data._0_3_);
-              pOVar1 = (Object *)func_?();
-              bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Object,UnityEngine::UIElements::TextureId]::
-                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__ContainsKey
-                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                 this_01,pOVar1,
-                                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
-                                );
-              if (bVar7 == 0) {
-                return;
-              }
-              data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(10,data._0_3_);
-              pOVar1 = (Object *)func_?();
-              TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
-                      Object,UnityEngine::UIElements::TextureId]::
-                      Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)
-                                 this_01,pOVar1,
+            obj = (this->fields).transform;
+            if (obj == (Transform *)0x0) {
+              FUN_?();
+              pcVar11 = (code *)swi(3);
+              (*pcVar11)();
+              return;
+            }
+            uStack_14 = pOVar12;
+            if (cRam_? == '\0') {
+              FUN_?(&
+                            void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                           );
+              LOCK();
+              UNLOCK();
+              cRam_? = '\x01';
+            }
+            pvVar15 = (obj->fields)._._.m_CachedPtr;
+            if (pvVar15 == (void *)0x0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+              ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+              pcVar11 = (code *)swi(3);
+              (*pcVar11)();
+              return;
+            }
+            pcVar11 = pcRam_?;
+            if ((pcRam_? == (code *)0x0) &&
+               (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+              uVar16 = func_?(&UNK_?);
+              FUN_?(uVar16,0);
+              pcVar11 = (code *)swi(3);
+              (*pcVar11)();
+              return;
+            }
+            pcRam_? = pcVar11;
+            (*pcRam_?)(pvVar15,&uStack_14);
+            uStackX_10 = 7;
+            pOVar10 = (Object *)
+                     FUN_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&uStackX_10)
+            ;
+            pDVar17 = (Dictionary_2_System_Object_System_Object_ *)
+                      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System
+                      ::Object]::Dictionary_2_System_Object_System_Object__get_Item
+                                (data,pOVar10,
                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                                 );
-              uVar3 = CONCAT44(TypeInfo__System__Int32,TVar2.m_Index);
-              if (TVar2.m_Index == 0) goto code_?;
-              if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) ==
-                  (TypeInfo__System__Int32->_0).element_class) {
-                piVar4 = (int32_t *)func_?(TVar2.m_Index);
-                (this->fields)._.previewOwnerProfileId = *piVar4;
+            pDVar4 = pDVar2;
+            if (pDVar17 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+              bVar18 = (
+                      TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                      ->_1).naturalAligment;
+              if (((pDVar17->klass->_1).naturalAligment < bVar18) ||
+                 (pDVar4 = pDVar17,
+                 (Dictionary_2_System_Object_System_Object___Class *)
+                 (pDVar17->klass->_1).typeHierarchy[(ulonglong)bVar18 - 1] !=
+                 TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)
+                 ) {
+                FUN_?(pDVar17);
+                pcVar11 = (code *)swi(3);
+                (*pcVar11)();
                 return;
               }
             }
-            else {
-code_?:
-              data = (Dictionary_2_System_Object_System_Object_ *)
-                     TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-              ;
-              uVar3 = func_?();
+            bVar9 = iRam_? != 0;
+            (this->fields)._.data = pDVar4;
+            if (bVar9) {
+              uVar5 = (uint)((ulonglong)&(this->fields)._.data >> 0xc);
+              uVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+              do {
+                uVar7 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+                puVar8 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+                LOCK();
+                bVar9 = uVar7 == *puVar8;
+                if (bVar9) {
+                  *puVar8 = uVar7 | 1L << (ulonglong)(uVar5 & 0x3f);
+                }
+                UNLOCK();
+              } while (!bVar9);
             }
+            uStackX_10 = 8;
+            pOVar10 = (Object *)
+                     FUN_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&uStackX_10)
+            ;
+            iVar19 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::
+                    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
+                              ((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                                *)data,pOVar10,
+                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                               ->klass->rgctx_data[0x21].method);
+            if (iVar19 < 0) {
+              worldObjectType = (this->fields)._.type;
+              if (*(int *)&(TypeInfo__MV__WorldObject__RuntimeVariablesRepository->_1).field_0x1c ==
+                  0) {
+                FUN_?();
+              }
+              pDVar2 = MVWorldObject.dll::MV::WorldObject::RuntimeVariablesRepository::
+                        RuntimeVariablesRepository_GetRuntimeVariables
+                                  (worldObjectType,(MethodInfo *)0x0);
+              (*(this->klass->vtable).set_RunTimeData.methodPtr)
+                        (this,pDVar2,(this->klass->vtable).set_RunTimeData.method);
+            }
+            else {
+              uStackX_10 = 8;
+              pOVar10 = (Object *)
+                       FUN_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,
+                                     &uStackX_10);
+              pDVar4 = (Dictionary_2_System_Object_System_Object_ *)
+                        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                        Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
+                                  (data,pOVar10,
+                                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                  );
+              if (pDVar4 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+                bVar18 = (
+                        TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                        ->_1).naturalAligment;
+                if (((pDVar4->klass->_1).naturalAligment < bVar18) ||
+                   (pDVar2 = pDVar4,
+                   (Dictionary_2_System_Object_System_Object___Class *)
+                   (pDVar4->klass->_1).typeHierarchy[(ulonglong)bVar18 - 1] !=
+                   TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   )) {
+                  FUN_?(pDVar4);
+                  pcVar11 = (code *)swi(3);
+                  (*pcVar11)();
+                  return;
+                }
+              }
+              (*(this->klass->vtable).set_RunTimeData.methodPtr)
+                        (this,pDVar2,(this->klass->vtable).set_RunTimeData.method);
+            }
+            uStackX_10 = 9;
+            pOVar10 = (Object *)
+                     FUN_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&uStackX_10)
+            ;
+            iVar19 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::
+                    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
+                              ((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                                *)data,pOVar10,
+                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                               ->klass->rgctx_data[0x21].method);
+            if (-1 < iVar19) {
+              uStackX_10 = 9;
+              pOVar10 = (Object *)
+                       FUN_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,
+                                     &uStackX_10);
+              pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                       Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
+                                 (data,pOVar10,
+                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                 );
+              if (pOVar10 == (Object *)0x0) goto code_?;
+              if ((pOVar10->klass->_0).element_class !=
+                  *(Il2CppClass **)(lRam_? + 0x40)) {
+                FUN_?(pOVar10,lRam_?);
+                pcVar11 = (code *)swi(3);
+                (*pcVar11)();
+                return;
+              }
+              (this->fields)._.ownerActorNr = *(int32_t *)&pOVar10[1].klass;
+            }
+            uStackX_10 = 10;
+            pOVar10 = (Object *)
+                     FUN_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&uStackX_10)
+            ;
+            iVar19 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Object,UnityEngine::UIElements::StyleComplexSelector+PseudoStateData]::
+                    Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData__FindEntry
+                              ((Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
+                                *)data,pOVar10,
+                               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__ContainsKey_System__Object_
+                               ->klass->rgctx_data[0x21].method);
+            if (-1 < iVar19) {
+              uStackX_10 = 10;
+              pOVar10 = (Object *)
+                       FUN_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,
+                                     &uStackX_10);
+              pOVar10 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                       Object,System::Object]::Dictionary_2_System_Object_System_Object__get_Item
+                                 (data,pOVar10,
+                                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                                 );
+              if (pOVar10 == (Object *)0x0) goto code_?;
+              if ((pOVar10->klass->_0).element_class !=
+                  *(Il2CppClass **)(lRam_? + 0x40)) {
+                FUN_?(pOVar10,lRam_?);
+                pcVar11 = (code *)swi(3);
+                (*pcVar11)();
+                return;
+              }
+              (this->fields)._.previewOwnerProfileId = *(int32_t *)&pOVar10[1].klass;
+            }
+            return;
           }
         }
       }
     }
   }
 code_?:
-  func_?(uVar3);
-code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -416,158 +867,213 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_Clone
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__MV__WorldObject__WorldObjectDataParameters);
-    func_?(&StringLiteral_This_is_a_hack_created_for_spawn);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__WorldObjectDataParameters);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_This_is_a_hack_created_for_spawn);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar1 = this;
-  pOVar2 = (Object *)
-           (*(code *)(this->klass->vtable).get_RunTimeData.method)
-                     (this,(this->klass->vtable).set_RunTimeData.methodPtr);
-  pDVar3 = (Dictionary_2_System_Object_System_Object_ *)
-           ObscuredTypesConverter::ObscuredTypesConverter_CreateUnObscuredValue
-                     (pOVar2,(MethodInfo *)0x0);
-  if ((pDVar3 == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
-     (((TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-       naturalAligment <= (pDVar3->klass->_1).naturalAligment &&
-      ((Dictionary_2_System_Object_System_Object___Class *)
-       (pDVar3->klass->_1).typeHierarchy
-       [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-        naturalAligment - 1] ==
-       TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)))) {
-    (pMVar1->fields)._.runTimeData = pDVar3;
-    func_?(&(pMVar1->fields)._.runTimeData,pDVar3);
-    this_01 = (Int32__Array *)
-              MVWorldObject.dll::MV::WorldObject::MVWorldObject::
-              MVWorldObject_DeepCopyWorldObjectDataParameters
-                        ((MVWorldObject *)pMVar1,(MethodInfo *)0x0);
-    pIVar4 = this_01;
-    (*(code *)(pMVar1->klass->vtable).set_RunTimeData.method)
-              (pMVar1,(pMVar1->fields)._.runTimeData,
-               (pMVar1->klass->vtable).get_HasOutputConnector.methodPtr);
-    this = (MVWorldObjectClient *)((uint)this & 0xffffff);
-    key = (Dictionary_2_System_Int32_MVWorldObjectClient___Class *)
-          func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,(int)&this + 3);
-    pCVar5 = cloneBookkeeping;
-    if (cloneBookkeeping != (CloneBookkeeping *)0x0) {
-      pOVar2 = (Object *)func_?(TypeInfo__System__Int32);
-      if (this_01 != (Int32__Array *)0x0) {
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__set_Item
-                  ((Dictionary_2_System_Object_System_Object_ *)this_01,(Object *)key,pOVar2,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                  );
-        pOVar2 = (Object *)func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters);
-        pOVar6 = (Object *)func_?(TypeInfo__System__Int32,&stack0xffffffe8);
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__set_Item
-                  ((Dictionary_2_System_Object_System_Object_ *)pIVar4,pOVar2,pOVar6,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                  );
-        if (((pMVar1->fields)._.ownerActorNr == -1) && (ownerActorNumber == 0)) {
-          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-            this = (MVWorldObjectClient *)TypeInfo__UnityEngine__Debug;
-            func_?();
+  pOVar1 = (Object *)(*(this->klass->vtable).get_RunTimeData.methodPtr)(this);
+  pDVar2 = (Dictionary_2_System_Object_System_Object_ *)
+            ObscuredTypesConverter::ObscuredTypesConverter_CreateUnObscuredValue
+                      (pOVar1,(MethodInfo *)0x0);
+  key = (Dictionary_2_System_Object_System_Object_ *)0x0;
+  pDVar3 = key;
+  if (pDVar2 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    bVar4 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
+            .naturalAligment;
+    if (((pDVar2->klass->_1).naturalAligment < bVar4) ||
+       (pDVar3 = pDVar2,
+       (Dictionary_2_System_Object_System_Object___Class *)
+       (pDVar2->klass->_1).typeHierarchy[(ulonglong)bVar4 - 1] !=
+       TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
+      FUN_?(pDVar2);
+      pcVar5 = (code *)swi(3);
+      pMVar6 = (MVWorldObjectClient *)(*pcVar5)();
+      return pMVar6;
+    }
+  }
+  bVar7 = iRam_? != 0;
+  (this->fields)._.runTimeData = pDVar3;
+  if (bVar7) {
+    uVar8 = (uint)((ulonglong)&(this->fields)._.runTimeData >> 0xc);
+    lVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar10 = *(ulonglong *)(lVar9 + 0xADDR);
+      puVar11 = (ulonglong *)(lVar9 + 0xADDR);
+      LOCK();
+      bVar7 = uVar10 == *puVar11;
+      if (bVar7) {
+        *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar7);
+  }
+  pDVar3 = MVWorldObject.dll::MV::WorldObject::MVWorldObject::
+            MVWorldObject_DeepCopyWorldObjectDataParameters((MVWorldObject *)this,(MethodInfo *)0x0)
+  ;
+  pIVar12 = (this->klass->vtable).set_RunTimeData.methodPtr;
+  (*pIVar12)(this,(this->fields)._.runTimeData,(this->klass->vtable).set_RunTimeData.method);
+  uVar8 = uStackX_8;
+  pWVar13 = TypeInfo__MV__WorldObject__WorldObjectDataParameters;
+  uStackX_8 = uStackX_8 & 0xffffff00;
+  iVar14._0_2_ = (TypeInfo__MV__WorldObject__WorldObjectDataParameters->_0).byval_arg.attrs;
+  iVar14._2_1_ = (TypeInfo__MV__WorldObject__WorldObjectDataParameters->_0).byval_arg.type;
+  iVar14._3_1_ = (TypeInfo__MV__WorldObject__WorldObjectDataParameters->_0).byval_arg.field_0xb;
+  if (iVar14 < 0) {
+    if (((TypeInfo__MV__WorldObject__WorldObjectDataParameters->_0).generic_class ==
+         (Il2CppGenericClass *)0x0) ||
+       (((TypeInfo__MV__WorldObject__WorldObjectDataParameters->_1).field_0x6d & 8) == 0)) {
+      key = (Dictionary_2_System_Object_System_Object_ *)
+            FUN_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters);
+      FUN_?(&key->fields,&uStackX_8,(longlong)(int)(pWVar13->_1).instance_size + -0x10);
+      if (iRam_? != 0) {
+        uVar8 = (uint)((ulonglong)&key->fields >> 0xc);
+        lVar9 = (ulonglong)((uVar8 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar10 = *(ulonglong *)(lVar9 + 0xADDR);
+          puVar11 = (ulonglong *)(lVar9 + 0xADDR);
+          LOCK();
+          bVar7 = uVar10 == *puVar11;
+          if (bVar7) {
+            *puVar11 = uVar10 | 1L << (uVar8 & 0x3f);
           }
-          this = (MVWorldObjectClient *)0x0;
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-                    ((Object *)StringLiteral_This_is_a_hack_created_for_spawn,(MethodInfo *)0x0);
-          this = (MVWorldObjectClient *)&stack0xfffffffa;
-          pOVar2 = (Object *)func_?();
-          pOVar6 = (Object *)func_?();
-          pIVar4 = (Int32__Array *)
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-          ;
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__set_Item
-                    ((Dictionary_2_System_Object_System_Object_ *)
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                     ,pOVar2,pOVar6,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                    );
-        }
-        else {
-          this = (MVWorldObjectClient *)&stack0xfffffffa;
-          pIVar4 = (Int32__Array *)func_?();
-          pOVar2 = (Object *)func_?();
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-          Dictionary_2_System_Object_System_Object__set_Item
-                    ((Dictionary_2_System_Object_System_Object_ *)pIVar4,(Object *)pIVar4,pOVar2,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                    );
-        }
-        method = (MethodInfo *)&stack0xfffffffa;
-        prototypes = (Dictionary_2_System_Int32_RuntimePrototypeCubeModel_ *)
-                     TypeInfo__MV__WorldObject__WorldObjectDataParameters;
-        worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)&UNK_?;
-        pMVar7 = (MVWorldObjectClient *)func_?();
-        worldObjects = (Dictionary_2_System_Int32_MVWorldObjectClient_ *)&stack0xffffffec;
-        cloneBookkeeping = (CloneBookkeeping *)TypeInfo__System__Int32;
-        cloneGroupId = (int32_t)&UNK_?;
-        ownerActorNumber = func_?();
-        cloneGroupId = (int32_t)
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-        ;
-        this = pMVar7;
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__set_Item
-                  ((Dictionary_2_System_Object_System_Object_ *)pIVar4,(Object *)pMVar7,
-                   (Object *)ownerActorNumber,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                  );
-        cloneGroupId = (int32_t)&stack0xfffffff9;
-        ownerActorNumber = (int32_t)TypeInfo__MV__WorldObject__WorldObjectDataParameters;
-        this = (MVWorldObjectClient *)&UNK_?;
-        pOVar2 = (Object *)func_?();
-        this = (MVWorldObjectClient *)&stack0xffffffe4;
-        pOVar6 = (Object *)func_?();
-        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
-        Dictionary_2_System_Object_System_Object__set_Item
-                  ((Dictionary_2_System_Object_System_Object_ *)pIVar4,pOVar2,pOVar6,
-                   MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
-                  );
-        pMVar7 = KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
-                           ((Dictionary_2_System_Object_System_Object_ *)pIVar4,worldObjects,
-                            prototypes,(MethodInfo *)0x0);
-        if ((pMVar7 != (MVWorldObjectClient *)0x0) &&
-           (this_00 = (pCVar5->fields).worldObjectIdsMaps,
-           this_00 != (Dictionary_2_System_Int32_System_Int32_ *)0x0)) {
-          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
-          Dictionary_2_System_Int32_System_Int32__Add
-                    (this_00,(pMVar1->fields)._.id,(pMVar7->fields)._.id,
-                     MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_);
-          this_02 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-          if (this_02 != (MVNetworkGame *)0x0) {
-            MVNetworkGame::MVNetworkGame_AddCloneToWorldObjects(this_02,pMVar7,(MethodInfo *)0x0);
-            MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_GetLinksForClone
-                      ((MVWorldObject *)pMVar1,(pCVar5->fields).linkIds,(MethodInfo *)0x0);
-            MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_GetObjectLinksForClone
-                      ((MVWorldObject *)pMVar1,(pCVar5->fields).objectLinkIds,(MethodInfo *)0x0);
-            (pCVar5->fields).cloneIdIncrement = (pCVar5->fields).cloneIdIncrement + 1;
-            return pMVar7;
-          }
-        }
+          UNLOCK();
+        } while (!bVar7);
       }
     }
   }
   else {
-    func_?(pDVar3,
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
+    key = (Dictionary_2_System_Object_System_Object_ *)
+          (CONCAT44(uStackX_c,uVar8) & 0xffffffffffffff00);
   }
-  func_?();
-  pcVar8 = (code *)swi(3);
-  pMVar1 = (MVWorldObjectClient *)(*pcVar8)();
-  return pMVar1;
+  if (cloneBookkeeping != (CloneBookkeeping *)0x0) {
+    uStackX_8 = (cloneBookkeeping->fields).cloneIdIncrement;
+    pOVar1 = (Object *)FUN_?(uRam_?,&uStackX_8);
+    if (pDVar3 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+      uVar15 = CONCAT71((int7)((ulonglong)pIVar12 >> 8),1);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__TryInsert
+                (pDVar3,(Object *)key,pOVar1,(InsertionBehavior__Enum)uVar15,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                 ->klass->rgctx_data[0x22].method);
+      uStackX_8 = CONCAT31(uStackX_8._1_3_,1);
+      pOVar1 = (Object *)
+                FUN_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&uStackX_8);
+      uStackX_8 = cloneGroupId;
+      pOVar16 = (Object *)FUN_?(uRam_?,&uStackX_8);
+      uVar15 = CONCAT71((int7)((ulonglong)uVar15 >> 8),1);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__TryInsert
+                (pDVar3,pOVar1,pOVar16,(InsertionBehavior__Enum)uVar15,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                 ->klass->rgctx_data[0x22].method);
+      if (((this->fields)._.ownerActorNr == -1) && (ownerActorNumber == 0)) {
+        if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
+                  ((Object *)StringLiteral_This_is_a_hack_created_for_spawn,(MethodInfo *)0x0);
+        uStackX_8 = CONCAT31(uStackX_8._1_3_,9);
+        pOVar1 = (Object *)
+                  FUN_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&uStackX_8);
+        uStackX_8 = 0xffffffff;
+      }
+      else {
+        uStackX_8 = CONCAT31(uStackX_8._1_3_,9);
+        pOVar1 = (Object *)
+                  FUN_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&uStackX_8);
+        uStackX_8 = ownerActorNumber;
+      }
+      pOVar16 = (Object *)FUN_?(uRam_?,&uStackX_8);
+      uVar15 = CONCAT71((int7)((ulonglong)uVar15 >> 8),1);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__TryInsert
+                (pDVar3,pOVar1,pOVar16,(InsertionBehavior__Enum)uVar15,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                 ->klass->rgctx_data[0x22].method);
+      uStackX_8 = CONCAT31(uStackX_8._1_3_,2);
+      pOVar1 = (Object *)
+                FUN_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&uStackX_8);
+      uStackX_8 = (this->fields)._.itemId;
+      pOVar16 = (Object *)FUN_?(uRam_?,&uStackX_8);
+      uVar15 = CONCAT71((int7)((ulonglong)uVar15 >> 8),1);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__TryInsert
+                (pDVar3,pOVar1,pOVar16,(InsertionBehavior__Enum)uVar15,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                 ->klass->rgctx_data[0x22].method);
+      uStackX_8 = CONCAT31(uStackX_8._1_3_,10);
+      pOVar1 = (Object *)
+                FUN_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,&uStackX_8);
+      uStackX_8 = (this->fields)._.previewOwnerProfileId;
+      pOVar16 = (Object *)FUN_?(uRam_?,&uStackX_8);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__TryInsert
+                (pDVar3,pOVar1,pOVar16,
+                 (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar15 >> 8),1),
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__set_Item_System__Object__System__Object_
+                 ->klass->rgctx_data[0x22].method);
+      uVar15 = 0;
+      pMVar6 = KoGaMaPackageClient::KoGaMaPackageClient_WorldObjectFactory
+                          (pDVar3,worldObjects,prototypes,(MethodInfo *)0x0);
+      if ((pMVar6 != (MVWorldObjectClient *)0x0) &&
+         (this_00 = (cloneBookkeeping->fields).worldObjectIdsMaps,
+         this_00 != (Dictionary_2_System_Int32_System_Int32_ *)0x0)) {
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Int32]::
+        Dictionary_2_System_Int32_System_Int32__TryInsert
+                  (this_00,(this->fields)._.id,(pMVar6->fields)._.id,
+                   (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar15 >> 8),2),
+                   MethodInfo__System__Collections__Generic__Dictionary<int,_int>__Add_int__int_->
+                   klass->rgctx_data[0x22].method);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__MVGameControllerBase);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pMVar17 = TypeInfo__MVGameControllerBase->static_fields->instance;
+        if ((((pMVar17 != (MVGameControllerBase *)0x0) &&
+             (pMVar18 = (pMVar17->fields).game, pMVar18 != (MVNetworkGame *)0x0)) &&
+            (pWVar19 = (pMVar18->fields).worldNetwork, pWVar19 != (WorldNetwork *)0x0)) &&
+           (this_01 = (pWVar19->fields)._.worldObjectClientManager,
+           this_01 != (MVWorldObjectClientManagerNetwork *)0x0)) {
+          MVWorldObjectClientManagerNetwork::MVWorldObjectClientManagerNetwork_AddToWorldObjects
+                    (this_01,pMVar6,(MethodInfo *)0x0);
+          MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_GetLinksForClone
+                    ((MVWorldObject *)this,(cloneBookkeeping->fields).linkIds,(MethodInfo *)0x0);
+          MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_GetObjectLinksForClone
+                    ((MVWorldObject *)this,(cloneBookkeeping->fields).objectLinkIds,
+                     (MethodInfo *)0x0);
+          (cloneBookkeeping->fields).cloneIdIncrement =
+               (cloneBookkeeping->fields).cloneIdIncrement + 1;
+          return pMVar6;
+        }
+      }
+    }
+  }
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  pMVar6 = (MVWorldObjectClient *)(*pcVar5)();
+  return pMVar6;
 }
 
 
@@ -577,44 +1083,22 @@ float Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_ComputeObjec
                 (MVWorldObjectClient *this,MethodInfo *method)
 
 {
-  iVar1 = (*(code *)(this->klass->vtable).GetLocalBounds.method)
-                    (&fStack_2,this,3,(this->klass->vtable).Select.methodPtr);
-  fStack_3 = *(float *)(iVar1 + 0xc);
-  uVar4 = *(undefined8 *)(iVar1 + 0x10);
-  fStack_2 = fStack_3 * _UNK_?;
-  uStack_5._0_4_ = (float)uVar4;
-  fVar6 = (float)uStack_5 * _UNK_?;
-  uStack_5._4_4_ = (float)((ulonglong)uVar4 >> 0x20);
-  fVar7 = uStack_5._4_4_ * _UNK_?;
-  uStack_5 = uVar4;
-  fStack_8 = fStack_3;
-  fStack_9 = fStack_3;
-  pVVar10 = (Vector3 *)
-           (*(code *)(this->klass->vtable).get_Scale.method)
-                     (&VStack_11,this,(this->klass->vtable).set_Scale.methodPtr);
-  a.y = fVar6;
-  a.x = fStack_2;
-  a.z = fVar7;
-  pVVar10 = MathFunctions::MathFunctions_Multiply(&VStack_11,a,*pVVar10,(MethodInfo *)0x0);
-  uStack_5._0_4_ = pVVar10->x;
-  uStack_5._4_4_ = pVVar10->y;
-  fStack_2 = pVVar10->z;
-  VStack_11.y = (float)uStack_5 * _UNK_?;
-  VStack_11.z = uStack_5._4_4_ * _UNK_?;
-  fStack_12 = fStack_2 * _UNK_?;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Math);
-    cRam_? = '\x01';
-  }
-  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Math);
-  }
-  dVar13 = (double)(VStack_11.y * VStack_11.y + VStack_11.z * VStack_11.z + fStack_12 * fStack_12);
-  if (0.0 <= dVar13) {
-    return (float)SQRT(dVar13);
-  }
-  func_?();
-  return (float)dVar13;
+  lVar1 = (*(this->klass->vtable).GetLocalBounds.methodPtr)
+                    (auStack_2,this,3,(this->klass->vtable).GetLocalBounds.method);
+  fVar3 = *(float *)(lVar1 + 0xc);
+  uVar4 = *(undefined8 *)(lVar1 + 0x10);
+  puVar5 = (undefined8 *)
+           (*(this->klass->vtable).get_Scale.methodPtr)
+                     (&uStack_6,this,(this->klass->vtable).get_Scale.method);
+  uStack_7._4_4_ = (float)((ulonglong)uVar4 >> 0x20);
+  fStack_8 = (uStack_7._4_4_ + uStack_7._4_4_) * *(float *)(puVar5 + 1) * _UNK_?;
+  uStack_6 = CONCAT44(((float)uVar4 + (float)uVar4) * (float)((ulonglong)*puVar5 >> 0x20) *
+                       _UNK_?,
+                       fVar3 * TypeRef__System__Activator__T._0_4_ * (float)*puVar5 * _UNK_?
+                      );
+  uStack_7 = uVar4;
+  fVar3 = (float)FUN_?(&uStack_6);
+  return fVar3;
 }
 
 
@@ -624,27 +1108,19 @@ float Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_ComputeObjec
                 (MVWorldObjectClient *this,MethodInfo *method)
 
 {
-  iVar1 = (*(code *)(this->klass->vtable).GetLocalBounds.method)
-                    (auStack_2,this,3,(this->klass->vtable).Select.methodPtr);
-  fStack_3 = *(float *)(iVar1 + 0xc);
-  VStack_4._4_8_ = *(undefined8 *)(iVar1 + 0x10);
-  fStack_5 = fStack_3 * _UNK_?;
-  fVar6 = VStack_4.y * _UNK_?;
-  fStack_7 = VStack_4.z * _UNK_?;
-  fStack_8 = fStack_3;
-  fStack_9 = fStack_3;
-  pVVar10 = (Vector3 *)
-           (*(code *)(this->klass->vtable).get_Scale.method)
-                     (&VStack_4,this,(this->klass->vtable).set_Scale.methodPtr);
-  a.y = fVar6;
-  a.x = fStack_5;
-  a.z = fStack_7;
-  pVVar10 = MathFunctions::MathFunctions_Multiply(&VStack_4,a,*pVVar10,(MethodInfo *)0x0);
-  uVar11 = pVVar10->x;
-  uVar12 = pVVar10->y;
-  fVar6 = pVVar10->z * _UNK_?;
-  return (float)uVar12 * _UNK_? * (float)uVar12 * _UNK_? +
-         (float)uVar11 * _UNK_? * (float)uVar11 * _UNK_? + fVar6 * fVar6;
+  lVar1 = (*(this->klass->vtable).GetLocalBounds.methodPtr)
+                    (auStack_2,this,3,(this->klass->vtable).GetLocalBounds.method);
+  fVar3 = *(float *)(lVar1 + 0xc);
+  uVar4 = *(undefined8 *)(lVar1 + 0x10);
+  fVar5 = (float)uVar4;
+  puVar6 = (undefined8 *)
+           (*(this->klass->vtable).get_Scale.methodPtr)
+                     (auStack_7,this,(this->klass->vtable).get_Scale.method);
+  fStack_8 = (float)((ulonglong)uVar4 >> 0x20);
+  fVar9 = (fVar5 + fVar5) * (float)((ulonglong)*puVar6 >> 0x20) * _UNK_?;
+  fVar5 = fVar3 * TypeRef__System__Activator__T._0_4_ * (float)*puVar6 * _UNK_?;
+  fVar3 = (fStack_8 + fStack_8) * *(float *)(puVar6 + 1) * _UNK_?;
+  return fVar9 * fVar9 + fVar5 * fVar5 + fVar3 * fVar3;
 }
 
 
@@ -656,67 +1132,176 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_CreateBox
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__GameObject);
+    FUN_?(&TypeInfo__UnityEngine__GameObject);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pGVar1 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
-  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor
+  pGVar1 = (GameObject *)FUN_?(TypeInfo__UnityEngine__GameObject);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_Internal_CreateGameObject
             (pGVar1,name,(MethodInfo *)0x0);
   if (pGVar1 != (GameObject *)0x0) {
     pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                        (pGVar1,(MethodInfo *)0x0);
     this_00 = (this->fields).gameObject;
-    if (this_00 != (GameObject *)0x0) {
-      value_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                           (this_00,(MethodInfo *)0x0);
-      if (pTVar2 != (Transform *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
-                  (pTVar2,value_00,(MethodInfo *)0x0);
-        pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                           (pGVar1,(MethodInfo *)0x0);
-        if (cRam_? == '\0') {
-          func_?();
-          cRam_? = '\x01';
-        }
-        if (pTVar2 != (Transform *)0x0) {
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                    (pTVar2,TypeInfo__UnityEngine__Vector3->static_fields->zeroVector,
-                     (MethodInfo *)0x0);
-          pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                             (pGVar1,(MethodInfo *)0x0);
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          if (pTVar2 != (Transform *)0x0) {
-            UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                      (pTVar2,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
-                       (MethodInfo *)0x0);
-            pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                               (pGVar1,(MethodInfo *)0x0);
-            if (cRam_? == '\0') {
-              func_?();
-              cRam_? = '\x01';
-            }
-            pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
-            uVar4 = (pVVar3->oneVector).x;
-            uVar5 = (pVVar3->oneVector).y;
-            if (pTVar2 != (Transform *)0x0) {
-              value.y = (float)uVar5 * 4.5408938e-29;
-              value.x = (float)uVar4 * 4.5408938e-29;
-              value.z = (pVVar3->oneVector).z * 4.5408938e-29;
-              UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-                        (pTVar2,value,(MethodInfo *)0x0);
-              return pGVar1;
-            }
-          }
-        }
+    if ((this_00 != (GameObject *)0x0) &&
+       (value = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                          (this_00,(MethodInfo *)0x0), pTVar2 != (Transform *)0x0)) {
+      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_parent
+                (pTVar2,value,(MethodInfo *)0x0);
+      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                         (pGVar1,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Vector3);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
+      pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
+      if (pTVar2 == (Transform *)0x0) {
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        pGVar1 = (GameObject *)(*pcVar4)();
+        return pGVar1;
+      }
+      uStack_5._0_4_ = (pVVar3->zeroVector).x;
+      uStack_5._4_4_ = (pVVar3->zeroVector).y;
+      fStack_6 = (pVVar3->zeroVector).z;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pvVar7 = (pTVar2->fields)._._.m_CachedPtr;
+      if (pvVar7 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+        pcVar4 = (code *)swi(3);
+        pGVar1 = (GameObject *)(*pcVar4)();
+        return pGVar1;
+      }
+      pcVar4 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+        uVar8 = func_?(&UNK_?);
+        FUN_?(uVar8,0);
+        pcVar4 = (code *)swi(3);
+        pGVar1 = (GameObject *)(*pcVar4)();
+        return pGVar1;
+      }
+      pcRam_? = pcVar4;
+      (*pcRam_?)(pvVar7);
+      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                         (pGVar1,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Quaternion);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pQVar9 = TypeInfo__UnityEngine__Quaternion->static_fields;
+      if (pTVar2 == (Transform *)0x0) {
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        pGVar1 = (GameObject *)(*pcVar4)();
+        return pGVar1;
+      }
+      fStack_10 = (pQVar9->identityQuaternion).x;
+      fStack_11 = (pQVar9->identityQuaternion).y;
+      fStack_12 = (pQVar9->identityQuaternion).z;
+      fStack_13 = (pQVar9->identityQuaternion).w;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pvVar7 = (pTVar2->fields)._._.m_CachedPtr;
+      if (pvVar7 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+        pcVar4 = (code *)swi(3);
+        pGVar1 = (GameObject *)(*pcVar4)();
+        return pGVar1;
+      }
+      pcVar4 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+        uVar8 = func_?(&UNK_?);
+        FUN_?(uVar8,0);
+        pcVar4 = (code *)swi(3);
+        pGVar1 = (GameObject *)(*pcVar4)();
+        return pGVar1;
+      }
+      pcRam_? = pcVar4;
+      (*pcRam_?)(pvVar7);
+      pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                         (pGVar1,(MethodInfo *)0x0);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Vector3);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
+      uStack_5._0_4_ = (pVVar3->oneVector).x;
+      uStack_5._4_4_ = (pVVar3->oneVector).y;
+      fVar14 = (pVVar3->oneVector).z * scale;
+      if (pTVar2 == (Transform *)0x0) {
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        pGVar1 = (GameObject *)(*pcVar4)();
+        return pGVar1;
+      }
+      uStack_5 = CONCAT44((float)uStack_5._4_4_ * scale,(float)(undefined4)uStack_5 * scale);
+      fStack_6 = fVar14;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pvVar7 = (pTVar2->fields)._._.m_CachedPtr;
+      if (pvVar7 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+        pcVar4 = (code *)swi(3);
+        pGVar1 = (GameObject *)(*pcVar4)();
+        return pGVar1;
+      }
+      pcVar4 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar4 = (code *)FUN_?(&UNK_?), pcVar4 == (code *)0x0)) {
+        uVar8 = func_?(&UNK_?);
+        FUN_?(uVar8,0);
+        pcVar4 = (code *)swi(3);
+        pGVar1 = (GameObject *)(*pcVar4)();
+        return pGVar1;
+      }
+      pcRam_? = pcVar4;
+      (*pcRam_?)(pvVar7,&uStack_5);
+      return pGVar1;
     }
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  pGVar1 = (GameObject *)(*pcVar6)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  pGVar1 = (GameObject *)(*pcVar4)();
   return pGVar1;
 }
 
@@ -728,175 +1313,196 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_CreateConnect
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Vector3__UnityEngine__Quaternion_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Vector3__UnityEngine__Quaternion_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  cVar1 = (*(code *)(this->klass->vtable).get_HasInputConnector.method)
-                    (this,(this->klass->vtable).get_HasObjectConnector.methodPtr);
+  cVar1 = (*(this->klass->vtable).get_HasInputConnector.methodPtr)
+                     (this,(this->klass->vtable).get_HasInputConnector.method);
   if (cVar1 != '\0') {
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__PrefabPool);
+      FUN_?(&TypeInfo__PrefabPool);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
     pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
     if (pPVar2 == (PrefabPool *)0x0) goto code_?;
     pGVar3 = (pPVar2->fields).logicInputConnectorPrefab;
     puVar4 = (undefined8 *)
-             (*(code *)(this->klass->vtable).get_InputConnectorOffset.method)
-                       (&uStack_5,this,(this->klass->vtable).get_OutputConnectorOffset.methodPtr);
-    uStack_6 = *puVar4;
-    fVar7 = *(float *)(puVar4 + 1);
-    puVar8 = (undefined4 *)
-             (*(code *)(this->klass->vtable).get_InputConnectorRotation.method)
-                       (&uStack_9,this,(this->klass->vtable).get_OutputConnectorRotation.methodPtr)
-    ;
-    uStack_9 = *puVar8;
-    uStack_5 = puVar8[1];
-    uStack_10 = puVar8[2];
-    fStack_11 = (float)puVar8[3];
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+              (*(this->klass->vtable).get_InputConnectorOffset.methodPtr)
+                        (&uStack_5,this,(this->klass->vtable).get_InputConnectorOffset.method);
+    uVar6 = *puVar4;
+    uVar7 = *(undefined4 *)(puVar4 + 1);
+    puVar4 = (undefined8 *)
+              (*(this->klass->vtable).get_InputConnectorRotation.methodPtr)
+                        (&uStack_8,this,(this->klass->vtable).get_InputConnectorRotation.method);
+    uStack_8 = *puVar4;
+    uStack_9 = puVar4[1];
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    position_01.z = fVar7;
-    position_01.x = (float)(undefined4)uStack_6;
-    position_01.y = (float)uStack_6._4_4_;
-    rotation_01.y = (float)uStack_5;
-    rotation_01.x = (float)uStack_9;
-    rotation_01.z = (float)uStack_10;
-    rotation_01.w = fStack_11;
-    pGVar3 = (GameObject *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_7
-                       ((Object *)pGVar3,position_01,rotation_01,
-                        UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Vector3__UnityEngine__Quaternion_
-                       );
+    uStack_5 = uVar6;
+    uStack_10 = uVar7;
+    pGVar3 = (GameObject *)FUN_?(pGVar3);
+    bVar11 = iRam_? != 0;
     (this->fields).inputConnectorObject = pGVar3;
-    func_?(&(this->fields).inputConnectorObject,pGVar3);
+    if (bVar11) {
+      uVar12 = (uint)((ulonglong)&(this->fields).inputConnectorObject >> 0xc);
+      lVar13 = (ulonglong)((uVar12 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar14 = *(ulonglong *)(lVar13 + 0xADDR);
+        puVar15 = (ulonglong *)(lVar13 + 0xADDR);
+        LOCK();
+        bVar11 = uVar14 == *puVar15;
+        if (bVar11) {
+          *puVar15 = uVar14 | 1L << (uVar12 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar11);
+    }
     pGVar3 = (this->fields).inputConnectorObject;
     if (pGVar3 == (GameObject *)0x0) goto code_?;
-    pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                       (pGVar3,(MethodInfo *)0x0);
+    pTVar16 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                        (pGVar3,(MethodInfo *)0x0);
     pGVar3 = (this->fields).gameObject;
     if ((pGVar3 == (GameObject *)0x0) ||
-       (pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                           (pGVar3,(MethodInfo *)0x0), pTVar12 == (Transform *)0x0))
+       (pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (pGVar3,(MethodInfo *)0x0), pTVar16 == (Transform *)0x0))
     goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-              (pTVar12,pTVar13,0,(MethodInfo *)0x0);
+              (pTVar16,pTVar17,0,(MethodInfo *)0x0);
   }
-  cVar1 = (*(code *)(this->klass->vtable).get_HasOutputConnector.method)
-                    (this,(this->klass->vtable).get_HasInputConnector.methodPtr);
+  cVar1 = (*(this->klass->vtable).get_HasOutputConnector.methodPtr)
+                     (this,(this->klass->vtable).get_HasOutputConnector.method);
   if (cVar1 != '\0') {
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__PrefabPool);
+      FUN_?(&TypeInfo__PrefabPool);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
     pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
     if (pPVar2 == (PrefabPool *)0x0) goto code_?;
     pGVar3 = (pPVar2->fields).logicOutputConnectorPrefab;
     puVar4 = (undefined8 *)
-             (*(code *)(this->klass->vtable).get_OutputConnectorOffset.method)
-                       (&uStack_5,this,(this->klass->vtable).get_ObjectConnectorOffset.methodPtr);
-    uStack_6 = *puVar4;
-    fVar7 = *(float *)(puVar4 + 1);
-    puVar8 = (undefined4 *)
-             (*(code *)(this->klass->vtable).get_OutputConnectorRotation.method)
-                       (&uStack_9,this,(this->klass->vtable).get_ObjectConnectorRotation.methodPtr)
-    ;
-    uStack_9 = *puVar8;
-    uStack_5 = puVar8[1];
-    uStack_10 = puVar8[2];
-    fStack_11 = (float)puVar8[3];
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+              (*(this->klass->vtable).get_OutputConnectorOffset.methodPtr)
+                        (&uStack_5,this,(this->klass->vtable).get_OutputConnectorOffset.method);
+    uVar6 = *puVar4;
+    uVar7 = *(undefined4 *)(puVar4 + 1);
+    puVar4 = (undefined8 *)
+              (*(this->klass->vtable).get_OutputConnectorRotation.methodPtr)
+                        (&uStack_8,this,(this->klass->vtable).get_OutputConnectorRotation.method);
+    uVar18 = *puVar4;
+    uVar19 = puVar4[1];
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    position.z = fVar7;
-    position.x = (float)(undefined4)uStack_6;
-    position.y = (float)uStack_6._4_4_;
-    rotation.y = (float)uStack_5;
-    rotation.x = (float)uStack_9;
-    rotation.z = (float)uStack_10;
-    rotation.w = fStack_11;
-    pGVar3 = (GameObject *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_7
-                       ((Object *)pGVar3,position,rotation,
-                        UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Vector3__UnityEngine__Quaternion_
-                       );
+    uStack_5 = uVar6;
+    uStack_10 = uVar7;
+    uStack_8 = uVar18;
+    uStack_9 = uVar19;
+    pGVar3 = (GameObject *)FUN_?(pGVar3);
+    bVar11 = iRam_? != 0;
     (this->fields).outputConnectorObject = pGVar3;
-    func_?(&(this->fields).outputConnectorObject,pGVar3);
+    if (bVar11) {
+      uVar12 = (uint)((ulonglong)&(this->fields).outputConnectorObject >> 0xc);
+      lVar13 = (ulonglong)((uVar12 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar14 = *(ulonglong *)(lVar13 + 0xADDR);
+        puVar15 = (ulonglong *)(lVar13 + 0xADDR);
+        LOCK();
+        bVar11 = uVar14 == *puVar15;
+        if (bVar11) {
+          *puVar15 = uVar14 | 1L << (uVar12 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar11);
+    }
     pGVar3 = (this->fields).outputConnectorObject;
     if (pGVar3 == (GameObject *)0x0) goto code_?;
-    pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                       (pGVar3,(MethodInfo *)0x0);
+    pTVar16 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                        (pGVar3,(MethodInfo *)0x0);
     pGVar3 = (this->fields).gameObject;
     if ((pGVar3 == (GameObject *)0x0) ||
-       (pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                           (pGVar3,(MethodInfo *)0x0), pTVar12 == (Transform *)0x0))
+       (pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                            (pGVar3,(MethodInfo *)0x0), pTVar16 == (Transform *)0x0))
     goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-              (pTVar12,pTVar13,0,(MethodInfo *)0x0);
+              (pTVar16,pTVar17,0,(MethodInfo *)0x0);
   }
-  cVar1 = (*(code *)(this->klass->vtable).get_HasObjectConnector.method)
-                    (this,(this->klass->vtable).OnInputStateChanged.methodPtr);
+  cVar1 = (*(this->klass->vtable).get_HasObjectConnector.methodPtr)
+                     (this,(this->klass->vtable).get_HasObjectConnector.method);
   if (cVar1 == '\0') {
     return;
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PrefabPool);
+    FUN_?(&TypeInfo__PrefabPool);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pPVar2 = TypeInfo__PrefabPool->static_fields->instance;
   if (pPVar2 != (PrefabPool *)0x0) {
     pGVar3 = (pPVar2->fields).logicObjectConnectorPrefab;
     puVar4 = (undefined8 *)
-             (*(code *)(this->klass->vtable).get_ObjectConnectorOffset.method)
-                       (&uStack_5,this,(this->klass->vtable).get_InputConnectorRotation.methodPtr);
-    uStack_6 = *puVar4;
-    fVar7 = *(float *)(puVar4 + 1);
-    puVar8 = (undefined4 *)
-             (*(code *)(this->klass->vtable).get_ObjectConnectorRotation.method)
-                       (&uStack_9,this,(this->klass->vtable).get_DocumentationType.methodPtr);
-    uStack_9 = *puVar8;
-    uStack_5 = puVar8[1];
-    uStack_10 = puVar8[2];
-    fStack_11 = (float)puVar8[3];
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+              (*(this->klass->vtable).get_ObjectConnectorOffset.methodPtr)
+                        (&uStack_5,this,(this->klass->vtable).get_ObjectConnectorOffset.method);
+    uVar6 = *puVar4;
+    uVar7 = *(undefined4 *)(puVar4 + 1);
+    puVar4 = (undefined8 *)
+              (*(this->klass->vtable).get_ObjectConnectorRotation.methodPtr)
+                        (&uStack_8,this,(this->klass->vtable).get_ObjectConnectorRotation.method);
+    uVar18 = *puVar4;
+    uVar19 = puVar4[1];
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    position_00.z = fVar7;
-    position_00.x = (float)(undefined4)uStack_6;
-    position_00.y = (float)uStack_6._4_4_;
-    rotation_00.y = (float)uStack_5;
-    rotation_00.x = (float)uStack_9;
-    rotation_00.z = (float)uStack_10;
-    rotation_00.w = fStack_11;
-    pGVar3 = (GameObject *)
-             UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_7
-                       ((Object *)pGVar3,position_00,rotation_00,
-                        UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Vector3__UnityEngine__Quaternion_
-                       );
+    uStack_5 = uVar6;
+    uStack_10 = uVar7;
+    uStack_8 = uVar18;
+    uStack_9 = uVar19;
+    pGVar3 = (GameObject *)FUN_?(pGVar3);
+    bVar11 = iRam_? != 0;
     (this->fields).objectConnectorObject = pGVar3;
-    func_?(&(this->fields).objectConnectorObject,pGVar3);
+    if (bVar11) {
+      uVar12 = (uint)((ulonglong)&(this->fields).objectConnectorObject >> 0xc);
+      lVar13 = (ulonglong)((uVar12 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar14 = *(ulonglong *)(lVar13 + 0xADDR);
+        puVar15 = (ulonglong *)(lVar13 + 0xADDR);
+        LOCK();
+        bVar11 = uVar14 == *puVar15;
+        if (bVar11) {
+          *puVar15 = uVar14 | 1L << (uVar12 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar11);
+    }
     pGVar3 = (this->fields).objectConnectorObject;
     if (pGVar3 != (GameObject *)0x0) {
-      pTVar12 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                         (pGVar3,(MethodInfo *)0x0);
+      pTVar16 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                          (pGVar3,(MethodInfo *)0x0);
       pGVar3 = (this->fields).gameObject;
       if ((pGVar3 != (GameObject *)0x0) &&
-         (pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                             (pGVar3,(MethodInfo *)0x0), pTVar12 != (Transform *)0x0)) {
+         (pTVar17 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                              (pGVar3,(MethodInfo *)0x0), pTVar16 != (Transform *)0x0)) {
         UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_SetParent_1
-                  (pTVar12,pTVar13,0,(MethodInfo *)0x0);
+                  (pTVar16,pTVar17,0,(MethodInfo *)0x0);
         return;
       }
     }
   }
 code_?:
-  func_?();
-  pcVar14 = (code *)swi(3);
-  (*pcVar14)();
+  FUN_?();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 
@@ -910,92 +1516,213 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_CreateWorldOb
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
-                   );
-    func_?(&TypeInfo__MVGroup);
-    func_?(&TypeInfo__MVRuntimeDataVariables);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVGroup);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVRuntimeDataVariables);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   MVWorldObjectClient_CreateConnectors(this,(MethodInfo *)0x0);
   MVWorldObjectClient_ApplyData(this,data,(MethodInfo *)0x0);
   this_00 = (this->fields).gameObject;
-  value = (String *)
-          (*(code *)(this->klass->vtable).ToString.method)
-                    (this,(this->klass->vtable).get_Position.methodPtr);
-  if (this_00 != (GameObject *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_name
-              ((Object_1 *)this_00,value,(MethodInfo *)0x0);
-    value_00 = (MVRuntimeDataVariables *)func_?();
-    if (cRam_? == '\0') {
-      func_?();
-      func_?();
-      cRam_? = '\x01';
+  name = (String *)
+         (*(this->klass->vtable).ToString.methodPtr)(this,(this->klass->vtable).ToString.method);
+  if (this_00 == (GameObject *)0x0) goto code_?;
+  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_SetName
+            ((Object_1 *)this_00,name,(MethodInfo *)0x0);
+  pMVar1 = (MVRuntimeDataVariables *)FUN_?(TypeInfo__MVRuntimeDataVariables);
+  if (cRam_? == '\0') {
+    FUN_?(&MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<MVRuntimeDataVariable>);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  bVar2 = iRam_? != 0;
+  (pMVar1->fields).owner = this;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&pMVar1->fields >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
+  this_01 = (List_1_MVRuntimeDataVariable_ *)
+            FUN_?(TypeInfo__System__Collections__Generic__List<MVRuntimeDataVariable>);
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_01,
+             MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__List__);
+  iVar7 = iRam_?;
+  (pMVar1->fields).variables = this_01;
+  if (iVar7 != 0) {
+    uVar3 = (uint)((ulonglong)&(pMVar1->fields).variables >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+      iVar7 = iRam_?;
+    } while (!bVar2);
+  }
+  (this->fields).runtimeDataVariables = pMVar1;
+  if (iVar7 != 0) {
+    uVar3 = (uint)((ulonglong)&(this->fields).runtimeDataVariables >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
+  if ((this->fields)._.groupId != -1) {
+    if (worldObjects == (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0)
+    goto code_?;
+    pMVar8 = (MVGroup *)
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
+              ::Dictionary_2_System_Int32_System_Object__get_Item
+                        ((Dictionary_2_System_Int32_System_Object_ *)worldObjects,
+                         (this->fields)._.groupId,
+                         MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
+                        );
+    if (pMVar8 == (MVGroup *)0x0) {
+      (this->fields).group = (MVGroup *)0x0;
     }
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)value_00,ExceptionArgument__Enum_obj,method);
-    (value_00->fields).owner = this;
-    func_?();
-    this_02 = (List_1_MVRuntimeDataVariable_ *)func_?();
-    mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-    __Il2CppFullySharedGenericType]::
-    LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-              ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_02,
-               MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__List__);
-    (value_00->fields).variables = this_02;
-    func_?(&(value_00->fields).variables);
-    (this->fields).runtimeDataVariables = value_00;
-    func_?(&(this->fields).runtimeDataVariables,value_00);
-    if ((this->fields)._.groupId == -1) {
-code_?:
-      pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar1 != (MVNetworkGame *)0x0) &&
-         (this_01 = (pMVar1->fields).itemBusinessLogic, this_01 != (MVItemBusinessLogic *)0x0)) {
-        bVar2 = MVItemBusinessLogic::MVItemBusinessLogic_CanAddItemToInventory
-                          (this_01,(this->fields)._.itemId,(MethodInfo *)0x0);
-        if (bVar2 != 0) {
-          uVar3 = *(undefined4 *)((int)&(this->fields).interactionFlags + 4);
-          piVar4 = &(this->fields).interactionFlags;
-          *(uint *)piVar4 = (uint)*piVar4 | 0x4000;
-          *(undefined4 *)((int)&(this->fields).interactionFlags + 4) = uVar3;
-        }
+    else {
+      bVar9 = (TypeInfo__MVGroup->_1).naturalAligment;
+      if (((pMVar8->klass->_1).naturalAligment < bVar9) ||
+         ((MVGroup__Class *)(pMVar8->klass->_1).typeHierarchy[(ulonglong)bVar9 - 1] !=
+          TypeInfo__MVGroup)) {
+        FUN_?(pMVar8);
+        pcVar10 = (code *)swi(3);
+        (*pcVar10)();
+        return;
+      }
+      (this->fields).group = pMVar8;
+      bVar9 = (TypeInfo__MVGroup->_1).naturalAligment;
+      if (((pMVar8->klass->_1).naturalAligment < bVar9) ||
+         ((MVGroup__Class *)(pMVar8->klass->_1).typeHierarchy[(ulonglong)bVar9 - 1] !=
+          TypeInfo__MVGroup)) {
+        FUN_?(pMVar8);
+        pcVar10 = (code *)swi(3);
+        (*pcVar10)();
         return;
       }
     }
-    else if (this != (MVWorldObjectClient *)0x0) {
-      pMVar5 = (MVGroup *)
-               mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
-               Object]::Dictionary_2_System_Int32_System_Object__get_Item
-                         ((Dictionary_2_System_Int32_System_Object_ *)this,(this->fields)._.groupId,
-                          MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
-                         );
-      if (pMVar5 == (MVGroup *)0x0) {
-        (this->fields).group = (MVGroup *)0x0;
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&(this->fields).group >> 0xc);
+      lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+        puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+        LOCK();
+        bVar2 = uVar5 == *puVar6;
+        if (bVar2) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar2);
+    }
+    pMVar8 = (this->fields).group;
+    if (pMVar8 == (MVGroup *)0x0) goto code_?;
+    (*(pMVar8->klass->vtable).AddChild.methodPtr)
+              (pMVar8,this,(pMVar8->klass->vtable).AddChild.method);
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar11 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar11 != (MVGameControllerBase *)0x0) &&
+     (pMVar12 = (pMVar11->fields).game, pMVar12 != (MVNetworkGame *)0x0)) {
+    pMVar13 = (pMVar12->fields).itemBusinessLogic;
+    key = (this->fields)._.itemId;
+    if (pMVar13 != (MVItemBusinessLogic *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__ContainsKey_int_
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__get_Item_int_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
-      else {
-        if (((pMVar5->klass->_1).naturalAligment < (TypeInfo__MVGroup->_1).naturalAligment) ||
-           ((MVGroup__Class *)
-            (pMVar5->klass->_1).typeHierarchy[(TypeInfo__MVGroup->_1).naturalAligment - 1] !=
-            TypeInfo__MVGroup)) goto code_?;
-        (this->fields).group = pMVar5;
-        if (((pMVar5->klass->_1).naturalAligment < (TypeInfo__MVGroup->_1).naturalAligment) ||
-           ((MVGroup__Class *)
-            (pMVar5->klass->_1).typeHierarchy[(TypeInfo__MVGroup->_1).naturalAligment - 1] !=
-            TypeInfo__MVGroup)) goto code_?;
-      }
-      func_?();
-      pMVar5 = (this->fields).group;
-      if (pMVar5 != (MVGroup *)0x0) {
-        (*(code *)(pMVar5->klass->vtable).AddChild.method)(pMVar5,this);
-        goto code_?;
+      pDVar14 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(pMVar13->fields).items;
+      if (pDVar14 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+        iVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine
+                 ::Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                           (pDVar14,key,
+                            MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__ContainsKey_int_
+                            ->klass->rgctx_data[0x21].method);
+        pDVar14 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(pMVar13->fields).items;
+        if (pDVar14 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+          if (iVar15 < 0) {
+            iVar15 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                     Int32,UnityEngine::Vector3]::
+                     Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                               (pDVar14,key,
+                                MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__ContainsKey_int_
+                                ->klass->rgctx_data[0x21].method);
+            if (iVar15 < 0) {
+              return;
+            }
+            pDVar14 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(pMVar13->fields).items;
+            if (pDVar14 == (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0)
+            goto code_?;
+          }
+          pOVar16 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                    Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                              ((Dictionary_2_System_Int32_System_Object_ *)pDVar14,key,
+                               MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__get_Item_int_
+                              );
+          if (pOVar16 != (Object *)0x0) {
+            if (*(char *)((longlong)&pOVar16[4].klass + 1) != '\0') {
+              piVar17 = &(this->fields).interactionFlags;
+              *piVar17 = *piVar17 | 0x4000;
+            }
+            return;
+          }
+        }
       }
     }
   }
-  func_?();
 code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar10 = (code *)swi(3);
+  (*pcVar10)();
   return;
 }
 
@@ -1008,13 +1735,15 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_DeSelect
 {
   pMVar1 = this->klass;
   (this->fields).selectedConnector = 0;
-  (*(code *)(pMVar1->vtable).RemoveSelectionBox.method)
-            (this,(pMVar1->vtable).RemovePreviewBox.methodPtr);
+  (*(pMVar1->vtable).RemoveSelectionBox.methodPtr)(this,(pMVar1->vtable).RemoveSelectionBox.method);
   if ((this->fields).selected != 0) {
     pMVar1 = this->klass;
     (this->fields).selected = 0;
-    (*(code *)(pMVar1->vtable).OnSelectedChanged.method)
-              (this,0,(pMVar1->vtable).ValidateObjectLinkTarget.methodPtr);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(pMVar1->vtable).OnSelectedChanged.methodPtr)
+              (this,0,(pMVar1->vtable).OnSelectedChanged.method);
+    return;
   }
   return;
 }
@@ -1037,7 +1766,7 @@ bool Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_Delete
       return 1;
     }
   }
-  func_?();
+  FUN_?();
   pcVar1 = (code *)swi(3);
   bVar2 = (*pcVar1)();
   return bVar2;
@@ -1051,45 +1780,95 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_Destroy
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pGVar1 = (this->fields).gameObject;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)pGVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    pGVar1 = (this->fields).gameObject;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy_1
-              ((Object_1 *)pGVar1,(MethodInfo *)0x0);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  if ((this->fields).initializedFromInventory == 0) {
-    pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar3 == (MVNetworkGame *)0x0) ||
-       (pRVar4 = (pMVar3->fields).runtimeVariableNetworkManager,
-       pRVar4 == (RuntimeVariableNetworkManager *)0x0)) {
-code_?:
-      func_?();
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
-      return;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pGVar1 != (GameObject *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    bVar2 = RuntimeVariableNetworkManager::RuntimeVariableNetworkManager_ContainsRuntimeVariables
-                      (pRVar4,(this->fields)._.id,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-      if ((pMVar3 == (MVNetworkGame *)0x0) ||
-         (pRVar4 = (pMVar3->fields).runtimeVariableNetworkManager,
-         pRVar4 == (RuntimeVariableNetworkManager *)0x0)) goto code_?;
-      RuntimeVariableNetworkManager::RuntimeVariableNetworkManager_RemoveRuntimeDataVariables
-                (pRVar4,(this->fields)._.id,(MethodInfo *)0x0);
+    if ((pGVar1->fields)._.m_CachedPtr != (void *)0x0) {
+      pGVar1 = (this->fields).gameObject;
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy
+                ((Object_1 *)pGVar1,0.0,(MethodInfo *)0x0);
     }
   }
+  if ((this->fields).initializedFromInventory != 0) {
+    return;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar2 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar2 != (MVGameControllerBase *)0x0) &&
+     (pMVar3 = (pMVar2->fields).game, pMVar3 != (MVNetworkGame *)0x0)) {
+    pRVar4 = (pMVar3->fields).runtimeVariableNetworkManager;
+    item = (this->fields)._.id;
+    if (pRVar4 != (RuntimeVariableNetworkManager *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      this_00 = (HashSet_1_System_Int32Enum_ *)(pRVar4->fields).runtimeDataVariables;
+      if (this_00 != (HashSet_1_System_Int32Enum_ *)0x0) {
+        bVar5 = System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32Enum]::
+                HashSet_1_System_Int32Enum__Contains
+                          (this_00,item,
+                           MethodInfo__System__Collections__Generic__HashSet<int>__Contains_int_);
+        if (bVar5 != 0) {
+          pMVar3 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+          if ((pMVar3 == (MVNetworkGame *)0x0) ||
+             (pRVar4 = (pMVar3->fields).runtimeVariableNetworkManager,
+             pRVar4 == (RuntimeVariableNetworkManager *)0x0)) goto DAT_?;
+          RuntimeVariableNetworkManager::RuntimeVariableNetworkManager_RemoveRuntimeDataVariables
+                    (pRVar4,(this->fields)._.id,(MethodInfo *)0x0);
+        }
+        return;
+      }
+    }
+  }
+DAT_?:
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 
@@ -1100,97 +1879,84 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_DestroyRecurs
                (MVWorldObjectClient *wo,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffbc;
-  puVar5 = &stack0xffffffbc;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__GetEnumerator__
-                   );
-    func_?(&TypeInfo__MVGroup);
-    func_?(&TypeInfo__MVWorldObjectClient);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVGroup);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVWorldObjectClient);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  LStack_6._list = (List_1_System_Object_ *)0x0;
-  LStack_6._index = 0;
-  LStack_6._version = 0;
-  LStack_6._current = (Object *)0x0;
-  if (wo != (MVWorldObjectClient *)0x0) {
-    if (((wo->klass->_1).naturalAligment < (TypeInfo__MVGroup->_1).naturalAligment) ||
-       ((MVGroup__Class *)(wo->klass->_1).typeHierarchy[(TypeInfo__MVGroup->_1).naturalAligment - 1]
-        != TypeInfo__MVGroup)) {
-      bVar7 = false;
-    }
-    else {
-      bVar7 = true;
-    }
-    this = (MVGroup *)0x0;
-    if (bVar7) {
-      this = (MVGroup *)wo;
-    }
-    if (this != (MVGroup *)0x0) {
-      this_00 = (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                MVGroup::MVGroup_get_Children(this,(MethodInfo *)0x0);
-      if (this_00 == (List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)0x0)
-      goto code_?;
-      method_00 = (MethodInfo *)&UNK_?;
-      pLVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions::
-               RegexCharClass+SingleRange]::
-               List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__GetEnumerator
-                         (&LStack_9,this_00,
-                          MethodInfo__System__Collections__Generic__List<MVWorldObjectClient>__GetEnumerator__
-                         );
-      LStack_6._list = (List_1_System_Object_ *)pLVar8->_list;
-      LStack_6._index = pLVar8->_index;
-      LStack_6._version = pLVar8->_version;
-      LStack_6._current = *(Object **)&pLVar8->_current;
-      LStack_9._version = 0;
-      uStack_1 = 1;
-      LStack_9._current = (RegexCharClass_SingleRange)&LStack_6;
-      while( true ) {
-        bVar10 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]::
-                List_1_T_Enumerator_System_Object__MoveNext
-                          (&LStack_6,
-                           MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__MoveNext__
-                          );
-        wo_00 = LStack_6._current;
-        if (bVar10 == 0) break;
-        if ((TypeInfo__MVWorldObjectClient->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__MVWorldObjectClient);
-        }
-        MVWorldObjectClient_DestroyRecursive((MVWorldObjectClient *)wo_00,(MethodInfo *)0x0);
-      }
-      uStack_1 = 0xffffffff;
-      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                ((Object *)&LStack_6,
-                 (ExceptionArgument__Enum)
-                 MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__Dispose__
-                 ,method_00);
-      uStack_1 = 0xffffffff;
-    }
-    (*(code *)(wo->klass->vtable).Destroy.method)(wo,(wo->klass->vtable).OnDataUpdate.methodPtr);
-    *unaff_FS_OFFSET = uStack_3;
+  LStack_1._list = (List_1_System_Object_ *)0x0;
+  LStack_1._index = 0;
+  LStack_1._version = 0;
+  LStack_1._current = (Object *)0x0;
+  if (wo == (MVWorldObjectClient *)0x0) {
+code_?:
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-code_?:
-  uVar11 = func_?();
-  func_?(uVar11);
-  pcVar12 = (code *)swi(3);
-  (*pcVar12)();
+  bVar3 = (TypeInfo__MVGroup->_1).naturalAligment;
+  if ((bVar3 <= (wo->klass->_1).naturalAligment) &&
+     ((MVGroup__Class *)(wo->klass->_1).typeHierarchy[(ulonglong)bVar3 - 1] == TypeInfo__MVGroup)) {
+    pLVar4 = MVGroup::MVGroup_get_Children((MVGroup *)wo,(MethodInfo *)0x0);
+    if (pLVar4 == (List_1_MVWorldObjectClient_ *)0x0) goto code_?;
+    if (iRam_? != 0) {
+      uVar5 = (uint)((ulonglong)&uStack_6 >> 0xc);
+      puVar7 = (ulonglong *)((ulonglong)((uVar5 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar8 = *puVar7;
+        LOCK();
+        uVar9 = *puVar7;
+        if (uVar8 == uVar9) {
+          *puVar7 = uVar8 | 1L << (uVar5 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar8 != uVar9);
+    }
+    pLStack_10 = (List_1_T_Enumerator_System_Object_ *)
+                 ((ulonglong)(uint)(pLVar4->fields)._version << 0x20);
+    uStack_11 = 0;
+    LStack_1._8_8_ = pLStack_10;
+    LStack_1._current = (Object *)0x0;
+    uStack_6 = 0;
+    pLStack_10 = &LStack_1;
+    LStack_1._list = (List_1_System_Object_ *)pLVar4;
+    while (bVar12 = mscorlib.dll::System::Collections::Generic::List`1[T]+Enumerator[System::Object]
+                   ::List_1_T_Enumerator_System_Object__MoveNext
+                             (&LStack_1,
+                              MethodInfo__System__Collections__Generic__List_1_T___Enumerator<MVWorldObjectClient>__MoveNext__
+                             ), wo_00 = LStack_1._current, bVar12 != 0) {
+      if (*(int *)&(TypeInfo__MVWorldObjectClient->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      MVWorldObjectClient_DestroyRecursive((MVWorldObjectClient *)wo_00,(MethodInfo *)0x0);
+    }
+  }
+  (*(wo->klass->vtable).Destroy.methodPtr)(wo,(wo->klass->vtable).Destroy.method);
   return;
 }
 
@@ -1198,75 +1964,151 @@ code_?:
 /* Boolean DoesScreenPointHitCollider(Vector3, Collider) */
 
 bool Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_DoesScreenPointHitCollider
-               (MVWorldObjectClient *this,Vector3 point,Collider *collider,MethodInfo *method)
+               (MVWorldObjectClient *this,Vector3 *point,Collider *collider,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CollisionDetectionGlobalBuffers);
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&TypeInfo__UnityEngine__Physics);
+    FUN_?(&TypeInfo__CollisionDetectionGlobalBuffers);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?();
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = MVGameControllerBase::MVGameControllerBase_get_MainCameraManager((MethodInfo *)0x0);
   if ((pMVar1 != (MainCameraManager *)0x0) &&
-     (this_00 = (pMVar1->fields).mainCamera, this_00 != (Camera *)0x0)) {
-    pRVar2 = UnityEngine.CoreModule.dll::UnityEngine::Camera::Camera_ScreenPointToRay_2
-                       ((Ray *)&stack0xffffffcc,this_00,point,(MethodInfo *)0x0);
-    uVar3 = (pRVar2->m_Origin).x;
-    uVar4 = (pRVar2->m_Origin).y;
-    uVar5 = (pRVar2->m_Origin).z;
-    ray.m_Origin.z = (float)uVar5;
-    ray.m_Origin.y = (float)uVar4;
-    ray.m_Origin.x = (float)uVar3;
-    uVar6 = (pRVar2->m_Direction).x;
-    ray.m_Direction.x = (float)uVar6;
-    uVar7._0_4_ = (pRVar2->m_Direction).y;
-    uVar7._4_4_ = (pRVar2->m_Direction).z;
-    if ((TypeInfo__CollisionDetectionGlobalBuffers->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+     (obj = (pMVar1->fields).mainCamera, obj != (Camera *)0x0)) {
+    VStack_2.z = point->z;
+    aPStack_3[0].m_index = (int32_t)point->x;
+    aPStack_3[0].m_version = (int32_t)point->y;
+    if (cRam_? == '\0') {
+      VStack_2._0_8_ = aPStack_3[0];
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Camera>_UnityEngine__Camera_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
-    pRVar8 = TypeInfo__CollisionDetectionGlobalBuffers->static_fields->rayHitBuffer;
-    if ((TypeInfo__UnityEngine__Physics->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    VStack_2.x = 0.0;
+    VStack_2.y = 0.0;
+    VStack_2.z = 0.0;
+    fStack_4 = 0.0;
+    fStack_5 = 0.0;
+    fStack_6 = 0.0;
+    pvVar7 = (obj->fields)._._._.m_CachedPtr;
+    if (pvVar7 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+      pcVar8 = (code *)swi(3);
+      bVar9 = (*pcVar8)();
+      return bVar9;
     }
-    ray.m_Direction.y = (float)(int)uVar7;
-    ray.m_Direction.z = (float)(int)((ulonglong)uVar7 >> 0x20);
-    iVar9 = UnityEngine.PhysicsModule.dll::UnityEngine::Physics::Physics_RaycastNonAlloc_3
-                       (ray,pRVar8,(MethodInfo *)0x0);
-    uVar10 = 0;
-    if (0 < iVar9) {
-      iVar11 = 0;
+    pcVar8 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar8 = (code *)FUN_?(&UNK_?), pcVar8 == (code *)0x0)) {
+      uVar10 = func_?(&UNK_?);
+      FUN_?(uVar10,0);
+      pcVar8 = (code *)swi(3);
+      bVar9 = (*pcVar8)();
+      return bVar9;
+    }
+    pcRam_? = pcVar8;
+    (*pcRam_?)(pvVar7,aPStack_3,2,(PhysicsScene *)&VStack_2);
+    if (*(int *)&(TypeInfo__CollisionDetectionGlobalBuffers->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__CollisionDetectionGlobalBuffers);
+    }
+    pRVar11 = TypeInfo__CollisionDetectionGlobalBuffers->static_fields->rayHitBuffer;
+    if (*(int *)&(TypeInfo__UnityEngine__Physics->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Physics);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Physics->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    uVar12 = 0;
+    aPStack_3[0].m_index = 0;
+    aPStack_3[0].m_version = 1;
+    VStack_13.y = fStack_5;
+    VStack_13.x = fStack_4;
+    VStack_13.z = fStack_6;
+    iVar14 = UnityEngine.PhysicsModule.dll::UnityEngine::PhysicsScene::PhysicsScene_Raycast_2
+                      (aPStack_3,&VStack_2,&VStack_13,pRVar11,_UNK_?,-5,
+                       QueryTriggerInteraction__Enum_UseGlobal,(MethodInfo *)0x0);
+    if (0 < iVar14) {
       do {
-        if ((TypeInfo__CollisionDetectionGlobalBuffers->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+        if (*(int *)&(TypeInfo__CollisionDetectionGlobalBuffers->_1).field_0x1c == 0) {
+          FUN_?(TypeInfo__CollisionDetectionGlobalBuffers);
         }
-        pRVar8 = TypeInfo__CollisionDetectionGlobalBuffers->static_fields->rayHitBuffer;
-        if (pRVar8 == (RaycastHit__Array *)0x0) goto code_?;
-        if (pRVar8->max_length <= uVar10) goto code_?;
-        x = UnityEngine.PhysicsModule.dll::UnityEngine::RaycastHit::RaycastHit_get_collider
-                      ((RaycastHit *)((int)&pRVar8->vector[0].m_Point.x + iVar11),(MethodInfo *)0x0)
-        ;
-        if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+        pRVar11 = TypeInfo__CollisionDetectionGlobalBuffers->static_fields->rayHitBuffer;
+        if (pRVar11 == (RaycastHit__Array *)0x0) goto code_?;
+        if ((uint)pRVar11->max_length <= uVar12) {
+          FUN_?();
+          pcVar8 = (code *)swi(3);
+          bVar9 = (*pcVar8)();
+          return bVar9;
         }
-        bVar12 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                          ((Object_1 *)x,(Object_1 *)collider,(MethodInfo *)0x0);
-        if (bVar12 != 0) {
+        pCVar15 = UnityEngine.PhysicsModule.dll::UnityEngine::RaycastHit::RaycastHit_get_collider
+                           (pRVar11->vector + (int)uVar12,(MethodInfo *)0x0);
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (collider == (Collider *)0x0 && pCVar15 == (Collider *)0x0) {
           return 1;
         }
-        uVar10 = uVar10 + 1;
-        iVar11 = iVar11 + 0x2c;
-      } while ((int)uVar10 < (int)x);
+        if (collider == (Collider *)0x0) {
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (pCVar15 == (Collider *)0x0) goto code_?;
+          bVar16 = (pCVar15->fields)._._.m_CachedPtr == (void *)0x0;
+        }
+        else if (pCVar15 == (Collider *)0x0) {
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          bVar16 = (collider->fields)._._.m_CachedPtr == (void *)0x0;
+        }
+        else {
+          bVar16 = pCVar15 == collider;
+        }
+        if (bVar16) {
+          return 1;
+        }
+        uVar12 = uVar12 + 1;
+      } while ((int)uVar12 < iVar14);
     }
     return 0;
   }
 code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar13 = (code *)swi(3);
-  bVar12 = (*pcVar13)();
-  return bVar12;
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  bVar9 = (*pcVar8)();
+  return bVar9;
 }
 
 
@@ -1278,28 +2120,44 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_GetBoundsCornersLo
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__SharedCubeFunctions);
+    FUN_?(&TypeInfo__SharedCubeFunctions);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  puVar1 = (undefined4 *)
-           (*(code *)(this->klass->vtable).GetLocalBounds.method)
-                     (auStack_2,this,boundsContext,(this->klass->vtable).Select.methodPtr);
-  uStack_3 = *puVar1;
-  uStack_4 = puVar1[1];
-  uStack_5 = puVar1[2];
-  uStack_6 = puVar1[3];
-  uStack_7 = *(undefined8 *)(puVar1 + 4);
-  if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__SharedCubeFunctions);
+  pfVar1 = (float *)(*(this->klass->vtable).GetLocalBounds.methodPtr)
+                              (&VStack_2,this,(ulonglong)boundsContext,
+                               (this->klass->vtable).GetLocalBounds.method);
+  uStack_3 = *(undefined8 *)(pfVar1 + 4);
+  fVar4 = *pfVar1;
+  fVar5 = pfVar1[1];
+  fVar6 = pfVar1[2];
+  fVar7 = pfVar1[3];
+  if (*(int *)&(TypeInfo__SharedCubeFunctions->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bounds.m_Center.y = (float)uStack_4;
-  bounds.m_Center.x = (float)uStack_3;
-  bounds.m_Center.z = (float)uStack_5;
-  bounds.m_Extents.x = (float)uStack_6;
-  bounds.m_Extents.y = (float)(int)uStack_7;
-  bounds.m_Extents.z = (float)((ulonglong)uStack_7 >> 0x20);
-  pVVar8 = SharedCubeFunctions::SharedCubeFunctions_GetCorners_1(bounds,(MethodInfo *)0x0);
-  return pVVar8;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__SharedCubeFunctions);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  fVar8 = fVar5 - (float)uStack_3;
+  fVar9 = fVar6 - uStack_3._4_4_;
+  fVar5 = (float)uStack_3 + fVar5;
+  fVar6 = uStack_3._4_4_ + fVar6;
+  if (*(int *)&(TypeInfo__SharedCubeFunctions->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  VStack_10.y = fVar5;
+  VStack_10.x = fVar7 + fVar4;
+  VStack_2.y = fVar8;
+  VStack_2.x = fVar4 - fVar7;
+  VStack_10.z = fVar6;
+  VStack_2.z = fVar9;
+  pVVar11 = SharedCubeFunctions::SharedCubeFunctions_GetCorners_2
+                     (&VStack_2,&VStack_10,(MethodInfo *)0x0);
+  return pVVar11;
 }
 
 
@@ -1311,83 +2169,123 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_GetBoundsCornersWo
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    System__Collections__Generic__IEnumerable<UnityEngine::Vector3>_MethodInfo__System__Linq__Enumerable__Select<UnityEngine::Vector3,_UnityEngine::Vector3>_System__Collections__Generic__IEnumerable<UnityEngine::Vector3>__System__Func<UnityEngine::Vector3,_UnityEngine::Vector3>_
-                   );
-    func_?(&
-                    UnityEngine__Vector3__MethodInfo__System__Linq__Enumerable__ToArray<UnityEngine::Vector3>_System__Collections__Generic__IEnumerable<UnityEngine::Vector3>_____
-                   );
-    func_?(&TypeInfo__System__Func<UnityEngine::Vector3,_UnityEngine::Vector3>);
-    func_?(&
-                    MethodInfo__MVWorldObjectClient____c__DisplayClass166_0___GetBoundsCornersWorld_b__0_UnityEngine__Vector3_
-                   );
-    func_?(&TypeInfo__MVWorldObjectClient____c__DisplayClass166_0);
+    FUN_?(&
+                  System__Collections__Generic__IEnumerable<UnityEngine::Vector3>_MethodInfo__System__Linq__Enumerable__Select<UnityEngine::Vector3,_UnityEngine::Vector3>_System__Collections__Generic__IEnumerable<UnityEngine::Vector3>__System__Func<UnityEngine::Vector3,_UnityEngine::Vector3>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__Vector3__MethodInfo__System__Linq__Enumerable__ToArray<UnityEngine::Vector3>_System__Collections__Generic__IEnumerable<UnityEngine::Vector3>_____
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Func<UnityEngine::Vector3,_UnityEngine::Vector3>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__MVWorldObjectClient____c__DisplayClass166_0___GetBoundsCornersWorld_b__0_UnityEngine__Vector3_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVWorldObjectClient____c__DisplayClass166_0);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
-            func_?(TypeInfo__MVWorldObjectClient____c__DisplayClass166_0);
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-  UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
-  this_00 = (this->fields).transform;
-  if (this_00 != (Transform *)0x0) {
-    pMVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localToWorldMatrix
-                        ((Matrix4x4 *)&stack0xffffffbc,this_00,(MethodInfo *)0x0);
-    pUVar2 = (UxmlObjectListAttributeDescription_1_System_Object___Class *)pMVar1->m10;
-    pMVar3 = (MonitorData *)pMVar1->m20;
-    pLVar4 = (List_1_System_Object_ *)pMVar1->m30;
-    pUVar5 = (UxmlObjectListAttributeDescription_1_System_Object___Class *)pMVar1->m01;
-    pMVar6 = (MonitorData *)pMVar1->m11;
-    pLVar7 = (List_1_System_Object_ *)pMVar1->m21;
-    pUVar8 = (UxmlObjectListAttributeDescription_1_System_Object___Class *)pMVar1->m31;
-    pMVar9 = (MonitorData *)pMVar1->m02;
-    pLVar10 = (List_1_System_Object_ *)pMVar1->m12;
-    pUVar11 = (UxmlObjectListAttributeDescription_1_System_Object___Class *)pMVar1->m22;
-    pMVar12 = (MonitorData *)pMVar1->m32;
-    pLVar13 = (List_1_System_Object_ *)pMVar1->m03;
-    pUVar14 = (UxmlObjectListAttributeDescription_1_System_Object___Class *)pMVar1->m13;
-    pMVar15 = (MonitorData *)pMVar1->m23;
-    pLVar16 = (List_1_System_Object_ *)pMVar1->m33;
-    if (this_01 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
-      (this_01->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)pMVar1->m00;
-      this_01[1].klass = pUVar2;
-      this_01[1].monitor = pMVar3;
-      this_01[1].fields._._defaultValue_k__BackingField = pLVar4;
-      this_01[2].klass = pUVar5;
-      this_01[2].monitor = pMVar6;
-      this_01[2].fields._._defaultValue_k__BackingField = pLVar7;
-      this_01[3].klass = pUVar8;
-      this_01[3].monitor = pMVar9;
-      this_01[3].fields._._defaultValue_k__BackingField = pLVar10;
-      this_01[4].klass = pUVar11;
-      this_01[4].monitor = pMVar12;
-      this_01[4].fields._._defaultValue_k__BackingField = pLVar13;
-      this_01[5].klass = pUVar14;
-      this_01[5].monitor = pMVar15;
-      this_01[5].fields._._defaultValue_k__BackingField = pLVar16;
-      pVVar17 = MVWorldObjectClient_GetBoundsCornersLocal(this,boundsContext,(MethodInfo *)0x0);
-      this_02 = (Func_2_UnityEngine_Vector3Int_UnityEngine_Vector3Int_ *)func_?();
-      mscorlib.dll::System::Func`2[UnityEngine::Vector3Int,UnityEngine::Vector3Int]::
-      Func_2_UnityEngine_Vector3Int_UnityEngine_Vector3Int___ctor
-                (this_02,(Object *)this_01,
-                 MethodInfo__MVWorldObjectClient____c__DisplayClass166_0___GetBoundsCornersWorld_b__0_UnityEngine__Vector3_
-                 ,(MethodInfo *)0x0);
-      source = System.Core.dll::System::Linq::Enumerable::Enumerable_Select_6
-                         ((IEnumerable_1_UnityEngine_Vector3_ *)pVVar17,
-                          (Func_2_UnityEngine_Vector3_UnityEngine_Vector3_ *)this_02,
+  lVar1 = FUN_?(TypeInfo__MVWorldObjectClient____c__DisplayClass166_0);
+  obj = (this->fields).transform;
+  if (obj != (Transform *)0x0) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_2 = 0;
+    uStack_3 = 0;
+    uStack_4 = 0;
+    uStack_5 = 0;
+    uStack_6 = 0;
+    uStack_7 = 0;
+    uStack_8 = 0;
+    uStack_9 = 0;
+    pvVar10 = (obj->fields)._._.m_CachedPtr;
+    if (pvVar10 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+      pcVar11 = (code *)swi(3);
+      pVVar12 = (Vector3__Array *)(*pcVar11)();
+      return pVVar12;
+    }
+    pcVar11 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar11 = (code *)FUN_?(&UNK_?), pcVar11 == (code *)0x0)) {
+      uVar13 = func_?(&UNK_?);
+      FUN_?(uVar13,0);
+      pcVar11 = (code *)swi(3);
+      pVVar12 = (Vector3__Array *)(*pcVar11)();
+      return pVVar12;
+    }
+    pcRam_? = pcVar11;
+    (*pcRam_?)(pvVar10,&uStack_2);
+    if (lVar1 != 0) {
+      *(undefined8 *)(lVar1 + 0x10) = uStack_2;
+      *(undefined8 *)(lVar1 + 0x18) = uStack_3;
+      *(undefined8 *)(lVar1 + 0x20) = uStack_4;
+      *(undefined8 *)(lVar1 + 0x28) = uStack_5;
+      *(undefined8 *)(lVar1 + 0x30) = uStack_6;
+      *(undefined8 *)(lVar1 + 0x38) = uStack_7;
+      *(undefined8 *)(lVar1 + 0x40) = uStack_8;
+      *(undefined8 *)(lVar1 + 0x48) = uStack_9;
+      pVVar12 = MVWorldObjectClient_GetBoundsCornersLocal(this,boundsContext,(MethodInfo *)0x0);
+      selector = (Func_2_UnityEngine_Vector3_UnityEngine_Vector3_ *)
+                 FUN_?(TypeInfo__System__Func<UnityEngine::Vector3,_UnityEngine::Vector3>);
+      FUN_?(selector,lVar1,
+                    MethodInfo__MVWorldObjectClient____c__DisplayClass166_0___GetBoundsCornersWorld_b__0_UnityEngine__Vector3_
+                   );
+      source = System.Core.dll::System::Linq::Enumerable::Enumerable_Select_5
+                         ((IEnumerable_1_UnityEngine_Vector3_ *)pVVar12,selector,
                           System__Collections__Generic__IEnumerable<UnityEngine::Vector3>_MethodInfo__System__Linq__Enumerable__Select<UnityEngine::Vector3,_UnityEngine::Vector3>_System__Collections__Generic__IEnumerable<UnityEngine::Vector3>__System__Func<UnityEngine::Vector3,_UnityEngine::Vector3>_
                          );
-      pVVar17 = System.Core.dll::System::Linq::Enumerable::Enumerable_ToArray_3
-                          (source,
-                           UnityEngine__Vector3__MethodInfo__System__Linq__Enumerable__ToArray<UnityEngine::Vector3>_System__Collections__Generic__IEnumerable<UnityEngine::Vector3>_____
-                          );
-      return pVVar17;
+      pMVar14 = 
+      UnityEngine__Vector3__MethodInfo__System__Linq__Enumerable__ToArray<UnityEngine::Vector3>_System__Collections__Generic__IEnumerable<UnityEngine::Vector3>_____
+      ;
+      if ((
+          UnityEngine__Vector3__MethodInfo__System__Linq__Enumerable__ToArray<UnityEngine::Vector3>_System__Collections__Generic__IEnumerable<UnityEngine::Vector3>_____
+          ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+        FUN_?(
+                     UnityEngine__Vector3__MethodInfo__System__Linq__Enumerable__ToArray<UnityEngine::Vector3>_System__Collections__Generic__IEnumerable<UnityEngine::Vector3>_____
+                     );
+      }
+      if (source == (IEnumerable_1_UnityEngine_Vector3_ *)0x0) {
+        s = (String *)func_?(&StringLiteral_source);
+        pEVar15 = System.Core.dll::System::Linq::Error::Error_1_ArgumentNull(s,(MethodInfo *)0x0);
+        FUN_?(pEVar15,pMVar14);
+        pcVar11 = (code *)swi(3);
+        pVVar12 = (Vector3__Array *)(*pcVar11)();
+        return pVVar12;
+      }
+      BStack_16.items = (Vector3__Array *)0x0;
+      BStack_16.count = 0;
+      BStack_16._12_4_ = 0;
+      System.Core.dll::System::Linq::Buffer`1[UnityEngine::Vector3]::
+      Buffer_1_UnityEngine_Vector3___ctor
+                (&BStack_16,source,(pMVar14->field7_0x38).rgctx_data[2].method);
+      uStack_17 = BStack_16.items._0_4_;
+      uStack_18 = BStack_16.items._4_4_;
+      iStack_19 = BStack_16.count;
+      uStack_20 = BStack_16._12_4_;
+      pVVar12 = (Vector3__Array *)
+               FUN_?(&uStack_17,(pMVar14->field7_0x38).rgctx_data[3].rgctxDataDummy);
+      return pVVar12;
     }
   }
-  func_?();
-  pcVar18 = (code *)swi(3);
-  pVVar17 = (Vector3__Array *)(*pcVar18)();
-  return pVVar17;
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  pVVar12 = (Vector3__Array *)(*pcVar11)();
+  return pVVar12;
 }
 
 
@@ -1395,65 +2293,112 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_GetBoundsCornersWo
 
 Vector3 * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_GetClosestGridPoint
                     (Vector3 *__return_storage_ptr__,MVWorldObjectClient *this,float gridSize,
-                    Vector3 position,MethodInfo *method)
+                    Vector3 *position,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__SharedCubeFunctions);
+    FUN_?(&TypeInfo__SharedCubeFunctions);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pGVar1 = (this->fields).gameObject;
-  if (pGVar1 != (GameObject *)0x0) {
-    pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                       (pGVar1,(MethodInfo *)0x0);
-    if (pTVar2 != (Transform *)0x0) {
-      pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                         ((Quaternion *)&stack0xffffffd8,pTVar2,(MethodInfo *)0x0);
-      fVar4 = pQVar3->x;
-      pGVar1 = (this->fields).gameObject;
-      if (pGVar1 != (GameObject *)0x0) {
-        puVar5 = &UNK_?;
-        pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                           (pGVar1,(MethodInfo *)0x0);
-        if (pTVar2 != (Transform *)0x0) {
-          pVVar6 = (Vector3 *)&stack0xffffffe8;
-          puVar7 = &UNK_?;
-          pVVar8 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                             (pVVar6,pTVar2,(MethodInfo *)0x0);
-          uVar9._0_4_ = pVVar8->x;
-          uVar9._4_4_ = pVVar8->y;
-          fVar10 = pVVar8->z;
-          if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
-            puVar11 = &UNK_?;
-            pSVar12 = TypeInfo__SharedCubeFunctions;
-            func_?();
-            uVar9 = CONCAT44(pSVar12,puVar11);
-          }
-          worldPosition.z = position.z;
-          worldPosition.x = position.x;
-          worldPosition.y = position.y;
-          rotation.y = (float)puVar5;
-          rotation.x = fVar4;
-          rotation.z = (float)puVar7;
-          rotation.w = (float)pVVar6;
-          scale.z = fVar10;
-          scale.x = (float)(int)uVar9;
-          scale.y = (float)(int)((ulonglong)uVar9 >> 0x20);
-          pVVar6 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint
-                             (&position,worldPosition,rotation,gridSize,scale,(MethodInfo *)0x0);
-          fVar10 = pVVar6->y;
-          fVar4 = pVVar6->z;
-          __return_storage_ptr__->x = pVVar6->x;
-          __return_storage_ptr__->y = fVar10;
-          __return_storage_ptr__->z = fVar4;
-          return __return_storage_ptr__;
-        }
+  if ((pGVar1 != (GameObject *)0x0) &&
+     (pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                         (pGVar1,(MethodInfo *)0x0), pTVar2 != (Transform *)0x0)) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    QStack_3.x = 0.0;
+    QStack_3.y = 0.0;
+    QStack_3.z = 0.0;
+    QStack_3.w = 0.0;
+    pvVar4 = (pTVar2->fields)._._.m_CachedPtr;
+    if (pvVar4 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+      pcVar5 = (code *)swi(3);
+      pVVar6 = (Vector3 *)(*pcVar5)();
+      return pVVar6;
+    }
+    pcVar5 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+      uVar7 = func_?(&UNK_?);
+      FUN_?(uVar7,0);
+      pcVar5 = (code *)swi(3);
+      pVVar6 = (Vector3 *)(*pcVar5)();
+      return pVVar6;
+    }
+    pcRam_? = pcVar5;
+    (*pcRam_?)(pvVar4);
+    pGVar1 = (this->fields).gameObject;
+    if ((pGVar1 != (GameObject *)0x0) &&
+       (pTVar2 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                           (pGVar1,(MethodInfo *)0x0), pTVar2 != (Transform *)0x0)) {
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
+      VStack_8.x = 0.0;
+      VStack_8.y = 0.0;
+      VStack_8.z = 0.0;
+      pvVar4 = (pTVar2->fields)._._.m_CachedPtr;
+      if (pvVar4 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar2,(MethodInfo *)0x0);
+        pcVar5 = (code *)swi(3);
+        pVVar6 = (Vector3 *)(*pcVar5)();
+        return pVVar6;
+      }
+      pcVar5 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+        uVar7 = func_?(&UNK_?);
+        FUN_?(uVar7,0);
+        pcVar5 = (code *)swi(3);
+        pVVar6 = (Vector3 *)(*pcVar5)();
+        return pVVar6;
+      }
+      pcRam_? = pcVar5;
+      (*pcRam_?)(pvVar4,&VStack_8);
+      if (*(int *)&(TypeInfo__SharedCubeFunctions->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      uVar7._0_4_ = position->x;
+      uVar7._4_4_ = position->y;
+      VStack_9.z = VStack_8.z;
+      VStack_8.z = position->z;
+      VStack_9.x = VStack_8.x;
+      VStack_9.y = VStack_8.y;
+      aQStack_10[0].x = QStack_3.x;
+      aQStack_10[0].y = QStack_3.y;
+      aQStack_10[0].z = QStack_3.z;
+      aQStack_10[0].w = QStack_3.w;
+      VStack_8._0_8_ = uVar7;
+      pVVar6 = SharedCubeFunctions::SharedCubeFunctions_GetClosestGridPoint
+                         ((Vector3 *)&QStack_3,&VStack_8,aQStack_10,gridSize,&VStack_9,
+                          (MethodInfo *)0x0);
+      fVar11 = pVVar6->y;
+      fVar12 = pVVar6->z;
+      __return_storage_ptr__->x = pVVar6->x;
+      __return_storage_ptr__->y = fVar11;
+      __return_storage_ptr__->z = fVar12;
+      return __return_storage_ptr__;
     }
   }
-  func_?();
-  pcVar13 = (code *)swi(3);
-  pVVar6 = (Vector3 *)(*pcVar13)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  pVVar6 = (Vector3 *)(*pcVar5)();
   return pVVar6;
 }
 
@@ -1465,60 +2410,47 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_GetHitInteractionH
           (MVWorldObjectClient *this,MethodInfo *method)
 
 {
-code_?:
-  pMVar1 = method;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug,unaff_EBP);
-    func_?(&StringLiteral_WorldObject_has_ParentHandlesHit);
-    cRam_? = '\x01';
-  }
-  switch((this->fields)._PlayInteractionType_k__BackingField) {
-  default:
-    return (MVWorldObjectClient *)0x0;
-  case 1:
-    return this;
-  case 2:
-    break;
-  }
-  if ((this->fields)._.groupId == -1) {
-    context = (this->fields).gameObject;
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug,unaff_ESI);
+  while( true ) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Debug,method);
+      LOCK();
+      UNLOCK();
+      FUN_?(&StringLiteral_WorldObject_has_ParentHandlesHit);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning_1
-              ((Object *)StringLiteral_WorldObject_has_ParentHandlesHit,(Object_1 *)context,
-               (MethodInfo *)0x0);
-    return (MVWorldObjectClient *)0x0;
-  }
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
-  if ((this_00 == (MVWorldObjectClientManager *)0x0) ||
-     (pMVar2 = (MVWorldObjectClient *)
-               MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObject
+    iVar1 = (this->fields)._PlayInteractionType_k__BackingField;
+    if (iVar1 == 0) {
+      return (MVWorldObjectClient *)0x0;
+    }
+    if (iVar1 == 1) {
+      return this;
+    }
+    if (iVar1 != 2) break;
+    if ((this->fields)._.groupId == -1) {
+      context = (this->fields).gameObject;
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning_1
+                ((Object *)StringLiteral_WorldObject_has_ParentHandlesHit,(Object_1 *)context,
+                 (MethodInfo *)0x0);
+      return (MVWorldObjectClient *)0x0;
+    }
+    this_00 = MVGameControllerBase::MVGameControllerBase_get_WOCM((MethodInfo *)0x0);
+    if ((this_00 == (MVWorldObjectClientManager *)0x0) ||
+       (this = MVWorldObjectClientManager::MVWorldObjectClientManager_GetWorldObjectClient
                          (this_00,(this->fields)._.groupId,(MethodInfo *)0x0),
-     pMVar2 == (MVWorldObjectClient *)0x0)) {
-    bVar3 = 0;
-    iVar4 = func_?();
-    LOCK();
-    *(undefined1 *)((int)&(this->fields)._.OnInputLinkChanged + 2) = extraout_CL;
-    UNLOCK();
-    pbVar5 = (byte *)(iVar4 + 0x4e);
-    bVar6 = *pbVar5;
-    bVar7 = *pbVar5;
-    *pbVar5 = bVar7 + extraout_DL + bVar3;
-    pcVar8 = (char *)((int)&this[-0x3d8dc0].fields._.scale.y + 2);
-    *pcVar8 = *pcVar8 + (char)iVar4 +
-              (CARRY1(in_stack_9,extraout_DL) ||
-              CARRY1(in_stack_9 + extraout_DL,
-                     CARRY1(bVar6,extraout_DL) || CARRY1(bVar7 + extraout_DL,bVar3)));
-    pcVar10 = (code *)swi(3);
-    pMVar2 = (MVWorldObjectClient *)(*pcVar10)();
-    return pMVar2;
+       this == (MVWorldObjectClient *)0x0)) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      pMVar3 = (MVWorldObjectClient *)(*pcVar2)();
+      return pMVar3;
+    }
+    method = (MethodInfo *)0x0;
   }
-  method = (MethodInfo *)0x0;
-  unaff_EBP = in_stack_11;
-  unaff_ESI = pMVar1;
-  this = pMVar2;
-  goto code_?;
+  return (MVWorldObjectClient *)0x0;
 }
 
 
@@ -1528,32 +2460,86 @@ Vector3 * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_GetInput
                     (Vector3 *__return_storage_ptr__,MVWorldObjectClient *this,MethodInfo *method)
 
 {
-  cVar1 = (*(code *)(this->klass->vtable).get_HasInputConnector.method)
-                    (this,(this->klass->vtable).get_HasObjectConnector.methodPtr);
+  cVar1 = (*(this->klass->vtable).get_HasInputConnector.methodPtr)(this);
   if (cVar1 == '\0') {
-    this_00 = (this->fields).gameObject;
-  }
-  else {
-    this_00 = (this->fields).inputConnectorObject;
-  }
-  if (this_00 != (GameObject *)0x0) {
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                        (this_00,(MethodInfo *)0x0);
-    if (this_01 != (Transform *)0x0) {
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         ((Vector3 *)&stack0xfffffff0,this_01,(MethodInfo *)0x0);
-      fVar3 = pVVar2->y;
-      fVar4 = pVVar2->z;
-      __return_storage_ptr__->x = pVVar2->x;
-      __return_storage_ptr__->y = fVar3;
-      __return_storage_ptr__->z = fVar4;
-      return __return_storage_ptr__;
+    pGVar2 = (this->fields).gameObject;
+    if ((pGVar2 == (GameObject *)0x0) ||
+       (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                           (pGVar2,(MethodInfo *)0x0), pTVar3 == (Transform *)0x0))
+    goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_4 = 0;
+    fStack_5 = 0.0;
+    pvVar6 = (pTVar3->fields)._._.m_CachedPtr;
+    if (pvVar6 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar3,(MethodInfo *)0x0);
+      pcVar7 = (code *)swi(3);
+      pVVar8 = (Vector3 *)(*pcVar7)();
+      return pVVar8;
+    }
+    pcVar7 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+      uVar9 = func_?(&UNK_?);
+      FUN_?(uVar9,0);
+      pcVar7 = (code *)swi(3);
+      pVVar8 = (Vector3 *)(*pcVar7)();
+      return pVVar8;
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pVVar2 = (Vector3 *)(*pcVar5)();
-  return pVVar2;
+  else {
+    pGVar2 = (this->fields).inputConnectorObject;
+    if ((pGVar2 == (GameObject *)0x0) ||
+       (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                           (pGVar2,(MethodInfo *)0x0), pTVar3 == (Transform *)0x0)) {
+code_?:
+      FUN_?();
+      pcVar7 = (code *)swi(3);
+      pVVar8 = (Vector3 *)(*pcVar7)();
+      return pVVar8;
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_4 = 0;
+    fStack_5 = 0.0;
+    pvVar6 = (pTVar3->fields)._._.m_CachedPtr;
+    if (pvVar6 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar3,(MethodInfo *)0x0);
+      pcVar7 = (code *)swi(3);
+      pVVar8 = (Vector3 *)(*pcVar7)();
+      return pVVar8;
+    }
+    pcVar7 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+      uVar9 = func_?(&UNK_?);
+      FUN_?(uVar9,0);
+      pcVar7 = (code *)swi(3);
+      pVVar8 = (Vector3 *)(*pcVar7)();
+      return pVVar8;
+    }
+  }
+  pcRam_? = pcVar7;
+  (*pcRam_?)(pvVar6,&uStack_4);
+  __return_storage_ptr__->x = (float)(undefined4)uStack_4;
+  __return_storage_ptr__->y = (float)uStack_4._4_4_;
+  __return_storage_ptr__->z = fStack_5;
+  return __return_storage_ptr__;
 }
 
 
@@ -1580,7 +2566,7 @@ Vector3 * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_GetLocal
     pTVar1 = (this->fields).transform;
     if (pTVar1 == (Transform *)0x0) {
 code_?:
-      func_?();
+      FUN_?();
       pcVar4 = (code *)swi(3);
       pVVar2 = (Vector3 *)(*pcVar4)();
       return pVVar2;
@@ -1605,51 +2591,67 @@ Bounds * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_GetLocalB
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&StringLiteral_GetLocalBounds_has_not_been_impl);
+    FUN_?(&TypeInfo__UnityEngine__Debug,this,CONCAT44(in_register_00000084,boundsContext));
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_GetLocalBounds_has_not_been_impl);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pTVar1 = mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
-  if (pTVar1 != (Type *)0x0) {
-    arg0 = (Object *)
-           (*(code *)(pTVar1->klass->vtable).__unknown.method)
-                     (pTVar1,(pTVar1->klass->vtable).get_DeclaringType.methodPtr);
-    message = mscorlib.dll::System::String::String_Format
-                        (StringLiteral_GetLocalBounds_has_not_been_impl,arg0,(MethodInfo *)0x0);
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug);
+  plVar1 = (longlong *)FUN_?(&(this->klass->_0).byval_arg);
+  if (plVar1 != (longlong *)0x0) {
+    arg0 = (Object *)(**(code **)(*plVar1 + 0x1b8))(plVar1,*(undefined8 *)(*plVar1 + 0x1c0));
+    pSVar2 = StringLiteral_GetLocalBounds_has_not_been_impl;
+    PStack_3._arg0 = (Object *)0x0;
+    PStack_3._arg1 = (Object *)0x0;
+    PStack_3._arg2 = (Object *)0x0;
+    PStack_3._args = (Object__Array *)0x0;
+    mscorlib.dll::System::ParamsArray::ParamsArray__ctor(&PStack_3,arg0,(MethodInfo *)0x0);
+    PStack_4._arg0 = PStack_3._arg0;
+    PStack_4._arg1 = PStack_3._arg1;
+    PStack_4._arg2 = PStack_3._arg2;
+    PStack_4._args = PStack_3._args;
+    pSVar2 = mscorlib.dll::System::String::String_FormatHelper
+                       ((IFormatProvider *)0x0,pSVar2,&PStack_4,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-              ((Object *)message,(MethodInfo *)0x0);
+              ((Object *)pSVar2,(MethodInfo *)0x0);
     if (cRam_? == '\0') {
-      func_?();
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
-    uVar3._0_4_ = (pVVar2->zeroVector).x;
-    uVar3._4_4_ = (pVVar2->zeroVector).y;
-    fVar4 = (pVVar2->zeroVector).z;
+    pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
+    fVar6 = (pVVar5->zeroVector).x;
+    fVar7 = (pVVar5->zeroVector).y;
+    fVar8 = (pVVar5->zeroVector).z;
     if (cRam_? == '\0') {
-      func_?();
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    pVVar2 = TypeInfo__UnityEngine__Vector3->static_fields;
-    (__return_storage_ptr__->m_Center).x = (float)(int)uVar3;
-    fVar5 = _UNK_?;
-    (__return_storage_ptr__->m_Center).y = (float)(int)((ulonglong)uVar3 >> 0x20);
-    uVar6 = (pVVar2->zeroVector).x;
-    uVar7 = (pVVar2->zeroVector).y;
-    fVar8 = (pVVar2->zeroVector).z * _UNK_?;
-    (__return_storage_ptr__->m_Center).z = fVar4;
-    (__return_storage_ptr__->m_Extents).x = (float)uVar6 * fVar5;
-    (__return_storage_ptr__->m_Extents).y = (float)uVar7 * fVar5;
-    (__return_storage_ptr__->m_Extents).z = fVar8;
+    fVar9 = _UNK_?;
+    pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
+    (__return_storage_ptr__->m_Center).x = fVar6;
+    (__return_storage_ptr__->m_Center).y = fVar7;
+    (__return_storage_ptr__->m_Center).z = fVar8;
+    uVar10 = (pVVar5->zeroVector).x;
+    fVar8 = (pVVar5->zeroVector).y;
+    fVar6 = (pVVar5->zeroVector).z;
+    (__return_storage_ptr__->m_Extents).x = (float)uVar10 * fVar9;
+    (__return_storage_ptr__->m_Extents).y = fVar8 * fVar9;
+    (__return_storage_ptr__->m_Extents).z = fVar6 * fVar9;
     return __return_storage_ptr__;
   }
-  func_?();
-  pcVar9 = (code *)swi(3);
-  pBVar10 = (Bounds *)(*pcVar9)();
-  return pBVar10;
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  pBVar12 = (Bounds *)(*pcVar11)();
+  return pBVar12;
 }
 
 
@@ -1659,32 +2661,86 @@ Vector3 * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_GetObjec
                     (Vector3 *__return_storage_ptr__,MVWorldObjectClient *this,MethodInfo *method)
 
 {
-  cVar1 = (*(code *)(this->klass->vtable).get_HasObjectConnector.method)
-                    (this,(this->klass->vtable).OnInputStateChanged.methodPtr);
+  cVar1 = (*(this->klass->vtable).get_HasObjectConnector.methodPtr)(this);
   if (cVar1 == '\0') {
-    this_00 = (this->fields).gameObject;
-  }
-  else {
-    this_00 = (this->fields).objectConnectorObject;
-  }
-  if (this_00 != (GameObject *)0x0) {
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                        (this_00,(MethodInfo *)0x0);
-    if (this_01 != (Transform *)0x0) {
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         ((Vector3 *)&stack0xfffffff0,this_01,(MethodInfo *)0x0);
-      fVar3 = pVVar2->y;
-      fVar4 = pVVar2->z;
-      __return_storage_ptr__->x = pVVar2->x;
-      __return_storage_ptr__->y = fVar3;
-      __return_storage_ptr__->z = fVar4;
-      return __return_storage_ptr__;
+    pGVar2 = (this->fields).gameObject;
+    if ((pGVar2 == (GameObject *)0x0) ||
+       (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                           (pGVar2,(MethodInfo *)0x0), pTVar3 == (Transform *)0x0))
+    goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_4 = 0;
+    fStack_5 = 0.0;
+    pvVar6 = (pTVar3->fields)._._.m_CachedPtr;
+    if (pvVar6 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar3,(MethodInfo *)0x0);
+      pcVar7 = (code *)swi(3);
+      pVVar8 = (Vector3 *)(*pcVar7)();
+      return pVVar8;
+    }
+    pcVar7 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+      uVar9 = func_?(&UNK_?);
+      FUN_?(uVar9,0);
+      pcVar7 = (code *)swi(3);
+      pVVar8 = (Vector3 *)(*pcVar7)();
+      return pVVar8;
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pVVar2 = (Vector3 *)(*pcVar5)();
-  return pVVar2;
+  else {
+    pGVar2 = (this->fields).objectConnectorObject;
+    if ((pGVar2 == (GameObject *)0x0) ||
+       (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                           (pGVar2,(MethodInfo *)0x0), pTVar3 == (Transform *)0x0)) {
+code_?:
+      FUN_?();
+      pcVar7 = (code *)swi(3);
+      pVVar8 = (Vector3 *)(*pcVar7)();
+      return pVVar8;
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_4 = 0;
+    fStack_5 = 0.0;
+    pvVar6 = (pTVar3->fields)._._.m_CachedPtr;
+    if (pvVar6 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar3,(MethodInfo *)0x0);
+      pcVar7 = (code *)swi(3);
+      pVVar8 = (Vector3 *)(*pcVar7)();
+      return pVVar8;
+    }
+    pcVar7 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+      uVar9 = func_?(&UNK_?);
+      FUN_?(uVar9,0);
+      pcVar7 = (code *)swi(3);
+      pVVar8 = (Vector3 *)(*pcVar7)();
+      return pVVar8;
+    }
+  }
+  pcRam_? = pcVar7;
+  (*pcRam_?)(pvVar6,&uStack_4);
+  __return_storage_ptr__->x = (float)(undefined4)uStack_4;
+  __return_storage_ptr__->y = (float)uStack_4._4_4_;
+  __return_storage_ptr__->z = fStack_5;
+  return __return_storage_ptr__;
 }
 
 
@@ -1694,32 +2750,86 @@ Vector3 * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_GetOutpu
                     (Vector3 *__return_storage_ptr__,MVWorldObjectClient *this,MethodInfo *method)
 
 {
-  cVar1 = (*(code *)(this->klass->vtable).get_HasOutputConnector.method)
-                    (this,(this->klass->vtable).get_HasInputConnector.methodPtr);
+  cVar1 = (*(this->klass->vtable).get_HasOutputConnector.methodPtr)(this);
   if (cVar1 == '\0') {
-    this_00 = (this->fields).gameObject;
-  }
-  else {
-    this_00 = (this->fields).outputConnectorObject;
-  }
-  if (this_00 != (GameObject *)0x0) {
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                        (this_00,(MethodInfo *)0x0);
-    if (this_01 != (Transform *)0x0) {
-      pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                         ((Vector3 *)&stack0xfffffff0,this_01,(MethodInfo *)0x0);
-      fVar3 = pVVar2->y;
-      fVar4 = pVVar2->z;
-      __return_storage_ptr__->x = pVVar2->x;
-      __return_storage_ptr__->y = fVar3;
-      __return_storage_ptr__->z = fVar4;
-      return __return_storage_ptr__;
+    pGVar2 = (this->fields).gameObject;
+    if ((pGVar2 == (GameObject *)0x0) ||
+       (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                           (pGVar2,(MethodInfo *)0x0), pTVar3 == (Transform *)0x0))
+    goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_4 = 0;
+    fStack_5 = 0.0;
+    pvVar6 = (pTVar3->fields)._._.m_CachedPtr;
+    if (pvVar6 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar3,(MethodInfo *)0x0);
+      pcVar7 = (code *)swi(3);
+      pVVar8 = (Vector3 *)(*pcVar7)();
+      return pVVar8;
+    }
+    pcVar7 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+      uVar9 = func_?(&UNK_?);
+      FUN_?(uVar9,0);
+      pcVar7 = (code *)swi(3);
+      pVVar8 = (Vector3 *)(*pcVar7)();
+      return pVVar8;
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pVVar2 = (Vector3 *)(*pcVar5)();
-  return pVVar2;
+  else {
+    pGVar2 = (this->fields).outputConnectorObject;
+    if ((pGVar2 == (GameObject *)0x0) ||
+       (pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                           (pGVar2,(MethodInfo *)0x0), pTVar3 == (Transform *)0x0)) {
+code_?:
+      FUN_?();
+      pcVar7 = (code *)swi(3);
+      pVVar8 = (Vector3 *)(*pcVar7)();
+      return pVVar8;
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_4 = 0;
+    fStack_5 = 0.0;
+    pvVar6 = (pTVar3->fields)._._.m_CachedPtr;
+    if (pvVar6 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar3,(MethodInfo *)0x0);
+      pcVar7 = (code *)swi(3);
+      pVVar8 = (Vector3 *)(*pcVar7)();
+      return pVVar8;
+    }
+    pcVar7 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar7 = (code *)FUN_?(&UNK_?), pcVar7 == (code *)0x0)) {
+      uVar9 = func_?(&UNK_?);
+      FUN_?(uVar9,0);
+      pcVar7 = (code *)swi(3);
+      pVVar8 = (Vector3 *)(*pcVar7)();
+      return pVVar8;
+    }
+  }
+  pcRam_? = pcVar7;
+  (*pcRam_?)(pvVar6,&uStack_4);
+  __return_storage_ptr__->x = (float)(undefined4)uStack_4;
+  __return_storage_ptr__->y = (float)uStack_4._4_4_;
+  __return_storage_ptr__->z = fStack_5;
+  return __return_storage_ptr__;
 }
 
 
@@ -1730,65 +2840,146 @@ Vector3 * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_GetTarge
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&StringLiteral_Did_not_find_collider__Using_tra);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Did_not_find_collider__Using_tra);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  pMVar1 = 
+  UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+  ;
   this_00 = (this->fields).gameObject;
   if (this_00 != (GameObject *)0x0) {
-    this_02 = (Collider *)
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-              GameObject_GetComponentInChildren_1
-                        (this_00,
-                         UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
-                        );
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+    if ((
+        UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+        ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(
+                   UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+                   );
     }
-    bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)this_02,(Object_1 *)0x0,(MethodInfo *)0x0);
-    pSVar2 = StringLiteral_Did_not_find_collider__Using_tra;
-    if (bVar1 == 0) {
-      if (this_02 != (Collider *)0x0) {
-        pBVar3 = UnityEngine.PhysicsModule.dll::UnityEngine::Collider::Collider_get_bounds
-                           ((Bounds *)&stack0xffffffe4,this_02,(MethodInfo *)0x0);
-        fVar4 = (pBVar3->m_Center).y;
-        fVar5 = (pBVar3->m_Center).z;
-        __return_storage_ptr__->x = (pBVar3->m_Center).x;
-        __return_storage_ptr__->y = fVar4;
-        __return_storage_ptr__->z = fVar5;
+    obj_00 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+             GameObject_GetComponentInChildren_3
+                       (this_00,0,((pMVar1->field7_0x38).rgctx_data)->method);
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (obj_00 != (Object *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (obj_00[1].klass != (Object__Class *)0x0) {
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Collider>_UnityEngine__Collider_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        uStack_2 = 0;
+        uStack_3 = 0;
+        uStack_4 = 0;
+        pOVar5 = obj_00[1].klass;
+        if (pOVar5 != (Object__Class *)0x0) {
+          pcVar6 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+            uVar7 = func_?(&UNK_?);
+            FUN_?(uVar7,0);
+            pcVar6 = (code *)swi(3);
+            pVVar8 = (Vector3 *)(*pcVar6)();
+            return pVVar8;
+          }
+          pcRam_? = pcVar6;
+          (*pcRam_?)(pOVar5,&uStack_2);
+          __return_storage_ptr__->x = (float)uStack_2;
+          __return_storage_ptr__->y = uStack_2._4_4_;
+          __return_storage_ptr__->z = (float)uStack_3;
+          return __return_storage_ptr__;
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException(obj_00,(MethodInfo *)0x0);
+        pcVar6 = (code *)swi(3);
+        pVVar8 = (Vector3 *)(*pcVar6)();
+        return pVVar8;
+      }
+    }
+    pSVar9 = StringLiteral_Did_not_find_collider__Using_tra;
+    str1 = (String *)
+           (*(this->klass->vtable).ToString.methodPtr)(this,(this->klass->vtable).ToString.method);
+    pSVar9 = mscorlib.dll::System::String::String_Concat_4(pSVar9,str1,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
+              ((Object *)pSVar9,(MethodInfo *)0x0);
+    obj = (this->fields).transform;
+    if (obj != (Transform *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      uStack_2 = 0;
+      uStack_3 = (ulonglong)uStack_3._4_4_ << 0x20;
+      pvVar10 = (obj->fields)._._.m_CachedPtr;
+      if (pvVar10 != (void *)0x0) {
+        pcVar6 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+          uVar7 = func_?(&UNK_?);
+          FUN_?(uVar7,0);
+          pcVar6 = (code *)swi(3);
+          pVVar8 = (Vector3 *)(*pcVar6)();
+          return pVVar8;
+        }
+        pcRam_? = pcVar6;
+        (*pcRam_?)(pvVar10,&uStack_2);
+        __return_storage_ptr__->x = (float)uStack_2;
+        __return_storage_ptr__->y = uStack_2._4_4_;
+        __return_storage_ptr__->z = (float)uStack_3;
         return __return_storage_ptr__;
       }
-    }
-    else {
-      str1 = (String *)(*(code *)(this->klass->vtable).ToString.method)();
-      pSVar2 = mscorlib.dll::System::String::String_Concat_3(pSVar2,str1,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
-                ((Object *)pSVar2,(MethodInfo *)0x0);
-      this_01 = (this->fields).transform;
-      if (this_01 != (Transform *)0x0) {
-        pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                           (&VStack_7,this_01,(MethodInfo *)0x0);
-        fVar5 = pVVar6->y;
-        fVar4 = pVVar6->z;
-        __return_storage_ptr__->x = pVVar6->x;
-        __return_storage_ptr__->y = fVar5;
-        __return_storage_ptr__->z = fVar4;
-        return __return_storage_ptr__;
-      }
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+      pcVar6 = (code *)swi(3);
+      pVVar8 = (Vector3 *)(*pcVar6)();
+      return pVVar8;
     }
   }
-  func_?();
-  pcVar8 = (code *)swi(3);
-  pVVar6 = (Vector3 *)(*pcVar8)();
-  return pVVar6;
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  pVVar8 = (Vector3 *)(*pcVar6)();
+  return pVVar8;
 }
 
 
@@ -1801,134 +2992,131 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_GetTransformData
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&TypeInfo__UnityEngine__Quaternion);
-    func_?(&TypeInfo__UnityEngine__Vector3);
-    func_?(&TypeInfo__MV__WorldObject__WorldObjectDataParameters);
-    func_?(&StringLiteral_Nan_position_detected);
-    func_?(&StringLiteral_Nan_rotation_detected);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Quaternion);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__WorldObjectDataParameters);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Nan_position_detected);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Nan_rotation_detected);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pMVar1 = __return_storage_ptr__;
-  pWVar2 = TypeInfo__MV__WorldObject__WorldObjectDataParameters;
-  __return_storage_ptr__ =
-       (MVWorldObjectClient_TransformData *)CONCAT13(4,__return_storage_ptr__._0_3_);
-  (pMVar1->position).x = 0.0;
-  (pMVar1->position).y = 0.0;
-  (pMVar1->position).z = 0.0;
-  (pMVar1->rotation).x = 0.0;
-  (pMVar1->rotation).y = 0.0;
-  (pMVar1->rotation).z = 0.0;
-  (pMVar1->rotation).w = 0.0;
-  pOVar3 = (Object *)func_?(pWVar2,(int)&__return_storage_ptr__ + 3);
-  this_00 = data;
+  pWVar1 = TypeInfo__MV__WorldObject__WorldObjectDataParameters;
+  auStackX_8[0] = 4;
+  (__return_storage_ptr__->position).x = 0.0;
+  (__return_storage_ptr__->position).y = 0.0;
+  *(undefined8 *)&(__return_storage_ptr__->position).z = 0;
+  (__return_storage_ptr__->rotation).y = 0.0;
+  (__return_storage_ptr__->rotation).z = 0.0;
+  (__return_storage_ptr__->rotation).w = 0.0;
+  pOVar2 = (Object *)FUN_?(pWVar1,auStackX_8);
   if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-             UIElements::TextureId]::
-             Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                       ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,pOVar3
-                        ,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                       );
-    if (TVar4.m_Index != 0) {
-      pVVar5 = TypeInfo__UnityEngine__Vector3;
-      if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) !=
-          (TypeInfo__UnityEngine__Vector3->_0).element_class) goto code_?;
-      puVar6 = (undefined8 *)func_?(TVar4.m_Index);
-      uVar7 = *puVar6;
-      fVar8 = *(float *)(puVar6 + 1);
-      (pMVar1->position).x = (float)(int)uVar7;
-      (pMVar1->position).y = (float)(int)((ulonglong)uVar7 >> 0x20);
-      (pMVar1->position).z = fVar8;
-      fVar8 = (pMVar1->rotation).w;
-      uVar9 = (pMVar1->rotation).z;
-      bVar10 = MathFunctions::MathFunctions_VectorIsNan(pMVar1->position,(MethodInfo *)0x0);
-      if (bVar10 != 0) {
-        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Debug,uVar9,fVar8);
+    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+              Object]::Dictionary_2_System_Object_System_Object__get_Item
+                        (data,pOVar2,
+                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                        );
+    if (pOVar2 != (Object *)0x0) {
+      if ((pOVar2->klass->_0).element_class != (TypeInfo__UnityEngine__Vector3->_0).element_class)
+      {
+        FUN_?(pOVar2,TypeInfo__UnityEngine__Vector3);
+        pcVar3 = (code *)swi(3);
+        pMVar4 = (MVWorldObjectClient_TransformData *)(*pcVar3)();
+        return pMVar4;
+      }
+      fVar5 = *(float *)&pOVar2[1].monitor;
+      *(Object__Class **)&__return_storage_ptr__->position = pOVar2[1].klass;
+      (__return_storage_ptr__->position).z = fVar5;
+      if (((0x7f800000 < (uint)ABS((__return_storage_ptr__->position).x)) ||
+          (0x7f800000 < (uint)ABS((__return_storage_ptr__->position).y))) ||
+         (0x7f800000 < (uint)ABS((__return_storage_ptr__->position).z))) {
+        if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+          FUN_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                   ((Object *)StringLiteral_Nan_position_detected,(MethodInfo *)0x0);
         if (cRam_? == '\0') {
-          func_?(&TypeInfo__UnityEngine__Vector3);
+          FUN_?(&TypeInfo__UnityEngine__Vector3);
+          LOCK();
+          UNLOCK();
           cRam_? = '\x01';
         }
-        pVVar11 = TypeInfo__UnityEngine__Vector3->static_fields;
-        fVar12 = (pVVar11->zeroVector).y;
-        fVar8 = (pVVar11->zeroVector).z;
-        (pMVar1->position).x = (pVVar11->zeroVector).x;
-        (pMVar1->position).y = fVar12;
-        (pMVar1->position).z = fVar8;
+        pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
+        fVar7 = (pVVar6->zeroVector).y;
+        fVar5 = (pVVar6->zeroVector).z;
+        (__return_storage_ptr__->position).x = (pVVar6->zeroVector).x;
+        (__return_storage_ptr__->position).y = fVar7;
+        (__return_storage_ptr__->position).z = fVar5;
       }
-      __return_storage_ptr__ =
-           (MVWorldObjectClient_TransformData *)CONCAT13(5,__return_storage_ptr__._0_3_);
-      pOVar3 = (Object *)
-                func_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,
-                                (int)&__return_storage_ptr__ + 3);
-      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-               UIElements::TextureId]::
-               Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                         ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,
-                          pOVar3,
-                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                         );
-      if (TVar4.m_Index != 0) {
-        pVVar5 = (Vector3__Class *)TypeInfo__UnityEngine__Quaternion;
-        if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
+      auStackX_8[0] = 5;
+      pOVar2 = (Object *)
+                FUN_?(TypeInfo__MV__WorldObject__WorldObjectDataParameters,auStackX_8);
+      pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                Object]::Dictionary_2_System_Object_System_Object__get_Item
+                          (data,pOVar2,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          );
+      if (pOVar2 != (Object *)0x0) {
+        if ((pOVar2->klass->_0).element_class ==
             (TypeInfo__UnityEngine__Quaternion->_0).element_class) {
-          pfVar13 = (float *)func_?(TVar4.m_Index);
-          fVar8 = pfVar13[1];
-          fVar12 = pfVar13[2];
-          fVar14 = pfVar13[3];
-          (pMVar1->rotation).x = *pfVar13;
-          (pMVar1->rotation).y = fVar8;
-          (pMVar1->rotation).z = fVar12;
-          (pMVar1->rotation).w = fVar14;
-          uVar15 = (pMVar1->rotation).z;
-          uVar16 = (pMVar1->rotation).x;
-          uVar17 = (pMVar1->rotation).y;
-          quaternion.y = (float)uVar17;
-          quaternion.x = (float)uVar16;
-          quaternion.z = (float)uVar15;
-          quaternion.w = (pMVar1->rotation).w;
-          bVar10 = MathFunctions::MathFunctions_QuaternionIsNan
-                             (quaternion,(MethodInfo *)(pMVar1->position).x);
-          if (bVar10 != 0) {
-            if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-              func_?();
+          pMVar8 = pOVar2[1].monitor;
+          *(Object__Class **)&__return_storage_ptr__->rotation = pOVar2[1].klass;
+          *(MonitorData **)&(__return_storage_ptr__->rotation).z = pMVar8;
+          uVar9 = (__return_storage_ptr__->rotation).y;
+          uVar10 = (__return_storage_ptr__->rotation).z;
+          if (((0x7f800000 < (uint)ABS((__return_storage_ptr__->rotation).x)) ||
+              (0x7f800000 < (uVar9 & 0x7fffffff))) ||
+             ((0x7f800000 < (uVar10 & 0x7fffffff) ||
+              (0x7f800000 < (uint)ABS((__return_storage_ptr__->rotation).w))))) {
+            if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+              FUN_?();
             }
             UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                       ((Object *)StringLiteral_Nan_rotation_detected,(MethodInfo *)0x0);
             if (cRam_? == '\0') {
-              func_?(&TypeInfo__UnityEngine__Quaternion);
+              FUN_?(&TypeInfo__UnityEngine__Quaternion);
+              LOCK();
+              UNLOCK();
               cRam_? = '\x01';
             }
-            pQVar18 = TypeInfo__UnityEngine__Quaternion->static_fields;
-            fVar8 = (pQVar18->identityQuaternion).y;
-            fVar12 = (pQVar18->identityQuaternion).z;
-            fVar14 = (pQVar18->identityQuaternion).w;
-            (pMVar1->rotation).x = (pQVar18->identityQuaternion).x;
-            (pMVar1->rotation).y = fVar8;
-            (pMVar1->rotation).z = fVar12;
-            (pMVar1->rotation).w = fVar14;
+            pQVar11 = TypeInfo__UnityEngine__Quaternion->static_fields;
+            fVar5 = (pQVar11->identityQuaternion).y;
+            fVar7 = (pQVar11->identityQuaternion).z;
+            fVar12 = (pQVar11->identityQuaternion).w;
+            (__return_storage_ptr__->rotation).x = (pQVar11->identityQuaternion).x;
+            (__return_storage_ptr__->rotation).y = fVar5;
+            (__return_storage_ptr__->rotation).z = fVar7;
+            (__return_storage_ptr__->rotation).w = fVar12;
           }
-          return pMVar1;
+          return __return_storage_ptr__;
         }
-        goto code_?;
+        FUN_?(pOVar2,TypeInfo__UnityEngine__Quaternion);
+        pcVar3 = (code *)swi(3);
+        pMVar4 = (MVWorldObjectClient_TransformData *)(*pcVar3)();
+        return pMVar4;
       }
     }
   }
-  func_?();
-  TVar4.m_Index = extraout_ECX;
-  pVVar5 = extraout_EDX;
-code_?:
-  func_?(TVar4.m_Index,pVVar5);
-  pcVar19 = (code *)swi(3);
-  pMVar1 = (MVWorldObjectClient_TransformData *)(*pcVar19)();
-  return pMVar1;
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  pMVar4 = (MVWorldObjectClient_TransformData *)(*pcVar3)();
+  return pMVar4;
 }
 
 
@@ -1938,12 +3126,8 @@ bool Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_HasEliteRequi
                (MVWorldObjectClient *this,InteractionFlags__Enum flag,MethodInfo *method)
 
 {
-  if (((flag & (InteractionFlags__Enum)(this->fields).eliteRequiredFlags) == flag) &&
-     ((MethodInfo *)(*(uint *)((int)&(this->fields).eliteRequiredFlags + 4) & (uint)method) ==
-      method)) {
-    return 1;
-  }
-  return 0;
+  return ((this->fields).eliteRequiredFlags & CONCAT44(in_register_00000014,flag)) ==
+         CONCAT44(in_register_00000014,flag);
 }
 
 
@@ -1953,12 +3137,8 @@ bool Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_HasInteractio
                (MVWorldObjectClient *this,InteractionFlags__Enum flag,MethodInfo *method)
 
 {
-  if (((flag & (InteractionFlags__Enum)(this->fields).interactionFlags) == flag) &&
-     ((MethodInfo *)(*(uint *)((int)&(this->fields).interactionFlags + 4) & (uint)method) == method)
-     ) {
-    return 1;
-  }
-  return 0;
+  return ((this->fields).interactionFlags & CONCAT44(in_register_00000014,flag)) ==
+         CONCAT44(in_register_00000014,flag);
 }
 
 
@@ -1968,35 +3148,67 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_HideConnector
                (MVWorldObjectClient *this,MethodInfo *method)
 
 {
-  cVar1 = (*(code *)(this->klass->vtable).get_HasInputConnector.method)
-                    (this,(this->klass->vtable).get_HasObjectConnector.methodPtr);
+  cVar1 = (*(this->klass->vtable).get_HasInputConnector.methodPtr)();
   if (cVar1 != '\0') {
     pGVar2 = (this->fields).inputConnectorObject;
     if (pGVar2 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar2,0,(MethodInfo *)0x0);
   }
-  cVar1 = (*(code *)(this->klass->vtable).get_HasOutputConnector.method)(this);
+  cVar1 = (*(this->klass->vtable).get_HasOutputConnector.methodPtr)(this);
   if (cVar1 != '\0') {
     pGVar2 = (this->fields).outputConnectorObject;
     if (pGVar2 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar2,0,(MethodInfo *)0x0);
   }
-  cVar1 = (*(code *)(this->klass->vtable).get_HasObjectConnector.method)
-                    (this,(this->klass->vtable).OnInputStateChanged.methodPtr);
-  if (cVar1 != '\0') {
-    pGVar2 = (this->fields).objectConnectorObject;
+  cVar1 = (*(this->klass->vtable).get_HasObjectConnector.methodPtr)(this);
+  if (cVar1 == '\0') {
+    return;
+  }
+  pGVar2 = (this->fields).objectConnectorObject;
+  if (pGVar2 != (GameObject *)0x0) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                    ,0,0);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
     if (pGVar2 == (GameObject *)0x0) {
-code_?:
-      func_?();
+      FUN_?();
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
     }
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar2,0,(MethodInfo *)0x0);
+    pvVar4 = (pGVar2->fields)._.m_CachedPtr;
+    if (pvVar4 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar2,(MethodInfo *)0x0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pcVar3 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+      uVar5 = func_?(&UNK_?);
+      FUN_?(uVar5,0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pcRam_? = pcVar3;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*pcRam_?)(pvVar4,0);
+    return;
   }
+code_?:
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -2008,162 +3220,258 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_HighlightConn
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    UnityEngine__Renderer_MethodInfo__UnityEngine__Component__GetComponentInChildren<UnityEngine::Renderer>__
-                   );
-    func_?(&
-                    UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&
+                  UnityEngine__Renderer_MethodInfo__UnityEngine__Component__GetComponentInChildren<UnityEngine::Renderer>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  pMVar1 = 
+  UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+  ;
   if ((this->fields).selectedConnector == 0) {
-    pGVar1 = (this->fields).outputConnectorObject;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+    pGVar2 = (this->fields).outputConnectorObject;
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)pGVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      pGVar1 = (this->fields).outputConnectorObject;
-      if ((pGVar1 == (GameObject *)0x0) ||
-         (pCVar3 = (Component *)
-                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                   GameObject_GetComponentInChildren_1
-                             (pGVar1,
-                              UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
-                             ), pCVar3 == (Component *)0x0)) goto code_?;
-      pRVar4 = (Renderer *)
-               UnityEngine.CoreModule.dll::UnityEngine::Component::
-               Component_GetComponentInChildren_1
-                         (pCVar3,
-                          UnityEngine__Renderer_MethodInfo__UnityEngine__Component__GetComponentInChildren<UnityEngine::Renderer>__
-                         );
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
-      }
-      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                        ((Object_1 *)pRVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar2 != 0) {
-        return;
-      }
-      iVar5 = func_?();
-      if (state == 0) {
-        if (iVar5 == 0) goto code_?;
-        pMVar6 = *(Material **)(iVar5 + 0x25c);
-      }
-      else {
-        if (iVar5 == 0) goto code_?;
-        pMVar6 = *(Material **)(iVar5 + 0x260);
-      }
-      if (pRVar4 == (Renderer *)0x0) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
-                (pRVar4,pMVar6,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
-    pGVar1 = (this->fields).inputConnectorObject;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)pGVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 == 0) {
-      return;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
-    pGVar1 = (this->fields).inputConnectorObject;
-    if ((pGVar1 == (GameObject *)0x0) ||
-       (pCVar3 = (Component *)
-                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                 GameObject_GetComponentInChildren_1
-                           (pGVar1,
-                            UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
-                           ), pCVar3 == (Component *)0x0)) goto code_?;
-    pRVar4 = (Renderer *)
-             UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentInChildren_1
-                       (pCVar3,
-                        UnityEngine__Renderer_MethodInfo__UnityEngine__Component__GetComponentInChildren<UnityEngine::Renderer>__
+    if (pGVar2 != (GameObject *)0x0) {
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      pMVar1 = 
+      UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+      ;
+      if ((pGVar2->fields)._.m_CachedPtr != (void *)0x0) {
+        pGVar2 = (this->fields).outputConnectorObject;
+        if (pGVar2 == (GameObject *)0x0) goto code_?;
+        if ((
+            UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+            ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+          FUN_?(
+                       UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
                        );
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+        }
+        pCVar3 = (Component *)
+                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                 GameObject_GetComponentInChildren_3
+                           (pGVar2,0,((pMVar1->field7_0x38).rgctx_data)->method);
+        if (pCVar3 == (Component *)0x0) goto code_?;
+        pRVar4 = (Renderer *)
+                 UnityEngine.CoreModule.dll::UnityEngine::Component::
+                 Component_GetComponentInChildren_1
+                           (pCVar3,
+                            UnityEngine__Renderer_MethodInfo__UnityEngine__Component__GetComponentInChildren<UnityEngine::Renderer>__
+                           );
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Object);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (pRVar4 == (Renderer *)0x0) {
+          return;
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if ((pRVar4->fields)._._.m_CachedPtr == (void *)0x0) {
+          return;
+        }
+        lVar5 = FUN_?();
+        if (state == 0) {
+          if (lVar5 == 0) goto code_?;
+          pMVar6 = *(Material **)(lVar5 + 0x4b8);
+        }
+        else {
+          if (lVar5 == 0) goto code_?;
+          pMVar6 = *(Material **)(lVar5 + 0x4c0);
+        }
+        UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_SetMaterial
+                  (pRVar4,pMVar6,(MethodInfo *)0x0);
+      }
     }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)pRVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
+    pGVar2 = (this->fields).inputConnectorObject;
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (pGVar2 == (GameObject *)0x0) {
       return;
     }
-    iVar5 = func_?();
-code_?:
-    if (state == 0) {
-      if (iVar5 == 0) goto code_?;
-      pMVar6 = *(Material **)(iVar5 + 0x254);
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    else {
-      if (iVar5 == 0) goto code_?;
-      pMVar6 = *(Material **)(iVar5 + 600);
+    if ((pGVar2->fields)._.m_CachedPtr == (void *)0x0) {
+      return;
     }
+    if ((this->fields).inputConnectorObject == (GameObject *)0x0) goto code_?;
+    pCVar3 = (Component *)FUN_?();
   }
   else {
-    if ((this->fields).selectedConnector == 1) {
-      pGVar1 = (this->fields).inputConnectorObject;
-      if ((pGVar1 == (GameObject *)0x0) ||
-         (pCVar3 = (Component *)
-                   UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                   GameObject_GetComponentInChildren_1
-                             (pGVar1,
-                              UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
-                             ), pCVar3 == (Component *)0x0)) goto code_?;
+    if ((this->fields).selectedConnector != 1) {
+      if ((this->fields).selectedConnector != 2) {
+        return;
+      }
+      if (((this->fields).outputConnectorObject == (GameObject *)0x0) ||
+         (pCVar3 = (Component *)FUN_?(), pCVar3 == (Component *)0x0))
+      goto code_?;
       pRVar4 = (Renderer *)
                UnityEngine.CoreModule.dll::UnityEngine::Component::
                Component_GetComponentInChildren_1
                          (pCVar3,
                           UnityEngine__Renderer_MethodInfo__UnityEngine__Component__GetComponentInChildren<UnityEngine::Renderer>__
                          );
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
       }
-      bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                        ((Object_1 *)pRVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
-      if (bVar2 != 0) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (pRVar4 == (Renderer *)0x0) {
         return;
       }
-      iVar5 = func_?();
-      state = 0;
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if ((pRVar4->fields)._._.m_CachedPtr == (void *)0x0) {
+        return;
+      }
+      lVar5 = FUN_?();
+      if (state == 0) {
+        if (lVar5 == 0) goto code_?;
+        pMVar6 = *(Material **)(lVar5 + 0x4b8);
+      }
+      else {
+        if (lVar5 == 0) goto code_?;
+        pMVar6 = *(Material **)(lVar5 + 0x4c0);
+      }
       goto code_?;
     }
-    if ((this->fields).selectedConnector != 2) {
-      return;
+    pGVar2 = (this->fields).inputConnectorObject;
+    if (pGVar2 == (GameObject *)0x0) goto code_?;
+    if ((
+        UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+        ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(
+                   UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+                   );
     }
-    pGVar1 = (this->fields).outputConnectorObject;
-    if ((pGVar1 == (GameObject *)0x0) ||
-       (pCVar3 = (Component *)
-                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                 GameObject_GetComponentInChildren_1
-                           (pGVar1,
-                            UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
-                           ), pCVar3 == (Component *)0x0)) goto code_?;
+    pCVar3 = (Component *)
+             UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+             GameObject_GetComponentInChildren_3
+                       (pGVar2,0,((pMVar1->field7_0x38).rgctx_data)->method);
+  }
+  if (pCVar3 != (Component *)0x0) {
     pRVar4 = (Renderer *)
              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_GetComponentInChildren_1
                        (pCVar3,
                         UnityEngine__Renderer_MethodInfo__UnityEngine__Component__GetComponentInChildren<UnityEngine::Renderer>__
                        );
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)pRVar4,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (pRVar4 == (Renderer *)0x0) {
       return;
     }
-    iVar5 = func_?();
-    if (iVar5 == 0) goto code_?;
-    pMVar6 = *(Material **)(iVar5 + 0x25c);
-  }
-  if (pRVar4 != (Renderer *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_sharedMaterial
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((pRVar4->fields)._._.m_CachedPtr == (void *)0x0) {
+      return;
+    }
+    lVar5 = FUN_?();
+    if (state == 0) {
+      if (lVar5 == 0) goto code_?;
+      pMVar6 = *(Material **)(lVar5 + 0x4a8);
+    }
+    else {
+      if (lVar5 == 0) goto code_?;
+      pMVar6 = *(Material **)(lVar5 + 0x4b0);
+    }
+code_?:
+    UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_SetMaterial
               (pRVar4,pMVar6,(MethodInfo *)0x0);
     return;
   }
 code_?:
-  func_?();
+  FUN_?();
   pcVar7 = (code *)swi(3);
   (*pcVar7)();
   return;
@@ -2177,12 +3485,10 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_Initialize
 
 {
   if ((this->fields)._.previewOwnerProfileId != 0) {
-    (*(code *)(this->klass->vtable).AddPreviewBox.method)
-              (this,(this->klass->vtable).AddSelectionBox.methodPtr);
-    uVar1 = *(undefined4 *)((int)&(this->fields).interactionFlags + 4);
-    piVar2 = &(this->fields).interactionFlags;
-    *(uint *)piVar2 = (uint)*piVar2 | 0x20000;
-    *(undefined4 *)((int)&(this->fields).interactionFlags + 4) = uVar1;
+    (*(this->klass->vtable).AddPreviewBox.methodPtr)
+              (this,(this->klass->vtable).AddPreviewBox.method);
+    piVar1 = &(this->fields).interactionFlags;
+    *piVar1 = *piVar1 | 0x20000;
   }
   return;
 }
@@ -2193,48 +3499,87 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_Initialize
 GameObject *
 Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_InstantiatePrefab
           (MVWorldObjectClient *this,GameObject *prefabObject,
-          MVWorldObjectClient_TransformData transformData,MethodInfo *method)
+          MVWorldObjectClient_TransformData *transformData,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Vector3__UnityEngine__Quaternion_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&StringLiteral_Prefab_object_is_null_);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Vector3__UnityEngine__Quaternion_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Prefab_object_is_null_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)prefabObject,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (prefabObject != (GameObject *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-              ((Object *)StringLiteral_Prefab_object_is_null_,(MethodInfo *)0x0);
+    if ((prefabObject->fields)._.m_CachedPtr != (void *)0x0) goto code_?;
   }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pGVar2 = (GameObject *)
-           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_7
-                     ((Object *)prefabObject,transformData.position,transformData.rotation,
-                      UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Vector3__UnityEngine__Quaternion_
-                     );
-  if (pGVar2 != (GameObject *)0x0) {
-    iVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
-                      ((Object_1 *)pGVar2,(MethodInfo *)0x0);
-    (this->fields).goId = iVar3;
-    return pGVar2;
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+            ((Object *)StringLiteral_Prefab_object_is_null_,(MethodInfo *)0x0);
+code_?:
+  uStack_1._0_4_ = (transformData->rotation).y;
+  uStack_1._4_4_ = (transformData->rotation).z;
+  fStack_2 = (transformData->rotation).w;
+  fVar3 = (transformData->position).x;
+  fVar4 = (transformData->position).y;
+  fVar5 = (transformData->position).z;
+  fStack_6 = (transformData->rotation).x;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    fStack_7 = fVar3;
+    fStack_8 = fVar4;
+    fStack_9 = fVar5;
+    FUN_?();
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  pGVar2 = (GameObject *)(*pcVar4)();
-  return pGVar2;
+  fStack_7 = fStack_6;
+  fStack_8 = (float)(undefined4)uStack_1;
+  fStack_9 = (float)uStack_1._4_4_;
+  fStack_6 = fStack_2;
+  fStack_10 = fVar3;
+  fStack_11 = fVar4;
+  fStack_12 = fVar5;
+  pGVar13 = (GameObject *)FUN_?(prefabObject,&fStack_10,&fStack_7);
+  if (pGVar13 != (GameObject *)0x0) {
+    iVar14 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
+                      ((Object_1 *)pGVar13,(MethodInfo *)0x0);
+    (this->fields).goId = iVar14;
+    return pGVar13;
+  }
+  FUN_?();
+  pcVar15 = (code *)swi(3);
+  pGVar13 = (GameObject *)(*pcVar15)();
+  return pGVar13;
 }
 
 
@@ -2243,52 +3588,121 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_InstantiatePrefab
 ObjectPrefab *
 Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_InstantiatePrefab_1
           (MVWorldObjectClient *this,ObjectPrefab *prefabObject,
-          MVWorldObjectClient_TransformData transformData,MethodInfo *method)
+          MVWorldObjectClient_TransformData *transformData,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    ObjectPrefab_MethodInfo__UnityEngine__Object__Instantiate<ObjectPrefab>_ObjectPrefab__UnityEngine__Vector3__UnityEngine__Quaternion_
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
-    func_?(&StringLiteral_Prefab_object_is_null_);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  ObjectPrefab_MethodInfo__UnityEngine__Object__Instantiate<ObjectPrefab>_ObjectPrefab__UnityEngine__Vector3__UnityEngine__Quaternion_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Prefab_object_is_null_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)prefabObject,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (prefabObject != (ObjectPrefab *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-              ((Object *)StringLiteral_Prefab_object_is_null_,(MethodInfo *)0x0);
+    if ((prefabObject->fields)._._._._.m_CachedPtr != (void *)0x0) goto code_?;
   }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  pOVar2 = (ObjectPrefab *)
-           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_7
-                     ((Object *)prefabObject,transformData.position,transformData.rotation,
-                      ObjectPrefab_MethodInfo__UnityEngine__Object__Instantiate<ObjectPrefab>_ObjectPrefab__UnityEngine__Vector3__UnityEngine__Quaternion_
-                     );
-  if (pOVar2 != (ObjectPrefab *)0x0) {
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+            ((Object *)StringLiteral_Prefab_object_is_null_,(MethodInfo *)0x0);
+code_?:
+  uVar1 = (transformData->rotation).y;
+  uVar2 = (transformData->rotation).z;
+  fStack_3 = (transformData->rotation).w;
+  fVar4 = (transformData->position).x;
+  fVar5 = (transformData->position).y;
+  QStack_6.x = (transformData->position).x;
+  QStack_6.y = (transformData->position).y;
+  fVar7 = (transformData->position).z;
+  QStack_6.w = (transformData->rotation).x;
+  QStack_6.z = fVar7;
+  fStack_8 = (float)uVar1;
+  fStack_9 = (float)uVar2;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pMVar10 = 
+  ObjectPrefab_MethodInfo__UnityEngine__Object__Instantiate<ObjectPrefab>_ObjectPrefab__UnityEngine__Vector3__UnityEngine__Quaternion_
+  ;
+  if ((
+      ObjectPrefab_MethodInfo__UnityEngine__Object__Instantiate<ObjectPrefab>_ObjectPrefab__UnityEngine__Vector3__UnityEngine__Quaternion_
+      ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    if ((pMVar10->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(pMVar10);
+    }
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  QStack_6.y = fStack_8;
+  QStack_6.x = QStack_6.w;
+  QStack_6.z = fStack_9;
+  QStack_6.w = fStack_3;
+  VStack_11.x = fVar4;
+  VStack_11.y = fVar5;
+  VStack_11.z = fVar7;
+  pOVar12 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate
+                     ((Object_1 *)prefabObject,&VStack_11,&QStack_6,(MethodInfo *)0x0);
+  pvVar13 = ((pMVar10->field7_0x38).rgctx_data)->rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar13 + 0x135) & 1) == 0) {
+    pvVar13 = (void *)FUN_?(pvVar13);
+  }
+  if (pOVar12 != (Object_1 *)0x0) {
+    pOVar14 = (ObjectPrefab *)FUN_?(pOVar12);
+    if (pOVar14 == (ObjectPrefab *)0x0) {
+      FUN_?(pOVar12,pvVar13);
+      pcVar15 = (code *)swi(3);
+      pOVar14 = (ObjectPrefab *)(*pcVar15)();
+      return pOVar14;
+    }
     this_00 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                        ((Component *)pOVar2,(MethodInfo *)0x0);
+                        ((Component *)pOVar14,(MethodInfo *)0x0);
     if (this_00 != (GameObject *)0x0) {
-      iVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
+      iVar16 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
                         ((Object_1 *)this_00,(MethodInfo *)0x0);
-      (this->fields).goId = iVar3;
-      return pOVar2;
+      (this->fields).goId = iVar16;
+      return pOVar14;
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  pOVar2 = (ObjectPrefab *)(*pcVar4)();
-  return pOVar2;
+  FUN_?();
+  pcVar15 = (code *)swi(3);
+  pOVar14 = (ObjectPrefab *)(*pcVar15)();
+  return pOVar14;
 }
 
 
@@ -2300,8 +3714,10 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_InventoryInit
 {
   pMVar1 = this->klass;
   (this->fields).initializedFromInventory = 1;
-  (*(code *)(pMVar1->vtable).InitializeInventory.method)
-            (this,(pMVar1->vtable).PlayModeInitialize.methodPtr);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(pMVar1->vtable).InitializeInventory.methodPtr)
+            (this,(pMVar1->vtable).InitializeInventory.method);
   return;
 }
 
@@ -2309,34 +3725,46 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_InventoryInit
 /* Boolean IsPointOverInputConnector(Vector3) */
 
 bool Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_IsPointOverInputConnector
-               (MVWorldObjectClient *this,Vector3 mousePoint,MethodInfo *method)
+               (MVWorldObjectClient *this,Vector3 *mousePoint,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
-                   );
+    FUN_?(&
+                  UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  cVar1 = (*(code *)(this->klass->vtable).get_HasInputConnector.method)
-                    (this,(this->klass->vtable).get_HasObjectConnector.methodPtr);
+  cVar1 = (*(this->klass->vtable).get_HasInputConnector.methodPtr)(this);
+  pMVar2 = 
+  UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+  ;
   if (cVar1 != '\0') {
     this_00 = (this->fields).inputConnectorObject;
     if (this_00 != (GameObject *)0x0) {
+      if ((
+          UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+          ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+        FUN_?(
+                     UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+                     );
+      }
       collider = (Collider *)
                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                 GameObject_GetComponentInChildren_1
-                           (this_00,
-                            UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
-                           );
-      bVar2 = MVWorldObjectClient_DoesScreenPointHitCollider
-                        (this,mousePoint,collider,(MethodInfo *)0x0);
-      return bVar2;
+                 GameObject_GetComponentInChildren_3
+                           (this_00,0,((pMVar2->field7_0x38).rgctx_data)->method);
+      VStack_3.z = mousePoint->z;
+      VStack_3.x = mousePoint->x;
+      VStack_3.y = mousePoint->y;
+      bVar4 = MVWorldObjectClient_DoesScreenPointHitCollider
+                        (this,&VStack_3,collider,(MethodInfo *)0x0);
+      return bVar4;
     }
-    func_?();
-    pcVar3 = (code *)swi(3);
-    bVar2 = (*pcVar3)();
-    return bVar2;
+    FUN_?();
+    pcVar5 = (code *)swi(3);
+    bVar4 = (*pcVar5)();
+    return bVar4;
   }
   return 0;
 }
@@ -2345,34 +3773,46 @@ bool Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_IsPointOverIn
 /* Boolean IsPointOverOutputConnector(Vector3) */
 
 bool Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_IsPointOverOutputConnector
-               (MVWorldObjectClient *this,Vector3 mousePoint,MethodInfo *method)
+               (MVWorldObjectClient *this,Vector3 *mousePoint,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
-                   );
+    FUN_?(&
+                  UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  cVar1 = (*(code *)(this->klass->vtable).get_HasOutputConnector.method)
-                    (this,(this->klass->vtable).get_HasInputConnector.methodPtr);
+  cVar1 = (*(this->klass->vtable).get_HasOutputConnector.methodPtr)(this);
+  pMVar2 = 
+  UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+  ;
   if (cVar1 != '\0') {
     this_00 = (this->fields).outputConnectorObject;
     if (this_00 != (GameObject *)0x0) {
+      if ((
+          UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+          ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+        FUN_?(
+                     UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+                     );
+      }
       collider = (Collider *)
                  UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-                 GameObject_GetComponentInChildren_1
-                           (this_00,
-                            UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
-                           );
-      bVar2 = MVWorldObjectClient_DoesScreenPointHitCollider
-                        (this,mousePoint,collider,(MethodInfo *)0x0);
-      return bVar2;
+                 GameObject_GetComponentInChildren_3
+                           (this_00,0,((pMVar2->field7_0x38).rgctx_data)->method);
+      VStack_3.z = mousePoint->z;
+      VStack_3.x = mousePoint->x;
+      VStack_3.y = mousePoint->y;
+      bVar4 = MVWorldObjectClient_DoesScreenPointHitCollider
+                        (this,&VStack_3,collider,(MethodInfo *)0x0);
+      return bVar4;
     }
-    func_?();
-    pcVar3 = (code *)swi(3);
-    bVar2 = (*pcVar3)();
-    return bVar2;
+    FUN_?();
+    pcVar5 = (code *)swi(3);
+    bVar4 = (*pcVar5)();
+    return bVar4;
   }
   return 0;
 }
@@ -2386,93 +3826,215 @@ bool Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_OnClickHandle
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&
+                  UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  cVar1 = (*(code *)(this->klass->vtable).get_HasInputConnector.method)
-                    (this,(this->klass->vtable).get_HasObjectConnector.methodPtr);
+  cVar1 = (*(this->klass->vtable).get_HasInputConnector.methodPtr)(this);
+  pMVar2 = 
+  UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+  ;
   if (cVar1 == '\0') {
 code_?:
-    cVar1 = (*(code *)(this->klass->vtable).get_HasOutputConnector.method)(this);
-    if (cVar1 != '\0') {
-      pGVar2 = (this->fields).outputConnectorObject;
-      if (pGVar2 == (GameObject *)0x0) goto code_?;
-      pOVar3 = (Object_1 *)
-               UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-               GameObject_GetComponentInChildren_1
-                         (pGVar2,
-                          UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
-                         );
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      esm = (EditorStateMachine *)0x0;
-      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                        ((Object_1 *)collider,pOVar3,(MethodInfo *)0x0);
-      if (bVar4 != 0) {
-        (this->fields).selectedConnector = 2;
-        goto code_?;
-      }
-    }
-    cVar1 = (*(code *)(this->klass->vtable).get_HasObjectConnector.method)(this);
+    cVar1 = (*(this->klass->vtable).get_HasOutputConnector.methodPtr)(this);
+    pMVar2 = 
+    UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+    ;
     if (cVar1 == '\0') {
-      return 0;
-    }
-    pGVar2 = (this->fields).objectConnectorObject;
-    if (pGVar2 != (GameObject *)0x0) {
-      pOVar3 = (Object_1 *)
-               UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-               GameObject_GetComponentInChildren_1
-                         (pGVar2,
-                          UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
-                         );
-      if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__UnityEngine__Object);
-      }
-      bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                        ((Object_1 *)collider,pOVar3,(MethodInfo *)0x0);
-      if (bVar4 == 0) {
+code_?:
+      cVar1 = (*(this->klass->vtable).get_HasObjectConnector.methodPtr)(this);
+      pMVar2 = 
+      UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+      ;
+      if (cVar1 == '\0') {
         return 0;
       }
+      pGVar3 = (this->fields).objectConnectorObject;
+      if (pGVar3 == (GameObject *)0x0) goto code_?;
+      if ((
+          UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+          ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+        FUN_?(
+                     UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+                     );
+      }
+      pCVar4 = (Collider *)
+               UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+               GameObject_GetComponentInChildren_3
+                         (pGVar3,0,((pMVar2->field7_0x38).rgctx_data)->method);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (collider != (Collider *)0x0 || pCVar4 != (Collider *)0x0) {
+        if (pCVar4 == (Collider *)0x0) {
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (collider == (Collider *)0x0) goto code_?;
+          bVar5 = (collider->fields)._._.m_CachedPtr == (void *)0x0;
+        }
+        else if (collider == (Collider *)0x0) {
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          bVar5 = (pCVar4->fields)._._.m_CachedPtr == (void *)0x0;
+        }
+        else {
+          bVar5 = collider == pCVar4;
+        }
+        if (!bVar5) {
+          return 0;
+        }
+      }
       (this->fields).selectedConnector = 3;
-      if (esm != (EditorStateMachine *)0x0) {
-        FSMEntity::FSMEntity_PushState
-                  ((FSMEntity *)esm,EditorEvent__Enum_ESAddObjectLink,(MethodInfo *)0x0);
+      if (esm == (EditorStateMachine *)0x0) goto code_?;
+      if ((esm->fields)._.lockState != 0) {
         return 1;
       }
+      nextState = EditorEvent__Enum_ESAddObjectLink;
+      goto code_?;
     }
+    pGVar3 = (this->fields).outputConnectorObject;
+    if (pGVar3 == (GameObject *)0x0) goto code_?;
+    if ((
+        UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+        ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(
+                   UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+                   );
+    }
+    pCVar4 = (Collider *)
+             UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+             GameObject_GetComponentInChildren_3
+                       (pGVar3,0,((pMVar2->field7_0x38).rgctx_data)->method);
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (collider != (Collider *)0x0 || pCVar4 != (Collider *)0x0) {
+      if (pCVar4 == (Collider *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (collider == (Collider *)0x0) goto code_?;
+        bVar5 = (collider->fields)._._.m_CachedPtr == (void *)0x0;
+      }
+      else if (collider == (Collider *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        bVar5 = (pCVar4->fields)._._.m_CachedPtr == (void *)0x0;
+      }
+      else {
+        bVar5 = collider == pCVar4;
+      }
+      if (!bVar5) goto code_?;
+    }
+    (this->fields).selectedConnector = 2;
   }
   else {
-    pGVar2 = (this->fields).inputConnectorObject;
-    if (pGVar2 == (GameObject *)0x0) goto code_?;
-    pOVar3 = (Object_1 *)
+    pGVar3 = (this->fields).inputConnectorObject;
+    if (pGVar3 == (GameObject *)0x0) goto code_?;
+    if ((
+        UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+        ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(
+                   UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
+                   );
+    }
+    pCVar4 = (Collider *)
              UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-             GameObject_GetComponentInChildren_1
-                       (pGVar2,
-                        UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<UnityEngine::Collider>__
-                       );
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
+             GameObject_GetComponentInChildren_3
+                       (pGVar3,0,((pMVar2->field7_0x38).rgctx_data)->method);
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                      ((Object_1 *)collider,pOVar3,(MethodInfo *)0x0);
-    if (bVar4 == 0) goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (collider != (Collider *)0x0 || pCVar4 != (Collider *)0x0) {
+      if (pCVar4 == (Collider *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (collider == (Collider *)0x0) goto code_?;
+        bVar5 = (collider->fields)._._.m_CachedPtr == (void *)0x0;
+      }
+      else if (collider == (Collider *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        bVar5 = (pCVar4->fields)._._.m_CachedPtr == (void *)0x0;
+      }
+      else {
+        bVar5 = collider == pCVar4;
+      }
+      if (!bVar5) goto code_?;
+    }
     (this->fields).selectedConnector = 1;
-code_?:
-    if (esm != (EditorStateMachine *)0x0) {
-      FSMEntity::FSMEntity_PushState((FSMEntity *)esm,EditorEvent__Enum_ESAddLink,(MethodInfo *)0x0)
-      ;
-      return 1;
-    }
   }
+  if (esm == (EditorStateMachine *)0x0) {
 code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  bVar4 = (*pcVar5)();
-  return bVar4;
+    FUN_?();
+    pcVar6 = (code *)swi(3);
+    bVar7 = (*pcVar6)();
+    return bVar7;
+  }
+  if ((esm->fields)._.lockState != 0) {
+    return 1;
+  }
+  nextState = EditorEvent__Enum_ESAddLink;
+code_?:
+  FSMEntity::FSMEntity_PushState_1
+            ((FSMEntity *)esm,nextState,EditorEvent__Enum_UndefinedState,(MethodInfo *)0x0);
+  return 1;
 }
 
 
@@ -2483,19 +4045,21 @@ bool Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_OnExitObject
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__EditorEvent);
+    FUN_?(&TypeInfo__EditorEvent);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  uStack_1 = 0xc;
-  value = (Object *)func_?(TypeInfo__EditorEvent,&uStack_1);
+  auStackX_10[0] = 0xc;
+  value = (Object *)FUN_?(TypeInfo__EditorEvent,auStackX_10);
   if (e != (EditorStateMachine *)0x0) {
     FSMEntity::FSMEntity_set_Event((FSMEntity *)e,value,(MethodInfo *)0x0);
     return 0;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  bVar2 = (*pcVar1)();
+  return bVar2;
 }
 
 
@@ -2506,27 +4070,27 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_OnSelectedCha
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__SelectedEventArgs);
+    FUN_?(&TypeInfo__SelectedEventArgs);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields).SelectedChanged != (UnityAction_2_MVWorldObjectClient_SelectedEventArgs_ *)0x0)
   {
     pUVar1 = (this->fields).SelectedChanged;
-    this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
-              func_?(TypeInfo__SelectedEventArgs);
+    lVar2 = FUN_?(TypeInfo__SelectedEventArgs);
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__System__EventArgs);
+      FUN_?(&TypeInfo__System__EventArgs);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__EventArgs);
+    if (*(int *)&(TypeInfo__System__EventArgs->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-    UxmlObjectListAttributeDescription`1[System::Object]::
-    UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
-    *(bool *)&(this_00->fields)._._defaultValue_k__BackingField = selected;
+    *(bool *)(lVar2 + 0x10) = selected;
     (*(pUVar1->fields)._._.invoke_impl)
-              ((pUVar1->fields)._._.method_code,this,this_00,(pUVar1->fields)._._.method);
+              ((pUVar1->fields)._._.method_code,this,lVar2,(pUVar1->fields)._._.method);
   }
   return;
 }
@@ -2539,10 +4103,11 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_PartialRemove
                ,MethodInfo *method)
 
 {
-  MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_PartialRemoveFromWOData
-            ((MVWorldObject *)this,entriesToRemove,(MethodInfo *)0x0);
-  (*(code *)(this->klass->vtable).OnDataUpdate.method)
-            (this,(this->klass->vtable).OnRunTimeDataUpdate.methodPtr);
+  MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialRemoveFromHashtable_1
+            ((this->fields)._.data,entriesToRemove,0,(MethodInfo *)0x0);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(this->klass->vtable).OnDataUpdate.methodPtr)(this,(this->klass->vtable).OnDataUpdate.method);
   return;
 }
 
@@ -2554,10 +4119,11 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_PartialUpdate
                MethodInfo *method)
 
 {
-  MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject_PartialUpdateWOData
-            ((MVWorldObject *)this,woData,(MethodInfo *)0x0);
-  (*(code *)(this->klass->vtable).OnDataUpdate.method)
-            (this,(this->klass->vtable).OnRunTimeDataUpdate.methodPtr);
+  MVCommon.dll::MV::Common::CommonUtils::CommonUtils_PartialUpdateHashtable
+            ((this->fields)._.data,woData,(MethodInfo *)0x0);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(this->klass->vtable).OnDataUpdate.methodPtr)(this,(this->klass->vtable).OnDataUpdate.method);
   return;
 }
 
@@ -2569,46 +4135,64 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_PositionChang
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PositionChangedEventArgs);
+    FUN_?(&TypeInfo__PositionChangedEventArgs);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields).PositionChanged !=
       (UnityAction_2_MVWorldObjectClient_PositionChangedEventArgs_ *)0x0) {
-    this_00 = (this->fields).transform;
     pUVar1 = (this->fields).PositionChanged;
-    if (this_00 == (Transform *)0x0) {
-      func_?();
+    obj = (this->fields).transform;
+    if (obj == (Transform *)0x0) {
+      FUN_?();
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    pVVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                       (&VStack_4,this_00,(MethodInfo *)0x0);
-    uStack_5._0_4_ = pVVar3->x;
-    uStack_5._4_4_ = pVVar3->y;
-    pMVar6 = (MonitorData *)pVVar3->z;
-    this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
-              func_?(TypeInfo__PositionChangedEventArgs);
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__System__EventArgs);
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__System__EventArgs);
-      UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-      UxmlObjectListAttributeDescription`1[System::Object]::
-      UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
+    uStack_3 = 0;
+    uStack_4 = 0;
+    pvVar5 = (obj->fields)._._.m_CachedPtr;
+    if (pvVar5 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
     }
-    else {
-      UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-      UxmlObjectListAttributeDescription`1[System::Object]::
-      UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar6 = func_?(&UNK_?);
+      FUN_?(uVar6,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
     }
-    *(undefined8 *)&this_01->fields = uStack_5;
-    this_01[1].monitor = pMVar6;
-    VStack_4.y = (float)(pUVar1->fields)._._.method;
-    VStack_4.x = (float)this_01;
-    (*(pUVar1->fields)._._.invoke_impl)((pUVar1->fields)._._.method_code,this);
+    pcRam_? = pcVar2;
+    (*pcRam_?)(pvVar5,&uStack_3);
+    lVar7 = FUN_?(TypeInfo__PositionChangedEventArgs);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__System__EventArgs);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__System__EventArgs->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    *(undefined8 *)(lVar7 + 0x10) = uStack_3;
+    *(undefined4 *)(lVar7 + 0x18) = uStack_4;
+    (*(pUVar1->fields)._._.invoke_impl)
+              ((pUVar1->fields)._._.method_code,this,lVar7,(pUVar1->fields)._._.method);
   }
   return;
 }
@@ -2617,43 +4201,53 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_PositionChang
 /* Void ReceiveInteractionPackage(InteractionData, MVPlayer) */
 
 void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_ReceiveInteractionPackage
-               (MVWorldObjectClient *this,InteractionData interactionStruct,MVPlayer *p,
+               (MVWorldObjectClient *this,InteractionData *interactionStruct,MVPlayer *p,
                MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__AvatarPackages);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_InteractionPackage>__get_Item_MV__WorldObject__InteractionPackageType_
-                   );
-    func_?(&TypeInfo__MV__WorldObject__InteractionData);
+    FUN_?(&TypeInfo__AvatarPackages);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_InteractionPackage>__get_Item_MV__WorldObject__InteractionPackageType_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__InteractionData);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__AvatarPackages->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__AvatarPackages);
+  if (*(int *)&(TypeInfo__AvatarPackages->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__AvatarPackages);
   }
   this_00 = TypeInfo__AvatarPackages->static_fields->packages;
-  if ((TypeInfo__MV__WorldObject__InteractionData->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MV__WorldObject__InteractionData);
+  if (*(int *)&(TypeInfo__MV__WorldObject__InteractionData->_1).field_0x1c == 0) {
+    FUN_?();
   }
   if (this_00 != (Dictionary_2_MV_WorldObject_InteractionPackageType_InteractionPackage_ *)0x0) {
     pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::ByteEnum,System::
              Object]::Dictionary_2_System_ByteEnum_System_Object__get_Item
                        ((Dictionary_2_System_ByteEnum_System_Object_ *)this_00,
-                        interactionStruct._16_4_,
+                        (uint)interactionStruct->interactionType,
                         MethodInfo__System__Collections__Generic__Dictionary<MV::WorldObject::InteractionPackageType,_InteractionPackage>__get_Item_MV__WorldObject__InteractionPackageType_
                        );
     if (pOVar1 != (Object *)0x0) {
-      (*pOVar1->klass[1]._0.gc_desc)
-                (pOVar1,this,p,interactionStruct.damage,interactionStruct.impulse.x,
-                 interactionStruct.impulse.y,interactionStruct.impulse.z,interactionStruct._16_4_,
-                 pOVar1->klass[1]._0.name);
+      uStack_2._0_1_ = interactionStruct->interactionType;
+      uStack_2._1_1_ = interactionStruct->playerKilledByType;
+      uStack_2._2_2_ = *(undefined2 *)&interactionStruct->field_0x12;
+      fStack_3 = interactionStruct->damage;
+      fStack_4 = (interactionStruct->impulse).x;
+      fStack_5 = (interactionStruct->impulse).y;
+      fStack_6 = (interactionStruct->impulse).z;
+      (*(code *)pOVar1->klass[1]._0.image)(pOVar1,this,p,&fStack_3,pOVar1->klass[1]._0.gc_desc);
       return;
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar7 = (code *)swi(3);
+  (*pcVar7)();
   return;
 }
 
@@ -2665,121 +4259,135 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_ReceivePackag
                Dictionary_2_System_Object_System_Object_ *package,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffff9c;
-  puVar5 = &stack0xffffff9c;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<System::Object,_System::Object>__get_Key__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<System::Object,_System::Object>__get_Value__
-                   );
-    func_?(&TypeInfo__MV__WorldObject__PackageType);
-    func_?(&StringLiteral_Unknown_package_type);
+    FUN_?(&TypeInfo__System__Byte);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<System::Object,_System::Object>__get_Key__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<System::Object,_System::Object>__get_Value__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__WorldObject__PackageType);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Unknown_package_type);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  DStack_6._current.value = (Object *)0x0;
-  DStack_6._getEnumeratorRetType = 0;
-  DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)0x0;
-  DStack_6._version = 0;
-  DStack_6._index = 0;
-  DStack_6._current.key = (Object *)0x0;
-  if (package != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
-             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       ((Dictionary_2_TKey_TValue_Enumerator_System_UInt32_System_Object_ *)
-                        auStack_8,(Dictionary_2_System_UInt32_System_Object_ *)package,
-                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__GetEnumerator__
-                       );
-    uStack_9 = 0;
-    DStack_6._dictionary = (Dictionary_2_System_Object_System_Object_ *)pDVar7->_dictionary;
-    DStack_6._version = pDVar7->_version;
-    DStack_6._index = pDVar7->_index;
-    DStack_6._current.key = (Object *)(pDVar7->_current).key;
-    DStack_6._16_8_ = *(undefined8 *)&(pDVar7->_current).value;
-    uStack_1 = 1;
-    pDStack_10 = &DStack_6;
-    while( true ) {
-      bVar11 = mscorlib.dll::System::Collections::Generic::
-              Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Object]::
-              Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
-                        (&DStack_6,
-                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
-                        );
-      if (bVar11 == 0) {
-        uStack_1 = 0xffffffff;
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)&DStack_6,
-                   (ExceptionArgument__Enum)
-                   MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__Dispose__
-                   ,unaff_EDI);
-        *unaff_FS_OFFSET = uStack_3;
-        return;
+  if (package == (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  uStack_2 = 0;
+  uStack_3 = 0;
+  if (iRam_? != 0) {
+    uVar4 = (uint)((ulonglong)&pDStack_5 >> 0xc);
+    puVar6 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar7 = *puVar6;
+      LOCK();
+      uVar8 = *puVar6;
+      if (uVar7 == uVar8) {
+        *puVar6 = uVar7 | 1L << (uVar4 & 0x3f);
       }
-      pOVar12 = DStack_6._current.value;
-      if (DStack_6._current.key == (Object *)0x0) goto code_?;
-      pOVar13 = DStack_6._current.key;
-      pPVar14 = TypeInfo__MV__WorldObject__PackageType;
-      if (((DStack_6._current.key)->klass->_0).element_class !=
-          (TypeInfo__MV__WorldObject__PackageType->_0).element_class) break;
-      pcVar15 = (char *)func_?(DStack_6._current.key);
-      pBVar16 = TypeInfo__System__Byte;
-      if (*pcVar15 == '\0') {
-        iStack_17 = 0;
-        auStack_8._4_4_ = 0;
-        iStack_18 = 0;
-        uStack_19 = 0;
-        pOStack_20 = (Object *)0x0;
-        if (pOVar12 == (Object *)0x0) {
-          byteArray = (Byte__Array *)0x0;
-        }
-        else {
-          byteArray = (Byte__Array *)func_?(pOVar12,TypeInfo__System__Byte);
-          if (byteArray == (Byte__Array *)0x0) {
-            func_?(pOVar12,pBVar16);
-            pOVar13 = extraout_ECX;
-            pPVar14 = extraout_EDX;
-            break;
-          }
-        }
-        MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_7
-                  ((InteractionData *)(auStack_8 + 4),byteArray,(MethodInfo *)0x0);
-        func_?(0x3f,this,auStack_8._4_4_,iStack_18,uStack_19,pOStack_20,iStack_17,p);
-      }
-      else {
-        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Debug);
-        }
-        UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                  ((Object *)StringLiteral_Unknown_package_type,(MethodInfo *)0x0);
-      }
+      UNLOCK();
+    } while (uVar7 != uVar8);
+  }
+  uStack_9 = (ulonglong)(uint)(package->fields)._version;
+  uStack_10 = 2;
+  DStack_11._version = (undefined4)uStack_9;
+  DStack_11._index = uStack_9._4_4_;
+  DStack_11._current.key = (Object *)0x0;
+  DStack_11._current.value = (Object *)0x0;
+  DStack_11._getEnumeratorRetType = 2;
+  DStack_11._36_4_ = 0;
+  uStack_12 = 0;
+  pDStack_13 = &DStack_11;
+  pDStack_5 = package;
+  DStack_11._dictionary = package;
+  while( true ) {
+    bVar14 = mscorlib.dll::System::Collections::Generic::Dictionary`2[TKey,TValue]+Enumerator[System
+            ::Object,System::Object]::
+            Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Object__MoveNext
+                      (&DStack_11,
+                       MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<System::Object,_System::Object>__MoveNext__
+                      );
+    pOVar15 = DStack_11._current.value;
+    pBVar16 = TypeInfo__System__Byte;
+    if (bVar14 == 0) {
+      return;
     }
-    func_?(pOVar13,pPVar14);
+    if (DStack_11._current.key == (Object *)0x0) goto code_?;
+    pOVar17 = DStack_11._current.key;
+    if (((DStack_11._current.key)->klass->_0).element_class !=
+        (TypeInfo__MV__WorldObject__PackageType->_0).element_class) break;
+    if (*(char *)&DStack_11._current.key[1].klass == '\0') {
+      byteArray = (Byte__Array *)0x0;
+      pDStack_18 = (Dictionary_2_System_Object_System_Object_ *)0x0;
+      uStack_19 = 0;
+      uStack_20._0_1_ = 0;
+      uStack_20._1_1_ = 0;
+      uStack_20._2_2_ = 0;
+      if ((DStack_11._current.value != (Object *)0x0) &&
+         (byteArray = (Byte__Array *)FUN_?(DStack_11._current.value,TypeInfo__System__Byte),
+         byteArray == (Byte__Array *)0x0)) {
+        FUN_?(pOVar15,pBVar16);
+        break;
+      }
+      MVWorldObject.dll::MV::WorldObject::InteractionData::InteractionData__ctor_7
+                ((InteractionData *)&pDStack_18,byteArray,(MethodInfo *)0x0);
+      pDStack_5 = pDStack_18;
+      uStack_9 = uStack_19;
+      uStack_2 = CONCAT44(uStack_2._4_4_,uStack_20);
+      (*(this->klass->vtable).ReceiveInteractionPackage.methodPtr)
+                (this,&pDStack_5,p,(this->klass->vtable).ReceiveInteractionPackage.method);
+    }
+    else {
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+                ((Object *)StringLiteral_Unknown_package_type,(MethodInfo *)0x0);
+    }
   }
+  FUN_?(pOVar17);
 code_?:
-  func_?();
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
+  FUN_?();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -2791,41 +4399,105 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_RemovePreview
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    PreviewBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<PreviewBox>__
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&
+                  PreviewBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<PreviewBox>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pGVar1 = (this->fields).gameObject;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pGVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
-    pGVar1 = (this->fields).gameObject;
-    if (pGVar1 == (GameObject *)0x0) {
-code_?:
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pGVar1 != (GameObject *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    this_00 = (PreviewBox *)
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-              GameObject_GetComponentInChildren_1
-                        (pGVar1,
-                         PreviewBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<PreviewBox>__
-                        );
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      if (this_00 == (PreviewBox *)0x0) goto code_?;
-      PreviewBox::PreviewBox_DestroyBox(this_00,(MethodInfo *)0x0);
+    pMVar2 = PreviewBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<PreviewBox>__;
+    if ((pGVar1->fields)._.m_CachedPtr != (void *)0x0) {
+      pGVar1 = (this->fields).gameObject;
+      if (pGVar1 == (GameObject *)0x0) {
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      if ((PreviewBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<PreviewBox>__->
+          field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+        FUN_?(
+                     PreviewBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<PreviewBox>__
+                     );
+      }
+      this_00 = (Component *)
+                UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+                GameObject_GetComponentInChildren_3
+                          (pGVar1,0,((pMVar2->field7_0x38).rgctx_data)->method);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (this_00 != (Component *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if ((this_00->fields)._.m_CachedPtr != (void *)0x0) {
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                             (this_00,(MethodInfo *)0x0);
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__UnityEngine__Object);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Destroy
+                    ((Object_1 *)pGVar1,0.0,(MethodInfo *)0x0);
+        }
+      }
     }
   }
   return;
@@ -2839,41 +4511,99 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_RemoveSelecti
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    SelectionBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<SelectionBox>__
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&
+                  SelectionBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<SelectionBox>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pGVar1 = (this->fields).gameObject;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pGVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 == 0) {
-    pGVar1 = (this->fields).gameObject;
-    if (pGVar1 == (GameObject *)0x0) {
-code_?:
-      func_?();
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
-      return;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pGVar1 != (GameObject *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    this_00 = (SelectionBox *)
-              UnityEngine.CoreModule.dll::UnityEngine::GameObject::
-              GameObject_GetComponentInChildren_1
-                        (pGVar1,
-                         SelectionBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<SelectionBox>__
-                        );
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
-    }
-    bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)this_00,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      if (this_00 == (SelectionBox *)0x0) goto code_?;
-      SelectionBox::SelectionBox_FadeOutDestroy(this_00,0.8,(MethodInfo *)0x0);
+    pMVar2 = 
+    SelectionBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<SelectionBox>__;
+    if ((pGVar1->fields)._.m_CachedPtr != (void *)0x0) {
+      pGVar1 = (this->fields).gameObject;
+      if (pGVar1 == (GameObject *)0x0) {
+        FUN_?();
+        pcVar3 = (code *)swi(3);
+        (*pcVar3)();
+        return;
+      }
+      if ((SelectionBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<SelectionBox>__
+          ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+        FUN_?(
+                     SelectionBox_MethodInfo__UnityEngine__GameObject__GetComponentInChildren<SelectionBox>__
+                     );
+      }
+      pOVar4 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+               GameObject_GetComponentInChildren_3
+                         (pGVar1,0,((pMVar2->field7_0x38).rgctx_data)->method);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (pOVar4 != (Object *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pcVar3 = pcRam_?;
+        if (pOVar4[1].klass != (Object__Class *)0x0) {
+          *(undefined4 *)&pOVar4[3].klass = 0x3f4ccccd;
+          *(undefined1 *)&pOVar4[3].monitor = 1;
+          pcVar5 = pcRam_?;
+          if ((pcVar3 == (code *)0x0) &&
+             (pcVar3 = (code *)FUN_?(&UNK_?), pcVar5 = pcVar3, pcVar3 == (code *)0x0
+             )) {
+            uVar6 = func_?(&UNK_?);
+            FUN_?(uVar6,0);
+            pcVar3 = (code *)swi(3);
+            (*pcVar3)();
+            return;
+          }
+          pcRam_? = pcVar5;
+          uVar7 = (*pcVar3)();
+          *(undefined4 *)((longlong)&pOVar4[3].klass + 4) = uVar7;
+        }
+      }
     }
   }
   return;
@@ -2887,97 +4617,211 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_ResetRotation
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RotationChangedEventArgs);
+    FUN_?(&TypeInfo__RotationChangedEventArgs);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   puVar1 = (undefined8 *)
-           (*(code *)(this->klass->vtable).get_WorldPivot.method)
-                     (&uStack_2,this,(this->klass->vtable).get_InteractionFlags.methodPtr);
-  uStack_3 = *puVar1;
-  fStack_4 = *(float *)(puVar1 + 1);
-  pTVar5 = (this->fields).transform;
-  if (pTVar5 != (Transform *)0x0) {
-    pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                       ((Quaternion *)&stack0xffffffc0,pTVar5,(MethodInfo *)0x0);
-    pTVar5 = (this->fields).transform;
-    fVar7 = pQVar6->x;
-    fVar8 = pQVar6->y;
-    fVar9 = pQVar6->z;
-    puVar10 = (undefined *)pQVar6->w;
+           (*(this->klass->vtable).get_WorldPivot.methodPtr)
+                     (&uStack_2,this,(this->klass->vtable).get_WorldPivot.method);
+  pTVar3 = (this->fields).transform;
+  uVar4 = *puVar1;
+  fVar5 = *(float *)(puVar1 + 1);
+  if (pTVar3 != (Transform *)0x0) {
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Quaternion);
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    if (pTVar5 != (Transform *)0x0) {
-      UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
-                (pTVar5,TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion,
-                 (MethodInfo *)0x0);
-      puVar1 = (undefined8 *)
-               (*(code *)(this->klass->vtable).get_WorldPivot.method)
-                         (&stack0xffffffd0,this,(this->klass->vtable).get_InteractionFlags.methodPtr
-                         );
-      uVar11 = *puVar1;
-      fStack_12 = *(float *)(puVar1 + 1);
-      uStack_2._0_4_ = (float)uVar11;
-      fVar13 = (float)uStack_3 - (float)uStack_2;
-      uStack_2._4_4_ = (float)((ulonglong)uVar11 >> 0x20);
-      fStack_14 = uStack_3._4_4_ - uStack_2._4_4_;
-      fStack_15 = fStack_4 - fStack_12;
-      pTVar5 = (this->fields).transform;
-      uStack_2 = uVar11;
-      if (pTVar5 != (Transform *)0x0) {
-        pVVar16 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_position
-                            ((Vector3 *)&stack0xffffffd0,pTVar5,(MethodInfo *)0x0);
-        pTVar5 = (this->fields).transform;
-        uVar17 = pVVar16->x;
-        uVar18 = pVVar16->y;
-        fVar13 = (float)uVar17 + fVar13;
-        fStack_12 = pVVar16->z + fStack_15;
-        uStack_2 = CONCAT44((float)uVar18 + fStack_14,fVar13);
-        if (pTVar5 != (Transform *)0x0) {
-          value.y = (float)uVar18 + fStack_14;
-          value.x = fVar13;
-          value.z = fStack_12;
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-                    (pTVar5,value,(MethodInfo *)0x0);
-          if (cRam_? == '\0') {
-            puVar10 = &UNK_?;
-            func_?();
-            cRam_? = '\x01';
-          }
-          pQVar19 = TypeInfo__UnityEngine__Quaternion->static_fields;
-          if ((fVar8 * (pQVar19->identityQuaternion).y + fVar7 * (pQVar19->identityQuaternion).x +
-               fVar9 * (pQVar19->identityQuaternion).z +
-               (float)puVar10 * (pQVar19->identityQuaternion).w <= _UNK_?) &&
-             ((this->fields).RotationChanged !=
-              (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0)) {
-            pUVar20 = (this->fields).RotationChanged;
-            if (cRam_? == '\0') {
-              func_?();
-              cRam_? = '\x01';
-            }
-            pQVar19 = TypeInfo__UnityEngine__Quaternion->static_fields;
-            fVar7 = (pQVar19->identityQuaternion).x;
-            fVar8 = (pQVar19->identityQuaternion).y;
-            fVar9 = (pQVar19->identityQuaternion).z;
-            puVar10 = &UNK_?;
-            this_00 = (RotationChangedEventArgs *)func_?();
-            newRotation.y = fVar8;
-            newRotation.x = fVar7;
-            newRotation.z = fVar9;
-            newRotation.w = (float)puVar10;
-            RotationChangedEventArgs::RotationChangedEventArgs__ctor
-                      (this_00,newRotation,(MethodInfo *)0x0);
-            (*(pUVar20->fields)._._.invoke_impl)();
-          }
-          return;
-        }
+    uStack_6 = 0;
+    uStack_7 = 0;
+    pvVar8 = (pTVar3->fields)._._.m_CachedPtr;
+    if (pvVar8 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar3,(MethodInfo *)0x0);
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
+      return;
+    }
+    pcVar9 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
+      return;
+    }
+    pcRam_? = pcVar9;
+    (*pcRam_?)(pvVar8);
+    pTVar3 = (this->fields).transform;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Quaternion);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pQVar10 = TypeInfo__UnityEngine__Quaternion->static_fields;
+    if (pTVar3 == (Transform *)0x0) {
+      FUN_?();
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
+      return;
+    }
+    uStack_2._0_4_ = (pQVar10->identityQuaternion).x;
+    uStack_2._4_4_ = (pQVar10->identityQuaternion).y;
+    fStack_11 = (pQVar10->identityQuaternion).z;
+    fStack_12 = (pQVar10->identityQuaternion).w;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pvVar8 = (pTVar3->fields)._._.m_CachedPtr;
+    if (pvVar8 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar3,(MethodInfo *)0x0);
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
+      return;
+    }
+    pcVar9 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0)) {
+      uVar4 = func_?(&UNK_?);
+      FUN_?(uVar4,0);
+      pcVar9 = (code *)swi(3);
+      (*pcVar9)();
+      return;
+    }
+    pcRam_? = pcVar9;
+    (*pcRam_?)(pvVar8,&uStack_2);
+    puVar1 = (undefined8 *)
+             (*(this->klass->vtable).get_WorldPivot.methodPtr)
+                       (&uStack_2,this,(this->klass->vtable).get_WorldPivot.method);
+    fStack_13 = (float)uVar4;
+    fStack_14 = (float)((ulonglong)uVar4 >> 0x20);
+    uVar4 = *puVar1;
+    fVar15 = *(float *)(puVar1 + 1);
+    pTVar3 = (this->fields).transform;
+    if (pTVar3 != (Transform *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
+      pvVar8 = (pTVar3->fields)._._.m_CachedPtr;
+      if (pvVar8 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar3,(MethodInfo *)0x0);
+        pcVar9 = (code *)swi(3);
+        (*pcVar9)();
+        return;
+      }
+      pcVar9 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0)) {
+        uVar4 = func_?(&UNK_?);
+        FUN_?(uVar4,0);
+        pcVar9 = (code *)swi(3);
+        (*pcVar9)();
+        return;
+      }
+      pcRam_? = pcVar9;
+      (*pcRam_?)(pvVar8);
+      pTVar3 = (this->fields).transform;
+      fVar5 = (fVar5 - fVar15) + 0.0;
+      if (pTVar3 == (Transform *)0x0) {
+        FUN_?();
+        pcVar9 = (code *)swi(3);
+        (*pcVar9)();
+        return;
+      }
+      uStack_2 = CONCAT44((fStack_14 - (float)((ulonglong)uVar4 >> 0x20)) + 0.0,
+                           (fStack_13 - (float)uVar4) + 0.0);
+      fStack_11 = fVar5;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pvVar8 = (pTVar3->fields)._._.m_CachedPtr;
+      if (pvVar8 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar3,(MethodInfo *)0x0);
+        pcVar9 = (code *)swi(3);
+        (*pcVar9)();
+        return;
+      }
+      pcVar9 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar9 = (code *)FUN_?(&UNK_?), pcVar9 == (code *)0x0)) {
+        uVar4 = func_?(&UNK_?);
+        FUN_?(uVar4,0);
+        pcVar9 = (code *)swi(3);
+        (*pcVar9)();
+        return;
+      }
+      pcRam_? = pcVar9;
+      (*pcRam_?)(pvVar8,&uStack_2);
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Quaternion);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pQVar10 = TypeInfo__UnityEngine__Quaternion->static_fields;
+      if ((uStack_6._4_4_ * (pQVar10->identityQuaternion).y +
+           (float)uStack_6 * (pQVar10->identityQuaternion).x +
+           (float)uStack_7 * (pQVar10->identityQuaternion).z +
+           uStack_7._4_4_ * (pQVar10->identityQuaternion).w <= _UNK_?) &&
+         ((this->fields).RotationChanged !=
+          (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0)) {
+        pUVar16 = (this->fields).RotationChanged;
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Quaternion);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        uVar4 = *(undefined8 *)
+                  &TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion;
+        uVar17 = *(undefined8 *)
+                 &(TypeInfo__UnityEngine__Quaternion->static_fields->identityQuaternion).z;
+        lVar18 = FUN_?(TypeInfo__RotationChangedEventArgs);
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__System__EventArgs);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__System__EventArgs->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        *(undefined8 *)(lVar18 + 0x20) = uVar4;
+        *(undefined8 *)(lVar18 + 0x28) = uVar17;
+        (*(pUVar16->fields)._._.invoke_impl)
+                  ((pUVar16->fields)._._.method_code,this,lVar18,(pUVar16->fields)._._.method);
+      }
+      return;
     }
   }
-  func_?();
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -2985,55 +4829,121 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_ResetRotation
 /* Void RotateAround(Vector3, Vector3, Single) */
 
 void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_RotateAround
-               (MVWorldObjectClient *this,Vector3 pivot,Vector3 axis,float angle,MethodInfo *method)
+               (MVWorldObjectClient *this,Vector3 *pivot,Vector3 *axis,float angle,
+               MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RotationChangedEventArgs);
+    FUN_?(&TypeInfo__RotationChangedEventArgs);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).transform;
   if (pTVar1 != (Transform *)0x0) {
-    pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                       ((Quaternion *)&fStack_3,pTVar1,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_2 = 0;
+    uStack_3 = 0;
+    pvVar4 = (pTVar1->fields)._._.m_CachedPtr;
+    if (pvVar4 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar1,(MethodInfo *)0x0);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    pcVar5 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+      uVar6 = func_?(&UNK_?);
+      FUN_?(uVar6,0);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    pcRam_? = pcVar5;
+    (*pcRam_?)(pvVar4,&uStack_2);
     pTVar1 = (this->fields).transform;
-    fStack_3 = pQVar2->x;
-    puStack_4 = (undefined *)pQVar2->y;
     if (pTVar1 != (Transform *)0x0) {
+      VStack_7.x = axis->x;
+      VStack_7.y = axis->y;
+      VStack_7.z = axis->z;
+      auStack_8._0_4_ = pivot->x;
+      auStack_8._4_4_ = pivot->y;
+      stack0xffffffffffffffd0 = CONCAT44(fStack_9,pivot->z);
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_RotateAround
-                (pTVar1,pivot,axis,angle,(MethodInfo *)0x0);
+                (pTVar1,(Vector3 *)auStack_8,&VStack_7,angle,(MethodInfo *)0x0);
       pTVar1 = (this->fields).transform;
       if (pTVar1 != (Transform *)0x0) {
-        pQVar2 = &QStack_5;
-        pQVar6 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                           (pQVar2,pTVar1,(MethodInfo *)0x0);
-        if (((float)puStack_4 * pQVar6->y + fStack_3 * pQVar6->x + (float)pQVar2 * pQVar6->z +
-             (float)pTVar1 * pQVar6->w <= _UNK_?) &&
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        auStack_8._0_4_ = 0.0;
+        auStack_8._4_4_ = 0.0;
+        stack0xffffffffffffffd0 = 0;
+        pvVar4 = (pTVar1->fields)._._.m_CachedPtr;
+        if (pvVar4 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar1,(MethodInfo *)0x0);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
+        }
+        pcVar5 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+          uVar6 = func_?(&UNK_?);
+          FUN_?(uVar6,0);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
+        }
+        pcRam_? = pcVar5;
+        (*pcRam_?)(pvVar4,auStack_8);
+        bVar10 = _UNK_? <
+                uStack_2._4_4_ * (float)auStack_8._4_4_ +
+                (float)uStack_2 * (float)auStack_8._0_4_ +
+                (float)uStack_3 * (float)auStack_8._8_4_ + uStack_3._4_4_ * fStack_9;
+        if ((!bVar10) &&
            ((this->fields).RotationChanged !=
             (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0)) {
-          fStack_3 = pQVar6->x;
-          puStack_4 = (undefined *)pQVar6->y;
-          fVar7 = pQVar6->z;
-          fVar8 = pQVar6->w;
-          pUVar9 = (this->fields).RotationChanged;
-          this_00 = (RotationChangedEventArgs *)func_?();
-          fVar10 = (float)puStack_4;
-          fVar11 = fStack_3;
-          uVar12 = CONCAT44(fVar10,fVar11);
-          this = (MVWorldObjectClient *)fVar8;
-          fVar13 = fVar7;
-          newRotation = (Quaternion)CONCAT88(uVar14,uVar12);
-          RotationChangedEventArgs::RotationChangedEventArgs__ctor
-                    (this_00,newRotation,(MethodInfo *)0x0);
-          (*(pUVar9->fields)._._.invoke_impl)();
+          pUVar11 = (this->fields).RotationChanged;
+          lVar12 = FUN_?(TypeInfo__RotationChangedEventArgs);
+          if ((bool)cRam_? == bVar10) {
+            FUN_?(&TypeInfo__System__EventArgs);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (*(int *)&(TypeInfo__System__EventArgs->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          *(undefined4 *)(lVar12 + 0x20) = auStack_8._0_4_;
+          *(undefined4 *)(lVar12 + 0x24) = auStack_8._4_4_;
+          *(undefined4 *)(lVar12 + 0x28) = auStack_8._8_4_;
+          *(float *)(lVar12 + 0x2c) = fStack_9;
+          (*(pUVar11->fields)._._.invoke_impl)
+                    ((pUVar11->fields)._._.method_code,this,lVar12,(pUVar11->fields)._._.method);
         }
         return;
       }
     }
   }
-  func_?();
-  pcVar15 = (code *)swi(3);
-  (*pcVar15)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -3041,73 +4951,141 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_RotateAround
 /* Void RotateAroundLocal(Vector3, RotationMode, Single) */
 
 void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_RotateAroundLocal
-               (MVWorldObjectClient *this,Vector3 pivot,RotationMode__Enum rotationMode,float angle,
-               MethodInfo *method)
+               (MVWorldObjectClient *this,Vector3 *pivot,RotationMode__Enum rotationMode,float angle
+               ,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RotationChangedEventArgs);
+    FUN_?(&TypeInfo__RotationChangedEventArgs);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).transform;
   if (pTVar1 != (Transform *)0x0) {
-    pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                       ((Quaternion *)&stack0xffffffdc,pTVar1,(MethodInfo *)0x0);
-    fVar3 = pQVar2->w;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_2 = 0;
+    uStack_3 = 0;
+    pvVar4 = (pTVar1->fields)._._.m_CachedPtr;
+    if (pvVar4 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar1,(MethodInfo *)0x0);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    pcVar5 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+      uVar6 = func_?(&UNK_?);
+      FUN_?(uVar6,0);
+      pcVar5 = (code *)swi(3);
+      (*pcVar5)();
+      return;
+    }
+    pcRam_? = pcVar5;
+    (*pcRam_?)(pvVar4,&uStack_2);
     if (rotationMode == RotationMode__Enum_X) {
       pTVar1 = (this->fields).transform;
       if (pTVar1 == (Transform *)0x0) goto code_?;
-      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
-                         ((Vector3 *)(auStack_5 + 4),pTVar1,(MethodInfo *)0x0);
+      pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_right
+                         ((Vector3 *)auStack_8,pTVar1,(MethodInfo *)0x0);
     }
     else if ((rotationMode == RotationMode__Enum_Y) || (rotationMode != RotationMode__Enum_Z)) {
       pTVar1 = (this->fields).transform;
       if (pTVar1 == (Transform *)0x0) goto code_?;
-      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
-                         ((Vector3 *)(auStack_5 + 4),pTVar1,(MethodInfo *)0x0);
+      pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_up
+                         ((Vector3 *)auStack_8,pTVar1,(MethodInfo *)0x0);
     }
     else {
       pTVar1 = (this->fields).transform;
       if (pTVar1 == (Transform *)0x0) goto code_?;
-      pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
-                         ((Vector3 *)(auStack_5 + 4),pTVar1,(MethodInfo *)0x0);
+      pVVar7 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_forward
+                         ((Vector3 *)auStack_8,pTVar1,(MethodInfo *)0x0);
     }
     pTVar1 = (this->fields).transform;
-    fVar6 = pVVar4->z;
+    uVar6._0_4_ = pVVar7->x;
+    uVar6._4_4_ = pVVar7->y;
     if (pTVar1 != (Transform *)0x0) {
-      fVar7 = 0.0;
+      auStack_8._0_4_ = pivot->x;
+      auStack_8._4_4_ = pivot->y;
+      stack0xffffffffffffffd0 = CONCAT44(fStack_9,pivot->z);
+      VStack_10._0_8_ = uVar6;
+      VStack_10.z = pVVar7->z;
       UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_RotateAround
-                (pTVar1,pivot,*pVVar4,angle,(MethodInfo *)0x0);
+                (pTVar1,(Vector3 *)auStack_8,&VStack_10,angle,(MethodInfo *)0x0);
       pTVar1 = (this->fields).transform;
       if (pTVar1 != (Transform *)0x0) {
-        pQVar2 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                           ((Quaternion *)auStack_5,pTVar1,(MethodInfo *)0x0);
-        if ((angle * pQVar2->y + fVar6 * pQVar2->x + fVar7 * pQVar2->z + fVar3 * pQVar2->w <=
-             _UNK_?) &&
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        auStack_8._0_4_ = 0.0;
+        auStack_8._4_4_ = 0.0;
+        stack0xffffffffffffffd0 = 0;
+        pvVar4 = (pTVar1->fields)._._.m_CachedPtr;
+        if (pvVar4 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar1,(MethodInfo *)0x0);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
+        }
+        pcVar5 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar5 = (code *)FUN_?(&UNK_?), pcVar5 == (code *)0x0)) {
+          uVar6 = func_?(&UNK_?);
+          FUN_?(uVar6,0);
+          pcVar5 = (code *)swi(3);
+          (*pcVar5)();
+          return;
+        }
+        pcRam_? = pcVar5;
+        (*pcRam_?)(pvVar4,auStack_8);
+        bVar11 = _UNK_? <
+                uStack_2._4_4_ * (float)auStack_8._4_4_ +
+                (float)uStack_2 * (float)auStack_8._0_4_ +
+                (float)uStack_3 * (float)auStack_8._8_4_ + uStack_3._4_4_ * fStack_9;
+        if ((!bVar11) &&
            ((this->fields).RotationChanged !=
             (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0)) {
-          fVar3 = pQVar2->x;
-          fVar6 = pQVar2->y;
-          fVar7 = pQVar2->z;
-          fVar8 = pQVar2->w;
-          pUVar9 = (this->fields).RotationChanged;
-          this_00 = (RotationChangedEventArgs *)func_?();
-          newRotation.y = fVar6;
-          newRotation.x = fVar3;
-          newRotation.z = fVar7;
-          newRotation.w = fVar8;
-          RotationChangedEventArgs::RotationChangedEventArgs__ctor
-                    (this_00,newRotation,(MethodInfo *)0x0);
-          (*(pUVar9->fields)._._.invoke_impl)();
+          pUVar12 = (this->fields).RotationChanged;
+          lVar13 = FUN_?(TypeInfo__RotationChangedEventArgs);
+          if ((bool)cRam_? == bVar11) {
+            FUN_?(&TypeInfo__System__EventArgs);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if (*(int *)&(TypeInfo__System__EventArgs->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          *(undefined4 *)(lVar13 + 0x20) = auStack_8._0_4_;
+          *(undefined4 *)(lVar13 + 0x24) = auStack_8._4_4_;
+          *(undefined4 *)(lVar13 + 0x28) = auStack_8._8_4_;
+          *(float *)(lVar13 + 0x2c) = fStack_9;
+          (*(pUVar12->fields)._._.invoke_impl)
+                    ((pUVar12->fields)._._.method_code,this,lVar13,(pUVar12->fields)._._.method);
         }
         return;
       }
     }
   }
 code_?:
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  (*pcVar5)();
   return;
 }
 
@@ -3122,47 +5100,15 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_RuntimeDataUp
   this_00 = (this->fields).runtimeDataVariables;
   if (this_00 != (MVRuntimeDataVariables *)0x0) {
     MVRuntimeDataVariables::MVRuntimeDataVariables_Receive(this_00,dataDelta,(MethodInfo *)0x0);
-    (*(code *)(this->klass->vtable).OnRunTimeDataUpdate.method)
-              (this,(this->klass->vtable).OnEnterObject.methodPtr);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(this->klass->vtable).OnRunTimeDataUpdate.methodPtr)
+              (this,(this->klass->vtable).OnRunTimeDataUpdate.method);
     return;
   }
-  func_?();
+  FUN_?();
   pcVar1 = (code *)swi(3);
   (*pcVar1)();
-  return;
-}
-
-
-/* Void Select() */
-
-void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_Select
-               (MVWorldObjectClient *this,MethodInfo *method)
-
-{
-  if ((this->fields).selected != 1) {
-    pMVar1 = this->klass;
-    (this->fields).selected = 1;
-    (*(code *)(pMVar1->vtable).OnSelectedChanged.method)
-              (this,1,(pMVar1->vtable).ValidateObjectLinkTarget.methodPtr);
-  }
-  return;
-}
-
-
-/* Void Select(Color) */
-
-void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_Select_1
-               (MVWorldObjectClient *this,Color color,MethodInfo *method)
-
-{
-  (*(code *)(this->klass->vtable).AddSelectionBox.method)
-            (this,(this->klass->vtable).RemoveSelectionBox.methodPtr);
-  if ((this->fields).selected != 1) {
-    pMVar1 = this->klass;
-    (this->fields).selected = 1;
-    (*(code *)(pMVar1->vtable).OnSelectedChanged.method)
-              (this,1,(pMVar1->vtable).ValidateObjectLinkTarget.methodPtr);
-  }
   return;
 }
 
@@ -3174,64 +5120,82 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_SendPackage
                MethodInfo *method)
 
 {
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-  pMVar2 = (MVWorldObjectClient *)(this->fields)._.id;
-  if (pMVar1 != (MVNetworkGame_OperationRequests *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(&
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar1 != (MVGameControllerBase *)0x0) &&
+     (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) {
+    pMVar3 = (pMVar2->fields).operationRequests;
+    iVar4 = (this->fields)._.id;
+    if (pMVar3 != (MVNetworkGame_OperationRequests *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&
                       MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
                      );
-      func_?(&
+        LOCK();
+        UNLOCK();
+        FUN_?(&
                       MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
                      );
-      func_?(&
+        LOCK();
+        UNLOCK();
+        FUN_?(&
                       TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
                      );
-      func_?(&TypeInfo__System__Int32);
-      func_?(&TypeInfo__ExitGames__Client__Photon__SendOptions);
-      cRam_? = '\x01';
-    }
-    this_00 = (Dictionary_2_System_Byte_System_Object_ *)
-              func_?(
+        LOCK();
+        UNLOCK();
+        FUN_?(&TypeInfo__ExitGames__Client__Photon__SendOptions);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      this_00 = (Dictionary_2_System_Byte_System_Object_ *)
+                FUN_?(
                              TypeInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>
                              );
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
-    Dictionary_2_System_Byte_System_Object___ctor
-              (this_00,
-               MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
-              );
-    this = pMVar2;
-    value = (Object *)func_?(TypeInfo__System__Int32,&this);
-    if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
       mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
-      Dictionary_2_System_Byte_System_Object__Add
-                (this_00,0x16,value,
-                 MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
+      Dictionary_2_System_Byte_System_Object___ctor
+                (this_00,
+                 MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Dictionary__
                 );
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
-      Dictionary_2_System_Byte_System_Object__Add
-                (this_00,0x53,(Object *)package,
-                 MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
-                );
-      pPVar3 = (pMVar1->fields).peer;
-      if ((TypeInfo__ExitGames__Client__Photon__SendOptions->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
-      }
-      pSVar4 = TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields;
-      uVar5._0_1_ = (pSVar4->SendReliable).Encrypt;
-      uVar5._1_1_ = (pSVar4->SendReliable).Channel;
-      uVar5._2_2_ = *(undefined2 *)&(pSVar4->SendReliable).field_0x6;
-      if (pPVar3 != (PhotonPeer *)0x0) {
-        (*(code *)(pPVar3->klass->vtable).SendOperation.method)
-                  (pPVar3,0x1b,this_00,(pSVar4->SendReliable).DeliveryMode,uVar5,
-                   pPVar3->klass[1]._0.image);
-        return;
+      aiStackX_20[0] = iVar4;
+      value = (Object *)FUN_?(uRam_?,aiStackX_20);
+      if (this_00 != (Dictionary_2_System_Byte_System_Object_ *)0x0) {
+        uVar5 = CONCAT71((int7)((ulonglong)in_R9 >> 8),2);
+        method_00 = MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
+                    ->klass->rgctx_data[0x22].method;
+        uVar6 = (undefined7)((ulonglong)method_00 >> 8);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
+        Dictionary_2_System_Byte_System_Object__TryInsert
+                  (this_00,0x16,value,(InsertionBehavior__Enum)uVar5,method_00);
+        uVar7 = CONCAT71(uVar6,0x53);
+        mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Byte,System::Object]::
+        Dictionary_2_System_Byte_System_Object__TryInsert
+                  (this_00,0x53,(Object *)package,
+                   (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar5 >> 8),2),
+                   MethodInfo__System__Collections__Generic__Dictionary<unsigned_char,_System::Object>__Add_unsigned_char__System__Object_
+                   ->klass->rgctx_data[0x22].method);
+        pPVar8 = (pMVar3->fields).peer;
+        if (*(int *)&(TypeInfo__ExitGames__Client__Photon__SendOptions->_1).field_0x1c == 0) {
+          FUN_?(TypeInfo__ExitGames__Client__Photon__SendOptions);
+        }
+        if (pPVar8 != (PhotonPeer *)0x0) {
+          (*(pPVar8->klass->vtable).SendOperation.methodPtr)
+                    (pPVar8,CONCAT71((int7)((ulonglong)uVar7 >> 8),0x1b),this_00,
+                     TypeInfo__ExitGames__Client__Photon__SendOptions->static_fields->SendReliable,
+                     (pPVar8->klass->vtable).SendOperation.method);
+          return;
+        }
       }
     }
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -3242,18 +5206,81 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_SetName
                (MVWorldObjectClient *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).gameObject;
-  value = (String *)
-          (*(code *)(this->klass->vtable).ToString.method)
-                    (this,(this->klass->vtable).get_Position.methodPtr);
-  if (this_00 != (GameObject *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_set_name
-              ((Object_1 *)this_00,value,(MethodInfo *)0x0);
+  obj = (this->fields).gameObject;
+  lVar1 = (*(this->klass->vtable).ToString.methodPtr)(this,(this->klass->vtable).ToString.method);
+  if (obj == (GameObject *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Object>_UnityEngine__Object_
+                  ,lVar1,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__GetPinnableReference__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__get_Length__);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  alStackX_8[0] = 0;
+  lStack_3 = 0;
+  uStack_4 = 0;
+  uStack_5 = 0;
+  plStack_6 = alStackX_8;
+  if (obj != (GameObject *)0x0) {
+    pvVar7 = (obj->fields)._.m_CachedPtr;
+    if (pvVar7 != (void *)0x0) {
+      if (lVar1 != 0) {
+        if (*(int *)(lVar1 + 0x10) == 0) {
+          lStack_3 = 1;
+          uStack_4 = 0;
+        }
+        else {
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          MethodInfo__System__ReadOnlySpan<wchar_t>__ReadOnlySpan_System__Char___int_
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          alStackX_8[0] = lVar1 + 0x14;
+          if (*(int *)(lVar1 + 0x10) == 0) {
+            alStackX_8[0] = 0;
+          }
+          uStack_4 = CONCAT44(uStack_4._4_4_,*(int *)(lVar1 + 0x10));
+          lStack_3 = alStackX_8[0];
+        }
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      pcVar2 = pcRam_?;
+      if ((pcRam_? != (code *)0x0) ||
+         (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 != (code *)0x0)) {
+        pcRam_? = pcVar2;
+        (*pcRam_?)(pvVar7,&lStack_3);
+        return;
+      }
+      uVar8 = func_?(&UNK_?);
+      FUN_?(uVar8);
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+  }
+  FUN_?();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -3265,36 +5292,51 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_SetNetworkObj
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&TypeRef__MVCubeModelFineGrainedTerrain);
-    func_?(&TypeRef__MVCubeModelPrototypeTerrain);
-    func_?(&TypeInfo__MVNetworkReporter);
-    func_?(&TypeInfo__System__Type);
-    func_?(&StringLiteral_Problem__network_reporter_is_add);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeRef__MVCubeModelFineGrainedTerrain);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeRef__MVCubeModelPrototypeTerrain);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVNetworkReporter);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Problem__network_reporter_is_add);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pTVar1 = mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
+  lVar1 = FUN_?(&(this->klass->_0).byval_arg);
   pIVar2 = TypeRef__MVCubeModelFineGrainedTerrain;
-  if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__System__Type);
+  if (*(int *)(lRam_? + 0xe4) == 0) {
+    FUN_?();
   }
-  pTVar3 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                     ((RuntimeTypeHandle)pIVar2,(MethodInfo *)0x0);
-  bVar4 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
-          UnsafeUtility_EnumEquals
-                    ((Int32Enum__Enum)pTVar1,(Int32Enum__Enum)pTVar3,(MethodInfo *)0x0);
-  if (bVar4 == 0) {
-    pTVar1 = mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
-    pIVar2 = TypeRef__MVCubeModelPrototypeTerrain;
-    if ((TypeInfo__System__Type->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+  lVar3 = 0;
+  lVar4 = lVar3;
+  if (pIVar2 != (Il2CppType *)0x0) {
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
     }
-    pTVar3 = mscorlib.dll::System::Type::Type_GetTypeFromHandle
-                       ((RuntimeTypeHandle)pIVar2,(MethodInfo *)0x0);
-    bVar4 = UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
-            UnsafeUtility_EnumEquals
-                      ((Int32Enum__Enum)pTVar1,(Int32Enum__Enum)pTVar3,(MethodInfo *)0x0);
-    if ((bVar4 == 0) && (local != 0)) {
+    lVar4 = FUN_?(pIVar2,1);
+    lVar4 = FUN_?(lVar4 + 0x20);
+  }
+  if (lVar1 != lVar4) {
+    lVar1 = FUN_?(&(this->klass->_0).byval_arg);
+    pIVar2 = TypeRef__MVCubeModelPrototypeTerrain;
+    if (*(int *)(lRam_? + 0xe4) == 0) {
+      FUN_?();
+    }
+    if (pIVar2 != (Il2CppType *)0x0) {
+      if (*(int *)(lRam_? + 0xe4) == 0) {
+        FUN_?();
+      }
+      FUN_?(pIVar2,1);
+      lVar3 = FUN_?();
+    }
+    if ((lVar1 != lVar3) && (local != 0)) {
       pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
       if ((pMVar5 != (MVNetworkGame *)0x0) &&
          (pTVar6 = (pMVar5->fields).transformNetworkManager,
@@ -3302,8 +5344,8 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_SetNetworkObj
         pMVar7 = TransformNetworkManager::TransformNetworkManager_GetNetworkObject
                            (pTVar6,(this->fields)._.id,(MethodInfo *)0x0);
         if (pMVar7 != (MVNetworkObject *)0x0) {
-          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-            func_?();
+          if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+            FUN_?();
           }
           UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                     ((Object *)StringLiteral_Problem__network_reporter_is_add,(MethodInfo *)0x0);
@@ -3311,40 +5353,13 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_SetNetworkObj
         }
         pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
         if (pMVar5 != (MVNetworkGame *)0x0) {
+          pTVar6 = (pMVar5->fields).transformNetworkManager;
           woID = (this->fields)._.id;
-          networkReporter = (MVNetworkReporter *)func_?();
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          *(undefined4 *)&(networkReporter->fields).lastUpdateTimestamp = 0xffffffff;
-          *(undefined4 *)((int)&(networkReporter->fields).lastUpdateTimestamp + 4) = 0xffffffff;
-          if (cRam_? == '\0') {
-            func_?();
-            cRam_? = '\x01';
-          }
-          pVVar8 = TypeInfo__UnityEngine__Vector3->static_fields;
-          uVar9._0_4_ = (pVVar8->zeroVector).x;
-          uVar9._4_4_ = (pVVar8->zeroVector).y;
-          fVar10 = (pVVar8->zeroVector).z;
-          pBVar11 = (Byte__Array *)func_?();
-          func_?();
-          fStack_12 = (float)uVar9;
-          fStack_13 = (float)((ulonglong)uVar9 >> 0x20);
-          (networkReporter->fields).prevSendTransformData.position.x = fStack_12;
-          (networkReporter->fields).prevSendTransformData.position.y = fStack_13;
-          (networkReporter->fields).prevSendTransformData.position.z = fVar10;
-          (networkReporter->fields).prevSendTransformData.rotation = pBVar11;
-          func_?();
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)networkReporter,ExceptionArgument__Enum_obj,
-                     (MethodInfo *)&(networkReporter->fields).prevSendTransformData.rotation);
-          (networkReporter->fields)._.worldObject = this;
-          pTVar6 = (TransformNetworkManager *)&UNK_?;
-          func_?();
+          this_01 = (MVNetworkReporter *)FUN_?(TypeInfo__MVNetworkReporter);
+          MVNetworkReporter::MVNetworkReporter__ctor(this_01,this,(MethodInfo *)0x0);
           if (pTVar6 != (TransformNetworkManager *)0x0) {
             TransformNetworkManager::TransformNetworkManager_AddReporter
-                      (pTVar6,woID,networkReporter,(MethodInfo *)0x0);
+                      (pTVar6,woID,this_01,(MethodInfo *)0x0);
             pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
             if ((pMVar5 != (MVNetworkGame *)0x0) &&
                (this_00 = (pMVar5->fields).runtimeVariableNetworkManager,
@@ -3356,9 +5371,9 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_SetNetworkObj
           }
         }
       }
-      func_?();
-      pcVar14 = (code *)swi(3);
-      (*pcVar14)();
+      FUN_?();
+      pcVar8 = (code *)swi(3);
+      (*pcVar8)();
       return;
     }
   }
@@ -3372,14 +5387,13 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_SetWorldObjec
                (MVWorldObjectClient *this,MethodInfo *method)
 
 {
-  uVar1 = *(undefined4 *)((int)&(this->fields).interactionFlags + 4);
+  pMVar1 = this->klass;
   piVar2 = &(this->fields).interactionFlags;
-  *(uint *)piVar2 = (uint)*piVar2 & 0xfffdffff;
-  *(undefined4 *)((int)&(this->fields).interactionFlags + 4) = uVar1;
-  pMVar3 = this->klass;
+  *piVar2 = *piVar2 & 0xfffffffffffdffff;
   (this->fields)._.previewOwnerProfileId = 0;
-  (*(code *)(pMVar3->vtable).RemovePreviewBox.method)
-            (this,(pMVar3->vtable).HideConnectors.methodPtr);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(pMVar1->vtable).RemovePreviewBox.methodPtr)(this,(pMVar1->vtable).RemovePreviewBox.method);
   return;
 }
 
@@ -3390,22 +5404,74 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_SetupBusiness
                (MVWorldObjectClient *this,MethodInfo *method)
 
 {
-  pMVar1 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if ((pMVar1 != (MVNetworkGame *)0x0) &&
-     (this_00 = (pMVar1->fields).itemBusinessLogic, this_00 != (MVItemBusinessLogic *)0x0)) {
-    bVar2 = MVItemBusinessLogic::MVItemBusinessLogic_CanAddItemToInventory
-                      (this_00,(this->fields)._.itemId,(MethodInfo *)0x0);
-    if (bVar2 != 0) {
-      uVar3 = *(undefined4 *)((int)&(this->fields).interactionFlags + 4);
-      piVar4 = &(this->fields).interactionFlags;
-      *(uint *)piVar4 = (uint)*piVar4 | 0x4000;
-      *(undefined4 *)((int)&(this->fields).interactionFlags + 4) = uVar3;
-    }
-    return;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar1 != (MVGameControllerBase *)0x0) &&
+     (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) {
+    pMVar3 = (pMVar2->fields).itemBusinessLogic;
+    key = (this->fields)._.itemId;
+    if (pMVar3 != (MVItemBusinessLogic *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__ContainsKey_int_
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__get_Item_int_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pDVar4 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(pMVar3->fields).items;
+      if (pDVar4 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+        iVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine::
+                Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                          (pDVar4,key,
+                           MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__ContainsKey_int_
+                           ->klass->rgctx_data[0x21].method);
+        pDVar4 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(pMVar3->fields).items;
+        if (pDVar4 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+          if (iVar5 < 0) {
+            iVar5 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                    Int32,UnityEngine::Vector3]::
+                    Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                              (pDVar4,key,
+                               MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__ContainsKey_int_
+                               ->klass->rgctx_data[0x21].method);
+            if (iVar5 < 0) {
+              return;
+            }
+            pDVar4 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(pMVar3->fields).items;
+            if (pDVar4 == (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0)
+            goto code_?;
+          }
+          pOVar6 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                   Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                             ((Dictionary_2_System_Int32_System_Object_ *)pDVar4,key,
+                              MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__get_Item_int_
+                             );
+          if (pOVar6 != (Object *)0x0) {
+            if (*(char *)((longlong)&pOVar6[4].klass + 1) != '\0') {
+              piVar7 = &(this->fields).interactionFlags;
+              *piVar7 = *piVar7 | 0x4000;
+            }
+            return;
+          }
+        }
+      }
+    }
+  }
+code_?:
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -3416,8 +5482,10 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_SetupTierInve
                (MVWorldObjectClient *this,MethodInfo *method)
 
 {
-  (*(code *)(this->klass->vtable).HideConnectors.method)
-            (this,(this->klass->vtable).ShowConnectors.methodPtr);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(this->klass->vtable).HideConnectors.methodPtr)
+            (this,(this->klass->vtable).HideConnectors.method);
   return;
 }
 
@@ -3428,35 +5496,70 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_ShowConnector
                (MVWorldObjectClient *this,MethodInfo *method)
 
 {
-  cVar1 = (*(code *)(this->klass->vtable).get_HasInputConnector.method)
-                    (this,(this->klass->vtable).get_HasObjectConnector.methodPtr);
+  cVar1 = (*(this->klass->vtable).get_HasInputConnector.methodPtr)
+                    (this,(this->klass->vtable).get_HasInputConnector.method);
   if (cVar1 != '\0') {
     pGVar2 = (this->fields).inputConnectorObject;
     if (pGVar2 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar2,1,(MethodInfo *)0x0);
   }
-  cVar1 = (*(code *)(this->klass->vtable).get_HasOutputConnector.method)(this);
+  cVar1 = (*(this->klass->vtable).get_HasOutputConnector.methodPtr)
+                    (this,(this->klass->vtable).get_HasOutputConnector.method);
   if (cVar1 != '\0') {
     pGVar2 = (this->fields).outputConnectorObject;
     if (pGVar2 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
               (pGVar2,1,(MethodInfo *)0x0);
   }
-  cVar1 = (*(code *)(this->klass->vtable).get_HasObjectConnector.method)
-                    (this,(this->klass->vtable).OnInputStateChanged.methodPtr);
-  if (cVar1 != '\0') {
-    pGVar2 = (this->fields).objectConnectorObject;
+  cVar1 = (*(this->klass->vtable).get_HasObjectConnector.methodPtr)
+                    (this,(this->klass->vtable).get_HasObjectConnector.method);
+  if (cVar1 == '\0') {
+    return;
+  }
+  pGVar2 = (this->fields).objectConnectorObject;
+  if (pGVar2 != (GameObject *)0x0) {
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::GameObject>_UnityEngine__GameObject_
+                    ,1,0);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
     if (pGVar2 == (GameObject *)0x0) {
-code_?:
-      func_?();
+      FUN_?();
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
     }
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar2,1,(MethodInfo *)0x0);
+    pvVar4 = (pGVar2->fields)._.m_CachedPtr;
+    if (pvVar4 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pGVar2,(MethodInfo *)0x0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pcVar3 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+      uVar5 = func_?(&UNK_?);
+      FUN_?(uVar5,0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    pcRam_? = pcVar3;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*pcRam_?)(pvVar4,1);
+    return;
   }
+code_?:
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -3468,91 +5571,174 @@ String * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_ToString
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__String);
-    func_?(&StringLiteral__group_id_);
-    func_?(&StringLiteral__id_);
-    func_?(&StringLiteral__item_id_);
+    FUN_?(&TypeInfo__System__String);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__group_id_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__id_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__item_id_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  values = (String__Array *)func_?(TypeInfo__System__String,7);
-  pTVar1 = mscorlib.dll::System::Object::Object_GetType((Object *)this,(MethodInfo *)0x0);
-  if (pTVar1 != (Type *)0x0) {
-    pSVar2 = (String *)
-             (*(code *)(pTVar1->klass->vtable).ToString.method)
-                       (pTVar1,(pTVar1->klass->vtable).GetCustomAttributes.methodPtr);
-    if (values != (String__Array *)0x0) {
-      if (values->max_length != 0) {
-        values->vector[0] = pSVar2;
-        func_?(values->vector,pSVar2);
-        pSVar2 = StringLiteral__id_;
-        if (1 < values->max_length) {
-          values->vector[1] = StringLiteral__id_;
-          func_?(values->vector + 1,pSVar2);
-          pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
-                             ((Int32 *)&this->fields,(MethodInfo *)0x0);
-          if (2 < values->max_length) {
-            values->vector[2] = pSVar2;
-            func_?(values->vector + 2,pSVar2);
-            pSVar2 = StringLiteral__group_id_;
-            if (3 < values->max_length) {
-              values->vector[3] = StringLiteral__group_id_;
-              func_?(values->vector + 3,pSVar2);
-              pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
-                                 ((Int32 *)&(this->fields)._.groupId,(MethodInfo *)0x0);
-              if (4 < values->max_length) {
-                values->vector[4] = pSVar2;
-                func_?(values->vector + 4,pSVar2);
-                pSVar2 = StringLiteral__item_id_;
-                if (5 < values->max_length) {
-                  values->vector[5] = StringLiteral__item_id_;
-                  func_?(values->vector + 5,pSVar2);
-                  pSVar2 = mscorlib.dll::System::Int32::Int32_ToString
-                                     ((Int32 *)&(this->fields)._.itemId,(MethodInfo *)0x0);
-                  if (6 < values->max_length) {
-                    values->vector[6] = pSVar2;
-                    func_?(values->vector + 6,pSVar2);
-                    pSVar2 = mscorlib.dll::System::String::String_Concat_6(values,(MethodInfo *)0x0)
-                    ;
-                    return pSVar2;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      goto code_?;
+  lVar1 = FUN_?(TypeInfo__System__String,7);
+  plVar2 = (longlong *)FUN_?(&(this->klass->_0).byval_arg);
+  if ((plVar2 == (longlong *)0x0) ||
+     (uVar3 = (**(code **)(*plVar2 + 0x168))(plVar2,*(undefined8 *)(*plVar2 + 0x170)), lVar1 == 0))
+  {
+    FUN_?();
+    pcVar4 = (code *)swi(3);
+    pSVar5 = (String *)(*pcVar4)();
+    return pSVar5;
+  }
+  FUN_?(lVar1,0,uVar3);
+  FUN_?(lVar1,1,StringLiteral__id_);
+  pSVar5 = mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&this->fields,(MethodInfo *)0x0);
+  FUN_?(lVar1,2,pSVar5);
+  FUN_?(lVar1,3,StringLiteral__group_id_);
+  pSVar5 = mscorlib.dll::System::Int32::Int32_ToString
+                     ((Int32 *)&(this->fields)._.groupId,(MethodInfo *)0x0);
+  FUN_?(lVar1,4,pSVar5);
+  FUN_?(lVar1,5,StringLiteral__item_id_);
+  mscorlib.dll::System::Int32::Int32_ToString((Int32 *)&(this->fields)._.itemId,(MethodInfo *)0x0);
+  FUN_?(lVar1,6);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__String,0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (lVar1 == 0) {
+    uVar3 = func_?(&TypeInfo__System__ArgumentNullException);
+    this_00 = (ArgumentNullException *)func_?(uVar3);
+    pSVar5 = (String *)func_?(&StringLiteral_values);
+    mscorlib.dll::System::ArgumentNullException::ArgumentNullException__ctor_1
+              (this_00,pSVar5,(MethodInfo *)0x0);
+    uVar3 = func_?(&MethodInfo__System__String__Concat_System__String____);
+    FUN_?(this_00,uVar3);
+    pcVar4 = (code *)swi(3);
+    pSVar5 = (String *)(*pcVar4)();
+    return pSVar5;
+  }
+  if (*(int *)(lVar1 + 0x18) < 2) {
+    if (*(longlong *)(lVar1 + 0x18) == 0) {
+      return (String *)**(undefined8 **)(lRam_? + 0xb8);
+    }
+    if (*(int *)(lVar1 + 0x18) == 0) {
+code_?:
+      FUN_?();
+      pcVar4 = (code *)swi(3);
+      pSVar5 = (String *)(*pcVar4)();
+      return pSVar5;
+    }
+    if (*(String **)(lVar1 + 0x20) != (String *)0x0) {
+      return *(String **)(lVar1 + 0x20);
     }
   }
-  func_?();
+  else {
+    plVar2 = (longlong *)(lVar1 + 0x20);
+    values = (String__Array *)0x0;
+    pSVar6 = values;
+    pSVar7 = values;
+    while (uVar8 = (uint)pSVar6, (int)uVar8 < (int)*(uint *)(lVar1 + 0x18)) {
+      if (*(uint *)(lVar1 + 0x18) <= uVar8) goto code_?;
+      if (*plVar2 != 0) {
+        pSVar7 = (String__Array *)
+                  ((longlong)pSVar7->vector + (longlong)*(int *)(*plVar2 + 0x10) + -0x20);
+      }
+      plVar2 = plVar2 + 1;
+      pSVar6 = (String__Array *)(ulonglong)(uVar8 + 1);
+    }
+    if (0x7fffffff < (longlong)pSVar7) {
+      uVar3 = func_?(&TypeInfo__System__OutOfMemoryException);
+      this_02 = (OutOfMemoryException *)func_?(uVar3);
+      mscorlib.dll::System::OutOfMemoryException::OutOfMemoryException__ctor
+                (this_02,(MethodInfo *)0x0);
+      uVar3 = func_?(&MethodInfo__System__String__Concat_System__String____);
+      FUN_?(this_02,uVar3);
+      pcVar4 = (code *)swi(3);
+      pSVar5 = (String *)(*pcVar4)();
+      return pSVar5;
+    }
+    iVar9 = (int)pSVar7;
+    if (iVar9 != 0) {
+      pSVar5 = (String *)FUN_?((ulonglong)pSVar7 & 0xffffffff);
+      plVar2 = (longlong *)(lVar1 + 0x20);
+      pSVar6 = values;
+      pSVar7 = values;
 code_?:
-  func_?();
-  pcVar3 = (code *)swi(3);
-  pSVar2 = (String *)(*pcVar3)();
-  return pSVar2;
-}
-
-
-/* Void TraverseRecursiveTail(MVWorldObjectClient+CallBackDelegate) */
-
-void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_TraverseRecursiveTail
-               (MVWorldObjectClient *this,MVWorldObjectClient_CallBackDelegate *callBack,
-               MethodInfo *method)
-
-{
-  puStack_1 = &stack0xfffffffc;
-  if (callBack != (MVWorldObjectClient_CallBackDelegate *)0x0) {
-    puStack_1 = (callBack->fields)._._.method;
-    pMStack_2 = this;
-    pvStack_3 = (callBack->fields)._._.method_code;
-    (*(callBack->fields)._._.invoke_impl)();
-    return;
+      do {
+        iVar10 = (int)pSVar6;
+        uVar8 = (uint)pSVar7;
+        if (*(int *)(lVar1 + 0x18) <= (int)uVar8) {
+code_?:
+          if (iVar10 == iVar9) {
+            return pSVar5;
+          }
+          lVar1 = FUN_?(lVar1);
+          pSVar11 = TypeInfo__System__String;
+          if ((lVar1 != 0) &&
+             (values = (String__Array *)FUN_?(lVar1), values == (String__Array *)0x0)) {
+            FUN_?(lVar1,pSVar11);
+            pcVar4 = (code *)swi(3);
+            pSVar5 = (String *)(*pcVar4)();
+            return pSVar5;
+          }
+          pSVar5 = mscorlib.dll::System::String::String_Concat_7(values,(MethodInfo *)0x0);
+          return pSVar5;
+        }
+        if (*(uint *)(lVar1 + 0x18) <= uVar8) goto code_?;
+        lVar12 = *plVar2;
+        if ((lVar12 != 0) && (*(int *)(lVar12 + 0x10) != 0)) {
+          iVar13 = *(int *)(lVar12 + 0x10);
+          if (iVar9 - iVar10 < iVar13) {
+            iVar10 = -1;
+            goto code_?;
+          }
+          if (pSVar5 == (String *)0x0) {
+            FUN_?();
+            pcVar4 = (code *)swi(3);
+            pSVar5 = (String *)(*pcVar4)();
+            return pSVar5;
+          }
+          if ((pSVar5->fields)._stringLength - iVar10 < iVar13) {
+            uVar3 = func_?(&TypeInfo__System__IndexOutOfRangeException);
+            this_01 = (IndexOutOfRangeException *)func_?(uVar3);
+            mscorlib.dll::System::IndexOutOfRangeException::IndexOutOfRangeException__ctor
+                      (this_01,(MethodInfo *)0x0);
+            uVar3 = func_?(&
+                                        MethodInfo__System__String__FillStringChecked_MethodInfo__System__String__int__MethodInfo__System__String_
+                                       );
+            FUN_?(this_01,uVar3);
+            pcVar4 = (code *)swi(3);
+            pSVar5 = (String *)(*pcVar4)();
+            return pSVar5;
+          }
+          src = (uint8_t *)(lVar12 + 0x14);
+          dest = &(pSVar5->fields)._firstChar + iVar10;
+          uVar14 = (ulonglong)(uint)(iVar13 * 2);
+          if ((uVar14 <= (ulonglong)((longlong)dest - (longlong)src)) &&
+             (uVar14 <= (ulonglong)((longlong)src - (longlong)dest))) {
+            mscorlib.dll::System::Buffer::Buffer_Memcpy_1
+                      ((uint8_t *)dest,src,iVar13 * 2,(MethodInfo *)0x0);
+            pSVar6 = (String__Array *)(ulonglong)(uint)(iVar10 + iVar13);
+            pSVar7 = (String__Array *)(ulonglong)(uVar8 + 1);
+            plVar2 = plVar2 + 1;
+            goto code_?;
+          }
+          FUN_?(dest,src,uVar14);
+          pSVar6 = (String__Array *)(ulonglong)(uint)(iVar10 + iVar13);
+        }
+        pSVar7 = (String__Array *)(ulonglong)(uVar8 + 1);
+        plVar2 = plVar2 + 1;
+      } while( true );
+    }
   }
-  uVar4 = func_?(&pvStack_3);
-  func_?(uVar4);
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
-  return;
+  return (String *)**(undefined8 **)(lRam_? + 0xb8);
 }
 
 
@@ -3562,8 +5748,10 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_UnSetupTierIn
                (MVWorldObjectClient *this,MethodInfo *method)
 
 {
-  (*(code *)(this->klass->vtable).ShowConnectors.method)
-            (this,(this->klass->vtable).Delete.methodPtr);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(this->klass->vtable).ShowConnectors.methodPtr)
+            (this,(this->klass->vtable).ShowConnectors.method);
   return;
 }
 
@@ -3574,7 +5762,9 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient__cctor(Method
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVWorldObjectClient);
+    FUN_?(&TypeInfo__MVWorldObjectClient);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TypeInfo__MVWorldObjectClient->static_fields->woShadowCastersCount = 0;
@@ -3593,82 +5783,388 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Collider>__
-                   );
+    FUN_?(&
+                  UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Collider>__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   (this->fields).previewLayerMask = 1;
   MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject__ctor
             ((MVWorldObject *)this,(MethodInfo *)0x0);
   pMVar1 = MVWorldObjectClient_GetTransformData
-                     ((MVWorldObjectClient_TransformData *)&stack0xffffffc4,this,data,
-                      (MethodInfo *)0x0);
-  position = pMVar1->position;
-  fVar2 = (pMVar1->rotation).x;
-  uVar3._0_4_ = (pMVar1->rotation).y;
-  uVar3._4_4_ = (pMVar1->rotation).z;
-  fVar4 = (pMVar1->rotation).w;
+                      ((MVWorldObjectClient_TransformData *)auStack_2,this,data,(MethodInfo *)0x0);
+  fVar3 = (pMVar1->position).x;
+  fVar4 = (pMVar1->position).y;
+  fVar5 = (pMVar1->position).z;
+  fStack_6 = (pMVar1->rotation).x;
+  uStack_7._0_4_ = (pMVar1->rotation).y;
+  uStack_7._4_4_ = (pMVar1->rotation).z;
+  fStack_8 = (pMVar1->rotation).w;
+  fStack_9 = fVar3;
+  fStack_10 = fVar4;
+  fStack_11 = fVar5;
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Vector3__UnityEngine__Quaternion_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Prefab_object_is_null_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar5 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)prefabObject,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar5 != 0) {
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (prefabObject == (GameObject *)0x0) {
+code_?:
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_Prefab_object_is_null_,(MethodInfo *)0x0);
   }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  else {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((prefabObject->fields)._.m_CachedPtr == (void *)0x0) goto code_?;
   }
-  rotation.y = (float)(int)uVar3;
-  rotation.x = fVar2;
-  rotation.z = (float)(int)((ulonglong)uVar3 >> 0x20);
-  rotation.w = fVar4;
-  pGVar6 = (GameObject *)
-           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_7
-                     ((Object *)prefabObject,position,rotation,
-                      UnityEngine__GameObject_MethodInfo__UnityEngine__Object__Instantiate<UnityEngine::GameObject>_UnityEngine__GameObject__UnityEngine__Vector3__UnityEngine__Quaternion_
-                     );
-  if (pGVar6 != (GameObject *)0x0) {
-    iVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
-                      ((Object_1 *)pGVar6,(MethodInfo *)0x0);
-    (this->fields).goId = iVar7;
-    (this->fields).gameObject = pGVar6;
-    func_?();
-    pGVar6 = (this->fields).gameObject;
-    if (pGVar6 != (GameObject *)0x0) {
-      pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                         (pGVar6,(MethodInfo *)0x0);
-      (this->fields).transform = pTVar8;
-      func_?();
-      pGVar6 = (this->fields).gameObject;
-      if (pGVar6 != (GameObject *)0x0) {
-        pCVar9 = (Collider *)
-                 UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                           (pGVar6,
-                            UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Collider>__
-                           );
-        (this->fields).collider = pCVar9;
-        func_?();
-        MVWorldObjectClient_CreateWorldObject(this,data,worldObjects,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  fStack_9 = fStack_6;
+  fStack_10 = (float)(undefined4)uStack_7;
+  fStack_11 = (float)uStack_7._4_4_;
+  fStack_6 = fStack_8;
+  fStack_12 = fVar3;
+  fStack_13 = fVar4;
+  fStack_14 = fVar5;
+  pGVar15 = (GameObject *)FUN_?(prefabObject,&fStack_12,&fStack_9);
+  if (pGVar15 == (GameObject *)0x0) {
+code_?:
+    FUN_?();
+    pcVar16 = (code *)swi(3);
+    (*pcVar16)();
+    return;
+  }
+  iVar17 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
+                     ((Object_1 *)pGVar15,(MethodInfo *)0x0);
+  bVar18 = iRam_? != 0;
+  (this->fields).gameObject = pGVar15;
+  (this->fields).goId = iVar17;
+  if (bVar18) {
+    uVar19 = (uint)((ulonglong)&(this->fields).gameObject >> 0xc);
+    lVar20 = (ulonglong)((uVar19 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar21 = *(ulonglong *)(lVar20 + 0xADDR);
+      puVar22 = (ulonglong *)(lVar20 + 0xADDR);
+      LOCK();
+      bVar18 = uVar21 == *puVar22;
+      if (bVar18) {
+        *puVar22 = uVar21 | 1L << (uVar19 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar18);
+  }
+  pGVar15 = (this->fields).gameObject;
+  if (pGVar15 == (GameObject *)0x0) goto code_?;
+  pTVar23 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                      (pGVar15,(MethodInfo *)0x0);
+  bVar18 = iRam_? != 0;
+  (this->fields).transform = pTVar23;
+  if (bVar18) {
+    uVar19 = (uint)((ulonglong)&(this->fields).transform >> 0xc);
+    lVar20 = (ulonglong)((uVar19 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar21 = *(ulonglong *)(lVar20 + 0xADDR);
+      puVar22 = (ulonglong *)(lVar20 + 0xADDR);
+      LOCK();
+      bVar18 = uVar21 == *puVar22;
+      if (bVar18) {
+        *puVar22 = uVar21 | 1L << (uVar19 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar18);
+  }
+  pGVar15 = (this->fields).gameObject;
+  if (pGVar15 == (GameObject *)0x0) goto code_?;
+  pCVar24 = (Collider *)
+            UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                      (pGVar15,
+                       UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Collider>__
+                      );
+  bVar18 = iRam_? != 0;
+  (this->fields).collider = pCVar24;
+  if (bVar18) {
+    uVar19 = (uint)((ulonglong)&(this->fields).collider >> 0xc);
+    lVar20 = (ulonglong)((uVar19 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar21 = *(ulonglong *)(lVar20 + 0xADDR);
+      puVar22 = (ulonglong *)(lVar20 + 0xADDR);
+      LOCK();
+      bVar18 = uVar21 == *puVar22;
+      if (bVar18) {
+        *puVar22 = uVar21 | 1L << (uVar19 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar18);
+  }
+  if (cRam_? == '\0') {
+    auStack_2._8_8_ = &UNK_?;
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
+                  ,data,worldObjects,0);
+    LOCK();
+    UNLOCK();
+    auStack_2._8_8_ = &UNK_?;
+    FUN_?(&TypeInfo__MVGroup);
+    LOCK();
+    UNLOCK();
+    auStack_2._8_8_ = &UNK_?;
+    FUN_?(&TypeInfo__MVRuntimeDataVariables);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  auStack_2._8_8_ = &UNK_?;
+  MVWorldObjectClient_CreateConnectors(this,(MethodInfo *)0x0);
+  auStack_2._8_8_ = &UNK_?;
+  MVWorldObjectClient_ApplyData(this,data,(MethodInfo *)0x0);
+  pGVar15 = (this->fields).gameObject;
+  auStack_2._8_8_ = &UNK_?;
+  name = (String *)
+         (*(this->klass->vtable).ToString.methodPtr)(this,(this->klass->vtable).ToString.method);
+  if (pGVar15 == (GameObject *)0x0) goto code_?;
+  auStack_2._8_8_ = &UNK_?;
+  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_SetName
+            ((Object_1 *)pGVar15,name,(MethodInfo *)0x0);
+  auStack_2._8_8_ = &UNK_?;
+  pMVar25 = (MVRuntimeDataVariables *)FUN_?(TypeInfo__MVRuntimeDataVariables);
+  if (cRam_? == '\0') {
+    auStack_2._8_8_ = &UNK_?;
+    FUN_?(&MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__List__);
+    LOCK();
+    UNLOCK();
+    auStack_2._8_8_ = &UNK_?;
+    FUN_?(&TypeInfo__System__Collections__Generic__List<MVRuntimeDataVariable>);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  bVar18 = iRam_? != 0;
+  (pMVar25->fields).owner = this;
+  if (bVar18) {
+    uVar19 = (uint)((ulonglong)&pMVar25->fields >> 0xc);
+    lVar20 = (ulonglong)((uVar19 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar21 = *(ulonglong *)(lVar20 + 0xADDR);
+      puVar22 = (ulonglong *)(lVar20 + 0xADDR);
+      LOCK();
+      bVar18 = uVar21 == *puVar22;
+      if (bVar18) {
+        *puVar22 = uVar21 | 1L << (uVar19 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar18);
+  }
+  auStack_2._8_8_ = &UNK_?;
+  this_00 = (List_1_MVRuntimeDataVariable_ *)
+            FUN_?(TypeInfo__System__Collections__Generic__List<MVRuntimeDataVariable>);
+  auStack_2._8_8_ = &UNK_?;
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__List__);
+  iVar26 = iRam_?;
+  (pMVar25->fields).variables = this_00;
+  if (iVar26 != 0) {
+    uVar19 = (uint)((ulonglong)&(pMVar25->fields).variables >> 0xc);
+    lVar20 = (ulonglong)((uVar19 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar21 = *(ulonglong *)(lVar20 + 0xADDR);
+      puVar22 = (ulonglong *)(lVar20 + 0xADDR);
+      LOCK();
+      bVar18 = uVar21 == *puVar22;
+      if (bVar18) {
+        *puVar22 = uVar21 | 1L << (uVar19 & 0x3f);
+      }
+      UNLOCK();
+      iVar26 = iRam_?;
+    } while (!bVar18);
+  }
+  (this->fields).runtimeDataVariables = pMVar25;
+  if (iVar26 != 0) {
+    uVar19 = (uint)((ulonglong)&(this->fields).runtimeDataVariables >> 0xc);
+    lVar20 = (ulonglong)((uVar19 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar21 = *(ulonglong *)(lVar20 + 0xADDR);
+      puVar22 = (ulonglong *)(lVar20 + 0xADDR);
+      LOCK();
+      bVar18 = uVar21 == *puVar22;
+      if (bVar18) {
+        *puVar22 = uVar21 | 1L << (uVar19 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar18);
+  }
+  if ((this->fields)._.groupId != -1) {
+    if (worldObjects == (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0)
+    goto code_?;
+    auStack_2._8_8_ = &UNK_?;
+    pMVar27 = (MVGroup *)
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
+              ::Dictionary_2_System_Int32_System_Object__get_Item
+                        ((Dictionary_2_System_Int32_System_Object_ *)worldObjects,
+                         (this->fields)._.groupId,
+                         MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
+                        );
+    if (pMVar27 == (MVGroup *)0x0) {
+      (this->fields).group = (MVGroup *)0x0;
+    }
+    else {
+      bVar28 = (TypeInfo__MVGroup->_1).naturalAligment;
+      if (((pMVar27->klass->_1).naturalAligment < bVar28) ||
+         ((MVGroup__Class *)(pMVar27->klass->_1).typeHierarchy[(ulonglong)bVar28 - 1] !=
+          TypeInfo__MVGroup)) {
+        auStack_2._8_8_ = &UNK_?;
+        FUN_?(pMVar27);
+        pcVar16 = (code *)swi(3);
+        (*pcVar16)();
+        return;
+      }
+      (this->fields).group = pMVar27;
+      bVar28 = (TypeInfo__MVGroup->_1).naturalAligment;
+      if (((pMVar27->klass->_1).naturalAligment < bVar28) ||
+         ((MVGroup__Class *)(pMVar27->klass->_1).typeHierarchy[(ulonglong)bVar28 - 1] !=
+          TypeInfo__MVGroup)) {
+        auStack_2._8_8_ = &UNK_?;
+        FUN_?(pMVar27);
+        pcVar16 = (code *)swi(3);
+        (*pcVar16)();
         return;
       }
     }
+    if (iRam_? != 0) {
+      uVar19 = (uint)((ulonglong)&(this->fields).group >> 0xc);
+      lVar20 = (ulonglong)((uVar19 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar21 = *(ulonglong *)(lVar20 + 0xADDR);
+        puVar22 = (ulonglong *)(lVar20 + 0xADDR);
+        LOCK();
+        bVar18 = uVar21 == *puVar22;
+        if (bVar18) {
+          *puVar22 = uVar21 | 1L << (uVar19 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar18);
+    }
+    pMVar27 = (this->fields).group;
+    if (pMVar27 == (MVGroup *)0x0) goto code_?;
+    auStack_2._8_8_ = &UNK_?;
+    (*(pMVar27->klass->vtable).AddChild.methodPtr)
+              (pMVar27,this,(pMVar27->klass->vtable).AddChild.method);
   }
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  if (cRam_? == '\0') {
+    auStack_2._8_8_ = &UNK_?;
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar29 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar29 != (MVGameControllerBase *)0x0) &&
+     (pMVar30 = (pMVar29->fields).game, pMVar30 != (MVNetworkGame *)0x0)) {
+    pMVar31 = (pMVar30->fields).itemBusinessLogic;
+    iVar17 = (this->fields)._.itemId;
+    if (pMVar31 != (MVItemBusinessLogic *)0x0) {
+      if (cRam_? == '\0') {
+        auStack_2._8_8_ = &UNK_?;
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__ContainsKey_int_
+                     );
+        LOCK();
+        UNLOCK();
+        auStack_2._8_8_ = &UNK_?;
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__get_Item_int_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pDVar32 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(pMVar31->fields).items;
+      if (pDVar32 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+        auStack_2._8_8_ = &UNK_?;
+        iVar33 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine
+                 ::Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                           (pDVar32,iVar17,
+                            MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__ContainsKey_int_
+                            ->klass->rgctx_data[0x21].method);
+        pDVar32 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(pMVar31->fields).items;
+        if (pDVar32 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+          if (iVar33 < 0) {
+            auStack_2._8_8_ = &UNK_?;
+            iVar33 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                     Int32,UnityEngine::Vector3]::
+                     Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                               (pDVar32,iVar17,
+                                MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__ContainsKey_int_
+                                ->klass->rgctx_data[0x21].method);
+            if (iVar33 < 0) {
+              return;
+            }
+            pDVar32 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(pMVar31->fields).items;
+            if (pDVar32 == (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0)
+            goto code_?;
+          }
+          auStack_2._8_8_ = &UNK_?;
+          pOVar34 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                    Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                              ((Dictionary_2_System_Int32_System_Object_ *)pDVar32,iVar17,
+                               MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__get_Item_int_
+                              );
+          if (pOVar34 != (Object *)0x0) {
+            if (*(char *)((longlong)&pOVar34[4].klass + 1) != '\0') {
+              piVar35 = &(this->fields).interactionFlags;
+              *piVar35 = *piVar35 | 0x4000;
+            }
+            return;
+          }
+        }
+      }
+    }
+  }
+code_?:
+  auStack_2._8_8_ = &UNK_?;
+  FUN_?();
+  pcVar16 = (code *)swi(3);
+  (*pcVar16)();
   return;
 }
 
@@ -3685,79 +6181,325 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient__ctor_1
   (this->fields).previewLayerMask = 1;
   MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject__ctor
             ((MVWorldObject *)this,(MethodInfo *)0x0);
-  pMVar1 = MVWorldObjectClient_GetTransformData
-                     ((MVWorldObjectClient_TransformData *)&stack0xffffffc4,this,data,
-                      (MethodInfo *)0x0);
-  position = pMVar1->position;
-  uVar2 = (pMVar1->rotation).z;
-  uVar3 = (pMVar1->rotation).x;
-  uVar4 = (pMVar1->rotation).y;
-  rotation.y = (float)uVar4;
-  rotation.x = (float)uVar3;
-  fVar5 = (pMVar1->rotation).w;
+  pMVar1 = MVWorldObjectClient_GetTransformData(&MStack_2,this,data,(MethodInfo *)0x0);
+  auStack_3._0_4_ = (pMVar1->position).x;
+  auStack_3._4_4_ = (pMVar1->position).y;
+  auStack_3._8_8_ = *(undefined8 *)&(pMVar1->position).z;
+  auStack_3._16_4_ = (pMVar1->rotation).y;
+  auStack_3._20_4_ = (pMVar1->rotation).z;
+  auStack_3._24_4_ = (pMVar1->rotation).w;
+  pOVar4 = MVWorldObjectClient_InstantiatePrefab_1
+                      (this,prefabObject,(MVWorldObjectClient_TransformData *)auStack_3,
+                       (MethodInfo *)0x0);
+  bVar5 = iRam_? != 0;
+  (this->fields).component = pOVar4;
+  if (bVar5) {
+    uVar6 = (uint)((ulonglong)&(this->fields).component >> 0xc);
+    lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+      puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+      LOCK();
+      bVar5 = uVar8 == *puVar9;
+      if (bVar5) {
+        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
+  pOVar4 = (this->fields).component;
+  if (pOVar4 == (ObjectPrefab *)0x0) {
+code_?:
+    FUN_?();
+    pcVar10 = (code *)swi(3);
+    (*pcVar10)();
+    return;
+  }
+  pGVar11 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                      ((Component *)pOVar4,(MethodInfo *)0x0);
+  iVar12 = iRam_?;
+  (this->fields).gameObject = pGVar11;
+  if (iVar12 != 0) {
+    uVar6 = (uint)((ulonglong)&(this->fields).gameObject >> 0xc);
+    lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+      puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+      LOCK();
+      bVar5 = uVar8 == *puVar9;
+      if (bVar5) {
+        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+      iVar12 = iRam_?;
+    } while (!bVar5);
+  }
+  pOVar4 = (this->fields).component;
+  if (pOVar4 == (ObjectPrefab *)0x0) goto code_?;
+  (this->fields).collider = (pOVar4->fields).mainCollider;
+  if (iVar12 != 0) {
+    uVar6 = (uint)((ulonglong)&(this->fields).collider >> 0xc);
+    lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+      puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+      LOCK();
+      bVar5 = uVar8 == *puVar9;
+      if (bVar5) {
+        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
+  pGVar11 = (this->fields).gameObject;
+  if (pGVar11 == (GameObject *)0x0) goto code_?;
+  pTVar13 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                      (pGVar11,(MethodInfo *)0x0);
+  bVar5 = iRam_? != 0;
+  (this->fields).transform = pTVar13;
+  if (bVar5) {
+    uVar6 = (uint)((ulonglong)&(this->fields).transform >> 0xc);
+    lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+      puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+      LOCK();
+      bVar5 = uVar8 == *puVar9;
+      if (bVar5) {
+        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
-    func_?();
+    auStack_3._24_8_ = &UNK_?;
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
+                  ,data,worldObjects,0);
+    LOCK();
+    UNLOCK();
+    auStack_3._24_8_ = &UNK_?;
+    FUN_?(&TypeInfo__MVGroup);
+    LOCK();
+    UNLOCK();
+    auStack_3._24_8_ = &UNK_?;
+    FUN_?(&TypeInfo__MVRuntimeDataVariables);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  auStack_3._24_8_ = &UNK_?;
+  MVWorldObjectClient_CreateConnectors(this,(MethodInfo *)0x0);
+  auStack_3._24_8_ = &UNK_?;
+  MVWorldObjectClient_ApplyData(this,data,(MethodInfo *)0x0);
+  pGVar11 = (this->fields).gameObject;
+  auStack_3._24_8_ = &UNK_?;
+  name = (String *)
+         (*(this->klass->vtable).ToString.methodPtr)(this,(this->klass->vtable).ToString.method);
+  if (pGVar11 == (GameObject *)0x0) goto code_?;
+  auStack_3._24_8_ = &UNK_?;
+  UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_SetName
+            ((Object_1 *)pGVar11,name,(MethodInfo *)0x0);
+  auStack_3._24_8_ = &UNK_?;
+  pMVar14 = (MVRuntimeDataVariables *)FUN_?(TypeInfo__MVRuntimeDataVariables);
+  if (cRam_? == '\0') {
+    auStack_3._24_8_ = &UNK_?;
+    FUN_?(&MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__List__);
+    LOCK();
+    UNLOCK();
+    auStack_3._24_8_ = &UNK_?;
+    FUN_?(&TypeInfo__System__Collections__Generic__List<MVRuntimeDataVariable>);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)prefabObject,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar6 != 0) {
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+  bVar5 = iRam_? != 0;
+  (pMVar14->fields).owner = this;
+  if (bVar5) {
+    uVar6 = (uint)((ulonglong)&pMVar14->fields >> 0xc);
+    lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+      puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+      LOCK();
+      bVar5 = uVar8 == *puVar9;
+      if (bVar5) {
+        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
+  auStack_3._24_8_ = &UNK_?;
+  this_00 = (List_1_MVRuntimeDataVariable_ *)
+            FUN_?(TypeInfo__System__Collections__Generic__List<MVRuntimeDataVariable>);
+  auStack_3._24_8_ = &UNK_?;
+  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
+  __Il2CppFullySharedGenericType]::
+  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
+            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)this_00,
+             MethodInfo__System__Collections__Generic__List<MVRuntimeDataVariable>__List__);
+  iVar12 = iRam_?;
+  (pMVar14->fields).variables = this_00;
+  if (iVar12 != 0) {
+    uVar6 = (uint)((ulonglong)&(pMVar14->fields).variables >> 0xc);
+    lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+      puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+      LOCK();
+      bVar5 = uVar8 == *puVar9;
+      if (bVar5) {
+        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+      iVar12 = iRam_?;
+    } while (!bVar5);
+  }
+  (this->fields).runtimeDataVariables = pMVar14;
+  if (iVar12 != 0) {
+    uVar6 = (uint)((ulonglong)&(this->fields).runtimeDataVariables >> 0xc);
+    lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+      puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+      LOCK();
+      bVar5 = uVar8 == *puVar9;
+      if (bVar5) {
+        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
+  if ((this->fields)._.groupId != -1) {
+    if (worldObjects == (Dictionary_2_System_Int32_MVWorldObjectClient_ *)0x0)
+    goto code_?;
+    auStack_3._24_8_ = &UNK_?;
+    pMVar15 = (MVGroup *)
+              mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]
+              ::Dictionary_2_System_Int32_System_Object__get_Item
+                        ((Dictionary_2_System_Int32_System_Object_ *)worldObjects,
+                         (this->fields)._.groupId,
+                         MethodInfo__System__Collections__Generic__Dictionary<int,_MVWorldObjectClient>__get_Item_int_
+                        );
+    if (pMVar15 == (MVGroup *)0x0) {
+      (this->fields).group = (MVGroup *)0x0;
     }
-    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-              ((Object *)StringLiteral_Prefab_object_is_null_,(MethodInfo *)0x0);
+    else {
+      bVar16 = (TypeInfo__MVGroup->_1).naturalAligment;
+      if (((pMVar15->klass->_1).naturalAligment < bVar16) ||
+         ((MVGroup__Class *)(pMVar15->klass->_1).typeHierarchy[(ulonglong)bVar16 - 1] !=
+          TypeInfo__MVGroup)) {
+        auStack_3._24_8_ = &UNK_?;
+        FUN_?(pMVar15);
+        pcVar10 = (code *)swi(3);
+        (*pcVar10)();
+        return;
+      }
+      (this->fields).group = pMVar15;
+      bVar16 = (TypeInfo__MVGroup->_1).naturalAligment;
+      if (((pMVar15->klass->_1).naturalAligment < bVar16) ||
+         ((MVGroup__Class *)(pMVar15->klass->_1).typeHierarchy[(ulonglong)bVar16 - 1] !=
+          TypeInfo__MVGroup)) {
+        auStack_3._24_8_ = &UNK_?;
+        FUN_?(pMVar15);
+        pcVar10 = (code *)swi(3);
+        (*pcVar10)();
+        return;
+      }
+    }
+    if (iRam_? != 0) {
+      uVar6 = (uint)((ulonglong)&(this->fields).group >> 0xc);
+      lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar5 = uVar8 == *puVar9;
+        if (bVar5) {
+          *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar5);
+    }
+    pMVar15 = (this->fields).group;
+    if (pMVar15 == (MVGroup *)0x0) goto code_?;
+    auStack_3._24_8_ = &UNK_?;
+    (*(pMVar15->klass->vtable).AddChild.methodPtr)
+              (pMVar15,this,(pMVar15->klass->vtable).AddChild.method);
   }
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (cRam_? == '\0') {
+    auStack_3._24_8_ = &UNK_?;
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  rotation.z = (float)uVar2;
-  rotation.w = fVar5;
-  pOVar7 = (ObjectPrefab *)
-           UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_Instantiate_7
-                     ((Object *)prefabObject,position,rotation,
-                      ObjectPrefab_MethodInfo__UnityEngine__Object__Instantiate<ObjectPrefab>_ObjectPrefab__UnityEngine__Vector3__UnityEngine__Quaternion_
+  pMVar17 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar17 != (MVGameControllerBase *)0x0) &&
+     (pMVar18 = (pMVar17->fields).game, pMVar18 != (MVNetworkGame *)0x0)) {
+    pMVar19 = (pMVar18->fields).itemBusinessLogic;
+    key = (this->fields)._.itemId;
+    if (pMVar19 != (MVItemBusinessLogic *)0x0) {
+      if (cRam_? == '\0') {
+        auStack_3._24_8_ = &UNK_?;
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__ContainsKey_int_
                      );
-  if (pOVar7 != (ObjectPrefab *)0x0) {
-    pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)pOVar7,(MethodInfo *)0x0);
-    if (pGVar8 != (GameObject *)0x0) {
-      iVar9 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
-                        ((Object_1 *)pGVar8,(MethodInfo *)0x0);
-      (this->fields).goId = iVar9;
-      (this->fields).component = pOVar7;
-      func_?();
-      pOVar7 = (this->fields).component;
-      if (pOVar7 != (ObjectPrefab *)0x0) {
-        pGVar8 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                           ((Component *)pOVar7,(MethodInfo *)0x0);
-        (this->fields).gameObject = pGVar8;
-        func_?();
-        pOVar7 = (this->fields).component;
-        if (pOVar7 != (ObjectPrefab *)0x0) {
-          (this->fields).collider = (pOVar7->fields).mainCollider;
-          func_?();
-          pGVar8 = (this->fields).gameObject;
-          if (pGVar8 != (GameObject *)0x0) {
-            data_00 = (Dictionary_2_System_Object_System_Object_ *)
-                      UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                                (pGVar8,(MethodInfo *)0x0);
-            (this->fields).transform = (Transform *)data_00;
-            func_?();
-            MVWorldObjectClient_CreateWorldObject(this,data_00,worldObjects,(MethodInfo *)0x0);
+        LOCK();
+        UNLOCK();
+        auStack_3._24_8_ = &UNK_?;
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__get_Item_int_
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      pDVar20 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(pMVar19->fields).items;
+      if (pDVar20 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+        auStack_3._24_8_ = &UNK_?;
+        iVar21 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,UnityEngine
+                 ::Vector3]::Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                           (pDVar20,key,
+                            MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__ContainsKey_int_
+                            ->klass->rgctx_data[0x21].method);
+        pDVar20 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(pMVar19->fields).items;
+        if (pDVar20 != (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0) {
+          if (iVar21 < 0) {
+            auStack_3._24_8_ = &UNK_?;
+            iVar21 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::
+                     Int32,UnityEngine::Vector3]::
+                     Dictionary_2_System_Int32_UnityEngine_Vector3__FindEntry
+                               (pDVar20,key,
+                                MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__ContainsKey_int_
+                                ->klass->rgctx_data[0x21].method);
+            if (iVar21 < 0) {
+              return;
+            }
+            pDVar20 = (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)(pMVar19->fields).items;
+            if (pDVar20 == (Dictionary_2_System_Int32_UnityEngine_Vector3_ *)0x0)
+            goto code_?;
+          }
+          auStack_3._24_8_ = &UNK_?;
+          pOVar22 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                    Object]::Dictionary_2_System_Int32_System_Object__get_Item
+                              ((Dictionary_2_System_Int32_System_Object_ *)pDVar20,key,
+                               MethodInfo__System__Collections__Generic__Dictionary<int,_MV::WorldObject::MVItem>__get_Item_int_
+                              );
+          if (pOVar22 != (Object *)0x0) {
+            if (*(char *)((longlong)&pOVar22[4].klass + 1) != '\0') {
+              piVar23 = &(this->fields).interactionFlags;
+              *piVar23 = *piVar23 | 0x4000;
+            }
             return;
           }
         }
       }
     }
   }
-  func_?();
+code_?:
+  auStack_3._24_8_ = &UNK_?;
+  FUN_?();
   pcVar10 = (code *)swi(3);
   (*pcVar10)();
   return;
@@ -3773,68 +6515,181 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient__ctor_2
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Collider>__
-                   );
-    func_?(&TypeInfo__UnityEngine__GameObject);
+    FUN_?(&
+                  UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Collider>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__GameObject);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   (this->fields).previewLayerMask = 1;
   MVWorldObject.dll::MV::WorldObject::MVWorldObject::MVWorldObject__ctor
             ((MVWorldObject *)this,(MethodInfo *)0x0);
-  pGVar1 = (GameObject *)func_?(TypeInfo__UnityEngine__GameObject);
-  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject__ctor_1(pGVar1,(MethodInfo *)0x0);
+  pGVar1 = (GameObject *)FUN_?(TypeInfo__UnityEngine__GameObject);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_Internal_CreateGameObject
+            (pGVar1,(String *)0x0,(MethodInfo *)0x0);
+  bVar2 = iRam_? != 0;
   (this->fields).gameObject = pGVar1;
-  func_?(&(this->fields).gameObject,pGVar1);
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(this->fields).gameObject >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar2 = uVar5 == *puVar6;
+      if (bVar2) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar2);
+  }
   pGVar1 = (this->fields).gameObject;
   if (pGVar1 != (GameObject *)0x0) {
-    iVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
+    iVar7 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_GetInstanceID
                       ((Object_1 *)pGVar1,(MethodInfo *)0x0);
-    (this->fields).goId = iVar2;
     pGVar1 = (this->fields).gameObject;
+    (this->fields).goId = iVar7;
     if (pGVar1 != (GameObject *)0x0) {
-      pTVar3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+      pTVar8 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
                          (pGVar1,(MethodInfo *)0x0);
-      (this->fields).transform = pTVar3;
-      func_?();
-      pMVar4 = MVWorldObjectClient_GetTransformData
-                         ((MVWorldObjectClient_TransformData *)&stack0xffffffa8,this,data,
-                          (MethodInfo *)0x0);
-      pTVar3 = (this->fields).transform;
-      fVar5 = (pMVar4->rotation).w;
-      uVar6 = (pMVar4->rotation).z;
-      uVar7 = (pMVar4->rotation).x;
-      uVar8 = (pMVar4->rotation).y;
-      value.y = (float)uVar8;
-      value.x = (float)uVar7;
-      if (pTVar3 != (Transform *)0x0) {
-        UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-                  (pTVar3,pMVar4->position,(MethodInfo *)0x0);
-        pTVar3 = (this->fields).transform;
-        if (pTVar3 != (Transform *)0x0) {
-          value.z = (float)uVar6;
-          value.w = fVar5;
-          UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-                    (pTVar3,value,(MethodInfo *)0x0);
+      bVar2 = iRam_? != 0;
+      (this->fields).transform = pTVar8;
+      if (bVar2) {
+        uVar3 = (uint)((ulonglong)&(this->fields).transform >> 0xc);
+        lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+          puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+          LOCK();
+          bVar2 = uVar5 == *puVar6;
+          if (bVar2) {
+            *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar2);
+      }
+      pMVar9 = MVWorldObjectClient_GetTransformData(&MStack_10,this,data,(MethodInfo *)0x0);
+      pTVar8 = (this->fields).transform;
+      uStack_11._0_4_ = (pMVar9->rotation).y;
+      uStack_11._4_4_ = (pMVar9->rotation).z;
+      fStack_12 = (pMVar9->rotation).w;
+      uStack_13._0_4_ = (pMVar9->position).x;
+      uStack_13._4_4_ = (pMVar9->position).y;
+      uStack_14 = *(undefined8 *)&(pMVar9->position).z;
+      uStack_15._0_4_ = (pMVar9->rotation).y;
+      uStack_15._4_4_ = (pMVar9->rotation).z;
+      fStack_16 = fStack_12;
+      if (pTVar8 != (Transform *)0x0) {
+        if (cRam_? == '\0') {
+          FUN_?(&
+                        void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                       );
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pvVar17 = (pTVar8->fields)._._.m_CachedPtr;
+        if (pvVar17 == (void *)0x0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+          ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar8,(MethodInfo *)0x0);
+          pcVar18 = (code *)swi(3);
+          (*pcVar18)();
+          return;
+        }
+        pcVar18 = pcRam_?;
+        if ((pcRam_? == (code *)0x0) &&
+           (pcVar18 = (code *)FUN_?(&UNK_?), pcVar18 == (code *)0x0)) {
+          uVar19 = func_?(&UNK_?);
+          FUN_?(uVar19,0);
+          pcVar18 = (code *)swi(3);
+          (*pcVar18)();
+          return;
+        }
+        pcRam_? = pcVar18;
+        (*pcRam_?)(pvVar17);
+        pTVar8 = (this->fields).transform;
+        if (pTVar8 != (Transform *)0x0) {
+          uStack_20 = uStack_14._4_4_;
+          uStack_21 = (undefined4)uStack_11;
+          uStack_22 = uStack_11._4_4_;
+          fStack_23 = fStack_16;
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pvVar17 = (pTVar8->fields)._._.m_CachedPtr;
+          if (pvVar17 == (void *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar8,(MethodInfo *)0x0);
+            pcVar18 = (code *)swi(3);
+            (*pcVar18)();
+            return;
+          }
+          pcVar18 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar18 = (code *)FUN_?(&UNK_?), pcVar18 == (code *)0x0)) {
+            uVar19 = func_?(&UNK_?);
+            FUN_?(uVar19,0);
+            pcVar18 = (code *)swi(3);
+            (*pcVar18)();
+            return;
+          }
+          pcRam_? = pcVar18;
+          (*pcRam_?)(pvVar17,&uStack_20);
           pGVar1 = (this->fields).gameObject;
           if (pGVar1 != (GameObject *)0x0) {
-            pCVar9 = (Collider *)
+            pCVar24 = (Collider *)
                       UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
                                 (pGVar1,
                                  UnityEngine__Collider_MethodInfo__UnityEngine__GameObject__GetComponent<UnityEngine::Collider>__
                                 );
-            (this->fields).collider = pCVar9;
-            func_?();
+            bVar2 = iRam_? != 0;
+            (this->fields).collider = pCVar24;
+            if (bVar2) {
+              uVar3 = (uint)((ulonglong)&(this->fields).collider >> 0xc);
+              lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+              do {
+                uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+                puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+                LOCK();
+                bVar2 = uVar5 == *puVar6;
+                if (bVar2) {
+                  *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+                }
+                UNLOCK();
+              } while (!bVar2);
+            }
             MVWorldObjectClient_CreateWorldObject(this,data,worldObjects,(MethodInfo *)0x0);
             return;
           }
         }
       }
+      FUN_?();
+      pcVar18 = (code *)swi(3);
+      (*pcVar18)();
+      return;
     }
   }
-  func_?();
-  pcVar10 = (code *)swi(3);
-  (*pcVar10)();
+  FUN_?();
+  pcVar18 = (code *)swi(3);
+  (*pcVar18)();
   return;
 }
 
@@ -3856,7 +6711,7 @@ Vector3 * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_Eule
     __return_storage_ptr__->z = fVar4;
     return __return_storage_ptr__;
   }
-  func_?();
+  FUN_?();
   pcVar5 = (code *)swi(3);
   pVVar1 = (Vector3 *)(*pcVar5)();
   return pVVar1;
@@ -3871,46 +6726,70 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_InteractionDat
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    InteractionDataHandlerBase_MethodInfo__UnityEngine__GameObject__GetComponent<InteractionDataHandlerBase>__
-                   );
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&
+                  InteractionDataHandlerBase_MethodInfo__UnityEngine__GameObject__GetComponent<InteractionDataHandlerBase>__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pIVar1 = (this->fields).interactionDataHandlerBase;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar2 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Equality
-                    ((Object_1 *)pIVar1,(Object_1 *)0x0,(MethodInfo *)0x0);
-  if (bVar2 != 0) {
-    this_00 = (this->fields).gameObject;
-    if (this_00 == (GameObject *)0x0) {
-      func_?();
-      pcVar3 = (code *)swi(3);
-      pIVar1 = (InteractionDataHandlerBase *)(*pcVar3)();
-      return pIVar1;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pIVar1 != (InteractionDataHandlerBase *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    pIVar1 = (InteractionDataHandlerBase *)
-             UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
-                       (this_00,
-                        InteractionDataHandlerBase_MethodInfo__UnityEngine__GameObject__GetComponent<InteractionDataHandlerBase>__
-                       );
-    (this->fields).interactionDataHandlerBase = pIVar1;
-    func_?(&(this->fields).interactionDataHandlerBase,pIVar1);
+    if ((pIVar1->fields)._._._._._.m_CachedPtr != (void *)0x0) goto code_?;
   }
+  this_00 = (this->fields).gameObject;
+  if (this_00 == (GameObject *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    pIVar1 = (InteractionDataHandlerBase *)(*pcVar2)();
+    return pIVar1;
+  }
+  pIVar1 = (InteractionDataHandlerBase *)
+           UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponent_1
+                     (this_00,
+                      InteractionDataHandlerBase_MethodInfo__UnityEngine__GameObject__GetComponent<InteractionDataHandlerBase>__
+                     );
+  bVar3 = iRam_? != 0;
+  (this->fields).interactionDataHandlerBase = pIVar1;
+  if (bVar3) {
+    uVar4 = (uint)((ulonglong)&(this->fields).interactionDataHandlerBase >> 0xc);
+    puVar5 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar6 = *puVar5;
+      LOCK();
+      uVar7 = *puVar5;
+      if (uVar6 == uVar7) {
+        *puVar5 = uVar6 | 1L << (uVar4 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar6 != uVar7);
+  }
+code_?:
   return (this->fields).interactionDataHandlerBase;
-}
-
-
-/* InteractionFlags get_InteractionFlags() */
-
-InteractionFlags__Enum
-Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_InteractionFlags
-          (MVWorldObjectClient *this,MethodInfo *method)
-
-{
-  return (InteractionFlags__Enum)(this->fields).interactionFlags;
 }
 
 
@@ -3921,16 +6800,37 @@ bool Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_IsTransfo
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  x = (this->fields).transform;
-  if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Object);
+  pTVar1 = (this->fields).transform;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar1 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                    ((Object_1 *)x,(Object_1 *)0x0,(MethodInfo *)0x0);
-  return bVar1;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pTVar1 != (Transform *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    return (pTVar1->fields)._._.m_CachedPtr != (void *)0x0;
+  }
+  return 0;
 }
 
 
@@ -3940,9 +6840,9 @@ Vector3 * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_Obje
                     (Vector3 *__return_storage_ptr__,MVWorldObjectClient *this,MethodInfo *method)
 
 {
+  __return_storage_ptr__->z = -1.0;
   __return_storage_ptr__->x = 0.0;
   __return_storage_ptr__->y = 0.0;
-  __return_storage_ptr__->z = -1.0;
   return __return_storage_ptr__;
 }
 
@@ -3960,27 +6860,63 @@ Vector3 * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_Outp
 }
 
 
+/* PlayInteractionType get_PlayInteractionType() */
+
+PlayInteractionType__Enum
+Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_PlayInteractionType
+          (MVWorldObjectClient *this,MethodInfo *method)
+
+{
+  return (this->fields)._PlayInteractionType_k__BackingField;
+}
+
+
 /* Vector3 get_Position() */
 
 Vector3 * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_Position
                     (Vector3 *__return_storage_ptr__,MVWorldObjectClient *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).transform;
-  if (this_00 != (Transform *)0x0) {
-    pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localPosition
-                       (&VStack_2,this_00,(MethodInfo *)0x0);
-    fVar3 = pVVar1->y;
-    fVar4 = pVVar1->z;
-    __return_storage_ptr__->x = pVVar1->x;
-    __return_storage_ptr__->y = fVar3;
-    __return_storage_ptr__->z = fVar4;
-    return __return_storage_ptr__;
+  obj = (this->fields).transform;
+  if (obj == (Transform *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    pVVar2 = (Vector3 *)(*pcVar1)();
+    return pVVar2;
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pVVar1 = (Vector3 *)(*pcVar5)();
-  return pVVar1;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  uStack_3 = 0;
+  fStack_4 = 0.0;
+  pvVar5 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar5 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    pVVar2 = (Vector3 *)(*pcVar1)();
+    return pVVar2;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar6 = func_?(&UNK_?);
+    FUN_?(uVar6,0);
+    pcVar1 = (code *)swi(3);
+    pVVar2 = (Vector3 *)(*pcVar1)();
+    return pVVar2;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(pvVar5,&uStack_3);
+  __return_storage_ptr__->x = (float)(undefined4)uStack_3;
+  __return_storage_ptr__->y = (float)uStack_3._4_4_;
+  __return_storage_ptr__->z = fStack_4;
+  return __return_storage_ptr__;
 }
 
 
@@ -3991,23 +6927,47 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_Rotation
           (Quaternion *__return_storage_ptr__,MVWorldObjectClient *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).transform;
-  if (this_00 != (Transform *)0x0) {
-    pQVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localRotation
-                       (&QStack_2,this_00,(MethodInfo *)0x0);
-    fVar3 = pQVar1->y;
-    fVar4 = pQVar1->z;
-    fVar5 = pQVar1->w;
-    __return_storage_ptr__->x = pQVar1->x;
-    __return_storage_ptr__->y = fVar3;
-    __return_storage_ptr__->z = fVar4;
-    __return_storage_ptr__->w = fVar5;
-    return __return_storage_ptr__;
+  obj = (this->fields).transform;
+  if (obj == (Transform *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    pQVar2 = (Quaternion *)(*pcVar1)();
+    return pQVar2;
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  pQVar1 = (Quaternion *)(*pcVar6)();
-  return pQVar1;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  uStack_3 = 0;
+  uStack_4 = 0;
+  pvVar5 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar5 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    pQVar2 = (Quaternion *)(*pcVar1)();
+    return pQVar2;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar6 = func_?(&UNK_?);
+    FUN_?(uVar6,0);
+    pcVar1 = (code *)swi(3);
+    pQVar2 = (Quaternion *)(*pcVar1)();
+    return pQVar2;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(pvVar5,&uStack_3);
+  __return_storage_ptr__->x = (float)(undefined4)uStack_3;
+  __return_storage_ptr__->y = (float)uStack_3._4_4_;
+  __return_storage_ptr__->z = (float)(undefined4)uStack_4;
+  __return_storage_ptr__->w = (float)uStack_4._4_4_;
+  return __return_storage_ptr__;
 }
 
 
@@ -4017,21 +6977,57 @@ Vector3 * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_Scal
                     (Vector3 *__return_storage_ptr__,MVWorldObjectClient *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).transform;
-  if (this_00 != (Transform *)0x0) {
-    pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_localScale
-                       (&VStack_2,this_00,(MethodInfo *)0x0);
-    fVar3 = pVVar1->y;
-    fVar4 = pVVar1->z;
-    __return_storage_ptr__->x = pVVar1->x;
-    __return_storage_ptr__->y = fVar3;
-    __return_storage_ptr__->z = fVar4;
-    return __return_storage_ptr__;
+  obj = (this->fields).transform;
+  if (obj == (Transform *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    pVVar2 = (Vector3 *)(*pcVar1)();
+    return pVVar2;
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pVVar1 = (Vector3 *)(*pcVar5)();
-  return pVVar1;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  uStack_3 = 0;
+  fStack_4 = 0.0;
+  pvVar5 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar5 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    pVVar2 = (Vector3 *)(*pcVar1)();
+    return pVVar2;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar6 = func_?(&UNK_?);
+    FUN_?(uVar6,0);
+    pcVar1 = (code *)swi(3);
+    pVVar2 = (Vector3 *)(*pcVar1)();
+    return pVVar2;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(pvVar5,&uStack_3);
+  __return_storage_ptr__->x = (float)(undefined4)uStack_3;
+  __return_storage_ptr__->y = (float)uStack_3._4_4_;
+  __return_storage_ptr__->z = fStack_4;
+  return __return_storage_ptr__;
+}
+
+
+/* SelectedConnector get_SelectedConnector() */
+
+SelectedConnector__Enum
+Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_SelectedConnector
+          (MVWorldObjectClient *this,MethodInfo *method)
+
+{
+  return (this->fields).selectedConnector;
 }
 
 
@@ -4042,75 +7038,15 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_SyncRot
           (Quaternion *__return_storage_ptr__,MVWorldObjectClient *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).gameObject;
-  if (this_00 != (GameObject *)0x0) {
-    this_01 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
-                        (this_00,(MethodInfo *)0x0);
-    if (this_01 != (Transform *)0x0) {
-      pQVar1 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                         ((Quaternion *)&stack0xffffffec,this_01,(MethodInfo *)0x0);
-      fVar2 = pQVar1->y;
-      fVar3 = pQVar1->z;
-      fVar4 = pQVar1->w;
-      __return_storage_ptr__->x = pQVar1->x;
-      __return_storage_ptr__->y = fVar2;
-      __return_storage_ptr__->z = fVar3;
-      __return_storage_ptr__->w = fVar4;
-      return __return_storage_ptr__;
-    }
-  }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pQVar1 = (Quaternion *)(*pcVar5)();
-  return pQVar1;
-}
-
-
-/* Boolean get_Visible() */
-
-bool Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_Visible
-               (MVWorldObjectClient *this,MethodInfo *method)
-
-{
-  if (cRam_? == '\0') {
-    func_?(&
-                    UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______
-                   );
-    cRam_? = '\x01';
-  }
-  this_00 = (this->fields).gameObject;
-  if (this_00 != (GameObject *)0x0) {
-    pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren
-                       (this_00,
-                        UnityEngine__MeshRenderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::MeshRenderer>______
-                       );
-    uVar2 = 0;
-    if (pOVar1 != (Object__Array *)0x0) {
-      ppOVar3 = pOVar1->vector;
-      while( true ) {
-        if ((int)pOVar1->max_length <= (int)uVar2) {
-          return 0;
-        }
-        if (pOVar1->max_length <= uVar2) break;
-        if ((Renderer *)*ppOVar3 == (Renderer *)0x0) goto code_?;
-        bVar4 = UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_get_enabled
-                          ((Renderer *)*ppOVar3,(MethodInfo *)0x0);
-        if (bVar4 != 0) {
-          return 1;
-        }
-        uVar2 = uVar2 + 1;
-        ppOVar3 = ppOVar3 + 1;
-      }
-      goto code_?;
-    }
-  }
-code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  bVar4 = (*pcVar5)();
-  return bVar4;
+  pQVar1 = MVWorldObjectClient_get_WorldRotation(&QStack_2,this,(MethodInfo *)0x0);
+  fVar3 = pQVar1->y;
+  fVar4 = pQVar1->z;
+  fVar5 = pQVar1->w;
+  __return_storage_ptr__->x = pQVar1->x;
+  __return_storage_ptr__->y = fVar3;
+  __return_storage_ptr__->z = fVar4;
+  __return_storage_ptr__->w = fVar5;
+  return __return_storage_ptr__;
 }
 
 
@@ -4131,7 +7067,7 @@ Vector3 * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_Worl
     __return_storage_ptr__->z = fVar4;
     return __return_storage_ptr__;
   }
-  func_?();
+  FUN_?();
   pcVar5 = (code *)swi(3);
   pVVar1 = (Vector3 *)(*pcVar5)();
   return pVVar1;
@@ -4146,43 +7082,59 @@ Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_WorldIDsRecurs
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVWorldObjectClient__CallBackDelegate);
-    func_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-    func_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
-    func_?(&
-                    MethodInfo__MVWorldObjectClient____c__DisplayClass53_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_
-                   );
-    func_?(&TypeInfo__MVWorldObjectClient____c__DisplayClass53_0);
+    FUN_?(&TypeInfo__MVWorldObjectClient__CallBackDelegate);
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__HashSet<int>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__MVWorldObjectClient____c__DisplayClass53_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVWorldObjectClient____c__DisplayClass53_0);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)
-            func_?(TypeInfo__MVWorldObjectClient____c__DisplayClass53_0);
-  UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-  UxmlObjectListAttributeDescription`1[System::Object]::
-  UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
-  pHVar1 = (HashSet_1_System_Int32_ *)
-           func_?(TypeInfo__System__Collections__Generic__HashSet<int>);
-  System.Core.dll::System::Collections::Generic::HashSet`1[System::Int32]::
-  HashSet_1_System_Int32___ctor
-            (pHVar1,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
-  if (this_00 != (UxmlObjectListAttributeDescription_1_System_Object_ *)0x0) {
-    (this_00->fields)._._defaultValue_k__BackingField = (List_1_System_Object_ *)pHVar1;
-    func_?(&this_00->fields);
-    this_01 = (UnityAction_1_System_Object_ *)
-              func_?(TypeInfo__MVWorldObjectClient__CallBackDelegate);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-    UnityAction_1_System_Object___ctor
-              (this_01,(Object *)this_00,
-               MethodInfo__MVWorldObjectClient____c__DisplayClass53_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_
-               ,(MethodInfo *)0x0);
-    (*(code *)(this->klass->vtable).TraverseRecursiveTail.method)
-              (this,this_01,(this->klass->vtable).CompareWithKoGaMaPackage.methodPtr);
-    return (HashSet_1_System_Int32_ *)(this_00->fields)._._defaultValue_k__BackingField;
+  object = (Object *)FUN_?(TypeInfo__MVWorldObjectClient____c__DisplayClass53_0);
+  pOVar1 = (Object__Class *)FUN_?(TypeInfo__System__Collections__Generic__HashSet<int>);
+  FUN_?(pOVar1,MethodInfo__System__Collections__Generic__HashSet<int>__HashSet__);
+  if (object == (Object *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    pHVar3 = (HashSet_1_System_Int32_ *)(*pcVar2)();
+    return pHVar3;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  pHVar1 = (HashSet_1_System_Int32_ *)(*pcVar2)();
-  return pHVar1;
+  bVar4 = iRam_? != 0;
+  object[1].klass = pOVar1;
+  if (bVar4) {
+    uVar5 = (uint)((ulonglong)(object + 1) >> 0xc);
+    puVar6 = (ulonglong *)((ulonglong)((uVar5 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar7 = *puVar6;
+      LOCK();
+      uVar8 = *puVar6;
+      if (uVar7 == uVar8) {
+        *puVar6 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar7 != uVar8);
+  }
+  this_00 = (UnityAction_1_System_Object_ *)
+            FUN_?(TypeInfo__MVWorldObjectClient__CallBackDelegate);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+  UnityAction_1_System_Object___ctor
+            (this_00,object,
+             MethodInfo__MVWorldObjectClient____c__DisplayClass53_0___get_WorldIDsRecursive_b__0_MVWorldObjectClient_
+             ,(MethodInfo *)0x0);
+  (*(this->klass->vtable).TraverseRecursiveTail.methodPtr)
+            (this,this_00,(this->klass->vtable).TraverseRecursiveTail.method);
+  return (HashSet_1_System_Int32_ *)object[1].klass;
 }
 
 
@@ -4193,12 +7145,14 @@ Vector3 * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_Worl
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__SharedCubeFunctions);
+    FUN_?(&TypeInfo__SharedCubeFunctions);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   transform = (this->fields).transform;
-  if ((TypeInfo__SharedCubeFunctions->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__SharedCubeFunctions);
+  if (*(int *)&(TypeInfo__SharedCubeFunctions->_1).field_0x1c == 0) {
+    FUN_?();
   }
   pVVar1 = SharedCubeFunctions::SharedCubeFunctions_GetWorldCenter_1
                      (&VStack_2,transform,(MethodInfo *)0x0);
@@ -4207,6 +7161,59 @@ Vector3 * Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_Worl
   __return_storage_ptr__->x = pVVar1->x;
   __return_storage_ptr__->y = fVar3;
   __return_storage_ptr__->z = fVar4;
+  return __return_storage_ptr__;
+}
+
+
+/* Quaternion get_WorldRotation() */
+
+Quaternion *
+Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_get_WorldRotation
+          (Quaternion *__return_storage_ptr__,MVWorldObjectClient *this,MethodInfo *method)
+
+{
+  this_00 = (this->fields).gameObject;
+  if ((this_00 == (GameObject *)0x0) ||
+     (obj = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_get_transform
+                      (this_00,(MethodInfo *)0x0), obj == (Transform *)0x0)) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    pQVar2 = (Quaternion *)(*pcVar1)();
+    return pQVar2;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  uStack_3 = 0;
+  uStack_4 = 0;
+  pvVar5 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar5 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    pQVar2 = (Quaternion *)(*pcVar1)();
+    return pQVar2;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar6 = func_?(&UNK_?);
+    FUN_?(uVar6,0);
+    pcVar1 = (code *)swi(3);
+    pQVar2 = (Quaternion *)(*pcVar1)();
+    return pQVar2;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(pvVar5,&uStack_3);
+  __return_storage_ptr__->x = (float)(undefined4)uStack_3;
+  __return_storage_ptr__->y = (float)uStack_3._4_4_;
+  __return_storage_ptr__->z = (float)(undefined4)uStack_4;
+  __return_storage_ptr__->w = (float)uStack_4._4_4_;
   return __return_storage_ptr__;
 }
 
@@ -4222,10 +7229,10 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_Documenta
   this_00 = (NotImplementedException *)func_?(uVar1);
   mscorlib.dll::System::NotImplementedException::NotImplementedException__ctor
             (this_00,(MethodInfo *)0x0);
-  func_?(&
-                  MethodInfo__MVWorldObjectClient__set_DocumentationType_MVWorldObjectDocumentationType_
-                 );
-  func_?(this_00);
+  uVar1 = func_?(&
+                              MethodInfo__MVWorldObjectClient__set_DocumentationType_MVWorldObjectDocumentationType_
+                             );
+  FUN_?(this_00,uVar1);
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -4235,64 +7242,80 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_Documenta
 /* Void set_EulerAngles(Vector3) */
 
 void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_EulerAngles
-               (MVWorldObjectClient *this,Vector3 value,MethodInfo *method)
+               (MVWorldObjectClient *this,Vector3 *value,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RotationChangedEventArgs);
+    FUN_?(&TypeInfo__RotationChangedEventArgs);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).transform;
-  if (pTVar1 != (Transform *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localEulerAngles
-              (pTVar1,value,(MethodInfo *)0x0);
-    if ((this->fields).RotationChanged !=
-        (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0) {
-      pTVar1 = (this->fields).transform;
-      pUVar2 = (this->fields).RotationChanged;
-      if (pTVar1 == (Transform *)0x0) goto code_?;
-      pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                         ((Quaternion *)&stack0xffffffec,pTVar1,(MethodInfo *)0x0);
-      pMVar4 = (MonitorData *)pQVar3->y;
-      pUVar5 = (UxmlObjectListAttributeDescription_1_System_Object___Class *)&UNK_?;
-      this_00 = (List_1_System_Object_ *)func_?();
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-        pLVar6 = (List_1_System_Object_ *)0x0;
-        pMVar4 = (MonitorData *)&UNK_?;
-        pLVar7 = this_00;
-        UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-        UxmlObjectListAttributeDescription`1[System::Object]::
-        UxmlObjectListAttributeDescription_1_System_Object___ctor
-                  ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_00,(MethodInfo *)0x0)
-        ;
-      }
-      else {
-        pLVar7 = (List_1_System_Object_ *)&UNK_?;
-        pLVar6 = this_00;
-        UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-        UxmlObjectListAttributeDescription`1[System::Object]::
-        UxmlObjectListAttributeDescription_1_System_Object___ctor
-                  ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_00,(MethodInfo *)0x0)
-        ;
-      }
-      ((UxmlObjectListAttributeDescription_1_System_Object_ *)(this_00 + 1))->klass = pUVar5;
-      ((UxmlObjectListAttributeDescription_1_System_Object_ *)(this_00 + 1))->monitor = pMVar4;
-      (((UxmlObjectListAttributeDescription_1_System_Object_ *)(this_00 + 1))->fields)._.
-      _defaultValue_k__BackingField = pLVar7;
-      this_00[1].fields._size = (int32_t)pLVar6;
-      (*(pUVar2->fields)._._.invoke_impl)();
-    }
+  if (pTVar1 == (Transform *)0x0) {
+code_?:
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  auStack_3._0_4_ = value->x;
+  auStack_3._4_4_ = value->y;
+  stack0xfffffffffffffff0 = CONCAT44(uStack_4,value->z);
+  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localEulerAngles
+            (pTVar1,(Vector3 *)auStack_3,(MethodInfo *)0x0);
+  if ((this->fields).RotationChanged !=
+      (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0) {
+    pTVar1 = (this->fields).transform;
+    pUVar5 = (this->fields).RotationChanged;
+    if (pTVar1 == (Transform *)0x0) goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    auStack_3._0_4_ = 0.0;
+    auStack_3._4_4_ = 0.0;
+    stack0xfffffffffffffff0 = 0;
+    pvVar6 = (pTVar1->fields)._._.m_CachedPtr;
+    if (pvVar6 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar1,(MethodInfo *)0x0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar7 = func_?(&UNK_?);
+      FUN_?(uVar7,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)(pvVar6,auStack_3);
+    lVar8 = FUN_?(TypeInfo__RotationChangedEventArgs);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__System__EventArgs);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__System__EventArgs->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    *(undefined4 *)(lVar8 + 0x20) = auStack_3._0_4_;
+    *(undefined4 *)(lVar8 + 0x24) = auStack_3._4_4_;
+    *(undefined4 *)(lVar8 + 0x28) = auStack_3._8_4_;
+    *(undefined4 *)(lVar8 + 0x2c) = uStack_4;
+    (*(pUVar5->fields)._._.invoke_impl)
+              ((pUVar5->fields)._._.method_code,this,lVar8,(pUVar5->fields)._._.method);
+  }
   return;
 }
 
@@ -4303,8 +7326,18 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_Interacti
                (MVWorldObjectClient *this,InteractionFlags__Enum value,MethodInfo *method)
 
 {
-  *(InteractionFlags__Enum *)&(this->fields).interactionFlags = value;
-  *(MethodInfo **)((int)&(this->fields).interactionFlags + 4) = method;
+  (this->fields).interactionFlags = CONCAT44(in_register_00000014,value);
+  return;
+}
+
+
+/* Void set_PlayInteractionType(PlayInteractionType) */
+
+void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_PlayInteractionType
+               (MVWorldObjectClient *this,PlayInteractionType__Enum value,MethodInfo *method)
+
+{
+  (this->fields)._PlayInteractionType_k__BackingField = value;
   return;
 }
 
@@ -4312,20 +7345,48 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_Interacti
 /* Void set_Position(Vector3) */
 
 void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_Position
-               (MVWorldObjectClient *this,Vector3 value,MethodInfo *method)
+               (MVWorldObjectClient *this,Vector3 *value,MethodInfo *method)
 
 {
-  this_00 = (this->fields).transform;
-  if (this_00 != (Transform *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localPosition
-              (this_00,value,(MethodInfo *)0x0);
-    (*(code *)(this->klass->vtable).PositionChangedNotify.method)
-              (this,(this->klass->vtable).get_WorldPivot.methodPtr);
+  obj = (this->fields).transform;
+  if (obj == (Transform *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uStack_2._0_4_ = value->x;
+  uStack_2._4_4_ = value->y;
+  fStack_3 = value->z;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar4 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar4 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar5 = func_?(&UNK_?);
+    FUN_?(uVar5,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(pvVar4,&uStack_2);
+  (*(this->klass->vtable).PositionChangedNotify.methodPtr)
+            (this,(this->klass->vtable).PositionChangedNotify.method);
   return;
 }
 
@@ -4333,73 +7394,109 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_Position
 /* Void set_Rotation(Quaternion) */
 
 void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_Rotation
-               (MVWorldObjectClient *this,Quaternion value,MethodInfo *method)
+               (MVWorldObjectClient *this,Quaternion *value,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RotationChangedEventArgs);
+    FUN_?(&TypeInfo__RotationChangedEventArgs);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).transform;
-  if (pTVar1 != (Transform *)0x0) {
-    value_00.y = value.y;
-    value_00.x = value.x;
-    value_00.z = value.z;
-    value_00.w = value.w;
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localRotation
-              (pTVar1,value_00,(MethodInfo *)0x0);
-    if ((this->fields).RotationChanged !=
-        (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0) {
-      pTVar1 = (this->fields).transform;
-      pUVar2 = (this->fields).RotationChanged;
-      if (pTVar1 == (Transform *)0x0) goto code_?;
-      pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                         (&value,pTVar1,(MethodInfo *)0x0);
-      value.x = pQVar3->x;
-      value.y = pQVar3->y;
-      value.z = pQVar3->z;
-      value.w = pQVar3->w;
-      this_00 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
-      if (cRam_? == '\0') {
-        value.z = (float)&TypeInfo__System__EventArgs;
-        value.y = (float)&UNK_?;
-        func_?();
-        cRam_? = '\x01';
-      }
-      if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-        value.z = (float)TypeInfo__System__EventArgs;
-        value.y = (float)&UNK_?;
-        func_?();
-        value.y = 0.0;
-        value.x = (float)this_00;
-        UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-        UxmlObjectListAttributeDescription`1[System::Object]::
-        UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
-      }
-      else {
-        value.z = 0.0;
-        value.x = (float)&UNK_?;
-        value.y = (float)this_00;
-        UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-        UxmlObjectListAttributeDescription`1[System::Object]::
-        UxmlObjectListAttributeDescription_1_System_Object___ctor(this_00,(MethodInfo *)0x0);
-      }
-      this_00[2].klass = (UxmlObjectListAttributeDescription_1_System_Object___Class *)value.x;
-      this_00[2].monitor = (MonitorData *)value.y;
-      this_00[2].fields._._defaultValue_k__BackingField = (List_1_System_Object_ *)value.z;
-      this_00[3].klass = (UxmlObjectListAttributeDescription_1_System_Object___Class *)value.w;
-      value.z = (float)this;
-      value.y = (float)(pUVar2->fields)._._.method_code;
-      value.x = (float)&UNK_?;
-      value.w = (float)this_00;
-      (*(pUVar2->fields)._._.invoke_impl)();
-    }
+  if (pTVar1 == (Transform *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  fStack_3 = value->x;
+  fStack_4 = value->y;
+  fStack_5 = value->z;
+  fStack_6 = value->w;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar7 = (pTVar1->fields)._._.m_CachedPtr;
+  if (pvVar7 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar1,(MethodInfo *)0x0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar8 = func_?(&UNK_?);
+    FUN_?(uVar8,0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcRam_? = pcVar2;
+  (*pcRam_?)(pvVar7);
+  if ((this->fields).RotationChanged !=
+      (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0) {
+    pTVar1 = (this->fields).transform;
+    pUVar9 = (this->fields).RotationChanged;
+    if (pTVar1 == (Transform *)0x0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    uStack_10 = 0;
+    uStack_11 = 0;
+    pvVar7 = (pTVar1->fields)._._.m_CachedPtr;
+    if (pvVar7 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar1,(MethodInfo *)0x0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar8 = func_?(&UNK_?);
+      FUN_?(uVar8,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)(pvVar7,&uStack_10);
+    lVar12 = FUN_?(TypeInfo__RotationChangedEventArgs);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__System__EventArgs);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__System__EventArgs->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    *(undefined4 *)(lVar12 + 0x20) = (undefined4)uStack_10;
+    *(undefined4 *)(lVar12 + 0x24) = uStack_10._4_4_;
+    *(undefined4 *)(lVar12 + 0x28) = (undefined4)uStack_11;
+    *(undefined4 *)(lVar12 + 0x2c) = uStack_11._4_4_;
+    (*(pUVar9->fields)._._.invoke_impl)
+              ((pUVar9->fields)._._.method_code,this,lVar12,(pUVar9->fields)._._.method);
+  }
   return;
 }
 
@@ -4412,33 +7509,44 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_RunTimeDa
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                   );
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pDVar1 = (Dictionary_2_System_Object_System_Object_ *)
            ObscuredTypesConverter::ObscuredTypesConverter_CreateObscuredValue
                      ((Object *)value,(MethodInfo *)0x0);
   if (pDVar1 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    if (((pDVar1->klass->_1).naturalAligment <
-         (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         naturalAligment) ||
+    bVar2 = (TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1)
+            .naturalAligment;
+    if (((pDVar1->klass->_1).naturalAligment < bVar2) ||
        ((Dictionary_2_System_Object_System_Object___Class *)
-        (pDVar1->klass->_1).typeHierarchy
-        [(TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>->_1).
-         naturalAligment - 1] !=
+        (pDVar1->klass->_1).typeHierarchy[(ulonglong)bVar2 - 1] !=
         TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>)) {
-      func_?(pDVar1,
-                      TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
-                     );
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+      FUN_?(pDVar1);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
   }
+  bVar4 = iRam_? != 0;
   (this->fields)._.runTimeData = pDVar1;
-  func_?(&(this->fields)._.runTimeData,pDVar1);
+  if (bVar4) {
+    uVar5 = (uint)((ulonglong)&(this->fields)._.runTimeData >> 0xc);
+    puVar6 = (ulonglong *)((ulonglong)((uVar5 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar7 = *puVar6;
+      LOCK();
+      uVar8 = *puVar6;
+      if (uVar7 == uVar8) {
+        *puVar6 = uVar7 | 1L << (uVar5 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar7 != uVar8);
+  }
   return;
 }
 
@@ -4446,45 +7554,71 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_RunTimeDa
 /* Void set_Scale(Vector3) */
 
 void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_Scale
-               (MVWorldObjectClient *this,Vector3 value,MethodInfo *method)
+               (MVWorldObjectClient *this,Vector3 *value,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__ScaleChangedEventArgs);
+    FUN_?(&TypeInfo__ScaleChangedEventArgs);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (this->fields).transform;
-  if (this_00 != (Transform *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_localScale
-              (this_00,value,(MethodInfo *)0x0);
-    if ((this->fields).ScaleChanged !=
-        (UnityAction_2_MVWorldObjectClient_ScaleChangedEventArgs_ *)0x0) {
-      pUVar1 = (this->fields).ScaleChanged;
-      this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-        UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-        UxmlObjectListAttributeDescription`1[System::Object]::
-        UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
-      }
-      else {
-        UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-        UxmlObjectListAttributeDescription`1[System::Object]::
-        UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
-      }
-      *(longlong *)&this_01->fields = value._0_8_;
-      this_01[1].monitor = (MonitorData *)value.z;
-      (*(pUVar1->fields)._._.invoke_impl)((pUVar1->fields)._._.method_code);
-    }
+  obj = (this->fields).transform;
+  if (obj == (Transform *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  uStack_2._0_4_ = value->x;
+  uStack_2._4_4_ = value->y;
+  fStack_3 = value->z;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar4 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar4 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar5 = func_?(&UNK_?);
+    FUN_?(uVar5,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(pvVar4,&uStack_2);
+  if ((this->fields).ScaleChanged != (UnityAction_2_MVWorldObjectClient_ScaleChangedEventArgs_ *)0x0
+     ) {
+    pUVar6 = (this->fields).ScaleChanged;
+    lVar7 = FUN_?(TypeInfo__ScaleChangedEventArgs);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__System__EventArgs);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__System__EventArgs->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    fVar8 = value->z;
+    *(undefined8 *)(lVar7 + 0x10) = *(undefined8 *)value;
+    *(float *)(lVar7 + 0x18) = fVar8;
+    (*(pUVar6->fields)._._.invoke_impl)
+              ((pUVar6->fields)._._.method_code,this,lVar7,(pUVar6->fields)._._.method);
+  }
   return;
 }
 
@@ -4498,8 +7632,11 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_Selected
   if ((this->fields).selected != value) {
     pMVar1 = this->klass;
     (this->fields).selected = value;
-    (*(code *)(pMVar1->vtable).OnSelectedChanged.method)
-              (this,_value,(pMVar1->vtable).ValidateObjectLinkTarget.methodPtr);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(pMVar1->vtable).OnSelectedChanged.methodPtr)
+              (this,value,(pMVar1->vtable).OnSelectedChanged.method);
+    return;
   }
   return;
 }
@@ -4508,11 +7645,14 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_Selected
 /* Void set_SyncPos(Vector3) */
 
 void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_SyncPos
-               (MVWorldObjectClient *this,Vector3 value,MethodInfo *method)
+               (MVWorldObjectClient *this,Vector3 *value,MethodInfo *method)
 
 {
-  (*(code *)(this->klass->vtable).set_WorldPosition.method)
-            (this,value._0_8_,value.z,(this->klass->vtable).get_IsTransformDefined.methodPtr);
+  fStack_1 = value->z;
+  uStack_2._0_4_ = value->x;
+  uStack_2._4_4_ = value->y;
+  (*(this->klass->vtable).set_WorldPosition.methodPtr)
+            (uStack_2,&uStack_2,(this->klass->vtable).set_WorldPosition.method);
   return;
 }
 
@@ -4520,47 +7660,14 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_SyncPos
 /* Void set_SyncRot(Quaternion) */
 
 void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_SyncRot
-               (MVWorldObjectClient *this,Quaternion value,MethodInfo *method)
+               (MVWorldObjectClient *this,Quaternion *value,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__RotationChangedEventArgs);
-    cRam_? = '\x01';
-  }
-  this_00 = (this->fields).transform;
-  if (this_00 != (Transform *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_rotation
-              (this_00,value,(MethodInfo *)0x0);
-    if ((this->fields).RotationChanged !=
-        (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0) {
-      pUVar1 = (this->fields).RotationChanged;
-      this_01 = (UxmlObjectListAttributeDescription_1_System_Object_ *)func_?();
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-        UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-        UxmlObjectListAttributeDescription`1[System::Object]::
-        UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
-      }
-      else {
-        UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-        UxmlObjectListAttributeDescription`1[System::Object]::
-        UxmlObjectListAttributeDescription_1_System_Object___ctor(this_01,(MethodInfo *)0x0);
-      }
-      this_01[2].klass = (UxmlObjectListAttributeDescription_1_System_Object___Class *)value.x;
-      this_01[2].monitor = (MonitorData *)value.y;
-      this_01[2].fields._._defaultValue_k__BackingField = (List_1_System_Object_ *)value.z;
-      this_01[3].klass = (UxmlObjectListAttributeDescription_1_System_Object___Class *)value.w;
-      (*(pUVar1->fields)._._.invoke_impl)();
-    }
-    return;
-  }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  QStack_1.x = value->x;
+  QStack_1.y = value->y;
+  QStack_1.z = value->z;
+  QStack_1.w = value->w;
+  MVWorldObjectClient_set_WorldRotation(this,&QStack_1,(MethodInfo *)0x0);
   return;
 }
 
@@ -4572,48 +7679,90 @@ void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_Visible
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
-                   );
-    func_?(&StringLiteral_MeshRenderer_s__not_found_on_att);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_MeshRenderer_s__not_found_on_att);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  pMVar1 = 
+  UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
+  ;
   this_00 = (this->fields).gameObject;
   if (this_00 != (GameObject *)0x0) {
-    pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_GetComponentsInChildren
-                       (this_00,
-                        UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
-                       );
-    if (pOVar1 != (Object__Array *)0x0) {
-      if (pOVar1->max_length == 0) {
-        if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-          func_?(TypeInfo__UnityEngine__Debug);
+    if ((
+        UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
+        ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(
+                   UnityEngine__Renderer__MethodInfo__UnityEngine__GameObject__GetComponentsInChildren<UnityEngine::Renderer>______
+                   );
+    }
+    p_Var3 = UnityEngine.CoreModule.dll::UnityEngine::GameObject::
+             GameObject_GetComponentsInChildren_4
+                       (this_00,0,((pMVar1->field7_0x38).rgctx_data)->method);
+    if (p_Var3 != (_Il2CppFullySharedGenericType__Array *)0x0) {
+      if (p_Var3->max_length == 0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+          FUN_?();
         }
         UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogWarning
                   ((Object *)StringLiteral_MeshRenderer_s__not_found_on_att,(MethodInfo *)0x0);
-        return;
       }
-      uVar2 = 0;
-      ppOVar3 = pOVar1->vector;
-      while( true ) {
-        if ((int)pOVar1->max_length <= (int)uVar2) {
-          return;
+      else {
+        pp_Var7 = p_Var3->vector;
+        for (uVar2 = 0; (int)uVar2 < (int)p_Var3->max_length; uVar2 = uVar2 + 1) {
+          if ((uint)p_Var3->max_length <= uVar2) {
+            FUN_?();
+            pcVar3 = (code *)swi(3);
+            (*pcVar3)();
+            return;
+          }
+          obj = (Object *)*pp_Var7;
+          if (obj == (Object *)0x0) goto code_?;
+          if (cRam_? == '\0') {
+            FUN_?(&
+                          void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Renderer>_UnityEngine__Renderer_
+                         );
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          pOVar4 = obj[1].klass;
+          if (pOVar4 == (Object__Class *)0x0) {
+            UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+            ThrowHelper_2_ThrowNullReferenceException(obj,(MethodInfo *)0x0);
+            pcVar3 = (code *)swi(3);
+            (*pcVar3)();
+            return;
+          }
+          pcVar3 = pcRam_?;
+          if ((pcRam_? == (code *)0x0) &&
+             (pcVar3 = (code *)FUN_?(&UNK_?), pcVar3 == (code *)0x0)) {
+            uVar5 = func_?(&UNK_?);
+            FUN_?(uVar5,0);
+            pcVar3 = (code *)swi(3);
+            (*pcVar3)();
+            return;
+          }
+          pcRam_? = pcVar3;
+          (*pcRam_?)(pOVar4);
+          pp_Var7 = pp_Var7 + 1;
         }
-        if (pOVar1->max_length <= uVar2) break;
-        if ((Renderer *)*ppOVar3 == (Renderer *)0x0) goto code_?;
-        UnityEngine.CoreModule.dll::UnityEngine::Renderer::Renderer_set_enabled
-                  ((Renderer *)*ppOVar3,value,(MethodInfo *)0x0);
-        uVar2 = uVar2 + 1;
-        ppOVar3 = ppOVar3 + 1;
       }
-      func_?();
+      return;
     }
   }
 code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -4621,64 +7770,80 @@ code_?:
 /* Void set_WorldEulerAngles(Vector3) */
 
 void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_WorldEulerAngles
-               (MVWorldObjectClient *this,Vector3 value,MethodInfo *method)
+               (MVWorldObjectClient *this,Vector3 *value,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RotationChangedEventArgs);
+    FUN_?(&TypeInfo__RotationChangedEventArgs);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pTVar1 = (this->fields).transform;
-  if (pTVar1 != (Transform *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_eulerAngles
-              (pTVar1,value,(MethodInfo *)0x0);
-    if ((this->fields).RotationChanged !=
-        (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0) {
-      pTVar1 = (this->fields).transform;
-      pUVar2 = (this->fields).RotationChanged;
-      if (pTVar1 == (Transform *)0x0) goto code_?;
-      pQVar3 = UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_get_rotation
-                         ((Quaternion *)&stack0xffffffec,pTVar1,(MethodInfo *)0x0);
-      pMVar4 = (MonitorData *)pQVar3->y;
-      pUVar5 = (UxmlObjectListAttributeDescription_1_System_Object___Class *)&UNK_?;
-      this_00 = (List_1_System_Object_ *)func_?();
-      if (cRam_? == '\0') {
-        func_?();
-        cRam_? = '\x01';
-      }
-      if ((TypeInfo__System__EventArgs->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-        pLVar6 = (List_1_System_Object_ *)0x0;
-        pMVar4 = (MonitorData *)&UNK_?;
-        pLVar7 = this_00;
-        UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-        UxmlObjectListAttributeDescription`1[System::Object]::
-        UxmlObjectListAttributeDescription_1_System_Object___ctor
-                  ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_00,(MethodInfo *)0x0)
-        ;
-      }
-      else {
-        pLVar7 = (List_1_System_Object_ *)&UNK_?;
-        pLVar6 = this_00;
-        UnityEngine.UIElementsModule.dll::UnityEngine::UIElements::
-        UxmlObjectListAttributeDescription`1[System::Object]::
-        UxmlObjectListAttributeDescription_1_System_Object___ctor
-                  ((UxmlObjectListAttributeDescription_1_System_Object_ *)this_00,(MethodInfo *)0x0)
-        ;
-      }
-      ((UxmlObjectListAttributeDescription_1_System_Object_ *)(this_00 + 1))->klass = pUVar5;
-      ((UxmlObjectListAttributeDescription_1_System_Object_ *)(this_00 + 1))->monitor = pMVar4;
-      (((UxmlObjectListAttributeDescription_1_System_Object_ *)(this_00 + 1))->fields)._.
-      _defaultValue_k__BackingField = pLVar7;
-      this_00[1].fields._size = (int32_t)pLVar6;
-      (*(pUVar2->fields)._._.invoke_impl)();
-    }
+  if (pTVar1 == (Transform *)0x0) {
+code_?:
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-code_?:
-  func_?();
-  pcVar8 = (code *)swi(3);
-  (*pcVar8)();
+  auStack_3._0_4_ = value->x;
+  auStack_3._4_4_ = value->y;
+  stack0xfffffffffffffff0 = CONCAT44(uStack_4,value->z);
+  UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_eulerAngles
+            (pTVar1,(Vector3 *)auStack_3,(MethodInfo *)0x0);
+  if ((this->fields).RotationChanged !=
+      (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0) {
+    pTVar1 = (this->fields).transform;
+    pUVar5 = (this->fields).RotationChanged;
+    if (pTVar1 == (Transform *)0x0) goto code_?;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                   );
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    auStack_3._0_4_ = 0.0;
+    auStack_3._4_4_ = 0.0;
+    stack0xfffffffffffffff0 = 0;
+    pvVar6 = (pTVar1->fields)._._.m_CachedPtr;
+    if (pvVar6 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)pTVar1,(MethodInfo *)0x0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar7 = func_?(&UNK_?);
+      FUN_?(uVar7,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    (*pcRam_?)(pvVar6,auStack_3);
+    lVar8 = FUN_?(TypeInfo__RotationChangedEventArgs);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__System__EventArgs);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__System__EventArgs->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    *(undefined4 *)(lVar8 + 0x20) = auStack_3._0_4_;
+    *(undefined4 *)(lVar8 + 0x24) = auStack_3._4_4_;
+    *(undefined4 *)(lVar8 + 0x28) = auStack_3._8_4_;
+    *(undefined4 *)(lVar8 + 0x2c) = uStack_4;
+    (*(pUVar5->fields)._._.invoke_impl)
+              ((pUVar5->fields)._._.method_code,this,lVar8,(pUVar5->fields)._._.method);
+  }
   return;
 }
 
@@ -4686,20 +7851,125 @@ code_?:
 /* Void set_WorldPosition(Vector3) */
 
 void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_WorldPosition
-               (MVWorldObjectClient *this,Vector3 value,MethodInfo *method)
+               (MVWorldObjectClient *this,Vector3 *value,MethodInfo *method)
 
 {
-  this_00 = (this->fields).transform;
-  if (this_00 != (Transform *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Transform::Transform_set_position
-              (this_00,value,(MethodInfo *)0x0);
-    (*(code *)(this->klass->vtable).PositionChangedNotify.method)
-              (this,(this->klass->vtable).get_WorldPivot.methodPtr);
+  obj = (this->fields).transform;
+  if (obj == (Transform *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  func_?();
-  pcVar1 = (code *)swi(3);
-  (*pcVar1)();
+  uStack_2._0_4_ = value->x;
+  uStack_2._4_4_ = value->y;
+  fStack_3 = value->z;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar4 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar4 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar5 = func_?(&UNK_?);
+    FUN_?(uVar5,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(pvVar4,&uStack_2);
+  (*(this->klass->vtable).PositionChangedNotify.methodPtr)
+            (this,(this->klass->vtable).PositionChangedNotify.method);
+  return;
+}
+
+
+/* Void set_WorldRotation(Quaternion) */
+
+void Assembly-CSharp.dll::MVWorldObjectClient::MVWorldObjectClient_set_WorldRotation
+               (MVWorldObjectClient *this,Quaternion *value,MethodInfo *method)
+
+{
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__RotationChangedEventArgs);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  obj = (this->fields).transform;
+  if (obj == (Transform *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  fStack_2 = value->x;
+  fStack_3 = value->y;
+  fStack_4 = value->z;
+  fStack_5 = value->w;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::Transform>_UnityEngine__Transform_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pvVar6 = (obj->fields)._._.m_CachedPtr;
+  if (pvVar6 == (void *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+    ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcVar1 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar1 = (code *)FUN_?(&UNK_?), pcVar1 == (code *)0x0)) {
+    uVar7 = func_?(&UNK_?);
+    FUN_?(uVar7,0);
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
+    return;
+  }
+  pcRam_? = pcVar1;
+  (*pcRam_?)(pvVar6,&fStack_2);
+  if ((this->fields).RotationChanged !=
+      (UnityAction_2_MVWorldObjectClient_RotationChangedEventArgs_ *)0x0) {
+    pUVar8 = (this->fields).RotationChanged;
+    lVar9 = FUN_?(TypeInfo__RotationChangedEventArgs);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__System__EventArgs);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__System__EventArgs->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    fVar10 = value->y;
+    fVar11 = value->z;
+    fVar12 = value->w;
+    *(float *)(lVar9 + 0x20) = value->x;
+    *(float *)(lVar9 + 0x24) = fVar10;
+    *(float *)(lVar9 + 0x28) = fVar11;
+    *(float *)(lVar9 + 0x2c) = fVar12;
+    (*(pUVar8->fields)._._.invoke_impl)
+              ((pUVar8->fields)._._.method_code,this,lVar9,(pUVar8->fields)._._.method);
+  }
   return;
 }
 

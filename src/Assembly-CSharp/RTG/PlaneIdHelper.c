@@ -7,95 +7,108 @@ Assembly-CSharp.dll::RTG::PlaneIdHelper::PlaneIdHelper_GetFirstAxisDescriptor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__AxisDescriptor);
-    func_?(&TypeInfo__RTG__PlaneIdHelper);
+    FUN_?(&TypeInfo__RTG__AxisDescriptor);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__PlaneIdHelper);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__RTG__PlaneIdHelper->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__PlaneIdHelper);
+  if (*(int *)&(TypeInfo__RTG__PlaneIdHelper->_1).field_0x1c == 0) {
+    FUN_?();
   }
   iVar1 = 0;
   if (planeId != PlaneId__Enum_XY) {
     iVar1 = (planeId == PlaneId__Enum_ZX) + 1;
   }
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__FindAll_System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__get_Item_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__get_Item_int_
-                   );
-    func_?(&TypeInfo__RTG__PlaneIdHelper);
-    func_?(&TypeInfo__System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>);
-    func_?(&
-                    MethodInfo__RTG__PlaneIdHelper____c__DisplayClass9_0___GetFirstAxisSign_b__0_RTG__PlaneIdHelper__PlaneQuadrantInfo_
-                   );
-    func_?(&TypeInfo__RTG__PlaneIdHelper____c__DisplayClass9_0);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__FindAll_System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__PlaneIdHelper);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__RTG__PlaneIdHelper____c__DisplayClass9_0___GetFirstAxisSign_b__0_RTG__PlaneIdHelper__PlaneQuadrantInfo_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__PlaneIdHelper____c__DisplayClass9_0);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__RTG__PlaneIdHelper____c__DisplayClass9_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value != (Object *)0x0) {
-    value[1].klass = (Object__Class *)planeQuadrant;
-    if ((TypeInfo__RTG__PlaneIdHelper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__RTG__PlaneIdHelper);
+  lVar2 = FUN_?(TypeInfo__RTG__PlaneIdHelper____c__DisplayClass9_0);
+  if (lVar2 != 0) {
+    *(PlaneQuadrantId__Enum *)(lVar2 + 0x10) = planeQuadrant;
+    if (*(int *)&(TypeInfo__RTG__PlaneIdHelper->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__RTG__PlaneIdHelper);
     }
-    this = TypeInfo__RTG__PlaneIdHelper->static_fields->_planeInfo;
-    if (this != (List_1_RTG_PlaneIdHelper_PlaneInfo_ *)0x0) {
-      XVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
-              XmlSchemaObjectTable+XmlSchemaObjectEntry]::
-              List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                        ((List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)this
-                         ,planeId,
-                         MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__get_Item_int_
-                        );
-      uStack_3 = CONCAT44(XVar2.qname,(undefined4)uStack_3);
-      this_00 = (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-                func_?(TypeInfo__System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>);
-      mscorlib.dll::System::Predicate`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::
-      Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry___ctor
-                (this_00,value,
-                 MethodInfo__RTG__PlaneIdHelper____c__DisplayClass9_0___GetFirstAxisSign_b__0_RTG__PlaneIdHelper__PlaneQuadrantInfo_
-                 ,(MethodInfo *)0x0);
-      if (XVar2.xso != (XmlSchemaObject *)0x0) {
-        this_01 = mscorlib.dll::System::Collections::Generic::List`1[RTG::
-                  PlaneIdHelper+PlaneQuadrantInfo]::
-                  List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__FindAll
-                            ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)XVar2.xso,
-                             (Predicate_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,
-                             MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__FindAll_System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>_
-                            );
-        if (this_01 != (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) {
-          pVVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                   VisualTreeAsset+UsingEntry]::
-                   List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                             (&VStack_5,
-                              (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_01,0
-                              ,
-                              MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__get_Item_int_
-                             );
-          uStack_3._0_4_ = pVVar4->alias;
-          uStack_3._4_4_ = (int32_t)pVVar4->path;
-          method_01 = TypeInfo__RTG__AxisDescriptor;
-          pAVar6 = (AxisDescriptor *)func_?();
-          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                    ((Object *)pAVar6,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-          (pAVar6->fields)._index = iVar1;
-          (pAVar6->fields)._sign = uStack_3._4_4_;
-          return pAVar6;
+    pLVar3 = TypeInfo__RTG__PlaneIdHelper->static_fields->_planeInfo;
+    if (pLVar3 != (List_1_RTG_PlaneIdHelper_PlaneInfo_ *)0x0) {
+      if ((uint)(pLVar3->fields)._size <= planeId) {
+code_?:
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar4 = (code *)swi(3);
+        pAVar5 = (AxisDescriptor *)(*pcVar4)();
+        return pAVar5;
+      }
+      pPVar6 = (pLVar3->fields)._items;
+      if (pPVar6 != (PlaneIdHelper_PlaneInfo__Array *)0x0) {
+        if ((PlaneId__Enum)pPVar6->max_length <= planeId) {
+code_?:
+          FUN_?();
+          pcVar4 = (code *)swi(3);
+          pAVar5 = (AxisDescriptor *)(*pcVar4)();
+          return pAVar5;
+        }
+        uVar7 = *(undefined8 *)(pPVar6->vector + (int)planeId);
+        pLVar8 = pPVar6->vector[(int)planeId].QuadrantInfo;
+        uVar9 = FUN_?(TypeInfo__System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>);
+        FUN_?(uVar9,lVar2,
+                      MethodInfo__RTG__PlaneIdHelper____c__DisplayClass9_0___GetFirstAxisSign_b__0_RTG__PlaneIdHelper__PlaneQuadrantInfo_
+                      ,in_R9,uVar7);
+        if (pLVar8 != (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) {
+          lVar2 = FUN_?(pLVar8,uVar9);
+          if (lVar2 != 0) {
+            if (*(int *)(lVar2 + 0x18) == 0) goto code_?;
+            lVar2 = *(longlong *)(lVar2 + 0x10);
+            if (lVar2 != 0) {
+              if (*(int *)(lVar2 + 0x18) != 0) {
+                iVar10 = (int32_t)((ulonglong)*(undefined8 *)(lVar2 + 0x20) >> 0x20);
+                pAVar5 = (AxisDescriptor *)FUN_?(TypeInfo__RTG__AxisDescriptor);
+                (pAVar5->fields)._index = iVar1;
+                (pAVar5->fields)._sign = iVar10;
+                return pAVar5;
+              }
+              goto code_?;
+            }
+          }
         }
       }
     }
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  pAVar6 = (AxisDescriptor *)(*pcVar7)();
-  return pAVar6;
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  pAVar5 = (AxisDescriptor *)(*pcVar4)();
+  return pAVar5;
 }
 
 
@@ -107,76 +120,88 @@ Assembly-CSharp.dll::RTG::PlaneIdHelper::PlaneIdHelper_GetFirstAxisSign
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__FindAll_System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__get_Item_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__get_Item_int_
-                   );
-    func_?(&TypeInfo__RTG__PlaneIdHelper);
-    func_?(&TypeInfo__System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>);
-    func_?(&
-                    MethodInfo__RTG__PlaneIdHelper____c__DisplayClass9_0___GetFirstAxisSign_b__0_RTG__PlaneIdHelper__PlaneQuadrantInfo_
-                   );
-    func_?(&TypeInfo__RTG__PlaneIdHelper____c__DisplayClass9_0);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__FindAll_System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__PlaneIdHelper);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__RTG__PlaneIdHelper____c__DisplayClass9_0___GetFirstAxisSign_b__0_RTG__PlaneIdHelper__PlaneQuadrantInfo_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__PlaneIdHelper____c__DisplayClass9_0);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__RTG__PlaneIdHelper____c__DisplayClass9_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value != (Object *)0x0) {
-    value[1].klass = (Object__Class *)planeQuadrant;
-    if ((TypeInfo__RTG__PlaneIdHelper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__RTG__PlaneIdHelper);
+  lVar1 = FUN_?(TypeInfo__RTG__PlaneIdHelper____c__DisplayClass9_0);
+  if (lVar1 != 0) {
+    *(PlaneQuadrantId__Enum *)(lVar1 + 0x10) = planeQuadrant;
+    if (*(int *)&(TypeInfo__RTG__PlaneIdHelper->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__RTG__PlaneIdHelper);
     }
-    this = TypeInfo__RTG__PlaneIdHelper->static_fields->_planeInfo;
-    if (this != (List_1_RTG_PlaneIdHelper_PlaneInfo_ *)0x0) {
-      XVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
-              XmlSchemaObjectTable+XmlSchemaObjectEntry]::
-              List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                        ((List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)this
-                         ,planeId,
-                         MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__get_Item_int_
-                        );
-      _uStack_10 = CONCAT44(XVar1.qname,uStack_2);
-      this_00 = (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-                func_?(TypeInfo__System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>);
-      mscorlib.dll::System::Predicate`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::
-      Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry___ctor
-                (this_00,value,
-                 MethodInfo__RTG__PlaneIdHelper____c__DisplayClass9_0___GetFirstAxisSign_b__0_RTG__PlaneIdHelper__PlaneQuadrantInfo_
-                 ,(MethodInfo *)0x0);
-      if (XVar1.xso != (XmlSchemaObject *)0x0) {
-        this_01 = mscorlib.dll::System::Collections::Generic::List`1[RTG::
-                  PlaneIdHelper+PlaneQuadrantInfo]::
-                  List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__FindAll
-                            ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)XVar1.xso,
-                             (Predicate_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,
-                             MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__FindAll_System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>_
-                            );
-        if (this_01 != (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) {
-          pVVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                   VisualTreeAsset+UsingEntry]::
-                   List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                             (&VStack_4,
-                              (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_01,0
-                              ,
-                              MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__get_Item_int_
-                             );
-          uVar5 = pVVar3->path;
-          return uVar5;
+    pLVar2 = TypeInfo__RTG__PlaneIdHelper->static_fields->_planeInfo;
+    if (pLVar2 != (List_1_RTG_PlaneIdHelper_PlaneInfo_ *)0x0) {
+      if ((uint)(pLVar2->fields)._size <= planeId) {
+code_?:
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar3 = (code *)swi(3);
+        AVar4 = (*pcVar3)();
+        return AVar4;
+      }
+      pPVar5 = (pLVar2->fields)._items;
+      if (pPVar5 != (PlaneIdHelper_PlaneInfo__Array *)0x0) {
+        if ((PlaneId__Enum)pPVar5->max_length <= planeId) {
+code_?:
+          FUN_?();
+          pcVar3 = (code *)swi(3);
+          AVar4 = (*pcVar3)();
+          return AVar4;
+        }
+        uVar6 = *(undefined8 *)(pPVar5->vector + (int)planeId);
+        pLVar7 = pPVar5->vector[(int)planeId].QuadrantInfo;
+        uVar8 = FUN_?(TypeInfo__System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>);
+        FUN_?(uVar8,lVar1,
+                      MethodInfo__RTG__PlaneIdHelper____c__DisplayClass9_0___GetFirstAxisSign_b__0_RTG__PlaneIdHelper__PlaneQuadrantInfo_
+                      ,in_R9,uVar6);
+        if (pLVar7 != (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) {
+          lVar1 = FUN_?(pLVar7,uVar8);
+          if (lVar1 != 0) {
+            if (*(int *)(lVar1 + 0x18) == 0) goto code_?;
+            lVar1 = *(longlong *)(lVar1 + 0x10);
+            if (lVar1 != 0) {
+              if (*(int *)(lVar1 + 0x18) != 0) {
+                return (AxisSign__Enum)((ulonglong)*(undefined8 *)(lVar1 + 0x20) >> 0x20);
+              }
+              goto code_?;
+            }
+          }
         }
       }
     }
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  AVar7 = (*pcVar6)();
-  return AVar7;
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  AVar4 = (*pcVar3)();
+  return AVar4;
 }
 
 
@@ -189,76 +214,89 @@ Assembly-CSharp.dll::RTG::PlaneIdHelper::PlaneIdHelper_GetQuadrantFromAxesSigns
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__FindAll_System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__get_Item_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__get_Item_int_
-                   );
-    func_?(&TypeInfo__RTG__PlaneIdHelper);
-    func_?(&TypeInfo__System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>);
-    func_?(&
-                    MethodInfo__RTG__PlaneIdHelper____c__DisplayClass11_0___GetQuadrantFromAxesSigns_b__0_RTG__PlaneIdHelper__PlaneQuadrantInfo_
-                   );
-    func_?(&TypeInfo__RTG__PlaneIdHelper____c__DisplayClass11_0);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__FindAll_System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__PlaneIdHelper);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__RTG__PlaneIdHelper____c__DisplayClass11_0___GetQuadrantFromAxesSigns_b__0_RTG__PlaneIdHelper__PlaneQuadrantInfo_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__PlaneIdHelper____c__DisplayClass11_0);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__RTG__PlaneIdHelper____c__DisplayClass11_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value != (Object *)0x0) {
-    value[1].klass = (Object__Class *)firstAxisSign;
-    value[1].monitor = (MonitorData *)secondAxisSign;
-    if ((TypeInfo__RTG__PlaneIdHelper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__RTG__PlaneIdHelper);
+  lVar1 = FUN_?(TypeInfo__RTG__PlaneIdHelper____c__DisplayClass11_0);
+  if (lVar1 != 0) {
+    *(AxisSign__Enum *)(lVar1 + 0x10) = firstAxisSign;
+    *(AxisSign__Enum *)(lVar1 + 0x14) = secondAxisSign;
+    if (*(int *)&(TypeInfo__RTG__PlaneIdHelper->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__RTG__PlaneIdHelper);
     }
-    this = TypeInfo__RTG__PlaneIdHelper->static_fields->_planeInfo;
-    if (this != (List_1_RTG_PlaneIdHelper_PlaneInfo_ *)0x0) {
-      XVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
-              XmlSchemaObjectTable+XmlSchemaObjectEntry]::
-              List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                        ((List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)this
-                         ,planeId,
-                         MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__get_Item_int_
-                        );
-      this_00 = (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-                func_?(TypeInfo__System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>);
-      mscorlib.dll::System::Predicate`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::
-      Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry___ctor
-                (this_00,value,
-                 MethodInfo__RTG__PlaneIdHelper____c__DisplayClass11_0___GetQuadrantFromAxesSigns_b__0_RTG__PlaneIdHelper__PlaneQuadrantInfo_
-                 ,(MethodInfo *)0x0);
-      if (XVar1.xso != (XmlSchemaObject *)0x0) {
-        this_01 = mscorlib.dll::System::Collections::Generic::List`1[RTG::
-                  PlaneIdHelper+PlaneQuadrantInfo]::
-                  List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__FindAll
-                            ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)XVar1.xso,
-                             (Predicate_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,
-                             MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__FindAll_System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>_
-                            );
-        if (this_01 != (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) {
-          pVVar2 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                   VisualTreeAsset+UsingEntry]::
-                   List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                             (&VStack_3,
-                              (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_01,0
-                              ,
-                              MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__get_Item_int_
-                             );
-          uVar4 = pVVar2->alias;
-          return uVar4;
+    pLVar2 = TypeInfo__RTG__PlaneIdHelper->static_fields->_planeInfo;
+    if (pLVar2 != (List_1_RTG_PlaneIdHelper_PlaneInfo_ *)0x0) {
+      if ((uint)(pLVar2->fields)._size <= planeId) {
+code_?:
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar3 = (code *)swi(3);
+        PVar4 = (*pcVar3)();
+        return PVar4;
+      }
+      pPVar5 = (pLVar2->fields)._items;
+      if (pPVar5 != (PlaneIdHelper_PlaneInfo__Array *)0x0) {
+        if ((PlaneId__Enum)pPVar5->max_length <= planeId) {
+code_?:
+          FUN_?();
+          pcVar3 = (code *)swi(3);
+          PVar4 = (*pcVar3)();
+          return PVar4;
+        }
+        pLVar6 = pPVar5->vector[(int)planeId].QuadrantInfo;
+        uVar7 = FUN_?(TypeInfo__System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>);
+        FUN_?(uVar7,lVar1,
+                      MethodInfo__RTG__PlaneIdHelper____c__DisplayClass11_0___GetQuadrantFromAxesSigns_b__0_RTG__PlaneIdHelper__PlaneQuadrantInfo_
+                     );
+        if (pLVar6 != (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) {
+          lVar1 = FUN_?(pLVar6,uVar7);
+          if (lVar1 != 0) {
+            if (*(int *)(lVar1 + 0x18) == 0) goto code_?;
+            lVar1 = *(longlong *)(lVar1 + 0x10);
+            if (lVar1 != 0) {
+              if (*(int *)(lVar1 + 0x18) != 0) {
+                PStack_8 = (PlaneQuadrantId__Enum)*(undefined8 *)(lVar1 + 0x20);
+                return PStack_8;
+              }
+              goto code_?;
+            }
+          }
         }
       }
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  PVar6 = (*pcVar5)();
-  return PVar6;
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  PVar4 = (*pcVar3)();
+  return PVar4;
 }
 
 
@@ -270,12 +308,16 @@ Assembly-CSharp.dll::RTG::PlaneIdHelper::PlaneIdHelper_GetSecondAxisDescriptor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__RTG__AxisDescriptor);
-    func_?(&TypeInfo__RTG__PlaneIdHelper);
+    FUN_?(&TypeInfo__RTG__AxisDescriptor);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__PlaneIdHelper);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__RTG__PlaneIdHelper->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__RTG__PlaneIdHelper);
+  if (*(int *)&(TypeInfo__RTG__PlaneIdHelper->_1).field_0x1c == 0) {
+    FUN_?();
   }
   if (planeId == PlaneId__Enum_XY) {
     iVar1 = 1;
@@ -287,79 +329,90 @@ Assembly-CSharp.dll::RTG::PlaneIdHelper::PlaneIdHelper_GetSecondAxisDescriptor
     }
   }
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__FindAll_System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__get_Item_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__get_Item_int_
-                   );
-    func_?(&TypeInfo__RTG__PlaneIdHelper);
-    func_?(&TypeInfo__System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>);
-    func_?(&
-                    MethodInfo__RTG__PlaneIdHelper____c__DisplayClass10_0___GetSecondAxisSign_b__0_RTG__PlaneIdHelper__PlaneQuadrantInfo_
-                   );
-    func_?(&TypeInfo__RTG__PlaneIdHelper____c__DisplayClass10_0);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__FindAll_System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__PlaneIdHelper);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__RTG__PlaneIdHelper____c__DisplayClass10_0___GetSecondAxisSign_b__0_RTG__PlaneIdHelper__PlaneQuadrantInfo_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__PlaneIdHelper____c__DisplayClass10_0);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__RTG__PlaneIdHelper____c__DisplayClass10_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value != (Object *)0x0) {
-    value[1].klass = (Object__Class *)planeQuadrant;
-    if ((TypeInfo__RTG__PlaneIdHelper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__RTG__PlaneIdHelper);
+  lVar2 = FUN_?(TypeInfo__RTG__PlaneIdHelper____c__DisplayClass10_0);
+  if (lVar2 != 0) {
+    *(PlaneQuadrantId__Enum *)(lVar2 + 0x10) = planeQuadrant;
+    if (*(int *)&(TypeInfo__RTG__PlaneIdHelper->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__RTG__PlaneIdHelper);
     }
-    this = TypeInfo__RTG__PlaneIdHelper->static_fields->_planeInfo;
-    if (this != (List_1_RTG_PlaneIdHelper_PlaneInfo_ *)0x0) {
-      XVar2 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
-              XmlSchemaObjectTable+XmlSchemaObjectEntry]::
-              List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                        ((List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)this
-                         ,planeId,
-                         MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__get_Item_int_
-                        );
-      VStack_3.path = (String *)XVar2.qname;
-      this_00 = (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-                func_?(TypeInfo__System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>);
-      mscorlib.dll::System::Predicate`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::
-      Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry___ctor
-                (this_00,value,
-                 MethodInfo__RTG__PlaneIdHelper____c__DisplayClass10_0___GetSecondAxisSign_b__0_RTG__PlaneIdHelper__PlaneQuadrantInfo_
-                 ,(MethodInfo *)0x0);
-      if ((XVar2.xso != (XmlSchemaObject *)0x0) &&
-         (this_01 = mscorlib.dll::System::Collections::Generic::List`1[RTG::
-                    PlaneIdHelper+PlaneQuadrantInfo]::
-                    List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__FindAll
-                              ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)XVar2.xso,
-                               (Predicate_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,
-                               MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__FindAll_System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>_
-                              ), this_01 != (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0)) {
-        pVVar4 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                 VisualTreeAsset+UsingEntry]::
-                 List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                           (&VStack_3,
-                            (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_01,0,
-                            MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__get_Item_int_
-                           );
-        pVVar5 = pVVar4->asset;
-        method_01 = TypeInfo__RTG__AxisDescriptor;
-        pAVar6 = (AxisDescriptor *)func_?();
-        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-                  ((Object *)pAVar6,ExceptionArgument__Enum_obj,(MethodInfo *)method_01);
-        (pAVar6->fields)._sign = (int32_t)pVVar5;
-        (pAVar6->fields)._index = iVar1;
-        return pAVar6;
+    pLVar3 = TypeInfo__RTG__PlaneIdHelper->static_fields->_planeInfo;
+    if (pLVar3 != (List_1_RTG_PlaneIdHelper_PlaneInfo_ *)0x0) {
+      if ((uint)(pLVar3->fields)._size <= planeId) {
+code_?:
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar4 = (code *)swi(3);
+        pAVar5 = (AxisDescriptor *)(*pcVar4)();
+        return pAVar5;
+      }
+      pPVar6 = (pLVar3->fields)._items;
+      if (pPVar6 != (PlaneIdHelper_PlaneInfo__Array *)0x0) {
+        if ((PlaneId__Enum)pPVar6->max_length <= planeId) {
+code_?:
+          FUN_?();
+          pcVar4 = (code *)swi(3);
+          pAVar5 = (AxisDescriptor *)(*pcVar4)();
+          return pAVar5;
+        }
+        uVar7 = *(undefined8 *)(pPVar6->vector + (int)planeId);
+        pLVar8 = pPVar6->vector[(int)planeId].QuadrantInfo;
+        uVar9 = FUN_?(TypeInfo__System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>);
+        FUN_?(uVar9,lVar2,
+                      MethodInfo__RTG__PlaneIdHelper____c__DisplayClass10_0___GetSecondAxisSign_b__0_RTG__PlaneIdHelper__PlaneQuadrantInfo_
+                      ,in_R9,uVar7);
+        if ((pLVar8 != (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) &&
+           (lVar2 = FUN_?(pLVar8,uVar9), lVar2 != 0)) {
+          if (*(int *)(lVar2 + 0x18) == 0) goto code_?;
+          lVar2 = *(longlong *)(lVar2 + 0x10);
+          if (lVar2 != 0) {
+            if (*(int *)(lVar2 + 0x18) != 0) {
+              iVar10 = *(int32_t *)(lVar2 + 0x28);
+              pAVar5 = (AxisDescriptor *)FUN_?(TypeInfo__RTG__AxisDescriptor);
+              (pAVar5->fields)._sign = iVar10;
+              (pAVar5->fields)._index = iVar1;
+              return pAVar5;
+            }
+            goto code_?;
+          }
+        }
       }
     }
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  pAVar6 = (AxisDescriptor *)(*pcVar7)();
-  return pAVar6;
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  pAVar5 = (AxisDescriptor *)(*pcVar4)();
+  return pAVar5;
 }
 
 
@@ -371,75 +424,88 @@ Assembly-CSharp.dll::RTG::PlaneIdHelper::PlaneIdHelper_GetSecondAxisSign
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__FindAll_System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__get_Item_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__get_Item_int_
-                   );
-    func_?(&TypeInfo__RTG__PlaneIdHelper);
-    func_?(&TypeInfo__System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>);
-    func_?(&
-                    MethodInfo__RTG__PlaneIdHelper____c__DisplayClass10_0___GetSecondAxisSign_b__0_RTG__PlaneIdHelper__PlaneQuadrantInfo_
-                   );
-    func_?(&TypeInfo__RTG__PlaneIdHelper____c__DisplayClass10_0);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__FindAll_System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__PlaneIdHelper);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__RTG__PlaneIdHelper____c__DisplayClass10_0___GetSecondAxisSign_b__0_RTG__PlaneIdHelper__PlaneQuadrantInfo_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__PlaneIdHelper____c__DisplayClass10_0);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__RTG__PlaneIdHelper____c__DisplayClass10_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value != (Object *)0x0) {
-    value[1].klass = (Object__Class *)planeQuadrant;
-    if ((TypeInfo__RTG__PlaneIdHelper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__RTG__PlaneIdHelper);
+  lVar1 = FUN_?(TypeInfo__RTG__PlaneIdHelper____c__DisplayClass10_0);
+  if (lVar1 != 0) {
+    *(PlaneQuadrantId__Enum *)(lVar1 + 0x10) = planeQuadrant;
+    if (*(int *)&(TypeInfo__RTG__PlaneIdHelper->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__RTG__PlaneIdHelper);
     }
-    this = TypeInfo__RTG__PlaneIdHelper->static_fields->_planeInfo;
-    if (this != (List_1_RTG_PlaneIdHelper_PlaneInfo_ *)0x0) {
-      XVar1 = mscorlib.dll::System::Collections::Generic::List`1[System::Xml::Schema::
-              XmlSchemaObjectTable+XmlSchemaObjectEntry]::
-              List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry__get_Item
-                        ((List_1_System_Xml_Schema_XmlSchemaObjectTable_XmlSchemaObjectEntry_ *)this
-                         ,planeId,
-                         MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__get_Item_int_
-                        );
-      VStack_2.path = (String *)XVar1.qname;
-      this_00 = (Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)
-                func_?(TypeInfo__System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>);
-      mscorlib.dll::System::Predicate`1[UnityEngine::UIElements::VisualTreeAsset+UsingEntry]::
-      Predicate_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry___ctor
-                (this_00,value,
-                 MethodInfo__RTG__PlaneIdHelper____c__DisplayClass10_0___GetSecondAxisSign_b__0_RTG__PlaneIdHelper__PlaneQuadrantInfo_
-                 ,(MethodInfo *)0x0);
-      if (XVar1.xso != (XmlSchemaObject *)0x0) {
-        this_01 = mscorlib.dll::System::Collections::Generic::List`1[RTG::
-                  PlaneIdHelper+PlaneQuadrantInfo]::
-                  List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__FindAll
-                            ((List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)XVar1.xso,
-                             (Predicate_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)this_00,
-                             MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__FindAll_System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>_
-                            );
-        if (this_01 != (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) {
-          pVVar3 = mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                   VisualTreeAsset+UsingEntry]::
-                   List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry__get_Item
-                             (&VStack_2,
-                              (List_1_UnityEngine_UIElements_VisualTreeAsset_UsingEntry_ *)this_01,0
-                              ,
-                              MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__get_Item_int_
-                             );
-          return (AxisSign__Enum)pVVar3->asset;
+    pLVar2 = TypeInfo__RTG__PlaneIdHelper->static_fields->_planeInfo;
+    if (pLVar2 != (List_1_RTG_PlaneIdHelper_PlaneInfo_ *)0x0) {
+      if ((uint)(pLVar2->fields)._size <= planeId) {
+code_?:
+        mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                  ((MethodInfo *)0x0);
+        pcVar3 = (code *)swi(3);
+        AVar4 = (*pcVar3)();
+        return AVar4;
+      }
+      pPVar5 = (pLVar2->fields)._items;
+      if (pPVar5 != (PlaneIdHelper_PlaneInfo__Array *)0x0) {
+        if ((PlaneId__Enum)pPVar5->max_length <= planeId) {
+code_?:
+          FUN_?();
+          pcVar3 = (code *)swi(3);
+          AVar4 = (*pcVar3)();
+          return AVar4;
+        }
+        uVar6 = *(undefined8 *)(pPVar5->vector + (int)planeId);
+        pLVar7 = pPVar5->vector[(int)planeId].QuadrantInfo;
+        uVar8 = FUN_?(TypeInfo__System__Predicate<RTG::PlaneIdHelper::PlaneQuadrantInfo>);
+        FUN_?(uVar8,lVar1,
+                      MethodInfo__RTG__PlaneIdHelper____c__DisplayClass10_0___GetSecondAxisSign_b__0_RTG__PlaneIdHelper__PlaneQuadrantInfo_
+                      ,in_R9,uVar6);
+        if (pLVar7 != (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) {
+          lVar1 = FUN_?(pLVar7,uVar8);
+          if (lVar1 != 0) {
+            if (*(int *)(lVar1 + 0x18) == 0) goto code_?;
+            lVar1 = *(longlong *)(lVar1 + 0x10);
+            if (lVar1 != 0) {
+              if (*(int *)(lVar1 + 0x18) != 0) {
+                return *(AxisSign__Enum *)(lVar1 + 0x28);
+              }
+              goto code_?;
+            }
+          }
         }
       }
     }
   }
-  func_?();
-  pcVar4 = (code *)swi(3);
-  AVar5 = (*pcVar4)();
-  return AVar5;
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  AVar4 = (*pcVar3)();
+  return AVar4;
 }
 
 
@@ -498,169 +564,638 @@ void Assembly-CSharp.dll::RTG::PlaneIdHelper::PlaneIdHelper__cctor(MethodInfo *m
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__Add_RTG__PlaneIdHelper__PlaneInfo_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__List__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__List_int_
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__set_Item_int__RTG__PlaneIdHelper__PlaneInfo_
-                   );
-    func_?(&
-                    TypeInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>);
-    func_?(&TypeInfo__RTG__PlaneIdHelper);
-    func_?(&TypeInfo__RTG__PlaneId);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__Add_RTG__PlaneIdHelper__PlaneInfo_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__List__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__List_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__set_Item_int__RTG__PlaneIdHelper__PlaneInfo_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__PlaneIdHelper);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__PlaneId);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this = (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-          *)func_?(
-                           TypeInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>
-                           );
-  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::Internal::
-  MultiColumnCollectionHeader+ViewState+ColumnState]::
-  List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState___ctor_2
-            (this,3,
-             MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__List_int_
-            );
-  if (this != (List_1_UnityEngine_UIElements_Internal_MultiColumnCollectionHeader_ViewState_ColumnState_
-               *)0x0) {
-    func_?(this,0,0,
-                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__Add_RTG__PlaneIdHelper__PlaneInfo_
-                   );
-    func_?(this,0,0,
-                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__Add_RTG__PlaneIdHelper__PlaneInfo_
-                   );
-    func_?(this,0,0,
-                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__Add_RTG__PlaneIdHelper__PlaneInfo_
-                   );
-    TypeInfo__RTG__PlaneIdHelper->static_fields->_planeInfo =
-         (List_1_RTG_PlaneIdHelper_PlaneInfo_ *)this;
-    func_?(TypeInfo__RTG__PlaneIdHelper->static_fields,this);
-    pPVar1 = (PlaneId__Enum__Array *)func_?(TypeInfo__RTG__PlaneId,3);
-    if (pPVar1 != (PlaneId__Enum__Array *)0x0) {
-      if ((pPVar1->max_length < 2) || (pPVar1->vector[1] = PlaneId__Enum_ZX, pPVar1->max_length < 3)
-         ) goto code_?;
-      pPVar1->vector[2] = PlaneId__Enum_YZ;
-      TypeInfo__RTG__PlaneIdHelper->static_fields->_allPlaneIds = pPVar1;
-      func_?(&TypeInfo__RTG__PlaneIdHelper->static_fields->_allPlaneIds,pPVar1);
-      VStack_2 = (VisualTreeAsset_UxmlObjectEntry)((ulonglong)VStack_2 & 0xffffffff00000000);
-      pLVar3 = (List_1_UnityEngine_UIElements_UxmlObjectAsset_ *)
-               func_?(
-                              TypeInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>
-                              );
-      mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-      __Il2CppFullySharedGenericType]::
-      LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar3,
-                 MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__List__
-                );
-      if (pLVar3 != (List_1_UnityEngine_UIElements_UxmlObjectAsset_ *)0x0) {
-        func_?(pLVar3,
-                        MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
-                        ,0,0);
-        func_?(pLVar3,1,1,0,
-                        MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
-                       );
-        func_?(pLVar3,2,1,1,
-                        MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
-                       );
-        func_?(pLVar3,3,0,1,
-                        MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
-                       );
-        VStack_2.uxmlObjectAssets = pLVar3;
-        func_?(&VStack_2.uxmlObjectAssets,pLVar3);
-        pLVar4 = TypeInfo__RTG__PlaneIdHelper->static_fields->_planeInfo;
-        if (pLVar4 != (List_1_RTG_PlaneIdHelper_PlaneInfo_ *)0x0) {
-          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-          VisualTreeAsset+UxmlObjectEntry]::
-          List_1_UnityEngine_UIElements_VisualTreeAsset_UxmlObjectEntry__set_Item
-                    ((List_1_UnityEngine_UIElements_VisualTreeAsset_UxmlObjectEntry_ *)pLVar4,0,
-                     VStack_2,
-                     MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__set_Item_int__RTG__PlaneIdHelper__PlaneInfo_
-                    );
-          VStack_2.parentId = 1;
-          VStack_2.uxmlObjectAssets = (List_1_UnityEngine_UIElements_UxmlObjectAsset_ *)0x0;
-          pLVar3 = (List_1_UnityEngine_UIElements_UxmlObjectAsset_ *)
-                   func_?(
-                                  TypeInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>
-                                  );
-          mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-          __Il2CppFullySharedGenericType]::
-          LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                    ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar3,
-                     MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__List__
-                    );
-          if (pLVar3 != (List_1_UnityEngine_UIElements_UxmlObjectAsset_ *)0x0) {
-            func_?(pLVar3,
-                            MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
-                            ,0,1);
-            func_?(pLVar3,1,0,0,
-                            MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
-                           );
-            func_?(pLVar3,2,1,0,
-                            MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
-                           );
-            func_?(pLVar3,3,1,1,
-                            MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
-                           );
-            VStack_2.uxmlObjectAssets = pLVar3;
-            func_?(&VStack_2.uxmlObjectAssets,pLVar3);
-            pLVar4 = TypeInfo__RTG__PlaneIdHelper->static_fields->_planeInfo;
-            if (pLVar4 != (List_1_RTG_PlaneIdHelper_PlaneInfo_ *)0x0) {
-              mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-              VisualTreeAsset+UxmlObjectEntry]::
-              List_1_UnityEngine_UIElements_VisualTreeAsset_UxmlObjectEntry__set_Item
-                        ((List_1_UnityEngine_UIElements_VisualTreeAsset_UxmlObjectEntry_ *)pLVar4,1,
-                         VStack_2,
-                         MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__set_Item_int__RTG__PlaneIdHelper__PlaneInfo_
+  uStack_1 = (ulonglong)(uint)uStack_1;
+  pLVar2 = (List_1_RTG_PlaneIdHelper_PlaneInfo_ *)
+           FUN_?(TypeInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>
                         );
-              VStack_2.parentId = 2;
-              VStack_2.uxmlObjectAssets = (List_1_UnityEngine_UIElements_UxmlObjectAsset_ *)0x0;
-              pLVar3 = (List_1_UnityEngine_UIElements_UxmlObjectAsset_ *)
-                       func_?(
-                                      TypeInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>
-                                      );
-              mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-              __Il2CppFullySharedGenericType]::
-              LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                        ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)
-                         pLVar3,
-                         MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__List__
-                        );
-              if (pLVar3 != (List_1_UnityEngine_UIElements_UxmlObjectAsset_ *)0x0) {
-                func_?(pLVar3,
-                                MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
-                                ,0,0);
-                func_?(pLVar3,1,1,0,
-                                MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
-                               );
-                func_?(pLVar3,2,1,1,
-                                MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
-                               );
-                func_?(pLVar3,3,0,1,
-                                MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
-                               );
-                VStack_2.uxmlObjectAssets = pLVar3;
-                func_?(&VStack_2.uxmlObjectAssets,pLVar3);
-                pLVar4 = TypeInfo__RTG__PlaneIdHelper->static_fields->_planeInfo;
-                if (pLVar4 != (List_1_RTG_PlaneIdHelper_PlaneInfo_ *)0x0) {
-                  mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::UIElements::
-                  VisualTreeAsset+UxmlObjectEntry]::
-                  List_1_UnityEngine_UIElements_VisualTreeAsset_UxmlObjectEntry__set_Item
-                            ((List_1_UnityEngine_UIElements_VisualTreeAsset_UxmlObjectEntry_ *)
-                             pLVar4,2,VStack_2,
-                             MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__set_Item_int__RTG__PlaneIdHelper__PlaneInfo_
-                            );
+  pvVar3 = MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__List_int_
+            ->klass->rgctx_data[3].rgctxDataDummy;
+  if ((*(byte *)((longlong)pvVar3 + 0x135) & 1) == 0) {
+    pvVar3 = (void *)FUN_?(pvVar3);
+  }
+  pPVar4 = (PlaneIdHelper_PlaneInfo__Array *)FUN_?(pvVar3,3);
+  bVar5 = iRam_? != 0;
+  (pLVar2->fields)._items = pPVar4;
+  if (bVar5) {
+    uVar6 = (uint)((ulonglong)&pLVar2->fields >> 0xc);
+    lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+      puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+      LOCK();
+      bVar5 = uVar8 == *puVar9;
+      if (bVar5) {
+        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
+  auStack_10._0_4_ = 0;
+  auStack_10._4_4_ = 0;
+  pLStack_11 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0;
+  FUN_?(pLVar2,auStack_10,
+                MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__Add_RTG__PlaneIdHelper__PlaneInfo_
+               );
+  auStack_10._0_4_ = 0;
+  auStack_10._4_4_ = 0;
+  pLStack_11 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0;
+  FUN_?(pLVar2,auStack_10,
+                MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__Add_RTG__PlaneIdHelper__PlaneInfo_
+               );
+  auStack_10 = (undefined1  [8])0x0;
+  pLStack_11 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0;
+  FUN_?(pLVar2,auStack_10,
+                MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneInfo>__Add_RTG__PlaneIdHelper__PlaneInfo_
+               );
+  bVar5 = iRam_? != 0;
+  TypeInfo__RTG__PlaneIdHelper->static_fields->_planeInfo = pLVar2;
+  if (bVar5) {
+    uVar6 = (uint)((ulonglong)TypeInfo__RTG__PlaneIdHelper->static_fields >> 0xc);
+    lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+      puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+      LOCK();
+      bVar5 = uVar8 == *puVar9;
+      if (bVar5) {
+        *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar5);
+  }
+  pPVar12 = (PlaneId__Enum__Array *)FUN_?(TypeInfo__RTG__PlaneId,3);
+  if (pPVar12 != (PlaneId__Enum__Array *)0x0) {
+    if (((uint)pPVar12->max_length < 2) ||
+       (pPVar12->vector[1] = PlaneId__Enum_ZX, (uint)pPVar12->max_length < 3))
+    goto code_?;
+    pPVar12->vector[2] = PlaneId__Enum_YZ;
+    TypeInfo__RTG__PlaneIdHelper->static_fields->_allPlaneIds = pPVar12;
+    if (iRam_? != 0) {
+      uVar6 = (uint)((ulonglong)&TypeInfo__RTG__PlaneIdHelper->static_fields->_allPlaneIds >> 0xc);
+      lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar5 = uVar8 == *puVar9;
+        if (bVar5) {
+          *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar5);
+    }
+    uStack_1 = 0;
+    pLVar13 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
+              FUN_?(
+                           TypeInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>
+                           );
+    FUN_?(pLVar13,
+                  MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__List__
+                 );
+    pMVar14 = 
+    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
+    ;
+    if (pLVar13 != (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) {
+      piVar15 = &(pLVar13->fields)._version;
+      *piVar15 = *piVar15 + 1;
+      pPVar16 = (pLVar13->fields)._items;
+      auStack_10 = (undefined1  [8])0x0;
+      if (pPVar16 != (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) {
+        uVar6 = (pLVar13->fields)._size;
+        if (uVar6 < (uint)pPVar16->max_length) {
+          (pLVar13->fields)._size = uVar6 + 1;
+          auStack_10 = (undefined1  [8])0x0;
+          if ((uint)pPVar16->max_length <= uVar6) goto code_?;
+          pPVar16->vector[(int)uVar6].Quadrant = 0;
+          pPVar16->vector[(int)uVar6].FirstAxisSign = 0;
+          pPVar16->vector[(int)uVar6].SecondAxisSign = 0;
+        }
+        else {
+          pLStack_11 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
+                       ((ulonglong)pLStack_11 & 0xffffffff00000000);
+          mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
+          List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                    (pLVar13,(PlaneIdHelper_PlaneQuadrantInfo *)auStack_10,
+                     pMVar14->klass->rgctx_data[0xe].method);
+        }
+        pMVar14 = 
+        MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
+        ;
+        piVar15 = &(pLVar13->fields)._version;
+        *piVar15 = *piVar15 + 1;
+        pPVar16 = (pLVar13->fields)._items;
+        auStack_10 = (undefined1  [8])0x100000001;
+        if (pPVar16 != (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) {
+          uVar6 = (pLVar13->fields)._size;
+          if (uVar6 < (uint)pPVar16->max_length) {
+            (pLVar13->fields)._size = uVar6 + 1;
+            auStack_10 = (undefined1  [8])0x100000001;
+            if ((uint)pPVar16->max_length <= uVar6) goto code_?;
+            pPVar16->vector[(int)uVar6].Quadrant = 1;
+            pPVar16->vector[(int)uVar6].FirstAxisSign = 1;
+            pPVar16->vector[(int)uVar6].SecondAxisSign = 0;
+          }
+          else {
+            pLStack_11 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
+                         ((ulonglong)pLStack_11 & 0xffffffff00000000);
+            mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]
+            ::List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                      (pLVar13,(PlaneIdHelper_PlaneQuadrantInfo *)auStack_10,
+                       pMVar14->klass->rgctx_data[0xe].method);
+          }
+          pMVar14 = 
+          MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
+          ;
+          piVar15 = &(pLVar13->fields)._version;
+          *piVar15 = *piVar15 + 1;
+          pPVar16 = (pLVar13->fields)._items;
+          auStack_10 = (undefined1  [8])0x100000002;
+          if (pPVar16 != (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) {
+            uVar6 = (pLVar13->fields)._size;
+            if (uVar6 < (uint)pPVar16->max_length) {
+              (pLVar13->fields)._size = uVar6 + 1;
+              auStack_10 = (undefined1  [8])0x100000002;
+              if ((uint)pPVar16->max_length <= uVar6) goto code_?;
+              pPVar16->vector[(int)uVar6].Quadrant = 2;
+              pPVar16->vector[(int)uVar6].FirstAxisSign = 1;
+              pPVar16->vector[(int)uVar6].SecondAxisSign = 1;
+            }
+            else {
+              pLStack_11 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
+                           CONCAT44(pLStack_11._4_4_,1);
+              mscorlib.dll::System::Collections::Generic::List`1[RTG::
+              PlaneIdHelper+PlaneQuadrantInfo]::
+              List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                        (pLVar13,(PlaneIdHelper_PlaneQuadrantInfo *)auStack_10,
+                         pMVar14->klass->rgctx_data[0xe].method);
+            }
+            pMVar14 = 
+            MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
+            ;
+            piVar15 = &(pLVar13->fields)._version;
+            *piVar15 = *piVar15 + 1;
+            pPVar16 = (pLVar13->fields)._items;
+            auStack_10 = (undefined1  [8])0x3;
+            if (pPVar16 != (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) {
+              uVar6 = (pLVar13->fields)._size;
+              if (uVar6 < (uint)pPVar16->max_length) {
+                (pLVar13->fields)._size = uVar6 + 1;
+                auStack_10 = (undefined1  [8])0x3;
+                if ((uint)pPVar16->max_length <= uVar6) goto code_?;
+                pPVar16->vector[(int)uVar6].Quadrant = 3;
+                pPVar16->vector[(int)uVar6].FirstAxisSign = 0;
+                pPVar16->vector[(int)uVar6].SecondAxisSign = 1;
+              }
+              else {
+                pLStack_11 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
+                             CONCAT44(pLStack_11._4_4_,1);
+                mscorlib.dll::System::Collections::Generic::List`1[RTG::
+                PlaneIdHelper+PlaneQuadrantInfo]::
+                List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                          (pLVar13,(PlaneIdHelper_PlaneQuadrantInfo *)auStack_10,
+                           pMVar14->klass->rgctx_data[0xe].method);
+              }
+              if (iRam_? != 0) {
+                uVar6 = (uint)((ulonglong)apLStack_17 >> 0xc);
+                lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+                do {
+                  uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+                  puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+                  LOCK();
+                  bVar5 = uVar8 == *puVar9;
+                  if (bVar5) {
+                    *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+                  }
+                  UNLOCK();
+                } while (!bVar5);
+              }
+              iVar18 = iRam_?;
+              pLVar2 = TypeInfo__RTG__PlaneIdHelper->static_fields->_planeInfo;
+              apLStack_17[0] = pLVar13;
+              if (pLVar2 != (List_1_RTG_PlaneIdHelper_PlaneInfo_ *)0x0) {
+                if ((pLVar2->fields)._size == 0) {
+code_?:
+                  mscorlib.dll::System::ThrowHelper::
+                  ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+                  pcVar19 = (code *)swi(3);
+                  (*pcVar19)();
                   return;
+                }
+                pPVar4 = (pLVar2->fields)._items;
+                auStack_10 = (undefined1  [8])uStack_1;
+                pLStack_11 = pLVar13;
+                if (pPVar4 != (PlaneIdHelper_PlaneInfo__Array *)0x0) {
+                  if ((int)pPVar4->max_length == 0) goto code_?;
+                  *(ulonglong *)pPVar4->vector = uStack_1;
+                  pPVar4->vector[0].QuadrantInfo = pLVar13;
+                  if (iVar18 != 0) {
+                    uVar6 = (uint)((ulonglong)&pPVar4->vector[0].QuadrantInfo >> 0xc);
+                    lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+                    do {
+                      uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+                      puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+                      LOCK();
+                      bVar5 = uVar8 == *puVar9;
+                      if (bVar5) {
+                        *puVar9 = uVar8 | 1L << (ulonglong)(uVar6 & 0x3f);
+                      }
+                      UNLOCK();
+                    } while (!bVar5);
+                  }
+                  piVar15 = &(pLVar2->fields)._version;
+                  *piVar15 = *piVar15 + 1;
+                  apLStack_17[0] = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0;
+                  uStack_1 = 1;
+                  pLVar13 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
+                            FUN_?(
+                                         TypeInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>
+                                         );
+                  FUN_?(pLVar13,
+                                MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__List__
+                               );
+                  pMVar14 = 
+                  MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
+                  ;
+                  if (pLVar13 != (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) {
+                    piVar15 = &(pLVar13->fields)._version;
+                    *piVar15 = *piVar15 + 1;
+                    pPVar16 = (pLVar13->fields)._items;
+                    auStack_10 = (undefined1  [8])0x0;
+                    if (pPVar16 != (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) {
+                      uVar6 = (pLVar13->fields)._size;
+                      if (uVar6 < (uint)pPVar16->max_length) {
+                        (pLVar13->fields)._size = uVar6 + 1;
+                        auStack_10 = (undefined1  [8])0x0;
+                        if ((uint)pPVar16->max_length <= uVar6) goto code_?;
+                        pPVar16->vector[(int)uVar6].Quadrant = 0;
+                        pPVar16->vector[(int)uVar6].FirstAxisSign = 0;
+                        pPVar16->vector[(int)uVar6].SecondAxisSign = 1;
+                      }
+                      else {
+                        pLStack_11 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
+                                     CONCAT44(pLStack_11._4_4_,1);
+                        mscorlib.dll::System::Collections::Generic::List`1[RTG::
+                        PlaneIdHelper+PlaneQuadrantInfo]::
+                        List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                                  (pLVar13,(PlaneIdHelper_PlaneQuadrantInfo *)auStack_10,
+                                   pMVar14->klass->rgctx_data[0xe].method);
+                      }
+                      pMVar14 = 
+                      MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
+                      ;
+                      piVar15 = &(pLVar13->fields)._version;
+                      *piVar15 = *piVar15 + 1;
+                      pPVar16 = (pLVar13->fields)._items;
+                      auStack_10 = (undefined1  [8])0x1;
+                      if (pPVar16 != (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) {
+                        uVar6 = (pLVar13->fields)._size;
+                        if (uVar6 < (uint)pPVar16->max_length) {
+                          (pLVar13->fields)._size = uVar6 + 1;
+                          auStack_10 = (undefined1  [8])0x1;
+                          if ((uint)pPVar16->max_length <= uVar6) goto code_?;
+                          pPVar16->vector[(int)uVar6].Quadrant = 1;
+                          pPVar16->vector[(int)uVar6].FirstAxisSign = 0;
+                          pPVar16->vector[(int)uVar6].SecondAxisSign = 0;
+                        }
+                        else {
+                          pLStack_11 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
+                                       ((ulonglong)pLStack_11 & 0xffffffff00000000);
+                          mscorlib.dll::System::Collections::Generic::List`1[RTG::
+                          PlaneIdHelper+PlaneQuadrantInfo]::
+                          List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                                    (pLVar13,(PlaneIdHelper_PlaneQuadrantInfo *)auStack_10,
+                                     pMVar14->klass->rgctx_data[0xe].method);
+                        }
+                        pMVar14 = 
+                        MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
+                        ;
+                        piVar15 = &(pLVar13->fields)._version;
+                        *piVar15 = *piVar15 + 1;
+                        pPVar16 = (pLVar13->fields)._items;
+                        auStack_10 = (undefined1  [8])0x100000002;
+                        if (pPVar16 != (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) {
+                          uVar6 = (pLVar13->fields)._size;
+                          if (uVar6 < (uint)pPVar16->max_length) {
+                            (pLVar13->fields)._size = uVar6 + 1;
+                            auStack_10 = (undefined1  [8])0x100000002;
+                            if ((uint)pPVar16->max_length <= uVar6) goto code_?;
+                            pPVar16->vector[(int)uVar6].Quadrant = 2;
+                            pPVar16->vector[(int)uVar6].FirstAxisSign = 1;
+                            pPVar16->vector[(int)uVar6].SecondAxisSign = 0;
+                          }
+                          else {
+                            pLStack_11 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
+                                         ((ulonglong)pLStack_11 & 0xffffffff00000000);
+                            mscorlib.dll::System::Collections::Generic::List`1[RTG::
+                            PlaneIdHelper+PlaneQuadrantInfo]::
+                            List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                                      (pLVar13,(PlaneIdHelper_PlaneQuadrantInfo *)auStack_10,
+                                       pMVar14->klass->rgctx_data[0xe].method);
+                          }
+                          pMVar14 = 
+                          MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
+                          ;
+                          piVar15 = &(pLVar13->fields)._version;
+                          *piVar15 = *piVar15 + 1;
+                          pPVar16 = (pLVar13->fields)._items;
+                          auStack_10 = (undefined1  [8])0x100000003;
+                          if (pPVar16 != (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) {
+                            uVar6 = (pLVar13->fields)._size;
+                            if (uVar6 < (uint)pPVar16->max_length) {
+                              (pLVar13->fields)._size = uVar6 + 1;
+                              auStack_10 = (undefined1  [8])0x100000003;
+                              if ((uint)pPVar16->max_length <= uVar6) goto code_?;
+                              pPVar16->vector[(int)uVar6].Quadrant = 3;
+                              pPVar16->vector[(int)uVar6].FirstAxisSign = 1;
+                              pPVar16->vector[(int)uVar6].SecondAxisSign = 1;
+                            }
+                            else {
+                              pLStack_11 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
+                                           CONCAT44(pLStack_11._4_4_,1);
+                              mscorlib.dll::System::Collections::Generic::List`1[RTG::
+                              PlaneIdHelper+PlaneQuadrantInfo]::
+                              List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                                        (pLVar13,(PlaneIdHelper_PlaneQuadrantInfo *)auStack_10,
+                                         pMVar14->klass->rgctx_data[0xe].method);
+                            }
+                            if (iRam_? != 0) {
+                              uVar6 = (uint)((ulonglong)apLStack_17 >> 0xc);
+                              lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+                              do {
+                                uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+                                puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+                                LOCK();
+                                bVar5 = uVar8 == *puVar9;
+                                if (bVar5) {
+                                  *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+                                }
+                                UNLOCK();
+                              } while (!bVar5);
+                            }
+                            iVar18 = iRam_?;
+                            pLVar2 = TypeInfo__RTG__PlaneIdHelper->static_fields->_planeInfo;
+                            apLStack_17[0] = pLVar13;
+                            if (pLVar2 != (List_1_RTG_PlaneIdHelper_PlaneInfo_ *)0x0) {
+                              if ((uint)(pLVar2->fields)._size < 2) goto code_?;
+                              pPVar4 = (pLVar2->fields)._items;
+                              auStack_10 = (undefined1  [8])uStack_1;
+                              pLStack_11 = pLVar13;
+                              if (pPVar4 != (PlaneIdHelper_PlaneInfo__Array *)0x0) {
+                                if ((uint)pPVar4->max_length < 2) {
+code_?:
+                                  FUN_?();
+                                  pcVar19 = (code *)swi(3);
+                                  (*pcVar19)();
+                                  return;
+                                }
+                                *(ulonglong *)(pPVar4->vector + 1) = uStack_1;
+                                pPVar4->vector[1].QuadrantInfo = pLVar13;
+                                if (iVar18 != 0) {
+                                  uVar6 = (uint)((ulonglong)&pPVar4->vector[1].QuadrantInfo >> 0xc
+                                                 );
+                                  lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+                                  do {
+                                    uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+                                    puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+                                    LOCK();
+                                    bVar5 = uVar8 == *puVar9;
+                                    if (bVar5) {
+                                      *puVar9 = uVar8 | 1L << (ulonglong)(uVar6 & 0x3f);
+                                    }
+                                    UNLOCK();
+                                  } while (!bVar5);
+                                }
+                                piVar15 = &(pLVar2->fields)._version;
+                                *piVar15 = *piVar15 + 1;
+                                apLStack_17[0] = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0;
+                                uStack_1 = 2;
+                                pLVar13 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
+                                          FUN_?(
+                                                  TypeInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>
+                                                  );
+                                FUN_?(pLVar13,
+                                              MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__List__
+                                             );
+                                pMVar14 = 
+                                MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
+                                ;
+                                if (pLVar13 != (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) {
+                                  piVar15 = &(pLVar13->fields)._version;
+                                  *piVar15 = *piVar15 + 1;
+                                  pPVar16 = (pLVar13->fields)._items;
+                                  auStack_10 = (undefined1  [8])0x0;
+                                  if (pPVar16 != (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) {
+                                    uVar6 = (pLVar13->fields)._size;
+                                    if (uVar6 < (uint)pPVar16->max_length) {
+                                      (pLVar13->fields)._size = uVar6 + 1;
+                                      auStack_10 = (undefined1  [8])0x0;
+                                      if ((uint)pPVar16->max_length <= uVar6)
+                                      goto code_?;
+                                      pPVar16->vector[(int)uVar6].Quadrant = 0;
+                                      pPVar16->vector[(int)uVar6].FirstAxisSign = 0;
+                                      pPVar16->vector[(int)uVar6].SecondAxisSign = 0;
+                                    }
+                                    else {
+                                      pLStack_11 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
+                                                   ((ulonglong)pLStack_11 & 0xffffffff00000000);
+                                      mscorlib.dll::System::Collections::Generic::List`1[RTG::
+                                      PlaneIdHelper+PlaneQuadrantInfo]::
+                                      List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                                                (pLVar13,(PlaneIdHelper_PlaneQuadrantInfo *)
+                                                         auStack_10,
+                                                 pMVar14->klass->rgctx_data[0xe].method);
+                                    }
+                                    pMVar14 = 
+                                    MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
+                                    ;
+                                    piVar15 = &(pLVar13->fields)._version;
+                                    *piVar15 = *piVar15 + 1;
+                                    pPVar16 = (pLVar13->fields)._items;
+                                    auStack_10 = (undefined1  [8])0x100000001;
+                                    if (pPVar16 != (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) {
+                                      uVar6 = (pLVar13->fields)._size;
+                                      if (uVar6 < (uint)pPVar16->max_length) {
+                                        (pLVar13->fields)._size = uVar6 + 1;
+                                        auStack_10 = (undefined1  [8])0x100000001;
+                                        if ((uint)pPVar16->max_length <= uVar6)
+                                        goto code_?;
+                                        pPVar16->vector[(int)uVar6].Quadrant = 1;
+                                        pPVar16->vector[(int)uVar6].FirstAxisSign = 1;
+                                        pPVar16->vector[(int)uVar6].SecondAxisSign = 0;
+                                      }
+                                      else {
+                                        pLStack_11 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
+                                                     ((ulonglong)pLStack_11 & 0xffffffff00000000);
+                                        mscorlib.dll::System::Collections::Generic::List`1[RTG::
+                                        PlaneIdHelper+PlaneQuadrantInfo]::
+                                        List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                                                  (pLVar13,(PlaneIdHelper_PlaneQuadrantInfo *)
+                                                           auStack_10,
+                                                   pMVar14->klass->rgctx_data[0xe].method);
+                                      }
+                                      pMVar14 = 
+                                      MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
+                                      ;
+                                      piVar15 = &(pLVar13->fields)._version;
+                                      *piVar15 = *piVar15 + 1;
+                                      pPVar16 = (pLVar13->fields)._items;
+                                      auStack_10 = (undefined1  [8])0x100000002;
+                                      if (pPVar16 != (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) {
+                                        uVar6 = (pLVar13->fields)._size;
+                                        if (uVar6 < (uint)pPVar16->max_length) {
+                                          (pLVar13->fields)._size = uVar6 + 1;
+                                          auStack_10 = (undefined1  [8])0x100000002;
+                                          if ((uint)pPVar16->max_length <= uVar6)
+                                          goto code_?;
+                                          pPVar16->vector[(int)uVar6].Quadrant = 2;
+                                          pPVar16->vector[(int)uVar6].FirstAxisSign = 1;
+                                          pPVar16->vector[(int)uVar6].SecondAxisSign = 1;
+                                        }
+                                        else {
+                                          pLStack_11 = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_
+                                                        *)CONCAT44(pLStack_11._4_4_,1);
+                                          mscorlib.dll::System::Collections::Generic::List`1[RTG::
+                                          PlaneIdHelper+PlaneQuadrantInfo]::
+                                          List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                                                    (pLVar13,(PlaneIdHelper_PlaneQuadrantInfo *)
+                                                             auStack_10,
+                                                     pMVar14->klass->rgctx_data[0xe].method);
+                                        }
+                                        pMVar14 = 
+                                        MethodInfo__System__Collections__Generic__List<RTG::PlaneIdHelper::PlaneQuadrantInfo>__Add_RTG__PlaneIdHelper__PlaneQuadrantInfo_
+                                        ;
+                                        piVar15 = &(pLVar13->fields)._version;
+                                        *piVar15 = *piVar15 + 1;
+                                        pPVar16 = (pLVar13->fields)._items;
+                                        auStack_10 = (undefined1  [8])0x3;
+                                        if (pPVar16 != (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0)
+                                        {
+                                          uVar6 = (pLVar13->fields)._size;
+                                          if (uVar6 < (uint)pPVar16->max_length) {
+                                            (pLVar13->fields)._size = uVar6 + 1;
+                                            auStack_10 = (undefined1  [8])0x3;
+                                            if ((uint)pPVar16->max_length <= uVar6)
+                                            goto code_?;
+                                            pPVar16->vector[(int)uVar6].Quadrant = 3;
+                                            pPVar16->vector[(int)uVar6].FirstAxisSign = 0;
+                                            pPVar16->vector[(int)uVar6].SecondAxisSign = 1;
+                                          }
+                                          else {
+                                            pLStack_11 = (
+                                                  List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
+                                                  CONCAT44(pLStack_11._4_4_,1);
+                                            mscorlib.dll::System::Collections::Generic::List`1[RTG::
+                                            PlaneIdHelper+PlaneQuadrantInfo]::
+                                            List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                                                      (pLVar13,(PlaneIdHelper_PlaneQuadrantInfo *)
+                                                               auStack_10,
+                                                       pMVar14->klass->rgctx_data[0xe].method);
+                                          }
+                                          if (iRam_? != 0) {
+                                            uVar6 = (uint)((ulonglong)apLStack_17 >> 0xc);
+                                            lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+                                            do {
+                                              uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+                                              puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+                                              LOCK();
+                                              bVar5 = uVar8 == *puVar9;
+                                              if (bVar5) {
+                                                *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+                                              }
+                                              UNLOCK();
+                                            } while (!bVar5);
+                                          }
+                                          iVar18 = iRam_?;
+                                          pLVar2 = TypeInfo__RTG__PlaneIdHelper->static_fields->
+                                                   _planeInfo;
+                                          apLStack_17[0] = pLVar13;
+                                          if (pLVar2 != (List_1_RTG_PlaneIdHelper_PlaneInfo_ *)0x0)
+                                          {
+                                            if ((uint)(pLVar2->fields)._size < 3)
+                                            goto code_?;
+                                            pPVar4 = (pLVar2->fields)._items;
+                                            auStack_10 = (undefined1  [8])uStack_1;
+                                            pLStack_11 = pLVar13;
+                                            if (pPVar4 != (PlaneIdHelper_PlaneInfo__Array *)0x0) {
+                                              if (2 < (uint)pPVar4->max_length) {
+                                                *(ulonglong *)(pPVar4->vector + 2) = uStack_1;
+                                                pPVar4->vector[2].QuadrantInfo = pLVar13;
+                                                if (iVar18 != 0) {
+                                                  uVar6 = (uint)((ulonglong)
+                                                                  &pPVar4->vector[2].QuadrantInfo
+                                                                 >> 0xc);
+                                                  lVar7 = (ulonglong)((uVar6 & 0x1fffff) >> 6) * 8;
+                                                  do {
+                                                    uVar8 = *(ulonglong *)(lVar7 + 0xADDR);
+                                                    puVar9 = (ulonglong *)(lVar7 + 0xADDR);
+                                                    LOCK();
+                                                    bVar5 = uVar8 == *puVar9;
+                                                    if (bVar5) {
+                                                      *puVar9 = uVar8 | 1L << (uVar6 & 0x3f);
+                                                    }
+                                                    UNLOCK();
+                                                  } while (!bVar5);
+                                                }
+                                                piVar15 = &(pLVar2->fields)._version;
+                                                *piVar15 = *piVar15 + 1;
+                                                return;
+                                              }
+                                              goto code_?;
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -669,11 +1204,9 @@ void Assembly-CSharp.dll::RTG::PlaneIdHelper::PlaneIdHelper__cctor(MethodInfo *m
       }
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar19 = (code *)swi(3);
+  (*pcVar19)();
   return;
 }
 
@@ -685,24 +1218,46 @@ Assembly-CSharp.dll::RTG::PlaneIdHelper::PlaneIdHelper_get_AllPlaneIds(MethodInf
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
+    FUN_?(&TypeInfo__RTG__PlaneIdHelper);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__RTG__PlaneId);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__RTG__PlaneIdHelper->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__RTG__PlaneIdHelper->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__RTG__PlaneIdHelper);
   }
-  pPVar1 = TypeInfo__RTG__PlaneIdHelper->static_fields->_allPlaneIds;
-  if (pPVar1 != (PlaneId__Enum__Array *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::PlayableBehaviour_Clone
-              ((PlayableBehaviour *)pPVar1,(MethodInfo *)0x0);
-    pPVar1 = (PlaneId__Enum__Array *)func_?();
-    return pPVar1;
+  if (TypeInfo__RTG__PlaneIdHelper->static_fields->_allPlaneIds == (PlaneId__Enum__Array *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    pPVar2 = (PlaneId__Enum__Array *)(*pcVar1)();
+    return pPVar2;
   }
-  uVar2 = func_?(&puStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  pPVar1 = (PlaneId__Enum__Array *)(*pcVar4)();
-  return pPVar1;
+  pPVar2 = (PlaneId__Enum__Array *)FUN_?();
+  pPVar3 = TypeInfo__RTG__PlaneId;
+  if (pPVar2 != (PlaneId__Enum__Array *)0x0) {
+    pPVar4 = pPVar2->klass;
+    cVar5 = FUN_?(TypeInfo__RTG__PlaneId,pPVar4);
+    if (cVar5 != '\0') {
+      return pPVar2;
+    }
+    if (((pPVar4->_1).field_0x6e & 0x10) != 0) {
+      if ((((((pPVar3->_1).token & 0x20) != 0) || ((pPVar3->_0).byval_arg.type == 0x13)) ||
+          ((pPVar3->_0).byval_arg.type == 0x1e)) &&
+         ((((pPVar3->_0).interopData != (Il2CppInteropData *)0x0 &&
+           (((pPVar3->_0).interopData)->guid != (Il2CppGuid *)0x0)) &&
+          (lVar6 = FUN_?(pPVar2), lVar6 != 0)))) {
+        return pPVar2;
+      }
+      pPVar7 = (PlaneId__Enum__Array *)0x0;
+      if (pPVar3 == pPRam0000000182db23e0) {
+        pPVar7 = pPVar2;
+      }
+      return pPVar7;
+    }
+  }
+  return (PlaneId__Enum__Array *)0x0;
 }
 

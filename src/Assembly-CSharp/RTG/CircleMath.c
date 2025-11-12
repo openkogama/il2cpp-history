@@ -7,164 +7,104 @@ Assembly-CSharp.dll::RTG::CircleMath::CircleMath_Calc2DExtentPoints
 
 {
   if (cRam_? == '\0') {
-    func_?();
-    func_?();
-    func_?();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pQVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_AngleAxis
-                      ((Quaternion *)&stack0xffffffd0,degreeCircleRotation,
-                       TypeInfo__UnityEngine__Vector3->static_fields->forwardVector,
-                       (MethodInfo *)0x0);
-  fVar2 = pQVar1->x;
-  fVar3 = pQVar1->y;
-  fVar4 = pQVar1->z;
-  fVar5 = pQVar1->w;
+  pVVar1 = TypeInfo__UnityEngine__Vector3->static_fields;
+  uStack_2._0_4_ = (pVVar1->forwardVector).x;
+  uStack_2._4_4_ = (pVVar1->forwardVector).y;
+  fStack_3 = (pVVar1->forwardVector).z;
+  uStack_4 = 0;
+  uStack_5 = 0;
+  pcVar6 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar6 = (code *)FUN_?(&UNK_?), pcVar6 == (code *)0x0)) {
+    uVar7 = func_?(&UNK_?);
+    FUN_?(uVar7,0);
+    pcVar6 = (code *)swi(3);
+    pLVar8 = (List_1_UnityEngine_Vector2_ *)(*pcVar6)();
+    return pLVar8;
+  }
+  pcRam_? = pcVar6;
+  (*pcRam_?)(degreeCircleRotation,&uStack_2,&uStack_4);
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__Vector2);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  rotation.y = fVar3;
-  rotation.x = fVar2;
-  rotation.z = fVar4;
-  rotation.w = fVar5;
-  point.z = 0.0;
-  point.x = (TypeInfo__UnityEngine__Vector2->static_fields->rightVector).x;
-  point.y = (TypeInfo__UnityEngine__Vector2->static_fields->rightVector).y;
-  pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                      ((Vector3 *)&stack0xffffffe0,rotation,point,(MethodInfo *)0x0);
-  fVar7 = pVVar6->x;
-  fVar8 = pVVar6->y;
+  fVar9 = _UNK_?;
+  pVVar10 = TypeInfo__UnityEngine__Vector2->static_fields;
+  fVar11 = uStack_4._4_4_ + uStack_4._4_4_;
+  fVar12 = (float)uStack_5 + (float)uStack_5;
+  fVar13 = (_UNK_? - (uStack_4._4_4_ * fVar11 + (float)uStack_5 * fVar12)) *
+           (pVVar10->rightVector).x +
+           ((float)uStack_4 * fVar11 - uStack_5._4_4_ * fVar12) * (pVVar10->rightVector).y +
+           ((float)uStack_4 * fVar12 + uStack_5._4_4_ * fVar11) * 0.0;
+  fVar11 = (_UNK_? -
+          ((float)uStack_4 * ((float)uStack_4 + (float)uStack_4) + (float)uStack_5 * fVar12)) *
+          (pVVar10->rightVector).y +
+          (uStack_5._4_4_ * fVar12 + (float)uStack_4 * fVar11) * (pVVar10->rightVector).x +
+          (uStack_4._4_4_ * fVar12 - uStack_5._4_4_ * ((float)uStack_4 + (float)uStack_4)) * 0.0
+  ;
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__Vector2);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  rotation_00.y = fVar3;
-  rotation_00.x = fVar2;
-  rotation_00.z = fVar4;
-  rotation_00.w = fVar5;
-  point_00.z = 0.0;
-  point_00.x = (TypeInfo__UnityEngine__Vector2->static_fields->upVector).x;
-  point_00.y = (TypeInfo__UnityEngine__Vector2->static_fields->upVector).y;
-  pVVar6 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                      ((Vector3 *)&stack0xfffffff0,rotation_00,point_00,(MethodInfo *)0x0);
-  fVar2 = pVVar6->x;
-  fVar3 = pVVar6->y;
-  pLVar9 = (List_1_UnityEngine_Vector2_ *)func_?();
-  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType]::
-  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar9,
-             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__);
-  pMVar10 = 
-  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_;
-  fVar5 = circleCenter.x + fVar2 * circleRadius;
-  fVar4 = circleCenter.y + fVar3 * circleRadius;
-  if (pLVar9 != (List_1_UnityEngine_Vector2_ *)0x0) {
-    piVar11 = &(pLVar9->fields)._version;
-    *piVar11 = *piVar11 + 1;
-    pVVar12 = (pLVar9->fields)._items;
-    if (pVVar12 != (Vector2__Array *)0x0) {
-      uVar13 = (pLVar9->fields)._size;
-      if (uVar13 < pVVar12->max_length) {
-        (pLVar9->fields)._size = uVar13 + 1;
-        if (pVVar12->max_length <= uVar13) goto code_?;
-        pVVar12->vector[uVar13].x = fVar5;
-        pVVar12->vector[uVar13].y = fVar4;
-      }
-      else {
-        item.y = fVar4;
-        item.x = fVar5;
-        mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-        List_1_UnityEngine_Vector2__AddWithResize
-                  (pLVar9,item,pMVar10->klass->rgctx_data[0xe].method);
-      }
-      pMVar10 = 
-      MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-      ;
-      fVar5 = circleCenter.x + fVar7 * circleRadius;
-      fVar4 = circleCenter.y + fVar8 * circleRadius;
-      piVar11 = &(pLVar9->fields)._version;
-      *piVar11 = *piVar11 + 1;
-      pVVar12 = (pLVar9->fields)._items;
-      if (pVVar12 != (Vector2__Array *)0x0) {
-        uVar13 = (pLVar9->fields)._size;
-        if (uVar13 < pVVar12->max_length) {
-          (pLVar9->fields)._size = uVar13 + 1;
-          if (pVVar12->max_length <= uVar13) goto code_?;
-          pVVar12->vector[uVar13].x = fVar5;
-          pVVar12->vector[uVar13].y = fVar4;
-        }
-        else {
-          item_00.y = fVar4;
-          item_00.x = fVar5;
-          mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-          List_1_UnityEngine_Vector2__AddWithResize
-                    (pLVar9,item_00,pMVar10->klass->rgctx_data[0xe].method);
-        }
-        pMVar10 = 
-        MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-        ;
-        fVar2 = circleCenter.x - fVar2 * circleRadius;
-        fVar3 = circleCenter.y - fVar3 * circleRadius;
-        piVar11 = &(pLVar9->fields)._version;
-        *piVar11 = *piVar11 + 1;
-        pVVar12 = (pLVar9->fields)._items;
-        if (pVVar12 != (Vector2__Array *)0x0) {
-          uVar13 = (pLVar9->fields)._size;
-          if (uVar13 < pVVar12->max_length) {
-            (pLVar9->fields)._size = uVar13 + 1;
-            if (pVVar12->max_length <= uVar13) goto code_?;
-            pVVar12->vector[uVar13].x = fVar2;
-            pVVar12->vector[uVar13].y = fVar3;
-          }
-          else {
-            item_01.y = fVar3;
-            item_01.x = fVar2;
-            mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-            List_1_UnityEngine_Vector2__AddWithResize
-                      (pLVar9,item_01,pMVar10->klass->rgctx_data[0xe].method);
-          }
-          pMVar10 = 
-          MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
-          ;
-          fVar2 = circleCenter.x - fVar7 * circleRadius;
-          fVar3 = circleCenter.y - fVar8 * circleRadius;
-          piVar11 = &(pLVar9->fields)._version;
-          *piVar11 = *piVar11 + 1;
-          pVVar12 = (pLVar9->fields)._items;
-          if (pVVar12 != (Vector2__Array *)0x0) {
-            uVar13 = (pLVar9->fields)._size;
-            if (pVVar12->max_length <= uVar13) {
-              item_02.y = fVar3;
-              item_02.x = fVar2;
-              mscorlib.dll::System::Collections::Generic::List`1[UnityEngine::Vector2]::
-              List_1_UnityEngine_Vector2__AddWithResize
-                        (pLVar9,item_02,pMVar10->klass->rgctx_data[0xe].method);
-              return pLVar9;
-            }
-            (pLVar9->fields)._size = uVar13 + 1;
-            if (uVar13 < pVVar12->max_length) {
-              pVVar12->vector[uVar13].x = fVar2;
-              pVVar12->vector[uVar13].y = fVar3;
-              return pLVar9;
-            }
-            goto code_?;
-          }
-        }
-      }
-    }
+  pVVar10 = TypeInfo__UnityEngine__Vector2->static_fields;
+  fVar14 = uStack_4._4_4_ + uStack_4._4_4_;
+  fVar15 = (float)uStack_5 + (float)uStack_5;
+  fVar12 = (fVar9 - (uStack_4._4_4_ * fVar14 + (float)uStack_5 * fVar15)) * (pVVar10->upVector).x +
+           ((float)uStack_4 * fVar14 - uStack_5._4_4_ * fVar15) * (pVVar10->upVector).y +
+           ((float)uStack_4 * fVar15 + uStack_5._4_4_ * fVar14) * 0.0;
+  fVar14 = (fVar9 - ((float)uStack_4 * ((float)uStack_4 + (float)uStack_4) +
+                   (float)uStack_5 * fVar15)) * (pVVar10->upVector).y +
+          (uStack_5._4_4_ * fVar15 + (float)uStack_4 * fVar14) * (pVVar10->upVector).x +
+          (uStack_4._4_4_ * fVar15 - uStack_5._4_4_ * ((float)uStack_4 + (float)uStack_4)) * 0.0;
+  pLVar8 = (List_1_UnityEngine_Vector2_ *)
+           FUN_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector2>);
+  FUN_?(pLVar8,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__List__)
+  ;
+  fStack_16 = circleCenter.x;
+  fStack_17 = circleCenter.y;
+  fVar9 = fVar12 * circleRadius + fStack_16;
+  if (pLVar8 == (List_1_UnityEngine_Vector2_ *)0x0) {
+    FUN_?(fVar9);
+    pcVar6 = (code *)swi(3);
+    pLVar8 = (List_1_UnityEngine_Vector2_ *)(*pcVar6)();
+    return pLVar8;
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar14 = (code *)swi(3);
-  pLVar9 = (List_1_UnityEngine_Vector2_ *)(*pcVar14)();
-  return pLVar9;
+  FUN_?(pLVar8,CONCAT44(fVar14 * circleRadius + fStack_17,fVar9),
+                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+               );
+  FUN_?(pLVar8,CONCAT44(fVar11 * circleRadius + fStack_17,fVar13 * circleRadius + fStack_16),
+                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+               );
+  FUN_?(pLVar8,CONCAT44(fStack_17 - fVar14 * circleRadius,fStack_16 - fVar12 * circleRadius),
+                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+               );
+  FUN_?(pLVar8,CONCAT44(fStack_17 - fVar11 * circleRadius,fStack_16 - fVar13 * circleRadius),
+                MethodInfo__System__Collections__Generic__List<UnityEngine::Vector2>__Add_UnityEngine__Vector2_
+               );
+  return pLVar8;
 }
 
 
@@ -172,295 +112,535 @@ code_?:
 
 List_1_UnityEngine_Vector3_ *
 Assembly-CSharp.dll::RTG::CircleMath::CircleMath_Calc3DExtentPoints
-          (Vector3 circleCenter,float circleRadius,Quaternion circleRotation,MethodInfo *method)
+          (Vector3 *circleCenter,float circleRadius,Quaternion *circleRotation,MethodInfo *method)
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
-    func_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  fVar1 = circleRotation->x;
+  fVar2 = circleRotation->y;
+  fVar3 = circleRotation->z;
+  fVar4 = circleRotation->w;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                     (&VStack_2,circleRotation,
-                      TypeInfo__UnityEngine__Vector3->static_fields->rightVector,(MethodInfo *)0x0);
-  uStack_3._0_4_ = (undefined *)pVVar1->x;
-  uStack_3._4_4_ = (List_1_UnityEngine_Vector3_ *)pVVar1->y;
-  fStack_4 = pVVar1->z;
+  pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
+  fVar6 = fVar3 + fVar3;
+  fVar7 = fVar1 * (fVar1 + fVar1);
+  PStack_8.Quadrant = (int32_t)(pVVar5->rightVector).x;
+  PStack_8.FirstAxisSign = (int32_t)(pVVar5->rightVector).y;
+  fVar9 = (pVVar5->rightVector).z;
+  fVar10 = fVar4 * (fVar1 + fVar1);
+  fVar11 = fVar2 + fVar2;
+  fVar12 = (_UNK_? - (fVar3 * fVar6 + fVar2 * fVar11)) * (float)PStack_8.Quadrant +
+           (fVar1 * fVar11 - fVar4 * fVar6) * (float)PStack_8.FirstAxisSign +
+           (fVar4 * fVar11 + fVar1 * fVar6) * fVar9;
+  fVar3 = (_UNK_? - (fVar3 * fVar6 + fVar7)) * (float)PStack_8.FirstAxisSign +
+           (fVar4 * fVar6 + fVar1 * fVar11) * (float)PStack_8.Quadrant +
+           (fVar2 * fVar6 - fVar10) * fVar9;
+  fVar1 = (fVar1 * fVar6 - fVar4 * fVar11) * (float)PStack_8.Quadrant +
+           (fVar10 + fVar2 * fVar6) * (float)PStack_8.FirstAxisSign +
+           (_UNK_? - (fVar2 * fVar11 + fVar7)) * fVar9;
+  fStack_13 = circleRotation->x;
+  fStack_14 = circleRotation->y;
+  fStack_15 = circleRotation->z;
+  fStack_16 = circleRotation->w;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Quaternion::Quaternion_op_Multiply_1
-                     (&VStack_2,circleRotation,
-                      TypeInfo__UnityEngine__Vector3->static_fields->upVector,(MethodInfo *)0x0);
-  uVar5 = pVVar1->x;
-  uVar6 = pVVar1->y;
-  pMStack_7 = (MethodInfo *)pVVar1->z;
-  fStack_8 = (float)uVar5;
-  fStack_9 = (float)uVar6;
-  pLVar10 = (List_1_UnityEngine_Vector3_ *)
-           func_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
-  mscorlib.dll::System::Collections::Generic::LowLevelList`1[Unity::IL2CPP::Metadata::
-  __Il2CppFullySharedGenericType]::
-  LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-            ((LowLevelList_1_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_ *)pLVar10,
-             MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
-  VStack_2.x = circleCenter.x + fStack_8 * circleRadius;
-  VStack_2.y = circleCenter.y + fStack_9 * circleRadius;
-  VStack_2.z = circleCenter.z + (float)pMStack_7 * circleRadius;
-  if (pLVar10 != (List_1_UnityEngine_Vector3_ *)0x0) {
-    pMStack_7 = 
+  pVVar5 = TypeInfo__UnityEngine__Vector3->static_fields;
+  PStack_8.Quadrant = (int32_t)(pVVar5->upVector).x;
+  PStack_8.FirstAxisSign = (int32_t)(pVVar5->upVector).y;
+  fVar4 = fStack_15 + fStack_15;
+  fVar17 = fStack_13 * (fStack_13 + fStack_13);
+  fVar6 = fStack_14 + fStack_14;
+  fVar10 = fStack_16 * fVar4;
+  fVar7 = fStack_16 * (fStack_13 + fStack_13);
+  fVar2 = (pVVar5->upVector).z;
+  fVar9 = (_UNK_? - (fStack_15 * fVar4 + fStack_14 * fVar6)) * (float)PStack_8.Quadrant +
+           (fStack_13 * fVar6 - fVar10) * (float)PStack_8.FirstAxisSign +
+           (fStack_16 * fVar6 + fStack_13 * fVar4) * fVar2;
+  fVar11 = (_UNK_? - (fStack_15 * fVar4 + fVar17)) * (float)PStack_8.FirstAxisSign +
+           (fVar10 + fStack_13 * fVar6) * (float)PStack_8.Quadrant +
+           (fStack_14 * fVar4 - fVar7) * fVar2;
+  fVar7 = (fStack_13 * fVar4 - fStack_16 * fVar6) * (float)PStack_8.Quadrant +
+           (fVar7 + fStack_14 * fVar4) * (float)PStack_8.FirstAxisSign +
+           (_UNK_? - (fStack_14 * fVar6 + fVar17)) * fVar2;
+  fStack_13 = fVar10;
+  fStack_14 = fStack_16;
+  fStack_15 = fStack_16;
+  this = (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)
+         FUN_?(TypeInfo__System__Collections__Generic__List<UnityEngine::Vector3>);
+  FUN_?(this,MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__List__);
+  pMVar18 = 
+  MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
+  PStack_8.Quadrant = (int32_t)circleCenter->x;
+  PStack_8.FirstAxisSign = (int32_t)circleCenter->y;
+  fVar2 = fVar9 * circleRadius + (float)PStack_8.Quadrant;
+  fVar4 = fVar11 * circleRadius + (float)PStack_8.FirstAxisSign;
+  fVar6 = fVar7 * circleRadius + circleCenter->z;
+  if (this != (List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo_ *)0x0) {
+    piVar19 = &(this->fields)._version;
+    *piVar19 = *piVar19 + 1;
+    pPVar20 = (this->fields)._items;
+    if (pPVar20 == (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) goto code_?;
+    uVar21 = (this->fields)._size;
+    if (uVar21 < (uint)pPVar20->max_length) {
+      (this->fields)._size = uVar21 + 1;
+      if ((uint)pPVar20->max_length <= uVar21) goto code_?;
+      pPVar20->vector[(int)uVar21].Quadrant = (int32_t)fVar2;
+      pPVar20->vector[(int)uVar21].FirstAxisSign = (int32_t)fVar4;
+      pPVar20->vector[(int)uVar21].SecondAxisSign = (int32_t)fVar6;
+    }
+    else {
+      PStack_8.FirstAxisSign = (int32_t)fVar4;
+      PStack_8.Quadrant = (int32_t)fVar2;
+      PStack_8.SecondAxisSign = (int32_t)fVar6;
+      mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
+      List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                (this,&PStack_8,pMVar18->klass->rgctx_data[0xe].method);
+    }
+    pMVar18 = 
     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
-    uStack_3._0_4_ = &UNK_?;
-    fStack_4 = VStack_2.x;
-    fStack_8 = VStack_2.y;
-    fStack_9 = VStack_2.z;
-    uStack_3._4_4_ = pLVar10;
-    func_?();
-    VStack_2.z = fStack_4 * circleRadius;
-    fStack_4 = circleCenter.x + (float)(undefined *)uStack_3 * circleRadius;
-    fStack_8 = circleCenter.y + (float)uStack_3._4_4_ * circleRadius;
-    VStack_2.z = circleCenter.z + VStack_2.z;
-    pMStack_7 = 
+    PStack_8.Quadrant = (int32_t)circleCenter->x;
+    PStack_8.FirstAxisSign = (int32_t)circleCenter->y;
+    fVar2 = fVar12 * circleRadius + (float)PStack_8.Quadrant;
+    fVar4 = fVar3 * circleRadius + (float)PStack_8.FirstAxisSign;
+    fVar6 = fVar1 * circleRadius + circleCenter->z;
+    piVar19 = &(this->fields)._version;
+    *piVar19 = *piVar19 + 1;
+    pPVar20 = (this->fields)._items;
+    if (pPVar20 == (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) goto code_?;
+    uVar21 = (this->fields)._size;
+    if (uVar21 < (uint)pPVar20->max_length) {
+      (this->fields)._size = uVar21 + 1;
+      if ((uint)pPVar20->max_length <= uVar21) goto code_?;
+      pPVar20->vector[(int)uVar21].Quadrant = (int32_t)fVar2;
+      pPVar20->vector[(int)uVar21].FirstAxisSign = (int32_t)fVar4;
+      pPVar20->vector[(int)uVar21].SecondAxisSign = (int32_t)fVar6;
+    }
+    else {
+      PStack_8.FirstAxisSign = (int32_t)fVar4;
+      PStack_8.Quadrant = (int32_t)fVar2;
+      PStack_8.SecondAxisSign = (int32_t)fVar6;
+      mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
+      List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                (this,&PStack_8,pMVar18->klass->rgctx_data[0xe].method);
+    }
+    pMVar18 = 
     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
-    uStack_3 = CONCAT44(pLVar10,&UNK_?);
-    fStack_9 = VStack_2.z;
-    func_?();
-    VStack_2.z = circleCenter.z - (float)pMStack_7 * circleRadius;
-    fStack_4 = circleCenter.x - fStack_8 * circleRadius;
-    fStack_8 = circleCenter.y - fStack_9 * circleRadius;
-    pMStack_7 = 
+    PStack_8.Quadrant = (int32_t)circleCenter->x;
+    PStack_8.FirstAxisSign = (int32_t)circleCenter->y;
+    fVar4 = (float)PStack_8.Quadrant - fVar9 * circleRadius;
+    fVar2 = (float)PStack_8.FirstAxisSign - fVar11 * circleRadius;
+    fVar9 = circleCenter->z - fVar7 * circleRadius;
+    piVar19 = &(this->fields)._version;
+    *piVar19 = *piVar19 + 1;
+    pPVar20 = (this->fields)._items;
+    if (pPVar20 == (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) goto code_?;
+    uVar21 = (this->fields)._size;
+    if (uVar21 < (uint)pPVar20->max_length) {
+      (this->fields)._size = uVar21 + 1;
+      if ((uint)pPVar20->max_length <= uVar21) goto code_?;
+      pPVar20->vector[(int)uVar21].Quadrant = (int32_t)fVar4;
+      pPVar20->vector[(int)uVar21].FirstAxisSign = (int32_t)fVar2;
+      pPVar20->vector[(int)uVar21].SecondAxisSign = (int32_t)fVar9;
+    }
+    else {
+      PStack_8.FirstAxisSign = (int32_t)fVar2;
+      PStack_8.Quadrant = (int32_t)fVar4;
+      PStack_8.SecondAxisSign = (int32_t)fVar9;
+      mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
+      List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                (this,&PStack_8,pMVar18->klass->rgctx_data[0xe].method);
+    }
+    pMVar18 = 
     MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
-    uStack_3._0_4_ = &UNK_?;
-    fStack_9 = VStack_2.z;
-    uStack_3._4_4_ = pLVar10;
-    func_?();
-    VStack_2.z = fStack_4 * circleRadius;
-    fStack_4 = circleCenter.x - (float)(undefined *)uStack_3 * circleRadius;
-    fStack_8 = circleCenter.y - (float)uStack_3._4_4_ * circleRadius;
-    VStack_2.z = circleCenter.z - VStack_2.z;
-    pMStack_7 = 
-    MethodInfo__System__Collections__Generic__List<UnityEngine::Vector3>__Add_UnityEngine__Vector3_;
-    uStack_3 = CONCAT44(pLVar10,&UNK_?);
-    fStack_9 = VStack_2.z;
-    func_?();
-    return pLVar10;
+    PStack_8.Quadrant = (int32_t)circleCenter->x;
+    PStack_8.FirstAxisSign = (int32_t)circleCenter->y;
+    fVar4 = (float)PStack_8.Quadrant - fVar12 * circleRadius;
+    fVar2 = (float)PStack_8.FirstAxisSign - fVar3 * circleRadius;
+    fVar1 = circleCenter->z - fVar1 * circleRadius;
+    piVar19 = &(this->fields)._version;
+    *piVar19 = *piVar19 + 1;
+    pPVar20 = (this->fields)._items;
+    if (pPVar20 != (PlaneIdHelper_PlaneQuadrantInfo__Array *)0x0) {
+      uVar21 = (this->fields)._size;
+      if (uVar21 < (uint)pPVar20->max_length) {
+        (this->fields)._size = uVar21 + 1;
+        if ((uint)pPVar20->max_length <= uVar21) {
+code_?:
+          FUN_?();
+          pcVar22 = (code *)swi(3);
+          pLVar23 = (List_1_UnityEngine_Vector3_ *)(*pcVar22)();
+          return pLVar23;
+        }
+        pPVar20->vector[(int)uVar21].Quadrant = (int32_t)fVar4;
+        pPVar20->vector[(int)uVar21].FirstAxisSign = (int32_t)fVar2;
+        pPVar20->vector[(int)uVar21].SecondAxisSign = (int32_t)fVar1;
+      }
+      else {
+        PStack_8.FirstAxisSign = (int32_t)fVar2;
+        PStack_8.Quadrant = (int32_t)fVar4;
+        PStack_8.SecondAxisSign = (int32_t)fVar1;
+        mscorlib.dll::System::Collections::Generic::List`1[RTG::PlaneIdHelper+PlaneQuadrantInfo]::
+        List_1_RTG_PlaneIdHelper_PlaneQuadrantInfo__AddWithResize
+                  (this,&PStack_8,pMVar18->klass->rgctx_data[0xe].method);
+      }
+      return (List_1_UnityEngine_Vector3_ *)this;
+    }
   }
-  func_?();
-  pcVar11 = (code *)swi(3);
-  pLVar10 = (List_1_UnityEngine_Vector3_ *)(*pcVar11)();
-  return pLVar10;
+code_?:
+  FUN_?();
+  pcVar22 = (code *)swi(3);
+  pLVar23 = (List_1_UnityEngine_Vector3_ *)(*pcVar22)();
+  return pLVar23;
 }
 
 
 /* Boolean Contains2DPoint(Vector2, Vector2, Single, CircleEpsilon) */
 
 bool Assembly-CSharp.dll::RTG::CircleMath::CircleMath_Contains2DPoint
-               (Vector2 point,Vector2 circleCenter,float circleRadius,CircleEpsilon epsilon,
+               (Vector2 point,Vector2 circleCenter,float circleRadius,CircleEpsilon *epsilon,
                MethodInfo *method)
 
 {
-  point.x = point.x - circleCenter.x;
-  point.y = point.y - circleCenter.y;
-  fVar1 = (float10)func_?(&point,0);
-  return (float)fVar1 <= epsilon._radiusEps + circleRadius;
+  uStackX_20._0_4_ = point.x;
+  uStackX_20._4_4_ = point.y;
+  fStack_1 = circleCenter.x;
+  fStack_2 = circleCenter.y;
+  uStackX_20 = CONCAT44(uStackX_20._4_4_ - fStack_2,(float)uStackX_20 - fStack_1);
+  fVar3 = (float)FUN_?(&uStackX_20);
+  return fVar3 <= circleRadius + epsilon->_radiusEps;
 }
 
 
 /* Boolean Contains3DPoint(Vector3, Boolean, Vector3, Single, Vector3, CircleEpsilon) */
 
 bool Assembly-CSharp.dll::RTG::CircleMath::CircleMath_Contains3DPoint
-               (Vector3 point,bool checkOnPlane,Vector3 circleCenter,float circleRadius,
-               Vector3 circleNormal,CircleEpsilon epsilon,MethodInfo *method)
+               (Vector3 *point,bool checkOnPlane,Vector3 *circleCenter,float circleRadius,
+               Vector3 *circleNormal,CircleEpsilon *epsilon,MethodInfo *method)
 
 {
-  pVVar1 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                     (&VStack_2,circleNormal,(MethodInfo *)0x0);
-  uVar3 = pVVar1->x;
-  uVar4 = pVVar1->y;
-  fVar5 = pVVar1->z;
-  fVar6 = (float)((uint)(circleCenter.y * (float)uVar4 + circleCenter.x * (float)uVar3 +
-                        circleCenter.z * fVar5) ^
-                 __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
+  uStack_1._0_4_ = circleNormal->x;
+  uStack_1._4_4_ = circleNormal->y;
+  fStack_2 = circleNormal->z;
+  fVar3 = (float)FUN_?(&uStack_1);
+  if (_UNK_? < fVar3) {
+    uVar4 = circleNormal->x;
+    uVar5 = circleNormal->y;
+    fVar6 = circleNormal->z / fVar3;
+    uStack_1 = CONCAT44((float)uVar5 / fVar3,(float)uVar4 / fVar3);
+  }
+  else {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pVVar7 = TypeInfo__UnityEngine__Vector3->static_fields;
+    uStack_1._0_4_ = (pVVar7->zeroVector).x;
+    uStack_1._4_4_ = (pVVar7->zeroVector).y;
+    fVar6 = (pVVar7->zeroVector).z;
+  }
+  uVar8 = circleCenter->x;
+  uVar9 = circleCenter->y;
+  fVar3 = (float)((uint)(uStack_1._4_4_ * (float)uVar9 + (float)uStack_1 * (float)uVar8 +
+                         fVar6 * circleCenter->z) ^ _UNK_?);
   if ((checkOnPlane != 0) &&
-     (epsilon._extrudeEps <
-      (float)((uint)((float)uVar3 * point.x + (float)uVar4 * point.y + fVar5 * point.z + fVar6) &
-             _UNK_?))) {
+     (uVar10 = point->x, uVar11 = point->y,
+     fVar12 = (float)((uint)((float)uVar11 * uStack_1._4_4_ + (float)uVar10 * (float)uStack_1 +
+                             point->z * fVar6 + fVar3) & _UNK_?),
+     epsilon->_extrudeEps <= fVar12 && fVar12 != epsilon->_extrudeEps)) {
     return 0;
   }
-  fVar6 = (float)uVar3 * point.x + (float)uVar4 * point.y + fVar5 * point.z + fVar6;
-  circleCenter.z = (point.z - fVar5 * fVar6) - circleCenter.z;
-  circleCenter.x = (point.x - (float)uVar3 * fVar6) - circleCenter.x;
-  circleCenter.y = (point.y - (float)uVar4 * fVar6) - circleCenter.y;
-  VStack_2.x = 0.0;
-  fVar7 = (float10)func_?(&circleCenter);
-  return (float)fVar7 <= epsilon._radiusEps + circleRadius;
+  uVar13 = point->x;
+  uVar14 = point->y;
+  fVar3 = (float)uVar14 * uStack_1._4_4_ + (float)uVar13 * (float)uStack_1 + point->z * fVar6 +
+           fVar3;
+  uVar15 = point->x;
+  uVar16 = point->y;
+  uVar17 = circleCenter->x;
+  uVar18 = circleCenter->y;
+  fStack_2 = (point->z - fVar6 * fVar3) - circleCenter->z;
+  uStack_1 = CONCAT44(((float)uVar16 - uStack_1._4_4_ * fVar3) - (float)uVar18,
+                       ((float)uVar15 - (float)uStack_1 * fVar3) - (float)uVar17);
+  fVar3 = (float)FUN_?(&uStack_1);
+  return fVar3 <= circleRadius + epsilon->_radiusEps;
 }
 
 
 /* Boolean Is2DPointOnBorder(Vector2, Vector2, Single, CircleEpsilon) */
 
 bool Assembly-CSharp.dll::RTG::CircleMath::CircleMath_Is2DPointOnBorder
-               (Vector2 point,Vector2 circleCenter,float circleRadius,CircleEpsilon epsilon,
+               (Vector2 point,Vector2 circleCenter,float circleRadius,CircleEpsilon *epsilon,
                MethodInfo *method)
 
 {
-  point.x = point.x - circleCenter.x;
-  point.y = point.y - circleCenter.y;
-  fVar1 = (float10)func_?(&point,0);
-  if ((float)fVar1 < circleRadius - epsilon._wireEps) {
+  uStackX_20._0_4_ = point.x;
+  uStackX_20._4_4_ = point.y;
+  fStack_1 = circleCenter.x;
+  fStack_2 = circleCenter.y;
+  uStackX_20 = CONCAT44(uStackX_20._4_4_ - fStack_2,(float)uStackX_20 - fStack_1);
+  fVar3 = (float)FUN_?(&uStackX_20);
+  if (fVar3 < circleRadius - epsilon->_wireEps) {
     return 0;
   }
-  return (float)fVar1 <= epsilon._wireEps + circleRadius;
+  return fVar3 <= circleRadius + epsilon->_wireEps;
 }
 
 
 /* Boolean Raycast(Ray, Single ByRef, Vector3, Single, Vector3, CircleEpsilon) */
 
 bool Assembly-CSharp.dll::RTG::CircleMath::CircleMath_Raycast
-               (Ray ray,float *t,Vector3 circleCenter,float circleRadius,Vector3 circleNormal,
-               CircleEpsilon epsilon,MethodInfo *method)
+               (Ray *ray,float *t,Vector3 *circleCenter,float circleRadius,Vector3 *circleNormal,
+               CircleEpsilon *epsilon,MethodInfo *method)
 
 {
-  PStack_1.m_Normal.x = 0.0;
-  PStack_1.m_Normal.y = 0.0;
-  PStack_1.m_Normal.z = 0.0;
-  PStack_1.m_Distance = 0.0;
-  fStack_2 = epsilon._radiusEps + circleRadius;
-  fStack_3 = 0.0;
+  VStack_1.x = circleNormal->x;
+  VStack_1.y = circleNormal->y;
+  VStack_1.z = circleNormal->z;
+  cylinderRadius = circleRadius + epsilon->_radiusEps;
   *t = 0.0;
-  pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                     ((Vector3 *)&stack0xffffffb8,circleNormal,(MethodInfo *)0x0);
-  PStack_1.m_Normal.x = pVVar4->x;
-  PStack_1.m_Normal.y = pVVar4->y;
-  PStack_1.m_Normal.z = pVVar4->z;
-  PStack_1.m_Distance =
-       (float)((uint)(circleCenter.y * PStack_1.m_Normal.y + circleCenter.x * PStack_1.m_Normal.x
-                     + circleCenter.z * PStack_1.m_Normal.z) ^
-              __0B8F1B2A03256530B29F55A9640DB5F499BCAA95602DE832E800B6D1563C9B86_Field);
-  ray_00.m_Direction.z = ray.m_Direction.z;
-  ray_00.m_Direction.y = ray.m_Direction.y;
-  ray_00.m_Origin.y = ray.m_Origin.y;
-  ray_00.m_Origin.x = ray.m_Origin.x;
-  ray_00.m_Origin.z = ray.m_Origin.z;
-  ray_00.m_Direction.x = ray.m_Direction.x;
-  fStack_5 = PStack_1.m_Normal.x;
-  fStack_6 = PStack_1.m_Normal.y;
-  fStack_7 = PStack_1.m_Normal.z;
-  bVar8 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
-                    (&PStack_1,ray_00,&fStack_3,(MethodInfo *)circleCenter.x);
-  if (bVar8 != 0) {
-    pVVar4 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-                       ((Vector3 *)&stack0xffffffb8,&ray,fStack_3,(MethodInfo *)0x0);
-    uVar9 = pVVar4->x;
-    uVar10 = pVVar4->y;
-    fStack_5 = (float)uVar9 - circleCenter.x;
-    fStack_6 = (float)uVar10 - circleCenter.y;
-    PStack_1.m_Normal.z = pVVar4->z - circleCenter.z;
-    fStack_7 = PStack_1.m_Normal.z;
-    fVar11 = (float10)func_?();
-    if ((float)fVar11 <= fStack_2) {
-      *t = fStack_3;
+  fVar2 = (float)FUN_?(&VStack_1);
+  if (_UNK_? < fVar2) {
+    uVar3 = circleNormal->x;
+    uVar4 = circleNormal->y;
+    VStack_1.x = (float)uVar3 / fVar2;
+    fVar5 = circleNormal->z / fVar2;
+    VStack_1.y = (float)uVar4 / fVar2;
+  }
+  else {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
+    VStack_1.x = (pVVar6->zeroVector).x;
+    VStack_1.y = (pVVar6->zeroVector).y;
+    fVar5 = (pVVar6->zeroVector).z;
+  }
+  VStack_7.x = circleCenter->x;
+  VStack_7.y = circleCenter->y;
+  aRStack_8[0].m_Direction.y = (ray->m_Direction).y;
+  aRStack_8[0].m_Direction.z = (ray->m_Direction).z;
+  fVar9 = aRStack_8[0].m_Direction.y * VStack_1.y + (ray->m_Direction).x * VStack_1.x +
+           aRStack_8[0].m_Direction.z * fVar5;
+  fVar10 = (float)((uint)((ray->m_Origin).y * VStack_1.y + (ray->m_Origin).x * VStack_1.x +
+                         (ray->m_Origin).z * fVar5) ^ _UNK_?);
+  fVar2 = (float)((uint)(VStack_1.y * VStack_7.y + VStack_1.x * VStack_7.x +
+                         fVar5 * circleCenter->z) ^ _UNK_?);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Mathf);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  fVar5 = (float)((uint)fVar9 & _UNK_?);
+  if ((float)((uint)fVar9 & _UNK_?) <= 0.0) {
+    fVar5 = 0.0;
+  }
+  fVar11 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * _UNK_?;
+  fVar12 = fVar5 * _UNK_?;
+  if (fVar5 * _UNK_? <= fVar11) {
+    fVar12 = fVar11;
+  }
+  if ((fVar12 <= (float)((uint)(0.0 - fVar9) & _UNK_?)) &&
+     (fVar9 = (fVar10 - fVar2) / fVar9, 0.0 < fVar9)) {
+    uVar13 = (ray->m_Direction).x;
+    uVar14 = (ray->m_Direction).y;
+    uVar15 = (ray->m_Origin).x;
+    uVar16 = (ray->m_Origin).y;
+    VStack_7.x = circleCenter->x;
+    VStack_7.y = circleCenter->y;
+    VStack_1.x = ((float)uVar13 * fVar9 + (float)uVar15) - VStack_7.x;
+    VStack_1.z = ((ray->m_Direction).z * fVar9 + (ray->m_Origin).z) - circleCenter->z;
+    VStack_1.y = ((float)uVar14 * fVar9 + (float)uVar16) - VStack_7.y;
+    fVar2 = (float)FUN_?(&VStack_1);
+    if (fVar2 <= cylinderRadius) {
+      *t = fVar9;
       return 1;
     }
   }
-  if ((epsilon._extrudeEps != 0.0) &&
-     ((float)((uint)(ray.m_Direction.x * circleNormal.x + ray.m_Direction.y * circleNormal.y +
-                    ray.m_Direction.z * circleNormal.z) & _UNK_?) < _UNK_?)) {
-    PStack_1.m_Distance = circleCenter.z + circleNormal.z * epsilon._extrudeEps;
-    ray_01.m_Direction.z = ray.m_Direction.z;
-    ray_01.m_Direction.y = ray.m_Direction.y;
-    fStack_6 = 0.0;
-    fStack_7 = 0.0;
-    ray_01.m_Origin.y = ray.m_Origin.y;
-    ray_01.m_Origin.x = ray.m_Origin.x;
-    ray_01.m_Origin.z = ray.m_Origin.z;
-    ray_01.m_Direction.x = ray.m_Direction.x;
-    cylinderAxisPt0.y = circleCenter.y - circleNormal.y * epsilon._extrudeEps;
-    cylinderAxisPt0.x = circleCenter.x - circleNormal.x * epsilon._extrudeEps;
-    cylinderAxisPt0.z = 0.0;
-    cylinderAxisPt1.y = circleCenter.y + circleNormal.y * epsilon._extrudeEps;
-    cylinderAxisPt1.x = circleCenter.x + circleNormal.x * epsilon._extrudeEps;
-    cylinderAxisPt1.z = PStack_1.m_Distance;
-    bVar8 = CylinderMath::CylinderMath_Raycast
-                      (ray_01,t,cylinderAxisPt0,cylinderAxisPt1,fStack_2,(CylinderEpsilon)0x0,
-                       (MethodInfo *)0x0);
-    return bVar8;
+  if ((epsilon->_extrudeEps == 0.0) ||
+     (uVar17 = circleNormal->x, uVar18 = circleNormal->y, uVar19 = (ray->m_Direction).x,
+     uVar20 = (ray->m_Direction).y,
+     _UNK_? <=
+     (float)((uint)((float)uVar18 * (float)uVar20 + (float)uVar17 * (float)uVar19 +
+                   circleNormal->z * (ray->m_Direction).z) & _UNK_?))) {
+    bVar21 = 0;
   }
-  return 0;
+  else {
+    fVar2 = epsilon->_extrudeEps;
+    uVar22 = circleNormal->x;
+    uVar23 = circleNormal->y;
+    VStack_7.x = circleCenter->x;
+    VStack_7.y = circleCenter->y;
+    fVar12 = circleCenter->z - fVar2 * circleNormal->z;
+    fVar24 = VStack_7.x - fVar2 * (float)uVar22;
+    fVar11 = VStack_7.y - fVar2 * (float)uVar23;
+    fVar2 = epsilon->_extrudeEps;
+    fVar10 = fVar2 * (float)uVar22 + VStack_7.x;
+    fVar9 = fVar2 * circleNormal->z + circleCenter->z;
+    fVar5 = fVar2 * (float)uVar23 + VStack_7.y;
+    VStack_1.z = fVar9 - fVar12;
+    VStack_1.y = fVar5 - fVar11;
+    VStack_1.x = fVar10 - fVar24;
+    fVar2 = (float)FUN_?(&VStack_1);
+    aRStack_8[0].m_Origin.x = (ray->m_Origin).x;
+    aRStack_8[0].m_Origin.y = (ray->m_Origin).y;
+    aRStack_8[0]._8_8_ = *(undefined8 *)&(ray->m_Origin).z;
+    VStack_1.y = fVar5;
+    VStack_1.x = fVar10;
+    VStack_7.y = fVar11;
+    VStack_7.x = fVar24;
+    aRStack_8[0].m_Direction.y = (ray->m_Direction).y;
+    aRStack_8[0].m_Direction.z = (ray->m_Direction).z;
+    VStack_1.z = fVar9;
+    VStack_7.z = fVar12;
+    bVar21 = CylinderMath::CylinderMath_Raycast_1
+                       (aRStack_8,t,&VStack_7,&VStack_1,cylinderRadius,fVar2,
+                        (CylinderEpsilon)0x0,(MethodInfo *)0x0);
+  }
+  return bVar21;
 }
 
 
 /* Boolean RaycastWire(Ray, Single ByRef, Vector3, Single, Vector3, CircleEpsilon) */
 
 bool Assembly-CSharp.dll::RTG::CircleMath::CircleMath_RaycastWire
-               (Ray ray,float *t,Vector3 circleCenter,float circleRadius,Vector3 circleNormal,
-               CircleEpsilon epsilon,MethodInfo *method)
+               (Ray *ray,float *t,Vector3 *circleCenter,float circleRadius,Vector3 *circleNormal,
+               CircleEpsilon *epsilon,MethodInfo *method)
 
 {
-  uStack_1 = (ulonglong)(uint)uStack_1;
+  VStack_1.x = circleNormal->x;
+  VStack_1.y = circleNormal->y;
+  VStack_1.z = circleNormal->z;
   *t = 0.0;
-  pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                     (&VStack_3,circleNormal,(MethodInfo *)0x0);
-  uStack_4._0_4_ = pVVar2->x;
-  uStack_4._4_4_ = pVVar2->y;
-  fStack_5 = pVVar2->z;
-  ray_00.m_Direction.z = ray.m_Direction.z;
-  ray_00.m_Direction.y = ray.m_Direction.y;
-  ray_00.m_Origin.y = ray.m_Origin.y;
-  ray_00.m_Origin.x = ray.m_Origin.x;
-  ray_00.m_Origin.z = ray.m_Origin.z;
-  ray_00.m_Direction.x = ray.m_Direction.x;
-  bVar6 = UnityEngine.CoreModule.dll::UnityEngine::Plane::Plane_Raycast
-                    ((Plane *)&stack0xffffffb8,ray_00,(float *)((int)&uStack_1 + 4),
-                     (MethodInfo *)circleCenter.x);
-  if (bVar6 != 0) {
-    pVVar2 = UnityEngine.CoreModule.dll::UnityEngine::Ray::Ray_GetPoint
-                       (&VStack_3,&ray,uStack_1._4_4_,(MethodInfo *)0x0);
-    uVar7 = pVVar2->x;
-    uVar8 = pVVar2->y;
-    VStack_3.z = circleCenter.z - pVVar2->z;
-    uStack_4 = CONCAT44(circleCenter.y - (float)uVar8,circleCenter.x - (float)uVar7);
-    fStack_5 = VStack_3.z;
-    fVar9 = (float10)func_?();
-    if ((circleRadius - epsilon._wireEps <= (float)fVar9) &&
-       ((float)fVar9 <= epsilon._wireEps + circleRadius)) {
-      *t = uStack_1._4_4_;
+  fVar2 = (float)FUN_?(&VStack_1);
+  if (_UNK_? < fVar2) {
+    uVar3 = circleNormal->x;
+    uVar4 = circleNormal->y;
+    VStack_1.x = (float)uVar3 / fVar2;
+    fVar5 = circleNormal->z / fVar2;
+    VStack_1.y = (float)uVar4 / fVar2;
+  }
+  else {
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pVVar6 = TypeInfo__UnityEngine__Vector3->static_fields;
+    VStack_1.x = (pVVar6->zeroVector).x;
+    VStack_1.y = (pVVar6->zeroVector).y;
+    fVar5 = (pVVar6->zeroVector).z;
+  }
+  VStack_7.x = circleCenter->x;
+  VStack_7.y = circleCenter->y;
+  aRStack_8[0].m_Direction.y = (ray->m_Direction).y;
+  aRStack_8[0].m_Direction.z = (ray->m_Direction).z;
+  fVar9 = aRStack_8[0].m_Direction.y * VStack_1.y + (ray->m_Direction).x * VStack_1.x +
+           aRStack_8[0].m_Direction.z * fVar5;
+  fVar10 = (float)((uint)((ray->m_Origin).y * VStack_1.y + (ray->m_Origin).x * VStack_1.x +
+                         (ray->m_Origin).z * fVar5) ^ _UNK_?);
+  fVar2 = (float)((uint)(VStack_1.y * VStack_7.y + VStack_1.x * VStack_7.x +
+                         fVar5 * circleCenter->z) ^ _UNK_?);
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Mathf);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  fVar5 = (float)((uint)fVar9 & _UNK_?);
+  if ((float)((uint)fVar9 & _UNK_?) <= 0.0) {
+    fVar5 = 0.0;
+  }
+  fVar11 = TypeInfo__UnityEngine__Mathf->static_fields->Epsilon * _UNK_?;
+  fVar12 = fVar5 * _UNK_?;
+  if (fVar5 * _UNK_? <= fVar11) {
+    fVar12 = fVar11;
+  }
+  if ((fVar12 <= (float)((uint)(0.0 - fVar9) & _UNK_?)) &&
+     (fVar9 = (fVar10 - fVar2) / fVar9, 0.0 < fVar9)) {
+    uVar13 = (ray->m_Direction).x;
+    uVar14 = (ray->m_Direction).y;
+    uVar15 = (ray->m_Origin).x;
+    uVar16 = (ray->m_Origin).y;
+    VStack_7.x = circleCenter->x;
+    VStack_7.y = circleCenter->y;
+    VStack_1.z = circleCenter->z - ((ray->m_Direction).z * fVar9 + (ray->m_Origin).z);
+    VStack_1.y = VStack_7.y - ((float)uVar14 * fVar9 + (float)uVar16);
+    VStack_1.x = VStack_7.x - ((float)uVar13 * fVar9 + (float)uVar15);
+    fVar2 = (float)FUN_?(&VStack_1);
+    if ((circleRadius - epsilon->_wireEps <= fVar2) && (fVar2 <= circleRadius + epsilon->_wireEps)
+       ) {
+      *t = fVar9;
       return 1;
     }
   }
-  if (epsilon._extrudeEps != 0.0) {
-    if ((float)((uint)(ray.m_Direction.x * circleNormal.x + ray.m_Direction.y * circleNormal.y +
-                      ray.m_Direction.z * circleNormal.z) & _UNK_?) < _UNK_?) {
-      fStack_5 = circleCenter.z - circleNormal.z * epsilon._extrudeEps;
-      fStack_10 = circleCenter.y + circleNormal.y * epsilon._extrudeEps;
-      VStack_3.z = circleCenter.z + circleNormal.z * epsilon._extrudeEps;
-      ray_01.m_Direction.z = ray.m_Direction.z;
-      ray_01.m_Direction.y = ray.m_Direction.y;
-      uStack_1 = 0;
-      ray_01.m_Origin.y = ray.m_Origin.y;
-      ray_01.m_Origin.x = ray.m_Origin.x;
-      ray_01.m_Origin.z = ray.m_Origin.z;
-      ray_01.m_Direction.x = ray.m_Direction.x;
-      cylinderAxisPt0.y = circleCenter.y - circleNormal.y * epsilon._extrudeEps;
-      cylinderAxisPt0.x = circleCenter.x - circleNormal.x * epsilon._extrudeEps;
-      cylinderAxisPt0.z = fStack_5;
-      cylinderAxisPt1.y = fStack_10;
-      cylinderAxisPt1.x = circleCenter.x + circleNormal.x * epsilon._extrudeEps;
-      cylinderAxisPt1.z = VStack_3.z;
-      bVar6 = CylinderMath::CylinderMath_Raycast
-                        (ray_01,t,cylinderAxisPt0,cylinderAxisPt1,epsilon._wireEps + circleRadius,
-                         (CylinderEpsilon)0x0,(MethodInfo *)0x0);
-      return bVar6;
-    }
+  if ((epsilon->_extrudeEps == 0.0) ||
+     (uVar17 = circleNormal->x, uVar18 = circleNormal->y, uVar19 = (ray->m_Direction).x,
+     uVar20 = (ray->m_Direction).y,
+     _UNK_? <=
+     (float)((uint)((float)uVar18 * (float)uVar20 + (float)uVar17 * (float)uVar19 +
+                   circleNormal->z * (ray->m_Direction).z) & _UNK_?))) {
+    bVar21 = 0;
   }
-  return 0;
+  else {
+    fVar2 = epsilon->_extrudeEps;
+    uVar22 = circleNormal->x;
+    uVar23 = circleNormal->y;
+    VStack_7.x = circleCenter->x;
+    VStack_7.y = circleCenter->y;
+    fVar12 = circleCenter->z - fVar2 * circleNormal->z;
+    fVar24 = VStack_7.x - fVar2 * (float)uVar22;
+    fVar11 = VStack_7.y - fVar2 * (float)uVar23;
+    fVar2 = epsilon->_extrudeEps;
+    fVar10 = fVar2 * (float)uVar22 + VStack_7.x;
+    fVar9 = fVar2 * circleNormal->z + circleCenter->z;
+    fVar5 = fVar2 * (float)uVar23 + VStack_7.y;
+    VStack_1.z = fVar9 - fVar12;
+    VStack_1.y = fVar5 - fVar11;
+    VStack_1.x = fVar10 - fVar24;
+    fVar2 = (float)FUN_?(&VStack_1);
+    aRStack_8[0].m_Origin.x = (ray->m_Origin).x;
+    aRStack_8[0].m_Origin.y = (ray->m_Origin).y;
+    aRStack_8[0]._8_8_ = *(undefined8 *)&(ray->m_Origin).z;
+    VStack_1.y = fVar5;
+    VStack_1.x = fVar10;
+    VStack_7.y = fVar11;
+    VStack_7.x = fVar24;
+    aRStack_8[0].m_Direction.y = (ray->m_Direction).y;
+    aRStack_8[0].m_Direction.z = (ray->m_Direction).z;
+    VStack_1.z = fVar9;
+    VStack_7.z = fVar12;
+    bVar21 = CylinderMath::CylinderMath_Raycast_1
+                       (aRStack_8,t,&VStack_7,&VStack_1,circleRadius + epsilon->_wireEps,fVar2,
+                        (CylinderEpsilon)0x0,(MethodInfo *)0x0);
+  }
+  return bVar21;
 }
 

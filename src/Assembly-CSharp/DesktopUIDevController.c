@@ -12,10 +12,9 @@ void Assembly-CSharp.dll::DesktopUIDevController::DesktopUIDevController_Awake
                UIGroupFlags__Enum_Default,(MethodInfo *)0x0);
     return;
   }
-  uVar1 = func_?(&stack0xfffffff0);
-  func_?(uVar1);
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

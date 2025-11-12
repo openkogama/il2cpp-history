@@ -6,19 +6,17 @@ void Assembly-CSharp.dll::ItemPurchaseConfirmationPopup::
                (ItemPurchaseConfirmationPopup *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pUVar2 = (this->fields).resultCallback;
-  if (pUVar2 != (UnityAction_1_System_Boolean_ *)0x0) {
-    puStack_1 = (pUVar2->fields)._._.method;
-    uStack_3 = 1;
-    pvStack_4 = (pUVar2->fields)._._.method_code;
-    (*(pUVar2->fields)._._.invoke_impl)();
+  pUVar1 = (this->fields).resultCallback;
+  if (pUVar1 != (UnityAction_1_System_Boolean_ *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(pUVar1->fields)._._.invoke_impl)
+              ((pUVar1->fields)._._.method_code,1,(pUVar1->fields)._._.method);
     return;
   }
-  uVar5 = func_?(&pvStack_4);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?(0,(char)method);
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -30,19 +28,17 @@ void Assembly-CSharp.dll::ItemPurchaseConfirmationPopup::
                (ItemPurchaseConfirmationPopup *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pUVar2 = (this->fields).resultCallback;
-  if (pUVar2 != (UnityAction_1_System_Boolean_ *)0x0) {
-    puStack_1 = (pUVar2->fields)._._.method;
-    uStack_3 = 0;
-    pvStack_4 = (pUVar2->fields)._._.method_code;
-    (*(pUVar2->fields)._._.invoke_impl)();
+  pUVar1 = (this->fields).resultCallback;
+  if (pUVar1 != (UnityAction_1_System_Boolean_ *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (*(pUVar1->fields)._._.invoke_impl)
+              ((pUVar1->fields)._._.method_code,0,(pUVar1->fields)._._.method);
     return;
   }
-  uVar5 = func_?(&pvStack_4);
-  func_?(uVar5);
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

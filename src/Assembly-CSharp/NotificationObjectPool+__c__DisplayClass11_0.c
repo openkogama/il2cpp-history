@@ -7,15 +7,13 @@ bool Assembly-CSharp.dll::NotificationObjectPool+<>c__DisplayClass11_0::
                MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
   if ((x != (NotificationObjectPoolElement *)0x0) &&
-     (pNVar2 = (x->fields).Prefab, pNVar2 != (Notification *)0x0)) {
-    return (pNVar2->fields).Type == (this->fields).type;
+     (pNVar1 = (x->fields).Prefab, pNVar1 != (Notification *)0x0)) {
+    return (pNVar1->fields).Type == (this->fields).type;
   }
-  uVar3 = func_?(auStack_4);
-  func_?(uVar3);
-  pcVar5 = (code *)swi(3);
-  bVar6 = (*pcVar5)();
-  return bVar6;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  bVar3 = (*pcVar2)();
+  return bVar3;
 }
 

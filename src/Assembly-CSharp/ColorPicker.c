@@ -6,47 +6,83 @@ void Assembly-CSharp.dll::ColorPicker::ColorPicker_Enter
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__PickColorCursor);
+    FUN_?(&TypeInfo__PickColorCursor);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (e != (CubeModelingStateMachine *)0x0) {
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__MV__WorldObject__CubeBase);
+      FUN_?(&TypeInfo__MV__WorldObject__CubeBase);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    if ((TypeInfo__MV__WorldObject__CubeBase->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MV__WorldObject__CubeBase);
+    if (*(int *)&(TypeInfo__MV__WorldObject__CubeBase->_1).field_0x1c == 0) {
+      FUN_?();
     }
     cubeCorners = MVWorldObject.dll::MV::WorldObject::CubeBase::CubeBase_get_IdentityCorners
                             ((MethodInfo *)0x0);
-    value = (PickColorCursor *)func_?(TypeInfo__PickColorCursor);
+    pPVar1 = (PickColorCursor *)FUN_?(TypeInfo__PickColorCursor);
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__CellCursor);
+      FUN_?(&TypeInfo__CellCursor);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    (value->fields).currentMaterial = 1;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)value,ExceptionArgument__Enum_obj,unaff_ESI);
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__PrefabPool);
+    bVar2 = cRam_? == '\0';
+    (pPVar1->fields).currentMaterial = 1;
+    if (bVar2) {
+      FUN_?(&TypeInfo__PrefabPool);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    pPVar1 = TypeInfo__PrefabPool->static_fields->instance;
-    if (pPVar1 != (PrefabPool *)0x0) {
-      material = (pPVar1->fields).cellCursorMaterial;
-      this_00 = (CellCursor *)func_?(TypeInfo__CellCursor);
-      CellCursor::CellCursor__ctor(this_00,1,0.03,material,1.0,cubeCorners,(MethodInfo *)0x0);
-      (value->fields).paintCursor = this_00;
-      func_?(&value->fields,this_00);
-      (this->fields).cursor = value;
-      func_?(&(this->fields).cursor,value);
+    pPVar3 = TypeInfo__PrefabPool->static_fields->instance;
+    if (pPVar3 != (PrefabPool *)0x0) {
+      material = (pPVar3->fields).cellCursorMaterial;
+      this_00 = (CellCursor *)FUN_?(TypeInfo__CellCursor);
+      CellCursor::CellCursor__ctor
+                (this_00,1,_UNK_?,material,_UNK_?,cubeCorners,(MethodInfo *)0x0);
+      iVar4 = iRam_?;
+      (pPVar1->fields).paintCursor = this_00;
+      if (iVar4 != 0) {
+        uVar5 = (uint)((ulonglong)&pPVar1->fields >> 0xc);
+        uVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+        do {
+          uVar7 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+          puVar8 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+          LOCK();
+          bVar2 = uVar7 == *puVar8;
+          if (bVar2) {
+            *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+          }
+          UNLOCK();
+          iVar4 = iRam_?;
+        } while (!bVar2);
+      }
+      (this->fields).cursor = pPVar1;
+      if (iVar4 != 0) {
+        uVar5 = (uint)((ulonglong)&(this->fields).cursor >> 0xc);
+        uVar6 = (ulonglong)((uVar5 & 0x1fffff) >> 6);
+        do {
+          uVar7 = *(ulonglong *)(uVar6 * 8 + 0xADDR);
+          puVar8 = (ulonglong *)(uVar6 * 8 + 0xADDR);
+          LOCK();
+          bVar2 = uVar7 == *puVar8;
+          if (bVar2) {
+            *puVar8 = uVar7 | 1L << (uVar5 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar2);
+      }
       (this->fields).lastCubePicked = 0xff;
       return;
     }
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  (*pcVar2)();
+  FUN_?();
+  pcVar9 = (code *)swi(3);
+  (*pcVar9)();
   return;
 }
 
@@ -57,212 +93,178 @@ void Assembly-CSharp.dll::ColorPicker::ColorPicker_Execute
                (ColorPicker *this,CubeModelingStateMachine *e,MethodInfo *method)
 
 {
-  this_02 = e;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVInputWrapper);
+    FUN_?(&TypeInfo__MVInputWrapper);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__CubeModelTool);
-    cRam_? = '\x01';
-  }
-  pCVar1 = TypeInfo__CubeModelTool->static_fields;
-  if ((pCVar1->cubeChange != 0) &&
-     (pCVar1->OnEditCubeChange != (Action_2_Int32_EditCubeChange_ *)0x0)) {
-    pAVar2 = pCVar1->OnEditCubeChange;
-    (*(pAVar2->fields)._._.invoke_impl)
-              ((pAVar2->fields)._._.method_code,pCVar1->cubeCount,(char)pCVar1->cubeChange,
-               (pAVar2->fields)._._.method);
-  }
-  uVar3 = 1;
-  TypeInfo__CubeModelTool->static_fields->cubeChange = 0;
-  if (e != (CubeModelingStateMachine *)0x0) {
-    if ((e->fields)._SelectedCube_k__BackingField == (CubePickingInfo *)0x0) goto code_?;
-    pCVar4 = (((e->fields)._SelectedCube_k__BackingField)->fields).cube;
-    if ((pCVar4 != (Cube *)0x0) &&
-       (pBVar5 = (pCVar4->fields)._.faceMaterials, pBVar5 != (Byte__Array *)0x0)) {
-      if (pBVar5->max_length == 0) goto code_?;
-      materialId = pBVar5->vector[0];
-      bVar6 = 1;
-      if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__MVInputWrapper);
+  CubeModelTool::CubeModelTool_Execute((CubeModelTool *)this,e,(MethodInfo *)0x0);
+  bVar1 = 1;
+  if (e == (CubeModelingStateMachine *)0x0) goto code_?;
+  if ((e->fields)._SelectedCube_k__BackingField != (CubePickingInfo *)0x0) {
+    pCVar2 = (((e->fields)._SelectedCube_k__BackingField)->fields).cube;
+    if ((pCVar2 == (Cube *)0x0) ||
+       (pBVar3 = (pCVar2->fields)._.faceMaterials, pBVar3 == (Byte__Array *)0x0))
+    goto code_?;
+    if ((int)pBVar3->max_length == 0) {
+      FUN_?();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
+      return;
+    }
+    materialId = pBVar3->vector[0];
+    if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVInputWrapper);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    bVar5 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
+                       (KogamaControls__Enum_PointerSelect,KeyState__Enum_Up,(MethodInfo *)0x0);
+    if ((bVar5 != 0) || (materialId != (this->fields).lastCubePicked)) {
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__MVGameControllerBase);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
-      bVar7 = MVInputWrapper::MVInputWrapper_GetBooleanControlUp
-                         (KogamaControls__Enum_PointerSelect,(MethodInfo *)0x0);
-      e = (CubeModelingStateMachine *)((uint)bVar7 << 0x18);
-      if ((bVar7 == 0) && (materialId == (this->fields).lastCubePicked)) {
-code_?:
-        pPVar8 = (this->fields).cursor;
-        pCVar9 = (this_02->fields)._SelectedCube_k__BackingField;
-        pMVar10 = (this_02->fields)._TargetCubeModel_k__BackingField;
-        if (pPVar8 != (PickColorCursor *)0x0) {
-          if ((pPVar8->fields).flashing != 0) {
-            fVar11 = (pPVar8->fields).flashingTime;
-            if (_UNK_? < fVar11) {
-              (pPVar8->fields).flashingTime = fVar11 - _UNK_?;
-            }
-            else {
-              pCVar12 = (pPVar8->fields).paintCursor;
-              (pPVar8->fields).flashing = 0;
-              if (cRam_? == '\0') {
-                func_?(&TypeInfo__PrefabPool);
-                cRam_? = '\x01';
-              }
-              pPVar13 = TypeInfo__PrefabPool->static_fields->instance;
-              if ((pPVar13 == (PrefabPool *)0x0) || (pCVar12 == (CellCursor *)0x0))
-              goto code_?;
-              CellCursor::CellCursor_ChangeMaterial
-                        (pCVar12,(pPVar13->fields).cellCursorMaterial,(MethodInfo *)0x0);
-            }
+      pMVar6 = TypeInfo__MVGameControllerBase->static_fields->instance;
+      if ((((pMVar6 == (MVGameControllerBase *)0x0) ||
+           (pMVar7 = (pMVar6->fields).game, pMVar7 == (MVNetworkGame *)0x0)) ||
+          (this_00 = (pMVar7->fields)._MaterialRepository_k__BackingField,
+          this_00 == (MVMaterialRepository *)0x0)) ||
+         (pMVar8 = MVMaterialRepository::MVMaterialRepository_GetMaterial
+                              (this_00,materialId,(MethodInfo *)0x0), pMVar8 == (MVMaterial *)0x0))
+      goto code_?;
+      bVar1 = 1;
+      if ((pMVar8->fields).isUnlocked == 0) {
+        pMVar7 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
+        if (((pMVar7 == (MVNetworkGame *)0x0) ||
+            (this_01 = (pMVar7->fields).playerContainer, this_01 == (MVPlayerContainer *)0x0)) ||
+           ((pMVar9 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer
+                                 (this_01,(MethodInfo *)0x0), pMVar9 == (MVLocalPlayer *)0x0 ||
+            (this_02 = (pMVar9->fields)._._SubscriptionRules_k__BackingField,
+            this_02 == (SubscriptionRulesWrapper *)0x0)))) goto code_?;
+        bVar1 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper::
+                 SubscriptionRulesWrapper_HasBenefit
+                           (this_02,SubscriptionBenefit__Enum_FreeBuildingMaterials,
+                            (MethodInfo *)0x0);
+      }
+      uVar10 = CubeModelingStateMachine::CubeModelingStateMachine_get_CurrentMaterialId
+                         (e,(MethodInfo *)0x0);
+      bVar11 = 0;
+      if (materialId != uVar10) {
+        bVar11 = bVar5;
+      }
+      if (bVar11 != 0) {
+        if (bVar1 == 0) {
+          pPVar12 = (this->fields).cursor;
+          if (pPVar12 == (PickColorCursor *)0x0) goto code_?;
+          bVar13 = cRam_? == '\0';
+          pCVar14 = (pPVar12->fields).paintCursor;
+          (pPVar12->fields).flashingTime = 1.0;
+          (pPVar12->fields).flashing = 1;
+          if (bVar13) {
+            FUN_?(&TypeInfo__PrefabPool);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
           }
-          pCVar12 = (pPVar8->fields).paintCursor;
-          if (pCVar9 == (CubePickingInfo *)0x0) {
-            if (pCVar12 != (CellCursor *)0x0) {
-              CellCursor::CellCursor_set_Active(pCVar12,0,(MethodInfo *)0x0);
-              return;
-            }
-          }
-          else if (pCVar12 != (CellCursor *)0x0) {
-            CellCursor::CellCursor_set_Active(pCVar12,1,(MethodInfo *)0x0);
-            if (bVar6 == (pPVar8->fields).currentMaterial) {
-code_?:
-              uVar14._0_2_ = (pCVar9->fields).iLocalPos.x;
-              uVar14._2_2_ = (pCVar9->fields).iLocalPos.y;
-              pCVar12 = (pPVar8->fields).paintCursor;
-              iVar15 = (pCVar9->fields).iLocalPos.z;
-              if ((pMVar10 != (MVCubeModelBase *)0x0) &&
-                 (cubeGameObject = (pMVar10->fields)._.gameObject, pCVar12 != (CellCursor *)0x0)) {
-                iLocalPos.z._1_1_ = (char)((ushort)(pCVar9->fields).iLocalPos.z >> 8);
-                iLocalPos._0_5_ = *(undefined5 *)&(pCVar9->fields).iLocalPos;
-                this_03 = CellCursor::CellCursor_GetCellCursor(pCVar12,iLocalPos,(MethodInfo *)0x0);
-                if (this_03 != (CellCursorCubeLineMesh *)0x0) {
-                  position.z._0_1_ = (char)iVar15;
-                  position.x = (short)uVar14;
-                  position.y = (short)((uint)uVar14 >> 0x10);
-                  position.z._1_1_ = (char)((ushort)iVar15 >> 8);
-                  CellCursorCubeLineMesh::CellCursorCubeLineMesh_SetCursorCube
-                            (this_03,position,cubeGameObject,(MethodInfo *)0x0);
-                  return;
-                }
-              }
-            }
-            else {
-              pCVar12 = (pPVar8->fields).paintCursor;
-              if (bVar6 == 0) {
-                if (cRam_? == '\0') {
-                  func_?(&TypeInfo__PrefabPool);
-                  cRam_? = '\x01';
-                }
-                pPVar13 = TypeInfo__PrefabPool->static_fields->instance;
-                if (pPVar13 != (PrefabPool *)0x0) {
-                  material = (pPVar13->fields).cellCursorErrorMaterial;
-                  goto code_?;
-                }
-              }
-              else {
-                if (cRam_? == '\0') {
-                  func_?(&TypeInfo__PrefabPool);
-                  cRam_? = '\x01';
-                }
-                pPVar13 = TypeInfo__PrefabPool->static_fields->instance;
-                if (pPVar13 != (PrefabPool *)0x0) {
-                  material = (pPVar13->fields).cellCursorMaterial;
-code_?:
-                  if (pCVar12 != (CellCursor *)0x0) {
-                    CellCursor::CellCursor_ChangeMaterial(pCVar12,material,(MethodInfo *)0x0);
-                    (pPVar8->fields).currentMaterial = bVar6;
-                    goto code_?;
-                  }
-                }
-              }
-            }
-          }
+          pPVar15 = TypeInfo__PrefabPool->static_fields->instance;
+          if ((pPVar15 == (PrefabPool *)0x0) || (pCVar14 == (CellCursor *)0x0))
+          goto code_?;
+          CellCursor::CellCursor_ChangeMaterial
+                    (pCVar14,(pPVar15->fields).cellCursorErrorMaterial,(MethodInfo *)0x0);
+          ModelCursor::ModelCursor_ShowUnlockMaterialNotification
+                    (1,NotificationLifetime__Enum_Low,(MethodInfo *)0x0);
+        }
+        else {
+          CubeModelingStateMachine::CubeModelingStateMachine_set_CurrentMaterialId
+                    (e,materialId,(MethodInfo *)0x0);
         }
       }
+    }
+  }
+  pPVar12 = (this->fields).cursor;
+  pCVar16 = (e->fields)._SelectedCube_k__BackingField;
+  pMVar17 = (e->fields)._TargetCubeModel_k__BackingField;
+  if (pPVar12 != (PickColorCursor *)0x0) {
+    if ((pPVar12->fields).flashing != 0) {
+      fVar18 = (pPVar12->fields).flashingTime;
+      if (0.0 < fVar18) {
+        (pPVar12->fields).flashingTime = fVar18 - _UNK_?;
+      }
       else {
-        pMVar16 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-        if ((pMVar16 != (MVNetworkGame *)0x0) &&
-           (this_00 = (pMVar16->fields)._MaterialRepository_k__BackingField,
-           this_00 != (MVMaterialRepository *)0x0)) {
-          pMVar17 = MVMaterialRepository::MVMaterialRepository_GetMaterial
-                              (this_00,materialId,(MethodInfo *)0x0);
-          if (pMVar17 != (MVMaterial *)0x0) {
-            if ((pMVar17->fields).isUnlocked != 0) {
-              uVar3 = CONCAT31((uint3)materialId,1);
-              value_00 = materialId;
-code_?:
-              if (cRam_? == '\0') {
-                func_?(&TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredByte);
-                cRam_? = '\x01';
-              }
-              value = (this_02->fields).currentMaterialId;
-              if ((TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredByte->_1).
-                  cctor_finished_or_no_cctor == 0) {
-                func_?(TypeInfo__CodeStage__AntiCheat__ObscuredTypes__ObscuredByte);
-              }
-              uVar18 = Assembly-CSharp-firstpass.dll::CodeStage::AntiCheat::ObscuredTypes::
-                       ObscuredByte::ObscuredByte_op_Implicit_1(value,(MethodInfo *)0x0);
-              uVar19 = 0;
-              if ((uint8_t)(uVar3 >> 8) != uVar18) {
-                uVar19 = (uint)e >> 0x18;
-              }
-              if (uVar19 != 0) {
-                if ((char)uVar3 == '\0') {
-                  pPVar8 = (this->fields).cursor;
-                  if (pPVar8 != (PickColorCursor *)0x0) {
-                    pCVar12 = (pPVar8->fields).paintCursor;
-                    (pPVar8->fields).flashingTime = 1.0;
-                    (pPVar8->fields).flashing = 1;
-                    if (cRam_? == '\0') {
-                      func_?(&TypeInfo__PrefabPool);
-                      cRam_? = '\x01';
-                    }
-                    pPVar13 = TypeInfo__PrefabPool->static_fields->instance;
-                    if ((pPVar13 != (PrefabPool *)0x0) && (pCVar12 != (CellCursor *)0x0)) {
-                      CellCursor::CellCursor_ChangeMaterial
-                                (pCVar12,(pPVar13->fields).cellCursorErrorMaterial,(MethodInfo *)0x0);
-                      ModelCursor::ModelCursor_ShowUnlockMaterialNotification
-                                (1,NotificationLifetime__Enum_Low,(MethodInfo *)0x0);
-                      goto code_?;
-                    }
-                  }
-                  goto code_?;
-                }
-                CubeModelingStateMachine::CubeModelingStateMachine_set_CurrentMaterialId
-                          (this_02,value_00,(MethodInfo *)0x0);
-              }
-code_?:
-              bVar6 = (bool)uVar3;
-              goto code_?;
-            }
-            pMVar16 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-            if (pMVar16 != (MVNetworkGame *)0x0) {
-              value_00 = 0x49;
-              pMVar20 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(pMVar16,(MethodInfo *)0x0);
-              if ((pMVar20 != (MVLocalPlayer *)0x0) &&
-                 (this_01 = (pMVar20->fields)._._SubscriptionRules_k__BackingField,
-                 this_01 != (SubscriptionRulesWrapper *)0x0)) {
-                e = (CubeModelingStateMachine *)0x0;
-                this = (ColorPicker *)0x4;
-                bVar6 = MVWorldObject.dll::MV::WorldObject::Subscription::SubscriptionRulesWrapper
-                         ::SubscriptionRulesWrapper_HasBenefit
-                                   (this_01,SubscriptionBenefit__Enum_FreeBuildingMaterials,
-                                    (MethodInfo *)0x0);
-                uVar3 = (uint)CONCAT11(materialId,bVar6);
-                goto code_?;
-              }
-            }
+        bVar13 = cRam_? == '\0';
+        pCVar14 = (pPVar12->fields).paintCursor;
+        (pPVar12->fields).flashing = 0;
+        if (bVar13) {
+          FUN_?(&TypeInfo__PrefabPool);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        pPVar15 = TypeInfo__PrefabPool->static_fields->instance;
+        if ((pPVar15 == (PrefabPool *)0x0) || (pCVar14 == (CellCursor *)0x0))
+        goto code_?;
+        CellCursor::CellCursor_ChangeMaterial
+                  (pCVar14,(pPVar15->fields).cellCursorMaterial,(MethodInfo *)0x0);
+      }
+    }
+    pCVar14 = (pPVar12->fields).paintCursor;
+    if (pCVar14 != (CellCursor *)0x0) {
+      if (pCVar16 == (CubePickingInfo *)0x0) {
+        CellCursor::CellCursor_set_Active(pCVar14,0,(MethodInfo *)0x0);
+        return;
+      }
+      CellCursor::CellCursor_set_Active(pCVar14,1,(MethodInfo *)0x0);
+      if (bVar1 != (pPVar12->fields).currentMaterial) {
+        pCVar14 = (pPVar12->fields).paintCursor;
+        lVar19 = FUN_?();
+        if (bVar1 == 0) {
+          if (lVar19 == 0) goto code_?;
+          material = *(Material **)(lVar19 + 0x528);
+        }
+        else {
+          if (lVar19 == 0) goto code_?;
+          material = *(Material **)(lVar19 + 0x530);
+        }
+        if (pCVar14 == (CellCursor *)0x0) goto code_?;
+        CellCursor::CellCursor_ChangeMaterial(pCVar14,material,(MethodInfo *)0x0);
+        (pPVar12->fields).currentMaterial = bVar1;
+      }
+      if (pMVar17 != (MVCubeModelBase *)0x0) {
+        pCVar14 = (pPVar12->fields).paintCursor;
+        cubeGameObject = (pMVar17->fields)._.gameObject;
+        if (pCVar14 != (CellCursor *)0x0) {
+          iVar20 = (pCVar16->fields).iLocalPos.z;
+          uVar21._0_2_ = (pCVar16->fields).iLocalPos.x;
+          uVar21._2_2_ = (pCVar16->fields).iLocalPos.y;
+          aIStack_22[0]._0_4_ = uVar21;
+          aIStack_22[0].z = iVar20;
+          this_03 = CellCursor::CellCursor_GetCellCursor(pCVar14,aIStack_22,(MethodInfo *)0x0);
+          if (this_03 != (CellCursorCubeLineMesh *)0x0) {
+            aIStack_22[0]._0_4_ = uVar21;
+            aIStack_22[0].z = iVar20;
+            CellCursorCubeLineMesh::CellCursorCubeLineMesh_SetCursorCube
+                      (this_03,aIStack_22,cubeGameObject,(MethodInfo *)0x0);
+            return;
           }
         }
       }
     }
   }
 code_?:
-  func_?();
-code_?:
-  func_?();
-  pcVar21 = (code *)swi(3);
-  (*pcVar21)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -273,7 +275,7 @@ void Assembly-CSharp.dll::ColorPicker::ColorPicker_Exit
                (ColorPicker *this,CubeModelingStateMachine *e,MethodInfo *method)
 
 {
-  (*(code *)(this->klass->vtable).HideCursor.method)(this,this->klass[1]._0.image);
+  (*(this->klass->vtable).HideCursor.methodPtr)(this,(this->klass->vtable).HideCursor.method);
   (this->fields).lastCubePicked = 0xff;
   return;
 }

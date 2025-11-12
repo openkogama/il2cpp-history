@@ -7,106 +7,156 @@ void Assembly-CSharp.dll::FlagHighScoreNotification::FlagHighScoreNotification_I
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action);
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&MethodInfo__FlagHighScoreNotification__DestroyNotification__);
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__System__String);
+    FUN_?(&TypeInfo__System__Action);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__FlagHighScoreNotification__DestroyNotification__);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  uStack_1 = (undefined *)CONCAT13(9,(undefined3)uStack_1);
-  pOVar2 = (Object *)func_?(TypeInfo__System__Byte,(int)&uStack_1 + 3);
+  pAVar1 = (Action *)0x0;
+  pOStackX_20 = (Object *)0x0;
+  auStackX_10[0] = 9;
+  pOVar2 = (Object *)FUN_?(uRam_?,auStackX_10);
   if ((data != (Dictionary_2_System_Object_System_Object_ *)0x0) &&
-     (TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,pOVar2
-                         ,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        ), TVar3.m_Index != 0)) {
-    if (*(Il2CppClass **)(*(int *)TVar3.m_Index + 0x20) !=
-        (TypeInfo__System__Int32->_0).element_class) goto code_?;
-    piVar4 = (int32_t *)func_?();
-    actorNr = *piVar4;
-    pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-    if ((pMVar5 != (MVNetworkGame *)0x0) &&
-       (this_00 = (pMVar5->fields).playerContainer, this_00 != (MVPlayerContainer *)0x0)) {
-      bVar6 = MVPlayerContainer::MVPlayerContainer_TryGetValue
-                        (this_00,actorNr,(MVPlayer **)&stack0xfffffff4,(MethodInfo *)0x0);
-      if (bVar6 == 0) {
-        return;
+     (pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                Object]::Dictionary_2_System_Object_System_Object__get_Item
+                          (data,pOVar2,
+                           MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                          ), pOVar2 != (Object *)0x0)) {
+    if ((pOVar2->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+      FUN_?(pOVar2);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
+    }
+    key = *(int32_t *)&pOVar2[1].klass;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar4 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if (((pMVar4 != (MVGameControllerBase *)0x0) &&
+        (pMVar5 = (pMVar4->fields).game, pMVar5 != (MVNetworkGame *)0x0)) &&
+       (pMVar6 = (pMVar5->fields).playerContainer, pMVar6 != (MVPlayerContainer *)0x0)) {
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__TryGetValue_int__MVPlayer__
+                     );
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
       }
-      pMVar7 = unaff_EBX[3].monitor;
-      unaff_EBX[3].klass = (Object__Class *)0x0;
-      pOVar2 = (Object *)func_?();
-      TVar3 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,pOVar2
-                         ,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        );
-      if (pMVar7 != (MonitorData *)0x0) {
-        TVar8.m_Index = 0;
-        if (TVar3.m_Index != 0) {
-          if (*(String__Class **)TVar3.m_Index == TypeInfo__System__String) {
-            TVar8 = TVar3;
-          }
-          if (TVar8.m_Index == 0) goto code_?;
+      this_00 = (pMVar6->fields).players;
+      if (this_00 != (Dictionary_2_System_Int32_MVPlayer_ *)0x0) {
+        bVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::
+                Object]::Dictionary_2_System_Int32_System_Object__TryGetValue
+                          ((Dictionary_2_System_Int32_System_Object_ *)this_00,key,&pOStackX_20,
+                           MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__TryGetValue_int__MVPlayer__
+                          );
+        if (bVar7 == 0) {
+          return;
         }
-        pMVar9 = *(MVPlayer **)(*(int *)pMVar7 + 0x31c);
-        (**(code **)(*(int *)pMVar7 + 0x318))(pMVar7,TVar8.m_Index);
-        if (((pMVar9 != (MVPlayer *)0x0) &&
-            (pUVar10 = (pMVar9->fields)._UserProfileData_k__BackingField,
-            pUVar10 != (UserProfileData *)0x0)) &&
-           (pOVar11 = unaff_EBX[4].klass, pOVar11 != (Object__Class *)0x0)) {
-          (*(code *)(pOVar11->_0).image[0x12].name)(pOVar11,(pUVar10->fields).UserName);
-          pMVar7 = unaff_EBX[4].monitor;
-          if (pMVar7 != (MonitorData *)0x0) {
-            *(undefined4 *)(pMVar7 + 0x24) = *(undefined4 *)(pMVar7 + 0x18);
-            pMVar7[0x1c] = (MonitorData)0x1;
-            if (*(CanvasGroup **)(pMVar7 + 0x10) != (CanvasGroup *)0x0) {
-              UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                        (*(CanvasGroup **)(pMVar7 + 0x10),0.0,(MethodInfo *)0x0);
-              *(undefined4 *)(pMVar7 + 0x20) = 0;
-              pMVar7 = unaff_EBX[4].monitor;
-              if (pMVar7 != (MonitorData *)0x0) {
-                pDVar12 = *(Delegate **)(pMVar7 + 0x2c);
-                this_01 = (NavMesh_OnNavMeshPreUpdate *)func_?();
-                UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
-                NavMesh_OnNavMeshPreUpdate__ctor
-                          (this_01,unaff_EBX,
-                           MethodInfo__FlagHighScoreNotification__DestroyNotification__,
-                           (MethodInfo *)0x0);
-                TVar3.m_Index =
-                     (int32_t)mscorlib.dll::System::Delegate::Delegate_Combine
-                                        (pDVar12,(Delegate *)this_01,(MethodInfo *)0x0);
-                if ((Delegate *)TVar3.m_Index == (Delegate *)0x0) {
-                  *(undefined4 *)(pMVar7 + 0x2c) = 0;
-                  func_?(pMVar7 + 0x2c);
-                  return;
-                }
-                pDVar12 = (Delegate *)0x0;
-                if ((Action__Class *)((Delegate *)TVar3.m_Index)->klass == TypeInfo__System__Action)
-                {
-                  pDVar12 = (Delegate *)TVar3.m_Index;
-                }
-                if (pDVar12 != (Delegate *)0x0) {
-                  *(Delegate **)(pMVar7 + 0x2c) = pDVar12;
-                  pDVar12 = (Delegate *)0x0;
-                  if ((Action__Class *)((Delegate *)TVar3.m_Index)->klass ==
-                      TypeInfo__System__Action) {
-                    pDVar12 = (Delegate *)TVar3.m_Index;
+        pTVar8 = (this->fields).timeText;
+        (this->fields)._.timeSinceStart = 0.0;
+        auStackX_10[0] = 1;
+        pOVar2 = (Object *)FUN_?(uRam_?,auStackX_10);
+        pAVar9 = (Action *)
+                  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+                  Object]::Dictionary_2_System_Object_System_Object__get_Item
+                            (data,pOVar2,
+                             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                            );
+        if (pTVar8 != (Text *)0x0) {
+          pAVar10 = pAVar1;
+          if (pAVar9 != (Action *)0x0) {
+            if (pAVar9->klass == pARam0000000182db2460) {
+              pAVar10 = pAVar9;
+            }
+            if (pAVar10 == (Action *)0x0) {
+              FUN_?(pAVar9,pARam0000000182db2460);
+              pcVar3 = (code *)swi(3);
+              (*pcVar3)();
+              return;
+            }
+          }
+          (*(pTVar8->klass->vtable).set_text.methodPtr)
+                    (pTVar8,pAVar10,(pTVar8->klass->vtable).set_text.method);
+          if (((pOStackX_20 != (Object *)0x0) && (pOStackX_20[7].klass != (Object__Class *)0x0)) &&
+             (pTVar8 = (this->fields).userNameText, pTVar8 != (Text *)0x0)) {
+            (*(pTVar8->klass->vtable).set_text.methodPtr)
+                      (pTVar8,((pOStackX_20[7].klass)->_0).namespaze);
+            pNVar11 = (this->fields).fader;
+            if (pNVar11 != (NotificationFade *)0x0) {
+              this_01 = (pNVar11->fields).group;
+              (pNVar11->fields).playing = 1;
+              (pNVar11->fields).pauseAt = (pNVar11->fields).duration;
+              if (this_01 != (CanvasGroup *)0x0) {
+                UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
+                          (this_01,0.0,(MethodInfo *)0x0);
+                (pNVar11->fields).currentTime = 0.0;
+                pNVar11 = (this->fields).fader;
+                if (pNVar11 != (NotificationFade *)0x0) {
+                  pAVar9 = (pNVar11->fields).OnFinished;
+                  this_02 = (NavMesh_OnNavMeshPreUpdate *)FUN_?(TypeInfo__System__Action);
+                  UnityEngine.AIModule.dll::UnityEngine::AI::NavMesh+OnNavMeshPreUpdate::
+                  NavMesh_OnNavMeshPreUpdate__ctor
+                            (this_02,(Object *)this,
+                             MethodInfo__FlagHighScoreNotification__DestroyNotification__,
+                             (MethodInfo *)0x0);
+                  pAVar9 = (Action *)
+                            mscorlib.dll::System::Delegate::Delegate_Combine
+                                      ((Delegate *)pAVar9,(Delegate *)this_02,(MethodInfo *)0x0);
+                  if (pAVar9 == (Action *)0x0) {
+                    (pNVar11->fields).OnFinished = (Action *)0x0;
                   }
-                  if (pDVar12 != (Delegate *)0x0) {
-                    func_?(pMVar7 + 0x2c);
+                  else {
+                    pAVar10 = pAVar1;
+                    if (pAVar9->klass == TypeInfo__System__Action) {
+                      pAVar10 = pAVar9;
+                    }
+                    if (pAVar10 == (Action *)0x0) {
+                      FUN_?(pAVar9);
+                      pcVar3 = (code *)swi(3);
+                      (*pcVar3)();
+                      return;
+                    }
+                    (pNVar11->fields).OnFinished = pAVar10;
+                    if (pAVar9->klass == TypeInfo__System__Action) {
+                      pAVar1 = pAVar9;
+                    }
+                    if (pAVar1 == (Action *)0x0) {
+                      FUN_?(pAVar9);
+                      pcVar3 = (code *)swi(3);
+                      (*pcVar3)();
+                      return;
+                    }
+                  }
+                  if (iRam_? == 0) {
                     return;
                   }
+                  uVar12 = (uint)((ulonglong)&(pNVar11->fields).OnFinished >> 0xc);
+                  uVar13 = (ulonglong)((uVar12 & 0x1fffff) >> 6);
+                  do {
+                    uVar14 = *(ulonglong *)(uVar13 * 8 + 0xADDR);
+                    puVar15 = (ulonglong *)(uVar13 * 8 + 0xADDR);
+                    LOCK();
+                    bVar16 = uVar14 == *puVar15;
+                    if (bVar16) {
+                      *puVar15 = uVar14 | 1L << (uVar12 & 0x3f);
+                    }
+                    UNLOCK();
+                  } while (!bVar16);
+                  return;
                 }
-                goto code_?;
               }
             }
           }
@@ -114,11 +164,9 @@ void Assembly-CSharp.dll::FlagHighScoreNotification::FlagHighScoreNotification_I
       }
     }
   }
-  TVar3.m_Index = func_?();
-code_?:
-  func_?(TVar3.m_Index);
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 

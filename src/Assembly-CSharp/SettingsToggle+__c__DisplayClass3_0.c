@@ -8,22 +8,23 @@ void Assembly-CSharp.dll::SettingsToggle+<>c__DisplayClass3_0::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Boolean);
-    func_?(&TypeInfo__UnityEngine__EventSystems__IHandleSettingChanged);
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IHandleSettingChanged);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pSVar1 = (this->fields).__4__this;
   if (pSVar1 != (SettingsToggle *)0x0) {
     pSVar2 = (pSVar1->fields).key;
-    this = (SettingsToggle_c_DisplayClass3_0 *)CONCAT13((this->fields).value,this._0_3_);
-    uVar3 = func_?(TypeInfo__System__Boolean,(int)&this + 3);
+    abStackX_8[0] = (this->fields).value;
+    uVar3 = FUN_?(uRam_?,abStackX_8);
     if (handler != (IHandleSettingChanged *)0x0) {
-      func_?(0,TypeInfo__UnityEngine__EventSystems__IHandleSettingChanged,handler,pSVar2,
-                      uVar3);
+      FUN_?(0,TypeInfo__UnityEngine__EventSystems__IHandleSettingChanged,handler,pSVar2,
+                    uVar3);
       return;
     }
   }
-  func_?();
+  FUN_?();
   pcVar4 = (code *)swi(3);
   (*pcVar4)();
   return;

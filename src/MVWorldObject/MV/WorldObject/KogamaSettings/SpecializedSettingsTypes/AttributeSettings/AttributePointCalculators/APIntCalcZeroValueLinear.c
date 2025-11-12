@@ -7,19 +7,21 @@ int32_t MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettingsT
 
 {
   iVar1 = i - this->zeroValue;
-  if ((float)iVar1 < _UNK_?) {
+  if ((float)iVar1 < 0.0) {
     this = (APIntCalcZeroValueLinear *)&this->exchangeRateNegative;
   }
   fVar2 = this->exchangeRatePositive;
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__System__Math);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__System__Math->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__System__Math->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  fVar3 = (float10)func_?((double)((float)iVar1 * fVar2));
-  return (int)fVar3;
+  dVar3 = (double)func_?((double)((float)iVar1 * fVar2));
+  return (int)dVar3;
 }
 
 
@@ -31,22 +33,31 @@ String * MVWorldObject.dll::MV::WorldObject::KogamaSettings::SpecializedSettings
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__System__Single);
-    func_?(&StringLiteral_APIntCalcZeroValueLinear__exchan);
+    FUN_?(&StringLiteral_APIntCalcZeroValueLinear__exchan);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pAVar1 = this;
-  this = (APIntCalcZeroValueLinear *)this->exchangeRatePositive;
-  arg0 = (Object *)func_?(TypeInfo__System__Single,&this);
-  fStack_2 = pAVar1->exchangeRateNegative;
-  arg1 = (Object *)func_?(TypeInfo__System__Single,&fStack_2);
-  iStack_3 = pAVar1->zeroValue;
-  arg2 = (Object *)func_?(TypeInfo__System__Int32,&iStack_3);
-  pSVar4 = mscorlib.dll::System::String::String_Format_2
-                     (StringLiteral_APIntCalcZeroValueLinear__exchan,arg0,arg1,arg2,
-                      (MethodInfo *)0x0);
-  return pSVar4;
+  afStackX_8[0] = this->exchangeRatePositive;
+  arg0 = (Object *)FUN_?(uRam_?,afStackX_8);
+  afStackX_8[0] = this->exchangeRateNegative;
+  arg1 = (Object *)FUN_?(uRam_?,afStackX_8);
+  afStackX_8[0] = (float)this->zeroValue;
+  arg2 = (Object *)FUN_?(uRam_?,afStackX_8);
+  pSVar1 = StringLiteral_APIntCalcZeroValueLinear__exchan;
+  PStack_2._arg0 = (Object *)0x0;
+  PStack_2._arg1 = (Object *)0x0;
+  PStack_2._arg2 = (Object *)0x0;
+  PStack_2._args = (Object__Array *)0x0;
+  mscorlib.dll::System::ParamsArray::ParamsArray__ctor_2
+            (&PStack_2,arg0,arg1,arg2,(MethodInfo *)0x0);
+  PStack_3._arg0 = PStack_2._arg0;
+  PStack_3._arg1 = PStack_2._arg1;
+  PStack_3._arg2 = PStack_2._arg2;
+  PStack_3._args = PStack_2._args;
+  pSVar1 = mscorlib.dll::System::String::String_FormatHelper
+                     ((IFormatProvider *)0x0,pSVar1,&PStack_3,(MethodInfo *)0x0);
+  return pSVar1;
 }
 
 

@@ -6,16 +6,13 @@ void Assembly-CSharp.dll::MVNetworkGame+EventHandling+<>c::
                (MVNetworkGame_EventHandling_c *this,MVWorldObjectClient *wo,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
   if (wo != (MVWorldObjectClient *)0x0) {
-    *(undefined4 *)&(wo->fields).interactionFlags = 0;
-    *(undefined4 *)((int)&(wo->fields).interactionFlags + 4) = 0;
+    (wo->fields).interactionFlags = 0;
     return;
   }
-  uVar2 = func_?(auStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 
@@ -27,15 +24,27 @@ void Assembly-CSharp.dll::MVNetworkGame+EventHandling+<>c::MVNetworkGame_EventHa
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVNetworkGame_EventHandling____c);
+    FUN_?(&TypeInfo__MVNetworkGame_EventHandling____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__MVNetworkGame_EventHandling____c;
-  value = (MVNetworkGame_EventHandling_c *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  TypeInfo__MVNetworkGame_EventHandling____c->static_fields->__9 = value;
-  func_?(TypeInfo__MVNetworkGame_EventHandling____c->static_fields,value);
+  pMVar1 = (MVNetworkGame_EventHandling_c *)
+           FUN_?(TypeInfo__MVNetworkGame_EventHandling____c);
+  TypeInfo__MVNetworkGame_EventHandling____c->static_fields->__9 = pMVar1;
+  if (iRam_? != 0) {
+    uVar2 = (uint)((ulonglong)TypeInfo__MVNetworkGame_EventHandling____c->static_fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 

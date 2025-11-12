@@ -6,70 +6,78 @@ bool Assembly-CSharp.dll::BrowserComm+JsonReturnData::BrowserComm_JsonReturnData
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&StringLiteral_package_does_not_contain_callbac);
-    func_?(&StringLiteral_package_does_not_contain_data);
-    func_?(&StringLiteral_JavaScript_externalCall_error__);
-    func_?(&StringLiteral_package_does_not_contain_data_or);
-    func_?(&StringLiteral_package_contains_both_data_and_e);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_package_does_not_contain_callbac);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_package_does_not_contain_data);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_JavaScript_externalCall_error__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_package_does_not_contain_data_or);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_package_contains_both_data_and_e);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if ((this->fields).callbackId == -1) {
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Debug);
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
               ((Object *)StringLiteral_package_does_not_contain_callbac,(MethodInfo *)0x0);
     return 0;
   }
-  bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty((this->fields).data,(MethodInfo *)0x0);
-  if (bVar1 != 0) {
-    bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty
-                      ((this->fields).error,(MethodInfo *)0x0);
-    if (bVar1 != 0) {
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+  pSVar1 = (this->fields).data;
+  if ((pSVar1 == (String *)0x0) || ((pSVar1->fields)._stringLength == 0)) {
+    pSVar1 = (this->fields).error;
+    if ((pSVar1 == (String *)0x0) || ((pSVar1->fields)._stringLength == 0)) {
+      if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+        FUN_?();
       }
       UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
                 ((Object *)StringLiteral_package_does_not_contain_data_or,(MethodInfo *)0x0);
       return 0;
     }
+    pSVar1 = (this->fields).data;
+    if ((pSVar1 == (String *)0x0) || ((pSVar1->fields)._stringLength == 0))
+    goto code_?;
   }
-  bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty((this->fields).data,(MethodInfo *)0x0);
-  if (bVar1 == 0) {
-    bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty
-                      ((this->fields).error,(MethodInfo *)0x0);
-    if (bVar1 == 0) {
-      if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-                ((Object *)StringLiteral_package_contains_both_data_and_e,(MethodInfo *)0x0);
-    }
-  }
-  bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty((this->fields).error,(MethodInfo *)0x0)
-  ;
-  if (bVar1 != 0) {
-    bVar1 = mscorlib.dll::System::String::String_IsNullOrEmpty
-                      ((this->fields).data,(MethodInfo *)0x0);
-    if (bVar1 == 0) {
-      return 1;
-    }
-    if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+  pSVar1 = (this->fields).error;
+  if ((pSVar1 != (String *)0x0) && ((pSVar1->fields)._stringLength != 0)) {
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
     }
     UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-              ((Object *)StringLiteral_package_does_not_contain_data,(MethodInfo *)0x0);
+              ((Object *)StringLiteral_package_contains_both_data_and_e,(MethodInfo *)0x0);
+  }
+code_?:
+  pSVar1 = (this->fields).error;
+  if ((pSVar1 != (String *)0x0) && ((pSVar1->fields)._stringLength != 0)) {
+    pSVar1 = mscorlib.dll::System::String::String_Concat_4
+                       (StringLiteral_JavaScript_externalCall_error__,pSVar1,(MethodInfo *)0x0);
+    if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
+              ((Object *)pSVar1,(MethodInfo *)0x0);
     return 0;
   }
-  message = mscorlib.dll::System::String::String_Concat_3
-                      (StringLiteral_JavaScript_externalCall_error__,(this->fields).error,
-                       (MethodInfo *)0x0);
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  pSVar1 = (this->fields).data;
+  if ((pSVar1 != (String *)0x0) && ((pSVar1->fields)._stringLength != 0)) {
+    return 1;
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_LogError
-            ((Object *)message,(MethodInfo *)0x0);
+            ((Object *)StringLiteral_package_does_not_contain_data,(MethodInfo *)0x0);
   return 0;
 }
 

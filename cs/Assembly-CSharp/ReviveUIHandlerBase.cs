@@ -17,9 +17,9 @@ public abstract class ReviveUIHandlerBase : MonoBehaviour
 {
 	// Fields
 	[SerializeField]
-	protected Button continueButton;
+	protected UnityEngine.UI.Button continueButton;
 	[SerializeField]
-	protected Button declineButton;
+	protected UnityEngine.UI.Button declineButton;
 	[SerializeField]
 	private Image timerFill;
 	[SerializeField]

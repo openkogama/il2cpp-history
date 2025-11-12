@@ -29,7 +29,7 @@ public class SoundViewItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 	[SerializeField]
 	private GameObject loadingWheel;
 	[SerializeField]
-	private Button buttonComponent;
+	private UnityEngine.UI.Button buttonComponent;
 	private UnityAction<string> setNewOriginalUrl;
 	private string originalUrl;
 	private bool doneLoading;

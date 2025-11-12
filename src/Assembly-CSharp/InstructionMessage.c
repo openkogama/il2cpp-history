@@ -7,80 +7,104 @@ void Assembly-CSharp.dll::InstructionMessage::InstructionMessage_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&TypeInfo__NotificationLifetime);
-    func_?(&TypeInfo__System__String);
-    func_?(&StringLiteral_Initialize);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationLifetime);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Initialize);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = data;
-  pIVar1 = this;
-  Notification::Notification_Initialize((Notification *)this,data,(MethodInfo *)0x0);
-  pTVar2 = (pIVar1->fields).text;
-  data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(1,data._0_3_);
-  pOVar3 = (Object *)func_?(TypeInfo__System__Byte,(int)&data + 3);
-  if (this_00 != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,
-                       pOVar3,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    if (pTVar2 != (Text *)0x0) {
-      if (TVar4.m_Index != 0) {
-        TVar5.m_Index = 0;
-        if (*(String__Class **)TVar4.m_Index == TypeInfo__System__String) {
-          TVar5 = TVar4;
+  pTVar1 = (this->fields).text;
+  (this->fields)._.timeSinceStart = 0.0;
+  auStackX_8[0] = 1;
+  pOVar2 = (Object *)FUN_?(uRam_?,auStackX_8);
+  if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
+    pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (data,pOVar2,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if (pTVar1 != (Text *)0x0) {
+      pOVar3 = (Object *)0x0;
+      if (pOVar2 != (Object *)0x0) {
+        if (pOVar2->klass == pORam0000000182db2460) {
+          pOVar3 = pOVar2;
         }
-        this = (InstructionMessage *)TypeInfo__System__String;
-        if (TVar5.m_Index == 0) goto code_?;
-      }
-      this = (InstructionMessage *)
-             (pTVar2->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr;
-      (*(code *)(pTVar2->klass->vtable).set_text.method)(pTVar2);
-      (pIVar1->fields).currentTime = 0.0;
-      this = (InstructionMessage *)CONCAT13(2,this._0_3_);
-      pOVar3 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
-      TVar4 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_00,
-                         pOVar3,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        );
-      if (TVar4.m_Index != 0) {
-        this = (InstructionMessage *)TypeInfo__NotificationLifetime;
-        if (*(Il2CppClass **)(*(int *)TVar4.m_Index + 0x20) ==
-            (TypeInfo__NotificationLifetime->_0).element_class) {
-          this = (InstructionMessage *)TVar4;
-          piVar6 = (int32_t *)func_?();
-          (pIVar1->fields).lifeTime = *piVar6;
-          if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-            method = (MethodInfo *)&UNK_?;
-            func_?();
-          }
-          method = (MethodInfo *)StringLiteral_Initialize;
-          data = (Dictionary_2_System_Object_System_Object_ *)&UNK_?;
-          UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
-                    ((Object *)StringLiteral_Initialize,(MethodInfo *)0x0);
+        if (pOVar3 == (Object *)0x0) {
+          FUN_?(pOVar2,pORam0000000182db2460);
+          pcVar4 = (code *)swi(3);
+          (*pcVar4)();
           return;
         }
-        goto code_?;
+      }
+      (*(pTVar1->klass->vtable).set_text.methodPtr)
+                (pTVar1,pOVar3,(pTVar1->klass->vtable).set_text.method);
+      (this->fields).currentTime = 0.0;
+      auStackX_8[0] = 2;
+      pOVar2 = (Object *)FUN_?(uRam_?,auStackX_8);
+      pOVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__get_Item
+                         (data,pOVar2,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         );
+      if (pOVar2 != (Object *)0x0) {
+        if ((pOVar2->klass->_0).element_class != (TypeInfo__NotificationLifetime->_0).element_class)
+        {
+          FUN_?(pOVar2,TypeInfo__NotificationLifetime);
+          pcVar4 = (code *)swi(3);
+          (*pcVar4)();
+          return;
+        }
+        (this->fields).lifeTime = *(int32_t *)&pOVar2[1].klass;
+        if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pSVar5 = StringLiteral_Initialize;
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Debug,0);
+          LOCK();
+          UNLOCK();
+          FUN_?(&TypeInfo__UnityEngine__ILogger);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if (cRam_? == '\0') {
+          FUN_?(&TypeInfo__UnityEngine__Debug);
+          LOCK();
+          UNLOCK();
+          cRam_? = '\x01';
+        }
+        if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pIVar6 = TypeInfo__UnityEngine__Debug->static_fields->s_Logger;
+        if (pIVar6 != (ILogger_1 *)0x0) {
+          FUN_?(6,TypeInfo__UnityEngine__ILogger,pIVar6,3,pSVar5);
+          return;
+        }
+        FUN_?();
+        pcVar4 = (code *)swi(3);
+        (*pcVar4)();
+        return;
       }
     }
   }
-  this = (InstructionMessage *)&UNK_?;
-  func_?();
-  this = (InstructionMessage *)extraout_EDX;
-code_?:
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  FUN_?();
+  pcVar4 = (code *)swi(3);
+  (*pcVar4)();
   return;
 }
 
@@ -91,25 +115,58 @@ void Assembly-CSharp.dll::InstructionMessage::InstructionMessage_OnEnable
                (InstructionMessage *this,MethodInfo *method)
 
 {
-  this_00 = (this->fields).canvasGroup;
-  this_01 = (this->fields).fadeCurve;
-  if (this_01 != (AnimationCurve *)0x0) {
-    pKVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_GetKeys
-                       (this_01,(MethodInfo *)0x0);
-    if (pKVar1 != (Keyframe__Array *)0x0) {
-      if (pKVar1->max_length == 0) goto code_?;
-      value = mscorlib.dll::System::Nullable`1[Single]::Nullable_1_Single__GetValueOrDefault
-                        ((Nullable_1_Single_ *)pKVar1->vector,(MethodInfo *)0x0);
-      if (this_00 != (CanvasGroup *)0x0) {
-        UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                  (this_00,value,(MethodInfo *)0x0);
+  obj = (this->fields).canvasGroup;
+  this_00 = (this->fields).fadeCurve;
+  if ((this_00 != (AnimationCurve *)0x0) &&
+     (pKVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_get_keys
+                         (this_00,(MethodInfo *)0x0), pKVar1 != (Keyframe__Array *)0x0)) {
+    if ((int)pKVar1->max_length == 0) {
+      FUN_?();
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    if (obj != (CanvasGroup *)0x0) {
+      fVar3 = pKVar1->vector[0].m_Value;
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::CanvasGroup>_UnityEngine__CanvasGroup_
+                      ,fVar3,0);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (obj == (CanvasGroup *)0x0) {
+        FUN_?();
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
         return;
       }
+      pvVar4 = (obj->fields)._._._.m_CachedPtr;
+      if (pvVar4 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcVar2 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+        uVar5 = func_?(&UNK_?);
+        FUN_?(uVar5,0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcRam_? = pcVar2;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*pcRam_?)(pvVar4,fVar3);
+      return;
     }
   }
-  func_?();
-code_?:
-  func_?();
+  FUN_?();
   pcVar2 = (code *)swi(3);
   (*pcVar2)();
   return;
@@ -124,26 +181,87 @@ void Assembly-CSharp.dll::InstructionMessage::InstructionMessage_Update
 {
   Notification::Notification_Update((Notification *)this,(MethodInfo *)0x0);
   fVar1 = (this->fields).currentTime;
-  fVar2 = UnityEngine.CoreModule.dll::UnityEngine::Time::Time_1_get_deltaTime((MethodInfo *)0x0);
-  fVar2 = fVar2 + fVar1;
-  pIVar3 = this->klass;
-  this_00 = (this->fields).canvasGroup;
-  this_01 = (this->fields).fadeCurve;
-  (this->fields).currentTime = fVar2;
-  iVar4 = (*(code *)(pIVar3->vtable).get_Lifetime.method)
-                    (this,(pIVar3->vtable).Initialize.methodPtr);
-  if (this_01 != (AnimationCurve *)0x0) {
-    fVar1 = UnityEngine.CoreModule.dll::UnityEngine::AnimationCurve::AnimationCurve_Evaluate
-                      (this_01,fVar2 / (float)iVar4,(MethodInfo *)0x0);
-    if (this_00 != (CanvasGroup *)0x0) {
-      UnityEngine.UIModule.dll::UnityEngine::CanvasGroup::CanvasGroup_set_alpha
-                (this_00,fVar1,(MethodInfo *)0x0);
+  pcVar2 = pcRam_?;
+  if ((pcRam_? == (code *)0x0) &&
+     (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+    uVar3 = func_?(&UNK_?);
+    FUN_?(uVar3,0);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  pcRam_? = pcVar2;
+  uVar3 = CONCAT44(unaff_XMM6_Db,unaff_XMM6_Da);
+  uVar4 = CONCAT44(unaff_XMM6_Dd,unaff_XMM6_Dc);
+  fVar5 = (float)(*pcRam_?)();
+  pIVar6 = this->klass;
+  obj = (this->fields).canvasGroup;
+  fVar5 = fVar5 + fVar1;
+  obj_00 = (this->fields).fadeCurve;
+  (this->fields).currentTime = fVar5;
+  iVar7 = (*(pIVar6->vtable).get_Lifetime.methodPtr)(this);
+  if (obj_00 != (AnimationCurve *)0x0) {
+    pvVar8 = (obj_00->fields).m_Ptr;
+    if (pvVar8 == (void *)0x0) {
+      UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+      ThrowHelper_2_ThrowNullReferenceException((Object *)obj_00,(MethodInfo *)0x0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcVar2 = pcRam_?;
+    if ((pcRam_? == (code *)0x0) &&
+       (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+      uVar3 = func_?(&UNK_?);
+      FUN_?(uVar3,0);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
+      return;
+    }
+    pcRam_? = pcVar2;
+    uVar9 = (*pcRam_?)(pvVar8,fVar5 / (float)iVar7);
+    if (obj != (CanvasGroup *)0x0) {
+      if (cRam_? == '\0') {
+        FUN_?(&
+                      void__MethodInfo__UnityEngine__Object__MarshalledUnityObject__MarshalNotNull<UnityEngine::CanvasGroup>_UnityEngine__CanvasGroup_
+                      ,uVar9,0,in_R9,uVar3,uVar4,unaff_RBX);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (obj == (CanvasGroup *)0x0) {
+        FUN_?();
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pvVar8 = (obj->fields)._._._.m_CachedPtr;
+      if (pvVar8 == (void *)0x0) {
+        UnityEngine.CoreModule.dll::UnityEngine::Bindings::ThrowHelper::
+        ThrowHelper_2_ThrowNullReferenceException((Object *)obj,(MethodInfo *)0x0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcVar2 = pcRam_?;
+      if ((pcRam_? == (code *)0x0) &&
+         (pcVar2 = (code *)FUN_?(&UNK_?), pcVar2 == (code *)0x0)) {
+        uVar3 = func_?(&UNK_?);
+        FUN_?(uVar3,0);
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
+        return;
+      }
+      pcRam_? = pcVar2;
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*pcRam_?)(pvVar8,uVar9);
       return;
     }
   }
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 

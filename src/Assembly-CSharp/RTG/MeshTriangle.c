@@ -1,4 +1,27 @@
 
+/* Int32 GetVertIndex(Int32) */
+
+int32_t Assembly-CSharp.dll::RTG::MeshTriangle::MeshTriangle_GetVertIndex
+                  (MeshTriangle *this,int32_t arrayIndex,MethodInfo *method)
+
+{
+  pIVar1 = (this->fields)._vertIndices;
+  if (pIVar1 == (Int32__Array *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    iVar3 = (*pcVar2)();
+    return iVar3;
+  }
+  if ((uint)arrayIndex < (uint)pIVar1->max_length) {
+    return pIVar1->vector[arrayIndex];
+  }
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  iVar3 = (*pcVar2)();
+  return iVar3;
+}
+
+
 /* MeshTriangle(Vector3[], Int32, Int32, Int32, Int32) */
 
 void Assembly-CSharp.dll::RTG::MeshTriangle::MeshTriangle__ctor
@@ -7,81 +30,122 @@ void Assembly-CSharp.dll::RTG::MeshTriangle::MeshTriangle__ctor
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__System__Int32);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_EDI);
   if (vertices != (Vector3__Array *)0x0) {
-    pOVar1 = UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::
-             PlayableBehaviour_Clone((PlayableBehaviour *)vertices,(MethodInfo *)0x0);
-    pVVar2 = (Vector3__Array *)func_?(pOVar1,TypeInfo__UnityEngine__Vector3);
+    uVar1 = FUN_?(vertices);
+    pVVar2 = (Vector3__Array *)FUN_?(uVar1,TypeInfo__UnityEngine__Vector3);
     (this->fields)._vertices = pVVar2;
-    uVar3 = func_?(pOVar1,TypeInfo__UnityEngine__Vector3);
-    func_?(&this->fields,uVar3);
+    FUN_?(uVar1,TypeInfo__UnityEngine__Vector3);
+    if (iRam_? != 0) {
+      uVar3 = (uint)((ulonglong)&this->fields >> 0xc);
+      uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+      do {
+        uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+        puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar5 == *puVar6;
+        if (bVar7) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
     (this->fields)._triangleIndex = triangleIndex;
-    pIVar4 = (Int32__Array *)func_?(TypeInfo__System__Int32,3);
-    (this->fields)._vertIndices = pIVar4;
-    func_?(&(this->fields)._vertIndices,pIVar4);
-    pIVar4 = (this->fields)._vertIndices;
-    if (pIVar4 != (Int32__Array *)0x0) {
-      if (pIVar4->max_length == 0) goto code_?;
-      pIVar4->vector[0] = vertIndex0;
-      pIVar4 = (this->fields)._vertIndices;
-      if (pIVar4 != (Int32__Array *)0x0) {
-        if (pIVar4->max_length < 2) goto code_?;
-        pIVar4->vector[1] = vertIndex1;
-        pIVar4 = (this->fields)._vertIndices;
-        if (pIVar4 != (Int32__Array *)0x0) {
-          if (pIVar4->max_length < 3) goto code_?;
-          pIVar4->vector[2] = vertIndex2;
-          pVVar2 = (this->fields)._vertices;
-          if (pVVar2 != (Vector3__Array *)0x0) {
-            if (pVVar2->max_length < 2) goto code_?;
-            VStack_5.x = pVVar2->vector[0].x;
-            VStack_5.y = pVVar2->vector[0].y;
-            VStack_5.z = pVVar2->vector[0].z;
-            uStack_6._0_4_ = pVVar2->vector[1].x;
-            uStack_6._4_4_ = pVVar2->vector[1].y;
-            fStack_7 = pVVar2->vector[1].z;
-            fVar8 = (float)(undefined4)uStack_6 - VStack_5.x;
-            fVar9 = (float)uStack_6._4_4_ - VStack_5.y;
-            fVar10 = fStack_7 - VStack_5.z;
-            if (pVVar2 != (Vector3__Array *)0x0) {
-              if (2 < pVVar2->max_length) {
-                uStack_6._0_4_ = pVVar2->vector[0].x;
-                uStack_6._4_4_ = pVVar2->vector[0].y;
-                fStack_7 = pVVar2->vector[0].z;
-                VStack_5.x = pVVar2->vector[2].x;
-                VStack_5.y = pVVar2->vector[2].y;
-                fVar11 = pVVar2->vector[2].z - fStack_7;
-                VStack_5.z = fVar8 * (VStack_5.y - (float)uStack_6._4_4_) -
-                              fVar9 * (VStack_5.x - (float)(undefined4)uStack_6);
-                value.y = fVar10 * (VStack_5.x - (float)(undefined4)uStack_6) - fVar8 * fVar11;
-                value.x = fVar9 * fVar11 - fVar10 * (VStack_5.y - (float)uStack_6._4_4_);
-                value.z = VStack_5.z;
-                pVVar12 = UnityEngine.CoreModule.dll::UnityEngine::Vector3::Vector3_Normalize
-                                   (&VStack_5,value,(MethodInfo *)0x0);
-                fVar10 = pVVar12->y;
-                fVar8 = pVVar12->z;
-                (this->fields)._normal.x = pVVar12->x;
-                (this->fields)._normal.y = fVar10;
-                (this->fields)._normal.z = fVar8;
+    pIVar8 = (Int32__Array *)FUN_?(TypeInfo__System__Int32,3);
+    bVar7 = iRam_? != 0;
+    (this->fields)._vertIndices = pIVar8;
+    if (bVar7) {
+      uVar3 = (uint)((ulonglong)&(this->fields)._vertIndices >> 0xc);
+      uVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6);
+      do {
+        uVar5 = *(ulonglong *)(uVar4 * 8 + 0xADDR);
+        puVar6 = (ulonglong *)(uVar4 * 8 + 0xADDR);
+        LOCK();
+        bVar7 = uVar5 == *puVar6;
+        if (bVar7) {
+          *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar7);
+    }
+    pIVar8 = (this->fields)._vertIndices;
+    if (pIVar8 != (Int32__Array *)0x0) {
+      if ((int)pIVar8->max_length != 0) {
+        pIVar8->vector[0] = vertIndex0;
+        pIVar8 = (this->fields)._vertIndices;
+        if (pIVar8 == (Int32__Array *)0x0) goto DAT_?;
+        if (1 < (uint)pIVar8->max_length) {
+          pIVar8->vector[1] = vertIndex1;
+          pIVar8 = (this->fields)._vertIndices;
+          if (pIVar8 == (Int32__Array *)0x0) goto DAT_?;
+          if (2 < (uint)pIVar8->max_length) {
+            pIVar8->vector[2] = vertIndex2;
+            pVVar2 = (this->fields)._vertices;
+            if (pVVar2 == (Vector3__Array *)0x0) goto DAT_?;
+            if (1 < (uint)pVVar2->max_length) {
+              uVar9 = pVVar2->vector[1].x;
+              uVar10 = pVVar2->vector[1].y;
+              uStack_11._0_4_ = pVVar2->vector[0].x;
+              uStack_11._4_4_ = pVVar2->vector[0].y;
+              fVar12 = pVVar2->vector[1].z - pVVar2->vector[0].z;
+              if (pVVar2 == (Vector3__Array *)0x0) goto DAT_?;
+              if (2 < (uint)pVVar2->max_length) {
+                uVar13 = pVVar2->vector[2].x;
+                uVar14 = pVVar2->vector[2].y;
+                fVar15 = pVVar2->vector[2].z - pVVar2->vector[0].z;
+                fVar16 = ((float)uVar10 - (float)uStack_11._4_4_) * fVar15 -
+                         ((float)uVar14 - (float)uStack_11._4_4_) * fVar12;
+                fVar17 = ((float)uVar14 - (float)uStack_11._4_4_) *
+                         ((float)uVar9 - (float)(undefined4)uStack_11) -
+                         ((float)uVar13 - (float)(undefined4)uStack_11) *
+                         ((float)uVar10 - (float)uStack_11._4_4_);
+                fVar15 = ((float)uVar13 - (float)(undefined4)uStack_11) * fVar12 -
+                         ((float)uVar9 - (float)(undefined4)uStack_11) * fVar15;
+                uStack_11 = CONCAT44(fVar15,fVar16);
+                fStack_18 = fVar17;
+                fVar12 = (float)FUN_?(&uStack_11);
+                if (_UNK_? < fVar12) {
+                  fVar17 = fVar17 / fVar12;
+                  uVar1 = CONCAT44(fVar15 / fVar12,fVar16 / fVar12);
+                }
+                else {
+                  if (cRam_? == '\0') {
+                    FUN_?(&TypeInfo__UnityEngine__Vector3);
+                    LOCK();
+                    UNLOCK();
+                    cRam_? = '\x01';
+                  }
+                  pVVar19 = TypeInfo__UnityEngine__Vector3->static_fields;
+                  uVar1._0_4_ = (pVVar19->zeroVector).x;
+                  uVar1._4_4_ = (pVVar19->zeroVector).y;
+                  fVar17 = (pVVar19->zeroVector).z;
+                }
+                (this->fields)._normal.x = (float)(int)uVar1;
+                (this->fields)._normal.y = (float)(int)((ulonglong)uVar1 >> 0x20);
+                (this->fields)._normal.z = fVar17;
                 return;
               }
-              goto code_?;
             }
           }
         }
       }
+      FUN_?();
+      pcVar20 = (code *)swi(3);
+      (*pcVar20)();
+      return;
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+DAT_?:
+  FUN_?();
+  pcVar20 = (code *)swi(3);
+  (*pcVar20)();
   return;
 }
 
@@ -92,24 +156,20 @@ int32_t Assembly-CSharp.dll::RTG::MeshTriangle::MeshTriangle_get_VertIndex0
                   (MeshTriangle *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pIVar2 = (this->fields)._vertIndices;
-  if (pIVar2 == (Int32__Array *)0x0) {
-    uVar3 = func_?(&puStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    iVar6 = (*pcVar5)();
-    return iVar6;
+  pIVar1 = (this->fields)._vertIndices;
+  if (pIVar1 == (Int32__Array *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    iVar3 = (*pcVar2)();
+    return iVar3;
   }
-  if (pIVar2->max_length != 0) {
-    return pIVar2->vector[0];
+  if ((int)pIVar1->max_length != 0) {
+    return pIVar1->vector[0];
   }
-  puStack_1 = (undefined1 *)0x0;
-  puStack_7 = (undefined *)func_?();
-  func_?();
-  pcVar5 = (code *)swi(3);
-  iVar6 = (*pcVar5)();
-  return iVar6;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  iVar3 = (*pcVar2)();
+  return iVar3;
 }
 
 
@@ -119,24 +179,20 @@ int32_t Assembly-CSharp.dll::RTG::MeshTriangle::MeshTriangle_get_VertIndex1
                   (MeshTriangle *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pIVar2 = (this->fields)._vertIndices;
-  if (pIVar2 == (Int32__Array *)0x0) {
-    uVar3 = func_?(&puStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    iVar6 = (*pcVar5)();
-    return iVar6;
+  pIVar1 = (this->fields)._vertIndices;
+  if (pIVar1 == (Int32__Array *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    iVar3 = (*pcVar2)();
+    return iVar3;
   }
-  if (1 < pIVar2->max_length) {
-    return pIVar2->vector[1];
+  if (1 < (uint)pIVar1->max_length) {
+    return pIVar1->vector[1];
   }
-  puStack_1 = (undefined1 *)0x0;
-  puStack_7 = (undefined *)func_?();
-  func_?();
-  pcVar5 = (code *)swi(3);
-  iVar6 = (*pcVar5)();
-  return iVar6;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  iVar3 = (*pcVar2)();
+  return iVar3;
 }
 
 
@@ -146,24 +202,20 @@ int32_t Assembly-CSharp.dll::RTG::MeshTriangle::MeshTriangle_get_VertIndex2
                   (MeshTriangle *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pIVar2 = (this->fields)._vertIndices;
-  if (pIVar2 == (Int32__Array *)0x0) {
-    uVar3 = func_?(&puStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    iVar6 = (*pcVar5)();
-    return iVar6;
+  pIVar1 = (this->fields)._vertIndices;
+  if (pIVar1 == (Int32__Array *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    iVar3 = (*pcVar2)();
+    return iVar3;
   }
-  if (2 < pIVar2->max_length) {
-    return pIVar2->vector[2];
+  if (2 < (uint)pIVar1->max_length) {
+    return pIVar1->vector[2];
   }
-  puStack_1 = (undefined1 *)0x0;
-  puStack_7 = (undefined *)func_?();
-  func_?();
-  pcVar5 = (code *)swi(3);
-  iVar6 = (*pcVar5)();
-  return iVar6;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  iVar3 = (*pcVar2)();
+  return iVar3;
 }
 
 
@@ -175,21 +227,41 @@ Assembly-CSharp.dll::RTG::MeshTriangle::MeshTriangle_get_VertIndices
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__System__Int32);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pIVar1 = (this->fields)._vertIndices;
-  if (pIVar1 != (Int32__Array *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::PlayableBehaviour_Clone
-              ((PlayableBehaviour *)pIVar1,(MethodInfo *)0x0);
-    pIVar1 = (Int32__Array *)func_?();
-    return pIVar1;
+  if ((this->fields)._vertIndices == (Int32__Array *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    pIVar2 = (Int32__Array *)(*pcVar1)();
+    return pIVar2;
   }
-  uVar2 = func_?(&puStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  pIVar1 = (Int32__Array *)(*pcVar4)();
-  return pIVar1;
+  pIVar2 = (Int32__Array *)FUN_?();
+  pIVar3 = TypeInfo__System__Int32;
+  if (pIVar2 != (Int32__Array *)0x0) {
+    pIVar4 = pIVar2->klass;
+    cVar5 = FUN_?(TypeInfo__System__Int32,pIVar4);
+    if (cVar5 != '\0') {
+      return pIVar2;
+    }
+    if (((pIVar4->_1).field_0x6e & 0x10) != 0) {
+      if ((((((pIVar3->_1).token & 0x20) != 0) || ((pIVar3->_0).byval_arg.type == 0x13)) ||
+          ((pIVar3->_0).byval_arg.type == 0x1e)) &&
+         ((((pIVar3->_0).interopData != (Il2CppInteropData *)0x0 &&
+           (((pIVar3->_0).interopData)->guid != (Il2CppGuid *)0x0)) &&
+          (lVar6 = FUN_?(pIVar2), lVar6 != 0)))) {
+        return pIVar2;
+      }
+      pIVar7 = (Int32__Array *)0x0;
+      if (pIVar3 == pIRam0000000182db23e0) {
+        pIVar7 = pIVar2;
+      }
+      return pIVar7;
+    }
+  }
+  return (Int32__Array *)0x0;
 }
 
 
@@ -199,29 +271,25 @@ Vector3 * Assembly-CSharp.dll::RTG::MeshTriangle::MeshTriangle_get_Vertex0
                     (Vector3 *__return_storage_ptr__,MeshTriangle *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pVVar2 = (this->fields)._vertices;
-  if (pVVar2 == (Vector3__Array *)0x0) {
-    uVar3 = func_?(&puStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    pVVar6 = (Vector3 *)(*pcVar5)();
-    return pVVar6;
+  pVVar1 = (this->fields)._vertices;
+  if (pVVar1 == (Vector3__Array *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    pVVar3 = (Vector3 *)(*pcVar2)();
+    return pVVar3;
   }
-  if (pVVar2->max_length != 0) {
-    fVar7 = pVVar2->vector[0].y;
-    fVar8 = pVVar2->vector[0].z;
-    __return_storage_ptr__->x = pVVar2->vector[0].x;
-    __return_storage_ptr__->y = fVar7;
-    __return_storage_ptr__->z = fVar8;
+  if ((int)pVVar1->max_length != 0) {
+    fVar4 = pVVar1->vector[0].y;
+    fVar5 = pVVar1->vector[0].z;
+    __return_storage_ptr__->x = pVVar1->vector[0].x;
+    __return_storage_ptr__->y = fVar4;
+    __return_storage_ptr__->z = fVar5;
     return __return_storage_ptr__;
   }
-  puStack_1 = (undefined1 *)0x0;
-  puStack_9 = (undefined *)func_?();
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pVVar6 = (Vector3 *)(*pcVar5)();
-  return pVVar6;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  pVVar3 = (Vector3 *)(*pcVar2)();
+  return pVVar3;
 }
 
 
@@ -231,29 +299,25 @@ Vector3 * Assembly-CSharp.dll::RTG::MeshTriangle::MeshTriangle_get_Vertex1
                     (Vector3 *__return_storage_ptr__,MeshTriangle *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pVVar2 = (this->fields)._vertices;
-  if (pVVar2 == (Vector3__Array *)0x0) {
-    uVar3 = func_?(&puStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    pVVar6 = (Vector3 *)(*pcVar5)();
-    return pVVar6;
+  pVVar1 = (this->fields)._vertices;
+  if (pVVar1 == (Vector3__Array *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    pVVar3 = (Vector3 *)(*pcVar2)();
+    return pVVar3;
   }
-  if (1 < pVVar2->max_length) {
-    fVar7 = pVVar2->vector[1].y;
-    fVar8 = pVVar2->vector[1].z;
-    __return_storage_ptr__->x = pVVar2->vector[1].x;
-    __return_storage_ptr__->y = fVar7;
-    __return_storage_ptr__->z = fVar8;
+  if (1 < (uint)pVVar1->max_length) {
+    fVar4 = pVVar1->vector[1].y;
+    fVar5 = pVVar1->vector[1].z;
+    __return_storage_ptr__->x = pVVar1->vector[1].x;
+    __return_storage_ptr__->y = fVar4;
+    __return_storage_ptr__->z = fVar5;
     return __return_storage_ptr__;
   }
-  puStack_1 = (undefined1 *)0x0;
-  puStack_9 = (undefined *)func_?();
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pVVar6 = (Vector3 *)(*pcVar5)();
-  return pVVar6;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  pVVar3 = (Vector3 *)(*pcVar2)();
+  return pVVar3;
 }
 
 
@@ -263,29 +327,25 @@ Vector3 * Assembly-CSharp.dll::RTG::MeshTriangle::MeshTriangle_get_Vertex2
                     (Vector3 *__return_storage_ptr__,MeshTriangle *this,MethodInfo *method)
 
 {
-  puStack_1 = &stack0xfffffffc;
-  pVVar2 = (this->fields)._vertices;
-  if (pVVar2 == (Vector3__Array *)0x0) {
-    uVar3 = func_?(&puStack_4);
-    func_?(uVar3);
-    pcVar5 = (code *)swi(3);
-    pVVar6 = (Vector3 *)(*pcVar5)();
-    return pVVar6;
+  pVVar1 = (this->fields)._vertices;
+  if (pVVar1 == (Vector3__Array *)0x0) {
+    FUN_?();
+    pcVar2 = (code *)swi(3);
+    pVVar3 = (Vector3 *)(*pcVar2)();
+    return pVVar3;
   }
-  if (2 < pVVar2->max_length) {
-    fVar7 = pVVar2->vector[2].y;
-    fVar8 = pVVar2->vector[2].z;
-    __return_storage_ptr__->x = pVVar2->vector[2].x;
-    __return_storage_ptr__->y = fVar7;
-    __return_storage_ptr__->z = fVar8;
+  if (2 < (uint)pVVar1->max_length) {
+    fVar4 = pVVar1->vector[2].y;
+    fVar5 = pVVar1->vector[2].z;
+    __return_storage_ptr__->x = pVVar1->vector[2].x;
+    __return_storage_ptr__->y = fVar4;
+    __return_storage_ptr__->z = fVar5;
     return __return_storage_ptr__;
   }
-  puStack_1 = (undefined1 *)0x0;
-  puStack_9 = (undefined *)func_?();
-  func_?();
-  pcVar5 = (code *)swi(3);
-  pVVar6 = (Vector3 *)(*pcVar5)();
-  return pVVar6;
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  pVVar3 = (Vector3 *)(*pcVar2)();
+  return pVVar3;
 }
 
 
@@ -297,20 +357,40 @@ Assembly-CSharp.dll::RTG::MeshTriangle::MeshTriangle_get_Vertices
 
 {
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVVar1 = (this->fields)._vertices;
-  if (pVVar1 != (Vector3__Array *)0x0) {
-    UnityEngine.CoreModule.dll::UnityEngine::Playables::PlayableBehaviour::PlayableBehaviour_Clone
-              ((PlayableBehaviour *)pVVar1,(MethodInfo *)0x0);
-    pVVar1 = (Vector3__Array *)func_?();
-    return pVVar1;
+  if ((this->fields)._vertices == (Vector3__Array *)0x0) {
+    FUN_?();
+    pcVar1 = (code *)swi(3);
+    pVVar2 = (Vector3__Array *)(*pcVar1)();
+    return pVVar2;
   }
-  uVar2 = func_?(&puStack_3);
-  func_?(uVar2);
-  pcVar4 = (code *)swi(3);
-  pVVar1 = (Vector3__Array *)(*pcVar4)();
-  return pVVar1;
+  pVVar2 = (Vector3__Array *)FUN_?();
+  pVVar3 = TypeInfo__UnityEngine__Vector3;
+  if (pVVar2 != (Vector3__Array *)0x0) {
+    pVVar4 = pVVar2->klass;
+    cVar5 = FUN_?(TypeInfo__UnityEngine__Vector3,pVVar4);
+    if (cVar5 != '\0') {
+      return pVVar2;
+    }
+    if (((pVVar4->_1).field_0x6e & 0x10) != 0) {
+      if ((((((pVVar3->_1).token & 0x20) != 0) || ((pVVar3->_0).byval_arg.type == 0x13)) ||
+          ((pVVar3->_0).byval_arg.type == 0x1e)) &&
+         ((((pVVar3->_0).interopData != (Il2CppInteropData *)0x0 &&
+           (((pVVar3->_0).interopData)->guid != (Il2CppGuid *)0x0)) &&
+          (lVar6 = FUN_?(pVVar2), lVar6 != 0)))) {
+        return pVVar2;
+      }
+      pVVar7 = (Vector3__Array *)0x0;
+      if (pVVar3 == pVRam0000000182db23e0) {
+        pVVar7 = pVVar2;
+      }
+      return pVVar7;
+    }
+  }
+  return (Vector3__Array *)0x0;
 }
 

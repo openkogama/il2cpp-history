@@ -7,76 +7,113 @@ void Assembly-CSharp.dll::XPNotification::XPNotification_Initialize
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&StringLiteral__XP_);
-    func_?(&StringLiteral__i__);
-    func_?(&StringLiteral__from_boost___i_);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__XP_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__i__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__from_boost___i_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  n = this;
-  this = (XPNotification *)CONCAT13(4,this._0_3_);
-  (n->fields)._.timeSinceStart = 0.0;
-  pOVar1 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
-  this_01 = data;
+  (this->fields)._.timeSinceStart = 0.0;
+  auStackX_8[0] = 4;
+  pOVar1 = (Object *)FUN_?(uRam_?,auStackX_8);
   if (data != (Dictionary_2_System_Object_System_Object_ *)0x0) {
-    TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-            UIElements::TextureId]::
-            Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                      ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,pOVar1,
-                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                      );
-    if (TVar2.m_Index != 0) {
-      pSVar3 = (String *)
-               (**(code **)(*(int *)TVar2.m_Index + 0xd8))
-                         (TVar2.m_Index,*(undefined4 *)(*(int *)TVar2.m_Index + 0xdc));
-      iVar4 = mscorlib.dll::System::Int32::Int32_Parse(pSVar3,(MethodInfo *)0x0);
-      uStack_5 = 0x14;
-      pOVar1 = (Object *)func_?(TypeInfo__System__Byte,&uStack_5);
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-      UIElements::TextureId]::Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_01,pOVar1,
+    pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+             ::Dictionary_2_System_Object_System_Object__get_Item
+                       (data,pOVar1,
+                        MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                       );
+    if (pOVar1 != (Object *)0x0) {
+      pSVar2 = (String *)(*(pOVar1->klass->vtable).ToString.methodPtr)(pOVar1);
+      iVar3 = mscorlib.dll::System::Int32::Int32_Parse(pSVar2,(MethodInfo *)0x0);
+      auStackX_8[0] = 0x14;
+      pOVar1 = (Object *)FUN_?(uRam_?,auStackX_8);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__get_Item
+                (data,pOVar1,
                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
                 );
-      IStack_6.m_value = iVar4 + 10;
-      IStack_7.m_value = IStack_6.m_value - iVar4;
-      pTVar8 = (n->fields).AmountLabel;
-      pSVar3 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_6,(MethodInfo *)0x0);
-      pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                         (pSVar3,StringLiteral__XP_,(MethodInfo *)0x0);
-      if (pTVar8 != (Text *)0x0) {
-        (*(code *)(pTVar8->klass->vtable).set_text.method)
-                  (pTVar8,pSVar3,(pTVar8->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr)
-        ;
-        if (-1 < IStack_7.m_value) {
-          pTVar8 = (n->fields).BoostLabel;
-          pSVar3 = mscorlib.dll::System::Int32::Int32_ToString(&IStack_7,(MethodInfo *)0x0);
-          pSVar3 = mscorlib.dll::System::String::String_Concat_4
-                             (StringLiteral__i__,pSVar3,StringLiteral__from_boost___i_,
+      value = (iVar3 + 10) - iVar3;
+      pTVar4 = (this->fields).AmountLabel;
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__System__Number);
+        LOCK();
+        UNLOCK();
+        FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if ((MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____->klass->
+           field_0x135 & 1) == 0) {
+        FUN_?();
+      }
+      if (*(int *)&(TypeInfo__System__Number->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      aRStack_5[0]._pointer._value = (void *)0x0;
+      aRStack_5[0]._length = 0;
+      aRStack_5[0]._12_4_ = 0;
+      pSVar2 = mscorlib.dll::System::Number::Number_FormatInt32
+                         (iVar3 + 10,aRStack_5,(IFormatProvider *)0x0,(MethodInfo *)0x0);
+      pSVar2 = mscorlib.dll::System::String::String_Concat_4
+                         (pSVar2,StringLiteral__XP_,(MethodInfo *)0x0);
+      if (pTVar4 != (Text *)0x0) {
+        (*(pTVar4->klass->vtable).set_text.methodPtr)(pTVar4,pSVar2);
+        if (-1 < value) {
+          pTVar4 = (this->fields).BoostLabel;
+          if (cRam_? == '\0') {
+            FUN_?(&TypeInfo__System__Number);
+            LOCK();
+            UNLOCK();
+            FUN_?(&MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____);
+            LOCK();
+            UNLOCK();
+            cRam_? = '\x01';
+          }
+          if ((MethodInfo__System__ReadOnlySpan<wchar_t>__op_Implicit_System__Char____->klass->
+               field_0x135 & 1) == 0) {
+            FUN_?();
+          }
+          if (*(int *)&(TypeInfo__System__Number->_1).field_0x1c == 0) {
+            FUN_?();
+          }
+          aRStack_5[0]._pointer._value = (void *)0x0;
+          aRStack_5[0]._length = 0;
+          aRStack_5[0]._12_4_ = 0;
+          pSVar2 = mscorlib.dll::System::Number::Number_FormatInt32
+                             (value,aRStack_5,(IFormatProvider *)0x0,(MethodInfo *)0x0);
+          pSVar2 = mscorlib.dll::System::String::String_Concat_5
+                             (StringLiteral__i__,pSVar2,StringLiteral__from_boost___i_,
                               (MethodInfo *)0x0);
-          if (pTVar8 == (Text *)0x0) goto code_?;
-          (*(code *)(pTVar8->klass->vtable).set_text.method)
-                    (pTVar8,pSVar3,
-                     (pTVar8->klass->vtable).CalculateLayoutInputHorizontal_1.methodPtr);
+          if (pTVar4 == (Text *)0x0) goto code_?;
+          (*(pTVar4->klass->vtable).set_text.methodPtr)
+                    (pTVar4,pSVar2,(pTVar4->klass->vtable).set_text.method);
         }
-        this_00 = (n->fields).tertiaryNotificationUI;
-        l = (*(code *)(n->klass->vtable).get_Lifetime.method)
-                      (n,(n->klass->vtable).Initialize.methodPtr);
+        this_00 = (this->fields).tertiaryNotificationUI;
+        l = (*(this->klass->vtable).get_Lifetime.methodPtr)
+                      (this,(this->klass->vtable).get_Lifetime.method);
         if (this_00 != (TertiaryNotificationUI *)0x0) {
           TertiaryNotificationUI::TertiaryNotificationUI_Initialize
-                    (this_00,(Notification *)n,l,0,(MethodInfo *)0x0);
+                    (this_00,(Notification *)this,l,0,(MethodInfo *)0x0);
           return;
         }
       }
     }
   }
 code_?:
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  FUN_?();
+  pcVar6 = (code *)swi(3);
+  (*pcVar6)();
   return;
 }
 

@@ -7,155 +7,190 @@ void Assembly-CSharp.dll::RareRewardNotification::RareRewardNotification_Initial
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Byte);
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                   );
-    func_?(&TypeInfo__System__Int32);
-    func_?(&TypeInfo__MV__Common__RewardRarity);
-    func_?(&TypeInfo__MV__Common__RewardType);
-    func_?(&StringLiteral__0__won__1__2__from_spins_);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__Common__RewardRarity);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MV__Common__RewardType);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__0__won__1__2__from_spins_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  n = this;
-  this = (RareRewardNotification *)CONCAT13(0xb,this._0_3_);
-  (n->fields)._.timeSinceStart = 0.0;
-  pOVar1 = (Object *)func_?(TypeInfo__System__Byte,(int)&this + 3);
-  this_02 = data;
+  (this->fields)._.timeSinceStart = 0.0;
+  auStackX_8[0] = CONCAT31(auStackX_8[0]._1_3_,0xb);
+  pOVar1 = (Object *)FUN_?(uRam_?,auStackX_8);
   if ((data == (Dictionary_2_System_Object_System_Object_ *)0x0) ||
-     (TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-              UIElements::TextureId]::
-              Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                        ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)data,pOVar1
-                         ,
-                         MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                        ), TVar2.m_Index == 0)) goto code_?;
-  pIVar3 = (Int32__Class *)TypeInfo__MV__Common__RewardRarity;
-  if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
-      (TypeInfo__MV__Common__RewardRarity->_0).element_class) goto code_?;
-  puVar4 = (undefined1 *)func_?(TVar2.m_Index);
-  data = (Dictionary_2_System_Object_System_Object_ *)CONCAT13(*puVar4,data._0_3_);
-  pMVar5 = MVGameControllerBase::MVGameControllerBase_get_Game((MethodInfo *)0x0);
-  if (pMVar5 == (MVNetworkGame *)0x0) goto code_?;
-  this_00 = (pMVar5->fields).playerContainer;
-  pOVar1 = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffb);
-  TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-          UIElements::TextureId]::
-          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_02,pOVar1,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                    );
-  if ((this_00 == (MVPlayerContainer *)0x0) || (TVar2.m_Index == 0)) goto code_?;
-  pIVar3 = TypeInfo__System__Int32;
-  if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) != (TypeInfo__System__Int32->_0).element_class
-     ) {
-code_?:
-    func_?(TVar2.m_Index,pIVar3);
-    goto code_?;
+     (pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::
+               Object]::Dictionary_2_System_Object_System_Object__get_Item
+                         (data,pOVar1,
+                          MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                         ), pOVar1 == (Object *)0x0)) goto code_?;
+  if ((pOVar1->klass->_0).element_class != (TypeInfo__MV__Common__RewardRarity->_0).element_class) {
+    FUN_?(pOVar1,TypeInfo__MV__Common__RewardRarity);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
   }
-  piVar6 = (int32_t *)func_?(TVar2.m_Index);
-  pMVar7 = MVPlayerContainer::MVPlayerContainer_get_Item(this_00,*piVar6,(MethodInfo *)0x0);
-  pOVar1 = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffffa);
-  TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-          UIElements::TextureId]::
-          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_02,pOVar1,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                    );
-  if (TVar2.m_Index == 0) goto code_?;
-  pIVar3 = (Int32__Class *)TypeInfo__MV__Common__RewardType;
-  if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) !=
-      (TypeInfo__MV__Common__RewardType->_0).element_class) goto code_?;
-  piVar8 = (int *)func_?(TVar2.m_Index);
-  iVar9 = *piVar8;
+  cVar3 = *(char *)&pOVar1[1].klass;
   if (cRam_? == '\0') {
-    func_?(&StringLiteral__xp);
-    func_?(&StringLiteral_ERROR);
-    func_?(&StringLiteral__test);
-    func_?(&StringLiteral__gold);
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pSVar10 = StringLiteral__xp;
-  if (iVar9 == 1) {
+  pMVar4 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if ((pMVar4 == (MVGameControllerBase *)0x0) ||
+     (pMVar5 = (pMVar4->fields).game, pMVar5 == (MVNetworkGame *)0x0)) goto code_?;
+  pMVar6 = (pMVar5->fields).playerContainer;
+  auStackX_8[0] = CONCAT31(auStackX_8[0]._1_3_,9);
+  pOVar1 = (Object *)FUN_?(uRam_?,auStackX_8);
+  pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+           Dictionary_2_System_Object_System_Object__get_Item
+                     (data,pOVar1,
+                      MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                     );
+  if ((pMVar6 == (MVPlayerContainer *)0x0) || (pOVar1 == (Object *)0x0)) goto code_?;
+  if ((pOVar1->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+    FUN_?(pOVar1,lRam_?);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  key = *(int32_t *)&pOVar1[1].klass;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  this_00 = (pMVar6->fields).players;
+  if (this_00 == (Dictionary_2_System_Int32_MVPlayer_ *)0x0) goto code_?;
+  pOVar1 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Int32,System::Object]::
+           Dictionary_2_System_Int32_System_Object__get_Item
+                     ((Dictionary_2_System_Int32_System_Object_ *)this_00,key,
+                      MethodInfo__System__Collections__Generic__Dictionary<int,_MVPlayer>__get_Item_int_
+                     );
+  auStackX_8[0] = CONCAT31(auStackX_8[0]._1_3_,5);
+  pOVar7 = (Object *)FUN_?(uRam_?,auStackX_8);
+  pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__get_Item
+                      (data,pOVar7,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+  if (pOVar7 == (Object *)0x0) goto code_?;
+  if ((pOVar7->klass->_0).element_class != (TypeInfo__MV__Common__RewardType->_0).element_class) {
+    FUN_?(pOVar7,TypeInfo__MV__Common__RewardType);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
+  }
+  iVar8 = *(int *)&pOVar7[1].klass;
+  if (cRam_? == '\0') {
+    FUN_?(&StringLiteral__xp);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ERROR);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__test);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__gold);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pSVar9 = StringLiteral__xp;
+  if (iVar8 == 1) {
 code_?:
-    pSVar10 = TM::TM__(pSVar10,(MethodInfo *)0x0);
+    pSVar9 = TM::TM__(pSVar9,(MethodInfo *)0x0);
   }
   else {
-    pSVar10 = StringLiteral__test;
-    if (iVar9 != 2) {
-      pSVar10 = StringLiteral__gold;
-      if (iVar9 != 3) {
-        pSVar10 = StringLiteral_ERROR;
+    pSVar9 = StringLiteral__test;
+    if (iVar8 != 2) {
+      pSVar9 = StringLiteral__gold;
+      if (iVar8 != 3) {
+        pSVar9 = StringLiteral_ERROR;
       }
       goto code_?;
     }
   }
-  pOVar1 = (Object *)func_?(TypeInfo__System__Byte,&stack0xfffffff9);
-  TVar2 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::
-          UIElements::TextureId]::
-          Dictionary_2_System_Object_UnityEngine_UIElements_TextureId__get_Item
-                    ((Dictionary_2_System_Object_UnityEngine_UIElements_TextureId_ *)this_02,pOVar1,
-                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
-                    );
-  if (TVar2.m_Index == 0) goto code_?;
-  pIVar3 = TypeInfo__System__Int32;
-  if (*(Il2CppClass **)(*(int *)TVar2.m_Index + 0x20) != (TypeInfo__System__Int32->_0).element_class
-     ) goto code_?;
-  func_?(TVar2.m_Index);
-  format = TM::TM__(StringLiteral__0__won__1__2__from_spins_,(MethodInfo *)0x0);
-  if ((pMVar7 == (MVPlayer *)0x0) ||
-     (pUVar11 = (pMVar7->fields)._UserProfileData_k__BackingField, pUVar11 == (UserProfileData *)0x0))
-  goto code_?;
-  arg0 = (pUVar11->fields).UserName;
-  piVar8 = (int *)&stack0xffffffec;
-  pOVar1 = (Object *)func_?(TypeInfo__System__Int32);
-  pSVar10 = mscorlib.dll::System::String::String_Format_2
-                      (format,(Object *)arg0,pOVar1,(Object *)pSVar10,(MethodInfo *)0x0);
-  if (piVar8 == (int *)0x0) goto code_?;
-  (**(code **)(*piVar8 + 0x318))(piVar8,pSVar10,*(undefined4 *)(*piVar8 + 0x31c));
-  if (data._3_1_ == '\x03') {
-    pGVar12 = (n->fields).EpicPanel;
-    if ((pGVar12 == (GameObject *)0x0) ||
-       (pGVar12 = (GameObject *)
-                  UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
-                  UnsafeUtility_AsRef_1((Void *)pGVar12,(MethodInfo *)0x0),
-       pGVar12 == (GameObject *)0x0)) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar12,1,(MethodInfo *)0x0);
-    pGVar12 = (n->fields).LegendaryPanel;
-code_?:
-    if ((pGVar12 == (GameObject *)0x0) ||
-       (pGVar12 = (GameObject *)
-                  UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
-                  UnsafeUtility_AsRef_1((Void *)pGVar12,(MethodInfo *)0x0),
-       pGVar12 == (GameObject *)0x0)) goto code_?;
-    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar12,0,(MethodInfo *)0x0);
+  auStackX_8[0] = CONCAT31(auStackX_8[0]._1_3_,4);
+  pOVar7 = (Object *)FUN_?(uRam_?,auStackX_8);
+  pOVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]
+            ::Dictionary_2_System_Object_System_Object__get_Item
+                      (data,pOVar7,
+                       MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__get_Item_System__Object_
+                      );
+  if (pOVar7 == (Object *)0x0) goto code_?;
+  if ((pOVar7->klass->_0).element_class != *(Il2CppClass **)(lRam_? + 0x40)) {
+    FUN_?(pOVar7,lRam_?);
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
+    return;
   }
-  else if (data._3_1_ == '\x04') {
-    pGVar12 = (n->fields).LegendaryPanel;
-    if ((pGVar12 == (GameObject *)0x0) ||
-       (pGVar12 = (GameObject *)
-                  UnityEngine.CoreModule.dll::Unity::Collections::LowLevel::Unsafe::UnsafeUtility::
-                  UnsafeUtility_AsRef_1((Void *)pGVar12,(MethodInfo *)0x0),
-       pGVar12 == (GameObject *)0x0)) goto code_?;
+  uVar10 = *(undefined4 *)&pOVar7[1].klass;
+  pTVar11 = (this->fields).text;
+  format = TM::TM__(StringLiteral__0__won__1__2__from_spins_,(MethodInfo *)0x0);
+  if ((pOVar1 == (Object *)0x0) || (pOVar1[7].klass == (Object__Class *)0x0))
+  goto code_?;
+  pOVar1 = (Object *)((pOVar1[7].klass)->_0).namespaze;
+  auStackX_8[0] = uVar10;
+  pOVar7 = (Object *)FUN_?(lRam_?,auStackX_8);
+  PStack_12._arg0 = (Object *)0x0;
+  PStack_12._arg1 = (Object *)0x0;
+  PStack_12._arg2 = (Object *)0x0;
+  PStack_12._args = (Object__Array *)0x0;
+  mscorlib.dll::System::ParamsArray::ParamsArray__ctor_2
+            (&PStack_12,pOVar1,pOVar7,(Object *)pSVar9,(MethodInfo *)0x0);
+  PStack_13._arg0 = PStack_12._arg0;
+  PStack_13._arg1 = PStack_12._arg1;
+  PStack_13._arg2 = PStack_12._arg2;
+  PStack_13._args = PStack_12._args;
+  pSVar9 = mscorlib.dll::System::String::String_FormatHelper
+                      ((IFormatProvider *)0x0,format,&PStack_13,(MethodInfo *)0x0);
+  if (pTVar11 == (Text *)0x0) goto code_?;
+  (*(pTVar11->klass->vtable).set_text.methodPtr)(pTVar11,pSVar9);
+  if (cVar3 == '\x03') {
+    pGVar14 = (this->fields).EpicPanel;
+    if (pGVar14 == (GameObject *)0x0) goto code_?;
     UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
-              (pGVar12,1,(MethodInfo *)0x0);
-    pGVar12 = (n->fields).EpicPanel;
+              (pGVar14,1,(MethodInfo *)0x0);
+    pGVar14 = (this->fields).LegendaryPanel;
+code_?:
+    if (pGVar14 == (GameObject *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+              (pGVar14,0,(MethodInfo *)0x0);
+  }
+  else if (cVar3 == '\x04') {
+    pGVar14 = (this->fields).LegendaryPanel;
+    if (pGVar14 == (GameObject *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+              (pGVar14,1,(MethodInfo *)0x0);
+    pGVar14 = (this->fields).EpicPanel;
     goto code_?;
   }
-  this_01 = (n->fields).tertiaryNotificationUI;
-  this = (RareRewardNotification *)(n->klass->vtable).Initialize.methodPtr;
-  l = (*(code *)(n->klass->vtable).get_Lifetime.method)();
+  this_01 = (this->fields).tertiaryNotificationUI;
+  l = (*(this->klass->vtable).get_Lifetime.methodPtr)
+                (this,(this->klass->vtable).get_Lifetime.method);
   if (this_01 != (TertiaryNotificationUI *)0x0) {
     TertiaryNotificationUI::TertiaryNotificationUI_Initialize
-              (this_01,(Notification *)n,l,0,(MethodInfo *)0x0);
+              (this_01,(Notification *)this,l,0,(MethodInfo *)0x0);
     return;
   }
 code_?:
-  func_?();
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -167,24 +202,105 @@ String * Assembly-CSharp.dll::RareRewardNotification::RareRewardNotification_Typ
 
 {
   if (cRam_? == '\0') {
-    func_?(&StringLiteral__xp);
-    func_?(&StringLiteral_ERROR);
-    func_?(&StringLiteral__test);
-    func_?(&StringLiteral__gold);
+    FUN_?(&StringLiteral__xp);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_ERROR);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__test);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__gold);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if (type == RewardType__Enum_XPReward) {
-    pSVar1 = TM::TM__(StringLiteral__xp,(MethodInfo *)0x0);
-    return pSVar1;
+  pSVar1 = StringLiteral__xp;
+  if (type != RewardType__Enum_XPReward) {
+    if (type == RewardType__Enum_TestReward) {
+      return StringLiteral__test;
+    }
+    pSVar1 = StringLiteral__gold;
+    if (type != RewardType__Enum_GoldReward) {
+      pSVar1 = StringLiteral_ERROR;
+    }
   }
-  if (type == RewardType__Enum_TestReward) {
-    return StringLiteral__test;
+  if (cRam_? == '\0') {
+    FUN_?(&::StringLiteral__,0);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  if (type != RewardType__Enum_GoldReward) {
-    pSVar1 = TM::TM__(StringLiteral_ERROR,(MethodInfo *)0x0);
-    return pSVar1;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__System__Text__RegularExpressions__Regex);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral___sPtr___sPtr_____________Ptr_________);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  pSVar1 = TM::TM__(StringLiteral__gold,(MethodInfo *)0x0);
+  if (pSVar1 == (String *)0x0) {
+    return (String *)0x0;
+  }
+  this_01 = (Regex *)FUN_?(TypeInfo__System__Text__RegularExpressions__Regex);
+  System.dll::System::Text::RegularExpressions::Regex::Regex__ctor_1
+            (this_01,StringLiteral___sPtr___sPtr_____________Ptr_________,(MethodInfo *)0x0);
+  if (this_01 != (Regex *)0x0) {
+    if (((this_01->fields).roptions & 0x40) == 0) {
+      startat = 0;
+    }
+    else {
+      startat = (pSVar1->fields)._stringLength;
+    }
+    pMVar2 = System.dll::System::Text::RegularExpressions::Regex::Regex_Run
+                       (this_01,0,-1,pSVar1,0,(pSVar1->fields)._stringLength,startat,
+                        (MethodInfo *)0x0);
+    if (pMVar2 != (Match *)0x0) {
+      if ((pMVar2->fields)._._capcount != 0) {
+        this_02 = (GroupCollection *)
+                  (*(pMVar2->klass->vtable).get_Groups.methodPtr)
+                            (pMVar2,(pMVar2->klass->vtable).get_Groups.method);
+        if (((this_02 == (GroupCollection *)0x0) ||
+            (pGVar3 = System.dll::System::Text::RegularExpressions::GroupCollection::
+                      GroupCollection_GetGroup(this_02,1,(MethodInfo *)0x0), pGVar3 == (Group *)0x0)
+            ) || (pSVar1 = (String *)
+                           (*(pGVar3->klass->vtable).ToString.methodPtr)
+                                     (pGVar3,(pGVar3->klass->vtable).ToString.method),
+                 pSVar1 == (String *)0x0)) goto code_?;
+        pSVar1 = mscorlib.dll::System::String::String_Substring_1
+                           (pSVar1,1,(pSVar1->fields)._stringLength + -2,(MethodInfo *)0x0);
+        pSVar1 = GNU::Gettext::StringEscaping::StringEscaping_FromGettextFormat
+                           (pSVar1,(MethodInfo *)0x0);
+      }
+      if ((pSVar1 != (String *)0x0) && ((pSVar1->fields)._stringLength != 0)) {
+        pTVar4 = TM::TM_get_Instance((MethodInfo *)0x0);
+        if (pTVar4 == (TM *)0x0) goto code_?;
+        if ((pTVar4->fields).catalog != (Catalog *)0x0) {
+          pTVar4 = TM::TM_get_Instance((MethodInfo *)0x0);
+          if ((pTVar4 == (TM *)0x0) ||
+             (this_00 = (pTVar4->fields).catalog, this_00 == (Catalog *)0x0))
+          goto code_?;
+          this_03 = GNU::Gettext::Catalog::Catalog_FindItem
+                              (this_00,pSVar1,::StringLiteral__,(MethodInfo *)0x0);
+          if ((this_03 != (CatalogEntry *)0x0) &&
+             ((text = GNU::Gettext::CatalogEntry::CatalogEntry_GetTranslation
+                                (this_03,0,(MethodInfo *)0x0), text != (String *)0x0 &&
+              ((text->fields)._stringLength != 0)))) {
+            pSVar1 = GNU::Gettext::StringEscaping::StringEscaping_FromGettextFormat
+                               (text,(MethodInfo *)0x0);
+            return pSVar1;
+          }
+        }
+      }
+      return pSVar1;
+    }
+  }
+code_?:
+  FUN_?();
+  pcVar5 = (code *)swi(3);
+  pSVar1 = (String *)(*pcVar5)();
   return pSVar1;
 }
 

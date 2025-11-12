@@ -13,7 +13,7 @@ using System.Runtime.Versioning;
 using System.Xml;
 using Newtonsoft.Json;
 
-// Image 8: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
+// Image 9: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
 
 namespace Newtonsoft.Json.Converters
 {
@@ -42,7 +42,7 @@ namespace Newtonsoft.Json.Converters
 	
 		// Properties
 		[Nullable(2)]
-		public string DeserializeRootElementName { [CompilerGenerated] [NullableContext(2)] get; [CompilerGenerated] [NullableContext(2)] set; }
+		public string DeserializeRootElementName { [NullableContext(2)] [CompilerGenerated] get; [NullableContext(2)] [CompilerGenerated] set; }
 		public bool WriteArrayAttribute { [CompilerGenerated] get; [CompilerGenerated] set; }
 		public bool OmitRootObject { [CompilerGenerated] get; [CompilerGenerated] set; }
 		public bool EncodeSpecialCharacters { [CompilerGenerated] get; [CompilerGenerated] set; }
@@ -77,7 +77,7 @@ namespace Newtonsoft.Json.Converters
 		private void CreateDocumentType(JsonReader reader, IXmlDocument document, IXmlNode currentNode);
 		private IXmlElement CreateElement(string elementName, IXmlDocument document, [Nullable(2)] string elementPrefix, XmlNamespaceManager manager);
 		private void DeserializeNode(JsonReader reader, IXmlDocument document, XmlNamespaceManager manager, IXmlNode currentNode);
-		private bool IsNamespaceAttribute(string attributeName, [NotNullWhen(true)] [Nullable(2)] out string prefix);
+		private bool IsNamespaceAttribute(string attributeName, [Nullable(2)] [NotNullWhen(true)] out string prefix);
 		private bool ValueAttributes(List<IXmlNode> c);
 		public override bool CanConvert(System.Type valueType);
 		private bool IsXObject(System.Type valueType);

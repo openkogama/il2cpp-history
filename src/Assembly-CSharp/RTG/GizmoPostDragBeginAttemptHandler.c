@@ -8,14 +8,11 @@ GizmoPostDragBeginAttemptHandler_BeginInvoke
           AsyncCallback *callback,Object *object,MethodInfo *method)
 
 {
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Int32);
-    cRam_? = '\x01';
-  }
-  pGStack_1 = gizmo;
-  uStack_2 = 0;
-  uStack_3 = func_?(TypeInfo__System__Int32,&handleId);
-  pIVar4 = (IAsyncResult *)func_?(this,&pGStack_1,callback,object);
+  uStack_1 = 0;
+  aiStackX_18[0] = handleId;
+  pGStack_2 = gizmo;
+  uStack_3 = FUN_?(uRam_?,aiStackX_18);
+  pIVar4 = (IAsyncResult *)FUN_?(this,&pGStack_2,callback,object);
   return pIVar4;
 }
 

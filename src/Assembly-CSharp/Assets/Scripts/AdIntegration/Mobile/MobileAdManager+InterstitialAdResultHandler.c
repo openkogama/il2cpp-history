@@ -7,70 +7,104 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
                (MobileAdManager_InterstitialAdResultHandler *this,MethodInfo *method)
 
 {
-  puStack_1 = (undefined *)*unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &puStack_1;
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__Assets__Scripts__AdIntegration__AdContext);
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager);
-    func_?(&StringLiteral_Ad_InterstitialShown);
-    func_?(&StringLiteral__Success);
-    func_?(&StringLiteral_Ad_InterstitialFinished_);
-    func_?(&StringLiteral_MobileAdManager_InterstitialAdRe);
-    func_?(&StringLiteral__Failure);
+    FUN_?(&TypeInfo__Assets__Scripts__AdIntegration__AdContext);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Ad_InterstitialShown);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__Success);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Ad_InterstitialFinished_);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_MobileAdManager_InterstitialAdRe);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral__Failure);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Debug);
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_MobileAdManager_InterstitialAdRe,(MethodInfo *)0x0);
-  this_00 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
-  if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
-    MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_AdAction
-              (this_00,AdType__Enum_InterstitialAd,AdActionType__Enum_Success,(this->fields).context
-               ,(MethodInfo *)0x0);
-    EStack_2.klass = (Enum__Class *)TypeInfo__Assets__Scripts__AdIntegration__AdContext;
-    EStack_2.monitor = (MonitorData *)0xffffffff;
-    pSVar3 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_2,(MethodInfo *)0x0);
-    pSVar3 = mscorlib.dll::System::String::String_Concat_3
-                       (StringLiteral_Ad_InterstitialFinished_,pSVar3,(MethodInfo *)0x0);
-    MobileAdManager::MobileAdManager_SendStat(pSVar3,(MethodInfo *)0x0);
-    if ((this->fields).interstitialAdResult == 3) {
-      MobileAdManager::MobileAdManager_SendStat
-                (StringLiteral_Ad_InterstitialShown,(MethodInfo *)0x0);
-      EStack_2.klass = (Enum__Class *)TypeInfo__Assets__Scripts__AdIntegration__AdContext;
-      puStack_4 = (undefined *)(this->fields).context;
-      EStack_2.monitor = (MonitorData *)0xffffffff;
-      pSVar3 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_2,(MethodInfo *)0x0);
-      in_stack_5 = (MethodInfo *)0x0;
-      in_stack_6 = StringLiteral__Success;
-    }
-    else {
-      EStack_2.klass = (Enum__Class *)TypeInfo__Assets__Scripts__AdIntegration__AdContext;
-      puStack_4 = (undefined *)(this->fields).context;
-      EStack_2.monitor = (MonitorData *)0xffffffff;
-      pSVar3 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_2,(MethodInfo *)0x0);
-    }
-    pSVar3 = mscorlib.dll::System::String::String_Concat_4
-                       (StringLiteral_Ad_InterstitialFinished_,pSVar3,in_stack_6,
-                        in_stack_5);
-    MobileAdManager::MobileAdManager_SendStat(pSVar3,(MethodInfo *)0x0);
-    if ((this->fields).adUIManager != (IAdUIManager *)0x0) {
-      puStack7 = (undefined *)(this->fields).interstitialAdResult;
-      func_?();
-      pAVar8 = (this->fields).interstitialCallback;
-      if (pAVar8 != (Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)0x0) {
-        puStack7 = (pAVar8->fields)._._.method;
-        (*(pAVar8->fields)._._.invoke_impl)();
-        *unaff_FS_OFFSET = puStack_1;
-        return;
-      }
-    }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
   }
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
+  if (pMVar1 != (MVGameControllerBase *)0x0) {
+    pMVar2 = (pMVar1->fields).game;
+    if (pMVar2 != (MVNetworkGame *)0x0) {
+      this_00 = (pMVar2->fields).operationRequests;
+      if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
+        MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_AdAction
+                  (this_00,AdType__Enum_InterstitialAd,AdActionType__Enum_Success,
+                   (this->fields).context,(MethodInfo *)0x0);
+        EStack_3.klass = (Enum__Class *)TypeInfo__Assets__Scripts__AdIntegration__AdContext;
+        EStack_3.monitor = (MonitorData *)0xffffffffffffffff;
+        iStack_4 = (this->fields).context;
+        pSVar5 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_3,(MethodInfo *)0x0);
+        pSVar5 = mscorlib.dll::System::String::String_Concat_4
+                           (StringLiteral_Ad_InterstitialFinished_,pSVar5,(MethodInfo *)0x0);
+        MobileAdManager::MobileAdManager_SendStat(pSVar5,(MethodInfo *)0x0);
+        if ((this->fields).interstitialAdResult == 3) {
+          MobileAdManager::MobileAdManager_SendStat
+                    (StringLiteral_Ad_InterstitialShown,(MethodInfo *)0x0);
+          EStack_3.klass = (Enum__Class *)TypeInfo__Assets__Scripts__AdIntegration__AdContext;
+          EStack_3.monitor = (MonitorData *)0xffffffffffffffff;
+          iStack_4 = (this->fields).context;
+          pSVar5 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_3,(MethodInfo *)0x0);
+          pSVar5 = mscorlib.dll::System::String::String_Concat_5
+                             (StringLiteral_Ad_InterstitialFinished_,pSVar5,StringLiteral__Success,
+                              (MethodInfo *)0x0);
+          MobileAdManager::MobileAdManager_SendStat(pSVar5,(MethodInfo *)0x0);
+        }
+        else {
+          EStack_3.klass = (Enum__Class *)TypeInfo__Assets__Scripts__AdIntegration__AdContext;
+          EStack_3.monitor = (MonitorData *)0xffffffffffffffff;
+          iStack_4 = (this->fields).context;
+          pSVar5 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_3,(MethodInfo *)0x0);
+          pSVar5 = mscorlib.dll::System::String::String_Concat_5
+                             (StringLiteral_Ad_InterstitialFinished_,pSVar5,StringLiteral__Failure,
+                              (MethodInfo *)0x0);
+          MobileAdManager::MobileAdManager_SendStat(pSVar5,(MethodInfo *)0x0);
+        }
+        pIVar6 = (this->fields).adUIManager;
+        if (pIVar6 != (IAdUIManager *)0x0) {
+          FUN_?(3,TypeInfo__Assets__Scripts__AdIntegration__IAdUIManager,pIVar6,
+                        (this->fields).interstitialAdResult);
+          pAVar7 = (this->fields).interstitialCallback;
+          if (pAVar7 != (Action_1_Assets_Scripts_AdIntegration_InterstitialAdResult_ *)0x0) {
+            (*(pAVar7->fields)._._.invoke_impl)
+                      ((pAVar7->fields)._._.method_code,(this->fields).interstitialAdResult,
+                       (pAVar7->fields)._._.method);
+            return;
+          }
+          FUN_?();
+        }
+        FUN_?();
+      }
+      FUN_?();
+    }
+    FUN_?();
+  }
+  FUN_?();
+  pcVar8 = (code *)swi(3);
+  (*pcVar8)();
   return;
 }
 
@@ -85,21 +119,29 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&TypeInfo__Assets__Scripts__AdIntegration__InterstitialAdResult);
-    func_?(&StringLiteral_MobileAdManager_InterstitialAdRe);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__Assets__Scripts__AdIntegration__InterstitialAdResult);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_MobileAdManager_InterstitialAdRe);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pIStack_1 = TypeInfo__Assets__Scripts__AdIntegration__InterstitialAdResult;
-  pSVar2 = mscorlib.dll::System::Enum::Enum_ToString((Enum *)&pIStack_1,(MethodInfo *)0x0);
-  pSVar2 = mscorlib.dll::System::String::String_Concat_3
-                     (StringLiteral_MobileAdManager_InterstitialAdRe,pSVar2,(MethodInfo *)0x0);
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  EStack_1.klass = (Enum__Class *)TypeInfo__Assets__Scripts__AdIntegration__InterstitialAdResult;
+  EStack_1.monitor = (MonitorData *)0xffffffffffffffff;
+  IStack_2 = interstitialAdResult;
+  pSVar3 = mscorlib.dll::System::Enum::Enum_ToString(&EStack_1,(MethodInfo *)0x0);
+  pSVar3 = mscorlib.dll::System::String::String_Concat_4
+                     (StringLiteral_MobileAdManager_InterstitialAdRe,pSVar3,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar2,(MethodInfo *)0x0);
-  (this->fields).interstitialAdResult = interstitialAdResult;
+  UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log((Object *)pSVar3,(MethodInfo *)0x0);
   (this->fields).IsDone = 1;
+  (this->fields).interstitialAdResult = interstitialAdResult;
   return;
 }
 
@@ -115,22 +157,52 @@ void Assembly-CSharp.dll::Assets::Scripts::AdIntegration::Mobile::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Debug);
-    func_?(&StringLiteral_MobileAdManager_InterstitialAdRe);
+    FUN_?(&TypeInfo__UnityEngine__Debug);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_MobileAdManager_InterstitialAdRe);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,unaff_ESI);
-  if ((TypeInfo__UnityEngine__Debug->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__Debug);
+  if (*(int *)&(TypeInfo__UnityEngine__Debug->_1).field_0x1c == 0) {
+    FUN_?();
   }
   UnityEngine.CoreModule.dll::UnityEngine::Debug::Debug_2_Log
             ((Object *)StringLiteral_MobileAdManager_InterstitialAdRe,(MethodInfo *)0x0);
+  iVar1 = iRam_?;
   (this->fields).context = context;
   (this->fields).adUIManager = adUIManager;
-  func_?(&(this->fields).adUIManager,adUIManager);
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).adUIManager >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+      iVar1 = iRam_?;
+    } while (!bVar6);
+  }
   (this->fields).interstitialCallback = interstitialCallback;
-  func_?(&(this->fields).interstitialCallback,interstitialCallback);
+  if (iVar1 != 0) {
+    uVar2 = (uint)((ulonglong)&(this->fields).interstitialCallback >> 0xc);
+    lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+      puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+      LOCK();
+      bVar6 = uVar4 == *puVar5;
+      if (bVar6) {
+        *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar6);
+  }
   return;
 }
 

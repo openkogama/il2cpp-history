@@ -28,15 +28,15 @@ public class PlayerElement : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 	[SerializeField]
 	private Image nonMemberUI;
 	[SerializeField]
-	private Button playerNameAndScoreButton;
+	private UnityEngine.UI.Button playerNameAndScoreButton;
 	[SerializeField]
 	private List<Image> backgrounds;
 	[SerializeField]
 	private PlayerSocialPopup playerSocialPopupPrefab;
 	[SerializeField]
-	private Button dotsImage;
+	private UnityEngine.UI.Button dotsImage;
 	[SerializeField]
-	private Button incomingFriendRequestRedDot;
+	private UnityEngine.UI.Button incomingFriendRequestRedDot;
 	[SerializeField]
 	private Image underline;
 	private string realPlayerName;

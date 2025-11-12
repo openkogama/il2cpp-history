@@ -8,16 +8,16 @@ bool Assembly-CSharp.dll::UseInteractorVisualization+<>c__DisplayClass35_0::
 
 {
   if (requirement != (UseRequirement *)0x0) {
-    uVar1._0_4_ = (this->fields).scale.x;
-    uVar1._4_4_ = (this->fields).scale.y;
-    (*(code *)(requirement->klass->vtable).__unknown_9.method)
-              (requirement,uVar1,(this->fields).scale.z,
-               (requirement->klass->vtable).__unknown_10.methodPtr);
+    fStack_1 = (this->fields).scale.z;
+    uStack_2._0_4_ = (this->fields).scale.x;
+    uStack_2._4_4_ = (this->fields).scale.y;
+    (*(requirement->klass->vtable).__unknown_9.methodPtr)
+              (requirement,&uStack_2,(requirement->klass->vtable).__unknown_9.method);
     return 1;
   }
-  func_?();
-  pcVar2 = (code *)swi(3);
-  bVar3 = (*pcVar2)();
-  return bVar3;
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  bVar4 = (*pcVar3)();
+  return bVar4;
 }
 

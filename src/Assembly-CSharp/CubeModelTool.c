@@ -6,21 +6,25 @@ void Assembly-CSharp.dll::CubeModelTool::CubeModelTool_Enter_1
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CubeModelingStateMachine);
+    FUN_?(&TypeInfo__CubeModelingStateMachine);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (e != (FSMEntity *)0x0) {
-    if (((e->klass->_1).naturalAligment < (TypeInfo__CubeModelingStateMachine->_1).naturalAligment)
-       || ((e->klass->_1).typeHierarchy
-           [(TypeInfo__CubeModelingStateMachine->_1).naturalAligment - 1] !=
-           (Il2CppClass *)TypeInfo__CubeModelingStateMachine)) {
-      func_?(e,TypeInfo__CubeModelingStateMachine);
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
+    bVar1 = (TypeInfo__CubeModelingStateMachine->_1).naturalAligment;
+    if (((e->klass->_1).naturalAligment < bVar1) ||
+       ((e->klass->_1).typeHierarchy[(ulonglong)bVar1 - 1] !=
+        (Il2CppClass *)TypeInfo__CubeModelingStateMachine)) {
+      FUN_?(e);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
   }
-  (*(code *)(this->klass->vtable).Enter_1.method)(this,e,(this->klass->vtable).Execute_1.methodPtr);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(this->klass->vtable).Enter_1.methodPtr)(this,e,(this->klass->vtable).Enter_1.method);
   return;
 }
 
@@ -32,7 +36,9 @@ void Assembly-CSharp.dll::CubeModelTool::CubeModelTool_Execute
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CubeModelTool);
+    FUN_?(&TypeInfo__CubeModelTool);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pCVar1 = TypeInfo__CubeModelTool->static_fields;
@@ -42,7 +48,8 @@ void Assembly-CSharp.dll::CubeModelTool::CubeModelTool_Execute
     (*(pAVar2->fields)._._.invoke_impl)
               ((pAVar2->fields)._._.method_code,pCVar1->cubeCount,pCVar1->cubeChange,
                (pAVar2->fields)._._.method);
-    pCVar1 = TypeInfo__CubeModelTool->static_fields;
+    TypeInfo__CubeModelTool->static_fields->cubeChange = 0;
+    return;
   }
   pCVar1->cubeChange = 0;
   return;
@@ -56,21 +63,25 @@ void Assembly-CSharp.dll::CubeModelTool::CubeModelTool_Execute_1
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CubeModelingStateMachine);
+    FUN_?(&TypeInfo__CubeModelingStateMachine);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (e != (FSMEntity *)0x0) {
-    if (((e->klass->_1).naturalAligment < (TypeInfo__CubeModelingStateMachine->_1).naturalAligment)
-       || ((e->klass->_1).typeHierarchy
-           [(TypeInfo__CubeModelingStateMachine->_1).naturalAligment - 1] !=
-           (Il2CppClass *)TypeInfo__CubeModelingStateMachine)) {
-      func_?(e,TypeInfo__CubeModelingStateMachine);
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
+    bVar1 = (TypeInfo__CubeModelingStateMachine->_1).naturalAligment;
+    if (((e->klass->_1).naturalAligment < bVar1) ||
+       ((e->klass->_1).typeHierarchy[(ulonglong)bVar1 - 1] !=
+        (Il2CppClass *)TypeInfo__CubeModelingStateMachine)) {
+      FUN_?(e);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
   }
-  (*(code *)(this->klass->vtable).Execute_1.method)(this,e,(this->klass->vtable).Exit_1.methodPtr);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(this->klass->vtable).Execute_1.methodPtr)(this,e,(this->klass->vtable).Execute_1.method);
   return;
 }
 
@@ -82,21 +93,25 @@ void Assembly-CSharp.dll::CubeModelTool::CubeModelTool_Exit_1
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CubeModelingStateMachine);
+    FUN_?(&TypeInfo__CubeModelingStateMachine);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (e != (FSMEntity *)0x0) {
-    if (((e->klass->_1).naturalAligment < (TypeInfo__CubeModelingStateMachine->_1).naturalAligment)
-       || ((e->klass->_1).typeHierarchy
-           [(TypeInfo__CubeModelingStateMachine->_1).naturalAligment - 1] !=
-           (Il2CppClass *)TypeInfo__CubeModelingStateMachine)) {
-      func_?(e,TypeInfo__CubeModelingStateMachine);
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
+    bVar1 = (TypeInfo__CubeModelingStateMachine->_1).naturalAligment;
+    if (((e->klass->_1).naturalAligment < bVar1) ||
+       ((e->klass->_1).typeHierarchy[(ulonglong)bVar1 - 1] !=
+        (Il2CppClass *)TypeInfo__CubeModelingStateMachine)) {
+      FUN_?(e);
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
   }
-  (*(code *)(this->klass->vtable).Exit_1.method)(this,e,(this->klass->vtable).HideCursor.methodPtr);
+                    /* WARNING: Could not recover jumptable at 0xADDR. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (*(this->klass->vtable).Exit_1.methodPtr)(this,e,(this->klass->vtable).Exit_1.method);
   return;
 }
 
@@ -108,7 +123,9 @@ void Assembly-CSharp.dll::CubeModelTool::CubeModelTool_SendCubeEvent
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__CubeModelTool);
+    FUN_?(&TypeInfo__CubeModelTool);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   TypeInfo__CubeModelTool->static_fields->cubeCount = cubeCount;

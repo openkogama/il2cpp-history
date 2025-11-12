@@ -7,36 +7,42 @@ void Assembly-CSharp.dll::InputToPlayerMovementAvatarEdit::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVInputWrapper);
+    FUN_?(&TypeInfo__MVInputWrapper);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   (this->fields).movementMapState = 0;
-  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MVInputWrapper);
+  if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+    FUN_?();
   }
   bVar1 = MVInputWrapper::MVInputWrapper_get_IsInGameInputSuppressed((MethodInfo *)0x0);
   if (bVar1 == 0) {
-    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MVInputWrapper);
+    if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+      FUN_?();
     }
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__MVInputWrapper);
+      FUN_?(&TypeInfo__MVInputWrapper);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MVInputWrapper);
+    if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+      FUN_?();
     }
     bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
                       (KogamaControls__Enum_MoveForward,KeyState__Enum_Pressed,(MethodInfo *)0x0);
-    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MVInputWrapper);
+    if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+      FUN_?();
     }
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__MVInputWrapper);
+      FUN_?(&TypeInfo__MVInputWrapper);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__MVInputWrapper);
+    if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+      FUN_?();
     }
     bVar2 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
                       (KogamaControls__Enum_MoveBackwards,KeyState__Enum_Pressed,(MethodInfo *)0x0);
@@ -44,15 +50,17 @@ void Assembly-CSharp.dll::InputToPlayerMovementAvatarEdit::
     if (bVar2 == 0) {
       uVar3 = (uint)bVar1 * 2;
     }
-    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+      FUN_?();
     }
     if (cRam_? == '\0') {
-      func_?();
+      FUN_?(&TypeInfo__MVInputWrapper);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+      FUN_?();
     }
     bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
                       (KogamaControls__Enum_MoveLeft,KeyState__Enum_Pressed,(MethodInfo *)0x0);
@@ -60,15 +68,17 @@ void Assembly-CSharp.dll::InputToPlayerMovementAvatarEdit::
     if (bVar1 == 0) {
       uVar4 = uVar3;
     }
-    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+      FUN_?();
     }
     if (cRam_? == '\0') {
-      func_?();
+      FUN_?(&TypeInfo__MVInputWrapper);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+      FUN_?();
     }
     bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
                       (KogamaControls__Enum_MoveRight,KeyState__Enum_Pressed,(MethodInfo *)0x0);
@@ -76,23 +86,31 @@ void Assembly-CSharp.dll::InputToPlayerMovementAvatarEdit::
     if (bVar1 == 0) {
       uVar3 = uVar4;
     }
-    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+      FUN_?();
     }
     if (cRam_? == '\0') {
-      func_?();
+      FUN_?(&TypeInfo__MVInputWrapper);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+      FUN_?();
     }
     bVar1 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
                       (KogamaControls__Enum_Jump,KeyState__Enum_Pressed,(MethodInfo *)0x0);
-    uVar4 = uVar3 | 0x10;
+    uVar4 = (this->fields).frameUpdateMovementMapState;
+    uVar5 = uVar3 | 0x10;
     if (bVar1 == 0) {
-      uVar4 = uVar3;
+      uVar5 = uVar3;
     }
-    (this->fields).frameUpdateMovementMapState = uVar4 | (this->fields).frameUpdateMovementMapState;
+    if (fromFrameUpdate == 0) {
+      (this->fields).frameUpdateMovementMapState = 0;
+      (this->fields).movementMapState = uVar5 | (this->fields).movementMapState | uVar4;
+      return;
+    }
+    (this->fields).frameUpdateMovementMapState = uVar5 | uVar4;
   }
   return;
 }
@@ -111,86 +129,96 @@ Vector3 * Assembly-CSharp.dll::InputToPlayerMovementAvatarEdit::
   __return_storage_ptr__->y = 0.0;
   __return_storage_ptr__->z = 0.0;
   if (bVar1) {
-    func_?(&TypeInfo__UnityEngine__Vector3);
+    FUN_?(&TypeInfo__UnityEngine__Vector3);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pVVar2 = TypeInfo__UnityEngine__Vector3;
-  pVVar3 = TypeInfo__UnityEngine__Vector3->static_fields;
-  uVar4 = (pVVar3->zeroVector).x;
-  uVar5 = (pVVar3->zeroVector).y;
-  fVar6 = (pVVar3->zeroVector).z;
-  __return_storage_ptr__->x = (float)uVar4;
-  __return_storage_ptr__->y = (float)uVar5;
-  iVar7 = (this->fields).movementMapState;
-  __return_storage_ptr__->z = fVar6;
-  cVar8 = cRam_?;
-  if ((iVar7 & 2) != 0) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
+  cVar2 = cRam_?;
+  pVVar3 = TypeInfo__UnityEngine__Vector3;
+  pVVar4 = TypeInfo__UnityEngine__Vector3->static_fields;
+  iVar5 = (this->fields).movementMapState;
+  uVar6 = (pVVar4->zeroVector).x;
+  uVar7 = (pVVar4->zeroVector).y;
+  fVar8 = (pVVar4->zeroVector).z;
+  __return_storage_ptr__->x = (float)uVar6;
+  __return_storage_ptr__->y = (float)uVar7;
+  __return_storage_ptr__->z = fVar8;
+  if ((iVar5 & 2) != 0) {
+    if (cVar2 == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
+      cVar2 = '\x01';
       cRam_? = '\x01';
-      pVVar2 = TypeInfo__UnityEngine__Vector3;
+      pVVar3 = TypeInfo__UnityEngine__Vector3;
     }
-    cVar8 = cRam_?;
-    pVVar3 = pVVar2->static_fields;
-    uVar9 = (pVVar3->forwardVector).x;
-    uVar10 = (pVVar3->forwardVector).y;
-    fVar11 = (pVVar3->forwardVector).z;
-    __return_storage_ptr__->x = (float)uVar9 + (float)uVar4;
-    __return_storage_ptr__->y = (float)uVar10 + (float)uVar5;
-    __return_storage_ptr__->z = fVar11 + fVar6;
+    pVVar4 = pVVar3->static_fields;
+    uVar9 = (pVVar4->forwardVector).x;
+    uVar10 = (pVVar4->forwardVector).y;
+    fVar11 = (pVVar4->forwardVector).z;
+    __return_storage_ptr__->x = (float)uVar6 + (float)uVar9;
+    __return_storage_ptr__->y = (float)uVar7 + (float)uVar10;
+    __return_storage_ptr__->z = fVar8 + fVar11;
   }
   if (((this->fields).movementMapState & 8) != 0) {
     uVar12 = __return_storage_ptr__->x;
     uVar13 = __return_storage_ptr__->y;
-    fVar6 = __return_storage_ptr__->z;
-    if (cVar8 == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
+    fVar8 = __return_storage_ptr__->z;
+    if (cVar2 == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
-      pVVar2 = TypeInfo__UnityEngine__Vector3;
+      pVVar3 = TypeInfo__UnityEngine__Vector3;
     }
-    pVVar3 = pVVar2->static_fields;
-    uVar14 = (pVVar3->forwardVector).x;
-    uVar15 = (pVVar3->forwardVector).y;
-    fVar11 = (pVVar3->forwardVector).z;
+    pVVar4 = pVVar3->static_fields;
+    uVar14 = (pVVar4->forwardVector).x;
+    uVar15 = (pVVar4->forwardVector).y;
+    fVar11 = (pVVar4->forwardVector).z;
     __return_storage_ptr__->x = (float)uVar12 - (float)uVar14;
     __return_storage_ptr__->y = (float)uVar13 - (float)uVar15;
-    __return_storage_ptr__->z = fVar6 - fVar11;
+    __return_storage_ptr__->z = fVar8 - fVar11;
   }
-  cVar8 = cRam_?;
+  cVar2 = cRam_?;
   if (((this->fields).movementMapState & 1) != 0) {
     uVar16 = __return_storage_ptr__->x;
     uVar17 = __return_storage_ptr__->y;
-    fVar6 = __return_storage_ptr__->z;
+    fVar8 = __return_storage_ptr__->z;
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
-      pVVar2 = TypeInfo__UnityEngine__Vector3;
+      pVVar3 = TypeInfo__UnityEngine__Vector3;
     }
-    cVar8 = cRam_?;
-    pVVar3 = pVVar2->static_fields;
-    uVar18 = (pVVar3->rightVector).x;
-    uVar19 = (pVVar3->rightVector).y;
-    fVar11 = (pVVar3->rightVector).z;
+    cVar2 = cRam_?;
+    pVVar4 = pVVar3->static_fields;
+    uVar18 = (pVVar4->rightVector).x;
+    uVar19 = (pVVar4->rightVector).y;
+    fVar11 = (pVVar4->rightVector).z;
     __return_storage_ptr__->x = (float)uVar16 - (float)uVar18;
     __return_storage_ptr__->y = (float)uVar17 - (float)uVar19;
-    __return_storage_ptr__->z = fVar6 - fVar11;
+    __return_storage_ptr__->z = fVar8 - fVar11;
   }
   if (((this->fields).movementMapState & 4) != 0) {
     uVar20 = __return_storage_ptr__->x;
     uVar21 = __return_storage_ptr__->y;
-    fVar6 = __return_storage_ptr__->z;
-    if (cVar8 == '\0') {
-      func_?(&TypeInfo__UnityEngine__Vector3);
+    fVar8 = __return_storage_ptr__->z;
+    if (cVar2 == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Vector3);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
-      pVVar2 = TypeInfo__UnityEngine__Vector3;
+      pVVar3 = TypeInfo__UnityEngine__Vector3;
     }
-    pVVar3 = pVVar2->static_fields;
-    uVar22 = (pVVar3->rightVector).x;
-    uVar23 = (pVVar3->rightVector).y;
-    fVar11 = (pVVar3->rightVector).z;
-    __return_storage_ptr__->x = (float)uVar22 + (float)uVar20;
-    __return_storage_ptr__->y = (float)uVar23 + (float)uVar21;
-    __return_storage_ptr__->z = fVar11 + fVar6;
+    pVVar4 = pVVar3->static_fields;
+    uVar22 = (pVVar4->rightVector).x;
+    uVar23 = (pVVar4->rightVector).y;
+    fVar11 = (pVVar4->rightVector).z;
+    __return_storage_ptr__->x = (float)uVar20 + (float)uVar22;
+    __return_storage_ptr__->y = (float)uVar21 + (float)uVar23;
+    __return_storage_ptr__->z = fVar8 + fVar11;
   }
   return __return_storage_ptr__;
 }

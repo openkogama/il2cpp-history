@@ -6,95 +6,97 @@ void Assembly-CSharp.dll::RTG::GizmoCollectionEnabledStateSnapshot::
                (GizmoCollectionEnabledStateSnapshot *this,MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
-  puStack_4 = &stack0xffffffa4;
-  puVar5 = &stack0xffffffa4;
   if (cRam_? == '\0') {
-    func_?(&MethodInfo__System__Collections__Generic__Dictionary<RTG::Gizmo,_bool>__Clear__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<RTG::Gizmo,_bool>__GetEnumerator__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<RTG::Gizmo,_bool>__Dispose__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<RTG::Gizmo,_bool>__MoveNext__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<RTG::Gizmo,_bool>__get_Current__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<RTG::Gizmo,_bool>__get_Key__
-                   );
-    func_?(&
-                    MethodInfo__System__Collections__Generic__KeyValuePair<RTG::Gizmo,_bool>__get_Value__
-                   );
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<RTG::Gizmo,_bool>__Clear__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<RTG::Gizmo,_bool>__GetEnumerator__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<RTG::Gizmo,_bool>__Dispose__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<RTG::Gizmo,_bool>__MoveNext__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<RTG::Gizmo,_bool>__get_Current__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<RTG::Gizmo,_bool>__get_Key__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__KeyValuePair<RTG::Gizmo,_bool>__get_Value__
+                 );
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
-    puVar5 = puStack_4;
   }
-  puStack_4 = puVar5;
-  DStack_6._dictionary = (Dictionary_2_System_Object_System_Boolean_ *)0x0;
-  DStack_6._version = 0;
-  DStack_6._index = 0;
-  DStack_6._current.key = (Object *)0x0;
-  DStack_6._current.value = 0;
-  DStack_6._current._5_3_ = 0;
-  DStack_6._getEnumeratorRetType = 0;
-  method_00 = (MethodInfo *)(this->fields)._gizmoToState;
-  if (method_00 != (MethodInfo *)0x0) {
-    pDVar7 = mscorlib.dll::System::Collections::Generic::Dictionary`2[System::UInt32,System::Object]
-             ::Dictionary_2_System_UInt32_System_Object__GetEnumerator
-                       (&DStack_8,(Dictionary_2_System_UInt32_System_Object_ *)method_00,
-                        MethodInfo__System__Collections__Generic__Dictionary<RTG::Gizmo,_bool>__GetEnumerator__
-                       );
-    uStack_9 = 0;
-    DStack_6._dictionary = (Dictionary_2_System_Object_System_Boolean_ *)pDVar7->_dictionary;
-    DStack_6._version = pDVar7->_version;
-    DStack_6._index = pDVar7->_index;
-    DStack_6._current.key = (Object *)(pDVar7->_current).key;
-    DStack_6._16_8_ = *(undefined8 *)&(pDVar7->_current).value;
-    uStack_1 = 1;
-    pDStack_10 = &DStack_6;
-    while( true ) {
-      bVar11 = mscorlib.dll::System::Collections::Generic::
-              Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Boolean]::
-              Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Boolean__MoveNext
-                        (&DStack_6,
-                         MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<RTG::Gizmo,_bool>__MoveNext__
-                        );
-      if (bVar11 == 0) break;
-      if ((Gizmo *)DStack_6._current.key == (Gizmo *)0x0) goto code_?;
-      Gizmo::Gizmo_SetEnabled
-                ((Gizmo *)DStack_6._current.key,DStack_6._current.value,(MethodInfo *)0x0);
+  pDVar1 = (this->fields)._gizmoToState;
+  if (pDVar1 != (Dictionary_2_RTG_Gizmo_System_Boolean_ *)0x0) {
+    uStack_2 = 0;
+    uStack_3 = 0;
+    if (iRam_? != 0) {
+      uVar4 = (uint)((ulonglong)&pDStack_5 >> 0xc);
+      puVar6 = (ulonglong *)((ulonglong)((uVar4 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar7 = *puVar6;
+        LOCK();
+        uVar8 = *puVar6;
+        if (uVar7 == uVar8) {
+          *puVar6 = uVar7 | 1L << (uVar4 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar7 != uVar8);
     }
-    uStack_1 = 0xffffffff;
-    mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-              ((Object *)&DStack_6,
-               (ExceptionArgument__Enum)
-               MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<RTG::Gizmo,_bool>__Dispose__
-               ,method_00);
-    uStack_1 = 0xffffffff;
-    this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
+    uStack_9 = (ulonglong)(uint)(pDVar1->fields)._version;
+    uStack_10 = 2;
+    DStack_11._version = (undefined4)uStack_9;
+    DStack_11._index = uStack_9._4_4_;
+    DStack_11._current.key = (Object *)0x0;
+    DStack_11._current.value = 0;
+    DStack_11._current._9_7_ = 0;
+    DStack_11._getEnumeratorRetType = 2;
+    DStack_11._36_4_ = 0;
+    pDStack_5 = pDVar1;
+    DStack_11._dictionary = (Dictionary_2_System_Object_System_Boolean_ *)pDVar1;
+    while (bVar12 = mscorlib.dll::System::Collections::Generic::
+                   Dictionary`2[TKey,TValue]+Enumerator[System::Object,System::Boolean]::
+                   Dictionary_2_TKey_TValue_Enumerator_System_Object_System_Boolean__MoveNext
+                             (&DStack_11,
+                              MethodInfo__System__Collections__Generic__Dictionary_2_TKey_TValue___Enumerator<RTG::Gizmo,_bool>__MoveNext__
+                             ), bVar12 != 0) {
+      if ((Gizmo *)DStack_11._current.key == (Gizmo *)0x0) goto code_?;
+      Gizmo::Gizmo_SetEnabled
+                ((Gizmo *)DStack_11._current.key,DStack_11._current.value,(MethodInfo *)0x0);
+    }
+    this_00 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_
                *)(this->fields)._gizmoToState;
     if (this_00 !=
-        (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-         *)0x0) {
-      mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::StyleSheets
-      ::StyleSheetCache+SheetHandleKey,System::Object]::
-      Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__Clear
+        (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *)0x0
+       ) {
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+      TypeConverterRegistry+ConverterKey,System::Object]::
+      Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object__Clear
                 (this_00,
                  MethodInfo__System__Collections__Generic__Dictionary<RTG::Gizmo,_bool>__Clear__);
-      *unaff_FS_OFFSET = uStack_3;
       return;
     }
   }
+  FUN_?();
 code_?:
-  uVar12 = func_?();
-  func_?(uVar12);
+  FUN_?();
+  FUN_?();
   pcVar13 = (code *)swi(3);
   (*pcVar13)();
   return;
@@ -109,81 +111,109 @@ void Assembly-CSharp.dll::RTG::GizmoCollectionEnabledStateSnapshot::
                MethodInfo *method)
 
 {
-  uStack_1 = 0xffffffff;
-  puStack_2 = &DAT_?;
-  uStack_3 = *unaff_FS_OFFSET;
-  *unaff_FS_OFFSET = &uStack_3;
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<RTG::Gizmo,_bool>__Add_RTG__Gizmo__bool_
-                   );
-    func_?(&MethodInfo__System__Collections__Generic__Dictionary<RTG::Gizmo,_bool>__Clear__
-                   );
-    func_?(&TypeInfo__System__IDisposable);
-    func_?(&TypeInfo__System__Collections__Generic__IEnumerable<RTG::Gizmo>);
-    func_?(&TypeInfo__System__Collections__Generic__IEnumerator<RTG::Gizmo>);
-    func_?(&TypeInfo__System__Collections__IEnumerator);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<RTG::Gizmo,_bool>__Add_RTG__Gizmo__bool_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&MethodInfo__System__Collections__Generic__Dictionary<RTG::Gizmo,_bool>__Clear__);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__IDisposable);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__IEnumerable<RTG::Gizmo>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__IEnumerator<RTG::Gizmo>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__IEnumerator);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-             *)(this->fields)._gizmoToState;
+  this_00 = (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *
+            )(this->fields)._gizmoToState;
   if (this_00 !=
-      (Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object_
-       *)0x0) {
-    mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::StyleSheets::
-    StyleSheetCache+SheetHandleKey,System::Object]::
-    Dictionary_2_UnityEngine_UIElements_StyleSheets_StyleSheetCache_SheetHandleKey_System_Object__Clear
+      (Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object_ *)0x0)
+  {
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[UnityEngine::UIElements::
+    TypeConverterRegistry+ConverterKey,System::Object]::
+    Dictionary_2_UnityEngine_UIElements_TypeConverterRegistry_ConverterKey_System_Object__Clear
               (this_00,
                MethodInfo__System__Collections__Generic__Dictionary<RTG::Gizmo,_bool>__Clear__);
     if (gizmos != (IEnumerable_1_RTG_Gizmo_ *)0x0) {
-      piVar4 = (int *)func_?(0);
-      uStack_1 = 1;
-      while( true ) {
-        if (piVar4 == (int *)0x0) break;
-        cVar5 = func_?(0,TypeInfo__System__Collections__IEnumerator,piVar4);
-        if (cVar5 == '\0') {
-          uStack_1 = 0xffffffff;
-          if (piVar4 != (int *)0x0) {
-            func_?(0,TypeInfo__System__IDisposable,piVar4);
-          }
-          *unaff_FS_OFFSET = uStack_3;
+      plVar1 = (longlong *)
+               FUN_?(0,TypeInfo__System__Collections__Generic__IEnumerable<RTG::Gizmo>,
+                             gizmos);
+      do {
+        if (plVar1 == (longlong *)0x0) {
+code_?:
+          FUN_?();
+          FUN_?();
+          pcVar2 = (code *)swi(3);
+          (*pcVar2)();
           return;
         }
-        if (piVar4 == (int *)0x0) break;
-        uVar6 = 0;
-        uVar7 = *(ushort *)(*piVar4 + 0xb6);
-        if (uVar7 != 0) {
+        cVar3 = FUN_?(0,TypeInfo__System__Collections__IEnumerator);
+        if (cVar3 == '\0') {
+          if (plVar1 != (longlong *)0x0) {
+            FUN_?(0,TypeInfo__System__IDisposable,plVar1);
+          }
+          return;
+        }
+        if (plVar1 == (longlong *)0x0) {
+code_?:
+          FUN_?();
+          goto code_?;
+        }
+        lVar4 = *plVar1;
+        uVar5 = 0;
+        pIVar6 = TypeInfo__System__Collections__Generic__IEnumerator<RTG::Gizmo>;
+        if (*(ushort *)(lVar4 + 0x12e) != 0) {
           do {
-            if (*(IEnumerator_1_RTG_Gizmo___Class **)(*(int *)(*piVar4 + 0x58) + (uint)uVar6 * 8) ==
+            if (*(IEnumerator_1_RTG_Gizmo___Class **)
+                 (*(longlong *)(lVar4 + 0xb0) + (ulonglong)uVar5 * 0x10) ==
                 TypeInfo__System__Collections__Generic__IEnumerator<RTG::Gizmo>) {
-              puVar8 = (undefined4 *)
-                       (*piVar4 +
-                       (*(int *)(*(int *)(*piVar4 + 0x58) + 4 + (uint)uVar6 * 8) + 0x18) * 8);
+              puVar7 = (undefined8 *)
+                       ((longlong)
+                        *(int *)(*(longlong *)(lVar4 + 0xb0) + 8 + (ulonglong)uVar5 * 0x10) * 0x10 +
+                        0x138 + lVar4);
               goto code_?;
             }
-            uVar6 = uVar6 + 1;
-          } while (uVar6 < uVar7);
+            uVar5 = uVar5 + 1;
+          } while (uVar5 < *(ushort *)(lVar4 + 0x12e));
         }
-        puVar8 = (undefined4 *)
-                 func_?(piVar4,
-                                 TypeInfo__System__Collections__Generic__IEnumerator<RTG::Gizmo>,0);
+        puVar7 = (undefined8 *)
+                 FUN_?(plVar1,
+                               TypeInfo__System__Collections__Generic__IEnumerator<RTG::Gizmo>,0);
 code_?:
-        key = (Object *)(*(code *)*puVar8)(piVar4,puVar8[1]);
+        key = (Object *)(*(code *)*puVar7)(plVar1,puVar7[1]);
         this_01 = (this->fields)._gizmoToState;
-        if ((key == (Object *)0x0) || (this_01 == (Dictionary_2_RTG_Gizmo_System_Boolean_ *)0x0))
-        break;
+        if (key == (Object *)0x0) {
+code_?:
+          FUN_?();
+          goto code_?;
+        }
+        if (this_01 == (Dictionary_2_RTG_Gizmo_System_Boolean_ *)0x0) {
+          FUN_?();
+          goto code_?;
+        }
         mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Boolean]::
-        Dictionary_2_System_Object_System_Boolean__Add
+        Dictionary_2_System_Object_System_Boolean__TryInsert
                   ((Dictionary_2_System_Object_System_Boolean_ *)this_01,key,
                    *(bool *)&key[10].monitor,
+                   (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)pIVar6 >> 8),2),
                    MethodInfo__System__Collections__Generic__Dictionary<RTG::Gizmo,_bool>__Add_RTG__Gizmo__bool_
-                  );
-      }
+                   ->klass->rgctx_data[0x22].method);
+      } while( true );
     }
   }
-  func_?();
-  pcVar9 = (code *)swi(3);
-  (*pcVar9)();
+  FUN_?();
+  pcVar2 = (code *)swi(3);
+  (*pcVar2)();
   return;
 }
 
@@ -196,25 +226,38 @@ void Assembly-CSharp.dll::RTG::GizmoCollectionEnabledStateSnapshot::
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__System__Collections__Generic__Dictionary<RTG::Gizmo,_bool>__Dictionary__
-                   );
-    func_?(&TypeInfo__System__Collections__Generic__Dictionary<RTG::Gizmo,_bool>);
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<RTG::Gizmo,_bool>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Collections__Generic__Dictionary<RTG::Gizmo,_bool>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData_
-             *)func_?(TypeInfo__System__Collections__Generic__Dictionary<RTG::Gizmo,_bool>)
-  ;
+  this_00 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+             *)FUN_?(TypeInfo__System__Collections__Generic__Dictionary<RTG::Gizmo,_bool>);
   mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
-  StyleComplexSelector+PseudoStateData]::
-  Dictionary_2_System_Object_UnityEngine_UIElements_StyleComplexSelector_PseudoStateData___ctor
+  UIR::UIRenderDevice+DisableForceGammaMaterial]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
             (this_00,
              MethodInfo__System__Collections__Generic__Dictionary<RTG::Gizmo,_bool>__Dictionary__);
-  method_00 = (MethodInfo *)&this->fields;
+  bVar1 = iRam_? != 0;
   (this->fields)._gizmoToState = (Dictionary_2_RTG_Gizmo_System_Boolean_ *)this_00;
-  func_?(method_00,this_00);
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            ((Object *)this,ExceptionArgument__Enum_obj,method_00);
+  if (bVar1) {
+    uVar2 = (uint)((ulonglong)&this->fields >> 0xc);
+    puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar4 = *puVar3;
+      LOCK();
+      uVar5 = *puVar3;
+      if (uVar4 == uVar5) {
+        *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar4 != uVar5);
+  }
   return;
 }
 

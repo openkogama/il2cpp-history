@@ -7,32 +7,81 @@ void Assembly-CSharp.dll::DesktopCubeModelingController::DesktopCubeModelingCont
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__UnityEngine__Object);
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pDVar1 = (this->fields).desktopCubeModelingController;
-  if (pDVar1 != (DesktopCubeModelingToolsController *)0x0) {
-    (pDVar1->fields).cubeModelingStateMachine = cubeModelingStateMachine;
-    func_?(&(pDVar1->fields).cubeModelingStateMachine,cubeModelingStateMachine);
-    pDVar2 = (this->fields).togglesController;
-    if ((TypeInfo__UnityEngine__Object->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__Object);
-    }
-    bVar3 = UnityEngine.CoreModule.dll::UnityEngine::Object::Object_1_op_Inequality
-                      ((Object_1 *)pDVar2,(Object_1 *)0x0,(MethodInfo *)0x0);
-    if (bVar3 != 0) {
-      pDVar2 = (this->fields).togglesController;
-      if (pDVar2 == (DesktopCubeModelingTogglesController *)0x0) goto code_?;
-      IngameController::CubeModeling::DesktopCubeModelingTogglesController::
-      DesktopCubeModelingTogglesController_Initialize
-                (pDVar2,cubeModelingStateMachine,(MethodInfo *)0x0);
-    }
-    return;
+  if (pDVar1 == (DesktopCubeModelingToolsController *)0x0) goto code_?;
+  bVar2 = iRam_? != 0;
+  (pDVar1->fields).cubeModelingStateMachine = cubeModelingStateMachine;
+  if (bVar2) {
+    uVar3 = (uint)((ulonglong)&(pDVar1->fields).cubeModelingStateMachine >> 0xc);
+    puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+    do {
+      uVar5 = *puVar4;
+      LOCK();
+      uVar6 = *puVar4;
+      if (uVar5 == uVar6) {
+        *puVar4 = uVar5 | 1L << (ulonglong)(uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (uVar5 != uVar6);
   }
+  pDVar7 = (this->fields).togglesController;
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (pDVar7 != (DesktopCubeModelingTogglesController *)0x0) {
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if ((pDVar7->fields)._._._._.m_CachedPtr != (void *)0x0) {
+      pDVar7 = (this->fields).togglesController;
+      if (pDVar7 == (DesktopCubeModelingTogglesController *)0x0) {
 code_?:
-  func_?();
-  pcVar4 = (code *)swi(3);
-  (*pcVar4)();
+        FUN_?();
+        pcVar8 = (code *)swi(3);
+        (*pcVar8)();
+        return;
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__PostProcessingManager);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__PostProcessingManager->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      cVar9 = FUN_?();
+      if (cVar9 == '\0') {
+        this_00 = (pDVar7->fields).toggleCameraEffects;
+        if ((this_00 == (ToggleCameraEffects *)0x0) ||
+           (this_01 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                ((Component *)this_00,(MethodInfo *)0x0),
+           this_01 == (GameObject *)0x0)) goto code_?;
+        UnityEngine.CoreModule.dll::UnityEngine::GameObject::GameObject_SetActive
+                  (this_01,0,(MethodInfo *)0x0);
+      }
+    }
+  }
   return;
 }
 
@@ -45,95 +94,250 @@ void Assembly-CSharp.dll::DesktopCubeModelingController::
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__DesktopCubeModelingController__OnPublishPlanetFinished_System__String_
-                   );
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&TypeInfo__NotificationController);
-    func_?(&
-                    MethodInfo__DesktopCubeModelingController____c___OnPublishPlanetFinished_b__12_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__DesktopCubeModelingController____c);
-    func_?(&TypeInfo__UnityEngine__Events__UnityAction<System::String>);
+    FUN_?(&
+                  MethodInfo__DesktopCubeModelingController__OnPublishPlanetFinished_System__String_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__DesktopCubeModelingController____c___OnPublishPlanetFinished_b__12_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__DesktopCubeModelingController____c);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction<System::String>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
   if ((pMVar1 == (MVGameControllerBase *)0x0) ||
      (pMVar2 = (pMVar1->fields).game, pMVar2 == (MVNetworkGame *)0x0)) {
-    func_?();
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  pUVar4 = (pMVar2->fields).OnPublishedPlanet;
+  this_01 = (UnityAction_1_System_Object_ *)
+            FUN_?(TypeInfo__UnityEngine__Events__UnityAction<System::String>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+  UnityAction_1_System_Object___ctor
+            (this_01,(Object *)this,
+             MethodInfo__DesktopCubeModelingController__OnPublishPlanetFinished_System__String_,
+             (MethodInfo *)0x0);
+  pDVar5 = mscorlib.dll::System::Delegate::Delegate_Remove
+                     ((Delegate *)pUVar4,(Delegate *)this_01,(MethodInfo *)0x0);
+  pUVar6 = TypeInfo__UnityEngine__Events__UnityAction<System::String>;
+  if (pDVar5 == (Delegate *)0x0) {
+    (pMVar2->fields).OnPublishedPlanet = (UnityAction_1_System_String_ *)0x0;
   }
   else {
-    pUVar3 = (pMVar2->fields).OnPublishedPlanet;
-    this_00 = (UnityAction_1_System_Object_ *)
-              func_?(TypeInfo__UnityEngine__Events__UnityAction<System::String>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-    UnityAction_1_System_Object___ctor
-              (this_00,(Object *)this,
-               MethodInfo__DesktopCubeModelingController__OnPublishPlanetFinished_System__String_,
-               (MethodInfo *)0x0);
-    pDVar4 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)pUVar3,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar4 == (Delegate *)0x0) {
-      (pMVar2->fields).OnPublishedPlanet = (UnityAction_1_System_String_ *)0x0;
-code_?:
-      func_?();
-      text = (String *)
-             UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)&(pMVar2->fields).OnPublishedPlanet,(MethodInfo *)0x0);
-      if ((TypeInfo__DesktopCubeModelingController____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      callbackFunction = TypeInfo__DesktopCubeModelingController____c->static_fields->__9__12_0;
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-        if ((TypeInfo__DesktopCubeModelingController____c->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        object = TypeInfo__DesktopCubeModelingController____c->static_fields->__9;
-        callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
-                   MethodInfo__DesktopCubeModelingController____c___OnPublishPlanetFinished_b__12_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   ,(MethodInfo *)0x0);
-        TypeInfo__DesktopCubeModelingController____c->static_fields->__9__12_0 = callbackFunction;
-        func_?();
-      }
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?();
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                ((GameObject *)text,(BaseEventData *)0x0,
-                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                );
-      if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
-      }
-      NotificationController::NotificationController_PushNotification
-                (text,(Sprite *)0x0,5,(MethodInfo *)0x0);
+    pUVar4 = (UnityAction_1_System_String_ *)
+             FUN_?(pDVar5,TypeInfo__UnityEngine__Events__UnityAction<System::String>);
+    if (pUVar4 == (UnityAction_1_System_String_ *)0x0) {
+      FUN_?(pDVar5,pUVar6);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
-    pUVar3 = (UnityAction_1_System_String_ *)func_?();
-    if (pUVar3 != (UnityAction_1_System_String_ *)0x0) {
-      (pMVar2->fields).OnPublishedPlanet = pUVar3;
-      iVar5 = func_?();
-      if (iVar5 != 0) goto code_?;
+    (pMVar2->fields).OnPublishedPlanet = pUVar4;
+    pUVar6 = TypeInfo__UnityEngine__Events__UnityAction<System::String>;
+    lVar7 = FUN_?();
+    if (lVar7 == 0) {
+      FUN_?(pDVar5,pUVar6);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
     }
   }
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  if (iRam_? != 0) {
+    uVar8 = (uint)((ulonglong)&(pMVar2->fields).OnPublishedPlanet >> 0xc);
+    lVar7 = (ulonglong)((uVar8 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar9 = *(ulonglong *)(lVar7 + 0xADDR);
+      puVar10 = (ulonglong *)(lVar7 + 0xADDR);
+      LOCK();
+      bVar11 = uVar9 == *puVar10;
+      if (bVar11) {
+        *puVar10 = uVar9 | 1L << (uVar8 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar11);
+  }
+  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                   ((Component *)this,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__DesktopCubeModelingController____c->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__DesktopCubeModelingController____c);
+  }
+  this_02 = TypeInfo__DesktopCubeModelingController____c->static_fields->__9__12_0;
+  if (this_02 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+    if (*(int *)&(TypeInfo__DesktopCubeModelingController____c->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__DesktopCubeModelingController____c);
+    }
+    object = TypeInfo__DesktopCubeModelingController____c->static_fields->__9;
+    this_02 = (ExecuteEvents_EventFunction_1_IUIStack_ *)
+              FUN_?(
+                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                           );
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+    ExecuteEvents_EventFunction_1_System_Object___ctor
+              ((ExecuteEvents_EventFunction_1_System_Object_ *)this_02,(Object *)object,
+               MethodInfo__DesktopCubeModelingController____c___OnPublishPlanetFinished_b__12_0_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+               ,(MethodInfo *)0x0);
+    TypeInfo__DesktopCubeModelingController____c->static_fields->__9__12_0 = this_02;
+    if (iRam_? != 0) {
+      uVar8 = (uint)((ulonglong)
+                      &TypeInfo__DesktopCubeModelingController____c->static_fields->__9__12_0 >> 0xc
+                     );
+      lVar7 = (ulonglong)((uVar8 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar9 = *(ulonglong *)(lVar7 + 0xADDR);
+        puVar10 = (ulonglong *)(lVar7 + 0xADDR);
+        LOCK();
+        bVar11 = uVar9 == *puVar10;
+        if (bVar11) {
+          *puVar10 = uVar9 | 1L << (uVar8 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar11);
+    }
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
+            (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)this_02,
+             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+            );
+  if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  uVar12 = 0;
+  if (cRam_? == '\0') {
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                  ,0,5,0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__NotificationsManager);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  if (TypeInfo__NotificationsManager->static_fields->_Initialized_k__BackingField == 0) {
+    return;
+  }
+  this_03 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+             *)FUN_?(
+                            TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                            );
+  mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements::
+  UIR::UIRenderDevice+DisableForceGammaMaterial]::
+  Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
+            (this_03,
+             MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+            );
+  pOVar13 = (Object *)FUN_?(uRam_?,&stack0xffffffffffffffe8);
+  if (this_03 !=
+      (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+       *)0x0) {
+    uVar12 = CONCAT71((int7)((ulonglong)uVar12 >> 8),2);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__TryInsert
+              ((Dictionary_2_System_Object_System_Object_ *)this_03,pOVar13,
+               (Object *)completionMessage,(InsertionBehavior__Enum)uVar12,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+               ->klass->rgctx_data[0x22].method);
+    pOVar13 = (Object *)FUN_?(uRam_?,&stack0xffffffffffffffe8);
+    value = (Object *)FUN_?(uRam_?,&stack0xffffffffffffffec);
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+    Dictionary_2_System_Object_System_Object__TryInsert
+              ((Dictionary_2_System_Object_System_Object_ *)this_03,pOVar13,value,
+               (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar12 >> 8),2),
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+               ->klass->rgctx_data[0x22].method);
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__NotificationsManager);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    this_00 = TypeInfo__NotificationsManager->static_fields->_activeInstance;
+    if (this_00 != (NotificationsManager *)0x0) {
+      NotificationsManager::NotificationsManager_InstantiateNotification
+                (this_00,NotificationType__Enum_ModalNotification,
+                 (Dictionary_2_System_Object_System_Object_ *)this_03,(MethodInfo *)0x0);
+      return;
+    }
+  }
+  FUN_?();
+  pcVar3 = (code *)swi(3);
+  (*pcVar3)();
   return;
 }
 
@@ -147,25 +351,43 @@ void Assembly-CSharp.dll::DesktopCubeModelingController::
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__System__Action<System::String>);
-    func_?(&
-                    MethodInfo__DesktopCubeModelingController__OnPublishPlanetFinished_System__String_
-                   );
-    func_?(&
-                    MethodInfo__DesktopCubeModelingController___PublishCallback_b__11_1_System__String_
-                   );
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    MethodInfo__DesktopCubeModelingController____c___PublishCallback_b__11_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__DesktopCubeModelingController____c);
-    func_?(&TypeInfo__UnityEngine__Events__UnityAction<System::String>);
+    FUN_?(&TypeInfo__System__Action<System::String>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__DesktopCubeModelingController__OnPublishPlanetFinished_System__String_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__DesktopCubeModelingController___PublishCallback_b__11_1_System__String_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__DesktopCubeModelingController____c___PublishCallback_b__11_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__DesktopCubeModelingController____c);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction<System::String>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (popup != (ConfirmationPopup *)0x0) {
@@ -175,94 +397,123 @@ void Assembly-CSharp.dll::DesktopCubeModelingController::
     }
     root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
                      ((Component *)this,(MethodInfo *)0x0);
-    if ((TypeInfo__DesktopCubeModelingController____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__DesktopCubeModelingController____c);
+    if (*(int *)&(TypeInfo__DesktopCubeModelingController____c->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__DesktopCubeModelingController____c);
     }
-    callbackFunction = TypeInfo__DesktopCubeModelingController____c->static_fields->__9__11_0;
-    if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
-      if ((TypeInfo__DesktopCubeModelingController____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?(TypeInfo__DesktopCubeModelingController____c);
+    this_00 = TypeInfo__DesktopCubeModelingController____c->static_fields->__9__11_0;
+    if (this_00 == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+      if (*(int *)&(TypeInfo__DesktopCubeModelingController____c->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__DesktopCubeModelingController____c);
       }
       object = TypeInfo__DesktopCubeModelingController____c->static_fields->__9;
-      callbackFunction =
-           (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
-           func_?(
-                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                          );
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+      this_00 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
+                FUN_?(
+                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                             );
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+      ExecuteEvents_EventFunction_1_System_Object___ctor
+                ((ExecuteEvents_EventFunction_1_System_Object_ *)this_00,(Object *)object,
                  MethodInfo__DesktopCubeModelingController____c___PublishCallback_b__11_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
-      TypeInfo__DesktopCubeModelingController____c->static_fields->__9__11_0 = callbackFunction;
-      func_?(&TypeInfo__DesktopCubeModelingController____c->static_fields->__9__11_0,
-                      callbackFunction);
+      TypeInfo__DesktopCubeModelingController____c->static_fields->__9__11_0 = this_00;
+      if (iRam_? != 0) {
+        uVar1 = (uint)((ulonglong)
+                        &TypeInfo__DesktopCubeModelingController____c->static_fields->__9__11_0 >>
+                       0xc);
+        lVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar3 = *(ulonglong *)(lVar2 + 0xADDR);
+          puVar4 = (ulonglong *)(lVar2 + 0xADDR);
+          LOCK();
+          bVar5 = uVar3 == *puVar4;
+          if (bVar5) {
+            *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar5);
+      }
     }
-    if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+      FUN_?();
     }
     UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-              (root,(BaseEventData *)0x0,
-               (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+              (root,(BaseEventData *)0x0,(ExecuteEvents_EventFunction_1_System_Object_ *)this_00,
                UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
               );
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__MVGameControllerBase);
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
-    if ((pMVar1 != (MVGameControllerBase *)0x0) &&
-       (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) {
-      pUVar3 = (pMVar2->fields).OnPublishedPlanet;
-      this_01 = (UnityAction_1_System_Object_ *)
-                func_?(TypeInfo__UnityEngine__Events__UnityAction<System::String>);
+    pMVar6 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if ((pMVar6 != (MVGameControllerBase *)0x0) &&
+       (pMVar7 = (pMVar6->fields).game, pMVar7 != (MVNetworkGame *)0x0)) {
+      pUVar8 = (pMVar7->fields).OnPublishedPlanet;
+      pUVar9 = (UnityAction_1_System_Object_ *)
+               FUN_?(TypeInfo__UnityEngine__Events__UnityAction<System::String>);
       UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
       UnityAction_1_System_Object___ctor
-                (this_01,(Object *)this,
+                (pUVar9,(Object *)this,
                  MethodInfo__DesktopCubeModelingController__OnPublishPlanetFinished_System__String_,
                  (MethodInfo *)0x0);
-      pDVar4 = mscorlib.dll::System::Delegate::Delegate_Combine
-                         ((Delegate *)pUVar3,(Delegate *)this_01,(MethodInfo *)0x0);
-      if (pDVar4 == (Delegate *)0x0) {
-        (pMVar2->fields).OnPublishedPlanet = (UnityAction_1_System_String_ *)0x0;
+      pDVar10 = mscorlib.dll::System::Delegate::Delegate_Combine
+                         ((Delegate *)pUVar8,(Delegate *)pUVar9,(MethodInfo *)0x0);
+      pUVar11 = TypeInfo__UnityEngine__Events__UnityAction<System::String>;
+      if (pDVar10 == (Delegate *)0x0) {
+        (pMVar7->fields).OnPublishedPlanet = (UnityAction_1_System_String_ *)0x0;
       }
       else {
-        pUVar3 = (UnityAction_1_System_String_ *)func_?();
-        if (pUVar3 == (UnityAction_1_System_String_ *)0x0) goto code_?;
-        (pMVar2->fields).OnPublishedPlanet = pUVar3;
-        iVar5 = func_?();
-        if (iVar5 == 0) goto code_?;
-      }
-      func_?();
-      if (cRam_? == '\0') {
-        func_?(&TypeInfo__MVGameControllerBase);
-        cRam_? = '\x01';
-      }
-      pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
-      if ((pMVar1 != (MVGameControllerBase *)0x0) &&
-         (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) {
-        this_00 = (pMVar2->fields).operationRequests;
-        this_02 = (DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_
-                   *)func_?(TypeInfo__System__Action<System::String>);
-        DictionaryWithChangeEvent`2[TKey,TValue]+OnDictionaryChangeDelegate[Unity::IL2CPP::Metadata
-        ::__Il2CppFullySharedGenericType,Unity::IL2CPP::Metadata::__Il2CppFullySharedGenericType]::
-        DictionaryWithChangeEvent_2_TKey_TValue_OnDictionaryChangeDelegate_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType_Unity_IL2CPP_Metadata_Il2CppFullySharedGenericType___ctor
-                  (this_02,(Object *)this,
-                   MethodInfo__DesktopCubeModelingController___PublishCallback_b__11_1_System__String_
-                   ,(MethodInfo *)0x0);
-        if (this_00 != (MVNetworkGame_OperationRequests *)0x0) {
-          MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_PublishPlanet
-                    (this_00,(Action_1_String_ *)this_02,(MethodInfo *)0x0);
+        pUVar8 = (UnityAction_1_System_String_ *)
+                 FUN_?(pDVar10,TypeInfo__UnityEngine__Events__UnityAction<System::String>);
+        if (pUVar8 == (UnityAction_1_System_String_ *)0x0) {
+          FUN_?(pDVar10,pUVar11);
+          pcVar12 = (code *)swi(3);
+          (*pcVar12)();
+          return;
+        }
+        (pMVar7->fields).OnPublishedPlanet = pUVar8;
+        pUVar11 = TypeInfo__UnityEngine__Events__UnityAction<System::String>;
+        lVar2 = FUN_?(pDVar10,TypeInfo__UnityEngine__Events__UnityAction<System::String>);
+        if (lVar2 == 0) {
+          FUN_?(pDVar10,pUVar11);
+          pcVar12 = (code *)swi(3);
+          (*pcVar12)();
           return;
         }
       }
+      if (iRam_? != 0) {
+        uVar1 = (uint)((ulonglong)&(pMVar7->fields).OnPublishedPlanet >> 0xc);
+        lVar2 = (ulonglong)((uVar1 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar3 = *(ulonglong *)(lVar2 + 0xADDR);
+          puVar4 = (ulonglong *)(lVar2 + 0xADDR);
+          LOCK();
+          bVar5 = uVar3 == *puVar4;
+          if (bVar5) {
+            *puVar4 = uVar3 | 1L << (uVar1 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar5);
+      }
+      this_01 = MVGameControllerBase::MVGameControllerBase_get_OperationRequests((MethodInfo *)0x0);
+      pUVar9 = (UnityAction_1_System_Object_ *)
+               FUN_?(TypeInfo__System__Action<System::String>);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+      UnityAction_1_System_Object___ctor
+                (pUVar9,(Object *)this,
+                 MethodInfo__DesktopCubeModelingController___PublishCallback_b__11_1_System__String_
+                 ,(MethodInfo *)0x0);
+      if (this_01 != (MVNetworkGame_OperationRequests *)0x0) {
+        MVNetworkGame+OperationRequests::MVNetworkGame_OperationRequests_PublishPlanet
+                  (this_01,(Action_1_String_ *)pUVar9,(MethodInfo *)0x0);
+        return;
+      }
     }
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar6 = (code *)swi(3);
-  (*pcVar6)();
+  FUN_?();
+  pcVar12 = (code *)swi(3);
+  (*pcVar12)();
   return;
 }
 
@@ -274,64 +525,270 @@ void Assembly-CSharp.dll::DesktopCubeModelingController::DesktopCubeModelingCont
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__DesktopCubeModelingController___PublishGame_b__10_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&TypeInfo__NotificationController);
-    func_?(&StringLiteral_You_must_be_the_owner_in_order_t);
+    FUN_?(&
+                  MethodInfo__DesktopCubeModelingController___PublishGame_b__10_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__NotificationController);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_You_must_be_the_owner_in_order_t);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
   pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
-  if ((pMVar1 != (MVGameControllerBase *)0x0) &&
-     (this_00 = (pMVar1->fields).game, this_00 != (MVNetworkGame *)0x0)) {
-    this_01 = MVNetworkGame::MVNetworkGame_get_LocalPlayer(this_00,(MethodInfo *)0x0);
-    if (this_01 != (MVLocalPlayer *)0x0) {
-      PVar2 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_01,(MethodInfo *)0x0);
-      if ((char)PVar2 != '\x02') {
-        text = TM::TM__(StringLiteral_You_must_be_the_owner_in_order_t,(MethodInfo *)0x0);
-        sprite = (this->fields).errorSprite;
-        if ((TypeInfo__NotificationController->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
-        }
-        NotificationController::NotificationController_PushNotification
-                  (text,sprite,3,(MethodInfo *)0x0);
-        return;
-      }
-      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
-      callbackFunction =
-           (ExecuteEvents_EventFunction_1_System_Object_ *)
-           func_?(
-                          TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                          );
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)this,
-                 MethodInfo__DesktopCubeModelingController___PublishGame_b__10_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-                 ,(MethodInfo *)0x0);
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?();
-      }
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,callbackFunction,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                );
+  if ((((pMVar1 == (MVGameControllerBase *)0x0) ||
+       (pMVar2 = (pMVar1->fields).game, pMVar2 == (MVNetworkGame *)0x0)) ||
+      (this_00 = (pMVar2->fields).playerContainer, this_00 == (MVPlayerContainer *)0x0)) ||
+     (this_03 = MVPlayerContainer::MVPlayerContainer_get_LocalPlayer(this_00,(MethodInfo *)0x0),
+     this_03 == (MVLocalPlayer *)0x0)) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  PVar4 = MVLocalPlayer::MVLocalPlayer_get_PlanetOwnership(this_03,(MethodInfo *)0x0);
+  if ((char)PVar4 != '\x02') {
+    value_00 = TM::TM__(StringLiteral_You_must_be_the_owner_in_order_t,(MethodInfo *)0x0);
+    value = (this->fields).errorSprite;
+    if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+      FUN_?();
+    }
+    uVar5 = 0;
+    if (cRam_? == '\0') {
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                    ,value,3,0);
+      LOCK();
+      UNLOCK();
+      FUN_?(&
+                    MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&
+                    TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                   );
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeInfo__NotificationController);
+      LOCK();
+      UNLOCK();
+      FUN_?(&TypeInfo__UnityEngine__Object);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__NotificationsManager);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    if (TypeInfo__NotificationsManager->static_fields->_Initialized_k__BackingField == 0) {
       return;
     }
+    this_05 = (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+               *)FUN_?(
+                              TypeInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>
+                              );
+    mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,UnityEngine::UIElements
+    ::UIR::UIRenderDevice+DisableForceGammaMaterial]::
+    Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial___ctor
+              (this_05,
+               MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Dictionary__
+              );
+    pOVar6 = (Object *)FUN_?(uRam_?,&stack0xffffffffffffffe8);
+    if (this_05 !=
+        (Dictionary_2_System_Object_UnityEngine_UIElements_UIR_UIRenderDevice_DisableForceGammaMaterial_
+         *)0x0) {
+      uVar5 = CONCAT71((int7)((ulonglong)uVar5 >> 8),2);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__TryInsert
+                ((Dictionary_2_System_Object_System_Object_ *)this_05,pOVar6,(Object *)value_00,
+                 (InsertionBehavior__Enum)uVar5,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 ->klass->rgctx_data[0x22].method);
+      pOVar6 = (Object *)FUN_?(uRam_?,&stack0xffffffffffffffe8);
+      value_01 = (Object *)FUN_?(uRam_?,&stack0xffffffffffffffec);
+      uVar5 = CONCAT71((int7)((ulonglong)uVar5 >> 8),2);
+      mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+      Dictionary_2_System_Object_System_Object__TryInsert
+                ((Dictionary_2_System_Object_System_Object_ *)this_05,pOVar6,value_01,
+                 (InsertionBehavior__Enum)uVar5,
+                 MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                 ->klass->rgctx_data[0x22].method);
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__UnityEngine__Object);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      if (value != (Sprite *)0x0) {
+        if (*(int *)&(TypeInfo__UnityEngine__Object->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        if ((value->fields)._.m_CachedPtr != (void *)0x0) {
+          pOVar6 = (Object *)FUN_?(uRam_?,&stack0xffffffffffffffe8);
+          mscorlib.dll::System::Collections::Generic::Dictionary`2[System::Object,System::Object]::
+          Dictionary_2_System_Object_System_Object__TryInsert
+                    ((Dictionary_2_System_Object_System_Object_ *)this_05,pOVar6,(Object *)value,
+                     (InsertionBehavior__Enum)CONCAT71((int7)((ulonglong)uVar5 >> 8),2),
+                     MethodInfo__System__Collections__Generic__Dictionary<System::Object,_System::Object>__Add_System__Object__System__Object_
+                     ->klass->rgctx_data[0x22].method);
+        }
+      }
+      if (*(int *)&(TypeInfo__NotificationController->_1).field_0x1c == 0) {
+        FUN_?();
+      }
+      if (cRam_? == '\0') {
+        FUN_?(&TypeInfo__NotificationsManager);
+        LOCK();
+        UNLOCK();
+        cRam_? = '\x01';
+      }
+      this_01 = TypeInfo__NotificationsManager->static_fields->_activeInstance;
+      if (this_01 != (NotificationsManager *)0x0) {
+        NotificationsManager::NotificationsManager_InstantiateNotification
+                  (this_01,NotificationType__Enum_ModalNotification,
+                   (Dictionary_2_System_Object_System_Object_ *)this_05,(MethodInfo *)0x0);
+        return;
+      }
+    }
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
   }
-  func_?();
+  pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+  this_04 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+            FUN_?(
+                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                         );
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+  ExecuteEvents_EventFunction_1_System_Object___ctor
+            (this_04,(Object *)this,
+             MethodInfo__DesktopCubeModelingController___PublishGame_b__10_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+             ,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?();
+  }
+  pMVar8 = 
+  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+  ;
+  if ((
+      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+      ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    if ((pMVar8->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(pMVar8);
+    }
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_GetEventChain
+            (pGVar7,(IList_1_UnityEngine_Transform_ *)
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                    s_InternalTransformList,(MethodInfo *)0x0);
+  pLVar9 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+           s_InternalTransformList;
+  if (pLVar9 != (List_1_UnityEngine_Transform_ *)0x0) {
+    lVar10 = (longlong)(pLVar9->fields)._size;
+    uVar11 = 0;
+    if (0 < lVar10) {
+      lVar12 = 0;
+      lVar13 = 0x20;
+      do {
+        if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pLVar9 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                 s_InternalTransformList;
+        if (pLVar9 == (List_1_UnityEngine_Transform_ *)0x0) goto code_?;
+        if ((uint)(pLVar9->fields)._size <= uVar11) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        pTVar14 = (pLVar9->fields)._items;
+        if (pTVar14 == (Transform__Array *)0x0) goto code_?;
+        if ((uint)pTVar14->max_length <= uVar11) {
+          FUN_?();
+          pcVar3 = (code *)swi(3);
+          (*pcVar3)();
+          return;
+        }
+        this_02 = *(Component **)((longlong)pTVar14->vector + lVar13 + -0x20);
+        if (this_02 == (Component *)0x0) goto code_?;
+        pGVar7 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           (this_02,(MethodInfo *)0x0);
+        bVar15 = UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+                ExecuteEvents_Execute_18
+                          (pGVar7,(BaseEventData *)0x0,this_04,
+                           (pMVar8->field7_0x38).rgctx_data[1].method);
+        if (bVar15 != 0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    (this_02,(MethodInfo *)0x0);
+          return;
+        }
+        uVar11 = uVar11 + 1;
+        lVar12 = lVar12 + 1;
+        lVar13 = lVar13 + 8;
+      } while (lVar12 < lVar10);
+    }
+    return;
+  }
+code_?:
+  FUN_?();
   pcVar3 = (code *)swi(3);
   (*pcVar3)();
   return;
@@ -347,18 +804,33 @@ DesktopCubeModelingController_SetButtonTextureRoutine
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__DesktopCubeModelingController___SetButtonTextureRoutine_d__8);
+    FUN_?(&TypeInfo__DesktopCubeModelingController___SetButtonTextureRoutine_d__8);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__DesktopCubeModelingController___SetButtonTextureRoutine_d__8;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[2].klass = (Object__Class *)this;
-  value[1].klass = (Object__Class *)0x0;
-  func_?(value + 2,this);
-  *(uint8_t *)&value[2].monitor = materialId;
-  return (IEnumerator *)value;
+  pIVar1 = (IEnumerator *)
+           FUN_?(TypeInfo__DesktopCubeModelingController___SetButtonTextureRoutine_d__8);
+  bVar2 = iRam_? == 0;
+  *(undefined4 *)&pIVar1[1].klass = 0;
+  pIVar1[2].klass = (IEnumerator__Class *)this;
+  if (bVar2) {
+    *(uint8_t *)&pIVar1[2].monitor = materialId;
+    return pIVar1;
+  }
+  uVar3 = (uint)((ulonglong)(pIVar1 + 2) >> 0xc);
+  puVar4 = (ulonglong *)((ulonglong)((uVar3 & 0x1fffff) >> 6) * 8 + 0xADDR);
+  do {
+    uVar5 = *puVar4;
+    LOCK();
+    uVar6 = *puVar4;
+    if (uVar5 == uVar6) {
+      *puVar4 = uVar5 | 1L << (uVar3 & 0x3f);
+    }
+    UNLOCK();
+  } while (uVar5 != uVar6);
+  *(uint8_t *)&pIVar1[2].monitor = materialId;
+  return pIVar1;
 }
 
 
@@ -369,44 +841,96 @@ void Assembly-CSharp.dll::DesktopCubeModelingController::DesktopCubeModelingCont
 
 {
   if ((this->fields).setButtonTextureRoutine != (IEnumerator *)0x0) {
-    Coroutines::Coroutines_Stop((this->fields).setButtonTextureRoutine,(MethodInfo *)0x0);
-  }
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__DesktopCubeModelingController___SetButtonTextureRoutine_d__8);
-    cRam_? = '\x01';
-  }
-  method_00 = TypeInfo__DesktopCubeModelingController___SetButtonTextureRoutine_d__8;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  value[1].klass = (Object__Class *)0x0;
-  value[2].klass = (Object__Class *)this;
-  func_?(value + 2,this);
-  *(uint8_t *)&value[2].monitor = materialId;
-  (this->fields).setButtonTextureRoutine = (IEnumerator *)value;
-  func_?(&(this->fields).setButtonTextureRoutine,value);
-  Coroutines::Coroutines_Start((this->fields).setButtonTextureRoutine,(MethodInfo *)0x0);
-  if (cRam_? == '\0') {
-    func_?();
-    cRam_? = '\x01';
-  }
-  pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
-  if ((((pMVar1 != (MVGameControllerBase *)0x0) &&
-       (pMVar2 = (pMVar1->fields).game, pMVar2 != (MVNetworkGame *)0x0)) &&
-      (pGVar3 = (pMVar2->fields).GameEventManager, pGVar3 != (GameEventManager *)0x0)) &&
-     ((pGVar4 = (pGVar3->fields).AvatarCommandsBuildMode,
-      pGVar4 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0 &&
-      (pGVar5 = (pGVar4->fields).LaserCommands,
-      pGVar5 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)))) {
-    pAVar6 = (pGVar5->fields).OnCubeMaterialChanged;
-    if (pAVar6 != (Action_1_Byte__1 *)0x0) {
-      (*(pAVar6->fields)._._.invoke_impl)((pAVar6->fields)._._.method_code);
+    pIVar1 = (this->fields).setButtonTextureRoutine;
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__Coroutines);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
     }
-    return;
+    pMVar2 = (MonoBehaviour *)TypeInfo__Coroutines->static_fields->instance;
+    if (pMVar2 == (MonoBehaviour *)0x0) goto code_?;
+    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StopCoroutine
+              (pMVar2,pIVar1,(MethodInfo *)0x0);
   }
-  func_?();
-  pcVar7 = (code *)swi(3);
-  (*pcVar7)();
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__DesktopCubeModelingController___SetButtonTextureRoutine_d__8);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pIVar1 = (IEnumerator *)
+            FUN_?(TypeInfo__DesktopCubeModelingController___SetButtonTextureRoutine_d__8);
+  *(undefined4 *)&pIVar1[1].klass = 0;
+  pIVar1[2].klass = (IEnumerator__Class *)this;
+  if (iRam_? != 0) {
+    uVar3 = (uint)((ulonglong)(pIVar1 + 2) >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar7 = uVar5 == *puVar6;
+      if (bVar7) {
+        *puVar6 = uVar5 | 1L << (uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar7);
+  }
+  iVar8 = iRam_?;
+  *(uint8_t *)&pIVar1[2].monitor = materialId;
+  (this->fields).setButtonTextureRoutine = pIVar1;
+  if (iVar8 != 0) {
+    uVar3 = (uint)((ulonglong)&(this->fields).setButtonTextureRoutine >> 0xc);
+    lVar4 = (ulonglong)((uVar3 & 0x1fffff) >> 6) * 8;
+    do {
+      uVar5 = *(ulonglong *)(lVar4 + 0xADDR);
+      puVar6 = (ulonglong *)(lVar4 + 0xADDR);
+      LOCK();
+      bVar7 = uVar5 == *puVar6;
+      if (bVar7) {
+        *puVar6 = uVar5 | 1L << (ulonglong)(uVar3 & 0x3f);
+      }
+      UNLOCK();
+    } while (!bVar7);
+  }
+  pIVar1 = (this->fields).setButtonTextureRoutine;
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__Coroutines);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pMVar2 = (MonoBehaviour *)TypeInfo__Coroutines->static_fields->instance;
+  if (pMVar2 != (MonoBehaviour *)0x0) {
+    UnityEngine.CoreModule.dll::UnityEngine::MonoBehaviour::MonoBehaviour_StartCoroutine_2
+              (pMVar2,pIVar1,(MethodInfo *)0x0);
+    if (cRam_? == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
+      cRam_? = '\x01';
+    }
+    pMVar9 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if ((((pMVar9 != (MVGameControllerBase *)0x0) &&
+         (pMVar10 = (pMVar9->fields).game, pMVar10 != (MVNetworkGame *)0x0)) &&
+        (pGVar11 = (pMVar10->fields).GameEventManager, pGVar11 != (GameEventManager *)0x0)) &&
+       ((pGVar12 = (pGVar11->fields).AvatarCommandsBuildMode,
+        pGVar12 != (GameEventManager_AvatarCommandsBuildModeManager *)0x0 &&
+        (pGVar13 = (pGVar12->fields).LaserCommands,
+        pGVar13 != (GameEventManager_AvatarCommandsBuildModeManager_LaserCommandsManager *)0x0)))) {
+      pAVar14 = (pGVar13->fields).OnCubeMaterialChanged;
+      if (pAVar14 != (Action_1_Byte__1 *)0x0) {
+        (*(pAVar14->fields)._._.invoke_impl)
+                  ((pAVar14->fields)._._.method_code,materialId,(pAVar14->fields)._._.method);
+      }
+      return;
+    }
+  }
+code_?:
+  FUN_?();
+  pcVar15 = (code *)swi(3);
+  (*pcVar15)();
   return;
 }
 
@@ -419,145 +943,105 @@ void Assembly-CSharp.dll::DesktopCubeModelingController::
 
 {
   pDVar1 = (this->fields).desktopCubeModelingController;
-  if ((pDVar1 != (DesktopCubeModelingToolsController *)0x0) &&
-     (pBVar2 = (pDVar1->fields).defaultTool, pBVar2 != (Button *)0x0)) {
-    unityEventBase = (pBVar2->fields).m_OnClick;
-    if (unityEventBase == (Button_ButtonClickedEvent *)0x0) {
+  if ((pDVar1 == (DesktopCubeModelingToolsController *)0x0) ||
+     (pBVar2 = (pDVar1->fields).defaultTool, pBVar2 == (Button *)0x0)) {
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  this_00 = (pBVar2->fields).m_OnClick;
+  if (this_00 == (Button_ButtonClickedEvent *)0x0) {
+    return;
+  }
+  if (cRam_? == '\0') {
+    FUN_?(&TypeInfo__UnityEngine__Events__InvokableCall);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__System__Object);
+    LOCK();
+    UNLOCK();
+    cRam_? = '\x01';
+  }
+  pLVar4 = UnityEngine.CoreModule.dll::UnityEngine::Events::UnityEventBase::
+           UnityEventBase_PrepareInvoke((UnityEventBase *)this_00,(MethodInfo *)0x0);
+  uVar5 = 0;
+  if (pLVar4 == (List_1_UnityEngine_Events_BaseInvokableCall_ *)0x0) {
+code_?:
+    FUN_?();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
+    return;
+  }
+  lVar6 = 0x20;
+code_?:
+  do {
+    if ((pLVar4->fields)._size <= (int)uVar5) {
       return;
     }
-    if (cRam_? == '\0') {
-      func_?();
-      func_?();
-      func_?();
-      func_?(&TypeInfo__System__Object);
-      cRam_? = '\x01';
+    if ((uint)(pLVar4->fields)._size <= uVar5) {
+      mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                ((MethodInfo *)0x0);
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
     }
-    if ((unityEventBase->fields)._._.m_CallsDirty != 0) {
-      this_00 = (unityEventBase->fields)._._.m_PersistentCalls;
-      if (this_00 == (PersistentCallGroup *)0x0) goto code_?;
-      UnityEngine.CoreModule.dll::UnityEngine::Events::PersistentCallGroup::
-      PersistentCallGroup_Initialize
-                (this_00,(unityEventBase->fields)._._.m_Calls,(UnityEventBase *)unityEventBase,
-                 (MethodInfo *)0x0);
-      (unityEventBase->fields)._._.m_CallsDirty = 0;
+    pBVar7 = (pLVar4->fields)._items;
+    if (pBVar7 == (BaseInvokableCall__Array *)0x0) goto code_?;
+    if ((uint)pBVar7->max_length <= uVar5) {
+      FUN_?();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
+      return;
     }
-    pIVar3 = (unityEventBase->fields)._._.m_Calls;
-    if (pIVar3 != (InvokableCallList *)0x0) {
-      if (cRam_? == '\0') {
-        func_?();
-        func_?();
-        cRam_? = '\x01';
-      }
-      if ((pIVar3->fields).m_NeedsUpdate != 0) {
-        pLVar4 = (pIVar3->fields).m_ExecutingCalls;
-        if (pLVar4 == (List_1_UnityEngine_Events_BaseInvokableCall_ *)0x0) goto code_?;
-        iVar5 = (pLVar4->fields)._size;
-        piVar6 = &(pLVar4->fields)._version;
-        *piVar6 = *piVar6 + 1;
-        (pLVar4->fields)._size = 0;
-        if (0 < iVar5) {
-          mscorlib.dll::System::Array::Array_Clear
-                    ((Array *)(pLVar4->fields)._items,0,iVar5,(MethodInfo *)0x0);
-        }
-        pLVar7 = (List_1_System_Object_ *)(pIVar3->fields).m_ExecutingCalls;
-        if (pLVar7 == (List_1_System_Object_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__AddRange
-                  (pLVar7,(IEnumerable_1_System_Object_ *)(pIVar3->fields).m_PersistentCalls,
-                   MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__AddRange_System__Collections__Generic__IEnumerable<UnityEngine::Events::BaseInvokableCall>_
-                  );
-        pLVar7 = (List_1_System_Object_ *)(pIVar3->fields).m_ExecutingCalls;
-        if (pLVar7 == (List_1_System_Object_ *)0x0) goto code_?;
-        mscorlib.dll::System::Collections::Generic::List`1[System::Object]::
-        List_1_System_Object__AddRange
-                  (pLVar7,(IEnumerable_1_System_Object_ *)(pIVar3->fields).m_RuntimeCalls,
-                   MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__AddRange_System__Collections__Generic__IEnumerable<UnityEngine::Events::BaseInvokableCall>_
-                  );
-        (pIVar3->fields).m_NeedsUpdate = 0;
-      }
-      RVar8 = (RegexCharClass_SingleRange)(pIVar3->fields).m_ExecutingCalls;
-      iVar5 = 0;
-      this = (DesktopCubeModelingController *)RVar8;
-      if (RVar8 != (RegexCharClass_SingleRange)0x0) {
-code_?:
-        do {
-          while( true ) {
-            if (*(int *)((int)RVar8 + 0xc) <= iVar5) {
-              return;
-            }
-            RVar9 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                     RegularExpressions::RegexCharClass+SingleRange]::
-                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                               ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *
-                                )RVar8,iVar5,
-                                MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
-                               );
-            if (RVar9 == (RegexCharClass_SingleRange)0x0) break;
-            if ((*(byte *)(*(int *)RVar9 + 0xb8) <
-                 (TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment) ||
-               (*(InvokableCall__Class **)
-                 (*(int *)(*(int *)RVar9 + 100) + -4 +
-                 (uint)(TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment * 4) !=
-                TypeInfo__UnityEngine__Events__InvokableCall)) {
-              bVar10 = false;
-            }
-            else {
-              bVar10 = true;
-            }
-            this_01.First = 0;
-            this_01.Last = 0;
-            if (bVar10) {
-              this_01 = RVar9;
-            }
-            RVar8 = (RegexCharClass_SingleRange)this;
-            if (this_01 == (RegexCharClass_SingleRange)0x0) break;
-            UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
-                      ((InvokableCall *)this_01,(MethodInfo *)0x0);
-            iVar5 = iVar5 + 1;
-            RVar8 = this_01;
-            this = (DesktopCubeModelingController *)this_01;
-          }
-          this = (DesktopCubeModelingController *)
-                 mscorlib.dll::System::Collections::Generic::List`1[System::Text::RegularExpressions
-                 ::RegexCharClass+SingleRange]::
-                 List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                           ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *)
-                            RVar8,iVar5,
-                            MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
-                           );
-          this_02 = (InvokableCall *)func_?();
-          if (this_02 == (InvokableCall *)0x0) {
-            RVar8 = mscorlib.dll::System::Collections::Generic::List`1[System::Text::
-                     RegularExpressions::RegexCharClass+SingleRange]::
-                     List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange__get_Item
-                               ((List_1_System_Text_RegularExpressions_RegexCharClass_SingleRange_ *
-                                )RVar8,iVar5,
-                                MethodInfo__System__Collections__Generic__List<UnityEngine::Events::BaseInvokableCall>__get_Item_int_
-                               );
-            if ((unityEventBase->fields)._.m_InvokeArray == (Object__Array *)0x0) {
-              pOVar11 = (Object__Array *)func_?();
-              (unityEventBase->fields)._.m_InvokeArray = pOVar11;
-              func_?();
-            }
-            if (RVar8 == (RegexCharClass_SingleRange)0x0) break;
-            func_?();
-            iVar5 = iVar5 + 1;
-            RVar8 = (RegexCharClass_SingleRange)this;
-            goto code_?;
-          }
-          UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
-                    (this_02,(MethodInfo *)0x0);
-          iVar5 = iVar5 + 1;
-        } while( true );
+    pIVar8 = *(InvokableCall **)((longlong)pBVar7->vector + lVar6 + -0x20);
+    if (pIVar8 != (InvokableCall *)0x0) {
+      bVar9 = (TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment;
+      if ((bVar9 <= (pIVar8->klass->_1).naturalAligment) &&
+         ((pIVar8->klass->_1).typeHierarchy[(ulonglong)bVar9 - 1] ==
+          (Il2CppClass *)TypeInfo__UnityEngine__Events__InvokableCall)) {
+        UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
+                  (pIVar8,(MethodInfo *)0x0);
+        uVar5 = uVar5 + 1;
+        lVar6 = lVar6 + 8;
+        goto code_?;
       }
     }
-  }
-code_?:
-  uVar12 = func_?(&stack0xfffffff0);
-  func_?(uVar12);
-  pcVar13 = (code *)swi(3);
-  (*pcVar13)();
-  return;
+    pIVar8 = (InvokableCall *)FUN_?(pLVar4,uVar5);
+    if (pIVar8 != (InvokableCall *)0x0) {
+      bVar9 = (TypeInfo__UnityEngine__Events__InvokableCall->_1).naturalAligment;
+      if ((bVar9 <= (pIVar8->klass->_1).naturalAligment) &&
+         ((pIVar8->klass->_1).typeHierarchy[(ulonglong)bVar9 - 1] ==
+          (Il2CppClass *)TypeInfo__UnityEngine__Events__InvokableCall)) {
+        UnityEngine.CoreModule.dll::UnityEngine::Events::InvokableCall::InvokableCall_Invoke_1
+                  (pIVar8,(MethodInfo *)0x0);
+        uVar5 = uVar5 + 1;
+        lVar6 = lVar6 + 8;
+        goto code_?;
+      }
+    }
+    plVar10 = (longlong *)FUN_?(pLVar4,uVar5);
+    if ((this_00->fields)._.m_InvokeArray == (Object__Array *)0x0) {
+      pOVar11 = (Object__Array *)FUN_?(TypeInfo__System__Object,0);
+      (this_00->fields)._.m_InvokeArray = pOVar11;
+      func_?(&(this_00->fields)._.m_InvokeArray);
+    }
+    if (plVar10 == (longlong *)0x0) goto code_?;
+    (**(code **)(*plVar10 + 0x178))
+              (plVar10,(this_00->fields)._.m_InvokeArray,*(undefined8 *)(*plVar10 + 0x180));
+    uVar5 = uVar5 + 1;
+    lVar6 = lVar6 + 8;
+  } while( true );
 }
 
 
@@ -569,52 +1053,154 @@ void Assembly-CSharp.dll::DesktopCubeModelingController::
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    MethodInfo__DesktopCubeModelingController____c___TakeScreenshot_b__13_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__DesktopCubeModelingController____c);
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__DesktopCubeModelingController____c___TakeScreenshot_b__13_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__DesktopCubeModelingController____c);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                   ((Component *)this,(MethodInfo *)0x0);
-  if ((TypeInfo__DesktopCubeModelingController____c->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__DesktopCubeModelingController____c);
+  pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                     ((Component *)this,(MethodInfo *)0x0);
+  if (*(int *)&(TypeInfo__DesktopCubeModelingController____c->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__DesktopCubeModelingController____c);
   }
-  callbackFunction = TypeInfo__DesktopCubeModelingController____c->static_fields->__9__13_0;
-  if (callbackFunction == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
-    if ((TypeInfo__DesktopCubeModelingController____c->_1).cctor_finished_or_no_cctor == 0) {
-      func_?(TypeInfo__DesktopCubeModelingController____c);
+  this_01 = TypeInfo__DesktopCubeModelingController____c->static_fields->__9__13_0;
+  if (this_01 == (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)0x0) {
+    if (*(int *)&(TypeInfo__DesktopCubeModelingController____c->_1).field_0x1c == 0) {
+      FUN_?(TypeInfo__DesktopCubeModelingController____c);
     }
     object = TypeInfo__DesktopCubeModelingController____c->static_fields->__9;
-    callbackFunction =
-         (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
-         func_?(
-                        TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                        );
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]::
-    UnityAction_2_System_Object_System_Object___ctor
-              ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+    this_01 = (ExecuteEvents_EventFunction_1_IModalPopupCreator_ *)
+              FUN_?(
+                           TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                           );
+    UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+    ExecuteEvents_EventFunction_1_System_Object___ctor
+              ((ExecuteEvents_EventFunction_1_System_Object_ *)this_01,(Object *)object,
                MethodInfo__DesktopCubeModelingController____c___TakeScreenshot_b__13_0_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                ,(MethodInfo *)0x0);
-    TypeInfo__DesktopCubeModelingController____c->static_fields->__9__13_0 = callbackFunction;
-    func_?(&TypeInfo__DesktopCubeModelingController____c->static_fields->__9__13_0,
-                    callbackFunction);
+    TypeInfo__DesktopCubeModelingController____c->static_fields->__9__13_0 = this_01;
+    if (iRam_? != 0) {
+      uVar2 = (uint)((ulonglong)
+                      &TypeInfo__DesktopCubeModelingController____c->static_fields->__9__13_0 >> 0xc
+                     );
+      puVar3 = (ulonglong *)((ulonglong)((uVar2 & 0x1fffff) >> 6) * 8 + 0xADDR);
+      do {
+        uVar4 = *puVar3;
+        LOCK();
+        uVar5 = *puVar3;
+        if (uVar4 == uVar5) {
+          *puVar3 = uVar4 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (uVar4 != uVar5);
+    }
   }
-  if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-            (root,(BaseEventData *)0x0,
-             (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
-             UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-            );
+  pMVar6 = 
+  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+  ;
+  if ((
+      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+      ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Count__
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Item_int_
+                 );
+    LOCK();
+    UNLOCK();
+    if ((pMVar6->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+      FUN_?(pMVar6);
+    }
+  }
+  if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+    FUN_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+  }
+  UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_GetEventChain
+            (pGVar1,(IList_1_UnityEngine_Transform_ *)
+                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                    s_InternalTransformList,(MethodInfo *)0x0);
+  pLVar7 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+           s_InternalTransformList;
+  if (pLVar7 != (List_1_UnityEngine_Transform_ *)0x0) {
+    lVar8 = (longlong)(pLVar7->fields)._size;
+    uVar2 = 0;
+    if (0 < lVar8) {
+      lVar9 = 0;
+      lVar10 = 0x20;
+      do {
+        if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+          FUN_?();
+        }
+        pLVar7 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                 s_InternalTransformList;
+        if (pLVar7 == (List_1_UnityEngine_Transform_ *)0x0) goto code_?;
+        if ((uint)(pLVar7->fields)._size <= uVar2) {
+          mscorlib.dll::System::ThrowHelper::ThrowHelper_1_ThrowArgumentOutOfRange_IndexException
+                    ((MethodInfo *)0x0);
+          pcVar11 = (code *)swi(3);
+          (*pcVar11)();
+          return;
+        }
+        pTVar12 = (pLVar7->fields)._items;
+        if (pTVar12 == (Transform__Array *)0x0) goto code_?;
+        if ((uint)pTVar12->max_length <= uVar2) {
+          FUN_?();
+          pcVar11 = (code *)swi(3);
+          (*pcVar11)();
+          return;
+        }
+        this_00 = *(Component **)((longlong)pTVar12->vector + lVar10 + -0x20);
+        if (this_00 == (Component *)0x0) goto code_?;
+        pGVar1 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                           (this_00,(MethodInfo *)0x0);
+        bVar13 = UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+                ExecuteEvents_Execute_18
+                          (pGVar1,(BaseEventData *)0x0,
+                           (ExecuteEvents_EventFunction_1_System_Object_ *)this_01,
+                           (pMVar6->field7_0x38).rgctx_data[1].method);
+        if (bVar13 != 0) {
+          UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                    (this_00,(MethodInfo *)0x0);
+          return;
+        }
+        uVar2 = uVar2 + 1;
+        lVar9 = lVar9 + 1;
+        lVar10 = lVar10 + 8;
+      } while (lVar9 < lVar8);
+    }
+    return;
+  }
+code_?:
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -627,123 +1213,277 @@ void Assembly-CSharp.dll::DesktopCubeModelingController::
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__DesktopCubeModelingController__OnPublishPlanetFinished_System__String_
-                   );
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
-                   );
-    func_?(&
-                    TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                   );
-    func_?(&
-                    UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
-    func_?(&
-                    MethodInfo__DesktopCubeModelingController____c___PublishCallback_b__11_2_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&
-                    MethodInfo__DesktopCubeModelingController____c__DisplayClass11_0___PublishCallback_b__3_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
-                   );
-    func_?(&TypeInfo__DesktopCubeModelingController____c__DisplayClass11_0);
-    func_?(&TypeInfo__DesktopCubeModelingController____c);
-    func_?(&TypeInfo__UnityEngine__Events__UnityAction<System::String>);
+    FUN_?(&
+                  MethodInfo__DesktopCubeModelingController__OnPublishPlanetFinished_System__String_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__DesktopCubeModelingController____c___PublishCallback_b__11_2_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&
+                  MethodInfo__DesktopCubeModelingController____c__DisplayClass11_0___PublishCallback_b__3_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__DesktopCubeModelingController____c__DisplayClass11_0);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__DesktopCubeModelingController____c);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction<System::String>);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  method_00 = TypeInfo__DesktopCubeModelingController____c__DisplayClass11_0;
-  value = (Object *)func_?();
-  mscorlib.dll::System::ThrowHelper::ThrowHelper_1_IfNullAndNullsAreIllegalThenThrow_57
-            (value,ExceptionArgument__Enum_obj,(MethodInfo *)method_00);
-  if (value == (Object *)0x0) {
-code_?:
-    func_?();
-  }
-  else {
-    value[1].klass = (Object__Class *)errorText;
-    func_?(value + 1,errorText);
+  object_00 = (Object *)
+              FUN_?(TypeInfo__DesktopCubeModelingController____c__DisplayClass11_0);
+  if (object_00 != (Object *)0x0) {
+    bVar1 = iRam_? != 0;
+    object_00[1].klass = (Object__Class *)errorText;
+    if (bVar1) {
+      uVar2 = (uint)((ulonglong)(object_00 + 1) >> 0xc);
+      lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+      do {
+        uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+        puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+        LOCK();
+        bVar1 = uVar4 == *puVar5;
+        if (bVar1) {
+          *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+        }
+        UNLOCK();
+      } while (!bVar1);
+    }
     if (cRam_? == '\0') {
-      func_?(&TypeInfo__MVGameControllerBase);
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    pMVar1 = TypeInfo__MVGameControllerBase->static_fields->instance;
-    if (pMVar1 == (MVGameControllerBase *)0x0) goto code_?;
-    pMVar2 = (pMVar1->fields).game;
-    if (pMVar2 == (MVNetworkGame *)0x0) goto code_?;
-    source = (pMVar2->fields).OnPublishedPlanet;
-    this_00 = (UnityAction_1_System_Object_ *)
-              func_?(TypeInfo__UnityEngine__Events__UnityAction<System::String>);
-    UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
-    UnityAction_1_System_Object___ctor
-              (this_00,(Object *)this,
-               MethodInfo__DesktopCubeModelingController__OnPublishPlanetFinished_System__String_,
-               (MethodInfo *)0x0);
-    pDVar3 = mscorlib.dll::System::Delegate::Delegate_Remove
-                       ((Delegate *)source,(Delegate *)this_00,(MethodInfo *)0x0);
-    if (pDVar3 == (Delegate *)0x0) {
-      (pMVar2->fields).OnPublishedPlanet = (UnityAction_1_System_String_ *)0x0;
-code_?:
-      func_?();
-      errorText = (String *)
-                  UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                            ((Component *)this,(MethodInfo *)0x0);
-      if ((TypeInfo__DesktopCubeModelingController____c->_1).cctor_finished_or_no_cctor == 0) {
-        func_?();
+    pMVar6 = TypeInfo__MVGameControllerBase->static_fields->instance;
+    if ((pMVar6 != (MVGameControllerBase *)0x0) &&
+       (pMVar7 = (pMVar6->fields).game, pMVar7 != (MVNetworkGame *)0x0)) {
+      pUVar8 = (pMVar7->fields).OnPublishedPlanet;
+      this_01 = (UnityAction_1_System_Object_ *)
+                FUN_?(TypeInfo__UnityEngine__Events__UnityAction<System::String>);
+      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`1[System::Object]::
+      UnityAction_1_System_Object___ctor
+                (this_01,(Object *)this,
+                 MethodInfo__DesktopCubeModelingController__OnPublishPlanetFinished_System__String_,
+                 (MethodInfo *)0x0);
+      pDVar9 = mscorlib.dll::System::Delegate::Delegate_Remove
+                          ((Delegate *)pUVar8,(Delegate *)this_01,(MethodInfo *)0x0);
+      pUVar10 = TypeInfo__UnityEngine__Events__UnityAction<System::String>;
+      if (pDVar9 == (Delegate *)0x0) {
+        (pMVar7->fields).OnPublishedPlanet = (UnityAction_1_System_String_ *)0x0;
       }
-      callbackFunction = TypeInfo__DesktopCubeModelingController____c->static_fields->__9__11_2;
-      if (callbackFunction == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
-        if ((TypeInfo__DesktopCubeModelingController____c->_1).cctor_finished_or_no_cctor == 0) {
-          func_?();
+      else {
+        pUVar8 = (UnityAction_1_System_String_ *)
+                  FUN_?(pDVar9,TypeInfo__UnityEngine__Events__UnityAction<System::String>);
+        if (pUVar8 == (UnityAction_1_System_String_ *)0x0) {
+          FUN_?(pDVar9,pUVar10);
+          pcVar11 = (code *)swi(3);
+          (*pcVar11)();
+          return;
+        }
+        (pMVar7->fields).OnPublishedPlanet = pUVar8;
+        pUVar10 = TypeInfo__UnityEngine__Events__UnityAction<System::String>;
+        lVar3 = FUN_?();
+        if (lVar3 == 0) {
+          FUN_?(pDVar9,pUVar10);
+          pcVar11 = (code *)swi(3);
+          (*pcVar11)();
+          return;
+        }
+      }
+      if (iRam_? != 0) {
+        uVar2 = (uint)((ulonglong)&(pMVar7->fields).OnPublishedPlanet >> 0xc);
+        lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+        do {
+          uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+          puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+          LOCK();
+          bVar1 = uVar4 == *puVar5;
+          if (bVar1) {
+            *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+          }
+          UNLOCK();
+        } while (!bVar1);
+      }
+      pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)this,(MethodInfo *)0x0);
+      if (*(int *)&(TypeInfo__DesktopCubeModelingController____c->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__DesktopCubeModelingController____c);
+      }
+      this_02 = TypeInfo__DesktopCubeModelingController____c->static_fields->__9__11_2;
+      if (this_02 == (ExecuteEvents_EventFunction_1_IUIStack_ *)0x0) {
+        if (*(int *)&(TypeInfo__DesktopCubeModelingController____c->_1).field_0x1c == 0) {
+          FUN_?(TypeInfo__DesktopCubeModelingController____c);
         }
         object = TypeInfo__DesktopCubeModelingController____c->static_fields->__9;
-        callbackFunction = (ExecuteEvents_EventFunction_1_IUIStack_ *)func_?();
-        UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::
-        Object]::UnityAction_2_System_Object_System_Object___ctor
-                  ((UnityAction_2_System_Object_System_Object_ *)callbackFunction,(Object *)object,
+        this_02 = (ExecuteEvents_EventFunction_1_IUIStack_ *)
+                  FUN_?(
+                               TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>
+                               );
+        UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]
+        ::ExecuteEvents_EventFunction_1_System_Object___ctor
+                  ((ExecuteEvents_EventFunction_1_System_Object_ *)this_02,(Object *)object,
                    MethodInfo__DesktopCubeModelingController____c___PublishCallback_b__11_2_UnityEngine__EventSystems__IUIStack__UnityEngine__EventSystems__BaseEventData_
                    ,(MethodInfo *)0x0);
-        TypeInfo__DesktopCubeModelingController____c->static_fields->__9__11_2 = callbackFunction;
-        func_?();
-        this = (DesktopCubeModelingController *)&UNK_?;
-        errorText = (String *)callbackFunction;
+        TypeInfo__DesktopCubeModelingController____c->static_fields->__9__11_2 = this_02;
+        if (iRam_? != 0) {
+          uVar2 = (uint)((ulonglong)
+                          &TypeInfo__DesktopCubeModelingController____c->static_fields->__9__11_2 >>
+                         0xc);
+          lVar3 = (ulonglong)((uVar2 & 0x1fffff) >> 6) * 8;
+          do {
+            uVar4 = *(ulonglong *)(lVar3 + 0xADDR);
+            puVar5 = (ulonglong *)(lVar3 + 0xADDR);
+            LOCK();
+            bVar1 = uVar4 == *puVar5;
+            if (bVar1) {
+              *puVar5 = uVar4 | 1L << (uVar2 & 0x3f);
+            }
+            UNLOCK();
+          } while (!bVar1);
+        }
       }
-      if ((TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).cctor_finished_or_no_cctor == 0)
-      {
-        func_?();
+      if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+        FUN_?();
       }
       UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                ((GameObject *)errorText,(BaseEventData *)0x0,
-                 (ExecuteEvents_EventFunction_1_System_Object_ *)callbackFunction,
+                (pGVar12,(BaseEventData *)0x0,
+                 (ExecuteEvents_EventFunction_1_System_Object_ *)this_02,
                  UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IUIStack>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IUIStack>_
                 );
-      root = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
-                       ((Component *)this,(MethodInfo *)0x0);
-      callbackFunction_00 = (ExecuteEvents_EventFunction_1_System_Object_ *)func_?();
-      UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Object,System::Object]
-      ::UnityAction_2_System_Object_System_Object___ctor
-                ((UnityAction_2_System_Object_System_Object_ *)callbackFunction_00,value,
+      pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                          ((Component *)this,(MethodInfo *)0x0);
+      this_03 = (ExecuteEvents_EventFunction_1_System_Object_ *)
+                FUN_?(
+                             TypeInfo__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>
+                             );
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents+EventFunction`1[System::Object]::
+      ExecuteEvents_EventFunction_1_System_Object___ctor
+                (this_03,object_00,
                  MethodInfo__DesktopCubeModelingController____c__DisplayClass11_0___PublishCallback_b__3_UnityEngine__EventSystems__IModalPopupCreator__UnityEngine__EventSystems__BaseEventData_
                  ,(MethodInfo *)0x0);
-      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_ExecuteHierarchy
-                (root,(BaseEventData *)0x0,callbackFunction_00,
-                 UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
-                );
+      pMVar13 = 
+      UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+      ;
+      if ((
+          UnityEngine__GameObject_MethodInfo__UnityEngine__EventSystems__ExecuteEvents__ExecuteHierarchy<UnityEngine::EventSystems::IModalPopupCreator>_UnityEngine__GameObject__UnityEngine__EventSystems__BaseEventData__UnityEngine__EventSystems__ExecuteEvents__EventFunction<UnityEngine::EventSystems::IModalPopupCreator>_
+          ->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+        FUN_?(&TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Count__
+                     );
+        LOCK();
+        UNLOCK();
+        FUN_?(&
+                      MethodInfo__System__Collections__Generic__List<UnityEngine::Transform>__get_Item_int_
+                     );
+        LOCK();
+        UNLOCK();
+        if ((pMVar13->field7_0x38).rgctx_data == (Il2CppRGCTXData *)0x0) {
+          FUN_?(pMVar13);
+        }
+      }
+      if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+        FUN_?(TypeInfo__UnityEngine__EventSystems__ExecuteEvents);
+      }
+      UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::ExecuteEvents_GetEventChain
+                (pGVar12,(IList_1_UnityEngine_Transform_ *)
+                         TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                         s_InternalTransformList,(MethodInfo *)0x0);
+      pLVar14 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+               s_InternalTransformList;
+      if (pLVar14 != (List_1_UnityEngine_Transform_ *)0x0) {
+        lVar3 = (longlong)(pLVar14->fields)._size;
+        uVar2 = 0;
+        if (0 < lVar3) {
+          lVar15 = 0;
+          lVar16 = 0x20;
+          do {
+            if (*(int *)&(TypeInfo__UnityEngine__EventSystems__ExecuteEvents->_1).field_0x1c == 0) {
+              FUN_?();
+            }
+            pLVar14 = TypeInfo__UnityEngine__EventSystems__ExecuteEvents->static_fields->
+                     s_InternalTransformList;
+            if (pLVar14 == (List_1_UnityEngine_Transform_ *)0x0) goto code_?;
+            if ((uint)(pLVar14->fields)._size <= uVar2) {
+              mscorlib.dll::System::ThrowHelper::
+              ThrowHelper_1_ThrowArgumentOutOfRange_IndexException((MethodInfo *)0x0);
+              pcVar11 = (code *)swi(3);
+              (*pcVar11)();
+              return;
+            }
+            pTVar17 = (pLVar14->fields)._items;
+            if (pTVar17 == (Transform__Array *)0x0) goto code_?;
+            if ((uint)pTVar17->max_length <= uVar2) {
+              FUN_?();
+              pcVar11 = (code *)swi(3);
+              (*pcVar11)();
+              return;
+            }
+            this_00 = *(Component **)((longlong)pTVar17->vector + lVar16 + -0x20);
+            if (this_00 == (Component *)0x0) goto code_?;
+            pGVar12 = UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                                (this_00,(MethodInfo *)0x0);
+            bVar18 = UnityEngine.UI.dll::UnityEngine::EventSystems::ExecuteEvents::
+                     ExecuteEvents_Execute_18
+                               (pGVar12,(BaseEventData *)0x0,this_03,
+                                (pMVar13->field7_0x38).rgctx_data[1].method);
+            if (bVar18 != 0) {
+              UnityEngine.CoreModule.dll::UnityEngine::Component::Component_get_gameObject
+                        (this_00,(MethodInfo *)0x0);
+              return;
+            }
+            uVar2 = uVar2 + 1;
+            lVar15 = lVar15 + 1;
+            lVar16 = lVar16 + 8;
+          } while (lVar15 < lVar3);
+        }
+        return;
+      }
+code_?:
+      FUN_?();
+      pcVar11 = (code *)swi(3);
+      (*pcVar11)();
       return;
     }
-    iVar4 = func_?();
-    if (iVar4 == 0) goto code_?;
-    _UNK_? = iVar4;
-    iVar4 = func_?();
-    if (iVar4 != 0) goto code_?;
   }
-  func_?();
-code_?:
-  func_?();
-  pcVar5 = (code *)swi(3);
-  (*pcVar5)();
+  FUN_?();
+  pcVar11 = (code *)swi(3);
+  (*pcVar11)();
   return;
 }
 
@@ -757,50 +1497,41 @@ void Assembly-CSharp.dll::DesktopCubeModelingController::
 
 {
   if (cRam_? == '\0') {
-    func_?(&
-                    MethodInfo__DesktopCubeModelingController__PublishCallback_bool__ConfirmationPopup_
-                   );
-    func_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
-    func_?(&TypeInfo__UnityEngine__Events__UnityAction<bool,_ConfirmationPopup>);
-    func_?(&StringLiteral_Are_you_sure_you_wish_to_publish);
-    func_?(&StringLiteral_Publish_Game_);
+    FUN_?(&
+                  MethodInfo__DesktopCubeModelingController__PublishCallback_bool__ConfirmationPopup_
+                 );
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__UnityEngine__Events__UnityAction<bool,_ConfirmationPopup>);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Are_you_sure_you_wish_to_publish);
+    LOCK();
+    UNLOCK();
+    FUN_?(&StringLiteral_Publish_Game_);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  pSVar1 = TM::TM__(StringLiteral_Are_you_sure_you_wish_to_publish,(MethodInfo *)0x0);
-  this_00 = (UnityAction_2_System_Int32_System_Int32_ *)
-            func_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_ConfirmationPopup>);
-  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Int32,System::Int32]::
-  UnityAction_2_System_Int32_System_Int32___ctor
+  TM::TM__(StringLiteral_Are_you_sure_you_wish_to_publish,(MethodInfo *)0x0);
+  this_00 = (UnityAction_2_System_Boolean_System_Object_ *)
+            FUN_?(TypeInfo__UnityEngine__Events__UnityAction<bool,_ConfirmationPopup>);
+  UnityEngine.CoreModule.dll::UnityEngine::Events::UnityAction`2[System::Boolean,System::Object]::
+  UnityAction_2_System_Boolean_System_Object___ctor
             (this_00,(Object *)this,
              MethodInfo__DesktopCubeModelingController__PublishCallback_bool__ConfirmationPopup_,
              (MethodInfo *)0x0);
-  pSVar2 = TM::TM__(StringLiteral_Publish_Game_,(MethodInfo *)0x0);
-  if (x == (IModalPopupCreator *)0x0) {
-    func_?();
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+  TM::TM__(StringLiteral_Publish_Game_,(MethodInfo *)0x0);
+  if (x != (IModalPopupCreator *)0x0) {
+    FUN_?();
     return;
   }
-  pIVar4 = x->klass;
-  uVar5 = 0;
-  uVar6._0_1_ = (pIVar4->_1).rank;
-  uVar6._1_1_ = (pIVar4->_1).minimumAlignment;
-  if (uVar6 != 0) {
-    do {
-      if (pIVar4->interfaceOffsets[uVar5].interfaceType ==
-          (Il2CppClass *)TypeInfo__UnityEngine__EventSystems__IModalPopupCreator) {
-        ppMVar7 = &(&(x->klass->vtable).Create_2)[x->klass->interfaceOffsets[uVar5].offset].method;
-        goto code_?;
-      }
-      uVar5 = uVar5 + 1;
-    } while (uVar5 < uVar6);
-  }
-  this_00 = (UnityAction_2_System_Int32_System_Int32_ *)&UNK_?;
-  pSVar2 = (String *)x;
-  ppMVar7 = (MethodInfo **)
-            func_?(x,TypeInfo__UnityEngine__EventSystems__IModalPopupCreator);
-code_?:
-  (*(code *)*ppMVar7)(x,pSVar1,this_00,pSVar2);
+  FUN_?();
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
   return;
 }
 

@@ -6,34 +6,44 @@ void Assembly-CSharp.dll::InputToInGameAction::InputToInGameAction_HandleInputSt
 
 {
   if (cRam_? == '\0') {
-    func_?(&TypeInfo__IPlayModeUI);
-    func_?(&TypeInfo__MVInputWrapper);
+    FUN_?(&TypeInfo__IPlayModeUI);
+    LOCK();
+    UNLOCK();
+    FUN_?(&TypeInfo__MVInputWrapper);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
+  cVar1 = cRam_?;
   (this->fields).use = 0;
   (this->fields).fire = 0;
   (this->fields).drop = 0;
   (this->fields).holster = 0;
   (this->fields).ignorePickupOwner = 0;
-  if (cRam_? == '\0') {
-    func_?(&TypeInfo__MVGameControllerBase);
+  if (cVar1 == '\0') {
+    FUN_?(&TypeInfo__MVGameControllerBase);
+    LOCK();
+    UNLOCK();
+    cVar1 = '\x01';
     cRam_? = '\x01';
   }
   if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField !=
       (IPlayModeUI *)0x0) {
-    if (cRam_? == '\0') {
-      func_?(&TypeInfo__MVGameControllerBase);
+    if (cVar1 == '\0') {
+      FUN_?(&TypeInfo__MVGameControllerBase);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    pIVar1 = TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField;
-    if (pIVar1 == (IPlayModeUI *)0x0) {
-      func_?();
+    if (TypeInfo__MVGameControllerBase->static_fields->_PlayModeUI_k__BackingField ==
+        (IPlayModeUI *)0x0) {
+      FUN_?();
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    cVar3 = func_?(7,TypeInfo__IPlayModeUI,pIVar1);
-    if (cVar3 != '\0') {
+    cVar1 = FUN_?(7);
+    if (cVar1 != '\0') {
       (this->fields).isInUI = 1;
       (this->fields).wentToGameFromUI = 0;
       return;
@@ -41,62 +51,77 @@ void Assembly-CSharp.dll::InputToInGameAction::InputToInGameAction_HandleInputSt
   }
   (this->fields).wentToGameFromUI = (this->fields).isInUI;
   (this->fields).isInUI = 0;
-  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MVInputWrapper);
+  if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar4 = MVInputWrapper::MVInputWrapper_GetBooleanControlDeviceDependent
+  bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControlDeviceDependent
                     (KogamaControls__Enum_Use,(MethodInfo *)0x0);
-  if (bVar4 != 0) {
+  if (bVar3 != 0) {
     (this->fields).use = 1;
   }
-  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-    func_?(TypeInfo__MVInputWrapper);
+  if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar4 = MVInputWrapper::MVInputWrapper_GetBooleanControlDeviceDependent
+  bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControlDeviceDependent
                     (KogamaControls__Enum_DropCurrentItem,(MethodInfo *)0x0);
-  if (bVar4 != 0) {
+  if (bVar3 != 0) {
     (this->fields).drop = 1;
   }
-  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar4 = MVInputWrapper::MVInputWrapper_GetBooleanControlDeviceDependent
+  bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControlDeviceDependent
                     (KogamaControls__Enum_Holster,(MethodInfo *)0x0);
-  if (bVar4 != 0) {
+  if (bVar3 != 0) {
     (this->fields).holster = 1;
   }
-  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+    FUN_?();
   }
   if (cRam_? == '\0') {
-    func_?();
+    FUN_?(&TypeInfo__MVInputWrapper);
+    LOCK();
+    UNLOCK();
     cRam_? = '\x01';
   }
-  if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-    func_?();
+  if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+    FUN_?();
   }
-  bVar4 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
+  bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
                     (KogamaControls__Enum_Fire,KeyState__Enum_Pressed,(MethodInfo *)0x0);
-  if (bVar4 == 0) {
-    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+  if (bVar3 == 0) {
+    if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+      FUN_?();
     }
     if (cRam_? == '\0') {
-      func_?();
+      FUN_?(&TypeInfo__MVInputWrapper);
+      LOCK();
+      UNLOCK();
       cRam_? = '\x01';
     }
-    if ((TypeInfo__MVInputWrapper->_1).cctor_finished_or_no_cctor == 0) {
-      func_?();
+    if (*(int *)&(TypeInfo__MVInputWrapper->_1).field_0x1c == 0) {
+      FUN_?();
     }
-    bVar4 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
+    bVar3 = MVInputWrapper::MVInputWrapper_GetBooleanControl_1
                       (KogamaControls__Enum_Fire,KeyState__Enum_Down,(MethodInfo *)0x0);
-    if (bVar4 == 0) {
+    if (bVar3 == 0) {
       return;
     }
   }
   if ((this->fields).wentToGameFromUI == 0) {
     (this->fields).fire = 1;
   }
+  return;
+}
+
+
+/* Void set_IgnorePickupOwner(Boolean) */
+
+void Assembly-CSharp.dll::InputToInGameAction::InputToInGameAction_set_IgnorePickupOwner
+               (InputToInGameAction *this,bool value,MethodInfo *method)
+
+{
+  (this->fields).ignorePickupOwner = 1;
   return;
 }
 
