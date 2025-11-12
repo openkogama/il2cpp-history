@@ -27,14 +27,16 @@ public class PickupItemImpulseGun : PickupItem
 	public float shakeFrequency;
 	public float shakePower;
 	public Vector3 shakeDirection;
-	public AudioClip chargeSound;
-	public AudioClip releaseSound;
 	public AnimationCurve chargeCurve;
 	public AnimationCurve shakeCurve;
 	[SerializeField]
 	private Transform modelTransform;
 	[SerializeField]
 	private AudioSource audioSource;
+	[SerializeField]
+	private StreamedAudioClipManual chargeSoundStream;
+	[SerializeField]
+	private StreamedAudioClipManual releaseSoundStream;
 	private float maxVolume;
 	private bool isCharging;
 	private float chargeBeginTime;
@@ -56,7 +58,7 @@ public class PickupItemImpulseGun : PickupItem
 	public override void TriggerBegin(int instigatorActorNr);
 	private void Update();
 	public override void TriggerEnd();
-	private void Fire(int avatarId, float impulseMagnitude, float recoilMagnitude);
+	private void Fire(float impulseMagnitude, float recoilMagnitude);
 	private List<MVWorldObjectClient> SphereCastAgainstWorldObjects(Ray lineOfFire);
 	private Vector3 FindRayTarget(Ray lineOfFire);
 	private Vector3 ComputeImpulseDirection(Ray lineOfFire);

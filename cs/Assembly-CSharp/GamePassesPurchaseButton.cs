@@ -29,7 +29,7 @@ public class GamePassesPurchaseButton : MonoBehaviour
 	[SerializeField]
 	private ToggleButtonAnimation toggleButton;
 	[SerializeField]
-	private Button purchaseButton;
+	private UnityEngine.UI.Button purchaseButton;
 	[SerializeField]
 	private GameObject disabledPurchaseButton;
 	[SerializeField]

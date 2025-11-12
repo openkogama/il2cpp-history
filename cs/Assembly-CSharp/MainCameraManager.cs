@@ -7,9 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using MV.Common;
-using UGUI.Desktop.Scripts.EditMode.SettingsBoxes.Camera;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
@@ -21,7 +19,6 @@ public class MainCameraManager : MonoBehaviour
 	public static Action OnCameraSettingAdded;
 	public static Action<bool> OnCameraCubeAddedRemoved;
 	public static Action<bool> OnGameCameraEffectsChange;
-	public static PostProcessingSettings CurrentPostProcessingSettings;
 	public static float DistanceToAvatarBase;
 	public static CameraType DefaultCameraType;
 	public static bool IsCameraForcedFirstPerson;
@@ -30,7 +27,6 @@ public class MainCameraManager : MonoBehaviour
 	private static bool isMuted;
 	private static bool isTemporarilyMuted;
 	private static bool storedMuteValue;
-	private static bool gameHasCameraEffects;
 	[SerializeField]
 	private Camera mainCamera;
 	[SerializeField]
@@ -51,20 +47,14 @@ public class MainCameraManager : MonoBehaviour
 	private LineDrawManager lineDrawManager;
 	[SerializeField]
 	private ScreenSizeOptimizer screenSizeOptimizer;
-	[SerializeField]
-	private PostProcessLayer postProcessLayer;
-	[SerializeField]
-	private PostProcessVolume postProcessVolume;
-	[SerializeField]
-	public PostProcessResources postProcessResources;
 	public Shader transparentMultiplyColor;
 	[CompilerGenerated]
 	private EventHandler<OnIgnoreInputTypesArgs> OnIgnoreInputTypes;
+	private PostProcessingManager postProcessingManager;
 	private MVCameraController cameraController;
 	private ProtectedTransform protectedTransform;
 	private bool isLogicRendered;
 	private bool blueModeEnabled;
-	private bool cameraEffects;
 	private int cullingMask;
 	private MaskMode maskMode;
 
@@ -73,18 +63,17 @@ public class MainCameraManager : MonoBehaviour
 	public LineDrawManager LineDrawManager { get; }
 	public float FieldOfView { get; set; }
 	public Camera MainCamera { get; }
+	public Camera TertiaryCamera { get; }
+	public Camera SecondaryCamera { get; }
 	public MVCameraBase CurrentCamera { get; }
 	public ProtectedTransform ProtectedTransform { get; }
 	public Vector3 FireDirection { get; }
 	public Vector3 FireOrigin { get; }
+	public PostProcessingManager PostProcessingManager { get; }
 	public bool BlueModeEnabled { get; set; }
 	public static bool Mute { get; set; }
-	public static bool GameHasCameraEffects { get; set; }
-	public bool CameraEffects { get; set; }
 	public MaskMode CamMaskMode { get; set; }
 	public bool TertiaryCameraActive { get; set; }
-	public Camera TertiaryCamera { get; }
-	public Camera SecondaryCamera { get; }
 	public bool IsLogicRendered { get; set; }
 
 	// Events
@@ -111,21 +100,10 @@ public class MainCameraManager : MonoBehaviour
 	public void CancelTransitionCam();
 	private void RenderLogic(bool renderLogic);
 	protected void OnDestroy();
-	private void HandleCameraCubeAddedRemoved(bool cubeAddedRemoved);
-	public bool ApplyPostProcessingThis(PostProcessingSettings data);
 	public static void TemporaryMute(bool muteTemporarily);
 	public static void RegisterCameraWithSettings(MVGameType gameType, ICameraSettings camSettings);
 	public static void UnRegisterCameraWithSettings(MVGameType gameType);
 	public static ICameraSettings GetSettings(MVGameType gameType);
 	public static bool HasSetting(MVGameType gameType);
-	public static bool ApplyPostProcessing(PostProcessLayer ppLayer, PostProcessVolume ppVolume, PostProcessingSettings data);
-	private static bool DoPostProcessingColor(PostProcessLayer ppLayer, PostProcessVolume ppVolume, PostProcessingColorSettings colorSettings);
-	private static bool DoPostProcessingBloom(PostProcessLayer ppLayer, PostProcessVolume ppVolume, PostProcessingBloomSettings bloomSettings);
-	private static bool DoPostProcessingAmbientOcclusion(PostProcessLayer ppLayer, PostProcessVolume ppVolume, PostProcessingAmbientOcclusionSettings aoSettings);
-	private static bool DoPostProcessingDepthOfField(PostProcessLayer ppLayer, PostProcessVolume ppVolume, PostProcessingDepthOfFieldSettings aoSettings);
-	private static bool DoPostProcessingVignette(PostProcessLayer ppLayer, PostProcessVolume ppVolume, PostProcessingVignetteSettings vignetteSettings);
-	private static bool DoPostProcessingGrain(PostProcessLayer ppLayer, PostProcessVolume ppVolume, PostProcessingGrainSettings grainSettings);
-	private static bool DoPostProcessingLensDistortion(PostProcessLayer ppLayer, PostProcessVolume ppVolume, PostProcessingLensDistortionSettings lensDistortionSettings);
-	private static void EnablePostProcessing(PostProcessLayer ppLayer, PostProcessVolume ppVolume, bool ppEnabled);
 }
 

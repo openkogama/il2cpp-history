@@ -15,7 +15,7 @@ namespace WorldObjectTypes.Avatar.Shared
 	{
 		// Fields
 		[SerializeField]
-		private ParticleSystem particleSystem;
+		private ParticleSystem avatarParticleSystem;
 		private int ownerActorNr;
 		private bool delayedPlay;
 	

@@ -16,7 +16,7 @@ public abstract class ToggleStatHandlerBase : MonoBehaviour
 	// Fields
 	private bool waitingForToggleCallback;
 	[SerializeField]
-	protected Button button;
+	protected UnityEngine.UI.Button button;
 	[SerializeField]
 	protected bool toggleState;
 	[SerializeField]

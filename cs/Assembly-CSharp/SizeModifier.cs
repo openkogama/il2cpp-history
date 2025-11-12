@@ -26,10 +26,12 @@ public abstract class SizeModifier : AvatarModifier
 	protected float sineStrength;
 	[SerializeField]
 	protected AudioSource audioSource;
+	[SerializeField]
+	protected StreamedAudioClipManual growSoundStream;
+	[SerializeField]
+	protected StreamedAudioClipManual shrinkSoundStream;
 	protected Vector3 defaultScale;
 	protected bool isDeactivating;
-	public AudioClip growSound;
-	public AudioClip shrinkSound;
 
 	// Nested types
 	protected delegate void ActionDelegate(float time);

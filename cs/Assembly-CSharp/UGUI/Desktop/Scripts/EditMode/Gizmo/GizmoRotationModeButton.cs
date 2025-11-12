@@ -20,7 +20,7 @@ namespace UGUI.Desktop.Scripts.EditMode.Gizmo
 		private UnityEngine.UI.Text text;
 		private Color originalTextColor;
 		private readonly Color selectedTextColor;
-		private Button button;
+		private UnityEngine.UI.Button button;
 		private GradientEffect gradient;
 		private ColorBlock originalColorBlock;
 		private ColorBlock selectedColorBlock;

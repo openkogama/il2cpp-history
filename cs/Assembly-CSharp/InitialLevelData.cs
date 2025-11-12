@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using UnityEngine.Scripting;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
@@ -18,6 +19,7 @@ public class InitialLevelData
 	public XPLevelLimits XPLevelLimits;
 
 	// Constructors
+	[Preserve]
 	public InitialLevelData();
 
 	// Methods

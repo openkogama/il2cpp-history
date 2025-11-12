@@ -10,12 +10,12 @@ using UnityEngine;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-public class RaycastHitComparer : Comparer<RaycastHit>
+public class RaycastHitComparer : Comparer<UnityEngine.RaycastHit>
 {
 	// Constructors
 	public RaycastHitComparer();
 
 	// Methods
-	public override int Compare(RaycastHit a, RaycastHit b);
+	public override int Compare(UnityEngine.RaycastHit a, UnityEngine.RaycastHit b);
 }
 

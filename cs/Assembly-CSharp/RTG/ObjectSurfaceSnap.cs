@@ -73,18 +73,6 @@ namespace RTG
 			public override GameObjectRayHit Raycast(Ray ray);
 		}
 	
-		private class TerrainSurfaceRaycaster : SurfaceRaycaster
-		{
-			// Fields
-			private TerrainCollider _terrainCollider;
-	
-			// Constructors
-			public TerrainSurfaceRaycaster(GameObject surfaceObject, bool raycastReverse);
-	
-			// Methods
-			public override GameObjectRayHit Raycast(Ray ray);
-		}
-	
 		// Constructors
 		public ObjectSurfaceSnap();
 	

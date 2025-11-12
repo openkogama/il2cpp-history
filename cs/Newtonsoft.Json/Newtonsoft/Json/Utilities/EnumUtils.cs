@@ -12,7 +12,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Versioning;
 using Newtonsoft.Json.Serialization;
 
-// Image 8: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
+// Image 9: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
 
 namespace Newtonsoft.Json.Utilities
 {
@@ -50,7 +50,7 @@ namespace Newtonsoft.Json.Utilities
 	
 		// Methods
 		private static EnumInfo InitializeValuesAndNames([Nullable(new byte[3] {0, 1, 2 })] StructMultiKey<System.Type, NamingStrategy> key);
-		public static bool TryToString(System.Type enumType, object value, [Nullable(2)] NamingStrategy namingStrategy, [NotNullWhen(true)] [Nullable(2)] out string name);
+		public static bool TryToString(System.Type enumType, object value, [Nullable(2)] NamingStrategy namingStrategy, [Nullable(2)] [NotNullWhen(true)] out string name);
 		private static string InternalFlagsFormat(EnumInfo entry, ulong result);
 		public static EnumInfo GetEnumValuesAndNames(System.Type enumType);
 		private static ulong ToUInt64(object value);

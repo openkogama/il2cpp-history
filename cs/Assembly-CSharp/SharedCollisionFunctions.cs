@@ -24,22 +24,22 @@ public static class SharedCollisionFunctions
 	{
 		// Fields
 		public static readonly __c __9;
-		public static Comparison<RaycastHit> __9__2_0;
+		public static Comparison<UnityEngine.RaycastHit> __9__2_0;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal int _GetPhysicsCollisionData_b__2_0(RaycastHit hit0, RaycastHit hit1);
+		internal int _GetPhysicsCollisionData_b__2_0(UnityEngine.RaycastHit hit0, UnityEngine.RaycastHit hit1);
 	}
 
 	// Constructors
 	static SharedCollisionFunctions();
 
 	// Methods
-	public static PhysicsCollisionDatasWrapper GetPhysicsCollisionData(Collider[] overlapResult, RaycastHit[] hits, Vector3 origin);
-	public static PhysicsCollisionDatasWrapper GetPhysicsCollisionData(int overlapAmount, Collider[] overlapResult, int hitAmount, RaycastHit[] hits, Vector3 origin);
+	public static PhysicsCollisionDatasWrapper GetPhysicsCollisionData(Collider[] overlapResult, UnityEngine.RaycastHit[] hits, Vector3 origin);
+	public static PhysicsCollisionDatasWrapper GetPhysicsCollisionData(int overlapAmount, Collider[] overlapResult, int hitAmount, UnityEngine.RaycastHit[] hits, Vector3 origin);
 	public static void GetVoxelBounds(ref IntVector min, ref IntVector max, Bounds localSpaceBounds);
 	public static void SetToNoneVoxelHit(ref VoxelHit voxelHit, PhysicsCollisionData hit, int woId);
 	public static void SetToVoxelHit(ref VoxelHit voxelHit0, ref VoxelHit voxelHit1);

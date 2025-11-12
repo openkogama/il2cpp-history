@@ -42,16 +42,16 @@ public class SpawnRoleEditorMenu : MonoBehaviour
 	{
 		// Fields
 		public static readonly __c __9;
-		public static ExecuteEvents.EventFunction<IEditModeController> __9__16_0;
-		public static ExecuteEvents.EventFunction<IUIStack> __9__16_1;
+		public static ExecuteEvents.EventFunction<IEditModeController> __9__15_0;
+		public static ExecuteEvents.EventFunction<IUIStack> __9__15_1;
 
 		// Constructors
 		static __c();
 		public __c();
 
 		// Methods
-		internal void _Update_b__16_0(IEditModeController x, BaseEventData y);
-		internal void _Update_b__16_1(IUIStack x, BaseEventData y);
+		internal void _Update_b__15_0(IEditModeController x, BaseEventData y);
+		internal void _Update_b__15_1(IUIStack x, BaseEventData y);
 	}
 
 	[CompilerGenerated]
@@ -87,7 +87,6 @@ public class SpawnRoleEditorMenu : MonoBehaviour
 	public void OnTeamEditPressed();
 	public void OnLooksEditPressed();
 	public void OnSkillsEditPressed();
-	public void OnEnterPlayMode();
 	public void Initialize(int spawnRoleWoId);
 	private void Update();
 	private void OnEnable();

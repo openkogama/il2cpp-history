@@ -29,7 +29,9 @@ public class CustomItemAudioPlayer : MonoBehaviour
 	private struct CustomItemAudioClip
 	{
 		// Fields
-		public AudioClip clip;
+		public string clipURL;
+		[HideInInspector]
+		public StreamedAudioClipManual audioStream;
 		public float pitchVariation;
 		public bool isLooped;
 	}

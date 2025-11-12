@@ -17,14 +17,14 @@ public class HamsterWheelVisualization : VehicleVisualizationBase
 	private VehicleBlinker vehicleBlinker;
 	[SerializeField]
 	private Transform hamsterWheelVisualizationRoot;
-	private VehicleSeatManager vehicleSeatManager;
 	public AvatarBlobShadowController blobShadow;
+	public AudioSource audioSourceRolling;
+	public AudioSource audioSourceWind;
+	private VehicleSeatManager vehicleSeatManager;
 	private float curHealth;
 	private Vector3 prevPosition;
 	private Vector3 velocity;
 	private SpeedState speedState;
-	public AudioSource audioSourceRolling;
-	public AudioSource audioSourceWind;
 	private bool vehicleIsUnoccupied;
 	private float unoccupiedTime;
 	private float vehicleAboutToBeRemovedTime;

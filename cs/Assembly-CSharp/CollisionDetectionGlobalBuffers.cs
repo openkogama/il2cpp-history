@@ -13,7 +13,7 @@ public static class CollisionDetectionGlobalBuffers
 {
 	// Fields
 	private const int MAX_BUFFER_SIZE = 128;
-	public static readonly RaycastHit[] rayHitBuffer;
+	public static readonly UnityEngine.RaycastHit[] rayHitBuffer;
 	public static readonly Collider[] colliderBuffer;
 
 	// Constructors

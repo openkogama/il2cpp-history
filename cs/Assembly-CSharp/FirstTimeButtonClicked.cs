@@ -11,14 +11,14 @@ using UnityEngine.UI;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
-[RequireComponent(typeof(Button))]
+[RequireComponent(typeof(UnityEngine.UI.Button))]
 public class FirstTimeButtonClicked : FirstTimeEventHandler
 {
 	// Fields
 	private bool isReady;
 	private bool buttonHasBeenClicked;
 	[SerializeField]
-	private Button button;
+	private UnityEngine.UI.Button button;
 	[SerializeField]
 	private FirstTimeActivatableElementBase firstTimeActivatableElementBase;
 

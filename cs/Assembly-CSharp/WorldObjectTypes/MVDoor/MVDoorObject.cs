@@ -28,11 +28,11 @@ namespace WorldObjectTypes.MVDoor
 		[SerializeField]
 		private AudioSource audioSource;
 		[SerializeField]
-		private AudioClip doorOpenSound;
+		private StreamedAudioClipManual doorOpenSoundStream;
 		[SerializeField]
-		private AudioClip slidingDoorOpenSound;
+		private StreamedAudioClipManual slidingDoorOpenSoundStream;
 		[SerializeField]
-		private AudioClip trapDoorOpenSound;
+		private StreamedAudioClipManual trapDoorOpenSoundStream;
 	
 		// Properties
 		public TriggerBoxEvents TriggerBoxEvents { get; }

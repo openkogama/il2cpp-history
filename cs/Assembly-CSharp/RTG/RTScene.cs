@@ -66,9 +66,6 @@ namespace RTG
 		public GameObjectRayHit RaycastMeshObject(Ray ray, GameObject meshObject);
 		public GameObjectRayHit RaycastMeshObjectReverseIfFail(Ray ray, GameObject meshObject);
 		public GameObjectRayHit RaycastSpriteObject(Ray ray, GameObject spriteObject);
-		public GameObjectRayHit RaycastTerrainObject(Ray ray, GameObject terrainObject);
-		public GameObjectRayHit RaycastTerrainObject(Ray ray, GameObject terrainObject, TerrainCollider terrainCollider);
-		public GameObjectRayHit RaycastTerrainObjectReverseIfFail(Ray ray, GameObject terrainObject);
 		public XZGridRayHit RaycastSceneGridIfVisible(Ray ray);
 		public void Update_SystemCall();
 	}

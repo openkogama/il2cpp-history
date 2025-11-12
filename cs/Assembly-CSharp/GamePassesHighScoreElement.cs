@@ -27,7 +27,7 @@ public class GamePassesHighScoreElement : MonoBehaviour, IPointerEnterHandler, I
 	[SerializeField]
 	private GameObject subscriberUI;
 	[SerializeField]
-	private Button buttonElement;
+	private UnityEngine.UI.Button buttonElement;
 	[SerializeField]
 	private PlayerSocialPopup playerSocialPopup;
 	[SerializeField]

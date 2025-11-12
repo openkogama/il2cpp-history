@@ -30,6 +30,7 @@ public class MVSentryGun : MVLogicObject, ILogicWorldObject
 	private SentryGunBeamType beamType;
 	private MVSentryGunObject gunObject;
 	private const float cullingRadius = 2f;
+	private static List<int> overlappedWoIds;
 	private bool wasDead;
 
 	// Properties
@@ -44,6 +45,7 @@ public class MVSentryGun : MVLogicObject, ILogicWorldObject
 
 	// Constructors
 	public MVSentryGun(Dictionary<object, object> data, Dictionary<int, MVWorldObjectClient> worldObjects);
+	static MVSentryGun();
 
 	// Methods
 	public override void Initialize();

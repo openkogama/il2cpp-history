@@ -19,11 +19,11 @@ namespace MV.WorldObject.GamePassSystem
 		// Fields
 		public GamePassTier gamePassTierSeen;
 		public bool welcomeRewardClaimed;
-		public DateTime lastDailyWelcomeRewardClaim;
+		public System.DateTime lastDailyWelcomeRewardClaim;
 	
 		// Constructors
 		public PlayerPlanetMetaDataClient();
-		public PlayerPlanetMetaDataClient(GamePassTier gamePassTierSeen, bool welcomeRewardClaimed, DateTime lastDailyWelcomeRewardClaim);
+		public PlayerPlanetMetaDataClient(GamePassTier gamePassTierSeen, bool welcomeRewardClaimed, System.DateTime lastDailyWelcomeRewardClaim);
 	
 		// Methods
 		public override string ToString();

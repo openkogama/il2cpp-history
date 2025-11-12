@@ -15,8 +15,6 @@ public class ViewReleaseName : MonoBehaviour
 	// Fields
 	[SerializeField]
 	private UnityEngine.UI.Text title;
-	[SerializeField]
-	private KoGaMaSettingsContainer koGaMaSettingsContainer;
 
 	// Constructors
 	public ViewReleaseName();

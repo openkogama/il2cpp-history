@@ -15,7 +15,7 @@ using System.Runtime.Versioning;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Utilities;
 
-// Image 8: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
+// Image 9: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
 
 namespace Newtonsoft.Json.Serialization
 {
@@ -55,7 +55,7 @@ namespace Newtonsoft.Json.Serialization
 		public bool IgnoreIsSpecifiedMembers { [CompilerGenerated] get; }
 		public bool IgnoreShouldSerializeMembers { [CompilerGenerated] get; }
 		[Nullable(2)]
-		public NamingStrategy NamingStrategy { [CompilerGenerated] [NullableContext(2)] get; }
+		public NamingStrategy NamingStrategy { [NullableContext(2)] [CompilerGenerated] get; }
 	
 		// Nested types
 		[NullableContext(0)]

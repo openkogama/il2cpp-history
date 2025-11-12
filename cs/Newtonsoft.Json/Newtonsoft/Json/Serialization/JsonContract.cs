@@ -13,7 +13,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Versioning;
 using Newtonsoft.Json;
 
-// Image 8: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
+// Image 9: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
 
 namespace Newtonsoft.Json.Serialization
 {
@@ -63,7 +63,7 @@ namespace Newtonsoft.Json.Serialization
 		public System.Type CreatedType { get; set; }
 		public bool? IsReference { [CompilerGenerated] get; [CompilerGenerated] set; }
 		[Nullable(2)]
-		public JsonConverter Converter { [CompilerGenerated] [NullableContext(2)] get; [CompilerGenerated] [NullableContext(2)] set; }
+		public JsonConverter Converter { [NullableContext(2)] [CompilerGenerated] get; [NullableContext(2)] [CompilerGenerated] set; }
 		[Nullable(2)]
 		public JsonConverter InternalConverter { [NullableContext(2)] [CompilerGenerated] get; [NullableContext(2)] [CompilerGenerated] internal set; }
 		public IList<SerializationCallback> OnDeserializedCallbacks { get; }

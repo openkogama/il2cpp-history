@@ -9,9 +9,11 @@ using System.Runtime.CompilerServices;
 using CodeStage.AntiCheat.ObscuredTypes;
 using MV.WorldObject;
 using UnityEngine;
+using UnityEngine.Scripting;
 
 // Image 0: Assembly-CSharp.dll - Assembly: Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 
+[Preserve]
 public class AdvancedGhostBehaviour : MonoBehaviour
 {
 	// Fields

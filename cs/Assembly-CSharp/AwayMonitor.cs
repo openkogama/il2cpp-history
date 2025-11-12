@@ -13,12 +13,12 @@ public class AwayMonitor
 {
 	// Fields
 	private static AwayMonitor instance;
-	private DateTime latestResetAFKTime;
+	private System.DateTime latestResetAFKTime;
 	private readonly TimeSpan awayCheckFrequency;
 	private IdleKickTimes idleKickTimes;
 	private State state;
 	private bool idleKickEnabled;
-	private DateTime latestMouseMoveTime;
+	private System.DateTime latestMouseMoveTime;
 	private const string mouseX = "Mouse X";
 	private const string mouseY = "Mouse Y";
 	private const string scroll = "Mouse ScrollWheel";
@@ -29,7 +29,7 @@ public class AwayMonitor
 
 	// Properties
 	public static bool IdleKickEnabled { get; set; }
-	public DateTime LatestMouseMoveTime { get; }
+	public System.DateTime LatestMouseMoveTime { get; }
 
 	// Nested types
 	private enum State

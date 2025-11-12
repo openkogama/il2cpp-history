@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using Newtonsoft.Json.Serialization;
 
-// Image 8: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
+// Image 9: Newtonsoft.Json.dll - Assembly: Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed
 
 namespace Newtonsoft.Json.Utilities
 {
@@ -102,7 +102,7 @@ namespace Newtonsoft.Json.Utilities
 		static ImmutableCollectionsUtils();
 	
 		// Methods
-		internal static bool TryBuildImmutableForArrayContract(System.Type underlyingType, System.Type collectionItemType, [NotNullWhen(true)] [Nullable(2)] out System.Type createdType, [Nullable(new byte[2] {2, 1 })] [NotNullWhen(true)] out ObjectConstructor<object> parameterizedCreator);
-		internal static bool TryBuildImmutableForDictionaryContract(System.Type underlyingType, System.Type keyItemType, System.Type valueItemType, [Nullable(2)] [NotNullWhen(true)] out System.Type createdType, [NotNullWhen(true)] [Nullable(new byte[2] {2, 1 })] out ObjectConstructor<object> parameterizedCreator);
+		internal static bool TryBuildImmutableForArrayContract(System.Type underlyingType, System.Type collectionItemType, [Nullable(2)] [NotNullWhen(true)] out System.Type createdType, [Nullable(new byte[2] {2, 1 })] [NotNullWhen(true)] out ObjectConstructor<object> parameterizedCreator);
+		internal static bool TryBuildImmutableForDictionaryContract(System.Type underlyingType, System.Type keyItemType, System.Type valueItemType, [Nullable(2)] [NotNullWhen(true)] out System.Type createdType, [Nullable(new byte[2] {2, 1 })] [NotNullWhen(true)] out ObjectConstructor<object> parameterizedCreator);
 	}
 }

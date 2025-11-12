@@ -28,13 +28,13 @@ public class BoostMenuItem : MonoBehaviour
 	[SerializeField]
 	private RectTransform boostTypeImageParent;
 	[SerializeField]
-	private Button getWithAdOrSubscriptionButton;
+	private UnityEngine.UI.Button getWithAdOrSubscriptionButton;
 	[SerializeField]
 	private GameObject buttonIcon;
 	[SerializeField]
-	private Button getWithAdDisabled;
+	private UnityEngine.UI.Button getWithAdDisabled;
 	[SerializeField]
-	private Button getWithGold;
+	private UnityEngine.UI.Button getWithGold;
 	[SerializeField]
 	private UnityEngine.UI.Text boostDescription;
 	[SerializeField]

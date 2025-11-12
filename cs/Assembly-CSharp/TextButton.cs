@@ -14,12 +14,12 @@ public class TextButton : MonoBehaviour
 {
 	// Fields
 	[SerializeField]
-	private Button button;
+	private UnityEngine.UI.Button button;
 	[SerializeField]
 	private UnityEngine.UI.Text text;
 
 	// Properties
-	public Button Button { get; }
+	public UnityEngine.UI.Button Button { get; }
 	public UnityEngine.UI.Text Text { get; }
 
 	// Constructors

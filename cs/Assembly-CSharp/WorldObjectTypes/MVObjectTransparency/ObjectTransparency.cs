@@ -19,7 +19,6 @@ namespace WorldObjectTypes.MVObjectTransparency
 		private bool _IsDrawingEnabled_k__BackingField;
 		[CompilerGenerated]
 		private float _Transparency_k__BackingField;
-		private float currentAlpha;
 	
 		// Properties
 		public bool IsDrawingEnabled { [CompilerGenerated] get; [CompilerGenerated] set; }

@@ -18,7 +18,7 @@ public class BundleTab : TabMenuButtonBase
 {
 	// Fields
 	[SerializeField]
-	private Button button;
+	private UnityEngine.UI.Button button;
 	[SerializeField]
 	private RectTransform rectTransform;
 	[SerializeField]

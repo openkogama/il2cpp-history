@@ -26,8 +26,8 @@ namespace Internal.Cryptography.Pal
 		internal byte[] SerialNumber;
 		internal AlgorithmIdentifier TbsSignature;
 		internal X500DistinguishedName Issuer;
-		internal DateTime NotBefore;
-		internal DateTime NotAfter;
+		internal System.DateTime NotBefore;
+		internal System.DateTime NotAfter;
 		internal X500DistinguishedName Subject;
 		internal AlgorithmIdentifier PublicKeyAlgorithm;
 		internal byte[] PublicKey;

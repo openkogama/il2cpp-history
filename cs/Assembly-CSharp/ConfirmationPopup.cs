@@ -21,9 +21,9 @@ public class ConfirmationPopup : MonoBehaviour
 	[SerializeField]
 	private UnityEngine.UI.Text header;
 	[SerializeField]
-	private Button okButton;
+	private UnityEngine.UI.Button okButton;
 	[SerializeField]
-	private Button cancelButton;
+	private UnityEngine.UI.Button cancelButton;
 	[SerializeField]
 	public bool hideAll;
 

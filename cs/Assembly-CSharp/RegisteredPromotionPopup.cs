@@ -29,7 +29,7 @@ public class RegisteredPromotionPopup : MonoBehaviour
 	[SerializeField]
 	private CanvasGroup canvasGroup;
 	[SerializeField]
-	private Button continueButton;
+	private UnityEngine.UI.Button continueButton;
 	[SerializeField]
 	private Image adIcon;
 	private bool waitingForAd;
